@@ -16,13 +16,13 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
-import r.c;
+import r4.c;
 import v7.u6;
 import z3.d;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public final x a = new x();
@@ -156,7 +156,7 @@ public final class a implements m {
                     xVar.O(i14);
                     int m12 = xVar.m();
                     if (H4 > spannableStringBuilder.length()) {
-                        StringBuilder l4 = i0.a.l(H4, "Truncating styl end (", ") to cueText.length() (");
+                        StringBuilder l4 = i2.d.l(H4, "Truncating styl end (", ") to cueText.length() (");
                         l4.append(spannableStringBuilder.length());
                         l4.append(").");
                         e2.a.l("Tx3gParser", l4.toString());

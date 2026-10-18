@@ -36,6 +36,7 @@ import com.google.android.gms.tasks.Tasks;
 import e9.c2;
 import e9.n0;
 import ei.r5;
+import i2.h0;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.io.File;
@@ -60,7 +61,6 @@ import m.c3;
 import m.m1;
 import m.n2;
 import m.s3;
-import m4.f0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.d6;
@@ -69,7 +69,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ny0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.lg0;
-import u2.g0;
+import u2.f0;
 import v7.d8;
 import v7.q7;
 import v7.u6;
@@ -92,7 +92,7 @@ import z9.x0;
 import z9.y0;
 import z9.z1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l implements d6 {
     public Object a;
@@ -208,22 +208,22 @@ public final class l implements d6 {
 
     public static ColorStateList o(Context context, int i10) {
         int c10 = c3.c(context, R.attr.colorControlHighlight);
-        return new ColorStateList(new int[][]{c3.b, c3.d, c3.c, c3.f}, new int[]{c3.b(context, R.attr.colorButtonNormal), i0.b.k(c10, i10), i0.b.k(c10, i10), i10});
+        return new ColorStateList(new int[][]{c3.b, c3.d, c3.c, c3.f}, new int[]{c3.b(context, R.attr.colorButtonNormal), i0.a.k(c10, i10), i0.a.k(c10, i10), i10});
     }
 
-    public static g0 t(f1 f1Var, n0 n0Var, g0 g0Var, l1 l1Var) {
+    public static f0 t(f1 f1Var, n0 n0Var, f0 f0Var, l1 l1Var) {
         o1 y02 = f1Var.y0();
         int A = f1Var.A();
         Object l4 = y02.p() ? null : y02.l(A);
         int b10 = (f1Var.n() || y02.p()) ? -1 : y02.f(A, l1Var, false).b(e2.m0.S(f1Var.M0()) - l1Var.e);
         for (int i10 = 0; i10 < n0Var.size(); i10++) {
-            g0 g0Var2 = (g0) n0Var.get(i10);
-            if (z(g0Var2, l4, f1Var.n(), f1Var.m0(), f1Var.N(), b10)) {
-                return g0Var2;
+            f0 f0Var2 = (f0) n0Var.get(i10);
+            if (z(f0Var2, l4, f1Var.n(), f1Var.m0(), f1Var.N(), b10)) {
+                return f0Var2;
             }
         }
-        if (n0Var.isEmpty() && g0Var != null && z(g0Var, l4, f1Var.n(), f1Var.m0(), f1Var.N(), b10)) {
-            return g0Var;
+        if (n0Var.isEmpty() && f0Var != null && z(f0Var, l4, f1Var.n(), f1Var.m0(), f1Var.N(), b10)) {
+            return f0Var;
         }
         return null;
     }
@@ -281,16 +281,16 @@ public final class l implements d6 {
         return DesugarCollections.unmodifiableList(arrayList);
     }
 
-    public static boolean z(g0 g0Var, Object obj, boolean z10, int i10, int i11, int i12) {
-        Object obj2 = g0Var.a;
-        int i13 = g0Var.b;
+    public static boolean z(f0 f0Var, Object obj, boolean z10, int i10, int i11, int i12) {
+        Object obj2 = f0Var.a;
+        int i13 = f0Var.b;
         if (!obj2.equals(obj)) {
             return false;
         }
-        if (z10 && i13 == i10 && g0Var.c == i11) {
+        if (z10 && i13 == i10 && f0Var.c == i11) {
             return true;
         }
-        return !z10 && i13 == -1 && g0Var.e == i12;
+        return !z10 && i13 == -1 && f0Var.e == i12;
     }
 
     public void A(Throwable th2, Thread thread, String str, String str2, long j10, boolean z10) {
@@ -698,19 +698,19 @@ public final class l implements d6 {
     public void M(o1 o1Var) {
         a5.a aVar = new a5.a(4, 5);
         if (((n0) this.b).isEmpty()) {
-            f(aVar, (g0) this.e, o1Var);
-            if (!Objects.equals((g0) this.f, (g0) this.e)) {
-                f(aVar, (g0) this.f, o1Var);
+            f(aVar, (f0) this.e, o1Var);
+            if (!Objects.equals((f0) this.f, (f0) this.e)) {
+                f(aVar, (f0) this.f, o1Var);
             }
-            if (!Objects.equals((g0) this.d, (g0) this.e) && !Objects.equals((g0) this.d, (g0) this.f)) {
-                f(aVar, (g0) this.d, o1Var);
+            if (!Objects.equals((f0) this.d, (f0) this.e) && !Objects.equals((f0) this.d, (f0) this.f)) {
+                f(aVar, (f0) this.d, o1Var);
             }
         } else {
             for (int i10 = 0; i10 < ((n0) this.b).size(); i10++) {
-                f(aVar, (g0) ((n0) this.b).get(i10), o1Var);
+                f(aVar, (f0) ((n0) this.b).get(i10), o1Var);
             }
-            if (!((n0) this.b).contains((g0) this.d)) {
-                f(aVar, (g0) this.d, o1Var);
+            if (!((n0) this.b).contains((f0) this.d)) {
+                f(aVar, (f0) this.d, o1Var);
             }
         }
         this.c = aVar.d(true);
@@ -758,7 +758,7 @@ public final class l implements d6 {
                     rVar.m = true;
                     Context context = rVar.a;
                     Object obj = m4.x.b;
-                    int intValue = ((Integer) f0.C.get()).intValue();
+                    int intValue = ((Integer) m4.f0.C.get()).intValue();
                     int i10 = Build.VERSION.SDK_INT;
                     if (i10 < 27) {
                         intValue = Math.max(intValue, (int) TypedValue.applyDimension(1, 320.0f, context.getResources().getDisplayMetrics()));
@@ -820,9 +820,9 @@ public final class l implements d6 {
                 m4.x xVar2 = (m4.x) this.f;
                 if (xVar2 != null) {
                     f1 f1Var = xVar2.a.t.a;
-                    i2.g0 g0Var = dVar2.l;
-                    if (f1Var != g0Var) {
-                        xVar2.a(g0Var);
+                    h0 h0Var = dVar2.l;
+                    if (f1Var != h0Var) {
+                        xVar2.a(h0Var);
                     }
                 }
                 ((rf.a) this.c).bringToFront();
@@ -864,17 +864,17 @@ public final class l implements d6 {
         h6.q(f7, f10, i10, i11);
     }
 
-    public void f(a5.a aVar, g0 g0Var, o1 o1Var) {
-        if (g0Var == null) {
+    public void f(a5.a aVar, f0 f0Var, o1 o1Var) {
+        if (f0Var == null) {
             return;
         }
-        if (o1Var.b(g0Var.a) != -1) {
-            aVar.x(g0Var, o1Var);
+        if (o1Var.b(f0Var.a) != -1) {
+            aVar.x(f0Var, o1Var);
             return;
         }
-        o1 o1Var2 = (o1) ((c2) this.c).get(g0Var);
+        o1 o1Var2 = (o1) ((c2) this.c).get(f0Var);
         if (o1Var2 != null) {
-            aVar.x(g0Var, o1Var2);
+            aVar.x(f0Var, o1Var2);
         }
     }
 
@@ -940,13 +940,13 @@ public final class l implements d6 {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
-            str = r.c.u(str, " eventMillis");
+            str = r4.c.u(str, " eventMillis");
         }
         if (((Long) this.e) == null) {
-            str = r.c.u(str, " uptimeMillis");
+            str = r4.c.u(str, " uptimeMillis");
         }
         if (((HashMap) this.f) == null) {
-            str = r.c.u(str, " autoMetadata");
+            str = r4.c.u(str, " autoMetadata");
         }
         if (str.isEmpty()) {
             return new l5.h((String) this.a, (Integer) this.b, (l5.m) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
@@ -987,10 +987,10 @@ public final class l implements d6 {
             str = str.concat(" type");
         }
         if (((u1) this.c) == null) {
-            str = r.c.u(str, " app");
+            str = r4.c.u(str, " app");
         }
         if (((v1) this.d) == null) {
-            str = r.c.u(str, " device");
+            str = r4.c.u(str, " device");
         }
         if (str.isEmpty()) {
             return new l0(((Long) this.a).longValue(), (String) this.b, (u1) this.c, (v1) this.d, (w1) this.e, (z1) this.f);
@@ -1004,13 +1004,13 @@ public final class l implements d6 {
             str = str.concat(" proximityOn");
         }
         if (((Integer) this.d) == null) {
-            str = r.c.u(str, " orientation");
+            str = r4.c.u(str, " orientation");
         }
         if (((Long) this.e) == null) {
-            str = r.c.u(str, " ramUsed");
+            str = r4.c.u(str, " ramUsed");
         }
         if (((Long) this.f) == null) {
-            str = r.c.u(str, " diskUsed");
+            str = r4.c.u(str, " diskUsed");
         }
         if (str.isEmpty()) {
             return new u0((Double) this.a, ((Integer) this.b).intValue(), ((Boolean) this.c).booleanValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue());
@@ -1050,9 +1050,9 @@ public final class l implements d6 {
             m4.x xVar = (m4.x) this.f;
             if (xVar != null) {
                 f1 f1Var = xVar.a.t.a;
-                i2.g0 g0Var = dVar.l;
-                if (f1Var != g0Var) {
-                    xVar.a(g0Var);
+                h0 h0Var = dVar.l;
+                if (f1Var != h0Var) {
+                    xVar.a(h0Var);
                 }
             }
         }

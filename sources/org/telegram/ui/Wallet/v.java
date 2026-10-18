@@ -5,7 +5,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Utilities.Callback3 {
     public final /* synthetic */ int a = 0;
@@ -49,25 +49,25 @@ public final /* synthetic */ class v implements Utilities.Callback3 {
                 }
                 break;
             default:
-                t9 t9Var = (t9) this.c;
+                w9 w9Var = (w9) this.c;
                 TLRPC.User user = (TLRPC.User) this.d;
                 String str2 = (String) this.e;
                 String str3 = (String) obj;
                 Utilities.Callback callback2 = (Utilities.Callback) obj3;
-                String str4 = t9Var.e;
+                String str4 = w9Var.e;
                 m0 m0Var2 = this.b;
                 if (!m0.a(str4, m0Var2.s())) {
                     callback2.run("WALLET_CHANGED");
                     break;
                 } else {
-                    m0Var2.b0(user, str2, 0L, str3, null, t9Var.d, null, new x(11, t9Var, callback2), null, null);
+                    m0Var2.b0(user, str2, 0L, str3, null, w9Var.d, null, new x(11, w9Var, callback2), null, null);
                     break;
                 }
         }
     }
 
-    public /* synthetic */ v(t9 t9Var, m0 m0Var, TLRPC.User user, String str) {
-        this.c = t9Var;
+    public /* synthetic */ v(w9 w9Var, m0 m0Var, TLRPC.User user, String str) {
+        this.c = w9Var;
         this.b = m0Var;
         this.d = user;
         this.e = str;

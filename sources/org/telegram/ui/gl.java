@@ -8,7 +8,7 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class gl extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G = 0;
@@ -34,7 +34,7 @@ public final class gl extends org.telegram.ui.Components.w9 {
                     path.addRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), Path.Direction.CW);
                     canvas.save();
                     canvas.clipPath(path);
-                    gVar.h(i0.b.o(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    gVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f)));
                     gVar.setBounds((int) this.a.getImageX(), (int) this.a.getImageY(), (int) this.a.getImageX2(), (int) this.a.getImageY2());
                     gVar.draw(canvas);
                     invalidate();
@@ -76,7 +76,7 @@ public final class gl extends org.telegram.ui.Components.w9 {
                     path.rewind();
                     path.addRoundRect(rectF, fArr, Path.Direction.CW);
                     canvas.clipPath(path);
-                    gVar.h(i0.b.o(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    gVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f)));
                     gVar.setBounds(0, 0, getWidth(), getHeight());
                     gVar.draw(canvas);
                     canvas.restore();

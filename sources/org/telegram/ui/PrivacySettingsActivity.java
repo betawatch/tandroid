@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -240,7 +240,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
                 alertDialog$Builder2.a.R = valueOf;
                 alertDialog$Builder2.a.T = LocaleController.getString(R.string.EmailLoginChangeMessage);
                 alertDialog$Builder2.k(LocaleController.getString(R.string.ChangeEmail), new hx0(privacySettingsActivity, 4));
-                i0.a.r(R.string.Cancel, alertDialog$Builder2, null);
+                i2.d.r(R.string.Cancel, alertDialog$Builder2, null);
                 return;
             }
             if (i10 == privacySettingsActivity.passwordRow) {
@@ -320,7 +320,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
                 AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(privacySettingsActivity.getParentActivity());
                 alertDialog$Builder4.a.R = LocaleController.getString("SuggestContactsTitle", R.string.SuggestContactsTitle);
                 alertDialog$Builder4.a.T = LocaleController.getString("SuggestContactsAlert", R.string.SuggestContactsAlert);
-                alertDialog$Builder4.k(LocaleController.getString("MuteDisable", R.string.MuteDisable), new fr0(8, privacySettingsActivity, v8Var));
+                alertDialog$Builder4.k(LocaleController.getString("MuteDisable", R.string.MuteDisable), new gn0(9, privacySettingsActivity, v8Var));
                 alertDialog$Builder4.h(LocaleController.getString("Cancel", R.string.Cancel), null);
                 org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder4.a;
                 privacySettingsActivity.showDialog(b2Var2);

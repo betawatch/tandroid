@@ -5,7 +5,7 @@ import org.telegram.messenger.MediaDataController;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class y0 extends c2.o {
     public int n;
@@ -47,7 +47,7 @@ public final class y0 extends c2.o {
                     }
                     if (Math.abs((byteBuffer.get(limit3) << 8) | (byteBuffer.get(limit3 - 1) & 255)) > s10) {
                         int i11 = this.n;
-                        position = a1.g.C(limit3, i11, i11, i11);
+                        position = ((limit3 / i11) * i11) + i11;
                         break;
                     }
                     limit3 -= 2;

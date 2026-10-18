@@ -3,11 +3,11 @@ package com.google.android.gms.internal.cast;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class y4 extends v7.t5 {
     public static final Logger e = Logger.getLogger(y4.class.getName());
-    public static final boolean f = u6.e;
+    public static final boolean f = t6.e;
     public u5 a;
     public final byte[] b;
     public final int c;
@@ -33,8 +33,8 @@ public final class y4 extends v7.t5 {
     public static int n(String str) {
         int length;
         try {
-            length = w6.c(str);
-        } catch (v6 unused) {
+            length = v6.c(str);
+        } catch (u6 unused) {
             length = str.getBytes(l5.a).length;
         }
         return o(length) + length;
@@ -171,18 +171,18 @@ public final class y4 extends v7.t5 {
             int i12 = this.c;
             byte[] bArr = this.b;
             if (o11 != o10) {
-                j(w6.c(str));
+                j(v6.c(str));
                 int i13 = this.d;
-                this.d = w6.b(str, bArr, i13, i12 - i13);
+                this.d = v6.b(str, bArr, i13, i12 - i13);
             } else {
                 int i14 = i11 + o11;
                 this.d = i14;
-                int b10 = w6.b(str, bArr, i14, i12 - i14);
+                int b10 = v6.b(str, bArr, i14, i12 - i14);
                 this.d = i11;
                 j((b10 - i11) - o11);
                 this.d = b10;
             }
-        } catch (v6 e7) {
+        } catch (u6 e7) {
             this.d = i11;
             e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e7);
             byte[] bytes = str.getBytes(l5.a);
@@ -255,12 +255,12 @@ public final class y4 extends v7.t5 {
             if ((j10 & (-128)) == 0) {
                 int i14 = this.d;
                 this.d = i14 + 1;
-                u6.c.d(bArr, u6.f + i14, (byte) i13);
+                t6.c.d(bArr, t6.f + i14, (byte) i13);
                 return;
             } else {
                 int i15 = this.d;
                 this.d = i15 + 1;
-                u6.c.d(bArr, u6.f + i15, (byte) ((i13 & 127) | 128));
+                t6.c.d(bArr, t6.f + i15, (byte) ((i13 & 127) | 128));
                 j10 >>>= 7;
             }
         }

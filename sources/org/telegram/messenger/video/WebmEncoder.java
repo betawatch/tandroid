@@ -15,7 +15,7 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -30,15 +30,16 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
+import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.b6;
 import org.telegram.ui.Components.e6;
 import qg.l0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class WebmEncoder {
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class FrameDrawer {
         private final int H;
         private final int W;
@@ -253,12 +254,12 @@ public class WebmEncoder {
                     if (width > 1.0f) {
                         float f19 = mediaEntity.height;
                         float f20 = f19 / width;
-                        mediaEntity.y = a6.z(f19, f20, 2.0f, mediaEntity.y);
+                        mediaEntity.y = k3.z(f19, f20, 2.0f, mediaEntity.y);
                         mediaEntity.height = f20;
                     } else if (width < 1.0f) {
                         float f21 = mediaEntity.width;
                         float f22 = width * f21;
-                        mediaEntity.x = a6.z(f21, f22, 2.0f, mediaEntity.x);
+                        mediaEntity.x = k3.z(f21, f22, 2.0f, mediaEntity.x);
                         mediaEntity.width = f22;
                     }
                 }
@@ -291,7 +292,7 @@ public class WebmEncoder {
                     emojiEntity.entity = mediaEntity2;
                     mediaEntity2.text = emojiEntity.documentAbsolutePath;
                     mediaEntity2.subType = emojiEntity.subType;
-                    org.telegram.ui.Components.a6 a6Var = new org.telegram.ui.Components.a6(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
+                    a6 a6Var = new a6(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.WebmEncoder.FrameDrawer.1
                         @Override // org.telegram.ui.Components.a6, android.text.style.ReplacementSpan
                         public void draw(Canvas canvas, CharSequence charSequence, int i12, int i13, float f7, int i14, int i15, int i16, Paint paint) {
                             super.draw(canvas, charSequence, i12, i13, f7, i14, i15, i16, paint);
@@ -308,7 +309,7 @@ public class WebmEncoder {
                                 double d10 = paddingLeft - f12;
                                 double d11 = (paddingTop - f13) / f14;
                                 paddingLeft = ((float) ((Math.cos(-mediaEntity.rotation) * d10) - (Math.sin(-mediaEntity.rotation) * d11))) + f12;
-                                paddingTop = (((float) i0.a.f(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
+                                paddingTop = (((float) i2.d.f(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
                             }
                             VideoEditedInfo.MediaEntity mediaEntity5 = emojiEntity.entity;
                             int i17 = this.measuredSize;

@@ -13,7 +13,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nq implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -81,14 +81,14 @@ public final /* synthetic */ class nq implements Utilities.Callback {
                         if (sendPaidMessagesStars <= 0 && longValue > 0) {
                             sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(MessagesController.getInstance(i11).isUserContactBlocked(longValue));
                         }
-                        edit.putLong(r.c.f(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
-                        ai.fa.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
+                        edit.putLong(r4.c.g(longValue, "ask_paid_message_", "_price"), sendPaidMessagesStars);
+                        ai.ga.y(i11, false).O.put(l4, Long.valueOf(System.currentTimeMillis()));
                     }
                     edit.apply();
                 }
                 org.telegram.ui.Components.m1 m1Var = new org.telegram.ui.Components.m1(i11, this.c, activity, arrayList, hashMap, callback, d6Var);
-                if (!ai.fa.y(i11, false).e) {
-                    ai.fa y3 = ai.fa.y(i11, false);
+                if (!ai.ga.y(i11, false).e) {
+                    ai.ga y3 = ai.ga.y(i11, false);
                     y3.e = false;
                     y3.q(false, true, m1Var);
                     y3.e = true;
@@ -105,7 +105,7 @@ public final /* synthetic */ class nq implements Utilities.Callback {
                 tL_messages_toggleBotInAttachMenu.bot = MessagesController.getInstance(i13).getInputUser(this.c);
                 tL_messages_toggleBotInAttachMenu.enabled = true;
                 tL_messages_toggleBotInAttachMenu.write_allowed = true;
-                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.gi((LaunchActivity) obj5, i13, (ey) obj4, (org.telegram.ui.ActionBar.n2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
+                ConnectionsManager.getInstance(i13).sendRequest(tL_messages_toggleBotInAttachMenu, new org.telegram.messenger.fi((LaunchActivity) obj5, i13, (ey) obj4, (org.telegram.ui.ActionBar.n2) obj3, (TLRPC.User) obj2, (String) serializable), 66);
                 break;
         }
     }

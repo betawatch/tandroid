@@ -39,7 +39,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0, gi.d4, kg1, r0.n, org.telegram.ui.ActionBar.a2, sg.t, org.telegram.ui.Components.ke0, org.telegram.ui.Components.xl0, org.telegram.ui.Components.mw0, ci.v9, CameraView.CameraViewDelegate, Utilities.Callback5, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.jk0, MessagesStorage.BooleanCallback, org.telegram.ui.Cells.f0 {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
         m0 m0Var;
         c2.b bVar = (c2.b) this.b;
         bVar.getClass();
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
         x4 x4Var = (x4) bVar.d;
         if (x4Var == view && (m0Var = x4Var.b) != null) {
             m0Var.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
@@ -134,7 +134,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
                     }
                     bundle.putBoolean("allowGlobalSearch", false);
                     ey eyVar = new ey(bundle);
-                    eyVar.C2 = new m4.y0(6, e6Var, eyVar);
+                    eyVar.C2 = new m4.w0(7, e6Var, eyVar);
                     e6Var.presentFragment(eyVar);
                     break;
                 }
@@ -242,7 +242,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
                 u6Var.addView(t6Var, w7.z5.a(5.0f, 0.0f, 226.0f, 0.0f, 0.0f, 240, 49));
                 TextView textView = new TextView(context);
                 textView.setGravity(1);
-                org.telegram.messenger.q.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, i13, false), 1, textView);
+                org.telegram.messenger.g0.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, i13, false), 1, textView);
                 textView.setText(LocaleController.getString(R.string.ClearingCache));
                 u6Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 261.0f, 0.0f, 0.0f, -1, 49));
                 TextView textView2 = new TextView(context);
@@ -423,7 +423,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
                         break;
                     }
                 } else {
-                    ai.ld.i1(eeVar.getContext(), true, geVar.d, eeVar.c, (TL_stars.StarsTransaction) f61Var.G, eeVar.b);
+                    ai.md.i1(eeVar.getContext(), true, geVar.d, eeVar.c, (TL_stars.StarsTransaction) f61Var.G, eeVar.b);
                     break;
                 }
                 break;
@@ -447,7 +447,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hsVar.getParentActivity(), 0, hsVar.r);
                         alertDialog$Builder.a.R = LocaleController.getString(R.string.DeleteContact);
                         alertDialog$Builder.a.T = LocaleController.getString(R.string.AreYouSureDeleteContact);
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.Components.s2(25, hsVar, user));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.Components.q2(26, hsVar, user));
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                         alertDialog$Builder.d(-1);
                         alertDialog$Builder.o();

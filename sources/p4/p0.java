@@ -3,8 +3,9 @@ package p4;
 import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
+import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class p0 extends p implements n0 {
     public final String f;
@@ -107,10 +108,10 @@ public final class p0 extends p implements n0 {
         m0 m0Var = this.l;
         if (m0Var != null) {
             int i11 = this.m;
-            Bundle j10 = org.telegram.ui.Cells.t0.j(i10, "unselectReason");
-            int i12 = m0Var.d;
-            m0Var.d = i12 + 1;
-            m0Var.b(6, i12, i11, null, j10);
+            Bundle i12 = c1.i(i10, "unselectReason");
+            int i13 = m0Var.d;
+            m0Var.d = i13 + 1;
+            m0Var.b(6, i13, i11, null, i12);
         }
     }
 

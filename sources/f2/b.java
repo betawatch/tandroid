@@ -2,7 +2,7 @@ package f2;
 
 import b2.q0;
 import b2.s0;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.m0;
 import e2.x;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import java.util.Arrays;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b implements s0 {
     public final String a;
@@ -67,7 +67,7 @@ public final class b implements s0 {
         byte[] bArr = this.b;
         byte b10 = bArr[1];
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < b10; i10 = a6.f(bArr[i10 + 2], i10, 1, arrayList)) {
+        for (int i10 = 0; i10 < b10; i10 = k3.f(bArr[i10 + 2], i10, 1, arrayList)) {
         }
         return arrayList;
     }
@@ -118,7 +118,7 @@ public final class b implements s0 {
         } else {
             sb2 = String.valueOf(bArr[0] & 255);
         }
-        return a6.k("mdta: key=", str, ", value=", sb2);
+        return k3.k("mdta: key=", str, ", value=", sb2);
     }
 
     @Override // b2.s0

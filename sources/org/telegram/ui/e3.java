@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateLis
                 f3 f3Var = (f3) this.b;
                 f3Var.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f3Var.d.setTextColor(i0.b.f(floatValue, -16777216, -1));
-                f3Var.e.setTextColor(i0.b.f(floatValue, -16777216, -1));
-                f3Var.f.setTextColor(i0.b.f(floatValue, -16777216, -1));
+                f3Var.d.setTextColor(i0.a.f(floatValue, -16777216, -1));
+                f3Var.e.setTextColor(i0.a.f(floatValue, -16777216, -1));
+                f3Var.f.setTextColor(i0.a.f(floatValue, -16777216, -1));
                 break;
             case 1:
                 w4 w4Var = (w4) this.b;
@@ -105,12 +105,12 @@ public final /* synthetic */ class e3 implements ValueAnimator.AnimatorUpdateLis
                 org.telegram.ui.ActionBar.d6 d6Var = vyVar.a;
                 int w02 = org.telegram.ui.ActionBar.h6.w0(i12, d6Var);
                 int i13 = org.telegram.ui.ActionBar.h6.Oh;
-                int f7 = i0.b.f(vyVar.r, w02, org.telegram.ui.ActionBar.h6.w0(i13, d6Var));
+                int f7 = i0.a.f(vyVar.r, w02, org.telegram.ui.ActionBar.h6.w0(i13, d6Var));
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
                 w9Var.setColorFilter(new PorterDuffColorFilter(f7, mode));
                 w9Var.invalidate();
                 org.telegram.ui.Components.w9 w9Var2 = vyVar.f;
-                w9Var2.setColorFilter(new PorterDuffColorFilter(i0.b.f(1.0f - vyVar.r, org.telegram.ui.ActionBar.h6.w0(i12, d6Var), org.telegram.ui.ActionBar.h6.w0(i13, d6Var)), mode));
+                w9Var2.setColorFilter(new PorterDuffColorFilter(i0.a.f(1.0f - vyVar.r, org.telegram.ui.ActionBar.h6.w0(i12, d6Var), org.telegram.ui.ActionBar.h6.w0(i13, d6Var)), mode));
                 w9Var2.invalidate();
                 break;
             case 12:

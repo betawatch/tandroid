@@ -1,15 +1,38 @@
 package zh;
 
-import android.graphics.Bitmap;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class d {
-    public final Bitmap a;
-    public final long b;
+    public static final d[] f = new d[4];
+    public final int a;
+    public TLRPC.TL_shareThemeBackdrops b;
+    public boolean c;
+    public boolean d;
+    public final ArrayList e = new ArrayList();
 
-    public d(Bitmap bitmap, long j10) {
-        this.a = bitmap;
-        this.b = j10;
+    public d(int i10) {
+        this.a = i10;
+        String string = MessagesController.getMainSettings(i10).getString("qrBackdrops", null);
+        if (TextUtils.isEmpty(string)) {
+            return;
+        }
+        try {
+            SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
+            TLRPC.ShareThemeBackdrops TLdeserialize = TLRPC.ShareThemeBackdrops.TLdeserialize(serializedData, serializedData.readInt32(false), false);
+            if (TLdeserialize instanceof TLRPC.TL_shareThemeBackdrops) {
+                this.b = (TLRPC.TL_shareThemeBackdrops) TLdeserialize;
+            }
+            serializedData.cleanup();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 }

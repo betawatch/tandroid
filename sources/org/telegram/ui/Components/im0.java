@@ -39,7 +39,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class im0 extends RecyclerView implements ch.a {
     public static int[] O2;
@@ -245,7 +245,7 @@ public class im0 extends RecyclerView implements ch.a {
         while (i10 < 2) {
             for (int i11 = childCount - 1; i11 >= 0; i11--) {
                 View childAt = getChildAt(i11);
-                if ((!(childAt instanceof org.telegram.ui.Cells.u1) && !(childAt instanceof org.telegram.ui.Cells.x0)) || childAt.getVisibility() != 4) {
+                if ((!(childAt instanceof org.telegram.ui.Cells.u1) && !(childAt instanceof org.telegram.ui.Cells.w0)) || childAt.getVisibility() != 4) {
                     float translationX = i10 == 0 ? childAt.getTranslationX() : 0.0f;
                     float translationY = i10 == 0 ? childAt.getTranslationY() : 0.0f;
                     if (f7 >= childAt.getLeft() + translationX && f7 <= childAt.getRight() + translationX && f10 >= childAt.getTop() + translationY && f10 <= childAt.getBottom() + translationY) {

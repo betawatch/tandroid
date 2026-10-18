@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class q implements Runnable {
     public static final ThreadLocal e = new ThreadLocal();
@@ -20,9 +20,9 @@ public final class q implements Runnable {
     public ArrayList d;
 
     public static b1 c(RecyclerView recyclerView, int i10, long j10) {
-        int L = recyclerView.e.L();
-        for (int i11 = 0; i11 < L; i11++) {
-            b1 U = RecyclerView.U(recyclerView.e.K(i11));
+        int G = recyclerView.e.G();
+        for (int i11 = 0; i11 < G; i11++) {
+            b1 U = RecyclerView.U(recyclerView.e.F(i11));
             if (U.c == i10 && !U.h()) {
                 return null;
             }
@@ -110,7 +110,7 @@ public final class q implements Runnable {
         for (int i16 = 0; i16 < arrayList.size() && (recyclerView = (pVar = (p) arrayList.get(i16)).d) != null; i16++) {
             b1 c10 = c(recyclerView, pVar.e, pVar.a ? Long.MAX_VALUE : j10);
             if (c10 != null && c10.b != null && c10.g() && !c10.h() && (recyclerView2 = (RecyclerView) c10.b.get()) != null) {
-                if (recyclerView2.Q && recyclerView2.e.L() != 0) {
+                if (recyclerView2.Q && recyclerView2.e.G() != 0) {
                     recyclerView2.o0();
                 }
                 e2.f fVar3 = recyclerView2.t0;

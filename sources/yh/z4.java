@@ -1,8 +1,8 @@
 package yh;
 
-import ai.fa;
-import ai.ld;
+import ai.ga;
 import ai.m7;
+import ai.md;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class z4 extends View {
     public final m7 a;
@@ -50,10 +50,10 @@ public final class z4 extends View {
         m7Var.N = null;
         m7Var.O = null;
         m7Var.p = false;
-        m7Var.k = (TL_stars.starGiftAttributeBackdrop) fa.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        m7Var.l = (TL_stars.starGiftAttributePattern) fa.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        m7Var.k = (TL_stars.starGiftAttributeBackdrop) ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        m7Var.l = (TL_stars.starGiftAttributePattern) ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         TL_stars.starGiftAttributeModel stargiftattributemodel = m7Var.m;
-        m7Var.m = (TL_stars.starGiftAttributeModel) fa.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+        m7Var.m = (TL_stars.starGiftAttributeModel) ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
         Paint paint = m7Var.f;
         m7Var.h = null;
         paint.setShader(null);
@@ -68,7 +68,7 @@ public final class z4 extends View {
             imageReceiver.setAutoRepeatCount(0);
             imageReceiver.clearDecorators();
             imageReceiver.setAutoRepeat(0);
-            ld.a1(imageReceiver, m7Var.m.document, 110);
+            md.a1(imageReceiver, m7Var.m.document, 110);
         }
         boolean z11 = tL_starGiftUnique.burned;
         m7Var.J = z11;

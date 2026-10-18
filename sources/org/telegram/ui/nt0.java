@@ -13,7 +13,7 @@ import org.telegram.ui.Components.ClippingImageView;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class nt0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ ClippingImageView[] a;
@@ -72,13 +72,13 @@ public final class nt0 implements ViewTreeObserver.OnPreDrawListener {
             r22 = Math.max(((measuredWidth + f11) - (measuredWidth - f11)) / layoutParams.width, f13 / layoutParams.height);
             c10 = ((f13 - (layoutParams.height * r22)) / 2.0f) + f12;
             int measuredWidth2 = photoViewer.g0.getMeasuredWidth();
-            c11 = com.google.android.gms.internal.cast.a6.c(layoutParams.width, r22, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
+            c11 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.width, r22, (measuredWidth2 - r11) - rect.right, 2.0f) + rect.left;
         } else {
             i10 = 0;
             float min2 = Math.min(photoViewer.g0.getMeasuredWidth() / layoutParams.width, (AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0)) / layoutParams.height);
             r22 = photoViewer.c2 == 11 ? photoViewer.r2(true) * min2 : min2;
-            c10 = com.google.android.gms.internal.cast.a6.c(layoutParams.height, r22, AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0), 2.0f);
-            c11 = com.google.android.gms.internal.cast.a6.c(layoutParams.width, r22, photoViewer.g0.getMeasuredWidth(), 2.0f);
+            c10 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.height, r22, AndroidUtilities.displaySize.y + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0), 2.0f);
+            c11 = com.google.android.gms.internal.play_billing.k3.c(layoutParams.width, r22, photoViewer.g0.getMeasuredWidth(), 2.0f);
             photoViewer.b6 = 0.0f;
             photoViewer.f6 = 0.0f;
         }

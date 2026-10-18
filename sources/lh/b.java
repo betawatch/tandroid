@@ -9,11 +9,11 @@ import java.util.Map;
 import ki.u;
 import ne.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.voip.t2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class b extends ViewGroup {
     public int a;
@@ -54,10 +54,10 @@ public abstract class b extends ViewGroup {
             i12 = 1;
         }
         if (z12) {
-            min = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (wh.C(50.0f, i12, measuredHeight) / (i12 + 0.333f)), 0), measuredHeight / i12);
+            min = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (kk.B(50.0f, i12, measuredHeight) / (i12 + 0.333f)), 0), measuredHeight / i12);
             i10 = (measuredHeight - (i12 * min)) / 2;
         } else {
-            int min2 = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (wh.C(50.0f, i12, measuredWidth2) / (i12 + 0.333f)), 0), measuredWidth2 / i12);
+            int min2 = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (kk.B(50.0f, i12, measuredWidth2) / (i12 + 0.333f)), 0), measuredWidth2 / i12);
             min = AndroidUtilities.dp(76.0f);
             i10 = (measuredWidth2 - (i12 * min2)) / 2;
             measuredWidth2 = min2;

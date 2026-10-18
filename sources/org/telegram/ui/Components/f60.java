@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f60 implements Runnable {
     public DispatchQueue B0;
@@ -523,7 +523,7 @@ public final class f60 implements Runnable {
             } else {
                 ByteBuffer outputBuffer = this.E.getOutputBuffer(dequeueOutputBuffer);
                 if (outputBuffer == null) {
-                    throw new RuntimeException(i0.a.k(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
+                    throw new RuntimeException(i2.d.k(dequeueOutputBuffer, "encoderOutputBuffer ", " was null"));
                 }
                 MediaCodec.BufferInfo bufferInfo = this.I;
                 int i10 = bufferInfo.size;
@@ -618,7 +618,7 @@ public final class f60 implements Runnable {
                 } else {
                     ByteBuffer outputBuffer2 = this.F.getOutputBuffer(dequeueOutputBuffer2);
                     if (outputBuffer2 == null) {
-                        throw new RuntimeException(i0.a.k(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
+                        throw new RuntimeException(i2.d.k(dequeueOutputBuffer2, "encoderOutputBuffer ", " was null"));
                     }
                     MediaCodec.BufferInfo bufferInfo3 = this.J;
                     if ((bufferInfo3.flags & 2) != 0) {

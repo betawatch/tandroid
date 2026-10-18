@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class uh1 {
     public String a;
@@ -61,13 +61,13 @@ public final class uh1 {
         String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (i13 >> 8)) & 255), Byte.valueOf((byte) (i13 & 255))).toLowerCase() : null;
         if (lowerCase == null || lowerCase3 == null) {
             if (lowerCase != null) {
-                String D = a1.g.D(lowerCase2, "-", lowerCase);
+                String C = a1.g.C(lowerCase2, "-", lowerCase);
                 if (this.g != null) {
-                    StringBuilder i14 = r.c.i(D, "&rotation=");
+                    StringBuilder i14 = r4.c.i(C, "&rotation=");
                     i14.append(AndroidUtilities.getWallpaperRotation(this.f, true));
                     lowerCase2 = i14.toString();
                 } else {
-                    StringBuilder i15 = r.c.i(D, "?rotation=");
+                    StringBuilder i15 = r4.c.i(C, "?rotation=");
                     i15.append(AndroidUtilities.getWallpaperRotation(this.f, true));
                     lowerCase2 = i15.toString();
                 }
@@ -87,7 +87,7 @@ public final class uh1 {
             return a1.g.q(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/bg/", lowerCase2, new StringBuilder("https://"));
         }
         String str = "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
-        return this.j ? r.c.u(str, "&mode=motion") : str;
+        return this.j ? r4.c.u(str, "&mode=motion") : str;
     }
 
     public uh1(String str, int i10, int i11, int i12, int i13) {

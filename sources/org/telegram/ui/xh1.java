@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xh1 extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ WallpapersListActivity E;
@@ -30,7 +30,7 @@ public final class xh1 extends org.telegram.ui.Components.hm0 {
     public int v;
     public boolean w;
     public String x;
-    public org.telegram.ui.Wallet.t3 y;
+    public org.telegram.ui.Wallet.u3 y;
 
     public xh1(WallpapersListActivity wallpapersListActivity, Context context) {
         this.E = wallpapersListActivity;
@@ -47,9 +47,9 @@ public final class xh1 extends org.telegram.ui.Components.hm0 {
         if (str != null && this.n != null) {
             str = a1.g.q(this.n, " ", str, new StringBuilder("#color"));
         }
-        org.telegram.ui.Wallet.t3 t3Var = this.y;
-        if (t3Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(t3Var);
+        org.telegram.ui.Wallet.u3 u3Var = this.y;
+        if (u3Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(u3Var);
             this.y = null;
         }
         boolean isEmpty = TextUtils.isEmpty(str);
@@ -77,9 +77,9 @@ public final class xh1 extends org.telegram.ui.Components.hm0 {
                 this.h = str;
                 l();
             } else {
-                org.telegram.ui.Wallet.t3 t3Var2 = new org.telegram.ui.Wallet.t3(18, this, str);
-                this.y = t3Var2;
-                AndroidUtilities.runOnUIThread(t3Var2, 500L);
+                org.telegram.ui.Wallet.u3 u3Var2 = new org.telegram.ui.Wallet.u3(18, this, str);
+                this.y = u3Var2;
+                AndroidUtilities.runOnUIThread(u3Var2, 500L);
             }
         }
         l();
@@ -120,7 +120,7 @@ public final class xh1 extends org.telegram.ui.Components.hm0 {
             return;
         }
         TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-        tL_messages_getInlineBotResults.query = r.c.g("#wallpaper ", str);
+        tL_messages_getInlineBotResults.query = r4.c.h("#wallpaper ", str);
         i12 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
         tL_messages_getInlineBotResults.bot = MessagesController.getInstance(i12).getInputUser((TLRPC.User) userOrChat);
         tL_messages_getInlineBotResults.offset = str2;
@@ -128,7 +128,7 @@ public final class xh1 extends org.telegram.ui.Components.hm0 {
         int i20 = this.v + 1;
         this.v = i20;
         i13 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
-        this.s = ConnectionsManager.getInstance(i13).sendRequest(tL_messages_getInlineBotResults, new ai.m2(this, i20, 9));
+        this.s = ConnectionsManager.getInstance(i13).sendRequest(tL_messages_getInlineBotResults, new ai.n2(this, i20, 9));
         i14 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i14);
         int i21 = this.s;

@@ -37,7 +37,7 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
@@ -49,7 +49,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.oh;
 import org.telegram.ui.qh;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class u0 extends FrameLayout {
     public final TextView E;
@@ -246,7 +246,7 @@ public class u0 extends FrameLayout {
             return;
         }
         findViewWithTag.setAlpha(0.0f);
-        wh.t(findViewWithTag.animate().alpha(1.0f), bs.f, 150L);
+        kk.t(findViewWithTag.animate().alpha(1.0f), bs.f, 150L);
         findViewWithTag.setVisibility(0);
     }
 
@@ -550,7 +550,7 @@ public class u0 extends FrameLayout {
                         }
                     }
                 });
-                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(wh.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(kk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
                 if (frameLayout != null && frameLayout.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     frameLayout.getLayoutParams().width = AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
                 }

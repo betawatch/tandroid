@@ -2,7 +2,7 @@ package ah;
 
 import ai.k5;
 import ai.k7;
-import ai.ld;
+import ai.md;
 import ai.u1;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -29,7 +29,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocationController;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.d6;
@@ -67,13 +67,13 @@ import org.telegram.ui.Components.wu;
 import org.telegram.ui.Components.wv0;
 import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.zg0;
-import org.telegram.ui.Wallet.l5;
-import org.telegram.ui.Wallet.t9;
+import org.telegram.ui.Wallet.m5;
+import org.telegram.ui.Wallet.w9;
 import org.telegram.ui.ch1;
 import rg.x1;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x extends FrameLayout {
     public final /* synthetic */ int a;
@@ -124,7 +124,7 @@ public final class x extends FrameLayout {
         apVarArr[0].setTranslationY(AndroidUtilities.dp(20.0f));
         ViewPropertyAnimator translationY = apVarArr[0].animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).translationY(0.0f);
         bs bsVar = bs.h;
-        wh.t(translationY, bsVar, 320L);
+        kk.t(translationY, bsVar, 320L);
         ap apVar3 = apVarArr[1];
         apVar3.n = false;
         apVar3.setVisibility(0);
@@ -193,7 +193,7 @@ public final class x extends FrameLayout {
                 float left = gz0Var.e.getLeft();
                 int left2 = gz0Var.e.getLeft();
                 ArrayList arrayList2 = gz0Var.w;
-                float D = org.telegram.messenger.q.D(44.0f, arrayList2 == null ? 0 : arrayList2.size(), left2);
+                float D = org.telegram.messenger.g0.D(44.0f, arrayList2 == null ? 0 : arrayList2.size(), left2);
                 f6 f6Var = gz0Var.d0;
                 float f14 = f6Var.c;
                 boolean z11 = f14 <= 0.0f;
@@ -357,7 +357,7 @@ public final class x extends FrameLayout {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 2:
-                if (((ld) this.b).f0) {
+                if (((md) this.b).f0) {
                     return false;
                 }
                 return super.dispatchTouchEvent(motionEvent);
@@ -488,7 +488,7 @@ public final class x extends FrameLayout {
                     canvas.save();
                     float e = x1Var.u0.e(x1Var.t0);
                     canvas.scale(1.0f - (e * 2.0f), 1.0f, dw0Var.a / 2.0f, 0.0f);
-                    canvas.skew(0.0f, org.telegram.messenger.q.z(1.0f, e, 4.0f * e, 0.25f));
+                    canvas.skew(0.0f, org.telegram.messenger.g0.z(1.0f, e, 4.0f * e, 0.25f));
                     float e7 = x1Var.y0.e(x1Var.x0);
                     if (!x1Var.x0) {
                         canvas.save();
@@ -741,14 +741,14 @@ public final class x extends FrameLayout {
                 break;
             case 17:
                 tz tzVar = ((oz) this.b).Q;
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (wh.B(8.0f, tzVar.D0.getMeasuredHeight() - tzVar.b1, 3) * 1.7f), TLObject.FLAG_30));
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) (kk.A(8.0f, tzVar.D0.getMeasuredHeight() - tzVar.b1, 3) * 1.7f), TLObject.FLAG_30));
                 break;
             case 22:
                 wv0 wv0Var = (wv0) this.b;
                 u1 u1Var = wv0Var.b;
                 int size2 = View.MeasureSpec.getSize(i11) - AndroidUtilities.statusBarHeight;
                 getMeasuredWidth();
-                int D = org.telegram.messenger.q.D(54.0f, LocationController.getLocationsCount(), org.telegram.messenger.q.C(56.0f, AndroidUtilities.dp(56.0f), 1));
+                int D = org.telegram.messenger.g0.D(54.0f, LocationController.getLocationsCount(), org.telegram.messenger.g0.C(56.0f, AndroidUtilities.dp(56.0f), 1));
                 int i13 = size2 / 5;
                 if (D < i13 * 3) {
                     i12 = AndroidUtilities.dp(8.0f);
@@ -772,7 +772,7 @@ public final class x extends FrameLayout {
                 break;
             case 27:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(getMeasuredWidth(), (int) Math.ceil(((l5) this.b).T.c(AndroidUtilities.dp(4.0f))));
+                setMeasuredDimension(getMeasuredWidth(), (int) Math.ceil(((m5) this.b).T.c(AndroidUtilities.dp(4.0f))));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -835,7 +835,7 @@ public final class x extends FrameLayout {
             case 28:
                 super.onWindowFocusChanged(z10);
                 if (z10) {
-                    ((t9) this.b).e0(true);
+                    ((w9) this.b).e0(true);
                     break;
                 }
                 break;
@@ -1000,7 +1000,7 @@ public final class x extends FrameLayout {
         int dp = AndroidUtilities.dp(12.0f);
         int i10 = h6.j5;
         setBackground(h6.c0(dp, h6.m1(0.06f, bVar.u(i10))));
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         addView(e, z5.a(-2.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 17));
         q6 q6Var = new q6(context, false, true, true);
         this.b = q6Var;

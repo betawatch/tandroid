@@ -1,7 +1,7 @@
 package jg;
 
 import ah.l0;
-import ai.le;
+import ai.me;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
@@ -19,17 +19,18 @@ import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.b91;
-import org.telegram.ui.qp0;
+import org.telegram.ui.rp0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final boolean A1;
@@ -403,7 +404,7 @@ public abstract class g extends View implements i {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                b91 b91Var = (b91) ((qp0) eVar).b;
+                b91 b91Var = (b91) ((rp0) eVar).b;
                 b91Var.f();
                 b91Var.b.t0.d(false, false);
             }
@@ -564,7 +565,7 @@ public abstract class g extends View implements i {
             }
             ValueAnimator e = e(0.0f, 255.0f, new l0(5, this, f7));
             this.b0 = e;
-            e.addListener(new le(7, this, f7));
+            e.addListener(new me(7, this, f7));
             this.b0.start();
         }
     }
@@ -712,7 +713,7 @@ public abstract class g extends View implements i {
                     }
                     ValueAnimator duration = e(0.0f, 1.0f, new l0(6, this, bVar4)).setDuration(200L);
                     this.c0 = duration;
-                    duration.addListener(new le(8, this, bVar4));
+                    duration.addListener(new me(8, this, bVar4));
                     this.c0.start();
                 }
             }
@@ -958,9 +959,9 @@ public abstract class g extends View implements i {
                                 c10 = c11;
                                 TextPaint textPaint = this.P;
                                 if (f15 < f17) {
-                                    textPaint.setAlpha((int) (i11 * org.telegram.messenger.q.x(f17, f15, f17, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * g0.x(f17, f15, f17, f7) * this.h * f10));
                                 } else if (f15 > f16) {
-                                    textPaint.setAlpha((int) (i11 * org.telegram.messenger.q.x(f15, f16, f12, f7) * this.h * f10));
+                                    textPaint.setAlpha((int) (i11 * g0.x(f15, f16, f12, f7) * this.h * f10));
                                 } else {
                                     textPaint.setAlpha((int) (i11 * this.h * f10));
                                 }
@@ -1026,8 +1027,8 @@ public abstract class g extends View implements i {
                 }
                 Paint paint = this.L;
                 paint.setAlpha((int) ((this.n / 255.0f) * dVar.f * f10 * f7));
-                this.N.setAlpha((int) a6.C(dVar.f, this.f, f10, f7));
-                this.O.setAlpha((int) a6.C(dVar.f, this.f, f10, f7));
+                this.N.setAlpha((int) k3.C(dVar.f, this.f, f10, f7));
+                this.O.setAlpha((int) k3.C(dVar.f, this.f, f10, f7));
                 int measuredHeight = (getMeasuredHeight() - this.s) - n1;
                 for (i11 = !this.P0 ? 1 : 0; i11 < length; i11++) {
                     float measuredHeight2 = getMeasuredHeight() - this.s;
@@ -1043,8 +1044,8 @@ public abstract class g extends View implements i {
         }
         Paint paint2 = this.L;
         paint2.setAlpha((int) ((this.n / 255.0f) * dVar.f * f10 * f7));
-        this.N.setAlpha((int) a6.C(dVar.f, this.f, f10, f7));
-        this.O.setAlpha((int) a6.C(dVar.f, this.f, f10, f7));
+        this.N.setAlpha((int) k3.C(dVar.f, this.f, f10, f7));
+        this.O.setAlpha((int) k3.C(dVar.f, this.f, f10, f7));
         int measuredHeight3 = (getMeasuredHeight() - this.s) - n1;
         while (i11 < length) {
         }
@@ -1587,10 +1588,10 @@ public abstract class g extends View implements i {
                     f10 = this.z0.f;
                 }
                 this.L.setAlpha((int) ((this.n / 255.0f) * dVar.f * f10 * f7));
-                int C = (int) a6.C(dVar.f, this.f, f10, f7);
+                int C = (int) k3.C(dVar.f, this.f, f10, f7);
                 TextPaint textPaint2 = this.N;
                 textPaint2.setAlpha(C);
-                int C2 = (int) a6.C(dVar.f, this.f, f10, f7);
+                int C2 = (int) k3.C(dVar.f, this.f, f10, f7);
                 TextPaint textPaint3 = this.O;
                 textPaint3.setAlpha(C2);
                 int measuredHeight = getMeasuredHeight() - this.s;
@@ -1629,10 +1630,10 @@ public abstract class g extends View implements i {
         if (i10 != 2) {
         }
         this.L.setAlpha((int) ((this.n / 255.0f) * dVar.f * f10 * f7));
-        int C3 = (int) a6.C(dVar.f, this.f, f10, f7);
+        int C3 = (int) k3.C(dVar.f, this.f, f10, f7);
         TextPaint textPaint22 = this.N;
         textPaint22.setAlpha(C3);
-        int C22 = (int) a6.C(dVar.f, this.f, f10, f7);
+        int C22 = (int) k3.C(dVar.f, this.f, f10, f7);
         TextPaint textPaint32 = this.O;
         textPaint32.setAlpha(C22);
         int measuredHeight3 = getMeasuredHeight() - this.s;

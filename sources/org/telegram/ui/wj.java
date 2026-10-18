@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wj extends s4.r0 {
     public boolean b;
@@ -106,8 +106,8 @@ public final class wj extends s4.r0 {
                     View m10 = snVar.z0.m(N0);
                     if (m10 instanceof org.telegram.ui.Cells.u1) {
                         messageObject = ((org.telegram.ui.Cells.u1) m10).getMessageObject();
-                    } else if (m10 instanceof org.telegram.ui.Cells.x0) {
-                        messageObject = ((org.telegram.ui.Cells.x0) m10).getMessageObject();
+                    } else if (m10 instanceof org.telegram.ui.Cells.w0) {
+                        messageObject = ((org.telegram.ui.Cells.w0) m10).getMessageObject();
                     }
                     if (messageObject != null && snVar.N4 == messageObject.getId()) {
                         z10 = true;
@@ -242,7 +242,7 @@ public final class wj extends s4.r0 {
                 break;
             }
             View childAt = aVar.a.getChildAt(i14);
-            if (childAt instanceof org.telegram.ui.Cells.u1 ? aVar.a(((org.telegram.ui.Cells.u1) childAt).getMessageObject()) : childAt instanceof org.telegram.ui.Cells.x0 ? aVar.a(((org.telegram.ui.Cells.x0) childAt).getMessageObject()) : false) {
+            if (childAt instanceof org.telegram.ui.Cells.u1 ? aVar.a(((org.telegram.ui.Cells.u1) childAt).getMessageObject()) : childAt instanceof org.telegram.ui.Cells.w0 ? aVar.a(((org.telegram.ui.Cells.w0) childAt).getMessageObject()) : false) {
                 break;
             } else {
                 i14++;

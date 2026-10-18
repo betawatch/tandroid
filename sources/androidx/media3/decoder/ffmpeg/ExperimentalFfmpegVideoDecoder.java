@@ -8,11 +8,12 @@ import h2.f;
 import h2.h;
 import h2.j;
 import h2.l;
+import i2.d;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.List;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 final class ExperimentalFfmpegVideoDecoder extends l {
     public final String o;
@@ -20,7 +21,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
     public volatile int q;
     public final ArrayDeque r;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static final class PendingInput {
         public final ByteBuffer a;
         public final long b;
@@ -176,7 +177,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
         }
         int ffmpegRenderFrame = ffmpegRenderFrame(this.p, surface, videoDecoderOutputBuffer, videoDecoderOutputBuffer.width, videoDecoderOutputBuffer.height);
         if (ffmpegRenderFrame == -2 || ffmpegRenderFrame == -4) {
-            throw new FfmpegDecoderException(i0.a.j(ffmpegRenderFrame, "Buffer render error: "));
+            throw new FfmpegDecoderException(d.j(ffmpegRenderFrame, "Buffer render error: "));
         }
     }
 

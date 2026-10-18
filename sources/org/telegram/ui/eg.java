@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class eg implements Utilities.Callback2 {
         Object obj4 = this.c;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ai.tb((sn) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 17));
+                AndroidUtilities.runOnUIThread(new ai.ub((sn) obj4, this.b, (Boolean) obj, (TLRPC.WebPage) obj2, (TL_account.getWebPagePreview) obj3, 17));
                 break;
             case 1:
                 LaunchActivity launchActivity = (LaunchActivity) obj4;
@@ -52,7 +52,7 @@ public final /* synthetic */ class eg implements Utilities.Callback2 {
                     }
                     updates = null;
                 }
-                AndroidUtilities.runOnUIThread(new ai.tb(launchActivity, b80Var, tL_error, updates, this.b, 26));
+                AndroidUtilities.runOnUIThread(new ai.ub(launchActivity, b80Var, tL_error, updates, this.b, 26));
                 break;
             case 2:
                 PasskeysActivity passkeysActivity = (PasskeysActivity) obj4;
@@ -74,36 +74,36 @@ public final /* synthetic */ class eg implements Utilities.Callback2 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.w7 w7Var = (org.telegram.ui.Wallet.w7) obj4;
+                org.telegram.ui.Wallet.z7 z7Var = (org.telegram.ui.Wallet.z7) obj4;
                 TL_wallet.card cardVar = (TL_wallet.card) obj3;
                 TL_wallet.card cardVar2 = (TL_wallet.card) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                w7Var.a1 = 0;
+                z7Var.a1 = 0;
                 if (cardVar2 == null) {
                     if (cardVar != null) {
-                        org.telegram.ui.Wallet.w7.g0(i11, cardVar);
+                        org.telegram.ui.Wallet.z7.g0(i11, cardVar);
                     }
-                    if (!w7Var.V0) {
+                    if (!z7Var.V0) {
                         if (tL_error3 != null) {
-                            org.telegram.ui.Components.xc.a0(w7Var.a).f0(tL_error3, false);
+                            org.telegram.ui.Components.xc.a0(z7Var.a).f0(tL_error3, false);
                         }
-                        w7Var.Y0 = false;
-                        TL_wallet.card cardVar3 = w7Var.W0;
+                        z7Var.Y0 = false;
+                        TL_wallet.card cardVar3 = z7Var.W0;
                         if (cardVar3 != null) {
-                            w7Var.d(cardVar3);
+                            z7Var.d(cardVar3);
                             break;
                         }
                     }
                 } else {
-                    org.telegram.ui.Wallet.w7.g0(i11, cardVar2);
-                    if (!w7Var.V0) {
-                        if (!w7Var.Y0) {
-                            w7Var.d(cardVar2);
+                    org.telegram.ui.Wallet.z7.g0(i11, cardVar2);
+                    if (!z7Var.V0) {
+                        if (!z7Var.Y0) {
+                            z7Var.d(cardVar2);
                             break;
                         } else {
-                            w7Var.W0 = cardVar2;
-                            w7Var.X0 = org.telegram.ui.Wallet.w7.V(cardVar2);
-                            w7Var.S();
+                            z7Var.W0 = cardVar2;
+                            z7Var.X0 = org.telegram.ui.Wallet.z7.V(cardVar2);
+                            z7Var.S();
                             break;
                         }
                     }

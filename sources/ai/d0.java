@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -35,16 +35,16 @@ public final /* synthetic */ class d0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new z((k0) this.c, (org.telegram.ui.ActionBar.b2) this.d, tLObject, this.b, (Utilities.Callback) this.e, 0));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new b4((k7) this.c, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.b));
+                AndroidUtilities.runOnUIThread(new z3((k7) this.c, tLObject, (String) this.d, (TL_stars.InputSavedStarGift) this.e, tL_error, this.b));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new z((fa) this.c, tLObject, (MessageObject) this.d, this.b, (Runnable) this.e));
+                AndroidUtilities.runOnUIThread(new z((ga) this.c, tLObject, (MessageObject) this.d, this.b, (Runnable) this.e));
                 break;
             case 3:
                 AndroidUtilities.runOnUIThread(new z((org.telegram.ui.ActionBar.b2) this.d, tLObject, this.b, (AccountInstance) this.c, (MessagesStorage.BooleanCallback) this.e));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new b4((org.telegram.ui.ActionBar.n2) this.c, tLObject, (MessagesController.DialogFilter) this.d, tL_error, (Runnable) this.e, this.b));
+                AndroidUtilities.runOnUIThread(new z3((org.telegram.ui.ActionBar.n2) this.c, tLObject, (MessagesController.DialogFilter) this.d, tL_error, (Runnable) this.e, this.b));
                 break;
         }
     }

@@ -18,7 +18,7 @@ import org.telegram.ui.Components.vg;
 import org.telegram.ui.oi0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -107,7 +107,7 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                 }
                                 oi0 oi0Var2 = new oi0(qVar.getContext(), d6Var);
                                 qVar.O = oi0Var2;
-                                oi0Var2.setOnDismissListener(new ai.ab(qVar, 7));
+                                oi0Var2.setOnDismissListener(new ai.bb(qVar, 7));
                                 long p12 = tiVar.p1();
                                 MessageObject messageObject = snVar != null ? snVar.n5 : null;
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -135,7 +135,7 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                 messageObject2.isOutOwnerCached = Boolean.TRUE;
                                 messageObject2.generateLayout(null);
                                 messageObject2.notime = true;
-                                qVar.O.q(org.telegram.messenger.q.k(messageObject2));
+                                qVar.O.q(org.telegram.messenger.g0.k(messageObject2));
                                 vg sendButton = b4Var.getSendButton();
                                 sendButton.setScaleX(1.0f);
                                 sendButton.setScaleY(1.0f);
@@ -153,7 +153,7 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                 i80 F2 = i80.F(qVar, d6Var, sendButton);
                                 boolean z12 = (snVar == null || !UserObject.isUserSelf(snVar.i())) ? false : z10;
                                 if (snVar != null && snVar.G6()) {
-                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.s3(qVar, p12, 14), false);
+                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.r3(qVar, p12, 14), false);
                                     if (!z12 && p12 > 0) {
                                         F2.c(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new ki.d(qVar, 0), false);
                                     }

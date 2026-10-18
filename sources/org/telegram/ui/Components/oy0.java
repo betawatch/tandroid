@@ -47,7 +47,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int u0 = 0;
@@ -146,7 +146,7 @@ public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             tL_messages_getAttachedStickers.media = tL_inputStickeredMediaDocument;
         }
         org.telegram.ui.zr0 zr0Var = (org.telegram.ui.zr0) this;
-        this.f0 = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getAttachedStickers, new ai.x2(zr0Var, obj, tL_messages_getAttachedStickers, new org.telegram.ui.xc(22, zr0Var, tL_messages_getAttachedStickers), 12));
+        this.f0 = ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getAttachedStickers, new ai.y2(zr0Var, obj, tL_messages_getAttachedStickers, new org.telegram.ui.xc(22, zr0Var, tL_messages_getAttachedStickers), 12));
         s0(context);
     }
 
@@ -258,7 +258,7 @@ public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             oy0Var.dismiss();
             org.telegram.ui.ActionBar.n2 n2Var = oy0Var.L;
             if (n2Var != null) {
-                org.telegram.messenger.wh.q(R.string.AddStickersNotFound, xc.a0(n2Var), null);
+                org.telegram.messenger.kk.q(R.string.AddStickersNotFound, xc.a0(n2Var), null);
                 return;
             }
             return;
@@ -291,7 +291,7 @@ public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
     public static /* synthetic */ void H(oy0 oy0Var, String str, TextView textView) {
         TLRPC.TL_stickers_checkShortName tL_stickers_checkShortName = new TLRPC.TL_stickers_checkShortName();
         tL_stickers_checkShortName.short_name = str;
-        oy0Var.p0 = ConnectionsManager.getInstance(oy0Var.currentAccount).sendRequest(tL_stickers_checkShortName, new ai.p2(oy0Var, str, textView, 17), 2);
+        oy0Var.p0 = ConnectionsManager.getInstance(oy0Var.currentAccount).sendRequest(tL_stickers_checkShortName, new ai.q2(oy0Var, str, textView, 17), 2);
     }
 
     public static void I(oy0 oy0Var) {
@@ -386,7 +386,7 @@ public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             ArrayList arrayList2 = new ArrayList();
             ArrayList arrayList3 = new ArrayList();
             arrayList.add(LocaleController.getString(R.string.StickersCreateNewSticker));
-            org.telegram.ui.Cells.t0.m(R.drawable.menu_sticker_add, 0, arrayList3, arrayList2);
+            org.telegram.ui.Cells.c1.m(R.drawable.menu_sticker_add, 0, arrayList3, arrayList2);
             arrayList.add(LocaleController.getString(R.string.StickersAddAnExistingSticker));
             arrayList3.add(Integer.valueOf(R.drawable.menu_sticker_select));
             arrayList2.add(1);
@@ -531,7 +531,7 @@ public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         org.telegram.ui.sn snVar = n2Var instanceof org.telegram.ui.sn ? (org.telegram.ui.sn) n2Var : null;
         boolean z10 = (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || !stickerSet.creator) ? false : true;
         if (!MessageObject.isStaticStickerDocument(document)) {
-            AndroidUtilities.runOnUIThread(new ai.e2(n2Var, tL_messages_stickerSet, document, snVar, z10, 19), 300L);
+            AndroidUtilities.runOnUIThread(new ei.s1((Object) n2Var, (Object) tL_messages_stickerSet, (Object) document, (Object) snVar, z10, 18), 300L);
             return;
         }
         ArrayList arrayList = new ArrayList();
@@ -539,7 +539,7 @@ public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         if (pathToAttach == null || !pathToAttach.exists()) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new ai.m4(pathToAttach, arrayList, n2Var, snVar, document, z10, tL_messages_stickerSet), 300L);
+        AndroidUtilities.runOnUIThread(new ig.r0(pathToAttach, arrayList, n2Var, snVar, document, z10, tL_messages_stickerSet), 300L);
     }
 
     public static /* synthetic */ void q(org.telegram.ui.zr0 zr0Var, Object obj, TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers, org.telegram.ui.xc xcVar, TLObject tLObject, TLRPC.TL_error tL_error) {
@@ -1469,7 +1469,7 @@ public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             marginLayoutParams3.bottomMargin = dp;
             marginLayoutParams4.bottomMargin = dp;
             if (this.s.getAlpha() < 1.0f) {
-                org.telegram.messenger.wh.t(this.s.animate().alpha(1.0f), bs.h, 240L);
+                org.telegram.messenger.kk.t(this.s.animate().alpha(1.0f), bs.h, 240L);
             }
         } else {
             q6 q6Var2 = this.s;
@@ -1488,7 +1488,7 @@ public class oy0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             marginLayoutParams3.bottomMargin = dp4;
             marginLayoutParams4.bottomMargin = dp4;
             if (this.s.getAlpha() < 1.0f) {
-                org.telegram.messenger.wh.t(this.s.animate().alpha(1.0f), bs.h, 240L);
+                org.telegram.messenger.kk.t(this.s.animate().alpha(1.0f), bs.h, 240L);
             }
         }
         this.containerView.requestLayout();

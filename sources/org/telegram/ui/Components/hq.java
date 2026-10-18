@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hq implements Runnable {
     public final /* synthetic */ int a;
@@ -297,8 +297,8 @@ public final /* synthetic */ class hq implements Runnable {
                 break;
             case 25:
                 l60 l60Var = (l60) obj;
-                si.s0 s0Var = l60Var.R;
-                if (s0Var != null && s0Var.a == 3) {
+                si.r0 r0Var = l60Var.R;
+                if (r0Var != null && r0Var.a == 3) {
                     long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
                     long j11 = l60Var.F0;
                     if (j11 == 0 || elapsedRealtimeNanos - j11 >= 70000000) {

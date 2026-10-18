@@ -1,6 +1,6 @@
 package org.telegram.ui.Cells;
 
-import ai.ld;
+import ai.md;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j4 {
     public int A;
@@ -245,13 +245,13 @@ public final class j4 {
             float dp5 = AndroidUtilities.dp(32.0f);
             float f27 = this.d;
             float f28 = this.g;
-            float z11 = com.google.android.gms.internal.cast.a6.z(f28, dp4, 2.0f, f27);
+            float z11 = com.google.android.gms.internal.play_billing.k3.z(f28, dp4, 2.0f, f27);
             f7 = 11.32f;
             float f29 = this.e;
             f10 = 5.0f;
             float f30 = this.h;
             f11 = 17.0f;
-            rectF.set(z11, com.google.android.gms.internal.cast.a6.z(f30, dp5, 2.0f, f29), org.telegram.messenger.q.a(f28, dp4, 2.0f, f27), org.telegram.messenger.q.a(f30, dp5, 2.0f, f29));
+            rectF.set(z11, com.google.android.gms.internal.play_billing.k3.z(f30, dp5, 2.0f, f29), org.telegram.messenger.g0.a(f28, dp4, 2.0f, f27), org.telegram.messenger.g0.a(f30, dp5, 2.0f, f29));
             path.rewind();
             float f31 = dp5 / 2.0f;
             path.addRoundRect(rectF, f31, f31, Path.Direction.CW);
@@ -1168,16 +1168,16 @@ public final class j4 {
             j4Var.g = (int) ((h4Var4.d / 1000.0f) * j4Var.f);
             j4Var.h = (int) (h4Var4.g * h4Var4.i);
             if (j4Var.i) {
-                d11 d11Var = new d11(ld.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                d11 d11Var = new d11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 j4Var.q = d11Var;
                 if (d11Var.c > j4Var.g - AndroidUtilities.dp(30.0f)) {
-                    j4Var.q = new d11(ld.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                    j4Var.q = new d11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia3.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
             if (j4Var.r == null || j4Var.s != tL_messageMediaPaidMedia3.stars_amount) {
                 long j10 = tL_messageMediaPaidMedia3.stars_amount;
                 j4Var.s = j10;
-                j4Var.r = new d11(ld.S0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, AndroidUtilities.bold());
+                j4Var.r = new d11(md.S0(LocaleController.formatPluralStringComma("PaidMediaPrice", (int) j10), 0.9f, null), 12.0f, AndroidUtilities.bold());
             }
         }
     }
@@ -1328,10 +1328,10 @@ public final class j4 {
         if (this.i) {
             TLRPC.TL_messageMediaPaidMedia tL_messageMediaPaidMedia = messageObject == null ? null : (TLRPC.TL_messageMediaPaidMedia) messageObject.messageOwner.media;
             if (tL_messageMediaPaidMedia != null) {
-                d11 d11Var = new d11(ld.Y0(z16, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                d11 d11Var = new d11(md.Y0(z16, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 this.q = d11Var;
                 if (d11Var.c > this.g - AndroidUtilities.dp(30.0f)) {
-                    this.q = new d11(ld.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                    this.q = new d11(md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContentShort", (int) tL_messageMediaPaidMedia.stars_amount), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
             }
         }

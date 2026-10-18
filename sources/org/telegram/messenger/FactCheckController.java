@@ -35,7 +35,7 @@ import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.jw0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class FactCheckController {
     private static org.telegram.ui.ActionBar.b2 currentDialog;
@@ -48,7 +48,7 @@ public class FactCheckController {
     private final ArrayList<Key> loading = new ArrayList<>();
     private final Runnable loadMissingRunnable = new h1(this, 17);
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Key {
         public final long dialogId;
         public final long hash;
@@ -140,7 +140,7 @@ public class FactCheckController {
             if (U != null) {
                 boolean z11 = tL_textWithEntities == null || TextUtils.isEmpty(tL_textWithEntities.text);
                 if (z11 || !z10) {
-                    q.q(z11 ? R.string.FactCheckDeleted : R.string.FactCheckEdited, org.telegram.ui.Components.xc.a0(U), z11 ? R.raw.ic_delete : R.raw.contact_check, 36);
+                    g0.q(z11 ? R.string.FactCheckDeleted : R.string.FactCheckEdited, org.telegram.ui.Components.xc.a0(U), z11 ? R.raw.ic_delete : R.raw.contact_check, 36);
                 }
             }
         }
@@ -149,7 +149,7 @@ public class FactCheckController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$applyFactCheck$16(TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10, org.telegram.ui.ActionBar.b2 b2Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new ai.e2(this, tLObject, tL_textWithEntities, z10, b2Var));
+        AndroidUtilities.runOnUIThread(new ei.s1(this, tLObject, tL_textWithEntities, z10, b2Var, 4));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

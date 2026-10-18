@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class kk0 {
     public boolean a;
@@ -34,7 +34,7 @@ public final class kk0 {
         }
         String lowerCase = documentExtension.toLowerCase();
         if (!str.endsWith(lowerCase)) {
-            str = a1.g.D(str, ".", lowerCase);
+            str = a1.g.C(str, ".", lowerCase);
         }
         File file = new File(AndroidUtilities.getCacheDir(), str);
         if (!file.exists()) {

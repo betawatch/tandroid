@@ -1,6 +1,6 @@
 package yh;
 
-import ai.x9;
+import ai.y9;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ import org.telegram.ui.Components.is0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class j2 extends s4.v {
     public final /* synthetic */ is0 d;
@@ -67,11 +67,11 @@ public final class j2 extends s4.v {
             m2Var.e.l(b10, b11);
             is0Var.e.n(m2Var.e.d);
         } else {
-            x9 x9Var = m2Var.e;
-            if (x9Var.q == null) {
-                x9Var.q = x9Var.i();
+            y9 y9Var = m2Var.e;
+            if (y9Var.q == null) {
+                y9Var.q = y9Var.i();
             }
-            x9Var.l(b10, b11);
+            y9Var.l(b10, b11);
         }
         h2Var.W2.p(b10, b11);
         h2Var.W2.S();
@@ -100,22 +100,22 @@ public final class j2 extends s4.v {
             }
             return;
         }
-        x9 x9Var = m2Var.e;
-        if (x9Var != null) {
-            ArrayList arrayList = x9Var.q;
+        y9 y9Var = m2Var.e;
+        if (y9Var != null) {
+            ArrayList arrayList = y9Var.q;
             if (arrayList != null) {
-                ArrayList i11 = x9Var.i();
+                ArrayList i11 = y9Var.i();
                 if (arrayList.size() == i11.size()) {
                     for (int i12 = 0; i12 < arrayList.size(); i12++) {
                         if (arrayList.get(i12) == i11.get(i12)) {
                         }
                     }
                 }
-                x9Var.m();
-                x9Var.q = null;
+                y9Var.m();
+                y9Var.q = null;
                 return;
             }
-            x9Var.q = null;
+            y9Var.q = null;
         }
     }
 

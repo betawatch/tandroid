@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b {
     public static boolean i = true;
@@ -31,7 +31,7 @@ public final class b {
             str = str.concat(" expiresInSecs");
         }
         if (((Long) this.g) == null) {
-            str = r.c.u(str, " tokenCreationEpochInSecs");
+            str = r4.c.u(str, " tokenCreationEpochInSecs");
         }
         if (str.isEmpty()) {
             return new sa.a((String) this.c, this.b, (String) this.d, (String) this.e, ((Long) this.f).longValue(), ((Long) this.g).longValue(), (String) this.h);

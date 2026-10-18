@@ -26,7 +26,7 @@ import org.telegram.ui.of0;
 import org.telegram.ui.wy0;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s7 implements BillingController.ProductDetailsResponseListenerLegacy, ci.u9, OnFailureListener, org.telegram.ui.ActionBar.a2, md0, c5.p, MediaDataController.KeywordResultCallback {
     public final /* synthetic */ Object a;
@@ -107,7 +107,7 @@ public final /* synthetic */ class s7 implements BillingController.ProductDetail
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
     public void onProductDetailsResponse(c5.i iVar, List list) {
-        AndroidUtilities.runOnUIThread(new u7((fa) this.a, list, (sc) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, iVar, (Activity) this.e, 2));
+        AndroidUtilities.runOnUIThread(new u7((ga) this.a, list, (tc) this.b, (TLRPC.TL_inputStorePaymentStarsGift) this.c, (TL_stars.TL_starsGiftOption) this.d, iVar, (Activity) this.e, 2));
     }
 
     @Override // org.telegram.ui.Components.md0

@@ -6,7 +6,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ln0 {
     public static final float A;
@@ -45,11 +45,11 @@ public final class ln0 {
             float f12 = i10 / 100.0f;
             float f13 = 1.0f;
             while (true) {
-                float z10 = com.google.android.gms.internal.cast.a6.z(f13, f11, 2.0f, f11);
+                float z10 = com.google.android.gms.internal.play_billing.k3.z(f13, f11, 2.0f, f11);
                 float f14 = 1.0f - z10;
                 f7 = 3.0f * z10 * f14;
                 f10 = z10 * z10 * z10;
-                float A2 = com.google.android.gms.internal.cast.a6.A(z10, x, f14 * w, f7) + f10;
+                float A2 = com.google.android.gms.internal.play_billing.k3.A(z10, x, f14 * w, f7) + f10;
                 if (Math.abs(A2 - f12) < 1.0E-5d) {
                     break;
                 } else if (A2 > f12) {
@@ -73,7 +73,7 @@ public final class ln0 {
 
     public static float e(float f7) {
         float f10 = f7 * z;
-        return (f10 < 1.0f ? f10 - (1.0f - ((float) Math.exp(-f10))) : com.google.android.gms.internal.cast.a6.x(1.0f, (float) Math.exp(1.0f - f10), 0.63212055f, 0.36787945f)) * A;
+        return (f10 < 1.0f ? f10 - (1.0f - ((float) Math.exp(-f10))) : com.google.android.gms.internal.play_billing.k3.y(1.0f, (float) Math.exp(1.0f - f10), 0.63212055f, 0.36787945f)) * A;
     }
 
     public final void a() {
@@ -110,13 +110,13 @@ public final class ln0 {
             int i13 = i12 + 1;
             float[] fArr = y;
             float f12 = fArr[i12];
-            float x10 = com.google.android.gms.internal.cast.a6.x(fArr[i13], f12, (f10 - f11) / ((i13 / 100.0f) - f11), f12);
-            int round = Math.round((this.d - r1) * x10) + this.b;
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(fArr[i13], f12, (f10 - f11) / ((i13 / 100.0f) - f11), f12);
+            int round = Math.round((this.d - r1) * y3) + this.b;
             this.j = round;
             int min = Math.min(round, this.g);
             this.j = min;
             this.j = Math.max(min, this.f);
-            int round2 = Math.round(x10 * (this.e - r1)) + this.c;
+            int round2 = Math.round(y3 * (this.e - r1)) + this.c;
             this.k = round2;
             int min2 = Math.min(round2, this.i);
             this.k = min2;

@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class q5 extends im0 implements p7 {
     public final /* synthetic */ int V2;
@@ -29,7 +29,7 @@ public abstract class q5 extends im0 implements p7 {
             default:
                 sn snVar = (sn) this.W2;
                 iArr[0] = ((int) snVar.s9) - AndroidUtilities.dp(4.0f);
-                iArr[1] = org.telegram.messenger.q.A(3.0f, snVar.x0.getPaddingBottom(), snVar.x0.getMeasuredHeight());
+                iArr[1] = org.telegram.messenger.g0.A(3.0f, snVar.x0.getPaddingBottom(), snVar.x0.getMeasuredHeight());
                 break;
         }
     }

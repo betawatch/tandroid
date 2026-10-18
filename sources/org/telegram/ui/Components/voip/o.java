@@ -12,7 +12,6 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
@@ -20,8 +19,8 @@ import org.telegram.ui.Components.n31;
 import org.telegram.ui.Components.yr;
 import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class o extends q2 {
     public float g0;
     public final /* synthetic */ ChatObject.Call h0;
@@ -184,7 +183,7 @@ public final class o extends q2 {
                 int dp2 = AndroidUtilities.dp(33.0f);
                 if (tVar.r || tVar.b) {
                     f10 = 10.0f;
-                    c10 = (int) r.c.c(AndroidUtilities.dp(39.0f), l0Var.c, AndroidUtilities.dp(10.0f), dp2);
+                    c10 = (int) r4.c.c(AndroidUtilities.dp(39.0f), l0Var.c, AndroidUtilities.dp(10.0f), dp2);
                 } else {
                     f10 = 10.0f;
                     c10 = (int) ((Math.max(1.0f - l0Var.c, (tVar.h || tVar.f) ? l0Var.n : f7) * AndroidUtilities.dp(10.0f)) + dp2);
@@ -291,7 +290,7 @@ public final class o extends q2 {
         if (tVar.w != call.videoNotAvailableParticipant) {
             canvas.save();
             if ((tVar.b || tVar.r) && !s50.F3 && !s50.G3) {
-                measuredHeight = a6.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
+                measuredHeight = com.google.android.gms.internal.play_billing.k3.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
             }
             f12 = 0.0f;
             canvas.translate(0.0f, measuredHeight);

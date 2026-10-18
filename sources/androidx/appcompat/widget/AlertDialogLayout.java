@@ -14,7 +14,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class AlertDialogLayout extends x1 {
     public AlertDialogLayout(Context context) {
@@ -70,7 +70,7 @@ public class AlertDialogLayout extends x1 {
                 WeakHashMap weakHashMap = i0.a;
                 int absoluteGravity = Gravity.getAbsoluteGravity(i20, getLayoutDirection()) & 7;
                 if (absoluteGravity == 1) {
-                    C = i0.a.C(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) w1Var).leftMargin;
+                    C = i2.d.C(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) w1Var).leftMargin;
                     i14 = ((LinearLayout.LayoutParams) w1Var).rightMargin;
                 } else if (absoluteGravity != 5) {
                     i15 = ((LinearLayout.LayoutParams) w1Var).leftMargin + paddingLeft;

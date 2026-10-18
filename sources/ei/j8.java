@@ -22,7 +22,7 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.nc0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class j8 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public f8 X;
@@ -32,7 +32,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
     public final d b0;
     public boolean c0;
     public boolean d0;
-    public ai.n2 e0;
+    public ai.o2 e0;
     public long f0;
     public TLRPC.WebPage g0;
     public boolean h0;
@@ -44,10 +44,10 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
     public boolean n0;
     public boolean o0;
 
-    public j8(Context context, t5 t5Var, r6 r6Var, ai.n2 n2Var) {
+    public j8(Context context, t5 t5Var, r6 r6Var, ai.o2 o2Var) {
         super(context, null, true, true, 2, t5Var);
         this.k0 = new c8(this, 0);
-        this.e0 = n2Var;
+        this.e0 = o2Var;
         fixNavigationBar();
         L();
         this.I = AndroidUtilities.dp(4.0f);
@@ -63,8 +63,8 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
         g3Var.setText("https://");
         g3Var.setSelection(8);
         TextView textView = new TextView(getContext());
-        com.google.android.gms.internal.cast.a6.m(12.0f, 1, textView);
-        textView.setPadding(org.telegram.ui.Cells.t0.f(10.0f, R.string.Paste, textView), 0, AndroidUtilities.dp(10.0f), 0);
+        com.google.android.gms.internal.play_billing.k3.m(12.0f, 1, textView);
+        textView.setPadding(org.telegram.ui.Cells.c1.e(10.0f, R.string.Paste, textView), 0, AndroidUtilities.dp(10.0f), 0);
         textView.setGravity(17);
         int themedColor = getThemedColor(org.telegram.ui.ActionBar.h6.o6);
         textView.setTextColor(themedColor);

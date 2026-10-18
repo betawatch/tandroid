@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class tm0 extends Drawable {
     public long a;
@@ -42,7 +42,7 @@ public final class tm0 extends Drawable {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         Paint paint = this.c;
-        paint.setColor(i0.b.f(this.k, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ic, this.n), this.l));
+        paint.setColor(i0.a.f(this.k, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ic, this.n), this.l));
         int i10 = this.m;
         if (i10 != 255) {
             paint.setAlpha((int) ((paint.getAlpha() / 255.0f) * i10));

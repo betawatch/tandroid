@@ -1,56 +1,51 @@
 package ai;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TopicsController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b3 implements RequestDelegate {
+public final /* synthetic */ class b3 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ k7 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ b3(Object obj, Object obj2, long j10, long j11, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.e = obj2;
-        this.b = j10;
-        this.c = j11;
+    public /* synthetic */ b3(k7 k7Var, int i10, int i11) {
+        this.a = i11;
+        this.b = k7Var;
+        this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                k7.E0(this.b, this.c, (k7) this.d, (Utilities.Callback) this.e, tLObject, tL_error);
+                k7 k7Var = this.b;
+                int i10 = this.c;
+                k7Var.U0 = i10;
+                h5 h5Var = k7Var.Z;
+                h5Var.D(h5Var.getCurrentPosition() + (i10 > k7Var.U1() ? 1 : -1));
                 break;
             case 1:
-                ((MediaDataController) this.d).lambda$getMediaCounts$129((int[]) this.e, this.b, this.c, tLObject, tL_error);
+                k7 k7Var2 = this.b;
+                int i11 = this.c;
+                k7Var2.U0 = i11;
+                h5 h5Var2 = k7Var2.Z;
+                h5Var2.D(h5Var2.getCurrentPosition() + (i11 > k7Var2.U1() ? 1 : -1));
                 break;
             case 2:
-                ((MediaDataController) this.d).lambda$loadPinnedMessageInternal$164(this.b, this.c, (TLRPC.TL_channels_getMessages) this.e, tLObject, tL_error);
-                break;
-            case 3:
-                ((MessagesController) this.d).lambda$requestContactToken$479((Utilities.Callback) this.e, this.b, this.c, tLObject, tL_error);
+                k7 k7Var3 = this.b;
+                int i12 = this.c;
+                k7Var3.U0 = i12;
+                h5 h5Var3 = k7Var3.Z;
+                h5Var3.D(h5Var3.getCurrentPosition() + (i12 > k7Var3.U1() ? 1 : -1));
                 break;
             default:
-                ((TopicsController) this.d).lambda$getTopicRepliesCount$30((TLRPC.TL_forumTopic) this.e, this.b, this.c, tLObject, tL_error);
+                k7 k7Var4 = this.b;
+                int i13 = this.c;
+                k7Var4.U0 = i13;
+                h5 h5Var4 = k7Var4.Z;
+                h5Var4.D(h5Var4.getCurrentPosition() + (i13 > k7Var4.U1() ? 1 : -1));
                 break;
         }
-    }
-
-    public /* synthetic */ b3(MediaDataController mediaDataController, long j10, long j11, TLRPC.TL_channels_getMessages tL_channels_getMessages) {
-        this.a = 2;
-        this.d = mediaDataController;
-        this.b = j10;
-        this.c = j11;
-        this.e = tL_channels_getMessages;
     }
 }

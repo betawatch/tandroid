@@ -30,10 +30,10 @@ import m.s3;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.Components.kd0;
-import u2.a1;
-import u2.r1;
+import u2.q1;
+import u2.z0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements qa.a, r9.d, d9.k, e2.j, a2, kd0, q3.g, Continuation {
     public final /* synthetic */ int a;
@@ -181,9 +181,9 @@ public final /* synthetic */ class a implements qa.a, r9.d, d9.k, e2.j, a2, kd0,
             i12 = 3;
             r12 = str2;
         }
-        String g10 = r.c.g("Mapping file ID is: ", string);
+        String h = r4.c.h("Mapping file ID is: ", string);
         if (Log.isLoggable("FirebaseCrashlytics", i12)) {
-            Log.d("FirebaseCrashlytics", g10, r12);
+            Log.d("FirebaseCrashlytics", h, r12);
         }
         int size = arrayList.size();
         int i16 = i11;
@@ -227,7 +227,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, d9.k, e2.j, a2, kd0,
             lVar.a = p5;
             String str11 = Build.MANUFACTURER;
             String str12 = x9.u.h;
-            String D = a1.g.D(str11.replaceAll(str12, ""), "/", Build.MODEL.replaceAll(str12, ""));
+            String C = a1.g.C(str11.replaceAll(str12, ""), "/", Build.MODEL.replaceAll(str12, ""));
             String replaceAll = Build.VERSION.INCREMENTAL.replaceAll(str12, "");
             String replaceAll2 = Build.VERSION.RELEASE.replaceAll(str12, "");
             int e12 = x9.h.e(context, "com.google.firebase.crashlytics.mapping_file_id", "string");
@@ -257,7 +257,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, d9.k, e2.j, a2, kd0,
                 arrayList2 = arrayList2;
             }
             String sb4 = sb3.toString();
-            ea.d dVar3 = new ea.d(str4, D, replaceAll, replaceAll2, uVar, sb4.length() > 0 ? x9.h.i(sb4) : null, str10, str9, r.c.b(c11 != null ? 4 : i10));
+            ea.d dVar3 = new ea.d(str4, C, replaceAll, replaceAll2, uVar, sb4.length() > 0 ? x9.h.i(sb4) : null, str10, str9, r4.c.b(c11 != null ? 4 : i10));
             ea.b bVar3 = new ea.b();
             AtomicReference atomicReference = new AtomicReference();
             bVar3.h = atomicReference;
@@ -436,7 +436,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, d9.k, e2.j, a2, kd0,
     public void accept(Object obj) {
         switch (this.a) {
             case 8:
-                ((a1) obj).b.release();
+                ((z0) obj).b.release();
                 break;
             default:
                 ((ExecutorService) obj).shutdown();
@@ -450,7 +450,7 @@ public final /* synthetic */ class a implements qa.a, r9.d, d9.k, e2.j, a2, kd0,
             case 6:
                 return ((c3.o) obj).b().getClass().getSimpleName();
             case 7:
-                return e9.n0.u(e9.s.x(((u2.e0) obj).r().b, new a(9)));
+                return e9.n0.u(e9.s.x(((u2.d0) obj).r().b, new a(9)));
             case 9:
                 return Integer.valueOf(((p1) obj).c);
             case 22:
@@ -460,11 +460,11 @@ public final /* synthetic */ class a implements qa.a, r9.d, d9.k, e2.j, a2, kd0,
             case 24:
                 return (w3.q) obj;
             default:
-                r1 r1Var = (r1) obj;
-                r1Var.getClass();
+                q1 q1Var = (q1) obj;
+                q1Var.getClass();
                 Bundle bundle = new Bundle();
-                String str = r1.e;
-                x1 x1Var = r1Var.b;
+                String str = q1.e;
+                x1 x1Var = q1Var.b;
                 ArrayList<? extends Parcelable> arrayList = new ArrayList<>(x1Var.d);
                 e9.l0 listIterator = x1Var.listIterator(0);
                 while (listIterator.hasNext()) {

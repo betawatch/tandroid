@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class o4 extends Animation {
     public final /* synthetic */ int a;
@@ -25,18 +25,18 @@ public final class o4 extends Animation {
         switch (this.a) {
             case 0:
                 float f10 = this.b;
-                float x10 = com.google.android.gms.internal.cast.a6.x(this.c, f10, f7, f10);
+                float y3 = com.google.android.gms.internal.play_billing.k3.y(this.c, f10, f7, f10);
                 v4 v4Var = this.e;
-                v4Var.i.setX(x10 + (v4Var.f.getWidth() - this.d));
+                v4Var.i.setX(y3 + (v4Var.f.getWidth() - this.d));
                 float f11 = 1.0f - f7;
                 v4Var.l.setAlpha(f11);
                 v4Var.j.setAlpha(f11);
                 break;
             default:
                 float f12 = this.b;
-                float x11 = com.google.android.gms.internal.cast.a6.x(this.c, f12, f7, f12);
+                float y10 = com.google.android.gms.internal.play_billing.k3.y(this.c, f12, f7, f12);
                 v4 v4Var2 = this.e;
-                v4Var2.i.setX(x11 + (v4Var2.f.getWidth() - this.d));
+                v4Var2.i.setX(y10 + (v4Var2.f.getWidth() - this.d));
                 v4Var2.l.setAlpha(f7);
                 v4Var2.j.setAlpha(f7);
                 break;

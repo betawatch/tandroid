@@ -40,7 +40,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xe0 implements Runnable {
     public final /* synthetic */ int a;
@@ -361,7 +361,7 @@ public final /* synthetic */ class xe0 implements Runnable {
                     org.telegram.ui.ActionBar.d5 parentLayout = fg0Var3.getParentLayout();
                     if (parentLayout != null && parentLayout.getFragmentStack() != null) {
                         List fragmentStack = parentLayout.getFragmentStack();
-                        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.isEmpty() ? null : (org.telegram.ui.ActionBar.n2) r.c.e(1, fragmentStack);
+                        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.isEmpty() ? null : (org.telegram.ui.ActionBar.n2) r4.c.f(1, fragmentStack);
                         ArrayList arrayList3 = new ArrayList(fragmentStack);
                         int size = arrayList3.size();
                         int i41 = 0;
@@ -369,11 +369,11 @@ public final /* synthetic */ class xe0 implements Runnable {
                             Object obj = arrayList3.get(i41);
                             i41++;
                             org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj;
-                            if ((n2Var2 instanceof fo0) && n2Var2 != n2Var) {
+                            if ((n2Var2 instanceof go0) && n2Var2 != n2Var) {
                                 n2Var2.removeSelfFromStack();
                             }
                         }
-                        if (n2Var instanceof fo0) {
+                        if (n2Var instanceof go0) {
                             z12 = true;
                             ((ActionBarLayout) parentLayout).l(true, false);
                             fg0Var3.g1(of0Var.d, (TLRPC.auth_SentCode) tLObject3, z12);
@@ -511,7 +511,7 @@ public final /* synthetic */ class xe0 implements Runnable {
                         if (DialogObject.isEncryptedDialog(gk0Var.d)) {
                             i19 = i29;
                             arrayList = arrayList6;
-                            TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(notificationsCustomSettingsActivity2.getMessagesController(), gk0Var.d);
+                            TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(notificationsCustomSettingsActivity2.getMessagesController(), gk0Var.d);
                             if (l4 != null) {
                                 i20 = i31;
                                 strArr = strArr3;
@@ -550,7 +550,7 @@ public final /* synthetic */ class xe0 implements Runnable {
                                         i21 = i19;
                                         String str7 = strArr4[i21];
                                         notificationsCustomSettingsActivity = notificationsCustomSettingsActivity2;
-                                        if ((str7 == null || !(str7.startsWith(str6) || org.telegram.messenger.wh.w(" ", str6, strArr4[i21]))) && (translitString == null || !(translitString.startsWith(str6) || org.telegram.messenger.wh.w(" ", str6, translitString)))) {
+                                        if ((str7 == null || !(str7.startsWith(str6) || org.telegram.messenger.g0.w(" ", str6, strArr4[i21]))) && (translitString == null || !(translitString.startsWith(str6) || org.telegram.messenger.g0.w(" ", str6, translitString)))) {
                                             String str8 = strArr4[i47];
                                             i23 = (str8 == null || !str8.startsWith(str6)) ? i46 : 2;
                                         } else {
@@ -644,7 +644,7 @@ public final /* synthetic */ class xe0 implements Runnable {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xm0Var.getParentActivity());
                     alertDialog$Builder.a.T = LocaleController.formatString("RestoreEmailSent", R.string.RestoreEmailSent, tL_auth_passwordRecovery.email_pattern);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.RestoreEmailSentTitle);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new ov(28, xm0Var, tL_auth_passwordRecovery));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new zu(29, xm0Var, tL_auth_passwordRecovery));
                     Dialog showDialog = xm0Var.showDialog(alertDialog$Builder.a);
                     if (showDialog != null) {
                         showDialog.setCanceledOnTouchOutside(false);
@@ -755,19 +755,19 @@ public final /* synthetic */ class xe0 implements Runnable {
                 }
                 break;
             case 15:
-                fo0.U((fo0) this.b, (TL_account.Password) this.c, (byte[]) this.d);
+                go0.U((go0) this.b, (TL_account.Password) this.c, (byte[]) this.d);
                 break;
             case 16:
-                fo0.b0((fo0) this.b, (TLRPC.TL_error) this.c, (TLRPC.TL_payments_sendPaymentForm) this.d);
+                go0.b0((go0) this.b, (TLRPC.TL_error) this.c, (TLRPC.TL_payments_sendPaymentForm) this.d);
                 break;
             case 17:
-                fo0 fo0Var = (fo0) this.b;
+                go0 go0Var = (go0) this.b;
                 TLRPC.TL_payments_validatedRequestedInfo tL_payments_validatedRequestedInfo = (TLRPC.TL_payments_validatedRequestedInfo) this.c;
                 zg0 zg0Var = (zg0) this.d;
-                fo0Var.E0 = tL_payments_validatedRequestedInfo;
+                go0Var.E0 = tL_payments_validatedRequestedInfo;
                 zg0Var.run();
-                fo0Var.D0(false);
-                fo0Var.H0(true, false);
+                go0Var.D0(false);
+                go0Var.H0(true, false);
                 break;
             case 18:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;
@@ -785,12 +785,12 @@ public final /* synthetic */ class xe0 implements Runnable {
             case 19:
                 PhotoViewer photoViewer2 = (PhotoViewer) this.b;
                 Bitmap bitmap = (Bitmap) this.c;
-                rq0 rq0Var = (rq0) this.d;
+                sq0 sq0Var = (sq0) this.d;
                 photoViewer2.C4.setImageBitmap(bitmap);
                 photoViewer2.t5.setUndoCutState(true);
                 photoViewer2.a3(true, true);
-                AndroidUtilities.cancelRunOnUIThread(rq0Var);
-                AndroidUtilities.runOnUIThread(rq0Var, 800L);
+                AndroidUtilities.cancelRunOnUIThread(sq0Var);
+                AndroidUtilities.runOnUIThread(sq0Var, 800L);
                 break;
             case 20:
                 PhotoViewer photoViewer3 = (PhotoViewer) this.b;
@@ -847,7 +847,7 @@ public final /* synthetic */ class xe0 implements Runnable {
                             sb2.append(" h = ");
                             sb2.append(rt0Var.d.d8);
                             sb2.append(" r = ");
-                            org.telegram.messenger.q.o(rt0Var.d.b8, sb2);
+                            org.telegram.messenger.g0.o(rt0Var.d.b8, sb2);
                         }
                         rt0Var.d.O7.invalidate();
                     } else {
@@ -889,7 +889,7 @@ public final /* synthetic */ class xe0 implements Runnable {
                     org.telegram.ui.Components.xc.d0(tL_error7);
                     break;
                 } else if (!(tLObject6 instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.messenger.wh.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(premiumPreviewFragment), null);
+                    org.telegram.messenger.kk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(premiumPreviewFragment), null);
                     break;
                 }
                 break;

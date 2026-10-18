@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d11;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k3 {
     public final Path A;
@@ -87,7 +87,7 @@ public final class k3 {
         if (l4Var != null) {
             ArrayList arrayList = l4Var.d0;
             if (!arrayList.isEmpty()) {
-                Object h = i0.a.h(1, arrayList);
+                Object h = i2.d.h(1, arrayList);
                 if ((h instanceof TLRPC.WebPage) && ((page = ((TLRPC.WebPage) h).cached_page) == null || page.local == null)) {
                     this.s = view.getContext().getResources().getDrawable(R.drawable.msg_instant).mutate();
                 }
@@ -108,7 +108,7 @@ public final class k3 {
     public final void a(Canvas canvas, RectF rectF, float f7, float f10, float f11) {
         float f12;
         Canvas canvas2 = canvas;
-        int f13 = i0.b.f(this.w, this.m, this.n);
+        int f13 = i0.a.f(this.w, this.m, this.n);
         Paint paint = this.g;
         paint.setColor(f13);
         float f14 = f10 * 255.0f;
@@ -142,13 +142,13 @@ public final class k3 {
             canvas2.restore();
         }
         float lerp2 = AndroidUtilities.lerp(this.o ? 1.0f : 0.0f, this.p ? 1.0f : 0.0f, this.w);
-        int f17 = i0.b.f(lerp2, -16777216, -1);
+        int f17 = i0.a.f(lerp2, -16777216, -1);
         Paint paint3 = this.i;
         paint3.setColor(f17);
         paint3.setStrokeWidth(AndroidUtilities.dp(2.0f));
         canvas2.save();
         canvas2.translate(rectF.left, rectF.centerY());
-        int f18 = i0.b.f(lerp2, 553648127, 553648127);
+        int f18 = i0.a.f(lerp2, 553648127, 553648127);
         int dp = AndroidUtilities.dp(25.0f) + (-AndroidUtilities.dp(25.0f));
         int i11 = -AndroidUtilities.dp(25.0f);
         int dp2 = AndroidUtilities.dp(25.0f) + AndroidUtilities.dp(25.0f);
@@ -208,7 +208,7 @@ public final class k3 {
         if (d11Var != null) {
             d11Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
             f12 = 1.0f;
-            d11Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.q.z(1.0f, this.w, f10, f11), f17, canvas2);
+            d11Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.g0.z(1.0f, this.w, f10, f11), f17, canvas2);
         } else {
             f12 = 1.0f;
         }

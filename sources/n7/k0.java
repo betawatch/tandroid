@@ -3,7 +3,7 @@ package n7;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class k0 {
     public final String a;
@@ -127,7 +127,7 @@ public final class k0 {
                 throw new IllegalArgumentException("x (0) must be > 0");
             }
         } catch (ArithmeticException e) {
-            throw new IllegalArgumentException(i0.a.j(cArr.length, "Illegal alphabet length "), e);
+            throw new IllegalArgumentException(i2.d.j(cArr.length, "Illegal alphabet length "), e);
         }
     }
 }

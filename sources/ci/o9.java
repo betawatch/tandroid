@@ -26,7 +26,7 @@ import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class o9 extends jw0 {
     public final Path A0;
@@ -112,7 +112,7 @@ public final class o9 extends jw0 {
         RectF rectF5 = aaVar.T;
         x9 x9Var = aaVar.s0;
         float f24 = 1.0f;
-        canvas.drawColor(i0.b.o(-16777216, (int) ((((1.0f - aaVar.V) * 0.5f) + 0.5f) * aaVar.U * 255.0f)));
+        canvas.drawColor(i0.a.o(-16777216, (int) ((((1.0f - aaVar.V) * 0.5f) + 0.5f) * aaVar.U * 255.0f)));
         int i13 = 0;
         if (aaVar.b) {
             boolean z12 = (1.0f - aaVar.V) * aaVar.U == 1.0f;
@@ -194,7 +194,7 @@ public final class o9 extends jw0 {
                 if (aaVar.H0 && aaVar.V0) {
                     float clamp = 1.0f - Utilities.clamp(((1.0f - f28) - 0.8f) / 0.100000024f, 1.0f, 0.0f);
                     f12 = 0.15f;
-                    f13 = Utilities.clamp(com.google.android.gms.internal.cast.a6.D(1.0f, clamp, 0.05f, f28), 1.0f, 0.0f);
+                    f13 = Utilities.clamp(com.google.android.gms.internal.play_billing.k3.D(1.0f, clamp, 0.05f, f28), 1.0f, 0.0f);
                     i11 = 2;
                     aaVar.v.setAlpha(clamp);
                 } else {

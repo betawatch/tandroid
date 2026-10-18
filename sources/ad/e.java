@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import p4.r;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e {
     public ArrayList a;
@@ -55,7 +55,7 @@ public final class e {
     }
 
     public void c(StringBuilder sb2) {
-        sb2.append(((Boolean) i0.a.z(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
+        sb2.append(((Boolean) i2.d.A(1, this.a)).booleanValue() ? "</ol>" : "</ul>");
     }
 
     public void d(StringBuilder sb2) {

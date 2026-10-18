@@ -2,7 +2,7 @@ package k1;
 
 import v7.i8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class n extends md.i implements td.p {
     public final /* synthetic */ int a;
@@ -119,7 +119,7 @@ public final class n extends md.i implements td.p {
                 }
                 ab.b0 b0Var = new ab.b0(a0Var2, null, 1);
                 this.b = 1;
-                mVar.r(new ee.i(new kotlin.jvm.internal.n(), new ab.a0(cVar), b0Var), this);
+                mVar.p(new ee.i(new kotlin.jvm.internal.n(), new ab.a0(cVar), b0Var), this);
                 return aVar2;
         }
     }

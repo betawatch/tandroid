@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cv extends org.telegram.ui.ActionBar.f3 {
     public static cv S;
@@ -174,7 +174,7 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
         TextView textView3 = new TextView(parentActivity);
         textView3.setTextSize(1, 14.0f);
         int i13 = org.telegram.ui.ActionBar.h6.o5;
-        com.google.android.gms.internal.cast.a6.o(i13, null, false, textView3, 17);
+        com.google.android.gms.internal.play_billing.k3.o(i13, null, false, textView3, 17);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);
         int i14 = org.telegram.ui.ActionBar.h6.I5;
@@ -328,7 +328,7 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
         TextView textView4 = new TextView(parentActivity);
         cvVar2.v = textView4;
         textView4.setTextSize(1, 14.0f);
-        com.google.android.gms.internal.cast.a6.o(i13, null, false, textView4, 17);
+        com.google.android.gms.internal.play_billing.k3.o(i13, null, false, textView4, 17);
         textView4.setSingleLine(true);
         textView4.setEllipsize(truncateAt);
         textView4.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, i14, false), 0, -1));
@@ -339,7 +339,7 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
         textView4.setOnClickListener(onClickListener);
         TextView textView5 = new TextView(parentActivity);
         textView5.setTextSize(1, 14.0f);
-        com.google.android.gms.internal.cast.a6.o(i13, null, false, textView5, 17);
+        com.google.android.gms.internal.play_billing.k3.o(i13, null, false, textView5, 17);
         textView5.setSingleLine(true);
         textView5.setEllipsize(truncateAt);
         textView5.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, i14, false), 0, -1));

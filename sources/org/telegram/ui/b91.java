@@ -17,7 +17,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class b91 extends FrameLayout {
     public final Window a;
@@ -41,7 +41,7 @@ public abstract class b91 extends FrameLayout {
             this.a = null;
         }
         this.s = i10;
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         this.h = new l41(context, 2);
         lg.c cVar = new lg.c(getContext(), d6Var);
         this.d = cVar;
@@ -138,7 +138,7 @@ public abstract class b91 extends FrameLayout {
         frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, -2, 17));
         radialProgressView.setVisibility(8);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.s5, d6Var));
-        this.b.setDateSelectionListener(new qp0(this, 18));
+        this.b.setDateSelectionListener(new rp0(this, 18));
         this.b.t0.d(false, false);
         this.b.t0.setOnTouchListener(new org.telegram.ui.Components.rl0());
         final int i13 = 1;
@@ -287,7 +287,7 @@ public abstract class b91 extends FrameLayout {
         d91 d91Var = this.r;
         if (d91Var != null && (bVar = d91Var.d) != null && (arrayList = bVar.d) != null && arrayList.size() > 1) {
             for (int i10 = 0; i10 < this.r.d.d.size(); i10++) {
-                int x02 = (((kg.a) this.r.d.d.get(i10)).g < 0 || !org.telegram.ui.ActionBar.h6.d1(((kg.a) this.r.d.d.get(i10)).g)) ? i0.b.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false)) < 0.5d ? ((kg.a) this.r.d.d.get(i10)).i : ((kg.a) this.r.d.d.get(i10)).h : org.telegram.ui.ActionBar.h6.x0(null, ((kg.a) this.r.d.d.get(i10)).g, false);
+                int x02 = (((kg.a) this.r.d.d.get(i10)).g < 0 || !org.telegram.ui.ActionBar.h6.d1(((kg.a) this.r.d.d.get(i10)).g)) ? i0.a.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false)) < 0.5d ? ((kg.a) this.r.d.d.get(i10)).i : ((kg.a) this.r.d.d.get(i10)).h : org.telegram.ui.ActionBar.h6.x0(null, ((kg.a) this.r.d.d.get(i10)).g, false);
                 ArrayList arrayList2 = this.n;
                 if (i10 < arrayList2.size()) {
                     org.telegram.ui.Components.a10 a10Var = ((a91) arrayList2.get(i10)).a;

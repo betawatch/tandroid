@@ -8,7 +8,7 @@ import e9.y0;
 import java.util.HashMap;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d {
     public final x a;
@@ -30,20 +30,20 @@ public final class d {
     }
 
     public static n a(d dVar, Uri uri) {
-        c cVar = (c) i0.a.i(dVar.b, uri, uri);
+        c cVar = (c) i2.d.i(dVar.b, uri, uri);
         cVar.getClass();
         return cVar.e;
     }
 
     public static void b(d dVar, Uri uri, boolean z10) {
-        c cVar = (c) i0.a.i(dVar.b, uri, uri);
+        c cVar = (c) i2.d.i(dVar.b, uri, uri);
         cVar.getClass();
         cVar.c(z10 ? cVar.a() : cVar.a);
     }
 
     public static boolean c(d dVar, Uri uri, long j10) {
         HashMap hashMap = dVar.b;
-        c cVar = (c) i0.a.i(hashMap, uri, uri);
+        c cVar = (c) i2.d.i(hashMap, uri, uri);
         cVar.getClass();
         cVar.r = SystemClock.elapsedRealtime() + j10;
         e eVar = dVar.c;
@@ -79,12 +79,12 @@ public final class d {
                 d dVar2 = (d) eVar.d.get(c11);
                 dVar2.getClass();
                 HashMap hashMap2 = dVar2.b;
-                c cVar4 = (c) i0.a.i(hashMap2, c11, c11);
+                c cVar4 = (c) i2.d.i(hashMap2, c11, c11);
                 cVar4.getClass();
                 if (elapsedRealtime2 > cVar4.r) {
                     eVar.F = c11;
                     Uri d = eVar.d(c11);
-                    c cVar5 = (c) i0.a.i(hashMap2, c11, c11);
+                    c cVar5 = (c) i2.d.i(hashMap2, c11, c11);
                     cVar5.getClass();
                     cVar5.c(d);
                     z10 = true;

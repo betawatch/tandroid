@@ -2,7 +2,7 @@ package ci;
 
 import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class t2 extends mi.q {
     public final /* synthetic */ int d;
@@ -26,14 +26,14 @@ public final class t2 extends mi.q {
                 break;
             case 2:
                 SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
-                sparseIntArray2.put(org.telegram.ui.ActionBar.h6.He, i0.b.f(0.2f, -16777216, -1));
-                sparseIntArray2.put(org.telegram.ui.ActionBar.h6.Xd, i0.b.f(0.5f, -16777216, -1));
+                sparseIntArray2.put(org.telegram.ui.ActionBar.h6.He, i0.a.f(0.2f, -16777216, -1));
+                sparseIntArray2.put(org.telegram.ui.ActionBar.h6.Xd, i0.a.f(0.5f, -16777216, -1));
                 break;
             case 3:
-                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.h6.He, i0.b.o(-1, 30));
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.h6.He, i0.a.o(-1, 30));
                 break;
             case 4:
-                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.h6.He, i0.b.o(-1, 30));
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.h6.He, i0.a.o(-1, 30));
                 break;
             case 5:
                 SparseIntArray sparseIntArray3 = (SparseIntArray) this.b;
@@ -41,7 +41,7 @@ public final class t2 extends mi.q {
                 sparseIntArray3.append(org.telegram.ui.ActionBar.h6.a7, -16777216);
                 break;
             case 6:
-                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.h6.He, i0.b.o(-1, 30));
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.h6.He, i0.a.o(-1, 30));
                 break;
             case 7:
                 SparseIntArray sparseIntArray4 = (SparseIntArray) this.b;

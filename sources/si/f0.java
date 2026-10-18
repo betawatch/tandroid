@@ -11,16 +11,16 @@ import org.telegram.ui.Components.q60;
 import org.telegram.ui.hk;
 import org.telegram.ui.re;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t0 b;
+    public final /* synthetic */ s0 b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ f0(t0 t0Var, long j10, int i10) {
+    public /* synthetic */ f0(s0 s0Var, long j10, int i10) {
         this.a = i10;
-        this.b = t0Var;
+        this.b = s0Var;
         this.c = j10;
     }
 
@@ -31,54 +31,54 @@ public final /* synthetic */ class f0 implements Runnable {
         p81 p81Var;
         switch (this.a) {
             case 0:
-                t0 t0Var = this.b;
+                s0 s0Var = this.b;
                 long j10 = this.c;
-                if (t0Var.W == 6) {
-                    t0Var.E = j10;
-                    t0Var.K = 0L;
-                    t0Var.G = 0L;
-                    t0Var.H = j10;
-                    t0Var.v(2);
-                    t0Var.l.X(t0Var.Q, t0Var.E * 1000, t0Var.p);
+                if (s0Var.W == 6) {
+                    s0Var.E = j10;
+                    s0Var.K = 0L;
+                    s0Var.G = 0L;
+                    s0Var.H = j10;
+                    s0Var.v(2);
+                    s0Var.l.X(s0Var.Q, s0Var.E * 1000, s0Var.p);
                     break;
                 }
                 break;
             default:
-                t0 t0Var2 = this.b;
+                s0 s0Var2 = this.b;
                 long j11 = this.c;
-                if (t0Var2.W == 4) {
-                    t0Var2.K = j11;
-                    long min = Math.min(t0Var2.o, j11);
-                    t0Var2.E = min;
-                    t0Var2.G = 0L;
-                    t0Var2.H = min;
-                    t0Var2.b.setSurfaceTextureListener(null);
-                    t0Var2.b.setTransform(t0Var2.h);
-                    i2.g0 a2 = new i2.n(t0Var2.a).a();
-                    t0Var2.S = a2;
-                    a2.z1(t0Var2.b);
-                    t0Var2.S.r0(b2.o0.b(Uri.fromFile(t0Var2.R)));
-                    t0Var2.S.j(0);
-                    t0Var2.S.U(1.0f);
-                    t0Var2.S.p0(t0Var2.V);
-                    t0Var2.S.b();
-                    t0Var2.S.Z0(5, t0Var2.G);
-                    t0Var2.m.b("preview player prepared: durationMs=" + t0Var2.E + ", trim=" + t0Var2.G + ".." + t0Var2.H);
-                    t0Var2.v(5);
-                    l2.f fVar = t0Var2.d;
-                    long j12 = t0Var2.E;
-                    long j13 = t0Var2.G;
-                    long j14 = t0Var2.H;
+                if (s0Var2.W == 4) {
+                    s0Var2.K = j11;
+                    long min = Math.min(s0Var2.o, j11);
+                    s0Var2.E = min;
+                    s0Var2.G = 0L;
+                    s0Var2.H = min;
+                    s0Var2.b.setSurfaceTextureListener(null);
+                    s0Var2.b.setTransform(s0Var2.h);
+                    i2.h0 a2 = new i2.o(s0Var2.a).a();
+                    s0Var2.S = a2;
+                    a2.z1(s0Var2.b);
+                    s0Var2.S.r0(b2.o0.b(Uri.fromFile(s0Var2.R)));
+                    s0Var2.S.j(0);
+                    s0Var2.S.U(1.0f);
+                    s0Var2.S.p0(s0Var2.V);
+                    s0Var2.S.b();
+                    s0Var2.S.Z0(5, s0Var2.G);
+                    s0Var2.m.b("preview player prepared: durationMs=" + s0Var2.E + ", trim=" + s0Var2.G + ".." + s0Var2.H);
+                    s0Var2.v(5);
+                    l2.f fVar = s0Var2.d;
+                    long j12 = s0Var2.E;
+                    long j13 = s0Var2.G;
+                    long j14 = s0Var2.H;
                     ((l60) fVar.b).w.setProgress(((float) j12) / 60000.0f);
                     l60 l60Var = (l60) fVar.b;
                     l60Var.i0 = false;
                     l60Var.I.setAlpha(0.0f);
-                    t0 t0Var3 = ((l60) fVar.b).P;
-                    if (t0Var3 == null) {
+                    s0 s0Var3 = ((l60) fVar.b).P;
+                    if (s0Var3 == null) {
                         file = null;
                     } else {
-                        t0.t();
-                        file = t0Var3.R;
+                        s0.t();
+                        file = s0Var3.R;
                     }
                     if (file != null) {
                         l60 l60Var2 = (l60) fVar.b;
@@ -100,7 +100,7 @@ public final /* synthetic */ class f0 implements Runnable {
                             p81Var.invalidate();
                         }
                     }
-                    t0Var2.q();
+                    s0Var2.q();
                     break;
                 }
                 break;

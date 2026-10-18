@@ -2,13 +2,13 @@ package a1;
 
 import ab.e0;
 import ab.f0;
-import ai.fa;
+import ai.ga;
 import ai.h1;
-import ai.id;
-import ai.ld;
+import ai.jd;
 import ai.m7;
+import ai.md;
 import ai.r0;
-import ai.sc;
+import ai.tc;
 import ai.u1;
 import ai.u6;
 import android.content.Context;
@@ -87,8 +87,8 @@ import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.Wallet.s1;
-import org.telegram.ui.eo0;
 import org.telegram.ui.ey;
+import org.telegram.ui.fo0;
 import org.telegram.ui.vw;
 import r0.k1;
 import r0.n;
@@ -96,9 +96,9 @@ import s4.l0;
 import wh.k;
 import zf.m;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, a2, m, ne.d, Utilities.Callback5, eo0, yl0, Utilities.Callback2Return, xl0, q7, u9, k, n, Continuation, OnCompleteListener {
+public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, a2, m, ne.d, Utilities.Callback5, fo0, yl0, Utilities.Callback2Return, xl0, q7, u9, k, n, Continuation, OnCompleteListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -110,7 +110,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
     @Override // r0.n
     public k1 B0(View view, k1 k1Var) {
         aa aaVar = (aa) this.b;
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) aaVar.v.getLayoutParams();
         marginLayoutParams.topMargin = aaVar.c ? 0 : k1Var.d();
         marginLayoutParams.bottomMargin = aaVar.c ? k1Var.a.f(2).d : k1Var.a();
@@ -227,7 +227,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                                     } else {
                                         j10 = 0;
                                     }
-                                    drawable.setColorFilter(new PorterDuffColorFilter(i0.b.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
+                                    drawable.setColorFilter(new PorterDuffColorFilter(i0.a.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
                                     zqVar = new zq(drawable2, drawable);
                                     zq zqVar2 = zqVar;
                                     if (j11 < j10 && eyVar.V3().j(j11)) {
@@ -1624,7 +1624,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
         }
     }
 
-    @Override // org.telegram.ui.eo0
+    @Override // org.telegram.ui.fo0
     public void c(int i10) {
         switch (this.a) {
             case 8:
@@ -1652,14 +1652,14 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                 }
                 break;
             default:
-                sc scVar = (sc) this.b;
+                tc tcVar = (tc) this.b;
                 if (i10 != 1) {
                     if (i10 != 3) {
-                        scVar.run(Boolean.FALSE, null);
+                        tcVar.run(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    scVar.run(Boolean.TRUE, null);
+                    tcVar.run(Boolean.TRUE, null);
                     break;
                 }
                 break;
@@ -1895,8 +1895,8 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
     @Override // ne.d
     public void u(int i10, float f7, float f10, ne.e eVar) {
         View view = ((m7) this.b).b;
-        if (view instanceof org.telegram.ui.Cells.x0) {
-            ((org.telegram.ui.Cells.x0) view).N();
+        if (view instanceof org.telegram.ui.Cells.w0) {
+            ((org.telegram.ui.Cells.w0) view).N();
         } else {
             view.invalidate();
         }
@@ -1906,17 +1906,17 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         switch (this.a) {
             case 7:
-                fa.b((fa) this.b, (ArrayList) obj, (Integer) obj2, (Long) obj3, (ArrayList) obj4, (ArrayList) obj5);
+                ga.b((ga) this.b, (ArrayList) obj, (Integer) obj2, (Long) obj3, (ArrayList) obj4, (ArrayList) obj5);
                 break;
             default:
-                id idVar = (id) this.b;
+                jd jdVar = (jd) this.b;
                 f61 f61Var = (f61) obj;
                 ((Integer) obj3).intValue();
                 ((Float) obj4).floatValue();
                 ((Float) obj5).floatValue();
-                idVar.getClass();
+                jdVar.getClass();
                 if (f61Var.G instanceof TL_stars.StarsTransaction) {
-                    ld.i1(idVar.getContext(), false, 0L, idVar.c, (TL_stars.StarsTransaction) f61Var.G, idVar.b);
+                    md.i1(jdVar.getContext(), false, 0L, jdVar.c, (TL_stars.StarsTransaction) f61Var.G, jdVar.b);
                     break;
                 }
                 break;

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -325,7 +325,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
                     textView2.setVisibility(i12 != 2 ? 0 : 8);
                     textView2.setText(LocaleController.getString(R.string.ForgotPasscode));
                     frameLayout2.addView(textView2, w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 16.0f, -1, 81));
-                    m.g3.r(textView2);
+                    m.g3.i(textView2);
                     TextView textView3 = new TextView(context);
                     this.r = textView3;
                     textView3.setTextSize(1, 14.0f);
@@ -390,7 +390,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
                         vrVar.setTransformationMethod(PasswordTransformationMethod.getInstance());
                         vrVar.setTextSize(1, 24.0f);
                         vrVar.addTextChangedListener(new cl0(this, 1));
-                        vrVar.setOnFocusChangeListener(new ai.gb(this, vrVar, 3));
+                        vrVar.setOnFocusChangeListener(new ai.hb(this, vrVar, 3));
                     }
                     frameLayout3.addView(this.n, w7.z5.a(-2.0f, 40.0f, 10.0f, 40.0f, 0.0f, -2, 1));
                     linearLayout.addView(frameLayout3, w7.z5.t(-1, -2, 1, 0, 32, 0, 72));
@@ -399,7 +399,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
                     }
                     org.telegram.ui.Components.h20 h20Var = new org.telegram.ui.Components.h20(context, this.resourceProvider, false);
                     this.w = h20Var;
-                    m.g3.r(h20Var);
+                    m.g3.i(h20Var);
                     frameLayout2.addView(this.w, w7.z5.a(56.0f, 20.0f, 0.0f, 20.0f, 14.0f, 56, (!LocaleController.isRTL ? 3 : 5) | 80));
                     this.w.setOnClickListener(new y50(this, 12));
                     org.telegram.ui.Components.z31 z31Var = new org.telegram.ui.Components.z31(context);
@@ -442,7 +442,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
             textView22.setVisibility(i12 != 2 ? 0 : 8);
             textView22.setText(LocaleController.getString(R.string.ForgotPasscode));
             frameLayout2.addView(textView22, w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 16.0f, -1, 81));
-            m.g3.r(textView22);
+            m.g3.i(textView22);
             TextView textView32 = new TextView(context);
             this.r = textView32;
             textView32.setTextSize(1, 14.0f);
@@ -505,7 +505,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
             }
             org.telegram.ui.Components.h20 h20Var3 = new org.telegram.ui.Components.h20(context, this.resourceProvider, false);
             this.w = h20Var3;
-            m.g3.r(h20Var3);
+            m.g3.i(h20Var3);
             frameLayout2.addView(this.w, w7.z5.a(56.0f, 20.0f, 0.0f, 20.0f, 14.0f, 56, (!LocaleController.isRTL ? 3 : 5) | 80));
             this.w.setOnClickListener(new y50(this, 12));
             org.telegram.ui.Components.z31 z31Var2 = new org.telegram.ui.Components.z31(context);
@@ -915,7 +915,7 @@ public class PasscodeActivity extends org.telegram.ui.ActionBar.n2 implements No
         this.P = 3;
         this.changePasscodeRow = 2;
         try {
-            if (new androidx.biometric.e(new k6.h(ApplicationLoader.applicationContext, 1)).i(15) == 0 && AndroidUtilities.isKeyguardSecure()) {
+            if (new androidx.biometric.e(new k6.h(ApplicationLoader.applicationContext, 1)).h(15) == 0 && AndroidUtilities.isKeyguardSecure()) {
                 int i10 = this.P;
                 this.P = i10 + 1;
                 this.fingerprintRow = i10;

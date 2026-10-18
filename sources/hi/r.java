@@ -1,6 +1,6 @@
 package hi;
 
-import ai.sd;
+import ai.td;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.sn;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class r extends n2 implements ne.d {
     public final ne.b a;
@@ -80,7 +80,7 @@ public final class r extends n2 implements ne.d {
         s0Var.d();
         this.v.e();
         final int i10 = 0;
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 7));
         this.actionBar.setTitle(LocaleController.getString(R.string.CommunityPendingRequests));
@@ -111,7 +111,7 @@ public final class r extends n2 implements ne.d {
         ei.d dVar = new ei.d(context, this.resourceProvider, true);
         this.n = dVar;
         dVar.d();
-        this.n.setColor(i0.b.f(0.125f, getThemedColor(h6.d6), getThemedColor(h6.G6)));
+        this.n.setColor(i0.a.f(0.125f, getThemedColor(h6.d6), getThemedColor(h6.G6)));
         this.n.setText(LocaleController.getString(R.string.CommunityPendingRequestDeclineAll));
         this.n.e();
         this.n.setOnClickListener(new View.OnClickListener(this) { // from class: hi.q
@@ -206,9 +206,9 @@ public final class r extends n2 implements ne.d {
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         s0 s0Var = this.v;
-        sd sdVar = s0Var.i;
-        if (sdVar != null) {
-            sdVar.run();
+        td tdVar = s0Var.i;
+        if (tdVar != null) {
+            tdVar.run();
         }
         s0Var.i = null;
     }

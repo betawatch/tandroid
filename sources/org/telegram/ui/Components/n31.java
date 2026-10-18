@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ch1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n31 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -181,26 +181,26 @@ public final class n31 extends AnimatorListenerAdapter {
                 }
                 break;
             case 21:
-                org.telegram.ui.zu zuVar = (org.telegram.ui.zu) this.b;
-                org.telegram.ui.bv bvVar = zuVar.n;
-                org.telegram.ui.av[] avVarArr = bvVar.f;
-                bvVar.h = null;
-                if (bvVar.s) {
-                    avVarArr[1].setVisibility(8);
+                org.telegram.ui.av avVar = (org.telegram.ui.av) this.b;
+                org.telegram.ui.cv cvVar = avVar.n;
+                org.telegram.ui.bv[] bvVarArr = cvVar.f;
+                cvVar.h = null;
+                if (cvVar.s) {
+                    bvVarArr[1].setVisibility(8);
                 } else {
-                    org.telegram.ui.av avVar = avVarArr[0];
-                    avVarArr[0] = avVarArr[1];
-                    avVarArr[1] = avVar;
-                    avVar.setVisibility(8);
-                    bvVar.w = bvVar.f[0].f == bvVar.e.getFirstTabId();
-                    bvVar.e.j(1.0f, bvVar.f[0].f);
+                    org.telegram.ui.bv bvVar = bvVarArr[0];
+                    bvVarArr[0] = bvVarArr[1];
+                    bvVarArr[1] = bvVar;
+                    bvVar.setVisibility(8);
+                    cvVar.w = cvVar.f[0].f == cvVar.e.getFirstTabId();
+                    cvVar.e.j(1.0f, cvVar.f[0].f);
                 }
-                bvVar.n = false;
-                zuVar.c = false;
-                zuVar.b = false;
-                kVar = ((org.telegram.ui.ActionBar.n2) bvVar).actionBar;
+                cvVar.n = false;
+                avVar.c = false;
+                avVar.b = false;
+                kVar = ((org.telegram.ui.ActionBar.n2) cvVar).actionBar;
                 kVar.setEnabled(true);
-                bvVar.e.setEnabled(true);
+                cvVar.e.setEnabled(true);
                 break;
             case 22:
                 org.telegram.ui.hw hwVar = (org.telegram.ui.hw) this.b;

@@ -1,6 +1,6 @@
 package hg;
 
-import ai.tb;
+import ai.ub;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.px;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -98,7 +98,7 @@ public final /* synthetic */ class s implements Runnable {
                 ArrayList<Long> arrayList4 = h0Var2.q0;
                 String str3 = this.c;
                 messagesStorage.localSearch(i15, str3, arrayList, arrayList2, arrayList3, arrayList4, -1);
-                AndroidUtilities.runOnUIThread(new tb(h0Var2, this.d, arrayList, arrayList2, arrayList3, 3));
+                AndroidUtilities.runOnUIThread(new ub(h0Var2, this.d, arrayList, arrayList2, arrayList3, 3));
                 q0.z1(str3, h0Var2.y0);
                 h0Var2.z0 = false;
                 if (str3.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str3) || "archive".startsWith(this.e))) {
@@ -133,7 +133,7 @@ public final /* synthetic */ class s implements Runnable {
                         ArrayList arrayList6 = new ArrayList();
                         ArrayList arrayList7 = new ArrayList();
                         new ArrayList();
-                        AndroidUtilities.runOnUIThread(new tb(h0Var3, h0Var3.d0, arrayList5, arrayList6, arrayList7, 3));
+                        AndroidUtilities.runOnUIThread(new ub(h0Var3, h0Var3.d0, arrayList5, arrayList6, arrayList7, 3));
                     }
                 }
                 str = str4;

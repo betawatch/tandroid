@@ -1,9 +1,9 @@
 package hg;
 
-import ai.bb;
-import ai.pa;
-import ai.va;
-import ai.y3;
+import ai.cb;
+import ai.qa;
+import ai.wa;
+import ai.x9;
 import ai.z6;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -11,7 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import ei.p6;
 import gi.l2;
 import java.util.ArrayList;
@@ -33,13 +33,14 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Cells.k4;
+import org.telegram.ui.Cells.pa;
 import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Cells.r2;
 import org.telegram.ui.Cells.u3;
@@ -56,14 +57,14 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.ey;
-import org.telegram.ui.iv;
+import org.telegram.ui.jv;
 import org.telegram.ui.nx;
 import org.telegram.ui.px;
 import org.telegram.ui.ua1;
 import org.telegram.ui.x00;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class h0 extends hm0 {
     public x00 A0;
@@ -314,7 +315,7 @@ public abstract class h0 extends hm0 {
             if (i10 > 0 && i10 - 1 < arrayList.size()) {
                 return arrayList.get(i13);
             }
-            i10 = a6.g(1, i10, arrayList);
+            i10 = k3.g(1, i10, arrayList);
         }
         ArrayList arrayList2 = this.J;
         if (!arrayList2.isEmpty()) {
@@ -343,14 +344,14 @@ public abstract class h0 extends hm0 {
             if (i10 > 0 && i10 <= arrayList4.size()) {
                 return arrayList4.get(i10 - 1);
             }
-            i10 = a6.g(1, i10, arrayList4);
+            i10 = k3.g(1, i10, arrayList4);
         }
         ArrayList arrayList5 = this.E;
         if (!arrayList5.isEmpty()) {
             if (i10 > 0 && i10 <= arrayList5.size()) {
                 return arrayList5.get(i10 - 1);
             }
-            i10 = a6.g(1, i10, arrayList5);
+            i10 = k3.g(1, i10, arrayList5);
         }
         y yVar = this.j0;
         ArrayList arrayList6 = yVar.e;
@@ -470,7 +471,7 @@ public abstract class h0 extends hm0 {
         if (this.N && this.J.isEmpty()) {
             ArrayList arrayList = this.x;
             if (!arrayList.isEmpty()) {
-                i10 = a6.g(1, i10, arrayList);
+                i10 = k3.g(1, i10, arrayList);
             }
             if (P()) {
                 ?? M = M();
@@ -558,7 +559,7 @@ public abstract class h0 extends hm0 {
         G(str != null ? str.trim() : null);
         l();
         int i10 = this.s0;
-        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new pa(i10, j10, 2));
+        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new qa(i10, j10, 2));
     }
 
     public final boolean S() {
@@ -671,7 +672,7 @@ public abstract class h0 extends hm0 {
             this.z0 = false;
             x00 x00Var = this.A0;
             if (x00Var != null) {
-                ((iv) x00Var).i(false, null, this.y0, false);
+                ((jv) x00Var).i(false, null, this.y0, false);
                 return;
             }
             return;
@@ -831,7 +832,7 @@ public abstract class h0 extends hm0 {
                     this.d = false;
                 }
                 if (str.equals(this.Z) && this.a0 == this.c.a && !arrayList.isEmpty() && this.g0 == this.d0) {
-                    MessageObject messageObject = (MessageObject) i0.a.h(1, arrayList);
+                    MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
                     tL_messages_searchGlobal.offset_id = messageObject.getId();
                     tL_messages_searchGlobal.offset_rate = this.c0;
                     tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -997,7 +998,7 @@ public abstract class h0 extends hm0 {
                     if (i10 <= arrayList2.size()) {
                         return 3;
                     }
-                    i10 = a6.g(1, i10, arrayList2);
+                    i10 = k3.g(1, i10, arrayList2);
                 }
             }
             ArrayList arrayList3 = this.E;
@@ -1006,7 +1007,7 @@ public abstract class h0 extends hm0 {
                     if (i10 <= arrayList3.size()) {
                         return 8;
                     }
-                    i10 = a6.g(1, i10, arrayList3);
+                    i10 = k3.g(1, i10, arrayList3);
                 }
             }
             y yVar = this.j0;
@@ -1284,7 +1285,7 @@ public abstract class h0 extends hm0 {
                 } else {
                     encryptedChat2 = encryptedChat;
                     z10 = true;
-                    i16 = a6.g(1, i16, arrayList6);
+                    i16 = k3.g(1, i16, arrayList6);
                 }
                 if (P()) {
                     if (i16 < K()) {
@@ -1301,7 +1302,7 @@ public abstract class h0 extends hm0 {
                     z12 = z16;
                 } else {
                     z12 = z16;
-                    i16 = a6.g(1, i16, arrayList7);
+                    i16 = k3.g(1, i16, arrayList7);
                 }
                 ArrayList arrayList12 = yVar.e;
                 ArrayList arrayList13 = yVar.j;
@@ -1697,7 +1698,7 @@ public abstract class h0 extends hm0 {
                         });
                         break;
                     } else {
-                        i12 = a6.g(1, i16, arrayList6);
+                        i12 = k3.g(1, i16, arrayList6);
                     }
                     ArrayList arrayList14 = yVar.e;
                     ArrayList arrayList15 = yVar.j;
@@ -1875,13 +1876,13 @@ public abstract class h0 extends hm0 {
                     } else {
                         str6 = i12 == 0 ? LocaleController.getString(R.string.Topics) : null;
                         i13 = 1;
-                        i12 = a6.g(1, i12, arrayList7);
+                        i12 = k3.g(1, i12, arrayList7);
                     }
                     if (!arrayList16.isEmpty()) {
                         if (i12 == 0) {
                             str6 = LocaleController.getString(R.string.InviteToTelegramShort);
                         }
-                        i12 = a6.g(i13, i12, arrayList16);
+                        i12 = k3.g(i13, i12, arrayList16);
                     }
                     if (str6 == null) {
                         int i29 = i12 - (size8 + size9);
@@ -1933,7 +1934,7 @@ public abstract class h0 extends hm0 {
                                                 i80 H2 = i80.H(eyVar, u3Var2);
                                                 for (e0 e0Var : e0.values()) {
                                                     boolean z18 = e0Var.a == h0Var2.c.a;
-                                                    H2.i(new y3(h0Var2, z18, u3Var2, e0Var, 5), LocaleController.getString(e0Var.b), z18);
+                                                    H2.i(new x9(h0Var2, z18, u3Var2, e0Var, 4), LocaleController.getString(e0Var.b), z18);
                                                 }
                                                 H2.V(5);
                                                 H2.Y = true;
@@ -1952,10 +1953,10 @@ public abstract class h0 extends hm0 {
                                 String string3 = LocaleController.getString(R.string.GlobalSearch);
                                 if (yVar.e.size() > 3) {
                                     z15 = this.G0;
-                                    bb bbVar = new bb(this, arrayList14, i10, u3Var, 4);
+                                    cb cbVar = new cb(this, arrayList14, i10, u3Var, 4);
                                     u3Var = u3Var;
                                     str6 = string3;
-                                    runnable = bbVar;
+                                    runnable = cbVar;
                                     spannableStringBuilder = null;
                                 } else {
                                     str6 = string3;
@@ -1990,7 +1991,7 @@ public abstract class h0 extends hm0 {
                                                 i80 H2 = i80.H(eyVar, u3Var2);
                                                 for (e0 e0Var : e0.values()) {
                                                     boolean z18 = e0Var.a == h0Var2.c.a;
-                                                    H2.i(new y3(h0Var2, z18, u3Var2, e0Var, 5), LocaleController.getString(e0Var.b), z18);
+                                                    H2.i(new x9(h0Var2, z18, u3Var2, e0Var, 4), LocaleController.getString(e0Var.b), z18);
                                                 }
                                                 H2.V(5);
                                                 H2.Y = true;
@@ -2041,7 +2042,7 @@ public abstract class h0 extends hm0 {
                     break;
                 }
             case 3:
-                ((org.telegram.ui.Cells.pa) view).setTopic((TLRPC.TL_forumTopic) J(i16));
+                ((pa) view).setTopic((TLRPC.TL_forumTopic) J(i16));
                 break;
             case 5:
                 k4 k4Var = (k4) view;
@@ -2061,7 +2062,7 @@ public abstract class h0 extends hm0 {
             case 8:
                 h6 h6Var2 = (h6) view;
                 ContactsController.Contact contact = (ContactsController.Contact) J(i16);
-                h6Var2.t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), wh.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
+                h6Var2.t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), kk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
                 break;
         }
     }
@@ -2089,7 +2090,7 @@ public abstract class h0 extends hm0 {
                 view2 = new z(i12, context, true ? 1 : 0);
                 break;
             case 3:
-                view2 = new org.telegram.ui.Cells.pa(context);
+                view2 = new pa(context);
                 break;
             case 4:
                 b10 b10Var = new b10(context, null);
@@ -2115,7 +2116,7 @@ public abstract class h0 extends hm0 {
                 a0Var.j1(0);
                 ua1Var.setLayoutManager(a0Var);
                 ua1Var.setAdapter(new b0(this.s0, this.e, null, false, i11 == 3));
-                ua1Var.setOnItemClickListener(new va(this, 13));
+                ua1Var.setOnItemClickListener(new wa(this, 13));
                 ua1Var.setOnItemLongClickListener(new w(this));
                 this.k0 = ua1Var;
                 view = ua1Var;
@@ -2140,7 +2141,7 @@ public abstract class h0 extends hm0 {
                 int i13 = org.telegram.ui.ActionBar.h6.G6;
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
                 textView.setTypeface(AndroidUtilities.bold());
-                wh.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
+                kk.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
                 d0Var.addView(textView, z5.t(-1, -2, 1, 0, 8, 0, 9));
                 TextView textView2 = new TextView(context);
                 d0Var.a = textView2;

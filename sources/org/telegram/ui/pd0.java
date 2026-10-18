@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pd0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -73,7 +73,7 @@ public final /* synthetic */ class pd0 implements Runnable {
                         }
                     } else {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fg0Var.getParentActivity());
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new ov(20, ud0Var, tLObject));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new zu(21, ud0Var, tLObject));
                         boolean isEmpty = TextUtils.isEmpty(str2);
                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                         if (isEmpty) {

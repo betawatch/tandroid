@@ -5,13 +5,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.s3;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.l41;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d extends hm0 {
     public final d6 c;
@@ -109,7 +109,7 @@ public final class d extends hm0 {
             }
         } else if (this.s) {
             ?? l41Var = new l41(context, 10);
-            LinearLayout e = wh.e(context, 0);
+            LinearLayout e = kk.e(context, 0);
             ImageView imageView = new ImageView(context);
             imageView.setImageDrawable(a1.c(context.getDrawable(R.drawable.other_2x_large), a1.d().a));
             e.addView(imageView, z5.a(28.0f, 0.0f, 0.0f, 8.0f, 0.0f, 40, 16));
@@ -125,6 +125,6 @@ public final class d extends hm0 {
         } else {
             s3Var = new s3(context, 64);
         }
-        return a6.l(s3Var, s3Var, -1, -2);
+        return k3.l(s3Var, s3Var, -1, -2);
     }
 }

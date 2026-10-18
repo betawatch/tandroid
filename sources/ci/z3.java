@@ -18,14 +18,14 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.fo0;
+import org.telegram.ui.go0;
 import org.telegram.ui.mc1;
 import org.telegram.ui.qw0;
 import org.telegram.ui.sn;
 import org.telegram.ui.xm0;
 import org.telegram.ui.yt;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class z3 implements View.OnClickListener {
                         alertDialog$Builder2.a.R = LocaleController.getString(R.string.DecreaseSpeed);
                         alertDialog$Builder2.a.T = LocaleController.getString(R.string.SdCardAlert);
                         alertDialog$Builder2.k(LocaleController.getString(R.string.Proceed), new org.telegram.ui.e7(dataSettingsActivity, str, alertDialog$Builder, 12));
-                        i0.a.r(R.string.Back, alertDialog$Builder2, null);
+                        i2.d.r(R.string.Back, alertDialog$Builder2, null);
                         break;
                     }
                 }
@@ -160,7 +160,7 @@ public final /* synthetic */ class z3 implements View.OnClickListener {
                             boolean z13 = secureValueType2 instanceof TLRPC.TL_secureValueTypePhone;
                             if ((z13 || (secureValueType2 instanceof TLRPC.TL_secureValueTypeEmail)) && xm0Var.q1(tL_secureRequiredType2, false) != null) {
                                 AlertDialog$Builder alertDialog$Builder4 = new AlertDialog$Builder(xm0Var.getParentActivity());
-                                alertDialog$Builder4.k(LocaleController.getString(R.string.OK), new ai.d4(xm0Var, tL_secureRequiredType2, z11, 11));
+                                alertDialog$Builder4.k(LocaleController.getString(R.string.OK), new ai.f4(xm0Var, tL_secureRequiredType2, z11, 11));
                                 alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
                                 alertDialog$Builder4.a.R = LocaleController.getString(R.string.AppName);
                                 String string = LocaleController.getString(z13 ? R.string.PassportDeletePhoneAlert : R.string.PassportDeleteEmailAlert);
@@ -204,10 +204,10 @@ public final /* synthetic */ class z3 implements View.OnClickListener {
                 xm0Var.D1(tL_secureRequiredType2, tL_secureRequiredType, arrayList2, z11);
                 break;
             case 3:
-                fo0.g0((fo0) this.c, (qc) this.d, this.b, (TLRPC.Message[]) this.e);
+                go0.g0((go0) this.c, (qc) this.d, this.b, (TLRPC.Message[]) this.e);
                 break;
             case 4:
-                fo0.Y((fo0) this.c, (qc) this.d, this.b, (TLRPC.Message) this.e);
+                go0.Y((go0) this.c, (qc) this.d, this.b, (TLRPC.Message) this.e);
                 break;
             default:
                 sg.x0 x0Var = (sg.x0) this.c;

@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.am0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i implements GestureDetector.OnGestureListener {
     public final /* synthetic */ int a;
@@ -22,19 +22,19 @@ public final class i implements GestureDetector.OnGestureListener {
     @Override // android.view.GestureDetector.OnGestureListener
     public final boolean onDown(MotionEvent motionEvent) {
         n nVar = this.b;
-        ValueAnimator valueAnimator = nVar.W;
+        ValueAnimator valueAnimator = nVar.c0;
         if (valueAnimator != null) {
             valueAnimator.removeAllListeners();
-            nVar.W.cancel();
-            nVar.W = null;
+            nVar.c0.cancel();
+            nVar.c0 = null;
         }
-        AnimatorSet animatorSet = nVar.a0;
+        AnimatorSet animatorSet = nVar.d0;
         if (animatorSet != null) {
             animatorSet.removeAllListeners();
-            nVar.a0.cancel();
-            nVar.a0 = null;
+            nVar.d0.cancel();
+            nVar.d0 = null;
         }
-        AndroidUtilities.cancelRunOnUIThread(nVar.b0);
+        AndroidUtilities.cancelRunOnUIThread(nVar.e0);
         nVar.a = true;
         return true;
     }
@@ -46,7 +46,7 @@ public final class i implements GestureDetector.OnGestureListener {
 
     @Override // android.view.GestureDetector.OnGestureListener
     public final void onLongPress(MotionEvent motionEvent) {
-        this.b.h();
+        this.b.i();
     }
 
     @Override // android.view.GestureDetector.OnGestureListener

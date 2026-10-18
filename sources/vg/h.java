@@ -32,11 +32,10 @@ import org.telegram.ui.Components.xp;
 import qg.n;
 import s4.b1;
 import s4.o0;
-import ug.a1;
 import w7.z5;
 import yg.k;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class h extends pg.b {
     public final d6 d;
@@ -246,21 +245,21 @@ public final class h extends pg.b {
             kVar.setDivider(false);
         }
         kVar.setOptions(gVar.n);
-        a1 a1Var = gVar.o;
-        a1 a1Var2 = gVar.p;
+        ug.b1 b1Var2 = gVar.o;
+        ug.b1 b1Var3 = gVar.p;
         ImageView imageView = kVar.F;
         ImageView imageView2 = kVar.y;
-        boolean z11 = a1Var != null;
+        boolean z11 = b1Var2 != null;
         kVar.x = z11;
         imageView2.setVisibility((z11 && kVar.G) ? 0 : 8);
-        imageView2.setOnClickListener(a1Var);
-        z10 = a1Var2 != null;
+        imageView2.setOnClickListener(b1Var2);
+        z10 = b1Var3 != null;
         kVar.E = z10;
         if (z10 && kVar.G) {
             i13 = 0;
         }
         imageView.setVisibility(i13);
-        imageView.setOnClickListener(a1Var2);
+        imageView.setOnClickListener(b1Var3);
         kVar.g(this.y, false);
     }
 

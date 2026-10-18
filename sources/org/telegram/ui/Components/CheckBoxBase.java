@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -311,7 +311,7 @@ public class CheckBoxBase {
                             if (this.n) {
                                 I.setColor(paint.getColor());
                             } else if (this.h < f14) {
-                                I.setColor(i0.b.f(this.h, paint.getColor(), I.getColor()));
+                                I.setColor(i0.a.f(this.h, paint.getColor(), I.getColor()));
                             }
                             boolean z12 = this.y;
                             Paint paint3 = this.d;
@@ -321,7 +321,7 @@ public class CheckBoxBase {
                                 paint3.setColor(org.telegram.ui.ActionBar.h6.w0(i20, this.F));
                             }
                             if (this.h < f14 && org.telegram.ui.ActionBar.h6.I.q()) {
-                                paint3.setColor(i0.b.f(this.h, I.getColor(), paint3.getColor()));
+                                paint3.setColor(i0.a.f(this.h, I.getColor(), paint3.getColor()));
                             }
                             if (this.A != -1) {
                                 float dp3 = AndroidUtilities.dp(this.B) / 2.0f;

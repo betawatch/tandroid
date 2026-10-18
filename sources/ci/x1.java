@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x1 extends View {
     public final int a;
@@ -107,7 +107,7 @@ public final class x1 extends View {
                 i11--;
             } else {
                 float f13 = dp / 2.0f;
-                uj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f13), (int) (rectF.centerY() - f13), (int) r.c.c(AndroidUtilities.dp(15.0f), lerp, rectF.left, f13), (int) (rectF.centerY() + f13));
+                uj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f13), (int) (rectF.centerY() - f13), (int) r4.c.c(AndroidUtilities.dp(15.0f), lerp, rectF.left, f13), (int) (rectF.centerY() + f13));
                 uj0Var.setAlpha((int) (x1Var.n * 255.0f));
                 uj0Var.draw(canvas2);
             }

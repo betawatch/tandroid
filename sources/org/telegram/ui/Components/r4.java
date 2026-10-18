@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r4 extends rm0 {
     public final /* synthetic */ a3 d;
@@ -31,7 +31,7 @@ public final class r4 extends rm0 {
         xj0Var.d();
         frameLayout.addView(xj0Var, w7.z5.a(160.0f, 17.0f, 14.0f, 17.0f, 0.0f, 160, 49));
         TextView textView = new TextView(context);
-        org.telegram.messenger.wh.k(24.0f, 1, textView);
+        org.telegram.messenger.kk.k(24.0f, 1, textView);
         textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.j5));
         if (i10 == 0) {
             textView.setText(LocaleController.getString(R.string.ReportTitleSpam));
@@ -46,12 +46,12 @@ public final class r4 extends rm0 {
         } else if (i10 == 100) {
             textView.setText(LocaleController.getString(R.string.ReportChat));
         }
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout, textView, w7.z5.a(-2.0f, 17.0f, 197.0f, 17.0f, 0.0f, -2, 49), context);
-        k10.setTextSize(1, 14.0f);
-        k10.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.r5));
-        k10.setGravity(1);
-        k10.setText(LocaleController.getString(R.string.ReportInfo));
-        frameLayout.addView(k10, w7.z5.a(-2.0f, 30.0f, 235.0f, 30.0f, 44.0f, -2, 49));
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.a(-2.0f, 17.0f, 197.0f, 17.0f, 0.0f, -2, 49), context);
+        j10.setTextSize(1, 14.0f);
+        j10.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.r5));
+        j10.setGravity(1);
+        j10.setText(LocaleController.getString(R.string.ReportInfo));
+        frameLayout.addView(j10, w7.z5.a(-2.0f, 30.0f, 235.0f, 30.0f, 44.0f, -2, 49));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.c = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 18.0f);

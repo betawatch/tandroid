@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, BillingController.ProductDetailsResponseListenerLegacy {
     public final /* synthetic */ int a;
@@ -97,14 +97,14 @@ public final /* synthetic */ class d1 implements org.telegram.ui.ActionBar.a2, B
                 TLRPC.TL_inputStorePaymentPremiumGiveaway tL_inputStorePaymentPremiumGiveaway = (TLRPC.TL_inputStorePaymentPremiumGiveaway) this.b;
                 TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) this.c;
                 ConnectionsManager connectionsManager2 = (ConnectionsManager) this.d;
-                ug.t tVar = (ug.t) this.e;
-                ug.t tVar2 = (ug.t) this.f;
+                ug.u uVar = (ug.u) this.e;
+                ug.u uVar2 = (ug.u) this.f;
                 org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.h;
                 tL_inputStorePaymentPremiumGiveaway.currency = ((c5.o) list.get(0)).a().c;
                 tL_inputStorePaymentPremiumGiveaway.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_premiumGiftCodeOption2.currency)) * (r4.b / Math.pow(10.0d, 6.0d)));
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore2 = new TLRPC.TL_payments_canPurchaseStore();
                 tL_payments_canPurchaseStore2.purpose = tL_inputStorePaymentPremiumGiveaway;
-                connectionsManager2.sendRequest(tL_payments_canPurchaseStore2, new ai.e8(tVar, list, iVar, tVar2, n2Var2, tL_inputStorePaymentPremiumGiveaway, 3));
+                connectionsManager2.sendRequest(tL_payments_canPurchaseStore2, new ai.e8(uVar, list, iVar, uVar2, n2Var2, tL_inputStorePaymentPremiumGiveaway, 3));
                 break;
         }
     }

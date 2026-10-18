@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k31 extends FrameLayout {
     public org.telegram.ui.l5 E;
@@ -86,7 +86,7 @@ public final class k31 extends FrameLayout {
     public int getTextColor() {
         int i10 = org.telegram.ui.ActionBar.h6.z6;
         org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        return i0.b.f(this.x ? 1.0f : this.F, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
+        return i0.a.f(this.x ? 1.0f : this.F, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
     }
 
     private void setLayout(boolean z10) {
@@ -210,7 +210,7 @@ public final class k31 extends FrameLayout {
             this.K = ofFloat;
             ofFloat.addUpdateListener(new i31(this, 0));
             this.K.addListener(new c80(this, 29));
-            org.telegram.messenger.wh.l(2.0f, this.K);
+            org.telegram.messenger.kk.l(2.0f, this.K);
             this.K.setDuration(200L);
             this.K.start();
         }

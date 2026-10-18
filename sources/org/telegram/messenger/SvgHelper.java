@@ -36,13 +36,13 @@ import org.xml.sax.InputSource;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class SvgHelper {
     private static final Pattern SPLIT_BOUNDARY;
     private static final double[] pow10 = new double[128];
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Circle {
         float rad;
         float x1;
@@ -55,7 +55,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Line {
         float x1;
         float x2;
@@ -70,7 +70,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class NumberParse {
         private int nextCmd;
         private ArrayList<Float> numbers;
@@ -89,7 +89,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Oval {
         RectF rect;
 
@@ -98,7 +98,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class ParserHelper {
         private char current;
         private int n;
@@ -455,7 +455,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Properties {
         Attributes atts;
         ArrayList<StyleSet> styles;
@@ -530,7 +530,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RoundRect {
         RectF rect;
         float rx;
@@ -541,13 +541,13 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public enum ScaleMode {
         Default,
         ByWidth
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class StyleSet {
         HashMap<String, String> styleMap;
 
@@ -572,7 +572,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class SvgDrawable extends Drawable {
         private static float gradientWidth;
         private static long lastUpdateTime;
@@ -703,7 +703,7 @@ public class SvgHelper {
             canvas.save();
             canvas.translate(f7, f10);
             if (!this.aspectFill || this.aspectCenter) {
-                canvas.translate(com.google.android.gms.internal.cast.a6.c(this.width, scale, f11, 2.0f), com.google.android.gms.internal.cast.a6.c(this.height, scale, f12, 2.0f));
+                canvas.translate(com.google.android.gms.internal.play_billing.k3.c(this.width, scale, f11, 2.0f), com.google.android.gms.internal.play_billing.k3.c(this.height, scale, f12, 2.0f));
             }
             canvas.scale(scale, scale);
             int size = this.commands.size();
@@ -868,7 +868,7 @@ public class SvgHelper {
                 iArr[z10 ? 1 : 0] = w02;
                 gradientWidth = AndroidUtilities.displaySize.x * 2;
                 if (!lite) {
-                    int o10 = i0.b.o(w02, 70);
+                    int o10 = i0.a.o(w02, 70);
                     if (z10) {
                         if (this.backgroundPaint == null) {
                             this.backgroundPaint = new Paint(1);
@@ -927,7 +927,7 @@ public class SvgHelper {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public interface SvgResult {
         Bitmap getBitmap();
 
@@ -1746,7 +1746,7 @@ public class SvgHelper {
         return arrayList;
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class SVGHandler extends DefaultHandler implements SvgResult {
         private boolean alphaOnly;
         private Bitmap bitmap;
@@ -2351,7 +2351,7 @@ public class SvgHelper {
             return f7;
         }
         if (stringAttr.endsWith("px")) {
-            stringAttr = com.google.android.gms.internal.cast.a6.j(2, 0, stringAttr);
+            stringAttr = com.google.android.gms.internal.play_billing.k3.j(2, 0, stringAttr);
         } else if (stringAttr.endsWith("mm")) {
             return null;
         }

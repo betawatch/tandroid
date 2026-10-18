@@ -14,7 +14,7 @@ import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.StatsController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class bu extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -460,8 +460,8 @@ public final class bu extends org.telegram.ui.Components.hm0 {
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         Context context = this.c;
-        View q8Var = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.q8(context) : new org.telegram.ui.Cells.i5(context) : new org.telegram.ui.Cells.d9(context) : new org.telegram.ui.Cells.v8(context) : new org.telegram.ui.Cells.l4(context, 22) : new org.telegram.ui.Cells.ba(context) : new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
-        return com.google.android.gms.internal.cast.a6.l(q8Var, q8Var, -1, -2);
+        View q8Var = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? new org.telegram.ui.Cells.q8(context) : new org.telegram.ui.Cells.i5(context) : new org.telegram.ui.Cells.d9(context) : new org.telegram.ui.Cells.v8(context) : new org.telegram.ui.Cells.l4(context, 22) : new org.telegram.ui.Cells.ba(context) : new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
+        return com.google.android.gms.internal.play_billing.k3.l(q8Var, q8Var, -1, -2);
     }
 
     @Override // s4.g0

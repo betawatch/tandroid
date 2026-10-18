@@ -1,6 +1,6 @@
 package ci;
 
-import ai.oa;
+import ai.pa;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -103,7 +103,7 @@ public final /* synthetic */ class e7 implements RequestDelegate {
                                                         i12 = i15;
                                                         int i20 = 0;
                                                         for (TLRPC.TL_inputPrivacyValueDisallowUsers tL_inputPrivacyValueDisallowUsers = (TLRPC.TL_inputPrivacyValueDisallowUsers) inputPrivacyRule; i20 < tL_inputPrivacyValueDisallowUsers.users.size(); tL_inputPrivacyValueDisallowUsers = tL_inputPrivacyValueDisallowUsers) {
-                                                            i20 = com.google.android.gms.internal.cast.a6.h(tL_inputPrivacyValueDisallowUsers.users.get(i20).user_id, tL_privacyValueDisallowUsers.users, i20, 1);
+                                                            i20 = com.google.android.gms.internal.play_billing.k3.h(tL_inputPrivacyValueDisallowUsers.users.get(i20).user_id, tL_privacyValueDisallowUsers.users, i20, 1);
                                                             i14 = i14;
                                                             updates3 = updates3;
                                                         }
@@ -119,7 +119,7 @@ public final /* synthetic */ class e7 implements RequestDelegate {
                                                             TLRPC.TL_privacyValueAllowUsers tL_privacyValueAllowUsers = new TLRPC.TL_privacyValueAllowUsers();
                                                             int i21 = 0;
                                                             for (TLRPC.TL_inputPrivacyValueAllowUsers tL_inputPrivacyValueAllowUsers = (TLRPC.TL_inputPrivacyValueAllowUsers) inputPrivacyRule; i21 < tL_inputPrivacyValueAllowUsers.users.size(); tL_inputPrivacyValueAllowUsers = tL_inputPrivacyValueAllowUsers) {
-                                                                i21 = com.google.android.gms.internal.cast.a6.h(tL_inputPrivacyValueAllowUsers.users.get(i21).user_id, tL_privacyValueAllowUsers.users, i21, 1);
+                                                                i21 = com.google.android.gms.internal.play_billing.k3.h(tL_inputPrivacyValueAllowUsers.users.get(i21).user_id, tL_privacyValueAllowUsers.users, i21, 1);
                                                             }
                                                             arrayList3.add(tL_privacyValueAllowUsers);
                                                         }
@@ -186,7 +186,7 @@ public final /* synthetic */ class e7 implements RequestDelegate {
                                 TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
                                 tL_updateStory.peer = MessagesController.getInstance(i22).getPeer(j10);
                                 tL_updateStory.story = storyItem;
-                                AndroidUtilities.runOnUIThread(new oa(23, h7Var, tL_updateStory));
+                                AndroidUtilities.runOnUIThread(new pa(23, h7Var, tL_updateStory));
                             }
                             TLRPC.MessageMedia messageMedia = storyItem.media;
                             if (messageMedia != null && storyItem.attachPath != null) {
@@ -210,7 +210,7 @@ public final /* synthetic */ class e7 implements RequestDelegate {
                     a8Var.d0 = null;
                     break;
                 } else if (tL_error != null && !z11) {
-                    AndroidUtilities.runOnUIThread(new oa(24, h7Var, tL_error));
+                    AndroidUtilities.runOnUIThread(new pa(24, h7Var, tL_error));
                 }
                 AndroidUtilities.runOnUIThread(new f7(h7Var, 1));
                 break;

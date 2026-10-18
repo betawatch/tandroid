@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.ez0;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yg;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class c6 extends FrameLayout implements ez0, ne.d {
     public Integer E;
@@ -419,7 +419,7 @@ public class c6 extends FrameLayout implements ez0, ne.d {
             }
             i12++;
         }
-        b6Var.measure(wh.c(this.E != null ? r9.intValue() : this.n == null ? 42 : imageView == null ? 70 : ahVar != null ? 144 : 122, (size - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+        b6Var.measure(kk.c(this.E != null ? r9.intValue() : this.n == null ? 42 : imageView == null ? 70 : ahVar != null ? 144 : 122, (size - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
         int measuredHeight = b6Var.getMeasuredHeight();
         setMeasuredDimension(size, Math.max(AndroidUtilities.dp(50.0f), b6Var.getMeasuredHeight()) + (this.v ? 1 : 0));
         org.telegram.ui.ActionBar.j5 j5Var2 = this.n;

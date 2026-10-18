@@ -13,7 +13,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import ei.w3;
 import ei.x3;
 import java.util.ArrayList;
@@ -25,12 +25,12 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class s0 extends View {
     public float E;
@@ -162,9 +162,9 @@ public class s0 extends View {
         if (z10) {
             float e = this.P.e(this.L);
             if (e > 0.0f) {
-                float b10 = wh.b(rectF2.left, 2.25f, f14, f7);
+                float b10 = kk.b(rectF2.left, 2.25f, f14, f7);
                 float f15 = f14 * 21.33f;
-                float z11 = a6.z(this.N, f15, 2.0f, f10);
+                float z11 = k3.z(this.N, f15, 2.0f, f10);
                 ImageReceiver imageReceiver = this.s;
                 imageReceiver.setImageCoords(b10, z11, f15, f15);
                 canvas.save();
@@ -174,9 +174,9 @@ public class s0 extends View {
                 canvas.restore();
             }
             if (e < 1.0f) {
-                float b11 = wh.b(rectF2.left, 2.25f, f14, f7);
+                float b11 = kk.b(rectF2.left, 2.25f, f14, f7);
                 float f16 = f14 * 21.33f;
-                float z12 = a6.z(this.N, f16, 2.0f, f10);
+                float z12 = k3.z(this.N, f16, 2.0f, f10);
                 ImageReceiver imageReceiver2 = this.r;
                 imageReceiver2.setImageCoords(b11, z12, f16, f16);
                 canvas.save();

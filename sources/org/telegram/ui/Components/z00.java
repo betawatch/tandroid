@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class z00 extends View {
     public static final int[] E;
@@ -113,7 +113,7 @@ public class z00 extends View {
                 } else {
                     y00Var.g = getWidthForAnimation() + dp;
                 }
-                y00Var.j = com.google.android.gms.internal.cast.a6.A(Utilities.random.nextFloat(), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.2f), y00Var.c == 0 ? 1 : -1);
+                y00Var.j = com.google.android.gms.internal.play_billing.k3.A(Utilities.random.nextFloat(), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.2f), y00Var.c == 0 ? 1 : -1);
                 y00Var.k = -((Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f));
                 y00Var.h = (heightForAnimation / 2) + Utilities.random.nextInt(Math.max(1, heightForAnimation * 2));
                 return y00Var;
@@ -243,13 +243,13 @@ public class z00 extends View {
             if (y00Var.e != 0) {
                 float dp = AndroidUtilities.dp(1.0f) * 0.5f;
                 if (y00Var.e == 1) {
-                    float t10 = com.google.android.gms.internal.cast.a6.t(dp, f12, 0.05f, y00Var.j);
+                    float t10 = com.google.android.gms.internal.play_billing.k3.t(dp, f12, 0.05f, y00Var.j);
                     y00Var.j = t10;
                     if (t10 >= dp) {
                         y00Var.e = (byte) 2;
                     }
                 } else {
-                    float z10 = org.telegram.ui.Cells.t0.z(dp, f12, 0.05f, y00Var.j);
+                    float z10 = org.telegram.ui.Cells.c1.z(dp, f12, 0.05f, y00Var.j);
                     y00Var.j = z10;
                     if (z10 <= (-dp)) {
                         y00Var.e = (byte) 1;
@@ -305,9 +305,9 @@ public class z00 extends View {
                     arrayList.add(a(true));
                 }
             }
-            float y3 = org.telegram.messenger.wh.y(i10, 16.0f, 0.15f, this.e);
-            this.e = y3;
-            if (y3 < 0.2f) {
+            float x10 = org.telegram.messenger.kk.x(i10, 16.0f, 0.15f, this.e);
+            this.e = x10;
+            if (x10 < 0.2f) {
                 this.e = 0.2f;
             }
         }

@@ -1,6 +1,6 @@
 package hg;
 
-import ai.fa;
+import ai.ga;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,8 +28,9 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -43,7 +44,6 @@ import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.a90;
 import org.telegram.ui.Components.g30;
-import org.telegram.ui.Components.go0;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.w31;
@@ -58,9 +58,9 @@ import org.telegram.ui.d60;
 import org.telegram.ui.d90;
 import org.telegram.ui.ey;
 import org.telegram.ui.fg0;
-import org.telegram.ui.fo0;
 import org.telegram.ui.ga0;
-import org.telegram.ui.gn0;
+import org.telegram.ui.go0;
+import org.telegram.ui.hn0;
 import org.telegram.ui.i01;
 import org.telegram.ui.jf;
 import org.telegram.ui.l4;
@@ -75,7 +75,7 @@ import org.telegram.ui.w8;
 import org.telegram.ui.xg;
 import yh.o4;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements Runnable {
     public final /* synthetic */ int a;
@@ -98,9 +98,9 @@ public final /* synthetic */ class d1 implements Runnable {
         this.n = albumEntry3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:118:0x03d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:140:0x042f, code lost:
     
-        if (r11.chat.has_geo != false) goto L111;
+        if (r10.chat.has_geo != false) goto L130;
      */
     @Override // java.lang.Runnable
     /*
@@ -108,8 +108,7 @@ public final /* synthetic */ class d1 implements Runnable {
     */
     public final void run() {
         b80 b80Var;
-        b80 b80Var2;
-        fo0 fo0Var;
+        go0 go0Var;
         d6 d6Var;
         xc a02;
         int i10;
@@ -121,8 +120,7 @@ public final /* synthetic */ class d1 implements Runnable {
         int i12 = this.a;
         int i13 = 11;
         int i14 = this.b;
-        boolean z10 = false;
-        z10 = false;
+        int i15 = 0;
         Object obj = this.n;
         Object obj2 = this.h;
         Object obj3 = this.f;
@@ -146,8 +144,8 @@ public final /* synthetic */ class d1 implements Runnable {
                         j1Var.x.isEmpty();
                         if (!tL_channels_channelParticipants.participants.isEmpty()) {
                             long clientUserId = UserConfig.getInstance(j1Var.f).getClientUserId();
-                            for (int i15 = 0; i15 < tL_channels_channelParticipants.participants.size(); i15++) {
-                                long peerId = MessageObject.getPeerId(tL_channels_channelParticipants.participants.get(i15).peer);
+                            for (int i16 = 0; i16 < tL_channels_channelParticipants.participants.size(); i16++) {
+                                long peerId = MessageObject.getPeerId(tL_channels_channelParticipants.participants.get(i16).peer);
                                 if (j1Var.y.h(peerId) < 0 && ((peerId != 0 || j1Var.y.h(clientUserId) < 0) && (j1Var.k0 || (peerId != clientUserId && peerId != 0)))) {
                                     if (peerId >= 0) {
                                         TLRPC.User user = messagesController.getUser(Long.valueOf(peerId));
@@ -238,8 +236,8 @@ public final /* synthetic */ class d1 implements Runnable {
                 TL_phone.toggleGroupCallSettings togglegroupcallsettings = new TL_phone.toggleGroupCallSettings();
                 togglegroupcallsettings.call = inputGroupCall;
                 togglegroupcallsettings.reset_invite_hash = true;
-                int i16 = this.b;
-                ConnectionsManager.getInstance(i16).sendRequest(togglegroupcallsettings, new w8(i16, inputGroupCall, (String[]) obj5, (FrameLayout) obj4, (x90) obj3, (f3) obj2, (d6) obj));
+                int i17 = this.b;
+                ConnectionsManager.getInstance(i17).sendRequest(togglegroupcallsettings, new w8(i17, inputGroupCall, (String[]) obj5, (FrameLayout) obj4, (x90) obj3, (f3) obj2, (d6) obj));
                 break;
             case 5:
                 TLObject tLObject3 = (TLObject) obj2;
@@ -283,7 +281,7 @@ public final /* synthetic */ class d1 implements Runnable {
                     if (!MediaDataController.getInstance(i14).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
                         MediaDataController.getInstance(i14).toggleStickerSet(null, tLObject5, 2, null, false, false);
                     }
-                    AndroidUtilities.runOnUIThread(new go0(i13, tLObject5, document), 250L);
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.go0(i13, tLObject5, document), 250L);
                     break;
                 } else if (tL_error2 != null) {
                     if (FileRefController.isFileRefError(tL_error2.text)) {
@@ -303,12 +301,12 @@ public final /* synthetic */ class d1 implements Runnable {
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj3;
                 TLObject tLObject6 = (TLObject) obj2;
                 org.telegram.ui.ActionBar.b2 b2Var2 = (org.telegram.ui.ActionBar.b2) obj5;
-                b80 b80Var3 = (b80) obj4;
+                b80 b80Var2 = (b80) obj4;
                 String str2 = (String) obj;
                 ArrayList arrayList4 = launchActivity.d0;
                 if (!launchActivity.isFinishing()) {
                     if (tL_error3 != null || launchActivity.q0 == null) {
-                        b80Var = b80Var3;
+                        b80Var = b80Var2;
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
                         String string = LocaleController.getString(R.string.AppName);
                         org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder.a;
@@ -340,14 +338,13 @@ public final /* synthetic */ class d1 implements Runnable {
                             MessagesController.getInstance(i14).putChat(chatInvite.chat, false);
                             ArrayList arrayList5 = new ArrayList();
                             arrayList5.add(chatInvite.chat);
-                            int i17 = 1;
+                            int i18 = 1;
                             MessagesStorage.getInstance(i14).putUsersAndChats(null, arrayList5, false, true);
                             Bundle bundle = new Bundle();
                             bundle.putLong("chat_id", chatInvite.chat.id);
-                            if (arrayList4.isEmpty() || MessagesController.getInstance(i14).checkCanOpenChat(bundle, (n2) i0.a.h(1, arrayList4))) {
-                                b80Var2 = b80Var3;
+                            if (arrayList4.isEmpty() || MessagesController.getInstance(i14).checkCanOpenChat(bundle, (n2) i2.d.h(1, arrayList4))) {
                                 boolean[] zArr = new boolean[1];
-                                b2Var2.setOnCancelListener(new xg(i17, zArr));
+                                b2Var2.setOnCancelListener(new xg(i18, zArr));
                                 if (!chatInvite.chat.forum) {
                                     MessagesController.getInstance(i14).ensureMessagesLoaded(-chatInvite.chat.id, 0, new ga0(launchActivity, b80Var2, zArr, bundle, chatInvite));
                                     break;
@@ -356,20 +353,18 @@ public final /* synthetic */ class d1 implements Runnable {
                                     bundle2.putLong("chat_id", chatInvite.chat.id);
                                     launchActivity.t0(te1.F0(launchActivity, bundle2));
                                 }
-                            } else {
-                                b80Var2 = b80Var3;
                             }
                             b80Var = b80Var2;
                         }
-                        b80Var = b80Var3;
+                        b80Var = b80Var2;
                         TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
                         if (tL_starsSubscriptionPricing == null || chatInvite.can_refulfill_subscription) {
-                            n2 n2Var = (n2) i0.a.h(1, arrayList4);
+                            n2 n2Var = (n2) i2.d.h(1, arrayList4);
                             n2Var.showDialog(new a90(launchActivity, chatInvite, str2, n2Var, n2Var instanceof sn ? ((sn) n2Var).ea : null));
                         } else {
                             long j10 = tL_starsSubscriptionPricing.amount;
                             MessagesController.getInstance(i14).putChat(chatInvite.chat, false);
-                            fa.y(launchActivity.O, false).j0(str2, chatInvite, new hi.n0(launchActivity, j10, 2));
+                            ga.y(launchActivity.O, false).j0(str2, chatInvite, new hi.n0(launchActivity, j10, 2));
                         }
                     }
                     try {
@@ -383,75 +378,110 @@ public final /* synthetic */ class d1 implements Runnable {
                 break;
             case 10:
                 LaunchActivity launchActivity2 = (LaunchActivity) obj6;
-                ey eyVar = (ey) obj5;
-                n2 n2Var2 = (n2) obj4;
-                TLRPC.User user2 = (TLRPC.User) obj3;
-                String str3 = (String) obj;
+                TLObject tLObject7 = (TLObject) obj2;
+                pf.c cVar2 = (pf.c) obj5;
+                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj3;
+                MessagesController messagesController2 = (MessagesController) obj;
+                String str3 = (String) obj4;
                 Pattern pattern = LaunchActivity.C1;
-                if (((TLObject) obj2) instanceof TLRPC.TL_boolTrue) {
-                    MediaDataController.getInstance(i14).loadAttachMenuBots(false, true, new g30(launchActivity2, eyVar, n2Var2, user2, str3, 9));
-                    break;
+                if (tLObject7 instanceof TLRPC.User) {
+                    TLRPC.User user2 = (TLRPC.User) tLObject7;
+                    messagesController2.putUser(user2, false);
+                    if (UserObject.isUserSelf(user2)) {
+                        if (cVar2 != null) {
+                            cVar2.b();
+                        }
+                        launchActivity2.m0(i14, user2.id, null);
+                        break;
+                    } else {
+                        launchActivity2.Z(i14, user2, str3, cVar2);
+                        break;
+                    }
+                } else {
+                    if (cVar2 != null) {
+                        cVar2.b();
+                    }
+                    StringBuilder sb2 = new StringBuilder("cant import contact token, err=");
+                    sb2.append(tL_error4 == null ? null : tL_error4.text);
+                    FileLog.e(sb2.toString());
+                    n2 R = LaunchActivity.R();
+                    if (R != null) {
+                        kk.q(R.string.NoUsernameFound, xc.a0(R), null);
+                        break;
+                    }
                 }
                 break;
             case 11:
                 LaunchActivity launchActivity3 = (LaunchActivity) obj6;
-                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj3;
-                TLObject tLObject7 = (TLObject) obj2;
-                TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = (TLRPC.TL_inputInvoiceSlug) obj5;
-                b80 b80Var4 = (b80) obj4;
+                ey eyVar = (ey) obj5;
+                n2 n2Var2 = (n2) obj4;
+                TLRPC.User user3 = (TLRPC.User) obj3;
                 String str4 = (String) obj;
-                ArrayList arrayList6 = launchActivity3.d0;
-                if (tL_error4 != null) {
-                    if ("SUBSCRIPTION_ALREADY_ACTIVE".equalsIgnoreCase(tL_error4.text)) {
-                        a02 = xc.a0((n2) i0.a.h(1, arrayList6));
+                Pattern pattern2 = LaunchActivity.C1;
+                if (((TLObject) obj2) instanceof TLRPC.TL_boolTrue) {
+                    MediaDataController.getInstance(i14).loadAttachMenuBots(false, true, new g30(launchActivity3, eyVar, n2Var2, user3, str4, 9));
+                    break;
+                }
+                break;
+            case 12:
+                LaunchActivity launchActivity4 = (LaunchActivity) obj6;
+                TLRPC.TL_error tL_error5 = (TLRPC.TL_error) obj3;
+                TLObject tLObject8 = (TLObject) obj2;
+                TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = (TLRPC.TL_inputInvoiceSlug) obj5;
+                b80 b80Var3 = (b80) obj4;
+                String str5 = (String) obj;
+                ArrayList arrayList6 = launchActivity4.d0;
+                if (tL_error5 != null) {
+                    if ("SUBSCRIPTION_ALREADY_ACTIVE".equalsIgnoreCase(tL_error5.text)) {
+                        a02 = xc.a0((n2) i2.d.h(1, arrayList6));
                         i10 = R.string.PaymentInvoiceSubscriptionLinkAlreadyPaid;
                         d6Var = null;
                     } else {
                         d6Var = null;
-                        a02 = xc.a0((n2) i0.a.h(1, arrayList6));
+                        a02 = xc.a0((n2) i2.d.h(1, arrayList6));
                         i10 = R.string.PaymentInvoiceLinkInvalid;
                     }
-                    wh.q(i10, a02, d6Var);
-                } else if (!launchActivity3.isFinishing()) {
-                    if (tLObject7 instanceof TLRPC.TL_payments_paymentFormStars) {
-                        o4 o4Var = launchActivity3.Y0;
-                        launchActivity3.Y0 = null;
-                        fa.y(launchActivity3.O, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new s80(b80Var4, 1), new d90(o4Var, z10 ? 1 : 0));
+                    kk.q(i10, a02, d6Var);
+                } else if (!launchActivity4.isFinishing()) {
+                    if (tLObject8 instanceof TLRPC.TL_payments_paymentFormStars) {
+                        o4 o4Var = launchActivity4.Y0;
+                        launchActivity4.Y0 = null;
+                        ga.y(launchActivity4.O, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject8, new s80(b80Var3, 1), new d90(o4Var, i15));
                         break;
                     } else {
-                        if (tLObject7 instanceof TLRPC.PaymentForm) {
-                            TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject7;
+                        if (tLObject8 instanceof TLRPC.PaymentForm) {
+                            TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject8;
                             MessagesController.getInstance(i14).putUsers(paymentForm.users, false);
-                            fo0Var = new fo0(paymentForm, null, str4, launchActivity3.O().getLastFragment());
+                            go0Var = new go0(paymentForm, null, str5, launchActivity4.O().getLastFragment());
                         } else {
-                            fo0Var = tLObject7 instanceof TLRPC.PaymentReceipt ? new fo0((TLRPC.PaymentReceipt) tLObject7) : null;
+                            go0Var = tLObject8 instanceof TLRPC.PaymentReceipt ? new go0((TLRPC.PaymentReceipt) tLObject8) : null;
                         }
-                        if (fo0Var != null) {
-                            o4 o4Var2 = launchActivity3.Y0;
+                        if (go0Var != null) {
+                            o4 o4Var2 = launchActivity4.Y0;
                             if (o4Var2 != null) {
-                                launchActivity3.Y0 = null;
-                                fo0Var.Z0 = new jf(9, o4Var2);
+                                launchActivity4.Y0 = null;
+                                go0Var.Z0 = new jf(9, o4Var2);
                             }
-                            launchActivity3.t0(fo0Var);
+                            launchActivity4.t0(go0Var);
                         }
                     }
                 }
                 try {
-                    b80Var4.run();
+                    b80Var3.run();
                     break;
                 } catch (Exception e7) {
                     FileLog.e(e7);
                     return;
                 }
-            case 12:
+            case 13:
                 of0 of0Var = (of0) obj6;
-                String str5 = (String) obj5;
+                String str6 = (String) obj5;
                 c5.i iVar = (c5.i) obj4;
                 List list = (List) obj3;
-                String str6 = (String) obj2;
-                String str7 = (String) obj;
+                String str7 = (String) obj2;
+                String str8 = (String) obj;
                 fg0 fg0Var = of0Var.v;
-                StringBuilder v = a1.g.v("LoginBilling queried \"", str5, "\" product: ");
+                StringBuilder v = a1.g.v("LoginBilling queried \"", str6, "\" product: ");
                 v.append(BillingController.getResponseCodeString(iVar.a));
                 FileLog.d(v.toString());
                 if (iVar.a != 0) {
@@ -464,23 +494,23 @@ public final /* synthetic */ class d1 implements Runnable {
                     TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
                     tL_inputStorePaymentAuthCode.currency = a2.c;
                     tL_inputStorePaymentAuthCode.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_inputStorePaymentAuthCode.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
-                    tL_inputStorePaymentAuthCode.phone_code_hash = TextUtils.isEmpty(str6) ? "" : str6;
-                    tL_inputStorePaymentAuthCode.phone_number = str7;
-                    int i18 = this.b;
-                    tL_inputStorePaymentAuthCode.premium_days = i18;
-                    StringBuilder v10 = a1.g.v("LoginBilling found \"", str5, "\" product, with currency=");
+                    tL_inputStorePaymentAuthCode.phone_code_hash = TextUtils.isEmpty(str7) ? "" : str7;
+                    tL_inputStorePaymentAuthCode.phone_number = str8;
+                    int i19 = this.b;
+                    tL_inputStorePaymentAuthCode.premium_days = i19;
+                    StringBuilder v10 = a1.g.v("LoginBilling found \"", str6, "\" product, with currency=");
                     v10.append(tL_inputStorePaymentAuthCode.currency);
                     v10.append(" amount=");
                     v10.append(tL_inputStorePaymentAuthCode.amount);
                     v10.append("; phone=");
-                    v10.append(str7);
+                    v10.append(str8);
                     v10.append(", phone_code_hash=");
-                    v10.append(str6);
+                    v10.append(str7);
                     FileLog.d(v10.toString());
                     TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentAuthCode;
                     i11 = ((n2) fg0Var).currentAccount;
-                    ConnectionsManager.getInstance(i11).sendRequest(tL_payments_canPurchaseStore, new w8(of0Var, a2, i18, oVar, tL_inputStorePaymentAuthCode, str5, tL_payments_canPurchaseStore, 3), 10);
+                    ConnectionsManager.getInstance(i11).sendRequest(tL_payments_canPurchaseStore, new w8(of0Var, a2, i19, oVar, tL_inputStorePaymentAuthCode, str6, tL_payments_canPurchaseStore, 3), 10);
                     break;
                 } else {
                     of0Var.e = "PRODUCT_NOT_FOUND";
@@ -488,47 +518,43 @@ public final /* synthetic */ class d1 implements Runnable {
                     break;
                 }
                 break;
-            case 13:
+            case 14:
                 ProfileActivity profileActivity = (ProfileActivity) obj6;
                 View view = (View) obj5;
-                String str8 = (String) obj4;
+                String str9 = (String) obj4;
                 boolean[] zArr2 = (boolean[]) obj3;
                 String[] strArr = (String[]) obj2;
-                String str9 = (String) obj;
+                String str10 = (String) obj;
                 if (profileActivity.getParentActivity() != null) {
                     i80 H = i80.H(profileActivity, view);
                     H.W(profileActivity.a.V0(view, false));
                     H.w = false;
-                    H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new w31(profileActivity, str8, i14, i13), false);
-                    H.l(R.drawable.msg_translate, LocaleController.getString(R.string.TranslateMessage), new gn0(profileActivity, strArr, str9, str8, 12), zArr2[0]);
+                    H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new w31(profileActivity, str9, i14, i13), false);
+                    H.l(R.drawable.msg_translate, LocaleController.getString(R.string.TranslateMessage), new hn0(profileActivity, strArr, str10, str9, 12), zArr2[0]);
                     H.Z();
                     break;
                 }
                 break;
-            case 14:
+            case 15:
                 f2 f2Var = (f2) obj6;
                 org.telegram.ui.Wallet.b2 b2Var4 = (org.telegram.ui.Wallet.b2) obj5;
-                String str10 = (String) obj3;
+                String str11 = (String) obj3;
                 org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj2;
                 Utilities.Callback callback = (Utilities.Callback) obj;
                 try {
                     JSONObject jSONObject2 = new JSONObject();
-                    String str11 = b2Var4.d;
+                    String str12 = b2Var4.d;
                     tonconnectsession = b2Var4.a;
-                    JSONObject put2 = jSONObject2.put("id", str11);
+                    JSONObject put2 = jSONObject2.put("id", str12);
                     if (i14 < 0) {
                         put2.put("result", obj4);
                     } else {
-                        if (str10 == null) {
-                            str10 = "Could not complete request";
+                        if (str11 == null) {
+                            str11 = "Could not complete request";
                         }
-                        put2.put("error", new JSONObject().put("code", i14).put("message", str10));
+                        put2.put("error", new JSONObject().put("code", i14).put("message", str11));
                     }
-                    JSONObject put3 = new JSONObject().put("body", WalletEngine2.tonConnectCrypto(j0Var, tonconnectsession, b2Var4.h, b2Var4.g, new JSONObject().put("encrypt", put2)).getString("body")).put("traceId", b2Var4.i);
-                    if (i14 < 0 && "disconnect".equals(b2Var4.e)) {
-                        z10 = true;
-                    }
-                    put = put3.put("disconnect", z10);
+                    put = new JSONObject().put("body", WalletEngine2.tonConnectCrypto(j0Var, tonconnectsession, b2Var4.h, b2Var4.g, new JSONObject().put("encrypt", put2)).getString("body")).put("traceId", b2Var4.i).put("disconnect", i14 < 0 && "disconnect".equals(b2Var4.e));
                 } catch (Exception e10) {
                     h = f2.h("encrypt response", e10);
                     jSONObject = null;
@@ -541,21 +567,21 @@ public final /* synthetic */ class d1 implements Runnable {
                 AndroidUtilities.runOnUIThread(new i01((Object) f2Var, (Object) jSONObject, (Object) callback, h, (Object) b2Var4, 4));
                 break;
                 break;
-            case 15:
+            case 16:
                 org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) obj6;
-                String str12 = (String) obj5;
-                TLObject tLObject8 = (TLObject) obj2;
-                TLRPC.TL_error tL_error5 = (TLRPC.TL_error) obj3;
+                String str13 = (String) obj5;
+                TLObject tLObject9 = (TLObject) obj2;
+                TLRPC.TL_error tL_error6 = (TLRPC.TL_error) obj3;
                 org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) obj4;
                 z7 z7Var = (z7) obj;
                 a1Var.getClass();
                 try {
                     JSONObject jSONObject3 = new JSONObject();
-                    jSONObject3.put("req_id", str12);
-                    if (tLObject8 instanceof TLRPC.TL_dataJSON) {
-                        jSONObject3.put("result", new JSONTokener(((TLRPC.TL_dataJSON) tLObject8).data).nextValue());
-                    } else if (tL_error5 != null) {
-                        jSONObject3.put("error", tL_error5.text);
+                    jSONObject3.put("req_id", str13);
+                    if (tLObject9 instanceof TLRPC.TL_dataJSON) {
+                        jSONObject3.put("result", new JSONTokener(((TLRPC.TL_dataJSON) tLObject9).data).nextValue());
+                    } else if (tL_error6 != null) {
+                        jSONObject3.put("error", tL_error6.text);
                     }
                     org.telegram.ui.web.a1.w(i14, x0Var, z7Var, "custom_method_invoked", jSONObject3);
                     break;
@@ -565,11 +591,11 @@ public final /* synthetic */ class d1 implements Runnable {
                     return;
                 }
             default:
-                StringBuilder sb2 = new StringBuilder();
-                a1.g.A(sb2, MessagesController.getInstance(i14).linkPrefix, "/", (String) obj5, "/c/");
-                sb2.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
-                String sb3 = sb2.toString();
-                new yh.x1((is0) obj6, (Context) obj3, sb3, sb3, (d6) obj2, (n2) obj).show();
+                StringBuilder sb3 = new StringBuilder();
+                a1.g.A(sb3, MessagesController.getInstance(i14).linkPrefix, "/", (String) obj5, "/c/");
+                sb3.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
+                String sb4 = sb3.toString();
+                new yh.x1((is0) obj6, (Context) obj3, sb4, sb4, (d6) obj2, (n2) obj).show();
                 break;
         }
     }
@@ -652,7 +678,7 @@ public final /* synthetic */ class d1 implements Runnable {
     }
 
     public /* synthetic */ d1(LaunchActivity launchActivity, TLObject tLObject, int i10, ey eyVar, n2 n2Var, TLRPC.User user, String str) {
-        this.a = 10;
+        this.a = 11;
         this.d = launchActivity;
         this.h = tLObject;
         this.b = i10;
@@ -660,6 +686,17 @@ public final /* synthetic */ class d1 implements Runnable {
         this.e = n2Var;
         this.f = user;
         this.n = str;
+    }
+
+    public /* synthetic */ d1(LaunchActivity launchActivity, TLObject tLObject, pf.c cVar, TLRPC.TL_error tL_error, MessagesController messagesController, int i10, String str) {
+        this.a = 10;
+        this.d = launchActivity;
+        this.h = tLObject;
+        this.c = cVar;
+        this.f = tL_error;
+        this.n = messagesController;
+        this.b = i10;
+        this.e = str;
     }
 
     public /* synthetic */ d1(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, org.telegram.ui.ActionBar.b2 b2Var, b80 b80Var, String str) {
@@ -674,7 +711,7 @@ public final /* synthetic */ class d1 implements Runnable {
     }
 
     public /* synthetic */ d1(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug, b80 b80Var, int i10, String str) {
-        this.a = 11;
+        this.a = 12;
         this.d = launchActivity;
         this.f = tL_error;
         this.h = tLObject;
@@ -685,7 +722,7 @@ public final /* synthetic */ class d1 implements Runnable {
     }
 
     public /* synthetic */ d1(of0 of0Var, String str, c5.i iVar, List list, String str2, String str3, int i10) {
-        this.a = 12;
+        this.a = 13;
         this.d = of0Var;
         this.c = str;
         this.e = iVar;
@@ -696,7 +733,7 @@ public final /* synthetic */ class d1 implements Runnable {
     }
 
     public /* synthetic */ d1(ProfileActivity profileActivity, View view, String str, int i10, boolean[] zArr, String[] strArr, String str2) {
-        this.a = 13;
+        this.a = 14;
         this.d = profileActivity;
         this.c = view;
         this.e = str;
@@ -707,7 +744,7 @@ public final /* synthetic */ class d1 implements Runnable {
     }
 
     public /* synthetic */ d1(f2 f2Var, org.telegram.ui.Wallet.b2 b2Var, int i10, Object obj, String str, org.telegram.ui.Wallet.j0 j0Var, Utilities.Callback callback) {
-        this.a = 14;
+        this.a = 15;
         this.d = f2Var;
         this.c = b2Var;
         this.b = i10;
@@ -718,7 +755,7 @@ public final /* synthetic */ class d1 implements Runnable {
     }
 
     public /* synthetic */ d1(org.telegram.ui.web.a1 a1Var, String str, TLObject tLObject, TLRPC.TL_error tL_error, int i10, org.telegram.ui.web.x0 x0Var, z7 z7Var) {
-        this.a = 15;
+        this.a = 16;
         this.d = a1Var;
         this.c = str;
         this.h = tLObject;

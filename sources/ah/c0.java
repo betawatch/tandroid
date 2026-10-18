@@ -1,12 +1,12 @@
 package ah;
 
+import ai.ad;
 import ai.d6;
-import ai.he;
+import ai.ie;
 import ai.k7;
 import ai.p7;
 import ai.v5;
 import ai.w5;
-import ai.yc;
 import ai.zc;
 import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
@@ -32,7 +32,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.qz0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateLis
             case 1:
                 k7 k7Var = (k7) this.b;
                 k7Var.b1.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k7Var.g2();
+                k7Var.h2();
                 break;
             case 2:
                 ((d6) this.b).h.invalidate();
@@ -89,17 +89,17 @@ public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateLis
                 p7Var.invalidate();
                 break;
             case 6:
-                zc zcVar = (zc) this.b;
+                ad adVar = (ad) this.b;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                yc ycVar = zcVar.c;
-                ycVar.setScaleX(floatValue3);
-                ycVar.setScaleY(floatValue3);
+                zc zcVar = adVar.c;
+                zcVar.setScaleX(floatValue3);
+                zcVar.setScaleY(floatValue3);
                 break;
             case 7:
-                he heVar = (he) this.b;
-                heVar.getClass();
-                heVar.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                heVar.invalidate();
+                ie ieVar = (ie) this.b;
+                ieVar.getClass();
+                ieVar.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ieVar.invalidate();
                 break;
             case 8:
                 ci.a aVar = (ci.a) this.b;

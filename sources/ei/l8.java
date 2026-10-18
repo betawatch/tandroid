@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l8 extends LinearLayout {
     public final RectF a;
@@ -46,7 +46,7 @@ public final class l8 extends LinearLayout {
         float floor2 = f7 - ((float) Math.floor(f7));
         RectF rectF3 = this.c;
         AndroidUtilities.lerp(rectF, rectF2, floor2, rectF3);
-        int m12 = org.telegram.ui.ActionBar.h6.m1(0.15f, i0.b.f(m8Var.n, -1, -16777216));
+        int m12 = org.telegram.ui.ActionBar.h6.m1(0.15f, i0.a.f(m8Var.n, -1, -16777216));
         Paint paint = this.d;
         paint.setColor(m12);
         canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, rectF3.height() / 2.0f, paint);

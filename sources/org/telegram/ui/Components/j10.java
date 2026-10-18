@@ -20,7 +20,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j10 extends FrameLayout {
     public final boolean a;
@@ -166,7 +166,7 @@ public final class j10 extends FrameLayout {
         }
         int size = arrayList != null ? arrayList.size() : 0;
         i10 i10Var = this.c;
-        i10Var.y.t(size > 0 ? i0.a.j(size, "+") : "", false, true);
+        i10Var.y.t(size > 0 ? i2.d.j(size, "+") : "", false, true);
         i10Var.invalidate();
         if (arrayList == null || arrayList.isEmpty()) {
             z5Var.setText(AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.FolderLinkSubtitleAlready, charSequence)));

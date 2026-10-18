@@ -1,8 +1,8 @@
 package zd;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class j extends i {
     public static boolean b(String str, String str2) {
@@ -38,7 +38,7 @@ public abstract class j extends i {
         boolean z12 = charSequence instanceof String;
         int i11 = eVar.c;
         int i12 = eVar.b;
-        if (z12 && a6.s(string)) {
+        if (z12 && k3.s(string)) {
             if ((i11 <= 0 || i10 > i12) && (i11 >= 0 || i12 > i10)) {
                 return -1;
             }
@@ -103,7 +103,7 @@ public abstract class j extends i {
         CharSequence charSequence;
         kotlin.jvm.internal.i.e(str, "<this>");
         if (i10 < 0) {
-            throw new IllegalArgumentException(i0.a.k(i10, "Desired length ", " is less than zero."));
+            throw new IllegalArgumentException(i2.d.k(i10, "Desired length ", " is less than zero."));
         }
         if (i10 <= str.length()) {
             charSequence = str.subSequence(0, str.length());

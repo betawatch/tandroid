@@ -13,7 +13,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cq extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -1604,7 +1604,7 @@ public final class cq extends org.telegram.ui.Components.hm0 {
                 view2 = u8Var;
                 break;
             case 5:
-                view2 = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+                view2 = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 6:
                 View b9Var = new org.telegram.ui.Cells.b9(context, null, false);
@@ -1631,7 +1631,7 @@ public final class cq extends org.telegram.ui.Components.hm0 {
                 dqVar.f.setGravity(17);
                 org.telegram.ui.Components.q6 q6Var2 = dqVar.f;
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.t0.n(R.string.AddBotButton, " ", sb2);
+                org.telegram.ui.Cells.c1.n(R.string.AddBotButton, " ", sb2);
                 sb2.append(LocaleController.getString(dqVar.K ? R.string.AddBotButtonAsAdmin : R.string.AddBotButtonAsMember));
                 q6Var2.setText(sb2.toString());
                 dqVar.e.addView(dqVar.f, w7.z5.e(-2, -2, 17));

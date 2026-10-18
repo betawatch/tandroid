@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xe implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -103,23 +103,23 @@ public final /* synthetic */ class xe implements View.OnClickListener {
                 break;
             case 8:
                 if (AndroidUtilities.addToClipboard(snVar.d5.sponsoredInfo)) {
-                    org.telegram.messenger.wh.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea));
+                    org.telegram.messenger.kk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea));
                     break;
                 }
                 break;
             case 9:
                 if (AndroidUtilities.addToClipboard(snVar.d5.sponsoredAdditionalInfo)) {
-                    org.telegram.messenger.wh.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea));
+                    org.telegram.messenger.kk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea));
                     break;
                 }
                 break;
             case 10:
                 if (snVar.X0 != null && snVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.wh.i(1, snVar.X0.getContext(), null, false);
+                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.kk.i(1, snVar.X0.getContext(), null, false);
                     Activity parentActivity = snVar.getParentActivity();
                     qn qnVar = snVar.ea;
                     final e81 e81Var = new e81(parentActivity);
-                    LinearLayout e = org.telegram.messenger.q.e(parentActivity, 1);
+                    LinearLayout e = org.telegram.messenger.g0.e(parentActivity, 1);
                     TextView textView = new TextView(parentActivity);
                     textView.setText(LocaleController.getString(R.string.SponsoredMessageInfo));
                     textView.setTypeface(AndroidUtilities.bold());
@@ -271,7 +271,7 @@ public final /* synthetic */ class xe implements View.OnClickListener {
                     int i19 = snVar4.L4;
                     if (i19 != 0) {
                         if (!snVar4.H4.isEmpty()) {
-                            if (i19 == ((Integer) i0.a.h(1, snVar4.H4)).intValue()) {
+                            if (i19 == ((Integer) i2.d.h(1, snVar4.H4)).intValue()) {
                                 i13 = ((Integer) snVar4.H4.get(0)).intValue() + 1;
                                 snVar4.O4 = true;
                             } else {

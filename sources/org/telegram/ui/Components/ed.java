@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ed extends Drawable {
     public final /* synthetic */ int a;
@@ -110,7 +110,7 @@ public final class ed extends Drawable {
                 Drawable drawable = (Drawable) this.c;
                 int intrinsicWidth = (int) (drawable.getIntrinsicWidth() * 0.8f);
                 int intrinsicHeight = (int) (drawable.getIntrinsicHeight() * 0.8f);
-                int z10 = (int) com.google.android.gms.internal.cast.a6.z(imageReceiver.getImageWidth(), intrinsicWidth, 2.0f, imageReceiver.getImageX());
+                int z10 = (int) com.google.android.gms.internal.play_billing.k3.z(imageReceiver.getImageWidth(), intrinsicWidth, 2.0f, imageReceiver.getImageX());
                 int imageHeight = (int) ((((imageReceiver.getImageHeight() / 2.0f) - intrinsicHeight) + imageReceiver.getImageY()) - ((1.0f - bs.k.getInterpolation(imageReceiver.getCurrentAlpha())) * AndroidUtilities.dp(16.0f)));
                 drawable.setAlpha((int) (imageReceiver.getAlpha() * Math.min(1.0f, imageReceiver.getCurrentAlpha() * 5.0f) * 255.0f));
                 drawable.setBounds(z10, imageHeight, intrinsicWidth + z10, intrinsicHeight + imageHeight);
@@ -193,7 +193,7 @@ public final class ed extends Drawable {
     public void onBoundsChange(Rect rect) {
         switch (this.a) {
             case 4:
-                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.wh.z(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.wh.z(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
+                ((ImageReceiver) this.b).setImageCoords(AndroidUtilities.dp(2.0f) + rect.left, AndroidUtilities.dp(2.0f) + rect.top, org.telegram.messenger.kk.y(2.0f, rect.left, rect.right - AndroidUtilities.dp(2.0f)), org.telegram.messenger.kk.y(2.0f, rect.top, rect.bottom - AndroidUtilities.dp(2.0f)));
                 break;
             default:
                 super.onBoundsChange(rect);

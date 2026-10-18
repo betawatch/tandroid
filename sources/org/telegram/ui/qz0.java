@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class qz0 extends org.telegram.ui.Components.w9 implements org.telegram.ui.Components.gw0 {
     public static final v0 g0 = new v0("crossfadeProgress", 3);
@@ -125,7 +125,7 @@ public class qz0 extends org.telegram.ui.Components.w9 implements org.telegram.u
         } else {
             bi0Var = null;
         }
-        float z12 = org.telegram.messenger.q.z(1.0f, this.V, this.e0, (1.0f - this.b0) * (this.d0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
+        float z12 = org.telegram.messenger.g0.z(1.0f, this.V, this.e0, (1.0f - this.b0) * (this.d0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
         org.telegram.ui.Components.r5 r5Var = this.e;
         ImageReceiver imageReceiver = r5Var != null ? r5Var.k : this.a;
         int i11 = this.K;

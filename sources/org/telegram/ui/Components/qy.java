@@ -41,7 +41,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -199,7 +199,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 eyVar.showDialog(new org.telegram.ui.rj0(activity, !we0.a(), new org.telegram.ui.sv(activity, 0)));
                 return;
             case 9:
-                org.telegram.ui.gp0 gp0Var = (org.telegram.ui.gp0) obj3;
+                org.telegram.ui.hp0 hp0Var = (org.telegram.ui.hp0) obj3;
                 Integer num = (Integer) obj;
                 org.telegram.ui.p00 p00Var = ((org.telegram.ui.m00) obj4).e;
                 if (!p00Var.getUserConfig().isPremium()) {
@@ -208,7 +208,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 }
                 int intValue = num.intValue();
                 p00Var.E = intValue;
-                gp0Var.a(intValue, true);
+                hp0Var.a(intValue, true);
                 org.telegram.ui.d00 d00Var = p00Var.I;
                 if (d00Var != null) {
                     d00Var.d(!p00Var.getUserConfig().isPremium() ? -1 : p00Var.E, true);
@@ -473,15 +473,15 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 }
             case 26:
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj4;
-                org.telegram.ui.Wallet.g8 g8Var = (org.telegram.ui.Wallet.g8) obj3;
+                org.telegram.ui.Wallet.j8 j8Var = (org.telegram.ui.Wallet.j8) obj3;
                 String str6 = (String) obj;
                 if (str6 != null) {
                     org.telegram.ui.Wallet.m0.i("disableBackupWithoutUpdatingPhrase: ".concat(str6));
-                    g8Var.run(str6);
+                    j8Var.run(str6);
                     return;
                 } else {
                     org.telegram.ui.Wallet.m0.F("sending disableBackup to server");
-                    org.telegram.ui.Wallet.s2.a(m0Var.a, new gi.c(7), null, null, null, new ci.c0(i13, m0Var, g8Var), true, true, new org.telegram.ui.pa0(obj2, i15));
+                    org.telegram.ui.Wallet.s2.a(m0Var.a, new gi.c(7), null, null, null, new ci.c0(i13, m0Var, j8Var), true, true, new org.telegram.ui.pa0(obj2, i15));
                     return;
                 }
             case 27:
@@ -500,7 +500,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 }
             case 28:
                 ((org.telegram.ui.Wallet.j0) obj4).close();
-                ((org.telegram.ui.Wallet.a8) obj3).run((String) obj);
+                ((org.telegram.ui.Wallet.d8) obj3).run((String) obj);
                 return;
             default:
                 ((org.telegram.ui.Wallet.m0) obj4).q.put((TL_wallet.walletTransaction) obj, (ai.e4) obj3);

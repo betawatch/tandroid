@@ -1,8 +1,8 @@
 package ec;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class g {
     public float a;
@@ -38,8 +38,8 @@ public final class g {
         float f21 = f12 - f14;
         float f22 = f16 - f14;
         float f23 = (f19 * f22) - (f20 * f21);
-        float c10 = a6.c(f20, f18, f22 * f17, f23);
-        float c11 = a6.c(f17, f21, f19 * f18, f23);
+        float c10 = k3.c(f20, f18, f22 * f17, f23);
+        float c11 = k3.c(f17, f21, f19 * f18, f23);
         return new g((c10 * f11) + (f11 - f7), (c11 * f15) + (f15 - f7), f7, (c10 * f12) + (f12 - f10), (c11 * f16) + (f16 - f10), f10, c10, c11, 1.0f);
     }
 }

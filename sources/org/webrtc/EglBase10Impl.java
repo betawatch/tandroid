@@ -13,7 +13,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.webrtc.EglBase;
 import org.webrtc.EglBase10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 class EglBase10Impl implements EglBase10 {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
@@ -25,7 +25,7 @@ class EglBase10Impl implements EglBase10 {
     private EGLDisplay eglDisplay;
     private EGLSurface eglSurface;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Context implements EglBase10.Context {
         private final EGL10 egl;
         private final EGLContext eglContext;
@@ -75,7 +75,7 @@ class EglBase10Impl implements EglBase10 {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class FakeSurfaceHolder implements SurfaceHolder {
         private final Surface surface;
 
@@ -109,10 +109,6 @@ class EglBase10Impl implements EglBase10 {
         }
 
         @Override // android.view.SurfaceHolder
-        public void setSizeFromLayout() {
-        }
-
-        @Override // android.view.SurfaceHolder
         public void addCallback(SurfaceHolder.Callback callback) {
         }
 
@@ -126,6 +122,10 @@ class EglBase10Impl implements EglBase10 {
 
         @Override // android.view.SurfaceHolder
         public void setKeepScreenOn(boolean z10) {
+        }
+
+        @Override // android.view.SurfaceHolder
+        public void setSizeFromLayout() {
         }
 
         @Override // android.view.SurfaceHolder
@@ -261,7 +261,7 @@ class EglBase10Impl implements EglBase10 {
         if (eglCreatePbufferSurface != eGLSurface2) {
             return;
         }
-        StringBuilder m10 = i0.a.m("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
+        StringBuilder m10 = i2.d.m("Failed to create pixel buffer surface with size ", i10, "x", i11, ": 0x");
         m10.append(Integer.toHexString(this.egl.eglGetError()));
         throw new RuntimeException(m10.toString());
     }

@@ -28,7 +28,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class hv0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.iw0 {
     public boolean A0;
@@ -477,7 +477,7 @@ public final class hv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             boolean z14 = this.d0;
             alertDialog$Builder.a.R = LocaleController.getString(z14 ? R.string.CancelTodoAlertTitle : R.string.CancelPollAlertTitle);
             alertDialog$Builder.a.T = LocaleController.getString(z14 ? R.string.CancelTodoAlertText : R.string.CancelPollAlertText);
-            alertDialog$Builder.k(LocaleController.getString(R.string.PassportDiscard), new qp0(this, 3));
+            alertDialog$Builder.k(LocaleController.getString(R.string.PassportDiscard), new rp0(this, 3));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             showDialog(alertDialog$Builder.a);
         }
@@ -556,7 +556,7 @@ public final class hv0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             if (this.actionBar.s()) {
                 x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.w8, false);
             }
-            if (i0.b.h(x02) > 0.699999988079071d) {
+            if (i0.a.h(x02) > 0.699999988079071d) {
                 return true;
             }
         }

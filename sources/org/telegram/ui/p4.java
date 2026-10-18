@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p4 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class p4 implements DialogInterface.OnClickListener
                     ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
                     org.telegram.ui.Components.xc.a0(eg0Var.V).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.q.r(new StringBuilder("app start time = "), ApplicationLoader.startTime);
+                        i2.d.x(new StringBuilder("app start time = "), ApplicationLoader.startTime);
                         try {
                             FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
                             break;

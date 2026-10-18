@@ -1,10 +1,10 @@
 package yh;
 
-import ai.fa;
+import ai.ga;
 import ai.k5;
 import ai.k6;
-import ai.sc;
-import ai.x9;
+import ai.tc;
+import ai.y9;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -39,10 +39,10 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.kv;
-import org.telegram.ui.ko0;
+import org.telegram.ui.lo0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class g4 extends bb {
     public static final /* synthetic */ int k0 = 0;
@@ -54,7 +54,7 @@ public final class g4 extends bb {
     public final k3 c0;
     public final k3 d0;
     public final k5 e0;
-    public ai.q2 f0;
+    public ai.r2 f0;
     public final HashSet g0;
     public boolean h0;
     public e4 i0;
@@ -169,7 +169,7 @@ public final class g4 extends bb {
         s4.s sVar = new s4.s(3);
         sVar.O = new ai.q1(this, 8);
         this.d.setLayoutManager(sVar);
-        this.d.setOnItemClickListener(new org.telegram.ui.web.c0(24, this, f4Var));
+        this.d.setOnItemClickListener(new org.telegram.ui.web.m(25, this, f4Var));
         this.d.setPadding(AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0);
         this.d.setOnScrollListener(new kv(this, 24));
         s4.k kVar = new s4.k();
@@ -222,7 +222,7 @@ public final class g4 extends bb {
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string;
                 b2Var.T = LocaleController.getString(R.string.GiftCraftCantChooseFirst);
-                org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                 return;
             }
             if (z10 && (starGift instanceof TL_stars.TL_starGiftUnique)) {
@@ -231,7 +231,7 @@ public final class g4 extends bb {
                 b2Var2.q(400L);
                 long clientUserId = UserConfig.getInstance(g4Var.currentAccount).getClientUserId();
                 ag.c cVar = tL_starGiftUnique.resale_ton_only ? ag.c.b : ag.c.a;
-                fa.x(g4Var.currentAccount, cVar).H(tL_starGiftUnique, clientUserId, null, true, new ko0(g4Var, b2Var2, cVar, tL_starGiftUnique, clientUserId));
+                ga.x(g4Var.currentAccount, cVar).H(tL_starGiftUnique, clientUserId, null, true, new lo0(g4Var, b2Var2, cVar, tL_starGiftUnique, clientUserId));
                 return;
             }
             if (!z10) {
@@ -256,7 +256,7 @@ public final class g4 extends bb {
                     org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder2.a;
                     b2Var3.R = string2;
                     b2Var3.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCraftUnavailableTextTime, LocaleController.formatDateTime(savedStarGift.can_craft_at, true)));
-                    org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder2, null);
+                    org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder2, null);
                     return;
                 }
             }
@@ -362,14 +362,14 @@ public final class g4 extends bb {
     public static void U(g4 g4Var, ArrayList arrayList) {
         f4 f4Var = g4Var.Y;
         if (f4Var != null) {
-            x9 x9Var = f4Var.b;
+            y9 y9Var = f4Var.b;
             t3 t3Var = f4Var.c;
-            if (x9Var == null || t3Var == null) {
+            if (y9Var == null || t3Var == null) {
                 return;
             }
             int currentTime = ConnectionsManager.getInstance(g4Var.currentAccount).getCurrentTime();
             arrayList.add(f61.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
-            ArrayList arrayList2 = x9Var.l;
+            ArrayList arrayList2 = y9Var.l;
             int size = arrayList2.size();
             int i10 = 0;
             int i11 = 0;
@@ -388,7 +388,7 @@ public final class g4 extends bb {
                     z10 = false;
                 }
             }
-            if (x9Var.i || !x9Var.j) {
+            if (y9Var.i || !y9Var.j) {
                 int i13 = i11 % 3;
                 int i14 = 6 - i13;
                 for (int i15 = 0; i15 < i14; i15++) {
@@ -453,12 +453,12 @@ public final class g4 extends bb {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(tL_starGiftUnique.title);
         sb2.append(" #");
-        new k6(context, d6Var, tL_starGiftUnique, h6Var, i10, j10, org.telegram.messenger.q.h(tL_starGiftUnique.num, ',', sb2), true, new sc(g4Var, tL_starGiftUnique, j10, 2)).b();
+        new k6(context, d6Var, tL_starGiftUnique, h6Var, i10, j10, org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2), true, new tc(g4Var, tL_starGiftUnique, j10, 2)).b();
     }
 
     public static void W(g4 g4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, ai.h6 h6Var, pf.c cVar) {
         cVar.d();
-        fa.x(g4Var.currentAccount, h6Var.a).h(h6Var.b, tL_starGiftUnique, j10, null, true, new ai.s0(g4Var, cVar, tL_starGiftUnique, 8));
+        ga.x(g4Var.currentAccount, h6Var.a).h(h6Var.b, tL_starGiftUnique, j10, null, true, new ai.s0(g4Var, cVar, tL_starGiftUnique, 8));
     }
 
     public static void X(g4 g4Var, f4 f4Var, Context context) {

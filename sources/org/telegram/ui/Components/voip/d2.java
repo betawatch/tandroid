@@ -13,7 +13,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,9 +36,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.gi;
+import org.telegram.messenger.fi;
+import org.telegram.messenger.kk;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
@@ -57,8 +56,8 @@ import org.telegram.ui.s50;
 import org.telegram.ui.sy0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public abstract class d2 {
     public static long a;
 
@@ -130,7 +129,7 @@ public abstract class d2 {
                         d2.b(TLRPC.User.this, chat, str, inputPeer, false, z11, z12, z13, activity, n2Var, accountInstance, false, false, false);
                     }
                 });
-                i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+                i2.d.r(R.string.Cancel, alertDialog$Builder, null);
                 return;
             }
             if (chat != null && inputPeer != null && (chatFull = accountInstance.getMessagesController().getChatFull(chat.id)) != null) {
@@ -238,7 +237,7 @@ public abstract class d2 {
                 arrayList.remove(file2);
             }
         }
-        return z10 ? new File(file, r.c.u(str, "_stats.log")).getAbsolutePath() : new File(file, r.c.u(str, ".log")).getAbsolutePath();
+        return z10 ? new File(file, r4.c.u(str, "_stats.log")).getAbsolutePath() : new File(file, r4.c.u(str, ".log")).getAbsolutePath();
     }
 
     public static void f(TLRPC.User user, TLRPC.Chat chat, String str, boolean z10, boolean z11, boolean z12, Boolean bool, Activity activity, org.telegram.ui.ActionBar.n2 n2Var, AccountInstance accountInstance) {
@@ -331,7 +330,7 @@ public abstract class d2 {
             objArr[c10] = formatName;
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(i10, objArr));
             alertDialog$Builder.k(LocaleController.getString(R.string.OK), new v1(user, chat, str, z10, z11, z12, activity, n2Var, accountInstance));
-            i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+            i2.d.r(R.string.Cancel, alertDialog$Builder, null);
         }
     }
 
@@ -396,7 +395,7 @@ public abstract class d2 {
 
     public static void i(Activity activity) {
         final SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-        LinearLayout e = org.telegram.messenger.q.e(activity, 1);
+        LinearLayout e = org.telegram.messenger.g0.e(activity, 1);
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 15.0f);
         textView.setText("Please only change these settings if you know exactly what they do.");
@@ -565,12 +564,12 @@ public abstract class d2 {
         final File file4 = file;
         final int[] iArr = {0};
         int i11 = 1;
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         int dp = AndroidUtilities.dp(16.0f);
         e.setPadding(dp, dp, dp, 0);
         final TextView textView = new TextView(context);
         textView.setTextSize(2, 16.0f);
-        a6.o(h6.j5, null, false, textView, 17);
+        com.google.android.gms.internal.play_billing.k3.o(h6.j5, null, false, textView, 17);
         textView.setText(LocaleController.getString(R.string.VoipRateCallAlert));
         e.addView(textView);
         final aa aaVar = new aa(context);
@@ -662,7 +661,7 @@ public abstract class d2 {
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
         textView2.setTextColor(h6.x0(null, h6.r5, false));
-        textView2.setPadding(org.telegram.ui.Cells.t0.f(8.0f, R.string.CallReportLogsExplain, textView2), 0, AndroidUtilities.dp(8.0f), 0);
+        textView2.setPadding(org.telegram.ui.Cells.c1.e(8.0f, R.string.CallReportLogsExplain, textView2), 0, AndroidUtilities.dp(8.0f), 0);
         textView2.setOnClickListener(g51Var);
         e.addView(textView2);
         a2Var2.setVisibility(8);
@@ -678,9 +677,9 @@ public abstract class d2 {
         alertDialog$Builder.a.setOnDismissListener(new a2(1, sy0Var));
         final org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         if (BuildVars.LOGS_ENABLED && file4.exists()) {
-            org.telegram.ui.Components.s2 s2Var = new org.telegram.ui.Components.s2(24, context, file4);
+            org.telegram.ui.Components.q2 q2Var = new org.telegram.ui.Components.q2(25, context, file4);
             b2Var.r0 = "Send log";
-            b2Var.s0 = s2Var;
+            b2Var.s0 = q2Var;
         }
         b2Var.show();
         b2Var.getWindow().setSoftInputMode(3);
@@ -738,7 +737,7 @@ public abstract class d2 {
                 tL_inputPhoneCall.access_hash = j11;
                 tL_inputPhoneCall.id = j10;
                 setcallrating.user_initiative = z11;
-                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new gi(i13, zArr2, file5, setcallrating, arrayList, context));
+                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new fi(i13, zArr2, file5, setcallrating, arrayList, context));
                 b2Var2.dismiss();
             }
         });

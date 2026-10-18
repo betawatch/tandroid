@@ -1,56 +1,167 @@
 package ai;
 
+import android.content.Context;
+import java.util.ArrayList;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ca implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ea b;
+public final class ca {
+    public final org.telegram.ui.ActionBar.n2 a;
+    public final long b;
+    public final org.telegram.ui.Components.qc c;
+    public final org.telegram.ui.Components.kc d;
+    public final org.telegram.ui.Components.oc e;
+    public final org.telegram.ui.Components.jc f;
+    public int g;
+    public long h;
+    public x8 i;
+    public final ArrayList j = new ArrayList();
+    public final HashSet k = new HashSet();
+    public final long l = System.currentTimeMillis();
+    public boolean m = true;
+    public boolean n;
+    public boolean o;
+    public final ba p;
 
-    public /* synthetic */ ca(ea eaVar, int i10) {
-        this.a = i10;
-        this.b = eaVar;
+    /* JADX WARN: Type inference failed for: r2v0, types: [ai.ba, java.lang.Runnable] */
+    public ca(org.telegram.ui.ActionBar.n2 n2Var, long j10) {
+        final int i10 = 0;
+        ?? r22 = new Runnable(this) { // from class: ai.ba
+            public final /* synthetic */ ca b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        ca caVar = this.b;
+                        if (!caVar.n && !caVar.o && caVar.m) {
+                            caVar.n = true;
+                            x8 x8Var = caVar.i;
+                            if (x8Var != null) {
+                                x8Var.run(caVar.k);
+                            }
+                            if (caVar.e != null) {
+                                caVar.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        this.p = r22;
+        this.a = n2Var;
+        this.b = j10;
+        Context t10 = ga.t(n2Var);
+        org.telegram.ui.Components.kc kcVar = new org.telegram.ui.Components.kc(t10, n2Var.getResourceProvider());
+        this.d = kcVar;
+        kcVar.c(R.raw.stars_topup, new String[0]);
+        org.telegram.ui.Components.jc jcVar = new org.telegram.ui.Components.jc(t10, n2Var.getResourceProvider());
+        this.f = jcVar;
+        jcVar.b = 3000L;
+        jcVar.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Gi, n2Var.getResourceProvider()));
+        org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(t10, n2Var.getResourceProvider(), true, false);
+        this.e = ocVar;
+        ocVar.e(LocaleController.getString(R.string.StarsSentUndo));
+        final int i11 = 1;
+        ocVar.a = new Runnable(this) { // from class: ai.ba
+            public final /* synthetic */ ca b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        ca caVar = this.b;
+                        if (!caVar.n && !caVar.o && caVar.m) {
+                            caVar.n = true;
+                            x8 x8Var = caVar.i;
+                            if (x8Var != null) {
+                                x8Var.run(caVar.k);
+                            }
+                            if (caVar.e != null) {
+                                caVar.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        ocVar.addView(jcVar, w7.z5.a(20.0f, 0.0f, 0.0f, 12.0f, 0.0f, 20, 21));
+        ocVar.d.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(8.0f));
+        kcVar.setButton(ocVar);
+        org.telegram.ui.Components.qc b10 = org.telegram.ui.Components.xc.a0(n2Var).b(kcVar, -1);
+        this.c = b10;
+        b10.r = false;
+        b10.k(true);
+        final int i12 = 0;
+        b10.v = new Runnable(this) { // from class: ai.ba
+            public final /* synthetic */ ca b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i12) {
+                    case 0:
+                        this.b.a();
+                        break;
+                    default:
+                        ca caVar = this.b;
+                        if (!caVar.n && !caVar.o && caVar.m) {
+                            caVar.n = true;
+                            x8 x8Var = caVar.i;
+                            if (x8Var != null) {
+                                x8Var.run(caVar.k);
+                            }
+                            if (caVar.e != null) {
+                                caVar.c.b();
+                                break;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        AndroidUtilities.cancelRunOnUIThread(r22);
+        AndroidUtilities.runOnUIThread(r22, 3000L);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        ea eaVar = this.b;
-        switch (i10) {
-            case 0:
-                eaVar.b();
-                break;
-            case 1:
-                eaVar.a();
-                break;
-            default:
-                org.telegram.ui.Components.qc qcVar = eaVar.d;
-                fa faVar = eaVar.q;
-                ca caVar = eaVar.p;
-                MessageObject messageObject = eaVar.b;
-                if (!eaVar.l) {
-                    eaVar.l = true;
-                    messageObject.addPaidReactions((int) eaVar.k, true, eaVar.c());
-                    long j10 = faVar.g;
-                    int i11 = faVar.a;
-                    faVar.g = j10 + eaVar.k;
-                    NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
-                    eaVar.k = 0L;
-                    NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(messageObject.getDialogId()), Integer.valueOf(messageObject.getId()), messageObject.messageOwner.reactions);
-                }
-                if (!eaVar.m) {
-                    eaVar.m = true;
-                    eaVar.f.b = 5000L;
-                    AndroidUtilities.cancelRunOnUIThread(caVar);
-                    AndroidUtilities.runOnUIThread(caVar, 5000L);
-                    qcVar.k(true);
-                    qcVar.v = caVar;
-                }
-                eaVar.e.b.setText(eaVar.d());
-                break;
+    public final void a() {
+        if (this.n || this.o) {
+            return;
+        }
+        this.o = true;
+        ArrayList arrayList = this.j;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
+        }
+        if (this.e != null) {
+            this.c.b();
         }
     }
 }

@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class vy0 extends View implements NotificationCenter.NotificationCenterDelegate {
     public ValueAnimator E;
@@ -195,8 +195,8 @@ public abstract class vy0 extends View implements NotificationCenter.Notificatio
                     invalidate();
                 }
             }
-            float x10 = com.google.android.gms.internal.cast.a6.x(1.0f, this.G, 0.15f, 0.85f);
-            canvas.scale(x10, x10, imageReceiver.getCenterX(), imageReceiver.getCenterY());
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, this.G, 0.15f, 0.85f);
+            canvas.scale(y3, y3, imageReceiver.getCenterX(), imageReceiver.getCenterY());
         }
         if (this.y > 1) {
             float f16 = this.f;
@@ -233,20 +233,20 @@ public abstract class vy0 extends View implements NotificationCenter.Notificatio
                 float f21 = this.c[i13];
                 if (f21 != f10) {
                     if (uy0Var.d) {
-                        float x11 = com.google.android.gms.internal.cast.a6.x(f13, this.f, 10.0f, f21 * (-360.0f));
-                        if (x11 > f10) {
-                            x11 = f10;
+                        float y10 = com.google.android.gms.internal.play_billing.k3.y(f13, this.f, 10.0f, f21 * (-360.0f));
+                        if (y10 > f10) {
+                            y10 = f10;
                         }
                         ((Paint) uy0Var.e).setColor(org.telegram.ui.ActionBar.h6.x0(null, uy0Var.b, z10));
                         ((Paint) this.b[i13].e).setAlpha(255);
                         double width = rectF.width() / 2.0f;
                         i12 = i13;
-                        if (Math.abs((float) (((3.141592653589793d * width) / 180.0d) * x11)) <= f13) {
+                        if (Math.abs((float) (((3.141592653589793d * width) / 180.0d) * y10)) <= f13) {
                             double d = (-90.0f) - (360.0f * f20);
                             canvas.drawPoint(rectF.centerX() + ((float) (Math.cos(Math.toRadians(d)) * width)), rectF.centerY() + ((float) (Math.sin(Math.toRadians(d)) * width)), (Paint) this.b[i12].e);
                         } else {
                             ((Paint) this.b[i12].e).setStyle(Paint.Style.STROKE);
-                            canvas.drawArc(rectF, (-90.0f) - (360.0f * f20), x11, false, (Paint) this.b[i12].e);
+                            canvas.drawArc(rectF, (-90.0f) - (360.0f * f20), y10, false, (Paint) this.b[i12].e);
                         }
                     } else {
                         i12 = i13;
@@ -280,15 +280,15 @@ public abstract class vy0 extends View implements NotificationCenter.Notificatio
                         f11 = f7;
                         f12 = f23;
                     } else {
-                        float x12 = com.google.android.gms.internal.cast.a6.x(1.0f, this.f, f7, f23 * (-360.0f));
-                        if (x12 > f10) {
-                            x12 = f10;
+                        float y11 = com.google.android.gms.internal.play_billing.k3.y(1.0f, this.f, f7, f23 * (-360.0f));
+                        if (y11 > f10) {
+                            y11 = f10;
                         }
                         ((Paint) uy0Var2.e).setColor(org.telegram.ui.ActionBar.h6.x0(null, uy0Var2.b, false));
                         ((Paint) this.b[i14].e).setAlpha(i10);
                         double width2 = rectF.width() / 2.0f;
                         f12 = f23;
-                        if (Math.abs((float) (x12 * ((width2 * 3.141592653589793d) / 180.0d))) <= 1.0f) {
+                        if (Math.abs((float) (y11 * ((width2 * 3.141592653589793d) / 180.0d))) <= 1.0f) {
                             double d10 = (-90.0f) - (f22 * 360.0f);
                             canvas.drawPoint(rectF.centerX() + ((float) (Math.cos(Math.toRadians(d10)) * width2)), rectF.centerY() + ((float) (Math.sin(Math.toRadians(d10)) * width2)), (Paint) this.b[i14].e);
                             f11 = 10.0f;
@@ -297,7 +297,7 @@ public abstract class vy0 extends View implements NotificationCenter.Notificatio
                             ((Paint) this.b[i14].e).setStyle(Paint.Style.STROKE);
                             f11 = 10.0f;
                             i11 = 255;
-                            canvas.drawArc(rectF, (-90.0f) - (f22 * 360.0f), x12, false, (Paint) this.b[i14].e);
+                            canvas.drawArc(rectF, (-90.0f) - (f22 * 360.0f), y11, false, (Paint) this.b[i14].e);
                         }
                     }
                     f22 += f12;
@@ -349,7 +349,7 @@ public abstract class vy0 extends View implements NotificationCenter.Notificatio
         Long l4 = this.n;
         if (l4 != null) {
             super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(166.0f), TLObject.FLAG_30));
-            i12 = org.telegram.messenger.wh.B(110.0f, View.MeasureSpec.getSize(i10), 2);
+            i12 = org.telegram.messenger.kk.A(110.0f, View.MeasureSpec.getSize(i10), 2);
             rectF.set(AndroidUtilities.dp(3.0f) + i12, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(107.0f) + i12, AndroidUtilities.dp(107.0f));
         } else {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(110.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(110.0f), TLObject.FLAG_30));
@@ -437,7 +437,7 @@ public abstract class vy0 extends View implements NotificationCenter.Notificatio
                 this.H = ofFloat;
                 ofFloat.addUpdateListener(new b80(this, 26));
                 this.H.addListener(new c80(this, 25));
-                org.telegram.messenger.wh.l(2.0f, this.H);
+                org.telegram.messenger.kk.l(2.0f, this.H);
                 this.H.setDuration(350L);
                 this.H.start();
             }

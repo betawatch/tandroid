@@ -25,7 +25,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t21 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static boolean s;
@@ -384,7 +384,7 @@ public final class t21 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.actionBar.setActionBarMenuOnItemClick(new q60(this, 29));
         org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         a2.F();
-        a2.H = new ig.a2(this, 16);
+        a2.H = new ig.c2(this, 16);
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         this.a = new s21(this, context, false);
         this.c = new s21(this, context, true);

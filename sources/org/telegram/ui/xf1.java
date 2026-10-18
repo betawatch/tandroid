@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class xf1 extends org.telegram.ui.ActionBar.n2 {
     public org.telegram.ui.ActionBar.j0 E;
@@ -129,16 +129,16 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
             byte[] stringBytes = AndroidUtilities.getStringBytes(str);
             TLRPC.PasswordKdfAlgo passwordKdfAlgo2 = xf1Var.U.new_algo;
             if (passwordKdfAlgo2 instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
-                bArr2 = stringBytes;
                 bArr = SRPHelper.getX(stringBytes, (TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) passwordKdfAlgo2);
+                bArr2 = stringBytes;
             } else {
                 bArr2 = stringBytes;
                 bArr = null;
             }
         }
-        ai.j4 j4Var = new ai.j4(xf1Var, z10, bArr, str, passwordinputsettings, 5);
+        ig.o0 o0Var = new ig.o0(xf1Var, bArr, str, passwordinputsettings, z10, 4);
         if (z10) {
-            ConnectionsManager.getInstance(xf1Var.currentAccount).sendRequest(tLObject, j4Var, 10);
+            ConnectionsManager.getInstance(xf1Var.currentAccount).sendRequest(tLObject, o0Var, 10);
             return;
         }
         if (str != null && (bArr3 = xf1Var.X) != null && bArr3.length == 32) {
@@ -165,7 +165,7 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
         if (!(passwordKdfAlgo3 instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow)) {
             TLRPC.TL_error tL_error = new TLRPC.TL_error();
             tL_error.text = "PASSWORD_HASH_INVALID";
-            j4Var.run(null, tL_error);
+            o0Var.run(null, tL_error);
             return;
         }
         if (str != null) {
@@ -174,10 +174,10 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
             if (vBytes == null) {
                 TLRPC.TL_error tL_error2 = new TLRPC.TL_error();
                 tL_error2.text = "ALGO_INVALID";
-                j4Var.run(null, tL_error2);
+                o0Var.run(null, tL_error2);
             }
         }
-        ConnectionsManager.getInstance(xf1Var.currentAccount).sendRequest(tLObject, j4Var, 10);
+        ConnectionsManager.getInstance(xf1Var.currentAccount).sendRequest(tLObject, o0Var, 10);
     }
 
     public static void V(xf1 xf1Var) {
@@ -411,7 +411,7 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
         }
         if (xf1Var.U.has_password) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xf1Var.getParentActivity());
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new fr0(22, xf1Var, bArr));
+            alertDialog$Builder.k(LocaleController.getString(R.string.OK), new gn0(23, xf1Var, bArr));
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             if (str == null && (password = xf1Var.U) != null && password.has_password) {
                 b2Var.T = LocaleController.getString(R.string.YourEmailSuccessText);
@@ -758,7 +758,7 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
         }
         TL_account.updatePasswordSettings updatepasswordsettings3 = updatepasswordsettings;
         x0();
-        Utilities.globalQueue.postRunnable(new ai.e2((Object) this, (TLObject) updatepasswordsettings3, z10, (Object) str, (Object) passwordinputsettings, 23));
+        Utilities.globalQueue.postRunnable(new ei.s1(this, updatepasswordsettings3, z10, str, passwordinputsettings));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x002c, code lost:
@@ -1030,7 +1030,7 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
         this.h.setTextSize(1, 14.0f);
         this.h.setGravity(19);
         this.h.setVisibility(8);
-        m.g3.r(this.h);
+        m.g3.i(this.h);
         this.h.setPadding(AndroidUtilities.dp(32.0f), 0, AndroidUtilities.dp(32.0f), 0);
         final int i16 = 3;
         this.h.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.kf1
@@ -2353,7 +2353,7 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return i0.b.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
+        return i0.a.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

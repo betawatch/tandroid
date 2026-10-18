@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class oi0 extends Dialog implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -67,7 +67,7 @@ public class oi0 extends Dialog implements NotificationCenter.NotificationCenter
     public float c0;
     public pa0 d;
     public FrameLayout d0;
-    public i0.c e;
+    public i0.b e;
     public ci0 e0;
     public Bitmap f;
     public boolean f0;
@@ -104,7 +104,7 @@ public class oi0 extends Dialog implements NotificationCenter.NotificationCenter
         super(context, R.style.TransparentDialog);
         int i10 = UserConfig.selectedAccount;
         this.c = i10;
-        this.e = i0.c.e;
+        this.e = i0.b.e;
         this.N = new ArrayList();
         this.P = new a0.h();
         final int i11 = 1;
@@ -684,14 +684,14 @@ public class oi0 extends Dialog implements NotificationCenter.NotificationCenter
         int width = this.W.getWidth();
         org.telegram.ui.Components.vg vgVar4 = this.W;
         vgVar.getHeight();
-        iArr[0] = org.telegram.ui.Cells.t0.e(6.0f, width - vgVar4.m(), i12);
+        iArr[0] = org.telegram.messenger.kk.D(6.0f, width - vgVar4.m(), i12);
         return this.X;
     }
 
     public final void s(long j10) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        this.y0 = j10 > 0 ? new org.telegram.ui.Components.d11(ai.ld.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
+        this.y0 = j10 > 0 ? new org.telegram.ui.Components.d11(ai.md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
         if (this.z0 == null) {
             Paint paint = new Paint(1);
             this.z0 = paint;

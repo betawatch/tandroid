@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class wi0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -225,7 +225,7 @@ public class wi0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         if (!messageObject.isStory() || !(messageObject.storyItem instanceof TL_stories.TL_storyItemDeleted)) {
             return false;
         }
-        org.telegram.messenger.q.q(R.string.StoryNotFound, org.telegram.ui.Components.xc.a0(this), R.raw.story_bomb1, 36);
+        org.telegram.messenger.g0.q(R.string.StoryNotFound, org.telegram.ui.Components.xc.a0(this), R.raw.story_bomb1, 36);
         return true;
     }
 
@@ -323,7 +323,7 @@ public class wi0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i12, getResourceProvider()));
         textView2.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.wh.m(R.string.LoadingStatsDescription, textView2, 1);
+        org.telegram.messenger.kk.m(R.string.LoadingStatsDescription, textView2, 1);
         this.T.addView(this.S, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         this.T.addView(textView, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         this.T.addView(textView2, w7.z5.q(-2, -2, 1));
@@ -417,7 +417,7 @@ public class wi0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         }
         this.actionBar.C(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, getResourceProvider()), false);
         this.actionBar.B(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z8, getResourceProvider()), false);
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new q60(this, 12));
         this.b0.setOnClickListener(new y50(this, 9));
         f0();
@@ -600,7 +600,7 @@ public class wi0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
 
     @Override // org.telegram.ui.ActionBar.n2
     public boolean isLightStatusBar() {
-        return i0.b.h(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, getResourceProvider())) > 0.699999988079071d;
+        return i0.a.h(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, getResourceProvider())) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
     public static final /* synthetic */ int t3 = 0;
@@ -450,7 +450,7 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
             Paint paint5 = ud0Var.a;
             int dp = AndroidUtilities.dp(110.0f);
             int dp2 = AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f);
-            float measuredWidth = ((view5.getMeasuredWidth() + r9) * ud0Var.h) - org.telegram.messenger.q.D(62.0f, 3, dp);
+            float measuredWidth = ((view5.getMeasuredWidth() + r9) * ud0Var.h) - org.telegram.messenger.g0.D(62.0f, 3, dp);
             int i24 = dp / 2;
             int i25 = measuredHeight - i24;
             paint5.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
@@ -464,9 +464,9 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
             rectF4.set(measuredWidth, i25, f28, i25 + dp);
             float f29 = ud0Var.g;
             float f30 = 35.0f;
-            int A = (int) (f29 < 0.5f ? org.telegram.messenger.wh.A(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
-            float f31 = A;
-            float f32 = 360 - (A * 2);
+            int z14 = (int) (f29 < 0.5f ? org.telegram.messenger.kk.z(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
+            float f31 = z14;
+            float f32 = 360 - (z14 * 2);
             canvas.drawArc(rectF4, f31, f32, true, paint4);
             canvas.drawArc(rectF4, f31, f32, true, paint5);
             paint5.setColor(-16777216);
@@ -515,9 +515,9 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
                     ud0Var.j = new Path();
                 }
                 ud0Var.j.reset();
-                boolean z14 = ud0Var.k;
-                ud0Var.l = z14;
-                if (z14) {
+                boolean z15 = ud0Var.k;
+                ud0Var.l = z15;
+                if (z15) {
                     ud0Var.j.moveTo(0.0f, AndroidUtilities.dp(50.0f));
                     ud0Var.j.lineTo(0.0f, AndroidUtilities.dp(24.0f));
                     rectF4.set(0.0f, 0.0f, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(24.0f));
@@ -874,7 +874,7 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
                             fArr[1] = 0.0f;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                             ofFloat.addUpdateListener(new e3(this, 10));
-                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.wh.y(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
+                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.kk.x(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                             ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
                             setScrollEnabled(false);
                             ofFloat.addListener(new org.telegram.ui.Components.n31(this, 25));

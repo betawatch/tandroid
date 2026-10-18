@@ -46,7 +46,7 @@ import org.telegram.ui.ad1;
 import org.telegram.ui.hd1;
 import org.telegram.ui.id1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class az0 implements Runnable {
     public final /* synthetic */ int a;
@@ -64,21 +64,21 @@ public final /* synthetic */ class az0 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x0647  */
-    /* JADX WARN: Removed duplicated region for block: B:245:0x0654  */
-    /* JADX WARN: Removed duplicated region for block: B:248:0x0661  */
-    /* JADX WARN: Removed duplicated region for block: B:251:0x066e  */
-    /* JADX WARN: Removed duplicated region for block: B:254:0x067b  */
-    /* JADX WARN: Removed duplicated region for block: B:257:0x0688  */
-    /* JADX WARN: Removed duplicated region for block: B:260:0x0695  */
-    /* JADX WARN: Removed duplicated region for block: B:263:0x06a2  */
-    /* JADX WARN: Removed duplicated region for block: B:266:0x06af  */
-    /* JADX WARN: Removed duplicated region for block: B:269:0x06bc  */
-    /* JADX WARN: Removed duplicated region for block: B:272:0x06c9  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x06d6  */
-    /* JADX WARN: Removed duplicated region for block: B:278:0x06e3  */
-    /* JADX WARN: Removed duplicated region for block: B:281:0x06f0  */
-    /* JADX WARN: Removed duplicated region for block: B:283:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x0662  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x066f  */
+    /* JADX WARN: Removed duplicated region for block: B:253:0x067c  */
+    /* JADX WARN: Removed duplicated region for block: B:256:0x0689  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x0696  */
+    /* JADX WARN: Removed duplicated region for block: B:262:0x06a3  */
+    /* JADX WARN: Removed duplicated region for block: B:265:0x06b0  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x06bd  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x06ca  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x06d7  */
+    /* JADX WARN: Removed duplicated region for block: B:277:0x06e4  */
+    /* JADX WARN: Removed duplicated region for block: B:280:0x06f1  */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x06fe  */
+    /* JADX WARN: Removed duplicated region for block: B:286:0x070b  */
+    /* JADX WARN: Removed duplicated region for block: B:288:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r13v3, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r6v8, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r9v4, types: [org.telegram.ui.gt] */
@@ -262,7 +262,7 @@ public final /* synthetic */ class az0 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.c;
                 AndroidUtilities.addToClipboard(str2);
                 if (i17 == 1) {
-                    org.telegram.messenger.wh.p(R.string.PhoneCopied, new xc(f3Var.getContainer(), d6Var2));
+                    org.telegram.messenger.kk.p(R.string.PhoneCopied, new xc(f3Var.getContainer(), d6Var2));
                     return;
                 } else {
                     new xc(f3Var.getContainer(), d6Var2).k(false).j();
@@ -458,7 +458,7 @@ public final /* synthetic */ class az0 implements Runnable {
                         dVar.b = false;
                         bVar = dVar.a();
                         if (bVar.c.k()) {
-                            m.g3 g3Var = new m.g3(22);
+                            m.g3 g3Var = new m.g3(23);
                             Bitmap bitmap2 = bitmapHolder.bitmap;
                             int width = bitmap2.getWidth();
                             int height = bitmap2.getHeight();
@@ -678,7 +678,7 @@ public final /* synthetic */ class az0 implements Runnable {
                 } else {
                     m1Var.a++;
                     ((qg.l1) arrayList13.get(i32)).c++;
-                    m1Var.g.edit().putInt(i0.a.j(i32, "score"), ((qg.l1) arrayList13.get(i32)).c).putInt("scoreall", m1Var.a).apply();
+                    m1Var.g.edit().putInt(i2.d.j(i32, "score"), ((qg.l1) arrayList13.get(i32)).c).putInt("scoreall", m1Var.a).apply();
                     m1Var.i = null;
                 }
                 m1Var.e.run(h1Var);
@@ -700,24 +700,37 @@ public final /* synthetic */ class az0 implements Runnable {
                         } else {
                             bVar2.e(iVar, i33);
                         }
-                    } catch (t5.a unused4) {
-                        ((m.g3) bVar2.d).U(iVar, i33 + 1, false);
+                    } catch (Throwable th3) {
+                        runnable.run();
+                        throw th3;
                     }
-                    runnable.run();
-                    return;
-                } catch (Throwable th3) {
-                    runnable.run();
-                    throw th3;
+                } catch (t5.a unused4) {
+                    ((m.g3) bVar2.d).P(iVar, i33 + 1, false);
                 }
+                runnable.run();
+                return;
             case 20:
                 rg.m2 m2Var = (rg.m2) this.d;
-                m2Var.m((Bitmap) this.e, this.b, m2Var.T, m2Var.U, (org.telegram.ui.xq0) this.c);
+                m2Var.m((Bitmap) this.e, this.b, m2Var.T, m2Var.U, (org.telegram.ui.yq0) this.c);
                 return;
             case 21:
                 sg.j0.S((sg.j0) this.d, (ArrayList) this.c, this.b, (TLRPC.TL_messages_inactiveChats) this.e);
                 return;
+            case 22:
+                ((zh.t0) this.d).c1(this.b, (String) this.e, (String) this.c);
+                return;
             default:
-                ((zh.b1) this.d).W0(this.b, (String) this.e, (String) this.c);
+                zh.t0 t0Var = (zh.t0) this.d;
+                Bitmap bitmap3 = (Bitmap) this.e;
+                int[] iArr2 = (int[]) this.c;
+                int i34 = this.b;
+                t0Var.W4 = false;
+                if (t0Var.X4 == null) {
+                    t0Var.X4 = bitmap3;
+                    t0Var.Y4 = iArr2;
+                    t0Var.Z4 = i34;
+                    return;
+                }
                 return;
         }
     }
@@ -728,14 +741,6 @@ public final /* synthetic */ class az0 implements Runnable {
         this.d = tL_error;
         this.e = n2Var;
         this.c = tL_payments_assignPlayMarketTransaction;
-    }
-
-    public /* synthetic */ az0(Object obj, FrameLayout frameLayout, Object obj2, int i10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.e = frameLayout;
-        this.c = obj2;
-        this.b = i10;
     }
 
     public /* synthetic */ az0(Object obj, Object obj2, int i10, Object obj3, int i11) {
@@ -752,6 +757,14 @@ public final /* synthetic */ class az0 implements Runnable {
         this.c = obj2;
         this.b = i10;
         this.e = obj3;
+    }
+
+    public /* synthetic */ az0(Object obj, Object obj2, Object obj3, int i10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.e = obj2;
+        this.c = obj3;
+        this.b = i10;
     }
 
     public /* synthetic */ az0(String str, int i10, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.d6 d6Var) {

@@ -21,14 +21,14 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.sd0;
 import org.telegram.ui.Components.u40;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class h1 extends org.telegram.ui.ActionBar.f3 {
     public final ag.a E;
@@ -67,7 +67,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
         boolean canManageMonoForum = ChatObject.canManageMonoForum(i10, j10);
         this.c = canManageMonoForum;
         final int i12 = 0;
-        boolean z11 = canManageMonoForum || fa.y(i10, true).j();
+        boolean z11 = canManageMonoForum || ga.y(i10, true).j();
         AppGlobalConfig appGlobalConfig = MessagesController.getInstance(i10).config;
         long j11 = appGlobalConfig.tonSuggestedPostAmountMin.get();
         ag.c cVar = ag.c.b;
@@ -101,7 +101,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
                     switch (i12) {
                         case 0:
                             if (this.b.H.a == ag.c.a) {
-                                new cd(context, d6Var).show();
+                                new dd(context, d6Var).show();
                                 break;
                             }
                             break;
@@ -116,7 +116,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
         fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        LinearLayout e = wh.e(context, 0);
+        LinearLayout e = kk.e(context, 0);
         linearLayout.addView(e, w7.z5.t(-1, 56, 55, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         int i13 = org.telegram.ui.ActionBar.h6.G6;
@@ -150,7 +150,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
         } else {
             this.e = null;
         }
-        LinearLayout e7 = wh.e(context, 1);
+        LinearLayout e7 = kk.e(context, 1);
         linearLayout.addView(e7, w7.z5.l(1.0f, -1, -2));
         sd0 sd0Var = new sd0(context, null);
         this.f = sd0Var;
@@ -221,7 +221,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
                 switch (i16) {
                     case 0:
                         if (this.b.H.a == ag.c.a) {
-                            new cd(context, d6Var).show();
+                            new dd(context, d6Var).show();
                             break;
                         }
                         break;
@@ -303,7 +303,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
             if (cVar != null) {
                 cVar.setEnabled(z11);
                 cVar.setClickable(z11);
-                wh.s(cVar.animate().scaleX(z11 ? 1.0f : 0.6f).scaleY(z11 ? 1.0f : 0.6f), z11 ? 1.0f : 0.0f, 180L);
+                kk.s(cVar.animate().scaleX(z11 ? 1.0f : 0.6f).scaleY(z11 ? 1.0f : 0.6f), z11 ? 1.0f : 0.0f, 180L);
             }
         }
     }
@@ -315,7 +315,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
             dVar.setEnabled(z11);
             dVar.setClickable(z11);
             if (z10) {
-                wh.s(dVar.animate(), z11 ? 1.0f : 0.6f, 180L);
+                kk.s(dVar.animate(), z11 ? 1.0f : 0.6f, 180L);
             } else {
                 dVar.setAlpha(z11 ? 1.0f : 0.6f);
             }
@@ -430,7 +430,7 @@ public final class h1 extends org.telegram.ui.ActionBar.f3 {
             } else {
                 ag.a aVar8 = this.H;
                 boolean z16 = aVar8.a == cVar2;
-                dVar.g(ld.n1(ld.W0(z16, LocaleController.formatString(R.string.PostSuggestionsOfferStars, z16 ? aVar8.b() : LocaleController.formatNumber(aVar8.a(), ',')), z16 ? this.M : this.L), z16), z12, true);
+                dVar.g(md.n1(md.W0(z16, LocaleController.formatString(R.string.PostSuggestionsOfferStars, z16 ? aVar8.b() : LocaleController.formatNumber(aVar8.a(), ',')), z16 ? this.M : this.L), z16), z12, true);
             }
             o(z12);
         }

@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k10 extends bb {
     public boolean A0;
@@ -373,7 +373,7 @@ public final class k10 extends bb {
                 g10Var2.v = ofFloat;
                 ofFloat.addUpdateListener(new f10(g10Var2, 1));
                 g10Var2.v.addListener(new org.telegram.ui.pq(g10Var2, 28));
-                org.telegram.messenger.wh.l(2.0f, g10Var2.v);
+                org.telegram.messenger.kk.l(2.0f, g10Var2.v);
                 g10Var2.v.setDuration(200L);
                 g10Var2.v.start();
             }

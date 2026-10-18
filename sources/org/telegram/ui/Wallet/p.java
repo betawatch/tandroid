@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.v61;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -74,18 +74,18 @@ public final /* synthetic */ class p implements Utilities.Callback {
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) this.c;
                 l lVar = (l) this.d;
                 f2Var3.getClass();
-                AndroidUtilities.runOnUIThread(new z6((Object) f2Var3, (Object) tonconnectsession, (String) obj, (Object) lVar, 7));
+                AndroidUtilities.runOnUIThread(new c7((Object) f2Var3, (Object) tonconnectsession, (String) obj, (Object) lVar, 7));
                 break;
             case 4:
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) this.b;
-                v3 v3Var = (v3) this.c;
+                w3 w3Var = (w3) this.c;
                 TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) this.d;
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
                 if (wallettransaction2 != null) {
                     wallettransaction2.incoming = wallettransaction.incoming;
                     wallettransaction2.peer = wallettransaction.peer;
                     wallettransactionArr[0] = wallettransaction2;
-                    v3Var.run(wallettransaction2);
+                    w3Var.run(wallettransaction2);
                     break;
                 }
                 break;
@@ -103,25 +103,25 @@ public final /* synthetic */ class p implements Utilities.Callback {
                     break;
                 }
             case 6:
-                k8 k8Var = (k8) this.c;
+                n8 n8Var = (n8) this.c;
                 m0 m0Var2 = (m0) this.b;
-                m0Var2.j0(new e2.o0((Object) m0Var2, (Object) new o(k8Var, (Utilities.Callback) obj, (ArrayList) this.d, m0Var2), true, false, 3));
+                m0Var2.j0(new e2.o0((Object) m0Var2, (Object) new o(n8Var, (Utilities.Callback) obj, (ArrayList) this.d, m0Var2), true, false, 3));
                 break;
             case 7:
-                t9 t9Var = (t9) this.c;
+                w9 w9Var = (w9) this.c;
                 m0 m0Var3 = (m0) this.b;
                 TLRPC.User user = (TLRPC.User) this.d;
                 String str5 = (String) obj;
-                if (!t9Var.n) {
-                    if (!TextUtils.isEmpty(str5) && m0.a(t9Var.e, m0Var3.s())) {
-                        c0 c0Var = new c0(m0Var3, str5, t9Var.d, null, new q(t9Var, m0Var3, user, str5));
+                if (!w9Var.n) {
+                    if (!TextUtils.isEmpty(str5) && m0.a(w9Var.e, m0Var3.s())) {
+                        c0 c0Var = new c0(m0Var3, str5, w9Var.d, null, new q(w9Var, m0Var3, user, str5));
                         m0Var3.j0(c0Var);
-                        t9Var.h = new n(c0Var, 1);
+                        w9Var.h = new n(c0Var, 1);
                         break;
                     } else {
-                        t9Var.f = false;
-                        t9Var.V.setLoading(false);
-                        xc.a0(t9Var).e0(TextUtils.isEmpty(str5) ? LocaleController.getString(R.string.WalletRecipientUnavailable) : "WALLET_CHANGED", false);
+                        w9Var.f = false;
+                        w9Var.V.setLoading(false);
+                        xc.a0(w9Var).e0(TextUtils.isEmpty(str5) ? LocaleController.getString(R.string.WalletRecipientUnavailable) : "WALLET_CHANGED", false);
                         break;
                     }
                 }

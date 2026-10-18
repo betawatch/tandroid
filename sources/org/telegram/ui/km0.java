@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class km0 implements RequestDelegate {
     public final /* synthetic */ boolean a;
@@ -90,7 +90,7 @@ public final class km0 implements RequestDelegate {
         int i10;
         if (tL_error == null || !"SRP_ID_INVALID".equals(tL_error.text)) {
             if (tL_error == null) {
-                Utilities.globalQueue.postRunnable(new ai.y3(this, tLObject, this.d, this.a, 25));
+                Utilities.globalQueue.postRunnable(new ai.x9((Object) this, tLObject, (Object) this.d, this.a, 24));
                 return;
             } else {
                 AndroidUtilities.runOnUIThread(new z70(this, this.a, tL_error, 4));

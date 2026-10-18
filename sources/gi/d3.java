@@ -66,7 +66,7 @@ import org.telegram.ui.ia1;
 import org.telegram.ui.sn;
 import org.telegram.ui.ut0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class d3 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.t3 {
     public static final HashSet W0 = new HashSet();
@@ -277,9 +277,9 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
 
     public static WindowInsets e(d3 d3Var, View view, WindowInsets windowInsets) {
         r0.h1 h1Var = r0.k1.h(view, windowInsets).a;
-        i0.c f7 = h1Var.f(2);
+        i0.b f7 = h1Var.f(2);
         d3Var.f.set(f7.a, f7.b, f7.c, f7.d);
-        i0.c f10 = h1Var.f(647);
+        i0.b f10 = h1Var.f(647);
         Rect rect = d3Var.h;
         rect.set(Math.max(f10.a, windowInsets.getStableInsetLeft()), Math.max(f10.b, windowInsets.getStableInsetTop()), Math.max(f10.c, windowInsets.getStableInsetRight()), Math.max(f10.d, windowInsets.getStableInsetBottom()));
         int i10 = Build.VERSION.SDK_INT;
@@ -324,7 +324,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
         b2Var.R = string;
         b2Var.T = AndroidUtilities.replaceTags(formatString);
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new q1(i10, j10, tL_attachMenuBot, runnable));
-        i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public static JSONObject q(d6 d6Var, final boolean z10) {
@@ -569,7 +569,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
         if (this.U) {
             z10 = !this.S;
         } else {
-            z10 = !AndroidUtilities.isTablet() && i0.b.h(h6.x0(null, h6.d6, true)) >= 0.7210000157356262d && this.b >= 0.85f;
+            z10 = !AndroidUtilities.isTablet() && i0.a.h(h6.x0(null, h6.d6, true)) >= 0.7210000157356262d && this.b >= 0.85f;
         }
         Boolean bool = this.d;
         if (bool == null || bool.booleanValue() != z10) {
@@ -723,7 +723,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
 
     @Override // org.telegram.ui.ActionBar.t3
     public final int getNavigationBarColor(int i10) {
-        return i0.b.f(this.N0, i10, this.R);
+        return i0.a.f(this.N0, i10, this.R);
     }
 
     @Override // org.telegram.ui.ActionBar.t3
@@ -927,7 +927,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
             c3Var.setSystemUiVisibility(c3Var.getSystemUiVisibility() | 2);
         }
         if (i10 >= 26) {
-            AndroidUtilities.setLightNavigationBar(this, i0.b.h(this.R) >= 0.7210000157356262d);
+            AndroidUtilities.setLightNavigationBar(this, i0.a.h(this.R) >= 0.7210000157356262d);
         }
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didSetNewTheme);
         NotificationCenter.getInstance(this.G).addObserver(this, NotificationCenter.botDownloadsUpdate);
@@ -1417,7 +1417,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
         d6 d6Var = this.E;
         w1Var.c(sparseIntArray, i12, d6Var);
         this.U = z10;
-        this.S = i0.b.h(i10) < 0.7210000157356262d;
+        this.S = i0.a.h(i10) < 0.7210000157356262d;
         w1Var.c(w1Var.b, this.U ? i10 : 0, d6Var);
         if (z11) {
             ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(200L);
@@ -1426,7 +1426,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    int f7 = i0.b.f(floatValue, i11, i10);
+                    int f7 = i0.a.f(floatValue, i11, i10);
                     d3 d3Var = d3.this;
                     d3Var.Q = f7;
                     d3Var.h();

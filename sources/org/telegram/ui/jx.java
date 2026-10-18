@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class jx implements bh.h, org.telegram.ui.Components.ro0, org.telegram.ui.Components.zl0, ei.mb, org.telegram.ui.Components.j20 {
     public final /* synthetic */ int a;
@@ -53,10 +53,16 @@ public final class jx implements bh.h, org.telegram.ui.Components.ro0, org.teleg
     }
 
     @Override // ei.mb
-    public void a(long j10, ai.s3 s3Var) {
+    public ei.qb a(long j10) {
+        vw vwVar = this.b.E0;
+        return ei.qb.c(vwVar != null ? vwVar.e(j10) : null);
+    }
+
+    @Override // ei.mb
+    public void b(long j10, ai.r3 r3Var) {
         ey eyVar = this.b;
         if (eyVar.E0 == null) {
-            s3Var.run();
+            r3Var.run();
             return;
         }
         eyVar.v4(false, true);
@@ -67,13 +73,7 @@ public final class jx implements bh.h, org.telegram.ui.Components.ro0, org.teleg
         } else {
             eyVar.E0.k(j10);
         }
-        eyVar.e0[0].a.getViewTreeObserver().addOnPreDrawListener(new zl(1, this, s3Var));
-    }
-
-    @Override // ei.mb
-    public ei.qb b(long j10) {
-        vw vwVar = this.b.E0;
-        return ei.qb.c(vwVar != null ? vwVar.e(j10) : null);
+        eyVar.e0[0].a.getViewTreeObserver().addOnPreDrawListener(new zl(1, this, r3Var));
     }
 
     public void c(hg.o0 o0Var) {

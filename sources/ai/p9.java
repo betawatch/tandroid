@@ -6,6 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -19,7 +20,7 @@ import org.telegram.ui.Components.yt;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.lq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -42,12 +43,12 @@ public final /* synthetic */ class p9 implements RequestDelegate {
         Object obj2 = this.c;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new c3((fa) obj2, (Object) tLObject, this.b, obj, 4));
+                AndroidUtilities.runOnUIThread(new b2((ga) obj2, tLObject, this.b, (Utilities.Callback) obj, 4));
                 break;
             case 1:
-                ea eaVar = (ea) obj2;
-                eaVar.getClass();
-                AndroidUtilities.runOnUIThread(new z(eaVar, tLObject, (MessagesController) obj, tL_error, this.b));
+                fa faVar = (fa) obj2;
+                faVar.getClass();
+                AndroidUtilities.runOnUIThread(new z(faVar, tLObject, (MessagesController) obj, tL_error, this.b));
                 break;
             case 2:
                 ci.h1 h1Var = (ci.h1) obj2;
@@ -328,11 +329,11 @@ public final /* synthetic */ class p9 implements RequestDelegate {
                 break;
             case 5:
                 Pattern pattern = LaunchActivity.C1;
-                AndroidUtilities.runOnUIThread(new c3(tLObject, (MessagesController) obj2, this.b, (lq) obj, 21));
+                AndroidUtilities.runOnUIThread(new b2(tLObject, (MessagesController) obj2, this.b, (lq) obj, 21));
                 break;
             default:
                 MessagesController messagesController = (MessagesController) obj2;
-                ug.u0 u0Var = (ug.u0) obj;
+                ug.v0 v0Var = (ug.v0) obj;
                 if (tLObject instanceof TLRPC.TL_contacts_found) {
                     TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
                     messagesController.putChats(tL_contacts_found.chats, false);
@@ -344,7 +345,7 @@ public final /* synthetic */ class p9 implements RequestDelegate {
                             arrayList7.add(inputPeer);
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new uf.c(1, u0Var, arrayList7));
+                    AndroidUtilities.runOnUIThread(new uf.c(1, v0Var, arrayList7));
                     break;
                 }
                 break;

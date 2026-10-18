@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w20 extends lh.b {
     public final OvershootInterpolator d;
@@ -124,9 +124,9 @@ public final class w20 extends lh.b {
         }
         baVar7.a = AndroidUtilities.dp(62.0f) * 0.46296296f;
         RectF rectF3 = rectF2;
-        baVar7.b = com.google.android.gms.internal.cast.a6.A(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(62.0f), 0.48076922f);
+        baVar7.b = com.google.android.gms.internal.play_billing.k3.A(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(62.0f), 0.48076922f);
         baVar6.a = AndroidUtilities.dp(65.0f) * 0.46296296f;
-        baVar6.b = com.google.android.gms.internal.cast.a6.A(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(65.0f), 0.48076922f);
+        baVar6.b = com.google.android.gms.internal.play_billing.k3.A(AndroidUtilities.dp(20.0f), 0.6f, AndroidUtilities.dp(65.0f), 0.48076922f);
         float f21 = s50Var.P0;
         float f22 = s50Var.O0;
         if (f21 != f22) {
@@ -216,10 +216,10 @@ public final class w20 extends lh.b {
                         matrix = matrix3;
                         s50.T(s50Var, s50Var.N1.i, iArr);
                         paint = paint4;
-                        i14 = i0.b.f(s50Var.L1, i18, iArr[0]);
-                        i15 = i0.b.f(s50Var.L1, i19, iArr[1]);
-                        i16 = i0.b.f(s50Var.L1, i20, iArr[2]);
-                        i17 = i0.b.f(s50Var.L1, i21, iArr[3]);
+                        i14 = i0.a.f(s50Var.L1, i18, iArr[0]);
+                        i15 = i0.a.f(s50Var.L1, i19, iArr[1]);
+                        i16 = i0.a.f(s50Var.L1, i20, iArr[2]);
+                        i17 = i0.a.f(s50Var.L1, i21, iArr[3]);
                     } else {
                         paint = paint4;
                         matrix = matrix3;
@@ -233,7 +233,7 @@ public final class w20 extends lh.b {
                         i17 = iArr[3];
                     }
                     if (this.e != i14) {
-                        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(45.454548f), new int[]{i0.b.o(i14, 60), i0.b.o(i14, 0)}, (float[]) null, Shader.TileMode.CLAMP);
+                        RadialGradient radialGradient = new RadialGradient(0.0f, 0.0f, AndroidUtilities.dp(45.454548f), new int[]{i0.a.o(i14, 60), i0.a.o(i14, 0)}, (float[]) null, Shader.TileMode.CLAMP);
                         s50Var.R0 = radialGradient;
                         paint5.setShader(radialGradient);
                         this.e = i14;
@@ -364,7 +364,7 @@ public final class w20 extends lh.b {
                     canvas.save();
                     canvas.scale(t2Var3.getScaleX() * 1.0f, t2Var3.getScaleY() * 1.0f, measuredWidth2, y3);
                     canvas.save();
-                    float t10 = com.google.android.gms.internal.cast.a6.t(0.807f, s50Var.O0, 0.5f, 0.878f) * s50Var.Q1;
+                    float t10 = com.google.android.gms.internal.play_billing.k3.t(0.807f, s50Var.O0, 0.5f, 0.878f) * s50Var.Q1;
                     canvas.scale(t10, t10, measuredWidth2, y3);
                     canvas.save();
                     canvas.scale(1.2f, 1.2f, measuredWidth2, y3);
@@ -373,12 +373,12 @@ public final class w20 extends lh.b {
                     canvas.restore();
                     if (s50Var.a1 != null) {
                         canvas.save();
-                        float A = com.google.android.gms.internal.cast.a6.A(0.807f, s50Var.O0, 0.878f, interpolation2);
+                        float A = com.google.android.gms.internal.play_billing.k3.A(0.807f, s50Var.O0, 0.878f, interpolation2);
                         canvas.scale(A, A, measuredWidth2, y3);
                         baVar6.a(measuredWidth2, y3, canvas, paint3);
                         canvas.restore();
                         canvas.save();
-                        float A2 = com.google.android.gms.internal.cast.a6.A(0.704f, s50Var.O0, 0.926f, interpolation2);
+                        float A2 = com.google.android.gms.internal.play_billing.k3.A(0.704f, s50Var.O0, 0.926f, interpolation2);
                         canvas.scale(A2, A2, measuredWidth2, y3);
                         baVar7.a(measuredWidth2, y3, canvas, paint3);
                         canvas.restore();
@@ -436,7 +436,7 @@ public final class w20 extends lh.b {
                     canvas2.save();
                     canvas2.scale(t2Var3.getScaleX() * 1.0f, t2Var3.getScaleX() * 1.0f, measuredWidth3, y10);
                     canvas2.save();
-                    float t11 = com.google.android.gms.internal.cast.a6.t(s50Var.O0, 0.807f, 0.5f, 0.878f);
+                    float t11 = com.google.android.gms.internal.play_billing.k3.t(s50Var.O0, 0.807f, 0.5f, 0.878f);
                     float f36 = s50Var.Q1;
                     canvas2.scale(f36 * t11, f36 * t11, measuredWidth3, y10);
                     if (i11 != 1) {
@@ -521,7 +521,7 @@ public final class w20 extends lh.b {
                     canvas2.save();
                     canvas2.scale(t2Var3.getScaleX() * 1.0f, t2Var3.getScaleX() * 1.0f, measuredWidth32, y102);
                     canvas2.save();
-                    float t112 = com.google.android.gms.internal.cast.a6.t(s50Var.O0, 0.807f, 0.5f, 0.878f);
+                    float t112 = com.google.android.gms.internal.play_billing.k3.t(s50Var.O0, 0.807f, 0.5f, 0.878f);
                     float f362 = s50Var.Q1;
                     canvas2.scale(f362 * t112, f362 * t112, measuredWidth32, y102);
                     if (i11 != 1 && !s50Var.s1() && LiteMode.isEnabled(512)) {
@@ -539,13 +539,13 @@ public final class w20 extends lh.b {
                         baVar5 = baVar3;
                     } else if (s50Var.V0 > 0.0f) {
                         canvas2.save();
-                        float t12 = com.google.android.gms.internal.cast.a6.t(s50Var.O0, 0.807f, interpolation2, 0.878f);
+                        float t12 = com.google.android.gms.internal.play_billing.k3.t(s50Var.O0, 0.807f, interpolation2, 0.878f);
                         canvas2.scale(t12, t12, measuredWidth32, y102);
                         baVar5 = baVar3;
                         baVar5.a(measuredWidth32, y102, canvas2, paint2);
                         canvas2.restore();
                         canvas2.save();
-                        float t13 = com.google.android.gms.internal.cast.a6.t(s50Var.O0, 0.704f, interpolation2, 0.926f);
+                        float t13 = com.google.android.gms.internal.play_billing.k3.t(s50Var.O0, 0.704f, interpolation2, 0.926f);
                         canvas2.scale(t13, t13, measuredWidth32, y102);
                         baVar2 = baVar4;
                         baVar2.a(measuredWidth32, y102, canvas2, paint2);

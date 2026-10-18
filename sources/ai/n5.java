@@ -26,7 +26,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.dh0;
@@ -41,7 +41,7 @@ import org.telegram.ui.mc1;
 import org.telegram.ui.sa1;
 import org.telegram.ui.y50;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class n5 extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -224,7 +224,7 @@ public final class n5 extends FrameLayout {
                 float dpf2 = AndroidUtilities.dpf2(1.0f);
                 float dpf22 = AndroidUtilities.dpf2(0.33f);
                 mc1 mc1Var = (mc1) this.e;
-                paint5.setShadowLayer(dpf2, 0.0f, dpf22, i0.b.o(-16777216, (int) (mc1Var.R1.getAlpha() * 27.0f)));
+                paint5.setShadowLayer(dpf2, 0.0f, dpf22, i0.a.o(-16777216, (int) (mc1Var.R1.getAlpha() * 27.0f)));
                 canvas.drawRoundRect(rectF3, dp2, dp2, paint5);
                 bc1 bc1Var = mc1Var.x0;
                 mb1 mb1Var = mc1Var.a;
@@ -237,7 +237,7 @@ public final class n5 extends FrameLayout {
                 if (mc1Var.M1) {
                     float f7 = mc1Var.n1;
                     if (f7 > 0.0f) {
-                        paint3.setColor(i0.b.o(-16777216, (int) (f7 * 255.0f * mc1Var.o1)));
+                        paint3.setColor(i0.a.o(-16777216, (int) (f7 * 255.0f * mc1Var.o1)));
                         canvas.drawRoundRect(rectF3, dp2, dp2, paint3);
                     }
                 }
@@ -345,7 +345,7 @@ public final class n5 extends FrameLayout {
                 drawable = ((org.telegram.ui.ActionBar.f3) x0Var).shadowDrawable;
                 int i16 = x0Var.M;
                 i14 = ((org.telegram.ui.ActionBar.f3) x0Var).backgroundPaddingTop;
-                drawable.setBounds(0, org.telegram.ui.Cells.t0.e(2.0f, i14 + i16, 1), getMeasuredWidth(), getMeasuredHeight());
+                drawable.setBounds(0, kk.D(2.0f, i14 + i16, 1), getMeasuredWidth(), getMeasuredHeight());
                 drawable2 = ((org.telegram.ui.ActionBar.f3) x0Var).shadowDrawable;
                 drawable2.draw(canvas);
                 super.dispatchDraw(canvas);
@@ -610,9 +610,9 @@ public final class n5 extends FrameLayout {
                 k7 k7Var = (k7) this.e;
                 l5 l5Var = k7Var.T0;
                 if (l5Var != null) {
-                    l5Var.F(k7Var.f0.getFinalHeight(), k7Var.M1() + ((k7Var.b1.d(1) && k7Var.n0.getVisibility() == 0) ? k7Var.n0.getMeasuredHeight() : 0));
+                    l5Var.F(k7Var.f0.getFinalHeight(), k7Var.N1() + ((k7Var.b1.d(1) && k7Var.n0.getVisibility() == 0) ? k7Var.n0.getMeasuredHeight() : 0));
                 }
-                k7Var.g2();
+                k7Var.h2();
                 break;
             case 4:
                 super.onLayout(z10, i10, i11, i12, i13);
@@ -638,11 +638,11 @@ public final class n5 extends FrameLayout {
                         left2 = childAt.getLeft() + u1Var.getBoundsLeft();
                         left = childAt.getLeft();
                         boundsRight = u1Var.getBoundsRight();
-                    } else if (childAt instanceof org.telegram.ui.Cells.x0) {
-                        org.telegram.ui.Cells.x0 x0Var2 = (org.telegram.ui.Cells.x0) childAt;
-                        left2 = childAt.getLeft() + x0Var2.getBoundsLeft();
+                    } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
+                        left2 = childAt.getLeft() + w0Var.getBoundsLeft();
                         left = childAt.getLeft();
-                        boundsRight = x0Var2.getBoundsRight();
+                        boundsRight = w0Var.getBoundsRight();
                     } else {
                         measuredWidth = Math.min(left2, measuredWidth);
                         i14 = Math.max(right, i14);
@@ -706,11 +706,11 @@ public final class n5 extends FrameLayout {
                 l5 l5Var = k7Var.T0;
                 if (l5Var != null) {
                     int finalHeight = k7Var.f0.getFinalHeight();
-                    int M1 = k7Var.M1();
+                    int N1 = k7Var.N1();
                     if (k7Var.b1.d(1) && k7Var.n0.getVisibility() == 0) {
                         i13 = k7Var.n0.getMeasuredHeight();
                     }
-                    l5Var.F(finalHeight, M1 + i13);
+                    l5Var.F(finalHeight, N1 + i13);
                     break;
                 }
                 break;
@@ -751,11 +751,11 @@ public final class n5 extends FrameLayout {
                         left2 = childAt2.getLeft() + u1Var.getBoundsLeft();
                         left = childAt2.getLeft();
                         boundsRight = u1Var.getBoundsRight();
-                    } else if (childAt2 instanceof org.telegram.ui.Cells.x0) {
-                        org.telegram.ui.Cells.x0 x0Var2 = (org.telegram.ui.Cells.x0) childAt2;
-                        left2 = childAt2.getLeft() + x0Var2.getBoundsLeft();
+                    } else if (childAt2 instanceof org.telegram.ui.Cells.w0) {
+                        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt2;
+                        left2 = childAt2.getLeft() + w0Var.getBoundsLeft();
                         left = childAt2.getLeft();
-                        boundsRight = x0Var2.getBoundsRight();
+                        boundsRight = w0Var.getBoundsRight();
                     } else {
                         measuredWidth = Math.min(left2, measuredWidth);
                         i15 = Math.max(right, i15);
@@ -816,15 +816,15 @@ public final class n5 extends FrameLayout {
                 }
                 break;
             case 10:
-                sg.x0 x0Var3 = (sg.x0) this.e;
-                x0Var3.L = 0;
+                sg.x0 x0Var2 = (sg.x0) this.e;
+                x0Var2.L = 0;
                 ScrollView scrollView = (ScrollView) this.b;
                 scrollView.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_31));
                 int size5 = View.MeasureSpec.getSize(i11) - scrollView.getMeasuredHeight();
-                i12 = ((org.telegram.ui.ActionBar.f3) x0Var3).backgroundPaddingTop;
-                x0Var3.L = i12 + size5;
+                i12 = ((org.telegram.ui.ActionBar.f3) x0Var2).backgroundPaddingTop;
+                x0Var2.L = i12 + size5;
                 super.onMeasure(i10, i11);
-                x0Var3.A();
+                x0Var2.A();
                 break;
         }
     }
@@ -876,7 +876,7 @@ public final class n5 extends FrameLayout {
                 PhotoViewer photoViewer = (PhotoViewer) this.e;
                 FrameLayout frameLayout2 = photoViewer.R7;
                 if (frameLayout2 != null && frameLayout2.getVisibility() != 8) {
-                    photoViewer.R7.setTranslationY(photoViewer.P0.getTranslationY() - (photoViewer.U1.getAlpha() * org.telegram.messenger.q.b(46.0f, photoViewer.U1.getEditTextHeight(), 0)));
+                    photoViewer.R7.setTranslationY(photoViewer.P0.getTranslationY() - (photoViewer.U1.getAlpha() * org.telegram.messenger.g0.b(46.0f, photoViewer.U1.getEditTextHeight(), 0)));
                 }
                 org.telegram.ui.m0 m0Var = photoViewer.X1;
                 if (m0Var != null) {
@@ -958,7 +958,7 @@ public final class n5 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.c = textView;
-        wh.k(20.0f, 1, textView);
+        kk.k(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
         addView(textView);
@@ -992,7 +992,7 @@ public final class n5 extends FrameLayout {
         setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         setMinimumWidth(AndroidUtilities.dp(100.0f));
         int dp = AndroidUtilities.dp(10.0f);
-        int o10 = i0.b.o(-16777216, 80);
+        int o10 = i0.a.o(-16777216, 80);
         setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, 0, o10, o10));
     }
 

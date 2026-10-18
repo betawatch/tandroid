@@ -30,7 +30,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.ActionBar.g2 E;
@@ -1464,7 +1464,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                     h9 h9Var5 = h9Var3;
                     if (this.f == 0 || j10 != getUserConfig().getClientUserId()) {
                         if (DialogObject.isEncryptedDialog(j10)) {
-                            TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(getMessagesController(), j10);
+                            TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(getMessagesController(), j10);
                             h9Var2 = h9Var5;
                             if (l4 != null) {
                                 TLRPC.User user3 = getMessagesController().getUser(Long.valueOf(l4.user_id));
@@ -1651,7 +1651,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
             if (this.actionBar.s()) {
                 x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.w8, false);
             }
-            if (i0.b.h(x02) > 0.699999988079071d) {
+            if (i0.a.h(x02) > 0.699999988079071d) {
                 return true;
             }
         }

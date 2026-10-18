@@ -4,7 +4,7 @@ import android.text.Editable;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.n9;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i5 implements g1 {
     public final /* synthetic */ r5 a;
@@ -109,15 +109,15 @@ public final class i5 implements g1 {
     }
 
     @Override // ki.g1
-    public final /* synthetic */ boolean q(h1 h1Var) {
+    public final /* synthetic */ boolean w(h1 h1Var) {
         return false;
     }
 
     @Override // ki.g1
-    public final /* synthetic */ void m() {
+    public final /* synthetic */ void l(h1 h1Var) {
     }
 
     @Override // ki.g1
-    public final /* synthetic */ void l(h1 h1Var) {
+    public final /* synthetic */ void m() {
     }
 }

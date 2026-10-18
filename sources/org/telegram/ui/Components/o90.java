@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class o90 extends k9 {
     public final /* synthetic */ ai.w1 e;
@@ -18,6 +18,6 @@ public final class o90 extends k9 {
 
     @Override // org.telegram.ui.Components.k9, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((q90) this.e.d).w) == 0 ? 0 : i0.a.g(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((q90) this.e.d).w) == 0 ? 0 : com.google.android.gms.internal.play_billing.k3.v(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
     }
 }

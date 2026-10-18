@@ -8,12 +8,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b81 extends LinearLayout {
     public final org.telegram.ui.ActionBar.e1[] a;
 
-    public b81(ContextThemeWrapper contextThemeWrapper, final zq0 zq0Var) {
+    public b81(ContextThemeWrapper contextThemeWrapper, final ar0 ar0Var) {
         super(contextThemeWrapper);
         this.a = new org.telegram.ui.ActionBar.e1[]{r3, r3, r2, r2, r2};
         setOrientation(1);
@@ -24,30 +24,30 @@ public final class b81 extends LinearLayout {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 int i11 = i10;
-                zq0 zq0Var2 = zq0Var;
+                ar0 ar0Var2 = ar0Var;
                 switch (i11) {
                     case 0:
-                        PhotoViewer photoViewer = zq0Var2.a;
+                        PhotoViewer photoViewer = ar0Var2.a;
                         Drawable[] drawableArr = PhotoViewer.U8;
                         photoViewer.D0(true, true, 0.2f);
                         break;
                     case 1:
-                        PhotoViewer photoViewer2 = zq0Var2.a;
+                        PhotoViewer photoViewer2 = ar0Var2.a;
                         Drawable[] drawableArr2 = PhotoViewer.U8;
                         photoViewer2.D0(true, true, 0.5f);
                         break;
                     case 2:
-                        PhotoViewer photoViewer3 = zq0Var2.a;
+                        PhotoViewer photoViewer3 = ar0Var2.a;
                         Drawable[] drawableArr3 = PhotoViewer.U8;
                         photoViewer3.D0(true, true, 1.0f);
                         break;
                     case 3:
-                        PhotoViewer photoViewer4 = zq0Var2.a;
+                        PhotoViewer photoViewer4 = ar0Var2.a;
                         Drawable[] drawableArr4 = PhotoViewer.U8;
                         photoViewer4.D0(true, true, 1.5f);
                         break;
                     default:
-                        PhotoViewer photoViewer5 = zq0Var2.a;
+                        PhotoViewer photoViewer5 = ar0Var2.a;
                         Drawable[] drawableArr5 = PhotoViewer.U8;
                         photoViewer5.D0(true, true, 2.0f);
                         break;
@@ -62,30 +62,30 @@ public final class b81 extends LinearLayout {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 int i112 = i11;
-                zq0 zq0Var2 = zq0Var;
+                ar0 ar0Var2 = ar0Var;
                 switch (i112) {
                     case 0:
-                        PhotoViewer photoViewer = zq0Var2.a;
+                        PhotoViewer photoViewer = ar0Var2.a;
                         Drawable[] drawableArr = PhotoViewer.U8;
                         photoViewer.D0(true, true, 0.2f);
                         break;
                     case 1:
-                        PhotoViewer photoViewer2 = zq0Var2.a;
+                        PhotoViewer photoViewer2 = ar0Var2.a;
                         Drawable[] drawableArr2 = PhotoViewer.U8;
                         photoViewer2.D0(true, true, 0.5f);
                         break;
                     case 2:
-                        PhotoViewer photoViewer3 = zq0Var2.a;
+                        PhotoViewer photoViewer3 = ar0Var2.a;
                         Drawable[] drawableArr3 = PhotoViewer.U8;
                         photoViewer3.D0(true, true, 1.0f);
                         break;
                     case 3:
-                        PhotoViewer photoViewer4 = zq0Var2.a;
+                        PhotoViewer photoViewer4 = ar0Var2.a;
                         Drawable[] drawableArr4 = PhotoViewer.U8;
                         photoViewer4.D0(true, true, 1.5f);
                         break;
                     default:
-                        PhotoViewer photoViewer5 = zq0Var2.a;
+                        PhotoViewer photoViewer5 = ar0Var2.a;
                         Drawable[] drawableArr5 = PhotoViewer.U8;
                         photoViewer5.D0(true, true, 2.0f);
                         break;
@@ -100,30 +100,30 @@ public final class b81 extends LinearLayout {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 int i112 = i12;
-                zq0 zq0Var2 = zq0Var;
+                ar0 ar0Var2 = ar0Var;
                 switch (i112) {
                     case 0:
-                        PhotoViewer photoViewer = zq0Var2.a;
+                        PhotoViewer photoViewer = ar0Var2.a;
                         Drawable[] drawableArr = PhotoViewer.U8;
                         photoViewer.D0(true, true, 0.2f);
                         break;
                     case 1:
-                        PhotoViewer photoViewer2 = zq0Var2.a;
+                        PhotoViewer photoViewer2 = ar0Var2.a;
                         Drawable[] drawableArr2 = PhotoViewer.U8;
                         photoViewer2.D0(true, true, 0.5f);
                         break;
                     case 2:
-                        PhotoViewer photoViewer3 = zq0Var2.a;
+                        PhotoViewer photoViewer3 = ar0Var2.a;
                         Drawable[] drawableArr3 = PhotoViewer.U8;
                         photoViewer3.D0(true, true, 1.0f);
                         break;
                     case 3:
-                        PhotoViewer photoViewer4 = zq0Var2.a;
+                        PhotoViewer photoViewer4 = ar0Var2.a;
                         Drawable[] drawableArr4 = PhotoViewer.U8;
                         photoViewer4.D0(true, true, 1.5f);
                         break;
                     default:
-                        PhotoViewer photoViewer5 = zq0Var2.a;
+                        PhotoViewer photoViewer5 = ar0Var2.a;
                         Drawable[] drawableArr5 = PhotoViewer.U8;
                         photoViewer5.D0(true, true, 2.0f);
                         break;
@@ -138,30 +138,30 @@ public final class b81 extends LinearLayout {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 int i112 = i13;
-                zq0 zq0Var2 = zq0Var;
+                ar0 ar0Var2 = ar0Var;
                 switch (i112) {
                     case 0:
-                        PhotoViewer photoViewer = zq0Var2.a;
+                        PhotoViewer photoViewer = ar0Var2.a;
                         Drawable[] drawableArr = PhotoViewer.U8;
                         photoViewer.D0(true, true, 0.2f);
                         break;
                     case 1:
-                        PhotoViewer photoViewer2 = zq0Var2.a;
+                        PhotoViewer photoViewer2 = ar0Var2.a;
                         Drawable[] drawableArr2 = PhotoViewer.U8;
                         photoViewer2.D0(true, true, 0.5f);
                         break;
                     case 2:
-                        PhotoViewer photoViewer3 = zq0Var2.a;
+                        PhotoViewer photoViewer3 = ar0Var2.a;
                         Drawable[] drawableArr3 = PhotoViewer.U8;
                         photoViewer3.D0(true, true, 1.0f);
                         break;
                     case 3:
-                        PhotoViewer photoViewer4 = zq0Var2.a;
+                        PhotoViewer photoViewer4 = ar0Var2.a;
                         Drawable[] drawableArr4 = PhotoViewer.U8;
                         photoViewer4.D0(true, true, 1.5f);
                         break;
                     default:
-                        PhotoViewer photoViewer5 = zq0Var2.a;
+                        PhotoViewer photoViewer5 = ar0Var2.a;
                         Drawable[] drawableArr5 = PhotoViewer.U8;
                         photoViewer5.D0(true, true, 2.0f);
                         break;
@@ -176,30 +176,30 @@ public final class b81 extends LinearLayout {
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 int i112 = i14;
-                zq0 zq0Var2 = zq0Var;
+                ar0 ar0Var2 = ar0Var;
                 switch (i112) {
                     case 0:
-                        PhotoViewer photoViewer = zq0Var2.a;
+                        PhotoViewer photoViewer = ar0Var2.a;
                         Drawable[] drawableArr = PhotoViewer.U8;
                         photoViewer.D0(true, true, 0.2f);
                         break;
                     case 1:
-                        PhotoViewer photoViewer2 = zq0Var2.a;
+                        PhotoViewer photoViewer2 = ar0Var2.a;
                         Drawable[] drawableArr2 = PhotoViewer.U8;
                         photoViewer2.D0(true, true, 0.5f);
                         break;
                     case 2:
-                        PhotoViewer photoViewer3 = zq0Var2.a;
+                        PhotoViewer photoViewer3 = ar0Var2.a;
                         Drawable[] drawableArr3 = PhotoViewer.U8;
                         photoViewer3.D0(true, true, 1.0f);
                         break;
                     case 3:
-                        PhotoViewer photoViewer4 = zq0Var2.a;
+                        PhotoViewer photoViewer4 = ar0Var2.a;
                         Drawable[] drawableArr4 = PhotoViewer.U8;
                         photoViewer4.D0(true, true, 1.5f);
                         break;
                     default:
-                        PhotoViewer photoViewer5 = zq0Var2.a;
+                        PhotoViewer photoViewer5 = ar0Var2.a;
                         Drawable[] drawableArr5 = PhotoViewer.U8;
                         photoViewer5.D0(true, true, 2.0f);
                         break;

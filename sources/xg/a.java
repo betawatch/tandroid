@@ -18,6 +18,7 @@ import android.text.style.RelativeSizeSpan;
 import android.util.StateSet;
 import android.view.MotionEvent;
 import ci.e;
+import i2.d;
 import ig.l0;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -45,9 +47,9 @@ import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.dx0;
 import org.telegram.ui.Components.h9;
-import ug.q;
+import ug.r;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a {
     public static final HashMap Y;
@@ -105,8 +107,8 @@ public final class a {
     static {
         HashMap hashMap = new HashMap();
         Y = hashMap;
-        i0.a.q(1, hashMap, "1⃣", 3, "2⃣");
-        i0.a.q(6, hashMap, "3⃣", 12, "4⃣");
+        d.q(1, hashMap, "1⃣", 3, "2⃣");
+        d.q(6, hashMap, "3⃣", 12, "4⃣");
         hashMap.put(24, "5⃣");
     }
 
@@ -151,7 +153,7 @@ public final class a {
                     this.X = false;
                     MessageObject messageObject2 = this.T;
                     if (messageObject2 != null && messageObject2.messageOwner != null) {
-                        q.d(messageObject2, new l0(messageObject2, 19), new e(24));
+                        r.d(messageObject2, new l0(messageObject2, 19), new e(24));
                         return false;
                     }
                 }
@@ -257,7 +259,7 @@ public final class a {
         this.y.draw(canvas2);
         canvas2.restore();
         canvas2.translate(0.0f, AndroidUtilities.dp(6.0f) + this.q);
-        int C = org.telegram.messenger.q.C(6.0f, this.q, dp5);
+        int C = g0.C(6.0f, this.q, dp5);
         int i16 = 0;
         int i17 = 0;
         while (true) {

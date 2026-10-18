@@ -8,7 +8,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class vd1 extends s4.b0 {
     public boolean I;
@@ -86,9 +86,9 @@ public final class vd1 extends s4.b0 {
             if (!z11) {
                 View m11 = te1Var.F.m(L0);
                 if (m11 != null) {
-                    int g10 = i0.a.g(L0, 1, AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f) + 1, -(m11.getTop() - paddingTop));
-                    if (g10 < Math.abs(i10)) {
-                        i11 = -g10;
+                    int v = com.google.android.gms.internal.play_billing.k3.v(L0, 1, AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f) + 1, -(m11.getTop() - paddingTop));
+                    if (v < Math.abs(i10)) {
+                        i11 = -v;
                     }
                 }
             } else if (L0 == 0) {
@@ -98,7 +98,7 @@ public final class vd1 extends s4.b0 {
                     top = 1.0f;
                 }
                 te1Var.N.setOverScrollMode(2);
-                i11 = (int) com.google.android.gms.internal.cast.a6.B(top, 0.25f, 0.45f, i10);
+                i11 = (int) com.google.android.gms.internal.play_billing.k3.B(top, 0.25f, 0.45f, i10);
                 if (i11 > -1) {
                     i11 = -1;
                 }

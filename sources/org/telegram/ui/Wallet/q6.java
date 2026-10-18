@@ -1,34 +1,53 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.content.Context;
+import android.graphics.SurfaceTexture;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ Utilities.Callback2 c;
-    public final /* synthetic */ TL_wallet.sendTransfer d;
-    public final /* synthetic */ String e;
+public final class q6 extends tg.n {
+    public final /* synthetic */ s6 i0;
 
-    public /* synthetic */ q6(WalletEngine2 walletEngine2, Utilities.Callback2 callback2, TL_wallet.sendTransfer sendtransfer, String str, int i10) {
-        this.a = i10;
-        this.b = walletEngine2;
-        this.c = callback2;
-        this.d = sendtransfer;
-        this.e = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q6(s6 s6Var, Context context) {
+        super(context, 1, 4);
+        this.i0 = s6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$prepareTonConnectTransfer$4(this.c, this.d, this.e);
-                break;
-            default:
-                this.b.lambda$prepareSendNFT$25(this.c, this.d, this.e);
-                break;
+    @Override // tg.n
+    public final void j() {
+        s6 s6Var = this.i0;
+        if (s6Var.e == this) {
+            s6.c(s6Var);
         }
+    }
+
+    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        int round = Math.round(Math.min(i10, i11) * 3.5f);
+        surfaceTexture.setDefaultBufferSize(round, round);
+        super.onSurfaceTextureAvailable(surfaceTexture, round, round);
+    }
+
+    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        int round = Math.round(Math.min(i10, i11) * 3.5f);
+        surfaceTexture.setDefaultBufferSize(round, round);
+        this.y = round;
+        this.x = round;
+    }
+
+    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        int round = Math.round(Math.min(getWidth(), getHeight()) * 3.5f);
+        if (round > 0) {
+            surfaceTexture.setDefaultBufferSize(round, round);
+        }
+    }
+
+    @Override // tg.n, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.i0.x && super.onTouchEvent(motionEvent);
     }
 }

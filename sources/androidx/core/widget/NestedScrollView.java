@@ -25,7 +25,7 @@ import android.widget.EdgeEffect;
 import android.widget.FrameLayout;
 import android.widget.OverScroller;
 import b2.u0;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import g1.a;
 import j$.util.Objects;
 import java.lang.reflect.Method;
@@ -51,7 +51,7 @@ import u0.g;
 import u0.h;
 import w7.w7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class NestedScrollView extends FrameLayout implements m {
     public static final float T = (float) (Math.log(0.78d) / Math.log(0.9d));
@@ -1735,7 +1735,7 @@ public class NestedScrollView extends FrameLayout implements m {
             edgeEffect2 = new EdgeEffect(context);
         }
         this.f = edgeEffect2;
-        this.a = a6.C(context.getResources().getDisplayMetrics().density, 160.0f, 386.0878f, 0.84f);
+        this.a = k3.C(context.getResources().getDisplayMetrics().density, 160.0f, 386.0878f, 0.84f);
         this.d = new OverScroller(getContext());
         setFocusable(true);
         setDescendantFocusability(262144);

@@ -19,7 +19,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BringAppForegroundService;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class yu implements r91 {
     public final /* synthetic */ cv a;
@@ -313,7 +313,7 @@ public final class yu implements r91 {
         animatorSet.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat6, ofFloat7, ofFloat8, ofFloat9, ofInt, ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property5, 0.0f), ObjectAnimator.ofFloat(controlsView, (Property<View, Float>) property5, 0.0f));
         animatorSet.setInterpolator(new DecelerateInterpolator());
         animatorSet.setDuration(250L);
-        animatorSet.addListener(new ai.le(24, this, m91Var));
+        animatorSet.addListener(new ai.me(24, this, m91Var));
         animatorSet.start();
     }
 

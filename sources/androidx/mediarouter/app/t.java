@@ -43,7 +43,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t extends g.f {
     public static final int F0;
@@ -255,7 +255,7 @@ public final class t extends g.f {
         linearLayout.setOnClickListener(new k());
         Context context = this.s;
         int f7 = v7.a0.f(context, 0, R.attr.colorPrimary);
-        if (i0.b.g(f7, v7.a0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
+        if (i0.a.g(f7, v7.a0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
             f7 = v7.a0.f(context, 0, R.attr.colorAccent);
         }
         Button button = (Button) findViewById(android.R.id.button2);
@@ -317,7 +317,7 @@ public final class t extends g.f {
         LinearLayout linearLayout4 = this.Q;
         int b10 = v7.a0.b(context, 0);
         if (Color.alpha(b10) != 255) {
-            b10 = i0.b.k(b10, ((Integer) linearLayout4.getTag()).intValue());
+            b10 = i0.a.k(b10, ((Integer) linearLayout4.getTag()).intValue());
         }
         mediaRouteVolumeSlider.a(b10, b10);
         HashMap hashMap = new HashMap();

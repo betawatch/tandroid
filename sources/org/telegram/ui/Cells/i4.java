@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.d11;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i4 implements DownloadController.FileDownloadProgressListener {
     public TLRPC.MessageExtendedMedia E;
@@ -105,7 +105,7 @@ public final class i4 implements DownloadController.FileDownloadProgressListener
         if (z10) {
             this.h = true;
             this.v = null;
-            this.f.setImage(ImageLocation.getForObject(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, messageObject.messageOwner), r.c.u(k10, "_b2"), null, null, messageObject, 0);
+            this.f.setImage(ImageLocation.getForObject(((TLRPC.TL_messageExtendedMediaPreview) messageExtendedMedia).thumb, messageObject.messageOwner), r4.c.u(k10, "_b2"), null, null, messageObject, 0);
             ColorMatrix colorMatrix = new ColorMatrix();
             colorMatrix.setSaturation(1.4f);
             AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, -0.1f);
@@ -116,7 +116,7 @@ public final class i4 implements DownloadController.FileDownloadProgressListener
             boolean z11 = messageObject.isRepostPreview;
             this.h = z11;
             if (z11) {
-                k10 = r.c.u(k10, "_b3");
+                k10 = r4.c.u(k10, "_b3");
             }
             imageReceiver.setColorFilter(null);
             TLRPC.MessageMedia messageMedia = ((TLRPC.TL_messageExtendedMedia) messageExtendedMedia).media;

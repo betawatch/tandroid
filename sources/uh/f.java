@@ -46,12 +46,12 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.v30;
 import r0.a0;
 import s4.k;
-import ug.s0;
+import ug.t0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class f extends bb implements ne.d {
     public static final /* synthetic */ int r0 = 0;
     public final ne.e X;
@@ -164,7 +164,7 @@ public final class f extends bb implements ne.d {
         hashMap2.putAll((Map) pair.first);
         ArrayList arrayList = fVar.a0;
         arrayList.addAll((Collection) pair.second);
-        Map.-EL.forEach(hashMap2, new s0(fVar, 1));
+        Map.-EL.forEach(hashMap2, new t0(fVar, 1));
         HashSet hashSet = fVar.o0;
         if (hashSet != null) {
             Iterator it = hashSet.iterator();

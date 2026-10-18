@@ -7,10 +7,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
 import org.telegram.ui.Components.vz;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c0 implements TextWatcher {
     public final /* synthetic */ i0 a;
@@ -51,13 +50,13 @@ public final class c0 implements TextWatcher {
             if (translitSafe.startsWith("/")) {
                 translitSafe = translitSafe.substring(1);
             }
-            ArrayList arrayList2 = y1.f(UserConfig.selectedAccount).b;
+            ArrayList arrayList2 = a2.f(UserConfig.selectedAccount).b;
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                x1 x1Var = (x1) arrayList2.get(i10);
-                if (!y1.g(x1Var.b)) {
-                    String translitSafe2 = AndroidUtilities.translitSafe(x1Var.b);
-                    if (translitSafe2.startsWith(translitSafe) || wh.w(" ", translitSafe, translitSafe2)) {
-                        arrayList.add(x1Var);
+                z1 z1Var = (z1) arrayList2.get(i10);
+                if (!a2.g(z1Var.b)) {
+                    String translitSafe2 = AndroidUtilities.translitSafe(z1Var.b);
+                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
+                        arrayList.add(z1Var);
                     }
                 }
             }

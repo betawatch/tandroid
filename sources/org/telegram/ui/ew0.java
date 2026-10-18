@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ew0 extends FrameLayout {
     public boolean a;
@@ -101,10 +101,10 @@ public final class ew0 extends FrameLayout {
         premiumPreviewFragment.U.setTranslationY(max);
         premiumPreviewFragment.U.d.setTranslationY(dp4 + AndroidUtilities.dp(premiumPreviewFragment.g0 == 1 ? 9.0f : 16.0f));
         float f13 = premiumPreviewFragment.f0;
-        float x10 = com.google.android.gms.internal.cast.a6.x(1.0f, f13, 0.4f, 0.6f);
+        float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f13, 0.4f, 0.6f);
         float f14 = 1.0f - (f13 > 0.5f ? (f13 - 0.5f) / 0.5f : 0.0f);
-        premiumPreviewFragment.U.d.setScaleX(x10);
-        premiumPreviewFragment.U.d.setScaleY(x10);
+        premiumPreviewFragment.U.d.setScaleX(y3);
+        premiumPreviewFragment.U.d.setScaleY(y3);
         premiumPreviewFragment.U.d.setAlpha(f14);
         premiumPreviewFragment.U.b.setAlpha(f14);
         premiumPreviewFragment.U.e.setAlpha(f14);
@@ -133,7 +133,7 @@ public final class ew0 extends FrameLayout {
             if (premiumPreviewFragment.q0 > 0.0f) {
                 kVar6 = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).actionBar;
                 if (kVar6 != null) {
-                    paint.setColor(i0.b.f(premiumPreviewFragment.q0, premiumPreviewFragment.getThemedColor(i11), premiumPreviewFragment.getThemedColor(org.telegram.ui.ActionBar.h6.d6)));
+                    paint.setColor(i0.a.f(premiumPreviewFragment.q0, premiumPreviewFragment.getThemedColor(i11), premiumPreviewFragment.getThemedColor(org.telegram.ui.ActionBar.h6.d6)));
                     float measuredWidth = getMeasuredWidth();
                     kVar7 = ((org.telegram.ui.ActionBar.n2) premiumPreviewFragment).actionBar;
                     float height = kVar7.getHeight();

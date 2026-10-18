@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class dh implements ml, org.telegram.ui.ActionBar.a2, ne.k, yl0, eh.d, org.telegram.ui.ActionBar.q0, eo, AndroidUtilities.IntColorCallback, e5, cj {
     public final /* synthetic */ int a;
@@ -152,7 +152,7 @@ public final /* synthetic */ class dh implements ml, org.telegram.ui.ActionBar.a
                 int w02 = org.telegram.ui.ActionBar.h6.w0(z10 ? org.telegram.ui.ActionBar.h6.a7 : org.telegram.ui.ActionBar.h6.i5, d6Var);
                 int w03 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var);
                 ti tiVar = this.b;
-                return tiVar.p2 ? i0.b.f(0.75f, w03, tiVar.q2) : fh.c.m(f7, w02, w03);
+                return tiVar.p2 ? i0.a.f(0.75f, w03, tiVar.q2) : fh.c.m(f7, w02, w03);
             case 5:
                 if (this.b.p2) {
                     return 0;

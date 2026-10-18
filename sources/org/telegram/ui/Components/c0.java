@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final int a;
@@ -54,8 +54,8 @@ public final class c0 extends FrameLayout implements org.telegram.ui.ActionBar.y
             org.telegram.ui.ActionBar.d6 d6Var = this.b;
             int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
             int i11 = org.telegram.ui.ActionBar.h6.Oh;
-            int f10 = i0.b.f(f7, w02, org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-            int f11 = i0.b.f(f7, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+            int f10 = i0.a.f(f7, w02, org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+            int f11 = i0.a.f(f7, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
             PorterDuffColorFilter porterDuffColorFilter = !this.f ? new PorterDuffColorFilter(f10, PorterDuff.Mode.SRC_IN) : null;
             w9 w9Var = this.h;
             w9Var.setColorFilter(porterDuffColorFilter);

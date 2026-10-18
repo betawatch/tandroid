@@ -23,7 +23,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class dj0 extends org.telegram.ui.Components.bb {
     public static dj0 u0;
@@ -99,18 +99,18 @@ public final class dj0 extends org.telegram.ui.Components.bb {
         ViewGroup viewGroup3 = this.containerView;
         int i14 = this.backgroundPaddingLeft;
         viewGroup3.addView(x10Var, w7.z5.f(1.0f, 55, i14, 0, i14, 0));
-        ai.ad adVar = new ai.ad(getContext(), this.resourcesProvider, (org.telegram.ui.Components.im0) null);
-        adVar.setClickable(true);
-        adVar.setOrientation(1);
-        adVar.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
-        adVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i11, this.resourcesProvider));
+        ai.bd bdVar = new ai.bd(getContext(), this.resourcesProvider, (org.telegram.ui.Components.im0) null);
+        bdVar.setClickable(true);
+        bdVar.setOrientation(1);
+        bdVar.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
+        bdVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i11, this.resourcesProvider));
         bj0 bj0Var = new bj0(this, getContext(), this.resourcesProvider);
         this.X = bj0Var;
         bj0Var.setOnClickListener(new yi0(this, 0));
-        adVar.addView(bj0Var, w7.z5.q(-1, 48, 87));
+        bdVar.addView(bj0Var, w7.z5.q(-1, 48, 87));
         ViewGroup viewGroup4 = this.containerView;
         int i15 = this.backgroundPaddingLeft;
-        viewGroup4.addView(adVar, w7.z5.f(-2.0f, 87, i15, 0, i15, 0));
+        viewGroup4.addView(bdVar, w7.z5.f(-2.0f, 87, i15, 0, i15, 0));
         vg.h hVar = this.k0;
         org.telegram.ui.Components.im0 im0Var = this.d;
         hVar.n = arrayList;
@@ -118,7 +118,7 @@ public final class dj0 extends org.telegram.ui.Components.bb {
         int i16 = this.backgroundPaddingLeft;
         im0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(60.0f));
         this.d.j(new k3(this, 21));
-        this.d.setOnItemClickListener(new i2.q(this, i10, 15));
+        this.d.setOnItemClickListener(new i2.r(this, i10, 15));
         s4.k kVar = new s4.k();
         kVar.n(350L);
         kVar.o(org.telegram.ui.Components.bs.h);
@@ -200,14 +200,14 @@ public final class dj0 extends org.telegram.ui.Components.bb {
                 if (tL_contact != null && (user = messagesController.getUser(Long.valueOf(tL_contact.user_id))) != null && ((z10 || !user.bot) && !UserObject.isService(user.id) && !UserObject.isUserSelf(user))) {
                     String lowerCase2 = UserObject.getUserName(user).toLowerCase();
                     String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                    if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.wh.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, translitSafe2)) {
+                    if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.g0.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
                         arrayList.add(user);
                     } else if (user.usernames != null) {
                         for (int i12 = 0; i12 < user.usernames.size(); i12++) {
                             TLRPC.TL_username tL_username = user.usernames.get(i12);
                             if (tL_username != null && tL_username.active) {
                                 String lowerCase3 = tL_username.username.toLowerCase();
-                                if (lowerCase3.startsWith(lowerCase) || org.telegram.messenger.wh.w("_", lowerCase, lowerCase3) || lowerCase3.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, lowerCase3)) {
+                                if (lowerCase3.startsWith(lowerCase) || org.telegram.messenger.g0.w("_", lowerCase, lowerCase3) || lowerCase3.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, lowerCase3)) {
                                     arrayList.add(user);
                                     break;
                                 }
@@ -217,7 +217,7 @@ public final class dj0 extends org.telegram.ui.Components.bb {
                         String str2 = user.username;
                         if (str2 != null) {
                             String lowerCase4 = str2.toLowerCase();
-                            if (lowerCase4.startsWith(lowerCase) || org.telegram.messenger.wh.w("_", lowerCase, lowerCase4) || lowerCase4.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, lowerCase4)) {
+                            if (lowerCase4.startsWith(lowerCase) || org.telegram.messenger.g0.w("_", lowerCase, lowerCase4) || lowerCase4.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, lowerCase4)) {
                                 arrayList.add(user);
                             }
                         }

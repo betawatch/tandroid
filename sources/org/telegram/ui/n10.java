@@ -22,7 +22,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n10 extends pg.b {
     public final Context d;
@@ -319,7 +319,7 @@ public final class n10 extends pg.b {
                         o10 o10Var = new o10(context);
                         TextView textView = new TextView(context);
                         o10Var.a = textView;
-                        org.telegram.messenger.wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+                        org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
                         textView.setMaxLines(1);
                         textView.setSingleLine(true);
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -328,7 +328,7 @@ public final class n10 extends pg.b {
                         o10Var.addView(textView, w7.z5.a(-2.0f, 22.0f, 10.0f, 22.0f, 0.0f, -2, LocaleController.isRTL ? 5 : 3));
                         TextView textView2 = new TextView(context);
                         o10Var.b = textView2;
-                        org.telegram.messenger.wh.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
+                        org.telegram.messenger.kk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
                         textView2.setMaxLines(1);
                         textView2.setSingleLine(true);
                         textView2.setEllipsize(truncateAt);

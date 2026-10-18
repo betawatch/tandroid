@@ -1,9 +1,8 @@
 package org.scilab.forge.jlatexmath;
 
-import a1.g;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class TeXEnvironment {
     private static final int MAX_DEPTH = 64;
@@ -46,7 +45,7 @@ public class TeXEnvironment {
     public TeXEnvironment denomStyle() {
         TeXEnvironment copy = copy();
         int i10 = this.style;
-        copy.style = g.C(i10, 2, 2, 3) - ((i10 / 6) * 2);
+        copy.style = (((i10 / 2) * 2) + 3) - ((i10 / 6) * 2);
         return copy;
     }
 
@@ -156,14 +155,14 @@ public class TeXEnvironment {
 
     public TeXEnvironment subStyle() {
         TeXEnvironment copy = copy();
-        copy.style = g.C(this.style, 4, 2, 5);
+        copy.style = ((this.style / 4) * 2) + 5;
         return copy;
     }
 
     public TeXEnvironment supStyle() {
         TeXEnvironment copy = copy();
         int i10 = this.style;
-        copy.style = (i10 % 2) + g.C(i10, 4, 2, 4);
+        copy.style = (i10 % 2) + ((i10 / 4) * 2) + 4;
         return copy;
     }
 

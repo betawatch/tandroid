@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.hs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i5 extends hs {
     public final /* synthetic */ j5 c;
@@ -22,7 +22,7 @@ public final class i5 extends hs {
 
     @Override // org.telegram.ui.Components.hs
     public final void b(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setBackgroundColor(i0.b.f(0.18f, -16777216, -1));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setBackgroundColor(i0.a.f(0.18f, -16777216, -1));
         j5 j5Var = this.c;
         u5 u5Var = j5Var.x;
         t5 t5Var = u5Var.E;

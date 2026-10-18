@@ -1,6 +1,6 @@
 package ki;
 
-import ai.hc;
+import ai.ic;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.gj0;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.pm0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y5, m9 {
     public static final /* synthetic */ int V = 0;
@@ -65,7 +65,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
     public final LinearLayout b;
     public final View c;
     public final di.n d;
-    public final hc e;
+    public final ic e;
     public final h1 f;
     public final h1 h;
     public boolean n;
@@ -100,11 +100,11 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
         nVar.setIncludeFontPadding(false);
         nVar.setTextSize(1, 16.0f);
         linearLayout.addView(nVar, w7.z5.n(18, -2));
-        hc hcVar = new hc(context, d6Var);
-        this.e = hcVar;
-        hcVar.setVisibility(8);
-        hcVar.setOnClickListener(new t5(this, 0));
-        linearLayout.addView(hcVar, w7.z5.n(18, -2));
+        ic icVar = new ic(context, d6Var);
+        this.e = icVar;
+        icVar.setVisibility(8);
+        icVar.setOnClickListener(new t5(this, 0));
+        linearLayout.addView(icVar, w7.z5.n(18, -2));
         h1 h1Var = new h1(context, d6Var);
         this.f = h1Var;
         h1Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
@@ -588,7 +588,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
             }
             b6 r10 = r(str, this.x);
             if (r10 == null) {
-                r10 = s(r.c.u(str, " "), this.x);
+                r10 = s(r4.c.u(str, " "), this.x);
             }
             if (r10 != null) {
                 ((e3) this.y).d(this.x, r10.a, r10.b, r10.c, r10.d, r10.e);
@@ -599,7 +599,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
 
     public final void E(Editable editable) {
         a aVar = this.x;
-        if (aVar != null && w3.D3(aVar.b) && com.google.android.gms.internal.cast.a6.s(editable)) {
+        if (aVar != null && w3.D3(aVar.b) && com.google.android.gms.internal.play_billing.k3.s(editable)) {
             h1 h1Var = this.f;
             Paint.FontMetricsInt fontMetricsInt = h1Var.getPaint().getFontMetricsInt();
             int max = Math.max(1, Math.round((h1Var.getTextSize() * 0.85f) / 1.2f));
@@ -623,11 +623,11 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
         int a2 = ((e3) this.y).a(this.x);
         a aVar2 = this.x;
         if (aVar2.n) {
-            b10 = aVar2.l <= 0 ? 0 : AndroidUtilities.dp(i0.a.g(r0, 1, 16, 10));
+            b10 = aVar2.l <= 0 ? 0 : AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r0, 1, 16, 10));
         }
         a aVar3 = this.x;
         if (aVar3.o) {
-            a2 = aVar3.m <= 0 ? 0 : AndroidUtilities.dp(i0.a.g(r1, 1, 16, 10));
+            a2 = aVar3.m <= 0 ? 0 : AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r1, 1, 16, 10));
         }
         if (b10 == getPaddingTop() && a2 == getPaddingBottom()) {
             return;
@@ -772,13 +772,13 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
         a aVar2;
         int i11;
         int i12 = aVar.c;
-        hc hcVar = this.e;
+        ic icVar = this.e;
         View view = this.c;
         di.n nVar = this.d;
         if (i12 <= 0) {
             view.setVisibility(8);
             nVar.setVisibility(8);
-            hcVar.setVisibility(8);
+            icVar.setVisibility(8);
             return;
         }
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
@@ -787,11 +787,11 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
         view.setVisibility(i12 > 1 ? 0 : 8);
         if (aVar.e) {
             nVar.setVisibility(8);
-            hcVar.setVisibility(0);
-            ((CheckBoxBase) hcVar.b).f(-1, aVar.f, false);
+            icVar.setVisibility(0);
+            ((CheckBoxBase) icVar.b).f(-1, aVar.f, false);
             return;
         }
-        hcVar.setVisibility(8);
+        icVar.setVisibility(8);
         nVar.setVisibility(0);
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) nVar.getLayoutParams();
         if (aVar.d == 0) {
@@ -803,7 +803,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
                 ArrayList arrayList = ((e3) z5Var).a.j3;
                 int indexOf = arrayList.indexOf(aVar);
                 if (indexOf < 0 || (i10 = aVar.c) <= 0 || aVar.d <= 0) {
-                    y3 = org.telegram.messenger.q.y(10.0f, (int) Math.ceil(paint.measureText(a1.g.n(aVar.d, ".", new StringBuilder()))), AndroidUtilities.dp(28.0f));
+                    y3 = org.telegram.messenger.g0.y(10.0f, (int) Math.ceil(paint.measureText(a1.g.n(aVar.d, ".", new StringBuilder()))), AndroidUtilities.dp(28.0f));
                 } else {
                     int i13 = indexOf;
                     while (i13 > 0) {
@@ -829,12 +829,12 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
                         }
                         i13++;
                     }
-                    y3 = org.telegram.messenger.q.y(10.0f, (int) Math.ceil(f7), AndroidUtilities.dp(28.0f));
+                    y3 = org.telegram.messenger.g0.y(10.0f, (int) Math.ceil(f7), AndroidUtilities.dp(28.0f));
                 }
             } else {
                 int dp = AndroidUtilities.dp(28.0f);
                 TextPaint paint3 = nVar.getPaint();
-                y3 = org.telegram.messenger.q.y(10.0f, (int) Math.ceil(paint3.measureText(aVar.d + ".")), dp);
+                y3 = org.telegram.messenger.g0.y(10.0f, (int) Math.ceil(paint3.measureText(aVar.d + ".")), dp);
             }
         }
         if (layoutParams2.width != y3) {
@@ -1028,7 +1028,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
             TL_iv.pageBlockBlockquote pageblockblockquote = (TL_iv.pageBlockBlockquote) this.x.b;
             int w02 = h6.w0(h6.Oh, d6Var);
             int dp8 = AndroidUtilities.dp(3.333f);
-            this.L.a(canvas2, this.M, org.telegram.messenger.q.B(16.0f, getWidth(), dp8), org.telegram.messenger.q.B(8.0f, getHeight(), dp8), w02, pageblockblockquote.collapsed, l());
+            this.L.a(canvas2, this.M, org.telegram.messenger.g0.B(16.0f, getWidth(), dp8), org.telegram.messenger.g0.B(8.0f, getHeight(), dp8), w02, pageblockblockquote.collapsed, l());
         }
     }
 
@@ -1201,10 +1201,10 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
                         int paddingTop = getPaddingTop();
                         int paddingBottom = getPaddingBottom();
                         if (aVar.n) {
-                            paddingTop = (aVar.l <= 0 ? 0 : AndroidUtilities.dp(i0.a.g(r7, 1, 16, 10))) + (z11 ? AndroidUtilities.dp(f10) : 0);
+                            paddingTop = (aVar.l <= 0 ? 0 : AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r7, 1, 16, 10))) + (z11 ? AndroidUtilities.dp(f10) : 0);
                         }
                         if (aVar.o) {
-                            paddingBottom = aVar.m <= 0 ? 0 : AndroidUtilities.dp(i0.a.g(r8, 1, 16, 10));
+                            paddingBottom = aVar.m <= 0 ? 0 : AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r8, 1, 16, 10));
                         }
                         if (z11) {
                             c10 += AndroidUtilities.dp(f7);
@@ -1333,9 +1333,9 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
                 float lineTop = layout.getLineTop(lineCount) + h1Var.getPaddingTop() + measuredHeight;
                 float lineBottom = layout.getLineBottom(lineCount) + h1Var.getPaddingTop() + measuredHeight;
                 int dp = AndroidUtilities.dp(3.333f);
-                float B = org.telegram.messenger.q.B(16.0f, i10, dp);
+                float B = org.telegram.messenger.g0.B(16.0f, i10, dp);
                 this.L.getClass();
-                float D = B - org.telegram.messenger.q.D(3.333f, 2, AndroidUtilities.dp(23.66f) + r6.c);
+                float D = B - org.telegram.messenger.g0.D(3.333f, 2, AndroidUtilities.dp(23.66f) + r6.c);
                 this.L.getClass();
                 int i12 = i11 - dp;
                 float dp2 = i12 - AndroidUtilities.dp(17.66f);

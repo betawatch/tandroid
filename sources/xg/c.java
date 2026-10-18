@@ -32,6 +32,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -43,9 +44,9 @@ import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.y90;
-import ug.q;
+import ug.r;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c {
     public TextPaint A;
@@ -169,7 +170,7 @@ public final class c {
                     this.Q = false;
                     MessageObject messageObject2 = this.M;
                     if (messageObject2 != null && messageObject2.messageOwner != null) {
-                        q.d(messageObject2, new l0(messageObject2, 19), new e(24));
+                        r.d(messageObject2, new l0(messageObject2, 19), new e(24));
                         return false;
                     }
                 }
@@ -258,7 +259,7 @@ public final class c {
         canvas.restore();
         float f14 = 6.0f;
         canvas.translate(0.0f, AndroidUtilities.dp(6.0f) + this.o);
-        int C = org.telegram.messenger.q.C(6.0f, this.o, dp5);
+        int C = g0.C(6.0f, this.o, dp5);
         int i15 = 0;
         int i16 = 0;
         while (true) {

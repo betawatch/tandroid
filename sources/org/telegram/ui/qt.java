@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qt extends org.telegram.ui.ActionBar.n2 {
     public org.telegram.ui.Components.im0 a;
@@ -66,7 +66,7 @@ public final class qt extends org.telegram.ui.ActionBar.n2 {
         this.actionBar.setActionBarMenuOnItemClick(new ga(this, 19));
         org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         a2.F();
-        a2.H = new ig.a2(this, 8);
+        a2.H = new ig.c2(this, 8);
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         this.actionBar.H(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false), true);
         this.actionBar.H(org.telegram.ui.ActionBar.h6.x0(null, i10, false), false);
@@ -127,7 +127,7 @@ public final class qt extends org.telegram.ui.ActionBar.n2 {
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return i0.b.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
+        return i0.a.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

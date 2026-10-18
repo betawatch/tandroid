@@ -7,7 +7,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class h50 extends View {
     public int[] a;
@@ -49,9 +49,9 @@ public final class h50 extends View {
             if (s50Var.h1 != null) {
                 float f7 = s50Var.i1;
                 if (f7 != 1.0f) {
-                    iArr[0] = i0.b.o(iArr[0], (int) (f7 * 255.0f));
+                    iArr[0] = i0.a.o(iArr[0], (int) (f7 * 255.0f));
                     int[] iArr3 = this.a;
-                    iArr3[1] = i0.b.o(iArr3[1], (int) (s50Var.i1 * 255.0f));
+                    iArr3[1] = i0.a.o(iArr3[1], (int) (s50Var.i1 * 255.0f));
                 }
             }
             paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, s50Var.U0.getMeasuredHeight(), this.a, (float[]) null, Shader.TileMode.CLAMP));

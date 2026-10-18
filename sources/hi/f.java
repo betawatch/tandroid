@@ -1,5 +1,6 @@
 package hi;
 
+import ai.o2;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -21,7 +22,7 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.h9;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class f extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
@@ -45,7 +46,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.a));
-            fVar2.showDialog(new ji.a(fVar2.getParentActivity(), chat, fVar2.a, new ai.n2(19, fVar2, chat)));
+            fVar2.showDialog(new ji.a(fVar2.getParentActivity(), chat, fVar2.a, new o2(19, fVar2, chat)));
         }
     }
 
@@ -76,7 +77,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         setHasOwnBackground(true);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(false);
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 5));
         gh.c cVar = new gh.c();

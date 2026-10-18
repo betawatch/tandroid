@@ -18,7 +18,7 @@ import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class lb extends r {
     public final Path R1;
@@ -39,7 +39,7 @@ public final class lb extends r {
             return false;
         }
         int i11 = MessagesController.getInstance(this.U).storyCaptionLengthLimitPremium;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), i0.a.j(i11, "")));
+        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString("CaptionPremiumSubtitle", Math.round(i11 / MessagesController.getInstance(this.U).storyCaptionLengthLimitDefault), i2.d.j(i11, "")));
         int indexOf = replaceTags.toString().indexOf("__");
         if (indexOf >= 0) {
             replaceTags.replace(indexOf, indexOf + 2, (CharSequence) "");
@@ -125,9 +125,9 @@ public final class lb extends r {
 
     @Override // ei.m
     public final void n() {
-        ai.hc hcVar = this.S1.t0;
-        if (hcVar != null) {
-            hcVar.invalidate();
+        ai.ic icVar = this.S1.t0;
+        if (icVar != null) {
+            icVar.invalidate();
         }
     }
 

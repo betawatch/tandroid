@@ -4,10 +4,10 @@ import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class d implements Runnable {
                 xVar.R.setEnabled(xVar.P > 0 || xVar.G > currentTime);
                 if (currentTime >= xVar.G) {
                     xVar.R.f(null, true);
-                    xVar.R.g(ld.W0(false, xVar.O ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) xVar.P), xVar.T), true, true);
+                    xVar.R.g(md.W0(false, xVar.O ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) xVar.P), xVar.T), true, true);
                     break;
                 } else {
                     xVar.R.g(LocaleController.getString(R.string.BotStarsButtonWithdrawShortUntil), true, true);
@@ -46,7 +46,7 @@ public final /* synthetic */ class d implements Runnable {
                     if (qcVar != null) {
                         org.telegram.ui.Components.ub ubVar = qcVar.e;
                         if ((ubVar instanceof org.telegram.ui.Components.yb) && ubVar.isAttachedToWindow()) {
-                            wh.r(R.string.BotStarsWithdrawalToast, new Object[]{x.j0(xVar.G - currentTime)}, ((org.telegram.ui.Components.yb) xVar.a0.e).b);
+                            kk.r(R.string.BotStarsWithdrawalToast, new Object[]{x.j0(xVar.G - currentTime)}, ((org.telegram.ui.Components.yb) xVar.a0.e).b);
                         }
                     }
                     AndroidUtilities.cancelRunOnUIThread(dVar);

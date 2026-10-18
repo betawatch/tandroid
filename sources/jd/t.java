@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t extends c implements RandomAccess {
     public final Object[] a;
@@ -15,13 +15,13 @@ public final class t extends c implements RandomAccess {
     public t(int i10, Object[] objArr) {
         this.a = objArr;
         if (i10 < 0) {
-            throw new IllegalArgumentException(i0.a.j(i10, "ring buffer filled size should not be negative but it is ").toString());
+            throw new IllegalArgumentException(i2.d.j(i10, "ring buffer filled size should not be negative but it is ").toString());
         }
         if (i10 <= objArr.length) {
             this.b = objArr.length;
             this.d = i10;
         } else {
-            StringBuilder l4 = i0.a.l(i10, "ring buffer filled size: ", " cannot be larger than the buffer size: ");
+            StringBuilder l4 = i2.d.l(i10, "ring buffer filled size: ", " cannot be larger than the buffer size: ");
             l4.append(objArr.length);
             throw new IllegalArgumentException(l4.toString().toString());
         }

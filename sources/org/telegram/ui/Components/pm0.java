@@ -23,7 +23,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pm0 {
     public int A;
@@ -407,7 +407,7 @@ public final class pm0 {
             Paint paint = this.g;
             paint.setColor(m12);
             float[] fArr = this.e;
-            if (zf.e0.c(fArr)) {
+            if (zf.f0.c(fArr)) {
                 float f10 = fArr[0];
                 canvas.drawRoundRect(rectF, f10, f10, paint);
             } else {
@@ -566,8 +566,8 @@ public final class pm0 {
         int a10 = this.G.a(this.A, false);
         int a11 = this.H.a(this.B, false);
         int m13 = org.telegram.ui.ActionBar.h6.m1(f7, a2);
-        int k10 = i0.b.k(org.telegram.ui.ActionBar.h6.m1(e7 * f7, a10), m13);
-        int k11 = this.j ? i0.b.k(org.telegram.ui.ActionBar.h6.m1(f7 * e10, a11), m13) : 0;
+        int k10 = i0.a.k(org.telegram.ui.ActionBar.h6.m1(e7 * f7, a10), m13);
+        int k11 = this.j ? i0.a.k(org.telegram.ui.ActionBar.h6.m1(f7 * e10, a11), m13) : 0;
         int round = Math.round(AndroidUtilities.dpf2(6.33f));
         int max2 = Math.max(1, AndroidUtilities.dp(3.0f));
         int dp3 = this.j ? AndroidUtilities.dp(18.99f) : AndroidUtilities.dp(f10);

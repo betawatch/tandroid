@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p20 extends LinearLayout {
     public final ei.d a;
@@ -31,14 +31,14 @@ public final class p20 extends LinearLayout {
         if (!AndroidUtilities.isTablet()) {
             addView(w9Var, w7.z5.q(110, 110, 49));
         }
-        TextView f7 = org.telegram.messenger.q.f(context, 1, 20.0f);
-        com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.G6, null, false, f7, 1);
+        TextView f7 = org.telegram.messenger.g0.f(context, 1, 20.0f);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.G6, null, false, f7, 1);
         f7.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
         f7.setTypeface(AndroidUtilities.bold());
         addView(f7, w7.z5.t(-2, -2, 49, 0, 15, 0, 7));
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
-        com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.c7, null, false, textView, 1);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.c7, null, false, textView, 1);
         textView.setText(LocaleController.getString(UserConfig.getInstance(i10).isPremium() ? R.string.GalleryAccessAllowAccessTextPremium : R.string.GalleryAccessAllowAccessTextNonPremium));
         textView.setMaxWidth(AndroidUtilities.dp(260.0f));
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);

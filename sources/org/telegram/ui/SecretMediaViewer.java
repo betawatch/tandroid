@@ -46,7 +46,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class SecretMediaViewer implements NotificationCenter.NotificationCenterDelegate, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     public static volatile SecretMediaViewer x1;
@@ -163,7 +163,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
     public boolean k0 = true;
     public final PhotoBackgroundDrawable l0 = new PhotoBackgroundDrawable();
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class PhotoBackgroundDrawable extends ColorDrawable {
         public lv0 a;
         public int b;
@@ -276,28 +276,28 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 float f28 = secretMediaViewer.animationValue;
                 f12 = ((f27 - f26) * f28) + f26;
                 float f29 = secretMediaViewer.x0;
-                float x10 = com.google.android.gms.internal.cast.a6.x(secretMediaViewer.A0, f29, f28, f29);
+                float y3 = com.google.android.gms.internal.play_billing.k3.y(secretMediaViewer.A0, f29, f28, f29);
                 float f30 = secretMediaViewer.w0;
-                f14 = com.google.android.gms.internal.cast.a6.x(secretMediaViewer.z0, f30, f28, f30);
+                f14 = com.google.android.gms.internal.play_billing.k3.y(secretMediaViewer.z0, f30, f28, f30);
                 f7 = -1.0f;
                 float f31 = secretMediaViewer.r0;
                 f10 = 1.0f;
-                f15 = com.google.android.gms.internal.cast.a6.x(secretMediaViewer.C0, f31, f28, f31);
+                f15 = com.google.android.gms.internal.play_billing.k3.y(secretMediaViewer.C0, f31, f28, f31);
                 float f32 = secretMediaViewer.s0;
                 f11 = 0.0f;
-                f16 = com.google.android.gms.internal.cast.a6.x(secretMediaViewer.D0, f32, f28, f32);
+                f16 = com.google.android.gms.internal.play_billing.k3.y(secretMediaViewer.D0, f32, f28, f32);
                 float f33 = secretMediaViewer.t0;
-                f17 = com.google.android.gms.internal.cast.a6.x(secretMediaViewer.E0, f33, f28, f33);
+                f17 = com.google.android.gms.internal.play_billing.k3.y(secretMediaViewer.E0, f33, f28, f33);
                 float f34 = secretMediaViewer.u0;
-                float x11 = com.google.android.gms.internal.cast.a6.x(secretMediaViewer.F0, f34, f28, f34);
+                float y10 = com.google.android.gms.internal.play_billing.k3.y(secretMediaViewer.F0, f34, f28, f34);
                 float f35 = secretMediaViewer.v0;
-                float x12 = com.google.android.gms.internal.cast.a6.x(secretMediaViewer.G0, f35, f28, f35);
-                float f36 = (f27 == 1.0f && f26 == 1.0f && f30 == 0.0f) ? x10 : -1.0f;
+                float y11 = com.google.android.gms.internal.play_billing.k3.y(secretMediaViewer.G0, f35, f28, f35);
+                float f36 = (f27 == 1.0f && f26 == 1.0f && f30 == 0.0f) ? y3 : -1.0f;
                 secretMediaViewer.e.invalidate();
-                f19 = x12;
-                f20 = x10;
+                f19 = y11;
+                f20 = y3;
                 f13 = f36;
-                f18 = x11;
+                f18 = y10;
             } else {
                 f7 = -1.0f;
                 f10 = 1.0f;
@@ -1135,20 +1135,20 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             return false;
         }
         if (f7 == 1.0f) {
-            float y3 = org.telegram.messenger.wh.y(3.0f, this.y0, (motionEvent.getX() - (this.e.getWidth() / 2)) - this.w0, motionEvent.getX() - (this.e.getWidth() / 2));
-            float y10 = org.telegram.messenger.wh.y(3.0f, this.y0, (motionEvent.getY() - (this.e.getHeight() / 2)) - this.x0, motionEvent.getY() - (this.e.getHeight() / 2));
+            float x10 = org.telegram.messenger.kk.x(3.0f, this.y0, (motionEvent.getX() - (this.e.getWidth() / 2)) - this.w0, motionEvent.getX() - (this.e.getWidth() / 2));
+            float x11 = org.telegram.messenger.kk.x(3.0f, this.y0, (motionEvent.getY() - (this.e.getHeight() / 2)) - this.x0, motionEvent.getY() - (this.e.getHeight() / 2));
             n(3.0f);
             float f10 = this.V0;
-            if (y3 >= f10) {
+            if (x10 >= f10) {
                 f10 = this.W0;
             }
-            y3 = f10;
+            x10 = f10;
             float f11 = this.X0;
-            if (y10 >= f11) {
+            if (x11 >= f11) {
                 f11 = this.Y0;
             }
-            y10 = f11;
-            c(3.0f, y3, y10, true);
+            x11 = f11;
+            c(3.0f, x10, x11, true);
         } else {
             c(1.0f, 0.0f, 0.0f, true);
         }

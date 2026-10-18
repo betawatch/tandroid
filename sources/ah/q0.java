@@ -27,7 +27,7 @@ import org.telegram.ui.x31;
 import org.telegram.ui.z31;
 import rg.t2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -59,7 +59,6 @@ public final class q0 extends AnimatorListenerAdapter {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
         x31 x31Var;
-        Runnable runnable;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(anim);
@@ -88,9 +87,9 @@ public final class q0 extends AnimatorListenerAdapter {
                     x3Var.n();
                 }
                 x3Var.i();
-                Runnable runnable2 = (Runnable) this.c;
-                if (runnable2 != null) {
-                    runnable2.run();
+                Runnable runnable = (Runnable) this.c;
+                if (runnable != null) {
+                    runnable.run();
                 }
                 x3Var.h();
                 return;
@@ -131,9 +130,9 @@ public final class q0 extends AnimatorListenerAdapter {
                 ym0Var.y.setAlpha(ym0Var.r);
                 ym0Var.s.invalidate();
                 ym0Var.v.invalidate();
-                Runnable runnable3 = (Runnable) this.c;
-                if (runnable3 != null) {
-                    AndroidUtilities.runOnUIThread(runnable3);
+                Runnable runnable2 = (Runnable) this.c;
+                if (runnable2 != null) {
+                    AndroidUtilities.runOnUIThread(runnable2);
                     return;
                 }
                 return;
@@ -211,9 +210,9 @@ public final class q0 extends AnimatorListenerAdapter {
                 sv0Var.c.invalidate();
                 sv0Var.d.invalidate();
                 sv0Var.e();
-                Runnable runnable4 = (Runnable) this.c;
-                if (runnable4 != null) {
-                    runnable4.run();
+                Runnable runnable3 = (Runnable) this.c;
+                if (runnable3 != null) {
+                    runnable3.run();
                     return;
                 }
                 return;
@@ -238,9 +237,9 @@ public final class q0 extends AnimatorListenerAdapter {
                         u1Var2.invalidate();
                     }
                 }
-                Runnable runnable5 = (Runnable) this.c;
-                if (runnable5 != null) {
-                    runnable5.run();
+                Runnable runnable4 = (Runnable) this.c;
+                if (runnable4 != null) {
+                    runnable4.run();
                     return;
                 }
                 return;
@@ -250,9 +249,9 @@ public final class q0 extends AnimatorListenerAdapter {
                 ad1Var.b.invalidate();
                 ad1Var.c.invalidate();
                 ad1Var.e();
-                Runnable runnable6 = (Runnable) this.c;
-                if (runnable6 != null) {
-                    runnable6.run();
+                Runnable runnable5 = (Runnable) this.c;
+                if (runnable5 != null) {
+                    runnable5.run();
                     return;
                 }
                 return;
@@ -265,24 +264,26 @@ public final class q0 extends AnimatorListenerAdapter {
                 rVar.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
                 rVar.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
                 t2Var.b.invalidate();
-                Runnable runnable7 = (Runnable) this.c;
-                if (runnable7 != null) {
-                    AndroidUtilities.runOnUIThread(runnable7);
+                Runnable runnable6 = (Runnable) this.c;
+                if (runnable6 != null) {
+                    AndroidUtilities.runOnUIThread(runnable6);
                     return;
                 }
                 return;
             case 14:
-                zh.d0 d0Var = (zh.d0) this.d;
-                if (d0Var.Q == anim) {
-                    d0Var.Q = null;
+                zh.w wVar = (zh.w) this.d;
+                if (wVar.O == anim) {
+                    wVar.O = null;
                 }
-                if (this.b || (runnable = (Runnable) this.c) == null) {
+                if (this.b) {
                     return;
                 }
-                runnable.run();
+                ((Runnable) this.c).run();
                 return;
             default:
-                ((zh.m0) this.d).d.setReveal(this.b ? 1.0f : 0.0f);
+                zh.f0 f0Var = (zh.f0) this.d;
+                f0Var.g0();
+                f0Var.d.setReveal(this.b ? 1.0f : 0.0f);
                 ((Runnable) this.c).run();
                 return;
         }
@@ -295,9 +296,9 @@ public final class q0 extends AnimatorListenerAdapter {
         this.c = obj2;
     }
 
-    public q0(zh.d0 d0Var, Runnable runnable) {
+    public q0(zh.w wVar, Runnable runnable) {
         this.a = 14;
-        this.d = d0Var;
+        this.d = wVar;
         this.c = runnable;
     }
 

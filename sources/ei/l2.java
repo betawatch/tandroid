@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.ca0;
 import org.telegram.ui.Components.we0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l2 extends View {
     public final Paint a;
@@ -83,7 +83,7 @@ public final class l2 extends View {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("___");
                     spannableStringBuilder.setSpan(new ca0(AndroidUtilities.dp(68.0f), this), 0, spannableStringBuilder.length(), 33);
                     j2VarArr[0] = new j2(this, spannableStringBuilder);
-                    uc.a(false, new ai.n2(7, this, j2VarArr));
+                    uc.a(false, new ai.o2(7, this, j2VarArr));
                     charSequence = spannableStringBuilder;
                 }
             }
@@ -138,7 +138,7 @@ public final class l2 extends View {
             Object obj2 = arrayList.get(i10);
             i10++;
             i2 i2Var2 = (i2) obj2;
-            i2Var2.a(canvas, com.google.android.gms.internal.cast.a6.z((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[i2Var2.e - 1], 2.0f, getPaddingLeft()) + i2Var2.d, org.telegram.messenger.q.D(48.0f, i2Var2.e - 1, AndroidUtilities.dp(12.0f)));
+            i2Var2.a(canvas, com.google.android.gms.internal.play_billing.k3.z((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight(), this.d[i2Var2.e - 1], 2.0f, getPaddingLeft()) + i2Var2.d, org.telegram.messenger.g0.D(48.0f, i2Var2.e - 1, AndroidUtilities.dp(12.0f)));
         }
     }
 
@@ -213,7 +213,7 @@ public final class l2 extends View {
             float[] fArr3 = this.d;
             fArr3[i15] = fArr3[i15] + i2Var2.b;
         }
-        setMeasuredDimension(size, org.telegram.messenger.q.D(12.0f, i13 - 1, org.telegram.messenger.q.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
+        setMeasuredDimension(size, org.telegram.messenger.g0.D(12.0f, i13 - 1, org.telegram.messenger.g0.D(36.0f, i13, AndroidUtilities.dp(24.0f))));
     }
 
     @Override // android.view.View

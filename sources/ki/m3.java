@@ -12,17 +12,17 @@ import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.th0;
 import org.telegram.ui.Components.xa0;
-import org.telegram.ui.av;
 import org.telegram.ui.bv;
+import org.telegram.ui.cv;
 import org.telegram.ui.ee;
 import org.telegram.ui.ey;
 import org.telegram.ui.hs;
 import org.telegram.ui.kh0;
-import org.telegram.ui.nq0;
-import org.telegram.ui.pq0;
+import org.telegram.ui.oq0;
+import org.telegram.ui.qq0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m3 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -47,26 +47,26 @@ public final class m3 extends s4.r0 {
                 }
                 break;
             case 5:
-                bv bvVar = (bv) this.c;
-                av[] avVarArr = bvVar.f;
+                cv cvVar = (cv) this.c;
+                bv[] bvVarArr = cvVar.f;
                 ((s4.r0) this.b).a(recyclerView, i10);
                 if (i10 != 1) {
-                    kVar = ((org.telegram.ui.ActionBar.n2) bvVar).actionBar;
+                    kVar = ((org.telegram.ui.ActionBar.n2) cvVar).actionBar;
                     int i11 = (int) (-kVar.getTranslationY());
                     int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
                     if (i11 != 0 && i11 != currentActionBarHeight) {
                         if (i11 >= currentActionBarHeight / 2) {
                             int i12 = currentActionBarHeight - i11;
-                            avVarArr[0].d.v0(0, i12, null);
-                            ai.u1 u1Var = avVarArr[0].e;
+                            bvVarArr[0].d.v0(0, i12, null);
+                            ai.u1 u1Var = bvVarArr[0].e;
                             if (u1Var != null) {
                                 u1Var.v0(0, i12, null);
                                 break;
                             }
                         } else {
                             int i13 = -i11;
-                            avVarArr[0].d.v0(0, i13, null);
-                            ai.u1 u1Var2 = avVarArr[0].e;
+                            bvVarArr[0].d.v0(0, i13, null);
+                            ai.u1 u1Var2 = bvVarArr[0].e;
                             if (u1Var2 != null) {
                                 u1Var2.v0(0, i13, null);
                                 break;
@@ -76,19 +76,19 @@ public final class m3 extends s4.r0 {
                 }
                 break;
             case 7:
-                pq0 pq0Var = (pq0) this.c;
-                nq0[] nq0VarArr = pq0Var.n;
+                qq0 qq0Var = (qq0) this.c;
+                oq0[] oq0VarArr = qq0Var.n;
                 ((s4.r0) this.b).a(recyclerView, i10);
                 if (i10 != 1) {
-                    kVar2 = ((org.telegram.ui.ActionBar.n2) pq0Var).actionBar;
+                    kVar2 = ((org.telegram.ui.ActionBar.n2) qq0Var).actionBar;
                     int i14 = (int) (-kVar2.getTranslationY());
                     int currentActionBarHeight2 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
                     if (i14 != 0 && i14 != currentActionBarHeight2) {
                         if (i14 >= currentActionBarHeight2 / 2) {
-                            nq0VarArr[0].d.v0(0, currentActionBarHeight2 - i14, null);
+                            oq0VarArr[0].d.v0(0, currentActionBarHeight2 - i14, null);
                             break;
                         } else {
-                            nq0VarArr[0].d.v0(0, -i14, null);
+                            oq0VarArr[0].d.v0(0, -i14, null);
                             break;
                         }
                     }
@@ -196,10 +196,10 @@ public final class m3 extends s4.r0 {
                 break;
             case 5:
                 ((s4.r0) this.b).b(recyclerView, i10, i11);
-                bv bvVar = (bv) this.c;
-                av avVar = bvVar.f[0];
-                if (recyclerView == avVar.d || recyclerView == avVar.e) {
-                    kVar = ((org.telegram.ui.ActionBar.n2) bvVar).actionBar;
+                cv cvVar = (cv) this.c;
+                bv bvVar = cvVar.f[0];
+                if (recyclerView == bvVar.d || recyclerView == bvVar.e) {
+                    kVar = ((org.telegram.ui.ActionBar.n2) cvVar).actionBar;
                     float translationY = kVar.getTranslationY();
                     float f7 = translationY - i11;
                     if (f7 < (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())) {
@@ -208,7 +208,7 @@ public final class m3 extends s4.r0 {
                         f7 = 0.0f;
                     }
                     if (f7 != translationY) {
-                        bv.j0(bvVar, f7);
+                        cv.j0(cvVar, f7);
                         break;
                     }
                 }
@@ -224,9 +224,9 @@ public final class m3 extends s4.r0 {
                 break;
             case 7:
                 ((s4.r0) this.b).b(recyclerView, i10, i11);
-                pq0 pq0Var = (pq0) this.c;
-                if (recyclerView == pq0Var.n[0].d) {
-                    kVar2 = ((org.telegram.ui.ActionBar.n2) pq0Var).actionBar;
+                qq0 qq0Var = (qq0) this.c;
+                if (recyclerView == qq0Var.n[0].d) {
+                    kVar2 = ((org.telegram.ui.ActionBar.n2) qq0Var).actionBar;
                     float translationY2 = kVar2.getTranslationY();
                     float f10 = translationY2 - i11;
                     if (f10 < (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight())) {
@@ -235,7 +235,7 @@ public final class m3 extends s4.r0 {
                         f10 = 0.0f;
                     }
                     if (f10 != translationY2) {
-                        pq0.g0(pq0Var, f10);
+                        qq0.g0(qq0Var, f10);
                         break;
                     }
                 }
@@ -259,12 +259,12 @@ public final class m3 extends s4.r0 {
                 ((is0) this.b).o();
                 break;
             default:
-                zh.w wVar = (zh.w) this.b;
-                float translationY3 = wVar.getTranslationY();
-                float f11 = ((zh.m0) this.c).W;
+                zh.q qVar = (zh.q) this.b;
+                float translationY3 = qVar.getTranslationY();
+                float f11 = ((zh.f0) this.c).b0;
                 if (translationY3 != f11) {
-                    wVar.setTranslationY(f11);
-                    wVar.invalidate();
+                    qVar.setTranslationY(f11);
+                    qVar.invalidate();
                     break;
                 }
                 break;

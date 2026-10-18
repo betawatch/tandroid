@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d80 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -192,7 +192,7 @@ public final class d80 extends org.telegram.ui.Components.hm0 {
                         break;
                     } else {
                         if (!languageSelectActivity.h.isEmpty()) {
-                            i13 = com.google.android.gms.internal.cast.a6.g(1, i13, languageSelectActivity.h);
+                            i13 = com.google.android.gms.internal.play_billing.k3.g(1, i13, languageSelectActivity.h);
                         }
                         if (i13 >= 0 && i13 < languageSelectActivity.f.size()) {
                             localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.f.get(i13);
@@ -350,14 +350,14 @@ public final class d80 extends org.telegram.ui.Components.hm0 {
         View view;
         Context context = this.c;
         if (i10 != 0) {
-            view = i10 != 2 ? i10 != 3 ? (i10 == 4 || i10 == 5) ? new org.telegram.ui.Cells.ba(context) : i10 != 6 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null) : new org.telegram.ui.Cells.d9(context) : new org.telegram.ui.Cells.l4(context) : new org.telegram.ui.Cells.v8(context);
+            view = i10 != 2 ? i10 != 3 ? (i10 == 4 || i10 == 5) ? new org.telegram.ui.Cells.ba(context) : i10 != 6 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null) : new org.telegram.ui.Cells.d9(context) : new org.telegram.ui.Cells.l4(context) : new org.telegram.ui.Cells.v8(context);
         } else {
             org.telegram.ui.Cells.f9 f9Var = new org.telegram.ui.Cells.f9(context);
             f9Var.e = 50;
             f9Var.r = 21;
             TextView textView = new TextView(context);
             f9Var.a = textView;
-            org.telegram.messenger.wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+            org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);

@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -80,7 +80,7 @@ public final class c70 extends org.telegram.ui.ActionBar.n2 implements Notificat
             if (c70Var.getParentActivity() != null) {
                 Activity parentActivity = c70Var.getParentActivity();
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.t0.n(R.string.ErrorOccurred, "\n", sb2);
+                org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb2);
                 sb2.append(tL_error.text);
                 Toast.makeText(parentActivity, sb2.toString(), 0).show();
                 return;
@@ -127,14 +127,14 @@ public final class c70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i10 = c70Var.n;
         if (tL_messages_stickerSet == null) {
             if (c70Var.r != null) {
-                org.telegram.messenger.q.q(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(c70Var), R.raw.done, 36);
+                org.telegram.messenger.g0.q(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(c70Var), R.raw.done, 36);
             }
             c70Var.r = null;
             c70Var.s = true;
         } else {
             c70Var.r = tL_messages_stickerSet;
             c70Var.s = false;
-            org.telegram.messenger.q.q(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(c70Var), R.raw.done, 36);
+            org.telegram.messenger.g0.q(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(c70Var), R.raw.done, 36);
         }
         c70Var.h0();
         c70Var.f0(c70Var.r, false);
@@ -184,7 +184,7 @@ public final class c70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         this.L = a2;
         a2.F();
-        a2.H = new ig.a2(this, 10);
+        a2.H = new ig.c2(this, 10);
         this.L.setSearchFieldHint(LocaleController.getString(R.string.Search));
         this.e = new a70(this, context);
         this.f = new b70(this, context);
@@ -211,7 +211,7 @@ public final class c70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.a.addView(this.c, w7.z5.d(-1.0f, -1));
         org.telegram.ui.Components.rx0 rx0Var = new org.telegram.ui.Components.rx0(context, this.c, 1, null);
         this.b = rx0Var;
-        m.g3.r(rx0Var);
+        m.g3.i(rx0Var);
         this.a.addView(this.b);
         frameLayout.addView(this.a);
         this.a.setVisibility(8);

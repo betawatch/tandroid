@@ -10,7 +10,7 @@ import w7.f0;
 import x8.f;
 import y8.c;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class DataItemAssetParcelable extends a implements f, ReflectedParcelable {
     public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new c(7);

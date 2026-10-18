@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final /* synthetic */ ActionBarLayout E;
@@ -76,8 +76,13 @@ public final class v extends FrameLayout {
     @Override // android.view.ViewGroup
     public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
         super.addView(view, i10, layoutParams);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.y.c(this);
+        ActionBarLayout actionBarLayout = this.E;
+        if (actionBarLayout.m1 != null && getParent() == actionBarLayout) {
+            actionBarLayout.o(this, actionBarLayout.m1);
+        } else {
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c(this);
+        }
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0037 A[Catch: Exception -> 0x0018, TRY_LEAVE, TryCatch #0 {Exception -> 0x0018, blocks: (B:2:0x0000, B:5:0x0009, B:7:0x0011, B:13:0x0022, B:22:0x0031, B:24:0x0037, B:33:0x001a), top: B:1:0x0000 }] */
@@ -194,7 +199,7 @@ public final class v extends FrameLayout {
         Drawable drawable;
         ArrayList<j2> arrayList;
         ActionBarLayout actionBarLayout = this.E;
-        n2 n2Var = !actionBarLayout.O0.isEmpty() ? (n2) r.c.e(1, actionBarLayout.O0) : null;
+        n2 n2Var = !actionBarLayout.O0.isEmpty() ? (n2) r4.c.f(1, actionBarLayout.O0) : null;
         r rVar = actionBarLayout.G;
         if (rVar != null && (arrayList = rVar.sheetsStack) != null && !arrayList.isEmpty()) {
             n2Var = actionBarLayout.G;
@@ -411,8 +416,13 @@ public final class v extends FrameLayout {
             this.w = z3Var;
             this.x = z3Var != z3.a;
             View view = (View) getParent();
-            WeakHashMap weakHashMap = r0.i0.a;
-            r0.y.c(view);
+            ActionBarLayout actionBarLayout = this.E;
+            if (actionBarLayout.m1 != null && getParent() == actionBarLayout) {
+                actionBarLayout.o(this, actionBarLayout.m1);
+            } else if (view != null) {
+                WeakHashMap weakHashMap = r0.i0.a;
+                r0.y.c(view);
+            }
         }
     }
 }

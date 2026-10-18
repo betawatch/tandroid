@@ -1,7 +1,7 @@
 package qg;
 
-import ai.cb;
-import ai.y3;
+import ai.db;
+import ai.x9;
 import android.animation.ValueAnimator;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.pa;
 import w7.r6;
 import w7.t6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s0 {
     public final Bitmap A;
@@ -200,7 +200,7 @@ public final class s0 {
         if (this.r == null || this.i == null) {
             return;
         }
-        this.f.f(new cb(this, t0Var, i10, z10, a0Var));
+        this.f.f(new db(this, t0Var, i10, z10, a0Var));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:52:0x0197  */
@@ -228,7 +228,7 @@ public final class s0 {
                 a5.a aVar = new a5.a(byteBuffer, 0, rectF);
                 ByteBuffer byteBuffer2 = (ByteBuffer) h(rectF, true, true, false).c;
                 Object obj3 = this.a.b;
-                ((e1) this.a.b).b.b(UUID.randomUUID(), new y3(this, aVar, new a5.a(byteBuffer2, 1, rectF), z11, 29));
+                ((e1) this.a.b).b.b(UUID.randomUUID(), new x9(this, aVar, new a5.a(byteBuffer2, 1, rectF), z11, 28));
                 m10 = aVar;
             } else {
                 m10 = null;
@@ -258,7 +258,7 @@ public final class s0 {
             GLES20.glUniformMatrix4fv(f1Var.d("mvpMatrix"), 1, false, FloatBuffer.wrap(this.x));
             GLES20.glUniform1i(f1Var.d("texture"), 0);
             GLES20.glUniform1i(f1Var.d("mask"), 1);
-            f1.a(f1Var.d("color"), i0.b.o(i10, (int) (mVar2.f() * Color.alpha(i10))));
+            f1.a(f1Var.d("color"), i0.a.o(i10, (int) (mVar2.f() * Color.alpha(i10))));
             GLES20.glActiveTexture(33984);
             GLES20.glBindTexture(3553, j10);
             GLES20.glTexParameteri(3553, 10241, 9729);
@@ -878,7 +878,7 @@ public final class s0 {
         GLES20.glUniformMatrix4fv(f1Var.d("mvpMatrix"), 1, false, FloatBuffer.wrap(this.y));
         GLES20.glUniform1i(f1Var.d("texture"), 0);
         GLES20.glUniform1i(f1Var.d("mask"), 1);
-        f1.a(f1Var.d("color"), i0.b.o(t0Var.c, (int) (mVar.f() * Color.alpha(r0) * f7)));
+        f1.a(f1Var.d("color"), i0.a.o(t0Var.c, (int) (mVar.f() * Color.alpha(r0) * f7)));
         GLES20.glActiveTexture(33984);
         GLES20.glBindTexture(3553, j());
         GLES20.glActiveTexture(33985);
@@ -944,7 +944,7 @@ public final class s0 {
         GLES20.glUniformMatrix4fv(f1Var.d("mvpMatrix"), 1, false, FloatBuffer.wrap(this.y));
         GLES20.glUniform1i(f1Var.d("texture"), 0);
         GLES20.glUniform1i(f1Var.d("mask"), 1);
-        f1.a(f1Var.d("color"), i0.b.o(this.f.getCurrentColor(), (int) (Color.alpha(r6) * f7)));
+        f1.a(f1Var.d("color"), i0.a.o(this.f.getCurrentColor(), (int) (Color.alpha(r6) * f7)));
         GLES20.glActiveTexture(33984);
         GLES20.glBindTexture(3553, i10);
         GLES20.glActiveTexture(33985);

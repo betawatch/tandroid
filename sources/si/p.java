@@ -16,7 +16,7 @@ import yh.h1;
 import yh.m2;
 import yh.p2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -39,8 +39,8 @@ public final /* synthetic */ class p implements Runnable {
         switch (this.a) {
             case 0:
                 u uVar = (u) this.b;
-                m0 m0Var = (m0) this.c;
-                m0 m0Var2 = (m0) this.d;
+                l0 l0Var = (l0) this.c;
+                l0 l0Var2 = (l0) this.d;
                 Handler handler = (Handler) this.e;
                 if (uVar.r0 && uVar.W == 0 && uVar.T) {
                     uVar.N.g(uVar.L, uVar.D, false);
@@ -51,20 +51,20 @@ public final /* synthetic */ class p implements Runnable {
                     long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
                     uVar.X = elapsedRealtimeNanos;
                     uVar.Y = elapsedRealtimeNanos;
-                    uVar.d0 = m0Var;
-                    uVar.e0 = m0Var2;
-                    String[] strArr = u0.a;
-                    synchronized (u0.class) {
-                        u0.b();
-                        if (m0Var == m0Var2) {
+                    uVar.d0 = l0Var;
+                    uVar.e0 = l0Var2;
+                    String[] strArr = t0.a;
+                    synchronized (t0.class) {
+                        t0.b();
+                        if (l0Var == l0Var2) {
                             throw new IllegalArgumentException("Camera switch direction must change");
                         }
-                        a2 = u0.a(m0Var == m0.b ? 0 : 1);
+                        a2 = t0.a(l0Var == l0.b ? 0 : 1);
                     }
                     uVar.b0 = a2;
                     uVar.Z = ((Math.max(210, Math.min(300, 300 - ((Math.max(0, a2 - 400) * 3) / 20))) * 45) / 100) * 1000000;
                     uVar.a0 = (r1 - r2) * 1000000;
-                    uVar.i.b("synthetic camera switch started: from=" + m0Var + ", to=" + m0Var2 + ", expectedWaitMs=" + uVar.b0 + ", targetBlurRadiusPx=" + (((uVar.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((uVar.Z + uVar.a0) / 1000000));
+                    uVar.i.b("synthetic camera switch started: from=" + l0Var + ", to=" + l0Var2 + ", expectedWaitMs=" + uVar.b0 + ", targetBlurRadiusPx=" + (((uVar.N.a * 4.0f) / 48.0f) * 1.15f) + ", overdueBlurGrowth=0.35, revealMs=" + ((uVar.Z + uVar.a0) / 1000000));
                     uVar.Q = -1L;
                     handler.removeCallbacks(uVar.x0);
                     handler.post(uVar.x0);
@@ -115,7 +115,7 @@ public final /* synthetic */ class p implements Runnable {
                     return;
                 }
                 if (z10) {
-                    org.telegram.messenger.q.q(R.string.Gift2Unpinned, xc.a0(is0Var.a), R.raw.ic_unpin, 36);
+                    org.telegram.messenger.g0.q(R.string.Gift2Unpinned, xc.a0(is0Var.a), R.raw.ic_unpin, 36);
                 } else {
                     xc.a0(is0Var.a).M(LocaleController.getString(R.string.Gift2PinnedTitle), LocaleController.getString(R.string.Gift2PinnedSubtitle), R.raw.ic_pin).j();
                 }

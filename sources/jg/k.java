@@ -7,11 +7,11 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.text.TextPaint;
 import ci.v4;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // jg.g
@@ -158,7 +158,7 @@ public final class k extends g {
                         float f30 = (f28 - f29) / (this.v - f29);
                         float strokeWidth = paint.getStrokeWidth() / f24;
                         z12 = z15;
-                        float D = a6.D((getMeasuredHeight() - this.s) - g.n1, strokeWidth, f30, (getMeasuredHeight() - this.s) - strokeWidth);
+                        float D = k3.D((getMeasuredHeight() - this.s) - g.n1, strokeWidth, f30, (getMeasuredHeight() - this.s) - strokeWidth);
                         if (z11) {
                             if (i17 == 0) {
                                 int i18 = i17 + 1;
@@ -443,11 +443,11 @@ public final class k extends g {
                         if (charSequenceArr == null || arrayList.size() < 2) {
                             i14 = i20;
                             textPaint2.setColor(h6.w0(h6.Yi, this.W0));
-                            textPaint2.setAlpha((int) a6.C(dVar2.f, this.f, f12, f7));
+                            textPaint2.setAlpha((int) k3.C(dVar2.f, this.f, f12, f7));
                         } else {
                             i14 = i20;
                             textPaint2.setColor(((lg.f) arrayList.get(i14)).m);
-                            textPaint2.setAlpha((int) a6.C(dVar2.f, ((lg.f) arrayList.get(i14)).o, f12, f7));
+                            textPaint2.setAlpha((int) k3.C(dVar2.f, ((lg.f) arrayList.get(i14)).o, f12, f7));
                         }
                         i13 = i14;
                         i12 = textSize;
@@ -461,7 +461,7 @@ public final class k extends g {
                         int i22 = ((lg.f) arrayList.get(i16)).m;
                         TextPaint textPaint3 = this.O;
                         textPaint3.setColor(i22);
-                        textPaint3.setAlpha((int) a6.C(dVar2.f, ((lg.f) arrayList.get(i16)).o, f12, f7));
+                        textPaint3.setAlpha((int) k3.C(dVar2.f, ((lg.f) arrayList.get(i16)).o, f12, f7));
                         z10 = true;
                         dVar2.a(canvas, 1, i15, getMeasuredWidth() - g.k1, i21 - i12, textPaint3);
                     } else {

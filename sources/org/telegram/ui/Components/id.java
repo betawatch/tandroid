@@ -12,7 +12,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class id extends Drawable {
     public static final gd H = new gd(0);
@@ -96,7 +96,7 @@ public final class id extends Drawable {
         float f15 = (f13 * f14) + f12;
         float f16 = 1.0f;
         float f17 = 0.0f;
-        float A = com.google.android.gms.internal.cast.a6.A(f14, 1.0f, 0.0f, this.d * hdVar.e);
+        float A = com.google.android.gms.internal.play_billing.k3.A(f14, 1.0f, 0.0f, this.d * hdVar.e);
         float[] fArr = hdVar.u;
         float[] fArr2 = hdVar.v;
         float[] fArr3 = hdVar.w;
@@ -119,7 +119,7 @@ public final class id extends Drawable {
                     float f21 = (fArr[i15 == 0 ? i11 - 1 : i15 - 1] + fArr[i16 == i11 ? 0 : i16]) * 0.5f;
                     float f22 = f17;
                     float f23 = fArr[i15];
-                    fArr2[i15] = com.google.android.gms.internal.cast.a6.x(f21, f23, f19, f23);
+                    fArr2[i15] = com.google.android.gms.internal.play_billing.k3.y(f21, f23, f19, f23);
                     i15 = i16;
                     f16 = f20;
                     f17 = f22;
@@ -296,7 +296,7 @@ public final class id extends Drawable {
             if (f14 > 1.0f) {
                 this.E = 1.0f;
             }
-            int f15 = i0.b.f(this.E, this.C, this.D);
+            int f15 = i0.a.f(this.E, this.C, this.D);
             this.B = f15;
             hdVar2.h = f15;
             hdVar.h = f15;
@@ -308,8 +308,8 @@ public final class id extends Drawable {
         float f16 = 1.0f - (this.v * 0.7f);
         float f17 = hdVar2.f;
         float f18 = this.e;
-        float A = com.google.android.gms.internal.cast.a6.A((float) Math.sin(this.s), 0.5f, 0.5f, f17 * f18 * f16);
-        float A2 = com.google.android.gms.internal.cast.a6.A((float) Math.sin(this.s + hdVar.b), 0.5f, 0.5f, f18 * hdVar.f * f16);
+        float A = com.google.android.gms.internal.play_billing.k3.A((float) Math.sin(this.s), 0.5f, 0.5f, f17 * f18 * f16);
+        float A2 = com.google.android.gms.internal.play_billing.k3.A((float) Math.sin(this.s + hdVar.b), 0.5f, 0.5f, f18 * hdVar.f * f16);
         b(canvas, this.q, exactCenterX, exactCenterY, A);
         b(canvas, this.r, exactCenterX, exactCenterY, A2);
         if (this.E < 1.0f) {
@@ -320,7 +320,7 @@ public final class id extends Drawable {
     public final void e(int i10, boolean z10) {
         if (i10 != this.A || this.E < 1.0f) {
             this.A = i10;
-            int x02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.bh, false) : i0.b.f(0.5f, i0.b.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ih, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.jh, false)), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.kh, false)) : i0.b.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Zg, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ah, false)) : i0.b.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Xg, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Yg, false));
+            int x02 = i10 != 0 ? i10 != 1 ? i10 != 3 ? org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.bh, false) : i0.a.f(0.5f, i0.a.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ih, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.jh, false)), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.kh, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Zg, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ah, false)) : i0.a.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Xg, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Yg, false));
             if (z10 && this.B != 0 && LiteMode.isEnabled(512)) {
                 this.C = this.B;
                 this.D = x02;

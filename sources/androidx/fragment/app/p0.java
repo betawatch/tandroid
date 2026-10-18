@@ -8,13 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final qf.b a;
@@ -325,7 +325,7 @@ public final class p0 {
             z10 = ((m0) rVar.e).h;
         } else {
             v vVar = uVar.b;
-            if (a6.s(vVar)) {
+            if (k3.s(vVar)) {
                 z10 = true ^ vVar.isChangingConfigurations();
             }
         }

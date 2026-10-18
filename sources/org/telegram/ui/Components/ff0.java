@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ff0 {
     public final /* synthetic */ if0 a;
@@ -132,7 +132,7 @@ public final class ff0 {
             w9Var.e(tL_userContact_old2, h9Var);
             hf0Var.addView(w9Var, w7.z5.t(80, 80, 49, 0, 32, 0, 0));
             TextView textView3 = new TextView(context);
-            org.telegram.messenger.wh.k(17.0f, 1, textView3);
+            org.telegram.messenger.kk.k(17.0f, 1, textView3);
             textView3.setTextColor(if0Var.getThemedColor(org.telegram.ui.ActionBar.h6.j5));
             textView3.setSingleLine(true);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -141,7 +141,7 @@ public final class ff0 {
             hf0Var.addView(textView3, w7.z5.t(-2, -2, 49, 10, 10, 10, str != null ? 0 : 27));
             gf0Var = hf0Var;
             if (str != null) {
-                TextView f13 = org.telegram.messenger.q.f(context, 1, 14.0f);
+                TextView f13 = org.telegram.messenger.g0.f(context, 1, 14.0f);
                 f13.setTextColor(if0Var.getThemedColor(org.telegram.ui.ActionBar.h6.r5));
                 f13.setSingleLine(true);
                 f13.setEllipsize(truncateAt);

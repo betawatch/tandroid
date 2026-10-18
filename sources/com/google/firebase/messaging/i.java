@@ -1,6 +1,6 @@
 package com.google.firebase.messaging;
 
-import ai.d4;
+import ai.f4;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Base64;
@@ -11,7 +11,7 @@ import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class i {
     public static final Object c = new Object();
@@ -60,7 +60,7 @@ public final class i {
         a3.b bVar = (a3.b) this.b;
         boolean z10 = u6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
         boolean z11 = (intent.getFlags() & TLObject.FLAG_28) != 0;
-        return (!z10 || z11) ? Tasks.call(bVar, new h(0, context, intent)).continueWithTask(bVar, new d4(context, intent, z11, 1)) : a(context, intent, z11);
+        return (!z10 || z11) ? Tasks.call(bVar, new h(0, context, intent)).continueWithTask(bVar, new f4(context, intent, z11, 1)) : a(context, intent, z11);
     }
 
     public i(Context context) {

@@ -29,9 +29,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.kk;
 import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
@@ -42,7 +42,7 @@ import org.telegram.ui.Components.r5;
 import org.telegram.ui.q30;
 import wh.n;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c extends ViewGroup implements oe.a, NotificationCenter.NotificationCenterDelegate, ne.d {
     public static final Rect L = new Rect();
@@ -301,7 +301,7 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
             int paddingLeft = getPaddingLeft();
             int paddingRight = getPaddingRight();
             i1 i1Var = this.s;
-            int c10 = wh.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
+            int c10 = kk.c(44.0f, (size - paddingLeft) - paddingRight, TLObject.FLAG_31);
             int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
             n nVar = this.v;
             nVar.measure(c10, makeMeasureSpec);
@@ -314,7 +314,7 @@ public final class c extends ViewGroup implements oe.a, NotificationCenter.Notif
                 dp = AndroidUtilities.dp(70.0f);
             }
             int i12 = dp + ceil;
-            int y3 = q.y(8.0f, nVar.getMeasuredHeight(), AndroidUtilities.dp(28.0f));
+            int y3 = g0.y(8.0f, nVar.getMeasuredHeight(), AndroidUtilities.dp(28.0f));
             m0 m0Var2 = new m0();
             m0Var2.c = new RectF();
             m0Var2.d = new Path();

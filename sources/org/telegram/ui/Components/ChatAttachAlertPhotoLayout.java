@@ -63,7 +63,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter.NotificationCenterDelegate {
     public static boolean q1;
@@ -336,7 +336,7 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
         this.F = kVar;
         kVar.O = new ai.q1(this, 4);
         emVar.setLayoutManager(kVar);
-        emVar.setOnItemClickListener(new ai.d4(this, z11, d6Var, 7));
+        emVar.setOnItemClickListener(new ai.f4(this, z11, d6Var, 7));
         emVar.setOnItemLongClickListener(new tl(this, 3));
         km0 km0Var = new km0(new lm(this));
         this.I = km0Var;
@@ -625,7 +625,7 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
         this.q0 = textView3;
         textView3.setTextSize(1, 15.0f);
         textView3.setTextColor(-1);
-        textView3.setShadowLayer(org.telegram.ui.Cells.t0.f(3.33333f, R.string.TapForVideo, textView3), 0.0f, AndroidUtilities.dp(0.666f), 1275068416);
+        textView3.setShadowLayer(org.telegram.ui.Cells.c1.e(3.33333f, R.string.TapForVideo, textView3), 0.0f, AndroidUtilities.dp(0.666f), 1275068416);
         textView3.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
         this.j0.addView(textView3, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 16.0f, -2, 81));
         em emVar2 = new em(this, context, d6Var, 0);
@@ -806,10 +806,10 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
         if (this.P0) {
             D = AndroidUtilities.dp(400.0f);
         } else {
-            D = org.telegram.messenger.q.D(2.0f, ceil - 1, this.K0 * ceil);
+            D = org.telegram.messenger.g0.D(2.0f, ceil - 1, this.K0 * ceil);
         }
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        int y3 = org.telegram.messenger.q.y(6.0f, (((i11 - D) - currentActionBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(12.0f), 0);
+        int y3 = org.telegram.messenger.g0.y(6.0f, (((i11 - D) - currentActionBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(12.0f), 0);
         if (this.J != y3) {
             this.J = y3;
             smVar.l();
@@ -1526,11 +1526,11 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
                 return false;
             }
             if (!tiVar.c1()) {
-                org.telegram.messenger.wh.q(R.string.GlobalAttachPhotoRestricted, new xc(tiVar.u1, d6Var), null);
+                org.telegram.messenger.kk.q(R.string.GlobalAttachPhotoRestricted, new xc(tiVar.u1, d6Var), null);
                 return true;
             }
         } else if (!tiVar.c1()) {
-            org.telegram.messenger.wh.q(R.string.GlobalAttachVideoRestricted, new xc(tiVar.u1, d6Var), null);
+            org.telegram.messenger.kk.q(R.string.GlobalAttachVideoRestricted, new xc(tiVar.u1, d6Var), null);
             return true;
         }
         return true;
@@ -1876,7 +1876,7 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
     /* JADX WARN: Can't wrap try/catch for region: R(14:22|(1:24)|(1:98)(1:29)|(6:31|(5:33|(1:35)|36|(1:38)|(1:40))|96|42|(1:95)|46)(1:97)|(1:94)|51|(2:52|53)|(4:55|56|(2:58|59)|61)|62|63|64|65|66|67) */
     /* JADX WARN: Code restructure failed: missing block: B:41:0x00db, code lost:
     
-        if (r.c.t(r0) != false) goto L39;
+        if (r4.c.t(r0) != false) goto L39;
      */
     /* JADX WARN: Code restructure failed: missing block: B:69:0x016c, code lost:
     
@@ -1944,7 +1944,7 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
             if (BuildVars.LOGS_ENABLED) {
                 FileLog.d("pic path " + str3);
             }
-            Intent intent2 = (intent == null || str3 == null || !r.c.t(str3)) ? intent : null;
+            Intent intent2 = (intent == null || str3 == null || !r4.c.t(str3)) ? intent : null;
             if (intent2 != null) {
                 Uri data = intent2.getData();
                 if (data != null) {
@@ -1966,7 +1966,7 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
             } else {
                 str2 = null;
             }
-            if (str2 != null || str3 == null || !r.c.t(str3)) {
+            if (str2 != null || str3 == null || !r4.c.t(str3)) {
                 str3 = str2;
             }
             try {
@@ -2648,7 +2648,7 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
         if (j10 != 0) {
             e9Var.k0(j10);
         }
-        e9Var.I = new s2(8, this, e9Var);
+        e9Var.I = new q2(9, this, e9Var);
     }
 
     @Override // android.view.View, android.view.ViewParent
@@ -3236,7 +3236,7 @@ public class ChatAttachAlertPhotoLayout extends li implements NotificationCenter
                 return;
             }
             if (i10 == 9) {
-                ai.ld.h1(getContext(), getStarsPrice(), true, new d(this, 6), this.a);
+                ai.md.h1(getContext(), getStarsPrice(), true, new d(this, 6), this.a);
                 return;
             }
             if (i10 >= 10) {

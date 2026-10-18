@@ -1,6 +1,6 @@
 package ci;
 
-import ai.ke;
+import ai.le;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -46,7 +46,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.u10;
 import org.telegram.ui.ua1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class x0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public a0 E;
@@ -551,11 +551,11 @@ public abstract class x0 extends FrameLayout implements NotificationCenter.Notif
             clientUserId = DialogObject.getPeerDialogId(defaultSendAs);
         }
         k0 k0Var = new k0(0);
-        ke keVar = new ke(getContext(), this.N, this.M, null, null, arrayList, !z10, true, clientUserId, k0Var);
+        le leVar = new le(getContext(), this.N, this.M, null, null, arrayList, !z10, true, clientUserId, k0Var);
         n2 n2Var = (n2) this;
-        keVar.O = n2Var;
-        keVar.Q = new a1.c(n2Var, 14);
-        keVar.show();
+        leVar.O = n2Var;
+        leVar.Q = new a1.c(n2Var, 14);
+        leVar.show();
     }
 
     public final void l(int i10, int i11, boolean z10, long j10, TLRPC.TL_textWithEntities tL_textWithEntities, long j11, boolean z11) {
@@ -790,7 +790,7 @@ public abstract class x0 extends FrameLayout implements NotificationCenter.Notif
                 int i12 = newMessageId;
                 if (!z11) {
                     if (tL_error != null) {
-                        AndroidUtilities.runOnUIThread(new ai.ha(x0Var, i12, tL_error, j11, j10, tL_textWithEntities));
+                        AndroidUtilities.runOnUIThread(new ai.ia(x0Var, i12, tL_error, j11, j10, tL_textWithEntities));
                         return;
                     }
                     return;
@@ -957,7 +957,7 @@ public abstract class x0 extends FrameLayout implements NotificationCenter.Notif
         x1Var.invalidate();
         org.telegram.ui.Components.p6 p6Var = x1Var.c;
         p6Var.a();
-        p6Var.t(org.telegram.messenger.q.h(j10, ',', new StringBuilder("+")), true, true);
+        p6Var.t(org.telegram.messenger.g0.h(j10, ',', new StringBuilder("+")), true, true);
         v1 v1Var = x1Var.d;
         AndroidUtilities.cancelRunOnUIThread(v1Var);
         AndroidUtilities.runOnUIThread(v1Var, 1500L);

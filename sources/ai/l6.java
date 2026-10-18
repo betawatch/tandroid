@@ -2,7 +2,7 @@ package ai;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l6 implements Runnable {
     public final /* synthetic */ int a;
@@ -129,16 +129,16 @@ public final /* synthetic */ class l6 implements Runnable {
                 s6 s6Var2 = this.b;
                 s6Var2.o = false;
                 s6Var2.a.c.c();
-                b2 b2Var = s6Var2.r;
-                if (b2Var != null) {
-                    b2Var.run();
+                d2 d2Var = s6Var2.r;
+                if (d2Var != null) {
+                    d2Var.run();
                     break;
                 }
                 break;
             default:
-                b2 b2Var2 = this.b.s;
-                if (b2Var2 != null) {
-                    b2Var2.run();
+                d2 d2Var2 = this.b.s;
+                if (d2Var2 != null) {
+                    d2Var2.run();
                     break;
                 }
                 break;

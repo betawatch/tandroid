@@ -47,7 +47,7 @@ import org.telegram.ui.Components.v61;
 import org.telegram.ui.gt;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m extends v61 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.InputDocument E;
@@ -138,7 +138,7 @@ public final class m extends v61 implements NotificationCenter.NotificationCente
     @Override // org.telegram.ui.Components.v61
     public final void U(ArrayList arrayList, s61 s61Var) {
         arrayList.add(f61.k(this.h));
-        i0.a.p(R.string.BusinessIntroHeader, arrayList);
+        i2.d.p(R.string.BusinessIntroHeader, arrayList);
         arrayList.add(f61.k(this.s));
         arrayList.add(f61.k(this.v));
         if (this.w) {
@@ -184,7 +184,7 @@ public final class m extends v61 implements NotificationCenter.NotificationCente
         int i10 = f61Var.d;
         if (i10 == 1) {
             n2 n2Var = new n2(getParentActivity(), getResourceProvider(), true, true);
-            n2Var.y = new ah.h0(15, this, view);
+            n2Var.y = new ah.h0(16, this, view);
             int i11 = 0;
             n2Var.E = new g(this, i11);
             View[] viewPages = n2Var.f.getViewPages();

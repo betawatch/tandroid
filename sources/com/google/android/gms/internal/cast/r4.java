@@ -4,7 +4,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class r4 extends AtomicReference implements Runnable {
     public static final k4 c = new k4();
@@ -102,6 +102,6 @@ public final class r4 extends AtomicReference implements Runnable {
     @Override // java.util.concurrent.atomic.AtomicReference
     public final String toString() {
         Runnable runnable = (Runnable) get();
-        return a1.g.D(runnable == c ? "running=[DONE]" : runnable instanceof j4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? a1.g.p("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
+        return a1.g.C(runnable == c ? "running=[DONE]" : runnable instanceof j4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? a1.g.p("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
     }
 }

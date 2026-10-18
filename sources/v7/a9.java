@@ -2,9 +2,9 @@ package v7;
 
 import w7.pa;
 import x7.ia;
-import z7.bg;
+import z7.ag;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a9 implements qa.b {
     public final /* synthetic */ int a;
@@ -31,9 +31,9 @@ public final /* synthetic */ class a9 implements qa.b {
             case 5:
                 return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ia.d);
             case 6:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), bg.e);
+                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), ag.e);
             default:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), bg.d);
+                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ag.d);
         }
     }
 }

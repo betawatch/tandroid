@@ -8,16 +8,16 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class w9 implements sp0 {
+public final class w9 implements tp0 {
     public final /* synthetic */ y9 a;
 
     public w9(y9 y9Var) {
         this.a = y9Var;
     }
 
-    @Override // org.telegram.ui.sp0
+    @Override // org.telegram.ui.tp0
     public final void a(ArrayList arrayList) {
         y9 y9Var = this.a;
         try {
@@ -41,7 +41,7 @@ public final class w9 implements sp0 {
         }
     }
 
-    @Override // org.telegram.ui.sp0
+    @Override // org.telegram.ui.tp0
     public final void b() {
         try {
             Intent intent = new Intent("android.intent.action.PICK");

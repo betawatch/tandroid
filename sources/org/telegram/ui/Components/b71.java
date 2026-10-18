@@ -13,7 +13,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class b71 extends View {
     public org.telegram.ui.Cells.z E;
@@ -147,7 +147,7 @@ public class b71 extends View {
                 int dp = AndroidUtilities.dp(60.0f);
                 int w05 = org.telegram.ui.ActionBar.h6.w0(this.M, getResourceProvider());
                 this.n = w05;
-                org.telegram.ui.Cells.z i02 = org.telegram.ui.ActionBar.h6.i0(dp, 0, i0.b.o(w05, 26));
+                org.telegram.ui.Cells.z i02 = org.telegram.ui.ActionBar.h6.i0(dp, 0, i0.a.o(w05, 26));
                 this.E = i02;
                 i02.setCallback(this);
             }

@@ -24,7 +24,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cl implements org.telegram.ui.ActionBar.q0, hg.b, IMapsProvider.ITouchInterceptor, IMapsProvider.OnCameraMoveStartedListener, IMapsProvider.OnMarkerClickListener, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -190,16 +190,16 @@ public final /* synthetic */ class cl implements org.telegram.ui.ActionBar.q0, h
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                TextView k10 = org.telegram.ui.Cells.t0.k(rlVar2.i0, textView, w7.z5.a(-2.0f, 18.0f, 10.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48), context);
-                k10.setTextSize(1, 14.0f);
-                k10.setMaxLines(1);
-                k10.setEllipsize(truncateAt);
-                k10.setSingleLine(true);
-                k10.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
-                k10.setGravity(LocaleController.isRTL ? 5 : 3);
-                rlVar2.i0.addView(k10, w7.z5.a(-2.0f, 18.0f, 32.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+                TextView j10 = org.telegram.ui.Cells.c1.j(rlVar2.i0, textView, w7.z5.a(-2.0f, 18.0f, 10.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48), context);
+                j10.setTextSize(1, 14.0f);
+                j10.setMaxLines(1);
+                j10.setEllipsize(truncateAt);
+                j10.setSingleLine(true);
+                j10.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
+                j10.setGravity(LocaleController.isRTL ? 5 : 3);
+                rlVar2.i0.addView(j10, w7.z5.a(-2.0f, 18.0f, 32.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
                 textView.setText(qlVar.c.title);
-                k10.setText(LocaleController.getString(R.string.TapToSendLocation));
+                j10.setText(LocaleController.getString(R.string.TapToSendLocation));
                 FrameLayout frameLayout3 = new FrameLayout(context);
                 frameLayout3.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(36.0f), org.telegram.ui.Cells.t4.a(qlVar.a)));
                 frameLayout.addView(frameLayout3, w7.z5.a(36.0f, 0.0f, 0.0f, 0.0f, 4.0f, 36, 81));

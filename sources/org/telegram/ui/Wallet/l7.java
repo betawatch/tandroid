@@ -1,56 +1,66 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Rect;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Iterator;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l7 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class l7 extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ l7(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    static {
+        e61.setup(new l7());
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        switch (this.a) {
-            case 0:
-                w7 w7Var = (w7) this.b;
-                w7Var.getClass();
-                if (i12 - i10 != i16 - i14 || i13 - i11 != i17 - i15) {
-                    Iterator it = w7Var.f.values().iterator();
-                    while (it.hasNext()) {
-                        ((v7) it.next()).K = false;
-                    }
-                    w7Var.h0();
-                    break;
-                }
-                break;
-            default:
-                z7 z7Var = (z7) this.b;
-                if (i13 - i11 >= i17 - i15) {
-                    z7Var.getClass();
-                    break;
-                } else {
-                    ArrayList arrayList = z7Var.v;
-                    int size = arrayList.size();
-                    int i18 = 0;
-                    while (i18 < size) {
-                        Object obj = arrayList.get(i18);
-                        i18++;
-                        ia iaVar = (ia) obj;
-                        if (iaVar.hasFocus()) {
-                            iaVar.requestRectangleOnScreen(new Rect(0, 0, iaVar.getWidth(), iaVar.getHeight()), true);
-                            break;
-                        }
-                    }
-                    break;
-                }
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        m7 m7Var = (m7) view;
+        z7 z7Var = m7Var.p0;
+        if (z7Var != null) {
+            z7Var.h.remove(m7Var);
         }
+        ValueAnimator valueAnimator = m7Var.s0;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        m7Var.q0 = 1.0f;
+        m7Var.y.setAlpha(1.0f);
+        m7Var.o0 = (TL_wallet.nftItem) f61Var.G;
+        m7Var.p0 = (z7) f61Var.H;
+        TL_stars.SavedStarGift savedStarGift = new TL_stars.SavedStarGift();
+        savedStarGift.gift = m7Var.o0.gift;
+        m7Var.j(false, true, 0.0f);
+        m7Var.h(savedStarGift, true, false);
+        z7 z7Var2 = m7Var.p0;
+        if (z7Var2 != null) {
+            z7Var2.i(m7Var);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        m7 m7Var = new m7(context, i10, d6Var);
+        m7Var.q0 = 1.0f;
+        m7Var.setStateListAnimator(null);
+        return m7Var;
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final boolean equals(f61 f61Var, f61 f61Var2) {
+        return TextUtils.equals(((TL_wallet.nftItem) f61Var.G).address, ((TL_wallet.nftItem) f61Var2.G).address);
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final boolean isClickable() {
+        return true;
     }
 }

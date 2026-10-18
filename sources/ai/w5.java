@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class w5 extends FrameLayout {
     public float E;
@@ -85,7 +85,7 @@ public final class w5 extends FrameLayout {
         fArr[13] = 0.0f;
         fArr[2] = f16 - f17;
         fArr[6] = f19 + f20;
-        fArr[10] = com.google.android.gms.internal.cast.a6.t(f12, 0.0f, 0.0f, cos);
+        fArr[10] = com.google.android.gms.internal.play_billing.k3.t(f12, 0.0f, 0.0f, cos);
         fArr[14] = 0.0f;
         fArr[3] = 0.0f;
         fArr[7] = 0.0f;
@@ -288,9 +288,9 @@ public final class w5 extends FrameLayout {
             float[] fArr11 = fArr10[i14];
             float[] fArr12 = fArr8;
             float[] fArr13 = fArr9;
-            fArr11[0] = com.google.android.gms.internal.cast.a6.A(fArr7[0], f22, (fArr9[0] * f21) + fArr8[0], dp);
-            fArr11[1] = com.google.android.gms.internal.cast.a6.A(fArr7[1], f22, (fArr13[1] * f21) + fArr12[1], dp);
-            fArr11[2] = com.google.android.gms.internal.cast.a6.A(fArr7[2], f22, (fArr13[2] * f21) + fArr12[2], dp);
+            fArr11[0] = com.google.android.gms.internal.play_billing.k3.A(fArr7[0], f22, (fArr9[0] * f21) + fArr8[0], dp);
+            fArr11[1] = com.google.android.gms.internal.play_billing.k3.A(fArr7[1], f22, (fArr13[1] * f21) + fArr12[1], dp);
+            fArr11[2] = com.google.android.gms.internal.play_billing.k3.A(fArr7[2], f22, (fArr13[2] * f21) + fArr12[2], dp);
             i14++;
             fArr9 = fArr13;
             fArr8 = fArr12;

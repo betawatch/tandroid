@@ -14,7 +14,7 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.su;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class s extends b0 {
     public boolean I;
@@ -329,7 +329,7 @@ public class s extends b0 {
             int i22 = zVar.d;
             int v12 = v1(i22, eVar, y0Var);
             if (v12 > this.J) {
-                throw new IllegalArgumentException(a1.g.n(this.J, " spans.", i0.a.m("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
+                throw new IllegalArgumentException(a1.g.n(this.J, " spans.", i2.d.m("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
             }
             i20 -= v12;
             if (i20 < 0 || (c10 = zVar.c(eVar)) == null) {
@@ -452,24 +452,24 @@ public class s extends b0 {
     }
 
     @Override // s4.b0
-    public final void a1(qf.e eVar, y0 y0Var, i2.m0 m0Var, int i10) {
+    public final void a1(qf.e eVar, y0 y0Var, i2.n0 n0Var, int i10) {
         A1();
         if (y0Var.b() > 0 && !y0Var.g) {
             boolean z10 = i10 == 1;
-            int u12 = u1(m0Var.b, eVar, y0Var);
+            int u12 = u1(n0Var.b, eVar, y0Var);
             if (z10) {
                 while (u12 > 0) {
-                    int i11 = m0Var.b;
+                    int i11 = n0Var.b;
                     if (i11 <= 0) {
                         break;
                     }
                     int i12 = i11 - 1;
-                    m0Var.b = i12;
+                    n0Var.b = i12;
                     u12 = u1(i12, eVar, y0Var);
                 }
             } else {
                 int b10 = y0Var.b() - 1;
-                int i13 = m0Var.b;
+                int i13 = n0Var.b;
                 while (i13 < b10) {
                     int i14 = i13 + 1;
                     int u13 = u1(i14, eVar, y0Var);
@@ -479,7 +479,7 @@ public class s extends b0 {
                     i13 = i14;
                     u12 = u13;
                 }
-                m0Var.b = i13;
+                n0Var.b = i13;
             }
         }
         r1();
@@ -767,7 +767,7 @@ public class s extends b0 {
         }
         this.I = true;
         if (i10 < 1) {
-            throw new IllegalArgumentException(i0.a.j(i10, "Span count should be at least 1. Provided "));
+            throw new IllegalArgumentException(i2.d.j(i10, "Span count should be at least 1. Provided "));
         }
         this.J = i10;
         this.O.j();

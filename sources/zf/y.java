@@ -11,7 +11,7 @@ import android.view.animation.Interpolator;
 import android.view.animation.PathInterpolator;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class y extends Drawable {
     public static final PathInterpolator i = new PathInterpolator(0.42f, 0.0f, 0.58f, 1.0f);
@@ -46,7 +46,7 @@ public final class y extends Drawable {
         int length = iArr.length - 1;
         int alpha = Color.alpha(i10);
         for (int i11 = length; i11 >= 0; i11--) {
-            iArr[i11] = i0.b.o(i10, (int) (interpolator.getInterpolation((length - i11) / length) * alpha));
+            iArr[i11] = i0.a.o(i10, (int) (interpolator.getInterpolation((length - i11) / length) * alpha));
         }
     }
 

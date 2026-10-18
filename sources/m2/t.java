@@ -5,7 +5,7 @@ import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t {
     public final /* synthetic */ int a;
@@ -42,9 +42,9 @@ public final class t {
             this.b = "Unity";
             String string = context.getResources().getString(e);
             this.c = string;
-            String g10 = r.c.g("Unity Editor version is: ", string);
+            String h = r4.c.h("Unity Editor version is: ", string);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                Log.v("FirebaseCrashlytics", g10, null);
+                Log.v("FirebaseCrashlytics", h, null);
                 return;
             }
             return;

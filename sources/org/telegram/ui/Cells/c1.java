@@ -1,127 +1,164 @@
 package org.telegram.ui.Cells;
 
-import android.R;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
+import java.util.Random;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u1 b;
-
-    public /* synthetic */ c1(int i10, u1 u1Var) {
-        this.a = i10;
-        this.b = u1Var;
+public abstract /* synthetic */ class c1 {
+    public static int A(int i10, int i11, Drawable drawable) {
+        return (drawable.getIntrinsicHeight() / i10) + i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b3();
-                break;
-            case 1:
-                u1 u1Var = this.b;
-                l1 l1Var = u1Var.Jc;
-                if (l1Var != null) {
-                    l1Var.p(u1Var);
-                    break;
-                }
-                break;
-            case 2:
-                this.b.H3();
-                break;
-            case 3:
-                u1 u1Var2 = this.b;
-                l2.f fVar = u1Var2.w;
-                fVar.t(u1Var2.Qd);
-                fVar.t(u1Var2.Rd);
-                u1Var2.H3();
-                MessageObject messageObject = u1Var2.y7;
-                if (messageObject != null) {
-                    messageObject.generateLayout(null);
-                    MessageObject messageObject2 = u1Var2.y7;
-                    if (messageObject2.caption != null) {
-                        messageObject2.caption = null;
-                        messageObject2.generateCaption();
-                    }
-                    l1 l1Var2 = u1Var2.Jc;
-                    if (l1Var2 != null) {
-                        l1Var2.T(u1Var2);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                u1 u1Var3 = this.b;
-                if (u1Var3.Q9 && !u1Var3.R9 && u1Var3.S9) {
-                    u1Var3.R9 = true;
-                    u1Var3.zc.setState(new int[]{R.attr.state_pressed, R.attr.state_enabled});
-                    break;
-                }
-                break;
-            case 5:
-                u1 u1Var4 = this.b;
-                u1Var4.zc.setState(new int[0]);
-                u1Var4.invalidate();
-                break;
-            case 6:
-                u1 u1Var5 = this.b;
-                u1Var5.zc.setState(new int[0]);
-                u1Var5.invalidate();
-                break;
-            case 7:
-                u1 u1Var6 = this.b;
-                int i10 = 0;
-                u1Var6.x7 = false;
-                u1Var6.getMessageObject().isSpoilersRevealed = true;
-                MessageObject.TextLayoutBlocks textLayoutBlocks = u1Var6.h4;
-                if (textLayoutBlocks != null) {
-                    ArrayList<MessageObject.TextLayoutBlock> arrayList = textLayoutBlocks.textLayoutBlocks;
-                    int size = arrayList.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        MessageObject.TextLayoutBlock textLayoutBlock = arrayList.get(i11);
-                        i11++;
-                        textLayoutBlock.spoilers.clear();
-                    }
-                }
-                MessageObject.TextLayoutBlocks textLayoutBlocks2 = u1Var6.c4;
-                if (textLayoutBlocks2 != null) {
-                    ArrayList<MessageObject.TextLayoutBlock> arrayList2 = textLayoutBlocks2.textLayoutBlocks;
-                    int size2 = arrayList2.size();
-                    while (i10 < size2) {
-                        MessageObject.TextLayoutBlock textLayoutBlock2 = arrayList2.get(i10);
-                        i10++;
-                        textLayoutBlock2.spoilers.clear();
-                    }
-                } else {
-                    ArrayList<MessageObject.TextLayoutBlock> arrayList3 = u1Var6.y7.textLayoutBlocks;
-                    if (arrayList3 != null) {
-                        int size3 = arrayList3.size();
-                        while (i10 < size3) {
-                            MessageObject.TextLayoutBlock textLayoutBlock3 = arrayList3.get(i10);
-                            i10++;
-                            textLayoutBlock3.spoilers.clear();
-                        }
-                    }
-                }
-                u1Var6.invalidate();
-                break;
-            case 8:
-                u1 u1Var7 = this.b;
-                u1Var7.getMessageObject().replyMessageObject.isSpoilersRevealed = true;
-                u1Var7.Ld.clear();
-                u1Var7.invalidate();
-                break;
-            case 9:
-                u1 u1Var8 = this.b;
-                u1Var8.post(new c1(7, u1Var8));
-                break;
-            default:
-                this.b.a3();
-                break;
+    public static int B(int i10, int i11, Drawable drawable) {
+        return (drawable.getIntrinsicWidth() / i10) + i11;
+    }
+
+    public static /* synthetic */ String C(int i10) {
+        if (i10 == 1) {
+            return "PAID";
         }
+        if (i10 == 2) {
+            return "CANCELLED";
+        }
+        if (i10 == 3) {
+            return "PENDING";
+        }
+        if (i10 == 4) {
+            return "FAILED";
+        }
+        throw null;
+    }
+
+    public static boolean a(MessageObject messageObject) {
+        return messageObject != null && messageObject.getDialogId() == UserObject.REPLY_BOT;
+    }
+
+    public static float b(float f7, float f10, float f11) {
+        return (AndroidUtilities.dpf2(f7) * f10) + f11;
+    }
+
+    public static float c(float f7, float f10, float f11, float f12) {
+        return Math.min(f12, (f7 / f10) + f11);
+    }
+
+    public static float d(Random random, float f7, float f10) {
+        return (random.nextFloat() * f7) + f10;
+    }
+
+    public static int e(float f7, int i10, TextView textView) {
+        textView.setText(LocaleController.getString(i10));
+        return AndroidUtilities.dp(f7);
+    }
+
+    public static int f(int i10, int i11, Drawable drawable) {
+        return i11 - (drawable.getIntrinsicHeight() / i10);
+    }
+
+    public static int g(Random random, int i10) {
+        return Math.abs(random.nextInt() % i10);
+    }
+
+    public static int h(b10 b10Var, int i10) {
+        return b10Var.c(b10Var.getMeasuredWidth()) + i10;
+    }
+
+    public static Bundle i(int i10, String str) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(str, i10);
+        return bundle;
+    }
+
+    public static TextView j(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
+        frameLayout.addView(textView, layoutParams);
+        return new TextView(context);
+    }
+
+    public static String k(String str, String str2, String str3, String str4, String str5) {
+        return str + str2 + str3 + str4 + str5;
+    }
+
+    public static o1.l l(float f7, float f10, float f11) {
+        o1.l lVar = new o1.l(f7);
+        lVar.b(f10);
+        lVar.a(f11);
+        return lVar;
+    }
+
+    public static void m(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
+        arrayList.add(Integer.valueOf(i10));
+        arrayList2.add(Integer.valueOf(i11));
+    }
+
+    public static void n(int i10, String str, StringBuilder sb2) {
+        sb2.append(LocaleController.getString(i10));
+        sb2.append(str);
+    }
+
+    public static void o(int i10, String str, ArrayList arrayList) {
+        arrayList.add(new r6(str, i10));
+    }
+
+    public static void p(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
+        arrayList.add(Integer.valueOf(i10));
+        arrayList2.add(num);
+    }
+
+    public static void q(int i10, org.telegram.ui.ActionBar.d6 d6Var, TextView textView, int i11) {
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
+        textView.setGravity(i11);
+    }
+
+    public static void r(int i10, org.telegram.ui.ActionBar.d6 d6Var, TextView textView, int i11, float f7) {
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
+        textView.setTextSize(i11, f7);
+        textView.setTypeface(AndroidUtilities.bold());
+    }
+
+    public static void s(int i10, x90 x90Var) {
+        x90Var.setText(AndroidUtilities.replaceTags(LocaleController.getString(i10)));
+    }
+
+    public static void t(FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.TL_error tL_error, boolean z10) {
+        new xc(frameLayout, d6Var).f0(tL_error, z10);
+    }
+
+    public static /* synthetic */ boolean u(TLRPC.TL_game tL_game) {
+        return tL_game != null;
+    }
+
+    public static float v(float f7, float f10, float f11, float f12) {
+        return Math.max(f12, f11 - (f7 / f10));
+    }
+
+    public static int w(int i10, int i11, Drawable drawable) {
+        return i11 - (drawable.getIntrinsicWidth() / i10);
+    }
+
+    public static void x(int i10, int i11, ArrayList arrayList, ArrayList arrayList2) {
+        arrayList.add(LocaleController.getString(i10));
+        arrayList2.add(Integer.valueOf(i11));
+    }
+
+    public static void y(int i10, ArrayList arrayList, ArrayList arrayList2, Integer num) {
+        arrayList.add(LocaleController.getString(i10));
+        arrayList2.add(num);
+    }
+
+    public static float z(float f7, float f10, float f11, float f12) {
+        return f12 - ((f7 * f10) * f11);
     }
 }

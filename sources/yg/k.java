@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
 import ci.l4;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k extends wg.c {
     public boolean E;
@@ -353,7 +353,7 @@ public final class k extends wg.c {
             xpVar.setAlpha(1.0f);
         }
         int x02 = h6.x0(null, h6.z9, false);
-        boolean s10 = a6.s(user);
+        boolean s10 = k3.s(user);
         ex0 ex0Var = this.K;
         l4Var.i(s10 ? ex0Var.a(user, null, x02, false) : ex0Var.a(null, null, x02, false));
     }

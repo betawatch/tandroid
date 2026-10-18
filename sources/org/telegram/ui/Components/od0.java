@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class od0 extends LinearLayout {
     public static final bs v0 = new bs(0.0f, 0.5f, 0.5f, 1.0f);
@@ -98,7 +98,7 @@ public class od0 extends LinearLayout {
                 return View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30);
             }
             if (mode != 1073741824) {
-                throw new IllegalArgumentException(i0.a.j(mode, "Unknown measure mode: "));
+                throw new IllegalArgumentException(i2.d.j(mode, "Unknown measure mode: "));
             }
         }
         return i10;

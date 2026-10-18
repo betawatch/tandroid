@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl0, kd0, ld0, md0, ne.f, ImageReceiver.ImageReceiverDelegate, e5, r0.n, vh.a, t0.e, yl0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.q5, ci.w9, org.telegram.ui.ActionBar.q0, org.telegram.ui.ActionBar.k1, wh.k {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
     @Override // r0.n
     public r0.k1 B0(View view, r0.k1 k1Var) {
         lb lbVar = (lb) this.b;
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
         kb kbVar = lbVar.a;
         if (kbVar != null) {
             kbVar.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
@@ -134,7 +134,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
     }
 
     @Override // t0.e
-    public boolean f(t0.i iVar, int i10, Bundle bundle) {
+    public boolean f(t0.j jVar, int i10, Bundle bundle) {
         ng ngVar = (ng) this.b;
         ChatActivityEnterView chatActivityEnterView = ngVar.d;
         if (chatActivityEnterView.l5) {
@@ -143,21 +143,21 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
         int i11 = n0.a.a;
         if (Build.VERSION.SDK_INT >= 25 && (i10 & 1) != 0) {
             try {
-                iVar.a.d();
+                jVar.a.b();
             } catch (Exception unused) {
                 return false;
             }
         }
-        t0.h hVar = iVar.a;
-        if (!hVar.getDescription().hasMimeType("image/gif") && !SendMessagesHelper.shouldSendWebPAsSticker(null, hVar.c())) {
-            ngVar.m(hVar.c(), hVar.getDescription().getMimeType(0));
+        t0.i iVar = jVar.a;
+        if (!iVar.getDescription().hasMimeType("image/gif") && !SendMessagesHelper.shouldSendWebPAsSticker(null, iVar.a())) {
+            ngVar.m(iVar.a(), iVar.getDescription().getMimeType(0));
             return true;
         }
         if (chatActivityEnterView.c()) {
-            f5.L(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new s2(6, ngVar, iVar), chatActivityEnterView.W3);
+            f5.L(chatActivityEnterView.O2, chatActivityEnterView.P2.a(), new q2(7, ngVar, jVar), chatActivityEnterView.W3);
             return true;
         }
-        ngVar.o(iVar, true, 0, 0);
+        ngVar.o(jVar, true, 0, 0);
         return true;
     }
 
@@ -171,10 +171,10 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
                 ((org.telegram.messenger.camera.i) this.b).run();
                 break;
             case 3:
-                ((ai.s3) this.b).run();
+                ((ai.r3) this.b).run();
                 break;
             case 4:
-                ((ai.ub) this.b).run();
+                ((ai.vb) this.b).run();
                 break;
             case 5:
                 ((u1) this.b).run();
@@ -183,7 +183,7 @@ public final /* synthetic */ class s implements org.telegram.ui.ActionBar.a2, xl
                 ((js) this.b).run();
                 break;
             case 8:
-                ((q2) this.b).run();
+                ((r2) this.b).run();
                 break;
             case 17:
                 ((gg) this.b).a.U0.r();

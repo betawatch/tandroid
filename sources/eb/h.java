@@ -3,7 +3,7 @@ package eb;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class h extends i implements Iterable {
     public final ArrayList a = new ArrayList();
@@ -31,6 +31,6 @@ public final class h extends i implements Iterable {
         if (size == 1) {
             return ((i) arrayList.get(0)).m();
         }
-        throw new IllegalStateException(i0.a.j(size, "Array must have size 1, but has size "));
+        throw new IllegalStateException(i2.d.j(size, "Array must have size 1, but has size "));
     }
 }

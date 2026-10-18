@@ -26,7 +26,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.er;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class aa {
     public final l9 A;
@@ -484,7 +484,7 @@ public abstract class aa {
                 break;
             }
             RectF rectF = (RectF) u9Var.b.get(i14);
-            rectF.set((int) (Math.max(f7, rectF.left) - (z10 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.cast.a6.x(rectF.top, f11, f10, f11), (int) (Math.max(f7, rectF.right) + (z11 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.cast.a6.x(rectF.bottom, f11, f10, f11));
+            rectF.set((int) (Math.max(f7, rectF.left) - (z10 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.play_billing.k3.y(rectF.top, f11, f10, f11), (int) (Math.max(f7, rectF.right) + (z11 ? f12 / 2.0f : 0.0f)), (int) com.google.android.gms.internal.play_billing.k3.y(rectF.bottom, f11, f10, f11));
             erVar.addRect(rectF, Path.Direction.CW);
             i14++;
         }

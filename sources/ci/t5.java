@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class t5 {
     public int a;
@@ -102,8 +102,8 @@ public final class t5 {
             } else {
                 str = f5Var.c.trim().toLowerCase();
                 str2 = LocaleController.getInstance().getTranslitString(str);
-                str4 = r.c.g(" ", str);
-                str3 = r.c.g(" ", str2);
+                str4 = r4.c.h(" ", str);
+                str3 = r4.c.h(" ", str2);
             }
             for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                 TLRPC.User user = MessagesController.getInstance(this.d).getUser(Long.valueOf(((TL_stories.StoryView) arrayList2.get(i10)).user_id));
@@ -237,7 +237,7 @@ public final class t5 {
                                                     TL_stories.StoryViews storyViews = storyItem2.views;
                                                     if (i16 > storyViews.views_count) {
                                                         storyViews.recent_viewers.clear();
-                                                        for (int i17 = 0; i17 < Math.min(3, storyViewsList.users.size()); i17 = com.google.android.gms.internal.cast.a6.h(storyViewsList.users.get(i17).id, storyItem2.views.recent_viewers, i17, 1)) {
+                                                        for (int i17 = 0; i17 < Math.min(3, storyViewsList.users.size()); i17 = com.google.android.gms.internal.play_billing.k3.h(storyViewsList.users.get(i17).id, storyItem2.views.recent_viewers, i17, 1)) {
                                                         }
                                                         storyItem2.views.views_count = storyViewsList.count;
                                                         z11 = true;
@@ -409,7 +409,7 @@ public final class t5 {
                                                     TL_stories.StoryViews storyViews = storyItem2.views;
                                                     if (i16 > storyViews.views_count) {
                                                         storyViews.recent_viewers.clear();
-                                                        for (int i17 = 0; i17 < Math.min(3, storyViewsList.users.size()); i17 = com.google.android.gms.internal.cast.a6.h(storyViewsList.users.get(i17).id, storyItem2.views.recent_viewers, i17, 1)) {
+                                                        for (int i17 = 0; i17 < Math.min(3, storyViewsList.users.size()); i17 = com.google.android.gms.internal.play_billing.k3.h(storyViewsList.users.get(i17).id, storyItem2.views.recent_viewers, i17, 1)) {
                                                         }
                                                         storyItem2.views.views_count = storyViewsList.count;
                                                         z11 = true;
@@ -623,7 +623,7 @@ public final class t5 {
                                                 TL_stories.StoryViews storyViews = storyItem2.views;
                                                 if (i16 > storyViews.views_count) {
                                                     storyViews.recent_viewers.clear();
-                                                    for (int i17 = 0; i17 < Math.min(3, storyViewsList.users.size()); i17 = com.google.android.gms.internal.cast.a6.h(storyViewsList.users.get(i17).id, storyItem2.views.recent_viewers, i17, 1)) {
+                                                    for (int i17 = 0; i17 < Math.min(3, storyViewsList.users.size()); i17 = com.google.android.gms.internal.play_billing.k3.h(storyViewsList.users.get(i17).id, storyItem2.views.recent_viewers, i17, 1)) {
                                                     }
                                                     storyItem2.views.views_count = storyViewsList.count;
                                                     z11 = true;
@@ -795,7 +795,7 @@ public final class t5 {
                                                 TL_stories.StoryViews storyViews = storyItem2.views;
                                                 if (i16 > storyViews.views_count) {
                                                     storyViews.recent_viewers.clear();
-                                                    for (int i17 = 0; i17 < Math.min(3, storyViewsList.users.size()); i17 = com.google.android.gms.internal.cast.a6.h(storyViewsList.users.get(i17).id, storyItem2.views.recent_viewers, i17, 1)) {
+                                                    for (int i17 = 0; i17 < Math.min(3, storyViewsList.users.size()); i17 = com.google.android.gms.internal.play_billing.k3.h(storyViewsList.users.get(i17).id, storyItem2.views.recent_viewers, i17, 1)) {
                                                     }
                                                     storyItem2.views.views_count = storyViewsList.count;
                                                     z11 = true;

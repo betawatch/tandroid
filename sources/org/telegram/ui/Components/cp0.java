@@ -30,7 +30,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class cp0 extends FrameLayout {
     public static float[] j0;
@@ -613,9 +613,9 @@ public class cp0 extends FrameLayout {
                 }
             } else {
                 f11 = 8.0f;
-                float y3 = org.telegram.messenger.wh.y(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f17);
-                this.F = y3;
-                if (y3 < f18) {
+                float x10 = org.telegram.messenger.kk.x(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f17);
+                this.F = x10;
+                if (x10 < f18) {
                     this.F = f18;
                 }
             }
@@ -740,7 +740,7 @@ public class cp0 extends FrameLayout {
                 canvas2.save();
                 if (this.d0 != 0) {
                     f12 = 0.0f;
-                    canvas2.translate(com.google.android.gms.internal.cast.a6.x(1.0f, interpolation3, AndroidUtilities.dp(f10) * this.d0, AndroidUtilities.dp(f11)), 0.0f);
+                    canvas2.translate(com.google.android.gms.internal.play_billing.k3.y(1.0f, interpolation3, AndroidUtilities.dp(f10) * this.d0, AndroidUtilities.dp(f11)), 0.0f);
                 } else {
                     f12 = 0.0f;
                 }
@@ -819,7 +819,7 @@ public class cp0 extends FrameLayout {
         this.c.setColor(i10);
         org.telegram.ui.Cells.z zVar = this.E;
         if (zVar != null) {
-            org.telegram.ui.ActionBar.h6.C1(zVar, i0.b.o(i10, 40), true);
+            org.telegram.ui.ActionBar.h6.C1(zVar, i0.a.o(i10, 40), true);
         }
     }
 
@@ -868,7 +868,7 @@ public class cp0 extends FrameLayout {
         this.e = AndroidUtilities.dp(32.0f);
         this.d = AndroidUtilities.dp(24.0f);
         this.F = AndroidUtilities.dp(6.0f);
-        org.telegram.ui.Cells.z g02 = org.telegram.ui.ActionBar.h6.g0(i0.b.o(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), 40), 1, AndroidUtilities.dp(16.0f));
+        org.telegram.ui.Cells.z g02 = org.telegram.ui.ActionBar.h6.g0(i0.a.o(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), 40), 1, AndroidUtilities.dp(16.0f));
         this.E = g02;
         g02.setCallback(this);
         g02.setVisible(true, false);

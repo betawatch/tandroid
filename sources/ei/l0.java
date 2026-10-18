@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l0 extends View {
     public final Paint a;
@@ -120,7 +120,7 @@ public final class l0 extends View {
             currentHeight = currentWidth;
             currentWidth = currentHeight;
         }
-        float x10 = com.google.android.gms.internal.cast.a6.x(gVar.l, 1.0f, f12, 1.0f);
+        float y3 = com.google.android.gms.internal.play_billing.k3.y(gVar.l, 1.0f, f12, 1.0f);
         float f15 = currentWidth;
         float containerWidth = getContainerWidth() / f15;
         float f16 = currentHeight;
@@ -128,7 +128,7 @@ public final class l0 extends View {
             containerWidth = getContainerHeight() / f16;
         }
         canvas.translate(gVar.d * 1.0f, gVar.e * 1.0f);
-        float f17 = (gVar.f / x10) * containerWidth;
+        float f17 = (gVar.f / y3) * containerWidth;
         rg.x1 x1Var = m0Var.b;
         float lerp6 = (x1Var == null || (cropState = x1Var.G0) == null) ? AndroidUtilities.lerp(1.0f, f17, f11) : AndroidUtilities.lerp(cropState.cropScale, f17, f11);
         canvas.scale(lerp6, lerp6);

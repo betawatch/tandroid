@@ -1,53 +1,28 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class n6 extends tg.n {
-    public final /* synthetic */ p6 f0;
+public final /* synthetic */ class n6 implements o1.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n6(p6 p6Var, Context context) {
-        super(context, 1, 4);
-        this.f0 = p6Var;
+    public /* synthetic */ n6(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // tg.n
-    public final void i() {
-        p6 p6Var = this.f0;
-        if (p6Var.e == this) {
-            p6.c(p6Var);
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                s6.b((s6) this.b, z10, f7);
+                break;
+            default:
+                o9 o9Var = (o9) this.b;
+                o9Var.X = null;
+                o9Var.Y = 1.0f;
+                o9Var.A0();
+                break;
         }
-    }
-
-    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int round = Math.round(Math.min(i10, i11) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        super.onSurfaceTextureAvailable(surfaceTexture, round, round);
-    }
-
-    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int round = Math.round(Math.min(i10, i11) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        this.y = round;
-        this.x = round;
-    }
-
-    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int round = Math.round(Math.min(getWidth(), getHeight()) * 3.5f);
-        if (round > 0) {
-            surfaceTexture.setDefaultBufferSize(round, round);
-        }
-    }
-
-    @Override // tg.n, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.f0.x && super.onTouchEvent(motionEvent);
     }
 }

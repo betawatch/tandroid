@@ -69,7 +69,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fg0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static final int t0;
@@ -305,7 +305,7 @@ public final class fg0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         fg0Var.n1(0, true);
         TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
         deleteaccount.reason = "Forgot password";
-        ConnectionsManager.getInstance(fg0Var.currentAccount).sendRequest(deleteaccount, new ai.x2(fg0Var, str, str2, str3, 13), 10);
+        ConnectionsManager.getInstance(fg0Var.currentAccount).sendRequest(deleteaccount, new ai.y2(fg0Var, str, str2, str3, 13), 10);
     }
 
     public static /* synthetic */ void X(fg0 fg0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z10, IntegrityTokenResponse integrityTokenResponse) {
@@ -409,7 +409,7 @@ public final class fg0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 b2Var.T = LocaleController.getString(R.string.InvalidPhoneNumber);
             }
         }
-        alertDialog$Builder.i(LocaleController.getString("BotHelp", R.string.BotHelp), new ai.d4(str, n2Var, z10));
+        alertDialog$Builder.i(LocaleController.getString("BotHelp", R.string.BotHelp), new ai.f4(str, n2Var, z10));
         alertDialog$Builder.k(LocaleController.getString("OK", R.string.OK), null);
         n2Var.showDialog(b2Var);
     }
@@ -431,19 +431,19 @@ public final class fg0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             Object obj = bundle.get(str2);
             if (obj instanceof String) {
                 if (str != null) {
-                    editor.putString(a1.g.D(str, "_|_", str2), (String) obj);
+                    editor.putString(a1.g.C(str, "_|_", str2), (String) obj);
                 } else {
                     editor.putString(str2, (String) obj);
                 }
             } else if (obj instanceof Integer) {
                 if (str != null) {
-                    editor.putInt(a1.g.D(str, "_|_", str2), ((Integer) obj).intValue());
+                    editor.putInt(a1.g.C(str, "_|_", str2), ((Integer) obj).intValue());
                 } else {
                     editor.putInt(str2, ((Integer) obj).intValue());
                 }
             } else if (obj instanceof Boolean) {
                 if (str != null) {
-                    editor.putBoolean(a1.g.D(str, "_|_", str2), ((Boolean) obj).booleanValue());
+                    editor.putBoolean(a1.g.C(str, "_|_", str2), ((Boolean) obj).booleanValue());
                 } else {
                     editor.putBoolean(str2, ((Boolean) obj).booleanValue());
                 }
@@ -1067,7 +1067,7 @@ public final class fg0 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return i0.b.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
+        return i0.a.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -1172,7 +1172,7 @@ public final class fg0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         if (this.x) {
             this.x = false;
             this.n0 = true;
-            ((LaunchActivity) getParentActivity()).P0(this.currentAccount, new i2.w(6, z10));
+            ((LaunchActivity) getParentActivity()).P0(this.currentAccount, new i2.x(6, z10));
             this.n0 = false;
             finishFragment();
             return;

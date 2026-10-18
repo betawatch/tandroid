@@ -1,11 +1,11 @@
 package sg;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k {
     public final TLRPC.TL_premiumGiftOption a;
@@ -127,6 +127,6 @@ public final class k {
         this.a = null;
         this.b = tL_premiumGiftCodeOption;
         this.c = null;
-        this.d = a6.s(tL_premiumGiftCodeOption2) ? tL_premiumGiftCodeOption2 : null;
+        this.d = k3.s(tL_premiumGiftCodeOption2) ? tL_premiumGiftCodeOption2 : null;
     }
 }

@@ -28,8 +28,8 @@ import org.telegram.ui.Components.rc;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class k2 implements VoIPService.StateListener, tf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean U = false;
     public static k2 V;
@@ -96,7 +96,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
         if (z10) {
             View view = new View(context);
             this.n = view;
-            view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{i0.b.o(-16777216, 76), 0}));
+            view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{i0.a.o(-16777216, 76), 0}));
             j2Var.addView(view, -1, AndroidUtilities.dp(60.0f));
             ImageView imageView = new ImageView(context);
             imageView.setImageResource(R.drawable.pip_close);
@@ -446,16 +446,16 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
         }
     }
 
-    @Override // org.telegram.messenger.voip.VoIPService.StateListener
-    public final void onAudioSettingsChanged() {
-    }
-
     @Override // tf.a
     public final /* synthetic */ void d(Canvas canvas) {
     }
 
     @Override // tf.a
     public final /* synthetic */ void f(Canvas canvas) {
+    }
+
+    @Override // org.telegram.messenger.voip.VoIPService.StateListener
+    public final void onAudioSettingsChanged() {
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener

@@ -29,7 +29,7 @@ import m.s1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e extends s implements View.OnKeyListener, PopupWindow.OnDismissListener {
     public View E;
@@ -181,7 +181,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         if (arrayList.isEmpty()) {
             return null;
         }
-        return ((d) i0.a.h(1, arrayList)).a.c;
+        return ((d) i2.d.h(1, arrayList)).a.c;
     }
 
     @Override // l.b0
@@ -397,7 +397,7 @@ public final class e extends s implements View.OnKeyListener, PopupWindow.OnDism
         k2Var.w = this.x;
         ArrayList arrayList = this.n;
         if (arrayList.size() > 0) {
-            dVar = (d) i0.a.h(1, arrayList);
+            dVar = (d) i2.d.h(1, arrayList);
             k kVar2 = dVar.b;
             int size2 = kVar2.f.size();
             int i15 = 0;

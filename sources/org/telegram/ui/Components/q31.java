@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.pd1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q31 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public static final /* synthetic */ int f0 = 0;
@@ -95,7 +95,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
         this.e = ChatObject.isMonoForum(MessagesController.getInstance(i10).getChat(Long.valueOf(j11)));
         boolean isBotForumWithEditableTopics = UserObject.isBotForumWithEditableTopics(MessagesController.getInstance(i10).getUser(Long.valueOf(j10)));
         this.f = isBotForumWithEditableTopics;
-        this.n = !org.telegram.messenger.q.w("topics_end_reached_", j11, UserConfig.getInstance(i10).getPreferences(), false);
+        this.n = !org.telegram.messenger.g0.v("topics_end_reached_", j11, UserConfig.getInstance(i10).getPreferences(), false);
         setClipChildren(true);
         setClipToPadding(true);
         setWillNotDraw(false);
@@ -175,7 +175,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                     boolean z16 = tL_forumTopic2.pinned;
                                     if (!z16 && z15) {
                                         if (!arrayList.isEmpty()) {
-                                            ((f61) i0.a.h(1, arrayList)).y |= 8;
+                                            ((f61) i2.d.h(1, arrayList)).y |= 8;
                                         }
                                         s61Var.L();
                                         z15 = false;
@@ -446,7 +446,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                     boolean z16 = tL_forumTopic2.pinned;
                                     if (!z16 && z15) {
                                         if (!arrayList.isEmpty()) {
-                                            ((f61) i0.a.h(1, arrayList)).y |= 8;
+                                            ((f61) i2.d.h(1, arrayList)).y |= 8;
                                         }
                                         s61Var.L();
                                         z15 = false;
@@ -771,7 +771,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                     boolean z16 = tL_forumTopic2.pinned;
                                     if (!z16 && z15) {
                                         if (!arrayList.isEmpty()) {
-                                            ((f61) i0.a.h(1, arrayList)).y |= 8;
+                                            ((f61) i2.d.h(1, arrayList)).y |= 8;
                                         }
                                         s61Var.L();
                                         z15 = false;
@@ -1042,7 +1042,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                     boolean z16 = tL_forumTopic2.pinned;
                                     if (!z16 && z15) {
                                         if (!arrayList.isEmpty()) {
-                                            ((f61) i0.a.h(1, arrayList)).y |= 8;
+                                            ((f61) i2.d.h(1, arrayList)).y |= 8;
                                         }
                                         s61Var.L();
                                         z15 = false;
@@ -1401,13 +1401,13 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
         viewGroup2.addView(i23, w7.z5.e(64, 48, 51));
         MessagesController.getInstance(i10).getTopicsController().loadTopics(j11, false, 3);
         SharedPreferences mainSettings = MessagesController.getInstance(i10).getMainSettings();
-        if (org.telegram.messenger.q.w("topicssidetabs", j10, mainSettings, false)) {
+        if (org.telegram.messenger.g0.v("topicssidetabs", j10, mainSettings, false)) {
             this.R = 1.0f;
             this.Q = true;
         }
-        boolean w9 = org.telegram.messenger.q.w("topicssidetabsb", j10, mainSettings, false);
-        this.P = w9;
-        i19.setImageResource(w9 ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
+        boolean v = org.telegram.messenger.g0.v("topicssidetabsb", j10, mainSettings, false);
+        this.P = v;
+        i19.setImageResource(v ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
         f(false);
         g();
         n();
@@ -1443,7 +1443,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
         ArrayList<Integer> arrayList2 = new ArrayList<>();
         int i10 = 0;
         while (i10 < arrayList.size()) {
-            i10 = com.google.android.gms.internal.cast.a6.f(((f61) arrayList.get(i10)).d, i10, 1, arrayList2);
+            i10 = com.google.android.gms.internal.play_billing.k3.f(((f61) arrayList.get(i10)).d, i10, 1, arrayList2);
         }
         long j11 = -j10;
         topicsController.reorderPinnedTopics(j11, arrayList2);
@@ -1487,7 +1487,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                 return false;
             }
             TLRPC.Chat chat3 = chat2;
-            I.c(R.drawable.msg_clear, LocaleController.getString(R.string.ClearHistory), new ai.c3(q31Var, I, peerDialogId, chat2, 17), false);
+            I.c(R.drawable.msg_clear, LocaleController.getString(R.string.ClearHistory), new ai.b2(q31Var, I, peerDialogId, chat2, 17), false);
             long j11 = chat3.id;
             if (ChatObject.isMonoForum(chat3) && ChatObject.canManageMonoForum(i12, chat3)) {
                 long j12 = chat3.linked_monoforum_id;
@@ -1506,9 +1506,9 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                 i10 = 8;
                 y3.setVisibility(8);
                 MessagesController messagesController2 = MessagesController.getInstance(i12);
-                ai.a4 a4Var = new ai.a4(q31Var, y3, I, j11, user2, chat4);
+                ai.y3 y3Var = new ai.y3(q31Var, y3, I, j11, user2, chat4);
                 i80Var2 = I;
-                messagesController2.checkIsInChat(true, chat4, user2, a4Var);
+                messagesController2.checkIsInChat(true, chat4, user2, y3Var);
             }
             i80Var = i80Var2;
             d6Var = d6Var2;
@@ -1608,10 +1608,10 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
             J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new org.telegram.ui.ut0(i80Var3, 26), false);
             J.c(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new org.telegram.messenger.dc(i80Var3, currentAccount, j13, j14, J, snVar, resourceProvider), false);
             org.telegram.ui.ActionBar.e1 y10 = J.y();
-            J.c(R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), new ai.bb(i80Var3, resourceProvider, currentAccount, uoVar, 18), false);
+            J.c(R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), new ai.cb(i80Var3, resourceProvider, currentAccount, uoVar, 18), false);
             d6Var = d6Var2;
             J.c(R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), new org.telegram.messenger.w2(i80Var3, j13, j14, snVar, resourceProvider, 7), false);
-            J.c(0, "", new ai.ha(i80Var3, currentAccount, j13, j14, snVar, resourceProvider), false);
+            J.c(0, "", new ai.ia(i80Var3, currentAccount, j13, j14, snVar, resourceProvider), false);
             new org.telegram.messenger.n9(currentAccount, j13, j14, J.y(), y10).run();
             boolean isDialogMuted = messagesController.isDialogMuted(j10, tL_forumTopic.id);
             int i17 = isDialogMuted ? R.drawable.msg_unmute : R.drawable.msg_mute;
@@ -2025,10 +2025,10 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
         org.telegram.ui.ActionBar.d6 d6Var = this.d;
         int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
         int i11 = org.telegram.ui.ActionBar.h6.Oh;
-        int f7 = i0.b.f(1.0f - this.R, w02, org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+        int f7 = i0.a.f(1.0f - this.R, w02, org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         this.y.setColorFilter(new PorterDuffColorFilter(f7, mode));
-        this.E.setColorFilter(new PorterDuffColorFilter(i0.b.f(this.R, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(i11, d6Var)), mode));
+        this.E.setColorFilter(new PorterDuffColorFilter(i0.a.f(this.R, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(i11, d6Var)), mode));
         this.w.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), mode));
         this.x.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), mode));
         invalidate();

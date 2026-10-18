@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.view.Window;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class pa0 implements zf.j0 {
+public final class pa0 implements zf.k0 {
     public final /* synthetic */ int a;
     public boolean b;
     public boolean c;
@@ -16,7 +16,7 @@ public final class pa0 implements zf.j0 {
         this.d = obj;
     }
 
-    @Override // zf.j0
+    @Override // zf.k0
     public void a(boolean z10) {
         switch (this.a) {
             case 0:
@@ -36,18 +36,18 @@ public final class pa0 implements zf.j0 {
                 }
                 break;
             default:
-                zf.k0 k0Var = (zf.k0) this.d;
+                zf.l0 l0Var = (zf.l0) this.d;
                 if (this.b != z10 && !this.c) {
                     this.b = z10;
                     if (z10) {
-                        k0Var.a++;
+                        l0Var.a++;
                     } else {
-                        k0Var.a--;
+                        l0Var.a--;
                     }
-                    boolean z11 = k0Var.a > 0;
-                    if (k0Var.b != z11) {
-                        k0Var.b = z11;
-                        Window window = (Window) ((WeakReference) k0Var.c.b).get();
+                    boolean z11 = l0Var.a > 0;
+                    if (l0Var.b != z11) {
+                        l0Var.b = z11;
+                        Window window = (Window) ((WeakReference) l0Var.c.b).get();
                         if (window != null) {
                             window.getDecorView().setVisibility(z11 ? 8 : 0);
                             break;
@@ -69,7 +69,7 @@ public final class pa0 implements zf.j0 {
         }
     }
 
-    @Override // zf.j0
+    @Override // zf.k0
     public void destroy() {
         switch (this.a) {
             case 0:

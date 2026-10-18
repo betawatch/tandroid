@@ -37,16 +37,16 @@ import org.telegram.ui.cb0;
 import org.telegram.ui.cu0;
 import org.telegram.ui.eg0;
 import org.telegram.ui.fg0;
-import org.telegram.ui.kq0;
+import org.telegram.ui.lq0;
 import org.telegram.ui.lu0;
-import org.telegram.ui.oq0;
 import org.telegram.ui.pq0;
 import org.telegram.ui.ps0;
+import org.telegram.ui.qq0;
 import org.telegram.ui.qt0;
 import org.telegram.ui.sa1;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -120,8 +120,8 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                 sa1 sa1Var = (sa1) this.c;
                 boolean z14 = this.b;
                 for (int i10 = 0; i10 < 2; i10++) {
-                    org.telegram.ui.Cells.z0 z0Var = ((org.telegram.ui.Cells.z0[]) sa1Var.b)[i10];
-                    z0Var.a.a(z0Var == view, true);
+                    org.telegram.ui.Cells.y0 y0Var = ((org.telegram.ui.Cells.y0[]) sa1Var.b)[i10];
+                    y0Var.a.a(y0Var == view, true);
                 }
                 SharedConfig.setUseThreeLinesLayout(z14);
                 break;
@@ -152,22 +152,22 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                 } else {
                     HashMap hashMap = new HashMap();
                     ArrayList arrayList = new ArrayList();
-                    pq0 pq0Var = new pq0(hashMap, arrayList, 0, true, (sn) n2Var);
+                    qq0 qq0Var = new qq0(hashMap, arrayList, 0, true, (sn) n2Var);
                     th thVar = new th(tiVar, hashMap, arrayList);
-                    kq0 kq0Var = pq0Var.a;
-                    kq0Var.s0 = thVar;
-                    kq0 kq0Var2 = pq0Var.b;
-                    kq0Var2.s0 = thVar;
-                    kq0Var.t0 = new oq0(pq0Var, 0);
-                    kq0Var2.t0 = new oq0(pq0Var, 1);
+                    lq0 lq0Var = qq0Var.a;
+                    lq0Var.s0 = thVar;
+                    lq0 lq0Var2 = qq0Var.b;
+                    lq0Var2.s0 = thVar;
+                    lq0Var.t0 = new pq0(qq0Var, 0);
+                    lq0Var2.t0 = new pq0(qq0Var, 1);
                     int i11 = tiVar.V1;
                     boolean z17 = tiVar.W1;
-                    kq0Var.f0(i11, z17);
-                    pq0Var.b.f0(i11, z17);
+                    lq0Var.f0(i11, z17);
+                    qq0Var.b.f0(i11, z17);
                     if (z16) {
-                        n2Var.showAsSheet(pq0Var);
+                        n2Var.showAsSheet(qq0Var);
                     } else {
-                        n2Var.presentFragment(pq0Var);
+                        n2Var.presentFragment(qq0Var);
                     }
                     tiVar.dismiss();
                     break;
@@ -289,9 +289,9 @@ public final /* synthetic */ class h2 implements View.OnClickListener {
                                 FileLog.e(e);
                             }
                             if (photoViewer.D2) {
-                                i2.g0 g0Var = photoViewer.F2.d;
-                                if (g0Var != null) {
-                                    g0Var.z1(null);
+                                i2.h0 h0Var = photoViewer.F2.d;
+                                if (h0Var != null) {
+                                    h0Var.z1(null);
                                 }
                                 photoViewer.F2.U(photoViewer.C2);
                                 photoViewer.C2.setVisibility(4);

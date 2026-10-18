@@ -35,7 +35,7 @@ import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ln0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class gc extends View {
     public final Paint A0;
@@ -94,7 +94,7 @@ public final class gc extends View {
     public long c1;
     public Runnable d;
     public final org.telegram.ui.Components.f6 d0;
-    public ai.s3 d1;
+    public ai.r3 d1;
     public long e;
     public final org.telegram.ui.Components.f6 e0;
     public long e1;
@@ -451,7 +451,7 @@ public final class gc extends View {
                 u7Var4.b = 0.0f;
                 u7Var4.c = 1.5f;
                 u7Var4.d(acVar.i);
-                u7Var4.h = new ai.n2(14, gcVar, acVar);
+                u7Var4.h = new ai.o2(14, gcVar, acVar);
                 i80 F4 = i80.F(viewGroup, d6Var, gcVar);
                 F4.q(u7Var4);
                 F4.V(5);
@@ -804,7 +804,7 @@ public final class gc extends View {
         float f36;
         float f37;
         float lerp;
-        float v;
+        float w9;
         float f38;
         RectF rectF4;
         float f39;
@@ -921,7 +921,7 @@ public final class gc extends View {
                     float h = ((gcVar.q0.h() + AndroidUtilities.dp(3.66f)) + drawable.getIntrinsicWidth()) / 2.0f;
                     int centerX = (int) (rectF9.centerX() - h);
                     int centerY = (int) rectF9.centerY();
-                    drawable.setBounds(centerX, org.telegram.ui.Cells.t0.g(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.t0.A(2, centerY, drawable));
+                    drawable.setBounds(centerX, org.telegram.ui.Cells.c1.f(2, centerY, drawable), drawable.getIntrinsicWidth() + centerX, org.telegram.ui.Cells.c1.A(2, centerY, drawable));
                     drawable.setAlpha(191);
                     drawable.draw(canvas);
                     d11 d11Var = gcVar.q0;
@@ -953,7 +953,7 @@ public final class gc extends View {
             float h10 = ((gcVar.q0.h() + AndroidUtilities.dp(3.66f)) + drawable.getIntrinsicWidth()) / 2.0f;
             int centerX3 = (int) (rectF9.centerX() - h10);
             int centerY2 = (int) rectF9.centerY();
-            drawable.setBounds(centerX3, org.telegram.ui.Cells.t0.g(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.t0.A(2, centerY2, drawable));
+            drawable.setBounds(centerX3, org.telegram.ui.Cells.c1.f(2, centerY2, drawable), drawable.getIntrinsicWidth() + centerX3, org.telegram.ui.Cells.c1.A(2, centerY2, drawable));
             drawable.setAlpha(191);
             drawable.draw(canvas);
             d11 d11Var2 = gcVar.q0;
@@ -1002,8 +1002,8 @@ public final class gc extends View {
                 arrayList2 = arrayList;
                 long j16 = acVar4.e;
                 float f68 = j16;
-                float t10 = com.google.android.gms.internal.cast.a6.t(f67, f68, e7, f11);
-                float t11 = com.google.android.gms.internal.cast.a6.t(acVar4.h, f68, e7, f11);
+                float t10 = com.google.android.gms.internal.play_billing.k3.t(f67, f68, e7, f11);
+                float t11 = com.google.android.gms.internal.play_billing.k3.t(acVar4.h, f68, e7, f11);
                 if (j16 <= 0) {
                     f12 = e7;
                     f14 = f11;
@@ -1177,7 +1177,7 @@ public final class gc extends View {
                         f50 = f17;
                         f51 = ((((AndroidUtilities.lerp(acVar6.g, f14, e10) * acVar6.e) + (acVar6.f - gcVar.f)) / f89) * gcVar.u1) + gcVar.y1 + gcVar.x1;
                         rectF5 = rectF7;
-                        d11 = (com.google.android.gms.internal.cast.a6.v(AndroidUtilities.lerp(acVar6.h, f15, e10), acVar6.e, acVar6.f - gcVar.f, f89) * gcVar.u1) + gcVar.y1 + gcVar.x1;
+                        d11 = (com.google.android.gms.internal.play_billing.k3.w(AndroidUtilities.lerp(acVar6.h, f15, e10), acVar6.e, acVar6.f - gcVar.f, f89) * gcVar.u1) + gcVar.y1 + gcVar.x1;
                         path = path2;
                     } else {
                         i16 = i27;
@@ -1351,7 +1351,7 @@ public final class gc extends View {
                     float lerp3 = ((((gcVar.H * AndroidUtilities.lerp(f119, 0.0f, e12)) + (j18 - gcVar.f)) / f121) * gcVar.u1) + gcVar.y1 + gcVar.x1;
                     f43 = f17;
                     f23 = f22;
-                    d10 = (com.google.android.gms.internal.cast.a6.v(AndroidUtilities.lerp(gcVar.K, 1.0f, e12), gcVar.H, gcVar.I - gcVar.f, f121) * gcVar.u1) + gcVar.y1 + gcVar.x1;
+                    d10 = (com.google.android.gms.internal.play_billing.k3.w(AndroidUtilities.lerp(gcVar.K, 1.0f, e12), gcVar.H, gcVar.I - gcVar.f, f121) * gcVar.u1) + gcVar.y1 + gcVar.x1;
                     f44 = lerp3;
                 } else {
                     f23 = f22;
@@ -1515,7 +1515,7 @@ public final class gc extends View {
                     float f157 = ((f154 / f155) * f156) + f153;
                     paint2 = paint;
                     f36 = f149;
-                    v = a1.g.d(r10 + gcVar.R, f155, f156, f153);
+                    w9 = a1.g.d(r10 + gcVar.R, f155, f156, f153);
                     lerp = f157;
                 } else {
                     f36 = f149;
@@ -1523,9 +1523,9 @@ public final class gc extends View {
                     paint2 = paint;
                     float f158 = j13;
                     lerp = ((((AndroidUtilities.lerp(gcVar.S, 0.0f, e14) * gcVar.R) + (gcVar.Q - gcVar.f)) / f158) * gcVar.u1) + gcVar.y1 + gcVar.x1;
-                    v = gcVar.y1 + gcVar.x1 + (com.google.android.gms.internal.cast.a6.v(AndroidUtilities.lerp(gcVar.T, 1.0f, e14), gcVar.R, gcVar.Q - gcVar.f, f158) * gcVar.u1);
+                    w9 = gcVar.y1 + gcVar.x1 + (com.google.android.gms.internal.play_billing.k3.w(AndroidUtilities.lerp(gcVar.T, 1.0f, e14), gcVar.R, gcVar.Q - gcVar.f, f158) * gcVar.u1);
                 }
-                float f159 = v;
+                float f159 = w9;
                 float f160 = gcVar.x1;
                 RectF rectF16 = rectF3;
                 rectF16.set(lerp - f160, f66 - audioHeight, f159 + f160, f66);
@@ -1953,7 +1953,7 @@ public final class gc extends View {
         float f14 = f7 + f10;
         float f15 = (f14 - dp2) / 2.0f;
         float f16 = (f14 + dp2) / 2.0f;
-        rectF.set(org.telegram.messenger.q.x(AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f), dp, 2.0f, f11), f15, f11 - ((AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f) + dp) / 2.0f), f16);
+        rectF.set(org.telegram.messenger.g0.x(AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f), dp, 2.0f, f11), f15, f11 - ((AndroidUtilities.dp(this.X0 ? 2.0f : 10.0f) + dp) / 2.0f), f16);
         if (!this.X0) {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint5);
             if (paint != null && !this.X0) {
@@ -1961,7 +1961,7 @@ public final class gc extends View {
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint4);
             }
         }
-        rectF.set(com.google.android.gms.internal.cast.a6.z(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f15, org.telegram.messenger.q.a(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f16);
+        rectF.set(com.google.android.gms.internal.play_billing.k3.z(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f15, org.telegram.messenger.g0.a(AndroidUtilities.dp(this.X0 ? 2.5f : 10.0f), dp, 2.0f, f12), f16);
         if (!this.X0) {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint5);
             if (paint != null) {
@@ -2492,17 +2492,17 @@ public final class gc extends View {
         if (zbVar != null) {
             zbVar.o(clamp, z10);
         }
-        ai.s3 s3Var = this.d1;
-        if (s3Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(s3Var);
+        ai.r3 r3Var = this.d1;
+        if (r3Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(r3Var);
             this.d1 = null;
         }
         if (!z10) {
             return true;
         }
-        ai.s3 s3Var2 = new ai.s3(this, clamp, 9);
-        this.d1 = s3Var2;
-        AndroidUtilities.runOnUIThread(s3Var2, 150L);
+        ai.r3 r3Var2 = new ai.r3(this, clamp, 9);
+        this.d1 = r3Var2;
+        AndroidUtilities.runOnUIThread(r3Var2, 150L);
         return true;
     }
 
@@ -2662,7 +2662,7 @@ public final class gc extends View {
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z10;
-        ai.s3 s3Var;
+        ai.r3 r3Var;
         boolean z11;
         VelocityTracker velocityTracker;
         zb zbVar;
@@ -2708,9 +2708,9 @@ public final class gc extends View {
                 ln0 ln0Var = this.W0;
                 ai.t0 t0Var = this.Y0;
                 if (action == 0) {
-                    ai.s3 s3Var2 = this.d1;
-                    if (s3Var2 != null) {
-                        AndroidUtilities.cancelRunOnUIThread(s3Var2);
+                    ai.r3 r3Var2 = this.d1;
+                    if (r3Var2 != null) {
+                        AndroidUtilities.cancelRunOnUIThread(r3Var2);
                         this.d1 = null;
                     }
                     ln0Var.a();
@@ -2824,7 +2824,7 @@ public final class gc extends View {
                                         } else if (this.E) {
                                             v = Math.max(f22, (((this.J * this.H) + this.f) - this.Q) / f21);
                                         } else {
-                                            v = org.telegram.ui.Cells.t0.v(f(), this.R, this.T, f22);
+                                            v = org.telegram.ui.Cells.c1.v(f(), this.R, this.T, f22);
                                             if (!this.o1 && f20 < 0.0f && this.S <= this.T - (f() / this.R)) {
                                                 this.h1 = 8;
                                             }
@@ -2860,7 +2860,7 @@ public final class gc extends View {
                                         } else if (this.E) {
                                             c10 = Math.min(min2, (((this.K * this.H) + this.f) - this.Q) / f25);
                                         } else {
-                                            c10 = org.telegram.ui.Cells.t0.c(f(), this.R, this.S, min2);
+                                            c10 = org.telegram.ui.Cells.c1.c(f(), this.R, this.S, min2);
                                             if (!this.o1 && f20 > 0.0f) {
                                                 if (this.T >= (f() / this.R) + this.S) {
                                                     this.h1 = 8;
@@ -2924,7 +2924,7 @@ public final class gc extends View {
                                         if (acVar8 != null) {
                                             v10 = Math.max(f31, (((acVar8.g * acVar8.e) + this.f) - this.I) / f30);
                                         } else {
-                                            v10 = org.telegram.ui.Cells.t0.v(f(), this.H, this.K, f31);
+                                            v10 = org.telegram.ui.Cells.c1.v(f(), this.H, this.K, f31);
                                             if (!this.o1 && f29 < 0.0f && this.J <= this.K - (f() / this.H)) {
                                                 this.h1 = 8;
                                             }
@@ -2958,7 +2958,7 @@ public final class gc extends View {
                                     if (acVar10 != null) {
                                         c11 = Math.min(min4, (((acVar10.h * acVar10.e) + this.f) - this.I) / this.H);
                                     } else {
-                                        c11 = org.telegram.ui.Cells.t0.c(f(), this.H, this.J, min4);
+                                        c11 = org.telegram.ui.Cells.c1.c(f(), this.H, this.J, min4);
                                         if (!this.o1 && f29 > 0.0f) {
                                             if (this.K >= (f() / this.H) + this.J) {
                                                 this.h1 = 8;
@@ -3063,7 +3063,7 @@ public final class gc extends View {
                                         float max3 = Math.max(0L, this.f - acVar11.f) / acVar11.e;
                                         if (acVar11 == this.v) {
                                             f10 = f38;
-                                            max3 = org.telegram.ui.Cells.t0.v(f(), acVar11.e, acVar11.h, max3);
+                                            max3 = org.telegram.ui.Cells.c1.v(f(), acVar11.e, acVar11.h, max3);
                                             if (!this.o1 && f10 < 0.0f) {
                                                 f11 = 0.0f;
                                                 if (acVar11.g <= acVar11.h - (f() / acVar11.e)) {
@@ -3106,7 +3106,7 @@ public final class gc extends View {
                                             float min6 = Math.min(1.0f, Math.max(0L, (this.f - acVar11.f) + min) / acVar11.e);
                                             float g15 = (g() / acVar11.e) + acVar11.g;
                                             if (acVar11 == this.v) {
-                                                min6 = org.telegram.ui.Cells.t0.c(f(), acVar11.e, acVar11.g, min6);
+                                                min6 = org.telegram.ui.Cells.c1.c(f(), acVar11.e, acVar11.g, min6);
                                                 if (!this.o1 && f10 > 0.0f) {
                                                     if (acVar11.h >= (f() / acVar11.e) + acVar11.g) {
                                                         this.h1 = 15;
@@ -3170,7 +3170,7 @@ public final class gc extends View {
                                 float f44 = f();
                                 ac acVar13 = this.h;
                                 if (f43 > f44 / acVar13.e) {
-                                    acVar13.h = org.telegram.ui.Cells.t0.c(f(), this.h.e, acVar13.g, 1.0f);
+                                    acVar13.h = org.telegram.ui.Cells.c1.c(f(), this.h.e, acVar13.g, 1.0f);
                                     zb zbVar21 = this.a;
                                     if (zbVar21 != null) {
                                         zbVar21.P(this.h.h);
@@ -3187,7 +3187,7 @@ public final class gc extends View {
                                 float f46 = f();
                                 ac acVar15 = this.h;
                                 if (f45 > f46 / acVar15.e) {
-                                    acVar15.g = org.telegram.ui.Cells.t0.v(f(), this.h.e, acVar15.h, 0.0f);
+                                    acVar15.g = org.telegram.ui.Cells.c1.v(f(), this.h.e, acVar15.h, 0.0f);
                                     zb zbVar23 = this.a;
                                     if (zbVar23 != null) {
                                         zbVar23.A(this.h.g, false);
@@ -3347,9 +3347,9 @@ public final class gc extends View {
                                     z10 = false;
                                 }
                             }
-                            s3Var = this.d1;
-                            if (s3Var != null) {
-                                AndroidUtilities.cancelRunOnUIThread(s3Var);
+                            r3Var = this.d1;
+                            if (r3Var != null) {
+                                AndroidUtilities.cancelRunOnUIThread(r3Var);
                                 this.d1 = null;
                             }
                             if (this.m1 || !z10 || (zbVar = this.a) == null) {
@@ -3444,8 +3444,8 @@ public final class gc extends View {
                         }
                     }
                     z10 = true;
-                    s3Var = this.d1;
-                    if (s3Var != null) {
+                    r3Var = this.d1;
+                    if (r3Var != null) {
                     }
                     if (this.m1) {
                     }

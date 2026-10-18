@@ -27,7 +27,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -142,15 +142,15 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 1:
-                i2.g0 g0Var7 = (i2.g0) this.d;
-                e2.r rVar = g0Var7.m;
+                i2.h0 h0Var = (i2.h0) this.d;
+                e2.r rVar = h0Var.m;
                 int i15 = this.b;
                 int i16 = this.c;
                 rVar.e(24, new eh.c(i15, i16, 2));
-                g0Var7.t1(2, 14, new e2.y(i15, i16));
+                h0Var.t1(2, 14, new e2.y(i15, i16));
                 break;
             case 2:
-                ((i2.a0) this.d).a.q1(this.b, this.c);
+                ((i2.b0) this.d).a.q1(this.b, this.c);
                 break;
             case 3:
                 ((VoIPService) this.d).lambda$initiateActualEncryptedCall$86(this.b, this.c);
@@ -230,9 +230,9 @@ public final /* synthetic */ class n implements Runnable {
         }
     }
 
-    public /* synthetic */ n(i2.a0 a0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
+    public /* synthetic */ n(i2.b0 b0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
         this.a = 2;
-        this.d = a0Var;
+        this.d = b0Var;
         this.b = i10;
         this.c = i11;
     }

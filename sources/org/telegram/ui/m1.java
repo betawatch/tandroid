@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
     public final ai.u1 a;
@@ -153,7 +153,7 @@ public final class m1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
                 int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
                 this.e = dp2;
                 this.f = dp2;
-                i12 = org.telegram.messenger.wh.z(18.0f, dp2, size);
+                i12 = org.telegram.messenger.kk.y(18.0f, dp2, size);
                 dp = i12;
             } else {
                 this.e = 0;
@@ -179,7 +179,7 @@ public final class m1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
             if (p5 != null) {
                 int height = m1Var.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                 m1Var.n = height;
-                measuredHeight = org.telegram.messenger.q.C(4.0f, height, measuredHeight);
+                measuredHeight = org.telegram.messenger.g0.C(4.0f, height, measuredHeight);
                 d3 d3Var = m1Var.c;
                 d3Var.s = m1Var.f;
                 d3Var.v = m1Var.h;

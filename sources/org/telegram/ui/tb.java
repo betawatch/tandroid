@@ -8,7 +8,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class tb extends s4.g0 {
     public final Context c;
@@ -159,7 +159,7 @@ public final class tb extends s4.g0 {
         xb xbVar = this.n;
         ArrayList arrayList = xbVar.o0;
         if (i10 == this.e) {
-            ((org.telegram.ui.Cells.a1) view).setProgressVisible(true);
+            ((org.telegram.ui.Cells.z0) view).setProgressVisible(true);
             return;
         }
         if (i10 < this.f || i10 >= this.h) {
@@ -167,10 +167,10 @@ public final class tb extends s4.g0 {
         }
         MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - (i10 - this.f)) - 1);
         if (!(view instanceof org.telegram.ui.Cells.u1)) {
-            if (view instanceof org.telegram.ui.Cells.x0) {
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
-                x0Var.setMessageObject(messageObject);
-                x0Var.setAlpha(1.0f);
+            if (view instanceof org.telegram.ui.Cells.w0) {
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+                w0Var.setMessageObject(messageObject);
+                w0Var.setAlpha(1.0f);
                 return;
             }
             return;
@@ -249,7 +249,7 @@ public final class tb extends s4.g0 {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r5v10, types: [android.view.View] */
     /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.ui.Cells.v1] */
-    /* JADX WARN: Type inference failed for: r5v4, types: [org.telegram.ui.Cells.x0] */
+    /* JADX WARN: Type inference failed for: r5v4, types: [org.telegram.ui.Cells.w0] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         org.telegram.ui.ActionBar.d6 d6Var;
@@ -284,15 +284,15 @@ public final class tb extends s4.g0 {
             v1Var.setDelegate(new g(this, 10));
             viewGroup2 = v1Var;
         } else {
-            viewGroup2 = new org.telegram.ui.Cells.a1(context, null);
+            viewGroup2 = new org.telegram.ui.Cells.z0(context, null);
         }
-        return com.google.android.gms.internal.cast.a6.l(viewGroup2, viewGroup2, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(viewGroup2, viewGroup2, -1, -2);
     }
 
     @Override // s4.g0
     public final void y(s4.b1 b1Var) {
         View view = b1Var.a;
-        if ((view instanceof org.telegram.ui.Cells.u1) || (view instanceof org.telegram.ui.Cells.x0)) {
+        if ((view instanceof org.telegram.ui.Cells.u1) || (view instanceof org.telegram.ui.Cells.w0)) {
             view.getViewTreeObserver().addOnPreDrawListener(new sb(this, view, b1Var));
         }
         if (view instanceof org.telegram.ui.Cells.u1) {

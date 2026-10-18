@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ng1 extends ViewGroup {
     public AnimatorSet a;
@@ -103,7 +103,7 @@ public final class ng1 extends ViewGroup {
         Property property;
         Property property2;
         ArrayList arrayList;
-        int B;
+        int A;
         int i12;
         int childCount = getChildCount();
         int size = View.MeasureSpec.getSize(i10);
@@ -124,11 +124,11 @@ public final class ng1 extends ViewGroup {
             if (childAt instanceof org.telegram.ui.Components.v30) {
                 childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                 if (childAt != this.e && childAt.getMeasuredWidth() + i14 > dp) {
-                    dp2 = org.telegram.messenger.q.C(8.0f, childAt.getMeasuredHeight(), dp2);
+                    dp2 = org.telegram.messenger.g0.C(8.0f, childAt.getMeasuredHeight(), dp2);
                     i14 = 0;
                 }
                 if (childAt.getMeasuredWidth() + i15 > dp) {
-                    dp3 = org.telegram.messenger.q.C(8.0f, childAt.getMeasuredHeight(), dp3);
+                    dp3 = org.telegram.messenger.g0.C(8.0f, childAt.getMeasuredHeight(), dp3);
                     i15 = 0;
                 }
                 int dp4 = AndroidUtilities.dp(13.0f) + i14;
@@ -157,23 +157,23 @@ public final class ng1 extends ViewGroup {
                     }
                 }
                 if (childAt != this.e) {
-                    i14 = org.telegram.messenger.q.C(9.0f, childAt.getMeasuredWidth(), i14);
+                    i14 = org.telegram.messenger.g0.C(9.0f, childAt.getMeasuredWidth(), i14);
                 }
-                i15 = org.telegram.messenger.q.C(9.0f, childAt.getMeasuredWidth(), i15);
+                i15 = org.telegram.messenger.g0.C(9.0f, childAt.getMeasuredWidth(), i15);
             }
             i13++;
         }
         if (AndroidUtilities.isTablet()) {
-            B = AndroidUtilities.dp(372.0f) / 3;
+            A = AndroidUtilities.dp(372.0f) / 3;
         } else {
             Point point = AndroidUtilities.displaySize;
-            B = org.telegram.messenger.wh.B(158.0f, Math.min(point.x, point.y), 3);
+            A = org.telegram.messenger.kk.A(158.0f, Math.min(point.x, point.y), 3);
         }
-        if (dp - i14 < B) {
+        if (dp - i14 < A) {
             dp2 += AndroidUtilities.dp(40.0f);
             i14 = 0;
         }
-        if (dp - i15 < B) {
+        if (dp - i15 < A) {
             dp3 += AndroidUtilities.dp(40.0f);
         }
         UsersSelectActivity usersSelectActivity = this.f;

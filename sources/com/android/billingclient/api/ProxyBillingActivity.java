@@ -9,10 +9,10 @@ import android.os.ResultReceiver;
 import c3.a;
 import c5.e0;
 import c5.i;
-import com.google.android.gms.internal.play_billing.m3;
+import com.google.android.gms.internal.play_billing.n3;
 import com.google.android.gms.internal.play_billing.u;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class ProxyBillingActivity extends Activity {
     public ResultReceiver a;
@@ -31,7 +31,7 @@ public class ProxyBillingActivity extends Activity {
         a2.a = "An internal error occurred.";
         i a10 = a2.a();
         int i11 = e0.a;
-        b10.putExtra("FAILURE_LOGGING_PAYLOAD", e0.b(i10, 2, a10, null, m3.b).a());
+        b10.putExtra("FAILURE_LOGGING_PAYLOAD", e0.b(i10, 2, a10, null, n3.b).a());
         b10.putExtra("INTENT_SOURCE", "LAUNCH_BILLING_FLOW");
         b10.putExtra("billingClientTransactionId", j10);
         b10.putExtra("wasServiceAutoReconnected", this.f);

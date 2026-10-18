@@ -6,7 +6,7 @@ import android.graphics.Color;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class yh extends View {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final class yh extends View {
                 String format = String.format("%d", Integer.valueOf(Math.max(1, tiVar.B0.getSelectedItemsCount())));
                 int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(tiVar.M0.measureText(format))), AndroidUtilities.dp(24.0f));
                 int measuredWidth = getMeasuredWidth() / 2;
-                tiVar.M0.setColor(i0.b.o(tiVar.getThemedColor(org.telegram.ui.ActionBar.h6.C5), (int) (((tiVar.Y0 * 0.42d) + 0.58d) * Color.alpha(r5))));
+                tiVar.M0.setColor(i0.a.o(tiVar.getThemedColor(org.telegram.ui.ActionBar.h6.C5), (int) (((tiVar.Y0 * 0.42d) + 0.58d) * Color.alpha(r5))));
                 tiVar.O0.setColor(tiVar.getThemedColor(org.telegram.ui.ActionBar.h6.h5));
                 int i10 = max / 2;
                 tiVar.N0.set(measuredWidth - i10, 0.0f, i10 + measuredWidth, getMeasuredHeight());

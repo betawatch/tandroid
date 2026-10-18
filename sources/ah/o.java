@@ -3,10 +3,10 @@ package ah;
 import ai.b6;
 import ai.c6;
 import ai.d6;
-import ai.fa;
+import ai.ga;
 import ai.t6;
-import ai.ta;
-import ai.tb;
+import ai.ua;
+import ai.ub;
 import ai.w5;
 import ai.w6;
 import ai.z5;
@@ -58,7 +58,7 @@ import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.l4;
 import rg.r1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -145,24 +145,24 @@ public final /* synthetic */ class o implements Runnable {
                 ((Utilities.Callback3) this.d).run(LocaleController.formatString(R.string.Gift2RarityHint, gi.l.H0(this.b)), (w6) this.c, Boolean.FALSE);
                 break;
             case 3:
-                fa faVar = (fa) this.c;
+                ga gaVar = (ga) this.c;
                 int i16 = this.b;
                 TLObject tLObject = (TLObject) this.d;
-                boolean[] zArr = faVar.r;
-                ArrayList[] arrayListArr = faVar.q;
-                int i17 = faVar.a;
-                faVar.t[i16] = false;
+                boolean[] zArr = gaVar.r;
+                ArrayList[] arrayListArr = gaVar.q;
+                int i17 = gaVar.a;
+                gaVar.t[i16] = false;
                 if (tLObject instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject;
                     MessagesController.getInstance(i17).putUsers(starsStatus.users, false);
                     MessagesController.getInstance(i17).putChats(starsStatus.chats, false);
                     arrayListArr[i16].addAll(starsStatus.history);
                     zArr[i16] = !arrayListArr[i16].isEmpty() || zArr[i16];
-                    boolean[] zArr2 = faVar.u;
+                    boolean[] zArr2 = gaVar.u;
                     boolean z10 = (starsStatus.flags & 1) == 0;
                     zArr2[i16] = z10;
-                    faVar.s[i16] = z10 ? null : starsStatus.next_offset;
-                    faVar.k0(starsStatus.balance);
+                    gaVar.s[i16] = z10 ? null : starsStatus.next_offset;
+                    gaVar.k0(starsStatus.balance);
                     NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starTransactionsLoaded, new Object[0]);
                     break;
                 }
@@ -178,7 +178,7 @@ public final /* synthetic */ class o implements Runnable {
             case 6:
                 TLObject tLObject2 = (TLObject) this.c;
                 int i19 = this.b;
-                ta taVar = (ta) this.d;
+                ua uaVar = (ua) this.d;
                 if (tLObject2 instanceof TL_stories.TL_albums) {
                     ArrayList<TL_stories.TL_storyAlbum> arrayList = ((TL_stories.TL_albums) tLObject2).albums;
                     int size = arrayList.size();
@@ -187,12 +187,12 @@ public final /* synthetic */ class o implements Runnable {
                         i11++;
                         TL_stories.TL_storyAlbum tL_storyAlbum2 = tL_storyAlbum;
                         if (tL_storyAlbum2.album_id == i19) {
-                            taVar.run(tL_storyAlbum2);
+                            uaVar.run(tL_storyAlbum2);
                             break;
                         }
                     }
                 }
-                taVar.run(null);
+                uaVar.run(null);
                 break;
             case 7:
                 r9 r9Var = (r9) this.c;
@@ -298,7 +298,7 @@ public final /* synthetic */ class o implements Runnable {
             case 17:
                 i2.e1 e1Var = (i2.e1) this.c;
                 Pair pair = (Pair) this.d;
-                e1Var.b.h.a(((Integer) pair.first).intValue(), (u2.g0) pair.second, this.b);
+                e1Var.b.h.a(((Integer) pair.first).intValue(), (u2.f0) pair.second, this.b);
                 break;
             case 18:
                 ig.y yVar = (ig.y) this.c;
@@ -362,7 +362,7 @@ public final /* synthetic */ class o implements Runnable {
                 HashMap hashMap = new HashMap(l4Var.u0[0].c.w);
                 ArrayList arrayList3 = new ArrayList(l4Var.u0[0].c.x);
                 l4Var.V0 = null;
-                Utilities.searchQueue.postRunnable(new tb(l4Var, arrayList3, hashMap, str3, i32, 15));
+                Utilities.searchQueue.postRunnable(new ub(l4Var, arrayList3, hashMap, str3, i32, 15));
                 break;
             case 28:
                 l4 l4Var2 = (l4) this.c;

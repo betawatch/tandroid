@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import ei.i6;
-import i0.a;
+import i2.d;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -44,7 +44,7 @@ import sg.z0;
 import w7.r;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class LimitPreviewView extends LinearLayout {
     public static final /* synthetic */ int l0 = 0;
@@ -716,7 +716,7 @@ public class LimitPreviewView extends LinearLayout {
                                 i15 = i22;
                                 i16 = i15;
                             }
-                            rVar.b.add(new StaticLayout(a.j(i15, ""), textPaint2, (int) sVar.e, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
+                            rVar.b.add(new StaticLayout(d.j(i15, ""), textPaint2, (int) sVar.e, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                             i22 = i16 + 1;
                             i21 = i23;
                         }

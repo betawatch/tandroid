@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i30 implements NotificationCenter.NotificationCenterDelegate {
     public static i30 d0 = null;
@@ -127,7 +127,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         w9Var.setRoundRadius(AndroidUtilities.dp(22.0f));
         l30Var.addView(w9Var, w7.z5.d(44.0f, 44));
         int dp = AndroidUtilities.dp(6.0f);
-        int o10 = i0.b.o(-1, 76);
+        int o10 = i0.a.o(-1, 76);
         l30Var.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, 0, o10, o10));
         l30Var.setOnClickListener(new f0(m30Var, 21));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -139,10 +139,10 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         textView.setMaxLines(2);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView i11 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView, w7.z5.n(-1, -2), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.n(-1, -2), context);
         m30Var.b = i11;
         i11.setTextSize(12.0f);
-        i11.setTextColor(i0.b.o(-1, 153));
+        i11.setTextColor(i0.a.o(-1, 153));
         linearLayout.addView(i11, w7.z5.n(-1, -2));
         l30Var.addView(linearLayout, w7.z5.a(-2.0f, 55.0f, 0.0f, 0.0f, 0.0f, -1, 16));
         m30Var.addView(l30Var, w7.z5.t(-1, -2, 0, 10, 10, 10, 10));
@@ -196,7 +196,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
             }
         });
         t2Var.setCheckable(true);
-        t2Var.a(i0.b.o(-1, 38), i0.b.o(-1, 76));
+        t2Var.a(i0.a.o(-1, 38), i0.a.o(-1, 76));
         org.telegram.ui.Components.voip.t2 t2Var2 = new org.telegram.ui.Components.voip.t2(context, 44.0f);
         m30Var.d = t2Var2;
         t2Var2.setTextSize(12);

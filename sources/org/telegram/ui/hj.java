@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class hj extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -39,9 +39,9 @@ public final class hj extends org.telegram.ui.ActionBar.j {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r9v10 */
-    /* JADX WARN: Type inference failed for: r9v11, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r9v12 */
+    /* JADX WARN: Type inference failed for: r9v20 */
+    /* JADX WARN: Type inference failed for: r9v21, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r9v22 */
     @Override // org.telegram.ui.ActionBar.j
     public final void b(int i10) {
         TLRPC.User user;
@@ -173,7 +173,7 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                             }
                         }
                         i16 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
-                        ai.fa.y(i16, false).i0(j12, j10, false, false);
+                        ai.ga.y(i16, false).i0(j12, j10, false, false);
                         return;
                     }
                     if (i10 == 71) {
@@ -188,7 +188,7 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                         long j14 = j13;
                         long j15 = j10;
                         i14 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
-                        ai.fa.y(i14, false).C(j14, j15, new ai.p5(this, j14, j15, 2));
+                        ai.ga.y(i14, false).C(j14, j15, new ai.p5(this, j14, j15, 2));
                         return;
                     }
                     if (i10 == 28) {
@@ -224,7 +224,8 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                         snVar.showDialog(org.telegram.ui.Components.f5.U(snVar.getParentActivity(), snVar.h, snVar.ea).a);
                         return;
                     }
-                    int i25 = 15;
+                    int i25 = 16;
+                    int i26 = 15;
                     if (i10 == 15 || i10 == 16 || i10 == 26) {
                         if (snVar.getParentActivity() == null) {
                             return;
@@ -233,13 +234,13 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                             if (snVar.d4 == 0 || (user2 = snVar.getMessagesController().getUser(Long.valueOf(snVar.d4))) == null) {
                                 return;
                             }
-                            org.telegram.ui.Components.f5.q(snVar, -1, user2, snVar.e, true, new m4.y0(i25, this, user2), snVar.getResourceProvider());
+                            org.telegram.ui.Components.f5.q(snVar, -1, user2, snVar.e, true, new m4.w0(i25, this, user2), snVar.getResourceProvider());
                             return;
                         }
                         TLRPC.ChatFull chatFull2 = snVar.Z7;
                         boolean z11 = chatFull2 != null && chatFull2.can_delete_channel;
                         if (i10 != 26 && (i10 != 15 || snVar.h != null || (((user = snVar.f) == null || UserObject.isUserSelf(user) || UserObject.isDeleted(snVar.f)) && ((chatFull = snVar.Z7) == null || !chatFull.can_delete_channel)))) {
-                            org.telegram.ui.Components.f5.r(snVar, i10 == 15, snVar.e, snVar.f, snVar.h == null ? 0 : 1, true, false, z11, new i2.q(this, i10, z11));
+                            org.telegram.ui.Components.f5.r(snVar, i10 == 15, snVar.e, snVar.f, snVar.h == null ? 0 : 1, true, false, z11, new i2.r(this, i10, z11));
                             return;
                         } else {
                             boolean z12 = z11;
@@ -247,7 +248,7 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                             return;
                         }
                     }
-                    int i26 = 17;
+                    int i27 = 17;
                     if (i10 == 17) {
                         if (snVar.f == null || snVar.getParentActivity() == null) {
                             return;
@@ -291,7 +292,7 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     if (i10 == 21) {
-                        int i27 = q21.v;
+                        int i28 = q21.v;
                         int currentAccount = snVar.getCurrentAccount();
                         Activity parentActivity = snVar.getParentActivity();
                         long a2 = snVar.a();
@@ -302,9 +303,9 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     if (i10 == 22) {
-                        for (int i28 = 0; i28 < 2; i28++) {
-                            for (int i29 = 0; i29 < sparseArrayArr[i28].size(); i29++) {
-                                MessageObject messageObject3 = (MessageObject) sparseArrayArr[i28].valueAt(i29);
+                        for (int i29 = 0; i29 < 2; i29++) {
+                            for (int i30 = 0; i30 < sparseArrayArr[i29].size(); i30++) {
+                                MessageObject messageObject3 = (MessageObject) sparseArrayArr[i29].valueAt(i30);
                                 snVar.getMediaDataController().addRecentSticker(2, messageObject3, messageObject3.getDocument(), (int) (System.currentTimeMillis() / 1000), !snVar.Z5);
                             }
                         }
@@ -312,17 +313,17 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     if (i10 == 23) {
-                        for (int i30 = 1; i30 >= 0; i30--) {
-                            if (messageObject == null && sparseArrayArr3[i30].size() == 1) {
+                        for (int i31 = 1; i31 >= 0; i31--) {
+                            if (messageObject == null && sparseArrayArr3[i31].size() == 1) {
                                 ArrayList arrayList3 = new ArrayList();
-                                for (int i31 = 0; i31 < sparseArrayArr3[i30].size(); i31++) {
-                                    arrayList3.add(Integer.valueOf(sparseArrayArr3[i30].keyAt(i31)));
+                                for (int i32 = 0; i32 < sparseArrayArr3[i31].size(); i32++) {
+                                    arrayList3.add(Integer.valueOf(sparseArrayArr3[i31].keyAt(i32)));
                                 }
-                                messageObject = (MessageObject) snVar.o6[i30].get(((Integer) arrayList3.get(0)).intValue());
+                                messageObject = (MessageObject) snVar.o6[i31].get(((Integer) arrayList3.get(0)).intValue());
                             }
-                            sparseArrayArr3[i30].clear();
-                            sparseArrayArr2[i30].clear();
-                            sparseArrayArr[i30].clear();
+                            sparseArrayArr3[i31].clear();
+                            sparseArrayArr2[i31].clear();
+                            sparseArrayArr[i31].clear();
                         }
                         if (messageObject == null || !messageObject.isTodo()) {
                             r92 = 0;
@@ -339,10 +340,10 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                     }
                     if (i10 == 64) {
                         i12 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
-                        ig.x1 c10 = ig.y1.f(i12).c(snVar.M8());
+                        ig.z1 c10 = ig.a2.f(i12).c(snVar.M8());
                         Activity parentActivity2 = snVar.getParentActivity();
                         i13 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
-                        ig.v1.d0(parentActivity2, i13, snVar.Q3, c10, snVar.getResourceProvider(), new org.telegram.ui.ActionBar.j3(i25, this, c10));
+                        ig.x1.d0(parentActivity2, i13, snVar.Q3, c10, snVar.getResourceProvider(), new org.telegram.ui.ActionBar.j3(i26, this, c10));
                         return;
                     }
                     if (i10 == 14) {
@@ -486,9 +487,9 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                         TopicsController topicsController = snVar.getMessagesController().getTopicsController();
                         long j16 = snVar.e.id;
                         TLRPC.TL_forumTopic tL_forumTopic = snVar.c4;
-                        int i32 = tL_forumTopic.id;
+                        int i33 = tL_forumTopic.id;
                         tL_forumTopic.closed = true;
-                        topicsController.toggleCloseTopic(j16, i32, true);
+                        topicsController.toggleCloseTopic(j16, i33, true);
                         snVar.Vc();
                         snVar.lc(false);
                         snVar.Uc(true);
@@ -552,7 +553,7 @@ public final class hj extends org.telegram.ui.ActionBar.j {
                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                         b2Var.R = string;
                         b2Var.T = LocaleController.getString(R.string.BusinessLinksDeleteMessage);
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new b1(this, i26));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new b1(this, i27));
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                         snVar.showDialog(b2Var);
                         TextView textView2 = (TextView) b2Var.d(-1);

@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qi extends hm0 {
     public int E;
@@ -198,7 +198,7 @@ public final class qi extends hm0 {
                 this.J = i34 + 2;
                 this.w = i35;
             }
-            if ((n2Var instanceof org.telegram.ui.sn) && ((org.telegram.ui.sn) n2Var).R3 == 0 && i27 != null && !z10 && !i27.bot && !ig.y1.f(i11).b.isEmpty()) {
+            if ((n2Var instanceof org.telegram.ui.sn) && ((org.telegram.ui.sn) n2Var).R3 == 0 && i27 != null && !z10 && !i27.bot && !ig.a2.f(i11).b.isEmpty()) {
                 int i36 = this.J;
                 this.J = i36 + 1;
                 this.y = i36;

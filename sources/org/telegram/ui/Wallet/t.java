@@ -8,11 +8,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements Utilities.Callback3 {
     public final /* synthetic */ m0 a;
-    public final /* synthetic */ z6 b;
+    public final /* synthetic */ c7 b;
     public final /* synthetic */ SendMessagesHelper c;
     public final /* synthetic */ MessageObject d;
     public final /* synthetic */ TL_wallet.walletTransaction e;
@@ -21,9 +21,9 @@ public final /* synthetic */ class t implements Utilities.Callback3 {
     public final /* synthetic */ long h;
     public final /* synthetic */ TLRPC.User i;
 
-    public /* synthetic */ t(m0 m0Var, z6 z6Var, SendMessagesHelper sendMessagesHelper, MessageObject messageObject, TL_wallet.walletTransaction wallettransaction, String str, l0 l0Var, long j10, TLRPC.User user) {
+    public /* synthetic */ t(m0 m0Var, c7 c7Var, SendMessagesHelper sendMessagesHelper, MessageObject messageObject, TL_wallet.walletTransaction wallettransaction, String str, l0 l0Var, long j10, TLRPC.User user) {
         this.a = m0Var;
-        this.b = z6Var;
+        this.b = c7Var;
         this.c = sendMessagesHelper;
         this.d = messageObject;
         this.e = wallettransaction;
@@ -40,11 +40,11 @@ public final /* synthetic */ class t implements Utilities.Callback3 {
         String str2 = (String) obj3;
         m0 m0Var = this.a;
         int i10 = m0Var.a;
-        z6 z6Var = this.b;
+        c7 c7Var = this.b;
         SendMessagesHelper sendMessagesHelper = this.c;
         MessageObject messageObject = this.d;
         if (sendtransfer == null) {
-            z6Var.run();
+            c7Var.run();
             sendMessagesHelper.completeSendingGramTransfer(messageObject, null, false);
             if (str2 == null) {
                 str2 = "NULL_ERROR";
@@ -72,6 +72,6 @@ public final /* synthetic */ class t implements Utilities.Callback3 {
         sendtransfer.user_id = MessagesController.getInstance(i10).getInputUser(this.i);
         m0Var.Q();
         m0.F("prepared sendTransfer, sending");
-        ConnectionsManager.getInstance(i10).sendRequestTyped(sendtransfer, new org.telegram.messenger.a(), new ai.t3(m0Var, wallettransaction, sendMessagesHelper, messageObject, z6Var, 5));
+        ConnectionsManager.getInstance(i10).sendRequestTyped(sendtransfer, new org.telegram.messenger.a(), new ai.t3(m0Var, wallettransaction, sendMessagesHelper, messageObject, c7Var, 5));
     }
 }

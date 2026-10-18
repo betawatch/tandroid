@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mh1 implements oh0 {
     public final org.telegram.ui.Cells.u1 a;
@@ -115,7 +115,7 @@ public final class mh1 implements oh0 {
         if (i12 < 0) {
             i12 = i13;
         }
-        int f17 = i0.b.f(interpolation, w02, org.telegram.ui.ActionBar.h6.w0(i12, d6Var));
+        int f17 = i0.a.f(interpolation, w02, org.telegram.ui.ActionBar.h6.w0(i12, d6Var));
         Paint paint = this.e;
         paint.setColor(f17);
         if (recordCircle != null) {
@@ -185,9 +185,9 @@ public final class mh1 implements oh0 {
                         drawable = chatActivityEnterView2.R3;
                         canvas2 = canvas3;
                         f25 = f32;
-                        rect.set(org.telegram.ui.Cells.t0.w(2, i14, drawable), org.telegram.ui.Cells.t0.g(2, i15, drawable), org.telegram.ui.Cells.t0.B(2, i14, drawable), org.telegram.ui.Cells.t0.A(2, i15, drawable));
+                        rect.set(org.telegram.ui.Cells.c1.w(2, i14, drawable), org.telegram.ui.Cells.c1.f(2, i15, drawable), org.telegram.ui.Cells.c1.B(2, i14, drawable), org.telegram.ui.Cells.c1.A(2, i15, drawable));
                         if (drawable2 != null) {
-                            drawable2.setBounds(org.telegram.ui.Cells.t0.w(2, i14, drawable2), org.telegram.ui.Cells.t0.g(2, i15, drawable2), org.telegram.ui.Cells.t0.B(2, i14, drawable2), org.telegram.ui.Cells.t0.A(2, i15, drawable2));
+                            drawable2.setBounds(org.telegram.ui.Cells.c1.w(2, i14, drawable2), org.telegram.ui.Cells.c1.f(2, i15, drawable2), org.telegram.ui.Cells.c1.B(2, i14, drawable2), org.telegram.ui.Cells.c1.A(2, i15, drawable2));
                         }
                     } else {
                         canvas2 = canvas3;

@@ -7,7 +7,7 @@ import org.telegram.ui.Components.a81;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.aa;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a implements d6.h, y6.c {
     public int a;
@@ -29,13 +29,9 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public void j(d6.f fVar, int i10) {
+    public void n(d6.f fVar, int i10) {
         b5.d.d(false);
         b5.d.C();
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void n(d6.f fVar) {
     }
 
     @Override // y6.c
@@ -44,17 +40,21 @@ public final class a implements d6.h, y6.c {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void q(d6.f fVar) {
     }
 
     @Override // d6.h
-    public void u(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void r(d6.f fVar, int i10) {
+    }
+
+    @Override // d6.h
+    public void t(d6.f fVar) {
         b5.d.d(false);
         b5.d.C();
     }
 
     @Override // d6.h
-    public void w(d6.f fVar, String str) {
+    public void u(d6.f fVar, String str) {
         d6.c cVar = (d6.c) fVar;
         if (cVar == null) {
             return;

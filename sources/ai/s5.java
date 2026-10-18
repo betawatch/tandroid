@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class s5 extends Drawable {
     public final Paint a;
@@ -20,7 +20,7 @@ public final class s5 extends Drawable {
     public final Matrix c;
     public final org.telegram.ui.Components.f6 d;
     public final Path e;
-    public final ce f;
+    public final de f;
     public int g;
     public int h;
 
@@ -32,7 +32,7 @@ public final class s5 extends Drawable {
         this.c = new Matrix();
         this.d = new org.telegram.ui.Components.f6(1.0f, new a3.d(this, 15), 0L, 420L, bs.h);
         this.e = new Path();
-        this.f = new ce(1, 45);
+        this.f = new de(1, 45);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
         paint.setColor(117440511);
@@ -70,11 +70,11 @@ public final class s5 extends Drawable {
                 path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(path);
-                ce ceVar = this.f;
-                ceVar.g(rectF);
-                ceVar.h = 30.0f;
-                ceVar.d();
-                ceVar.a(canvas, org.telegram.ui.ActionBar.h6.m1(0.6f, -1));
+                de deVar = this.f;
+                deVar.g(rectF);
+                deVar.h = 30.0f;
+                deVar.d();
+                deVar.a(canvas, org.telegram.ui.ActionBar.h6.m1(0.6f, -1));
                 invalidateSelf();
                 canvas.restore();
                 AndroidUtilities.drawStroke(canvas, rectF, dp);

@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class ra extends FrameLayout {
     public float E;
@@ -122,7 +122,7 @@ public abstract class ra extends FrameLayout {
         this.E = z13 ? 1.0f : 0.0f;
         int i11 = org.telegram.ui.ActionBar.h6.z6;
         org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        int f7 = i0.b.f(this.E, org.telegram.ui.ActionBar.h6.w0(i11, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var));
+        int f7 = i0.a.f(this.E, org.telegram.ui.ActionBar.h6.w0(i11, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var));
         this.e.b(f7);
         q6Var.setTextColor(f7);
     }
@@ -160,7 +160,7 @@ public abstract class ra extends FrameLayout {
             canvas.drawCircle(AndroidUtilities.dp(35.0f), AndroidUtilities.dp(29.0f), AndroidUtilities.dp(16.0f), ua.I);
             drawableArr[1].setAlpha((int) ((1.0f - d) * 255.0f));
             f7 = 255.0f;
-            drawableArr[1].setBounds(org.telegram.ui.Cells.t0.w(2, AndroidUtilities.dp(35.0f), drawableArr[1]), org.telegram.ui.Cells.t0.g(2, AndroidUtilities.dp(29.0f), drawableArr[1]), org.telegram.ui.Cells.t0.B(2, AndroidUtilities.dp(35.0f), drawableArr[1]), org.telegram.ui.Cells.t0.A(2, AndroidUtilities.dp(29.0f), drawableArr[1]));
+            drawableArr[1].setBounds(org.telegram.ui.Cells.c1.w(2, AndroidUtilities.dp(35.0f), drawableArr[1]), org.telegram.ui.Cells.c1.f(2, AndroidUtilities.dp(29.0f), drawableArr[1]), org.telegram.ui.Cells.c1.B(2, AndroidUtilities.dp(35.0f), drawableArr[1]), org.telegram.ui.Cells.c1.A(2, AndroidUtilities.dp(29.0f), drawableArr[1]));
             drawableArr[1].draw(canvas);
         } else {
             f7 = 255.0f;
@@ -172,7 +172,7 @@ public abstract class ra extends FrameLayout {
             paint.setAlpha(i10);
             canvas.drawCircle(AndroidUtilities.dp(35.0f), AndroidUtilities.dp(29.0f), AndroidUtilities.dp(16.0f) * d, paint);
             drawableArr[0].setAlpha(i10);
-            drawableArr[0].setBounds(org.telegram.ui.Cells.t0.w(2, AndroidUtilities.dp(35.0f), drawableArr[0]), org.telegram.ui.Cells.t0.g(2, AndroidUtilities.dp(29.0f), drawableArr[0]), org.telegram.ui.Cells.t0.B(2, AndroidUtilities.dp(35.0f), drawableArr[0]), org.telegram.ui.Cells.t0.A(2, AndroidUtilities.dp(29.0f), drawableArr[0]));
+            drawableArr[0].setBounds(org.telegram.ui.Cells.c1.w(2, AndroidUtilities.dp(35.0f), drawableArr[0]), org.telegram.ui.Cells.c1.f(2, AndroidUtilities.dp(29.0f), drawableArr[0]), org.telegram.ui.Cells.c1.B(2, AndroidUtilities.dp(35.0f), drawableArr[0]), org.telegram.ui.Cells.c1.A(2, AndroidUtilities.dp(29.0f), drawableArr[0]));
             drawableArr[0].draw(canvas);
         }
         float d10 = this.y.d(this.w ? 1.0f : f10, false);

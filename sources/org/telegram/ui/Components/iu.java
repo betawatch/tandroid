@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.w4 {
     private static final int ACCESSIBILITY_ACTION_SHARE = 268435456;
@@ -356,7 +356,7 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         od0Var2.setMaxValue(239);
         od0Var2.setValue(120);
         od0Var2.setWrapSelectorWheel(false);
-        od0Var2.setFormatter(new i2.q(calendar, i21, 5));
+        od0Var2.setFormatter(new i2.r(calendar, i21, 5));
         od0 od0Var3 = new od0(context, d6Var);
         od0Var3.setContentDescriptionCallback(new gi.c(3));
         od0Var3.setWrapSelectorWheel(true);
@@ -900,8 +900,8 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r11v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
-    /* JADX WARN: Type inference failed for: r9v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
+    /* JADX WARN: Type inference failed for: r10v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
+    /* JADX WARN: Type inference failed for: r8v0, types: [org.telegram.ui.ActionBar.AlertDialog$Builder] */
     public void showInputDialog(String str, String str2, String str3, boolean z10, boolean z11, hu huVar) {
         CharSequence charSequence;
         ?? e2Var = z11 ? new org.telegram.ui.ActionBar.e2(getContext(), 0, this.resourcesProvider) : new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
@@ -927,8 +927,8 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         tVar.setHandlesColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.vf, this.resourcesProvider));
         frameLayout.addView(tVar, w7.z5.e(-1, -1, 119));
         TextView textView = new TextView(getContext());
-        com.google.android.gms.internal.cast.a6.m(12.0f, 1, textView);
-        textView.setPadding(org.telegram.ui.Cells.t0.f(10.0f, R.string.Paste, textView), 0, AndroidUtilities.dp(10.0f), 0);
+        com.google.android.gms.internal.play_billing.k3.m(12.0f, 1, textView);
+        textView.setPadding(org.telegram.ui.Cells.c1.e(10.0f, R.string.Paste, textView), 0, AndroidUtilities.dp(10.0f), 0);
         textView.setGravity(17);
         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.o6, this.resourcesProvider);
         textView.setTextColor(w02);
@@ -939,9 +939,9 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         w7.b6.b(textView, 0.1f, 1.5f);
         frameLayout.addView(textView, w7.z5.a(26.0f, 0.0f, 0.0f, 24.0f, 3.0f, -2, 21));
         textView.setVisibility(z10 ? 0 : 8);
-        ai.e2 e2Var2 = new ai.e2(this, z10, tVar, str4, textView, 17);
-        textView.setOnClickListener(new ai.v0(this, tVar, e2Var2, 23));
-        tVar.addTextChangedListener(new ai.u(e2Var2, 8));
+        ei.s1 s1Var = new ei.s1(this, z10, tVar, str4, textView);
+        textView.setOnClickListener(new ai.v0(this, tVar, s1Var, 23));
+        tVar.addTextChangedListener(new ai.u(s1Var, 8));
         ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
         if (z10 && TextUtils.equals(str4, "http://") && clipboardManager != null && clipboardManager.hasPrimaryClip()) {
             try {
@@ -955,9 +955,9 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
                 tVar.setSelection(0, tVar.getText().length());
             }
         }
-        e2Var2.run();
+        s1Var.run();
         e2Var.n(frameLayout);
-        e2Var.k(LocaleController.getString(R.string.OK), new s2(14, huVar, tVar));
+        e2Var.k(LocaleController.getString(R.string.OK), new q2(15, huVar, tVar));
         e2Var.h(LocaleController.getString(R.string.Cancel), null);
         if (z11) {
             this.creationLinkDialog = b2Var;

@@ -24,7 +24,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fk;
+import org.telegram.messenger.ek;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -32,7 +32,7 @@ import org.telegram.ui.Components.dw0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j6 implements Runnable {
     public final /* synthetic */ int a;
@@ -335,7 +335,7 @@ public final /* synthetic */ class j6 implements Runnable {
                             Runnable runnable = (Runnable) obj4;
                             switch (i12) {
                                 case 0:
-                                    MediaDataController.getInstance(z51Var.V).getEmojiSuggestions(z51.a2, str, false, new fr0(11, linkedHashSet2, runnable), null, false, false, false, 0);
+                                    MediaDataController.getInstance(z51Var.V).getEmojiSuggestions(z51.a2, str, false, new gn0(12, linkedHashSet2, runnable), null, false, false, false, 0);
                                     break;
                                 default:
                                     MediaDataController.getInstance(z51Var.V).getAnimatedEmojiByKeywords(str, new i41(linkedHashSet2, runnable, 0));
@@ -415,14 +415,14 @@ public final /* synthetic */ class j6 implements Runnable {
                             Runnable runnable = (Runnable) obj4;
                             switch (i20) {
                                 case 0:
-                                    MediaDataController.getInstance(z51Var.V).getEmojiSuggestions(z51.a2, str, false, new fr0(11, linkedHashSet, runnable), null, false, false, false, 0);
+                                    MediaDataController.getInstance(z51Var.V).getEmojiSuggestions(z51.a2, str, false, new gn0(12, linkedHashSet, runnable), null, false, false, false, 0);
                                     break;
                                 default:
                                     MediaDataController.getInstance(z51Var.V).getAnimatedEmojiByKeywords(str, new i41(linkedHashSet, runnable, 0));
                                     break;
                             }
                         }
-                    }, new z2(z51Var, strArr, str, linkedHashSet, 12), new fk(z51Var, fullyConsistsOfEmojis, linkedHashSet, str, reactionsMap, arrayList4), new z2((Object) z51Var, str, arrayList6, (Object) hashMap, 13), new org.telegram.ui.z(z51Var, str, arrayList7, 12), callback2);
+                    }, new z2(z51Var, strArr, str, linkedHashSet, 12), new ek(z51Var, fullyConsistsOfEmojis, linkedHashSet, str, reactionsMap, arrayList4), new z2((Object) z51Var, str, arrayList6, (Object) hashMap, 13), new org.telegram.ui.z(z51Var, str, arrayList7, 12), callback2);
                     break;
                 }
             case 5:

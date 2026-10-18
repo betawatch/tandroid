@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class e60 implements Runnable {
     public final /* synthetic */ int a;
@@ -168,14 +168,14 @@ public final class e60 implements Runnable {
                 break;
             default:
                 long uptimeMillis = SystemClock.uptimeMillis();
-                org.telegram.ui.Wallet.z5 z5Var = (org.telegram.ui.Wallet.z5) this.b;
-                WeakHashMap weakHashMap = z5Var.e;
+                org.telegram.ui.Wallet.c6 c6Var = (org.telegram.ui.Wallet.c6) this.b;
+                WeakHashMap weakHashMap = c6Var.e;
                 Collection.-EL.removeIf(weakHashMap.entrySet(), new org.telegram.ui.s8(uptimeMillis, 3));
                 if (!weakHashMap.isEmpty()) {
-                    z5Var.d.postDelayed(this, 250L);
+                    c6Var.d.postDelayed(this, 250L);
                     break;
                 } else {
-                    z5Var.a();
+                    c6Var.a();
                     break;
                 }
         }

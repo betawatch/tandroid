@@ -48,13 +48,13 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.xl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.it0;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 import rg.l2;
 import rg.m2;
 import rg.o2;
 import w7.s6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y7, OnSuccessListener, ImageReceiver.ImageReceiverDelegate, ne.d, t0.e, qa.a, xl0, vh.a, x2.k, Continuation, zf.m, r0.n {
     public final /* synthetic */ int a;
@@ -134,7 +134,7 @@ public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y
 
     @Override // org.telegram.ui.Components.xl0
     public void d(float f7, float f10, int i10, View view) {
-        ug.x0.R((ug.x0) this.b, view);
+        ug.y0.R((ug.y0) this.b, view);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -167,14 +167,14 @@ public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y
     }
 
     @Override // t0.e
-    public boolean f(t0.i iVar, int i10, Bundle bundle) {
+    public boolean f(t0.j jVar, int i10, Bundle bundle) {
         r0.d dVar;
         m.t tVar = (m.t) this.b;
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 25 && (i10 & 1) != 0) {
             try {
-                iVar.a.d();
-                Parcelable parcelable = (Parcelable) iVar.a.i();
+                jVar.a.b();
+                Parcelable parcelable = (Parcelable) jVar.a.e();
                 bundle = bundle == null ? new Bundle() : new Bundle(bundle);
                 bundle.putParcelable("androidx.core.view.extra.INPUT_CONTENT_INFO", parcelable);
             } catch (Exception e) {
@@ -182,8 +182,8 @@ public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y
                 return false;
             }
         }
-        t0.h hVar = iVar.a;
-        ClipData clipData = new ClipData(hVar.getDescription(), new ClipData.Item(hVar.c()));
+        t0.i iVar = jVar.a;
+        ClipData clipData = new ClipData(iVar.getDescription(), new ClipData.Item(iVar.a()));
         if (i11 >= 31) {
             dVar = new j2.j(clipData, 2);
         } else {
@@ -192,7 +192,7 @@ public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y
             eVar.c = 2;
             dVar = eVar;
         }
-        dVar.b(hVar.f());
+        dVar.b(iVar.c());
         dVar.setExtras(bundle);
         return r0.i0.h(tVar, dVar.build()) == null;
     }
@@ -201,19 +201,19 @@ public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y
     public void g(b2 b2Var, int i10) {
         switch (this.a) {
             case 8:
-                ((rq0) this.b).run();
+                ((sq0) this.b).run();
                 break;
             case 9:
                 ((rg.a0) this.b).a.f2.r();
                 break;
             case 19:
-                ((ug.r0) this.b).run();
+                ((ug.s0) this.b).run();
                 break;
             case 20:
                 TLRPC.TL_payments_giveawayInfoResults tL_payments_giveawayInfoResults = (TLRPC.TL_payments_giveawayInfoResults) this.b;
                 n2 R = LaunchActivity.R();
                 if (R != null) {
-                    ug.a0.U(R, tL_payments_giveawayInfoResults.gift_code_slug, null);
+                    ug.b0.U(R, tL_payments_giveawayInfoResults.gift_code_slug, null);
                     break;
                 }
                 break;
@@ -221,7 +221,7 @@ public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y
                 ((w2) this.b).run();
                 break;
             case 22:
-                ((ug.r0) this.b).run();
+                ((ug.s0) this.b).run();
                 break;
             default:
                 ((ai.g0) this.b).run();
@@ -306,7 +306,7 @@ public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y
                 com.google.firebase.messaging.r rVar2 = (com.google.firebase.messaging.r) obj;
                 Iterator it = ((Iterable) ((s5.g) ((s5.d) rVar2.c)).c(new r.a(23))).iterator();
                 while (it.hasNext()) {
-                    ((g3) rVar2.d).U((l5.i) it.next(), 1, false);
+                    ((g3) rVar2.d).P((l5.i) it.next(), 1, false);
                 }
                 return null;
         }
@@ -378,7 +378,7 @@ public final /* synthetic */ class g0 implements j0, a5.b, t5.b, r9.d, u1, a2, y
                     sb2.append(" ");
                     sb2.append(m2Var.c0);
                     sb2.append(" ");
-                    i0.a.v(((yb.a) list.get(0)).a, sb2);
+                    i2.d.v(((yb.a) list.get(0)).a, sb2);
                     Emoji.getEmojiDrawable(m2Var.c0);
                     break;
                 }

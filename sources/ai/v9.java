@@ -13,14 +13,14 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class v9 {
     public final int a;
     public final long b;
     public boolean c;
     public boolean d;
-    public x9 g;
+    public y9 g;
     public boolean j;
     public boolean k;
     public final ArrayList e = new ArrayList();
@@ -38,7 +38,7 @@ public final class v9 {
         if (arrayList.isEmpty()) {
             return;
         }
-        x9 e = e(i10);
+        y9 e = e(i10);
         int i11 = 1;
         int i12 = 0;
         long j10 = this.b;
@@ -87,16 +87,16 @@ public final class v9 {
         j();
         int i10 = this.a;
         long j10 = this.b;
-        x9 x9Var = new x9(i10, j10, false);
-        x9Var.c = true;
-        x9Var.d = -1;
-        x9Var.n = 0;
-        x9Var.j = true;
-        this.h.put(-1, x9Var);
+        y9 y9Var = new y9(i10, j10, false);
+        y9Var.c = true;
+        y9Var.d = -1;
+        y9Var.n = 0;
+        y9Var.j = true;
+        this.h.put(-1, y9Var);
         TL_stars.createStarGiftCollection createstargiftcollection = new TL_stars.createStarGiftCollection();
         createstargiftcollection.peer = MessagesController.getInstance(i10).getInputPeer(j10);
         createstargiftcollection.title = str;
-        ConnectionsManager.getInstance(i10).sendRequest(createstargiftcollection, new x2(this, tL_starGiftCollection, x9Var, callback, 4));
+        ConnectionsManager.getInstance(i10).sendRequest(createstargiftcollection, new y2(this, tL_starGiftCollection, y9Var, callback, 4));
     }
 
     public final TL_stars.TL_starGiftCollection c(int i10) {
@@ -118,8 +118,8 @@ public final class v9 {
         return h() ? this.e : this.f;
     }
 
-    public final x9 e(int i10) {
-        return (x9) this.h.get(Integer.valueOf(i10));
+    public final y9 e(int i10) {
+        return (y9) this.h.get(Integer.valueOf(i10));
     }
 
     public final int f(int i10) {
@@ -200,7 +200,7 @@ public final class v9 {
         if (arrayList.isEmpty()) {
             return;
         }
-        x9 e = e(i10);
+        y9 e = e(i10);
         boolean z12 = true;
         boolean z13 = false;
         if (e != null) {
@@ -214,7 +214,7 @@ public final class v9 {
                         if (i12 >= arrayList.size()) {
                             break;
                         }
-                        if (fa.k(savedStarGift2, (TL_stars.SavedStarGift) arrayList.get(i12))) {
+                        if (ga.k(savedStarGift2, (TL_stars.SavedStarGift) arrayList.get(i12))) {
                             arrayList2.remove(i11);
                             e.n = Math.max(0, e.n - 1);
                             i11--;
@@ -277,27 +277,27 @@ public final class v9 {
     public final void l(TL_stars.SavedStarGift savedStarGift, int i10, boolean z10) {
         Iterator it = this.h.values().iterator();
         while (it.hasNext()) {
-            ((x9) it.next()).o(savedStarGift, i10, z10);
+            ((y9) it.next()).o(savedStarGift, i10, z10);
         }
-        x9 x9Var = this.g;
-        if (x9Var != null) {
-            x9Var.o(savedStarGift, i10, z10);
+        y9 y9Var = this.g;
+        if (y9Var != null) {
+            y9Var.o(savedStarGift, i10, z10);
         }
     }
 
     public final void m(TL_stars.SavedStarGift savedStarGift, boolean z10) {
         Iterator it = this.h.values().iterator();
         while (it.hasNext()) {
-            ((x9) it.next()).p(savedStarGift, z10);
+            ((y9) it.next()).p(savedStarGift, z10);
         }
-        x9 x9Var = this.g;
-        if (x9Var != null) {
-            x9Var.p(savedStarGift, z10);
+        y9 y9Var = this.g;
+        if (y9Var != null) {
+            y9Var.p(savedStarGift, z10);
         }
     }
 
     public final void n(int i10) {
-        x9 e = e(i10);
+        y9 e = e(i10);
         TL_stars.TL_starGiftCollection c10 = c(i10);
         if (e != null) {
             ArrayList arrayList = e.l;

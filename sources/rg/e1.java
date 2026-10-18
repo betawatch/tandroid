@@ -30,7 +30,7 @@ import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.ja;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class e1 extends j {
     public boolean A0;
@@ -350,13 +350,13 @@ public abstract class e1 extends j {
                 f15 = Math.max(Math.max(f15, f7), f10);
                 f14 = Math.min(Math.min(f14, f11), y3);
                 f13 = Math.max(Math.max(f13, f11), y3);
-            } else if (childAt instanceof org.telegram.ui.Cells.x0) {
-                org.telegram.ui.Cells.x0 x0Var2 = (org.telegram.ui.Cells.x0) childAt;
-                if (x0Var2.L()) {
-                    float x12 = x0Var2.getX() + n5Var.getX() + x0Var2.getBoundsLeft();
-                    float x13 = x0Var2.getX() + n5Var.getX() + x0Var2.getBoundsRight();
-                    float y10 = x0Var2.getY() + n5Var.getY();
-                    float y11 = x0Var2.getY() + n5Var.getY() + x0Var2.getMeasuredHeight();
+            } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
+                if (w0Var.L()) {
+                    float x12 = w0Var.getX() + n5Var.getX() + w0Var.getBoundsLeft();
+                    float x13 = w0Var.getX() + n5Var.getX() + w0Var.getBoundsRight();
+                    float y10 = w0Var.getY() + n5Var.getY();
+                    float y11 = w0Var.getY() + n5Var.getY() + w0Var.getMeasuredHeight();
                     f12 = Math.min(Math.min(f12, x12), x13);
                     f15 = Math.max(Math.max(f15, x12), x13);
                     f14 = Math.min(Math.min(f14, y10), y11);

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mh0 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,11 +52,11 @@ public final /* synthetic */ class mh0 implements Runnable {
                 }
                 break;
             default:
-                ug.x0 x0Var = (ug.x0) this.c;
-                HashSet hashSet = x0Var.e0;
+                ug.y0 y0Var = (ug.y0) this.c;
+                HashSet hashSet = y0Var.e0;
                 hashSet.remove(Long.valueOf(this.b));
-                x0Var.Y.b(true, hashSet, new ug.r0(x0Var, 5), null);
-                x0Var.c0(true, false);
+                y0Var.Y.b(true, hashSet, new ug.s0(y0Var, 5), null);
+                y0Var.c0(true, false);
                 break;
         }
     }

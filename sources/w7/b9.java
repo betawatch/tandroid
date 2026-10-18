@@ -2,7 +2,7 @@ package w7;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class b9 {
     public static void a(z3.d dVar, int i10, e2.j jVar) {
@@ -11,7 +11,7 @@ public abstract class b9 {
         if (e.isEmpty()) {
             return;
         }
-        if (i10 == dVar.h() - 1) {
+        if (i10 == dVar.i() - 1) {
             throw new IllegalStateException();
         }
         long d10 = dVar.d(i10 + 1) - dVar.d(i10);
@@ -36,13 +36,13 @@ public abstract class b9 {
         } else {
             c10 = dVar.c(j10);
             if (c10 == -1) {
-                c10 = dVar.h();
+                c10 = dVar.i();
             }
             if (c10 > 0 && dVar.d(c10 - 1) == j10) {
                 c10--;
             }
         }
-        if (j10 != -9223372036854775807L && c10 < dVar.h()) {
+        if (j10 != -9223372036854775807L && c10 < dVar.i()) {
             List e = dVar.e(j10);
             long d = dVar.d(c10);
             if (!e.isEmpty()) {
@@ -50,7 +50,7 @@ public abstract class b9 {
                 if (j11 < d) {
                     jVar.accept(new z3.a(j11, d - j11, e));
                     z10 = true;
-                    for (i10 = c10; i10 < dVar.h(); i10++) {
+                    for (i10 = c10; i10 < dVar.i(); i10++) {
                         a(dVar, i10, jVar);
                     }
                     if (lVar.b) {
@@ -71,7 +71,7 @@ public abstract class b9 {
             }
         }
         z10 = false;
-        while (i10 < dVar.h()) {
+        while (i10 < dVar.i()) {
         }
         if (lVar.b) {
         }

@@ -20,7 +20,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class v1 {
     public boolean B;
@@ -115,38 +115,38 @@ public class v1 {
             }
             int i14 = this.O;
             if (i14 == 9) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_folder : i13 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_folder : i13 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 27) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.filled_messages_paid : i13 == 1 ? R.raw.filled_crown_on : R.raw.premium_object_star2, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.filled_messages_paid : i13 == 1 ? R.raw.filled_crown_on : R.raw.premium_object_star2, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 11 || i14 == 4) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_smile1 : i13 == 1 ? R.raw.premium_object_smile2 : R.raw.premium_object_like, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_smile1 : i13 == 1 ? R.raw.premium_object_smile2 : R.raw.premium_object_like, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 22) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_user : i13 == 1 ? R.raw.cache_photos : R.raw.cache_profile_photos, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_user : i13 == 1 ? R.raw.cache_photos : R.raw.cache_profile_photos, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == i12) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_adsbubble : i13 == 1 ? R.raw.premium_object_like : R.raw.premium_object_noads, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_adsbubble : i13 == 1 ? R.raw.premium_object_like : R.raw.premium_object_noads, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 7) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_video2 : i13 == 1 ? R.raw.premium_object_video : R.raw.premium_object_user, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_video2 : i13 == 1 ? R.raw.premium_object_video : R.raw.premium_object_user, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 43) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_list : i13 == 1 ? R.raw.premium_object_math : i13 == 2 ? R.raw.premium_object_table : i13 == i12 ? R.raw.premium_object_superscript : i13 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_list : i13 == 1 ? R.raw.premium_object_math : i13 == 2 ? R.raw.premium_object_table : i13 == i12 ? R.raw.premium_object_superscript : i13 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 1001) {
-                this.d[i13] = SvgHelper.getBitmap(R.raw.premium_object_fire, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(R.raw.premium_object_fire, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 1002) {
-                this.d[i13] = SvgHelper.getBitmap(R.raw.premium_object_star2, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(R.raw.premium_object_star2, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 24) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_tag : i13 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 30));
+                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_tag : i13 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
                 this.e[i13] = true;
             } else if (i14 == 28) {
                 if (i13 == 0) {
-                    this.d[i13] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, dp, dp, i0.b.o(h6.w0(this.Q, this.P), 255));
+                    this.d[i13] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 255));
                     this.f[i13] = true;
                 }
                 Bitmap createBitmap = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
@@ -244,7 +244,7 @@ public class v1 {
     }
 
     public int b() {
-        return this.O == 100 ? i0.b.o(h6.w0(this.Q, this.P), 200) : h6.w0(this.Q, this.P);
+        return this.O == 100 ? i0.a.o(h6.w0(this.Q, this.P), 200) : h6.w0(this.Q, this.P);
     }
 
     public final void c() {

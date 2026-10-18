@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r91 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -1001,7 +1001,7 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView2.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.wh.m(R.string.LoadingStatsDescription, textView2, 1);
+        org.telegram.messenger.kk.m(R.string.LoadingStatsDescription, textView2, 1);
         r91Var.b0.addView(r91Var.W, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         r91Var.b0.addView(textView, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         r91Var.b0.addView(textView2, w7.z5.q(-2, -2, 1));
@@ -1017,7 +1017,7 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
         r91Var.S.setItemAnimator(null);
         r91Var.S.j(new q81(r91Var, 0));
         r91Var.S.setOnItemClickListener(new h11(r91Var, 7));
-        r91Var.S.setOnItemLongClickListener(new qp0(r91Var, 17));
+        r91Var.S.setOnItemLongClickListener(new rp0(r91Var, 17));
         frameLayout3.addView(r91Var.S);
         org.telegram.ui.Components.oo ooVar = new org.telegram.ui.Components.oo(context, null, false, null);
         r91Var.R = ooVar;
@@ -1033,7 +1033,7 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
         if (ooVar2.getSubtitleTextView() != null) {
             ooVar2.getSubtitleTextView().setVisibility(8);
         }
-        i0.a.x(false, r91Var.actionBar);
+        i2.d.y(false, r91Var.actionBar);
         r91Var.actionBar.setActionBarMenuOnItemClick(new a31(r91Var, 5));
         r91Var.R.i(org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         r91Var.actionBar.C(org.telegram.ui.ActionBar.h6.x0(null, i11, false), false);
@@ -1085,27 +1085,27 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
             TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
             boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
             List fragmentStack = getParentLayout().getFragmentStack();
-            org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) r.c.e(2, fragmentStack) : null;
+            org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) r4.c.f(2, fragmentStack) : null;
             if (n2Var instanceof ko) {
                 ((ActionBarLayout) getParentLayout()).a0(n2Var, false);
             }
             List fragmentStack2 = getParentLayout().getFragmentStack();
-            org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) r.c.e(2, fragmentStack2) : null;
+            org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) r4.c.f(2, fragmentStack2) : null;
             if (!booleanValue) {
                 finishFragment();
                 if (n2Var2 instanceof ProfileActivity) {
-                    ug.h.f(n2Var2, chat, false);
+                    ug.i.f(n2Var2, chat, false);
                     return;
                 }
                 return;
             }
-            org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) r.c.e(3, fragmentStack2) : null;
+            org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) r4.c.f(3, fragmentStack2) : null;
             if (n2Var2 instanceof ProfileActivity) {
                 ((ActionBarLayout) getParentLayout()).a0(n2Var2, false);
             }
             finishFragment();
             if (n2Var3 instanceof sn) {
-                ug.h.f(n2Var3, chat, true);
+                ug.i.f(n2Var3, chat, true);
                 return;
             }
             return;
@@ -1295,7 +1295,7 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return i0.b.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false)) > 0.699999988079071d;
+        return i0.a.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2

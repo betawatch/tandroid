@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -141,7 +141,7 @@ public final class m0 extends FrameLayout {
                 int i15 = org.telegram.ui.ActionBar.h6.d6;
                 int themedColor2 = pg0Var.getThemedColor(i15);
                 pg1 pg1Var = pg0Var.c;
-                int f7 = i0.b.f(pg1Var != null ? pg1Var.r(0) : 1.0f, themedColor, themedColor2);
+                int f7 = i0.a.f(pg1Var != null ? pg1Var.r(0) : 1.0f, themedColor, themedColor2);
                 int i16 = pg0Var.M;
                 if (i16 != 0) {
                     canvas.drawRect(0.0f, 0.0f, i16, getHeight(), org.telegram.ui.ActionBar.h6.m0(f7));
@@ -155,7 +155,7 @@ public final class m0 extends FrameLayout {
                 int themedColor3 = pg0Var.getThemedColor(i14);
                 int themedColor4 = pg0Var.getThemedColor(i15);
                 pg1 pg1Var2 = pg0Var.c;
-                cVar.a(i0.b.f(pg1Var2 != null ? pg1Var2.r(0) : 1.0f, themedColor3, themedColor4));
+                cVar.a(i0.a.f(pg1Var2 != null ? pg1Var2.r(0) : 1.0f, themedColor3, themedColor4));
                 View view2 = pg0Var.H;
                 if (view2 != null) {
                     view2.invalidate();
@@ -196,7 +196,7 @@ public final class m0 extends FrameLayout {
                     Drawable drawable = i51Var.E;
                     if (drawable != null) {
                         if (o41Var.x) {
-                            drawable.setColorFilter(new PorterDuffColorFilter(i0.b.f(o41Var.I, z51Var.m1, z51Var.f1), PorterDuff.Mode.MULTIPLY));
+                            drawable.setColorFilter(new PorterDuffColorFilter(i0.a.f(o41Var.I, z51Var.m1, z51Var.f1), PorterDuff.Mode.MULTIPLY));
                         } else {
                             drawable.setColorFilter(z51Var.k1);
                         }
@@ -448,14 +448,14 @@ public final class m0 extends FrameLayout {
                 break;
             case 16:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendPhotos", ((tp0) this.b).b.size(), new Object[0]));
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendPhotos", ((up0) this.b).b.size(), new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);
                 break;
             case 17:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendPhotos", ((kq0) this.b).b.size(), new Object[0]));
+                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrSendPhotos", ((lq0) this.b).b.size(), new Object[0]));
                 accessibilityNodeInfo.setClassName(Button.class.getName());
                 accessibilityNodeInfo.setLongClickable(true);
                 accessibilityNodeInfo.setClickable(true);
@@ -493,11 +493,11 @@ public final class m0 extends FrameLayout {
                 h5Var.d.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31));
                 int b10 = w7.r.b((paddingTop - h5Var.d.getMeasuredHeight()) - AndroidUtilities.dp(48.0f), min2, min);
                 h5Var.c.measure(View.MeasureSpec.makeMeasureSpec(b10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(b10, TLObject.FLAG_30));
-                int B = org.telegram.messenger.wh.B(48.0f, (paddingTop - b10) - h5Var.d.getMeasuredHeight(), 2);
+                int A = org.telegram.messenger.kk.A(48.0f, (paddingTop - b10) - h5Var.d.getMeasuredHeight(), 2);
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) h5Var.c.getLayoutParams();
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) h5Var.d.getLayoutParams();
-                layoutParams.topMargin = AndroidUtilities.dp(8.0f) + B;
-                layoutParams2.topMargin = AndroidUtilities.dp(4.0f) + org.telegram.messenger.q.C(8.0f, B, b10);
+                layoutParams.topMargin = AndroidUtilities.dp(8.0f) + A;
+                layoutParams2.topMargin = AndroidUtilities.dp(4.0f) + org.telegram.messenger.g0.C(8.0f, A, b10);
                 layoutParams2.leftMargin = AndroidUtilities.dp(4.0f);
                 layoutParams2.rightMargin = AndroidUtilities.dp(4.0f);
                 super.onLayout(z10, i10, i11, i12, i13);
@@ -691,11 +691,11 @@ public final class m0 extends FrameLayout {
                 }
                 break;
             case 15:
-                jp0 jp0Var = (jp0) this.b;
-                FrameLayout frameLayout = jp0Var.L;
+                kp0 kp0Var = (kp0) this.b;
+                FrameLayout frameLayout = kp0Var.L;
                 if (frameLayout != null) {
                     ((ViewGroup.MarginLayoutParams) frameLayout.getLayoutParams()).height = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                    ((ViewGroup.MarginLayoutParams) jp0Var.L.getLayoutParams()).topMargin = AndroidUtilities.statusBarHeight;
+                    ((ViewGroup.MarginLayoutParams) kp0Var.L.getLayoutParams()).topMargin = AndroidUtilities.statusBarHeight;
                 }
                 super.onMeasure(i10, i11);
                 break;

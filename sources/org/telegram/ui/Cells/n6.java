@@ -32,7 +32,7 @@ import org.telegram.ui.Components.ex0;
 import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.uc0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class n6 extends FrameLayout {
     public static final uc0 H;
@@ -325,7 +325,7 @@ public class n6 extends FrameLayout {
             if (j10 <= 0) {
                 j11 = storyItem.date;
                 if (j11 != 0) {
-                    StringBuilder i13 = r.c.i(formatString, " ");
+                    StringBuilder i13 = r4.c.i(formatString, " ");
                     i13.append(LocaleController.formatSeenDate(j11));
                     formatString = i13.toString();
                 }

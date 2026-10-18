@@ -71,7 +71,7 @@ import org.telegram.ui.ua1;
 import org.telegram.ui.vg0;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y4 implements wl0 {
     public final /* synthetic */ int a;
@@ -224,7 +224,7 @@ public final /* synthetic */ class y4 implements wl0 {
                     ua1Var.v0(-((AndroidUtilities.dp(48.0f) + ua1Var.getPaddingLeft()) - view.getLeft()), 0, null);
                     break;
                 } else if (view.getWidth() + view.getLeft() > (ua1Var.getMeasuredWidth() - ua1Var.getPaddingRight()) - AndroidUtilities.dp(24.0f)) {
-                    ua1Var.v0(org.telegram.messenger.q.A(48.0f, ua1Var.getMeasuredWidth() - ua1Var.getPaddingRight(), view.getWidth() + view.getLeft()), 0, null);
+                    ua1Var.v0(org.telegram.messenger.g0.A(48.0f, ua1Var.getMeasuredWidth() - ua1Var.getPaddingRight(), view.getWidth() + view.getLeft()), 0, null);
                     break;
                 }
                 break;
@@ -392,7 +392,7 @@ public final /* synthetic */ class y4 implements wl0 {
                                     if (UserObject.getPublicUsername(user3) != null) {
                                         fb0Var.H(i16, i17, "@" + UserObject.getPublicUsername(user3) + " ", false);
                                     } else {
-                                        SpannableString spannableString = new SpannableString(r.c.u(UserObject.getFirstName(user3, false), " "));
+                                        SpannableString spannableString = new SpannableString(r4.c.u(UserObject.getFirstName(user3, false), " "));
                                         StringBuilder sb3 = new StringBuilder("");
                                         ib0Var = ib0Var2;
                                         sb3.append(user3.id);
@@ -413,7 +413,7 @@ public final /* synthetic */ class y4 implements wl0 {
                                             }
                                             if (str9.startsWith("animated_")) {
                                                 try {
-                                                    fontMetricsInt = fb0Var.w();
+                                                    fontMetricsInt = fb0Var.s();
                                                 } catch (Exception e) {
                                                     FileLog.e((Throwable) e, false);
                                                     fontMetricsInt = null;
@@ -630,10 +630,10 @@ public final /* synthetic */ class y4 implements wl0 {
                 UsersSelectActivity.U((UsersSelectActivity) this.b, (Context) this.c, view, i10);
                 break;
             case 23:
-                ug.y.R((ug.y) this.b, (org.telegram.ui.ActionBar.n2) this.c, view);
+                ug.z.R((ug.z) this.b, (org.telegram.ui.ActionBar.n2) this.c, view);
                 break;
             default:
-                ug.q0.Q((ug.q0) this.b, (TLRPC.Chat) this.c, view);
+                ug.r0.Q((ug.r0) this.b, (TLRPC.Chat) this.c, view);
                 break;
         }
     }

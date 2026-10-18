@@ -27,7 +27,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.q21;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class f4 extends li implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -375,7 +375,7 @@ public final class f4 extends li implements NotificationCenter.NotificationCente
             z3Var.setVisibility(0);
             v2Var.setBotUser(MessagesController.getInstance(this.F).getUser(Long.valueOf(this.v)));
             v2Var.s(this.F, this.v);
-            NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.s(v2Var, 2));
+            NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.t(v2Var, 2));
             return;
         }
         if (i10 == R.id.menu_delete_bot) {

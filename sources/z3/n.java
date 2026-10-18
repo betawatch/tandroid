@@ -11,7 +11,7 @@ import e2.x;
 import java.io.EOFException;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class n implements j0 {
     public final j0 a;
@@ -56,7 +56,7 @@ public final class n implements j0 {
         a2.j = str;
         a2.w = Long.MAX_VALUE;
         a2.P = kVar.L(wVar);
-        i0.a.u(a2, j0Var);
+        i2.d.u(a2, j0Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x005b  */

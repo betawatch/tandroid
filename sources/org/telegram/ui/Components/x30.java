@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x30 implements Runnable {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class x30 implements Runnable {
                 }
                 ArrayList arrayList2 = arrayList;
                 if (arrayList2 != null) {
-                    Utilities.searchQueue.postRunnable(new ai.bb(z30Var2, str2, i11, arrayList2, 21));
+                    Utilities.searchQueue.postRunnable(new ai.cb(z30Var2, str2, i11, arrayList2, 21));
                 } else {
                     z30Var2.h = false;
                 }

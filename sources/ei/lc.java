@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class lc extends View implements r2 {
     public Paint a;
@@ -69,8 +69,8 @@ public final class lc extends View implements r2 {
 
     @Override // ei.r2
     public void setInvert(float f7) {
-        this.a.setColor(i0.b.f(f7, 1056964608, TLObject.FLAG_28));
-        this.c.u(i0.b.f(f7, -1, -16777216));
+        this.a.setColor(i0.a.f(f7, 1056964608, TLObject.FLAG_28));
+        this.c.u(i0.a.f(f7, -1, -16777216));
     }
 
     @Override // android.view.View

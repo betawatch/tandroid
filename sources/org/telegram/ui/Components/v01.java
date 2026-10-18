@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class v01 extends LinearLayout {
     public final int a;
@@ -97,7 +97,7 @@ public final class v01 extends LinearLayout {
         if (chat == null) {
             return;
         }
-        final org.telegram.ui.ActionBar.f3 i13 = org.telegram.messenger.wh.i(1, context, d6Var2, true);
+        final org.telegram.ui.ActionBar.f3 i13 = org.telegram.messenger.kk.i(1, context, d6Var2, true);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         i13.customView = linearLayout;
@@ -176,7 +176,7 @@ public final class v01 extends LinearLayout {
             i18 = i19 + 1;
             j11 = j10;
         }
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, d6Var2, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var2, true);
         boolean z13 = (ChatObject.canManageTags(chat) && (!z10 || ((!z11 && z12) || UserObject.isUserSelf(user)))) || (ChatObject.canManageMyTag(chat) && UserObject.isUserSelf(user));
         if (!z13 && !ChatObject.canManageTags(chat) && !chat.creator && chat.admin_rights == null && !z11) {
             TextView b12 = w7.d6.b(context, 12.0f, org.telegram.ui.ActionBar.h6.y6, false, null);
@@ -205,7 +205,7 @@ public final class v01 extends LinearLayout {
             d6Var2 = d6Var2;
             f7.setOnClickListener(onClickListener);
         } else {
-            f7.setText(ai.k7.z2(LocaleController.getString(R.string.Understood)));
+            f7.setText(ai.k7.B2(LocaleController.getString(R.string.Understood)));
             f7.setOnClickListener(new ca(27, i13, zArr));
             f3Var = i13;
         }
@@ -222,7 +222,7 @@ public final class v01 extends LinearLayout {
     public static void c(Context context, int i10, long j10, TLRPC.User user, String str, final boolean z10, boolean z11, org.telegram.ui.ActionBar.d6 d6Var) {
         MessagesController messagesController = MessagesController.getInstance(i10);
         messagesController.getChat(Long.valueOf(-j10));
-        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.wh.i(1, context, d6Var, true);
+        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.kk.i(1, context, d6Var, true);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         i11.customView = linearLayout;
@@ -238,7 +238,7 @@ public final class v01 extends LinearLayout {
         imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, AndroidUtilities.dp(18.0f)));
         linearLayout2.addView(imageView, w7.z5.t(32, 32, 21, 0, 0, 10, 0));
         linearLayout.addView(linearLayout2, w7.z5.k(0.0f, 6.0f, 0.0f, 6.0f, -1, -2));
-        final ei.d f7 = org.telegram.messenger.wh.f(24, context, d6Var, true);
+        final ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         final boolean z12 = !TextUtils.isEmpty(str) || z10;
         f7.setText(LocaleController.getString((TextUtils.isEmpty(str) && !z10 && z12) ? R.string.MemberTagButtonRemove : z12 ? R.string.MemberTagButtonEdit : R.string.MemberTagButtonAdd));
         final String[] strArr = {str == null ? "" : str};

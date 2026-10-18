@@ -15,7 +15,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class rj0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final qj0 b;
@@ -28,7 +28,7 @@ public final class rj0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         final int i10 = 0;
         this.d = callback;
         final int i11 = 1;
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
         org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
         this.c = xj0Var;
@@ -80,13 +80,13 @@ public final class rj0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 20.0f);
         textView.setGravity(1);
-        textView.setPadding(org.telegram.ui.Cells.t0.f(30.0f, R.string.NotificationsPermissionAlertTitle, textView), 0, AndroidUtilities.dp(30.0f), 0);
+        textView.setPadding(org.telegram.ui.Cells.c1.e(30.0f, R.string.NotificationsPermissionAlertTitle, textView), 0, AndroidUtilities.dp(30.0f), 0);
         e.addView(textView, w7.z5.n(-1, -2));
         TextView textView2 = new TextView(context);
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity(1);
-        textView2.setPadding(org.telegram.ui.Cells.t0.f(30.0f, R.string.NotificationsPermissionAlertSubtitle, textView2), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(21.0f));
+        textView2.setPadding(org.telegram.ui.Cells.c1.e(30.0f, R.string.NotificationsPermissionAlertSubtitle, textView2), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(21.0f));
         e.addView(textView2, w7.z5.n(-1, -2));
         e.addView(new ci.i4(context, LocaleController.getString(R.string.NotificationsPermissionAlert1), R.drawable.msg_message_s), w7.z5.n(-1, -2));
         e.addView(new ci.i4(context, LocaleController.getString(R.string.NotificationsPermissionAlert2), R.drawable.msg_members_list2), w7.z5.n(-1, -2));

@@ -50,7 +50,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class EditTextBoldCursor extends ku {
     private static final String BLINK_CLASS = "android.widget.Editor$Blink";
@@ -688,7 +688,7 @@ public class EditTextBoldCursor extends ku {
                     }
                     canvas2.scale(f16, f16);
                     canvas2.translate(0.0f, (-AndroidUtilities.dp(22.0f)) * this.headerAnimationProgress);
-                    getPaint().setColor(i0.b.f(this.headerAnimationProgress, this.hintColor, this.headerHintColor));
+                    getPaint().setColor(i0.a.f(this.headerAnimationProgress, this.hintColor, this.headerHintColor));
                 } else {
                     getPaint().setColor(this.hintColor);
                     getPaint().setAlpha((int) ((Color.alpha(this.hintColor) / 255.0f) * this.hintAlpha * 255.0f));

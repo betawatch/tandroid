@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n6 extends FrameLayout {
     public final /* synthetic */ c7 E;
@@ -230,7 +230,7 @@ public final class n6 extends FrameLayout {
         ba0Var.setAlpha((int) (255.0f * alpha * d));
         ba0Var.draw(canvas);
         int i12 = org.telegram.ui.ActionBar.h6.h7;
-        int f12 = i0.b.f(0.75f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false));
+        int f12 = i0.a.f(0.75f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false));
         Paint paint2 = this.w;
         paint2.setColor(f12);
         paint2.setAlpha((int) (paint2.getAlpha() * alpha));

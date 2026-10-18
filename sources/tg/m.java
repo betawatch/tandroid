@@ -11,9 +11,9 @@ import javax.microedition.khronos.opengles.GL10;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.EmuDetector;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Wallet.b6;
+import org.telegram.ui.Wallet.e6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m extends Thread {
     public final SurfaceTexture a;
@@ -26,8 +26,8 @@ public final class m extends Thread {
         this.a = surfaceTexture;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01f4 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x01ee A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01f8 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x01f2 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -50,7 +50,7 @@ public final class m extends Thread {
         int i10 = 1;
         int[] iArr = new int[1];
         EGLConfig[] eGLConfigArr = new EGLConfig[1];
-        int[] iArr2 = EmuDetector.with(nVar3.getContext()).detect() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12338, 1, 12337, 4, 12344};
+        int[] iArr2 = EmuDetector.with(nVar3.getContext()).detect() ? new int[]{12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12344} : new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 8, 12325, 16, 12326, 0, 12338, 1, 12337, nVar3.getMsaaSamples(), 12344};
         nVar3.s = null;
         if (!EmuDetector.with(nVar3.getContext()).detect() && nVar3.r.eglChooseConfig(nVar3.f, iArr2, eGLConfigArr, 1, iArr) && iArr[0] != 0) {
             nVar3.s = eGLConfigArr[0];
@@ -65,7 +65,7 @@ public final class m extends Thread {
         if (nVar3.s == null) {
             throw new RuntimeException("eglConfig not initialized");
         }
-        int i11 = nVar3.j() ? 3 : 2;
+        int i11 = nVar3.k() ? 3 : 2;
         EGL10 egl102 = nVar3.r;
         EGLDisplay eGLDisplay = nVar3.f;
         EGLConfig eGLConfig = nVar3.s;
@@ -106,7 +106,7 @@ public final class m extends Thread {
                 }
             }
             n nVar4 = this.d;
-            if (nVar4.b != null && (!nVar4.G || (!nVar4.T && (nVar4 instanceof b6)))) {
+            if (nVar4.b != null && (!nVar4.G || (!nVar4.W && (nVar4 instanceof e6)))) {
                 long nanoTime2 = System.nanoTime();
                 n.a(this.d, (nanoTime2 - nanoTime) / 1.0E9f);
                 if (!this.c) {
@@ -119,12 +119,13 @@ public final class m extends Thread {
                 nVar = this.d;
             } catch (InterruptedException unused) {
             }
-            if (nVar.b != null && (!nVar.G || (!nVar.T && (nVar instanceof b6)))) {
+            if (nVar.b != null && (!nVar.G || (!nVar.W && (nVar instanceof e6)))) {
                 z10 = false;
                 if (z10) {
-                    long nanoTime3 = this.d.w - (System.nanoTime() - nanoTime);
-                    if (nanoTime3 > 0) {
-                        Thread.sleep(nanoTime3 / 1000000, (int) (nanoTime3 % 1000000));
+                    n nVar5 = this.d;
+                    long h = nVar5.h(nVar5.w) - (System.nanoTime() - nanoTime);
+                    if (h > 0) {
+                        Thread.sleep(h / 1000000, (int) (h % 1000000));
                     }
                 } else {
                     Thread.sleep(100L);

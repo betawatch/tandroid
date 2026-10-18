@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ow0 extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ Context c;
@@ -35,7 +35,7 @@ public final class ow0 extends org.telegram.ui.Components.hm0 {
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         nw0 nw0Var = new nw0(this, this.c);
-        nw0Var.setCirclePaintProvider(new fr0(6, this, nw0Var));
+        nw0Var.setCirclePaintProvider(new gn0(7, this, nw0Var));
         return new org.telegram.ui.Components.sl0(nw0Var);
     }
 }

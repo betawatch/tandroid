@@ -1,6 +1,6 @@
 package org.telegram.ui.Components.voip;
 
-import ai.ee;
+import ai.fe;
 import ai.x7;
 import android.animation.ValueAnimator;
 import android.graphics.Bitmap;
@@ -25,7 +25,6 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AccountInstance;
@@ -42,10 +41,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
+import org.telegram.messenger.kk;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -60,8 +59,8 @@ import org.telegram.ui.s50;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class t extends FrameLayout implements n0 {
     public final m A0;
     public final Rect B0;
@@ -201,7 +200,7 @@ public final class t extends FrameLayout implements n0 {
         j5 j5Var = new j5(l0Var.getContext());
         this.L = j5Var;
         j5Var.setTextSize(13);
-        j5Var.setTextColor(i0.b.o(-1, 229));
+        j5Var.setTextColor(i0.a.o(-1, 229));
         j5Var.setTypeface(AndroidUtilities.bold());
         j5Var.setFullTextMaxLines(1);
         j5Var.setBuildFullLayout(true);
@@ -223,7 +222,7 @@ public final class t extends FrameLayout implements n0 {
         imageView.setImageDrawable(l0Var.getContext().getDrawable(R.drawable.voicechat_screencast));
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
         int dp4 = AndroidUtilities.dp(19.0f);
-        int o10 = i0.b.o(-1, 100);
+        int o10 = i0.a.o(-1, 100);
         org.telegram.ui.Cells.z j02 = h6.j0(dp4, dp4, dp4, dp4, 0, o10, o10);
         q qVar = new q(this, l0Var.getContext());
         this.N = qVar;
@@ -245,7 +244,7 @@ public final class t extends FrameLayout implements n0 {
         textView.setGravity(17);
         textView.setAlpha(0.0f);
         if (ChatObject.canManageCalls(chat)) {
-            org.telegram.messenger.q.n(R.string.NoRtmpStreamFromAppOwner, textView);
+            org.telegram.messenger.g0.n(R.string.NoRtmpStreamFromAppOwner, textView);
         } else {
             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("NoRtmpStreamFromAppViewer", R.string.NoRtmpStreamFromAppViewer, chat.title)));
         }
@@ -339,14 +338,14 @@ public final class t extends FrameLayout implements n0 {
             if (peerId > 0) {
                 TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(peerId));
                 ImageLocation forUser = ImageLocation.getForUser(i10, user, 1);
-                int d = user != null ? h9.d(user.id) : i0.b.f(0.2f, -16777216, -1);
-                imageReceiver.setImage(forUser, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.b.f(0.2f, d, -16777216), i0.b.f(0.4f, d, -16777216)}), null, user, 0);
+                int d = user != null ? h9.d(user.id) : i0.a.f(0.2f, -16777216, -1);
+                imageReceiver.setImage(forUser, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), null, user, 0);
                 return;
             }
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-peerId));
             ImageLocation forChat = ImageLocation.getForChat(i10, chat, 1);
-            int d10 = chat != null ? h9.d(chat.id) : i0.b.f(0.2f, -16777216, -1);
-            imageReceiver.setImage(forChat, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.b.f(0.2f, d10, -16777216), i0.b.f(0.4f, d10, -16777216)}), null, chat, 0);
+            int d10 = chat != null ? h9.d(chat.id) : i0.a.f(0.2f, -16777216, -1);
+            imageReceiver.setImage(forChat, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d10, -16777216), i0.a.f(0.4f, d10, -16777216)}), null, chat, 0);
         }
     }
 
@@ -366,7 +365,7 @@ public final class t extends FrameLayout implements n0 {
                 xj0Var.setAlpha(1.0f - l0Var.n);
             } else if (this.b || this.r) {
                 if (!s50.F3 && !s50.G3) {
-                    measuredHeight = a6.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
+                    measuredHeight = com.google.android.gms.internal.play_billing.k3.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
                 }
                 frameLayout.setAlpha(1.0f);
                 xj0Var.setAlpha(1.0f);
@@ -554,30 +553,30 @@ public final class t extends FrameLayout implements n0 {
     /* JADX WARN: Removed duplicated region for block: B:100:0x0398  */
     /* JADX WARN: Removed duplicated region for block: B:103:0x03b1  */
     /* JADX WARN: Removed duplicated region for block: B:110:0x03e4  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x03fc  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0413  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x04b4  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x04c5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x04cd  */
-    /* JADX WARN: Removed duplicated region for block: B:135:0x04d7  */
-    /* JADX WARN: Removed duplicated region for block: B:147:0x0537  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0518  */
-    /* JADX WARN: Removed duplicated region for block: B:160:0x0542  */
-    /* JADX WARN: Removed duplicated region for block: B:165:0x0564  */
-    /* JADX WARN: Removed duplicated region for block: B:168:0x056d  */
-    /* JADX WARN: Removed duplicated region for block: B:175:0x0589  */
-    /* JADX WARN: Removed duplicated region for block: B:182:0x05ab  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x0670 A[ORIG_RETURN, RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:198:0x0671  */
-    /* JADX WARN: Removed duplicated region for block: B:218:0x0618  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x0652  */
-    /* JADX WARN: Removed duplicated region for block: B:227:0x062d  */
-    /* JADX WARN: Removed duplicated region for block: B:231:0x0578  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x0438  */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x0479  */
-    /* JADX WARN: Removed duplicated region for block: B:246:0x0458  */
-    /* JADX WARN: Removed duplicated region for block: B:247:0x0402  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x066b  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x03fb  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0412  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x04b3  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x04c4 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:133:0x04cc  */
+    /* JADX WARN: Removed duplicated region for block: B:135:0x04d6  */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0536  */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0517  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x0541  */
+    /* JADX WARN: Removed duplicated region for block: B:165:0x0563  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x056c  */
+    /* JADX WARN: Removed duplicated region for block: B:175:0x0588  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x05aa  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x066f A[ORIG_RETURN, RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:198:0x0670  */
+    /* JADX WARN: Removed duplicated region for block: B:218:0x0617  */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x0651  */
+    /* JADX WARN: Removed duplicated region for block: B:227:0x062c  */
+    /* JADX WARN: Removed duplicated region for block: B:231:0x0577  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0437  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x0478  */
+    /* JADX WARN: Removed duplicated region for block: B:246:0x0457  */
+    /* JADX WARN: Removed duplicated region for block: B:247:0x0401  */
+    /* JADX WARN: Removed duplicated region for block: B:274:0x066a  */
     /* JADX WARN: Removed duplicated region for block: B:275:0x02d6  */
     /* JADX WARN: Removed duplicated region for block: B:57:0x02c8  */
     /* JADX WARN: Removed duplicated region for block: B:62:0x02e8  */
@@ -730,7 +729,7 @@ public final class t extends FrameLayout implements n0 {
                 this.v = true;
                 s50 s50Var = this.G;
                 if (s50Var.t2.size() > 0) {
-                    this.n0 = (o0) i0.a.z(1, s50Var.t2);
+                    this.n0 = (o0) i2.d.A(1, s50Var.t2);
                 } else {
                     this.n0 = new o0();
                 }
@@ -1259,7 +1258,7 @@ public final class t extends FrameLayout implements n0 {
                 this.E0 = i10;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                 this.G0 = ofFloat;
-                ofFloat.addUpdateListener(new ee(this, i11, i10, i12, x02, 2));
+                ofFloat.addUpdateListener(new fe(this, i11, i10, i12, x02, 2));
                 this.G0.addListener(new gi.s2(this, i10, x02, 3));
                 this.G0.start();
                 return;
@@ -1307,7 +1306,7 @@ public final class t extends FrameLayout implements n0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onMeasure(int i10, int i11) {
-        float C;
+        float B;
         int dp;
         l lVar;
         float f7;
@@ -1362,8 +1361,8 @@ public final class t extends FrameLayout implements n0 {
             }
         } else if (this.h) {
             this.w0 = 1.0f;
-            int C2 = wh.C(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(C2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + C2, TLObject.FLAG_30));
+            int B2 = kk.B(14.0f, 2, Math.min(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11)));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(B2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + B2, TLObject.FLAG_30));
         } else if (this.H) {
             this.w0 = 1.0f;
             int i13 = 6;
@@ -1375,17 +1374,17 @@ public final class t extends FrameLayout implements n0 {
             } else if (s50.G3) {
                 dp = AndroidUtilities.dp(320.0f);
             } else {
-                C = wh.C(14.0f, 2, View.MeasureSpec.getSize(i10)) + (s50.F3 ? -AndroidUtilities.dp(90.0f) : 0);
-                float f11 = (this.I / i13) * C;
+                B = kk.B(14.0f, 2, View.MeasureSpec.getSize(i10)) + (s50.F3 ? -AndroidUtilities.dp(90.0f) : 0);
+                float f11 = (this.I / i13) * B;
                 lVar = this.e;
                 if (lVar == null) {
                     f7 = lVar.getItemHeight() - AndroidUtilities.dp(4.0f);
                     dp2 = AndroidUtilities.dp(4.0f);
                 } else {
                     if (s50.G3) {
-                        f7 = C / 2.0f;
+                        f7 = B / 2.0f;
                     } else {
-                        f7 = C / (s50.F3 ? 3 : 2);
+                        f7 = B / (s50.F3 ? 3 : 2);
                     }
                     dp2 = AndroidUtilities.dp(2.0f);
                 }
@@ -1396,8 +1395,8 @@ public final class t extends FrameLayout implements n0 {
                 layoutParams2.width = (int) (dp4 - (layoutParams2.leftMargin * 2));
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) f12, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) f7, TLObject.FLAG_30));
             }
-            C = dp;
-            float f112 = (this.I / i13) * C;
+            B = dp;
+            float f112 = (this.I / i13) * B;
             lVar = this.e;
             if (lVar == null) {
             }
@@ -1415,7 +1414,7 @@ public final class t extends FrameLayout implements n0 {
         int size3 = View.MeasureSpec.getSize(i11) + (View.MeasureSpec.getSize(i10) << 16);
         if (this.M != size3) {
             this.M = size3;
-            this.y.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(120.0f), 0, i0.b.o(-16777216, 120), Shader.TileMode.CLAMP));
+            this.y.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(120.0f), 0, i0.a.o(-16777216, 120), Shader.TileMode.CLAMP));
         }
         j5Var.setPivotX(0.0f);
         j5Var.setPivotY(j5Var.getMeasuredHeight() / 2.0f);

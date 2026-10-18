@@ -13,7 +13,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ex extends yx {
     public static final /* synthetic */ int H0 = 0;
@@ -63,7 +63,7 @@ public final class ex extends yx {
         TLRPC.TL_messages_reorderStickerSets tL_messages_reorderStickerSets = new TLRPC.TL_messages_reorderStickerSets();
         tL_messages_reorderStickerSets.masks = false;
         tL_messages_reorderStickerSets.emojis = false;
-        for (int i17 = tzVar.e0; i17 < arrayList.size(); i17 = com.google.android.gms.internal.cast.a6.h(((TLRPC.TL_messages_stickerSet) arrayList.get(i17)).set.id, tL_messages_reorderStickerSets.order, i17, 1)) {
+        for (int i17 = tzVar.e0; i17 < arrayList.size(); i17 = com.google.android.gms.internal.play_billing.k3.h(((TLRPC.TL_messages_stickerSet) arrayList.get(i17)).set.id, tL_messages_reorderStickerSets.order, i17, 1)) {
         }
         ConnectionsManager.getInstance(i15).sendRequest(tL_messages_reorderStickerSets, new ci.e6(13));
         NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersDidLoad, 0, Boolean.TRUE);

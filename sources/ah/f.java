@@ -24,9 +24,9 @@ import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Wallet.x2;
+import org.telegram.ui.Wallet.y2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     break;
                 }
             case 18:
-                ug.l1.f0(0, null);
+                ug.m1.f0(0, null);
                 break;
             case 19:
                 ArrayList arrayList = ExternalActionActivity.x;
@@ -143,7 +143,7 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     return;
                 }
             case 24:
-                int i18 = x2.R;
+                int i18 = y2.T;
                 break;
             case 25:
                 PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);

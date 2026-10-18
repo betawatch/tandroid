@@ -1,34 +1,76 @@
 package ai;
 
-import android.view.View;
+import android.content.Context;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import androidx.profileinstaller.ProfileInstallerInitializer;
+import java.util.Random;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class ra implements View.OnClickListener {
+public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
+    public final /* synthetic */ Context b;
 
-    public /* synthetic */ ra(org.telegram.ui.ActionBar.f3[] f3VarArr, int i10) {
+    public /* synthetic */ ra(Context context, int i10) {
         this.a = i10;
-        this.b = f3VarArr;
+        this.b = context;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b[0].dismiss();
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsTOSLink));
                 break;
             case 1:
-                org.telegram.ui.ActionBar.f3 f3Var = this.b[0];
-                if (f3Var != null) {
-                    f3Var.dismiss();
-                    break;
-                }
+                new o0(this.b).show();
+                break;
+            case 2:
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 3:
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 4:
+                pf.d.r(this.b, LocaleController.getString(R.string.PaidContentInfoLink));
+                break;
+            case 5:
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsSubscribeInfoLink));
+                break;
+            case 6:
+                pf.d.r(this.b, LocaleController.getString(R.string.StarsReactionTermsLink));
+                break;
+            case 7:
+                new o0(this.b).show();
+                break;
+            case 8:
+                pf.d.r(this.b, LocaleController.getString(R.string.ChannelAffiliateProgramJoinButtonInfoLink));
+                break;
+            case 9:
+                (Build.VERSION.SDK_INT >= 28 ? r4.h.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new ra(this.b, 10), new Random().nextInt(Math.max(MediaDataController.MAX_STYLE_RUNS_COUNT, 1)) + 5000);
+                break;
+            case 10:
+                new ThreadPoolExecutor(0, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue()).execute(new ra(this.b, 11));
+                break;
+            case 11:
+                r4.e.s(this.b, new a3.b(2), r4.e.a, false);
                 break;
             default:
-                this.b[0].dismiss();
+                new o0(this.b).show();
                 break;
         }
+    }
+
+    public /* synthetic */ ra(ProfileInstallerInitializer profileInstallerInitializer, Context context) {
+        this.a = 9;
+        this.b = context;
     }
 }

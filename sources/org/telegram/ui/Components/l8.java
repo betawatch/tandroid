@@ -6,7 +6,7 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class l8 {
     public float f;
@@ -144,8 +144,8 @@ public final class l8 {
             cqVar4.a(f7, f10, canvas, paint);
             canvas.restore();
             canvas.rotate(60.0f, f7, f10);
-            float x10 = com.google.android.gms.internal.cast.a6.x(1.0f, this.f, 0.04f, 1.0f);
-            canvas.scale(x10, x10, f7, f10);
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, this.f, 0.04f, 1.0f);
+            canvas.scale(y3, y3, f7, f10);
             cqVarArr[z11 ? 1 : 0].a(f7, f10, canvas, paint);
             canvas.restore();
         }
@@ -213,7 +213,7 @@ public final class l8 {
                 }
                 float f13 = f12 / 6.0f;
                 if (f13 > 0.52f) {
-                    f11 = com.google.android.gms.internal.cast.a6.D(f13, 0.4f, f10, f11);
+                    f11 = com.google.android.gms.internal.play_billing.k3.D(f13, 0.4f, f10, f11);
                 }
             }
             while (true) {

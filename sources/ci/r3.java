@@ -23,7 +23,7 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.qy;
 import org.telegram.ui.xu0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class r3 extends w {
     public final org.telegram.ui.Components.f6 d;
@@ -409,7 +409,7 @@ public final class r3 extends w {
         n4 n4Var2 = this.v;
         if (z13) {
             f7 = 1.0f;
-            canvas2.drawColor(i0.b.f(0.2f, -16777216, -1));
+            canvas2.drawColor(i0.a.f(0.2f, -16777216, -1));
         } else {
             f7 = 1.0f;
             if (((org.telegram.ui.o4) p4Var.e) != null || (n3Var != null && (((c9Var = n3Var.b) != null && (c9Var.w || c9Var.s)) || n3Var.y.i))) {
@@ -434,7 +434,7 @@ public final class r3 extends w {
                     invalidate();
                 }
                 if (o4Var.d) {
-                    canvas2.drawColor(i0.b.f(0.2f, -16777216, -1));
+                    canvas2.drawColor(i0.a.f(0.2f, -16777216, -1));
                 } else {
                     if (!g3Var.hasBitmapImage()) {
                         n4Var2.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight() + 1);
@@ -589,13 +589,13 @@ public final class r3 extends w {
                     super.dispatchDraw(canvas);
                     this.r = r15;
                     b(canvas);
-                    paint.setColor(i0.b.o(-16777216, (int) (153.0f * d * hideInterfaceAlpha)));
+                    paint.setColor(i0.a.o(-16777216, (int) (153.0f * d * hideInterfaceAlpha)));
                     canvas2.drawPaint(paint);
                 }
                 if (d < f7 && !o4Var.f) {
                     canvas2.save();
                     float f21 = f7 - d;
-                    paint.setColor(i0.b.o(-16777216, (int) (129.03f * f21 * hideInterfaceAlpha)));
+                    paint.setColor(i0.a.o(-16777216, (int) (129.03f * f21 * hideInterfaceAlpha)));
                     drawable2.setAlpha((int) (f21 * 255.0f * hideInterfaceAlpha));
                     drawable2.setBounds(r15, top, getMeasuredWidth(), i11);
                     drawable2.draw(canvas2);

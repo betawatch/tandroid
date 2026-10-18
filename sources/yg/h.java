@@ -26,7 +26,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
@@ -39,7 +39,7 @@ import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.v30;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class h extends ScrollView {
     public final Paint E;
@@ -335,8 +335,8 @@ public abstract class h extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = q.C(20.0f, this.H, rect.top);
-        rect.bottom = q.C(50.0f, this.H, rect.bottom);
+        rect.top = g0.C(20.0f, this.H, rect.top);
+        rect.bottom = g0.C(50.0f, this.H, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

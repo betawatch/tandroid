@@ -1,6 +1,6 @@
 package v7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class u6 {
     public static String a(int i10, int i11, String str) {
@@ -10,7 +10,7 @@ public abstract class u6 {
         if (i11 >= 0) {
             return v6.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(i0.a.j(i11, "negative size: "));
+        throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
     }
 
     public static void b(int i10, String str, boolean z10) {
@@ -68,7 +68,7 @@ public abstract class u6 {
                 a2 = v6.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(i0.a.j(i11, "negative size: "));
+                    throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
                 }
                 a2 = v6.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -76,8 +76,8 @@ public abstract class u6 {
         }
     }
 
-    public static void k(i2.v0 v0Var) {
-        v0Var.getClass();
+    public static void k(i2.w0 w0Var) {
+        w0Var.getClass();
     }
 
     public static void l(Object obj, String str) {

@@ -13,7 +13,7 @@ import td.l;
 import td.p;
 import v7.c0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -60,7 +60,7 @@ public abstract class d {
             return false;
         }
         kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
-        pVar2.a = new w0.c(i0.a.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        pVar2.a = new w0.c(i2.d.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
         if (i10 == 0) {
             pVar2.a = new w0.b("activity is cancelled by the user.");
         }

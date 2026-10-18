@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r70 extends hm0 {
     public ArrayList c = new ArrayList();
@@ -175,7 +175,7 @@ public final class r70 extends hm0 {
         if (i10 == 1) {
             view = new org.telegram.ui.Cells.f4(1, 0, context, false);
         } else if (i10 == 2) {
-            view = new ai.hc(this, context, 20);
+            view = new ai.ic(this, context, 20);
         } else if (i10 != 4) {
             org.telegram.ui.Cells.e4 e4Var = new org.telegram.ui.Cells.e4(context);
             e4Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.e7, false));
@@ -184,7 +184,7 @@ public final class r70 extends hm0 {
             drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Zh, false), PorterDuff.Mode.MULTIPLY));
             TextView textView = new TextView(e4Var.getContext());
             e4Var.b = textView;
-            com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView);
+            com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
             textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ai, false));
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             e4Var.addView(textView, w7.z5.a(-1.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));

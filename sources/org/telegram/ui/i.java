@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
     public final /* synthetic */ int a;
@@ -243,18 +243,18 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
             mx0Var.presentFragment(n60Var);
             return;
         }
-        bv bvVar = new bv(null);
-        bvVar.d = new Paint();
-        bvVar.f = new av[2];
-        bvVar.w = true;
+        cv cvVar = new cv(null);
+        cvVar.d = new Paint();
+        cvVar.f = new bv[2];
+        cvVar.w = true;
         Bundle bundle2 = new Bundle();
         bundle2.putBoolean("onlySelect", true);
         bundle2.putBoolean("checkCanWrite", false);
         bundle2.putBoolean("resetDelegate", false);
         bundle2.putInt("dialogsType", 9);
         ey eyVar = new ey(bundle2);
-        bvVar.a = eyVar;
-        eyVar.C2 = new yu(bvVar);
+        cvVar.a = eyVar;
+        eyVar.C2 = new yu(cvVar);
         eyVar.onFragmentCreate();
         Bundle bundle3 = new Bundle();
         bundle3.putBoolean("onlyUsers", true);
@@ -265,10 +265,10 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
         bundle3.putBoolean("resetDelegate", false);
         bundle3.putBoolean("allowSelf", false);
         ContactsActivity contactsActivity = new ContactsActivity(bundle3);
-        bvVar.b = contactsActivity;
-        contactsActivity.W = new yu(bvVar);
+        cvVar.b = contactsActivity;
+        contactsActivity.W = new yu(cvVar);
         contactsActivity.onFragmentCreate();
-        mx0Var.presentFragment(bvVar);
+        mx0Var.presentFragment(cvVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -397,7 +397,7 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                 if (view.getLeft() < AndroidUtilities.dp(24.0f) + ua1Var.getPaddingLeft()) {
                     ua1Var.v0(-((AndroidUtilities.dp(48.0f) + ua1Var.getPaddingLeft()) - view.getLeft()), 0, null);
                 } else if (view.getWidth() + view.getLeft() > (ua1Var.getMeasuredWidth() - ua1Var.getPaddingRight()) - AndroidUtilities.dp(24.0f)) {
-                    ua1Var.v0(org.telegram.messenger.q.A(48.0f, ua1Var.getMeasuredWidth() - ua1Var.getPaddingRight(), view.getWidth() + view.getLeft()), 0, null);
+                    ua1Var.v0(org.telegram.messenger.g0.A(48.0f, ua1Var.getMeasuredWidth() - ua1Var.getPaddingRight(), view.getWidth() + view.getLeft()), 0, null);
                 }
                 Utilities.Callback callback = bdVar.r;
                 if (callback != null) {
@@ -664,7 +664,7 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                         a02 = org.telegram.ui.Components.xc.a0(p00Var);
                         i11 = R.string.FilterInviteErrorExcluded;
                     }
-                    org.telegram.messenger.wh.q(i11, a02, null);
+                    org.telegram.messenger.kk.q(i11, a02, null);
                     return;
                 }
                 return;
@@ -900,47 +900,47 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                 PasscodeActivity.V((PasscodeActivity) this.b, view, i10);
                 return;
             case 21:
-                ip0 ip0Var = (ip0) this.b;
-                ip0Var.a(i10, true);
-                vo0 vo0Var = ip0Var.h;
-                if (vo0Var != null) {
-                    vo0Var.run(Integer.valueOf(i10));
+                jp0 jp0Var = (jp0) this.b;
+                jp0Var.a(i10, true);
+                wo0 wo0Var = jp0Var.h;
+                if (wo0Var != null) {
+                    wo0Var.run(Integer.valueOf(i10));
                     return;
                 }
                 return;
             case 22:
-                kq0 kq0Var = (kq0) this.b;
-                ArrayList<MediaController.PhotoEntry> arrayList7 = kq0Var.f;
-                ArrayList arrayList8 = kq0Var.n;
-                MediaController.AlbumEntry albumEntry = kq0Var.J;
+                lq0 lq0Var = (lq0) this.b;
+                ArrayList<MediaController.PhotoEntry> arrayList7 = lq0Var.f;
+                ArrayList arrayList8 = lq0Var.n;
+                MediaController.AlbumEntry albumEntry = lq0Var.J;
                 if (albumEntry == null && arrayList7.isEmpty()) {
                     if (i10 < arrayList8.size()) {
                         String str = (String) arrayList8.get(i10);
-                        oq0 oq0Var = kq0Var.t0;
-                        if (oq0Var == null) {
-                            kq0Var.P.getSearchField().setText(str);
-                            kq0Var.P.getSearchField().setSelection(str.length());
-                            kq0Var.b0(kq0Var.P.getSearchField());
+                        pq0 pq0Var = lq0Var.t0;
+                        if (pq0Var == null) {
+                            lq0Var.P.getSearchField().setText(str);
+                            lq0Var.P.getSearchField().setSelection(str.length());
+                            lq0Var.b0(lq0Var.P.getSearchField());
                             return;
                         } else {
-                            switch (oq0Var.a) {
+                            switch (pq0Var.a) {
                                 case 0:
-                                    pq0.h0(oq0Var.b, str);
+                                    qq0.h0(pq0Var.b, str);
                                     return;
                                 default:
-                                    pq0.h0(oq0Var.b, str);
+                                    qq0.h0(pq0Var.b, str);
                                     return;
                             }
                         }
                     }
                     if (i10 == arrayList8.size() + 1) {
-                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(kq0Var.getParentActivity());
+                        AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(lq0Var.getParentActivity());
                         alertDialog$Builder5.a.R = LocaleController.getString(R.string.ClearSearchAlertTitle);
                         alertDialog$Builder5.a.T = LocaleController.getString(R.string.ClearSearchAlert);
-                        alertDialog$Builder5.k(LocaleController.getString(R.string.ClearButton), new xp0(kq0Var, i14));
+                        alertDialog$Builder5.k(LocaleController.getString(R.string.ClearButton), new yp0(lq0Var, i14));
                         alertDialog$Builder5.h(LocaleController.getString(R.string.Cancel), null);
                         org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder5.a;
-                        kq0Var.showDialog(b2Var3);
+                        lq0Var.showDialog(b2Var3);
                         TextView textView3 = (TextView) b2Var3.d(-1);
                         if (textView3 != null) {
                             textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false));
@@ -956,31 +956,31 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                 if (i10 < 0 || i10 >= arrayList7.size()) {
                     return;
                 }
-                org.telegram.ui.ActionBar.u0 u0Var = kq0Var.P;
+                org.telegram.ui.ActionBar.u0 u0Var = lq0Var.P;
                 if (u0Var != null) {
                     AndroidUtilities.hideKeyboard(u0Var.getSearchField());
                 }
-                if (kq0Var.Y) {
-                    kq0Var.a0(view, arrayList7.get(i10));
+                if (lq0Var.Y) {
+                    lq0Var.a0(view, arrayList7.get(i10));
                     return;
                 }
-                int i25 = kq0Var.T;
+                int i25 = lq0Var.T;
                 if (i25 != 1 && i25 != 3) {
                     if (i25 != 2) {
                         r10 = 10;
                         if (i25 != 10) {
-                            i15 = kq0Var.U == null ? 4 : 0;
+                            i15 = lq0Var.U == null ? 4 : 0;
                         }
                     }
                     i15 = r10;
                 }
-                PhotoViewer.t1().K2(null, kq0Var, null);
+                PhotoViewer.t1().K2(null, lq0Var, null);
                 PhotoViewer t12 = PhotoViewer.t1();
-                int i26 = kq0Var.H;
-                boolean z18 = kq0Var.I;
+                int i26 = lq0Var.H;
+                boolean z18 = lq0Var.I;
                 t12.h = i26;
                 t12.n = z18;
-                PhotoViewer.t1().g2(arrayList7, i10, i15, kq0Var.l0, kq0Var.x0, kq0Var.U);
+                PhotoViewer.t1().g2(arrayList7, i10, i15, lq0Var.l0, lq0Var.x0, lq0Var.U);
                 return;
             case 23:
                 PhotoViewer photoViewer = (PhotoViewer) this.b;

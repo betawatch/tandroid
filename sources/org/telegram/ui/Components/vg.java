@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class vg extends View implements h80 {
     public boolean E;
@@ -237,7 +237,7 @@ public abstract class vg extends View implements h80 {
     public abstract boolean f();
 
     public final void g(int i10, boolean z10) {
-        this.c0.t(i10 > 0 ? i0.a.j(i10, "") : "", z10, true);
+        this.c0.t(i10 > 0 ? i2.d.j(i10, "") : "", z10, true);
         invalidate();
     }
 
@@ -280,7 +280,7 @@ public abstract class vg extends View implements h80 {
         this.s = i10;
         p6 p6Var = this.w;
         if (j10 > 0) {
-            p6Var.t(ai.ld.W0(false, org.telegram.messenger.q.h(j10 * Math.max(1, this.s), ',', new StringBuilder("⭐️")), this.O), z10, true);
+            p6Var.t(ai.md.W0(false, org.telegram.messenger.g0.h(j10 * Math.max(1, this.s), ',', new StringBuilder("⭐️")), this.O), z10, true);
         } else {
             p6Var.t("", z10, true);
         }
@@ -315,7 +315,7 @@ public abstract class vg extends View implements h80 {
         } else if (j()) {
             paint.setColor(getFillColor());
         } else {
-            paint.setColor(i0.b.o(-1, 75));
+            paint.setColor(i0.a.o(-1, 75));
         }
     }
 
@@ -378,7 +378,7 @@ public abstract class vg extends View implements h80 {
             w9 = Math.round((rectF.right - (rectF.height() / 2.0f)) - (drawable.getIntrinsicWidth() / 2.0f));
             measuredHeight = Math.round(((rectF.height() / 2.0f) + rectF.top) - (drawable.getIntrinsicHeight() / 2.0f));
         } else {
-            w9 = org.telegram.ui.Cells.t0.w(2, getMeasuredWidth() - (getMeasuredHeight() / 2), drawable);
+            w9 = org.telegram.ui.Cells.c1.w(2, getMeasuredWidth() - (getMeasuredHeight() / 2), drawable);
             measuredHeight = (getMeasuredHeight() - drawable.getIntrinsicHeight()) / 2;
             if (d()) {
                 measuredHeight -= AndroidUtilities.dp(1.0f);

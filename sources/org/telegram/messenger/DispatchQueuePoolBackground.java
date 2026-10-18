@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class DispatchQueuePoolBackground {
     public static final String THREAD_PREFIX = "DispatchQueuePoolThreadSafety_";
@@ -153,7 +153,7 @@ public class DispatchQueuePoolBackground {
         if (updateTaskCollection == null) {
             ArrayList<ArrayList<Runnable>> arrayList = freeCollections;
             if (!arrayList.isEmpty()) {
-                updateTaskCollection = (ArrayList) i0.a.z(1, arrayList);
+                updateTaskCollection = (ArrayList) i2.d.A(1, arrayList);
             } else {
                 updateTaskCollection = new ArrayList<>(100);
             }

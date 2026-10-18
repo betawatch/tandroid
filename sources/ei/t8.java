@@ -12,12 +12,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.wl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class t8 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final int b;
@@ -65,14 +65,14 @@ public final class t8 extends org.telegram.ui.ActionBar.f3 implements Notificati
                 org.telegram.ui.ActionBar.d6 d6Var2 = d6Var;
                 org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context2, 3, d6Var2);
                 b2Var.q(200L);
-                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new ai.w3(b2Var, callback2, inputPeer2, 6), true, d6Var2);
+                MessagesController.getInstance(i10).getStoriesController().k(DialogObject.getPeerDialogId(inputPeer2), new ai.w3(b2Var, callback2, inputPeer2, 5), true, d6Var2);
                 t8Var.dismiss();
             }
         });
         im0Var.setOnScrollListener(new r8(this));
         TextView textView = new TextView(getContext());
         this.n = textView;
-        wh.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 20.0f);
+        kk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 20.0f);
         textView.setPadding(AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(22.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
         textView.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
         textView.setTypeface(AndroidUtilities.bold());

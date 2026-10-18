@@ -11,7 +11,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class g implements GLSurfaceView.Renderer {
     public final int D;
@@ -77,10 +77,10 @@ public class g implements GLSurfaceView.Renderer {
     public final void b() {
         int i10 = h6.h5;
         boolean z10 = false;
-        this.w = i0.b.h(h6.x0(null, i10, false)) < 0.5d;
-        this.x = i0.b.f(this.l, h6.x0(null, this.z, false), h6.x0(null, this.B, false));
-        this.y = i0.b.f(this.l, h6.x0(null, this.A, false), h6.x0(null, this.C, false));
-        if (this.D == 1 && i0.b.h(h6.x0(null, i10, false)) < 0.5d) {
+        this.w = i0.a.h(h6.x0(null, i10, false)) < 0.5d;
+        this.x = i0.a.f(this.l, h6.x0(null, this.z, false), h6.x0(null, this.B, false));
+        this.y = i0.a.f(this.l, h6.x0(null, this.A, false), h6.x0(null, this.C, false));
+        if (this.D == 1 && i0.a.h(h6.x0(null, i10, false)) < 0.5d) {
             z10 = true;
         }
         this.F = z10;

@@ -1,6 +1,6 @@
 package org.telegram.ui.Cells;
 
-import ai.ud;
+import ai.vd;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.PorterDuff;
@@ -26,7 +26,7 @@ import org.telegram.ui.Components.fr;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m4 extends FrameLayout {
     public boolean E;
@@ -36,7 +36,7 @@ public final class m4 extends FrameLayout {
     public sg.z0 I;
     public Drawable J;
     public final org.telegram.ui.Components.w9 a;
-    public final ud b;
+    public final vd b;
     public final org.telegram.ui.Components.h9 c;
     public int d;
     public TLRPC.User e;
@@ -64,16 +64,16 @@ public final class m4 extends FrameLayout {
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(27.0f));
         addView(w9Var, w7.z5.a(54.0f, 0.0f, 7.0f, 0.0f, 0.0f, 54, 49));
-        ud udVar = new ud(context, 6);
-        this.b = udVar;
-        NotificationCenter.listenEmojiLoading(udVar);
-        udVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        udVar.setTextSize(1, 12.0f);
-        udVar.setMaxLines(1);
-        udVar.setGravity(49);
-        udVar.setLines(1);
-        udVar.setEllipsize(TextUtils.TruncateAt.END);
-        addView(udVar, w7.z5.a(-2.0f, 6.0f, 64.0f, 6.0f, 0.0f, -1, 51));
+        vd vdVar = new vd(context, 6);
+        this.b = vdVar;
+        NotificationCenter.listenEmojiLoading(vdVar);
+        vdVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        vdVar.setTextSize(1, 12.0f);
+        vdVar.setMaxLines(1);
+        vdVar.setGravity(49);
+        vdVar.setLines(1);
+        vdVar.setEllipsize(TextUtils.TruncateAt.END);
+        addView(vdVar, w7.z5.a(-2.0f, 6.0f, 64.0f, 6.0f, 0.0f, -1, 51));
         gr grVar = new gr(context, d6Var);
         this.s = grVar;
         addView(grVar, w7.z5.a(28.0f, 0.0f, 4.0f, 0.0f, 0.0f, -1, 48));
@@ -106,27 +106,27 @@ public final class m4 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = this.a;
         org.telegram.ui.Components.h9 h9Var = this.c;
         int i10 = this.h;
-        ud udVar = this.b;
+        vd vdVar = this.b;
         if (isUserDialog) {
             TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
             this.e = user;
             if (str != null) {
-                udVar.setText(str);
+                vdVar.setText(str);
             } else if (user != null) {
-                udVar.setText(UserObject.getFirstName(user));
+                vdVar.setText(UserObject.getFirstName(user));
             } else {
-                udVar.setText("");
+                vdVar.setText("");
             }
             h9Var.m(i10, this.e);
             w9Var.e(this.e, h9Var);
         } else {
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
             if (str != null) {
-                udVar.setText(str);
+                vdVar.setText(str);
             } else if (chat != null) {
-                udVar.setText(chat.title);
+                vdVar.setText(chat.title);
             } else {
-                udVar.setText("");
+                vdVar.setText("");
             }
             h9Var.k(i10, chat);
             this.e = null;

@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class od extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50 {
     public String E;
@@ -168,7 +168,7 @@ public final class od extends org.telegram.ui.ActionBar.n2 implements Notificati
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("RevokeLinkAlertChannel", R.string.RevokeLinkAlertChannel, MessagesController.getInstance(odVar.currentAccount).linkPrefix + "/" + ChatObject.getPublicUsername(currentChannel), currentChannel.title));
         }
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new m4.y0(9, odVar, currentChannel));
+        alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new m4.w0(10, odVar, currentChannel));
         odVar.showDialog(b2Var);
     }
 
@@ -447,7 +447,7 @@ public final class od extends org.telegram.ui.ActionBar.n2 implements Notificati
             if (bool == null || !bool.booleanValue()) {
                 odVar.F.addView(odVar.R, w7.z5.n(-1, -2));
             }
-            org.telegram.ui.Cells.z6 z6Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+            org.telegram.ui.Cells.z6 z6Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
             odVar.d = z6Var;
             odVar.K.addView(z6Var, w7.z5.n(-1, -2));
             LinearLayout linearLayout4 = new LinearLayout(context);

@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t5 extends pg.b {
     public final /* synthetic */ z5 d;
@@ -155,17 +155,17 @@ public final class t5 extends pg.b {
         switch (i10) {
             case 0:
                 view = new l91(z5Var.getParentActivity(), 2);
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 1:
             case 16:
                 lg.c cVar = new lg.c(z5Var.getParentActivity(), null);
                 cVar.setPadding(cVar.getPaddingLeft(), AndroidUtilities.dp(16.0f), cVar.getRight(), AndroidUtilities.dp(16.0f));
                 view = cVar;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 2:
                 z6Var = new org.telegram.ui.Cells.z6(viewGroup.getContext(), 0, 0);
                 view = z6Var;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 3:
                 org.telegram.ui.Components.q90 q90Var = new org.telegram.ui.Components.q90(z5Var.getParentActivity(), z5Var, null, false, false);
                 q90Var.d.setVisibility(8);
@@ -174,35 +174,35 @@ public final class t5 extends pg.b {
                 q90Var.v.setVisibility(8);
                 q90Var.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), AndroidUtilities.dp(24.0f));
                 view = q90Var;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 4:
             default:
                 throw new UnsupportedOperationException();
             case 5:
                 view = new zg.b(z5Var.getParentActivity());
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 6:
                 Context context = viewGroup.getContext();
                 d6Var = ((org.telegram.ui.ActionBar.n2) z5Var).resourceProvider;
                 z6Var = new org.telegram.ui.Cells.d9(context, 20, d6Var);
                 view = z6Var;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 7:
                 view = new org.telegram.ui.Cells.s3(z5Var.getParentActivity(), 8);
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 8:
                 ci.i4 i4Var = new ci.i4(z5Var.getParentActivity(), 7);
                 TextView textView = new TextView(z5Var.getParentActivity());
-                org.telegram.messenger.wh.j(14.0f, ChatObject.isChannelAndNotMegaGroup(z5Var.g0) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
-                com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
+                org.telegram.messenger.kk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(z5Var.g0) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
+                com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
                 i4Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 16.0f, 0.0f, 0.0f, -1, 0));
                 view = i4Var;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 9:
                 s5 s5Var = new s5(z5Var.getParentActivity(), 0);
                 s5Var.a(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
                 view = s5Var;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 10:
                 org.telegram.ui.Cells.q8 q8Var = new org.telegram.ui.Cells.q8(z5Var.getParentActivity());
                 q8Var.m(R.drawable.msg_gift_premium, LocaleController.formatString(R.string.BoostingGetBoostsViaGifts, new Object[0]), false);
@@ -210,15 +210,15 @@ public final class t5 extends pg.b {
                 int i11 = org.telegram.ui.ActionBar.h6.q6;
                 q8Var.e(i11, i11);
                 view = q8Var;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 11:
                 view = new zg.c(z5Var.getParentActivity());
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 12:
                 lg.c cVar2 = new lg.c(z5Var.getParentActivity(), null);
                 cVar2.setPadding(cVar2.getPaddingLeft(), AndroidUtilities.dp(16.0f), cVar2.getRight(), AndroidUtilities.dp(8.0f));
                 view = cVar2;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 13:
                 Activity parentActivity = z5Var.getParentActivity();
                 d6Var2 = ((org.telegram.ui.ActionBar.n2) z5Var).resourceProvider;
@@ -233,15 +233,15 @@ public final class t5 extends pg.b {
                 z5Var.T.setDelegate(new g(this, 6));
                 vVar.addView(z5Var.T, w7.z5.d(48.0f, -2));
                 view = vVar;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 14:
                 view = z5Var.r0(z5Var.getParentActivity());
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 15:
-                ai.hc hcVar = new ai.hc(this, z5Var.getParentActivity(), 10);
-                hcVar.setTag(-33024);
-                view = hcVar;
-                return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                ai.ic icVar = new ai.ic(this, z5Var.getParentActivity(), 10);
+                icVar.setTag(-33024);
+                view = icVar;
+                return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
         }
     }
 }

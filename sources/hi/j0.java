@@ -6,14 +6,14 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.a71;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class j0 extends h0 {
     public final /* synthetic */ k0 h;
@@ -55,12 +55,12 @@ public final class j0 extends h0 {
         this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
         this.a.setActionBarMenuOnItemClick(new ah.s(this, 10));
         this.c.addView(this.a, z5.e(-1, 56, 48));
-        LinearLayout e = wh.e(context, 0);
+        LinearLayout e = kk.e(context, 0);
         e.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(12.0f));
         d6Var3 = ((f3) k0Var).resourcesProvider;
         ei.d dVar = new ei.d(context, d6Var3, true);
         dVar.d();
-        dVar.setColor(i0.b.f(0.125f, k0Var.getThemedColor(h6.d6), k0Var.getThemedColor(i12)));
+        dVar.setColor(i0.a.f(0.125f, k0Var.getThemedColor(h6.d6), k0Var.getThemedColor(i12)));
         dVar.setText(LocaleController.getString(R.string.CommunityPendingRequestDeclineAll));
         dVar.e();
         final int i13 = 0;

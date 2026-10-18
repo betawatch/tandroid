@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e11 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class e11 implements ValueAnimator.AnimatorUpdateLi
             case 1:
                 u11 u11Var = (u11) this.b;
                 u11Var.y = AndroidUtilities.lerp(u11Var.E, valueAnimator.getAnimatedFraction());
-                u11Var.h.setTextColor(i0.b.f(u11Var.y, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q6, false)));
+                u11Var.h.setTextColor(i0.a.f(u11Var.y, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q6, false)));
                 u11Var.r.setAlpha((u11Var.y / 2.0f) + 0.5f);
                 break;
             case 2:

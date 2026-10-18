@@ -1,39 +1,16 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class c5 extends e61 {
-    public static final /* synthetic */ int a = 0;
+public final class c5 extends CharacterStyle implements UpdateAppearance {
+    public int a;
 
-    static {
-        e61.setup(new c5());
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
-        ((d5) view).a(f61Var.l, f61Var.m, f61Var.k);
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new d5(context, d6Var);
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final boolean isClickable() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final boolean isShadow() {
-        return true;
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setColor(this.a);
     }
 }

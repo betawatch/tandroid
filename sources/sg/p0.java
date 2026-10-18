@@ -13,7 +13,7 @@ import ci.v4;
 import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.aa0;
@@ -30,7 +30,7 @@ import rg.n2;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class p0 extends FrameLayout implements aa0 {
     public boolean E;
@@ -281,7 +281,7 @@ public class p0 extends FrameLayout implements aa0 {
         hVar.n = 1.2f;
         hVar.k = false;
         hVar.m = 4.0f;
-        LinearLayout e = wh.e(context, 0);
+        LinearLayout e = kk.e(context, 0);
         o0 o0Var = new o0(this, context, 0);
         this.d = o0Var;
         o0Var.b(0.35f, 350L, bs.h);
@@ -296,12 +296,12 @@ public class p0 extends FrameLayout implements aa0 {
         n2 n2Var = new n2(this, context, 2);
         this.r = n2Var;
         n2Var.addView(e, z5.e(-2, -2, 17));
-        int o10 = i0.b.o(-1, 120);
+        int o10 = i0.a.o(-1, 120);
         n2Var.setBackground(h6.j0(i10, i10, i10, i10, 0, o10, o10));
         e.addView(o0Var, z5.q(-2, -2, 16));
         e.addView(xj0Var, z5.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(n2Var);
-        setOutlineProvider(zf.i0.b);
+        setOutlineProvider(zf.j0.b);
         setClipToOutline(true);
         b6.b(this, 0.02f, 1.2f);
         if (z10) {
@@ -314,7 +314,7 @@ public class p0 extends FrameLayout implements aa0 {
             o0Var2.setTypeface(AndroidUtilities.bold());
             o0Var2.getDrawable().J = true;
             int dp = AndroidUtilities.dp(8.0f);
-            int o11 = i0.b.o(-1, 120);
+            int o11 = i0.a.o(-1, 120);
             o0Var2.setBackground(h6.j0(dp, dp, dp, dp, 0, o11, o11));
             addView(o0Var2);
             paint.setColor(h6.w0(h6.Oh, d6Var));

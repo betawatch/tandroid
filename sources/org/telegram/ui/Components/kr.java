@@ -10,14 +10,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kr implements Runnable {
     public final /* synthetic */ e2 E;
     public final /* synthetic */ org.telegram.ui.ActionBar.f3 F;
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ int[] b;
-    public final /* synthetic */ ai.bb c;
+    public final /* synthetic */ ai.cb c;
     public final /* synthetic */ String[] d;
     public final /* synthetic */ ei.d e;
     public final /* synthetic */ org.telegram.ui.Cells.i3 f;
@@ -30,10 +30,10 @@ public final /* synthetic */ class kr implements Runnable {
     public final /* synthetic */ int[] x;
     public final /* synthetic */ int y;
 
-    public /* synthetic */ kr(boolean[] zArr, int[] iArr, ai.bb bbVar, String[] strArr, ei.d dVar, org.telegram.ui.Cells.i3 i3Var, TreeSet treeSet, lg lgVar, org.telegram.ui.Cells.d9 d9Var, org.telegram.ui.ActionBar.d6 d6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i10, e2 e2Var, org.telegram.ui.ActionBar.f3 f3Var) {
+    public /* synthetic */ kr(boolean[] zArr, int[] iArr, ai.cb cbVar, String[] strArr, ei.d dVar, org.telegram.ui.Cells.i3 i3Var, TreeSet treeSet, lg lgVar, org.telegram.ui.Cells.d9 d9Var, org.telegram.ui.ActionBar.d6 d6Var, int[] iArr2, Runnable[] runnableArr, int[] iArr3, int i10, e2 e2Var, org.telegram.ui.ActionBar.f3 f3Var) {
         this.a = zArr;
         this.b = iArr;
-        this.c = bbVar;
+        this.c = cbVar;
         this.d = strArr;
         this.e = dVar;
         this.f = i3Var;
@@ -154,7 +154,7 @@ public final /* synthetic */ class kr implements Runnable {
                             return;
                         }
                         dVar3.setEnabled(true);
-                        org.telegram.ui.Cells.t0.t(f3Var2.topBulletinContainer, d6Var3, tL_error, false);
+                        org.telegram.ui.Cells.c1.t(f3Var2.topBulletinContainer, d6Var3, tL_error, false);
                     }
                 });
             }

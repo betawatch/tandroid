@@ -20,7 +20,7 @@ import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.m11;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class d4 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -1316,7 +1316,7 @@ public abstract class d4 {
                                 sb3.append(str2);
                                 arrayList.add(Boolean.valueOf(z14));
                             }
-                            if (!arrayList.isEmpty() && ((Boolean) i0.a.h(1, arrayList)).booleanValue() != z14) {
+                            if (!arrayList.isEmpty() && ((Boolean) i2.d.h(1, arrayList)).booleanValue() != z14) {
                                 eVar2.c(sb3);
                                 sb3.append(z14 ? "<ol>" : "<ul>");
                                 arrayList.add(Boolean.valueOf(z14));
@@ -2546,7 +2546,7 @@ public abstract class d4 {
                             if (arrayList3.isEmpty()) {
                                 arrayList2.add(c4Var);
                             } else {
-                                ((c4) i0.a.h(1, arrayList3)).e.add(c4Var);
+                                ((c4) i2.d.h(1, arrayList3)).e.add(c4Var);
                             }
                         }
                     } else if (str.startsWith("<!--", i12)) {
@@ -2582,7 +2582,7 @@ public abstract class d4 {
                             indexOf = i13 + 1;
                             boolean endsWith = substring2.endsWith("/");
                             if (endsWith) {
-                                substring2 = com.google.android.gms.internal.cast.a6.j(1, 0, substring2);
+                                substring2 = com.google.android.gms.internal.play_billing.k3.j(1, 0, substring2);
                             }
                             String trim = substring2.trim();
                             c4 c4Var2 = null;
@@ -2661,7 +2661,7 @@ public abstract class d4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(c4Var2);
                                 } else {
-                                    ((c4) i0.a.h(1, arrayList3)).e.add(c4Var2);
+                                    ((c4) i2.d.h(1, arrayList3)).e.add(c4Var2);
                                 }
                                 if (!endsWith) {
                                     String str3 = c4Var2.a;
@@ -2739,7 +2739,7 @@ public abstract class d4 {
                                 if (arrayList3.isEmpty()) {
                                     arrayList2.add(c4Var3);
                                 } else {
-                                    ((c4) i0.a.h(1, arrayList3)).e.add(c4Var3);
+                                    ((c4) i2.d.h(1, arrayList3)).e.add(c4Var3);
                                 }
                             }
                         }

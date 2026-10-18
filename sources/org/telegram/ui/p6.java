@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p6 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class p6 implements Utilities.Callback2 {
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj3;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
                 final Long l4 = (Long) obj2;
-                Utilities.doCallbacks(new ci.z2(eyVar, l4, odVar, n2Var, 11), new z(eyVar, b2Var, l4, 7), new Utilities.Callback() { // from class: org.telegram.ui.nv
+                Utilities.doCallbacks(new ci.z2(eyVar, l4, odVar, n2Var, 11), new z(eyVar, b2Var, l4, 7), new Utilities.Callback() { // from class: org.telegram.ui.ov
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj6) {
                         switch (i12) {
@@ -95,7 +95,7 @@ public final /* synthetic */ class p6 implements Utilities.Callback2 {
                                 }
                         }
                     }
-                }, new Utilities.Callback() { // from class: org.telegram.ui.nv
+                }, new Utilities.Callback() { // from class: org.telegram.ui.ov
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj6) {
                         switch (i11) {
@@ -129,7 +129,7 @@ public final /* synthetic */ class p6 implements Utilities.Callback2 {
                                 }
                         }
                     }
-                }, new ai.g3(eyVar, b2Var, l4, odVar, n2Var, 5));
+                }, new ai.e3(eyVar, b2Var, l4, odVar, n2Var, 5));
                 break;
             default:
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj5;

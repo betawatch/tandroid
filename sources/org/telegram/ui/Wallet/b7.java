@@ -1,33 +1,36 @@
 package org.telegram.ui.Wallet;
 
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ AtomicBoolean b;
-    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Utilities.Callback d;
 
-    public /* synthetic */ b7(AtomicBoolean atomicBoolean, Utilities.Callback2 callback2, int i10) {
-        this.a = i10;
-        this.b = atomicBoolean;
-        this.c = callback2;
+    public /* synthetic */ b7(WalletEngine2 walletEngine2, String str, Utilities.Callback callback) {
+        this.b = walletEngine2;
+        this.c = str;
+        this.d = callback;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                WalletEngine2.lambda$emulateSend$17(this.b, this.c);
-                break;
-            case 1:
-                WalletEngine2.lambda$emulateSendNFT$21(this.b, this.c);
+                this.b.lambda$previewSignMessage$7(this.d, this.c);
                 break;
             default:
-                WalletEngine2.lambda$emulateSendNFT$22(this.b, this.c);
+                this.b.lambda$getTransactionByHash$39(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ b7(WalletEngine2 walletEngine2, Utilities.Callback callback, String str) {
+        this.b = walletEngine2;
+        this.d = callback;
+        this.c = str;
     }
 }

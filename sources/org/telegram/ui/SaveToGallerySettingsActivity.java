@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public int a;
@@ -135,7 +135,7 @@ public class SaveToGallerySettingsActivity extends org.telegram.ui.ActionBar.n2 
     public final View createView(Context context) {
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new a31(this, 1));
         if (this.c == null) {
             int i10 = this.a;

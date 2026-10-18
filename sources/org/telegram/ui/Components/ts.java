@@ -10,7 +10,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ts extends View {
     public final Paint a;
@@ -35,7 +35,7 @@ public final class ts extends View {
         if (this.d != i10) {
             this.d = i10;
             int alpha = Color.alpha(i10);
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.b.o(i10, (alpha * TLRPC.LAYER) / 255), i0.b.o(i10, (alpha * 192) / 255), i0.b.o(i10, (alpha * 144) / 255), i0.b.o(i10, 0)}, (float[]) null, Shader.TileMode.CLAMP);
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i10, (alpha * TLRPC.LAYER) / 255), i0.a.o(i10, (alpha * 192) / 255), i0.a.o(i10, (alpha * 144) / 255), i0.a.o(i10, 0)}, (float[]) null, Shader.TileMode.CLAMP);
             this.c = linearGradient;
             this.a.setShader(linearGradient);
             this.c.setLocalMatrix(this.b);

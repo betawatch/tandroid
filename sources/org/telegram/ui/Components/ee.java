@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a;
@@ -127,7 +127,7 @@ public final /* synthetic */ class ee implements Runnable {
                 if (mkVar.X.v.d.isEmpty()) {
                     arrayList2.addAll(0, mkVar.X.v.e);
                 }
-                Utilities.searchQueue.postRunnable(new ai.y3(mkVar, str2, !mkVar.R.isEmpty(), arrayList2, 18));
+                Utilities.searchQueue.postRunnable(new ai.x9(mkVar, str2, !mkVar.R.isEmpty(), arrayList2, 17));
                 break;
             case 13:
                 mk mkVar2 = (mk) this.b;
@@ -153,7 +153,7 @@ public final /* synthetic */ class ee implements Runnable {
                 tiVar5.f0.presentFragment(org.telegram.ui.sn.W9(user.id));
                 break;
             case 15:
-                org.telegram.messenger.q.q(R.string.WalletAddressCopiedBulletin, new xc((al) this.b, (org.telegram.ui.ActionBar.d6) this.c), R.raw.copy, 36);
+                org.telegram.messenger.g0.q(R.string.WalletAddressCopiedBulletin, new xc((al) this.b, (org.telegram.ui.ActionBar.d6) this.c), R.raw.copy, 36);
                 break;
             case 16:
                 rl rlVar = (rl) this.b;
@@ -268,7 +268,7 @@ public final /* synthetic */ class ee implements Runnable {
                         String str4 = zsVar.g;
                         String str5 = str4 == null ? "" : str4;
                         ArrayList arrayList5 = new ArrayList();
-                        for (int i13 = 0; i13 < arrayList4.size(); i13 = com.google.android.gms.internal.cast.a6.h(((TLRPC.User) arrayList4.get(i13)).id, arrayList5, i13, 1)) {
+                        for (int i13 = 0; i13 < arrayList4.size(); i13 = com.google.android.gms.internal.play_billing.k3.h(((TLRPC.User) arrayList4.get(i13)).id, arrayList5, i13, 1)) {
                         }
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
                         messagesStorage.getStorageQueue().postRunnable(new ai.z(zsVar, messagesStorage, arrayList5, currentTimeMillis, str5, 10));

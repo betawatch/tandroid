@@ -1,7 +1,7 @@
 package yh;
 
 import ai.v9;
-import ai.x9;
+import ai.y9;
 import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
 import android.view.View;
@@ -17,7 +17,7 @@ import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.u81;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class w1 extends u81 {
     public final /* synthetic */ int a;
@@ -85,29 +85,29 @@ public final class w1 extends u81 {
 
     @Override // org.telegram.ui.Components.u81
     public final void b(View view, int i10, int i11) {
-        x9 x9Var;
+        y9 y9Var;
         boolean z10;
         is0 is0Var = this.c;
         v9 v9Var = is0Var.e;
         m2 m2Var = (m2) view;
         if (i11 == 0) {
-            x9Var = is0Var.d;
+            y9Var = is0Var.d;
             z10 = false;
         } else {
             int i12 = i10 - 1;
             if (i12 < 0) {
                 v9Var.getClass();
             } else if (i12 < v9Var.d().size()) {
-                x9Var = v9Var.e(((TL_stars.TL_starGiftCollection) v9Var.d().get(i12)).collection_id);
+                y9Var = v9Var.e(((TL_stars.TL_starGiftCollection) v9Var.d().get(i12)).collection_id);
                 z10 = true;
             }
-            x9Var = null;
+            y9Var = null;
             z10 = true;
         }
         m2Var.d = z10;
-        m2Var.e = x9Var;
-        if (x9Var != null) {
-            x9Var.a();
+        m2Var.e = y9Var;
+        if (y9Var != null) {
+            y9Var.a();
         }
         m2Var.f(false);
         LinearLayout linearLayout = m2Var.E;

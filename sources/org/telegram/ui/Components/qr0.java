@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.BirthdayController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class qr0 implements View.OnClickListener {
                     boolean z10 = this.b;
                     int i10 = this.c;
                     if (!z10) {
-                        ug.l1.f0(2, BirthdayController.getInstance(i10).getState());
+                        ug.m1.f0(2, BirthdayController.getInstance(i10).getState());
                         break;
                     } else {
                         yh.p1 p1Var = new yh.p1(is0Var.getContext(), i10, is0Var.c, null, null);

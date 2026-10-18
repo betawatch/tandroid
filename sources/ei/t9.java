@@ -17,7 +17,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t9 implements Runnable {
     public final /* synthetic */ int a;
@@ -106,7 +106,7 @@ public final /* synthetic */ class t9 implements Runnable {
                                 if (arrayList != null) {
                                     vbVar.I1 = new ArrayList();
                                     vbVar.J1 = new ArrayList();
-                                    for (int i16 = i11; i16 < vbVar.H1.size(); i16 = com.google.android.gms.internal.cast.a6.f(i16, i16, 1, vbVar.J1)) {
+                                    for (int i16 = i11; i16 < vbVar.H1.size(); i16 = com.google.android.gms.internal.play_billing.k3.f(i16, i16, 1, vbVar.J1)) {
                                         vbVar.I1.add(Integer.valueOf(i16));
                                     }
                                 }
@@ -170,12 +170,12 @@ public final /* synthetic */ class t9 implements Runnable {
                     vbVar.w = j15;
                     vbVar.B2 = true;
                     vbVar.n();
-                    ai.s3 s3Var = new ai.s3(vbVar, j15, 8);
+                    ai.r3 r3Var = new ai.r3(vbVar, j15, 8);
                     mb mbVar = vbVar.x;
                     if (mbVar != null) {
-                        mbVar.a(j15, s3Var);
+                        mbVar.b(j15, r3Var);
                     } else {
-                        s3Var.run();
+                        r3Var.run();
                     }
                     MessagesController.getGlobalMainSettings().edit().putInt("storyhint2", 2).apply();
                     break;

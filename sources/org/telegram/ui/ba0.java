@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ba0 extends RelativeLayout {
-    public i0.c a;
+    public i0.b a;
     public boolean b;
     public final /* synthetic */ LaunchActivity c;
 
@@ -21,7 +21,7 @@ public final class ba0 extends RelativeLayout {
     public ba0(LaunchActivity launchActivity, LaunchActivity launchActivity2) {
         super(launchActivity2);
         this.c = launchActivity;
-        this.a = i0.c.e;
+        this.a = i0.b.e;
         wt wtVar = new wt(this, 15);
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.i(this, wtVar);
@@ -45,16 +45,16 @@ public final class ba0 extends RelativeLayout {
         if (z11 || (AndroidUtilities.isSmallTablet() && getResources().getConfiguration().orientation != 2)) {
             launchActivity.q0.getView().layout(0, 0, launchActivity.q0.getView().getMeasuredWidth(), launchActivity.q0.getView().getMeasuredHeight());
         } else {
-            i0.c cVar = this.a;
-            int tabletLeftFragmentSize = AndroidUtilities.getTabletLeftFragmentSize(measuredWidth, cVar.a, cVar.c);
+            i0.b bVar = this.a;
+            int tabletLeftFragmentSize = AndroidUtilities.getTabletLeftFragmentSize(measuredWidth, bVar.a, bVar.c);
             launchActivity.q0.getView().layout(0, 0, launchActivity.q0.getView().getMeasuredWidth(), launchActivity.q0.getView().getMeasuredHeight());
             launchActivity.s0.getView().layout(tabletLeftFragmentSize, 0, launchActivity.s0.getView().getMeasuredWidth() + tabletLeftFragmentSize, launchActivity.s0.getView().getMeasuredHeight());
         }
         int measuredWidth2 = (measuredWidth - launchActivity.r0.getView().getMeasuredWidth()) / 2;
         int dp = AndroidUtilities.dp(8.0f) + this.a.b;
         launchActivity.r0.getView().layout(measuredWidth2, dp, launchActivity.r0.getView().getMeasuredWidth() + measuredWidth2, launchActivity.r0.getView().getMeasuredHeight() + dp);
-        ig.n1 n1Var = launchActivity.v0;
-        n1Var.layout(0, 0, n1Var.getMeasuredWidth(), launchActivity.v0.getMeasuredHeight());
+        ig.p1 p1Var = launchActivity.v0;
+        p1Var.layout(0, 0, p1Var.getMeasuredWidth(), launchActivity.v0.getMeasuredHeight());
         FrameLayout frameLayout = launchActivity.u0;
         frameLayout.layout(0, 0, frameLayout.getMeasuredWidth(), launchActivity.u0.getMeasuredHeight());
     }
@@ -72,8 +72,8 @@ public final class ba0 extends RelativeLayout {
             launchActivity.q0.getView().measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         } else {
             launchActivity.O0 = false;
-            i0.c cVar = this.a;
-            int tabletLeftFragmentSize = AndroidUtilities.getTabletLeftFragmentSize(size, cVar.a, cVar.c);
+            i0.b bVar = this.a;
+            int tabletLeftFragmentSize = AndroidUtilities.getTabletLeftFragmentSize(size, bVar.a, bVar.c);
             launchActivity.q0.getView().measure(View.MeasureSpec.makeMeasureSpec(tabletLeftFragmentSize, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
             launchActivity.s0.getView().measure(View.MeasureSpec.makeMeasureSpec(size - tabletLeftFragmentSize, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         }
@@ -81,8 +81,8 @@ public final class ba0 extends RelativeLayout {
         launchActivity.u0.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         ViewGroup view = launchActivity.r0.getView();
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(500.0f), size - AndroidUtilities.dp(16.0f)), TLObject.FLAG_30);
-        i0.c cVar2 = this.a;
-        view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(((size2 - cVar2.b) - cVar2.d) - AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
+        i0.b bVar2 = this.a;
+        view.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(((size2 - bVar2.b) - bVar2.d) - AndroidUtilities.dp(16.0f), TLObject.FLAG_30));
         this.b = false;
     }
 

@@ -14,7 +14,7 @@ import android.util.Log;
 import android.util.SparseIntArray;
 import com.google.android.gms.common.api.GoogleApiActivity;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import j$.util.concurrent.ConcurrentHashMap;
@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class h implements Handler.Callback {
     public static final Status E = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -91,7 +91,7 @@ public final class h implements Handler.Callback {
     }
 
     public static Status d(b bVar, k6.a aVar) {
-        return new Status(17, a6.k("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
+        return new Status(17, k3.k("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
     }
 
     public static h g(Context context) {
@@ -293,7 +293,7 @@ public final class h implements Handler.Callback {
                     }
                 }
                 if (o0Var == null) {
-                    Log.wtf("GoogleApiManager", i0.a.k(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
+                    Log.wtf("GoogleApiManager", i2.d.k(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
                     return true;
                 }
                 int i12 = aVar.b;
@@ -303,7 +303,7 @@ public final class h implements Handler.Callback {
                 }
                 this.f.getClass();
                 AtomicBoolean atomicBoolean = k6.g.a;
-                o0Var.c(new Status(17, a6.k("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
+                o0Var.c(new Status(17, k3.k("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
                 return true;
             case 6:
                 if (context.getApplicationContext() instanceof Application) {

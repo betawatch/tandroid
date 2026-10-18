@@ -35,7 +35,7 @@ import sg.a1;
 import w7.r;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements qg0, d {
     public static final RectF V = new RectF();
@@ -288,7 +288,7 @@ public final class b extends FrameLayout implements qg0, d {
                 this.L.setBounds(dpf27, dpf28, AndroidUtilities.dp(14.0f) + dpf27, AndroidUtilities.dp(14.0f) + dpf28);
                 this.L.draw(canvas);
             } else {
-                paint.setColor(i0.b.f(this.r.e, h6.x0(null, h6.hl, false), h6.x0(null, h6.r7, false)));
+                paint.setColor(i0.a.f(this.r.e, h6.x0(null, h6.hl, false), h6.x0(null, h6.r7, false)));
                 canvas.drawRoundRect(rectF, dpf26, dpf26, paint);
                 p6Var.p(rectF);
                 p6Var.draw(canvas);
@@ -310,8 +310,8 @@ public final class b extends FrameLayout implements qg0, d {
         int i10 = this.w;
         int i11 = this.s;
         ne.b bVar = this.h;
-        int f7 = i0.b.f(bVar.e, i10, i11);
-        int f10 = i0.b.f(bVar.e, this.w, this.v);
+        int f7 = i0.a.f(bVar.e, i10, i11);
+        int f10 = i0.a.f(bVar.e, this.w, this.v);
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(f7, PorterDuff.Mode.SRC_IN);
         w9 w9Var = this.c;
         if (w9Var != null && this.M) {

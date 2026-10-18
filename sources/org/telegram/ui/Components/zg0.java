@@ -26,7 +26,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zg0 implements tf.a {
     public static final cw0 n0 = new cw0(new k2(28), new k2(29));
@@ -280,8 +280,8 @@ public final class zg0 implements tf.a {
                 fVar.addView(zg0Var.e, w7.z5.d(-1.0f, -1));
                 yg0 yg0Var = zg0Var.e;
                 float dp = AndroidUtilities.dp(10.0f);
-                ci.o1 o1Var = zf.i0.a;
-                yg0Var.setOutlineProvider(new zf.h0(0, dp));
+                ci.o1 o1Var = zf.j0.a;
+                yg0Var.setOutlineProvider(new zf.i0(0, dp));
                 zg0Var.e.setClipToOutline(true);
                 zg0Var.e.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.gg, false));
                 zg0Var.f = view;

@@ -37,7 +37,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ba1 implements oh0 {
     public final sn A;
@@ -266,9 +266,9 @@ public final class ba1 implements oh0 {
                 this.E = textLayoutBlock;
                 staticLayout = textLayoutBlock.textLayout;
                 int i16 = org.telegram.ui.ActionBar.h6.fc;
-                h = i0.b.h(org.telegram.ui.ActionBar.h6.w0(i16, this.N));
+                h = i0.a.h(org.telegram.ui.ActionBar.h6.w0(i16, this.N));
                 i12 = org.telegram.ui.ActionBar.h6.Ud;
-                if (Math.abs(h - i0.b.h(org.telegram.ui.ActionBar.h6.w0(i12, this.N))) > 0.20000000298023224d) {
+                if (Math.abs(h - i0.a.h(org.telegram.ui.ActionBar.h6.w0(i12, this.N))) > 0.20000000298023224d) {
                     this.n = true;
                     this.o = true;
                 }
@@ -438,9 +438,9 @@ public final class ba1 implements oh0 {
         this.E = textLayoutBlock2;
         staticLayout = textLayoutBlock2.textLayout;
         int i162 = org.telegram.ui.ActionBar.h6.fc;
-        h = i0.b.h(org.telegram.ui.ActionBar.h6.w0(i162, this.N));
+        h = i0.a.h(org.telegram.ui.ActionBar.h6.w0(i162, this.N));
         i12 = org.telegram.ui.ActionBar.h6.Ud;
-        if (Math.abs(h - i0.b.h(org.telegram.ui.ActionBar.h6.w0(i12, this.N))) > 0.20000000298023224d) {
+        if (Math.abs(h - i0.a.h(org.telegram.ui.ActionBar.h6.w0(i12, this.N))) > 0.20000000298023224d) {
         }
         this.L = org.telegram.ui.ActionBar.h6.w0(i12, this.N);
         this.M = org.telegram.ui.ActionBar.h6.w0(i162, this.N);
@@ -673,7 +673,7 @@ public final class ba1 implements oh0 {
         float f66 = f14;
         float f67 = 1.0f - f66;
         float f68 = (backgroundDrawableTop * f66) + (y13 * f67);
-        float b10 = org.telegram.messenger.wh.b(backgroundDrawableTop, u1Var2.getBackgroundDrawableBottom() - u1Var2.getBackgroundDrawableTop(), f66, (this.x - siVar.getY()) * f67);
+        float b10 = org.telegram.messenger.kk.b(backgroundDrawableTop, u1Var2.getBackgroundDrawableBottom() - u1Var2.getBackgroundDrawableTop(), f66, (this.x - siVar.getY()) * f67);
         int dp = (int) ((AndroidUtilities.dp(4.0f) * f12) + u1Var2.getBackgroundDrawableRight() + f62);
         MessageObject messageObject3 = this.k;
         org.telegram.ui.ActionBar.f5 y22 = !messageObject3.isAnimatedEmojiStickers() ? u1Var2.y2(true) : null;
@@ -732,8 +732,8 @@ public final class ba1 implements oh0 {
         }
         float x12 = (im0Var.getX() + u1Var2.getLeft()) - siVar.getX();
         float f69 = f15;
-        float x13 = com.google.android.gms.internal.cast.a6.x(y11, f69, f67, f65);
-        canvas2.translate(x12, x13);
+        float y14 = com.google.android.gms.internal.play_billing.k3.y(y11, f69, f67, f65);
+        canvas2.translate(x12, y14);
         u1Var2.m2(f20, canvas2, false);
         u1Var2.W1(canvas2, f20);
         u1Var2.M1(canvas2, f20);
@@ -748,8 +748,8 @@ public final class ba1 implements oh0 {
             ((org.telegram.ui.Components.ap[]) snVar4.a0.b)[0].d.setAlpha(0.0f);
             AndroidUtilities.lerp(AndroidUtilities.dp(35.0f), u1Var2.I9, f21);
             int dp2 = AndroidUtilities.dp(10.0f);
-            float x14 = this.e - siVar.getX();
-            float y14 = this.g - siVar.getY();
+            float x13 = this.e - siVar.getX();
+            float y15 = this.g - siVar.getY();
             f31 = backgroundDrawableLeft;
             float f70 = f18 + u1Var2.G9;
             float f71 = f20;
@@ -769,7 +769,7 @@ public final class ba1 implements oh0 {
                 if (pm0Var != null) {
                     i14 = pm0Var.I.c;
                     if (!messageObject.shouldDrawWithoutBackground()) {
-                        f46 = x14;
+                        f46 = x13;
                         f24 = f68;
                         f25 = y11;
                         messageObject2 = messageObject;
@@ -790,7 +790,7 @@ public final class ba1 implements oh0 {
                             w03 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.eb, d6Var);
                         }
                     } else if (!messageObject.isOutOwner()) {
-                        f46 = x14;
+                        f46 = x13;
                         f24 = f68;
                         f25 = y11;
                         messageObject2 = messageObject;
@@ -808,23 +808,23 @@ public final class ba1 implements oh0 {
                                 if (!u1Var2.z9) {
                                     i16 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Zc, d6Var);
                                     f54 = 0.6f;
-                                    w03 = i0.b.f(f54, i16, org.telegram.ui.ActionBar.h6.c(i16, i14));
+                                    w03 = i0.a.f(f54, i16, org.telegram.ui.ActionBar.h6.c(i16, i14));
                                 }
                             }
                             i16 = w04;
                             f54 = 0.0f;
-                            w03 = i0.b.f(f54, i16, org.telegram.ui.ActionBar.h6.c(i16, i14));
+                            w03 = i0.a.f(f54, i16, org.telegram.ui.ActionBar.h6.c(i16, i14));
                         }
                         w03 = i14;
                     } else if (messageObject.isReplyToStory()) {
-                        f46 = x14;
+                        f46 = x13;
                         f24 = f68;
                         f25 = y11;
                         messageObject2 = messageObject;
                         f23 = f69;
                         w03 = i14;
                     } else {
-                        f46 = x14;
+                        f46 = x13;
                         int w05 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.db, d6Var);
                         messageObject2 = messageObject;
                         f23 = f69;
@@ -845,21 +845,21 @@ public final class ba1 implements oh0 {
                                 i17 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.eb, d6Var);
                                 f55 = 0.6f;
                                 f25 = y11;
-                                w03 = i0.b.f(f55, i17, org.telegram.ui.ActionBar.h6.c(i17, i14));
+                                w03 = i0.a.f(f55, i17, org.telegram.ui.ActionBar.h6.c(i17, i14));
                             }
                         }
                         i17 = w05;
                         f55 = 0.0f;
                         f25 = y11;
-                        w03 = i0.b.f(f55, i17, org.telegram.ui.ActionBar.h6.c(i17, i14));
+                        w03 = i0.a.f(f55, i17, org.telegram.ui.ActionBar.h6.c(i17, i14));
                     }
                     f26 = f67;
                     f29 = f19;
-                    org.telegram.ui.ActionBar.h6.Z2.setColor(i0.b.f(f29, this.i, w03));
-                    org.telegram.ui.ActionBar.h6.Y2.setColor(i0.b.f(f29, this.h, i14));
+                    org.telegram.ui.ActionBar.h6.Z2.setColor(i0.a.f(f29, this.i, w03));
+                    org.telegram.ui.ActionBar.h6.Y2.setColor(i0.a.f(f29, this.h, i14));
                     float dp3 = !u1Var2.P9 ? f46 - AndroidUtilities.dp(44.0f) : f46;
                     float lerp = AndroidUtilities.lerp(dp3, f70, f21);
-                    float lerp2 = AndroidUtilities.lerp((AndroidUtilities.dp(12.0f) * f29) + y14, f72, f29);
+                    float lerp2 = AndroidUtilities.lerp((AndroidUtilities.dp(12.0f) * f29) + y15, f72, f29);
                     if (this.R != null) {
                         this.R = new float[]{r12, r12, 0.0f, 0.0f, 0.0f, 0.0f, r12, r12};
                         f47 = 12.0f;
@@ -873,12 +873,12 @@ public final class ba1 implements oh0 {
                         f47 = 12.0f;
                     }
                     RectF rectF2 = AndroidUtilities.rectTmp;
-                    rectF2.set(dp3, y14, this.f + dp3, AndroidUtilities.dp(35.0f) + y14);
+                    rectF2.set(dp3, y15, this.f + dp3, AndroidUtilities.dp(35.0f) + y15);
                     rectF2.offset(0.0f, AndroidUtilities.dp(f47) * f29);
                     RectF rectF3 = u1Var2.Bc;
                     RectF rectF4 = this.Q;
                     rectF4.set(rectF3);
-                    rectF4.offset(f18, x13);
+                    rectF4.offset(f18, y14);
                     RectF rectF5 = this.P;
                     AndroidUtilities.lerp(rectF2, rectF4, f21, rectF5);
                     MessageObject messageObject7 = messageObject2;
@@ -998,7 +998,7 @@ public final class ba1 implements oh0 {
                         canvas2.translate(AndroidUtilities.lerp(f52 - u1Var2.N9, dp6, f21), lerp7);
                         canvas2.save();
                         wh.g.d(canvas2, arrayList);
-                        f32 = x13;
+                        f32 = y14;
                         f30 = f12;
                         org.telegram.ui.Components.a6.drawAnimatedEmojis(canvas2, u1Var2.D9, u1Var2.qc, 0.0f, arrayList, 0.0f, 0.0f, 0.0f, 1.0f);
                         u1Var2.D9.draw(canvas2);
@@ -1018,7 +1018,7 @@ public final class ba1 implements oh0 {
                         }
                         canvas2.restore();
                     } else {
-                        f32 = x13;
+                        f32 = y14;
                         f30 = f12;
                     }
                     canvas2.restore();
@@ -1035,21 +1035,21 @@ public final class ba1 implements oh0 {
             }
             f26 = f67;
             f29 = f19;
-            org.telegram.ui.ActionBar.h6.Z2.setColor(i0.b.f(f29, this.i, w03));
-            org.telegram.ui.ActionBar.h6.Y2.setColor(i0.b.f(f29, this.h, i14));
+            org.telegram.ui.ActionBar.h6.Z2.setColor(i0.a.f(f29, this.i, w03));
+            org.telegram.ui.ActionBar.h6.Y2.setColor(i0.a.f(f29, this.h, i14));
             if (!u1Var2.P9) {
             }
             float lerp9 = AndroidUtilities.lerp(dp3, f70, f21);
-            float lerp22 = AndroidUtilities.lerp((AndroidUtilities.dp(12.0f) * f29) + y14, f72, f29);
+            float lerp22 = AndroidUtilities.lerp((AndroidUtilities.dp(12.0f) * f29) + y15, f72, f29);
             if (this.R != null) {
             }
             RectF rectF22 = AndroidUtilities.rectTmp;
-            rectF22.set(dp3, y14, this.f + dp3, AndroidUtilities.dp(35.0f) + y14);
+            rectF22.set(dp3, y15, this.f + dp3, AndroidUtilities.dp(35.0f) + y15);
             rectF22.offset(0.0f, AndroidUtilities.dp(f47) * f29);
             RectF rectF32 = u1Var2.Bc;
             RectF rectF42 = this.Q;
             rectF42.set(rectF32);
-            rectF42.offset(f18, x13);
+            rectF42.offset(f18, y14);
             RectF rectF52 = this.P;
             AndroidUtilities.lerp(rectF22, rectF42, f21, rectF52);
             MessageObject messageObject72 = messageObject2;
@@ -1097,7 +1097,7 @@ public final class ba1 implements oh0 {
             snVar2 = snVar;
             f31 = backgroundDrawableLeft;
             ba1Var = this;
-            f32 = x13;
+            f32 = y14;
             f33 = b10;
         }
         canvas2.save();
@@ -1108,11 +1108,11 @@ public final class ba1 implements oh0 {
         canvas2.save();
         float f79 = x10 * f30;
         float f80 = f28;
-        float x15 = com.google.android.gms.internal.cast.a6.x(f80, f27, f21, f79);
+        float y16 = com.google.android.gms.internal.play_billing.k3.y(f80, f27, f21, f79);
         float f81 = f25 * f26;
         ArrayList<MessageObject.TextLayoutBlock> arrayList2 = u1Var2.getMessageObject().textLayoutBlocks;
         MessageObject.TextLayoutBlock textLayoutBlock2 = ba1Var.E;
-        canvas2.translate(x15, ((textLayoutBlock2.textYOffset(arrayList2, t1Var2) + f23) * f29) + f81);
+        canvas2.translate(y16, ((textLayoutBlock2.textYOffset(arrayList2, t1Var2) + f23) * f29) + f81);
         float f82 = f78 * 1.0f;
         canvas2.scale(f78, f82, 0.0f, 0.0f);
         boolean z15 = ba1Var.o;
@@ -1122,7 +1122,7 @@ public final class ba1 implements oh0 {
         if (z16 && z15) {
             int color = staticLayout2.getPaint().getColor();
             float f83 = f22;
-            staticLayout2.getPaint().setColor(i0.b.f(f83, ba1Var.L, i19));
+            staticLayout2.getPaint().setColor(i0.a.f(f83, ba1Var.L, i19));
             float f84 = 1.0f - f83;
             z10 = z15;
             f34 = f30;
@@ -1176,7 +1176,7 @@ public final class ba1 implements oh0 {
         StaticLayout staticLayout3 = ba1Var.q;
         if (staticLayout3 != null) {
             canvas3.save();
-            canvas3.translate(com.google.android.gms.internal.cast.a6.x(f39, ba1Var.m, f21, f41), ((textLayoutBlock.textYOffset(u1Var.getMessageObject().textLayoutBlocks, t1Var) + f23) * f36) + f81);
+            canvas3.translate(com.google.android.gms.internal.play_billing.k3.y(f39, ba1Var.m, f21, f41), ((textLayoutBlock.textYOffset(u1Var.getMessageObject().textLayoutBlocks, t1Var) + f23) * f36) + f81);
             f42 = f40;
             f44 = f37;
             canvas3.scale(f44, f42, 0.0f, 0.0f);
@@ -1184,7 +1184,7 @@ public final class ba1 implements oh0 {
                 int color2 = staticLayout3.getPaint().getColor();
                 f43 = f38;
                 i13 = i12;
-                staticLayout3.getPaint().setColor(i0.b.o(i0.b.f(f43, ba1Var.L, i13), (int) ((1.0f - f43) * Color.alpha(color2))));
+                staticLayout3.getPaint().setColor(i0.a.o(i0.a.f(f43, ba1Var.L, i13), (int) ((1.0f - f43) * Color.alpha(color2))));
                 staticLayout3.draw(canvas3);
                 staticLayout3.getPaint().setColor(color2);
             } else {
@@ -1208,7 +1208,7 @@ public final class ba1 implements oh0 {
         }
         if (z11) {
             canvas3.save();
-            canvas3.translate(com.google.android.gms.internal.cast.a6.x(x10, f39, f34, (im0Var.getX() + u1Var.getLeft()) - siVar.getX()), f35);
+            canvas3.translate(com.google.android.gms.internal.play_billing.k3.y(x10, f39, f34, (im0Var.getX() + u1Var.getLeft()) - siVar.getX()), f35);
             canvas3.scale(f44, f42, u1Var.getTextX(), u1Var.getTextY());
             canvas3.translate(0.0f, -0.0f);
             int color3 = org.telegram.ui.ActionBar.h6.o2.getColor();

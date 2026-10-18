@@ -18,7 +18,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.pj;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a1 extends FrameLayout {
     public final /* synthetic */ n2 a;
@@ -63,7 +63,7 @@ public final class a1 extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:191:0x0540, code lost:
     
-        if (((int) org.telegram.messenger.wh.y(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
+        if (((int) org.telegram.messenger.kk.x(r23.x.b.getImageReceiver().getLottieAnimation().a0, r23.x.b.getImageReceiver().getLottieAnimation().e[0], r8, r8)) < r6.b) goto L262;
      */
     /* JADX WARN: Code restructure failed: missing block: B:234:0x03bc, code lost:
     
@@ -164,8 +164,8 @@ public final class a1 extends FrameLayout {
                     view = snVar2.x0.getChildAt(i13);
                     if (view instanceof u1) {
                         messageObject = ((u1) view).getMessageObject();
-                    } else if (view instanceof org.telegram.ui.Cells.x0) {
-                        messageObject = ((org.telegram.ui.Cells.x0) view).getMessageObject();
+                    } else if (view instanceof org.telegram.ui.Cells.w0) {
+                        messageObject = ((org.telegram.ui.Cells.w0) view).getMessageObject();
                     } else {
                         continue;
                     }
@@ -201,8 +201,8 @@ public final class a1 extends FrameLayout {
                 paddingTop = u1Var.getPaddingTop();
             } else {
                 f7 = 0.10666667f;
-                if (view instanceof org.telegram.ui.Cells.x0) {
-                    g1Var = ((org.telegram.ui.Cells.x0) view).E0.l(d1Var2.p);
+                if (view instanceof org.telegram.ui.Cells.w0) {
+                    g1Var = ((org.telegram.ui.Cells.w0) view).E0.l(d1Var2.p);
                     paddingTop = view.getPaddingTop();
                 } else {
                     if (view instanceof mh.c) {
@@ -389,7 +389,7 @@ public final class a1 extends FrameLayout {
                                     f20 = 1.0f;
                                 } else {
                                     f20 = 1.0f;
-                                    x10 = org.telegram.messenger.q.x(f36, 0.5f, 0.5f, 1.0f);
+                                    x10 = org.telegram.messenger.g0.x(f36, 0.5f, 0.5f, 1.0f);
                                 }
                                 float f39 = (f20 - f36) * 0.5f;
                                 float f40 = (c1Var.f * f36) + f39;
@@ -480,8 +480,8 @@ public final class a1 extends FrameLayout {
                         View view2 = this.b;
                         if (view2 instanceof u1) {
                             ((u1) view2).N.b(d1Var9.p);
-                        } else if (view2 instanceof org.telegram.ui.Cells.x0) {
-                            ((org.telegram.ui.Cells.x0) view2).E0.b(d1Var9.p);
+                        } else if (view2 instanceof org.telegram.ui.Cells.w0) {
+                            ((org.telegram.ui.Cells.w0) view2).E0.b(d1Var9.p);
                         }
                     }
                     this.x.h = 1.0f;

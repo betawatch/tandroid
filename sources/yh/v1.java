@@ -11,7 +11,7 @@ import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class v1 extends c91 {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 T;
@@ -32,7 +32,7 @@ public final class v1 extends c91 {
             return;
         }
         if (is0Var.J == null) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.q.g(R.string.Gift2NewCollection, new StringBuilder("+ ")));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.Gift2NewCollection, new StringBuilder("+ ")));
             yq yqVar = new yq(R.drawable.poll_add_plus, 0);
             yqVar.spaceScaleX = 0.8f;
             spannableStringBuilder.setSpan(yqVar, 0, 1, 33);

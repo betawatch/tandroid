@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ak0 extends pg.b {
     public final Context d;
@@ -103,7 +103,7 @@ public final class ak0 extends pg.b {
                 yj0 yj0Var = (yj0) view;
                 yj0Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
                 CharSequence charSequence = zj0Var.e;
-                org.telegram.messenger.wh.t(yj0Var.R.animate().rotation(zj0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 340L);
+                org.telegram.messenger.kk.t(yj0Var.R.animate().rotation(zj0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 340L);
                 yj0Var.i(charSequence, z10);
                 break;
         }

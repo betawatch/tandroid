@@ -21,7 +21,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pj0 implements LeadingMarginSpan {
     public final Path E;
@@ -61,7 +61,7 @@ public final class pj0 implements LeadingMarginSpan {
         this.e = z11;
         this.w = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.mini_quote).mutate();
         paint2.setColor(this.I);
-        paint.setColor(i0.b.o(this.I, 30));
+        paint.setColor(i0.a.o(this.I, 30));
     }
 
     public static void a(SpannableStringBuilder spannableStringBuilder) {
@@ -213,7 +213,7 @@ public final class pj0 implements LeadingMarginSpan {
                                     int i16 = pj0Var2.d;
                                     if (i16 - 2 >= 0) {
                                         z10 = true;
-                                        if (layout.getLineRight(layout.getLineForOffset(i16 - 1)) - AndroidUtilities.dp(12.0f) > lj0Var.d - (pj0Var2.J != null ? org.telegram.messenger.q.D(3.333f, 2, AndroidUtilities.dp(23.66f) + r12.c) : org.telegram.messenger.q.D(3.333f, 2, AndroidUtilities.dp(23.66f)))) {
+                                        if (layout.getLineRight(layout.getLineForOffset(i16 - 1)) - AndroidUtilities.dp(12.0f) > lj0Var.d - (pj0Var2.J != null ? org.telegram.messenger.g0.D(3.333f, 2, AndroidUtilities.dp(23.66f) + r12.c) : org.telegram.messenger.g0.D(3.333f, 2, AndroidUtilities.dp(23.66f)))) {
                                             z12 = true;
                                             if (z16 != z12) {
                                                 int i17 = pj0Var2.d;

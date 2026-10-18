@@ -49,7 +49,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class f3 extends Dialog implements j2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -151,7 +151,7 @@ public class f3 extends Dialog implements j2 {
     protected boolean useLightStatusBar;
     protected boolean useSmoothKeyboard;
     protected boolean waitingKeyboard;
-    private zf.k0 windowVisibilityManager;
+    private zf.l0 windowVisibilityManager;
 
     public f3(Context context, d6 d6Var, boolean z10, boolean z11) {
         this(z11 ? 2 : 1, context, d6Var, z10);
@@ -537,7 +537,7 @@ public class f3 extends Dialog implements j2 {
         } else {
             f7 = Utilities.clamp01(1.0f - (this.containerView.getTranslationY() / ((AndroidUtilities.dp(10.0f) + (getContainerViewHeight() + this.keyboardHeight)) + (this.scrollNavBar ? Math.max(0, Math.min(AndroidUtilities.navigationBarHeight, getBottomInset())) : 0))));
         }
-        return i0.b.f(f7, i10, this.navBarColor);
+        return i0.a.f(f7, i10, this.navBarColor);
     }
 
     public d6 getResourcesProvider() {
@@ -799,13 +799,13 @@ public class f3 extends Dialog implements j2 {
         }
     }
 
-    public zf.j0 obtainWindowVisibilityController() {
+    public zf.k0 obtainWindowVisibilityController() {
         if (this.windowVisibilityManager == null) {
-            this.windowVisibilityManager = new zf.k0(getWindow());
+            this.windowVisibilityManager = new zf.l0(getWindow());
         }
-        zf.k0 k0Var = this.windowVisibilityManager;
-        k0Var.getClass();
-        return new pa0(k0Var, 2);
+        zf.l0 l0Var = this.windowVisibilityManager;
+        l0Var.getClass();
+        return new pa0(l0Var, 2);
     }
 
     @Override // org.telegram.ui.ActionBar.j2

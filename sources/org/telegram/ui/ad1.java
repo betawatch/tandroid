@@ -20,7 +20,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ad1 extends Dialog {
     public final gh.b E;
@@ -57,7 +57,7 @@ public final class ad1 extends Dialog {
     public ValueAnimator e0;
     public final TextView f;
     public final org.telegram.ui.Components.mc0 h;
-    public i0.c n;
+    public i0.b n;
     public Bitmap r;
     public BitmapShader s;
     public Paint v;
@@ -67,7 +67,7 @@ public final class ad1 extends Dialog {
 
     public ad1(Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
         super(activity, R.style.TransparentDialog);
-        this.n = i0.c.e;
+        this.n = i0.b.e;
         this.L = 0.0f;
         this.M = 0.0f;
         this.R = -1.0f;
@@ -110,11 +110,11 @@ public final class ad1 extends Dialog {
         this.f = textView;
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(mc0Var.getColor());
-        org.telegram.messenger.wh.m(R.string.TodoMenuHint, textView, 17);
+        org.telegram.messenger.kk.m(R.string.TodoMenuHint, textView, 17);
         xc1Var2.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 66.0f, -1, 80));
-        lo0 lo0Var = new lo0(this, 7);
+        mo0 mo0Var = new mo0(this, 7);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(xc1Var, lo0Var);
+        r0.a0.i(xc1Var, mo0Var);
     }
 
     public final void b(boolean z10, org.telegram.ui.Components.b60 b60Var) {
@@ -244,9 +244,9 @@ public final class ad1 extends Dialog {
             int[] iArr = new int[2];
             u1Var.getLocationOnScreen(iArr);
             int i10 = iArr[0];
-            i0.c cVar = this.n;
-            this.U = i10 - cVar.a;
-            float f7 = iArr[1] - cVar.b;
+            i0.b bVar = this.n;
+            this.U = i10 - bVar.a;
+            float f7 = iArr[1] - bVar.b;
             this.V = f7;
             if (!this.Z) {
                 this.Z = true;
@@ -254,11 +254,11 @@ public final class ad1 extends Dialog {
                 if (this.S != null) {
                     float height = f7 + this.K.getHeight() + this.S.getHeight();
                     int height2 = xc1Var.getHeight();
-                    i0.c cVar2 = this.n;
-                    if (height > ((height2 - cVar2.b) - cVar2.d) - AndroidUtilities.dp(66.0f)) {
+                    i0.b bVar2 = this.n;
+                    if (height > ((height2 - bVar2.b) - bVar2.d) - AndroidUtilities.dp(66.0f)) {
                         int height3 = xc1Var.getHeight();
-                        i0.c cVar3 = this.n;
-                        this.X = ((((height3 - cVar3.b) - cVar3.d) - AndroidUtilities.dp(66.0f)) - this.K.getHeight()) - this.S.getHeight();
+                        i0.b bVar3 = this.n;
+                        this.X = ((((height3 - bVar3.b) - bVar3.d) - AndroidUtilities.dp(66.0f)) - this.K.getHeight()) - this.S.getHeight();
                     }
                 }
                 int O2 = this.I.O2(this.O);
@@ -269,22 +269,22 @@ public final class ad1 extends Dialog {
                 float f11 = (int) G2;
                 float f12 = f10 + f11;
                 int height4 = xc1Var.getHeight();
-                i0.c cVar4 = this.n;
-                int dp = ((height4 - cVar4.b) - cVar4.d) - AndroidUtilities.dp(78.0f);
+                i0.b bVar4 = this.n;
+                int dp = ((height4 - bVar4.b) - bVar4.d) - AndroidUtilities.dp(78.0f);
                 TextView textView = this.f;
                 if (f12 > dp - textView.getHeight()) {
                     int height5 = xc1Var.getHeight();
-                    i0.c cVar5 = this.n;
-                    this.Y = ((((height5 - cVar5.b) - cVar5.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) - r1;
+                    i0.b bVar5 = this.n;
+                    this.Y = ((((height5 - bVar5.b) - bVar5.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) - r1;
                 }
                 if (this.Q != null) {
                     float height6 = this.Y + f11 + r3.getHeight();
                     int height7 = xc1Var.getHeight();
-                    i0.c cVar6 = this.n;
-                    if (height6 > (((height7 - cVar6.b) - cVar6.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) {
+                    i0.b bVar6 = this.n;
+                    if (height6 > (((height7 - bVar6.b) - bVar6.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) {
                         int height8 = xc1Var.getHeight();
-                        i0.c cVar7 = this.n;
-                        this.Y = (((((height8 - cVar7.b) - cVar7.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) - r1) - this.Q.getHeight();
+                        i0.b bVar7 = this.n;
+                        this.Y = (((((height8 - bVar7.b) - bVar7.d) - AndroidUtilities.dp(78.0f)) - textView.getHeight()) - r1) - this.Q.getHeight();
                     }
                 }
             }
@@ -315,11 +315,11 @@ public final class ad1 extends Dialog {
                 float height = f7 + this.K.getHeight() + actionBarPopupWindow$ActionBarPopupWindowLayout.getVisibleHeight();
                 xc1 xc1Var = this.b;
                 int height2 = xc1Var.getHeight();
-                i0.c cVar = this.n;
-                if (height > ((height2 - cVar.b) - cVar.d) - AndroidUtilities.dp(66.0f)) {
+                i0.b bVar = this.n;
+                if (height > ((height2 - bVar.b) - bVar.d) - AndroidUtilities.dp(66.0f)) {
                     int height3 = xc1Var.getHeight();
-                    i0.c cVar2 = this.n;
-                    this.X = ((((height3 - cVar2.b) - cVar2.d) - AndroidUtilities.dp(66.0f)) - this.K.getHeight()) - actionBarPopupWindow$ActionBarPopupWindowLayout.getVisibleHeight();
+                    i0.b bVar2 = this.n;
+                    this.X = ((((height3 - bVar2.b) - bVar2.d) - AndroidUtilities.dp(66.0f)) - this.K.getHeight()) - actionBarPopupWindow$ActionBarPopupWindowLayout.getVisibleHeight();
                 }
             }
         }

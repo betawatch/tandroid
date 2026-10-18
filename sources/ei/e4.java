@@ -18,7 +18,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cg0;
 import org.telegram.ui.Components.e00;
@@ -31,7 +31,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.b60;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -109,10 +109,10 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 }
                 break;
             case 2:
-                ig.v1 v1Var = ((ig.m1) obj2).a;
-                ig.v1.X(v1Var);
-                i10 = ((org.telegram.ui.ActionBar.n2) v1Var).currentAccount;
-                ig.y1.f(i10).k(i12, (String) obj);
+                ig.x1 x1Var = ((ig.o1) obj2).a;
+                ig.x1.X(x1Var);
+                i10 = ((org.telegram.ui.ActionBar.n2) x1Var).currentAccount;
+                ig.a2.f(i10).k(i12, (String) obj);
                 break;
             case 3:
                 org.telegram.ui.Cells.sa saVar = (org.telegram.ui.Cells.sa) obj2;
@@ -120,7 +120,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 saVar.getClass();
                 if (LaunchActivity.D1) {
                     if (arrayList == null || arrayList.size() == 0) {
-                        wh.q(R.string.UnknownError, new xc(org.telegram.ui.Components.lb.a(saVar.getContext()), null), null);
+                        kk.q(R.string.UnknownError, new xc(org.telegram.ui.Components.lb.a(saVar.getContext()), null), null);
                     } else {
                         LinearLayout linearLayout = new LinearLayout(saVar.getContext());
                         linearLayout.setOrientation(1);
@@ -146,7 +146,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                         } else {
                             String str = "\n";
                             for (int i20 = 0; i20 < Math.min(arrayList.size(), 10); i20++) {
-                                StringBuilder i21 = r.c.i(str, "• ");
+                                StringBuilder i21 = r4.c.i(str, "• ");
                                 i21.append(org.telegram.ui.Cells.sa.a((UnconfirmedAuthController.UnconfirmedAuth) arrayList.get(i20)));
                                 i21.append("\n");
                                 str = i21.toString();
@@ -209,18 +209,18 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 b60.e1((b60) obj2, i12, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                org.telegram.ui.Wallet.t9 t9Var = (org.telegram.ui.Wallet.t9) obj2;
+                org.telegram.ui.Wallet.w9 w9Var = (org.telegram.ui.Wallet.w9) obj2;
                 String str2 = (String) obj;
-                if (!t9Var.n && i12 == t9Var.I) {
-                    t9Var.y = 0;
-                    t9Var.K = false;
+                if (!w9Var.n && i12 == w9Var.I) {
+                    w9Var.y = 0;
+                    w9Var.K = false;
                     String userFriendlyAddress = WalletEngine2.isValidRecipientAddress(str2) ? WalletEngine2.toUserFriendlyAddress(str2) : null;
-                    t9Var.w = userFriendlyAddress;
-                    d dVar2 = t9Var.V;
+                    w9Var.w = userFriendlyAddress;
+                    d dVar2 = w9Var.V;
                     if (dVar2 != null) {
                         dVar2.setEnabled(userFriendlyAddress != null);
                     }
-                    t9Var.a.W2.N(true);
+                    w9Var.a.W2.N(true);
                     break;
                 }
                 break;

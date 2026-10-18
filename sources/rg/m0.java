@@ -1,6 +1,6 @@
 package rg;
 
-import ai.va;
+import ai.wa;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Context;
@@ -32,6 +32,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import ci.l8;
 import ci.o3;
+import com.google.android.gms.internal.play_billing.k3;
 import ei.b4;
 import ei.e6;
 import ei.j5;
@@ -64,7 +65,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -84,10 +85,10 @@ import org.telegram.ui.Components.t11;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.it0;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCenter.NotificationCenterDelegate {
     public final f1 A0;
@@ -192,7 +193,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
     /* JADX WARN: Type inference failed for: r1v25, types: [android.view.View, rg.o2, rg.y] */
     /* JADX WARN: Type inference failed for: r1v6, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
     /* JADX WARN: Type inference failed for: r26v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, org.telegram.ui.Components.iw0, org.telegram.ui.Components.jw0, rg.m0, rg.m1, rg.q1] */
-    public m0(Context context, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, MediaController.CropState cropState, rq0 rq0Var, d6 d6Var) {
+    public m0(Context context, Activity activity, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, ArrayList arrayList, MediaController.CropState cropState, sq0 sq0Var, d6 d6Var) {
         super(context, activity);
         Emoji.EmojiSpan[] emojiSpanArr;
         x1 x1Var;
@@ -243,7 +244,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
         byte b11 = 2;
         b0 b0Var = new b0(it0Var, context, new qg.s0(getPaintingSize(), bitmap2, i11, null), bitmap, bitmap2);
         this.W0 = b0Var;
-        b0Var.setDelegate(new c0(it0Var, rq0Var));
+        b0Var.setDelegate(new c0(it0Var, sq0Var));
         b0Var.setUndoStore(v1Var);
         b0Var.setQueue(dispatchQueue);
         b0Var.setVisibility(4);
@@ -411,7 +412,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
         linearLayout.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         TextView textView = new TextView(context);
         textView.setTextColor(-1);
-        wh.k(16.0f, 1, textView);
+        kk.k(16.0f, 1, textView);
         textView.setText(LocaleController.getString(R.string.PhotoEditorZoomOut));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.photo_zoomout);
@@ -484,16 +485,16 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
             }
         });
         textView2.setAlpha(0.6f);
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout, textView2, z5.a(32.0f, 0.0f, 0.0f, 4.0f, 0.0f, -2, 5), context);
-        this.z1 = k10;
-        k10.setBackground(h6.g0(822083583, 7, -1));
-        k10.setPadding(org.telegram.ui.Cells.t0.f(8.0f, R.string.Clear, k10), 0, AndroidUtilities.dp(8.0f), 0);
-        k10.setGravity(16);
-        k10.setTextColor(-1);
-        k10.setTypeface(AndroidUtilities.bold());
-        k10.setTextSize(1, 16.0f);
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView2, z5.a(32.0f, 0.0f, 0.0f, 4.0f, 0.0f, -2, 5), context);
+        this.z1 = j10;
+        j10.setBackground(h6.g0(822083583, 7, -1));
+        j10.setPadding(org.telegram.ui.Cells.c1.e(8.0f, R.string.Clear, j10), 0, AndroidUtilities.dp(8.0f), 0);
+        j10.setGravity(16);
+        j10.setTextColor(-1);
+        j10.setTypeface(AndroidUtilities.bold());
+        j10.setTextSize(1, 16.0f);
         final int i17 = 2;
-        k10.setOnClickListener(new View.OnClickListener() { // from class: rg.l
+        j10.setOnClickListener(new View.OnClickListener() { // from class: rg.l
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i17) {
@@ -546,18 +547,18 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
                 }
             }
         });
-        k10.setAlpha(0.0f);
-        k10.setVisibility(8);
-        TextView k11 = org.telegram.ui.Cells.t0.k(frameLayout, k10, z5.a(32.0f, 4.0f, 0.0f, 0.0f, 0.0f, -2, 51), context);
-        this.A1 = k11;
-        k11.setBackground(h6.g0(822083583, 7, -1));
-        k11.setPadding(org.telegram.ui.Cells.t0.f(8.0f, R.string.Done, k11), 0, AndroidUtilities.dp(8.0f), 0);
-        k11.setGravity(16);
-        k11.setTextColor(-1);
-        k11.setTypeface(AndroidUtilities.bold());
-        k11.setTextSize(1, 16.0f);
+        j10.setAlpha(0.0f);
+        j10.setVisibility(8);
+        TextView j11 = org.telegram.ui.Cells.c1.j(frameLayout, j10, z5.a(32.0f, 4.0f, 0.0f, 0.0f, 0.0f, -2, 51), context);
+        this.A1 = j11;
+        j11.setBackground(h6.g0(822083583, 7, -1));
+        j11.setPadding(org.telegram.ui.Cells.c1.e(8.0f, R.string.Done, j11), 0, AndroidUtilities.dp(8.0f), 0);
+        j11.setGravity(16);
+        j11.setTextColor(-1);
+        j11.setTypeface(AndroidUtilities.bold());
+        j11.setTextSize(1, 16.0f);
         final int i18 = 3;
-        k11.setOnClickListener(new View.OnClickListener() { // from class: rg.l
+        j11.setOnClickListener(new View.OnClickListener() { // from class: rg.l
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 switch (i18) {
@@ -610,9 +611,9 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
                 }
             }
         });
-        k11.setAlpha(0.0f);
-        k11.setVisibility(8);
-        frameLayout.addView(k11, z5.a(32.0f, 0.0f, 0.0f, 4.0f, 0.0f, -2, 5));
+        j11.setAlpha(0.0f);
+        j11.setVisibility(8);
+        frameLayout.addView(j11, z5.a(32.0f, 0.0f, 0.0f, 4.0f, 0.0f, -2, 5));
         j0 j0Var = new j0(it0Var, context);
         this.c1 = j0Var;
         j0Var.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0);
@@ -637,7 +638,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
         t1 t1Var = new t1(context);
         this.v1 = t1Var;
         t1Var.setVisibility(8);
-        t1Var.setOnItemClickListener(new va(it0Var, 18));
+        t1Var.setOnItemClickListener(new wa(it0Var, 18));
         o1Var.setTypefaceListView(t1Var);
         h0Var.addView(t1Var, z5.a(-2.0f, 0.0f, 0.0f, 8.0f, 8.0f, -2, 85));
         Paint paint2 = this.B1;
@@ -716,7 +717,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
                     bVar.X0();
                     return;
                 }
-                g3 g3Var = new g3(22);
+                g3 g3Var = new g3(23);
                 a3.l lVar = (a3.l) g3Var.b;
                 int width = bitmap.getWidth();
                 int height = bitmap.getHeight();
@@ -1250,7 +1251,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
         if (this.H0 != null) {
             double radians = (float) Math.toRadians(-(r2.transformRotation + r2.cropRotate));
             float cos = (float) ((Math.cos(radians) * r2.cropPx) - (Math.sin(radians) * r2.cropPy));
-            float f11 = (float) i0.a.f(radians, r2.cropPy, Math.sin(radians) * r2.cropPx);
+            float f11 = (float) i2.d.f(radians, r2.cropPy, Math.sin(radians) * r2.cropPx);
             f7 -= cos * paintingSize.a;
             f10 -= f11 * paintingSize.b;
         }
@@ -1660,7 +1661,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
         double radians = (float) Math.toRadians(-this.Z0.getRotation());
         double d10 = f10;
         iArr[0] = (AndroidUtilities.displaySize.x / 2) + ((int) ((Math.cos(radians) * d) - (Math.sin(radians) * d10)));
-        iArr[1] = (AndroidUtilities.displaySize.y / 2) + ((int) i0.a.f(radians, d10, Math.sin(radians) * d));
+        iArr[1] = (AndroidUtilities.displaySize.y / 2) + ((int) i2.d.f(radians, d10, Math.sin(radians) * d));
         return iArr;
     }
 
@@ -1676,7 +1677,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
         double radians = (float) Math.toRadians(-b0Var.getRotation());
         double d10 = y3;
         float measuredWidth = (b0Var.getMeasuredWidth() / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d10)));
-        float measuredHeight = (b0Var.getMeasuredHeight() / 2.0f) + ((float) i0.a.f(radians, d10, Math.sin(radians) * d));
+        float measuredHeight = (b0Var.getMeasuredHeight() / 2.0f) + ((float) i2.d.f(radians, d10, Math.sin(radians) * d));
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.setLocation(measuredWidth, measuredHeight);
         b0Var.e(obtain);
@@ -1778,7 +1779,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + i16;
         b0 b0Var = this.W0;
         int ceil = (int) Math.ceil((i14 - b0Var.getMeasuredWidth()) / 2.0f);
-        int additionalTop = ((getAdditionalTop() - getAdditionalBottom()) / 2) + org.telegram.messenger.q.C(8.0f, (((i15 - currentActionBarHeight) - AndroidUtilities.dp(48.0f)) - b0Var.getMeasuredHeight()) / 2, i16);
+        int additionalTop = ((getAdditionalTop() - getAdditionalBottom()) / 2) + org.telegram.messenger.g0.C(8.0f, (((i15 - currentActionBarHeight) - AndroidUtilities.dp(48.0f)) - b0Var.getMeasuredHeight()) / 2, i16);
         b0Var.layout(ceil, additionalTop, b0Var.getMeasuredWidth() + ceil, b0Var.getMeasuredHeight() + additionalTop);
         d0 d0Var = this.X0;
         d0Var.layout(ceil, additionalTop, d0Var.getMeasuredWidth() + ceil, d0Var.getMeasuredHeight() + additionalTop);
@@ -2120,7 +2121,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
         double radians = (float) Math.toRadians(-this.Z0.getRotation());
         double d10 = f10 - (point.y / 2.0f);
         fArr[0] = (AndroidUtilities.displaySize.x / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d10)));
-        fArr[1] = (AndroidUtilities.displaySize.y / 2.0f) + ((float) i0.a.f(radians, d10, Math.sin(radians) * d));
+        fArr[1] = (AndroidUtilities.displaySize.y / 2.0f) + ((float) i2.d.f(radians, d10, Math.sin(radians) * d));
     }
 
     public final void u0(float f7) {
@@ -2171,7 +2172,7 @@ public abstract class m0 extends kw0 implements q1, h, m1, iw0, NotificationCent
                 }
                 float max = Math.max(f12 / ((int) (cropState.cropPw * r12)), f13 / ((int) (cropState.cropPh * r13)));
                 f15 = f20 * max;
-                float C = com.google.android.gms.internal.cast.a6.C(cropState.cropPx, measuredWidth, f7, max);
+                float C = k3.C(cropState.cropPx, measuredWidth, f7, max);
                 float f21 = cropState.cropScale;
                 f16 = (C * f21) + f10;
                 f14 = 1.0f;

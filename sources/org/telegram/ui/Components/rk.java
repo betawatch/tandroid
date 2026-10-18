@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rk implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class rk implements View.OnTouchListener {
 
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
-        i2.g0 g0Var;
+        i2.h0 h0Var;
         d80 d80Var;
         switch (this.a) {
             case 0:
@@ -61,26 +61,26 @@ public final /* synthetic */ class rk implements View.OnTouchListener {
                     int i10 = l60Var.R.a;
                     if (i10 == 5) {
                         ImageView imageView = l60Var.I;
-                        si.t0 t0Var = l60Var.P;
-                        if (t0Var != null && i10 == 5) {
+                        si.s0 s0Var = l60Var.P;
+                        if (s0Var != null && i10 == 5) {
                             boolean z10 = l60Var.i0;
                             l60Var.i0 = !z10;
-                            si.t0.t();
-                            if (t0Var.W == 5 && (g0Var = t0Var.S) != null) {
-                                g0Var.U(!z10 ? 0.0f : 1.0f);
+                            si.s0.t();
+                            if (s0Var.W == 5 && (h0Var = s0Var.S) != null) {
+                                h0Var.U(!z10 ? 0.0f : 1.0f);
                             }
                             VideoEditedInfo videoEditedInfo = l60Var.U;
                             if (videoEditedInfo != null) {
                                 videoEditedInfo.muted = l60Var.i0;
                             }
                             imageView.animate().cancel();
-                            org.telegram.messenger.wh.s(imageView.animate(), l60Var.i0 ? 1.0f : 0.0f, 180L);
+                            org.telegram.messenger.kk.s(imageView.animate(), l60Var.i0 ? 1.0f : 0.0f, 180L);
                         }
                     }
                 } else {
                     if (motionEvent.getActionMasked() == 5 && motionEvent.getPointerCount() == 2) {
-                        si.s0 s0Var = l60Var.R;
-                        if (s0Var.a == 3 && !s0Var.e) {
+                        si.r0 r0Var = l60Var.R;
+                        if (r0Var.a == 3 && !r0Var.e) {
                             l60Var.z0 = motionEvent.getPointerId(0);
                             l60Var.A0 = motionEvent.getPointerId(1);
                             float hypot = (float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0));
@@ -96,8 +96,8 @@ public final /* synthetic */ class rk implements View.OnTouchListener {
                             l60Var.s();
                         } else {
                             float hypot2 = ((float) Math.hypot(motionEvent.getX(findPointerIndex2) - motionEvent.getX(findPointerIndex), motionEvent.getY(findPointerIndex2) - motionEvent.getY(findPointerIndex))) / l60Var.x0;
-                            si.l0 l0Var = l60Var.S;
-                            float f7 = l0Var == null ? 1.0f : l0Var.c;
+                            si.k0 k0Var = l60Var.S;
+                            float f7 = k0Var == null ? 1.0f : k0Var.c;
                             float max = f7 > 1.0f ? Math.max(0.0f, Math.min(1.0f, (((Math.max(0.0f, hypot2 - 1.0f) / 1.5f) + 1.0f) - 1.0f) / (f7 - 1.0f))) : 0.0f;
                             l60Var.y0 = max;
                             l60Var.P.w(max);

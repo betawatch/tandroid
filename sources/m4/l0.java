@@ -27,7 +27,7 @@ import org.telegram.ui.oc0;
 import org.telegram.ui.pc0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClickListener {
     public final /* synthetic */ float a;
@@ -109,16 +109,16 @@ public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClick
                 textView.setTextColor(pc0Var2.getThemedColor(h6.G6));
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                TextView k10 = org.telegram.ui.Cells.t0.k(pc0Var2.o0, textView, z5.a(-2.0f, 18.0f, 10.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48), context);
-                k10.setTextSize(1, 14.0f);
-                k10.setMaxLines(1);
-                k10.setEllipsize(truncateAt);
-                k10.setSingleLine(true);
-                k10.setTextColor(pc0Var2.getThemedColor(h6.A6));
-                k10.setGravity(LocaleController.isRTL ? 5 : 3);
-                pc0Var2.o0.addView(k10, z5.a(-2.0f, 18.0f, 32.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+                TextView j10 = org.telegram.ui.Cells.c1.j(pc0Var2.o0, textView, z5.a(-2.0f, 18.0f, 10.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48), context);
+                j10.setTextSize(1, 14.0f);
+                j10.setMaxLines(1);
+                j10.setEllipsize(truncateAt);
+                j10.setSingleLine(true);
+                j10.setTextColor(pc0Var2.getThemedColor(h6.A6));
+                j10.setGravity(LocaleController.isRTL ? 5 : 3);
+                pc0Var2.o0.addView(j10, z5.a(-2.0f, 18.0f, 32.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
                 textView.setText(oc0Var.c.title);
-                k10.setText(LocaleController.getString(R.string.TapToSendLocation));
+                j10.setText(LocaleController.getString(R.string.TapToSendLocation));
                 FrameLayout frameLayout3 = new FrameLayout(context);
                 frameLayout3.setBackground(h6.K(AndroidUtilities.dp(36.0f), t4.a(oc0Var.a)));
                 frameLayout.addView(frameLayout3, z5.a(36.0f, 0.0f, 0.0f, 0.0f, 4.0f, 36, 81));

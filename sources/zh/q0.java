@@ -1,64 +1,44 @@
 package zh;
 
-import android.text.TextUtils;
-import org.telegram.messenger.Utilities;
+import android.graphics.Bitmap;
+import android.graphics.Paint;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.r5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b1 b;
-    public final /* synthetic */ String c;
-
-    public /* synthetic */ q0(b1 b1Var, String str, int i10) {
-        this.a = i10;
-        this.b = b1Var;
-        this.c = str;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        g gVar = (g) obj;
-        switch (this.a) {
-            case 0:
-                b1 b1Var = this.b;
-                if (TextUtils.equals(b1Var.d, this.c)) {
-                    boolean z10 = b1Var.t0 == null;
-                    b1Var.t0 = gVar;
-                    if (!b1Var.v0) {
-                        if (!z10) {
-                            b1Var.c1(gVar);
-                            break;
-                        } else {
-                            h hVar = b1Var.s0;
-                            hVar.m = gVar;
-                            hVar.n = null;
-                            hVar.q = 2;
-                            hVar.o = 0.0f;
-                            hVar.p = 0L;
-                            hVar.E = 0L;
-                            hVar.F = false;
-                            b1Var.invalidate();
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                b1 b1Var2 = this.b;
-                if (TextUtils.equals(b1Var2.e, this.c)) {
-                    b1Var2.u0 = gVar;
-                    if (b1Var2.v0 && b1Var2.w0 && b1Var2.A0) {
-                        b1Var2.A0 = false;
-                        b1Var2.z0 = System.currentTimeMillis() + 60000;
-                        b1Var2.A2 = -1;
-                    }
-                    if (b1Var2.v0) {
-                        b1Var2.c1(gVar);
-                        break;
-                    }
-                }
-                break;
-        }
-    }
+public final class q0 {
+    public TL_stars.TL_starGiftUnique A;
+    public long B;
+    public s C;
+    public boolean D;
+    public int a;
+    public Drawable[] b;
+    public r5 c;
+    public r5 d;
+    public Bitmap e;
+    public Bitmap f;
+    public long g;
+    public boolean h;
+    public int j;
+    public Bitmap k;
+    public Bitmap l;
+    public Bitmap m;
+    public Bitmap n;
+    public int o;
+    public int p;
+    public int r;
+    public PorterDuffColorFilter u;
+    public long[] w;
+    public boolean[] x;
+    public long[] y;
+    public TLRPC.Document z;
+    public final Paint i = new Paint(2);
+    public int q = -1;
+    public int s = -1;
+    public int t = -1;
+    public final Paint v = new Paint(2);
 }

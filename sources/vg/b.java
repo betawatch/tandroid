@@ -1,6 +1,6 @@
 package vg;
 
-import ai.qc;
+import ai.rc;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import ci.l4;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import ig.l0;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,7 +39,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.w9;
 import s4.b1;
-import ug.s;
+import ug.t;
 import wg.d0;
 import wg.i;
 import wg.l;
@@ -50,15 +50,15 @@ import wg.w;
 import wg.x;
 import wg.y;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b extends pg.b {
     public final d6 d;
     public im0 f;
-    public s h;
-    public s n;
+    public t h;
+    public t n;
     public r r;
-    public s s;
+    public t s;
     public TLRPC.Chat v;
     public ArrayList e = new ArrayList();
     public final HashMap w = new HashMap();
@@ -411,30 +411,30 @@ public final class b extends pg.b {
                 view = new w(context, d6Var);
                 break;
             case 18:
-                qc qcVar = new qc(context);
+                rc rcVar = new rc(context);
                 String string = LocaleController.getString(R.string.NotifyMoreOptions);
-                boolean z10 = qcVar.c == -1;
-                qcVar.c = -1;
-                q6 q6Var = qcVar.a;
+                boolean z10 = rcVar.c == -1;
+                rcVar.c = -1;
+                q6 q6Var = rcVar.a;
                 q6Var.c(string, z10, true);
                 int x02 = h6.x0(null, h6.o6, false);
                 q6Var.setTextColor(x02);
                 PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN);
-                ImageView imageView = qcVar.b;
+                ImageView imageView = rcVar.b;
                 imageView.setColorFilter(porterDuffColorFilter);
                 if (z10) {
                     imageView.animate().rotation(0.0f).setDuration(340L).setInterpolator(bs.h);
                 } else {
                     imageView.setRotation(0.0f);
                 }
-                qcVar.d = false;
-                qcVar.setWillNotDraw(true);
-                view = qcVar;
+                rcVar.d = false;
+                rcVar.setWillNotDraw(true);
+                view = rcVar;
                 break;
             default:
                 view = new r(context, d6Var);
                 break;
         }
-        return a6.l(view, view, -1, -2);
+        return k3.l(view, view, -1, -2);
     }
 }

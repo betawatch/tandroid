@@ -3,24 +3,24 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wh extends AnimatorListenerAdapter {
     public final /* synthetic */ rn a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ org.telegram.ui.ActionBar.j5 c;
     public final /* synthetic */ boolean d;
-    public final /* synthetic */ ai.ud e;
+    public final /* synthetic */ ai.vd e;
     public final /* synthetic */ boolean f;
     public final /* synthetic */ sn h;
 
-    public wh(sn snVar, rn rnVar, boolean z10, org.telegram.ui.ActionBar.j5 j5Var, boolean z11, ai.ud udVar, boolean z12) {
+    public wh(sn snVar, rn rnVar, boolean z10, org.telegram.ui.ActionBar.j5 j5Var, boolean z11, ai.vd vdVar, boolean z12) {
         this.h = snVar;
         this.a = rnVar;
         this.b = z10;
         this.c = j5Var;
         this.d = z11;
-        this.e = udVar;
+        this.e = vdVar;
         this.f = z12;
     }
 
@@ -49,9 +49,9 @@ public final class wh extends AnimatorListenerAdapter {
             j5Var.setTranslationY(0.0f);
         }
         boolean z11 = this.d;
-        ai.ud udVar = this.e;
+        ai.vd vdVar = this.e;
         if (!z11) {
-            udVar.setTranslationY(0.0f);
+            vdVar.setTranslationY(0.0f);
         }
         snVar.C2[0].setTranslationX(0.0f);
         snVar.C2[1].setTranslationX(0.0f);
@@ -66,11 +66,11 @@ public final class wh extends AnimatorListenerAdapter {
         j5VarArr[1] = j5Var2;
         j5VarArr[0] = j5Var;
         j5Var2.setVisibility(4);
-        ai.ud[] udVarArr = snVar.E2;
-        ai.ud udVar2 = udVarArr[0];
-        udVarArr[1] = udVar2;
-        udVarArr[0] = udVar;
-        udVar2.setVisibility(4);
+        ai.vd[] vdVarArr = snVar.E2;
+        ai.vd vdVar2 = vdVarArr[0];
+        vdVarArr[1] = vdVar2;
+        vdVarArr[0] = vdVar;
+        vdVar2.setVisibility(4);
         rn[] rnVarArr = snVar.C2;
         rn rnVar2 = rnVarArr[0];
         if (rnVar != rnVar2) {

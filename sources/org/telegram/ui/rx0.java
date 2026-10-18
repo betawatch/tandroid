@@ -6,7 +6,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rx0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class rx0 implements View.OnClickListener {
             case 4:
                 TLRPC.UserFull userFull = profileActivity.w2;
                 if (userFull != null && userFull.wallet_card != null && profileActivity.getParentActivity() != null) {
-                    profileActivity.showDialog(new org.telegram.ui.Wallet.x2(profileActivity, profileActivity.d0, profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.f1)), profileActivity.w2.wallet_card));
+                    profileActivity.showDialog(new org.telegram.ui.Wallet.y2(profileActivity, profileActivity.d0, profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.f1)), profileActivity.w2.wallet_card));
                     break;
                 }
                 break;
@@ -52,7 +52,7 @@ public final /* synthetic */ class rx0 implements View.OnClickListener {
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", profileActivity.g1);
                 bundle.putLong("user_id", profileActivity.f1);
-                profileActivity.presentFragment(new zh.m0(bundle));
+                profileActivity.presentFragment(new zh.f0(bundle));
                 break;
             case 7:
                 ProfileActivity.g0(profileActivity);

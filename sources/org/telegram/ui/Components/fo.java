@@ -37,7 +37,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ua1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fo extends li implements iw0, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int m1 = 0;
@@ -451,7 +451,7 @@ public final class fo extends li implements iw0, NotificationCenter.Notification
         mnVar.j1(i10);
         mnVar.w2 = new en(callback);
         mnVar.X = new qn(callback, n2Var, mnVar);
-        mnVar.Y = new s2(12, callback, mnVar);
+        mnVar.Y = new q2(13, callback, mnVar);
         mnVar.t1();
         mnVar.setFocusable(true);
         mnVar.show();
@@ -689,7 +689,7 @@ public final class fo extends li implements iw0, NotificationCenter.Notification
             alertDialog$Builder.a.R = LocaleController.getString(z11 ? R.string.CancelTodoAlertTitle : R.string.CancelPollAlertTitle);
             alertDialog$Builder.a.T = LocaleController.getString(z11 ? R.string.CancelTodoAlertText : R.string.CancelPollAlertText);
             alertDialog$Builder.k(LocaleController.getString(R.string.PassportDiscard), new s(this, 23));
-            i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+            i2.d.r(R.string.Cancel, alertDialog$Builder, null);
         }
         return z10;
     }
@@ -819,7 +819,7 @@ public final class fo extends li implements iw0, NotificationCenter.Notification
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n2Var.getParentActivity(), 0, this.a);
             alertDialog$Builder.a.R = LocaleController.getString(!this.c0 ? R.string.DiscardPollOptionWithMediaAlertTitle : R.string.DiscardQuizOptionWithMediaAlertTitle);
             alertDialog$Builder.a.T = LocaleController.getString(!this.c0 ? R.string.DiscardPollOptionWithMediaMessage : R.string.DiscardQuizOptionWithMediaMessage);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.s2(this, view, c6Var, 29));
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.t2(this, view, c6Var, 29));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             alertDialog$Builder.a.setOnCancelListener(new jh(view, 1));
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
@@ -1502,7 +1502,7 @@ public final class fo extends li implements iw0, NotificationCenter.Notification
                     tL_messageMediaToDo.todo.list.add(todoItem);
                 }
             }
-            f5.Z(i14, tiVar.l1() + 1, tiVar.p1(), new ai.w3(this, (org.telegram.ui.sn) tiVar.f0, tL_messageMediaToDo, 8));
+            f5.Z(i14, tiVar.l1() + 1, tiVar.p1(), new ai.w3(this, (org.telegram.ui.sn) tiVar.f0, tL_messageMediaToDo, 7));
             return;
         }
         boolean z12 = this.c0;

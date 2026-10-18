@@ -4,14 +4,14 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class u1 {
     public long a;
@@ -110,11 +110,11 @@ public final class u1 {
                         f14 = f16;
                         long j12 = this.o;
                         float clamp = 1.0f - Utilities.clamp((j10 - j12) / Math.max(1L, this.a - j12), 1.0f, 0.0f);
-                        f15 = a6.A((float) Math.sin((j10 * 0.011f) + this.p), 0.28f, 0.72f, a6.B(clamp, f10, 3.0f, clamp * clamp));
+                        f15 = k3.A((float) Math.sin((j10 * 0.011f) + this.p), 0.28f, 0.72f, k3.B(clamp, f10, 3.0f, clamp * clamp));
                         f12 = 0.0f;
                     }
                     float f18 = 1.0f - f12;
-                    paint.setAlpha((int) a6.C(this.m, f18, f7, f15));
+                    paint.setAlpha((int) k3.C(this.m, f18, f7, f15));
                     Bitmap bitmap = v1Var.d[this.l];
                     if (v1Var.m) {
                         float f19 = this.c * f18 * f7 * this.q * (v1Var.N ? 0.75f + (f15 * 0.25f) : 1.0f);
@@ -138,7 +138,7 @@ public final class u1 {
             if (v1Var.N) {
             }
             float f182 = 1.0f - f12;
-            paint.setAlpha((int) a6.C(this.m, f182, f7, f15));
+            paint.setAlpha((int) k3.C(this.m, f182, f7, f15));
             Bitmap bitmap2 = v1Var.d[this.l];
             if (v1Var.m) {
             }
@@ -157,7 +157,7 @@ public final class u1 {
             long j13 = this.o;
             float clamp2 = 1.0f - Utilities.clamp((j10 - j13) / Math.max(1L, this.a - j13), 1.0f, 0.0f);
             min2 *= (2.2f * clamp2 * clamp2) + 0.15f;
-            this.e = wh.y(f14, f11, AndroidUtilities.dp(5.0f), this.e);
+            this.e = kk.x(f14, f11, AndroidUtilities.dp(5.0f), this.e);
         }
         this.d = (this.j * min2) + this.d;
         this.e = (this.k * min2) + this.e;
@@ -196,7 +196,7 @@ public final class u1 {
         float f13 = 0.0f;
         this.n = 0.0f;
         if (v1Var.m) {
-            this.c = org.telegram.ui.Cells.t0.d(Utilities.fastRandom, 0.6f, 0.4f);
+            this.c = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 0.6f, 0.4f);
         }
         if (v1Var.B) {
             float abs = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
@@ -238,16 +238,16 @@ public final class u1 {
             if (v1Var.J) {
                 float width = rectF.width();
                 float f19 = v1Var.j;
-                float x10 = a6.x(width, f19, org.telegram.ui.Cells.t0.h(Utilities.fastRandom, MediaDataController.MAX_STYLE_RUNS_COUNT) / 1000.0f, f19);
-                float h = org.telegram.ui.Cells.t0.h(Utilities.fastRandom, 360);
+                float y3 = k3.y(width, f19, org.telegram.ui.Cells.c1.g(Utilities.fastRandom, MediaDataController.MAX_STYLE_RUNS_COUNT) / 1000.0f, f19);
+                float g10 = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 360);
                 if (!v1Var.f[this.l] || this.s) {
                     f10 = 0.0f;
                 } else {
-                    x10 = Math.min(x10, AndroidUtilities.dp(10.0f));
+                    y3 = Math.min(y3, AndroidUtilities.dp(10.0f));
                     f10 = AndroidUtilities.dp(30.0f) + 0.0f;
                 }
-                double d = x10;
-                double d10 = h;
+                double d = y3;
+                double d10 = g10;
                 this.d = rectF.centerX() + 0.0f + ((float) (Math.sin(Math.toRadians(d10)) * d));
                 this.e = rectF.centerY() + f10 + v1Var.k + ((float) (Math.cos(Math.toRadians(d10)) * d));
             } else {
@@ -274,7 +274,7 @@ public final class u1 {
             this.q = f7;
         }
         if (v1Var.h) {
-            float min = (Math.min(rectF.width(), rectF.height()) * org.telegram.ui.Cells.t0.d(Utilities.fastRandom, 1.2f, 0.6f)) / 2.0f;
+            float min = (Math.min(rectF.width(), rectF.height()) * org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 1.2f, 0.6f)) / 2.0f;
             float cos = (((float) Math.cos(radians)) * min) + rectF.centerX() + 0.0f;
             this.d = cos;
             this.f = cos;

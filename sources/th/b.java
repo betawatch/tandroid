@@ -22,7 +22,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -33,8 +33,8 @@ import org.telegram.ui.Components.m9;
 import org.telegram.ui.Components.p6;
 import zf.p;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class b extends Drawable implements DownloadController.FileDownloadProgressListener {
     public final RadialProgress2 E;
     public MessageObject F;
@@ -125,7 +125,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
         if (this.h) {
             int dp3 = AndroidUtilities.dp(36.0f);
             Rect rect = AndroidUtilities.rectTmp2;
-            rect.set(q.B(9.0f, bounds.right, dp3), q.B(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
+            rect.set(g0.B(9.0f, bounds.right, dp3), g0.B(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(rect);
             this.E.a.set(rectF.left, rectF.top, rectF.right, rectF.bottom);
@@ -137,7 +137,7 @@ public final class b extends Drawable implements DownloadController.FileDownload
                 if (!this.n || this.r) {
                     canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.w);
                 } else {
-                    this.x.setColor(i0.b.o(h6.x0(null, this.F.isOutOwner() ? h6.fc : h6.ec, false), 16));
+                    this.x.setColor(i0.a.o(h6.x0(null, this.F.isOutOwner() ? h6.fc : h6.ec, false), 16));
                     canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.x);
                 }
             }

@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class sb0 extends org.telegram.ui.ActionBar.n2 {
     public FrameLayout a;
@@ -55,7 +55,7 @@ public final class sb0 extends org.telegram.ui.ActionBar.n2 {
                 return;
             }
             if (((mb0) arrayList.get(i11)).e == i10) {
-                this.b.e1(new i2.q(this, i11, 13), 700, true);
+                this.b.e1(new i2.r(this, i11, 13), 700, true);
                 return;
             }
             i11++;
@@ -148,7 +148,7 @@ public final class sb0 extends org.telegram.ui.ActionBar.n2 {
                                     rb0Var.c(mb0Var, true);
                                     int U = sb0Var.U(i12);
                                     imageView.clearAnimation();
-                                    org.telegram.messenger.wh.t(imageView.animate().rotation((U < 0 || !sb0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 240L);
+                                    org.telegram.messenger.kk.t(imageView.animate().rotation((U < 0 || !sb0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 240L);
                                 }
                                 rb0Var.f.c(LiteMode.isEnabled(i12), true);
                             } else {

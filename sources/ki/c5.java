@@ -12,7 +12,7 @@ import org.telegram.ui.Components.l11;
 import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.pj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class c5 {
     public static Object a(Spanned spanned, int i10, int i11, Class cls) {
@@ -205,7 +205,7 @@ public abstract class c5 {
                                 TL_iv.PageListOrderedItem pageListOrderedItem2 = pageListOrderedItem;
                                 SpannableStringBuilder r12 = pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemText ? e6.r(((TL_iv.TL_pageListOrderedItemText) pageListOrderedItem2).text, null, true) : pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemBlocks ? c(((TL_iv.TL_pageListOrderedItemBlocks) pageListOrderedItem2).blocks) : null;
                                 if (r12 != null) {
-                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(r.c.u(!TextUtils.isEmpty(pageListOrderedItem2.num) ? pageListOrderedItem2.num : String.valueOf(i11), ".  "));
+                                    SpannableStringBuilder spannableStringBuilder4 = new SpannableStringBuilder(r4.c.u(!TextUtils.isEmpty(pageListOrderedItem2.num) ? pageListOrderedItem2.num : String.valueOf(i11), ".  "));
                                     spannableStringBuilder4.append((CharSequence) r12);
                                     arrayList7.add(spannableStringBuilder4);
                                 }

@@ -12,7 +12,7 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x1 extends e61 {
     static {
@@ -47,7 +47,7 @@ public final class x1 extends e61 {
             y1.a(y1Var, stargiftattributemodel.document, 80, f61Var.G, true);
             w9Var.setColorFilter(null);
             e1Var.w = org.telegram.ui.ActionBar.h6.Oh;
-            str = k7.W1(stargiftattributemodel.rarity, numArr);
+            str = k7.X1(stargiftattributemodel.rarity, numArr);
         } else if (i10 == 1) {
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = v1Var.a;
             TL_stars.starGiftAttributePattern stargiftattributepattern = v1Var.b;
@@ -56,8 +56,8 @@ public final class x1 extends e61 {
             e1Var.w = org.telegram.ui.ActionBar.h6.d6;
             textView.setText(stargiftattributebackdrop.name);
             y1.a(y1Var, stargiftattributepattern.document, 48, f61Var.G, false);
-            w9Var.setColorFilter(new PorterDuffColorFilter(i0.b.o(stargiftattributebackdrop.pattern_color, 64), PorterDuff.Mode.SRC_IN));
-            str = k7.W1(stargiftattributebackdrop.rarity, numArr);
+            w9Var.setColorFilter(new PorterDuffColorFilter(i0.a.o(stargiftattributebackdrop.pattern_color, 64), PorterDuff.Mode.SRC_IN));
+            str = k7.X1(stargiftattributebackdrop.rarity, numArr);
         } else if (i10 == 2) {
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = v1Var.a;
             TL_stars.starGiftAttributePattern stargiftattributepattern2 = v1Var.b;
@@ -67,7 +67,7 @@ public final class x1 extends e61 {
             textView.setText(stargiftattributepattern2.name);
             y1.a(y1Var, stargiftattributepattern2.document, 64, f61Var.G, false);
             w9Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            str = k7.W1(stargiftattributepattern2.rarity, numArr);
+            str = k7.X1(stargiftattributepattern2.rarity, numArr);
         } else {
             str = "";
         }

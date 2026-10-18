@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class ty0 {
     public static void a(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -34,7 +34,7 @@ public abstract class ty0 {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.StickersDeleteStickerSetTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.StickersDeleteStickerSetDescription);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new s2(20, runnable, stickerSet));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new q2(21, runnable, stickerSet));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.show();

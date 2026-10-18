@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class gj0 implements Choreographer.FrameCallback {
     public static final Matrix E = new Matrix();
@@ -31,7 +31,7 @@ public final class gj0 implements Choreographer.FrameCallback {
     public long r = 0;
     public float s = AndroidUtilities.dp(40.0f);
     public View v;
-    public ai.yb w;
+    public ai.zb w;
 
     static {
         Paint paint = new Paint(1);
@@ -244,9 +244,9 @@ public final class gj0 implements Choreographer.FrameCallback {
                     view = parentView;
                 }
             }
-            ai.yb ybVar = this.w;
-            if (ybVar != null) {
-                ybVar.run();
+            ai.zb zbVar = this.w;
+            if (zbVar != null) {
+                zbVar.run();
                 this.w = null;
             }
         }
@@ -400,7 +400,7 @@ public final class gj0 implements Choreographer.FrameCallback {
         e();
     }
 
-    public final void m(ai.yb ybVar) {
-        this.w = ybVar;
+    public final void m(ai.zb zbVar) {
+        this.w = zbVar;
     }
 }

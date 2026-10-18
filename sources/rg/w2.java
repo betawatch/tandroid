@@ -5,11 +5,11 @@ import android.graphics.PointF;
 import android.view.ViewGroup;
 import ei.tc;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.el0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w2 extends j {
     public final s0 q0;
@@ -59,8 +59,8 @@ public final class w2 extends j {
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float A = wh.A(dp, 2.0f, getPositionX(), scaleX);
-        return new el0(A, wh.A(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + A) - A, dp2 * scaleX);
+        float z10 = kk.z(dp, 2.0f, getPositionX(), scaleX);
+        return new el0(z10, kk.z(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + z10) - z10, dp2 * scaleX);
     }
 
     @Override // rg.j

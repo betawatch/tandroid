@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s21 {
     public long a;
@@ -66,7 +66,7 @@ public final class s21 {
             }
             r21Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
             r21 r21Var3 = r21Var;
-            r21Var3.d = (float) i0.a.f(nextInt, d10, Math.sin(nextInt) * d11);
+            r21Var3.d = (float) i2.d.f(nextInt, d10, Math.sin(nextInt) * d11);
             r21Var3.f = 1.0f;
             r21Var3.h = 0.0f;
             if (this.b) {

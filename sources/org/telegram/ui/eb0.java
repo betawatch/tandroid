@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eb0 implements Runnable {
     public final /* synthetic */ int a;
@@ -64,12 +64,12 @@ public final /* synthetic */ class eb0 implements Runnable {
             case 8:
                 ProfileActivity profileActivity5 = this.b;
                 profileActivity5.getClass();
-                profileActivity5.presentFragment(new ig.d1());
+                profileActivity5.presentFragment(new ig.f1());
                 break;
             case 9:
                 ProfileActivity profileActivity6 = this.b;
                 profileActivity6.getClass();
-                profileActivity6.presentFragment(new ig.b1());
+                profileActivity6.presentFragment(new ig.d1());
                 break;
             case 10:
                 ProfileActivity profileActivity7 = this.b;
@@ -137,7 +137,7 @@ public final /* synthetic */ class eb0 implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", profileActivity14.g1);
                 bundle.putLong("user_id", profileActivity14.f1);
-                profileActivity14.presentFragment(new zh.m0(bundle));
+                profileActivity14.presentFragment(new zh.f0(bundle));
                 break;
             case 23:
                 ProfileActivity profileActivity15 = this.b;
@@ -152,7 +152,7 @@ public final /* synthetic */ class eb0 implements Runnable {
                 TLRPC.UserFull userFull = profileActivity16.w2;
                 if (userFull != null) {
                     AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(userFull.note, false));
-                    org.telegram.messenger.wh.p(R.string.TextCopied, org.telegram.ui.Components.xc.a0(profileActivity16));
+                    org.telegram.messenger.kk.p(R.string.TextCopied, org.telegram.ui.Components.xc.a0(profileActivity16));
                     break;
                 }
                 break;

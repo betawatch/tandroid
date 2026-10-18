@@ -23,15 +23,15 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.n31;
 import org.telegram.ui.Components.wc0;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public class q2 extends FrameLayout {
     public boolean E;
     public long F;
@@ -132,10 +132,10 @@ public class q2 extends FrameLayout {
         if (this.c) {
             float scaleX = ((View) getParent()).getScaleX();
             this.v.setAlpha(1.0f - f7);
-            float y3 = !z10 ? wh.y(0.4f, scaleX, f7, 1.0f / scaleX) : 1.0f - (0.4f * f7);
+            float x10 = !z10 ? kk.x(0.4f, scaleX, f7, 1.0f / scaleX) : 1.0f - (0.4f * f7);
             ImageView imageView = this.s;
-            imageView.setScaleX(y3);
-            imageView.setScaleY(y3);
+            imageView.setScaleX(x10);
+            imageView.setScaleY(x10);
             imageView.setTranslationY(AndroidUtilities.dp(60.0f) * f7);
         }
     }
@@ -507,7 +507,7 @@ public class q2 extends FrameLayout {
         textView.setText(LocaleController.getString(R.string.VoipVideoScreenSharing));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        org.telegram.messenger.q.m(15.0f, -1, 1, textView);
+        org.telegram.messenger.g0.m(15.0f, -1, 1, textView);
         frameLayout.addView(textView, z5.a(-2.0f, 21.0f, 28.0f, 21.0f, 0.0f, -1, 17));
         if (z12) {
             setOutlineProvider(new dh.b(this, 5));

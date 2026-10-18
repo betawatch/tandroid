@@ -15,7 +15,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class c implements y2.g {
     public final Uri a;
@@ -45,10 +45,10 @@ public final class c implements y2.g {
         long j12 = oVar.a;
         g2.m mVar = oVar.b;
         b0 b0Var = oVar.d;
-        u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        u2.t tVar = new u2.t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         e eVar = this.x;
         eVar.c.getClass();
-        eVar.f.q(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        eVar.f.q(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final Uri a() {
@@ -122,7 +122,7 @@ public final class c implements y2.g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(n nVar, u2.u uVar) {
+    public final void d(n nVar, u2.t tVar) {
         boolean z10;
         CopyOnWriteArrayList copyOnWriteArrayList;
         boolean z11;
@@ -275,7 +275,7 @@ public final class c implements y2.g {
                             j20 /= 2;
                         }
                     }
-                    this.n = (m0.h0(j17) + elapsedRealtime) - uVar.e;
+                    this.n = (m0.h0(j17) + elapsedRealtime) - tVar.e;
                     if (this.e.o) {
                         return;
                     }
@@ -289,7 +289,7 @@ public final class c implements y2.g {
                     j20 /= 2;
                 }
                 j17 = j20;
-                this.n = (m0.h0(j17) + elapsedRealtime) - uVar.e;
+                this.n = (m0.h0(j17) + elapsedRealtime) - tVar.e;
                 if (this.e.o) {
                 }
             }
@@ -312,7 +312,7 @@ public final class c implements y2.g {
         if (!mVar.e) {
         }
         j172 = j202;
-        this.n = (m0.h0(j172) + elapsedRealtime) - uVar.e;
+        this.n = (m0.h0(j172) + elapsedRealtime) - tVar.e;
         if (this.e.o) {
         }
     }
@@ -325,7 +325,7 @@ public final class c implements y2.g {
         g2.m mVar = oVar.b;
         b0 b0Var = oVar.d;
         Uri uri = b0Var.c;
-        u2.u uVar = new u2.u(mVar, uri, b0Var.d, j10, j11, b0Var.b);
+        u2.t tVar = new u2.t(mVar, uri, b0Var.d, j10, j11, b0Var.b);
         boolean z10 = uri.getQueryParameter("_HLS_msn") != null;
         boolean z11 = iOException instanceof s;
         k4.d dVar = y2.l.e;
@@ -338,7 +338,7 @@ public final class c implements y2.g {
                 c(uri2);
                 a5.a aVar = eVar.f;
                 String str = m0.a;
-                aVar.t(uVar, i11, iOException, true);
+                aVar.t(tVar, i11, iOException, true);
                 return dVar;
             }
         }
@@ -355,7 +355,7 @@ public final class c implements y2.g {
             dVar = z32 != -9223372036854775807L ? new k4.d(0, z32, false) : y2.l.f;
         }
         boolean a2 = dVar.a();
-        eVar.f.t(uVar, i11, iOException, !a2);
+        eVar.f.t(tVar, i11, iOException, !a2);
         if (!a2) {
             dVar2.getClass();
         }
@@ -364,18 +364,18 @@ public final class c implements y2.g {
 
     @Override // y2.g
     public final void l(y2.i iVar, long j10, long j11, int i10) {
-        u2.u uVar;
+        u2.t tVar;
         y2.o oVar = (y2.o) iVar;
         if (i10 == 0) {
             long j12 = oVar.a;
-            uVar = new u2.u(oVar.b, j10);
+            tVar = new u2.t(oVar.b, j10);
         } else {
             long j13 = oVar.a;
             g2.m mVar = oVar.b;
             b0 b0Var = oVar.d;
-            uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+            tVar = new u2.t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         }
-        this.x.f.v(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+        this.x.f.v(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
     }
 
     @Override // y2.g
@@ -384,14 +384,14 @@ public final class c implements y2.g {
         r rVar = (r) oVar.f;
         g2.m mVar = oVar.b;
         b0 b0Var = oVar.d;
-        u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        u2.t tVar = new u2.t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         if (rVar instanceof n) {
-            d((n) rVar, uVar);
-            this.x.f.r(uVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+            d((n) rVar, tVar);
+            this.x.f.r(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         } else {
             w0 b10 = w0.b("Loaded playlist has unexpected type.", null);
             this.v = b10;
-            this.x.f.t(uVar, 4, b10, true);
+            this.x.f.t(tVar, 4, b10, true);
         }
         this.x.c.getClass();
     }

@@ -11,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import w7.n6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class q implements k {
     public final Context a;
@@ -92,7 +92,7 @@ public final class q implements k {
             j4.f a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
             int i10 = a2.a;
             if (i10 != 0) {
-                throw new RuntimeException(i0.a.k(i10, "fetchFonts failed (", ")"));
+                throw new RuntimeException(i2.d.k(i10, "fetchFonts failed (", ")"));
             }
             o0.h[] hVarArr = (o0.h[]) a2.b.get(0);
             if (hVarArr == null || hVarArr.length == 0) {

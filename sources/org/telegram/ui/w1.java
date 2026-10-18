@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w1 extends View implements org.telegram.ui.Cells.m9 {
     public final d70 a;
@@ -254,7 +254,7 @@ public final class w1 extends View implements org.telegram.ui.Cells.m9 {
                     if (q10 != null) {
                         int height2 = this.h.d.getHeight() + AndroidUtilities.dp(4.0f);
                         this.w = height2;
-                        dp3 = org.telegram.messenger.q.C(4.0f, height2, dp3);
+                        dp3 = org.telegram.messenger.g0.C(4.0f, height2, dp3);
                     }
                     int i13 = dp3;
                     TL_iv.pageBlockEmbedPost pageblockembedpost6 = this.y;

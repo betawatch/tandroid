@@ -1,6 +1,6 @@
 package w;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class f extends Exception {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -9,7 +9,7 @@ public class f extends Exception {
     */
     public f(String str, e eVar) {
         super(r2.toString());
-        StringBuilder i10 = r.c.i(str, ", frames: ");
+        StringBuilder i10 = r4.c.i(str, ", frames: ");
         i10.append(eVar.a());
     }
 
@@ -19,7 +19,7 @@ public class f extends Exception {
     */
     public f(String str, e eVar, Exception exc) {
         super(r2.toString(), exc);
-        StringBuilder i10 = r.c.i(str, ", frames: ");
+        StringBuilder i10 = r4.c.i(str, ", frames: ");
         i10.append(eVar.a());
     }
 }

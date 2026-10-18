@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m50 extends org.telegram.ui.Components.hm0 {
     public int E;
@@ -522,7 +522,7 @@ public final class m50 extends org.telegram.ui.Components.hm0 {
             }
             view = new x10(context, s50Var.p0);
         }
-        return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }
 
     @Override // s4.g0

@@ -1,24 +1,77 @@
 package u2;
 
-import e9.x1;
-
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class s1 extends b2.w0 {
-    public final e9.n0 c;
+public abstract class s1 extends l {
+    public final a k;
 
-    public s1(String str, x1 x1Var) {
-        super(str, null, false, 1);
-        this.c = e9.n0.u(x1Var);
+    public s1(a aVar) {
+        this.k = aVar;
     }
 
-    @Override // b2.w0, java.lang.Throwable
-    public final String getMessage() {
-        String message = super.getMessage();
-        e9.n0 n0Var = this.c;
-        if (n0Var.isEmpty()) {
-            return message;
-        }
-        return message + "\nsniff failures: " + n0Var;
+    public abstract void A(b2.o1 o1Var);
+
+    public final void B() {
+        y(null, this.k);
+    }
+
+    public void C() {
+        B();
+    }
+
+    @Override // u2.a
+    public boolean a(b2.o0 o0Var) {
+        return this.k.a(o0Var);
+    }
+
+    @Override // u2.a
+    public b2.o1 h() {
+        return this.k.h();
+    }
+
+    @Override // u2.a
+    public final b2.o0 i() {
+        return this.k.i();
+    }
+
+    @Override // u2.a
+    public boolean j() {
+        return this.k.j();
+    }
+
+    @Override // u2.a
+    public final void m(g2.c0 c0Var) {
+        this.j = c0Var;
+        this.i = e2.m0.q(null);
+        C();
+    }
+
+    @Override // u2.a
+    public void t(b2.o0 o0Var) {
+        this.k.t(o0Var);
+    }
+
+    @Override // u2.l
+    public final f0 u(Object obj, f0 f0Var) {
+        return z(f0Var);
+    }
+
+    @Override // u2.l
+    public final long v(Object obj, long j10) {
+        return j10;
+    }
+
+    @Override // u2.l
+    public final int w(int i10, Object obj) {
+        return i10;
+    }
+
+    @Override // u2.l
+    public final void x(Object obj, a aVar, b2.o1 o1Var) {
+        A(o1Var);
+    }
+
+    public f0 z(f0 f0Var) {
+        return f0Var;
     }
 }

@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayDeque;
 import ki.t1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f1 implements Closeable {
     public final ByteArrayInputStream a;
@@ -40,7 +40,7 @@ public final class f1 implements Closeable {
             z10 = true;
         } else {
             if (b10 != 32) {
-                throw new IllegalStateException(i0.a.j((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
+                throw new IllegalStateException(i2.d.j((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
             }
             z10 = false;
         }
@@ -96,7 +96,7 @@ public final class f1 implements Closeable {
                             t1Var.b0(-1L);
                         } else {
                             if (b10 != 96) {
-                                throw new IllegalStateException(i0.a.j((this.b.a >> 5) & 7, "invalid major type: "));
+                                throw new IllegalStateException(i2.d.j((this.b.a >> 5) & 7, "invalid major type: "));
                             }
                             t1Var.b0(-2L);
                         }
@@ -185,7 +185,7 @@ public final class f1 implements Closeable {
     public final void g() {
         d();
         if (this.b.b == 31) {
-            throw new IllegalStateException(i0.a.j(this.b.b, "expected definite length but found "));
+            throw new IllegalStateException(i2.d.j(this.b.b, "expected definite length but found "));
         }
     }
 

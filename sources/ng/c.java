@@ -5,11 +5,12 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+import mi.q;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.q;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.k4;
 import org.telegram.ui.ActionBar.n2;
@@ -20,7 +21,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.n5;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -41,11 +42,11 @@ public final /* synthetic */ class c implements Runnable {
                     n5Var.b = (jw0) R.getFragmentView();
                 }
                 Activity parentActivity = R.getParentActivity();
-                LinearLayout e = q.e(parentActivity, 1);
+                LinearLayout e = g0.e(parentActivity, 1);
                 TextView textView = new TextView(parentActivity);
                 textView.setText("Saturation " + (n5.c * 5.0f));
                 int i10 = h6.n5;
-                wh.u(textView, h6.x0(null, i10, false), 1, 16.0f, 1);
+                kk.u(textView, h6.x0(null, i10, false), 1, 16.0f, 1);
                 textView.setMaxLines(1);
                 textView.setSingleLine(true);
                 textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
@@ -56,18 +57,18 @@ public final /* synthetic */ class c implements Runnable {
                 e.addView(cp0Var, z5.a(38.0f, 5.0f, 4.0f, 5.0f, 0.0f, -1, 0));
                 TextView textView2 = new TextView(parentActivity);
                 textView2.setText("Alpha " + n5.e);
-                wh.u(textView2, h6.x0(null, i10, false), 1, 16.0f, 1);
+                kk.u(textView2, h6.x0(null, i10, false), 1, 16.0f, 1);
                 textView2.setMaxLines(1);
                 textView2.setSingleLine(true);
                 textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
                 e.addView(textView2, z5.a(-1.0f, 21.0f, 13.0f, 21.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
                 cp0 cp0Var2 = new cp0(parentActivity);
-                cp0Var2.setDelegate(new mi.q(n5Var, textView2, false, 8));
+                cp0Var2.setDelegate(new q(n5Var, textView2, false, 8));
                 cp0Var2.setReportChanges(true);
                 e.addView(cp0Var2, z5.a(38.0f, 5.0f, 4.0f, 5.0f, 0.0f, -1, 0));
                 TextView textView3 = new TextView(parentActivity);
                 textView3.setText("Blur Radius");
-                wh.u(textView3, h6.x0(null, i10, false), 1, 16.0f, 1);
+                kk.u(textView3, h6.x0(null, i10, false), 1, 16.0f, 1);
                 textView3.setMaxLines(1);
                 textView3.setSingleLine(true);
                 textView3.setGravity((LocaleController.isRTL ? 3 : 5) | 48);

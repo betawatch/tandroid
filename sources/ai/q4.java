@@ -40,7 +40,7 @@ import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.sn;
 import org.telegram.ui.te1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q4 implements org.telegram.ui.ActionBar.a2, xl0 {
     public final /* synthetic */ int a;
@@ -105,7 +105,7 @@ public final /* synthetic */ class q4 implements org.telegram.ui.ActionBar.a2, x
                 if (j10 == 0 || j10 == n2Var.getUserConfig().getClientUserId()) {
                     return;
                 }
-                n2Var.presentFragment(new ProfileActivity(z7.g5.a(j10, "user_id"), null));
+                n2Var.presentFragment(new ProfileActivity(zf.d0.b(j10, "user_id"), null));
                 return;
             }
             return;
@@ -342,7 +342,7 @@ public final /* synthetic */ class q4 implements org.telegram.ui.ActionBar.a2, x
                     if (i11 >= size) {
                         q31Var.e0.addAll(hashSet);
                         q31Var.o();
-                        org.telegram.ui.Components.xc.a0(q31Var.h).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new c3(q31Var, hashSet, arrayList, j10, 18), new go0(q31Var, arrayList, rcVar, 13)).j();
+                        org.telegram.ui.Components.xc.a0(q31Var.h).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new b2(q31Var, hashSet, arrayList, j10, 18), new go0(q31Var, arrayList, rcVar, 13)).j();
                         b2Var.dismiss();
                         break;
                     } else {

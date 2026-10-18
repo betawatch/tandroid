@@ -15,7 +15,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class z21 extends FrameLayout {
     public static long Q;
@@ -341,7 +341,7 @@ public abstract class z21 extends FrameLayout {
 
     public void setTransitionPaddingBottom(int i10) {
         fx fxVar = this.a;
-        if (com.google.android.gms.internal.cast.a6.s(fxVar)) {
+        if (com.google.android.gms.internal.play_billing.k3.s(fxVar)) {
             float f7 = i10;
             fxVar.X0 = f7;
             fxVar.h.setTranslationY(((-f7) - fxVar.e1) - fxVar.d1);

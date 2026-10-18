@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.w31;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r1 {
     public e1 a;
@@ -64,7 +64,7 @@ public final class r1 {
                 fArr[1] = fArr[1] - h1Var.c;
                 double d = f7 * (z10 ? -1 : 1);
                 float cos = (float) ((Math.cos(d) * f10) - (Math.sin(d) * fArr[1]));
-                float f11 = (float) i0.a.f(d, fArr[1], Math.sin(d) * fArr[0]);
+                float f11 = (float) i2.d.f(d, fArr[1], Math.sin(d) * fArr[0]);
                 h1 h1Var2 = this.h;
                 fArr[0] = cos + h1Var2.b;
                 fArr[1] = f11 + h1Var2.c;

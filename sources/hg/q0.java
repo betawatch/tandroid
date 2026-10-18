@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q0 extends im0 {
     public static final o0[] a3 = {new o0(R.drawable.search_media_filled, R.string.SharedMediaTab2, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new o0(R.drawable.search_links_filled, R.string.SharedLinksTab2, new TLRPC.TL_inputMessagesFilterUrl(), 2), new o0(R.drawable.search_files_filled, R.string.SharedFilesTab2, new TLRPC.TL_inputMessagesFilterDocument(), 1), new o0(R.drawable.search_music_filled, R.string.SharedMusicTab2, new TLRPC.TL_inputMessagesFilterMusic(), 3), new o0(R.drawable.search_voice_filled, R.string.SharedVoiceTab2, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
@@ -322,7 +322,7 @@ public final class q0 extends im0 {
                     TLRPC.Chat chat = (TLRPC.Chat) obj;
                     String str = chat.title;
                     if (str.length() > 12) {
-                        str = r.c.u(str.substring(0, 10), "...");
+                        str = r4.c.u(str.substring(0, 10), "...");
                     }
                     o0 o0Var2 = new o0(R.drawable.search_users_filled, 4, str);
                     o0Var2.f = chat;

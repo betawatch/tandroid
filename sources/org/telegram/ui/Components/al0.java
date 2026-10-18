@@ -31,11 +31,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class al0 extends FrameLayout {
     public boolean E;
-    public ai.ce F;
+    public ai.de F;
     public final xk0 G;
     public boolean H;
     public float I;
@@ -336,7 +336,7 @@ public final class al0 extends FrameLayout {
             zk0Var.getImageReceiver().setImageBitmap(new uj0(R.raw.star_reaction, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f)));
             zk0Var2.getImageReceiver().setImageBitmap(getContext().getResources().getDrawable(R.drawable.star_reaction));
             if (this.F == null) {
-                this.F = new ai.ce(1, SharedConfig.getDevicePerformanceClass() == 2 ? 45 : 18);
+                this.F = new ai.de(1, SharedConfig.getDevicePerformanceClass() == 2 ? 45 : 18);
                 return;
             }
             return;
@@ -449,7 +449,7 @@ public final class al0 extends FrameLayout {
                     this.N = true;
                     this.L = motionEvent.getX();
                     this.M = motionEvent.getY();
-                    if (this.h == 1.0f && !this.H && (i10 = cl0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((bl0Var = cl0Var.g0) == null || bl0Var.j())) {
+                    if (this.h == 1.0f && !this.H && (i10 = cl0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((bl0Var = cl0Var.g0) == null || bl0Var.h())) {
                         AndroidUtilities.runOnUIThread(xk0Var, ViewConfiguration.getLongPressTimeout());
                     }
                 }

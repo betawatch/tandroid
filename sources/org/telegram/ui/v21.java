@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class v21 extends org.telegram.ui.Components.bb {
     public final LinearLayout X;
@@ -66,9 +66,9 @@ public final class v21 extends org.telegram.ui.Components.bb {
         textView.setText(LocaleController.getString(R.string.AboutRevenueSharingAds));
         textView.setTypeface(AndroidUtilities.bold());
         int i13 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.messenger.wh.o(i13, d6Var2, textView, 1, 20.0f);
+        org.telegram.messenger.kk.o(i13, d6Var2, textView, 1, 20.0f);
         textView.setGravity(1);
-        TextView i14 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView, w7.z5.t(-2, -2, 1, 22, 14, 22, 0), context);
+        TextView i14 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 1, 22, 14, 22, 0), context);
         i14.setText(LocaleController.getString(R.string.RevenueSharingAdsAlertSubtitle));
         i14.setTextColor(org.telegram.ui.ActionBar.h6.w0(i13, d6Var2));
         i14.setTextSize(1, 14.0f);

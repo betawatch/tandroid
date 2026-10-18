@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f3 extends FrameLayout {
     public final LinearLayout a;
@@ -42,13 +42,13 @@ public final class f3 extends FrameLayout {
         textView.setTextSize(1, 19.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextColor(-1);
-        TextView i10 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView, w7.z5.t(-2, -2, 3, 0, 4, 0, 2), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 3, 0, 4, 0, 2), context);
         this.e = i10;
         i10.setTextSize(1, 15.0f);
         i10.setTextColor(-1);
         i10.setSingleLine(false);
         i10.setMaxLines(3);
-        TextView i11 = com.google.android.gms.internal.cast.a6.i(linearLayout, i10, w7.z5.t(-2, -2, 3, 0, 0, 0, 1), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, i10, w7.z5.t(-2, -2, 3, 0, 0, 0, 1), context);
         this.f = i11;
         i11.setTextSize(1, 12.0f);
         i11.setTextColor(-1);
@@ -63,7 +63,7 @@ public final class f3 extends FrameLayout {
 
     public final void a(String str, String str2) {
         this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-        org.telegram.messenger.wh.r(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
+        org.telegram.messenger.kk.r(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
         this.f.setText(str2);
     }
 

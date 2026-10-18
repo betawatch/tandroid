@@ -22,11 +22,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Cells.x0;
+import org.telegram.ui.Cells.w0;
 import org.telegram.ui.pj;
 import w7.r;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -134,8 +134,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             if (j.c(childAt, viewGroup, rectF3)) {
                 if (childAt instanceof u1) {
                     messageObject = ((u1) childAt).getMessageObject();
-                } else if (childAt instanceof x0) {
-                    messageObject = ((x0) childAt).getMessageObject();
+                } else if (childAt instanceof w0) {
+                    messageObject = ((w0) childAt).getMessageObject();
                 }
                 if (messageObject != null) {
                     long dialogId = messageObject.getDialogId();

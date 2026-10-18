@@ -6,12 +6,12 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class q extends g {
     public final Matrix D1;
@@ -165,11 +165,11 @@ public class q extends g {
                 float width = rectF.width() > rectF.height() ? rectF.width() : rectF.height();
                 float height = (rectF.width() > rectF.height() ? rectF.height() : rectF.width()) * 0.45f;
                 f10 = 0.0f;
-                float x10 = a6.x(1.0f, this.z0.f, (width - height) / 2.0f, height);
+                float y3 = k3.y(1.0f, this.z0.f, (width - height) / 2.0f, height);
                 RectF rectF2 = new RectF();
                 f7 = 1.0f;
-                rectF2.set(centerX - x10, centerY - x10, centerX + x10, centerY + x10);
-                path.addRoundRect(rectF2, x10, x10, Path.Direction.CW);
+                rectF2.set(centerX - y3, centerY - y3, centerX + y3, centerY + y3);
+                path.addRoundRect(rectF2, y3, y3, Path.Direction.CW);
                 canvas.clipPath(path);
             } else {
                 f7 = 1.0f;

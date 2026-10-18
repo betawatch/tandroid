@@ -55,6 +55,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -73,7 +74,7 @@ import org.telegram.ui.Components.wh;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
     public final rg.f1 A0;
@@ -636,7 +637,7 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                             this.Z1.setPadding(0, AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f));
                             this.M1.addView(this.Z1, w7.z5.a(96.0f, 0.0f, 0.0f, 12.0f, 64.0f, -2, 53));
                             Paint paint = new Paint(1);
-                            paint.setColor(i0.b.o(-16777216, 120));
+                            paint.setColor(i0.a.o(-16777216, 120));
                             cl0 cl0Var3 = this.Z1;
                             com.google.android.gms.internal.cast.z5 z5Var = new com.google.android.gms.internal.cast.z5();
                             z5Var.e = this;
@@ -1200,7 +1201,7 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
     }
 
     public final void J0(rg.q0 q0Var) {
-        j8 j8Var = new j8(getContext(), this.G1, this.g2, new ai.n2(10, this, q0Var));
+        j8 j8Var = new j8(getContext(), this.G1, this.g2, new ai.o2(10, this, q0Var));
         if (q0Var != null) {
             rg.n0 n0Var = q0Var.u0;
             j8Var.c0 = true;
@@ -2313,7 +2314,7 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
         ImageReceiver imageReceiver2;
         boolean z17;
         TLRPC.Message message;
-        org.telegram.ui.Cells.x0 x0Var;
+        org.telegram.ui.Cells.w0 w0Var;
         ai.m7 m7Var;
         ImageReceiver imageReceiver3;
         ImageReceiver imageReceiver4;
@@ -2583,16 +2584,16 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                                     mediaAreaCoordinates2.y = ((mediaEntity.height / 2.0f) + mediaEntity.y) * 100.0f;
                                                     if (z19) {
                                                         rg.s0 s0Var3 = ((rg.t0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = org.telegram.messenger.wh.A(s0Var3.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = org.telegram.messenger.wh.A(s0Var3.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = kk.z(s0Var3.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = kk.z(s0Var3.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.w2) {
                                                         rg.s0 s0Var4 = ((rg.w2) jVar).q0;
-                                                        mediaAreaCoordinates2.w = org.telegram.messenger.wh.A(s0Var4.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = org.telegram.messenger.wh.A(s0Var4.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = kk.z(s0Var4.I * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = kk.z(s0Var4.J * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.q0) {
                                                         rg.o0 o0Var = ((rg.q0) jVar).q0;
-                                                        mediaAreaCoordinates2.w = org.telegram.messenger.wh.A(o0Var.f * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
-                                                        mediaEntity.mediaArea.coordinates.h = org.telegram.messenger.wh.A(o0Var.h * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
+                                                        mediaAreaCoordinates2.w = kk.z(o0Var.f * 2 * scaleX, z5Var.getMeasuredWidth(), f14, 100.0f);
+                                                        mediaEntity.mediaArea.coordinates.h = kk.z(o0Var.h * 2 * scaleY, z5Var.getMeasuredHeight(), mediaEntity.height, 100.0f);
                                                     } else if (jVar instanceof rg.a2) {
                                                         rg.a2 a2Var = (rg.a2) jVar;
                                                         float padding = ((a2Var.getPadding() * 2) * scaleX) / z5Var.getMeasuredWidth();
@@ -2615,15 +2616,15 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                             d = -1.0d;
                                         } else {
                                             rg.e1 e1Var2 = (rg.e1) jVar;
-                                            rg.x0 x0Var2 = e1Var2.r0;
+                                            rg.x0 x0Var = e1Var2.r0;
                                             ai.n5 n5Var2 = e1Var2.q0;
                                             RectF rectF = AndroidUtilities.rectTmp;
                                             z18 = z16;
                                             double r10 = e1Var2.r(rectF);
                                             rectF.offset(n5Var2.getX(), n5Var2.getY());
-                                            rectF.offset(x0Var2.getX(), x0Var2.getY());
-                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + org.telegram.messenger.wh.y(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / z5Var.getMeasuredWidth()) * 100.0f;
-                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + org.telegram.messenger.wh.y(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / z5Var.getMeasuredHeight()) * 100.0f;
+                                            rectF.offset(x0Var.getX(), x0Var.getY());
+                                            mediaEntity.mediaArea.coordinates.x = (((rectF.centerX() * scaleX) + kk.x(view.getWidth(), 2.0f, scaleX, (view.getWidth() / 2.0f) + x10)) / z5Var.getMeasuredWidth()) * 100.0f;
+                                            mediaEntity.mediaArea.coordinates.y = (((rectF.centerY() * scaleY) + kk.x(view.getHeight(), 2.0f, scaleY, (view.getHeight() / 2.0f) + y3)) / z5Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.w = ((rectF.width() * scaleX) / z5Var.getMeasuredWidth()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.h = ((rectF.height() * scaleY) / z5Var.getMeasuredHeight()) * 100.0f;
                                             mediaEntity.mediaArea.coordinates.rotation = ((-mediaEntity.rotation) / 3.141592653589793d) * 180.0d;
@@ -2713,7 +2714,7 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                                 rg.e1 e1Var3 = (rg.e1) jVar;
                                                 ai.n5 n5Var3 = e1Var3.q0;
                                                 ArrayList arrayList3 = e1Var3.s0;
-                                                rg.x0 x0Var3 = e1Var3.r0;
+                                                rg.x0 x0Var2 = e1Var3.r0;
                                                 mediaEntity.type = (byte) 6;
                                                 int width = e1Var3.getWidth();
                                                 mediaEntity.viewWidth = width;
@@ -2732,18 +2733,18 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                                         tL_mediaAreaStarGift.coordinates = new TL_stories.TL_mediaAreaCoordinates();
                                                         int i26 = 0;
                                                         while (true) {
-                                                            if (i26 >= x0Var3.getChildCount()) {
-                                                                x0Var = null;
+                                                            if (i26 >= x0Var2.getChildCount()) {
+                                                                w0Var = null;
                                                                 break;
                                                             }
-                                                            View childAt2 = x0Var3.getChildAt(i26);
-                                                            if (childAt2 instanceof org.telegram.ui.Cells.x0) {
-                                                                x0Var = (org.telegram.ui.Cells.x0) childAt2;
+                                                            View childAt2 = x0Var2.getChildAt(i26);
+                                                            if (childAt2 instanceof org.telegram.ui.Cells.w0) {
+                                                                w0Var = (org.telegram.ui.Cells.w0) childAt2;
                                                                 break;
                                                             }
                                                             i26++;
                                                         }
-                                                        if (x0Var == null || (m7Var = x0Var.H0) == null || (imageReceiver3 = m7Var.d) == null) {
+                                                        if (w0Var == null || (m7Var = w0Var.H0) == null || (imageReceiver3 = m7Var.d) == null) {
                                                             e1Var = e1Var3;
                                                             i12 = i15;
                                                             n5Var = n5Var3;
@@ -2754,8 +2755,8 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                                                     Matrix matrix = a8Var.n0;
                                                                     if (a8Var.K) {
                                                                         matrix.reset();
-                                                                        if (x0Var3.getChildCount() == 1) {
-                                                                            view3 = x0Var3.getChildAt(0);
+                                                                        if (x0Var2.getChildCount() == 1) {
+                                                                            view3 = x0Var2.getChildAt(0);
                                                                             if (view3 instanceof org.telegram.ui.Cells.u1) {
                                                                                 imageReceiver2 = ((org.telegram.ui.Cells.u1) view3).getPhotoImage();
                                                                                 if (imageReceiver2 != null) {
@@ -2763,7 +2764,7 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                                                                     matrix.postScale(max, max);
                                                                                     matrix.postTranslate(imageReceiver2.getCenterX() - ((a8Var.k0 * max) / 2.0f), imageReceiver2.getCenterY() - ((a8Var.l0 * max) / 2.0f));
                                                                                     matrix.postTranslate(n5Var.getX(), n5Var.getY());
-                                                                                    matrix.postTranslate(x0Var3.getX(), x0Var3.getY());
+                                                                                    matrix.postTranslate(x0Var2.getX(), x0Var2.getY());
                                                                                     matrix.postTranslate(view3.getX(), view3.getY());
                                                                                     matrix.postScale(e1Var.getScaleX(), e1Var.getScaleY(), e1Var.getPivotX(), e1Var.getPivotY());
                                                                                     matrix.postRotate(e1Var.getRotation(), e1Var.getPivotX(), e1Var.getPivotY());
@@ -2813,12 +2814,12 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                                             z15 = z18;
                                                         } else {
                                                             imageReceiver3.setVisible(false, false);
-                                                            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) ai.fa.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+                                                            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) ai.ga.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
                                                             if (stargiftattributemodel != null) {
                                                                 float dp = AndroidUtilities.dp(110.0f);
                                                                 e1Var = e1Var3;
-                                                                float centerX = imageReceiver3.getCenterX() + x0Var.getX() + x0Var3.getX() + x0Var.F0;
-                                                                float centerY = imageReceiver3.getCenterY() + x0Var.getY() + x0Var3.getY() + x0Var.G0;
+                                                                float centerX = imageReceiver3.getCenterX() + w0Var.getX() + x0Var2.getX() + w0Var.F0;
+                                                                float centerY = imageReceiver3.getCenterY() + w0Var.getY() + x0Var2.getY() + w0Var.G0;
                                                                 VideoEditedInfo.MediaEntity mediaEntity2 = new VideoEditedInfo.MediaEntity();
                                                                 imageReceiver4 = imageReceiver3;
                                                                 mediaEntity2.type = (byte) 0;
@@ -2852,15 +2853,15 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                                                 mediaEntity2.x = (childAt.getWidth() / 2.0f) + x11;
                                                                 mediaEntity2.y = (childAt.getHeight() / 2.0f) + y10;
                                                                 i12 = i15;
-                                                                float y11 = org.telegram.messenger.wh.y(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
-                                                                float y12 = org.telegram.messenger.wh.y(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
+                                                                float x12 = kk.x(childAt.getWidth(), 2.0f, scaleX2, centerX * scaleX2);
+                                                                float x13 = kk.x(childAt.getHeight(), 2.0f, scaleY3, centerY * scaleY3);
                                                                 n5Var = n5Var3;
                                                                 view = childAt;
                                                                 double d10 = mediaEntity2.x;
-                                                                double d11 = y11;
+                                                                double d11 = x12;
                                                                 double rotation = (float) ((childAt.getRotation() / 180.0f) * 3.141592653589793d);
                                                                 double cos = Math.cos(rotation) * d11;
-                                                                double d12 = y12;
+                                                                double d12 = x13;
                                                                 mediaEntity2.x = (float) ((cos - (Math.sin(rotation) * d12)) + d10);
                                                                 float cos2 = (float) ((Math.cos(rotation) * d12) + (Math.sin(rotation) * d11) + mediaEntity2.y);
                                                                 float f16 = (-dp) / 2.0f;
@@ -3049,12 +3050,12 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                             canvas = canvas2;
                                             if (view2 instanceof rg.e1) {
                                                 rg.e1 e1Var4 = (rg.e1) view2;
-                                                rg.x0 x0Var4 = e1Var4.r0;
+                                                rg.x0 x0Var3 = e1Var4.r0;
                                                 boolean z23 = true;
                                                 e1Var4.u0 = true;
                                                 int i29 = 0;
-                                                while (i29 < x0Var4.getChildCount()) {
-                                                    View childAt3 = x0Var4.getChildAt(i29);
+                                                while (i29 < x0Var3.getChildCount()) {
+                                                    View childAt3 = x0Var3.getChildAt(i29);
                                                     if (childAt3 instanceof org.telegram.ui.Cells.u1) {
                                                         ((org.telegram.ui.Cells.u1) childAt3).pe = z23;
                                                     }
@@ -3065,8 +3066,8 @@ public abstract class f6 extends kw0 implements rg.q1, rg.h, rg.m1, iw0, rb {
                                                 boolean z24 = false;
                                                 e1Var4.u0 = false;
                                                 int i30 = 0;
-                                                while (i30 < x0Var4.getChildCount()) {
-                                                    View childAt4 = x0Var4.getChildAt(i30);
+                                                while (i30 < x0Var3.getChildCount()) {
+                                                    View childAt4 = x0Var3.getChildAt(i30);
                                                     if (childAt4 instanceof org.telegram.ui.Cells.u1) {
                                                         ((org.telegram.ui.Cells.u1) childAt4).pe = z24;
                                                     }

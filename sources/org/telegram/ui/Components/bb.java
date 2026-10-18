@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class bb extends org.telegram.ui.ActionBar.f3 {
     public boolean E;
@@ -68,7 +68,7 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
     public abstract CharSequence A();
 
     public final boolean B() {
-        return i0.b.h(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, this.resourcesProvider)) > 0.699999988079071d;
+        return i0.a.h(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, this.resourcesProvider)) > 0.699999988079071d;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x007e  */
@@ -205,7 +205,7 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
             }
         }
         if (M()) {
-            if (this instanceof ug.y) {
+            if (this instanceof ug.z) {
                 this.shadowDrawable.setBounds(-AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f) + view.getMeasuredWidth(), view.getMeasuredHeight());
             } else {
                 this.shadowDrawable.setBounds(0, i13, view.getMeasuredWidth(), view.getMeasuredHeight());

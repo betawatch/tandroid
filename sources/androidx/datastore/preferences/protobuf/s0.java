@@ -12,7 +12,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class s0 implements b1 {
     public static final int[] o = new int[0];
@@ -95,8 +95,12 @@ public final class s0 implements b1 {
         throw new ClassCastException();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0373  */
-    /* JADX WARN: Removed duplicated region for block: B:125:0x03cc  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x035b  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x03ad  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0283  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x02a1  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x02a4  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0287  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -126,11 +130,11 @@ public final class s0 implements b1 {
         char charAt9;
         int i23;
         char charAt10;
+        int[] iArr2;
         int i24;
         int i25;
         int i26;
         boolean z10;
-        int[] iArr2;
         int i27;
         int objectFieldOffset;
         int i28;
@@ -138,64 +142,64 @@ public final class s0 implements b1 {
         int i30;
         int i31;
         int i32;
-        int i33;
         Field D;
-        int i34;
         char charAt11;
-        int i35;
-        int i36;
+        int i33;
+        int i34;
+        Object obj;
         Field D2;
+        Object obj2;
         Field D3;
-        int i37;
+        int i35;
         char charAt12;
-        int i38;
+        int i36;
         char charAt13;
-        int i39;
-        int i40;
+        int i37;
+        int i38;
         char charAt14;
-        int i41;
+        int i39;
         char charAt15;
         char charAt16;
-        int i42 = 0;
+        int i40 = 0;
         boolean z11 = (a1Var.d & 1) != 1;
         String str = a1Var.b;
         int length = str.length();
         int charAt17 = str.charAt(0);
         if (charAt17 >= 55296) {
-            int i43 = charAt17 & 8191;
-            int i44 = 1;
-            int i45 = 13;
+            int i41 = charAt17 & 8191;
+            int i42 = 1;
+            int i43 = 13;
             while (true) {
-                i10 = i44 + 1;
-                charAt16 = str.charAt(i44);
+                i10 = i42 + 1;
+                charAt16 = str.charAt(i42);
                 if (charAt16 < 55296) {
                     break;
                 }
-                i43 |= (charAt16 & 8191) << i45;
-                i45 += 13;
-                i44 = i10;
+                i41 |= (charAt16 & 8191) << i43;
+                i43 += 13;
+                i42 = i10;
             }
-            charAt17 = i43 | (charAt16 << i45);
+            charAt17 = i41 | (charAt16 << i43);
         } else {
             i10 = 1;
         }
-        int i46 = i10 + 1;
+        int i44 = i10 + 1;
         int charAt18 = str.charAt(i10);
         if (charAt18 >= 55296) {
-            int i47 = charAt18 & 8191;
-            int i48 = 13;
+            int i45 = charAt18 & 8191;
+            int i46 = 13;
             while (true) {
-                i41 = i46 + 1;
-                charAt15 = str.charAt(i46);
+                i39 = i44 + 1;
+                charAt15 = str.charAt(i44);
                 if (charAt15 < 55296) {
                     break;
                 }
-                i47 |= (charAt15 & 8191) << i48;
-                i48 += 13;
-                i46 = i41;
+                i45 |= (charAt15 & 8191) << i46;
+                i46 += 13;
+                i44 = i39;
             }
-            charAt18 = i47 | (charAt15 << i48);
-            i46 = i41;
+            charAt18 = i45 | (charAt15 << i46);
+            i44 = i39;
         }
         if (charAt18 == 0) {
             i13 = 0;
@@ -206,359 +210,370 @@ public final class s0 implements b1 {
             iArr = o;
             i14 = 0;
         } else {
-            int i49 = i46 + 1;
-            int charAt19 = str.charAt(i46);
+            int i47 = i44 + 1;
+            int charAt19 = str.charAt(i44);
             if (charAt19 >= 55296) {
-                int i50 = charAt19 & 8191;
-                int i51 = 13;
+                int i48 = charAt19 & 8191;
+                int i49 = 13;
                 while (true) {
-                    i23 = i49 + 1;
-                    charAt10 = str.charAt(i49);
+                    i23 = i47 + 1;
+                    charAt10 = str.charAt(i47);
                     if (charAt10 < 55296) {
                         break;
                     }
-                    i50 |= (charAt10 & 8191) << i51;
-                    i51 += 13;
-                    i49 = i23;
+                    i48 |= (charAt10 & 8191) << i49;
+                    i49 += 13;
+                    i47 = i23;
                 }
-                charAt19 = i50 | (charAt10 << i51);
-                i49 = i23;
+                charAt19 = i48 | (charAt10 << i49);
+                i47 = i23;
             }
-            int i52 = i49 + 1;
-            int charAt20 = str.charAt(i49);
+            int i50 = i47 + 1;
+            int charAt20 = str.charAt(i47);
             if (charAt20 >= 55296) {
-                int i53 = charAt20 & 8191;
-                int i54 = 13;
+                int i51 = charAt20 & 8191;
+                int i52 = 13;
                 while (true) {
-                    i22 = i52 + 1;
-                    charAt9 = str.charAt(i52);
+                    i22 = i50 + 1;
+                    charAt9 = str.charAt(i50);
                     if (charAt9 < 55296) {
                         break;
                     }
-                    i53 |= (charAt9 & 8191) << i54;
-                    i54 += 13;
-                    i52 = i22;
+                    i51 |= (charAt9 & 8191) << i52;
+                    i52 += 13;
+                    i50 = i22;
                 }
-                charAt20 = i53 | (charAt9 << i54);
-                i52 = i22;
+                charAt20 = i51 | (charAt9 << i52);
+                i50 = i22;
             }
-            int i55 = i52 + 1;
-            int charAt21 = str.charAt(i52);
+            int i53 = i50 + 1;
+            int charAt21 = str.charAt(i50);
             if (charAt21 >= 55296) {
-                int i56 = charAt21 & 8191;
-                int i57 = 13;
+                int i54 = charAt21 & 8191;
+                int i55 = 13;
                 while (true) {
-                    i21 = i55 + 1;
-                    charAt8 = str.charAt(i55);
+                    i21 = i53 + 1;
+                    charAt8 = str.charAt(i53);
                     if (charAt8 < 55296) {
                         break;
                     }
-                    i56 |= (charAt8 & 8191) << i57;
-                    i57 += 13;
-                    i55 = i21;
+                    i54 |= (charAt8 & 8191) << i55;
+                    i55 += 13;
+                    i53 = i21;
                 }
-                charAt21 = i56 | (charAt8 << i57);
-                i55 = i21;
+                charAt21 = i54 | (charAt8 << i55);
+                i53 = i21;
             }
-            int i58 = i55 + 1;
-            int charAt22 = str.charAt(i55);
+            int i56 = i53 + 1;
+            int charAt22 = str.charAt(i53);
             if (charAt22 >= 55296) {
-                int i59 = charAt22 & 8191;
-                int i60 = 13;
+                int i57 = charAt22 & 8191;
+                int i58 = 13;
                 while (true) {
-                    i20 = i58 + 1;
-                    charAt7 = str.charAt(i58);
+                    i20 = i56 + 1;
+                    charAt7 = str.charAt(i56);
                     if (charAt7 < 55296) {
                         break;
                     }
-                    i59 |= (charAt7 & 8191) << i60;
-                    i60 += 13;
-                    i58 = i20;
+                    i57 |= (charAt7 & 8191) << i58;
+                    i58 += 13;
+                    i56 = i20;
                 }
-                charAt22 = i59 | (charAt7 << i60);
-                i58 = i20;
+                charAt22 = i57 | (charAt7 << i58);
+                i56 = i20;
             }
-            int i61 = i58 + 1;
-            charAt = str.charAt(i58);
+            int i59 = i56 + 1;
+            charAt = str.charAt(i56);
             if (charAt >= 55296) {
-                int i62 = charAt & 8191;
-                int i63 = 13;
+                int i60 = charAt & 8191;
+                int i61 = 13;
                 while (true) {
-                    i19 = i61 + 1;
-                    charAt6 = str.charAt(i61);
+                    i19 = i59 + 1;
+                    charAt6 = str.charAt(i59);
                     if (charAt6 < 55296) {
                         break;
                     }
-                    i62 |= (charAt6 & 8191) << i63;
-                    i63 += 13;
-                    i61 = i19;
+                    i60 |= (charAt6 & 8191) << i61;
+                    i61 += 13;
+                    i59 = i19;
                 }
-                charAt = i62 | (charAt6 << i63);
-                i61 = i19;
+                charAt = i60 | (charAt6 << i61);
+                i59 = i19;
             }
-            int i64 = i61 + 1;
-            charAt2 = str.charAt(i61);
+            int i62 = i59 + 1;
+            charAt2 = str.charAt(i59);
             if (charAt2 >= 55296) {
-                int i65 = charAt2 & 8191;
-                int i66 = 13;
+                int i63 = charAt2 & 8191;
+                int i64 = 13;
                 while (true) {
-                    i18 = i64 + 1;
-                    charAt5 = str.charAt(i64);
+                    i18 = i62 + 1;
+                    charAt5 = str.charAt(i62);
                     if (charAt5 < 55296) {
                         break;
                     }
-                    i65 |= (charAt5 & 8191) << i66;
-                    i66 += 13;
-                    i64 = i18;
+                    i63 |= (charAt5 & 8191) << i64;
+                    i64 += 13;
+                    i62 = i18;
                 }
-                charAt2 = i65 | (charAt5 << i66);
-                i64 = i18;
+                charAt2 = i63 | (charAt5 << i64);
+                i62 = i18;
             }
-            int i67 = i64 + 1;
-            int charAt23 = str.charAt(i64);
+            int i65 = i62 + 1;
+            int charAt23 = str.charAt(i62);
             if (charAt23 >= 55296) {
-                int i68 = charAt23 & 8191;
-                int i69 = i67;
-                int i70 = 13;
+                int i66 = charAt23 & 8191;
+                int i67 = i65;
+                int i68 = 13;
                 while (true) {
-                    i17 = i69 + 1;
-                    charAt4 = str.charAt(i69);
+                    i17 = i67 + 1;
+                    charAt4 = str.charAt(i67);
                     if (charAt4 < 55296) {
                         break;
                     }
-                    i68 |= (charAt4 & 8191) << i70;
-                    i70 += 13;
-                    i69 = i17;
+                    i66 |= (charAt4 & 8191) << i68;
+                    i68 += 13;
+                    i67 = i17;
                 }
-                charAt23 = i68 | (charAt4 << i70);
+                charAt23 = i66 | (charAt4 << i68);
                 i11 = i17;
             } else {
-                i11 = i67;
+                i11 = i65;
             }
-            int i71 = i11 + 1;
+            int i69 = i11 + 1;
             int charAt24 = str.charAt(i11);
             if (charAt24 >= 55296) {
-                int i72 = charAt24 & 8191;
-                int i73 = i71;
-                int i74 = 13;
+                int i70 = charAt24 & 8191;
+                int i71 = i69;
+                int i72 = 13;
                 while (true) {
-                    i16 = i73 + 1;
-                    charAt3 = str.charAt(i73);
+                    i16 = i71 + 1;
+                    charAt3 = str.charAt(i71);
                     if (charAt3 < 55296) {
                         break;
                     }
-                    i72 |= (charAt3 & 8191) << i74;
-                    i74 += 13;
-                    i73 = i16;
+                    i70 |= (charAt3 & 8191) << i72;
+                    i72 += 13;
+                    i71 = i16;
                 }
-                charAt24 = i72 | (charAt3 << i74);
-                i71 = i16;
+                charAt24 = i70 | (charAt3 << i72);
+                i69 = i16;
             }
             int[] iArr3 = new int[charAt24 + charAt2 + charAt23];
             i12 = (charAt19 * 2) + charAt20;
-            int i75 = charAt21;
+            int i73 = charAt21;
             iArr = iArr3;
-            i13 = i75;
+            i13 = i73;
             i14 = charAt22;
             i15 = charAt24;
-            i42 = charAt19;
-            i46 = i71;
+            i40 = charAt19;
+            i44 = i69;
         }
         Unsafe unsafe = p;
         Object[] objArr = a1Var.c;
-        int i76 = i42;
+        int i74 = i40;
         Class<?> cls = a1Var.a.getClass();
-        int i77 = charAt17;
+        int i75 = charAt17;
         int[] iArr4 = new int[charAt * 3];
         Object[] objArr2 = new Object[charAt * 2];
-        int i78 = charAt2 + i15;
-        int i79 = i15;
-        int i80 = i78;
-        int i81 = 0;
-        int i82 = 0;
-        while (i46 < length) {
-            int i83 = i46 + 1;
-            int charAt25 = str.charAt(i46);
-            int i84 = length;
+        int i76 = charAt2 + i15;
+        int i77 = i15;
+        int i78 = i76;
+        int i79 = 0;
+        int i80 = 0;
+        while (i44 < length) {
+            int i81 = i44 + 1;
+            int charAt25 = str.charAt(i44);
+            int i82 = length;
             if (charAt25 >= 55296) {
-                int i85 = charAt25 & 8191;
-                int i86 = i83;
-                int i87 = 13;
+                int i83 = charAt25 & 8191;
+                int i84 = i81;
+                int i85 = 13;
                 while (true) {
-                    i40 = i86 + 1;
-                    charAt14 = str.charAt(i86);
-                    i24 = i13;
+                    i38 = i84 + 1;
+                    charAt14 = str.charAt(i84);
+                    iArr2 = iArr4;
                     if (charAt14 < 55296) {
                         break;
                     }
-                    i85 |= (charAt14 & 8191) << i87;
-                    i87 += 13;
-                    i86 = i40;
-                    i13 = i24;
+                    i83 |= (charAt14 & 8191) << i85;
+                    i85 += 13;
+                    i84 = i38;
+                    iArr4 = iArr2;
                 }
-                charAt25 = i85 | (charAt14 << i87);
-                i25 = i40;
+                charAt25 = i83 | (charAt14 << i85);
+                i24 = i38;
             } else {
-                i24 = i13;
-                i25 = i83;
+                iArr2 = iArr4;
+                i24 = i81;
             }
-            int i88 = i25 + 1;
-            int charAt26 = str.charAt(i25);
+            int i86 = i24 + 1;
+            int charAt26 = str.charAt(i24);
             if (charAt26 >= 55296) {
-                int i89 = charAt26 & 8191;
-                int i90 = i88;
-                int i91 = 13;
+                int i87 = charAt26 & 8191;
+                int i88 = i86;
+                int i89 = 13;
                 while (true) {
-                    i38 = i90 + 1;
-                    charAt13 = str.charAt(i90);
-                    i39 = i89;
+                    i36 = i88 + 1;
+                    charAt13 = str.charAt(i88);
+                    i37 = i87;
                     if (charAt13 < 55296) {
                         break;
                     }
-                    i89 = i39 | ((charAt13 & 8191) << i91);
-                    i91 += 13;
-                    i90 = i38;
+                    i87 = i37 | ((charAt13 & 8191) << i89);
+                    i89 += 13;
+                    i88 = i36;
                 }
-                charAt26 = i39 | (charAt13 << i91);
-                i26 = i38;
+                charAt26 = i37 | (charAt13 << i89);
+                i25 = i36;
             } else {
-                i26 = i88;
+                i25 = i86;
             }
+            int i90 = i13;
+            int i91 = charAt26 & 255;
             Object[] objArr3 = objArr;
-            int i92 = charAt26 & 255;
-            int i93 = charAt25;
             if ((charAt26 & 1024) != 0) {
-                iArr[i82] = i81;
-                i82++;
+                iArr[i79] = i80;
+                i79++;
             }
-            int i94 = i14;
-            if (i92 >= 51) {
-                int i95 = i26 + 1;
-                int charAt27 = str.charAt(i26);
+            int i92 = charAt25;
+            if (i91 >= 51) {
+                int i93 = i25 + 1;
+                int charAt27 = str.charAt(i25);
                 char c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                 if (charAt27 >= 55296) {
-                    int i96 = charAt27 & 8191;
-                    int i97 = 13;
+                    int i94 = charAt27 & 8191;
+                    int i95 = 13;
                     while (true) {
-                        i37 = i95 + 1;
-                        charAt12 = str.charAt(i95);
+                        i35 = i93 + 1;
+                        charAt12 = str.charAt(i93);
                         if (charAt12 < c10) {
                             break;
                         }
-                        i96 |= (charAt12 & 8191) << i97;
-                        i97 += 13;
-                        i95 = i37;
+                        i94 |= (charAt12 & 8191) << i95;
+                        i95 += 13;
+                        i93 = i35;
                         c10 = CharacterCompat.MIN_HIGH_SURROGATE;
                     }
-                    charAt27 = i96 | (charAt12 << i97);
-                    i95 = i37;
+                    charAt27 = i94 | (charAt12 << i95);
+                    i93 = i35;
                 }
-                int i98 = i92 - 51;
-                int i99 = charAt27;
-                if (i98 == 9 || i98 == 17) {
-                    i36 = i95;
-                    objArr2[a1.g.C(i81, 3, 2, 1)] = objArr3[i12];
-                    i12++;
-                } else if (i98 == 12) {
-                    i36 = i95;
-                    if ((i77 & 1) == 1) {
-                        objArr2[a1.g.C(i81, 3, 2, 1)] = objArr3[i12];
-                        i12++;
+                int i96 = i91 - 51;
+                int i97 = charAt27;
+                if (i96 == 9 || i96 == 17) {
+                    i34 = i12 + 1;
+                    objArr2[((i80 / 3) * 2) + 1] = objArr3[i12];
+                } else {
+                    if (i96 == 12 && (i75 & 1) == 1) {
+                        i34 = i12 + 1;
+                        objArr2[((i80 / 3) * 2) + 1] = objArr3[i12];
                     }
-                } else {
-                    i36 = i95;
-                }
-                int i100 = i99 * 2;
-                Object obj = objArr3[i100];
-                if (obj instanceof Field) {
-                    D2 = (Field) obj;
-                } else {
-                    D2 = D(cls, (String) obj);
-                    objArr3[i100] = D2;
-                }
-                int objectFieldOffset2 = (int) unsafe.objectFieldOffset(D2);
-                int i101 = i100 + 1;
-                Object obj2 = objArr3[i101];
-                if (obj2 instanceof Field) {
-                    D3 = (Field) obj2;
-                } else {
-                    D3 = D(cls, (String) obj2);
-                    objArr3[i101] = D3;
-                }
-                int objectFieldOffset3 = (int) unsafe.objectFieldOffset(D3);
-                int i102 = i36;
-                z10 = z11;
-                i29 = i102;
-                iArr2 = iArr;
-                i32 = i12;
-                i28 = i81;
-                i30 = objectFieldOffset3;
-                i33 = objectFieldOffset2;
-                i31 = 0;
-            } else {
-                int i103 = i12 + 1;
-                Field D4 = D(cls, (String) objArr3[i12]);
-                if (i92 == 9 || i92 == 17) {
+                    int i98 = i97 * 2;
+                    obj = objArr3[i98];
+                    if (obj instanceof Field) {
+                        D2 = D(cls, (String) obj);
+                        objArr3[i98] = D2;
+                    } else {
+                        D2 = (Field) obj;
+                    }
+                    int i99 = i93;
+                    int objectFieldOffset2 = (int) unsafe.objectFieldOffset(D2);
+                    int i100 = i98 + 1;
+                    obj2 = objArr3[i100];
+                    if (obj2 instanceof Field) {
+                        D3 = D(cls, (String) obj2);
+                        objArr3[i100] = D3;
+                    } else {
+                        D3 = (Field) obj2;
+                    }
+                    int i101 = i12;
                     z10 = z11;
-                    iArr2 = iArr;
-                    objArr2[a1.g.C(i81, 3, 2, 1)] = D4.getType();
+                    i31 = i101;
+                    i44 = i99;
+                    i32 = objectFieldOffset2;
+                    i26 = i14;
+                    i30 = (int) unsafe.objectFieldOffset(D3);
+                    i29 = 0;
+                }
+                i12 = i34;
+                int i982 = i97 * 2;
+                obj = objArr3[i982];
+                if (obj instanceof Field) {
+                }
+                int i992 = i93;
+                int objectFieldOffset22 = (int) unsafe.objectFieldOffset(D2);
+                int i1002 = i982 + 1;
+                obj2 = objArr3[i1002];
+                if (obj2 instanceof Field) {
+                }
+                int i1012 = i12;
+                z10 = z11;
+                i31 = i1012;
+                i44 = i992;
+                i32 = objectFieldOffset22;
+                i26 = i14;
+                i30 = (int) unsafe.objectFieldOffset(D3);
+                i29 = 0;
+            } else {
+                int i102 = i12 + 1;
+                Field D4 = D(cls, (String) objArr3[i12]);
+                if (i91 == 9 || i91 == 17) {
+                    i26 = i14;
+                    objArr2[((i80 / 3) * 2) + 1] = D4.getType();
                 } else {
-                    if (i92 == 27 || i92 == 49) {
-                        z10 = z11;
-                        iArr2 = iArr;
-                        i35 = i12 + 2;
-                        objArr2[a1.g.C(i81, 3, 2, 1)] = objArr3[i103];
-                    } else if (i92 == 12 || i92 == 30 || i92 == 44) {
-                        z10 = z11;
-                        iArr2 = iArr;
-                        if ((i77 & 1) == 1) {
-                            i35 = i12 + 2;
-                            objArr2[a1.g.C(i81, 3, 2, 1)] = objArr3[i103];
+                    if (i91 == 27 || i91 == 49) {
+                        i26 = i14;
+                        i33 = i12 + 2;
+                        objArr2[((i80 / 3) * 2) + 1] = objArr3[i102];
+                    } else if (i91 == 12 || i91 == 30 || i91 == 44) {
+                        i26 = i14;
+                        if ((i75 & 1) == 1) {
+                            i33 = i12 + 2;
+                            objArr2[((i80 / 3) * 2) + 1] = objArr3[i102];
                         }
-                    } else if (i92 == 50) {
-                        int i104 = i79 + 1;
-                        iArr[i79] = i81;
-                        int i105 = (i81 / 3) * 2;
-                        int i106 = i12 + 2;
-                        objArr2[i105] = objArr3[i103];
+                    } else if (i91 == 50) {
+                        int i103 = i77 + 1;
+                        iArr[i77] = i80;
+                        int i104 = (i80 / 3) * 2;
+                        int i105 = i12 + 2;
+                        objArr2[i104] = objArr3[i102];
                         if ((charAt26 & 2048) != 0) {
                             i27 = i12 + 3;
-                            objArr2[i105 + 1] = objArr3[i106];
+                            objArr2[i104 + 1] = objArr3[i105];
+                            i26 = i14;
                             z10 = z11;
-                            iArr2 = iArr;
-                            i79 = i104;
+                            i77 = i103;
                         } else {
-                            iArr2 = iArr;
-                            i27 = i106;
-                            i79 = i104;
                             z10 = z11;
+                            i27 = i105;
+                            i77 = i103;
+                            i26 = i14;
                         }
                         objectFieldOffset = (int) unsafe.objectFieldOffset(D4);
-                        if ((i77 & 1) == 1 || i92 > 17) {
-                            i28 = i81;
-                            i29 = i26;
+                        if ((i75 & 1) == 1 || i91 > 17) {
+                            i28 = i25;
+                            i29 = 0;
                             i30 = 0;
-                            i31 = 0;
                         } else {
-                            i29 = i26 + 1;
-                            int charAt28 = str.charAt(i26);
+                            int i106 = i25 + 1;
+                            int charAt28 = str.charAt(i25);
                             if (charAt28 >= 55296) {
                                 int i107 = charAt28 & 8191;
                                 int i108 = 13;
                                 while (true) {
-                                    i34 = i29 + 1;
-                                    charAt11 = str.charAt(i29);
+                                    i28 = i106 + 1;
+                                    charAt11 = str.charAt(i106);
                                     if (charAt11 < 55296) {
                                         break;
                                     }
                                     i107 |= (charAt11 & 8191) << i108;
                                     i108 += 13;
-                                    i29 = i34;
+                                    i106 = i28;
                                 }
                                 charAt28 = i107 | (charAt11 << i108);
-                                i29 = i34;
+                            } else {
+                                i28 = i106;
                             }
-                            int i109 = (charAt28 / 32) + (i76 * 2);
+                            int i109 = (charAt28 / 32) + (i74 * 2);
                             Object obj3 = objArr3[i109];
                             if (obj3 instanceof Field) {
                                 D = (Field) obj3;
@@ -566,68 +581,67 @@ public final class s0 implements b1 {
                                 D = D(cls, (String) obj3);
                                 objArr3[i109] = D;
                             }
-                            i28 = i81;
-                            int i110 = charAt28;
                             i30 = (int) unsafe.objectFieldOffset(D);
-                            i31 = i110 % 32;
+                            i29 = charAt28 % 32;
                         }
-                        if (i92 >= 18 || i92 > 49) {
-                            i32 = i27;
-                            i33 = objectFieldOffset;
-                        } else {
-                            iArr2[i80] = objectFieldOffset;
-                            i32 = i27;
-                            i33 = objectFieldOffset;
-                            i80++;
+                        if (i91 >= 18 && i91 <= 49) {
+                            iArr[i78] = objectFieldOffset;
+                            i78++;
                         }
+                        i31 = i27;
+                        i32 = objectFieldOffset;
+                        i44 = i28;
                     } else {
-                        z10 = z11;
-                        iArr2 = iArr;
+                        i26 = i14;
                     }
-                    i27 = i35;
+                    i27 = i33;
+                    z10 = z11;
                     objectFieldOffset = (int) unsafe.objectFieldOffset(D4);
-                    if ((i77 & 1) == 1) {
+                    if ((i75 & 1) == 1) {
                     }
-                    i28 = i81;
-                    i29 = i26;
+                    i28 = i25;
+                    i29 = 0;
                     i30 = 0;
-                    i31 = 0;
-                    if (i92 >= 18) {
+                    if (i91 >= 18) {
+                        iArr[i78] = objectFieldOffset;
+                        i78++;
                     }
-                    i32 = i27;
-                    i33 = objectFieldOffset;
+                    i31 = i27;
+                    i32 = objectFieldOffset;
+                    i44 = i28;
                 }
-                i27 = i103;
+                z10 = z11;
+                i27 = i102;
                 objectFieldOffset = (int) unsafe.objectFieldOffset(D4);
-                if ((i77 & 1) == 1) {
+                if ((i75 & 1) == 1) {
                 }
-                i28 = i81;
-                i29 = i26;
+                i28 = i25;
+                i29 = 0;
                 i30 = 0;
-                i31 = 0;
-                if (i92 >= 18) {
+                if (i91 >= 18) {
                 }
-                i32 = i27;
-                i33 = objectFieldOffset;
+                i31 = i27;
+                i32 = objectFieldOffset;
+                i44 = i28;
             }
-            int i111 = i28 + 1;
-            iArr4[i28] = i93;
-            int i112 = i28 + 2;
+            int i110 = i80 + 1;
+            iArr2[i80] = i92;
+            int i111 = i80 + 2;
             String str2 = str;
-            iArr4[i111] = ((charAt26 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt26 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i92 << 20) | i33;
-            iArr4[i112] = (i31 << 20) | i30;
-            i81 = i28 + 3;
-            i12 = i32;
-            i46 = i29;
-            iArr = iArr2;
+            iArr2[i110] = ((charAt26 & 512) != 0 ? TLObject.FLAG_29 : 0) | ((charAt26 & 256) != 0 ? TLObject.FLAG_28 : 0) | (i91 << 20) | i32;
+            i80 += 3;
+            iArr2[i111] = (i29 << 20) | i30;
+            boolean z12 = z10;
+            i12 = i31;
+            z11 = z12;
+            i13 = i90;
+            length = i82;
             objArr = objArr3;
-            length = i84;
-            i13 = i24;
-            z11 = z10;
+            iArr4 = iArr2;
+            i14 = i26;
             str = str2;
-            i14 = i94;
         }
-        return new s0(iArr4, objArr2, i13, i14, a1Var.a, z11, iArr, i15, i78, u0Var, h0Var, j1Var, nVar, o0Var);
+        return new s0(iArr4, objArr2, i13, i14, a1Var.a, z11, iArr, i15, i76, u0Var, h0Var, j1Var, nVar, o0Var);
     }
 
     public static long y(int i10) {
@@ -3697,7 +3711,7 @@ public final class s0 implements b1 {
     }
 
     public final void l(int i10) {
-        if (this.b[a1.g.C(i10, 3, 2, 1)] != null) {
+        if (this.b[((i10 / 3) * 2) + 1] != null) {
             throw new ClassCastException();
         }
     }

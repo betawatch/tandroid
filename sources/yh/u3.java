@@ -1,6 +1,6 @@
 package yh;
 
-import ai.x9;
+import ai.y9;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.f61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -36,11 +36,11 @@ public final /* synthetic */ class u3 implements Utilities.Callback2 {
             case 1:
                 l4 l4Var = (l4) obj3;
                 ArrayList arrayList = (ArrayList) obj;
-                x9 x9Var = l4Var.Y;
-                if (x9Var != null) {
-                    ArrayList arrayList2 = x9Var.l;
+                y9 y9Var = l4Var.Y;
+                if (y9Var != null) {
+                    ArrayList arrayList2 = y9Var.l;
                     arrayList.add(f61.C(AndroidUtilities.dp(16.0f)));
-                    if (x9Var.i && arrayList2.isEmpty()) {
+                    if (y9Var.i && arrayList2.isEmpty()) {
                         f61 o10 = f61.o(1, 34);
                         o10.u = 1;
                         arrayList.add(o10);
@@ -96,7 +96,7 @@ public final /* synthetic */ class u3 implements Utilities.Callback2 {
                                 }
                             }
                         }
-                        if (x9Var.i || !x9Var.j) {
+                        if (y9Var.i || !y9Var.j) {
                             while (true) {
                                 if (i11 < (i13 <= 0 ? 3 : i13)) {
                                     i11++;
@@ -112,23 +112,23 @@ public final /* synthetic */ class u3 implements Utilities.Callback2 {
                 }
                 break;
             case 2:
-                zh.f fVar = (zh.f) obj3;
+                zh.d dVar = (zh.d) obj3;
                 TLRPC.ShareThemeBackdrops shareThemeBackdrops = (TLRPC.ShareThemeBackdrops) obj;
-                ArrayList arrayList3 = fVar.e;
-                fVar.c = false;
+                ArrayList arrayList3 = dVar.e;
+                dVar.c = false;
                 if (shareThemeBackdrops instanceof TLRPC.TL_shareThemeBackdrops) {
                     TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops = (TLRPC.TL_shareThemeBackdrops) shareThemeBackdrops;
-                    fVar.b = tL_shareThemeBackdrops;
+                    dVar.b = tL_shareThemeBackdrops;
                     try {
                         SerializedData serializedData = new SerializedData(tL_shareThemeBackdrops.getObjectSize());
-                        fVar.b.serializeToStream(serializedData);
-                        MessagesController.getMainSettings(fVar.a).edit().putString("qrBackdrops", Utilities.bytesToHex(serializedData.toByteArray())).apply();
+                        dVar.b.serializeToStream(serializedData);
+                        MessagesController.getMainSettings(dVar.a).edit().putString("qrBackdrops", Utilities.bytesToHex(serializedData.toByteArray())).apply();
                         serializedData.cleanup();
                     } catch (Exception e) {
                         FileLog.e(e);
                     }
                 }
-                fVar.d = shareThemeBackdrops != null;
+                dVar.d = shareThemeBackdrops != null;
                 ArrayList arrayList4 = new ArrayList(arrayList3);
                 arrayList3.clear();
                 int size2 = arrayList4.size();
@@ -139,24 +139,24 @@ public final /* synthetic */ class u3 implements Utilities.Callback2 {
                 }
                 break;
             default:
-                zh.p0 p0Var = (zh.p0) obj3;
+                zh.i0 i0Var = (zh.i0) obj3;
                 TLRPC.ShareTheme shareTheme = (TLRPC.ShareTheme) obj;
-                if (shareTheme != null && !p0Var.E && !p0Var.x) {
-                    int i16 = p0Var.a;
-                    zh.c1[] c1VarArr = zh.c1.d;
-                    if (c1VarArr[i16] == null) {
-                        c1VarArr[i16] = new zh.c1(i16);
+                if (shareTheme != null && !i0Var.E && !i0Var.x) {
+                    int i16 = i0Var.a;
+                    zh.u0[] u0VarArr = zh.u0.d;
+                    if (u0VarArr[i16] == null) {
+                        u0VarArr[i16] = new zh.u0(i16);
                     }
-                    c1VarArr[i16].a(p0Var.c.f, shareTheme);
-                    TLRPC.ShareTheme shareTheme2 = p0Var.H;
+                    u0VarArr[i16].a(i0Var.c.f, shareTheme);
+                    TLRPC.ShareTheme shareTheme2 = i0Var.H;
                     if (shareTheme2 != null) {
-                        byte[] b10 = zh.c1.b(shareTheme);
-                        byte[] b11 = zh.c1.b(shareTheme2);
+                        byte[] b10 = zh.u0.b(shareTheme);
+                        byte[] b11 = zh.u0.b(shareTheme2);
                         if (b10 != null && Arrays.equals(b10, b11)) {
                         }
                     } else if (shareTheme == shareTheme2) {
                     }
-                    p0Var.a(shareTheme);
+                    i0Var.a(shareTheme);
                     break;
                 }
                 break;

@@ -1,6 +1,6 @@
 package org.telegram.ui.Cells;
 
-import ai.ud;
+import ai.vd;
 import android.animation.AnimatorSet;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -29,14 +29,14 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.st;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class l8 extends FrameLayout {
     public final TextView E;
@@ -44,7 +44,7 @@ public final class l8 extends FrameLayout {
     public final ImageView G;
     public AnimatorSet H;
     public final int a;
-    public final ud b;
+    public final vd b;
     public final TextView c;
     public final org.telegram.ui.Components.w9 d;
     public final xp e;
@@ -110,7 +110,7 @@ public final class l8 extends FrameLayout {
         this.x = frameLayout;
         TextView textView = new TextView(context);
         this.y = textView;
-        com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
         textView.setText(LocaleController.getString(R.string.Add));
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
         int i12 = org.telegram.ui.ActionBar.h6.Oh;
@@ -122,7 +122,7 @@ public final class l8 extends FrameLayout {
         w7.b6.a(textView);
         TextView textView2 = new TextView(context);
         this.E = textView2;
-        com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView2);
+        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView2);
         textView2.setText(LocaleController.getString(R.string.StickersRemove));
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Rh, false));
         textView2.setBackground(org.telegram.ui.ActionBar.x5.d(new float[]{14.0f}, 0, org.telegram.ui.ActionBar.h6.x0(null, i12, false) & 452984831));
@@ -151,21 +151,21 @@ public final class l8 extends FrameLayout {
         this.x.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         addView(this.x, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, LocaleController.isRTL ? 3 : 5));
         this.x.setOnClickListener(new f8(this, 1));
-        ud udVar = new ud(context, 9);
-        this.b = udVar;
-        NotificationCenter.listenEmojiLoading(udVar);
-        udVar.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        udVar.setTextSize(1, 16.0f);
-        udVar.setTypeface(AndroidUtilities.bold());
-        udVar.setLines(1);
-        udVar.setMaxLines(1);
-        udVar.setSingleLine(true);
-        udVar.setEllipsize(TextUtils.TruncateAt.END);
-        udVar.setGravity(w7.z5.y());
-        addView(udVar, w7.z5.i(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
+        vd vdVar = new vd(context, 9);
+        this.b = vdVar;
+        NotificationCenter.listenEmojiLoading(vdVar);
+        vdVar.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
+        vdVar.setTextSize(1, 16.0f);
+        vdVar.setTypeface(AndroidUtilities.bold());
+        vdVar.setLines(1);
+        vdVar.setMaxLines(1);
+        vdVar.setSingleLine(true);
+        vdVar.setEllipsize(TextUtils.TruncateAt.END);
+        vdVar.setGravity(w7.z5.y());
+        addView(vdVar, w7.z5.i(-2.0f, -2.0f, 8388611, 71.0f, 9.0f, 70.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        wh.u(textView3, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
+        kk.u(textView3, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
         textView3.setMaxLines(1);
         textView3.setSingleLine(true);
         textView3.setGravity(w7.z5.y());
@@ -402,17 +402,17 @@ public final class l8 extends FrameLayout {
         this.s = z11;
         org.telegram.ui.Components.w9 w9Var = this.d;
         w9Var.setVisibility(0);
-        ud udVar = this.b;
-        udVar.setTranslationY(0.0f);
-        udVar.setText(this.r.set.title);
+        vd vdVar = this.b;
+        vdVar.setTranslationY(0.0f);
+        vdVar.setText(this.r.set.title);
         boolean z12 = this.r.set.archived;
         TextView textView = this.c;
         if (z12) {
-            udVar.setAlpha(0.5f);
+            vdVar.setAlpha(0.5f);
             textView.setAlpha(0.5f);
             w9Var.setAlpha(0.5f);
         } else {
-            udVar.setAlpha(1.0f);
+            vdVar.setAlpha(1.0f);
             textView.setAlpha(1.0f);
             w9Var.setAlpha(1.0f);
         }
@@ -528,12 +528,12 @@ public final class l8 extends FrameLayout {
         int measuredWidth = frameLayout.getMeasuredWidth() + AndroidUtilities.dp(26.0f);
         boolean z12 = LocaleController.isRTL;
         TextView textView3 = this.c;
-        ud udVar = this.b;
+        vd vdVar = this.b;
         if (z12) {
-            ((ViewGroup.MarginLayoutParams) udVar.getLayoutParams()).leftMargin = measuredWidth;
+            ((ViewGroup.MarginLayoutParams) vdVar.getLayoutParams()).leftMargin = measuredWidth;
             ((ViewGroup.MarginLayoutParams) textView3.getLayoutParams()).leftMargin = measuredWidth;
         } else {
-            ((ViewGroup.MarginLayoutParams) udVar.getLayoutParams()).rightMargin = measuredWidth;
+            ((ViewGroup.MarginLayoutParams) vdVar.getLayoutParams()).rightMargin = measuredWidth;
             ((ViewGroup.MarginLayoutParams) textView3.getLayoutParams()).rightMargin = measuredWidth;
         }
     }

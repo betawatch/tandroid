@@ -12,9 +12,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.c91;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.ad1;
-import org.telegram.ui.dp0;
 import org.telegram.ui.ek;
-import org.telegram.ui.jp0;
+import org.telegram.ui.ep0;
+import org.telegram.ui.kp0;
 import org.telegram.ui.o21;
 import org.telegram.ui.p21;
 import org.telegram.ui.q21;
@@ -22,7 +22,7 @@ import org.telegram.ui.r91;
 import org.telegram.ui.sn;
 import org.telegram.ui.sv0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class h1 extends c91 {
     public final /* synthetic */ int T;
@@ -244,20 +244,20 @@ public final class h1 extends c91 {
                 snVar.v9(1);
                 break;
             case 4:
-                jp0 jp0Var = (jp0) this.U;
-                float positionAnimated = jp0Var.I.getPositionAnimated();
-                jp0Var.M.setSelected(positionAnimated);
-                jp0Var.e.setProgressToGradient(1.0f - w7.r.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
-                jp0Var.G0();
-                dp0 C0 = jp0Var.C0();
-                d dVar = jp0Var.Q;
-                if (dVar != null && C0 != null && C0 != jp0Var.R) {
-                    jp0Var.R = C0;
+                kp0 kp0Var = (kp0) this.U;
+                float positionAnimated = kp0Var.I.getPositionAnimated();
+                kp0Var.M.setSelected(positionAnimated);
+                kp0Var.e.setProgressToGradient(1.0f - w7.r.a((positionAnimated - 0.333333f) / 0.333333f, 0.0f, 1.0f));
+                kp0Var.G0();
+                ep0 C0 = kp0Var.C0();
+                d dVar = kp0Var.Q;
+                if (dVar != null && C0 != null && C0 != kp0Var.R) {
+                    kp0Var.R = C0;
                     n2.e eVar = C0.e;
                     dVar.g((CharSequence) eVar.b, true, true);
-                    jp0Var.Q.f((SpannableStringBuilder) eVar.c, true);
+                    kp0Var.Q.f((SpannableStringBuilder) eVar.c, true);
                 }
-                jp0Var.D0(1);
+                kp0Var.D0(1);
                 break;
             case 5:
                 ((sv0) this.U).e();
@@ -284,11 +284,11 @@ public final class h1 extends c91 {
                 viewGroup5.invalidate();
                 break;
             default:
-                org.telegram.ui.Wallet.l5 l5Var = (org.telegram.ui.Wallet.l5) this.U;
-                l5Var.S0();
-                org.telegram.ui.Wallet.w7 w7Var = l5Var.k0;
-                if (w7Var != null && w7Var.c1) {
-                    w7Var.h0();
+                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) this.U;
+                m5Var.S0();
+                org.telegram.ui.Wallet.z7 z7Var = m5Var.k0;
+                if (z7Var != null && z7Var.c1) {
+                    z7Var.h0();
                     break;
                 }
                 break;
@@ -297,16 +297,16 @@ public final class h1 extends c91 {
 
     @Override // org.telegram.ui.Components.c91
     public void x(int i10) {
-        org.telegram.ui.Wallet.q8 q8Var;
+        org.telegram.ui.Wallet.t8 t8Var;
         switch (this.T) {
             case 10:
-                org.telegram.ui.Wallet.l5 l5Var = (org.telegram.ui.Wallet.l5) this.U;
-                l5Var.f0 = i10;
-                if (i10 != 1 && (q8Var = l5Var.j0) != null) {
-                    q8Var.b(false);
+                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) this.U;
+                m5Var.f0 = i10;
+                if (i10 != 1 && (t8Var = m5Var.j0) != null) {
+                    t8Var.b(false);
                 }
                 if (i10 == 1) {
-                    l5Var.q0.post(new org.telegram.ui.Wallet.m3(l5Var, 13));
+                    m5Var.q0.post(new org.telegram.ui.Wallet.n3(m5Var, 13));
                     break;
                 }
                 break;

@@ -2,7 +2,6 @@ package dh;
 
 import android.graphics.Outline;
 import android.graphics.RectF;
-import android.os.Build;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import ei.i;
@@ -16,12 +15,10 @@ import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.Components.voip.s1;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Wallet.n5;
+import org.telegram.ui.Wallet.o5;
 import w7.i6;
-import zh.b0;
-import zh.b1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -113,17 +110,10 @@ public final class b extends ViewOutlineProvider {
                 kVar = ((n2) ((PremiumPreviewFragment) obj)).actionBar;
                 outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
                 break;
-            case 7:
-                n5 n5Var = (n5) obj;
-                i6.a(n5Var.c, view.getWidth(), view.getHeight());
-                outline.setConvexPath(n5Var.c);
-                break;
             default:
-                float dp3 = AndroidUtilities.dp(32.0f);
-                if (Build.VERSION.SDK_INT >= 31) {
-                    dp3 = b0.g((b1) obj, dp3);
-                }
-                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), dp3);
+                o5 o5Var = (o5) obj;
+                i6.a(o5Var.c, view.getWidth(), view.getHeight());
+                outline.setConvexPath(o5Var.c);
                 break;
         }
     }

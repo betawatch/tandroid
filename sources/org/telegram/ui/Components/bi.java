@@ -8,7 +8,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class bi implements TextWatcher {
     public final /* synthetic */ int a;
@@ -91,9 +91,9 @@ public final class bi implements TextWatcher {
                 tiVar.f1(true);
                 return;
             default:
-                org.telegram.ui.Wallet.k9 k9Var = (org.telegram.ui.Wallet.k9) this.d;
+                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) this.d;
                 if (!this.b) {
-                    k9Var.f(editable);
+                    n9Var.f(editable);
                     return;
                 }
                 this.b = false;
@@ -101,7 +101,7 @@ public final class bi implements TextWatcher {
                 try {
                     editable.append('.');
                     this.c = false;
-                    k9Var.b.setSelection(editable.length());
+                    n9Var.b.setSelection(editable.length());
                     return;
                 } catch (Throwable th2) {
                     this.c = false;
@@ -116,10 +116,10 @@ public final class bi implements TextWatcher {
             case 0:
                 break;
             default:
-                org.telegram.ui.Wallet.k9 k9Var = (org.telegram.ui.Wallet.k9) this.d;
-                org.telegram.ui.Wallet.g9 g9Var = k9Var.b;
-                if (charSequence.length() > 0 && i11 == charSequence.length() && i12 == 0 && g9Var.getLayout() != null) {
-                    k9Var.M = g9Var.getLayout().getLineLeft(0) - g9Var.getScrollX();
+                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) this.d;
+                org.telegram.ui.Wallet.j9 j9Var = n9Var.b;
+                if (charSequence.length() > 0 && i11 == charSequence.length() && i12 == 0 && j9Var.getLayout() != null) {
+                    n9Var.M = j9Var.getLayout().getLineLeft(0) - j9Var.getScrollX();
                     break;
                 }
                 break;
@@ -147,21 +147,21 @@ public final class bi implements TextWatcher {
             default:
                 boolean z10 = false;
                 this.b = i12 > 0 && TextUtils.equals(charSequence, "0");
-                org.telegram.ui.Wallet.k9 k9Var = (org.telegram.ui.Wallet.k9) this.d;
-                if (!k9Var.Q && !this.c) {
+                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) this.d;
+                if (!n9Var.Q && !this.c) {
                     if (i11 != 0 || i12 != 0) {
-                        org.telegram.ui.Wallet.p6 p6Var = k9Var.c;
+                        org.telegram.ui.Wallet.s6 s6Var = n9Var.c;
                         if (i12 > 0 && i12 >= i11) {
                             z10 = true;
                         }
-                        if (p6Var.x && p6Var.r && p6Var.y == -1) {
-                            xj0 xj0Var = p6Var.h;
+                        if (s6Var.x && s6Var.r && s6Var.y == -1) {
+                            xj0 xj0Var = s6Var.h;
                             if (xj0Var == null) {
-                                p6Var.d0 = Math.max(-360.0f, Math.min(360.0f, p6Var.d0 + (z10 ? -160.0f : 160.0f)));
+                                s6Var.d0 = Math.max(-360.0f, Math.min(360.0f, s6Var.d0 + (z10 ? -160.0f : 160.0f)));
                                 break;
                             } else if (!xj0Var.b()) {
-                                p6Var.h.setProgress(0.0f);
-                                p6Var.h.d();
+                                s6Var.h.setProgress(0.0f);
+                                s6Var.h.d();
                                 break;
                             }
                         }

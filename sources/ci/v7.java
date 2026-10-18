@@ -37,7 +37,7 @@ import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.y90;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v7 implements Runnable {
     public final /* synthetic */ int a;
@@ -221,7 +221,7 @@ public final /* synthetic */ class v7 implements Runnable {
                 }
             case 16:
                 e2.c cVar3 = (e2.c) this.b;
-                Object apply = ((i2.u) this.c).apply(cVar3.f);
+                Object apply = ((i2.v) this.c).apply(cVar3.f);
                 cVar3.f = apply;
                 e2.b bVar = new e2.b(cVar3, apply, i14);
                 e2.i0 i0Var = (e2.i0) cVar3.c;

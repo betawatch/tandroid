@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
@@ -14,7 +14,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.p6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class s1 {
     public final p6 a;
@@ -62,7 +62,7 @@ public final class s1 {
         float f12 = i11 * i10;
         canvas.save();
         float f13 = 0.82f * f10;
-        canvas.translate(0.0f, a6.x(1.0f, n0Var.G, f13, -AndroidUtilities.dp(1.0f)));
+        canvas.translate(0.0f, k3.y(1.0f, n0Var.G, f13, -AndroidUtilities.dp(1.0f)));
         canvas.translate(0.0f, (-AndroidUtilities.dp(4.0f)) * f12);
         float lerp = AndroidUtilities.lerp(1.0f, 0.86f, f12) * n0Var.G;
         canvas.scale(lerp, lerp, 0.0f, 0.0f);
@@ -71,10 +71,10 @@ public final class s1 {
         canvas.restore();
         float e = this.c.e(this.e);
         canvas.save();
-        canvas.translate(0.0f, a6.D(1.0f, f12, AndroidUtilities.dp(4.0f), (AndroidUtilities.dp(14.0f) * f12) + ((1.0f - n0Var.G) * f13 * f12) + (-AndroidUtilities.dp(1.0f))));
+        canvas.translate(0.0f, k3.D(1.0f, f12, AndroidUtilities.dp(4.0f), (AndroidUtilities.dp(14.0f) * f12) + ((1.0f - n0Var.G) * f13 * f12) + (-AndroidUtilities.dp(1.0f))));
         float lerp2 = AndroidUtilities.lerp(1.15f, 0.9f, f12) * n0Var.G;
         canvas.scale(lerp2, lerp2, 0.0f, 0.0f);
-        p6Var2.u(i0.b.f(e, this.d, h6.x0(null, h6.q7, false)));
+        p6Var2.u(i0.a.f(e, this.d, h6.x0(null, h6.q7, false)));
         if (e > 0.0f) {
             int i12 = this.f;
             int color = textPaint.getColor();

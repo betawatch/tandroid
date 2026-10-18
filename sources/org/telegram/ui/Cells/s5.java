@@ -30,14 +30,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public static final Rect a0 = new Rect();
@@ -478,7 +478,7 @@ public final class s5 extends FrameLayout {
                 sb2.append(LocaleController.getString(R.string.AttachPhoto));
             } else {
                 StringBuilder sb3 = new StringBuilder();
-                t0.n(R.string.AttachVideo, ", ", sb3);
+                c1.n(R.string.AttachVideo, ", ", sb3);
                 sb3.append(LocaleController.formatDuration(this.G.duration));
                 sb2.append(sb3.toString());
             }
@@ -499,7 +499,7 @@ public final class s5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (this.x) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), wh.D(2.0f, this.y, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), kk.C(2.0f, this.y, TLObject.FLAG_30));
             return;
         }
         if (this.E) {

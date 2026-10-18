@@ -27,12 +27,12 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m3 extends FrameLayout {
     public static int d0;
@@ -379,7 +379,7 @@ public final class m3 extends FrameLayout {
         k3 k3Var = this.J;
         if (z11) {
             frameLayout.setVisibility(0);
-            wh.t(k3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new ah.t(5, this, z10)), bs.h, 320L);
+            kk.t(k3Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f).withEndAction(new ah.t(5, this, z10)), bs.h, 320L);
         } else {
             frameLayout.setVisibility(z10 ? 0 : 8);
         }
@@ -410,7 +410,7 @@ public final class m3 extends FrameLayout {
             Matrix matrix = this.f;
             matrix.reset();
             matrix.postScale(max, max);
-            matrix.postTranslate(com.google.android.gms.internal.cast.a6.c(max, this.a.getWidth(), getMeasuredWidth(), 2.0f), com.google.android.gms.internal.cast.a6.c(max, this.a.getHeight(), getMeasuredHeight(), 2.0f));
+            matrix.postTranslate(com.google.android.gms.internal.play_billing.k3.c(max, this.a.getWidth(), getMeasuredWidth(), 2.0f), com.google.android.gms.internal.play_billing.k3.c(max, this.a.getHeight(), getMeasuredHeight(), 2.0f));
         }
         if (getMeasuredHeight() > 0) {
             Matrix matrix2 = this.h;

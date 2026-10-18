@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ai extends z4.a {
     public final /* synthetic */ int c;
@@ -73,7 +73,7 @@ public final class ai extends z4.a {
         org.telegram.ui.Components.ck0 ck0Var = this.h;
         mk0Var.h(ck0Var.getSeenUsers());
         mk0Var.G = new b1(this, 16);
-        mk0Var.E = new m4.y0(14, this, this.i);
+        mk0Var.E = new m4.w0(15, this, this.i);
         mk0Var.y = new gi.j4(this.j, i10, this.k, this.l, this.m, this.n);
         if (i12 < 0) {
             mk0Var.setPredictiveCount(this.o);

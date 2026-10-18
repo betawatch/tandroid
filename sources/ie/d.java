@@ -5,7 +5,7 @@ import be.y0;
 import ge.v;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d extends y0 implements Executor {
     public static final d c = new d();
@@ -20,11 +20,11 @@ public final class d extends y0 implements Executor {
         int j10 = ge.a.j(i10, 12, "kotlinx.coroutines.io.parallelism");
         a0Var.getClass();
         if (j10 < 1) {
-            throw new IllegalArgumentException(i0.a.j(j10, "Expected positive parallelism level, but got ").toString());
+            throw new IllegalArgumentException(i2.d.j(j10, "Expected positive parallelism level, but got ").toString());
         }
         if (j10 < k.d) {
             if (j10 < 1) {
-                throw new IllegalArgumentException(i0.a.j(j10, "Expected positive parallelism level, but got ").toString());
+                throw new IllegalArgumentException(i2.d.j(j10, "Expected positive parallelism level, but got ").toString());
             }
             a0Var = new ge.i(a0Var, j10);
         }

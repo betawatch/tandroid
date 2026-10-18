@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class q5 extends r5 {
     @Override // com.google.android.gms.internal.cast.r5
     public final void a(Object obj, long j10) {
-        u4 u4Var = (u4) ((k5) u6.h(obj, j10));
+        u4 u4Var = (u4) ((k5) t6.h(obj, j10));
         if (u4Var.a) {
             u4Var.a = false;
         }
@@ -13,8 +13,8 @@ public final class q5 extends r5 {
 
     @Override // com.google.android.gms.internal.cast.r5
     public final void b(Object obj, long j10, Object obj2) {
-        k5 k5Var = (k5) u6.h(obj, j10);
-        k5 k5Var2 = (k5) u6.h(obj2, j10);
+        k5 k5Var = (k5) t6.h(obj, j10);
+        k5 k5Var2 = (k5) t6.h(obj2, j10);
         int size = k5Var.size();
         int size2 = k5Var2.size();
         if (size > 0 && size2 > 0) {
@@ -26,6 +26,6 @@ public final class q5 extends r5 {
         if (size > 0) {
             k5Var2 = k5Var;
         }
-        u6.l(obj, j10, k5Var2);
+        t6.l(obj, j10, k5Var2);
     }
 }

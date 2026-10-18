@@ -1,6 +1,6 @@
 package yh;
 
-import ai.ld;
+import ai.md;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final w9 a;
@@ -60,7 +60,7 @@ public final class l extends LinearLayout implements NotificationCenter.Notifica
     }
 
     public final void a(long j10, boolean z10) {
-        this.d.c(ld.Y0(false, org.telegram.messenger.q.h((int) j10, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
+        this.d.c(md.Y0(false, org.telegram.messenger.g0.h((int) j10, ',', new StringBuilder("⭐️")), 0.78f, this.e), z10, true);
     }
 
     public final void b(int i10, boolean z10, boolean z11) {

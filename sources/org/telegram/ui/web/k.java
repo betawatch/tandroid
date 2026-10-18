@@ -35,7 +35,7 @@ import org.telegram.ui.lg0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public int E;
@@ -211,9 +211,9 @@ public final class k extends FrameLayout {
         }
         this.H = i11;
         float f7 = AndroidUtilities.computePerceivedBrightness(i10) >= 0.721f ? 0.0f : 1.0f;
-        this.G = i0.b.f(AndroidUtilities.lerp(0.05f, 0.12f, f7), i10, i11);
+        this.G = i0.a.f(AndroidUtilities.lerp(0.05f, 0.12f, f7), i10, i11);
         this.F = i10;
-        this.I = i0.b.f(AndroidUtilities.lerp(0.12f, 0.22f, f7), i10, i11);
+        this.I = i0.a.f(AndroidUtilities.lerp(0.12f, 0.22f, f7), i10, i11);
         int i12 = this.G;
         org.telegram.ui.Cells.z zVar = this.c;
         h6.C1(zVar, i12, false);

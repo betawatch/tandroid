@@ -13,7 +13,7 @@ import g7.l;
 import g7.q;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -163,7 +163,7 @@ public abstract class b extends Binder implements IInterface {
                 int i12 = com.google.android.gms.internal.play_billing.d.a;
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(i0.a.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(i2.d.j(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
                 c0Var.b.a(Integer.valueOf(readInt));
                 return true;

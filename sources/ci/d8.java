@@ -40,7 +40,7 @@ import org.telegram.ui.Components.x20;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class d8 {
     public static x20 b;
@@ -105,11 +105,11 @@ public abstract class d8 {
             j = w02;
             float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(w02);
             if (computePerceivedBrightness >= 0.721f) {
-                e.setColor(i0.b.f(0.2f, w02, -16777216));
+                e.setColor(i0.a.f(0.2f, w02, -16777216));
             } else if (computePerceivedBrightness < 0.25f) {
-                e.setColor(i0.b.f(0.2f, w02, -1));
+                e.setColor(i0.a.f(0.2f, w02, -1));
             } else {
-                e.setColor(i0.b.f(0.44f, w02, -1));
+                e.setColor(i0.a.f(0.44f, w02, -1));
             }
         }
     }
@@ -129,11 +129,11 @@ public abstract class d8 {
             iArr[z10 ? 1 : 0] = w02;
             float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(w02);
             if (computePerceivedBrightness >= 0.721f) {
-                paintArr[z10 ? 1 : 0].setColor(i0.b.f(0.2f, w02, -16777216));
+                paintArr[z10 ? 1 : 0].setColor(i0.a.f(0.2f, w02, -16777216));
             } else if (computePerceivedBrightness < 0.25f) {
-                paintArr[z10 ? 1 : 0].setColor(i0.b.f(0.2f, w02, -1));
+                paintArr[z10 ? 1 : 0].setColor(i0.a.f(0.2f, w02, -1));
             } else {
-                paintArr[z10 ? 1 : 0].setColor(i0.b.f(0.44f, w02, -1));
+                paintArr[z10 ? 1 : 0].setColor(i0.a.f(0.44f, w02, -1));
             }
         }
     }
@@ -247,7 +247,7 @@ public abstract class d8 {
         float dpf2;
         float f16;
         float f17;
-        float x10;
+        float y3;
         ?? r92;
         Paint paint5;
         Paint paint6;
@@ -255,9 +255,9 @@ public abstract class d8 {
         Paint paint8;
         float dpf22;
         float f18;
-        float x11;
+        float y10;
         x20 x20Var;
-        float x12;
+        float y11;
         i7 storiesController = MessagesController.getInstance(UserConfig.selectedAccount).getStoriesController();
         boolean z14 = y7Var.b;
         RectF rectF3 = y7Var.F;
@@ -407,13 +407,13 @@ public abstract class d8 {
             boolean z19 = y7Var.A == 1 && y7Var.B != f11;
             float f22 = (!z15 || y7Var.v) ? 0.0f : -AndroidUtilities.dp(4.0f);
             if (z19) {
-                x12 = (AndroidUtilities.dp(5.0f) * f21) + f22;
+                y11 = (AndroidUtilities.dp(5.0f) * f21) + f22;
                 x20Var.c.setAlpha((int) ((f11 - f21) * y7Var.u * 255.0f));
             } else {
                 x20Var.c.setAlpha((int) (y7Var.u * 255.0f * f21));
-                x12 = com.google.android.gms.internal.cast.a6.x(f11, f21, AndroidUtilities.dp(5.0f), f22);
+                y11 = com.google.android.gms.internal.play_billing.k3.y(f11, f21, AndroidUtilities.dp(5.0f), f22);
             }
-            float f23 = x12 + y7Var.G;
+            float f23 = y11 + y7Var.G;
             rectF.set(rectF3);
             rectF.inset(f23, f23);
             imageReceiver.getParentView();
@@ -478,13 +478,13 @@ public abstract class d8 {
                 if (y7Var2.A != i13 || y7Var2.B == 1.0f) {
                     paint.setAlpha((int) (y7Var2.u * 255.0f * f21));
                     f17 = 1.0f;
-                    x10 = com.google.android.gms.internal.cast.a6.x(1.0f, f21, AndroidUtilities.dp(5.0f), f16);
+                    y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f21, AndroidUtilities.dp(5.0f), f16);
                 } else {
-                    x10 = (AndroidUtilities.dp(7.0f) * f21) + f16;
+                    y3 = (AndroidUtilities.dp(7.0f) * f21) + f16;
                     paint.setAlpha((int) ((1.0f - f21) * y7Var2.u * 255.0f));
                     f17 = 1.0f;
                 }
-                float f24 = x10 + y7Var2.G;
+                float f24 = y3 + y7Var2.G;
                 rectF.set(rectF3);
                 rectF.inset(f24, f24);
                 boolean z20 = y7Var2.a;
@@ -670,15 +670,15 @@ public abstract class d8 {
             f18 = 0.0f;
         }
         if (z21) {
-            x11 = (AndroidUtilities.dp(5.0f) * f21) + f18;
+            y10 = (AndroidUtilities.dp(5.0f) * f21) + f18;
             paint10.setAlpha((int) (y7Var.u * 255.0f * (1.0f - f21)));
             f14 = 2.7f;
         } else {
             paint10.setAlpha((int) (y7Var.u * 255.0f * f21));
             f14 = 2.7f;
-            x11 = com.google.android.gms.internal.cast.a6.x(1.0f, f21, AndroidUtilities.dp(5.0f), f18);
+            y10 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f21, AndroidUtilities.dp(5.0f), f18);
         }
-        float f33 = x11 + y7Var.G;
+        float f33 = y10 + y7Var.G;
         rectF.set(rectF3);
         rectF.inset(f33, f33);
         if (y7Var.a) {
@@ -779,29 +779,29 @@ public abstract class d8 {
     public static void l(Canvas canvas, RectF rectF, Paint paint, float f7, float f10, y7 y7Var, boolean z10) {
         if (z10) {
             float height = rectF.height() * 0.32f;
-            float C = a1.g.C((int) f7, 90, 90, 90);
-            float f11 = (-199.0f) + C;
+            float f11 = ((((int) f7) / 90) * 90) + 90;
+            float f12 = (-199.0f) + f11;
             Path path = q;
             path.rewind();
             path.addRoundRect(rectF, height, height, Path.Direction.CW);
             Matrix matrix = r;
             matrix.reset();
-            matrix.postRotate(C, rectF.centerX(), rectF.centerY());
+            matrix.postRotate(f11, rectF.centerX(), rectF.centerY());
             path.transform(matrix);
             PathMeasure pathMeasure = s;
             pathMeasure.setPath(path, false);
             float length = pathMeasure.getLength();
             Path path2 = t;
             path2.reset();
-            pathMeasure.getSegment(((f7 - f11) / 360.0f) * length, length * ((f10 - f11) / 360.0f), path2, true);
+            pathMeasure.getSegment(((f7 - f12) / 360.0f) * length, length * ((f10 - f12) / 360.0f), path2, true);
             path2.rLineTo(0.0f, 0.0f);
             canvas.drawPath(path2, paint);
             return;
         }
         if (!y7Var.k) {
             if (y7Var.l) {
-                float f12 = y7Var.f;
-                g(canvas, rectF, paint, f7, f10, ((-f12) / 2.0f) + 180.0f, (f12 / 2.0f) + 180.0f);
+                float f13 = y7Var.f;
+                g(canvas, rectF, paint, f7, f10, ((-f13) / 2.0f) + 180.0f, (f13 / 2.0f) + 180.0f);
                 return;
             } else if (f7 < 90.0f) {
                 g(canvas, rectF, paint, f7, f10, y7Var.g, y7Var.h);
@@ -814,23 +814,23 @@ public abstract class d8 {
         boolean z11 = y7Var.m;
         if (!z11 && !y7Var.l) {
             if (f7 < 90.0f) {
-                float f13 = y7Var.f;
-                g(canvas, rectF, paint, f7, f10, (-f13) / 2.0f, f13 / 2.0f);
+                float f14 = y7Var.f;
+                g(canvas, rectF, paint, f7, f10, (-f14) / 2.0f, f14 / 2.0f);
                 return;
             } else {
-                float f14 = y7Var.f;
-                g(canvas, rectF, paint, f7, f10, ((-f14) / 2.0f) + 180.0f, (f14 / 2.0f) + 180.0f);
+                float f15 = y7Var.f;
+                g(canvas, rectF, paint, f7, f10, ((-f15) / 2.0f) + 180.0f, (f15 / 2.0f) + 180.0f);
                 return;
             }
         }
         if (y7Var.l) {
-            float f15 = y7Var.f;
-            g(canvas, rectF, paint, f7, f10, ((-f15) / 2.0f) + 180.0f, (f15 / 2.0f) + 180.0f);
+            float f16 = y7Var.f;
+            g(canvas, rectF, paint, f7, f10, ((-f16) / 2.0f) + 180.0f, (f16 / 2.0f) + 180.0f);
         } else if (!z11) {
             canvas.drawArc(rectF, f7, f10 - f7, false, paint);
         } else {
-            float f16 = y7Var.f;
-            g(canvas, rectF, paint, f7, f10, (-f16) / 2.0f, f16 / 2.0f);
+            float f17 = y7Var.f;
+            g(canvas, rectF, paint, f7, f10, (-f17) / 2.0f, f17 / 2.0f);
         }
     }
 
@@ -1075,7 +1075,7 @@ public abstract class d8 {
             }
             ((x7) z7Var.e).setImage(null, null, ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(arrayList2, ConnectionsManager.DEFAULT_DATACENTER_ID), photo2), s10, null, null, null, 0L, null, storyItem2, 0);
         } else {
-            ((x7) z7Var.e).setImage(ImageLocation.getForDocument(document), r.c.u(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
+            ((x7) z7Var.e).setImage(ImageLocation.getForDocument(document), r4.c.u(s10, "_pframe"), null, null, null, 0L, null, storyItem2, 0);
         }
         return z7Var;
     }
@@ -1103,7 +1103,7 @@ public abstract class d8 {
             TextPaint textPaint = new TextPaint(1);
             textPaint.setTextSize(15.0f);
             textPaint.setTextAlign(Paint.Align.CENTER);
-            textPaint.setColor(i0.b.o(-16777216, 100));
+            textPaint.setColor(i0.a.o(-16777216, 100));
             canvas.drawText("expired", 180.0f, 86.0f, textPaint);
             canvas.drawText("story", 180.0f, 106.0f, textPaint);
             m = new BitmapDrawable(createBitmap);
@@ -1217,7 +1217,7 @@ public abstract class d8 {
         TLRPC.Photo photo = messageMedia != null ? messageMedia.photo : null;
         if (messageMedia instanceof TLRPC.TL_messageMediaUnsupported) {
             Bitmap createBitmap = Bitmap.createBitmap(10, 10, Bitmap.Config.ARGB_8888);
-            createBitmap.eraseColor(i0.b.f(0.2f, -16777216, -1));
+            createBitmap.eraseColor(i0.a.f(0.2f, -16777216, -1));
             imageReceiver.setImageBitmap(createBitmap);
             imageReceiver.addDecorator(new fa(storyItem));
             return;

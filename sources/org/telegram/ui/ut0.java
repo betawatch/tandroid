@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ut0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,17 +57,17 @@ public final /* synthetic */ class ut0 implements Runnable {
                 ku0 ku0Var = (ku0) this.b;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ku0Var.a.N0.getLayoutParams();
                 ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                int B = org.telegram.messenger.wh.B(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A = org.telegram.messenger.kk.A(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer = ku0Var.a;
-                int i15 = B + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0);
+                int i15 = A + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0);
                 if (i15 != layoutParams.topMargin) {
                     layoutParams.topMargin = i15;
                     photoViewer.N0.setLayoutParams(layoutParams);
                 }
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) ku0Var.a.O0.getLayoutParams();
-                int B2 = org.telegram.messenger.wh.B(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A2 = org.telegram.messenger.kk.A(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer2 = ku0Var.a;
-                int i16 = B2 + (!photoViewer2.s ? AndroidUtilities.statusBarHeight : 0);
+                int i16 = A2 + (!photoViewer2.s ? AndroidUtilities.statusBarHeight : 0);
                 if (layoutParams2.topMargin != i16) {
                     layoutParams2.topMargin = i16;
                     photoViewer2.O0.setLayoutParams(layoutParams2);

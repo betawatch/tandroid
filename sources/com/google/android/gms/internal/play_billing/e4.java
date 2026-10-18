@@ -1,62 +1,64 @@
 package com.google.android.gms.internal.play_billing;
 
-import v7.c6;
-
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class e4 extends c6 {
-    @Override // v7.c6
-    public final void a(f4 f4Var, f4 f4Var2) {
-        f4Var.b = f4Var2;
+public final class e4 extends v1 {
+    private static final e4 zzb;
+    private int zzd;
+    private int zze;
+    private boolean zzf;
+    private long zzg;
+    private boolean zzh;
+    private int zzi;
+
+    static {
+        e4 e4Var = new e4();
+        zzb = e4Var;
+        v1.k(e4.class, e4Var);
     }
 
-    @Override // v7.c6
-    public final void b(f4 f4Var, Thread thread) {
-        f4Var.a = thread;
+    public static /* synthetic */ void n(e4 e4Var, boolean z10) {
+        e4Var.zzd |= 8;
+        e4Var.zzh = z10;
     }
 
-    @Override // v7.c6
-    public final boolean c(g4 g4Var, v2 v2Var, v2 v2Var2) {
-        synchronized (g4Var) {
-            try {
-                if (g4Var.b != v2Var) {
-                    return false;
-                }
-                g4Var.b = v2Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public static /* synthetic */ void o(e4 e4Var) {
+        e4Var.zzd |= 16;
+        e4Var.zzi = 0;
+    }
+
+    public static /* synthetic */ void p(e4 e4Var, long j10) {
+        e4Var.zzd |= 4;
+        e4Var.zzg = j10;
+    }
+
+    public static /* synthetic */ void q(e4 e4Var) {
+        e4Var.zzd |= 2;
+        e4Var.zzf = true;
+    }
+
+    public static d4 r() {
+        return (d4) zzb.f();
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.v1
+    public final Object d(int i10) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
+            return (byte) 1;
         }
-    }
-
-    @Override // v7.c6
-    public final boolean d(g4 g4Var, Object obj, Object obj2) {
-        synchronized (g4Var) {
-            try {
-                if (g4Var.a != obj) {
-                    return false;
-                }
-                g4Var.a = obj2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+        if (i11 == 2) {
+            return new s2(zzb, "\u0004\u0005\u0000\u0001\u0001\u0005\u0005\u0000\u0000\u0000\u0001င\u0000\u0002ဇ\u0001\u0003ဂ\u0002\u0004ဇ\u0003\u0005င\u0004", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi"});
         }
-    }
-
-    @Override // v7.c6
-    public final boolean e(g4 g4Var, f4 f4Var, f4 f4Var2) {
-        synchronized (g4Var) {
-            try {
-                if (g4Var.c != f4Var) {
-                    return false;
-                }
-                g4Var.c = f4Var2;
-                return true;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+        if (i11 == 3) {
+            return new e4();
         }
+        if (i11 == 4) {
+            return new d4(zzb);
+        }
+        if (i11 == 5) {
+            return zzb;
+        }
+        throw null;
     }
 }

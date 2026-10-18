@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class gx0 extends hm0 {
     public int c;
@@ -28,9 +28,9 @@ public final class gx0 extends hm0 {
         lx0[] lx0VarArr = px0Var.W2;
         int length = (lx0VarArr == null ? 0 : lx0VarArr.length) + 1;
         if (length != this.c) {
-            ai.hc hcVar = px0Var.j3;
-            if (hcVar != null) {
-                hcVar.requestLayout();
+            ai.ic icVar = px0Var.j3;
+            if (icVar != null) {
+                icVar.requestLayout();
             }
             this.c = length;
         }
@@ -95,9 +95,9 @@ public final class gx0 extends hm0 {
         kx0 kx0Var;
         px0 px0Var = this.d;
         if (i10 == 0) {
-            ai.hc hcVar = new ai.hc(this, px0Var.getContext(), 26);
-            px0Var.j3 = hcVar;
-            kx0Var = hcVar;
+            ai.ic icVar = new ai.ic(this, px0Var.getContext(), 26);
+            px0Var.j3 = icVar;
+            kx0Var = icVar;
         } else {
             kx0Var = new kx0(px0Var, px0Var.getContext());
         }

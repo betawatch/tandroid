@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class yj extends org.telegram.ui.Cells.x0 {
+public final class yj extends org.telegram.ui.Cells.w0 {
     public final /* synthetic */ sn t2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class yj extends org.telegram.ui.Cells.x0 {
         this.t2 = snVar;
     }
 
-    @Override // org.telegram.ui.Cells.x0, android.view.View
+    @Override // org.telegram.ui.Cells.w0, android.view.View
     public final void onDraw(Canvas canvas) {
         sn snVar = this.t2;
         if (snVar.B8 != null) {
@@ -47,7 +47,7 @@ public final class yj extends org.telegram.ui.Cells.x0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Cells.x0, android.view.View
+    @Override // org.telegram.ui.Cells.w0, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         if (getAlpha() == 0.0f) {

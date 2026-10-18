@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n80 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -128,14 +128,14 @@ public final /* synthetic */ class n80 implements Utilities.Callback {
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) obj5;
                 TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) obj4;
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj3;
-                ai.ub ubVar = (ai.ub) obj2;
+                ai.vb vbVar = (ai.vb) obj2;
                 TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
                 ((org.telegram.ui.ActionBar.f3[]) obj7)[0] = null;
                 wk0.a = null;
                 if (!((boolean[]) obj6)[0]) {
                     inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
                     if (!tL_urlAuthResultRequest.request_write_access && !tL_urlAuthResultRequest.request_phone_number) {
-                        ubVar.run();
+                        vbVar.run();
                         break;
                     } else {
                         wk0.a = f3Var;

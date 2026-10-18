@@ -22,7 +22,7 @@ import org.telegram.ui.Components.d61;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.gj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class BotForumHelper extends BaseController {
     private static volatile BotForumHelper[] Instance = new BotForumHelper[4];
@@ -31,7 +31,7 @@ public class BotForumHelper extends BaseController {
     private final LongSparseArray<List<MessagesStorage.IntCallback>> pendingBotTopics;
     private final SharedPreferences preferences;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class BotDraftAnimationsPool {
         private final DialogTopicIdKeyMap<gj0> animators = new DialogTopicIdKeyMap<>();
         private final SparseIntArray ids = new SparseIntArray();
@@ -68,7 +68,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class BotDraftMessage {
         private boolean canStop;
         private boolean keepOnStop;
@@ -90,7 +90,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class BotForumTextDraftDeleteNotification {
         public final long botTopicId;
         public final long botUserId;
@@ -103,7 +103,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class BotForumTextDraftUpdateNotification {
         public final long botTopicId;
         public final long botUserId;
@@ -118,7 +118,7 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class BotForumTopicCreateNotification {
         public final long dialogId;
         public final int topicId;
@@ -129,14 +129,14 @@ public class BotForumHelper extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public enum SteamingSendButtonState {
         NO_STREAMING,
         BLOCKING,
         STOP
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class TypingBotSpan extends yq {
         public TypingBotSpan(d61 d61Var, int i10) {
             super(i10, d61Var);
@@ -520,7 +520,7 @@ public class BotForumHelper extends BaseController {
         getConnectionsManager().sendRequestTyped(tL_messages_setTyping, new m0(i10));
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class DialogTopicIdKeyMap<T> {
         private final LongSparseArray<LongSparseArray<LongSparseArray<T>>> map = new LongSparseArray<>();
 

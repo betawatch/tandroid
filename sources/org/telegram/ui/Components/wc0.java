@@ -31,7 +31,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wc0 extends Drawable {
     public static final boolean e0;
@@ -225,7 +225,7 @@ public final class wc0 extends Drawable {
         if (i12 < 0) {
             boolean z12 = e0;
             if (!z11 && (!z12 || e == null)) {
-                canvas.drawColor(i0.b.o(-16777216, (int) (this.L * f17)));
+                canvas.drawColor(i0.a.o(-16777216, (int) (this.L * f17)));
             }
             if (e != null) {
                 if (z12) {
@@ -257,7 +257,7 @@ public final class wc0 extends Drawable {
                         canvas.drawBitmap(this.k, (Rect) null, rectF, paint);
                         canvas.drawBitmap(this.c0, (Rect) null, rectF, paint);
                     } else {
-                        canvas.drawColor(i0.b.o(-16777216, (int) (this.L * f17)));
+                        canvas.drawColor(i0.a.o(-16777216, (int) (this.L * f17)));
                     }
                     b(canvas, rectF, this.S);
                 } else {

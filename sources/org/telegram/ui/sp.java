@@ -4,7 +4,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, MessagesStorage.LongCallback {
     public final /* synthetic */ int a;
@@ -46,9 +46,9 @@ public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.a2, M
             case 5:
                 TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
                 dq dqVar3 = this.b;
-                m4.y0 y0Var = new m4.y0(22, dqVar3, twoStepVerificationActivity);
+                m4.w0 w0Var = new m4.w0(23, dqVar3, twoStepVerificationActivity);
                 twoStepVerificationActivity.Z = 0;
-                twoStepVerificationActivity.b0 = y0Var;
+                twoStepVerificationActivity.b0 = w0Var;
                 dqVar3.presentFragment(twoStepVerificationActivity);
                 break;
         }

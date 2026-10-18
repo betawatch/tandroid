@@ -14,11 +14,11 @@ import e2.m0;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.e0;
+import i2.f0;
 import j$.util.Objects;
 import java.util.List;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d {
     public final Spatializer a;
@@ -44,7 +44,7 @@ public final class d {
         this.c = handler;
         c cVar = new c(runnable);
         this.d = cVar;
-        spatializer.addOnSpatializerStateChangedListener(new e0(handler, 1), cVar);
+        spatializer.addOnSpatializerStateChangedListener(new f0(handler, 1), cVar);
     }
 
     public final boolean a(f fVar, w wVar) {

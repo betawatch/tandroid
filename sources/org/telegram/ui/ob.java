@@ -34,7 +34,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ob implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ tb a;
@@ -266,7 +266,7 @@ public final class ob implements org.telegram.ui.Cells.l1 {
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.R = string;
             b2Var.T = LocaleController.formatString(R.string.OpenUrlAlert2, url3);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Open), new m4.y0(7, xbVar, url3));
+            alertDialog$Builder.k(LocaleController.getString(R.string.Open), new m4.w0(8, xbVar, url3));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             xbVar.showDialog(b2Var);
             return;
@@ -394,7 +394,7 @@ public final class ob implements org.telegram.ui.Cells.l1 {
                     b10 = c5.b(user, i11, i5VarArr);
                 }
                 if (c2.b.g(b10)) {
-                    c2.b.m().y((ViewGroup) xbVar.fragmentView, xbVar.getResourceProvider(), b10, new m4.y0(this, u1Var, user));
+                    c2.b.m().y((ViewGroup) xbVar.fragmentView, xbVar.getResourceProvider(), b10, new m4.w0(this, u1Var, user));
                     return true;
                 }
             }
@@ -404,7 +404,7 @@ public final class ob implements org.telegram.ui.Cells.l1 {
 
     @Override // org.telegram.ui.Cells.l1
     public final /* synthetic */ boolean d1(MessageObject messageObject) {
-        return org.telegram.ui.Cells.t0.a(messageObject);
+        return org.telegram.ui.Cells.c1.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.l1

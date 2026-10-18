@@ -14,7 +14,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class j3 extends ql0 {
     public final /* synthetic */ q3 c;
@@ -147,7 +147,7 @@ public final class j3 extends ql0 {
                 m3Var.O = null;
             } else if (photoEntry.isVideo) {
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.t0.n(R.string.AttachVideo, ", ", sb2);
+                org.telegram.ui.Cells.c1.n(R.string.AttachVideo, ", ", sb2);
                 sb2.append(LocaleController.formatDuration(photoEntry.duration));
                 m3Var.O = sb2.toString();
             } else {

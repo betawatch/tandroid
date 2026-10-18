@@ -10,7 +10,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ac1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ mc1 a;
@@ -94,7 +94,7 @@ public final class ac1 extends org.telegram.ui.ActionBar.j {
                 sb3.append(((TLRPC.TL_wallPaper) obj).slug);
                 b10 = sb3.toString();
                 if (sb2.length() > 0) {
-                    StringBuilder i13 = r.c.i(b10, "?mode=");
+                    StringBuilder i13 = r4.c.i(b10, "?mode=");
                     i13.append(sb2.toString());
                     b10 = i13.toString();
                 }

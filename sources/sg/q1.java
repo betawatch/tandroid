@@ -19,7 +19,7 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.yp;
 import org.telegram.ui.rw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class q1 extends ViewGroup {
     public q1 E;
@@ -355,7 +355,7 @@ public class q1 extends ViewGroup {
         int makeMeasureSpec5 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView3 = this.d;
         textView3.measure(makeMeasureSpec4, makeMeasureSpec5);
-        int c10 = wh.c(6.0f, (size - xpVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
+        int c10 = kk.c(6.0f, (size - xpVar.getMeasuredWidth()) - (textView3.getVisibility() == 0 ? textView3.getMeasuredWidth() : 0), TLObject.FLAG_31);
         int makeMeasureSpec6 = View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31);
         TextView textView4 = this.e;
         textView4.measure(c10, makeMeasureSpec6);

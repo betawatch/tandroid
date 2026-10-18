@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w2 extends FrameLayout implements org.telegram.ui.Components.c01, org.telegram.ui.Cells.m9 {
     public final d70 a;
@@ -277,7 +277,7 @@ public final class w2 extends FrameLayout implements org.telegram.ui.Components.
             int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(0, 0);
             v2 v2Var = this.c;
             v2Var.measure(makeMeasureSpec, makeMeasureSpec2);
-            i12 = org.telegram.messenger.q.C(8.0f, v2Var.getMeasuredHeight(), i13);
+            i12 = org.telegram.messenger.g0.C(8.0f, v2Var.getMeasuredHeight(), i13);
             TL_iv.pageBlockTable pageblocktable3 = this.s;
             if (pageblocktable3.level > 0 && !pageblocktable3.bottom) {
                 i12 += AndroidUtilities.dp(8.0f);

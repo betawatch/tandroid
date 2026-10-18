@@ -14,7 +14,7 @@ import org.telegram.SQLite.SQLiteException;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.CacheByChatsController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class FilePathDatabase {
     private static final String DATABASE_BACKUP_NAME = "file_to_path_backup";
@@ -32,7 +32,7 @@ public class FilePathDatabase {
     private final ConcurrentHashMap<String, String> cache = new ConcurrentHashMap<>();
     private final FileMeta metaTmp = new FileMeta();
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class FileMeta {
         public long dialogId;
         public int messageId;
@@ -40,7 +40,7 @@ public class FilePathDatabase {
         public int messageType;
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class PathData {
         public final int dc;
         public final long id;
@@ -352,19 +352,19 @@ public class FilePathDatabase {
 
     private void migrateDatabase(int i10) {
         if (i10 == 1) {
-            q.s(this.database, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
-            q.s(this.database, "PRAGMA user_version = 2");
+            g0.r(this.database, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
+            g0.r(this.database, "PRAGMA user_version = 2");
             i10 = 2;
         }
         if (i10 == 2) {
-            q.s(this.database, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
-            q.s(this.database, "PRAGMA user_version = 3");
+            g0.r(this.database, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
+            g0.r(this.database, "PRAGMA user_version = 3");
             i10 = 3;
         }
         if (i10 == 3) {
-            q.s(this.database, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
-            q.s(this.database, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
-            q.s(this.database, "PRAGMA user_version = 4");
+            g0.r(this.database, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
+            g0.r(this.database, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
+            g0.r(this.database, "PRAGMA user_version = 4");
             i10 = 4;
         }
         if (i10 == 4 || i10 == 5 || i10 == 6) {
@@ -373,7 +373,7 @@ public class FilePathDatabase {
             } catch (Throwable th2) {
                 FileLog.e(th2);
             }
-            q.s(this.database, "PRAGMA user_version = 7");
+            g0.r(this.database, "PRAGMA user_version = 7");
         }
     }
 
@@ -429,7 +429,7 @@ public class FilePathDatabase {
         sb2.append(" time=");
         sb2.append(System.currentTimeMillis() - currentTimeMillis);
         sb2.append(" thread_time=");
-        q.r(sb2, jArr[0]);
+        i2.d.x(sb2, jArr[0]);
         if (BuildVars.DEBUG_VERSION && Thread.currentThread() == Looper.getMainLooper().getThread()) {
             FileLog.e(new Exception("warning, not allowed in main thread"));
         }

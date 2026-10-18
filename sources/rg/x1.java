@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.f6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x1 extends j {
     public final Bitmap A0;
@@ -132,8 +132,8 @@ public final class x1 extends j {
         getMeasuredHeight();
         getScale();
         AndroidUtilities.dp(64.0f);
-        float A = wh.A(dp, 2.0f, getPositionX(), scaleX);
-        return new el0(A, wh.A(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + A) - A, dp2 * scaleX);
+        float z10 = kk.z(dp, 2.0f, getPositionX(), scaleX);
+        return new el0(z10, kk.z(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + z10) - z10, dp2 * scaleX);
     }
 
     @Override // rg.j
@@ -205,7 +205,7 @@ public final class x1 extends j {
         dVar.a = true;
         zzd a2 = v7.f0.a(new bc.e(dVar));
         this.B0 = true;
-        a2.g(wb.a.a(bitmap, this.w0)).addOnSuccessListener(new qg.g0(this, 11)).addOnFailureListener(new org.telegram.ui.web.c0(6, this, bitmap));
+        a2.g(wb.a.a(bitmap, this.w0)).addOnSuccessListener(new qg.g0(this, 11)).addOnFailureListener(new org.telegram.ui.web.m(7, this, bitmap));
     }
 
     public final void t(boolean z10) {

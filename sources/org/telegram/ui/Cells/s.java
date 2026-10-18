@@ -9,7 +9,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.st;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s extends LinearLayout {
     public static final /* synthetic */ int f = 0;
@@ -24,9 +24,9 @@ public final class s extends LinearLayout {
         TextView textView = this.d;
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false);
         int i10 = org.telegram.ui.ActionBar.h6.I6;
-        textView.setTextColor(i0.b.f(f7, x02, org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
+        textView.setTextColor(i0.a.f(f7, x02, org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
         Paint paint = this.a;
-        paint.setColor(i0.b.f(f7, i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.M6, false), 63), org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
+        paint.setColor(i0.a.f(f7, i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.M6, false), 63), org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
         paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(AndroidUtilities.lerp(0.5f, 2.0f, f7))));
         invalidate();
     }

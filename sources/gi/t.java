@@ -19,7 +19,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.l5;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class t extends org.telegram.ui.ActionBar.n2 {
     public a71 a;
@@ -51,7 +51,7 @@ public final class t extends org.telegram.ui.ActionBar.n2 {
             i11.K(!qVar.b);
             arrayList.add(i11);
         }
-        i0.a.A(R.string.PrivacyBiometryBotsInfo, arrayList);
+        i2.d.B(R.string.PrivacyBiometryBotsInfo, arrayList);
     }
 
     public static void V(t tVar, f61 f61Var) {
@@ -84,7 +84,7 @@ public final class t extends org.telegram.ui.ActionBar.n2 {
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.PrivacyBiometryBots));
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 2));

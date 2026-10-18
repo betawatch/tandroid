@@ -14,7 +14,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y3 extends FrameLayout {
     public d5 a;
@@ -22,15 +22,15 @@ public final class y3 extends FrameLayout {
     public boolean c;
     public final Paint d;
     public r0.k1 e;
-    public i0.c f;
-    public i0.c h;
+    public i0.b f;
+    public i0.b h;
 
     public y3(Activity activity) {
         super(activity);
         this.d = new Paint(1);
-        i0.c cVar = i0.c.e;
-        this.f = cVar;
-        this.h = cVar;
+        i0.b bVar = i0.b.e;
+        this.f = bVar;
+        this.h = bVar;
         n nVar = new n(this, 8);
         WeakHashMap weakHashMap = r0.i0.a;
         r0.a0.i(this, nVar);
@@ -97,9 +97,9 @@ public final class y3 extends FrameLayout {
         int size = View.MeasureSpec.getSize(i10);
         int size2 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size, size2);
-        i0.c cVar = this.f;
-        int i12 = (size - cVar.a) - cVar.c;
-        int i13 = (size2 - cVar.b) - cVar.d;
+        i0.b bVar = this.f;
+        int i12 = (size - bVar.a) - bVar.c;
+        int i13 = (size2 - bVar.b) - bVar.d;
         Point point = AndroidUtilities.displaySize;
         point.x = i12;
         point.y = i13;

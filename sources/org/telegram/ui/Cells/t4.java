@@ -18,14 +18,14 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t4 extends FrameLayout {
     public static b10 x;
@@ -233,7 +233,7 @@ public final class t4 extends FrameLayout {
         x.d();
         x.h();
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - this.v) * 255.0f), 31);
-        canvas.translate(AndroidUtilities.dp(2.0f), wh.B(56.0f, getMeasuredHeight(), 2));
+        canvas.translate(AndroidUtilities.dp(2.0f), kk.A(56.0f, getMeasuredHeight(), 2));
         x.draw(canvas);
         canvas.restore();
         super.onDraw(canvas);

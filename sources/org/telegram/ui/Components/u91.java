@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class u91 extends ViewGroup implements x71, AudioManager.OnAudioFocusChangeListener {
     public String E;
@@ -1308,9 +1308,9 @@ public final class u91 extends ViewGroup implements x71, AudioManager.OnAudioFoc
     }
 
     public final void k() {
-        i2.g0 g0Var = this.a.d;
+        i2.h0 h0Var = this.a.d;
         ImageView imageView = this.b0;
-        if (g0Var == null || this.U) {
+        if (h0Var == null || this.U) {
             imageView.setVisibility(8);
             return;
         }

@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,17 +70,17 @@ public final /* synthetic */ class t1 implements Runnable {
                 PaymentFormActivity$TelegramWebviewProxy paymentFormActivity$TelegramWebviewProxy = (PaymentFormActivity$TelegramWebviewProxy) this.d;
                 String str5 = (String) this.b;
                 String str6 = (String) this.c;
-                fo0 fo0Var = paymentFormActivity$TelegramWebviewProxy.a;
-                if (fo0Var.getParentActivity() != null && str5.equals("payment_form_submit")) {
+                go0 go0Var = paymentFormActivity$TelegramWebviewProxy.a;
+                if (go0Var.getParentActivity() != null && str5.equals("payment_form_submit")) {
                     try {
                         JSONObject jSONObject = new JSONObject(str6);
-                        fo0Var.w0 = jSONObject.getJSONObject("credentials").toString();
-                        fo0Var.x0 = jSONObject.getString("title");
+                        go0Var.w0 = jSONObject.getJSONObject("credentials").toString();
+                        go0Var.x0 = jSONObject.getString("title");
                     } catch (Throwable th2) {
-                        fo0Var.w0 = str6;
+                        go0Var.w0 = str6;
                         FileLog.e(th2);
                     }
-                    fo0Var.t0();
+                    go0Var.t0();
                     return;
                 }
                 return;
@@ -182,7 +182,7 @@ public final /* synthetic */ class t1 implements Runnable {
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
                 AndroidUtilities.addToClipboard(strArr[0]);
-                org.telegram.messenger.wh.p(R.string.LinkCopied, new org.telegram.ui.Components.xc(f3Var.topBulletinContainer, d6Var));
+                org.telegram.messenger.kk.p(R.string.LinkCopied, new org.telegram.ui.Components.xc(f3Var.topBulletinContainer, d6Var));
                 return;
             case 8:
                 ua.X((ua) this.d, (org.telegram.ui.ActionBar.b2) this.b, (TLRPC.User) this.c);
@@ -240,7 +240,7 @@ public final /* synthetic */ class t1 implements Runnable {
                 countDownLatch.countDown();
                 return;
             case 15:
-                AndroidUtilities.runOnUIThread(new i0(26, (ai.g3) this.c, ((sn) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
+                AndroidUtilities.runOnUIThread(new i0(26, (ai.e3) this.c, ((sn) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
                 return;
             case 16:
                 sn.t1((sn) this.d, (TLRPC.User) this.b, (TLRPC.EmojiStatus) this.c);
@@ -287,7 +287,7 @@ public final /* synthetic */ class t1 implements Runnable {
                     snVar6.getMessagesController().putUsers(tL_photos_photo.users, false);
                     TLRPC.User user2 = snVar6.getMessagesController().getUser(Long.valueOf(snVar6.getUserConfig().clientUserId));
                     if ((tL_photos_photo.photo instanceof TLRPC.TL_photo) && user2 != null) {
-                        zf.d0.a(messageObject.messageOwner.action.photo, user2, false);
+                        zf.e0.a(messageObject.messageOwner.action.photo, user2, false);
                         snVar6.getUserConfig().setCurrentUser(user2);
                         snVar6.getUserConfig().saveConfig(true);
                         org.telegram.ui.Components.xc.a0(snVar6).V(Collections.singletonList(user2), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new vi(vlVar, 6)), null).j();
@@ -391,7 +391,7 @@ public final /* synthetic */ class t1 implements Runnable {
                     while (true) {
                         if (i17 < i15) {
                             String str11 = strArr2[i17];
-                            if (lowerCase2.startsWith(str11) || org.telegram.messenger.wh.w(" ", str11, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str11) || org.telegram.messenger.wh.w(" ", str11, translitString2)))) {
+                            if (lowerCase2.startsWith(str11) || org.telegram.messenger.g0.w(" ", str11, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str11) || org.telegram.messenger.g0.w(" ", str11, translitString2)))) {
                                 arrayList = arrayList4;
                                 i11 = 1;
                             } else {
@@ -424,7 +424,7 @@ public final /* synthetic */ class t1 implements Runnable {
                                 if (i11 == 1) {
                                     arrayList6.add(AndroidUtilities.generateSearchName(chat.title, null, str11));
                                 } else {
-                                    arrayList6.add(AndroidUtilities.generateSearchName(r.c.g("@", str10), null, "@" + str11));
+                                    arrayList6.add(AndroidUtilities.generateSearchName(r4.c.h("@", str10), null, "@" + str11));
                                 }
                                 arrayList5.add(chat);
                             } else {

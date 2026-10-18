@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-import ai.ga;
+import ai.ha;
 import ai.x8;
 import android.app.Activity;
 import android.content.Context;
@@ -45,11 +45,11 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.v61;
-import org.telegram.ui.Wallet.t3;
+import org.telegram.ui.Wallet.u3;
 import org.telegram.ui.tr;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x1 extends v61 implements NotificationCenter.NotificationCenterDelegate {
     public p2 d;
@@ -120,13 +120,13 @@ public final class x1 extends v61 implements NotificationCenter.NotificationCent
         f61Var.l = string;
         f61Var.K(isWebBrowserInAppEnabled);
         arrayList.add(f61Var);
-        i0.a.A(R.string.BrowserSettingsEnableInfo, arrayList);
+        i2.d.B(R.string.BrowserSettingsEnableInfo, arrayList);
         if (!isWebBrowserInAppEnabled) {
             getMessagesController().isWebBrowserUseCustomTabs();
             f61 i10 = f61.i(17, LocaleController.getString(R.string.WebBrowserShowCloseButton));
             i10.K(getMessagesController().isWebBrowserUseCustomTabs());
             arrayList.add(i10);
-            i0.a.A(R.string.WebBrowserShowCloseButtonInfo, arrayList);
+            i2.d.B(R.string.WebBrowserShowCloseButtonInfo, arrayList);
             arrayList.add(f61.t(LocaleController.getString(R.string.BrowserSettingsAlwaysOpenInTitle2)));
             arrayList.size();
             p2 p2Var = this.d;
@@ -170,7 +170,7 @@ public final class x1 extends v61 implements NotificationCenter.NotificationCent
         String string4 = LocaleController.getString(R.string.BrowserSettingsCacheClear);
         long j12 = this.f;
         arrayList.add(f61.d(2, i13, string4, j12 > 0 ? AndroidUtilities.formatFileSize(j12) : ""));
-        i0.a.A(R.string.BrowserSettingsCookiesInfo, arrayList);
+        i2.d.B(R.string.BrowserSettingsCookiesInfo, arrayList);
         if (this.n > 0) {
             arrayList.size();
             arrayList.add(f61.c(9, R.drawable.menu_clear_recent, LocaleController.getString(R.string.BrowserSettingsHistoryShow)));
@@ -210,7 +210,7 @@ public final class x1 extends v61 implements NotificationCenter.NotificationCent
         }
         arrayList.size();
         arrayList.add(f61.d(6, R.drawable.msg_search, LocaleController.getString(R.string.SearchEngine), m1.a().a));
-        i0.a.A(R.string.BrowserSettingsSearchEngineInfo, arrayList);
+        i2.d.B(R.string.BrowserSettingsSearchEngineInfo, arrayList);
         if (BuildVars.DEBUG_PRIVATE_VERSION) {
             f61 i15 = f61.i(12, "adaptable colors");
             i15.K(SharedConfig.adaptableColorInBrowser);
@@ -704,7 +704,7 @@ public final class x1 extends v61 implements NotificationCenter.NotificationCent
             String str2 = w1Var.e;
             i80 F = i80.F((ViewGroup) this.fragmentView, null, w1Var);
             F.s = 40;
-            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new t3(27, this, str2), false);
+            F.c(R.drawable.menu_delete_old, LocaleController.getString(R.string.Remove), new u3(27, this, str2), false);
             F.Z();
             return;
         }
@@ -728,7 +728,7 @@ public final class x1 extends v61 implements NotificationCenter.NotificationCent
                 k6Var.b(charSequenceArr[i20], i20 == SharedConfig.searchEngineType);
                 k6Var.setBackground(h6.g0(h6.x0(null, h6.i6, false), 2, -1));
                 linearLayout.addView(k6Var);
-                k6Var.setOnClickListener(new ga(i20, view, atomicReference));
+                k6Var.setOnClickListener(new ha(i20, view, atomicReference));
                 i20++;
             }
             AlertDialog$Builder alertDialog$Builder5 = new AlertDialog$Builder(getParentActivity());

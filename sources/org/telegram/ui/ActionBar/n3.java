@@ -34,7 +34,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hk;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -109,7 +109,7 @@ public final class n3 extends FrameLayout {
         if (size == 0) {
             return;
         }
-        m3 m3Var = (m3) i0.a.h(1, tabs);
+        m3 m3Var = (m3) i2.d.h(1, tabs);
         LaunchActivity launchActivity = LaunchActivity.H1;
         w3 w3Var = launchActivity == null ? null : launchActivity.y0;
         if (w3Var != null && (valueAnimator = w3Var.d) != null) {
@@ -213,7 +213,7 @@ public final class n3 extends FrameLayout {
                     return;
                 }
                 this.c = true;
-                AndroidUtilities.runOnUIThread(new ig.c2(this, R, sn.W9(m3Var.a.c), 20), 220L);
+                AndroidUtilities.runOnUIThread(new ig.e2(this, R, sn.W9(m3Var.a.c), 20), 220L);
                 return;
             }
             return;
@@ -286,7 +286,7 @@ public final class n3 extends FrameLayout {
         b2Var.R = str;
         b2Var.T = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
         alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new s7(this, zArr, m3Var, callback, r8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.s2(zArr, callback, r8, 17));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.t2(zArr, callback, r8, 17));
         b2[] b2VarArr = {b2Var};
         b2Var.setOnDismissListener(new r9(zArr, callback));
         b2VarArr[0].show();
@@ -364,7 +364,7 @@ public final class n3 extends FrameLayout {
             }
         }
         n();
-        AndroidUtilities.runOnUIThread(new ig.c2(this, arrayList3, m3Var, 21), 320L);
+        AndroidUtilities.runOnUIThread(new ig.e2(this, arrayList3, m3Var, 21), 320L);
         o(true);
         invalidate();
         l3 l3Var = this.e;
@@ -474,7 +474,7 @@ public final class n3 extends FrameLayout {
             m3 m3Var = tabs.get(i10);
             org.telegram.ui.l4 l4Var = m3Var.J;
             if (l4Var != null && !l4Var.d0.isEmpty()) {
-                Object h = i0.a.h(1, m3Var.J.d0);
+                Object h = i2.d.h(1, m3Var.J.d0);
                 if ((h instanceof TLRPC.WebPage) && ((TLRPC.WebPage) h).id == webPage.id) {
                     e(m3Var);
                     return m3Var;

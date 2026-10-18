@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t7 extends FrameLayout {
     public p7[] a;
@@ -94,25 +94,25 @@ public final class t7 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         View[] viewArr = this.a;
-        int C = this.r == 1 ? wh.C(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
+        int B = this.r == 1 ? kk.B(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
         this.h = true;
         for (int i12 = 0; i12 < this.e; i12++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
             layoutParams.topMargin = this.f ? 0 : AndroidUtilities.dp(2.0f);
-            layoutParams.leftMargin = (AndroidUtilities.dp(2.0f) + C) * i12;
+            layoutParams.leftMargin = (AndroidUtilities.dp(2.0f) + B) * i12;
             if (i12 != this.e - 1) {
-                layoutParams.width = C;
+                layoutParams.width = B;
             } else if (AndroidUtilities.isTablet()) {
-                layoutParams.width = AndroidUtilities.dp(490.0f) - ((AndroidUtilities.dp(2.0f) + C) * (this.e - 1));
+                layoutParams.width = AndroidUtilities.dp(490.0f) - ((AndroidUtilities.dp(2.0f) + B) * (this.e - 1));
             } else {
-                layoutParams.width = AndroidUtilities.displaySize.x - ((AndroidUtilities.dp(2.0f) + C) * (this.e - 1));
+                layoutParams.width = AndroidUtilities.displaySize.x - ((AndroidUtilities.dp(2.0f) + B) * (this.e - 1));
             }
-            layoutParams.height = C;
+            layoutParams.height = B;
             layoutParams.gravity = 51;
             viewArr[i12].setLayoutParams(layoutParams);
         }
         this.h = false;
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((this.f ? 0 : AndroidUtilities.dp(2.0f)) + C, TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((this.f ? 0 : AndroidUtilities.dp(2.0f)) + B, TLObject.FLAG_30));
     }
 
     @Override // android.view.View, android.view.ViewParent

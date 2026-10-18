@@ -181,7 +181,7 @@ import org.telegram.ui.vn;
 import org.webrtc.MediaStreamTrack;
 import w7.r;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class AndroidUtilities {
     public static Pattern BAD_CHARS_MESSAGE_LONG_PATTERN = null;
@@ -278,12 +278,12 @@ public class AndroidUtilities {
     public static final Paint strokeTop = new Paint(1);
     public static final Paint strokeBottom = new Paint(1);
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public interface IntColorCallback {
         void run(int i10);
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class LinkMovementMethodMy extends LinkMovementMethod {
         @Override // android.text.method.LinkMovementMethod, android.text.method.ScrollingMovementMethod, android.text.method.BaseMovementMethod, android.text.method.MovementMethod
         public boolean onTouchEvent(TextView textView, Spannable spannable, MotionEvent motionEvent) {
@@ -301,7 +301,7 @@ public class AndroidUtilities {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class LinkSpec {
         int end;
         int start;
@@ -311,7 +311,7 @@ public class AndroidUtilities {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class VcardData {
         String name;
         ArrayList<String> phones;
@@ -323,7 +323,7 @@ public class AndroidUtilities {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class VcardItem {
         public int type;
         public ArrayList<String> vcardData = new ArrayList<>();
@@ -590,7 +590,7 @@ public class AndroidUtilities {
             float floor = (f7 - ((float) Math.floor(f7))) * 6.0f;
             float floor2 = floor - ((float) Math.floor(floor));
             float f12 = (1.0f - f10) * f11;
-            float B = com.google.android.gms.internal.cast.a6.B(f10, floor2, 1.0f, f11);
+            float B = com.google.android.gms.internal.play_billing.k3.B(f10, floor2, 1.0f, f11);
             float f13 = (1.0f - ((1.0f - floor2) * f10)) * f11;
             int i13 = (int) floor;
             if (i13 == 0) {
@@ -1121,7 +1121,7 @@ public class AndroidUtilities {
     }
 
     public static float computePerceivedBrightness(int i10) {
-        return com.google.android.gms.internal.cast.a6.v(Color.blue(i10), 0.0722f, (Color.green(i10) * 0.7152f) + (Color.red(i10) * 0.2126f), 255.0f);
+        return com.google.android.gms.internal.play_billing.k3.w(Color.blue(i10), 0.0722f, (Color.green(i10) * 0.7152f) + (Color.red(i10) * 0.2126f), 255.0f);
     }
 
     public static CharSequence concat(CharSequence... charSequenceArr) {
@@ -1800,7 +1800,7 @@ public class AndroidUtilities {
             return String.format(Locale.ENGLISH, "%.1f%s", Float.valueOf(f11 / 10.0f), numbersSignatureArray[i12]);
         }
         Locale locale = Locale.ENGLISH;
-        return r.c.u(formatCount((int) f7), numbersSignatureArray[i12]);
+        return r4.c.u(formatCount((int) f7), numbersSignatureArray[i12]);
     }
 
     private static void gatherLinks(ArrayList<LinkSpec> arrayList, Spannable spannable, Pattern pattern, String[] strArr, Linkify.MatchFilter matchFilter, boolean z10) {
@@ -1854,7 +1854,7 @@ public class AndroidUtilities {
         if (str == null || str.length() == 0) {
             str = str2;
         } else if (str2 != null && str2.length() != 0) {
-            str = a1.g.D(str, " ", str2);
+            str = a1.g.C(str, " ", str2);
         }
         if (str == null) {
             return "";
@@ -2296,11 +2296,11 @@ public class AndroidUtilities {
         return arrayList;
     }
 
-    public static i0.c getDefaultWindowInsets(r0.k1 k1Var, boolean z10) {
-        i0.c g10 = k1Var.a.g(647);
+    public static i0.b getDefaultWindowInsets(r0.k1 k1Var, boolean z10) {
+        i0.b g10 = k1Var.a.g(647);
         r0.h1 h1Var = k1Var.a;
-        i0.c a2 = i0.c.a(g10, h1Var.f(647));
-        return z10 ? i0.c.a(a2, h1Var.f(8)) : a2;
+        i0.b a2 = i0.b.a(g10, h1Var.f(647));
+        return z10 ? i0.b.a(a2, h1Var.f(8)) : a2;
     }
 
     public static int getDominantColor(Bitmap bitmap) {
@@ -2410,7 +2410,7 @@ public class AndroidUtilities {
         int red2 = Color.red(i10);
         int green2 = Color.green(i10);
         int blue2 = Color.blue(i10);
-        return Color.argb((int) com.google.android.gms.internal.cast.a6.A(alpha - r7, f7, Color.alpha(i10), f10), (int) (((red - red2) * f7) + red2), (int) (((green - green2) * f7) + green2), (int) (((blue - blue2) * f7) + blue2));
+        return Color.argb((int) com.google.android.gms.internal.play_billing.k3.A(alpha - r7, f7, Color.alpha(i10), f10), (int) (((red - red2) * f7) + red2), (int) (((green - green2) * f7) + green2), (int) (((blue - blue2) * f7) + blue2));
     }
 
     public static String getPath(Uri uri) {
@@ -2883,7 +2883,7 @@ public class AndroidUtilities {
         if (sb2.length() <= 0) {
             return str;
         }
-        StringBuilder i10 = r.c.i(str, "?mode=");
+        StringBuilder i10 = r4.c.i(str, "?mode=");
         i10.append(sb2.toString());
         return i10.toString();
     }
@@ -3570,7 +3570,7 @@ public class AndroidUtilities {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ProxyBottomSheetCheckWarning);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ProxyBottomSheetCheckWarningText);
         alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new d(2, globalMainSettings, h0Var));
-        i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -4007,7 +4007,7 @@ public class AndroidUtilities {
     }
 
     public static int multiplyAlphaComponent(int i10, float f7) {
-        return i0.b.o(i10, (int) (Color.alpha(i10) * f7));
+        return i0.a.o(i10, (int) (Color.alpha(i10) * f7));
     }
 
     public static void multiplyBrightnessColorMatrix(ColorMatrix colorMatrix, float f7) {
@@ -4245,7 +4245,7 @@ public class AndroidUtilities {
                 break;
             }
             Object parent = view.getParent();
-            StringBuilder l4 = i0.a.l(i10, "LayoutCheck level=", ", view=");
+            StringBuilder l4 = i2.d.l(i10, "LayoutCheck level=", ", view=");
             l4.append(view.getClass().getSimpleName());
             l4.append("@");
             l4.append(Integer.toHexString(System.identityHashCode(view)));
@@ -4260,7 +4260,7 @@ public class AndroidUtilities {
                 sb2.append(i10 + 1);
                 sb2.append(", parent=");
                 sb2.append(parent.getClass().getSimpleName());
-                i0.a.v(" (not a View)", sb2);
+                i2.d.v(" (not a View)", sb2);
             }
         }
         FileLog.d("LayoutCheck");
@@ -5391,7 +5391,7 @@ public class AndroidUtilities {
                                 i10 = i11;
                                 double d10 = f10 - translationY;
                                 float cos = (float) ((Math.cos(radians) * d) - (Math.sin(radians) * d10));
-                                float f11 = (float) i0.a.f(radians, d10, Math.sin(radians) * d);
+                                float f11 = (float) i2.d.f(radians, d10, Math.sin(radians) * d);
                                 if (cos >= (-measuredWidth) / 2.0f && cos <= measuredWidth / 2.0f && f11 >= (-measuredHeight) / 2.0f && f11 <= measuredHeight / 2.0f) {
                                     rect = rectTmp2;
                                     childAt.getHitRect(rect);
@@ -5653,7 +5653,7 @@ public class AndroidUtilities {
                         if (layoutParams instanceof WindowManager.LayoutParams) {
                             WindowManager.LayoutParams layoutParams2 = (WindowManager.LayoutParams) layoutParams;
                             if ((layoutParams2.flags & 2) != 0) {
-                                canvas.drawColor(i0.b.o(-16777216, (int) (layoutParams2.dimAmount * 255.0f)));
+                                canvas.drawColor(i0.a.o(-16777216, (int) (layoutParams2.dimAmount * 255.0f)));
                             }
                         }
                         canvas.save();
@@ -6164,7 +6164,7 @@ public class AndroidUtilities {
     }
 
     public static float lerp(float f7, float f10, float f11) {
-        return com.google.android.gms.internal.cast.a6.x(f10, f7, f11, f7);
+        return com.google.android.gms.internal.play_billing.k3.y(f10, f7, f11, f7);
     }
 
     public static String readRes(File file, int i10) {
@@ -6705,7 +6705,7 @@ public class AndroidUtilities {
     }
 
     public static float lerp(boolean z10, boolean z11, float f7) {
-        return com.google.android.gms.internal.cast.a6.x(z11 ? 1.0f : 0.0f, z10 ? 1.0f : 0.0f, f7, z10 ? 1.0f : 0.0f);
+        return com.google.android.gms.internal.play_billing.k3.y(z11 ? 1.0f : 0.0f, z10 ? 1.0f : 0.0f, f7, z10 ? 1.0f : 0.0f);
     }
 
     public static void setPreferredMaxRefreshRate(WindowManager windowManager, View view, WindowManager.LayoutParams layoutParams) {
@@ -6930,11 +6930,11 @@ public class AndroidUtilities {
         }
     }
 
-    public static void dumpCanvas(View view) {
-    }
-
     public static boolean openForView(TLRPC.Document document, boolean z10, Activity activity) {
         return openForView(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), FileLoader.getAttachFileName(document), document.mime_type, activity, null, false);
+    }
+
+    public static void dumpCanvas(View view) {
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0053, code lost:

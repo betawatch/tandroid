@@ -61,7 +61,7 @@ import org.telegram.ui.wk0;
 import org.telegram.ui.xm0;
 import org.telegram.ui.yh1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l3 implements Runnable {
     public final /* synthetic */ int a;
@@ -269,13 +269,13 @@ public final /* synthetic */ class l3 implements Runnable {
         int i14 = 0;
         switch (this.a) {
             case 0:
-                k7.U0((k7) this.b, (TLObject) this.c, (ug.l1[]) this.e, (Long) this.f, (a3.l0) this.h, (TLRPC.TL_error) this.d);
+                k7.X0((k7) this.b, (TLObject) this.c, (ug.m1[]) this.e, (Long) this.f, (a3.l0) this.h, (TLRPC.TL_error) this.d);
                 break;
             case 1:
-                k7.p1((k7) this.b, (TLObject) this.c, (CharSequence) this.e, (TL_stars.TL_starGiftUnique) this.f, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.h, (TLRPC.TL_error) this.d);
+                k7.q1((k7) this.b, (TLObject) this.c, (CharSequence) this.e, (TL_stars.TL_starGiftUnique) this.f, (TLRPC.TL_inputInvoiceStarGiftDropOriginalDetails) this.h, (TLRPC.TL_error) this.d);
                 break;
             case 2:
-                fa faVar = (fa) this.b;
+                ga gaVar = (ga) this.b;
                 List list3 = (List) this.c;
                 org.telegram.ui.Wallet.s1 s1Var = (org.telegram.ui.Wallet.s1) this.e;
                 TLRPC.TL_inputStorePaymentStarsGiveaway tL_inputStorePaymentStarsGiveaway = (TLRPC.TL_inputStorePaymentStarsGiveaway) this.f;
@@ -292,54 +292,54 @@ public final /* synthetic */ class l3 implements Runnable {
                     } else {
                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                         tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentStarsGiveaway;
-                        ConnectionsManager.getInstance(faVar.a).sendRequest(tL_payments_canPurchaseStore, new e8(oVar, iVar, s1Var, activity, tL_inputStorePaymentStarsGiveaway, list3, 0));
+                        ConnectionsManager.getInstance(gaVar.a).sendRequest(tL_payments_canPurchaseStore, new e8(oVar, iVar, s1Var, activity, tL_inputStorePaymentStarsGiveaway, list3, 0));
                         break;
                     }
                 }
             case 3:
-                fa faVar2 = (fa) this.b;
+                ga gaVar2 = (ga) this.b;
                 Runnable runnable = (Runnable) this.c;
                 MessageObject messageObject = (MessageObject) this.e;
                 TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) this.f;
                 TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = (TLRPC.TL_payments_paymentFormStars) this.h;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
-                if (faVar2.e) {
-                    faVar2.Y(messageObject, inputInvoice, tL_payments_paymentFormStars, runnable, callback);
+                if (gaVar2.e) {
+                    gaVar2.Y(messageObject, inputInvoice, tL_payments_paymentFormStars, runnable, callback);
                     break;
                 } else {
-                    fa.e("NO_BALANCE");
+                    ga.e("NO_BALANCE");
                     runnable.run();
                     break;
                 }
             case 4:
-                fa faVar3 = (fa) this.b;
+                ga gaVar3 = (ga) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 MessageObject messageObject2 = (MessageObject) this.e;
                 TLRPC.TL_inputInvoiceMessage tL_inputInvoiceMessage = (TLRPC.TL_inputInvoiceMessage) this.f;
                 vi viVar = (vi) this.h;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
                 if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-                    faVar3.Y(messageObject2, tL_inputInvoiceMessage, (TLRPC.TL_payments_paymentFormStars) tLObject, viVar, null);
+                    gaVar3.Y(messageObject2, tL_inputInvoiceMessage, (TLRPC.TL_payments_paymentFormStars) tLObject, viVar, null);
                 } else {
-                    fa.e(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
+                    ga.e(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
                 }
                 viVar.run();
                 break;
             case 5:
-                fa faVar4 = (fa) this.b;
+                ga gaVar4 = (ga) this.b;
                 boolean[] zArr = (boolean[]) this.c;
                 MessageObject messageObject3 = (MessageObject) this.e;
                 TLRPC.InputInvoice inputInvoice2 = (TLRPC.InputInvoice) this.f;
                 TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars2 = (TLRPC.TL_payments_paymentFormStars) this.h;
                 Utilities.Callback callback2 = (Utilities.Callback) this.d;
                 zArr[0] = true;
-                faVar4.a0(messageObject3, inputInvoice2, tL_payments_paymentFormStars2, new q2(1, callback2));
+                gaVar4.a0(messageObject3, inputInvoice2, tL_payments_paymentFormStars2, new r2(1, callback2));
                 break;
             case 6:
                 v9 v9Var = (v9) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.e;
-                x9 x9Var = (x9) this.f;
+                y9 y9Var = (y9) this.f;
                 Utilities.Callback callback3 = (Utilities.Callback) this.h;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.d;
                 long j10 = v9Var.b;
@@ -353,8 +353,8 @@ public final /* synthetic */ class l3 implements Runnable {
                     arrayList.add(tL_starGiftCollection2);
                     hashMap.remove(-1);
                     int i16 = tL_starGiftCollection2.collection_id;
-                    x9Var.d = i16;
-                    hashMap.put(Integer.valueOf(i16), x9Var);
+                    y9Var.d = i16;
+                    hashMap.put(Integer.valueOf(i16), y9Var);
                     v9Var.j();
                     NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftCollectionsLoaded, Long.valueOf(j10), v9Var);
                     if (callback3 != null) {
@@ -385,7 +385,7 @@ public final /* synthetic */ class l3 implements Runnable {
                 sb6.append(a7Var.d);
                 sb6.append("} preloadCache {");
                 sb6.append(ci.i7.a(arrayList2));
-                i0.a.v("}", sb6);
+                i2.d.v("}", sb6);
                 ArrayList arrayList6 = a7Var.g;
                 arrayList6.clear();
                 arrayList6.addAll(arrayList3);
@@ -939,10 +939,10 @@ public final /* synthetic */ class l3 implements Runnable {
                     }
                     if (ChatObject.canUserDoAction(chat, channelParticipant, 6) || ChatObject.canUserDoAction(chat, channelParticipant, 7)) {
                         arrayList8.add(LocaleController.getString(R.string.Restrict));
-                        org.telegram.ui.Cells.t0.m(R.drawable.msg_block2, 33, arrayList9, arrayList10);
+                        org.telegram.ui.Cells.c1.m(R.drawable.msg_block2, 33, arrayList9, arrayList10);
                     }
                     arrayList8.add(LocaleController.getString(R.string.Ban));
-                    org.telegram.ui.Cells.t0.m(R.drawable.msg_block, 35, arrayList9, arrayList10);
+                    org.telegram.ui.Cells.c1.m(R.drawable.msg_block, 35, arrayList9, arrayList10);
                 }
                 vaVar.run();
                 break;

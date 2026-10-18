@@ -24,7 +24,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class np implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -215,7 +215,7 @@ public final class np implements NotificationCenter.NotificationCenterDelegate {
         float f19;
         float f20;
         RectF rectF2;
-        float x10;
+        float y3;
         Canvas canvas2 = canvas;
         if (this.a0 != pjVar) {
             this.a0 = pjVar;
@@ -360,7 +360,7 @@ public final class np implements NotificationCenter.NotificationCenterDelegate {
                     org.telegram.ui.ActionBar.h6.h2.setAlpha(alpha6);
                 }
             }
-            float x11 = com.google.android.gms.internal.cast.a6.x(1.0f, f7, AndroidUtilities.dp(8.0f), f13 + AndroidUtilities.dp(24.0f)) - (AndroidUtilities.dp(36.0f) * this.K);
+            float y10 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f7, AndroidUtilities.dp(8.0f), f13 + AndroidUtilities.dp(24.0f)) - (AndroidUtilities.dp(36.0f) * this.K);
             canvas2.save();
             rectF4.inset(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
             canvas2.clipRect(rectF4);
@@ -370,8 +370,8 @@ public final class np implements NotificationCenter.NotificationCenterDelegate {
             }
             canvas2.save();
             float dp5 = (AndroidUtilities.dp(24.0f) * f7) / AndroidUtilities.dpf2(24.0f);
-            canvas2.scale(dp5, dp5, f22, x11 - AndroidUtilities.dp(20.0f));
-            canvas2.translate(f22 - AndroidUtilities.dp2(12.0f), x11 - AndroidUtilities.dp(12.0f));
+            canvas2.scale(dp5, dp5, f22, y10 - AndroidUtilities.dp(20.0f));
+            canvas2.translate(f22 - AndroidUtilities.dp2(12.0f), y10 - AndroidUtilities.dp(12.0f));
             i13 = i10;
             i14 = i19;
             f16 = f23;
@@ -384,7 +384,7 @@ public final class np implements NotificationCenter.NotificationCenterDelegate {
             canvas2.drawLine(AndroidUtilities.dpf2(21.5f), AndroidUtilities.dpf2(12.0f), AndroidUtilities.dpf2(12.5f), AndroidUtilities.dpf2(3.5f), paint2);
             canvas2.restore();
             if (this.R) {
-                float c10 = r.c.c(f13 - AndroidUtilities.dp(2.0f), this.K, (1.0f - this.K) * (((-AndroidUtilities.dp(8.0f)) - (AndroidUtilities.dp2(8.0f) * f7)) - f14), f16);
+                float c10 = r4.c.c(f13 - AndroidUtilities.dp(2.0f), this.K, (1.0f - this.K) * (((-AndroidUtilities.dp(8.0f)) - (AndroidUtilities.dp2(8.0f) * f7)) - f14), f16);
                 paint2.setAlpha(alpha4);
                 canvas2.save();
                 canvas2.scale(f7, f7, f17, AndroidUtilities.dp(28.0f) + c10);
@@ -466,7 +466,7 @@ public final class np implements NotificationCenter.NotificationCenterDelegate {
             canvas2.restore();
         }
         if (!this.R && f14 > 0.0f) {
-            float c11 = r.c.c((-f18) + AndroidUtilities.dp(4.0f), this.K, (1.0f - this.K) * (((-AndroidUtilities.dp(8.0f)) - (AndroidUtilities.dp2(8.0f) * f7)) - f14), f16);
+            float c11 = r4.c.c((-f18) + AndroidUtilities.dp(4.0f), this.K, (1.0f - this.K) * (((-AndroidUtilities.dp(8.0f)) - (AndroidUtilities.dp2(8.0f) * f7)) - f14), f16);
             org.telegram.ui.Components.r5 r5Var2 = this.k0;
             if (r5Var2 == null || (imageReceiver = r5Var2.k) == null) {
                 imageReceiver = this.F;
@@ -511,16 +511,16 @@ public final class np implements NotificationCenter.NotificationCenterDelegate {
                         int i21 = frVar3.s;
                         int i22 = frVar3.r;
                         if (i21 == i22) {
-                            x10 = i21;
+                            y3 = i21;
                             f20 = 14.0f;
                         } else {
                             f20 = 14.0f;
-                            x10 = com.google.android.gms.internal.cast.a6.x(1.0f, f57, i22, i21 * f57);
+                            y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f57, i22, i21 * f57);
                         }
-                        frVar3.e(x10);
+                        frVar3.e(y3);
                         float f58 = frVar3.B;
                         rectF2 = rectF;
-                        rectF2.set(f58, dp15, x10 + f58 + AndroidUtilities.dp(11.0f), AndroidUtilities.dp(23.0f) + dp15);
+                        rectF2.set(f58, dp15, y3 + f58 + AndroidUtilities.dp(11.0f), AndroidUtilities.dp(23.0f) + dp15);
                     }
                 } else {
                     f19 = 6.0f;
@@ -881,7 +881,7 @@ public final class np implements NotificationCenter.NotificationCenterDelegate {
         ofFloat5.setDuration(100L);
         AnimatorSet animatorSet3 = new AnimatorSet();
         this.J = animatorSet3;
-        animatorSet3.addListener(new ai.le(16, this, view));
+        animatorSet3.addListener(new ai.me(16, this, view));
         AnimatorSet animatorSet4 = new AnimatorSet();
         animatorSet4.playSequentially(ofFloat3, ofFloat4, ofFloat5);
         this.J.playTogether(ofFloat2, animatorSet4);

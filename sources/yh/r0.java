@@ -5,11 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
-import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r0 implements BillingController.ProductDetailsResponseListenerLegacy, e2.j, CameraView.CameraViewDelegate {
+public final /* synthetic */ class r0 implements BillingController.ProductDetailsResponseListenerLegacy, e2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -36,16 +35,6 @@ public final /* synthetic */ class r0 implements BillingController.ProductDetail
                 ((e9.k0) this.b).c((z3.a) obj);
                 break;
         }
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
-    public void onCameraInit() {
-        zh.d0 d0Var = (zh.d0) this.b;
-        if (d0Var.S || d0Var.d0 || d0Var.h0) {
-            return;
-        }
-        d0Var.d0 = true;
-        d0Var.c0.postDelayed(d0Var.k0, 150L);
     }
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy

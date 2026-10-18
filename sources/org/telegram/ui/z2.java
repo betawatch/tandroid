@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.m9 {
     public static final /* synthetic */ int V = 0;
@@ -436,7 +436,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i15 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i20 * 14);
                         this.x = i15;
-                        i14 = org.telegram.messenger.wh.z(18.0f, i15, i12);
+                        i14 = org.telegram.messenger.kk.y(18.0f, i15, i12);
                         dp = i14;
                     }
                     TLRPC.Document document = this.O;
@@ -526,7 +526,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                                     imageReceiver.setAspectFit(true);
                                     float f13 = dp2;
                                     float f14 = f7;
-                                    this.F = (int) com.google.android.gms.internal.cast.a6.z(imageReceiver.getImageWidth(), f13, f14, imageReceiver.getImageX());
+                                    this.F = (int) com.google.android.gms.internal.play_billing.k3.z(imageReceiver.getImageWidth(), f13, f14, imageReceiver.getImageX());
                                     int imageHeight = (int) (((imageReceiver.getImageHeight() - f13) / f14) + imageReceiver.getImageY());
                                     this.G = imageHeight;
                                     int i26 = this.F;
@@ -545,7 +545,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                         imageReceiver.setAspectFit(true);
                         float f132 = dp2;
                         float f142 = f7;
-                        this.F = (int) com.google.android.gms.internal.cast.a6.z(imageReceiver.getImageWidth(), f132, f142, imageReceiver.getImageX());
+                        this.F = (int) com.google.android.gms.internal.play_billing.k3.z(imageReceiver.getImageWidth(), f132, f142, imageReceiver.getImageX());
                         int imageHeight2 = (int) (((imageReceiver.getImageHeight() - f132) / f142) + imageReceiver.getImageY());
                         this.G = imageHeight2;
                         int i262 = this.F;
@@ -563,7 +563,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                         if (q6 != null) {
                             int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                             this.E = height;
-                            i16 = org.telegram.messenger.q.C(4.0f, height, i16);
+                            i16 = org.telegram.messenger.g0.C(4.0f, height, i16);
                             d3 d3Var = this.c;
                             d3Var.s = this.x;
                             d3Var.v = this.y;

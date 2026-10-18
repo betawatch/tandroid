@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z91 extends org.telegram.ui.ActionBar.f3 {
     public static z91 b;
@@ -26,7 +26,7 @@ public final class z91 extends org.telegram.ui.ActionBar.f3 {
         if (b == null) {
             z91 z91Var = new z91(eyVar.getParentActivity(), false);
             Activity parentActivity = eyVar.getParentActivity();
-            LinearLayout e = org.telegram.messenger.q.e(parentActivity, 1);
+            LinearLayout e = org.telegram.messenger.g0.e(parentActivity, 1);
             org.telegram.ui.Components.sx0 sx0Var = new org.telegram.ui.Components.sx0(parentActivity, z91Var.currentAccount);
             sx0Var.setStickerNum(7);
             sx0Var.getImageReceiver().setAutoRepeat(1);
@@ -34,7 +34,7 @@ public final class z91 extends org.telegram.ui.ActionBar.f3 {
             TextView textView = new TextView(parentActivity);
             textView.setGravity(8388611);
             int i10 = org.telegram.ui.ActionBar.h6.j5;
-            org.telegram.messenger.q.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, i10, false), 1, textView);
+            org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, i10, false), 1, textView);
             textView.setText(LocaleController.getString(R.string.SuggestClearDatabaseTitle));
             e.addView(textView, w7.z5.a(-2.0f, 21.0f, 30.0f, 21.0f, 0.0f, -1, 0));
             TextView textView2 = new TextView(parentActivity);
@@ -52,7 +52,7 @@ public final class z91 extends org.telegram.ui.ActionBar.f3 {
             textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
             int dp = AndroidUtilities.dp(6.0f);
             int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false);
-            int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
+            int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
             textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, x02, o10, o10));
             e.addView(textView3, w7.z5.a(48.0f, 16.0f, 15.0f, 16.0f, 16.0f, -1, 0));
             textView3.setOnClickListener(new ef0(18, z91Var, eyVar));

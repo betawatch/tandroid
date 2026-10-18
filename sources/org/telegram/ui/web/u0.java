@@ -36,7 +36,7 @@ import org.telegram.ui.l4;
 import org.telegram.ui.o3;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class u0 extends WebChromeClient {
     public org.telegram.ui.ActionBar.b2 a;
@@ -201,7 +201,6 @@ public final class u0 extends WebChromeClient {
     public final boolean onJsPrompt(WebView webView, String str, String str2, String str3, JsPromptResult jsPromptResult) {
         a1 a1Var = this.e.Q;
         d6 d6Var = a1Var == null ? null : a1Var.e;
-        int i10 = 1;
         boolean[] zArr = {false};
         Context context = this.b;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
@@ -227,7 +226,7 @@ public final class u0 extends WebChromeClient {
         alertDialog$Builder.c();
         alertDialog$Builder.n(linearLayout);
         b2Var.a = AndroidUtilities.dp(292.0f);
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new c0(i10, zArr, jsPromptResult));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m(2, zArr, jsPromptResult));
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new ry(zArr, jsPromptResult, iuVar, 6));
         alertDialog$Builder.j(new v3(17, zArr, jsPromptResult));
         b2Var.O = new ig.l0(iuVar, 8);

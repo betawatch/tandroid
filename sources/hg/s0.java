@@ -48,7 +48,7 @@ import org.telegram.ui.jc0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class s0 extends c implements LocationController.LocationFetchCallback {
     public final int K;
@@ -773,7 +773,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
                 w4 w4Var = new w4(context);
                 LinearLayout linearLayout = new LinearLayout(context);
                 w4Var.addView(linearLayout, z5.e(-2, -2, 17));
-                TextView f7 = org.telegram.messenger.q.f(context, 1, 16.0f);
+                TextView f7 = org.telegram.messenger.g0.f(context, 1, 16.0f);
                 int i12 = h6.A6;
                 f7.setTextColor(h6.w0(i12, d6Var));
                 f7.setText("Powered by");
@@ -821,14 +821,14 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
                 j5Var.setLeftDrawable(R.drawable.filled_directions);
                 j5Var.setTypeface(AndroidUtilities.bold());
                 frameLayout2.addView(j5Var, z5.d(-1.0f, -1));
-                frameLayout2.setOutlineProvider(zf.i0.b);
+                frameLayout2.setOutlineProvider(zf.j0.b);
                 frameLayout2.setClipToOutline(true);
                 b6.b(frameLayout2, 0.02f, 1.2f);
                 u4Var.setOnButtonClick(new r0(this, i11));
                 view2 = u4Var;
                 break;
             case 10:
-                View z6Var = new z6(context, (org.telegram.ui.Cells.t0) null);
+                View z6Var = new z6(context, (org.telegram.ui.Cells.c1) null);
                 new zq(new ColorDrawable(h6.w0(h6.a7, d6Var)), h6.W0(context, R.drawable.greydivider_bottom, h6.b7)).w = true;
                 view2 = z6Var;
                 break;

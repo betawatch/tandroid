@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class b2 extends w1 {
     public final o1 b;
@@ -39,7 +39,7 @@ public final class b2 extends w1 {
         o1Var.setClipToPadding(true);
         o1Var.setVerticalScrollBarEnabled(false);
         sVar.O = new ai.q1(this, 2);
-        o1Var.setOnItemClickListener(new ai.va(this, 8));
+        o1Var.setOnItemClickListener(new ai.wa(this, 8));
         o1Var.setOnScrollListener(new ah.d0(this, 7));
         s4.k kVar = new s4.k();
         kVar.c = 220L;
@@ -122,7 +122,7 @@ public final class b2 extends w1 {
             }
             Object tag = o1Var.getChildAt(i10).getTag();
             if ((tag instanceof Integer) && ((Integer) tag).intValue() == 34) {
-                return org.telegram.messenger.q.b(102.0f, r3.getBottom(), 0);
+                return org.telegram.messenger.g0.b(102.0f, r3.getBottom(), 0);
             }
             i10++;
         }

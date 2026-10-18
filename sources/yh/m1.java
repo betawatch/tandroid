@@ -1,6 +1,6 @@
 package yh;
 
-import ai.ce;
+import ai.de;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
@@ -8,23 +8,24 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m1 extends Drawable {
     public final int a;
     public final RectF b;
     public final Path c;
     public final Paint d;
-    public final ce e;
+    public final de e;
     public boolean f;
     public tg.p g;
     public ig.l0 h;
     public boolean i;
 
     public m1(int i10) {
-        this(i0.b.o(i10, 128), i10);
+        this(i0.a.o(i10, 128), i10);
     }
 
     public final void a() {
@@ -49,15 +50,15 @@ public final class m1 extends Drawable {
         Paint paint = this.d;
         Path path = this.c;
         canvas.drawPath(path, paint);
-        ce ceVar = this.e;
-        if (ceVar != null) {
+        de deVar = this.e;
+        if (deVar != null) {
             if (this.f || !this.i) {
                 canvas.save();
                 canvas.clipPath(path);
                 if (this.g == null) {
-                    ceVar.d();
+                    deVar.d();
                 }
-                ceVar.a(canvas, this.a);
+                deVar.a(canvas, this.a);
                 canvas.restore();
                 if (this.g == null) {
                     invalidateSelf();
@@ -80,9 +81,9 @@ public final class m1 extends Drawable {
         Path path = this.c;
         path.rewind();
         path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        ce ceVar = this.e;
-        if (ceVar != null) {
-            ceVar.g(rectF);
+        de deVar = this.e;
+        if (deVar != null) {
+            deVar.g(rectF);
         }
     }
 
@@ -103,8 +104,8 @@ public final class m1 extends Drawable {
         this.d = paint;
         this.a = i10;
         paint.setColor(i11);
-        if (g0.a.g()) {
-            this.e = new ce(1, 25);
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.e = new de(1, 25);
         } else {
             this.e = null;
         }

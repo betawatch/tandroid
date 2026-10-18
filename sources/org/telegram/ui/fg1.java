@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fg1 extends org.telegram.ui.Components.v61 {
     public dg1 d;
@@ -40,7 +40,7 @@ public final class fg1 extends org.telegram.ui.Components.v61 {
             arrayList.add(org.telegram.ui.Components.f61.B(null));
         }
         if (TextUtils.isEmpty(this.h)) {
-            i0.a.p(R.string.EditProfileChannelSelect, arrayList);
+            i2.d.p(R.string.EditProfileChannelSelect, arrayList);
         }
         ArrayList arrayList2 = this.d.e;
         int size = arrayList2.size();
@@ -61,7 +61,7 @@ public final class fg1 extends org.telegram.ui.Components.v61 {
                     String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
                     if (!lowerCase2.startsWith(lowerCase)) {
                         charSequence = charSequence2;
-                        if (!org.telegram.messenger.wh.w(" ", lowerCase, lowerCase2) && !translitSafe2.startsWith(translitSafe) && !org.telegram.messenger.wh.w(" ", translitSafe, translitSafe2)) {
+                        if (!org.telegram.messenger.g0.w(" ", lowerCase, lowerCase2) && !translitSafe2.startsWith(translitSafe) && !org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
                         }
                         long j11 = chat.id;
                         org.telegram.ui.Components.f61 f61Var = new org.telegram.ui.Components.f61(11);
@@ -119,7 +119,7 @@ public final class fg1 extends org.telegram.ui.Components.v61 {
         this.r = true;
         SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
         if (!BuildVars.DEBUG_VERSION && globalMainSettings.getBoolean("channel_intro", false)) {
-            presentFragment(new od(org.telegram.ui.Cells.t0.j(0, "step")));
+            presentFragment(new od(org.telegram.ui.Cells.c1.i(0, "step")));
         } else {
             presentFragment(new h(0));
             globalMainSettings.edit().putBoolean("channel_intro", true).apply();
@@ -135,7 +135,7 @@ public final class fg1 extends org.telegram.ui.Components.v61 {
     public final View createView(Context context) {
         org.telegram.ui.ActionBar.u0 c10 = this.actionBar.n().c(0, R.drawable.outline_header_search, getResourceProvider());
         c10.F();
-        c10.H = new ig.a2(this, 19);
+        c10.H = new ig.c2(this, 19);
         this.n = c10;
         c10.setSearchFieldHint(LocaleController.getString(R.string.Search));
         this.n.setContentDescription(LocaleController.getString(R.string.Search));

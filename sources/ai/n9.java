@@ -5,10 +5,10 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n9 implements Utilities.Callback {
-    public final /* synthetic */ fa a;
+    public final /* synthetic */ ga a;
     public final /* synthetic */ long b;
     public final /* synthetic */ int c;
     public final /* synthetic */ boolean[] d;
@@ -18,8 +18,8 @@ public final /* synthetic */ class n9 implements Utilities.Callback {
     public final /* synthetic */ TLRPC.ChatInvite h;
     public final /* synthetic */ String i;
 
-    public /* synthetic */ n9(fa faVar, long j10, int i10, boolean[] zArr, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.ChatInvite chatInvite, String str) {
-        this.a = faVar;
+    public /* synthetic */ n9(ga gaVar, long j10, int i10, boolean[] zArr, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, TLRPC.ChatInvite chatInvite, String str) {
+        this.a = gaVar;
         this.b = j10;
         this.c = i10;
         this.d = zArr;
@@ -33,15 +33,15 @@ public final /* synthetic */ class n9 implements Utilities.Callback {
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
         Utilities.Callback callback = (Utilities.Callback) obj;
-        fa faVar = this.a;
-        long j10 = faVar.f.amount;
+        ga gaVar = this.a;
+        long j10 = gaVar.f.amount;
         long j11 = this.b;
         boolean[] zArr = this.d;
         Utilities.Callback2 callback2 = this.e;
         TLRPC.ChatInvite chatInvite = this.h;
         String str = this.i;
         if (j10 >= j11) {
-            faVar.Z(str, chatInvite, new w7(callback, zArr, callback2));
+            gaVar.Z(str, chatInvite, new w7(callback, zArr, callback2));
             return;
         }
         boolean starsPurchaseAvailable = MessagesController.getInstance(this.c).starsPurchaseAvailable();
@@ -49,9 +49,9 @@ public final /* synthetic */ class n9 implements Utilities.Callback {
         org.telegram.ui.ActionBar.d6 d6Var = this.g;
         if (starsPurchaseAvailable) {
             boolean[] zArr2 = {false};
-            bd bdVar = new bd(context, d6Var, j11, 1, chatInvite.title, new u7(faVar, zArr2, str, chatInvite, zArr, callback2, callback), 0L);
-            bdVar.setOnDismissListener(new v7(faVar, callback, zArr2, zArr, callback2, 0));
-            bdVar.show();
+            cd cdVar = new cd(context, d6Var, j11, 1, chatInvite.title, new u7(gaVar, zArr2, str, chatInvite, zArr, callback2, callback), 0L);
+            cdVar.setOnDismissListener(new v7(gaVar, callback, zArr2, zArr, callback2, 0));
+            cdVar.show();
             return;
         }
         if (callback != null) {
@@ -61,6 +61,6 @@ public final /* synthetic */ class n9 implements Utilities.Callback {
             callback2.run("cancelled", 0L);
             zArr[0] = true;
         }
-        fa.e0(context, d6Var);
+        ga.e0(context, d6Var);
     }
 }

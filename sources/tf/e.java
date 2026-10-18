@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import com.google.android.gms.internal.cast.p;
 import com.google.android.gms.internal.cast.z5;
-import i2.g0;
+import i2.h0;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -17,7 +17,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e implements sf.c, sf.b {
     public f d;
@@ -42,12 +42,12 @@ public final class e implements sf.c, sf.b {
 
     @Override // sf.c
     public final void a() {
-        g0 g0Var;
+        h0 h0Var;
         rf.d dVar = this.j;
-        if (dVar == null || (g0Var = dVar.l) == null) {
+        if (dVar == null || (h0Var = dVar.l) == null) {
             return;
         }
-        g0Var.e();
+        h0Var.e();
     }
 
     @Override // sf.c
@@ -58,12 +58,12 @@ public final class e implements sf.c, sf.b {
 
     @Override // sf.c
     public final void c() {
-        g0 g0Var;
+        h0 h0Var;
         rf.d dVar = this.j;
-        if (dVar == null || (g0Var = dVar.l) == null) {
+        if (dVar == null || (h0Var = dVar.l) == null) {
             return;
         }
-        g0Var.i();
+        h0Var.i();
     }
 
     @Override // sf.c

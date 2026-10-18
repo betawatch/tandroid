@@ -20,11 +20,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class j1 extends View implements NotificationCenter.NotificationCenterDelegate {
     public float E;
-    public x9 F;
+    public y9 F;
     public final ArrayList G;
     public final ArrayList H;
     public final HashSet I;
@@ -76,7 +76,7 @@ public final class j1 extends View implements NotificationCenter.NotificationCen
     */
     public final void a() {
         TLRPC.EmojiStatus emojiStatus;
-        x9 G;
+        y9 G;
         boolean z10;
         int i10;
         ArrayList arrayList;
@@ -105,7 +105,7 @@ public final class j1 extends View implements NotificationCenter.NotificationCen
                     hashSet.add(Long.valueOf(((TLRPC.TL_emojiStatusCollectible) emojiStatus).collectible_id));
                 }
                 int i14 = 0;
-                G = fa.y(i13, false).G(j10, true);
+                G = ga.y(i13, false).G(j10, true);
                 this.F = G;
                 if (G != null) {
                     for (int i15 = 0; i15 < this.F.l.size(); i15++) {
@@ -180,7 +180,7 @@ public final class j1 extends View implements NotificationCenter.NotificationCen
                         i14 = 0;
                     }
                     arrayList = new ArrayList();
-                    for (i11 = 0; i11 < this.J; i11 = com.google.android.gms.internal.cast.a6.f(i11, i11, 1, arrayList)) {
+                    for (i11 = 0; i11 < this.J; i11 = com.google.android.gms.internal.play_billing.k3.f(i11, i11, 1, arrayList)) {
                     }
                     for (i12 = 0; i12 < arrayList2.size(); i12++) {
                         i1 i1Var7 = (i1) arrayList2.get(i12);
@@ -238,7 +238,7 @@ public final class j1 extends View implements NotificationCenter.NotificationCen
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i142 = 0;
-            G = fa.y(i13, false).G(j10, true);
+            G = ga.y(i13, false).G(j10, true);
             this.F = G;
             if (G != null) {
             }
@@ -264,7 +264,7 @@ public final class j1 extends View implements NotificationCenter.NotificationCen
                 if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 }
                 int i1422 = 0;
-                G = fa.y(i13, false).G(j10, true);
+                G = ga.y(i13, false).G(j10, true);
                 this.F = G;
                 if (G != null) {
                 }
@@ -288,7 +288,7 @@ public final class j1 extends View implements NotificationCenter.NotificationCen
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
             }
             int i14222 = 0;
-            G = fa.y(i13, false).G(j10, true);
+            G = ga.y(i13, false).G(j10, true);
             this.F = G;
             if (G != null) {
             }
@@ -378,7 +378,7 @@ public final class j1 extends View implements NotificationCenter.NotificationCen
                 float lerp = AndroidUtilities.lerp(0.5f, f13, d);
                 float f23 = f14;
                 int i11 = i10;
-                float z12 = org.telegram.messenger.q.z(f13, j1Var.n, (f13 - j1Var.e) * d, clamp012);
+                float z12 = org.telegram.messenger.g0.z(f13, j1Var.n, (f13 - j1Var.e) * d, clamp012);
                 int i12 = i1Var2.g;
                 float f24 = 1.6f;
                 float f25 = f13;

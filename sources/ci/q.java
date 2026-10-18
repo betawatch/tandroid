@@ -1,6 +1,6 @@
 package ci;
 
-import ai.le;
+import ai.me;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class q extends FrameLayout {
     public long E;
@@ -280,7 +280,7 @@ public final class q extends FrameLayout {
                     f23 += ((h7) arrayList.get(i11)).h;
                 }
                 size = (i7Var.d + f23) / (arrayList.size() + r4);
-                z11 = ((h7) i0.a.h(1, arrayList)).G;
+                z11 = ((h7) i2.d.h(1, arrayList)).G;
                 vwVar3.m0 = z11;
             } else {
                 z11 = vwVar3.m0;
@@ -379,7 +379,7 @@ public final class q extends FrameLayout {
                                 x20Var.b = true;
                                 int x02 = org.telegram.ui.ActionBar.h6.x0(zArr, org.telegram.ui.ActionBar.h6.xj, z10);
                                 int x03 = org.telegram.ui.ActionBar.h6.x0(zArr, org.telegram.ui.ActionBar.h6.q7, z10);
-                                d8.d.d(i0.b.f(0.25f, x02, x03), x03, z10 ? 1 : 0, z10 ? 1 : 0);
+                                d8.d.d(i0.a.f(0.25f, x02, x03), x03, z10 ? 1 : 0, z10 ? 1 : 0);
                                 d8.d.c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
                                 d8.d.c.setStyle(Paint.Style.STROKE);
                                 d8.d.c.setStrokeCap(Paint.Cap.ROUND);
@@ -636,7 +636,7 @@ public final class q extends FrameLayout {
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                         vwVar.j0 = ofFloat;
                         ofFloat.addUpdateListener(new ah.l0(2, this, j5Var));
-                        vwVar.j0.addListener(new le(i11, this, j5Var));
+                        vwVar.j0.addListener(new me(i11, this, j5Var));
                         vwVar.j0.setDuration(150L);
                         this.y.setAlpha(0.0f);
                         this.y.setTranslationY(AndroidUtilities.dp(5.0f));

@@ -9,13 +9,13 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.hb1;
 import org.telegram.ui.mc1;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final class p0 extends FrameLayout {
                     this.b = true;
                     measureChildWithMargins(u0Var.f, i10, i12, i11, 0);
                     int measuredWidth2 = u0Var.f.getVisibility() == 0 ? u0Var.f.getMeasuredWidth() : 0;
-                    measureChildWithMargins(u0Var.e, wh.c(12.0f, size2, 0), i12 + measuredWidth2, i11, 0);
+                    measureChildWithMargins(u0Var.e, kk.c(12.0f, size2, 0), i12 + measuredWidth2, i11, 0);
                     this.b = false;
                     setMeasuredDimension(Math.max(u0Var.e.getMeasuredWidth() + measuredWidth2, size2), View.MeasureSpec.getSize(i11));
                     break;
@@ -138,7 +138,7 @@ public final class p0 extends FrameLayout {
                 }
                 TextView textView2 = snVar.L1;
                 if (textView2 != null && textView2.getVisibility() == 0 && (textView = snVar.N1) != null && textView.getVisibility() == 0) {
-                    size3 = wh.B(31.0f, size3, 2);
+                    size3 = kk.A(31.0f, size3, 2);
                 }
                 this.b = true;
                 TextView textView3 = snVar.N1;

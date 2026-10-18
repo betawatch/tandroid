@@ -17,13 +17,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ef extends rp0 {
     public final /* synthetic */ ChatActivityEnterView H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ef(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.sn snVar, MessagesController messagesController, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final ai.s2 s2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public ef(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.sn snVar, MessagesController messagesController, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final ai.t2 t2Var, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.H = chatActivityEnterView;
         this.b = true;
@@ -54,7 +54,7 @@ public final class ef extends rp0 {
         lp0Var.setOrientation(1);
         TextView textView = new TextView(context);
         this.p = textView;
-        org.telegram.messenger.wh.o(org.telegram.ui.ActionBar.h6.m5, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.m5, d6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SendMessageAsTitle));
         textView.setTypeface(AndroidUtilities.bold(), 1);
         int dp = AndroidUtilities.dp(18.0f);
@@ -72,7 +72,7 @@ public final class ef extends rp0 {
         im0Var.setOnItemClickListener(new wl0() { // from class: org.telegram.ui.Components.kp0
             @Override // org.telegram.ui.Components.wl0
             public final void a(int i10, View view) {
-                rp0.k(ef.this, arrayList, context, snVar, z10, s2Var, view, i10);
+                rp0.k(ef.this, arrayList, context, snVar, z10, t2Var, view, i10);
             }
         });
         im0Var.setOverScrollMode(2);

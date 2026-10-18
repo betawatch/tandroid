@@ -2,13 +2,13 @@ package ah;
 
 import ai.a2;
 import ai.ad;
-import ai.cd;
+import ai.b4;
+import ai.bd;
+import ai.dd;
 import ai.g7;
 import ai.k6;
-import ai.ka;
-import ai.ld;
-import ai.x3;
-import ai.zc;
+import ai.la;
+import ai.md;
 import android.view.View;
 import ci.aa;
 import ci.e9;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.zd;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.mf;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -73,27 +73,27 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
                 ((a2) this.b).dismiss();
                 break;
             case 5:
-                ((x3) this.b).run();
+                ((b4) this.b).run();
                 break;
             case 6:
-                ((x3) this.b).run();
+                ((b4) this.b).run();
                 break;
             case 7:
                 k6 k6Var = (k6) this.b;
                 k6Var.getClass();
-                new cd(k6Var.b, k6Var.g).show();
+                new dd(k6Var.b, k6Var.g).show();
                 break;
             case 8:
                 ((g7) this.b).dismiss();
                 break;
             case 9:
-                ((ka) this.b).run();
+                ((la) this.b).run();
                 break;
             case 10:
-                if (((zc) ((ad) this.b).d).f > 0 && (R = LaunchActivity.R()) != null) {
+                if (((ad) ((bd) this.b).d).f > 0 && (R = LaunchActivity.R()) != null) {
                     l2 l2Var = new l2();
                     l2Var.a = true;
-                    R.showAsSheet(new ld(), l2Var);
+                    R.showAsSheet(new md(), l2Var);
                     break;
                 }
                 break;

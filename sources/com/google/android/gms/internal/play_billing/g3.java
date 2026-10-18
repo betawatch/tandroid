@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class g3 extends v1 {
     private static final g3 zzb;
@@ -10,7 +10,7 @@ public final class g3 extends v1 {
     private int zze = 0;
     private Object zzf;
     private int zzg;
-    private k3 zzh;
+    private l3 zzh;
     private int zzi;
 
     static {
@@ -53,23 +53,23 @@ public final class g3 extends v1 {
         throw new c2(new w2().getMessage());
     }
 
-    public static void p(g3 g3Var, m3 m3Var) {
-        g3Var.zzi = m3Var.a;
+    public static void p(g3 g3Var, n3 n3Var) {
+        g3Var.zzi = n3Var.a;
         g3Var.zzd |= 4;
     }
 
-    public static /* synthetic */ void q(g3 g3Var, k3 k3Var) {
-        g3Var.zzh = k3Var;
+    public static /* synthetic */ void q(g3 g3Var, l3 l3Var) {
+        g3Var.zzh = l3Var;
         g3Var.zzd |= 2;
     }
 
-    public static /* synthetic */ void r(g3 g3Var, v3 v3Var) {
-        g3Var.zzf = v3Var;
+    public static /* synthetic */ void r(g3 g3Var, w3 w3Var) {
+        g3Var.zzf = w3Var;
         g3Var.zze = 7;
     }
 
-    public static /* synthetic */ void s(g3 g3Var, d4 d4Var) {
-        g3Var.zzf = d4Var;
+    public static /* synthetic */ void s(g3 g3Var, e4 e4Var) {
+        g3Var.zzf = e4Var;
         g3Var.zze = 6;
     }
 
@@ -89,7 +89,7 @@ public final class g3 extends v1 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new s2(zzb, "\u0004\u0006\u0001\u0001\u0001\u0007\u0006\u0000\u0000\u0000\u0001᠌\u0000\u0002ဉ\u0001\u0004<\u0000\u0005᠌\u0002\u0006<\u0000\u0007<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", d1.c, "zzh", r3.class, "zzi", d1.e, d4.class, v3.class});
+            return new s2(zzb, "\u0004\u0006\u0001\u0001\u0001\u0007\u0006\u0000\u0000\u0000\u0001᠌\u0000\u0002ဉ\u0001\u0004<\u0000\u0005᠌\u0002\u0006<\u0000\u0007<\u0000", new Object[]{"zzf", "zze", "zzd", "zzg", d1.c, "zzh", s3.class, "zzi", d1.e, e4.class, w3.class});
         }
         if (i11 == 3) {
             return new g3();
@@ -103,7 +103,7 @@ public final class g3 extends v1 {
         throw null;
     }
 
-    public final v3 o() {
-        return this.zze == 7 ? (v3) this.zzf : v3.o();
+    public final w3 o() {
+        return this.zze == 7 ? (w3) this.zzf : w3.o();
     }
 }

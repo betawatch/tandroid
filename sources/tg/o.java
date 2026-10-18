@@ -22,10 +22,10 @@ import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class o {
     public static final String[] e0 = {"models/star.binobj"};
@@ -111,11 +111,11 @@ public final class o {
         this.y = new int[length];
         for (int i12 = 0; i12 < this.a0; i12++) {
             j6.l lVar = new j6.l(context, strArr[i12]);
-            this.i[i12] = wh.h(ByteBuffer.allocateDirect(((float[]) lVar.d).length * 4));
+            this.i[i12] = kk.h(ByteBuffer.allocateDirect(((float[]) lVar.d).length * 4));
             this.i[i12].put((float[]) lVar.d).position(0);
-            this.j[i12] = wh.h(ByteBuffer.allocateDirect(((float[]) lVar.c).length * 4));
+            this.j[i12] = kk.h(ByteBuffer.allocateDirect(((float[]) lVar.c).length * 4));
             this.j[i12].put((float[]) lVar.c).position(0);
-            this.k[i12] = wh.h(ByteBuffer.allocateDirect(((float[]) lVar.b).length * 4));
+            this.k[i12] = kk.h(ByteBuffer.allocateDirect(((float[]) lVar.b).length * 4));
             this.k[i12].put((float[]) lVar.b).position(0);
             this.y[i12] = ((float[]) lVar.d).length;
         }

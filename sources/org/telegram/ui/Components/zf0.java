@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zf0 {
     public float a = 0.0f;
@@ -53,10 +53,10 @@ public final class zf0 {
                 float f22 = i20 * 0.01f;
                 float f23 = f22 * f22;
                 float f24 = f23 * f22;
-                float x10 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.cast.a6.x(f18, f14, f22, f16 * 2.0f)) * 0.5f;
-                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.cast.a6.x(f19, f15, f22, f17 * 2.0f)) * 0.5f));
-                if (x10 > f14) {
-                    arrayList2.add(Float.valueOf(x10));
+                float y3 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.play_billing.k3.y(f18, f14, f22, f16 * 2.0f)) * 0.5f;
+                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.play_billing.k3.y(f19, f15, f22, f17 * 2.0f)) * 0.5f));
+                if (y3 > f14) {
+                    arrayList2.add(Float.valueOf(y3));
                     arrayList2.add(Float.valueOf(max));
                 }
                 if ((i20 - 1) % 2 == 0) {

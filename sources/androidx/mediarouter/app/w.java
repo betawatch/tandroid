@@ -26,7 +26,7 @@ import org.telegram.ui.sn;
 import s4.b1;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class w implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -237,7 +237,7 @@ public final class w implements View.OnClickListener {
                 ah.v vVar6 = wpVar.Z;
                 int dp = AndroidUtilities.dp(0.0f);
                 int themedColor = wpVar.getThemedColor(h6.d6);
-                int o10 = i0.b.o(wpVar.getThemedColor(i10), 76);
+                int o10 = i0.a.o(wpVar.getThemedColor(i10), 76);
                 vVar6.setBackground(h6.j0(dp, dp, dp, dp, themedColor, o10, o10));
                 wpVar.Z.setOnClickListener(new fp(wpVar, 0));
                 wpVar.Y.u1.addView(wpVar.Z, z5.e(-1, -2, 80));

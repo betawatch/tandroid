@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qc extends FrameLayout {
     public org.telegram.ui.ActionBar.j5 a;
@@ -46,7 +46,7 @@ public final class qc extends FrameLayout {
         } else if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.h6.w0(i10, d6Var)) < 0.2f) {
             this.f = org.telegram.ui.ActionBar.h6.m1(0.5f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A8, d6Var));
         } else {
-            this.f = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var), org.telegram.ui.ActionBar.h6.m1(0.7f, jp0.w0(org.telegram.ui.ActionBar.h6.w0(i10, d6Var))));
+            this.f = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var), org.telegram.ui.ActionBar.h6.m1(0.7f, kp0.w0(org.telegram.ui.ActionBar.h6.w0(i10, d6Var))));
         }
     }
 
@@ -107,7 +107,7 @@ public final class qc extends FrameLayout {
         if (i10 <= 0) {
             j5Var.i(null);
         } else {
-            j5Var.i(new so0(i10, getContext(), this.d, false));
+            j5Var.i(new to0(i10, getContext(), this.d, false));
             j5Var.setDrawablePadding(AndroidUtilities.dp(6.0f));
         }
     }

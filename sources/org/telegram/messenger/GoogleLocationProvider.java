@@ -20,13 +20,13 @@ import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class GoogleLocationProvider implements ILocationServiceProvider {
     private g8.a locationProviderClient;
     private g8.i settingsClient;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static final class GoogleApiClientImpl implements ILocationServiceProvider.IMapApiClient {
         private com.google.android.gms.common.api.m apiClient;
 
@@ -45,7 +45,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static final class GoogleLocationRequest implements ILocationServiceProvider.ILocationRequest {
         private LocationRequest request;
 
@@ -276,7 +276,7 @@ public class GoogleLocationProvider implements ILocationServiceProvider {
                 fVar4 = fVar7;
             } else {
                 if (eVar3 != null) {
-                    throw new IllegalStateException(a1.g.D(eVar4.c, " cannot be used with ", eVar3.c));
+                    throw new IllegalStateException(a1.g.C(eVar4.c, " cannot be used with ", eVar3.c));
                 }
                 mainLooper = looper2;
                 s3Var = s3Var3;

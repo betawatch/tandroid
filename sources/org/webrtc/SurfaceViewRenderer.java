@@ -11,7 +11,7 @@ import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "SurfaceViewRenderer";
@@ -89,7 +89,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         sb2.append(", frame size: ");
         sb2.append(this.rotatedFrameWidth);
         sb2.append("x");
-        i0.a.w(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        i2.d.w(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb2.append(min2);
         sb2.append(", old surface size: ");
         sb2.append(this.surfaceWidth);

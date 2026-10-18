@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class s61 extends pg.b {
     public q61 H;
@@ -217,7 +217,7 @@ public class s61 extends pg.b {
             if (i10 != 16) {
                 return;
             }
-            ((ig.u1) view).setReorder(z10);
+            ((ig.w1) view).setReorder(z10);
         } else {
             e61 F = f61.F(i10);
             if (F != null) {
@@ -644,41 +644,41 @@ public class s61 extends pg.b {
                     y7Var.setMinValueAllowed((int) G.B);
                     break;
                 case 16:
-                    ig.u1 u1Var = (ig.u1) view;
-                    u1Var.d.a(G.e, false);
-                    u1Var.setReorder(this.M);
+                    ig.w1 w1Var = (ig.w1) view;
+                    w1Var.d.a(G.e, false);
+                    w1Var.setReorder(this.M);
                     Object obj4 = G.G;
-                    if (obj4 instanceof ig.x1) {
-                        u1Var.a((ig.x1) obj4, null, J);
+                    if (obj4 instanceof ig.z1) {
+                        w1Var.a((ig.z1) obj4, null, J);
                         break;
                     }
                     break;
                 case 17:
-                    ig.s1 s1Var = (ig.s1) view;
-                    s1Var.e.a(G.e, false);
+                    ig.u1 u1Var = (ig.u1) view;
+                    u1Var.e.a(G.e, false);
                     Object obj5 = G.G;
-                    if (obj5 instanceof ig.x1) {
-                        ig.x1 x1Var = (ig.x1) obj5;
-                        h9 h9Var = s1Var.a;
-                        int[] iArr = s1Var.r;
-                        TextView textView3 = s1Var.d;
-                        ImageReceiver imageReceiver = s1Var.b;
+                    if (obj5 instanceof ig.z1) {
+                        ig.z1 z1Var = (ig.z1) obj5;
+                        h9 h9Var = u1Var.a;
+                        int[] iArr = u1Var.r;
+                        TextView textView3 = u1Var.d;
+                        ImageReceiver imageReceiver = u1Var.b;
                         int i20 = UserConfig.selectedAccount;
-                        s1Var.c.setText(MessagesController.getInstance(i20).getPeerName(UserConfig.getInstance(i20).getClientUserId()));
+                        u1Var.c.setText(MessagesController.getInstance(i20).getPeerName(UserConfig.getInstance(i20).getClientUserId()));
                         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                        MessageObject messageObject = x1Var.e;
+                        MessageObject messageObject = z1Var.e;
                         if (messageObject != null) {
                             spannableStringBuilder.append(Emoji.replaceEmoji(messageObject.messageText, textView3.getPaint().getFontMetricsInt(), false));
                         }
-                        if (x1Var.a() > 1) {
+                        if (z1Var.a() > 1) {
                             spannableStringBuilder.append((CharSequence) "  ");
                             int dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(80.0f);
-                            int a2 = x1Var.a() - 1;
-                            int i21 = ig.t1.d;
+                            int a2 = z1Var.a() - 1;
+                            int i21 = ig.v1.d;
                             SpannableString spannableString = new SpannableString("+");
-                            ig.t1 t1Var = new ig.t1(a2);
-                            iArr[0] = (int) (((d11) t1Var.c).c + AndroidUtilities.dp(10.0f));
-                            spannableString.setSpan(t1Var, 0, spannableString.length(), 33);
+                            ig.v1 v1Var = new ig.v1(a2);
+                            iArr[0] = (int) (((d11) v1Var.c).c + AndroidUtilities.dp(10.0f));
+                            spannableString.setSpan(v1Var, 0, spannableString.length(), 33);
                             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, textView3.getPaint(), (dp * 1.5f) - iArr[0], TextUtils.TruncateAt.END));
                             if (spannableStringBuilder2.length() > 0 && spannableStringBuilder2.charAt(spannableStringBuilder2.length() - 1) == 8230) {
                                 spannableStringBuilder2.append((CharSequence) "  ");
@@ -687,11 +687,11 @@ public class s61 extends pg.b {
                             spannableStringBuilder = spannableStringBuilder2;
                         }
                         textView3.setText(spannableStringBuilder);
-                        TLRPC.MessageMedia media = MessageObject.getMedia(x1Var.e);
+                        TLRPC.MessageMedia media = MessageObject.getMedia(z1Var.e);
                         if (media != null && (photo = media.photo) != null) {
                             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(36.0f), true, null, true);
                             ImageLocation forObject = ImageLocation.getForObject(closestPhotoSizeWithSize, media.photo);
-                            MessageObject messageObject2 = x1Var.e;
+                            MessageObject messageObject2 = z1Var.e;
                             imageReceiver.setImage(forObject, "36_36", messageObject2.strippedThumb, closestPhotoSizeWithSize == null ? 0L : closestPhotoSizeWithSize.size, (String) null, messageObject2, 0);
                             imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
                         } else if (media == null || (document = media.document) == null) {
@@ -712,12 +712,12 @@ public class s61 extends pg.b {
                                 imageLocation = forObject2;
                             }
                             long j14 = j10;
-                            MessageObject messageObject3 = x1Var.e;
+                            MessageObject messageObject3 = z1Var.e;
                             imageReceiver.setImage(imageLocation, str2, messageObject3.strippedThumb, j14, (String) null, messageObject3, 0);
                             imageReceiver.setRoundRadius(AndroidUtilities.dp(6.0f));
                         }
-                        s1Var.s = J;
-                        s1Var.invalidate();
+                        u1Var.s = J;
+                        u1Var.invalidate();
                         break;
                     }
                     break;
@@ -755,7 +755,7 @@ public class s61 extends pg.b {
                             z10 = tL_broadcastRevenueTransactionWithdrawal.failed;
                             StringBuilder sb2 = new StringBuilder();
                             sb2.append(LocaleController.formatShortDateTime(tL_broadcastRevenueTransactionWithdrawal.date));
-                            sb2.append(z10 ? org.telegram.messenger.q.g(R.string.MonetizationTransactionNotCompleted, new StringBuilder(" — ")) : "");
+                            sb2.append(z10 ? org.telegram.messenger.g0.g(R.string.MonetizationTransactionNotCompleted, new StringBuilder(" — ")) : "");
                             textView5.setText(sb2.toString());
                         }
                         j11 = tL_broadcastRevenueTransactionWithdrawal.amount;
@@ -1005,16 +1005,16 @@ public class s61 extends pg.b {
                         boolean z20 = G.f;
                         CharSequence charSequence13 = G.o;
                         View.OnClickListener onClickListener = G.D;
-                        org.telegram.ui.Cells.z1 z1Var = a2Var.v;
-                        if (z1Var != null) {
-                            q6 q6Var3 = z1Var.b;
+                        org.telegram.ui.Cells.z1 z1Var2 = a2Var.v;
+                        if (z1Var2 != null) {
+                            q6 q6Var3 = z1Var2.b;
                             q6Var3.a();
                             q6Var3.setText(charSequence13);
-                            View view5 = z1Var.c;
+                            View view5 = z1Var2.c;
                             view5.animate().cancel();
                             view5.animate().rotation(z20 ? 0.0f : 180.0f).setDuration(340L).setInterpolator(bs.h).start();
                             if (onClickListener != null) {
-                                z1Var.setOnClickListener(onClickListener);
+                                z1Var2.setOnClickListener(onClickListener);
                                 break;
                             }
                         }
@@ -1165,7 +1165,7 @@ public class s61 extends pg.b {
                     org.telegram.ui.Cells.t2 t2Var = new org.telegram.ui.Cells.t2(context);
                     TextView textView = new TextView(context);
                     t2Var.b = textView;
-                    org.telegram.messenger.wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+                    org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
                     textView.setMaxLines(1);
                     textView.setSingleLine(true);
                     TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -1175,7 +1175,7 @@ public class s61 extends pg.b {
                     t2Var.addView(textView, w7.z5.a(-1.0f, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f, -1, (z11 ? 5 : 3) | 48));
                     TextView textView2 = new TextView(context);
                     t2Var.c = textView2;
-                    org.telegram.messenger.wh.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false), 1, 16.0f, 1);
+                    org.telegram.messenger.kk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false), 1, 16.0f, 1);
                     textView2.setMaxLines(1);
                     textView2.setSingleLine(true);
                     textView2.setEllipsize(truncateAt);
@@ -1207,10 +1207,10 @@ public class s61 extends pg.b {
                     view2 = new org.telegram.ui.Cells.y7(context, d6Var);
                     break;
                 case 16:
-                    view2 = new ig.u1(context, d6Var, this.L != null);
+                    view2 = new ig.w1(context, d6Var, this.L != null);
                     break;
                 case 17:
-                    view2 = new ig.s1(context, d6Var);
+                    view2 = new ig.u1(context, d6Var);
                     break;
                 case 18:
                 case 19:

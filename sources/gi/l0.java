@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.a6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l0 extends FrameLayout {
     public final wh.n a;
@@ -76,13 +76,13 @@ public final class l0 extends FrameLayout {
         if (keyboardButtonStyle != null) {
             if (keyboardButtonStyle.bg_primary) {
                 m12 = h6.m1(0.8f, h6.w0(h6.dl, d6Var));
-                k10 = i0.b.k(h6.w0(h6.i6, d6Var), m12);
+                k10 = i0.a.k(h6.w0(h6.i6, d6Var), m12);
             } else if (keyboardButtonStyle.bg_danger) {
                 m12 = h6.m1(0.8f, h6.w0(h6.el, d6Var));
-                k10 = i0.b.k(h6.w0(h6.i6, d6Var), m12);
+                k10 = i0.a.k(h6.w0(h6.i6, d6Var), m12);
             } else if (keyboardButtonStyle.bg_success) {
                 m12 = h6.m1(0.8f, h6.w0(h6.fl, d6Var));
-                k10 = i0.b.k(h6.w0(h6.i6, d6Var), m12);
+                k10 = i0.a.k(h6.w0(h6.i6, d6Var), m12);
             }
             i10 = m12;
             i11 = k10;

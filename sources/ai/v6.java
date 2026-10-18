@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.u10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class v6 extends View {
     public float E;
@@ -51,7 +51,7 @@ public final class v6 extends View {
             float f12 = (f7 - 0.5f) / 1.5f;
             float clamp01 = Utilities.clamp01(1.0f - Math.abs(f12));
             float max = Math.max(0.8f * f10, AndroidUtilities.dp(180.0f));
-            float z10 = org.telegram.ui.Cells.t0.z(f12, max, 1.8f, f10 / 2.0f);
+            float z10 = org.telegram.ui.Cells.c1.z(f12, max, 1.8f, f10 / 2.0f);
             float min = Math.min(AndroidUtilities.dp(176.0f), f11) / 2.0f;
             float f13 = z10 - max;
             float f14 = z10 + max;

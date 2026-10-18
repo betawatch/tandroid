@@ -29,7 +29,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -67,9 +67,9 @@ public final /* synthetic */ class v implements Runnable {
         n2.e eVar = (n2.e) this.c;
         j7 j7Var = j7.b;
         String str2 = (String) this.d;
-        u2.c cVar = (u2.c) eVar.b;
-        cVar.c = j7Var;
-        l9 l9Var = (l9) cVar.b;
+        t0.h hVar = (t0.h) eVar.b;
+        hVar.c = j7Var;
+        l9 l9Var = (l9) hVar.b;
         if (l9Var != null) {
             str = l9Var.d;
             int i10 = r2.a;
@@ -139,7 +139,7 @@ public final /* synthetic */ class v implements Runnable {
                 kVar.a(iVar, jVar.a);
                 return;
             case 1:
-                super/*c5.c*/.c((a6.i) this.c, (org.telegram.messenger.e0) this.d);
+                super/*c5.c*/.c((a6.i) this.c, (org.telegram.messenger.d0) this.d);
                 return;
             case 2:
                 super/*c5.c*/.a((j) this.d, (k) this.c);
@@ -252,7 +252,7 @@ public final /* synthetic */ class v implements Runnable {
                     }
                 } catch (IOException | OutOfMemoryError | RuntimeException e7) {
                     Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e7);
-                    throw new RuntimeException(r.c.g("Unable to write bitmap to file ", str3), e7);
+                    throw new RuntimeException(r4.c.h("Unable to write bitmap to file ", str3), e7);
                 }
             case 11:
                 b();

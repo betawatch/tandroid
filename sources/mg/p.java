@@ -1,7 +1,7 @@
 package mg;
 
 import ah.p0;
-import ai.le;
+import ai.me;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -32,14 +32,14 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.p71;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class p extends FrameLayout implements a {
     public float E;
@@ -358,7 +358,7 @@ public class p extends FrameLayout implements a {
         float f10 = nVar.f * cropWidth;
         cropState.transformRotation = (int) nVar.h;
         if (BuildVars.LOGS_ENABLED) {
-            q.o(cropState.transformRotation, new StringBuilder("set transformRotation = "));
+            g0.o(cropState.transformRotation, new StringBuilder("set transformRotation = "));
         }
         while (true) {
             i10 = cropState.transformRotation;
@@ -451,7 +451,7 @@ public class p extends FrameLayout implements a {
         ofFloat5.setInterpolator(accelerateDecelerateInterpolator);
         ofFloat.setInterpolator(accelerateDecelerateInterpolator);
         animatorSet2.playTogether(ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat);
-        animatorSet2.addListener(new le(10, cropAreaView, rectF));
+        animatorSet2.addListener(new me(10, cropAreaView, rectF));
         animatorSet2.start();
         this.h.set(rectF);
     }

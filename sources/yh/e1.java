@@ -30,7 +30,7 @@ import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.r5;
 import v7.v7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class e1 extends Drawable {
     public static l1 C = new l1();
@@ -111,16 +111,19 @@ public final class e1 extends Drawable {
 
     /* JADX WARN: Code restructure failed: missing block: B:69:0x02c0, code lost:
     
-        if (r5 != null) goto L99;
+        if (r6 != null) goto L99;
      */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x02c7  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x02ca  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b(Canvas canvas, float f7) {
         boolean z10;
+        boolean z11;
         float f10;
+        float f11;
         Bitmap bitmap;
+        boolean z12;
         BlendMode blendMode;
         Bitmap bitmap2;
         NinePatchDrawable ninePatchDrawable;
@@ -138,10 +141,10 @@ public final class e1 extends Drawable {
             int lerp = AndroidUtilities.lerp(Math.min(bounds.width(), bounds.height()), Math.max(bounds.width(), bounds.height()), 0.35f) / 2;
             if (this.j == null || this.i != lerp) {
                 this.i = lerp;
-                float f11 = lerp;
+                float f12 = lerp;
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = this.h;
                 int i10 = stargiftattributebackdrop2.center_color | (-16777216);
-                this.j = new RadialGradient(0.0f, 0.0f, f11, new int[]{i10, i10, stargiftattributebackdrop2.edge_color | (-16777216)}, new float[]{0.0f, 0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                this.j = new RadialGradient(0.0f, 0.0f, f12, new int[]{i10, i10, stargiftattributebackdrop2.edge_color | (-16777216)}, new float[]{0.0f, 0.0f, 1.0f}, Shader.TileMode.CLAMP);
             }
             Matrix matrix = this.k;
             matrix.reset();
@@ -157,17 +160,17 @@ public final class e1 extends Drawable {
         int i12 = h6.d6;
         final int w03 = h6.w0(i12, d6Var);
         final int i13 = 0;
-        boolean z11 = this.s == ((float) AndroidUtilities.dp(11.0f)) && w02 == h6.x0(null, i11, false) && w03 == h6.x0(null, i12, false);
-        boolean z12 = this.g;
-        a(z12 && !z11);
-        if (z11) {
+        boolean z13 = this.s == ((float) AndroidUtilities.dp(11.0f)) && w02 == h6.x0(null, i11, false) && w03 == h6.x0(null, i12, false);
+        boolean z14 = this.g;
+        a(z14 && !z13);
+        if (z13) {
             if (C == null) {
                 C = new l1();
             }
             Rect rect = AndroidUtilities.rectTmp2;
             rectF.round(rect);
             if (this.h != null) {
-                if (z12) {
+                if (z14) {
                     l1 l1Var = C;
                     if (l1Var.b == null || l1Var.h != w02) {
                         l1Var.h = w02;
@@ -183,12 +186,12 @@ public final class e1 extends Drawable {
                                 Paint paint2 = new Paint(1);
                                 paint2.setStyle(Paint.Style.FILL);
                                 paint2.setColor(i13);
-                                float f12 = dp;
-                                if (f12 > 0.0f) {
-                                    paint2.setShadowLayer(f12, 0.0f, dp2, w02);
+                                float f13 = dp;
+                                if (f13 > 0.0f) {
+                                    paint2.setShadowLayer(f13, 0.0f, dp2, w02);
                                 }
                                 canvas3.drawPath(path, paint2);
-                                if (f12 > 0.0f) {
+                                if (f13 > 0.0f) {
                                     paint2.clearShadowLayer();
                                     canvas3.drawPath(path, paint2);
                                 }
@@ -199,11 +202,11 @@ public final class e1 extends Drawable {
                     zf.p.h(ninePatchDrawable2, rect);
                     ninePatchDrawable2.draw(canvas2);
                 }
-                float f12 = this.s;
-                canvas2.drawRoundRect(rectF, f12, f12, paint);
+                float f13 = this.s;
+                canvas2.drawRoundRect(rectF, f13, f13, paint);
                 z10 = true;
             } else {
-                if (z12) {
+                if (z14) {
                     l1 l1Var2 = C;
                     if (l1Var2.f == null || !(l1Var2.j == w03 || l1Var2.k == w02)) {
                         l1Var2.j = w03;
@@ -221,12 +224,12 @@ public final class e1 extends Drawable {
                                 Paint paint2 = new Paint(1);
                                 paint2.setStyle(Paint.Style.FILL);
                                 paint2.setColor(w03);
-                                float f122 = dp3;
-                                if (f122 > 0.0f) {
-                                    paint2.setShadowLayer(f122, 0.0f, dp4, w02);
+                                float f132 = dp3;
+                                if (f132 > 0.0f) {
+                                    paint2.setShadowLayer(f132, 0.0f, dp4, w02);
                                 }
                                 canvas3.drawPath(path, paint2);
-                                if (f122 > 0.0f) {
+                                if (f132 > 0.0f) {
                                     paint2.clearShadowLayer();
                                     canvas3.drawPath(path, paint2);
                                 }
@@ -241,8 +244,8 @@ public final class e1 extends Drawable {
                     l1 l1Var3 = C;
                     if (l1Var3.d == null || l1Var3.i != w03) {
                         l1Var3.i = w03;
-                        final float f13 = 0.0f;
                         final float f14 = 0.0f;
+                        final float f15 = 0.0f;
                         l1Var3.d = v7.b(l1Var3.c, l1Var3.g, 0.0f, 0.0f, w03, new hh.f() { // from class: hh.e
                             @Override // hh.f
                             public final void a(Canvas canvas3, RectF rectF2, float[] fArr22) {
@@ -251,12 +254,12 @@ public final class e1 extends Drawable {
                                 Paint paint2 = new Paint(1);
                                 paint2.setStyle(Paint.Style.FILL);
                                 paint2.setColor(w03);
-                                float f122 = f13;
-                                if (f122 > 0.0f) {
-                                    paint2.setShadowLayer(f122, 0.0f, f14, i13);
+                                float f132 = f14;
+                                if (f132 > 0.0f) {
+                                    paint2.setShadowLayer(f132, 0.0f, f15, i13);
                                 }
                                 canvas3.drawPath(path, paint2);
-                                if (f122 > 0.0f) {
+                                if (f132 > 0.0f) {
                                     paint2.clearShadowLayer();
                                     canvas3.drawPath(path, paint2);
                                 }
@@ -270,18 +273,18 @@ public final class e1 extends Drawable {
             }
         } else {
             z10 = true;
-            float f15 = this.s;
-            canvas2.drawRoundRect(rectF, f15, f15, paint);
+            float f16 = this.s;
+            canvas2.drawRoundRect(rectF, f16, f16, paint);
         }
         int[] iArr = this.m;
         d1 d1Var = this.l;
-        boolean z13 = (iArr == null && (this.h == null || d1Var.d())) ? false : z10;
-        if (z13) {
+        boolean z15 = (iArr == null && (this.h == null || d1Var.d())) ? false : z10;
+        if (z15) {
             canvas2.save();
             Path path = this.f;
             path.rewind();
-            float f16 = this.s;
-            path.addRoundRect(rectF, f16, f16, Path.Direction.CW);
+            float f17 = this.s;
+            path.addRoundRect(rectF, f17, f17, Path.Direction.CW);
             canvas2.clipPath(path);
         }
         if (this.m != null) {
@@ -299,22 +302,27 @@ public final class e1 extends Drawable {
             Paint paint2 = this.d;
             paint2.setShader(linearGradient);
             paint2.setStrokeWidth(AndroidUtilities.dp(4.66f));
-            float f17 = this.s;
-            canvas2.drawRoundRect(rectF, f17, f17, paint2);
+            float f18 = this.s;
+            canvas2.drawRoundRect(rectF, f18, f18, paint2);
         }
-        if (this.h != null && !d1Var.d()) {
+        if (this.h == null || d1Var.d()) {
+            z11 = z15;
+        } else {
             int i14 = this.h.pattern_color | (-16777216);
             canvas2.save();
             canvas2.translate(bounds.centerX(), bounds.centerY());
-            if (g0.a.g()) {
+            int i15 = Build.VERSION.SDK_INT;
+            if (i15 >= 29) {
                 Drawable drawable = d1Var.f[0];
+                f10 = 1.0f;
                 if (drawable != null && d1Var.d.c == 1.0f && (drawable instanceof r5)) {
                     r5 r5Var = (r5) drawable;
                     ci.g3 g3Var = r5Var.k;
-                    long i15 = r5Var.i();
+                    long i16 = r5Var.i();
                     if (g3Var != null) {
-                        f10 = 1.0f;
-                        if (i15 == this.y) {
+                        z11 = z15;
+                        f11 = -31.0f;
+                        if (i16 == this.y) {
                             bitmap = g3Var.getBitmap();
                         }
                         bitmap = null;
@@ -322,11 +330,13 @@ public final class e1 extends Drawable {
                             if (this.z != bitmap || this.A == null) {
                                 this.z = bitmap;
                                 this.A = g0.a.a(bitmap);
-                                i13 = 1;
+                                z12 = true;
+                            } else {
+                                z12 = false;
                             }
-                            if (this.B != i14 || i13 != 0) {
+                            if (this.B != i14 || z12) {
                                 this.B = i14;
-                                if (Build.VERSION.SDK_INT >= 29) {
+                                if (i15 >= 29) {
                                     Paint paint3 = this.A;
                                     blendMode = BlendMode.SRC_IN;
                                     paint3.setColorFilter(new BlendModeColorFilter(i14, blendMode));
@@ -334,15 +344,14 @@ public final class e1 extends Drawable {
                                     this.A.setColorFilter(new PorterDuffColorFilter(i14, PorterDuff.Mode.SRC_IN));
                                 }
                             }
-                            if (f7 < f10) {
-                                float f18 = f10 - f7;
+                            if (f7 < 1.0f) {
                                 bitmap2 = bitmap;
-                                ai.m1.b(canvas2, 2, this.A, bitmap2, bounds.width(), bounds.height(), f18);
+                                ai.m1.b(canvas2, 2, this.A, bitmap2, bounds.width(), bounds.height(), 1.0f - f7);
                             } else {
                                 bitmap2 = bitmap;
                             }
                             if (f7 > 0.0f) {
-                                canvas2.translate(0.0f, AndroidUtilities.dp(-31.0f));
+                                canvas2.translate(0.0f, AndroidUtilities.dp(f11));
                                 ai.m1.b(canvas2, 0, this.A, bitmap2, bounds.width(), bounds.height(), f7);
                             }
                             canvas2 = canvas;
@@ -350,12 +359,15 @@ public final class e1 extends Drawable {
                         }
                     }
                 }
-                f10 = 1.0f;
+                z11 = z15;
+                f11 = -31.0f;
                 bitmap = null;
                 if (bitmap != null) {
                 }
             } else {
+                z11 = z15;
                 f10 = 1.0f;
+                f11 = -31.0f;
             }
             d1Var.k(Integer.valueOf(i14));
             if (f7 < f10) {
@@ -365,18 +377,18 @@ public final class e1 extends Drawable {
                 canvas2 = canvas;
             }
             if (f7 > 0.0f) {
-                canvas2.translate(0.0f, AndroidUtilities.dp(-31.0f));
+                canvas2.translate(0.0f, AndroidUtilities.dp(f11));
                 ai.m1.a(canvas2, 0, d1Var, bounds.width(), bounds.height(), f7, 1.0f);
             }
             canvas2.restore();
         }
-        if (z13) {
+        if (z11) {
             canvas2.restore();
         }
         if (e > 0.0f) {
-            int i16 = this.v;
+            int i17 = this.v;
             Paint paint4 = this.q;
-            if (i16 == 0) {
+            if (i17 == 0) {
                 Integer num = this.x;
                 paint4.setColor(num != null ? num.intValue() : h6.w0(this.w, d6Var));
                 paint4.setStrokeWidth(AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(1.667f), e));
@@ -388,7 +400,7 @@ public final class e1 extends Drawable {
                 canvas2.drawRoundRect(rectF2, lerp3, lerp3, paint4);
                 return;
             }
-            if (i16 == 1) {
+            if (i17 == 1) {
                 Integer num2 = this.x;
                 paint4.setColor(num2 != null ? num2.intValue() : h6.w0(this.w, d6Var));
                 paint4.setStrokeWidth(AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(3.0f), e));

@@ -1,7 +1,7 @@
 package ci;
 
-import ai.ab;
-import ai.ud;
+import ai.bb;
+import ai.vd;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -56,7 +56,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class aa implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.j2, tf.a {
     public static boolean A1;
@@ -237,10 +237,10 @@ public final class aa implements NotificationCenter.NotificationCenterDelegate, 
     }
 
     public static void j(aa aaVar) {
-        ud udVar;
+        vd vdVar;
         iu editField;
         q4 currentPeerView = aaVar.n0.getCurrentPeerView();
-        if (currentPeerView == null || currentPeerView.b2 == null || (((udVar = currentPeerView.b3) != null && udVar.getVisibility() == 0) || (editField = currentPeerView.b2.getEditField()) == null)) {
+        if (currentPeerView == null || currentPeerView.b2 == null || (((vdVar = currentPeerView.b3) != null && vdVar.getVisibility() == 0) || (editField = currentPeerView.b2.getEditField()) == null)) {
             aaVar.m();
             return;
         }
@@ -1212,7 +1212,7 @@ public final class aa implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // org.telegram.ui.ActionBar.j2
     public final int getNavigationBarColor(int i10) {
-        return i0.b.f((((1.0f - this.V) * 0.5f) + 0.5f) * this.U, i10, -16777216);
+        return i0.a.f((((1.0f - this.V) * 0.5f) + 0.5f) * this.U, i10, -16777216);
     }
 
     @Override // org.telegram.ui.ActionBar.j2
@@ -1477,7 +1477,7 @@ public final class aa implements NotificationCenter.NotificationCenterDelegate, 
     public final boolean showDialog(Dialog dialog) {
         try {
             this.u0 = dialog;
-            dialog.setOnDismissListener(new ab(this, 4));
+            dialog.setOnDismissListener(new bb(this, 4));
             dialog.show();
             P();
             return true;

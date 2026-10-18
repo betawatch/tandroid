@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m51 extends jw0 {
     public ValueAnimator A0;
@@ -111,8 +111,8 @@ public final class m51 extends jw0 {
         int dp2 = AndroidUtilities.dp(4.0f);
         int i13 = (int) ((1.0f - Z) * dp2 * 2.0f);
         gradientDrawable.setCornerRadius(AndroidUtilities.dp(2.0f));
-        gradientDrawable.setColor(i0.b.o(n51Var.getThemedColor(org.telegram.ui.ActionBar.h6.Ii), (int) (Color.alpha(r5) * Z)));
-        gradientDrawable.setBounds((getWidth() - dp) / 2, org.telegram.messenger.q.C(10.0f, n51Var.f, i13), (getWidth() + dp) / 2, AndroidUtilities.dp(10.0f) + n51Var.f + i13 + dp2);
+        gradientDrawable.setColor(i0.a.o(n51Var.getThemedColor(org.telegram.ui.ActionBar.h6.Ii), (int) (Color.alpha(r5) * Z)));
+        gradientDrawable.setBounds((getWidth() - dp) / 2, org.telegram.messenger.g0.C(10.0f, n51Var.f, i13), (getWidth() + dp) / 2, AndroidUtilities.dp(10.0f) + n51Var.f + i13 + dp2);
         gradientDrawable.draw(canvas2);
         canvas2.restore();
     }

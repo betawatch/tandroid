@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.db;
@@ -43,9 +43,9 @@ import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.xl;
 import org.telegram.ui.xu0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9.d, tb, l1, r4.c, OnFailureListener, y9.c, z3.k {
+public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9.d, tb, l1, r4.d, OnFailureListener, y9.c, z3.k {
     public static u b;
     public final /* synthetic */ int a;
 
@@ -253,7 +253,7 @@ public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9
                     return 1;
             }
         }
-        throw new IllegalArgumentException(r.c.g("Unsupported MIME type: ", str));
+        throw new IllegalArgumentException(r4.c.h("Unsupported MIME type: ", str));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -491,7 +491,7 @@ public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean d1(MessageObject messageObject) {
         int i10 = this.a;
-        return t0.a(messageObject);
+        return c1.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -815,7 +815,7 @@ public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9
                     return new f4.d();
             }
         }
-        throw new IllegalArgumentException(r.c.g("Unsupported MIME type: ", str));
+        throw new IllegalArgumentException(r4.c.h("Unsupported MIME type: ", str));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -899,7 +899,7 @@ public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9
     public void release() {
     }
 
-    @Override // r4.c
+    @Override // r4.d
     public void x() {
     }
 
@@ -1150,7 +1150,7 @@ public class u implements c3.g, cg.a, dg.a, ea.c, g2.g, gb.n, ri, n5.b, n2.r, r9
     public /* synthetic */ void h(byte[] bArr, j2.k kVar) {
     }
 
-    @Override // r4.c
+    @Override // r4.d
     public void z(int i10, Object obj) {
     }
 

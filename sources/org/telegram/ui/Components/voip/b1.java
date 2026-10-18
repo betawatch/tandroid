@@ -16,7 +16,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
 import ei.i6;
 import ei.ja;
 import java.io.File;
@@ -40,8 +39,8 @@ import org.telegram.ui.sa1;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public abstract class b1 extends FrameLayout implements VoIPService.StateListener {
     public float E;
     public float F;
@@ -133,7 +132,7 @@ public abstract class b1 extends FrameLayout implements VoIPService.StateListene
         z0Var.getPaint().setTextAlign(Paint.Align.CENTER);
         z0Var.setContentDescription(LocaleController.getString(R.string.VoipShareVideo));
         int dp = AndroidUtilities.dp(8.0f);
-        int o10 = i0.b.o(h6.x0(null, i11, false), 76);
+        int o10 = i0.a.o(h6.x0(null, i11, false), 76);
         z0Var.setForeground(h6.j0(dp, dp, dp, dp, 0, o10, o10));
         z0Var.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
         z0Var.setOnClickListener(new hg.r0(ch1Var, 13));
@@ -170,7 +169,7 @@ public abstract class b1 extends FrameLayout implements VoIPService.StateListene
         textView.setText(LocaleController.getString(R.string.VoipVideoPrivateScreenSharing));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        org.telegram.messenger.q.m(15.0f, -1, 1, textView);
+        org.telegram.messenger.g0.m(15.0f, -1, 1, textView);
         frameLayout.addView(textView, z5.a(-2.0f, 21.0f, 28.0f, 21.0f, 0.0f, -1, 17));
         frameLayout.setTag("screencast_stub");
         frameLayout.setVisibility(8);
@@ -421,12 +420,12 @@ public abstract class b1 extends FrameLayout implements VoIPService.StateListene
             int i12 = (int) (floatingViewLocation[0] * f10);
             int i13 = (int) (floatingViewLocation[1] * f10);
             int i14 = floatingViewLocation[2];
-            float x10 = a6.x(1.0f, f10, r4 - i14, i14) / AndroidUtilities.displaySize.x;
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f10, r4 - i14, i14) / AndroidUtilities.displaySize.x;
             path.reset();
-            path.addRoundRect(0.0f, 0.0f, getWidth() * x10, getHeight() * x10, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
+            path.addRoundRect(0.0f, 0.0f, getWidth() * y3, getHeight() * y3, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
             canvas.translate(i12, i13);
             canvas.clipPath(path);
-            canvas.scale(x10, x10);
+            canvas.scale(y3, y3);
         }
         super.dispatchDraw(canvas);
     }

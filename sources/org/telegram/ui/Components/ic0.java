@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ic0 extends FrameLayout {
     public final nc0 E;
@@ -1650,7 +1650,7 @@ public final class ic0 extends FrameLayout {
                 r11 = 0;
                 messagePreviewParams2 = messagePreviewParams4;
             } else {
-                LinearLayout e7 = org.telegram.messenger.wh.e(context3, 1);
+                LinearLayout e7 = org.telegram.messenger.kk.e(context3, 1);
                 if (z13) {
                     drawable = null;
                     messagePreviewParams3 = messagePreviewParams4;
@@ -3380,11 +3380,11 @@ public final class ic0 extends FrameLayout {
             if (messages == null || i11 == 0 || i11 > messages.previewMessages.size()) {
                 this.R = 0;
             } else {
-                int b10 = org.telegram.messenger.q.b(4.0f, measuredHeight, 0);
+                int b10 = org.telegram.messenger.g0.b(4.0f, measuredHeight, 0);
                 this.R = b10;
                 this.R = Math.min(((bc0Var.getMeasuredHeight() - this.R) + b10) - ((int) ((((AndroidUtilities.displaySize.y - (Build.VERSION.SDK_INT >= 35 ? AndroidUtilities.navigationBarHeight : 0)) * 0.8f) - this.W) - AndroidUtilities.dp(8.0f))), this.R);
             }
-            float z11 = com.google.android.gms.internal.cast.a6.z(getMeasuredHeight() - AndroidUtilities.dp(16.0f), (this.b.getMeasuredHeight() - this.R) + (this.W - AndroidUtilities.dp(8.0f)), 2.0f, AndroidUtilities.dp(8.0f)) - this.R;
+            float z11 = com.google.android.gms.internal.play_billing.k3.z(getMeasuredHeight() - AndroidUtilities.dp(16.0f), (this.b.getMeasuredHeight() - this.R) + (this.W - AndroidUtilities.dp(8.0f)), 2.0f, AndroidUtilities.dp(8.0f)) - this.R;
             this.S = z11;
             if (z11 > AndroidUtilities.dp(8.0f)) {
                 this.S = AndroidUtilities.dp(8.0f);

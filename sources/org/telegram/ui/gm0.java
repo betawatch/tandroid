@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class gm0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ xm0 a;
@@ -164,7 +164,7 @@ public final class gm0 extends org.telegram.ui.ActionBar.j {
                 tL_emailVerificationCode.code = xm0Var.Y[0].getText().toString();
                 verifyemail.verification = tL_emailVerificationCode;
                 i11 = ((org.telegram.ui.ActionBar.n2) xm0Var).currentAccount;
-                int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(verifyemail, new ai.x2(this, ek0Var, qVar, verifyemail, 15));
+                int sendRequest = ConnectionsManager.getInstance(i11).sendRequest(verifyemail, new ai.y2(this, ek0Var, qVar, verifyemail, 15));
                 i12 = ((org.telegram.ui.ActionBar.n2) xm0Var).currentAccount;
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i12);
                 i13 = ((org.telegram.ui.ActionBar.n2) xm0Var).classGuid;
@@ -242,7 +242,7 @@ public final class gm0 extends org.telegram.ui.ActionBar.j {
                                 c11 = c12;
                                 z10 = r14;
                                 alertDialog$Builder.k(LocaleController.getString(R.string.Done), new org.telegram.ui.Components.d1(this, translitString, translitString2, translitString3, ek0Var, qVar, 1));
-                                alertDialog$Builder.h(LocaleController.getString(R.string.Edit), new i2.q(this, i15, 16));
+                                alertDialog$Builder.h(LocaleController.getString(R.string.Edit), new i2.r(this, i15, 16));
                                 xm0Var.showDialog(b2Var);
                             }
                             z11 = z10;

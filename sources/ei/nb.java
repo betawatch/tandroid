@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.cg0;
 import org.telegram.ui.Components.g80;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class nb extends FrameLayout {
     public float a;
@@ -94,9 +94,9 @@ public final class nb extends FrameLayout {
         int i15 = vbVar.T;
         frameLayout3.layout(0, i15, vbVar.S, frameLayout3.getMeasuredHeight() + i15);
         vbVar.l0.layout(0, 0, vbVar.S, vbVar.T);
-        ai.hc hcVar = vbVar.t0;
-        if (hcVar != null) {
-            hcVar.layout(0, 0, measuredWidth, measuredHeight);
+        ai.ic icVar = vbVar.t0;
+        if (icVar != null) {
+            icVar.layout(0, 0, measuredWidth, measuredHeight);
         }
         vbVar.s.c.layout(0, 0, measuredWidth, measuredHeight);
         i iVar = vbVar.c1.M;
@@ -134,9 +134,9 @@ public final class nb extends FrameLayout {
         a(vbVar.m0, vbVar.S, vbVar.U);
         a(vbVar.l0, vbVar.S, vbVar.T);
         a(vbVar.s.c, size, size2);
-        ai.hc hcVar = vbVar.t0;
-        if (hcVar != null) {
-            a(hcVar, size, size2);
+        ai.ic icVar = vbVar.t0;
+        if (icVar != null) {
+            a(icVar, size, size2);
         }
         i iVar = vbVar.c1.M;
         if (iVar != null) {

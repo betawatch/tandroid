@@ -1,13 +1,13 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.video.VideoAds;
+import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rq0 implements Runnable {
+public final /* synthetic */ class rq0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ PhotoViewer b;
 
@@ -16,228 +16,89 @@ public final /* synthetic */ class rq0 implements Runnable {
         this.b = photoViewer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        switch (this.a) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i10 = this.a;
+        PhotoViewer photoViewer = this.b;
+        switch (i10) {
             case 0:
-                PhotoViewer photoViewer = this.b;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                photoViewer.x0(false);
-                org.telegram.ui.Components.zg0.p0.k(true, true);
+                photoViewer.getClass();
+                photoViewer.i3.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                PhotoViewer photoViewer2 = this.b;
-                Drawable[] drawableArr2 = PhotoViewer.U8;
-                photoViewer2.e3(0);
+                CropAreaView cropAreaView = photoViewer.C1.b.a;
+                float lerp = AndroidUtilities.lerp(photoViewer.a6, photoViewer.e6, photoViewer.l6);
+                float lerp2 = AndroidUtilities.lerp(photoViewer.X5, photoViewer.c6, photoViewer.l6);
+                float lerp3 = AndroidUtilities.lerp(photoViewer.Y5, photoViewer.d6, photoViewer.l6);
+                cropAreaView.n0 = 0.0f;
+                cropAreaView.o0 = lerp;
+                cropAreaView.p0 = lerp2;
+                cropAreaView.q0 = lerp3;
+                cropAreaView.invalidate();
                 break;
             case 2:
-                PhotoViewer photoViewer3 = this.b;
-                Drawable[] drawableArr3 = PhotoViewer.U8;
-                photoViewer3.w2(true, 0, 0, false, true, false);
+                photoViewer.L1.u0(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 3:
-                PhotoViewer photoViewer4 = this.b;
-                Drawable[] drawableArr4 = PhotoViewer.U8;
-                photoViewer4.w2(true, 0, 0, false, false, false);
+                photoViewer.L1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 4:
-                PhotoViewer photoViewer5 = this.b;
-                Drawable[] drawableArr5 = PhotoViewer.U8;
-                photoViewer5.w2(false, 0, 0, true, false, false);
+                Drawable[] drawableArr2 = PhotoViewer.U8;
+                photoViewer.getClass();
+                photoViewer.m6 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 5:
-                PhotoViewer photoViewer6 = this.b;
-                Drawable[] drawableArr6 = PhotoViewer.U8;
-                photoViewer6.Z2();
+                Drawable[] drawableArr3 = PhotoViewer.U8;
+                photoViewer.s3();
                 break;
             case 6:
-                PhotoViewer photoViewer7 = this.b;
-                Drawable[] drawableArr7 = PhotoViewer.U8;
-                photoViewer7.w2(false, 0, 0, false, false, false);
+                photoViewer.L1.u0(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 7:
-                PhotoViewer photoViewer8 = this.b;
-                Drawable[] drawableArr8 = PhotoViewer.U8;
-                photoViewer8.i2();
+                photoViewer.L1.setOffsetTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 8:
-                org.telegram.ui.Components.nf0 nf0Var = this.b.C1;
-                mg.f fVar = nf0Var.c;
-                fVar.b(0.0f);
-                fVar.setMirrored(false);
-                fVar.setRotated(false);
-                nf0Var.b.l(true);
+                it0 it0Var = photoViewer.L1;
+                if (it0Var != null) {
+                    it0Var.d1.invalidate();
+                    break;
+                }
                 break;
             case 9:
-                PhotoViewer photoViewer9 = this.b;
-                Drawable[] drawableArr9 = PhotoViewer.U8;
-                photoViewer9.m0();
+                Drawable[] drawableArr4 = PhotoViewer.U8;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                photoViewer.Z5 = floatValue;
+                it0 it0Var2 = photoViewer.L1;
+                if (it0Var2 != null && Math.abs(floatValue - it0Var2.X1) > 0.1f) {
+                    it0Var2.X1 = floatValue;
+                    it0Var2.w0(it0Var2.I0, it0Var2.J0, it0Var2.K0, it0Var2.N0, it0Var2.O0);
+                }
+                photoViewer.e0.invalidate();
                 break;
             case 10:
-                PhotoViewer photoViewer10 = this.b;
-                photoViewer10.q5.b.setLoading(false);
-                photoViewer10.e3(0);
+                Drawable[] drawableArr5 = PhotoViewer.U8;
+                photoViewer.getClass();
+                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                photoViewer.G1();
                 break;
             case 11:
-                PhotoViewer photoViewer11 = this.b;
-                photoViewer11.q5.b.setLoading(false);
-                photoViewer11.e3(0);
+                Drawable[] drawableArr6 = PhotoViewer.U8;
+                photoViewer.getClass();
+                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 12:
-                PhotoViewer photoViewer12 = this.b;
-                Drawable[] drawableArr10 = PhotoViewer.U8;
-                photoViewer12.e3(0);
+                Drawable[] drawableArr7 = PhotoViewer.U8;
+                photoViewer.getClass();
+                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 13:
-                this.b.p5.V = false;
-                break;
-            case 14:
-                this.b.y4.setBackground(null);
-                break;
-            case 15:
-                PhotoViewer photoViewer13 = this.b;
-                photoViewer13.i7 = null;
-                photoViewer13.m0();
-                photoViewer13.e3(0);
-                break;
-            case 16:
-                PhotoViewer photoViewer14 = this.b;
-                photoViewer14.q5.b.setLoading(false);
-                photoViewer14.e3(0);
-                break;
-            case 17:
-                PhotoViewer photoViewer15 = this.b;
-                photoViewer15.q5.b.setLoading(false);
-                photoViewer15.e3(0);
-                break;
-            case 18:
-                PhotoViewer photoViewer16 = this.b;
-                Drawable[] drawableArr11 = PhotoViewer.U8;
-                photoViewer16.s3();
-                break;
-            case 19:
-                PhotoViewer photoViewer17 = this.b;
-                Drawable[] drawableArr12 = PhotoViewer.U8;
-                photoViewer17.k0();
-                break;
-            case 20:
-                PhotoViewer photoViewer18 = this.b;
-                Drawable[] drawableArr13 = PhotoViewer.U8;
-                photoViewer18.n3(true);
-                break;
-            case 21:
-                PhotoViewer photoViewer19 = this.b;
-                if (photoViewer19.v0.isEnabled() && AndroidUtilities.checkInlinePermissions(photoViewer19.y) && !org.telegram.ui.Components.zg0.p0.P && photoViewer19.P3) {
-                    if (!photoViewer19.t4) {
-                        photoViewer19.K3 = false;
-                        photoViewer19.h3();
-                        break;
-                    } else {
-                        qt0 qt0Var = photoViewer19.f0;
-                        if (qt0Var != null) {
-                            if ((!qt0Var.x || !"inapp".equals(MessagesController.getInstance(qt0Var.a).youtubePipType)) && photoViewer19.f0.e()) {
-                                photoViewer19.K3 = false;
-                                if (PhotoViewer.b9 != null) {
-                                    PhotoViewer.b9.Q0();
-                                }
-                                photoViewer19.J3 = true;
-                                PhotoViewer.b9 = PhotoViewer.a9;
-                                PhotoViewer.a9 = null;
-                                photoViewer19.e = false;
-                                lu0 lu0Var = photoViewer19.d5;
-                                if (lu0Var != null && !lu0Var.a.getVisible()) {
-                                    photoViewer19.d5.a.setVisible(true, true);
-                                }
-                                photoViewer19.m6 = 1.0f;
-                                photoViewer19.e0.invalidate();
-                                photoViewer19.T0();
-                                break;
-                            }
-                        }
-                    }
-                }
-                break;
-            case 22:
-                PhotoViewer photoViewer20 = this.b;
-                if (photoViewer20.e && photoViewer20.n4 == 0) {
-                    photoViewer20.v3(photoViewer20.J);
-                    break;
-                }
-                break;
-            case 23:
-                PhotoViewer photoViewer21 = this.b;
-                Drawable[] drawableArr14 = PhotoViewer.U8;
-                photoViewer21.G1();
-                break;
-            case 24:
-                PhotoViewer photoViewer22 = this.b;
-                org.telegram.ui.Components.a81 a81Var = photoViewer22.F2;
-                if (a81Var != null && photoViewer22.a6 <= 1.35f) {
-                    long n10 = a81Var.n();
-                    long p5 = photoViewer22.F2.p();
-                    if (n10 != -9223372036854775807L && p5 >= 8000) {
-                        float f7 = photoViewer22.E7;
-                        int k12 = photoViewer22.k1(photoViewer22.u4);
-                        if (p5 <= 180000) {
-                            photoViewer22.c4.startRewind(photoViewer22.F2, f7 > ((float) (k12 / 3)), photoViewer22.E7, photoViewer22.t1, photoViewer22.A1);
-                            break;
-                        } else {
-                            int i10 = k12 / 3;
-                            if (f7 < i10 * 2) {
-                                z10 = f7 >= ((float) i10);
-                            }
-                            photoViewer22.a4.startRewind(photoViewer22.F2, z10, photoViewer22.t1);
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 25:
-                PhotoViewer photoViewer23 = this.b;
-                if (!photoViewer23.U4.isPopupShown()) {
-                    org.telegram.ui.Components.a81 a81Var2 = photoViewer23.F2;
-                    if (a81Var2 != null && photoViewer23.U4.videoWasPlaying) {
-                        a81Var2.C();
-                        break;
-                    }
-                } else {
-                    VideoAds videoAds = photoViewer23.U4;
-                    org.telegram.ui.Components.a81 a81Var3 = photoViewer23.F2;
-                    videoAds.videoWasPlaying = a81Var3 != null ? a81Var3.y() : true;
-                    org.telegram.ui.Components.a81 a81Var4 = photoViewer23.F2;
-                    if (a81Var4 != null) {
-                        a81Var4.B();
-                        break;
-                    }
-                }
-                break;
-            case 26:
-                PhotoViewer photoViewer24 = this.b;
-                Drawable[] drawableArr15 = PhotoViewer.U8;
-                photoViewer24.G0(false, false);
-                org.telegram.ui.Components.ti tiVar = photoViewer24.a2;
-                if (tiVar != null) {
-                    tiVar.dismiss(true);
-                }
-                org.telegram.ui.ActionBar.n2 n2Var = photoViewer24.m4;
-                if (n2Var != null) {
-                    n2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
-                    break;
-                }
-                break;
-            case 27:
-                this.b.n7 = null;
-                break;
-            case 28:
-                PhotoViewer photoViewer25 = this.b;
-                Drawable[] drawableArr16 = PhotoViewer.U8;
-                photoViewer25.z3();
+                photoViewer.W0[0].e(1, ((Float) valueAnimator.getAnimatedValue()).floatValue(), false);
                 break;
             default:
-                PhotoViewer photoViewer26 = this.b;
-                photoViewer26.D1.e(photoViewer26.J2, photoViewer26.K2, photoViewer26.L2, photoViewer26.P2, photoViewer26.R2, photoViewer26.O2, photoViewer26.r2(true), photoViewer26.r2(true), photoViewer26.M2, photoViewer26.N2, 0.0f, 0.0f, photoViewer26.Q2);
-                photoViewer26.e3(0);
+                Drawable[] drawableArr8 = PhotoViewer.U8;
+                photoViewer.getClass();
+                photoViewer.m6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
         }
     }

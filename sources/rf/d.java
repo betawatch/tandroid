@@ -7,14 +7,14 @@ import android.view.View;
 import com.google.firebase.messaging.l;
 import com.google.firebase.messaging.r;
 import ei.z3;
-import i2.g0;
+import i2.h0;
 import java.util.HashMap;
 import k2.n0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d {
     public static int n;
@@ -30,7 +30,7 @@ public final class d {
     public final r i;
     public View j;
     public View k;
-    public g0 l;
+    public h0 l;
     public boolean m;
 
     public d(l lVar, c cVar) {

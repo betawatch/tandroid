@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t6 extends View {
     public final /* synthetic */ int a = 0;
@@ -33,7 +33,7 @@ public final class t6 extends View {
         float a2 = w7.r.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.c.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
         this.d = a2;
         qg.y yVar = (qg.y) this.e;
-        yVar.n(i0.b.o(yVar.f, (int) (a2 * 255.0f)), 1);
+        yVar.n(i0.a.o(yVar.f, (int) (a2 * 255.0f)), 1);
         invalidate();
     }
 
@@ -70,7 +70,7 @@ public final class t6 extends View {
                 float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
                 float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * this.d) + dp) - strokeWidth);
                 canvas.drawCircle(max, height, dp2, paint);
-                rg.i1.y1(max, height, strokeWidth, i0.b.o(yVar.f, (int) (this.d * 255.0f)), canvas);
+                rg.i1.y1(max, height, strokeWidth, i0.a.o(yVar.f, (int) (this.d * 255.0f)), canvas);
                 break;
         }
     }

@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -47,7 +47,7 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
     public float v;
     public final Canvas w;
     public float x;
-    public ai.ad y;
+    public ai.bd y;
 
     public a20() {
         super(null);
@@ -108,7 +108,7 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
         }
         this.c.setClipToPadding(false);
         this.c.j(new k3(this, 11));
-        this.y = new ai.ad(context);
+        this.y = new ai.bd(context);
         z10 z10Var = this.s;
         sg.w1 p02 = p0();
         this.e = p02;
@@ -163,11 +163,11 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
     }
 
     public final void m0(String str, CharSequence charSequence, FrameLayout frameLayout, x5 x5Var) {
-        ai.ad adVar = this.y;
-        FrameLayout frameLayout2 = (FrameLayout) adVar.e;
-        FrameLayout frameLayout3 = (FrameLayout) adVar.d;
-        ((TextView) adVar.b).setText(str);
-        org.telegram.ui.Components.x90 x90Var = (org.telegram.ui.Components.x90) adVar.c;
+        ai.bd bdVar = this.y;
+        FrameLayout frameLayout2 = (FrameLayout) bdVar.e;
+        FrameLayout frameLayout3 = (FrameLayout) bdVar.d;
+        ((TextView) bdVar.b).setText(str);
+        org.telegram.ui.Components.x90 x90Var = (org.telegram.ui.Components.x90) bdVar.c;
         x90Var.setText(charSequence);
         x90Var.setMaxWidth(ei.x3.a(x90Var.getText(), x90Var.getPaint()));
         if (frameLayout != null) {
@@ -184,7 +184,7 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
         } else {
             frameLayout2.setClickable(false);
         }
-        adVar.requestLayout();
+        bdVar.requestLayout();
     }
 
     public abstract s4.g0 n0();
@@ -300,11 +300,11 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i10 = org.telegram.ui.ActionBar.h6.Tj;
         kVar.C(org.telegram.ui.ActionBar.h6.x0(null, i10, false), false);
-        this.actionBar.B(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 60), false);
+        this.actionBar.B(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 60), false);
         this.e.a.g();
-        ai.ad adVar = this.y;
-        if (adVar != null) {
-            TextView textView = (TextView) adVar.b;
+        ai.bd bdVar = this.y;
+        if (bdVar != null) {
+            TextView textView = (TextView) bdVar.b;
             if (this.M) {
                 int i11 = org.telegram.ui.ActionBar.h6.G6;
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));

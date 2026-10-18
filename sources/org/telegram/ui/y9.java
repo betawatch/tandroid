@@ -50,7 +50,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class y9 extends org.telegram.ui.ActionBar.n2 {
     public o1.k E;
@@ -395,7 +395,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
         }
         Paint paint2 = new Paint(1);
         paint2.setPathEffect(org.telegram.ui.Components.r90.c());
-        paint2.setColor(i0.b.o(-1, 40));
+        paint2.setColor(i0.a.o(-1, 40));
         v9 v9Var = new v9(context, paint2);
         this.b = v9Var;
         v9Var.setGravity(1);
@@ -498,12 +498,12 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
                                         parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, 4);
                                         break;
                                     }
-                                    tp0 tp0Var = new tp0(10, false, false, null);
-                                    tp0Var.G = 1;
-                                    tp0Var.H = false;
-                                    tp0Var.x = false;
-                                    tp0Var.V = new w9(y9Var);
-                                    y9Var.presentFragment(tp0Var);
+                                    up0 up0Var = new up0(10, false, false, null);
+                                    up0Var.G = 1;
+                                    up0Var.H = false;
+                                    up0Var.x = false;
+                                    up0Var.V = new w9(y9Var);
+                                    y9Var.presentFragment(up0Var);
                                     break;
                                 }
                                 break;
@@ -572,12 +572,12 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
                                     parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, 4);
                                     break;
                                 }
-                                tp0 tp0Var = new tp0(10, false, false, null);
-                                tp0Var.G = 1;
-                                tp0Var.H = false;
-                                tp0Var.x = false;
-                                tp0Var.V = new w9(y9Var);
-                                y9Var.presentFragment(tp0Var);
+                                up0 up0Var = new up0(10, false, false, null);
+                                up0Var.G = 1;
+                                up0Var.H = false;
+                                up0Var.x = false;
+                                up0Var.V = new w9(y9Var);
+                                y9Var.presentFragment(up0Var);
                                 break;
                             }
                             break;
@@ -651,7 +651,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
             int i15 = 0;
             if (nVar != null && nVar.b.k()) {
                 if (bitmap != null) {
-                    g3Var3 = new m.g3(22);
+                    g3Var3 = new m.g3(23);
                     int width = bitmap.getWidth();
                     int height = bitmap.getHeight();
                     g3Var3.d = bitmap;
@@ -661,7 +661,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
                     i13 = bitmap.getWidth();
                     i14 = bitmap.getHeight();
                 } else {
-                    g3Var3 = new m.g3(22);
+                    g3Var3 = new m.g3(23);
                     ByteBuffer wrap = ByteBuffer.wrap(null);
                     int width2 = size.getWidth();
                     int height2 = size.getHeight();
@@ -710,7 +710,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
                     if (bitmap != null) {
                         Bitmap Z = Z(bitmap);
                         bitmap.recycle();
-                        m.g3 g3Var5 = new m.g3(22);
+                        m.g3 g3Var5 = new m.g3(23);
                         int width3 = Z.getWidth();
                         int height3 = Z.getHeight();
                         g3Var5.d = Z;
@@ -747,7 +747,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
                         } else {
                             Bitmap b02 = b0(Z);
                             Z.recycle();
-                            m.g3 g3Var6 = new m.g3(22);
+                            m.g3 g3Var6 = new m.g3(23);
                             int width4 = b02.getWidth();
                             int height4 = b02.getHeight();
                             g3Var6.d = b02;

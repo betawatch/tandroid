@@ -1,6 +1,6 @@
 package ci;
 
-import ai.oa;
+import ai.pa;
 import android.text.TextUtils;
 import j$.util.Comparator$-CC;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class w7 {
     public int a;
@@ -231,7 +231,7 @@ public final class w7 {
                     i18++;
                 }
                 Collections.sort(tL_stories_allStories.peer_stories, Comparator$-CC.comparingInt(new ai.u8(8)));
-                AndroidUtilities.runOnUIThread(new oa(29, i6Var, tL_stories_allStories));
+                AndroidUtilities.runOnUIThread(new pa(29, i6Var, tL_stories_allStories));
             } catch (Throwable th5) {
                 th = th5;
                 sQLiteCursor = queryFinalized;

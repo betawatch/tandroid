@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.SegmentTree;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.b91;
-import org.telegram.ui.qp0;
+import org.telegram.ui.rp0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] D1;
@@ -59,7 +59,7 @@ public final class p extends g {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                b91 b91Var = (b91) ((qp0) eVar).b;
+                b91 b91Var = (b91) ((rp0) eVar).b;
                 b91Var.f();
                 b91Var.b.t0.d(false, false);
             }
@@ -237,12 +237,12 @@ public final class p extends g {
             Paint paint = (z10 || this.f0) ? hVar.q : hVar.c;
             if (z10) {
                 f13 = 255.0f;
-                hVar.q.setColor(i0.b.f(this.v0, hVar.m, hVar.r));
+                hVar.q.setColor(i0.a.f(this.v0, hVar.m, hVar.r));
             } else {
                 f13 = 255.0f;
             }
             if (this.f0) {
-                hVar.q.setColor(i0.b.f(1.0f, hVar.m, hVar.r));
+                hVar.q.setColor(i0.a.f(1.0f, hVar.m, hVar.r));
             }
             paint.setAlpha((int) (f12 * f13));
             paint.setStrokeWidth(f7);

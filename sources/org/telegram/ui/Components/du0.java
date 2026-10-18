@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class du0 extends hm0 {
     public final Context c;
@@ -31,7 +31,7 @@ public final class du0 extends hm0 {
         long j11 = sv0Var.j1;
         org.telegram.ui.ActionBar.n2 n2Var = sv0Var.v1;
         if (DialogObject.isEncryptedDialog(j11)) {
-            j11 = org.telegram.messenger.q.l(n2Var.getMessagesController(), j11).user_id;
+            j11 = org.telegram.messenger.g0.l(n2Var.getMessagesController(), j11).user_id;
         }
         TLRPC.InputUser inputUser = n2Var.getMessagesController().getInputUser(j11);
         tL_messages_getCommonChats.user_id = inputUser;
@@ -107,6 +107,6 @@ public final class du0 extends hm0 {
             b10Var.setViewType(1);
             h6Var = b10Var;
         }
-        return com.google.android.gms.internal.cast.a6.l(h6Var, h6Var, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(h6Var, h6Var, -1, -2);
     }
 }

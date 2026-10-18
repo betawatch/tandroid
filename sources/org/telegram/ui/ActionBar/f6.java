@@ -10,7 +10,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f6 {
     public int a;
@@ -511,7 +511,7 @@ public final class f6 {
     }
 
     public final int e(int i10, int i11, boolean z10) {
-        int f7 = i0.b.f(0.25f, i10, i11);
+        int f7 = i0.a.f(0.25f, i10, i11);
         float[] fArr = this.A;
         Color.colorToHSV(f7, fArr);
         fArr[1] = Math.max(0.0f, Math.min(1.0f, fArr[1] - 0.1f));

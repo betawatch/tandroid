@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class la0 {
     public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
@@ -717,10 +717,10 @@ public abstract class la0 {
                 }
                 TL_iv.RichText d = d(textconcat);
                 TL_iv.textAnchor textanchor = new TL_iv.textAnchor();
-                textanchor.name = r.c.g("fn-", str7);
+                textanchor.name = r4.c.h("fn-", str7);
                 textanchor.text = d;
                 TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
-                String u10 = r.c.u(str7, ". ");
+                String u10 = r4.c.u(str7, ". ");
                 TL_iv.textBold textbold2 = new TL_iv.textBold();
                 textbold2.text = j(u10);
                 TL_iv.RichText[] richTextArr = {textbold2, textanchor};

@@ -1,10 +1,10 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fv implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class fv implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ ey b;
 
@@ -13,21 +13,26 @@ public final /* synthetic */ class fv implements ValueAnimator.AnimatorUpdateLis
         this.b = eyVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                ey eyVar = this.b;
-                eyVar.getClass();
-                eyVar.x4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ey.Y(this.b);
                 break;
             case 1:
-                this.b.B4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ey eyVar = this.b;
+                if (eyVar.S3 != null) {
+                    eyVar.getMessagesController().removeSuggestion(0L, eyVar.S3);
+                    eyVar.S3 = null;
+                    eyVar.J4();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.Z3(true);
                 break;
             default:
-                ey eyVar2 = this.b;
-                eyVar2.getClass();
-                eyVar2.D4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b.Z3(true);
                 break;
         }
     }

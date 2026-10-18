@@ -19,11 +19,11 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import ki.t1;
-import org.telegram.ui.Wallet.x5;
+import org.telegram.ui.Wallet.z5;
 import p2.x;
 import v7.b8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class i {
     public final c a;
@@ -105,7 +105,7 @@ public final class i {
         return new h((p2.l) n0Var.get(0), j10 + 1, 0);
     }
 
-    public final x5 a(Uri uri) {
+    public final z5 a(Uri uri) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
         p2.e eVar = this.g;
         p2.d dVar = (p2.d) eVar.d.get(uri);
@@ -119,14 +119,14 @@ public final class i {
             Uri uri2 = (Uri) it.next();
             p2.d dVar2 = (p2.d) eVar.d.get(uri2);
             if (dVar2 != null) {
-                p2.c cVar = (p2.c) i0.a.i(dVar2.b, uri2, uri2);
+                p2.c cVar = (p2.c) i2.d.i(dVar2.b, uri2, uri2);
                 cVar.getClass();
                 if (elapsedRealtime <= cVar.r) {
                     i10++;
                 }
             }
         }
-        return new x5(size, i10, this.r.length(), d(elapsedRealtime));
+        return new z5(size, i10, this.r.length(), d(elapsedRealtime));
     }
 
     public final v2.m[] b(j jVar, long j10) {

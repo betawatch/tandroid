@@ -1,8 +1,8 @@
 package ne;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class m {
     public float a;
@@ -15,11 +15,11 @@ public final class m {
 
     public final boolean a(float f7) {
         float f10 = this.b;
-        float x10 = a6.x(this.c, f10, f7, f10);
-        if (this.a == x10) {
+        float y3 = k3.y(this.c, f10, f7, f10);
+        if (this.a == y3) {
             return false;
         }
-        this.a = x10;
+        this.a = y3;
         return true;
     }
 

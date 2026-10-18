@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class oc extends mb {
     public Runnable a;
@@ -29,7 +29,7 @@ public final class oc extends mb {
             textView.setTextSize(1, 14.0f);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setTextColor(u10);
-            org.telegram.messenger.wh.m(R.string.UndoNoCaps, textView, 16);
+            org.telegram.messenger.kk.m(R.string.UndoNoCaps, textView, 16);
             float f7 = z11 ? 34.0f : 12.0f;
             boolean z12 = LocaleController.isRTL;
             w7.f6.a(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);

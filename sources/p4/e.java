@@ -26,10 +26,11 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import ki.t1;
 import m.g3;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Components.ll0;
 import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -167,7 +168,7 @@ public final class e {
     public final String b(u uVar, String str) {
         String flattenToShortString = ((ComponentName) uVar.d.b).flattenToShortString();
         boolean z10 = uVar.c;
-        String D = z10 ? str : a1.g.D(flattenToShortString, ":", str);
+        String C = z10 ? str : a1.g.C(flattenToShortString, ":", str);
         HashMap hashMap = this.k;
         if (!z10) {
             ArrayList arrayList = this.j;
@@ -178,17 +179,17 @@ public final class e {
                     i10 = -1;
                     break;
                 }
-                if (((v) arrayList.get(i10)).c.equals(D)) {
+                if (((v) arrayList.get(i10)).c.equals(C)) {
                     break;
                 }
                 i10++;
             }
             if (i10 >= 0) {
-                Log.w("GlobalMediaRouter", r.c.h("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
+                Log.w("GlobalMediaRouter", c1.k("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
                 int i11 = 2;
                 while (true) {
                     Locale locale = Locale.US;
-                    String str2 = D + "_" + i11;
+                    String str2 = C + "_" + i11;
                     int size2 = arrayList.size();
                     int i12 = 0;
                     while (true) {
@@ -209,8 +210,8 @@ public final class e {
                 }
             }
         }
-        hashMap.put(new q0.b(flattenToShortString, str), D);
-        return D;
+        hashMap.put(new q0.b(flattenToShortString, str), C);
+        return C;
     }
 
     public final v c() {
@@ -326,7 +327,7 @@ public final class e {
             z1 z1Var = new z1(ll0Var3, i11);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
-            a2.b.a(z1Var, new i2.e0(bVar, i11));
+            a2.b.a(z1Var, new i2.f0(bVar, i11));
         }
     }
 
@@ -577,7 +578,7 @@ public final class e {
         if (vVar == null) {
             g3 g3Var = this.C;
             if (g3Var != null) {
-                g3Var.v();
+                g3Var.o();
                 return;
             }
             return;
@@ -606,7 +607,7 @@ public final class e {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
             if (vVar2 == vVar3 || vVar2 == this.w) {
-                g3Var2.v();
+                g3Var2.o();
                 return;
             }
             int i11 = sVar.c == 1 ? 2 : 0;

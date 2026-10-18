@@ -6,7 +6,7 @@ import android.util.Base64;
 import b2.t0;
 import b2.v0;
 import b2.w0;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.m0;
 import e9.n0;
 import java.io.BufferedReader;
@@ -30,7 +30,7 @@ import m.g3;
 import v7.u6;
 import v7.v6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t implements y2.n {
     public final q a;
@@ -290,7 +290,7 @@ public final class t implements y2.n {
             int i24 = i19;
             String str19 = "POINT";
             m mVar2 = mVar;
-            if (!g3Var.M()) {
+            if (!g3Var.H()) {
                 ArrayList arrayList16 = arrayList12;
                 ArrayList arrayList17 = arrayList13;
                 ArrayList arrayList18 = arrayList14;
@@ -367,13 +367,13 @@ public final class t implements y2.n {
                 }
                 return new n(i22, uri.toString(), arrayList19, j16, z14, j20, z13, i20, j18, i23, j17, j15, z12, z15, j20 != 0, sVar6, arrayList16, arrayList17, mVar2, hashMap6, arrayList21, kVar2);
             }
-            String O2 = g3Var.O();
+            String J2 = g3Var.J();
             HashMap hashMap7 = hashMap4;
-            if (O2.startsWith("#EXT")) {
-                arrayList15.add(O2);
+            if (J2.startsWith("#EXT")) {
+                arrayList15.add(J2);
             }
-            if (O2.startsWith("#EXT-X-PLAYLIST-TYPE")) {
-                String j33 = j(O2, R, hashMap3, dVar);
+            if (J2.startsWith("#EXT-X-PLAYLIST-TYPE")) {
+                String j33 = j(J2, R, hashMap3, dVar);
                 if ("VOD".equals(j33)) {
                     i22 = 1;
                 } else if ("EVENT".equals(j33)) {
@@ -381,42 +381,42 @@ public final class t implements y2.n {
                 }
                 i19 = i24;
                 mVar = mVar2;
-            } else if (O2.equals("#EXT-X-I-FRAMES-ONLY")) {
+            } else if (J2.equals("#EXT-X-I-FRAMES-ONLY")) {
                 i19 = i24;
                 mVar = mVar2;
                 hashMap4 = hashMap7;
                 z16 = true;
             } else {
-                if (O2.startsWith("#EXT-X-START")) {
+                if (J2.startsWith("#EXT-X-START")) {
                     arrayList = arrayList15;
                     linkedHashMap = linkedHashMap3;
-                    long parseDouble = (long) (Double.parseDouble(j(O2, d0, Collections.EMPTY_MAP, dVar)) * 1000000.0d);
-                    z14 = f(O2, A0, dVar);
+                    long parseDouble = (long) (Double.parseDouble(j(J2, d0, Collections.EMPTY_MAP, dVar)) * 1000000.0d);
+                    z14 = f(J2, A0, dVar);
                     j16 = parseDouble;
                 } else {
                     arrayList = arrayList15;
                     linkedHashMap = linkedHashMap3;
-                    if (O2.startsWith("#EXT-X-SERVER-CONTROL")) {
-                        double g10 = g(O2, S, -9.223372036854776E18d, dVar);
+                    if (J2.startsWith("#EXT-X-SERVER-CONTROL")) {
+                        double g10 = g(J2, S, -9.223372036854776E18d, dVar);
                         long j34 = g10 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g10 * 1000000.0d);
-                        boolean f7 = f(O2, T, dVar);
-                        double g11 = g(O2, V, -9.223372036854776E18d, dVar);
+                        boolean f7 = f(J2, T, dVar);
+                        double g11 = g(J2, V, -9.223372036854776E18d, dVar);
                         long j35 = g11 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g11 * 1000000.0d);
-                        double g12 = g(O2, W, -9.223372036854776E18d, dVar);
+                        double g12 = g(J2, W, -9.223372036854776E18d, dVar);
                         arrayList15 = arrayList;
                         i19 = i24;
                         hashMap4 = hashMap7;
                         linkedHashMap3 = linkedHashMap;
-                        mVar = new m(j34, f7, j35, g12 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g12 * 1000000.0d), f(O2, X, dVar));
-                    } else if (O2.startsWith("#EXT-X-PART-INF")) {
-                        j15 = (long) (Double.parseDouble(j(O2, P, Collections.EMPTY_MAP, dVar)) * 1000000.0d);
+                        mVar = new m(j34, f7, j35, g12 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g12 * 1000000.0d), f(J2, X, dVar));
+                    } else if (J2.startsWith("#EXT-X-PART-INF")) {
+                        j15 = (long) (Double.parseDouble(j(J2, P, Collections.EMPTY_MAP, dVar)) * 1000000.0d);
                     } else {
-                        boolean startsWith = O2.startsWith("#EXT-X-MAP");
+                        boolean startsWith = J2.startsWith("#EXT-X-MAP");
                         Pattern pattern = f0;
                         Pattern pattern2 = l0;
                         if (startsWith) {
-                            String j36 = j(O2, pattern2, hashMap3, dVar);
-                            String i27 = i(O2, pattern, null, hashMap3, dVar);
+                            String j36 = j(J2, pattern2, hashMap3, dVar);
+                            String i27 = i(J2, pattern, null, hashMap3, dVar);
                             if (i27 != null) {
                                 String str24 = m0.a;
                                 String[] split = i27.split("@", -1);
@@ -448,10 +448,10 @@ public final class t implements y2.n {
                             String str26 = str17;
                             ArrayList arrayList26 = arrayList13;
                             ArrayList arrayList27 = arrayList14;
-                            if (O2.startsWith("#EXT-X-TARGETDURATION")) {
-                                j17 = Integer.parseInt(j(O2, M, Collections.EMPTY_MAP, dVar)) * 1000000;
-                            } else if (O2.startsWith("#EXT-X-MEDIA-SEQUENCE")) {
-                                j21 = Long.parseLong(j(O2, Y, Collections.EMPTY_MAP, dVar));
+                            if (J2.startsWith("#EXT-X-TARGETDURATION")) {
+                                j17 = Integer.parseInt(j(J2, M, Collections.EMPTY_MAP, dVar)) * 1000000;
+                            } else if (J2.startsWith("#EXT-X-MEDIA-SEQUENCE")) {
+                                j21 = Long.parseLong(j(J2, Y, Collections.EMPTY_MAP, dVar));
                                 i19 = i24;
                                 j18 = j21;
                                 mVar = mVar2;
@@ -461,15 +461,15 @@ public final class t implements y2.n {
                                 str17 = str26;
                                 arrayList14 = arrayList27;
                                 arrayList13 = arrayList26;
-                            } else if (O2.startsWith("#EXT-X-VERSION")) {
-                                i23 = Integer.parseInt(j(O2, Q, Collections.EMPTY_MAP, dVar));
+                            } else if (J2.startsWith("#EXT-X-VERSION")) {
+                                i23 = Integer.parseInt(j(J2, Q, Collections.EMPTY_MAP, dVar));
                             } else {
-                                if (O2.startsWith("#EXT-X-DEFINE")) {
-                                    String i28 = i(O2, q0, null, hashMap3, dVar);
-                                    String i29 = i(O2, r0, null, hashMap3, dVar);
+                                if (J2.startsWith("#EXT-X-DEFINE")) {
+                                    String i28 = i(J2, q0, null, hashMap3, dVar);
+                                    String i29 = i(J2, r0, null, hashMap3, dVar);
                                     if (i28 != null) {
                                         l(i28, hashMap3);
-                                        hashMap3.put(i28, j(O2, B0, hashMap3, dVar));
+                                        hashMap3.put(i28, j(J2, B0, hashMap3, dVar));
                                     } else if (i29 != null) {
                                         l(i29, hashMap3);
                                         String queryParameter = uri.getQueryParameter(i29);
@@ -478,7 +478,7 @@ public final class t implements y2.n {
                                         }
                                         hashMap3.put(i29, queryParameter);
                                     } else {
-                                        String j39 = j(O2, C0, hashMap3, dVar);
+                                        String j39 = j(J2, C0, hashMap3, dVar);
                                         l(j39, hashMap3);
                                         String str27 = (String) qVar2.l.get(j39);
                                         if (str27 != null) {
@@ -500,11 +500,11 @@ public final class t implements y2.n {
                                     arrayList2 = arrayList26;
                                     str5 = uri2;
                                     treeMap = treeMap2;
-                                } else if (O2.startsWith("#EXTINF")) {
-                                    j24 = new BigDecimal(j(O2, Z, Collections.EMPTY_MAP, dVar)).multiply(new BigDecimal(1000000L)).longValue();
-                                    str15 = i(O2, a0, str14, hashMap3, dVar);
-                                } else if (O2.startsWith("#EXT-X-SKIP")) {
-                                    int parseInt = Integer.parseInt(j(O2, U, Collections.EMPTY_MAP, dVar));
+                                } else if (J2.startsWith("#EXTINF")) {
+                                    j24 = new BigDecimal(j(J2, Z, Collections.EMPTY_MAP, dVar)).multiply(new BigDecimal(1000000L)).longValue();
+                                    str15 = i(J2, a0, str14, hashMap3, dVar);
+                                } else if (J2.startsWith("#EXT-X-SKIP")) {
+                                    int parseInt = Integer.parseInt(j(J2, U, Collections.EMPTY_MAP, dVar));
                                     u6.p((nVar2 == null || !arrayList12.isEmpty()) ? i18 : 1);
                                     String str28 = m0.a;
                                     long j40 = nVar2.k;
@@ -570,16 +570,16 @@ public final class t implements y2.n {
                                     }
                                 } else {
                                     str2 = str14;
-                                    if (O2.startsWith("#EXT-X-KEY")) {
-                                        String j45 = j(O2, i0, hashMap3, dVar);
-                                        String i35 = i(O2, j0, "identity", hashMap3, dVar);
+                                    if (J2.startsWith("#EXT-X-KEY")) {
+                                        String j45 = j(J2, i0, hashMap3, dVar);
+                                        String i35 = i(J2, j0, "identity", hashMap3, dVar);
                                         if ("NONE".equals(j45)) {
                                             treeMap2.clear();
                                             sVar7 = null;
                                             str16 = null;
                                             str17 = null;
                                         } else {
-                                            String i36 = i(O2, m0, null, hashMap3, dVar);
+                                            String i36 = i(J2, m0, null, hashMap3, dVar);
                                             if (!"identity".equals(i35)) {
                                                 String str31 = str18;
                                                 if (str31 == null) {
@@ -587,7 +587,7 @@ public final class t implements y2.n {
                                                 } else {
                                                     str18 = str31;
                                                 }
-                                                b2.r c12 = c(O2, i35, hashMap3, dVar);
+                                                b2.r c12 = c(J2, i35, hashMap3, dVar);
                                                 if (c12 != null) {
                                                     treeMap2.put(i35, c12);
                                                     str17 = i36;
@@ -595,7 +595,7 @@ public final class t implements y2.n {
                                                     str16 = null;
                                                 }
                                             } else if ("AES-128".equals(j45)) {
-                                                str16 = j(O2, pattern2, hashMap3, dVar);
+                                                str16 = j(J2, pattern2, hashMap3, dVar);
                                                 str17 = i36;
                                             }
                                             str17 = i36;
@@ -609,16 +609,16 @@ public final class t implements y2.n {
                                         arrayList15 = arrayList;
                                     } else {
                                         String str32 = str18;
-                                        if (O2.startsWith("#EXT-X-BYTERANGE")) {
-                                            String j46 = j(O2, e0, hashMap3, dVar);
+                                        if (J2.startsWith("#EXT-X-BYTERANGE")) {
+                                            String j46 = j(J2, e0, hashMap3, dVar);
                                             String str33 = m0.a;
                                             String[] split2 = j46.split("@", -1);
                                             j14 = Long.parseLong(split2[i18]);
                                             if (split2.length > 1) {
                                                 j22 = Long.parseLong(split2[1]);
                                             }
-                                        } else if (O2.startsWith("#EXT-X-DISCONTINUITY-SEQUENCE")) {
-                                            i20 = Integer.parseInt(O2.substring(O2.indexOf(58) + 1));
+                                        } else if (J2.startsWith("#EXT-X-DISCONTINUITY-SEQUENCE")) {
+                                            i20 = Integer.parseInt(J2.substring(J2.indexOf(58) + 1));
                                             qVar2 = qVar;
                                             str18 = str32;
                                             i19 = i24;
@@ -631,7 +631,7 @@ public final class t implements y2.n {
                                             arrayList13 = arrayList26;
                                             str14 = str2;
                                             z13 = true;
-                                        } else if (O2.equals("#EXT-X-DISCONTINUITY")) {
+                                        } else if (J2.equals("#EXT-X-DISCONTINUITY")) {
                                             i19 = i24 + 1;
                                             qVar2 = qVar;
                                             str18 = str32;
@@ -641,11 +641,11 @@ public final class t implements y2.n {
                                             arrayList15 = arrayList;
                                             str17 = str26;
                                         } else {
-                                            if (O2.startsWith("#EXT-X-PROGRAM-DATE-TIME")) {
+                                            if (J2.startsWith("#EXT-X-PROGRAM-DATE-TIME")) {
                                                 if (j20 == 0) {
-                                                    j20 = m0.S(m0.V(O2.substring(O2.indexOf(58) + 1))) - j23;
+                                                    j20 = m0.S(m0.V(J2.substring(J2.indexOf(58) + 1))) - j23;
                                                 }
-                                            } else if (O2.equals("#EXT-X-GAP")) {
+                                            } else if (J2.equals("#EXT-X-GAP")) {
                                                 qVar2 = qVar;
                                                 str18 = str32;
                                                 i19 = i24;
@@ -658,7 +658,7 @@ public final class t implements y2.n {
                                                 arrayList13 = arrayList26;
                                                 str14 = str2;
                                                 i21 = 1;
-                                            } else if (O2.equals("#EXT-X-INDEPENDENT-SEGMENTS")) {
+                                            } else if (J2.equals("#EXT-X-INDEPENDENT-SEGMENTS")) {
                                                 qVar2 = qVar;
                                                 str18 = str32;
                                                 i19 = i24;
@@ -671,7 +671,7 @@ public final class t implements y2.n {
                                                 arrayList13 = arrayList26;
                                                 str14 = str2;
                                                 z12 = true;
-                                            } else if (O2.equals("#EXT-X-ENDLIST")) {
+                                            } else if (J2.equals("#EXT-X-ENDLIST")) {
                                                 qVar2 = qVar;
                                                 str18 = str32;
                                                 i19 = i24;
@@ -684,9 +684,9 @@ public final class t implements y2.n {
                                                 arrayList13 = arrayList26;
                                                 str14 = str2;
                                                 z15 = true;
-                                            } else if (O2.startsWith("#EXT-X-RENDITION-REPORT")) {
-                                                long h10 = h(O2, b0, dVar);
-                                                Matcher a10 = o2.d.a(O2, c0, dVar);
+                                            } else if (J2.startsWith("#EXT-X-RENDITION-REPORT")) {
+                                                long h10 = h(J2, b0, dVar);
+                                                Matcher a10 = o2.d.a(J2, c0, dVar);
                                                 if (a10.find()) {
                                                     String group = a10.group(1);
                                                     group.getClass();
@@ -694,14 +694,14 @@ public final class t implements y2.n {
                                                 } else {
                                                     i13 = -1;
                                                 }
-                                                arrayList27.add(new j(Uri.parse(e2.e.f(uri2, j(O2, pattern2, hashMap3, dVar))), h10, i13));
-                                            } else if (O2.startsWith("#EXT-X-PRELOAD-HINT")) {
+                                                arrayList27.add(new j(Uri.parse(e2.e.f(uri2, j(J2, pattern2, hashMap3, dVar))), h10, i13));
+                                            } else if (J2.startsWith("#EXT-X-PRELOAD-HINT")) {
                                                 i iVar5 = iVar2;
-                                                if (iVar5 == null && "PART".equals(j(O2, o0, hashMap3, dVar))) {
+                                                if (iVar5 == null && "PART".equals(j(J2, o0, hashMap3, dVar))) {
                                                     b2.s sVar9 = sVar7;
-                                                    String j47 = j(O2, pattern2, hashMap3, dVar);
-                                                    long h11 = h(O2, g0, dVar);
-                                                    long h12 = h(O2, h0, dVar);
+                                                    String j47 = j(J2, pattern2, hashMap3, dVar);
+                                                    long h11 = h(J2, g0, dVar);
+                                                    long h12 = h(J2, h0, dVar);
                                                     String hexString = str16 == null ? null : str26 != null ? str26 : Long.toHexString(j21);
                                                     if (sVar9 != null || treeMap2.isEmpty()) {
                                                         sVar = sVar9;
@@ -793,13 +793,13 @@ public final class t implements y2.n {
                                                 i10 = i24;
                                                 b2.s sVar11 = sVar7;
                                                 i iVar7 = iVar2;
-                                                if (O2.startsWith("#EXT-X-PART")) {
+                                                if (J2.startsWith("#EXT-X-PART")) {
                                                     String hexString2 = str == null ? null : str26 != null ? str26 : Long.toHexString(j21);
-                                                    String j49 = j(O2, pattern2, hashMap3, dVar);
-                                                    long parseDouble2 = (long) (Double.parseDouble(j(O2, N, Collections.EMPTY_MAP, dVar)) * 1000000.0d);
-                                                    boolean f10 = f(O2, y0, dVar) | (z12 && arrayList26.isEmpty());
-                                                    boolean f11 = f(O2, z0, dVar);
-                                                    String i37 = i(O2, pattern, null, hashMap3, dVar);
+                                                    String j49 = j(J2, pattern2, hashMap3, dVar);
+                                                    long parseDouble2 = (long) (Double.parseDouble(j(J2, N, Collections.EMPTY_MAP, dVar)) * 1000000.0d);
+                                                    boolean f10 = f(J2, y0, dVar) | (z12 && arrayList26.isEmpty());
+                                                    boolean f11 = f(J2, z0, dVar);
+                                                    String i37 = i(J2, pattern, null, hashMap3, dVar);
                                                     if (i37 != null) {
                                                         String str34 = m0.a;
                                                         String[] split3 = i37.split("@", -1);
@@ -875,22 +875,22 @@ public final class t implements y2.n {
                                                     iVar2 = iVar7;
                                                 } else {
                                                     str5 = uri2;
-                                                    if (O2.startsWith("#EXT-X-DATERANGE")) {
-                                                        if (i(O2, E0, str2, hashMap3, dVar).equals("com.apple.hls.interstitial")) {
-                                                            String j51 = j(O2, D0, hashMap3, dVar);
-                                                            String i38 = i(O2, K0, null, hashMap3, dVar);
+                                                    if (J2.startsWith("#EXT-X-DATERANGE")) {
+                                                        if (i(J2, E0, str2, hashMap3, dVar).equals("com.apple.hls.interstitial")) {
+                                                            String j51 = j(J2, D0, hashMap3, dVar);
+                                                            String i38 = i(J2, K0, null, hashMap3, dVar);
                                                             Uri parse = i38 != null ? Uri.parse(i38) : null;
                                                             arrayList4 = arrayList26;
-                                                            String i39 = i(O2, L0, null, hashMap3, dVar);
+                                                            String i39 = i(J2, L0, null, hashMap3, dVar);
                                                             Uri parse2 = i39 != null ? Uri.parse(i39) : null;
                                                             sVar7 = sVar11;
-                                                            String i40 = i(O2, F0, null, hashMap3, dVar);
+                                                            String i40 = i(J2, F0, null, hashMap3, dVar);
                                                             long S2 = i40 != null ? m0.S(m0.V(i40)) : -9223372036854775807L;
-                                                            String i41 = i(O2, H0, null, hashMap3, dVar);
+                                                            String i41 = i(J2, H0, null, hashMap3, dVar);
                                                             long S3 = i41 != null ? m0.S(m0.V(i41)) : -9223372036854775807L;
                                                             ArrayList arrayList29 = new ArrayList();
                                                             str2 = str2;
-                                                            String i42 = i(O2, G0, null, hashMap3, dVar);
+                                                            String i42 = i(J2, G0, null, hashMap3, dVar);
                                                             if (i42 != null) {
                                                                 String str35 = m0.a;
                                                                 treeMap = treeMap2;
@@ -945,18 +945,18 @@ public final class t implements y2.n {
                                                                 treeMap = treeMap2;
                                                             }
                                                             arrayList27 = arrayList27;
-                                                            double g13 = g(O2, O, -1.0d, dVar);
+                                                            double g13 = g(J2, O, -1.0d, dVar);
                                                             long j52 = g13 >= 0.0d ? (long) (g13 * 1000000.0d) : -9223372036854775807L;
                                                             i iVar8 = iVar7;
-                                                            double g14 = g(O2, I0, -1.0d, dVar);
+                                                            double g14 = g(J2, I0, -1.0d, dVar);
                                                             long j53 = g14 >= 0.0d ? (long) (g14 * 1000000.0d) : -9223372036854775807L;
-                                                            boolean f12 = f(O2, J0, dVar);
-                                                            double g15 = g(O2, M0, Double.MIN_VALUE, dVar);
+                                                            boolean f12 = f(J2, J0, dVar);
+                                                            double g15 = g(J2, M0, Double.MIN_VALUE, dVar);
                                                             long j54 = g15 != Double.MIN_VALUE ? (long) (g15 * 1000000.0d) : -9223372036854775807L;
-                                                            double g16 = g(O2, N0, -1.0d, dVar);
+                                                            double g16 = g(J2, N0, -1.0d, dVar);
                                                             long j55 = g16 >= 0.0d ? (long) (g16 * 1000000.0d) : -9223372036854775807L;
                                                             ArrayList arrayList30 = new ArrayList();
-                                                            String i45 = i(O2, O0, null, hashMap3, dVar);
+                                                            String i45 = i(J2, O0, null, hashMap3, dVar);
                                                             if (i45 != null) {
                                                                 String str36 = m0.a;
                                                                 String[] split5 = i45.split(",", -1);
@@ -978,7 +978,7 @@ public final class t implements y2.n {
                                                                 str8 = str32;
                                                             }
                                                             ArrayList arrayList31 = new ArrayList();
-                                                            String i48 = i(O2, P0, null, hashMap3, dVar);
+                                                            String i48 = i(J2, P0, null, hashMap3, dVar);
                                                             if (i48 != null) {
                                                                 String str37 = m0.a;
                                                                 String[] split6 = i48.split(",", -1);
@@ -997,26 +997,26 @@ public final class t implements y2.n {
                                                                     split6 = strArr2;
                                                                 }
                                                             }
-                                                            Boolean valueOf = i(O2, Q0, null, hashMap3, dVar) != null ? Boolean.valueOf(!r4.equals("NO")) : null;
-                                                            String i51 = i(O2, R0, null, hashMap3, dVar);
+                                                            Boolean valueOf = i(J2, Q0, null, hashMap3, dVar) != null ? Boolean.valueOf(!r4.equals("NO")) : null;
+                                                            String i51 = i(J2, R0, null, hashMap3, dVar);
                                                             if (i51 != null) {
                                                                 if (i51.equals("RANGE")) {
                                                                     str19 = "RANGE";
                                                                 }
-                                                                i16 = i(O2, S0, null, hashMap3, dVar);
+                                                                i16 = i(J2, S0, null, hashMap3, dVar);
                                                                 if (i16 != null) {
                                                                     str10 = "PRIMARY";
                                                                     if (!i16.equals("PRIMARY")) {
                                                                         str10 = "HIGHLIGHT";
                                                                     }
-                                                                    double g17 = g(O2, T0, -1.0d, dVar);
+                                                                    double g17 = g(J2, T0, -1.0d, dVar);
                                                                     long j56 = g17 >= 0.0d ? (long) (g17 * 1000000.0d) : -9223372036854775807L;
                                                                     str11 = str19;
-                                                                    double g18 = g(O2, U0, -1.0d, dVar);
+                                                                    double g18 = g(J2, U0, -1.0d, dVar);
                                                                     long j57 = g18 >= 0.0d ? (long) (g18 * 1000000.0d) : -9223372036854775807L;
-                                                                    String i52 = i(O2, V0, null, hashMap3, dVar);
+                                                                    String i52 = i(J2, V0, null, hashMap3, dVar);
                                                                     ArrayList arrayList32 = new ArrayList();
-                                                                    String substring = O2.substring(17);
+                                                                    String substring = J2.substring(17);
                                                                     a2 = o2.d.a(substring, X0, dVar);
                                                                     while (true) {
                                                                         str12 = str11;
@@ -1133,8 +1133,8 @@ public final class t implements y2.n {
                                                                                     break;
                                                                                 default:
                                                                                     matcher = a2;
-                                                                                    String j58 = a6.j(1, 0, group2);
-                                                                                    String u10 = r.c.u(j58, "=");
+                                                                                    String j58 = k3.j(1, 0, group2);
+                                                                                    String u10 = r4.c.u(j58, "=");
                                                                                     int length4 = u10.length() + substring.indexOf(u10);
                                                                                     z10 = f12;
                                                                                     String substring2 = substring.substring(length4, (substring.length() == length4 + 1 ? 1 : 2) + length4);
@@ -1450,16 +1450,16 @@ public final class t implements y2.n {
                                                                     }
                                                                 }
                                                                 str10 = null;
-                                                                double g172 = g(O2, T0, -1.0d, dVar);
+                                                                double g172 = g(J2, T0, -1.0d, dVar);
                                                                 if (g172 >= 0.0d) {
                                                                 }
                                                                 str11 = str19;
-                                                                double g182 = g(O2, U0, -1.0d, dVar);
+                                                                double g182 = g(J2, U0, -1.0d, dVar);
                                                                 if (g182 >= 0.0d) {
                                                                 }
-                                                                String i522 = i(O2, V0, null, hashMap3, dVar);
+                                                                String i522 = i(J2, V0, null, hashMap3, dVar);
                                                                 ArrayList arrayList322 = new ArrayList();
-                                                                String substring3 = O2.substring(17);
+                                                                String substring3 = J2.substring(17);
                                                                 a2 = o2.d.a(substring3, X0, dVar);
                                                                 while (true) {
                                                                     str12 = str11;
@@ -1474,20 +1474,20 @@ public final class t implements y2.n {
                                                                 }
                                                             }
                                                             str19 = null;
-                                                            i16 = i(O2, S0, null, hashMap3, dVar);
+                                                            i16 = i(J2, S0, null, hashMap3, dVar);
                                                             if (i16 != null) {
                                                             }
                                                             str10 = null;
-                                                            double g1722 = g(O2, T0, -1.0d, dVar);
+                                                            double g1722 = g(J2, T0, -1.0d, dVar);
                                                             if (g1722 >= 0.0d) {
                                                             }
                                                             str11 = str19;
-                                                            double g1822 = g(O2, U0, -1.0d, dVar);
+                                                            double g1822 = g(J2, U0, -1.0d, dVar);
                                                             if (g1822 >= 0.0d) {
                                                             }
-                                                            String i5222 = i(O2, V0, null, hashMap3, dVar);
+                                                            String i5222 = i(J2, V0, null, hashMap3, dVar);
                                                             ArrayList arrayList3222 = new ArrayList();
-                                                            String substring32 = O2.substring(17);
+                                                            String substring32 = J2.substring(17);
                                                             a2 = o2.d.a(substring32, X0, dVar);
                                                             while (true) {
                                                                 str12 = str11;
@@ -1512,7 +1512,7 @@ public final class t implements y2.n {
                                                     treeMap = treeMap2;
                                                     linkedHashMap2 = linkedHashMap;
                                                     arrayList5 = arrayList12;
-                                                    if (O2.startsWith("#")) {
+                                                    if (J2.startsWith("#")) {
                                                         str3 = str8;
                                                         j10 = j14;
                                                         i12 = i21;
@@ -1547,7 +1547,7 @@ public final class t implements y2.n {
                                                     } else {
                                                         String hexString3 = str == null ? null : str26 != null ? str26 : Long.toHexString(j21);
                                                         long j67 = j21 + 1;
-                                                        String k10 = k(O2, hashMap3, dVar);
+                                                        String k10 = k(J2, hashMap3, dVar);
                                                         k kVar6 = (k) hashMap7.get(k10);
                                                         if (j14 == -1) {
                                                             j12 = 0;
@@ -1761,13 +1761,13 @@ public final class t implements y2.n {
         boolean z11 = false;
         boolean z12 = false;
         while (true) {
-            boolean M2 = g3Var.M();
+            boolean H2 = g3Var.H();
             Pattern pattern = l0;
             ArrayList arrayList17 = arrayList13;
             boolean z13 = z11;
             Pattern pattern2 = q0;
             boolean z14 = z12;
-            if (!M2) {
+            if (!H2) {
                 ArrayList arrayList18 = arrayList14;
                 ArrayList arrayList19 = arrayList16;
                 ArrayList arrayList20 = arrayList10;
@@ -1814,7 +1814,7 @@ public final class t implements y2.n {
                     String i20 = i(str7, L, null, hashMap5, dVar);
                     b2.v vVar = new b2.v();
                     b2.w wVar3 = wVar2;
-                    vVar.a = a1.g.D(j10, ":", j11);
+                    vVar.a = a1.g.C(j10, ":", j11);
                     vVar.b = j11;
                     vVar.q = v0.n("application/x-mpegURL");
                     boolean f7 = f(str7, w0, dVar);
@@ -2037,20 +2037,20 @@ public final class t implements y2.n {
                 }
                 return new q(uri.toString(), arrayList19, arrayList25, arrayList20, arrayList21, arrayList22, arrayList17, wVar2, z13 ? Collections.EMPTY_LIST : arrayList27, z14, hashMap5, arrayList23);
             }
-            String O2 = g3Var.O();
+            String J2 = g3Var.J();
             ArrayList arrayList34 = arrayList12;
-            if (O2.startsWith("#EXT")) {
-                arrayList16.add(O2);
+            if (J2.startsWith("#EXT")) {
+                arrayList16.add(J2);
             }
-            boolean startsWith = O2.startsWith("#EXT-X-I-FRAME-STREAM-INF");
+            boolean startsWith = J2.startsWith("#EXT-X-I-FRAME-STREAM-INF");
             ArrayList arrayList35 = arrayList16;
-            if (O2.startsWith("#EXT-X-DEFINE")) {
-                String i29 = i(O2, pattern2, null, hashMap5, dVar);
+            if (J2.startsWith("#EXT-X-DEFINE")) {
+                String i29 = i(J2, pattern2, null, hashMap5, dVar);
                 if (i29 != null) {
                     l(i29, hashMap5);
-                    hashMap5.put(i29, j(O2, B0, hashMap5, dVar));
+                    hashMap5.put(i29, j(J2, B0, hashMap5, dVar));
                 } else {
-                    String j14 = j(O2, r0, hashMap5, dVar);
+                    String j14 = j(J2, r0, hashMap5, dVar);
                     l(j14, hashMap5);
                     String queryParameter = uri.getQueryParameter(j14);
                     if (queryParameter == null) {
@@ -2058,7 +2058,7 @@ public final class t implements y2.n {
                     }
                     hashMap5.put(j14, queryParameter);
                 }
-            } else if (O2.equals("#EXT-X-INDEPENDENT-SEGMENTS")) {
+            } else if (J2.equals("#EXT-X-INDEPENDENT-SEGMENTS")) {
                 arrayList6 = arrayList14;
                 arrayList5 = arrayList10;
                 arrayList4 = arrayList11;
@@ -2076,16 +2076,16 @@ public final class t implements y2.n {
                 arrayList11 = arrayList4;
                 arrayList10 = arrayList5;
                 arrayList14 = arrayList6;
-            } else if (O2.startsWith("#EXT-X-MEDIA")) {
-                arrayList14.add(O2);
-            } else if (O2.startsWith("#EXT-X-SESSION-KEY")) {
-                b2.r c11 = c(O2, i(O2, j0, "identity", hashMap5, dVar), hashMap5, dVar);
+            } else if (J2.startsWith("#EXT-X-MEDIA")) {
+                arrayList14.add(J2);
+            } else if (J2.startsWith("#EXT-X-SESSION-KEY")) {
+                b2.r c11 = c(J2, i(J2, j0, "identity", hashMap5, dVar), hashMap5, dVar);
                 if (c11 != null) {
-                    String j15 = j(O2, i0, hashMap5, dVar);
+                    String j15 = j(J2, i0, hashMap5, dVar);
                     arrayList15.add(new b2.s(("SAMPLE-AES-CENC".equals(j15) || "SAMPLE-AES-CTR".equals(j15)) ? "cenc" : "cbcs", true, c11));
                 }
-            } else if (O2.startsWith("#EXT-X-STREAM-INF") || startsWith) {
-                boolean contains = z13 | O2.contains("CLOSED-CAPTIONS=NONE");
+            } else if (J2.startsWith("#EXT-X-STREAM-INF") || startsWith) {
+                boolean contains = z13 | J2.contains("CLOSED-CAPTIONS=NONE");
                 if (startsWith) {
                     z10 = contains;
                     i11 = 16384;
@@ -2093,8 +2093,8 @@ public final class t implements y2.n {
                     z10 = contains;
                     i11 = 0;
                 }
-                int parseInt2 = Integer.parseInt(j(O2, n, Collections.EMPTY_MAP, dVar));
-                Matcher a10 = o2.d.a(O2, c, dVar);
+                int parseInt2 = Integer.parseInt(j(J2, n, Collections.EMPTY_MAP, dVar));
+                Matcher a10 = o2.d.a(J2, c, dVar);
                 if (a10.find()) {
                     arrayList3 = arrayList15;
                     String group = a10.group(1);
@@ -2105,11 +2105,11 @@ public final class t implements y2.n {
                     i12 = -1;
                 }
                 arrayList4 = arrayList11;
-                String i30 = i(O2, s, null, hashMap5, dVar);
+                String i30 = i(J2, s, null, hashMap5, dVar);
                 arrayList5 = arrayList10;
-                String i31 = i(O2, v, null, hashMap5, dVar);
+                String i31 = i(J2, v, null, hashMap5, dVar);
                 arrayList6 = arrayList14;
-                String i32 = i(O2, w, null, hashMap5, dVar);
+                String i32 = i(J2, w, null, hashMap5, dVar);
                 if (i32 != null) {
                     String str11 = m0.a;
                     String[] split2 = i32.split(",", 2)[0].split("/", -1);
@@ -2150,7 +2150,7 @@ public final class t implements y2.n {
                                 nVar2 = x10;
                                 if (sb3.length() > 0) {
                                     sb2 = sb3.toString();
-                                    i31 = sb2 != null ? a1.g.D(str4, ",", sb2) : str4;
+                                    i31 = sb2 != null ? a1.g.C(str4, ",", sb2) : str4;
                                     nVar = nVar2;
                                 }
                             }
@@ -2161,12 +2161,12 @@ public final class t implements y2.n {
                         } else {
                             nVar = null;
                         }
-                        boolean equals = TextUtils.equals(i(O2, y, null, hashMap5, dVar), "true");
-                        String i35 = i(O2, x, null, hashMap5, dVar);
-                        String i36 = i(O2, E, null, hashMap5, dVar);
-                        String i37 = i(O2, F, null, hashMap5, dVar);
-                        String i38 = i(O2, G, null, hashMap5, dVar);
-                        i14 = i(O2, H, null, hashMap5, dVar);
+                        boolean equals = TextUtils.equals(i(J2, y, null, hashMap5, dVar), "true");
+                        String i35 = i(J2, x, null, hashMap5, dVar);
+                        String i36 = i(J2, E, null, hashMap5, dVar);
+                        String i37 = i(J2, F, null, hashMap5, dVar);
+                        String i38 = i(J2, G, null, hashMap5, dVar);
+                        i14 = i(J2, H, null, hashMap5, dVar);
                         if (i14 != null) {
                             str6 = i36;
                             String[] split3 = i14.split("x", -1);
@@ -2186,21 +2186,21 @@ public final class t implements y2.n {
                             i16 = -1;
                         }
                         ArrayList arrayList36 = arrayList9;
-                        String i39 = i(O2, I, null, hashMap5, dVar);
+                        String i39 = i(J2, I, null, hashMap5, dVar);
                         float parseFloat = i39 != null ? Float.parseFloat(i39) : -1.0f;
-                        String i40 = i(O2, J, null, hashMap5, dVar);
-                        String i41 = i(O2, d, null, hashMap5, dVar);
-                        String i42 = i(O2, e, null, hashMap5, dVar);
-                        String i43 = i(O2, f, null, hashMap5, dVar);
-                        String i44 = i(O2, h, null, hashMap5, dVar);
-                        String i45 = i(O2, K, null, hashMap5, dVar);
+                        String i40 = i(J2, J, null, hashMap5, dVar);
+                        String i41 = i(J2, d, null, hashMap5, dVar);
+                        String i42 = i(J2, e, null, hashMap5, dVar);
+                        String i43 = i(J2, f, null, hashMap5, dVar);
+                        String i44 = i(J2, h, null, hashMap5, dVar);
+                        String i45 = i(J2, K, null, hashMap5, dVar);
                         if (startsWith) {
-                            g10 = e2.e.g(uri2, j(O2, pattern, hashMap5, dVar));
+                            g10 = e2.e.g(uri2, j(J2, pattern, hashMap5, dVar));
                         } else {
-                            if (!g3Var.M()) {
+                            if (!g3Var.H()) {
                                 throw w0.b("#EXT-X-STREAM-INF must be followed by another line", null);
                             }
-                            g10 = e2.e.g(uri2, k(g3Var.O(), hashMap5, dVar));
+                            g10 = e2.e.g(uri2, k(g3Var.J(), hashMap5, dVar));
                         }
                         Uri uri4 = g10;
                         b2.v vVar2 = new b2.v();
@@ -2261,24 +2261,24 @@ public final class t implements y2.n {
                     if (sb2 != null) {
                     }
                     nVar = nVar2;
-                    boolean equals2 = TextUtils.equals(i(O2, y, null, hashMap5, dVar), "true");
-                    String i352 = i(O2, x, null, hashMap5, dVar);
-                    String i362 = i(O2, E, null, hashMap5, dVar);
-                    String i372 = i(O2, F, null, hashMap5, dVar);
-                    String i382 = i(O2, G, null, hashMap5, dVar);
-                    i14 = i(O2, H, null, hashMap5, dVar);
+                    boolean equals2 = TextUtils.equals(i(J2, y, null, hashMap5, dVar), "true");
+                    String i352 = i(J2, x, null, hashMap5, dVar);
+                    String i362 = i(J2, E, null, hashMap5, dVar);
+                    String i372 = i(J2, F, null, hashMap5, dVar);
+                    String i382 = i(J2, G, null, hashMap5, dVar);
+                    i14 = i(J2, H, null, hashMap5, dVar);
                     if (i14 != null) {
                     }
                     ArrayList arrayList362 = arrayList9;
-                    String i392 = i(O2, I, null, hashMap5, dVar);
+                    String i392 = i(J2, I, null, hashMap5, dVar);
                     if (i392 != null) {
                     }
-                    String i402 = i(O2, J, null, hashMap5, dVar);
-                    String i412 = i(O2, d, null, hashMap5, dVar);
-                    String i422 = i(O2, e, null, hashMap5, dVar);
-                    String i432 = i(O2, f, null, hashMap5, dVar);
-                    String i442 = i(O2, h, null, hashMap5, dVar);
-                    String i452 = i(O2, K, null, hashMap5, dVar);
+                    String i402 = i(J2, J, null, hashMap5, dVar);
+                    String i412 = i(J2, d, null, hashMap5, dVar);
+                    String i422 = i(J2, e, null, hashMap5, dVar);
+                    String i432 = i(J2, f, null, hashMap5, dVar);
+                    String i442 = i(J2, h, null, hashMap5, dVar);
+                    String i452 = i(J2, K, null, hashMap5, dVar);
                     if (startsWith) {
                     }
                     Uri uri42 = g10;
@@ -2318,24 +2318,24 @@ public final class t implements y2.n {
                     arrayList14 = arrayList6;
                 }
                 nVar = null;
-                boolean equals22 = TextUtils.equals(i(O2, y, null, hashMap5, dVar), "true");
-                String i3522 = i(O2, x, null, hashMap5, dVar);
-                String i3622 = i(O2, E, null, hashMap5, dVar);
-                String i3722 = i(O2, F, null, hashMap5, dVar);
-                String i3822 = i(O2, G, null, hashMap5, dVar);
-                i14 = i(O2, H, null, hashMap5, dVar);
+                boolean equals22 = TextUtils.equals(i(J2, y, null, hashMap5, dVar), "true");
+                String i3522 = i(J2, x, null, hashMap5, dVar);
+                String i3622 = i(J2, E, null, hashMap5, dVar);
+                String i3722 = i(J2, F, null, hashMap5, dVar);
+                String i3822 = i(J2, G, null, hashMap5, dVar);
+                i14 = i(J2, H, null, hashMap5, dVar);
                 if (i14 != null) {
                 }
                 ArrayList arrayList3622 = arrayList9;
-                String i3922 = i(O2, I, null, hashMap5, dVar);
+                String i3922 = i(J2, I, null, hashMap5, dVar);
                 if (i3922 != null) {
                 }
-                String i4022 = i(O2, J, null, hashMap5, dVar);
-                String i4122 = i(O2, d, null, hashMap5, dVar);
-                String i4222 = i(O2, e, null, hashMap5, dVar);
-                String i4322 = i(O2, f, null, hashMap5, dVar);
-                String i4422 = i(O2, h, null, hashMap5, dVar);
-                String i4522 = i(O2, K, null, hashMap5, dVar);
+                String i4022 = i(J2, J, null, hashMap5, dVar);
+                String i4122 = i(J2, d, null, hashMap5, dVar);
+                String i4222 = i(J2, e, null, hashMap5, dVar);
+                String i4322 = i(J2, f, null, hashMap5, dVar);
+                String i4422 = i(J2, h, null, hashMap5, dVar);
+                String i4522 = i(J2, K, null, hashMap5, dVar);
                 if (startsWith) {
                 }
                 Uri uri422 = g10;

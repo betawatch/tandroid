@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class kp extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -91,14 +91,14 @@ public final class kp extends org.telegram.ui.ActionBar.n2 implements Notificati
             return;
         }
         if (!ChatObject.isChannel(chat)) {
-            getMessagesController().convertToMegaGroup(getParentActivity(), chat.id, this, new m4.y0(20, this, n2Var));
+            getMessagesController().convertToMegaGroup(getParentActivity(), chat.id, this, new m4.w0(21, this, n2Var));
             return;
         }
         org.telegram.ui.ActionBar.b2[] b2VarArr = {n2Var == null ? new org.telegram.ui.ActionBar.b2(getParentActivity(), 3, null) : null};
         TLRPC.TL_channels_setDiscussionGroup tL_channels_setDiscussionGroup = new TLRPC.TL_channels_setDiscussionGroup();
         tL_channels_setDiscussionGroup.broadcast = MessagesController.getInputChannel(this.f);
         tL_channels_setDiscussionGroup.group = MessagesController.getInputChannel(chat);
-        AndroidUtilities.runOnUIThread(new ap(this, b2VarArr, getConnectionsManager().sendRequest(tL_channels_setDiscussionGroup, new ai.x2(this, b2VarArr, chat, n2Var, 10), 64), 1), 500L);
+        AndroidUtilities.runOnUIThread(new ap(this, b2VarArr, getConnectionsManager().sendRequest(tL_channels_setDiscussionGroup, new ai.y2(this, b2VarArr, chat, n2Var, 10), 64), 1), 500L);
     }
 
     public final void Z() {
@@ -139,7 +139,7 @@ public final class kp extends org.telegram.ui.ActionBar.n2 implements Notificati
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         String formatString = !ChatObject.isPublic(chat) ? LocaleController.formatString("DiscussionLinkGroupPublicPrivateAlert", R.string.DiscussionLinkGroupPublicPrivateAlert, chat.title, this.f.title) : !ChatObject.isPublic(this.f) ? LocaleController.formatString("DiscussionLinkGroupPrivateAlert", R.string.DiscussionLinkGroupPrivateAlert, chat.title, this.f.title) : LocaleController.formatString("DiscussionLinkGroupPublicAlert", R.string.DiscussionLinkGroupPublicAlert, chat.title, this.f.title);
         if (chatFull.hidden_prehistory) {
-            formatString = org.telegram.messenger.q.g(R.string.DiscussionLinkGroupAlertHistory, r.c.i(formatString, "\n\n"));
+            formatString = org.telegram.messenger.g0.g(R.string.DiscussionLinkGroupAlertHistory, r4.c.i(formatString, "\n\n"));
         }
         textView.setText(AndroidUtilities.replaceTags(formatString));
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
@@ -237,7 +237,7 @@ public final class kp extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.actionBar.setActionBarMenuOnItemClick(new ga(this, 5));
         org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         a2.F();
-        a2.H = new ig.a2(this, 2);
+        a2.H = new ig.c2(this, 2);
         this.c = a2;
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         this.e = new jp(this, context);

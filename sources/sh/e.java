@@ -17,8 +17,8 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dq;
 import zf.p;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class e extends rh.e implements Drawable.Callback, ne.d {
     public final String b;
     public final Drawable d;
@@ -67,11 +67,11 @@ public final class e extends rh.e implements Drawable.Callback, ne.d {
         dqVar.setBounds(0, 0, i10, i11);
         int x02 = h6.x0(null, h6.a7, false);
         ne.b bVar = this.s;
-        int f11 = i0.b.f(bVar.e, x02, TLObject.FLAG_30);
+        int f11 = i0.a.f(bVar.e, x02, TLObject.FLAG_30);
         Paint paint = this.e;
         paint.setColor(f11);
         canvas.drawRoundRect(0.0f, 0.0f, f7, f10, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), paint);
-        int f12 = i0.b.f(bVar.e, h6.x0(null, h6.o7, false), -1);
+        int f12 = i0.a.f(bVar.e, h6.x0(null, h6.o7, false), -1);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         a5.a aVar = this.c;
         aVar.getClass();

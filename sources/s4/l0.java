@@ -8,7 +8,7 @@ import java.util.List;
 import m.g3;
 import org.telegram.ui.Components.gl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class l0 {
     public l2.f a;
@@ -65,10 +65,10 @@ public abstract class l0 {
             ih.g gVar = (ih.g) g3Var.b;
             int indexOfChild = gVar.a.indexOfChild(view);
             if (indexOfChild == -1) {
-                g3Var.X(view);
+                g3Var.S(view);
             } else if (dVar.D(indexOfChild)) {
                 dVar.F(indexOfChild);
-                g3Var.X(view);
+                g3Var.S(view);
                 gVar.a(indexOfChild);
             } else {
                 z10 = false;

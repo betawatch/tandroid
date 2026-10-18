@@ -11,7 +11,7 @@ import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r71 extends Drawable {
     public static final int[] r = {10, 7, 26, 16, 10, 25};
@@ -103,7 +103,7 @@ public final class r71 extends Drawable {
         Rect bounds = getBounds();
         int width = ((bounds.width() - AndroidUtilities.dp(32.0f)) / 2) + bounds.left;
         int height = ((bounds.height() - AndroidUtilities.dp(32.0f)) / 2) + bounds.top;
-        int A = this.d ? org.telegram.messenger.q.A(16.0f, bounds.width() / 4, width) : org.telegram.messenger.q.C(16.0f, bounds.width() / 4, width);
+        int A = this.d ? org.telegram.messenger.g0.A(16.0f, bounds.width() / 4, width) : org.telegram.messenger.g0.C(16.0f, bounds.width() / 4, width);
         canvas.save();
         if (this.e) {
             if (this.f == null) {

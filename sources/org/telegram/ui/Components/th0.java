@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class th0 extends FrameLayout {
     public final w9 E;
@@ -97,7 +97,7 @@ public final class th0 extends FrameLayout {
         textView2.setMaxLines(4);
         textView2.setEllipsize(truncateAt);
         rVar.addView(textView2, w7.z5.t(-2, -2, 1, 0, 9, 0, 0));
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, null, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, null, true);
         this.H = f7;
         rVar.addView(f7, w7.z5.t(-1, 44, 7, 0, 19, 0, 0));
         TextView textView3 = new TextView(context);
@@ -139,7 +139,7 @@ public final class th0 extends FrameLayout {
                     if (arrayList.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        MessageObject messageObject = (MessageObject) i0.a.h(1, arrayList);
+                        MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
                         tL_channels_searchPosts.offset_rate = this.f;
                         tL_channels_searchPosts.offset_id = messageObject.getRealId();
                         tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
@@ -149,7 +149,7 @@ public final class th0 extends FrameLayout {
                     if (arrayList2.isEmpty()) {
                         tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                     } else {
-                        MessageObject messageObject2 = (MessageObject) i0.a.h(1, arrayList2);
+                        MessageObject messageObject2 = (MessageObject) i2.d.h(1, arrayList2);
                         tL_channels_searchPosts.offset_rate = this.r;
                         tL_channels_searchPosts.offset_id = messageObject2.getRealId();
                         tL_channels_searchPosts.offset_peer = messagesController.getInputPeer(messageObject2.messageOwner.peer_id);
@@ -283,13 +283,13 @@ public final class th0 extends FrameLayout {
                 int i17 = i16 / 60;
                 int i18 = i16 - (i17 * 60);
                 dVar.setVisibility(0);
-                dVar.g(ai.ld.S0(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.U), true, true);
+                dVar.g(ai.md.S0(LocaleController.formatPluralStringComma("SearchPostsButtonPay", (int) this.d.stars_amount), 1.13f, this.U), true, true);
                 int i19 = R.string.SearchPostsFreeSearchUnlocksIn;
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(i15 > 0 ? a1.g.m(i15, ":") : "");
-                sb2.append(i17 < 10 ? i0.a.j(i17, "0") : Integer.valueOf(i17));
+                sb2.append(i17 < 10 ? i2.d.j(i17, "0") : Integer.valueOf(i17));
                 sb2.append(":");
-                sb2.append(i18 < 10 ? i0.a.j(i18, "0") : Integer.valueOf(i18));
+                sb2.append(i18 < 10 ? i2.d.j(i18, "0") : Integer.valueOf(i18));
                 dVar.f(LocaleController.formatString(i19, sb2.toString()), true);
                 dVar.e.r(false, true);
                 dVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.rh0
@@ -420,7 +420,7 @@ public final class th0 extends FrameLayout {
         }
         this.P = true;
         MessagesController.getGlobalMainSettings().edit().putInt("searchpostsnew", MessagesController.getGlobalMainSettings().getInt("searchpostsnew", 0) + 1).apply();
-        ai.fa.y(this.b, false).p();
+        ai.ga.y(this.b, false).p();
     }
 
     @Override // android.view.View, android.view.ViewParent

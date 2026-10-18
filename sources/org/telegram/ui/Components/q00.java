@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q00 extends View {
     public float E;
@@ -99,7 +99,7 @@ public final class q00 extends View {
         ofFloat.addUpdateListener(new k00(this, 1));
         animatorSet.playTogether(ofFloat);
         animatorSet.setDuration(50L);
-        animatorSet.addListener(new ai.ge(this, i10, f7, 1));
+        animatorSet.addListener(new ai.he(this, i10, f7, 1));
         animatorSet.start();
     }
 
@@ -263,11 +263,11 @@ public final class q00 extends View {
             }
             int i30 = this.b.a;
             if (i30 == i10 || i30 == i11) {
-                textPaint6.setColor(i0.b.f(s00Var.P, i0.b.f(s00Var.w0, org.telegram.ui.ActionBar.h6.w0(i14, d6Var2), org.telegram.ui.ActionBar.h6.w0(i13, d6Var2)), i0.b.f(s00Var.w0, w03, w04)));
+                textPaint6.setColor(i0.a.f(s00Var.P, i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.h6.w0(i14, d6Var2), org.telegram.ui.ActionBar.h6.w0(i13, d6Var2)), i0.a.f(s00Var.w0, w03, w04)));
             }
-            textPaint6.setColor(i0.b.f(s00Var.w0, w03, w04));
+            textPaint6.setColor(i0.a.f(s00Var.w0, w03, w04));
         } else if ((s00Var.O || i25 != -1) && (i26 == i10 || i26 == i11)) {
-            textPaint6.setColor(i0.b.f(s00Var.P, org.telegram.ui.ActionBar.h6.w0(i14, d6Var2), org.telegram.ui.ActionBar.h6.w0(i12, d6Var2)));
+            textPaint6.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.h6.w0(i14, d6Var2), org.telegram.ui.ActionBar.h6.w0(i12, d6Var2)));
         } else {
             textPaint6.setColor(org.telegram.ui.ActionBar.h6.w0(i12, d6Var2));
         }
@@ -300,7 +300,7 @@ public final class q00 extends View {
         float measuredWidth = (getMeasuredWidth() - this.d) / 2.0f;
         if (this.G) {
             float f22 = this.x;
-            measuredWidth = com.google.android.gms.internal.cast.a6.x(1.0f, f22, this.F, measuredWidth * f22);
+            measuredWidth = com.google.android.gms.internal.play_billing.k3.y(1.0f, f22, this.F, measuredWidth * f22);
         }
         if (TextUtils.equals(this.b.b, this.h)) {
             str = format;
@@ -406,7 +406,7 @@ public final class q00 extends View {
             if (s00Var.f0 < 0) {
                 textPaint5.setColor(org.telegram.ui.ActionBar.h6.w0(s00Var.b0, d6Var));
             } else {
-                textPaint5.setColor(i0.b.f(s00Var.w0, org.telegram.ui.ActionBar.h6.w0(s00Var.b0, d6Var), org.telegram.ui.ActionBar.h6.w0(s00Var.f0, d6Var)));
+                textPaint5.setColor(i0.a.f(s00Var.w0, org.telegram.ui.ActionBar.h6.w0(s00Var.b0, d6Var), org.telegram.ui.ActionBar.h6.w0(s00Var.f0, d6Var)));
             }
             if (org.telegram.ui.ActionBar.h6.d1(i15) && org.telegram.ui.ActionBar.h6.d1(i16)) {
                 int w05 = org.telegram.ui.ActionBar.h6.w0(i15, d6Var);
@@ -419,7 +419,7 @@ public final class q00 extends View {
                         i23 = i16;
                         paint2 = paint;
                     }
-                    paint2.setColor(i0.b.f(s00Var.P, org.telegram.ui.ActionBar.h6.w0(i23, d6Var), w05));
+                    paint2.setColor(i0.a.f(s00Var.P, org.telegram.ui.ActionBar.h6.w0(i23, d6Var), w05));
                 }
                 paint2 = paint;
                 paint2.setColor(w05);
@@ -435,7 +435,7 @@ public final class q00 extends View {
                 f26 = (f26 * f28) + ((f14 - f28) * f27);
             }
             float dp3 = (z15 && this.R == null) ? (f13 - this.a0) + f15 + f26 + AndroidUtilities.dp(5.0f) : f13 + f26 + AndroidUtilities.dp(5.0f);
-            int B = org.telegram.messenger.wh.B(17.333f, getMeasuredHeight(), 2);
+            int A = org.telegram.messenger.kk.A(17.333f, getMeasuredHeight(), 2);
             if (z10 || ((!s00Var.n && s00Var.w == f7) || str2 != null)) {
                 paint2.setAlpha(255);
             } else {
@@ -453,8 +453,8 @@ public final class q00 extends View {
                         float f33 = this.x;
                         f11 = (f11 * f33) + ((f14 - f33) * f32);
                     }
-                    float f34 = B;
-                    float dp4 = AndroidUtilities.dp(17.333f) + B;
+                    float f34 = A;
+                    float dp4 = AndroidUtilities.dp(17.333f) + A;
                     rectF = this.f;
                     rectF.set(dp3, f34, f16 + dp3, dp4);
                     if (!z12 || z13) {
@@ -519,7 +519,7 @@ public final class q00 extends View {
                         if (!z10) {
                             textPaint5.setAlpha((int) ((f14 - s00Var.w) * 255.0f));
                         }
-                        canvas2.drawText(str2, ((rectF.width() - f11) / 2.0f) + rectF.left, AndroidUtilities.dp(12.5f) + B, textPaint5);
+                        canvas2.drawText(str2, ((rectF.width() - f11) / 2.0f) + rectF.left, AndroidUtilities.dp(12.5f) + A, textPaint5);
                     }
                     if (!z12 || z13) {
                         canvas2.restore();
@@ -540,8 +540,8 @@ public final class q00 extends View {
             f16 = i22;
             if (z14) {
             }
-            float f342 = B;
-            float dp42 = AndroidUtilities.dp(17.333f) + B;
+            float f342 = A;
+            float dp42 = AndroidUtilities.dp(17.333f) + A;
             rectF = this.f;
             rectF.set(dp3, f342, f16 + dp3, dp42);
             if (!z12) {
@@ -597,7 +597,7 @@ public final class q00 extends View {
                 w02 = org.telegram.ui.ActionBar.h6.w0(s00Var.W, d6Var);
                 i24 = s00Var.e0;
                 if (i24 >= 0) {
-                    w02 = i0.b.f(s00Var.w0, w02, org.telegram.ui.ActionBar.h6.w0(i24, d6Var));
+                    w02 = i0.a.f(s00Var.w0, w02, org.telegram.ui.ActionBar.h6.w0(i24, d6Var));
                 }
                 if (s00Var.u0 != w02) {
                     s00Var.u0 = w02;

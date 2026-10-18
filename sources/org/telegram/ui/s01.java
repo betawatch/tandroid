@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s01 {
     public final int a;
@@ -34,7 +34,7 @@ public final class s01 {
         } else {
             ArrayList arrayList = new ArrayList();
             HashSet hashSet = new HashSet();
-            String j10 = i0.a.j(i11, "");
+            String j10 = i2.d.j(i11, "");
             for (int i12 = 0; i12 < j10.length(); i12++) {
                 int charAt = j10.charAt(i12) - '0';
                 if (charAt >= 0 && charAt <= 9) {

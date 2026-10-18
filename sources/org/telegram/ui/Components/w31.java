@@ -45,7 +45,7 @@ import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.ad1;
 import org.telegram.ui.xh1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w31 implements Runnable {
     public final /* synthetic */ int a;
@@ -188,7 +188,7 @@ public final /* synthetic */ class w31 implements Runnable {
                 org.telegram.ui.xm0.X((org.telegram.ui.xm0) obj2, (SecureDocument) obj, i12);
                 break;
             case 7:
-                org.telegram.ui.fo0 fo0Var = (org.telegram.ui.fo0) obj2;
+                org.telegram.ui.go0 go0Var = (org.telegram.ui.go0) obj2;
                 Intent intent = (Intent) obj;
                 if (i12 != -1) {
                     z10 = true;
@@ -199,9 +199,9 @@ public final /* synthetic */ class w31 implements Runnable {
                         sb2.append(status != null ? status.b : "");
                         FileLog.e(sb2.toString());
                     }
-                    fo0Var.H0(z10, false);
-                    fo0Var.D0(false);
-                    frameLayout = fo0Var.P;
+                    go0Var.H0(z10, false);
+                    go0Var.D0(false);
+                    frameLayout = go0Var.P;
                     if (frameLayout == null) {
                         frameLayout.setClickable(z10);
                         break;
@@ -216,33 +216,33 @@ public final /* synthetic */ class w31 implements Runnable {
                             JSONObject jSONObject2 = jSONObject.getJSONObject("tokenizationData");
                             jSONObject2.getString(TeXSymbolParser.TYPE_ATTR);
                             String string = jSONObject2.getString("token");
-                            if (fo0Var.K0 == null && fo0Var.M0 == null) {
-                                u2.c a2 = w7.r8.a(string);
-                                fo0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a2.c, (String) a2.b);
+                            if (go0Var.K0 == null && go0Var.M0 == null) {
+                                t0.h a2 = w7.r8.a(string);
+                                go0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a2.c, (String) a2.b);
                                 wc.a aVar = (wc.a) a2.d;
-                                fo0Var.x0 = aVar.a() + " *" + aVar.b();
-                                fo0Var.t0();
+                                go0Var.x0 = aVar.a() + " *" + aVar.b();
+                                go0Var.t0();
                             }
                             TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay = new TLRPC.TL_inputPaymentCredentialsGooglePay();
-                            fo0Var.J0 = tL_inputPaymentCredentialsGooglePay;
+                            go0Var.J0 = tL_inputPaymentCredentialsGooglePay;
                             tL_inputPaymentCredentialsGooglePay.payment_token = new TLRPC.TL_dataJSON();
-                            fo0Var.J0.payment_token.data = jSONObject2.toString();
+                            go0Var.J0.payment_token.data = jSONObject2.toString();
                             String optString = jSONObject.optString("description");
                             if (TextUtils.isEmpty(optString)) {
-                                fo0Var.x0 = "Android Pay";
+                                go0Var.x0 = "Android Pay";
                             } else {
-                                fo0Var.x0 = optString;
+                                go0Var.x0 = optString;
                             }
-                            fo0Var.t0();
+                            go0Var.t0();
                         } catch (JSONException e) {
                             FileLog.e(e);
                         }
                     }
                 }
                 z10 = true;
-                fo0Var.H0(z10, false);
-                fo0Var.D0(false);
-                frameLayout = fo0Var.P;
+                go0Var.H0(z10, false);
+                go0Var.D0(false);
+                frameLayout = go0Var.P;
                 if (frameLayout == null) {
                 }
                 break;
@@ -289,7 +289,7 @@ public final /* synthetic */ class w31 implements Runnable {
                     a02 = xc.a0(profileActivity);
                     i10 = R.string.TextCopied;
                 }
-                org.telegram.messenger.wh.p(i10, a02);
+                org.telegram.messenger.kk.p(i10, a02);
                 break;
             case 12:
                 org.telegram.ui.d01 d01Var = (org.telegram.ui.d01) obj2;
@@ -336,32 +336,32 @@ public final /* synthetic */ class w31 implements Runnable {
                     } else if (!str3.endsWith("/")) {
                         str3 = str3.concat("/");
                     }
-                    StringBuilder i15 = r.c.i(str3, "transaction/");
+                    StringBuilder i15 = r4.c.i(str3, "transaction/");
                     i15.append(Uri.encode(str2));
                     pf.d.t(context, i15.toString());
                     break;
                 }
                 break;
             case 19:
-                org.telegram.ui.Wallet.ia iaVar = (org.telegram.ui.Wallet.ia) obj;
+                org.telegram.ui.Wallet.la laVar = (org.telegram.ui.Wallet.la) obj;
                 int i16 = i12 + 1;
-                ArrayList arrayList2 = ((org.telegram.ui.Wallet.z7) obj2).v;
+                ArrayList arrayList2 = ((org.telegram.ui.Wallet.c8) obj2).v;
                 if (i16 >= arrayList2.size()) {
-                    AndroidUtilities.hideKeyboard(iaVar);
+                    AndroidUtilities.hideKeyboard(laVar);
                     break;
                 } else {
-                    ((org.telegram.ui.Wallet.ia) arrayList2.get(i16)).a.requestFocus();
+                    ((org.telegram.ui.Wallet.la) arrayList2.get(i16)).a.requestFocus();
                     break;
                 }
             case 20:
-                org.telegram.ui.Wallet.ia iaVar2 = (org.telegram.ui.Wallet.ia) obj;
+                org.telegram.ui.Wallet.la laVar2 = (org.telegram.ui.Wallet.la) obj;
                 int i17 = i12 + 1;
-                ArrayList arrayList3 = ((org.telegram.ui.Wallet.aa) obj2).d;
+                ArrayList arrayList3 = ((org.telegram.ui.Wallet.da) obj2).d;
                 if (i17 >= arrayList3.size()) {
-                    AndroidUtilities.hideKeyboard(iaVar2);
+                    AndroidUtilities.hideKeyboard(laVar2);
                     break;
                 } else {
-                    ((org.telegram.ui.Wallet.ia) arrayList3.get(i17)).a.requestFocus();
+                    ((org.telegram.ui.Wallet.la) arrayList3.get(i17)).a.requestFocus();
                     break;
                 }
             case 21:
@@ -456,7 +456,7 @@ public final /* synthetic */ class w31 implements Runnable {
                 s0Var.h = null;
                 break;
             case 23:
-                ((r4.c) ((p4.t0) obj2).c).z(i12, obj);
+                ((r4.d) ((p4.t0) obj2).c).z(i12, obj);
                 break;
             case 24:
                 rg.m0 m0Var = (rg.m0) obj2;

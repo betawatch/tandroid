@@ -22,7 +22,7 @@ import y8.b1;
 import y8.k0;
 import y8.v0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class i implements Runnable {
     public final /* synthetic */ int a;
@@ -109,7 +109,7 @@ public final class i implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         Exception exc;
-        FileOutputStream W;
+        FileOutputStream R;
         boolean z10;
         y8.d dVar;
         switch (this.a) {
@@ -132,12 +132,12 @@ public final class i implements Runnable {
                 File file2 = (File) g3Var.c;
                 FileOutputStream fileOutputStream = null;
                 try {
-                    W = g3Var.W();
+                    R = g3Var.R();
                 } catch (Exception e7) {
                     exc = e7;
                 }
                 try {
-                    BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(W);
+                    BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(R);
                     XmlSerializer newSerializer = Xml.newSerializer();
                     newSerializer.setOutput(bufferedOutputStream, "UTF_8");
                     newSerializer.startDocument(null, Boolean.TRUE);
@@ -152,9 +152,9 @@ public final class i implements Runnable {
                     newSerializer.endTag(null, "share_targets");
                     newSerializer.endDocument();
                     bufferedOutputStream.flush();
-                    W.flush();
+                    R.flush();
                     try {
-                        W.getFD().sync();
+                        R.getFD().sync();
                         z10 = true;
                     } catch (IOException unused) {
                         z10 = false;
@@ -163,15 +163,15 @@ public final class i implements Runnable {
                         Log.e("AtomicFile", "Failed to sync file output stream");
                     }
                     try {
-                        W.close();
+                        R.close();
                     } catch (IOException e10) {
                         Log.e("AtomicFile", "Failed to close file output stream", e10);
                     }
-                    g3.T(file2, file);
+                    g3.O(file2, file);
                     return;
                 } catch (Exception e11) {
                     exc = e11;
-                    fileOutputStream = W;
+                    fileOutputStream = R;
                     Log.e("ShortcutInfoCompatSaver", "Failed to write to file " + file, exc);
                     if (fileOutputStream != null) {
                         try {

@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xe1 extends pg.b {
     public final /* synthetic */ ze1 d;
@@ -95,11 +95,11 @@ public final class xe1 extends pg.b {
                     q8Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
                     view = q8Var2;
                 }
-                return com.google.android.gms.internal.cast.a6.l(view2, view2, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(view2, view2, -1, -2);
             }
-            view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.t0) null);
+            view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
         }
         view2 = view;
-        return com.google.android.gms.internal.cast.a6.l(view2, view2, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view2, view2, -1, -2);
     }
 }

@@ -29,7 +29,7 @@ import v7.u6;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -89,7 +89,7 @@ public final class a implements m {
 
     @Override // z3.m
     public final /* synthetic */ z3.d a(int i10, int i11, byte[] bArr) {
-        return r.c.a(this, bArr, i11);
+        return r4.c.a(this, bArr, i11);
     }
 
     @Override // z3.m
@@ -285,7 +285,7 @@ public final class a implements m {
                                         int length2 = split3.length;
                                         String str = m0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder m10 = i0.a.m("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
+                                        StringBuilder m10 = i2.d.m("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
                                         m10.append(n12);
                                         m10.append("'");
                                         e2.a.l("SsaStyle", m10.toString());

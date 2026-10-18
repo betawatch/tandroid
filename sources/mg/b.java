@@ -7,14 +7,14 @@ import ci.j1;
 import java.util.ArrayList;
 import ki.u;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.Components.rc0;
 import org.telegram.ui.Components.voip.h1;
 import org.telegram.ui.Components.zg0;
 import w7.r;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b implements ScaleGestureDetector.OnScaleGestureListener {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                         if (f7 * scaleFactor > 30.0f) {
                             scaleFactor = 30.0f / f7;
                         }
-                        n.g(pVar.L, scaleFactor, n.a(pVar.L) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), n.b(pVar.L) * (q.x((imageView.getHeight() - pVar.y) - (!pVar.r ? AndroidUtilities.statusBarHeight : 0), pVar.E, 2.0f, focusY) / cropAreaView.getCropHeight()));
+                        n.g(pVar.L, scaleFactor, n.a(pVar.L) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), n.b(pVar.L) * (g0.x((imageView.getHeight() - pVar.y) - (!pVar.r ? AndroidUtilities.statusBarHeight : 0), pVar.E, 2.0f, focusY) / cropAreaView.getCropHeight()));
                         pVar.r(false);
                         break;
                     }

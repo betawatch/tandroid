@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class e11 extends ReplacementSpan {
     public static final /* synthetic */ int f = 0;
@@ -41,7 +41,7 @@ public final class e11 extends ReplacementSpan {
         if (this.d) {
             imageReceiver.setImageCoords((int) f7, i13 - (i16 - this.e), i15, i16);
         } else {
-            imageReceiver.setImageCoords((int) f7, i0.a.C(org.telegram.messenger.q.B(4.0f, i14, i12), i16, 2, i12), i15, i16);
+            imageReceiver.setImageCoords((int) f7, i2.d.C(org.telegram.messenger.g0.B(4.0f, i14, i12), i16, 2, i12), i15, i16);
         }
         imageReceiver.draw(canvas);
         canvas.restore();

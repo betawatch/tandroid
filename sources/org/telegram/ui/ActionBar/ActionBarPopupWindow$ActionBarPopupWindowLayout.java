@@ -25,11 +25,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ph0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout {
     public int E;
@@ -415,7 +415,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                         View childAt = i1Var.getChildAt(i10);
                         if (childAt != null && childAt.getVisibility() == 0 && !(childAt instanceof j1)) {
                             if (((Integer) hashMap.get(childAt)) != null) {
-                                if (wh.z(32.0f, AndroidUtilities.dp(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f7) {
+                                if (kk.y(32.0f, AndroidUtilities.dp(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f7) {
                                     break;
                                 }
                             }

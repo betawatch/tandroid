@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wx extends org.telegram.ui.Components.jw0 {
     public VelocityTracker A0;
@@ -174,16 +174,16 @@ public final class wx extends org.telegram.ui.Components.jw0 {
         yw ywVar = eyVar.G3;
         float f7 = (ywVar == null || !ywVar.c()) ? 0.0f : eyVar.G3.e;
         if (eyVar.K) {
-            height = com.google.android.gms.internal.cast.a6.x(1.0f, eyVar.u3, (1.0f - f7) * (1.0f - eyVar.x1) * AndroidUtilities.dp(81.0f), height);
+            height = com.google.android.gms.internal.play_billing.k3.y(1.0f, eyVar.u3, (1.0f - f7) * (1.0f - eyVar.x1) * AndroidUtilities.dp(81.0f), height);
         }
-        return (int) com.google.android.gms.internal.cast.a6.x(1.0f, f7, (1.0f - eyVar.x1) * (1.0f - eyVar.u3) * AndroidUtilities.dp(48.0f), height + eyVar.T);
+        return (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, f7, (1.0f - eyVar.x1) * (1.0f - eyVar.u3) * AndroidUtilities.dp(48.0f), height + eyVar.T);
     }
 
     public final int b0() {
         ey eyVar = this.E0;
         float f7 = eyVar.N;
         yw ywVar = eyVar.G3;
-        return (int) com.google.android.gms.internal.cast.a6.x(1.0f, eyVar.x1, org.telegram.messenger.q.z(1.0f, (ywVar == null || !ywVar.c()) ? 0.0f : eyVar.G3.e, 1.0f - eyVar.u3, f7), -getY());
+        return (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, eyVar.x1, org.telegram.messenger.g0.z(1.0f, (ywVar == null || !ywVar.c()) ? 0.0f : eyVar.G3.e, 1.0f - eyVar.u3, f7), -getY());
     }
 
     public final boolean c0(MotionEvent motionEvent, boolean z10) {
@@ -239,7 +239,7 @@ public final class wx extends org.telegram.ui.Components.jw0 {
         yw ywVar;
         tx txVar;
         float f11;
-        ai.hc hcVar;
+        ai.ic icVar;
         float f12;
         tx txVar2;
         org.telegram.ui.ActionBar.k kVar;
@@ -392,8 +392,8 @@ public final class wx extends org.telegram.ui.Components.jw0 {
                 ey.K2(eyVar, f11);
                 super.dispatchDraw(canvas);
                 ey.L2(eyVar, canvas2, i11);
-                hcVar = eyVar.K0;
-                if (hcVar != null && hcVar.getVisibility() == 0) {
+                icVar = eyVar.K0;
+                if (icVar != null && icVar.getVisibility() == 0) {
                     if (eyVar.K0.getAlpha() != f10) {
                         eyVar.K0.draw(canvas2);
                     } else if (eyVar.K0.getAlpha() != 0.0f) {
@@ -428,8 +428,8 @@ public final class wx extends org.telegram.ui.Components.jw0 {
         ey.K2(eyVar, f11);
         super.dispatchDraw(canvas);
         ey.L2(eyVar, canvas2, i11);
-        hcVar = eyVar.K0;
-        if (hcVar != null) {
+        icVar = eyVar.K0;
+        if (icVar != null) {
             if (eyVar.K0.getAlpha() != f10) {
             }
         }
@@ -466,7 +466,7 @@ public final class wx extends org.telegram.ui.Components.jw0 {
                 if (eyVar.Y3) {
                     canvas.translate((1.0f - eyVar.X3) * AndroidUtilities.dp(40.0f) * (-1), 0.0f);
                 } else {
-                    float D = com.google.android.gms.internal.cast.a6.D(1.0f, f7, 0.05f, 1.0f);
+                    float D = com.google.android.gms.internal.play_billing.k3.D(1.0f, f7, 0.05f, 1.0f);
                     canvas.translate((1.0f - eyVar.X3) * (-AndroidUtilities.dp(4.0f)), 0.0f);
                     canvas.scale(D, D, 0.0f, (-getY()) + eyVar.N + a0());
                 }
@@ -483,7 +483,7 @@ public final class wx extends org.telegram.ui.Components.jw0 {
         if (eyVar.Y3) {
             canvas.translate((1.0f - eyVar.X3) * AndroidUtilities.dp(40.0f) * (-1), 0.0f);
         } else {
-            float D2 = com.google.android.gms.internal.cast.a6.D(1.0f, eyVar.X3, 0.05f, 1.0f);
+            float D2 = com.google.android.gms.internal.play_billing.k3.D(1.0f, eyVar.X3, 0.05f, 1.0f);
             canvas.translate((1.0f - eyVar.X3) * (-AndroidUtilities.dp(4.0f)), 0.0f);
             kVar2 = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
             canvas.scale(D2, D2, 0.0f, (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2.0f) + (kVar2.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0));
@@ -604,7 +604,7 @@ public final class wx extends org.telegram.ui.Components.jw0 {
                             }
                             vwVar = eyVar.E0;
                             if (childAt == vwVar && vwVar.getPremiumHint() != null) {
-                                eyVar.E0.getPremiumHint().layout(i16, org.telegram.ui.Cells.t0.e(54.0f, i19, measuredHeight2), i16 + measuredWidth2, eyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.ui.Cells.t0.e(54.0f, i19, measuredHeight2));
+                                eyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.kk.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, eyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.kk.D(54.0f, i19, measuredHeight2));
                             }
                             if (childAt == eyVar.X) {
                                 i19 += AndroidUtilities.dp(2.0f);
@@ -639,7 +639,7 @@ public final class wx extends org.telegram.ui.Components.jw0 {
                     }
                     vwVar = eyVar.E0;
                     if (childAt == vwVar) {
-                        eyVar.E0.getPremiumHint().layout(i16, org.telegram.ui.Cells.t0.e(54.0f, i19, measuredHeight2), i16 + measuredWidth2, eyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.ui.Cells.t0.e(54.0f, i19, measuredHeight2));
+                        eyVar.E0.getPremiumHint().layout(i16, org.telegram.messenger.kk.D(54.0f, i19, measuredHeight2), i16 + measuredWidth2, eyVar.E0.getPremiumHint().getMeasuredHeight() + org.telegram.messenger.kk.D(54.0f, i19, measuredHeight2));
                     }
                     if (childAt == eyVar.X) {
                     }

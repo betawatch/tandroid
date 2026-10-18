@@ -40,7 +40,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.Components.kc0 {
     public BitmapShader E;
@@ -305,7 +305,7 @@ public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
                                 rect.set(0, 0, this.s.getWidth(), this.s.getHeight());
                                 this.x.drawBitmap(bitmap, rect2, rect, (Paint) null);
                                 Utilities.blurBitmap(this.s, 3);
-                                this.x.drawColor(i0.b.o(-16777216, (int) (f7 * 255.0f)));
+                                this.x.drawColor(i0.a.o(-16777216, (int) (f7 * 255.0f)));
                                 Bitmap bitmap2 = this.s;
                                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                                 this.y = new BitmapShader(bitmap2, tileMode, tileMode);
@@ -328,7 +328,7 @@ public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
                                 rect2.set(0, 0, this.v.getWidth(), this.v.getHeight());
                                 rect.set(0, 0, this.s.getWidth(), this.s.getHeight());
                                 this.x.drawBitmap(this.v, rect2, rect, (Paint) null);
-                                this.x.drawColor(i0.b.o(-16777216, (int) (f7 * 255.0f)));
+                                this.x.drawColor(i0.a.o(-16777216, (int) (f7 * 255.0f)));
                                 if (z10) {
                                     this.x.drawColor(-870178270);
                                 }
@@ -552,7 +552,7 @@ public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
         if (snVar.T5 < 0) {
             c5Var.g = false;
         }
-        c5Var.h = new ai.y3((Object) this, (Object) c4Var, (Object) wallPaper, z10, 13);
+        c5Var.h = new ai.x9(this, c4Var, wallPaper, z10, 12);
         if (z10) {
             c5Var.k = new nn(this);
             c5Var.i = new ln(this, 0);
@@ -733,7 +733,7 @@ public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
                 wc0Var2.u(i14);
                 int f7 = wc0Var2.f();
                 boolean z13 = this.G;
-                m4.y0 y0Var = new m4.y0(17, this, wc0Var2);
+                m4.w0 w0Var = new m4.w0(18, this, wc0Var2);
                 org.telegram.ui.ActionBar.b4 b4Var2 = (org.telegram.ui.ActionBar.b4) c4Var2.f.get(z13 ? 1 : 0);
                 if (b4Var2 == null || b4Var2.c == null) {
                     z11 = z13 ? 1 : 0;
@@ -770,7 +770,7 @@ public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
                     ImageReceiver imageReceiver2 = new ImageReceiver();
                     imageReceiver2.setAllowLoadingOnAttachedOnly(false);
                     imageReceiver2.setImage(forDocument, "40_40_firstframe", null, ".jpg", document2, 1);
-                    imageReceiver2.setDelegate(new ci.d1(y0Var, h, 3));
+                    imageReceiver2.setDelegate(new ci.d1(w0Var, h, 3));
                     ImageLoader.getInstance().loadImageForImageReceiver(imageReceiver2);
                 }
                 c4Var2 = c4Var;
@@ -846,11 +846,11 @@ public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
         int b12 = this.R ? -1 : b(org.telegram.ui.ActionBar.h6.jc, true);
         int b13 = this.R ? -1 : b(org.telegram.ui.ActionBar.h6.kc, true);
         if (f7 != 1.0f) {
-            i10 = i0.b.f(f7, this.O, i10);
-            b10 = i0.b.f(f7, this.K, b10);
-            b11 = i0.b.f(f7, this.L, b11);
-            b12 = i0.b.f(f7, this.M, b12);
-            b13 = i0.b.f(f7, this.N, b13);
+            i10 = i0.a.f(f7, this.O, i10);
+            b10 = i0.a.f(f7, this.K, b10);
+            b11 = i0.a.f(f7, this.L, b11);
+            b12 = i0.a.f(f7, this.M, b12);
+            b13 = i0.a.f(f7, this.N, b13);
         }
         if (n10 != null && !this.R) {
             n10.setColor(i10);

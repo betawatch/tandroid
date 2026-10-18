@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p10 extends FrameLayout {
     public org.telegram.ui.ActionBar.j5 a;
@@ -34,7 +34,7 @@ public final class p10 extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i10);
         AndroidUtilities.dp(48.0f);
-        this.a.measure(org.telegram.messenger.wh.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.a.measure(org.telegram.messenger.kk.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
         this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
         setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }

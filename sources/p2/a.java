@@ -7,9 +7,9 @@ import e9.l0;
 import e9.m2;
 import e9.y0;
 import java.util.HashMap;
-import org.telegram.ui.Wallet.x5;
+import org.telegram.ui.Wallet.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a implements v {
     public final /* synthetic */ e a;
@@ -40,7 +40,7 @@ public final class a implements v {
                 Uri uri2 = (Uri) it.next();
                 d dVar3 = (d) hashMap.get(uri2);
                 if (dVar3 != null) {
-                    c cVar = (c) i0.a.i(dVar3.b, uri2, uri2);
+                    c cVar = (c) i2.d.i(dVar3.b, uri2, uri2);
                     cVar.getClass();
                     if (elapsedRealtime <= cVar.r) {
                         i10++;
@@ -55,9 +55,9 @@ public final class a implements v {
                     i11++;
                 }
             }
-            x5 x5Var = new x5(size, i10, size2, i11);
+            z5 z5Var = new z5(size, i10, size2, i11);
             eVar.c.getClass();
-            k4.d x32 = oa.d.x3(x5Var, b0Var);
+            k4.d x32 = oa.d.x3(z5Var, b0Var);
             if (x32 != null && (dVar = (d) hashMap.get(uri)) != null) {
                 return d.c(dVar, uri, x32.b);
             }

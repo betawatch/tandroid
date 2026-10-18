@@ -6,7 +6,7 @@ import android.graphics.RadialGradient;
 import android.graphics.Shader;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f20 {
     public float c;
@@ -75,9 +75,9 @@ public final class f20 {
             }
             paint.setShader(null);
             if (i10 == 3) {
-                paint.setColor(i0.b.f(0.5f, i0.b.f(0.5f, this.j, this.k), this.l));
+                paint.setColor(i0.a.f(0.5f, i0.a.f(0.5f, this.j, this.k), this.l));
             } else {
-                paint.setColor(i0.b.f(0.5f, this.j, this.k));
+                paint.setColor(i0.a.f(0.5f, this.j, this.k));
             }
         }
     }

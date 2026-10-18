@@ -1,38 +1,68 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class to0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dp0 b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    public /* synthetic */ to0(dp0 dp0Var, int i10) {
-        this.a = i10;
-        this.b = dp0Var;
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes3.dex */
+public final class to0 extends Drawable {
+    public final org.telegram.ui.Components.d11 a;
+    public final Drawable b;
+    public final sg.z0 c;
+
+    public to0(int i10, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+        this.a = new org.telegram.ui.Components.d11(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
+        Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
+        this.b = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        this.c = new sg.z0(org.telegram.ui.ActionBar.h6.Lj, org.telegram.ui.ActionBar.h6.Mj, -1, -1, d6Var);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        dp0 dp0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (dp0Var.G) {
-                    dp0Var.b.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                dp0Var.h();
-                break;
-            case 2:
-                int i11 = dp0.q0;
-                dp0Var.h();
-                break;
-            default:
-                int i12 = dp0.q0;
-                dp0Var.h();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = getBounds().left;
+        int centerY = getBounds().centerY();
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f7 = centerY;
+        rectF.set(i10, f7 - (AndroidUtilities.dp(18.33f) / 2.0f), getIntrinsicWidth() + i10, (AndroidUtilities.dp(18.33f) / 2.0f) + f7);
+        sg.z0 z0Var = this.c;
+        z0Var.e(rectF);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), z0Var.f);
+        int dp = AndroidUtilities.dp(3.33f) + i10;
+        Drawable drawable = this.b;
+        drawable.setBounds(dp, (int) (f7 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) a1.g.B(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f7));
+        drawable.draw(canvas);
+        this.a.c((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.66f) + i10, f7, 1.0f, -1, canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.33f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (this.a.l() + (this.b.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(9.66f));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

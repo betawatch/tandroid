@@ -8,12 +8,12 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Cells.c2;
 import org.telegram.ui.Cells.f2;
-import org.telegram.ui.Components.q2;
+import org.telegram.ui.Components.r2;
 import org.telegram.ui.Wallet.q0;
 import org.telegram.ui.Wallet.s2;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class o0 implements Runnable {
                         o10 = q0.o(bArr);
                     }
                     String str2 = o10;
-                    q0.h.execute(new q2(q0Var2, q0Var2.l(), str2, true, (Utilities.Callback) lVar));
+                    q0.h.execute(new r2(q0Var2, q0Var2.l(), str2, true, (Utilities.Callback) lVar));
                     break;
                 }
         }

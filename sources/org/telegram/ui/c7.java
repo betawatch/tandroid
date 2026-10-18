@@ -37,7 +37,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c7 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static volatile boolean k0 = false;
@@ -132,7 +132,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
             FileLog.e(e);
         }
         c7Var.getMediaDataController().ringtoneDataStore.b();
-        AndroidUtilities.runOnUIThread(new ai.s3(c7Var, j10, 22), 150L);
+        AndroidUtilities.runOnUIThread(new ai.r3(c7Var, j10, 22), 150L);
         MediaDataController.getInstance(c7Var.currentAccount).checkAllMedia(true);
         c7Var.getFileLoader().getFileDatabase().getQueue().postRunnable(new g6(c7Var, 1));
         q6Var.run();
@@ -162,7 +162,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public static void W(c7 c7Var, p6 p6Var, q6 q6Var) {
         int i10;
         int i11;
-        ai.wb wbVar;
+        ai.xb xbVar;
         int i12;
         char c10;
         char c11;
@@ -179,7 +179,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
         int i17 = (zArr[0] ? 2 : 0) + (zArr[1] ? 2 : 0) + (zArr[2] ? 2 : 0) + (zArr[3] ? 2 : 0) + (zArr[4] ? 1 : 0) + (zArr[5] ? 2 : 0) + (zArr[6] ? 1 : 0) + (zArr[7] ? 1 : 0) + (zArr[8] ? 1 : 0) + (zArr[9] ? 1 : 0);
         long currentTimeMillis = System.currentTimeMillis();
         gi.g4 g4Var = new gi.g4(p6Var, iArr, i17, 2);
-        ai.wb wbVar2 = new ai.wb(p6Var, iArr, i17, currentTimeMillis, 14);
+        ai.xb xbVar2 = new ai.xb(p6Var, iArr, i17, currentTimeMillis, 14);
         long j10 = 0;
         boolean z10 = true;
         int i18 = 0;
@@ -189,7 +189,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                 if (i18 == 0) {
                     j10 += c7Var.y;
                     i11 = i14;
-                    wbVar = wbVar2;
+                    xbVar = xbVar2;
                     i12 = 9;
                     i15 = 0;
                     i16 = 0;
@@ -197,7 +197,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                     if (i18 == i14) {
                         j10 += c7Var.E;
                         i11 = i14;
-                        wbVar = wbVar2;
+                        xbVar = xbVar2;
                         i16 = i15;
                     } else {
                         if (i18 == i15) {
@@ -211,18 +211,18 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                             j10 += c7Var.v;
                             i16 = i14;
                             i11 = i16;
-                            wbVar = wbVar2;
+                            xbVar = xbVar2;
                         } else if (i18 == 5) {
                             j10 += c7Var.w;
                             i11 = i14;
-                            wbVar = wbVar2;
+                            xbVar = xbVar2;
                             i12 = 9;
                             i15 = 0;
                             i16 = 6;
                         } else if (i18 == 6) {
                             j10 += c7Var.G;
                             i11 = i14;
-                            wbVar = wbVar2;
+                            xbVar = xbVar2;
                             i12 = 9;
                             i15 = 0;
                             i16 = 100;
@@ -230,13 +230,13 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                             i10 = 7;
                             if (i18 == 7) {
                                 i11 = i14;
-                                wbVar = wbVar2;
+                                xbVar = xbVar2;
                                 j10 += c7Var.h;
                                 i12 = 9;
                                 i15 = 5;
                             } else {
                                 i11 = i14;
-                                wbVar = wbVar2;
+                                xbVar = xbVar2;
                                 if (i18 == 8) {
                                     j10 += c7Var.r;
                                     i12 = 9;
@@ -273,14 +273,14 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                                             k0(checkDirectory.getAbsolutePath(), i15, null, g4Var);
                                         }
                                         iArr[0] = iArr[0] + 1;
-                                        wbVar.run();
+                                        xbVar.run();
                                         if (i16 == 100) {
                                             File checkDirectory2 = FileLoader.checkDirectory(4);
                                             if (checkDirectory2 != null) {
                                                 k0(checkDirectory2.getAbsolutePath(), 3, null, g4Var);
                                             }
                                             iArr[0] = iArr[0] + 1;
-                                            wbVar.run();
+                                            xbVar.run();
                                         }
                                         if (i16 == 0 || i16 == 2) {
                                             File checkDirectory3 = FileLoader.checkDirectory(i16 == 0 ? 100 : 101);
@@ -289,7 +289,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                                             }
                                             c12 = 0;
                                             iArr[0] = iArr[0] + 1;
-                                            wbVar.run();
+                                            xbVar.run();
                                         } else {
                                             c12 = 0;
                                         }
@@ -299,7 +299,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                                                 k0(checkDirectory4.getAbsolutePath(), i15, null, g4Var);
                                             }
                                             iArr[c12] = iArr[c12] + 1;
-                                            wbVar.run();
+                                            xbVar.run();
                                         }
                                         if (i18 == i12) {
                                             c7Var.F = q0(i13, AndroidUtilities.getLogsDir());
@@ -358,7 +358,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                             c10 = 5;
                             c11 = 4;
                         }
-                        wbVar = wbVar2;
+                        xbVar = xbVar2;
                         i12 = 9;
                     }
                     i12 = 9;
@@ -370,7 +370,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                 c10 = 5;
                 c11 = 4;
             } else {
-                wbVar = wbVar2;
+                xbVar = xbVar2;
                 c11 = c13;
                 c10 = c14;
                 z10 = false;
@@ -378,7 +378,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
             i18++;
             c14 = c10;
             c13 = c11;
-            wbVar2 = wbVar;
+            xbVar2 = xbVar;
             i14 = 1;
             i15 = 2;
             i16 = 3;
@@ -402,8 +402,8 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     public static void X(c7 c7Var, ValueAnimator valueAnimator) {
         c7Var.h0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        c7Var.actionBar.setTitleColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), (int) (c7Var.h0 * 255.0f)));
-        c7Var.actionBar.setBackgroundColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), (int) (c7Var.h0 * 255.0f)));
+        c7Var.actionBar.setTitleColor(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), (int) (c7Var.h0 * 255.0f)));
+        c7Var.actionBar.setBackgroundColor(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), (int) (c7Var.h0 * 255.0f)));
         c7Var.fragmentView.invalidate();
     }
 
@@ -483,7 +483,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                     }
                 }
                 int size2 = c7Var.Y.j.size() - i10;
-                formatPluralString = size2 > 0 ? a1.g.D(LocaleController.formatPluralString("Chats", c7Var.Y.l.size(), Integer.valueOf(c7Var.Y.l.size())), ", ", LocaleController.formatPluralString("Files", size2, Integer.valueOf(size2))) : LocaleController.formatPluralString("Chats", c7Var.Y.l.size(), Integer.valueOf(c7Var.Y.l.size()));
+                formatPluralString = size2 > 0 ? a1.g.C(LocaleController.formatPluralString("Chats", c7Var.Y.l.size(), Integer.valueOf(c7Var.Y.l.size())), ", ", LocaleController.formatPluralString("Files", size2, Integer.valueOf(size2))) : LocaleController.formatPluralString("Chats", c7Var.Y.l.size(), Integer.valueOf(c7Var.Y.l.size()));
             }
             c7Var.d0.c(AndroidUtilities.formatFileSize(c7Var.Y.k), !LocaleController.isRTL, true);
             c7Var.e0.c(formatPluralString, !LocaleController.isRTL, true);
@@ -551,7 +551,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
                         callback.run(Float.valueOf(i11 / n02));
                     }
                 } else if (!"drafts".equals(file2.getName())) {
-                    k0(a1.g.D(str, "/", name), i10, iArr, callback);
+                    k0(a1.g.C(str, "/", name), i10, iArr, callback);
                 }
             }
         }
@@ -639,10 +639,10 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.actionBar.setOccupyStatusBar(true);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i11 = org.telegram.ui.ActionBar.h6.G6;
-        kVar.setTitleColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i11, false), 0));
+        kVar.setTitleColor(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i11, false), 0));
         this.actionBar.C(org.telegram.ui.ActionBar.h6.x0(null, i11, false), false);
         this.actionBar.B(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), false);
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setTitle(LocaleController.getString(R.string.StorageUsage));
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 25));

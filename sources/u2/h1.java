@@ -1,73 +1,25 @@
 package u2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class h1 implements i1 {
-    public final int a;
+public interface h1 {
+    h1 a(int i10, int i11);
 
-    public h1(int i10) {
-        this.a = i10;
-    }
+    int b();
 
-    @Override // u2.i1
-    public final i1 a(int i10, int i11) {
-        return new h1((this.a - i11) + i10);
-    }
+    h1 c(int i10);
 
-    @Override // u2.i1
-    public final int b() {
-        return this.a > 0 ? 0 : -1;
-    }
+    int d(int i10);
 
-    @Override // u2.i1
-    public final i1 c(int i10) {
-        return ((h1) i()).f(0, i10);
-    }
+    int e(int i10);
 
-    @Override // u2.i1
-    public final int d(int i10) {
-        int i11 = i10 - 1;
-        if (i11 >= 0) {
-            return i11;
-        }
-        return -1;
-    }
+    h1 f(int i10, int i11);
 
-    @Override // u2.i1
-    public final int e(int i10) {
-        int i11 = i10 + 1;
-        if (i11 < this.a) {
-            return i11;
-        }
-        return -1;
-    }
+    h1 g();
 
-    @Override // u2.i1
-    public final i1 f(int i10, int i11) {
-        return new h1(this.a + i11);
-    }
+    int getLength();
 
-    @Override // u2.i1
-    public final int getLength() {
-        return this.a;
-    }
+    int h();
 
-    @Override // u2.i1
-    public final int h() {
-        int i10 = this.a;
-        if (i10 > 0) {
-            return i10 - 1;
-        }
-        return -1;
-    }
-
-    @Override // u2.i1
-    public final i1 i() {
-        return new h1(0);
-    }
-
-    @Override // u2.i1
-    public final i1 g() {
-        return this;
-    }
+    h1 i();
 }

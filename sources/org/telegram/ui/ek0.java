@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ek0 implements Runnable {
     public final /* synthetic */ int a;
@@ -140,52 +140,52 @@ public final /* synthetic */ class ek0 implements Runnable {
                 }
                 break;
             case 8:
-                pf.d.r(((pn0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                pf.d.r(((qn0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 9:
-                fo0 fo0Var = ((un0) obj).a;
-                fo0Var.t0();
-                fo0Var.H0(true, false);
-                fo0Var.D0(false);
+                go0 go0Var = ((vn0) obj).a;
+                go0Var.t0();
+                go0Var.H0(true, false);
+                go0Var.D0(false);
                 break;
             case 10:
-                pf.d.r(((yn0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                pf.d.r(((zn0) obj).b.getParentActivity(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
                 break;
             case 11:
-                bp0 bp0Var = (bp0) obj;
-                dp0 dp0Var = bp0Var.c;
-                ip0 ip0Var = dp0Var.E;
-                jp0 jp0Var = dp0Var.p0;
-                if (ip0Var != null && dp0Var.L.size() > 1) {
-                    ip0Var.a(1, true);
-                    TL_stars.StarGift starGift = (TL_stars.StarGift) dp0Var.M.get(1);
-                    dp0Var.K = starGift;
+                cp0 cp0Var = (cp0) obj;
+                ep0 ep0Var = cp0Var.c;
+                jp0 jp0Var = ep0Var.E;
+                kp0 kp0Var = ep0Var.p0;
+                if (jp0Var != null && ep0Var.L.size() > 1) {
+                    jp0Var.a(1, true);
+                    TL_stars.StarGift starGift = (TL_stars.StarGift) ep0Var.M.get(1);
+                    ep0Var.K = starGift;
                     if (starGift == null) {
-                        yh.t3 t3Var = dp0Var.J;
+                        yh.t3 t3Var = ep0Var.J;
                         if (t3Var != null) {
                             t3Var.f();
-                            dp0Var.J = null;
+                            ep0Var.J = null;
                         }
                     } else {
-                        yh.t3 t3Var2 = dp0Var.J;
+                        yh.t3 t3Var2 = ep0Var.J;
                         if (t3Var2 == null || t3Var2.b != starGift.id) {
-                            i11 = ((org.telegram.ui.ActionBar.n2) jp0Var).currentAccount;
-                            yh.t3 t3Var3 = new yh.t3(dp0Var.K.id, i11, new v3(bp0Var, i13));
-                            dp0Var.J = t3Var3;
+                            i11 = ((org.telegram.ui.ActionBar.n2) kp0Var).currentAccount;
+                            yh.t3 t3Var3 = new yh.t3(ep0Var.K.id, i11, new v3(cp0Var, i13));
+                            ep0Var.J = t3Var3;
                             t3Var3.g(false);
                         }
                     }
-                    dp0.a(dp0Var);
-                    (jp0Var.I.getCurrentPosition() == 1 ? jp0Var.n : jp0Var.h).e();
+                    ep0.a(ep0Var);
+                    (kp0Var.I.getCurrentPosition() == 1 ? kp0Var.n : kp0Var.h).e();
                     break;
                 }
                 break;
             case 12:
-                kq0 kq0Var = ((bq0) obj).s;
-                kq0Var.b0(kq0Var.P.getSearchField());
+                lq0 lq0Var = ((cq0) obj).s;
+                lq0Var.b0(lq0Var.P.getSearchField());
                 break;
             case 13:
-                ((cq0) obj).z0.L.l();
+                ((dq0) obj).z0.L.l();
                 break;
             case 14:
                 ((du0) obj).invalidate();
@@ -279,7 +279,7 @@ public final /* synthetic */ class ek0 implements Runnable {
                 premiumPreviewFragment.showDialog(new v21(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
                 break;
             case 25:
-                ((org.telegram.messenger.fk) obj).run(0);
+                ((org.telegram.messenger.ek) obj).run(0);
                 break;
             case 26:
                 AndroidUtilities.addToClipboard((String) obj);

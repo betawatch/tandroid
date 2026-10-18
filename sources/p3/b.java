@@ -3,14 +3,14 @@ package p3;
 import b2.q0;
 import b2.s0;
 import b2.w;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.Objects;
 import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b implements s0 {
     public final int a;
@@ -72,7 +72,7 @@ public final class b implements s0 {
                         z10 = false;
                         i11 = -1;
                     } catch (NumberFormatException unused) {
-                        a6.r("Invalid bitrate header: ", str4, "IcyHeaders");
+                        k3.r("Invalid bitrate header: ", str4, "IcyHeaders");
                         z10 = false;
                         i10 = i11;
                         list = (List) map.get("icy-genre");
@@ -144,7 +144,7 @@ public final class b implements s0 {
                         z12 = z10;
                     } catch (NumberFormatException unused3) {
                         i12 = parseInt;
-                        a6.r("Invalid metadata interval: ", str5, "IcyHeaders");
+                        k3.r("Invalid metadata interval: ", str5, "IcyHeaders");
                         int i132 = i12;
                         if (z10) {
                         }

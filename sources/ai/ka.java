@@ -1,23 +1,20 @@
 package ai;
 
-import android.os.Bundle;
-import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ka implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
-    public final /* synthetic */ TL_stars.StarsTransaction c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ ka(org.telegram.ui.ActionBar.f3[] f3VarArr, long j10, TL_stars.StarsTransaction starsTransaction) {
-        this.a = 2;
+    public /* synthetic */ ka(org.telegram.ui.ActionBar.f3[] f3VarArr, long j10, int i10) {
+        this.a = i10;
         this.b = f3VarArr;
-        this.d = j10;
-        this.c = starsTransaction;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
@@ -27,42 +24,26 @@ public final /* synthetic */ class ka implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    TL_stars.StarsTransaction starsTransaction = this.c;
-                    int i10 = starsTransaction.flags & 8192;
-                    long j10 = this.d;
-                    if (i10 == 0) {
-                        U.presentFragment(sn.W9(j10));
-                        break;
-                    } else {
-                        U.presentFragment(sn.V9(starsTransaction.giveaway_post_id, j10));
-                        break;
-                    }
+                    U.presentFragment(ProfileActivity.m4(this.c));
+                    break;
                 }
                 break;
             case 1:
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    TL_stars.StarsTransaction starsTransaction2 = this.c;
-                    int i11 = starsTransaction2.flags & 8192;
-                    long j11 = this.d;
-                    if (i11 == 0) {
-                        U2.presentFragment(sn.W9(j11));
-                        break;
-                    } else {
-                        U2.presentFragment(sn.V9(starsTransaction2.giveaway_post_id, j11));
-                        break;
-                    }
+                    U2.presentFragment(sn.W9(this.c));
+                    break;
                 }
                 break;
             case 2:
-                this.b[0].dismiss();
+                org.telegram.ui.ActionBar.f3 f3Var = this.b[0];
+                if (f3Var != null) {
+                    f3Var.dismiss();
+                }
                 org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
                 if (U3 != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", -this.d);
-                    bundle.putInt("message_id", this.c.msg_id);
-                    U3.presentFragment(new sn(bundle));
+                    U3.presentFragment(sn.W9(this.c));
                     break;
                 }
                 break;
@@ -70,41 +51,34 @@ public final /* synthetic */ class ka implements Runnable {
                 this.b[0].dismiss();
                 org.telegram.ui.ActionBar.n2 U4 = LaunchActivity.U();
                 if (U4 != null) {
-                    TL_stars.StarsTransaction starsTransaction3 = this.c;
-                    int i12 = starsTransaction3.flags & 8192;
-                    long j12 = this.d;
-                    if (i12 == 0) {
-                        U4.presentFragment(sn.W9(j12));
-                        break;
-                    } else {
-                        U4.presentFragment(sn.V9(starsTransaction3.giveaway_post_id, j12));
-                        break;
-                    }
+                    U4.presentFragment(sn.W9(this.c));
+                    break;
+                }
+                break;
+            case 4:
+                this.b[0].dismiss();
+                org.telegram.ui.ActionBar.n2 U5 = LaunchActivity.U();
+                if (U5 != null) {
+                    U5.presentFragment(new gi.l(this.c));
+                    break;
+                }
+                break;
+            case 5:
+                this.b[0].dismiss();
+                org.telegram.ui.ActionBar.n2 U6 = LaunchActivity.U();
+                if (U6 != null) {
+                    U6.presentFragment(ProfileActivity.m4(this.c));
+                    break;
                 }
                 break;
             default:
                 this.b[0].dismiss();
-                org.telegram.ui.ActionBar.n2 U5 = LaunchActivity.U();
-                if (U5 != null) {
-                    TL_stars.StarsTransaction starsTransaction4 = this.c;
-                    int i13 = starsTransaction4.flags & 8192;
-                    long j13 = this.d;
-                    if (i13 == 0) {
-                        U5.presentFragment(sn.W9(j13));
-                        break;
-                    } else {
-                        U5.presentFragment(sn.V9(starsTransaction4.giveaway_post_id, j13));
-                        break;
-                    }
+                org.telegram.ui.ActionBar.n2 U7 = LaunchActivity.U();
+                if (U7 != null) {
+                    U7.presentFragment(ProfileActivity.m4(this.c));
+                    break;
                 }
                 break;
         }
-    }
-
-    public /* synthetic */ ka(org.telegram.ui.ActionBar.f3[] f3VarArr, TL_stars.StarsTransaction starsTransaction, long j10, int i10) {
-        this.a = i10;
-        this.b = f3VarArr;
-        this.c = starsTransaction;
-        this.d = j10;
     }
 }

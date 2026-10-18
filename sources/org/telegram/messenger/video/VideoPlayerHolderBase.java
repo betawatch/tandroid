@@ -9,7 +9,7 @@ import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.TextureView;
 import e2.n0;
-import ig.c2;
+import ig.e2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLoader;
@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.a81;
 import org.telegram.ui.Components.x71;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class VideoPlayerHolderBase {
     private boolean allowMultipleInstances;
@@ -85,7 +85,7 @@ public class VideoPlayerHolderBase {
     private final Runnable betterSeek = new j(this, 0);
     private final Runnable updateSeek = new j(this, 2);
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class 2 implements x71 {
         public 2() {
         }
@@ -607,7 +607,7 @@ public class VideoPlayerHolderBase {
         this.dispatchQueue.cancelRunnable(this.initRunnable);
         this.dispatchQueue.cancelRunnable(this.progressRunnable);
         this.initRunnable = null;
-        this.dispatchQueue.postRunnable(new c2(this, document, runnable, 16));
+        this.dispatchQueue.postRunnable(new e2(this, document, runnable, 16));
         Bitmap bitmap = this.playerStubBitmap;
         if (bitmap != null) {
             AndroidUtilities.recycleBitmap(bitmap);

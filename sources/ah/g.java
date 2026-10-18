@@ -1,6 +1,6 @@
 package ah;
 
-import ai.fa;
+import ai.ga;
 import ai.t5;
 import android.os.Looper;
 import android.text.SpannableString;
@@ -39,7 +39,7 @@ import org.telegram.ui.ti;
 import org.telegram.ui.v4;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final /* synthetic */ class g implements Runnable {
                 pf.d.r(((ai.x) obj).getParentActivity(), LocaleController.getString(i12));
                 break;
             case 2:
-                ConnectionsManager.getInstance(((fa) obj).a).cancelRequest(i12, true);
+                ConnectionsManager.getInstance(((ga) obj).a).cancelRequest(i12, true);
                 break;
             case 3:
                 ((c2.g) obj).b.onAudioFocusChange(i12);
@@ -142,7 +142,7 @@ public final /* synthetic */ class g implements Runnable {
                 ((hg.h0) obj).m(i12);
                 break;
             case 11:
-                j2.f fVar = ((i2.p0) obj).M;
+                j2.f fVar = ((i2.q0) obj).M;
                 j2.a l4 = fVar.l();
                 fVar.q(l4, 1034, new j2.c(l4, i12, 12, (char) (objArr2 == true ? 1 : 0)));
                 break;
@@ -169,12 +169,12 @@ public final /* synthetic */ class g implements Runnable {
             case 14:
                 k2.u uVar = (k2.u) ((qf.b) obj).c;
                 String str = e2.m0.a;
-                e2.c cVar = ((i2.a0) uVar).a.C;
-                i2.u uVar2 = new i2.u(i12, 2);
+                e2.c cVar = ((i2.b0) uVar).a.C;
+                i2.v vVar = new i2.v(i12, 2);
                 cVar.getClass();
                 u6.p(Looper.myLooper() == ((e2.i0) cVar.c).a.getLooper());
                 cVar.a++;
-                cVar.i(new v7(16, cVar, uVar2));
+                cVar.i(new v7(16, cVar, vVar));
                 cVar.n(Integer.valueOf(i12));
                 break;
             case 15:

@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class tf0 extends FrameLayout {
     public static final /* synthetic */ int E = 0;
@@ -80,13 +80,13 @@ public final class tf0 extends FrameLayout {
         textView.setText(LocaleController.getString(R.string.ConfirmCorrectNumber));
         textView.setTextSize(1, 14.0f);
         textView.setSingleLine();
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout, textView, w7.z5.a(-2.0f, 24.0f, 20.0f, 24.0f, 0.0f, -1, LocaleController.isRTL ? 5 : 3), context);
-        this.r = k10;
-        k10.setText(str);
-        k10.setTextSize(1, 18.0f);
-        k10.setTypeface(AndroidUtilities.bold());
-        k10.setSingleLine();
-        frameLayout.addView(k10, w7.z5.a(-2.0f, 24.0f, 48.0f, 24.0f, 0.0f, -1, LocaleController.isRTL ? 5 : 3));
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.a(-2.0f, 24.0f, 20.0f, 24.0f, 0.0f, -1, LocaleController.isRTL ? 5 : 3), context);
+        this.r = j10;
+        j10.setText(str);
+        j10.setTextSize(1, 18.0f);
+        j10.setTypeface(AndroidUtilities.bold());
+        j10.setSingleLine();
+        frameLayout.addView(j10, w7.z5.a(-2.0f, 24.0f, 48.0f, 24.0f, 0.0f, -1, LocaleController.isRTL ? 5 : 3));
         int dp = AndroidUtilities.dp(16.0f);
         TextView textView2 = new TextView(context);
         this.s = textView2;
@@ -102,14 +102,14 @@ public final class tf0 extends FrameLayout {
         int i12 = dp / 2;
         textView2.setPadding(dp, i12, dp, i12);
         float f7 = 8;
-        TextView k11 = org.telegram.ui.Cells.t0.k(frameLayout, textView2, w7.z5.a(-2.0f, f7, f7, f7, f7, -2, (LocaleController.isRTL ? 5 : 3) | 80), context);
-        this.v = k11;
-        k11.setText(LocaleController.getString(R.string.CheckPhoneNumberYes));
-        k11.setSingleLine();
-        k11.setTextSize(1, 16.0f);
-        k11.setBackground(org.telegram.ui.ActionBar.h6.H0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.h6.x0(null, i11, false)));
+        TextView j11 = org.telegram.ui.Cells.c1.j(frameLayout, textView2, w7.z5.a(-2.0f, f7, f7, f7, f7, -2, (LocaleController.isRTL ? 5 : 3) | 80), context);
+        this.v = j11;
+        j11.setText(LocaleController.getString(R.string.CheckPhoneNumberYes));
+        j11.setSingleLine();
+        j11.setTextSize(1, 16.0f);
+        j11.setBackground(org.telegram.ui.ActionBar.h6.H0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.h6.x0(null, i11, false)));
         final int i13 = 1;
-        k11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.rf0
+        j11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.rf0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view4) {
                 switch (i13) {
@@ -122,9 +122,9 @@ public final class tf0 extends FrameLayout {
                 }
             }
         });
-        k11.setTypeface(typeface);
-        k11.setPadding(dp, i12, dp, i12);
-        frameLayout.addView(k11, w7.z5.a(-2.0f, f7, f7, f7, f7, -2, (LocaleController.isRTL ? 3 : 5) | 80));
+        j11.setTypeface(typeface);
+        j11.setPadding(dp, i12, dp, i12);
+        frameLayout.addView(j11, w7.z5.a(-2.0f, f7, f7, f7, f7, -2, (LocaleController.isRTL ? 3 : 5) | 80));
         ih.j.b(view, viewGroup, pointF);
         h20Var.setTranslationX(pointF.x);
         h20Var.setTranslationY(pointF.y);

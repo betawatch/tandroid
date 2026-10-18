@@ -28,7 +28,7 @@ import java.util.UUID;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class h implements c3.o {
     public static final byte[] O = {-94, 57, 79, 82, 90, -101, 79, 20, -94, 68, 108, 66, 124, 100, -115, -12};
@@ -148,7 +148,7 @@ public final class h implements c3.o {
         int i11 = sVar.e;
         x xVar2 = sVar.n;
         if (E != i11) {
-            StringBuilder l4 = i0.a.l(E, "Senc sample count ", " is different from fragment sample count");
+            StringBuilder l4 = i2.d.l(E, "Senc sample count ", " is different from fragment sample count");
             l4.append(sVar.e);
             throw w0.a(null, l4.toString());
         }
@@ -1605,7 +1605,7 @@ public final class h implements c3.o {
                                         int A = xVar8.A();
                                         int E2 = xVar8.E();
                                         if (E2 > sVar2.e) {
-                                            StringBuilder l4 = i0.a.l(E2, "Saiz sample count ", " is greater than fragment sample count");
+                                            StringBuilder l4 = i2.d.l(E2, "Saiz sample count ", " is greater than fragment sample count");
                                             l4.append(sVar2.e);
                                             throw w0.a(null, l4.toString());
                                         }

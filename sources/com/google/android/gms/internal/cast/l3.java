@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l3 extends f5 {
     private static final l3 zzb;
     private int zzd;
     private long zze;
     private long zzf;
-    private k5 zzg = h6.d;
+    private k5 zzg = g6.d;
 
     static {
         l3 l3Var = new l3();
@@ -22,7 +22,7 @@ public final class l3 extends f5 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new i6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001ဂ\u0000\u0002ဂ\u0001\u0003\u001b", new Object[]{"zzd", "zze", "zzf", "zzg", m3.class});
+            return new h6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001ဂ\u0000\u0002ဂ\u0001\u0003\u001b", new Object[]{"zzd", "zze", "zzf", "zzg", m3.class});
         }
         if (i11 == 3) {
             return new l3();

@@ -7,7 +7,7 @@ import org.telegram.ui.Components.hu;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.xl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s0 implements e2.j, hu, xl0 {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class s0 implements e2.j, hu, xl0 {
 
     @Override // org.telegram.ui.Components.xl0
     public void d(float f7, float f10, int i10, View view) {
-        ug.l1.R((ug.l1) this.c, this.a, (d6) this.d, this.b, view, i10);
+        ug.m1.R((ug.m1) this.c, this.a, (d6) this.d, this.b, view, i10);
     }
 
     @Override // org.telegram.ui.Components.hu
@@ -60,8 +60,8 @@ public final /* synthetic */ class s0 implements e2.j, hu, xl0 {
         this.d = runnable;
     }
 
-    public /* synthetic */ s0(ug.l1 l1Var, int i10, d6 d6Var, int i11) {
-        this.c = l1Var;
+    public /* synthetic */ s0(ug.m1 m1Var, int i10, d6 d6Var, int i11) {
+        this.c = m1Var;
         this.a = i10;
         this.d = d6Var;
         this.b = i11;

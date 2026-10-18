@@ -86,7 +86,7 @@ import org.telegram.ui.Components.p71;
 import org.telegram.ui.Components.x71;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.internal.r, x71, z3.d, j4.a0, OnCompleteListener, n5.b {
     public static e e;
@@ -126,12 +126,12 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
             return str;
         }
         if (!str.contains("?")) {
-            return a1.g.D(str, "?", sb3);
+            return a1.g.C(str, "?", sb3);
         }
         if (!str.endsWith("&")) {
             sb3 = "&".concat(sb3);
         }
-        return r.c.u(str, sb3);
+        return r4.c.u(str, sb3);
     }
 
     @Override // j4.a0
@@ -260,11 +260,6 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
         return new l5.t(new rb.b(i10), new pb.a(i10), (q5.b) ((z5) this.b).get(), (ea.b) ((s3) this.c).get(), (com.google.firebase.messaging.r) ((qi.e) this.d).get());
     }
 
-    @Override // z3.d
-    public int h() {
-        return ((long[]) this.d).length;
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:56:0x00a7  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x00d8 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:74:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
@@ -274,7 +269,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public int i(int i10) {
+    public int h(int i10) {
         BiometricManager biometricManager;
         int a2;
         BiometricPrompt.CryptoObject b10;
@@ -395,6 +390,11 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
         }
     }
 
+    @Override // z3.d
+    public int i() {
+        return ((long[]) this.d).length;
+    }
+
     public int j() {
         k0.b bVar = (k0.b) this.d;
         if (bVar == null) {
@@ -402,12 +402,12 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
             return 1;
         }
         Context context = (Context) bVar.b;
-        FingerprintManager w9 = k0.b.w(context);
-        if (w9 == null || !w9.isHardwareDetected()) {
+        FingerprintManager q6 = k0.b.q(context);
+        if (q6 == null || !q6.isHardwareDetected()) {
             return 12;
         }
-        FingerprintManager w10 = k0.b.w(context);
-        return (w10 == null || !w10.hasEnrolledFingerprints()) ? 11 : 0;
+        FingerprintManager q10 = k0.b.q(context);
+        return (q10 == null || !q10.hasEnrolledFingerprints()) ? 11 : 0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ba  */
@@ -665,7 +665,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
             int ordinal = eVar.ordinal();
             if (ordinal != 1) {
                 if (ordinal == 2) {
-                    i13 = a1.g.C(i12, 2, 11, i13) + (i12 % 2 != 1 ? 0 : 6);
+                    i13 = ((i12 / 2) * 11) + i13 + (i12 % 2 != 1 ? 0 : 6);
                 } else if (ordinal == 4) {
                     i13 += fVar2.a() * 8;
                 } else if (ordinal == 5) {
@@ -674,9 +674,9 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
                     i13 += i12 * 13;
                 }
             } else {
-                int C = a1.g.C(i12, 3, 10, i13);
-                int i14 = i12 % 3;
-                i13 = C + (i14 != 1 ? i14 == 2 ? 7 : 0 : 4);
+                int i14 = ((i12 / 3) * 10) + i13;
+                int i15 = i12 % 3;
+                i13 = i14 + (i15 != 1 ? i15 == 2 ? 7 : 0 : 4);
             }
             i10 += i13;
         }
@@ -847,10 +847,10 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
     public void u(y2.a aVar) {
         j2.k kVar = (j2.k) ((HashMap) this.b).remove(aVar);
         kVar.getClass();
-        i2.g gVar = (i2.g) ((i2.h) this.d).p.get(kVar);
-        if (gVar != null) {
-            synchronized (gVar) {
-                gVar.d--;
+        i2.h hVar = (i2.h) ((i2.i) this.d).p.get(kVar);
+        if (hVar != null) {
+            synchronized (hVar) {
+                hVar.d--;
             }
         }
     }
@@ -863,7 +863,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
     }
 
     public synchronized void w() {
-        ((i2.h) this.d).c.e();
+        ((i2.i) this.d).c.e();
     }
 
     public void x(int i10, String str, String str2) {
@@ -972,18 +972,18 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
         }
     }
 
+    public e(hh.b bVar) {
+        this.a = 17;
+        this.b = new hh.a();
+        this.c = bVar;
+    }
+
     @Override // org.telegram.ui.Components.x71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
 
     @Override // org.telegram.ui.Components.x71
     public /* synthetic */ void onSeekStarted(j2.a aVar) {
-    }
-
-    public e(hh.b bVar) {
-        this.a = 17;
-        this.b = new hh.a();
-        this.c = bVar;
     }
 
     public e(ab.b bVar, kd.h hVar) {
@@ -1218,9 +1218,9 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
         this.c = runnableArr;
     }
 
-    public e(i2.h hVar, j2.k kVar) {
+    public e(i2.i iVar, j2.k kVar) {
         this.a = 18;
-        this.d = hVar;
+        this.d = iVar;
         this.b = new HashMap();
         this.c = kVar;
     }

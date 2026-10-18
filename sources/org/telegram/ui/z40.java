@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z40 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -113,31 +113,31 @@ public final /* synthetic */ class z40 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new xe0((tm0) obj2, tL_error, (TL_account.verifyPhone) obj, 14));
                 break;
             case 16:
-                fo0 fo0Var = (fo0) obj2;
+                go0 go0Var = (go0) obj2;
                 TLObject tLObject2 = (TLObject) obj;
                 if (!(tLObject instanceof TLRPC.TL_payments_validatedRequestedInfo)) {
-                    AndroidUtilities.runOnUIThread(new en0(fo0Var, tL_error, tLObject2, i14));
+                    AndroidUtilities.runOnUIThread(new en0(go0Var, tL_error, tLObject2, i14));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new zg0(i11, fo0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
+                    AndroidUtilities.runOnUIThread(new zg0(i11, go0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
                     break;
                 }
             case 17:
-                fo0 fo0Var2 = (fo0) obj2;
+                go0 go0Var2 = (go0) obj2;
                 TLRPC.TL_payments_sendPaymentForm tL_payments_sendPaymentForm = (TLRPC.TL_payments_sendPaymentForm) obj;
                 if (tLObject == null) {
-                    v10 v10Var = fo0Var2.e1;
+                    v10 v10Var = go0Var2.e1;
                     if (v10Var == null || !((Boolean) v10Var.run(tL_error)).booleanValue()) {
-                        AndroidUtilities.runOnUIThread(new xe0(fo0Var2, tL_error, tL_payments_sendPaymentForm, i11));
+                        AndroidUtilities.runOnUIThread(new xe0(go0Var2, tL_error, tL_payments_sendPaymentForm, i11));
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tLObject instanceof TLRPC.TL_payments_paymentVerificationNeeded) {
-                        AndroidUtilities.runOnUIThread(new ym0(fo0Var2, tLObject, i14));
+                        AndroidUtilities.runOnUIThread(new ym0(go0Var2, tLObject, i14));
                         break;
                     }
                 } else {
-                    Utilities.Callback callback = fo0Var2.c1;
+                    Utilities.Callback callback = go0Var2.c1;
                     if (callback == null) {
                         TLRPC.Updates updates = ((TLRPC.TL_payments_paymentResult) tLObject).updates;
                         TLRPC.Message[] messageArr = new TLRPC.Message[1];
@@ -155,8 +155,8 @@ public final /* synthetic */ class z40 implements RequestDelegate {
                                 }
                             }
                         }
-                        fo0Var2.getMessagesController().lambda$processUpdates$377(updates, false);
-                        AndroidUtilities.runOnUIThread(new zg0(17, fo0Var2, messageArr));
+                        go0Var2.getMessagesController().lambda$processUpdates$377(updates, false);
+                        AndroidUtilities.runOnUIThread(new zg0(17, go0Var2, messageArr));
                         break;
                     } else {
                         callback.run((TLRPC.TL_payments_paymentResult) tLObject);
@@ -165,28 +165,28 @@ public final /* synthetic */ class z40 implements RequestDelegate {
                 }
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new gn0((fo0) obj2, tLObject, tL_error, (TL_account.getTmpPassword) obj, 1));
+                AndroidUtilities.runOnUIThread(new hn0((go0) obj2, tLObject, tL_error, (TL_account.getTmpPassword) obj, 1));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new gn0((zv0) obj2, tL_error, tLObject, (TL_stars.updatePaidMessagesPrice) obj, 6));
+                AndroidUtilities.runOnUIThread(new hn0((zv0) obj2, tL_error, tLObject, (TL_stars.updatePaidMessagesPrice) obj, 6));
                 break;
             case 20:
-                AndroidUtilities.runOnUIThread(new gn0((PrivacyControlActivity) obj2, tL_error, tLObject, (boolean[]) obj, 7));
+                AndroidUtilities.runOnUIThread(new hn0((PrivacyControlActivity) obj2, tL_error, tLObject, (boolean[]) obj, 7));
                 break;
             case 21:
                 AndroidUtilities.runOnUIThread(new lv0(i12, (PrivacySettingsActivity) obj2, (org.telegram.ui.Cells.v8) obj));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new gn0((ProfileActivity) obj2, tL_error, tLObject, (String) obj, 13));
+                AndroidUtilities.runOnUIThread(new hn0((ProfileActivity) obj2, tL_error, tLObject, (String) obj, 13));
                 break;
             case 23:
-                AndroidUtilities.runOnUIThread(new gn0((ProfileActivity) obj2, tLObject, tL_error, (int[]) obj, 10));
+                AndroidUtilities.runOnUIThread(new hn0((ProfileActivity) obj2, tLObject, tL_error, (int[]) obj, 10));
                 break;
             case 24:
-                AndroidUtilities.runOnUIThread(new gn0((ProfileActivity) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 11));
+                AndroidUtilities.runOnUIThread(new hn0((ProfileActivity) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 11));
                 break;
             case 25:
-                AndroidUtilities.runOnUIThread(new gn0((wz0) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 15));
+                AndroidUtilities.runOnUIThread(new hn0((wz0) obj2, tLObject, (TLRPC.TL_username) obj, tL_error, 15));
                 break;
             case 26:
                 AndroidUtilities.runOnUIThread(new xe0((e71) obj2, tL_error, (TLRPC.TL_authorization) obj, 28));
@@ -195,10 +195,10 @@ public final /* synthetic */ class z40 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new xe0((f71) obj2, tL_error, (TLRPC.TL_authorization) obj, 29));
                 break;
             case 28:
-                AndroidUtilities.runOnUIThread(new gn0((i71) obj2, tLObject, tL_error, (n9) obj, 18));
+                AndroidUtilities.runOnUIThread(new hn0((i71) obj2, tLObject, tL_error, (n9) obj, 18));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new gn0((z71) obj2, tL_error, tLObject, (String) obj, 19));
+                AndroidUtilities.runOnUIThread(new hn0((z71) obj2, tL_error, tLObject, (String) obj, 19));
                 break;
         }
     }

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class su0 extends FrameLayout {
     public float a;
@@ -30,7 +30,7 @@ public final class su0 extends FrameLayout {
         o1.j jVar = new o1.j(0.0f);
         this.n = jVar;
         o1.k kVar = new o1.k(jVar);
-        kVar.u = org.telegram.ui.Cells.t0.l(0.0f, 750.0f, 1.0f);
+        kVar.u = org.telegram.ui.Cells.c1.l(0.0f, 750.0f, 1.0f);
         kVar.b(new ad0(this, 3));
         this.r = kVar;
         setWillNotDraw(false);

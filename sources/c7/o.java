@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class o implements Parcelable {
     public static final Parcelable.Creator<o> CREATOR = new r0(19);
@@ -31,7 +31,7 @@ public final class o implements Parcelable {
                             c0Var = pVar;
                         }
                     }
-                    throw new n(i0.a.k(i10, "Algorithm with COSE value ", " not supported"));
+                    throw new n(i2.d.k(i10, "Algorithm with COSE value ", " not supported"));
                 }
                 c0 c0Var2 = values[i11];
                 if (c0Var2.a == i10) {

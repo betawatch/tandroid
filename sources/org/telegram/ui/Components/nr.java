@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class nr {
     public static boolean a(String str, String str2) {
@@ -114,7 +114,7 @@ public abstract class nr {
             }
         }
         treeSet.remove("bot");
-        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.wh.i(1, context, d6Var, true);
+        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.kk.i(1, context, d6Var, true);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
@@ -129,10 +129,10 @@ public abstract class nr {
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         int i12 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.messenger.wh.o(i12, d6Var, textView, 1, 20.0f);
-        org.telegram.messenger.wh.m(R.string.CreateManagedBotTitle, textView, 17);
-        TextView i13 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView, w7.z5.t(-1, -2, 55, 16, 0, 16, 5), context);
-        org.telegram.messenger.wh.o(i12, d6Var, i13, 1, 14.0f);
+        org.telegram.messenger.kk.o(i12, d6Var, textView, 1, 20.0f);
+        org.telegram.messenger.kk.m(R.string.CreateManagedBotTitle, textView, 17);
+        TextView i13 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-1, -2, 55, 16, 0, 16, 5), context);
+        org.telegram.messenger.kk.o(i12, d6Var, i13, 1, 14.0f);
         String formatString = LocaleController.formatString(R.string.CreateManagedBotText, UserObject.getUserName(user));
         int i14 = org.telegram.ui.ActionBar.h6.gc;
         i13.setText(AndroidUtilities.replaceSingleLinkBold(formatString, org.telegram.ui.ActionBar.h6.w0(i14, d6Var)));
@@ -190,7 +190,7 @@ public abstract class nr {
         dVar.setColor(org.telegram.ui.ActionBar.h6.m1(0.1f, org.telegram.ui.ActionBar.h6.w0(i12, d6Var)));
         dVar.setText(LocaleController.getString(R.string.Cancel));
         linearLayout3.addView(dVar, w7.z5.p(0, 48, 119.0f, 1, 0, 0, 5, 0));
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         f7.setText(LocaleController.getString(R.string.CreateManagedBotButton));
         linearLayout3.addView(f7, w7.z5.p(0, 48, 119.0f, 1, 5, 0, 0, 0));
         i11.useBackgroundTopPadding = false;
@@ -209,11 +209,11 @@ public abstract class nr {
         e2 e2Var = new e2(i11, i10, 6);
         String b10 = b(treeSet);
         lg lgVar = new lg(d9Var2, TextUtils.isEmpty(b10) ? LocaleController.getString(R.string.CreateManagedBotUsernameInfo) : AndroidUtilities.replaceSingleLink(LocaleController.formatString(R.string.CreateManagedBotUsernameSuffixesInfo, b10), org.telegram.ui.ActionBar.h6.w0(i14, d6Var), e2Var), d6Var, 4);
-        ai.bb bbVar = new ai.bb(iArr3, runnableArr, iArr2, i10, 19);
+        ai.cb cbVar = new ai.cb(iArr3, runnableArr, iArr2, i10, 19);
         ee eeVar = new ee(24, i3Var2, treeSet);
-        kr krVar = new kr(zArr2, iArr, bbVar, strArr, f7, i3Var2, treeSet, lgVar, d9Var2, d6Var, iArr3, runnableArr, iArr2, i10, e2Var, i11);
+        kr krVar = new kr(zArr2, iArr, cbVar, strArr, f7, i3Var2, treeSet, lgVar, d9Var2, d6Var, iArr3, runnableArr, iArr2, i10, e2Var, i11);
         lgVar.run();
-        lr lrVar = new lr(zArr2, iArr, i3Var2, treeSet, strArr, krVar, i3Var, iArr4, bbVar, f7, z10, i10, user, zArr, callback, i11, e2Var, d6Var, d9Var2, context);
+        lr lrVar = new lr(zArr2, iArr, i3Var2, treeSet, strArr, krVar, i3Var, iArr4, cbVar, f7, z10, i10, user, zArr, callback, i11, e2Var, d6Var, d9Var2, context);
         g3Var2.addTextChangedListener(new mr(eeVar, krVar));
         eeVar.run();
         if (!TextUtils.isEmpty(str3)) {
@@ -223,7 +223,7 @@ public abstract class nr {
         dVar.setOnClickListener(new f3(i11, 2));
         f7.setEnabled(false);
         f7.setOnClickListener(new f0(lrVar, 9));
-        i11.setOnDismissListener(new gi.l4(zArr2, bbVar, zArr, callback, iArr, i10));
+        i11.setOnDismissListener(new gi.l4(zArr2, cbVar, zArr, callback, iArr, i10));
         i11.show();
     }
 }

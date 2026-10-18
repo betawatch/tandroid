@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l80 implements Runnable {
     public final /* synthetic */ int a;
@@ -75,10 +75,10 @@ public final /* synthetic */ class l80 implements Runnable {
                 ArrayList arrayList2 = launchActivity.e0;
                 if (AndroidUtilities.isTablet()) {
                     if (!arrayList2.isEmpty()) {
-                        n2Var = (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList2);
+                        n2Var = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList2);
                     }
                 } else if (!arrayList.isEmpty()) {
-                    n2Var = (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList);
+                    n2Var = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList);
                 }
                 if (!(n2Var instanceof ProxyListActivity) && !(n2Var instanceof u11)) {
                     launchActivity.t0(new ProxyListActivity());

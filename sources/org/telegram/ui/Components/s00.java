@@ -29,7 +29,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class s00 extends FrameLayout {
     public static final /* synthetic */ int A0 = 0;
@@ -190,7 +190,7 @@ public abstract class s00 extends FrameLayout {
         p00 p00Var = new p00(this, i10, MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false), arrayList, textPaint.getFontMetricsInt()), z10);
         p00Var.e = z11;
         p00Var.f = z12;
-        this.M = org.telegram.messenger.q.C(24.0f, p00Var.a(true), this.M);
+        this.M = org.telegram.messenger.g0.C(24.0f, p00Var.a(true), this.M);
         arrayList2.add(p00Var);
     }
 
@@ -237,7 +237,7 @@ public abstract class s00 extends FrameLayout {
                             d.b(LocaleController.getString(R.string.FilterAllChats));
                         }
                         for (int i11 = 0; i11 < size; i11++) {
-                            this.M = org.telegram.messenger.q.C(24.0f, ((p00) arrayList.get(i11)).a(true), this.M);
+                            this.M = org.telegram.messenger.g0.C(24.0f, ((p00) arrayList.get(i11)).a(true), this.M);
                         }
                         z10 = true;
                         if (z10) {
@@ -336,7 +336,7 @@ public abstract class s00 extends FrameLayout {
                 if (K2 != null) {
                     q00 q00Var = (q00) K2.a;
                     f12 = Math.max(AndroidUtilities.dp(16.0f), q00Var.W ? AndroidUtilities.lerp(q00Var.i0, q00Var.d, q00Var.x) : q00Var.d);
-                    f11 = (int) com.google.android.gms.internal.cast.a6.z(q00Var.W ? AndroidUtilities.lerp(q00Var.i0 + AndroidUtilities.dp(20.0f), q00Var.getMeasuredWidth(), q00Var.x) : q00Var.getMeasuredWidth(), f12, 2.0f, q00Var.getX());
+                    f11 = (int) com.google.android.gms.internal.play_billing.k3.z(q00Var.W ? AndroidUtilities.lerp(q00Var.i0 + AndroidUtilities.dp(20.0f), q00Var.getMeasuredWidth(), q00Var.x) : q00Var.getMeasuredWidth(), f12, 2.0f, q00Var.getX());
                     f7 = 2.0f;
                     f10 = 0.0f;
                 } else {

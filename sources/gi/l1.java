@@ -20,7 +20,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.s61;
 import org.webrtc.MediaStreamTrack;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l1 extends bb {
     public final int X;
@@ -49,7 +49,7 @@ public final class l1 extends bb {
     /* JADX WARN: Type inference failed for: r11v1 */
     /* JADX WARN: Type inference failed for: r11v11 */
     /* JADX WARN: Type inference failed for: r11v2, types: [boolean, int] */
-    public l1(Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File file, TLRPC.WebPage webPage, d6 d6Var, org.telegram.ui.web.s sVar, ai.s0 s0Var) {
+    public l1(Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File file, TLRPC.WebPage webPage, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
         super(context, null, false, false, d6Var);
         ?? r11;
         int i11;
@@ -291,23 +291,23 @@ public final class l1 extends bb {
             Q = Q(i11, j10, botInlineResult, null, null, webPage);
         }
         k1 k1Var = Q;
-        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(context, d6Var, false);
-        x0Var.setDelegate(new f1());
-        x0Var.setCustomText(LocaleController.getString(R.string.BotShareMessagePreview));
+        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context, d6Var, false);
+        w0Var.setDelegate(new f1());
+        w0Var.setCustomText(LocaleController.getString(R.string.BotShareMessagePreview));
         g1 g1Var = new g1(context, i11);
         g1Var.setDelegate(new h1());
         g1Var.X3(k1Var, null, false, false, false, false);
-        LinearLayout e = wh.e(context, r11);
-        e.addView(x0Var, z5.n(-1, -2));
+        LinearLayout e = kk.e(context, r11);
+        e.addView(w0Var, z5.n(-1, -2));
         e.addView(g1Var, z5.n(-1, -2));
         i1 i1Var = new i1(context, null);
         this.a0 = i1Var;
         i1Var.V(r6.e(null, i11, j10, h6.I.q()));
         i1Var.addView(e, z5.a(-1.0f, 4.0f, 8.0f, 4.0f, 8.0f, -1, 119));
         FrameLayout frameLayout = new FrameLayout(context);
-        ei.d f7 = wh.f(24, context, d6Var, r11);
+        ei.d f7 = kk.f(24, context, d6Var, r11);
         f7.g(LocaleController.getString(R.string.BotShareMessageShare), false, r11);
-        f7.setOnClickListener(new ai.e1(this, tL_messages_preparedInlineMessage, s0Var, i11, j10, sVar));
+        f7.setOnClickListener(new ai.e1(this, tL_messages_preparedInlineMessage, s0Var, i11, j10, tVar));
         frameLayout.addView(f7, z5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
         ViewGroup viewGroup = this.containerView;
         int i13 = this.backgroundPaddingLeft;
@@ -446,13 +446,13 @@ public final class l1 extends bb {
         return new k1(i10, tL_message, true, true);
     }
 
-    public static void R(Context context, int i10, long j10, String str, d6 d6Var, org.telegram.ui.web.s sVar, ai.s0 s0Var) {
+    public static void R(Context context, int i10, long j10, String str, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
         org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context, 3, null);
         b2Var.q(500L);
         TLRPC.TL_messages_getPreparedInlineMessage tL_messages_getPreparedInlineMessage = new TLRPC.TL_messages_getPreparedInlineMessage();
         tL_messages_getPreparedInlineMessage.bot = MessagesController.getInstance(i10).getInputUser(j10);
         tL_messages_getPreparedInlineMessage.id = str;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getPreparedInlineMessage, new z0(i10, b2Var, context, j10, d6Var, sVar, s0Var));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getPreparedInlineMessage, new z0(i10, b2Var, context, j10, d6Var, tVar, s0Var));
     }
 
     @Override // org.telegram.ui.Components.bb

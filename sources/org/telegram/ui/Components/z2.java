@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                     userFull.birthday = tL_birthday;
                     MessagesStorage.getInstance(i12).updateUserInfo(userFull, false);
                 }
-                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.p2(zy0Var, userFull, tL_birthday2, 18), 1024);
+                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.q2(zy0Var, userFull, tL_birthday2, 18), 1024);
                 MessagesController.getInstance(i12).invalidateContentSettings();
                 MessagesController.getInstance(i12).removeSuggestion(0L, "BIRTHDAY_SETUP");
                 NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);

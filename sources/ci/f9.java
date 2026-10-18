@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class f9 extends View {
     public int a;
@@ -181,7 +181,7 @@ public final class f9 extends View {
             float dpf22 = this.s ? AndroidUtilities.dpf2(43.0f) : AndroidUtilities.dpf2(23.66f);
             float dpf23 = AndroidUtilities.dpf2(23.66f);
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(com.google.android.gms.internal.cast.a6.z(getWidth(), dpf22, 2.0f, dpf2), (getHeight() - dpf23) / 2.0f, org.telegram.messenger.q.a(getWidth(), dpf22, 2.0f, dpf2), (getHeight() + dpf23) / 2.0f);
+            rectF.set(com.google.android.gms.internal.play_billing.k3.z(getWidth(), dpf22, 2.0f, dpf2), (getHeight() - dpf23) / 2.0f, org.telegram.messenger.g0.a(getWidth(), dpf22, 2.0f, dpf2), (getHeight() + dpf23) / 2.0f);
             float a2 = this.x.a(0.075f);
             canvas.save();
             canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
@@ -206,22 +206,22 @@ public final class f9 extends View {
             } else {
                 float dpf24 = this.s ? AndroidUtilities.dpf2(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable2 = drawableArr[1];
-                int y3 = (int) wh.y(fArr[1], 2.0f, abs, dpf24);
+                int x10 = (int) kk.x(fArr[1], 2.0f, abs, dpf24);
                 float centerY = rectF.centerY();
                 float f11 = (fArr[1] / 2.0f) * abs;
                 f7 = 0.5f;
                 c10 = 0;
                 f10 = 12.0f;
-                drawable2.setBounds(y3, (int) (centerY - f11), (int) (f11 + dpf24), (int) a1.g.d(fArr[1], 2.0f, abs, rectF.centerY()));
+                drawable2.setBounds(x10, (int) (centerY - f11), (int) (f11 + dpf24), (int) a1.g.d(fArr[1], 2.0f, abs, rectF.centerY()));
                 drawableArr[1].draw(canvas);
             }
             if (drawableArr[c10] != null && d <= f7) {
                 float dpf25 = this.s ? AndroidUtilities.dpf2(14.66f) + rectF.left : rectF.centerX();
                 Drawable drawable3 = drawableArr[c10];
-                int y10 = (int) wh.y(fArr[c10], 2.0f, abs, dpf25);
+                int x11 = (int) kk.x(fArr[c10], 2.0f, abs, dpf25);
                 float centerY2 = rectF.centerY();
                 float f12 = (fArr[c10] / 2.0f) * abs;
-                drawable3.setBounds(y10, (int) (centerY2 - f12), (int) (f12 + dpf25), (int) a1.g.d(fArr[c10], 2.0f, abs, rectF.centerY()));
+                drawable3.setBounds(x11, (int) (centerY2 - f12), (int) (f12 + dpf25), (int) a1.g.d(fArr[c10], 2.0f, abs, rectF.centerY()));
                 drawableArr[c10].draw(canvas);
             }
             if (this.s) {

@@ -13,7 +13,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class lj0 {
     public final View a;
@@ -95,7 +95,7 @@ public final class lj0 {
             pj0Var.I = i11;
             drawable.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
             paint2.setColor(i11);
-            paint.setColor(i0.b.o(i11, 30));
+            paint.setColor(i0.a.o(i11, 30));
         }
         int dp = z10 ? i10 : AndroidUtilities.dp(32.0f) + this.d;
         int i15 = ((double) dp) >= ((double) i10) * 0.95d ? i10 : dp;

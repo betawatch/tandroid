@@ -20,7 +20,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m30 extends LinearLayout implements VoIPService.StateListener, NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -73,9 +73,9 @@ public final class m30 extends LinearLayout implements VoIPService.StateListener
             }
         }
         if (sharedInstance.mutedByAdmin()) {
-            t2Var.c(R.drawable.calls_unmute, -1, i0.b.o(-1, 76), 0.1f, true, LocaleController.getString(R.string.VoipMutedByAdminShort), true, z11);
+            t2Var.c(R.drawable.calls_unmute, -1, i0.a.o(-1, 76), 0.1f, true, LocaleController.getString(R.string.VoipMutedByAdminShort), true, z11);
         } else {
-            t2Var.c(R.drawable.calls_unmute, -1, i0.b.o(-1, (int) ((sharedInstance.isMicMute() ? 0.3f : 0.15f) * 255.0f)), 0.1f, true, LocaleController.getString(sharedInstance.isMicMute() ? R.string.VoipUnmute : R.string.VoipMute), sharedInstance.isMicMute(), z11);
+            t2Var.c(R.drawable.calls_unmute, -1, i0.a.o(-1, (int) ((sharedInstance.isMicMute() ? 0.3f : 0.15f) * 255.0f)), 0.1f, true, LocaleController.getString(sharedInstance.isMicMute() ? R.string.VoipUnmute : R.string.VoipMute), sharedInstance.isMicMute(), z11);
         }
         invalidate();
     }
@@ -224,10 +224,10 @@ public final class m30 extends LinearLayout implements VoIPService.StateListener
                         this.w = true;
                         invalidate();
                         if (this.w) {
-                            int f13 = i0.b.f(1.0f - this.E, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ch, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.eh, false));
-                            int f14 = i0.b.f(1.0f - this.E, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.dh, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.fh, false));
-                            int f15 = i0.b.f(this.F, f13, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.gh, false));
-                            int f16 = i0.b.f(this.F, f14, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.hh, false));
+                            int f13 = i0.a.f(1.0f - this.E, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ch, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.eh, false));
+                            int f14 = i0.a.f(1.0f - this.E, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.dh, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.fh, false));
+                            int f15 = i0.a.f(this.F, f13, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.gh, false));
+                            int f16 = i0.a.f(this.F, f14, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.hh, false));
                             this.w = false;
                             int i12 = this.r;
                             if (i12 == 0) {

@@ -1,6 +1,6 @@
 package org.telegram.ui.ActionBar;
 
-import ai.bb;
+import ai.cb;
 import android.content.DialogInterface;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
@@ -13,10 +13,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.l8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class p implements Runnable {
         switch (i10) {
             case 0:
                 Drawable drawable = ActionBarLayout.p1;
-                AndroidUtilities.runOnUIThread((bb) obj);
+                AndroidUtilities.runOnUIThread((cb) obj);
                 break;
             case 1:
                 u0 u0Var = (u0) obj;
@@ -155,7 +155,7 @@ public final /* synthetic */ class p implements Runnable {
                 ((CountDownLatch) obj).countDown();
                 break;
             case 17:
-                wh.n(1, (n2) obj);
+                kk.n(1, (n2) obj);
                 break;
             case 18:
                 l8 l8Var = (l8) h6.e5.remove((MessageObject) obj);

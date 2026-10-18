@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class id1 extends org.telegram.ui.ActionBar.n2 {
     public float E;
@@ -25,7 +25,7 @@ public final class id1 extends org.telegram.ui.ActionBar.n2 {
     public final int H;
     public final a6 I;
     public final h11 J;
-    public final qp0 K;
+    public final rp0 K;
     public org.telegram.ui.Components.im0 a;
     public org.telegram.ui.Components.im0 b;
     public TextView c;
@@ -49,8 +49,8 @@ public final class id1 extends org.telegram.ui.ActionBar.n2 {
         this.H = AndroidUtilities.dp(64.0f);
         this.I = new a6(this, 14);
         this.J = new h11(this, 9);
-        this.K = new qp0(this, 22);
-        this.arguments = org.telegram.ui.Cells.t0.j(i10, TeXSymbolParser.TYPE_ATTR);
+        this.K = new rp0(this, 22);
+        this.arguments = org.telegram.ui.Cells.c1.i(i10, TeXSymbolParser.TYPE_ATTR);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -79,8 +79,8 @@ public final class id1 extends org.telegram.ui.ActionBar.n2 {
         h11 h11Var = this.J;
         im0Var3.setOnItemClickListener(h11Var);
         org.telegram.ui.Components.im0 im0Var4 = this.a;
-        qp0 qp0Var = this.K;
-        im0Var4.setOnItemLongClickListener(qp0Var);
+        rp0 rp0Var = this.K;
+        im0Var4.setOnItemLongClickListener(rp0Var);
         org.telegram.ui.Components.im0 im0Var5 = new org.telegram.ui.Components.im0(context, null);
         this.b = im0Var5;
         im0Var5.setLayoutManager(new s4.b0());
@@ -89,7 +89,7 @@ public final class id1 extends org.telegram.ui.ActionBar.n2 {
         this.e = hd1Var;
         im0Var6.setAdapter(hd1Var);
         this.b.setOnItemClickListener(h11Var);
-        this.b.setOnItemLongClickListener(qp0Var);
+        this.b.setOnItemLongClickListener(rp0Var);
         this.b.setOnScrollListener(new dd1(this, 0));
         org.telegram.ui.Components.vz vzVar = new org.telegram.ui.Components.vz(context, null);
         this.r = vzVar;

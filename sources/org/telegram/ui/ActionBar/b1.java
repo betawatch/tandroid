@@ -34,7 +34,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.ed;
 import org.telegram.ui.Components.wc0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class b1 extends FrameLayout {
     public final Paint E;
@@ -226,7 +226,7 @@ public abstract class b1 extends FrameLayout {
         }
         int i11 = h6.sj;
         d6 d6Var = a1Var.x;
-        this.J.setColor(i0.b.f(w7.r.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), h6.w0(i11, d6Var), h6.w0(h6.tj, d6Var)));
+        this.J.setColor(i0.a.f(w7.r.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), h6.w0(i11, d6Var), h6.w0(h6.tj, d6Var)));
     }
 
     public float getValue() {

@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class o01 extends org.telegram.ui.Components.hm0 {
     public TLRPC.WebPage E;
@@ -144,7 +144,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i12 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i12)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i12, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i12, 13), 700, true);
                                 break;
                             } else {
                                 i12++;
@@ -1130,7 +1130,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -1267,7 +1267,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -1403,7 +1403,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -1539,7 +1539,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -1676,7 +1676,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -1814,7 +1814,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -1992,7 +1992,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -2133,7 +2133,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                                 if (i122 >= arrayList.size()) {
                                     break;
                                 } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                    sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                    sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                     break;
                                 } else {
                                     i122++;
@@ -2275,7 +2275,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -2413,7 +2413,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -2551,7 +2551,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -2689,7 +2689,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -8491,7 +8491,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                                 if (i122 >= arrayList.size()) {
                                     break;
                                 } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                    sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                    sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                     break;
                                 } else {
                                     i122++;
@@ -8636,7 +8636,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                                 if (i122 >= arrayList.size()) {
                                     break;
                                 } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                    sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                    sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                     break;
                                 } else {
                                     i122++;
@@ -8777,7 +8777,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                                 if (i122 >= arrayList.size()) {
                                     break;
                                 } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                    sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                    sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                     break;
                                 } else {
                                     i122++;
@@ -11514,7 +11514,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -11651,7 +11651,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -11789,7 +11789,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                                 if (i122 >= arrayList.size()) {
                                     break;
                                 } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                    sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                    sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                     break;
                                 } else {
                                     i122++;
@@ -11929,7 +11929,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -12066,7 +12066,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -12204,7 +12204,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -12342,7 +12342,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -12480,7 +12480,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -12618,7 +12618,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -12756,7 +12756,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -12895,7 +12895,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                                 if (i122 >= arrayList.size()) {
                                     break;
                                 } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                    sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                    sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                     break;
                                 } else {
                                     i122++;
@@ -13035,7 +13035,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -13173,7 +13173,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -13311,7 +13311,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
                             if (i122 >= arrayList.size()) {
                                 break;
                             } else if (((mb0) arrayList.get(i122)).f == 1) {
-                                sb0Var8.b.e1(new i2.q(sb0Var8, i122, 13), 700, true);
+                                sb0Var8.b.e1(new i2.r(sb0Var8, i122, 13), 700, true);
                                 break;
                             } else {
                                 i122++;
@@ -13568,7 +13568,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
         org.telegram.ui.Cells.w6 w6Var = (org.telegram.ui.Cells.w6) view;
         if (this.w) {
             if (i10 >= this.r.size()) {
-                int g10 = com.google.android.gms.internal.cast.a6.g(1, i10, this.r);
+                int g10 = com.google.android.gms.internal.play_billing.k3.g(1, i10, this.r);
                 w6Var.a((CharSequence) this.n.get(this.r.size() + g10), ((MessagesController.FaqSearchResult) this.s.get(g10)).path, true, g10 < this.r.size() - 1);
                 return;
             } else {
@@ -13583,7 +13583,7 @@ public class o01 extends org.telegram.ui.Components.hm0 {
             i10--;
         }
         if (i10 >= arrayList.size()) {
-            int g11 = com.google.android.gms.internal.cast.a6.g(1, i10, arrayList);
+            int g11 = com.google.android.gms.internal.play_billing.k3.g(1, i10, arrayList);
             MessagesController.FaqSearchResult faqSearchResult = (MessagesController.FaqSearchResult) this.d.get(g11);
             w6Var.a(faqSearchResult.title, faqSearchResult.path, true, g11 < arrayList.size() - 1);
             return;

@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pe1 extends org.telegram.ui.Components.c91 implements f10 {
     public final FrameLayout T;
@@ -39,7 +39,7 @@ public final class pe1 extends org.telegram.ui.Components.c91 implements f10 {
     public final org.telegram.ui.Components.nl0 o0;
     public boolean p0;
     public final oe1 q0;
-    public final lo0 r0;
+    public final mo0 r0;
     public final ArrayList s0;
     public final /* synthetic */ te1 t0;
 
@@ -53,7 +53,7 @@ public final class pe1 extends org.telegram.ui.Components.c91 implements f10 {
         this.s0 = new ArrayList();
         FrameLayout frameLayout = new FrameLayout(context);
         this.T = frameLayout;
-        this.r0 = new lo0(this, 8);
+        this.r0 = new mo0(this, 8);
         org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
         this.U = im0Var;
         me1 me1Var = new me1(this);
@@ -102,7 +102,7 @@ public final class pe1 extends org.telegram.ui.Components.c91 implements f10 {
         tL_messages_search.q = str;
         ArrayList arrayList = this.d0;
         if (!arrayList.isEmpty()) {
-            tL_messages_search.offset_id = ((MessageObject) i0.a.h(1, arrayList)).getId();
+            tL_messages_search.offset_id = ((MessageObject) i2.d.h(1, arrayList)).getId();
         }
         this.p0 = true;
         i10 = ((org.telegram.ui.ActionBar.n2) te1Var).currentAccount;

@@ -8,7 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e0 extends z {
     public final d0 e;
@@ -33,24 +33,24 @@ public final class e0 extends z {
         d0 d0Var = this.e;
         Context context = d0Var.getContext();
         int[] iArr = f.a.g;
-        g3 P = g3.P(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) P.c;
-        r0.i0.i(d0Var, d0Var.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
-        Drawable G = P.G(0);
-        if (G != null) {
-            d0Var.setThumb(G);
+        g3 K = g3.K(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) K.c;
+        r0.i0.i(d0Var, d0Var.getContext(), iArr, attributeSet, (TypedArray) K.c, i10);
+        Drawable B = K.B(0);
+        if (B != null) {
+            d0Var.setThumb(B);
         }
-        Drawable F = P.F(1);
+        Drawable A = K.A(1);
         Drawable drawable = this.f;
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.f = F;
-        if (F != null) {
-            F.setCallback(d0Var);
-            F.setLayoutDirection(d0Var.getLayoutDirection());
-            if (F.isStateful()) {
-                F.setState(d0Var.getDrawableState());
+        this.f = A;
+        if (A != null) {
+            A.setCallback(d0Var);
+            A.setLayoutDirection(d0Var.getLayoutDirection());
+            if (A.isStateful()) {
+                A.setState(d0Var.getDrawableState());
             }
             f();
         }
@@ -60,10 +60,10 @@ public final class e0 extends z {
             this.j = true;
         }
         if (typedArray.hasValue(2)) {
-            this.g = P.E(2);
+            this.g = K.z(2);
             this.i = true;
         }
-        P.Q();
+        K.L();
         f();
     }
 

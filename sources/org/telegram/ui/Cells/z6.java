@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z6 extends View {
     public int a;
@@ -15,7 +15,7 @@ public final class z6 extends View {
     public boolean d;
 
     public z6(Context context) {
-        this(context, (t0) null);
+        this(context, (c1) null);
     }
 
     private int getBackgroundResId() {
@@ -33,10 +33,10 @@ public final class z6 extends View {
     }
 
     public z6(Context context, Object obj) {
-        this(context, (t0) null);
+        this(context, (c1) null);
     }
 
-    public z6(Context context, t0 t0Var) {
+    public z6(Context context, c1 c1Var) {
         super(context);
         this.c = true;
         this.d = true;

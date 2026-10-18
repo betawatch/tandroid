@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.u10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x6 extends FrameLayout {
-    public final i2 a;
+    public final j2 a;
     public final w6 b;
     public final w6 c;
     public final w6 d;
@@ -21,11 +21,11 @@ public final class x6 extends FrameLayout {
     public final u10 f;
     public final RectF h;
 
-    public x6(Context context, org.telegram.ui.ActionBar.d6 d6Var, i2 i2Var) {
+    public x6(Context context, org.telegram.ui.ActionBar.d6 d6Var, j2 j2Var) {
         super(context);
         this.f = new u10();
         this.h = new RectF();
-        this.a = i2Var;
+        this.a = j2Var;
         w6 w6Var = new w6(context, d6Var);
         this.b = w6Var;
         w6 w6Var2 = new w6(context, d6Var);
@@ -38,14 +38,14 @@ public final class x6 extends FrameLayout {
     }
 
     public final void a(n6 n6Var, float f7, boolean z10, n6 n6Var2, float f10, boolean z11, n6 n6Var3, float f11, boolean z12) {
-        i2 i2Var = this.a;
+        j2 j2Var = this.a;
         w6 w6Var = this.b;
         if (n6Var != null) {
             if (z10) {
                 f7 = Math.max(0.5f, f7);
             }
             w6Var.setVisibility(0);
-            w6Var.e(n6Var.a, n6Var.b, i2Var);
+            w6Var.e(n6Var.a, n6Var.b, j2Var);
             w6Var.setTranslationY(AndroidUtilities.dp(36.0f) * ((f7 - 0.5f) / 1.5f));
         } else {
             w6Var.setVisibility(4);
@@ -58,7 +58,7 @@ public final class x6 extends FrameLayout {
             }
             float f13 = (f12 - 0.5f) / 1.5f;
             w6Var2.setVisibility(0);
-            w6Var2.e(n6Var2.a, n6Var2.b, i2Var);
+            w6Var2.e(n6Var2.a, n6Var2.b, j2Var);
             w6Var2.setTranslationY(AndroidUtilities.dp(36.0f) * f13);
             if (z11 && f13 <= 0.0f && !this.e) {
                 this.e = true;
@@ -80,7 +80,7 @@ public final class x6 extends FrameLayout {
             f14 = Math.max(0.5f, f14);
         }
         w6Var3.setVisibility(0);
-        w6Var3.e(n6Var3.a, n6Var3.b, i2Var);
+        w6Var3.e(n6Var3.a, n6Var3.b, j2Var);
         w6Var3.setTranslationY(AndroidUtilities.dp(36.0f) * ((f14 - 0.5f) / 1.5f));
     }
 

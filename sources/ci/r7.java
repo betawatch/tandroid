@@ -20,7 +20,7 @@ import org.telegram.ui.Components.pl0;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.uz0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class r7 implements w9 {
     public final im0 a;
@@ -115,16 +115,16 @@ public final class r7 implements w9 {
                         c(x9Var);
                         return true;
                     }
-                } else if (childAt instanceof org.telegram.ui.Cells.x0) {
-                    org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) childAt;
-                    if (x0Var.getMessageObject().getId() == i10) {
+                } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
+                    if (w0Var.getMessageObject().getId() == i10) {
                         x9Var.a = childAt;
-                        if (x0Var.getMessageObject().messageOwner.media.storyItem.noforwards) {
-                            x9Var.b = x0Var.getPhotoImage();
+                        if (w0Var.getMessageObject().messageOwner.media.storyItem.noforwards) {
+                            x9Var.b = w0Var.getPhotoImage();
                         } else {
-                            x9Var.c = x0Var.getPhotoImage();
+                            x9Var.c = w0Var.getPhotoImage();
                         }
-                        x9Var.g = (View) x0Var.getParent();
+                        x9Var.g = (View) w0Var.getParent();
                         x9Var.k = 1.0f;
                         c(x9Var);
                         return true;
@@ -140,7 +140,7 @@ public final class r7 implements w9 {
                         }
                         x9Var.a = childAt;
                         x9Var.c = s7Var.c;
-                        x9Var.e = new ai.s2(s7Var, fastScroll, iArr, 4);
+                        x9Var.e = new ai.t2(s7Var, fastScroll, iArr, 4);
                         x9Var.g = (View) s7Var.getParent();
                         x9Var.k = 1.0f;
                         c(x9Var);

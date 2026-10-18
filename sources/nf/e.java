@@ -4,7 +4,7 @@ import com.google.android.gms.common.api.internal.m1;
 import java.io.EOFException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e {
     public static final m1 e = new m1(1);
@@ -59,12 +59,12 @@ public final class e {
         if (Z == 3) {
             return b.f;
         }
-        throw new c(i0.a.j(Z, "Invalid encoding: "));
+        throw new c(i2.d.j(Z, "Invalid encoding: "));
     }
 
     public final String c(int i10, b bVar) {
         if (i10 > this.a.e()) {
-            throw new c(i0.a.j(i10, "Could not read fixed-length string of length: "));
+            throw new c(i2.d.j(i10, "Could not read fixed-length string of length: "));
         }
         d dVar = (d) e.get();
         byte[] bArr = dVar.a;

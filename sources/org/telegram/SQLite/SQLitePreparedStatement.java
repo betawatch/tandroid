@@ -1,14 +1,14 @@
 package org.telegram.SQLite;
 
 import android.os.SystemClock;
-import i0.a;
+import i2.d;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class SQLitePreparedStatement {
     private boolean isFinalized = false;
@@ -93,7 +93,7 @@ public class SQLitePreparedStatement {
                 sb2.append(this.query);
                 sb2.append(" took ");
                 sb2.append(elapsedRealtime);
-                a.v("ms", sb2);
+                d.v("ms", sb2);
             }
         }
         try {

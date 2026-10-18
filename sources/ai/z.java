@@ -50,7 +50,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.uq;
 import org.telegram.ui.vq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -94,8 +94,8 @@ public final /* synthetic */ class z implements Runnable {
         int i10 = 3;
         int i11 = 2;
         SQLitePreparedStatement sQLitePreparedStatement = null;
-        int i12 = 1;
-        int i13 = 0;
+        int i12 = 0;
+        int i13 = 1;
         switch (this.a) {
             case 0:
                 k0 k0Var = (k0) this.d;
@@ -118,12 +118,12 @@ public final /* synthetic */ class z implements Runnable {
                 callback.run(null);
                 return;
             case 1:
-                fa faVar = (fa) this.d;
+                ga gaVar = (ga) this.d;
                 TLObject tLObject2 = (TLObject) this.b;
                 MessageObject messageObject = (MessageObject) this.e;
                 long j11 = this.c;
                 Runnable runnable = (Runnable) this.f;
-                int i15 = faVar.a;
+                int i15 = gaVar.a;
                 if (!(tLObject2 instanceof TLRPC.TL_messages_messages)) {
                     runnable.run();
                     return;
@@ -136,34 +136,34 @@ public final /* synthetic */ class z implements Runnable {
                     return;
                 } else {
                     messageObject.messageOwner = tL_messages_messages.messages.get(0);
-                    faVar.l0(messageObject, j11, runnable, true);
+                    gaVar.l0(messageObject, j11, runnable, true);
                     return;
                 }
             case 2:
-                fa faVar2 = (fa) this.d;
+                ga gaVar2 = (ga) this.d;
                 Utilities.Callback2 callback2 = (Utilities.Callback2) this.e;
                 long j12 = this.c;
                 TLObject tLObject3 = (TLObject) this.b;
                 TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.f;
-                if (faVar2.e) {
-                    faVar2.g(j12, tLObject3, tL_textWithEntities, callback2);
+                if (gaVar2.e) {
+                    gaVar2.g(j12, tLObject3, tL_textWithEntities, callback2);
                     return;
                 } else {
-                    fa.e("NO_BALANCE");
+                    ga.e("NO_BALANCE");
                     callback2.run(Boolean.FALSE, null);
                     return;
                 }
             case 3:
-                fa faVar3 = (fa) this.d;
+                ga gaVar3 = (ga) this.d;
                 Utilities.Callback2 callback22 = (Utilities.Callback2) this.e;
                 TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.b;
                 TL_stars.StarGift starGift2 = (TL_stars.StarGift) this.f;
                 long j13 = this.c;
-                if (faVar3.e) {
-                    faVar3.h(tL_payments_paymentFormStarGift, starGift2, j13, null, true, callback22);
+                if (gaVar3.e) {
+                    gaVar3.h(tL_payments_paymentFormStarGift, starGift2, j13, null, true, callback22);
                     return;
                 } else {
-                    fa.e("NO_BALANCE");
+                    ga.e("NO_BALANCE");
                     callback22.run(Boolean.FALSE, null);
                     return;
                 }
@@ -183,63 +183,63 @@ public final /* synthetic */ class z implements Runnable {
                 a02.s(document2, string, charSequence).k(false);
                 return;
             case 5:
-                ea eaVar = (ea) this.d;
+                fa faVar = (fa) this.d;
                 TLObject tLObject4 = (TLObject) this.b;
                 MessagesController messagesController = (MessagesController) this.e;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.f;
                 long j15 = this.c;
-                eaVar.getClass();
+                faVar.getClass();
                 if (tLObject4 != null) {
-                    Utilities.stageQueue.postRunnable(new a1.f(29, messagesController, tLObject4));
+                    Utilities.stageQueue.postRunnable(new zh.k0(1, messagesController, tLObject4));
                     return;
                 }
                 if (tL_error != null) {
-                    eaVar.b.addPaidReactions((int) (-eaVar.h), eaVar.g, eaVar.c());
-                    NotificationCenter.getInstance(eaVar.q.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(eaVar.b.getDialogId()), Integer.valueOf(eaVar.b.getId()), eaVar.b.messageOwner.reactions);
+                    faVar.b.addPaidReactions((int) (-faVar.h), faVar.g, faVar.c());
+                    NotificationCenter.getInstance(faVar.q.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateReactions, Long.valueOf(faVar.b.getDialogId()), Integer.valueOf(faVar.b.getId()), faVar.b.messageOwner.reactions);
                     if ("BALANCE_TOO_LOW".equals(tL_error.text)) {
-                        if (eaVar.a.a >= 0) {
-                            str = UserObject.getForcedFirstName(eaVar.c.getMessagesController().getUser(Long.valueOf(eaVar.a.a)));
+                        if (faVar.a.a >= 0) {
+                            str = UserObject.getForcedFirstName(faVar.c.getMessagesController().getUser(Long.valueOf(faVar.a.a)));
                         } else {
-                            TLRPC.Chat chat = eaVar.c.getMessagesController().getChat(Long.valueOf(-eaVar.a.a));
+                            TLRPC.Chat chat = faVar.c.getMessagesController().getChat(Long.valueOf(-faVar.a.a));
                             str = chat == null ? "" : chat.title;
                         }
                         String str4 = str;
-                        Context parentActivity = eaVar.c.getParentActivity();
+                        Context parentActivity = faVar.c.getParentActivity();
                         if (parentActivity == null) {
                             parentActivity = LaunchActivity.H1;
                         }
                         if (parentActivity == null) {
                             parentActivity = ApplicationLoader.applicationContext;
                         }
-                        new bd(parentActivity, eaVar.c.getResourceProvider(), j15, 5, str4, new da(eaVar, j15, 1), 0L).show();
+                        new cd(parentActivity, faVar.c.getResourceProvider(), j15, 5, str4, new ea(faVar, j15, 1), 0L).show();
                     }
-                    eaVar.q.T(false);
-                    eaVar.q.P();
+                    faVar.q.T(false);
+                    faVar.q.P();
                     return;
                 }
                 return;
             case 6:
-                ke keVar = (ke) this.d;
+                le leVar = (le) this.d;
                 long j16 = this.c;
-                fa faVar4 = (fa) this.e;
+                ga gaVar4 = (ga) this.e;
                 MessageObject messageObject2 = (MessageObject) this.b;
                 sn snVar = (sn) this.f;
-                a1.c cVar = keVar.Q;
+                a1.c cVar = leVar.Q;
                 if (cVar == null) {
-                    ea d02 = faVar4.d0(messageObject2, snVar, j16, false, true, Long.valueOf(keVar.E));
+                    fa d02 = gaVar4.d0(messageObject2, snVar, j16, false, true, Long.valueOf(leVar.E));
                     if (d02 == null) {
                         return;
                     }
-                    AndroidUtilities.runOnUIThread(new oa(1, keVar, d02));
+                    AndroidUtilities.runOnUIThread(new pa(1, leVar, d02));
                     return;
                 }
                 int intValue = ci.x0.a((ci.x0) cVar.b, Long.valueOf(j16)).intValue();
-                keVar.P = intValue;
+                leVar.P = intValue;
                 if (intValue == Integer.MIN_VALUE) {
-                    keVar.dismiss();
+                    leVar.dismiss();
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new md(keVar, 0));
+                    AndroidUtilities.runOnUIThread(new nd(leVar, 0));
                     return;
                 }
             case 7:
@@ -380,7 +380,7 @@ public final /* synthetic */ class z implements Runnable {
                 return;
             default:
                 yh.p1 p1Var = (yh.p1) this.d;
-                x9 x9Var = (x9) this.e;
+                y9 y9Var = (y9) this.e;
                 long j24 = this.c;
                 Utilities.Callback callback3 = (Utilities.Callback) this.f;
                 Context context = (Context) this.b;
@@ -388,12 +388,12 @@ public final /* synthetic */ class z implements Runnable {
                 int i18 = 0;
                 while (i18 < i11) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    if (i18 == i12) {
+                    if (i18 == i13) {
                         formatString = LocaleController.getString(R.string.Gift2StarsCollectibleInfo);
                     } else {
                         int i19 = R.string.Gift2StarsInfo;
-                        Object[] objArr = new Object[i12];
-                        objArr[i13] = p1Var.e0;
+                        Object[] objArr = new Object[i13];
+                        objArr[i12] = p1Var.e0;
                         formatString = LocaleController.formatString(i19, objArr);
                     }
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(formatString));
@@ -401,9 +401,9 @@ public final /* synthetic */ class z implements Runnable {
                     spannableStringBuilder.append((CharSequence) " ");
                     HashSet hashSet = new HashSet();
                     HashSet hashSet2 = new HashSet();
-                    int i20 = i13;
-                    while (i13 < x9Var.l.size() && hashSet.size() < i10) {
-                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) x9Var.l.get(i13);
+                    int i20 = i12;
+                    while (i12 < y9Var.l.size() && hashSet.size() < i10) {
+                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) y9Var.l.get(i12);
                         if (savedStarGift == null || (starGift = savedStarGift.gift) == null || (document = starGift.getDocument()) == null) {
                             str2 = str10;
                         } else {
@@ -413,7 +413,7 @@ public final /* synthetic */ class z implements Runnable {
                                 hashSet.add(Long.valueOf(document.id));
                             }
                         }
-                        i13++;
+                        i12++;
                         str10 = str2;
                         i10 = 3;
                     }
@@ -434,44 +434,44 @@ public final /* synthetic */ class z implements Runnable {
                         spannableStringBuilder2.append((CharSequence) " >");
                         spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new ac0(p1Var, callback3, j24, 5)), true));
                     } else {
-                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new qa(context, 12)), true));
+                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new ra(context, 12)), true));
                     }
                     TextView textView = i18 == 0 ? v0Var : p1Var.m0;
                     textView.setText(spannableStringBuilder);
                     textView.setMaxWidth(ei.x3.a(textView.getText(), textView.getPaint()));
                     i18++;
-                    i13 = i20;
+                    i12 = i20;
                     i10 = 3;
                     i11 = 2;
-                    i12 = 1;
+                    i13 = 1;
                 }
                 return;
         }
     }
 
-    public /* synthetic */ z(ea eaVar, TLObject tLObject, MessagesController messagesController, TLRPC.TL_error tL_error, long j10) {
+    public /* synthetic */ z(fa faVar, TLObject tLObject, MessagesController messagesController, TLRPC.TL_error tL_error, long j10) {
         this.a = 5;
-        this.d = eaVar;
+        this.d = faVar;
         this.b = tLObject;
         this.e = messagesController;
         this.f = tL_error;
         this.c = j10;
     }
 
-    public /* synthetic */ z(fa faVar, TLObject tLObject, MessageObject messageObject, long j10, Runnable runnable) {
+    public /* synthetic */ z(ga gaVar, TLObject tLObject, MessageObject messageObject, long j10, Runnable runnable) {
         this.a = 1;
-        this.d = faVar;
+        this.d = gaVar;
         this.b = tLObject;
         this.e = messageObject;
         this.c = j10;
         this.f = runnable;
     }
 
-    public /* synthetic */ z(ke keVar, long j10, fa faVar, MessageObject messageObject, sn snVar) {
+    public /* synthetic */ z(le leVar, long j10, ga gaVar, MessageObject messageObject, sn snVar) {
         this.a = 6;
-        this.d = keVar;
+        this.d = leVar;
         this.c = j10;
-        this.e = faVar;
+        this.e = gaVar;
         this.b = messageObject;
         this.f = snVar;
     }
@@ -521,10 +521,10 @@ public final /* synthetic */ class z implements Runnable {
         this.b = tLObject2;
     }
 
-    public /* synthetic */ z(yh.p1 p1Var, x9 x9Var, long j10, Utilities.Callback callback, Context context) {
+    public /* synthetic */ z(yh.p1 p1Var, y9 y9Var, long j10, Utilities.Callback callback, Context context) {
         this.a = 15;
         this.d = p1Var;
-        this.e = x9Var;
+        this.e = y9Var;
         this.c = j10;
         this.f = callback;
         this.b = context;

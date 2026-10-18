@@ -13,23 +13,24 @@ import n6.l;
 import org.telegram.tgnet.ConnectionsManager;
 import r0.l0;
 import r0.m0;
+import t0.h;
 import w7.f9;
+import z7.fe;
 import z7.g;
-import z7.ge;
+import z7.gb;
 import z7.hb;
-import z7.ib;
+import z7.ig;
 import z7.jg;
-import z7.kg;
+import z7.qa;
 import z7.ra;
 import z7.sa;
-import z7.ta;
-import z7.ve;
-import z7.xa;
-import z7.xf;
+import z7.ue;
+import z7.wa;
+import z7.wf;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements xf {
+public final /* synthetic */ class d implements wf {
     public long a;
     public boolean b;
     public final Object c;
@@ -37,13 +38,13 @@ public final /* synthetic */ class d implements xf {
     public Object e;
     public final Object f;
 
-    public /* synthetic */ d(f fVar, long j10, ib ibVar, boolean z10, wb.a aVar, kg kgVar) {
+    public /* synthetic */ d(f fVar, long j10, hb hbVar, boolean z10, wb.a aVar, jg jgVar) {
         this.c = fVar;
         this.a = j10;
-        this.d = ibVar;
+        this.d = hbVar;
         this.b = z10;
         this.e = aVar;
-        this.f = kgVar;
+        this.f = jgVar;
     }
 
     public void a() {
@@ -91,21 +92,21 @@ public final /* synthetic */ class d implements xf {
         this.b = true;
     }
 
-    @Override // z7.xf
+    @Override // z7.wf
     public a5.a zza() {
         int i10;
         f fVar = (f) this.c;
         long j10 = this.a;
-        ib ibVar = (ib) this.d;
+        hb hbVar = (hb) this.d;
         boolean z10 = this.b;
         wb.a aVar = (wb.a) this.e;
-        kg kgVar = (kg) this.f;
+        jg jgVar = (jg) this.f;
         z5 z5Var = new z5();
-        u2.c cVar = new u2.c(18, false);
-        cVar.b = Long.valueOf(j10 & Long.MAX_VALUE);
-        cVar.c = ibVar;
-        cVar.d = Boolean.valueOf(z10);
-        z5Var.b = new xa(cVar);
+        h hVar = new h(19, false);
+        hVar.b = Long.valueOf(j10 & Long.MAX_VALUE);
+        hVar.c = hbVar;
+        hVar.d = Boolean.valueOf(z10);
+        z5Var.b = new wa(hVar);
         int i11 = aVar.e;
         f.l.getClass();
         int i12 = aVar.e;
@@ -124,29 +125,29 @@ public final /* synthetic */ class d implements xf {
             }
             i10 = 0;
         }
-        ra raVar = new ra();
-        raVar.a = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? sa.b : sa.d : sa.c : sa.e : sa.f : sa.h;
-        raVar.b = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        z5Var.c = new ta(raVar);
+        qa qaVar = new qa();
+        qaVar.a = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? ra.b : ra.d : ra.c : ra.e : ra.f : ra.h;
+        qaVar.b = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+        z5Var.c = new sa(qaVar);
         z5Var.a = fVar.e.a();
-        if (kgVar != null) {
-            List list = kgVar.d;
+        if (jgVar != null) {
+            List list = jgVar.d;
             g gVar = z7.i.b;
             Object[] array = list.toArray();
             int length = array.length;
             f9.a(length, array);
             z5Var.e = z7.i.q(length, array);
-            List<jg> list2 = kgVar.a;
+            List<ig> list2 = jgVar.a;
             if (!list2.isEmpty()) {
                 Object[] objArr = new Object[4];
                 int i13 = 0;
-                for (jg jgVar : list2) {
+                for (ig igVar : list2) {
                     qi.e eVar = new qi.e();
-                    eVar.a = Integer.valueOf(jgVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.b = Integer.valueOf(jgVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.c = Integer.valueOf(jgVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    eVar.d = Integer.valueOf(jgVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                    ve veVar = new ve(eVar);
+                    eVar.a = Integer.valueOf(igVar.c & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar.b = Integer.valueOf(igVar.d & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar.c = Integer.valueOf(igVar.e & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    eVar.d = Integer.valueOf(igVar.f & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                    ue ueVar = new ue(eVar);
                     int i14 = i13 + 1;
                     int length2 = objArr.length;
                     if (length2 < i14) {
@@ -160,15 +161,15 @@ public final /* synthetic */ class d implements xf {
                         }
                         objArr = Arrays.copyOf(objArr, i15);
                     }
-                    objArr[i13] = veVar;
+                    objArr[i13] = ueVar;
                     i13 = i14;
                 }
                 z5Var.d = z7.i.q(i13, objArr);
             }
         }
         s3 s3Var = new s3();
-        s3Var.c = hb.b;
-        s3Var.f = new ge(z5Var);
+        s3Var.c = gb.b;
+        s3Var.f = new fe(z5Var);
         return new a5.a(s3Var, 0);
     }
 

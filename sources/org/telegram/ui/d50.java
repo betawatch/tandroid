@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d50 {
     public final org.telegram.ui.Components.d11 d;
@@ -53,7 +53,7 @@ public final class d50 {
         canvas.save();
         org.telegram.ui.Components.d11 d11Var = this.d;
         d11Var.p = f7 - AndroidUtilities.dp(132.0f);
-        int f11 = i0.b.f(f10, this.j, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.tg, false));
+        int f11 = i0.a.f(f10, this.j, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.tg, false));
         Paint paint = this.a;
         paint.setColor(f11);
         float e = this.i.e(this.h);

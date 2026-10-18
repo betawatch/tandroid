@@ -18,7 +18,7 @@ import org.telegram.ui.Components.og;
 import org.telegram.ui.Components.r40;
 import org.telegram.ui.in;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class w2 implements og {
     public final /* synthetic */ q4 a;
@@ -36,7 +36,7 @@ public final class w2 implements og {
     public final void L(CharSequence charSequence, boolean z10, int i10, int i11, long j10) {
         q4 q4Var = this.a;
         if (q4Var.G2) {
-            AndroidUtilities.runOnUIThread(new ai.s3(this, j10, 3), 200L);
+            AndroidUtilities.runOnUIThread(new ai.r3(this, j10, 3), 200L);
         } else {
             q4Var.k0(j10 <= 0);
         }
@@ -278,6 +278,10 @@ public final class w2 implements og {
     }
 
     @Override // org.telegram.ui.Components.og
+    public final /* synthetic */ void C(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.og
     public final /* synthetic */ void F0() {
     }
 
@@ -298,7 +302,23 @@ public final class w2 implements og {
     }
 
     @Override // org.telegram.ui.Components.og
+    public final void V1(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.og
+    public final void X0(int i10) {
+    }
+
+    @Override // org.telegram.ui.Components.og
     public final /* synthetic */ void Y() {
+    }
+
+    @Override // org.telegram.ui.Components.og
+    public final void Z1(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.og
+    public final void a0(boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.og
@@ -326,6 +346,10 @@ public final class w2 implements og {
     }
 
     @Override // org.telegram.ui.Components.og
+    public final void q1(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.Components.og
     public final void t0() {
     }
 
@@ -339,30 +363,6 @@ public final class w2 implements og {
 
     @Override // org.telegram.ui.Components.og
     public final void y1() {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final /* synthetic */ void C(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void V1(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void X0(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void Z1(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void a0(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.og
-    public final void q1(CharSequence charSequence) {
     }
 
     @Override // org.telegram.ui.Components.og

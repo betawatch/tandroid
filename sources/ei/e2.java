@@ -26,7 +26,7 @@ import org.telegram.ui.t70;
 import org.telegram.ui.u10;
 import org.telegram.ui.yo;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class e2 extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -129,7 +129,7 @@ public final class e2 extends EditTextBoldCursor {
                     u0Var.s.callOnClick();
                     return true;
                 }
-                hg.o0 o0Var = (hg.o0) i0.a.h(1, u0Var.g0);
+                hg.o0 o0Var = (hg.o0) i2.d.h(1, u0Var.g0);
                 org.telegram.ui.ActionBar.g5 g5Var = u0Var.H;
                 if (g5Var != null) {
                     g5Var.o(o0Var);
@@ -144,7 +144,7 @@ public final class e2 extends EditTextBoldCursor {
                 if (!k20Var.e()) {
                     return true;
                 }
-                hg.o0 o0Var2 = (hg.o0) i0.a.h(1, k20Var.F);
+                hg.o0 o0Var2 = (hg.o0) i2.d.h(1, k20Var.F);
                 j20 j20Var = k20Var.H;
                 if (j20Var != null) {
                     ((jx) j20Var).c(o0Var2);
@@ -157,7 +157,7 @@ public final class e2 extends EditTextBoldCursor {
                 if (i10 != 67 || r70Var.d.length() != 0 || t70Var.G.isEmpty()) {
                     return super.onKeyDown(i10, keyEvent);
                 }
-                t70Var.f.a((v30) i0.a.h(1, t70Var.G));
+                t70Var.f.a((v30) i2.d.h(1, t70Var.G));
                 t70Var.c.e(!t70Var.G.isEmpty(), true);
                 t70Var.c0();
                 return true;

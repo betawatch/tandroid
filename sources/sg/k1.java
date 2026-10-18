@@ -1,6 +1,6 @@
 package sg;
 
-import ai.yd;
+import ai.zd;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -9,7 +9,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
@@ -28,7 +28,7 @@ import org.telegram.ui.sa1;
 import rg.n2;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k1 extends hm0 {
     public final /* synthetic */ l1 c;
@@ -97,7 +97,7 @@ public final class k1 extends hm0 {
         l1 l1Var = this.c;
         View a02 = l1Var.a0(context, i10);
         if (a02 != null) {
-            return a6.l(a02, a02, -1, -2);
+            return k3.l(a02, a02, -1, -2);
         }
         if (i10 == 0) {
             sa1 sa1Var = new sa1(this, context, 20);
@@ -105,11 +105,11 @@ public final class k1 extends hm0 {
             sa1Var.setOrientation(1);
             View view2 = l1Var.B0;
             if (view2 == null) {
-                l1Var.r0 = new yd(context, 1, 0, 3);
+                l1Var.r0 = new zd(context, 1, 0, 3);
                 Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
                 int i11 = h6.Mj;
-                canvas.drawColor(i0.b.f(0.5f, l1Var.getThemedColor(i11), l1Var.getThemedColor(h6.h5)));
+                canvas.drawColor(i0.a.f(0.5f, l1Var.getThemedColor(i11), l1Var.getThemedColor(h6.h5)));
                 l1Var.r0.setBackgroundBitmap(createBitmap);
                 tg.g gVar = l1Var.r0.b;
                 gVar.z = i11;
@@ -168,10 +168,10 @@ public final class k1 extends hm0 {
             n2Var.setClipChildren(false);
             n2Var.addView(l1Var.q0);
             n2Var.addView(sa1Var);
-            yd ydVar = l1Var.r0;
+            zd zdVar = l1Var.r0;
             view = n2Var;
-            if (ydVar != null) {
-                ydVar.setStarParticlesView(l1Var.q0);
+            if (zdVar != null) {
+                zdVar.setStarParticlesView(l1Var.q0);
                 view = n2Var;
             }
         } else if (i10 == 2) {

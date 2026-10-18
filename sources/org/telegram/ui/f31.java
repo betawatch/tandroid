@@ -15,7 +15,7 @@ import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f31 extends pg.b {
     public final /* synthetic */ SaveToGallerySettingsActivity d;
@@ -130,7 +130,7 @@ public final class f31 extends pg.b {
                 view3 = view;
                 break;
             case 3:
-                view2 = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.t0) null);
+                view2 = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
                 view3 = view2;
                 break;
             case 4:
@@ -201,12 +201,12 @@ public final class f31 extends pg.b {
                 view3 = view2;
                 break;
             case 10:
-                View z6Var = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.t0) null);
+                View z6Var = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
                 z6Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.V0(saveToGallerySettingsActivity.getParentActivity(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.b7, saveToGallerySettingsActivity.getResourceProvider())));
                 view2 = z6Var;
                 view3 = view2;
                 break;
         }
-        return com.google.android.gms.internal.cast.a6.l(view3, view3, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view3, view3, -1, -2);
     }
 }

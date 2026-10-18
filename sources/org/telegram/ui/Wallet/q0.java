@@ -48,7 +48,7 @@ import org.telegram.ui.Components.uy0;
 import org.telegram.ui.ff0;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class q0 {
     public static final Object f = new Object();
@@ -524,7 +524,7 @@ public final class q0 {
     }
 
     public final void p(long j10, byte[] bArr, j0 j0Var, Utilities.Callback callback) {
-        h.execute(new ai.o3(this, bArr == null ? "" : o(bArr), j0Var == null ? null : j0Var.b(), l(), j10, callback));
+        h.execute(new ai.f3(this, bArr == null ? "" : o(bArr), j0Var == null ? null : j0Var.b(), l(), j10, callback));
     }
 
     public final SharedPreferences q() {

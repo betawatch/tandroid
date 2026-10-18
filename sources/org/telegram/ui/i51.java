@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i51 extends View {
     public Drawable E;
@@ -168,7 +168,7 @@ public final class i51 extends View {
         this.I = ofFloat;
         ofFloat.addUpdateListener(new f51(this, 1));
         this.I.addListener(new g51(this, 1));
-        org.telegram.messenger.wh.l(5.0f, this.I);
+        org.telegram.messenger.kk.l(5.0f, this.I);
         this.I.setDuration(350L);
         this.I.start();
         d(false, true);
@@ -304,7 +304,7 @@ public final class i51 extends View {
             this.I = ofFloat;
             ofFloat.addUpdateListener(new f51(this, 0));
             this.I.addListener(new g51(this, 0));
-            org.telegram.messenger.wh.l(5.0f, this.I);
+            org.telegram.messenger.kk.l(5.0f, this.I);
             this.I.setDuration(350L);
             this.I.start();
         }

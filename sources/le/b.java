@@ -27,7 +27,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import hg.z1;
-import i0.c;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
@@ -52,7 +51,6 @@ import org.telegram.ui.Cells.fa;
 import org.telegram.ui.Cells.g;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.q71;
@@ -61,10 +59,12 @@ import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.zg0;
-import org.telegram.ui.Wallet.t9;
+import org.telegram.ui.Wallet.w9;
 import org.telegram.ui.xu0;
+import p6.c;
 import qg.b1;
 import qg.c1;
+import qg.e1;
 import qg.u0;
 import r0.k1;
 import r0.n;
@@ -77,14 +77,13 @@ import s4.o0;
 import s6.e;
 import s6.f;
 import t7.u;
-import u2.e1;
-import u2.f1;
-import u2.r1;
+import u2.d1;
+import u2.q1;
 import v7.i8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, q71, n, z1, r, m, o, v1, h1, w2.d, Continuation {
+public final class b implements OnCompleteListener, l, d, o0.a, d1, l1, h, q71, n, z1, r, m, o, v1, h1, w2.d, Continuation {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -94,7 +93,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, q71, 
 
     @Override // r0.n
     public k1 B0(View view, k1 k1Var) {
-        c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
         ym0 ym0Var = (ym0) this.b;
         ym0Var.v.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
         ym0Var.s.requestLayout();
@@ -270,7 +269,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, q71, 
     }
 
     public void a0() {
-        c1 c1Var = ((qg.e1) this.b).d;
+        c1 c1Var = ((e1) this.b).d;
         if (c1Var != null) {
             b1 b1Var = c1Var.s;
             if (b1Var != null) {
@@ -288,7 +287,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, q71, 
         switch (this.a) {
             case 15:
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-                p6.a aVar = (p6.a) ((p6.c) obj).u();
+                p6.a aVar = (p6.a) ((c) obj).u();
                 n6.o oVar = (n6.o) this.b;
                 Parcel H0 = aVar.H0();
                 k7.a.c(H0, oVar);
@@ -367,7 +366,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, q71, 
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean d1(MessageObject messageObject) {
-        return t0.a(messageObject);
+        return org.telegram.ui.Cells.c1.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -382,11 +381,11 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, q71, 
 
     @Override // hg.z1
     public void f(int i10) {
-        t9 t9Var = (t9) this.b;
-        if (t9Var.n || i10 != t9Var.I) {
+        w9 w9Var = (w9) this.b;
+        if (w9Var.n || i10 != w9Var.I) {
             return;
         }
-        t9Var.d0(t9Var.M.getText().toString().trim());
+        w9Var.d0(w9Var.M.getText().toString().trim());
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -419,7 +418,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, q71, 
                 i12++;
             }
         }
-        kVar.I = new r1(p1VarArr);
+        kVar.I = new q1(p1VarArr);
         kVar.G.h(kVar);
     }
 
@@ -746,8 +745,8 @@ public final class b implements OnCompleteListener, l, d, o0.a, e1, l1, h, q71, 
         ((j) this.b).h(f7);
     }
 
-    @Override // u2.e1
-    public void v(f1 f1Var) {
+    @Override // u2.d1
+    public void v(u2.e1 e1Var) {
         k kVar = (k) this.b;
         kVar.G.v(kVar);
     }

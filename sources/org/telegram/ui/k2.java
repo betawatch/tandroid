@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k2 extends View implements org.telegram.ui.Cells.m9 {
     public final d70 a;
@@ -206,7 +206,7 @@ public final class k2 extends View implements org.telegram.ui.Cells.m9 {
         if (d3Var != null) {
             int lineCount = d3Var.d.getLineCount();
             i14 = 4 - lineCount;
-            this.w = org.telegram.messenger.q.C(f7, this.c.d.getHeight(), dp);
+            this.w = org.telegram.messenger.g0.C(f7, this.c.d.getHeight(), dp);
             dp5 = this.c.d.getHeight() + dp5;
             int i19 = 0;
             while (true) {
@@ -251,7 +251,7 @@ public final class k2 extends View implements org.telegram.ui.Cells.m9 {
         if (p5 != null) {
             int height = p5.d.getHeight() + dp5;
             if (this.c != null) {
-                height = org.telegram.messenger.q.C(f7, dp, height);
+                height = org.telegram.messenger.g0.C(f7, dp, height);
             }
             dp5 = height;
             d3 d3Var3 = this.d;

@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j70 extends org.telegram.ui.Cells.va {
     public final TextView a0;
@@ -13,10 +13,10 @@ public final class j70 extends org.telegram.ui.Cells.va {
 
     public j70(Context context) {
         super(6, 0, context, true);
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         TextView textView = new TextView(context);
         this.a0 = textView;
-        org.telegram.messenger.q.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, textView);
+        org.telegram.messenger.g0.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, textView);
         e.addView(textView, w7.z5.q(-2, -2, 5));
         TextView textView2 = new TextView(context);
         this.b0 = textView2;

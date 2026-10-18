@@ -48,7 +48,7 @@ import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.y90;
 import org.telegram.ui.g10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m7 extends FrameLayout {
     public final ArrayList E;
@@ -917,7 +917,7 @@ public final class m7 extends FrameLayout {
                             if (this.j0 != null) {
                             }
                             this.w.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-                            setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.y(17.0f, i39, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
+                            setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(17.0f, i39, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
                         }
                     } catch (Exception e16) {
                         e = e16;
@@ -942,7 +942,7 @@ public final class m7 extends FrameLayout {
                 if (staticLayout != null) {
                     int i40 = this.Q;
                     this.W = i40;
-                    int C = org.telegram.messenger.q.C(5.0f, staticLayout.getLineBottom(staticLayout.getLineCount() - 1), i40);
+                    int C = org.telegram.messenger.g0.C(5.0f, staticLayout.getLineBottom(staticLayout.getLineCount() - 1), i40);
                     this.Q = C;
                     this.T = C;
                 }
@@ -1153,7 +1153,7 @@ public final class m7 extends FrameLayout {
                 int i382 = size;
                 float f162 = f15;
                 int dp2 = AndroidUtilities.dp(52.0f);
-                int B = LocaleController.isRTL ? org.telegram.messenger.q.B(f162, View.MeasureSpec.getSize(i10), dp2) : AndroidUtilities.dp(f162);
+                int B = LocaleController.isRTL ? org.telegram.messenger.g0.B(f162, View.MeasureSpec.getSize(i10), dp2) : AndroidUtilities.dp(f162);
                 f90Var32.setBounds(B, AndroidUtilities.dp(11.0f), B + dp2, AndroidUtilities.dp(63.0f));
                 if (z10) {
                     i15 = 1;
@@ -1205,17 +1205,17 @@ public final class m7 extends FrameLayout {
                 } else {
                     StaticLayout staticLayout11 = this.a0;
                     f11 = 5.0f;
-                    i17 = org.telegram.messenger.q.C(5.0f, staticLayout11.getLineBottom(staticLayout11.getLineCount() - i15), i17);
+                    i17 = org.telegram.messenger.g0.C(5.0f, staticLayout11.getLineBottom(staticLayout11.getLineCount() - i15), i17);
                 }
                 staticLayout4 = this.R;
                 if (staticLayout4 != null && staticLayout4.getLineCount() != 0) {
                     StaticLayout staticLayout12 = this.R;
-                    i17 = org.telegram.messenger.q.C(f11, staticLayout12.getLineBottom(staticLayout12.getLineCount() - i15), i17);
+                    i17 = org.telegram.messenger.g0.C(f11, staticLayout12.getLineBottom(staticLayout12.getLineCount() - i15), i17);
                 }
                 staticLayout5 = this.U;
                 if (staticLayout5 != null && staticLayout5.getLineCount() != 0) {
                     StaticLayout staticLayout13 = this.U;
-                    i17 = org.telegram.messenger.q.C(f11, staticLayout13.getLineBottom(staticLayout13.getLineCount() - i15), i17);
+                    i17 = org.telegram.messenger.g0.C(f11, staticLayout13.getLineBottom(staticLayout13.getLineCount() - i15), i17);
                     if (this.R != null) {
                         i17 += AndroidUtilities.dp(f10);
                     }
@@ -1230,10 +1230,10 @@ public final class m7 extends FrameLayout {
                 if (this.j0 != null) {
                     this.i0 = AndroidUtilities.dp(f11) + this.F + i16;
                     StaticLayout staticLayout15 = this.j0;
-                    i392 = org.telegram.messenger.q.C(f11, staticLayout15.getLineBottom(staticLayout15.getLineCount() - i15), i392);
+                    i392 = org.telegram.messenger.g0.C(f11, staticLayout15.getLineBottom(staticLayout15.getLineCount() - i15), i392);
                 }
                 this.w.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.y(17.0f, i392, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(17.0f, i392, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
             }
         }
         z10 = false;
@@ -1306,12 +1306,12 @@ public final class m7 extends FrameLayout {
         staticLayout4 = this.R;
         if (staticLayout4 != null) {
             StaticLayout staticLayout122 = this.R;
-            i17 = org.telegram.messenger.q.C(f11, staticLayout122.getLineBottom(staticLayout122.getLineCount() - i15), i17);
+            i17 = org.telegram.messenger.g0.C(f11, staticLayout122.getLineBottom(staticLayout122.getLineCount() - i15), i17);
         }
         staticLayout5 = this.U;
         if (staticLayout5 != null) {
             StaticLayout staticLayout132 = this.U;
-            i17 = org.telegram.messenger.q.C(f11, staticLayout132.getLineBottom(staticLayout132.getLineCount() - i15), i17);
+            i17 = org.telegram.messenger.g0.C(f11, staticLayout132.getLineBottom(staticLayout132.getLineCount() - i15), i17);
             if (this.R != null) {
             }
         }
@@ -1321,7 +1321,7 @@ public final class m7 extends FrameLayout {
         if (this.j0 != null) {
         }
         this.w.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.y(17.0f, i3922, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(17.0f, i3922, AndroidUtilities.dp(76.0f)) + (this.y ? 1 : 0));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:104:0x0244  */

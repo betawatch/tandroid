@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j81 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int d0 = 0;
@@ -45,7 +45,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
         cVar.setAlpha(0.0f);
         this.container.addView(cVar, 0, w7.z5.a(-2.0f, 0.0f, 48.0f, 0.0f, 0.0f, -2, 49));
         w7.b6.a(cVar);
-        cVar.setOnClickListener(new ai.od(context, 1, d6Var));
+        cVar.setOnClickListener(new ai.pd(context, 1, d6Var));
         TLRPC.EmojiGameInfo emojiGameInfo = MessagesController.getInstance(i10).stakeDiceInfo;
         if (emojiGameInfo instanceof TLRPC.TL_emojiGameDiceInfo) {
             TLRPC.TL_emojiGameDiceInfo tL_emojiGameDiceInfo = (TLRPC.TL_emojiGameDiceInfo) emojiGameInfo;
@@ -134,7 +134,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
             editTextBoldCursor.setHighlightColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.uf, d6Var));
             editTextBoldCursor.setHandlesColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.vf, d6Var));
             editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
-            editTextBoldCursor.setOnFocusChangeListener(new ai.gb(sd0Var, editTextBoldCursor, 2));
+            editTextBoldCursor.setOnFocusChangeListener(new ai.hb(sd0Var, editTextBoldCursor, 2));
             LinearLayout linearLayout4 = new LinearLayout(context);
             linearLayout4.setOrientation(0);
             ImageView imageView2 = new ImageView(context);
@@ -151,7 +151,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
             sd0Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 14.0f, 0.0f, -2, 21));
             long j10 = tL_emojiGameDiceInfo.prev_stake;
             j10 = j10 <= 0 ? 1000000000L : j10;
-            editTextBoldCursor.setText(ai.ld.N0(j10));
+            editTextBoldCursor.setText(ai.md.N0(j10));
             textView.setAlpha(1.0f);
             textView.setText("≈" + BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * (j10 / 1.0E9d) * 100.0d), "USD", 2));
             final int[] iArr = {2};
@@ -169,7 +169,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
                     org.telegram.ui.ActionBar.d6 d6Var2 = d6Var;
                     textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i18, d6Var2));
                     textView2.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(13.0f), org.telegram.ui.ActionBar.h6.m1(0.15f, org.telegram.ui.ActionBar.h6.w0(i18, d6Var2))));
-                    textView2.setText(ai.ld.P0(ai.ld.N0(l4.longValue()) + " 💎", 0.75f));
+                    textView2.setText(ai.md.P0(ai.md.N0(l4.longValue()) + " 💎", 0.75f));
                     w7.b6.a(textView2);
                     textView2.setOnClickListener(new ef0(15, editTextBoldCursor, l4));
                     return textView2;
@@ -178,7 +178,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
             long[] jArr = MessagesController.getInstance(i10).tonStakediceStakeSuggestedAmounts;
             int i18 = 0;
             while (i18 < Utilities.divCeil(jArr.length, 3)) {
-                LinearLayout e = org.telegram.messenger.wh.e(context, 0);
+                LinearLayout e = org.telegram.messenger.kk.e(context, 0);
                 int i19 = 0;
                 while (true) {
                     int i20 = i18 * 3;
@@ -222,7 +222,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
                             return;
                         }
                         if (TextUtils.isEmpty(text) || parseDouble >= MessagesController.getInstance(i21).tonStakeddiceStakeAmountMin / 1.0E9d) {
-                            if (ai.fa.y(i21, true).f.toDouble() < parseDouble) {
+                            if (ai.ga.y(i21, true).f.toDouble() < parseDouble) {
                                 new fi.f(context, d6Var, ag.a.i((long) (parseDouble * 1.0E9d), ag.c.b), true, new ff0(5));
                                 return;
                             } else {
@@ -265,7 +265,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
             if (cVar != null) {
                 cVar.setEnabled(z10);
                 cVar.setClickable(z10);
-                org.telegram.messenger.wh.s(cVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
+                org.telegram.messenger.kk.s(cVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
             }
         }
     }

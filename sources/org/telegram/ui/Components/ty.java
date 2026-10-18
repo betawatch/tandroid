@@ -17,7 +17,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ty extends hm0 {
     public boolean E;
@@ -336,7 +336,7 @@ public final class ty extends hm0 {
         } else if (i10 != 5) {
             ah.x xVar = new ah.x(this, tzVar.getContext(), 16);
             TextView textView = new TextView(tzVar.getContext());
-            org.telegram.messenger.wh.j(16.0f, R.string.NoEmojiFound, 1, textView);
+            org.telegram.messenger.kk.j(16.0f, R.string.NoEmojiFound, 1, textView);
             int i11 = org.telegram.ui.ActionBar.h6.Le;
             textView.setTextColor(tzVar.A(i11));
             xVar.addView(textView, w7.z5.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, 49));

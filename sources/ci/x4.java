@@ -16,7 +16,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class x4 extends View {
     public ArrayList E;
@@ -186,7 +186,7 @@ public abstract class x4 extends View {
                 i14 = i15;
                 f15 = abs;
             }
-            float D = f18 < 0.0f ? com.google.android.gms.internal.cast.a6.D(1.0f, f10, this.s * 0.1f, f17) : com.google.android.gms.internal.cast.a6.x(1.0f, f10, this.s * 0.1f, f17);
+            float D = f18 < 0.0f ? com.google.android.gms.internal.play_billing.k3.D(1.0f, f10, this.s * 0.1f, f17) : com.google.android.gms.internal.play_billing.k3.y(1.0f, f10, this.s * 0.1f, f17);
             if (D > getMeasuredWidth() || this.s + D < 0.0f) {
                 arrayList = arrayList4;
                 f11 = measuredWidth;
@@ -214,8 +214,8 @@ public abstract class x4 extends View {
                 float f21 = this.r;
                 float f22 = f7 * f21;
                 f11 = measuredWidth;
-                float x10 = org.telegram.messenger.q.x(f20, f19, 2.0f, D);
-                float x11 = org.telegram.messenger.q.x(f22, f21, 2.0f, this.x);
+                float x10 = org.telegram.messenger.g0.x(f20, f19, 2.0f, D);
+                float x11 = org.telegram.messenger.g0.x(f22, f21, 2.0f, this.x);
                 if (this.y == 0.0f || i15 == (i12 = this.K)) {
                     arrayList2 = arrayList3;
                     arrayList = arrayList4;
@@ -233,7 +233,7 @@ public abstract class x4 extends View {
                     ImageReceiver imageReceiver = w4Var.a;
                     imageReceiver.draw(canvas);
                     if (w4Var.c != null) {
-                        int A = (int) com.google.android.gms.internal.cast.a6.A(f10, 0.3f, 0.7f, 255.0f);
+                        int A = (int) com.google.android.gms.internal.play_billing.k3.A(f10, 0.3f, 0.7f, 255.0f);
                         gradientDrawable.setAlpha(A);
                         gradientDrawable.setBounds((int) imageReceiver.getImageX(), (int) (imageReceiver.getImageY2() - AndroidUtilities.dp(24.0f)), (int) imageReceiver.getImageX2(), ((int) imageReceiver.getImageY2()) + 2);
                         gradientDrawable.draw(canvas);

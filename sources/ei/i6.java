@@ -3,13 +3,12 @@ package ei;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.ch1;
 import org.telegram.ui.ht0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -206,16 +205,13 @@ public final /* synthetic */ class i6 implements ValueAnimator.AnimatorUpdateLis
                 hVar2.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 28:
-                zh.d0 d0Var = (zh.d0) obj;
-                d0Var.P = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                CameraView cameraView = d0Var.b;
-                if (cameraView != null) {
-                    cameraView.setAlpha(Utilities.clamp01((d0Var.j() - 0.15f) / 0.45f));
-                }
-                d0Var.invalidate();
+                zh.w wVar = (zh.w) obj;
+                wVar.getClass();
+                wVar.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wVar.invalidate();
                 break;
             default:
-                ((zh.m0) obj).d.setReveal(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((zh.f0) obj).d.setReveal(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

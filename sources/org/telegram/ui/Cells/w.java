@@ -22,12 +22,12 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ti0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout implements Checkable {
     public final boolean a;
@@ -82,7 +82,7 @@ public final class w extends FrameLayout implements Checkable {
         }
         TextView textView = new TextView(context);
         this.b = textView;
-        wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+        kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -90,7 +90,7 @@ public final class w extends FrameLayout implements Checkable {
         addView(textView, w7.z5.i(-2.0f, -2.0f, 8388611, 71.0f, 10.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        wh.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
+        kk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setGravity(w7.z5.y());
@@ -113,9 +113,9 @@ public final class w extends FrameLayout implements Checkable {
         if (!z12 || (vVar = this.v) == null) {
             return;
         }
-        m4.y0 y0Var = (m4.y0) vVar;
-        org.telegram.ui.p pVar = ((org.telegram.ui.o) y0Var.b).d;
-        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) y0Var.c;
+        m4.w0 w0Var = (m4.w0) vVar;
+        org.telegram.ui.p pVar = ((org.telegram.ui.o) w0Var.b).d;
+        TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) w0Var.c;
         a0.h hVar = pVar.a;
         if (z10) {
             a(false, false, false);

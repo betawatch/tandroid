@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.Map;
 import v7.q7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class q {
     public Parcelable a;
@@ -122,9 +122,9 @@ public final class q {
         CompoundButton compoundButton = (CompoundButton) this.f;
         Context context = compoundButton.getContext();
         int[] iArr = f.a.m;
-        g3 P = g3.P(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) P.c;
-        r0.i0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
+        g3 K = g3.K(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) K.c;
+        r0.i0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) K.c, i10);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
@@ -132,12 +132,12 @@ public final class q {
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    compoundButton.setButtonTintList(P.E(2));
+                    compoundButton.setButtonTintList(K.z(2));
                 }
                 if (typedArray.hasValue(3)) {
                     compoundButton.setButtonTintMode(m1.b(typedArray.getInt(3, -1), null));
                 }
-                P.Q();
+                K.L();
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
                 compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId));
@@ -146,9 +146,9 @@ public final class q {
             }
             if (typedArray.hasValue(3)) {
             }
-            P.Q();
+            K.L();
         } catch (Throwable th2) {
-            P.Q();
+            K.L();
             throw th2;
         }
     }

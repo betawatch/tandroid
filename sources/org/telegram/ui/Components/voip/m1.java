@@ -5,8 +5,8 @@ import android.widget.FrameLayout;
 import org.telegram.ui.rg1;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class m1 extends FrameLayout {
     public final j1 a;
     public final FrameLayout b;
@@ -27,7 +27,7 @@ public final class m1 extends FrameLayout {
             this.c[i10] = new l1(activity);
             this.c[i10].setAllStarsProvider(new j5.b(this, 26));
             l1 l1Var = this.c[i10];
-            l1Var.d = new org.telegram.ui.Components.s2(23, this, activity);
+            l1Var.d = new org.telegram.ui.Components.q2(24, this, activity);
             l1Var.f = i10;
             this.b.addView(l1Var, z5.a(-2.0f, i10 * 41, 0.0f, 0.0f, 0.0f, -2, 51));
         }

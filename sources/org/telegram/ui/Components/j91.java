@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j91 {
     public String a;
@@ -131,9 +131,9 @@ public final class j91 {
                 return;
             }
         }
-        org.telegram.ui.tp0 tp0Var = new org.telegram.ui.tp0(2, false, false, null);
-        tp0Var.x = false;
-        tp0Var.V = new h91(this);
-        n2Var.presentFragment(tp0Var);
+        org.telegram.ui.up0 up0Var = new org.telegram.ui.up0(2, false, false, null);
+        up0Var.x = false;
+        up0Var.V = new h91(this);
+        n2Var.presentFragment(up0Var);
     }
 }

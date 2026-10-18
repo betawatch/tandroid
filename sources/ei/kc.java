@@ -8,11 +8,11 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class kc extends View {
     public final Paint a;
@@ -47,7 +47,7 @@ public final class kc extends View {
             this.c = false;
             animate().cancel();
             if (z10) {
-                wh.t(animate().translationY(AndroidUtilities.dp(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), bs.h, 220L);
+                kk.t(animate().translationY(AndroidUtilities.dp(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), bs.h, 220L);
                 return;
             }
             setTranslationY(AndroidUtilities.dp(6.0f));

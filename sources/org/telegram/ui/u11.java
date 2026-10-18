@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class u11 extends org.telegram.ui.ActionBar.n2 {
     public float[] E;
@@ -127,7 +127,7 @@ public final class u11 extends org.telegram.ui.ActionBar.n2 {
                 d9VarArr[1].setVisibility(0);
                 org.telegram.ui.Cells.d9 d9Var = d9VarArr[1];
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.t0.n(R.string.UseProxyTelegramInfo, "\n\n", sb2);
+                org.telegram.ui.Cells.c1.n(R.string.UseProxyTelegramInfo, "\n\n", sb2);
                 sb2.append(LocaleController.getString(R.string.UseProxyTelegramInfo2));
                 d9Var.setText(sb2.toString());
                 ((View) this.a[4].getParent()).setVisibility(0);
@@ -313,7 +313,7 @@ public final class u11 extends org.telegram.ui.ActionBar.n2 {
             this.c.addView(j6VarArr[i12], w7.z5.n(-1, 50));
             j6VarArr[i12].setOnClickListener(onClickListener);
         }
-        org.telegram.ui.Cells.z6 z6Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+        org.telegram.ui.Cells.z6 z6Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
         z6VarArr[0] = z6Var;
         this.c.addView(z6Var, w7.z5.n(-1, -2));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -393,7 +393,7 @@ public final class u11 extends org.telegram.ui.ActionBar.n2 {
                 d9Var.setText(LocaleController.getString(R.string.UseProxyInfo));
             } else {
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.t0.n(R.string.UseProxyTelegramInfo, "\n\n", sb2);
+                org.telegram.ui.Cells.c1.n(R.string.UseProxyTelegramInfo, "\n\n", sb2);
                 sb2.append(LocaleController.getString(R.string.UseProxyTelegramInfo2));
                 d9Var.setText(sb2.toString());
                 d9VarArr[i16].setVisibility(8);
@@ -475,7 +475,7 @@ public final class u11 extends org.telegram.ui.ActionBar.n2 {
         });
         this.c.addView(this.n, 0, w7.z5.n(-1, -2));
         this.n.setVisibility(8);
-        org.telegram.ui.Cells.z6 z6Var2 = new org.telegram.ui.Cells.z6(this.fragmentView.getContext(), (org.telegram.ui.Cells.t0) null);
+        org.telegram.ui.Cells.z6 z6Var2 = new org.telegram.ui.Cells.z6(this.fragmentView.getContext(), (org.telegram.ui.Cells.c1) null);
         z6VarArr[2] = z6Var2;
         this.c.addView(z6Var2, 1, w7.z5.n(-1, -2));
         z6VarArr[2].setVisibility(8);
@@ -486,7 +486,7 @@ public final class u11 extends org.telegram.ui.ActionBar.n2 {
         this.h.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i17, false));
         this.c.addView(this.h, w7.z5.n(-1, -2));
         this.h.setOnClickListener(new ef0(11, this, context));
-        org.telegram.ui.Cells.z6 z6Var3 = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+        org.telegram.ui.Cells.z6 z6Var3 = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
         z6VarArr[1] = z6Var3;
         this.c.addView(z6Var3, w7.z5.n(-1, -2));
         this.H = (ClipboardManager) context.getSystemService("clipboard");

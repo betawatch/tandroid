@@ -5,13 +5,13 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class g3 extends ImageReceiver {
     public final /* synthetic */ int a;
@@ -44,9 +44,9 @@ public final class g3 extends ImageReceiver {
                 break;
             case 6:
                 super.invalidate();
-                org.telegram.ui.Wallet.w7 w7Var = ((org.telegram.ui.Wallet.v7) obj).d0;
-                int i11 = org.telegram.ui.Wallet.w7.B1;
-                w7Var.h0();
+                org.telegram.ui.Wallet.z7 z7Var = ((org.telegram.ui.Wallet.y7) obj).d0;
+                int i11 = org.telegram.ui.Wallet.z7.B1;
+                z7Var.h0();
                 break;
         }
     }
@@ -67,7 +67,7 @@ public final class g3 extends ImageReceiver {
                 return imageBitmapByKey;
             case 1:
                 if (drawable != null && i10 != 1) {
-                    wh.t(((ig.b1) ((k4) obj).H).n.animate().alpha(1.0f).translationY(0.0f), bs.k, 250L);
+                    kk.t(((ig.d1) ((k4) obj).H).n.animate().alpha(1.0f).translationY(0.0f), bs.k, 250L);
                 }
                 return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
             case 2:

@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,7 +44,7 @@ import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.lm;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j1 {
     public static int Z;
@@ -356,10 +356,10 @@ public final class j1 {
         float x10 = motionEvent.getX();
         float y3 = motionEvent.getY();
         org.telegram.ui.Cells.a0 a0Var = this.z;
-        if (a6.s(a0Var)) {
+        if (k3.s(a0Var)) {
             y3 -= a0Var.getPaddingTop();
-            if (a0Var instanceof org.telegram.ui.Cells.x0) {
-                x10 -= ((org.telegram.ui.Cells.x0) a0Var).j0 / 2.0f;
+            if (a0Var instanceof org.telegram.ui.Cells.w0) {
+                x10 -= ((org.telegram.ui.Cells.w0) a0Var).j0 / 2.0f;
             }
         }
         float f7 = x10 - this.c;
@@ -414,7 +414,7 @@ public final class j1 {
             if (this.T && this.S != null && motionEvent.getAction() == 1) {
                 TLRPC.ReactionCount reactionCount = this.S.a;
                 float x11 = motionEvent.getX();
-                if (a6.s(a0Var)) {
+                if (k3.s(a0Var)) {
                     ((n4) a0Var).f(reactionCount, false, x11, y3);
                 }
             }
@@ -724,7 +724,7 @@ public final class j1 {
                 if (g1Var.u) {
                     g1Var.A = (int) (p6Var.d + AndroidUtilities.dp(8.0f) + g1Var.A);
                 } else if (frVar != null && g1Var.w > 1) {
-                    g1Var.A = org.telegram.messenger.q.C(8.0f, (int) Math.ceil(frVar.m), g1Var.A);
+                    g1Var.A = org.telegram.messenger.g0.C(8.0f, (int) Math.ceil(frVar.m), g1Var.A);
                 }
             } else {
                 g1Var.A = AndroidUtilities.dp(g1Var.D != null ? 6.0f : 4.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(8.0f);
@@ -735,7 +735,7 @@ public final class j1 {
                 } else if (g1Var.u) {
                     g1Var.A = (int) (p6Var.d + AndroidUtilities.dp(8.0f) + g1Var.A);
                 } else if (((int) Math.ceil(frVar.m)) > 0) {
-                    g1Var.A = org.telegram.messenger.q.C(8.0f, (int) Math.ceil(frVar.m), g1Var.A);
+                    g1Var.A = org.telegram.messenger.g0.C(8.0f, (int) Math.ceil(frVar.m), g1Var.A);
                 } else {
                     g1Var.A -= AndroidUtilities.dp(1.0f);
                 }
@@ -743,14 +743,14 @@ public final class j1 {
             }
             if (g1Var.A + i13 > i10) {
                 arrayList2.add(Integer.valueOf(i13));
-                i15 = org.telegram.messenger.q.C(4.0f, g1Var.B, i15);
+                i15 = org.telegram.messenger.g0.C(4.0f, g1Var.B, i15);
                 i16++;
                 i13 = 0;
             }
             g1Var.x = i13;
             g1Var.y = i15;
             g1Var.z = i16;
-            i13 = org.telegram.messenger.q.C(4.0f, g1Var.A, i13);
+            i13 = org.telegram.messenger.g0.C(4.0f, g1Var.A, i13);
             if (i13 > i14) {
                 i14 = i13;
             }
@@ -781,7 +781,7 @@ public final class j1 {
             for (int i23 = 0; i23 < arrayList.size(); i23++) {
                 g1 g1Var2 = (g1) arrayList.get(i23);
                 int i24 = g1Var2.z;
-                g1Var2.x = (int) a6.z(i10, (i24 < 0 || i24 >= arrayList2.size()) ? 0.0f : ((Integer) arrayList2.get(g1Var2.z)).intValue(), 2.0f, g1Var2.x);
+                g1Var2.x = (int) k3.z(i10, (i24 < 0 || i24 >= arrayList2.size()) ? 0.0f : ((Integer) arrayList2.get(g1Var2.z)).intValue(), 2.0f, g1Var2.x);
             }
         }
         this.u = i13;

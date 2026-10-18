@@ -1,6 +1,6 @@
 package c3;
 
-import ai.le;
+import ai.me;
 import android.animation.ObjectAnimator;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.fb;
@@ -11,7 +11,7 @@ import org.telegram.ui.Components.tb;
 import org.telegram.ui.Components.ub;
 import org.telegram.ui.Components.xl;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class s implements tb {
     public long a;
@@ -23,7 +23,7 @@ public final class s implements tb {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ubVar, ub.IN_OUT_OFFSET_Y2, 0.0f);
         ofFloat.setDuration(this.a);
         ofFloat.setInterpolator(st.d);
-        ofFloat.addListener(new le(fbVar, pgVar, 17));
+        ofFloat.addListener(new me(fbVar, pgVar, 17));
         ofFloat.addUpdateListener(new ah.l0(15, xlVar, ubVar));
         ofFloat.start();
     }
@@ -37,7 +37,7 @@ public final class s implements tb {
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(ubVar, ub.IN_OUT_OFFSET_Y2, ubVar.getHeight());
         ofFloat.setDuration(175L);
         ofFloat.setInterpolator(st.c);
-        ofFloat.addListener(new le(fbVar, dbVar, 18));
+        ofFloat.addListener(new me(fbVar, dbVar, 18));
         ofFloat.addUpdateListener(new ah.l0(14, gbVar, ubVar));
         ofFloat.start();
     }

@@ -9,7 +9,7 @@ import org.telegram.messenger.LanguageDetector;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tr implements org.telegram.ui.Components.aw0, org.telegram.ui.Components.bw0, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.kd0, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.md0 {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class tr implements org.telegram.ui.Components.aw0,
     public String e(int i10) {
         switch (this.a) {
             case 6:
-                return i0.a.j(i10, "");
+                return i2.d.j(i10, "");
             case 7:
                 switch (i10) {
                     case 0:

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y71 extends LinearLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -27,9 +27,9 @@ public final class y71 extends LinearLayout implements org.telegram.ui.ActionBar
         addView(a10, w7.z5.r(-1, -2, 55, 32.0f, 9.33f, 32.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         this.d = f7;
-        ei.d f10 = org.telegram.messenger.wh.f(24, context, d6Var, true);
+        ei.d f10 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         this.e = f10;
         linearLayout.addView(f7, w7.z5.p(0, 42, 1.0f, 112, 0, 0, 12, 0));
         linearLayout.addView(f10, w7.z5.p(0, 42, 1.0f, 112, 0, 0, 0, 0));

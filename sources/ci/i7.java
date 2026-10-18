@@ -1,7 +1,7 @@
 package ci;
 
-import ai.oa;
-import ai.yb;
+import ai.pa;
+import ai.zb;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import j$.util.Comparator$-CC;
@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i7 {
     public static final Comparator X = Comparator$-CC.comparingInt(new ai.u8(7));
@@ -124,7 +124,7 @@ public final class i7 {
         }
         this.B = tL_storiesStealthMode;
         w7 w7Var2 = this.k;
-        w7Var2.b.getStorageQueue().postRunnable(new oa(28, w7Var2, new i6(this, 1)));
+        w7Var2.b.getStorageQueue().postRunnable(new pa(28, w7Var2, new i6(this, 1)));
         this.K = new ah.g(this, i10, 4);
         this.w = new ei.a1(i10);
     }
@@ -382,7 +382,7 @@ public final class i7 {
         if (arrayList == null || arrayList.isEmpty()) {
             return false;
         }
-        return ((h7) i0.a.h(1, arrayList)).I;
+        return ((h7) i2.d.h(1, arrayList)).I;
     }
 
     public final void O(long j10) {
@@ -490,7 +490,7 @@ public final class i7 {
             this.n = true;
             i6 i6Var = new i6(this, 2);
             w7 w7Var = this.k;
-            w7Var.b.getStorageQueue().postRunnable(new oa(27, w7Var, i6Var));
+            w7Var.b.getStorageQueue().postRunnable(new pa(27, w7Var, i6Var));
         } else {
             Q(false);
             Q(true);
@@ -499,7 +499,7 @@ public final class i7 {
     }
 
     public final void U(int i10, long j10) {
-        AndroidUtilities.runOnUIThread(new yb(this, j10, i10, 1));
+        AndroidUtilities.runOnUIThread(new zb(this, j10, i10, 1));
     }
 
     public final boolean V(TL_stories.PeerStories peerStories, TL_stories.StoryItem storyItem, boolean z10) {
@@ -701,13 +701,13 @@ public final class i7 {
         if (peerDialogId > 0) {
             user = MessagesController.getInstance(this.a).getUser(Long.valueOf(peerDialogId));
             if (user != null && (M(user) || user.self)) {
-                w7Var.b.getStorageQueue().postRunnable(new oa(26, w7Var, tL_updateStory));
+                w7Var.b.getStorageQueue().postRunnable(new pa(26, w7Var, tL_updateStory));
             }
         } else {
-            w7Var.b.getStorageQueue().postRunnable(new oa(26, w7Var, tL_updateStory));
+            w7Var.b.getStorageQueue().postRunnable(new pa(26, w7Var, tL_updateStory));
             user = null;
         }
-        AndroidUtilities.runOnUIThread(new ai.c3(this, peerDialogId, tL_updateStory, user, 8));
+        AndroidUtilities.runOnUIThread(new ai.b2(this, peerDialogId, tL_updateStory, user, 8));
     }
 
     public final void a0(long j10, TL_stories.PeerStories peerStories) {
@@ -861,7 +861,7 @@ public final class i7 {
             this.d = 0;
         }
         if (arrayList == null) {
-            arrayList = org.telegram.messenger.q.j(j10, hVar);
+            arrayList = org.telegram.messenger.g0.j(j10, hVar);
         }
         arrayList.add(h7Var);
     }
@@ -1294,7 +1294,7 @@ public final class i7 {
                         if (storyItem.firstFramePath == null) {
                             storyItem.firstFramePath = storyItem2.firstFramePath;
                         }
-                        org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
+                        org.telegram.messenger.g0.o(storyItem.id, new StringBuilder("StoriesController update story for full peer storyId="));
                     }
                 } else {
                     i12++;
@@ -1302,9 +1302,9 @@ public final class i7 {
             }
             if (!z11) {
                 if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                    org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
+                    org.telegram.messenger.g0.o(storyItem.id, new StringBuilder("StoriesController story is not found, but already deleted storyId="));
                 } else if (z10) {
-                    org.telegram.messenger.q.o(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
+                    org.telegram.messenger.g0.o(storyItem.id, new StringBuilder("StoriesController add new story for full peer storyId="));
                     peerStories.stories.add(storyItem);
                     peerStories.checkedExpired = false;
                 }

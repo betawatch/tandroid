@@ -42,7 +42,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class gt {
     public static TextPaint f0;
@@ -103,7 +103,7 @@ public final class gt {
     public m0 y;
     public ah.v z;
     public float e = 0.0f;
-    public i0.c q = i0.c.e;
+    public i0.b q = i0.b.e;
 
     public gt() {
         gh.b bVar = new gh.b();
@@ -317,7 +317,7 @@ public final class gt {
         }
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.L;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
-            org.telegram.messenger.wh.t(actionBarPopupWindow$ActionBarPopupWindowLayout.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).translationY(AndroidUtilities.dp(-12.0f)), org.telegram.ui.Components.bs.h, 320L);
+            org.telegram.messenger.kk.t(actionBarPopupWindow$ActionBarPopupWindowLayout.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).translationY(AndroidUtilities.dp(-12.0f)), org.telegram.ui.Components.bs.h, 320L);
             this.L = null;
             this.K = false;
             if (this.R) {

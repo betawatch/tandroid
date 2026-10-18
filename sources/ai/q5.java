@@ -20,7 +20,6 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -45,14 +44,14 @@ import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.aw0;
 import org.telegram.ui.en;
-import org.telegram.ui.ho0;
+import org.telegram.ui.io0;
 import org.telegram.ui.kb0;
 import org.telegram.ui.ko;
 import org.telegram.ui.s50;
 import org.telegram.ui.sn;
 import org.telegram.ui.wk0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q5 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -272,13 +271,13 @@ public final /* synthetic */ class q5 implements Utilities.Callback2 {
                 v5Var.b();
                 return;
             case 1:
-                ld.A0((ld) this.b, (f61) this.c, (Boolean) obj, (String) obj2);
+                md.A0((md) this.b, (f61) this.c, (Boolean) obj, (String) obj2);
                 return;
             case 2:
-                bd.R((bd) this.b, (f61) this.c, (Boolean) obj, (String) obj2);
+                cd.R((cd) this.b, (f61) this.c, (Boolean) obj, (String) obj2);
                 return;
             case 3:
-                cd.R((cd) this.b, (f61) this.c, (Boolean) obj, (String) obj2);
+                dd.R((dd) this.b, (f61) this.c, (Boolean) obj, (String) obj2);
                 return;
             case 4:
                 ci.n2 n2Var = (ci.n2) this.b;
@@ -499,7 +498,7 @@ public final /* synthetic */ class q5 implements Utilities.Callback2 {
                 org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(parentActivity, 3, null);
                 koVar.N0 = true;
                 b2Var.q(250L);
-                koVar.getMessagesController().convertToMegaGroup(koVar.getParentActivity(), koVar.w0, koVar, new m4.y0(18, koVar, b2Var));
+                koVar.getMessagesController().convertToMegaGroup(koVar.getParentActivity(), koVar.w0, koVar, new m4.w0(19, koVar, b2Var));
                 return;
             case 13:
                 ti tiVar = (ti) this.b;
@@ -634,7 +633,7 @@ public final /* synthetic */ class q5 implements Utilities.Callback2 {
                                 if (ChatObject.isNotInChat(chat6) && (chat7 == null || ChatObject.isNotInChat(chat7))) {
                                     String lowerCase2 = chat6.title.toLowerCase();
                                     String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                                    if ((lowerCase2.startsWith(lowerCase) || wh.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || wh.w(" ", translitSafe, translitSafe2)) && !hashSet2.contains(Long.valueOf(chat6.id))) {
+                                    if ((lowerCase2.startsWith(lowerCase) || org.telegram.messenger.g0.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) && !hashSet2.contains(Long.valueOf(chat6.id))) {
                                         hashSet2.add(Long.valueOf(chat6.id));
                                         arrayList12.add(chat6);
                                     }
@@ -694,7 +693,7 @@ public final /* synthetic */ class q5 implements Utilities.Callback2 {
                 return;
             case 21:
                 ((pf.c) this.b).b();
-                ((ho0) this.c).run((Boolean) obj);
+                ((io0) this.c).run((Boolean) obj);
                 return;
             case 22:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
@@ -751,16 +750,16 @@ public final /* synthetic */ class q5 implements Utilities.Callback2 {
                 return;
             case 24:
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
-                org.telegram.ui.Wallet.a8 a8Var = (org.telegram.ui.Wallet.a8) this.c;
+                org.telegram.ui.Wallet.d8 d8Var = (org.telegram.ui.Wallet.d8) this.c;
                 org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj;
                 String str4 = (String) obj2;
                 if (j0Var == null) {
                     org.telegram.ui.Wallet.m0.i("enable backup: didnt get secret phrase: ".concat(str4 == null ? "NULL_ERROR" : str4));
-                    a8Var.run(str4 != null ? str4 : "NULL_ERROR");
+                    d8Var.run(str4 != null ? str4 : "NULL_ERROR");
                     return;
                 }
                 org.telegram.ui.Wallet.j0 b10 = j0Var.b();
-                qy qyVar = new qy(28, b10, a8Var);
+                qy qyVar = new qy(28, b10, d8Var);
                 org.telegram.ui.Wallet.m0.F("enable backup: got secret phrase");
                 try {
                     ConnectionsManager.getInstance(m0Var.a).sendRequestTyped(new TL_wallet.getBackupHolderDcs(), new org.telegram.messenger.a(), new org.telegram.ui.Wallet.q(m0Var, qyVar, b10, WalletEngine2.secretPhraseToPublicKey(b10), 1));
@@ -772,12 +771,12 @@ public final /* synthetic */ class q5 implements Utilities.Callback2 {
                 }
             case 25:
                 org.telegram.ui.Wallet.m0 m0Var2 = (org.telegram.ui.Wallet.m0) this.b;
-                org.telegram.ui.Wallet.c8 c8Var = (org.telegram.ui.Wallet.c8) this.c;
+                org.telegram.ui.Wallet.f8 f8Var = (org.telegram.ui.Wallet.f8) this.c;
                 org.telegram.ui.Wallet.j0 j0Var2 = (org.telegram.ui.Wallet.j0) obj;
                 String str5 = (String) obj2;
                 if (j0Var2 == null) {
                     org.telegram.ui.Wallet.m0.i("prepare disable backup, cant get secret phrase: ".concat(str5 == null ? "NULL_ERROR" : str5));
-                    c8Var.run(null, str5 != null ? str5 : "NULL_ERROR");
+                    f8Var.run(null, str5 != null ? str5 : "NULL_ERROR");
                     return;
                 }
                 TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo = m0Var2.f;
@@ -785,7 +784,7 @@ public final /* synthetic */ class q5 implements Utilities.Callback2 {
                     TextUtils.isEmpty(tL_updateWalletGaslessInfo.relayer_address);
                 }
                 org.telegram.ui.Wallet.m0.F("prepare disable backup: preparing transfer");
-                m0Var2.b.prepareRotateKey(j0Var2, null, new ci.i2(i13, m0Var2, c8Var));
+                m0Var2.b.prepareRotateKey(j0Var2, null, new ci.i2(i13, m0Var2, f8Var));
                 return;
             case 26:
                 org.telegram.ui.Wallet.m0 m0Var3 = (org.telegram.ui.Wallet.m0) this.b;

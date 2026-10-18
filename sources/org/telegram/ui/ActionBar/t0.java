@@ -19,7 +19,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class t0 extends FrameLayout implements ne.d {
     public final ne.b a;
@@ -67,8 +67,8 @@ public class t0 extends FrameLayout implements ne.d {
         int w03 = h6.w0(h6.G6, d6Var);
         int i11 = h6.Sh;
         int w04 = h6.w0(i11, d6Var);
-        this.v = i0.b.f(f7, m12, w02);
-        this.e.setTextColor(i0.b.f(f7, w03, w04));
+        this.v = i0.a.f(f7, m12, w02);
+        this.e.setTextColor(i0.a.f(f7, w03, w04));
         ImageView imageView = this.d;
         imageView.setColorFilter(w04);
         imageView.setAlpha(f7);

@@ -8,7 +8,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zw extends z51 {
     public final /* synthetic */ q51[] d2;
@@ -28,7 +28,7 @@ public final class zw extends z51 {
             return true;
         }
         i10 = ((org.telegram.ui.ActionBar.n2) this.e2).currentAccount;
-        return ai.fa.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
+        return ai.ga.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -47,7 +47,7 @@ public final class zw extends z51 {
         } else {
             if (tL_starGiftUnique != null) {
                 i10 = ((org.telegram.ui.ActionBar.n2) eyVar).currentAccount;
-                TL_stars.SavedStarGift n10 = ai.fa.y(i10, false).n(tL_starGiftUnique.id);
+                TL_stars.SavedStarGift n10 = ai.ga.y(i10, false).n(tL_starGiftUnique.id);
                 if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
                     MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
                     Context context = getContext();
@@ -56,8 +56,8 @@ public final class zw extends z51 {
                     long clientUserId = UserConfig.getInstance(i12).getClientUserId();
                     d6Var = ((org.telegram.ui.ActionBar.n2) eyVar).resourceProvider;
                     ai.k7 k7Var = new ai.k7(context, i11, clientUserId, d6Var, null);
-                    k7Var.C2(n10, null);
-                    k7Var.G2();
+                    k7Var.F2(n10, null);
+                    k7Var.J2();
                     k7Var.show();
                     q51 q51Var = q51VarArr[0];
                     if (q51Var != null) {

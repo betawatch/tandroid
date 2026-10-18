@@ -20,8 +20,8 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.kk;
 import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 import org.webrtc.RendererCommon;
@@ -29,7 +29,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class d4 extends FrameLayout implements RendererCommon.RendererEvents, NotificationCenter.NotificationCenterDelegate {
     public int a;
@@ -115,7 +115,7 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
         if (p4Var == null) {
             long j11 = this.s;
             if (j11 != 0 && this.r && (textureViewRenderer = this.d) != null) {
-                File file = new File(FileLoader.getDirectory(4), r.c.f(j11, "live", ".jpg"));
+                File file = new File(FileLoader.getDirectory(4), r4.c.g(j11, "live", ".jpg"));
                 Bitmap bitmap = textureViewRenderer.getBitmap();
                 if (bitmap != null) {
                     Paint paint = new Paint(3);
@@ -145,17 +145,17 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
             if (j10 == 0) {
                 w9Var.b();
             } else {
-                String absolutePath = new File(FileLoader.getDirectory(4), r.c.f(j10, "live", ".jpg")).getAbsolutePath();
+                String absolutePath = new File(FileLoader.getDirectory(4), r4.c.g(j10, "live", ".jpg")).getAbsolutePath();
                 if (j10 > 0) {
                     TLRPC.User user = MessagesController.getInstance(this.a).getUser(Long.valueOf(j10));
                     ImageLocation forUser = ImageLocation.getForUser(this.a, user, 1);
-                    int d = user != null ? org.telegram.ui.Components.h9.d(user.id) : i0.b.f(0.2f, -16777216, -1);
-                    w9Var.getImageReceiver().setImage(ImageLocation.getForPath(absolutePath), "500_500_nocache", forUser, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.b.f(0.2f, d, -16777216), i0.b.f(0.4f, d, -16777216)}), 0L, null, user, 0);
+                    int d = user != null ? org.telegram.ui.Components.h9.d(user.id) : i0.a.f(0.2f, -16777216, -1);
+                    w9Var.getImageReceiver().setImage(ImageLocation.getForPath(absolutePath), "500_500_nocache", forUser, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), 0L, null, user, 0);
                 } else {
                     TLRPC.Chat chat = MessagesController.getInstance(this.a).getChat(Long.valueOf(-j10));
                     ImageLocation forChat = ImageLocation.getForChat(this.a, chat, 1);
-                    int d10 = chat != null ? org.telegram.ui.Components.h9.d(chat.id) : i0.b.f(0.2f, -16777216, -1);
-                    w9Var.getImageReceiver().setImage(ImageLocation.getForPath(absolutePath), "500_500_nocache", forChat, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.b.f(0.2f, d10, -16777216), i0.b.f(0.4f, d10, -16777216)}), 0L, null, chat, 0);
+                    int d10 = chat != null ? org.telegram.ui.Components.h9.d(chat.id) : i0.a.f(0.2f, -16777216, -1);
+                    w9Var.getImageReceiver().setImage(ImageLocation.getForPath(absolutePath), "500_500_nocache", forChat, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d10, -16777216), i0.a.f(0.4f, d10, -16777216)}), 0L, null, chat, 0);
                 }
             }
         }
@@ -255,7 +255,7 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
     public final void e(boolean z10, boolean z11) {
         if (z10 || !z11) {
             if (z11) {
-                wh.t(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), bs.h, 320L);
+                kk.t(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), bs.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z10 ? 1.0f : 0.0f);

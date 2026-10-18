@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class o51 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final FrameLayout a;
@@ -51,8 +51,8 @@ public abstract class o51 extends FrameLayout implements org.telegram.ui.ActionB
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(dp, org.telegram.ui.ActionBar.h6.w0(i12, d6Var)));
         frameLayout.setClipToOutline(true);
         float dp2 = AndroidUtilities.dp(18.0f);
-        ci.o1 o1Var = zf.i0.a;
-        frameLayout.setOutlineProvider(new zf.h0(0, dp2));
+        ci.o1 o1Var = zf.j0.a;
+        frameLayout.setOutlineProvider(new zf.i0(0, dp2));
         addView(frameLayout, w7.z5.a(36.0f, 8.0f, 12.0f, 8.0f, 8.0f, -1, 55));
         ImageView imageView = new ImageView(context);
         this.b = imageView;

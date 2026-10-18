@@ -1,6 +1,6 @@
 package org.telegram.ui.Wallet;
 
-import ai.wb;
+import ai.xb;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.PorterDuff;
@@ -39,7 +39,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
 import org.telegram.messenger.eh;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -48,7 +48,7 @@ import org.telegram.ui.ef0;
 import org.telegram.ui.gb0;
 import org.telegram.ui.n80;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class f2 {
     public final int a;
@@ -102,14 +102,14 @@ public final class f2 {
         boolean z10;
         String hostAuthority;
         String string;
-        v5 v5Var;
+        x5 x5Var;
         m0 m0Var;
         int i11;
         final m0 w9 = m0.w(i10);
         boolean z11 = tL_urlAuthResultRequest != null;
         final TL_wallet.tonConnectSession tonconnectsession = z11 ? null : a2Var.e;
         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = {null};
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_close);
@@ -165,17 +165,17 @@ public final class f2 {
                         e.addView(textView2, w7.z5.t(-2, -2, 49, 36, 16, 36, 28));
                         FrameLayout frameLayout2 = new FrameLayout(context);
                         e.addView(frameLayout2, w7.z5.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-                        v5Var = new v5(context, false);
-                        v5Var.n(w9);
-                        if (v5Var.isAttachedToWindow() && (m0Var = v5Var.d0) != null && ((i11 = v5Var.c0) != i10 || m0Var != w9)) {
-                            NotificationCenter.getInstance(i11).removeObserver(v5Var, NotificationCenter.walletUpdate);
+                        x5Var = new x5(context, false);
+                        x5Var.n(w9);
+                        if (x5Var.isAttachedToWindow() && (m0Var = x5Var.d0) != null && ((i11 = x5Var.c0) != i10 || m0Var != w9)) {
+                            NotificationCenter.getInstance(i11).removeObserver(x5Var, NotificationCenter.walletUpdate);
                         }
-                        v5Var.c0 = i10;
-                        v5Var.d0 = w9;
-                        if (v5Var.isAttachedToWindow() && v5Var.d0 != null) {
-                            NotificationCenter.getInstance(i10).addObserver(v5Var, NotificationCenter.walletUpdate);
+                        x5Var.c0 = i10;
+                        x5Var.d0 = w9;
+                        if (x5Var.isAttachedToWindow() && x5Var.d0 != null) {
+                            NotificationCenter.getInstance(i10).addObserver(x5Var, NotificationCenter.walletUpdate);
                         }
-                        frameLayout2.addView(v5Var);
+                        frameLayout2.addView(x5Var);
                         TextView textView3 = new TextView(context);
                         textView3.setTextSize(1, 14.0f);
                         textView3.setGravity(17);
@@ -191,7 +191,7 @@ public final class f2 {
                         dVar.d();
                         dVar.setText(LocaleController.getString(R.string.WalletCancel));
                         linearLayout.addView(dVar, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-                        final ei.d f7 = wh.f(24, context, d6Var, true);
+                        final ei.d f7 = kk.f(24, context, d6Var, true);
                         f7.setText(LocaleController.getString(R.string.WalletConnect));
                         linearLayout.addView(f7, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
                         final k2 k2Var = new k2(context, e, d6Var);
@@ -288,17 +288,17 @@ public final class f2 {
                 e.addView(textView2, w7.z5.t(-2, -2, 49, 36, 16, 36, 28));
                 FrameLayout frameLayout22 = new FrameLayout(context);
                 e.addView(frameLayout22, w7.z5.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-                v5Var = new v5(context, false);
-                v5Var.n(w9);
-                if (v5Var.isAttachedToWindow()) {
-                    NotificationCenter.getInstance(i11).removeObserver(v5Var, NotificationCenter.walletUpdate);
+                x5Var = new x5(context, false);
+                x5Var.n(w9);
+                if (x5Var.isAttachedToWindow()) {
+                    NotificationCenter.getInstance(i11).removeObserver(x5Var, NotificationCenter.walletUpdate);
                 }
-                v5Var.c0 = i10;
-                v5Var.d0 = w9;
-                if (v5Var.isAttachedToWindow()) {
-                    NotificationCenter.getInstance(i10).addObserver(v5Var, NotificationCenter.walletUpdate);
+                x5Var.c0 = i10;
+                x5Var.d0 = w9;
+                if (x5Var.isAttachedToWindow()) {
+                    NotificationCenter.getInstance(i10).addObserver(x5Var, NotificationCenter.walletUpdate);
                 }
-                frameLayout22.addView(v5Var);
+                frameLayout22.addView(x5Var);
                 TextView textView32 = new TextView(context);
                 textView32.setTextSize(1, 14.0f);
                 textView32.setGravity(17);
@@ -314,7 +314,7 @@ public final class f2 {
                 dVar2.d();
                 dVar2.setText(LocaleController.getString(R.string.WalletCancel));
                 linearLayout2.addView(dVar2, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-                final ei.d f72 = wh.f(24, context, d6Var, true);
+                final ei.d f72 = kk.f(24, context, d6Var, true);
                 f72.setText(LocaleController.getString(R.string.WalletConnect));
                 linearLayout2.addView(f72, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
                 final k2 k2Var2 = new k2(context, e, d6Var);
@@ -432,15 +432,15 @@ public final class f2 {
         e.addView(textView22, w7.z5.t(-2, -2, 49, 36, 16, 36, 28));
         FrameLayout frameLayout222 = new FrameLayout(context);
         e.addView(frameLayout222, w7.z5.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-        v5Var = new v5(context, false);
-        v5Var.n(w9);
-        if (v5Var.isAttachedToWindow()) {
+        x5Var = new x5(context, false);
+        x5Var.n(w9);
+        if (x5Var.isAttachedToWindow()) {
         }
-        v5Var.c0 = i10;
-        v5Var.d0 = w9;
-        if (v5Var.isAttachedToWindow()) {
+        x5Var.c0 = i10;
+        x5Var.d0 = w9;
+        if (x5Var.isAttachedToWindow()) {
         }
-        frameLayout222.addView(v5Var);
+        frameLayout222.addView(x5Var);
         TextView textView322 = new TextView(context);
         textView322.setTextSize(1, 14.0f);
         textView322.setGravity(17);
@@ -456,7 +456,7 @@ public final class f2 {
         dVar22.d();
         dVar22.setText(LocaleController.getString(R.string.WalletCancel));
         linearLayout22.addView(dVar22, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-        final ei.d f722 = wh.f(24, context, d6Var, true);
+        final ei.d f722 = kk.f(24, context, d6Var, true);
         f722.setText(LocaleController.getString(R.string.WalletConnect));
         linearLayout22.addView(f722, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
         final k2 k2Var22 = new k2(context, e, d6Var);
@@ -548,7 +548,7 @@ public final class f2 {
     }
 
     public static LinearLayout D(Context context, String str, org.telegram.ui.ActionBar.d6 d6Var) {
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         e.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var)));
         org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(context, d6Var);
         l4Var.setText(str);
@@ -659,7 +659,7 @@ public final class f2 {
         linearLayout2.setOrientation(1);
         linearLayout2.setGravity((charSequence2 == null && str == null) ? 16 : 48);
         TextView textView = new TextView(context);
-        wh.k(16.0f, 1, textView);
+        kk.k(16.0f, 1, textView);
         int i11 = org.telegram.ui.ActionBar.h6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
         textView.setSingleLine(charSequence2 != null);
@@ -672,7 +672,7 @@ public final class f2 {
         q6.weight = 0.0f;
         linearLayout2.addView(textView, q6);
         if (!TextUtils.isEmpty(charSequence2)) {
-            TextView f7 = org.telegram.messenger.q.f(context, 1, 14.0f);
+            TextView f7 = org.telegram.messenger.g0.f(context, 1, 14.0f);
             f7.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
             f7.setSingleLine(true);
             f7.setEllipsize(TextUtils.TruncateAt.END);
@@ -750,7 +750,7 @@ public final class f2 {
 
     public static TextView g(Context context, String str, org.telegram.ui.ActionBar.d6 d6Var) {
         TextView textView = new TextView(context);
-        wh.k(14.0f, 1, textView);
+        kk.k(14.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) str);
@@ -795,7 +795,7 @@ public final class f2 {
         String string = MessagesController.getMainSettings(f2Var.a).getString(j(j10, i11), null);
         if (string == null) {
             f2Var.h = true;
-            f2Var.b.j0(new wb(f2Var, j10, ehVar, i11, 17));
+            f2Var.b.j0(new xb(f2Var, j10, ehVar, i11, 17));
             return;
         }
         f2Var.h = true;
@@ -934,7 +934,7 @@ public final class f2 {
         TextView textView = new TextView(context);
         textView.setText(charSequence);
         textView.setTextSize(1, i10);
-        org.telegram.ui.Cells.t0.q(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 17);
+        org.telegram.ui.Cells.c1.q(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 17);
         return textView;
     }
 

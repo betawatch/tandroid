@@ -23,10 +23,10 @@ import ki.t1;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.hk0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class k extends g3 {
-    public final i2.e0 E;
+    public final i2.f0 E;
     public ArrayList F;
     public final ArrayMap G;
     public final MediaRouter2 r;
@@ -49,7 +49,7 @@ public final class k extends g3 {
         this.G = new ArrayMap();
         this.r = MediaRouter2.getInstance(context);
         this.s = t1Var;
-        this.E = new i2.e0(new Handler(Looper.getMainLooper()), 1);
+        this.E = new i2.f0(new Handler(Looper.getMainLooper()), 1);
         if (Build.VERSION.SDK_INT >= 34) {
             this.w = new i(this, 1);
         } else {
@@ -195,10 +195,10 @@ public final class k extends g3 {
             }
             build = new RouteDiscoveryPreference.Builder(arrayList2, z11).build();
         }
-        i2.e0 e0Var = this.E;
-        mediaRouter2.registerRouteCallback(e0Var, mediaRouter2$RouteCallback, build);
-        this.r.registerTransferCallback(e0Var, jVar);
-        this.r.registerControllerCallback(e0Var, fVar);
+        i2.f0 f0Var = this.E;
+        mediaRouter2.registerRouteCallback(f0Var, mediaRouter2$RouteCallback, build);
+        this.r.registerTransferCallback(f0Var, jVar);
+        this.r.registerControllerCallback(f0Var, fVar);
     }
 
     public final MediaRoute2Info o(String str) {

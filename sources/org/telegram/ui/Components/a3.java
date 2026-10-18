@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a3 implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -120,18 +120,18 @@ public final /* synthetic */ class a3 implements Utilities.Callback2 {
                             chat = MessagesController.getInstance(i13).getChat(Long.valueOf(-j10));
                         }
                         TLObject user = j13 >= 0 ? MessagesController.getInstance(i13).getUser(Long.valueOf(j13)) : MessagesController.getInstance(i13).getChat(Long.valueOf(-j13));
-                        LinearLayout e = org.telegram.messenger.wh.e(context2, 1);
+                        LinearLayout e = org.telegram.messenger.kk.e(context2, 1);
                         e.addView(new ai.h7(context2, chat, user), w7.z5.t(-1, -2, 48, 0, -4, 0, 0));
                         TextView textView = new TextView(context2);
                         NotificationCenter.listenEmojiLoading(textView);
                         textView.setText(LocaleController.getString(R.string.Gift2AuctionsChangeRecipient));
                         int i14 = org.telegram.ui.ActionBar.h6.j5;
-                        org.telegram.ui.Cells.t0.r(i14, d6Var, textView, 1, 20.0f);
+                        org.telegram.ui.Cells.c1.r(i14, d6Var, textView, 1, 20.0f);
                         textView.setGravity(LocaleController.isRTL ? 5 : 3);
                         e.addView(textView, w7.z5.a(-2.0f, 24.0f, 19.0f, 24.0f, 2.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
                         TextView textView2 = new TextView(context2);
-                        org.telegram.messenger.wh.o(i14, d6Var, textView2, 1, 16.0f);
-                        org.telegram.messenger.wh.r(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(j10), DialogObject.getShortName(j13)}, textView2);
+                        org.telegram.messenger.kk.o(i14, d6Var, textView2, 1, 16.0f);
+                        org.telegram.messenger.kk.r(R.string.Gift2AuctionsChangeRecipient2, new Object[]{DialogObject.getShortName(j10), DialogObject.getShortName(j13)}, textView2);
                         e.addView(textView2, w7.z5.t(-1, -2, 48, 24, 4, 24, 4));
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, d6Var);
                         alertDialog$Builder.n(e);

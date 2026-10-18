@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -179,7 +179,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                         arrayList2.add(messageObject2);
                         MediaController.saveFilesFromMessages(photoViewer.y, AccountInstance.getInstance(photoViewer.T), arrayList2, new xa(photoViewer, i11));
                     } else {
-                        MediaController.saveFile(pathToAttach.toString(), photoViewer.y, 1, null, null, new xq0(photoViewer, i12));
+                        MediaController.saveFile(pathToAttach.toString(), photoViewer.y, 1, null, null, new yq0(photoViewer, i12));
                     }
                     photoViewer.o0.M(null, null);
                     break;

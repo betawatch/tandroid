@@ -24,7 +24,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r11 extends DispatchQueue {
     public int E;
@@ -103,7 +103,7 @@ public final class r11 extends DispatchQueue {
 
     public final void c(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
         if (!this.b.get()) {
-            AndroidUtilities.runOnUIThread(new ai.eb(runnable, runnable2, 1));
+            AndroidUtilities.runOnUIThread(new ai.fb(runnable, runnable2, 1));
             t11.b(this.d);
             this.d = null;
         } else {

@@ -29,14 +29,14 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.d5;
 import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Cells.t0;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import w7.r;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
@@ -110,7 +110,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         final float translationX = vVar.getTranslationX();
         final float translationY = vVar.getTranslationY();
         k kVar = new k(new o1.j(z10 ? 0.0f : 1000.0f));
-        l l4 = t0.l(1000.0f, 900.0f, 1.0f);
+        l l4 = c1.l(1000.0f, 900.0f, 1.0f);
         l4.i = z10 ? 1000.0f : 0.0f;
         kVar.u = l4;
         kVar.b(new o1.g() { // from class: ng.d
@@ -138,7 +138,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
                 vVar2.setTranslationX(AndroidUtilities.lerp(f12, (iVar.getWidth() / 2.0f) - AndroidUtilities.dp(28.0f), f11));
                 vVar2.setTranslationY(AndroidUtilities.lerp(f13, (iVar.getHeight() / 2.0f) - AndroidUtilities.dp(28.0f), f11));
                 vVar2.setAlpha(1.0f - f11);
-                window.setStatusBarColor(i0.b.f(f11, iVar.v, 2046820352));
+                window.setStatusBarColor(i0.a.f(f11, iVar.v, 2046820352));
                 iVar.invalidate();
             }
         });

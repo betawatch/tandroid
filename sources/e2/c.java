@@ -17,7 +17,7 @@ import m.g3;
 import m.m1;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -163,10 +163,10 @@ public final class c {
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        g3 P = g3.P(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) P.c;
+        g3 K = g3.K(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) K.c;
         View view2 = (View) this.b;
-        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
+        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) K.c, i10);
         try {
             if (typedArray.hasValue(0)) {
                 this.a = typedArray.getResourceId(0, -1);
@@ -181,14 +181,14 @@ public final class c {
                 }
             }
             if (typedArray.hasValue(1)) {
-                r0.a0.f(view, P.E(1));
+                r0.a0.f(view, K.z(1));
             }
             if (typedArray.hasValue(2)) {
                 r0.a0.g(view, m1.b(typedArray.getInt(2, -1), null));
             }
-            P.Q();
+            K.L();
         } catch (Throwable th2) {
-            P.Q();
+            K.L();
             throw th2;
         }
     }
@@ -268,14 +268,14 @@ public final class c {
         if (obj2.equals(obj)) {
             return;
         }
-        i2.g0 g0Var = ((i2.v) this.d).b;
+        i2.h0 h0Var = ((i2.w) this.d).b;
         ((Integer) obj2).getClass();
         Integer num = (Integer) obj;
         int intValue = num.intValue();
-        g0Var.F1();
-        g0Var.t1(1, 10, num);
-        g0Var.t1(2, 10, num);
-        g0Var.m.e(21, new i2.u(intValue, 1));
+        h0Var.F1();
+        h0Var.t1(1, 10, num);
+        h0Var.t1(2, 10, num);
+        h0Var.m.e(21, new i2.v(intValue, 1));
     }
 
     public c(f2.w wVar) {
@@ -286,11 +286,11 @@ public final class c {
         this.a = -1;
     }
 
-    public c(Object obj, Looper looper, Looper looper2, g0 g0Var, i2.v vVar) {
+    public c(Object obj, Looper looper, Looper looper2, g0 g0Var, i2.w wVar) {
         this.b = g0Var.a(looper, null);
         this.c = g0Var.a(looper2, null);
         this.e = obj;
         this.f = obj;
-        this.d = vVar;
+        this.d = wVar;
     }
 }

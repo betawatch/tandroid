@@ -12,8 +12,8 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import w7.m6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public abstract class i {
     public static int a(MessageObject messageObject) {
         if (messageObject.type != 17) {
@@ -94,6 +94,6 @@ public abstract class i {
             }
             stringBuffer.append((String) arrayList.get(i13));
         }
-        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, i0.a.h(1, arrayList)));
+        return AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.PollV2ToastOnlySubscribersFromCountriesCanVoteOther : R.string.PollV2ToastOnlyUsersFromCountriesCanVoteOther, stringBuffer, i2.d.h(1, arrayList)));
     }
 }

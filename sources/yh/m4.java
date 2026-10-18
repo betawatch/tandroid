@@ -1,7 +1,7 @@
 package yh;
 
-import ai.fa;
-import ai.ld;
+import ai.ga;
+import ai.md;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class m4 implements Utilities.Callback2 {
                         arrayList.add(f61.A(-5, null));
                     } else {
                         arrayList.add(f61.A(-3, null));
-                        f61 i14 = f61.i(2, ld.Y0(false, LocaleController.formatString(z13 ? R.string.Gift2UpgradeSelf : R.string.Gift2Upgrade, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
+                        f61 i14 = f61.i(2, md.Y0(false, LocaleController.formatString(z13 ? R.string.Gift2UpgradeSelf : R.string.Gift2Upgrade, Integer.valueOf((int) starGift.upgrade_stars)), 0.78f, null));
                         i14.K(y4Var.q0);
                         arrayList.add(i14);
                         if (z12) {
@@ -124,12 +124,12 @@ public final /* synthetic */ class m4 implements Utilities.Callback2 {
                         arrayList.add(f61.A(-3, LocaleController.formatString(R.string.Gift2MessagePremiumInfo, str)));
                     }
                     if (kVar != null && (kVar.c != null || kVar.d != null)) {
-                        f61 i17 = f61.i(3, ld.Y0(false, LocaleController.formatString(R.string.Gift2MessageStars, Integer.valueOf((int) kVar.g())), 0.78f, null));
+                        f61 i17 = f61.i(3, md.Y0(false, LocaleController.formatString(R.string.Gift2MessageStars, Integer.valueOf((int) kVar.g())), 0.78f, null));
                         i17.K(y4Var.r0);
                         arrayList.add(i17);
-                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatNumber(fa.y(i13, false).p().amount, ','));
+                        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatNumber(ga.y(i13, false).p().amount, ','));
                         spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
-                        arrayList.add(f61.A(-7, TextUtils.concat(ld.Y0(false, LocaleController.formatSpannable(R.string.Gift2MessageStarsInfo, spannableStringBuilder), 0.66f, null), " ", AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new o4(y4Var, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)))));
+                        arrayList.add(f61.A(-7, TextUtils.concat(md.Y0(false, LocaleController.formatSpannable(R.string.Gift2MessageStarsInfo, spannableStringBuilder), 0.66f, null), " ", AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new o4(y4Var, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)))));
                     }
                 }
                 if (y4Var.P) {
@@ -155,7 +155,7 @@ public final /* synthetic */ class m4 implements Utilities.Callback2 {
                     } else {
                         AndroidUtilities.hideKeyboard(t4Var);
                         y4Var.dismiss();
-                        fa y3 = fa.y(y4Var.Y, false);
+                        ga y3 = ga.y(y4Var.Y, false);
                         if (starGift2 != null && y3.D) {
                             starGift2.availability_remains = 0;
                             y3.c0(y3.F, y3.G, y3.H);

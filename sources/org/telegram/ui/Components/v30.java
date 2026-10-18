@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class v30 extends View {
     public static final TextPaint J = new TextPaint(1);
@@ -168,7 +168,7 @@ public final class v30 extends View {
         canvas.translate(this.w + AndroidUtilities.dp((z11 ? 26 : 32) + 9), AndroidUtilities.dp(z11 ? 6.0f : 8.0f));
         int i11 = org.telegram.ui.ActionBar.h6.bi;
         org.telegram.ui.ActionBar.d6 d6Var = this.G;
-        J.setColor(i0.b.f(this.x, org.telegram.ui.ActionBar.h6.w0(i11, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.J7, d6Var)));
+        J.setColor(i0.a.f(this.x, org.telegram.ui.ActionBar.h6.w0(i11, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.J7, d6Var)));
         this.n.draw(canvas);
         canvas.restore();
     }
@@ -208,7 +208,7 @@ public final class v30 extends View {
         TLRPC.Chat chat;
         TLRPC.Chat chat2;
         ImageReceiver imageReceiver;
-        int B;
+        int A;
         StaticLayout staticLayout;
         this.f = new RectF();
         this.F = new int[8];
@@ -288,11 +288,11 @@ public final class v30 extends View {
             imageReceiver.setImageCoords(!this.I ? 0.0f : AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(!z10 ? 28.0f : 32.0f), AndroidUtilities.dp(z10 ? 28.0f : 32.0f));
             if (AndroidUtilities.isTablet()) {
                 Point point = AndroidUtilities.displaySize;
-                B = org.telegram.messenger.wh.B((z10 ? 28 : 32) + 132, Math.min(point.x, point.y), 2);
+                A = org.telegram.messenger.kk.A((z10 ? 28 : 32) + 132, Math.min(point.x, point.y), 2);
             } else {
-                B = AndroidUtilities.dp(398 - (z10 ? 28 : 32)) / 2;
+                A = AndroidUtilities.dp(398 - (z10 ? 28 : 32)) / 2;
             }
-            staticLayout = new StaticLayout(TextUtils.ellipsize(Emoji.replaceEmoji(str2.replace('\n', ' '), textPaint.getFontMetricsInt(), false), textPaint, B, TextUtils.TruncateAt.END), textPaint, MediaDataController.MAX_STYLE_RUNS_COUNT, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            staticLayout = new StaticLayout(TextUtils.ellipsize(Emoji.replaceEmoji(str2.replace('\n', ' '), textPaint.getFontMetricsInt(), false), textPaint, A, TextUtils.TruncateAt.END), textPaint, MediaDataController.MAX_STYLE_RUNS_COUNT, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             this.n = staticLayout;
             if (staticLayout.getLineCount() > 0) {
                 this.v = (int) Math.ceil(staticLayout.getLineWidth(0));
@@ -455,7 +455,7 @@ public final class v30 extends View {
         imageReceiver.setImageCoords(!this.I ? 0.0f : AndroidUtilities.dp(4.0f), 0.0f, AndroidUtilities.dp(!z10 ? 28.0f : 32.0f), AndroidUtilities.dp(z10 ? 28.0f : 32.0f));
         if (AndroidUtilities.isTablet()) {
         }
-        staticLayout = new StaticLayout(TextUtils.ellipsize(Emoji.replaceEmoji(str2.replace('\n', ' '), textPaint.getFontMetricsInt(), false), textPaint, B, TextUtils.TruncateAt.END), textPaint, MediaDataController.MAX_STYLE_RUNS_COUNT, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        staticLayout = new StaticLayout(TextUtils.ellipsize(Emoji.replaceEmoji(str2.replace('\n', ' '), textPaint.getFontMetricsInt(), false), textPaint, A, TextUtils.TruncateAt.END), textPaint, MediaDataController.MAX_STYLE_RUNS_COUNT, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.n = staticLayout;
         if (staticLayout.getLineCount() > 0) {
         }

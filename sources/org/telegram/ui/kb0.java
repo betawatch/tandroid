@@ -36,7 +36,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class kb0 {
     public final LaunchActivity a;
@@ -47,7 +47,7 @@ public final class kb0 {
     public boolean f;
     public boolean g;
     public int h = -1;
-    public ai.tb i;
+    public ai.ub i;
     public boolean j;
 
     public kb0(LaunchActivity launchActivity, int i10, pf.c cVar, boolean z10) {
@@ -344,9 +344,9 @@ public final class kb0 {
 
     public final void b() {
         this.j = true;
-        ai.tb tbVar = this.i;
-        if (tbVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(tbVar);
+        ai.ub ubVar = this.i;
+        if (ubVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(ubVar);
         }
         if (this.h >= 0) {
             ConnectionsManager.getInstance(this.b).cancelRequest(this.h, true);
@@ -519,7 +519,7 @@ public final class kb0 {
                                     }
                                     SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
                                     if (!BuildVars.DEBUG_VERSION && globalMainSettings.getBoolean("channel_intro", false)) {
-                                        u(new od(org.telegram.ui.Cells.t0.j(0, "step")), false);
+                                        u(new od(org.telegram.ui.Cells.c1.i(0, "step")), false);
                                         return true;
                                     }
                                     u(new h(0), false);
@@ -597,16 +597,16 @@ public final class kb0 {
                                 String r10 = r(queryParameter3);
                                 boolean booleanQueryParameter = s10.getBooleanQueryParameter("encrypted", false);
                                 try {
-                                    org.telegram.ui.Wallet.l9 l9Var = new org.telegram.ui.Wallet.l9(str7);
+                                    org.telegram.ui.Wallet.o9 o9Var = new org.telegram.ui.Wallet.o9(str7);
                                     if (l4 != null && l4.longValue() > 0) {
-                                        l9Var.r = l4.longValue();
+                                        o9Var.r = l4.longValue();
                                     }
                                     if (!TextUtils.isEmpty(r10)) {
-                                        l9Var.d0 = r10;
-                                        l9Var.e0 = booleanQueryParameter;
+                                        o9Var.d0 = r10;
+                                        o9Var.e0 = booleanQueryParameter;
                                     }
-                                    l9Var.c0 = true;
-                                    u(l9Var, false);
+                                    o9Var.c0 = true;
+                                    u(o9Var, false);
                                     return true;
                                 } catch (Throwable th2) {
                                     FileLog.e(th2);
@@ -722,7 +722,7 @@ public final class kb0 {
         j10 = 0;
         long j11 = j10;
         if (TextUtils.isEmpty(queryParameter2)) {
-            u(new org.telegram.ui.Wallet.l5(), false);
+            u(new org.telegram.ui.Wallet.m5(), false);
             return true;
         }
         if (queryParameter2.startsWith("@") || queryParameter2.matches("[a-zA-Z0-9_]{1,32}")) {
@@ -737,12 +737,12 @@ public final class kb0 {
                 return true;
             }
         } else if (WalletEngine2.isValidRecipientAddress(queryParameter2)) {
-            org.telegram.ui.Wallet.l9 l9Var = new org.telegram.ui.Wallet.l9(queryParameter2);
-            l9Var.r = j11;
-            l9Var.d0 = r10;
-            l9Var.e0 = booleanQueryParameter;
-            l9Var.c0 = true;
-            u(l9Var, false);
+            org.telegram.ui.Wallet.o9 o9Var = new org.telegram.ui.Wallet.o9(queryParameter2);
+            o9Var.r = j11;
+            o9Var.d0 = r10;
+            o9Var.e0 = booleanQueryParameter;
+            o9Var.c0 = true;
+            u(o9Var, false);
             return true;
         }
         return true;
@@ -873,7 +873,7 @@ public final class kb0 {
                 }
                 if ("qr-code".equalsIgnoreCase(str)) {
                     if ("scan".equalsIgnoreCase(str2) && (U = LaunchActivity.U()) != null) {
-                        zh.m0.Y(U);
+                        zh.f0.Z(U);
                         return z10;
                     }
                     if ("share".equalsIgnoreCase(str2)) {
@@ -884,7 +884,7 @@ public final class kb0 {
                     }
                     Bundle bundle2 = new Bundle();
                     bundle2.putLong("user_id", f().getClientUserId());
-                    t(new zh.m0(bundle2));
+                    t(new zh.f0(bundle2));
                     return true;
                 }
                 if (!"chat".equalsIgnoreCase(str) || !"browser".equalsIgnoreCase(str2)) {
@@ -1258,7 +1258,7 @@ public final class kb0 {
                                     }
                                 }
                                 if (!TextUtils.isEmpty(str4) && "save-to-photos".equalsIgnoreCase(str2)) {
-                                    t(new SaveToGallerySettingsActivity(org.telegram.ui.Cells.t0.j("groups".equalsIgnoreCase(str7) ? 2 : "channels".equalsIgnoreCase(str7) ? 4 : 1, TeXSymbolParser.TYPE_ATTR)));
+                                    t(new SaveToGallerySettingsActivity(org.telegram.ui.Cells.c1.i("groups".equalsIgnoreCase(str7) ? 2 : "channels".equalsIgnoreCase(str7) ? 4 : 1, TeXSymbolParser.TYPE_ATTR)));
                                     if ("max-video-size".equalsIgnoreCase(str4)) {
                                         x("maxVideoSizeRow");
                                     }
@@ -1340,7 +1340,7 @@ public final class kb0 {
                                 }
                             } else {
                                 if (!TextUtils.isEmpty(str7) && ("your-color".equalsIgnoreCase(str2) || "color".equalsIgnoreCase(str2))) {
-                                    t(new jp0());
+                                    t(new kp0());
                                     return true;
                                 }
                                 if (TextUtils.isEmpty(str7) || !"stickers-and-emoji".equalsIgnoreCase(str2)) {
@@ -1417,7 +1417,7 @@ public final class kb0 {
                                 LaunchActivity launchActivity = this.a;
                                 if (equalsIgnoreCase2) {
                                     if ("top-up".equalsIgnoreCase(str2)) {
-                                        new ai.cd(launchActivity, null).show();
+                                        new ai.dd(launchActivity, null).show();
                                         return true;
                                     }
                                     if ("stats".equalsIgnoreCase(str2)) {
@@ -1425,15 +1425,15 @@ public final class kb0 {
                                         return true;
                                     }
                                     if ("gift".equalsIgnoreCase(str2)) {
-                                        ai.fa.w(i13).u();
-                                        ug.l1.f0(1, BirthdayController.getInstance(i13).getState());
+                                        ai.ga.w(i13).u();
+                                        ug.m1.f0(1, BirthdayController.getInstance(i13).getState());
                                         return true;
                                     }
                                     if ("earn".equalsIgnoreCase(str2)) {
                                         t(new gi.u3(f().getClientUserId()));
                                         return true;
                                     }
-                                    t(new ai.ld());
+                                    t(new ai.md());
                                     return true;
                                 }
                                 if ("premium".equalsIgnoreCase(str)) {
@@ -1457,7 +1457,7 @@ public final class kb0 {
                                         new yh.p1(this.a, this.b, f().getClientUserId(), null, null).show();
                                         return true;
                                     }
-                                    ug.l1.f0(0, BirthdayController.getInstance(i13).getState());
+                                    ug.m1.f0(0, BirthdayController.getInstance(i13).getState());
                                     return true;
                                 }
                                 if ("ask-question".equalsIgnoreCase(str) || "ask-a-question".equalsIgnoreCase(str)) {
@@ -1510,7 +1510,7 @@ public final class kb0 {
                                         break;
                                     }
                                     if (((mb0) arrayList.get(i14)).f == 1) {
-                                        sb0Var.b.e1(new i2.q(sb0Var, i14, 13), 700, true);
+                                        sb0Var.b.e1(new i2.r(sb0Var, i14, 13), 700, true);
                                         return true;
                                     }
                                     i14++;
@@ -1689,7 +1689,7 @@ public final class kb0 {
             if (!launchActivity.isFinishing() && !launchActivity.isDestroyed()) {
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 tonconnectgetpending.dapp_client_id = str;
-                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.messenger.eh(this, str, str2, str3, i10, 1));
+                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.messenger.eh(this, str, str2, str3, i10, 2));
                 return;
             }
         }

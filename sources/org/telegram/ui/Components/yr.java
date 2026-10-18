@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class yr extends Drawable {
     public final Drawable a;
@@ -103,11 +103,11 @@ public final class yr extends Drawable {
                 if (this.h) {
                     float f10 = this.g;
                     dp = ((dp - dpf2) * f10) + dpf2;
-                    dp2 = com.google.android.gms.internal.cast.a6.x(dp2, dpf22, f10, dpf22);
+                    dp2 = com.google.android.gms.internal.play_billing.k3.y(dp2, dpf22, f10, dpf22);
                 } else {
                     float f11 = this.g;
-                    dpf2 = com.google.android.gms.internal.cast.a6.x(1.0f, f11, dp - dpf2, dpf2);
-                    dpf22 = com.google.android.gms.internal.cast.a6.x(1.0f, f11, dp2 - dpf22, dpf22);
+                    dpf2 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f11, dp - dpf2, dpf2);
+                    dpf22 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f11, dp2 - dpf22, dpf22);
                 }
                 float f12 = dp2;
                 float f13 = dpf22;

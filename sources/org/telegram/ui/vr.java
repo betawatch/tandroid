@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class vr extends EditTextBoldCursor {
     public static final org.telegram.ui.Components.cw0 I;
@@ -99,7 +99,7 @@ public abstract class vr extends EditTextBoldCursor {
             this.e = 1.0f;
             return;
         }
-        o1.l l4 = org.telegram.ui.Cells.t0.l(1.0f, 500.0f, 0.75f);
+        o1.l l4 = org.telegram.ui.Cells.c1.l(1.0f, 500.0f, 0.75f);
         l4.i = 100.0f;
         kVar.u = l4;
         kVar.b = 100.0f;

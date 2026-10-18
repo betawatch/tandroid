@@ -1,29 +1,48 @@
 package ig;
 
-import java.util.Calendar;
-import org.telegram.messenger.LocaleController;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.h9;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class c1 {
-    public int a;
-    public int b;
+public final class c1 extends View {
+    public final Drawable a;
+    public final ImageReceiver b;
 
-    public c1(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public c1(d1 d1Var, Context context) {
+        super(context);
+        this.a = getContext().getResources().getDrawable(R.drawable.map_pin_photo).mutate();
+        h9 h9Var = new h9((d6) null);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.b = imageReceiver;
+        h9Var.r(d1Var.getUserConfig().getCurrentUser());
+        imageReceiver.setForUserOrChat(d1Var.getUserConfig().getCurrentUser(), h9Var);
     }
 
-    public static String a(int i10) {
-        int i11 = i10 % 60;
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(0, 0, 0, ((i10 - i11) / 60) % 24, i11);
-        String format = LocaleController.getInstance().getFormatterConstDay().format(calendar.getTime());
-        return i10 > 1440 ? LocaleController.formatString(R.string.BusinessHoursNextDay, format) : format;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(62.0f);
+        int dp2 = AndroidUtilities.dp(85.0f);
+        Drawable drawable = this.a;
+        drawable.setBounds(0, 0, dp, dp2);
+        drawable.draw(canvas);
+        int dp3 = AndroidUtilities.dp(62.0f);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.setRoundRadius(dp3);
+        imageReceiver.setImageCoords(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f));
+        imageReceiver.draw(canvas);
     }
 
-    public final String toString() {
-        return a(this.a) + " - " + a(this.b);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(85.0f), TLObject.FLAG_30));
     }
 }

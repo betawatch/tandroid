@@ -1,6 +1,6 @@
 package yh;
 
-import ai.ld;
+import ai.md;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class d extends FrameLayout {
     public final ei.d a;
@@ -87,15 +87,15 @@ public final class d extends FrameLayout {
         if (auction.auctionStateActive != null) {
             this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z10, true);
         }
-        String h = org.telegram.messenger.q.h(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
+        String h = org.telegram.messenger.g0.h(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
         boolean isOutbid = auction.getBidStatus().isOutbid();
         yq[] yqVarArr = this.n;
         q6 q6Var = this.c;
         if (isOutbid) {
-            q6Var.c(ld.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, yqVarArr), z10, true);
+            q6Var.c(md.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, yqVarArr), z10, true);
             q6Var.setTextColor(h6.x0(null, h6.q7, false));
         } else {
-            q6Var.c(ld.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, yqVarArr), z10, true);
+            q6Var.c(md.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, yqVarArr), z10, true);
             q6Var.setTextColor(h6.x0(null, h6.G6, false));
         }
     }

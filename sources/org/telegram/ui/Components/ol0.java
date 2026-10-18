@@ -8,7 +8,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ol0 extends Drawable {
     public final Paint a = new Paint(1);
@@ -32,7 +32,7 @@ public final class ol0 extends Drawable {
         canvas.clipPath(this.c);
         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.e.n2);
         Paint paint = this.a;
-        paint.setColor(i0.b.o(w02, paint.getAlpha()));
+        paint.setColor(i0.a.o(w02, paint.getAlpha()));
         canvas.drawRect(this.d, paint);
         canvas.restore();
     }

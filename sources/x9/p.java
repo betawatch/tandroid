@@ -8,8 +8,8 @@ import android.hardware.SensorManager;
 import android.os.Environment;
 import android.os.StatFs;
 import android.util.Log;
-import com.google.android.gms.internal.cast.a6;
 import com.google.android.gms.internal.cast.z5;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,7 +20,7 @@ import z9.o0;
 import z9.p0;
 import z9.u0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class p {
     public static final HashMap f;
@@ -34,8 +34,8 @@ public final class p {
     static {
         HashMap hashMap = new HashMap();
         f = hashMap;
-        a6.n(5, hashMap, "armeabi", 6, "armeabi-v7a");
-        a6.n(9, hashMap, "arm64-v8a", 0, "x86");
+        k3.n(5, hashMap, "armeabi", 6, "armeabi-v7a");
+        k3.n(9, hashMap, "arm64-v8a", 0, "x86");
         hashMap.put("x86_64", 1);
         Locale locale = Locale.US;
         g = "Crashlytics Android SDK/18.6.0";

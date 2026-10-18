@@ -9,7 +9,7 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s6 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class s6 implements Runnable {
                         if (bitmap2 != null && (nVar = (r8.n) v6Var.a.get()) != null && nVar.b.k()) {
                             int width2 = bitmap2.getWidth();
                             int height2 = bitmap2.getHeight();
-                            m.g3 g3Var = new m.g3(22);
+                            m.g3 g3Var = new m.g3(23);
                             int width3 = bitmap2.getWidth();
                             int height3 = bitmap2.getHeight();
                             g3Var.d = bitmap2;

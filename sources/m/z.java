@@ -23,7 +23,7 @@ import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import w7.n6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class z {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -52,11 +52,11 @@ public class z {
         switch (this.a) {
             case 0:
                 AbsSeekBar absSeekBar = (AbsSeekBar) this.b;
-                g3 P = g3.P(absSeekBar.getContext(), attributeSet, d, i10);
-                Drawable G = P.G(0);
-                if (G != null) {
-                    if (G instanceof AnimationDrawable) {
-                        AnimationDrawable animationDrawable = (AnimationDrawable) G;
+                g3 K = g3.K(absSeekBar.getContext(), attributeSet, d, i10);
+                Drawable B = K.B(0);
+                if (B != null) {
+                    if (B instanceof AnimationDrawable) {
+                        AnimationDrawable animationDrawable = (AnimationDrawable) B;
                         int numberOfFrames = animationDrawable.getNumberOfFrames();
                         AnimationDrawable animationDrawable2 = new AnimationDrawable();
                         animationDrawable2.setOneShot(animationDrawable.isOneShot());
@@ -66,15 +66,15 @@ public class z {
                             animationDrawable2.addFrame(e, animationDrawable.getDuration(i11));
                         }
                         animationDrawable2.setLevel(10000);
-                        G = animationDrawable2;
+                        B = animationDrawable2;
                     }
-                    absSeekBar.setIndeterminateDrawable(G);
+                    absSeekBar.setIndeterminateDrawable(B);
                 }
-                Drawable G2 = P.G(1);
-                if (G2 != null) {
-                    absSeekBar.setProgressDrawable(e(G2, false));
+                Drawable B2 = K.B(1);
+                if (B2 != null) {
+                    absSeekBar.setProgressDrawable(e(B2, false));
                 }
-                P.Q();
+                K.L();
                 return;
             default:
                 TypedArray obtainStyledAttributes = ((EditText) this.b).getContext().obtainStyledAttributes(attributeSet, f.a.i, i10, 0);

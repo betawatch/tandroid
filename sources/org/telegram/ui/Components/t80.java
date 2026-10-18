@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class t80 extends org.telegram.ui.ActionBar.f3 {
     public boolean b;
@@ -29,11 +29,11 @@ public abstract class t80 extends org.telegram.ui.ActionBar.f3 {
         linearLayout.addView(w9Var, w7.z5.t(90, 90, 49, 0, 29, 0, 0));
         w9Var.e(chat, new h9(chat));
         TextView textView = new TextView(context);
-        org.telegram.messenger.wh.k(18.0f, 1, textView);
-        com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.j5, null, false, textView, 1);
-        TextView i10 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView, w7.z5.t(-2, -2, 49, 17, 24, 17, 0), context);
+        org.telegram.messenger.kk.k(18.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.j5, null, false, textView, 1);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 49, 17, 24, 17, 0), context);
         i10.setTextSize(1, 14.0f);
-        com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.r5, null, false, i10, 1);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.r5, null, false, i10, 1);
         linearLayout.addView(i10, w7.z5.t(-2, -2, 49, 30, 8, 30, 0));
         ChatObject.Call groupCall = AccountInstance.getInstance(this.currentAccount).getMessagesController().getGroupCall(chat.id, false);
         if (groupCall != null) {
@@ -64,7 +64,7 @@ public abstract class t80 extends org.telegram.ui.ActionBar.f3 {
         textView2.setGravity(1);
         textView2.setEllipsize(TextUtils.TruncateAt.END);
         textView2.setGravity(17);
-        org.telegram.messenger.q.m(14.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false), 1, textView2);
+        org.telegram.messenger.g0.m(14.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false), 1, textView2);
         s80Var.addView(textView2, w7.z5.e(-2, -2, 17));
         s80Var.setBackground(null);
         if (ChatObject.isChannelOrGiga(chat)) {

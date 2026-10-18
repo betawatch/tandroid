@@ -1,6 +1,6 @@
 package ah;
 
-import ai.ce;
+import ai.de;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
@@ -43,7 +43,7 @@ import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class g1 {
     public int A;
@@ -71,7 +71,7 @@ public abstract class g1 {
     public final View W;
     public final d6 X;
     public final yc Y;
-    public final ce Z;
+    public final de Z;
     public final TLRPC.ReactionCount a;
     public final uj0 a0;
     public final boolean b;
@@ -107,7 +107,7 @@ public abstract class g1 {
     public final Path d0 = new Path();
 
     public g1(g1 g1Var, int i10, View view, TLRPC.ReactionCount reactionCount, boolean z10, boolean z11, d6 d6Var) {
-        ce ceVar;
+        de deVar;
         uj0 uj0Var;
         f1 f1Var = new f1(this, 0);
         this.V = i10;
@@ -182,10 +182,10 @@ public abstract class g1 {
                 } else {
                     this.C.setImageBitmap(ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.star_reaction).mutate());
                 }
-                if (g1Var == null || (ceVar = g1Var.Z) == null) {
-                    ceVar = new ce(1, SharedConfig.getDevicePerformanceClass() == 2 ? 18 : 8);
+                if (g1Var == null || (deVar = g1Var.Z) == null) {
+                    deVar = new de(1, SharedConfig.getDevicePerformanceClass() == 2 ? 18 : 8);
                 }
-                this.Z = ceVar;
+                this.Z = deVar;
             } else if (d.f != null) {
                 TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(d.f);
                 if (tL_availableReaction != null) {
@@ -350,7 +350,7 @@ public abstract class g1 {
             } else {
                 this.J = h6.w0(m() ? h6.Sb : h6.Cj, d6Var);
                 this.K = h6.w0(m() ? h6.Gj : h6.Fj, d6Var);
-                if (view instanceof org.telegram.ui.Cells.x0) {
+                if (view instanceof org.telegram.ui.Cells.w0) {
                     this.M = h6.w0(h6.Ij, d6Var);
                     this.L = h6.w0(h6.Hj, d6Var);
                 } else {
@@ -369,7 +369,7 @@ public abstract class g1 {
             this.K = h6.w0(m() ? h6.Dj : h6.Ej, d6Var);
             int w02 = h6.w0(m() ? h6.Sb : h6.Cj, d6Var);
             this.J = w02;
-            this.J = i0.b.o(w02, (int) (Color.alpha(w02) * 0.156f));
+            this.J = i0.a.o(w02, (int) (Color.alpha(w02) * 0.156f));
             this.M = h6.w0(h6.ic, d6Var);
             i10 = 0;
             this.L = 0;
@@ -432,7 +432,7 @@ public abstract class g1 {
             } else if (f11 != f14) {
                 f15 = 6.0f;
                 if (this.c == 3) {
-                    i13 = (int) a6.x(f14, f11, this.f, i13 * f11);
+                    i13 = (int) k3.y(f14, f11, this.f, i13 * f11);
                 }
                 rectF = AndroidUtilities.rectTmp;
                 float f22 = i13;
@@ -745,11 +745,11 @@ public abstract class g1 {
     }
 
     public final boolean g(Canvas canvas, float f7, float f10) {
-        ce ceVar = this.Z;
-        if (ceVar == null) {
+        de deVar = this.Z;
+        if (deVar == null) {
             return false;
         }
-        RectF rectF = ceVar.c;
+        RectF rectF = deVar.c;
         if (!LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS) || !LiteMode.isEnabled(131072)) {
             return false;
         }
@@ -758,16 +758,16 @@ public abstract class g1 {
         float f11 = this.B / 2.0f;
         rectF.set(rectF2);
         rectF.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-        ceVar.g(rectF);
-        boolean d = ceVar.d();
-        ceVar.a(canvas, i0.b.f(k(), i0.b.o(this.J, 255), i0.b.f(0.4f, this.M, i0.b.o(this.J, 255))));
+        deVar.g(rectF);
+        boolean d = deVar.d();
+        deVar.a(canvas, i0.a.f(k(), i0.a.o(this.J, 255), i0.a.f(0.4f, this.M, i0.a.o(this.J, 255))));
         if (this.Q) {
             Path path = this.d0;
             path.rewind();
             path.addRoundRect(rectF2, f11, f11, Path.Direction.CW);
             canvas.save();
             canvas.clipPath(path);
-            ceVar.a(canvas, this.K);
+            deVar.a(canvas, this.K);
             canvas.restore();
         }
         return d;
@@ -877,10 +877,10 @@ public abstract class g1 {
     }
 
     public void s(float f7) {
-        this.N = i0.b.f(f7, this.i, i0.b.f(k(), this.K, this.M));
-        int f10 = i0.b.f(f7, this.g, i0.b.f(k(), this.J, this.L));
+        this.N = i0.a.f(f7, this.i, i0.a.f(k(), this.K, this.M));
+        int f10 = i0.a.f(f7, this.g, i0.a.f(k(), this.J, this.L));
         this.O = f10;
-        this.P = i0.b.f(f7, this.h, AndroidUtilities.computePerceivedBrightness(f10) > 0.8f ? 0 : 1526726655);
+        this.P = i0.a.f(f7, this.h, AndroidUtilities.computePerceivedBrightness(f10) > 0.8f ? 0 : 1526726655);
     }
 
     public void o() {

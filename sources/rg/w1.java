@@ -8,12 +8,12 @@ import android.graphics.RectF;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w1 extends View {
     public qg.e1 E;
@@ -100,13 +100,13 @@ public final class w1 extends View {
         if (z11) {
             float f7 = this.n;
             if (f7 != 1.0f) {
-                this.n = org.telegram.ui.Cells.t0.c(min, 200.0f, f7, 1.0f);
+                this.n = org.telegram.ui.Cells.c1.c(min, 200.0f, f7, 1.0f);
                 invalidate();
                 z10 = this.f;
                 if (z10) {
                     float f10 = this.r;
                     if (f10 != 1.0f) {
-                        this.r = org.telegram.ui.Cells.t0.c(min, 200.0f, f10, 1.0f);
+                        this.r = org.telegram.ui.Cells.c1.c(min, 200.0f, f10, 1.0f);
                         invalidate();
                         RectF rectF = this.e;
                         float height = rectF.height();
@@ -141,11 +141,11 @@ public final class w1 extends View {
                         canvas.restore();
                         float f12 = (d - d10) / (d11 - d10);
                         float f13 = dp2 * 1.5f;
-                        a(bsVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(a6.x(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
+                        a(bsVar.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f12, rectF.height(), rectF.top), rectF.top + f11, rectF.bottom - Math.min(f13, f11)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f13, f11), f11, f12), this.r), canvas, false);
                         if (this.J && this.r != 0.0f && this.v && this.E != null) {
                             qg.e1 e1Var = this.E;
                             float f14 = e1Var.c.g.a;
-                            a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var.getCurrentBrush().h() * a6.t(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
+                            a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var.getCurrentBrush().h() * k3.t(f14, 0.043945312f, d, 0.00390625f * f14) * this.E.getCurrentBrush().g(), canvas, true);
                         }
                         if (this.n != 0.0f) {
                             canvas.restore();
@@ -157,7 +157,7 @@ public final class w1 extends View {
                 if (!z10) {
                     float f15 = this.r;
                     if (f15 != 0.0f) {
-                        this.r = org.telegram.ui.Cells.t0.v(min, 200.0f, f15, 0.0f);
+                        this.r = org.telegram.ui.Cells.c1.v(min, 200.0f, f15, 0.0f);
                         invalidate();
                     }
                 }
@@ -192,11 +192,11 @@ public final class w1 extends View {
                 canvas.restore();
                 float f122 = (d - d10) / (d11 - d10);
                 float f132 = dp22 * 1.5f;
-                a(bsVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(a6.x(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
+                a(bsVar2.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f122, rectF3.height(), rectF3.top), rectF3.top + f112, rectF3.bottom - Math.min(f132, f112)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f132, f112), f112, f122), this.r), canvas, false);
                 if (this.J) {
                     qg.e1 e1Var2 = this.E;
                     float f142 = e1Var2.c.g.a;
-                    a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var2.getCurrentBrush().h() * a6.t(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
+                    a(getWidth() / 2.0f, getHeight() / 2.0f, e1Var2.getCurrentBrush().h() * k3.t(f142, 0.043945312f, d, 0.00390625f * f142) * this.E.getCurrentBrush().g(), canvas, true);
                 }
                 if (this.n != 0.0f) {
                 }
@@ -205,7 +205,7 @@ public final class w1 extends View {
         if (!z11) {
             float f16 = this.n;
             if (f16 != 0.0f) {
-                this.n = org.telegram.ui.Cells.t0.v(min, 200.0f, f16, 0.0f);
+                this.n = org.telegram.ui.Cells.c1.v(min, 200.0f, f16, 0.0f);
                 invalidate();
             }
         }
@@ -245,7 +245,7 @@ public final class w1 extends View {
         canvas.restore();
         float f1222 = (d - d10) / (d11 - d10);
         float f1322 = dp222 * 1.5f;
-        a(bsVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(a6.x(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
+        a(bsVar22.getInterpolation(this.r) * AndroidUtilities.dp(32.0f), w7.r.a(k3.y(1.0f, f1222, rectF32.height(), rectF32.top), rectF32.top + f1122, rectF32.bottom - Math.min(f1322, f1122)), AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), AndroidUtilities.lerp(Math.min(f1322, f1122), f1122, f1222), this.r), canvas, false);
         if (this.J) {
         }
         if (this.n != 0.0f) {

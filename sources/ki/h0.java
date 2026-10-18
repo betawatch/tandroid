@@ -1,6 +1,6 @@
 package ki;
 
-import ai.bb;
+import ai.cb;
 import android.text.Editable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -9,7 +9,6 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
@@ -18,7 +17,7 @@ import org.telegram.ui.Components.tj;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -146,10 +145,10 @@ public final /* synthetic */ class h0 implements Runnable {
                         while (i17 < i15) {
                             int i18 = i17;
                             String str4 = strArr2[i18];
-                            if ((str == null || !(str.startsWith(str4) || wh.w(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || wh.w(" ", str4, str2)))) {
+                            if ((str == null || !(str.startsWith(str4) || org.telegram.messenger.g0.w(" ", str4, str))) && (str2 == null || !(str2.startsWith(str4) || org.telegram.messenger.g0.w(" ", str4, str2)))) {
                                 str3 = str;
                                 TLRPC.User user2 = contact.user;
-                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || wh.w(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || wh.w(" ", str4, translitString2)))) ? 3 : z10 : 2;
+                                r22 = (user2 == null || (publicUsername = UserObject.getPublicUsername(user2)) == null || !publicUsername.startsWith(str4)) ? (lowerCase2.startsWith(str4) || org.telegram.messenger.g0.w(" ", str4, lowerCase2) || (translitString2 != null && (translitString2.startsWith(str4) || org.telegram.messenger.g0.w(" ", str4, translitString2)))) ? 3 : z10 : 2;
                             } else {
                                 str3 = str;
                                 r22 = 1;
@@ -201,7 +200,7 @@ public final /* synthetic */ class h0 implements Runnable {
                             int i20 = 0;
                             while (i20 < i15) {
                                 String str6 = strArr3[i20];
-                                if (lowerCase3.startsWith(str6) || wh.w(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || wh.w(" ", str6, translitString3)))) {
+                                if (lowerCase3.startsWith(str6) || org.telegram.messenger.g0.w(" ", str6, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str6) || org.telegram.messenger.g0.w(" ", str6, translitString3)))) {
                                     i10 = i19;
                                     z11 = true;
                                 } else {
@@ -228,11 +227,11 @@ public final /* synthetic */ class h0 implements Runnable {
                         i10 = i19;
                         i19 = i10 + 1;
                     }
-                    AndroidUtilities.runOnUIThread(new bb(tjVar4, this.c, arrayList4, arrayList5, 16));
+                    AndroidUtilities.runOnUIThread(new cb(tjVar4, this.c, arrayList4, arrayList5, 16));
                     break;
                 } else {
                     tjVar.h = -1;
-                    AndroidUtilities.runOnUIThread(new bb(tjVar, tjVar.h, new ArrayList(), new ArrayList(), 16));
+                    AndroidUtilities.runOnUIThread(new cb(tjVar, tjVar.h, new ArrayList(), new ArrayList(), 16));
                     break;
                 }
                 break;

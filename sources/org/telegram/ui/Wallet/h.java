@@ -12,12 +12,12 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.fr0;
+import org.telegram.ui.gn0;
 import org.telegram.ui.gx;
 import org.telegram.ui.n80;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final /* synthetic */ class h implements Runnable {
                 if (!tonconnectsession.closed && !tonconnectsession.closing && tonconnectsession.manifest_error == null && tonconnectsession.manifest != null) {
                     if (!a2Var.f) {
                         a2Var.f = true;
-                        f2Var.b.j0(new z6(f2Var, a2Var, lVar, tonconnectsession, 6));
+                        f2Var.b.j0(new c7(f2Var, a2Var, lVar, tonconnectsession, 6));
                         break;
                     } else {
                         lVar.run("A TON Connect operation is already in progress");
@@ -156,10 +156,10 @@ public final /* synthetic */ class h implements Runnable {
                 lVar3.run(str3);
                 break;
             case 8:
-                z6 z6Var = (z6) this.b;
+                c7 c7Var = (c7) this.b;
                 i80 i80Var = (i80) this.c;
                 i80 i80Var2 = (i80) this.d;
-                z6Var.run();
+                c7Var.run();
                 i80Var.K(i80Var2);
                 break;
             case 9:
@@ -215,53 +215,53 @@ public final /* synthetic */ class h implements Runnable {
                 ((WalletEngine2) this.b).lambda$previewTonConnect$2((e2) this.c, (Utilities.Callback2) this.d);
                 break;
             case 17:
-                v7 v7Var = (v7) this.b;
+                y7 y7Var = (y7) this.b;
                 int[] iArr = (int[]) this.c;
                 Bitmap bitmap = (Bitmap) this.d;
-                v7Var.C = false;
-                w7 w7Var = v7Var.d0;
-                boolean z10 = w7Var.V0;
-                v5 v5Var = w7Var.c;
+                y7Var.C = false;
+                z7 z7Var = y7Var.d0;
+                boolean z10 = z7Var.V0;
+                x5 x5Var = z7Var.c;
                 if (!z10) {
-                    if (v7Var.u == null) {
-                        v7Var.u = Bitmap.createBitmap(288, 288, Bitmap.Config.ARGB_8888);
-                        if (v5Var.isShown() && v5Var.getAlpha() > 0.0f) {
-                            u7 u7Var = v7Var.r;
-                            u7Var.a(0.0f);
-                            u7Var.b = 1.0f;
+                    if (y7Var.u == null) {
+                        y7Var.u = Bitmap.createBitmap(288, 288, Bitmap.Config.ARGB_8888);
+                        if (x5Var.isShown() && x5Var.getAlpha() > 0.0f) {
+                            x7 x7Var = y7Var.r;
+                            x7Var.a(0.0f);
+                            x7Var.b = 1.0f;
                         }
                     }
-                    v7Var.u.setPixels(iArr, 0, 288, 0, 0, 288, 288);
-                    if (bitmap != null && v7Var.w == null) {
-                        v7Var.w = bitmap;
+                    y7Var.u.setPixels(iArr, 0, 288, 0, 0, 288, 288);
+                    if (bitmap != null && y7Var.w == null) {
+                        y7Var.w = bitmap;
                     }
-                    if (v7Var.D) {
-                        v7Var.c();
+                    if (y7Var.D) {
+                        y7Var.c();
                     }
-                    w7Var.h0();
+                    z7Var.h0();
                     break;
                 }
                 break;
             case 18:
-                k8 k8Var = (k8) this.b;
+                n8 n8Var = (n8) this.b;
                 m0 m0Var3 = (m0) this.c;
                 h0 h0Var = (h0) this.d;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(k8Var.getParentActivity(), 0, k8Var.getResourceProvider());
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(n8Var.getParentActivity(), 0, n8Var.getResourceProvider());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WalletDisableBackupTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WalletDisableBackupConfirmInfo);
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new e8(k8Var, m0Var3, h0Var));
+                alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new h8(n8Var, m0Var3, h0Var));
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.o();
                 break;
             default:
-                k8 k8Var2 = (k8) this.b;
+                n8 n8Var2 = (n8) this.b;
                 Boolean bool = (Boolean) this.c;
                 m0 m0Var4 = (m0) this.d;
-                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(k8Var2.getParentActivity(), 0, k8Var2.getResourceProvider());
+                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(n8Var2.getParentActivity(), 0, n8Var2.getResourceProvider());
                 alertDialog$Builder2.a.R = LocaleController.getString(R.string.WalletReplaceWalletTitle);
-                alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new e8(k8Var2, bool, m0Var4, 0));
-                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new fr0(25, k8Var2, bool));
+                alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new h8(n8Var2, bool, m0Var4, 0));
+                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new gn0(26, n8Var2, bool));
                 alertDialog$Builder2.o();
                 break;
         }

@@ -15,7 +15,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertController$RecycleListView;
 import b2.r0;
 import b2.u0;
-import com.google.android.gms.internal.play_billing.h4;
+import com.google.android.gms.internal.play_billing.i4;
 import e2.m0;
 import j$.util.DesugarCollections;
 import java.net.URI;
@@ -32,7 +32,7 @@ import javax.net.ssl.SSLSocketFactory;
 import org.telegram.messenger.MediaDataController;
 import v7.q8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
     public final /* synthetic */ int a;
@@ -244,7 +244,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
                         str2 = str2 + ":" + port;
                     }
                     if (rawQuery != null) {
-                        str3 = a1.g.D(str3, "?", rawQuery);
+                        str3 = a1.g.C(str3, "?", rawQuery);
                     }
                     return new tc.u(z10, userInfo, str2, str3, sVar);
                 }
@@ -288,7 +288,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
-        StringBuilder l4 = i0.a.l(i10, "Invalid index ", ", size is ");
+        StringBuilder l4 = i2.d.l(i10, "Invalid index ", ", size is ");
         l4.append(this.b);
         throw new IndexOutOfBoundsException(l4.toString());
     }
@@ -415,7 +415,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return bArr;
     }
 
-    public String x(h4 h4Var) {
+    public String x(i4 i4Var) {
         d0 d0Var = (d0) this.c;
         int i10 = this.b;
         try {
@@ -425,7 +425,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
             com.google.android.gms.internal.play_billing.g gVar = d0Var.E;
             String packageName = d0Var.C.getPackageName();
             String str = i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? i10 != 6 ? "QUERY_PRODUCT_DETAILS_ASYNC" : "START_CONNECTION" : "IS_FEATURE_SUPPORTED" : "CONSUME_ASYNC" : "ACKNOWLEDGE_PURCHASE" : "LAUNCH_BILLING_FLOW";
-            c0 c0Var = new c0(h4Var);
+            c0 c0Var = new c0(i4Var);
             com.google.android.gms.internal.play_billing.e eVar = (com.google.android.gms.internal.play_billing.e) gVar;
             Parcel T0 = eVar.T0();
             T0.writeString(packageName);
@@ -443,7 +443,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         } catch (Exception e) {
             d0Var.F(95, 28, g0.p);
             com.google.android.gms.internal.play_billing.u.i("BillingClientTesting", "An error occurred while retrieving billing override.", e);
-            h4Var.a(0);
+            i4Var.a(0);
             return "billingOverrideService.getBillingOverride";
         }
     }

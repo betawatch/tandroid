@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mk0 extends FrameLayout {
     public lk0 E;
@@ -288,7 +288,7 @@ public final class mk0 extends FrameLayout {
             int dp = AndroidUtilities.dp(size * 50);
             ob0 ob0Var = this.J;
             if (ob0Var != null) {
-                dp = org.telegram.messenger.q.C(8.0f, ob0Var.getMeasuredHeight(), dp);
+                dp = org.telegram.messenger.g0.C(8.0f, ob0Var.getMeasuredHeight(), dp);
             }
             ek0 ek0Var = this.e;
             if (ek0Var.getMeasuredHeight() != 0) {

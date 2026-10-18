@@ -3,10 +3,10 @@ package ei;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.dd;
-import org.telegram.ui.jp0;
+import org.telegram.ui.kp0;
 import org.telegram.ui.mc1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class eb implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -43,10 +43,10 @@ public final class eb implements ValueAnimator.AnimatorUpdateListener {
                 }
                 break;
             case 2:
-                jp0 jp0Var = (jp0) this.c;
-                jp0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jp0Var.X.invalidate();
-                if (!this.b && jp0Var.Y > 0.5f) {
+                kp0 kp0Var = (kp0) this.c;
+                kp0Var.Y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kp0Var.X.invalidate();
+                if (!this.b && kp0Var.Y > 0.5f) {
                     this.b = true;
                     break;
                 }

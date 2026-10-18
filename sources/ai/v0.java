@@ -53,7 +53,7 @@ import org.telegram.ui.Components.xr;
 import org.telegram.ui.n60;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -83,7 +83,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 Context context = (Context) this.c;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.d;
                 if (b1Var.m0.a == ag.c.a) {
-                    new cd(context, d6Var).show();
+                    new dd(context, d6Var).show();
                     break;
                 }
                 break;
@@ -94,7 +94,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 f3Var.setCanDismissWithSwipe(false);
                 dVar.setLoading(true);
                 final int i10 = 0;
-                v8Var.run(new Utilities.Callback() { // from class: ai.fb
+                v8Var.run(new Utilities.Callback() { // from class: ai.gb
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         Boolean bool = (Boolean) obj;
@@ -105,7 +105,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                                 if (!booleanValue) {
                                     final int i11 = 0;
                                     final ei.d dVar2 = dVar;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.qb
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.rb
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i11) {
@@ -131,7 +131,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                                 if (!booleanValue2) {
                                     final int i12 = 1;
                                     final ei.d dVar3 = dVar;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.qb
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.rb
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i12) {
@@ -162,7 +162,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 f3Var2.setCanDismissWithSwipe(false);
                 dVar2.setLoading(true);
                 final int i11 = 1;
-                n9Var.run(new Utilities.Callback() { // from class: ai.fb
+                n9Var.run(new Utilities.Callback() { // from class: ai.gb
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         Boolean bool = (Boolean) obj;
@@ -173,7 +173,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                                 if (!booleanValue) {
                                     final int i112 = 0;
                                     final ei.d dVar22 = dVar2;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.qb
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.rb
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i112) {
@@ -199,7 +199,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                                 if (!booleanValue2) {
                                     final int i12 = 1;
                                     final ei.d dVar3 = dVar2;
-                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.qb
+                                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.rb
                                         @Override // java.lang.Runnable
                                         public final void run() {
                                             switch (i12) {
@@ -249,7 +249,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 e1Var.performHapticFeedback(3);
                 org.telegram.ui.Components.xc X = org.telegram.ui.Components.xc.X();
                 if (X != null) {
-                    X.Q(R.raw.ic_save_to_gallery, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SaveStoryToGalleryPremiumHint), new oa(16, h4Var3, aaVar))).j();
+                    X.Q(R.raw.ic_save_to_gallery, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SaveStoryToGalleryPremiumHint), new pa(16, h4Var3, aaVar))).j();
                     break;
                 }
                 break;
@@ -497,7 +497,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
             case 23:
                 iu iuVar = (iu) this.b;
                 t tVar = (t) this.c;
-                e2 e2Var = (e2) this.d;
+                ei.s1 s1Var = (ei.s1) this.d;
                 try {
                     charSequence = ((ClipboardManager) iuVar.getContext().getSystemService("clipboard")).getPrimaryClip().getItemAt(0).coerceToText(iuVar.getContext());
                 } catch (Exception e) {
@@ -508,7 +508,7 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                     tVar.setText(charSequence);
                     tVar.setSelection(0, tVar.getText().length());
                 }
-                e2Var.run();
+                s1Var.run();
                 break;
             case 24:
                 qu quVar = (qu) this.b;

@@ -10,17 +10,17 @@ import com.android.billingclient.api.Purchase;
 import com.google.android.gms.internal.play_billing.g3;
 import com.google.android.gms.internal.play_billing.h3;
 import com.google.android.gms.internal.play_billing.i3;
-import com.google.android.gms.internal.play_billing.m3;
+import com.google.android.gms.internal.play_billing.n3;
 import com.google.android.gms.internal.play_billing.o1;
-import com.google.android.gms.internal.play_billing.o3;
 import com.google.android.gms.internal.play_billing.p3;
 import com.google.android.gms.internal.play_billing.q2;
+import com.google.android.gms.internal.play_billing.q3;
 import com.google.android.gms.internal.play_billing.s1;
-import com.google.android.gms.internal.play_billing.t3;
-import com.google.android.gms.internal.play_billing.v3;
+import com.google.android.gms.internal.play_billing.u3;
+import com.google.android.gms.internal.play_billing.w3;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class h0 extends BroadcastReceiver {
     public boolean a;
@@ -73,11 +73,11 @@ public final class h0 extends BroadcastReceiver {
         }
     }
 
-    public final void c(Bundle bundle, i iVar, int i10, m3 m3Var, long j10, boolean z10) {
+    public final void c(Bundle bundle, i iVar, int i10, n3 n3Var, long j10, boolean z10) {
         o1 d;
         try {
             if (bundle.getByteArray("FAILURE_LOGGING_PAYLOAD") == null) {
-                ((n4.s) ((f0) this.c.d)).P(e0.b(23, i10, iVar, null, m3Var), j10, z10);
+                ((n4.s) ((f0) this.c.d)).P(e0.b(23, i10, iVar, null, n3Var), j10, z10);
                 return;
             }
             f0 f0Var = (f0) this.c.d;
@@ -102,42 +102,42 @@ public final class h0 extends BroadcastReceiver {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onReceive(Context context, Intent intent) {
-        m3 m3Var;
+        n3 n3Var;
         i e;
         long j10;
         ArrayList arrayList;
         i iVar;
-        p3 p3Var;
+        q3 q3Var;
         int intValue;
         String action = intent.getAction();
         int hashCode = action.hashCode();
-        m3 m3Var2 = m3.d;
-        m3 m3Var3 = m3.c;
-        m3 m3Var4 = m3.e;
+        n3 n3Var2 = n3.d;
+        n3 n3Var3 = n3.c;
+        n3 n3Var4 = n3.e;
         if (hashCode == -1484087650) {
             if (action.equals("com.android.vending.billing.PURCHASES_UPDATED")) {
-                m3Var = m3Var3;
+                n3Var = n3Var3;
             }
-            m3Var = m3.b;
+            n3Var = n3.b;
         } else if (hashCode != -337612916) {
             if (hashCode == 345207161 && action.equals("com.android.vending.billing.ALTERNATIVE_BILLING")) {
-                m3Var = m3Var4;
+                n3Var = n3Var4;
             }
-            m3Var = m3.b;
+            n3Var = n3.b;
         } else {
             if (action.equals("com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED")) {
-                m3Var = m3Var2;
+                n3Var = n3Var2;
             }
-            m3Var = m3.b;
+            n3Var = n3.b;
         }
-        int i10 = (m3Var.equals(m3Var2) || m3Var.equals(m3Var4)) ? 2 : m3Var.equals(m3Var3) ? 32 : 1;
+        int i10 = (n3Var.equals(n3Var2) || n3Var.equals(n3Var4)) ? 2 : n3Var.equals(n3Var3) ? 32 : 1;
         Bundle extras = intent.getExtras();
         h hVar = this.c;
         if (extras == null) {
             com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "Bundle is null.");
             f0 f0Var = (f0) hVar.d;
             i iVar2 = g0.f;
-            ((n4.s) f0Var).N(e0.b(11, i10, iVar2, null, m3Var));
+            ((n4.s) f0Var).N(e0.b(11, i10, iVar2, null, n3Var));
             q qVar = (q) hVar.c;
             if (qVar != null) {
                 qVar.onPurchasesUpdated(iVar2, null);
@@ -174,10 +174,10 @@ public final class h0 extends BroadcastReceiver {
         }
         long j11 = extras.getLong("billingClientTransactionId", 0L);
         boolean z10 = extras.getBoolean("wasServiceAutoReconnected", false);
-        if (!m3Var.equals(m3Var3) && !m3Var.equals(m3Var2)) {
-            if (m3Var.equals(m3Var4)) {
+        if (!n3Var.equals(n3Var3) && !n3Var.equals(n3Var2)) {
+            if (n3Var.equals(n3Var4)) {
                 if (e.a != 0) {
-                    c(extras, e, i10, m3Var, j11, z10);
+                    c(extras, e, i10, n3Var, j11, z10);
                     q qVar2 = (q) hVar.c;
                     com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
                     qVar2.onPurchasesUpdated(e, com.google.android.gms.internal.play_billing.v.e);
@@ -187,7 +187,7 @@ public final class h0 extends BroadcastReceiver {
                 com.google.android.gms.internal.play_billing.u.h("BillingBroadcastManager", "AlternativeBillingListener and UserChoiceBillingListener is null.");
                 f0 f0Var2 = (f0) hVar.d;
                 i iVar3 = g0.f;
-                ((n4.s) f0Var2).P(e0.b(77, i10, iVar3, null, m3Var), j11, z10);
+                ((n4.s) f0Var2).P(e0.b(77, i10, iVar3, null, n3Var), j11, z10);
                 q qVar3 = (q) hVar.c;
                 com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
                 qVar3.onPurchasesUpdated(iVar3, com.google.android.gms.internal.play_billing.v.e);
@@ -206,33 +206,33 @@ public final class h0 extends BroadcastReceiver {
                 arrayList = null;
                 if (e.a != 0) {
                     f0 f0Var3 = (f0) hVar.d;
-                    i3 c10 = e0.c(i10, m3Var);
+                    i3 c10 = e0.c(i10, n3Var);
                     n4.s sVar = (n4.s) f0Var3;
                     sVar.getClass();
                     try {
                         h3 h3Var = (h3) c10.g();
-                        t3 t3Var = (t3) c10.n().g();
-                        t3Var.c();
-                        v3.n((v3) t3Var.b, z10);
+                        u3 u3Var = (u3) c10.n().g();
+                        u3Var.c();
+                        w3.n((w3) u3Var.b, z10);
                         h3Var.c();
-                        i3.p((i3) h3Var.b, (v3) t3Var.a());
+                        i3.p((i3) h3Var.b, (w3) u3Var.a());
                         i3 i3Var = (i3) h3Var.a();
                         if (j11 == j10) {
-                            p3Var = (p3) sVar.b;
+                            q3Var = (q3) sVar.b;
                         } else {
-                            o3 o3Var = (o3) ((p3) sVar.b).g();
-                            o3Var.c();
-                            p3.r((p3) o3Var.b, j11);
-                            p3Var = (p3) o3Var.a();
+                            p3 p3Var = (p3) ((q3) sVar.b).g();
+                            p3Var.c();
+                            q3.r((q3) p3Var.b, j11);
+                            q3Var = (q3) p3Var.a();
                         }
-                        sVar.V(i3Var, p3Var);
+                        sVar.V(i3Var, q3Var);
                     } catch (Throwable th2) {
                         com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                     }
                     iVar = e;
                 } else {
                     iVar = e;
-                    c(extras, iVar, i10, m3Var, j11, z10);
+                    c(extras, iVar, i10, n3Var, j11, z10);
                 }
                 ((q) hVar.c).onPurchasesUpdated(iVar, arrayList);
             }

@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gh implements Runnable {
     public final /* synthetic */ int a;
@@ -114,12 +114,12 @@ public final /* synthetic */ class gh implements Runnable {
                 ah.d1.f();
                 break;
             case 8:
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) obj;
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) obj;
                 sn snVar4 = ((wl) ((xm) obj2).f).a.Q;
                 int i13 = sn.Hc;
                 snVar4.Qa();
-                x0Var.getMessageObject().flickerLoading = false;
-                x0Var.invalidate();
+                w0Var.getMessageObject().flickerLoading = false;
+                w0Var.invalidate();
                 break;
             case 9:
                 ei.x3 x3Var2 = (ei.x3) obj;

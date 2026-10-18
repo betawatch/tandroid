@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qe0 extends org.telegram.ui.Components.ow0 {
     public final /* synthetic */ fg0 E;
@@ -50,7 +50,7 @@ public final class qe0 extends org.telegram.ui.Components.ow0 {
         linearLayout.addView(frameLayout, w7.z5.e(-1, -2, 1));
         TextView textView = new TextView(context);
         this.b = textView;
-        com.google.android.gms.internal.cast.a6.m(18.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView);
         textView.setText(LocaleController.getString(R.string.ResetAccount));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);

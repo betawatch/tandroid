@@ -4,420 +4,163 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.text.InputFilter;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import j$.time.DayOfWeek;
-import j$.time.format.TextStyle;
-import java.util.ArrayList;
-import java.util.Calendar;
+import ci.k4;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.wh;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.Cells.i5;
-import org.telegram.ui.Cells.q8;
 import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.as;
 import org.telegram.ui.Components.dq;
-import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.xc;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d1 extends n2 implements NotificationCenter.NotificationCenterDelegate {
+    public boolean E;
+    public int F;
+    public boolean G;
     public a71 a;
     public as b;
     public org.telegram.ui.ActionBar.u0 c;
     public boolean d;
-    public boolean e;
-    public ArrayList[] f;
-    public ArrayList[] h;
-    public String n;
-    public String r;
+    public FrameLayout e;
+    public a1 f;
+    public FrameLayout h;
+    public c1 n;
+    public oq r;
+    public k4 s;
+    public boolean v;
+    public TLRPC.TL_businessLocation w;
+    public TLRPC.GeoPoint x;
+    public String y;
 
     public d1() {
         super(null);
-        this.f = null;
-        this.h = new ArrayList[]{new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList(), new ArrayList()};
+        this.F = -4;
     }
 
-    public static void U(d1 d1Var, TLRPC.TL_error tL_error, TLObject tLObject) {
-        if (tL_error != null) {
-            d1Var.b.a(0.0f);
-            xc.d0(tL_error);
+    public final void U(boolean z10) {
+        if (this.c == null) {
             return;
         }
-        if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
-            if (d1Var.isFinished || d1Var.finishing) {
-                return;
-            }
-            d1Var.finishFragment();
-            return;
-        }
-        if (d1Var.getParentActivity() == null) {
-            return;
-        }
-        d1Var.b.a(0.0f);
-        wh.q(R.string.UnknownError, xc.a0(d1Var), null);
-    }
-
-    public static void V(d1 d1Var, ArrayList arrayList) {
-        String string = LocaleController.getString(R.string.BusinessHours);
-        String string2 = LocaleController.getString(R.string.BusinessHoursInfo);
-        int i10 = R.raw.biz_clock;
-        f61 f61Var = new f61(2);
-        f61Var.l = string;
-        f61Var.o = string2;
-        f61Var.k = i10;
-        arrayList.add(f61Var);
-        f61 i11 = f61.i(-1, LocaleController.getString(R.string.BusinessHoursShow));
-        i11.K(d1Var.e);
-        arrayList.add(i11);
-        arrayList.add(f61.A(-100, null));
-        if (!d1Var.e) {
-            return;
-        }
-        i0.a.p(R.string.BusinessHours, arrayList);
-        int i12 = 0;
-        while (true) {
-            ArrayList[] arrayListArr = d1Var.h;
-            if (i12 >= arrayListArr.length) {
-                arrayList.add(f61.A(-101, null));
-                arrayList.add(f61.f(LocaleController.getString(R.string.BusinessHoursTimezone), d2.b(d1Var.currentAccount).d(d1Var.r, false), -2));
-                arrayList.add(f61.A(-102, null));
-                return;
-            }
-            if (arrayListArr[i12] == null) {
-                arrayListArr[i12] = new ArrayList();
-            }
-            String displayName = DayOfWeek.values()[i12].getDisplayName(TextStyle.FULL, LocaleController.getInstance().getCurrentLocale());
-            String str = displayName.substring(0, 1).toUpperCase() + displayName.substring(1);
-            String a02 = a0(d1Var.h[i12]);
-            f61 f61Var2 = new f61(5);
-            f61Var2.d = i12;
-            f61Var2.l = str;
-            f61Var2.m = a02;
-            f61Var2.K(!d1Var.h[i12].isEmpty());
-            arrayList.add(f61Var2);
-            i12++;
-        }
-    }
-
-    public static /* synthetic */ void W(d1 d1Var, View view, String str) {
-        d2 b10 = d2.b(d1Var.currentAccount);
-        d1Var.r = str;
-        ((q8) view).u(b10.d(str, false), true);
-        d1Var.Y(true);
-    }
-
-    public static ArrayList[] Z(ArrayList arrayList) {
-        int i10;
-        ArrayList[] arrayListArr = new ArrayList[7];
-        for (int i11 = 0; i11 < 7; i11++) {
-            arrayListArr[i11] = new ArrayList();
-        }
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = (TL_account.TL_businessWeeklyOpen) arrayList.get(i12);
-            int i13 = tL_businessWeeklyOpen.start_minute;
-            int i14 = i13 % 1440;
-            arrayListArr[(i13 / 1440) % 7].add(new c1(i14, (tL_businessWeeklyOpen.end_minute - i13) + i14));
-        }
-        int i15 = 0;
-        while (i15 < 7) {
-            int i16 = i15 * 1440;
-            int i17 = i15 + 1;
-            int i18 = i17 * 1440;
-            int i19 = i16;
-            for (int i20 = 0; i20 < arrayList.size(); i20++) {
-                TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen2 = (TL_account.TL_businessWeeklyOpen) arrayList.get(i20);
-                if (tL_businessWeeklyOpen2.start_minute <= i19 && (i10 = tL_businessWeeklyOpen2.end_minute) >= i19) {
-                    i19 = i10 + 1;
-                }
-            }
-            if (i19 >= i18) {
-                int i21 = (i15 + 6) % 7;
-                if (!arrayListArr[i21].isEmpty() && ((c1) i0.a.h(1, arrayListArr[i21])).b >= 1440) {
-                    ((c1) i0.a.h(1, arrayListArr[i21])).b = 1439;
-                }
-                int min = Math.min((i19 - i16) - 1, 2879);
-                ArrayList arrayList2 = arrayListArr[(i15 + 8) % 7];
-                if (min >= 1440 && !arrayList2.isEmpty() && ((c1) arrayList2.get(0)).a < min - 1440) {
-                    min = ((c1) arrayList2.get(0)).a + 1439;
-                }
-                arrayListArr[i15].clear();
-                arrayListArr[i15].add(new c1(0, min));
-            } else {
-                int i22 = i17 % 7;
-                if (!arrayListArr[i15].isEmpty() && !arrayListArr[i22].isEmpty()) {
-                    c1 c1Var = (c1) i0.a.h(1, arrayListArr[i15]);
-                    c1 c1Var2 = (c1) arrayListArr[i22].get(0);
-                    int i23 = c1Var.b;
-                    if (i23 > 1440 && i23 - 1439 == c1Var2.a) {
-                        c1Var.b = 1439;
-                        c1Var2.a = 0;
-                    }
-                }
-            }
-            i15 = i17;
-        }
-        return arrayListArr;
-    }
-
-    public static String a0(ArrayList arrayList) {
-        if (arrayList.isEmpty()) {
-            return LocaleController.getString(R.string.BusinessHoursDayClosed);
-        }
-        if (c0(arrayList)) {
-            return LocaleController.getString(R.string.BusinessHoursDayFullOpened);
-        }
-        String str = "";
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            c1 c1Var = (c1) arrayList.get(i10);
-            if (i10 > 0) {
-                str = r.c.u(str, "\n");
-            }
-            StringBuilder u10 = a1.g.u(str);
-            u10.append(c1.a(c1Var.a));
-            u10.append(" - ");
-            u10.append(c1.a(c1Var.b));
-            str = u10.toString();
-        }
-        return str;
-    }
-
-    public static boolean c0(ArrayList arrayList) {
-        if (arrayList == null || arrayList.isEmpty()) {
-            return false;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            c1 c1Var = (c1) arrayList.get(i11);
-            if (i10 < c1Var.a) {
-                return false;
-            }
-            i10 = c1Var.b;
-        }
-        return i10 == 1439 || i10 == 1440;
-    }
-
-    public static String f0(int i10, TLRPC.User user, TL_account.TL_businessWorkHours tL_businessWorkHours) {
-        if (tL_businessWorkHours == null) {
-            return null;
-        }
-        ArrayList[] Z = Z(tL_businessWorkHours.weekly_open);
-        StringBuilder sb2 = new StringBuilder();
-        if (user != null) {
-            sb2.append(LocaleController.formatString(R.string.BusinessHoursCopyHeader, UserObject.getUserName(user)));
-            sb2.append("\n");
-        }
-        for (int i11 = 0; i11 < 7; i11++) {
-            ArrayList arrayList = Z[i11];
-            String displayName = DayOfWeek.values()[i11].getDisplayName(TextStyle.FULL, LocaleController.getInstance().getCurrentLocale());
-            sb2.append(displayName.substring(0, 1).toUpperCase() + displayName.substring(1));
-            sb2.append(": ");
-            if (c0(arrayList)) {
-                sb2.append(LocaleController.getString(R.string.BusinessHoursProfileOpen));
-            } else if (arrayList.isEmpty()) {
-                sb2.append(LocaleController.getString(R.string.BusinessHoursProfileClose));
-            } else {
-                for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                    if (i12 > 0) {
-                        sb2.append(", ");
-                    }
-                    c1 c1Var = (c1) arrayList.get(i12);
-                    sb2.append(c1.a(c1Var.a));
-                    sb2.append(" - ");
-                    sb2.append(c1.a(c1Var.b));
-                }
-            }
-            sb2.append("\n");
-        }
-        TLRPC.TL_timezone a2 = d2.b(i10).a(tL_businessWorkHours.timezone_id);
-        if (((Calendar.getInstance().getTimeZone().getRawOffset() / MediaDataController.MAX_STYLE_RUNS_COUNT) - (a2 == null ? 0 : a2.utc_offset)) / 60 != 0 && a2 != null) {
-            int i13 = R.string.BusinessHoursCopyFooter;
-            d2.b(i10);
-            sb2.append(LocaleController.formatString(i13, d2.e(a2, true)));
-        }
-        return sb2.toString();
-    }
-
-    public final void X(int i10) {
-        if ((this.h[i10].isEmpty() ? null : (c1) i0.a.h(1, this.h[i10])) == null) {
-            return;
-        }
-        int i11 = (i10 + 6) % 7;
-        c1 c1Var = this.h[i11].isEmpty() ? null : (c1) i0.a.h(1, this.h[i11]);
-        if (c1Var == null || c1Var.b <= 1439) {
-            return;
-        }
-        c1Var.b = 1439;
-        if (c1Var.a >= 1439) {
-            this.h[i11].remove(c1Var);
-        }
-        View z12 = this.a.z1(i11);
-        if (z12 instanceof i5) {
-            ((i5) z12).setValue(a0(this.h[i11]));
+        boolean V = V();
+        this.c.setEnabled(V);
+        if (z10) {
+            this.c.animate().alpha(V ? 1.0f : 0.0f).scaleX(V ? 1.0f : 0.0f).scaleY(V ? 1.0f : 0.0f).setDuration(180L).start();
         } else {
+            this.c.setAlpha(V ? 1.0f : 0.0f);
+            this.c.setScaleX(V ? 1.0f : 0.0f);
+            this.c.setScaleY(V ? 1.0f : 0.0f);
+        }
+        a71 a71Var = this.a;
+        if (a71Var == null || a71Var.W2 == null) {
+            return;
+        }
+        if (this.G != ((this.w == null || (this.x == null && TextUtils.isEmpty(this.y))) ? false : true)) {
             this.a.W2.N(true);
         }
     }
 
-    public final void Y(boolean z10) {
-        if (this.c == null) {
-            return;
-        }
-        boolean b02 = b0();
-        this.c.setEnabled(b02);
-        if (z10) {
-            this.c.animate().alpha(b02 ? 1.0f : 0.0f).scaleX(b02 ? 1.0f : 0.0f).scaleY(b02 ? 1.0f : 0.0f).setDuration(180L).start();
-            return;
-        }
-        this.c.setAlpha(b02 ? 1.0f : 0.0f);
-        this.c.setScaleX(b02 ? 1.0f : 0.0f);
-        this.c.setScaleY(b02 ? 1.0f : 0.0f);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x006c, code lost:
-    
-        return true;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b0() {
-        if ((this.f != null) != this.e || !TextUtils.equals(this.n, this.r)) {
+    public final boolean V() {
+        TLRPC.GeoPoint geoPoint;
+        if (((this.x == null && TextUtils.isEmpty(this.y)) ? false : true) != (this.w != null)) {
             return true;
         }
-        if (this.f != null && this.e) {
-            if (this.h == null) {
-                return true;
-            }
-            int i10 = 0;
-            loop0: while (true) {
-                ArrayList[] arrayListArr = this.f;
-                if (i10 >= arrayListArr.length) {
-                    break;
-                }
-                if (arrayListArr[i10].size() != this.h[i10].size()) {
-                    return true;
-                }
-                for (int i11 = 0; i11 < this.h[i10].size(); i11++) {
-                    c1 c1Var = (c1) this.f[i10].get(i11);
-                    c1 c1Var2 = (c1) this.h[i10].get(i11);
-                    if (c1Var.a != c1Var2.a || c1Var.b != c1Var2.b) {
-                        break loop0;
-                    }
-                }
-                i10++;
-            }
+        boolean z10 = (this.x == null && TextUtils.isEmpty(this.y)) ? false : true;
+        TLRPC.TL_businessLocation tL_businessLocation = this.w;
+        if (z10 != ((tL_businessLocation == null || (tL_businessLocation.geo_point instanceof TLRPC.TL_geoPointEmpty)) ? false : true)) {
+            return true;
         }
-        return false;
+        if (!TextUtils.equals(this.y, tL_businessLocation != null ? tL_businessLocation.address : "")) {
+            return true;
+        }
+        TLRPC.GeoPoint geoPoint2 = this.x;
+        boolean z11 = geoPoint2 != null;
+        TLRPC.TL_businessLocation tL_businessLocation2 = this.w;
+        if (z11 != ((tL_businessLocation2 == null || tL_businessLocation2.geo_point == null) ? false : true)) {
+            return true;
+        }
+        return geoPoint2 != null && (tL_businessLocation2 == null || (geoPoint = tL_businessLocation2.geo_point) == null || !((geoPoint instanceof TLRPC.TL_geoPointEmpty) || (geoPoint2.lat == geoPoint.lat && geoPoint2._long == geoPoint._long)));
     }
 
-    @Override // org.telegram.ui.ActionBar.n2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.BusinessHours));
-        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 16));
-        Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
-        int i10 = h6.v8;
-        mutate.setColorFilter(new PorterDuffColorFilter(h6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-        this.b = new as(mutate, new dq(h6.x0(null, i10, false)));
-        this.c = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.b);
-        Y(false);
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(h6.x0(null, h6.a7, false));
-        a71 a71Var = new a71(this, new hg.o(this, 8), new e1.c(this, 20), null);
-        this.a = a71Var;
-        a71Var.p1();
-        a71 a71Var2 = this.a;
-        a71Var2.W2.r = false;
-        frameLayout.addView(a71Var2, z5.d(-1.0f, -1));
-        this.actionBar.A(this.a, true);
-        e0();
-        this.fragmentView = frameLayout;
-        return frameLayout;
-    }
-
-    public final void d0() {
+    public final void W() {
         if (this.b.c > 0.0f) {
             return;
         }
-        if (!b0()) {
-            finishFragment();
-            return;
+        boolean z10 = this.x == null && TextUtils.isEmpty(this.y);
+        if (!z10) {
+            if (!V()) {
+                finishFragment();
+                return;
+            }
+            String str = this.y;
+            String trim = str == null ? "" : str.trim();
+            if (TextUtils.isEmpty(trim) || trim.length() > 96) {
+                BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                a1 a1Var = this.f;
+                int i10 = -this.F;
+                this.F = i10;
+                AndroidUtilities.shakeViewSpring(a1Var, i10);
+                return;
+            }
         }
         this.b.a(1.0f);
         TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
-        TL_account.updateBusinessWorkHours updatebusinessworkhours = new TL_account.updateBusinessWorkHours();
-        ArrayList[] arrayListArr = this.h;
-        ArrayList arrayList = new ArrayList();
-        if (arrayListArr != null) {
-            for (int i10 = 0; i10 < arrayListArr.length; i10++) {
-                if (arrayListArr[i10] != null) {
-                    for (int i11 = 0; i11 < arrayListArr[i10].size(); i11++) {
-                        c1 c1Var = (c1) arrayListArr[i10].get(i11);
-                        TL_account.TL_businessWeeklyOpen tL_businessWeeklyOpen = new TL_account.TL_businessWeeklyOpen();
-                        int i12 = i10 * 1440;
-                        tL_businessWeeklyOpen.start_minute = c1Var.a + i12;
-                        tL_businessWeeklyOpen.end_minute = i12 + c1Var.b;
-                        arrayList.add(tL_businessWeeklyOpen);
-                    }
+        TL_account.updateBusinessLocation updatebusinesslocation = new TL_account.updateBusinessLocation();
+        if (!z10) {
+            if (this.x != null) {
+                updatebusinesslocation.flags |= 2;
+                TLRPC.TL_inputGeoPoint tL_inputGeoPoint = new TLRPC.TL_inputGeoPoint();
+                updatebusinesslocation.geo_point = tL_inputGeoPoint;
+                TLRPC.GeoPoint geoPoint = this.x;
+                tL_inputGeoPoint.lat = geoPoint.lat;
+                tL_inputGeoPoint._long = geoPoint._long;
+            }
+            updatebusinesslocation.flags |= 1;
+            updatebusinesslocation.address = this.y;
+            if (userFull != null) {
+                userFull.flags2 |= 2;
+                TLRPC.TL_businessLocation tL_businessLocation = new TLRPC.TL_businessLocation();
+                userFull.business_location = tL_businessLocation;
+                tL_businessLocation.address = this.y;
+                if (this.x != null) {
+                    tL_businessLocation.flags = 1 | tL_businessLocation.flags;
+                    tL_businessLocation.geo_point = new TLRPC.TL_geoPoint();
+                    TLRPC.GeoPoint geoPoint2 = userFull.business_location.geo_point;
+                    TLRPC.GeoPoint geoPoint3 = this.x;
+                    geoPoint2.lat = geoPoint3.lat;
+                    geoPoint2._long = geoPoint3._long;
                 }
             }
-        }
-        if (this.e && !arrayList.isEmpty()) {
-            TL_account.TL_businessWorkHours tL_businessWorkHours = new TL_account.TL_businessWorkHours();
-            tL_businessWorkHours.timezone_id = this.r;
-            tL_businessWorkHours.weekly_open.addAll(arrayList);
-            updatebusinessworkhours.flags |= 1;
-            updatebusinessworkhours.business_work_hours = tL_businessWorkHours;
-            if (userFull != null) {
-                userFull.flags2 |= 1;
-                userFull.business_work_hours = tL_businessWorkHours;
-            }
         } else if (userFull != null) {
-            userFull.flags2 &= -2;
-            userFull.business_work_hours = null;
+            userFull.flags2 &= -3;
+            userFull.business_location = null;
         }
-        getConnectionsManager().sendRequest(updatebusinessworkhours, new ai.h(this, 20));
+        getConnectionsManager().sendRequest(updatebusinesslocation, new z0(this, 0));
         getMessagesStorage().updateUserInfo(userFull, false);
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+    public final void X() {
         s61 s61Var;
-        if (i10 == NotificationCenter.userInfoDidLoad) {
-            e0();
-            return;
-        }
-        if (i10 == NotificationCenter.timezonesUpdated) {
-            if (this.f == null) {
-                this.r = d2.b(this.currentAccount).c();
-            }
-            a71 a71Var = this.a;
-            if (a71Var == null || (s61Var = a71Var.W2) == null) {
-                return;
-            }
-            s61Var.N(true);
-        }
-    }
-
-    public final void e0() {
-        s61 s61Var;
-        if (this.d) {
+        if (this.v) {
             return;
         }
         TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
@@ -425,40 +168,133 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
             getMessagesController().loadUserInfo(getUserConfig().getCurrentUser(), true, getClassGuid());
             return;
         }
-        TL_account.TL_businessWorkHours tL_businessWorkHours = userFull.business_work_hours;
-        boolean z10 = tL_businessWorkHours != null;
-        this.e = z10;
-        if (!z10) {
-            String c10 = d2.b(this.currentAccount).c();
-            this.r = c10;
-            this.n = c10;
-            this.f = null;
-            this.h = new ArrayList[7];
-            int i10 = 0;
-            while (true) {
-                ArrayList[] arrayListArr = this.h;
-                if (i10 >= arrayListArr.length) {
-                    break;
-                }
-                arrayListArr[i10] = new ArrayList();
-                if (i10 >= 0 && i10 < 5) {
-                    this.h[i10].add(new c1(0, 1439));
-                }
-                i10++;
-            }
+        TLRPC.TL_businessLocation tL_businessLocation = userFull.business_location;
+        this.w = tL_businessLocation;
+        if (tL_businessLocation != null) {
+            this.x = tL_businessLocation.geo_point;
+            this.y = tL_businessLocation.address;
         } else {
-            String str = tL_businessWorkHours.timezone_id;
-            this.r = str;
-            this.n = str;
-            this.f = Z(tL_businessWorkHours.weekly_open);
-            this.h = Z(userFull.business_work_hours.weekly_open);
+            this.x = null;
+            this.y = "";
         }
+        a1 a1Var = this.f;
+        if (a1Var != null) {
+            this.d = true;
+            a1Var.setText(this.y);
+            a1 a1Var2 = this.f;
+            a1Var2.setSelection(a1Var2.getText().length());
+            this.d = false;
+        }
+        Y();
         a71 a71Var = this.a;
         if (a71Var != null && (s61Var = a71Var.W2) != null) {
             s61Var.N(true);
         }
-        Y(false);
-        this.d = true;
+        this.v = true;
+    }
+
+    public final void Y() {
+        k4 k4Var;
+        c1 c1Var = this.n;
+        if (c1Var == null || (k4Var = this.s) == null) {
+            return;
+        }
+        if (this.x == null) {
+            k4Var.setImageBitmap(null);
+            return;
+        }
+        c1Var.setAlpha(0.0f);
+        this.n.setTranslationY(-AndroidUtilities.dp(12.0f));
+        int measuredWidth = this.s.getMeasuredWidth() <= 0 ? AndroidUtilities.displaySize.x : this.s.getMeasuredWidth();
+        float f7 = AndroidUtilities.density;
+        int i10 = (int) (measuredWidth / f7);
+        int min = Math.min(2, (int) Math.ceil(f7));
+        k4 k4Var2 = this.s;
+        TLRPC.GeoPoint geoPoint = this.x;
+        k4Var2.n(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i10, min * 240, 15, min)), a1.g.m(i10, "_240"), this.r, null);
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        int i10 = 1;
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.BusinessLocation));
+        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 15));
+        Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
+        int i11 = h6.v8;
+        int i12 = 0;
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.x0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+        this.b = new as(mutate, new dq(h6.x0(null, i11, false)));
+        this.c = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.b);
+        U(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(h6.x0(null, h6.a7, false));
+        a1 a1Var = new a1(this, getParentActivity());
+        this.f = a1Var;
+        a1Var.setTextSize(1, 17.0f);
+        this.f.setHintTextColor(h6.x0(null, h6.H6, false));
+        a1 a1Var2 = this.f;
+        int i13 = h6.G6;
+        a1Var2.setTextColor(h6.x0(null, i13, false));
+        this.f.setBackgroundDrawable(null);
+        this.f.setMaxLines(5);
+        this.f.setSingleLine(false);
+        this.f.setPadding(0, 0, AndroidUtilities.dp(42.0f), 0);
+        this.f.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        this.f.setInputType(180225);
+        this.f.setHint(LocaleController.getString(R.string.BusinessLocationAddress));
+        this.f.setCursorColor(h6.x0(null, i13, false));
+        this.f.setCursorSize(AndroidUtilities.dp(19.0f));
+        this.f.setCursorWidth(1.5f);
+        this.f.addTextChangedListener(new ai.u(this, 4));
+        this.f.setFilters(new InputFilter[]{new b1()});
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.e = frameLayout2;
+        frameLayout2.addView(this.f, z5.a(-1.0f, 21.0f, 15.0f, 21.0f, 15.0f, -1, 48));
+        FrameLayout frameLayout3 = this.e;
+        int i14 = h6.d6;
+        frameLayout3.setBackgroundColor(getThemedColor(i14));
+        a1 a1Var3 = this.f;
+        if (a1Var3 != null) {
+            this.d = true;
+            a1Var3.setText(this.y);
+            a1 a1Var4 = this.f;
+            a1Var4.setSelection(a1Var4.getText().length());
+            this.d = false;
+        }
+        this.s = new k4(this, context, i10);
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, h6.Pb, 0.2f);
+        svgThumb.setColorKey(i13, getResourceProvider());
+        svgThumb.setAspectCenter(true);
+        svgThumb.setParent(this.s.getImageReceiver());
+        oq oqVar = new oq(svgThumb);
+        this.r = oqVar;
+        oqVar.setCallback(this.s);
+        this.s.setBackgroundColor(getThemedColor(i14));
+        this.n = new c1(this, context);
+        FrameLayout frameLayout4 = new FrameLayout(context);
+        this.h = frameLayout4;
+        frameLayout4.addView(this.s, z5.d(-1.0f, -1));
+        this.h.addView(this.n, z5.a(-2.0f, 0.0f, -31.0f, 0.0f, 0.0f, -2, 17));
+        Y();
+        a71 a71Var = new a71(this, new hg.o(this, 7), new y0(this, i12), null);
+        this.a = a71Var;
+        a71Var.p1();
+        a71 a71Var2 = this.a;
+        a71Var2.W2.r = false;
+        frameLayout.addView(a71Var2, z5.d(-1.0f, -1));
+        this.actionBar.A(this.a, true);
+        X();
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.userInfoDidLoad) {
+            X();
+        }
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -467,9 +303,29 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        return !V();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onBackPressed(boolean z10) {
+        boolean z11 = this.x == null && TextUtils.isEmpty(this.y);
+        if (!V() || z11) {
+            return super.onBackPressed(z10);
+        }
+        if (z10) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.UnsavedChanges);
+            alertDialog$Builder.a.T = LocaleController.getString(R.string.BusinessLocationUnsavedChanges);
+            alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new y0(this, 1));
+            alertDialog$Builder.h(LocaleController.getString(R.string.PassportDiscard), new y0(this, 2));
+            showDialog(alertDialog$Builder.a);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
-        d2.b(this.currentAccount).g();
-        this.r = d2.b(this.currentAccount).c();
         getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
         return super.onFragmentCreate();
     }
@@ -478,7 +334,6 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
     public final void onFragmentDestroy() {
         getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);
         super.onFragmentDestroy();
-        d0();
     }
 
     @Override // org.telegram.ui.ActionBar.n2

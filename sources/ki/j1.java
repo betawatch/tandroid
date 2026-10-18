@@ -13,7 +13,7 @@ import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.oi0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -215,7 +215,7 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
                         pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                     }
                 }
-                q.X(d2Var5.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.n2(27, d2Var5, pageblockmath), d2Var5.getResourceProvider());
+                q.X(d2Var5.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.o2(27, d2Var5, pageblockmath), d2Var5.getResourceProvider());
                 break;
             case 9:
                 d2 d2Var6 = this.b;

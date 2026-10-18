@@ -1,6 +1,6 @@
 package j5;
 
-import ai.y3;
+import ai.x9;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -36,6 +36,7 @@ import java.util.concurrent.Executor;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 import k5.m;
+import ki.a0;
 import ki.c3;
 import ki.c6;
 import ki.d2;
@@ -82,7 +83,6 @@ import org.telegram.ui.Components.voip.k1;
 import org.telegram.ui.Components.voip.t;
 import org.telegram.ui.ey;
 import org.telegram.ui.te1;
-import org.telegram.ui.web.a0;
 import org.telegram.ui.web.a1;
 import org.telegram.ui.web.x0;
 import org.telegram.ui.xx;
@@ -91,7 +91,7 @@ import p4.r0;
 import r9.r;
 import w7.l6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2, xx, p5, j, e0, g1, e2.j, e1, k, ne.d, r9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, k1, a5.b {
     public final /* synthetic */ int a;
@@ -238,7 +238,7 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
                 JSONObject jSONObject = new JSONObject(str);
                 String string = jSONObject.getString("eventType");
                 if (!string.isEmpty() && string.length() <= 128) {
-                    AndroidUtilities.runOnUIThread(new a0(a1Var, webView, f7, string, jSONObject.optString("eventData", null), 2));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0(a1Var, webView, f7, string, jSONObject.optString("eventData", null), 2));
                     return;
                 }
                 a1Var.g("onBotWebMessage ignored: invalid event type");
@@ -382,10 +382,10 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
     public void g(b2 b2Var, int i10) {
         switch (this.a) {
             case 6:
-                ((y3) this.b).run();
+                ((x9) this.b).run();
                 break;
             default:
-                ((a0) this.b).run();
+                ((org.telegram.ui.web.b0) this.b).run();
                 break;
         }
     }
@@ -396,7 +396,7 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
     }
 
     public void i(int i10) {
-        ki.a0 a0Var = (ki.a0) this.b;
+        a0 a0Var = (a0) this.b;
         a0Var.c = i10;
         a0Var.f(i10);
     }

@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class m1 {
     public static final float[][] a;
@@ -89,7 +89,7 @@ public abstract class m1 {
             float f18 = f14 * 1.0f;
             int i13 = i11 / 4;
             e0.f0.c((float[]) f0Var.c, i13, AndroidUtilities.dp(f16) - (AndroidUtilities.dp(f18) / 2.0f), AndroidUtilities.dp(f17) - (AndroidUtilities.dp(f18) / 2.0f), (AndroidUtilities.dp(f18) / 2.0f) + AndroidUtilities.dp(f16), (AndroidUtilities.dp(f18) / 2.0f) + AndroidUtilities.dp(f17));
-            f0Var.e(i13, i0.b.o(-1, (int) (255.0f * f11 * f15)));
+            f0Var.e(i13, i0.a.o(-1, (int) (255.0f * f11 * f15)));
             i11 += 4;
         }
     }
@@ -172,7 +172,7 @@ public abstract class m1 {
             }
             float[] fArr3 = fArr2;
             float f52 = f45;
-            float D = com.google.android.gms.internal.cast.a6.D(f52, f15, AndroidUtilities.dp(12.0f), f47);
+            float D = com.google.android.gms.internal.play_billing.k3.D(f52, f15, AndroidUtilities.dp(12.0f), f47);
             if (f13 < f52) {
                 f46 = AndroidUtilities.lerp(f18, f46, bs.i.getInterpolation(f13));
                 D = AndroidUtilities.lerp(f19, D, f13);

@@ -1,6 +1,6 @@
 package ki;
 
-import ai.hc;
+import ai.ic;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -19,11 +19,11 @@ import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class t0 extends FrameLayout implements org.telegram.ui.ActionBar.y5, m9 {
     public final org.telegram.ui.ActionBar.d6 a;
-    public final hc b;
+    public final ic b;
     public final AnimatedArrowDrawable c;
     public final h1 d;
     public final Paint e;
@@ -40,10 +40,10 @@ public final class t0 extends FrameLayout implements org.telegram.ui.ActionBar.y
         AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(h6.w0(h6.Dk, d6Var));
         this.c = animatedArrowDrawable;
         animatedArrowDrawable.setCallback(new ah.f1(this, 3));
-        hc hcVar = new hc(this, context, 7);
-        this.b = hcVar;
-        hcVar.setOnClickListener(new hg.r0(this, 9));
-        addView(hcVar, w7.z5.e(53, -1, 51));
+        ic icVar = new ic(this, context, 7);
+        this.b = icVar;
+        icVar.setOnClickListener(new hg.r0(this, 9));
+        addView(icVar, w7.z5.e(53, -1, 51));
         h1 h1Var = new h1(context, d6Var);
         this.d = h1Var;
         h1Var.setAllowNewlines(false);

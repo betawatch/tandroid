@@ -8,23 +8,24 @@ import ah.t0;
 import ah.w;
 import ah.w0;
 import ah.y;
-import ai.ea;
+import ai.d2;
 import ai.fa;
-import ai.h0;
+import ai.ga;
 import ai.i0;
 import ai.k7;
-import ai.ke;
+import ai.le;
 import ai.p7;
 import ai.r0;
-import ai.x9;
+import ai.y9;
 import android.text.SpannableStringBuilder;
 import android.view.MotionEvent;
 import android.view.ViewParent;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import b2.a2;
+import com.google.android.gms.internal.play_billing.k3;
 import i2.a0;
-import i2.g0;
-import i2.z;
+import i2.b0;
+import i2.h0;
 import java.util.ArrayList;
 import kotlin.jvm.internal.p;
 import n4.s;
@@ -36,7 +37,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
@@ -45,7 +46,6 @@ import org.telegram.ui.ActionBar.b2;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Cells.x0;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.qc;
@@ -54,7 +54,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sn;
 import v0.i;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -93,27 +93,27 @@ public final /* synthetic */ class f implements Runnable {
             case 3:
                 m0 m0Var = (m0) ((s) obj2).c;
                 String str = e2.m0.a;
-                s.i(((a0) m0Var).a.G, (i2.c) obj);
+                s.i(((b0) m0Var).a.G, (i2.c) obj);
                 break;
             case 4:
                 a2 a2Var = (a2) obj;
                 m0 m0Var2 = (m0) ((s) obj2).c;
                 String str2 = e2.m0.a;
-                g0 g0Var = ((a0) m0Var2).a;
-                g0Var.k0 = a2Var;
-                g0Var.m.e(25, new z(a2Var));
+                h0 h0Var = ((b0) m0Var2).a;
+                h0Var.k0 = a2Var;
+                h0Var.m.e(25, new a0(a2Var));
                 break;
             case 5:
                 m0 m0Var3 = (m0) ((s) obj2).c;
                 String str3 = e2.m0.a;
-                j2.f fVar = ((a0) m0Var3).a.s;
+                j2.f fVar = ((b0) m0Var3).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1030, new j2.c(p5, (Exception) obj, 0));
                 break;
             case 6:
                 m0 m0Var4 = (m0) ((s) obj2).c;
                 String str4 = e2.m0.a;
-                j2.f fVar2 = ((a0) m0Var4).a.s;
+                j2.f fVar2 = ((b0) m0Var4).a.s;
                 j2.a p9 = fVar2.p();
                 fVar2.q(p9, 1019, new j2.c(p9, (String) obj, 7));
                 break;
@@ -156,7 +156,6 @@ public final /* synthetic */ class f implements Runnable {
                     xc.a0(a0Var2).t(str5, null).j();
                     break;
                 }
-                break;
             case 9:
                 a6 a6Var3 = (a6) obj;
                 ah.a0 a0Var3 = ((y) obj2).e2;
@@ -204,7 +203,7 @@ public final /* synthetic */ class f implements Runnable {
                 j1Var.getClass();
                 TLRPC.ReactionCount reactionCount = g1Var.a;
                 ViewParent viewParent = j1Var.z;
-                if (com.google.android.gms.internal.cast.a6.s(viewParent)) {
+                if (k3.s(viewParent)) {
                     ((n4) viewParent).f(reactionCount, true, 0.0f, 0.0f);
                 }
                 g1Var.Y.c(false);
@@ -213,26 +212,26 @@ public final /* synthetic */ class f implements Runnable {
                 j1Var.U = null;
                 break;
             case 13:
-                h0 h0Var = (h0) obj2;
+                ai.h0 h0Var2 = (ai.h0) obj2;
                 TLObject tLObject = (TLObject) obj;
-                int i16 = h0Var.a;
-                ArrayList arrayList2 = h0Var.e;
-                h0Var.i = 0;
+                int i16 = h0Var2.a;
+                ArrayList arrayList2 = h0Var2.e;
+                h0Var2.i = 0;
                 if (tLObject instanceof TL_payments.connectedStarRefBots) {
                     TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
                     MessagesController.getInstance(i16).putUsers(connectedstarrefbots.users, false);
-                    if (h0Var.c <= 0) {
+                    if (h0Var2.c <= 0) {
                         arrayList2.clear();
                     }
-                    h0Var.c = connectedstarrefbots.count;
+                    h0Var2.c = connectedstarrefbots.count;
                     arrayList2.addAll(connectedstarrefbots.connected_bots);
-                    h0Var.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= h0Var.c;
+                    h0Var2.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList2.size() >= h0Var2.c;
                 } else {
-                    h0Var.h = true;
-                    h0Var.d = true;
+                    h0Var2.h = true;
+                    h0Var2.d = true;
                 }
-                h0Var.g = false;
-                NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(h0Var.b));
+                h0Var2.g = false;
+                NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelConnectedBotsUpdate, Long.valueOf(h0Var2.b));
                 break;
             case 14:
                 i0 i0Var = (i0) obj2;
@@ -257,7 +256,7 @@ public final /* synthetic */ class f implements Runnable {
                 NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(i0Var.b));
                 break;
             case 15:
-                k7.B0((k7) obj2, (TL_stars.TL_payments_uniqueStarGift) obj);
+                k7.C0((k7) obj2, (TL_stars.TL_payments_uniqueStarGift) obj);
                 break;
             case 16:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj;
@@ -273,7 +272,7 @@ public final /* synthetic */ class f implements Runnable {
                         i10 = R.raw.fire_on;
                         i11 = R.string.UniqueGiftNotFoundBurned;
                     }
-                    q.q(i11, a02, i10, 36);
+                    g0.q(i11, a02, i10, 36);
                     break;
                 }
                 break;
@@ -282,14 +281,14 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 18:
                 k7 k7Var = (k7) obj2;
-                if (!((fa) obj).e) {
+                if (!((ga) obj).e) {
                     qc Q = k7Var.getBulletinFactory().Q(R.raw.error, 36, LocaleController.formatString(R.string.UnknownErrorCode, "NO_BALANCE"));
                     Q.t = true;
                     Q.j();
                     break;
                 } else {
                     k7Var.k0.setLoading(false);
-                    k7Var.J1();
+                    k7Var.K1();
                     break;
                 }
             case 19:
@@ -300,21 +299,21 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 21:
                 k7 k7Var2 = (k7) obj2;
-                xc.a0((sn) obj).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(k7Var2.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new ai.b2(k7Var2, i13)).k(true);
+                xc.a0((sn) obj).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(k7Var2.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new d2(k7Var2, 10)).k(true);
                 break;
             case 22:
                 k7 k7Var3 = (k7) obj2;
                 k7Var3.getClass();
                 ((boolean[]) obj)[0] = true;
                 k7Var3.k0.setLoading(false);
-                k7Var3.J1();
+                k7Var3.K1();
                 break;
             case 23:
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
                 ((k7) obj2).getBulletinFactory().Q(R.raw.ic_delete, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftRemovedDescription, tL_starGiftUnique.title + " #" + tL_starGiftUnique.num))).j();
                 break;
             case 24:
-                ((k7) obj2).H2((CharSequence) obj);
+                ((k7) obj2).K2((CharSequence) obj);
                 break;
             case 25:
                 p7 p7Var = (p7) obj2;
@@ -335,7 +334,7 @@ public final /* synthetic */ class f implements Runnable {
                                 arrayList = tL_messageReactions2.top_reactors;
                             }
                         }
-                    } else if ((a0Var5 instanceof x0) && (messageObject = ((x0) a0Var5).getMessageObject()) != null) {
+                    } else if ((a0Var5 instanceof org.telegram.ui.Cells.w0) && (messageObject = ((org.telegram.ui.Cells.w0) a0Var5).getMessageObject()) != null) {
                         TLRPC.Message message2 = messageObject.messageOwner;
                         if (message2 != null && (tL_messageReactions = message2.reactions) != null) {
                             arrayList = tL_messageReactions.top_reactors;
@@ -343,17 +342,17 @@ public final /* synthetic */ class f implements Runnable {
                     }
                     MessageObject messageObject2 = messageObject;
                     ArrayList<TLRPC.MessageReactor> arrayList4 = arrayList;
-                    ea eaVar = fa.y(messageObject2.currentAccount, false).B;
-                    if (eaVar != null) {
-                        eaVar.b();
+                    fa faVar = ga.y(messageObject2.currentAccount, false).B;
+                    if (faVar != null) {
+                        faVar.b();
                     }
                     TLRPC.ChatFull chatFull = snVar.Z7;
-                    ke keVar = new ke(p7Var.getContext(), snVar.getCurrentAccount(), snVar.a(), snVar, messageObject2, arrayList4, chatFull == null || chatFull.paid_reactions_available, false, 0L, snVar.getResourceProvider());
+                    le leVar = new le(p7Var.getContext(), snVar.getCurrentAccount(), snVar.a(), snVar, messageObject2, arrayList4, chatFull == null || chatFull.paid_reactions_available, false, 0L, snVar.getResourceProvider());
                     messageObject2.getId();
                     org.telegram.ui.Cells.a0 a0Var6 = p7Var.b;
-                    keVar.U = snVar;
-                    keVar.V = a0Var6;
-                    keVar.show();
+                    leVar.U = snVar;
+                    leVar.V = a0Var6;
+                    leVar.show();
                     break;
                 }
                 break;
@@ -376,11 +375,11 @@ public final /* synthetic */ class f implements Runnable {
                     break;
                 }
                 break;
-            case 28:
-                x9 x9Var = (x9) obj2;
+            default:
+                y9 y9Var = (y9) obj2;
                 TLObject tLObject4 = (TLObject) obj;
-                ArrayList arrayList5 = x9Var.l;
-                int i18 = x9Var.a;
+                ArrayList arrayList5 = y9Var.l;
+                int i18 = y9Var.a;
                 if (tLObject4 instanceof TL_stars.TL_payments_savedStarGifts) {
                     TL_stars.TL_payments_savedStarGifts tL_payments_savedStarGifts = (TL_stars.TL_payments_savedStarGifts) tLObject4;
                     MessagesController.getInstance(i18).putUsers(tL_payments_savedStarGifts.users, false);
@@ -392,18 +391,15 @@ public final /* synthetic */ class f implements Runnable {
                             i19++;
                         }
                         arrayList5.add(i19, savedStarGift);
-                        NotificationCenter.getInstance(i18).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(x9Var.b), x9Var);
+                        NotificationCenter.getInstance(i18).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(y9Var.b), y9Var);
                         break;
                     }
                 }
                 break;
-            default:
-                ((MessagesController) obj2).lambda$processUpdates$377((TLRPC.Updates) ((TLObject) obj), false);
-                break;
         }
     }
 
-    public /* synthetic */ f(fa faVar, boolean[] zArr, Utilities.Callback2 callback2) {
+    public /* synthetic */ f(ga gaVar, boolean[] zArr, Utilities.Callback2 callback2) {
         this.a = 27;
         this.b = zArr;
         this.c = callback2;

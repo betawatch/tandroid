@@ -21,7 +21,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c4 {
     public static final int[] h = {h6.ra, h6.Aa, h6.Oh, h6.Nd, h6.Od, h6.Pd, h6.Qd, h6.Rd};
@@ -320,7 +320,7 @@ public final class c4 {
             long h10 = h(i10);
             if (h10 != 0) {
                 Bitmap wallpaperThumbBitmap = ChatThemeController.getInstance(this.g).getWallpaperThumbBitmap(h10);
-                File file = new File(ApplicationLoader.getFilesDirFixed(), r.c.f(h10, "wallpaper_thumb_", ".png"));
+                File file = new File(ApplicationLoader.getFilesDirFixed(), r4.c.g(h10, "wallpaper_thumb_", ".png"));
                 if (wallpaperThumbBitmap == null && file.exists() && file.length() > 0) {
                     try {
                         wallpaperThumbBitmap = BitmapFactory.decodeFile(file.getAbsolutePath());

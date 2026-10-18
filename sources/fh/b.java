@@ -23,7 +23,7 @@ import eh.d;
 import gi.d3;
 import gi.e4;
 import gi.z3;
-import i2.l;
+import i2.m;
 import j$.util.Objects;
 import j2.f;
 import java.util.Collection;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.bw0;
 import org.telegram.ui.Components.cw0;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements d, aw0, bw0, GenericProvider, k, r9.d, o, a2, hh.b {
     public final /* synthetic */ int a;
@@ -236,7 +236,7 @@ public final /* synthetic */ class b implements d, aw0, bw0, GenericProvider, k,
     public void invoke(Object obj) {
         switch (this.a) {
             case 22:
-                ((d1) obj).onPlayerError(new l(2, new j("Player release timed out."), 1003));
+                ((d1) obj).onPlayerError(new m(2, new j("Player release timed out."), 1003));
                 break;
             case 23:
                 ((d1) obj).onRenderedFirstFrame();

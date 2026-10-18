@@ -25,7 +25,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class i51 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final int a;
@@ -122,7 +122,7 @@ public abstract class i51 extends FrameLayout implements org.telegram.ui.ActionB
                 ArrayList<TranslateController.Language> suggestedLanguages = TranslateController.getSuggestedLanguages(dialogTranslateTo);
                 ArrayList<TranslateController.Language> languages = TranslateController.getLanguages();
                 linearLayout2.addView(new org.telegram.ui.ActionBar.j1(tkVar2.getContext(), d6Var2), w7.z5.n(-1, 8));
-                e1Var.setOnClickListener(new ai.ga(new f51(tkVar2, new boolean[1], dialogTranslateTo, linearLayout2, suggestedLanguages, dialogDetectedLanguage, translateController, m1Var, languages), actionBarPopupWindow$ActionBarPopupWindowLayout, b10, 12));
+                e1Var.setOnClickListener(new ai.ha(new f51(tkVar2, new boolean[1], dialogTranslateTo, linearLayout2, suggestedLanguages, dialogDetectedLanguage, translateController, m1Var, languages), actionBarPopupWindow$ActionBarPopupWindowLayout, b10, 12));
                 if (UserConfig.getInstance(i12).isPremium() && F != null) {
                     org.telegram.ui.ActionBar.e1 e1Var3 = new org.telegram.ui.ActionBar.e1(0, tkVar2.getContext(), tkVar2.d, false, false);
                     String formatString = zArr[0] ? LocaleController.formatString(R.string.DoNotTranslateLanguage, F) : LocaleController.formatString(R.string.DoNotTranslateLanguageOther, F);
@@ -174,7 +174,7 @@ public abstract class i51 extends FrameLayout implements org.telegram.ui.ActionB
         f3Var.applyBottomPadding = false;
         f3Var.applyTopPadding = false;
         org.telegram.ui.ActionBar.f3[] f3VarArr = new org.telegram.ui.ActionBar.f3[1];
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setGradientType(1);
@@ -205,9 +205,9 @@ public abstract class i51 extends FrameLayout implements org.telegram.ui.ActionB
         textView.setText(replaceTags);
         linearLayout.addView(textView, w7.z5.a(-2.0f, 32.0f, 14.0f, 32.0f, 20.0f, -1, 49));
         e.addView(frameLayout, w7.z5.d(-2.0f, -1));
-        e.addView(new ci.i4(context, R.drawable.menu_privacy, LocaleController.getString(R.string.CocoonFeature1Title), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CocoonFeature1Text), new ai.sa(f3VarArr, context, 1)), d6Var), w7.z5.t(-1, -2, 49, 32, 16, 32, 16));
+        e.addView(new ci.i4(context, R.drawable.menu_privacy, LocaleController.getString(R.string.CocoonFeature1Title), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CocoonFeature1Text), new ai.ta(f3VarArr, context, 1)), d6Var), w7.z5.t(-1, -2, 49, 32, 16, 32, 16));
         e.addView(new ci.i4(context, R.drawable.msg_stats, LocaleController.getString(R.string.CocoonFeature2Title), LocaleController.getString(R.string.CocoonFeature2Text), d6Var), w7.z5.t(-1, -2, 49, 32, 0, 32, 16));
-        e.addView(new ci.i4(context, R.drawable.menu_gift, LocaleController.getString(R.string.CocoonFeature3Title), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CocoonFeature3Text), new ai.sa(f3VarArr, context, 2)), d6Var), w7.z5.t(-1, -2, 49, 32, 0, 32, 16));
+        e.addView(new ci.i4(context, R.drawable.menu_gift, LocaleController.getString(R.string.CocoonFeature3Title), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CocoonFeature3Text), new ai.ta(f3VarArr, context, 2)), d6Var), w7.z5.t(-1, -2, 49, 32, 0, 32, 16));
         View view = new View(context);
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d7, d6Var));
         e.addView(view, w7.z5.s(-1, 7, 24, 0, 24, 1.0f / AndroidUtilities.density, 0));
@@ -216,12 +216,12 @@ public abstract class i51 extends FrameLayout implements org.telegram.ui.ActionB
         x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var));
         x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, d6Var));
         x90Var.setGravity(17);
-        x90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CocoonFooter), new ai.sa(f3VarArr, context, 3)));
+        x90Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CocoonFooter), new ai.ta(f3VarArr, context, 3)));
         x90Var.setPadding(0, AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f));
         x90Var.setDisablePaddingsOffsetY(true);
         e.addView(x90Var, w7.z5.t(-1, -2, 7, 32, 0, 32, 0));
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, d6Var, true);
-        f7.setText(ai.k7.z2(LocaleController.getString(R.string.Understood)));
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
+        f7.setText(ai.k7.B2(LocaleController.getString(R.string.Understood)));
         f7.setOnClickListener(new l2(f3VarArr, 3));
         e.addView(f7, w7.z5.t(-1, 48, 7, 16, 0, 16, 16));
         f3Var.customView = e;

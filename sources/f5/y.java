@@ -1,11 +1,11 @@
 package f5;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 import java.util.Date;
 import w7.h7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class y extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ le.b E;
@@ -149,33 +149,33 @@ public final class y extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("TrackHeaderBox[creationTime=");
-        a6.p(te.a.b(E, this, this));
+        k3.p(te.a.b(E, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        a6.p(te.a.b(F, this, this));
+        k3.p(te.a.b(F, this, this));
         sb2.append(this.f);
         sb2.append(";trackId=");
-        a6.p(te.a.b(G, this, this));
+        k3.p(te.a.b(G, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        a6.p(te.a.b(H, this, this));
+        k3.p(te.a.b(H, this, this));
         sb2.append(this.n);
         sb2.append(";layer=");
-        a6.p(te.a.b(I, this, this));
+        k3.p(te.a.b(I, this, this));
         sb2.append(this.r);
         sb2.append(";alternateGroup=");
-        a6.p(te.a.b(J, this, this));
+        k3.p(te.a.b(J, this, this));
         sb2.append(this.s);
         sb2.append(";volume=");
-        a6.p(te.a.b(K, this, this));
+        k3.p(te.a.b(K, this, this));
         sb2.append(this.v);
         sb2.append(";matrix=");
         sb2.append(this.w);
         sb2.append(";width=");
-        a6.p(te.a.b(L, this, this));
+        k3.p(te.a.b(L, this, this));
         sb2.append(this.x);
         sb2.append(";height=");
-        a6.p(te.a.b(M, this, this));
+        k3.p(te.a.b(M, this, this));
         sb2.append(this.y);
         sb2.append("]");
         return sb2.toString();

@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import v7.q7;
 import w7.x7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class p extends CheckedTextView implements u0.k {
     public final q a;
@@ -45,9 +45,9 @@ public final class p extends CheckedTextView implements u0.k {
         this.a = new q(this);
         Context context2 = getContext();
         int[] iArr = f.a.l;
-        g3 P = g3.P(context2, attributeSet, iArr, R.attr.checkedTextViewStyle);
-        TypedArray typedArray = (TypedArray) P.c;
-        r0.i0.i(this, getContext(), iArr, attributeSet, (TypedArray) P.c, R.attr.checkedTextViewStyle);
+        g3 K = g3.K(context2, attributeSet, iArr, R.attr.checkedTextViewStyle);
+        TypedArray typedArray = (TypedArray) K.c;
+        r0.i0.i(this, getContext(), iArr, attributeSet, (TypedArray) K.c, R.attr.checkedTextViewStyle);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
@@ -55,12 +55,12 @@ public final class p extends CheckedTextView implements u0.k {
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    setCheckMarkTintList(P.E(2));
+                    setCheckMarkTintList(K.z(2));
                 }
                 if (typedArray.hasValue(3)) {
                     setCheckMarkTintMode(m1.b(typedArray.getInt(3, -1), null));
                 }
-                P.Q();
+                K.L();
                 getEmojiTextViewHelper().a(attributeSet, R.attr.checkedTextViewStyle);
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
@@ -70,10 +70,10 @@ public final class p extends CheckedTextView implements u0.k {
             }
             if (typedArray.hasValue(3)) {
             }
-            P.Q();
+            K.L();
             getEmojiTextViewHelper().a(attributeSet, R.attr.checkedTextViewStyle);
         } catch (Throwable th2) {
-            P.Q();
+            K.L();
             throw th2;
         }
     }

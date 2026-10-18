@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ov0 implements org.telegram.ui.Components.bl0 {
     public final /* synthetic */ sn a;
@@ -21,7 +21,7 @@ public final class ov0 implements org.telegram.ui.Components.bl0 {
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ boolean j() {
+    public final /* synthetic */ boolean h() {
         return true;
     }
 
@@ -58,7 +58,7 @@ public final class ov0 implements org.telegram.ui.Components.bl0 {
             f12 = j1Var2.c + l10.x + (l10.A / 2.0f);
             f10 = j1Var2.d + l10.y;
             i10 = l10.B;
-        } else if (!(t82 instanceof org.telegram.ui.Cells.x0) || (l4 = (j1Var = ((org.telegram.ui.Cells.x0) t82).E0).l(i1Var)) == null) {
+        } else if (!(t82 instanceof org.telegram.ui.Cells.w0) || (l4 = (j1Var = ((org.telegram.ui.Cells.w0) t82).E0).l(i1Var)) == null) {
             f7 = 0.0f;
             snVar.eb(t82, this.b, this.c, view, f12, f7, i1Var, false, (i1Var == null && i1Var.a) ? true : z10, z11, false);
             this.d.c(false);
@@ -74,7 +74,7 @@ public final class ov0 implements org.telegram.ui.Components.bl0 {
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ boolean s() {
+    public final /* synthetic */ boolean r() {
         return false;
     }
 

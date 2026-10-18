@@ -4,7 +4,7 @@ import a4.d;
 import ag.b;
 import ah.c0;
 import ah.l0;
-import ai.le;
+import ai.me;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -27,7 +27,8 @@ import ci.h7;
 import ci.i7;
 import ci.r4;
 import ci.s4;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
+import i0.a;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
@@ -38,8 +39,8 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.q;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
@@ -55,7 +56,7 @@ import org.telegram.ui.qz0;
 import org.telegram.ui.wy0;
 import v7.f7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class ProfileStoriesView extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int s0 = 0;
@@ -573,7 +574,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                     x20Var.b = true;
                     int x02 = h6.x0(null, h6.xj, false);
                     int x03 = h6.x0(null, h6.q7, false);
-                    d8.d.d(i0.b.f(0.25f, x02, x03), x03, 0, 0);
+                    d8.d.d(a.f(0.25f, x02, x03), x03, 0, 0);
                     d8.d.c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
                     d8.d.c.setStyle(Paint.Style.STROKE);
                     d8.d.c.setStrokeCap(Paint.Cap.ROUND);
@@ -605,7 +606,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                 }
                 float lerp5 = AndroidUtilities.lerp(i14 * 2, lerp4, f24);
                 float max = (360.0f - (Math.max(0.0f, min2) * lerp5)) / Math.max(1.0f, min2);
-                paint7.setColor(i0.b.f(profileStoriesView5.O, 1526726655, 973078528));
+                paint7.setColor(a.f(profileStoriesView5.O, 1526726655, 973078528));
                 paint7.getAlpha();
                 float f25 = (-90.0f) - (lerp5 / 2.0f);
                 int i15 = 0;
@@ -630,7 +631,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                     rectF11.set(rectF10);
                     rectF11.inset(-AndroidUtilities.dp(12.0f), -AndroidUtilities.dp(12.0f));
                     canvas4.saveLayerAlpha(rectF11, 255, 31);
-                    float z14 = a6.z(profileStoriesView5.W, 1.0f, 2.5f, 1.0f);
+                    float z14 = k3.z(profileStoriesView5.W, 1.0f, 2.5f, 1.0f);
                     if (z14 != 1.0f) {
                         canvas4.save();
                         canvas4.scale(z14, z14, rectF8.centerX(), rectF8.centerY());
@@ -678,7 +679,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                             rectF5 = rectF3;
                             paint5 = paint10;
                         } else {
-                            float z15 = i16 == 0 ? a6.z(profileStoriesView3.W, 1.0f, 2.5f, 1.0f) : 1.0f;
+                            float z15 = i16 == 0 ? k3.z(profileStoriesView3.W, 1.0f, 2.5f, 1.0f) : 1.0f;
                             RectF rectF12 = rectF3;
                             if (z15 != 1.0f) {
                                 canvas2.save();
@@ -699,7 +700,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
                                 z10 = z16;
                                 int alpha3 = a2.getAlpha();
                                 i10 = i16;
-                                a2.setAlpha((int) q.z(1.0f, clamp3, alpha3, f14));
+                                a2.setAlpha((int) g0.z(1.0f, clamp3, alpha3, f14));
                                 a2.setStrokeWidth(AndroidUtilities.dpf2(z10 ? 3.0f : 2.33f));
                                 f17 = clamp3;
                                 ProfileStoriesView profileStoriesView6 = profileStoriesView3;
@@ -830,7 +831,7 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             }
             float f41 = f14;
             f15 = 18.0f;
-            paint7.setColor(i0.b.f(profileStoriesView5.N, 1526726655, -2135178036));
+            paint7.setColor(a.f(profileStoriesView5.N, 1526726655, -2135178036));
             paint7.getAlpha();
             Paint a10 = a8Var2.a(rectF);
             a10.setStrokeWidth(AndroidUtilities.lerp(AndroidUtilities.dpf2(2.33f), AndroidUtilities.dpf2(f13), profileStoriesView5.N));
@@ -1205,8 +1206,8 @@ public class ProfileStoriesView extends View implements NotificationCenter.Notif
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.a0 = ofFloat;
             ofFloat.addUpdateListener(new l0(3, this, zArr));
-            this.a0.addListener(new le(2, this, zArr));
-            wh.l(3.0f, this.a0);
+            this.a0.addListener(new me(2, this, zArr));
+            kk.l(3.0f, this.a0);
             this.a0.setDuration(400L);
             this.a0.setStartDelay(120L);
             this.a0.start();

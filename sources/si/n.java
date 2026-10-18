@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.MediaController;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class n implements t {
     public long A;
@@ -121,7 +121,7 @@ public final class n implements t {
         this.m = createEncoderByType;
         MediaCodecInfo.VideoCapabilities videoCapabilities = createEncoderByType.getCodecInfo().getCapabilitiesForType(MediaController.VIDEO_MIME_TYPE).getVideoCapabilities();
         if (!videoCapabilities.isSizeSupported(i10, i10) || !videoCapabilities.areSizeAndRateSupported(i10, i10, i11)) {
-            throw new IOException(a1.g.n(i11, " fps", i0.a.m("Video encoder does not support ", i10, "x", i10, " at ")));
+            throw new IOException(a1.g.n(i11, " fps", i2.d.m("Video encoder does not support ", i10, "x", i10, " at ")));
         }
         this.f.b("video encoder configure: codec=" + this.m.getName() + ", format=" + createVideoFormat);
         this.m.configure(createVideoFormat, (Surface) null, (MediaCrypto) null, 1);
@@ -355,7 +355,7 @@ public final class n implements t {
         this.f.a(sb2.toString(), runtimeException);
         if (this.h.compareAndSet(false, true)) {
             l2.f fVar = this.g.a;
-            ((t0) fVar.b).i.post(new p2.b(25, fVar, runtimeException));
+            ((s0) fVar.b).i.post(new p2.b(25, fVar, runtimeException));
         }
     }
 

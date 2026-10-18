@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 36, -1, -1, -1, 37, 38, -1, -1, -1, -1, 39, 40, -1, 41, 42, 43, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 44, -1, -1, -1, -1, -1, -1, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, -1, -1, -1, -1, -1};
@@ -514,7 +514,7 @@ public abstract class c {
                                     throw new IllegalArgumentException("No data bytes provided");
                                 }
                                 if (i76 >= arrayList3.size()) {
-                                    gc.b bVar7 = (gc.b) i0.a.h(1, arrayList3);
+                                    gc.b bVar7 = (gc.b) i2.d.h(1, arrayList3);
                                     int size2 = arrayList3.size();
                                     eVar2 = eVar3;
                                     gc.b bVar8 = bVar7;
@@ -641,7 +641,7 @@ public abstract class c {
                                 }
                             }
                             if (i90 != aVar9.e()) {
-                                StringBuilder l4 = i0.a.l(i90, "Interleaving error: ", " and ");
+                                StringBuilder l4 = i2.d.l(i90, "Interleaving error: ", " and ");
                                 l4.append(aVar9.e());
                                 l4.append(" differ.");
                                 throw new q(l4.toString());

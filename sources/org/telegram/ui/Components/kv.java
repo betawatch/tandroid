@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class kv extends s4.r0 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class kv extends s4.r0 {
         int i12;
         int i13;
         sl0 sl0Var;
-        org.telegram.ui.Wallet.q8 q8Var;
+        org.telegram.ui.Wallet.t8 t8Var;
         int i14 = this.a;
         sg.o1 o1Var = null;
         Object obj = this.b;
@@ -124,8 +124,8 @@ public final class kv extends s4.r0 {
                 }
                 break;
             case 14:
-                if (i10 == 1 && (q8Var = ((org.telegram.ui.Wallet.l5) obj).j0) != null) {
-                    q8Var.a();
+                if (i10 == 1 && (t8Var = ((org.telegram.ui.Wallet.m5) obj).j0) != null) {
+                    t8Var.a();
                     break;
                 }
                 break;
@@ -155,7 +155,7 @@ public final class kv extends s4.r0 {
                 break;
             case 20:
                 if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(((ug.x0) obj).Y.getEditText());
+                    AndroidUtilities.hideKeyboard(((ug.y0) obj).Y.getEditText());
                     break;
                 }
                 break;
@@ -169,7 +169,7 @@ public final class kv extends s4.r0 {
                 break;
             case 26:
                 if (i10 == 0) {
-                    ((zh.k0) obj).v = false;
+                    ((zh.d0) obj).v = false;
                     break;
                 }
                 break;
@@ -182,7 +182,7 @@ public final class kv extends s4.r0 {
         TLRPC.User user;
         String str2;
         pl0 pl0Var;
-        org.telegram.ui.Wallet.h5 h5Var;
+        org.telegram.ui.Wallet.i5 i5Var;
         switch (this.a) {
             case 0:
                 aw awVar = (aw) this.b;
@@ -311,37 +311,37 @@ public final class kv extends s4.r0 {
                 ((b91) this.b).invalidate();
                 break;
             case 14:
-                org.telegram.ui.Wallet.l5 l5Var = (org.telegram.ui.Wallet.l5) this.b;
-                if (i11 != 0 && recyclerView.getScrollState() == 1 && (h5Var = l5Var.r0) != null && h5Var.f) {
-                    h5Var.d = true;
+                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) this.b;
+                if (i11 != 0 && recyclerView.getScrollState() == 1 && (i5Var = m5Var.r0) != null && i5Var.f) {
+                    i5Var.d = true;
                 }
-                l5Var.M0();
+                m5Var.M0();
                 break;
             case 15:
                 int[] iArr2 = (int[]) this.b;
                 iArr2[0] = iArr2[0] + i11;
                 break;
             case 16:
-                org.telegram.ui.Wallet.t9 t9Var = (org.telegram.ui.Wallet.t9) this.b;
-                if (t9Var.a.I1) {
-                    AndroidUtilities.hideKeyboard(t9Var.M);
+                org.telegram.ui.Wallet.w9 w9Var = (org.telegram.ui.Wallet.w9) this.b;
+                if (w9Var.a.I1) {
+                    AndroidUtilities.hideKeyboard(w9Var.M);
                     break;
                 }
                 break;
             case 17:
-                org.telegram.ui.web.o oVar = (org.telegram.ui.web.o) this.b;
-                if (!oVar.a.canScrollVertically(1)) {
-                    if (TextUtils.isEmpty(oVar.s)) {
-                        oVar.d.d();
+                org.telegram.ui.web.p pVar = (org.telegram.ui.web.p) this.b;
+                if (!pVar.a.canScrollVertically(1)) {
+                    if (TextUtils.isEmpty(pVar.s)) {
+                        pVar.d.d();
                     } else {
-                        org.telegram.ui.web.i iVar = oVar.e;
+                        org.telegram.ui.web.i iVar = pVar.e;
                         if (iVar != null) {
                             iVar.d();
                         }
                     }
                 }
-                if (oVar.a.I1) {
-                    AndroidUtilities.hideKeyboard(oVar.fragmentView);
+                if (pVar.a.I1) {
+                    AndroidUtilities.hideKeyboard(pVar.fragmentView);
                     break;
                 }
                 break;
@@ -386,7 +386,7 @@ public final class kv extends s4.r0 {
                         }
                     }
                 }
-                org.telegram.messenger.wh.t(h4Var.h.animate().alpha((h4Var.K && h4Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), bs.h, 320L);
+                org.telegram.messenger.kk.t(h4Var.h.animate().alpha((h4Var.K && h4Var.n.canScrollVertically(-1)) ? 1.0f : 0.0f), bs.h, 320L);
                 break;
             case 24:
                 ((yh.g4) this.b).a0();
@@ -400,9 +400,9 @@ public final class kv extends s4.r0 {
                 }
                 break;
             case 26:
-                zh.k0 k0Var = (zh.k0) this.b;
-                if (!k0Var.v) {
-                    k0Var.h.a(k0Var.f(k0Var.c()), true);
+                zh.d0 d0Var = (zh.d0) this.b;
+                if (!d0Var.v) {
+                    d0Var.h.a(d0Var.f(d0Var.c()), true);
                     break;
                 }
                 break;

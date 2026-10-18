@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mk0 extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.Components.ek, NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -242,7 +242,7 @@ public final class mk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         TLRPC.Document document2;
         this.actionBar.B(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.f8, this.h), false);
         this.actionBar.C(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.v8, this.h), false);
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setActionBarMenuOnItemClick(new ik0(this, context));
         if (this.L == 0) {
@@ -517,8 +517,8 @@ public final class mk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         long j10 = this.L;
         if (j10 != 0) {
             String sharedPrefKey = NotificationsController.getSharedPrefKey(j10, this.Q);
-            str2 = r.c.g("sound_document_id_", sharedPrefKey);
-            str = r.c.g("sound_path_", sharedPrefKey);
+            str2 = r4.c.h("sound_document_id_", sharedPrefKey);
+            str = r4.c.h("sound_path_", sharedPrefKey);
         } else {
             int i10 = this.M;
             if (i10 == 1) {
@@ -567,10 +567,10 @@ public final class mk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         }
         SharedPreferences.Editor edit = getNotificationsSettings().edit();
         if (this.L != 0) {
-            str = org.telegram.messenger.q.i(this.L, this.Q, new StringBuilder("sound_"));
-            str2 = org.telegram.messenger.q.i(this.L, this.Q, new StringBuilder("sound_path_"));
-            str3 = org.telegram.messenger.q.i(this.L, this.Q, new StringBuilder("sound_document_id_"));
-            edit.putBoolean(org.telegram.messenger.q.i(this.L, this.Q, new StringBuilder("sound_enabled_")), true);
+            str = org.telegram.messenger.g0.i(this.L, this.Q, new StringBuilder("sound_"));
+            str2 = org.telegram.messenger.g0.i(this.L, this.Q, new StringBuilder("sound_path_"));
+            str3 = org.telegram.messenger.g0.i(this.L, this.Q, new StringBuilder("sound_document_id_"));
+            edit.putBoolean(org.telegram.messenger.g0.i(this.L, this.Q, new StringBuilder("sound_enabled_")), true);
         } else {
             int i10 = this.M;
             if (i10 == 1) {

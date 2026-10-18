@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g60 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class g60 implements ValueAnimator.AnimatorUpdateLi
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 l60 l60Var2 = this.b;
                 l60Var2.y0 = floatValue2;
-                si.t0 t0Var = l60Var2.P;
-                if (t0Var != null) {
-                    t0Var.w(floatValue2);
+                si.s0 s0Var = l60Var2.P;
+                if (s0Var != null) {
+                    s0Var.w(floatValue2);
                     break;
                 }
                 break;

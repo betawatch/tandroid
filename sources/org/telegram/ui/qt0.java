@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qt0 extends org.telegram.ui.Components.kg0 {
     public final Rect M;
@@ -46,7 +46,7 @@ public final class qt0 extends org.telegram.ui.Components.kg0 {
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 16.0f);
-        com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
         linearLayout.addView(textView, w7.z5.q(-2, -2, 1));
         TextView textView2 = new TextView(context);
         this.e = textView2;
@@ -58,11 +58,11 @@ public final class qt0 extends org.telegram.ui.Components.kg0 {
         textView2.setBackground(org.telegram.ui.ActionBar.x5.d(new float[]{12.0f}, 0, org.telegram.ui.ActionBar.x5.b(org.telegram.ui.ActionBar.h6.x0(null, i10, false))));
         textView2.setVisibility(8);
         linearLayout.addView(textView2, w7.z5.t(-2, -2, 1, 0, 8, 0, 0));
-        ai.hc hcVar = new ai.hc(this, context, 21);
-        this.h = hcVar;
-        hcVar.setBackgroundColor(-16777216);
-        hcVar.setVisibility(4);
-        addView(hcVar, w7.z5.d(-1.0f, -1));
+        ai.ic icVar = new ai.ic(this, context, 21);
+        this.h = icVar;
+        icVar.setBackgroundColor(-16777216);
+        icVar.setVisibility(4);
+        addView(icVar, w7.z5.d(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.n = radialProgressView;
         radialProgressView.setVisibility(4);

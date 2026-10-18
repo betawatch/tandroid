@@ -9,7 +9,7 @@ import android.view.View;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class tf0 extends View {
     public int a;
@@ -33,7 +33,7 @@ public final class tf0 extends View {
                 return;
             }
             el0 el0Var = this.e;
-            this.a = (int) Math.floor(com.google.android.gms.internal.cast.a6.z(x10, el0Var.a, el0Var.c / 5.0f, 1.0f));
+            this.a = (int) Math.floor(com.google.android.gms.internal.play_billing.k3.z(x10, el0Var.a, el0Var.c / 5.0f, 1.0f));
             return;
         }
         if (i10 != 2) {
@@ -132,7 +132,7 @@ public final class tf0 extends View {
                 i10 = i14;
                 format = String.format(Locale.US, "%.2f", Float.valueOf(zf0Var.e / 100.0f));
             }
-            canvas.drawText(format, (i15 * f7) + com.google.android.gms.internal.cast.a6.z(f7, textPaint.measureText(format), 2.0f, el0Var.a), (el0Var.b + el0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
+            canvas.drawText(format, (i15 * f7) + com.google.android.gms.internal.play_billing.k3.z(f7, textPaint.measureText(format), 2.0f, el0Var.a), (el0Var.b + el0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
             i15++;
             i14 = i10;
             i13 = 3;

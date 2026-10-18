@@ -21,7 +21,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z20 extends FrameLayout implements org.telegram.ui.Components.voip.n0 {
     public final TextPaint E;
@@ -117,14 +117,14 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
     public final void c(Canvas canvas) {
         if (this.w != null) {
             canvas.save();
-            int B = org.telegram.messenger.wh.B(24.0f, getMeasuredWidth() - this.y, 2);
+            int A = org.telegram.messenger.kk.A(24.0f, getMeasuredWidth() - this.y, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.E;
             textPaint.setAlpha(alpha);
-            canvas.drawText(this.w, AndroidUtilities.dp(22.0f) + B, AndroidUtilities.dp(69.0f), textPaint);
+            canvas.drawText(this.w, AndroidUtilities.dp(22.0f) + A, AndroidUtilities.dp(69.0f), textPaint);
             canvas.restore();
             canvas.save();
-            canvas.translate(B, AndroidUtilities.dp(53.0f));
+            canvas.translate(A, AndroidUtilities.dp(53.0f));
             org.telegram.ui.ld ldVar = this.F;
             if (ldVar.getDrawable() != null) {
                 ldVar.getDrawable().setAlpha((int) (getAlpha() * this.s * 255.0f));
@@ -293,7 +293,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
                     int i11 = this.M;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                     this.N = ofFloat;
-                    ofFloat.addUpdateListener(new ai.ee(this, i10, x02, i11, x03, 1));
+                    ofFloat.addUpdateListener(new ai.fe(this, i10, x02, i11, x03, 1));
                     this.N.addListener(new gi.s2(this, x02, x03, 1));
                     this.N.start();
                     return;
@@ -308,7 +308,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
                 this.F.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.MULTIPLY));
                 this.E.setColor(this.L);
                 this.r.setColor(x03);
-                this.J.d(i0.b.o(x03, 38));
+                this.J.d(i0.a.o(x03, 38));
                 invalidate();
                 return;
             }
@@ -370,7 +370,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
         }
         this.K = true;
         if (s50Var.t2.size() > 0) {
-            this.I = (org.telegram.ui.Components.voip.o0) i0.a.z(1, s50Var.t2);
+            this.I = (org.telegram.ui.Components.voip.o0) i2.d.A(1, s50Var.t2);
         } else {
             this.I = new org.telegram.ui.Components.voip.o0();
         }

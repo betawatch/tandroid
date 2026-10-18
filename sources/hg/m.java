@@ -14,7 +14,7 @@ import android.widget.TextView;
 import ci.i4;
 import ci.i7;
 import ci.r7;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -75,7 +75,7 @@ import org.telegram.ui.yx;
 import org.telegram.ui.zx;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class m extends hm0 implements n2 {
     public static final boolean c0 = BuildVars.DEBUG_PRIVATE_VERSION;
@@ -170,7 +170,7 @@ public class m extends hm0 implements n2 {
             i10--;
         }
         if (this.y) {
-            i10 = a6.g(2, i10, MessagesController.getInstance(this.F).hintDialogs);
+            i10 = k3.g(2, i10, MessagesController.getInstance(this.F).hintDialogs);
         }
         if (this.n && this.h == 3) {
             i10--;
@@ -377,7 +377,7 @@ public class m extends hm0 implements n2 {
         this.f = size;
         this.U = false;
         if (size == 0 && eyVar.c4()) {
-            a6.q(this, 19, this.M);
+            k3.q(this, 19, this.M);
             return;
         }
         if (this.y || this.h != 0 || i18 != 0 || !messagesController.isDialogsEndReached(i18) || this.e) {
@@ -413,7 +413,7 @@ public class m extends hm0 implements n2 {
         }
         MessagesController.DialogFilter H = H();
         if ((H == null || H.isDefault()) && eyVar != null && eyVar.N0 && eyVar.P0 != j10) {
-            a6.q(this, 20, this.M);
+            k3.q(this, 20, this.M);
             int i20 = 0;
             while (true) {
                 if (i20 >= P3.size()) {
@@ -432,9 +432,9 @@ public class m extends hm0 implements n2 {
                 dialog.id = eyVar.P0;
             }
             this.M.add(new k(this, 0, dialog));
-            a6.q(this, 20, this.M);
+            k3.q(this, 20, this.M);
         } else if ((H == null || H.isDefault()) && eyVar != null && this.h == 3 && eyVar.Q0 != j10) {
-            a6.q(this, 20, this.M);
+            k3.q(this, 20, this.M);
             int i21 = 0;
             while (true) {
                 if (i21 >= P3.size()) {
@@ -454,7 +454,7 @@ public class m extends hm0 implements n2 {
             }
             z11 = false;
             this.M.add(new k(this, 0, dialog3));
-            a6.q(this, 20, this.M);
+            k3.q(this, 20, this.M);
             this.E = z11;
             i10 = this.h;
             if ((i10 != 7 || i10 == 8) && H != null && H.isChatlist()) {
@@ -467,7 +467,7 @@ public class m extends hm0 implements n2 {
             }
             requestPeerType = this.T;
             if (requestPeerType != null) {
-                a6.q(this, 15, this.M);
+                k3.q(this, 15, this.M);
             }
             if (!this.J || this.S) {
                 for (i11 = 0; i11 < P3.size(); i11++) {
@@ -477,47 +477,47 @@ public class m extends hm0 implements n2 {
                         this.M.add(new k(this, 0, P3.get(i11)));
                     }
                 }
-                a6.q(this, 10, this.M);
+                k3.q(this, 10, this.M);
             }
             if (this.f == 0 && this.e) {
                 this.U = true;
                 if (requestPeerType != null) {
-                    a6.q(this, 16, this.M);
+                    k3.q(this, 16, this.M);
                 } else {
                     this.M.add(new k(this, E(), 0));
                 }
-                a6.q(this, 8, this.M);
-                a6.q(this, 7, this.M);
-                a6.q(this, 13, this.M);
+                k3.q(this, 8, this.M);
+                k3.q(this, 7, this.M);
+                k3.q(this, 13, this.M);
             } else {
                 ArrayList arrayList2 = this.d;
                 if (arrayList2 != null && !arrayList2.isEmpty() && (i12 = this.h) != 7 && i12 != 8) {
                     if (this.f == 0) {
                         this.U = true;
                         if (requestPeerType != null) {
-                            a6.q(this, 16, this.M);
+                            k3.q(this, 16, this.M);
                         } else {
                             this.M.add(new k(this, E(), 0));
                         }
-                        a6.q(this, 8, this.M);
-                        a6.q(this, 7, this.M);
+                        k3.q(this, 8, this.M);
+                        k3.q(this, 7, this.M);
                     } else {
                         for (int i22 = 0; i22 < P3.size(); i22++) {
                             this.M.add(new k(this, 0, P3.get(i22)));
                         }
-                        a6.q(this, 8, this.M);
-                        a6.q(this, 7, this.M);
+                        k3.q(this, 8, this.M);
+                        k3.q(this, 7, this.M);
                     }
                     for (int i23 = 0; i23 < this.d.size(); i23++) {
                         this.M.add(new k(this, (TLRPC.TL_contact) this.d.get(i23)));
                     }
-                    a6.q(this, 10, this.M);
+                    k3.q(this, 10, this.M);
                     z12 = true;
                     if ((!(requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) || (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) && this.f > 0) {
-                        a6.q(this, 12, this.M);
+                        k3.q(this, 12, this.M);
                     }
                     if (this.n && this.h == 3) {
-                        a6.q(this, 21, this.M);
+                        k3.q(this, 21, this.M);
                     }
                     if (!z12) {
                         for (int i24 = 0; i24 < P3.size(); i24++) {
@@ -532,21 +532,21 @@ public class m extends hm0 implements n2 {
                             if (i25 == 0) {
                                 this.U = true;
                                 if (requestPeerType != null) {
-                                    a6.q(this, 16, this.M);
+                                    k3.q(this, 16, this.M);
                                 } else {
                                     this.M.add(new k(this, E(), 0));
                                 }
                             } else {
                                 if (i18 == 0 && i25 > 10 && this.h == 0) {
-                                    a6.q(this, 11, this.M);
+                                    k3.q(this, 11, this.M);
                                 }
-                                a6.q(this, 10, this.M);
+                                k3.q(this, 10, this.M);
                             }
                         } else {
                             if (this.f != 0) {
-                                a6.q(this, 1, this.M);
+                                k3.q(this, 1, this.M);
                             }
-                            a6.q(this, 10, this.M);
+                            k3.q(this, 10, this.M);
                         }
                     }
                     if (messagesController.hiddenUndoChats.isEmpty()) {
@@ -565,27 +565,27 @@ public class m extends hm0 implements n2 {
                 }
                 if (this.y) {
                     int size3 = MessagesController.getInstance(i14).hintDialogs.size();
-                    a6.q(this, 2, this.M);
+                    k3.q(this, 2, this.M);
                     for (int i27 = 0; i27 < size3; i27++) {
                         this.M.add(new k(this, MessagesController.getInstance(i14).hintDialogs.get(i27)));
                     }
-                    a6.q(this, 3, this.M);
+                    k3.q(this, 3, this.M);
                 } else {
                     int i28 = this.h;
                     if (i28 == 11 || i28 == 13) {
-                        a6.q(this, 7, this.M);
-                        a6.q(this, 12, this.M);
+                        k3.q(this, 7, this.M);
+                        k3.q(this, 12, this.M);
                     } else if (i28 == 12) {
-                        a6.q(this, 7, this.M);
+                        k3.q(this, 7, this.M);
                     }
                 }
             }
             z12 = false;
             if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast)) {
             }
-            a6.q(this, 12, this.M);
+            k3.q(this, 12, this.M);
             if (this.n) {
-                a6.q(this, 21, this.M);
+                k3.q(this, 21, this.M);
             }
             if (!z12) {
             }
@@ -610,7 +610,7 @@ public class m extends hm0 implements n2 {
         }
         while (i11 < P3.size()) {
         }
-        a6.q(this, 10, this.M);
+        k3.q(this, 10, this.M);
     }
 
     public final void W(Runnable runnable) {
@@ -1189,7 +1189,7 @@ public class m extends hm0 implements n2 {
                 }
                 break;
             case 8:
-                r22 = new z6(context, (org.telegram.ui.Cells.t0) null);
+                r22 = new z6(context, (org.telegram.ui.Cells.c1) null);
                 zq zqVar = new zq(new ColorDrawable(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false)), org.telegram.ui.ActionBar.h6.W0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7));
                 zqVar.w = true;
                 r22.setBackgroundDrawable(zqVar);

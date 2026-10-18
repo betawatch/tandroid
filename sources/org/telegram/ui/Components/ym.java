@@ -18,7 +18,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ym {
     public TextPaint B;
@@ -79,7 +79,7 @@ public final class ym {
         if (ymVar.c == null) {
             ymVar.c = new ImageReceiver(zmVar.z);
             ymVar.d = new ImageReceiver(zmVar.z);
-            ymVar.c.setDelegate(new s2(10, ymVar, photoEntry));
+            ymVar.c.setDelegate(new q2(11, ymVar, photoEntry));
         }
         String str = photoEntry.thumbPath;
         if (str != null) {
@@ -329,7 +329,7 @@ public final class ym {
                         canvas.clipPath(path);
                         f11 = 255.0f;
                         i11 = i10;
-                        float c12 = org.telegram.ui.Cells.t0.c(Math.min(16L, SystemClock.elapsedRealtime() - this.h), 250.0f, this.w, 1.0f);
+                        float c12 = org.telegram.ui.Cells.c1.c(Math.min(16L, SystemClock.elapsedRealtime() - this.h), 250.0f, this.w, 1.0f);
                         this.w = c12;
                         Paint paint = this.x;
                         paint.setAlpha((int) ((1.0f - c12) * 255.0f));

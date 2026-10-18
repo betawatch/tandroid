@@ -13,7 +13,7 @@ import v7.j9;
 import vb.b;
 import vb.e;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class LanguageIdRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -31,7 +31,7 @@ public class LanguageIdRegistrar implements ComponentRegistrar {
         for (int i10 = 0; i10 < 2; i10++) {
             f9 f9Var = h9.b;
             if (objArr[i10] == null) {
-                throw new NullPointerException(i0.a.j(i10, "at index "));
+                throw new NullPointerException(i2.d.j(i10, "at index "));
             }
         }
         f9 f9Var2 = h9.b;

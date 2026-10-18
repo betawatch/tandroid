@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class s90 extends org.telegram.ui.ActionBar.j5 {
     public final u90 M0;
@@ -24,7 +24,7 @@ public class s90 extends org.telegram.ui.ActionBar.j5 {
     }
 
     private int getLinkColor() {
-        return i0.b.o(getTextColor(), (int) (Color.alpha(getTextColor()) * 0.1175f));
+        return i0.a.o(getTextColor(), (int) (Color.alpha(getTextColor()) * 0.1175f));
     }
 
     @Override // org.telegram.ui.ActionBar.j5, android.view.View

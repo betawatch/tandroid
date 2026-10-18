@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class oq0 extends jw0 {
     public int A0;
@@ -370,11 +370,11 @@ public final class oq0 extends jw0 {
             oq0Var.w0 = false;
         }
         int paddingTop = size - oq0Var.getPaddingTop();
-        int D = org.telegram.messenger.q.D(103.0f, Math.max(2, (int) Math.ceil(Math.max(dr0Var.M.h(), dr0Var.K.h() - 1) / 4.0f)), AndroidUtilities.dp(48.0f) + AndroidUtilities.dp(103.0f));
+        int D = org.telegram.messenger.g0.D(103.0f, Math.max(2, (int) Math.ceil(Math.max(dr0Var.M.h(), dr0Var.K.h() - 1) / 4.0f)), AndroidUtilities.dp(48.0f) + AndroidUtilities.dp(103.0f));
         i12 = ((org.telegram.ui.ActionBar.f3) dr0Var).backgroundPaddingTop;
         int i20 = i12 + D;
         if (im0Var.getVisibility() != 8) {
-            int D2 = org.telegram.messenger.q.D(103.0f, Math.max(2, (int) Math.ceil((dr0Var.L.h() - 1) / 4.0f)), AndroidUtilities.dp(48.0f) + AndroidUtilities.dp(103.0f));
+            int D2 = org.telegram.messenger.g0.D(103.0f, Math.max(2, (int) Math.ceil((dr0Var.L.h() - 1) / 4.0f)), AndroidUtilities.dp(48.0f) + AndroidUtilities.dp(103.0f));
             i15 = ((org.telegram.ui.ActionBar.f3) dr0Var).backgroundPaddingTop;
             int i21 = i15 + D2;
             if (i21 > i20) {

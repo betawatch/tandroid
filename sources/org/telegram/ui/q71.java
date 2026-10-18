@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q71 implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
     public final /* synthetic */ z71 a;
@@ -15,7 +15,7 @@ public final /* synthetic */ class q71 implements Utilities.Callback5, Utilities
 
     @Override // r0.n
     public r0.k1 B0(View view, r0.k1 k1Var) {
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
         int i10 = defaultWindowInsets.d;
         z71 z71Var = this.a;
         z71Var.S = i10;

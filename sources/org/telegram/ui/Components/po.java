@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class po extends LinearLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -61,9 +61,9 @@ public final class po extends LinearLayout {
         }
         TextView textView3 = new TextView(activity);
         if (i10 == 0) {
-            org.telegram.messenger.wh.j(15.0f, R.string.EncryptedDescriptionTitle, 1, textView3);
+            org.telegram.messenger.kk.j(15.0f, R.string.EncryptedDescriptionTitle, 1, textView3);
         } else if (i10 == 1) {
-            org.telegram.messenger.wh.j(15.0f, R.string.GroupEmptyTitle2, 1, textView3);
+            org.telegram.messenger.kk.j(15.0f, R.string.GroupEmptyTitle2, 1, textView3);
         } else {
             textView3.setText(LocaleController.getString(R.string.ChatYourSelfTitle));
             textView3.setTextSize(1, 16.0f);
@@ -77,7 +77,7 @@ public final class po extends LinearLayout {
         addView(textView3, w7.z5.t(-2, -2, (i10 != 2 ? LocaleController.isRTL ? 5 : 3 : 1) | 48, 0, 8, 0, i10 != 2 ? 0 : 8));
         int i12 = 0;
         while (i12 < 4) {
-            LinearLayout e = org.telegram.messenger.q.e(activity, 0);
+            LinearLayout e = org.telegram.messenger.g0.e(activity, 0);
             addView(e, w7.z5.t(-2, -2, LocaleController.isRTL ? 5 : 3, 0, 8, 0, 0));
             ImageView imageView = new ImageView(activity);
             int i13 = org.telegram.ui.ActionBar.h6.ic;

@@ -3,7 +3,7 @@ package ai;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s4 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -20,13 +20,13 @@ public final /* synthetic */ class s4 implements Utilities.Callback2 {
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                k7.F0(this.b, this.c, (ag.a) obj, (Runnable) obj2);
+                k7.G0(this.b, this.c, (ag.a) obj, (Runnable) obj2);
                 break;
             case 1:
-                k7.q1(this.b, this.c, (Utilities.Callback) obj, (Boolean) obj2);
+                k7.r1(this.b, this.c, (Utilities.Callback) obj, (Boolean) obj2);
                 break;
             default:
-                k7.T0(this.b, this.c, (ag.a) obj, (Runnable) obj2);
+                k7.W0(this.b, this.c, (ag.a) obj, (Runnable) obj2);
                 break;
         }
     }

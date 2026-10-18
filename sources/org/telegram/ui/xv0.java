@@ -5,7 +5,7 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xv0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final class xv0 implements ViewTreeObserver.OnPreDrawListener {
                 if (frameLayout != null) {
                     frameLayout.getViewTreeObserver().removeOnPreDrawListener(this);
                 }
-                int B = org.telegram.messenger.wh.B(48.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A = org.telegram.messenger.kk.A(48.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 FrameLayout frameLayout2 = popupNotificationActivity.f;
-                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), B, popupNotificationActivity.f.getPaddingRight(), B);
+                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), A, popupNotificationActivity.f.getPaddingRight(), A);
                 break;
             default:
                 PopupNotificationActivity popupNotificationActivity2 = this.b;

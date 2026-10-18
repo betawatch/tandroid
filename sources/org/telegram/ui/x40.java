@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x40 extends org.telegram.ui.ActionBar.j5 {
     public LinearGradient M0;
@@ -91,7 +91,7 @@ public final class x40 extends org.telegram.ui.ActionBar.j5 {
                     this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
                 }
                 float f12 = j10;
-                c10 = r.c.c(f12 * 0.02f, s50Var.O0, 1.0f * f12, this.S0);
+                c10 = r4.c.c(f12 * 0.02f, s50Var.O0, 1.0f * f12, this.S0);
                 this.S0 = c10;
                 f11 = this.R0;
                 if (c10 > f11) {
@@ -123,7 +123,7 @@ public final class x40 extends org.telegram.ui.ActionBar.j5 {
             this.Q0 = this.P0;
             this.P0 = ((Utilities.random.nextInt(100) - 50) * 0.2f) / 50.0f;
             float f122 = j10;
-            c10 = r.c.c(f122 * 0.02f, s50Var.O0, 1.0f * f122, this.S0);
+            c10 = r4.c.c(f122 * 0.02f, s50Var.O0, 1.0f * f122, this.S0);
             this.S0 = c10;
             f11 = this.R0;
             if (c10 > f11) {

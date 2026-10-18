@@ -7,10 +7,10 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.y5;
 import org.telegram.ui.Components.jc0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i extends LinearLayout implements y5 {
     public final d6 a;
@@ -44,11 +44,11 @@ public final class i extends LinearLayout implements y5 {
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         frameLayout.addView(imageView, z5.e(24, 24, 17));
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView i10 = a6.i(e, textView, z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView i10 = k3.i(e, textView, z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = i10;
         i10.setGravity(17);
         i10.setMinWidth(AndroidUtilities.dp(20.66f));

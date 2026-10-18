@@ -25,7 +25,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.i01;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -532,14 +532,14 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                 x xVar = (x) this.b;
                 j0 j0Var2 = (j0) this.c;
                 b2 b2Var = (b2) this.d;
-                ai.q3 q3Var = (ai.q3) this.e;
+                ai.p3 p3Var = (ai.p3) this.e;
                 TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 if (tonconnectchallenge == null || tL_error2 != null) {
                     xVar.run(f2.x(tL_error2, "registerKey"));
                     return;
                 } else {
-                    Utilities.globalQueue.postRunnable(new i01(j0Var2, b2Var, tonconnectchallenge, xVar, q3Var, 5));
+                    Utilities.globalQueue.postRunnable(new i01(j0Var2, b2Var, tonconnectchallenge, xVar, p3Var, 5));
                     return;
                 }
             case 7:
@@ -610,7 +610,7 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                 nVar.c((nVar.getWidth() / 2.0f) - nVar.getPaddingLeft(), ((nVar.getHeight() / 2.0f) - nVar.getPaddingTop()) + nVar.getScrollY());
                 return;
             default:
-                t9.Z((t9) this.c, (m0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
+                w9.Z((w9) this.c, (m0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
                 return;
         }
     }
@@ -623,9 +623,9 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
         this.e = str3;
     }
 
-    public /* synthetic */ q(t9 t9Var, m0 m0Var, TLRPC.User user, String str) {
+    public /* synthetic */ q(w9 w9Var, m0 m0Var, TLRPC.User user, String str) {
         this.a = 10;
-        this.c = t9Var;
+        this.c = w9Var;
         this.b = m0Var;
         this.e = user;
         this.d = str;

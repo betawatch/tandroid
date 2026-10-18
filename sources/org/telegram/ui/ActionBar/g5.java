@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import android.widget.EditText;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class g5 implements z2 {
     public static final double[] a = {0.819022437996703d, 0.3619062600528904d, -0.1288737815209879d, 0.0329836539323885d, 0.9292868615863434d, 0.0361446663506424d, 0.0481771893596242d, 0.2642395317527308d, 0.6335478284694309d};
@@ -1596,8 +1596,8 @@ public abstract class g5 implements z2 {
         iArr[h6.Wj] = -1839878;
         iArr[h6.Xj] = -15436801;
         iArr[h6.Yj] = -4167942;
-        iArr[h6.Uj] = i0.b.o(-1, 90);
-        iArr[h6.Zj] = i0.b.o(-1, 90);
+        iArr[h6.Uj] = i0.a.o(-1, 90);
+        iArr[h6.Zj] = i0.a.o(-1, 90);
         iArr[h6.ak] = -10773017;
         iArr[h6.bk] = -5535779;
         iArr[h6.ck] = -1600322;

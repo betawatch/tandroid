@@ -11,7 +11,7 @@ import org.telegram.ui.Components.sv0;
 import org.telegram.ui.Components.vn0;
 import org.telegram.ui.p00;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y8 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,15 +32,15 @@ public final /* synthetic */ class y8 implements Runnable {
         TLRPC.TL_account_setMainProfileTab tL_account_setMainProfileTab;
         switch (this.a) {
             case 0:
-                fa faVar = (fa) this.d;
+                ga gaVar = (ga) this.d;
                 if (!this.c) {
-                    faVar.getClass();
+                    gaVar.getClass();
                     break;
                 } else {
-                    Set set = faVar.Q;
+                    Set set = gaVar.Q;
                     int i10 = this.b;
                     set.remove(Integer.valueOf(i10));
-                    Runnable runnable = (Runnable) faVar.R.remove(Integer.valueOf(i10));
+                    Runnable runnable = (Runnable) gaVar.R.remove(Integer.valueOf(i10));
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -48,9 +48,9 @@ public final /* synthetic */ class y8 implements Runnable {
                 }
                 break;
             case 1:
-                i2.p0 p0Var = (i2.p0) this.d;
-                j2.f fVar = p0Var.M;
-                i2.p1[] p1VarArr = p0Var.a;
+                i2.q0 q0Var = (i2.q0) this.d;
+                j2.f fVar = q0Var.M;
+                i2.p1[] p1VarArr = q0Var.a;
                 int i11 = this.b;
                 int i12 = p1VarArr[i11].a.b;
                 j2.a p5 = fVar.p();

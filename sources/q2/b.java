@@ -12,7 +12,7 @@ import v0.h;
 import v0.j;
 import w7.n;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b implements h {
     public final Context a;
@@ -48,7 +48,7 @@ public final class b implements h {
     public static int c(w wVar) {
         String str = wVar.s;
         if (str == null || !v0.k(str)) {
-            return i0.a.c(0, 0, 0, 0);
+            return i2.d.c(0, 0, 0, 0);
         }
         String str2 = wVar.s;
         String str3 = m0.a;
@@ -58,9 +58,9 @@ public final class b implements h {
             case "image/webp":
             case "image/bmp":
             case "image/png":
-                return i0.a.c(4, 0, 0, 0);
+                return i2.d.c(4, 0, 0, 0);
         }
-        return i0.a.c(1, 0, 0, 0);
+        return i2.d.c(1, 0, 0, 0);
     }
 
     public Object a(Context context, v0.e eVar, kd.c cVar) {

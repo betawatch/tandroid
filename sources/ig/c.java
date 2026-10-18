@@ -25,7 +25,7 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.s61;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -60,7 +60,7 @@ public final class c extends n2 implements NotificationCenter.NotificationCenter
         arrayList.add(i10);
         arrayList.add(f61.B(null));
         if (cVar.s) {
-            x1 d = y1.f(cVar.currentAccount).d("away");
+            z1 d = a2.f(cVar.currentAccount).d("away");
             if (d != null) {
                 f61 f61Var2 = new f61(17);
                 f61Var2.G = d;
@@ -71,7 +71,7 @@ public final class c extends n2 implements NotificationCenter.NotificationCenter
                 arrayList.add(c10);
             }
             arrayList.add(f61.B(null));
-            i0.a.p(R.string.BusinessAwaySchedule, arrayList);
+            i2.d.p(R.string.BusinessAwaySchedule, arrayList);
             f61 w9 = f61.w(3, LocaleController.getString(R.string.BusinessAwayScheduleAlways));
             w9.K(cVar.x == 0);
             arrayList.add(w9);
@@ -85,7 +85,7 @@ public final class c extends n2 implements NotificationCenter.NotificationCenter
             arrayList.add(w11);
             if (cVar.x == 2) {
                 arrayList.add(f61.B(null));
-                i0.a.p(R.string.BusinessAwaySchedule, arrayList);
+                i2.d.p(R.string.BusinessAwaySchedule, arrayList);
                 arrayList.add(f61.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomStart), LocaleController.formatShortDateTime(cVar.F), 8));
                 arrayList.add(f61.f(LocaleController.getString(R.string.BusinessAwayScheduleCustomEnd), LocaleController.formatShortDateTime(cVar.G), 9));
             }
@@ -93,8 +93,8 @@ public final class c extends n2 implements NotificationCenter.NotificationCenter
             f61 i11 = f61.i(10, LocaleController.getString(R.string.BusinessAwayOnlyOffline));
             i11.K(cVar.w);
             arrayList.add(i11);
-            i0.a.A(R.string.BusinessAwayOnlyOfflineInfo, arrayList);
-            i0.a.p(R.string.BusinessRecipients, arrayList);
+            i2.d.B(R.string.BusinessAwayOnlyOfflineInfo, arrayList);
+            i2.d.p(R.string.BusinessRecipients, arrayList);
             f61 w12 = f61.w(6, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
             w12.K(cVar.v);
             arrayList.add(w12);
@@ -150,7 +150,7 @@ public final class c extends n2 implements NotificationCenter.NotificationCenter
             finishFragment();
             return;
         }
-        x1 d = y1.f(this.currentAccount).d("away");
+        z1 d = a2.f(this.currentAccount).d("away");
         boolean z10 = this.s;
         if (z10 && d == null) {
             BotWebViewVibrationEffect.APP_ERROR.vibrate();
@@ -341,7 +341,7 @@ public final class c extends n2 implements NotificationCenter.NotificationCenter
     public final boolean onFragmentCreate() {
         getNotificationCenter().addObserver(this, NotificationCenter.quickRepliesUpdated);
         getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
-        y1.f(this.currentAccount).h();
+        a2.f(this.currentAccount).h();
         Y();
         return super.onFragmentCreate();
     }

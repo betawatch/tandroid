@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class yo extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public LinearLayout E;
@@ -620,7 +620,7 @@ public final class yo extends org.telegram.ui.ActionBar.n2 implements Notificati
         }
         this.s.addView(this.v, w7.z5.n(-1, -2));
         this.v.setOnClickListener(new po(this, 2));
-        org.telegram.ui.Cells.z6 z6Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+        org.telegram.ui.Cells.z6 z6Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
         this.J = z6Var;
         this.h.addView(z6Var, w7.z5.n(-1, -2));
         if (z10) {
@@ -702,7 +702,7 @@ public final class yo extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.x = linearLayout5;
         linearLayout5.setOrientation(1);
         this.h.addView(this.x, w7.z5.n(-1, -2));
-        org.telegram.ui.Cells.z6 z6Var2 = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+        org.telegram.ui.Cells.z6 z6Var2 = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
         this.e0 = z6Var2;
         this.h.addView(z6Var2, w7.z5.n(-1, -2));
         ai.r rVar = this.h;

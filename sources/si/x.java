@@ -10,14 +10,14 @@ import org.telegram.messenger.video.MP4Builder;
 import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x {
     public final File a;
     public final int b;
     public final boolean c;
     public final o d;
-    public final org.telegram.ui.web.c0 e;
+    public final org.telegram.ui.web.m e;
     public MP4Builder i;
     public MediaFormat j;
     public MediaFormat k;
@@ -37,12 +37,12 @@ public final class x {
     public long q = Long.MIN_VALUE;
     public final MediaCodec.BufferInfo t = new MediaCodec.BufferInfo();
 
-    public x(File file, int i10, boolean z10, o oVar, org.telegram.ui.web.c0 c0Var) {
+    public x(File file, int i10, boolean z10, o oVar, org.telegram.ui.web.m mVar) {
         this.a = file;
         this.b = i10;
         this.c = z10;
         this.d = oVar;
-        this.e = c0Var;
+        this.e = mVar;
     }
 
     public static int a(ByteBuffer byteBuffer) {
@@ -336,16 +336,16 @@ public final class x {
         if (this.v) {
             return;
         }
-        org.telegram.ui.web.c0 c0Var = this.e;
-        t0 t0Var = (t0) c0Var.b;
-        p0 p0Var = (p0) c0Var.c;
-        synchronized (t0Var.g) {
+        org.telegram.ui.web.m mVar = this.e;
+        s0 s0Var = (s0) mVar.b;
+        o0 o0Var = (o0) mVar.c;
+        synchronized (s0Var.g) {
             try {
-                long j11 = p0Var.c;
+                long j11 = o0Var.c;
                 long j12 = j10 - j11;
-                if (j12 > 0 && !p0Var.d) {
-                    p0Var.c = j10;
-                    t0Var.k.execute(new a3.h0(t0Var, p0Var, j11, j12, 16));
+                if (j12 > 0 && !o0Var.d) {
+                    o0Var.c = j10;
+                    s0Var.k.execute(new a3.h0(s0Var, o0Var, j11, j12, 16));
                 }
             } finally {
             }

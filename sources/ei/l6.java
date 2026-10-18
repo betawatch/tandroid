@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l6 extends FrameLayout {
     public final int a;
@@ -62,7 +62,7 @@ public final class l6 extends FrameLayout {
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
         frameLayout.addView(imageView2, w7.z5.a(28.0f, 0.0f, 0.0f, 12.0f, 16.0f, 28, 85));
         FrameLayout frameLayout2 = new FrameLayout(activity);
-        frameLayout2.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), i0.b.o(-16777216, 122)));
+        frameLayout2.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), i0.a.o(-16777216, 122)));
         TextView textView = new TextView(activity);
         textView.setTextSize(1, 18.0f);
         textView.setTextColor(1694498815);

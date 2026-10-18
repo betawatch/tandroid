@@ -10,7 +10,7 @@ import java.util.HashSet;
 import org.telegram.ui.ac0;
 import ri.p;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 final class AudioRecorderV2Controller {
     private boolean finishRequested;
@@ -23,7 +23,7 @@ final class AudioRecorderV2Controller {
     private final HashSet<Long> deliveredOutputIds = new HashSet<>();
     private ri.n previousState = ri.n.a;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public interface Listener {
         void onCompleted(ri.m mVar);
 
@@ -235,9 +235,9 @@ final class AudioRecorderV2Controller {
         }
         pVar.r = max;
         pVar.s = max2;
-        i2.g0 g0Var = pVar.A;
-        if (g0Var != null) {
-            g0Var.Z0(5, max);
+        i2.h0 h0Var = pVar.A;
+        if (h0Var != null) {
+            h0Var.Z0(5, max);
         }
         gVar.onPreviewProgress(pVar.r, j12);
         gVar.onStateChanged(pVar.e());
@@ -333,7 +333,7 @@ final class AudioRecorderV2Controller {
         return true;
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class 2 implements ri.l {
         final /* synthetic */ Listener val$listener;
 
@@ -371,7 +371,7 @@ final class AudioRecorderV2Controller {
                 file = (File) AudioRecorderV2Controller.this.outputFiles.remove(Long.valueOf(j10));
             }
             if (file != null) {
-                AudioRecorderV2Controller.this.mainHandler.post(new s(this, j10, this.val$listener, file, 0));
+                AudioRecorderV2Controller.this.mainHandler.post(new q(this, j10, this.val$listener, file, 0));
             }
         }
 
@@ -380,7 +380,7 @@ final class AudioRecorderV2Controller {
             synchronized (AudioRecorderV2Controller.this.outputLock) {
                 AudioRecorderV2Controller.this.outputFiles.put(Long.valueOf(j10), file);
             }
-            AudioRecorderV2Controller.this.mainHandler.post(new s(this, j10, this.val$listener, file, 1));
+            AudioRecorderV2Controller.this.mainHandler.post(new q(this, j10, this.val$listener, file, 1));
         }
 
         @Override // ri.l

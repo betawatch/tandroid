@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 class MediaCodecWrapperFactoryImpl implements MediaCodecWrapperFactory {
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class MediaCodecWrapperImpl implements MediaCodecWrapper {
         private final MediaCodec mediaCodec;
 

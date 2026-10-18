@@ -11,7 +11,6 @@ import c3.c0;
 import c3.j0;
 import c3.q;
 import c5.b0;
-import com.google.android.gms.internal.cast.z5;
 import g2.j;
 import g2.u;
 import g2.x;
@@ -38,21 +37,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ri;
-import org.telegram.ui.Wallet.x5;
+import org.telegram.ui.Wallet.z5;
 import org.telegram.ui.xu0;
 import z3.k;
 import z3.m;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a, dg.a, ea.c, n, ri, w, r9.d, l1, n5.b, r4.c, k {
+public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a, dg.a, ea.c, n, ri, w, r9.d, l1, n5.b, r4.d, k {
     public static d b;
     public static d c;
     public final /* synthetic */ int a;
@@ -93,7 +92,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return Calendar.getInstance();
     }
 
-    public static k4.d x3(x5 x5Var, b0 b0Var) {
+    public static k4.d x3(z5 z5Var, b0 b0Var) {
         IOException iOException = (IOException) b0Var.c;
         if (!(iOException instanceof x)) {
             return null;
@@ -102,10 +101,10 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         if (i10 != 403 && i10 != 404 && i10 != 410 && i10 != 416 && i10 != 500 && i10 != 503) {
             return null;
         }
-        if (x5Var.b(1)) {
+        if (z5Var.c(1)) {
             return new k4.d(1, 300000L);
         }
-        if (x5Var.b(2)) {
+        if (z5Var.c(2)) {
             return new k4.d(2, 60000L);
         }
         return null;
@@ -156,7 +155,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
             throw new IllegalArgumentException("Illegal use of DownsampleAudioResampler");
         }
         if (i12 != 1 && i12 != 2) {
-            throw new IllegalArgumentException(i0.a.j(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
+            throw new IllegalArgumentException(i2.d.j(i12, "Illegal use of DownsampleAudioResampler. Channels:"));
         }
         int remaining = shortBuffer.remaining() / i12;
         int ceil = (int) Math.ceil((i11 / i10) * remaining);
@@ -490,7 +489,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean d1(MessageObject messageObject) {
         int i10 = this.a;
-        return t0.a(messageObject);
+        return c1.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -610,7 +609,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // r9.d
-    public Object j2(z5 z5Var) {
+    public Object j2(com.google.android.gms.internal.cast.z5 z5Var) {
         switch (this.a) {
             case 15:
                 return new sb.a(0);
@@ -782,7 +781,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         int i10 = this.a;
     }
 
-    @Override // r4.c
+    @Override // r4.d
     public void x() {
         Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
     }
@@ -811,7 +810,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return i10 == 7 ? 6 : 3;
     }
 
-    @Override // r4.c
+    @Override // r4.d
     public void z(int i10, Object obj) {
         String str;
         switch (i10) {

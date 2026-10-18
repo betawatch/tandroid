@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class w1 {
     public final SparseIntArray a = new SparseIntArray();
@@ -16,7 +16,7 @@ public final class w1 {
     public float d;
 
     public final int a(int i10) {
-        return i0.b.f(this.d, this.a.get(i10), this.b.get(i10));
+        return i0.a.f(this.d, this.a.get(i10), this.b.get(i10));
     }
 
     public final void b(org.telegram.ui.ActionBar.k kVar, float f7) {
@@ -44,14 +44,14 @@ public final class w1 {
             }
             return;
         }
-        int i14 = i0.b.h(i10) < 0.5d ? -1 : -16777216;
-        int o10 = i0.b.o(i14, 60);
+        int i14 = i0.a.h(i10) < 0.5d ? -1 : -16777216;
+        int o10 = i0.a.o(i14, 60);
         while (i12 < iArr.length) {
             int i15 = iArr[i12];
             if (i15 == h6.G8 || i15 == h6.E8 || i15 == h6.F8 || i15 == (i11 = h6.I5)) {
                 sparseIntArray.put(i15, h6.w0(i15, d6Var));
             } else if (i15 == h6.Ii) {
-                sparseIntArray.put(i15, i0.b.f(0.5f, i10, i14));
+                sparseIntArray.put(i15, i0.a.f(0.5f, i10, i14));
             } else if (i15 == h6.u8 || i15 == i11) {
                 sparseIntArray.put(i15, o10);
             } else {

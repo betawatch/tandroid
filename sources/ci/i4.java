@@ -13,13 +13,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.j31;
 import org.telegram.ui.v21;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i4 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -113,11 +113,11 @@ public final class i4 extends FrameLayout {
                 for (int i16 = 0; i16 < childCount; i16++) {
                     if (getChildAt(i16).getVisibility() != 8) {
                         if (getChildAt(i16).getMeasuredWidth() + i14 > getMeasuredWidth()) {
-                            i15 = org.telegram.messenger.q.C(8.0f, getChildAt(i16).getMeasuredHeight(), i15);
+                            i15 = org.telegram.messenger.g0.C(8.0f, getChildAt(i16).getMeasuredHeight(), i15);
                             i14 = 0;
                         }
                         getChildAt(i16).layout(i14, i15, getChildAt(i16).getMeasuredWidth() + i14, getChildAt(i16).getMeasuredHeight() + i15);
-                        i14 = org.telegram.messenger.q.C(16.0f, getChildAt(i16).getMeasuredWidth(), i14);
+                        i14 = org.telegram.messenger.g0.C(16.0f, getChildAt(i16).getMeasuredWidth(), i14);
                     }
                 }
                 break;
@@ -173,7 +173,7 @@ public final class i4 extends FrameLayout {
                 super.onMeasure(i10, i11);
                 break;
             case 18:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), wh.D(48.0f, 1, TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), kk.C(48.0f, 1, TLObject.FLAG_30));
                 break;
             case 20:
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
@@ -184,10 +184,10 @@ public final class i4 extends FrameLayout {
                 for (int i15 = 0; i15 < childCount; i15++) {
                     if (getChildAt(i15).getVisibility() != 8) {
                         if (getChildAt(i15).getMeasuredWidth() + i13 > View.MeasureSpec.getSize(i10)) {
-                            i14 = org.telegram.messenger.q.C(8.0f, getChildAt(i15).getMeasuredHeight(), i14);
+                            i14 = org.telegram.messenger.g0.C(8.0f, getChildAt(i15).getMeasuredHeight(), i14);
                             i13 = 0;
                         }
-                        i13 = org.telegram.messenger.q.C(16.0f, getChildAt(i15).getMeasuredWidth(), i13);
+                        i13 = org.telegram.messenger.g0.C(16.0f, getChildAt(i15).getMeasuredWidth(), i13);
                         i12 = getChildAt(i15).getMeasuredHeight() + i14;
                     }
                 }
@@ -245,7 +245,7 @@ public final class i4 extends FrameLayout {
         textView.setText(str);
         d6Var2 = ((org.telegram.ui.ActionBar.f3) j31Var).resourcesProvider;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var2));
-        com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
         addView(textView, w7.z5.a(-2.0f, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f, -2, z10 ? 5 : 3));
         x90 x90Var = new x90(getContext(), null);
         x90Var.setText(charSequence);
@@ -281,7 +281,7 @@ public final class i4 extends FrameLayout {
         textView.setText(str);
         d6Var2 = ((org.telegram.ui.ActionBar.f3) v21Var).resourcesProvider;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var2));
-        com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
         addView(textView, w7.z5.a(-2.0f, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f, -2, z10 ? 5 : 3));
         x90 x90Var = new x90(getContext(), null);
         x90Var.setText(charSequence);

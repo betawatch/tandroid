@@ -16,7 +16,7 @@ import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xd0 extends org.telegram.ui.Components.ow0 {
     public final EditTextBoldCursor a;
@@ -59,7 +59,7 @@ public final class xd0 extends org.telegram.ui.Components.ow0 {
                 addView(frameLayout, w7.z5.e(-1, -2, 1));
                 TextView textView = new TextView(context);
                 this.d = textView;
-                com.google.android.gms.internal.cast.a6.m(18.0f, 1, textView);
+                com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView);
                 textView.setText(LocaleController.getString(R.string.YourPasswordHeader));
                 textView.setGravity(17);
                 textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -103,7 +103,7 @@ public final class xd0 extends org.telegram.ui.Components.ow0 {
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 frameLayout2.addView(textView3, w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 32.0f, -1, 80));
                 addView(frameLayout2, w7.z5.q(-1, -1, 80));
-                m.g3.r(textView3);
+                m.g3.i(textView3);
                 textView3.setOnClickListener(new org.telegram.ui.Components.g51(29, this, context));
             }
         }
@@ -112,7 +112,7 @@ public final class xd0 extends org.telegram.ui.Components.ow0 {
         addView(frameLayout, w7.z5.e(-1, -2, 1));
         TextView textView4 = new TextView(context);
         this.d = textView4;
-        com.google.android.gms.internal.cast.a6.m(18.0f, 1, textView4);
+        com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView4);
         textView4.setText(LocaleController.getString(R.string.YourPasswordHeader));
         textView4.setGravity(17);
         textView4.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -156,7 +156,7 @@ public final class xd0 extends org.telegram.ui.Components.ow0 {
         FrameLayout frameLayout22 = new FrameLayout(context);
         frameLayout22.addView(textView32, w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 32.0f, -1, 80));
         addView(frameLayout22, w7.z5.q(-1, -1, 80));
-        m.g3.r(textView32);
+        m.g3.i(textView32);
         textView32.setOnClickListener(new org.telegram.ui.Components.g51(29, this, context));
     }
 

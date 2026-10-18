@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -186,7 +186,7 @@ public class SharedConfig {
     public static boolean useThreeLinesLayout;
     public static boolean walletUseFingerprintLock;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -207,17 +207,17 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
@@ -1279,8 +1279,8 @@ public class SharedConfig {
             i12 = (i11 < 8 || memoryClass <= 160 || (ceil != -1 && ceil <= 2055) || (ceil == -1 && i11 == 8 && i10 <= 23)) ? 1 : 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder m10 = i0.a.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
-            i0.a.w(m10, ceil, ", memoryClass = ", memoryClass, ", android version ");
+            StringBuilder m10 = i2.d.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
+            i2.d.w(m10, ceil, ", memoryClass = ", memoryClass, ", android version ");
             m10.append(i10);
             m10.append(", manufacture ");
             m10.append(Build.MANUFACTURER);

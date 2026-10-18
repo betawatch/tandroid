@@ -21,7 +21,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d11;
 import org.telegram.ui.u10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class BotFullscreenButtons extends View {
     private final org.telegram.ui.Components.f6 animatedBack;
@@ -65,7 +65,7 @@ public class BotFullscreenButtons extends View {
     private Drawable verifiedForeground;
     public WebView webView;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class OptionsIcon extends Drawable {
         private final org.telegram.ui.Components.f6 animatedDownloading;
         private final Paint downloadPaint;
@@ -306,7 +306,7 @@ public class BotFullscreenButtons extends View {
             }
             RenderNode c10 = b.c(this.parentRenderNode);
             f10 = 16.0f;
-            this.blurNode.setPosition(0, 0, q.b(16.0f, c10.getWidth(), 1), Math.max(1, (int) Math.min(this.insets.top + AndroidUtilities.dp(46.0f), c10.getHeight())));
+            this.blurNode.setPosition(0, 0, g0.b(16.0f, c10.getWidth(), 1), Math.max(1, (int) Math.min(this.insets.top + AndroidUtilities.dp(46.0f), c10.getHeight())));
             RecordingCanvas beginRecording = this.blurNode.beginRecording();
             beginRecording.translate(-AndroidUtilities.dp(8.0f), 0.0f);
             beginRecording.drawRenderNode(c10);
@@ -346,7 +346,7 @@ public class BotFullscreenButtons extends View {
             f13 = 1.0f;
         } else {
             canvas2.save();
-            canvas2.translate(com.google.android.gms.internal.cast.a6.D(1.0f, e7, min, this.leftMenu.left + AndroidUtilities.dp(30.0f)), this.leftMenu.centerY());
+            canvas2.translate(com.google.android.gms.internal.play_billing.k3.D(1.0f, e7, min, this.leftMenu.left + AndroidUtilities.dp(30.0f)), this.leftMenu.centerY());
             d11 d11Var2 = this.previewText;
             d11Var2.p = ((this.leftMenu.right - AndroidUtilities.dp(this.verifiedBackground != null ? 30.0f : f11)) - (this.leftMenu.left + AndroidUtilities.dp(30.0f))) + 2.0f;
             f13 = 1.0f;

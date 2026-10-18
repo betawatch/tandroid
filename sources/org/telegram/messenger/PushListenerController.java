@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class PushListenerController {
     public static final int NOTIFICATION_ID = 1;
@@ -31,7 +31,7 @@ public class PushListenerController {
     public static final int PUSH_TYPE_HUAWEI = 13;
     private static CountDownLatch countDownLatch = new CountDownLatch(1);
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static final class GooglePushListenerServiceProvider implements IPushListenerServiceProvider {
         public static final GooglePushListenerServiceProvider INSTANCE = new GooglePushListenerServiceProvider();
         private Boolean hasServices;
@@ -70,7 +70,7 @@ public class PushListenerController {
                 firebaseMessaging.getClass();
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
                 firebaseMessaging.f.execute(new ci.v7(8, firebaseMessaging, taskCompletionSource));
-                taskCompletionSource.getTask().addOnCompleteListener(new e0(this, 11));
+                taskCompletionSource.getTask().addOnCompleteListener(new d0(this, 11));
             } catch (Throwable th2) {
                 FileLog.e(th2);
             }
@@ -113,7 +113,7 @@ public class PushListenerController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public interface IPushListenerServiceProvider {
         String getLogTitle();
 
@@ -124,7 +124,7 @@ public class PushListenerController {
         void onRequestPushToken();
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PushType {
     }

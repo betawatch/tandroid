@@ -45,7 +45,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0, org.telegram.ui.Components.kk0, org.telegram.ui.Components.e5, LanguageDetector.StringCallback, a5, org.telegram.ui.ActionBar.a2, MessagesStorage.LongCallback, org.telegram.ui.Components.xl0, MessagesController.NewMessageCallback, xx, jf1, org.telegram.ui.Components.voip.g3, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -124,7 +124,7 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
         } else {
             i11 = 0;
         }
-        actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().f(iArr[0], org.telegram.messenger.q.C(52.0f, i11, i10), true);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().f(iArr[0], org.telegram.messenger.g0.C(52.0f, i11, i10), true);
     }
 
     @Override // org.telegram.ui.a5
@@ -226,7 +226,7 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
                     tL_channels_toggleUsername.username = tL_username.username;
                     boolean z10 = tL_username.active;
                     tL_channels_toggleUsername.active = !z10;
-                    yoVar.getConnectionsManager().sendRequest(tL_channels_toggleUsername, new ei.s1(voVar, tL_channels_toggleUsername, tL_username, z10, 3));
+                    yoVar.getConnectionsManager().sendRequest(tL_channels_toggleUsername, new ai.g4(voVar, tL_channels_toggleUsername, tL_username, z10, 4));
                     yoVar.P.add(tL_username.username);
                     ((ra) view).setLoading(true);
                 }
@@ -333,13 +333,13 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
 
     @Override // org.telegram.messenger.MessagesController.NewMessageCallback
     public boolean onMessageReceived(TLRPC.Message message) {
-        fo0 fo0Var = (fo0) this.b;
+        go0 go0Var = (go0) this.b;
         org.telegram.ui.ActionBar.d5 d5Var = (org.telegram.ui.ActionBar.d5) this.c;
         Activity activity = (Activity) this.d;
-        if (MessageObject.getPeerId(message.peer_id) != fo0Var.l0.id || !(message.action instanceof TLRPC.TL_messageActionPaymentSent)) {
+        if (MessageObject.getPeerId(message.peer_id) != go0Var.l0.id || !(message.action instanceof TLRPC.TL_messageActionPaymentSent)) {
             return false;
         }
-        AndroidUtilities.runOnUIThread(new gn0(fo0Var, d5Var, activity, message, 0));
+        AndroidUtilities.runOnUIThread(new hn0(go0Var, d5Var, activity, message, 0));
         return true;
     }
 
@@ -370,10 +370,10 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
             f3Var.dismiss();
             ai1.c = null;
         }
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.wh.i(1, context, resourceProvider, false);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.kk.i(1, context, resourceProvider, false);
         FrameLayout frameLayout = new FrameLayout(context);
         i12.customView = frameLayout;
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         frameLayout.addView(e, w7.z5.e(-1, -1, 119));
         TextView b10 = w7.d6.b(context, 20.0f, org.telegram.ui.ActionBar.h6.j5, true, resourceProvider);
         b10.setGravity(17);
@@ -391,7 +391,7 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
             i10++;
         }
         e.addView(linearLayout, w7.z5.t(-2, -2, 49, 32, 12, 32, 12));
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, resourceProvider, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, resourceProvider, true);
         f7.setText(LocaleController.getString(R.string.WearAuthEmojisLogIn));
         e.addView(f7, w7.z5.t(-1, 48, 7, 12, 12, 12, 8));
         int i13 = org.telegram.ui.ActionBar.h6.a7;
@@ -399,7 +399,7 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
         i12.fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(i13, resourceProvider));
         ai1.c = i12;
         i12.show();
-        f7.setOnClickListener(new ai.ga(f7, i11, i12, 19));
+        f7.setOnClickListener(new ai.ha(f7, i11, i12, 19));
     }
 
     @Override // org.telegram.messenger.MessagesStorage.LongCallback

@@ -1,23 +1,23 @@
 package x2;
 
-import u2.r1;
+import u2.q1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class r {
     public final int a;
     public final int[] b;
-    public final r1[] c;
+    public final q1[] c;
     public final int[] d;
     public final int[][][] e;
-    public final r1 f;
+    public final q1 f;
 
-    public r(int[] iArr, r1[] r1VarArr, int[] iArr2, int[][][] iArr3, r1 r1Var) {
+    public r(int[] iArr, q1[] q1VarArr, int[] iArr2, int[][][] iArr3, q1 q1Var) {
         this.b = iArr;
-        this.c = r1VarArr;
+        this.c = q1VarArr;
         this.e = iArr3;
         this.d = iArr2;
-        this.f = r1Var;
+        this.f = q1Var;
         this.a = iArr.length;
     }
 }

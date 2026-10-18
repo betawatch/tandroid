@@ -28,7 +28,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt implements Runnable {
     public final /* synthetic */ int a;
@@ -112,7 +112,7 @@ public final /* synthetic */ class yt implements Runnable {
                         switch (i15) {
                             case 0:
                                 sy syVar2 = syVar;
-                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.w3(syVar2, arrayList3, runnable, 9));
+                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.w3(syVar2, arrayList3, runnable, 8));
                                 break;
                             default:
                                 tz tzVar4 = syVar.a.F;
@@ -127,7 +127,7 @@ public final /* synthetic */ class yt implements Runnable {
                                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = stickerSets.get(i18);
                                             if (tL_messages_stickerSet3 != null && (stickerSet2 = tL_messages_stickerSet3.set) != null && stickerSet2.title != null && (arrayList5 = tL_messages_stickerSet3.documents) != null && !arrayList5.isEmpty() && !hashSet.contains(Long.valueOf(tL_messages_stickerSet3.set.id))) {
                                                 String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet3.set.title.toLowerCase());
-                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, translitSafe2)) {
+                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
                                                     arrayList6.add(new ky(tL_messages_stickerSet3, tL_messages_stickerSet3.documents));
                                                     hashSet.add(Long.valueOf(tL_messages_stickerSet3.set.id));
                                                 }
@@ -140,7 +140,7 @@ public final /* synthetic */ class yt implements Runnable {
                                             TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
                                             if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet.contains(Long.valueOf(stickerSet.id))) {
                                                 String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title.toLowerCase());
-                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, translitSafe3)) {
+                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe3)) {
                                                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                                                         arrayList4 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                                                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
@@ -173,7 +173,7 @@ public final /* synthetic */ class yt implements Runnable {
                         switch (i16) {
                             case 0:
                                 sy syVar2 = syVar;
-                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.w3(syVar2, arrayList2, runnable, 9));
+                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.w3(syVar2, arrayList2, runnable, 8));
                                 break;
                             default:
                                 tz tzVar4 = syVar.a.F;
@@ -188,7 +188,7 @@ public final /* synthetic */ class yt implements Runnable {
                                             TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = stickerSets.get(i18);
                                             if (tL_messages_stickerSet3 != null && (stickerSet2 = tL_messages_stickerSet3.set) != null && stickerSet2.title != null && (arrayList5 = tL_messages_stickerSet3.documents) != null && !arrayList5.isEmpty() && !hashSet.contains(Long.valueOf(tL_messages_stickerSet3.set.id))) {
                                                 String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet3.set.title.toLowerCase());
-                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, translitSafe2)) {
+                                                if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
                                                     arrayList6.add(new ky(tL_messages_stickerSet3, tL_messages_stickerSet3.documents));
                                                     hashSet.add(Long.valueOf(tL_messages_stickerSet3.set.id));
                                                 }
@@ -201,7 +201,7 @@ public final /* synthetic */ class yt implements Runnable {
                                             TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
                                             if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet.contains(Long.valueOf(stickerSet.id))) {
                                                 String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title.toLowerCase());
-                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, translitSafe3)) {
+                                                if (translitSafe3.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe3)) {
                                                     if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
                                                         arrayList4 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
                                                     } else if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
@@ -223,7 +223,7 @@ public final /* synthetic */ class yt implements Runnable {
                                 break;
                         }
                     }
-                }, new qy(i15, syVar, arrayList), new ai.g3(syVar, str, arrayList, arrayList2, arrayList3, 4));
+                }, new qy(i15, syVar, arrayList), new ai.e3(syVar, str, arrayList, arrayList2, arrayList3, 4));
                 break;
             case 6:
                 ArrayList arrayList4 = (ArrayList) obj;
@@ -280,11 +280,11 @@ public final /* synthetic */ class yt implements Runnable {
                         if (uri != null) {
                             bundle.putParcelable("photoUri", uri);
                         }
-                        org.telegram.ui.wp0 wp0Var = new org.telegram.ui.wp0(bundle);
-                        wp0Var.e = false;
-                        wp0Var.f = false;
-                        wp0Var.c = e50Var;
-                        launchActivity.t0(wp0Var);
+                        org.telegram.ui.xp0 xp0Var = new org.telegram.ui.xp0(bundle);
+                        xp0Var.e = false;
+                        xp0Var.f = false;
+                        xp0Var.c = e50Var;
+                        launchActivity.t0(xp0Var);
                         break;
                     } else {
                         break;
@@ -335,7 +335,7 @@ public final /* synthetic */ class yt implements Runnable {
                     break;
                 } else {
                     ArrayList arrayList6 = f60Var2.A0;
-                    arrayList6.add((Bitmap) i0.a.h(1, arrayList6));
+                    arrayList6.add((Bitmap) i2.d.h(1, arrayList6));
                     break;
                 }
                 break;

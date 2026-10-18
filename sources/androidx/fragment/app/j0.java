@@ -8,7 +8,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.DesugarCollections;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import m.g3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public final c0 A;
@@ -1295,7 +1295,7 @@ public abstract class j0 {
                 }
                 aVar.c(1);
                 if (K(2)) {
-                    StringBuilder l4 = i0.a.l(i15, "restoreAllState: back stack #", " (index ");
+                    StringBuilder l4 = i2.d.l(i15, "restoreAllState: back stack #", " (index ");
                     l4.append(aVar.s);
                     l4.append("): ");
                     l4.append(aVar);
@@ -1425,7 +1425,7 @@ public abstract class j0 {
                 for (i10 = 0; i10 < size2; i10++) {
                     bVarArr[i10] = new b((a) this.d.get(i10));
                     if (K(2)) {
-                        StringBuilder l4 = i0.a.l(i10, "saveAllState: adding back stack #", ": ");
+                        StringBuilder l4 = i2.d.l(i10, "saveAllState: adding back stack #", ": ");
                         l4.append(this.d.get(i10));
                         Log.v("FragmentManager", l4.toString());
                     }
@@ -1452,10 +1452,10 @@ public abstract class j0 {
             l0Var.n = new ArrayList(this.F);
             bundle2.putParcelable("state", l0Var);
             for (String str2 : this.m.keySet()) {
-                bundle2.putBundle(r.c.g("result_", str2), (Bundle) this.m.get(str2));
+                bundle2.putBundle(r4.c.h("result_", str2), (Bundle) this.m.get(str2));
             }
             for (String str3 : hashMap2.keySet()) {
-                bundle2.putBundle(r.c.g("fragment_", str3), (Bundle) hashMap2.get(str3));
+                bundle2.putBundle(r4.c.h("fragment_", str3), (Bundle) hashMap2.get(str3));
             }
         } else if (K(2)) {
             Log.v("FragmentManager", "saveAllState: no fragments!");
@@ -1559,10 +1559,10 @@ public abstract class j0 {
         u uVar3 = this.w;
         if (uVar3 != null) {
             androidx.activity.h hVar = uVar3.e.w;
-            String g11 = r.c.g("FragmentManager:", sVar != 0 ? a1.g.s(new StringBuilder(), sVar.e, ":") : "");
-            this.C = hVar.d(r.c.u(g11, "StartActivityForResult"), new e0(2), new ag.b(this, 3));
-            this.D = hVar.d(r.c.u(g11, "StartIntentSenderForResult"), new e0(0), new a6.m(this, 7));
-            this.E = hVar.d(r.c.u(g11, "RequestPermissions"), new e0(1), new a6.i(this, 6));
+            String h = r4.c.h("FragmentManager:", sVar != 0 ? a1.g.s(new StringBuilder(), sVar.e, ":") : "");
+            this.C = hVar.d(r4.c.u(h, "StartActivityForResult"), new e0(2), new ag.b(this, 3));
+            this.D = hVar.d(r4.c.u(h, "StartIntentSenderForResult"), new e0(0), new a6.m(this, 7));
+            this.E = hVar.d(r4.c.u(h, "RequestPermissions"), new e0(1), new a6.i(this, 6));
         }
         u uVar4 = this.w;
         if (uVar4 != null) {
@@ -1889,7 +1889,7 @@ public abstract class j0 {
         if (uVar != null) {
             z10 = ((m0) rVar.e).h;
         } else {
-            z10 = a6.s(uVar.b) ? !r1.isChangingConfigurations() : true;
+            z10 = k3.s(uVar.b) ? !r1.isChangingConfigurations() : true;
         }
         if (z10) {
             Iterator it = this.l.values().iterator();
@@ -2117,10 +2117,10 @@ public abstract class j0 {
 
     public final void w(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
         int size;
-        String u10 = r.c.u(str, "    ");
+        String u10 = r4.c.u(str, "    ");
         com.google.firebase.messaging.r rVar = this.c;
         ArrayList arrayList = (ArrayList) rVar.b;
-        String u11 = r.c.u(str, "    ");
+        String u11 = r4.c.u(str, "    ");
         HashMap hashMap = (HashMap) rVar.c;
         if (!hashMap.isEmpty()) {
             printWriter.print(str);

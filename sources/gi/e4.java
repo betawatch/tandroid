@@ -17,7 +17,7 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class e4 extends FrameLayout {
     public static final cw0 b0 = new cw0(new fh.b(11), new fh.b(12));
@@ -220,7 +220,7 @@ public abstract class e4 extends FrameLayout {
             kVar3.c();
         }
         o1.k kVar4 = new o1.k(this, b0, f7);
-        kVar4.u = org.telegram.ui.Cells.t0.l(f7, 1200.0f, 1.0f);
+        kVar4.u = org.telegram.ui.Cells.c1.l(f7, 1200.0f, 1.0f);
         kVar4.a(new b4(0, this, runnable));
         this.G = kVar4;
         kVar4.h();
@@ -320,7 +320,7 @@ public abstract class e4 extends FrameLayout {
             kVar2.c();
         }
         o1.k kVar3 = new o1.k(new o1.j(f10));
-        kVar3.u = org.telegram.ui.Cells.t0.l(f7, 1400.0f, 1.0f);
+        kVar3.u = org.telegram.ui.Cells.c1.l(f7, 1400.0f, 1.0f);
         kVar3.b(new o1.g() { // from class: gi.a4
             @Override // o1.g
             public final void a(o1.h hVar, float f12, float f13) {

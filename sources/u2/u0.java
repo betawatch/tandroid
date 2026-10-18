@@ -1,76 +1,28 @@
 package u2;
 
-import java.io.IOException;
-
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class u0 implements d1 {
+public final class u0 {
     public final int a;
-    public final /* synthetic */ w0 b;
+    public final boolean b;
 
-    public u0(w0 w0Var, int i10) {
-        this.b = w0Var;
+    public u0(int i10, boolean z10) {
         this.a = i10;
+        this.b = z10;
     }
 
-    @Override // u2.d1
-    public final void a() {
-        int i10 = this.a;
-        w0 w0Var = this.b;
-        w0Var.L[i10].C();
-        y2.l lVar = w0Var.x;
-        int y3 = w0Var.d.y3(w0Var.V);
-        IOException iOException = lVar.c;
-        if (iOException != null) {
-            throw iOException;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        y2.h hVar = lVar.b;
-        if (hVar != null) {
-            if (y3 == Integer.MIN_VALUE) {
-                y3 = hVar.a;
-            }
-            IOException iOException2 = hVar.e;
-            if (iOException2 != null && hVar.f > y3) {
-                throw iOException2;
-            }
+        if (obj == null || u0.class != obj.getClass()) {
+            return false;
         }
+        u0 u0Var = (u0) obj;
+        return this.a == u0Var.a && this.b == u0Var.b;
     }
 
-    @Override // u2.d1
-    public final boolean e() {
-        w0 w0Var = this.b;
-        return !w0Var.C() && w0Var.L[this.a].A(w0Var.g0);
-    }
-
-    @Override // u2.d1
-    public final int f(qf.b bVar, h2.h hVar, int i10) {
-        w0 w0Var = this.b;
-        if (w0Var.C()) {
-            return -3;
-        }
-        int i11 = this.a;
-        w0Var.x(i11);
-        int F = w0Var.L[i11].F(bVar, hVar, i10, w0Var.g0);
-        if (F == -3) {
-            w0Var.y(i11);
-        }
-        return F;
-    }
-
-    @Override // u2.d1
-    public final int h(long j10) {
-        w0 w0Var = this.b;
-        if (w0Var.C()) {
-            return 0;
-        }
-        int i10 = this.a;
-        w0Var.x(i10);
-        c1 c1Var = w0Var.L[i10];
-        int x10 = c1Var.x(j10, w0Var.g0);
-        c1Var.L(x10);
-        if (x10 == 0) {
-            w0Var.y(i10);
-        }
-        return x10;
+    public final int hashCode() {
+        return (this.a * 31) + (this.b ? 1 : 0);
     }
 }

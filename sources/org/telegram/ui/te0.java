@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class te0 extends org.telegram.ui.Components.ow0 {
     public final /* synthetic */ fg0 E;
@@ -66,7 +66,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
                 addView(frameLayout, w7.z5.e(-1, -2, 1));
                 TextView textView = new TextView(context);
                 this.c = textView;
-                com.google.android.gms.internal.cast.a6.m(18.0f, 1, textView);
+                com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView);
                 textView.setText(LocaleController.getString(fg0Var.F != 3 ? R.string.EnterNewEmail : R.string.AddEmailTitle));
                 textView.setGravity(17);
                 textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -119,7 +119,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
                 frameLayout2.addView(ea0Var, w7.z5.a(16.0f, 0.0f, 0.0f, 0.0f, 70.0f, -2, 83));
                 ea0Var.setMeasureAfter(textView2);
                 addView(frameLayout2, w7.z5.n(-1, -2));
-                m.g3.r(frameLayout2);
+                m.g3.i(frameLayout2);
                 frameLayout2.setOnClickListener(new y50(this, i11));
             }
         }
@@ -128,7 +128,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
         addView(frameLayout, w7.z5.e(-1, -2, 1));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        com.google.android.gms.internal.cast.a6.m(18.0f, 1, textView3);
+        com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView3);
         textView3.setText(LocaleController.getString(fg0Var.F != 3 ? R.string.EnterNewEmail : R.string.AddEmailTitle));
         textView3.setGravity(17);
         textView3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -181,7 +181,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
         frameLayout22.addView(ea0Var2, w7.z5.a(16.0f, 0.0f, 0.0f, 0.0f, 70.0f, -2, 83));
         ea0Var2.setMeasureAfter(textView22);
         addView(frameLayout22, w7.z5.n(-1, -2));
-        m.g3.r(frameLayout22);
+        m.g3.i(frameLayout22);
         frameLayout22.setOnClickListener(new y50(this, i112));
     }
 

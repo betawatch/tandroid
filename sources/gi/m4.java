@@ -1,6 +1,6 @@
 package gi;
 
-import ai.tb;
+import ai.ub;
 import android.text.style.CharacterStyle;
 import java.util.ArrayList;
 import ki.c6;
@@ -15,13 +15,12 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +56,7 @@ public final /* synthetic */ class m4 implements Runnable {
             case 0:
                 TLRPC.User user = (TLRPC.User) this.d;
                 TLRPC.Document document = (TLRPC.Document) this.e;
-                r4.g(this.b, user, document, this.c, new h4((org.telegram.ui.web.q) this.f, document, 0));
+                r4.g(this.b, user, document, this.c, new h4((org.telegram.ui.web.r) this.f, document, 0));
                 break;
             case 1:
                 hg.t1 t1Var = (hg.t1) this.d;
@@ -68,7 +67,7 @@ public final /* synthetic */ class m4 implements Runnable {
                 int length = lowerCase.length();
                 int i14 = this.b;
                 if (length == 0) {
-                    AndroidUtilities.runOnUIThread(new tb(t1Var, i14, new ArrayList(), new ArrayList(), t1Var.H, 4));
+                    AndroidUtilities.runOnUIThread(new ub(t1Var, i14, new ArrayList(), new ArrayList(), t1Var.H, 4));
                     break;
                 } else {
                     String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -115,7 +114,7 @@ public final /* synthetic */ class m4 implements Runnable {
                                     arrayList5.add(s1Var2.b);
                                 }
                             }
-                            AndroidUtilities.runOnUIThread(new tb(t1Var, i21, arrayList3, arrayList4, arrayList5, 4));
+                            AndroidUtilities.runOnUIThread(new ub(t1Var, i21, arrayList3, arrayList4, arrayList5, 4));
                             break;
                         } else {
                             int i24 = i15;
@@ -145,7 +144,7 @@ public final /* synthetic */ class m4 implements Runnable {
                                         i11 = i28;
                                         for (int i29 = i19; i29 < 3; i29++) {
                                             String str3 = strArr2[i29];
-                                            if (str3 != null && (str3.startsWith(str2) || wh.w(" ", str2, str3))) {
+                                            if (str3 != null && (str3.startsWith(str2) || org.telegram.messenger.g0.w(" ", str2, str3))) {
                                                 i27 = i24;
                                                 String publicUsername = UserObject.getPublicUsername(user2);
                                                 i13 = (i27 == 0 || publicUsername == null || !publicUsername.startsWith(str2)) ? i27 : 2;
@@ -301,13 +300,13 @@ public final /* synthetic */ class m4 implements Runnable {
         }
     }
 
-    public /* synthetic */ m4(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.q qVar) {
+    public /* synthetic */ m4(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.r rVar) {
         this.a = 0;
         this.b = i10;
         this.d = user;
         this.e = document;
         this.c = i11;
-        this.f = qVar;
+        this.f = rVar;
     }
 
     public /* synthetic */ m4(Object obj, Object obj2, int i10, Object obj3, int i11, int i12) {

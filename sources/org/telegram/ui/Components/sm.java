@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class sm extends ql0 {
     public final Context c;
@@ -69,7 +69,7 @@ public final class sm extends ql0 {
                     M = (MediaController.PhotoEntry) arrayList2.get(0);
                 }
             } else if (!chatAttachAlertPhotoLayout.T0.photos.isEmpty()) {
-                M = (MediaController.PhotoEntry) i0.a.h(1, chatAttachAlertPhotoLayout.T0.photos);
+                M = (MediaController.PhotoEntry) i2.d.h(1, chatAttachAlertPhotoLayout.T0.photos);
             }
         }
         if (M == null) {
@@ -134,7 +134,7 @@ public final class sm extends ql0 {
             s5Var.setClipToOutline(true);
         }
         s5Var.setFastScrollDelegate(new s(this, 22));
-        s5Var.setDelegate(new s2(9, this, s5Var));
+        s5Var.setDelegate(new q2(10, this, s5Var));
         return new sl0(s5Var);
     }
 
@@ -324,7 +324,7 @@ public final class sm extends ql0 {
             return new sl0(l5Var);
         }
         if (i10 == 2) {
-            return new sl0(new ai.hc(this, context, 14));
+            return new sl0(new ai.ic(this, context, 14));
         }
         if (i10 == 4) {
             tiVar.getClass();
@@ -373,7 +373,7 @@ public final class sm extends ql0 {
         m5Var.addView(imageView2, w7.z5.a(44.0f, 5.0f, 0.0f, 0.0f, 27.0f, 44, 17));
         TextView textView = new TextView(context);
         m5Var.c = textView;
-        org.telegram.messenger.wh.o(org.telegram.ui.ActionBar.h6.ca, d6Var, textView, 1, 12.0f);
+        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.ca, d6Var, textView, 1, 12.0f);
         textView.setGravity(17);
         m5Var.addView(textView, w7.z5.a(-2.0f, 5.0f, 13.0f, 5.0f, 0.0f, -2, 17));
         m5Var.d = AndroidUtilities.dp(80.0f);

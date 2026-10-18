@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.LiteMode;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b4 {
     public float a;
@@ -34,8 +34,8 @@ public final class b4 {
         baVar.b();
         baVar2.b();
         int i12 = org.telegram.ui.ActionBar.h6.qg;
-        baVar.d.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i12, false), 38));
-        baVar2.d.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i12, false), 38));
+        baVar.d.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i12, false), 38));
+        baVar2.d.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i12, false), 38));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
@@ -62,7 +62,7 @@ public final class b4 {
                             if (f13 > 1.0f) {
                                 this.j = 1.0f;
                             }
-                            baVar.d.setColor(i0.b.o(i0.b.f(this.j, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.qg, false), org.telegram.ui.ActionBar.h6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.h6.sg : org.telegram.ui.ActionBar.h6.pg, false)), 38));
+                            baVar.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.qg, false), org.telegram.ui.ActionBar.h6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.h6.sg : org.telegram.ui.ActionBar.h6.pg, false)), 38));
                         }
                     }
                     if (i10 == 1) {
@@ -75,7 +75,7 @@ public final class b4 {
                             }
                         }
                     }
-                    baVar.d.setColor(i0.b.o(i0.b.f(this.j, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.qg, false), org.telegram.ui.ActionBar.h6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.h6.sg : org.telegram.ui.ActionBar.h6.pg, false)), 38));
+                    baVar.d.setColor(i0.a.o(i0.a.f(this.j, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.qg, false), org.telegram.ui.ActionBar.h6.x0(null, this.i != 2 ? org.telegram.ui.ActionBar.h6.sg : org.telegram.ui.ActionBar.h6.pg, false)), 38));
                 }
                 baVar.e(this.a, 1.0f);
                 Paint paint = baVar.d;
@@ -95,7 +95,7 @@ public final class b4 {
     public final float b() {
         float f7 = (this.a * 0.2f) + 0.9f;
         float interpolation = bs.g.getInterpolation(this.d);
-        return com.google.android.gms.internal.cast.a6.x(1.0f, interpolation, 1.0f, f7 * interpolation);
+        return com.google.android.gms.internal.play_billing.k3.y(1.0f, interpolation, 1.0f, f7 * interpolation);
     }
 
     public final void c(double d) {

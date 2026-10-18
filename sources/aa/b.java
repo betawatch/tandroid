@@ -89,7 +89,7 @@ import z9.z;
 import z9.z0;
 import z9.z1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b {
     public static final t1 a;
@@ -97,83 +97,83 @@ public final class b {
     static {
         d dVar = new d();
         z9.d dVar2 = z9.d.a;
-        dVar.a(e2.class, dVar2);
-        dVar.a(a0.class, dVar2);
+        dVar.d(e2.class, dVar2);
+        dVar.d(a0.class, dVar2);
         j jVar = j.a;
-        dVar.a(d2.class, jVar);
-        dVar.a(h0.class, jVar);
+        dVar.d(d2.class, jVar);
+        dVar.d(h0.class, jVar);
         g gVar = g.a;
-        dVar.a(l1.class, gVar);
-        dVar.a(i0.class, gVar);
+        dVar.d(l1.class, gVar);
+        dVar.d(i0.class, gVar);
         h hVar = h.a;
-        dVar.a(k1.class, hVar);
-        dVar.a(j0.class, hVar);
+        dVar.d(k1.class, hVar);
+        dVar.d(j0.class, hVar);
         z zVar = z.a;
-        dVar.a(c2.class, zVar);
-        dVar.a(a1.class, zVar);
+        dVar.d(c2.class, zVar);
+        dVar.d(a1.class, zVar);
         y yVar = y.a;
-        dVar.a(b2.class, yVar);
-        dVar.a(z0.class, yVar);
+        dVar.d(b2.class, yVar);
+        dVar.d(z0.class, yVar);
         i iVar = i.a;
-        dVar.a(m1.class, iVar);
-        dVar.a(k0.class, iVar);
+        dVar.d(m1.class, iVar);
+        dVar.d(k0.class, iVar);
         t tVar = t.a;
-        dVar.a(a2.class, tVar);
-        dVar.a(l0.class, tVar);
+        dVar.d(a2.class, tVar);
+        dVar.d(l0.class, tVar);
         k kVar = k.a;
-        dVar.a(u1.class, kVar);
-        dVar.a(m0.class, kVar);
+        dVar.d(u1.class, kVar);
+        dVar.d(m0.class, kVar);
         m mVar = m.a;
-        dVar.a(s1.class, mVar);
-        dVar.a(n0.class, mVar);
+        dVar.d(s1.class, mVar);
+        dVar.d(n0.class, mVar);
         p pVar = p.a;
-        dVar.a(r1.class, pVar);
-        dVar.a(r0.class, pVar);
+        dVar.d(r1.class, pVar);
+        dVar.d(r0.class, pVar);
         q qVar = q.a;
-        dVar.a(q1.class, qVar);
-        dVar.a(s0.class, qVar);
+        dVar.d(q1.class, qVar);
+        dVar.d(s0.class, qVar);
         n nVar = n.a;
-        dVar.a(o1.class, nVar);
-        dVar.a(p0.class, nVar);
+        dVar.d(o1.class, nVar);
+        dVar.d(p0.class, nVar);
         z9.b bVar = z9.b.a;
-        dVar.a(g1.class, bVar);
-        dVar.a(b0.class, bVar);
+        dVar.d(g1.class, bVar);
+        dVar.d(b0.class, bVar);
         z9.a aVar = z9.a.a;
-        dVar.a(f1.class, aVar);
-        dVar.a(c0.class, aVar);
+        dVar.d(f1.class, aVar);
+        dVar.d(c0.class, aVar);
         o oVar = o.a;
-        dVar.a(p1.class, oVar);
-        dVar.a(q0.class, oVar);
+        dVar.d(p1.class, oVar);
+        dVar.d(q0.class, oVar);
         l lVar = l.a;
-        dVar.a(n1.class, lVar);
-        dVar.a(o0.class, lVar);
+        dVar.d(n1.class, lVar);
+        dVar.d(o0.class, lVar);
         c cVar = c.a;
-        dVar.a(h1.class, cVar);
-        dVar.a(d0.class, cVar);
+        dVar.d(h1.class, cVar);
+        dVar.d(d0.class, cVar);
         r rVar = r.a;
-        dVar.a(z9.t1.class, rVar);
-        dVar.a(t0.class, rVar);
+        dVar.d(z9.t1.class, rVar);
+        dVar.d(t0.class, rVar);
         s sVar = s.a;
-        dVar.a(v1.class, sVar);
-        dVar.a(u0.class, sVar);
+        dVar.d(v1.class, sVar);
+        dVar.d(u0.class, sVar);
         u uVar = u.a;
-        dVar.a(w1.class, uVar);
-        dVar.a(v0.class, uVar);
+        dVar.d(w1.class, uVar);
+        dVar.d(v0.class, uVar);
         x xVar = x.a;
-        dVar.a(z1.class, xVar);
-        dVar.a(y0.class, xVar);
+        dVar.d(z1.class, xVar);
+        dVar.d(y0.class, xVar);
         v vVar = v.a;
-        dVar.a(y1.class, vVar);
-        dVar.a(w0.class, vVar);
+        dVar.d(y1.class, vVar);
+        dVar.d(w0.class, vVar);
         w wVar = w.a;
-        dVar.a(x1.class, wVar);
-        dVar.a(x0.class, wVar);
+        dVar.d(x1.class, wVar);
+        dVar.d(x0.class, wVar);
         e eVar = e.a;
-        dVar.a(j1.class, eVar);
-        dVar.a(e0.class, eVar);
+        dVar.d(j1.class, eVar);
+        dVar.d(e0.class, eVar);
         f fVar = f.a;
-        dVar.a(i1.class, fVar);
-        dVar.a(f0.class, fVar);
+        dVar.d(i1.class, fVar);
+        dVar.d(f0.class, fVar);
         dVar.d = true;
         a = new t1(dVar, 4);
     }
@@ -375,7 +375,7 @@ public final class b {
                         str = str.concat(" libraryName");
                     }
                     if (str6 == null) {
-                        str = r.c.u(str, " buildId");
+                        str = r4.c.u(str, " buildId");
                     }
                     if (!str.isEmpty()) {
                         throw new IllegalStateException("Missing required properties:".concat(str));
@@ -568,7 +568,7 @@ public final class b {
                         str10 = str10.concat(" importance");
                     }
                     if (list == null) {
-                        str10 = r.c.u(str10, " frames");
+                        str10 = r4.c.u(str10, " frames");
                     }
                     if (!str10.isEmpty()) {
                         throw new IllegalStateException("Missing required properties:".concat(str10));
@@ -644,7 +644,7 @@ public final class b {
                         str = str.concat(" size");
                     }
                     if (str11 == null) {
-                        str = r.c.u(str, " name");
+                        str = r4.c.u(str, " name");
                     }
                     if (!str.isEmpty()) {
                         throw new IllegalStateException("Missing required properties:".concat(str));
@@ -1034,7 +1034,7 @@ public final class b {
                                                 str4 = str4.concat(" code");
                                             }
                                             if (l4 == null) {
-                                                str4 = r.c.u(str4, " address");
+                                                str4 = r4.c.u(str4, " address");
                                             }
                                             if (!str4.isEmpty()) {
                                                 throw new IllegalStateException("Missing required properties:".concat(str4));
@@ -1200,7 +1200,7 @@ public final class b {
             str3 = str3.concat(" frames");
         }
         if (num == null) {
-            str3 = r.c.u(str3, " overflowCount");
+            str3 = r4.c.u(str3, " overflowCount");
         }
         if (str3.isEmpty()) {
             return new p0(str, str2, list, p0Var, num.intValue());

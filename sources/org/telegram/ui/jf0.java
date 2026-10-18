@@ -41,7 +41,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class jf0 extends org.telegram.ui.Components.ow0 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int t0 = 0;
@@ -130,7 +130,7 @@ public final class jf0 extends org.telegram.ui.Components.ow0 implements Notific
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         TextView textView2 = new TextView(context);
         this.r = textView2;
-        com.google.android.gms.internal.cast.a6.m(18.0f, 1, textView2);
+        com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView2);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         textView2.setGravity(49);
@@ -153,11 +153,11 @@ public final class jf0 extends org.telegram.ui.Components.ow0 implements Notific
             textView3.setTextSize(1, 14.0f);
             textView3.setGravity(1);
             textView3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            org.telegram.messenger.q.n(R.string.MissedCallDescriptionSubtitle, textView3);
+            org.telegram.messenger.g0.n(R.string.MissedCallDescriptionSubtitle, textView3);
             addView(textView3, w7.z5.t(-1, -2, 49, 36, 16, 36, 0));
             gf0 gf0Var = new gf0(this, context, 0);
             this.f = gf0Var;
-            LinearLayout e = org.telegram.messenger.wh.e(context, 0);
+            LinearLayout e = org.telegram.messenger.kk.e(context, 0);
             TextView textView4 = new TextView(context);
             this.I = textView4;
             textView4.setTextSize(1, 20.0f);
@@ -173,7 +173,7 @@ public final class jf0 extends org.telegram.ui.Components.ow0 implements Notific
             textView5.setTextSize(1, 14.0f);
             textView5.setGravity(1);
             textView5.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-            org.telegram.messenger.q.n(R.string.MissedCallDescriptionSubtitle2, textView5);
+            org.telegram.messenger.g0.n(R.string.MissedCallDescriptionSubtitle2, textView5);
             addView(textView5, w7.z5.t(-1, -2, 49, 36, 28, 36, 12));
         } else {
             if (i10 == 3) {
@@ -473,7 +473,7 @@ public final class jf0 extends org.telegram.ui.Components.ow0 implements Notific
                 }
                 TextView textView7 = new TextView(context);
                 this.E = textView7;
-                textView7.setLineSpacing(org.telegram.ui.Cells.t0.f(2.0f, R.string.WrongCode, textView7), 1.0f);
+                textView7.setLineSpacing(org.telegram.ui.Cells.c1.e(2.0f, R.string.WrongCode, textView7), 1.0f);
                 textView7.setTextSize(1, 15.0f);
                 textView7.setGravity(49);
                 textView7.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
@@ -485,7 +485,7 @@ public final class jf0 extends org.telegram.ui.Components.ow0 implements Notific
                 } else {
                     viewGroup.addView(nd0Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 32.0f, -2, 81));
                 }
-                m.g3.r(nd0Var);
+                m.g3.i(nd0Var);
                 if (i10 == 15) {
                     this.x.setOnClickListener(new ef0(0, this, context));
                     return;
@@ -684,14 +684,14 @@ public final class jf0 extends org.telegram.ui.Components.ow0 implements Notific
         }
         TextView textView72 = new TextView(context);
         this.E = textView72;
-        textView72.setLineSpacing(org.telegram.ui.Cells.t0.f(2.0f, R.string.WrongCode, textView72), 1.0f);
+        textView72.setLineSpacing(org.telegram.ui.Cells.c1.e(2.0f, R.string.WrongCode, textView72), 1.0f);
         textView72.setTextSize(1, 15.0f);
         textView72.setGravity(49);
         textView72.setPadding(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
         nd0Var2.addView(textView72, w7.z5.e(-2, -2, 17));
         if (viewGroup != null) {
         }
-        m.g3.r(nd0Var2);
+        m.g3.i(nd0Var2);
         if (i10 == 15) {
         }
     }
@@ -1137,7 +1137,7 @@ public final class jf0 extends org.telegram.ui.Components.ow0 implements Notific
             bundle.putString("catchedPhone", str);
         }
         if (this.H != null) {
-            bundle.putBundle(i0.a.j(i10, "smsview_params_"), this.H);
+            bundle.putBundle(i2.d.j(i10, "smsview_params_"), this.H);
         }
         int i11 = this.V;
         if (i11 != 0) {
@@ -1434,7 +1434,7 @@ public final class jf0 extends org.telegram.ui.Components.ow0 implements Notific
                     if (this.f0 != 11) {
                         String str3 = this.k0;
                         for (int i31 = 0; i31 < this.m0; i31++) {
-                            str3 = r.c.u(str3, "0");
+                            str3 = r4.c.u(str3, "0");
                         }
                         String b11 = jf.b.c().b("+" + str3);
                         for (int i32 = 0; i32 < this.m0; i32++) {

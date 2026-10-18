@@ -20,7 +20,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g70 extends hm0 {
     public final /* synthetic */ l70 c;
@@ -264,8 +264,8 @@ public final class g70 extends hm0 {
             if (i25 == 2592000) {
                 StringBuilder sb4 = new StringBuilder();
                 sb4.append(LocaleController.formatString(R.string.LinkRevenuePrice, Long.valueOf(tL_starsSubscriptionPricing2.amount)));
-                sb4.append(i24 > 0 ? i0.a.j(i24, " x ") : "");
-                textView2.setText(ai.ld.Y0(false, sb4.toString(), 0.8f, null));
+                sb4.append(i24 > 0 ? i2.d.j(i24, " x ") : "");
+                textView2.setText(ai.md.Y0(false, sb4.toString(), 0.8f, null));
                 if (i24 == 0) {
                     formatString = LocaleController.getString(R.string.NoOneSubscribed);
                 } else {
@@ -282,8 +282,8 @@ public final class g70 extends hm0 {
             StringBuilder sb5 = new StringBuilder();
             Locale locale2 = Locale.US;
             sb5.append(String.format(locale2, "⭐%1$d/%2$s", Long.valueOf(tL_starsSubscriptionPricing2.amount), str5));
-            sb5.append(i24 > 0 ? i0.a.j(i24, " x ") : "");
-            textView2.setText(ai.ld.Y0(false, sb5.toString(), 0.8f, null));
+            sb5.append(i24 > 0 ? i2.d.j(i24, " x ") : "");
+            textView2.setText(ai.md.Y0(false, sb5.toString(), 0.8f, null));
             if (i24 == 0) {
                 format = LocaleController.getString(R.string.NoOneSubscribed);
             } else {
@@ -409,7 +409,7 @@ public final class g70 extends hm0 {
                             int i31 = tL_chatInviteImporter.date;
                             TextView textView3 = j70Var.b0;
                             TextView textView4 = j70Var.a0;
-                            SpannableStringBuilder Y0 = ai.ld.Y0(false, "⭐️" + tL_starsSubscriptionPricing.amount, 0.7f, null);
+                            SpannableStringBuilder Y0 = ai.md.Y0(false, "⭐️" + tL_starsSubscriptionPricing.amount, 0.7f, null);
                             int i32 = tL_starsSubscriptionPricing.period;
                             String string = i32 == 2592000 ? LocaleController.getString(R.string.StarsParticipantSubscriptionPerMonth) : i32 == 300 ? "per 5 minutes" : "per each minute";
                             textView4.setText(Y0);
@@ -497,14 +497,14 @@ public final class g70 extends hm0 {
                 view = new un(context, 12);
                 break;
             case 7:
-                view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+                view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 8:
                 h70 h70Var = new h70(context);
                 TextView textView = new TextView(context);
                 h70Var.a = textView;
                 textView.setTextSize(1, 14.0f);
-                com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 1);
+                com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 1);
                 h70Var.addView(textView, w7.z5.a(-2.0f, 60.0f, 0.0f, 60.0f, 0.0f, -1, 16));
                 b10Var = h70Var;
                 view = b10Var;
@@ -517,6 +517,6 @@ public final class g70 extends hm0 {
                 view = new org.telegram.ui.Cells.u3(context, d6Var);
                 break;
         }
-        return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }
 }

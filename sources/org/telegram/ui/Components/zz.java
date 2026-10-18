@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zz extends View {
     public final Paint a;
@@ -21,7 +21,7 @@ public final class zz extends View {
     public d11[] f;
     public RectF[] h;
     public float n;
-    public org.telegram.ui.ho0 r;
+    public org.telegram.ui.io0 r;
     public int s;
 
     public zz(Context context) {
@@ -57,7 +57,7 @@ public final class zz extends View {
         int width = getWidth();
         int height = getHeight();
         float f7 = 4.0f;
-        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.q.D(24.0f, this.f.length, AndroidUtilities.dp(4.0f));
+        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.g0.D(24.0f, this.f.length, AndroidUtilities.dp(4.0f));
         int i10 = 0;
         while (true) {
             d11[] d11VarArr = this.f;
@@ -125,9 +125,9 @@ public final class zz extends View {
         }
         if (i10 >= 0 && i10 != this.s) {
             this.s = i10;
-            org.telegram.ui.ho0 ho0Var = this.r;
-            if (ho0Var != null) {
-                ho0Var.run(Integer.valueOf(i10));
+            org.telegram.ui.io0 io0Var = this.r;
+            if (io0Var != null) {
+                io0Var.run(Integer.valueOf(i10));
             }
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {

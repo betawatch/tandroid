@@ -21,7 +21,7 @@ import java.util.Arrays;
 import v7.q7;
 import w7.x7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class x0 {
     public final TextView a;
@@ -164,9 +164,9 @@ public final class x0 {
         Context context = textView.getContext();
         r a2 = r.a();
         int[] iArr = f.a.h;
-        g3 P = g3.P(context, attributeSet, iArr, i10);
-        r0.i0.i(textView, textView.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
-        TypedArray typedArray = (TypedArray) P.c;
+        g3 K = g3.K(context, attributeSet, iArr, i10);
+        r0.i0.i(textView, textView.getContext(), iArr, attributeSet, (TypedArray) K.c, i10);
+        TypedArray typedArray = (TypedArray) K.c;
         int resourceId3 = typedArray.getResourceId(0, -1);
         if (typedArray.hasValue(3)) {
             this.b = c(context, a2, typedArray.getResourceId(3, 0));
@@ -187,7 +187,7 @@ public final class x0 {
         if (typedArray.hasValue(6)) {
             this.g = c(context, a2, typedArray.getResourceId(6, 0));
         }
-        P.Q();
+        K.L();
         boolean z12 = textView.getTransformationMethod() instanceof PasswordTransformationMethod;
         int[] iArr2 = f.a.w;
         if (resourceId3 != -1) {
@@ -203,7 +203,7 @@ public final class x0 {
             n(context, g3Var);
             str2 = obtainStyledAttributes.hasValue(15) ? obtainStyledAttributes.getString(15) : null;
             str = (i12 < 26 || !obtainStyledAttributes.hasValue(13)) ? null : obtainStyledAttributes.getString(13);
-            g3Var.Q();
+            g3Var.L();
         } else {
             z10 = false;
             z11 = false;
@@ -228,7 +228,7 @@ public final class x0 {
             textView.setTextSize(0, 0.0f);
         }
         n(context, g3Var2);
-        g3Var2.Q();
+        g3Var2.L();
         if (!z12 && z10) {
             textView.setAllCaps(z13);
         }
@@ -420,7 +420,7 @@ public final class x0 {
         if (i11 >= 26 && obtainStyledAttributes.hasValue(13) && (string = obtainStyledAttributes.getString(13)) != null) {
             v0.d(textView, string);
         }
-        g3Var.Q();
+        g3Var.L();
         Typeface typeface = this.l;
         if (typeface != null) {
             textView.setTypeface(typeface, this.j);
@@ -478,7 +478,7 @@ public final class x0 {
                 return;
             }
             if (i10 != 1) {
-                throw new IllegalArgumentException(i0.a.j(i10, "Unknown auto-size text type: "));
+                throw new IllegalArgumentException(i2.d.j(i10, "Unknown auto-size text type: "));
             }
             DisplayMetrics displayMetrics = h1Var.j.getResources().getDisplayMetrics();
             h1Var.k(TypedValue.applyDimension(2, 12.0f, displayMetrics), TypedValue.applyDimension(2, 112.0f, displayMetrics), 1.0f);
@@ -563,12 +563,12 @@ public final class x0 {
             j0Var.b = i16;
             j0Var.c = weakReference;
             try {
-                Typeface H = g3Var.H(i14, this.j, j0Var);
-                if (H != null) {
+                Typeface C = g3Var.C(i14, this.j, j0Var);
+                if (C != null) {
                     if (i11 < 28 || this.k == -1) {
-                        this.l = H;
+                        this.l = C;
                     } else {
-                        this.l = w0.a(Typeface.create(H, 0), this.k, (this.j & 2) != 0);
+                        this.l = w0.a(Typeface.create(C, 0), this.k, (this.j & 2) != 0);
                     }
                 }
                 this.m = this.l == null;

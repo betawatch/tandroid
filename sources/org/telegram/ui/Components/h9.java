@@ -24,7 +24,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class h9 extends Drawable {
     public static final int[][] C = {new int[]{-636796, -1090751, -612560, -35006}, new int[]{-693938, -690388, -11246, -22717}, new int[]{-8160001, -5217281, -36183, -1938945}, new int[]{-16133536, -10560448, -4070106, -8331477}, new int[]{-10569989, -14692629, -12191817, -14683687}, new int[]{-11694593, -13910017, -14622003, -15801871}, new int[]{-439392, -304000, -19910, -98718}};
@@ -157,7 +157,7 @@ public class h9 extends Drawable {
         int width = bounds.width();
         int i10 = org.telegram.ui.ActionBar.h6.J7;
         org.telegram.ui.ActionBar.d6 d6Var = this.z;
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), this.y);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), this.y);
         TextPaint textPaint = this.a;
         textPaint.setColor(o10);
         Paint paint = org.telegram.ui.ActionBar.h6.q0;
@@ -165,8 +165,8 @@ public class h9 extends Drawable {
             x20Var.b(bounds.left, bounds.top, r4 + width, r10 + width);
             paint = this.f.c;
         } else if (this.b) {
-            int o11 = i0.b.o(b(), this.y);
-            int o12 = i0.b.o(c(), this.y);
+            int o11 = i0.a.o(b(), this.y);
+            int o12 = i0.a.o(c(), this.y);
             if (this.v == null || this.s != bounds.height() || this.t != o11 || this.u != o12) {
                 int height = bounds.height();
                 this.s = height;
@@ -178,7 +178,7 @@ public class h9 extends Drawable {
             paint.setAlpha(this.y);
         } else {
             paint.setShader(null);
-            paint.setColor(i0.b.o(b(), this.y));
+            paint.setColor(i0.a.o(b(), this.y));
         }
         canvas.save();
         canvas.translate(bounds.left, bounds.top);
@@ -206,7 +206,7 @@ public class h9 extends Drawable {
         if (i11 == 2) {
             if (this.o != 0.0f) {
                 int i12 = org.telegram.ui.ActionBar.h6.M7;
-                paint.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.w0(i12, d6Var), this.y));
+                paint.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(i12, d6Var), this.y));
                 float f13 = width / 2.0f;
                 canvas.drawCircle(f13, f13, this.o * f13, paint);
                 if (org.telegram.ui.ActionBar.h6.C1) {

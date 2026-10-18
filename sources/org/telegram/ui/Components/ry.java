@@ -24,7 +24,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ry implements MediaDataController.KeywordResultCallback, e5, org.telegram.ui.ActionBar.a2, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback, t5.b, s5.e, e2.j, x2.k {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
     @Override // e2.j
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.c;
-        ((u2.k0) obj).d(aVar.b, (u2.g0) this.d, (u2.c0) this.b);
+        ((u2.j0) obj).d(aVar.b, (u2.f0) this.d, (u2.b0) this.b);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0077  */
@@ -362,7 +362,7 @@ public final /* synthetic */ class ry implements MediaDataController.KeywordResu
             Log.d(c10, "Storing event with priority=" + dVar + ", name=" + str + " for destination " + str2);
         }
         ((Long) gVar.c(new ry(gVar, hVar, iVar, 8))).getClass();
-        aVar.a.U(iVar, 1, false);
+        aVar.a.P(iVar, 1, false);
         return null;
     }
 

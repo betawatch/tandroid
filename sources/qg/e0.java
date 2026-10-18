@@ -20,7 +20,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dw0;
 import v7.f7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public static final bs B = new bs(0.0d, 0.5d, 0.0d, 1.0d);
@@ -142,7 +142,7 @@ public final class e0 {
                                     }
                                     long j11 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((j1) i0.a.h(1, f7));
+                                        arrayList.add((j1) i2.d.h(1, f7));
                                     }
                                     ArrayList f10 = m1.f(arrayList);
                                     j1 b10 = m1.b(f10);
@@ -426,7 +426,7 @@ public final class e0 {
                                     }
                                     long j11 = currentTimeMillis;
                                     if (arrayList.size() == 47) {
-                                        arrayList.add((j1) i0.a.h(1, f7));
+                                        arrayList.add((j1) i2.d.h(1, f7));
                                     }
                                     ArrayList f10 = m1.f(arrayList);
                                     j1 b10 = m1.b(f10);

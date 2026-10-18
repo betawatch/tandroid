@@ -8,11 +8,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-import z7.dg;
-import z7.fe;
-import z7.ng;
+import z7.cg;
+import z7.ee;
+import z7.mg;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class m extends AbstractCollection implements List {
     public final /* synthetic */ int a = 0;
@@ -302,7 +302,7 @@ public class m extends AbstractCollection implements List {
                 return new x7.c(this);
             default:
                 zzb();
-                return new dg(this);
+                return new cg(this);
         }
     }
 
@@ -345,7 +345,7 @@ public class m extends AbstractCollection implements List {
             default:
                 m mVar2 = (m) this.e;
                 if (mVar2 == null) {
-                    ((ng) this.f).c.put(this.b, this.c);
+                    ((mg) this.f).c.put(this.b, this.c);
                     break;
                 } else {
                     mVar2.o();
@@ -372,8 +372,8 @@ public class m extends AbstractCollection implements List {
                 m mVar2 = (m) this.e;
                 if (mVar2 == null) {
                     if (this.c.isEmpty()) {
-                        ng ngVar = (ng) this.f;
-                        ngVar.c.remove(this.b);
+                        mg mgVar = (mg) this.f;
+                        mgVar.c.remove(this.b);
                         break;
                     }
                 } else {
@@ -552,10 +552,10 @@ public class m extends AbstractCollection implements List {
                 if (mVar3 == null) {
                     mVar3 = this;
                 }
-                ng ngVar = (ng) this.h;
+                mg mgVar = (mg) this.h;
                 boolean z12 = subList3 instanceof RandomAccess;
                 Object obj3 = this.b;
-                return z12 ? new fe(ngVar, obj3, subList3, mVar3) : new m(ngVar, obj3, subList3, mVar3);
+                return z12 ? new ee(mgVar, obj3, subList3, mVar3) : new m(mgVar, obj3, subList3, mVar3);
         }
     }
 
@@ -603,7 +603,7 @@ public class m extends AbstractCollection implements List {
                     return;
                 } else {
                     if (this.c.isEmpty()) {
-                        Collection collection2 = (Collection) ((ng) this.f).c.get(this.b);
+                        Collection collection2 = (Collection) ((mg) this.f).c.get(this.b);
                         if (collection2 != null) {
                             this.c = collection2;
                             return;
@@ -615,9 +615,9 @@ public class m extends AbstractCollection implements List {
         }
     }
 
-    public m(ng ngVar, Object obj, List list, m mVar) {
-        this.h = ngVar;
-        this.f = ngVar;
+    public m(mg mgVar, Object obj, List list, m mVar) {
+        this.h = mgVar;
+        this.f = mgVar;
         this.b = obj;
         this.c = list;
         this.e = mVar;
@@ -644,7 +644,7 @@ public class m extends AbstractCollection implements List {
                 return new x7.c(this, i10);
             default:
                 zzb();
-                return new dg(this, i10);
+                return new cg(this, i10);
         }
     }
 

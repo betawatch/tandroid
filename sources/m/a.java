@@ -1,6 +1,6 @@
 package m;
 
-import ai.le;
+import ai.me;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
@@ -46,7 +46,7 @@ import org.telegram.ui.z4;
 import org.telegram.ui.z5;
 import org.telegram.ui.zl;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -259,12 +259,12 @@ public final class a extends AnimatorListenerAdapter {
                 }
                 break;
             case 26:
-                le leVar = (le) this.b;
-                r60 r60Var = ((fm) ((zl) leVar.c).c).Q.b3;
+                me meVar = (me) this.b;
+                r60 r60Var = ((fm) ((zl) meVar.c).c).Q.b3;
                 if (r60Var != null) {
                     r60Var.setIsMessageTransition(false);
-                    ((fm) ((zl) leVar.c).c).Q.b3.c(true);
-                    ((fm) ((zl) leVar.c).c).Q.b3.setVisibility(4);
+                    ((fm) ((zl) meVar.c).c).Q.b3.c(true);
+                    ((fm) ((zl) meVar.c).c).Q.b3.setVisibility(4);
                     break;
                 }
                 break;

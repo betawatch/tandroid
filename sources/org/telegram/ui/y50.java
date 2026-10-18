@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y50 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -163,7 +163,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                 }
                 hashSet.add(GoogleSignInOptions.x);
                 com.google.android.gms.internal.clearcut.v0 a2 = w7.c9.a(context, new GoogleSignInOptions(3, new ArrayList(hashSet), null, true, false, false, str, null, hashMap, null));
-                a2.g().addOnCompleteListener(new ov(22, te0Var, a2));
+                a2.g().addOnCompleteListener(new zu(23, te0Var, a2));
                 break;
             case 8:
                 final hh0 hh0Var = (hh0) this.b;
@@ -197,7 +197,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder3, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             hh0 hh0Var3 = hh0Var;
@@ -258,7 +258,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder4, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -291,7 +291,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder3, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             hh0 hh0Var3 = hh0Var;
@@ -352,7 +352,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder4, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -381,7 +381,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder3, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             hh0 hh0Var3 = hh0Var;
@@ -442,7 +442,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder4, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -471,7 +471,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder3, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             hh0 hh0Var3 = hh0Var;
@@ -532,7 +532,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder4, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -561,7 +561,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder3, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder3, null);
                                             break;
                                         case 1:
                                             hh0 hh0Var3 = hh0Var;
@@ -622,7 +622,7 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                                                     }
                                                 }
                                             });
-                                            i0.a.r(R.string.Cancel, alertDialog$Builder4, null);
+                                            i2.d.r(R.string.Cancel, alertDialog$Builder4, null);
                                             break;
                                     }
                                 }
@@ -645,10 +645,10 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                             break;
                         }
                     }
-                    Bundle a10 = z7.g5.a(j10, "chat_id");
-                    a10.putInt("message_id", wi0Var.c);
-                    a10.putBoolean("need_remove_previous_same_chat_activity", false);
-                    wi0Var.presentFragment(new sn(a10));
+                    Bundle b11 = zf.d0.b(j10, "chat_id");
+                    b11.putInt("message_id", wi0Var.c);
+                    b11.putBoolean("need_remove_previous_same_chat_activity", false);
+                    wi0Var.presentFragment(new sn(b11));
                     break;
                 }
                 break;
@@ -718,24 +718,24 @@ public final /* synthetic */ class y50 implements View.OnClickListener {
                 }
                 break;
             case 16:
-                tp0 tp0Var = (tp0) this.b;
-                sn snVar = tp0Var.F;
+                up0 up0Var = (up0) this.b;
+                sn snVar = up0Var.F;
                 if (snVar != null && snVar.c()) {
-                    org.telegram.ui.Components.f5.K(tp0Var.getParentActivity(), snVar.a(), new kp0(tp0Var, i14));
+                    org.telegram.ui.Components.f5.K(up0Var.getParentActivity(), snVar.a(), new lp0(up0Var, i14));
                     break;
                 } else {
-                    tp0Var.V(tp0Var.b, tp0Var.c, true, 0);
-                    tp0Var.finishFragment();
+                    up0Var.V(up0Var.b, up0Var.c, true, 0);
+                    up0Var.finishFragment();
                     break;
                 }
             case 17:
-                kq0 kq0Var = (kq0) this.b;
-                sn snVar2 = kq0Var.U;
+                lq0 lq0Var = (lq0) this.b;
+                sn snVar2 = lq0Var.U;
                 if (snVar2 != null && snVar2.c()) {
-                    org.telegram.ui.Components.f5.K(kq0Var.getParentActivity(), snVar2.a(), new xp0(kq0Var, i14));
+                    org.telegram.ui.Components.f5.K(lq0Var.getParentActivity(), snVar2.a(), new yp0(lq0Var, i14));
                     break;
                 } else {
-                    kq0Var.e0(0, true);
+                    lq0Var.e0(0, true);
                     break;
                 }
             case 18:

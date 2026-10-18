@@ -16,7 +16,7 @@ import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q10 {
     public static float i;
@@ -48,121 +48,120 @@ public final class q10 {
         Paint paint = (Paint) this.d;
         Paint paint2 = (Paint) this.b;
         RectF rectF3 = (RectF) this.f;
-        if (f10 <= 0.004f) {
-            return;
-        }
-        int i12 = this.a;
-        float[][] fArr = zh.e1.a;
-        int i13 = 4;
-        int i14 = 1;
-        if (i12 != 1) {
-            this.a = 1;
-            int i15 = 0;
-            while (i15 < i13) {
-                float[] fArr2 = fArr[i15];
-                int i16 = i13;
-                int[] iArr = new int[73];
-                int i17 = i14;
-                float[] fArr3 = new float[73];
-                int i18 = 0;
-                for (int i19 = 73; i18 < i19; i19 = 73) {
-                    int i20 = i15;
-                    float[][] fArr4 = fArr;
-                    double radians = Math.toRadians(i18 * 5);
-                    Path path3 = path2;
-                    SweepGradient[] sweepGradientArr2 = sweepGradientArr;
-                    float pow = (float) Math.pow(Math.abs(Math.cos(radians)), fArr2[6]);
-                    float f11 = (((float) Math.sin(radians)) < 0.0f ? fArr2[11] : fArr2[12]) / 100.0f;
-                    iArr[i18] = ((int) ((Math.max(0.0f, Math.min(1.0f, (((fArr2[5] / 100.0f) - f11) * pow) + f11)) * 255.0f) + 0.5f)) << 24;
-                    fArr3[i18] = i18 / 72.0f;
-                    i18++;
-                    fArr = fArr4;
-                    i15 = i20;
-                    path2 = path3;
-                    sweepGradientArr = sweepGradientArr2;
+        if (f10 > 0.004f && !zh.t.a(canvas, rectF, f7, i10, f10)) {
+            int i12 = this.a;
+            float[][] fArr = zh.v0.a;
+            int i13 = 4;
+            int i14 = 1;
+            if (i12 != 1) {
+                this.a = 1;
+                int i15 = 0;
+                while (i15 < i13) {
+                    float[] fArr2 = fArr[i15];
+                    int i16 = i13;
+                    int[] iArr = new int[73];
+                    int i17 = i14;
+                    float[] fArr3 = new float[73];
+                    int i18 = 0;
+                    for (int i19 = 73; i18 < i19; i19 = 73) {
+                        int i20 = i15;
+                        float[][] fArr4 = fArr;
+                        double radians = Math.toRadians(i18 * 5);
+                        Path path3 = path2;
+                        SweepGradient[] sweepGradientArr2 = sweepGradientArr;
+                        float pow = (float) Math.pow(Math.abs(Math.cos(radians)), fArr2[6]);
+                        float f11 = (((float) Math.sin(radians)) < 0.0f ? fArr2[11] : fArr2[12]) / 100.0f;
+                        iArr[i18] = ((int) ((Math.max(0.0f, Math.min(1.0f, (((fArr2[5] / 100.0f) - f11) * pow) + f11)) * 255.0f) + 0.5f)) << 24;
+                        fArr3[i18] = i18 / 72.0f;
+                        i18++;
+                        fArr = fArr4;
+                        i15 = i20;
+                        path2 = path3;
+                        sweepGradientArr = sweepGradientArr2;
+                    }
+                    SweepGradient[] sweepGradientArr3 = sweepGradientArr;
+                    int i21 = i15;
+                    sweepGradientArr3[i21] = new SweepGradient(0.0f, 0.0f, iArr, fArr3);
+                    i15 = i21 + 1;
+                    i13 = i16;
+                    i14 = i17;
+                    path2 = path2;
+                    sweepGradientArr = sweepGradientArr3;
                 }
-                SweepGradient[] sweepGradientArr3 = sweepGradientArr;
-                int i21 = i15;
-                sweepGradientArr3[i21] = new SweepGradient(0.0f, 0.0f, iArr, fArr3);
-                i15 = i21 + 1;
-                i13 = i16;
-                i14 = i17;
-                path2 = path2;
-                sweepGradientArr = sweepGradientArr3;
             }
-        }
-        Path path4 = path2;
-        SweepGradient[] sweepGradientArr4 = sweepGradientArr;
-        int i22 = i14;
-        int i23 = i13;
-        int i24 = 0;
-        float[] fArr5 = fArr[i10];
-        float f12 = i;
-        float f13 = j;
-        float dpf2 = AndroidUtilities.dpf2(fArr5[8]);
-        rectF3.set(rectF);
-        rectF3.inset(dpf2, dpf2);
-        float max = Math.max(0.0f, f7 - dpf2);
-        matrix.setRotate(f12);
-        matrix.postScale(rectF3.width() / Math.max(1.0f, rectF3.height()), 1.0f);
-        matrix.postTranslate(rectF3.centerX(), rectF3.centerY());
-        float dpf22 = AndroidUtilities.dpf2(fArr5[i23]);
-        if (dpf22 > 0.05f) {
-            sweepGradientArr4[i10].setLocalMatrix(matrix);
-            paint.setShader(sweepGradientArr4[i10]);
-            paint.setColor(-1);
-            paint.setAlpha((int) (f10 * 255.0f));
-            paint.setStrokeWidth(dpf22);
-            rectF2.set(rectF3);
-            float f14 = (-dpf22) / 2.0f;
-            rectF2.inset(f14, f14);
-            float f15 = (dpf22 / 2.0f) + max;
-            canvas.drawRoundRect(rectF2, f15, f15, paint);
-            paint.setShader(null);
-        }
-        double radians2 = Math.toRadians(f12);
-        float f16 = (float) (-Math.sin(radians2));
-        float cos = (float) Math.cos(radians2);
-        float dpf23 = AndroidUtilities.dpf2(fArr5[0]);
-        float dpf24 = AndroidUtilities.dpf2(fArr5[2]);
-        float min = Math.min(1.0f, (f13 + 1.0f) * (fArr5[i22] / 100.0f));
-        float min2 = Math.min(1.0f, (1.0f - f13) * (fArr5[3] / 100.0f));
-        int i25 = Build.VERSION.SDK_INT >= 29 ? i22 : 0;
-        float min3 = Math.min(max, Math.min(rectF3.width(), rectF3.height()) / 2.0f);
-        int i26 = 0;
-        for (int i27 = 2; i26 < i27; i27 = 2) {
-            float f17 = i26 == 0 ? min : min2;
-            float f18 = i26 == 0 ? dpf23 : -dpf24;
-            if (f17 <= 0.004f || Math.abs(f18) < 0.1f) {
-                i11 = i24;
-                path = path4;
-            } else {
+            Path path4 = path2;
+            SweepGradient[] sweepGradientArr4 = sweepGradientArr;
+            int i22 = i14;
+            int i23 = i13;
+            int i24 = 0;
+            float[] fArr5 = fArr[i10];
+            float f12 = i;
+            float f13 = j;
+            float dpf2 = AndroidUtilities.dpf2(fArr5[8]);
+            rectF3.set(rectF);
+            rectF3.inset(dpf2, dpf2);
+            float max = Math.max(0.0f, f7 - dpf2);
+            matrix.setRotate(f12);
+            matrix.postScale(rectF3.width() / Math.max(1.0f, rectF3.height()), 1.0f);
+            matrix.postTranslate(rectF3.centerX(), rectF3.centerY());
+            float dpf22 = AndroidUtilities.dpf2(fArr5[i23]);
+            if (dpf22 > 0.05f) {
+                sweepGradientArr4[i10].setLocalMatrix(matrix);
+                paint.setShader(sweepGradientArr4[i10]);
+                paint.setColor(-1);
+                paint.setAlpha((int) (f10 * 255.0f));
+                paint.setStrokeWidth(dpf22);
                 rectF2.set(rectF3);
-                rectF2.offset(f16 * f18, f18 * cos);
-                path4.rewind();
-                path = path4;
-                path.addRoundRect(rectF2, min3, min3, Path.Direction.CW);
-                canvas.save();
-                zh.b0.b(canvas, path);
-                if (i25 != 0) {
-                    int round = Math.round(Math.min(1.0f, f17) * 255.0f);
-                    paint2.setColor((round << 16) | (-16777216) | (round << 8) | round);
-                    paint2.setAlpha((int) (f10 * 255.0f));
-                    zh.b0.i(paint2, i22);
-                } else {
-                    paint2.setColor(-1);
-                    paint2.setAlpha((int) (f17 * 255.0f * f10));
-                }
-                canvas.drawRoundRect(rectF3, min3, min3, paint2);
-                i11 = i24;
-                if (i25 != 0) {
-                    zh.b0.i(paint2, i11);
-                }
-                canvas.restore();
+                float f14 = (-dpf22) / 2.0f;
+                rectF2.inset(f14, f14);
+                float f15 = (dpf22 / 2.0f) + max;
+                canvas.drawRoundRect(rectF2, f15, f15, paint);
+                paint.setShader(null);
             }
-            i26++;
-            path4 = path;
-            i24 = i11;
+            double radians2 = Math.toRadians(f12);
+            float f16 = (float) (-Math.sin(radians2));
+            float cos = (float) Math.cos(radians2);
+            float dpf23 = AndroidUtilities.dpf2(fArr5[0]);
+            float dpf24 = AndroidUtilities.dpf2(fArr5[2]);
+            float min = Math.min(1.0f, (f13 + 1.0f) * (fArr5[i22] / 100.0f));
+            float min2 = Math.min(1.0f, (1.0f - f13) * (fArr5[3] / 100.0f));
+            int i25 = Build.VERSION.SDK_INT >= 29 ? i22 : 0;
+            float min3 = Math.min(max, Math.min(rectF3.width(), rectF3.height()) / 2.0f);
+            int i26 = 0;
+            for (int i27 = 2; i26 < i27; i27 = 2) {
+                float f17 = i26 == 0 ? min : min2;
+                float f18 = i26 == 0 ? dpf23 : -dpf24;
+                if (f17 <= 0.004f || Math.abs(f18) < 0.1f) {
+                    i11 = i24;
+                    path = path4;
+                } else {
+                    rectF2.set(rectF3);
+                    rectF2.offset(f16 * f18, f18 * cos);
+                    path4.rewind();
+                    path = path4;
+                    path.addRoundRect(rectF2, min3, min3, Path.Direction.CW);
+                    canvas.save();
+                    zh.u.b(canvas, path);
+                    if (i25 != 0) {
+                        int round = Math.round(Math.min(1.0f, f17) * 255.0f);
+                        paint2.setColor((round << 16) | (-16777216) | (round << 8) | round);
+                        paint2.setAlpha((int) (f10 * 255.0f));
+                        zh.u.i(paint2, i22);
+                    } else {
+                        paint2.setColor(-1);
+                        paint2.setAlpha((int) (f17 * 255.0f * f10));
+                    }
+                    canvas.drawRoundRect(rectF3, min3, min3, paint2);
+                    i11 = i24;
+                    if (i25 != 0) {
+                        zh.u.i(paint2, i11);
+                    }
+                    canvas.restore();
+                }
+                i26++;
+                path4 = path;
+                i24 = i11;
+            }
         }
     }
 
@@ -233,26 +232,26 @@ public final class q10 {
         if (Math.abs(f11) > AndroidUtilities.dp(r14)) {
             float dp4 = AndroidUtilities.dp(min2) * 2;
             if (lineWidth < lineWidth2) {
-                float x10 = com.google.android.gms.internal.cast.a6.x(dp2, f10, 0.45f, f10);
+                float y3 = com.google.android.gms.internal.play_billing.k3.y(dp2, f10, 0.45f, f10);
                 dp = AndroidUtilities.dp(min) * 2;
                 rectF.set(max2 - dp, f10, max2, f10 + dp);
                 path.arcTo(rectF, 270.0f, 90.0f);
-                rectF.set(lineWidth, x10 - dp4, dp4 + lineWidth, x10);
+                rectF.set(lineWidth, y3 - dp4, dp4 + lineWidth, y3);
                 path.arcTo(rectF, 180.0f, -90.0f);
-                float f12 = lineWidth2 - (dp2 - x10);
-                rectF.set(f12, x10, lineWidth2, dp2);
+                float f12 = lineWidth2 - (dp2 - y3);
+                rectF.set(f12, y3, lineWidth2, dp2);
                 path.arcTo(rectF, 270.0f, 90.0f);
-                rectF.set(f12, x10, lineWidth2, dp2);
+                rectF.set(f12, y3, lineWidth2, dp2);
                 path.arcTo(rectF, 0.0f, 90.0f);
             } else {
-                float x11 = com.google.android.gms.internal.cast.a6.x(dp2, f10, 0.55f, f10);
-                float f13 = x11 - f10;
-                rectF.set(max2 - f13, f10, max2, x11);
+                float y10 = com.google.android.gms.internal.play_billing.k3.y(dp2, f10, 0.55f, f10);
+                float f13 = y10 - f10;
+                rectF.set(max2 - f13, f10, max2, y10);
                 path.arcTo(rectF, 270.0f, 90.0f);
                 dp = AndroidUtilities.dp(min) * 2;
-                rectF.set(lineWidth - f13, f10, lineWidth, x11);
+                rectF.set(lineWidth - f13, f10, lineWidth, y10);
                 path.arcTo(rectF, 0.0f, 90.0f);
-                rectF.set(lineWidth2, x11, lineWidth2 + dp4, dp4 + x11);
+                rectF.set(lineWidth2, y10, lineWidth2 + dp4, dp4 + y10);
                 path.arcTo(rectF, 270.0f, -90.0f);
                 rectF.set(lineWidth2 - dp, dp2 - dp, lineWidth2, dp2);
                 path.arcTo(rectF, 0.0f, 90.0f);

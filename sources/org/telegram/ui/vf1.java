@@ -7,7 +7,7 @@ import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class vf1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -38,53 +38,53 @@ public final class vf1 extends AnimatorListenerAdapter {
                 ng1Var.f.c.setAllowDrawCursor(true);
                 break;
             case 2:
-                ((org.telegram.ui.Wallet.d3) obj).K = null;
+                ((org.telegram.ui.Wallet.e3) obj).K = null;
                 break;
             case 3:
-                ((org.telegram.ui.Wallet.k3) obj).g();
+                ((org.telegram.ui.Wallet.l3) obj).g();
                 break;
             case 4:
-                org.telegram.ui.Wallet.l5 l5Var = (org.telegram.ui.Wallet.l5) obj;
-                if (l5Var.K0 == animator) {
-                    l5Var.K0 = null;
+                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) obj;
+                if (m5Var.K0 == animator) {
+                    m5Var.K0 = null;
                     break;
                 }
                 break;
             case 5:
-                org.telegram.ui.Wallet.j5 j5Var = (org.telegram.ui.Wallet.j5) obj;
-                j5Var.h = false;
-                j5Var.n = null;
-                j5Var.b.setLayerType(0, null);
+                org.telegram.ui.Wallet.k5 k5Var = (org.telegram.ui.Wallet.k5) obj;
+                k5Var.h = false;
+                k5Var.n = null;
+                k5Var.b.setLayerType(0, null);
                 break;
             case 6:
-                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) obj;
-                o5Var.J = 0.0f;
-                o5Var.K = 0.0f;
-                o5Var.R = null;
+                org.telegram.ui.Wallet.p5 p5Var = (org.telegram.ui.Wallet.p5) obj;
+                p5Var.J = 0.0f;
+                p5Var.K = 0.0f;
+                p5Var.R = null;
                 break;
             case 7:
-                org.telegram.ui.Wallet.b6 b6Var = (org.telegram.ui.Wallet.b6) obj;
-                org.telegram.ui.Wallet.y5 y5Var = b6Var.f0;
-                y5Var.d = 0.0f;
-                y5Var.i = 0.0f;
-                b6Var.o0 = null;
+                org.telegram.ui.Wallet.e6 e6Var = (org.telegram.ui.Wallet.e6) obj;
+                org.telegram.ui.Wallet.b6 b6Var = e6Var.i0;
+                b6Var.d = 0.0f;
+                b6Var.i = 0.0f;
+                e6Var.r0 = null;
                 break;
             case 8:
-                org.telegram.ui.Wallet.p6 p6Var = (org.telegram.ui.Wallet.p6) obj;
-                p6Var.I = null;
-                p6Var.i0 = 1.0f;
-                p6Var.h0 = 0.0f;
-                p6Var.g0 = 0.0f;
-                p6Var.e();
+                org.telegram.ui.Wallet.s6 s6Var = (org.telegram.ui.Wallet.s6) obj;
+                s6Var.I = null;
+                s6Var.i0 = 1.0f;
+                s6Var.h0 = 0.0f;
+                s6Var.g0 = 0.0f;
+                s6Var.e();
                 break;
             case 9:
-                org.telegram.ui.Wallet.q8 q8Var = (org.telegram.ui.Wallet.q8) obj;
-                EditTextBoldCursor editTextBoldCursor = q8Var.b;
-                if (q8Var.s == animator) {
-                    q8Var.s = null;
-                    q8Var.a.setVisibility(q8Var.x ? 4 : 0);
-                    editTextBoldCursor.setVisibility(q8Var.x ? 0 : 4);
-                    if (q8Var.x && !q8Var.y) {
+                org.telegram.ui.Wallet.t8 t8Var = (org.telegram.ui.Wallet.t8) obj;
+                EditTextBoldCursor editTextBoldCursor = t8Var.b;
+                if (t8Var.s == animator) {
+                    t8Var.s = null;
+                    t8Var.a.setVisibility(t8Var.x ? 4 : 0);
+                    editTextBoldCursor.setVisibility(t8Var.x ? 0 : 4);
+                    if (t8Var.x && !t8Var.y) {
                         editTextBoldCursor.requestFocus();
                         AndroidUtilities.showKeyboard(editTextBoldCursor);
                         break;
@@ -92,10 +92,10 @@ public final class vf1 extends AnimatorListenerAdapter {
                 }
                 break;
             case 10:
-                org.telegram.ui.Wallet.k9 k9Var = (org.telegram.ui.Wallet.k9) obj;
-                k9Var.h = null;
-                k9Var.c.setVisibility(k9Var.v ? 4 : 0);
-                k9Var.e.setVisibility(k9Var.w ? 0 : 4);
+                org.telegram.ui.Wallet.n9 n9Var = (org.telegram.ui.Wallet.n9) obj;
+                n9Var.h = null;
+                n9Var.c.setVisibility(n9Var.v ? 4 : 0);
+                n9Var.e.setVisibility(n9Var.w ? 0 : 4);
                 break;
             case 11:
                 org.telegram.ui.Components.gg0 gg0Var = (org.telegram.ui.Components.gg0) obj;
@@ -153,8 +153,8 @@ public final class vf1 extends AnimatorListenerAdapter {
                 super.onAnimationEnd(animator);
                 tg.n nVar = ((tg.i) obj).b;
                 nVar.b.d = 0.0f;
-                nVar.a0 = null;
-                nVar.k(nVar.L);
+                nVar.d0 = null;
+                nVar.l(nVar.L);
                 break;
             case 21:
                 ug.b bVar = (ug.b) obj;

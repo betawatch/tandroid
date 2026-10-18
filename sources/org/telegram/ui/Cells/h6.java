@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -46,7 +46,7 @@ import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.o00;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class h6 extends a0 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.y5 {
     public final xp A0;
@@ -317,7 +317,7 @@ public final class h6 extends a0 implements NotificationCenter.NotificationCente
             this.x0.setColor(org.telegram.ui.ActionBar.h6.m1(0.1f, w02));
             int dp = AndroidUtilities.dp(12.66f) + ((int) this.w0.l());
             int dp2 = AndroidUtilities.dp(17.33f);
-            float dp3 = LocaleController.isRTL ? AndroidUtilities.dp(12.0f) : org.telegram.messenger.q.B(12.0f, getWidth(), dp);
+            float dp3 = LocaleController.isRTL ? AndroidUtilities.dp(12.0f) : org.telegram.messenger.g0.B(12.0f, getWidth(), dp);
             int i10 = this.P;
             f10 = 2.0f;
             float f13 = f7;
@@ -479,7 +479,7 @@ public final class h6 extends a0 implements NotificationCenter.NotificationCente
         }
         if (this.k0) {
             sb2.append(", ");
-            t0.n(R.string.AccDescrVerified, "\n", sb2);
+            c1.n(R.string.AccDescrVerified, "\n", sb2);
         }
         if (this.r0 != null) {
             if (sb2.length() > 0) {
@@ -719,7 +719,7 @@ public final class h6 extends a0 implements NotificationCenter.NotificationCente
         CharSequence replaceNewLines = AndroidUtilities.replaceNewLines(charSequence4);
         if (TextUtils.isEmpty(replaceNewLines)) {
             TLRPC.User user3 = this.y;
-            replaceNewLines = (user3 == null || TextUtils.isEmpty(user3.phone)) ? LocaleController.getString(R.string.HiddenName) : wh.g(new StringBuilder("+"), this.y.phone, jf.b.c());
+            replaceNewLines = (user3 == null || TextUtils.isEmpty(user3.phone)) ? LocaleController.getString(R.string.HiddenName) : kk.g(new StringBuilder("+"), this.y.phone, jf.b.c());
         }
         if (this.E0) {
             if (this.F0 == null) {
@@ -765,7 +765,7 @@ public final class h6 extends a0 implements NotificationCenter.NotificationCente
             } else {
                 this.a0 = ((getMeasuredWidth() - measureText) - AndroidUtilities.dp(19.0f)) - AndroidUtilities.dp(16.0f);
             }
-            this.U = wh.z(32.0f, measureText, this.U);
+            this.U = kk.y(32.0f, measureText, this.U);
         }
         this.U -= getPaddingRight() + getPaddingLeft();
         int paddingRight = measuredWidth - (getPaddingRight() + getPaddingLeft());

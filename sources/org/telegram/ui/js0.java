@@ -10,15 +10,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class js0 extends org.telegram.ui.Components.kd {
     public final Path t1;
     public final /* synthetic */ PhotoViewer u1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public js0(PhotoViewer photoViewer, Context context, ku0 ku0Var, org.telegram.ui.Components.jw0 jw0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar, rq0 rq0Var) {
-        super(context, ku0Var, jw0Var, frameLayout, d6Var, jaVar, rq0Var);
+    public js0(PhotoViewer photoViewer, Context context, ku0 ku0Var, org.telegram.ui.Components.jw0 jw0Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.ja jaVar, sq0 sq0Var) {
+        super(context, ku0Var, jw0Var, frameLayout, d6Var, jaVar, sq0Var);
         this.u1 = photoViewer;
         this.t1 = new Path();
     }

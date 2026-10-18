@@ -32,7 +32,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class jr extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -704,10 +704,10 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
                             if (isEnabled) {
                                 if (r42.F != null) {
                                     if (ChatObject.isPublic(jrVar.r) && (i10 == jrVar.i0 || i10 == jrVar.g0)) {
-                                        org.telegram.messenger.wh.q(R.string.EditCantEditPermissionsPublic, org.telegram.ui.Components.xc.a0(jrVar), null);
+                                        org.telegram.messenger.kk.q(R.string.EditCantEditPermissionsPublic, org.telegram.ui.Components.xc.a0(jrVar), null);
                                         return;
                                     } else if (ChatObject.isDiscussionGroup(jrVar.currentAccount, jrVar.N) && (i10 == jrVar.i0 || i10 == jrVar.g0)) {
-                                        org.telegram.messenger.wh.q(R.string.EditCantEditPermissionsDiscussion, org.telegram.ui.Components.xc.a0(jrVar), null);
+                                        org.telegram.messenger.kk.q(R.string.EditCantEditPermissionsDiscussion, org.telegram.ui.Components.xc.a0(jrVar), null);
                                         return;
                                     } else {
                                         org.telegram.ui.Components.xc.a0(jrVar).t(LocaleController.getString("EditCantEditPermissions", R.string.EditCantEditPermissions), null).j();
@@ -1740,7 +1740,7 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
             org.telegram.ui.ActionBar.y n10 = this.actionBar.n();
             org.telegram.ui.ActionBar.u0 a2 = n10.a(0, R.drawable.outline_header_search);
             a2.F();
-            a2.H = new ig.a2(this, 3);
+            a2.H = new ig.c2(this, 3);
             this.f = a2;
             if (i11 == 0 && !this.R) {
                 a2.setVisibility(8);
@@ -2455,7 +2455,7 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
             AtomicInteger atomicInteger = new AtomicInteger(0);
             for (int i14 = 0; i14 < s02.size(); i14++) {
                 arrayList6.add(null);
-                getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest((TLObject) s02.get(i14), new ai.rb(arrayList6, i14, atomicInteger, s02, lqVar, 6)), this.classGuid);
+                getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest((TLObject) s02.get(i14), new ai.sb(arrayList6, i14, atomicInteger, s02, lqVar, 6)), this.classGuid);
             }
             return;
         }

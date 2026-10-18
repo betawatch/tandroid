@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static Pattern V;
@@ -115,7 +115,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         vVar.j(new kv(this, i10));
         gn gnVar = new gn(this, arrayList, n2Var, resourceProvider);
         vVar.setOnItemClickListener(gnVar);
-        vVar.setOnItemLongClickListener((yl0) new s2(15, this, context));
+        vVar.setOnItemLongClickListener((yl0) new q2(16, this, context));
         vVar.setOnTouchListener(new ei.p1(3, this, gnVar));
         sVar.k1(false);
         sVar.O = new mv(this);
@@ -138,16 +138,16 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         w7.b6.b(textView, 0.02f, 1.2f);
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout, textView, w7.z5.a(48.0f, 12.0f, 10.0f, 12.0f, 10.0f, -1, 80), context);
-        this.w = k10;
-        k10.setVisibility(8);
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.a(48.0f, 12.0f, 10.0f, 12.0f, 10.0f, -1, 80), context);
+        this.w = j10;
+        j10.setVisibility(8);
         int i14 = org.telegram.ui.ActionBar.h6.q7;
-        k10.setBackground(org.telegram.ui.ActionBar.h6.Z(getThemedColor(i14) & 268435455, 0, 0));
-        k10.setTextColor(getThemedColor(i14));
-        k10.setTypeface(AndroidUtilities.bold());
-        k10.setGravity(17);
-        k10.setClickable(true);
-        frameLayout.addView(k10, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 19.0f, -1, 80));
+        j10.setBackground(org.telegram.ui.ActionBar.h6.Z(getThemedColor(i14) & 268435455, 0, 0));
+        j10.setTextColor(getThemedColor(i14));
+        j10.setTypeface(AndroidUtilities.bold());
+        j10.setGravity(17);
+        j10.setClickable(true);
+        frameLayout.addView(j10, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 19.0f, -1, 80));
         sg.p0 p0Var = new sg.p0(context, this.resourcesProvider, false);
         this.x = p0Var;
         p0Var.a(LocaleController.getString(R.string.UnlockPremiumEmoji), new f0(this, i12), false);
@@ -197,7 +197,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         }
     }
 
-    public static void X(final org.telegram.ui.ActionBar.n2 n2Var, TLObject tLObject, final boolean z10, final ai.ta taVar, final hq hqVar) {
+    public static void X(final org.telegram.ui.ActionBar.n2 n2Var, TLObject tLObject, final boolean z10, final ai.ua uaVar, final hq hqVar) {
         final int currentAccount = n2Var == null ? UserConfig.selectedAccount : n2Var.getCurrentAccount();
         TLRPC.StickerSet stickerSet = null;
         final View fragmentView = n2Var == null ? null : n2Var.getFragmentView();
@@ -215,8 +215,8 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
             return;
         }
         if (MediaDataController.getInstance(currentAccount).cancelRemovingStickerSet(stickerSet2.id)) {
-            if (taVar != null) {
-                taVar.run(Boolean.TRUE);
+            if (uaVar != null) {
+                uaVar.run(Boolean.TRUE);
             }
         } else {
             TLRPC.TL_messages_installStickerSet tL_messages_installStickerSet = new TLRPC.TL_messages_installStickerSet();
@@ -233,7 +233,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                     final org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
                     final TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = tL_messages_stickerSet;
                     final int i10 = currentAccount;
-                    final Utilities.Callback callback = taVar;
+                    final Utilities.Callback callback = uaVar;
                     final Runnable runnable = hqVar;
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.gv
                         @Override // java.lang.Runnable
@@ -358,7 +358,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(r5.f(awVar.currentAccount, a6Var.getDocumentId())));
         spannableString.setSpan(a6Var, 0, spannableString.length(), 33);
         if (AndroidUtilities.addToClipboard(spannableString)) {
-            org.telegram.messenger.wh.p(R.string.EmojiCopied, new xc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
+            org.telegram.messenger.kk.p(R.string.EmojiCopied, new xc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
         }
     }
 
@@ -521,7 +521,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                                         break;
                                     }
                                 } else {
-                                    aw.X(awVar2.c, (TLObject) arrayList5.get(i18), size2 == 1, size2 > 1 ? new ai.ta(awVar2, iArr, size2, arrayList5) : null, null);
+                                    aw.X(awVar2.c, (TLObject) arrayList5.get(i18), size2 == 1, size2 > 1 ? new ai.ua(awVar2, iArr, size2, arrayList5) : null, null);
                                     i18++;
                                 }
                             }
@@ -585,7 +585,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
                                     break;
                                 }
                             } else {
-                                aw.X(awVar2.c, (TLObject) arrayList5.get(i18), size2 == 1, size2 > 1 ? new ai.ta(awVar2, iArr, size2, arrayList5) : null, null);
+                                aw.X(awVar2.c, (TLObject) arrayList5.get(i18), size2 == 1, size2 > 1 ? new ai.ua(awVar2, iArr, size2, arrayList5) : null, null);
                                 i18++;
                             }
                         }

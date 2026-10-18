@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wu0 extends FrameLayout {
     public final FrameLayout a;
@@ -156,7 +156,7 @@ public final class wu0 extends FrameLayout {
                 canvas.translate(xu0Var.f.getImageX(), xu0Var.f.getImageY());
                 xu0Var.k.c(canvas, xu0Var.d, (int) xu0Var.f.getImageWidth(), (int) xu0Var.f.getImageHeight(), 1.0f, false);
             } else {
-                gVar.h(i0.b.o(-1, (int) (xu0Var.f.getAlpha() * Color.alpha(-1) * 0.325f)));
+                gVar.h(i0.a.o(-1, (int) (xu0Var.f.getAlpha() * Color.alpha(-1) * 0.325f)));
                 gVar.setBounds((int) xu0Var.f.getImageX(), (int) xu0Var.f.getImageY(), (int) xu0Var.f.getImageX2(), (int) xu0Var.f.getImageY2());
                 gVar.draw(canvas);
             }

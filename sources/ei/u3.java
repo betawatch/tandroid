@@ -1,6 +1,6 @@
 package ei;
 
-import ai.le;
+import ai.me;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.MotionEvent;
@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.jw0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class u3 extends org.telegram.ui.ActionBar.f3 {
     public final t3 b;
@@ -72,7 +72,7 @@ public final class u3 extends org.telegram.ui.ActionBar.f3 {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(translationY, height);
         this.c = ofFloat;
         ofFloat.addUpdateListener(new ah.c0(this, 26));
-        this.c.addListener(new le(4, this, r3Var));
+        this.c.addListener(new me(4, this, r3Var));
         this.c.setDuration(450L);
         this.c.setInterpolator(bs.h);
         this.c.start();

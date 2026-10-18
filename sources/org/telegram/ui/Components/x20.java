@@ -10,7 +10,7 @@ import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class x20 {
     public boolean a;
@@ -31,14 +31,14 @@ public class x20 {
         int i10 = this.d;
         int i11 = this.e;
         if (i11 != 0) {
-            i10 = i0.b.f(0.5f, i10, i11);
+            i10 = i0.a.f(0.5f, i10, i11);
         }
         int i12 = this.f;
         if (i12 != 0) {
-            i10 = i0.b.f(0.5f, i10, i12);
+            i10 = i0.a.f(0.5f, i10, i12);
         }
         int i13 = this.g;
-        return i13 != 0 ? i0.b.f(0.5f, i10, i13) : i10;
+        return i13 != 0 ? i0.a.f(0.5f, i10, i13) : i10;
     }
 
     public final void b(float f7, float f10, float f11, float f12) {

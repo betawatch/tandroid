@@ -23,7 +23,7 @@ import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.y9;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class o5 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
     public c3 E;
@@ -516,11 +516,11 @@ public final class o5 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
         a aVar = this.a;
         int i18 = 0;
         if (aVar != null && (i14 = aVar.l) > 0) {
-            i18 = AndroidUtilities.dp(i0.a.g(i14, 1, 16, 10));
+            i18 = AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(i14, 1, 16, 10));
         }
         int i19 = i15 - i16;
         int i20 = measuredHeight + i18;
-        h1Var.layout(AndroidUtilities.dp(16.0f) + i17, i18, org.telegram.messenger.q.b(16.0f, i19, AndroidUtilities.dp(16.0f) + i17), i20);
+        h1Var.layout(AndroidUtilities.dp(16.0f) + i17, i18, org.telegram.messenger.g0.b(16.0f, i19, AndroidUtilities.dp(16.0f) + i17), i20);
         int dp = AndroidUtilities.dp(9.0f) + i20;
         a4 a4Var = this.s;
         a4Var.layout(i17, dp, i19, a4Var.getMeasuredHeight() + dp);
@@ -543,10 +543,10 @@ public final class o5 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
         a4 a4Var = this.s;
         a4Var.measure(makeMeasureSpec3, makeMeasureSpec4);
         a aVar = this.a;
-        int dp = (aVar != null && (i12 = aVar.l) > 0) ? AndroidUtilities.dp(i0.a.g(i12, 1, 16, 10)) : 0;
+        int dp = (aVar != null && (i12 = aVar.l) > 0) ? AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(i12, 1, 16, 10)) : 0;
         a aVar2 = this.a;
         if (aVar2 != null && (i13 = aVar2.m) > 0) {
-            i14 = AndroidUtilities.dp(i0.a.g(i13, 1, 16, 10));
+            i14 = AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(i13, 1, 16, 10));
         }
         setMeasuredDimension(size, a4Var.getMeasuredHeight() + AndroidUtilities.dp(9.0f) + i14 + dp + measuredHeight);
     }
@@ -823,7 +823,7 @@ public final class o5 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
                 r5 r5Var = (r5) childAt;
                 h1 h1Var = r5Var.a;
                 h1Var.setListener(new i5(this, r5Var));
-                h1Var.setDelegate(new ah.h0(24, this, r5Var));
+                h1Var.setDelegate(new ah.h0(25, this, r5Var));
             }
             i10++;
         }

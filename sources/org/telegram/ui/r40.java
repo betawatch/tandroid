@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r40 extends org.telegram.ui.Components.u30 {
     public final /* synthetic */ v40 n;
@@ -41,7 +41,7 @@ public final class r40 extends org.telegram.ui.Components.u30 {
         } else {
             textView.setText(LocaleController.getString(R.string.VoipRecordVoiceChat));
         }
-        org.telegram.messenger.q.m(20.0f, -1, 1, textView);
+        org.telegram.messenger.g0.m(20.0f, -1, 1, textView);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         this.containerView.addView(textView, w7.z5.a(-2.0f, 24.0f, 29.0f, 24.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
         TextView textView2 = new TextView(getContext());
@@ -79,7 +79,7 @@ public final class r40 extends org.telegram.ui.Components.u30 {
         r30Var.setTypeface(AndroidUtilities.bold());
         r30Var.setText(LocaleController.getString(R.string.VoipRecordStart));
         int dp = AndroidUtilities.dp(6.0f);
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i11, false), 76);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i11, false), 76);
         r30Var.setForeground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, 0, o10, o10));
         r30Var.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
         r30Var.setOnClickListener(new org.telegram.ui.Components.f0(this, 22));

@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pc extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ dd c;
@@ -73,10 +73,10 @@ public final class pc extends org.telegram.ui.Components.hm0 {
         View view = b1Var.a;
         if (i16 == 1) {
             vc vcVar = (vc) view;
-            po0 po0Var = vcVar.a;
+            qo0 qo0Var = vcVar.a;
             uc ucVar = vcVar.b;
             i11 = ((org.telegram.ui.ActionBar.n2) ddVar).currentAccount;
-            po0Var.b(i11, ddVar.s, false);
+            qo0Var.b(i11, ddVar.s, false);
             ucVar.b(ddVar.s, false);
             ucVar.d(ddVar.w, false, false);
             ucVar.setForum(ddVar.R0());
@@ -89,7 +89,7 @@ public final class pc extends org.telegram.ui.Components.hm0 {
             return;
         }
         if (i16 == 4) {
-            ((gp0) view).a(ddVar.s, false);
+            ((hp0) view).a(ddVar.s, false);
             return;
         }
         if (i16 == 5) {
@@ -339,10 +339,10 @@ public final class pc extends org.telegram.ui.Components.hm0 {
             Activity parentActivity5 = ddVar.getParentActivity();
             i11 = ((org.telegram.ui.ActionBar.n2) ddVar).currentAccount;
             d6Var4 = ((org.telegram.ui.ActionBar.n2) ddVar).resourceProvider;
-            gp0 gp0Var = new gp0(0, i11, parentActivity5, d6Var4);
-            gp0Var.setDivider(false);
+            hp0 hp0Var = new hp0(0, i11, parentActivity5, d6Var4);
+            hp0Var.setDivider(false);
             final int i16 = 1;
-            gp0Var.setOnColorClick(new Utilities.Callback(this) { // from class: org.telegram.ui.oc
+            hp0Var.setOnColorClick(new Utilities.Callback(this) { // from class: org.telegram.ui.oc
                 public final /* synthetic */ pc b;
 
                 {
@@ -383,7 +383,7 @@ public final class pc extends org.telegram.ui.Components.hm0 {
                     }
                 }
             });
-            frameLayout = gp0Var;
+            frameLayout = hp0Var;
         } else if (i10 == 1) {
             FrameLayout vcVar = new vc(ddVar, ddVar.getParentActivity());
             frameLayout = vcVar;
@@ -398,7 +398,7 @@ public final class pc extends org.telegram.ui.Components.hm0 {
         } else if (i10 == 9) {
             Activity parentActivity7 = ddVar.getParentActivity();
             d6Var2 = ((org.telegram.ui.ActionBar.n2) ddVar).resourceProvider;
-            frameLayout = new ro0(parentActivity7, d6Var2, false);
+            frameLayout = new so0(parentActivity7, d6Var2, false);
         } else if (i10 == 10) {
             Activity parentActivity8 = ddVar.getParentActivity();
             d6Var = ((org.telegram.ui.ActionBar.n2) ddVar).resourceProvider;

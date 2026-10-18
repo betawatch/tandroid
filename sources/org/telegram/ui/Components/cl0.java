@@ -44,7 +44,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class cl0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final org.telegram.ui.Cells.d1 k1 = new org.telegram.ui.Cells.d1(Float.class, "transitionProgress", 2);
@@ -219,7 +219,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         u1Var.j(new kv(this, 6));
         u1Var.i(new pk0(this, 1));
         u1Var.setOnItemClickListener(new j(this, 11));
-        u1Var.setOnItemLongClickListener((yl0) new i2.q(this, i10, 9));
+        u1Var.setOnItemLongClickListener((yl0) new i2.r(this, i10, 9));
         addView(u1Var, w7.z5.d(-1.0f, -1));
         setClipChildren(false);
         setClipToPadding(false);
@@ -228,7 +228,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         al0Var.getLayoutParams().width = paddingTop - AndroidUtilities.dp(12.0f);
         al0Var.getLayoutParams().height = paddingTop;
         if (i10 == 2 || i10 == 4) {
-            paint.setColor(i0.b.f(0.13f, -16777216, -1));
+            paint.setColor(i0.a.f(0.13f, -16777216, -1));
         } else {
             paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G8, d6Var));
         }
@@ -258,7 +258,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         }
         ah.t0 t0Var2 = cl0Var.x0;
         bl0 bl0Var = cl0Var.g0;
-        if (bl0Var != null && !bl0Var.j()) {
+        if (bl0Var != null && !bl0Var.h()) {
             z10 = false;
         }
         t0Var2.m.setLongPressEnabled(z10);
@@ -445,7 +445,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         if (z10) {
             float f23 = this.O;
             if (f23 != 1.0f) {
-                this.O = org.telegram.ui.Cells.t0.c(min, 220.0f, f23, 1.0f);
+                this.O = org.telegram.ui.Cells.c1.c(min, 220.0f, f23, 1.0f);
                 invalidate();
                 x90Var = this.R0;
                 if (x90Var != null) {
@@ -464,7 +464,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
                 }
                 i1Var = this.l0;
                 i10 = this.M0;
-                if (i1Var != null && i10 != 5 && ((bl0Var = this.g0) == null || bl0Var.j())) {
+                if (i1Var != null && i10 != 5 && ((bl0Var = this.g0) == null || bl0Var.h())) {
                     f22 = this.n0;
                     if (f22 != 1.0f) {
                         float longPressTimeout = (16.0f / (this.l0.a ? ViewConfiguration.getLongPressTimeout() : 1500.0f)) + f22;
@@ -518,7 +518,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
                 float f29 = max;
                 RectF rectF5 = this.w;
                 rectF5.set(getPaddingLeft() + width2, (((1.0f - this.q0) * u1Var3.getMeasuredHeight()) + paddingTop) - g10, (getWidth() - getPaddingRight()) * max, (getHeight() - getPaddingBottom()) + g10);
-                this.y = com.google.android.gms.internal.cast.a6.c(g10, 2.0f, rectF5.height() - topOffset, 2.0f);
+                this.y = com.google.android.gms.internal.play_billing.k3.c(g10, 2.0f, rectF5.height() - topOffset, 2.0f);
                 if (i10 == 1) {
                     f12 = 255.0f;
                     int clamp = (int) (Utilities.clamp(1.0f - (this.w0 / 0.05f), 1.0f, 0.0f) * 255.0f);
@@ -545,7 +545,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
                     } else {
                         f14 = 2.0f;
                     }
-                    if (i10 == 1 || this.g0.s()) {
+                    if (i10 == 1 || this.g0.r()) {
                         i17 = save2;
                         i11 = i10;
                         rectF = rectF5;
@@ -880,7 +880,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
                             }
                         }
                         if (!this.c1 && this.x0 != null) {
-                            int z13 = (int) org.telegram.messenger.q.z(1.0f, this.w0, Utilities.clamp(1.0f - (this.w0 / 0.2f), 1.0f, 0.0f), f12);
+                            int z13 = (int) org.telegram.messenger.g0.z(1.0f, this.w0, Utilities.clamp(1.0f - (this.w0 / 0.2f), 1.0f, 0.0f), f12);
                             canvas.save();
                             f(f24, max2, f16, z13, canvas);
                             canvas.restore();
@@ -944,7 +944,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         if (!z10) {
             float f38 = this.O;
             if (f38 != 0.0f) {
-                this.O = org.telegram.ui.Cells.t0.v(min, 220.0f, f38, 0.0f);
+                this.O = org.telegram.ui.Cells.c1.v(min, 220.0f, f38, 0.0f);
                 invalidate();
             }
         }
@@ -1000,7 +1000,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         float f292 = max;
         RectF rectF52 = this.w;
         rectF52.set(getPaddingLeft() + width22, (((1.0f - this.q0) * u1Var32.getMeasuredHeight()) + paddingTop2) - g102, (getWidth() - getPaddingRight()) * max, (getHeight() - getPaddingBottom()) + g102);
-        this.y = com.google.android.gms.internal.cast.a6.c(g102, 2.0f, rectF52.height() - topOffset2, 2.0f);
+        this.y = com.google.android.gms.internal.play_billing.k3.c(g102, 2.0f, rectF52.height() - topOffset2, 2.0f);
         if (i10 == 1) {
         }
         canvas2.restoreToCount(save4);
@@ -1085,10 +1085,10 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         float f19 = paddingTop + f7;
         drawable.setBounds((int) (f14 - f16), (int) (f17 - f16), (int) (f18 + f16), (int) (f16 + f19));
         drawable.draw(canvas);
-        boolean s10 = this.g0.s();
+        boolean r10 = this.g0.r();
         float f20 = paddingTop;
         RectF rectF2 = this.b0;
-        if (s10) {
+        if (r10) {
             rectF2.set(f14, f17, f18, f19);
             f12 = f7;
             this.g0.m(canvas, rectF2, f12, getX(), getY(), i10, false);
@@ -1116,7 +1116,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         float f23 = (-AndroidUtilities.dp(1.0f)) * f10;
         drawable.setBounds((int) ((width2 - f12) - f23), (int) ((lerp - f12) - f23), (int) (width2 + f12 + f23), (int) (f12 + lerp + f23));
         drawable.draw(canvas);
-        if (this.g0.s()) {
+        if (this.g0.r()) {
             rectF2.set(width2 - f11, lerp - f11, width2 + f11, lerp + f11);
             this.g0.m(canvas, rectF2, f11, getX(), getY(), i10, false);
         } else if (this.Y0 != null) {
@@ -1194,7 +1194,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
         if (q()) {
             return (AndroidUtilities.dp(36.0f) * itemsCount) - AndroidUtilities.dp(4.0f);
         }
-        return AndroidUtilities.dp(16.0f) + i0.a.g(itemsCount, 1, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(36.0f) * itemsCount);
+        return AndroidUtilities.dp(16.0f) + com.google.android.gms.internal.play_billing.k3.v(itemsCount, 1, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(36.0f) * itemsCount);
     }
 
     public List<ah.i1> getVisibleReactionsList() {
@@ -1697,7 +1697,7 @@ public class cl0 extends FrameLayout implements NotificationCenter.NotificationC
 
     public void setCustomEmojiReactionsBackground(boolean z10) {
         if (z10) {
-            this.v0.setBackground(org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(28.0f), 0, i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 40)));
+            this.v0.setBackground(org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(28.0f), 0, i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 40)));
         } else {
             this.v0.setBackground(null);
         }

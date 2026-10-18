@@ -40,9 +40,9 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class e50 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.vp0 {
+public final class e50 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.wp0 {
     public String E;
     public boolean F;
     public boolean H;
@@ -504,10 +504,10 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
             parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, 151);
             return;
         }
-        org.telegram.ui.tp0 tp0Var = new org.telegram.ui.tp0(this.Q ? 3 : 1, false, false, null);
-        tp0Var.x = this.J;
-        tp0Var.V = new a50(this);
-        this.a.presentFragment(tp0Var);
+        org.telegram.ui.up0 up0Var = new org.telegram.ui.up0(this.Q ? 3 : 1, false, false, null);
+        up0Var.x = this.J;
+        up0Var.V = new a50(this);
+        this.a.presentFragment(up0Var);
     }
 
     public final void n(boolean z10, final Runnable runnable, DialogInterface.OnDismissListener onDismissListener, int i10) {
@@ -554,20 +554,20 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
         ArrayList arrayList2 = new ArrayList();
         final ArrayList arrayList3 = new ArrayList();
         arrayList.add(LocaleController.getString(R.string.ChooseTakePhoto));
-        org.telegram.ui.Cells.t0.m(R.drawable.msg_camera, 0, arrayList2, arrayList3);
+        org.telegram.ui.Cells.c1.m(R.drawable.msg_camera, 0, arrayList2, arrayList3);
         if (this.Q) {
             arrayList.add(LocaleController.getString(R.string.ChooseRecordVideo));
-            org.telegram.ui.Cells.t0.m(R.drawable.msg_video, 4, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.m(R.drawable.msg_video, 4, arrayList2, arrayList3);
         }
         arrayList.add(LocaleController.getString(R.string.ChooseFromGallery));
-        org.telegram.ui.Cells.t0.m(R.drawable.msg_photos, 1, arrayList2, arrayList3);
+        org.telegram.ui.Cells.c1.m(R.drawable.msg_photos, 1, arrayList2, arrayList3);
         if (this.J) {
             arrayList.add(LocaleController.getString(R.string.ChooseFromSearch));
-            org.telegram.ui.Cells.t0.m(R.drawable.msg_search, 2, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.m(R.drawable.msg_search, 2, arrayList2, arrayList3);
         }
         if (z10) {
             arrayList.add(LocaleController.getString(R.string.DeletePhoto));
-            org.telegram.ui.Cells.t0.m(R.drawable.msg_delete, 3, arrayList2, arrayList3);
+            org.telegram.ui.Cells.c1.m(R.drawable.msg_delete, 3, arrayList2, arrayList3);
         }
         int[] iArr = new int[arrayList2.size()];
         int size = arrayList2.size();
@@ -660,14 +660,14 @@ public final class e50 implements NotificationCenter.NotificationCenterDelegate,
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
-        org.telegram.ui.kq0 kq0Var = new org.telegram.ui.kq0(0, null, hashMap, arrayList, 1, false, null, this.R);
-        kq0Var.s0 = new y40(this, hashMap, arrayList);
-        kq0Var.f0(1, false);
-        kq0Var.p0 = this.b.getInitialSearchString();
+        org.telegram.ui.lq0 lq0Var = new org.telegram.ui.lq0(0, null, hashMap, arrayList, 1, false, null, this.R);
+        lq0Var.s0 = new y40(this, hashMap, arrayList);
+        lq0Var.f0(1, false);
+        lq0Var.p0 = this.b.getInitialSearchString();
         if (this.S) {
-            this.a.showAsSheet(kq0Var);
+            this.a.showAsSheet(lq0Var);
         } else {
-            this.a.presentFragment(kq0Var);
+            this.a.presentFragment(lq0Var);
         }
     }
 

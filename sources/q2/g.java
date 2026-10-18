@@ -4,14 +4,14 @@ import android.graphics.Bitmap;
 import android.os.Trace;
 import b2.w;
 import h2.h;
-import i2.i0;
-import i2.p0;
+import i2.j0;
+import i2.q0;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
-import u2.g0;
+import u2.f0;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class g extends i2.b {
     public final b I;
@@ -28,7 +28,7 @@ public final class g extends i2.b {
     public c T;
     public h U;
     public e V;
-    public i0 W;
+    public j0 W;
     public Bitmap X;
     public boolean Y;
     public j5.c Z;
@@ -133,13 +133,13 @@ public final class g extends i2.b {
                     }
                 }
                 if (z12 || j11 < 30000) {
-                    i0 i0Var = this.W;
-                    if (i0Var != null) {
+                    j0 j0Var = this.W;
+                    if (j0Var != null) {
                         long j12 = this.N.b;
                         this.S.getClass();
-                        p0 p0Var = i0Var.a;
-                        if (p0Var.U) {
-                            p0Var.n.a(37).b();
+                        q0 q0Var = j0Var.a;
+                        if (q0Var.U) {
+                            q0Var.n.a(37).b();
                         }
                     }
                     e eVar = this.V;
@@ -319,7 +319,7 @@ public final class g extends i2.b {
             b bVar = this.I;
             bVar.getClass();
             int c10 = b.c(wVar);
-            if (c10 != i0.a.c(4, 0, 0, 0) && c10 != i0.a.c(3, 0, 0, 0)) {
+            if (c10 != i2.d.c(4, 0, 0, 0) && c10 != i2.d.c(3, 0, 0, 0)) {
                 throw d(new d("Provided decoder factory can't create decoder for format."), this.S, false, 4005);
             }
             c cVar = this.T;
@@ -348,7 +348,7 @@ public final class g extends i2.b {
             if (i10 != 23) {
                 return;
             }
-            this.W = (i0) obj;
+            this.W = (j0) obj;
         } else {
             e eVar = obj instanceof e ? (e) obj : null;
             if (eVar == null) {
@@ -427,7 +427,7 @@ public final class g extends i2.b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(w[] wVarArr, long j10, long j11, g0 g0Var) {
+    public final void u(w[] wVarArr, long j10, long j11, f0 f0Var) {
         if (this.N.b != -9223372036854775807L) {
             ArrayDeque arrayDeque = this.K;
             if (arrayDeque.isEmpty()) {

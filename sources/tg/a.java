@@ -4,7 +4,7 @@ import android.content.Context;
 import android.opengl.GLES20;
 import android.opengl.GLES30;
 import android.opengl.Matrix;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import w7.v7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a {
     public static final String[] D = {"crownGradient", "pavilionGradient", "lightSweep", "crownSweep", "rightCrownSweep", "leftCrownSweep", "pavilionSweep", "rightPavilionSweep", "leftPavilionSweep"};
@@ -149,7 +149,7 @@ public final class a {
 
     public static float i(float f7) {
         float max = Math.max(0.0f, Math.min(1.0f, f7));
-        return a6.B(max, 2.0f, 3.0f, max * max);
+        return k3.B(max, 2.0f, 3.0f, max * max);
     }
 
     public static String j(Context context, String str) {
@@ -197,7 +197,7 @@ public final class a {
             }
             float[] fArr2 = this.m;
             float f17 = fArr2[(i14 * 42) + i16];
-            fArr[i16] = a6.x(fArr2[((1 + i14) * 42) + i16], f17, f16, f17);
+            fArr[i16] = k3.y(fArr2[((1 + i14) * 42) + i16], f17, f16, f17);
             i16++;
         }
         float f18 = i10;

@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d01 extends View {
     public static final pz0 R = new pz0(0);
@@ -84,7 +84,7 @@ public final class d01 extends View {
     }
 
     public static void g(String str) {
-        throw new IllegalArgumentException(r.c.u(str, ". "));
+        throw new IllegalArgumentException(r4.c.u(str, ". "));
     }
 
     public static void j(yz0 yz0Var, int i10, int i11, int i12, int i13) {

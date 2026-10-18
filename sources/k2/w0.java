@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.util.Pair;
 import e9.x1;
 import i2.o1;
-import ig.c2;
+import ig.e2;
 import j$.util.Objects;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -21,9 +21,9 @@ import java.util.HashMap;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class w0 extends r2.r implements i2.u0 {
+public final class w0 extends r2.r implements i2.v0 {
     public final Context Z0;
     public final qf.b a1;
     public final z b1;
@@ -43,14 +43,14 @@ public final class w0 extends r2.r implements i2.u0 {
     public long p1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w0(Context context, r2.k kVar, Handler handler, i2.a0 a0Var, z zVar) {
+    public w0(Context context, r2.k kVar, Handler handler, i2.b0 b0Var, z zVar) {
         super(context.getApplicationContext(), 1, kVar, 44100.0f);
         r2.j jVar = Build.VERSION.SDK_INT >= 35 ? new r2.j() : null;
         this.Z0 = context.getApplicationContext();
         this.b1 = zVar;
         this.c1 = jVar;
         this.n1 = -1000;
-        this.a1 = new qf.b(handler, a0Var);
+        this.a1 = new qf.b(handler, b0Var);
         this.p1 = -9223372036854775807L;
     }
 
@@ -94,8 +94,8 @@ public final class w0 extends r2.r implements i2.u0 {
     }
 
     @Override // r2.r
-    public final i2.e H(r2.o oVar, b2.w wVar, b2.w wVar2, boolean z10) {
-        i2.e b10 = oVar.b(wVar, wVar2);
+    public final i2.f H(r2.o oVar, b2.w wVar, b2.w wVar2, boolean z10) {
+        i2.f b10 = oVar.b(wVar, wVar2);
         int i10 = b10.e;
         if (this.X == null && y0(wVar2)) {
             i10 |= 32768;
@@ -104,7 +104,7 @@ public final class w0 extends r2.r implements i2.u0 {
             i10 |= 64;
         }
         int i11 = i10;
-        return new i2.e(oVar.a, wVar, wVar2, i11 != 0 ? 0 : b10.d, i11);
+        return new i2.f(oVar.a, wVar, wVar2, i11 != 0 ? 0 : b10.d, i11);
     }
 
     @Override // r2.r
@@ -139,7 +139,7 @@ public final class w0 extends r2.r implements i2.u0 {
         }
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(g10);
-        Collections.sort(arrayList, new t5(new org.telegram.ui.web.c0(2, this.Z0, wVar), 4));
+        Collections.sort(arrayList, new t5(new org.telegram.ui.web.m(3, this.Z0, wVar), 4));
         return arrayList;
     }
 
@@ -353,7 +353,7 @@ public final class w0 extends r2.r implements i2.u0 {
         }
     }
 
-    @Override // i2.u0
+    @Override // i2.v0
     public final long a() {
         if (this.n == 2) {
             F0();
@@ -371,7 +371,7 @@ public final class w0 extends r2.r implements i2.u0 {
         }
     }
 
-    @Override // i2.u0
+    @Override // i2.v0
     public final boolean b() {
         boolean z10 = this.l1;
         this.l1 = false;
@@ -514,20 +514,20 @@ public final class w0 extends r2.r implements i2.u0 {
     }
 
     @Override // r2.r
-    public final i2.e e0(qf.b bVar) {
+    public final i2.f e0(qf.b bVar) {
         b2.w wVar = (b2.w) bVar.c;
         wVar.getClass();
         this.g1 = wVar;
-        i2.e e02 = super.e0(bVar);
+        i2.f e02 = super.e0(bVar);
         qf.b bVar2 = this.a1;
         Handler handler = (Handler) bVar2.b;
         if (handler != null) {
-            handler.post(new c2(bVar2, wVar, e02, 1));
+            handler.post(new e2(bVar2, wVar, e02, 1));
         }
         return e02;
     }
 
-    @Override // i2.u0
+    @Override // i2.v0
     public final void f(b2.z0 z0Var) {
         ((t0) this.b1).C(z0Var);
     }
@@ -619,7 +619,7 @@ public final class w0 extends r2.r implements i2.u0 {
         this.b1.getClass();
     }
 
-    @Override // i2.u0
+    @Override // i2.v0
     public final b2.z0 h() {
         return ((t0) this.b1).x;
     }
@@ -731,12 +731,12 @@ public final class w0 extends r2.r implements i2.u0 {
 
     @Override // i2.b
     public final void o(boolean z10, boolean z11) {
-        i2.d dVar = new i2.d();
-        this.O0 = dVar;
+        i2.e eVar = new i2.e();
+        this.O0 = eVar;
         qf.b bVar = this.a1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new r(bVar, dVar, 1));
+            handler.post(new r(bVar, eVar, 1));
         }
         o1 o1Var = this.d;
         o1Var.getClass();
@@ -812,7 +812,7 @@ public final class w0 extends r2.r implements i2.u0 {
                 p0();
                 n0();
             } finally {
-                i0.a.D(this.X, null);
+                i2.d.D(this.X, null);
                 this.X = null;
             }
         } finally {
@@ -869,11 +869,11 @@ public final class w0 extends r2.r implements i2.u0 {
         x1 g10;
         boolean z10;
         boolean z11;
-        int c10 = i0.a.c(1, 0, 0, 0);
+        int c10 = i2.d.c(1, 0, 0, 0);
         String str = wVar.s;
         String str2 = wVar.s;
         if (!b2.v0.i(str)) {
-            return i0.a.c(0, 0, 0, 0);
+            return i2.d.c(0, 0, 0, 0);
         }
         int i11 = wVar.T;
         boolean z12 = i11 != 0;
@@ -886,7 +886,7 @@ public final class w0 extends r2.r implements i2.u0 {
             }
             i10 = D0(wVar);
             if (((t0) zVar).j(wVar) != 0) {
-                return i0.a.c(4, 8, 32, i10);
+                return i2.d.c(4, 8, 32, i10);
             }
             if ("audio/raw".equals(str2) || ((t0) zVar).j(wVar) != 0) {
                 t0Var = (t0) zVar;
@@ -905,7 +905,7 @@ public final class w0 extends r2.r implements i2.u0 {
                     }
                     if (!g10.isEmpty()) {
                         if (!z13) {
-                            return i0.a.c(2, 0, 0, 0);
+                            return i2.d.c(2, 0, 0, 0);
                         }
                         r2.o oVar2 = (r2.o) g10.get(0);
                         Context context = this.Z0;
@@ -943,7 +943,7 @@ public final class w0 extends r2.r implements i2.u0 {
     }
 
     @Override // i2.b
-    public final i2.u0 i() {
+    public final i2.v0 i() {
         return this;
     }
 }

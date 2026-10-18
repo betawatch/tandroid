@@ -25,7 +25,7 @@ import org.telegram.ui.Components.ry0;
 import org.telegram.ui.Components.sy;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                 k7 k7Var = (k7) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 ((pf.c) obj3).b();
-                ((ug.l1[]) obj2)[0].dismiss();
+                ((ug.m1[]) obj2)[0].dismiss();
                 if (tL_error == null) {
                     k7Var.dismiss();
                     break;
@@ -64,9 +64,6 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     break;
                 }
             case 1:
-                k7.Z((k7) obj4, (pf.c) obj3, (ug.l1) obj2, (String) obj);
-                break;
-            case 2:
                 ci.v3 v3Var = (ci.v3) obj4;
                 v3Var.getClass();
                 ArrayList arrayList2 = new ArrayList(1);
@@ -78,7 +75,7 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     break;
                 }
                 break;
-            case 3:
+            case 2:
                 ci.h4 h4Var = (ci.h4) obj4;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
                 TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) obj2;
@@ -98,17 +95,17 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
                     tL_stories_getStoriesByID.peer = MessagesController.getInstance(q4Var.C2).getInputPeer(storyItem.dialogId);
                     tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem.id));
-                    ConnectionsManager.getInstance(q4Var.C2).sendRequest(tL_stories_getStoriesByID, new p2(h4Var, storyItem, callback, 5));
+                    ConnectionsManager.getInstance(q4Var.C2).sendRequest(tL_stories_getStoriesByID, new q2(h4Var, storyItem, callback, 5));
                     break;
                 }
                 break;
-            case 4:
+            case 3:
                 ci.b7 b7Var = (ci.b7) obj;
                 ci.q4 q4Var2 = ((ci.h4) obj4).l;
                 q4Var2.S1.c(b7Var.a, q4Var2.B1, (TL_stories.StoryItem) obj3);
                 new org.telegram.ui.Components.xc(q4Var2.c1, (org.telegram.ui.ActionBar.d6) obj2).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoryAddedToAlbumX, b7Var.b))).j();
                 break;
-            case 5:
+            case 4:
                 ei.f7 f7Var = (ei.f7) obj4;
                 MessagesController messagesController = (MessagesController) obj3;
                 String str = (String) obj2;
@@ -129,7 +126,7 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     break;
                 }
                 break;
-            case 6:
+            case 5:
                 Utilities.Callback callback2 = (Utilities.Callback) obj3;
                 TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj2;
                 ((org.telegram.ui.ActionBar.b2) obj4).dismiss();
@@ -138,10 +135,10 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     break;
                 }
                 break;
-            case 7:
+            case 6:
                 org.telegram.ui.Components.k8.L((org.telegram.ui.Components.k8) obj4, (org.telegram.ui.ActionBar.b2) obj3, (TLRPC.Document) obj2, (TLRPC.InputFile) obj);
                 break;
-            case 8:
+            case 7:
                 fo foVar = (fo) obj4;
                 sn snVar = (sn) obj3;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) obj2;
@@ -151,10 +148,10 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     foVar.b.dismiss(true);
                     break;
                 } else {
-                    org.telegram.ui.Components.f5.K(snVar.getParentActivity(), snVar.a(), new s2(foVar, tL_messageMediaToDo, l10, 28));
+                    org.telegram.ui.Components.f5.K(snVar.getParentActivity(), snVar.a(), new t2(foVar, tL_messageMediaToDo, l10, 28));
                     break;
                 }
-            case 9:
+            case 8:
                 sy syVar = (sy) obj4;
                 ArrayList arrayList3 = (ArrayList) obj3;
                 Runnable runnable = (Runnable) obj2;
@@ -178,7 +175,7 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                 }
                 runnable.run();
                 break;
-            case 10:
+            case 9:
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj3;
                 ry0 ry0Var = (ry0) obj2;
                 ((org.telegram.ui.ActionBar.b2) obj4).dismiss();
@@ -192,7 +189,7 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     b2Var.dismiss();
                     break;
                 }
-            case 11:
+            case 10:
                 org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) obj4;
                 String str2 = (String) obj3;
                 ci.z7 z7Var = (ci.z7) obj2;
@@ -207,7 +204,7 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     FileLog.e(e);
                     return;
                 }
-            case 12:
+            case 11:
                 sg.j0 j0Var = (sg.j0) obj4;
                 TL_stories.TL_premium_myBoosts tL_premium_myBoosts = (TL_stories.TL_premium_myBoosts) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
@@ -228,7 +225,7 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                     break;
                 }
                 break;
-            case 13:
+            case 12:
                 yh.n nVar = (yh.n) obj4;
                 nVar.getClass();
                 ((boolean[]) obj3)[0] = false;

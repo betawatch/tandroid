@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.yj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m4 extends FrameLayout {
     public final k4 a;
@@ -97,7 +97,7 @@ public final class m4 extends FrameLayout {
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = k4Var.getImageReceiver();
-        float D = com.google.android.gms.internal.cast.a6.D(1.0f, this.h, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(3.0f));
+        float D = com.google.android.gms.internal.play_billing.k3.D(1.0f, this.h, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(3.0f));
         this.d.f((int) (rectF.left - D), (int) (rectF.top - D), (int) (rectF.right + D), (int) (rectF.bottom + D));
         this.d.e(z11 ? 1.0f : Utilities.clamp(f10, 1.0f, 0.0f), true);
         if (this.r && z11 && this.d.f >= 0.9f) {

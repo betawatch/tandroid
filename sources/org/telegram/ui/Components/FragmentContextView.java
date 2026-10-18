@@ -56,7 +56,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, GroupCallMessagesController.CallMessageListener {
     public static final float[] Q0 = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
@@ -217,7 +217,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                     if (!z13 || bhVar == null || !bhVar.G() || i30.c()) {
                         return;
                     }
-                    org.telegram.messenger.q.q(R.string.InviteExpired, xc.a0(n2Var), R.raw.linkbroken, 36);
+                    org.telegram.messenger.g0.q(R.string.InviteExpired, xc.a0(n2Var), R.raw.linkbroken, 36);
                     return;
                 }
                 b();
@@ -2058,7 +2058,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                                                 float f43 = f10;
                                                 j12 = j11;
                                                 float f44 = f13;
-                                                path.addCircle(f10 - AndroidUtilities.dp(18.0f), com.google.android.gms.internal.cast.a6.z(measuredHeight, f16, 2.0f, f16), org.telegram.messenger.q.z(f43, f44, 1.1f, f14), Path.Direction.CW);
+                                                path.addCircle(f10 - AndroidUtilities.dp(18.0f), com.google.android.gms.internal.play_billing.k3.z(measuredHeight, f16, 2.0f, f16), org.telegram.messenger.g0.z(f43, f44, 1.1f, f14), Path.Direction.CW);
                                                 canvas.save();
                                                 canvas.clipPath(path);
                                                 f15 = f43;
@@ -2403,7 +2403,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 this.G.setEnabled(true);
             }
             this.d.setPadding(0, 0, AndroidUtilities.dp(44.0f) + this.N, 0);
-            spannableStringBuilder = new SpannableStringBuilder(a1.g.D(playingMessageObject.getMusicAuthor(), " ", playingMessageObject.getMusicTitle()));
+            spannableStringBuilder = new SpannableStringBuilder(a1.g.C(playingMessageObject.getMusicAuthor(), " ", playingMessageObject.getMusicTitle()));
             int i12 = 0;
             while (i12 < 2) {
                 z10 z10Var = this.d;
@@ -2428,7 +2428,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 this.G.setEnabled(false);
                 this.d.setPadding(0, 0, this.N, 0);
             }
-            spannableStringBuilder = new SpannableStringBuilder(a1.g.D(playingMessageObject.getMusicAuthor(), " - ", playingMessageObject.getMusicTitle()));
+            spannableStringBuilder = new SpannableStringBuilder(a1.g.C(playingMessageObject.getMusicAuthor(), " - ", playingMessageObject.getMusicTitle()));
             int i13 = 0;
             while (i13 < 2) {
                 z10 z10Var2 = this.d;
@@ -2639,10 +2639,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             return;
         }
         int min = call.call.rtmp_stream ? 0 : Math.min(3, call.sortedParticipants.size());
-        int g10 = (min == 0 ? 10 : i0.a.g(min, 1, 24, 52)) + 3;
+        int v = (min == 0 ? 10 : com.google.android.gms.internal.play_billing.k3.v(min, 1, 24, 52)) + 3;
         if (z10) {
             int i16 = ((FrameLayout.LayoutParams) this.d.getLayoutParams()).leftMargin;
-            if (AndroidUtilities.dp(g10) != i16) {
+            if (AndroidUtilities.dp(v) != i16) {
                 float translationX = (this.d.getTranslationX() + i16) - AndroidUtilities.dp(r3);
                 this.d.setTranslationX(translationX);
                 this.e.setTranslationX(translationX);
@@ -2657,7 +2657,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             this.d.setTranslationX(0.0f);
             this.e.setTranslationX(0.0f);
         }
-        float f7 = g10;
+        float f7 = v;
         this.d.setLayoutParams(w7.z5.a(20.0f, f7, 5.0f, call.isScheduled() ? 90 : 36, 0.0f, -1, 51));
         this.e.setLayoutParams(w7.z5.a(20.0f, f7, 25.0f, call.isScheduled() ? 90 : 36, 0.0f, -1, 51));
     }

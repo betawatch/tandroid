@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.q21;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,6 +41,7 @@ public final /* synthetic */ class y3 implements View.OnClickListener {
         View view2;
         View view3;
         int i10 = this.a;
+        int i11 = 7;
         org.telegram.ui.ActionBar.d6 d6Var = this.c;
         aa aaVar = this.d;
         h4 h4Var = this.b;
@@ -49,15 +50,15 @@ public final /* synthetic */ class y3 implements View.OnClickListener {
                 q4 q4Var = h4Var.l;
                 aaVar.k1 = true;
                 aaVar.P();
-                int i11 = q4Var.C2;
+                int i12 = q4Var.C2;
                 Context context = q4Var.getContext();
                 TL_stories.StoryItem storyItem = q4Var.O1.a;
                 r3 r3Var = q4Var.c1;
                 org.telegram.ui.ActionBar.d6 d6Var2 = this.c;
                 xc xcVar = new xc(r3Var, d6Var2);
                 ai.r0 r0Var = new ai.r0(aaVar, 7);
-                int i12 = q21.v;
-                q21.L(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), xcVar, d6Var2, new byte[0], null, r0Var);
+                int i13 = q21.v;
+                q21.L(i12, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), xcVar, d6Var2, new byte[0], null, r0Var);
                 h4 h4Var2 = q4Var.t1;
                 if (h4Var2 != null) {
                     h4Var2.a();
@@ -114,7 +115,7 @@ public final /* synthetic */ class y3 implements View.OnClickListener {
                             ei.k9 k9Var4 = (ei.k9) view3;
                             k9Var4.b(k9Var4.a);
                         }
-                        r9Var.T = new ah.h0(5, h4Var, r9Var);
+                        r9Var.T = new ah.h0(6, h4Var, r9Var);
                         r9Var.show();
                         break;
                     }
@@ -138,7 +139,7 @@ public final /* synthetic */ class y3 implements View.OnClickListener {
                 view3 = viewPages22[1];
                 if (view3 instanceof ei.k9) {
                 }
-                r9Var.T = new ah.h0(5, h4Var, r9Var);
+                r9Var.T = new ah.h0(6, h4Var, r9Var);
                 r9Var.show();
             default:
                 q4 q4Var3 = h4Var.l;
@@ -151,7 +152,7 @@ public final /* synthetic */ class y3 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string;
                 b2Var.T = LocaleController.getString(R.string.LiveStoryEndAlertText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.LiveStoryEndAlertButton), new ah.h0(6, h4Var, aaVar));
+                alertDialog$Builder.k(LocaleController.getString(R.string.LiveStoryEndAlertButton), new ah.h0(i11, h4Var, aaVar));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.o();

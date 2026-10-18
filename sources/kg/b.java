@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.SegmentTree;
 import org.telegram.ui.ActionBar.g5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class b {
     public long[] a;
@@ -92,7 +92,7 @@ public class b {
                     }
                     int parseColor = Color.parseColor(matcher.group(2));
                     aVar2.h = parseColor;
-                    aVar2.i = i0.b.f(0.85f, -1, parseColor);
+                    aVar2.i = i0.a.f(0.85f, -1, parseColor);
                 }
             }
             if (optJSONObject2 != null) {

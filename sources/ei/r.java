@@ -29,7 +29,7 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class r extends m {
     public static final int[] Q1 = {21600, 43200, 86400, 172800};
@@ -464,7 +464,7 @@ public abstract class r extends m {
                 }
                 this.z1.setStrokeWidth(AndroidUtilities.dp(1.33f));
                 this.x1.p = (int) ((rectF.width() - AndroidUtilities.dp(116.0f)) - p6Var.c());
-                float D = com.google.android.gms.internal.cast.a6.D(1.0f, this.c1, AndroidUtilities.dp(6.0f) * sin, (rectF.centerX() - ((this.x1.l() + AndroidUtilities.dp(11.33f)) / 2.0f)) - (AndroidUtilities.lerp(this.c1, 1.0f, e7) * (rectF.width() / 6.0f)));
+                float D = com.google.android.gms.internal.play_billing.k3.D(1.0f, this.c1, AndroidUtilities.dp(6.0f) * sin, (rectF.centerX() - ((this.x1.l() + AndroidUtilities.dp(11.33f)) / 2.0f)) - (AndroidUtilities.lerp(this.c1, 1.0f, e7) * (rectF.width() / 6.0f)));
                 int m12 = org.telegram.ui.ActionBar.h6.m1(f11, paint != null ? -1 : -2130706433);
                 canvas3.save();
                 canvas3.translate(D, rectF.centerY() - AndroidUtilities.dp(5.0f));
@@ -512,8 +512,8 @@ public abstract class r extends m {
         float e7 = f6Var2.e(z11);
         float d = this.l1.d(this.k1, false);
         float f13 = 1.0f - e;
-        float x10 = com.google.android.gms.internal.cast.a6.x(1.0f, this.c1, AndroidUtilities.dp(30.0f) * d, AndroidUtilities.dp(41.0f)) * f13 * f7;
-        float lerp = AndroidUtilities.lerp(com.google.android.gms.internal.cast.a6.D(1.0f, e7, getWidth() * 0.35f * this.c1, rectF.right - AndroidUtilities.dp(20.0f)), rectF.left + AndroidUtilities.dp(20.0f), e);
+        float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, this.c1, AndroidUtilities.dp(30.0f) * d, AndroidUtilities.dp(41.0f)) * f13 * f7;
+        float lerp = AndroidUtilities.lerp(com.google.android.gms.internal.play_billing.k3.D(1.0f, e7, getWidth() * 0.35f * this.c1, rectF.right - AndroidUtilities.dp(20.0f)), rectF.left + AndroidUtilities.dp(20.0f), e);
         float dp = rectF.bottom - AndroidUtilities.dp(20.0f);
         boolean isEnabled = LiteMode.isEnabled(LiteMode.FLAGS_CHAT);
         Paint paint = this.g1;
@@ -535,13 +535,13 @@ public abstract class r extends m {
             baVar.e(d, 1.02f);
             paint3.setColor(org.telegram.ui.ActionBar.h6.m1(0.15f * f7, paint.getColor()));
             canvas.save();
-            float f14 = x10 / baVar2.a;
+            float f14 = y3 / baVar2.a;
             canvas.scale(f14, f14, lerp, dp);
             baVar2.a(lerp, dp, canvas, paint3);
             canvas.restore();
             paint2.setColor(org.telegram.ui.ActionBar.h6.m1(0.3f * f7, paint.getColor()));
             canvas.save();
-            float f15 = x10 / baVar.a;
+            float f15 = y3 / baVar.a;
             canvas.scale(f15, f15, lerp, dp);
             baVar.a(lerp, dp, canvas, paint2);
             canvas.restore();
@@ -550,7 +550,7 @@ public abstract class r extends m {
             f11 = e7;
             f12 = f13;
         }
-        float min = Math.min(x10, AndroidUtilities.dp(55.0f));
+        float min = Math.min(y3, AndroidUtilities.dp(55.0f));
         float f16 = f7 * 255.0f;
         paint.setAlpha((int) f16);
         canvas.drawCircle(lerp, dp, min, paint);
@@ -573,7 +573,7 @@ public abstract class r extends m {
         canvas.restore();
         float f17 = f6Var.c;
         float f18 = f6Var2.c;
-        float z12 = org.telegram.messenger.q.z(1.0f, f17, AndroidUtilities.lerp(this.s1.e(this.c1 < 0.4f), f10, f18), f7);
+        float z12 = org.telegram.messenger.g0.z(1.0f, f17, AndroidUtilities.lerp(this.s1.e(this.c1 < 0.4f), f10, f18), f7);
         float dp4 = rectF.right - AndroidUtilities.dp(20.0f);
         float lerp2 = (AndroidUtilities.lerp(AndroidUtilities.dp(50.0f), AndroidUtilities.dp(36.0f), f18) * z12) / 2.0f;
         float f19 = 1.0f - f18;

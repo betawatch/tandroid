@@ -42,11 +42,11 @@ import org.telegram.ui.d91;
 import org.telegram.ui.ko;
 import org.telegram.ui.r91;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final CharSequence E;
-    public kd F;
+    public ld F;
     public int G;
     public r H;
     public LinearLayout I;
@@ -157,8 +157,8 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
     }
 
     public static void W(x xVar, f61 f61Var) {
-        if (f61Var.G(fd.class)) {
-            ld.i1(xVar.getParentActivity(), true, xVar.b, xVar.currentAccount, (TL_stars.StarsTransaction) f61Var.G, xVar.getResourceProvider());
+        if (f61Var.G(gd.class)) {
+            md.i1(xVar.getParentActivity(), true, xVar.b, xVar.currentAccount, (TL_stars.StarsTransaction) f61Var.G, xVar.getResourceProvider());
         } else if (f61Var.G instanceof TL_stats.BroadcastRevenueTransaction) {
             org.telegram.ui.ke.h0(xVar.getParentActivity(), xVar.currentAccount, (TL_stats.BroadcastRevenueTransaction) f61Var.G, xVar.b, xVar.resourceProvider);
         } else if (f61Var.d == 2) {
@@ -349,8 +349,8 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
                 while (i14 < size) {
                     Object obj = arrayList2.get(i14);
                     i14++;
-                    int i15 = fd.a;
-                    f61 J = f61.J(fd.class);
+                    int i15 = gd.a;
+                    f61 J = f61.J(gd.class);
                     J.G = (TL_stars.StarsTransaction) obj;
                     J.q = true;
                     arrayList.add(J);
@@ -419,7 +419,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText1, textView2);
+        org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText1, textView2);
         if (LocaleController.isRTL) {
             linearLayout2.addView(textView2, w7.z5.n(-1, -2));
             linearLayout2.addView(imageView, w7.z5.q(-2, -2, 5));
@@ -427,7 +427,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
             linearLayout2.addView(imageView, w7.z5.n(-2, -2));
             linearLayout2.addView(textView2, w7.z5.n(-1, -2));
         }
-        LinearLayout e = org.telegram.messenger.q.e(activity, 0);
+        LinearLayout e = org.telegram.messenger.g0.e(activity, 0);
         linearLayout.addView(e, w7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         ImageView imageView2 = new ImageView(activity);
         imageView2.setImageResource(R.drawable.list_circle);
@@ -437,7 +437,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
         textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
         textView3.setTextSize(1, 16.0f);
         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText2, textView3);
+        org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText2, textView3);
         if (LocaleController.isRTL) {
             e.addView(textView3, w7.z5.n(-1, -2));
             i10 = 5;
@@ -531,7 +531,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
         } else {
             this.d.setSubtitle(LocaleController.getString(R.string.BotStatsTON));
         }
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 1));
         oo ooVar2 = this.d;
         int i10 = org.telegram.ui.ActionBar.h6.Oi;
@@ -542,7 +542,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         int i11 = org.telegram.ui.ActionBar.h6.d6;
         kVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
-        this.F = new kd(context, this.currentAccount, false, this.b, getClassGuid(), getResourceProvider());
+        this.F = new ld(context, this.currentAccount, false, this.b, getClassGuid(), getResourceProvider());
         r rVar = new r(context, 0);
         this.H = rVar;
         rVar.setOrientation(1);
@@ -792,7 +792,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
             return;
         }
         long j10 = (long) (this.Z * starsAmount.amount * 100.0d);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ld.Y0(false, TextUtils.concat("XTR ", ld.K0(starsAmount, 0.8f, ' ')), 1.0f, null));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(md.Y0(false, TextUtils.concat("XTR ", md.K0(starsAmount, 0.8f, ' ')), 1.0f, null));
         int indexOf = TextUtils.indexOf(spannableStringBuilder, ".");
         if (indexOf >= 0) {
             spannableStringBuilder.setSpan(this.J, indexOf, spannableStringBuilder.length(), 33);

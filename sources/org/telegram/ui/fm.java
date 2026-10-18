@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fm extends org.telegram.ui.Components.jl0 {
     public int E;
@@ -163,7 +163,7 @@ public final class fm extends org.telegram.ui.Components.jl0 {
         if (BuildVars.LOGS_ENABLED) {
             StringBuilder sb2 = new StringBuilder("notify item removed ");
             sb2.append(i10);
-            i0.a.v(z10 ? " with thanos effect" : "", sb2);
+            i2.d.v(z10 ? " with thanos effect" : "", sb2);
         }
         sn snVar = this.Q;
         if (((org.telegram.ui.ActionBar.n2) snVar).fragmentBeginToShow) {
@@ -382,7 +382,7 @@ public final class fm extends org.telegram.ui.Components.jl0 {
                             this.r = i25 + 2;
                             this.v = i25 + 1;
                         }
-                        if (i10 == 5 && !ig.y1.g(snVar.Q3)) {
+                        if (i10 == 5 && !ig.a2.g(snVar.Q3)) {
                             int i26 = this.r;
                             this.r = i26 + 1;
                             this.s = i26;
@@ -938,46 +938,46 @@ public final class fm extends org.telegram.ui.Components.jl0 {
             return;
         }
         if (i10 == this.F || i10 == this.E) {
-            ((org.telegram.ui.Cells.a1) view).setProgressVisible(snVar.J6 > 1);
+            ((org.telegram.ui.Cells.z0) view).setProgressVisible(snVar.J6 > 1);
             return;
         }
         if (i10 == this.H) {
             if (snVar.getMessagesController().getPeerSettings(snVar.a()) == null) {
                 return;
             }
-            ((org.telegram.ui.Cells.x0) view).setCustomText(LocaleController.formatString(R.string.ContactInfoUserUpdatedName, LocaleController.formatRelativeDate(snVar.getConnectionsManager().getCurrentTime() - r1.name_change_date)));
+            ((org.telegram.ui.Cells.w0) view).setCustomText(LocaleController.formatString(R.string.ContactInfoUserUpdatedName, LocaleController.formatRelativeDate(snVar.getConnectionsManager().getCurrentTime() - r1.name_change_date)));
             return;
         }
         if (i10 == this.G) {
             if (snVar.getMessagesController().getPeerSettings(snVar.a()) == null) {
                 return;
             }
-            ((org.telegram.ui.Cells.x0) view).setCustomText(LocaleController.formatString(R.string.ContactInfoUserUpdatedPhoto, LocaleController.formatRelativeDate(snVar.getConnectionsManager().getCurrentTime() - r1.photo_change_date)));
+            ((org.telegram.ui.Cells.w0) view).setCustomText(LocaleController.formatString(R.string.ContactInfoUserUpdatedPhoto, LocaleController.formatRelativeDate(snVar.getConnectionsManager().getCurrentTime() - r1.photo_change_date)));
             return;
         }
         if (i10 == this.s) {
-            org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
+            org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
             sn.f4(snVar);
-            x0Var.setMessageObject(snVar.I3);
+            w0Var.setMessageObject(snVar.I3);
             int i23 = snVar.R3;
             if (i23 == 3) {
-                x0Var.setCustomText(LocaleController.getString(R.string.SavedMessagesProfileHint));
+                w0Var.setCustomText(LocaleController.getString(R.string.SavedMessagesProfileHint));
             } else if (i23 == 5) {
-                x0Var.setCustomText(LocaleController.getString(R.string.BusinessRepliesHint));
+                w0Var.setCustomText(LocaleController.getString(R.string.BusinessRepliesHint));
             } else if (i23 == 9) {
-                x0Var.setCustomText(LocaleController.getString(R.string.WelcomeMessageHint2));
+                w0Var.setCustomText(LocaleController.getString(R.string.WelcomeMessageHint2));
             }
-            x0Var.setAlpha(1.0f);
-            x0Var.setSpoilersSuppressed(snVar.x0.getScrollState() != 0);
+            w0Var.setAlpha(1.0f);
+            w0Var.setSpoilersSuppressed(snVar.x0.getScrollState() != 0);
             return;
         }
         if (i10 == this.v) {
-            org.telegram.ui.Cells.x0 x0Var2 = (org.telegram.ui.Cells.x0) view;
+            org.telegram.ui.Cells.w0 w0Var2 = (org.telegram.ui.Cells.w0) view;
             sn.g4(snVar);
-            x0Var2.setMessageObject(snVar.J3);
-            x0Var2.setCustomText(LocaleController.getString(R.string.WelcomeMessageHint));
-            x0Var2.setAlpha(1.0f);
-            x0Var2.setSpoilersSuppressed(snVar.x0.getScrollState() != 0);
+            w0Var2.setMessageObject(snVar.J3);
+            w0Var2.setCustomText(LocaleController.getString(R.string.WelcomeMessageHint));
+            w0Var2.setAlpha(1.0f);
+            w0Var2.setSpoilersSuppressed(snVar.x0.getScrollState() != 0);
             return;
         }
         int i24 = this.J;
@@ -989,7 +989,7 @@ public final class fm extends org.telegram.ui.Components.jl0 {
         if (!(view instanceof org.telegram.ui.Cells.u1)) {
             ArrayList arrayList5 = arrayList4;
             MessageObject messageObject3 = null;
-            if (!(view instanceof org.telegram.ui.Cells.x0)) {
+            if (!(view instanceof org.telegram.ui.Cells.w0)) {
                 if (view instanceof org.telegram.ui.Cells.w1) {
                     org.telegram.ui.Cells.w1 w1Var = (org.telegram.ui.Cells.w1) view;
                     w1Var.setText(LocaleController.getString(R.string.UnreadMessages));
@@ -1015,41 +1015,41 @@ public final class fm extends org.telegram.ui.Components.jl0 {
                 }
                 if (messageObject3 == null || (messageObject2 != null && messageObject3.getTopicId() != messageObject2.getTopicId())) {
                     z10 = true;
-                    org.telegram.ui.Cells.x0 x0Var3 = (org.telegram.ui.Cells.x0) view;
-                    x0Var3.e0 = snVar.y9();
-                    x0Var3.i0 = snVar.H9();
+                    org.telegram.ui.Cells.w0 w0Var3 = (org.telegram.ui.Cells.w0) view;
+                    w0Var3.e0 = snVar.y9();
+                    w0Var3.i0 = snVar.H9();
                     snVar.G9();
                     snVar.V8();
-                    x0Var3.j0 = snVar.W8();
-                    x0Var3.f0 = ChatObject.isForum(snVar.e);
-                    x0Var3.g0 = ChatObject.isMonoForum(snVar.e);
-                    x0Var3.h0 = UserObject.isBotForum(snVar.f);
-                    boolean z32 = x0Var3.k0 == z10;
-                    x0Var3.k0 = z10;
-                    x0Var3.Y(messageObject2, z32);
-                    x0Var3.setAlpha(1.0f);
-                    x0Var3.setShowTopic(true);
-                    x0Var3.setSpoilersSuppressed(snVar.x0.getScrollState() == 0);
+                    w0Var3.j0 = snVar.W8();
+                    w0Var3.f0 = ChatObject.isForum(snVar.e);
+                    w0Var3.g0 = ChatObject.isMonoForum(snVar.e);
+                    w0Var3.h0 = UserObject.isBotForum(snVar.f);
+                    boolean z32 = w0Var3.k0 == z10;
+                    w0Var3.k0 = z10;
+                    w0Var3.Y(messageObject2, z32);
+                    w0Var3.setAlpha(1.0f);
+                    w0Var3.setShowTopic(true);
+                    w0Var3.setSpoilersSuppressed(snVar.x0.getScrollState() == 0);
                     return;
                 }
             }
             z10 = false;
-            org.telegram.ui.Cells.x0 x0Var32 = (org.telegram.ui.Cells.x0) view;
-            x0Var32.e0 = snVar.y9();
-            x0Var32.i0 = snVar.H9();
+            org.telegram.ui.Cells.w0 w0Var32 = (org.telegram.ui.Cells.w0) view;
+            w0Var32.e0 = snVar.y9();
+            w0Var32.i0 = snVar.H9();
             snVar.G9();
             snVar.V8();
-            x0Var32.j0 = snVar.W8();
-            x0Var32.f0 = ChatObject.isForum(snVar.e);
-            x0Var32.g0 = ChatObject.isMonoForum(snVar.e);
-            x0Var32.h0 = UserObject.isBotForum(snVar.f);
-            if (x0Var32.k0 == z10) {
+            w0Var32.j0 = snVar.W8();
+            w0Var32.f0 = ChatObject.isForum(snVar.e);
+            w0Var32.g0 = ChatObject.isMonoForum(snVar.e);
+            w0Var32.h0 = UserObject.isBotForum(snVar.f);
+            if (w0Var32.k0 == z10) {
             }
-            x0Var32.k0 = z10;
-            x0Var32.Y(messageObject2, z32);
-            x0Var32.setAlpha(1.0f);
-            x0Var32.setShowTopic(true);
-            x0Var32.setSpoilersSuppressed(snVar.x0.getScrollState() == 0);
+            w0Var32.k0 = z10;
+            w0Var32.Y(messageObject2, z32);
+            w0Var32.setAlpha(1.0f);
+            w0Var32.setShowTopic(true);
+            w0Var32.setSpoilersSuppressed(snVar.x0.getScrollState() == 0);
             return;
         }
         org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
@@ -1758,13 +1758,13 @@ public final class fm extends org.telegram.ui.Components.jl0 {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r8v10, types: [org.telegram.ui.yl] */
-    /* JADX WARN: Type inference failed for: r8v11, types: [org.telegram.ui.Cells.x0] */
+    /* JADX WARN: Type inference failed for: r8v11, types: [org.telegram.ui.Cells.w0] */
     /* JADX WARN: Type inference failed for: r8v12, types: [org.telegram.ui.Cells.xa] */
-    /* JADX WARN: Type inference failed for: r8v13, types: [org.telegram.ui.Cells.a1] */
+    /* JADX WARN: Type inference failed for: r8v13, types: [org.telegram.ui.Cells.z0] */
     /* JADX WARN: Type inference failed for: r8v14, types: [org.telegram.ui.Cells.h0, org.telegram.ui.xl] */
     /* JADX WARN: Type inference failed for: r8v16, types: [org.telegram.ui.Cells.w1] */
     /* JADX WARN: Type inference failed for: r8v9, types: [org.telegram.ui.Cells.v1] */
-    /* JADX WARN: Type inference failed for: r9v12, types: [org.telegram.ui.Cells.x0] */
+    /* JADX WARN: Type inference failed for: r9v12, types: [org.telegram.ui.Cells.w0] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         org.telegram.ui.Cells.u1 u1Var;
@@ -1796,11 +1796,11 @@ public final class fm extends org.telegram.ui.Components.jl0 {
                     xlVar.setDelegate(new b1(this, 20));
                     u1Var2 = xlVar;
                 } else if (i10 == 4) {
-                    u1Var2 = new org.telegram.ui.Cells.a1(context, snVar.ea);
+                    u1Var2 = new org.telegram.ui.Cells.z0(context, snVar.ea);
                 } else if (i10 == 6) {
                     u1Var2 = new org.telegram.ui.Cells.xa(context, ((org.telegram.ui.ActionBar.n2) snVar).currentAccount, snVar.ea);
                 } else if (i10 == 7) {
-                    u1Var2 = new org.telegram.ui.Cells.x0(context, snVar.ea, false);
+                    u1Var2 = new org.telegram.ui.Cells.w0(context, snVar.ea, false);
                 } else if (i10 == 8) {
                     u1Var2 = new yl(this, context, ((org.telegram.ui.ActionBar.n2) snVar).currentAccount, snVar.ea);
                 } else if (i10 == 10) {
@@ -1816,7 +1816,7 @@ public final class fm extends org.telegram.ui.Components.jl0 {
                 u1Var = u1Var2;
             }
         }
-        return com.google.android.gms.internal.cast.a6.l(u1Var, u1Var, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(u1Var, u1Var, -1, -2);
     }
 
     @Override // s4.g0
@@ -1832,7 +1832,7 @@ public final class fm extends org.telegram.ui.Components.jl0 {
         View view = b1Var.a;
         boolean z12 = view instanceof org.telegram.ui.Cells.u1;
         sn snVar = this.Q;
-        if (z12 || (view instanceof org.telegram.ui.Cells.x0)) {
+        if (z12 || (view instanceof org.telegram.ui.Cells.w0)) {
             snVar.w9();
         }
         boolean z13 = view instanceof org.telegram.ui.Cells.u1;
@@ -1919,13 +1919,13 @@ public final class fm extends org.telegram.ui.Components.jl0 {
                     snVar.dc();
                 }
             }
-        } else if (view instanceof org.telegram.ui.Cells.x0) {
-            org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
-            x0Var.e0 = snVar.y9();
-            x0Var.i0 = snVar.H9();
+        } else if (view instanceof org.telegram.ui.Cells.w0) {
+            org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+            w0Var.e0 = snVar.y9();
+            w0Var.i0 = snVar.H9();
             snVar.G9();
             snVar.V8();
-            x0Var.j0 = snVar.W8();
+            w0Var.j0 = snVar.W8();
         } else if (view instanceof org.telegram.ui.Cells.w1) {
             ((org.telegram.ui.Cells.w1) view).getTextView().setTranslationX(snVar.W8() / 2.0f);
         }

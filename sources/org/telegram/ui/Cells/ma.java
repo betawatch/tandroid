@@ -19,7 +19,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.qc1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class ma extends im0 implements NotificationCenter.NotificationCenterDelegate {
     public static final byte[] g3 = new byte[1024];
@@ -94,7 +94,7 @@ public abstract class ma extends im0 implements NotificationCenter.NotificationC
         if (g6Var != null) {
             this.X2.remove(str);
             if (this.Y2.remove(g6Var) != null) {
-                Utilities.globalQueue.postRunnable(new ig.c2(this, g6Var, file, 25));
+                Utilities.globalQueue.postRunnable(new ig.e2(this, g6Var, file, 25));
             } else {
                 x1(g6Var);
             }

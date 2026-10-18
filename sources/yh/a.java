@@ -1,6 +1,6 @@
 package yh;
 
-import ai.ld;
+import ai.md;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.View;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.j01;
 import org.telegram.ui.Components.s61;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class a extends e61 {
     public static final /* synthetic */ int a = 0;
@@ -45,7 +45,7 @@ public final class a extends e61 {
         spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.Gift2AuctionsAcquiredRound2, auction.gift.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
         spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        spannableStringBuilder2.append((CharSequence) ld.Y0(false, org.telegram.messenger.q.h(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
+        spannableStringBuilder2.append((CharSequence) md.Y0(false, org.telegram.messenger.g0.h(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
         String formatString = LocaleController.formatString(R.string.Gift2AuctionsAcquiredTop, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
         j01 j01Var = new j01(bVar.getContext(), bVar.a);
         j01Var.a(spannableStringBuilder).setFilled(true);

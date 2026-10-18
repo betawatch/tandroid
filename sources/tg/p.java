@@ -1,6 +1,6 @@
 package tg;
 
-import ai.ce;
+import ai.de;
 import android.graphics.Bitmap;
 import android.opengl.EGL14;
 import android.opengl.EGLDisplay;
@@ -23,17 +23,17 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.ff0;
 import sg.l1;
 import ug.a0;
-import ug.w;
-import ug.z;
+import ug.b0;
+import ug.u;
+import ug.x;
 import yh.d0;
 import yh.e1;
 import yh.k1;
 import yh.m1;
 import yh.p1;
 import yh.q2;
-import zh.x;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -348,23 +348,23 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 4:
-                ((w) this.b).run(null);
+                ((x) this.b).run(null);
                 return;
             case 5:
                 ((qy) this.b).run(Collections.EMPTY_LIST);
                 return;
             case 6:
-                ((ug.t) this.b).run(null);
+                ((u) this.b).run(null);
                 return;
             case 7:
-                a0 a0Var = ((z) this.b).r;
-                n2 n2Var = a0Var.n;
-                i11 = ((f3) a0Var).currentAccount;
-                d6Var = ((f3) a0Var).resourcesProvider;
+                b0 b0Var = ((a0) this.b).r;
+                n2 n2Var = b0Var.n;
+                i11 = ((f3) b0Var).currentAccount;
+                d6Var = ((f3) b0Var).resourcesProvider;
                 l1 l1Var = new l1(n2Var, i11, null, null, null, d6Var);
                 l1Var.J0 = true;
                 l1Var.c0 = true;
-                a0Var.n.showDialog(l1Var);
+                b0Var.n.showDialog(l1Var);
                 return;
             case 8:
                 ((f3) this.b).dismiss();
@@ -407,9 +407,9 @@ public final /* synthetic */ class p implements Runnable {
                 return;
             case 18:
                 m1 m1Var = (m1) this.b;
-                ce ceVar = m1Var.e;
-                if (ceVar != null) {
-                    ceVar.d();
+                de deVar = m1Var.e;
+                if (deVar != null) {
+                    deVar.d();
                     m1Var.invalidateSelf();
                     return;
                 }
@@ -441,7 +441,7 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             default:
-                ((x) this.b).e();
+                ((zh.r) this.b).e();
                 return;
         }
     }

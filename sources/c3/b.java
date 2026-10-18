@@ -12,7 +12,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -490,7 +490,7 @@ public abstract class b {
         }
         int l4 = l(gVar);
         int g11 = gVar.g(4);
-        String j10 = i0.a.j(g10, "mp4a.40.");
+        String j10 = i2.d.j(g10, "mp4a.40.");
         if (g10 == 5 || g10 == 29) {
             l4 = l(gVar);
             int g12 = gVar.g(5);

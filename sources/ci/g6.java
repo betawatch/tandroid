@@ -19,7 +19,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.uw;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class g6 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int h = 0;
@@ -43,7 +43,7 @@ public final class g6 extends org.telegram.ui.ActionBar.f3 {
         linearLayout.setOrientation(1);
         f6Var.addView(linearLayout, w7.z5.a(-2.0f, 0.0f, 116.0f, 0.0f, 0.0f, -1, 0));
         TextView textView = new TextView(getContext());
-        com.google.android.gms.internal.cast.a6.m(20.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(20.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
         textView.setText(LocaleController.getString(R.string.StealthModeTitle));
         linearLayout.addView(textView, w7.z5.q(-2, -2, 1));
@@ -183,7 +183,7 @@ public final class g6 extends org.telegram.ui.ActionBar.f3 {
                 sb2.append(String.format(locale, ":%02d", Integer.valueOf((int) (j10 % 60))));
                 sb2.append(String.format(locale, ":%02d", Integer.valueOf(i11)));
                 p0Var.b(LocaleController.formatString("AvailableIn", R.string.AvailableIn, sb2.toString()), true, z10);
-                p0Var.e.setTextColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false), 125));
+                p0Var.e.setTextColor(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false), 125));
                 androidx.fragment.app.d dVar = this.f;
                 AndroidUtilities.cancelRunOnUIThread(dVar);
                 AndroidUtilities.runOnUIThread(dVar, 1000L);

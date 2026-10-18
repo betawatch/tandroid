@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f30 extends FrameLayout {
     public float a;
@@ -59,7 +59,7 @@ public final class f30 extends FrameLayout {
             float f7 = i30Var3.K;
             float f10 = i30Var3.L;
             float f11 = -AndroidUtilities.dp(36.0f);
-            i30Var2.r.x = (int) com.google.android.gms.internal.cast.a6.x(AndroidUtilities.displaySize.x - (2.0f * f11), AndroidUtilities.dp(105.0f), f7, f11);
+            i30Var2.r.x = (int) com.google.android.gms.internal.play_billing.k3.y(AndroidUtilities.displaySize.x - (2.0f * f11), AndroidUtilities.dp(105.0f), f7, f11);
             i30Var2.r.y = (int) ((AndroidUtilities.displaySize.y - AndroidUtilities.dp(105.0f)) * f10);
             i30Var2.h();
             f30 f30Var = i30Var2.a;

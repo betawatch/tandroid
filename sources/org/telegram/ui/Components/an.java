@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class an extends ViewGroup {
     public zm E;
@@ -40,7 +40,7 @@ public final class an extends ViewGroup {
     public final wm N;
     public int O;
     public final /* synthetic */ bn P;
-    public final org.telegram.ui.Cells.x0 a;
+    public final org.telegram.ui.Cells.w0 a;
     public final ArrayList b;
     public final HashMap c;
     public HashMap d;
@@ -76,10 +76,10 @@ public final class an extends ViewGroup {
         this.O = 0;
         new HashMap();
         setWillNotDraw(false);
-        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(context, bnVar.n, true);
-        this.a = x0Var;
-        x0Var.setCustomText(LocaleController.getString(R.string.AttachMediaDragHint));
-        addView(x0Var);
+        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context, bnVar.n, true);
+        this.a = w0Var;
+        w0Var.setCustomText(LocaleController.getString(R.string.AttachMediaDragHint));
+        addView(w0Var);
     }
 
     public final void a() {
@@ -227,11 +227,11 @@ public final class an extends ViewGroup {
         for (int i11 = 0; i11 < size; i11++) {
             i10 = (int) (((zm) arrayList.get(i11)).b() + i10);
         }
-        org.telegram.ui.Cells.x0 x0Var = this.a;
-        if (x0Var.getMeasuredHeight() <= 0) {
-            x0Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
+        org.telegram.ui.Cells.w0 w0Var = this.a;
+        if (w0Var.getMeasuredHeight() <= 0) {
+            w0Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
         }
-        return x0Var.getMeasuredHeight() + i10;
+        return w0Var.getMeasuredHeight() + i10;
     }
 
     public final void f(zm zmVar, MediaController.PhotoEntry photoEntry, int i10) {
@@ -359,7 +359,7 @@ public final class an extends ViewGroup {
 
     @Override // android.view.View
     public final void invalidate() {
-        int b10 = org.telegram.messenger.q.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
+        int b10 = org.telegram.messenger.g0.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
         if (this.s != b10) {
             this.s = b10;
             requestLayout();
@@ -484,20 +484,20 @@ public final class an extends ViewGroup {
             } else {
                 if (zmVar.u == null || zmVar.v != j10) {
                     zmVar.v = j10;
-                    zmVar.u = new d11(ai.ld.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold());
+                    zmVar.u = new d11(ai.md.Y0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold());
                 }
                 float dp = AndroidUtilities.dp(28.0f) + zmVar.u.c;
                 float dp2 = AndroidUtilities.dp(32.0f);
                 float f16 = zmVar.n;
                 float f17 = zmVar.r;
                 float f18 = f10;
-                float z12 = com.google.android.gms.internal.cast.a6.z(f17, dp, f18, f16);
+                float z12 = com.google.android.gms.internal.play_billing.k3.z(f17, dp, f18, f16);
                 i10 = size;
                 float f19 = zmVar.p;
                 i11 = i13;
                 float f20 = zmVar.s;
                 i12 = i14;
-                rectF.set(z12, com.google.android.gms.internal.cast.a6.z(f20, dp2, f18, f19), org.telegram.messenger.q.a(f17, dp, f18, f16), org.telegram.messenger.q.a(f20, dp2, f18, f19));
+                rectF.set(z12, com.google.android.gms.internal.play_billing.k3.z(f20, dp2, f18, f19), org.telegram.messenger.g0.a(f17, dp, f18, f16), org.telegram.messenger.g0.a(f20, dp2, f18, f19));
                 paint.setColor(1610612736);
                 float f21 = dp2 / f18;
                 canvas.drawRoundRect(rectF, f21, f21, paint);
@@ -517,13 +517,13 @@ public final class an extends ViewGroup {
             size = i10;
             arrayList2 = arrayList;
         }
-        org.telegram.ui.Cells.x0 x0Var = this.a;
-        x0Var.a0(f12, x0Var.getMeasuredHeight());
-        if (x0Var.K()) {
-            x0Var.A(canvas, true);
-            x0Var.C(canvas, true);
+        org.telegram.ui.Cells.w0 w0Var = this.a;
+        w0Var.a0(f12, w0Var.getMeasuredHeight());
+        if (w0Var.K()) {
+            w0Var.A(canvas, true);
+            w0Var.C(canvas, true);
         }
-        x0Var.draw(canvas);
+        w0Var.draw(canvas);
         canvas.restore();
         if (bnVar.J != null) {
             canvas.save();
@@ -539,15 +539,15 @@ public final class an extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        org.telegram.ui.Cells.x0 x0Var = this.a;
-        x0Var.layout(0, 0, x0Var.getMeasuredWidth(), x0Var.getMeasuredHeight());
+        org.telegram.ui.Cells.w0 w0Var = this.a;
+        w0Var.layout(0, 0, w0Var.getMeasuredWidth(), w0Var.getMeasuredHeight());
     }
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         this.a.measure(i10, View.MeasureSpec.makeMeasureSpec(9999, TLObject.FLAG_31));
         if (this.s <= 0) {
-            this.s = org.telegram.messenger.q.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
+            this.s = org.telegram.messenger.g0.b(45.0f, AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), e());
         }
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i11), this.s), TLObject.FLAG_30));
     }
@@ -831,7 +831,7 @@ public final class an extends ViewGroup {
                                         i(bnVar.P, false);
                                         int i25 = this.O + 1;
                                         this.O = i25;
-                                        bnVar.w.k(0L, 82, photoEntry, null, null, new ai.bb(this, zmVar5, photoEntry, indexOf2, 17));
+                                        bnVar.w.k(0L, 82, photoEntry, null, null, new ai.cb(this, zmVar5, photoEntry, indexOf2, 17));
                                         postDelayed(new e2(this, i25, 5), 4000L);
                                     }
                                     ValueAnimator valueAnimator2 = bnVar.L;

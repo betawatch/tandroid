@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class hu extends pg.b {
     public final /* synthetic */ int d;
@@ -193,7 +193,7 @@ public final class hu extends pg.b {
                                     org.telegram.ui.Components.q6 q6Var = rb0Var.d;
                                     ImageView imageView4 = rb0Var.a;
                                     org.telegram.ui.Components.xp xpVar = rb0Var.h;
-                                    ai.ud udVar = rb0Var.c;
+                                    ai.vd vdVar = rb0Var.c;
                                     int i19 = mb0Var.a;
                                     CharSequence charSequence3 = mb0Var.c;
                                     int i20 = mb0Var.e;
@@ -201,7 +201,7 @@ public final class hu extends pg.b {
                                         xpVar.setVisibility(8);
                                         imageView4.setVisibility(0);
                                         imageView4.setImageResource(mb0Var.d);
-                                        udVar.setText(charSequence3);
+                                        vdVar.setText(charSequence3);
                                         boolean z13 = Integer.bitCount(i20) > 1;
                                         rb0Var.v = z13;
                                         if (z13) {
@@ -212,7 +212,7 @@ public final class hu extends pg.b {
                                             q6Var.setVisibility(8);
                                             imageView3.setVisibility(8);
                                         }
-                                        udVar.setTranslationX(0.0f);
+                                        vdVar.setTranslationX(0.0f);
                                         r32.setVisibility(0);
                                         r32.c(LiteMode.isEnabled(i20), false);
                                         z10 = true;
@@ -225,8 +225,8 @@ public final class hu extends pg.b {
                                         r32.setVisibility(8);
                                         q6Var.setVisibility(8);
                                         imageView3.setVisibility(8);
-                                        udVar.setText(charSequence3);
-                                        udVar.setTranslationX(AndroidUtilities.dp(41.0f) * (LocaleController.isRTL ? -2.2f : 1.0f));
+                                        vdVar.setText(charSequence3);
+                                        vdVar.setTranslationX(AndroidUtilities.dp(41.0f) * (LocaleController.isRTL ? -2.2f : 1.0f));
                                         rb0Var.v = false;
                                         rb0Var.r = false;
                                     }

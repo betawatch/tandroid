@@ -3,7 +3,6 @@ package m;
 import android.content.Context;
 import android.opengl.Matrix;
 import android.widget.LinearLayout;
-import com.google.android.gms.internal.cast.a6;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,10 +16,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Wallet.y5;
+import org.telegram.ui.Wallet.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class s3 implements n5.b {
     public Object a;
@@ -84,11 +83,11 @@ public final class s3 implements n5.b {
 
     public void c(int i10, int i11, float f7, float f10, boolean z10, float[] fArr) {
         float[] fArr2 = (float[]) this.a;
-        y5.d(fArr2, i10, i11);
+        b6.d(fArr2, i10, i11);
         float[] fArr3 = (float[]) this.b;
         Matrix.setLookAtM(fArr3, 0, 0.0f, 0.0f, 6.7f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
         float[] fArr4 = (float[]) this.c;
-        y5.c(f7, f10, fArr4);
+        b6.c(f7, f10, fArr4);
         float[] fArr5 = (float[]) this.d;
         Matrix.multiplyMM(fArr5, 0, fArr3, 0, fArr4, 0);
         Matrix.multiplyMM((float[]) this.e, 0, fArr2, 0, fArr5, 0);
@@ -111,8 +110,8 @@ public final class s3 implements n5.b {
         float[] fArr3 = (float[]) this.h;
         Matrix.multiplyMV(fArr3, 0, (float[]) this.e, 0, fArr2, 0);
         float f12 = 1.0f / fArr3[3];
-        fArr[i12] = a6.t(fArr3[0], f12, 0.5f, 0.5f) * i10;
-        fArr[i12 + 1] = org.telegram.ui.Cells.t0.z(fArr3[1], f12, 0.5f, 0.5f) * i11;
+        fArr[i12] = com.google.android.gms.internal.play_billing.k3.t(fArr3[0], f12, 0.5f, 0.5f) * i10;
+        fArr[i12 + 1] = org.telegram.ui.Cells.c1.z(fArr3[1], f12, 0.5f, 0.5f) * i11;
     }
 
     public void e(c6 c6Var) {

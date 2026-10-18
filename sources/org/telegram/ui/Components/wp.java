@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.mc1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wp extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int i0 = 0;
@@ -446,7 +446,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         if (textView != null) {
             textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.p5));
             int dp = AndroidUtilities.dp(6.0f);
-            int o10 = i0.b.o(getThemedColor(org.telegram.ui.ActionBar.h6.Oh), 76);
+            int o10 = i0.a.o(getThemedColor(org.telegram.ui.ActionBar.h6.Oh), 76);
             textView.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, 0, o10, o10));
         }
         TextView textView2 = this.d;
@@ -454,11 +454,11 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
             int i10 = org.telegram.ui.ActionBar.h6.p7;
             textView2.setTextColor(getThemedColor(i10));
             int dp2 = AndroidUtilities.dp(6.0f);
-            int o11 = i0.b.o(getThemedColor(i10), 76);
+            int o11 = i0.a.o(getThemedColor(i10), 76);
             textView2.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, 0, o11, o11));
         }
         int i11 = org.telegram.ui.ActionBar.h6.j5;
-        org.telegram.ui.Cells.z g02 = org.telegram.ui.ActionBar.h6.g0(i0.b.o(getThemedColor(i11), 30), 1, -1);
+        org.telegram.ui.Cells.z g02 = org.telegram.ui.ActionBar.h6.g0(i0.a.o(getThemedColor(i11), 30), 1, -1);
         ImageView imageView = this.b;
         imageView.setBackground(g02);
         int themedColor = getThemedColor(i11);
@@ -467,12 +467,12 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         g2Var.b(getThemedColor(i11));
         imageView.invalidate();
         int i12 = org.telegram.ui.ActionBar.h6.Oh;
-        this.G.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.b.o(getThemedColor(i12), 30), 1, -1));
+        this.G.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.a.o(getThemedColor(i12), 30), 1, -1));
         int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.h6.m5);
         TextView textView3 = this.L;
         textView3.setTextColor(themedColor2);
         int dp3 = AndroidUtilities.dp(6.0f);
-        int o12 = i0.b.o(getThemedColor(i12), 76);
+        int o12 = i0.a.o(getThemedColor(i12), 76);
         textView3.setBackground(org.telegram.ui.ActionBar.h6.j0(dp3, dp3, dp3, dp3, 0, o12, o12));
     }
 

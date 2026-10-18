@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class na0 extends Drawable {
     public tv A;
@@ -410,7 +410,7 @@ public final class na0 extends Drawable {
                         dp2 = f41;
                         i12 = centerY3;
                         canvas.drawArc(rectF5, f43, (104.0f * f40) - f43, false, paint5);
-                        float x10 = com.google.android.gms.internal.cast.a6.x(dp6, dp, f13, dp);
+                        float y3 = com.google.android.gms.internal.play_billing.k3.y(dp6, dp, f13, dp);
                         if (f44 > 0.0f) {
                             float f45 = this.q == 14 ? 0.0f : (-45.0f) * (1.0f - f44);
                             float dp9 = AndroidUtilities.dp(7.0f) * f44 * this.h;
@@ -454,7 +454,7 @@ public final class na0 extends Drawable {
                         } else {
                             rectF = rectF5;
                         }
-                        dp4 = x10;
+                        dp4 = y3;
                         dp3 = dp2;
                         dp5 = dp6;
                     }
@@ -469,15 +469,15 @@ public final class na0 extends Drawable {
                     f12 = f11 / 0.5f;
                     f11 = 1.0f - f12;
                 }
-                float x11 = com.google.android.gms.internal.cast.a6.x(dp, dp4, f12, dp4);
-                float x12 = com.google.android.gms.internal.cast.a6.x(dp6, dp5, f12, dp5);
+                float y10 = com.google.android.gms.internal.play_billing.k3.y(dp, dp4, f12, dp4);
+                float y11 = com.google.android.gms.internal.play_billing.k3.y(dp6, dp5, f12, dp5);
                 float f50 = centerX2;
                 float dp11 = f50 - ((AndroidUtilities.dp(8.0f) * f11) * this.h);
                 dp3 = f50 + (AndroidUtilities.dp(8.0f) * f11 * this.h);
-                dp6 = x12 - ((AndroidUtilities.dp(8.0f) * f11) * this.h);
-                dp4 = x11;
+                dp6 = y11 - ((AndroidUtilities.dp(8.0f) * f11) * this.h);
+                dp4 = y10;
                 dp2 = dp11;
-                dp5 = x12;
+                dp5 = y11;
             } else {
                 i11 = i10;
                 paint = paint4;
@@ -546,7 +546,7 @@ public final class na0 extends Drawable {
                     f17 = 1.0f - f57;
                 } else {
                     float min = Math.min(1.0f, this.r / f10);
-                    f17 = org.telegram.ui.Cells.t0.v(this.r, f10, 1.0f, 0.0f);
+                    f17 = org.telegram.ui.Cells.c1.v(this.r, f10, 1.0f, 0.0f);
                     f16 = min;
                 }
                 i17 = this.q;
@@ -686,7 +686,7 @@ public final class na0 extends Drawable {
                                 }
                                 a(true);
                                 canvas2.save();
-                                canvas2.translate(com.google.android.gms.internal.cast.a6.x(1.0f, f69, AndroidUtilities.dp(1.0f), rect.centerX()), rect.centerY());
+                                canvas2.translate(com.google.android.gms.internal.play_billing.k3.y(1.0f, f69, AndroidUtilities.dp(1.0f), rect.centerX()), rect.centerY());
                                 float f70 = f69 * 500.0f;
                                 int i54 = this.p;
                                 float f71 = i54 == 1 ? 90.0f : 0.0f;

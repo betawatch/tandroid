@@ -15,7 +15,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ie extends LinearLayout {
     public final LinearLayout a;
@@ -83,7 +83,7 @@ public final class ie extends LinearLayout {
             if (i11 == 0 && !heVar.a) {
                 linearLayoutArr[i11].setVisibility(8);
             } else if (i11 != 1 || heVar.g) {
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(r.c.u(str, " "));
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(r4.c.u(str, " "));
                 boolean equalsIgnoreCase = "TON".equalsIgnoreCase(str);
                 TextView[] textViewArr = this.c;
                 if (equalsIgnoreCase) {
@@ -104,9 +104,9 @@ public final class ie extends LinearLayout {
                         if (i10 == 0) {
                             spannableStringBuilder2.append((CharSequence) LocaleController.formatNumber(heVar.d, ' '));
                         } else {
-                            spannableStringBuilder2.append((CharSequence) ai.ld.K0(heVar.i, 0.8f, ' '));
+                            spannableStringBuilder2.append((CharSequence) ai.md.K0(heVar.i, 0.8f, ' '));
                         }
-                        spannableStringBuilder = ai.ld.Y0(false, spannableStringBuilder2, 0.7f, null);
+                        spannableStringBuilder = ai.md.Y0(false, spannableStringBuilder2, 0.7f, null);
                     } else {
                         spannableStringBuilder2.append((CharSequence) Long.toString(heVar.d));
                         spannableStringBuilder = spannableStringBuilder2;

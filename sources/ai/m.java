@@ -28,7 +28,7 @@ import org.telegram.ui.kz0;
 import org.telegram.ui.lz0;
 import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -129,7 +129,7 @@ public final /* synthetic */ class m implements Runnable {
                     MessagesController messagesController2 = MessagesController.getInstance(i7Var.a);
                     ChannelBoostsController boostsController = messagesController2.getBoostsController();
                     long j12 = this.b;
-                    boostsController.getBoostsStats(j12, new v2(i7Var, callback, messagesController2, j12, 2));
+                    boostsController.getBoostsStats(j12, new w2(i7Var, callback, messagesController2, j12, 2));
                     return;
                 }
                 if (tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
@@ -140,7 +140,7 @@ public final /* synthetic */ class m implements Runnable {
                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                         b2Var.R = string;
                         b2Var.T = LocaleController.getString(R.string.LiveStoryAlreadyStreaming);
-                        org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                        org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                     }
                     callback.run(Boolean.FALSE);
                     return;
@@ -217,12 +217,12 @@ public final /* synthetic */ class m implements Runnable {
                 MessagesController.getInstance(i13).putChats(tL_contacts_resolvedPeer.chats, false);
                 TLRPC.User user = MessagesController.getInstance(i13).getUser(Long.valueOf(tL_contacts_resolvedPeer.peer.user_id));
                 if (user != null) {
-                    org.telegram.ui.Wallet.l9 l9Var = new org.telegram.ui.Wallet.l9(user);
-                    l9Var.r = j10;
-                    l9Var.d0 = str3;
-                    l9Var.e0 = z10;
-                    l9Var.c0 = true;
-                    kb0Var.u(l9Var, false);
+                    org.telegram.ui.Wallet.o9 o9Var = new org.telegram.ui.Wallet.o9(user);
+                    o9Var.r = j10;
+                    o9Var.d0 = str3;
+                    o9Var.e0 = z10;
+                    o9Var.c0 = true;
+                    kb0Var.u(o9Var, false);
                     return;
                 }
                 return;

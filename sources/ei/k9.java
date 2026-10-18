@@ -1,6 +1,6 @@
 package ei;
 
-import ai.le;
+import ai.me;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -28,7 +28,6 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -36,7 +35,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.v30;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class k9 extends FrameLayout implements View.OnClickListener, NotificationCenter.NotificationCenterDelegate {
     public final x8 E;
@@ -127,7 +126,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         this.h = b0Var;
         im0Var.setLayoutManager(b0Var);
         im0Var.setOnScrollListener(new e9(this, 0));
-        im0Var.setOnItemClickListener(new ah.h0(11, this, context));
+        im0Var.setOnItemClickListener(new ah.h0(12, this, context));
         frameLayout.addView(im0Var, w7.z5.d(-1.0f, -1));
         f9 f9Var = new f9(this);
         f9Var.n(350L);
@@ -216,7 +215,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
             arrayList.addAll(r9Var.J);
         } else if (i10 == 1) {
             ArrayList K0 = r9.K0(r9Var);
-            for (int i11 = 0; i11 < K0.size(); i11 = com.google.android.gms.internal.cast.a6.h(((TLRPC.User) K0.get(i11)).id, arrayList, i11, 1)) {
+            for (int i11 = 0; i11 < K0.size(); i11 = com.google.android.gms.internal.play_billing.k3.h(((TLRPC.User) K0.get(i11)).id, arrayList, i11, 1)) {
             }
         } else if (i10 == 2) {
             arrayList.addAll(r9Var.h);
@@ -248,7 +247,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
 
     public final float c() {
         int i10 = 0;
-        float f7 = -org.telegram.messenger.q.b(150.0f, Math.min(AndroidUtilities.dp(150.0f), this.x.J), 0);
+        float f7 = -org.telegram.messenger.g0.b(150.0f, Math.min(AndroidUtilities.dp(150.0f), this.x.J), 0);
         while (true) {
             im0 im0Var = this.f;
             if (i10 >= im0Var.getChildCount()) {
@@ -765,9 +764,9 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
                                 if (tLObject3 instanceof TLRPC.User) {
                                     TLRPC.User user2 = (TLRPC.User) tLObject3;
                                     String lowerCase2 = AndroidUtilities.translitSafe(UserObject.getUserName(user2)).toLowerCase();
-                                    if (!lowerCase2.startsWith(lowerCase) && !wh.w(" ", lowerCase, lowerCase2)) {
+                                    if (!lowerCase2.startsWith(lowerCase) && !org.telegram.messenger.g0.w(" ", lowerCase, lowerCase2)) {
                                         String lowerCase3 = AndroidUtilities.translitSafe(UserObject.getPublicUsername(user2)).toLowerCase();
-                                        if (!lowerCase3.startsWith(lowerCase) && !wh.w(" ", lowerCase, lowerCase3)) {
+                                        if (!lowerCase3.startsWith(lowerCase) && !org.telegram.messenger.g0.w(" ", lowerCase, lowerCase3)) {
                                             ArrayList<TLRPC.TL_username> arrayList8 = user2.usernames;
                                             if (arrayList8 != null) {
                                                 int i36 = 0;
@@ -792,9 +791,9 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
                                     if (tLObject3 instanceof TLRPC.Chat) {
                                         TLRPC.Chat chat2 = (TLRPC.Chat) tLObject3;
                                         String lowerCase4 = AndroidUtilities.translitSafe(chat2.title).toLowerCase();
-                                        if (!lowerCase4.startsWith(lowerCase) && !wh.w(" ", lowerCase, lowerCase4)) {
+                                        if (!lowerCase4.startsWith(lowerCase) && !org.telegram.messenger.g0.w(" ", lowerCase, lowerCase4)) {
                                             String lowerCase5 = AndroidUtilities.translitSafe(ChatObject.getPublicUsername(chat2)).toLowerCase();
-                                            if (!lowerCase5.startsWith(lowerCase) && !wh.w(" ", lowerCase, lowerCase5)) {
+                                            if (!lowerCase5.startsWith(lowerCase) && !org.telegram.messenger.g0.w(" ", lowerCase, lowerCase5)) {
                                                 ArrayList<TLRPC.TL_username> arrayList9 = chat2.usernames;
                                                 if (arrayList9 != null) {
                                                     for (int i37 = 0; i37 < arrayList9.size(); i37++) {
@@ -1533,7 +1532,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         n9Var.c = false;
         AnimatorSet animatorSet = new AnimatorSet();
         n9Var.b = animatorSet;
-        animatorSet.addListener(new le(6, n9Var, v30Var));
+        animatorSet.addListener(new me(6, n9Var, v30Var));
         ArrayList arrayList = n9Var.h;
         arrayList.clear();
         arrayList.add(v30Var);

@@ -45,7 +45,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class oj0 extends org.telegram.ui.ActionBar.f3 implements AdapterView.OnItemSelectedListener {
     public static final /* synthetic */ int d0 = 0;
@@ -1092,12 +1092,12 @@ public final class oj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
             this.c0 = -1;
         }
         if (TextUtils.isEmpty(str)) {
-            org.telegram.messenger.wh.t(this.R.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f), org.telegram.ui.Components.bs.h, 420L);
+            org.telegram.messenger.kk.t(this.R.animate().scaleX(0.5f).scaleY(0.5f).alpha(0.0f), org.telegram.ui.Components.bs.h, 420L);
             this.v.setText("");
             y(true);
             return;
         }
-        org.telegram.messenger.wh.t(this.R.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), org.telegram.ui.Components.bs.h, 420L);
+        org.telegram.messenger.kk.t(this.R.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), org.telegram.ui.Components.bs.h, 420L);
         this.R.setImageDrawable(new org.telegram.ui.Components.dq(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(3.0f), getThemedColor(org.telegram.ui.ActionBar.h6.m5)));
         this.v.setText("");
         y(true);
@@ -1339,7 +1339,7 @@ public final class oj0 extends org.telegram.ui.ActionBar.f3 implements AdapterVi
     public final void y(boolean z10) {
         ViewPropertyAnimator translationY = this.U.animate().translationY(z10 ? -AndroidUtilities.dp(21.33f) : 0.0f);
         org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
-        org.telegram.messenger.wh.t(translationY, bsVar, 420L);
+        org.telegram.messenger.kk.t(translationY, bsVar, 420L);
         this.f.animate().translationY(z10 ? -AndroidUtilities.dp(10.665f) : 0.0f).setInterpolator(bsVar).setDuration(420L).start();
     }
 

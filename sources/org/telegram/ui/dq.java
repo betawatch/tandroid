@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -977,7 +977,7 @@ public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                     org.telegram.ui.Components.q6 q6Var = dqVar.f;
                     if (q6Var != null) {
                         StringBuilder sb2 = new StringBuilder();
-                        org.telegram.ui.Cells.t0.n(R.string.AddBotButton, " ", sb2);
+                        org.telegram.ui.Cells.c1.n(R.string.AddBotButton, " ", sb2);
                         sb2.append(LocaleController.getString(dqVar.K ? R.string.AddBotButtonAsAdmin : R.string.AddBotButtonAsMember));
                         q6Var.c(sb2.toString(), true, dqVar.K);
                     }
@@ -1208,7 +1208,7 @@ public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText1, textView2);
+        org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText1, textView2);
         if (LocaleController.isRTL) {
             linearLayout2.addView(textView2, w7.z5.n(-1, -2));
             linearLayout2.addView(imageView, w7.z5.q(-2, -2, 5));
@@ -1227,7 +1227,7 @@ public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView3.setTextSize(1, 16.0f);
         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText2, textView3);
+        org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText2, textView3);
         if (LocaleController.isRTL) {
             linearLayout3.addView(textView3, w7.z5.n(-1, -2));
             i10 = 5;
@@ -1569,7 +1569,7 @@ public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         }
         tL_channels_editCreator.password = inputCheckPasswordSRP != null ? inputCheckPasswordSRP : new TLRPC.TL_inputCheckPasswordEmpty();
         tL_channels_editCreator.user_id = getMessagesController().getInputUser(this.v);
-        getConnectionsManager().sendRequest(tL_channels_editCreator, new ai.x2(this, inputCheckPasswordSRP, twoStepVerificationActivity, tL_channels_editCreator, 11));
+        getConnectionsManager().sendRequest(tL_channels_editCreator, new ai.y2(this, inputCheckPasswordSRP, twoStepVerificationActivity, tL_channels_editCreator, 11));
     }
 
     public final boolean q0() {

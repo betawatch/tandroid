@@ -16,7 +16,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class kg0 extends FrameLayout {
     public float E;
@@ -33,7 +33,7 @@ public abstract class kg0 extends FrameLayout {
     public TextView d;
     public TextView e;
     public wu f;
-    public ai.hc h;
+    public ai.ic h;
     public RadialProgressView n;
     public View r;
     public String s;
@@ -183,7 +183,7 @@ public abstract class kg0 extends FrameLayout {
             f();
         }
         if (z10) {
-            AndroidUtilities.runOnUIThread(new ai.s3(this, j10, 25), 100L);
+            AndroidUtilities.runOnUIThread(new ai.r3(this, j10, 25), 100L);
             return;
         }
         h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");

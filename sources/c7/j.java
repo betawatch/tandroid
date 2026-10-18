@@ -16,7 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class j extends l {
     public static final Parcelable.Creator<j> CREATOR = new r0(16);
@@ -195,12 +195,12 @@ public final class j extends l {
         g3 g3Var = new g3(getClass().getSimpleName());
         n7.l0 l0Var = n7.n0.d;
         byte[] t10 = this.a.t();
-        g3Var.Y(l0Var.c(t10.length, t10), "keyHandle");
+        g3Var.T(l0Var.c(t10.length, t10), "keyHandle");
         byte[] t11 = this.b.t();
-        g3Var.Y(l0Var.c(t11.length, t11), "clientDataJSON");
+        g3Var.T(l0Var.c(t11.length, t11), "clientDataJSON");
         byte[] t12 = this.c.t();
-        g3Var.Y(l0Var.c(t12.length, t12), "attestationObject");
-        g3Var.Y(Arrays.toString(this.d), "transports");
+        g3Var.T(l0Var.c(t12.length, t12), "attestationObject");
+        g3Var.T(Arrays.toString(this.d), "transports");
         return g3Var.toString();
     }
 

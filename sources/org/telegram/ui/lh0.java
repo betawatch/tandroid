@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class lh0 extends org.telegram.ui.ActionBar.n2 {
     public final org.telegram.ui.Components.xa0 a;
@@ -26,7 +26,7 @@ public final class lh0 extends org.telegram.ui.ActionBar.n2 {
         kVar.setTitle(LocaleController.getString(xa0Var.a ? R.string.SubscribeRequests : R.string.MemberRequests));
         org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         a2.F();
-        a2.H = new ig.a2(this, 13);
+        a2.H = new ig.c2(this, 13);
         a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
         a2.setVisibility(8);
         org.telegram.ui.ActionBar.n2 n2Var = xa0Var.g;
@@ -50,7 +50,7 @@ public final class lh0 extends org.telegram.ui.ActionBar.n2 {
             im0Var.setAdapter(xa0Var.f);
             xa0Var.p.p1();
             xa0Var.p.setLayoutManager(b0Var);
-            xa0Var.p.setOnItemClickListener(new ai.va(xa0Var, 23));
+            xa0Var.p.setOnItemClickListener(new ai.wa(xa0Var, 23));
             xa0Var.p.setOnScrollListener(xa0Var.D);
             xa0Var.p.setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, n2Var.getResourceProvider()));
             xa0Var.m.addView(xa0Var.p, -1, -1);

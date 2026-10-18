@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class te implements Runnable {
                 break;
             case 7:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.wh.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(this.b));
+                org.telegram.messenger.kk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(this.b));
                 break;
             case 8:
                 sn.d1(this.b, this.c);
@@ -65,12 +65,12 @@ public final /* synthetic */ class te implements Runnable {
                 break;
             case 10:
                 AndroidUtilities.addToClipboard(this.c);
-                org.telegram.messenger.wh.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(this.b));
+                org.telegram.messenger.kk.p(R.string.PhoneCopied, org.telegram.ui.Components.xc.a0(this.b));
                 break;
             case 11:
                 sn snVar2 = this.b;
                 snVar2.getClass();
-                snVar2.presentFragment(new org.telegram.ui.Wallet.l9(this.c));
+                snVar2.presentFragment(new org.telegram.ui.Wallet.o9(this.c));
                 break;
             case 12:
                 sn snVar3 = this.b;

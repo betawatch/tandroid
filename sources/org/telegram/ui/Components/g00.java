@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.opengl.GLES20;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g00 {
     public final String a;
@@ -89,10 +89,10 @@ public final class g00 {
                 int i25 = i23 + 2;
                 float f15 = fArr3[i25];
                 float f16 = f14 + f15;
-                float v = com.google.android.gms.internal.cast.a6.v(f15, i25, f14 * i24, f16);
+                float w9 = com.google.android.gms.internal.play_billing.k3.w(f15, i25, f14 * i24, f16);
                 Locale locale3 = Locale.US;
-                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] + singleStepOffset * %f) * %f;\n", Float.valueOf(v), Float.valueOf(f16)));
-                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] - singleStepOffset * %f) * %f;\n", Float.valueOf(v), Float.valueOf(f16)));
+                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] + singleStepOffset * %f) * %f;\n", Float.valueOf(w9), Float.valueOf(f16)));
+                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] - singleStepOffset * %f) * %f;\n", Float.valueOf(w9), Float.valueOf(f16)));
                 min++;
             }
         }
@@ -124,7 +124,7 @@ public final class g00 {
             float f20 = fArr4[i30];
             int i31 = i29 + 2;
             float f21 = fArr4[i31];
-            fArr5[i28] = com.google.android.gms.internal.cast.a6.v(f21, i31, f20 * i30, f20 + f21);
+            fArr5[i28] = com.google.android.gms.internal.play_billing.k3.w(f21, i31, f20 * i30, f20 + f21);
         }
         StringBuilder sb3 = new StringBuilder("attribute vec4 position;\nattribute vec4 inputTexCoord;\nuniform float texelWidthOffset;\nuniform float texelHeightOffset;\n");
         Locale locale4 = Locale.US;

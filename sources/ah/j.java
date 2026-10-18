@@ -1,7 +1,7 @@
 package ah;
 
-import ai.fa;
-import ai.ld;
+import ai.ga;
+import ai.md;
 import android.content.SharedPreferences;
 import android.os.Looper;
 import android.util.LongSparseArray;
@@ -9,7 +9,7 @@ import ci.g6;
 import ci.i7;
 import ci.p1;
 import gi.d3;
-import ig.y1;
+import ig.a2;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.regex.Pattern;
@@ -29,10 +29,10 @@ import org.telegram.ui.Components.k8;
 import org.telegram.ui.Components.r5;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Wallet.l5;
+import org.telegram.ui.Wallet.m5;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -54,13 +54,13 @@ public final /* synthetic */ class j implements Runnable {
                 break;
             case 1:
                 n2 U = LaunchActivity.U();
-                if (U instanceof l5) {
-                    ((l5) U).H0();
+                if (U instanceof m5) {
+                    ((m5) U).H0();
                     break;
                 } else if (U != null) {
-                    l5 l5Var = new l5();
-                    l5Var.H0();
-                    U.presentFragment(l5Var);
+                    m5 m5Var = new m5();
+                    m5Var.H0();
+                    U.presentFragment(m5Var);
                     break;
                 }
                 break;
@@ -70,12 +70,12 @@ public final /* synthetic */ class j implements Runnable {
             case 3:
                 n2 U2 = LaunchActivity.U();
                 if (U2 != null) {
-                    U2.presentFragment(new ld());
+                    U2.presentFragment(new md());
                     break;
                 }
                 break;
             case 4:
-                fa[][] faVarArr = fa.S;
+                ga[][] gaVarArr = ga.S;
                 break;
             case 5:
                 break;
@@ -122,7 +122,7 @@ public final /* synthetic */ class j implements Runnable {
             case 16:
                 break;
             case 17:
-                y1[] y1VarArr = y1.g;
+                a2[] a2VarArr = a2.g;
                 break;
             case 18:
                 int i12 = ii.g.F;

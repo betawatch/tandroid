@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class r10 {
     public static void a(Activity activity, int i10, String str, TLObject tLObject, TL_fragment.TL_collectibleInfo tL_collectibleInfo, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -55,7 +55,7 @@ public abstract class r10 {
         String formatCurrency = BillingController.getInstance().formatCurrency(tL_collectibleInfo.amount, tL_collectibleInfo.currency);
         String formatCurrency2 = BillingController.getInstance().formatCurrency(tL_collectibleInfo.crypto_amount, tL_collectibleInfo.crypto_currency);
         if (i10 == 0) {
-            String formatString3 = LocaleController.formatString(R.string.FragmentUsernameTitle, r.c.g("@", str));
+            String formatString3 = LocaleController.formatString(R.string.FragmentUsernameTitle, r4.c.h("@", str));
             formatString2 = LocaleController.formatString(R.string.FragmentUsernameMessage, LocaleController.formatShortDateTime(tL_collectibleInfo.purchase_date), formatCurrency2, TextUtils.isEmpty(formatCurrency) ? "" : a1.g.p("(", formatCurrency, ")"));
             b10 = a1.g.q(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/", str, new StringBuilder());
             formatString = formatString3;
@@ -101,7 +101,7 @@ public abstract class r10 {
         linearLayout.addView(frameLayout2, w7.z5.t(-2, 28, 1, 42, 10, 42, 18));
         TextView textView2 = new TextView(activity);
         textView2.setGravity(17);
-        org.telegram.messenger.wh.o(i12, d6Var, textView2, 1, 14.0f);
+        org.telegram.messenger.kk.o(i12, d6Var, textView2, 1, 14.0f);
         textView2.setText(replaceCharSequence);
         linearLayout.addView(textView2, w7.z5.t(-1, -2, 1, 32, 0, 32, 19));
         ei.d dVar = new ei.d(activity, d6Var, true);

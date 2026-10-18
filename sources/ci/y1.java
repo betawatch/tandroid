@@ -1,6 +1,6 @@
 package ci;
 
-import ai.ce;
+import ai.de;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class y1 extends View {
     public float E;
@@ -25,7 +25,7 @@ public final class y1 extends View {
     public final x1 a;
     public final RectF b;
     public final Path c;
-    public final ce d;
+    public final de d;
     public final org.telegram.ui.Components.f6 e;
     public final org.telegram.ui.Components.f6 f;
     public final org.telegram.ui.Components.p6 h;
@@ -67,7 +67,7 @@ public final class y1 extends View {
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         new yq(R.drawable.star, 0).setScale(1.8f, 1.8f);
         setCount(0);
-        this.d = new ce(1, 50);
+        this.d = new de(1, 50);
     }
 
     @Override // android.view.View
@@ -81,7 +81,7 @@ public final class y1 extends View {
         float height2 = (getHeight() + dp) / 2.0f;
         RectF rectF = this.b;
         rectF.set(width, height, width2, height2);
-        int f7 = i0.b.f(e, -14670806, -548067);
+        int f7 = i0.a.f(e, -14670806, -548067);
         Paint paint = this.n;
         paint.setColor(f7);
         int i10 = (int) rectF.left;
@@ -107,11 +107,11 @@ public final class y1 extends View {
         path.addRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, Path.Direction.CW);
         canvas.clipPath(path);
         float lerp = AndroidUtilities.lerp(5.0f, 15.0f, e);
-        ce ceVar = this.d;
-        ceVar.h = lerp;
-        ceVar.g(rectF);
-        ceVar.d();
-        ceVar.b(canvas, -1, AndroidUtilities.lerp(0.5f, 1.0f, e));
+        de deVar = this.d;
+        deVar.h = lerp;
+        deVar.g(rectF);
+        deVar.d();
+        deVar.b(canvas, -1, AndroidUtilities.lerp(0.5f, 1.0f, e));
         invalidate();
         canvas.restore();
         if (e7 > 0.0f) {
@@ -129,7 +129,7 @@ public final class y1 extends View {
             rectF2.set(getWidth() - max, 0.0f, getWidth(), AndroidUtilities.dp(13.0f));
             canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, paint);
             canvas.translate(((max - p6Var.c()) / 2.0f) + rectF2.left, AndroidUtilities.dp(6.33f));
-            p6Var.u(i0.b.f(e, -9866632, -1));
+            p6Var.u(i0.a.f(e, -9866632, -1));
             p6Var.draw(canvas);
             canvas.restore();
         }

@@ -63,7 +63,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_channelLocation A0;
@@ -430,7 +430,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                     this.x = new mc0(this, context);
                     org.telegram.ui.ActionBar.u0 c10 = n10.c(0, R.drawable.outline_header_search, getResourceProvider());
                     c10.F();
-                    c10.H = new ig.a2(this, 12);
+                    c10.H = new ig.c2(this, 12);
                     this.w = c10;
                     c10.setSearchFieldHint(LocaleController.getString(R.string.Search));
                     this.w.setContentDescription(LocaleController.getString(R.string.Search));
@@ -488,7 +488,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
             org.telegram.ui.Cells.z j02 = org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, themedColor2, themedColor3, themedColor3);
             w7.b6.a(this.e);
             this.e.setTranslationZ(AndroidUtilities.dp(2.0f));
-            this.e.setOutlineProvider(zf.i0.b);
+            this.e.setOutlineProvider(zf.j0.b);
             this.e.setBackgroundDrawable(j02);
             this.e.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.vi));
             this.e.setTextSize(1, 14.0f);
@@ -619,7 +619,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                         TLRPC.User user = DialogObject.isUserDialog(pc0Var.e0) ? pc0Var.getMessagesController().getUser(Long.valueOf(pc0Var.e0)) : null;
                                         Activity parentActivity2 = pc0Var.getParentActivity();
                                         vb0 vb0Var = new vb0(pc0Var, i17);
-                                        ov ovVar = new ov(18, pc0Var, user);
+                                        zu zuVar = new zu(19, pc0Var, user);
                                         xb0 xb0Var = new xb0(pc0Var, 2);
                                         org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(parentActivity2);
                                         aj0Var.a = null;
@@ -664,7 +664,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                         xi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                         TextView textView = new TextView(parentActivity2);
                                         textView.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                        org.telegram.messenger.q.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView);
+                                        org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView);
                                         frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
                                         textView.setOnTouchListener(new di.d(20));
                                         LinearLayout linearLayout = new LinearLayout(parentActivity2);
@@ -703,7 +703,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                         yi0Var.setTypeface(AndroidUtilities.bold());
                                         yi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
                                         frameLayout2.addView(yi0Var, w7.z5.d(48.0f, -1));
-                                        yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, ovVar));
+                                        yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, zuVar));
                                         textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                         textView2.setGravity(17);
                                         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -886,7 +886,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                         TLRPC.User user = DialogObject.isUserDialog(pc0Var.e0) ? pc0Var.getMessagesController().getUser(Long.valueOf(pc0Var.e0)) : null;
                                         Activity parentActivity2 = pc0Var.getParentActivity();
                                         vb0 vb0Var = new vb0(pc0Var, i17);
-                                        ov ovVar = new ov(18, pc0Var, user);
+                                        zu zuVar = new zu(19, pc0Var, user);
                                         xb0 xb0Var = new xb0(pc0Var, 2);
                                         org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(parentActivity2);
                                         aj0Var.a = null;
@@ -931,7 +931,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                         xi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                         TextView textView = new TextView(parentActivity2);
                                         textView.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                        org.telegram.messenger.q.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView);
+                                        org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView);
                                         frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
                                         textView.setOnTouchListener(new di.d(20));
                                         LinearLayout linearLayout = new LinearLayout(parentActivity2);
@@ -970,7 +970,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                         yi0Var.setTypeface(AndroidUtilities.bold());
                                         yi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
                                         frameLayout2.addView(yi0Var, w7.z5.d(48.0f, -1));
-                                        yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, ovVar));
+                                        yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, zuVar));
                                         textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                         textView2.setGravity(17);
                                         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -1050,7 +1050,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         w7.b6.a(this.d);
         this.d.setTranslationZ(AndroidUtilities.dp(2.0f));
         org.telegram.ui.ActionBar.u0 u0Var2 = this.d;
-        ci.o1 o1Var = zf.i0.a;
+        ci.o1 o1Var = zf.j0.a;
         u0Var2.setOutlineProvider(o1Var);
         this.d.setBackgroundDrawable(i02);
         this.d.setIcon(R.drawable.msg_map_type);
@@ -1176,7 +1176,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 TLRPC.User user = DialogObject.isUserDialog(pc0Var.e0) ? pc0Var.getMessagesController().getUser(Long.valueOf(pc0Var.e0)) : null;
                                 Activity parentActivity2 = pc0Var.getParentActivity();
                                 vb0 vb0Var = new vb0(pc0Var, i172);
-                                ov ovVar = new ov(18, pc0Var, user);
+                                zu zuVar = new zu(19, pc0Var, user);
                                 xb0 xb0Var = new xb0(pc0Var, 2);
                                 org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(parentActivity2);
                                 aj0Var.a = null;
@@ -1221,7 +1221,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 xi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView = new TextView(parentActivity2);
                                 textView.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                org.telegram.messenger.q.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView);
+                                org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView);
                                 frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
                                 textView.setOnTouchListener(new di.d(20));
                                 LinearLayout linearLayout = new LinearLayout(parentActivity2);
@@ -1260,7 +1260,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 yi0Var.setTypeface(AndroidUtilities.bold());
                                 yi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
                                 frameLayout2.addView(yi0Var, w7.z5.d(48.0f, -1));
-                                yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, ovVar));
+                                yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, zuVar));
                                 textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                 textView2.setGravity(17);
                                 textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -1459,7 +1459,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 TLRPC.User user = DialogObject.isUserDialog(pc0Var.e0) ? pc0Var.getMessagesController().getUser(Long.valueOf(pc0Var.e0)) : null;
                                 Activity parentActivity2 = pc0Var.getParentActivity();
                                 vb0 vb0Var = new vb0(pc0Var, i172);
-                                ov ovVar = new ov(18, pc0Var, user);
+                                zu zuVar = new zu(19, pc0Var, user);
                                 xb0 xb0Var = new xb0(pc0Var, 2);
                                 org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(parentActivity2);
                                 aj0Var.a = null;
@@ -1504,7 +1504,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 xi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView = new TextView(parentActivity2);
                                 textView.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                org.telegram.messenger.q.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView);
+                                org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView);
                                 frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
                                 textView.setOnTouchListener(new di.d(20));
                                 LinearLayout linearLayout = new LinearLayout(parentActivity2);
@@ -1543,7 +1543,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 yi0Var.setTypeface(AndroidUtilities.bold());
                                 yi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
                                 frameLayout2.addView(yi0Var, w7.z5.d(48.0f, -1));
-                                yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, ovVar));
+                                yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, zuVar));
                                 textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                 textView2.setGravity(17);
                                 textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -1737,7 +1737,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 TLRPC.User user = DialogObject.isUserDialog(pc0Var.e0) ? pc0Var.getMessagesController().getUser(Long.valueOf(pc0Var.e0)) : null;
                                 Activity parentActivity2 = pc0Var.getParentActivity();
                                 vb0 vb0Var = new vb0(pc0Var, i172);
-                                ov ovVar = new ov(18, pc0Var, user);
+                                zu zuVar = new zu(19, pc0Var, user);
                                 xb0 xb0Var = new xb0(pc0Var, 2);
                                 org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(parentActivity2);
                                 aj0Var.a = null;
@@ -1782,7 +1782,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 xi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView2 = new TextView(parentActivity2);
                                 textView2.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                org.telegram.messenger.q.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView2);
+                                org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView2);
                                 frameLayout.addView(textView2, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
                                 textView2.setOnTouchListener(new di.d(20));
                                 LinearLayout linearLayout = new LinearLayout(parentActivity2);
@@ -1821,7 +1821,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 yi0Var.setTypeface(AndroidUtilities.bold());
                                 yi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
                                 frameLayout2.addView(yi0Var, w7.z5.d(48.0f, -1));
-                                yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, ovVar));
+                                yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, zuVar));
                                 textView22.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                 textView22.setGravity(17);
                                 textView22.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -2012,7 +2012,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 TLRPC.User user = DialogObject.isUserDialog(pc0Var.e0) ? pc0Var.getMessagesController().getUser(Long.valueOf(pc0Var.e0)) : null;
                                 Activity parentActivity2 = pc0Var.getParentActivity();
                                 vb0 vb0Var = new vb0(pc0Var, i172);
-                                ov ovVar = new ov(18, pc0Var, user);
+                                zu zuVar = new zu(19, pc0Var, user);
                                 xb0 xb0Var = new xb0(pc0Var, 2);
                                 org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(parentActivity2);
                                 aj0Var.a = null;
@@ -2057,7 +2057,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 xi0Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                                 TextView textView2 = new TextView(parentActivity2);
                                 textView2.setText(LocaleController.getString(R.string.LocationNotifiation));
-                                org.telegram.messenger.q.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView2);
+                                org.telegram.messenger.g0.m(20.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false), 1, textView2);
                                 frameLayout.addView(textView2, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
                                 textView2.setOnTouchListener(new di.d(20));
                                 LinearLayout linearLayout = new LinearLayout(parentActivity2);
@@ -2096,7 +2096,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 yi0Var.setTypeface(AndroidUtilities.bold());
                                 yi0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
                                 frameLayout2.addView(yi0Var, w7.z5.d(48.0f, -1));
-                                yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, ovVar));
+                                yi0Var.setOnClickListener(new org.telegram.ui.Components.ca(21, aj0Var, zuVar));
                                 textView22.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                                 textView22.setGravity(17);
                                 textView22.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q5, false));
@@ -2203,7 +2203,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         this.n.setTypeface(AndroidUtilities.bold());
         this.n.setTextSize(1, 17.0f);
         this.n.setText(LocaleController.getString(R.string.NoPlacesFound));
-        TextView i26 = com.google.android.gms.internal.cast.a6.i(this.f, this.n, w7.z5.t(-2, -2, 17, 0, 11, 0, 0), context);
+        TextView i26 = com.google.android.gms.internal.play_billing.k3.i(this.f, this.n, w7.z5.t(-2, -2, 17, 0, 11, 0, 0), context);
         this.r = i26;
         i26.setTextColor(getThemedColor(i25));
         this.r.setGravity(17);
@@ -2249,8 +2249,9 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         }
         this.U.setOnScrollListener(new gc0(this));
         ((s4.k) this.U.getItemAnimator()).C = false;
-        this.U.setOnItemLongClickListener(new ov(16, this, context));
-        this.U.setOnItemClickListener(new i(this, 17));
+        int i27 = 17;
+        this.U.setOnItemLongClickListener(new zu(i27, this, context));
+        this.U.setOnItemClickListener(new i(this, i27));
         dc0 dc0Var4 = this.T;
         long j10 = this.e0;
         vb0 vb0Var = new vb0(this, 5);
@@ -2296,9 +2297,9 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
             ic0Var2.H = 0L;
             ic0Var2.y = vb0Var2;
             nc0Var.addView(this.V, w7.z5.e(-1, -1, 51));
-            int i27 = 18;
-            this.V.setOnScrollListener(new k3(this, i27));
-            this.V.setOnItemClickListener(new ci.y4(i27, this, n10));
+            int i28 = 18;
+            this.V.setOnScrollListener(new k3(this, i28));
+            this.V.setOnItemClickListener(new ci.y4(i28, this, n10));
         } else {
             i10 = i14;
             i11 = 0;
@@ -2338,9 +2339,9 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         if (this.B0 == null && this.z0 == null && this.A0 != null) {
             this.C0 = true;
             ImageView imageView5 = this.a;
-            int i28 = org.telegram.ui.ActionBar.h6.ui;
-            imageView5.setColorFilter(new PorterDuffColorFilter(getThemedColor(i28), PorterDuff.Mode.MULTIPLY));
-            this.a.setTag(Integer.valueOf(i28));
+            int i29 = org.telegram.ui.ActionBar.h6.ui;
+            imageView5.setColorFilter(new PorterDuffColorFilter(getThemedColor(i29), PorterDuff.Mode.MULTIPLY));
+            this.a.setTag(Integer.valueOf(i29));
         }
         nc0Var.addView(this.actionBar);
         A0();
@@ -2833,7 +2834,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return i0.b.h(getThemedColor(org.telegram.ui.ActionBar.h6.d6)) > 0.699999988079071d;
+        return i0.a.h(getThemedColor(org.telegram.ui.ActionBar.h6.d6)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -2851,11 +2852,11 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
             }
             int i10 = this.G0;
             if (i10 == 6) {
-                this.H0 = org.telegram.messenger.q.B(66.0f, measuredHeight, currentActionBarHeight);
+                this.H0 = org.telegram.messenger.g0.B(66.0f, measuredHeight, currentActionBarHeight);
             } else if (i10 == 2) {
-                this.H0 = org.telegram.messenger.q.B(73.0f, measuredHeight, currentActionBarHeight);
+                this.H0 = org.telegram.messenger.g0.B(73.0f, measuredHeight, currentActionBarHeight);
             } else {
-                this.H0 = org.telegram.messenger.q.B(66.0f, measuredHeight, currentActionBarHeight);
+                this.H0 = org.telegram.messenger.g0.B(66.0f, measuredHeight, currentActionBarHeight);
             }
             fc0 fc0Var = this.K0;
             if (fc0Var != null && fc0Var.c0(8) > 0) {
@@ -3304,7 +3305,7 @@ public class pc0 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         }
         ImageReceiver imageReceiver = new ImageReceiver();
         imageReceiver.setCurrentAccount(this.currentAccount);
-        imageReceiver.setDelegate(new ov(17, this, jc0Var));
+        imageReceiver.setDelegate(new zu(18, this, jc0Var));
         imageReceiver.onAttachedToWindow();
         if (user == null) {
             user = chat;

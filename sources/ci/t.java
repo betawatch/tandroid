@@ -1,12 +1,12 @@
 package ci;
 
-import ai.he;
+import ai.ie;
 import android.content.Context;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class t extends he {
+public final class t extends ie {
     public final /* synthetic */ Utilities.Callback[] m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,7 +15,7 @@ public final class t extends he {
         this.m0 = callbackArr;
     }
 
-    @Override // ai.he
+    @Override // ai.ie
     public final void e(int i10) {
         this.m0[0].run(Integer.valueOf(i10));
     }

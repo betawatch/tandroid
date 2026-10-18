@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class kz extends hm0 {
     public final Context c;
@@ -371,8 +371,8 @@ public final class kz extends hm0 {
                 k3Var.setHeight(AndroidUtilities.dp(8.0f));
                 return;
             } else {
-                int C = org.telegram.messenger.wh.C(82.0f, (int) Math.ceil(arrayList.size() / this.d), tzVar.h.getHeight());
-                k3Var.setHeight(C > 0 ? C : 1);
+                int B = org.telegram.messenger.kk.B(82.0f, (int) Math.ceil(arrayList.size() / this.d), tzVar.h.getHeight());
+                k3Var.setHeight(B > 0 ? B : 1);
                 return;
             }
         }
@@ -489,7 +489,7 @@ public final class kz extends hm0 {
                 m8Var.a = textView2;
                 textView2.setPadding(AndroidUtilities.dp(17.0f), 0, AndroidUtilities.dp(17.0f), 0);
                 textView2.setGravity(17);
-                org.telegram.messenger.q.m(14.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false), 1, textView2);
+                org.telegram.messenger.g0.m(14.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false), 1, textView2);
                 textView2.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
                 textView2.setText(LocaleController.getString(R.string.ChooseStickerSet).toUpperCase());
                 m8Var.addView(textView2, w7.z5.t(-2, 28, 51, 17, 10, 14, 8));

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b0 extends TableLayout {
     public final /* synthetic */ d6 a;
@@ -29,7 +29,7 @@ public final class b0 extends TableLayout {
         c0Var.s.rewind();
         c0Var.s.addRoundRect(c0Var.v, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), Path.Direction.CW);
         super.dispatchDraw(canvas);
-        c0Var.r.setColor(i0.b.f(0.1f, h6.w0(h6.d7, this.a), -1));
+        c0Var.r.setColor(i0.a.f(0.1f, h6.w0(h6.d7, this.a), -1));
         c0Var.r.setStrokeWidth(AndroidUtilities.dp(1.0f));
         float height = getHeight() / (c0Var.y.getVisibility() == 0 ? 5.0f : 4.0f);
         for (int i10 = 1; i10 <= 4; i10++) {

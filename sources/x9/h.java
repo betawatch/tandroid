@@ -20,7 +20,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -107,7 +107,7 @@ public abstract class h {
     public static boolean h() {
         boolean g10 = g();
         String str = Build.TAGS;
-        if ((g10 || str == null || !str.contains("test-keys")) && !r.c.t("/system/app/Superuser.apk")) {
+        if ((g10 || str == null || !str.contains("test-keys")) && !r4.c.t("/system/app/Superuser.apk")) {
             return !g10 && new File("/system/xbin/su").exists();
         }
         return true;

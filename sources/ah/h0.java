@@ -1,16 +1,16 @@
 package ah;
 
-import ai.n2;
-import ai.p2;
-import ai.s3;
-import ai.x2;
+import ai.k7;
+import ai.o2;
+import ai.q2;
+import ai.r3;
+import ai.y2;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.RectF;
 import android.os.CancellationSignal;
 import android.os.Trace;
 import android.text.TextUtils;
-import android.view.Surface;
 import android.view.View;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import b2.n1;
@@ -91,9 +91,9 @@ import org.telegram.ui.kc0;
 import org.telegram.ui.pc0;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListener, v8, a2, OnCompleteListener, Continuation, r9.d, xl0, yl0, Utilities.Callback3Return, kc0, e2.p, e2.o, ki.o0, gu, i4, m4.o0, e2.j {
+public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureListener, v8, OnCompleteListener, Continuation, r9.d, xl0, yl0, Utilities.Callback3Return, kc0, e2.p, e2.o, ki.o0, gu, i4, m4.o0, e2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -107,7 +107,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
     @Override // org.telegram.ui.Components.gu
     public void F() {
         switch (this.a) {
-            case 22:
+            case 23:
                 ki.k0 k0Var = (ki.k0) this.b;
                 ki.j0 j0Var = (ki.j0) this.c;
                 k0Var.i();
@@ -142,7 +142,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
     @Override // e2.j
     public void accept(Object obj) {
         switch (this.a) {
-            case 27:
+            case 28:
                 m4.i1 i1Var = (m4.i1) this.b;
                 t1 t1Var = (t1) this.c;
                 m4.m1 m1Var = (m4.m1) obj;
@@ -164,7 +164,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
                 }
                 m1Var.p(t1Var);
                 break;
-            case 28:
+            default:
                 m4.i1 i1Var2 = (m4.i1) this.b;
                 m4.v vVar = (m4.v) this.c;
                 m4.f0 f0Var = (m4.f0) i1Var2.a.get();
@@ -173,21 +173,6 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
                     break;
                 }
                 break;
-            default:
-                m4.i1 i1Var3 = (m4.i1) this.b;
-                Surface surface = (Surface) this.c;
-                m4.m1 m1Var2 = (m4.m1) obj;
-                ((m4.f0) i1Var3.a.get()).getClass();
-                if (surface != null) {
-                    m4.h1 h1Var = new m4.h1(surface);
-                    i1Var3.i = h1Var;
-                    m1Var2.T(h1Var);
-                    break;
-                } else {
-                    m1Var2.T(null);
-                    i1Var3.i = null;
-                    break;
-                }
         }
     }
 
@@ -255,11 +240,11 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
-        ig.b1 b1Var = (ig.b1) this.b;
+        ig.d1 d1Var = (ig.d1) this.b;
         pc0 pc0Var = (pc0) this.c;
-        b1Var.x = messageMedia.geo;
+        d1Var.x = messageMedia.geo;
         String str = null;
-        if (TextUtils.isEmpty(b1Var.y)) {
+        if (TextUtils.isEmpty(d1Var.y)) {
             dc0 dc0Var = pc0Var.T;
         }
     }
@@ -326,9 +311,9 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
                         }
                         d6Var2 = ((f3) r9Var).resourcesProvider;
                         i80 F = i80.F(k9Var, d6Var2, view);
-                        F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new s3(k9Var, clientUserId, 7), false);
+                        F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new r3(k9Var, clientUserId, 7), false);
                         F.k();
-                        i80.f(F, r9Var.j1().B(clientUserId, true), r9Var.v, false, null, new n2(11, k9Var, F));
+                        i80.f(F, r9Var.j1().B(clientUserId, true), r9Var.v, false, null, new o2(11, k9Var, F));
                         F.Z();
                         return;
                     }
@@ -352,7 +337,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
                     }
                     getgroupcallstreamrtmpurl.peer = inputPeer2;
                     i11 = ((f3) r9Var).currentAccount;
-                    ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamrtmpurl, new p2(k9Var, b2Var, getgroupcallstreamrtmpurl));
+                    ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamrtmpurl, new q2(k9Var, b2Var, getgroupcallstreamrtmpurl));
                     return;
                 }
                 return;
@@ -475,7 +460,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context3, 0, d6Var7);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.GroupTooLarge);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.GroupTooLargeMessage);
-                    org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                    org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                 } else if (hashMap.containsKey(Long.valueOf(j10))) {
                     ArrayList arrayList4 = (ArrayList) hashMap.get(Long.valueOf(j10));
                     if (arrayList4 != null) {
@@ -507,7 +492,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
                         b2Var3.q(50L);
                         i15 = ((f3) r9Var).currentAccount;
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(i15);
-                        messagesStorage.getStorageQueue().postRunnable(new ai.c3(k9Var, chat2, messagesStorage, j10, 12));
+                        messagesStorage.getStorageQueue().postRunnable(new ai.b2(k9Var, chat2, messagesStorage, j10, 12));
                     } else {
                         k9Var.d(j10, chatFull.participants);
                     }
@@ -567,7 +552,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
     @Override // ei.v8
     public void e(p9 p9Var, boolean z10, boolean z11, boolean z12, boolean z13, TLRPC.InputPeer inputPeer, int i10, p6 p6Var, com.google.firebase.messaging.s sVar) {
         switch (this.a) {
-            case 4:
+            case 5:
                 q4 q4Var = (q4) this.b;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
                 TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
@@ -575,7 +560,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
                 tL_stories_editStory.id = storyItem.id;
                 tL_stories_editStory.flags |= 4;
                 tL_stories_editStory.privacy_rules = p9Var.b;
-                ConnectionsManager.getInstance(q4Var.C2).sendRequest(tL_stories_editStory, new x2(q4Var, p6Var, storyItem, p9Var, 5));
+                ConnectionsManager.getInstance(q4Var.C2).sendRequest(tL_stories_editStory, new y2(q4Var, p6Var, storyItem, p9Var, 5));
                 break;
             default:
                 h4 h4Var = (h4) this.b;
@@ -606,7 +591,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
     @Override // m4.o0
     public void f(m4.v vVar) {
         switch (this.a) {
-            case 25:
+            case 26:
                 ((m4.d) this.c).f(((m4.p0) this.b).g.t);
                 break;
             default:
@@ -640,7 +625,10 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
     @Override // org.telegram.ui.ActionBar.a2
     public void g(b2 b2Var, int i10) {
         switch (this.a) {
-            case 6:
+            case 2:
+                k7.f1((k7) this.b, (ug.m1) this.c, b2Var, i10);
+                break;
+            case 7:
                 h4 h4Var = (h4) this.b;
                 ci.h1 h1Var = ((aa) this.c).A0;
                 if (h1Var == null) {
@@ -654,10 +642,10 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
                     break;
                 }
                 break;
-            case 12:
+            case 13:
                 u3.z0((u3) this.b, (TL_payments.connectedBotStarRef) this.c);
                 break;
-            case 14:
+            case 15:
                 hg.j1 j1Var = (hg.j1) this.b;
                 boolean[] zArr = (boolean[]) this.c;
                 j1Var.getClass();
@@ -694,8 +682,8 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
     @Override // e2.o
     public void invoke(Object obj) {
         switch (this.a) {
-            case 19:
-                ((j2.b) obj).e((j2.a) this.b, (u2.c0) this.c);
+            case 20:
+                ((j2.b) obj).e((j2.a) this.b, (u2.b0) this.c);
                 break;
             default:
                 ((j2.b) obj).onRenderedFirstFrame((j2.a) this.b);
@@ -729,7 +717,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
     public void onFailure(Exception e) {
         w0.i gVar;
         switch (this.a) {
-            case 3:
+            case 4:
                 c1.e eVar = (c1.e) this.b;
                 CancellationSignal cancellationSignal = (CancellationSignal) this.c;
                 kotlin.jvm.internal.i.e(e, "e");
@@ -800,7 +788,7 @@ public final /* synthetic */ class h0 implements z41, jf1, ih.h, OnFailureListen
     }
 
     public /* synthetic */ h0(j2.a aVar, Object obj, long j10) {
-        this.a = 20;
+        this.a = 21;
         this.b = aVar;
         this.c = obj;
     }

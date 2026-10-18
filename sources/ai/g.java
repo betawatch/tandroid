@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -46,22 +46,22 @@ public final /* synthetic */ class g implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new a3.l0((x) this.b, tLObject, (Context) this.c, 1));
                 break;
             case 1:
-                k7.Q0((k7) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, tL_error);
+                k7.S0((k7) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, tL_error);
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new y0(this.b, tLObject, this.c, tL_error, 2));
                 break;
             case 3:
-                k7.a1((k7) this.b, (TL_stars.InputSavedStarGift) this.c, tLObject, tL_error);
+                k7.d1((k7) this.b, (TL_stars.InputSavedStarGift) this.c, tLObject, tL_error);
                 break;
             case 4:
                 AndroidUtilities.runOnUIThread(new a3.l0(tLObject, (u0) this.b, (String) this.c, 11));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new a3.l0((fa) this.b, tLObject, tL_error, (Utilities.Callback) this.c, 12));
+                AndroidUtilities.runOnUIThread(new a3.l0((ga) this.b, tLObject, tL_error, (Utilities.Callback) this.c, 12));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new a3.l0((fa) this.b, tLObject, (Runnable) this.c, 13));
+                AndroidUtilities.runOnUIThread(new a3.l0((ga) this.b, tLObject, (Runnable) this.c, 13));
                 break;
             case 7:
                 ci.h1 h1Var = (ci.h1) this.b;
@@ -124,7 +124,7 @@ public final /* synthetic */ class g implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new hi.t(4, (ig.k0) this.b, (org.telegram.ui.Components.e2) this.c));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new ig.c2((ig.d2) this.b, tLObject, (SharedPreferences) this.c, 0));
+                AndroidUtilities.runOnUIThread(new ig.e2((ig.f2) this.b, tLObject, (SharedPreferences) this.c, 0));
                 break;
             case 23:
                 VoIPPreNotificationService.lambda$acknowledge$3((Context) this.c, (Runnable) this.b, tLObject, tL_error);
@@ -213,7 +213,7 @@ public final /* synthetic */ class g implements RequestDelegate {
                 }
                 break;
             case 28:
-                AndroidUtilities.runOnUIThread(new ig.c2((org.telegram.ui.ActionBar.g6) this.b, tLObject, (org.telegram.ui.ActionBar.g6) this.c, 22));
+                AndroidUtilities.runOnUIThread(new ig.e2((org.telegram.ui.ActionBar.g6) this.b, tLObject, (org.telegram.ui.ActionBar.g6) this.c, 22));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((org.telegram.ui.k8) this.b, tL_error, tLObject, (Calendar) this.c, 7));

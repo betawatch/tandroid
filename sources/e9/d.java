@@ -9,11 +9,11 @@ import java.util.ListIterator;
 import java.util.Map;
 import java.util.RandomAccess;
 import v7.u6;
-import z7.fe;
-import z7.gd;
-import z7.ng;
+import z7.ee;
+import z7.fd;
+import z7.mg;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class d implements Iterator {
     public final /* synthetic */ int a;
@@ -119,10 +119,10 @@ public class d implements Iterator {
                 this.c = (Collection) entry5.getValue();
                 Object key2 = entry5.getKey();
                 Collection collection2 = (Collection) entry5.getValue();
-                ng ngVar = (ng) ((e) this.d).e;
-                ngVar.getClass();
+                mg mgVar = (mg) ((e) this.d).e;
+                mgVar.getClass();
                 List list2 = (List) collection2;
-                return new z7.f(key2, list2 instanceof RandomAccess ? new fe(ngVar, key2, list2, null) : new m(ngVar, key2, list2, (m) null));
+                return new z7.f(key2, list2 instanceof RandomAccess ? new ee(mgVar, key2, list2, null) : new m(mgVar, key2, list2, (m) null));
             case 7:
                 Map.Entry entry6 = (Map.Entry) this.b.next();
                 this.c = entry6;
@@ -190,7 +190,7 @@ public class d implements Iterator {
                     throw new IllegalStateException("no calls to next() since the last call to remove()");
                 }
                 this.b.remove();
-                ((ng) ((e) this.d).e).getClass();
+                ((mg) ((e) this.d).e).getClass();
                 ((Collection) this.c).size();
                 ((Collection) this.c).clear();
                 this.c = null;
@@ -202,7 +202,7 @@ public class d implements Iterator {
                 }
                 Collection collection3 = (Collection) entry2.getValue();
                 this.b.remove();
-                ((gd) this.d).c.getClass();
+                ((fd) this.d).c.getClass();
                 collection3.size();
                 collection3.clear();
                 this.c = null;

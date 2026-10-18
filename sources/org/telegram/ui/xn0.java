@@ -1,94 +1,73 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import java.util.HashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class xn0 implements TextWatcher {
-    public final /* synthetic */ fo0 a;
+public final class xn0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ go0 c;
 
-    public xn0(fo0 fo0Var) {
-        this.a = fo0Var;
+    public /* synthetic */ xn0(go0 go0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = go0Var;
+        this.b = z10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        boolean z10;
-        String str;
-        String str2;
-        fo0 fo0Var = this.a;
-        HashMap hashMap = fo0Var.c;
-        if (fo0Var.m0) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                go0 go0Var = this.c;
+                AnimatorSet animatorSet = go0Var.v;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    go0Var.v = null;
+                    break;
+                }
+                break;
+            default:
+                go0 go0Var2 = this.c;
+                AnimatorSet animatorSet2 = go0Var2.v;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    go0Var2.v = null;
+                    break;
+                }
+                break;
         }
-        fo0Var.m0 = true;
-        String d = jf.b.d(fo0Var.f[8].getText().toString(), false);
-        fo0Var.f[8].setText(d);
-        org.telegram.ui.Components.o40 o40Var = (org.telegram.ui.Components.o40) fo0Var.f[9];
-        if (d.length() == 0) {
-            o40Var.setHintText((String) null);
-            o40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-        } else {
-            int i10 = 4;
-            if (d.length() > 4) {
-                while (true) {
-                    if (i10 < 1) {
-                        z10 = false;
-                        str = null;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                go0 go0Var = this.c;
+                AnimatorSet animatorSet = go0Var.v;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        go0Var.r.setVisibility(4);
+                        break;
+                    } else {
+                        go0Var.n.getContentView().setVisibility(4);
                         break;
                     }
-                    String substring = d.substring(0, i10);
-                    if (((String) hashMap.get(substring)) != null) {
-                        String str3 = d.substring(i10) + fo0Var.f[9].getText().toString();
-                        fo0Var.f[8].setText(substring);
-                        str = str3;
-                        d = substring;
-                        z10 = true;
+                }
+                break;
+            default:
+                go0 go0Var2 = this.c;
+                AnimatorSet animatorSet2 = go0Var2.v;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    if (!this.b) {
+                        go0Var2.s.setVisibility(4);
+                        break;
+                    } else {
+                        go0Var2.U.setVisibility(4);
                         break;
                     }
-                    i10--;
                 }
-                if (!z10) {
-                    str = d.substring(1) + fo0Var.f[9].getText().toString();
-                    EditTextBoldCursor editTextBoldCursor = fo0Var.f[8];
-                    d = d.substring(0, 1);
-                    editTextBoldCursor.setText(d);
-                }
-            } else {
-                z10 = false;
-                str = null;
-            }
-            String str4 = (String) hashMap.get(d);
-            if (str4 == null || fo0Var.a.indexOf(str4) == -1 || (str2 = (String) fo0Var.d.get(d)) == null) {
-                o40Var.setHintText((String) null);
-                o40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
-            } else {
-                o40Var.setHintText(str2.replace('X', (char) 8211));
-                o40Var.setHint((CharSequence) null);
-            }
-            if (!z10) {
-                EditTextBoldCursor editTextBoldCursor2 = fo0Var.f[8];
-                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
-            }
-            if (str != null) {
-                o40Var.requestFocus();
-                o40Var.setText(str);
-                o40Var.setSelection(o40Var.length());
-            }
+                break;
         }
-        fo0Var.m0 = false;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

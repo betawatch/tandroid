@@ -12,7 +12,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n81 extends View {
     public ShapeDrawable a;
@@ -74,7 +74,7 @@ public final class n81 extends View {
         canvas.scale(f14, f14, this.f, getMeasuredHeight());
         canvas.translate(this.f - (this.c.getWidth() / 2.0f), 0.0f);
         this.a.setBounds(-AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f) + this.c.getWidth(), (int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight()));
-        drawable.setBounds(org.telegram.ui.Cells.t0.w(2, this.c.getWidth() / 2, drawable), (int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight()), org.telegram.ui.Cells.t0.B(2, this.c.getWidth() / 2, drawable), drawable.getIntrinsicHeight() + ((int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight())));
+        drawable.setBounds(org.telegram.ui.Cells.c1.w(2, this.c.getWidth() / 2, drawable), (int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight()), org.telegram.ui.Cells.c1.B(2, this.c.getWidth() / 2, drawable), drawable.getIntrinsicHeight() + ((int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight())));
         drawable.setAlpha(i10);
         this.a.setAlpha(i10);
         this.d.setAlpha(i10);

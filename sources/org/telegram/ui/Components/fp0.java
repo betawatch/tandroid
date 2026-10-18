@@ -13,7 +13,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fp0 {
     public static Paint N;
@@ -60,11 +60,11 @@ public final class fp0 {
 
     public final void a(Path path, float f7, float f10) {
         float dpf2 = AndroidUtilities.dpf2(2.0f);
-        int B = org.telegram.messenger.wh.B(14.0f, this.h, 2);
+        int A = org.telegram.messenger.kk.A(14.0f, this.h, 2);
         float f11 = f10 * this.w;
         RectF rectF = AndroidUtilities.rectTmp;
         float f12 = dpf2 / 2.0f;
-        rectF.set((AndroidUtilities.dpf2(1.0f) + f7) - f12, ((-f11) - f12) + AndroidUtilities.dp(7.0f) + B, AndroidUtilities.dpf2(1.0f) + f7 + f12, f11 + f12 + AndroidUtilities.dp(7.0f) + B);
+        rectF.set((AndroidUtilities.dpf2(1.0f) + f7) - f12, ((-f11) - f12) + AndroidUtilities.dp(7.0f) + A, AndroidUtilities.dpf2(1.0f) + f7 + f12, f11 + f12 + AndroidUtilities.dp(7.0f) + A);
         path.addRoundRect(rectF, dpf2, dpf2, Path.Direction.CW);
     }
 
@@ -187,7 +187,7 @@ public final class fp0 {
                     }
                     float dpf22 = AndroidUtilities.dpf2(3.0f) * f15;
                     float a2 = w7.r.a((d * f7) - f15, 0.0f, 1.0f);
-                    a(this.x, dpf22, com.google.android.gms.internal.cast.a6.D(1.0f, a2, AndroidUtilities.dpf2(1.0f), AndroidUtilities.dpf2(this.G[z10 ? (r3.length - 1) - i13 : i13]) * a2));
+                    a(this.x, dpf22, com.google.android.gms.internal.play_billing.k3.D(1.0f, a2, AndroidUtilities.dpf2(1.0f), AndroidUtilities.dpf2(this.G[z10 ? (r3.length - 1) - i13 : i13]) * a2));
                     i13++;
                 }
             }
@@ -233,7 +233,7 @@ public final class fp0 {
         if (this.J || this.L > 0.0f) {
             canvas.save();
             f12 = 0.0f;
-            canvas.clipRect(0.0f, 0.0f, com.google.android.gms.internal.cast.a6.B(this.K, this.L, 1.0f, AndroidUtilities.dpf2(f10) * f7), this.h);
+            canvas.clipRect(0.0f, 0.0f, com.google.android.gms.internal.play_billing.k3.B(this.K, this.L, 1.0f, AndroidUtilities.dpf2(f10) * f7), this.h);
         } else {
             f12 = 0.0f;
         }
@@ -265,10 +265,10 @@ public final class fp0 {
                 rectF = AndroidUtilities.rectTmp;
                 float dpf25 = AndroidUtilities.dpf2(f10) * (1.0f - this.K) * f7;
                 float dpf26 = AndroidUtilities.dpf2(2.0f);
-                int B = org.telegram.messenger.wh.B(14.0f, this.h, 2);
+                int A = org.telegram.messenger.kk.A(14.0f, this.h, 2);
                 float f20 = dpf24 * this.w;
                 float f21 = dpf26 / 2.0f;
-                rectF.set((AndroidUtilities.dpf2(1.0f) + dpf25) - f21, ((-f20) - f21) + AndroidUtilities.dp(7.0f) + B, AndroidUtilities.dpf2(1.0f) + dpf25 + f21, f20 + f21 + AndroidUtilities.dp(7.0f) + B);
+                rectF.set((AndroidUtilities.dpf2(1.0f) + dpf25) - f21, ((-f20) - f21) + AndroidUtilities.dp(7.0f) + A, AndroidUtilities.dpf2(1.0f) + dpf25 + f21, f20 + f21 + AndroidUtilities.dp(7.0f) + A);
                 ep0Var = this.M;
                 ((Paint) ep0Var.f).setColor(this.q);
                 ep0Var.g = rectF;
@@ -365,7 +365,7 @@ public final class fp0 {
         f6Var.a = this.n;
         float d = f6Var.d((!this.z || MediaController.getInstance().isPlayingMessage(this.m)) ? 0.0f : 1.0f, false);
         Paint paint = N;
-        paint.setColor(i0.b.f(d, paint.getColor(), this.p));
+        paint.setColor(i0.a.f(d, paint.getColor(), this.p));
         float f10 = 1.0f - d;
         O.setAlpha((int) (r3.getAlpha() * f10 * f7));
         N.setAlpha((int) (r3.getAlpha() * f7));

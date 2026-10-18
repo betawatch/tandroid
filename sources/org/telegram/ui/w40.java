@@ -29,7 +29,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w40 extends org.telegram.ui.Components.jw0 {
     public boolean A0;
@@ -652,7 +652,7 @@ public final class w40 extends org.telegram.ui.Components.jw0 {
             }
         }
         if (j30Var.c != 0.0f) {
-            org.telegram.ui.ActionBar.h6.t0.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.gg, false), (int) (j30Var.c * 255.0f)));
+            org.telegram.ui.ActionBar.h6.t0.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.gg, false), (int) (j30Var.c * 255.0f)));
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.h6.t0);
         }
         if (s50Var.s1() && LiteMode.isEnabled(512)) {
@@ -987,7 +987,7 @@ public final class w40 extends org.telegram.ui.Components.jw0 {
             i12 = 0;
         } else {
             i12 = 0;
-            y3 = org.telegram.messenger.q.y(8.0f, paddingTop - max, 0);
+            y3 = org.telegram.messenger.g0.y(8.0f, paddingTop - max, 0);
         }
         if (y40Var.getPaddingTop() != y3 || y40Var.getPaddingBottom() != dp) {
             y40Var.setPadding(i12, y3, i12, dp);
@@ -999,7 +999,7 @@ public final class w40 extends org.telegram.ui.Components.jw0 {
             if (J0 != null) {
                 int measuredHeight = ((w20Var.getMeasuredHeight() / 2) + w20Var.getTop()) - (s50Var.s.getMeasuredHeight() / 2);
                 int measuredHeight2 = J0.getMeasuredHeight() + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + y3;
-                layoutParams9.topMargin = i0.a.C(measuredHeight, measuredHeight2, 2, measuredHeight2) - AndroidUtilities.dp(32.0f);
+                layoutParams9.topMargin = i2.d.C(measuredHeight, measuredHeight2, 2, measuredHeight2) - AndroidUtilities.dp(32.0f);
                 layoutParams9.height = AndroidUtilities.dp(70.0f);
             }
         }

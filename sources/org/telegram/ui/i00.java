@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class i00 extends FrameLayout {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -206,7 +206,7 @@ public abstract class i00 extends FrameLayout {
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite = this.y;
         String str = "";
         sb2.append((tL_exportedChatlistInvite == null || TextUtils.isEmpty(tL_exportedChatlistInvite.title)) ? "" : a1.g.s(new StringBuilder(), this.y.title, "\n "));
-        org.telegram.ui.Cells.t0.n(R.string.InviteLink, ", ", sb2);
+        org.telegram.ui.Cells.c1.n(R.string.InviteLink, ", ", sb2);
         sb2.append((Object) this.h.getText());
         TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2 = this.y;
         if (tL_exportedChatlistInvite2 != null && TextUtils.isEmpty(tL_exportedChatlistInvite2.title)) {

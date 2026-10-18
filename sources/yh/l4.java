@@ -1,7 +1,7 @@
 package yh;
 
-import ai.va;
-import ai.x9;
+import ai.wa;
+import ai.y9;
 import android.app.Activity;
 import android.content.Context;
 import android.view.View;
@@ -24,18 +24,18 @@ import org.telegram.ui.Components.wz;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l4 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final int X;
-    public final x9 Y;
+    public final y9 Y;
     public final HashSet Z;
     public final wz a0;
     public final FrameLayout b0;
     public final ei.d c0;
     public i80 d0;
     public s61 e0;
-    public i0.c f0;
+    public i0.b f0;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
@@ -49,7 +49,7 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
         abVar.b = 3;
         abVar.g = n2Var.getResourceProvider();
         this.Z = new HashSet();
-        this.f0 = i0.c.e;
+        this.f0 = i0.b.e;
         Context context = getContext();
         gh.c cVar = new gh.c();
         cVar.a(getThemedColor(h6.d6));
@@ -63,7 +63,7 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
         setBackgroundColor(getThemedColor(i11));
         L();
         this.X = i10;
-        this.Y = new x9(this.currentAccount, j10, true);
+        this.Y = new y9(this.currentAccount, j10, true);
         this.e.setActionBarMenuOnItemClick(new i4(this, this.e.n().a(1, R.drawable.ic_ab_other), j10));
         ei.d dVar = new ei.d(getContext(), this.resourcesProvider, true);
         this.c0 = dVar;
@@ -100,7 +100,7 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
         this.d.setSelectorType(9);
         this.d.setSelectorDrawableColor(0);
         this.d.setLayoutManager(wzVar);
-        this.d.setOnItemClickListener(new va(this, 24));
+        this.d.setOnItemClickListener(new wa(this, 24));
         this.d.j(new k4(this));
         s4.k kVar = new s4.k();
         kVar.m = false;
@@ -120,10 +120,10 @@ public final class l4 extends bb implements NotificationCenter.NotificationCente
 
     public final void T() {
         this.d.setPadding(AndroidUtilities.dp(9.0f) + this.f0.a + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(9.0f) + this.f0.c + this.backgroundPaddingLeft, this.f0.d);
-        i0.c cVar = this.f0;
-        int i10 = cVar.a;
+        i0.b bVar = this.f0;
+        int i10 = bVar.a;
         int i11 = this.backgroundPaddingLeft;
-        this.b0.setPadding(i10 + i11, 0, cVar.c + i11, cVar.d);
+        this.b0.setPadding(i10 + i11, 0, bVar.c + i11, bVar.d);
     }
 
     public final boolean U() {

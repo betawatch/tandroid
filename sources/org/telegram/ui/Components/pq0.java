@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pq0 extends cr0 {
     public final /* synthetic */ dr0 r;
@@ -27,9 +27,9 @@ public final class pq0 extends cr0 {
         int i12 = dr0.a1;
         view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.c0(dp, dr0Var.getThemedColor(i11)));
         addView(view, w7.z5.a(36.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 51));
-        ai.hc hcVar = new ai.hc(this, context, 24);
-        this.d = hcVar;
-        addView(hcVar, w7.z5.a(36.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 51));
+        ai.ic icVar = new ai.ic(this, context, 24);
+        this.d = icVar;
+        addView(icVar, w7.z5.a(36.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 51));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         int i13 = org.telegram.ui.ActionBar.h6.ng;

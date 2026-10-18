@@ -42,7 +42,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m9 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, og0 {
     public final ArrayList E;
@@ -159,7 +159,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
             MessagesController.getInstance(m9Var.currentAccount).putUsers(messages_messages2.users, false);
             MessagesController.getInstance(m9Var.currentAccount).putChats(messages_messages2.chats, false);
             m9Var.J = messages_messages2.messages.isEmpty();
-            i9 i9Var2 = !arrayList.isEmpty() ? (i9) i0.a.h(1, arrayList) : null;
+            i9 i9Var2 = !arrayList.isEmpty() ? (i9) i2.d.h(1, arrayList) : null;
             int i13 = 0;
             while (i13 < messages_messages2.messages.size()) {
                 TLRPC.Message message = messages_messages2.messages.get(i13);
@@ -419,7 +419,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
         f3Var.setBackgroundColor(w02);
         f3Var.fixNavigationBar(w02);
         final ?? r12 = {str};
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         e.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
@@ -472,7 +472,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
         imageView3.setScaleType(scaleType);
         imageView3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.r5, d6Var), mode));
         frameLayout3.addView(imageView3, w7.z5.e(40, 48, 21));
-        LinearLayout e7 = org.telegram.messenger.wh.e(context, 0);
+        LinearLayout e7 = org.telegram.messenger.kk.e(context, 0);
         e.addView(e7, w7.z5.k(16.0f, 12.0f, 16.0f, 0.0f, -1, -2));
         ei.d dVar = new ei.d(context, d6Var, true);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c ");
@@ -527,7 +527,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
                         i16 = R.string.LinkCopied;
                         break;
                 }
-                org.telegram.messenger.wh.p(i16, xcVar);
+                org.telegram.messenger.kk.p(i16, xcVar);
             }
         });
         final int i16 = 1;
@@ -548,7 +548,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
                         i162 = R.string.LinkCopied;
                         break;
                 }
-                org.telegram.messenger.wh.p(i162, xcVar);
+                org.telegram.messenger.kk.p(i162, xcVar);
             }
         });
         final hg.d1 d1Var = new hg.d1(inputGroupCall, i11, r12, frameLayout3, a11, f3Var, d6Var, 4);
@@ -595,7 +595,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public final View createView(Context context) {
         int i10 = 0;
         if (!this.w) {
-            i0.a.x(false, this.actionBar);
+            i2.d.y(false, this.actionBar);
         }
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.Calls));
@@ -1229,7 +1229,7 @@ public final class m9 extends org.telegram.ui.ActionBar.n2 implements Notificati
         frameLayout.addView(a2Var, w7.z5.a(48.0f, 8.0f, 0.0f, 8.0f, 0.0f, -1, 51));
         a2Var.setOnClickListener(new o8(0, zArr));
         alertDialog$Builder.n(frameLayout);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.d4(this, z10, zArr, 3));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.f4(this, z10, zArr, 3));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         showDialog(b2Var);
         TextView textView = (TextView) b2Var.d(-1);

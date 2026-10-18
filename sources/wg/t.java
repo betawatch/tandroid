@@ -15,7 +15,7 @@ import org.telegram.ui.Components.l11;
 import org.telegram.ui.Components.m11;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final wh.n a;
@@ -40,7 +40,7 @@ public final class t extends FrameLayout {
         int dp = AndroidUtilities.dp(8.0f);
         int w02 = h6.w0(h6.e7, d6Var);
         int i10 = h6.i6;
-        int o10 = i0.b.o(h6.w0(i10, d6Var), 76);
+        int o10 = i0.a.o(h6.w0(i10, d6Var), 76);
         frameLayout.setBackground(h6.j0(dp, dp, dp, dp, w02, o10, o10));
         addView(frameLayout, z5.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 0));
         final int i11 = 0;
@@ -69,7 +69,7 @@ public final class t extends FrameLayout {
         imageView.setColorFilter(h6.w0(h6.j5, d6Var));
         imageView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         int dp2 = AndroidUtilities.dp(20.0f);
-        int o11 = i0.b.o(h6.w0(i10, d6Var), 76);
+        int o11 = i0.a.o(h6.w0(i10, d6Var), 76);
         imageView.setBackground(h6.j0(dp2, dp2, dp2, dp2, 0, o11, o11));
         addView(imageView, z5.a(40.0f, 15.0f, 0.0f, 17.0f, 0.0f, 40, 21));
         final int i12 = 1;
@@ -115,7 +115,7 @@ public final class t extends FrameLayout {
 
     public void setSlug(String str) {
         this.c = str;
-        this.d = r.c.g("https://t.me/giftcode/", str);
+        this.d = r4.c.h("https://t.me/giftcode/", str);
         this.a.setText("t.me/giftcode/" + str);
     }
 }

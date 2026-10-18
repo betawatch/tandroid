@@ -1,6 +1,6 @@
 package hb;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class q extends eb.u {
     public static final p b = new p(new q(eb.t.b), 0);
@@ -21,7 +21,7 @@ public final class q extends eb.u {
             aVar.t();
             return null;
         }
-        throw new eb.j("Expecting number, got: " + i0.a.E(x10) + "; at path " + aVar.h());
+        throw new eb.j("Expecting number, got: " + i2.d.E(x10) + "; at path " + aVar.h());
     }
 
     @Override // eb.u

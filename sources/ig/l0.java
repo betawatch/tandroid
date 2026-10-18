@@ -1,6 +1,5 @@
 package ig;
 
-import ai.e2;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.ColorMatrix;
@@ -52,7 +51,7 @@ import yh.h4;
 import yh.y3;
 import yh.y4;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -71,45 +70,45 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
         TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
         switch (this.a) {
             case 0:
-                r0 r0Var = (r0) this.b;
+                t0 t0Var = (t0) this.b;
                 TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
-                r0Var.G = connectedbots;
-                TL_account.TL_connectedBot tL_connectedBot = (connectedbots == null || connectedbots.connected_bots.isEmpty()) ? null : r0Var.G.connected_bots.get(0);
-                r0Var.H = tL_connectedBot;
-                r0Var.M = tL_connectedBot == null ? null : r0Var.getMessagesController().getUser(Long.valueOf(r0Var.H.bot_id));
-                TL_account.TL_connectedBot tL_connectedBot2 = r0Var.H;
-                r0Var.J = tL_connectedBot2 != null ? TL_account.TL_businessBotRights.clone(tL_connectedBot2.rights) : TL_account.TL_businessBotRights.makeDefault();
-                TL_account.TL_connectedBot tL_connectedBot3 = r0Var.H;
-                r0Var.I = tL_connectedBot3 != null ? tL_connectedBot3.recipients.exclude_selected : true;
-                a0 a0Var = r0Var.v;
+                t0Var.G = connectedbots;
+                TL_account.TL_connectedBot tL_connectedBot = (connectedbots == null || connectedbots.connected_bots.isEmpty()) ? null : t0Var.G.connected_bots.get(0);
+                t0Var.H = tL_connectedBot;
+                t0Var.M = tL_connectedBot == null ? null : t0Var.getMessagesController().getUser(Long.valueOf(t0Var.H.bot_id));
+                TL_account.TL_connectedBot tL_connectedBot2 = t0Var.H;
+                t0Var.J = tL_connectedBot2 != null ? TL_account.TL_businessBotRights.clone(tL_connectedBot2.rights) : TL_account.TL_businessBotRights.makeDefault();
+                TL_account.TL_connectedBot tL_connectedBot3 = t0Var.H;
+                t0Var.I = tL_connectedBot3 != null ? tL_connectedBot3.recipients.exclude_selected : true;
+                a0 a0Var = t0Var.v;
                 if (a0Var != null) {
                     a0Var.i(tL_connectedBot3 != null ? tL_connectedBot3.recipients : null);
                 }
-                a71 a71Var = r0Var.c;
+                a71 a71Var = t0Var.c;
                 if (a71Var != null && (s61Var = a71Var.W2) != null) {
                     s61Var.N(true);
                 }
-                r0Var.Y(true);
-                r0Var.T = true;
+                t0Var.Y(true);
+                t0Var.T = true;
                 break;
             case 1:
-                t0 t0Var = (t0) this.b;
-                t0Var.w = t0Var.e[((Integer) obj).intValue()];
-                t0Var.V(true);
+                v0 v0Var = (v0) this.b;
+                v0Var.w = v0Var.e[((Integer) obj).intValue()];
+                v0Var.V(true);
                 break;
             case 2:
-                v1 v1Var = (v1) this.b;
-                v1Var.getClass();
+                x1 x1Var = (x1) this.b;
+                x1Var.getClass();
                 Bundle bundle = new Bundle();
                 bundle.putInt("chatMode", 5);
-                bundle.putLong("user_id", v1Var.getUserConfig().getClientUserId());
+                bundle.putLong("user_id", x1Var.getUserConfig().getClientUserId());
                 bundle.putString("quick_reply", (String) obj);
                 sn snVar = new sn(bundle);
                 snVar.C9 = true;
-                v1Var.presentFragment(snVar);
+                x1Var.presentFragment(snVar);
                 break;
             case 3:
-                AndroidUtilities.hideKeyboard((o1) this.b);
+                AndroidUtilities.hideKeyboard((q1) this.b);
                 AndroidUtilities.runOnUIThread((Runnable) obj, 80L);
                 break;
             case 4:
@@ -158,7 +157,7 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                                 }
                             }
                             if (spannableStringBuilder2.length() > 0) {
-                                ki.a aVar4 = (ki.a) i0.a.h(1, arrayList3);
+                                ki.a aVar4 = (ki.a) i2.d.h(1, arrayList3);
                                 if (w3.B3(aVar4.b)) {
                                     SpannableStringBuilder spannableStringBuilder5 = new SpannableStringBuilder(c6.A(aVar4.b));
                                     spannableStringBuilder5.append((CharSequence) spannableStringBuilder2);
@@ -198,7 +197,7 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                             h2Var2.h();
                         }
                         w3Var.f3.onContentChanged();
-                        w3Var.post(new hi.t(24, n3Var, arrayList3.isEmpty() ? null : (ki.a) i0.a.h(1, arrayList3)));
+                        w3Var.post(new hi.t(24, n3Var, arrayList3.isEmpty() ? null : (ki.a) i2.d.h(1, arrayList3)));
                         break;
                     }
                 }
@@ -241,9 +240,9 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 }
                 break;
             case 11:
-                org.telegram.ui.web.x1 x1Var = (org.telegram.ui.web.x1) this.b;
-                x1Var.n = ((ArrayList) obj).size();
-                u61 u61Var2 = x1Var.a;
+                org.telegram.ui.web.x1 x1Var2 = (org.telegram.ui.web.x1) this.b;
+                x1Var2.n = ((ArrayList) obj).size();
+                u61 u61Var2 = x1Var2.a;
                 if (u61Var2 != null && (s61Var2 = u61Var2.W2) != null && u61Var2.G) {
                     s61Var2.N(true);
                     break;
@@ -344,7 +343,7 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 long j10 = 1000 * messageObject.messageOwner.date;
                 n2 R = LaunchActivity.R();
                 if (R != null) {
-                    String b10 = ug.h.b(messageObject);
+                    String b10 = ug.i.b(messageObject);
                     TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-messageObject.getFromChatId()));
                     boolean z10 = chat != null && ChatObject.isChannelAndNotMegaGroup(chat);
                     yb ybVar = new yb(R.getParentActivity(), R.getResourceProvider());
@@ -364,16 +363,16 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                     ybVar.b.setMaxLines(2);
                     oc ocVar = new oc(R.getParentActivity(), R.getResourceProvider(), true);
                     ocVar.e(LocaleController.getString(R.string.LearnMore));
-                    ocVar.a = new e2(payments_giveawayinfo, z10, b10, j10, tL_messageMediaGiveaway2, R);
+                    ocVar.a = new ei.s1(payments_giveawayinfo, z10, b10, j10, tL_messageMediaGiveaway2, R);
                     ybVar.setButton(ocVar);
                     qc.g(R, ybVar, 2750).j();
                     break;
                 }
                 break;
             case 20:
-                ug.q0 q0Var = (ug.q0) this.b;
-                q0Var.a0.setLoading(false);
-                ug.h.j(q0Var.getContext(), (TLRPC.TL_error) obj);
+                ug.r0 r0Var = (ug.r0) this.b;
+                r0Var.a0.setLoading(false);
+                ug.i.j(r0Var.getContext(), (TLRPC.TL_error) obj);
                 break;
             case 21:
                 uh.f.Q((uh.f) this.b, (Pair) obj);
@@ -431,7 +430,7 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 }
                 break;
             default:
-                ug.h.j(((y4) this.b).getContext(), (TLRPC.TL_error) obj);
+                ug.i.j(((y4) this.b).getContext(), (TLRPC.TL_error) obj);
                 break;
         }
     }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s60 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -124,7 +124,7 @@ public final class s60 extends org.telegram.ui.Components.hm0 {
         View view;
         Context context = this.c;
         if (i10 == 0) {
-            view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+            view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
         } else if (i10 == 1) {
             org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(context);
             l4Var.setHeight(46);

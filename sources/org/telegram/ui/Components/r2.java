@@ -1,81 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Base64;
+import android.content.Context;
+import android.net.Uri;
+import java.io.IOException;
+import java.util.LinkedHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r2 implements org.telegram.ui.ActionBar.a2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
+public final /* synthetic */ class r2 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ r2(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
-        this.a = i10;
-        this.b = n2Var;
+    public /* synthetic */ r2(Context context, String str, long j10, boolean z10, pf.c cVar) {
+        this.d = context;
+        this.e = str;
+        this.b = j10;
+        this.c = z10;
+        this.f = cVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0084  */
-    @Override // org.telegram.ui.ActionBar.a2
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
-        TLRPC.User user;
-        String string;
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Wallet.j0 j0Var;
+        uy0 r10;
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.n2 n2Var = this.b;
-                MessagesController.getInstance(n2Var.getCurrentAccount()).openByUserName("spambot", n2Var, 1);
-                break;
+                pf.d.p((Context) this.d, Uri.parse((String) this.e), this.b == 0, this.c, (pf.c) this.f);
+                return;
+            case 1:
+                k8.B((k8) this.d, this.b, this.c, (TLRPC.Document) this.e, (Runnable) this.f);
+                return;
             default:
-                org.telegram.ui.ActionBar.n2 n2Var2 = this.b;
-                int currentAccount = n2Var2.getCurrentAccount();
-                SharedPreferences mainSettings = MessagesController.getMainSettings(currentAccount);
-                long prefIntOrLong = AndroidUtilities.getPrefIntOrLong(mainSettings, "support_id2", 0L);
-                if (prefIntOrLong != 0) {
-                    user = MessagesController.getInstance(currentAccount).getUser(Long.valueOf(prefIntOrLong));
-                    if (user == null && (string = mainSettings.getString("support_user", null)) != null) {
+                org.telegram.ui.Wallet.q0 q0Var = (org.telegram.ui.Wallet.q0) this.d;
+                long j10 = this.b;
+                String str = (String) this.e;
+                boolean z10 = this.c;
+                Utilities.Callback callback = (Utilities.Callback) this.f;
+                org.telegram.ui.Wallet.j0 j0Var2 = null;
+                try {
+                    Object obj = org.telegram.ui.Wallet.q0.f;
+                    synchronized (obj) {
+                        q0Var.c(j10);
+                        r10 = q0Var.r();
+                    }
+                    if (((LinkedHashMap) r10.e).containsKey(str)) {
+                        j0Var = q0Var.h(r10, str, j10);
                         try {
-                            byte[] decode = Base64.decode(string, 0);
-                            if (decode != null) {
-                                SerializedData serializedData = new SerializedData(decode);
-                                TLRPC.User TLdeserialize = TLRPC.User.TLdeserialize(serializedData, serializedData.readInt32(false), false);
-                                if (TLdeserialize != null && TLdeserialize.id == 333000) {
-                                    TLdeserialize = null;
+                            synchronized (obj) {
+                                try {
+                                    q0Var.c(j10);
+                                    if (z10) {
+                                        r10.b = ConnectionsManager.getInstance(q0Var.b).getCurrentTime();
+                                        if (q0Var.d.exists()) {
+                                            q0Var.v(r10, new LinkedHashMap());
+                                        } else {
+                                            if (!q0Var.q().edit().putInt("lastUsageDate", r10.b).commit()) {
+                                                throw new IOException("usage write");
+                                            }
+                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.ff0(9));
+                                        }
+                                    }
+                                } catch (Exception e) {
+                                    FileLog.e(e);
+                                } finally {
                                 }
-                                serializedData.cleanup();
-                                user = TLdeserialize;
                             }
-                        } catch (Exception e) {
+                            j0Var2 = j0Var;
+                        } catch (Exception e7) {
+                            e = e7;
                             FileLog.e(e);
+                            if (j0Var != null) {
+                                j0Var.close();
+                            }
+                            AndroidUtilities.runOnUIThread(new ai.b2(q0Var, j0Var2, callback, j10, 26));
+                            return;
                         }
                     }
-                    if (user == null) {
-                        MessagesController.getInstance(currentAccount).putUser(user, true);
-                        Bundle bundle = new Bundle();
-                        bundle.putLong("user_id", user.id);
-                        n2Var2.presentFragment(new org.telegram.ui.sn(bundle));
-                        break;
-                    } else {
-                        org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(n2Var2.getParentActivity(), 3, null);
-                        b2Var2.g0 = false;
-                        b2Var2.show();
-                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new ci.t8(mainSettings, b2Var2, currentAccount, n2Var2, 3));
-                        break;
-                    }
+                } catch (Exception e10) {
+                    e = e10;
+                    j0Var = null;
                 }
-                user = null;
-                if (user == null) {
-                }
-                break;
+                AndroidUtilities.runOnUIThread(new ai.b2(q0Var, j0Var2, callback, j10, 26));
+                return;
         }
+    }
+
+    public /* synthetic */ r2(k8 k8Var, long j10, boolean z10, TLRPC.Document document, Runnable runnable) {
+        this.d = k8Var;
+        this.b = j10;
+        this.c = z10;
+        this.e = document;
+        this.f = runnable;
+    }
+
+    public /* synthetic */ r2(org.telegram.ui.Wallet.q0 q0Var, long j10, String str, boolean z10, Utilities.Callback callback) {
+        this.d = q0Var;
+        this.b = j10;
+        this.e = str;
+        this.c = z10;
+        this.f = callback;
     }
 }

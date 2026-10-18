@@ -1,6 +1,6 @@
 package e2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f0 extends IllegalStateException {
     public final int a;
@@ -14,18 +14,18 @@ public final class f0 extends IllegalStateException {
         super(r0);
         String k10;
         if (i10 == 0) {
-            k10 = i0.a.k(i11, "Player stuck buffering and not loading for ", " ms");
+            k10 = i2.d.k(i11, "Player stuck buffering and not loading for ", " ms");
         } else if (i10 == 1) {
-            k10 = i0.a.k(i11, "Player stuck buffering with no progress for ", " ms");
+            k10 = i2.d.k(i11, "Player stuck buffering with no progress for ", " ms");
         } else if (i10 == 2) {
-            k10 = i0.a.k(i11, "Player stuck playing with no progress for ", " ms");
+            k10 = i2.d.k(i11, "Player stuck playing with no progress for ", " ms");
         } else if (i10 == 3) {
-            k10 = i0.a.k(i11, "Player stuck playing without ending for ", " ms");
+            k10 = i2.d.k(i11, "Player stuck playing without ending for ", " ms");
         } else {
             if (i10 != 4) {
                 throw new IllegalStateException();
             }
-            k10 = i0.a.k(i11, "Player stuck suppressed for ", " ms");
+            k10 = i2.d.k(i11, "Player stuck suppressed for ", " ms");
         }
         this.a = i10;
         this.b = i11;

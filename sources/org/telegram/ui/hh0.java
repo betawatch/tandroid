@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class hh0 extends FrameLayout {
     public float E;
@@ -103,7 +103,7 @@ public final class hh0 extends FrameLayout {
         TextView textView4 = new TextView(context);
         this.h = textView4;
         textView4.setTextSize(1, 13.0f);
-        com.google.android.gms.internal.cast.a6.o(i11, null, false, textView4, 5);
+        com.google.android.gms.internal.play_billing.k3.o(i11, null, false, textView4, 5);
         linearLayout2.addView(textView4, w7.z5.t(-1, -2, 5, 0, 1, 0, 0));
         addView(linearLayout2, w7.z5.a(-2.0f, 0.0f, 0.0f, 18.0f, 0.0f, -2, 21));
         linearLayout2.setVisibility(8);
@@ -121,9 +121,9 @@ public final class hh0 extends FrameLayout {
             return i10 == 2 ? org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.oa, false) : i10 == 4 ? org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.V8, false) : org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false);
         }
         if (f7 > 0.5f) {
-            return i0.b.f(1.0f - ((f7 - 0.5f) / 0.5f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.na, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.oa, false));
+            return i0.a.f(1.0f - ((f7 - 0.5f) / 0.5f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.na, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.oa, false));
         }
-        return i0.b.f(1.0f - (f7 / 0.5f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.oa, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ka, false));
+        return i0.a.f(1.0f - (f7 / 0.5f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.oa, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ka, false));
     }
 
     public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, int i10) {
@@ -148,7 +148,7 @@ public final class hh0 extends FrameLayout {
         if (tL_starsSubscriptionPricing != null) {
             linearLayout.setVisibility(0);
             imageView.setVisibility(8);
-            SpannableStringBuilder Y0 = ai.ld.Y0(false, org.telegram.messenger.q.h(tL_chatInviteExported.subscription_pricing.amount, ',', new StringBuilder("⭐️ ")), 0.75f, null);
+            SpannableStringBuilder Y0 = ai.md.Y0(false, org.telegram.messenger.g0.h(tL_chatInviteExported.subscription_pricing.amount, ',', new StringBuilder("⭐️ ")), 0.75f, null);
             TextView textView = this.f;
             textView.setText(Y0);
             int i13 = tL_chatInviteExported.subscription_pricing.period;
@@ -200,7 +200,7 @@ public final class hh0 extends FrameLayout {
                 formatPluralString = i14 > 0 ? LocaleController.formatPluralString("PeopleJoined", i14, new Object[0]) : "";
                 if (tL_chatInviteExported.requested > 0) {
                     if (tL_chatInviteExported.usage > 0) {
-                        formatPluralString = r.c.u(formatPluralString, ", ");
+                        formatPluralString = r4.c.u(formatPluralString, ", ");
                     }
                     StringBuilder u10 = a1.g.u(formatPluralString);
                     u10.append(LocaleController.formatPluralString("JoinRequests", tL_chatInviteExported.requested, new Object[0]));
@@ -350,7 +350,7 @@ public final class hh0 extends FrameLayout {
                         invalidate();
                     }
                 }
-                int f15 = this.E == 1.0f ? i0.b.f(this.E, a(f10, this.y), a(f10, i10)) : a(f10, i10);
+                int f15 = this.E == 1.0f ? i0.a.f(this.E, a(f10, this.y), a(f10, i10)) : a(f10, i10);
                 Paint paint2 = this.s;
                 paint2.setColor(f15);
                 canvas2.drawCircle(dp, measuredHeight, AndroidUtilities.dp(f7) / 2.0f, paint2);

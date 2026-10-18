@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class k11 extends View {
     public boolean E;
@@ -207,7 +207,7 @@ public abstract class k11 extends View {
             canvas2.drawPath(path, paint);
         }
         float interpolation = this.e.getInterpolation(this.f);
-        int primaryHorizontal3 = (int) (((this.a.getPrimaryHorizontal(this.n) - this.a.getPrimaryHorizontal(this.r)) * this.v) + com.google.android.gms.internal.cast.a6.x(1.0f, this.v, AndroidUtilities.dpf2(4.0f), this.a.getPrimaryHorizontal(this.r)));
+        int primaryHorizontal3 = (int) (((this.a.getPrimaryHorizontal(this.n) - this.a.getPrimaryHorizontal(this.r)) * this.v) + com.google.android.gms.internal.play_billing.k3.y(1.0f, this.v, AndroidUtilities.dpf2(4.0f), this.a.getPrimaryHorizontal(this.r)));
         canvas2.save();
         canvas2.translate(primaryHorizontal3, lineBottom);
         float f11 = dp;
@@ -241,7 +241,7 @@ public abstract class k11 extends View {
         }
         canvas2.save();
         float primaryHorizontal4 = this.a.getPrimaryHorizontal(0);
-        canvas2.translate(((int) (((this.a.getPrimaryHorizontal(this.h) - this.a.getPrimaryHorizontal(0)) * this.s) + com.google.android.gms.internal.cast.a6.D(f10, this.s, AndroidUtilities.dp(4.0f), primaryHorizontal4))) - i10, i11);
+        canvas2.translate(((int) (((this.a.getPrimaryHorizontal(this.h) - this.a.getPrimaryHorizontal(0)) * this.s) + com.google.android.gms.internal.play_billing.k3.D(f10, this.s, AndroidUtilities.dp(4.0f), primaryHorizontal4))) - i10, i11);
         canvas2.scale(interpolation, interpolation, f12, f12);
         path.reset();
         path.addCircle(f12, f12, f12, direction);
@@ -308,7 +308,7 @@ public abstract class k11 extends View {
             this.I = false;
             this.y = getMeasuredWidth();
         }
-        int D = org.telegram.messenger.q.D(8.0f, 2, this.a.getHeight());
+        int D = org.telegram.messenger.g0.D(8.0f, 2, this.a.getHeight());
         if (D < AndroidUtilities.dp(56.0f)) {
             D = AndroidUtilities.dp(56.0f);
         }

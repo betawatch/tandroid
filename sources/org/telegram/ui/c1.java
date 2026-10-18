@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c1 extends View implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.m9 {
     public int E;
@@ -330,7 +330,7 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             if (q6 != null) {
                 int height = this.c.d.getHeight() + AndroidUtilities.dp(8.0f);
                 this.s = height;
-                dp = org.telegram.messenger.q.C(8.0f, height, dp);
+                dp = org.telegram.messenger.g0.C(8.0f, height, dp);
             }
             i12 = dp;
             TL_iv.pageBlockAudio pageblockaudio3 = this.K;
@@ -344,14 +344,14 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             }
             String musicAuthor = this.M.getMusicAuthor(false);
             String musicTitle = this.M.getMusicTitle(false);
-            int C = org.telegram.messenger.q.C(50.0f, this.F, dp3);
+            int C = org.telegram.messenger.g0.C(50.0f, this.F, dp3);
             this.y = C;
             int dp5 = (size - C) - AndroidUtilities.dp(18.0f);
             if (TextUtils.isEmpty(musicTitle) && TextUtils.isEmpty(musicAuthor)) {
                 this.w = null;
                 this.E = ((dp3 - AndroidUtilities.dp(30.0f)) / 2) + this.G;
             } else {
-                SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.D(musicAuthor, " - ", musicTitle));
+                SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.C(musicAuthor, " - ", musicTitle));
                 if (!TextUtils.isEmpty(musicAuthor)) {
                     spannableStringBuilder.setSpan(new org.telegram.ui.Components.c61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
                 }

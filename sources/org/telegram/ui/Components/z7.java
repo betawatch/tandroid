@@ -15,7 +15,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z7 extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ int u1;
@@ -235,7 +235,7 @@ public final class z7 extends org.telegram.ui.ActionBar.k {
                 sg.x0 x0Var = (sg.x0) this.v1;
                 z7 z7Var = x0Var.N;
                 if (z7Var != null && z7Var.getTag() != null) {
-                    AndroidUtilities.setLightStatusBar(x0Var, i0.b.h(x0Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5)) > 0.699999988079071d);
+                    AndroidUtilities.setLightStatusBar(x0Var, i0.a.h(x0Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5)) > 0.699999988079071d);
                     break;
                 } else {
                     org.telegram.ui.ActionBar.n2 n2Var = x0Var.b;

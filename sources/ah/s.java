@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import gi.d3;
 import gi.s4;
-import ig.b2;
+import ig.d2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.c7;
@@ -17,7 +17,7 @@ import org.telegram.ui.v4;
 import org.telegram.ui.y9;
 import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -159,22 +159,10 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 13:
-                ig.r0 r0Var = (ig.r0) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        r0Var.a0();
-                        break;
-                    }
-                } else if (r0Var.onBackPressed(true)) {
-                    r0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 14:
                 ig.t0 t0Var = (ig.t0) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        t0Var.X();
+                        t0Var.a0();
                         break;
                     }
                 } else if (t0Var.onBackPressed(true)) {
@@ -182,23 +170,23 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     break;
                 }
                 break;
-            case 15:
-                ig.b1 b1Var = (ig.b1) this.b;
+            case 14:
+                ig.v0 v0Var = (ig.v0) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        b1Var.W();
+                        v0Var.X();
                         break;
                     }
-                } else if (b1Var.onBackPressed(true)) {
-                    b1Var.finishFragment();
+                } else if (v0Var.onBackPressed(true)) {
+                    v0Var.finishFragment();
                     break;
                 }
                 break;
-            case 16:
+            case 15:
                 ig.d1 d1Var = (ig.d1) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        d1Var.d0();
+                        d1Var.W();
                         break;
                     }
                 } else if (d1Var.onBackPressed(true)) {
@@ -206,15 +194,27 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     break;
                 }
                 break;
+            case 16:
+                ig.f1 f1Var = (ig.f1) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        f1Var.d0();
+                        break;
+                    }
+                } else if (f1Var.onBackPressed(true)) {
+                    f1Var.finishFragment();
+                    break;
+                }
+                break;
             case 17:
                 if (i10 == -1) {
-                    ((ig.f1) this.b).finishFragment();
+                    ((ig.h1) this.b).finishFragment();
                     break;
                 }
                 break;
             case 18:
                 if (i10 == -1) {
-                    ((b2) this.b).finishFragment();
+                    ((d2) this.b).finishFragment();
                     break;
                 }
                 break;

@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class GiftAuctionController extends BaseController {
     private static volatile GiftAuctionController[] Instance = new GiftAuctionController[4];
@@ -26,7 +26,7 @@ public class GiftAuctionController extends BaseController {
     private final LongSparseArray<Boolean> upgrades;
     private boolean wasRequestedActiveAuctions;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Auction {
         private int approximatedMyPlace;
         public TL_stars.StarGiftAuctionState auctionState;
@@ -40,7 +40,7 @@ public class GiftAuctionController extends BaseController {
         public final long giftId;
         public ArrayList<TL_stars.StarGiftAttribute> previewAttributes;
 
-        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+        /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
         public enum BidStatus {
             WINNING,
             OUTBID,
@@ -236,7 +236,7 @@ public class GiftAuctionController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class AuctionInternal {
         private ArrayList<TL_stars.TL_StarGiftAuctionAcquiredGift> acquiredGifts;
         public final long giftId;
@@ -264,12 +264,12 @@ public class GiftAuctionController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public interface OnActiveAuctionsUpdateListeners {
         void onActiveAuctionsUpdate(List<Auction> list);
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public interface OnAuctionUpdateListener {
         void onUpdate(Auction auction);
     }
@@ -386,7 +386,7 @@ public class GiftAuctionController extends BaseController {
     }
 
     public static boolean hasAllAttributes(ArrayList<TL_stars.StarGiftAttribute> arrayList) {
-        return (ai.fa.l(arrayList, TL_stars.starGiftAttributeModel.class) == null || ai.fa.l(arrayList, TL_stars.starGiftAttributePattern.class) == null || ai.fa.l(arrayList, TL_stars.starGiftAttributeBackdrop.class) == null) ? false : true;
+        return (ai.ga.l(arrayList, TL_stars.starGiftAttributeModel.class) == null || ai.ga.l(arrayList, TL_stars.starGiftAttributePattern.class) == null || ai.ga.l(arrayList, TL_stars.starGiftAttributeBackdrop.class) == null) ? false : true;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -470,7 +470,7 @@ public class GiftAuctionController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void lambda$sendBid$6(Utilities.Callback2 callback2, long j10, yh.m mVar, long j11) {
-        if (ai.fa.y(this.currentAccount, false).e) {
+        if (ai.ga.y(this.currentAccount, false).e) {
             sendBid(j10, mVar, j11, callback2);
         } else if (callback2 != null) {
             callback2.run(Boolean.FALSE, "NO_BALANCE");
@@ -694,8 +694,8 @@ public class GiftAuctionController extends BaseController {
             callback2.run(Boolean.FALSE, null);
             return;
         }
-        if (!ai.fa.y(this.currentAccount, false).e) {
-            ai.fa.y(this.currentAccount, false).r(new w2(this, callback2, j10, mVar, j11));
+        if (!ai.ga.y(this.currentAccount, false).e) {
+            ai.ga.y(this.currentAccount, false).r(new w2(this, callback2, j10, mVar, j11));
             return;
         }
         boolean hasBid = auctionInternal.hasBid();

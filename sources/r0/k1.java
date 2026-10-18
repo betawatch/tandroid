@@ -6,7 +6,7 @@ import android.view.WindowInsets;
 import j$.util.Objects;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class k1 {
     public static final k1 b;
@@ -42,12 +42,12 @@ public final class k1 {
         }
     }
 
-    public static i0.c e(i0.c cVar, int i10, int i11, int i12, int i13) {
-        int max = Math.max(0, cVar.a - i10);
-        int max2 = Math.max(0, cVar.b - i11);
-        int max3 = Math.max(0, cVar.c - i12);
-        int max4 = Math.max(0, cVar.d - i13);
-        return (max == i10 && max2 == i11 && max3 == i12 && max4 == i13) ? cVar : i0.c.b(max, max2, max3, max4);
+    public static i0.b e(i0.b bVar, int i10, int i11, int i12, int i13) {
+        int max = Math.max(0, bVar.a - i10);
+        int max2 = Math.max(0, bVar.b - i11);
+        int max3 = Math.max(0, bVar.c - i12);
+        int max4 = Math.max(0, bVar.d - i13);
+        return (max == i10 && max2 == i11 && max3 == i12 && max4 == i13) ? bVar : i0.b.b(max, max2, max3, max4);
     }
 
     public static k1 h(View view, WindowInsets windowInsets) {
@@ -93,7 +93,7 @@ public final class k1 {
     public final k1 f(int i10, int i11, int i12, int i13) {
         int i14 = Build.VERSION.SDK_INT;
         a1 z0Var = i14 >= 34 ? new z0(this) : i14 >= 30 ? new y0(this) : i14 >= 29 ? new x0(this) : new w0(this);
-        z0Var.g(i0.c.b(i10, i11, i12, i13));
+        z0Var.g(i0.b.b(i10, i11, i12, i13));
         return z0Var.b();
     }
 

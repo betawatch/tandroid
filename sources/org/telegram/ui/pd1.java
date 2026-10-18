@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pd1 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -39,9 +39,9 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
     public sn y;
 
     public static pd1 a0(long j10, long j11) {
-        Bundle a2 = z7.g5.a(j10, "chat_id");
-        a2.putLong("topic_id", j11);
-        pd1 pd1Var = new pd1(a2);
+        Bundle b10 = zf.d0.b(j10, "chat_id");
+        b10.putLong("topic_id", j11);
+        pd1 pd1Var = new pd1(b10);
         pd1Var.h = new org.telegram.ui.Components.w9[2];
         pd1Var.n = "";
         pd1Var.F = new AnimationNotificationsLocker();
@@ -160,7 +160,7 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
                             aVar.i = i14;
                             aVar.h = (int[]) og.a.l.get(i14);
                             if (org.telegram.ui.ActionBar.h6.I.q()) {
-                                aVar.h = new int[]{i0.b.f(0.2f, aVar.h[0], -1), i0.b.f(0.2f, aVar.h[1], -1)};
+                                aVar.h = new int[]{i0.a.f(0.2f, aVar.h[0], -1), i0.a.f(0.2f, aVar.h[1], -1)};
                             }
                             aVar.invalidateSelf();
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -265,7 +265,7 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
                                 aVar.i = i142;
                                 aVar.h = (int[]) og.a.l.get(i142);
                                 if (org.telegram.ui.ActionBar.h6.I.q()) {
-                                    aVar.h = new int[]{i0.b.f(0.2f, aVar.h[0], -1), i0.b.f(0.2f, aVar.h[1], -1)};
+                                    aVar.h = new int[]{i0.a.f(0.2f, aVar.h[0], -1), i0.a.f(0.2f, aVar.h[1], -1)};
                                 }
                                 aVar.invalidateSelf();
                                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);

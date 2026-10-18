@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qe1 extends org.telegram.ui.Cells.r2 {
     public boolean a5;
@@ -48,13 +48,13 @@ public final class qe1 extends org.telegram.ui.Cells.r2 {
         boolean z10 = drawable instanceof og.c;
         te1 te1Var = this.l5;
         if (z10) {
-            ((og.c) drawable).a(i0.b.f(this.j5, te1Var.getThemedColor(org.telegram.ui.ActionBar.h6.R9), te1Var.getThemedColor(org.telegram.ui.ActionBar.h6.L7)));
+            ((og.c) drawable).a(i0.a.f(this.j5, te1Var.getThemedColor(org.telegram.ui.ActionBar.h6.R9), te1Var.getThemedColor(org.telegram.ui.ActionBar.h6.L7)));
         }
         Drawable[] drawableArr = this.h0;
         if (drawableArr != null) {
             Drawable drawable2 = drawableArr[0];
             if (drawable2 instanceof og.c) {
-                ((og.c) drawable2).a(i0.b.f(this.j5, te1Var.getThemedColor(org.telegram.ui.ActionBar.h6.R9), te1Var.getThemedColor(org.telegram.ui.ActionBar.h6.L7)));
+                ((og.c) drawable2).a(i0.a.f(this.j5, te1Var.getThemedColor(org.telegram.ui.ActionBar.h6.R9), te1Var.getThemedColor(org.telegram.ui.ActionBar.h6.L7)));
             }
         }
         invalidate();

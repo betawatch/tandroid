@@ -61,13 +61,13 @@ import org.telegram.ui.Components.t11;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.ff0;
 import org.telegram.ui.o71;
-import org.telegram.ui.xq0;
+import org.telegram.ui.yq0;
 import w7.z5;
 import x7.fa;
 import x7.m7;
 import x7.o7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -475,7 +475,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
                 arrayList2.add(i2Var2);
             }
         }
-        arrayList2.add((i2) i0.a.h(1, arrayList));
+        arrayList2.add((i2) i2.d.h(1, arrayList));
         return arrayList2;
     }
 
@@ -2837,7 +2837,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
         }
     }
 
-    public final void m(Bitmap bitmap, int i10, int i11, int i12, xq0 xq0Var) {
+    public final void m(Bitmap bitmap, int i10, int i11, int i12, yq0 yq0Var) {
         xb.c cVar;
         int i13 = i11 <= 0 ? AndroidUtilities.displaySize.x : i11;
         int i14 = i12 <= 0 ? AndroidUtilities.displaySize.y : i12;
@@ -2849,7 +2849,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
         this.I = bitmap;
         this.J = i10;
         this.c0 = null;
-        g4 g4Var = new g4(this, i10, xq0Var, 4);
+        g4 g4Var = new g4(this, i10, yq0Var, 4);
         this.x = true;
         bc.d dVar = new bc.d();
         dVar.b = true;
@@ -2871,7 +2871,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
             return;
         }
         wb.a a10 = wb.a.a(bitmap, i10);
-        a2.g(a10).addOnSuccessListener(new qg.g0(g4Var, 12)).addOnFailureListener(new i6(this, bitmap, i10, xq0Var, g4Var, 5));
+        a2.g(a10).addOnSuccessListener(new qg.g0(g4Var, 12)).addOnFailureListener(new i6(this, bitmap, i10, yq0Var, g4Var, 5));
         if (this.c0 == null) {
             zb.a aVar = zb.a.b;
             n6.l.i(aVar, "options cannot be null");

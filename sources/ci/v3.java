@@ -1,6 +1,6 @@
 package ci;
 
-import ai.ab;
+import ai.bb;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.Uri;
@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.i61;
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.wa0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class v3 extends s8 {
     public final /* synthetic */ aa x0;
@@ -67,7 +67,7 @@ public final class v3 extends s8 {
             }
             r3 r3Var = q4Var.c1;
             org.telegram.ui.ActionBar.d6 d6Var = this.y0;
-            qc h = new xc(r3Var, d6Var).h(document, 2, new ai.w3(this, this.x0, d6Var, 2));
+            qc h = new xc(r3Var, d6Var).h(document, 2, new ai.w3(this, this.x0, d6Var, 1));
             if (h == null) {
                 return;
             }
@@ -103,7 +103,7 @@ public final class v3 extends s8 {
             } else {
                 i61 i61Var = (i61) characterStyle;
                 AndroidUtilities.addToClipboard(i61Var.a.subSequence(i61Var.b, i61Var.c).toString());
-                wh.p(R.string.TextCopied, new xc(q4Var.c1, this.y0));
+                kk.p(R.string.TextCopied, new xc(q4Var.c1, this.y0));
                 return;
             }
         }
@@ -178,7 +178,7 @@ public final class v3 extends s8 {
         };
         f3Var.items = charSequenceArr;
         f3Var.onClickListener = onClickListener;
-        f3Var.setOnHideListener(new ab(dVar, 3));
+        f3Var.setOnHideListener(new bb(dVar, 3));
         f3Var.fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
         ((r9) q4Var.Q1).h(f3Var);
     }

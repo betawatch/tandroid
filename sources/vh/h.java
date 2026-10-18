@@ -20,21 +20,20 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import ig.l0;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.q;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.yb;
 import qg.g0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class h extends Drawable implements Animator.AnimatorListener {
     public static final RectF b0 = new RectF();
     public static final Rect c0 = new Rect();
@@ -138,7 +137,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
     }
 
     public static float g(float f7, float f10, float f11) {
-        return a6.x(f10, f7, f11, f7);
+        return k3.y(f10, f7, f11, f7);
     }
 
     public static e i(Interpolator interpolator, int i10, int i11, int i12, boolean z10) {
@@ -464,7 +463,7 @@ public final class h extends Drawable implements Animator.AnimatorListener {
                         float f30 = dVar2.o * f22;
                         i13 = i12;
                         i14 = 2;
-                        float D = q.D(8, 2, dVar2.h.getWidth());
+                        float D = org.telegram.messenger.g0.D(8, 2, dVar2.h.getWidth());
                         dVar2.i = d.b(d.b(f10, D, f26, f27), D, dp5, measuredWidth) - (D / 2.0f);
                         dVar2.j = centerY2 - AndroidUtilities.dp(58.0f);
                         if (dVar2.f == null) {

@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TelegramQRCodeWriter;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class fj0 extends org.telegram.ui.ActionBar.f3 {
     public final Bitmap b;
@@ -102,7 +102,7 @@ public class fj0 extends org.telegram.ui.ActionBar.f3 {
         TextView textView2 = this.e;
         if (textView2 != null) {
             textView2.setTextColor(getThemedColor(i10));
-            textView2.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.b.o(getThemedColor(i10), Math.min(255, Color.alpha(getThemedColor(org.telegram.ui.ActionBar.h6.i6)) * 2)), 7, -1));
+            textView2.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.a.o(getThemedColor(i10), Math.min(255, Color.alpha(getThemedColor(org.telegram.ui.ActionBar.h6.i6)) * 2)), 7, -1));
         }
         int i11 = org.telegram.ui.ActionBar.h6.y6;
         int themedColor4 = getThemedColor(i11);

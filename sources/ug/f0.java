@@ -1,24 +1,121 @@
 package ug;
 
-import android.graphics.Canvas;
-import android.text.TextPaint;
+import android.content.Context;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import ei.o8;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.kk;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.ey;
+import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class f0 extends View {
-    public TextPaint a;
-    public int b;
+public final class f0 extends sg.l1 {
+    public static f0 S0;
+    public final wg.a Q0;
+    public final String R0;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        TextPaint textPaint = this.a;
-        canvas.drawCircle(measuredWidth, measuredHeight, getMeasuredWidth() / 2.0f, textPaint);
-        sg.a1.d().f(-AndroidUtilities.dp(10.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawCircle(measuredWidth, measuredHeight, (getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(1.5f), sg.a1.d().e());
-        canvas.drawText("+" + this.b, measuredWidth, (int) (measuredHeight - ((textPaint.ascent() + textPaint.descent()) / 2.0f)), textPaint);
+    public f0(n2 n2Var, int i10, TLRPC.User user, sg.k kVar, String str, boolean z10, d6 d6Var) {
+        super(n2Var, i10, user, kVar, null, d6Var);
+        this.R0 = str;
+        qc.a((FrameLayout) this.containerView, new o8(15));
+        if (!z10) {
+            im0 im0Var = this.d;
+            int i11 = this.backgroundPaddingLeft;
+            im0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
+            wg.a aVar = new wg.a(getContext(), this.resourcesProvider);
+            this.Q0 = aVar;
+            aVar.setOnClickListener(new hg.r0(this, 22));
+            wg.a aVar2 = this.Q0;
+            aVar2.e = true;
+            ei.d dVar = aVar2.a;
+            dVar.setEnabled(true);
+            dVar.g(LocaleController.getString(R.string.GiftPremiumActivateForFree), false, true);
+            aVar2.b.setBackgroundColor(h6.w0(h6.h5, aVar2.c));
+            this.containerView.addView(this.Q0, z5.a(68.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
+        }
+        fixNavigationBar();
+    }
+
+    public static /* synthetic */ void d0(f0 f0Var, TLRPC.TL_error tL_error) {
+        f0Var.Q0.b(false);
+        i.c(tL_error, (FrameLayout) f0Var.containerView, f0Var.resourcesProvider, new d0(f0Var, 0));
+    }
+
+    public static void e0(f0 f0Var) {
+        sg.l1 l1Var = new sg.l1(f0Var.n, UserConfig.selectedAccount, null, null, null, f0Var.resourcesProvider);
+        l1Var.J0 = true;
+        l1Var.K0 = true;
+        l1Var.c0 = true;
+        f0Var.n.showDialog(l1Var);
+    }
+
+    public static void f0(f0 f0Var) {
+        String str = "https://t.me/giftcode/" + f0Var.R0;
+        ey eyVar = new ey(kk.d(3, "onlySelect", "dialogsType", true));
+        eyVar.C2 = new org.telegram.ui.web.m(17, f0Var, str);
+        f0Var.n.presentFragment(eyVar);
+        f0Var.dismiss();
+    }
+
+    @Override // sg.l1
+    public final int Y() {
+        return 6;
+    }
+
+    @Override // sg.l1
+    public final void Z(View view) {
+        ((wg.t) view).setSlug(this.R0);
+    }
+
+    @Override // sg.l1
+    public final View a0(Context context, int i10) {
+        if (i10 != 6) {
+            return null;
+        }
+        wg.t tVar = new wg.t(context, this.resourcesProvider);
+        tVar.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
+        return tVar;
+    }
+
+    @Override // sg.l1
+    public final void b0(boolean z10) {
+        super.b0(z10);
+        this.P0.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).bottomMargin = AndroidUtilities.dp(14.0f);
+        ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
+        this.P0.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceSingleTag(LocaleController.getString("GiftPremiumAboutThisLink", R.string.GiftPremiumAboutThisLink), h6.gc, 0, new d0(this, 0)), AndroidUtilities.replaceTags(LocaleController.getString("GiftPremiumAboutThisLinkEnd", R.string.GiftPremiumAboutThisLinkEnd))));
+    }
+
+    @Override // sg.l1
+    public final void c0() {
+        int i10 = this.f0;
+        this.g0 = i10;
+        this.h0 = i10 + 1;
+        int i11 = i10 + 2;
+        this.f0 = i11;
+        this.i0 = i11;
+        this.j0 = i11;
+        int size = this.X.size() + i11;
+        this.k0 = size;
+        this.f0 = size + 1;
+        this.l0 = size;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        S0 = null;
     }
 }

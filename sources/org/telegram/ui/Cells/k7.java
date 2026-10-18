@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.FragmentContextView;
@@ -62,7 +62,7 @@ import org.telegram.ui.j30;
 import org.telegram.ui.sn;
 import org.telegram.ui.ui;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k7 implements Runnable {
     public final /* synthetic */ int a;
@@ -488,7 +488,7 @@ public final class k7 implements Runnable {
                                     n2Var.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 21);
                                 }
                             } else {
-                                wh.q(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, cmVar.c), null);
+                                kk.q(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, cmVar.c), null);
                             }
                         }
                     }
@@ -563,57 +563,57 @@ public final class k7 implements Runnable {
                 }
                 break;
             case 27:
-                org.telegram.ui.Wallet.l5 l5Var = (org.telegram.ui.Wallet.l5) obj;
-                if (l5Var.a != null && l5Var.d != null) {
-                    l5Var.P0();
-                    if (l5Var.r) {
-                        l5Var.a.postOnAnimation(this);
+                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) obj;
+                if (m5Var.a != null && m5Var.d != null) {
+                    m5Var.P0();
+                    if (m5Var.r) {
+                        m5Var.a.postOnAnimation(this);
                         break;
                     }
                 }
                 break;
             case 28:
-                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) obj;
-                org.telegram.ui.Wallet.a6 a6Var = o5Var.x;
-                if (o5Var.isAttachedToWindow()) {
-                    a6Var.b(System.nanoTime());
-                    o5Var.G = a6Var.a ? Math.max(-15.0f, Math.min(15.0f, a6Var.b - a6Var.d)) : 0.0f;
-                    float max3 = a6Var.a ? Math.max(-15.0f, Math.min(15.0f, a6Var.c - a6Var.e)) : 0.0f;
-                    float f14 = o5Var.G;
-                    float f15 = o5Var.H;
-                    float x10 = com.google.android.gms.internal.cast.a6.x(f14, f15, 1.0f, f15);
-                    o5Var.H = x10;
-                    float f16 = o5Var.I;
-                    float x11 = com.google.android.gms.internal.cast.a6.x(max3, f16, 1.0f, f16);
-                    o5Var.I = x11;
-                    float f17 = o5Var.U;
-                    o5Var.b((x10 * f17) + o5Var.J + o5Var.T, (x11 * f17) + o5Var.K);
-                    o5Var.postOnAnimation(this);
+                org.telegram.ui.Wallet.p5 p5Var = (org.telegram.ui.Wallet.p5) obj;
+                org.telegram.ui.Wallet.d6 d6Var = p5Var.x;
+                if (p5Var.isAttachedToWindow()) {
+                    d6Var.b(System.nanoTime());
+                    p5Var.G = d6Var.a ? Math.max(-15.0f, Math.min(15.0f, d6Var.b - d6Var.d)) : 0.0f;
+                    float max3 = d6Var.a ? Math.max(-15.0f, Math.min(15.0f, d6Var.c - d6Var.e)) : 0.0f;
+                    float f14 = p5Var.G;
+                    float f15 = p5Var.H;
+                    float y3 = com.google.android.gms.internal.play_billing.k3.y(f14, f15, 1.0f, f15);
+                    p5Var.H = y3;
+                    float f16 = p5Var.I;
+                    float y10 = com.google.android.gms.internal.play_billing.k3.y(max3, f16, 1.0f, f16);
+                    p5Var.I = y10;
+                    float f17 = p5Var.U;
+                    p5Var.b((y3 * f17) + p5Var.J + p5Var.T, (y10 * f17) + p5Var.K);
+                    p5Var.postOnAnimation(this);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.c6 c6Var2 = (org.telegram.ui.Wallet.c6) obj;
-                org.telegram.ui.Wallet.a6 a6Var2 = c6Var2.H;
-                if (c6Var2.h) {
-                    a6Var2.b(System.nanoTime());
-                    c6Var2.O = a6Var2.a ? Math.max(-15.0f, Math.min(15.0f, a6Var2.b - a6Var2.d)) : 0.0f;
-                    float b10 = org.telegram.ui.Wallet.c6.b((a6Var2.a ? Math.max(-15.0f, Math.min(15.0f, a6Var2.c - a6Var2.e)) : 0.0f) * 1.5f, -15.0f, 15.0f);
-                    float f18 = c6Var2.O;
-                    float f19 = c6Var2.P;
-                    float x12 = com.google.android.gms.internal.cast.a6.x(f18, f19, 1.0f, f19);
-                    c6Var2.P = x12;
-                    float f20 = c6Var2.Q;
-                    float x13 = com.google.android.gms.internal.cast.a6.x(b10, f20, 1.0f, f20);
-                    c6Var2.Q = x13;
-                    float f21 = c6Var2.M;
-                    org.telegram.ui.Wallet.y5 y5Var = c6Var2.a.f0;
-                    float f22 = (x12 * f21) + y5Var.i + c6Var2.L;
-                    c6Var2.K = f22;
-                    float f23 = (x13 * f21) + y5Var.d;
-                    c6Var2.N = f23;
-                    c6Var2.a(f22, f23);
-                    c6Var2.postOnAnimation(this);
+                org.telegram.ui.Wallet.f6 f6Var = (org.telegram.ui.Wallet.f6) obj;
+                org.telegram.ui.Wallet.d6 d6Var2 = f6Var.H;
+                if (f6Var.h) {
+                    d6Var2.b(System.nanoTime());
+                    f6Var.O = d6Var2.a ? Math.max(-15.0f, Math.min(15.0f, d6Var2.b - d6Var2.d)) : 0.0f;
+                    float b10 = org.telegram.ui.Wallet.f6.b((d6Var2.a ? Math.max(-15.0f, Math.min(15.0f, d6Var2.c - d6Var2.e)) : 0.0f) * 1.5f, -15.0f, 15.0f);
+                    float f18 = f6Var.O;
+                    float f19 = f6Var.P;
+                    float y11 = com.google.android.gms.internal.play_billing.k3.y(f18, f19, 1.0f, f19);
+                    f6Var.P = y11;
+                    float f20 = f6Var.Q;
+                    float y12 = com.google.android.gms.internal.play_billing.k3.y(b10, f20, 1.0f, f20);
+                    f6Var.Q = y12;
+                    float f21 = f6Var.M;
+                    org.telegram.ui.Wallet.b6 b6Var = f6Var.a.i0;
+                    float f22 = (y11 * f21) + b6Var.i + f6Var.L;
+                    f6Var.K = f22;
+                    float f23 = (y12 * f21) + b6Var.d;
+                    f6Var.N = f23;
+                    f6Var.a(f22, f23);
+                    f6Var.postOnAnimation(this);
                     break;
                 }
                 break;

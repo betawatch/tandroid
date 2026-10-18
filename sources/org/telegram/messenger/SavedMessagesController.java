@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class SavedMessagesController {
     private final int currentAccount;
@@ -38,7 +38,7 @@ public class SavedMessagesController {
     private final Runnable saveCacheRunnable = new uh(this, 1);
     private final a0.h checkMessagesCallbacks = new a0.h();
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class SavedDialog {
         public long dialogId;
         private int lastDate;
@@ -247,7 +247,7 @@ public class SavedMessagesController {
      */
     /* JADX WARN: Code restructure failed: missing block: B:43:0x01b8, code lost:
     
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.c0(r14, r5, r6, r8, r7, r39, 5));
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(new org.telegram.messenger.b0(r14, r5, r6, r8, r7, r39, 5));
      */
     /* JADX WARN: Code restructure failed: missing block: B:44:0x01c7, code lost:
     
@@ -700,7 +700,7 @@ public class SavedMessagesController {
                         FileLog.e(e);
                         if (sQLiteCursor2 != null) {
                         }
-                        AndroidUtilities.runOnUIThread(new c0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
+                        AndroidUtilities.runOnUIThread(new b0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
                     } catch (Throwable th2) {
                         th = th2;
                         if (sQLiteCursor2 != null) {
@@ -739,7 +739,7 @@ public class SavedMessagesController {
                         if (sQLiteCursor2 != null) {
                             sQLiteCursor2.dispose();
                         }
-                        AndroidUtilities.runOnUIThread(new c0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
+                        AndroidUtilities.runOnUIThread(new b0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
                     } catch (Throwable th4) {
                         th = th4;
                         sQLiteCursor2 = queryFinalized;
@@ -753,7 +753,7 @@ public class SavedMessagesController {
                     FileLog.e(e);
                     if (sQLiteCursor2 != null) {
                     }
-                    AndroidUtilities.runOnUIThread(new c0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
+                    AndroidUtilities.runOnUIThread(new b0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
                 } catch (Throwable th5) {
                     th = th5;
                     sQLiteCursor2 = sQLiteCursor;
@@ -780,7 +780,7 @@ public class SavedMessagesController {
         if (sQLiteCursor != null) {
             sQLiteCursor.dispose();
         }
-        AndroidUtilities.runOnUIThread(new c0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
+        AndroidUtilities.runOnUIThread(new b0(this, arrayList6, arrayList7, arrayList8, arrayList2, hVar, 6));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1120,7 +1120,7 @@ public class SavedMessagesController {
         }
         this.dialogsLoading = true;
         TLRPC.TL_messages_getSavedDialogs tL_messages_getSavedDialogs = new TLRPC.TL_messages_getSavedDialogs();
-        SavedDialog savedDialog = this.loadedDialogs.isEmpty() ? null : (SavedDialog) i0.a.h(1, this.loadedDialogs);
+        SavedDialog savedDialog = this.loadedDialogs.isEmpty() ? null : (SavedDialog) i2.d.h(1, this.loadedDialogs);
         if (savedDialog != null) {
             tL_messages_getSavedDialogs.offset_id = savedDialog.top_message_id;
             tL_messages_getSavedDialogs.offset_date = savedDialog.getDate();
@@ -1181,11 +1181,11 @@ public class SavedMessagesController {
                 }
                 if (str2 != null) {
                     String translitSafe2 = AndroidUtilities.translitSafe(str2.toLowerCase());
-                    if (translitSafe2.startsWith(translitSafe) || wh.w(" ", translitSafe, translitSafe2)) {
+                    if (translitSafe2.startsWith(translitSafe) || g0.w(" ", translitSafe, translitSafe2)) {
                         arrayList.add(savedDialog);
                     } else if (str3 != null) {
                         String translitSafe3 = AndroidUtilities.translitSafe(str3.toLowerCase());
-                        if (translitSafe3.startsWith(translitSafe) || wh.w(" ", translitSafe, translitSafe3)) {
+                        if (translitSafe3.startsWith(translitSafe) || g0.w(" ", translitSafe, translitSafe3)) {
                             arrayList.add(savedDialog);
                         }
                     }

@@ -1,6 +1,6 @@
 package rg;
 
-import ai.va;
+import ai.wa;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class i1 extends im0 {
     public static final Paint a3;
@@ -47,7 +47,7 @@ public abstract class i1 extends im0 {
         setLayoutManager(new s4.s(7));
         setAdapter(new g1(this, context));
         setOverScrollMode(2);
-        setOnItemClickListener(new va(this, 19));
+        setOnItemClickListener(new wa(this, 19));
     }
 
     public static void x1(Canvas canvas, RectF rectF, int i10) {
@@ -91,9 +91,9 @@ public abstract class i1 extends im0 {
         Path path = c3;
         path.rewind();
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) i0.a.f(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) i2.d.f(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.moveTo(rectF.centerX(), rectF.centerY());
-        path.lineTo((float) i0.a.f(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.lineTo((float) i2.d.f(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
         path.addArc(rectF, -45.0f, 180.0f);
         canvas.save();
         canvas.clipPath(path);

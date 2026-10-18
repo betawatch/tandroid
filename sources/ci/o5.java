@@ -1,14 +1,14 @@
 package ci;
 
 import android.content.Context;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.rx0;
 import org.telegram.ui.te1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class o5 extends rx0 {
     public final /* synthetic */ int K = 0;
@@ -55,7 +55,7 @@ public final class o5 extends rx0 {
         switch (this.K) {
             case 0:
                 u5 u5Var = ((p5) this.L).d;
-                super.onMeasure(i10, wh.c(u5Var.e, u5Var.n - u5Var.r.getPaddingTop(), TLObject.FLAG_30));
+                super.onMeasure(i10, kk.c(u5Var.e, u5Var.n - u5Var.r.getPaddingTop(), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);

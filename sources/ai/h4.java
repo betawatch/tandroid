@@ -1,29 +1,41 @@
 package ai;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k7 b;
-    public final /* synthetic */ TLRPC.TL_payments_paymentResult c;
+    public final /* synthetic */ yh.j0 b;
 
-    public /* synthetic */ h4(k7 k7Var, TLRPC.TL_payments_paymentResult tL_payments_paymentResult, int i10) {
+    public /* synthetic */ h4(yh.j0 j0Var, int i10) {
         this.a = i10;
-        this.b = k7Var;
-        this.c = tL_payments_paymentResult;
+        this.b = j0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
+                this.b.dismiss();
+                break;
+            case 1:
+                yh.j0 j0Var = this.b;
+                qh.i iVar = j0Var.h;
+                ih.f fVar = j0Var.f;
+                if (fVar != null) {
+                    fVar.d();
+                }
+                yh.i0 i0Var = j0Var.H;
+                if (i0Var != null) {
+                    i0Var.setTranslationY(-iVar.d());
+                }
+                org.telegram.ui.Components.q6 q6Var = j0Var.w;
+                if (q6Var != null) {
+                    q6Var.setTranslationY(-iVar.d());
+                }
+                j0Var.p();
                 break;
             default:
-                MessagesController.getInstance(this.b.currentAccount).lambda$processUpdates$377(this.c.updates, false);
+                this.b.H.performClick();
                 break;
         }
     }

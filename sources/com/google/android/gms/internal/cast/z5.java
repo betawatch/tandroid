@@ -41,7 +41,7 @@ import org.telegram.ui.Components.ja;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.ai1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
     public Object a;
@@ -54,20 +54,20 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         this(context, new e6.b(-1, 0, 0));
     }
 
-    public static void D(z5 z5Var, y6 y6Var) {
-        int i10 = y6Var.e;
-        if (i10 == 2 && ((x6) z5Var.d) != null) {
+    public static void D(z5 z5Var, x6 x6Var) {
+        int i10 = x6Var.e;
+        if (i10 == 2 && ((w6) z5Var.d) != null) {
             z5Var.G();
         }
         if (i10 == 2) {
-            z5Var.d = new x6((p0) z5Var.b, (String) z5Var.a);
+            z5Var.d = new w6((p0) z5Var.b, (String) z5Var.a);
         } else {
             z5Var.d = z5Var.F();
         }
-        x6 x6Var = (x6) z5Var.d;
-        n6.l.h(x6Var);
-        y6Var.d = x6Var.h;
-        x6Var.b.add(y6Var);
+        w6 w6Var = (w6) z5Var.d;
+        n6.l.h(w6Var);
+        x6Var.d = w6Var.h;
+        w6Var.b.add(x6Var);
     }
 
     public static z5 t(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
@@ -149,13 +149,13 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         this.a = null;
     }
 
-    public x6 F() {
-        if (((x6) this.d) == null) {
-            x6 x6Var = new x6((p0) this.b, (String) this.a);
-            this.d = x6Var;
-            x6Var.b(1);
+    public w6 F() {
+        if (((w6) this.d) == null) {
+            w6 w6Var = new w6((p0) this.b, (String) this.a);
+            this.d = w6Var;
+            w6Var.b(1);
         }
-        return (x6) this.d;
+        return (w6) this.d;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -164,42 +164,42 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         r1 r1Var;
         int i11;
         long j10;
-        x6 x6Var = (x6) this.d;
-        if (x6Var != null) {
-            Map map = x6Var.e;
-            List<h3> list = x6Var.d;
-            List<b> list2 = x6Var.c;
-            List<y6> list3 = x6Var.b;
-            d6.c cVar = x6Var.j;
+        w6 w6Var = (w6) this.d;
+        if (w6Var != null) {
+            Map map = w6Var.e;
+            List<h3> list = w6Var.d;
+            List<b> list2 = w6Var.c;
+            List<x6> list3 = w6Var.b;
+            d6.c cVar = w6Var.j;
             if (cVar != null) {
                 cVar.l = null;
-                x6Var.j = null;
+                w6Var.j = null;
             }
-            long j11 = x6Var.i;
+            long j11 = w6Var.i;
             r1 m10 = s1.m();
             m10.c();
             s1.t((s1) m10.b, j11);
-            String str = x6Var.l;
+            String str = w6Var.l;
             if (str != null) {
                 m10.c();
                 s1.y((s1) m10.b, str);
             }
-            String str2 = x6Var.m;
+            String str2 = w6Var.m;
             if (str2 != null) {
                 m10.c();
                 s1.u((s1) m10.b, str2);
             }
             k1 l4 = l1.l();
-            String str3 = x6.o;
+            String str3 = w6.o;
             l4.c();
             l1.n((l1) l4.b, str3);
-            String str4 = x6Var.g;
+            String str4 = w6Var.g;
             l4.c();
             l1.m((l1) l4.b, str4);
             l1 l1Var = (l1) l4.a();
             m10.c();
             s1.r((s1) m10.b, l1Var);
-            d0 d0Var = x6Var.a;
+            d0 d0Var = w6Var.a;
             x1 l10 = y1.l();
             Object zza = d0Var.zza();
             if (zza != null) {
@@ -210,13 +210,13 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
                 l10.c();
                 y1.m((y1) l10.b, k2Var);
             }
-            String str5 = x6Var.k;
+            String str5 = w6Var.k;
             if (str5 != null) {
                 try {
                     String replace = str5.replace("-", "");
                     j10 = new BigInteger(replace.substring(0, Math.min(16, replace.length())), 16).longValue();
                 } catch (NumberFormatException e) {
-                    g6.b bVar = x6.n;
+                    g6.b bVar = w6.n;
                     Log.w(bVar.a, bVar.d("receiverSessionId %s is not valid for hash", str5), e);
                     j10 = 0;
                 }
@@ -225,22 +225,22 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
             }
             if (!list3.isEmpty()) {
                 ArrayList arrayList = new ArrayList();
-                for (y6 y6Var : list3) {
-                    y6Var.getClass();
+                for (x6 x6Var : list3) {
+                    x6Var.getClass();
                     v1 l12 = w1.l();
-                    int i12 = y6Var.e;
+                    int i12 = x6Var.e;
                     l12.c();
                     w1.p((w1) l12.b, i12);
-                    int i13 = (int) (y6Var.b - y6Var.d);
+                    int i13 = (int) (x6Var.b - x6Var.d);
                     l12.c();
                     w1.m((w1) l12.b, i13);
-                    Integer num = y6Var.a;
+                    Integer num = x6Var.a;
                     if (num != null) {
                         int intValue = num.intValue();
                         l12.c();
                         w1.n((w1) l12.b, intValue);
                     }
-                    Boolean bool = y6Var.c;
+                    Boolean bool = x6Var.c;
                     if (bool != null) {
                         boolean booleanValue = bool.booleanValue();
                         l12.c();
@@ -485,7 +485,7 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
             y1 y1Var = (y1) l10.a();
             r1Var.c();
             s1.q((s1) r1Var.b, y1Var);
-            x6Var.f.a((s1) r1Var.a(), 233);
+            w6Var.f.a((s1) r1Var.a(), 233);
             this.d = null;
         }
     }
@@ -635,22 +635,22 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         return new q5.a((Executor) ((hd.a) this.b).get(), (m5.d) ((hd.a) this.c).get(), (m.g3) ((m.g3) this.a).get(), (s5.d) ((hd.a) this.d).get(), (t5.c) ((hd.a) this.e).get());
     }
 
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ boolean h() {
+        return true;
+    }
+
     @Override // z3.d
-    public int h() {
+    public int i() {
         return ((long[]) this.c).length;
     }
 
     @Override // r9.b
-    public Set i(r9.r rVar) {
+    public Set j(r9.r rVar) {
         if (((Set) this.d).contains(rVar)) {
-            return ((r9.b) this.e).i(rVar);
+            return ((r9.b) this.e).j(rVar);
         }
         throw new androidx.car.app.j("Attempting to request an undeclared dependency Set<" + rVar + ">.");
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public /* synthetic */ boolean j() {
-        return true;
     }
 
     @Override // org.telegram.ui.Components.bl0
@@ -763,10 +763,10 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
             str = str.concat(" symbol");
         }
         if (((Long) this.d) == null) {
-            str = r.c.u(str, " offset");
+            str = r4.c.u(str, " offset");
         }
         if (((Integer) this.e) == null) {
-            str = r.c.u(str, " importance");
+            str = r4.c.u(str, " importance");
         }
         if (str.isEmpty()) {
             return new z9.s0(((Long) this.b).longValue(), (String) this.a, (String) this.c, ((Long) this.d).longValue(), ((Integer) this.e).intValue());
@@ -774,7 +774,12 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    public void r(Canvas canvas, boolean z10, boolean z11, int i10, float f7) {
+    @Override // org.telegram.ui.Components.bl0
+    public boolean r() {
+        return true;
+    }
+
+    public void s(Canvas canvas, boolean z10, boolean z11, int i10, float f7) {
         RectF rectF = (RectF) this.c;
         float[] fArr = (float[]) this.a;
         Paint paint = (Paint) this.e;
@@ -803,11 +808,6 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
             canvas.drawPath(path, paint);
         }
         canvas.clipPath(path);
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public boolean s() {
-        return true;
     }
 
     @Override // ne.d
@@ -840,7 +840,7 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
     }
 
     public Set y(Class cls) {
-        return i(r9.r.a(cls));
+        return j(r9.r.a(cls));
     }
 
     public void z(Bitmap bitmap) {

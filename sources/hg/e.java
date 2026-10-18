@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.un;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class e extends em0 {
     public final boolean E;
@@ -320,8 +320,8 @@ public abstract class e extends em0 {
             q4Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(76.0f), AndroidUtilities.dp(64.0f)));
             TextView textView = new TextView(q4Var.getContext());
             q4Var.a = textView;
-            a6.m(22.0f, 1, textView);
-            a6.o(h6.B6, null, false, textView, 17);
+            k3.m(22.0f, 1, textView);
+            k3.o(h6.B6, null, false, textView, 17);
             q4Var.addView(textView, z5.a(-1.0f, 12.0f, 0.0f, 0.0f, 0.0f, -1, 119));
             view2 = q4Var;
         } else {
@@ -587,7 +587,7 @@ public abstract class e extends em0 {
             } else if (i10 == 8) {
                 view = new o4(context, false);
             } else if (i10 != 9) {
-                view = new z6(context, (org.telegram.ui.Cells.t0) null);
+                view = new z6(context, (org.telegram.ui.Cells.c1) null);
             } else {
                 View unVar = new un(context, 4);
                 unVar.setId(9);

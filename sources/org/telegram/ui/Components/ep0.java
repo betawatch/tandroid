@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ep0 {
     public final int a;
@@ -26,57 +26,57 @@ public final class ep0 {
         int i10;
         this.c = eVar;
         synchronized (eVar) {
-            i10 = ((i2.h) eVar.d).c.b;
+            i10 = ((i2.i) eVar.d).c.b;
         }
         this.a = i10;
         this.d = new e2.x(32);
-        u2.z0 z0Var = new u2.z0(0L, i10);
-        this.e = z0Var;
-        this.f = z0Var;
-        this.g = z0Var;
+        u2.y0 y0Var = new u2.y0(0L, i10);
+        this.e = y0Var;
+        this.f = y0Var;
+        this.g = y0Var;
     }
 
-    public static u2.z0 d(u2.z0 z0Var, long j10, ByteBuffer byteBuffer, int i10) {
-        while (j10 >= z0Var.b) {
-            z0Var = (u2.z0) z0Var.d;
+    public static u2.y0 d(u2.y0 y0Var, long j10, ByteBuffer byteBuffer, int i10) {
+        while (j10 >= y0Var.b) {
+            y0Var = (u2.y0) y0Var.d;
         }
         while (i10 > 0) {
-            int min = Math.min(i10, (int) (z0Var.b - j10));
-            y2.a aVar = (y2.a) z0Var.c;
-            byteBuffer.put(aVar.a, ((int) (j10 - z0Var.a)) + aVar.b, min);
+            int min = Math.min(i10, (int) (y0Var.b - j10));
+            y2.a aVar = (y2.a) y0Var.c;
+            byteBuffer.put(aVar.a, ((int) (j10 - y0Var.a)) + aVar.b, min);
             i10 -= min;
             j10 += min;
-            if (j10 == z0Var.b) {
-                z0Var = (u2.z0) z0Var.d;
+            if (j10 == y0Var.b) {
+                y0Var = (u2.y0) y0Var.d;
             }
         }
-        return z0Var;
+        return y0Var;
     }
 
-    public static u2.z0 e(u2.z0 z0Var, long j10, byte[] bArr, int i10) {
-        while (j10 >= z0Var.b) {
-            z0Var = (u2.z0) z0Var.d;
+    public static u2.y0 e(u2.y0 y0Var, long j10, byte[] bArr, int i10) {
+        while (j10 >= y0Var.b) {
+            y0Var = (u2.y0) y0Var.d;
         }
         int i11 = i10;
         while (i11 > 0) {
-            int min = Math.min(i11, (int) (z0Var.b - j10));
-            y2.a aVar = (y2.a) z0Var.c;
-            System.arraycopy(aVar.a, ((int) (j10 - z0Var.a)) + aVar.b, bArr, i10 - i11, min);
+            int min = Math.min(i11, (int) (y0Var.b - j10));
+            y2.a aVar = (y2.a) y0Var.c;
+            System.arraycopy(aVar.a, ((int) (j10 - y0Var.a)) + aVar.b, bArr, i10 - i11, min);
             i11 -= min;
             j10 += min;
-            if (j10 == z0Var.b) {
-                z0Var = (u2.z0) z0Var.d;
+            if (j10 == y0Var.b) {
+                y0Var = (u2.y0) y0Var.d;
             }
         }
-        return z0Var;
+        return y0Var;
     }
 
-    public static u2.z0 f(u2.z0 z0Var, h2.h hVar, j5.c cVar, e2.x xVar) {
+    public static u2.y0 f(u2.y0 y0Var, h2.h hVar, j5.c cVar, e2.x xVar) {
         if (hVar.getFlag(TLObject.FLAG_30)) {
             long j10 = cVar.a;
             int i10 = 1;
             xVar.K(1);
-            u2.z0 e = e(z0Var, j10, xVar.a, 1);
+            u2.y0 e = e(y0Var, j10, xVar.a, 1);
             long j11 = j10 + 1;
             byte b10 = xVar.a[0];
             boolean z10 = (b10 & 128) != 0;
@@ -88,11 +88,11 @@ public final class ep0 {
             } else {
                 Arrays.fill(bArr, (byte) 0);
             }
-            z0Var = e(e, j11, dVar.a, i11);
+            y0Var = e(e, j11, dVar.a, i11);
             long j12 = j11 + i11;
             if (z10) {
                 xVar.K(2);
-                z0Var = e(z0Var, j12, xVar.a, 2);
+                y0Var = e(y0Var, j12, xVar.a, 2);
                 j12 += 2;
                 i10 = xVar.H();
             }
@@ -107,7 +107,7 @@ public final class ep0 {
             if (z10) {
                 int i12 = i10 * 6;
                 xVar.K(i12);
-                z0Var = e(z0Var, j12, xVar.a, i12);
+                y0Var = e(y0Var, j12, xVar.a, i12);
                 j12 += i12;
                 xVar.N(0);
                 for (int i13 = 0; i13 < i10; i13++) {
@@ -152,15 +152,15 @@ public final class ep0 {
         }
         if (!hVar.hasSupplementalData()) {
             hVar.b(cVar.b);
-            return d(z0Var, cVar.a, hVar.c, cVar.b);
+            return d(y0Var, cVar.a, hVar.c, cVar.b);
         }
         xVar.K(4);
-        u2.z0 e7 = e(z0Var, cVar.a, xVar.a, 4);
+        u2.y0 e7 = e(y0Var, cVar.a, xVar.a, 4);
         int E = xVar.E();
         cVar.a += 4;
         cVar.b -= 4;
         hVar.b(E);
-        u2.z0 d = d(e7, cVar.a, hVar.c, E);
+        u2.y0 d = d(e7, cVar.a, hVar.c, E);
         cVar.a += E;
         int i18 = cVar.b - E;
         cVar.b = i18;
@@ -173,73 +173,73 @@ public final class ep0 {
         return d(d, cVar.a, hVar.f, cVar.b);
     }
 
-    public void a(u2.z0 z0Var) {
-        if (((y2.a) z0Var.c) == null) {
+    public void a(u2.y0 y0Var) {
+        if (((y2.a) y0Var.c) == null) {
             return;
         }
         androidx.biometric.e eVar = (androidx.biometric.e) this.c;
         synchronized (eVar) {
-            ((i2.h) eVar.d).c.b(z0Var);
-            u2.z0 z0Var2 = z0Var;
-            while (z0Var2 != null) {
-                y2.a aVar = (y2.a) z0Var2.c;
+            ((i2.i) eVar.d).c.b(y0Var);
+            u2.y0 y0Var2 = y0Var;
+            while (y0Var2 != null) {
+                y2.a aVar = (y2.a) y0Var2.c;
                 aVar.getClass();
                 eVar.u(aVar);
-                z0Var2 = (u2.z0) z0Var2.d;
-                if (z0Var2 == null || ((y2.a) z0Var2.c) == null) {
-                    z0Var2 = null;
+                y0Var2 = (u2.y0) y0Var2.d;
+                if (y0Var2 == null || ((y2.a) y0Var2.c) == null) {
+                    y0Var2 = null;
                 }
             }
         }
-        z0Var.c = null;
-        z0Var.d = null;
+        y0Var.c = null;
+        y0Var.d = null;
     }
 
     public void b(long j10) {
-        u2.z0 z0Var;
+        u2.y0 y0Var;
         if (j10 == -1) {
             return;
         }
         while (true) {
-            z0Var = (u2.z0) this.e;
-            if (j10 < z0Var.b) {
+            y0Var = (u2.y0) this.e;
+            if (j10 < y0Var.b) {
                 break;
             }
             androidx.biometric.e eVar = (androidx.biometric.e) this.c;
-            y2.a aVar = (y2.a) z0Var.c;
+            y2.a aVar = (y2.a) y0Var.c;
             synchronized (eVar) {
-                ((i2.h) eVar.d).c.c(aVar);
+                ((i2.i) eVar.d).c.c(aVar);
                 eVar.u(aVar);
             }
-            u2.z0 z0Var2 = (u2.z0) this.e;
-            z0Var2.c = null;
-            u2.z0 z0Var3 = (u2.z0) z0Var2.d;
-            z0Var2.d = null;
-            this.e = z0Var3;
+            u2.y0 y0Var2 = (u2.y0) this.e;
+            y0Var2.c = null;
+            u2.y0 y0Var3 = (u2.y0) y0Var2.d;
+            y0Var2.d = null;
+            this.e = y0Var3;
         }
-        if (((u2.z0) this.f).a < z0Var.a) {
-            this.f = z0Var;
+        if (((u2.y0) this.f).a < y0Var.a) {
+            this.f = y0Var;
         }
     }
 
     public int c(int i10) {
         y2.a a2;
-        u2.z0 z0Var = (u2.z0) this.g;
-        if (((y2.a) z0Var.c) == null) {
+        u2.y0 y0Var = (u2.y0) this.g;
+        if (((y2.a) y0Var.c) == null) {
             androidx.biometric.e eVar = (androidx.biometric.e) this.c;
             synchronized (eVar) {
-                a2 = ((i2.h) eVar.d).c.a();
+                a2 = ((i2.i) eVar.d).c.a();
                 ((HashMap) eVar.b).put(a2, (j2.k) eVar.c);
-                i2.g gVar = (i2.g) ((i2.h) eVar.d).p.get((j2.k) eVar.c);
-                if (gVar != null) {
-                    gVar.a();
+                i2.h hVar = (i2.h) ((i2.i) eVar.d).p.get((j2.k) eVar.c);
+                if (hVar != null) {
+                    hVar.a();
                 }
             }
-            u2.z0 z0Var2 = new u2.z0(((u2.z0) this.g).b, this.a);
-            z0Var.c = a2;
-            z0Var.d = z0Var2;
+            u2.y0 y0Var2 = new u2.y0(((u2.y0) this.g).b, this.a);
+            y0Var.c = a2;
+            y0Var.d = y0Var2;
         }
-        return Math.min(i10, (int) (((u2.z0) this.g).b - this.b));
+        return Math.min(i10, (int) (((u2.y0) this.g).b - this.b));
     }
 
     public ep0(rc0 rc0Var) {

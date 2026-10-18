@@ -7,13 +7,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.m71;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -36,21 +36,23 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                 j2 j2Var = (j2) this.c;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.d;
                 if (AndroidUtilities.addToClipboard(jSONObject.optString("text"))) {
-                    wh.p(R.string.WalletSigningDataCopied, new xc(j2Var.topBulletinContainer, d6Var));
+                    kk.p(R.string.WalletSigningDataCopied, new xc(j2Var.topBulletinContainer, d6Var));
                     break;
                 }
                 break;
             case 1:
-                x2 x2Var = (x2) this.b;
+                y2 y2Var = (y2) this.b;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
                 TL_wallet.card cardVar = (TL_wallet.card) this.d;
-                if (!x2Var.M) {
-                    if (x2Var.d) {
-                        x2Var.P = new v2(0, n2Var);
-                    } else if (x2Var.c && !TextUtils.isEmpty(cardVar.address)) {
-                        x2Var.P = new m71(29, n2Var, cardVar);
+                if (!y2Var.O) {
+                    if (y2Var.e) {
+                        y2Var.R = new v2(0, n2Var);
+                    } else if (y2Var.d) {
+                        y2Var.R = new v2(1, n2Var);
+                    } else if (y2Var.c && !TextUtils.isEmpty(cardVar.address)) {
+                        y2Var.R = new m71(29, n2Var, cardVar);
                     }
-                    x2Var.dismiss();
+                    y2Var.dismiss();
                     break;
                 }
                 break;
@@ -72,12 +74,12 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                 i80Var.u();
                 break;
             default:
-                n8 n8Var = (n8) this.b;
+                q8 q8Var = (q8) this.b;
                 org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) this.c;
                 Runnable runnable = (Runnable) this.d;
-                n8Var.getClass();
+                q8Var.getClass();
                 b2VarArr[0].dismiss();
-                AndroidUtilities.addToClipboard(n8Var.r);
+                AndroidUtilities.addToClipboard(q8Var.r);
                 runnable.run();
                 break;
         }

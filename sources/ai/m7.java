@@ -34,7 +34,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d11;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m7 {
     public float A;
@@ -43,7 +43,7 @@ public final class m7 {
     public final RectF D;
     public final Path E;
     public final Paint F;
-    public final ce G;
+    public final de G;
     public final org.telegram.ui.Components.yc H;
     public final org.telegram.ui.Components.yc I;
     public boolean J;
@@ -54,7 +54,7 @@ public final class m7 {
     public MessageObject O;
     public boolean P;
     public final ne.e Q;
-    public f4 R;
+    public h4 R;
     public final int a;
     public final View b;
     public final org.telegram.ui.ActionBar.d6 c;
@@ -88,7 +88,7 @@ public final class m7 {
         this.D = new RectF();
         this.E = new Path();
         this.F = new Paint();
-        this.G = new ce(1, 25);
+        this.G = new de(1, 25);
         this.Q = new ne.e(0, new a1.c(this, 6), bs.h, 320L);
         this.a = i10;
         this.b = view;
@@ -202,7 +202,7 @@ public final class m7 {
         if (!this.p) {
             float dp5 = f10 - ((this.C.c + AndroidUtilities.dp(30.0f)) / 2.0f);
             float f14 = this.A;
-            float a10 = org.telegram.messenger.q.a(this.C.c, AndroidUtilities.dp(30.0f), 2.0f, f10);
+            float a10 = org.telegram.messenger.g0.a(this.C.c, AndroidUtilities.dp(30.0f), 2.0f, f10);
             float f15 = this.A + this.B;
             RectF rectF2 = this.D;
             rectF2.set(dp5, f14, a10, f15);
@@ -241,15 +241,15 @@ public final class m7 {
         RectF rectF2 = this.D;
         canvas.scale(a10, a10, rectF2.centerX(), rectF2.centerY());
         canvas.clipPath(this.E);
-        ce ceVar = this.G;
-        ceVar.g(rectF2);
-        ceVar.d();
-        ceVar.a(canvas, org.telegram.ui.ActionBar.h6.m1(0.7f, -1));
+        de deVar = this.G;
+        deVar.g(rectF2);
+        deVar.d();
+        deVar.a(canvas, org.telegram.ui.ActionBar.h6.m1(0.7f, -1));
         this.C.c(rectF2.left + AndroidUtilities.dp(15.0f), rectF2.centerY(), 1.0f, -1, canvas);
         canvas.restore();
         View view = this.b;
-        if (view instanceof org.telegram.ui.Cells.x0) {
-            ((org.telegram.ui.Cells.x0) view).N();
+        if (view instanceof org.telegram.ui.Cells.w0) {
+            ((org.telegram.ui.Cells.w0) view).N();
         } else {
             view.invalidate();
         }
@@ -277,19 +277,19 @@ public final class m7 {
             }
         } else {
             if (motionEvent.getAction() == 1 && ((z10 = ycVar.i) || ycVar2.i)) {
-                f4 f4Var = this.R;
-                if (f4Var != null) {
+                h4 h4Var = this.R;
+                if (h4Var != null) {
                     if (z10) {
-                        f4Var.run();
+                        h4Var.run();
                     }
                 } else if (this.J) {
                     org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U != null) {
-                        org.telegram.messenger.q.q(R.string.UniqueGiftNotFoundBurned, org.telegram.ui.Components.xc.a0(U), R.raw.fire_on, 36);
+                        org.telegram.messenger.g0.q(R.string.UniqueGiftNotFoundBurned, org.telegram.ui.Components.xc.a0(U), R.raw.fire_on, 36);
                     }
                 } else {
                     k7 k7Var = new k7(this.b.getContext(), this.a, this.O.getDialogId(), this.c, null);
-                    k7Var.B2(this.O, null);
+                    k7Var.E2(this.O, null);
                     k7Var.show();
                 }
                 ycVar.c(false);
@@ -339,10 +339,10 @@ public final class m7 {
                     return;
                 }
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) tL_messageActionStarGiftUnique.gift;
-                this.k = (TL_stars.starGiftAttributeBackdrop) fa.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-                this.l = (TL_stars.starGiftAttributePattern) fa.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+                this.k = (TL_stars.starGiftAttributeBackdrop) ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                this.l = (TL_stars.starGiftAttributePattern) ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
                 TL_stars.starGiftAttributeModel stargiftattributemodel = this.m;
-                this.m = (TL_stars.starGiftAttributeModel) fa.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
+                this.m = (TL_stars.starGiftAttributeModel) ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class);
                 this.h = null;
                 this.f.setShader(null);
                 TL_stars.starGiftAttributePattern stargiftattributepattern = this.l;
@@ -362,7 +362,7 @@ public final class m7 {
                         imageReceiver.clearDecorators();
                         imageReceiver.setAutoRepeat(0);
                     }
-                    ld.a1(imageReceiver, this.m.document, 110);
+                    md.a1(imageReceiver, this.m.document, 110);
                 }
                 boolean z12 = tL_starGiftUnique.burned;
                 this.J = z12;
@@ -462,7 +462,7 @@ public final class m7 {
             sb2.append(tL_starGiftUnique.title);
             sb2.append(" #");
             f11 = 2.0f;
-            this.t = new d11(org.telegram.messenger.q.h(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
+            this.t = new d11(org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
         }
         this.s = (this.t.j() / f11) + j10;
         float j11 = this.t.j() + j10 + AndroidUtilities.dp(this.p ? 14.0f : 11.0f);
@@ -571,7 +571,7 @@ public final class m7 {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(tL_starGiftUnique.title);
         sb2.append(" #");
-        d11 d11Var2 = new d11(org.telegram.messenger.q.h(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
+        d11 d11Var2 = new d11(org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2), 12.0f, null);
         this.t = d11Var2;
         this.s = (d11Var2.j() / 2.0f) + j11;
         float j12 = this.t.j() + j11 + AndroidUtilities.dp(11.0f);

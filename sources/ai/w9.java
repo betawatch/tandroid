@@ -4,17 +4,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dy0;
-import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.kh0;
-import org.telegram.ui.rx;
 import org.telegram.ui.wg0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -34,10 +33,10 @@ public final /* synthetic */ class w9 implements RequestDelegate {
         TLRPC.TL_chatInviteExported tL_chatInviteExported;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new y3(this.c, this.d, tLObject, this.b, 1));
+                AndroidUtilities.runOnUIThread(new x9((y9) this.c, (int[]) this.d, tLObject, this.b, 0));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new y3((ei.t1) this.c, tLObject, (String) this.d, this.b, 3));
+                AndroidUtilities.runOnUIThread(new x9(this.c, tLObject, this.d, this.b, 2));
                 break;
             case 2:
                 hg.a2 a2Var = (hg.a2) this.c;
@@ -68,16 +67,16 @@ public final /* synthetic */ class w9 implements RequestDelegate {
                 }
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new e2((org.telegram.ui.ke) this.c, tL_error, tLObject, (TwoStepVerificationActivity) this.d, this.b, 14));
+                AndroidUtilities.runOnUIThread(new ei.s1(this.c, (Object) tL_error, tLObject, this.d, this.b, 13));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new y3((dy0) this.c, tLObject, this.b, (org.telegram.ui.ActionBar.b2) this.d, 20));
+                AndroidUtilities.runOnUIThread(new x9((dy0) this.c, tLObject, this.b, (org.telegram.ui.ActionBar.b2) this.d));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new e2((rx) this.c, tL_error, tLObject, (String) this.d, this.b, 20));
+                AndroidUtilities.runOnUIThread(new ei.s1(this.c, (Object) tL_error, tLObject, this.d, this.b, 19));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new y3(this.c, (Object) tLObject, this.d, this.b, 22));
+                AndroidUtilities.runOnUIThread(new x9(this.c, tLObject, this.d, this.b, 21));
                 break;
             case 7:
                 kh0 kh0Var = (kh0) this.c;
@@ -97,7 +96,7 @@ public final /* synthetic */ class w9 implements RequestDelegate {
                 tL_chatInviteExported = null;
                 AndroidUtilities.runOnUIThread(new wg0(kh0Var, tL_chatInviteExported, tL_error, tLObject, this.b, 0));
             default:
-                AndroidUtilities.runOnUIThread(new e2(this.c, (Object) tL_error, this.b, (Object) tLObject, this.d, 22));
+                AndroidUtilities.runOnUIThread(new ei.s1((NotificationCenter.NotificationCenterDelegate) this.c, (TLObject) tL_error, this.b, tLObject, this.d, 21));
                 break;
         }
     }

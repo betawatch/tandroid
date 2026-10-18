@@ -10,7 +10,7 @@ import org.telegram.ui.ey;
 import org.telegram.ui.j21;
 import org.telegram.ui.q21;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p4 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -38,7 +38,7 @@ public final /* synthetic */ class p4 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                k7.r1((k7) this.f, (pf.c) this.h, (org.telegram.ui.ActionBar.b2) this.b, (TLObject) this.c, (TL_stars.TL_starGiftUnique) this.n, (TLRPC.TL_error) this.e, this.d, (CharSequence) this.r);
+                k7.s1((k7) this.f, (pf.c) this.h, (org.telegram.ui.ActionBar.b2) this.b, (TLObject) this.c, (TL_stars.TL_starGiftUnique) this.n, (TLRPC.TL_error) this.e, this.d, (CharSequence) this.r);
                 break;
             case 1:
                 ey.m0((ey) this.f, (org.telegram.ui.ActionBar.b2) this.b, (TLObject) this.c, (TLRPC.User) this.h, (TLRPC.Chat) this.n, this.d, (TLRPC.TL_error) this.e, (TLRPC.TL_messages_checkHistoryImportPeer) this.r);

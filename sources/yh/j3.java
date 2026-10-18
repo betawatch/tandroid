@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -14,7 +14,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class j3 extends LinearLayout {
     public final TextView a;
@@ -27,7 +27,7 @@ public final class j3 extends LinearLayout {
         addView(w9Var, z5.t(64, 64, 17, 0, 32, 0, 0));
         TextView textView = new TextView(context);
         this.a = textView;
-        wh.o(h6.A6, d6Var, textView, 1, 14.0f);
+        kk.o(h6.A6, d6Var, textView, 1, 14.0f);
         textView.setGravity(17);
         addView(textView, z5.t(-1, -2, 7, 12, 12, 12, 24));
     }

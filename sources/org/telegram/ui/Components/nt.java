@@ -13,7 +13,7 @@ import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class nt extends org.telegram.ui.ActionBar.f3 {
     public static /* synthetic */ void n(nt ntVar) {
@@ -91,7 +91,7 @@ public final class nt extends org.telegram.ui.ActionBar.f3 {
         int dp2 = AndroidUtilities.dp(8.0f);
         int i13 = org.telegram.ui.ActionBar.h6.Oh;
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, i13, false);
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
         textView3.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, x02, o10, o10));
         linearLayout.addView(textView3, w7.z5.a(48.0f, 14.0f, 28.0f, 14.0f, 6.0f, -1, 0));
         TextView textView4 = new TextView(activity);
@@ -103,7 +103,7 @@ public final class nt extends org.telegram.ui.ActionBar.f3 {
         textView4.setText(LocaleController.getString(R.string.ClearDownloadsList));
         textView4.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
         int dp3 = AndroidUtilities.dp(8.0f);
-        int o11 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i13, false), 120);
+        int o11 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i13, false), 120);
         textView4.setBackground(org.telegram.ui.ActionBar.h6.j0(dp3, dp3, dp3, dp3, 0, o11, o11));
         textView4.setLetterSpacing(0.025f);
         linearLayout.addView(textView4, w7.z5.a(48.0f, 14.0f, 0.0f, 14.0f, 6.0f, -1, 0));

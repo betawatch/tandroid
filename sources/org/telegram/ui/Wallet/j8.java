@@ -1,65 +1,96 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class j8 extends LinearLayout implements org.telegram.ui.ActionBar.y5 {
-    public final org.telegram.ui.ActionBar.d6 a;
-    public final TextView b;
-    public final TextView c;
-    public final ImageView d;
+public final /* synthetic */ class j8 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n8 b;
+    public final /* synthetic */ pf.c c;
 
-    public j8(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        setOrientation(0);
-        this.a = d6Var;
-        setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(13.0f), 0);
-        LinearLayout e = wh.e(context, 1);
-        e.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(e, w7.z5.p(0, -2, 1.0f, 19, 0, 0, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
-        TextView i10 = com.google.android.gms.internal.cast.a6.i(e, textView, w7.z5.t(-1, -2, 55, 0, 0, 0, 2), context);
-        this.c = i10;
-        i10.setTextSize(1, 14.0f);
-        e.addView(i10, w7.z5.t(-1, -2, 55, 0, 0, 0, 0));
-        ImageView imageView = new ImageView(context);
-        this.d = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.attach_arrow_right);
-        addView(imageView, w7.z5.t(21, 21, 21, 9, 0, 0, 0));
-        d();
+    public /* synthetic */ j8(n8 n8Var, pf.c cVar, int i10) {
+        this.a = i10;
+        this.b = n8Var;
+        this.c = cVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.y5
-    public final void d() {
-        int i10 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.ui.ActionBar.d6 d6Var = this.a;
-        this.b.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
-        int i11 = org.telegram.ui.ActionBar.h6.z6;
-        this.c.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-        this.d.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var), PorterDuff.Mode.SRC_IN));
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        String str = (String) obj;
+        switch (this.a) {
+            case 0:
+                n8 n8Var = this.b;
+                n8Var.getClass();
+                this.c.b();
+                if (!TextUtils.isEmpty(str)) {
+                    xc.a0(n8Var).e0(str, false);
+                    break;
+                }
+                break;
+            case 1:
+                this.c.c(false);
+                n8 n8Var2 = this.b;
+                org.telegram.ui.ActionBar.d5 parentLayout = n8Var2.getParentLayout();
+                if (parentLayout != null) {
+                    ArrayList arrayList = new ArrayList(parentLayout.getFragmentStack());
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj2 = arrayList.get(i10);
+                        i10++;
+                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj2;
+                        if ((n2Var instanceof w9) || (n2Var instanceof v8) || (n2Var instanceof da)) {
+                            ((ActionBarLayout) parentLayout).a0(n2Var, false);
+                        }
+                    }
+                }
+                if (str == null) {
+                    qc M = xc.a0(n8Var2).M(LocaleController.getString(R.string.WalletBackupDisabled), LocaleController.getString(R.string.WalletBackupDisabledInfo), R.raw.contact_check);
+                    M.j = 5000;
+                    M.j();
+                    break;
+                } else {
+                    xc.a0(n8Var2).e0(str, false);
+                    break;
+                }
+                break;
+            default:
+                n8 n8Var3 = this.b;
+                n8Var3.getClass();
+                this.c.b();
+                if (str == null) {
+                    org.telegram.ui.ActionBar.d5 parentLayout2 = n8Var3.getParentLayout();
+                    if (parentLayout2 != null) {
+                        ArrayList arrayList2 = new ArrayList(parentLayout2.getFragmentStack());
+                        int size2 = arrayList2.size();
+                        int i11 = 0;
+                        while (i11 < size2) {
+                            Object obj3 = arrayList2.get(i11);
+                            i11++;
+                            org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj3;
+                            if ((n2Var2 instanceof w9) || (n2Var2 instanceof v8) || (n2Var2 instanceof da) || (n2Var2 instanceof n8)) {
+                                ((ActionBarLayout) parentLayout2).a0(n2Var2, false);
+                            }
+                        }
+                        n8Var3.finishFragment();
+                        break;
+                    } else {
+                        n8Var3.finishFragment();
+                        break;
+                    }
+                } else {
+                    xc.a0(n8Var3).e0(str, false);
+                    break;
+                }
+                break;
+        }
     }
 }

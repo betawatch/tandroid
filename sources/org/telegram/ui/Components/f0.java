@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -293,8 +293,8 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                                         undoView = ((FiltersSetupActivity) lastFragment).Y();
                                     } else if (lastFragment instanceof org.telegram.ui.p00) {
                                         List fragmentStack = parentLayout.getFragmentStack();
-                                        if (fragmentStack.size() >= 2 && (r.c.e(2, fragmentStack) instanceof FiltersSetupActivity)) {
-                                            FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) r.c.e(2, fragmentStack);
+                                        if (fragmentStack.size() >= 2 && (r4.c.f(2, fragmentStack) instanceof FiltersSetupActivity)) {
+                                            FiltersSetupActivity filtersSetupActivity = (FiltersSetupActivity) r4.c.f(2, fragmentStack);
                                             lastFragment.finishFragment();
                                             undoView = filtersSetupActivity.Y();
                                         }
@@ -302,7 +302,7 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                                     UndoView undoView2 = undoView;
                                     if (undoView2 == null) {
                                         k10Var.l0.a(true);
-                                        k10Var.z0 = n2Var.getConnectionsManager().sendRequest(tL_chatlists_joinChatlistInvite, new ai.p2(k10Var, lastFragment, arrayList4, 15));
+                                        k10Var.z0 = n2Var.getConnectionsManager().sendRequest(tL_chatlists_joinChatlistInvite, new ai.q2(k10Var, lastFragment, arrayList4, 15));
                                         break;
                                     } else {
                                         ArrayList<Long> arrayList5 = new ArrayList<>();

@@ -1,6 +1,6 @@
 package fi;
 
-import ai.ic;
+import ai.jc;
 import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -10,7 +10,7 @@ import org.telegram.ui.ActionBar.h6;
 import sg.v1;
 import sg.w1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class c extends w1 {
     public Paint[] n;
@@ -46,7 +46,7 @@ public final class c extends w1 {
             Paint[] paintArr = this.n;
             if (i10 >= paintArr.length) {
                 v1 v1Var2 = this.a;
-                v1Var2.l = new ic(this, 2);
+                v1Var2.l = new jc(this, 2);
                 v1Var2.r = 17;
                 v1Var2.s = 18;
                 v1Var2.t = 19;
@@ -55,7 +55,7 @@ public final class c extends w1 {
                 return;
             }
             paintArr[i10] = new Paint(1);
-            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.b.f(i10 / (this.n.length - 1), -13729319, -14238726), PorterDuff.Mode.SRC_IN));
+            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.a.f(i10 / (this.n.length - 1), -13729319, -14238726), PorterDuff.Mode.SRC_IN));
             i10++;
         }
     }

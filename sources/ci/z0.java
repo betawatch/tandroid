@@ -1,6 +1,6 @@
 package ci;
 
-import ai.oa;
+import ai.pa;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -19,7 +19,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                         i13++;
                         h1Var.v = ((TL_update.TL_updateGroupCall) obj).call;
                     }
-                    AndroidUtilities.runOnUIThread(new oa(12, h1Var, MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCallMessage.class)));
+                    AndroidUtilities.runOnUIThread(new pa(12, h1Var, MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCallMessage.class)));
                     MessagesController.getInstance(i11).lambda$processUpdates$377(updates, false);
                     TLRPC.GroupCall groupCall = h1Var.v;
                     boolean z10 = groupCall != null && groupCall.rtmp_stream;
@@ -101,7 +101,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                                     i10++;
                                     tL_dataJSON = ((TL_update.TL_updateGroupCallConnection) obj3).params;
                                 }
-                                org.telegram.messenger.q.r(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
+                                i2.d.x(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
                                 h1Var.x = true;
                                 if (h1Var.w && h1Var.E != null) {
                                     if (tL_dataJSON == null || tL_dataJSON.data.startsWith("{\"stream\":true")) {
@@ -156,7 +156,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                     i10 = 0;
                     while (i10 < size) {
                     }
-                    org.telegram.messenger.q.r(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
+                    i2.d.x(new StringBuilder("[LivePlayer] joined call "), inputGroupCall.id);
                     h1Var.x = true;
                     if (h1Var.w) {
                     }

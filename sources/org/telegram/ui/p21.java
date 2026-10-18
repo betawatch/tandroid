@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p21 extends FrameLayout {
     public int a;
@@ -59,9 +59,9 @@ public final class p21 extends FrameLayout {
         addView(n5Var, w7.z5.e(-1, -2, 55));
         i10 = ((org.telegram.ui.ActionBar.f3) q21Var).currentAccount;
         g5 g5Var = new g5(this, 19);
-        qp0 qp0Var = new qp0(this, 14);
+        rp0 rp0Var = new rp0(this, 14);
         d6Var4 = ((org.telegram.ui.ActionBar.f3) q21Var).resourcesProvider;
-        org.telegram.ui.Components.a71 a71Var = new org.telegram.ui.Components.a71(context, i10, 0, true, g5Var, qp0Var, null, d6Var4);
+        org.telegram.ui.Components.a71 a71Var = new org.telegram.ui.Components.a71(context, i10, 0, true, g5Var, rp0Var, null, d6Var4);
         this.f = a71Var;
         a71Var.setClipToPadding(false);
         a71Var.V2.k1(true);

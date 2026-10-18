@@ -1,6 +1,6 @@
 package org.telegram.ui.Wallet;
 
-import ai.ld;
+import ai.md;
 import android.content.Context;
 import android.net.Uri;
 import android.text.SpannableStringBuilder;
@@ -48,11 +48,11 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.c61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.fr0;
+import org.telegram.ui.gn0;
 import org.telegram.ui.lg0;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m0 {
     public static volatile m0[] O = new m0[4];
@@ -567,7 +567,7 @@ public final class m0 {
 
     public static String n(long j10, boolean z10) {
         if ((j10 > -10000000 && j10 < 10000000) || z10) {
-            return ld.N0(j10);
+            return md.N0(j10);
         }
         if (Q == null) {
             Q = new DecimalFormat("0.##", new DecimalFormatSymbols(Locale.US));
@@ -576,10 +576,11 @@ public final class m0 {
     }
 
     public static String o(long j10, boolean z10) {
-        if (j10 <= -1000000000 || j10 >= 1000000000) {
-            return n(j10, z10);
+        boolean z11 = j10 <= -1000000000 || j10 >= 1000000000;
+        if (z10 && z11) {
+            return n(j10, true);
         }
-        BigDecimal scale = BigDecimal.valueOf(j10, 9).setScale((z10 || (j10 > -10000000 && j10 < 10000000)) ? 4 : 2, RoundingMode.DOWN);
+        BigDecimal scale = BigDecimal.valueOf(j10, 9).setScale(z10 ? 4 : z11 ? 2 : 3, RoundingMode.DOWN);
         return (scale.signum() == 0 ? new BigDecimal(BigInteger.ZERO, 0) : scale.stripTrailingZeros()).toPlainString();
     }
 
@@ -1612,7 +1613,7 @@ public final class m0 {
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj2;
                 if (wallettransaction2.pending && !TextUtils.isEmpty(wallettransaction2.messageHash) && !hashMap.containsKey(wallettransaction2)) {
                     String str = wallettransaction2.messageHash;
-                    o0 o0Var = new o0(i10, str, new fr0(24, this, wallettransaction2));
+                    o0 o0Var = new o0(i10, str, new gn0(25, this, wallettransaction2));
                     hashMap.put(wallettransaction2, o0Var);
                     if (!o0Var.d && !TextUtils.isEmpty(str)) {
                         o0Var.d = true;
@@ -2055,15 +2056,15 @@ public final class m0 {
                     g10 = str;
                 }
                 String str4 = z12 ? " " : "";
-                String D = z11 ? a1.g.D(g10, str4, format) : a1.g.D(format, str4, g10);
+                String C = z11 ? a1.g.C(g10, str4, format) : a1.g.C(format, str4, g10);
                 if (z15) {
-                    D = r.c.g("-", D);
+                    C = r4.c.h("-", C);
                 }
-                int indexOf = D.indexOf(8387);
+                int indexOf = C.indexOf(8387);
                 if (indexOf < 0) {
-                    return D;
+                    return C;
                 }
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(D);
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(C);
                 spannableStringBuilder.setSpan(new c61(AndroidUtilities.getTypeface("fonts/gram.ttf")), indexOf, indexOf + 1, 33);
                 return spannableStringBuilder;
             }
@@ -2079,19 +2080,19 @@ public final class m0 {
         return null;
     }
 
-    public final d0 t(final String str, f8 f8Var) {
+    public final d0 t(final String str, i8 i8Var) {
         HashMap hashMap = this.N;
         d0 d0Var = (d0) hashMap.get(str);
         if (d0Var != null && !d0Var.e) {
-            if (f8Var != null) {
-                d0Var.f.add(f8Var);
+            if (i8Var != null) {
+                d0Var.f.add(i8Var);
             }
             return null;
         }
         int i10 = this.a;
         if (d0Var != null && d0Var.e && ConnectionsManager.getInstance(i10).getCurrentTime() < d0Var.d + 300) {
-            if (f8Var != null) {
-                f8Var.run(d0Var);
+            if (i8Var != null) {
+                i8Var.run(d0Var);
             }
             return d0Var;
         }
@@ -2101,8 +2102,8 @@ public final class m0 {
         d0Var2.f = arrayList;
         d0Var2.a = str;
         d0Var2.d = ConnectionsManager.getInstance(i10).getCurrentTime();
-        if (f8Var != null) {
-            arrayList.add(f8Var);
+        if (i8Var != null) {
+            arrayList.add(i8Var);
         }
         hashMap.put(str, d0Var2);
         final int i11 = 1;

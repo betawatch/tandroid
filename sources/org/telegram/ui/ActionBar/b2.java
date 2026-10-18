@@ -1,6 +1,6 @@
 package org.telegram.ui.ActionBar;
 
-import ai.cd;
+import ai.dd;
 import ai.x7;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -49,7 +49,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.y6;
 import org.telegram.ui.h80;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int c1 = 0;
@@ -296,8 +296,8 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                 z1 z1Var2 = this.a1;
                 int dp = AndroidUtilities.dp(8.0f);
                 float dp2 = AndroidUtilities.dp(20.0f);
-                ci.o1 o1Var = zf.i0.a;
-                z1Var2.setOutlineProvider(new zf.h0(dp, dp2));
+                ci.o1 o1Var = zf.j0.a;
+                z1Var2.setOutlineProvider(new zf.i0(dp, dp2));
                 this.a1.setClipToOutline(true);
                 this.i0 = false;
             }
@@ -324,7 +324,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                                 break;
                             case 1:
                                 b2 b2Var = this.b;
-                                new cd(b2Var.getContext(), b2Var.R0).show();
+                                new dd(b2Var.getContext(), b2Var.R0).show();
                                 break;
                             default:
                                 b2 b2Var2 = this.b;
@@ -357,7 +357,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                                 break;
                             case 1:
                                 b2 b2Var = this.b;
-                                new cd(b2Var.getContext(), b2Var.R0).show();
+                                new dd(b2Var.getContext(), b2Var.R0).show();
                                 break;
                             default:
                                 b2 b2Var2 = this.b;
@@ -603,7 +603,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                                     break;
                                 case 1:
                                     b2 b2Var = this.b;
-                                    new cd(b2Var.getContext(), b2Var.R0).show();
+                                    new dd(b2Var.getContext(), b2Var.R0).show();
                                     break;
                                 default:
                                     b2 b2Var2 = this.b;

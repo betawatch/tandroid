@@ -9,14 +9,14 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a extends LinearLayout {
     public a(Context context) {
         super(context);
         setOrientation(1);
         setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
-        TextView f7 = org.telegram.messenger.q.f(context, 1, 14.0f);
+        TextView f7 = org.telegram.messenger.g0.f(context, 1, 14.0f);
         int i10 = h6.G6;
         f7.setTextColor(h6.x0(null, i10, false));
         f7.setTypeface(AndroidUtilities.bold());
@@ -25,12 +25,12 @@ public final class a extends LinearLayout {
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(h6.x0(null, i10, false));
-        org.telegram.messenger.q.n(R.string.AboutPremiumDescription, textView);
+        org.telegram.messenger.g0.n(R.string.AboutPremiumDescription, textView);
         addView(textView, z5.p(-1, -2, 0.0f, 0, 0, 0, 0, 0));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
         textView2.setTextColor(h6.x0(null, i10, false));
-        org.telegram.messenger.q.n(R.string.AboutPremiumDescription2, textView2);
+        org.telegram.messenger.g0.n(R.string.AboutPremiumDescription2, textView2);
         addView(textView2, z5.p(-1, -2, 0.0f, 0, 0, 24, 0, 0));
     }
 }

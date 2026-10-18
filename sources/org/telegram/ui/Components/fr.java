@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fr {
     public float A;
@@ -113,8 +113,8 @@ public final class fr {
         float dp = (i13 - AndroidUtilities.dp(f16)) / 2.0f;
         int i14 = this.s;
         int i15 = this.r;
-        float x10 = i14 == i15 ? i14 : com.google.android.gms.internal.cast.a6.x(1.0f, f14, i15, i14 * f14);
-        e(x10);
+        float y3 = i14 == i15 ? i14 : com.google.android.gms.internal.play_billing.k3.y(1.0f, f14, i15, i14 * f14);
+        e(y3);
         if (this.j) {
             float f17 = this.l;
             f7 = ((f17 <= 0.5f ? bs.g.getInterpolation(f17 * 2.0f) : bs.i.getInterpolation(1.0f - ((f17 - 0.5f) * 2.0f))) * 0.1f) + 1.0f;
@@ -123,7 +123,7 @@ public final class fr {
         }
         float f18 = this.B;
         RectF rectF = this.f;
-        rectF.set(f18, dp, x10 + f18 + AndroidUtilities.dp(f15 - 0.5f), AndroidUtilities.dp(f16) + dp);
+        rectF.set(f18, dp, y3 + f18 + AndroidUtilities.dp(f15 - 0.5f), AndroidUtilities.dp(f16) + dp);
         canvas.save();
         canvas.scale(f7, f7, rectF.centerX(), rectF.centerY());
         if (this.b != 1.0f) {
@@ -155,7 +155,7 @@ public final class fr {
             if (!z11) {
                 dp3 = -dp3;
             }
-            canvas.translate(f22, com.google.android.gms.internal.cast.a6.x(1.0f, f14, dp3, dp2));
+            canvas.translate(f22, com.google.android.gms.internal.play_billing.k3.y(1.0f, f14, dp3, dp2));
             this.e.setAlpha((int) (f14 * 255.0f));
             this.q.draw(canvas);
             canvas.restore();
@@ -167,7 +167,7 @@ public final class fr {
             if (!z11) {
                 dp5 = -dp5;
             }
-            canvas.translate(f23, com.google.android.gms.internal.cast.a6.x(1.0f, f14, dp5, dp4));
+            canvas.translate(f23, com.google.android.gms.internal.play_billing.k3.y(1.0f, f14, dp5, dp4));
             this.e.setAlpha((int) (f14 * 255.0f));
             this.n.draw(canvas);
             canvas.restore();

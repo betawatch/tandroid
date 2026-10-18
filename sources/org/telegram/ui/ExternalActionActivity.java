@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class ExternalActionActivity extends Activity implements org.telegram.ui.ActionBar.a5 {
     public static final ArrayList x = new ArrayList();
@@ -106,7 +106,7 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.PleaseLoginPassport);
-                    org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                    org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                     return;
                 }
                 if (activatedAccountsCount >= 2) {
@@ -318,9 +318,9 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
             layoutParams.width = -1;
             layoutParams.height = -1;
             relativeLayout.setLayoutParams(layoutParams);
-            ig.n1 n1Var = new ig.n1(this, d5Var, i10);
-            this.e = n1Var;
-            n1Var.setOccupyStatusBar(false);
+            ig.p1 p1Var = new ig.p1(this, d5Var, i10);
+            this.e = p1Var;
+            p1Var.setOccupyStatusBar(false);
             this.e.V(org.telegram.ui.ActionBar.h6.s0());
             relativeLayout.addView(this.e, w7.z5.w(-1, -1));
             relativeLayout.addView(this.c.getView(), w7.z5.w(-1, -1));
@@ -342,9 +342,9 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
         } else {
             RelativeLayout relativeLayout2 = new RelativeLayout(this);
             this.f.addView(relativeLayout2, w7.z5.d(-1.0f, -1));
-            ig.n1 n1Var2 = new ig.n1(this, d5Var, 3);
-            this.e = n1Var2;
-            n1Var2.setOccupyStatusBar(false);
+            ig.p1 p1Var2 = new ig.p1(this, d5Var, 3);
+            this.e = p1Var2;
+            p1Var2.setOccupyStatusBar(false);
             this.e.V(org.telegram.ui.ActionBar.h6.s0());
             relativeLayout2.addView(this.e, w7.z5.w(-1, -1));
             relativeLayout2.addView(this.c.getView(), w7.z5.w(-1, -1));

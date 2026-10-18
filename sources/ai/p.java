@@ -30,7 +30,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class p implements View.OnClickListener {
                         String string = LocaleController.getString(R.string.GiftOfferDuration);
                         r0 r0Var = new r0(b1Var, i12);
                         Pattern pattern = org.telegram.ui.Components.f5.a;
-                        ig.d2 b10 = ig.d2.b(UserConfig.selectedAccount);
+                        ig.f2 b10 = ig.f2.b(UserConfig.selectedAccount);
                         b10.g();
                         if (!b10.d.isEmpty()) {
                             int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false);
@@ -135,12 +135,12 @@ public final /* synthetic */ class p implements View.OnClickListener {
                 break;
             case 2:
                 l1 l1Var = (l1) obj2;
-                n2 n2Var = (n2) obj;
+                o2 o2Var = (o2) obj;
                 ei.d dVar2 = l1Var.f;
                 if (dVar2.W && !dVar2.N) {
                     AndroidUtilities.hideKeyboard(l1Var.c);
                     dVar2.setLoading(true);
-                    n2Var.run(l1Var.E);
+                    o2Var.run(l1Var.E);
                     break;
                 }
                 break;
@@ -200,7 +200,7 @@ public final /* synthetic */ class p implements View.OnClickListener {
                 pf.d.t(((k7) obj2).getContext(), ((TL_stars.UniqueStarGiftValueInfo) obj).fragment_listed_url);
                 break;
             case 7:
-                ((k7) obj2).H2((CharSequence) obj);
+                ((k7) obj2).K2((CharSequence) obj);
                 break;
             case 8:
                 d6 d6Var = (d6) obj2;

@@ -25,7 +25,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class r5 extends Drawable {
     public static SparseArray q;
@@ -350,21 +350,21 @@ public class r5 extends Drawable {
                 }
                 String str3 = this.d + "_" + this.d;
                 if (i12 == 12) {
-                    str3 = r.c.u(str3, "_d_nostream");
+                    str3 = r4.c.u(str3, "_d_nostream");
                 }
                 if (i12 != 17 && i12 != 15 && i12 != 14 && i12 != 8 && ((i12 != 1 || SharedConfig.getDevicePerformanceClass() < 2) && i12 != 12)) {
-                    str3 = r.c.u(str3, "_pcache");
+                    str3 = r4.c.u(str3, "_pcache");
                 }
                 if (i12 != 17 && i12 != 0 && i12 != 26 && i12 != 1 && i12 != 14 && i12 != 15 && i12 != 19 && i12 != 20 && i12 != 21) {
-                    str3 = r.c.u(str3, "_compress");
+                    str3 = r4.c.u(str3, "_compress");
                 }
                 if (i12 == 8) {
-                    str3 = r.c.u(str3, "firstframe");
+                    str3 = r4.c.u(str3, "firstframe");
                 }
                 TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(this.e.thumbs, 90);
                 if ("video/webm".equals(this.e.mime_type)) {
                     ImageLocation forDocument = ImageLocation.getForDocument(this.e);
-                    String u10 = r.c.u(str3, "_g");
+                    String u10 = r4.c.u(str3, "_g");
                     svgThumb = DocumentObject.getSvgThumb(this.e.thumbs, org.telegram.ui.ActionBar.h6.m6, 0.2f, true);
                     str = u10;
                     i10 = 20;
@@ -421,7 +421,7 @@ public class r5 extends Drawable {
                                     g3Var2.setImage(null, null, forDocument3, str5, forDocument2, null, drawable, document3.size, null, document3, 1);
                                 } else if (MessageObject.isAnimatedStickerDocument(this.e, true)) {
                                     ci.g3 g3Var3 = this.k;
-                                    String u11 = r.c.u(str4, "_firstframe");
+                                    String u11 = r4.c.u(str4, "_firstframe");
                                     TLRPC.Document document4 = this.e;
                                     g3Var3.setImage(imageLocation3, u11, forDocument2, null, drawable, document4.size, null, document4, 1);
                                 } else {

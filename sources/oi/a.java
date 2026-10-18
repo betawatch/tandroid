@@ -1,9 +1,10 @@
 package oi;
 
 import android.graphics.RectF;
+import i2.d;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class a {
     public final ArrayList a = new ArrayList();
@@ -28,7 +29,7 @@ public final class a {
         if (i10 >= 0 && i10 < this.b) {
             return (RectF) this.a.get(i10);
         }
-        StringBuilder l4 = i0.a.l(i10, "index=", ", size=");
+        StringBuilder l4 = d.l(i10, "index=", ", size=");
         l4.append(this.b);
         throw new IndexOutOfBoundsException(l4.toString());
     }
@@ -36,7 +37,7 @@ public final class a {
     public final void c(int i10) {
         int i11;
         if (i10 < 0 || i10 >= (i11 = this.b)) {
-            StringBuilder l4 = i0.a.l(i10, "index=", ", size=");
+            StringBuilder l4 = d.l(i10, "index=", ", size=");
             l4.append(this.b);
             throw new IndexOutOfBoundsException(l4.toString());
         }

@@ -6,7 +6,7 @@ import android.view.WindowInsets;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class w0 extends a1 {
     public static Field e = null;
@@ -14,7 +14,7 @@ public final class w0 extends a1 {
     public static Constructor g = null;
     public static boolean h = false;
     public WindowInsets c;
-    public i0.c d;
+    public i0.b d;
 
     public w0() {
         this.c = j();
@@ -63,23 +63,23 @@ public final class w0 extends a1 {
     public k1 b() {
         a();
         k1 h10 = k1.h(null, this.c);
-        i0.c[] cVarArr = this.b;
+        i0.b[] bVarArr = this.b;
         h1 h1Var = h10.a;
-        h1Var.q(cVarArr);
+        h1Var.q(bVarArr);
         h1Var.s(this.d);
         return h10;
     }
 
     @Override // r0.a1
-    public void e(i0.c cVar) {
-        this.d = cVar;
+    public void e(i0.b bVar) {
+        this.d = bVar;
     }
 
     @Override // r0.a1
-    public void g(i0.c cVar) {
+    public void g(i0.b bVar) {
         WindowInsets windowInsets = this.c;
         if (windowInsets != null) {
-            this.c = windowInsets.replaceSystemWindowInsets(cVar.a, cVar.b, cVar.c, cVar.d);
+            this.c = windowInsets.replaceSystemWindowInsets(bVar.a, bVar.b, bVar.c, bVar.d);
         }
     }
 

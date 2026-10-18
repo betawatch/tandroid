@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.bw0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.ActionBar.a2, Continuation, r9.d, i5.e, d9.k, GenericProvider, Utilities.Callback2Return, eh.d {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.Actio
                 g3Var.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    g3Var.z(eVar, byteArrayOutputStream);
+                    g3Var.u(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();

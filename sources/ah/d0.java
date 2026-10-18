@@ -1,7 +1,7 @@
 package ah;
 
 import ai.a2;
-import ai.id;
+import ai.jd;
 import ai.k7;
 import ai.u1;
 import android.os.Build;
@@ -17,6 +17,7 @@ import ei.t1;
 import ei.v1;
 import ei.x3;
 import gi.u3;
+import ig.d2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
@@ -48,7 +49,7 @@ import org.telegram.ui.Components.xj;
 import org.telegram.ui.ua1;
 import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d0 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -88,7 +89,7 @@ public final class d0 extends s4.r0 {
                 break;
             case 15:
                 if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(((ig.b2) this.b).getParentActivity().getCurrentFocus());
+                    AndroidUtilities.hideKeyboard(((d2) this.b).getParentActivity().getCurrentFocus());
                     break;
                 }
                 break;
@@ -298,8 +299,8 @@ public final class d0 extends s4.r0 {
                 ((k7) this.b).Y.e();
                 break;
             case 4:
-                id idVar = (id) this.b;
-                a71 a71Var = idVar.a;
+                jd jdVar = (jd) this.b;
+                a71 a71Var = jdVar.a;
                 if (a71Var.canScrollVertically(1)) {
                     for (int i17 = 0; i17 < a71Var.getChildCount(); i17++) {
                         if (!(a71Var.getChildAt(i17) instanceof b10)) {
@@ -307,7 +308,7 @@ public final class d0 extends s4.r0 {
                     }
                     break;
                 }
-                idVar.h.run();
+                jdVar.h.run();
                 break;
             case 5:
                 vw vwVar = (vw) this.b;

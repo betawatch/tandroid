@@ -39,7 +39,7 @@ import p4.s0;
 import z9.t0;
 import z9.z0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class r {
     public static r f;
@@ -117,10 +117,10 @@ public final class r {
             str = str.concat(" pid");
         }
         if (((Integer) this.e) == null) {
-            str = r.c.u(str, " importance");
+            str = r4.c.u(str, " importance");
         }
         if (((Boolean) this.c) == null) {
-            str = r.c.u(str, " defaultProcess");
+            str = r4.c.u(str, " defaultProcess");
         }
         if (str.isEmpty()) {
             return new t0((String) this.b, ((Integer) this.d).intValue(), ((Integer) this.e).intValue(), ((Boolean) this.c).booleanValue());
@@ -134,10 +134,10 @@ public final class r {
             str = str.concat(" version");
         }
         if (((String) this.e) == null) {
-            str = r.c.u(str, " buildVersion");
+            str = r4.c.u(str, " buildVersion");
         }
         if (((Boolean) this.c) == null) {
-            str = r.c.u(str, " jailbroken");
+            str = r4.c.u(str, " jailbroken");
         }
         if (str.isEmpty()) {
             return new z0(((Integer) this.d).intValue(), (String) this.b, (String) this.e, ((Boolean) this.c).booleanValue());

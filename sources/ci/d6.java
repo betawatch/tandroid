@@ -27,7 +27,7 @@ import org.telegram.ui.te1;
 import org.telegram.ui.uj0;
 import org.telegram.ui.xb;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d6 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -147,10 +147,10 @@ public final /* synthetic */ class d6 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.e;
                 if (!dVar2.N) {
                     dVar2.setLoading(true);
-                    org.telegram.ui.Wallet.q3 q3Var = new org.telegram.ui.Wallet.q3(dVar2, f3Var2, d6Var, 0);
+                    org.telegram.ui.Wallet.r3 r3Var = new org.telegram.ui.Wallet.r3(dVar2, f3Var2, d6Var, 0);
                     int i13 = this.b;
                     org.telegram.ui.Wallet.m0 w9 = org.telegram.ui.Wallet.m0.w(i13);
-                    w9.j0(new w31(i13, q3Var, w9));
+                    w9.j0(new w31(i13, r3Var, w9));
                     break;
                 }
                 break;

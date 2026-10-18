@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.xf1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qa0 extends jw0 {
     public final /* synthetic */ int w0;
@@ -136,13 +136,13 @@ public final class qa0 extends jw0 {
                 layoutParams2.height = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
                 for (int i12 = 0; i12 < 2; i12++) {
                     if (j5VarArr[i12] != null) {
-                        ((FrameLayout.LayoutParams) j5VarArr[i12].getLayoutParams()).topMargin = AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 5.0f : 4.0f) + org.telegram.messenger.wh.B(22.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2, 2);
+                        ((FrameLayout.LayoutParams) j5VarArr[i12].getLayoutParams()).topMargin = AndroidUtilities.dp((AndroidUtilities.isTablet() || getResources().getConfiguration().orientation != 2) ? 5.0f : 4.0f) + org.telegram.messenger.kk.A(22.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2, 2);
                     }
                     if (q6VarArr[i12] != null) {
                         ((FrameLayout.LayoutParams) q6VarArr[i12].getLayoutParams()).topMargin = ((((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2) - AndroidUtilities.dp(19.0f)) / 2) + (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / 2)) - AndroidUtilities.dp(7.0f);
                     }
                 }
-                ((FrameLayout.LayoutParams) wa0Var.y.getLayoutParams()).topMargin = org.telegram.messenger.wh.B(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                ((FrameLayout.LayoutParams) wa0Var.y.getLayoutParams()).topMargin = org.telegram.messenger.kk.A(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 super.onMeasure(i10, i11);
                 break;
             case 1:

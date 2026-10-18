@@ -9,35 +9,35 @@ import org.telegram.ui.Components.w01;
 import org.telegram.ui.Components.x01;
 import org.telegram.ui.Components.y01;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ t0 b;
-    public final /* synthetic */ p0 c;
+    public final /* synthetic */ s0 b;
+    public final /* synthetic */ o0 c;
     public final /* synthetic */ long d;
     public final /* synthetic */ File e;
     public final /* synthetic */ boolean f;
 
-    public /* synthetic */ g0(t0 t0Var, p0 p0Var, long j10, File file, boolean z10) {
-        this.b = t0Var;
-        this.c = p0Var;
+    public /* synthetic */ g0(s0 s0Var, o0 o0Var, long j10, File file, boolean z10) {
+        this.b = s0Var;
+        this.c = o0Var;
         this.d = j10;
         this.e = file;
         this.f = z10;
     }
 
     private final void a() {
-        t0 t0Var = this.b;
-        p0 p0Var = this.c;
+        s0 s0Var = this.b;
+        o0 o0Var = this.c;
         File file = this.e;
         long j10 = this.d;
         boolean z10 = this.f;
-        synchronized (t0Var.g) {
-            if (!t0Var.D && !p0Var.d && !p0Var.e) {
-                p0Var.e = true;
-                ((y01) t0Var.e).b(p0Var.a, file.length(), file);
-                t0Var.i.post(new g0(t0Var, p0Var, j10, file, z10));
+        synchronized (s0Var.g) {
+            if (!s0Var.D && !o0Var.d && !o0Var.e) {
+                o0Var.e = true;
+                ((y01) s0Var.e).b(o0Var.a, file.length(), file);
+                s0Var.i.post(new g0(s0Var, o0Var, j10, file, z10));
             }
         }
     }
@@ -51,20 +51,20 @@ public final /* synthetic */ class g0 implements Runnable {
                 a();
                 return;
             default:
-                t0 t0Var = this.b;
-                p0 p0Var = this.c;
+                s0 s0Var = this.b;
+                o0 o0Var = this.c;
                 long j10 = this.d;
                 File file = this.e;
                 boolean z10 = this.f;
-                int i10 = t0Var.W;
+                int i10 = s0Var.W;
                 if (i10 == 10 || i10 == 9) {
                     return;
                 }
-                t0Var.v(8);
-                t0Var.m.b("output completed: generation=" + p0Var.a + ", durationMs=" + j10 + ", size=" + file.length() + ", hasAudio=" + z10);
-                t0Var.m("completed");
-                l2.f fVar = t0Var.d;
-                long j11 = p0Var.a;
+                s0Var.v(8);
+                s0Var.m.b("output completed: generation=" + o0Var.a + ", durationMs=" + j10 + ", size=" + file.length() + ", hasAudio=" + z10);
+                s0Var.m("completed");
+                l2.f fVar = s0Var.d;
+                long j11 = o0Var.a;
                 l60 l60Var = (l60) fVar.b;
                 k60 k60Var = l60Var.V;
                 if (k60Var == null) {
@@ -101,9 +101,9 @@ public final /* synthetic */ class g0 implements Runnable {
         }
     }
 
-    public /* synthetic */ g0(t0 t0Var, p0 p0Var, File file, long j10, boolean z10) {
-        this.b = t0Var;
-        this.c = p0Var;
+    public /* synthetic */ g0(s0 s0Var, o0 o0Var, File file, long j10, boolean z10) {
+        this.b = s0Var;
+        this.c = o0Var;
         this.e = file;
         this.d = j10;
         this.f = z10;

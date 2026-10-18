@@ -17,7 +17,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.b80;
 import org.telegram.ui.it0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -59,24 +59,24 @@ public final /* synthetic */ class j implements Runnable {
                 b0Var.a();
                 break;
             case 2:
-                p6 p6Var = (p6) obj;
-                if (p6Var.r && !p6Var.x && i11 == p6Var.k0) {
-                    p6Var.postDelayed(p6Var.l0, 500L);
+                s6 s6Var = (s6) obj;
+                if (s6Var.r && !s6Var.x && i11 == s6Var.k0) {
+                    s6Var.postDelayed(s6Var.l0, 500L);
                     break;
                 }
                 break;
             case 3:
-                z7 z7Var = (z7) obj;
-                ArrayList arrayList = z7Var.v;
+                c8 c8Var = (c8) obj;
+                ArrayList arrayList = c8Var.v;
                 try {
-                    ClipboardManager clipboardManager = (ClipboardManager) z7Var.getParentActivity().getSystemService("clipboard");
+                    ClipboardManager clipboardManager = (ClipboardManager) c8Var.getParentActivity().getSystemService("clipboard");
                     if (clipboardManager != null && clipboardManager.getPrimaryClip() != null && clipboardManager.getPrimaryClip().getItemCount() != 0 && (text = clipboardManager.getPrimaryClip().getItemAt(0).getText()) != null) {
                         String[] split = text.toString().trim().toLowerCase().split("\\s+");
                         for (int i12 = 0; i11 < arrayList.size() && i12 < split.length; i12++) {
-                            ((ia) arrayList.get(i11)).setText(split[i12]);
+                            ((la) arrayList.get(i11)).setText(split[i12]);
                             i11++;
                         }
-                        z7Var.Y();
+                        c8Var.Y();
                         break;
                     }
                 } catch (Exception unused) {
@@ -84,10 +84,10 @@ public final /* synthetic */ class j implements Runnable {
                 }
                 break;
             case 4:
-                t9 t9Var = (t9) obj;
-                if (!t9Var.n && i11 == t9Var.I) {
-                    t9Var.K = false;
-                    t9Var.a.W2.N(true);
+                w9 w9Var = (w9) obj;
+                if (!w9Var.n && i11 == w9Var.I) {
+                    w9Var.K = false;
+                    w9Var.a.W2.N(true);
                     break;
                 }
                 break;
@@ -146,7 +146,7 @@ public final /* synthetic */ class j implements Runnable {
                 m2Var.h();
                 break;
             case 9:
-                x90 x90Var = ((ug.p0) obj).e;
+                x90 x90Var = ((ug.q0) obj).e;
                 try {
                     if (x90Var.getLayout().getLineForOffset(i11) == 0) {
                         x90Var.getEditableText().insert(i11, "\n");

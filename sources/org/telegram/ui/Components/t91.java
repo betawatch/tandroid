@@ -14,7 +14,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t91 extends AsyncTask {
     public final String a;
@@ -181,11 +181,11 @@ public final class t91 extends AsyncTask {
             if (c10 != null) {
                 Matcher matcher = u91.t0.matcher(c10);
                 if (matcher.find()) {
-                    StringBuilder i17 = r.c.i(s10, "&sts=");
+                    StringBuilder i17 = r4.c.i(s10, "&sts=");
                     i17.append(c10.substring(matcher.start() + 6, matcher.end()));
                     s10 = i17.toString();
                 } else {
-                    s10 = r.c.u(s10, "&sts=");
+                    s10 = r4.c.u(s10, "&sts=");
                 }
             }
             this.c[1] = "dash";
@@ -445,7 +445,7 @@ public final class t91 extends AsyncTask {
             StringBuilder sb2 = new StringBuilder("start play youtube video ");
             sb2.append(strArr[1]);
             sb2.append(" ");
-            i0.a.v(strArr[0], sb2);
+            i2.d.v(strArr[0], sb2);
         }
         u91Var.w = true;
         u91Var.x = strArr[0];

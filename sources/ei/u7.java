@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.cb1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class u7 extends View {
     public final Path E;
@@ -213,7 +213,7 @@ public class u7 extends View {
         } else if (motionEvent.getAction() == 2 || motionEvent.getAction() == 1) {
             float f7 = this.c;
             float f10 = this.b;
-            float x11 = f7 - f10 != 0.0f ? com.google.android.gms.internal.cast.a6.x(f7, f10, this.d, f10) : 0.0f;
+            float y3 = f7 - f10 != 0.0f ? com.google.android.gms.internal.play_billing.k3.y(f7, f10, this.d, f10) : 0.0f;
             if (motionEvent.getAction() != 1 || System.currentTimeMillis() - this.M >= ViewConfiguration.getTapTimeout()) {
                 this.d = Utilities.clamp(((x10 - this.L) / this.O) + this.d, 1.0f, 0.0f);
                 this.e = false;
@@ -225,21 +225,21 @@ public class u7 extends View {
             }
             float f11 = this.c;
             float f12 = this.b;
-            float x12 = f11 - f12 != 0.0f ? com.google.android.gms.internal.cast.a6.x(f11, f12, this.d, f12) : 0.0f;
+            float y10 = f11 - f12 != 0.0f ? com.google.android.gms.internal.play_billing.k3.y(f11, f12, this.d, f12) : 0.0f;
             if (z10) {
-                if ((x12 <= f12 && x11 > x12) || (x12 >= f11 && x11 < x12)) {
+                if ((y10 <= f12 && y3 > y10) || (y10 >= f11 && y3 < y10)) {
                     try {
                         performHapticFeedback(3, 1);
                     } catch (Exception unused) {
                     }
-                } else if (Math.floor(x11 * 5.0f) != Math.floor(5.0f * x12)) {
+                } else if (Math.floor(y3 * 5.0f) != Math.floor(5.0f * y10)) {
                     AndroidUtilities.vibrateCursor(this);
                 }
             }
-            e(x12);
+            e(y10);
             Utilities.Callback callback = this.h;
             if (callback != null) {
-                callback.run(Float.valueOf(x12));
+                callback.run(Float.valueOf(y10));
             }
         }
         this.L = x10;

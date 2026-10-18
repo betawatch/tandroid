@@ -9,7 +9,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.li;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class b5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -29,14 +29,14 @@ public final class b5 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 k7 k7Var = (k7) this.d;
-                k7Var.g2();
+                k7Var.h2();
                 j5 j5Var = k7Var.g0;
                 int i10 = this.b;
                 j5Var.setVisibility(i10 == 0 ? 0 : 8);
                 k7Var.s0.setVisibility(i10 == 1 ? 0 : 8);
                 k7Var.B0.setVisibility(i10 == 2 ? 0 : 8);
                 k7Var.D0.setVisibility(i10 == 3 ? 0 : 8);
-                k7Var.O2();
+                k7Var.Q2();
                 k7Var.c1 = null;
                 Runnable runnable = (Runnable) this.c;
                 if (runnable != null) {

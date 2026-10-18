@@ -2,7 +2,7 @@ package n4;
 
 import ab.c0;
 import ah.h0;
-import ai.s2;
+import ai.t2;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.app.PendingIntent;
@@ -39,17 +39,17 @@ import ci.h4;
 import ci.q4;
 import ci.z9;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.play_billing.a4;
 import com.google.android.gms.internal.play_billing.b4;
+import com.google.android.gms.internal.play_billing.c4;
 import com.google.android.gms.internal.play_billing.f3;
 import com.google.android.gms.internal.play_billing.g3;
 import com.google.android.gms.internal.play_billing.i3;
-import com.google.android.gms.internal.play_billing.l3;
-import com.google.android.gms.internal.play_billing.o3;
+import com.google.android.gms.internal.play_billing.m3;
 import com.google.android.gms.internal.play_billing.p3;
-import com.google.android.gms.internal.play_billing.t3;
+import com.google.android.gms.internal.play_billing.q3;
 import com.google.android.gms.internal.play_billing.w3;
 import com.google.android.gms.internal.play_billing.x3;
+import com.google.android.gms.internal.play_billing.y3;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.k0;
 import e2.m0;
@@ -75,6 +75,7 @@ import ki.h1;
 import ki.j3;
 import ki.j4;
 import ki.t1;
+import ki.t3;
 import ki.u3;
 import ki.v3;
 import l.a0;
@@ -94,7 +95,7 @@ import v7.s6;
 import v7.u6;
 import w7.b9;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class s implements ee.b, f0, com.google.android.gms.common.api.internal.r, d9.k, g6.n, ef.b, z3.m, c3.i, u3, e2.d, n5.b {
     public final /* synthetic */ int a;
@@ -114,14 +115,14 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                 throw new ClassCastException();
             }
             List list = (List) entry.getValue();
-            if (!k(cVar, list).equals(k((i2.c) sVar.c, list))) {
+            if (!r(cVar, list).equals(r((i2.c) sVar.c, list))) {
                 throw null;
             }
         }
         sVar.c = cVar;
     }
 
-    public static i2.c k(i2.c cVar, List list) {
+    public static i2.c r(i2.c cVar, List list) {
         cVar.getClass();
         Map map = cVar.a;
         HashMap hashMap = new HashMap(map);
@@ -313,7 +314,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
 
     public void N(g3 g3Var) {
         try {
-            U(g3Var, (p3) this.b);
+            U(g3Var, (q3) this.b);
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
@@ -321,137 +322,137 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
 
     public void O(g3 g3Var, int i10, long j10) {
         try {
-            o3 o3Var = (o3) ((p3) this.b).g();
-            o3Var.c();
-            p3.p((p3) o3Var.b, i10);
-            p3 p3Var = (p3) o3Var.a();
-            this.b = p3Var;
+            p3 p3Var = (p3) ((q3) this.b).g();
+            p3Var.c();
+            q3.p((q3) p3Var.b, i10);
+            q3 q3Var = (q3) p3Var.a();
+            this.b = q3Var;
             if (j10 != 0) {
-                o3 o3Var2 = (o3) p3Var.g();
-                o3Var2.c();
-                p3.r((p3) o3Var2.b, j10);
-                p3Var = (p3) o3Var2.a();
+                p3 p3Var2 = (p3) q3Var.g();
+                p3Var2.c();
+                q3.r((q3) p3Var2.b, j10);
+                q3Var = (q3) p3Var2.a();
             }
-            U(g3Var, p3Var);
+            U(g3Var, q3Var);
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
     public void P(g3 g3Var, long j10, boolean z10) {
-        p3 p3Var;
+        q3 q3Var;
         try {
             f3 f3Var = (f3) g3Var.g();
-            t3 t3Var = (t3) g3Var.o().g();
-            t3Var.c();
-            com.google.android.gms.internal.play_billing.v3.n((com.google.android.gms.internal.play_billing.v3) t3Var.b, z10);
+            com.google.android.gms.internal.play_billing.u3 u3Var = (com.google.android.gms.internal.play_billing.u3) g3Var.o().g();
+            u3Var.c();
+            w3.n((w3) u3Var.b, z10);
             f3Var.c();
-            g3.r((g3) f3Var.b, (com.google.android.gms.internal.play_billing.v3) t3Var.a());
+            g3.r((g3) f3Var.b, (w3) u3Var.a());
             g3 g3Var2 = (g3) f3Var.a();
             if (j10 == 0) {
-                p3Var = (p3) this.b;
+                q3Var = (q3) this.b;
             } else {
-                o3 o3Var = (o3) ((p3) this.b).g();
-                o3Var.c();
-                p3.r((p3) o3Var.b, j10);
-                p3Var = (p3) o3Var.a();
+                p3 p3Var = (p3) ((q3) this.b).g();
+                p3Var.c();
+                q3.r((q3) p3Var.b, j10);
+                q3Var = (q3) p3Var.a();
             }
-            U(g3Var2, p3Var);
+            U(g3Var2, q3Var);
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
     public void Q(g3 g3Var, int i10, long j10, boolean z10) {
-        p3 p3Var;
+        q3 q3Var;
         try {
-            o3 o3Var = (o3) ((p3) this.b).g();
-            o3Var.c();
-            p3.p((p3) o3Var.b, i10);
-            this.b = (p3) o3Var.a();
+            p3 p3Var = (p3) ((q3) this.b).g();
+            p3Var.c();
+            q3.p((q3) p3Var.b, i10);
+            this.b = (q3) p3Var.a();
             f3 f3Var = (f3) g3Var.g();
-            t3 t3Var = (t3) g3Var.o().g();
-            t3Var.c();
-            com.google.android.gms.internal.play_billing.v3.n((com.google.android.gms.internal.play_billing.v3) t3Var.b, z10);
+            com.google.android.gms.internal.play_billing.u3 u3Var = (com.google.android.gms.internal.play_billing.u3) g3Var.o().g();
+            u3Var.c();
+            w3.n((w3) u3Var.b, z10);
             f3Var.c();
-            g3.r((g3) f3Var.b, (com.google.android.gms.internal.play_billing.v3) t3Var.a());
+            g3.r((g3) f3Var.b, (w3) u3Var.a());
             g3 g3Var2 = (g3) f3Var.a();
             if (j10 == 0) {
-                p3Var = (p3) this.b;
+                q3Var = (q3) this.b;
             } else {
-                o3 o3Var2 = (o3) ((p3) this.b).g();
-                o3Var2.c();
-                p3.r((p3) o3Var2.b, j10);
-                p3Var = (p3) o3Var2.a();
+                p3 p3Var2 = (p3) ((q3) this.b).g();
+                p3Var2.c();
+                q3.r((q3) p3Var2.b, j10);
+                q3Var = (q3) p3Var2.a();
             }
-            U(g3Var2, p3Var);
+            U(g3Var2, q3Var);
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void R(l3 l3Var) {
+    public void R(m3 m3Var) {
         try {
-            w3 t10 = x3.t();
-            t10.d((p3) this.b);
+            x3 t10 = y3.t();
+            t10.d((q3) this.b);
             t10.c();
-            x3.p((x3) t10.b, l3Var);
-            ((b2.t) this.c).i((x3) t10.a());
+            y3.p((y3) t10.b, m3Var);
+            ((b2.t) this.c).i((y3) t10.a());
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void S(a4 a4Var) {
+    public void S(b4 b4Var) {
         try {
             b2.t tVar = (b2.t) this.c;
-            w3 t10 = x3.t();
-            t10.d((p3) this.b);
+            x3 t10 = y3.t();
+            t10.d((q3) this.b);
             t10.c();
-            x3.r((x3) t10.b, a4Var);
-            tVar.i((x3) t10.a());
+            y3.r((y3) t10.b, b4Var);
+            tVar.i((y3) t10.a());
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void T(b4 b4Var) {
-        if (b4Var == null) {
+    public void T(c4 c4Var) {
+        if (c4Var == null) {
             return;
         }
         try {
-            w3 t10 = x3.t();
-            t10.d((p3) this.b);
+            x3 t10 = y3.t();
+            t10.d((q3) this.b);
             t10.c();
-            x3.s((x3) t10.b, b4Var);
-            ((b2.t) this.c).i((x3) t10.a());
+            y3.s((y3) t10.b, c4Var);
+            ((b2.t) this.c).i((y3) t10.a());
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void U(g3 g3Var, p3 p3Var) {
+    public void U(g3 g3Var, q3 q3Var) {
         if (g3Var == null) {
             return;
         }
         try {
-            w3 t10 = x3.t();
-            t10.d(p3Var);
+            x3 t10 = y3.t();
+            t10.d(q3Var);
             t10.c();
-            x3.n((x3) t10.b, g3Var);
-            ((b2.t) this.c).i((x3) t10.a());
+            y3.n((y3) t10.b, g3Var);
+            ((b2.t) this.c).i((y3) t10.a());
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
     }
 
-    public void V(i3 i3Var, p3 p3Var) {
+    public void V(i3 i3Var, q3 q3Var) {
         try {
-            w3 t10 = x3.t();
-            t10.d(p3Var);
+            x3 t10 = y3.t();
+            t10.d(q3Var);
             t10.c();
-            x3.o((x3) t10.b, i3Var);
-            ((b2.t) this.c).i((x3) t10.a());
+            y3.o((y3) t10.b, i3Var);
+            ((b2.t) this.c).i((y3) t10.a());
         } catch (Throwable th2) {
             com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
         }
@@ -459,7 +460,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
 
     @Override // z3.m
     public /* synthetic */ z3.d a(int i10, int i11, byte[] bArr) {
-        return r.c.a(this, bArr, i11);
+        return r4.c.a(this, bArr, i11);
     }
 
     @Override // com.google.android.gms.common.api.internal.r
@@ -979,13 +980,21 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
             tiVar2.c2 = new t7.u(11);
             tiVar2.P = true;
             tiVar2.A1.setVisibility(8);
-            tiVar2.w2 = new s2(qVar, aVar, tiVar2, 11);
+            tiVar2.w2 = new t2(qVar, aVar, tiVar2, 11);
             tiVar2.t1();
             tiVar2.show();
         }
     }
 
-    public c5.e j() {
+    @Override // g6.n
+    public void j(String str, long j10, long j11, long j12) {
+        g6.n nVar = (g6.n) this.b;
+        if (nVar != null) {
+            nVar.j(str, j10, j11, j12);
+        }
+    }
+
+    public c5.e k() {
         if (((c5.o) this.b) != null) {
             return new c5.e(this);
         }
@@ -998,7 +1007,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
     }
 
     @Override // ki.u3
-    public void m(ki.t3 t3Var, View view) {
+    public void m(t3 t3Var, View view) {
         ki.q qVar = (ki.q) this.c;
         i80 i80Var = new i80(qVar, (d6) this.b, view, false, false, true);
         i80Var.Q = true;
@@ -1044,12 +1053,10 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         AndroidUtilities.runOnUIThread(dVar, 1000L);
     }
 
-    @Override // g6.n
-    public void p(String str, long j10, long j11, long j12) {
-        g6.n nVar = (g6.n) this.b;
-        if (nVar != null) {
-            nVar.p(str, j10, j11, j12);
-        }
+    @Override // ee.b
+    public Object p(ee.c cVar, md.c cVar2) {
+        Object p5 = ((qf.b) this.b).p(new ab.a0(cVar, (c0) this.c), cVar2);
+        return p5 == ld.a.a ? p5 : id.i.a;
     }
 
     @Override // ki.u3
@@ -1066,23 +1073,8 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
-    @Override // ee.b
-    public Object r(ee.c cVar, md.c cVar2) {
-        Object r10 = ((qf.b) this.b).r(new ab.a0(cVar, (c0) this.c), cVar2);
-        return r10 == ld.a.a ? r10 : id.i.a;
-    }
-
-    public void s(i2.d dVar) {
-        synchronized (dVar) {
-        }
-        Handler handler = (Handler) this.b;
-        if (handler != null) {
-            handler.post(new a3.k0(this, dVar, 1));
-        }
-    }
-
     @Override // g6.n
-    public void t(String str, long j10, int i10, Object obj, long j11, long j12) {
+    public void s(String str, long j10, int i10, Object obj, long j11, long j12) {
         int i11;
         g6.m mVar = (g6.m) this.c;
         if (((g6.n) this.b) != null) {
@@ -1098,7 +1090,16 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
             } else {
                 i11 = i10;
             }
-            ((g6.n) this.b).t(str, j10, i11, obj, j11, j12);
+            ((g6.n) this.b).s(str, j10, i11, obj, j11, j12);
+        }
+    }
+
+    public void t(i2.e eVar) {
+        synchronized (eVar) {
+        }
+        Handler handler = (Handler) this.b;
+        if (handler != null) {
+            handler.post(new a3.k0(this, eVar, 1));
         }
     }
 
@@ -1146,7 +1147,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         ki.q qVar = (ki.q) this.c;
         if (qVar.v == null) {
             d6 d6Var = (d6) this.b;
-            qVar.v = new s3(new h0(21, this, d6Var), d6Var);
+            qVar.v = new s3(new h0(22, this, d6Var), d6Var);
         }
         qVar.v.f(c6Var, str);
     }
@@ -1196,7 +1197,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         this.b = obj2;
     }
 
-    public s(Context context, p3 p3Var) {
+    public s(Context context, q3 q3Var) {
         this.a = 10;
         b2.t tVar = new b2.t(1);
         try {
@@ -1206,7 +1207,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
             tVar.b = true;
         }
         this.c = tVar;
-        this.b = p3Var;
+        this.b = q3Var;
     }
 
     public s(IBinder iBinder) {

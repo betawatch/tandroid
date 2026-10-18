@@ -10,7 +10,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class ga extends ReplacementSpan {
     public View a;
@@ -53,8 +53,8 @@ public final class ga extends ReplacementSpan {
         return spannableStringBuilder == null ? str : spannableStringBuilder;
     }
 
-    public final void b(org.telegram.ui.Cells.x0 x0Var) {
-        this.a = x0Var;
+    public final void b(org.telegram.ui.Cells.w0 w0Var) {
+        this.a = w0Var;
         this.n = false;
     }
 
@@ -88,12 +88,12 @@ public final class ga extends ReplacementSpan {
             float f15 = measureText / 2.0f;
             float f16 = (i16 * measureText) + f7 + f15;
             if (i16 == this.b) {
-                f16 = AndroidUtilities.lerp(f16, r.c.c(measureText, i16 + 1, f7, f15), this.d);
+                f16 = AndroidUtilities.lerp(f16, r4.c.c(measureText, i16 + 1, f7, f15), this.d);
                 float f17 = this.d;
-                f10 = AndroidUtilities.lerp(f13, f13 - f15, this.h.getInterpolation(f17 < 0.5f ? f17 / 0.5f : org.telegram.messenger.q.x(f17, 0.5f, 0.5f, 1.0f)));
+                f10 = AndroidUtilities.lerp(f13, f13 - f15, this.h.getInterpolation(f17 < 0.5f ? f17 / 0.5f : org.telegram.messenger.g0.x(f17, 0.5f, 0.5f, 1.0f)));
             } else {
                 if (i16 == this.c) {
-                    f16 = AndroidUtilities.lerp(f16, r.c.c(measureText, i16 - 1, f7, f15), this.d);
+                    f16 = AndroidUtilities.lerp(f16, r4.c.c(measureText, i16 - 1, f7, f15), this.d);
                 }
                 f10 = f13;
             }

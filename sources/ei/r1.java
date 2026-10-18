@@ -8,7 +8,7 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.et;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class r1 implements et {
     @Override // org.telegram.ui.et
@@ -127,22 +127,6 @@ public final class r1 implements et {
     }
 
     @Override // org.telegram.ui.et
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.et
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.et
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.et
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.et
     public final /* synthetic */ void C(TLRPC.Document document) {
     }
 
@@ -152,6 +136,14 @@ public final class r1 implements et {
 
     @Override // org.telegram.ui.et
     public final /* synthetic */ void H(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.et
+    public final /* synthetic */ void K() {
+    }
+
+    @Override // org.telegram.ui.et
+    public final /* synthetic */ void L() {
     }
 
     @Override // org.telegram.ui.et
@@ -172,6 +164,14 @@ public final class r1 implements et {
 
     @Override // org.telegram.ui.et
     public final /* synthetic */ void p(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.et
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.et
+    public final /* synthetic */ void s() {
     }
 
     @Override // org.telegram.ui.et

@@ -1,9 +1,9 @@
 package a3;
 
+import ai.ac;
 import ai.k7;
-import ai.s3;
-import ai.tb;
-import ai.zb;
+import ai.r3;
+import ai.ub;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Point;
@@ -70,7 +70,7 @@ import org.telegram.ui.s50;
 import org.telegram.ui.sn;
 import org.telegram.ui.wt;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -108,12 +108,12 @@ public final /* synthetic */ class i0 implements Runnable {
             case 0:
                 m0 m0Var = (m0) ((n4.s) obj2).c;
                 String str = e2.m0.a;
-                i2.g0 g0Var = ((i2.a0) m0Var).a;
-                j2.f fVar = g0Var.s;
+                i2.h0 h0Var = ((i2.b0) m0Var).a;
+                j2.f fVar = h0Var.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 26, new ah.h0(p5, obj, j10));
-                if (g0Var.T == obj) {
-                    g0Var.m.e(26, new fh.b(23));
+                if (h0Var.T == obj) {
+                    h0Var.m.e(26, new fh.b(23));
                     break;
                 }
                 break;
@@ -121,12 +121,12 @@ public final /* synthetic */ class i0 implements Runnable {
                 k7 k7Var = (k7) obj2;
                 k7Var.getClass();
                 ((pf.c) obj).b();
-                k7Var.J2((int) j10, k7Var.getContext(), true);
+                k7Var.M2((int) j10, k7Var.getContext(), true);
                 break;
             case 2:
                 k7 k7Var2 = (k7) obj2;
                 Runnable runnable = (Runnable) obj;
-                k7Var2.J2((int) j10, k7Var2.getContext(), true);
+                k7Var2.M2((int) j10, k7Var2.getContext(), true);
                 if (runnable != null) {
                     runnable.run();
                     break;
@@ -198,7 +198,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         z12 = true;
                     }
                     aa orCreateStoryViewer = eyVar.getOrCreateStoryViewer();
-                    orCreateStoryViewer.s(new s3(rVar, j10, 2));
+                    orCreateStoryViewer.s(new r3(rVar, j10, 2));
                     Context context = rVar.getContext();
                     r7 a2 = r7.a(rVar.h);
                     a2.e = new ci.f(0, rVar, z12);
@@ -331,7 +331,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 break;
             case 11:
                 ((long[]) obj2)[0] = j10;
-                ((tb) obj).run();
+                ((ub) obj).run();
                 break;
             case 12:
                 ((VideoFramesRewinder) obj2).lambda$new$1((ArrayList) obj, j10);
@@ -429,12 +429,12 @@ public final /* synthetic */ class i0 implements Runnable {
                 break;
             case 26:
                 ey eyVar2 = (ey) obj2;
-                h0 h0Var = (h0) obj;
+                h0 h0Var2 = (h0) obj;
                 if (eyVar2.G.bot_admin_rights != null) {
-                    eyVar2.getMessagesController().setUserAdminRole(-j10, eyVar2.getMessagesController().getUser(Long.valueOf(eyVar2.H)), eyVar2.G.bot_admin_rights, null, false, eyVar2, true, true, null, h0Var, new wt(h0Var, i13));
+                    eyVar2.getMessagesController().setUserAdminRole(-j10, eyVar2.getMessagesController().getUser(Long.valueOf(eyVar2.H)), eyVar2.G.bot_admin_rights, null, false, eyVar2, true, true, null, h0Var2, new wt(h0Var2, i13));
                     break;
                 } else {
-                    h0Var.run();
+                    h0Var2.run();
                     break;
                 }
             case 27:
@@ -484,7 +484,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     U2.presentFragment(W9);
                     TLRPC.Chat chat = MessagesController.getInstance(launchActivity.O).getChat(Long.valueOf(-l4.longValue()));
                     if (chat != null) {
-                        AndroidUtilities.runOnUIThread(new zb(W9, this.b, chat, 1), 250L);
+                        AndroidUtilities.runOnUIThread(new ac(W9, this.b, chat, 1), 250L);
                         break;
                     }
                 }

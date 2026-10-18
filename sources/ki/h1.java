@@ -24,7 +24,7 @@ import org.telegram.ui.Components.l61;
 import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.r90;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class h1 extends iu {
     public boolean E;
@@ -308,7 +308,7 @@ public final class h1 extends iu {
                 this.c.m();
                 return true;
             }
-            if (getSelectionStart() == 0 && getSelectionEnd() == 0 && this.c.q(this)) {
+            if (getSelectionStart() == 0 && getSelectionEnd() == 0 && this.c.w(this)) {
                 return true;
             }
         }
@@ -425,7 +425,7 @@ public final class h1 extends iu {
                             }
                         }
                         if (sVar != null) {
-                            q.X(getContext(), sVar.a, new ai.n2(26, this, sVar), this.e);
+                            q.X(getContext(), sVar.a, new ai.o2(26, this, sVar), this.e);
                             return true;
                         }
                     }

@@ -22,7 +22,7 @@ import android.widget.TextView;
 import ci.c4;
 import ci.k0;
 import gi.g2;
-import ig.c2;
+import ig.e2;
 import j$.util.Objects;
 import java.util.ArrayList;
 import m4.z;
@@ -65,7 +65,7 @@ import org.telegram.ui.q21;
 import sg.x0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
@@ -95,7 +95,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 1);
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class AdLayout extends nb {
         public final ImageView buttonView;
         public final w9 imageView;
@@ -154,7 +154,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -285,7 +285,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -299,7 +299,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -940,20 +940,20 @@ public class VideoAds {
         this.bulletin = b10;
         b10.u = false;
         b10.i(false);
-        final c2 c2Var = new c2(this, b10, tL_sponsoredMessage, 14);
+        final e2 e2Var = new e2(this, b10, tL_sponsoredMessage, 14);
         final long[] jArr = new long[1];
         final long[] jArr2 = new long[1];
         final boolean[] zArr = new boolean[1];
         Utilities.Callback callback = new Utilities.Callback() { // from class: org.telegram.messenger.video.e
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                VideoAds.this.lambda$show$4(b10, zArr, closeDrawable, jArr2, c2Var, jArr, currentTimeMillis, tL_sponsoredMessage, (Boolean) obj);
+                VideoAds.this.lambda$show$4(b10, zArr, closeDrawable, jArr2, e2Var, jArr, currentTimeMillis, tL_sponsoredMessage, (Boolean) obj);
             }
         };
-        AndroidUtilities.runOnUIThread(c2Var, tL_sponsoredMessage.min_display_duration * 1000);
+        AndroidUtilities.runOnUIThread(e2Var, tL_sponsoredMessage.min_display_duration * 1000);
         qc qcVar2 = this.bulletin;
         qcVar2.r = false;
-        qcVar2.v = new c2(this, b10, new boolean[1], 15);
+        qcVar2.v = new e2(this, b10, new boolean[1], 15);
         adLayout.titleTextView.setRightDrawableOnClick(new f(this, b10, tL_sponsoredMessage, W, d6Var, adLayout, callback, 0));
         qc qcVar3 = this.bulletin;
         ai.p pVar = new ai.p(25, this, tL_sponsoredMessage);
@@ -1080,7 +1080,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;

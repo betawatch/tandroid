@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class lx0 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -75,7 +75,7 @@ public final class lx0 extends org.telegram.ui.Components.hm0 {
                     string = LocaleController.getString(R.string.Bot).substring(0, 1).toUpperCase() + LocaleController.getString(R.string.Bot).substring(1);
                 } else {
                     String str = user.phone;
-                    string = (str == null || str.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.wh.g(new StringBuilder("+"), user.phone, jf.b.c());
+                    string = (str == null || str.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.kk.g(new StringBuilder("+"), user.phone, jf.b.c());
                 }
                 a5Var.b(user, null, string, i10 != mx0Var.s - 1);
                 return;
@@ -149,7 +149,7 @@ public final class lx0 extends org.telegram.ui.Components.hm0 {
             frameLayout = d9Var;
         } else {
             org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(7, 6, this.c, null, true);
-            a5Var.setDelegate(new qp0(this, 9));
+            a5Var.setDelegate(new rp0(this, 9));
             frameLayout = a5Var;
         }
         return new org.telegram.ui.Components.sl0(frameLayout);

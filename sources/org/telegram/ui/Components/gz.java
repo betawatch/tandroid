@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class gz extends FrameLayout implements ne.d {
     public hq E;
@@ -65,8 +65,8 @@ public abstract class gz extends FrameLayout implements ne.d {
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(18.0f), z10 ? tzVar.w(0.06f) : tzVar.A(org.telegram.ui.ActionBar.h6.Ie)));
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(18.0f);
-        ci.o1 o1Var = zf.i0.a;
-        frameLayout.setOutlineProvider(new zf.h0(0, dp));
+        ci.o1 o1Var = zf.j0.a;
+        frameLayout.setOutlineProvider(new zf.i0(0, dp));
         int i13 = 2;
         if (i10 == 2) {
             addView(frameLayout, w7.z5.a(36.0f, 10.0f, 8.0f, 10.0f, 8.0f, -1, 119));

@@ -5,13 +5,13 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yu implements xx, ss {
-    public final /* synthetic */ bv a;
+    public final /* synthetic */ cv a;
 
-    public /* synthetic */ yu(bv bvVar) {
-        this.a = bvVar;
+    public /* synthetic */ yu(cv cvVar) {
+        this.a = cvVar;
     }
 
     @Override // org.telegram.ui.xx
@@ -38,8 +38,8 @@ public final /* synthetic */ class yu implements xx, ss {
         if (!DialogObject.isUserDialog(j10)) {
             return true;
         }
-        bv bvVar = this.a;
-        bvVar.l0(bvVar.getMessagesController().getUser(Long.valueOf(j10)));
+        cv cvVar = this.a;
+        cvVar.l0(cvVar.getMessagesController().getUser(Long.valueOf(j10)));
         return true;
     }
 }

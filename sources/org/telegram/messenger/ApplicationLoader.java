@@ -31,7 +31,7 @@ import org.telegram.ui.Components.o10;
 import org.telegram.ui.IUpdateLayout;
 import org.telegram.ui.qa0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -493,7 +493,7 @@ public class ApplicationLoader extends Application {
             StringBuilder sb2 = new StringBuilder("app start time = ");
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
-            q.r(sb2, elapsedRealtime);
+            i2.d.x(sb2, elapsedRealtime);
             try {
                 PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
                 int i11 = packageInfo.versionCode % 10;
@@ -516,7 +516,7 @@ public class ApplicationLoader extends Application {
             sb3.append(", model=");
             sb3.append(Build.MODEL);
             sb3.append(", product=");
-            i0.a.v(Build.PRODUCT, sb3);
+            i2.d.v(Build.PRODUCT, sb3);
         }
         if (applicationContext == null) {
             applicationContext = getApplicationContext();

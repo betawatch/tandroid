@@ -11,7 +11,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class o0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final class o0 implements TextWatcher {
                                         obj = str6;
                                     } else if (list.size() > i11) {
                                         String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, str6);
-                                        Object obj2 = (kt) r.c.e(i11, list);
+                                        Object obj2 = (kt) r4.c.f(i11, list);
                                         if (string != null) {
                                             int size = arrayList.size();
                                             int i14 = i12;
@@ -220,7 +220,7 @@ public final class o0 implements TextWatcher {
                             ktVar = null;
                         } else if (list2.size() > 1) {
                             String string2 = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + d, null);
-                            kt ktVar6 = (kt) r.c.e(1, list2);
+                            kt ktVar6 = (kt) r4.c.f(1, list2);
                             if (string2 != null) {
                                 int size3 = arrayList.size();
                                 int i18 = 0;
@@ -286,7 +286,7 @@ public final class o0 implements TextWatcher {
                                     if (list3 != null) {
                                         if (list3.size() > 1) {
                                             String string3 = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + str4, str8);
-                                            Object obj7 = (kt) r.c.e(1, list3);
+                                            Object obj7 = (kt) r4.c.f(1, list3);
                                             if (string3 != null) {
                                                 int size4 = arrayList2.size();
                                                 int i20 = 0;
@@ -358,7 +358,7 @@ public final class o0 implements TextWatcher {
                             ktVar2 = null;
                         } else if (list4.size() > 1) {
                             String string4 = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + str4, null);
-                            kt ktVar10 = (kt) r.c.e(1, list4);
+                            kt ktVar10 = (kt) r4.c.f(1, list4);
                             if (string4 != null) {
                                 int size6 = arrayList2.size();
                                 int i23 = 0;
@@ -406,16 +406,16 @@ public final class o0 implements TextWatcher {
                 }
                 break;
             case 13:
-                fo0 fo0Var = (fo0) this.b;
-                if (fo0Var.c0 != 0 && editable.length() == fo0Var.c0) {
-                    fo0Var.A0(false);
+                go0 go0Var = (go0) this.b;
+                if (go0Var.c0 != 0 && editable.length() == go0Var.c0) {
+                    go0Var.A0(false);
                     break;
                 }
                 break;
             case 14:
-                jq0 jq0Var = ((kq0) this.b).s0;
-                if (jq0Var != null) {
-                    jq0Var.b(editable);
+                kq0 kq0Var = ((lq0) this.b).s0;
+                if (kq0Var != null) {
+                    kq0Var.b(editable);
                     break;
                 }
                 break;
@@ -481,7 +481,7 @@ public final class o0 implements TextWatcher {
                 if (qrVar.x) {
                     qrVar.F.setDuration(220L);
                 } else {
-                    org.telegram.messenger.wh.l(1.5f, qrVar.F);
+                    org.telegram.messenger.kk.l(1.5f, qrVar.F);
                     qrVar.F.setDuration(350L);
                 }
                 qrVar.F.start();

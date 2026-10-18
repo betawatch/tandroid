@@ -36,7 +36,7 @@ import w0.a;
 import w0.c;
 import w7.i8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements j {
     public static final h Companion = new h();
@@ -293,7 +293,7 @@ public final class CredentialProviderPlayServicesImpl implements j {
             u b11 = v.b();
             b11.c = new ag.b(aVar2, d, 5);
             b11.a = 5407;
-            aVar2.e(0, b11.a()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar4), 27)).addOnFailureListener(new h0(9, eVar4, cancellationSignal));
+            aVar2.e(0, b11.a()).addOnSuccessListener(new a1.c(new b1.f(2, cancellationSignal, eVar4), 27)).addOnFailureListener(new h0(10, eVar4, cancellationSignal));
         } catch (JSONException e7) {
             Companion.getClass();
             if (h.a(cancellationSignal)) {

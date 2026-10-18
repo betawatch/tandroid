@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class me implements Runnable {
     public final /* synthetic */ int a;
@@ -227,7 +227,7 @@ public final /* synthetic */ class me implements Runnable {
                                 View view = (View) u1Var.getParent();
                                 aqVar3.measure(View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(MediaDataController.MAX_STYLE_RUNS_COUNT, TLObject.FLAG_31));
                                 if (i17 > AndroidUtilities.dp(10.0f) + aqVar3.getMeasuredHeight()) {
-                                    int C = org.telegram.messenger.q.C(6.0f, u1Var.getChecksY(), i17);
+                                    int C = org.telegram.messenger.g0.C(6.0f, u1Var.getChecksY(), i17);
                                     int dp = AndroidUtilities.dp(5.0f) + u1Var.getChecksX();
                                     int measuredWidth = view.getMeasuredWidth();
                                     float measuredHeight = C - aqVar3.getMeasuredHeight();

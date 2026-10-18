@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v2 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,8 +32,8 @@ public final /* synthetic */ class v2 implements Runnable {
             case 0:
                 int i10 = this.b;
                 v2 v2Var = new v2(i10, this.c, this.d, this.e, this.f, 1);
-                if (!ai.fa.y(i10, false).e) {
-                    ai.fa y3 = ai.fa.y(i10, false);
+                if (!ai.ga.y(i10, false).e) {
+                    ai.ga y3 = ai.ga.y(i10, false);
                     y3.e = false;
                     y3.q(false, true, v2Var);
                     y3.e = true;
@@ -44,7 +44,7 @@ public final /* synthetic */ class v2 implements Runnable {
                 }
             default:
                 int i11 = this.b;
-                long j10 = ai.fa.y(i11, false).p().amount;
+                long j10 = ai.ga.y(i11, false).p().amount;
                 long j11 = this.c;
                 Utilities.Callback callback = this.e;
                 long j12 = this.f;
@@ -57,7 +57,7 @@ public final /* synthetic */ class v2 implements Runnable {
                     org.telegram.ui.ActionBar.d6 bVar = (PhotoViewer.t1().R1() || (U != null && U.hasShownSheet())) ? new ci.b() : U != null ? U.getResourceProvider() : null;
                     if (activity != null) {
                         long j13 = this.d;
-                        new ai.bd(activity, bVar, j11, 13, DialogObject.getShortName(i11, j13), new org.telegram.ui.j6(j12, 1, callback), j13).show();
+                        new ai.cd(activity, bVar, j11, 13, DialogObject.getShortName(i11, j13), new org.telegram.ui.j6(j12, 1, callback), j13).show();
                         break;
                     }
                 }

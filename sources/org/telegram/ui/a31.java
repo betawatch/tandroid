@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a31 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -130,21 +130,21 @@ public final class a31 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 13:
-                org.telegram.ui.Wallet.l9 l9Var = (org.telegram.ui.Wallet.l9) this.b;
+                org.telegram.ui.Wallet.o9 o9Var = (org.telegram.ui.Wallet.o9) this.b;
                 if (i10 != -1) {
                     if (i10 != 2) {
                         if (i10 == 3) {
-                            l9Var.o0();
+                            o9Var.o0();
                             break;
                         }
                     } else {
-                        Activity parentActivity = l9Var.getParentActivity();
-                        i11 = ((org.telegram.ui.ActionBar.n2) l9Var).currentAccount;
-                        org.telegram.ui.Wallet.l5.C0(parentActivity, i11, l9Var.getResourceProvider());
+                        Activity parentActivity = o9Var.getParentActivity();
+                        i11 = ((org.telegram.ui.ActionBar.n2) o9Var).currentAccount;
+                        org.telegram.ui.Wallet.m5.C0(parentActivity, i11, o9Var.getResourceProvider());
                         break;
                     }
                 } else {
-                    l9Var.finishFragment();
+                    o9Var.finishFragment();
                     break;
                 }
                 break;

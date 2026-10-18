@@ -12,7 +12,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q11 {
     public final int[] A;
@@ -401,7 +401,7 @@ public final class q11 {
                                 z10 = z11;
                                 arrayList3 = arrayList7;
                                 arrayList4 = arrayList9;
-                                canvas.scale(groupedMessages.transitionParams.cell.getScaleX(), groupedMessages.transitionParams.cell.getScaleY(), com.google.android.gms.internal.cast.a6.z(f24, f23, 2.0f, f23), com.google.android.gms.internal.cast.a6.z(f21, f20, 2.0f, f20));
+                                canvas.scale(groupedMessages.transitionParams.cell.getScaleX(), groupedMessages.transitionParams.cell.getScaleY(), com.google.android.gms.internal.play_billing.k3.z(f24, f23, 2.0f, f23), com.google.android.gms.internal.play_billing.k3.z(f21, f20, 2.0f, f20));
                             } else {
                                 z10 = z11;
                                 arrayList3 = arrayList7;
@@ -475,8 +475,8 @@ public final class q11 {
                     view4.draw(canvas);
                     if (view4 instanceof org.telegram.ui.Cells.u1) {
                         ((org.telegram.ui.Cells.u1) view4).X1(canvas);
-                    } else if (view4 instanceof org.telegram.ui.Cells.x0) {
-                        ((org.telegram.ui.Cells.x0) view4).B(canvas);
+                    } else if (view4 instanceof org.telegram.ui.Cells.w0) {
+                        ((org.telegram.ui.Cells.w0) view4).B(canvas);
                     }
                     canvas.restore();
                 }
@@ -593,14 +593,14 @@ public final class q11 {
         if (z10) {
             ((org.telegram.ui.Cells.u1) view).pe = true;
         }
-        boolean z11 = view instanceof org.telegram.ui.Cells.x0;
+        boolean z11 = view instanceof org.telegram.ui.Cells.w0;
         if (z11) {
-            org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
-            if (x0Var.K()) {
+            org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+            if (w0Var.K()) {
                 canvas.save();
-                canvas.translate(x0Var.j0 / 2.0f, view.getPaddingTop());
-                x0Var.A(canvas, true);
-                x0Var.C(canvas, true);
+                canvas.translate(w0Var.j0 / 2.0f, view.getPaddingTop());
+                w0Var.A(canvas, true);
+                w0Var.C(canvas, true);
                 canvas.restore();
                 view.draw(canvas);
                 if (z10) {
@@ -620,7 +620,7 @@ public final class q11 {
                     ((org.telegram.ui.Cells.u1) view).X1(canvas);
                     canvas.restore();
                 } else if (z11) {
-                    ((org.telegram.ui.Cells.x0) view).B(canvas);
+                    ((org.telegram.ui.Cells.w0) view).B(canvas);
                 }
                 canvas.restoreToCount(save);
                 this.i = view.getX() + this.i;

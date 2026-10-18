@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -138,7 +138,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 fj0Var.show();
                 break;
             case 7:
-                ((z8) obj2).b.j0(((TLRPC.Message) i0.a.h(1, ((i9) obj).c)).id, 100);
+                ((z8) obj2).b.j0(((TLRPC.Message) i2.d.h(1, ((i9) obj).c)).id, 100);
                 break;
             case 8:
                 y9 y9Var = (y9) obj2;
@@ -251,7 +251,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     i11 = R.raw.error;
                     i12 = R.string.UnknownError;
                 }
-                org.telegram.messenger.q.q(i12, a02, i11, 36);
+                org.telegram.messenger.g0.q(i12, a02, i11, 36);
                 break;
             case 14:
                 ec ecVar = (ec) obj2;
@@ -394,7 +394,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 snVar3.presentFragment(ProfileActivity.m4(((TLRPC.User[]) obj)[0].id));
                 break;
             case 26:
-                ((ai.g3) obj2).run((TLRPC.User) obj);
+                ((ai.e3) obj2).run((TLRPC.User) obj);
                 break;
             case 27:
                 sn snVar4 = (sn) obj2;

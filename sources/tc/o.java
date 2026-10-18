@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.util.zip.Deflater;
 import java.util.zip.DeflaterOutputStream;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class o extends w {
     public static final byte[] e = {0, 0, -1, -1};
@@ -93,7 +93,7 @@ public final class o extends w {
             }
         } while (!n10);
         if (zArr[0]) {
-            return b0Var.w(0, i0.a.C(i11, 1, 8, -3));
+            return b0Var.w(0, i2.d.C(i11, 1, 8, -3));
         }
         int i17 = i11 % 8;
         if (i17 == 0 || i17 == 6 || i17 == 7) {
@@ -118,7 +118,7 @@ public final class o extends w {
             deflater.end();
             return a(byteArrayOutputStream.toByteArray());
         } catch (Exception e7) {
-            throw new v(42, r.c.g("Failed to compress the message: ", e7.getMessage()), e7);
+            throw new v(42, r4.c.h("Failed to compress the message: ", e7.getMessage()), e7);
         }
     }
 
@@ -146,7 +146,7 @@ public final class o extends w {
             }
             return w9;
         } catch (Exception e7) {
-            throw new v(43, r.c.g("Failed to decompress the message: ", e7.getMessage()), e7);
+            throw new v(43, r4.c.h("Failed to decompress the message: ", e7.getMessage()), e7);
         }
     }
 }

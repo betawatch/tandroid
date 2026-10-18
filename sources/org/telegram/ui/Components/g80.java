@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g80 extends View {
     public final Bitmap a;
@@ -53,7 +53,7 @@ public final class g80 extends View {
             }
             this.f = f7;
         }
-        this.h = i0.b.o(0, i80Var.s);
+        this.h = i0.a.o(0, i80Var.s);
         int i10 = 3;
         if (i80Var.t && (view instanceof org.telegram.ui.Cells.va) && (i80Var.c instanceof ProfileActivity)) {
             this.b = new Paint(3);
@@ -155,7 +155,7 @@ public final class g80 extends View {
                 } else if (i80Var.L) {
                     f7 = 255.0f;
                     c10 = 0;
-                    canvas2.clipRect(-rect.left, AndroidUtilities.lerp((((-rect.top) + fArr[1]) - (f11 * (i80Var.u ? 1.0f - this.w : 1.0f))) + 1.0f, 0.0f, this.w), getMeasuredWidth() + rect.right, com.google.android.gms.internal.cast.a6.D(1.0f, this.w, f15, getMeasuredHeight() + rect.bottom));
+                    canvas2.clipRect(-rect.left, AndroidUtilities.lerp((((-rect.top) + fArr[1]) - (f11 * (i80Var.u ? 1.0f - this.w : 1.0f))) + 1.0f, 0.0f, this.w), getMeasuredWidth() + rect.right, com.google.android.gms.internal.play_billing.k3.D(1.0f, this.w, f15, getMeasuredHeight() + rect.bottom));
                 } else {
                     f7 = 255.0f;
                     c10 = 0;

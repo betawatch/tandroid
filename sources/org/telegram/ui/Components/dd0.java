@@ -8,7 +8,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class dd0 extends Drawable {
     public cd0 a;
@@ -33,7 +33,7 @@ public final class dd0 extends Drawable {
         if (i10 != this.f) {
             int alpha = Color.alpha(i10);
             this.d = alpha;
-            this.b.setColor(i0.b.o(i10, (int) ((alpha / 255.0f) * this.c)));
+            this.b.setColor(i0.a.o(i10, (int) ((alpha / 255.0f) * this.c)));
         }
         this.f = i10;
     }

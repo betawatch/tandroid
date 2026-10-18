@@ -1,34 +1,47 @@
 package zh;
 
-import android.graphics.Canvas;
-import org.telegram.ui.Components.im0;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class s extends im0 {
-    public g0 V2;
-    public f0 W2;
+public final class s implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final TLRPC.Document b;
+    public final int c;
+    public final org.telegram.ui.Wallet.x d;
+    public boolean e;
+    public boolean f;
+    public boolean h;
 
-    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        int i10;
-        if (this.W2 != null) {
-            canvas2 = canvas;
-            i10 = canvas2.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
-        } else {
-            canvas2 = canvas;
-            i10 = -1;
+    public s(int i10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, int i11, org.telegram.ui.Wallet.x xVar) {
+        this.a = i10;
+        this.b = document;
+        this.c = i11;
+        this.d = xVar;
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
+        if (!FileLoader.getInstance(i10).getPathToAttach(document, true).exists()) {
+            FileLoader.getInstance(i10).loadFile(document, tL_starGiftUnique, 3, 1);
         }
-        g0 g0Var = this.V2;
-        if (g0Var != null) {
-            g0Var.x(canvas2);
+        a();
+    }
+
+    public final void a() {
+        if (this.e || this.f || !FileLoader.getInstance(this.a).getPathToAttach(this.b, true).exists()) {
+            return;
         }
-        super.dispatchDraw(canvas2);
-        f0 f0Var = this.W2;
-        if (f0Var != null) {
-            f0Var.x(canvas2);
-            canvas2.restoreToCount(i10);
+        this.f = true;
+        NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.fileLoaded);
+        Utilities.globalQueue.postRunnable(new uf.c(21, this, FileLoader.getInstance(this.a).getPathToAttach(this.b, true)));
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.fileLoaded) {
+            a();
         }
     }
 }

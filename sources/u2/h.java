@@ -1,35 +1,130 @@
 package u2;
 
-import java.io.IOException;
+import java.util.ArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class h extends IOException {
-    public h(int i10) {
-        this(i10, -9223372036854775807L, -9223372036854775807L);
+public final class h extends s1 {
+    public final long l;
+    public final long m;
+    public final boolean n;
+    public final boolean o;
+    public final boolean p;
+    public final boolean q;
+    public final ArrayList r;
+    public final b2.n1 s;
+    public f t;
+    public g u;
+    public long v;
+    public long w;
+
+    public h(e eVar) {
+        super(eVar.a);
+        this.l = eVar.b;
+        this.m = eVar.c;
+        this.n = eVar.d;
+        this.o = eVar.e;
+        this.p = eVar.f;
+        this.q = eVar.g;
+        this.r = new ArrayList();
+        this.s = new b2.n1();
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public h(int i10, long j10, long j11) {
-        super(r0.toString());
-        String str;
-        StringBuilder sb2 = new StringBuilder("Illegal clipping: ");
-        if (i10 != 0) {
-            if (i10 == 1) {
-                str = "not seekable to start";
-            } else if (i10 != 2) {
-                str = "unknown";
-            } else {
-                u6.p((j10 == -9223372036854775807L || j11 == -9223372036854775807L) ? false : true);
-                str = "start exceeds end. Start time: " + j10 + ", End time: " + j11;
-            }
-        } else {
-            str = "invalid period count";
+    @Override // u2.s1
+    public final void A(b2.o1 o1Var) {
+        if (this.u != null) {
+            return;
         }
-        sb2.append(str);
+        D(o1Var);
+    }
+
+    public final void D(b2.o1 o1Var) {
+        long j10;
+        long j11;
+        long j12;
+        b2.n1 n1Var = this.s;
+        o1Var.n(0, n1Var);
+        long j13 = n1Var.p;
+        f fVar = this.t;
+        long j14 = this.m;
+        ArrayList arrayList = this.r;
+        if (fVar == null || arrayList.isEmpty() || this.o) {
+            boolean z10 = this.p;
+            j10 = this.l;
+            if (z10) {
+                long j15 = n1Var.l;
+                j10 += j15;
+                j11 = j15 + j14;
+            } else {
+                j11 = j14;
+            }
+            this.v = j13 + j10;
+            this.w = j14 != Long.MIN_VALUE ? j13 + j11 : Long.MIN_VALUE;
+            int size = arrayList.size();
+            for (int i10 = 0; i10 < size; i10++) {
+                d dVar = (d) arrayList.get(i10);
+                long j16 = this.v;
+                long j17 = this.w;
+                dVar.f = j16;
+                dVar.h = j17;
+            }
+            j12 = j11;
+        } else {
+            j10 = this.v - j13;
+            j12 = j14 != Long.MIN_VALUE ? this.w - j13 : Long.MIN_VALUE;
+        }
+        try {
+            f fVar2 = new f(o1Var, j10, j12, this.q);
+            this.t = fVar2;
+            n(fVar2);
+        } catch (g e) {
+            this.u = e;
+            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                ((d) arrayList.get(i11)).n = this.u;
+            }
+        }
+    }
+
+    @Override // u2.s1, u2.a
+    public final boolean a(b2.o0 o0Var) {
+        a aVar = this.k;
+        return aVar.i().e.equals(o0Var.e) && aVar.a(o0Var);
+    }
+
+    @Override // u2.a
+    public final d0 c(f0 f0Var, androidx.biometric.e eVar, long j10) {
+        d dVar = new d(this.k.c(f0Var, eVar, j10), this.n, this.v, this.w, 0);
+        this.r.add(dVar);
+        return dVar;
+    }
+
+    @Override // u2.l, u2.a
+    public final void k() {
+        g gVar = this.u;
+        if (gVar != null) {
+            throw gVar;
+        }
+        super.k();
+    }
+
+    @Override // u2.a
+    public final void o(d0 d0Var) {
+        ArrayList arrayList = this.r;
+        u6.p(arrayList.remove(d0Var));
+        this.k.o(((d) d0Var).a);
+        if (!arrayList.isEmpty() || this.o) {
+            return;
+        }
+        f fVar = this.t;
+        fVar.getClass();
+        D(fVar.e);
+    }
+
+    @Override // u2.l, u2.a
+    public final void q() {
+        super.q();
+        this.u = null;
+        this.t = null;
     }
 }

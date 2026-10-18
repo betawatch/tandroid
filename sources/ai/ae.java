@@ -1,35 +1,71 @@
 package ai;
 
-import android.view.animation.Interpolator;
-import org.telegram.messenger.wh;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.la0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class ae implements Interpolator {
-    public final /* synthetic */ int a;
+public final class ae extends AnimatorListenerAdapter {
+    public final /* synthetic */ ah.g1 a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ ci.q0[] c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ RectF e;
+    public final /* synthetic */ Runnable f;
+    public final /* synthetic */ le h;
 
-    public /* synthetic */ ae(int i10) {
-        this.a = i10;
+    public ae(le leVar, ah.g1 g1Var, View view, ci.q0[] q0VarArr, boolean[] zArr, RectF rectF, Runnable runnable) {
+        this.h = leVar;
+        this.a = g1Var;
+        this.b = view;
+        this.c = q0VarArr;
+        this.d = zArr;
+        this.e = rectF;
+        this.f = runnable;
     }
 
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f7) {
-        switch (this.a) {
-            case 0:
-                return (float) Math.pow(f7, 2.0d);
-            case 1:
-                if (f7 < 0.33f) {
-                    return (f7 / 0.33f) * 0.1f;
-                }
-                float f10 = f7 - 0.33f;
-                return f10 < 0.33f ? wh.y(f10, 0.34f, 0.15f, 0.1f) : (((f10 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
-            case 2:
-                return f7 * f7 * f7 * f7 * f7;
-            case 3:
-            case 4:
-            default:
-                float f11 = f7 - 1.0f;
-                return (f11 * f11 * f11 * f11 * f11) + 1.0f;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        la0 la0Var;
+        le leVar = this.h;
+        zd zdVar = leVar.K;
+        zdVar.setVisibility(4);
+        zdVar.setPaused(true);
+        ah.g1 g1Var = this.a;
+        if (g1Var != null) {
+            g1Var.l = true;
         }
+        View view = this.b;
+        if (view != null) {
+            view.invalidate();
+        }
+        ci.q0 q0Var = this.c[0];
+        if (q0Var != null) {
+            q0Var.setDrawStar(true);
+        }
+        super/*org.telegram.ui.ActionBar.f3*/.dismissInternal();
+        boolean[] zArr = this.d;
+        if (!zArr[0]) {
+            zArr[0] = true;
+            RectF rectF = this.e;
+            LaunchActivity.c0(rectF.centerX(), rectF.centerY(), 1.5f);
+            try {
+                leVar.container.performHapticFeedback(0, 1);
+            } catch (Exception unused) {
+            }
+            Runnable runnable = this.f;
+            if (runnable != null) {
+                runnable.run();
+            }
+        }
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity == null || (la0Var = launchActivity.x0) == null) {
+            return;
+        }
+        la0Var.c(true);
     }
 }

@@ -3,13 +3,14 @@ package org.telegram.ui.Components;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.os.Build;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class uw0 {
     public final e0.f0 a;
@@ -43,7 +44,7 @@ public final class uw0 {
         paint2.setStrokeWidth(AndroidUtilities.dp(0.5f));
         paint2.setStrokeCap(cap);
         paint2.setStyle(style);
-        if (g0.a.g()) {
+        if (Build.VERSION.SDK_INT >= 29) {
             this.a = new e0.f0(i11);
             this.b = g0.a.a(a(true));
         } else {
@@ -89,8 +90,8 @@ public final class uw0 {
             double d12 = dpf22;
             float f18 = f16 + f14;
             float f19 = f17 + f15;
-            canvas.drawLine(f18, f19, f16 + ((float) ((Math.cos(d10) * d11) - (Math.sin(d10) * d12))), ((float) i0.a.f(d10, d12, Math.sin(d10) * d11)) + f17, paint);
-            canvas.drawLine(f18, f19, f16 + ((float) (((-Math.cos(d10)) * d11) - (Math.sin(d10) * d12))), ((float) i0.a.f(d10, d12, (-Math.sin(d10)) * d11)) + f17, paint);
+            canvas.drawLine(f18, f19, f16 + ((float) ((Math.cos(d10) * d11) - (Math.sin(d10) * d12))), ((float) i2.d.f(d10, d12, Math.sin(d10) * d11)) + f17, paint);
+            canvas.drawLine(f18, f19, f16 + ((float) (((-Math.cos(d10)) * d11) - (Math.sin(d10) * d12))), ((float) i2.d.f(d10, d12, (-Math.sin(d10)) * d11)) + f17, paint);
             f11 = f13 + 1.0471976f;
             i10++;
             dp2 = f17;
@@ -134,7 +135,7 @@ public final class uw0 {
                     f11 *= tw0Var2.i;
                 }
                 float f12 = i14 == 0 ? dp : 0.0f;
-                f0Var.e(i13, i0.b.o(this.n, (int) (tw0Var2.f * 255.0f)));
+                f0Var.e(i13, i0.a.o(this.n, (int) (tw0Var2.f * 255.0f)));
                 e0.f0.c((float[]) f0Var.c, i13, f7 - f11, f10 - f11, f7 + f11, f10 + f11);
                 float f13 = dp;
                 e0.f0.c((float[]) f0Var.d, i13, f12, 0.0f, f12 + f13, f13);
@@ -177,7 +178,7 @@ public final class uw0 {
                 } else {
                     int i20 = AndroidUtilities.statusBarHeight;
                     float nextFloat = Utilities.random.nextFloat() * view.getMeasuredWidth();
-                    float nextFloat2 = i16 == 0 ? (Utilities.random.nextFloat() * org.telegram.messenger.q.B(20.0f, view.getMeasuredHeight(), i20)) + i20 : Utilities.random.nextFloat() * view.getMeasuredHeight();
+                    float nextFloat2 = i16 == 0 ? (Utilities.random.nextFloat() * org.telegram.messenger.g0.B(20.0f, view.getMeasuredHeight(), i20)) + i20 : Utilities.random.nextFloat() * view.getMeasuredHeight();
                     double nextInt = (Utilities.random.nextInt(40) + 70) * 0.017453292519943295d;
                     i10 = i11;
                     float cos = (float) Math.cos(nextInt);

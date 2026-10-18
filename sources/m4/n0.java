@@ -13,7 +13,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.q8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class n0 implements j9.t, u {
     public b2.r0 a;
@@ -254,7 +254,7 @@ public final class n0 implements j9.t, u {
                 p0Var.r = n0Var;
                 Handler handler = f0Var.l;
                 Objects.requireNonNull(handler);
-                e.a(new j9.u(0, e, n0Var), new i2.e0(handler, 1));
+                e.a(new j9.u(0, e, n0Var), new i2.f0(handler, 1));
                 p0.E(p0Var.m, n.b(r0Var, str, uri, j10, bitmap));
             }
             try {
@@ -295,7 +295,7 @@ public final class n0 implements j9.t, u {
                 arrayList2.add(v);
                 Handler handler = f0Var.l;
                 Objects.requireNonNull(handler);
-                v.a(y0Var, new i2.e0(handler, 1));
+                v.a(y0Var, new i2.f0(handler, 1));
             }
         }
     }

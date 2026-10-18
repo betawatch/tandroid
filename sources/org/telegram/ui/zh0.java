@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zh0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class zh0 extends FrameLayout {
                 ArrayList arrayList = ai0Var.F;
                 float f7 = -1.0f;
                 if (!arrayList.isEmpty()) {
-                    py pyVar = (py) i0.a.h(1, arrayList);
+                    py pyVar = (py) i2.d.h(1, arrayList);
                     ImageReceiver imageReceiver = pyVar.r;
                     ImageLocation mediaLocation = imageReceiver.getMediaLocation();
                     if (mediaLocation == null) {
@@ -120,7 +120,7 @@ public final class zh0 extends FrameLayout {
                     ArrayList arrayList = oi0Var.N;
                     hi0 hi0Var = oi0Var.K;
                     if (oi0Var.F.getWidth() > 0) {
-                        int[] iArr = {org.telegram.ui.Cells.t0.e(6.0f, oi0Var.W.getWidth() - oi0Var.W.l(), r2), 0};
+                        int[] iArr = {org.telegram.messenger.kk.D(6.0f, oi0Var.W.getWidth() - oi0Var.W.l(), r2), 0};
                         oi0Var.W.getLocationOnScreen(iArr);
                         int i14 = iArr[0];
                         oi0Var.X.setScaleX(oi0Var.W.getScaleX());
@@ -150,7 +150,7 @@ public final class zh0 extends FrameLayout {
                         }
                         hi0Var.setX((AndroidUtilities.dp(7.0f) + iArr[0]) - hi0Var.getMeasuredWidth());
                         if (oi0Var.g0) {
-                            org.telegram.messenger.wh.t(hi0Var.animate().translationY(((oi0Var.X.getHeight() + iArr[1]) - hi0Var.getMeasuredHeight()) - hi0Var.getTop()), li.m.V, 250L);
+                            org.telegram.messenger.kk.t(hi0Var.animate().translationY(((oi0Var.X.getHeight() + iArr[1]) - hi0Var.getMeasuredHeight()) - hi0Var.getTop()), li.m.V, 250L);
                         } else {
                             hi0Var.setY((oi0Var.X.getHeight() + iArr[1]) - hi0Var.getMeasuredHeight());
                         }
@@ -161,7 +161,7 @@ public final class zh0 extends FrameLayout {
                         }
                         FrameLayout frameLayout = oi0Var.d0;
                         if (frameLayout != null) {
-                            frameLayout.setX(org.telegram.messenger.q.b(6.0f, (oi0Var.X.l() + iArr[0]) - oi0Var.d0.getMeasuredWidth(), 0));
+                            frameLayout.setX(org.telegram.messenger.g0.b(6.0f, (oi0Var.X.l() + iArr[0]) - oi0Var.d0.getMeasuredWidth(), 0));
                             RectF rectF = oi0Var.l0;
                             if (rectF != null) {
                                 FrameLayout frameLayout2 = oi0Var.d0;

@@ -11,7 +11,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class g9 extends Drawable {
     public int a;
@@ -54,7 +54,7 @@ public final class g9 extends Drawable {
     }
 
     public final void c(float f7) {
-        this.c.setShadowLayer(AndroidUtilities.dp(2.0f) / f7, 0.0f, AndroidUtilities.dpf2(0.7f) / f7, i0.b.o(-16777216, 45));
+        this.c.setShadowLayer(AndroidUtilities.dp(2.0f) / f7, 0.0f, AndroidUtilities.dpf2(0.7f) / f7, i0.a.o(-16777216, 45));
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -96,7 +96,7 @@ public final class g9 extends Drawable {
                 this.i.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                 this.i.setStrokeWidth(AndroidUtilities.dp(3.0f));
             }
-            paint.setColor(i0.b.o(-16777216, 127));
+            paint.setColor(i0.a.o(-16777216, 127));
         }
         if (this.e != 255 || this.a == 1) {
             canvas.saveLayerAlpha(getBounds().left - (getBounds().width() * 0.2f), getBounds().top, (getBounds().width() * 0.2f) + getBounds().right, (getBounds().height() * 0.2f) + getBounds().bottom, this.e, 31);

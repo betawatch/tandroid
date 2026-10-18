@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.ui.lg0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class q {
     public static final lg0 g = new lg0(27);
@@ -82,6 +82,6 @@ public final class q {
         if (arrayList.isEmpty()) {
             return Float.NaN;
         }
-        return ((p) i0.a.h(1, arrayList)).c;
+        return ((p) i2.d.h(1, arrayList)).c;
     }
 }

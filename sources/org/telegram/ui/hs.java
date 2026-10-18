@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class hs extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50 {
     public fs E;
@@ -269,7 +269,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
             if (closestPhotoSizeWithSize2 != null && fileLocation2 != null) {
                 FileLoader.getInstance(hsVar.currentAccount).getPathToAttach(fileLocation2, true).renameTo(FileLoader.getInstance(hsVar.currentAccount).getPathToAttach(closestPhotoSizeWithSize2, true));
             }
-            zf.d0.a(tL_photos_photo.photo, user, true);
+            zf.e0.a(tL_photos_photo.photo, user, true);
             ArrayList arrayList2 = new ArrayList();
             arrayList2.add(user);
             hsVar.getMessagesStorage().putUsersAndChats(arrayList2, null, false, true);
@@ -391,9 +391,9 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
         FrameLayout frameLayout3 = this.V;
         TextView textView3 = this.f;
         boolean z10 = LocaleController.isRTL;
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout3, textView3, w7.z5.a(-2.0f, z10 ? 0.0f : 94.0f, 25.66f, z10 ? 94.0f : 0.0f, 0.0f, -2, (z10 ? 5 : 3) | 48), context);
-        this.h = k10;
-        k10.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout3, textView3, w7.z5.a(-2.0f, z10 ? 0.0f : 94.0f, 25.66f, z10 ? 94.0f : 0.0f, 0.0f, -2, (z10 ? 5 : 3) | 48), context);
+        this.h = j10;
+        j10.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
         this.h.setTextSize(1, 14.0f);
         this.h.setLines(1);
         this.h.setMaxLines(1);
@@ -849,7 +849,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
             tL_photos_uploadContactProfilePhoto.save = true;
             tL_photos_uploadContactProfilePhoto.flags |= 16;
         }
-        getConnectionsManager().sendRequest(tL_photos_uploadContactProfilePhoto, new ai.rb(this, fileLocation, inputFile2, fileLocation2, i10, 9));
+        getConnectionsManager().sendRequest(tL_photos_uploadContactProfilePhoto, new ai.sb(this, fileLocation, inputFile2, fileLocation2, i10, 9));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

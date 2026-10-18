@@ -16,7 +16,7 @@ import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.j01;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class g7 extends org.telegram.ui.Components.ua {
     public final ArrayList a0;
@@ -59,7 +59,7 @@ public final class g7 extends org.telegram.ui.Components.ua {
             if (currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i12)).date || ((i10 = i12 + 1) < arrayList.size() && currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i10)).date)) {
                 f10 = f13;
                 Date date = new Date(r13.date * 1000);
-                j01Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), ld.Y0(false, org.telegram.messenger.q.h((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                j01Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), md.Y0(false, org.telegram.messenger.g0.h((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                 z10 = true;
             } else {
                 f10 = f13;
@@ -77,7 +77,7 @@ public final class g7 extends org.telegram.ui.Components.ua {
                 i13++;
                 TL_stars.StarGiftUpgradePrice starGiftUpgradePrice = (TL_stars.StarGiftUpgradePrice) obj;
                 Date date2 = new Date(starGiftUpgradePrice.date * 1000);
-                j01Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), ld.Y0(false, org.telegram.messenger.q.h((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                j01Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), md.Y0(false, org.telegram.messenger.g0.h((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
             }
         }
         float f15 = f14 + f7;
@@ -100,7 +100,7 @@ public final class g7 extends org.telegram.ui.Components.ua {
         this.containerView.addView(this.Y, w7.z5.e(-1, -2, 87));
         im0 im0Var = this.d;
         im0Var.setPadding(im0Var.getPaddingLeft(), im0Var.getPaddingTop(), im0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + im0Var.getPaddingBottom());
-        this.Z.g(k7.z2(LocaleController.getString(R.string.Understood)), false, true);
+        this.Z.g(k7.B2(LocaleController.getString(R.string.Understood)), false, true);
         this.Z.setOnClickListener(new ah.g0(this, 8));
     }
 
@@ -110,7 +110,7 @@ public final class g7 extends org.telegram.ui.Components.ua {
             return;
         }
         TL_stars.StarGiftUpgradePrice starGiftUpgradePrice = (TL_stars.StarGiftUpgradePrice) arrayList.get(0);
-        TL_stars.StarGiftUpgradePrice starGiftUpgradePrice2 = (TL_stars.StarGiftUpgradePrice) i0.a.h(1, arrayList);
+        TL_stars.StarGiftUpgradePrice starGiftUpgradePrice2 = (TL_stars.StarGiftUpgradePrice) i2.d.h(1, arrayList);
         LimitPreviewView limitPreviewView = this.b0;
         limitPreviewView.M = true;
         Paint paint = limitPreviewView.K;

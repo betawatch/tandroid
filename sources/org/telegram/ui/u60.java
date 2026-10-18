@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class u60 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50 {
     public TLRPC.FileLocation E;
@@ -335,7 +335,7 @@ public final class u60 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.b.setOnItemClickListener(new p60(this));
         org.telegram.ui.Components.h20 h20Var = new org.telegram.ui.Components.h20(context, this.resourceProvider, false);
         this.v = h20Var;
-        m.g3.r(h20Var);
+        m.g3.i(h20Var);
         kdVar.addView(this.v, org.telegram.ui.Components.h20.b());
         this.v.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.o60
             public final /* synthetic */ u60 b;
@@ -554,7 +554,7 @@ public final class u60 extends org.telegram.ui.ActionBar.n2 implements Notificat
             this.K = new ArrayList(longArray.length);
             int i11 = 0;
             while (i11 < longArray.length) {
-                i11 = com.google.android.gms.internal.cast.a6.h(longArray[i11], this.K, i11, 1);
+                i11 = com.google.android.gms.internal.play_billing.k3.h(longArray[i11], this.K, i11, 1);
             }
         }
         ArrayList arrayList = new ArrayList();

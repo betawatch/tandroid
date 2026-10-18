@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -220,52 +220,52 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                 snVar.na(true);
                 return true;
             case 3:
-                tp0 tp0Var = (tp0) this.b;
-                sn snVar2 = tp0Var.F;
-                if (snVar2 != null && tp0Var.G != 1) {
+                up0 up0Var = (up0) this.b;
+                sn snVar2 = up0Var.F;
+                if (snVar2 != null && up0Var.G != 1) {
                     TLRPC.User i16 = snVar2.i();
-                    if (tp0Var.J == null) {
-                        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(tp0Var.getParentActivity(), null);
-                        tp0Var.J = actionBarPopupWindow$ActionBarPopupWindowLayout;
+                    if (up0Var.J == null) {
+                        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(up0Var.getParentActivity(), null);
+                        up0Var.J = actionBarPopupWindow$ActionBarPopupWindowLayout;
                         actionBarPopupWindow$ActionBarPopupWindowLayout.setAnimationEnabled(false);
-                        tp0Var.J.setOnTouchListener(new org.telegram.ui.Components.kf(tp0Var));
-                        tp0Var.J.setDispatchKeyEventListener(new kp0(tp0Var, 1));
-                        tp0Var.J.setShownFromBottom(false);
-                        tp0Var.K = new org.telegram.ui.ActionBar.e1[2];
+                        up0Var.J.setOnTouchListener(new org.telegram.ui.Components.kf(up0Var));
+                        up0Var.J.setDispatchKeyEventListener(new lp0(up0Var, 1));
+                        up0Var.J.setShownFromBottom(false);
+                        up0Var.K = new org.telegram.ui.ActionBar.e1[2];
                         int i17 = 0;
                         while (i17 < 2) {
                             if ((i17 != 0 || snVar2.G6()) && (i17 != 1 || !UserObject.isUserSelf(i16))) {
-                                tp0Var.K[i17] = new org.telegram.ui.ActionBar.e1(tp0Var.getParentActivity(), i17 == 0, i17 == 1);
+                                up0Var.K[i17] = new org.telegram.ui.ActionBar.e1(up0Var.getParentActivity(), i17 == 0, i17 == 1);
                                 if (i17 != 0) {
-                                    tp0Var.K[i17].g(LocaleController.getString(R.string.SendWithoutSound), R.drawable.input_notify_off, null);
+                                    up0Var.K[i17].g(LocaleController.getString(R.string.SendWithoutSound), R.drawable.input_notify_off, null);
                                 } else if (UserObject.isUserSelf(i16)) {
-                                    tp0Var.K[i17].g(LocaleController.getString(R.string.SetReminder), R.drawable.msg_calendar2, null);
+                                    up0Var.K[i17].g(LocaleController.getString(R.string.SetReminder), R.drawable.msg_calendar2, null);
                                 } else {
-                                    tp0Var.K[i17].g(LocaleController.getString(R.string.ScheduleMessage), R.drawable.msg_calendar2, null);
+                                    up0Var.K[i17].g(LocaleController.getString(R.string.ScheduleMessage), R.drawable.msg_calendar2, null);
                                 }
-                                tp0Var.K[i17].setMinimumWidth(AndroidUtilities.dp(196.0f));
-                                tp0Var.J.a(tp0Var.K[i17], w7.z5.n(-1, 48));
-                                tp0Var.K[i17].setOnClickListener(new ai.n1(tp0Var, i17, 23));
+                                up0Var.K[i17].setMinimumWidth(AndroidUtilities.dp(196.0f));
+                                up0Var.J.a(up0Var.K[i17], w7.z5.n(-1, 48));
+                                up0Var.K[i17].setOnClickListener(new ai.n1(up0Var, i17, 23));
                             }
                             i17++;
                         }
-                        tp0Var.J.setupRadialSelectors(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I5, false));
-                        org.telegram.ui.ActionBar.m1 m1Var = new org.telegram.ui.ActionBar.m1(tp0Var.J, -2, -2);
-                        tp0Var.I = m1Var;
+                        up0Var.J.setupRadialSelectors(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I5, false));
+                        org.telegram.ui.ActionBar.m1 m1Var = new org.telegram.ui.ActionBar.m1(up0Var.J, -2, -2);
+                        up0Var.I = m1Var;
                         m1Var.b = false;
                         m1Var.setAnimationStyle(R.style.PopupContextAnimation2);
-                        tp0Var.I.setOutsideTouchable(true);
-                        tp0Var.I.setClippingEnabled(true);
-                        tp0Var.I.setInputMethodMode(2);
-                        tp0Var.I.setSoftInputMode(0);
-                        tp0Var.I.getContentView().setFocusableInTouchMode(true);
+                        up0Var.I.setOutsideTouchable(true);
+                        up0Var.I.setClippingEnabled(true);
+                        up0Var.I.setInputMethodMode(2);
+                        up0Var.I.setSoftInputMode(0);
+                        up0Var.I.getContentView().setFocusableInTouchMode(true);
                     }
-                    tp0Var.J.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                    tp0Var.I.setFocusable(true);
+                    up0Var.J.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                    up0Var.I.setFocusable(true);
                     int[] iArr = new int[2];
                     view.getLocationInWindow(iArr);
-                    tp0Var.I.showAtLocation(view, 51, AndroidUtilities.dp(8.0f) + ((view.getMeasuredWidth() + iArr[0]) - tp0Var.J.getMeasuredWidth()), (iArr[1] - tp0Var.J.getMeasuredHeight()) - AndroidUtilities.dp(2.0f));
-                    tp0Var.I.b();
+                    up0Var.I.showAtLocation(view, 51, AndroidUtilities.dp(8.0f) + ((view.getMeasuredWidth() + iArr[0]) - up0Var.J.getMeasuredWidth()), (iArr[1] - up0Var.J.getMeasuredHeight()) - AndroidUtilities.dp(2.0f));
+                    up0Var.I.b();
                     try {
                         view.performHapticFeedback(3, 2);
                     } catch (Exception unused) {
@@ -273,52 +273,52 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                 }
                 return false;
             case 4:
-                kq0 kq0Var = (kq0) this.b;
-                sn snVar3 = kq0Var.U;
-                if (snVar3 != null && kq0Var.H != 1) {
+                lq0 lq0Var = (lq0) this.b;
+                sn snVar3 = lq0Var.U;
+                if (snVar3 != null && lq0Var.H != 1) {
                     TLRPC.User i18 = snVar3.i();
-                    if (kq0Var.n0 == null) {
-                        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(kq0Var.getParentActivity(), null);
-                        kq0Var.n0 = actionBarPopupWindow$ActionBarPopupWindowLayout2;
+                    if (lq0Var.n0 == null) {
+                        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(lq0Var.getParentActivity(), null);
+                        lq0Var.n0 = actionBarPopupWindow$ActionBarPopupWindowLayout2;
                         actionBarPopupWindow$ActionBarPopupWindowLayout2.setAnimationEnabled(false);
-                        kq0Var.n0.setOnTouchListener(new org.telegram.ui.Components.kf(kq0Var));
-                        kq0Var.n0.setDispatchKeyEventListener(new xp0(kq0Var, 3));
-                        kq0Var.n0.setShownFromBottom(false);
-                        kq0Var.o0 = new org.telegram.ui.ActionBar.e1[2];
+                        lq0Var.n0.setOnTouchListener(new org.telegram.ui.Components.kf(lq0Var));
+                        lq0Var.n0.setDispatchKeyEventListener(new yp0(lq0Var, 3));
+                        lq0Var.n0.setShownFromBottom(false);
+                        lq0Var.o0 = new org.telegram.ui.ActionBar.e1[2];
                         int i19 = 0;
                         while (i19 < 2) {
                             if ((i19 != 0 || snVar3.G6()) && (i19 != 1 || !UserObject.isUserSelf(i18))) {
-                                kq0Var.o0[i19] = new org.telegram.ui.ActionBar.e1(kq0Var.getParentActivity(), i19 == 0, i19 == 1);
+                                lq0Var.o0[i19] = new org.telegram.ui.ActionBar.e1(lq0Var.getParentActivity(), i19 == 0, i19 == 1);
                                 if (i19 != 0) {
-                                    kq0Var.o0[i19].g(LocaleController.getString(R.string.SendWithoutSound), R.drawable.input_notify_off, null);
+                                    lq0Var.o0[i19].g(LocaleController.getString(R.string.SendWithoutSound), R.drawable.input_notify_off, null);
                                 } else if (UserObject.isUserSelf(i18)) {
-                                    kq0Var.o0[i19].g(LocaleController.getString(R.string.SetReminder), R.drawable.msg_calendar2, null);
+                                    lq0Var.o0[i19].g(LocaleController.getString(R.string.SetReminder), R.drawable.msg_calendar2, null);
                                 } else {
-                                    kq0Var.o0[i19].g(LocaleController.getString(R.string.ScheduleMessage), R.drawable.msg_calendar2, null);
+                                    lq0Var.o0[i19].g(LocaleController.getString(R.string.ScheduleMessage), R.drawable.msg_calendar2, null);
                                 }
-                                kq0Var.o0[i19].setMinimumWidth(AndroidUtilities.dp(196.0f));
-                                kq0Var.n0.a(kq0Var.o0[i19], w7.z5.n(-1, 48));
-                                kq0Var.o0[i19].setOnClickListener(new ai.n1(kq0Var, i19, 24));
+                                lq0Var.o0[i19].setMinimumWidth(AndroidUtilities.dp(196.0f));
+                                lq0Var.n0.a(lq0Var.o0[i19], w7.z5.n(-1, 48));
+                                lq0Var.o0[i19].setOnClickListener(new ai.n1(lq0Var, i19, 24));
                             }
                             i19++;
                         }
-                        kq0Var.n0.setupRadialSelectors(org.telegram.ui.ActionBar.h6.x0(null, kq0Var.w0, false));
-                        org.telegram.ui.ActionBar.m1 m1Var2 = new org.telegram.ui.ActionBar.m1(kq0Var.n0, -2, -2);
-                        kq0Var.m0 = m1Var2;
+                        lq0Var.n0.setupRadialSelectors(org.telegram.ui.ActionBar.h6.x0(null, lq0Var.w0, false));
+                        org.telegram.ui.ActionBar.m1 m1Var2 = new org.telegram.ui.ActionBar.m1(lq0Var.n0, -2, -2);
+                        lq0Var.m0 = m1Var2;
                         m1Var2.b = false;
                         m1Var2.setAnimationStyle(R.style.PopupContextAnimation2);
-                        kq0Var.m0.setOutsideTouchable(true);
-                        kq0Var.m0.setClippingEnabled(true);
-                        kq0Var.m0.setInputMethodMode(2);
-                        kq0Var.m0.setSoftInputMode(0);
-                        kq0Var.m0.getContentView().setFocusableInTouchMode(true);
+                        lq0Var.m0.setOutsideTouchable(true);
+                        lq0Var.m0.setClippingEnabled(true);
+                        lq0Var.m0.setInputMethodMode(2);
+                        lq0Var.m0.setSoftInputMode(0);
+                        lq0Var.m0.getContentView().setFocusableInTouchMode(true);
                     }
-                    kq0Var.n0.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                    kq0Var.m0.setFocusable(true);
+                    lq0Var.n0.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
+                    lq0Var.m0.setFocusable(true);
                     int[] iArr2 = new int[2];
                     view.getLocationInWindow(iArr2);
-                    kq0Var.m0.showAtLocation(view, 51, AndroidUtilities.dp(8.0f) + ((view.getMeasuredWidth() + iArr2[0]) - kq0Var.n0.getMeasuredWidth()), (iArr2[1] - kq0Var.n0.getMeasuredHeight()) - AndroidUtilities.dp(2.0f));
-                    kq0Var.m0.b();
+                    lq0Var.m0.showAtLocation(view, 51, AndroidUtilities.dp(8.0f) + ((view.getMeasuredWidth() + iArr2[0]) - lq0Var.n0.getMeasuredWidth()), (iArr2[1] - lq0Var.n0.getMeasuredHeight()) - AndroidUtilities.dp(2.0f));
+                    lq0Var.m0.b();
                     try {
                         view.performHapticFeedback(3, 2);
                     } catch (Exception unused2) {
@@ -417,11 +417,11 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                                 ju0 ju0Var8 = photoViewer.d;
                                 boolean z17 = ju0Var8 == null && ju0Var8.H() > 1;
                                 F = org.telegram.ui.Components.i80.F(photoViewer.e0, new ci.b(), view);
-                                F.l(R.drawable.msg_sendfile, LocaleController.getString(z17 ? R.string.SendAsFiles : R.string.SendAsFile), new rq0(photoViewer, 2), z11);
-                                F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new rq0(photoViewer, 3), z14);
-                                F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new rq0(photoViewer, 4), z14);
-                                F.l(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new rq0(photoViewer, 5), z15);
-                                F.l(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new rq0(photoViewer, 6), z16);
+                                F.l(R.drawable.msg_sendfile, LocaleController.getString(z17 ? R.string.SendAsFiles : R.string.SendAsFile), new sq0(photoViewer, 2), z11);
+                                F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new sq0(photoViewer, 3), z14);
+                                F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new sq0(photoViewer, 4), z14);
+                                F.l(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new sq0(photoViewer, 5), z15);
+                                F.l(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new sq0(photoViewer, 6), z16);
                                 if (F.x() == 0) {
                                     return false;
                                 }
@@ -439,11 +439,11 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                         if (ju0Var82 == null) {
                         }
                         F = org.telegram.ui.Components.i80.F(photoViewer.e0, new ci.b(), view);
-                        F.l(R.drawable.msg_sendfile, LocaleController.getString(z17 ? R.string.SendAsFiles : R.string.SendAsFile), new rq0(photoViewer, 2), z11);
-                        F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new rq0(photoViewer, 3), z14);
-                        F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new rq0(photoViewer, 4), z14);
-                        F.l(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new rq0(photoViewer, 5), z15);
-                        F.l(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new rq0(photoViewer, 6), z16);
+                        F.l(R.drawable.msg_sendfile, LocaleController.getString(z17 ? R.string.SendAsFiles : R.string.SendAsFile), new sq0(photoViewer, 2), z11);
+                        F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new sq0(photoViewer, 3), z14);
+                        F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new sq0(photoViewer, 4), z14);
+                        F.l(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new sq0(photoViewer, 5), z15);
+                        F.l(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new sq0(photoViewer, 6), z16);
                         if (F.x() == 0) {
                         }
                     }
@@ -460,11 +460,11 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                 if (ju0Var822 == null) {
                 }
                 F = org.telegram.ui.Components.i80.F(photoViewer.e0, new ci.b(), view);
-                F.l(R.drawable.msg_sendfile, LocaleController.getString(z17 ? R.string.SendAsFiles : R.string.SendAsFile), new rq0(photoViewer, 2), z11);
-                F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new rq0(photoViewer, 3), z14);
-                F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new rq0(photoViewer, 4), z14);
-                F.l(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new rq0(photoViewer, 5), z15);
-                F.l(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new rq0(photoViewer, 6), z16);
+                F.l(R.drawable.msg_sendfile, LocaleController.getString(z17 ? R.string.SendAsFiles : R.string.SendAsFile), new sq0(photoViewer, 2), z11);
+                F.l(R.drawable.msg_send, LocaleController.getString(R.string.SendAsNewPhoto), new sq0(photoViewer, 3), z14);
+                F.l(R.drawable.msg_replace, LocaleController.getString(R.string.ReplacePhoto), new sq0(photoViewer, 4), z14);
+                F.l(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new sq0(photoViewer, 5), z15);
+                F.l(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new sq0(photoViewer, 6), z16);
                 if (F.x() == 0) {
                 }
                 break;

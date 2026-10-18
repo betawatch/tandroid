@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -166,7 +166,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
                             spannableStringBuilder.append((CharSequence) ", ");
                         }
                         SpannableStringBuilder append = new SpannableStringBuilder("@").append((CharSequence) publicUsername);
-                        append.setSpan(new org.telegram.ui.Components.j61(r.c.g("https://t.me/", publicUsername), (org.telegram.ui.Components.l11) null), 0, append.length(), 33);
+                        append.setSpan(new org.telegram.ui.Components.j61(r4.c.h("https://t.me/", publicUsername), (org.telegram.ui.Components.l11) null), 0, append.length(), 33);
                         spannableStringBuilder.append((CharSequence) append);
                     }
                 }
@@ -249,8 +249,8 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
         xj0Var.setScaleType(ImageView.ScaleType.CENTER);
         linearLayout2.addView(xj0Var, w7.z5.t(70, 70, 1, 0, 16, 0, 0));
         TextView textView3 = new TextView(parentActivity);
-        com.google.android.gms.internal.cast.a6.m(20.0f, 2, textView3);
-        com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.G6, null, false, textView3, 17);
+        com.google.android.gms.internal.play_billing.k3.m(20.0f, 2, textView3);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.G6, null, false, textView3, 17);
         linearLayout2.addView(textView3, w7.z5.t(-1, -2, 1, 21, 12, 21, 0));
         TextView textView4 = new TextView(parentActivity);
         textView4.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false));
@@ -412,7 +412,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
             textView5.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
             int dp = AndroidUtilities.dp(24.0f);
             int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ka, false);
-            int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
+            int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
             textView5.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, x03, o10, o10));
             linearLayout2.addView(textView5, w7.z5.a(48.0f, 16.0f, 15.0f, 16.0f, 16.0f, -1, 0));
             textView5.setOnClickListener(new u61(w61Var, f71Var, tL_authorization, sessionsActivity));

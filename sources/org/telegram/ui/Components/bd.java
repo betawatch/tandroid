@@ -12,7 +12,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class bd {
     public float A;
@@ -105,15 +105,15 @@ public final class bd {
                 float f23 = f20 * sqrt;
                 float f24 = f19;
                 double lerp = AndroidUtilities.lerp(f15 - f23, f16 + f23, sin);
-                float f25 = (float) i0.a.f(dd.a(f22), lerp, f7);
+                float f25 = (float) i2.d.f(dd.a(f22), lerp, f7);
                 int i10 = width;
                 float sin2 = (float) ((Math.sin(dd.a(f22)) * lerp) + f10);
                 float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
-                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.f7.a(f25, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.cast.a6.A((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
+                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(v7.f7.a(f25, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.gms.internal.play_billing.k3.A((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
                 Paint paint = this.a;
                 paint.setAlpha(max);
                 float f26 = dpf2;
-                float sin3 = f26 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.gms.internal.cast.a6.A((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
+                float sin3 = f26 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.gms.internal.play_billing.k3.A((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
                 canvas.save();
                 canvas.translate(f25, sin2);
                 canvas.scale(sin3, sin3);

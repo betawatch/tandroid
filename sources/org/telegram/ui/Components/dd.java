@@ -25,7 +25,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class dd extends View {
     public static final int[] W;
@@ -399,7 +399,7 @@ public abstract class dd extends View {
                                 f18 = f31;
                                 double d15 = width6;
                                 float f34 = f30 + width4;
-                                double f35 = i0.a.f(a(f34), d15, rectF12.centerX());
+                                double f35 = i2.d.f(a(f34), d15, rectF12.centerX());
                                 z11 = z15;
                                 i12 = i15;
                                 f19 = abs;
@@ -417,12 +417,12 @@ public abstract class dd extends View {
                             path.arcTo(rectF12, f30 + width4, f33 - (width4 * 2.0f));
                             if (z11) {
                                 double d16 = width6;
-                                float f38 = (float) i0.a.f(a(r4), d16, rectF12.centerX());
+                                float f38 = (float) i2.d.f(a(r4), d16, rectF12.centerX());
                                 float sin2 = (float) ((Math.sin(a(r4)) * d16) + rectF12.centerY());
                                 rectF11.set(f38 - min3, sin2 - min3, f38 + min3, sin2 + min3);
                                 path.arcTo(rectF11, f18 - width4, 90.0f);
                                 double d17 = width7;
-                                float f39 = (float) i0.a.f(a(r4), d17, rectF2.centerX());
+                                float f39 = (float) i2.d.f(a(r4), d17, rectF2.centerX());
                                 float sin3 = (float) ((Math.sin(a(r4)) * d17) + rectF2.centerY());
                                 rectF11.set(f39 - min3, sin3 - min3, f39 + min3, sin3 + min3);
                                 path.arcTo(rectF11, (f18 - width5) + 90.0f, 90.0f);
@@ -432,7 +432,7 @@ public abstract class dd extends View {
                             if (z11) {
                                 double d18 = width7;
                                 float f40 = f30 + width5;
-                                double f41 = i0.a.f(a(f40), d18, rectF5.centerX());
+                                double f41 = i2.d.f(a(f40), d18, rectF5.centerX());
                                 double sin4 = (Math.sin(a(f40)) * d18) + rectF5.centerY();
                                 float f42 = (float) f41;
                                 float f43 = (float) sin4;

@@ -8,9 +8,9 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.va;
 import org.telegram.ui.Components.h9;
-import ug.q;
+import ug.r;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c extends va {
     public final a a0;
@@ -58,7 +58,7 @@ public final class c extends va {
             } else {
                 h9Var.i(-6631068, -11945404);
             }
-            String valueOf2 = String.valueOf(q.g() * prepaidGiveaway.quantity);
+            String valueOf2 = String.valueOf(r.g() * prepaidGiveaway.quantity);
             a aVar2 = this.a0;
             aVar2.f = valueOf2;
             aVar2.e = aVar2.a.measureText(valueOf2);

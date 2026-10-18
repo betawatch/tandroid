@@ -21,7 +21,7 @@ import c3.q;
 import c3.s;
 import c3.t;
 import c5.b0;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.m0;
 import e2.x;
 import e9.l0;
@@ -49,7 +49,7 @@ import org.telegram.tgnet.TLObject;
 import v7.u6;
 import z3.k;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class g implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -128,8 +128,8 @@ public final class g implements o {
         n0 = new byte[]{87, 69, 66, 86, 84, 84, 10, 10, 48, 48, 58, 48, 48, 58, 48, 48, 46, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 46, 48, 48, 48, 10};
         o0 = new UUID(72057594037932032L, -9223371306706625679L);
         HashMap hashMap = new HashMap();
-        a6.n(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
-        a6.n(180, hashMap, "htc_video_rotA-180", 270, "htc_video_rotA-270");
+        k3.n(0, hashMap, "htc_video_rotA-000", 90, "htc_video_rotA-090");
+        k3.n(180, hashMap, "htc_video_rotA-180", 270, "htc_video_rotA-270");
         p0 = DesugarCollections.unmodifiableMap(hashMap);
     }
 

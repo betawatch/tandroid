@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c3 extends View {
     public boolean a;
@@ -26,7 +26,7 @@ public final class c3 extends View {
         org.telegram.ui.ActionBar.d6 d6Var = this.c;
         Paint paint = this.b;
         if (z10) {
-            paint.setColor(i0.b.f(0.2f, -16777216, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ug, d6Var)));
+            paint.setColor(i0.a.f(0.2f, -16777216, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ug, d6Var)));
         } else {
             paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d7, d6Var));
         }

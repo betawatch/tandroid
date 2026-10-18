@@ -10,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x1 extends FrameLayout {
     public final TextView a;
@@ -34,7 +34,7 @@ public final class x1 extends FrameLayout {
         textView.setSingleLine(true);
         textView.setGravity(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        wh.o(h6.j5, d6Var, textView, 1, 16.0f);
+        kk.o(h6.j5, d6Var, textView, 1, 16.0f);
         addView(textView, w7.z5.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
     }
 

@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                                         if (list2.size() > 1) {
                                                             String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
                                                             if (string != null) {
-                                                                ktVar = (kt) r.c.e(1, list2);
+                                                                ktVar = (kt) r4.c.f(1, list2);
                                                                 int size = arrayList.size();
                                                                 int i15 = 0;
                                                                 while (true) {
@@ -110,7 +110,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                                                     }
                                                                 }
                                                             } else {
-                                                                ktVar = (kt) r.c.e(1, list2);
+                                                                ktVar = (kt) r4.c.f(1, list2);
                                                             }
                                                             ktVar3 = ktVar;
                                                         } else {
@@ -220,7 +220,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                                         if (list2.size() > 1) {
                                                             String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
                                                             if (string != null) {
-                                                                ktVar = (kt) r.c.e(1, list2);
+                                                                ktVar = (kt) r4.c.f(1, list2);
                                                                 int size = arrayList.size();
                                                                 int i15 = 0;
                                                                 while (true) {
@@ -234,7 +234,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                                                     }
                                                                 }
                                                             } else {
-                                                                ktVar = (kt) r.c.e(1, list2);
+                                                                ktVar = (kt) r4.c.f(1, list2);
                                                             }
                                                             ktVar3 = ktVar;
                                                         } else {

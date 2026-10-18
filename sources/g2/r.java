@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -93,7 +93,7 @@ public final class r extends c {
             URL url2 = new URL(url, str);
             String protocol = url2.getProtocol();
             if (!"https".equals(protocol) && !"http".equals(protocol)) {
-                throw new v(r.c.g("Unsupported protocol redirect: ", protocol), 2001);
+                throw new v(r4.c.h("Unsupported protocol redirect: ", protocol), 2001);
             }
             if (this.a || protocol.equals(url.getProtocol())) {
                 return url2;
@@ -120,7 +120,7 @@ public final class r extends c {
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
-                throw new v(new NoRouteToHostException(i0.a.j(i13, "Too many redirects: ")), 2001, 1);
+                throw new v(new NoRouteToHostException(i2.d.j(i13, "Too many redirects: ")), 2001, 1);
             }
             f7 = f(url, i10, bArr, j10, j11, z10, false, mVar.d);
             int responseCode = f7.getResponseCode();

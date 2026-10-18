@@ -53,7 +53,7 @@ import org.telegram.ui.o3;
 import org.telegram.ui.web.x0;
 import xf.f;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static e a;
@@ -446,7 +446,7 @@ public abstract class d {
                     m3Var = tabs.get(i10);
                     l4 l4Var = m3Var.J;
                     if (l4Var != null && !l4Var.d0.isEmpty()) {
-                        Object h = i0.a.h(1, m3Var.J.d0);
+                        Object h = i2.d.h(1, m3Var.J.d0);
                         if (h instanceof b3) {
                             x0 x0Var = ((b3) h).b;
                             if (x0Var == null && (o3VarArr = m3Var.J.u0) != null && (o3Var = o3VarArr[0]) != null) {

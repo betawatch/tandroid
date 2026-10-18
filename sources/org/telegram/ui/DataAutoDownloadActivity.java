@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.n2 {
     public final DownloadController.Preset E;
@@ -374,7 +374,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.n2 {
                 r8Var.a = textView;
                 AnimatorSet[] animatorSetArr2 = animatorSetArr;
                 org.telegram.ui.Cells.c5[] c5VarArr2 = c5VarArr;
-                org.telegram.messenger.wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, z11), 1, 16.0f, 1);
+                org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, z11), 1, 16.0f, 1);
                 textView.setMaxLines(1);
                 textView.setSingleLine(true);
                 textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -401,9 +401,9 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.n2 {
                 org.telegram.ui.Cells.r8 r8Var2 = r8VarArr[i21];
                 int i22 = i12;
                 org.telegram.ui.Cells.r8[] r8VarArr2 = r8VarArr;
-                ai.ob obVar = new ai.ob(dataAutoDownloadActivity, r8Var, r8VarArr2, i22, c5VarArr2, v8VarArr2, animatorSetArr2);
+                ai.pb pbVar = new ai.pb(dataAutoDownloadActivity, r8Var, r8VarArr2, i22, c5VarArr2, v8VarArr2, animatorSetArr2);
                 i12 = i22;
-                r8Var2.setOnClickListener(obVar);
+                r8Var2.setOnClickListener(pbVar);
                 linearLayout.addView(r8VarArr2[i21], w7.z5.d(50.0f, -1));
                 i21++;
                 r8VarArr = r8VarArr2;

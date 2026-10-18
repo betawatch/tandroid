@@ -8,7 +8,7 @@ import java.util.List;
 import w7.f0;
 import w7.z6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class j extends o6.a {
     public static final Parcelable.Creator<j> CREATOR = new m(3);
@@ -56,7 +56,7 @@ public final class j extends o6.a {
             int length2 = array2.length;
             for (int i13 = 0; i13 < length2; i13++) {
                 if (array2[i13] == null) {
-                    throw new NullPointerException(i0.a.j(i13, "at index "));
+                    throw new NullPointerException(i2.d.j(i13, "at index "));
                 }
             }
             if (length2 == 0) {

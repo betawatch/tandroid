@@ -22,7 +22,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.te1;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Runnable {
     public final /* synthetic */ int a;
@@ -207,7 +207,7 @@ public final /* synthetic */ class u implements Runnable {
                 ((org.telegram.ui.web.k) this.b).w.W2.N(true);
                 break;
             case 23:
-                org.telegram.ui.web.i iVar = ((org.telegram.ui.web.n) this.b).s.e;
+                org.telegram.ui.web.i iVar = ((org.telegram.ui.web.o) this.b).s.e;
                 if (iVar != null) {
                     iVar.d();
                     break;

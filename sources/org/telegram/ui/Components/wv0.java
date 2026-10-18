@@ -15,7 +15,7 @@ import org.telegram.messenger.LocationController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wv0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final ai.u1 b;
@@ -63,7 +63,7 @@ public final class wv0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
         int i12 = org.telegram.ui.ActionBar.h6.ii;
-        com.google.android.gms.internal.cast.a6.o(i12, null, false, textView, 17);
+        com.google.android.gms.internal.play_billing.k3.o(i12, null, false, textView, 17);
         textView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, i12, false) & 268435455, 0, -1));
         textView.setPadding(AndroidUtilities.dp(33.0f), 0, AndroidUtilities.dp(33.0f), 0);
         textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
@@ -75,14 +75,14 @@ public final class wv0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         linearLayout.setPadding(AndroidUtilities.dp(33.0f), 0, AndroidUtilities.dp(33.0f), 0);
         lg0Var.addView(linearLayout, w7.z5.e(-2, -1, 53));
         TextView textView2 = new TextView(context);
-        org.telegram.messenger.wh.k(13.0f, 1, textView2);
-        com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.li, null, false, textView2, 17);
+        org.telegram.messenger.kk.k(13.0f, 1, textView2);
+        com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.li, null, false, textView2, 17);
         textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(11.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ki, false)));
         textView2.setMinWidth(AndroidUtilities.dp(23.0f));
         textView2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-        TextView i13 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView2, w7.z5.t(-2, 23, 16, 0, 0, 10, 0), context);
+        TextView i13 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.z5.t(-2, 23, 16, 0, 0, 10, 0), context);
         i13.setTextSize(1, 14.0f);
-        com.google.android.gms.internal.cast.a6.o(i12, null, false, i13, 17);
+        com.google.android.gms.internal.play_billing.k3.o(i12, null, false, i13, 17);
         i13.setCompoundDrawablePadding(AndroidUtilities.dp(8.0f));
         i13.setText(LocaleController.getString(R.string.Send).toUpperCase());
         i13.setTypeface(AndroidUtilities.bold());

@@ -32,7 +32,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class qy implements NotificationCenter.NotificationCenterDelegate {
     public static final HashSet L = new HashSet();
@@ -517,10 +517,10 @@ public class qy implements NotificationCenter.NotificationCenterDelegate {
                         org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) childAt;
                         messageObject = u1Var.getMessageObject();
                         imageReceiver = u1Var.getPhotoImage();
-                    } else if (childAt instanceof org.telegram.ui.Cells.x0) {
-                        org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) childAt;
-                        messageObject = x0Var.getMessageObject();
-                        imageReceiver = x0Var.getPhotoImage();
+                    } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
+                        messageObject = w0Var.getMessageObject();
+                        imageReceiver = w0Var.getPhotoImage();
                     } else {
                         messageObject = null;
                         imageReceiver = null;

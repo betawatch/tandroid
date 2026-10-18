@@ -24,7 +24,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.te1;
 import org.telegram.ui.xx;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -57,7 +57,7 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                 if (h1Var.s.W) {
                     int i10 = this.b;
                     if (!MessagesController.getInstance(i10).isFrozen()) {
-                        fa x10 = fa.x(i10, h1Var.H.a);
+                        ga x10 = ga.x(i10, h1Var.H.a);
                         ag.a l4 = x10.e ? ag.a.l(x10.p()) : null;
                         if (!h1Var.c && (l4 == null || l4.b < h1Var.H.b)) {
                             ag.a aVar = h1Var.H;
@@ -70,7 +70,7 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                             } else {
                                 long a2 = aVar.a();
                                 long j10 = this.c;
-                                new bd(context, d6Var, a2, 13, og.d.h(i10, j10), null, j10).show();
+                                new cd(context, d6Var, a2, 13, og.d.h(i10, j10), null, j10).show();
                                 break;
                             }
                         } else {
@@ -88,7 +88,7 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                 final gi.l1 l1Var = (gi.l1) this.d;
                 TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage2 = (TLRPC.TL_messages_preparedInlineMessage) this.e;
                 final s0 s0Var = (s0) this.f;
-                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.h;
+                org.telegram.ui.web.t tVar = (org.telegram.ui.web.t) this.h;
                 final org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
                     l1Var.b0 = true;
@@ -110,7 +110,7 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                             TLRPC.InlineQueryPeerType inlineQueryPeerType = arrayList.get(i11);
                             i11++;
                             TLRPC.InlineQueryPeerType inlineQueryPeerType2 = inlineQueryPeerType;
-                            org.telegram.ui.web.s sVar2 = sVar;
+                            org.telegram.ui.web.t tVar2 = tVar;
                             if (inlineQueryPeerType2 instanceof TLRPC.TL_inlineQueryPeerTypePM) {
                                 z10 = true;
                                 bundle.putBoolean("allowUsers", true);
@@ -129,10 +129,10 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                                 }
                             }
                             tL_messages_preparedInlineMessage2 = tL_messages_preparedInlineMessage;
-                            sVar = sVar2;
+                            tVar = tVar2;
                         }
                     }
-                    org.telegram.ui.web.s sVar3 = sVar;
+                    org.telegram.ui.web.t tVar3 = tVar;
                     final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage3 = tL_messages_preparedInlineMessage2;
                     gi.j1 j1Var = new gi.j1(l1Var, bundle, s0Var);
                     final int i12 = this.b;
@@ -208,7 +208,7 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                     };
                     U.presentFragment(j1Var);
                     l1Var.dismiss();
-                    sVar3.run();
+                    tVar3.run();
                     break;
                 }
                 break;
@@ -247,13 +247,13 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ e1(gi.l1 l1Var, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, s0 s0Var, int i10, long j10, org.telegram.ui.web.s sVar) {
+    public /* synthetic */ e1(gi.l1 l1Var, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, s0 s0Var, int i10, long j10, org.telegram.ui.web.t tVar) {
         this.d = l1Var;
         this.e = tL_messages_preparedInlineMessage;
         this.f = s0Var;
         this.b = i10;
         this.c = j10;
-        this.h = sVar;
+        this.h = tVar;
     }
 
     public /* synthetic */ e1(of0 of0Var, String str, long j10, String str2, String str3, int i10) {

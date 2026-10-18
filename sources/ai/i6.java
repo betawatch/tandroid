@@ -33,9 +33,9 @@ import org.telegram.ui.Components.w31;
 import org.telegram.ui.of0;
 import org.telegram.ui.vm0;
 import org.telegram.ui.xm0;
-import org.telegram.ui.xq0;
+import org.telegram.ui.yq0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, md0, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy, OnFailureListener, Utilities.Callback2Return {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, m
                 h6 h6Var = (h6) k6Var.o.get(k6Var.q);
                 if (h6Var != null) {
                     ag.a aVar = h6Var.c;
-                    fa x10 = fa.x(this.b, k6Var.q);
+                    ga x10 = ga.x(this.b, k6Var.q);
                     ag.a l4 = x10.e ? ag.a.l(x10.p()) : null;
                     if (l4 != null && aVar.b > l4.b) {
                         ag.c cVar = k6Var.q;
@@ -75,7 +75,7 @@ public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, m
                                 break;
                             }
                         } else {
-                            new bd(context, d6Var, aVar.a(), 14, null, null, 0L).show();
+                            new cd(context, d6Var, aVar.a(), 14, null, null, 0L).show();
                             break;
                         }
                     } else {
@@ -101,12 +101,12 @@ public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, m
         rg.m2 m2Var = (rg.m2) this.c;
         Bitmap bitmap = (Bitmap) this.d;
         int i10 = this.b;
-        xq0 xq0Var = (xq0) this.e;
+        yq0 yq0Var = (yq0) this.e;
         gi.g4 g4Var = (gi.g4) this.f;
         m2Var.x = false;
         FileLog.e(exc);
         if ((exc instanceof nb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && m2Var.isAttachedToWindow()) {
-            AndroidUtilities.runOnUIThread(new az0(m2Var, bitmap, i10, xq0Var, 20), 2000L);
+            AndroidUtilities.runOnUIThread(new az0(m2Var, bitmap, i10, yq0Var, 20), 2000L);
         } else {
             g4Var.run(new ArrayList());
         }
@@ -249,7 +249,7 @@ public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, m
             i80 H = i80.H(n2Var, view);
             H.W(new ls0(is0Var));
             H.l(R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new yh.r1(is0Var, 0), h);
-            H.l(R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new hg.d1(is0Var, i12, publicUsername, tL_starGiftCollection2, context, d6Var, n2Var, 16), !TextUtils.isEmpty(publicUsername));
+            H.l(R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new hg.d1(is0Var, i12, publicUsername, tL_starGiftCollection2, context, d6Var, n2Var, 17), !TextUtils.isEmpty(publicUsername));
             H.l(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new uf.c(18, is0Var, tL_starGiftCollection2), h);
             H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new yh.r1(is0Var, 1), h);
             H.m(h, R.drawable.msg_delete, LocaleController.getString(R.string.Gift2CollectionsDelete), true, new w31(is0Var, i11, tL_starGiftCollection2, 25));

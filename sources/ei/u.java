@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.rc0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class u extends Drawable {
     public final /* synthetic */ int a = 1;
@@ -91,8 +91,8 @@ public final class u extends Drawable {
                 canvas.restore();
                 if (e > 0.0f) {
                     if (this.f) {
-                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), org.telegram.ui.Cells.t0.b(16.66f, e, centerX - AndroidUtilities.dpf2(8.33f)), org.telegram.ui.Cells.t0.b(16.66f, e, centerY - AndroidUtilities.dpf2(8.33f)), paint2);
-                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), org.telegram.ui.Cells.t0.b(16.66f, e, centerX - AndroidUtilities.dpf2(8.33f)), org.telegram.ui.Cells.t0.b(16.66f, e, centerY - AndroidUtilities.dpf2(8.33f)), paint);
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), org.telegram.ui.Cells.c1.b(16.66f, e, centerX - AndroidUtilities.dpf2(8.33f)), org.telegram.ui.Cells.c1.b(16.66f, e, centerY - AndroidUtilities.dpf2(8.33f)), paint2);
+                        canvas.drawLine(centerX - AndroidUtilities.dpf2(8.33f), centerY - AndroidUtilities.dpf2(8.33f), org.telegram.ui.Cells.c1.b(16.66f, e, centerX - AndroidUtilities.dpf2(8.33f)), org.telegram.ui.Cells.c1.b(16.66f, e, centerY - AndroidUtilities.dpf2(8.33f)), paint);
                     } else {
                         canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e), paint2);
                         canvas.drawLine(AndroidUtilities.dpf2(8.33f) + centerX, AndroidUtilities.dpf2(8.33f) + centerY, (AndroidUtilities.dpf2(8.33f) + centerX) - (AndroidUtilities.dpf2(16.66f) * e), (AndroidUtilities.dpf2(8.33f) + centerY) - (AndroidUtilities.dpf2(16.66f) * e), paint);
@@ -216,7 +216,7 @@ public final class u extends Drawable {
             float f22 = dpf25;
             float f23 = f21 + f20;
             float f24 = dpf26;
-            rectF2.set(f16 + f15, f23, r.c.c(max, i15 + 1, f13, f16), r.c.c(max2, i14 + 1, f17, f21));
+            rectF2.set(f16 + f15, f23, r4.c.c(max, i15 + 1, f13, f16), r4.c.c(max2, i14 + 1, f17, f21));
             float[] fArr = (float[]) this.g;
             float f25 = 0.0f;
             float f26 = (i15 == 0 && i14 == 0) ? f24 : 0.0f;

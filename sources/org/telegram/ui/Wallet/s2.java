@@ -22,7 +22,7 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.pa0;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class s2 {
     public static void a(final int i10, final Utilities.CallbackReturn callbackReturn, final Utilities.Callback2 callback2, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity, final Utilities.Callback3 callback3, final boolean z10, final boolean z11, final pa0 pa0Var) {
@@ -175,7 +175,7 @@ public abstract class s2 {
                                     textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i15, false));
                                     textView2.setTextSize(1, 16.0f);
                                     textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                                    org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText1, textView2);
+                                    org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText1, textView2);
                                     if (LocaleController.isRTL) {
                                         linearLayout2.addView(textView2, w7.z5.n(-1, -2));
                                         linearLayout2.addView(imageView, w7.z5.q(-2, -2, 5));
@@ -183,7 +183,7 @@ public abstract class s2 {
                                         linearLayout2.addView(imageView, w7.z5.n(-2, -2));
                                         linearLayout2.addView(textView2, w7.z5.n(-1, -2));
                                     }
-                                    LinearLayout e = org.telegram.messenger.q.e(activity3, 0);
+                                    LinearLayout e = org.telegram.messenger.g0.e(activity3, 0);
                                     linearLayout.addView(e, w7.z5.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
                                     ImageView imageView2 = new ImageView(activity3);
                                     imageView2.setImageResource(R.drawable.list_circle);
@@ -193,7 +193,7 @@ public abstract class s2 {
                                     textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i15, false));
                                     textView3.setTextSize(1, 16.0f);
                                     textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                                    org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText2, textView3);
+                                    org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText2, textView3);
                                     if (LocaleController.isRTL) {
                                         e.addView(textView3, w7.z5.n(-1, -2));
                                         i13 = 5;

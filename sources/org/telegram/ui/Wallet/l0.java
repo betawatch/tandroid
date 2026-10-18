@@ -12,13 +12,13 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.lg0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l0 {
     public boolean h;
     public boolean i;
     public final /* synthetic */ m0 l;
-    public final c3 a = new c3();
+    public final d3 a = new d3();
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
     public final HashSet d = new HashSet();
@@ -47,7 +47,7 @@ public final class l0 {
         if (TextUtils.isEmpty(optString) || TextUtils.isEmpty(optString2)) {
             return null;
         }
-        return a1.g.D(optString, ":", optString2);
+        return a1.g.C(optString, ":", optString2);
     }
 
     public final void a() {
@@ -214,10 +214,10 @@ public final class l0 {
         arrayList3.addAll(arrayList2);
         arrayList3.addAll(arrayList);
         List.-EL.sort(arrayList3, new lg0(10));
-        c3 c3Var = this.a;
-        HashSet hashSet2 = c3Var.a;
-        HashSet hashSet3 = c3Var.a;
-        HashMap hashMap = c3Var.b;
+        d3 d3Var = this.a;
+        HashSet hashSet2 = d3Var.a;
+        HashSet hashSet3 = d3Var.a;
+        HashMap hashMap = d3Var.b;
         hashSet2.clear();
         hashMap.clear();
         int size3 = arrayList3.size();
@@ -230,6 +230,6 @@ public final class l0 {
             }
         }
         hashMap.clear();
-        c3Var.b(4, new ArrayList(hashSet3));
+        d3Var.b(4, new ArrayList(hashSet3));
     }
 }

@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a41 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class a41 implements ValueAnimator.AnimatorUpdateLi
                 if (view != null) {
                     view.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 }
-                int v = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G8, z51Var2.Z0), i0.b.o(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
+                int v = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G8, z51Var2.Z0), i0.a.o(-16777216, (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * 255.0f)));
                 View view2 = z51Var2.m0;
                 if (view2 != null) {
                     view2.getBackground().setColorFilter(new PorterDuffColorFilter(v, PorterDuff.Mode.MULTIPLY));

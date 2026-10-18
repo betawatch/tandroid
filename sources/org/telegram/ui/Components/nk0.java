@@ -21,7 +21,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class nk0 extends FrameLayout {
     public final Paint a;
@@ -130,21 +130,21 @@ public final class nk0 extends FrameLayout {
         this.n = f7;
         int i10 = org.telegram.ui.ActionBar.h6.Cj;
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 16);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 16);
         int i11 = org.telegram.ui.ActionBar.h6.Fj;
-        int f10 = i0.b.f(f7, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Ej, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false));
-        this.a.setColor(i0.b.f(f7, o10, x02));
+        int f10 = i0.a.f(f7, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Ej, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false));
+        this.a.setColor(i0.a.f(f7, o10, x02));
         this.f.setTextColor(f10);
         this.r.setColorFilter(new PorterDuffColorFilter(f10, PorterDuff.Mode.MULTIPLY));
         float f11 = this.c;
         View view = this.h;
         if (f7 == 1.0f) {
             int i12 = (int) f11;
-            int o11 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i11, false), 76);
+            int o11 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i11, false), 76);
             view.setBackground(org.telegram.ui.ActionBar.h6.j0(i12, i12, i12, i12, 0, o11, o11));
         } else if (f7 == 0.0f) {
             int i13 = (int) f11;
-            int o12 = i0.b.o(x02, 76);
+            int o12 = i0.a.o(x02, 76);
             view.setBackground(org.telegram.ui.ActionBar.h6.j0(i13, i13, i13, i13, 0, o12, o12));
         }
         invalidate();

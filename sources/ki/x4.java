@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x4 {
     public static ColorMatrixColorFilter f;
@@ -57,7 +57,7 @@ public final class x4 {
         } else {
             String str = tVar2.b ? "v" : tVar2.c ? "a" : "p";
             if (tVar2.e != null) {
-                StringBuilder i11 = r.c.i(str, ":local:");
+                StringBuilder i11 = r4.c.i(str, ":local:");
                 i11.append(this.e.e);
                 sb2 = i11.toString();
             } else {
@@ -74,7 +74,7 @@ public final class x4 {
                         }
                     }
                 }
-                StringBuilder i12 = r.c.i(str, ":");
+                StringBuilder i12 = r4.c.i(str, ":");
                 i12.append(this.e.a);
                 i12.append(":");
                 i12.append(j10);

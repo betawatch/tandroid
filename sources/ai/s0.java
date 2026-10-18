@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.web.BotWebViewContainer$BotWebViewProxy;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class s0 implements Utilities.Callback2 {
                 x3Var2.k(11.0f, 8.0f, 11.0f, 7.0f);
                 x3Var2.q(10.0f);
                 x3Var2.s(replaceTags);
-                x3Var2.l0 = new w2(x3Var2, 1);
+                x3Var2.l0 = new x2(x3Var2, 1);
                 x3Var2.setTranslationY((-AndroidUtilities.dp(100.0f)) + y3);
                 x3Var2.h = AndroidUtilities.dp(300.0f);
                 x3Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
@@ -104,7 +104,7 @@ public final /* synthetic */ class s0 implements Utilities.Callback2 {
                     if (g0Var != null) {
                         g0Var.c();
                     }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.t3(22, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.u3(22, botWebViewContainer$BotWebViewProxy, arrayList), 500L);
                     break;
                 }
             case 7:
@@ -138,7 +138,7 @@ public final /* synthetic */ class s0 implements Utilities.Callback2 {
                 x3Var4.k(11.0f, 8.0f, 11.0f, 7.0f);
                 x3Var4.q(10.0f);
                 x3Var4.s(replaceTags2);
-                x3Var4.l0 = new w2(x3Var4, 3);
+                x3Var4.l0 = new x2(x3Var4, 3);
                 x3Var4.setTranslationY((-AndroidUtilities.dp(100.0f)) + y10);
                 x3Var4.h = AndroidUtilities.dp(300.0f);
                 x3Var4.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
@@ -152,9 +152,9 @@ public final /* synthetic */ class s0 implements Utilities.Callback2 {
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.d;
                 cVar.b();
                 if (((Boolean) obj).booleanValue()) {
-                    q2 q2Var = g4Var.f0;
-                    if (q2Var != null) {
-                        q2Var.run(tL_starGiftUnique);
+                    r2 r2Var = g4Var.f0;
+                    if (r2Var != null) {
+                        r2Var.run(tL_starGiftUnique);
                     }
                     g4Var.dismiss();
                     break;

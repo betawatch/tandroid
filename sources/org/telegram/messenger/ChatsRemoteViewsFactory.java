@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.m10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -307,7 +307,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
                             charSequence = "🎮 " + messageObject.messageOwner.media.game.title;
                         } else if (messageObject.type == 14) {
-                            charSequence = com.google.android.gms.internal.cast.a6.k("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
+                            charSequence = com.google.android.gms.internal.play_billing.k3.k("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
                         } else {
                             charSequence = messageObject.messageText;
                             AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.d6) null);
@@ -364,7 +364,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             color = this.mContext.getResources().getColor(R.color.widget_action_text);
                             TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
                             Object[] objArr3 = new Object[2];
-                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? a1.g.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? a1.g.p("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? r.c.h("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
+                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? a1.g.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? a1.g.p("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? org.telegram.ui.Cells.c1.k("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
                             objArr3[i11] = string2;
                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr3));
                             try {

@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.y5;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d extends FrameLayout implements y5 {
     public final d6 a;
@@ -47,11 +47,11 @@ public final class d extends FrameLayout implements y5 {
         int i10 = h6.Wk;
         d6 d6Var = this.a;
         int i11 = (int) 153.0f;
-        this.c.setTextColor(i0.b.o(h6.w0(i10, d6Var), i11));
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.b.o(h6.w0(i10, d6Var), i11), PorterDuff.Mode.MULTIPLY);
+        this.c.setTextColor(i0.a.o(h6.w0(i10, d6Var), i11));
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.o(h6.w0(i10, d6Var), i11), PorterDuff.Mode.MULTIPLY);
         ImageView imageView = this.b;
         imageView.setColorFilter(porterDuffColorFilter);
-        imageView.setBackground(h6.g0(i0.b.o(h6.w0(i10, d6Var), (int) 25.5f), 1, -1));
+        imageView.setBackground(h6.g0(i0.a.o(h6.w0(i10, d6Var), (int) 25.5f), 1, -1));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {

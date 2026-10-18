@@ -1,6 +1,6 @@
 package ei;
 
-import ai.le;
+import ai.me;
 import android.animation.ValueAnimator;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -22,7 +22,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
@@ -95,7 +95,7 @@ public final /* synthetic */ class p6 implements Runnable {
                     }
                     pVar.w = ValueAnimator.ofFloat(0.0f, 1.0f);
                     pVar.w.addUpdateListener(new c7(pVar, d7Var.getScaleX(), width, ((b2Var.getWidth() / 2.0f) + b2Var.getX()) - ((d7Var.getWidth() / 2.0f) + d7Var.getX()), ((b2Var.getHeight() / 2.0f) + b2Var.getY()) - ((d7Var.getHeight() / 2.0f) + d7Var.getY()), 0));
-                    pVar.w.addListener(new le(5, pVar, b2Var));
+                    pVar.w.addListener(new me(5, pVar, b2Var));
                     pVar.w.setDuration(320L);
                     pVar.w.setInterpolator(bs.h);
                     pVar.v = b2Var;
@@ -151,7 +151,7 @@ public final /* synthetic */ class p6 implements Runnable {
                 ClipboardManager clipboardManager = (ClipboardManager) j8Var.getContext().getSystemService("clipboard");
                 org.telegram.ui.Cells.g3 g3Var = j8Var.Y.b;
                 boolean z10 = (TextUtils.isEmpty(g3Var.getText()) || TextUtils.equals(g3Var.getText(), "https://") || TextUtils.isEmpty(g3Var.getText().toString())) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                wh.t(textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f), bs.h, 300L);
+                kk.t(textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.7f).scaleY(z10 ? 1.0f : 0.7f), bs.h, 300L);
                 break;
             case 9:
                 r9 r9Var = (r9) this.b;

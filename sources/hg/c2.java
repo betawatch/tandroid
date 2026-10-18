@@ -1,6 +1,6 @@
 package hg;
 
-import ai.x2;
+import ai.y2;
 import android.text.TextUtils;
 import android.util.LongSparseArray;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.p51;
 import org.telegram.ui.Components.pq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c2 implements Runnable {
     public final /* synthetic */ e2 a;
@@ -212,7 +212,7 @@ public final class c2 implements Runnable {
             TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
             tL_messages_getStickers.emoticon = e2Var.R;
             tL_messages_getStickers.hash = 0L;
-            e2Var.O = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getStickers, new x2(this, tL_messages_getStickers, arrayList2, longSparseArray, 8));
+            e2Var.O = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getStickers, new y2(this, tL_messages_getStickers, arrayList2, longSparseArray, 8));
         }
         e2Var.l();
     }

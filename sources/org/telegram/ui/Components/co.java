@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class co extends hm0 {
     public final Context c;
@@ -245,7 +245,7 @@ public final class co extends hm0 {
                 l4Var = new org.telegram.ui.Cells.l4(this.c, org.telegram.ui.ActionBar.h6.L6, 21, 15, false, foVar.a);
                 break;
             case 1:
-                View z6Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+                View z6Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
                 new zq(new ColorDrawable(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.a7, d6Var)), org.telegram.ui.ActionBar.h6.W0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7)).w = true;
                 l4Var = z6Var;
                 break;
@@ -382,9 +382,9 @@ public final class co extends hm0 {
                 l4Var = view;
                 break;
             case 9:
-                View hcVar = new ai.hc(this, context, 15);
-                hcVar.setTag(-33024);
-                view = hcVar;
+                View icVar = new ai.ic(this, context, 15);
+                icVar.setTag(-33024);
+                view = icVar;
                 l4Var = view;
                 break;
             case 10:
@@ -393,7 +393,7 @@ public final class co extends hm0 {
                 l4Var = z5Var;
                 break;
         }
-        return com.google.android.gms.internal.cast.a6.l(l4Var, l4Var, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(l4Var, l4Var, -1, -2);
     }
 
     @Override // s4.g0

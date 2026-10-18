@@ -40,7 +40,6 @@ import e9.l0;
 import g2.d0;
 import g2.x;
 import hi.t;
-import i2.l;
 import j$.util.Objects;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -53,10 +52,10 @@ import java.util.concurrent.Executor;
 import k2.y;
 import r2.n;
 import r2.p;
-import u2.c0;
-import u2.g0;
+import u2.b0;
+import u2.f0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class i implements b {
     public y0 E;
@@ -105,14 +104,14 @@ public final class i implements b {
     }
 
     @Override // j2.b
-    public final void a(i2.d dVar) {
-        this.O += dVar.g;
-        this.P += dVar.e;
+    public final void a(i2.e eVar) {
+        this.O += eVar.g;
+        this.P += eVar.e;
     }
 
     @Override // j2.b
-    public final void b(c0 c0Var) {
-        this.M = c0Var.a;
+    public final void b(b0 b0Var) {
+        this.M = b0Var.a;
     }
 
     @Override // j2.b
@@ -292,10 +291,10 @@ public final class i implements b {
             if (i28 == 1001) {
                 u0Var = new u0(20, 0);
             } else {
-                if (y0Var instanceof l) {
-                    l lVar = (l) y0Var;
-                    z10 = lVar.s == 1;
-                    i10 = lVar.y;
+                if (y0Var instanceof i2.m) {
+                    i2.m mVar = (i2.m) y0Var;
+                    z10 = mVar.s == 1;
+                    i10 = mVar.y;
                 } else {
                     z10 = false;
                     i10 = 0;
@@ -703,18 +702,18 @@ public final class i implements b {
     }
 
     @Override // j2.b
-    public final void e(a aVar, c0 c0Var) {
-        g0 g0Var = aVar.d;
-        if (g0Var == null) {
+    public final void e(a aVar, b0 b0Var) {
+        f0 f0Var = aVar.d;
+        if (f0Var == null) {
             return;
         }
-        w wVar = c0Var.c;
+        w wVar = b0Var.c;
         wVar.getClass();
-        int i10 = c0Var.d;
+        int i10 = b0Var.d;
         o1 o1Var = aVar.b;
-        g0Var.getClass();
-        a5.a aVar2 = new a5.a(wVar, i10, this.c.d(o1Var, g0Var), 9);
-        int i11 = c0Var.b;
+        f0Var.getClass();
+        a5.a aVar2 = new a5.a(wVar, i10, this.c.d(o1Var, f0Var), 9);
+        int i11 = b0Var.b;
         if (i11 != 0) {
             if (i11 == 1) {
                 this.G = aVar2;
@@ -732,9 +731,9 @@ public final class i implements b {
 
     @Override // j2.b
     public final void f(a aVar, int i10, long j10) {
-        g0 g0Var = aVar.d;
-        if (g0Var != null) {
-            String d = this.c.d(aVar.b, g0Var);
+        f0 f0Var = aVar.d;
+        if (f0Var != null) {
+            String d = this.c.d(aVar.b, f0Var);
             HashMap hashMap = this.r;
             Long l4 = (Long) hashMap.get(d);
             HashMap hashMap2 = this.n;
@@ -798,10 +797,10 @@ public final class i implements b {
         return this.d.getSessionId();
     }
 
-    public final void r(o1 o1Var, g0 g0Var) {
+    public final void r(o1 o1Var, f0 f0Var) {
         int b10;
         PlaybackMetrics.Builder builder = this.v;
-        if (g0Var == null || (b10 = o1Var.b(g0Var.a)) == -1) {
+        if (f0Var == null || (b10 = o1Var.b(f0Var.a)) == -1) {
             return;
         }
         l1 l1Var = this.h;
@@ -824,18 +823,18 @@ public final class i implements b {
     }
 
     public final void s(a aVar, String str) {
-        g0 g0Var = aVar.d;
-        if (g0Var == null || !g0Var.b()) {
+        f0 f0Var = aVar.d;
+        if (f0Var == null || !f0Var.b()) {
             p();
             this.s = str;
             this.v = new PlaybackMetrics.Builder().setPlayerName("AndroidXMedia3").setPlayerVersion("1.10.1");
-            r(aVar.b, g0Var);
+            r(aVar.b, f0Var);
         }
     }
 
     public final void t(a aVar, String str) {
-        g0 g0Var = aVar.d;
-        if ((g0Var == null || !g0Var.b()) && str.equals(this.s)) {
+        f0 f0Var = aVar.d;
+        if ((f0Var == null || !f0Var.b()) && str.equals(this.s)) {
             p();
         }
         this.n.remove(str);

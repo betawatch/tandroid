@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class tm0 extends org.telegram.ui.Components.ow0 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int R = 0;
@@ -77,7 +77,7 @@ public final class tm0 extends org.telegram.ui.Components.ow0 implements Notific
         TextView textView2 = new TextView(context);
         this.f = textView2;
         int i12 = org.telegram.ui.ActionBar.h6.G6;
-        org.telegram.messenger.q.m(18.0f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), 1, textView2);
+        org.telegram.messenger.g0.m(18.0f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), 1, textView2);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         textView2.setGravity(49);
@@ -416,7 +416,7 @@ public final class tm0 extends org.telegram.ui.Components.ow0 implements Notific
         if (this.a == null) {
             return;
         }
-        String g10 = org.telegram.messenger.wh.g(new StringBuilder("+"), this.a, jf.b.c());
+        String g10 = org.telegram.messenger.kk.g(new StringBuilder("+"), this.a, jf.b.c());
         if (i12 == 2) {
             charSequence = AndroidUtilities.replaceTags(LocaleController.formatString("SentSmsCode", R.string.SentSmsCode, LocaleController.addNbsp(g10)));
         } else if (i12 == 3) {
@@ -503,7 +503,7 @@ public final class tm0 extends org.telegram.ui.Components.ow0 implements Notific
         }
         LinearLayout linearLayout = this.c;
         int measuredHeight4 = linearLayout.getMeasuredHeight();
-        int C = i0.a.C(i14 - bottom, measuredHeight4, 2, bottom);
+        int C = i2.d.C(i14 - bottom, measuredHeight4, 2, bottom);
         linearLayout.layout(linearLayout.getLeft(), C, linearLayout.getRight(), measuredHeight4 + C);
     }
 

@@ -28,7 +28,7 @@ import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 import w7.w6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -1157,7 +1157,7 @@ public final class g {
         }
         int readInt = fVar.readInt();
         if (readInt < 8) {
-            throw new IOException(i0.a.j(readInt, "Invalid first Ifd offset: "));
+            throw new IOException(i2.d.j(readInt, "Invalid first Ifd offset: "));
         }
         int i11 = readInt - 8;
         if (i11 > 0) {
@@ -1172,7 +1172,7 @@ public final class g {
             if (i10 >= hashMapArr.length) {
                 return;
             }
-            StringBuilder l4 = i0.a.l(i10, "The size of tag group[", "]: ");
+            StringBuilder l4 = i2.d.l(i10, "The size of tag group[", "]: ");
             l4.append(hashMapArr[i10].size());
             Log.d("ExifInterface", l4.toString());
             for (Map.Entry entry : hashMapArr[i10].entrySet()) {
@@ -1189,11 +1189,11 @@ public final class g {
         v(fVar, i10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0172  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0179  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0262  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x027d  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02b6  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0171  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0178  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x027c  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02b5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

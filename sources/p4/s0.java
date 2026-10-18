@@ -35,25 +35,25 @@ import qg.f1;
 import rg.v2;
 import s4.b1;
 import sg.o1;
-import ug.l1;
-import ug.x0;
+import ug.m1;
+import ug.y0;
 import w7.t6;
 import x7.a7;
 import x7.fa;
 import x7.m7;
 import x7.o7;
 import x7.z6;
-import z7.fe;
-import z7.gd;
-import z7.hb;
+import z7.ee;
+import z7.fd;
+import z7.gb;
 import z7.i1;
+import z7.ib;
 import z7.j1;
-import z7.jb;
-import z7.na;
-import z7.ng;
-import z7.yf;
+import z7.ma;
+import z7.mg;
+import z7.xf;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -201,7 +201,7 @@ public final class s0 implements Runnable {
         b1 b1Var;
         int height;
         int R;
-        i2.g0 g0Var;
+        i2.h0 h0Var;
         e9.m mVar = null;
         int i12 = 3;
         switch (this.a) {
@@ -343,7 +343,7 @@ public final class s0 implements Runnable {
                 sg.s0 s0Var = (sg.s0) this.b;
                 ArrayList arrayList = s0Var.e3;
                 if (s0Var.l3) {
-                    if (!arrayList.isEmpty() && (R = RecyclerView.R((o1) i0.a.h(1, arrayList))) >= 0) {
+                    if (!arrayList.isEmpty() && (R = RecyclerView.R((o1) i2.d.h(1, arrayList))) >= 0) {
                         View m10 = s0Var.W2.m(R + 1);
                         if (m10 != null) {
                             s0Var.b3 = false;
@@ -356,15 +356,15 @@ public final class s0 implements Runnable {
                 }
                 return;
             case 6:
-                si.t0 t0Var = (si.t0) this.b;
-                if (t0Var.W == 5 && (g0Var = t0Var.S) != null && t0Var.x) {
-                    long M0 = g0Var.M0();
-                    long j12 = t0Var.G;
-                    if (M0 < j12 || M0 >= t0Var.H) {
-                        t0Var.S.Z0(5, j12);
+                si.s0 s0Var2 = (si.s0) this.b;
+                if (s0Var2.W == 5 && (h0Var = s0Var2.S) != null && s0Var2.x) {
+                    long M0 = h0Var.M0();
+                    long j12 = s0Var2.G;
+                    if (M0 < j12 || M0 >= s0Var2.H) {
+                        s0Var2.S.Z0(5, j12);
                     }
-                    t0Var.d.getClass();
-                    t0Var.i.postDelayed(this, 33L);
+                    s0Var2.d.getClass();
+                    s0Var2.i.postDelayed(this, 33L);
                     return;
                 }
                 return;
@@ -406,18 +406,18 @@ public final class s0 implements Runnable {
                 }
                 return;
             case 8:
-                x0 x0Var = (x0) this.b;
-                String str = x0Var.n0;
+                y0 y0Var = (y0) this.b;
+                String str = y0Var.n0;
                 if (str != null) {
-                    x0Var.U(x0Var.r0, str, false);
+                    y0Var.U(y0Var.r0, str, false);
                     return;
                 }
                 return;
             case 9:
-                l1 l1Var = (l1) this.b;
-                String str2 = l1Var.o0;
+                m1 m1Var = (m1) this.b;
+                String str2 = m1Var.o0;
                 if (str2 != null) {
-                    l1.V(l1Var, str2);
+                    m1.V(m1Var, str2);
                     return;
                 }
                 return;
@@ -464,11 +464,11 @@ public final class s0 implements Runnable {
                         int size2 = arrayList2.size();
                         com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
                         lVar.c = m7.b;
-                        u2.c cVar = new u2.c(10, false);
-                        cVar.c = Integer.valueOf(size2 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                        cVar.b = (x7.r0) next;
-                        cVar.d = a7Var;
-                        lVar.f = new x7.s0(cVar);
+                        t0.h hVar = new t0.h(11, false);
+                        hVar.c = Integer.valueOf(size2 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        hVar.b = (x7.r0) next;
+                        hVar.d = a7Var;
+                        lVar.f = new x7.s0(hVar);
                         rb.m.a.execute(new com.google.android.gms.internal.cast.p(faVar, new a5.a(lVar, 0), o7Var, faVar.b(), 7));
                     }
                     hashMap.remove(o7Var);
@@ -487,28 +487,28 @@ public final class s0 implements Runnable {
                 gVar.s();
                 return;
             case 14:
-                yf yfVar = (yf) this.b;
-                jb jbVar = jb.N1;
-                HashMap hashMap2 = yfVar.j;
-                ng ngVar = (ng) hashMap2.get(jbVar);
-                if (ngVar != null) {
-                    ng ngVar2 = ngVar;
-                    gd gdVar = ngVar2.a;
-                    if (gdVar == null) {
-                        ng ngVar3 = ngVar2;
-                        gd gdVar2 = new gd(ngVar3, ngVar3.c);
-                        ngVar2.a = gdVar2;
-                        gdVar = gdVar2;
+                xf xfVar = (xf) this.b;
+                ib ibVar = ib.N1;
+                HashMap hashMap2 = xfVar.j;
+                mg mgVar = (mg) hashMap2.get(ibVar);
+                if (mgVar != null) {
+                    mg mgVar2 = mgVar;
+                    fd fdVar = mgVar2.a;
+                    if (fdVar == null) {
+                        mg mgVar3 = mgVar2;
+                        fd fdVar2 = new fd(mgVar3, mgVar3.c);
+                        mgVar2.a = fdVar2;
+                        fdVar = fdVar2;
                     }
-                    Iterator it2 = gdVar.iterator();
+                    Iterator it2 = fdVar.iterator();
                     while (it2.hasNext()) {
                         Object next2 = it2.next();
-                        Object obj3 = (Collection) ngVar.c.get(next2);
+                        Object obj3 = (Collection) mgVar.c.get(next2);
                         if (obj3 == null) {
                             obj3 = new ArrayList(i12);
                         }
                         List list2 = (List) obj3;
-                        ArrayList arrayList3 = new ArrayList(list2 instanceof RandomAccess ? new fe(ngVar, next2, list2, mVar) : new e9.m(ngVar, next2, list2, mVar));
+                        ArrayList arrayList3 = new ArrayList(list2 instanceof RandomAccess ? new ee(mgVar, next2, list2, mVar) : new e9.m(mgVar, next2, list2, mVar));
                         Collections.sort(arrayList3);
                         z6 z6Var2 = new z6();
                         int size3 = arrayList3.size();
@@ -520,30 +520,30 @@ public final class s0 implements Runnable {
                             j15 = ((Long) obj4).longValue() + j15;
                         }
                         z6Var2.c = Long.valueOf((j15 / arrayList3.size()) & Long.MAX_VALUE);
-                        z6Var2.a = Long.valueOf(yf.a(arrayList3, 100.0d) & Long.MAX_VALUE);
-                        z6Var2.f = Long.valueOf(yf.a(arrayList3, 75.0d) & Long.MAX_VALUE);
-                        z6Var2.e = Long.valueOf(yf.a(arrayList3, 50.0d) & Long.MAX_VALUE);
-                        z6Var2.d = Long.valueOf(yf.a(arrayList3, 25.0d) & Long.MAX_VALUE);
-                        z6Var2.b = Long.valueOf(yf.a(arrayList3, 0.0d) & Long.MAX_VALUE);
-                        na naVar = new na(z6Var2);
+                        z6Var2.a = Long.valueOf(xf.a(arrayList3, 100.0d) & Long.MAX_VALUE);
+                        z6Var2.f = Long.valueOf(xf.a(arrayList3, 75.0d) & Long.MAX_VALUE);
+                        z6Var2.e = Long.valueOf(xf.a(arrayList3, 50.0d) & Long.MAX_VALUE);
+                        z6Var2.d = Long.valueOf(xf.a(arrayList3, 25.0d) & Long.MAX_VALUE);
+                        z6Var2.b = Long.valueOf(xf.a(arrayList3, 0.0d) & Long.MAX_VALUE);
+                        ma maVar = new ma(z6Var2);
                         int size4 = arrayList3.size();
                         s3 s3Var = new s3();
-                        s3Var.c = hb.b;
-                        u2.c cVar2 = new u2.c(16, false);
-                        cVar2.c = Integer.valueOf(size4 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-                        cVar2.b = (i1) next2;
-                        cVar2.d = naVar;
-                        s3Var.h = new j1(cVar2);
-                        yf yfVar2 = yfVar;
-                        jb jbVar2 = jbVar;
-                        rb.m.a.execute(new com.google.android.gms.internal.cast.p(yfVar2, new a5.a(s3Var, 0), jbVar2, yfVar.c(), 8));
-                        jbVar = jbVar2;
-                        yfVar = yfVar2;
+                        s3Var.c = gb.b;
+                        t0.h hVar2 = new t0.h(17, false);
+                        hVar2.c = Integer.valueOf(size4 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        hVar2.b = (i1) next2;
+                        hVar2.d = maVar;
+                        s3Var.h = new j1(hVar2);
+                        xf xfVar2 = xfVar;
+                        ib ibVar2 = ibVar;
+                        rb.m.a.execute(new com.google.android.gms.internal.cast.p(xfVar2, new a5.a(s3Var, 0), ibVar2, xfVar.c(), 8));
+                        ibVar = ibVar2;
+                        xfVar = xfVar2;
                         hashMap2 = hashMap2;
                         mVar = null;
                         i12 = 3;
                     }
-                    hashMap2.remove(jbVar);
+                    hashMap2.remove(ibVar);
                     return;
                 }
                 return;
@@ -569,9 +569,9 @@ public final class s0 implements Runnable {
                 }
                 return;
             default:
-                zh.d0 d0Var = (zh.d0) this.b;
-                CameraView cameraView = d0Var.b;
-                if (!d0Var.d0 || cameraView == null) {
+                zh.w wVar = (zh.w) this.b;
+                CameraView cameraView = wVar.b;
+                if (!wVar.b0 || cameraView == null) {
                     return;
                 }
                 TextureView textureView = cameraView.getTextureView();
@@ -585,33 +585,33 @@ public final class s0 implements Runnable {
                         width2 = Math.max(1, (int) (f11 * min));
                         height3 = Math.max(1, (int) (f12 * min));
                     }
-                    Bitmap bitmap = ((zh.d0) this.b).g0;
-                    if (bitmap == null || bitmap.getWidth() != width2 || ((zh.d0) this.b).g0.getHeight() != height3) {
-                        ((zh.d0) this.b).g0 = Bitmap.createBitmap(width2, height3, Bitmap.Config.ARGB_8888);
+                    Bitmap bitmap = ((zh.w) this.b).e0;
+                    if (bitmap == null || bitmap.getWidth() != width2 || ((zh.w) this.b).e0.getHeight() != height3) {
+                        ((zh.w) this.b).e0 = Bitmap.createBitmap(width2, height3, Bitmap.Config.ARGB_8888);
                     }
                     try {
-                        textureView.getBitmap(((zh.d0) this.b).g0);
-                        zh.d0 d0Var2 = (zh.d0) this.b;
-                        xf.c a10 = zh.d0.a(d0Var2, d0Var2.g0);
+                        textureView.getBitmap(((zh.w) this.b).e0);
+                        zh.w wVar2 = (zh.w) this.b;
+                        xf.c a10 = zh.w.a(wVar2, wVar2.e0);
                         if (a10 != null) {
-                            AndroidUtilities.runOnUIThread(new uf.c(26, this, a10));
+                            AndroidUtilities.runOnUIThread(new uf.c(24, this, a10));
                             return;
                         }
                     } catch (Throwable th2) {
                         FileLog.e(th2);
                     }
                 }
-                if (((zh.d0) this.b).d0) {
-                    ((zh.d0) this.b).c0.postDelayed(this, 150L);
+                if (((zh.w) this.b).b0) {
+                    ((zh.w) this.b).a0.postDelayed(this, 150L);
                     return;
                 }
                 return;
         }
     }
 
-    public /* synthetic */ s0(yf yfVar) {
+    public /* synthetic */ s0(xf xfVar) {
         this.a = 14;
-        jb jbVar = jb.b;
-        this.b = yfVar;
+        ib ibVar = ib.b;
+        this.b = xfVar;
     }
 }

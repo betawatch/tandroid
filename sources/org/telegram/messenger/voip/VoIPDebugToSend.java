@@ -1,6 +1,6 @@
 package org.telegram.messenger.voip;
 
-import ai.n2;
+import ai.o2;
 import android.text.TextUtils;
 import java.io.File;
 import java.util.HashMap;
@@ -16,13 +16,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.voip.d2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public final class Data {
         long access_hash;
         long callId;
@@ -50,7 +50,7 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$1(File file, TL_phone.saveCallDebug savecalldebug) {
-        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new n2(29, this, savecalldebug));
+        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new o2(29, this, savecalldebug));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

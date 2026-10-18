@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SaveToGallerySettingsHelper;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d31 implements org.telegram.ui.Components.xl0, org.telegram.ui.Components.zl0, xx {
     public final /* synthetic */ SaveToGallerySettingsActivity a;
@@ -116,7 +116,7 @@ public final /* synthetic */ class d31 implements org.telegram.ui.Components.xl0
         c11.c(org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false));
         org.telegram.ui.ActionBar.m1 P = org.telegram.ui.Components.f5.P(saveToGallerySettingsActivity, actionBarPopupWindow$ActionBarPopupWindowLayout, view, f7, f10);
         actionBarPopupWindow$ActionBarPopupWindowLayout.setParentWindow(P);
-        c10.setOnClickListener(new ai.ga(saveToGallerySettingsActivity, P, i10, 16));
+        c10.setOnClickListener(new ai.ha(saveToGallerySettingsActivity, P, i10, 16));
         c11.setOnClickListener(new a0(saveToGallerySettingsActivity, P, dialogException, 15));
         return true;
     }

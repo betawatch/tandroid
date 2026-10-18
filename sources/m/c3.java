@@ -11,7 +11,7 @@ import android.util.TypedValue;
 import android.view.View;
 import v7.q7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class c3 {
     public static final ThreadLocal a = new ThreadLocal();
@@ -46,7 +46,7 @@ public abstract class c3 {
         }
         context.getTheme().resolveAttribute(R.attr.disabledAlpha, typedValue, true);
         float f7 = typedValue.getFloat();
-        return i0.b.o(c(context, i10), Math.round(Color.alpha(r4) * f7));
+        return i0.a.o(c(context, i10), Math.round(Color.alpha(r4) * f7));
     }
 
     public static int c(Context context, int i10) {

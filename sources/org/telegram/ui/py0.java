@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class py0 implements org.telegram.ui.Components.yl0 {
     public int a = 0;
@@ -78,7 +78,7 @@ public final class py0 implements org.telegram.ui.Components.yl0 {
             py0Var.c.j5();
             py0Var.c.d.l();
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.q.r(new StringBuilder("app start time = "), ApplicationLoader.startTime);
+                i2.d.x(new StringBuilder("app start time = "), ApplicationLoader.startTime);
                 try {
                     FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
                     return;
@@ -96,7 +96,7 @@ public final class py0 implements org.telegram.ui.Components.yl0 {
         if (i10 == 6) {
             py0Var.c.getMessagesStorage().clearSentMedia();
             SharedConfig.setNoSoundHintShowed(false);
-            org.telegram.messenger.q.d(org.telegram.messenger.q.d(org.telegram.messenger.q.d(org.telegram.messenger.q.d(org.telegram.messenger.q.d(org.telegram.messenger.q.d(org.telegram.messenger.q.d(org.telegram.messenger.q.d(org.telegram.messenger.q.d(MessagesController.getGlobalMainSettings().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l"), "searchpostsnew", "speedhint", "gifhint", "reminderhint"), "soundHint", "themehint", "bganimationhint", "filterhint"), "n_0", "storyprvhint", "storyhint", "storyhint2"), "storydualhint", "storysvddualhint", "stories_camera", "dualcam"), "dualmatrix", "dual_available", "archivehint", "askNotificationsAfter"), "askNotificationsDuration", "viewoncehint", "voicepausehint", "taptostorysoundhint"), "nothanos", "voiceoncehint", "savedhint", "savedsearchhint"), "savedsearchtaghint", "newppsms", "monetizationadshint", "seekSpeedHintShowed"), "unsupport_video/av01", "statusgiftpage", "multistorieshint", "trimvoicehint").remove("taptostoryhighlighthint").apply();
+            org.telegram.messenger.g0.d(org.telegram.messenger.g0.d(org.telegram.messenger.g0.d(org.telegram.messenger.g0.d(org.telegram.messenger.g0.d(org.telegram.messenger.g0.d(org.telegram.messenger.g0.d(org.telegram.messenger.g0.d(org.telegram.messenger.g0.d(MessagesController.getGlobalMainSettings().edit().remove("archivehint").remove("proximityhint").remove("archivehint_l"), "searchpostsnew", "speedhint", "gifhint", "reminderhint"), "soundHint", "themehint", "bganimationhint", "filterhint"), "n_0", "storyprvhint", "storyhint", "storyhint2"), "storydualhint", "storysvddualhint", "stories_camera", "dualcam"), "dualmatrix", "dual_available", "archivehint", "askNotificationsAfter"), "askNotificationsDuration", "viewoncehint", "voicepausehint", "taptostorysoundhint"), "nothanos", "voiceoncehint", "savedhint", "savedsearchhint"), "savedsearchtaghint", "newppsms", "monetizationadshint", "seekSpeedHintShowed"), "unsupport_video/av01", "statusgiftpage", "multistorieshint", "trimvoicehint").remove("taptostoryhighlighthint").apply();
             w7.y5.a();
             i13 = ((org.telegram.ui.ActionBar.n2) py0Var.c).currentAccount;
             MessagesController.getEmojiSettings(i13).edit().remove("featured_hidden").remove("emoji_featured_hidden").commit();
@@ -122,7 +122,7 @@ public final class py0 implements org.telegram.ui.Components.yl0 {
             qg.u0.e(i15).a();
             SharedPreferences mainSettings = py0Var.c.getMessagesController().getMainSettings();
             SharedPreferences.Editor edit = mainSettings.edit();
-            org.telegram.messenger.q.d(edit, "peerColors", "profilePeerColors", "boostingappearance", "bizbothint").remove("movecaptionhint");
+            org.telegram.messenger.g0.d(edit, "peerColors", "profilePeerColors", "boostingappearance", "bizbothint").remove("movecaptionhint");
             for (String str : mainSettings.getAll().keySet()) {
                 if (str.contains("show_gift_for_") || str.contains("bdayhint_") || str.contains("bdayanim_") || str.startsWith("ask_paid_message_") || str.startsWith("topicssidetabs")) {
                     edit.remove(str);

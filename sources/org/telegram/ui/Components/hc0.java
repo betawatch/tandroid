@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.RichQuote;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class hc0 extends s4.g0 {
     public final /* synthetic */ ic0 c;
@@ -57,7 +57,7 @@ public final class hc0 extends s4.g0 {
                         int i11 = u1Var.r0;
                         CharSequence charSequence2 = messageObject.messageText;
                         ArrayList<MessageObject.TextLayoutBlock> arrayList2 = messageObject.textLayoutBlocks;
-                        C = u1Var.t1 ? org.telegram.messenger.q.C(10.0f, u1Var.m2, i11) : i11;
+                        C = u1Var.t1 ? org.telegram.messenger.g0.C(10.0f, u1Var.m2, i11) : i11;
                         arrayList = arrayList2;
                         charSequence = charSequence2;
                     } else {

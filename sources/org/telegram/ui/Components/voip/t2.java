@@ -22,8 +22,8 @@ import org.telegram.ui.Components.n31;
 import org.telegram.ui.ho;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public class t2 extends FrameLayout {
     public String E;
     public int F;
@@ -94,7 +94,7 @@ public class t2 extends FrameLayout {
     public final void a(int i10, int i11) {
         this.R = i10;
         this.S = i11;
-        this.n = i0.b.f(this.Q, i10, i11);
+        this.n = i0.a.f(this.Q, i10, i11);
         invalidate();
     }
 
@@ -136,11 +136,11 @@ public class t2 extends FrameLayout {
             int alpha = Color.alpha(i12);
             float f10 = this.T;
             if (alpha != 255 || AndroidUtilities.computePerceivedBrightness(i12) <= 0.5d) {
-                org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(f10), 0, i0.b.o(-1, (int) (f7 * 76.5f)));
+                org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(f10), 0, i0.a.o(-1, (int) (f7 * 76.5f)));
                 this.N = i02;
                 i02.setCallback(this);
             } else {
-                org.telegram.ui.Cells.z i03 = h6.i0(AndroidUtilities.dp(f10), 0, i0.b.o(-16777216, (int) (f7 * 25.5f)));
+                org.telegram.ui.Cells.z i03 = h6.i0(AndroidUtilities.dp(f10), 0, i0.a.o(-16777216, (int) (f7 * 25.5f)));
                 this.N = i03;
                 i03.setCallback(this);
             }
@@ -262,7 +262,7 @@ public class t2 extends FrameLayout {
         if (z10) {
             float f12 = this.s;
             if (f12 != 0.0f) {
-                paint.setColor(i0.b.f(f12, this.n, this.r));
+                paint.setColor(i0.a.f(f12, this.n, this.r));
                 float width = getWidth() / 2.0f;
                 float f13 = this.T;
                 float dp = AndroidUtilities.dp(f13) / 2.0f;
@@ -294,7 +294,7 @@ public class t2 extends FrameLayout {
                                 float f14 = this.s;
                                 if (f14 == 0.0f || this.G || drawableArr[0] == null || drawableArr[1] == null) {
                                     if (this.G) {
-                                        int f15 = i0.b.f(f14, this.H, this.x);
+                                        int f15 = i0.a.f(f14, this.H, this.x);
                                         drawableArr[i10].setColorFilter(new PorterDuffColorFilter(f15, PorterDuff.Mode.MULTIPLY));
                                         paint2.setColor(f15);
                                     }
@@ -318,14 +318,14 @@ public class t2 extends FrameLayout {
                         }
                     } else {
                         if (this.G) {
-                            int f16 = i0.b.f(this.s, this.H, this.x);
+                            int f16 = i0.a.f(this.s, this.H, this.x);
                             drawableArr[0].setColorFilter(new PorterDuffColorFilter(f16, PorterDuff.Mode.MULTIPLY));
                             paint2.setColor(f16);
                         }
                         drawableArr[0].setAlpha(255);
                         float f17 = this.s;
                         if (f17 != 0.0f && this.G) {
-                            int f18 = i0.b.f(f17, this.H, this.x);
+                            int f18 = i0.a.f(f17, this.H, this.x);
                             drawableArr[0].setColorFilter(new PorterDuffColorFilter(f18, PorterDuff.Mode.MULTIPLY));
                             paint2.setColor(f18);
                         }

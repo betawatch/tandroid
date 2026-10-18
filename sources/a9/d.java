@@ -8,8 +8,8 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 import com.google.android.gms.internal.play_billing.i3;
-import com.google.android.gms.internal.play_billing.m3;
-import com.google.android.gms.internal.play_billing.p3;
+import com.google.android.gms.internal.play_billing.n3;
+import com.google.android.gms.internal.play_billing.q3;
 import j$.util.Objects;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -67,12 +67,12 @@ public final class d implements ServiceConnection {
                 d0Var.E = r22;
                 d0Var.D = 2;
                 int i12 = c5.e0.a;
-                i3 c10 = c5.e0.c(26, m3.b);
+                i3 c10 = c5.e0.c(26, n3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
                 n4.s sVar = d0Var.h;
                 sVar.getClass();
                 try {
-                    sVar.V(c10, (p3) sVar.b);
+                    sVar.V(c10, (q3) sVar.b);
                     break;
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);

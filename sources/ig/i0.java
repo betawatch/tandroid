@@ -1,12 +1,11 @@
 package ig;
 
-import ai.va;
+import ai.wa;
 import android.content.Context;
 import android.graphics.Point;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import ei.e2;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
@@ -27,7 +26,7 @@ import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vz;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i0 extends li implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public final vz E;
@@ -53,7 +52,7 @@ public final class i0 extends li implements NotificationCenter.NotificationCente
         this.F = piVar;
         piVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
         c0 c0Var = new c0(this);
-        e2 e2Var = piVar.r;
+        ei.e2 e2Var = piVar.r;
         e2Var.addTextChangedListener(c0Var);
         e2Var.setHint(LocaleController.getString(R.string.BusinessRepliesSearch));
         frameLayout.addView(siVar, z5.g());
@@ -87,7 +86,7 @@ public final class i0 extends li implements NotificationCenter.NotificationCente
         u1Var.setAdapter(f0Var);
         u1Var.setGlowColor(h6.w0(h6.A5, this.a));
         int i10 = 14;
-        u1Var.setOnItemClickListener(new va(this, i10));
+        u1Var.setOnItemClickListener(new wa(this, i10));
         u1Var.setOnScrollListener(new ah.d0(this, i10));
         FrameLayout.LayoutParams e = z5.e(-1, 60, 51);
         ((ViewGroup.MarginLayoutParams) e).height += AndroidUtilities.statusBarHeight;

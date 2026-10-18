@@ -7,7 +7,7 @@ import android.graphics.Path;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t41 extends FrameLayout {
     public final Path a;
@@ -53,7 +53,7 @@ public final class t41 extends FrameLayout {
         float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
         float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
         if (z51Var.n()) {
-            AndroidUtilities.rectTmp.set((width - (z51Var.a1 * width)) + getPaddingLeft(), com.google.android.gms.internal.cast.a6.x(1.0f, z51Var.b1, height, getPaddingTop()), ((width2 - width) * z51Var.a1) + getPaddingLeft() + width, getPaddingTop() + height);
+            AndroidUtilities.rectTmp.set((width - (z51Var.a1 * width)) + getPaddingLeft(), com.google.android.gms.internal.play_billing.k3.y(1.0f, z51Var.b1, height, getPaddingTop()), ((width2 - width) * z51Var.a1) + getPaddingLeft() + width, getPaddingTop() + height);
         } else {
             AndroidUtilities.rectTmp.set((width - (z51Var.a1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * z51Var.a1) + getPaddingLeft() + width, (height * z51Var.b1) + getPaddingTop());
         }

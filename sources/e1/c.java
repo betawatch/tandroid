@@ -1,5 +1,6 @@
 package e1;
 
+import ai.o2;
 import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
@@ -42,13 +43,13 @@ import f2.w;
 import gi.l;
 import gi.s4;
 import hi.t;
-import i2.a0;
-import ig.c1;
+import i2.b0;
+import ig.d2;
+import ig.e1;
 import ig.f1;
-import ig.m1;
-import ig.v1;
+import ig.h1;
 import ig.x1;
-import ig.y1;
+import ig.z1;
 import j4.c0;
 import java.io.File;
 import java.io.IOException;
@@ -84,7 +85,7 @@ import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.yl0;
 import qg.u1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, yl0, Utilities.Callback5, u1, CameraController.VideoTakeCallback, g, o, w {
     public final /* synthetic */ int a;
@@ -224,10 +225,10 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 lVar.getConnectionsManager().sendRequest(updatestarrefprogram, new gi.b(lVar, b2Var2, 0));
                 break;
             default:
-                v1 v1Var = ((m1) this.b).a;
-                i11 = ((n2) v1Var).currentAccount;
-                y1 f7 = y1.f(i11);
-                ArrayList arrayList = v1Var.b;
+                x1 x1Var = ((ig.o1) this.b).a;
+                i11 = ((n2) x1Var).currentAccount;
+                ig.a2 f7 = ig.a2.f(i11);
+                ArrayList arrayList = x1Var.b;
                 int i12 = f7.a;
                 int i13 = 0;
                 while (i13 < arrayList.size()) {
@@ -239,7 +240,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 }
                 if (!arrayList.isEmpty()) {
                     for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                        x1 c10 = f7.c(((Integer) arrayList.get(i14)).intValue());
+                        z1 c10 = f7.c(((Integer) arrayList.get(i14)).intValue());
                         f7.b.remove(c10);
                         f7.a(c10.b);
                         TLRPC.TL_messages_deleteQuickReplyShortcut tL_messages_deleteQuickReplyShortcut = new TLRPC.TL_messages_deleteQuickReplyShortcut();
@@ -268,7 +269,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                     messagesStorage.getStorageQueue().postRunnable(new w0(2, arrayList, messagesStorage));
                     NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                 }
-                v1.X(v1Var);
+                x1.X(x1Var);
                 break;
         }
     }
@@ -286,7 +287,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((d1) obj).onCues((d2.c) this.b);
                 break;
             case 17:
-                ((d1) obj).onMediaMetadataChanged(((a0) this.b).a.Q);
+                ((d1) obj).onMediaMetadataChanged(((b0) this.b).a.Q);
                 break;
             case 18:
                 ((d1) obj).onMetadata((t0) this.b);
@@ -297,7 +298,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
             case 22:
             case 23:
             default:
-                ((j2.b) obj).b((u2.c0) this.b);
+                ((j2.b) obj).b((u2.b0) this.b);
                 break;
             case 24:
                 ((j2.b) obj).h((y0) this.b);
@@ -306,7 +307,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((j2.b) obj).onSeekStarted((j2.a) this.b);
                 break;
             case 26:
-                ((j2.b) obj).a((i2.d) this.b);
+                ((j2.b) obj).a((i2.e) this.b);
                 break;
         }
     }
@@ -467,7 +468,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((s4) this.b).V((f61) obj);
                 break;
             case 20:
-                ig.d1 d1Var = (ig.d1) this.b;
+                f1 f1Var = (f1) this.b;
                 f61 f61Var2 = (f61) obj;
                 View view = (View) obj2;
                 ((Integer) obj3).getClass();
@@ -475,159 +476,159 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((Float) obj5).getClass();
                 int i12 = f61Var2.d;
                 if (i12 == -1) {
-                    boolean z10 = !d1Var.e;
-                    d1Var.e = z10;
+                    boolean z10 = !f1Var.e;
+                    f1Var.e = z10;
                     ((v8) view).setChecked(z10);
-                    d1Var.a.W2.N(true);
-                    d1Var.Y(true);
+                    f1Var.a.W2.N(true);
+                    f1Var.Y(true);
                     break;
                 } else if (i12 == -2) {
-                    ig.b2 b2Var = new ig.b2(null);
-                    b2Var.n = d1Var.r;
-                    b2Var.c = new ai.n2(24, d1Var, view);
-                    d1Var.presentFragment(b2Var);
+                    d2 d2Var = new d2(null);
+                    d2Var.n = f1Var.r;
+                    d2Var.c = new o2(24, f1Var, view);
+                    f1Var.presentFragment(d2Var);
                     break;
-                } else if (f61Var2.a == 5 && i12 >= 0 && i12 < d1Var.h.length) {
+                } else if (f61Var2.a == 5 && i12 >= 0 && i12 < f1Var.h.length) {
                     if (!LocaleController.isRTL ? floatValue < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f) : floatValue > AndroidUtilities.dp(76.0f)) {
                         int i13 = (f61Var2.d + 6) % 7;
                         int i14 = 0;
-                        for (int i15 = 0; i15 < d1Var.h[i13].size(); i15++) {
-                            if (((c1) d1Var.h[i13].get(i15)).b > i14) {
-                                i14 = ((c1) d1Var.h[i13].get(i15)).b;
+                        for (int i15 = 0; i15 < f1Var.h[i13].size(); i15++) {
+                            if (((e1) f1Var.h[i13].get(i15)).b > i14) {
+                                i14 = ((e1) f1Var.h[i13].get(i15)).b;
                             }
                         }
                         int max = Math.max(0, i14 - 1439);
                         int i16 = (f61Var2.d + 1) % 7;
                         int i17 = 1440;
-                        for (int i18 = 0; i18 < d1Var.h[i16].size(); i18++) {
-                            if (((c1) d1Var.h[i16].get(i18)).a < i17) {
-                                i17 = ((c1) d1Var.h[i16].get(i18)).a;
+                        for (int i18 = 0; i18 < f1Var.h[i16].size(); i18++) {
+                            if (((e1) f1Var.h[i16].get(i18)).a < i17) {
+                                i17 = ((e1) f1Var.h[i16].get(i18)).a;
                             }
                         }
                         int i19 = i17 + 1439;
                         CharSequence charSequence = f61Var2.l;
-                        ArrayList arrayList = d1Var.h[f61Var2.d];
+                        ArrayList arrayList = f1Var.h[f61Var2.d];
                         int i20 = 0;
                         for (int i21 = 0; i21 < 7; i21++) {
-                            ArrayList arrayList2 = d1Var.h[i21];
+                            ArrayList arrayList2 = f1Var.h[i21];
                             if (arrayList2 != null) {
                                 i20 = Math.max(1, arrayList2.size()) + i20;
                             }
                         }
-                        f1 f1Var = new f1(charSequence, arrayList, max, i19, 28 - i20);
-                        f1Var.f = new bc(d1Var, 22);
-                        f1Var.h = new t(6, d1Var, f61Var2);
-                        d1Var.presentFragment(f1Var);
+                        h1 h1Var = new h1(charSequence, arrayList, max, i19, 28 - i20);
+                        h1Var.f = new bc(f1Var, 22);
+                        h1Var.h = new t(6, f1Var, f61Var2);
+                        f1Var.presentFragment(h1Var);
                         break;
                     } else {
-                        if (d1Var.h[f61Var2.d].isEmpty()) {
+                        if (f1Var.h[f61Var2.d].isEmpty()) {
                             ((i5) view).setChecked(true);
-                            d1Var.h[f61Var2.d].add(new c1(0, 1439));
-                            d1Var.X(f61Var2.d);
+                            f1Var.h[f61Var2.d].add(new e1(0, 1439));
+                            f1Var.X(f61Var2.d);
                         } else {
-                            d1Var.h[f61Var2.d].clear();
+                            f1Var.h[f61Var2.d].clear();
                             ((i5) view).setChecked(false);
                         }
-                        ((i5) view).setValue(ig.d1.a0(d1Var.h[f61Var2.d]));
-                        d1Var.Y(true);
+                        ((i5) view).setValue(f1.a0(f1Var.h[f61Var2.d]));
+                        f1Var.Y(true);
                         break;
                     }
                 }
                 break;
             case 21:
-                final f1 f1Var2 = (f1) this.b;
+                final h1 h1Var2 = (h1) this.b;
                 f61 f61Var3 = (f61) obj;
                 final View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                int i22 = f1Var2.c;
-                int i23 = f1Var2.d;
-                ArrayList arrayList3 = f1Var2.b;
+                int i22 = h1Var2.c;
+                int i23 = h1Var2.d;
+                ArrayList arrayList3 = h1Var2.b;
                 int i24 = f61Var3.d;
                 if (i24 == -1) {
-                    f1Var2.r = !f1Var2.r;
+                    h1Var2.r = !h1Var2.r;
                     arrayList3.clear();
-                    if (f1Var2.r) {
-                        arrayList3.add(new c1(0, 1439));
+                    if (h1Var2.r) {
+                        arrayList3.add(new e1(0, 1439));
                     }
                     v8 v8Var = (v8) view2;
-                    boolean z11 = f1Var2.r;
+                    boolean z11 = h1Var2.r;
                     f61Var3.e = z11;
                     v8Var.setChecked(z11);
-                    boolean z12 = f1Var2.r;
+                    boolean z12 = h1Var2.r;
                     v8Var.b(h6.x0(null, z12 ? h6.f6 : h6.e6, false), z12);
-                    f1Var2.n.W2.N(true);
-                    bc bcVar = f1Var2.f;
+                    h1Var2.n.W2.N(true);
+                    bc bcVar = h1Var2.f;
                     if (bcVar != null) {
                         bcVar.run();
                         break;
                     }
                 } else if (i24 == -2) {
-                    if (arrayList3.isEmpty() || f1Var2.U()) {
-                        if (f1Var2.U()) {
+                    if (arrayList3.isEmpty() || h1Var2.U()) {
+                        if (h1Var2.U()) {
                             arrayList3.clear();
                         }
                         int clamp = Utilities.clamp(480, i23 - 1, i22);
-                        arrayList3.add(new c1(clamp, Utilities.clamp(1200, i23, clamp + 1)));
+                        arrayList3.add(new e1(clamp, Utilities.clamp(1200, i23, clamp + 1)));
                     } else {
-                        int i25 = ((c1) i0.a.h(1, arrayList3)).b;
+                        int i25 = ((e1) i2.d.h(1, arrayList3)).b;
                         int clamp2 = Utilities.clamp(i25 + 30, i23 - 1, i22);
-                        arrayList3.add(new c1(clamp2, Utilities.clamp((i25 + 1560) / 2, i23, clamp2 + 1)));
+                        arrayList3.add(new e1(clamp2, Utilities.clamp((i25 + 1560) / 2, i23, clamp2 + 1)));
                     }
-                    bc bcVar2 = f1Var2.f;
+                    bc bcVar2 = h1Var2.f;
                     if (bcVar2 != null) {
                         bcVar2.run();
                     }
-                    f1Var2.n.W2.N(true);
+                    h1Var2.n.W2.N(true);
                     break;
                 } else if (f61Var3.a == 3 && (i10 = i24 / 3) >= 0 && i10 < arrayList3.size()) {
                     int i26 = i10 - 1;
-                    c1 c1Var = i26 >= 0 ? (c1) arrayList3.get(i26) : null;
-                    final c1 c1Var2 = (c1) arrayList3.get(i10);
+                    e1 e1Var = i26 >= 0 ? (e1) arrayList3.get(i26) : null;
+                    final e1 e1Var2 = (e1) arrayList3.get(i10);
                     int i27 = i10 + 1;
-                    c1 c1Var3 = i27 < arrayList3.size() ? (c1) arrayList3.get(i27) : null;
+                    e1 e1Var3 = i27 < arrayList3.size() ? (e1) arrayList3.get(i27) : null;
                     int i28 = f61Var3.d % 3;
                     if (i28 == 0) {
-                        Activity parentActivity = f1Var2.getParentActivity();
+                        Activity parentActivity = h1Var2.getParentActivity();
                         String string = LocaleController.getString(R.string.BusinessHoursDayOpenHourPicker);
-                        int i29 = c1Var2.a;
-                        if (c1Var != null) {
-                            i22 = c1Var.b + 1;
+                        int i29 = e1Var2.a;
+                        if (e1Var != null) {
+                            i22 = e1Var.b + 1;
                         }
                         final int i30 = 0;
-                        f5.W(parentActivity, string, i29, i22, c1Var2.b - 1, new Utilities.Callback() { // from class: ig.e1
+                        f5.W(parentActivity, string, i29, i22, e1Var2.b - 1, new Utilities.Callback() { // from class: ig.g1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj6) {
                                 Integer num = (Integer) obj6;
                                 switch (i30) {
                                     case 0:
-                                        f1 f1Var3 = f1Var2;
-                                        boolean V = f1Var3.V();
+                                        h1 h1Var3 = h1Var2;
+                                        boolean V = h1Var3.V();
                                         q8 q8Var = (q8) view2;
                                         int intValue = num.intValue();
-                                        c1Var2.a = intValue;
-                                        q8Var.u(c1.a(intValue), true);
-                                        if (V != f1Var3.V()) {
-                                            f1Var3.n.W2.N(true);
+                                        e1Var2.a = intValue;
+                                        q8Var.u(e1.a(intValue), true);
+                                        if (V != h1Var3.V()) {
+                                            h1Var3.n.W2.N(true);
                                         }
-                                        bc bcVar3 = f1Var3.f;
+                                        bc bcVar3 = h1Var3.f;
                                         if (bcVar3 != null) {
                                             bcVar3.run();
                                             break;
                                         }
                                         break;
                                     default:
-                                        f1 f1Var4 = f1Var2;
-                                        boolean V2 = f1Var4.V();
+                                        h1 h1Var4 = h1Var2;
+                                        boolean V2 = h1Var4.V();
                                         q8 q8Var2 = (q8) view2;
                                         int intValue2 = num.intValue();
-                                        c1Var2.b = intValue2;
-                                        q8Var2.u(c1.a(intValue2), true);
-                                        if (V2 != f1Var4.V()) {
-                                            f1Var4.n.W2.N(true);
+                                        e1Var2.b = intValue2;
+                                        q8Var2.u(e1.a(intValue2), true);
+                                        if (V2 != h1Var4.V()) {
+                                            h1Var4.n.W2.N(true);
                                         }
-                                        bc bcVar4 = f1Var4.f;
+                                        bc bcVar4 = h1Var4.f;
                                         if (bcVar4 != null) {
                                             bcVar4.run();
                                             break;
@@ -638,46 +639,46 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                         });
                         break;
                     } else if (i28 == 1) {
-                        Activity parentActivity2 = f1Var2.getParentActivity();
+                        Activity parentActivity2 = h1Var2.getParentActivity();
                         String string2 = LocaleController.getString(R.string.BusinessHoursDayCloseHourPicker);
-                        int i31 = c1Var2.b;
-                        int i32 = c1Var2.a + 1;
-                        if (c1Var3 != null) {
-                            i23 = c1Var3.a - 1;
+                        int i31 = e1Var2.b;
+                        int i32 = e1Var2.a + 1;
+                        if (e1Var3 != null) {
+                            i23 = e1Var3.a - 1;
                         }
                         final int i33 = 1;
-                        f5.W(parentActivity2, string2, i31, i32, i23, new Utilities.Callback() { // from class: ig.e1
+                        f5.W(parentActivity2, string2, i31, i32, i23, new Utilities.Callback() { // from class: ig.g1
                             @Override // org.telegram.messenger.Utilities.Callback
                             public final void run(Object obj6) {
                                 Integer num = (Integer) obj6;
                                 switch (i33) {
                                     case 0:
-                                        f1 f1Var3 = f1Var2;
-                                        boolean V = f1Var3.V();
+                                        h1 h1Var3 = h1Var2;
+                                        boolean V = h1Var3.V();
                                         q8 q8Var = (q8) view2;
                                         int intValue = num.intValue();
-                                        c1Var2.a = intValue;
-                                        q8Var.u(c1.a(intValue), true);
-                                        if (V != f1Var3.V()) {
-                                            f1Var3.n.W2.N(true);
+                                        e1Var2.a = intValue;
+                                        q8Var.u(e1.a(intValue), true);
+                                        if (V != h1Var3.V()) {
+                                            h1Var3.n.W2.N(true);
                                         }
-                                        bc bcVar3 = f1Var3.f;
+                                        bc bcVar3 = h1Var3.f;
                                         if (bcVar3 != null) {
                                             bcVar3.run();
                                             break;
                                         }
                                         break;
                                     default:
-                                        f1 f1Var4 = f1Var2;
-                                        boolean V2 = f1Var4.V();
+                                        h1 h1Var4 = h1Var2;
+                                        boolean V2 = h1Var4.V();
                                         q8 q8Var2 = (q8) view2;
                                         int intValue2 = num.intValue();
-                                        c1Var2.b = intValue2;
-                                        q8Var2.u(c1.a(intValue2), true);
-                                        if (V2 != f1Var4.V()) {
-                                            f1Var4.n.W2.N(true);
+                                        e1Var2.b = intValue2;
+                                        q8Var2.u(e1.a(intValue2), true);
+                                        if (V2 != h1Var4.V()) {
+                                            h1Var4.n.W2.N(true);
                                         }
-                                        bc bcVar4 = f1Var4.f;
+                                        bc bcVar4 = h1Var4.f;
                                         if (bcVar4 != null) {
                                             bcVar4.run();
                                             break;
@@ -690,10 +691,10 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                     } else if (i28 == 2) {
                         arrayList3.remove(i10);
                         if (arrayList3.isEmpty()) {
-                            arrayList3.add(new c1(0, 1439));
+                            arrayList3.add(new e1(0, 1439));
                         }
-                        f1Var2.n.W2.N(true);
-                        bc bcVar3 = f1Var2.f;
+                        h1Var2.n.W2.N(true);
+                        bc bcVar3 = h1Var2.f;
                         if (bcVar3 != null) {
                             bcVar3.run();
                             break;
@@ -705,14 +706,14 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                ig.b2.U((ig.b2) this.b, (f61) obj, (View) obj2);
+                d2.U((d2) this.b, (f61) obj, (View) obj2);
                 break;
         }
     }
 
-    public /* synthetic */ c(j2.a aVar, u2.u uVar, u2.c0 c0Var, IOException iOException, boolean z10) {
+    public /* synthetic */ c(j2.a aVar, u2.t tVar, u2.b0 b0Var, IOException iOException, boolean z10) {
         this.a = 27;
-        this.b = c0Var;
+        this.b = b0Var;
     }
 
     public /* synthetic */ c(Object obj, int i10) {

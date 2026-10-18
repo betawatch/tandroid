@@ -5,17 +5,17 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.opengl.GLES20;
 import android.util.Size;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Wallet.x5;
+import org.telegram.ui.Wallet.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class d0 {
     public static c0 D;
@@ -31,13 +31,13 @@ public final class d0 {
     public final boolean e;
     public final boolean f;
     public final y g;
-    public final x5 h;
+    public final z5 h;
     public final a0 i;
     public final z j;
     public final b0 k;
     public final y l;
     public final y m;
-    public final x5 n;
+    public final z5 n;
     public final FloatBuffer o;
     public final FloatBuffer p;
     public FloatBuffer q;
@@ -72,7 +72,7 @@ public final class d0 {
         boolean z11 = glGetString != null && glGetString.contains("GL_EXT_shader_texture_lod");
         this.f = z11;
         this.g = new y("#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nuniform samplerExternalOES sTexture;\nvoid main() {\n    gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n", 0);
-        this.h = new x5("attribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = aTextureCoord.xy;\n}\n", "precision mediump float;\nvarying vec2 vTextureCoord;\nuniform sampler2D sTexture;\nvoid main() {\n    gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
+        this.h = new z5("attribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = aTextureCoord.xy;\n}\n", "precision mediump float;\nvarying vec2 vTextureCoord;\nuniform sampler2D sTexture;\nvoid main() {\n    gl_FragColor = texture2D(sTexture, vTextureCoord);\n}\n");
         this.i = z10 ? new a0() : null;
         if (z10) {
             zVar = new z("#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nvarying vec2 vScreenTextureCoord;\nuniform samplerExternalOES sTexture;\nuniform sampler2D bTexture;\nuniform sampler2D mTexture;\nvoid main() {\n    vec3 sharp = texture2D(sTexture, vTextureCoord).rgb;\n    vec3 blurred = texture2D(bTexture, vScreenTextureCoord).rgb * 0.25;\n    float mask = texture2D(mTexture, vScreenTextureCoord).a;\n    gl_FragColor = vec4(mix(blurred, sharp, mask), 1.0);\n}\n", 0);
@@ -90,7 +90,7 @@ public final class d0 {
         this.k = new b0(z10, z11);
         this.l = new y();
         this.m = new y(G, 1);
-        this.n = z10 ? new x5("attribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = aTextureCoord.xy;\n}\n", "precision mediump float;\nvarying vec2 vTextureCoord;\nuniform sampler2D sTexture;\nvoid main() {\n    gl_FragColor = vec4(1.0, 1.0, 1.0, texture2D(sTexture, vTextureCoord).a);\n}\n") : null;
+        this.n = z10 ? new z5("attribute vec4 aPosition;\nattribute vec4 aTextureCoord;\nvarying vec2 vTextureCoord;\nvoid main() {\n    gl_Position = aPosition;\n    vTextureCoord = aTextureCoord.xy;\n}\n", "precision mediump float;\nvarying vec2 vTextureCoord;\nuniform sampler2D sTexture;\nvoid main() {\n    gl_FragColor = vec4(1.0, 1.0, 1.0, texture2D(sTexture, vTextureCoord).a);\n}\n") : null;
         float[] fArr3 = new float[656];
         fArr3[0] = 0.0f;
         fArr3[1] = 0.0f;
@@ -282,7 +282,7 @@ public final class d0 {
         }
         String glGetShaderInfoLog = GLES20.glGetShaderInfoLog(glCreateShader);
         GLES20.glDeleteShader(glCreateShader);
-        throw new IllegalStateException(r.c.g("Unable to compile shader: ", glGetShaderInfoLog));
+        throw new IllegalStateException(r4.c.h("Unable to compile shader: ", glGetShaderInfoLog));
     }
 
     public static void d(int i10) {
@@ -291,7 +291,7 @@ public final class d0 {
     }
 
     public static FloatBuffer i(float[] fArr) {
-        FloatBuffer h = wh.h(ByteBuffer.allocateDirect(fArr.length * 4));
+        FloatBuffer h = kk.h(ByteBuffer.allocateDirect(fArr.length * 4));
         h.put(fArr).position(0);
         return h;
     }
@@ -335,11 +335,11 @@ public final class d0 {
             int i13 = i12 + 1;
             float exp2 = i13 <= i10 ? (float) (Math.exp((-(i13 * i13)) / d13) / d10) : 0.0f;
             float f10 = exp + exp2;
-            float v = exp2 == 0.0f ? i12 : a6.v(i13, exp2, i12 * exp, f10);
+            float w9 = exp2 == 0.0f ? i12 : k3.w(i13, exp2, i12 * exp, f10);
             sb2.append("    color += (texture2D(sTexture, vTextureCoord + texOffset * ");
-            sb2.append(Float.toString(v));
+            sb2.append(Float.toString(w9));
             sb2.append(").rgb + texture2D(sTexture, vTextureCoord - texOffset * ");
-            sb2.append(Float.toString(v));
+            sb2.append(Float.toString(w9));
             sb2.append(").rgb) * ");
             sb2.append(Float.toString(f10));
             sb2.append(";\n");
@@ -399,15 +399,15 @@ public final class d0 {
         FloatBuffer floatBuffer = Math.abs(fArr[1]) > Math.abs(fArr[0]) ? this.r : this.q;
         floatBuffer.position(0);
         GLES20.glVertexAttribPointer(yVar.d, 2, 5126, false, 8, (Buffer) floatBuffer);
-        GLES20.glUniformMatrix4fv(yVar.e, 1, false, fArr, 0);
+        GLES20.glUniformMatrix4fv(yVar.f, 1, false, fArr, 0);
     }
 
-    public final void e(x5 x5Var, int i10, int i11) {
-        GLES20.glUseProgram(x5Var.a);
+    public final void e(z5 z5Var, int i10, int i11) {
+        GLES20.glUseProgram(z5Var.a);
         this.o.position(i11);
         GLES20.glVertexAttribPointer(0, 3, 5126, false, 12, (Buffer) this.o);
         this.p.position(i10);
-        GLES20.glVertexAttribPointer(x5Var.d, 2, 5126, false, 8, (Buffer) this.p);
+        GLES20.glVertexAttribPointer(z5Var.d, 2, 5126, false, 8, (Buffer) this.p);
     }
 
     public final void f(int i10, int i11) {
@@ -539,7 +539,7 @@ public final class d0 {
         y yVar = this.l;
         e(yVar, 0, 0);
         f(0, i10);
-        GLES20.glUniform2f(yVar.e, f7, f10);
+        GLES20.glUniform2f(yVar.f, f7, f10);
         GLES20.glDrawArrays(5, 0, 4);
     }
 
@@ -572,13 +572,13 @@ public final class d0 {
             f(6, 2);
         }
         float max = (Math.max(0.0f, f7) * 0.625f) / i12;
-        GLES20.glUniform2f(b0Var.e, max, max);
-        int i15 = b0Var.f;
+        GLES20.glUniform2f(b0Var.f, max, max);
+        int i15 = b0Var.g;
         float min2 = Math.min(8.0f, (float) (Math.log(((Math.max(1.0f, f7) * 0.625f) * 512.0f) / r10) / Math.log(2.0d))) + 1.25f;
         GLES20.glUniform1f(i15, this.f ? Math.max(0.0f, min2) : Math.max(0.0f, min2 - ((float) (Math.log(512.0d / i12) / Math.log(2.0d)))));
-        GLES20.glUniform1f(b0Var.g, Math.max(0.0f, Math.min(1.0f, f7 / 2.0f)));
-        GLES20.glUniform1f(b0Var.h, f10);
-        GLES20.glUniform1f(b0Var.i, f11);
+        GLES20.glUniform1f(b0Var.h, Math.max(0.0f, Math.min(1.0f, f7 / 2.0f)));
+        GLES20.glUniform1f(b0Var.i, f10);
+        GLES20.glUniform1f(b0Var.j, f11);
         GLES20.glDrawArrays(5, 0, 4);
         r();
     }
@@ -589,7 +589,7 @@ public final class d0 {
         y yVar = this.m;
         e(yVar, 0, 0);
         f(0, i10);
-        GLES20.glUniform2f(yVar.e, f7, f10);
+        GLES20.glUniform2f(yVar.f, f7, f10);
         GLES20.glDrawArrays(5, 0, 4);
     }
 
@@ -606,22 +606,22 @@ public final class d0 {
         float f10 = min;
         float height = ((f10 / (z10 ? size.getHeight() : size.getWidth())) / 48.0f) * 0.45f;
         float width = ((f10 / (z10 ? this.c.getWidth() : this.c.getHeight())) / 48.0f) * 0.45f;
-        GLES20.glUniform2f(a0Var.f, fArr[0] * height, fArr[1] * height);
-        GLES20.glUniform2f(a0Var.g, fArr[4] * width, fArr[5] * width);
-        GLES20.glUniform1f(a0Var.h, f7);
+        GLES20.glUniform2f(a0Var.g, fArr[0] * height, fArr[1] * height);
+        GLES20.glUniform2f(a0Var.h, fArr[4] * width, fArr[5] * width);
+        GLES20.glUniform1f(a0Var.i, f7);
         GLES20.glDrawArrays(5, 0, 4);
     }
 
     public final void r() {
-        x5 x5Var;
-        if (!this.e || (x5Var = this.n) == null) {
+        z5 z5Var;
+        if (!this.e || (z5Var = this.n) == null) {
             return;
         }
         GLES20.glEnable(3042);
         GLES20.glBlendFunc(770, 771);
         int i10 = this.u;
         this.u = i10 + 1;
-        e(x5Var, ((i10 % 27) * 24) + 8, 12);
+        e(z5Var, ((i10 % 27) * 24) + 8, 12);
         f(0, 3);
         GLES20.glDrawArrays(4, 0, 12);
         GLES20.glDisable(3042);

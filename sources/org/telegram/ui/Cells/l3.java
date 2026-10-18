@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class l3 {
     public boolean a;
@@ -63,7 +63,7 @@ public final class l3 {
                 this.e = 0;
                 this.h = AndroidUtilities.dp(4.0f);
                 this.i = AndroidUtilities.dp(12.0f);
-                this.e = (int) r.c.c(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
+                this.e = (int) r4.c.c(this.h, 2.0f, AndroidUtilities.dp(4.0f) + this.c.getHeight() + AndroidUtilities.dp(2.0f) + this.b.getHeight() + AndroidUtilities.dp(4.0f), this.e);
                 this.d = u1Var.getExtraTextX() + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(12.0f) + Math.max(this.b.getWidth(), this.c.getWidth());
                 return;
             }

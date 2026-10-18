@@ -1,6 +1,6 @@
 package gi;
 
-import ai.bb;
+import ai.cb;
 import ai.q5;
 import android.app.Activity;
 import android.content.Context;
@@ -34,7 +34,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class r {
     public static final WeakHashMap k = new WeakHashMap();
@@ -109,7 +109,7 @@ public final class r {
         if (arrayList.isEmpty()) {
             callback.run(new ArrayList());
         } else {
-            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new bb(i10, arrayList, hashMap, callback, 2));
+            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new cb(i10, arrayList, hashMap, callback, 2));
         }
     }
 
@@ -161,7 +161,7 @@ public final class r {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        if (new androidx.biometric.e(new k6.h(context, 1)).i(15) == 0) {
+        if (new androidx.biometric.e(new k6.h(context, 1)).h(15) == 0) {
             str = "unknown";
             if (str == null) {
                 jSONObject.put("available", true);

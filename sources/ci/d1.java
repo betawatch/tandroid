@@ -39,7 +39,7 @@ import org.telegram.ui.kc0;
 import org.telegram.ui.px;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d1 implements RequestDelegateTimestamp, MessagesStorage.StringCallback, m4.g1, ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.e5, kc0, MessagesStorage.BooleanCallback, g2.g, org.telegram.ui.ActionBar.a2, i60, s5.e {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final /* synthetic */ class d1 implements RequestDelegateTimestamp, Messa
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        m4.y0 y0Var = (m4.y0) this.c;
+        m4.w0 w0Var = (m4.w0) this.c;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
         if (!z10 || bitmapSafe == null) {
             return;
@@ -126,7 +126,7 @@ public final /* synthetic */ class d1 implements RequestDelegateTimestamp, Messa
                 bitmap = ((BitmapDrawable) drawable).getBitmap();
             }
         }
-        y0Var.onComplete(new Pair(Long.valueOf(this.b), bitmap));
+        w0Var.onComplete(new Pair(Long.valueOf(this.b), bitmap));
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -153,7 +153,7 @@ public final /* synthetic */ class d1 implements RequestDelegateTimestamp, Messa
                     oo0Var.v0.remove(g0Var);
                     oo0Var.u0.remove(g0Var);
                     oo0Var.l();
-                    MessagesStorage.getInstance(oo0Var.s0).getStorageQueue().postRunnable(new ai.s3(oo0Var, j10, 10));
+                    MessagesStorage.getInstance(oo0Var.s0).getStorageQueue().postRunnable(new ai.r3(oo0Var, j10, 10));
                     break;
                 }
                 break;
@@ -249,7 +249,7 @@ public final /* synthetic */ class d1 implements RequestDelegateTimestamp, Messa
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z10) {
         sn snVar = ((q31) this.c).h;
-        if (com.google.android.gms.internal.cast.a6.s(snVar)) {
+        if (com.google.android.gms.internal.play_billing.k3.s(snVar)) {
             snVar.va(this.b, false);
         }
     }

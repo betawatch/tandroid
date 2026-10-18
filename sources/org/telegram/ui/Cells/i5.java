@@ -12,12 +12,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class i5 extends FrameLayout {
     public final TextView a;
@@ -90,8 +90,8 @@ public class i5 extends FrameLayout {
             canvas.drawLine(f7, measuredHeight, measuredWidth - i10, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
         }
         if (this.h) {
-            int dp2 = LocaleController.isRTL ? AndroidUtilities.dp(76.0f) : org.telegram.messenger.q.B(76.0f, getMeasuredWidth(), 1);
-            canvas.drawRect(dp2, wh.B(22.0f, getMeasuredHeight(), 2), dp2 + 2, AndroidUtilities.dp(22.0f) + r2, org.telegram.ui.ActionBar.h6.k0);
+            int dp2 = LocaleController.isRTL ? AndroidUtilities.dp(76.0f) : org.telegram.messenger.g0.B(76.0f, getMeasuredWidth(), 1);
+            canvas.drawRect(dp2, kk.A(22.0f, getMeasuredHeight(), 2), dp2 + 2, AndroidUtilities.dp(22.0f) + r2, org.telegram.ui.ActionBar.h6.k0);
         }
     }
 
@@ -183,7 +183,7 @@ public class i5 extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.a = textView;
-        wh.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
+        kk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -229,7 +229,7 @@ public class i5 extends FrameLayout {
         addView(q6Var, w7.z5.a(-2.0f, f11, f16, f12, 0.0f, -1, i15));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        wh.o(i14, d6Var, textView2, 1, 13.0f);
+        kk.o(i14, d6Var, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(0);
         textView2.setMaxLines(0);

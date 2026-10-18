@@ -16,7 +16,7 @@ import b2.b1;
 import b2.t;
 import b2.y0;
 import com.google.android.gms.common.api.internal.u;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.j;
 import e2.m0;
 import e2.x;
@@ -66,7 +66,7 @@ import z3.m;
 import z9.w0;
 import z9.x0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class e implements m, n5.b {
     public static volatile e e;
@@ -144,7 +144,7 @@ public final class e implements m, n5.b {
                     String trim2 = trim.substring(0, indexOf).trim();
                     String trim3 = trim.substring(indexOf + 1).trim();
                     if (trim3.length() >= 2 && trim3.charAt(0) == '\"' && trim3.charAt(trim3.length() - 1) == '\"') {
-                        trim3 = a6.j(1, 1, trim3);
+                        trim3 = k3.j(1, 1, trim3);
                     }
                     k1Var.b.put(trim2, trim3);
                 }
@@ -349,7 +349,7 @@ public final class e implements m, n5.b {
 
     @Override // z3.m
     public /* synthetic */ z3.d a(int i10, int i11, byte[] bArr) {
-        return r.c.a(this, bArr, i11);
+        return r4.c.a(this, bArr, i11);
     }
 
     public void b(Object obj, v vVar, p1 p1Var, b1 b1Var) {
@@ -575,10 +575,10 @@ public final class e implements m, n5.b {
             str = str.concat(" parameterKey");
         }
         if (((String) this.c) == null) {
-            str = r.c.u(str, " parameterValue");
+            str = r4.c.u(str, " parameterValue");
         }
         if (((Long) this.d) == null) {
-            str = r.c.u(str, " templateVersion");
+            str = r4.c.u(str, " templateVersion");
         }
         if (str.isEmpty()) {
             return new w0((x0) this.a, (String) this.b, (String) this.c, ((Long) this.d).longValue());
@@ -784,7 +784,7 @@ public final class e implements m, n5.b {
      */
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0063, code lost:
     
-        throw new java.lang.Exception(r.c.g("Premature end of parens in ", r13));
+        throw new java.lang.Exception(r4.c.h("Premature end of parens in ", r13));
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -931,11 +931,11 @@ public final class e implements m, n5.b {
                                 int i14 = i10 - 1;
                                 v(matcher9.group(1), hashMap, zArr, i14);
                                 if (zArr[0]) {
-                                    throw new Exception(a6.k("Premature left-side return of ", str5, " in ", trim));
+                                    throw new Exception(k3.k("Premature left-side return of ", str5, " in ", trim));
                                 }
                                 v(matcher9.group(2), hashMap, zArr, i14);
                                 if (zArr[0]) {
-                                    throw new Exception(a6.k("Premature right-side return of ", str5, " in ", trim));
+                                    throw new Exception(k3.k("Premature right-side return of ", str5, " in ", trim));
                                 }
                             }
                             i13++;

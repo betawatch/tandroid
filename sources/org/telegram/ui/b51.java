@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class b51 extends org.telegram.ui.Components.im0 {
     public final SparseArray V2;
@@ -68,7 +68,7 @@ public abstract class b51 extends org.telegram.ui.Components.im0 {
                 if (drawable instanceof org.telegram.ui.Components.r5) {
                 }
             }
-            setSelectorDrawableColor(i0.b.o(this.c3.f1, 30));
+            setSelectorDrawableColor(i0.a.o(this.c3.f1, 30));
             return true;
         }
         setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, this.n2));
@@ -146,7 +146,7 @@ public abstract class b51 extends org.telegram.ui.Components.im0 {
                     canvas2.save();
                     canvas2.translate(i51Var.getX(), i51Var.getY());
                     if (i51Var.w != null) {
-                        ai.ce collectionParticles = z51Var.getCollectionParticles();
+                        ai.de collectionParticles = z51Var.getCollectionParticles();
                         i10 = i14;
                         boolean z13 = z12;
                         collectionParticles.f(0, 0, i51Var.getWidth(), i51Var.getHeight());
@@ -218,7 +218,7 @@ public abstract class b51 extends org.telegram.ui.Components.im0 {
                         i51Var.getBackground().setAlpha(255);
                     }
                     if (arrayList5 == null) {
-                        arrayList3 = !arrayList.isEmpty() ? (ArrayList) i0.a.z(1, arrayList) : new ArrayList();
+                        arrayList3 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(1, arrayList) : new ArrayList();
                         sparseArray.put(y3, arrayList3);
                     } else {
                         arrayList3 = arrayList5;
@@ -293,7 +293,7 @@ public abstract class b51 extends org.telegram.ui.Components.im0 {
                     a51Var = new a51(this);
                     a51Var.l(7);
                 } else {
-                    a51Var = (a51) i0.a.z(1, arrayList2);
+                    a51Var = (a51) i2.d.A(1, arrayList2);
                 }
                 a51Var.M = R2;
                 a51Var.e();

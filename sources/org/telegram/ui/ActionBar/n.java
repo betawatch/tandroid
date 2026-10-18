@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements r0.n, k1, a2 {
     public final /* synthetic */ int a;
@@ -31,8 +31,8 @@ public final /* synthetic */ class n implements r0.n, k1, a2 {
             case 1:
                 ActionBarLayout actionBarLayout = (ActionBarLayout) obj;
                 Drawable drawable = ActionBarLayout.p1;
-                i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-                i0.c defaultWindowInsets2 = AndroidUtilities.getDefaultWindowInsets(k1Var, true);
+                i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+                i0.b defaultWindowInsets2 = AndroidUtilities.getDefaultWindowInsets(k1Var, true);
                 actionBarLayout.n1 = defaultWindowInsets;
                 actionBarLayout.o1 = defaultWindowInsets2;
                 actionBarLayout.m1 = k1Var;
@@ -48,8 +48,8 @@ public final /* synthetic */ class n implements r0.n, k1, a2 {
             default:
                 y3 y3Var = (y3) obj;
                 y3Var.e = k1Var;
-                i0.c defaultWindowInsets3 = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-                i0.c defaultWindowInsets4 = AndroidUtilities.getDefaultWindowInsets(k1Var, true);
+                i0.b defaultWindowInsets3 = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+                i0.b defaultWindowInsets4 = AndroidUtilities.getDefaultWindowInsets(k1Var, true);
                 if (!y3Var.f.equals(defaultWindowInsets3) || !y3Var.h.equals(defaultWindowInsets4)) {
                     AndroidUtilities.statusBarHeight = defaultWindowInsets3.b;
                     AndroidUtilities.navigationBarHeight = defaultWindowInsets3.d;
@@ -72,7 +72,7 @@ public final /* synthetic */ class n implements r0.n, k1, a2 {
                 FrameLayout frameLayout = (FrameLayout) obj;
                 Rect rect = new Rect();
                 if (Build.VERSION.SDK_INT >= 30) {
-                    i0.c f7 = h1Var.f(527);
+                    i0.b f7 = h1Var.f(527);
                     rect.set(f7.a, f7.b, f7.c, f7.d);
                 } else {
                     rect.set(h1Var.i().a, h1Var.i().b, h1Var.i().c, h1Var.i().d);

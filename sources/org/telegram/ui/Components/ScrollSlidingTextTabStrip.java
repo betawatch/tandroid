@@ -23,7 +23,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements org.telegram.ui.ActionBar.y5 {
     public static final /* synthetic */ int o0 = 0;
@@ -372,7 +372,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
                 TextView textView = (TextView) view;
                 textView.getLayout();
                 this.G = textView.getMeasuredWidth();
-                this.F = i0.a.C(textView.getMeasuredWidth(), this.G, 2, textView.getLeft());
+                this.F = i2.d.C(textView.getMeasuredWidth(), this.G, 2, textView.getLeft());
             }
             setEnabled(false);
             AndroidUtilities.runOnUIThread(k7Var, 16L);
@@ -430,10 +430,10 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
             if (textView != null && textView2 != null) {
                 textView.getLayout();
                 this.E = textView.getMeasuredWidth();
-                this.y = i0.a.C(textView.getMeasuredWidth(), this.E, 2, textView.getLeft());
+                this.y = i2.d.C(textView.getMeasuredWidth(), this.E, 2, textView.getLeft());
                 textView2.getLayout();
                 this.G = textView2.getMeasuredWidth();
-                this.F = i0.a.C(textView2.getMeasuredWidth(), this.G, 2, textView2.getLeft());
+                this.F = i2.d.C(textView2.getMeasuredWidth(), this.G, 2, textView2.getLeft());
                 k(textView2, textView, f7);
                 if (f7 >= 1.0f) {
                     textView.setTag(Integer.valueOf(this.M));
@@ -492,7 +492,7 @@ public class ScrollSlidingTextTabStrip extends HorizontalScrollView implements o
                 int left = textView.getLeft();
                 int measuredWidth = textView.getMeasuredWidth();
                 int i16 = this.w;
-                int C = i0.a.C(measuredWidth, i16, 2, left);
+                int C = i2.d.C(measuredWidth, i16, 2, left);
                 this.v = C;
                 int i17 = this.U;
                 if (i17 > 0 && (i14 = this.V) > 0) {

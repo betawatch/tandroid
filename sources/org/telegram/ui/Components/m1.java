@@ -7,7 +7,7 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -39,14 +39,14 @@ public final /* synthetic */ class m1 implements Runnable {
                 Utilities.Callback callback = (Utilities.Callback) this.h;
                 HashMap hashMap = (HashMap) this.n;
                 int i10 = this.c;
-                long j10 = ai.fa.y(i10, false).p().amount;
+                long j10 = ai.ga.y(i10, false).p().amount;
                 long j11 = this.b;
                 if (j10 >= j11) {
                     callback.run(hashMap);
                     break;
                 } else if (activity != null) {
                     long longValue = ((Long) arrayList.get(0)).longValue();
-                    new ai.bd(activity, d6Var, j11, 13, DialogObject.getShortName(i10, longValue), new b2(callback, hashMap, 0), longValue).show();
+                    new ai.cd(activity, d6Var, j11, 13, DialogObject.getShortName(i10, longValue), new b2(callback, hashMap, 0), longValue).show();
                     break;
                 }
                 break;

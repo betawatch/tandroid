@@ -14,7 +14,7 @@ import org.telegram.ui.Components.u61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     Utilities.stageQueue.postRunnable(new e(fVar, currencyrates, 0));
                     break;
                 } else {
-                    i0.a.v(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
+                    i2.d.v(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
                     break;
                 }
             case 1:
@@ -87,13 +87,14 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 ((ArrayList) obj).add(f61.k(((k2) this.b).Y));
                 break;
             case 6:
-                x2 x2Var = (x2) this.b;
+                y2 y2Var = (y2) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 Bitmap bitmap2 = (Bitmap) obj2;
-                if (!x2Var.N && !x2Var.M) {
-                    x2Var.E = bitmap;
-                    x2Var.x.a(bitmap2);
-                    x2Var.f.post(new n(x2Var, 6));
+                if (!y2Var.P && !y2Var.O) {
+                    y2Var.G = bitmap;
+                    y2Var.n.invalidate();
+                    y2Var.E.a(bitmap2);
+                    y2Var.h.post(new n(y2Var, 6));
                     break;
                 } else {
                     bitmap.recycle();
@@ -101,12 +102,12 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     break;
                 }
             case 7:
-                l5 l5Var = (l5) this.b;
+                m5 m5Var = (m5) this.b;
                 TL_account.Password password = (TL_account.Password) obj;
                 if (password != null) {
-                    l5Var.Q0 = true;
-                    l5Var.R0 = password.has_password;
-                    u61 u61Var = l5Var.a;
+                    m5Var.Q0 = true;
+                    m5Var.R0 = password.has_password;
+                    u61 u61Var = m5Var.a;
                     if (u61Var != null && (s61Var = u61Var.W2) != null) {
                         s61Var.N(true);
                         break;
@@ -133,10 +134,10 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 }
                 break;
             case 9:
-                WalletEngine2.HttpTransport.lambda$execute$0((e7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
+                WalletEngine2.HttpTransport.lambda$execute$0((h7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((t9) this.b).f = false;
+                ((w9) this.b).f = false;
                 break;
         }
     }

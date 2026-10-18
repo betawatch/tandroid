@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class vt0 extends rg.c2 {
     public final Path o0;
@@ -45,7 +45,7 @@ public final class vt0 extends rg.c2 {
         if (e > 0.0f) {
             canvas.drawColor(org.telegram.ui.ActionBar.h6.m1(e, -1));
         }
-        setTextColor(i0.b.f(e, -1, -16777216));
+        setTextColor(i0.a.f(e, -1, -16777216));
         canvas.restore();
         super.onDraw(canvas);
     }

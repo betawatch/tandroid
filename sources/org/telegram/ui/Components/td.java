@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class td implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -173,7 +173,7 @@ public final /* synthetic */ class td implements View.OnClickListener {
                     }
                     if (chatActivityEnterView.c3 != null) {
                         if (BuildVars.LOGS_ENABLED) {
-                            i0.a.v(chatActivityEnterView.c3, new StringBuilder("delete file "));
+                            i2.d.v(chatActivityEnterView.c3, new StringBuilder("delete file "));
                         }
                         new File(chatActivityEnterView.c3).delete();
                     }
@@ -284,7 +284,7 @@ public final /* synthetic */ class td implements View.OnClickListener {
                     boolean z15 = chatActivityEnterView.getParentFragment().a8 != null && BirthdayController.isToday(chatActivityEnterView.getParentFragment().a8.birthday);
                     org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(chatActivityEnterView.getContext(), 3, null);
                     b2Var.q(200L);
-                    b2Var.setOnCancelListener(new ai.e0(chatActivityEnterView, ug.q.j(chatActivityEnterView.Q, null, new ci.l3(chatActivityEnterView, b2Var, i14, z15)), 4));
+                    b2Var.setOnCancelListener(new ai.e0(chatActivityEnterView, ug.r.j(chatActivityEnterView.Q, null, new ci.l3(chatActivityEnterView, b2Var, i14, z15)), 4));
                     break;
                 }
                 break;
@@ -456,7 +456,7 @@ public final /* synthetic */ class td implements View.OnClickListener {
                             } else {
                                 snVar4.getParentLayout().getOverlayContainerView();
                             }
-                            ef efVar2 = new ef(chatActivityEnterView4, chatActivityEnterView4.getContext(), chatActivityEnterView4.P2, messagesController, isChannelAndNotMegaGroup, peer2, chatActivityEnterView4.Z2.O(), new ai.s2(chatActivityEnterView4, chatFull, messagesController, 23), chatActivityEnterView4.W3);
+                            ef efVar2 = new ef(chatActivityEnterView4, chatActivityEnterView4.getContext(), chatActivityEnterView4.P2, messagesController, isChannelAndNotMegaGroup, peer2, chatActivityEnterView4.Z2.O(), new ai.t2(chatActivityEnterView4, chatFull, messagesController, 23), chatActivityEnterView4.W3);
                             chatActivityEnterView4.q0 = efVar2;
                             efVar2.e = true;
                             efVar2.c = 220;
@@ -546,16 +546,16 @@ public final /* synthetic */ class td implements View.OnClickListener {
                             xVar.setScaleY(0.25f);
                             lp0Var.setAlpha(0.25f);
                             o1.k kVar = new o1.k(xVar, o1.h.o);
-                            kVar.u = org.telegram.ui.Cells.t0.l(1.0f, 750.0f, 1.0f);
+                            kVar.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
                             kVar.b(new ip0(efVar3, 2));
                             o1.k kVar2 = new o1.k(xVar, o1.h.p);
-                            kVar2.u = org.telegram.ui.Cells.t0.l(1.0f, 750.0f, 1.0f);
+                            kVar2.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
                             kVar2.b(new ip0(efVar3, 3));
                             o1.c cVar = o1.h.t;
                             o1.k kVar3 = new o1.k(xVar, cVar);
-                            kVar3.u = org.telegram.ui.Cells.t0.l(1.0f, 750.0f, 1.0f);
+                            kVar3.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
                             o1.k kVar4 = new o1.k(lp0Var, cVar);
-                            kVar4.u = org.telegram.ui.Cells.t0.l(1.0f, 750.0f, 1.0f);
+                            kVar4.u = org.telegram.ui.Cells.c1.l(1.0f, 750.0f, 1.0f);
                             for (o1.k kVar5 : Arrays.asList(kVar, kVar2, kVar3, kVar4)) {
                                 arrayList2.add(kVar5);
                                 kVar5.a(new jp0(efVar3, kVar5, i18));

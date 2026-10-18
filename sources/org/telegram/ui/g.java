@@ -33,7 +33,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g implements x9, tu0, org.telegram.ui.web.z0, org.telegram.ui.Components.bp0, org.telegram.ui.Components.e5, org.telegram.ui.Components.jn0, l7, ci.w9, org.telegram.ui.Components.xl0, org.telegram.ui.Cells.l1, dc1, gm, oe.a, org.telegram.ui.Components.zl0, org.telegram.ui.Cells.q7, org.telegram.ui.Components.vq, org.telegram.ui.Components.sq0, s4.d0, org.telegram.ui.Components.o8, org.telegram.ui.Components.r20, r0.n, pt, a11 {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class g implements x9, tu0, org.telegram.ui.web.z0, org.telegram.ui
     @Override // r0.n
     public r0.k1 B0(View view, r0.k1 k1Var) {
         oi0 oi0Var = (oi0) this.b;
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
         oi0Var.e = defaultWindowInsets;
         oi0Var.G.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
         oi0Var.F.requestLayout();
@@ -68,9 +68,9 @@ public final class g implements x9, tu0, org.telegram.ui.web.z0, org.telegram.ui
     public void E(String str) {
         h hVar = (h) this.b;
         hVar.finishFragment(false);
-        ov ovVar = hVar.x;
-        LaunchActivity launchActivity = (LaunchActivity) ovVar.b;
-        h hVar2 = (h) ovVar.c;
+        zu zuVar = hVar.x;
+        LaunchActivity launchActivity = (LaunchActivity) zuVar.c;
+        h hVar2 = (h) zuVar.b;
         Pattern pattern = LaunchActivity.C1;
         org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(launchActivity, 3, null);
         b2Var.g0 = false;
@@ -485,7 +485,7 @@ public final class g implements x9, tu0, org.telegram.ui.web.z0, org.telegram.ui
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean d1(MessageObject messageObject) {
-        return org.telegram.ui.Cells.t0.a(messageObject);
+        return org.telegram.ui.Cells.c1.a(messageObject);
     }
 
     @Override // org.telegram.ui.l7
@@ -523,14 +523,14 @@ public final class g implements x9, tu0, org.telegram.ui.web.z0, org.telegram.ui
                 ecVar.d(true);
                 break;
             default:
-                bv bvVar = (bv) this.b;
-                if (bvVar.f[0].f != i10) {
-                    bvVar.w = i10 == bvVar.e.getFirstTabId();
-                    av avVar = bvVar.f[1];
-                    avVar.f = i10;
-                    avVar.setVisibility(0);
-                    bvVar.m0(true);
-                    bvVar.r = z10;
+                cv cvVar = (cv) this.b;
+                if (cvVar.f[0].f != i10) {
+                    cvVar.w = i10 == cvVar.e.getFirstTabId();
+                    bv bvVar = cvVar.f[1];
+                    bvVar.f = i10;
+                    bvVar.setVisibility(0);
+                    cvVar.m0(true);
+                    cvVar.r = z10;
                     break;
                 }
                 break;
@@ -647,21 +647,21 @@ public final class g implements x9, tu0, org.telegram.ui.web.z0, org.telegram.ui
             case 11:
                 break;
             default:
-                bv bvVar = (bv) this.b;
-                if (f7 != 1.0f || bvVar.f[1].getVisibility() == 0) {
-                    if (bvVar.r) {
-                        bvVar.f[0].setTranslationX((-f7) * r3.getMeasuredWidth());
-                        bvVar.f[1].setTranslationX(r3[0].getMeasuredWidth() - (f7 * bvVar.f[0].getMeasuredWidth()));
+                cv cvVar = (cv) this.b;
+                if (f7 != 1.0f || cvVar.f[1].getVisibility() == 0) {
+                    if (cvVar.r) {
+                        cvVar.f[0].setTranslationX((-f7) * r3.getMeasuredWidth());
+                        cvVar.f[1].setTranslationX(r3[0].getMeasuredWidth() - (f7 * cvVar.f[0].getMeasuredWidth()));
                     } else {
-                        bvVar.f[0].setTranslationX(r3.getMeasuredWidth() * f7);
-                        bvVar.f[1].setTranslationX((f7 * r3[0].getMeasuredWidth()) - bvVar.f[0].getMeasuredWidth());
+                        cvVar.f[0].setTranslationX(r3.getMeasuredWidth() * f7);
+                        cvVar.f[1].setTranslationX((f7 * r3[0].getMeasuredWidth()) - cvVar.f[0].getMeasuredWidth());
                     }
                     if (f7 == 1.0f) {
-                        av[] avVarArr = bvVar.f;
-                        av avVar = avVarArr[0];
-                        avVarArr[0] = avVarArr[1];
-                        avVarArr[1] = avVar;
-                        avVar.setVisibility(8);
+                        bv[] bvVarArr = cvVar.f;
+                        bv bvVar = bvVarArr[0];
+                        bvVarArr[0] = bvVarArr[1];
+                        bvVarArr[1] = bvVar;
+                        bvVar.setVisibility(8);
                         break;
                     }
                 }
@@ -1101,7 +1101,7 @@ public final class g implements x9, tu0, org.telegram.ui.web.z0, org.telegram.ui
     public void d(float f7, float f10, int i10, View view) {
         MessageObject messageObject;
         xb xbVar = (xb) this.b;
-        if ((view instanceof org.telegram.ui.Cells.x0) && (messageObject = ((org.telegram.ui.Cells.x0) view).getMessageObject()) != null) {
+        if ((view instanceof org.telegram.ui.Cells.w0) && (messageObject = ((org.telegram.ui.Cells.w0) view).getMessageObject()) != null) {
             long j10 = messageObject.actionDeleteGroupEventId;
             if (j10 != -1) {
                 if (xbVar.p0.contains(Long.valueOf(j10))) {

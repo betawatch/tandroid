@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j51 extends s4.r0 {
     public final /* synthetic */ int a = 0;
@@ -17,7 +17,7 @@ public final class j51 extends s4.r0 {
 
     @Override // s4.r0
     public final void a(RecyclerView recyclerView, int i10) {
-        org.telegram.ui.Wallet.q8 q8Var;
+        org.telegram.ui.Wallet.t8 t8Var;
         switch (this.a) {
             case 0:
                 if (i10 == 0) {
@@ -26,8 +26,8 @@ public final class j51 extends s4.r0 {
                 }
                 break;
             default:
-                if (i10 == 1 && (q8Var = ((org.telegram.ui.Wallet.h4) this.c).b.j0) != null) {
-                    q8Var.a();
+                if (i10 == 1 && (t8Var = ((org.telegram.ui.Wallet.i4) this.c).b.j0) != null) {
+                    t8Var.a();
                     break;
                 }
                 break;
@@ -53,19 +53,19 @@ public final class j51 extends s4.r0 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.l5 l5Var = ((org.telegram.ui.Wallet.h4) this.c).b;
+                org.telegram.ui.Wallet.m5 m5Var = ((org.telegram.ui.Wallet.i4) this.c).b;
                 if (this.b != 0) {
-                    recyclerView.post(new org.telegram.ui.Wallet.m3(l5Var, 14));
+                    recyclerView.post(new org.telegram.ui.Wallet.n3(m5Var, 14));
                     break;
                 } else {
-                    l5Var.x0();
+                    m5Var.x0();
                     break;
                 }
         }
     }
 
-    public j51(org.telegram.ui.Wallet.h4 h4Var, int i10) {
-        this.c = h4Var;
+    public j51(org.telegram.ui.Wallet.i4 i4Var, int i10) {
+        this.c = i4Var;
         this.b = i10;
     }
 }

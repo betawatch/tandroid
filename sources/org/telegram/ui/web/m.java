@@ -1,108 +1,476 @@
 package org.telegram.ui.web;
 
+import ai.m5;
+import ai.q2;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewGroup;
+import android.webkit.JsPromptResult;
+import androidx.car.app.IStartCarApp;
+import androidx.car.app.notification.CarAppNotificationBroadcastReceiver;
+import com.google.android.gms.internal.cast.z5;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.FirebaseCommonRegistrar;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.fr0;
+import org.telegram.messenger.camera.CameraView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Cells.b6;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.is0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.xl0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ey;
+import org.telegram.ui.fo0;
+import org.telegram.ui.so0;
+import org.telegram.ui.te1;
+import org.telegram.ui.xx;
+import yh.f4;
+import yh.g4;
+import yh.p2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class m extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ o a;
+public final /* synthetic */ class m implements org.telegram.ui.ActionBar.a2, r2.v, t5.b, qa.a, OnFailureListener, s5.e, c3.r, e2.j, fo0, xx, androidx.car.app.utils.b, r9.d, m5, Utilities.Callback5, xl0, CameraView.CameraViewDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public m(o oVar) {
-        this.a = oVar;
+    public /* synthetic */ m(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        o oVar = this.a;
-        HashSet hashSet = oVar.w;
-        if (i10 == -1) {
-            kVar = ((n2) oVar).actionBar;
-            if (!kVar.s()) {
-                oVar.finishFragment();
-                return;
-            }
-            kVar2 = ((n2) oVar).actionBar;
-            kVar2.r();
-            hashSet.clear();
-            AndroidUtilities.forEachViews((RecyclerView) oVar.a, (Utilities.Callback<View>) new ci.e(22));
-            return;
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean D() {
+        switch (this.a) {
         }
-        if (i10 != R.id.menu_delete) {
-            if (i10 == R.id.menu_link) {
-                oVar.d0();
-                return;
-            }
-            return;
+        return false;
+    }
+
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean K(ey eyVar) {
+        switch (this.a) {
         }
-        HashSet hashSet2 = new HashSet();
-        ArrayList arrayList = new ArrayList();
-        HashSet hashSet3 = new HashSet();
-        Iterator it = hashSet.iterator();
-        while (true) {
-            MessageObject messageObject = null;
-            int i11 = 0;
-            if (!it.hasNext()) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public /* synthetic */ boolean P0(View view) {
+        return false;
+    }
+
+    @Override // ai.m5
+    public void a(TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, boolean z10) {
+        yh.m2 m2Var = (yh.m2) this.b;
+        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
+        is0 is0Var = m2Var.a;
+        m2Var.e.l.remove(savedStarGift);
+        m2Var.f(true);
+        int i10 = m2Var.b;
+        if (j10 == UserConfig.getInstance(i10).getClientUserId()) {
+            xc a02 = xc.a0(is0Var.a);
+            TLRPC.Document document = tL_starGiftUnique.getDocument();
+            String string = LocaleController.getString(R.string.BoughtResoldGiftTitle);
+            int i11 = R.string.BoughtResoldGiftText;
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(tL_starGiftUnique.title);
+            sb2.append(" #");
+            qc O = a02.O(document, string, LocaleController.formatString(i11, org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2)));
+            O.r = false;
+            O.j();
+        } else {
+            qc O2 = xc.a0(is0Var.a).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(i10, j10)));
+            O2.r = false;
+            O2.j();
+        }
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        if (launchActivity != null) {
+            launchActivity.x0.c(true);
+        }
+    }
+
+    @Override // e2.j
+    public void accept(Object obj) {
+        a5.a aVar = (a5.a) this.b;
+        ((u2.j0) obj).e(aVar.b, (u2.f0) aVar.c, (u2.b0) this.c);
+    }
+
+    @Override // s5.e
+    public Object apply(Object obj) {
+        s5.g gVar = (s5.g) this.b;
+        l5.i iVar = (l5.i) this.c;
+        SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
+        s5.a aVar = gVar.d;
+        ArrayList d = gVar.d(sQLiteDatabase, iVar, aVar.b);
+        for (i5.d dVar : i5.d.values()) {
+            if (dVar != iVar.c) {
+                int size = aVar.b - d.size();
+                if (size <= 0) {
+                    break;
+                }
+                d.addAll(gVar.d(sQLiteDatabase, iVar.b(dVar), size));
+            }
+        }
+        HashMap hashMap = new HashMap();
+        StringBuilder sb2 = new StringBuilder("event_id IN (");
+        for (int i10 = 0; i10 < d.size(); i10++) {
+            sb2.append(((s5.b) d.get(i10)).a);
+            if (i10 < d.size() - 1) {
+                sb2.append(',');
+            }
+        }
+        sb2.append(')');
+        Cursor query = sQLiteDatabase.query("event_metadata", new String[]{"event_id", "name", "value"}, sb2.toString(), null, null, null, null);
+        while (query.moveToNext()) {
+            try {
+                long j10 = query.getLong(0);
+                Set set = (Set) hashMap.get(Long.valueOf(j10));
+                if (set == null) {
+                    set = new HashSet();
+                    hashMap.put(Long.valueOf(j10), set);
+                }
+                set.add(new s5.f(query.getString(1), query.getString(2)));
+            } catch (Throwable th2) {
+                query.close();
+                throw th2;
+            }
+        }
+        query.close();
+        ListIterator listIterator = d.listIterator();
+        while (listIterator.hasNext()) {
+            s5.b bVar = (s5.b) listIterator.next();
+            long j11 = bVar.a;
+            if (hashMap.containsKey(Long.valueOf(j11))) {
+                com.google.firebase.messaging.l c10 = bVar.c.c();
+                for (s5.f fVar : (Set) hashMap.get(Long.valueOf(j11))) {
+                    c10.c(fVar.a, fVar.b);
+                }
+                listIterator.set(new s5.b(j11, bVar.b, c10.h()));
+            }
+        }
+        return d;
+    }
+
+    @Override // r2.v
+    public int b(Object obj) {
+        Context context = (Context) this.b;
+        b2.w wVar = (b2.w) this.c;
+        r2.o oVar = (r2.o) obj;
+        String str = oVar.b;
+        return ((str.equals(wVar.s) || str.equals(r2.w.c(wVar))) && oVar.c(context, wVar, false) && oVar.d(wVar)) ? 1 : 0;
+    }
+
+    @Override // org.telegram.ui.fo0
+    public void c(int i10) {
+        switch (this.a) {
+            case 15:
+                ug.u uVar = (ug.u) this.b;
+                ug.u uVar2 = (ug.u) this.c;
+                if (i10 != 1) {
+                    if (i10 != 3) {
+                        uVar2.run(null);
+                        break;
+                    }
+                } else {
+                    uVar.run(null);
+                    break;
+                }
                 break;
-            }
-            int intValue = ((Integer) it.next()).intValue();
-            ArrayList arrayList2 = oVar.d.a;
-            int size = arrayList2.size();
-            int i12 = 0;
-            while (true) {
-                if (i12 >= size) {
-                    break;
-                }
-                Object obj = arrayList2.get(i12);
-                i12++;
-                MessageObject messageObject2 = (MessageObject) obj;
-                if (messageObject2 != null && messageObject2.getId() == intValue) {
-                    messageObject = messageObject2;
-                    break;
-                }
-            }
-            i iVar = oVar.e;
-            if (iVar != null && messageObject == null) {
-                ArrayList arrayList3 = iVar.a;
-                int size2 = arrayList3.size();
-                while (true) {
-                    if (i11 >= size2) {
+            default:
+                Utilities.Callback callback = (Utilities.Callback) this.b;
+                Utilities.Callback callback2 = (Utilities.Callback) this.c;
+                if (i10 != 1) {
+                    if (i10 != 3) {
+                        callback2.run(null);
                         break;
                     }
-                    Object obj2 = arrayList3.get(i11);
-                    i11++;
-                    MessageObject messageObject3 = (MessageObject) obj2;
-                    if (messageObject3 != null && messageObject3.getId() == intValue) {
-                        messageObject = messageObject3;
+                } else {
+                    callback.run(null);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // androidx.car.app.utils.b
+    public void call() {
+        IStartCarApp iStartCarApp = (IStartCarApp) this.b;
+        Intent intent = (Intent) this.c;
+        int i10 = CarAppNotificationBroadcastReceiver.a;
+        iStartCarApp.startCarApp(intent);
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public void d(float f7, float f10, int i10, View view) {
+        g4.R((g4) this.b, (f4) this.c, i10);
+    }
+
+    @Override // c3.r
+    public c3.o[] e(Uri uri, Map map) {
+        u2.p pVar = (u2.p) this.b;
+        b2.w wVar = (b2.w) this.c;
+        return new c3.o[]{pVar.c.a0(wVar) ? new z3.h(pVar.c.y(wVar), null) : new k3.a(wVar)};
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                p.Y((p) this.b, (HashSet) this.c);
+                break;
+            case 1:
+                a1 a1Var = (a1) this.b;
+                String[] strArr = (String[]) this.c;
+                TL_bots.allowSendMessage allowsendmessage = new TL_bots.allowSendMessage();
+                allowsendmessage.bot = MessagesController.getInstance(a1Var.M).getInputUser(a1Var.U);
+                ConnectionsManager.getInstance(a1Var.M).sendRequest(allowsendmessage, new q2(a1Var, strArr, b2Var, 20));
+                break;
+            case 2:
+                boolean[] zArr = (boolean[]) this.b;
+                JsPromptResult jsPromptResult = (JsPromptResult) this.c;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    jsPromptResult.cancel();
+                    break;
+                }
+                break;
+            case 9:
+                sg.j0.R((sg.j0) this.b, (ArrayList) this.c);
+                break;
+            case 13:
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
+                ug.s0 s0Var = (ug.s0) this.c;
+                atomicBoolean.set(true);
+                s0Var.run();
+                break;
+            case 14:
+                ((ug.u) this.b).run((TLRPC.TL_premiumGiftCodeOption) this.c);
+                break;
+            case 21:
+                yh.n nVar = (yh.n) this.b;
+                b6 b6Var = (b6) this.c;
+                try {
+                    int parseInt = Integer.parseInt(b6Var.getText().toString().trim());
+                    nVar.Y(parseInt);
+                    nVar.c0.setValue(parseInt);
+                    b2Var.dismiss();
+                    break;
+                } catch (Throwable th2) {
+                    AndroidUtilities.shakeView(b6Var);
+                    FileLog.e(th2);
+                    return;
+                }
+            default:
+                yh.y1 y1Var = (yh.y1) this.b;
+                Utilities.Callback callback = (Utilities.Callback) this.c;
+                String obj = y1Var.getText().toString();
+                if (obj.length() > 0 && obj.length() <= 12) {
+                    callback.run(obj);
+                    b2Var.dismiss();
+                    break;
+                } else {
+                    AndroidUtilities.shakeView(y1Var);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // qa.a
+    public void h(qa.b bVar) {
+        qa.a aVar = (qa.a) this.b;
+        qa.a aVar2 = (qa.a) this.c;
+        aVar.h(bVar);
+        aVar2.h(bVar);
+    }
+
+    @Override // t5.b
+    public Object j() {
+        switch (this.a) {
+            case 4:
+                ea.b bVar = (ea.b) this.b;
+                Iterable iterable = (Iterable) this.c;
+                s5.g gVar = (s5.g) ((s5.d) bVar.c);
+                gVar.getClass();
+                if (iterable.iterator().hasNext()) {
+                    gVar.a().compileStatement("DELETE FROM events WHERE _id in " + s5.g.g(iterable)).execute();
+                    break;
+                }
+                break;
+            default:
+                ea.b bVar2 = (ea.b) this.b;
+                for (Map.Entry entry : ((HashMap) this.c).entrySet()) {
+                    ((s5.g) ((s5.c) bVar2.i)).e(((Integer) entry.getValue()).intValue(), o5.c.h, (String) entry.getKey());
+                }
+                break;
+        }
+        return null;
+    }
+
+    @Override // r9.d
+    public Object j2(z5 z5Var) {
+        String valueOf;
+        String str = (String) this.b;
+        k2.f0 f0Var = (k2.f0) this.c;
+        Context context = (Context) z5Var.a(Context.class);
+        switch (f0Var.a) {
+            case 5:
+                ApplicationInfo applicationInfo = context.getApplicationInfo();
+                if (applicationInfo != null) {
+                    valueOf = String.valueOf(applicationInfo.targetSdkVersion);
+                    break;
+                }
+                valueOf = "";
+                break;
+            case 6:
+                valueOf = FirebaseCommonRegistrar.a(context);
+                break;
+            case 7:
+                int i10 = Build.VERSION.SDK_INT;
+                if (!context.getPackageManager().hasSystemFeature("android.hardware.type.television")) {
+                    if (!context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
+                        if (!context.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
+                            if (i10 >= 26 && context.getPackageManager().hasSystemFeature("android.hardware.type.embedded")) {
+                                valueOf = "embedded";
+                                break;
+                            }
+                            valueOf = "";
+                            break;
+                        } else {
+                            valueOf = "auto";
+                            break;
+                        }
+                    } else {
+                        valueOf = "watch";
                         break;
                     }
+                } else {
+                    valueOf = "tv";
+                    break;
                 }
-            }
-            if (messageObject != null) {
-                arrayList.add(messageObject);
-                hashSet3.add(Integer.valueOf(messageObject.getId()));
-                hashSet2.add(k.a(messageObject));
+            default:
+                String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
+                if (installerPackageName != null) {
+                    valueOf = FirebaseCommonRegistrar.b(installerPackageName);
+                    break;
+                }
+                valueOf = "";
+                break;
+        }
+        return new ya.a(str, valueOf);
+    }
+
+    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
+    public void onCameraInit() {
+        zh.w wVar = (zh.w) this.b;
+        ((CameraView) this.c).animate().alpha(1.0f).setDuration(180L).start();
+        if (wVar.Q || wVar.b0 || wVar.f0) {
+            return;
+        }
+        wVar.b0 = true;
+        wVar.a0.postDelayed(wVar.s0, 150L);
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        rg.x1 x1Var = (rg.x1) this.b;
+        Bitmap bitmap = (Bitmap) this.c;
+        x1Var.B0 = false;
+        FileLog.e(exc);
+        if (Build.VERSION.SDK_INT >= 24 && (exc instanceof nb.a) && exc.getMessage() != null && exc.getMessage().contains("segmentation optional module to be downloaded") && x1Var.isAttachedToWindow()) {
+            AndroidUtilities.runOnUIThread(new p2.b(13, x1Var, bitmap), 2000L);
+        } else {
+            x1Var.C0 = true;
+        }
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        p2 p2Var = (p2) this.b;
+        ei.d dVar = (ei.d) this.c;
+        View view = (View) obj2;
+        p2Var.getClass();
+        long j10 = ((TL_stars.SavedStarGift) ((f61) obj).G).gift.id;
+        if (p2Var.b == j10) {
+            p2Var.b = 0L;
+        } else {
+            p2Var.b = j10;
+        }
+        dVar.setEnabled(p2Var.b != 0);
+        if (view.getParent() instanceof ViewGroup) {
+            ViewGroup viewGroup = (ViewGroup) view.getParent();
+            for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
+                View childAt = viewGroup.getChildAt(i10);
+                if (childAt instanceof so0) {
+                    so0 so0Var = (so0) childAt;
+                    so0Var.b(p2Var.b == so0Var.getGiftId(), true);
+                }
             }
         }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(oVar.getParentActivity(), 0, oVar.getResourceProvider());
-        alertDialog$Builder.a.R = LocaleController.formatPluralString("DeleteOptionsTitle", hashSet3.size(), new Object[0]);
-        alertDialog$Builder.a.T = LocaleController.getString(hashSet3.size() == 1 ? "AreYouSureUnsaveSingleMessage" : "AreYouSureUnsaveFewMessages");
-        alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new fr0(29, oVar, hashSet3));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.d(-1);
-        alertDialog$Builder.o();
+    }
+
+    @Override // org.telegram.ui.xx
+    public boolean w(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, te1 te1Var) {
+        switch (this.a) {
+            case 17:
+                ug.f0 f0Var = (ug.f0) this.b;
+                String str = (String) this.c;
+                long j10 = 0;
+                for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                    j10 = ((MessagesStorage.TopicKey) arrayList.get(i12)).dialogId;
+                    f0Var.n.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(str, j10, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                }
+                eyVar.finishFragment();
+                ug.i.h(j10);
+                break;
+            default:
+                vg.e eVar = (vg.e) this.b;
+                String str2 = (String) this.c;
+                long j11 = 0;
+                int i13 = 0;
+                while (i13 < arrayList.size()) {
+                    j11 = ((MessagesStorage.TopicKey) arrayList.get(i13)).dialogId;
+                    eVar.e.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of(str2, j11, null, null, null, true, null, null, null, true, 0, 0, null, false));
+                    i13++;
+                    eVar = eVar;
+                }
+                eyVar.finishFragment();
+                ug.i.h(j11);
+                break;
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

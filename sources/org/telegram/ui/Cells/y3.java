@@ -8,7 +8,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ty0;
 import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y3 extends RadialProgressView {
     public final /* synthetic */ int K = 0;
@@ -36,7 +36,7 @@ public final class y3 extends RadialProgressView {
                     paint.setAlpha(alpha);
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint);
                 }
-                d4Var.x.setProgressColor(i0.b.o(-1, (int) (w9Var.getAlpha() * w9Var.getImageReceiver().getCurrentAlpha() * 255.0f)));
+                d4Var.x.setProgressColor(i0.a.o(-1, (int) (w9Var.getAlpha() * w9Var.getImageReceiver().getCurrentAlpha() * 255.0f)));
                 super.onDraw(canvas);
                 break;
             case 1:

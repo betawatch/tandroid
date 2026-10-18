@@ -14,7 +14,7 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class iz0 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -154,7 +154,7 @@ public final class iz0 {
         int height = this.b.getHeight() + this.g;
         this.g = height;
         this.g = AndroidUtilities.dp(5.0f) + height;
-        int D = org.telegram.messenger.q.D(24.0f, 2, Math.max(dp, i20));
+        int D = org.telegram.messenger.g0.D(24.0f, 2, Math.max(dp, i20));
         this.h = D;
         this.d = (D - max) / 2;
         this.e = (D - dp) / 2;

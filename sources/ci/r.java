@@ -1,6 +1,6 @@
 package ci;
 
-import ai.va;
+import ai.wa;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -47,7 +47,7 @@ import org.telegram.ui.Components.yj0;
 import org.telegram.ui.ey;
 import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class r extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public boolean A0;
@@ -182,7 +182,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         s4.b0 b0Var = new s4.b0(0, false);
         this.S = b0Var;
         jVar.setLayoutManager(b0Var);
-        jVar.setOnItemClickListener(new va(vwVar, 4));
+        jVar.setOnItemClickListener(new wa(vwVar, 4));
         jVar.setOnItemLongClickListener(new a1.c(vwVar, 13));
         jVar.setAdapter(nVar);
         addView(jVar, w7.z5.a(-2.0f, 0.0f, 4.0f, 0.0f, 0.0f, -1, 0));
@@ -816,7 +816,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
             int dp5 = AndroidUtilities.dp(72.0f);
             float f32 = this.N;
             float lerp9 = AndroidUtilities.lerp(AndroidUtilities.dp(48.0f), AndroidUtilities.dp(26.33f), f32) / f11;
-            float c10 = r.c.c(lerp9, f11, AndroidUtilities.lerp((dp5 / f11) - lerp9, 0.0f, f32), -dp5) + AndroidUtilities.dp(12.0f) + f12;
+            float c10 = r4.c.c(lerp9, f11, AndroidUtilities.lerp((dp5 / f11) - lerp9, 0.0f, f32), -dp5) + AndroidUtilities.dp(12.0f) + f12;
             q6Var.setTranslationX(c10);
             org.telegram.ui.Components.p6 drawable = q6Var.getDrawable();
             drawable.N = (this.q0.E.getVisibleItemsMeasuredWidthWithAlpha() * min) + (c10 - AndroidUtilities.dp(12.0f));
@@ -986,7 +986,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         org.telegram.ui.ActionBar.d6 resourceProvider = eyVar != null ? eyVar.getResourceProvider() : null;
         org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(getContext(), 3, resourceProvider);
         b2Var.q(500L);
-        MessagesController.getInstance(i10).getStoriesController().k(j10, new ai.v2(this, b2Var, j10, qVar, 1), true, resourceProvider);
+        MessagesController.getInstance(i10).getStoriesController().k(j10, new ai.w2(this, b2Var, j10, qVar, 1), true, resourceProvider);
     }
 
     public final boolean k(long j10) {
@@ -1274,7 +1274,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         if (d8.d != null) {
             int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.xj, false);
             int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false);
-            d8.d.d(i0.b.f(0.25f, x02, x03), x03, 0, 0);
+            d8.d.d(i0.a.f(0.25f, x02, x03), x03, 0, 0);
         }
         int textColor = getTextColor();
         this.T.setTextColor(getTextLogoColor());

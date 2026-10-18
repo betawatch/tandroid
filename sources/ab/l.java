@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import v7.i8;
 import v7.u8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l extends md.i implements td.p {
     public final /* synthetic */ int a;
@@ -138,9 +138,9 @@ public final class l extends md.i implements td.p {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
                         i8.b(obj);
-                        Boolean h = hVar2.a.h();
-                        if (h != null) {
-                            booleanValue = h.booleanValue();
+                        Boolean t10 = hVar2.a.t();
+                        if (t10 != null) {
+                            booleanValue = t10.booleanValue();
                         } else {
                             Boolean a2 = hVar2.b.a();
                             booleanValue = a2 != null ? a2.booleanValue() : true;

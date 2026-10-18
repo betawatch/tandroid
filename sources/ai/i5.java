@@ -15,7 +15,7 @@ import org.telegram.ui.q21;
 import org.telegram.ui.qg1;
 import org.telegram.ui.y50;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i5 extends u81 {
     public final /* synthetic */ int a;
@@ -38,13 +38,13 @@ public final class i5 extends u81 {
             case 0:
                 k7 k7Var = (k7) obj;
                 if (i11 == 0) {
-                    k7.s1(k7Var, false);
+                    k7.t1(k7Var, false);
                     yh.l2 l2Var = k7Var.c0;
                     if (l2Var != null) {
                         n5Var = l2Var.Y;
                     }
                 } else if (i11 == 2) {
-                    k7.s1(k7Var, true);
+                    k7.t1(k7Var, true);
                     yh.l2 l2Var2 = k7Var.d0;
                     if (l2Var2 != null) {
                         n5Var = l2Var2.Y;
@@ -107,7 +107,7 @@ public final class i5 extends u81 {
             case 0:
                 k7 k7Var = (k7) this.c;
                 if (i10 == 0) {
-                    k7.s1(k7Var, false);
+                    k7.t1(k7Var, false);
                     yh.l2 l2Var = k7Var.c0;
                     if (l2Var != null) {
                         n5Var = l2Var.Y;
@@ -120,7 +120,7 @@ public final class i5 extends u81 {
                 }
                 if (i10 != 1) {
                     if (i10 == 2) {
-                        k7.s1(k7Var, true);
+                        k7.t1(k7Var, true);
                         yh.l2 l2Var2 = k7Var.d0;
                         if (l2Var2 != null) {
                             n5Var = l2Var2.Y;
@@ -146,7 +146,7 @@ public final class i5 extends u81 {
             case 4:
                 return new l41((Context) this.b, 7);
             default:
-                return i10 == 0 ? ((ug.y) this.b).getContainerView() : ((ug.x0) this.c).getContainerView();
+                return i10 == 0 ? ((ug.z) this.b).getContainerView() : ((ug.y0) this.c).getContainerView();
         }
     }
 
@@ -155,7 +155,7 @@ public final class i5 extends u81 {
         switch (this.a) {
             case 0:
                 k7 k7Var = (k7) this.c;
-                return (k7Var.Y1(true) ? 1 : 0) + (k7Var.Y1(false) ? 1 : 0) + 1;
+                return (k7Var.Z1(true) ? 1 : 0) + (k7Var.Z1(false) ? 1 : 0) + 1;
             case 1:
                 return 2;
             case 2:
@@ -174,7 +174,7 @@ public final class i5 extends u81 {
     public int h(int i10) {
         switch (this.a) {
             case 0:
-                return (i10 - (((k7) this.c).Y1(false) ? 1 : 0)) + 1;
+                return (i10 - (((k7) this.c).Z1(false) ? 1 : 0)) + 1;
             case 2:
                 return i10 == 0 ? 0 : 1;
             case 5:
@@ -184,10 +184,10 @@ public final class i5 extends u81 {
         }
     }
 
-    public i5(ug.y yVar, ug.x0 x0Var) {
+    public i5(ug.z zVar, ug.y0 y0Var) {
         this.a = 5;
-        this.b = yVar;
-        this.c = x0Var;
+        this.b = zVar;
+        this.c = y0Var;
     }
 
     private final void i(View view, int i10, int i11) {

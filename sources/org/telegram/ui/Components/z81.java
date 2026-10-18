@@ -11,7 +11,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z81 extends View {
     public y81 a;
@@ -110,7 +110,7 @@ public final class z81 extends View {
         if (b91Var.E == 9) {
             textPaint3.setColor(org.telegram.ui.ActionBar.h6.w0(b91Var.R, d6Var));
         } else if ((b91Var.J || i25 != -1) && (i23 == i10 || i23 == i11)) {
-            textPaint3.setColor(i0.b.f(b91Var.K, org.telegram.ui.ActionBar.h6.w0(i13, d6Var), org.telegram.ui.ActionBar.h6.w0(i12, d6Var)));
+            textPaint3.setColor(i0.a.f(b91Var.K, org.telegram.ui.ActionBar.h6.w0(i13, d6Var), org.telegram.ui.ActionBar.h6.w0(i12, d6Var)));
         } else {
             textPaint3.setColor(org.telegram.ui.ActionBar.h6.w0(i12, d6Var));
         }
@@ -166,7 +166,7 @@ public final class z81 extends View {
                         if (org.telegram.ui.ActionBar.h6.d1(i14) && org.telegram.ui.ActionBar.h6.d1(i15)) {
                             int w02 = org.telegram.ui.ActionBar.h6.w0(i14, d6Var);
                             if ((b91Var.J || b91Var.L != -1) && ((i22 = this.a.a) == i20 || i22 == i21)) {
-                                paint.setColor(i0.b.f(b91Var.K, org.telegram.ui.ActionBar.h6.w0(i15, d6Var), w02));
+                                paint.setColor(i0.a.f(b91Var.K, org.telegram.ui.ActionBar.h6.w0(i15, d6Var), w02));
                             } else {
                                 paint.setColor(w02);
                             }
@@ -174,14 +174,14 @@ public final class z81 extends View {
                             paint.setColor(textPaint3.getColor());
                         }
                         int dp2 = AndroidUtilities.dp(6.0f) + i19 + this.a.c;
-                        int B = org.telegram.messenger.wh.B(20.0f, getMeasuredHeight(), i18);
+                        int A = org.telegram.messenger.kk.A(20.0f, getMeasuredHeight(), i18);
                         if (this.a.a != Integer.MAX_VALUE) {
                             if (b91Var.n) {
                                 int i29 = b91.s0;
                                 paint.setAlpha((int) f7);
-                                float dp3 = AndroidUtilities.dp(20.0f) + B;
+                                float dp3 = AndroidUtilities.dp(20.0f) + A;
                                 RectF rectF = this.c;
-                                rectF.set(dp2, B, dp2 + i16, dp3);
+                                rectF.set(dp2, A, dp2 + i16, dp3);
                                 float f10 = AndroidUtilities.density * 11.5f;
                                 canvas2.drawRoundRect(rectF, f10, f10, paint);
                                 if (this.a.a != Integer.MAX_VALUE) {
@@ -201,9 +201,9 @@ public final class z81 extends View {
                             }
                         }
                         paint.setAlpha(255);
-                        float dp32 = AndroidUtilities.dp(20.0f) + B;
+                        float dp32 = AndroidUtilities.dp(20.0f) + A;
                         RectF rectF2 = this.c;
-                        rectF2.set(dp2, B, dp2 + i16, dp32);
+                        rectF2.set(dp2, A, dp2 + i16, dp32);
                         float f102 = AndroidUtilities.density * 11.5f;
                         canvas2.drawRoundRect(rectF2, f102, f102, paint);
                         if (this.a.a != Integer.MAX_VALUE) {

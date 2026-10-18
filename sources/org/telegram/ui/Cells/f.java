@@ -12,7 +12,7 @@ import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.y90;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f implements Runnable {
     public final /* synthetic */ j a;
@@ -55,11 +55,11 @@ public final class f implements Runnable {
                             AndroidUtilities.addToClipboard(str);
                             if (AndroidUtilities.shouldShowClipboardToast()) {
                                 if (str.startsWith("@")) {
-                                    org.telegram.messenger.q.q(R.string.UsernameCopied, xc.a0(n2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.g0.q(R.string.UsernameCopied, xc.a0(n2Var), R.raw.copy, 36);
                                 } else if (str.startsWith("#") || str.startsWith("$")) {
-                                    org.telegram.messenger.q.q(R.string.HashtagCopied, xc.a0(n2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.g0.q(R.string.HashtagCopied, xc.a0(n2Var), R.raw.copy, 36);
                                 } else {
-                                    org.telegram.messenger.q.q(R.string.LinkCopied, xc.a0(n2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.g0.q(R.string.LinkCopied, xc.a0(n2Var), R.raw.copy, 36);
                                 }
                             }
                         }

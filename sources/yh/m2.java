@@ -1,7 +1,7 @@
 package yh;
 
 import ai.s8;
-import ai.x9;
+import ai.y9;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -26,7 +26,7 @@ import org.telegram.ui.ProfileActivity;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final LinearLayout E;
@@ -38,7 +38,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
     public final int b;
     public final d6 c;
     public boolean d;
-    public x9 e;
+    public y9 e;
     public final h2 f;
     public bh.l h;
     public boolean n;
@@ -120,12 +120,12 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
                 public final void onClick(View view3) {
                     switch (i11) {
                         case 0:
-                            x9 x9Var = this.b.e;
-                            if (x9Var != null) {
-                                if (!x9Var.e || x9Var.g != 783) {
-                                    x9Var.g = 783;
-                                    x9Var.e = true;
-                                    x9Var.j(true);
+                            y9 y9Var = this.b.e;
+                            if (y9Var != null) {
+                                if (!y9Var.e || y9Var.g != 783) {
+                                    y9Var.g = 783;
+                                    y9Var.e = true;
+                                    y9Var.j(true);
                                     break;
                                 }
                             }
@@ -184,12 +184,12 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
             public final void onClick(View view3) {
                 switch (i13) {
                     case 0:
-                        x9 x9Var = this.b.e;
-                        if (x9Var != null) {
-                            if (!x9Var.e || x9Var.g != 783) {
-                                x9Var.g = 783;
-                                x9Var.e = true;
-                                x9Var.j(true);
+                        y9 y9Var = this.b.e;
+                        if (y9Var != null) {
+                            if (!y9Var.e || y9Var.g != 783) {
+                                y9Var.g = 783;
+                                y9Var.e = true;
+                                y9Var.j(true);
                                 break;
                             }
                         }
@@ -264,9 +264,9 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
 
     public final void e() {
         if (this.n) {
-            x9 x9Var = this.e;
-            if (x9Var != null) {
-                x9Var.m();
+            y9 y9Var = this.e;
+            if (y9Var != null) {
+                y9Var.m();
             }
             setReordering(false);
         }

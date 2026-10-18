@@ -1,6 +1,6 @@
 package gi;
 
-import ai.ud;
+import ai.vd;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -18,7 +18,7 @@ import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class a0 extends hm0 {
     public ArrayList c;
@@ -81,16 +81,16 @@ public final class a0 extends hm0 {
         z zVar = new z(context);
         zVar.setOrientation(0);
         zVar.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
-        ud udVar = new ud(context, 3);
-        zVar.b = udVar;
-        NotificationCenter.listenEmojiLoading(udVar);
-        udVar.setTextSize(1, 16.0f);
+        vd vdVar = new vd(context, 3);
+        zVar.b = vdVar;
+        NotificationCenter.listenEmojiLoading(vdVar);
+        vdVar.setTextSize(1, 16.0f);
         int i11 = h6.G6;
-        udVar.setTextColor(h6.x0(null, i11, false));
-        udVar.setTag(Integer.valueOf(i11));
-        udVar.setMaxLines(2);
-        udVar.setEllipsize(TextUtils.TruncateAt.END);
-        zVar.addView(udVar, z5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
+        vdVar.setTextColor(h6.x0(null, i11, false));
+        vdVar.setTag(Integer.valueOf(i11));
+        vdVar.setMaxLines(2);
+        vdVar.setEllipsize(TextUtils.TruncateAt.END);
+        zVar.addView(vdVar, z5.p(-1, -2, 1.0f, 16, 0, 0, AndroidUtilities.dp(8.0f), 0));
         TextView textView = new TextView(context);
         zVar.a = textView;
         textView.setTextSize(1, 14.0f);

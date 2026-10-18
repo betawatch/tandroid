@@ -34,7 +34,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class TelegramMediaSession {
     private static final String CONTENT_STYLE_BROWSABLE_HINT = "android.media.browse.CONTENT_STYLE_BROWSABLE_HINT";
@@ -65,12 +65,12 @@ public class TelegramMediaSession {
     private final a0.h pendingMusicLoads = new a0.h();
     private final ArrayList<PendingBrowseRequest> pendingBrowseRequests = new ArrayList<>();
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public interface BrowseChildrenCallback {
         void onResult(List<MediaBrowser.MediaItem> list);
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static final class PendingBrowseRequest {
         final BrowseChildrenCallback callback;
         final String parentMediaId;
@@ -288,7 +288,7 @@ public class TelegramMediaSession {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        AndroidUtilities.runOnUIThread(new ai.tb(this, i10, arrayList, hVar, hVar2, 13));
+        AndroidUtilities.runOnUIThread(new ai.ub(this, i10, arrayList, hVar, hVar2, 13));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -463,7 +463,7 @@ public class TelegramMediaSession {
         this.pendingMusicLoads.k(arrayList2, j10);
         int i10 = this.currentAccount;
         MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-        messagesStorage.getStorageQueue().postRunnable(new ai.wb(this, messagesStorage, j10, i10, 11));
+        messagesStorage.getStorageQueue().postRunnable(new ai.xb(this, messagesStorage, j10, i10, 11));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -491,7 +491,7 @@ public class TelegramMediaSession {
     }
 
     public Bundle buildRootHints() {
-        Bundle d = wh.d(2, CONTENT_STYLE_SUPPORTED, CONTENT_STYLE_BROWSABLE_HINT, true);
+        Bundle d = kk.d(2, CONTENT_STYLE_SUPPORTED, CONTENT_STYLE_BROWSABLE_HINT, true);
         d.putInt(CONTENT_STYLE_PLAYABLE_HINT, 1);
         return d;
     }
@@ -629,7 +629,7 @@ public class TelegramMediaSession {
         this.session.i(SharedConfig.shuffleMusic ? 1 : 0);
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public final class SessionCallback extends android.support.v4.media.session.s {
         private SessionCallback() {
         }

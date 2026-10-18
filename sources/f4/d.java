@@ -5,8 +5,8 @@ import ai.g6;
 import android.text.Layout;
 import android.text.TextUtils;
 import b2.u0;
-import com.google.android.gms.internal.cast.a6;
 import com.google.android.gms.internal.cast.z5;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.h;
 import e2.j;
 import e2.m0;
@@ -33,7 +33,7 @@ import w7.b9;
 import z3.l;
 import z3.m;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -271,12 +271,12 @@ public final class d implements m {
                                 group6.getClass();
                                 parseFloat2 = Float.parseFloat(group6) / f10;
                             } catch (NumberFormatException unused3) {
-                                a6.r("Ignoring region with malformed extent: ", f21, "TtmlParser");
+                                k3.r("Ignoring region with malformed extent: ", f21, "TtmlParser");
                             }
                         } else if (!matcher4.matches()) {
-                            a6.r("Ignoring region with unsupported extent: ", f21, "TtmlParser");
+                            k3.r("Ignoring region with unsupported extent: ", f21, "TtmlParser");
                         } else if (u0Var == null) {
-                            a6.r("Ignoring region with missing tts:extent: ", f21, "TtmlParser");
+                            k3.r("Ignoring region with missing tts:extent: ", f21, "TtmlParser");
                         } else {
                             String group7 = matcher4.group(1);
                             group7.getClass();
@@ -888,7 +888,7 @@ public final class d implements m {
                         fVar2.c = true;
                         break;
                     } catch (IllegalArgumentException unused) {
-                        a6.r("Failed parsing color value: ", attributeValue, "TtmlParser");
+                        k3.r("Failed parsing color value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case '\n':
@@ -904,7 +904,7 @@ public final class d implements m {
                             e2.a.m("TtmlParser", "Failed to parse shear: " + attributeValue, e7);
                         }
                     } else {
-                        a6.r("Invalid value for shear: ", attributeValue, "TtmlParser");
+                        k3.r("Invalid value for shear: ", attributeValue, "TtmlParser");
                     }
                     b10.s = f7;
                     fVar2 = b10;
@@ -929,7 +929,7 @@ public final class d implements m {
                         f(attributeValue, fVar2);
                         break;
                     } catch (z3.f unused2) {
-                        a6.r("Failed parsing fontSize value: ", attributeValue, "TtmlParser");
+                        k3.r("Failed parsing fontSize value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case '\r':
@@ -1039,7 +1039,7 @@ public final class d implements m {
                         fVar2.e = true;
                         break;
                     } catch (IllegalArgumentException unused3) {
-                        a6.r("Failed parsing background value: ", attributeValue, "TtmlParser");
+                        k3.r("Failed parsing background value: ", attributeValue, "TtmlParser");
                         break;
                     }
                 case 16:
@@ -1132,7 +1132,7 @@ public final class d implements m {
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new z3.f(r.c.g("Malformed time expression: ", str));
+            throw new z3.f(r4.c.h("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();

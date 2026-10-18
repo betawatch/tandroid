@@ -19,12 +19,12 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.ja;
 import w7.t6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c1 extends DispatchQueue {
     public final SurfaceTexture a;
@@ -126,7 +126,7 @@ public final class c1 extends DispatchQueue {
         boolean z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (BuildVars.LOGS_ENABLED) {
-                wh.v(this.b, new StringBuilder("eglGetDisplay failed "));
+                kk.v(this.b, new StringBuilder("eglGetDisplay failed "));
             }
             finish();
         } else {
@@ -154,7 +154,7 @@ public final class c1 extends DispatchQueue {
                         this.d = eglCreateContext;
                         if (eglCreateContext == null) {
                             if (BuildVars.LOGS_ENABLED) {
-                                wh.v(this.b, new StringBuilder("eglCreateContext failed "));
+                                kk.v(this.b, new StringBuilder("eglCreateContext failed "));
                             }
                             finish();
                         } else {
@@ -167,7 +167,7 @@ public final class c1 extends DispatchQueue {
                                 this.e = eglCreateWindowSurface;
                                 if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                                     if (BuildVars.LOGS_ENABLED) {
-                                        wh.v(this.b, new StringBuilder("createWindowSurface failed "));
+                                        kk.v(this.b, new StringBuilder("createWindowSurface failed "));
                                     }
                                     finish();
                                 } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -265,7 +265,7 @@ public final class c1 extends DispatchQueue {
                                     z10 = true;
                                 } else {
                                     if (BuildVars.LOGS_ENABLED) {
-                                        wh.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                                        kk.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                                     }
                                     finish();
                                 }
@@ -282,13 +282,13 @@ public final class c1 extends DispatchQueue {
                     z10 = false;
                 } else {
                     if (BuildVars.LOGS_ENABLED) {
-                        wh.v(this.b, new StringBuilder("eglChooseConfig failed "));
+                        kk.v(this.b, new StringBuilder("eglChooseConfig failed "));
                     }
                     finish();
                 }
             } else {
                 if (BuildVars.LOGS_ENABLED) {
-                    wh.v(this.b, new StringBuilder("eglInitialize failed "));
+                    kk.v(this.b, new StringBuilder("eglInitialize failed "));
                 }
                 finish();
             }

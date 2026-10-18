@@ -9,7 +9,7 @@ import android.widget.ViewSwitcher;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ag0 implements ViewSwitcher.ViewFactory {
     public final /* synthetic */ int a;
@@ -39,14 +39,14 @@ public final /* synthetic */ class ag0 implements ViewSwitcher.ViewFactory {
                 return textView;
             case 1:
                 TextView textView2 = new TextView((Context) obj);
-                com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.D6, null, false, textView2, 1);
+                com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.D6, null, false, textView2, 1);
                 textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                 textView2.setTextSize(1, 15.0f);
                 return textView2;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
                 Drawable[] drawableArr = PhotoViewer.U8;
-                return new yt0(photoViewer.E, photoViewer.T1, photoViewer.Q, new yq0(photoViewer, 0), new xf0(photoViewer, i11));
+                return new yt0(photoViewer.E, photoViewer.T1, photoViewer.Q, new zq0(photoViewer, 0), new xf0(photoViewer, i11));
         }
     }
 }

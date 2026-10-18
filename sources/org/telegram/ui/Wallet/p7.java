@@ -1,48 +1,27 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class p7 extends View {
-    public final /* synthetic */ w7 a;
+public final /* synthetic */ class p7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m7 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p7(w7 w7Var, Context context) {
-        super(context);
-        this.a = w7Var;
+    public /* synthetic */ p7(m7 m7Var, int i10) {
+        this.a = i10;
+        this.b = m7Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float pow;
-        Canvas canvas2;
-        w7 w7Var = this.a;
-        if (w7Var.T0 <= 0.0f) {
-            return;
-        }
-        if (w7Var.S0) {
-            float f7 = w7Var.P0;
-            pow = com.google.android.gms.internal.cast.a6.B(f7, 2.0f, 3.0f, f7 * f7);
-        } else {
-            pow = 1.0f - ((float) Math.pow(1.0f - w7Var.P0, 4.0d));
-        }
-        float f10 = pow;
-        boolean z10 = w7Var.S0;
-        float f11 = (z10 || f10 >= 1.0f) ? -1.0f : w7Var.T0 * 1.2f * f10;
-        v7 v7Var = w7Var.N0;
-        if (v7Var == null || f10 >= 1.0f) {
-            canvas2 = canvas;
-        } else {
-            float f12 = z10 ? 1.0f - f10 : 1.0f;
-            canvas2 = canvas;
-            w7Var.s(canvas2, v7Var, f12, f11, true);
-        }
-        v7 v7Var2 = w7Var.O0;
-        if (v7Var2 != null) {
-            w7Var.s(canvas2, v7Var2, w7Var.S0 ? f10 : 1.0f, f11, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.animate().rotation(0.0f).setDuration(120L).start();
+                break;
+            default:
+                this.b.animate().scaleX(1.0f).scaleY(1.0f).setDuration(260L).setInterpolator(new OvershootInterpolator(2.0f)).start();
+                break;
         }
     }
 }

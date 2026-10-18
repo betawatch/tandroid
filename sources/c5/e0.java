@@ -5,10 +5,10 @@ import com.google.android.gms.internal.play_billing.g3;
 import com.google.android.gms.internal.play_billing.h3;
 import com.google.android.gms.internal.play_billing.i3;
 import com.google.android.gms.internal.play_billing.j3;
-import com.google.android.gms.internal.play_billing.k3;
-import com.google.android.gms.internal.play_billing.m3;
+import com.google.android.gms.internal.play_billing.l3;
+import com.google.android.gms.internal.play_billing.n3;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class e0 {
     public static final /* synthetic */ int a = 0;
@@ -36,35 +36,35 @@ public abstract /* synthetic */ class e0 {
         }
     }
 
-    public static g3 b(int i10, int i11, i iVar, String str, m3 m3Var) {
+    public static g3 b(int i10, int i11, i iVar, String str, n3 n3Var) {
         try {
-            j3 s10 = k3.s();
+            j3 s10 = l3.s();
             int i12 = iVar.a;
             s10.c();
-            k3.r((k3) s10.b, i12);
+            l3.r((l3) s10.b, i12);
             String str2 = iVar.c;
             s10.c();
-            k3.o((k3) s10.b, str2);
+            l3.o((l3) s10.b, str2);
             int i13 = iVar.b;
             if (i13 != 0) {
                 s10.c();
-                k3.p((k3) s10.b, i13);
+                l3.p((l3) s10.b, i13);
             }
             if (i10 != 0) {
                 s10.c();
-                k3.q((k3) s10.b, i10);
+                l3.q((l3) s10.b, i10);
             }
             if (str != null) {
                 s10.c();
-                k3.n((k3) s10.b, str);
+                l3.n((l3) s10.b, str);
             }
             f3 u10 = g3.u();
             u10.d(s10);
             u10.c();
             g3.t((g3) u10.b, i11);
-            if (!m3Var.equals(m3.b)) {
+            if (!n3Var.equals(n3.b)) {
                 u10.c();
-                g3.p((g3) u10.b, m3Var);
+                g3.p((g3) u10.b, n3Var);
             }
             return (g3) u10.a();
         } catch (Throwable th2) {
@@ -73,14 +73,14 @@ public abstract /* synthetic */ class e0 {
         }
     }
 
-    public static i3 c(int i10, m3 m3Var) {
+    public static i3 c(int i10, n3 n3Var) {
         try {
             h3 s10 = i3.s();
             s10.c();
             i3.r((i3) s10.b, i10);
-            if (!m3Var.equals(m3.b)) {
+            if (!n3Var.equals(n3.b)) {
                 s10.c();
-                i3.o((i3) s10.b, m3Var);
+                i3.o((i3) s10.b, n3Var);
             }
             return (i3) s10.a();
         } catch (Exception e) {

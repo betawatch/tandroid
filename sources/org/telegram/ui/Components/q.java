@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final TL_aicompose.AiComposeTone X;
@@ -118,7 +118,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
         a2.leftMargin = i15 + i16;
         a2.rightMargin += i16;
         this.containerView.addView(frameLayout4, a2);
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         this.e0 = f7;
         f7.setText(LocaleController.getString(V() ? R.string.AIEditorStyleDone : R.string.AIEditorAddStyle));
         f7.setOnClickListener(new ai.v0(this, aiComposeTone, d6Var, 14));
@@ -201,7 +201,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
                     str = "";
                 }
                 sb2.append(str);
-                sb2.append(TextUtils.isEmpty(publicUsername) ? LocaleController.formatString(R.string.AIEditorCreatedBy, UserObject.getUserName(user)) : LocaleController.formatString(R.string.AIEditorCreatedBy, r.c.g("@", publicUsername)));
+                sb2.append(TextUtils.isEmpty(publicUsername) ? LocaleController.formatString(R.string.AIEditorCreatedBy, UserObject.getUserName(user)) : LocaleController.formatString(R.string.AIEditorCreatedBy, r4.c.h("@", publicUsername)));
                 arrayList.add(f61.B(AndroidUtilities.replaceSingleLink(sb2.toString(), qVar.getThemedColor(org.telegram.ui.ActionBar.h6.gc), new org.telegram.ui.gh(23, qVar, tL_aiComposeTone))));
             }
         }
@@ -216,7 +216,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
                 e0.p0(qVar.currentAccount, new xc(frameLayout, d6Var));
                 return;
             } else {
-                org.telegram.ui.Cells.t0.t(frameLayout, d6Var, tL_error, false);
+                org.telegram.ui.Cells.c1.t(frameLayout, d6Var, tL_error, false);
                 return;
             }
         }

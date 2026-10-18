@@ -50,10 +50,10 @@ import sg.h0;
 import sg.i0;
 import sg.j0;
 import sg.z1;
-import si.t0;
-import u2.w0;
+import si.l0;
+import u2.v0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -321,7 +321,7 @@ public final /* synthetic */ class b implements Runnable {
                 z1Var2.a();
                 return;
             case 21:
-                ((si.k) this.b).a0((si.m0) this.c);
+                ((si.k) this.b).a0((l0) this.c);
                 return;
             case 22:
                 si.k kVar = (si.k) this.b;
@@ -365,12 +365,12 @@ public final /* synthetic */ class b implements Runnable {
                 }
             case 24:
                 l2.f fVar = (l2.f) this.b;
-                si.m0 m0Var2 = (si.m0) this.c;
-                t0 t0Var = (t0) fVar.b;
-                t0Var.N++;
-                t0Var.w = true;
-                t0Var.m.b("camera switch started: target=" + m0Var2);
-                l60 l60Var = (l60) t0Var.d.b;
+                l0 l0Var = (l0) this.c;
+                si.s0 s0Var2 = (si.s0) fVar.b;
+                s0Var2.N++;
+                s0Var2.w = true;
+                s0Var2.m.b("camera switch started: target=" + l0Var);
+                l60 l60Var = (l60) s0Var2.d.b;
                 FrameLayout frameLayout = l60Var.x;
                 l60Var.s0++;
                 ValueAnimator valueAnimator = l60Var.b0;
@@ -404,12 +404,12 @@ public final /* synthetic */ class b implements Runnable {
                 l60Var.b0.addUpdateListener(new q2(l60Var, i15, i12));
                 l60Var.b0.addListener(new p2(l60Var, i15, i11));
                 l60Var.b0.start();
-                FileLog.d("RoundVideo camera flip started: facing=" + m0Var2 + ", minimumDurationMs=580");
+                FileLog.d("RoundVideo camera flip started: facing=" + l0Var + ", minimumDurationMs=580");
                 l60Var.y();
-                t0Var.o();
+                s0Var2.o();
                 return;
             case 25:
-                ((t0) ((l2.f) this.b).b).h((Exception) this.c);
+                ((si.s0) ((l2.f) this.b).b).h((Exception) this.c);
                 return;
             case 26:
                 ((tg.f) this.b).c((ArrayList) this.c);
@@ -441,7 +441,7 @@ public final /* synthetic */ class b implements Runnable {
                 ((e2.j) this.b).accept(this.c);
                 return;
             default:
-                ((w0) this.b).A((c0) this.c);
+                ((v0) this.b).A((c0) this.c);
                 return;
         }
     }

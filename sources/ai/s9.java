@@ -35,7 +35,7 @@ import org.telegram.ui.of0;
 import org.telegram.ui.sn;
 import org.telegram.ui.xe0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class s9 implements RequestDelegate {
         Object obj5 = this.e;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new u7((fa) obj4, tLObject, (MessageObject) obj3, (TLRPC.InputInvoice) obj2, (Utilities.Callback) obj5, (org.telegram.ui.Components.xc) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new u7((ga) obj4, tLObject, (MessageObject) obj3, (TLRPC.InputInvoice) obj2, (Utilities.Callback) obj5, (org.telegram.ui.Components.xc) obj, tL_error));
                 break;
             case 1:
                 AndroidUtilities.runOnUIThread(new l3((int[]) obj4, tLObject, (MessagesController) obj3, (TLRPC.User[]) obj2, (ei.qc) obj5, (ei.oc) obj, 8));
@@ -128,7 +128,7 @@ public final /* synthetic */ class s9 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new l3((j61) obj4, tL_error, (TLRPC.InputCheckPasswordSRP) obj3, (TLRPC.User) obj2, (TwoStepVerificationActivity) obj5, (TLRPC.TL_channels_editCreator) obj));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new u7(tL_error, (ug.t) obj4, tLObject, (MessagesController) obj3, (TLRPC.TL_inputInvoicePremiumGiftCode) obj2, (org.telegram.ui.ActionBar.n2) obj5, (ug.t) obj, 15));
+                AndroidUtilities.runOnUIThread(new u7(tL_error, (ug.u) obj4, tLObject, (MessagesController) obj3, (TLRPC.TL_inputInvoicePremiumGiftCode) obj2, (org.telegram.ui.ActionBar.n2) obj5, (ug.u) obj, 15));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new u7(tL_error, (Utilities.Callback) obj5, tLObject, (MessagesController) obj4, (TLRPC.TL_inputInvoicePremiumGiftCode) obj3, (org.telegram.ui.ActionBar.n2) obj2, (Utilities.Callback) obj));

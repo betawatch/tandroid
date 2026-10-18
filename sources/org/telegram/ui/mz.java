@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mz extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ nz c;
@@ -86,11 +86,11 @@ public final class mz extends org.telegram.ui.Components.hm0 {
         if (i11 == 3) {
             gz gzVar = (gz) view;
             String str4 = tL_exportedChatlistInvite == null ? null : tL_exportedChatlistInvite.url;
-            ai.ud udVar = gzVar.h;
+            ai.vd vdVar = gzVar.h;
             org.telegram.ui.ActionBar.j5 j5Var = gzVar.c;
             TextView textView = gzVar.n;
             ImageView imageView = gzVar.d;
-            ai.ud udVar2 = gzVar.f;
+            ai.vd vdVar2 = gzVar.f;
             gzVar.s = str4;
             if (str4 != null) {
                 if (str4.startsWith("http://")) {
@@ -112,7 +112,7 @@ public final class mz extends org.telegram.ui.Components.hm0 {
                 ei.u8 u8Var = gzVar.e;
                 u8Var.c = f7;
                 u8Var.invalidate();
-                udVar2.setAlpha(gzVar.v);
+                vdVar2.setAlpha(gzVar.v);
                 gzVar.h.setAlpha(gzVar.v);
                 imageView.setAlpha(gzVar.v);
                 textView.setAlpha(1.0f - gzVar.v);
@@ -121,14 +121,14 @@ public final class mz extends org.telegram.ui.Components.hm0 {
                 if (str4 == null) {
                     textView.setVisibility(0);
                     imageView.setVisibility(8);
-                    udVar2.setVisibility(8);
-                    udVar.setVisibility(8);
+                    vdVar2.setVisibility(8);
+                    vdVar.setVisibility(8);
                     return;
                 }
                 textView.setVisibility(8);
                 imageView.setVisibility(0);
-                udVar2.setVisibility(0);
-                udVar.setVisibility(0);
+                vdVar2.setVisibility(0);
+                vdVar.setVisibility(0);
                 return;
             }
             return;

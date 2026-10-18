@@ -21,9 +21,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
 import v7.v7;
 import w7.r;
-import zf.e0;
+import zf.f0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class d extends Drawable {
     public static final float[] E = new float[8];
@@ -198,7 +198,7 @@ public abstract class d extends Drawable {
     }
 
     public static void h(Outline outline, Rect rect, float[] fArr) {
-        if (e0.c(fArr)) {
+        if (f0.c(fArr)) {
             outline.setRoundRect(rect, Math.min(fArr[0], Math.min(rect.width(), rect.height()) / 2.0f));
             return;
         }
@@ -373,7 +373,7 @@ public abstract class d extends Drawable {
     }
 
     public final void d(Canvas canvas, int i10) {
-        int k10 = i0.b.k(this.e, i10);
+        int k10 = i0.a.k(this.e, i10);
         if (Color.alpha(k10) == 0 && Color.alpha(this.d) == 0) {
             return;
         }

@@ -15,7 +15,7 @@ import org.telegram.ui.Components.ao;
 import org.telegram.ui.Components.t2;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final TextView a;
@@ -31,7 +31,7 @@ public final class w extends FrameLayout {
         this.f = yVar;
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.q.m(14.0f, -1711276033, 1, textView);
+        org.telegram.messenger.g0.m(14.0f, -1711276033, 1, textView);
         addView(textView, z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 0.0f, -2, 3));
         s sVar = new s(yVar, context);
         this.b = sVar;
@@ -71,7 +71,7 @@ public final class w extends FrameLayout {
     public final void b() {
         this.e = true;
         s sVar = this.b;
-        sVar.d = i0.b.o(sVar.e.f, 255);
+        sVar.d = i0.a.o(sVar.e.f, 255);
         sVar.a();
         sVar.invalidate();
         EditTextBoldCursor editTextBoldCursor = this.c;

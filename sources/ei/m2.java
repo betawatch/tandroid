@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m2 extends View {
     public final RectF E;
@@ -67,22 +67,22 @@ public final class m2 extends View {
         TextPaint textPaint = this.a;
         if (staticLayout != null) {
             canvas.save();
-            canvas.translate((rectF3.left + AndroidUtilities.dp(12.0f)) - this.e, com.google.android.gms.internal.cast.a6.z(rectF3.height(), this.c.getHeight(), 2.0f, rectF3.top));
-            textPaint.setColor(i0.b.f(Utilities.clamp(1.0f - Math.abs(this.F - 0.0f), 1.0f, 0.0f), -8158333, -1));
+            canvas.translate((rectF3.left + AndroidUtilities.dp(12.0f)) - this.e, com.google.android.gms.internal.play_billing.k3.z(rectF3.height(), this.c.getHeight(), 2.0f, rectF3.top));
+            textPaint.setColor(i0.a.f(Utilities.clamp(1.0f - Math.abs(this.F - 0.0f), 1.0f, 0.0f), -8158333, -1));
             this.c.draw(canvas);
             canvas.restore();
         }
         if (this.f != null) {
             canvas.save();
-            canvas.translate((rectF2.left + AndroidUtilities.dp(12.0f)) - this.n, com.google.android.gms.internal.cast.a6.z(rectF2.height(), this.f.getHeight(), 2.0f, rectF2.top));
-            textPaint.setColor(i0.b.f(Utilities.clamp(1.0f - Math.abs(this.F - 1.0f), 1.0f, 0.0f), -8158333, -1));
+            canvas.translate((rectF2.left + AndroidUtilities.dp(12.0f)) - this.n, com.google.android.gms.internal.play_billing.k3.z(rectF2.height(), this.f.getHeight(), 2.0f, rectF2.top));
+            textPaint.setColor(i0.a.f(Utilities.clamp(1.0f - Math.abs(this.F - 1.0f), 1.0f, 0.0f), -8158333, -1));
             this.f.draw(canvas);
             canvas.restore();
         }
         if (this.r != null) {
             canvas.save();
-            canvas.translate((rectF.left + AndroidUtilities.dp(12.0f)) - this.v, com.google.android.gms.internal.cast.a6.z(rectF.height(), this.r.getHeight(), 2.0f, rectF.top));
-            textPaint.setColor(i0.b.f(Utilities.clamp(1.0f - Math.abs(this.F - 2.0f), 1.0f, 0.0f), -8158333, -1));
+            canvas.translate((rectF.left + AndroidUtilities.dp(12.0f)) - this.v, com.google.android.gms.internal.play_billing.k3.z(rectF.height(), this.r.getHeight(), 2.0f, rectF.top));
+            textPaint.setColor(i0.a.f(Utilities.clamp(1.0f - Math.abs(this.F - 2.0f), 1.0f, 0.0f), -8158333, -1));
             this.r.draw(canvas);
             canvas.restore();
         }

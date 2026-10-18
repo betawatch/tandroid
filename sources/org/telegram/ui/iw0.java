@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class iw0 extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ PremiumPreviewFragment c;
@@ -154,7 +154,7 @@ public final class iw0 extends org.telegram.ui.Components.hm0 {
                     i11 = 33;
                     spannableString.setSpan(new org.telegram.ui.Components.j61(str, l11Var), l11Var.b, l11Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityEmail) {
-                    spannableString.setSpan(new org.telegram.ui.Components.l61(r.c.g("mailto:", str), l11Var), l11Var.b, l11Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.l61(r4.c.h("mailto:", str), l11Var), l11Var.b, l11Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityUrl) {
                     if (str.toLowerCase().contains("://")) {
                         spannableString.setSpan(new org.telegram.ui.Components.h61(str, l11Var), l11Var.b, l11Var.c, 33);
@@ -162,13 +162,13 @@ public final class iw0 extends org.telegram.ui.Components.hm0 {
                         spannableString.setSpan(new org.telegram.ui.Components.h61("http://".concat(str), l11Var), l11Var.b, l11Var.c, 33);
                     }
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityBankCard) {
-                    spannableString.setSpan(new org.telegram.ui.Components.j61(r.c.g("card:", str), l11Var), l11Var.b, l11Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.j61(r4.c.h("card:", str), l11Var), l11Var.b, l11Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityPhone) {
                     String d = jf.b.d(str, z12);
                     if (str.startsWith("+")) {
-                        d = r.c.g("+", d);
+                        d = r4.c.h("+", d);
                     }
-                    spannableString.setSpan(new org.telegram.ui.Components.h61(r.c.g("tel:", d), l11Var), l11Var.b, l11Var.c, 33);
+                    spannableString.setSpan(new org.telegram.ui.Components.h61(r4.c.h("tel:", d), l11Var), l11Var.b, l11Var.c, 33);
                 } else if (messageEntity2 instanceof TLRPC.TL_messageEntityTextUrl) {
                     org.telegram.ui.Components.l61 l61Var = new org.telegram.ui.Components.l61(l11Var.d.url, l11Var);
                     l61Var.b = true;
@@ -262,6 +262,6 @@ public final class iw0 extends org.telegram.ui.Components.hm0 {
                 hw0Var = new org.telegram.ui.Cells.q8(23, context, d6Var, false, true);
                 break;
         }
-        return com.google.android.gms.internal.cast.a6.l(hw0Var, hw0Var, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(hw0Var, hw0Var, -1, -2);
     }
 }

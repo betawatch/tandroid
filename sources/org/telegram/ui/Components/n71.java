@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n71 extends View {
     public final p6 a;
@@ -99,7 +99,7 @@ public final class n71 extends View {
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        float B = com.google.android.gms.internal.cast.a6.B(this.h.e(this.f), 0.35f, 1.0f, 255.0f);
+        float B = com.google.android.gms.internal.play_billing.k3.B(this.h.e(this.f), 0.35f, 1.0f, 255.0f);
         int i10 = (int) B;
         Paint paint = this.c;
         paint.setAlpha(i10);

@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class z10 extends org.telegram.ui.Components.gd0 {
     public boolean D0;
@@ -59,7 +59,7 @@ public class z10 extends org.telegram.ui.Components.gd0 {
         org.telegram.ui.ActionBar.k kVar7;
         a20 a20Var = this.J0;
         Paint paint = a20Var.K;
-        ai.ad adVar = a20Var.y;
+        ai.bd bdVar = a20Var.y;
         if (!a20Var.f) {
             if (a20Var.h) {
                 float f7 = a20Var.n + 0.016f;
@@ -103,24 +103,24 @@ public class z10 extends org.telegram.ui.Components.gd0 {
         int i10 = a20Var.r;
         kVar3 = ((org.telegram.ui.ActionBar.n2) a20Var).actionBar;
         int measuredHeight = kVar3.getMeasuredHeight();
-        int measuredHeight2 = adVar.getMeasuredHeight();
-        FrameLayout frameLayout = (FrameLayout) adVar.d;
-        TextView textView = (TextView) adVar.b;
+        int measuredHeight2 = bdVar.getMeasuredHeight();
+        FrameLayout frameLayout = (FrameLayout) bdVar.d;
+        TextView textView = (TextView) bdVar.b;
         float dp3 = AndroidUtilities.dp(16.0f) + (i10 - ((measuredHeight2 + measuredHeight) - a20Var.I));
         kVar4 = ((org.telegram.ui.ActionBar.n2) a20Var).actionBar;
-        float max = Math.max((((((kVar4.getMeasuredHeight() - a20Var.I) - textView.getMeasuredHeight()) / 2.0f) + a20Var.I) - adVar.getTop()) - textView.getTop(), dp3);
-        adVar.setTranslationY(max);
+        float max = Math.max((((((kVar4.getMeasuredHeight() - a20Var.I) - textView.getMeasuredHeight()) / 2.0f) + a20Var.I) - bdVar.getTop()) - textView.getTop(), dp3);
+        bdVar.setTranslationY(max);
         frameLayout.setTranslationY(((-max) / 4.0f) + AndroidUtilities.dp(16.0f) + AndroidUtilities.dp(16.0f));
         float f13 = a20Var.v;
-        float x10 = com.google.android.gms.internal.cast.a6.x(1.0f, f13, 0.4f, 0.6f);
+        float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f13, 0.4f, 0.6f);
         float f14 = 1.0f - (f13 > 0.5f ? (f13 - 0.5f) / 0.5f : 0.0f);
-        frameLayout.setScaleX(x10);
-        frameLayout.setScaleY(x10);
+        frameLayout.setScaleX(y3);
+        frameLayout.setScaleY(y3);
         frameLayout.setAlpha(f14);
-        ((FrameLayout) adVar.e).setAlpha(f14);
-        ((org.telegram.ui.Components.x90) adVar.c).setAlpha(f14);
+        ((FrameLayout) bdVar.e).setAlpha(f14);
+        ((org.telegram.ui.Components.x90) bdVar.c).setAlpha(f14);
         a20Var.e.setAlpha(1.0f - a20Var.v);
-        a20Var.e.setTranslationY((frameLayout.getY() + adVar.getY()) - AndroidUtilities.dp(30.0f));
+        a20Var.e.setTranslationY((frameLayout.getY() + bdVar.getY()) - AndroidUtilities.dp(30.0f));
         float dp4 = AndroidUtilities.dp(72.0f) - textView.getLeft();
         float f15 = a20Var.v;
         textView.setTranslationX((1.0f - org.telegram.ui.Components.bs.h.getInterpolation(1.0f - (f15 > 0.3f ? (f15 - 0.3f) / 0.7f : 0.0f))) * dp4);
@@ -136,7 +136,7 @@ public class z10 extends org.telegram.ui.Components.gd0 {
         } else {
             canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), a20Var.a.f);
         }
-        int f16 = i0.b.f(f14, a20Var.getThemedColor(org.telegram.ui.ActionBar.h6.j5), a20Var.getThemedColor(a20Var.M ? org.telegram.ui.ActionBar.h6.G6 : org.telegram.ui.ActionBar.h6.Tj));
+        int f16 = i0.a.f(f14, a20Var.getThemedColor(org.telegram.ui.ActionBar.h6.j5), a20Var.getThemedColor(a20Var.M ? org.telegram.ui.ActionBar.h6.G6 : org.telegram.ui.ActionBar.h6.Tj));
         kVar5 = ((org.telegram.ui.ActionBar.n2) a20Var).actionBar;
         kVar5.getBackButton().setColorFilter(f16);
         textView.setTextColor(f16);
@@ -184,13 +184,13 @@ public class z10 extends org.telegram.ui.Components.gd0 {
                 }
             }
         }
-        ai.ad adVar = a20Var.y;
-        float x10 = adVar.getX();
-        FrameLayout frameLayout = (FrameLayout) adVar.e;
-        FrameLayout frameLayout2 = (FrameLayout) adVar.d;
-        org.telegram.ui.Components.x90 x90Var = (org.telegram.ui.Components.x90) adVar.c;
+        ai.bd bdVar = a20Var.y;
+        float x10 = bdVar.getX();
+        FrameLayout frameLayout = (FrameLayout) bdVar.e;
+        FrameLayout frameLayout2 = (FrameLayout) bdVar.d;
+        org.telegram.ui.Components.x90 x90Var = (org.telegram.ui.Components.x90) bdVar.c;
         float x11 = x90Var.getX() + x10;
-        float y3 = x90Var.getY() + adVar.getY();
+        float y3 = x90Var.getY() + bdVar.getY();
         RectF rectF2 = AndroidUtilities.rectTmp;
         rectF2.set(x11, y3, x90Var.getMeasuredWidth() + x11, x90Var.getMeasuredHeight() + y3);
         if ((!rectF2.contains(motionEvent.getX(), motionEvent.getY()) && !this.E0) || a20Var.c.I1 || (layout = x90Var.getLayout()) == null) {
@@ -213,8 +213,8 @@ public class z10 extends org.telegram.ui.Components.gd0 {
                 }
             }
         }
-        float x12 = frameLayout2.getX() + adVar.getX();
-        float y10 = frameLayout2.getY() + adVar.getY();
+        float x12 = frameLayout2.getX() + bdVar.getX();
+        float y10 = frameLayout2.getY() + bdVar.getY();
         boolean isClickable = frameLayout2.isClickable();
         rectF2.set(x12, y10, frameLayout2.getMeasuredWidth() + x12, frameLayout2.getMeasuredHeight() + y10);
         if ((rectF2.contains(motionEvent.getX(), motionEvent.getY()) || this.D0) && !a20Var.c.I1 && isClickable && a20Var.x < f7) {
@@ -227,8 +227,8 @@ public class z10 extends org.telegram.ui.Components.gd0 {
             frameLayout2.dispatchTouchEvent(motionEvent);
             return true;
         }
-        float x13 = frameLayout.getX() + adVar.getX();
-        float y11 = frameLayout.getY() + adVar.getY();
+        float x13 = frameLayout.getX() + bdVar.getX();
+        float y11 = frameLayout.getY() + bdVar.getY();
         rectF2.set(x13, y11, frameLayout.getMeasuredWidth() + x13, frameLayout.getMeasuredHeight() + y11);
         if ((rectF2.contains(motionEvent.getX(), motionEvent.getY()) || this.F0) && !a20Var.c.I1 && a20Var.x < f7) {
             motionEvent.offsetLocation(-x13, -y11);
@@ -281,7 +281,7 @@ public class z10 extends org.telegram.ui.Components.gd0 {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.d5 d5Var2;
         a20 a20Var = this.J0;
-        ai.ad adVar = a20Var.y;
+        ai.bd bdVar = a20Var.y;
         a20Var.H = View.MeasureSpec.getSize(i10) > View.MeasureSpec.getSize(i11);
         d5Var = ((org.telegram.ui.ActionBar.n2) a20Var).parentLayout;
         if (d5Var != null) {
@@ -289,11 +289,11 @@ public class z10 extends org.telegram.ui.Components.gd0 {
             if (((ActionBarLayout) d5Var2).M0) {
                 i12 = 0;
                 a20Var.I = i12;
-                adVar.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
+                bdVar.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
                 ViewGroup.LayoutParams layoutParams = a20Var.e.getLayoutParams();
                 i13 = a20Var.E;
                 if (i13 <= 0) {
-                    i13 = adVar.getMeasuredHeight();
+                    i13 = bdVar.getMeasuredHeight();
                 }
                 layoutParams.height = i13;
                 b0Var = a20Var.F;
@@ -314,7 +314,7 @@ public class z10 extends org.telegram.ui.Components.gd0 {
         }
         i12 = AndroidUtilities.statusBarHeight;
         a20Var.I = i12;
-        adVar.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
+        bdVar.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
         ViewGroup.LayoutParams layoutParams2 = a20Var.e.getLayoutParams();
         i13 = a20Var.E;
         if (i13 <= 0) {

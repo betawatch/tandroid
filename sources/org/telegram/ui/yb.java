@@ -10,7 +10,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yb implements org.telegram.ui.Components.wl0 {
     public final /* synthetic */ int a = 1;
@@ -60,7 +60,7 @@ public final /* synthetic */ class yb implements org.telegram.ui.Components.wl0 
                             } else {
                                 tL_payments_checkedGiftCode.boost = boost;
                             }
-                            new ug.a0(r91Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                            new ug.b0(r91Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                         } else if (z11 && boost.user_id == -1) {
                             org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(r91Var.getParentActivity(), r91Var.getResourceProvider());
                             ybVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
@@ -72,14 +72,14 @@ public final /* synthetic */ class yb implements org.telegram.ui.Components.wl0 
                             r91Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                         }
                     } else {
-                        ai.ld.f1(this.c, ecVar.b, j10, boost, d6Var);
+                        ai.md.f1(this.c, ecVar.b, j10, boost, d6Var);
                     }
                 }
                 if (view instanceof org.telegram.ui.Cells.q8) {
-                    ug.l.n(r91Var, d6Var, j10, null);
+                    ug.m.n(r91Var, d6Var, j10, null);
                 }
                 if (view instanceof zg.c) {
-                    ug.l.n(r91Var, d6Var, j10, ((zg.c) view).getPrepaidGiveaway());
+                    ug.m.n(r91Var, d6Var, j10, ((zg.c) view).getPrepaidGiveaway());
                 }
                 if (((dc) ecVar.x.get(i10)).a == 9) {
                     ecVar.c(Boolean.valueOf(ecVar.y == 1));

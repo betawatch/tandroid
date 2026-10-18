@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class bc0 extends im0 {
     public final /* synthetic */ ic0 V2;
@@ -140,7 +140,7 @@ public final class bc0 extends im0 {
                             ic0Var = ic0Var2;
                             f7 = 2.0f;
                             canvas2 = canvas;
-                            canvas2.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), com.google.android.gms.internal.cast.a6.z(f12, f10, 2.0f, f10), com.google.android.gms.internal.cast.a6.z(f13, f11, 2.0f, f11));
+                            canvas2.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), com.google.android.gms.internal.play_billing.k3.z(f12, f10, 2.0f, f10), com.google.android.gms.internal.play_billing.k3.z(f13, f11, 2.0f, f11));
                         } else {
                             ic0Var = ic0Var2;
                             f7 = 2.0f;

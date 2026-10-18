@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class nf0 extends FrameLayout {
     public final kf0 E;
@@ -142,11 +142,11 @@ public final class nf0 extends FrameLayout {
             float f10 = this.r;
             float f11 = ((dp2 - f7) * f10) + f7;
             float f12 = actualRect.top;
-            float x10 = com.google.android.gms.internal.cast.a6.x(measuredHeight, f12, f10, f12);
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(measuredHeight, f12, f10, f12);
             float width = ((dp - actualRect.width()) * this.r) + actualRect.width();
             ImageReceiver imageReceiver = this.e;
             imageReceiver.setRoundRadius((int) (width / 2.0f));
-            imageReceiver.setImageCoords(f11, x10, width, width);
+            imageReceiver.setImageCoords(f11, y3, width, width);
             imageReceiver.setAlpha(this.n);
             imageReceiver.draw(canvas);
             float f13 = this.w;

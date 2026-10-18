@@ -17,7 +17,7 @@ import org.telegram.ui.bk;
 import org.telegram.ui.pj;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f0 extends FrameLayout {
     public final sn a;
@@ -195,8 +195,8 @@ public final class f0 extends FrameLayout {
                     this.b.setTranslationY(w7.r.a(interpolation, dp4, dp5));
                     this.b.setTranslationX(u1Var.E2(true));
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.b.getLayoutParams();
-                    int b10 = org.telegram.messenger.q.b(32.0f, u1Var.getBackgroundDrawableLeft(), 0);
-                    int b11 = org.telegram.messenger.q.b(32.0f, u1Var.getWidth() - u1Var.getBackgroundDrawableRight(), (int) u1Var.E2(true));
+                    int b10 = org.telegram.messenger.g0.b(32.0f, u1Var.getBackgroundDrawableLeft(), 0);
+                    int b11 = org.telegram.messenger.g0.b(32.0f, u1Var.getWidth() - u1Var.getBackgroundDrawableRight(), (int) u1Var.E2(true));
                     int dp6 = AndroidUtilities.dp(40.0f) * 8;
                     if ((getWidth() - b11) - b10 < dp6) {
                         if (isOutOwner) {

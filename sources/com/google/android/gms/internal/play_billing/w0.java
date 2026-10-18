@@ -1,6 +1,5 @@
 package com.google.android.gms.internal.play_billing;
 
-import com.google.android.gms.internal.cast.a6;
 import j$.util.Objects;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
@@ -13,7 +12,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import v7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -166,7 +165,7 @@ public final class w0 extends l0 implements g0 {
         try {
             executor.execute(runnable);
         } catch (Exception e) {
-            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", a6.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
+            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", k3.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
         }
     }
 
@@ -528,7 +527,7 @@ public final class w0 extends l0 implements g0 {
                         if (isDone()) {
                             throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                         }
-                        throw new TimeoutException(a1.g.D(str, " for ", w0Var));
+                        throw new TimeoutException(a1.g.C(str, " for ", w0Var));
                     }
                 }
                 Object obj5 = this.a;

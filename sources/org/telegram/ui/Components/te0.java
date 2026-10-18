@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class te0 extends org.telegram.ui.ActionBar.f3 {
     public final TextView b;
@@ -79,7 +79,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
         TextView textView3 = new TextView(context);
         this.d = textView3;
-        org.telegram.messenger.wh.m(R.string.ManageInviteLinks, textView3, 17);
+        org.telegram.messenger.kk.m(R.string.ManageInviteLinks, textView3, 17);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
         textView3.setSingleLine(true);
         textView3.setTypeface(AndroidUtilities.bold());
@@ -87,7 +87,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         int i10 = org.telegram.ui.ActionBar.h6.Oh;
         textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         int dp2 = AndroidUtilities.dp(8.0f);
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
         textView3.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, 0, o10, o10));
         textView3.setLetterSpacing(0.025f);
         textView3.setOnClickListener(new ai.v0(this, chatFull, n60Var, 28));
@@ -165,7 +165,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         int i10 = org.telegram.ui.ActionBar.h6.Oh;
         this.e.setBackground(org.telegram.ui.ActionBar.h6.K(dp, org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
         int dp2 = AndroidUtilities.dp(8.0f);
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
         this.d.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, 0, o10, o10));
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false);
         uj0 uj0Var = this.f;

@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class v0 implements ValueAnimator.AnimatorUpdateLis
             case 1:
                 e1 e1Var = (e1) this.b;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e1Var.setTextColor(i0.b.f(floatValue, -1, -9194260));
-                e1Var.setIconColor(i0.b.f(floatValue, -1, -9194260));
+                e1Var.setTextColor(i0.a.f(floatValue, -1, -9194260));
+                e1Var.setIconColor(i0.a.f(floatValue, -1, -9194260));
                 break;
             case 2:
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
@@ -51,11 +51,11 @@ public final /* synthetic */ class v0 implements ValueAnimator.AnimatorUpdateLis
                     if (o1Var.r) {
                         floatValue3 = 1.0f - floatValue3;
                     }
-                    float x10 = (int) com.google.android.gms.internal.cast.a6.x(1.0f, floatValue3, o1Var.q, o1Var.p * floatValue3);
+                    float y3 = (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue3, o1Var.q, o1Var.p * floatValue3);
                     if (!(o1Var instanceof ah.u)) {
-                        o1Var.a.setTranslationY(x10);
+                        o1Var.a.setTranslationY(y3);
                     }
-                    o1Var.e(-x10, floatValue3, o1Var.s);
+                    o1Var.e(-y3, floatValue3, o1Var.s);
                     break;
                 }
                 break;

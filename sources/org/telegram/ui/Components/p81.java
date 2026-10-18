@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p81 extends View {
     public static final Object T = new Object();
@@ -218,10 +218,10 @@ public final class p81 extends View {
         float dp3 = dp - AndroidUtilities.dp(4.0f);
         float dp4 = AndroidUtilities.dp(10.0f) + measuredHeight;
         float dp5 = dp - AndroidUtilities.dp(4.0f);
-        float B = org.telegram.messenger.q.B(10.0f, getMeasuredHeight(), measuredHeight);
+        float B = org.telegram.messenger.g0.B(10.0f, getMeasuredHeight(), measuredHeight);
         Paint paint2 = this.R;
         canvas.drawLine(dp3, dp4, dp5, B, paint2);
-        canvas.drawLine(AndroidUtilities.dp(4.0f) + dp2, AndroidUtilities.dp(10.0f) + measuredHeight, AndroidUtilities.dp(4.0f) + dp2, org.telegram.messenger.q.B(10.0f, getMeasuredHeight(), measuredHeight), paint2);
+        canvas.drawLine(AndroidUtilities.dp(4.0f) + dp2, AndroidUtilities.dp(10.0f) + measuredHeight, AndroidUtilities.dp(4.0f) + dp2, org.telegram.messenger.g0.B(10.0f, getMeasuredHeight(), measuredHeight), paint2);
         if (this.S) {
             canvas.restore();
             return;

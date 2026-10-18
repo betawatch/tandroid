@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class bq extends fx0 {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final class bq extends fx0 {
                 bs bsVar = bs.g;
                 float interpolation2 = bsVar.getInterpolation(min < 0.3f ? 0.0f : (min - 0.3f) / 0.7f);
                 if (this.d) {
-                    dp = com.google.android.gms.internal.cast.a6.x(1.0f, interpolation, AndroidUtilities.dp(7.0f) - AndroidUtilities.dp(2.1f), AndroidUtilities.dp(2.1f) * interpolation);
+                    dp = com.google.android.gms.internal.play_billing.k3.y(1.0f, interpolation, AndroidUtilities.dp(7.0f) - AndroidUtilities.dp(2.1f), AndroidUtilities.dp(2.1f) * interpolation);
                     dpf2 = (1.0f - bsVar.getInterpolation(this.e / 2.0f)) * AndroidUtilities.dpf2(1.5f);
                 } else {
                     dp = ((AndroidUtilities.dp(7.0f) - AndroidUtilities.dp(2.1f)) * interpolation) + ((1.0f - interpolation) * AndroidUtilities.dp(2.1f));

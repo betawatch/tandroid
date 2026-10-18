@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fr extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -898,7 +898,7 @@ public final class fr extends org.telegram.ui.Components.hm0 {
                 view = new org.telegram.ui.Cells.x4(context);
                 break;
             case 3:
-                view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+                view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 4:
                 org.telegram.ui.Cells.d9 d9Var = new org.telegram.ui.Cells.d9(context);

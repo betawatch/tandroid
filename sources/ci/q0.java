@@ -1,7 +1,7 @@
 package ci;
 
-import ai.ld;
-import ai.tc;
+import ai.md;
+import ai.uc;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.h80;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class q0 extends FrameLayout implements h80 {
     public final TextView E;
@@ -51,7 +51,7 @@ public final class q0 extends FrameLayout implements h80 {
     public final boolean d;
     public Drawable e;
     public float f;
-    public final tc h;
+    public final uc h;
     public final LinearLayout n;
     public final wh.n r;
     public final wh.n s;
@@ -70,18 +70,18 @@ public final class q0 extends FrameLayout implements h80 {
         this.L = new Paint(1);
         this.c = i10;
         this.d = z10;
-        tc tcVar = new tc(this, context);
-        this.h = tcVar;
-        tcVar.setOrientation(0);
-        addView(tcVar, w7.z5.a(-2.0f, 0.0f, 0.5f, 0.0f, 0.5f, -2, 51));
+        uc ucVar = new uc(this, context);
+        this.h = ucVar;
+        ucVar.setOrientation(0);
+        addView(ucVar, w7.z5.a(-2.0f, 0.0f, 0.5f, 0.0f, 0.5f, -2, 51));
         this.x = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.w = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(11.0f));
-        tcVar.addView(w9Var, w7.z5.p(22, 22, 0.0f, 51, 3, 2, 3, 2));
+        ucVar.addView(w9Var, w7.z5.p(22, 22, 0.0f, 51, 3, 2, 3, 2));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        tcVar.addView(linearLayout, w7.z5.p(-2, -2, 1.0f, 51, 4, 3, 7, 3));
+        ucVar.addView(linearLayout, w7.z5.p(-2, -2, 1.0f, 51, 4, 3, 7, 3));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.n = linearLayout2;
         linearLayout2.setOrientation(0);
@@ -113,14 +113,14 @@ public final class q0 extends FrameLayout implements h80 {
         textView.setTextSize(1, 11.0f);
         textView.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
         textView.setVisibility(8);
-        tcVar.addView(textView, w7.z5.p(-2, 16, 0.0f, 21, -3, 0, 6, 0));
+        ucVar.addView(textView, w7.z5.p(-2, 16, 0.0f, 21, -3, 0, 6, 0));
         TextView textView2 = new TextView(context);
         this.F = textView2;
         textView2.setTextColor(-1);
         textView2.setAlpha(0.65f);
         textView2.setTextSize(1, 11.0f);
         textView2.setVisibility(8);
-        tcVar.addView(textView2, w7.z5.p(-2, -2, 0.0f, 85, 0, 3, 10, 0));
+        ucVar.addView(textView2, w7.z5.p(-2, -2, 0.0f, 85, 0, 3, 10, 0));
     }
 
     @Override // org.telegram.ui.Components.h80
@@ -155,13 +155,13 @@ public final class q0 extends FrameLayout implements h80 {
 
     @Override // org.telegram.ui.Components.h80
     public final void c(Canvas canvas, float f7) {
-        tc tcVar = this.h;
-        if (tcVar.getBackground() == null) {
+        uc ucVar = this.h;
+        if (ucVar.getBackground() == null) {
             int m12 = org.telegram.ui.ActionBar.h6.m1(f7 * 0.5f, -16777216);
             Paint paint = this.L;
             paint.setColor(m12);
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(tcVar.getX(), tcVar.getY(), tcVar.getX() + tcVar.getWidth(), tcVar.getY() + tcVar.getHeight());
+            rectF.set(ucVar.getX(), ucVar.getY(), ucVar.getX() + ucVar.getWidth(), ucVar.getY() + ucVar.getHeight());
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), paint);
         }
         draw(canvas);
@@ -186,14 +186,14 @@ public final class q0 extends FrameLayout implements h80 {
         boolean z11;
         CharSequence charSequence;
         this.K = v0Var;
-        tc tcVar = this.h;
+        uc ucVar = this.h;
         if ((v0Var == null || this.I != v0Var.a) && (valueAnimator = this.J) != null) {
             valueAnimator.cancel();
             this.J = null;
             Drawable drawable = this.e;
             if (drawable != null) {
                 drawable.setAlpha((int) (this.f * 255.0f));
-                tcVar.invalidate();
+                ucVar.invalidate();
             }
         }
         long j10 = v0Var.c;
@@ -309,8 +309,8 @@ public final class q0 extends FrameLayout implements h80 {
         if (j11 > 0) {
             boolean z14 = j11 >= 250 ? z11 : false;
             this.a = z14;
-            tcVar.setWillNotDraw(!z14);
-            tcVar.invalidate();
+            ucVar.setWillNotDraw(!z14);
+            ucVar.invalidate();
             nVar.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
             int dp = AndroidUtilities.dp(13.0f);
             int i16 = org.telegram.ui.ActionBar.h6.a;
@@ -318,7 +318,7 @@ public final class q0 extends FrameLayout implements h80 {
             gradientDrawable.setShape(0);
             gradientDrawable.setCornerRadius(dp);
             this.e = gradientDrawable;
-            tcVar.setBackground(gradientDrawable);
+            ucVar.setBackground(gradientDrawable);
             Drawable drawable2 = this.e;
             float f7 = z10 ? 1.0f : 0.65f;
             this.f = f7;
@@ -328,23 +328,23 @@ public final class q0 extends FrameLayout implements h80 {
                 textView.setText("");
                 textView2.setVisibility(0);
                 textView2.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(13.0f), org.telegram.ui.ActionBar.h6.m1(0.25f, b12)));
-                textView2.setText(ld.V0(false, org.telegram.messenger.q.h(v0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
+                textView2.setText(md.V0(false, org.telegram.messenger.g0.h(v0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.G, AndroidUtilities.dp(0.66f), 1.0f));
                 yq yqVar2 = this.G[0];
                 if (yqVar2 != null) {
                     yqVar2.draw = this.b;
                 }
             } else {
                 textView.setVisibility(0);
-                textView.setText(ld.V0(false, org.telegram.messenger.q.h(v0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
+                textView.setText(md.V0(false, org.telegram.messenger.g0.h(v0Var.g, ',', new StringBuilder("⭐️ ")), 0.75f, this.H, 0.0f, 1.0f));
                 textView2.setVisibility(8);
                 textView2.setText("");
             }
         } else if (v0Var.b) {
             this.a = false;
-            tcVar.setWillNotDraw(z11);
+            ucVar.setWillNotDraw(z11);
             ShapeDrawable c02 = org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(13.0f), -16777216);
             this.e = c02;
-            tcVar.setBackground(c02);
+            ucVar.setBackground(c02);
             Drawable drawable3 = this.e;
             this.f = 0.5f;
             drawable3.setAlpha((int) 127.5f);
@@ -361,14 +361,14 @@ public final class q0 extends FrameLayout implements h80 {
             textView2.setVisibility(8);
         } else {
             this.a = false;
-            tcVar.setWillNotDraw(true);
+            ucVar.setWillNotDraw(true);
             nVar.setShadowLayer(AndroidUtilities.dp(2.5f), 0.0f, AndroidUtilities.dp(1.5f), org.telegram.ui.ActionBar.h6.m1(0.6f, -16777216));
             this.e = null;
-            tcVar.setBackground(null);
+            ucVar.setBackground(null);
             textView.setVisibility(8);
             textView2.setVisibility(8);
         }
-        tcVar.invalidate();
+        ucVar.invalidate();
     }
 
     public void setDrawStar(boolean z10) {

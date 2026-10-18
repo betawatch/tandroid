@@ -18,12 +18,12 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import t7.u;
-import u2.e0;
-import u2.g0;
-import u2.j1;
+import u2.d0;
+import u2.f0;
+import u2.i1;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l extends u2.a {
     public final c h;
@@ -83,9 +83,9 @@ public final class l extends u2.a {
     }
 
     @Override // u2.a
-    public final e0 c(g0 g0Var, androidx.biometric.e eVar, long j10) {
-        a5.a b10 = b(g0Var);
-        n2.k kVar = new n2.k(this.d.c, 0, g0Var);
+    public final d0 c(f0 f0Var, androidx.biometric.e eVar, long j10) {
+        a5.a b10 = b(f0Var);
+        n2.k kVar = new n2.k(this.d.c, 0, f0Var);
         c0 c0Var = this.r;
         j2.k kVar2 = this.g;
         kVar2.getClass();
@@ -143,8 +143,8 @@ public final class l extends u2.a {
     }
 
     @Override // u2.a
-    public final void o(e0 e0Var) {
-        k kVar = (k) e0Var;
+    public final void o(d0 d0Var) {
+        k kVar = (k) d0Var;
         kVar.b.e.remove(kVar);
         for (q qVar : kVar.J) {
             if (qVar.T) {
@@ -164,7 +164,7 @@ public final class l extends u2.a {
             Uri c10 = iVar.e[l4].c();
             p2.d dVar = (p2.d) eVar.d.get(c10);
             if (dVar != null) {
-                p2.c cVar = (p2.c) i0.a.i(dVar.b, c10, c10);
+                p2.c cVar = (p2.c) i2.d.i(dVar.b, c10, c10);
                 cVar.getClass();
                 cVar.w = false;
             }
@@ -212,7 +212,7 @@ public final class l extends u2.a {
 
     public final void v(p2.n nVar) {
         long j10;
-        j1 j1Var;
+        i1 i1Var;
         long j11;
         long j12;
         long j13;
@@ -278,7 +278,7 @@ public final class l extends u2.a {
                 }
                 j18 = j13;
             }
-            j1Var = new j1(j17, h02, j20, nVar.u, j19, j18, true, !z12, i10 == 2 && nVar.f, uVar, i(), this.q);
+            i1Var = new i1(j17, h02, j20, nVar.u, j19, j18, true, !z12, i10 == 2 && nVar.f, uVar, i(), this.q);
         } else {
             if (j15 == -9223372036854775807L || n0Var.isEmpty()) {
                 j10 = 0;
@@ -289,8 +289,8 @@ public final class l extends u2.a {
                 j10 = j15;
             }
             long j24 = nVar.u;
-            j1Var = new j1(j17, h02, j24, j24, 0L, j10, true, false, true, uVar, i(), null);
+            i1Var = new i1(j17, h02, j24, j24, 0L, j10, true, false, true, uVar, i(), null);
         }
-        n(j1Var);
+        n(i1Var);
     }
 }

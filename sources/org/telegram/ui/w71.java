@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w71 extends LinearLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -38,14 +38,14 @@ public final class w71 extends LinearLayout implements org.telegram.ui.ActionBar
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         frameLayout.addView(imageView, w7.z5.e(24, 24, 17));
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         TextView textView = new TextView(context);
         this.e = textView;
         textView.setTextSize(1, 16.0f);
-        TextView i10 = com.google.android.gms.internal.cast.a6.i(e, textView, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(e, textView, w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2), context);
         this.f = i10;
         i10.setTextSize(1, 13.0f);
-        TextView i11 = com.google.android.gms.internal.cast.a6.i(e, i10, w7.z5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(e, i10, w7.z5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, -2), context);
         this.h = i11;
         i11.setTextSize(1, 16.0f);
         if (LocaleController.isRTL) {

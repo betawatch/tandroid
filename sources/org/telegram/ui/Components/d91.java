@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d91 extends View {
     public final View E;
@@ -143,10 +143,10 @@ public final class d91 extends View {
         int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
         TextPaint textPaint = this.d;
         textPaint.setColor(w02);
-        int B = org.telegram.messenger.wh.B(28.0f, getMeasuredWidth() - this.h, 2);
-        canvas2.drawText(this.f, AndroidUtilities.dp(28.0f) + B, AndroidUtilities.dp(21.0f), textPaint);
+        int A = org.telegram.messenger.kk.A(28.0f, getMeasuredWidth() - this.h, 2);
+        canvas2.drawText(this.f, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(21.0f), textPaint);
         canvas2.save();
-        canvas2.translate(B, AndroidUtilities.dp(7.0f));
+        canvas2.translate(A, AndroidUtilities.dp(7.0f));
         Bitmap bitmap = this.w;
         int i11 = 0;
         Paint paint = this.e;
@@ -227,12 +227,12 @@ public final class d91 extends View {
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(org.telegram.messenger.wh.D(56.0f, this.n, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
+        super.onMeasure(org.telegram.messenger.kk.C(56.0f, this.n, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }
 
     public void setDimAmount(float f7) {
         this.I = f7;
-        this.H.setColor(i0.b.o(-16777216, (int) (f7 * 255.0f)));
+        this.H.setColor(i0.a.o(-16777216, (int) (f7 * 255.0f)));
         invalidate();
     }
 }

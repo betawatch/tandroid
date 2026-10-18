@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import ci.v4;
 import ci.z3;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -37,7 +37,7 @@ import org.telegram.ui.qw0;
 import org.telegram.ui.rw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x0 extends f3 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -94,11 +94,11 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         int i14 = this.L;
         if (i10 >= 0) {
             float f7 = 1.0f - this.I;
-            i14 = Math.min(i14, (int) a6.x(1.0f, f7, i14, i10 * f7));
+            i14 = Math.min(i14, (int) k3.y(1.0f, f7, i14, i10 * f7));
         }
         if (i11 >= 0) {
             float f10 = this.I;
-            i14 = Math.min(i14, (int) a6.x(1.0f, f10, this.L, i11 * f10));
+            i14 = Math.min(i14, (int) k3.y(1.0f, f10, this.L, i11 * f10));
         }
         float f11 = 1.0f - this.f;
         FrameLayout frameLayout = this.v;
@@ -369,8 +369,8 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         ImageView imageView = new ImageView(getContext());
         imageView.setImageResource(R.drawable.msg_close);
         int dp = AndroidUtilities.dp(12.0f);
-        int o10 = i0.b.o(-1, 40);
-        int o11 = i0.b.o(-1, 100);
+        int o10 = i0.a.o(-1, 40);
+        int o11 = i0.a.o(-1, 100);
         imageView.setBackground(h6.j0(dp, dp, dp, dp, o10, o11, o11));
         frameLayout.addView(imageView, z5.e(24, 24, 17));
         final int i13 = 0;
@@ -443,7 +443,7 @@ public final class x0 extends f3 implements NotificationCenter.NotificationCente
         frameLayout2.setBackgroundColor(getThemedColor(h6.h5));
         linearLayout.addView(frameLayout2, z5.q(-1, 68, 80));
         if (i11 == 40) {
-            p0Var.b(k7.z2(LocaleController.getString(R.string.Understood)), true, false);
+            p0Var.b(k7.B2(LocaleController.getString(R.string.Understood)), true, false);
         } else if (UserConfig.getInstance(i10).isPremium()) {
             p0Var.b(LocaleController.getString(R.string.OK), false, false);
         }

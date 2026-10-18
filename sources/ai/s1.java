@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class s1 extends e7 {
     public final float[] B0;
@@ -66,7 +66,7 @@ public final class s1 extends e7 {
             if (org.telegram.ui.ActionBar.h6.C1(background, i10, false)) {
                 w1Var.invalidate();
             }
-            int f7 = i0.b.f(0.33f, i10, -1);
+            int f7 = i0.a.f(0.33f, i10, -1);
             float[] fArr = this.B0;
             Color.colorToHSV(f7, fArr);
             fArr[1] = Math.min(1.0f, fArr[1] * 1.1f);

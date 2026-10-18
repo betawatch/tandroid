@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import hg.r0;
 import ig.l0;
 import java.util.Date;
@@ -34,7 +34,7 @@ import wg.d0;
 import wg.r;
 import wg.t;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class e extends hm0 {
     public final d6 c;
@@ -354,6 +354,6 @@ public abstract class e extends hm0 {
             tVar = new wg.a(context, d6Var);
             tVar.setPadding(0, 0, 0, AndroidUtilities.dp(14.0f));
         }
-        return a6.l(tVar, tVar, -1, -2);
+        return k3.l(tVar, tVar, -1, -2);
     }
 }

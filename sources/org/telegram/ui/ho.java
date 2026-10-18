@@ -14,7 +14,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ho extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -414,11 +414,11 @@ public final class ho extends AnimatorListenerAdapter {
                 int i10 = org.telegram.ui.ActionBar.h6.C6;
                 int w02 = org.telegram.ui.ActionBar.h6.w0(i10, vyVar.a);
                 int i11 = org.telegram.ui.ActionBar.h6.Oh;
-                int f13 = i0.b.f(vyVar.r, w02, org.telegram.ui.ActionBar.h6.w0(i11, vyVar.a));
+                int f13 = i0.a.f(vyVar.r, w02, org.telegram.ui.ActionBar.h6.w0(i11, vyVar.a));
                 PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
                 w9Var2.setColorFilter(new PorterDuffColorFilter(f13, mode));
                 vyVar.c.invalidate();
-                vyVar.f.setColorFilter(new PorterDuffColorFilter(i0.b.f(1.0f - vyVar.r, org.telegram.ui.ActionBar.h6.w0(i10, vyVar.a), org.telegram.ui.ActionBar.h6.w0(i11, vyVar.a)), mode));
+                vyVar.f.setColorFilter(new PorterDuffColorFilter(i0.a.f(1.0f - vyVar.r, org.telegram.ui.ActionBar.h6.w0(i10, vyVar.a), org.telegram.ui.ActionBar.h6.w0(i11, vyVar.a)), mode));
                 vyVar.f.invalidate();
                 break;
             default:

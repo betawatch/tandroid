@@ -1,6 +1,6 @@
 package ei;
 
-import ai.le;
+import ai.me;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -15,7 +15,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class y2 extends org.telegram.ui.ActionBar.g5 {
     public AnimatorSet r;
@@ -61,7 +61,7 @@ public final class y2 extends org.telegram.ui.ActionBar.g5 {
         animatorSet2.setDuration(320L);
         this.r.setInterpolator(bs.h);
         this.r.playTogether(arrayList);
-        this.r.addListener(new le(3, this, searchField));
+        this.r.addListener(new me(3, this, searchField));
         this.r.start();
     }
 

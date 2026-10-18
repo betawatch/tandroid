@@ -15,10 +15,10 @@ import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import b2.u0;
 import ci.o3;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import ei.i6;
 import hg.j0;
-import ig.c2;
+import ig.e2;
 import j9.u;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,8 +35,8 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.h0;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.u1;
+import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Cells.w0;
-import org.telegram.ui.Cells.x0;
 import org.telegram.ui.Cells.xa;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
@@ -54,7 +54,7 @@ import r0.i0;
 import s4.b1;
 import s4.y0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class m extends s4.k {
     public static final bs V = new bs(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
@@ -336,7 +336,7 @@ public abstract class m extends s4.k {
                                 transitionParams3.offsetLeft = lVar3.h * floatValue;
                                 transitionParams3.offsetRight = lVar3.i * floatValue;
                                 if (z14) {
-                                    transitionParams3.captionEnterProgress = a6.x(1.0f, floatValue, f12, f11 * floatValue);
+                                    transitionParams3.captionEnterProgress = k3.y(1.0f, floatValue, f12, f11 * floatValue);
                                 }
                                 im0 im0Var3 = im0Var2;
                                 if (im0Var3 != null) {
@@ -407,13 +407,13 @@ public abstract class m extends s4.k {
                     }
                 } else {
                     b1Var2 = b1Var;
-                    if (view instanceof x0) {
-                        x0 x0Var = (x0) view;
-                        w0 transitionParams3 = x0Var.getTransitionParams();
+                    if (view instanceof w0) {
+                        w0 w0Var = (w0) view;
+                        v0 transitionParams3 = w0Var.getTransitionParams();
                         if (lVar2.m) {
                             ValueAnimator ofFloat7 = ValueAnimator.ofFloat(0.0f, 1.0f);
                             transitionParams3.b = true;
-                            ofFloat7.addUpdateListener(new l0(9, transitionParams3, x0Var));
+                            ofFloat7.addUpdateListener(new l0(9, transitionParams3, w0Var));
                             animatorSet.playTogether(ofFloat7);
                         }
                     }
@@ -568,11 +568,11 @@ public abstract class m extends s4.k {
             u1Var.getTransitionParams().j();
             u1Var.setAnimationOffsetX(0.0f);
         } else {
-            if (!(view instanceof x0)) {
+            if (!(view instanceof w0)) {
                 view.setTranslationX(0.0f);
                 return;
             }
-            w0 transitionParams = ((x0) view).getTransitionParams();
+            v0 transitionParams = ((w0) view).getTransitionParams();
             transitionParams.b = false;
             transitionParams.c = 1.0f;
         }
@@ -1059,13 +1059,13 @@ public abstract class m extends s4.k {
                                     for (int i26 = 0; i26 < arrayList16.size(); i26++) {
                                         arrayList17.add(((b1) arrayList16.get(i26)).a);
                                     }
-                                    c2 c2Var = new c2(this, arrayList17, arrayList16, 7);
+                                    e2 e2Var = new e2(this, arrayList17, arrayList16, 7);
                                     r11 r11Var = t11Var.a;
                                     if (r11Var != null) {
-                                        r11Var.f(arrayList17, c2Var);
+                                        r11Var.f(arrayList17, e2Var);
                                         Choreographer.getInstance().postFrameCallback(t11Var.b);
                                     } else {
-                                        t11Var.c.add(new s11(arrayList17, c2Var));
+                                        t11Var.c.add(new s11(arrayList17, e2Var));
                                     }
                                     arrayList11.add((View) arrayList17.get(0));
                                     im0Var.B0();
@@ -1113,13 +1113,13 @@ public abstract class m extends s4.k {
                             } else {
                                 t11 t11Var2 = (t11) tgVar.run();
                                 i13 = i27;
-                                c2 c2Var2 = new c2(this, view6, b1Var4, 8);
+                                e2 e2Var2 = new e2(this, view6, b1Var4, 8);
                                 r11 r11Var2 = t11Var2.a;
                                 if (r11Var2 != null) {
-                                    r11Var2.d(view6, 1.0f, c2Var2);
+                                    r11Var2.d(view6, 1.0f, e2Var2);
                                     Choreographer.getInstance().postFrameCallback(t11Var2.b);
                                 } else {
-                                    t11Var2.c.add(new s11(view6, c2Var2));
+                                    t11Var2.c.add(new s11(view6, e2Var2));
                                 }
                                 arrayList11.add(view6);
                                 z17 = z13;
@@ -1400,7 +1400,7 @@ public abstract class m extends s4.k {
         int translationX;
         int i14;
         u1 u1Var;
-        x0 x0Var;
+        w0 w0Var;
         float f7;
         float f10;
         float f11;
@@ -1419,17 +1419,17 @@ public abstract class m extends s4.k {
             translationX = i10 + ((int) u1Var2.getAnimationOffsetX());
             i14 = u1Var2.getTransitionParams().s2 != u1Var2.getTopMediaOffset() ? (u1Var2.getTransitionParams().s2 - u1Var2.getTopMediaOffset()) + i11 : i11;
             u1Var = u1Var2;
-            x0Var = null;
-        } else if (view2 instanceof x0) {
+            w0Var = null;
+        } else if (view2 instanceof w0) {
             translationX = i10 + ((int) view2.getTranslationX());
             i14 = i11;
-            x0Var = (x0) view2;
+            w0Var = (w0) view2;
             u1Var = null;
         } else {
             translationX = i10 + ((int) view2.getTranslationX());
             i14 = i11;
             u1Var = null;
-            x0Var = null;
+            w0Var = null;
         }
         int i17 = translationX;
         int translationY = i14 + ((int) view2.getTranslationY());
@@ -1460,7 +1460,7 @@ public abstract class m extends s4.k {
             view2.setTranslationY(-i20);
         }
         float f15 = f10;
-        x0 x0Var2 = x0Var;
+        w0 w0Var2 = w0Var;
         float f16 = f11;
         l lVar = new l(b1Var, i17, translationY, i12, i13);
         if (u1Var != null) {
@@ -1686,8 +1686,8 @@ public abstract class m extends s4.k {
                 v(b1Var);
                 return false;
             }
-        } else if (x0Var2 != null) {
-            w0 transitionParams5 = x0Var2.getTransitionParams();
+        } else if (w0Var2 != null) {
+            v0 transitionParams5 = w0Var2.getTransitionParams();
             transitionParams5.getClass();
             if (i19 != 0) {
                 view2.setTranslationX(-i19);

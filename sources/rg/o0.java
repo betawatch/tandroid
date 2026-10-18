@@ -13,7 +13,7 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -23,14 +23,14 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class o0 extends View {
     public final Paint E;
@@ -152,7 +152,7 @@ public class o0 extends View {
         int i11 = this.h;
         RectF rectF = this.f0;
         rectF.set(i10, i11, i10 + d, i11 + d10);
-        int f19 = i0.b.f(e10, this.e0, i0.b.f(e7, -1, -14670807));
+        int f19 = i0.a.f(e10, this.e0, i0.a.f(e7, -1, -14670807));
         Paint paint = this.E;
         paint.setColor(f19);
         Path path = this.i0;
@@ -178,7 +178,7 @@ public class o0 extends View {
                 direction = direction2;
                 f11 = e11;
                 f7 = 1.0f;
-                d11Var3.c(f18 * 10.0f, a6.D(1.0f, e11, (15.0f * f18) + this.G.j(), (d11Var3.j() / 2.0f) + f20), e10, -15033089, canvas2);
+                d11Var3.c(f18 * 10.0f, k3.D(1.0f, e11, (15.0f * f18) + this.G.j(), (d11Var3.j() / 2.0f) + f20), e10, -15033089, canvas2);
                 f12 = e10;
                 f20 = (((7.0f * f18) + this.G.j()) * f11) + f20;
             }
@@ -209,22 +209,22 @@ public class o0 extends View {
                     f15 = f11;
                     f16 = 2.66f;
                     d11Var4.c(f18 * 20.0f, j10, e10, color, canvas);
-                    f14 = r.c.c(f18, 2.66f, this.L.j(), f23);
+                    f14 = r4.c.c(f18, 2.66f, this.L.j(), f23);
                     if (this.I || (d11Var2 = this.J) == null) {
                         canvas2 = canvas;
                     } else {
                         canvas2 = canvas;
-                        d11Var2.c(f18 * 20.0f, (d11Var2.j() / f10) + f14, e10, i0.b.f(e7, -13421773, -1), canvas2);
-                        f14 = r.c.c(f18, f16, this.J.j(), f14);
+                        d11Var2.c(f18 * 20.0f, (d11Var2.j() / f10) + f14, e10, i0.a.f(e7, -13421773, -1), canvas2);
+                        f14 = r4.c.c(f18, f16, this.J.j(), f14);
                     }
                     if (this.M && this.O != null) {
                         canvas2.save();
                         canvas2.translate((f18 * 20.0f) - this.Q, f14);
-                        this.N.setColor(i0.b.f(e7, -13421773, -1));
+                        this.N.setColor(i0.a.f(e7, -13421773, -1));
                         this.N.setAlpha((int) (255.0f * e10));
                         this.O.draw(canvas2);
                         canvas2.restore();
-                        f14 = r.c.c(f18, f16, this.O.getHeight(), f14);
+                        f14 = r4.c.c(f18, f16, this.O.getHeight(), f14);
                     }
                     e = this.m0.e(this.R);
                     if (e > 0.0f) {
@@ -240,7 +240,7 @@ public class o0 extends View {
                         imageReceiver.setImageCoords(f24, f25, width, height);
                         imageReceiver.setAlpha(e * e10);
                         imageReceiver.draw(canvas2);
-                        f14 = wh.b(f18 * f16, this.d0, f7 - e12, f14);
+                        f14 = kk.b(f18 * f16, this.d0, f7 - e12, f14);
                     }
                     f17 = (5.0f * f18) + (7.0f * f18) + f14;
                     d11Var = this.G;
@@ -266,11 +266,11 @@ public class o0 extends View {
             if (this.M) {
                 canvas2.save();
                 canvas2.translate((f18 * 20.0f) - this.Q, f14);
-                this.N.setColor(i0.b.f(e7, -13421773, -1));
+                this.N.setColor(i0.a.f(e7, -13421773, -1));
                 this.N.setAlpha((int) (255.0f * e10));
                 this.O.draw(canvas2);
                 canvas2.restore();
-                f14 = r.c.c(f18, f16, this.O.getHeight(), f14);
+                f14 = r4.c.c(f18, f16, this.O.getHeight(), f14);
             }
             e = this.m0.e(this.R);
             if (e > 0.0f) {
@@ -289,9 +289,9 @@ public class o0 extends View {
         if (e10 < f7) {
             float f26 = this.x.left;
             float f27 = f10;
-            int v = ((int) a6.v(f18, 30.0f, d10, f27)) + i11;
+            int w9 = ((int) k3.w(f18, 30.0f, d10, f27)) + i11;
             Drawable drawable = this.y;
-            drawable.setBounds(((int) (f26 * f18)) + i10, ((int) a6.c(f18, 30.0f, d10, f27)) + i11, ((int) ((f26 + 30.0f) * f18)) + i10, v);
+            drawable.setBounds(((int) (f26 * f18)) + i10, ((int) k3.c(f18, 30.0f, d10, f27)) + i11, ((int) ((f26 + 30.0f) * f18)) + i10, w9);
             int i12 = (int) ((f7 - e10) * 255.0f);
             drawable.setAlpha(i12);
             drawable.draw(canvas2);

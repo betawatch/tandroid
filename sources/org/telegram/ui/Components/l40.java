@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l40 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ m40 a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class l40 implements Utilities.Callback5, Utilities
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.R = string;
             b2Var.T = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new s2(16, m40Var, str));
+            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new q2(str, 17, m40Var));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             b2Var.show();
             z10 = true;

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewOutlineProvider;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class u41 extends ViewOutlineProvider {
     public final Rect a = new Rect();
@@ -27,7 +27,7 @@ public final class u41 extends ViewOutlineProvider {
         boolean n10 = z51Var.n();
         Rect rect = this.a;
         if (n10) {
-            rect.set((int) ((width - (z51Var.a1 * width)) + view.getPaddingLeft()), (int) com.google.android.gms.internal.cast.a6.x(1.0f, z51Var.b1, AndroidUtilities.dp(z51Var.d1), com.google.android.gms.internal.cast.a6.x(1.0f, z51Var.b1, height, view.getPaddingTop())), (int) (((width2 - width) * z51Var.a1) + view.getPaddingLeft() + width), (int) com.google.android.gms.internal.cast.a6.x(1.0f, z51Var.b1, AndroidUtilities.dp(z51Var.d1), view.getPaddingTop() + height));
+            rect.set((int) ((width - (z51Var.a1 * width)) + view.getPaddingLeft()), (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, z51Var.b1, AndroidUtilities.dp(z51Var.d1), com.google.android.gms.internal.play_billing.k3.y(1.0f, z51Var.b1, height, view.getPaddingTop())), (int) (((width2 - width) * z51Var.a1) + view.getPaddingLeft() + width), (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, z51Var.b1, AndroidUtilities.dp(z51Var.d1), view.getPaddingTop() + height));
         } else {
             rect.set((int) ((width - (z51Var.a1 * width)) + view.getPaddingLeft()), view.getPaddingTop(), (int) (((width2 - width) * z51Var.a1) + view.getPaddingLeft() + width), (int) ((height * z51Var.b1) + view.getPaddingTop()));
         }

@@ -2,11 +2,12 @@ package j4;
 
 import b2.v0;
 import c3.j0;
-import i2.m0;
+import e2.m0;
+import i2.n0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -14,7 +15,7 @@ public final class n implements i {
     public final e2.x b;
     public final boolean[] c = new boolean[4];
     public final l d;
-    public final m0 e;
+    public final n0 e;
     public m f;
     public long g;
     public String h;
@@ -28,7 +29,7 @@ public final class n implements i {
         lVar.e = new byte[128];
         this.d = lVar;
         this.k = -9223372036854775807L;
-        this.e = new m0(178);
+        this.e = new n0(178);
         this.b = new e2.x();
     }
 
@@ -58,14 +59,14 @@ public final class n implements i {
         while (true) {
             int c10 = f2.q.c(bArr, i14, i15, this.c);
             l lVar = this.d;
-            m0 m0Var = this.e;
+            n0 n0Var = this.e;
             if (c10 == i15) {
                 if (!this.j) {
                     lVar.a(i14, i15, bArr);
                 }
                 this.f.a(i14, i15, bArr);
-                if (m0Var != null) {
-                    m0Var.a(i14, i15, bArr);
+                if (n0Var != null) {
+                    n0Var.a(i14, i15, bArr);
                     return;
                 }
                 return;
@@ -174,7 +175,7 @@ public final class n implements i {
                                         vVar.z = g15;
                                         vVar.E = f7;
                                         vVar.u = Collections.singletonList(copyOf);
-                                        i0.a.u(vVar, j0Var);
+                                        i2.d.u(vVar, j0Var);
                                         this.j = true;
                                     } else {
                                         f7 = g11 / g12;
@@ -201,7 +202,7 @@ public final class n implements i {
                                         vVar2.z = g152;
                                         vVar2.E = f7;
                                         vVar2.u = Collections.singletonList(copyOf);
-                                        i0.a.u(vVar2, j0Var);
+                                        i2.d.u(vVar2, j0Var);
                                         this.j = true;
                                     }
                                 } else if (g10 < 7) {
@@ -229,7 +230,7 @@ public final class n implements i {
                                     vVar22.z = g1522;
                                     vVar22.E = f7;
                                     vVar22.u = Collections.singletonList(copyOf);
-                                    i0.a.u(vVar22, j0Var);
+                                    i2.d.u(vVar22, j0Var);
                                     this.j = true;
                                 } else {
                                     e2.a.l("H263Reader", "Invalid aspect ratio");
@@ -257,7 +258,7 @@ public final class n implements i {
                                     vVar222.z = g15222;
                                     vVar222.E = f7;
                                     vVar222.u = Collections.singletonList(copyOf);
-                                    i0.a.u(vVar222, j0Var);
+                                    i2.d.u(vVar222, j0Var);
                                     this.j = true;
                                 }
                             } else {
@@ -298,17 +299,17 @@ public final class n implements i {
                 lVar.a(i13, 3, l.f);
             }
             this.f.a(i14, c10, bArr);
-            if (m0Var != null) {
+            if (n0Var != null) {
                 if (i18 > 0) {
-                    m0Var.a(i14, c10, bArr);
+                    n0Var.a(i14, c10, bArr);
                     i12 = 0;
                 } else {
                     i12 = -i18;
                 }
-                if (m0Var.e(i12)) {
-                    int p5 = f2.q.p(m0Var.e, (byte[]) m0Var.f);
-                    String str2 = e2.m0.a;
-                    byte[] bArr2 = (byte[]) m0Var.f;
+                if (n0Var.e(i12)) {
+                    int p5 = f2.q.p(n0Var.e, (byte[]) n0Var.f);
+                    String str2 = m0.a;
+                    byte[] bArr2 = (byte[]) n0Var.f;
                     e2.x xVar2 = this.b;
                     xVar2.L(p5, bArr2);
                     this.a.a(this.k, xVar2);
@@ -316,7 +317,7 @@ public final class n implements i {
                 if (i17 == 178) {
                     z10 = true;
                     if (xVar.a[c10 + 2] == 1) {
-                        m0Var.h(i17);
+                        n0Var.h(i17);
                     }
                     int i24 = i10 - c10;
                     this.f.b(i24, this.g - i24, this.j);
@@ -362,9 +363,9 @@ public final class n implements i {
             mVar.d = false;
             mVar.e = -1;
         }
-        m0 m0Var = this.e;
-        if (m0Var != null) {
-            m0Var.g();
+        n0 n0Var = this.e;
+        if (n0Var != null) {
+            n0Var.g();
         }
         this.g = 0L;
         this.k = -9223372036854775807L;

@@ -15,7 +15,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c81 {
     public static Paint Q;
@@ -83,7 +83,7 @@ public final class c81 {
 
     public static void g(float f7, int i10) {
         if (f7 < 1.0f) {
-            i10 = i0.b.o(i10, (int) (Color.alpha(i10) * f7));
+            i10 = i0.a.o(i10, (int) (Color.alpha(i10) * f7));
         }
         Q.setColor(i10);
     }
@@ -193,9 +193,9 @@ public final class c81 {
                     this.t = dp;
                 }
             } else {
-                float y3 = org.telegram.messenger.wh.y(j10, 60.0f, AndroidUtilities.dp(1.0f), f27);
-                this.t = y3;
-                if (y3 < dp) {
+                float x10 = org.telegram.messenger.kk.x(j10, 60.0f, AndroidUtilities.dp(1.0f), f27);
+                this.t = x10;
+                if (x10 < dp) {
                     this.t = dp;
                 }
             }
@@ -217,10 +217,10 @@ public final class c81 {
                 R.setAlpha((int) (this.y * 255.0f * 0.2f));
                 b(canvas, rectF, R);
             }
-            g(1.0f, i0.b.f(this.y, this.n, this.A));
+            g(1.0f, i0.a.f(this.y, this.n, this.A));
             b(canvas, rectF, Q);
             rectF.left = f28;
-            g(1.0f - this.y, i0.b.f(this.y, this.m, c() == 0.0f ? i10 : this.A));
+            g(1.0f - this.y, i0.a.f(this.y, this.m, c() == 0.0f ? i10 : this.A));
             canvas.drawCircle(AndroidUtilities.lerp((S / f7) + this.E, (this.E / (this.h - S)) * (view2.getWidth() - (this.z * f7)), this.y) + this.z, rectF.centerY(), lerp3 * f11, Q);
         } else {
             f12 = 0.2f;
@@ -236,9 +236,9 @@ public final class c81 {
             R.setAlpha((int) (this.y * 255.0f * f12));
             b(canvas, rectF, R);
         }
-        g(1.0f, i0.b.f(this.y, this.n, this.A));
+        g(1.0f, i0.a.f(this.y, this.n, this.A));
         b(canvas, rectF, Q);
-        g(1.0f - this.y, i0.b.f(this.y, this.m, c() == 0.0f ? i10 : this.A));
+        g(1.0f - this.y, i0.a.f(this.y, this.m, c() == 0.0f ? i10 : this.A));
         canvas.drawCircle(rectF.right, rectF.centerY(), (1.0f - f11) * lerp3, Q);
         ArrayList arrayList = this.F;
         if (arrayList == null || arrayList.isEmpty()) {
@@ -349,10 +349,10 @@ public final class c81 {
         if (this.K[i10] != null) {
             canvas.save();
             if (this.N != 0) {
-                canvas.translate(com.google.android.gms.internal.cast.a6.x(1.0f, interpolation2, AndroidUtilities.dp(16.0f) * this.N, AndroidUtilities.dp(f13)), 0.0f);
+                canvas.translate(com.google.android.gms.internal.play_billing.k3.y(1.0f, interpolation2, AndroidUtilities.dp(16.0f) * this.N, AndroidUtilities.dp(f13)), 0.0f);
             }
             canvas.translate(0.0f, (-this.K[i10].getHeight()) / f7);
-            this.L.setAlpha((int) (org.telegram.messenger.q.z(1.0f, this.y, f14, interpolation2) * this.I));
+            this.L.setAlpha((int) (org.telegram.messenger.g0.z(1.0f, this.y, f14, interpolation2) * this.I));
             this.K[i10].draw(canvas);
             canvas.restore();
         }
@@ -612,7 +612,7 @@ public final class c81 {
         if (z10) {
             if (Math.abs(ceil - this.b) > AndroidUtilities.dp(10.0f)) {
                 float interpolation = bs.f.getInterpolation(this.C);
-                this.B = (int) com.google.android.gms.internal.cast.a6.x(1.0f, interpolation, this.B, this.b * interpolation);
+                this.B = (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, interpolation, this.B, this.b * interpolation);
                 this.C = 0.0f;
             } else if (this.C == 1.0f) {
                 this.C = 0.0f;

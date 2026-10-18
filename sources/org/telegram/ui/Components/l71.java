@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class l71 extends Drawable implements x5, y6, NotificationCenter.NotificationCenterDelegate {
     public final x20 a;
@@ -40,7 +40,7 @@ public final class l71 extends Drawable implements x5, y6, NotificationCenter.No
         this.s = UserConfig.selectedAccount;
         this.b = i10;
         this.d = z10;
-        x20Var.d(i0.b.o(videoSize.background_colors.get(0).intValue(), 255), videoSize.background_colors.size() > 1 ? i0.b.o(videoSize.background_colors.get(1).intValue(), 255) : 0, videoSize.background_colors.size() > 2 ? i0.b.o(videoSize.background_colors.get(2).intValue(), 255) : 0, videoSize.background_colors.size() > 3 ? i0.b.o(videoSize.background_colors.get(3).intValue(), 255) : 0);
+        x20Var.d(i0.a.o(videoSize.background_colors.get(0).intValue(), 255), videoSize.background_colors.size() > 1 ? i0.a.o(videoSize.background_colors.get(1).intValue(), 255) : 0, videoSize.background_colors.size() > 2 ? i0.a.o(videoSize.background_colors.get(2).intValue(), 255) : 0, videoSize.background_colors.size() > 3 ? i0.a.o(videoSize.background_colors.get(3).intValue(), 255) : 0);
         if (videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup) {
             r5 r5Var = new r5((i10 == 1 && z10) ? 7 : i10 == 2 ? 15 : 8, UserConfig.selectedAccount, ((TLRPC.TL_videoSizeEmojiMarkup) videoSize).emoji_id);
             this.h = r5Var;

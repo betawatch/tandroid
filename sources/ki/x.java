@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x extends bb {
     public final int X;
@@ -57,7 +57,7 @@ public final class x extends bb {
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         int i12 = h6.G6;
-        org.telegram.ui.Cells.t0.q(i12, d6Var, textView, 19);
+        org.telegram.ui.Cells.c1.q(i12, d6Var, textView, 19);
         frameLayout.addView(textView, w7.z5.a(56.0f, 22.0f, 6.0f, 56.0f, 0.0f, -1, 51));
         this.I = AndroidUtilities.dp(-8.0f);
         ImageView imageView = new ImageView(context);
@@ -132,7 +132,7 @@ public final class x extends bb {
         g3Var.addTextChangedListener(new w(this));
         frameLayout3.addView(i3Var, w7.z5.d(-2.0f, -1));
         frameLayout3.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        ei.d f7 = wh.f(24, context, d6Var, true);
+        ei.d f7 = kk.f(24, context, d6Var, true);
         this.f0 = f7;
         f7.g(LocaleController.getString(R.string.ArticleAIGenerate), false, true);
         final int i15 = 1;

@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SecureDocument;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xl0 extends bu0 {
     public final /* synthetic */ xm0 a;
@@ -31,17 +31,17 @@ public final class xl0 extends bu0 {
         String str = null;
         if (i12 == 1) {
             xm0Var.j1 = null;
-            str = r.c.g("selfie", m12);
+            str = r4.c.h("selfie", m12);
         } else if (i12 == 4) {
-            str = r.c.g("translation", m12);
+            str = r4.c.h("translation", m12);
         } else if (i12 == 2) {
             xm0Var.l1 = null;
-            str = r.c.g("front", m12);
+            str = r4.c.h("front", m12);
         } else if (i12 == 3) {
             xm0Var.m1 = null;
-            str = r.c.g("reverse", m12);
+            str = r4.c.h("reverse", m12);
         } else if (i12 == 0) {
-            str = r.c.g("files", m12);
+            str = r4.c.h("files", m12);
         }
         if (str != null) {
             HashMap hashMap = xm0Var.x1;

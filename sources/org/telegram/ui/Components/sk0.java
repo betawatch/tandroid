@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class sk0 extends pg.b {
     public final /* synthetic */ cl0 d;
@@ -56,7 +56,7 @@ public final class sk0 extends pg.b {
             cl0Var.u0 = b1Var;
             int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.F8, false);
             int i11 = org.telegram.ui.ActionBar.h6.h5;
-            b1Var.setColor(i0.b.f(0.7f, x02, org.telegram.ui.ActionBar.h6.x0(null, i11, false)));
+            b1Var.setColor(i0.a.f(0.7f, x02, org.telegram.ui.ActionBar.h6.x0(null, i11, false)));
             cl0Var.u0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i11, false), PorterDuff.Mode.MULTIPLY));
             cl0Var.u0.setScaleX(0.0f);
             cl0Var.u0.setScaleY(0.0f);
@@ -104,7 +104,7 @@ public final class sk0 extends pg.b {
             } else {
                 cl0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
             }
-            cl0Var.v0.setBackground(org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(28.0f), 0, i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 40)));
+            cl0Var.v0.setBackground(org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(28.0f), 0, i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 40)));
             cl0Var.v0.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
             cl0Var.v0.setContentDescription(LocaleController.getString(R.string.AccDescrExpandPanel));
             cl0Var.S.addView(cl0Var.v0, w7.z5.e(30, 30, 17));

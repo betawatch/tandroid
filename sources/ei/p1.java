@@ -23,10 +23,10 @@ import org.telegram.ui.j10;
 import org.telegram.ui.ky;
 import org.telegram.ui.n10;
 import org.telegram.ui.ny;
-import org.telegram.ui.ov;
 import org.telegram.ui.xm0;
+import org.telegram.ui.zu;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -54,12 +54,12 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
         switch (this.a) {
             case 0:
                 v1 v1Var = (v1) this.b;
-                ai.va vaVar = (ai.va) this.c;
+                ai.wa waVar = (ai.wa) this.c;
                 gt q6 = gt.q();
                 ai.u1 u1Var = v1Var.b;
                 r1 r1Var = v1Var.f;
                 d6Var = ((org.telegram.ui.ActionBar.f3) v1Var.r).resourcesProvider;
-                return q6.s(motionEvent, u1Var, vaVar, r1Var, d6Var);
+                return q6.s(motionEvent, u1Var, waVar, r1Var, d6Var);
             case 1:
                 org.telegram.ui.ActionBar.m1 m1Var = (org.telegram.ui.ActionBar.m1) this.b;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.c;
@@ -150,7 +150,7 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                         }
                         AlertDialog$Builder w9 = org.telegram.ui.Components.f5.w(context, i10, i15, i11, i12, i14, i13, string, z10, new hg.b2(xm0Var, intValue, editTextBoldCursor, 15));
                         if (intValue == 8) {
-                            w9.h(LocaleController.getString(R.string.PassportSelectNotExpire), new ov(26, xm0Var, editTextBoldCursor));
+                            w9.h(LocaleController.getString(R.string.PassportSelectNotExpire), new zu(27, xm0Var, editTextBoldCursor));
                         }
                         xm0Var.showDialog(w9.a);
                     } catch (Exception e) {

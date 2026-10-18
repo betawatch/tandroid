@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -175,12 +175,12 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                 return;
             case 3:
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
-                org.telegram.ui.Wallet.g8 g8Var = (org.telegram.ui.Wallet.g8) this.c;
+                org.telegram.ui.Wallet.j8 j8Var = (org.telegram.ui.Wallet.j8) this.c;
                 TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error == null) {
                     m0Var.i0(walletState);
-                    g8Var.run(null);
+                    j8Var.run(null);
                     return;
                 }
                 String str5 = tL_error.text;
@@ -189,7 +189,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                 }
                 org.telegram.ui.Wallet.m0.i("failed to disable backup: ".concat(str5));
                 String str6 = tL_error.text;
-                g8Var.run(str6 != null ? str6 : "NULL_ERROR");
+                j8Var.run(str6 != null ? str6 : "NULL_ERROR");
                 return;
             case 4:
                 final org.telegram.ui.Wallet.m0 m0Var2 = (org.telegram.ui.Wallet.m0) this.b;
@@ -257,7 +257,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                     TL_wallet.encryptedSecretPhrasePart encryptedsecretphrasepart = encryptedsecretphrasepartArr2[i17];
                                     if (encryptedsecretphrasepart == null) {
                                         TLRPC.TL_error tL_error3 = tL_errorArr2[i17];
-                                        StringBuilder l10 = i0.a.l(i17, "getSecretPhrase: part ", ": ");
+                                        StringBuilder l10 = i2.d.l(i17, "getSecretPhrase: part ", ": ");
                                         String str8 = tL_error3.text;
                                         if (str8 == null) {
                                             str8 = "NULL_ERROR";
@@ -269,7 +269,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                         return;
                                     }
                                     if (encryptedsecretphrasepart.data.length < 33) {
-                                        StringBuilder l11 = i0.a.l(i17, "getSecretPhrase: part ", " length < 33 (len=");
+                                        StringBuilder l11 = i2.d.l(i17, "getSecretPhrase: part ", " length < 33 (len=");
                                         l11.append(encryptedsecretphrasepartArr2[i17].data.length);
                                         l11.append(")");
                                         m0.i(l11.toString());
@@ -277,7 +277,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                         return;
                                     }
                                 }
-                                Utilities.stageQueue.postRunnable(new ai.c3(m0Var3, encryptedsecretphrasepartArr2, j11, kVar, 24));
+                                Utilities.stageQueue.postRunnable(new ai.b2(m0Var3, encryptedsecretphrasepartArr2, j11, kVar, 24));
                             }
                         }
                     }, intValue, 0);

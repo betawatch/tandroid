@@ -20,7 +20,7 @@ import org.telegram.ui.Components.m11;
 import org.telegram.ui.Components.p10;
 import org.telegram.ui.Components.vw0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class e6 {
     public static final int[] a = {1, 2, 16, 8, 4, 256, 16384, 32768, 65536};
@@ -343,7 +343,7 @@ public abstract class e6 {
         int length = editable == null ? 0 : editable.length();
         int max = Math.max(0, Math.min(i10, length));
         int max2 = Math.max(0, Math.min(i11, length));
-        if (max < max2 && com.google.android.gms.internal.cast.a6.s(editable)) {
+        if (max < max2 && com.google.android.gms.internal.play_billing.k3.s(editable)) {
             while (max < max2) {
                 int nextSpanTransition = editable.nextSpanTransition(max, max2, p10.class);
                 if (((p10[]) editable.getSpans(max, nextSpanTransition, p10.class)).length != 0) {
@@ -359,7 +359,7 @@ public abstract class e6 {
         int length = editable == null ? 0 : editable.length();
         int max = Math.max(0, Math.min(i10, length));
         int max2 = Math.max(0, Math.min(i11, length));
-        if (max < max2 && com.google.android.gms.internal.cast.a6.s(editable)) {
+        if (max < max2 && com.google.android.gms.internal.play_billing.k3.s(editable)) {
             while (max < max2) {
                 int nextSpanTransition = editable.nextSpanTransition(max, max2, l61.class);
                 if (((l61[]) editable.getSpans(max, nextSpanTransition, l61.class)).length != 0) {

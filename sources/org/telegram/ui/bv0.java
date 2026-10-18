@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class bv0 implements org.telegram.ui.Components.uy {
     public final /* synthetic */ hv0 a;
@@ -105,8 +105,8 @@ public final class bv0 implements org.telegram.ui.Components.uy {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(parentActivity, 0, d6Var);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new qp0(this, 4));
-        i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new rp0(this, 4));
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.uy

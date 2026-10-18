@@ -1,6 +1,6 @@
 package gi;
 
-import ai.gb;
+import ai.hb;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
@@ -49,7 +49,7 @@ import org.telegram.ui.te1;
 import org.telegram.ui.xx;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a2, mi.n, ResultCallback {
     public final /* synthetic */ int a;
@@ -260,7 +260,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
         boolean z13 = z12;
         final org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(z13 ? 1 : 0, parentActivity, (d6) null, z13);
         f3Var.fixNavigationBar();
-        LinearLayout e = org.telegram.messenger.q.e(parentActivity, z13 ? 1 : 0);
+        LinearLayout e = org.telegram.messenger.g0.e(parentActivity, z13 ? 1 : 0);
         TLRPC.User user3 = user;
         TLRPC.Chat chat4 = chat;
         e.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
@@ -328,7 +328,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
         editTextBoldCursor.setHighlightColor(h6.x0(null, h6.uf, false));
         editTextBoldCursor.setHandlesColor(h6.x0(null, h6.vf, false));
         editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
-        editTextBoldCursor.setOnFocusChangeListener(new gb(sd0Var, editTextBoldCursor, 1));
+        editTextBoldCursor.setOnFocusChangeListener(new hb(sd0Var, editTextBoldCursor, 1));
         sd0Var.e(editTextBoldCursor);
         sd0Var.addView(editTextBoldCursor, z5.a(-2.0f, 12.0f, 4.0f, 12.0f, 4.0f, -1, 48));
         e.addView(sd0Var, z5.n(-1, -2));
@@ -349,7 +349,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
             TextView textView3 = new TextView(parentActivity);
             textView3.setTextColor(h6.x0(null, h6.B6, false));
             textView3.setTextSize(1, 12.0f);
-            textView3.setPadding(org.telegram.ui.Cells.t0.f(14.0f, i12 >= 0 ? R.string.BotVerifyDescriptionInfo : R.string.BotVerifyDescriptionInfoChat, textView3), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(27.0f));
+            textView3.setPadding(org.telegram.ui.Cells.c1.e(14.0f, i12 >= 0 ? R.string.BotVerifyDescriptionInfo : R.string.BotVerifyDescriptionInfoChat, textView3), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(27.0f));
             i13 = -1;
             e.addView(textView3, z5.d(-2.0f, -1));
         } else {
@@ -393,7 +393,7 @@ public final /* synthetic */ class q1 implements xx, org.telegram.ui.ActionBar.a
                 } else {
                     setcustomverification.custom_description = botVerifierSettings2.custom_description;
                 }
-                ConnectionsManager.getInstance(i18).sendRequest(setcustomverification, new ai.p2(dVar2, f3Var, r1Var2, 7));
+                ConnectionsManager.getInstance(i18).sendRequest(setcustomverification, new ai.q2(dVar2, f3Var, r1Var2, 7));
             }
         });
         f3Var.smoothKeyboardAnimationEnabled = true;

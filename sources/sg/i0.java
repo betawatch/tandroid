@@ -21,7 +21,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.d6;
@@ -39,7 +39,7 @@ import org.telegram.ui.sn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i0 extends LinearLayout {
     public TextView a;
@@ -195,7 +195,7 @@ public final class i0 extends LinearLayout {
                 spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.GroupBoostedByUserWithDescription, t12 == null ? "" : t12.title));
                 str = spannableStringBuilder.toString();
             } else if (n2Var instanceof b60) {
-                str = LocaleController.formatPluralString("BoostingGroupBoostWhatAreBoostsDescription", ug.q.g(), new Object[0]);
+                str = LocaleController.formatPluralString("BoostingGroupBoostWhatAreBoostsDescription", ug.r.g(), new Object[0]);
             } else {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(j0Var.r1(true));
                 if (ChatObject.hasAdminRights(j0Var.t1()) && y12) {
@@ -311,7 +311,7 @@ public final class i0 extends LinearLayout {
                                 addView(k9Var, z5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                                 TextView textView = new TextView(context);
                                 textView.setGravity(17);
-                                wh.k(20.0f, i17, textView);
+                                kk.k(20.0f, i17, textView);
                                 int i55 = h6.j5;
                                 d6Var = ((f3) j0Var).resourcesProvider;
                                 textView.setTextColor(h6.w0(i55, d6Var));
@@ -359,7 +359,7 @@ public final class i0 extends LinearLayout {
                                             int size6 = arrayList3.size() - 2;
                                             int themedColor = j0Var.getThemedColor(h6.h5);
                                             k9Var.b = new z0(h6.Lj, h6.Mj, -1, -1, null);
-                                            k9Var.c = new d11(i0.a.j(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+                                            k9Var.c = new d11(i2.d.j(size6, "+"), 12.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
                                             Paint paint = new Paint(1);
                                             k9Var.d = paint;
                                             paint.setColor(themedColor);
@@ -791,7 +791,7 @@ public final class i0 extends LinearLayout {
                     addView(k9Var2, z5.t(((min - 1) * 30) + 72, 72, 1, 0, 16, 0, 13));
                     TextView textView13 = new TextView(context);
                     textView13.setGravity(17);
-                    wh.k(20.0f, i17, textView13);
+                    kk.k(20.0f, i17, textView13);
                     int i552 = h6.j5;
                     d6Var = ((f3) j0Var).resourcesProvider;
                     textView13.setTextColor(h6.w0(i552, d6Var));

@@ -2,7 +2,7 @@ package nf;
 
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class k {
     public static final int[][] h = {new int[]{11025, -1, 22050, 44100}, new int[]{12000, -1, 24000, 48000}, new int[]{8000, -1, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000}, new int[]{-1, -1, -1, -1}};
@@ -51,7 +51,7 @@ public final class k {
         int i19 = i18 != 0 ? 4 : 6;
         i19 = i14 == 1 ? i19 + m[i17][i13] : i19;
         if (b() < i19) {
-            throw new i(i0.a.j(i19, "Frame size must be at least "));
+            throw new i(i2.d.j(i19, "Frame size must be at least "));
         }
     }
 

@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class rx0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -104,7 +104,7 @@ public class rx0 extends FrameLayout implements NotificationCenter.NotificationC
                     str = "130_130";
                 }
                 if (!LiteMode.isEnabled(3)) {
-                    str = r.c.u(str, "_firstframe");
+                    str = r4.c.u(str, "_firstframe");
                 }
                 if (document == null) {
                     MediaDataController.getInstance(i12).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, obj == null);

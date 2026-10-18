@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class ab extends FrameLayout {
     public int a;
@@ -50,7 +50,7 @@ public abstract class ab extends FrameLayout {
             za zaVar = new za(this, context);
             zaVarArr[i11] = zaVar;
             addView(zaVar);
-            zaVar.setOnClickListener(new ai.ga(this, zaVar, i11, 2));
+            zaVar.setOnClickListener(new ai.ha(this, zaVar, i11, 2));
             zaVar.setOnLongClickListener(new ya(this, zaVar, i11));
             i11++;
         }
@@ -138,7 +138,7 @@ public abstract class ab extends FrameLayout {
             int measuredWidth = zaVarArr[i14].getMeasuredWidth();
             za zaVar = zaVarArr[i14];
             zaVar.layout(dp, dp2, dp + measuredWidth, zaVar.getMeasuredHeight() + dp2);
-            dp = org.telegram.messenger.q.C(6.0f, measuredWidth, dp);
+            dp = org.telegram.messenger.g0.C(6.0f, measuredWidth, dp);
         }
     }
 
@@ -146,12 +146,12 @@ public abstract class ab extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         int i12 = 0;
         if (this.d == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), wh.D(6.0f, this.a, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), kk.C(6.0f, this.a, TLObject.FLAG_30));
             setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
             return;
         }
         int size = View.MeasureSpec.getSize(i10);
-        int dp = size - AndroidUtilities.dp(i0.a.g(this.d, 1, 6, 28));
+        int dp = size - AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(this.d, 1, 6, 28));
         int i13 = dp / this.d;
         int i14 = this.h;
         int dp2 = (i14 == 0 || i14 == 2 || i14 == 3) ? AndroidUtilities.dp(180.0f) : i13;

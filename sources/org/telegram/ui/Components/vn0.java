@@ -9,7 +9,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class vn0 extends Drawable {
     public final Paint b;
@@ -108,7 +108,7 @@ public final class vn0 extends Drawable {
     }
 
     public final float d(float f7) {
-        return com.google.android.gms.internal.cast.a6.D(0.5f, f7, this.p, this.q);
+        return com.google.android.gms.internal.play_billing.k3.D(0.5f, f7, this.p, this.q);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -277,7 +277,7 @@ public final class vn0 extends Drawable {
     }
 
     public final float e(float f7) {
-        return com.google.android.gms.internal.cast.a6.D(0.5f, f7, this.p, this.r);
+        return com.google.android.gms.internal.play_billing.k3.D(0.5f, f7, this.p, this.r);
     }
 
     @Override // android.graphics.drawable.Drawable

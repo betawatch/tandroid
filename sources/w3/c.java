@@ -23,11 +23,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
-import u2.z0;
+import u2.y0;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -47,7 +47,7 @@ public abstract class c {
     }
 
     /*  JADX ERROR: Type inference failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
+        jadx.core.utils.exceptions.JadxOverflowException: Type update terminated with stack overflow, arg: (r38v14 java.util.List), method size: 3238
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
@@ -61,7 +61,7 @@ public abstract class c {
         throw new UnsupportedOperationException("Method not decompiled: w3.c.b(e2.x, int, int, int, int, java.lang.String, boolean, b2.s, e2.j0, int):void");
     }
 
-    public static z0 c(int i10, x xVar) {
+    public static y0 c(int i10, x xVar) {
         xVar.N(i10 + 12);
         xVar.O(1);
         d(xVar);
@@ -80,7 +80,7 @@ public abstract class c {
         d(xVar);
         String e = v0.e(xVar.A());
         if ("audio/mpeg".equals(e) || "audio/vnd.dts".equals(e) || "audio/vnd.dts.hd".equals(e)) {
-            return new z0(e, null, -1L, -1L);
+            return new y0(e, null, -1L, -1L);
         }
         xVar.O(4);
         long C = xVar.C();
@@ -93,7 +93,7 @@ public abstract class c {
         if (j10 <= 0) {
             j10 = -1;
         }
-        return new z0(e, bArr, j10, C > 0 ? C : -1L);
+        return new y0(e, bArr, j10, C > 0 ? C : -1L);
     }
 
     public static int d(x xVar) {
@@ -124,7 +124,7 @@ public abstract class c {
      */
     /* JADX WARN: Code restructure failed: missing block: B:34:0x009f, code lost:
     
-        com.google.android.gms.internal.cast.a6.r("Failed to parse metadata entry with key: ", r8, "MetadataUtil");
+        com.google.android.gms.internal.play_billing.k3.r("Failed to parse metadata entry with key: ", r8, "MetadataUtil");
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -661,7 +661,7 @@ public abstract class c {
                                                                     j24 = j26;
                                                                 }
                                                                 j16 = j24;
-                                                                StringBuilder m19 = i0.a.m("size: ", x10, "x", x11, "\npalette: ");
+                                                                StringBuilder m19 = i2.d.m("size: ", x10, "x", x11, "\npalette: ");
                                                                 m19.append(new d9.l(", ").e(arrayList6));
                                                                 m19.append("\n");
                                                                 String sb2 = m19.toString();
@@ -1152,8 +1152,8 @@ public abstract class c {
                                 j18 = j38;
                                 qVar3 = qVar2;
                                 boolean z21 = z15;
-                                i0.a.w(sb3, qVar3.a, ": remainingSynchronizationSamples ", i74, ", remainingSamplesAtTimestampDelta ");
-                                i0.a.w(sb3, i77, ", remainingSamplesInChunk ", i26, ", remainingTimestampDeltaChanges ");
+                                i2.d.w(sb3, qVar3.a, ": remainingSynchronizationSamples ", i74, ", remainingSamplesAtTimestampDelta ");
+                                i2.d.w(sb3, i77, ", remainingSamplesInChunk ", i26, ", remainingTimestampDeltaChanges ");
                                 sb3.append(i69);
                                 sb3.append(", remainingSamplesAtTimestampOffset ");
                                 sb3.append(i73);
@@ -2149,7 +2149,7 @@ public abstract class c {
         int i59 = 8;
         int i60 = 8;
         z zVar = null;
-        z0 z0Var = null;
+        y0 y0Var = null;
         qi.e eVar2 = null;
         while (true) {
             if (i48 - i46 >= i47) {
@@ -2745,13 +2745,13 @@ public abstract class c {
                                                 str8 = str3;
                                             } else if (m11 == 1702061171) {
                                                 c3.b.b(null, str4 == null);
-                                                z0 c10 = c(i61, xVar);
+                                                y0 c10 = c(i61, xVar);
                                                 String str15 = (String) c10.c;
                                                 byte[] bArr6 = (byte[]) c10.d;
                                                 if (bArr6 != null) {
                                                     list = n0.y(bArr6);
                                                 }
-                                                z0Var = c10;
+                                                y0Var = c10;
                                                 str8 = str15;
                                                 eVar2 = eVar;
                                             } else if (m11 == 1651798644) {
@@ -2831,7 +2831,7 @@ public abstract class c {
                                                 int i130 = bArr7[7] & 255;
                                                 String str16 = m0.a;
                                                 Locale locale2 = Locale.US;
-                                                StringBuilder m15 = i0.a.m("apv1.apvf", i128, ".apvl", i129, ".apvb");
+                                                StringBuilder m15 = i2.d.m("apv1.apvf", i128, ".apvl", i129, ".apvb");
                                                 m15.append(i130);
                                                 str9 = m15.toString();
                                                 x1 y10 = n0.y(bArr7);

@@ -12,7 +12,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x10 extends View {
     public final /* synthetic */ int a;
@@ -128,36 +128,36 @@ public final class x10 extends View {
                 canvas.drawColor(((dj0) this.b).getThemedColor(org.telegram.ui.ActionBar.h6.e7));
                 break;
             case 3:
-                tp0 tp0Var = (tp0) this.b;
-                String format = String.format("%d", Integer.valueOf(Math.max(1, tp0Var.c.size())));
-                int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(tp0Var.S.measureText(format))), AndroidUtilities.dp(24.0f));
+                up0 up0Var = (up0) this.b;
+                String format = String.format("%d", Integer.valueOf(Math.max(1, up0Var.c.size())));
+                int max = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(up0Var.S.measureText(format))), AndroidUtilities.dp(24.0f));
                 int measuredWidth = getMeasuredWidth() / 2;
                 getMeasuredHeight();
-                tp0Var.S.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.C5, false));
-                tp0Var.U.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false));
+                up0Var.S.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.C5, false));
+                up0Var.U.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false));
                 int i11 = max / 2;
-                tp0Var.T.set(measuredWidth - i11, 0.0f, i11 + measuredWidth, getMeasuredHeight());
-                canvas.drawRoundRect(tp0Var.T, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), tp0Var.U);
-                tp0Var.U.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B5, false));
-                tp0Var.T.set(AndroidUtilities.dp(2.0f) + r8, AndroidUtilities.dp(2.0f), r5 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
-                canvas.drawRoundRect(tp0Var.T, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), tp0Var.U);
-                canvas.drawText(format, measuredWidth - (r4 / 2), AndroidUtilities.dp(16.2f), tp0Var.S);
+                up0Var.T.set(measuredWidth - i11, 0.0f, i11 + measuredWidth, getMeasuredHeight());
+                canvas.drawRoundRect(up0Var.T, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), up0Var.U);
+                up0Var.U.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B5, false));
+                up0Var.T.set(AndroidUtilities.dp(2.0f) + r8, AndroidUtilities.dp(2.0f), r5 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
+                canvas.drawRoundRect(up0Var.T, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), up0Var.U);
+                canvas.drawText(format, measuredWidth - (r4 / 2), AndroidUtilities.dp(16.2f), up0Var.S);
                 break;
             case 4:
-                kq0 kq0Var = (kq0) this.b;
-                String format2 = String.format("%d", Integer.valueOf(Math.max(1, kq0Var.c.size())));
-                int max2 = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(kq0Var.h0.measureText(format2))), AndroidUtilities.dp(24.0f));
+                lq0 lq0Var = (lq0) this.b;
+                String format2 = String.format("%d", Integer.valueOf(Math.max(1, lq0Var.c.size())));
+                int max2 = Math.max(AndroidUtilities.dp(16.0f) + ((int) Math.ceil(lq0Var.h0.measureText(format2))), AndroidUtilities.dp(24.0f));
                 int measuredWidth2 = getMeasuredWidth() / 2;
                 getMeasuredHeight();
-                kq0Var.h0.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.C5, false));
-                kq0Var.j0.setColor(org.telegram.ui.ActionBar.h6.x0(null, kq0Var.u0, false));
+                lq0Var.h0.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.C5, false));
+                lq0Var.j0.setColor(org.telegram.ui.ActionBar.h6.x0(null, lq0Var.u0, false));
                 int i12 = max2 / 2;
-                kq0Var.i0.set(measuredWidth2 - i12, 0.0f, i12 + measuredWidth2, getMeasuredHeight());
-                canvas.drawRoundRect(kq0Var.i0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), kq0Var.j0);
-                kq0Var.j0.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B5, false));
-                kq0Var.i0.set(AndroidUtilities.dp(2.0f) + r13, AndroidUtilities.dp(2.0f), r3 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
-                canvas.drawRoundRect(kq0Var.i0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), kq0Var.j0);
-                canvas.drawText(format2, measuredWidth2 - (r2 / 2), AndroidUtilities.dp(16.2f), kq0Var.h0);
+                lq0Var.i0.set(measuredWidth2 - i12, 0.0f, i12 + measuredWidth2, getMeasuredHeight());
+                canvas.drawRoundRect(lq0Var.i0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), lq0Var.j0);
+                lq0Var.j0.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B5, false));
+                lq0Var.i0.set(AndroidUtilities.dp(2.0f) + r13, AndroidUtilities.dp(2.0f), r3 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
+                canvas.drawRoundRect(lq0Var.i0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), lq0Var.j0);
+                canvas.drawText(format2, measuredWidth2 - (r2 / 2), AndroidUtilities.dp(16.2f), lq0Var.h0);
                 break;
             case 5:
                 ((PhotoViewer) this.b).q3.a(canvas, this);
@@ -173,41 +173,41 @@ public final class x10 extends View {
                 ((SecretMediaViewer) this.b).Q.a(canvas, this);
                 break;
             case 11:
-                final org.telegram.ui.Wallet.v5 v5Var = (org.telegram.ui.Wallet.v5) this.b;
-                float d = v5Var.O.d(v5Var.N, false);
-                FrameLayout frameLayout = v5Var.G;
-                if (frameLayout instanceof org.telegram.ui.Wallet.c6) {
-                    ((org.telegram.ui.Wallet.c6) frameLayout).setEngravingAlpha(1.0f - d);
+                final org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.b;
+                float d = x5Var.O.d(x5Var.N, false);
+                FrameLayout frameLayout = x5Var.G;
+                if (frameLayout instanceof org.telegram.ui.Wallet.f6) {
+                    ((org.telegram.ui.Wallet.f6) frameLayout).setEngravingAlpha(1.0f - d);
                 }
-                if (v5Var.U != null && d > 0.0f && getWidth() > 0) {
-                    Paint paint = v5Var.M;
-                    float width = v5Var.getFrontFace().getWidth();
-                    float height = v5Var.getFrontFace().getHeight();
+                if (x5Var.U != null && d > 0.0f && getWidth() > 0) {
+                    Paint paint = x5Var.M;
+                    float width = x5Var.getFrontFace().getWidth();
+                    float height = x5Var.getFrontFace().getHeight();
                     float f7 = width / 1640.0f;
-                    float f10 = !v5Var.s ? 0.51061195f : 0.5002976f;
-                    paint.setTypeface(org.telegram.ui.Wallet.v5.h(v5Var.getContext()));
+                    float f10 = !x5Var.s ? 0.51061195f : 0.5002976f;
+                    paint.setTypeface(org.telegram.ui.Wallet.x5.h(x5Var.getContext()));
                     paint.setTextSize(47.345238f * f7);
                     paint.setTextAlign(Paint.Align.CENTER);
-                    float[] fArr = v5Var.e0;
-                    paint.setColor((fArr == null || fArr.length < 18) ? org.telegram.ui.Wallet.k7.a(null, 0) : i0.b.f(fArr[8], org.telegram.ui.Wallet.k7.a(fArr, 0), org.telegram.ui.Wallet.k7.a(fArr, 1)));
+                    float[] fArr = x5Var.e0;
+                    paint.setColor((fArr == null || fArr.length < 18) ? org.telegram.ui.Wallet.n7.a(null, 0) : i0.a.f(fArr[8], org.telegram.ui.Wallet.n7.a(fArr, 0), org.telegram.ui.Wallet.n7.a(fArr, 1)));
                     paint.setAlpha((int) (255.0f * d));
                     Paint.FontMetrics fontMetrics = paint.getFontMetrics();
                     final float f11 = (-(fontMetrics.ascent + fontMetrics.descent)) * 0.5f;
                     final float f12 = 27.333332f * f7;
-                    final String[] split = org.telegram.ui.Wallet.v5.g(v5Var.U).split("\\n");
+                    final String[] split = org.telegram.ui.Wallet.x5.g(x5Var.U).split("\\n");
                     canvas.save();
                     canvas.translate(f7 * 1527.738f, f10 * height);
                     canvas.rotate(90.0f);
-                    v5Var.d(d, false, new org.telegram.ui.Wallet.o2(v5Var, i10), new Runnable() { // from class: org.telegram.ui.Wallet.s5
+                    x5Var.d(d, false, new org.telegram.ui.Wallet.o2(x5Var, i10), new Runnable() { // from class: org.telegram.ui.Wallet.u5
                         @Override // java.lang.Runnable
                         public final void run() {
-                            v5 v5Var2 = v5.this;
-                            v5Var2.getClass();
+                            x5 x5Var2 = x5.this;
+                            x5Var2.getClass();
                             String[] strArr = split;
                             String str = strArr[0];
                             float f13 = f12;
                             float f14 = f11;
-                            Paint paint2 = v5Var2.M;
+                            Paint paint2 = x5Var2.M;
                             Canvas canvas2 = canvas;
                             canvas2.drawText(str, 0.0f, (-f13) + f14, paint2);
                             if (strArr.length > 1) {

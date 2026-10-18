@@ -1,48 +1,32 @@
 package zh;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class k0 extends x {
-    public final /* synthetic */ m0 M;
+public final /* synthetic */ class k0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(m0 m0Var, Activity activity, int i10, j0 j0Var) {
-        super(activity, i10, j0Var);
-        this.M = m0Var;
+    public /* synthetic */ k0(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float height = getHeight();
-        m0 m0Var = this.M;
-        float min = Math.min(height, m0Var.v - (getTranslationY() + getTop()));
-        c cVar = m0Var.x;
-        if (cVar != null) {
-            cVar.G = min;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((Utilities.Callback) this.b).run((e) this.c);
+                break;
+            default:
+                ((MessagesController) this.b).lambda$processUpdates$377((TLRPC.Updates) ((TLObject) this.c), false);
+                break;
         }
-        m0Var.I = min;
-        if (cVar != null) {
-            cVar.U = m0Var.s - cVar.getLeft();
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        m0 m0Var = this.M;
-        b1 b1Var = m0Var.d;
-        if (b1Var == null || (b1Var.l1 <= 0.5f && b1Var.k1 <= 0.5f)) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        if (motionEvent.getActionMasked() == 1) {
-            b1 b1Var2 = m0Var.d;
-            b1Var2.l1 = 0.0f;
-            b1Var2.invalidate();
-        }
-        return true;
     }
 }

@@ -29,7 +29,7 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.c61;
@@ -40,7 +40,7 @@ import org.telegram.ui.Components.y90;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.ek0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class x3 extends View {
     public boolean A0;
@@ -324,7 +324,7 @@ public class x3 extends View {
         paint.setAlpha(alpha);
         if (this.A0) {
             int dp = AndroidUtilities.dp(64.0f);
-            float b10 = wh.b(this.w0 * 4.0f, dp * 2, ((System.currentTimeMillis() - this.I0) % 4000) / 4000.0f, -dp);
+            float b10 = kk.b(this.w0 * 4.0f, dp * 2, ((System.currentTimeMillis() - this.I0) % 4000) / 4000.0f, -dp);
             this.G0.reset();
             this.G0.postTranslate(this.r0.left + b10, 0.0f);
             this.F0.setLocalMatrix(this.G0);
@@ -694,7 +694,7 @@ public class x3 extends View {
         this.c0 = uj0Var;
         uj0Var.setCallback(this);
         uj0 uj0Var3 = this.c0;
-        if (com.google.android.gms.internal.cast.a6.s(uj0Var3)) {
+        if (com.google.android.gms.internal.play_billing.k3.s(uj0Var3)) {
             this.d = Math.max(this.d, uj0Var3.r());
         }
         uj0 uj0Var4 = this.c0;
@@ -807,7 +807,7 @@ public class x3 extends View {
                                 b10.d(this.L, spanStart, 0.0f);
                                 this.L.getSelectionPath(spanStart, spanEnd, b10);
                                 invalidate();
-                                AndroidUtilities.runOnUIThread(new ai.w2(this, y90Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
+                                AndroidUtilities.runOnUIThread(new ai.x2(this, y90Var, clickableSpan), ViewConfiguration.getLongPressTimeout());
                                 AndroidUtilities.cancelRunOnUIThread(ek0Var);
                                 return true;
                             }

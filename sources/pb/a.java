@@ -37,9 +37,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.bp0;
@@ -61,7 +61,7 @@ import y6.e;
 import zf.j;
 import zf.k;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, u, r, h, Continuation, u5.a, m, g, c, i {
     public final /* synthetic */ int a;
@@ -429,7 +429,7 @@ public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, u, r, h, Co
 
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean d1(MessageObject messageObject) {
-        return t0.a(messageObject);
+        return c1.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.l1

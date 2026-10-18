@@ -87,7 +87,7 @@ import org.telegram.ui.ej0;
 import org.telegram.ui.pu0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class MessageObject {
     public static final int ENTITIES_ALL = 0;
@@ -374,7 +374,7 @@ public class MessageObject {
     public ArrayList<TLRPC.MessageEntity> webPageDescriptionEntities;
     public CharSequence youtubeDescription;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class GroupedMessagePosition {
         public float aspectRatio;
         public boolean edge;
@@ -406,7 +406,7 @@ public class MessageObject {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class SendAnimationData {
         public float currentScale;
         public float currentX;
@@ -421,7 +421,7 @@ public class MessageObject {
         public float y;
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class TextLayoutBlock implements ej0 {
         public static final int FLAG_NOT_RTL = 2;
         public static final int FLAG_RTL = 1;
@@ -575,7 +575,7 @@ public class MessageObject {
                 if (this.copySelector.getCallback() != null) {
                     this.copySelector.draw(canvas);
                 }
-                this.copySeparator.setColor(i0.b.o(i11, 38));
+                this.copySeparator.setColor(i0.a.o(i11, 38));
                 canvas.drawRect(rectF.left + AndroidUtilities.dp(10.0f), (rectF.bottom - AndroidUtilities.dp(38.0f)) - AndroidUtilities.getShadowHeight(), rectF.right - AndroidUtilities.dp(6.66f), rectF.bottom - AndroidUtilities.dp(38.0f), this.copySeparator);
                 float centerX = rectF.centerX() - (Math.min(rectF.width() - AndroidUtilities.dp(12.0f), ((this.copyIcon.getIntrinsicWidth() * 0.8f) + AndroidUtilities.dp(5.0f)) + this.copyText.c) / 2.0f);
                 float dp = rectF.bottom - (AndroidUtilities.dp(38.0f) / 2.0f);
@@ -676,7 +676,7 @@ public class MessageObject {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class VCardData {
         private String company;
         private ArrayList<String> emails = new ArrayList<>();
@@ -1756,11 +1756,11 @@ public class MessageObject {
                                     TL_iv.textPhone textphone = (TL_iv.textPhone) richText;
                                     String d = jf.b.d(textphone.phone, false);
                                     if (textphone.phone.startsWith("+")) {
-                                        d = r.c.g("+", d);
+                                        d = r4.c.h("+", d);
                                     }
                                     l11 l11Var3 = new l11();
                                     l11Var3.a = i12;
-                                    spannableStringBuilder2.setSpan(new j61(r.c.g("tel:", d), l11Var3), length, spannableStringBuilder2.length(), 33);
+                                    spannableStringBuilder2.setSpan(new j61(r4.c.h("tel:", d), l11Var3), length, spannableStringBuilder2.length(), 33);
                                 }
                             } else if (richText instanceof TL_iv.textConcat) {
                                 ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
@@ -1881,7 +1881,7 @@ public class MessageObject {
                         String formatString = canManageMonoForum ? LocaleController.formatString(R.string.SuggestionAgreementReachedAdmin2, str2, aVar2.b()) : LocaleController.formatString(R.string.SuggestionAgreementReachedUser2, aVar2.b());
                         spannableStringBuilder.append((CharSequence) "\n\n");
                         spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
-                        spannableStringBuilder.append((CharSequence) ai.ld.T0(AndroidUtilities.replaceTags(formatString), of2.amount.a == cVar2));
+                        spannableStringBuilder.append((CharSequence) ai.md.T0(AndroidUtilities.replaceTags(formatString), of2.amount.a == cVar2));
                         int i13 = z12 ? canManageMonoForum ? R.string.SuggestionAgreementReachedAdmin3TON : R.string.SuggestionAgreementReachedUser3TON : canManageMonoForum ? R.string.SuggestionAgreementReachedAdmin3Stars : R.string.SuggestionAgreementReachedUser3Stars;
                         spannableStringBuilder.append((CharSequence) "\n\n");
                         spannableStringBuilder.setSpan(new RelativeSizeSpan(0.6f), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
@@ -5068,7 +5068,7 @@ public class MessageObject {
                 this.messageText = LocaleController.formatString(R.string.PaymentSuccessfullyPaidRecurrent, str, firstName, getMedia(this.replyMessageObject).title);
             }
         }
-        this.messageText = ai.ld.R0(this.messageText);
+        this.messageText = ai.md.R0(this.messageText);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -6186,7 +6186,7 @@ public class MessageObject {
                     break;
                 }
             }
-            return ai.ld.R0(LocaleController.formatString(R.string.AttachPaidMedia, size == 1 ? LocaleController.getString(z10 ? R.string.AttachVideo : R.string.AttachPhoto) : LocaleController.formatPluralString(z10 ? "Media" : "Photos", size, new Object[0])));
+            return ai.md.R0(LocaleController.formatString(R.string.AttachPaidMedia, size == 1 ? LocaleController.getString(z10 ? R.string.AttachVideo : R.string.AttachPhoto) : LocaleController.formatPluralString(z10 ? "Media" : "Photos", size, new Object[0])));
         }
         if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
             return (messageMedia.ttl_seconds == 0 || (this.messageOwner instanceof TLRPC.TL_message_secret)) ? getGroupId() != 0 ? LocaleController.getString(R.string.Album) : isLivePhoto() ? LocaleController.getString(R.string.AttachLivePhoto) : LocaleController.getString(R.string.AttachPhoto) : LocaleController.getString(R.string.AttachDestructingPhoto);
@@ -6230,7 +6230,7 @@ public class MessageObject {
         }
         if (isStickerDocument(messageMedia.document) || isAnimatedStickerDocument(messageMedia.document, true)) {
             String stickerChar = getStickerChar();
-            return (stickerChar == null || stickerChar.length() <= 0) ? LocaleController.getString(R.string.AttachSticker) : a1.g.D(stickerChar, " ", LocaleController.getString(R.string.AttachSticker));
+            return (stickerChar == null || stickerChar.length() <= 0) ? LocaleController.getString(R.string.AttachSticker) : a1.g.C(stickerChar, " ", LocaleController.getString(R.string.AttachSticker));
         }
         if (isMusic()) {
             return LocaleController.getString(R.string.AttachMusic);
@@ -6402,7 +6402,7 @@ public class MessageObject {
         if (quickReplyName != null) {
             return quickReplyName;
         }
-        ig.x1 c10 = ig.y1.f(this.currentAccount).c(getQuickReplyId());
+        ig.z1 c10 = ig.a2.f(this.currentAccount).c(getQuickReplyId());
         return c10 != null ? c10.b : "";
     }
 
@@ -7927,7 +7927,7 @@ public class MessageObject {
                     if (button.getIconEmoji() != 0) {
                         lineWidth += AndroidUtilities.dp(36.0f);
                     }
-                    i11 = q.y(4.0f, (int) Math.ceil(lineWidth), i11);
+                    i11 = g0.y(4.0f, (int) Math.ceil(lineWidth), i11);
                 }
             }
             this.wantedBotKeyboardWidth = Math.max(this.wantedBotKeyboardWidth, ((columnsCount - 1) * AndroidUtilities.dp(5.0f)) + ((AndroidUtilities.dp(12.0f) + i11) * columnsCount));
@@ -8768,7 +8768,7 @@ public class MessageObject {
         return updateTranslation(false);
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class GroupedMessages {
         public boolean captionAbove;
         public MessageObject captionMessage;
@@ -8785,7 +8785,7 @@ public class MessageObject {
         private int maxSizeWidth = 800;
         public final TransitionParams transitionParams = new TransitionParams();
 
-        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+        /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
         public static class TransitionParams {
             public boolean backgroundChangeBounds;
             public int bottom;
@@ -9519,7 +9519,7 @@ public class MessageObject {
             return groupedMessagePosition == null ? (GroupedMessagePosition) this.positionsArray.f(messageObject.getId()) : groupedMessagePosition;
         }
 
-        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+        /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
         public static class MessageGroupedLayoutAttempt {
             public float[] heights;
             public int[] lineCounts;
@@ -9541,7 +9541,7 @@ public class MessageObject {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class TextLayoutBlocks {
         public boolean hasCode;
         public boolean hasCodeAtBottom;
@@ -11108,7 +11108,7 @@ public class MessageObject {
                             int i13 = R.string.AttachPaidMedia;
                             Object[] objArr = new Object[1];
                             objArr[c10] = formatPluralString;
-                            this.messageText = ai.ld.R0(LocaleController.formatString(i13, objArr));
+                            this.messageText = ai.md.R0(LocaleController.formatString(i13, objArr));
                         } else if (getMedia(this.messageOwner) instanceof TLRPC.TL_messageMediaPhoto) {
                             if (getMedia(this.messageOwner).ttl_seconds != 0 && !(this.messageOwner instanceof TLRPC.TL_message_secret)) {
                                 this.messageText = LocaleController.getString(R.string.AttachDestructingPhoto);
@@ -11158,7 +11158,7 @@ public class MessageObject {
                                 if (stickerChar == null || stickerChar.length() <= 0) {
                                     this.messageText = LocaleController.getString(R.string.AttachSticker);
                                 } else {
-                                    this.messageText = a1.g.D(stickerChar, " ", LocaleController.getString(R.string.AttachSticker));
+                                    this.messageText = a1.g.C(stickerChar, " ", LocaleController.getString(R.string.AttachSticker));
                                 }
                             } else if (isMusic()) {
                                 this.messageText = LocaleController.getString(R.string.AttachMusic);
@@ -11387,7 +11387,7 @@ public class MessageObject {
                             StringBuilder sb3 = new StringBuilder();
                             sb3.append(tL_messageActionPaymentRefunded.currency);
                             sb3.append(" ");
-                            this.messageText = ai.ld.R0(replaceWithLink(LocaleController.formatString(i18, q.h(tL_messageActionPaymentRefunded.total_amount, ',', sb3)), "un1", user13));
+                            this.messageText = ai.md.R0(replaceWithLink(LocaleController.formatString(i18, g0.h(tL_messageActionPaymentRefunded.total_amount, ',', sb3)), "un1", user13));
                         } else {
                             boolean g10 = ag.e.g(messageAction, TLRPC.TL_messageActionSuggestedPostRefund.class, TLRPC.TL_messageActionSuggestedPostSuccess.class);
                             ag.c cVar = ag.c.b;
@@ -11411,13 +11411,13 @@ public class MessageObject {
                                     if (obtainSuggestionOfferFromReply == null || (aVar2 = obtainSuggestionOfferFromReply.amount) == null) {
                                         this.messageText = LocaleController.formatString(z13 ? R.string.SuggestedOfferRefundByUserAmountUnknown : R.string.SuggestedOfferRefundByAdminAmountUnknown, name, h);
                                     } else {
-                                        this.messageText = ai.ld.T0(LocaleController.formatString(z13 ? R.string.SuggestedOfferRefundByUserAmountF : R.string.SuggestedOfferRefundByAdminAmountF, name, h, aVar2.b()), aVar2.a == cVar);
+                                        this.messageText = ai.md.T0(LocaleController.formatString(z13 ? R.string.SuggestedOfferRefundByUserAmountF : R.string.SuggestedOfferRefundByAdminAmountF, name, h, aVar2.b()), aVar2.a == cVar);
                                     }
                                 } else if (messageAction2 instanceof TLRPC.TL_messageActionSuggestedPostSuccess) {
                                     if (obtainSuggestionOfferFromReply == null || (aVar = obtainSuggestionOfferFromReply.amount) == null) {
                                         this.messageText = LocaleController.formatString(R.string.SuggestedOfferCompleteAmountUnknown, h);
                                     } else {
-                                        this.messageText = ai.ld.T0(LocaleController.formatString(R.string.SuggestedOfferCompleteAmountF, h, aVar.b()), aVar.a == cVar);
+                                        this.messageText = ai.md.T0(LocaleController.formatString(R.string.SuggestedOfferCompleteAmountF, h, aVar.b()), aVar.a == cVar);
                                     }
                                 }
                             } else {
@@ -11747,7 +11747,7 @@ public class MessageObject {
                                                 StringBuilder sb4 = new StringBuilder();
                                                 sb4.append(tL_messageActionStarGiftUnique.gift.title);
                                                 sb4.append(" #");
-                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftTransferOutboundAssigned, q.h(tL_messageActionStarGiftUnique.gift.num, ',', sb4))), "un1", user20);
+                                                this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.ActionUniqueGiftTransferOutboundAssigned, g0.h(tL_messageActionStarGiftUnique.gift.num, ',', sb4))), "un1", user20);
                                             } else {
                                                 this.messageText = replaceWithLink(AndroidUtilities.replaceTags(LocaleController.getString(isOutOwner() ? R.string.ActionUniqueGiftTransferOutbound : R.string.ActionUniqueGiftTransferInbound)), "un1", user20);
                                             }
@@ -11795,7 +11795,7 @@ public class MessageObject {
                                             }
                                             this.messageText = valueOf2.replace(indexOf3, indexOf3 + 3, (CharSequence) formatCurrency2);
                                         }
-                                        this.messageText = ai.ld.R0(this.messageText);
+                                        this.messageText = ai.md.R0(this.messageText);
                                     } else {
                                         TLRPC.Message message5 = this.messageOwner;
                                         TLRPC.MessageAction messageAction6 = message5.action;
@@ -12464,7 +12464,7 @@ public class MessageObject {
                                                         StringBuilder sb7 = new StringBuilder();
                                                         sb7.append(tL_messageActionStarGiftPurchaseOffer.gift.title);
                                                         sb7.append(" #");
-                                                        String h11 = q.h(tL_messageActionStarGiftPurchaseOffer.gift.num, ',', sb7);
+                                                        String h11 = g0.h(tL_messageActionStarGiftPurchaseOffer.gift.num, ',', sb7);
                                                         String shortName = DialogObject.getShortName(getUser(abstractMap, hVar, DialogObject.getPeerDialogId(this.messageOwner.peer_id)));
                                                         SpannableStringBuilder spannableStringBuilder7 = new SpannableStringBuilder();
                                                         spannableStringBuilder7.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString(m11.a == cVar2 ? isOut() ? R.string.GiftOfferOfferedTextStarsOut : R.string.GiftOfferOfferedTextStars2 : isOut() ? R.string.GiftOfferOfferedTextTONOut : R.string.GiftOfferOfferedTextTON2, shortName, m11.d(), h11)));
@@ -12486,7 +12486,7 @@ public class MessageObject {
                                                         StringBuilder sb8 = new StringBuilder();
                                                         sb8.append(tL_messageActionStarGiftPurchaseOfferDeclined.gift.title);
                                                         sb8.append(" #");
-                                                        String h12 = q.h(tL_messageActionStarGiftPurchaseOfferDeclined.gift.num, ',', sb8);
+                                                        String h12 = g0.h(tL_messageActionStarGiftPurchaseOfferDeclined.gift.num, ',', sb8);
                                                         String shortName4 = DialogObject.getShortName(getUser(abstractMap, hVar, DialogObject.getPeerDialogId(this.messageOwner.peer_id)));
                                                         String d = m12.d();
                                                         ag.c cVar3 = m12.a;
@@ -13218,7 +13218,7 @@ public class MessageObject {
         return true;
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class TextRange {
         public boolean code;
         public boolean collapse;
@@ -13554,7 +13554,7 @@ public class MessageObject {
     }
 
     public static int getQuickReplyId(int i10, TLRPC.Message message) {
-        ig.x1 d;
+        ig.z1 d;
         if (message == null) {
             return 0;
         }
@@ -13566,7 +13566,7 @@ public class MessageObject {
             return ((TLRPC.TL_inputQuickReplyShortcutId) inputQuickReplyShortcut).shortcut_id;
         }
         String quickReplyName = getQuickReplyName(message);
-        if (quickReplyName == null || (d = ig.y1.f(i10).d(quickReplyName)) == null) {
+        if (quickReplyName == null || (d = ig.a2.f(i10).d(quickReplyName)) == null) {
             return 0;
         }
         return d.a;
@@ -14078,15 +14078,15 @@ public class MessageObject {
                                 b10 = b11;
                             } else {
                                 if (messageEntity3 instanceof TLRPC.TL_messageEntityTonAddress) {
-                                    spannable2.setSpan(new j61(r.c.g("tonaddress:", str), l11Var8), l11Var8.b, l11Var8.c, 33);
+                                    spannable2.setSpan(new j61(r4.c.h("tonaddress:", str), l11Var8), l11Var8.b, l11Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityBankCard) {
-                                    spannable2.setSpan(new j61(r.c.g("card:", str), l11Var8), l11Var8.b, l11Var8.c, 33);
+                                    spannable2.setSpan(new j61(r4.c.h("card:", str), l11Var8), l11Var8.b, l11Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityPhone) {
                                     String d = jf.b.d(str, false);
                                     if (str.startsWith("+")) {
-                                        d = r.c.g("+", d);
+                                        d = r4.c.h("+", d);
                                     }
-                                    spannable2.setSpan(new j61(r.c.g("tel:", d), l11Var8), l11Var8.b, l11Var8.c, 33);
+                                    spannable2.setSpan(new j61(r4.c.h("tel:", d), l11Var8), l11Var8.b, l11Var8.c, 33);
                                 } else if (messageEntity3 instanceof TLRPC.TL_messageEntityTextUrl) {
                                     if (i29 < 250) {
                                         i29++;
@@ -14142,7 +14142,7 @@ public class MessageObject {
                             }
                         } else if (i29 < 250) {
                             i29++;
-                            spannable2.setSpan(new l61(r.c.g("mailto:", str), l11Var8), l11Var8.b, l11Var8.c, 33);
+                            spannable2.setSpan(new l61(r4.c.h("mailto:", str), l11Var8), l11Var8.b, l11Var8.c, 33);
                             charSequence2 = a2;
                             spannable = spannable2;
                             b10 = b11;
@@ -14364,7 +14364,7 @@ public class MessageObject {
             str2 = str3;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.replace(charSequence, new String[]{str}, new CharSequence[]{charSequence2}));
-        k61 k61Var = new k61(r.c.g("", str2));
+        k61 k61Var = new k61(r4.c.h("", str2));
         k61Var.c = tLObject3;
         spannableStringBuilder.setSpan(k61Var, indexOf, charSequence2.length() + indexOf, 33);
         return spannableStringBuilder;

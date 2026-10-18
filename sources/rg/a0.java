@@ -16,7 +16,7 @@ import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.b61;
 import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a0 implements uy {
     public final /* synthetic */ m0 a;
@@ -106,7 +106,7 @@ public final class a0 implements uy {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new qg.g0(this, 9));
-        i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.uy

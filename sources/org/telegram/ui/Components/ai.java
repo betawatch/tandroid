@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ai implements org.telegram.ui.web.g0 {
     public ValueAnimator a;
@@ -76,32 +76,32 @@ public final class ai implements org.telegram.ui.web.g0 {
         org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
         boolean z10 = tLObject instanceof TLRPC.TL_payments_paymentFormStars;
         gi.f4 f4Var = this.b;
-        org.telegram.ui.fo0 fo0Var = null;
+        org.telegram.ui.go0 go0Var = null;
         if (z10) {
             org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(tiVar.getContext(), 3, null);
             b2Var.q(150L);
-            ai.fa.y(i10, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new c2(b2Var, 1), new org.telegram.ui.ActionBar.j3(24, f4Var, str));
+            ai.ga.y(i10, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new c2(b2Var, 1), new org.telegram.ui.ActionBar.j3(24, f4Var, str));
             AndroidUtilities.hideKeyboard(f4Var);
             return;
         }
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             MessagesController.getInstance(i10).putUsers(paymentForm.users, false);
-            fo0Var = new org.telegram.ui.fo0(paymentForm, null, str, n2Var);
+            go0Var = new org.telegram.ui.go0(paymentForm, null, str, n2Var);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            fo0Var = new org.telegram.ui.fo0((TLRPC.PaymentReceipt) tLObject);
+            go0Var = new org.telegram.ui.go0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (fo0Var != null) {
+        if (go0Var != null) {
             f4Var.J();
             AndroidUtilities.hideKeyboard(f4Var);
             Activity parentActivity = n2Var.getParentActivity();
             int i11 = ti.R2;
             td0 td0Var = new td0(parentActivity);
             td0Var.show();
-            fo0Var.Z0 = new ai.s2(td0Var, f4Var, str, 25);
+            go0Var.Z0 = new ai.t2(td0Var, f4Var, str, 25);
             d6Var = ((org.telegram.ui.ActionBar.f3) tiVar).resourcesProvider;
-            fo0Var.Y0 = d6Var;
-            td0Var.c(fo0Var);
+            go0Var.Y0 = d6Var;
+            td0Var.c(go0Var);
         }
     }
 
@@ -127,7 +127,7 @@ public final class ai implements org.telegram.ui.web.g0 {
                 q6Var.setTextColor(i11);
                 q6Var.setEmojiColor(i11);
                 boolean z14 = org.telegram.ui.web.a1.P0;
-                q6Var.setBackground(org.telegram.ui.ActionBar.h6.h0(i10, i0.b.h(i10) >= 0.30000001192092896d ? 301989888 : 385875967));
+                q6Var.setBackground(org.telegram.ui.ActionBar.h6.h0(i10, i0.a.h(i10) >= 0.30000001192092896d ? 301989888 : 385875967));
                 if (tiVar.G1 != z10) {
                     tiVar.G1 = z10;
                     ValueAnimator valueAnimator = this.a;
@@ -191,7 +191,7 @@ public final class ai implements org.telegram.ui.web.g0 {
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int f7 = i0.b.f(floatValue, color, i11);
+                int f7 = i0.a.f(floatValue, color, i11);
                 ti tiVar2 = ai.this.e;
                 tiVar2.q2 = f7;
                 tiVar2.p2 = true;

@@ -50,7 +50,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class z51 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static String[] a2;
@@ -100,7 +100,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
     public long P1;
     public boolean Q;
     public boolean Q0;
-    public ai.ce Q1;
+    public ai.de Q1;
     public boolean R;
     public List R0;
     public final b41 R1;
@@ -968,7 +968,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
             arrayList19.clear();
             if (i24 != 0 || i24 == 12 || i24 == 9 || i24 == 10) {
                 j10 = 13334;
-                ai.x9 G = ai.fa.y(i23, false).G(getDialogId(), true);
+                ai.y9 G = ai.ga.y(i23, false).G(getDialogId(), true);
                 G.a();
                 arrayList3 = new ArrayList();
                 ArrayList arrayList26 = G.l;
@@ -1289,7 +1289,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         if (i24 != 0) {
         }
         j10 = 13334;
-        ai.x9 G2 = ai.fa.y(i23, false).G(getDialogId(), true);
+        ai.y9 G2 = ai.ga.y(i23, false).G(getDialogId(), true);
         G2.a();
         arrayList3 = new ArrayList();
         ArrayList arrayList262 = G2.l;
@@ -1414,7 +1414,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
             if (n()) {
                 height = getMeasuredHeight() - height;
             }
-            float cascade = AndroidUtilities.cascade(a13, (float) Math.sqrt(com.google.android.gms.internal.cast.a6.t(height, height, 0.4f, width * width)), sqrt, childAt.getHeight() * 1.75f);
+            float cascade = AndroidUtilities.cascade(a13, (float) Math.sqrt(com.google.android.gms.internal.play_billing.k3.t(height, height, 0.4f, width * width)), sqrt, childAt.getHeight() * 1.75f);
             if (Float.isNaN(cascade)) {
                 cascade = 0.0f;
             }
@@ -1436,7 +1436,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 if (n()) {
                     height2 = getMeasuredHeight() - height2;
                 }
-                float cascade2 = AndroidUtilities.cascade(a13, (float) Math.sqrt(com.google.android.gms.internal.cast.a6.t(height2, height2, 0.2f, width2 * width2)), sqrt, childAt2.getHeight() * 1.75f);
+                float cascade2 = AndroidUtilities.cascade(a13, (float) Math.sqrt(com.google.android.gms.internal.play_billing.k3.t(height2, height2, 0.2f, width2 * width2)), sqrt, childAt2.getHeight() * 1.75f);
                 if (Float.isNaN(cascade2)) {
                     cascade2 = 0.0f;
                 }
@@ -1516,10 +1516,10 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
             }
             float f7 = (scaleY <= 1.0f || scaleY >= 1.5f) ? 0 : 2;
             float intValue = num.intValue() + f7;
-            float x10 = com.google.android.gms.internal.cast.a6.x(scaleY, 1.0f, bounds.centerY(), -(scaleY > 1.5f ? (bounds.height() * 0.81f) + 1.0f : 0.0f));
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(scaleY, 1.0f, bounds.centerY(), -(scaleY > 1.5f ? (bounds.height() * 0.81f) + 1.0f : 0.0f));
             boolean n10 = n();
             int i10 = this.d1;
-            float scrimDrawableTranslationY = getScrimDrawableTranslationY() + x10 + (!n10 ? AndroidUtilities.dp(i10) : getMeasuredHeight() - (AndroidUtilities.dp(i10) / 2.0f));
+            float scrimDrawableTranslationY = getScrimDrawableTranslationY() + y3 + (!n10 ? AndroidUtilities.dp(i10) : getMeasuredHeight() - (AndroidUtilities.dp(i10) / 2.0f));
             float width = (bounds.width() * scaleY) / 2.0f;
             float height = (bounds.height() * scaleY) / 2.0f;
             this.o1.set((int) (intValue - width), (int) (scrimDrawableTranslationY - height), (int) (intValue + width), (int) (scrimDrawableTranslationY + height));
@@ -1545,7 +1545,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         canvas.translate(0.0f, -getTranslationY());
         this.r1.E.setAlpha((int) (this.q1 * 255.0f));
         this.r1.E.setBounds(this.s1);
-        this.r1.E.setColorFilter(new PorterDuffColorFilter(i0.b.f(1.0f - this.l1, this.f1, this.m1), PorterDuff.Mode.SRC_IN));
+        this.r1.E.setColorFilter(new PorterDuffColorFilter(i0.a.f(1.0f - this.l1, this.f1, this.m1), PorterDuff.Mode.SRC_IN));
         this.r1.E.draw(canvas);
         canvas.restore();
     }
@@ -1558,9 +1558,9 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         return Math.max(300L, Math.min(45, this.O1 - this.N1) * 25) + f() + 16;
     }
 
-    public ai.ce getCollectionParticles() {
+    public ai.de getCollectionParticles() {
         if (this.Q1 == null) {
-            this.Q1 = new ai.ce(1, 8);
+            this.Q1 = new ai.de(1, 8);
         }
         return this.Q1;
     }
@@ -1577,7 +1577,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         boolean canScrollVertically = (this.F1 ? this.i0 : this.h0).canScrollVertically(1);
         if (canScrollVertically != this.v1) {
             this.v1 = canScrollVertically;
-            org.telegram.messenger.wh.s(this.o0.animate(), canScrollVertically ? 1.0f : 0.0f, 200L);
+            org.telegram.messenger.kk.s(this.o0.animate(), canScrollVertically ? 1.0f : 0.0f, 200L);
         }
     }
 
@@ -1731,13 +1731,13 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     org.telegram.ui.Components.p5 p5Var;
                     float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                    float z10 = org.telegram.ui.Cells.t0.z(floatValue, floatValue, floatValue, 1.0f);
+                    float z10 = org.telegram.ui.Cells.c1.z(floatValue, floatValue, floatValue, 1.0f);
                     z51 z51Var = z51.this;
                     z51Var.l1 = z10;
                     z51Var.q1 = 1.0f - ((float) Math.pow(floatValue, 10.0d));
                     AndroidUtilities.lerp(rect, z51Var.o1, floatValue, z51Var.s1);
                     float scaleX = i51Var.getScaleX() * Math.max(1.0f, z51Var.t1.getInterpolation(w7.r.a((3.0f * floatValue) - 2.0f, 0.0f, 1.0f)));
-                    z51Var.s1.set((int) org.telegram.messenger.wh.y(z51Var.s1.width(), 2.0f, scaleX, r0.centerX()), (int) org.telegram.messenger.wh.y(z51Var.s1.height(), 2.0f, scaleX, z51Var.s1.centerY()), (int) a1.g.d(z51Var.s1.width(), 2.0f, scaleX, z51Var.s1.centerX()), (int) a1.g.d(z51Var.s1.height(), 2.0f, scaleX, z51Var.s1.centerY()));
+                    z51Var.s1.set((int) org.telegram.messenger.kk.x(z51Var.s1.width(), 2.0f, scaleX, r0.centerX()), (int) org.telegram.messenger.kk.x(z51Var.s1.height(), 2.0f, scaleX, z51Var.s1.centerY()), (int) a1.g.d(z51Var.s1.width(), 2.0f, scaleX, z51Var.s1.centerX()), (int) a1.g.d(z51Var.s1.height(), 2.0f, scaleX, z51Var.s1.centerY()));
                     z51Var.invalidate();
                     if (floatValue > 0.85f) {
                         boolean[] zArr2 = zArr;
@@ -2176,7 +2176,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         this.E1.setDuration(320L);
         this.E1.setInterpolator(org.telegram.ui.Components.bs.h);
         this.E1.start();
-        org.telegram.messenger.wh.t(((View) w41Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new a41(this, 1)), org.telegram.ui.Components.bs.f, 160L);
+        org.telegram.messenger.kk.t(((View) w41Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new a41(this, 1)), org.telegram.ui.Components.bs.f, 160L);
         if (this.F1 && z11) {
             m41Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(54.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
         } else {
@@ -2295,7 +2295,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         this.O0 = globalMainSettings.getInt(sb2.toString(), 0) < 3;
         this.f1 = i25;
         paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var));
-        paint2.setColor(i0.b.o(i25, 30));
+        paint2.setColor(i0.a.o(i25, 30));
         this.k1 = new PorterDuffColorFilter(i25, PorterDuff.Mode.SRC_IN);
         this.Y0 = num;
         Integer valueOf = num == null ? null : Integer.valueOf(w7.r.b(num.intValue(), AndroidUtilities.dp(26.0f), AndroidUtilities.dp(292.0f)));

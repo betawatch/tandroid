@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k8 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -74,7 +74,7 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
     public TextView n;
     public final Paint r;
     public final Paint s;
-    public ai.hc v;
+    public ai.ic v;
     public final Paint w;
     public long x;
     public long y;
@@ -162,7 +162,7 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
             if (tL_messages_searchResultsCalendar.messages.isEmpty()) {
                 k8Var.T = true;
             } else {
-                k8Var.V = ((TLRPC.Message) i0.a.h(1, tL_messages_searchResultsCalendar.messages)).id;
+                k8Var.V = ((TLRPC.Message) i2.d.h(1, tL_messages_searchResultsCalendar.messages)).id;
                 k8Var.T = false;
                 k8Var.p0();
             }
@@ -243,9 +243,9 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.J = i10;
         int i11 = this.Z;
         if (i11 != 0) {
-            int g10 = i0.a.g(this.I, i11, 12, i10) - this.a0;
-            this.K = g10 + 1;
-            this.c.h1(g10, AndroidUtilities.dp(120.0f));
+            int v = com.google.android.gms.internal.play_billing.k3.v(this.I, i11, 12, i10) - this.a0;
+            this.K = v + 1;
+            this.c.h1(v, AndroidUtilities.dp(120.0f));
         }
         if (this.K < 3) {
             this.K = 3;
@@ -362,10 +362,10 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
             this.a.addView(this.b0, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
             TextView textView3 = this.h;
             int i15 = org.telegram.ui.ActionBar.h6.Ae;
-            textView3.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i15, false), 51), 2, -1));
+            textView3.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i15, false), 51), 2, -1));
             TextView textView4 = this.n;
             int i16 = org.telegram.ui.ActionBar.h6.q7;
-            textView4.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i16, false), 51), 2, -1));
+            textView4.setBackground(org.telegram.ui.ActionBar.h6.g0(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i16, false), 51), 2, -1));
             this.h.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i15, false));
             this.n.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i16, false));
         }
@@ -390,7 +390,7 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean isLightStatusBar() {
-        return i0.b.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
+        return i0.a.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) > 0.699999988079071d;
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -479,8 +479,8 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     @Override // org.telegram.ui.ActionBar.n2
     public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        ai.hc hcVar;
-        if (z10 && (hcVar = this.v) != null && hcVar.getVisibility() == 0) {
+        ai.ic icVar;
+        if (z10 && (icVar = this.v) != null && icVar.getVisibility() == 0) {
             this.v.setVisibility(8);
             this.v.setBackground(null);
         }
@@ -489,8 +489,8 @@ public final class k8 extends org.telegram.ui.ActionBar.n2 implements Notificati
     @Override // org.telegram.ui.ActionBar.n2
     public final void onTransitionAnimationProgress(boolean z10, float f7) {
         super.onTransitionAnimationProgress(z10, f7);
-        ai.hc hcVar = this.v;
-        if (hcVar == null || hcVar.getVisibility() != 0) {
+        ai.ic icVar = this.v;
+        if (icVar == null || icVar.getVisibility() != 0) {
             return;
         }
         if (z10) {

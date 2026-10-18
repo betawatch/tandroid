@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xc {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -57,13 +57,13 @@ public final class xc {
         return z(n2Var, z10 ? 3 : 4, 0, d6Var);
     }
 
-    public static qc B(org.telegram.ui.ActionBar.n2 n2Var, boolean z10, ai.bb bbVar, org.telegram.ui.ue ueVar, org.telegram.ui.ActionBar.d6 d6Var) {
+    public static qc B(org.telegram.ui.ActionBar.n2 n2Var, boolean z10, ai.cb cbVar, org.telegram.ui.ue ueVar, org.telegram.ui.ActionBar.d6 d6Var) {
         yb ybVar = new yb(n2Var.getParentActivity(), d6Var);
         ybVar.c(z10 ? R.raw.ic_pin : R.raw.ic_unpin, 28, 28, "Pin", "Line");
         ybVar.b.setText(LocaleController.getString(z10 ? "MessagePinnedHint" : "MessageUnpinnedHint", z10 ? R.string.MessagePinnedHint : R.string.MessageUnpinnedHint));
         if (!z10) {
             oc ocVar = new oc(n2Var.getParentActivity(), d6Var, true);
-            ocVar.a = bbVar;
+            ocVar.a = cbVar;
             ocVar.b = ueVar;
             ybVar.setButton(ocVar);
         }
@@ -417,8 +417,8 @@ public final class xc {
     public final qc L(Drawable drawable, CharSequence charSequence) {
         yb ybVar = new yb(W(), this.c);
         ybVar.a.setImageDrawable(drawable);
-        if (drawable instanceof org.telegram.ui.ep0) {
-            ((org.telegram.ui.ep0) drawable).e(ybVar.a);
+        if (drawable instanceof org.telegram.ui.fp0) {
+            ((org.telegram.ui.fp0) drawable).e(ybVar.a);
         }
         ybVar.b.setText(charSequence);
         ybVar.b.setSingleLine(false);
@@ -809,7 +809,7 @@ public final class xc {
             ca0Var = new ca0(null, AndroidUtilities.dp(100.0f), AndroidUtilities.dp(2.0f), d6Var);
             spannableStringBuilder.setSpan(ca0Var, indexOf, indexOf + 11, 33);
             int i14 = org.telegram.ui.ActionBar.h6.Hi;
-            ca0Var.a(i0.b.o(org.telegram.ui.ActionBar.h6.w0(i14, d6Var), 32), i0.b.o(org.telegram.ui.ActionBar.h6.w0(i14, d6Var), 72));
+            ca0Var.a(i0.a.o(org.telegram.ui.ActionBar.h6.w0(i14, d6Var), 32), i0.a.o(org.telegram.ui.ActionBar.h6.w0(i14, d6Var), 72));
         } else {
             ca0Var = null;
         }

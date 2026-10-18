@@ -1,6 +1,6 @@
 package lg;
 
-import ai.ld;
+import ai.md;
 import android.graphics.Canvas;
 import android.text.Layout;
 import android.text.StaticLayout;
@@ -10,10 +10,10 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d {
     public final long[] a;
@@ -227,7 +227,7 @@ public final class d {
                 return AndroidUtilities.formatWholeNumber((int) j10, 0);
             }
             if (i10 != 1) {
-                return ld.Y0(false, q.h(j10, ' ', new StringBuilder("XTR ")), 0.65f, null);
+                return md.Y0(false, g0.h(j10, ' ', new StringBuilder("XTR ")), 0.65f, null);
             }
             return "≈" + BillingController.getInstance().formatCurrency(j10, "USD");
         }

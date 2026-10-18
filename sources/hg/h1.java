@@ -5,7 +5,7 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.n00;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class h1 extends LinearLayout {
     public final d6 a;
@@ -46,7 +46,7 @@ public final class h1 extends LinearLayout {
         textView.setTextSize(1, 15.0f);
         int i10 = h6.G6;
         textView.setTextColor(h6.w0(i10, d6Var));
-        TextView i11 = a6.i(linearLayout, textView, z5.n(-1, -2), context);
+        TextView i11 = k3.i(linearLayout, textView, z5.n(-1, -2), context);
         this.e = i11;
         i11.setTextSize(1, 13.0f);
         i11.setTextColor(z10 ? h6.m1(0.5f, h6.w0(i10, d6Var)) : h6.w0(h6.z6, d6Var));
@@ -77,7 +77,7 @@ public final class h1 extends LinearLayout {
         h9Var.q(chat);
         w9Var.e(chat, h9Var);
         int i11 = R.string.HashtagSuggestion2Title;
-        StringBuilder i12 = r.c.i(str, "@");
+        StringBuilder i12 = r4.c.i(str, "@");
         i12.append(ChatObject.getPublicUsername(chat));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatString(i11, i12.toString()));
         spannableStringBuilder.append((CharSequence) "  d");

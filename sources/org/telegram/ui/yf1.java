@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class yf1 extends FrameLayout {
     public final sg.p0 a;
@@ -19,7 +19,7 @@ public final class yf1 extends FrameLayout {
         addView(linearLayout, w7.z5.e(-1, -2, 80));
         linearLayout.setOrientation(1);
         TextView textView = new TextView(context);
-        textView.setTextColor(i0.b.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var), 100));
+        textView.setTextColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var), 100));
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.UnlockPremiumStickersDescription));

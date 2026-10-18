@@ -7,7 +7,7 @@ import android.view.View;
 import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class jr0 extends View {
     public Random a;
@@ -33,7 +33,7 @@ public final class jr0 extends View {
         float interpolation = bsVar.getInterpolation(f10 > 0.4f ? (f10 - 0.4f) / 0.6f : 0.0f);
         float f11 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
         canvas.save();
-        canvas.translate(0.0f, (-org.telegram.messenger.q.A(4.0f, getMeasuredHeight(), dp)) * f11);
+        canvas.translate(0.0f, (-org.telegram.messenger.g0.A(4.0f, getMeasuredHeight(), dp)) * f11);
         int i10 = 0;
         for (int i11 = 7; i10 < i11; i11 = 7) {
             int dp2 = ((AndroidUtilities.dp(1.0f) + measuredWidth) * i10) + AndroidUtilities.dp(f7);
@@ -42,7 +42,7 @@ public final class jr0 extends View {
             float f13 = dp2 + measuredWidth;
             rectF.set(0.0f, f12, measuredWidth, f13);
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
-            rectF.set(AndroidUtilities.dp(1.0f) + measuredWidth, f12, org.telegram.messenger.q.C(1.0f, measuredWidth, measuredWidth), f13);
+            rectF.set(AndroidUtilities.dp(1.0f) + measuredWidth, f12, org.telegram.messenger.g0.C(1.0f, measuredWidth, measuredWidth), f13);
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
             i10++;
             f7 = f7;
@@ -65,12 +65,12 @@ public final class jr0 extends View {
         this.f = f15;
         if (f15 > 1.0f) {
             this.h = this.n;
-            float h = org.telegram.ui.Cells.t0.h(this.a, 1001) / 1000.0f;
-            this.n = h;
-            if (h > this.h) {
-                this.n = h + 0.3f;
+            float g10 = org.telegram.ui.Cells.c1.g(this.a, 1001) / 1000.0f;
+            this.n = g10;
+            if (g10 > this.h) {
+                this.n = g10 + 0.3f;
             } else {
-                this.n = h - 0.3f;
+                this.n = g10 - 0.3f;
             }
             this.n = Math.max(0.0f, Math.min(1.0f, this.n));
             this.f = 0.0f;

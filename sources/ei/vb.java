@@ -98,7 +98,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class vb implements NotificationCenter.NotificationCenterDelegate {
     public static vb F2;
@@ -248,7 +248,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
     public final q6 s0;
     public gb s1;
     public boolean s2;
-    public final ai.hc t0;
+    public final ai.ic t0;
     public final gc t1;
     public int t2;
     public boolean u0;
@@ -377,8 +377,8 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         hbVar2.setBackgroundColor((i16 == 1 || i16 == 0) ? 0 : -14737633);
         hb hbVar3 = this.h0;
         float dp = AndroidUtilities.dp(12.0f);
-        ci.o1 o1Var = zf.i0.a;
-        hbVar3.setOutlineProvider(new zf.h0(0, dp));
+        ci.o1 o1Var = zf.j0.a;
+        hbVar3.setOutlineProvider(new zf.i0(0, dp));
         this.h0.setClipToOutline(true);
         t9 t9Var = new t9(this, 14);
         ag0 ag0Var = new ag0(activity);
@@ -415,9 +415,9 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         }
         this.c1.setOnPremiumHint(new u9(this, 5));
         this.c1.setOnKeyboardOpen(new u9(this, i17));
-        ai.hc hcVar = new ai.hc(this, activity, i12);
-        this.t0 = hcVar;
-        this.r.addView(hcVar);
+        ai.ic icVar = new ai.ic(this, activity, i12);
+        this.t0 = icVar;
+        this.r.addView(icVar);
         gc gcVar = new gc(activity, this.r, this.h0, bVar, this.r0);
         this.Z0 = gcVar;
         gcVar.setOnTimelineClick(new t9(this, 10));
@@ -531,18 +531,18 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.j0.addView(this.j1, w7.z5.q(46, 56, 53));
         this.j0.addView(this.g1, w7.z5.q(46, 56, 53));
         this.j0.addView(this.e1, w7.z5.e(46, 56, 53));
-        hc hcVar2 = new hc(activity);
-        this.E0 = hcVar2;
-        hcVar2.setBackground(org.telegram.ui.ActionBar.h6.g0(553648127, 1, -1));
+        hc hcVar = new hc(activity);
+        this.E0 = hcVar;
+        hcVar.setBackground(org.telegram.ui.ActionBar.h6.g0(553648127, 1, -1));
         this.E0.setOnClickListener(new v9(this, i14));
         this.E0.setOnLongClickListener(new c5(this, i12));
         this.E0.setVisibility(8);
         this.E0.setAlpha(0.0f);
         this.s.a(this.E0);
         this.i0.addView(this.E0, w7.z5.e(56, 56, 53));
-        ic icVar = new ic(activity, R.drawable.media_dual_camera2_shadow, R.drawable.media_dual_camera2);
-        this.F0 = icVar;
-        icVar.setContentDescription(LocaleController.getString(R.string.AccDescrDualCameraOn));
+        ic icVar2 = new ic(activity, R.drawable.media_dual_camera2_shadow, R.drawable.media_dual_camera2);
+        this.F0 = icVar2;
+        icVar2.setContentDescription(LocaleController.getString(R.string.AccDescrDualCameraOn));
         this.F0.setOnClickListener(new v9(this, 5));
         boolean q6 = c1.q(activity);
         this.F0.setVisibility(q6 ? 0 : 8);
@@ -566,9 +566,9 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.G0.setAlpha(1.0f);
         this.s.a(this.G0);
         this.i0.addView(this.G0, w7.z5.e(56, 56, 53));
-        hc hcVar3 = new hc(activity);
-        this.H0 = hcVar3;
-        hcVar3.setContentDescription(LocaleController.getString(R.string.AccDescrCollageClose));
+        hc hcVar2 = new hc(activity);
+        this.H0 = hcVar2;
+        hcVar2.setContentDescription(LocaleController.getString(R.string.AccDescrCollageClose));
         this.H0.setBackground(org.telegram.ui.ActionBar.h6.g0(553648127, 1, -1));
         this.H0.a(new u(new t("../../.."), true), false);
         this.H0.setVisibility(8);
@@ -1263,7 +1263,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
                             if (d instanceof TextView) {
                                 int i11 = org.telegram.ui.ActionBar.h6.q7;
                                 ((TextView) d).setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, bVar));
-                                d.setBackground(org.telegram.ui.ActionBar.h6.Z(i0.b.o(org.telegram.ui.ActionBar.h6.w0(i11, bVar), 51), 6, 6));
+                                d.setBackground(org.telegram.ui.ActionBar.h6.Z(i0.a.o(org.telegram.ui.ActionBar.h6.w0(i11, bVar), 51), 6, 6));
                             }
                         }
                     }
@@ -2195,7 +2195,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         if (z10) {
             a8Var2 = a8Var;
             z11 = z10;
-            Utilities.searchQueue.postRunnable(new ai.e2(this, createBitmap, z11, w9, a8Var2, 2));
+            Utilities.searchQueue.postRunnable(new s1(this, createBitmap, z11, w9, a8Var2, 1));
         } else {
             a8Var2 = a8Var;
             z11 = z10;
@@ -2912,7 +2912,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
                         createBitmap.recycle();
                     } else {
                         runnable2 = runnable;
-                        Utilities.themeQueue.postRunnable(new ai.y3(a8Var2, createBitmap, z11, runnable2, 4));
+                        Utilities.themeQueue.postRunnable(new ai.x9(a8Var2, createBitmap, z11, runnable2, 3));
                     }
                 } else if (runnable != null) {
                     runnable.run();
@@ -4205,7 +4205,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.M0.setMaxCount(Math.min(10, t.b() - this.A0.getFilledCount()));
         this.M0.setOnBackClickListener(new la(this, 1));
         this.M0.setOnSelectListener(new ka(0, this, z10));
-        this.M0.setOnSelectMultipleListener(new ai.i2(this, 2));
+        this.M0.setOnSelectMultipleListener(new ai.j2(this, 2));
         s4.a0 a0Var = this.l2;
         if (a0Var != null) {
             a3 a3Var = this.M0.e;

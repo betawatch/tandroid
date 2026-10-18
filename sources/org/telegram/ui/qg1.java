@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class qg1 extends org.telegram.ui.ActionBar.n2 {
     public final SparseArray a;
@@ -148,9 +148,9 @@ public abstract class qg1 extends org.telegram.ui.ActionBar.n2 {
         this.b.addView(this.c, w7.z5.d(-1.0f, -1));
         m0 m0Var = this.b;
         this.fragmentView = m0Var;
-        qp0 qp0Var = new qp0(this, 25);
+        rp0 rp0Var = new rp0(this, 25);
         WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(m0Var, qp0Var);
+        r0.a0.i(m0Var, rp0Var);
         return this.fragmentView;
     }
 

@@ -5,7 +5,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fz0 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ ProfileActivity b;
@@ -71,7 +71,7 @@ public final class fz0 extends org.telegram.ui.Components.s6 {
         if (drawableArr3[1] != null) {
             MessagesController.PeerColor peerColor2 = profileActivity.S5;
             if (peerColor2 != null) {
-                w02 = org.telegram.ui.ActionBar.h6.b(0.1f, org.telegram.ui.ActionBar.h6.I.q() ? -0.1f : -0.08f, i0.b.f(0.4f, peerColor2.getColor2(), profileActivity.S5.hasColor6(org.telegram.ui.ActionBar.h6.I.q()) ? profileActivity.S5.getColor5() : profileActivity.S5.getColor3()));
+                w02 = org.telegram.ui.ActionBar.h6.b(0.1f, org.telegram.ui.ActionBar.h6.I.q() ? -0.1f : -0.08f, i0.a.f(0.4f, peerColor2.getColor2(), profileActivity.S5.hasColor6(org.telegram.ui.ActionBar.h6.I.q()) ? profileActivity.S5.getColor5() : profileActivity.S5.getColor3()));
             } else {
                 w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.zh, profileActivity.A0);
             }

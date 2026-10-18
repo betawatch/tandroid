@@ -57,7 +57,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int a1 = 0;
@@ -70,7 +70,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
     public final fq0 F;
     public TL_stories.StoryItem F0;
     public final fq0 G;
-    public i0.c G0;
+    public i0.b G0;
     public final s4.s H;
     public int H0;
     public final s4.s I;
@@ -128,7 +128,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
     public TLRPC.TL_exportedMessageLink k0;
     public boolean l0;
     public boolean m0;
-    public final ai.hc n;
+    public final ai.ic n;
     public final boolean n0;
     public final String[] o0;
     public int p0;
@@ -184,7 +184,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
     }
 
     public static dr0 O0(Context context, MessageObject messageObject, String str, boolean z10, String str2) {
-        return new dr0(context, messageObject != null ? org.telegram.messenger.q.k(messageObject) : null, str, null, z10, str2, null, false);
+        return new dr0(context, messageObject != null ? org.telegram.messenger.g0.k(messageObject) : null, str, null, z10, str2, null, false);
     }
 
     public static /* synthetic */ void n(dr0 dr0Var, AtomicReference atomicReference, kq0 kq0Var, TLRPC.Dialog dialog) {
@@ -791,7 +791,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                 if (tL_exportedMessageLink != null && tL_exportedMessageLink.link.contains("/c/")) {
                     z10 = true;
                 }
-                ((LaunchActivity) this.g0).H0(new i2.w(5, z10));
+                ((LaunchActivity) this.g0).H0(new i2.x(5, z10));
             }
         } catch (Exception e) {
             FileLog.e(e);
@@ -943,7 +943,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                 } else {
                     b2Var.T = LocaleController.getString(R.string.ErrorSendRestrictedPolls);
                 }
-                i0.a.r(R.string.OK, alertDialog$Builder, null);
+                i2.d.r(R.string.OK, alertDialog$Builder, null);
                 return;
             }
         } else if (DialogObject.isEncryptedDialog(dialog.id) && i10 != 0) {
@@ -958,7 +958,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             } else {
                 b2Var2.T = LocaleController.getString(R.string.InvoiceCantForwardSecretChat);
             }
-            i0.a.r(R.string.OK, alertDialog$Builder2, null);
+            i2.d.r(R.string.OK, alertDialog$Builder2, null);
             return;
         }
         long j10 = dialog.id;
@@ -1394,7 +1394,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         int i14 = i10 / 8;
         long[] jArr = new long[i14];
         Object[] objArr = new Object[i14];
-        this.G0 = i0.c.e;
+        this.G0 = i0.b.e;
         this.H0 = 4;
         this.I0 = true;
         this.K0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
@@ -1875,9 +1875,9 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         fq0Var4.X1 = 0;
         this.containerView.addView(rx0Var, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 51));
         this.containerView.addView(fq0Var4, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
-        ai.hc hcVar = new ai.hc(this, context, 22);
-        this.n = hcVar;
-        this.containerView.addView(hcVar, w7.z5.e(-1, 300, 80));
+        ai.ic icVar = new ai.ic(this, context, 22);
+        this.n = icVar;
+        this.containerView.addView(icVar, w7.z5.e(-1, 300, 80));
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 51);
         layoutParams.topMargin = AndroidUtilities.dp((!this.h0 || this.o0[1] == null) ? 58.0f : 111.0f);
         this.S[0] = new View(context);
@@ -1942,7 +1942,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                     final MessageObject messageObject3 = (MessageObject) this.N.get(0);
                     if (ChatObject.hasAdminRights(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-messageObject3.getDialogId()))) && !messageObject3.isForwarded()) {
                         final int i30 = 0;
-                        linearLayout = org.telegram.messenger.wh.e(context, 0);
+                        linearLayout = org.telegram.messenger.kk.e(context, 0);
                         linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.dq0
                             public final /* synthetic */ dr0 b;
 
@@ -2187,7 +2187,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                 frameLayout8.setVisibility(4);
             }
         }
-        bh.c cVar2 = new bh.c(this.T0.c(hcVar, null, false));
+        bh.c cVar2 = new bh.c(this.T0.c(icVar, null, false));
         this.W0 = cVar2;
         if (SharedConfig.chatBlurEnabled()) {
             LiteMode.isEnabled(262144);

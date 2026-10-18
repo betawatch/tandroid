@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cx0 extends View {
     public final x9 a;
@@ -70,10 +70,10 @@ public final class cx0 extends View {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         float e = this.c.e(this.d);
-        int B = org.telegram.messenger.wh.B(24.0f, getMeasuredWidth(), 2);
+        int A = org.telegram.messenger.kk.A(24.0f, getMeasuredWidth(), 2);
         int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
         canvas.save();
-        canvas.translate(B, measuredHeight);
+        canvas.translate(A, measuredHeight);
         canvas.scale(e, e, 0.0f, AndroidUtilities.dp(12.0f));
         int dp = AndroidUtilities.dp(24.0f);
         int dp2 = AndroidUtilities.dp(24.0f);
@@ -148,7 +148,7 @@ public final class cx0 extends View {
             x9Var.invalidateSelf();
         }
         StringBuilder sb2 = new StringBuilder();
-        org.telegram.ui.Cells.t0.n(R.string.AccDescrProfileRatingLevel, " ", sb2);
+        org.telegram.ui.Cells.c1.n(R.string.AccDescrProfileRatingLevel, " ", sb2);
         sb2.append(tl_starsRating.level);
         setContentDescription(sb2.toString());
         invalidate();

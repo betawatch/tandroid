@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z70 implements Runnable {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class z70 implements Runnable {
                 xm0Var.L1(string, LocaleController.formatString("FloodWaitTime", i15, objArr));
                 return;
             case 5:
-                kq0.U((kq0) this.c, (TLObject) this.d, this.b);
+                lq0.U((lq0) this.c, (TLObject) this.d, this.b);
                 return;
             case 6:
                 PhotoViewer photoViewer = (PhotoViewer) this.c;
@@ -286,7 +286,7 @@ public final /* synthetic */ class z70 implements Runnable {
                                             if (zipOutputStream != null) {
                                                 zipOutputStream.close();
                                             }
-                                            AndroidUtilities.runOnUIThread(new gn0(b2Var2, zArr2, activity, file, 9));
+                                            AndroidUtilities.runOnUIThread(new hn0(b2Var2, zArr2, activity, file, 9));
                                             return;
                                         } catch (Throwable th2) {
                                             th = th2;
@@ -329,7 +329,7 @@ public final /* synthetic */ class z70 implements Runnable {
                         zipOutputStream = null;
                     }
                     zipOutputStream.close();
-                    AndroidUtilities.runOnUIThread(new gn0(b2Var2, zArr2, activity, file, 9));
+                    AndroidUtilities.runOnUIThread(new hn0(b2Var2, zArr2, activity, file, 9));
                     return;
                 } catch (Exception e11) {
                     e11.printStackTrace();
@@ -553,168 +553,168 @@ public final /* synthetic */ class z70 implements Runnable {
                 l2.f fVar = (l2.f) this.c;
                 si.i iVar = (si.i) this.d;
                 boolean z26 = this.b;
-                si.t0 t0Var = (si.t0) fVar.b;
-                int i26 = t0Var.W;
+                si.s0 s0Var = (si.s0) fVar.b;
+                int i26 = s0Var.W;
                 if (i26 == 7 || i26 == 8 || i26 == 9 || i26 == 10) {
                     return;
                 }
-                si.m0 m0Var = iVar.a;
-                si.o0 o0Var = iVar.c;
-                si.n0 n0Var = iVar.b;
-                t0Var.q = m0Var;
-                t0Var.r = n0Var;
-                t0Var.s = o0Var;
-                t0Var.t = iVar.f;
-                if (m0Var != si.m0.a) {
+                si.l0 l0Var = iVar.a;
+                si.n0 n0Var = iVar.c;
+                si.m0 m0Var = iVar.b;
+                s0Var.q = l0Var;
+                s0Var.r = m0Var;
+                s0Var.s = n0Var;
+                s0Var.t = iVar.f;
+                if (l0Var != si.l0.a) {
                     if (iVar.g) {
                         i12 = 2;
-                        t0Var.X = i12;
-                        t0Var.n();
-                        si.o oVar = t0Var.m;
+                        s0Var.X = i12;
+                        s0Var.n();
+                        si.o oVar = s0Var.m;
                         StringBuilder sb2 = new StringBuilder("camera configured: facing=");
-                        sb2.append(m0Var);
+                        sb2.append(l0Var);
                         sb2.append(", mode=");
-                        sb2.append(n0Var);
+                        sb2.append(m0Var);
                         sb2.append(", preview=");
                         sb2.append(iVar.d);
                         sb2.append(", recording=");
                         sb2.append(iVar.e);
                         sb2.append(", fps=");
-                        sb2.append(o0Var.a);
+                        sb2.append(n0Var.a);
                         sb2.append(", maxZoom=");
-                        sb2.append(t0Var.t);
+                        sb2.append(s0Var.t);
                         sb2.append(", flash=");
-                        int i27 = t0Var.X;
+                        int i27 = s0Var.X;
                         sb2.append(i27 == 1 ? i27 != 2 ? i27 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                         sb2.append(", switch=");
                         sb2.append(z26);
                         oVar.b(sb2.toString());
                         if (z26) {
                         }
-                        t0Var.w = false;
-                        org.telegram.ui.Components.l60 l60Var = (org.telegram.ui.Components.l60) t0Var.d.b;
+                        s0Var.w = false;
+                        org.telegram.ui.Components.l60 l60Var = (org.telegram.ui.Components.l60) s0Var.d.b;
                         l60Var.o0 = true;
                         StringBuilder sb3 = new StringBuilder("RoundVideo camera flip session ready: facing=");
-                        sb3.append(m0Var);
+                        sb3.append(l0Var);
                         sb3.append(", elapsedMs=");
                         cameraFlipElapsedMs = l60Var.getCameraFlipElapsedMs();
                         sb3.append(cameraFlipElapsedMs);
                         FileLog.d(sb3.toString());
                         org.telegram.ui.Components.l60.l(l60Var);
-                        t0Var.o();
+                        s0Var.o();
                         return;
                     }
                     i12 = 1;
-                    t0Var.X = i12;
-                    t0Var.n();
-                    si.o oVar2 = t0Var.m;
+                    s0Var.X = i12;
+                    s0Var.n();
+                    si.o oVar2 = s0Var.m;
                     StringBuilder sb22 = new StringBuilder("camera configured: facing=");
-                    sb22.append(m0Var);
+                    sb22.append(l0Var);
                     sb22.append(", mode=");
-                    sb22.append(n0Var);
+                    sb22.append(m0Var);
                     sb22.append(", preview=");
                     sb22.append(iVar.d);
                     sb22.append(", recording=");
                     sb22.append(iVar.e);
                     sb22.append(", fps=");
-                    sb22.append(o0Var.a);
+                    sb22.append(n0Var.a);
                     sb22.append(", maxZoom=");
-                    sb22.append(t0Var.t);
+                    sb22.append(s0Var.t);
                     sb22.append(", flash=");
-                    int i272 = t0Var.X;
+                    int i272 = s0Var.X;
                     sb22.append(i272 == 1 ? i272 != 2 ? i272 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                     sb22.append(", switch=");
                     sb22.append(z26);
                     oVar2.b(sb22.toString());
                     if (z26) {
                     }
-                    t0Var.w = false;
-                    org.telegram.ui.Components.l60 l60Var2 = (org.telegram.ui.Components.l60) t0Var.d.b;
+                    s0Var.w = false;
+                    org.telegram.ui.Components.l60 l60Var2 = (org.telegram.ui.Components.l60) s0Var.d.b;
                     l60Var2.o0 = true;
                     StringBuilder sb32 = new StringBuilder("RoundVideo camera flip session ready: facing=");
-                    sb32.append(m0Var);
+                    sb32.append(l0Var);
                     sb32.append(", elapsedMs=");
                     cameraFlipElapsedMs = l60Var2.getCameraFlipElapsedMs();
                     sb32.append(cameraFlipElapsedMs);
                     FileLog.d(sb32.toString());
                     org.telegram.ui.Components.l60.l(l60Var2);
-                    t0Var.o();
+                    s0Var.o();
                     return;
                 }
-                if (t0Var.f != null) {
+                if (s0Var.f != null) {
                     i12 = 3;
-                    t0Var.X = i12;
-                    t0Var.n();
-                    si.o oVar22 = t0Var.m;
+                    s0Var.X = i12;
+                    s0Var.n();
+                    si.o oVar22 = s0Var.m;
                     StringBuilder sb222 = new StringBuilder("camera configured: facing=");
-                    sb222.append(m0Var);
+                    sb222.append(l0Var);
                     sb222.append(", mode=");
-                    sb222.append(n0Var);
+                    sb222.append(m0Var);
                     sb222.append(", preview=");
                     sb222.append(iVar.d);
                     sb222.append(", recording=");
                     sb222.append(iVar.e);
                     sb222.append(", fps=");
-                    sb222.append(o0Var.a);
+                    sb222.append(n0Var.a);
                     sb222.append(", maxZoom=");
-                    sb222.append(t0Var.t);
+                    sb222.append(s0Var.t);
                     sb222.append(", flash=");
-                    int i2722 = t0Var.X;
+                    int i2722 = s0Var.X;
                     sb222.append(i2722 == 1 ? i2722 != 2 ? i2722 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                     sb222.append(", switch=");
                     sb222.append(z26);
                     oVar22.b(sb222.toString());
-                    if (!z26 || t0Var.w) {
-                        t0Var.w = false;
-                        org.telegram.ui.Components.l60 l60Var22 = (org.telegram.ui.Components.l60) t0Var.d.b;
+                    if (!z26 || s0Var.w) {
+                        s0Var.w = false;
+                        org.telegram.ui.Components.l60 l60Var22 = (org.telegram.ui.Components.l60) s0Var.d.b;
                         l60Var22.o0 = true;
                         StringBuilder sb322 = new StringBuilder("RoundVideo camera flip session ready: facing=");
-                        sb322.append(m0Var);
+                        sb322.append(l0Var);
                         sb322.append(", elapsedMs=");
                         cameraFlipElapsedMs = l60Var22.getCameraFlipElapsedMs();
                         sb322.append(cameraFlipElapsedMs);
                         FileLog.d(sb322.toString());
                         org.telegram.ui.Components.l60.l(l60Var22);
-                        t0Var.o();
+                        s0Var.o();
                         return;
                     }
                     return;
                 }
                 i12 = 1;
-                t0Var.X = i12;
-                t0Var.n();
-                si.o oVar222 = t0Var.m;
+                s0Var.X = i12;
+                s0Var.n();
+                si.o oVar222 = s0Var.m;
                 StringBuilder sb2222 = new StringBuilder("camera configured: facing=");
-                sb2222.append(m0Var);
+                sb2222.append(l0Var);
                 sb2222.append(", mode=");
-                sb2222.append(n0Var);
+                sb2222.append(m0Var);
                 sb2222.append(", preview=");
                 sb2222.append(iVar.d);
                 sb2222.append(", recording=");
                 sb2222.append(iVar.e);
                 sb2222.append(", fps=");
-                sb2222.append(o0Var.a);
+                sb2222.append(n0Var.a);
                 sb2222.append(", maxZoom=");
-                sb2222.append(t0Var.t);
+                sb2222.append(s0Var.t);
                 sb2222.append(", flash=");
-                int i27222 = t0Var.X;
+                int i27222 = s0Var.X;
                 sb2222.append(i27222 == 1 ? i27222 != 2 ? i27222 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                 sb2222.append(", switch=");
                 sb2222.append(z26);
                 oVar222.b(sb2222.toString());
                 if (z26) {
                 }
-                t0Var.w = false;
-                org.telegram.ui.Components.l60 l60Var222 = (org.telegram.ui.Components.l60) t0Var.d.b;
+                s0Var.w = false;
+                org.telegram.ui.Components.l60 l60Var222 = (org.telegram.ui.Components.l60) s0Var.d.b;
                 l60Var222.o0 = true;
                 StringBuilder sb3222 = new StringBuilder("RoundVideo camera flip session ready: facing=");
-                sb3222.append(m0Var);
+                sb3222.append(l0Var);
                 sb3222.append(", elapsedMs=");
                 cameraFlipElapsedMs = l60Var222.getCameraFlipElapsedMs();
                 sb3222.append(cameraFlipElapsedMs);
                 FileLog.d(sb3222.toString());
                 org.telegram.ui.Components.l60.l(l60Var222);
-                t0Var.o();
+                s0Var.o();
                 return;
         }
     }

@@ -10,7 +10,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w3 extends org.telegram.ui.Components.jw0 implements org.telegram.ui.ActionBar.k2, org.telegram.ui.ActionBar.u3 {
     public final org.telegram.ui.Components.f6 A0;
@@ -119,7 +119,7 @@ public final class w3 extends org.telegram.ui.Components.jw0 implements org.tele
             canvas.save();
             float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(20.0f) + l4 + 1, i10, e);
             canvas.translate(0.0f, lerp2);
-            l4Var.h0.a(canvas, org.telegram.messenger.q.C(20.0f, l4, 1) - lerp2, e, true);
+            l4Var.h0.a(canvas, org.telegram.messenger.g0.C(20.0f, l4, 1) - lerp2, e, true);
             canvas.restore();
         }
         canvas.translate(0.0f, -max);
@@ -128,7 +128,7 @@ public final class w3 extends org.telegram.ui.Components.jw0 implements org.tele
         }
         canvas.translate(0.0f, max);
         if (e < 1.0f) {
-            int f12 = i0.b.f(e, org.telegram.ui.ActionBar.h6.m1(0.15f, AndroidUtilities.computePerceivedBrightness(x3Var.j()) < 0.721f ? -1 : -16777216), -16777216);
+            int f12 = i0.a.f(e, org.telegram.ui.ActionBar.h6.m1(0.15f, AndroidUtilities.computePerceivedBrightness(x3Var.j()) < 0.721f ? -1 : -16777216), -16777216);
             Paint paint4 = this.z0;
             paint4.setColor(f12);
             paint4.setAlpha((int) (paint4.getAlpha() * f11));

@@ -1,6 +1,6 @@
 package ci;
 
-import ai.oa;
+import ai.pa;
 import android.text.TextUtils;
 import j$.util.Comparator$-CC;
 import j$.util.Objects;
@@ -26,7 +26,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class a7 {
     public static HashMap B;
@@ -41,7 +41,7 @@ public class a7 {
     public boolean u;
     public boolean v;
     public boolean w;
-    public final oa x;
+    public final pa x;
     public z6 y;
     public boolean z;
     public int a = 0;
@@ -63,7 +63,7 @@ public class a7 {
         this.d = j10;
         this.e = i11;
         this.f = i12;
-        this.x = new oa(22, this, callback);
+        this.x = new pa(22, this, callback);
         if (i11 != 0 || i12 <= 0) {
             this.k = new TreeSet(Comparator$-CC.reverseOrder());
             this.l = new TreeSet(Comparator$-CC.reverseOrder());
@@ -124,7 +124,7 @@ public class a7 {
         sb2.append(this.d);
         sb2.append("} updateDeletedStories {");
         sb2.append(i7.h0(list));
-        i0.a.v("}", sb2);
+        i2.d.v("}", sb2);
         if (list == null) {
             return;
         }
@@ -206,7 +206,7 @@ public class a7 {
         sb2.append(this.d);
         sb2.append("} updateStories {");
         sb2.append(i7.h0(list));
-        i0.a.v("}", sb2);
+        i2.d.v("}", sb2);
         if (list == null) {
             return;
         }
@@ -237,7 +237,7 @@ public class a7 {
                 HashMap hashMap = this.j;
                 if (z12 != z13) {
                     if (!z13) {
-                        org.telegram.messenger.q.o(storyItem2.id, new StringBuilder("StoriesList remove story "));
+                        org.telegram.messenger.g0.o(storyItem2.id, new StringBuilder("StoriesList remove story "));
                         u(storyItem2.id, true);
                         int i13 = this.s;
                         if (i13 != -1) {
@@ -268,7 +268,7 @@ public class a7 {
                         p(Utilities.clamp(size2, 50, 10), true);
                     }
                 } else if (z12 && z13 && ((messageObject = (MessageObject) hashMap.get(Integer.valueOf(storyItem2.id))) == null || z10 || (storyItem = messageObject.storyItem) == null || (storyItem != storyItem2 && (storyItem.id != storyItem2.id || storyItem.media != storyItem2.media || !TextUtils.equals(storyItem.caption, storyItem2.caption))))) {
-                    org.telegram.messenger.q.o(storyItem2.id, new StringBuilder("StoriesList update story "));
+                    org.telegram.messenger.g0.o(storyItem2.id, new StringBuilder("StoriesList update story "));
                     hashMap.put(Integer.valueOf(storyItem2.id), y(storyItem2));
                 }
                 z11 = true;
@@ -490,9 +490,9 @@ public class a7 {
         int i10 = this.a;
         this.a = i10 + 1;
         this.b.add(Integer.valueOf(i10));
-        oa oaVar = this.x;
-        if (oaVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(oaVar);
+        pa paVar = this.x;
+        if (paVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(paVar);
         }
         return i10;
     }
@@ -549,9 +549,9 @@ public class a7 {
         sb2.append(i12);
         sb2.append("{");
         sb2.append(j10);
-        i0.a.v("} load", sb2);
+        i2.d.v("} load", sb2);
         this.u = true;
-        this.A = ConnectionsManager.getInstance(i13).sendRequest(tL_stories_getStoriesArchive, new ai.m2(this, n10, 3));
+        this.A = ConnectionsManager.getInstance(i13).sendRequest(tL_stories_getStoriesArchive, new ai.n2(this, n10, 3));
         return true;
     }
 
@@ -649,14 +649,14 @@ public class a7 {
     }
 
     public final void z(int i10) {
-        oa oaVar;
+        pa paVar;
         Integer valueOf = Integer.valueOf(i10);
         ArrayList arrayList = this.b;
         arrayList.remove(valueOf);
-        if (!arrayList.isEmpty() || (oaVar = this.x) == null) {
+        if (!arrayList.isEmpty() || (paVar = this.x) == null) {
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(oaVar);
-        AndroidUtilities.runOnUIThread(oaVar, 300000L);
+        AndroidUtilities.cancelRunOnUIThread(paVar);
+        AndroidUtilities.runOnUIThread(paVar, 300000L);
     }
 }

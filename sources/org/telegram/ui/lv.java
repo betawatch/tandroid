@@ -1,35 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lv implements MessagesStorage.IntCallback {
+public final /* synthetic */ class lv implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ ey b;
+    public final /* synthetic */ float c;
 
-    public /* synthetic */ lv(ey eyVar, int i10) {
+    public /* synthetic */ lv(ey eyVar, float f7, int i10) {
         this.a = i10;
         this.b = eyVar;
+        this.c = f7;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ey eyVar = this.b;
-                eyVar.getClass();
-                eyVar.U1 = i10 != 0;
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", eyVar.U1).apply();
-                eyVar.h3(false);
+                ey.V(this.b, this.c, valueAnimator);
                 break;
             default:
-                ey eyVar2 = this.b;
-                eyVar2.getClass();
-                eyVar2.U1 = i10 != 0;
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", eyVar2.U1).commit();
-                eyVar2.h3(false);
+                ey.C0(this.b, this.c, valueAnimator);
                 break;
         }
     }

@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DispatchQueue;
@@ -24,7 +24,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.dw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout {
     public float E;
@@ -99,16 +99,16 @@ public abstract class w0 extends FrameLayout {
         textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
         textView.setTextColor(-1);
         textView.setGravity(17);
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout, textView, z5.a(44.0f, -8.0f, 0.0f, 0.0f, 0.0f, -2, 3), context);
-        this.v = k10;
-        a6.m(15.0f, 1, k10);
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, z5.a(44.0f, -8.0f, 0.0f, 0.0f, 0.0f, -2, 3), context);
+        this.v = j10;
+        k3.m(15.0f, 1, j10);
         int i12 = h6.zf;
-        k10.setBackground(h6.g0(h6.m1(0.15f, h6.x0(null, i12, false)), 3, -1));
-        k10.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
-        k10.setText(LocaleController.getString(R.string.Save).toUpperCase());
-        k10.setTextColor(h6.x0(null, i12, false));
-        k10.setGravity(17);
-        frameLayout.addView(k10, z5.a(44.0f, 0.0f, 0.0f, -8.0f, 0.0f, -2, 5));
+        j10.setBackground(h6.g0(h6.m1(0.15f, h6.x0(null, i12, false)), 3, -1));
+        j10.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
+        j10.setText(LocaleController.getString(R.string.Save).toUpperCase());
+        j10.setTextColor(h6.x0(null, i12, false));
+        j10.setGravity(17);
+        frameLayout.addView(j10, z5.a(44.0f, 0.0f, 0.0f, -8.0f, 0.0f, -2, 5));
     }
 
     private dw0 getPaintingSize() {
@@ -139,7 +139,7 @@ public abstract class w0 extends FrameLayout {
         double radians = (float) Math.toRadians(-e1Var.getRotation());
         double d10 = y3;
         float measuredWidth = (e1Var.getMeasuredWidth() / 2.0f) + ((float) ((Math.cos(radians) * d) - (Math.sin(radians) * d10)));
-        float measuredHeight = (e1Var.getMeasuredHeight() / 2.0f) + ((float) i0.a.f(radians, d10, Math.sin(radians) * d));
+        float measuredHeight = (e1Var.getMeasuredHeight() / 2.0f) + ((float) i2.d.f(radians, d10, Math.sin(radians) * d));
         MotionEvent obtain = MotionEvent.obtain(motionEvent);
         obtain.setLocation(measuredWidth, measuredHeight);
         e1Var.e(obtain);
@@ -168,7 +168,7 @@ public abstract class w0 extends FrameLayout {
             }
             float max = Math.max(f13 / ((int) (cropState.cropPw * r5)), f14 / ((int) (cropState.cropPh * r6)));
             f15 = f18 * max;
-            float C = a6.C(cropState.cropPx, measuredWidth, f7, max);
+            float C = k3.C(cropState.cropPx, measuredWidth, f7, max);
             float f19 = cropState.cropScale;
             f10 += C * f19;
             f17 += cropState.cropPy * measuredHeight * f7 * max * f19;

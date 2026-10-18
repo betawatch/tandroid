@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class f {
     public final kg.a a;
@@ -66,7 +66,7 @@ public class f {
         int i10 = aVar.g;
         d6 d6Var = this.p;
         if (i10 < 0 || !h6.d1(i10)) {
-            this.m = i0.b.h(h6.w0(h6.d6, d6Var)) < 0.5d ? aVar.i : aVar.h;
+            this.m = i0.a.h(h6.w0(h6.d6, d6Var)) < 0.5d ? aVar.i : aVar.h;
         } else {
             this.m = h6.w0(aVar.g, d6Var);
         }

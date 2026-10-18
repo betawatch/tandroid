@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.f61;
 import r0.k1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Utilities.Callback5, Utilities.Callback5Return, r0.n, MessagesStorage.BooleanCallback {
     public final /* synthetic */ o a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class j implements Utilities.Callback5, Utilities.C
 
     @Override // r0.n
     public k1 B0(View view, k1 k1Var) {
-        i0.c f7 = k1Var.a.f(519);
+        i0.b f7 = k1Var.a.f(519);
         this.a.d.setPadding(0, f7.b, 0, f7.d);
         return k1.b;
     }

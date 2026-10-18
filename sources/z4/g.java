@@ -1,6 +1,6 @@
 package z4;
 
-import ai.ae;
+import ai.be;
 import android.R;
 import android.content.Context;
 import android.content.res.Resources;
@@ -38,12 +38,12 @@ import r0.a0;
 import r0.i0;
 import s4.c1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
     public static final i t0 = new i(7);
-    public static final ae u0 = new ae(5);
+    public static final be u0 = new be(5);
     public static final i v0 = new i(8);
     public int E;
     public float F;
@@ -568,7 +568,7 @@ public class g extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i0.a.h(1, arrayList)).b));
+            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i2.d.h(1, arrayList)).b));
         }
         return i10;
     }
@@ -1425,7 +1425,7 @@ public class g extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z12 = false;
         c cVar = (c) arrayList.get(0);
-        c cVar2 = (c) i0.a.h(1, arrayList);
+        c cVar2 = (c) i2.d.h(1, arrayList);
         if (cVar.b != 0) {
             f11 = cVar.e * clientWidth;
             z10 = false;
@@ -1644,7 +1644,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            i0.a.w(sb2, this.a, ", found: ", b10, " Pager id: ");
+            i2.d.w(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

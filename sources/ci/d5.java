@@ -16,7 +16,7 @@ import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class d5 implements yl0 {
     public final /* synthetic */ aa a;
@@ -82,13 +82,13 @@ public final class d5 implements yl0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 u5 u5Var2 = d5Var.b;
-                                i0.a.s(R.string.StoryHidFromToast, new Object[]{str3}, new xc(u5Var2, u5Var2.s), R.raw.ic_ban, 36);
+                                i2.d.s(R.string.StoryHidFromToast, new Object[]{str3}, new xc(u5Var2, u5Var2.s), R.raw.ic_ban, 36);
                                 n6Var2.a(u5Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 u5 u5Var3 = d5Var.b;
-                                i0.a.s(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(u5Var3, u5Var3.s), R.raw.contact_check, 36);
+                                i2.d.s(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(u5Var3, u5Var3.s), R.raw.contact_check, 36);
                                 n6Var2.a(u5Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }
@@ -117,13 +117,13 @@ public final class d5 implements yl0 {
                             case 0:
                                 messagesController2.getStoriesController().j0(user2.id, true, true);
                                 u5 u5Var2 = d5Var.b;
-                                i0.a.s(R.string.StoryHidFromToast, new Object[]{str3}, new xc(u5Var2, u5Var2.s), R.raw.ic_ban, 36);
+                                i2.d.s(R.string.StoryHidFromToast, new Object[]{str3}, new xc(u5Var2, u5Var2.s), R.raw.ic_ban, 36);
                                 n6Var2.a(u5Var2.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                             default:
                                 messagesController2.getStoriesController().j0(user2.id, false, true);
                                 u5 u5Var3 = d5Var.b;
-                                i0.a.s(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(u5Var3, u5Var3.s), R.raw.contact_check, 36);
+                                i2.d.s(R.string.StoryShownBackToToast, new Object[]{str3}, new xc(u5Var3, u5Var3.s), R.raw.contact_check, 36);
                                 n6Var2.a(u5Var3.d(storyView2) ? 1.0f : 0.5f, true);
                                 break;
                         }

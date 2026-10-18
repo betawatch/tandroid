@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class e9 extends org.telegram.ui.ActionBar.n2 {
     public static final int[][] c0 = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
@@ -43,7 +43,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
     public boolean F;
     public ValueAnimator G;
     public org.telegram.ui.ActionBar.k H;
-    public s2 I;
+    public q2 I;
     public b9 J;
     public fd K;
     public boolean L;
@@ -118,7 +118,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         kVar.setTitleColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         this.actionBar.C(org.telegram.ui.ActionBar.h6.x0(null, i10, false), false);
         this.actionBar.B(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), false);
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setTitle(LocaleController.getString(R.string.PhotoEditor));
         this.actionBar.setActionBarMenuOnItemClick(new v8(this, 0));
@@ -129,9 +129,9 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         this.H.setAddToContainer(false);
         this.H.setOccupyStatusBar(true);
         this.H.setClipChildren(false);
-        int o10 = i0.b.o(-1, 60);
+        int o10 = i0.a.o(-1, 60);
         this.H.C(-1, false);
-        i0.a.x(false, this.H);
+        i2.d.y(false, this.H);
         this.H.setAllowOverlayTitle(false);
         this.H.B(o10, false);
         org.telegram.ui.ActionBar.y n10 = this.H.n();
@@ -271,14 +271,14 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
             new xc(this.y, this.resourceProvider).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.PremiumAvatarToast), new q8(this, i11))).j();
             return;
         }
-        s2 s2Var = this.I;
-        if (s2Var != null) {
+        q2 q2Var = this.I;
+        if (q2Var != null) {
             x8 x8Var = this.a;
             a9 a9Var = x8Var.h;
             long j10 = x8Var.a;
             TLRPC.Document document2 = x8Var.b;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) s2Var.b;
-            e9 e9Var = (e9) s2Var.c;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) q2Var.b;
+            e9 e9Var = (e9) q2Var.c;
             boolean z11 = ChatAttachAlertPhotoLayout.q1;
             ti tiVar = chatAttachAlertPhotoLayout.b;
             HashMap hashMap = ChatAttachAlertPhotoLayout.s1;
@@ -599,15 +599,15 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
             int i10 = a9Var.c;
             int i11 = a9Var.d;
             if (i11 != 0) {
-                i10 = i0.b.f(0.5f, i10, i11);
+                i10 = i0.a.f(0.5f, i10, i11);
             }
             int i12 = a9Var.e;
             if (i12 != 0) {
-                i10 = i0.b.f(0.5f, i10, i12);
+                i10 = i0.a.f(0.5f, i10, i12);
             }
             int i13 = a9Var.f;
             if (i13 != 0) {
-                i10 = i0.b.f(0.5f, i10, i13);
+                i10 = i0.a.f(0.5f, i10, i13);
             }
         }
         if (this.Z != z10) {
@@ -641,8 +641,8 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
     public final void j0(float f7) {
         if (this.a0 != f7) {
             this.a0 = f7;
-            int f10 = i0.b.f(f7, -16777216, -1);
-            int o10 = i0.b.o(f10, 60);
+            int f10 = i0.a.f(f7, -16777216, -1);
+            int o10 = i0.a.o(f10, 60);
             this.H.C(f10, false);
             this.R.setBackground(org.telegram.ui.ActionBar.h6.g0(o10, 3, -1));
         }
@@ -670,10 +670,10 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
 
     public final void l0(TLRPC.VideoSize videoSize) {
         a9 a9Var = new a9();
-        a9Var.c = i0.b.o(videoSize.background_colors.get(0).intValue(), 255);
-        a9Var.d = videoSize.background_colors.size() > 1 ? i0.b.o(videoSize.background_colors.get(1).intValue(), 255) : 0;
-        a9Var.e = videoSize.background_colors.size() > 2 ? i0.b.o(videoSize.background_colors.get(2).intValue(), 255) : 0;
-        a9Var.f = videoSize.background_colors.size() > 3 ? i0.b.o(videoSize.background_colors.get(3).intValue(), 255) : 0;
+        a9Var.c = i0.a.o(videoSize.background_colors.get(0).intValue(), 255);
+        a9Var.d = videoSize.background_colors.size() > 1 ? i0.a.o(videoSize.background_colors.get(1).intValue(), 255) : 0;
+        a9Var.e = videoSize.background_colors.size() > 2 ? i0.a.o(videoSize.background_colors.get(2).intValue(), 255) : 0;
+        a9Var.f = videoSize.background_colors.size() > 3 ? i0.a.o(videoSize.background_colors.get(3).intValue(), 255) : 0;
         this.a.b(a9Var, false);
         n0();
         TLRPC.Document document = null;

@@ -83,7 +83,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class l4 extends d70 implements NotificationCenter.NotificationCenterDelegate {
     public static Paint B1;
@@ -947,7 +947,7 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
         webPage.url = u10;
         webPage.display_url = u10;
         NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.bookmarkAdded, new MessageObject(i10, tL_message, false, false));
-        new org.telegram.ui.Components.xc(frameLayout, d6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.WebBookmarkedToast), new ai.s3(x3Var, clientUserId, 21))).k(true);
+        new org.telegram.ui.Components.xc(frameLayout, d6Var).Q(R.raw.saved_messages, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.WebBookmarkedToast), new ai.r3(x3Var, clientUserId, 21))).k(true);
     }
 
     public static void g0(l4 l4Var) {
@@ -1673,7 +1673,7 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
             return;
         }
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false);
-        y1.setColor(com.google.android.gms.internal.cast.a6.v((float) Color.blue(x02), 0.0722f, (((float) Color.green(x02)) * 0.7152f) + (((float) Color.red(x02)) * 0.2126f), 255.0f) <= 0.705f ? -3041234 : -6551);
+        y1.setColor(com.google.android.gms.internal.play_billing.k3.w((float) Color.blue(x02), 0.0722f, (((float) Color.green(x02)) * 0.7152f) + (((float) Color.red(x02)) * 0.2126f), 255.0f) <= 0.705f ? -3041234 : -6551);
         Paint paint3 = x1;
         int i10 = org.telegram.ui.ActionBar.h6.K6;
         paint3.setColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false) & 872415231);
@@ -2283,7 +2283,7 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
         TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
         tL_messages_getWebPage.url = str;
         tL_messages_getWebPage.hash = 0;
-        this.F0 = ConnectionsManager.getInstance(this.X).sendRequest(tL_messages_getWebPage, new org.telegram.messenger.gi(this, i10, cVar, str2, g0Var, tL_messages_getWebPage));
+        this.F0 = ConnectionsManager.getInstance(this.X).sendRequest(tL_messages_getWebPage, new org.telegram.messenger.fi(this, i10, cVar, str2, g0Var, tL_messages_getWebPage));
         if (cVar != null) {
             cVar.b = new ah.o(this, i10, cVar, 28);
             cVar.d();
@@ -2336,7 +2336,7 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
         SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("articles", 0).edit();
         String str = "article" + this.u0[0].c.E.id;
         SharedPreferences.Editor putInt = edit.putInt(str, L0).putInt(str + "o", top);
-        String u10 = r.c.u(str, "r");
+        String u10 = r4.c.u(str, "r");
         Point point = AndroidUtilities.displaySize;
         putInt.putBoolean(u10, point.x > point.y).commit();
     }
@@ -2366,14 +2366,14 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
                     this.P0 = n9Var;
                     n9Var.S(linearLayout);
                     this.P0.D = new ci.o2(this, 1);
-                    ai.ud udVar = new ai.ud(this.L, 5);
-                    udVar.setTextSize(1, 16.0f);
-                    udVar.setTypeface(AndroidUtilities.bold());
-                    udVar.setText(LocaleController.getString(R.string.InstantViewReference));
-                    udVar.setGravity((this.u0[0].c.G ? 5 : 3) | 16);
-                    udVar.setTextColor(b());
-                    udVar.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-                    linearLayout.addView(udVar, new LinearLayout.LayoutParams(-1, AndroidUtilities.dp(48.0f) + 1));
+                    ai.vd vdVar = new ai.vd(this.L, 5);
+                    vdVar.setTextSize(1, 16.0f);
+                    vdVar.setTypeface(AndroidUtilities.bold());
+                    vdVar.setText(LocaleController.getString(R.string.InstantViewReference));
+                    vdVar.setGravity((this.u0[0].c.G ? 5 : 3) | 16);
+                    vdVar.setTextColor(b());
+                    vdVar.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+                    linearLayout.addView(vdVar, new LinearLayout.LayoutParams(-1, AndroidUtilities.dp(48.0f) + 1));
                     view.setTag("bottomSheet");
                     linearLayout.addView(view, w7.z5.k(0.0f, 7.0f, 0.0f, 0.0f, -1, -2));
                     org.telegram.ui.Cells.z9 n10 = this.P0.n(this.L);
@@ -2607,7 +2607,7 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
             o3Var.setVisibility(i10 == 0 ? 0 : 8);
             this.g0.addView(o3Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
             o3Var.b.setOnItemLongClickListener(new t(this));
-            o3Var.b.setOnItemClickListener(new m4.y0(4, this, o3Var));
+            o3Var.b.setOnItemClickListener(new m4.w0(5, this, o3Var));
             i10++;
         }
         this.g0.addView(new FrameLayout(activity), w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
@@ -3058,7 +3058,7 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
             }
             j4 j4Var = this.u0[z10 ? 1 : 0].c;
             if (z10) {
-                obj = i0.a.h(2, this.d0);
+                obj = i2.d.h(2, this.d0);
             }
             this.u0[z10 ? 1 : 0].b();
             if (obj instanceof TLRPC.WebPage) {
@@ -3167,7 +3167,7 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
         int actionBarColor2 = this.u0[1].getActionBarColor();
         ArticleViewer$WindowView articleViewer$WindowView3 = this.f0;
         n0Var5.b(1, this.a1.a(actionBarColor2, articleViewer$WindowView3.e || articleViewer$WindowView3.f));
-        this.h0.d(i0.b.f(f7, this.u0[0].getActionBarColor(), this.u0[1].getActionBarColor()), false);
+        this.h0.d(i0.a.f(f7, this.u0[0].getActionBarColor(), this.u0[1].getActionBarColor()), false);
         this.h0.setMenuType((translationX > 0.5f ? this.u0[0] : this.u0[1]).a);
         x3 x3Var = this.K;
         if (x3Var != null) {
@@ -3411,12 +3411,12 @@ public final class l4 extends d70 implements NotificationCenter.NotificationCent
         if (z10 && !z11) {
             ArrayList arrayList = this.d0;
             if (arrayList.size() >= 2) {
-                Object z12 = i0.a.z(1, arrayList);
-                if (z12 instanceof b3) {
-                    ((b3) z12).a();
+                Object A = i2.d.A(1, arrayList);
+                if (A instanceof b3) {
+                    ((b3) A).a();
                 }
-                if (z12 instanceof TLRPC.WebPage) {
-                    org.telegram.ui.web.h2.o((TLRPC.WebPage) z12);
+                if (A instanceof TLRPC.WebPage) {
+                    org.telegram.ui.web.h2.o((TLRPC.WebPage) A);
                 }
                 e0(-1, arrayList.get(arrayList.size() - 1), false);
                 return;

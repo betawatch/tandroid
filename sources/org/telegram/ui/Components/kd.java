@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class kd extends ei.m {
     public boolean S0;
@@ -300,10 +300,10 @@ public abstract class kd extends ei.m {
             RectF rectF2 = this.f1;
             if (z11) {
                 f7 = 1.0f;
-                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.bottom + AndroidUtilities.dp(10.0f), org.telegram.messenger.wh.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.bottom + AndroidUtilities.dp(42.0f));
+                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.bottom + AndroidUtilities.dp(10.0f), org.telegram.messenger.kk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.bottom + AndroidUtilities.dp(42.0f));
             } else {
                 f7 = 1.0f;
-                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.top - AndroidUtilities.dp(42.0f), org.telegram.messenger.wh.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.top - AndroidUtilities.dp(10.0f));
+                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.top - AndroidUtilities.dp(42.0f), org.telegram.messenger.kk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.top - AndroidUtilities.dp(10.0f));
             }
             if (f10 < f7) {
                 canvas.saveLayerAlpha(rectF2, (int) (f10 * 255.0f), 31);

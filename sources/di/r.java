@@ -2,7 +2,7 @@ package di;
 
 import ah.g0;
 import ah.p0;
-import ai.va;
+import ai.wa;
 import ai.z6;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.rx0;
 import s4.y;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class r extends FrameLayout {
     public static final /* synthetic */ int a0 = 0;
@@ -98,7 +98,7 @@ public final class r extends FrameLayout {
         iVar.setLayoutManager(hVar);
         addView(iVar, z5.d(-1.0f, -1));
         iVar.i(new j(this, 0));
-        iVar.setOnItemClickListener(new va(this, 5));
+        iVar.setOnItemClickListener(new wa(this, 5));
         iVar.setOnItemLongClickListener(new a1.c(this, 29));
         ku0 ku0Var = new ku0(context, null);
         this.r = ku0Var;

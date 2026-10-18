@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Paint;
 import java.util.Random;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class hd {
     public float a;
@@ -64,7 +64,7 @@ public final class hd {
             f7 = nextFloat2;
         }
         fArr2[i10] = f7;
-        this.p[i10] = org.telegram.ui.Cells.t0.d(random, 0.003f, 0.017f) * this.a;
+        this.p[i10] = org.telegram.ui.Cells.c1.d(random, 0.003f, 0.017f) * this.a;
     }
 
     public final void c(int i10) {

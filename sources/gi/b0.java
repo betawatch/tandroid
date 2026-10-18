@@ -16,14 +16,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dx0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class b0 extends View {
     public boolean E;
@@ -109,7 +109,7 @@ public final class b0 extends View {
                         this.c.setAlpha((int) (255.0f * interpolation));
                     }
                     if (this.E) {
-                        this.a.set(0.0f, 0.0f, wh.b(this.s, AndroidUtilities.dp(4.0f), interpolation, AndroidUtilities.dp(40.0f)), getMeasuredHeight());
+                        this.a.set(0.0f, 0.0f, kk.b(this.s, AndroidUtilities.dp(4.0f), interpolation, AndroidUtilities.dp(40.0f)), getMeasuredHeight());
                         canvas.drawRoundRect(this.a, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.b);
                         org.telegram.ui.Cells.z zVar = this.y;
                         RectF rectF = this.a;
@@ -212,7 +212,7 @@ public final class b0 extends View {
         AndroidUtilities.dp(4.0f);
         int dp2 = AndroidUtilities.dp(40.0f);
         if (this.f) {
-            dp2 = org.telegram.messenger.q.C(4.0f, (int) this.s, dp2);
+            dp2 = org.telegram.messenger.g0.C(4.0f, (int) this.s, dp2);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(dp2, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }

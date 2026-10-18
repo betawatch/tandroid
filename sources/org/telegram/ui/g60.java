@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g60 implements View.OnKeyListener {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class g60 implements View.OnKeyListener {
                 if (i10 == 67) {
                     if (keyEvent.getAction() != 0) {
                         if (keyEvent.getAction() == 1 && this.b && !n60Var.a0.isEmpty()) {
-                            n60Var.h.c((org.telegram.ui.Components.v30) i0.a.h(1, n60Var.a0));
+                            n60Var.h.c((org.telegram.ui.Components.v30) i2.d.h(1, n60Var.a0));
                             n60Var.s0();
                             n60Var.k0();
                             break;
@@ -42,7 +42,7 @@ public final class g60 implements View.OnKeyListener {
                 if (i10 == 67) {
                     if (keyEvent.getAction() != 0) {
                         if (keyEvent.getAction() == 1 && this.b && !arrayList.isEmpty()) {
-                            org.telegram.ui.Components.v30 v30Var = (org.telegram.ui.Components.v30) i0.a.h(1, arrayList);
+                            org.telegram.ui.Components.v30 v30Var = (org.telegram.ui.Components.v30) i2.d.h(1, arrayList);
                             usersSelectActivity.b.b(v30Var);
                             if (usersSelectActivity.x == 2) {
                                 if (v30Var.getUid() == -9223372036854775800L) {

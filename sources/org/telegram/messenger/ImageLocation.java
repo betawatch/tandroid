@@ -5,7 +5,7 @@ import org.telegram.messenger.DocumentObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class ImageLocation {
     public static final int TYPE_BIG = 0;
@@ -210,7 +210,7 @@ public class ImageLocation {
             StringBuilder v = a1.g.v("[richmedia] strippedKey=", strippedKeyInternal, " fullObject=");
             v.append(obj2 == null ? "null" : obj2.getClass().getSimpleName());
             v.append(" stripped=");
-            i0.a.v(obj3 != null ? obj3.getClass().getSimpleName() : "null", v);
+            i2.d.v(obj3 != null ? obj3.getClass().getSimpleName() : "null", v);
         }
         return strippedKeyInternal;
     }

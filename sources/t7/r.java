@@ -12,11 +12,11 @@ import w7.la;
 import x7.ba;
 import x7.ca;
 import x7.fa;
-import z7.uf;
-import z7.wf;
-import z7.yf;
+import z7.tf;
+import z7.vf;
+import z7.xf;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class r extends c1 {
     public final /* synthetic */ int b;
@@ -54,7 +54,7 @@ public final class r extends c1 {
                 return new fa(c13.b(), (rb.k) c13.a(rb.k.class), new ca(rb.g.c().b(), (ba) obj));
             default:
                 rb.g c14 = rb.g.c();
-                return new yf(c14.b(), (rb.k) c14.a(rb.k.class), new wf(rb.g.c().b(), (uf) obj));
+                return new xf(c14.b(), (rb.k) c14.a(rb.k.class), new vf(rb.g.c().b(), (tf) obj));
         }
     }
 }

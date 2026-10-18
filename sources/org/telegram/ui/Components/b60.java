@@ -18,7 +18,7 @@ import org.telegram.ui.ad1;
 import org.telegram.ui.rc1;
 import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b60 implements Runnable {
     public final /* synthetic */ int a;
@@ -211,7 +211,7 @@ public final /* synthetic */ class b60 implements Runnable {
                 String str = kVar2.t;
                 kVar2.w = true;
                 kVar2.A = false;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (!isEmpty || arrayList3.isEmpty()) ? null : (TLRPC.TL_chatInviteImporter) i0.a.h(1, arrayList3);
+                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (!isEmpty || arrayList3.isEmpty()) ? null : (TLRPC.TL_chatInviteImporter) i2.d.h(1, arrayList3);
                 boolean z11 = tL_chatInviteImporter == null;
                 if (isEmpty && z11 && z10) {
                     eVar = new xh.e(kVar2, 1);

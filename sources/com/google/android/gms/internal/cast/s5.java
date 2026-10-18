@@ -7,9 +7,9 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class s5 extends u4 implements RandomAccess, j5, f6 {
+public final class s5 extends u4 implements RandomAccess, j5, e6 {
     public static final s5 d = new s5(new long[0], 0, false);
     public long[] b;
     public int c;

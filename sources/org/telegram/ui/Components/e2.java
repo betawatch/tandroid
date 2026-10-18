@@ -29,7 +29,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.jh1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -191,7 +191,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 jg0 jg0Var = (jg0) obj;
                 org.telegram.ui.qt0 qt0Var = jg0Var.a;
                 TextView textView = qt0Var.e;
-                ai.hc hcVar = qt0Var.h;
+                ai.ic icVar = qt0Var.h;
                 RadialProgressView radialProgressView = qt0Var.n;
                 TextView textView2 = qt0Var.d;
                 textView.setVisibility(8);
@@ -206,9 +206,9 @@ public final /* synthetic */ class e2 implements Runnable {
                     radialProgressView.animate().cancel();
                     radialProgressView.animate().alpha(0.0f).setDuration(150L).setListener(new ig0(jg0Var, i14));
                 }
-                if (hcVar.getAlpha() == 1.0f) {
-                    hcVar.animate().cancel();
-                    hcVar.animate().alpha(0.0f).setDuration(150L).setListener(new ig0(jg0Var, 1));
+                if (icVar.getAlpha() == 1.0f) {
+                    icVar.animate().cancel();
+                    icVar.animate().alpha(0.0f).setDuration(150L).setListener(new ig0(jg0Var, 1));
                 }
                 if (i15 != 2) {
                     if (i15 != 5) {
@@ -357,7 +357,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 ((org.telegram.ui.sk0) obj).run(Integer.valueOf(i15));
                 break;
             case 23:
-                ((org.telegram.ui.wo0) obj).e.p0.I.D(1 - i15);
+                ((org.telegram.ui.xo0) obj).e.p0.I.D(1 - i15);
                 break;
             case 24:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
@@ -376,7 +376,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string2;
                 b2Var.T = LocaleController.getString(R.string.ProfileNotesRemoveText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new i2.q(profileActivity, i15, 18));
+                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new i2.r(profileActivity, i15, 18));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 alertDialog$Builder.d(-1);
                 alertDialog$Builder.o();

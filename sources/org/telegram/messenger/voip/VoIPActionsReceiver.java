@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class VoIPActionsReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -14,7 +14,7 @@ public class VoIPActionsReceiver extends BroadcastReceiver {
             return;
         }
         String packageName = context.getPackageName();
-        if (r.c.u(packageName, ".END_CALL").equals(intent.getAction())) {
+        if (r4.c.u(packageName, ".END_CALL").equals(intent.getAction())) {
             if (intent.hasExtra("group_call_invite_msg_id")) {
                 VoIPGroupNotification.decline(context, intent.getIntExtra("currentAccount", 0), intent.getIntExtra("group_call_invite_msg_id", 0));
                 return;
@@ -23,7 +23,7 @@ public class VoIPActionsReceiver extends BroadcastReceiver {
                 return;
             }
         }
-        if (r.c.u(packageName, ".DECLINE_CALL").equals(intent.getAction())) {
+        if (r4.c.u(packageName, ".DECLINE_CALL").equals(intent.getAction())) {
             if (intent.hasExtra("group_call_invite_msg_id")) {
                 VoIPGroupNotification.decline(context, intent.getIntExtra("currentAccount", 0), intent.getIntExtra("group_call_invite_msg_id", 0));
                 return;
@@ -32,7 +32,7 @@ public class VoIPActionsReceiver extends BroadcastReceiver {
                 return;
             }
         }
-        if (r.c.u(packageName, ".ANSWER_CALL").equals(intent.getAction())) {
+        if (r4.c.u(packageName, ".ANSWER_CALL").equals(intent.getAction())) {
             if (intent.hasExtra("group_call_invite_msg_id")) {
                 VoIPGroupNotification.answer(context, intent.getIntExtra("currentAccount", 0), intent.getIntExtra("group_call_invite_msg_id", 0));
                 return;
@@ -41,7 +41,7 @@ public class VoIPActionsReceiver extends BroadcastReceiver {
                 return;
             }
         }
-        if (r.c.u(packageName, ".HIDE_CALL").equals(intent.getAction())) {
+        if (r4.c.u(packageName, ".HIDE_CALL").equals(intent.getAction())) {
             if (intent.hasExtra("group_call_invite_msg_id")) {
                 VoIPGroupNotification.hide(context, intent.getIntExtra("currentAccount", 0), intent.getIntExtra("group_call_invite_msg_id", 0));
             } else {

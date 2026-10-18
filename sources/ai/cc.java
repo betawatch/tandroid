@@ -1,23 +1,25 @@
 package ai;
 
-import org.telegram.messenger.NotificationCenter;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class cc implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
+public final class cc extends ClickableSpan {
+    public final /* synthetic */ la a;
 
-    public cc(boolean[] zArr, org.telegram.ui.ActionBar.f3[] f3VarArr) {
-        this.a = zArr;
-        this.b = f3VarArr;
+    public cc(la laVar) {
+        this.a = laVar;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        org.telegram.ui.ActionBar.f3 f3Var;
-        if (i10 == NotificationCenter.starSubscriptionsLoaded && this.a[0] && (f3Var = this.b[0]) != null) {
-            f3Var.dismiss();
-        }
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a.run();
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

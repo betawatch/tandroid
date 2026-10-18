@@ -17,6 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yo;
@@ -25,9 +26,9 @@ import org.telegram.ui.b11;
 import org.telegram.ui.ze1;
 import v7.u6;
 import v7.z8;
-import z7.ra;
+import z7.qa;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d implements p, q, OnFailureListener, l2.i, yo {
     public final /* synthetic */ int a;
@@ -267,7 +268,7 @@ public final class d implements p, q, OnFailureListener, l2.i, yo {
                 ((z8) this.c).b.set(this.b);
                 break;
             default:
-                ((AtomicLong) ((ra) this.c).b).set(this.b);
+                ((AtomicLong) ((qa) this.c).b).set(this.b);
                 break;
         }
     }
@@ -322,9 +323,9 @@ public final class d implements p, q, OnFailureListener, l2.i, yo {
         SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j10 = this.b;
-        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.q.i(j10, profileActivity.h1, sb2), true);
+        boolean z10 = notificationsSettings.getBoolean(g0.i(j10, profileActivity.h1, sb2), true);
         boolean z11 = !z10;
-        notificationsSettings.edit().putBoolean(org.telegram.messenger.q.i(j10, profileActivity.h1, new StringBuilder("sound_enabled_")), z11).apply();
+        notificationsSettings.edit().putBoolean(g0.i(j10, profileActivity.h1, new StringBuilder("sound_enabled_")), z11).apply();
         if (xc.a(profileActivity)) {
             xc.S(z10 ? 1 : 0, profileActivity, profileActivity.A0).j();
         }

@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class kh0 extends org.telegram.ui.ActionBar.f3 {
     public static final org.telegram.ui.Cells.s8 O = new org.telegram.ui.Cells.s8("placeholderAlpha", 9);
@@ -122,7 +122,7 @@ public final class kh0 extends org.telegram.ui.ActionBar.f3 {
                 tL_messages_getPollVotes.limit = pollAnswerVoters.voters <= 15 ? 15 : 10;
                 tL_messages_getPollVotes.flags |= 1;
                 tL_messages_getPollVotes.option = pollAnswerVoters.option;
-                Integer valueOf = Integer.valueOf(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getPollVotes, new ai.rb(this, numArr, i13, arrayList, pollAnswerVoters, 7)));
+                Integer valueOf = Integer.valueOf(ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_getPollVotes, new ai.sb(this, numArr, i13, arrayList, pollAnswerVoters, 7)));
                 numArr[i13] = valueOf;
                 this.F.add(valueOf);
             }
@@ -415,10 +415,10 @@ public final class kh0 extends org.telegram.ui.ActionBar.f3 {
             kh0Var.h.start();
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) eh0Var.getLayoutParams();
-        int e = org.telegram.ui.Cells.t0.e(11.0f, layoutParams.topMargin, top);
-        if (kh0Var.E != e) {
-            kh0Var.E = e;
-            eh0Var.setTopGlowOffset(e - layoutParams.topMargin);
+        int D = org.telegram.messenger.kk.D(11.0f, layoutParams.topMargin, top);
+        if (kh0Var.E != D) {
+            kh0Var.E = D;
+            eh0Var.setTopGlowOffset(D - layoutParams.topMargin);
             kh0Var.containerView.invalidate();
         }
     }

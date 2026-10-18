@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class je extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -27,13 +27,13 @@ public final class je extends FrameLayout {
     public je(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.a = d6Var;
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         addView(e, w7.z5.a(-2.0f, 17.0f, 9.0f, 130.0f, 9.0f, -1, 119));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        TextView i10 = com.google.android.gms.internal.cast.a6.i(e, textView, w7.z5.n(-1, -2), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(e, textView, w7.z5.n(-1, -2), context);
         this.d = i10;
         i10.setTextSize(1, 13.0f);
         i10.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var));

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public i10 a;
@@ -230,7 +230,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
         n10 n10Var = new n10(this, context);
         this.b = n10Var;
         i10Var2.setAdapter(n10Var);
-        this.a.setOnItemClickListener(new ov(4, this, context));
+        this.a.setOnItemClickListener(new zu(5, this, context));
         if (this.f) {
             Z(false);
             this.f = false;
@@ -305,7 +305,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
             int size = dialogFilters.size();
             while (i11 < size) {
                 MessagesController.DialogFilter dialogFilter = dialogFilters.get(i11);
-                i11 = com.google.android.gms.internal.cast.a6.f(dialogFilter.id, i11, 1, tL_messages_updateDialogFiltersOrder.order);
+                i11 = com.google.android.gms.internal.play_billing.k3.f(dialogFilter.id, i11, 1, tL_messages_updateDialogFiltersOrder.order);
             }
             getConnectionsManager().sendRequest(tL_messages_updateDialogFiltersOrder, new ci.e6(8));
         }

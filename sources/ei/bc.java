@@ -1,6 +1,6 @@
 package ei;
 
-import ai.vc;
+import ai.wc;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -19,15 +19,15 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bc implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ bc(i2.a0 a0Var, SurfaceTexture surfaceTexture) {
+    public /* synthetic */ bc(i2.b0 b0Var, SurfaceTexture surfaceTexture) {
         this.a = 15;
-        this.b = a0Var;
+        this.b = b0Var;
     }
 
     @Override // java.lang.Runnable
@@ -49,7 +49,7 @@ public final /* synthetic */ class bc implements Runnable {
                         Canvas canvas = new Canvas(createBitmap);
                         float max = Math.max(ecVar.f / bitmap.getWidth(), ecVar.g / bitmap.getHeight());
                         Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-                        Rect rect2 = new Rect((int) com.google.android.gms.internal.cast.a6.c(bitmap.getWidth(), max, createBitmap.getWidth(), 2.0f), (int) com.google.android.gms.internal.cast.a6.c(bitmap.getHeight(), max, createBitmap.getHeight(), 2.0f), (int) com.google.android.gms.internal.cast.a6.v(bitmap.getWidth(), max, createBitmap.getWidth(), 2.0f), (int) com.google.android.gms.internal.cast.a6.v(bitmap.getHeight(), max, createBitmap.getHeight(), 2.0f));
+                        Rect rect2 = new Rect((int) com.google.android.gms.internal.play_billing.k3.c(bitmap.getWidth(), max, createBitmap.getWidth(), 2.0f), (int) com.google.android.gms.internal.play_billing.k3.c(bitmap.getHeight(), max, createBitmap.getHeight(), 2.0f), (int) com.google.android.gms.internal.play_billing.k3.w(bitmap.getWidth(), max, createBitmap.getWidth(), 2.0f), (int) com.google.android.gms.internal.play_billing.k3.w(bitmap.getHeight(), max, createBitmap.getHeight(), 2.0f));
                         if (ecVar.h) {
                             if (ecVar.m == null) {
                                 ecVar.m = new Path();
@@ -68,10 +68,10 @@ public final /* synthetic */ class bc implements Runnable {
                 AndroidUtilities.runOnUIThread(new p6(12, ecVar, bitmap));
                 return;
             case 1:
-                vc vcVar = (vc) this.b;
-                vcVar.getClass();
+                wc wcVar = (wc) this.b;
+                wcVar.getClass();
                 try {
-                    im0 currentListView = ((fi.g) vcVar.M0).R.getCurrentListView();
+                    im0 currentListView = ((fi.g) wcVar.M0).R.getCurrentListView();
                     if (currentListView == null || currentListView.getAdapter() == null) {
                         return;
                     }
@@ -122,9 +122,9 @@ public final /* synthetic */ class bc implements Runnable {
                 }
                 return;
             case 14:
-                i2.g0 g0Var = (i2.g0) this.b;
-                e2.c cVar = g0Var.C;
-                Context context = g0Var.e;
+                i2.h0 h0Var = (i2.h0) this.b;
+                e2.c cVar = h0Var.C;
+                Context context = h0Var.e;
                 String str = e2.m0.a;
                 int generateAudioSessionId = c2.i.e(context).generateAudioSessionId();
                 if (generateAudioSessionId == -1) {
@@ -146,21 +146,21 @@ public final /* synthetic */ class bc implements Runnable {
                     if (i0Var.a.getLooper().getThread().isAlive()) {
                         i0Var.d(bVar);
                     }
-                    g0Var.t1(1, 10, Integer.valueOf(generateAudioSessionId));
-                    g0Var.t1(2, 10, Integer.valueOf(generateAudioSessionId));
+                    h0Var.t1(1, 10, Integer.valueOf(generateAudioSessionId));
+                    h0Var.t1(2, 10, Integer.valueOf(generateAudioSessionId));
                     return;
                 }
                 return;
             case 15:
-                i2.g0 g0Var2 = ((i2.a0) this.b).a;
-                g0Var2.x1(null);
-                g0Var2.q1(0, 0);
+                i2.h0 h0Var2 = ((i2.b0) this.b).a;
+                h0Var2.x1(null);
+                h0Var2.q1(0, 0);
                 return;
             case 16:
                 try {
-                    i2.p0.f((i2.l1) this.b);
+                    i2.q0.f((i2.l1) this.b);
                     return;
-                } catch (i2.l e7) {
+                } catch (i2.m e7) {
                     e2.a.d("ExoPlayerImplInternal", "Unexpected error delivering message on external thread.", e7);
                     throw new RuntimeException(e7);
                 }
@@ -182,25 +182,25 @@ public final /* synthetic */ class bc implements Runnable {
                 k0Var.U(true);
                 return;
             case 20:
-                ig.r0 r0Var = (ig.r0) ((a6.i) this.b).b;
-                r0Var.c.W2.N(true);
-                r0Var.b0();
+                ig.t0 t0Var = (ig.t0) ((a6.i) this.b).b;
+                t0Var.c.W2.N(true);
+                t0Var.b0();
                 return;
             case 21:
-                ig.t0 t0Var = (ig.t0) this.b;
-                t0Var.c.W2.N(true);
-                t0Var.V(true);
+                ig.v0 v0Var = (ig.v0) this.b;
+                v0Var.c.W2.N(true);
+                v0Var.V(true);
                 return;
             case 22:
-                ig.d1 d1Var = (ig.d1) this.b;
-                d1Var.a.W2.N(true);
-                d1Var.Y(true);
+                ig.f1 f1Var = (ig.f1) this.b;
+                f1Var.a.W2.N(true);
+                f1Var.Y(true);
                 return;
             case 23:
                 ((ci.z2) this.b).run(Boolean.FALSE);
                 return;
             case 24:
-                NotificationCenter.getInstance(((ig.y1) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
+                NotificationCenter.getInstance(((ig.a2) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                 return;
             case 25:
                 j2.f fVar = (j2.f) this.b;
@@ -235,7 +235,7 @@ public final /* synthetic */ class bc implements Runnable {
         }
     }
 
-    public /* synthetic */ bc(i2.p0 p0Var, i2.l1 l1Var) {
+    public /* synthetic */ bc(i2.q0 q0Var, i2.l1 l1Var) {
         this.a = 16;
         this.b = l1Var;
     }

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.aw;
 import org.telegram.ui.Components.ey;
 import org.telegram.ui.Components.im0;
@@ -14,10 +14,10 @@ import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.zv;
 import org.telegram.ui.dj0;
-import org.telegram.ui.dp0;
+import org.telegram.ui.ep0;
 import org.telegram.ui.sh0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class q1 extends s4.m0 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final class q1 extends s4.m0 {
                         rect.right = AndroidUtilities.dp(24.0f);
                         break;
                     } else {
-                        rect.right = wh.C(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
+                        rect.right = kk.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
                         break;
                     }
                 } else {
@@ -124,10 +124,10 @@ public final class q1 extends s4.m0 {
             case 7:
                 recyclerView.getClass();
                 int R2 = RecyclerView.R(view);
-                dp0 dp0Var = (dp0) this.b;
-                int i10 = dp0Var.b0;
+                ep0 ep0Var = (ep0) this.b;
+                int i10 = ep0Var.b0;
                 if (R2 >= i10) {
-                    int i11 = dp0Var.f0;
+                    int i11 = ep0Var.f0;
                     if (R2 < i10 + i11) {
                         int i12 = R2 - i10;
                         int i13 = i12 / 3;
@@ -148,9 +148,9 @@ public final class q1 extends s4.m0 {
                 super.a(rect, view, recyclerView, y0Var);
                 recyclerView.getClass();
                 int R3 = RecyclerView.R(view);
-                ug.x0 x0Var = (ug.x0) this.b;
-                if (R3 == x0Var.d0.size()) {
-                    rect.bottom = x0Var.p0;
+                ug.y0 y0Var2 = (ug.y0) this.b;
+                if (R3 == y0Var2.d0.size()) {
+                    rect.bottom = y0Var2.p0;
                     break;
                 }
                 break;

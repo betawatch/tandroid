@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ck0 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -37,7 +37,7 @@ public final class ck0 extends org.telegram.ui.Components.hm0 {
         if (i10 >= 0 && i10 < this.d.size()) {
             return this.d.get(i10);
         }
-        int g10 = com.google.android.gms.internal.cast.a6.g(1, i10, this.d);
+        int g10 = com.google.android.gms.internal.play_billing.k3.g(1, i10, this.d);
         hg.a2 a2Var = this.h;
         ArrayList arrayList = a2Var.e;
         if (g10 < 0 || g10 >= arrayList.size()) {
@@ -95,7 +95,7 @@ public final class ck0 extends org.telegram.ui.Components.hm0 {
             vaVar.g((gk0) this.d.get(i10), (CharSequence) this.e.get(i10), i10 != this.d.size() - 1);
             vaVar.setAddButtonVisible(false);
         } else {
-            int g10 = com.google.android.gms.internal.cast.a6.g(1, i10, this.d);
+            int g10 = com.google.android.gms.internal.play_billing.k3.g(1, i10, this.d);
             ArrayList arrayList = this.h.e;
             vaVar.e((TLObject) arrayList.get(g10), null, LocaleController.getString("NotificationsOn", R.string.NotificationsOn), g10 != arrayList.size() - 1);
             vaVar.setAddButtonVisible(true);

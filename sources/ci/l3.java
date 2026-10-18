@@ -15,7 +15,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l3 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -128,13 +128,13 @@ public final /* synthetic */ class l3 implements Utilities.Callback {
                     i10 = R.raw.error;
                     i11 = R.string.UnknownError;
                 }
-                org.telegram.messenger.q.q(i11, xcVar, i10, 36);
+                org.telegram.messenger.g0.q(i11, xcVar, i10, 36);
                 break;
             default:
                 ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj4;
                 int i14 = ChatActivityEnterView.n5;
                 ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
-                yh.p1 p1Var = new yh.p1(chatActivityEnterView.getContext(), chatActivityEnterView.Q, ((TLRPC.User) obj2).id, ug.q.c(ug.q.b(1, (List) obj)), null);
+                yh.p1 p1Var = new yh.p1(chatActivityEnterView.getContext(), chatActivityEnterView.Q, ((TLRPC.User) obj2).id, ug.r.c(ug.r.b(1, (List) obj)), null);
                 p1Var.W(z10);
                 p1Var.show();
                 break;

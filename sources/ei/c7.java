@@ -3,7 +3,7 @@ package ei;
 import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c7 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -45,10 +45,10 @@ public final /* synthetic */ class c7 implements ValueAnimator.AnimatorUpdateLis
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f12 = this.c;
                 float f13 = this.b;
-                jVar.k = com.google.android.gms.internal.cast.a6.x(f12, f13, floatValue2, f13);
+                jVar.k = com.google.android.gms.internal.play_billing.k3.y(f12, f13, floatValue2, f13);
                 float f14 = this.e;
                 float f15 = this.d;
-                jVar.l = com.google.android.gms.internal.cast.a6.x(f14, f15, floatValue2, f15);
+                jVar.l = com.google.android.gms.internal.play_billing.k3.y(f14, f15, floatValue2, f15);
                 jVar.a.a(f12, f14, false);
                 break;
             default:
@@ -58,10 +58,10 @@ public final /* synthetic */ class c7 implements ValueAnimator.AnimatorUpdateLis
                 tg.g gVar = ((tg.f) eVar.b).a;
                 float f16 = this.c;
                 float f17 = this.b;
-                gVar.d = com.google.android.gms.internal.cast.a6.x(f16, f17, floatValue3, f17);
+                gVar.d = com.google.android.gms.internal.play_billing.k3.y(f16, f17, floatValue3, f17);
                 float f18 = this.e;
                 float f19 = this.d;
-                gVar.i = com.google.android.gms.internal.cast.a6.x(f18, f19, floatValue3, f19);
+                gVar.i = com.google.android.gms.internal.play_billing.k3.y(f18, f19, floatValue3, f19);
                 break;
         }
     }

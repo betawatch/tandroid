@@ -3,7 +3,7 @@ package i2;
 import android.os.Looper;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l1 {
     public final k1 a;
@@ -28,9 +28,9 @@ public final class l1 {
     public final void b() {
         u6.p(!this.f);
         this.f = true;
-        p0 p0Var = (p0) this.b;
-        if (!p0Var.Z && p0Var.s.getThread().isAlive()) {
-            p0Var.n.b(14, this).b();
+        q0 q0Var = (q0) this.b;
+        if (!q0Var.Z && q0Var.s.getThread().isAlive()) {
+            q0Var.n.b(14, this).b();
         } else {
             e2.a.l("ExoPlayerImplInternal", "Ignoring messages sent after release.");
             a(false);

@@ -5,11 +5,10 @@ import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
 import org.telegram.ui.ActionBar.g5;
 import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class e1 extends g5 {
     public final ki.u r = new ki.u(this, 26);
@@ -25,12 +24,12 @@ public final class e1 extends g5 {
         }
         String lowerCase = str.toLowerCase();
         String lowerCase2 = str2.toLowerCase();
-        if (lowerCase.startsWith(lowerCase2) || wh.w(" ", lowerCase2, lowerCase) || wh.w(".", lowerCase2, lowerCase)) {
+        if (lowerCase.startsWith(lowerCase2) || org.telegram.messenger.g0.w(" ", lowerCase2, lowerCase) || org.telegram.messenger.g0.w(".", lowerCase2, lowerCase)) {
             return true;
         }
         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
         String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-        return translitSafe.startsWith(translitSafe2) || wh.w(" ", translitSafe2, translitSafe) || wh.w(".", translitSafe2, translitSafe);
+        return translitSafe.startsWith(translitSafe2) || org.telegram.messenger.g0.w(" ", translitSafe2, translitSafe) || org.telegram.messenger.g0.w(".", translitSafe2, translitSafe);
     }
 
     @Override // org.telegram.ui.ActionBar.g5

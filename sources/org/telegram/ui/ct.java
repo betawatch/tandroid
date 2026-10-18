@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ct implements Runnable {
     public final /* synthetic */ gt a;
@@ -59,9 +59,9 @@ public final class ct implements Runnable {
         TLRPC.Document document2;
         boolean z10;
         ah.v vVar;
-        i0.c cVar;
-        i0.c cVar2;
-        i0.c cVar3;
+        i0.b bVar;
+        i0.b bVar2;
+        i0.b bVar3;
         ah.v vVar2;
         ah.v vVar3;
         float f7;
@@ -93,9 +93,9 @@ public final class ct implements Runnable {
         TLRPC.Document document8;
         TLRPC.Document document9;
         ah.v vVar8;
-        i0.c cVar4;
-        i0.c cVar5;
-        i0.c cVar6;
+        i0.b bVar4;
+        i0.b bVar5;
+        i0.b bVar6;
         ah.v vVar9;
         ah.v vVar10;
         float f13;
@@ -117,9 +117,9 @@ public final class ct implements Runnable {
         TLRPC.Document document14;
         et etVar14;
         ah.v vVar15;
-        i0.c cVar7;
-        i0.c cVar8;
-        i0.c cVar9;
+        i0.b bVar7;
+        i0.b bVar8;
+        i0.b bVar9;
         int i21;
         ah.v vVar16;
         ah.v vVar17;
@@ -169,7 +169,7 @@ public final class ct implements Runnable {
         org.telegram.ui.Components.i80 u10;
         TLRPC.Document unused;
         gt gtVar = this.a;
-        bh.b bVar = gtVar.t;
+        bh.b bVar10 = gtVar.t;
         if (gtVar.w == null || gtVar.m) {
             return;
         }
@@ -177,7 +177,7 @@ public final class ct implements Runnable {
         et etVar26 = gtVar.l;
         final int i29 = 0;
         if (etVar26 != null && (u10 = etVar26.u(gtVar.z)) != null) {
-            u10.Q(bVar, fh.c.k(gtVar.c0), true);
+            u10.Q(bVar10, fh.c.k(gtVar.c0), true);
             u10.t = false;
             u10.Y();
             u10.p = new vi(this, 17);
@@ -194,8 +194,8 @@ public final class ct implements Runnable {
             viewGroup.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
             gtVar.k.setInputMethodMode(2);
             gtVar.k.getContentView().setFocusableInTouchMode(true);
-            i0.c cVar10 = gtVar.q;
-            int min2 = (Math.min(gtVar.z.getWidth(), gtVar.z.getHeight() - (cVar10.d + cVar10.b)) - AndroidUtilities.dp(40.0f)) / 2;
+            i0.b bVar11 = gtVar.q;
+            int min2 = (Math.min(gtVar.z.getWidth(), gtVar.z.getHeight() - (bVar11.d + bVar11.b)) - AndroidUtilities.dp(40.0f)) / 2;
             int dp = (int) ((AndroidUtilities.dp(24.0f) - gtVar.e) + ((int) (gtVar.e + Math.max(r3 + min2 + (gtVar.G != null ? AndroidUtilities.dp(40.0f) : 0), ((gtVar.z.getHeight() - r4) - gtVar.I) / 2) + min2)));
             gtVar.k.showAtLocation(gtVar.z, 0, (int) ((r5.getMeasuredWidth() - viewGroup.getMeasuredWidth()) / 2.0f), dp);
             try {
@@ -221,7 +221,7 @@ public final class ct implements Runnable {
                                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                 gtVar2.g = floatValue;
                                 float f19 = gtVar2.f;
-                                gtVar2.e = com.google.android.gms.internal.cast.a6.x(0.0f, f19, floatValue, f19);
+                                gtVar2.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f19, floatValue, f19);
                                 gtVar2.z.invalidate();
                                 break;
                             case 1:
@@ -229,7 +229,7 @@ public final class ct implements Runnable {
                                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                 gtVar3.g = floatValue2;
                                 float f20 = gtVar3.f;
-                                gtVar3.e = com.google.android.gms.internal.cast.a6.x(0.0f, f20, floatValue2, f20);
+                                gtVar3.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f20, floatValue2, f20);
                                 gtVar3.z.invalidate();
                                 break;
                             default:
@@ -237,7 +237,7 @@ public final class ct implements Runnable {
                                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                 gtVar4.g = floatValue3;
                                 float f21 = gtVar4.f;
-                                gtVar4.e = com.google.android.gms.internal.cast.a6.x(0.0f, f21, floatValue3, f21);
+                                gtVar4.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f21, floatValue3, f21);
                                 gtVar4.z.invalidate();
                                 break;
                         }
@@ -265,7 +265,7 @@ public final class ct implements Runnable {
             i10 = 0;
             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert4, i10, gtVar.z.getContext(), gtVar.c0);
             org.telegram.ui.ActionBar.d6 d6Var4 = null;
-            dh.d c10 = bVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout2, null, true);
+            dh.d c10 = bVar10.c(actionBarPopupWindow$ActionBarPopupWindowLayout2, null, true);
             c10.o(fh.c.k(gtVar.c0));
             c10.q(AndroidUtilities.dp(12.0f));
             c10.p(AndroidUtilities.dp(8.0f));
@@ -282,13 +282,13 @@ public final class ct implements Runnable {
                     if (etVar28 == null || !etVar28.B()) {
                         if (gtVar.l.y()) {
                             arrayList.add(LocaleController.getString(R.string.SendStickerPreview));
-                            org.telegram.ui.Cells.t0.p(R.drawable.msg_send, arrayList3, arrayList2, 0);
+                            org.telegram.ui.Cells.c1.p(R.drawable.msg_send, arrayList3, arrayList2, 0);
                         }
                         arrayList.add(LocaleController.getString(R.string.AddToFavorites));
-                        org.telegram.ui.Cells.t0.p(R.drawable.msg_fave, arrayList3, arrayList2, 1);
+                        org.telegram.ui.Cells.c1.p(R.drawable.msg_fave, arrayList3, arrayList2, 1);
                     } else {
                         arrayList.add(LocaleController.getString(R.string.SetIntroSticker));
-                        org.telegram.ui.Cells.t0.p(R.drawable.menu_sticker_add, arrayList3, arrayList2, 0);
+                        org.telegram.ui.Cells.c1.p(R.drawable.menu_sticker_add, arrayList3, arrayList2, 0);
                     }
                 }
                 et etVar29 = gtVar.l;
@@ -296,7 +296,7 @@ public final class ct implements Runnable {
                     et etVar30 = gtVar.l;
                     arrayList.add(LocaleController.getString((etVar30 == null || !etVar30.J()) ? R.string.AddToStickerPack : R.string.StickersReplaceSticker));
                     et etVar31 = gtVar.l;
-                    org.telegram.ui.Cells.t0.p((etVar31 == null || !etVar31.J()) ? R.drawable.menu_sticker_add : R.drawable.msg_replace, arrayList3, arrayList2, 2);
+                    org.telegram.ui.Cells.c1.p((etVar31 == null || !etVar31.J()) ? R.drawable.menu_sticker_add : R.drawable.msg_replace, arrayList3, arrayList2, 2);
                 }
                 org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(0, gtVar.w, gtVar.c0, true, false);
                 e1Var.setItemHeight(44);
@@ -335,8 +335,8 @@ public final class ct implements Runnable {
                 linearLayout.addView(ua1Var2, new LinearLayout.LayoutParams(actionBarPopupWindow$ActionBarPopupWindowLayout2.getMeasuredWidth() - AndroidUtilities.dp(16.0f), (int) (actionBarPopupWindow$ActionBarPopupWindowLayout2.getMeasuredHeight() * 1.5f)));
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.b(linearLayout);
                 frameLayout.setOnClickListener(new of(actionBarPopupWindow$ActionBarPopupWindowLayout2, 2));
-                i0.c cVar11 = gtVar.q;
-                int i33 = cVar11.d + cVar11.b;
+                i0.b bVar12 = gtVar.q;
+                int i33 = bVar12.d + bVar12.b;
                 int min3 = ((int) (Math.min(gtVar.z.getWidth(), gtVar.z.getHeight() - i33) / 1.8f)) / 2;
                 gtVar.z.addView(actionBarPopupWindow$ActionBarPopupWindowLayout2, w7.z5.a(-2.0f, 0.0f, (AndroidUtilities.dp(84.0f) + ((int) ((gtVar.e + Math.max(r0 + min3, ((gtVar.z.getHeight() - i33) - gtVar.I) / 2)) + min3))) / AndroidUtilities.density, 0.0f, 0.0f, -2, 49));
                 gtVar.L = actionBarPopupWindow$ActionBarPopupWindowLayout2;
@@ -394,7 +394,7 @@ public final class ct implements Runnable {
                             i17 = gtVar.V;
                             if (etVar9.k(i17)) {
                                 arrayList5.add(LocaleController.getString(R.string.SendEmojiPreview));
-                                org.telegram.ui.Cells.t0.p(R.drawable.msg_send, arrayList7, arrayList6, 0);
+                                org.telegram.ui.Cells.c1.p(R.drawable.msg_send, arrayList7, arrayList6, 0);
                             }
                             etVar10 = gtVar.l;
                             document5 = gtVar.W;
@@ -402,23 +402,23 @@ public final class ct implements Runnable {
                             if (P != null) {
                                 if (P.booleanValue()) {
                                     arrayList5.add(LocaleController.getString(R.string.SetAsEmojiStatus));
-                                    org.telegram.ui.Cells.t0.p(R.drawable.msg_smile_status, arrayList7, arrayList6, 1);
+                                    org.telegram.ui.Cells.c1.p(R.drawable.msg_smile_status, arrayList7, arrayList6, 1);
                                 } else {
                                     arrayList5.add(LocaleController.getString(R.string.RemoveStatus));
-                                    org.telegram.ui.Cells.t0.p(R.drawable.msg_smile_status, arrayList7, arrayList6, 2);
+                                    org.telegram.ui.Cells.c1.p(R.drawable.msg_smile_status, arrayList7, arrayList6, 2);
                                 }
                             }
                             etVar11 = gtVar.l;
                             document6 = gtVar.W;
                             if (etVar11.E(document6)) {
                                 arrayList5.add(LocaleController.getString(R.string.CopyEmojiPreview));
-                                org.telegram.ui.Cells.t0.p(R.drawable.msg_copy, arrayList7, arrayList6, 3);
+                                org.telegram.ui.Cells.c1.p(R.drawable.msg_copy, arrayList7, arrayList6, 3);
                             }
                             etVar12 = gtVar.l;
                             document7 = gtVar.W;
                             if (etVar12.N(document7)) {
                                 arrayList5.add(LocaleController.getString(R.string.RemoveFromRecent));
-                                org.telegram.ui.Cells.t0.p(R.drawable.msg_delete, arrayList7, arrayList6, 4);
+                                org.telegram.ui.Cells.c1.p(R.drawable.msg_delete, arrayList7, arrayList6, 4);
                             }
                             i18 = gtVar.r;
                             MediaDataController mediaDataController = MediaDataController.getInstance(i18);
@@ -435,7 +435,7 @@ public final class ct implements Runnable {
                                         }
                                     }
                                     arrayList5.add(LocaleController.getString(isStickerInFavorites ? R.string.DeleteFromFavorites : R.string.AddToFavorites));
-                                    org.telegram.ui.Cells.t0.p(isStickerInFavorites ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList7, arrayList6, 5);
+                                    org.telegram.ui.Cells.c1.p(isStickerInFavorites ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList7, arrayList6, 5);
                                 }
                             }
                             if (arrayList5.isEmpty()) {
@@ -481,12 +481,12 @@ public final class ct implements Runnable {
                             actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                             gtVar.k.setInputMethodMode(2);
                             gtVar.k.getContentView().setFocusableInTouchMode(true);
-                            cVar4 = gtVar.q;
-                            int i37 = cVar4.d;
-                            cVar5 = gtVar.q;
-                            int i38 = i37 + cVar5.b;
-                            cVar6 = gtVar.q;
-                            int i39 = cVar6.b;
+                            bVar4 = gtVar.q;
+                            int i37 = bVar4.d;
+                            bVar5 = gtVar.q;
+                            int i38 = i37 + bVar5.b;
+                            bVar6 = gtVar.q;
+                            int i39 = bVar6.b;
                             vVar9 = gtVar.z;
                             int width = vVar9.getWidth();
                             vVar10 = gtVar.z;
@@ -531,7 +531,7 @@ public final class ct implements Runnable {
                                                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                                 gtVar2.g = floatValue;
                                                 float f19 = gtVar2.f;
-                                                gtVar2.e = com.google.android.gms.internal.cast.a6.x(0.0f, f19, floatValue, f19);
+                                                gtVar2.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f19, floatValue, f19);
                                                 gtVar2.z.invalidate();
                                                 break;
                                             case 1:
@@ -539,7 +539,7 @@ public final class ct implements Runnable {
                                                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                                 gtVar3.g = floatValue2;
                                                 float f20 = gtVar3.f;
-                                                gtVar3.e = com.google.android.gms.internal.cast.a6.x(0.0f, f20, floatValue2, f20);
+                                                gtVar3.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f20, floatValue2, f20);
                                                 gtVar3.z.invalidate();
                                                 break;
                                             default:
@@ -547,7 +547,7 @@ public final class ct implements Runnable {
                                                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                                 gtVar4.g = floatValue3;
                                                 float f21 = gtVar4.f;
-                                                gtVar4.e = com.google.android.gms.internal.cast.a6.x(0.0f, f21, floatValue3, f21);
+                                                gtVar4.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f21, floatValue3, f21);
                                                 gtVar4.z.invalidate();
                                                 break;
                                         }
@@ -580,7 +580,7 @@ public final class ct implements Runnable {
                             etVar7 = gtVar.l;
                             if (!etVar7.c()) {
                                 arrayList8.add(LocaleController.getString(R.string.SendGifPreview));
-                                org.telegram.ui.Cells.t0.p(R.drawable.msg_send, arrayList10, arrayList9, 0);
+                                org.telegram.ui.Cells.c1.p(R.drawable.msg_send, arrayList10, arrayList9, 0);
                             }
                         }
                         etVar3 = gtVar.l;
@@ -589,13 +589,13 @@ public final class ct implements Runnable {
                             etVar6 = gtVar.l;
                             if (!etVar6.c()) {
                                 arrayList8.add(LocaleController.getString(R.string.SendWithoutSound));
-                                org.telegram.ui.Cells.t0.p(R.drawable.input_notify_off, arrayList10, arrayList9, 4);
+                                org.telegram.ui.Cells.c1.p(R.drawable.input_notify_off, arrayList10, arrayList9, 4);
                             }
                         }
                         etVar4 = gtVar.l;
                         if (etVar4.b()) {
                             arrayList8.add(LocaleController.getString(R.string.Schedule));
-                            org.telegram.ui.Cells.t0.p(R.drawable.msg_autodelete, arrayList10, arrayList9, 3);
+                            org.telegram.ui.Cells.c1.p(R.drawable.msg_autodelete, arrayList10, arrayList9, 3);
                         }
                         document = gtVar.W;
                         if (document != null) {
@@ -603,7 +603,7 @@ public final class ct implements Runnable {
                             document4 = gtVar.W;
                             if (etVar5.e(document4)) {
                                 arrayList8.add(LocaleController.getString(R.string.AddACaption));
-                                org.telegram.ui.Cells.t0.m(R.drawable.outline_caption_24, 11, arrayList10, arrayList9);
+                                org.telegram.ui.Cells.c1.m(R.drawable.outline_caption_24, 11, arrayList10, arrayList9);
                             }
                         }
                         document2 = gtVar.W;
@@ -614,10 +614,10 @@ public final class ct implements Runnable {
                             z10 = mediaDataController2.hasRecentGif(document3);
                             if (z10) {
                                 arrayList8.add(LocaleController.formatString("Delete", R.string.Delete, new Object[0]));
-                                org.telegram.ui.Cells.t0.p(R.drawable.msg_delete, arrayList10, arrayList9, 1);
+                                org.telegram.ui.Cells.c1.p(R.drawable.msg_delete, arrayList10, arrayList9, 1);
                             } else {
                                 arrayList8.add(LocaleController.formatString("SaveToGIFs", R.string.SaveToGIFs, new Object[0]));
-                                org.telegram.ui.Cells.t0.p(R.drawable.msg_gif_add, arrayList10, arrayList9, 2);
+                                org.telegram.ui.Cells.c1.p(R.drawable.msg_gif_add, arrayList10, arrayList9, 2);
                             }
                         } else {
                             z10 = false;
@@ -656,12 +656,12 @@ public final class ct implements Runnable {
                         actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                         gtVar.k.setInputMethodMode(2);
                         gtVar.k.getContentView().setFocusableInTouchMode(true);
-                        cVar = gtVar.q;
-                        int i46 = cVar.d;
-                        cVar2 = gtVar.q;
-                        int i47 = i46 + cVar2.b;
-                        cVar3 = gtVar.q;
-                        int i48 = cVar3.b;
+                        bVar = gtVar.q;
+                        int i46 = bVar.d;
+                        bVar2 = gtVar.q;
+                        int i47 = i46 + bVar2.b;
+                        bVar3 = gtVar.q;
+                        int i48 = bVar3.b;
                         vVar2 = gtVar.z;
                         int width2 = vVar2.getWidth();
                         vVar3 = gtVar.z;
@@ -706,7 +706,7 @@ public final class ct implements Runnable {
                                             float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                             gtVar2.g = floatValue;
                                             float f19 = gtVar2.f;
-                                            gtVar2.e = com.google.android.gms.internal.cast.a6.x(0.0f, f19, floatValue, f19);
+                                            gtVar2.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f19, floatValue, f19);
                                             gtVar2.z.invalidate();
                                             break;
                                         case 1:
@@ -714,7 +714,7 @@ public final class ct implements Runnable {
                                             float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                             gtVar3.g = floatValue2;
                                             float f20 = gtVar3.f;
-                                            gtVar3.e = com.google.android.gms.internal.cast.a6.x(0.0f, f20, floatValue2, f20);
+                                            gtVar3.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f20, floatValue2, f20);
                                             gtVar3.z.invalidate();
                                             break;
                                         default:
@@ -722,7 +722,7 @@ public final class ct implements Runnable {
                                             float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                                             gtVar4.g = floatValue3;
                                             float f21 = gtVar4.f;
-                                            gtVar4.e = com.google.android.gms.internal.cast.a6.x(0.0f, f21, floatValue3, f21);
+                                            gtVar4.e = com.google.android.gms.internal.play_billing.k3.y(0.0f, f21, floatValue3, f21);
                                             gtVar4.z.invalidate();
                                             break;
                                     }
@@ -785,7 +785,7 @@ public final class ct implements Runnable {
                         etVar25 = gtVar.l;
                         if (!etVar25.c()) {
                             arrayList11.add(LocaleController.getString(R.string.SendStickerPreview));
-                            org.telegram.ui.Cells.t0.p(R.drawable.msg_send, arrayList13, arrayList12, 0);
+                            org.telegram.ui.Cells.c1.p(R.drawable.msg_send, arrayList13, arrayList12, 0);
                         }
                     }
                     etVar21 = gtVar.l;
@@ -794,18 +794,18 @@ public final class ct implements Runnable {
                         etVar24 = gtVar.l;
                         if (!etVar24.c()) {
                             arrayList11.add(LocaleController.getString(R.string.SendWithoutSound));
-                            org.telegram.ui.Cells.t0.m(R.drawable.input_notify_off, 6, arrayList13, arrayList12);
+                            org.telegram.ui.Cells.c1.m(R.drawable.input_notify_off, 6, arrayList13, arrayList12);
                         }
                     }
                     etVar22 = gtVar.l;
                     if (etVar22.b()) {
                         arrayList11.add(LocaleController.getString(R.string.Schedule));
-                        org.telegram.ui.Cells.t0.p(R.drawable.msg_autodelete, arrayList13, arrayList12, 3);
+                        org.telegram.ui.Cells.c1.p(R.drawable.msg_autodelete, arrayList13, arrayList12, 3);
                     }
                     etVar23 = gtVar.l;
                     if (etVar23.f()) {
                         arrayList11.add(LocaleController.getString(R.string.ImportStickersRemoveMenu));
-                        org.telegram.ui.Cells.t0.p(R.drawable.msg_delete, arrayList13, arrayList12, 5);
+                        org.telegram.ui.Cells.c1.p(R.drawable.msg_delete, arrayList13, arrayList12, 5);
                     }
                 }
                 document14 = gtVar.W;
@@ -817,19 +817,19 @@ public final class ct implements Runnable {
                         }
                     }
                     arrayList11.add(LocaleController.getString(isStickerInFavorites2 ? R.string.DeleteFromFavorites : R.string.AddToFavorites));
-                    org.telegram.ui.Cells.t0.p(isStickerInFavorites2 ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList13, arrayList12, 2);
+                    org.telegram.ui.Cells.c1.p(isStickerInFavorites2 ? R.drawable.msg_unfave : R.drawable.msg_fave, arrayList13, arrayList12, 2);
                 }
                 etVar14 = gtVar.l;
                 if (etVar14 != null && (inputStickerSet = gtVar.a0) != null && !(inputStickerSet instanceof TLRPC.TL_inputStickerSetEmpty)) {
                     etVar19 = gtVar.l;
                     if (etVar19.Q()) {
                         arrayList11.add(LocaleController.formatString(R.string.ViewPackPreview, new Object[0]));
-                        org.telegram.ui.Cells.t0.p(R.drawable.msg_media, arrayList13, arrayList12, 1);
+                        org.telegram.ui.Cells.c1.p(R.drawable.msg_media, arrayList13, arrayList12, 1);
                     }
                 }
                 if (gtVar.p) {
                     arrayList11.add(LocaleController.getString(R.string.DeleteFromRecent));
-                    org.telegram.ui.Cells.t0.p(R.drawable.msg_delete, arrayList13, arrayList12, 4);
+                    org.telegram.ui.Cells.c1.p(R.drawable.msg_delete, arrayList13, arrayList12, 4);
                 }
                 if (gtVar.a0 != null) {
                     document15 = gtVar.W;
@@ -844,7 +844,7 @@ public final class ct implements Runnable {
                                     TLRPC.StickerSet stickerSet2 = stickerSet.set;
                                     if (!stickerSet2.emojis && !stickerSet2.masks) {
                                         arrayList11.add(LocaleController.getString(R.string.EditSticker));
-                                        org.telegram.ui.Cells.t0.m(R.drawable.msg_edit, 7, arrayList13, arrayList12);
+                                        org.telegram.ui.Cells.c1.m(R.drawable.msg_edit, 7, arrayList13, arrayList12);
                                     }
                                 }
                             }
@@ -856,7 +856,7 @@ public final class ct implements Runnable {
                                 unused = gtVar.W;
                                 if (etVar16.I()) {
                                     arrayList11.add(LocaleController.getString(R.string.DeleteSticker));
-                                    org.telegram.ui.Cells.t0.m(R.drawable.msg_delete, 8, arrayList13, arrayList12);
+                                    org.telegram.ui.Cells.c1.m(R.drawable.msg_delete, 8, arrayList13, arrayList12);
                                 }
                             }
                         }
@@ -895,12 +895,12 @@ public final class ct implements Runnable {
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                 gtVar.k.setInputMethodMode(2);
                 gtVar.k.getContentView().setFocusableInTouchMode(true);
-                cVar7 = gtVar.q;
-                int i54 = cVar7.d;
-                cVar8 = gtVar.q;
-                int i55 = i54 + cVar8.b;
-                cVar9 = gtVar.q;
-                int i56 = cVar9.b;
+                bVar7 = gtVar.q;
+                int i54 = bVar7.d;
+                bVar8 = gtVar.q;
+                int i55 = i54 + bVar8.b;
+                bVar9 = gtVar.q;
+                int i56 = bVar9.b;
                 i21 = gtVar.V;
                 if (i21 == 1) {
                     vVar24 = gtVar.z;
@@ -949,7 +949,7 @@ public final class ct implements Runnable {
         i10 = 1;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout22 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert4, i10, gtVar.z.getContext(), gtVar.c0);
         org.telegram.ui.ActionBar.d6 d6Var42 = null;
-        dh.d c102 = bVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout22, null, true);
+        dh.d c102 = bVar10.c(actionBarPopupWindow$ActionBarPopupWindowLayout22, null, true);
         c102.o(fh.c.k(gtVar.c0));
         c102.q(AndroidUtilities.dp(12.0f));
         c102.p(AndroidUtilities.dp(8.0f));

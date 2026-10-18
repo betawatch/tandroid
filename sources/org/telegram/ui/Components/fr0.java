@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fr0 implements Runnable {
     public final /* synthetic */ int a;
@@ -143,7 +143,7 @@ public final /* synthetic */ class fr0 implements Runnable {
                                             AndroidUtilities.cancelRunOnUIThread(runnable);
                                             gz0Var.K = null;
                                         }
-                                        gz0Var.K = new ai.bb(gz0Var, currentKeyboardLanguage, substring, i13, 29);
+                                        gz0Var.K = new ai.cb(gz0Var, currentKeyboardLanguage, substring, i13, 29);
                                         ArrayList arrayList5 = gz0Var.w;
                                         if (arrayList5 == null || arrayList5.isEmpty()) {
                                             AndroidUtilities.runOnUIThread(gz0Var.K, 600L);

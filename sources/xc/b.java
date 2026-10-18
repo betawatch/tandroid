@@ -19,12 +19,14 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.ui.Cells.c1;
+import t0.h;
 import vc.d;
 import vc.f;
 import w7.n9;
 import w7.r8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final c a = new c();
@@ -114,13 +116,13 @@ public abstract class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static u2.c c(HashMap hashMap, e eVar) {
+    public static h c(HashMap hashMap, e eVar) {
         String str;
         int i10;
         String str2;
         String str3;
         Boolean bool = Boolean.TRUE;
-        u2.c cVar = null;
+        h hVar = null;
         try {
             str = Security.getProperty("networkaddress.cache.ttl");
         } catch (SecurityException unused) {
@@ -160,10 +162,10 @@ public abstract class b {
             g(i10, str2, str3);
             throw null;
         }
-        cVar = r8.a(str2);
+        hVar = r8.a(str2);
         if (bool.booleanValue()) {
         }
-        return cVar;
+        return hVar;
     }
 
     public static LinkedList d(String str, Map map) {
@@ -187,7 +189,7 @@ public abstract class b {
         }
         if (!(obj instanceof List)) {
             if ("".equals(obj)) {
-                throw new d(r.c.h("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
+                throw new d(c1.k("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
             }
             if (obj == null) {
                 LinkedList linkedList = new LinkedList();
@@ -201,7 +203,7 @@ public abstract class b {
         List list = (List) obj;
         LinkedList linkedList3 = new LinkedList();
         Iterator it = list.iterator();
-        String u10 = r.c.u(str, "[]");
+        String u10 = r4.c.u(str, "[]");
         if (list.isEmpty()) {
             linkedList3.add(new a(str, ""));
             return linkedList3;

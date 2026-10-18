@@ -1,21 +1,29 @@
 package ug;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.mb0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class i1 extends s4.r0 {
-    public final /* synthetic */ l1 a;
+public final class i1 extends ei.d {
+    public final /* synthetic */ m1 h0;
 
-    public i1(l1 l1Var) {
-        this.a = l1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i1(m1 m1Var, Context context, d6 d6Var) {
+        super(context, d6Var, true);
+        this.h0 = m1Var;
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 == 1) {
-            AndroidUtilities.hideKeyboard(this.a.Z.getEditText());
+    @Override // ei.d
+    public final float a(float f7, float f10) {
+        m1 m1Var = this.h0;
+        boolean z10 = m1Var.t0 == 0.0f;
+        m1Var.t0 = f7;
+        if (z10) {
+            m1Var.u0 = new mb0(m1Var, 2);
+            m1Var.h0(false);
         }
+        return f7;
     }
 }

@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 import v7.b8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static Paint a(Bitmap bitmap) {
@@ -86,15 +86,11 @@ public abstract class a {
         return accessibilityNodeInfo.getUniqueId();
     }
 
-    public static boolean g() {
-        return Build.VERSION.SDK_INT >= 29;
-    }
-
-    public static boolean h(AccessibilityNodeInfo accessibilityNodeInfo) {
+    public static boolean g(AccessibilityNodeInfo accessibilityNodeInfo) {
         return accessibilityNodeInfo.isTextSelectable();
     }
 
-    public static void i(ShortcutInfo.Builder builder) {
+    public static void h(ShortcutInfo.Builder builder) {
         builder.setExcludedFromSurfaces(0);
     }
 }

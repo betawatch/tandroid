@@ -22,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z7 extends s4.g0 {
     public final /* synthetic */ int c;
@@ -47,7 +47,7 @@ public final class z7 extends s4.g0 {
             case 4:
                 return 1;
             default:
-                return ((ip0) this.d).f.size();
+                return ((jp0) this.d).f.size();
         }
     }
 
@@ -218,7 +218,7 @@ public final class z7 extends s4.g0 {
                     marginLayoutParams.rightMargin = 0;
                     textView.setText(LocaleController.getString(i22));
                 } else {
-                    SpannableString spannableString = new SpannableString(org.telegram.messenger.q.g(i22, new StringBuilder("d ")));
+                    SpannableString spannableString = new SpannableString(org.telegram.messenger.g0.g(i22, new StringBuilder("d ")));
                     org.telegram.ui.Components.yq yqVar = new org.telegram.ui.Components.yq(R.drawable.msg_mini_premiumlock, 0);
                     yqVar.setTopOffset(1);
                     yqVar.setSize(AndroidUtilities.dp(13.0f));
@@ -286,9 +286,9 @@ public final class z7 extends s4.g0 {
                 break;
             default:
                 TextView textView2 = (TextView) b1Var.a;
-                ip0 ip0Var = (ip0) this.d;
-                textView2.setText((CharSequence) ip0Var.f.get(i10));
-                textView2.setTextColor(i10 == ip0Var.d ? ip0Var.E : ip0Var.y);
+                jp0 jp0Var = (jp0) this.d;
+                textView2.setText((CharSequence) jp0Var.f.get(i10));
+                textView2.setTextColor(i10 == jp0Var.d ? jp0Var.E : jp0Var.y);
                 break;
         }
     }
@@ -327,7 +327,7 @@ public final class z7 extends s4.g0 {
             case 3:
                 return new org.telegram.ui.Components.sl0(((org.telegram.ui.Components.bn) this.d).v);
             case 4:
-                return new org.telegram.ui.Components.sl0(new ai.hc(this, ((org.telegram.ui.Components.go) this.d).getContext(), 16));
+                return new org.telegram.ui.Components.sl0(new ai.ic(this, ((org.telegram.ui.Components.go) this.d).getContext(), 16));
             default:
                 org.telegram.ui.Components.x90 x90Var = new org.telegram.ui.Components.x90(viewGroup.getContext(), null);
                 x90Var.setGravity(17);

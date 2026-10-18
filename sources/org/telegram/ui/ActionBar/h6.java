@@ -109,7 +109,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bc1;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class h6 {
     public static int A;
@@ -1273,7 +1273,7 @@ public abstract class h6 {
     public static final int zj;
     public static final int zk;
     public static final ThreadLocal zl;
-    public static final int a = i0.b.o(-16777216, 27);
+    public static final int a = i0.a.o(-16777216, 27);
     public static final Object c = new Object();
     public static float h = 1.0f;
     public static final androidx.emoji2.text.n m = new androidx.emoji2.text.n(4);
@@ -4787,7 +4787,7 @@ public abstract class h6 {
     }
 
     public static void A1(org.telegram.ui.Cells.z zVar, float f10, float f11, float f12, float f13) {
-        if (com.google.android.gms.internal.cast.a6.s(zVar)) {
+        if (com.google.android.gms.internal.play_billing.k3.s(zVar)) {
             int numberOfLayers = zVar.getNumberOfLayers();
             for (int i10 = 0; i10 < numberOfLayers; i10++) {
                 Drawable drawable = zVar.getDrawable(i10);
@@ -4832,7 +4832,7 @@ public abstract class h6 {
     }
 
     public static void B1(org.telegram.ui.Cells.z zVar, int i10, int i11) {
-        if (com.google.android.gms.internal.cast.a6.s(zVar)) {
+        if (com.google.android.gms.internal.play_billing.k3.s(zVar)) {
             int numberOfLayers = zVar.getNumberOfLayers();
             for (int i12 = 0; i12 < numberOfLayers; i12++) {
                 Drawable drawable = zVar.getDrawable(i12);
@@ -5053,7 +5053,7 @@ public abstract class h6 {
             g6Var.F = tL_theme;
             g6Var.a = tL_theme.title;
             File file = new File(g6Var.b);
-            File file2 = new File(ApplicationLoader.getFilesDirFixed(), r.c.u(str, ".attheme"));
+            File file2 = new File(ApplicationLoader.getFilesDirFixed(), r4.c.u(str, ".attheme"));
             if (!file.equals(file2)) {
                 try {
                     AndroidUtilities.copyFile(file, file2);
@@ -5157,7 +5157,7 @@ public abstract class h6 {
                             tL_inputTheme.access_hash = tL_theme.access_hash;
                             tL_inputTheme.id = tL_theme.id;
                             gettheme.theme = tL_inputTheme;
-                            ConnectionsManager.getInstance(i10).sendRequest(gettheme, new ai.p2(k10, g6Var, tL_theme, 12));
+                            ConnectionsManager.getInstance(i10).sendRequest(gettheme, new ai.q2(k10, g6Var, tL_theme, 12));
                         }
                     }
                     i11++;
@@ -5199,7 +5199,7 @@ public abstract class h6 {
             return;
         }
         int i10 = d6;
-        if (i0.b.h(i0.b.f(0.5f, G0(sparseIntArray, i10), G0(sparseIntArray, i10))) < 0.5d) {
+        if (i0.a.h(i0.a.f(0.5f, G0(sparseIntArray, i10), G0(sparseIntArray, i10))) < 0.5d) {
             g6Var.j0 = 1;
         } else {
             g6Var.j0 = 0;
@@ -5354,7 +5354,7 @@ public abstract class h6 {
                             z5Var.b = new ColorDrawable(i19);
                         } else {
                             v9 v9Var = new v9(v9.d(i18), new int[]{i19, i17});
-                            V = v9Var.f(ki.t1.u(0.5f, 3), new q5(), 100L);
+                            V = v9Var.f(ki.t1.w(0.5f, 3), new q5(), 100L);
                             z5Var.b = v9Var;
                         }
                     } else {
@@ -5455,7 +5455,7 @@ public abstract class h6 {
                             int i21 = a6Var.e;
                             if (i21 != 0) {
                                 v9 v9Var2 = new v9(v9.d(a6Var.h), new int[]{i20, i21});
-                                V = v9Var2.f(ki.t1.u(0.5f, 3), new r5(), 100L);
+                                V = v9Var2.f(ki.t1.w(0.5f, 3), new r5(), 100L);
                                 z5Var.b = v9Var2;
                             } else {
                                 z5Var.b = new ColorDrawable(i20);
@@ -6560,7 +6560,7 @@ public abstract class h6 {
             } else {
                 if (file == null) {
                     v9 v9Var = new v9(v9.d(i16), new int[]{i11, i13});
-                    v9Var.f(!z10 ? ki.t1.u(0.5f, 3) : ki.t1.u(0.125f, 1), view != null ? new s5(view, z10) : null, 0L);
+                    v9Var.f(!z10 ? ki.t1.w(0.5f, 3) : ki.t1.w(0.125f, 1), view != null ? new s5(view, z10) : null, 0L);
                     return v9Var;
                 }
                 wc0Var = null;
@@ -6708,7 +6708,7 @@ public abstract class h6 {
             String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (a6Var.g >> 8)) & 255), Byte.valueOf((byte) (a6Var.g & 255))).toLowerCase() : null;
             if (lowerCase2 == null || lowerCase3 == null) {
                 if (lowerCase2 != null) {
-                    StringBuilder i14 = r.c.i(a1.g.D(lowerCase, "-", lowerCase2), "&rotation=");
+                    StringBuilder i14 = r4.c.i(a1.g.C(lowerCase, "-", lowerCase2), "&rotation=");
                     i14.append(a6Var.h);
                     lowerCase = i14.toString();
                 }
@@ -6728,7 +6728,7 @@ public abstract class h6 {
         if (sb2.length() <= 0) {
             return str;
         }
-        StringBuilder i15 = r.c.i(str, "&mode=");
+        StringBuilder i15 = r4.c.i(str, "&mode=");
         i15.append(sb2.toString());
         return i15.toString();
     }
@@ -7784,7 +7784,7 @@ public abstract class h6 {
     }
 
     public static int m1(float f10, int i10) {
-        return f10 == 1.0f ? i10 : i0.b.o(i10, w7.r.b((int) (Color.alpha(i10) * f10), 0, 255));
+        return f10 == 1.0f ? i10 : i0.a.o(i10, w7.r.b((int) (Color.alpha(i10) * f10), 0, 255));
     }
 
     public static void n() {

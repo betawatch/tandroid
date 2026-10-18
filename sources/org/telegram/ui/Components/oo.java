@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.te1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class oo extends FrameLayout implements ne.d, NotificationCenter.NotificationCenterDelegate {
     public final ImageView E;
@@ -1239,7 +1239,7 @@ public class oo extends FrameLayout implements ne.d, NotificationCenter.Notifica
                             if (chatFull == null || (i12 = chatFull.participants_count) == 0) {
                                 formatPluralString = chat.megagroup ? chatFull == null ? LocaleController.getString(R.string.Loading).toLowerCase() : chat.has_geo ? LocaleController.getString(R.string.MegaLocation).toLowerCase() : ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPublic).toLowerCase() : LocaleController.getString(R.string.MegaPrivate).toLowerCase() : ChatObject.isPublic(chat) ? LocaleController.getString(R.string.ChannelPublic).toLowerCase() : LocaleController.getString(R.string.ChannelPrivate).toLowerCase();
                             } else if (chat.megagroup) {
-                                formatPluralString = i21 > 1 ? a1.g.D(LocaleController.formatPluralString("Members", i12, new Object[0]), ", ", LocaleController.formatPluralString("OnlineCount", Math.min(i21, chatFull.participants_count), new Object[0])) : LocaleController.formatPluralString("Members", i12, new Object[0]);
+                                formatPluralString = i21 > 1 ? a1.g.C(LocaleController.formatPluralString("Members", i12, new Object[0]), ", ", LocaleController.formatPluralString("OnlineCount", Math.min(i21, chatFull.participants_count), new Object[0])) : LocaleController.formatPluralString("Members", i12, new Object[0]);
                             } else {
                                 int[] iArr = new int[1];
                                 boolean isAccessibilityScreenReaderEnabled = AndroidUtilities.isAccessibilityScreenReaderEnabled();
@@ -1261,7 +1261,7 @@ public class oo extends FrameLayout implements ne.d, NotificationCenter.Notifica
                             if (chatFull != null && (chatParticipants = chatFull.participants) != null) {
                                 i23 = chatParticipants.participants.size();
                             }
-                            formatPluralString = (i21 <= 1 || i23 == 0) ? LocaleController.formatPluralString("Members", i23, new Object[0]) : a1.g.D(LocaleController.formatPluralString("Members", i23, new Object[0]), ", ", LocaleController.formatPluralString("OnlineCount", i21, new Object[0]));
+                            formatPluralString = (i21 <= 1 || i23 == 0) ? LocaleController.formatPluralString("Members", i23, new Object[0]) : a1.g.C(LocaleController.formatPluralString("Members", i23, new Object[0]), ", ", LocaleController.formatPluralString("OnlineCount", i21, new Object[0]));
                         }
                     } else {
                         if (i17 != null) {
@@ -1552,7 +1552,7 @@ public class oo extends FrameLayout implements ne.d, NotificationCenter.Notifica
         }
         org.telegram.ui.ActionBar.j5 j5Var3 = (org.telegram.ui.ActionBar.j5) atomicReference.get();
         if (j5Var3 != null) {
-            j5Var3.measure(org.telegram.messenger.wh.c((koVar.getVisibility() == 0 ? 54 : 0) + 16, this.P, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_31));
+            j5Var3.measure(org.telegram.messenger.kk.c((koVar.getVisibility() == 0 ? 54 : 0) + 16, this.P, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_31));
         }
         this.O = size;
     }

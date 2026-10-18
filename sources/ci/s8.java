@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.h80;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class s8 extends NestedScrollView implements h80 {
     public final org.telegram.ui.Cells.x9 W;
@@ -57,7 +57,7 @@ public class s8 extends NestedScrollView implements h80 {
         super(context);
         Paint paint = new Paint(1);
         this.q0 = -1;
-        new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.b.o(-16777216, 51)});
+        new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{0, i0.a.o(-16777216, 51)});
         FrameLayout frameLayout = new FrameLayout(context);
         this.r0 = frameLayout;
         setClipChildren(false);

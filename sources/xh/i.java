@@ -12,14 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.q;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.g0;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.ki0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class i extends ViewGroup {
     public final GestureDetector a;
     public final Path b;
@@ -65,7 +65,7 @@ public final class i extends ViewGroup {
         ki0Var.layout(measuredWidth, d, ki0Var.getMeasuredWidth() + measuredWidth, ki0Var.getMeasuredHeight() + d);
         h hVar = jVar.n;
         hVar.layout(ki0Var.getLeft(), ki0Var.getTop(), ki0Var.getRight(), hVar.getMeasuredHeight() + ki0Var.getTop());
-        int C = q.C(12.0f, ki0Var.getMeasuredHeight(), d);
+        int C = g0.C(12.0f, ki0Var.getMeasuredHeight(), d);
         TextView textView = jVar.d;
         textView.layout(AndroidUtilities.dp(16.0f) + ki0Var.getLeft(), C, ki0Var.getRight() - AndroidUtilities.dp(16.0f), textView.getMeasuredHeight() + C);
         int measuredHeight = textView.getMeasuredHeight() + C;
@@ -99,13 +99,13 @@ public final class i extends ViewGroup {
     public final void onMeasure(int i10, int i11) {
         setWillNotDraw(false);
         super.onMeasure(i10, i11);
-        int C = wh.C(12.0f, 2, Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)));
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(C, TLObject.FLAG_31);
+        int B = kk.B(12.0f, 2, Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)));
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(B, TLObject.FLAG_31);
         j jVar = this.e;
         ki0 ki0Var = jVar.h;
         ki0Var.measure(makeMeasureSpec, makeMeasureSpec);
         jVar.n.measure(makeMeasureSpec, makeMeasureSpec);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(C - (AndroidUtilities.dp(16.0f) * 2), TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(B - (AndroidUtilities.dp(16.0f) * 2), TLObject.FLAG_30);
         jVar.d.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
         jVar.e.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
         jVar.f.measure(View.MeasureSpec.makeMeasureSpec((jVar.b * 2) + ki0Var.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));

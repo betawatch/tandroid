@@ -6,10 +6,10 @@ import android.os.Trace;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import b2.a2;
-import u2.d1;
+import u2.c1;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class a extends i2.b {
     public final long I;
@@ -42,7 +42,7 @@ public abstract class a extends i2.b {
     public int j0;
     public int k0;
     public long l0;
-    public i2.d m0;
+    public i2.e m0;
 
     public a(long j10, Handler handler, m0 m0Var, int i10) {
         super(2);
@@ -55,7 +55,7 @@ public abstract class a extends i2.b {
         this.Y = 0;
         this.S = -1;
         this.a0 = 0;
-        this.m0 = new i2.d();
+        this.m0 = new i2.e();
     }
 
     public abstract h2.e F(b2.w wVar);
@@ -73,10 +73,10 @@ public abstract class a extends i2.b {
             if (videoDecoderOutputBuffer == null) {
                 return false;
             }
-            i2.d dVar = this.m0;
-            int i10 = dVar.f;
+            i2.e eVar2 = this.m0;
+            int i10 = eVar2.f;
             int i11 = videoDecoderOutputBuffer.skippedOutputBufferCount;
-            dVar.f = i10 + i11;
+            eVar2.f = i10 + i11;
             this.k0 -= i11;
         }
         if (this.R.isEndOfStream()) {
@@ -272,7 +272,7 @@ public abstract class a extends i2.b {
             return;
         }
         n2.h hVar = this.X;
-        i0.a.D(this.W, hVar);
+        i2.d.D(this.W, hVar);
         this.W = hVar;
         if (hVar != null && hVar.h() == null && this.W.g() == null) {
             return;
@@ -308,18 +308,18 @@ public abstract class a extends i2.b {
     }
 
     public final void K(qf.b bVar) {
-        i2.e eVar;
+        i2.f fVar;
         this.d0 = true;
         b2.w wVar = (b2.w) bVar.c;
         wVar.getClass();
         n2.h hVar = (n2.h) bVar.b;
-        i0.a.D(this.X, hVar);
+        i2.d.D(this.X, hVar);
         this.X = hVar;
         b2.w wVar2 = this.N;
         this.N = wVar;
-        h2.e eVar2 = this.P;
+        h2.e eVar = this.P;
         n4.s sVar = this.K;
-        if (eVar2 == null) {
+        if (eVar == null) {
             J();
             b2.w wVar3 = this.N;
             wVar3.getClass();
@@ -331,15 +331,15 @@ public abstract class a extends i2.b {
             return;
         }
         if (hVar != this.W) {
-            String name = eVar2.getName();
+            String name = eVar.getName();
             wVar2.getClass();
-            eVar = new i2.e(name, wVar2, wVar, 0, 128);
+            fVar = new i2.f(name, wVar2, wVar, 0, 128);
         } else {
-            String name2 = eVar2.getName();
+            String name2 = eVar.getName();
             wVar2.getClass();
-            eVar = new i2.e(name2, wVar2, wVar, 0, 8);
+            fVar = new i2.f(name2, wVar2, wVar, 0, 8);
         }
-        if (eVar.d == 0) {
+        if (fVar.d == 0) {
             if (this.Z) {
                 this.Y = 1;
             } else {
@@ -351,7 +351,7 @@ public abstract class a extends i2.b {
         wVar4.getClass();
         Handler handler2 = (Handler) sVar.b;
         if (handler2 != null) {
-            handler2.post(new l0(sVar, wVar4, eVar, 0));
+            handler2.post(new l0(sVar, wVar4, fVar, 0));
         }
     }
 
@@ -373,7 +373,7 @@ public abstract class a extends i2.b {
             }
             this.P = null;
         }
-        i0.a.D(this.W, null);
+        i2.d.D(this.W, null);
         this.W = null;
     }
 
@@ -418,14 +418,14 @@ public abstract class a extends i2.b {
 
     public final void P(int i10, int i11) {
         int i12;
-        i2.d dVar = this.m0;
-        dVar.h += i10;
+        i2.e eVar = this.m0;
+        eVar.h += i10;
         int i13 = i10 + i11;
-        dVar.g += i13;
+        eVar.g += i13;
         this.i0 += i13;
         int i14 = this.j0 + i13;
         this.j0 = i14;
-        dVar.i = Math.max(i14, dVar.i);
+        eVar.i = Math.max(i14, eVar.i);
         int i15 = this.J;
         if (i15 <= 0 || (i12 = this.i0) < i15 || i12 <= 0) {
             return;
@@ -522,9 +522,9 @@ public abstract class a extends i2.b {
             if (k()) {
                 e = this.y;
             } else {
-                d1 d1Var = this.r;
-                d1Var.getClass();
-                e = d1Var.e();
+                c1 c1Var = this.r;
+                c1Var.getClass();
+                e = c1Var.e();
             }
             if (e || this.R != null) {
                 if (this.a0 != 3) {
@@ -550,22 +550,22 @@ public abstract class a extends i2.b {
         this.g0 = null;
         this.a0 = Math.min(this.a0, 0);
         try {
-            i0.a.D(this.X, null);
+            i2.d.D(this.X, null);
             this.X = null;
             L();
         } finally {
-            sVar.s(this.m0);
+            sVar.t(this.m0);
         }
     }
 
     @Override // i2.b
     public final void o(boolean z10, boolean z11) {
-        i2.d dVar = new i2.d();
-        this.m0 = dVar;
+        i2.e eVar = new i2.e();
+        this.m0 = eVar;
         n4.s sVar = this.K;
         Handler handler = (Handler) sVar.b;
         if (handler != null) {
-            handler.post(new k0(sVar, dVar, 0));
+            handler.post(new k0(sVar, eVar, 0));
         }
         this.a0 = z11 ? 1 : 0;
     }
@@ -662,6 +662,6 @@ public abstract class a extends i2.b {
     }
 
     @Override // i2.b
-    public final void u(b2.w[] wVarArr, long j10, long j11, u2.g0 g0Var) {
+    public final void u(b2.w[] wVarArr, long j10, long j11, u2.f0 f0Var) {
     }
 }

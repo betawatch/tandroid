@@ -1,9 +1,9 @@
 package fi;
 
-import ai.fa;
+import ai.ga;
 import ai.q;
-import ai.tc;
-import ai.va;
+import ai.uc;
+import ai.wa;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -23,17 +23,17 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.xa;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.p6;
+import org.telegram.ui.Wallet.s6;
 import org.telegram.ui.hk;
 import org.telegram.ui.sn;
 import s4.k;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class f extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ag.a X;
-    public final tc Y;
+    public final uc Y;
     public final FrameLayout Z;
     public Runnable a0;
     public s61 b0;
@@ -47,7 +47,7 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
         int i10 = this.backgroundPaddingLeft;
         final int i11 = 0;
         im0Var.setPadding(i10, 0, i10, 0);
-        this.d.setOnItemClickListener(new va(this, 11));
+        this.d.setOnItemClickListener(new wa(this, 11));
         k kVar = new k();
         kVar.m = false;
         kVar.C = false;
@@ -56,11 +56,11 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
         this.d.setItemAnimator(kVar);
         setBackgroundColor(h6.w0(h6.h5, d6Var));
         this.X = aVar;
-        tc tcVar = new tc(context, 2, d6Var);
-        this.Y = tcVar;
+        uc ucVar = new uc(context, 2, d6Var);
+        this.Y = ucVar;
         final int i12 = 1;
-        ((TextView) tcVar.c).setText(LocaleController.formatString(R.string.TonNeededTitle, ag.a.i(aVar.b - fa.y(this.currentAccount, true).s().b, ag.c.b).d()));
-        TextView textView = (TextView) tcVar.d;
+        ((TextView) ucVar.c).setText(LocaleController.formatString(R.string.TonNeededTitle, ag.a.i(aVar.b - ga.y(this.currentAccount, true).s().b, ag.c.b).d()));
+        TextView textView = (TextView) ucVar.d;
         textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
         textView.setMaxWidth(x3.a(textView.getText(), textView.getPaint()));
         this.e.setTitle(A());
@@ -119,11 +119,11 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
 
     @Override // org.telegram.ui.Components.bb
     public final CharSequence A() {
-        tc tcVar = this.Y;
-        if (tcVar == null) {
+        uc ucVar = this.Y;
+        if (ucVar == null) {
             return null;
         }
-        return ((TextView) tcVar.c).getText();
+        return ((TextView) ucVar.c).getText();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -134,7 +134,7 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
             if (s61Var != null) {
                 s61Var.N(true);
             }
-            ag.a s10 = fa.y(this.currentAccount, true).s();
+            ag.a s10 = ga.y(this.currentAccount, true).s();
             TextView textView = (TextView) this.Y.c;
             int i12 = R.string.TonNeededTitle;
             ag.a aVar = this.X;
@@ -155,9 +155,9 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
     public final void dismiss() {
         super.dismiss();
-        tc tcVar = this.Y;
-        if (tcVar != null) {
-            ((p6) tcVar.b).setPaused(true);
+        uc ucVar = this.Y;
+        if (ucVar != null) {
+            ((s6) ucVar.b).setPaused(true);
         }
     }
 
@@ -171,7 +171,7 @@ public final class f extends bb implements NotificationCenter.NotificationCenter
     @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
     public final void show() {
         hk hkVar;
-        if (fa.y(this.currentAccount, true).s().b >= this.X.b) {
+        if (ga.y(this.currentAccount, true).s().b >= this.X.b) {
             Runnable runnable = this.a0;
             if (runnable != null) {
                 runnable.run();

@@ -5,7 +5,7 @@ import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.cl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class e0 extends cl0 {
     public float l1;
@@ -23,7 +23,7 @@ public final class e0 extends cl0 {
         if (!isEnabled()) {
             float f7 = this.l1;
             if (f7 != 0.0f) {
-                this.l1 = org.telegram.ui.Cells.t0.v(min, 150.0f, f7, 0.0f);
+                this.l1 = org.telegram.ui.Cells.c1.v(min, 150.0f, f7, 0.0f);
                 invalidate();
                 if (this.l1 == 0.0f) {
                     setVisibility(8);
@@ -35,7 +35,7 @@ public final class e0 extends cl0 {
         if (isEnabled()) {
             float f10 = this.l1;
             if (f10 != 1.0f) {
-                this.l1 = org.telegram.ui.Cells.t0.c(min, 150.0f, f10, 1.0f);
+                this.l1 = org.telegram.ui.Cells.c1.c(min, 150.0f, f10, 1.0f);
                 invalidate();
             }
         }

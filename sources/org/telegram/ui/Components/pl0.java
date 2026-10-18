@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pl0 extends View {
     public boolean E;
@@ -104,7 +104,7 @@ public final class pl0 extends View {
             paint.setColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
             Drawable mutate = context.getDrawable(R.drawable.calendar_date).mutate();
             this.d0 = mutate;
-            mutate.setColorFilter(new PorterDuffColorFilter(i0.b.f(0.1f, org.telegram.ui.ActionBar.h6.w0(i11, d6Var), -1), PorterDuff.Mode.MULTIPLY));
+            mutate.setColorFilter(new PorterDuffColorFilter(i0.a.f(0.1f, org.telegram.ui.ActionBar.h6.w0(i11, d6Var), -1), PorterDuff.Mode.MULTIPLY));
         }
         for (int i12 = 0; i12 < 8; i12++) {
             this.L[i12] = AndroidUtilities.dp(44.0f);
@@ -213,7 +213,7 @@ public final class pl0 extends View {
     public final void c() {
         im0 im0Var = this.o0;
         int i10 = this.R;
-        this.S = i10 == 0 ? org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.m7, im0Var.n2) : i0.b.o(-16777216, 102);
+        this.S = i10 == 0 ? org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.m7, im0Var.n2) : i0.a.o(-16777216, 102);
         this.T = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.l7, im0Var.n2);
         this.c.setColor(this.S);
         TextPaint textPaint = this.H;
@@ -274,7 +274,7 @@ public final class pl0 extends View {
         if (i11 == 0) {
             f7 = 12.0f;
             f10 = 36.0f;
-            paint.setColor(i0.b.f(this.O, this.S, this.T));
+            paint.setColor(i0.a.f(this.O, this.S, this.T));
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint);
             f11 = 8.0f;
             c10 = 2;
@@ -286,7 +286,7 @@ public final class pl0 extends View {
             int i12 = org.telegram.ui.ActionBar.h6.d6;
             im0 im0Var = this.o0;
             f11 = 8.0f;
-            paint.setColor(i0.b.f(0.1f, org.telegram.ui.ActionBar.h6.w0(i12, im0Var.n2), -1));
+            paint.setColor(i0.a.f(0.1f, org.telegram.ui.ActionBar.h6.w0(i12, im0Var.n2), -1));
             float dp6 = AndroidUtilities.dp(27.0f) + paddingTop;
             dh.d dVar = this.e0;
             if (dVar != null) {
@@ -424,7 +424,7 @@ public final class pl0 extends View {
                 if (this.w != null) {
                     textPaint.setAlpha((int) (alpha2 * this.V * this.y));
                     canvas.save();
-                    canvas.translate((dp9 - this.w.getWidth()) - AndroidUtilities.dp(f12), com.google.android.gms.internal.cast.a6.x(1.0f, this.y, AndroidUtilities.dp(15.0f) * (this.E ? 1 : -1), centerY - (this.w.getHeight() / 2.0f)));
+                    canvas.translate((dp9 - this.w.getWidth()) - AndroidUtilities.dp(f12), com.google.android.gms.internal.play_billing.k3.y(1.0f, this.y, AndroidUtilities.dp(15.0f) * (this.E ? 1 : -1), centerY - (this.w.getHeight() / 2.0f)));
                     this.w.draw(canvas);
                     canvas.restore();
                 }
@@ -439,7 +439,7 @@ public final class pl0 extends View {
             } else {
                 textPaint.setAlpha((int) (alpha2 * this.V));
                 canvas.save();
-                canvas.translate((dp9 - this.r.getWidth()) - AndroidUtilities.dp(f12), com.google.android.gms.internal.cast.a6.x(1.0f, this.y, AndroidUtilities.dp(15.0f), centerY - (this.r.getHeight() / 2.0f)));
+                canvas.translate((dp9 - this.r.getWidth()) - AndroidUtilities.dp(f12), com.google.android.gms.internal.play_billing.k3.y(1.0f, this.y, AndroidUtilities.dp(15.0f), centerY - (this.r.getHeight() / 2.0f)));
                 this.r.draw(canvas);
                 canvas.restore();
             }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b10 extends org.telegram.ui.Components.em0 {
     public final Context r;
@@ -159,7 +159,7 @@ public final class b10 extends org.telegram.ui.Components.em0 {
         } else {
             if (i10 != 2) {
                 frameLayout2 = new a10(this, context);
-                return com.google.android.gms.internal.cast.a6.l(frameLayout2, frameLayout2, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(frameLayout2, frameLayout2, -1, -2);
             }
             org.telegram.ui.Components.b10 b10Var = new org.telegram.ui.Components.b10(context, null);
             int i11 = this.s;
@@ -172,6 +172,6 @@ public final class b10 extends org.telegram.ui.Components.em0 {
             frameLayout = b10Var;
         }
         frameLayout2 = frameLayout;
-        return com.google.android.gms.internal.cast.a6.l(frameLayout2, frameLayout2, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(frameLayout2, frameLayout2, -1, -2);
     }
 }

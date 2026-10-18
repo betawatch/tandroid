@@ -23,10 +23,10 @@ import org.telegram.ui.re;
 import org.telegram.ui.sn;
 import w7.b6;
 import w7.z5;
-import zf.h0;
 import zf.i0;
+import zf.j0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements ne.d {
     public static final int[] H;
@@ -80,8 +80,8 @@ public class e extends FrameLayout implements ne.d {
         this.e = frameLayout;
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(22.0f);
-        o1 o1Var = i0.a;
-        frameLayout.setOutlineProvider(new h0(0, dp));
+        o1 o1Var = j0.a;
+        frameLayout.setOutlineProvider(new i0(0, dp));
         addView(frameLayout, z5.e(-1, 44, 16));
     }
 

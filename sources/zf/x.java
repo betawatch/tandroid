@@ -20,7 +20,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.m0;
 import p4.s0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class x extends View {
     public vf.a E;
@@ -31,7 +31,7 @@ public final class x extends View {
     public int a;
     public long b;
     public int c;
-    public r4.e d;
+    public r4.f d;
     public final AtomicInteger e;
     public int f;
     public final Paint h;
@@ -110,7 +110,7 @@ public final class x extends View {
         v vVar = new v();
         xVar.x = vVar;
         xVar.v.addOnFrameMetricsAvailableListener(vVar, handler);
-        xVar.d = new r4.e(xVar, 3);
+        xVar.d = new r4.f(xVar, 3);
         Choreographer.getInstance().postFrameCallback(xVar.d);
         View view = xVar.y;
         if (view != null) {

@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b extends o6.a implements x8.a {
     public static final Parcelable.Creator<b> CREATOR = new c(0);
@@ -45,7 +45,7 @@ public final class b extends o6.a implements x8.a {
     }
 
     public final String toString() {
-        return r.c.h("CapabilityInfo{", this.a, ", ", String.valueOf(this.b), "}");
+        return org.telegram.ui.Cells.c1.k("CapabilityInfo{", this.a, ", ", String.valueOf(this.b), "}");
     }
 
     @Override // android.os.Parcelable

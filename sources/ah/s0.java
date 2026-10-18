@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import ci.g3;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
@@ -30,7 +30,7 @@ import org.telegram.ui.i51;
 import org.telegram.ui.w41;
 import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s0 extends FrameLayout {
     public final Drawable a;
@@ -73,7 +73,7 @@ public final class s0 extends FrameLayout {
         d6 d6Var = t0Var.s;
         mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(i10, d6Var), PorterDuff.Mode.MULTIPLY));
         if (t0Var.y == 2) {
-            paint.setColor(i0.b.f(0.13f, -16777216, -1));
+            paint.setColor(i0.a.f(0.13f, -16777216, -1));
         } else {
             paint.setColor(h6.w0(h6.G8, d6Var));
         }
@@ -155,7 +155,7 @@ public final class s0 extends FrameLayout {
             float lerp = AndroidUtilities.lerp(t0Var.e, AndroidUtilities.dp(i20 == 5 ? 20.0f : 8.0f), t0Var.j);
             HashMap hashMap3 = this.e;
             hashMap3.clear();
-            if (i20 == 1 || (cl0Var5.getDelegate() != null && cl0Var5.getDelegate().s())) {
+            if (i20 == 1 || (cl0Var5.getDelegate() != null && cl0Var5.getDelegate().r())) {
                 f7 = 1.0f;
                 bl0 delegate = cl0Var5.getDelegate();
                 float x10 = getX();
@@ -236,7 +236,7 @@ public final class s0 extends FrameLayout {
                 canvas2.translate(width, (rectF.height() - cl0Var5.w.height()) + (rectF.top - cl0Var5.w.top));
                 float max = (Math.max(0.25f, Math.min(cl0Var5.v, f7)) - 0.25f) / 0.75f;
                 Canvas canvas3 = canvas2;
-                cl0Var5.f(cl0Var5.E * max, max, cl0Var5.F * max, cl0Var5.M0 == i11 ? 255 : (int) org.telegram.messenger.q.z(1.0f, cl0Var5.w0, Utilities.clamp(cl0Var5.w0 / 0.2f, 1.0f, 0.0f), f10), canvas3);
+                cl0Var5.f(cl0Var5.E * max, max, cl0Var5.F * max, cl0Var5.M0 == i11 ? 255 : (int) org.telegram.messenger.g0.z(1.0f, cl0Var5.w0, Utilities.clamp(cl0Var5.w0 / 0.2f, 1.0f, 0.0f), f10), canvas3);
                 cl0Var = cl0Var5;
                 canvas2 = canvas3;
                 canvas2.restore();
@@ -267,7 +267,7 @@ public final class s0 extends FrameLayout {
                     }
                 }
                 int save = canvas2.save();
-                canvas2.translate(rectF.left, a6.x(1.0f, t0Var.j, cl0Var.g() + cl0Var.getTopOffset(), rectF.top));
+                canvas2.translate(rectF.left, k3.y(1.0f, t0Var.j, cl0Var.g() + cl0Var.getTopOffset(), rectF.top));
                 float max2 = Math.max(1.0f - (n0Var.i0.getVisibility() == 0 ? n0Var.i0.getAlpha() : 0.0f), 1.0f - t0Var.j);
                 if (max2 != 1.0f) {
                     canvas2.saveLayerAlpha(0.0f, 0.0f, rectF.width(), rectF.height(), (int) (max2 * 255.0f), 31);
@@ -628,7 +628,7 @@ public final class s0 extends FrameLayout {
         super.invalidate();
         t0 t0Var = this.w;
         cl0 cl0Var = t0Var.n;
-        if (t0Var.y == 1 || !(cl0Var == null || cl0Var.getDelegate() == null || !cl0Var.getDelegate().s())) {
+        if (t0Var.y == 1 || !(cl0Var == null || cl0Var.getDelegate() == null || !cl0Var.getDelegate().r())) {
             t0Var.m.f0.invalidate();
         }
     }

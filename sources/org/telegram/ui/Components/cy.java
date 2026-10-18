@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cy extends qt {
     public int M;
@@ -121,7 +121,7 @@ public final class cy extends qt {
                                     float max = Math.max(600L, Math.min(55, r7 - i12) * 40);
                                     r5Var2 = r5Var;
                                     f10 = 0.0f;
-                                    float a2 = w7.r.a(com.google.android.gms.internal.cast.a6.c(max, 0.45f, SystemClock.elapsedRealtime() - tzVar.u2, Math.max(400L, Math.min(45, tzVar.t2 - tzVar.s2) * 35)), 0.0f, 1.0f);
+                                    float a2 = w7.r.a(com.google.android.gms.internal.play_billing.k3.c(max, 0.45f, SystemClock.elapsedRealtime() - tzVar.u2, Math.max(400L, Math.min(45, tzVar.t2 - tzVar.s2) * 35)), 0.0f, 1.0f);
                                     float f17 = f16;
                                     float interpolation = bs.g.getInterpolation(w7.r.a((SystemClock.elapsedRealtime() - tzVar.u2) / max, 0.0f, 1.0f));
                                     float f18 = i13;

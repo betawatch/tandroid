@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class h20 extends FrameLayout implements ne.d {
     public final ne.b a;
@@ -186,7 +186,7 @@ public final class h20 extends FrameLayout implements ne.d {
         d(radialProgressView, 0.0f);
         w7.b6.a(this);
         if (!z10) {
-            setOutlineProvider(zf.i0.a);
+            setOutlineProvider(zf.j0.a);
             setTranslationZ(AndroidUtilities.dpf2(0.5f));
         }
         if (z10) {

@@ -48,7 +48,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne.d, NotificationCenter.NotificationCenterDelegate, og0, qh.d {
     public boolean E;
@@ -272,7 +272,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(contactsActivity.getParentActivity());
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.InviteUser);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.Components.s2(26, contactsActivity, str2));
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.Components.q2(str2, 27, contactsActivity));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 contactsActivity.showDialog(alertDialog$Builder.a);
                 return;
@@ -327,7 +327,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
             }
             SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
             if (!BuildVars.DEBUG_VERSION && globalMainSettings.getBoolean("channel_intro", false)) {
-                contactsActivity.presentFragment(new od(org.telegram.ui.Cells.t0.j(0, "step")));
+                contactsActivity.presentFragment(new od(org.telegram.ui.Cells.c1.i(0, "step")));
             } else {
                 contactsActivity.presentFragment(new h(0));
                 globalMainSettings.edit().putBoolean("channel_intro", true).commit();
@@ -522,7 +522,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         this.g0 = a2;
         a2.setContentDescription(LocaleController.getString(R.string.SearchContacts));
         ei.e2 e2Var = this.Z.r;
-        e2Var.addTextChangedListener(new zf.g0(e2Var, new ig.a2(this, 7)));
+        e2Var.addTextChangedListener(new zf.h0(e2Var, new ig.c2(this, 7)));
         if (!this.L && !this.K) {
             org.telegram.ui.ActionBar.u0 a10 = n10.a(1, this.v ? R.drawable.msg_contacts_time : R.drawable.msg_contacts_name);
             this.s = a10;
@@ -597,7 +597,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         org.telegram.ui.Components.im0 im0Var4 = this.f;
         im0Var4.W1 = true;
         im0Var4.X1 = 0;
-        im0Var4.setOnItemClickListener(new i2.q(this, i10, 10));
+        im0Var4.setOnItemClickListener(new i2.r(this, i10, 10));
         this.f.setOnItemLongClickListener(new ks(this));
         this.f.setOnScrollListener(new qs(this));
         if (!this.L && !this.K) {
@@ -889,7 +889,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
                 if (canAddAdmins) {
                     b2Var.R = LocaleController.getString(R.string.AddBotAdminAlert);
                     b2Var.T = LocaleController.getString(R.string.AddBotAsAdmin);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.AddAsAdmin), new org.telegram.ui.Components.s2(this, user, str));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.AddAsAdmin), new org.telegram.ui.Components.q2(this, user, str));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 } else {
                     b2Var.T = LocaleController.getString(R.string.CantAddBotAsAdmin);
@@ -907,7 +907,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         if (user.bot || !this.P) {
             editTextBoldCursor = null;
         } else {
-            formatStringSimple = a1.g.D(formatStringSimple, "\n\n", LocaleController.getString(R.string.AddToTheGroupForwardCount));
+            formatStringSimple = a1.g.C(formatStringSimple, "\n\n", LocaleController.getString(R.string.AddToTheGroupForwardCount));
             editTextBoldCursor = new EditTextBoldCursor(getParentActivity());
             editTextBoldCursor.setTextSize(1, 18.0f);
             editTextBoldCursor.setText("50");
@@ -1126,8 +1126,8 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         }
     }
 
-    public final void p0(ai.d4 d4Var) {
-        this.W = d4Var;
+    public final void p0(ai.f4 f4Var) {
+        this.W = f4Var;
     }
 
     public final void q0(String str) {

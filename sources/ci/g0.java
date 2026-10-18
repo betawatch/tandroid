@@ -1,6 +1,6 @@
 package ci;
 
-import ai.oa;
+import ai.pa;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +13,7 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.wl0;
 import org.telegram.ui.qa0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements wl0 {
     public final /* synthetic */ int a;
@@ -44,12 +44,12 @@ public final /* synthetic */ class g0 implements wl0 {
                 i80 F = i80.F((ViewGroup) obj2, new b(), view);
                 F.p(15, -1, LocaleController.formatString(R.string.LiveStoryMessageSent, LocaleController.formatDateTime(v0Var.d, true)));
                 F.k();
-                F.c(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new oa(9, (aa) obj, v0Var), false);
-                F.l(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new oa(i12, n2Var, q0Var), !v0Var.e);
+                F.c(R.drawable.msg_openprofile, LocaleController.getString(R.string.OpenProfile), new pa(9, (aa) obj, v0Var), false);
+                F.l(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new pa(i12, n2Var, q0Var), !v0Var.e);
                 if (n2Var.M != UserConfig.getInstance(n2Var.N).getClientUserId() && !n2Var.f()) {
                     z10 = false;
                 }
-                F.l(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new oa(11, n2Var, v0Var), z10);
+                F.l(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new pa(11, n2Var, v0Var), z10);
                 F.Z();
                 break;
             case 1:

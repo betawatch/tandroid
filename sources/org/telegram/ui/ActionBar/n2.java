@@ -47,11 +47,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ob;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qp0;
+import org.telegram.ui.rp0;
 import org.telegram.ui.ry;
 import org.telegram.ui.z21;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class n2 {
     protected k actionBar;
@@ -318,7 +318,7 @@ public abstract class n2 {
         } else if (!this.inPreviewMode || (m2Var = this.previewDelegate) == null) {
             finishFragment(true);
         } else {
-            ((z21) ((qp0) m2Var).b).a();
+            ((z21) ((rp0) m2Var).b).a();
         }
     }
 
@@ -533,7 +533,7 @@ public abstract class n2 {
         if (this.sheetsStack == null) {
             this.sheetsStack = new ArrayList<>();
         }
-        aa aaVar = (this.sheetsStack.isEmpty() || !(i0.a.h(1, this.sheetsStack) instanceof aa)) ? null : (aa) i0.a.h(1, this.sheetsStack);
+        aa aaVar = (this.sheetsStack.isEmpty() || !(i2.d.h(1, this.sheetsStack) instanceof aa)) ? null : (aa) i2.d.h(1, this.sheetsStack);
         if (aaVar == null) {
             aaVar = new aa(this);
             d5 d5Var = this.parentLayout;
@@ -689,7 +689,7 @@ public abstract class n2 {
             if (kVar != null && kVar.s()) {
                 i10 = h6.w8;
             }
-            if (i0.b.h(resourceProvider != null ? resourceProvider.r(i10) : h6.x0(null, i10, true)) <= 0.699999988079071d) {
+            if (i0.a.h(resourceProvider != null ? resourceProvider.r(i10) : h6.x0(null, i10, true)) <= 0.699999988079071d) {
                 return false;
             }
         }
@@ -849,7 +849,7 @@ public abstract class n2 {
     }
 
     public r0.k1 onInsetsInternal(View view, r0.k1 k1Var) {
-        i0.c f7 = k1Var.a.f(3);
+        i0.b f7 = k1Var.a.f(3);
         int i10 = f7.a;
         int i11 = f7.b;
         int i12 = f7.c;
@@ -1390,7 +1390,7 @@ public abstract class n2 {
             this.sheetsStack = new ArrayList<>();
         }
         aa aaVar = null;
-        aa aaVar2 = (this.sheetsStack.isEmpty() || !(i0.a.h(1, this.sheetsStack) instanceof aa)) ? null : (aa) i0.a.h(1, this.sheetsStack);
+        aa aaVar2 = (this.sheetsStack.isEmpty() || !(i2.d.h(1, this.sheetsStack) instanceof aa)) ? null : (aa) i2.d.h(1, this.sheetsStack);
         if (aaVar2 == null || aaVar2.h == i10) {
             aaVar = aaVar2;
         } else {

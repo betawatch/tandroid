@@ -1,13 +1,13 @@
 package s4;
 
-import ai.ae;
+import ai.be;
 import android.view.animation.Interpolator;
 import android.widget.OverScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a1 implements Runnable {
     public int a;
@@ -20,11 +20,11 @@ public final class a1 implements Runnable {
 
     public a1(RecyclerView recyclerView) {
         this.h = recyclerView;
-        ae aeVar = RecyclerView.R0;
-        this.d = aeVar;
+        be beVar = RecyclerView.R0;
+        this.d = beVar;
         this.e = false;
         this.f = false;
-        this.c = new OverScroller(recyclerView.getContext(), aeVar);
+        this.c = new OverScroller(recyclerView.getContext(), beVar);
     }
 
     public final void a() {

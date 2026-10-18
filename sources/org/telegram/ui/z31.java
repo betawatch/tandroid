@@ -30,7 +30,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z31 extends Dialog {
     public final org.telegram.ui.Components.rt E;
@@ -63,7 +63,7 @@ public final class z31 extends Dialog {
     public org.telegram.ui.ActionBar.b2 c0;
     public org.telegram.ui.Components.t11 d;
     public ValueAnimator d0;
-    public i0.c e;
+    public i0.b e;
     public ValueAnimator e0;
     public Bitmap f;
     public BitmapShader h;
@@ -77,7 +77,7 @@ public final class z31 extends Dialog {
 
     public z31(Activity activity) {
         super(activity, R.style.TransparentDialog);
-        this.e = i0.c.e;
+        this.e = i0.b.e;
         this.R = new RectF();
         this.T = 0.0f;
         this.U = 0.0f;
@@ -146,12 +146,12 @@ public final class z31 extends Dialog {
             u1Var.getLocationOnScreen(iArr);
             float f7 = iArr[0] - this.e.a;
             int width = m0Var.getWidth();
-            i0.c cVar = this.e;
-            this.F = f7 - ((((width - cVar.a) - cVar.c) - this.O.getWidth()) / 2.0f);
+            i0.b bVar = this.e;
+            this.F = f7 - ((((width - bVar.a) - bVar.c) - this.O.getWidth()) / 2.0f);
             float f10 = iArr[1] - this.e.b;
             int height = m0Var.getHeight();
-            i0.c cVar2 = this.e;
-            this.G = org.telegram.messenger.q.x(((height - cVar2.b) - cVar2.d) - this.O.getHeight(), this.K, 2.0f, f10);
+            i0.b bVar2 = this.e;
+            this.G = org.telegram.messenger.g0.x(((height - bVar2.b) - bVar2.d) - this.O.getHeight(), this.K, 2.0f, f10);
             if (!this.J) {
                 this.J = true;
                 float clamp = (Utilities.clamp((this.O.getHeight() / 2.0f) + iArr[1], m0Var.getHeight() * 0.7f, m0Var.getHeight() * 0.3f) - (this.O.getHeight() / 2.0f)) - ((m0Var.getHeight() - this.O.getHeight()) / 2.0f);

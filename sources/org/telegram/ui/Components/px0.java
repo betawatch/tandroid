@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class px0 extends im0 {
     public static final nx0 v3 = new nx0();
@@ -41,7 +41,7 @@ public abstract class px0 extends im0 {
     public Utilities.Callback g3;
     public boolean h3;
     public boolean i3;
-    public ai.hc j3;
+    public ai.ic j3;
     public int k3;
     public Utilities.Callback l3;
     public float m3;
@@ -99,7 +99,7 @@ public abstract class px0 extends im0 {
         float width = (view.getWidth() / 2.0f) - AndroidUtilities.dp(1.0f);
         if (view instanceof kx0) {
             kx0 kx0Var = (kx0) view;
-            f7 = com.google.android.gms.internal.cast.a6.x(1.0f, kx0Var.E, 0.15f, 0.85f) * kx0Var.y;
+            f7 = com.google.android.gms.internal.play_billing.k3.y(1.0f, kx0Var.E, 0.15f, 0.85f) * kx0Var.y;
         }
         float f10 = width * f7;
         rectF.set(left - f10, top - f10, left + f10, top + f10);
@@ -271,14 +271,14 @@ public abstract class px0 extends im0 {
                 }
             }
             if (i10 < i11) {
-                int x10 = (int) com.google.android.gms.internal.cast.a6.x(1.0f, this.m3, AndroidUtilities.dp(32.0f) + getWidth(), i10);
-                int x11 = (int) com.google.android.gms.internal.cast.a6.x(1.0f, this.m3, AndroidUtilities.dp(32.0f) + getWidth(), i11);
+                int y3 = (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, this.m3, AndroidUtilities.dp(32.0f) + getWidth(), i10);
+                int y10 = (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, this.m3, AndroidUtilities.dp(32.0f) + getWidth(), i11);
                 canvas2 = canvas;
-                canvas2.drawRect(x10, 0.0f, x11, getHeight(), this.b3);
-                if (x11 < getWidth() && (drawable2 = this.Z2) != null) {
+                canvas2.drawRect(y3, 0.0f, y10, getHeight(), this.b3);
+                if (y10 < getWidth() && (drawable2 = this.Z2) != null) {
                     drawable2.setAlpha(255);
                     Drawable drawable3 = this.Z2;
-                    drawable3.setBounds(x11, 0, drawable3.getIntrinsicWidth() + x11, getHeight());
+                    drawable3.setBounds(y10, 0, drawable3.getIntrinsicWidth() + y10, getHeight());
                     this.Z2.draw(canvas2);
                 }
                 d = this.p3.d(this.k3 < 0 ? 1.0f : 0.0f, false);
@@ -409,9 +409,9 @@ public abstract class px0 extends im0 {
     @Override // android.view.View
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        ai.hc hcVar = this.j3;
-        if (hcVar != null) {
-            hcVar.requestLayout();
+        ai.ic icVar = this.j3;
+        if (icVar != null) {
+            icVar.requestLayout();
         }
     }
 

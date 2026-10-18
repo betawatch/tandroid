@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -21,38 +21,38 @@ public final /* synthetic */ class c2 implements View.OnClickListener {
         switch (this.a) {
             case 0:
                 k7 k7Var = this.b;
-                org.telegram.ui.Wallet.t4 t4Var = k7Var.h1;
-                if (t4Var != null) {
+                org.telegram.ui.Wallet.u4 u4Var = k7Var.h1;
+                if (u4Var != null) {
                     k7Var.dismiss();
-                    AndroidUtilities.runOnUIThread(new a3.d(t4Var, 13), 250L);
+                    AndroidUtilities.runOnUIThread(new a3.d(u4Var, 13), 250L);
                     break;
                 }
                 break;
             case 1:
-                this.b.t2();
+                this.b.v2();
                 break;
             case 2:
-                this.b.i2();
+                this.b.k2();
                 break;
             case 3:
                 k7 k7Var2 = this.b;
-                if (k7Var2.X1() != null && k7Var2.X1().host_id != null) {
-                    k7Var2.j2();
+                if (k7Var2.Y1() != null && k7Var2.Y1().host_id != null) {
+                    k7Var2.l2();
                     break;
                 } else {
-                    org.telegram.messenger.q.q(R.string.Gift2WearWalletHidden, k7Var2.getBulletinFactory(), R.raw.info, 36);
+                    org.telegram.messenger.g0.q(R.string.Gift2WearWalletHidden, k7Var2.getBulletinFactory(), R.raw.info, 36);
                     break;
                 }
             case 4:
                 k7 k7Var3 = this.b;
                 k7Var3.Y0 = true;
-                k7Var3.N2(false);
+                k7Var3.P2(false);
                 break;
             case 5:
                 this.b.onBackPressed();
                 break;
             case 6:
-                this.b.J1();
+                this.b.K1();
                 break;
             case 7:
                 this.b.onBackPressed();
@@ -61,28 +61,28 @@ public final /* synthetic */ class c2 implements View.OnClickListener {
                 this.b.dismiss();
                 break;
             case 9:
-                this.b.r2();
+                this.b.t2();
                 break;
             case 10:
-                this.b.r2();
+                this.b.t2();
                 break;
             case 11:
                 this.b.onBackPressed();
                 break;
             case 12:
-                this.b.d2();
+                this.b.e2();
                 break;
             case 13:
-                this.b.r2();
+                this.b.t2();
                 break;
             case 14:
                 this.b.onBackPressed();
                 break;
             case 15:
-                this.b.l2(true);
+                this.b.n2(true);
                 break;
             case 16:
-                this.b.r2();
+                this.b.t2();
                 break;
             case 17:
                 if (view.getAlpha() >= 1.0f) {
@@ -92,7 +92,7 @@ public final /* synthetic */ class c2 implements View.OnClickListener {
                     dVar.f(null, true);
                     dVar.setOnClickListener(new c2(k7Var4, 28));
                     k7Var4.f0.i(3, LocaleController.getString(R.string.GiftCraftInfoTitle), LocaleController.getString(R.string.GiftCraftInfoText), null);
-                    k7Var4.M2(3, true, null);
+                    k7Var4.O2(3, true, null);
                     break;
                 }
                 break;
@@ -104,46 +104,46 @@ public final /* synthetic */ class c2 implements View.OnClickListener {
                 }
                 break;
             case 19:
-                k7.h1(this.b);
+                k7.k1(this.b);
                 break;
             case 20:
-                k7.W0(this.b, view);
+                k7.Y0(this.b, view);
                 break;
             case 21:
-                this.b.l2(true);
+                this.b.n2(true);
                 break;
             case 22:
                 float alpha = view.getAlpha();
                 k7 k7Var6 = this.b;
                 if (alpha >= 0.99f) {
-                    k7Var6.o2();
+                    k7Var6.q2();
                     break;
                 } else {
-                    k7Var6.G1();
+                    k7Var6.H1();
                     break;
                 }
             case 23:
-                this.b.j2();
+                this.b.l2();
                 break;
             case 24:
-                this.b.f2();
+                this.b.g2();
                 break;
             case 25:
-                this.b.e2(view);
+                this.b.f2(view);
                 break;
             case 26:
-                this.b.h2();
+                this.b.j2();
                 break;
             case 27:
                 k7 k7Var7 = this.b;
                 k7Var7.Y0 = true;
-                k7Var7.N2(false);
+                k7Var7.P2(false);
                 break;
             case 28:
-                this.b.l2(false);
+                this.b.n2(false);
                 break;
             default:
-                this.b.t2();
+                this.b.v2();
                 break;
         }
     }

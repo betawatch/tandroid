@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class lw extends hg.m {
     public final /* synthetic */ dy d0;
@@ -34,12 +34,12 @@ public final class lw extends hg.m {
         org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(eyVar.getParentActivity(), 3, null);
         TLRPC.RequestPeerType requestPeerType = eyVar.G;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            Bundle j10 = org.telegram.ui.Cells.t0.j(0, "step");
+            Bundle i10 = org.telegram.ui.Cells.c1.i(0, "step");
             Boolean bool = eyVar.G.has_username;
             if (bool != null) {
-                j10.putBoolean("forcePublic", bool.booleanValue());
+                i10.putBoolean("forcePublic", bool.booleanValue());
             }
-            od odVar = new od(j10);
+            od odVar = new od(i10);
             odVar.t0 = new p6(eyVar, odVar, b2Var, 2);
             eyVar.presentFragment(odVar);
             return;

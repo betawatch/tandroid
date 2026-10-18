@@ -10,6 +10,7 @@ import android.media.AudioTimestamp;
 import android.os.Build;
 import android.os.Process;
 import com.google.firebase.messaging.h;
+import i2.d;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -26,7 +27,7 @@ import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class WebRtcAudioRecord {
     private static final int AUDIO_RECORD_START = 0;
@@ -61,7 +62,7 @@ public class WebRtcAudioRecord {
     private AudioDeviceInfo preferredDevice;
     private final JavaAudioDeviceModule.AudioRecordStateCallback stateCallback;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 
@@ -183,7 +184,7 @@ public class WebRtcAudioRecord {
                 i11 = 4;
                 if (i10 != 4) {
                     if (i10 != 13) {
-                        throw new IllegalArgumentException(i0.a.j(i10, "Bad audio format "));
+                        throw new IllegalArgumentException(d.j(i10, "Bad audio format "));
                     }
                 }
             }
@@ -211,7 +212,7 @@ public class WebRtcAudioRecord {
         int channelCountToConfiguration = channelCountToConfiguration(i11);
         int minBufferSize = AudioRecord.getMinBufferSize(i10, channelCountToConfiguration, this.audioFormat);
         if (minBufferSize == -1 || minBufferSize == -2) {
-            reportWebRtcAudioRecordInitError(i0.a.j(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
+            reportWebRtcAudioRecordInitError(d.j(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
             return -1;
         }
         Logging.d(TAG, "AudioRecord.getMinBufferSize: " + minBufferSize);

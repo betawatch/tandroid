@@ -39,7 +39,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i80 {
     public ViewGroup A;
@@ -1280,7 +1280,7 @@ public final class i80 {
         w9Var.e(tLObject, h9Var);
         frameLayout.addView(w9Var, w7.z5.a(34.0f, 13.0f, 0.0f, 0.0f, 0.0f, 34, 19));
         TextView textView = new TextView(context);
-        org.telegram.messenger.wh.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 16.0f);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine(true);
         if (tLObject instanceof TLRPC.User) {
@@ -1288,10 +1288,10 @@ public final class i80 {
         } else if (tLObject instanceof TLRPC.Chat) {
             textView.setText(((TLRPC.Chat) tLObject).title);
         }
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout, textView, w7.z5.a(-2.0f, 59.0f, 6.0f, 16.0f, 0.0f, -2, 55), context);
-        org.telegram.messenger.wh.o(org.telegram.ui.ActionBar.h6.q5, d6Var, k10, 1, 13.0f);
-        k10.setText(AndroidUtilities.replaceArrows(str, false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(0.66f)));
-        frameLayout.addView(k10, w7.z5.a(-2.0f, 59.0f, 27.0f, 16.0f, 0.0f, -2, 55));
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.a(-2.0f, 59.0f, 6.0f, 16.0f, 0.0f, -2, 55), context);
+        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.q5, d6Var, j10, 1, 13.0f);
+        j10.setText(AndroidUtilities.replaceArrows(str, false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(0.66f)));
+        frameLayout.addView(j10, w7.z5.a(-2.0f, 59.0f, 27.0f, 16.0f, 0.0f, -2, 55));
         frameLayout.setOnClickListener(new z70(this, runnable, 0));
         r(frameLayout, w7.z5.n(-1, 52));
     }
@@ -1317,18 +1317,18 @@ public final class i80 {
     }
 
     public final void p(int i10, int i11, CharSequence charSequence) {
-        ai.ud udVar = new ai.ud(this.e, 24);
-        udVar.setTextSize(1, i10);
-        udVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, this.d));
-        udVar.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
-        udVar.setText(Emoji.replaceEmoji(charSequence, udVar.getPaint().getFontMetricsInt(), false));
-        udVar.setTag(R.id.fit_width_tag, 1);
-        udVar.setTypeface(null);
-        NotificationCenter.listenEmojiLoading(udVar);
+        ai.vd vdVar = new ai.vd(this.e, 24);
+        vdVar.setTextSize(1, i10);
+        vdVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, this.d));
+        vdVar.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+        vdVar.setText(Emoji.replaceEmoji(charSequence, vdVar.getPaint().getFontMetricsInt(), false));
+        vdVar.setTag(R.id.fit_width_tag, 1);
+        vdVar.setTypeface(null);
+        NotificationCenter.listenEmojiLoading(vdVar);
         if (i11 > 0) {
-            udVar.setMaxWidth(i11);
+            vdVar.setMaxWidth(i11);
         }
-        r(udVar, w7.z5.n(-1, -2));
+        r(vdVar, w7.z5.n(-1, -2));
     }
 
     public final void q(View view) {

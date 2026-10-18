@@ -22,6 +22,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.camera.Size;
+import org.telegram.messenger.g0;
 import org.telegram.messenger.video.MP4Builder;
 import org.telegram.ui.Cells.k7;
 import org.telegram.ui.Components.a60;
@@ -40,7 +41,7 @@ import p4.p0;
 import p4.r0;
 import p4.t0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class c extends Handler {
     public final /* synthetic */ int a;
@@ -170,7 +171,7 @@ public final class c extends Handler {
                                         if (f60Var.c0 == -1) {
                                             f60Var.c0 = j17 / 1000;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                org.telegram.messenger.q.r(new StringBuilder("InstantCamera first video frame was at "), f60Var.c0);
+                                                i2.d.x(new StringBuilder("InstantCamera first video frame was at "), f60Var.c0);
                                             }
                                         }
                                         f60Var.e0 = j17 - f60Var.d0;
@@ -464,11 +465,11 @@ public final class c extends Handler {
                                                         u50Var.e = i37;
                                                         f60Var.h0 = j21;
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            org.telegram.messenger.q.r(i0.a.l(i37, "InstantCamera found first audio frame at ", " timestamp = "), u50Var.b[i37]);
+                                                            i2.d.x(i2.d.l(i37, "InstantCamera found first audio frame at ", " timestamp = "), u50Var.b[i37]);
                                                         }
                                                     } else {
                                                         if (BuildVars.LOGS_ENABLED) {
-                                                            org.telegram.messenger.q.r(i0.a.l(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), u50Var.b[i37]);
+                                                            i2.d.x(i2.d.l(i37, "InstantCamera ignore first audio frame at ", " timestamp = "), u50Var.b[i37]);
                                                         }
                                                         i37++;
                                                         j16 = j12;
@@ -479,13 +480,13 @@ public final class c extends Handler {
                                                     f60Var.b0 = j22 - j23;
                                                     f60Var.h0 = j23;
                                                     if (BuildVars.LOGS_ENABLED) {
-                                                        org.telegram.messenger.q.r(new StringBuilder("InstantCamera detected desync between audio and video "), f60Var.b0);
+                                                        i2.d.x(new StringBuilder("InstantCamera detected desync between audio and video "), f60Var.b0);
                                                     }
                                                 }
                                             }
                                             long j24 = j16;
                                             if (BuildVars.LOGS_ENABLED) {
-                                                org.telegram.messenger.q.o(u50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
+                                                g0.o(u50Var.d, new StringBuilder("InstantCamera first audio frame not found, removing buffers "));
                                             }
                                             f60Var.L.remove(u50Var);
                                             if (f60Var.L.isEmpty()) {

@@ -16,7 +16,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.ey;
 import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i2 implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -148,7 +148,7 @@ public final /* synthetic */ class i2 implements Utilities.Callback4 {
                 break;
             default:
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
-                org.telegram.ui.Wallet.c8 c8Var = (org.telegram.ui.Wallet.c8) this.c;
+                org.telegram.ui.Wallet.f8 f8Var = (org.telegram.ui.Wallet.f8) this.c;
                 TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
                 org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) obj2;
                 byte[] bArr = (byte[]) obj3;
@@ -159,14 +159,14 @@ public final /* synthetic */ class i2 implements Utilities.Callback4 {
                     h0Var.c = bArr;
                     h0Var.b = j0Var.b();
                     h0Var.a = sendtransfer;
-                    m0Var.c.p(UserConfig.getInstance(m0Var.a).getClientUserId(), bArr, j0Var, new org.telegram.ui.Wallet.x(m0Var, h0Var, c8Var));
+                    m0Var.c.p(UserConfig.getInstance(m0Var.a).getClientUserId(), bArr, j0Var, new org.telegram.ui.Wallet.x(m0Var, h0Var, f8Var));
                     break;
                 } else {
                     org.telegram.ui.Wallet.m0.i("prepare disable backup, failed to prepare transfer: ".concat(str == null ? "NULL_ERROR" : str));
                     if (str == null) {
                         str = "NULL_ERROR";
                     }
-                    c8Var.run(null, str);
+                    f8Var.run(null, str);
                     break;
                 }
         }

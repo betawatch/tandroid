@@ -19,7 +19,7 @@ import org.telegram.ui.Components.pm0;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.y90;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class q8 {
     public y90 a;
@@ -279,7 +279,7 @@ public final class q8 {
             }
             n8 n8Var2 = this.p;
             if (n8Var2 != null) {
-                this.l = org.telegram.messenger.q.C(4.0f, n8Var2.b(), this.l);
+                this.l = org.telegram.messenger.g0.C(4.0f, n8Var2.b(), this.l);
             }
             this.m = this.l;
             if (this == q8VarArr[0]) {
@@ -297,7 +297,7 @@ public final class q8 {
         int dp = n8Var3 != null ? AndroidUtilities.dp(8.0f) + n8Var3.b() : 0;
         n8 n8Var4 = this.p;
         if (n8Var4 != null) {
-            this.l = org.telegram.messenger.q.C(8.0f, n8Var4.b(), this.l);
+            this.l = org.telegram.messenger.g0.C(8.0f, n8Var4.b(), this.l);
         }
         this.l += dp;
         float measureText = textPaint2.measureText(" ");

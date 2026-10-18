@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z60 extends LinearLayout {
     public final org.telegram.ui.Components.iu a;
@@ -24,7 +24,7 @@ public final class z60 extends LinearLayout {
         super(context);
         this.h = c70Var;
         this.f = new y60(this);
-        TextView f7 = org.telegram.messenger.q.f(context, 1, 16.0f);
+        TextView f7 = org.telegram.messenger.g0.f(context, 1, 16.0f);
         f7.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false));
         f7.setText("t.me/addemoji/");
         org.telegram.ui.Components.iu iuVar = new org.telegram.ui.Components.iu(context, null);

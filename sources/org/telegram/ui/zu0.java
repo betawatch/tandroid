@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zu0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ hv0 a;
@@ -101,7 +101,7 @@ public final class zu0 extends org.telegram.ui.ActionBar.j {
                     }
                 }
                 if (snVar.c()) {
-                    org.telegram.ui.Components.f5.K(snVar.getParentActivity(), snVar.a(), new fr0(4, this, tL_messageMediaToDo));
+                    org.telegram.ui.Components.f5.K(snVar.getParentActivity(), snVar.a(), new gn0(5, this, tL_messageMediaToDo));
                     return;
                 } else {
                     hv0Var.e0.b(tL_messageMediaToDo);
@@ -214,7 +214,7 @@ public final class zu0 extends org.telegram.ui.ActionBar.j {
                 }
             }
             if (snVar.c()) {
-                org.telegram.ui.Components.f5.K(snVar.getParentActivity(), snVar.a(), new fr0(this, tL_messageMediaPoll, arrayList));
+                org.telegram.ui.Components.f5.K(snVar.getParentActivity(), snVar.a(), new gn0(this, tL_messageMediaPoll, arrayList));
             } else {
                 hv0Var.e0.b(tL_messageMediaPoll);
                 hv0Var.finishFragment();

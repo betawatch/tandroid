@@ -1,17 +1,17 @@
 package n2;
 
-import u2.g0;
+import u2.f0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public interface l {
-    void a(int i10, g0 g0Var, int i11);
+    void a(int i10, f0 f0Var, int i11);
 
-    void b(int i10, g0 g0Var, Exception exc);
+    void b(int i10, f0 f0Var, Exception exc);
 
-    void c(int i10, g0 g0Var, oa.d dVar);
+    void c(int i10, f0 f0Var, oa.d dVar);
 
-    void h(int i10, g0 g0Var);
+    void h(int i10, f0 f0Var);
 
-    void j(int i10, g0 g0Var);
+    void j(int i10, f0 f0Var);
 }

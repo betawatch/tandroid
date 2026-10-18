@@ -1,6 +1,6 @@
 package ri;
 
-import ai.c3;
+import ai.b2;
 import android.content.Context;
 import android.media.AudioRecord;
 import android.os.Build;
@@ -9,7 +9,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import e2.l0;
 import e2.z;
-import i2.g0;
+import i2.h0;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
@@ -22,12 +22,12 @@ import ri.i;
 import ri.j;
 import ri.p;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class p {
     public static final pb.a G = new pb.a(22);
     public static final AtomicLong H = new AtomicLong(1);
-    public g0 A;
+    public h0 A;
     public byte[] B;
     public m C;
     public final e D;
@@ -87,7 +87,7 @@ public final class p {
 
             @Override // java.lang.Runnable
             public final void run() {
-                g0 g0Var;
+                h0 h0Var;
                 switch (i10) {
                     case 0:
                         p pVar = this.b;
@@ -101,8 +101,8 @@ public final class p {
                         break;
                     default:
                         p pVar2 = this.b;
-                        if (pVar2.m == n.e && (g0Var = pVar2.A) != null && pVar2.u) {
-                            long M0 = g0Var.M0();
+                        if (pVar2.m == n.e && (h0Var = pVar2.A) != null && pVar2.u) {
+                            long M0 = h0Var.M0();
                             long j10 = pVar2.r;
                             if (M0 < j10 || M0 >= pVar2.s) {
                                 pVar2.A.Z0(5, j10);
@@ -126,7 +126,7 @@ public final class p {
 
             @Override // java.lang.Runnable
             public final void run() {
-                g0 g0Var;
+                h0 h0Var;
                 switch (i11) {
                     case 0:
                         p pVar = this.b;
@@ -140,8 +140,8 @@ public final class p {
                         break;
                     default:
                         p pVar2 = this.b;
-                        if (pVar2.m == n.e && (g0Var = pVar2.A) != null && pVar2.u) {
-                            long M0 = g0Var.M0();
+                        if (pVar2.m == n.e && (h0Var = pVar2.A) != null && pVar2.u) {
+                            long M0 = h0Var.M0();
                             long j10 = pVar2.r;
                             if (M0 < j10 || M0 >= pVar2.s) {
                                 pVar2.A.Z0(5, j10);
@@ -382,7 +382,7 @@ public final class p {
                         bArr = null;
                     }
                     byte[] bArr2 = bArr;
-                    pVar.h.post(new c3(pVar, jVar2, j10, bArr2, 27));
+                    pVar.h.post(new b2(pVar, jVar2, j10, bArr2, 27));
                 }
             });
             return;
@@ -456,9 +456,9 @@ public final class p {
     public final void o() {
         this.h.removeCallbacks(this.E);
         this.u = false;
-        g0 g0Var = this.A;
-        if (g0Var != null) {
-            g0Var.C(this.F);
+        h0 h0Var = this.A;
+        if (h0Var != null) {
+            h0Var.C(this.F);
             this.A.X0();
             this.A = null;
         }

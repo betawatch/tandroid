@@ -8,7 +8,7 @@ import android.util.Property;
 import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class vh extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -17,10 +17,10 @@ public final class vh extends AnimatorListenerAdapter {
     public final /* synthetic */ rn d;
     public final /* synthetic */ org.telegram.ui.ActionBar.j5 e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ ai.ud h;
+    public final /* synthetic */ ai.vd h;
     public final /* synthetic */ sn n;
 
-    public vh(sn snVar, boolean z10, boolean z11, org.telegram.ui.Components.w9 w9Var, rn rnVar, org.telegram.ui.ActionBar.j5 j5Var, boolean z12, ai.ud udVar) {
+    public vh(sn snVar, boolean z10, boolean z11, org.telegram.ui.Components.w9 w9Var, rn rnVar, org.telegram.ui.ActionBar.j5 j5Var, boolean z12, ai.vd vdVar) {
         this.n = snVar;
         this.a = z10;
         this.b = z11;
@@ -28,7 +28,7 @@ public final class vh extends AnimatorListenerAdapter {
         this.d = rnVar;
         this.e = j5Var;
         this.f = z12;
-        this.h = udVar;
+        this.h = vdVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -60,7 +60,7 @@ public final class vh extends AnimatorListenerAdapter {
                 arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.ActionBar.j5, Float>) View.TRANSLATION_Y, 0.0f));
             }
             if (this.f) {
-                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<ai.ud, Float>) View.TRANSLATION_Y, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(this.h, (Property<ai.vd, Float>) View.TRANSLATION_Y, 0.0f));
             }
             if (w9Var != null) {
                 arrayList.add(ObjectAnimator.ofFloat(w9Var, (Property<org.telegram.ui.Components.w9, Float>) View.TRANSLATION_Y, 0.0f));

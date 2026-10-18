@@ -26,13 +26,13 @@ import org.telegram.ui.Components.r11;
 import org.telegram.ui.Components.s11;
 import org.telegram.ui.Components.t11;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cr0;
+import org.telegram.ui.dr0;
 import org.telegram.ui.ff0;
 import org.telegram.ui.i41;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 import org.telegram.ui.xe0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class oc implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -158,7 +158,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                     Bitmap b10 = j2Var2 == null ? m2Var2.I : (!z13 || bitmap3 == null) ? j2Var2.b() : m2Var2.e(bitmap3);
                     MediaController.PhotoEntry photoEntry3 = (MediaController.PhotoEntry) photoViewer.g7.get(photoViewer.P4);
                     if (thanosEffect == null) {
-                        Utilities.themeQueue.postRunnable(new cr0(photoViewer, b10, 0));
+                        Utilities.themeQueue.postRunnable(new dr0(photoViewer, b10, 0));
                         photoViewer.p5.f();
                         photoViewer.e0.invalidate();
                         break;
@@ -227,7 +227,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                             bitmap2 = bitmap;
                         }
                         if (bitmap2 == null) {
-                            Utilities.themeQueue.postRunnable(new cr0(photoViewer, b10, 1));
+                            Utilities.themeQueue.postRunnable(new dr0(photoViewer, b10, 1));
                             photoViewer.p5.f();
                             photoViewer.e0.invalidate();
                             break;
@@ -237,7 +237,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                                 bitmap2 = PhotoViewer.I0(bitmap2, cropState, new int[]{photoViewer.C4.getOrientation(), photoViewer.C4.getInvert()}, true);
                             }
                             if (bitmap2 == null) {
-                                Utilities.themeQueue.postRunnable(new cr0(photoViewer, b10, 2));
+                                Utilities.themeQueue.postRunnable(new dr0(photoViewer, b10, 2));
                                 photoViewer.p5.f();
                                 photoViewer.e0.invalidate();
                                 break;
@@ -285,9 +285,9 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                                 matrix3.postScale(f23, f23, f10 / f7, f11 / f7);
                                 matrix3.postTranslate(photoViewer.X5 + f13 + Math.max(0, (int) ((photoViewer.k1(photoViewer.u4) - f16) / f7)), photoViewer.Y5 + f12 + Math.max(0, (int) ((photoViewer.i1() - f17) / f7)));
                                 photoViewer.p5.V = true;
-                                Utilities.themeQueue.postRunnable(new cr0(photoViewer, b10, 3));
-                                rq0 rq0Var = new rq0(photoViewer, 13);
-                                xe0 xe0Var = new xe0(photoViewer, b10, rq0Var, 19);
+                                Utilities.themeQueue.postRunnable(new dr0(photoViewer, b10, 3));
+                                sq0 sq0Var = new sq0(photoViewer, 13);
+                                xe0 xe0Var = new xe0(photoViewer, b10, sq0Var, 19);
                                 ff0 ff0Var = new ff0(3);
                                 r11 r11Var = thanosEffect.a;
                                 if (r11Var != null) {
@@ -296,7 +296,7 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                                 } else {
                                     thanosEffect.c.add(new s11(matrix3, bitmap2, xe0Var, ff0Var));
                                 }
-                                AndroidUtilities.runOnUIThread(rq0Var, 1200L);
+                                AndroidUtilities.runOnUIThread(sq0Var, 1200L);
                             }
                         }
                     }

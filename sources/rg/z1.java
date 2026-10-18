@@ -4,10 +4,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z1 extends i {
     public final /* synthetic */ int n;
@@ -27,7 +27,7 @@ public final class z1 extends i {
                 float dp2 = AndroidUtilities.dp(19.5f);
                 float f11 = dp + dp2;
                 float f12 = f11 * 2.0f;
-                float z10 = a6.z(getMeasuredHeight(), f12, 2.0f, f11);
+                float z10 = k3.z(getMeasuredHeight(), f12, 2.0f, f11);
                 if (f7 <= f11 - dp2 || f10 <= z10 - dp2 || f7 >= f11 + dp2 || f10 >= z10 + dp2) {
                     if (f7 <= ((getMeasuredWidth() - f12) + f11) - dp2 || f10 <= z10 - dp2 || f7 >= (getMeasuredWidth() - f12) + f11 + dp2 || f10 >= z10 + dp2) {
                         if (Math.pow(f10 - r0, 2.0d) + Math.pow(f7 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {
@@ -40,7 +40,7 @@ public final class z1 extends i {
                 float dp4 = AndroidUtilities.dp(19.5f);
                 float f13 = dp3 + dp4;
                 float f14 = f13 * 2.0f;
-                float z11 = a6.z(getMeasuredHeight(), f14, 2.0f, f13);
+                float z11 = k3.z(getMeasuredHeight(), f14, 2.0f, f13);
                 if (f7 <= f13 - dp4 || f10 <= z11 - dp4 || f7 >= f13 + dp4 || f10 >= z11 + dp4) {
                     if (f7 <= ((getMeasuredWidth() - f14) + f13) - dp4 || f10 <= z11 - dp4 || f7 >= (getMeasuredWidth() - f14) + f13 + dp4 || f10 >= z11 + dp4) {
                         if (Math.pow(f10 - r0, 2.0d) + Math.pow(f7 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {
@@ -53,7 +53,7 @@ public final class z1 extends i {
                 float dp6 = AndroidUtilities.dp(19.5f);
                 float f15 = dp5 + dp6;
                 float f16 = f15 * 2.0f;
-                float z12 = a6.z(getMeasuredHeight(), f16, 2.0f, f15);
+                float z12 = k3.z(getMeasuredHeight(), f16, 2.0f, f15);
                 if (f7 <= f15 - dp6 || f10 <= z12 - dp6 || f7 >= f15 + dp6 || f10 >= z12 + dp6) {
                     if (f7 <= ((getMeasuredWidth() - f16) + f15) - dp6 || f10 <= z12 - dp6 || f7 >= (getMeasuredWidth() - f16) + f15 + dp6 || f10 >= z12 + dp6) {
                         if (Math.pow(f10 - r0, 2.0d) + Math.pow(f7 - r0, 2.0d) < Math.pow(getMeasuredWidth() / 2.0f, 2.0d)) {

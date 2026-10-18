@@ -25,7 +25,7 @@ import org.telegram.ui.Components.vo0;
 import org.telegram.ui.Components.vz;
 import org.telegram.ui.Components.wp;
 import org.telegram.ui.PopupNotificationActivity;
-import org.telegram.ui.fo0;
+import org.telegram.ui.go0;
 import org.telegram.ui.j9;
 import org.telegram.ui.l4;
 import org.telegram.ui.oj0;
@@ -33,7 +33,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.ua;
 import org.telegram.ui.xb;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -126,7 +126,7 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i28 = oj0.d0;
                 break;
             case 28:
-                List list = fo0.g1;
+                List list = go0.g1;
                 break;
             default:
                 int i29 = PopupNotificationActivity.b0;

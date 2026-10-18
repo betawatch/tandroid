@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.RLottieNative;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class a8 {
     public String A;
@@ -592,7 +592,7 @@ public final class a8 {
             }
         }
         matrix.postScale(f10, f10);
-        matrix.postTranslate(com.google.android.gms.internal.cast.a6.c(f7, f10, this.i0, 2.0f), com.google.android.gms.internal.cast.a6.c(i11, f10, this.j0, 2.0f));
+        matrix.postTranslate(com.google.android.gms.internal.play_billing.k3.c(f7, f10, this.i0, 2.0f), com.google.android.gms.internal.play_billing.k3.c(i11, f10, this.j0, 2.0f));
     }
 
     public final void B() {
@@ -985,7 +985,7 @@ public final class a8 {
                         tL_inputDocument.file_reference = new byte[0];
                     }
                     tL_messages_getAttachedStickers.media = tL_inputStickeredMediaDocument;
-                    this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new ai.x2(this, storyItem, tL_messages_getAttachedStickers, new ai.h(this, 11), 6));
+                    this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new ai.y2(this, storyItem, tL_messages_getAttachedStickers, new ai.h(this, 11), 6));
                 }
             } else if (photo.has_stickers) {
                 TLRPC.TL_inputStickeredMediaPhoto tL_inputStickeredMediaPhoto = new TLRPC.TL_inputStickeredMediaPhoto();
@@ -999,7 +999,7 @@ public final class a8 {
                     tL_inputPhoto.file_reference = new byte[0];
                 }
                 tL_messages_getAttachedStickers.media = tL_inputStickeredMediaPhoto;
-                this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new ai.x2(this, storyItem, tL_messages_getAttachedStickers, new ai.h(this, 11), 6));
+                this.e1 = ConnectionsManager.getInstance(this.a).sendRequest(tL_messages_getAttachedStickers, new ai.y2(this, storyItem, tL_messages_getAttachedStickers, new ai.h(this, 11), 6));
             }
         }
     }

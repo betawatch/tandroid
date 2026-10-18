@@ -8,7 +8,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class la1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ ThemeActivity a;
@@ -54,7 +54,7 @@ public final class la1 extends org.telegram.ui.ActionBar.j {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getParentActivity());
             alertDialog$Builder.a.R = LocaleController.getString("ThemeResetToDefaultsTitle", R.string.ThemeResetToDefaultsTitle);
             alertDialog$Builder.a.T = LocaleController.getString("ThemeResetToDefaultsText", R.string.ThemeResetToDefaultsText);
-            alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new qp0(this, 19));
+            alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new rp0(this, 19));
             alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             this.a.showDialog(b2Var);

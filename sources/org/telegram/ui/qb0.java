@@ -18,7 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class qb0 extends FrameLayout {
     public final org.telegram.ui.Components.y9 a;
@@ -45,7 +45,7 @@ public final class qb0 extends FrameLayout {
         linearLayout.setImportantForAccessibility(4);
         TextView textView = new TextView(context);
         boolean z10 = true;
-        com.google.android.gms.internal.cast.a6.m(15.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(15.0f, 1, textView);
         int i10 = org.telegram.ui.ActionBar.h6.L6;
         boolean z11 = false;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
@@ -74,7 +74,7 @@ public final class qb0 extends FrameLayout {
         this.d = textView2;
         textView2.setTextSize(1, 13.0f);
         int i11 = org.telegram.ui.ActionBar.h6.y6;
-        com.google.android.gms.internal.cast.a6.o(i11, null, false, textView2, 3);
+        com.google.android.gms.internal.play_billing.k3.o(i11, null, false, textView2, 3);
         textView2.setText(LocaleController.getString(R.string.LiteBatteryDisabled));
         frameLayout.addView(textView2, w7.z5.e(-2, -2, 19));
         org.telegram.ui.Cells.x1 x1Var2 = new org.telegram.ui.Cells.x1(this, context);
@@ -95,7 +95,7 @@ public final class qb0 extends FrameLayout {
         TextView textView3 = new TextView(context);
         this.f = textView3;
         textView3.setTextSize(1, 13.0f);
-        com.google.android.gms.internal.cast.a6.o(i11, null, false, textView3, 5);
+        com.google.android.gms.internal.play_billing.k3.o(i11, null, false, textView3, 5);
         textView3.setText(LocaleController.getString(R.string.LiteBatteryEnabled));
         frameLayout.addView(textView3, w7.z5.e(-2, -2, 21));
         addView(frameLayout, w7.z5.a(-2.0f, 21.0f, 52.0f, 21.0f, 0.0f, -1, 55));
@@ -125,7 +125,7 @@ public final class qb0 extends FrameLayout {
         if (z10 != this.r) {
             this.r = z10;
             x1Var2.clearAnimation();
-            org.telegram.messenger.wh.t(x1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.bs.h, 220L);
+            org.telegram.messenger.kk.t(x1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.bs.h, 220L);
         }
         float f10 = powerSaverLevel >= 100 ? 1.0f : 0.0f;
         if (this.s != f10) {
@@ -154,7 +154,7 @@ public final class qb0 extends FrameLayout {
                             int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false);
                             float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
                             qb0Var.s = floatValue;
-                            textView.setTextColor(i0.b.f(floatValue, x02, x03));
+                            textView.setTextColor(i0.a.f(floatValue, x02, x03));
                             break;
                         default:
                             qb0 qb0Var2 = this.b;
@@ -163,7 +163,7 @@ public final class qb0 extends FrameLayout {
                             int x05 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false);
                             float floatValue2 = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
                             qb0Var2.w = floatValue2;
-                            textView2.setTextColor(i0.b.f(floatValue2, x04, x05));
+                            textView2.setTextColor(i0.a.f(floatValue2, x04, x05));
                             break;
                     }
                 }
@@ -200,7 +200,7 @@ public final class qb0 extends FrameLayout {
                             int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false);
                             float floatValue = ((Float) valueAnimator22.getAnimatedValue()).floatValue();
                             qb0Var.s = floatValue;
-                            textView.setTextColor(i0.b.f(floatValue, x02, x03));
+                            textView.setTextColor(i0.a.f(floatValue, x02, x03));
                             break;
                         default:
                             qb0 qb0Var2 = this.b;
@@ -209,7 +209,7 @@ public final class qb0 extends FrameLayout {
                             int x05 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false);
                             float floatValue2 = ((Float) valueAnimator22.getAnimatedValue()).floatValue();
                             qb0Var2.w = floatValue2;
-                            textView2.setTextColor(i0.b.f(floatValue2, x04, x05));
+                            textView2.setTextColor(i0.a.f(floatValue2, x04, x05));
                             break;
                     }
                 }

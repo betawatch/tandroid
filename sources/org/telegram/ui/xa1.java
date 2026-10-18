@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xa1 extends FrameLayout {
     public final org.telegram.ui.Cells.fa a;
@@ -36,7 +36,7 @@ public final class xa1 extends FrameLayout {
         this.b = cp0Var;
         cp0Var.setReportChanges(true);
         cp0Var.setSeparatorsCount(19);
-        cp0Var.setDelegate(new lo0(this, 5));
+        cp0Var.setDelegate(new mo0(this, 5));
         cp0Var.setImportantForAccessibility(2);
         addView(cp0Var, w7.z5.a(38.0f, 5.0f, 5.0f, 39.0f, 0.0f, -1, 51));
         d5Var = ((org.telegram.ui.ActionBar.n2) themeActivity).parentLayout;

@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y extends bb {
     public final FrameLayout X;
@@ -125,7 +125,7 @@ public final class y extends bb {
         xpVar.setDrawBackgroundAsArc(10);
         linearLayout.addView(xpVar, w7.z5.t(26, 26, 16, 0, 0, 0, 0));
         TextView textView = new TextView(context);
-        org.telegram.messenger.wh.o(org.telegram.ui.ActionBar.h6.q5, d6Var, textView, 1, 14.0f);
+        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.q5, d6Var, textView, 1, 14.0f);
         textView.setText(LocaleController.getString(R.string.AIEditorStyleAddLink));
         linearLayout.addView(textView, w7.z5.t(-2, -2, 16, 9, 0, 0, 0));
         final int i13 = 2;
@@ -192,7 +192,7 @@ public final class y extends bb {
         a2.leftMargin = i18 + i19;
         a2.rightMargin += i19;
         this.containerView.addView(frameLayout5, a2);
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
         this.g0 = f7;
         f7.setText(LocaleController.getString(R.string.AIEditorStyleCreate));
         f7.setOnClickListener(new org.telegram.ui.ActionBar.s1(19, this, d6Var));
@@ -248,7 +248,7 @@ public final class y extends bb {
                             yVar2.g0.setLoading(false);
                             if (aiComposeTone == null) {
                                 if (tL_error != null) {
-                                    org.telegram.ui.Cells.t0.t(yVar2.f0, d6Var, tL_error, false);
+                                    org.telegram.ui.Cells.c1.t(yVar2.f0, d6Var, tL_error, false);
                                     break;
                                 }
                             } else {
@@ -296,7 +296,7 @@ public final class y extends bb {
                         yVar2.g0.setLoading(false);
                         if (aiComposeTone == null) {
                             if (tL_error != null) {
-                                org.telegram.ui.Cells.t0.t(yVar2.f0, d6Var, tL_error, false);
+                                org.telegram.ui.Cells.c1.t(yVar2.f0, d6Var, tL_error, false);
                                 break;
                             }
                         } else {
@@ -330,7 +330,7 @@ public final class y extends bb {
         }
         if (tL_error != null) {
             if (!"TONES_SAVED_TOO_MANY".equalsIgnoreCase(tL_error.text)) {
-                org.telegram.ui.Cells.t0.t(frameLayout, d6Var, tL_error, false);
+                org.telegram.ui.Cells.c1.t(frameLayout, d6Var, tL_error, false);
             } else {
                 e0.p0(yVar.currentAccount, new xc(frameLayout, d6Var));
             }

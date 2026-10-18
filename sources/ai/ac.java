@@ -1,33 +1,42 @@
 package ai;
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class ac extends ClickableSpan {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ boolean c;
+public final /* synthetic */ class ac implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.Chat d;
 
-    public ac(org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, boolean z10) {
-        this.a = f3VarArr;
-        this.b = context;
-        this.c = z10;
+    public /* synthetic */ ac(sn snVar, long j10, TLRPC.Chat chat, int i10) {
+        this.a = i10;
+        this.b = snVar;
+        this.c = j10;
+        this.d = chat;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.a[0].dismiss();
-        pf.d.r(this.b, LocaleController.getString(this.c ? R.string.StarsTransactionTONFromFragmentLink : R.string.StarsTransactionUnknownLink));
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        TLRPC.Chat chat = this.d;
+        long j10 = this.c;
+        sn snVar = this.b;
+        switch (i10) {
+            case 0:
+                org.telegram.ui.Components.xc.a0(snVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j10, chat.title)), R.raw.stars_send).k(true);
+                break;
+            default:
+                Pattern pattern = LaunchActivity.C1;
+                org.telegram.ui.Components.xc.a0(snVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j10, chat.title)), R.raw.stars_send).k(true);
+                break;
+        }
     }
 }

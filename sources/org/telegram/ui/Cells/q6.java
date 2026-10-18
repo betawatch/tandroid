@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q6 extends LinearLayout {
     public static final /* synthetic */ int c = 0;
@@ -77,37 +77,37 @@ public final class q6 extends LinearLayout {
                     if (tL_chatAdminRights != null) {
                         ArrayList arrayList2 = new ArrayList();
                         if (tL_chatAdminRights.change_info) {
-                            t0.o(1, z10 ? LocaleController.getString(R.string.EditAdminChangeChannelInfo) : LocaleController.getString(R.string.EditAdminChangeGroupInfo), arrayList2);
+                            c1.o(1, z10 ? LocaleController.getString(R.string.EditAdminChangeChannelInfo) : LocaleController.getString(R.string.EditAdminChangeGroupInfo), arrayList2);
                         }
                         if (tL_chatAdminRights.post_messages && z10) {
-                            t0.o(1, LocaleController.getString(R.string.EditAdminPostMessages), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.EditAdminPostMessages), arrayList2);
                         }
                         if (tL_chatAdminRights.edit_messages && z10) {
-                            t0.o(1, LocaleController.getString(R.string.EditAdminEditMessages), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.EditAdminEditMessages), arrayList2);
                         }
                         if (tL_chatAdminRights.delete_messages) {
-                            t0.o(1, LocaleController.getString(z10 ? R.string.EditAdminDeleteMessages : R.string.EditAdminGroupDeleteMessages), arrayList2);
+                            c1.o(1, LocaleController.getString(z10 ? R.string.EditAdminDeleteMessages : R.string.EditAdminGroupDeleteMessages), arrayList2);
                         }
                         if (tL_chatAdminRights.ban_users && !z10) {
-                            t0.o(1, LocaleController.getString(R.string.EditAdminBanUsers), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.EditAdminBanUsers), arrayList2);
                         }
                         if (tL_chatAdminRights.invite_users) {
-                            t0.o(1, LocaleController.getString(R.string.EditAdminAddUsers), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.EditAdminAddUsers), arrayList2);
                         }
                         if (tL_chatAdminRights.pin_messages && !z10) {
-                            t0.o(1, LocaleController.getString(R.string.EditAdminPinMessages), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.EditAdminPinMessages), arrayList2);
                         }
                         if (tL_chatAdminRights.add_admins) {
-                            t0.o(1, LocaleController.getString(R.string.EditAdminAddAdmins), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.EditAdminAddAdmins), arrayList2);
                         }
                         if (tL_chatAdminRights.anonymous && !z10) {
-                            t0.o(1, LocaleController.getString(R.string.EditAdminSendAnonymously), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.EditAdminSendAnonymously), arrayList2);
                         }
                         if (tL_chatAdminRights.manage_call) {
-                            t0.o(1, LocaleController.getString(R.string.StartVoipChatPermission), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.StartVoipChatPermission), arrayList2);
                         }
                         if (tL_chatAdminRights.manage_topics && !z10) {
-                            t0.o(1, LocaleController.getString(R.string.ManageTopicsPermission), arrayList2);
+                            c1.o(1, LocaleController.getString(R.string.ManageTopicsPermission), arrayList2);
                         }
                         if (arrayList2.size() == 1) {
                             arrayList.add(r6.a(TextUtils.concat(replaceTags2, " ", ((r6) arrayList2.get(0)).b)));

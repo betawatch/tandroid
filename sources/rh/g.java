@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DocumentObject;
@@ -20,7 +20,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -32,8 +32,8 @@ import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.xo0;
 import org.telegram.ui.Components.yo0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class g extends Drawable implements DownloadController.FileDownloadProgressListener, xo0 {
     public String E;
     public String F;
@@ -188,7 +188,7 @@ public final class g extends Drawable implements DownloadController.FileDownload
                 if (f7 > 0.0f) {
                     yo0 yo0Var = this.K;
                     yo0Var.t = f7;
-                    yo0Var.j(wh.z(56.0f, dp, bounds.right), AndroidUtilities.dp(30.0f));
+                    yo0Var.j(kk.y(56.0f, dp, bounds.right), AndroidUtilities.dp(30.0f));
                     canvas.save();
                     float dp4 = AndroidUtilities.dp(45.0f) + dp;
                     this.L = dp4;
@@ -216,7 +216,7 @@ public final class g extends Drawable implements DownloadController.FileDownload
             if (this.Y && (drawable = this.P) != null) {
                 int intrinsicWidth = (int) (drawable.getIntrinsicWidth() * 0.8f);
                 int intrinsicHeight = (int) (this.P.getIntrinsicHeight() * 0.8f);
-                int z12 = (int) a6.z(imageReceiver.getImageWidth(), intrinsicWidth, 2.0f, imageReceiver.getImageX());
+                int z12 = (int) k3.z(imageReceiver.getImageWidth(), intrinsicWidth, 2.0f, imageReceiver.getImageX());
                 int imageHeight = (int) ((((imageReceiver.getImageHeight() / 2.0f) - intrinsicHeight) + imageReceiver.getImageY()) - ((1.0f - bs.k.getInterpolation(imageReceiver.getCurrentAlpha())) * AndroidUtilities.dp(16.0f)));
                 this.P.setAlpha((int) (imageReceiver.getAlpha() * Math.min(1.0f, imageReceiver.getCurrentAlpha() * 5.0f) * 255.0f));
                 this.P.setBounds(z12, imageHeight, intrinsicWidth + z12, intrinsicHeight + imageHeight);

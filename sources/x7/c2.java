@@ -1,12 +1,12 @@
 package x7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class c2 implements ja.d {
     public static final c2 a = new c2();
 
     static {
-        r.c.s(r.c.m(c0.class, r.c.q(3, r.c.m(c0.class, r.c.q(2, r.c.m(c0.class, new z(1)))))));
+        r4.c.s(r4.c.m(c0.class, r4.c.q(3, r4.c.m(c0.class, r4.c.q(2, r4.c.m(c0.class, new z(1)))))));
     }
 
     @Override // ja.a

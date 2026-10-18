@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.text.TextUtils;
 import android.view.View;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class of implements wl0 {
     public final /* synthetic */ ChatActivityEnterView a;
@@ -21,7 +21,7 @@ public final class of implements wl0 {
             }
             ChatActivityEnterView chatActivityEnterView = this.a;
             if (chatActivityEnterView.c()) {
-                f5.L(chatActivityEnterView.O2, chatActivityEnterView.Q2, new s2(5, this, command), chatActivityEnterView.W3);
+                f5.L(chatActivityEnterView.O2, chatActivityEnterView.Q2, new q2(command, 6, this), chatActivityEnterView.W3);
                 return;
             }
             org.telegram.ui.sn snVar = chatActivityEnterView.P2;

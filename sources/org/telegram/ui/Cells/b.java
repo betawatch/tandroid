@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.nk0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a = 1;
@@ -66,7 +66,7 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float f15 = this.c;
                 float f16 = this.b;
-                horizontalScrollView.setScrollX((int) com.google.android.gms.internal.cast.a6.x(f15, f16, floatValue3, f16));
+                horizontalScrollView.setScrollX((int) com.google.android.gms.internal.play_billing.k3.y(f15, f16, floatValue3, f16));
                 nk0Var.setOutlineProgress(1.0f - floatValue3);
                 nk0Var2.setOutlineProgress(floatValue3);
                 break;

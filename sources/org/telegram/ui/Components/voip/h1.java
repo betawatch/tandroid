@@ -1,6 +1,6 @@
 package org.telegram.ui.Components.voip;
 
-import ai.hc;
+import ai.ic;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -40,8 +40,8 @@ import org.telegram.ui.Components.w9;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class h1 implements NotificationCenter.NotificationCenterDelegate, tf.a {
     public static final cw0 b0 = new cw0(new tg0(16), new tg0(17));
     public static final cw0 c0 = new cw0(new tg0(18), new tg0(19));
@@ -78,7 +78,7 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
     public FrameLayout h;
     public h n;
     public w9 r;
-    public hc s;
+    public ic s;
     public TLRPC.GroupCallParticipant v;
     public boolean w;
     public boolean x;
@@ -181,9 +181,9 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         q2Var2.d.setRotateTextureWithScreen(true);
         h1Var.f.d.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new g1(h1Var));
         h1Var.e.addView(h1Var.f, z5.d(-1.0f, -1));
-        hc hcVar = new hc(h1Var, activity2, 28);
-        h1Var.s = hcVar;
-        h1Var.e.addView(hcVar, z5.d(-1.0f, -1));
+        ic icVar = new ic(h1Var, activity2, 28);
+        h1Var.s = icVar;
+        h1Var.e.addView(icVar, z5.d(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(activity2);
         h1Var.h = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -374,13 +374,13 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
                 if (peerId > 0) {
                     TLRPC.User user = messagesController.getUser(Long.valueOf(peerId));
                     ImageLocation forUser = ImageLocation.getForUser(accountInstance.getCurrentAccount(), user, 1);
-                    int d = user != null ? h9.d(user.id) : i0.b.f(0.2f, -16777216, -1);
-                    this.r.getImageReceiver().setImage(forUser, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.b.f(0.2f, d, -16777216), i0.b.f(0.4f, d, -16777216)}), null, user, 0);
+                    int d = user != null ? h9.d(user.id) : i0.a.f(0.2f, -16777216, -1);
+                    this.r.getImageReceiver().setImage(forUser, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), null, user, 0);
                 } else {
                     TLRPC.Chat chat = messagesController.getChat(Long.valueOf(-peerId));
                     ImageLocation forChat = ImageLocation.getForChat(accountInstance.getCurrentAccount(), chat, 1);
-                    int d10 = chat != null ? h9.d(chat.id) : i0.b.f(0.2f, -16777216, -1);
-                    this.r.getImageReceiver().setImage(forChat, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.b.f(0.2f, d10, -16777216), i0.b.f(0.4f, d10, -16777216)}), null, chat, 0);
+                    int d10 = chat != null ? h9.d(chat.id) : i0.a.f(0.2f, -16777216, -1);
+                    this.r.getImageReceiver().setImage(forChat, "50_50_b", new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d10, -16777216), i0.a.f(0.4f, d10, -16777216)}), null, chat, 0);
                 }
                 this.v = groupCallParticipant3;
             }

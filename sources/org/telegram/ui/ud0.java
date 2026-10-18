@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ud0 extends org.telegram.ui.Components.ow0 {
     public final /* synthetic */ fg0 E;
@@ -183,7 +183,7 @@ public final class ud0 extends org.telegram.ui.Components.ow0 {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.addView(textView3, w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 32.0f, -1, 80));
         addView(frameLayout, w7.z5.q(-1, -1, 80));
-        m.g3.r(textView3);
+        m.g3.i(textView3);
         final int i14 = 1;
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.qd0
             public final /* synthetic */ ud0 b;

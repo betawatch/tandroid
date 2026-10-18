@@ -22,7 +22,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public NumberTextView E;
@@ -269,7 +269,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
             SharedConfig.ProxyInfo proxyInfo2 = (SharedConfig.ProxyInfo) arrayList.get(i18);
             if (!proxyInfo2.checking && SystemClock.elapsedRealtime() - proxyInfo2.availableCheckTime >= 120000) {
                 proxyInfo2.checking = true;
-                ConnectionsManager.getInstance(this.currentAccount).checkProxy(proxyInfo2.settings, new qp0(proxyInfo2, 12));
+                ConnectionsManager.getInstance(this.currentAccount).checkProxy(proxyInfo2.settings, new rp0(proxyInfo2, 12));
             }
         }
         if (!z10 || (l11Var = this.a) == null) {
@@ -280,7 +280,7 @@ public class ProxyListActivity extends org.telegram.ui.ActionBar.n2 implements N
 
     @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
-        i0.a.x(false, this.actionBar);
+        i2.d.y(false, this.actionBar);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.ProxySettings));
         org.telegram.ui.ActionBar.d5 d5Var = this.parentLayout;

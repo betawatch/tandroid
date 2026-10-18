@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mc0 extends View {
     public final ArrayList a;
@@ -86,7 +86,7 @@ public final class mc0 extends View {
         }
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             lc0 lc0Var = (lc0) arrayList.get(i10);
-            lc0Var.b.c(lc0Var.c.left + this.h, getMeasuredHeight() / 2.0f, 1.0f, i0.b.f(1.0f - Math.abs(f7 - i10), this.d, this.e), canvas);
+            lc0Var.b.c(lc0Var.c.left + this.h, getMeasuredHeight() / 2.0f, 1.0f, i0.a.f(1.0f - Math.abs(f7 - i10), this.d, this.e), canvas);
         }
     }
 

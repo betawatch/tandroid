@@ -27,8 +27,8 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.kk;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -48,8 +48,8 @@ import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.c10;
 import org.telegram.ui.c31;
 import org.telegram.ui.ey;
-import org.telegram.ui.fr0;
 import org.telegram.ui.g10;
+import org.telegram.ui.gn0;
 import org.telegram.ui.hk0;
 import org.telegram.ui.l4;
 import org.telegram.ui.ob;
@@ -65,11 +65,11 @@ import org.telegram.ui.xm0;
 import qg.j1;
 import qg.l1;
 import qg.m1;
+import si.m0;
 import si.n0;
-import si.o0;
-import si.r0;
+import si.q0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -295,13 +295,13 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                 c31 c31Var = (c31) this.b;
                 switch (((hk0) this.c).a) {
                     case 9:
-                        ti.e.e.b(i10 == 0 ? r0.b : r0.c);
+                        ti.e.e.b(i10 == 0 ? q0.b : q0.c);
                         break;
                     case 10:
-                        ti.e.f.b(n0.values()[i10]);
+                        ti.e.f.b(m0.values()[i10]);
                         break;
                     case 11:
-                        ti.e.g.b(i10 == 0 ? o0.b : o0.c);
+                        ti.e.g.b(i10 == 0 ? n0.b : n0.c);
                         break;
                     default:
                         ti.c cVar = ti.e.h;
@@ -318,7 +318,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
             case 12:
                 w61 w61Var = (w61) this.b;
                 ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                wh.p(R.string.TextCopied, new xc(w61Var.getContainer(), null));
+                kk.p(R.string.TextCopied, new xc(w61Var.getContainer(), null));
                 return;
             case 13:
                 wa1 wa1Var = (wa1) this.b;
@@ -359,7 +359,7 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
                     alertDialog$Builder.a.R = LocaleController.getString("DeleteThemeTitle", R.string.DeleteThemeTitle);
                     alertDialog$Builder.a.T = LocaleController.getString("DeleteThemeAlert", R.string.DeleteThemeAlert);
-                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new fr0(18, wa1Var, g6Var));
+                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new gn0(19, wa1Var, g6Var));
                     alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
                     b2 b2Var = alertDialog$Builder.a;
                     themeActivity.showDialog(b2Var);
@@ -468,12 +468,12 @@ public final /* synthetic */ class j implements DialogInterface.OnClickListener 
                     if (string == null) {
                         sb2 = "" + l1Var.a;
                     } else {
-                        StringBuilder i16 = r.c.i(string, "|");
+                        StringBuilder i16 = r4.c.i(string, "|");
                         i16.append(l1Var.a);
                         sb2 = i16.toString();
                     }
                     for (int i17 = 0; i17 < arrayList4.size(); i17++) {
-                        StringBuilder i18 = r.c.i(sb2, ",");
+                        StringBuilder i18 = r4.c.i(sb2, ",");
                         i18.append(Math.round(((j1) arrayList4.get(i17)).a));
                         i18.append(",");
                         i18.append(Math.round(((j1) arrayList4.get(i17)).b));

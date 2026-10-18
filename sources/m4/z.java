@@ -1,6 +1,6 @@
 package m4;
 
-import ai.ta;
+import ai.ua;
 import ai.x7;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.wo0;
 import org.telegram.ui.v21;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class z implements Runnable {
                 ((i1) this.b).b.m((v) this.c);
                 return;
             case 4:
-                ((ta) this.b).run((SpannableString) this.c);
+                ((ua) this.b).run((SpannableString) this.c);
                 return;
             case 5:
                 mi.r rVar = (mi.r) this.b;

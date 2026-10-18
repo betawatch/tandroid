@@ -40,7 +40,7 @@ import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.kr;
 import org.telegram.ui.pr;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class h4 extends hs {
     public boolean c;
@@ -551,7 +551,7 @@ public final class h4 extends hs {
                 } else {
                     Drawable drawable = q4Var.getContext().getDrawable(R.drawable.msg_gallery_locked2);
                     i10 = -1;
-                    drawable.setColorFilter(new PorterDuffColorFilter(i0.b.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
+                    drawable.setColorFilter(new PorterDuffColorFilter(i0.a.f(0.5f, -1, -16777216), PorterDuff.Mode.MULTIPLY));
                     p2 p2Var = new p2(q4Var.getContext().getDrawable(R.drawable.menu_quality_hd2), drawable, 1);
                     int dp = AndroidUtilities.dp(24.0f);
                     int dp2 = AndroidUtilities.dp(24.0f);
@@ -569,7 +569,7 @@ public final class h4 extends hs {
                             org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_gallery, LocaleController.getString(R.string.SaveToGallery), false, h4Var.d).setOnClickListener(new w3(h4Var, 1));
                         } else if (!MessagesController.getInstance(q4Var.C2).premiumFeaturesBlocked()) {
                             Drawable drawable2 = context.getDrawable(R.drawable.msg_gallery_locked2);
-                            drawable2.setColorFilter(new PorterDuffColorFilter(i0.b.f(0.5f, i10, -16777216), PorterDuff.Mode.MULTIPLY));
+                            drawable2.setColorFilter(new PorterDuffColorFilter(i0.a.f(0.5f, i10, -16777216), PorterDuff.Mode.MULTIPLY));
                             p2 p2Var2 = new p2(context.getDrawable(R.drawable.msg_gallery_locked1), drawable2, 2);
                             actionBarPopupWindow$ActionBarPopupWindowLayout7 = actionBarPopupWindow$ActionBarPopupWindowLayout;
                             org.telegram.ui.ActionBar.e1 c17 = org.telegram.ui.ActionBar.u0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout7, R.drawable.msg_gallery, LocaleController.getString(R.string.SaveToGallery), false, h4Var.d);

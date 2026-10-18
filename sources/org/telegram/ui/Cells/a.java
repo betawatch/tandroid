@@ -8,11 +8,11 @@ import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.xj0;
 import org.telegram.ui.e10;
 import org.telegram.ui.g10;
-import org.telegram.ui.qp0;
 import org.telegram.ui.rp0;
-import org.telegram.ui.tp0;
+import org.telegram.ui.sp0;
+import org.telegram.ui.up0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 x5 x5Var = (x5) obj;
                 w5 w5Var = x5Var.d;
                 if (w5Var != null) {
-                    tp0.U(((rp0) ((qp0) w5Var).b).d, x5Var.b[((Integer) view.getTag()).intValue()]);
+                    up0.U(((sp0) ((rp0) w5Var).b).d, x5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;

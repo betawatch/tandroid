@@ -9,12 +9,12 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class b0 extends n0 {
     public int A;
     public a0 B;
-    public final i2.m0 C;
+    public final i2.n0 C;
     public final k2.k D;
     public int E;
     public final int[] F;
@@ -494,67 +494,67 @@ public class b0 extends n0 {
         if (recyclerView == null || (view = recyclerView.getFocusedChild()) == null || ((ArrayList) b0Var.a.d).contains(view)) {
             view = null;
         }
-        i2.m0 m0Var = b0Var.C;
-        if (m0Var.d && b0Var.y == -1 && b0Var.B == null) {
+        i2.n0 n0Var = b0Var.C;
+        if (n0Var.d && b0Var.y == -1 && b0Var.B == null) {
             if (view != null && (b0Var.q.d(view) >= b0Var.q.f() || b0Var.q.a(view) <= b0Var.q.j())) {
-                m0Var.d(((o0) view.getLayoutParams()).b(), view);
+                n0Var.d(((o0) view.getLayoutParams()).b(), view);
             }
             eVar2 = eVar;
         } else {
-            m0Var.g();
-            m0Var.c = b0Var.v ^ b0Var.w;
+            n0Var.g();
+            n0Var.c = b0Var.v ^ b0Var.w;
             if (!y0Var2.g && (i10 = b0Var.y) != -1) {
                 if (i10 < 0 || i10 >= y0Var2.b()) {
                     b0Var.y = -1;
                     b0Var.A = TLObject.FLAG_31;
                 } else {
                     int i19 = b0Var.y;
-                    m0Var.b = i19;
+                    n0Var.b = i19;
                     a0 a0Var2 = b0Var.B;
                     if (a0Var2 != null && a0Var2.a >= 0) {
                         boolean z10 = a0Var2.c;
-                        m0Var.c = z10;
+                        n0Var.c = z10;
                         if (z10) {
-                            m0Var.e = b0Var.q.f() - b0Var.B.b;
+                            n0Var.e = b0Var.q.f() - b0Var.B.b;
                         } else {
-                            m0Var.e = b0Var.q.j() + b0Var.B.b;
+                            n0Var.e = b0Var.q.j() + b0Var.B.b;
                         }
                     } else if (b0Var.A == Integer.MIN_VALUE) {
                         View m11 = b0Var.m(i19);
                         if (m11 == null) {
                             if (b0Var.r() > 0) {
-                                m0Var.c = (b0Var.y < n0.H(b0Var.q(0))) == b0Var.z;
+                                n0Var.c = (b0Var.y < n0.H(b0Var.q(0))) == b0Var.z;
                             }
-                            m0Var.b();
+                            n0Var.b();
                         } else if (b0Var.q.b(m11) > b0Var.q.k()) {
-                            m0Var.b();
+                            n0Var.b();
                         } else if (b0Var.q.d(m11) - b0Var.q.j() < 0) {
-                            m0Var.e = b0Var.q.j();
-                            m0Var.c = false;
+                            n0Var.e = b0Var.q.j();
+                            n0Var.c = false;
                         } else if (b0Var.q.f() - b0Var.q.a(m11) < 0) {
-                            m0Var.e = b0Var.q.f();
-                            m0Var.c = true;
+                            n0Var.e = b0Var.q.f();
+                            n0Var.c = true;
                         } else {
-                            if (m0Var.c) {
+                            if (n0Var.c) {
                                 int a2 = b0Var.q.a(m11);
                                 androidx.emoji2.text.g gVar = b0Var.q;
                                 d = (Integer.MIN_VALUE == gVar.a ? 0 : gVar.k() - gVar.a) + a2;
                             } else {
                                 d = b0Var.q.d(m11);
                             }
-                            m0Var.e = d;
+                            n0Var.e = d;
                         }
                     } else {
                         boolean z11 = b0Var.z;
-                        m0Var.c = z11;
+                        n0Var.c = z11;
                         if (z11) {
-                            m0Var.e = b0Var.q.f() - b0Var.A;
+                            n0Var.e = b0Var.q.f() - b0Var.A;
                         } else {
-                            m0Var.e = b0Var.q.j() + b0Var.A;
+                            n0Var.e = b0Var.q.j() + b0Var.A;
                         }
                     }
                     eVar2 = eVar;
-                    m0Var.d = true;
+                    n0Var.d = true;
                 }
             }
             if (b0Var.r() != 0) {
@@ -565,13 +565,13 @@ public class b0 extends n0 {
                 if (view2 != null) {
                     o0 o0Var = (o0) view2.getLayoutParams();
                     if (!o0Var.a.j() && o0Var.b() >= 0 && o0Var.b() < y0Var2.b()) {
-                        m0Var.d(((o0) view2.getLayoutParams()).b(), view2);
+                        n0Var.d(((o0) view2.getLayoutParams()).b(), view2);
                         eVar2 = eVar;
-                        m0Var.d = true;
+                        n0Var.d = true;
                     }
                 }
                 if (b0Var.s == b0Var.w) {
-                    if (m0Var.c) {
+                    if (n0Var.c) {
                         if (b0Var.v) {
                             Q0 = b0Var.Q0(eVar, y0Var2, 0, b0Var.r(), y0Var2.b());
                             b0Var = this;
@@ -593,21 +593,21 @@ public class b0 extends n0 {
                         Q0 = b0Var.Q0(eVar2, y0Var2, 0, r(), y0Var.b());
                     }
                     if (Q0 != null) {
-                        m0Var.c(((o0) Q0.getLayoutParams()).b(), Q0);
+                        n0Var.c(((o0) Q0.getLayoutParams()).b(), Q0);
                         if (!y0Var2.g && b0Var.y0() && (b0Var.q.d(Q0) >= b0Var.q.f() || b0Var.q.a(Q0) < b0Var.q.j())) {
-                            m0Var.e = m0Var.c ? b0Var.q.f() : b0Var.q.j();
+                            n0Var.e = n0Var.c ? b0Var.q.f() : b0Var.q.j();
                         }
-                        m0Var.d = true;
+                        n0Var.d = true;
                     }
-                    m0Var.b();
-                    m0Var.b = !b0Var.w ? y0Var2.b() - 1 : b0Var.R0();
-                    m0Var.d = true;
+                    n0Var.b();
+                    n0Var.b = !b0Var.w ? y0Var2.b() - 1 : b0Var.R0();
+                    n0Var.d = true;
                 }
             }
             eVar2 = eVar;
-            m0Var.b();
-            m0Var.b = !b0Var.w ? y0Var2.b() - 1 : b0Var.R0();
-            m0Var.d = true;
+            n0Var.b();
+            n0Var.b = !b0Var.w ? y0Var2.b() - 1 : b0Var.R0();
+            n0Var.d = true;
         }
         z zVar = b0Var.p;
         zVar.f = zVar.j >= 0 ? 1 : -1;
@@ -632,17 +632,17 @@ public class b0 extends n0 {
                 g10 -= i20;
             }
         }
-        if (!m0Var.c ? !b0Var.v : b0Var.v) {
+        if (!n0Var.c ? !b0Var.v : b0Var.v) {
             i18 = 1;
         }
-        b0Var.a1(eVar2, y0Var2, m0Var, i18);
+        b0Var.a1(eVar2, y0Var2, n0Var, i18);
         for (int r10 = b0Var.r() - 1; r10 >= 0; r10--) {
             View q6 = b0Var.q(r10);
             b1 U = RecyclerView.U(q6);
             if (U != null && !U.r()) {
                 if (!U.h() || U.j() || b0Var.b.w.b) {
                     b0Var.q(r10);
-                    b0Var.a.y(r10);
+                    b0Var.a.t(r10);
                     eVar2.i(q6);
                     b0Var.b.f.m0(U);
                 } else {
@@ -654,8 +654,8 @@ public class b0 extends n0 {
         b0Var.p.l = b0Var.q.h() == 0 && b0Var.q.e() == 0;
         b0Var.p.getClass();
         b0Var.p.i = 0;
-        if (m0Var.c) {
-            b0Var.o1(m0Var.b, m0Var.e);
+        if (n0Var.c) {
+            b0Var.o1(n0Var.b, n0Var.e);
             z zVar2 = b0Var.p;
             zVar2.h = j10;
             b0Var.H0(eVar2, zVar2, y0Var2, false);
@@ -666,7 +666,7 @@ public class b0 extends n0 {
             if (i22 > 0) {
                 g10 += i22;
             }
-            b0Var.n1(m0Var.b, m0Var.e);
+            b0Var.n1(n0Var.b, n0Var.e);
             z zVar4 = b0Var.p;
             zVar4.h = g10;
             zVar4.d += zVar4.e;
@@ -682,7 +682,7 @@ public class b0 extends n0 {
                 i12 = b0Var.p.b;
             }
         } else {
-            b0Var.n1(m0Var.b, m0Var.e);
+            b0Var.n1(n0Var.b, n0Var.e);
             z zVar7 = b0Var.p;
             zVar7.h = g10;
             b0Var.H0(eVar2, zVar7, y0Var2, false);
@@ -693,7 +693,7 @@ public class b0 extends n0 {
             if (i25 > 0) {
                 j10 += i25;
             }
-            b0Var.o1(m0Var.b, m0Var.e);
+            b0Var.o1(n0Var.b, n0Var.e);
             z zVar9 = b0Var.p;
             zVar9.h = j10;
             zVar9.d += zVar9.e;
@@ -765,7 +765,7 @@ public class b0 extends n0 {
             b0Var.p.k = list;
         }
         if (y0Var2.g) {
-            m0Var.g();
+            n0Var.g();
         } else {
             androidx.emoji2.text.g gVar2 = b0Var.q;
             gVar2.a = gVar2.k();
@@ -991,7 +991,7 @@ public class b0 extends n0 {
     public final void j1(int i10) {
         e0 e0Var;
         if (i10 != 0 && i10 != 1) {
-            throw new IllegalArgumentException(i0.a.j(i10, "invalid orientation:"));
+            throw new IllegalArgumentException(i2.d.j(i10, "invalid orientation:"));
         }
         b(null);
         if (i10 != this.o || this.q == null) {
@@ -1199,9 +1199,9 @@ public class b0 extends n0 {
         this.z = true;
         this.A = TLObject.FLAG_31;
         this.B = null;
-        i2.m0 m0Var = new i2.m0();
-        m0Var.g();
-        this.C = m0Var;
+        i2.n0 n0Var = new i2.n0();
+        n0Var.g();
+        this.C = n0Var;
         this.D = new k2.k();
         this.E = 2;
         this.F = new int[2];
@@ -1211,6 +1211,6 @@ public class b0 extends n0 {
         k1(z10);
     }
 
-    public void a1(qf.e eVar, y0 y0Var, i2.m0 m0Var, int i10) {
+    public void a1(qf.e eVar, y0 y0Var, i2.n0 n0Var, int i10) {
     }
 }

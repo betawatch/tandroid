@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class st extends org.telegram.ui.Components.bb {
     public final FrameLayout X;
@@ -44,7 +44,7 @@ public final class st extends org.telegram.ui.Components.bb {
         this.drawDoubleNavigationBar = false;
         FrameLayout frameLayout = new FrameLayout(activity);
         this.X = frameLayout;
-        LinearLayout e = org.telegram.messenger.q.e(activity, 1);
+        LinearLayout e = org.telegram.messenger.g0.e(activity, 1);
         frameLayout.addView(e, w7.z5.e(-1, -1, 119));
         ImageView imageView = new ImageView(activity);
         imageView.setImageResource(R.drawable.ic_close_white);
@@ -102,7 +102,7 @@ public final class st extends org.telegram.ui.Components.bb {
         this.d.setItemAnimator(kVar);
         this.d.setOnItemClickListener(new b1(this, 28));
         FrameLayout frameLayout3 = new FrameLayout(activity);
-        LinearLayout e7 = org.telegram.messenger.q.e(activity, 0);
+        LinearLayout e7 = org.telegram.messenger.g0.e(activity, 0);
         e7.setPadding(AndroidUtilities.dp(14.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(14.0f));
         frameLayout3.addView(e7, w7.z5.e(-1, -2, 87));
         ei.d dVar = new ei.d(activity, this.resourcesProvider, true);
@@ -177,7 +177,7 @@ public final class st extends org.telegram.ui.Components.bb {
         if (!(tLObject instanceof TLRPC.Updates)) {
             if (!(tLObject instanceof TL_phone.groupCall)) {
                 if (tL_error != null) {
-                    org.telegram.ui.Cells.t0.t(stVar.topBulletinContainer, stVar.resourcesProvider, tL_error, false);
+                    org.telegram.ui.Cells.c1.t(stVar.topBulletinContainer, stVar.resourcesProvider, tL_error, false);
                     return;
                 }
                 return;
@@ -230,7 +230,7 @@ public final class st extends org.telegram.ui.Components.bb {
         if (arrayList2 == null || arrayList2.isEmpty()) {
             return;
         }
-        i0.a.p(R.string.GroupCallCreateAddMembers, arrayList);
+        i2.d.p(R.string.GroupCallCreateAddMembers, arrayList);
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
             Long l4 = (Long) arrayList2.get(i10);
             l4.getClass();
@@ -262,7 +262,7 @@ public final class st extends org.telegram.ui.Components.bb {
         hashSet.addAll(this.b0);
         TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
         createconferencecall.random_id = Utilities.random.nextInt();
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new ei.s1(this, dVar, z10, hashSet));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new ai.g4(this, dVar, z10, hashSet, 6));
     }
 
     @Override // org.telegram.ui.Components.bb

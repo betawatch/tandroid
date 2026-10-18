@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ei0 extends w9 implements gw0 {
     public final int G;
@@ -143,7 +143,7 @@ public final class ei0 extends w9 implements gw0 {
             RadialProgress2 radialProgress2 = this.H;
             int i14 = this.G;
             int i15 = (i11 - currentActionBarHeight) - dp2;
-            radialProgress2.q((i10 - i14) / 2, i0.a.C(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
+            radialProgress2.q((i10 - i14) / 2, i2.d.C(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
         }
     }
 

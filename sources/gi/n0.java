@@ -10,7 +10,7 @@ import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.bs;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class n0 extends LinearLayout implements qh.a, ne.k {
     public final d6 a;
@@ -91,7 +91,7 @@ public abstract class n0 extends LinearLayout implements qh.a, ne.k {
             int i10 = this.w;
             GradientDrawable gradientDrawable = this.v;
             if (i10 != m12) {
-                gradientDrawable.setColors(new int[]{m12, h6.m1(0.66f, m12), i0.b.o(m12, 0)});
+                gradientDrawable.setColors(new int[]{m12, h6.m1(0.66f, m12), i0.a.o(m12, 0)});
                 this.w = m12;
             }
             gradientDrawable.setBounds(0, getMeasuredHeight() - this.s, getMeasuredWidth(), getMeasuredHeight());
@@ -121,7 +121,7 @@ public abstract class n0 extends LinearLayout implements qh.a, ne.k {
         if (this.f) {
             return this.e;
         }
-        return org.telegram.messenger.q.D(4.0f, this.c.rows.size() - 1, AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(this.h) * tL_replyKeyboardMarkup.rows.size()));
+        return org.telegram.messenger.g0.D(4.0f, this.c.rows.size() - 1, AndroidUtilities.dp(16.0f) + (AndroidUtilities.dp(this.h) * tL_replyKeyboardMarkup.rows.size()));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0046, code lost:
@@ -196,7 +196,7 @@ public abstract class n0 extends LinearLayout implements qh.a, ne.k {
         boolean z10 = tL_replyKeyboardMarkup.resize;
         this.f = !z10;
         float f10 = 4.0f;
-        this.h = z10 ? 44 : (int) Math.max(44.0f, (wh.C(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
+        this.h = z10 ? 44 : (int) Math.max(44.0f, (kk.B(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
         int i11 = 0;
         while (i11 < tL_replyKeyboardMarkup.rows.size()) {
             TL_keyboard.KeyboardButtonRow keyboardButtonRow = tL_replyKeyboardMarkup.rows.get(i11);
@@ -243,7 +243,7 @@ public abstract class n0 extends LinearLayout implements qh.a, ne.k {
         if (!this.f || (tL_replyKeyboardMarkup = this.c) == null || tL_replyKeyboardMarkup.rows.isEmpty()) {
             return;
         }
-        int max = !this.f ? 44 : (int) Math.max(44.0f, (wh.C(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
+        int max = !this.f ? 44 : (int) Math.max(44.0f, (kk.B(4.0f, this.c.rows.size() - 1, this.e - AndroidUtilities.dp(16.0f)) / this.c.rows.size()) / AndroidUtilities.density);
         this.h = max;
         int dp = AndroidUtilities.dp(max);
         Iterator it = this.x.iterator();
@@ -261,11 +261,11 @@ public abstract class n0 extends LinearLayout implements qh.a, ne.k {
         }
     }
 
-    @Override // ne.k
-    public final /* synthetic */ void c() {
-    }
-
     @Override // qh.a
     public final void b(float f7) {
+    }
+
+    @Override // ne.k
+    public final /* synthetic */ void c() {
     }
 }

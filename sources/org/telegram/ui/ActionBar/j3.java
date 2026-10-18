@@ -34,7 +34,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -75,7 +75,7 @@ import org.telegram.ui.tc;
 import org.telegram.ui.v21;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -313,7 +313,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                             l2Var.a = true;
                             n2 U = LaunchActivity.U();
                             if (U != null) {
-                                U.showAsSheet(new org.telegram.ui.web.o(x3Var != null ? new org.telegram.ui.b0(l4Var, 5) : null, new org.telegram.ui.r(l4Var, 2)), l2Var);
+                                U.showAsSheet(new org.telegram.ui.web.p(x3Var != null ? new org.telegram.ui.b0(l4Var, 5) : null, new org.telegram.ui.r(l4Var, 2)), l2Var);
                                 break;
                             }
                         } else if (num.intValue() == 8) {
@@ -404,7 +404,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                                     boolean z13 = LocaleController.isRTL;
                                     m0Var.addView(radioButton, w7.z5.a(22.0f, z13 ? 0 : 22, 13.0f, z13 ? 22 : 0, 0.0f, 22, (z13 ? 5 : 3) | 48));
                                     TextView textView = new TextView(activity3);
-                                    wh.u(textView, h6.x0(null, h6.G6, false), 1, 16.0f, 1);
+                                    kk.u(textView, h6.x0(null, h6.G6, false), 1, 16.0f, 1);
                                     textView.setMaxLines(1);
                                     textView.setSingleLine(true);
                                     textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -530,10 +530,10 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                 break;
             case 8:
                 sn snVar2 = (sn) this.c;
-                ig.x1 x1Var = (ig.x1) this.b;
+                ig.z1 z1Var = (ig.z1) this.b;
                 TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = new TLRPC.TL_messages_sendQuickReplyMessages();
                 tL_messages_sendQuickReplyMessages.peer = snVar2.getMessagesController().getInputPeer(snVar2.T5);
-                tL_messages_sendQuickReplyMessages.shortcut_id = x1Var.a;
+                tL_messages_sendQuickReplyMessages.shortcut_id = z1Var.a;
                 snVar2.getConnectionsManager().sendRequest(tL_messages_sendQuickReplyMessages, null);
                 hk hkVar2 = snVar2.Y;
                 if (hkVar2 != null) {
@@ -583,7 +583,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                 b2VarArr[0] = null;
                 if (tL_statsPollStats != null) {
                     if (tL_statsPollStats.votes_graph instanceof TL_stats.TL_statsGraphError) {
-                        org.telegram.messenger.q.q(R.string.PollStatsWillLater, xc.a0(snVar6), R.raw.timer_toast, 24);
+                        org.telegram.messenger.g0.q(R.string.PollStatsWillLater, xc.a0(snVar6), R.raw.timer_toast, 24);
                         break;
                     } else {
                         new uh.g(snVar6.getParentActivity(), snVar6.ea, tL_statsPollStats).show();
@@ -603,12 +603,12 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                 break;
             case 15:
                 hj hjVar = (hj) this.c;
-                ig.x1 x1Var2 = (ig.x1) this.b;
+                ig.z1 z1Var2 = (ig.z1) this.b;
                 String str11 = (String) obj;
                 sn snVar8 = hjVar.b;
-                if (x1Var2 != null) {
+                if (z1Var2 != null) {
                     i11 = snVar8.currentAccount;
-                    ig.y1.f(i11).k(x1Var2.a, str11);
+                    ig.a2.f(i11).k(z1Var2.a, str11);
                 }
                 snVar8.Q3 = str11;
                 snVar8.a1.setTitle(str11);

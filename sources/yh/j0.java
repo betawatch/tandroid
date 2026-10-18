@@ -37,7 +37,7 @@ import org.telegram.ui.sn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class j0 extends org.telegram.ui.ActionBar.f3 {
     public final int E;
@@ -68,7 +68,7 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
         sn snVar;
         final int i10 = 1;
         this.c = new ih.k();
-        qh.i iVar = new qh.i(new ai.f4(this, i10));
+        qh.i iVar = new qh.i(new ai.h4(this, i10));
         this.h = iVar;
         AndroidUtilities.enableEdgeToEdge(getWindow());
         this.I = tL_starGiftUnique;
@@ -186,7 +186,7 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
                                 long j11 = q4Var.b;
                                 ag.c cVar = (ag.c) q4Var.f;
                                 if (!j0Var2.L) {
-                                    k7Var.u2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, j0Var2);
+                                    k7Var.w2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, j0Var2);
                                     break;
                                 }
                             }
@@ -234,7 +234,7 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
         xpVar.b(i13, i13, h6.k7);
         xpVar.setDrawUnchecked(true);
         xpVar.a(!this.G, false);
-        z4Var.getLayout().R = new ai.f4(this, i14);
+        z4Var.getLayout().R = new ai.h4(this, i14);
         xpVar.setDrawBackgroundAsArc(10);
         frameLayout.addView(xpVar, z5.a(18.0f, 10.0f, 0.0f, 0.0f, 0.0f, 18, 19));
         frameLayout.setBackground(new u5(frameLayout, this.containerView, AndroidUtilities.dp(16.0f), q("paintChatActionBackground")));
@@ -261,7 +261,7 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
                                 long j11 = q4Var.b;
                                 ag.c cVar = (ag.c) q4Var.f;
                                 if (!j0Var2.L) {
-                                    k7Var.u2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, j0Var2);
+                                    k7Var.w2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, j0Var2);
                                     break;
                                 }
                             }
@@ -315,7 +315,7 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
                                 long j11 = q4Var.b;
                                 ag.c cVar = (ag.c) q4Var.f;
                                 if (!j0Var2.L) {
-                                    k7Var.u2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, j0Var2);
+                                    k7Var.w2(tL_starGiftUnique2, j11, cVar, textWithEntities, z10, j0Var2);
                                     break;
                                 }
                             }
@@ -372,7 +372,7 @@ public final class j0 extends org.telegram.ui.ActionBar.f3 {
             StringBuilder sb2 = new StringBuilder();
             sb2.append(this.I.title);
             sb2.append(" #");
-            new xc(this.container, this.resourcesProvider).V(Arrays.asList(userOrChat), LocaleController.getString(R.string.GiftMessageAddTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftMessageAddDescription, DialogObject.getShortName(userOrChat), org.telegram.messenger.q.h(r3.num, ',', sb2))), null).k(true);
+            new xc(this.container, this.resourcesProvider).V(Arrays.asList(userOrChat), LocaleController.getString(R.string.GiftMessageAddTitle), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftMessageAddDescription, DialogObject.getShortName(userOrChat), org.telegram.messenger.g0.h(r3.num, ',', sb2))), null).k(true);
         }
     }
 

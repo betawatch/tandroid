@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -253,7 +253,7 @@ public final /* synthetic */ class m implements RequestDelegate {
             default:
                 xh1 xh1Var = (xh1) obj;
                 if (tLObject2 != null) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.t3(19, xh1Var, tLObject2));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.u3(19, xh1Var, tLObject2));
                     break;
                 }
                 break;

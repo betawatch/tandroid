@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -113,7 +113,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
                 i15 = 1;
             }
             if ((!LocaleController.isRTL || f7 > AndroidUtilities.dp(76.0f)) && (LocaleController.isRTL || f7 < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f))) {
-                dataSettingsActivity.presentFragment(new SaveToGallerySettingsActivity(org.telegram.ui.Cells.t0.j(i15, TeXSymbolParser.TYPE_ATTR)));
+                dataSettingsActivity.presentFragment(new SaveToGallerySettingsActivity(org.telegram.ui.Cells.c1.i(i15, TeXSymbolParser.TYPE_ATTR)));
                 return;
             } else {
                 SaveToGallerySettingsHelper.getSettings(i15).toggle();
@@ -228,7 +228,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
                 String string2 = LocaleController.getString(R.string.VoipUseLessData);
                 au auVar = new au(dataSettingsActivity, globalMainSettings, i10);
                 Pattern pattern = org.telegram.ui.Components.f5.a;
-                LinearLayout e = org.telegram.messenger.q.e(parentActivity, 1);
+                LinearLayout e = org.telegram.messenger.g0.e(parentActivity, 1);
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(parentActivity);
                 i13 = 0;
                 while (i13 < 4) {
@@ -257,7 +257,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
             String string22 = LocaleController.getString(R.string.VoipUseLessData);
             au auVar2 = new au(dataSettingsActivity, globalMainSettings, i10);
             Pattern pattern2 = org.telegram.ui.Components.f5.a;
-            LinearLayout e7 = org.telegram.messenger.q.e(parentActivity2, 1);
+            LinearLayout e7 = org.telegram.messenger.g0.e(parentActivity2, 1);
             AlertDialog$Builder alertDialog$Builder22 = new AlertDialog$Builder(parentActivity2);
             i13 = 0;
             while (i13 < 4) {
@@ -511,7 +511,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
         this.b.setLayoutManager(new s4.b0(1, false));
         frameLayout2.addView(this.b, w7.z5.e(-1, -1, 51));
         this.b.setAdapter(this.a);
-        this.b.setOnItemClickListener(new org.telegram.ui.Components.s2(28, this, context));
+        this.b.setOnItemClickListener(new org.telegram.ui.Components.q2(29, this, context));
         s4.k kVar = new s4.k();
         kVar.n(350L);
         kVar.o(org.telegram.ui.Components.bs.h);
@@ -679,7 +679,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
         super.onResume();
         yt ytVar = new yt(this, 1);
         AndroidUtilities.runOnUIThread(ytVar, 100L);
-        c7.j0(new ai.f2(this, ytVar, System.currentTimeMillis(), 1));
+        c7.j0(new ai.g2(this, ytVar, System.currentTimeMillis(), 1));
         if (this.b != null && this.a != null) {
             for (int i10 = 0; i10 < this.b.getChildCount(); i10++) {
                 View childAt = this.b.getChildAt(i10);

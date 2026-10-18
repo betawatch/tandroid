@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class nc extends View {
     public final /* synthetic */ int a;
@@ -64,24 +64,24 @@ public final class nc extends View {
                 break;
             case 1:
                 super.onDraw(canvas);
-                jp0 jp0Var = (jp0) this.v;
-                boolean z11 = jp0Var.S;
+                kp0 kp0Var = (kp0) this.v;
+                boolean z11 = kp0Var.S;
                 Paint paint2 = this.n;
                 float f13 = this.e;
                 float f14 = this.d;
                 float f15 = this.c;
                 if (z11) {
-                    float f16 = jp0Var.Y;
+                    float f16 = kp0Var.Y;
                     if (f16 > 0.0f) {
                         this.b.drawCircle(f15, f14, f13 * f16, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
                 } else {
-                    canvas.drawCircle(f15, f14, (1.0f - jp0Var.Y) * f13, paint2);
+                    canvas.drawCircle(f15, f14, (1.0f - kp0Var.Y) * f13, paint2);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                jp0Var.K.draw(canvas);
+                kp0Var.K.draw(canvas);
                 canvas.restore();
                 break;
             default:

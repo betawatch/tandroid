@@ -14,7 +14,7 @@ import org.telegram.messenger.IMapsProvider;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
     public final /* synthetic */ int a;
@@ -90,8 +90,8 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                         View childAt2 = snVar.x0.getChildAt(i11);
                         if (childAt2 instanceof org.telegram.ui.Cells.u1) {
                             ((org.telegram.ui.Cells.u1) childAt2).s1(0);
-                        } else if (childAt2 instanceof org.telegram.ui.Cells.x0) {
-                            ((org.telegram.ui.Cells.x0) childAt2).setInvalidateColors(true);
+                        } else if (childAt2 instanceof org.telegram.ui.Cells.w0) {
+                            ((org.telegram.ui.Cells.w0) childAt2).setInvalidateColors(true);
                         }
                     }
                 }
@@ -172,9 +172,9 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                 lm lmVar = snVar.X0;
                 if (lmVar != null) {
                     lmVar.N();
-                    ai.hc hcVar = snVar.X0.L;
-                    if (hcVar != null) {
-                        hcVar.invalidate();
+                    ai.ic icVar = snVar.X0.L;
+                    if (icVar != null) {
+                        icVar.invalidate();
                     }
                 }
                 org.telegram.ui.Components.ch chVar = snVar.M0;
@@ -523,7 +523,7 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                 }
                 break;
             case 27:
-                ((jp0) this.b).F0();
+                ((kp0) this.b).F0();
                 break;
             case 28:
                 ((PremiumPreviewFragment) this.b).u0();

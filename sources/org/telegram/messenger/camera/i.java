@@ -1,9 +1,10 @@
 package org.telegram.messenger.camera;
 
-import ai.g3;
+import ai.e3;
 import ai.i6;
+import ai.m4;
 import ai.t0;
-import ai.ud;
+import ai.vd;
 import ai.x8;
 import android.animation.ValueAnimator;
 import android.app.Dialog;
@@ -20,7 +21,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import gi.g4;
-import i2.d1;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -42,8 +42,8 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.g0;
 import org.telegram.messenger.video.VideoAds;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -63,6 +63,7 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a40;
@@ -86,10 +87,10 @@ import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.ny;
 import org.telegram.ui.Components.od0;
 import org.telegram.ui.Components.oz;
+import org.telegram.ui.Components.q2;
 import org.telegram.ui.Components.qp0;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.s2;
 import org.telegram.ui.Components.x3;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yq;
@@ -98,7 +99,6 @@ import org.telegram.ui.Components.zv0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.b1;
 import org.telegram.ui.dq;
-import org.telegram.ui.e3;
 import org.telegram.ui.ey;
 import org.telegram.ui.ir;
 import org.telegram.ui.jr;
@@ -116,7 +116,7 @@ import org.telegram.ui.ua;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
@@ -229,7 +229,7 @@ public final /* synthetic */ class i implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:370:0x0ddc  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x0dd4  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -394,7 +394,7 @@ public final /* synthetic */ class i implements Runnable {
                 sn snVar2 = (sn) this.c;
                 pf.c cVar = (pf.c) this.b;
                 TLObject tLObject2 = (TLObject) this.d;
-                g3 g3Var = (g3) this.e;
+                e3 e3Var = (e3) this.e;
                 cVar.b();
                 if (tLObject2 instanceof TLRPC.TL_contacts_resolvedPeer) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject2;
@@ -403,12 +403,12 @@ public final /* synthetic */ class i implements Runnable {
                     long peerDialogId = DialogObject.getPeerDialogId(tL_contacts_resolvedPeer.peer);
                     if (peerDialogId >= 0) {
                         user = snVar2.getMessagesController().getUser(Long.valueOf(peerDialogId));
-                        g3Var.run(user);
+                        e3Var.run(user);
                         break;
                     }
                 }
                 user = null;
-                g3Var.run(user);
+                e3Var.run(user);
             case 11:
                 long[] jArr2 = (long[]) this.c;
                 boolean[] zArr3 = (boolean[]) this.b;
@@ -420,7 +420,7 @@ public final /* synthetic */ class i implements Runnable {
                 }
                 as asVar = (as) imageView.getDrawable();
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new e3(asVar, 5));
+                ofFloat.addUpdateListener(new org.telegram.ui.e3(asVar, 5));
                 ofFloat.setDuration(150L);
                 ofFloat.setInterpolator(bs.f);
                 ofFloat.start();
@@ -438,7 +438,7 @@ public final /* synthetic */ class i implements Runnable {
                     th2 = th3;
                     tL_webPage = null;
                 }
-                AndroidUtilities.runOnUIThread(new d1(snVar3, b2Var, zArr4, th2 == null && tL_webPage != null, messageObject2, tL_webPage, 8));
+                AndroidUtilities.runOnUIThread(new m4(snVar3, b2Var, zArr4, th2 == null && tL_webPage != null, messageObject2, tL_webPage));
                 break;
             case 13:
                 sn snVar4 = (sn) this.c;
@@ -477,7 +477,6 @@ public final /* synthetic */ class i implements Runnable {
                         break;
                     }
                 }
-                break;
             case 14:
                 sn.I0((sn) this.c, (TLRPC.TL_messageMediaWebPage) this.b, (TLRPC.TL_webPageAttributeStory) this.d, (p6) this.e);
                 break;
@@ -604,7 +603,7 @@ public final /* synthetic */ class i implements Runnable {
                                 if (i18 < i16) {
                                     int i19 = i18;
                                     String str7 = strArr[i19];
-                                    if (lowerCase.startsWith(str7) || wh.w(" ", str7, lowerCase) || (translitString2 != null && (translitString2.startsWith(str7) || wh.w(" ", str7, translitString2)))) {
+                                    if (lowerCase.startsWith(str7) || g0.w(" ", str7, lowerCase) || (translitString2 != null && (translitString2.startsWith(str7) || g0.w(" ", str7, translitString2)))) {
                                         str4 = lowerCase;
                                         z15 = true;
                                     } else if (publicUsername == null || !publicUsername.startsWith(str7)) {
@@ -619,7 +618,7 @@ public final /* synthetic */ class i implements Runnable {
                                         if (z15) {
                                             arrayList4.add(AndroidUtilities.generateSearchName(str2, str3, str7));
                                         } else {
-                                            arrayList4.add(AndroidUtilities.generateSearchName(r.c.g("@", publicUsername), null, "@" + str7));
+                                            arrayList4.add(AndroidUtilities.generateSearchName(r4.c.h("@", publicUsername), null, "@" + str7));
                                         }
                                         arrayList5.add(tLObject6);
                                     } else {
@@ -657,7 +656,7 @@ public final /* synthetic */ class i implements Runnable {
                                 int i21 = 0;
                                 while (i21 < i16) {
                                     String str10 = strArr3[i21];
-                                    if (lowerCase3.startsWith(str10) || wh.w(str5, str10, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str10) || wh.w(str5, str10, translitString3)))) {
+                                    if (lowerCase3.startsWith(str10) || g0.w(str5, str10, lowerCase3) || (translitString3 != null && (translitString3.startsWith(str10) || g0.w(str5, str10, translitString3)))) {
                                         str = str5;
                                         z18 = true;
                                     } else {
@@ -829,7 +828,7 @@ public final /* synthetic */ class i implements Runnable {
                         kVar = new o1.k(chatActivityEnterView.p0, cVar3);
                         zv0Var = zv0Var2;
                         f10 = 0.5f;
-                        kVar.u = org.telegram.ui.Cells.t0.l(0.5f, 750.0f, f7);
+                        kVar.u = c1.l(0.5f, 750.0f, f7);
                     }
                     if (chatActivityEnterView.l5) {
                         f11 = f13;
@@ -837,10 +836,10 @@ public final /* synthetic */ class i implements Runnable {
                     } else {
                         f11 = f13;
                         kVar2 = new o1.k(chatActivityEnterView.p0, cVar2);
-                        kVar2.u = org.telegram.ui.Cells.t0.l(f10, 750.0f, f7);
+                        kVar2.u = c1.l(f10, 750.0f, f7);
                     }
                     o1.k kVar3 = new o1.k(chatActivityEnterView.p0, o1.h.t);
-                    kVar3.u = org.telegram.ui.Cells.t0.l(0.0f, 750.0f, f7);
+                    kVar3.u = c1.l(0.0f, 750.0f, f7);
                     final int i23 = 0;
                     o1.f fVar = new o1.f() { // from class: org.telegram.ui.Components.vd
                         @Override // o1.f
@@ -895,12 +894,12 @@ public final /* synthetic */ class i implements Runnable {
                     o1.k kVar4 = new o1.k(zv0Var3, o1.h.m);
                     kVar4.b = w7.r.a(dp2, f12 - AndroidUtilities.dp(6.0f), dp2);
                     kVar4.c = true;
-                    kVar4.u = org.telegram.ui.Cells.t0.l(f12, 700.0f, 0.75f);
+                    kVar4.u = c1.l(f12, 700.0f, 0.75f);
                     kVar4.h = f12 - AndroidUtilities.dp(6.0f);
                     o1.k kVar5 = new o1.k(zv0Var3, o1.h.n);
                     kVar5.b = w7.r.a(f14, f14, AndroidUtilities.dp(6.0f) + f15);
                     kVar5.c = true;
-                    kVar5.u = org.telegram.ui.Cells.t0.l(f15, 700.0f, 0.75f);
+                    kVar5.u = c1.l(f15, 700.0f, 0.75f);
                     kVar5.g = AndroidUtilities.dp(6.0f) + f15;
                     kVar5.b(new jf(f15, zv0Var3));
                     final int i24 = 1;
@@ -952,9 +951,9 @@ public final /* synthetic */ class i implements Runnable {
                         }
                     });
                     o1.k kVar6 = new o1.k(zv0Var3, cVar3);
-                    kVar6.u = org.telegram.ui.Cells.t0.l(scaleX, 1000.0f, 1.0f);
+                    kVar6.u = c1.l(scaleX, 1000.0f, 1.0f);
                     o1.k kVar7 = new o1.k(zv0Var3, cVar2);
-                    kVar7.u = org.telegram.ui.Cells.t0.l(scaleX, 1000.0f, 1.0f);
+                    kVar7.u = c1.l(scaleX, 1000.0f, 1.0f);
                     efVar.l(kVar, kVar2, kVar3, kVar4, kVar5, kVar6, kVar7);
                     break;
                 }
@@ -965,7 +964,7 @@ public final /* synthetic */ class i implements Runnable {
                 View view2 = (View) this.d;
                 d6 d6Var2 = (d6) this.e;
                 long j10 = foVar.V;
-                final s2 s2Var = new s2(11, foVar, view2);
+                final q2 q2Var = new q2(12, foVar, view2);
                 rc rcVar = new rc(i12);
                 int i25 = h6.j5;
                 int r10 = d6Var2 != null ? d6Var2.r(i25) : h6.x0(null, i25, false);
@@ -1015,7 +1014,7 @@ public final /* synthetic */ class i implements Runnable {
                     final int i34 = (int) MessagesController.getInstance(UserConfig.selectedAccount).config.pollClosePeriodMax.get(TimeUnit.SECONDS);
                     final a3 a3Var = new a3(context2, d6Var2);
                     a3Var.a();
-                    od0 od0Var = new od0(context2, d6Var2);
+                    final od0 od0Var = new od0(context2, d6Var2);
                     od0Var.setTextColor(r10);
                     od0Var.setTextOffset(AndroidUtilities.dp(10.0f));
                     od0Var.setItemCount(5);
@@ -1033,7 +1032,6 @@ public final /* synthetic */ class i implements Runnable {
                     f4Var.setTextOffset(-AndroidUtilities.dp(34.0f));
                     FrameLayout frameLayout3 = new FrameLayout(context2);
                     x3 x3Var = new x3(context2, od0Var, e4Var, f4Var, 2);
-                    od0 od0Var2 = od0Var;
                     x3Var.setOrientation(1);
                     frameLayout3.addView(x3Var, z5.d(-1.0f, -1));
                     frameLayout3.addView(new FrameLayout(context2), z5.a(100.0f, 0.0f, 0.0f, 0.0f, 120.0f, -1, 87));
@@ -1055,16 +1053,16 @@ public final /* synthetic */ class i implements Runnable {
                     textView3.setTextColor(h6.w0(h6.q5, d6Var2));
                     textView3.setGravity(17);
                     final Calendar calendar = Calendar.getInstance();
-                    ud udVar = new ud(context2, 17);
-                    udVar.setText(LocaleController.getString(R.string.StopPollDeadlineButton));
-                    b6.b(udVar, 0.02f, 1.2f);
-                    linearLayout.addView(od0Var2, z5.l(0.5f, 0, 270));
-                    od0Var2.setMinValue(0);
-                    od0Var2.setMaxValue(365);
-                    od0Var2.setWrapSelectorWheel(false);
-                    od0Var2.setFormatter(new tr(24));
+                    vd vdVar = new vd(context2, 17);
+                    vdVar.setText(LocaleController.getString(R.string.StopPollDeadlineButton));
+                    b6.b(vdVar, 0.02f, 1.2f);
+                    linearLayout.addView(od0Var, z5.l(0.5f, 0, 270));
+                    od0Var.setMinValue(0);
+                    od0Var.setMaxValue(365);
+                    od0Var.setWrapSelectorWheel(false);
+                    od0Var.setFormatter(new tr(24));
                     i6 i6Var = new i6(i34, od0Var, e4Var, f4Var, textView3);
-                    od0Var2.setOnValueChangedListener(i6Var);
+                    od0Var.setOnValueChangedListener(i6Var);
                     e4Var.setMinValue(0);
                     e4Var.setMaxValue(23);
                     int i35 = r11;
@@ -1092,45 +1090,41 @@ public final /* synthetic */ class i implements Runnable {
                         if (timeInMillis >= 0) {
                             f4Var.setValue(calendar.get(12));
                             e4Var.setValue(calendar.get(11));
-                            od0Var2 = od0Var2;
-                            od0Var2.setValue(timeInMillis);
-                        } else {
-                            od0Var2 = od0Var2;
+                            od0Var.setValue(timeInMillis);
                         }
                     }
                     final boolean[] zArr5 = {true};
-                    f5.f(null, null, 0L, i34, 3, od0Var2, e4Var, f4Var);
-                    f5.d(textView3, od0Var2, e4Var, f4Var);
-                    udVar.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                    udVar.setGravity(17);
-                    udVar.setTextColor(r12);
-                    udVar.setTextSize(1, 14.0f);
-                    udVar.setTypeface(AndroidUtilities.bold());
-                    udVar.setBackground(x5.e(new float[]{24.0f}, r13));
-                    x3Var.addView(udVar, z5.t(-1, 48, 83, 14, 15, 14, 16));
-                    final od0 od0Var3 = od0Var2;
-                    udVar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.f2
+                    f5.f(null, null, 0L, i34, 3, od0Var, e4Var, f4Var);
+                    f5.d(textView3, od0Var, e4Var, f4Var);
+                    vdVar.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+                    vdVar.setGravity(17);
+                    vdVar.setTextColor(r12);
+                    vdVar.setTextSize(1, 14.0f);
+                    vdVar.setTypeface(AndroidUtilities.bold());
+                    vdVar.setBackground(x5.e(new float[]{24.0f}, r13));
+                    x3Var.addView(vdVar, z5.t(-1, 48, 83, 14, 15, 14, 16));
+                    vdVar.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.f2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view3) {
                             Runnable runnable2;
                             zArr5[0] = false;
                             long j12 = i34;
-                            od0 od0Var4 = od0Var3;
+                            od0 od0Var2 = od0Var;
                             e4 e4Var2 = e4Var;
                             f4 f4Var2 = f4Var;
-                            boolean f16 = f5.f(null, null, 0L, j12, 3, od0Var4, e4Var2, f4Var2);
-                            f5.d(textView3, od0Var4, e4Var2, f4Var2);
+                            boolean f16 = f5.f(null, null, 0L, j12, 3, od0Var2, e4Var2, f4Var2);
+                            f5.d(textView3, od0Var2, e4Var2, f4Var2);
                             long currentTimeMillis = System.currentTimeMillis();
                             Calendar calendar2 = calendar;
                             calendar2.setTimeInMillis(currentTimeMillis);
-                            calendar2.add(6, od0Var4.getValue());
+                            calendar2.add(6, od0Var2.getValue());
                             calendar2.set(11, e4Var2.getValue());
                             calendar2.set(12, f4Var2.getValue());
                             if (f16) {
                                 calendar2.set(13, 0);
                                 calendar2.set(14, 0);
                             }
-                            s2Var.C((int) (calendar2.getTimeInMillis() / 1000), 0, true);
+                            q2Var.C((int) (calendar2.getTimeInMillis() / 1000), 0, true);
                             runnable2 = a3Var.a.dismissRunnable;
                             runnable2.run();
                         }

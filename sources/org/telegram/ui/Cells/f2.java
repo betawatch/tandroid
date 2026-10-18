@@ -36,7 +36,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.f90;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.PhotoViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f2 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public final int E;
@@ -221,7 +221,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                 document3.id = 0L;
                 document3.access_hash = 0L;
                 document3.date = tL_message.date;
-                document3.mime_type = r.c.g("audio/", httpUrlExtension);
+                document3.mime_type = r4.c.h("audio/", httpUrlExtension);
                 TLRPC.Document document4 = tL_message.media.document;
                 document4.size = 0L;
                 document4.dc_id = 0;
@@ -474,8 +474,8 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                 if ((botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaGeo) || (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaVenue)) {
                     int intrinsicWidth = org.telegram.ui.ActionBar.h6.o4.getIntrinsicWidth();
                     int intrinsicHeight = org.telegram.ui.ActionBar.h6.o4.getIntrinsicHeight();
-                    int z11 = (int) com.google.android.gms.internal.cast.a6.z(imageReceiver.getImageWidth(), intrinsicWidth, 2.0f, imageReceiver.getImageX());
-                    int z12 = (int) com.google.android.gms.internal.cast.a6.z(imageReceiver.getImageHeight(), intrinsicHeight, 2.0f, imageReceiver.getImageY());
+                    int z11 = (int) com.google.android.gms.internal.play_billing.k3.z(imageReceiver.getImageWidth(), intrinsicWidth, 2.0f, imageReceiver.getImageX());
+                    int z12 = (int) com.google.android.gms.internal.play_billing.k3.z(imageReceiver.getImageHeight(), intrinsicHeight, 2.0f, imageReceiver.getImageY());
                     canvas.drawRect(imageReceiver.getImageX(), imageReceiver.getImageY(), imageReceiver.getImageX() + imageReceiver.getImageWidth(), imageReceiver.getImageY() + imageReceiver.getImageHeight(), f90.j);
                     org.telegram.ui.ActionBar.h6.o4.setBounds(z11, z12, intrinsicWidth + z11, intrinsicHeight + z12);
                     org.telegram.ui.ActionBar.h6.o4.draw(canvas);
@@ -1090,11 +1090,11 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                                     StaticLayout staticLayout7 = this.y;
                                     i15 += staticLayout7.getLineBottom(staticLayout7.getLineCount() - r42);
                                 }
-                                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.y(16.0f, Math.max(AndroidUtilities.dp(52.0f), i15), AndroidUtilities.dp(68.0f)) + (this.h ? 1 : 0));
+                                setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(16.0f, Math.max(AndroidUtilities.dp(52.0f), i15), AndroidUtilities.dp(68.0f)) + (this.h ? 1 : 0));
                                 int dp3 = AndroidUtilities.dp(52.0f);
                                 if (LocaleController.isRTL) {
                                     f11 = 8.0f;
-                                    dp = org.telegram.messenger.q.B(8.0f, View.MeasureSpec.getSize(i10), dp3);
+                                    dp = org.telegram.messenger.g0.B(8.0f, View.MeasureSpec.getSize(i10), dp3);
                                 } else {
                                     f11 = 8.0f;
                                     dp = AndroidUtilities.dp(8.0f);
@@ -1113,9 +1113,9 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                                     size2 = AndroidUtilities.dp(f7);
                                 }
                                 setMeasuredDimension(size, size2);
-                                int B = wh.B(24.0f, size, 2);
-                                int B2 = wh.B(24.0f, size2, 2);
-                                radialProgress2.q(B, B2, AndroidUtilities.dp(24.0f) + B, AndroidUtilities.dp(24.0f) + B2);
+                                int A = kk.A(24.0f, size, 2);
+                                int A2 = kk.A(24.0f, size2, 2);
+                                radialProgress2.q(A, A2, AndroidUtilities.dp(24.0f) + A, AndroidUtilities.dp(24.0f) + A2);
                                 radialProgress2.setCircleRadius(AndroidUtilities.dp(12.0f));
                                 imageReceiver4.setImageCoords(0.0f, 0.0f, size, size2);
                             }

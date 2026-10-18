@@ -28,7 +28,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import v7.k5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a {
     public static final g6.b l = new g6.b("CastContext", null);
@@ -144,7 +144,7 @@ public final class a {
                             com.google.android.gms.internal.cast.n nVar = this.h;
                             List unmodifiableList = DesugarCollections.unmodifiableList(this.e.w);
                             nVar.getClass();
-                            com.google.android.gms.internal.cast.n.f.b(i0.a.k(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
+                            com.google.android.gms.internal.cast.n.f.b(i2.d.k(unmodifiableList.size(), "SetRouteDiscovery for ", " IDs"), new Object[0]);
                             LinkedHashSet<String> linkedHashSet = new LinkedHashSet();
                             Iterator it2 = unmodifiableList.iterator();
                             while (it2.hasNext()) {

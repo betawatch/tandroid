@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fj extends li implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public int E;
@@ -663,7 +663,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
             viewGroup = frameLayout;
         }
         FrameLayout.LayoutParams a10 = w7.z5.a(-2.0f, 0.0f, 8.0f, 0.0f, 4.0f, -1, 51);
-        ((ViewGroup.MarginLayoutParams) a10).topMargin = org.telegram.messenger.q.C(27.0f, AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) a10).topMargin);
+        ((ViewGroup.MarginLayoutParams) a10).topMargin = org.telegram.messenger.g0.C(27.0f, AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) a10).topMargin);
         viewGroup.addView(usVar, a10);
         bj bjVar = new bj(this, context, tiVar.M1, new d(this, 5), new xi(this), new xi(this), d6Var);
         this.v = bjVar;
@@ -688,7 +688,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
 
     public static boolean N(fj fjVar, MessageObject messageObject) {
         fjVar.O = messageObject;
-        return MediaController.getInstance().setPlaylist(org.telegram.messenger.q.k(messageObject), messageObject, 0L);
+        return MediaController.getInstance().setPlaylist(org.telegram.messenger.g0.k(messageObject), messageObject, 0L);
     }
 
     @Override // org.telegram.ui.Components.li
@@ -798,7 +798,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
                             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                             b2Var.R = string;
                             b2Var.T = formatString;
-                            org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                             return;
                         }
                     }
@@ -855,7 +855,7 @@ public final class fj extends li implements NotificationCenter.NotificationCente
         tL_messages_searchGlobal.q = str2;
         tL_messages_searchGlobal.limit = arrayList.isEmpty() ? 3 : 15;
         if (arrayList.size() > 0) {
-            MessageObject messageObject = ((MediaController.AudioEntry) i0.a.h(1, arrayList)).messageObject;
+            MessageObject messageObject = ((MediaController.AudioEntry) i2.d.h(1, arrayList)).messageObject;
             tL_messages_searchGlobal.offset_id = messageObject.getId();
             tL_messages_searchGlobal.offset_rate = this.b0;
             tL_messages_searchGlobal.offset_peer = messagesController.getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));

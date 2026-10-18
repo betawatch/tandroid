@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.n9;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class o4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0 {
     public static final /* synthetic */ int M = 0;
@@ -204,9 +204,9 @@ public final class o4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
             int centerY = (int) imageReceiver.getCenterY();
             Drawable drawable = this.E;
             if (drawable != null) {
-                int w9 = org.telegram.ui.Cells.t0.w(2, centerX, drawable);
-                int g10 = org.telegram.ui.Cells.t0.g(2, centerY, drawable);
-                drawable.setBounds(w9, g10, drawable.getIntrinsicWidth() + w9, drawable.getIntrinsicHeight() + g10);
+                int w9 = org.telegram.ui.Cells.c1.w(2, centerX, drawable);
+                int f7 = org.telegram.ui.Cells.c1.f(2, centerY, drawable);
+                drawable.setBounds(w9, f7, drawable.getIntrinsicWidth() + w9, drawable.getIntrinsicHeight() + f7);
                 drawable.draw(canvas2);
             }
             TL_iv.pageBlockMap map = getMap();

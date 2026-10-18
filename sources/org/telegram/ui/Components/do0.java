@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class do0 extends ah.g1 {
     public final /* synthetic */ eo0 h0;
@@ -33,10 +33,10 @@ public final class do0 extends ah.g1 {
     public final void s(float f7) {
         int i10 = this.i;
         eo0 eo0Var = this.h0;
-        this.N = i0.b.f(f7, i10, org.telegram.ui.ActionBar.h6.w0(eo0Var.e ? org.telegram.ui.ActionBar.h6.Fj : org.telegram.ui.ActionBar.h6.va, eo0Var.s.c));
-        int f10 = i0.b.f(f7, this.g, eo0Var.e ? org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Cj, eo0Var.s.c) : 0);
+        this.N = i0.a.f(f7, i10, org.telegram.ui.ActionBar.h6.w0(eo0Var.e ? org.telegram.ui.ActionBar.h6.Fj : org.telegram.ui.ActionBar.h6.va, eo0Var.s.c));
+        int f10 = i0.a.f(f7, this.g, eo0Var.e ? org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Cj, eo0Var.s.c) : 0);
         this.O = f10;
         this.N = org.telegram.ui.ActionBar.h6.v(f10, this.N);
-        this.P = i0.b.f(f7, this.h, eo0Var.e ? 1526726655 : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.wa, eo0Var.s.c));
+        this.P = i0.a.f(f7, this.h, eo0Var.e ? 1526726655 : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.wa, eo0Var.s.c));
     }
 }

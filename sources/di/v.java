@@ -22,6 +22,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.g0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
@@ -38,7 +39,7 @@ import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class v extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray E;
@@ -409,7 +410,7 @@ public abstract class v extends FrameLayout implements NotificationCenter.Notifi
         }
         a aVar = this.n;
         aVar.o(true);
-        SpannableString spannableString = new SpannableString(org.telegram.messenger.q.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
+        SpannableString spannableString = new SpannableString(g0.g(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
         yq yqVar = new yq(R.drawable.msg_filled_plus, 0);
         yqVar.setScale(0.9f, 0.9f);
         yqVar.spaceScaleX = 0.85f;

@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class o21 {
     public final Paint a;
@@ -58,8 +58,8 @@ public final class o21 {
             paint.setAlpha((int) (p21Var.M * f7 * 255.0f));
             f11 = 4.0f;
             f12 = 0.5f;
-            float x10 = com.google.android.gms.internal.cast.a6.x(1.0f, p21Var.M, AndroidUtilities.dp(4.0f), paint.getStrokeWidth() * 0.5f);
-            rectF.set(x10, x10, p21Var.getWidth() - x10, p21Var.getHeight() - x10);
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, p21Var.M, AndroidUtilities.dp(4.0f), paint.getStrokeWidth() * 0.5f);
+            rectF.set(y3, y3, p21Var.getWidth() - y3, p21Var.getHeight() - y3);
             float f19 = p21Var.a;
             canvas.drawRoundRect(rectF, f19, f19, paint);
         } else {

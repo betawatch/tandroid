@@ -1,8 +1,8 @@
 package ah;
 
+import ai.ad;
 import ai.v5;
 import ai.w5;
-import ai.yc;
 import ai.zc;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.qz0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -80,9 +80,9 @@ public final class b extends AnimatorListenerAdapter {
                 w5Var.G = null;
                 break;
             case 4:
-                yc ycVar = ((zc) obj).c;
-                ycVar.setScaleX(1.0f);
-                ycVar.setScaleY(1.0f);
+                zc zcVar = ((ad) obj).c;
+                zcVar.setScaleX(1.0f);
+                zcVar.setScaleY(1.0f);
                 break;
             case 5:
                 ci.a aVar = (ci.a) obj;

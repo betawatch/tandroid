@@ -1,7 +1,7 @@
 package da;
 
 import ai.w3;
-import ai.y3;
+import ai.x9;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -43,7 +43,7 @@ import x2.k;
 import x2.n;
 import x9.w;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, a2, MessagesController.ErrorDelegate, k {
     public final /* synthetic */ int a;
@@ -127,12 +127,12 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         switch (this.a) {
             case 2:
                 boolean z10 = this.b;
-                y3 y3Var = (y3) this.c;
+                x9 x9Var = (x9) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
                 t3 t3Var = (t3) this.e;
                 int i11 = t3Var.b;
                 if (!z10) {
-                    y3Var.run();
+                    x9Var.run();
                     break;
                 } else {
                     String trim = editTextBoldCursor.getText().toString().trim();
@@ -192,7 +192,7 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                     AndroidUtilities.hideKeyboard(ry0Var);
                     b2 b2Var2 = new b2(context2, 3, z13 ? null : new ci.b());
                     b2Var2.q(250L);
-                    callback2.run(trim2, new w3(b2Var2, b2Var, ry0Var, 10));
+                    callback2.run(trim2, new w3(b2Var2, b2Var, ry0Var, 9));
                     break;
                 } else {
                     ry0Var.setErrorText(".");

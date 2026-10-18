@@ -20,7 +20,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class na {
     public final ja a;
@@ -156,7 +156,7 @@ public final class na {
         boolean z10 = this.e;
         Paint paint = z10 ? this.g : null;
         if (c10 != null && z10) {
-            c10.setAlpha((int) org.telegram.messenger.q.z(1.0f, this.f, 255.0f, 1.0f));
+            c10.setAlpha((int) org.telegram.messenger.g0.z(1.0f, this.f, 255.0f, 1.0f));
         }
         if (paint != null) {
             paint.setAlpha((int) 255.0f);

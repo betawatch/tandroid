@@ -2,7 +2,7 @@ package z3;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class j extends h2.j implements d {
     public d a;
@@ -36,9 +36,9 @@ public abstract class j extends h2.j implements d {
     }
 
     @Override // z3.d
-    public final int h() {
+    public final int i() {
         d dVar = this.a;
         dVar.getClass();
-        return dVar.h();
+        return dVar.i();
     }
 }

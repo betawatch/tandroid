@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g0 extends bb {
     public s61 X;
@@ -18,7 +18,7 @@ public final class g0 extends bb {
     public ArrayList Z;
     public a0.h a0;
     public final boolean b0;
-    public final ai.ad c0;
+    public final ai.bd c0;
     public boolean d0;
     public boolean e0;
     public boolean f0;
@@ -87,20 +87,20 @@ public final class g0 extends bb {
         kVar.n(350L);
         this.d.setItemAnimator(kVar);
         this.d.setOnItemClickListener(new s(this, 1));
-        ai.ad adVar = new ai.ad(getContext(), this.resourcesProvider, (im0) null);
-        this.c0 = adVar;
-        adVar.setClickable(true);
-        adVar.setOrientation(1);
-        adVar.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
-        adVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i10, this.resourcesProvider));
+        ai.bd bdVar = new ai.bd(getContext(), this.resourcesProvider, (im0) null);
+        this.c0 = bdVar;
+        bdVar.setClickable(true);
+        bdVar.setOrientation(1);
+        bdVar.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
+        bdVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i10, this.resourcesProvider));
         ei.d dVar = new ei.d(getContext(), this.resourcesProvider, true);
         dVar.e();
         dVar.g(LocaleController.getString(R.string.EventLogFilterApply), false, true);
         dVar.setOnClickListener(new f0(this, 0));
-        adVar.addView(dVar, w7.z5.q(-1, 48, 87));
+        bdVar.addView(dVar, w7.z5.q(-1, 48, 87));
         ViewGroup viewGroup = this.containerView;
         int i11 = this.backgroundPaddingLeft;
-        viewGroup.addView(adVar, w7.z5.f(-2.0f, 87, i11, 0, i11, 0));
+        viewGroup.addView(bdVar, w7.z5.f(-2.0f, 87, i11, 0, i11, 0));
         im0 im0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
         im0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(68.0f));
@@ -304,7 +304,7 @@ public final class g0 extends bb {
             return;
         }
         arrayList.add(f61.B(null));
-        i0.a.p(R.string.EventLogFilterByActions, arrayList);
+        i2.d.p(R.string.EventLogFilterByActions, arrayList);
         boolean z10 = this.b0;
         int i10 = 0;
         int i11 = 2;
@@ -386,7 +386,7 @@ public final class g0 extends bb {
             arrayList.add(y19);
         }
         arrayList.add(f61.B(null));
-        i0.a.p(R.string.EventLogFilterByAdmins, arrayList);
+        i2.d.p(R.string.EventLogFilterByAdmins, arrayList);
         f61 y20 = f61.y(16, LocaleController.getString(R.string.EventLogFilterByAdminsAll));
         a0.h hVar = this.a0;
         int m10 = hVar == null ? 0 : hVar.m();

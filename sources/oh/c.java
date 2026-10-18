@@ -17,7 +17,7 @@ import org.telegram.ui.Components.bs;
 import w7.z5;
 import zf.p;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ne.d, y5 {
     public ShapeDrawable a;
@@ -45,7 +45,7 @@ public final class c extends FrameLayout implements ne.d, y5 {
 
     public final void a(boolean z10, boolean z11) {
         if (z10 && this.a == null) {
-            this.a = h6.c0(AndroidUtilities.dp(10.0f), i0.b.o(h6.w0(h6.Wk, this.b), 25));
+            this.a = h6.c0(AndroidUtilities.dp(10.0f), i0.a.o(h6.w0(h6.Wk, this.b), 25));
         }
         ne.b bVar = this.e;
         if (bVar.f != z10 || z11) {
@@ -58,11 +58,11 @@ public final class c extends FrameLayout implements ne.d, y5 {
         ShapeDrawable shapeDrawable = this.a;
         d6 d6Var = this.b;
         if (shapeDrawable != null) {
-            ShapeDrawable c02 = h6.c0(AndroidUtilities.dp(10.0f), i0.b.o(h6.w0(h6.Wk, d6Var), 25));
+            ShapeDrawable c02 = h6.c0(AndroidUtilities.dp(10.0f), i0.a.o(h6.w0(h6.Wk, d6Var), 25));
             this.a = c02;
             c02.setAlpha((int) (this.e.e * 255.0f));
         }
-        this.d.setTextColor(i0.b.o(h6.w0(h6.Wk, d6Var), 229));
+        this.d.setTextColor(i0.a.o(h6.w0(h6.Wk, d6Var), 229));
     }
 
     @Override // android.view.ViewGroup, android.view.View

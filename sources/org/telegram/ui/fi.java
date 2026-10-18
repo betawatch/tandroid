@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fi extends nh0 {
     public final /* synthetic */ sn e;
@@ -41,7 +41,7 @@ public final class fi extends nh0 {
         tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
         tL_channels_getMessageAuthor.id = messageObject.getId();
         x90Var.setAlpha(0.0f);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.m2(this, i10, 8));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.n2(this, i10, 8));
         setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I5, false), 6, 0));
         setEnabled(false);
     }

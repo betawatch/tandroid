@@ -1,6 +1,6 @@
 package rg;
 
-import ai.ga;
+import ai.ha;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.vf1;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r1 extends LinearLayout {
     public final xj0[] a;
@@ -90,7 +90,7 @@ public final class r1 extends LinearLayout {
                 qg.m mVar = (qg.m) list2.get(i10 - 1);
                 if (z10 || !(mVar instanceof qg.b)) {
                     this.a[i11].f(mVar.e(), 28, 28, null);
-                    this.a[i11].setOnClickListener(new ga(this, i11, mVar, 21));
+                    this.a[i11].setOnClickListener(new ha(this, i11, mVar, 21));
                 } else {
                     i10++;
                 }
@@ -204,7 +204,7 @@ public final class r1 extends LinearLayout {
         float f10 = xj0Var2 != null ? this.n : 0.0f;
         float f11 = 1.0f;
         if (f10 > 0.25f && f10 < 0.75f) {
-            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.q.x(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
+            f11 = (f10 <= 0.25f || f10 >= 0.5f) ? org.telegram.messenger.g0.x(0.75f, f10, 0.25f, 1.0f) : (0.5f - f10) / 0.25f;
         }
         float dp = (AndroidUtilities.dp(3.0f) * f11) + (Math.min((xj0Var.getWidth() - xj0Var.getPaddingLeft()) - xj0Var.getPaddingRight(), (xj0Var.getHeight() - xj0Var.getPaddingTop()) - xj0Var.getPaddingBottom()) / 2.0f) + AndroidUtilities.dp(3.0f);
         float width = (xj0Var.getWidth() / 2.0f) + xj0Var.getX();

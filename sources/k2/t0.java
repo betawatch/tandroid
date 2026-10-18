@@ -11,7 +11,7 @@ import android.os.SystemClock;
 import ci.p4;
 import e9.x1;
 import ei.bc;
-import ig.c2;
+import ig.e2;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t0 implements z {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -231,7 +231,7 @@ public final class t0 implements z {
                         case 18:
                             break;
                         default:
-                            throw new IllegalStateException(i0.a.j(i10, "Unexpected audio encoding: "));
+                            throw new IllegalStateException(i2.d.j(i10, "Unexpected audio encoding: "));
                     }
             }
             if (((byteBuffer.get(byteBuffer.position() + 5) & 248) >> 3) > 10) {
@@ -729,7 +729,7 @@ public final class t0 implements z {
                         i0.u = Executors.newSingleThreadScheduledExecutor(new e2.l0(0));
                     }
                     i0.v++;
-                    i0.u.schedule(new c2(audioTrack, q6, rVar, 2), 20L, TimeUnit.MILLISECONDS);
+                    i0.u.schedule(new e2(audioTrack, q6, rVar, 2), 20L, TimeUnit.MILLISECONDS);
                 } catch (Throwable th2) {
                     throw th2;
                 }

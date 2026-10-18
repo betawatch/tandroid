@@ -27,7 +27,7 @@ import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class a2 extends s4.g0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -279,7 +279,7 @@ public final class a2 extends s4.g0 {
                                                     arrayList2 = arrayList9;
                                                 }
                                                 HashMap hashMap5 = hashMap4;
-                                                i24 = com.google.android.gms.internal.cast.a6.h(document.id, arrayList2, i24, 1);
+                                                i24 = com.google.android.gms.internal.play_billing.k3.h(document.id, arrayList2, i24, 1);
                                                 hashMap4 = hashMap5;
                                                 parseEmojis = arrayList10;
                                                 document = document;

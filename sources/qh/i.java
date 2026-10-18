@@ -10,7 +10,7 @@ import org.telegram.ui.ActionBar.o1;
 import r0.h1;
 import r0.k1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class i implements g, f, d {
     public View E;
@@ -81,9 +81,9 @@ public class i implements g, f, d {
         return (this.y == null || this.G <= 0) ? Math.max(f(527).d, this.v) : Math.max(this.F, Math.max(f(527).d, this.v));
     }
 
-    public final i0.c f(int i10) {
+    public final i0.b f(int i10) {
         k1 k1Var = this.r;
-        return k1Var != null ? k1Var.a.f(i10) : i0.c.e;
+        return k1Var != null ? k1Var.a.f(i10) : i0.b.e;
     }
 
     public final void g(int i10) {
@@ -130,41 +130,41 @@ public class i implements g, f, d {
     }
 
     public final void l(k1 k1Var, boolean z10) {
-        i0.c cVar;
+        i0.b bVar;
         int i10;
         ne.e eVar;
         k1 b10 = b(k1Var);
         this.r = b10;
-        i0.c cVar2 = i0.c.e;
+        i0.b bVar2 = i0.b.e;
         if (b10 != null) {
             h1 h1Var = b10.a;
-            cVar = i0.c.a(h1Var.f(647), h1Var.g(647));
+            bVar = i0.b.a(h1Var.f(647), h1Var.g(647));
         } else {
-            cVar = cVar2;
+            bVar = bVar2;
         }
         if (b10 != null) {
-            cVar2 = b10.a.f(8);
+            bVar2 = b10.a.f(8);
         }
-        c cVar3 = this.f;
-        b bVar = cVar3.c;
-        boolean z11 = cVar2.d > 0;
-        b bVar2 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
-        if (bVar != bVar2) {
-            cVar3.a(bVar2, false);
+        c cVar = this.f;
+        b bVar3 = cVar.c;
+        boolean z11 = bVar2.d > 0;
+        b bVar4 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
+        if (bVar3 != bVar4) {
+            cVar.a(bVar4, false);
         }
         int i11 = this.s;
         if (i11 == 2) {
             this.v = 0;
         }
-        if (i11 == 3 && cVar2.d > 0) {
+        if (i11 == 3 && bVar2.d > 0) {
             this.v = 0;
         }
-        i0.c a2 = i0.c.a(cVar2, i0.c.b(0, 0, 0, this.v));
+        i0.b a2 = i0.b.a(bVar2, i0.b.b(0, 0, 0, this.v));
         int i12 = a2.c;
         int i13 = a2.b;
         int i14 = a2.a;
         int i15 = a2.d;
-        i0.c a10 = i0.c.a(cVar, a2);
+        i0.b a10 = i0.b.a(bVar, a2);
         int i16 = a10.d;
         int i17 = a10.c;
         int i18 = a10.b;
@@ -182,7 +182,7 @@ public class i implements g, f, d {
                 eVar = eVar2;
                 i10 = i17;
                 if (!nVar2.b(i19, i18, i17, i16) && !nVar.b(i14, i13, i12, i15)) {
-                    if (bVar != bVar2) {
+                    if (bVar3 != bVar4) {
                         runnable.run();
                     }
                 }

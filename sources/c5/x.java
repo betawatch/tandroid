@@ -13,13 +13,13 @@ import android.os.RemoteException;
 import android.text.TextUtils;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import com.google.android.gms.internal.play_billing.a4;
-import com.google.android.gms.internal.play_billing.c4;
+import com.google.android.gms.internal.play_billing.b4;
 import com.google.android.gms.internal.play_billing.d4;
+import com.google.android.gms.internal.play_billing.e4;
 import com.google.android.gms.internal.play_billing.h3;
 import com.google.android.gms.internal.play_billing.i3;
 import com.google.android.gms.internal.play_billing.j3;
-import com.google.android.gms.internal.play_billing.k3;
-import com.google.android.gms.internal.play_billing.z3;
+import com.google.android.gms.internal.play_billing.l3;
 import e0.m0;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,9 +29,9 @@ import java.util.concurrent.Callable;
 import v7.y8;
 import w7.la;
 import x7.fa;
-import z7.yf;
+import z7.xf;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Callable {
     public final /* synthetic */ int a;
@@ -181,31 +181,31 @@ public final /* synthetic */ class x implements Callable {
                                             h3 s10 = i3.s();
                                             s10.c();
                                             i3.r((i3) s10.b, 6);
-                                            c4 r10 = d4.r();
+                                            d4 r10 = e4.r();
                                             r10.d(false);
                                             r10.e();
                                             if (a10 != null) {
                                                 long longValue = a10.longValue();
                                                 r10.c();
-                                                d4.p((d4) r10.b, longValue);
+                                                e4.p((e4) r10.b, longValue);
                                             }
                                             c cVar5 = yVar.d;
                                             s10.c();
-                                            i3.q((i3) s10.b, (d4) r10.a());
+                                            i3.q((i3) s10.b, (e4) r10.a());
                                             cVar5.i((i3) s10.a());
                                         } else {
-                                            z3 p5 = a4.p();
-                                            j3 s11 = k3.s();
+                                            a4 p5 = b4.p();
+                                            j3 s11 = l3.s();
                                             s11.c();
-                                            k3.r((k3) s11.b, 0);
+                                            l3.r((l3) s11.b, 0);
                                             p5.c();
-                                            a4.n((a4) p5.b, (k3) s11.a());
+                                            b4.n((b4) p5.b, (l3) s11.a());
                                             if (a10 != null) {
                                                 long longValue2 = a10.longValue();
                                                 p5.c();
-                                                a4.o((a4) p5.b, longValue2);
+                                                b4.o((b4) p5.b, longValue2);
                                             }
-                                            yVar.d.h.S((a4) p5.a());
+                                            yVar.d.h.S((b4) p5.a());
                                         }
                                     } catch (Throwable th2) {
                                         com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
@@ -294,9 +294,9 @@ public final /* synthetic */ class x implements Callable {
                 ((com.google.firebase.messaging.u) this.b).run();
                 return null;
             default:
-                yf yfVar = (yf) this.b;
-                yfVar.getClass();
-                return n6.i.c.a(yfVar.g);
+                xf xfVar = (xf) this.b;
+                xfVar.getClass();
+                return n6.i.c.a(xfVar.g);
         }
     }
 }

@@ -33,7 +33,7 @@ import w0.h;
 import w7.i8;
 import x5.g;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -133,7 +133,7 @@ public final class e extends b1.d {
                     String str6 = kVar3.b;
                     x0.a aVar = (x0.a) f.a.get(rVar);
                     if (aVar == null) {
-                        throw new y0.b(new x0.a(26), r.c.g("unknown fido gms exception - ", str6));
+                        throw new y0.b(new x0.a(26), r4.c.h("unknown fido gms exception - ", str6));
                     }
                     if (rVar == r.w && str6 != null && zd.j.b(str6, "Unable to get sync account")) {
                         throw new w0.g("Passkey retrieval was cancelled by the user.");
@@ -277,7 +277,7 @@ public final class e extends b1.d {
                 b10.c = new ag.b(a2, eVar, 23);
                 b10.b = false;
                 b10.a = 1553;
-                a2.e(0, b10.a()).addOnSuccessListener(new a1.c(new b1.f(i10, cancellationSignal, this), 12)).addOnFailureListener(new h0(3, this, cancellationSignal));
+                a2.e(0, b10.a()).addOnSuccessListener(new a1.c(new b1.f(i10, cancellationSignal, this), 12)).addOnFailureListener(new h0(4, this, cancellationSignal));
                 return;
             }
             p pVar = (p) it.next();

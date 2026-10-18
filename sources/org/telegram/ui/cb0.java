@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cb0 extends org.telegram.ui.ActionBar.n2 {
     public org.telegram.ui.Cells.l4 E;
@@ -94,7 +94,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.n2 {
                 i12 = i11;
                 z10 = true;
             }
-            i11 = com.google.android.gms.internal.cast.a6.f(iArr[i11], i11, 1, arrayList);
+            i11 = com.google.android.gms.internal.play_billing.k3.f(iArr[i11], i11, 1, arrayList);
         }
         if (!z10) {
             arrayList.add(Integer.valueOf(currentTime));
@@ -146,7 +146,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.n2 {
                 i13 = i12;
                 z10 = true;
             }
-            i12 = com.google.android.gms.internal.cast.a6.f(iArr[i12], i12, 1, arrayList);
+            i12 = com.google.android.gms.internal.play_billing.k3.f(iArr[i12], i12, 1, arrayList);
         }
         if (!z10) {
             arrayList.add(Integer.valueOf(i10));
@@ -175,7 +175,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.n2 {
                 this.c.b(3, null, "1", "10", "100", LocaleController.getString(R.string.NoLimit));
                 return;
             }
-            i10 = com.google.android.gms.internal.cast.a6.f(iArr[i10], i10, 1, arrayList);
+            i10 = com.google.android.gms.internal.play_billing.k3.f(iArr[i10], i10, 1, arrayList);
         }
     }
 
@@ -732,7 +732,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.n2 {
             if (i13 >= iArr.length) {
                 break;
             }
-            i13 = com.google.android.gms.internal.cast.a6.f(iArr[i13], i13, 1, arrayList);
+            i13 = com.google.android.gms.internal.play_billing.k3.f(iArr[i13], i13, 1, arrayList);
         }
         this.d.b(3, null, LocaleController.formatPluralString("Hours", 1, new Object[0]), LocaleController.formatPluralString("Days", 1, new Object[0]), LocaleController.formatPluralString("Weeks", 1, new Object[0]), LocaleController.getString(R.string.NoLimit));
         xa0Var.addView(this.w, w7.z5.n(-1, 50));

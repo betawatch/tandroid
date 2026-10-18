@@ -12,11 +12,11 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.la0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n8 implements Runnable {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ fa b;
+    public final /* synthetic */ ga b;
     public final /* synthetic */ TLObject c;
     public final /* synthetic */ TLRPC.TL_error d;
     public final /* synthetic */ Utilities.Callback2 e;
@@ -28,8 +28,8 @@ public final /* synthetic */ class n8 implements Runnable {
     public final /* synthetic */ TLObject v;
     public final /* synthetic */ TLObject w;
 
-    public /* synthetic */ n8(fa faVar, TLObject tLObject, TLRPC.TL_error tL_error, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j10, String str, long j11, TLObject tLObject2, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.b = faVar;
+    public /* synthetic */ n8(ga gaVar, TLObject tLObject, TLRPC.TL_error tL_error, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j10, String str, long j11, TLObject tLObject2, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.b = gaVar;
         this.c = tLObject;
         this.d = tL_error;
         this.e = callback2;
@@ -48,7 +48,7 @@ public final /* synthetic */ class n8 implements Runnable {
         la0 la0Var2;
         switch (this.a) {
             case 0:
-                fa faVar = this.b;
+                ga gaVar = this.b;
                 TLObject tLObject = this.c;
                 TLRPC.TL_error tL_error = this.d;
                 Utilities.Callback2 callback2 = this.e;
@@ -63,15 +63,15 @@ public final /* synthetic */ class n8 implements Runnable {
                 org.telegram.ui.Components.xc X = (R == null || R.visibleDialog != null) ? org.telegram.ui.Components.xc.X() : org.telegram.ui.Components.xc.a0(R);
                 if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error != null && "BALANCE_TOO_LOW".equals(tL_error.text)) {
-                        if (!MessagesController.getInstance(faVar.a).starsPurchaseAvailable()) {
+                        if (!MessagesController.getInstance(gaVar.a).starsPurchaseAvailable()) {
                             callback2.run(Boolean.FALSE, null);
-                            fa.e0(context, d6Var);
+                            ga.e0(context, d6Var);
                             break;
                         } else {
                             boolean[] zArr = {false};
-                            bd bdVar = new bd(context, d6Var, j10, 6, str, new b4(faVar, zArr, tL_payments_paymentFormStarGift, starGift, j11, callback2), 0L);
-                            bdVar.setOnDismissListener(new p8(callback2, zArr, 2));
-                            bdVar.show();
+                            cd cdVar = new cd(context, d6Var, j10, 6, str, new z3(gaVar, zArr, tL_payments_paymentFormStarGift, starGift, j11, callback2), 0L);
+                            cdVar.setOnDismissListener(new p8(callback2, zArr, 2));
+                            cdVar.show();
                             break;
                         }
                     } else if (tL_error != null && "STARGIFT_USAGE_LIMITED".equals(tL_error.text)) {
@@ -79,22 +79,22 @@ public final /* synthetic */ class n8 implements Runnable {
                         break;
                     } else {
                         callback2.run(Boolean.FALSE, null);
-                        i0.a.s(R.string.UnknownErrorCode, new Object[]{tL_error != null ? tL_error.text : "FAILED_SEND_STARS"}, X, R.raw.error, 36);
+                        i2.d.s(R.string.UnknownErrorCode, new Object[]{tL_error != null ? tL_error.text : "FAILED_SEND_STARS"}, X, R.raw.error, 36);
                         break;
                     }
                 } else {
-                    Utilities.stageQueue.postRunnable(new o8(faVar, (TLRPC.TL_payments_paymentResult) tLObject, 3));
-                    faVar.D = false;
-                    faVar.E = true;
-                    faVar.G = 0L;
-                    faVar.V();
-                    faVar.Q(j11);
-                    faVar.T(true);
+                    Utilities.stageQueue.postRunnable(new o8(gaVar, (TLRPC.TL_payments_paymentResult) tLObject, 3));
+                    gaVar.D = false;
+                    gaVar.E = true;
+                    gaVar.G = 0L;
+                    gaVar.V();
+                    gaVar.Q(j11);
+                    gaVar.T(true);
                     callback2.run(Boolean.TRUE, null);
-                    if (BirthdayController.getInstance(faVar.a).contains(j11)) {
-                        MessagesController.getInstance(faVar.a).getMainSettings().edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j11, false).apply();
+                    if (BirthdayController.getInstance(gaVar.a).contains(j11)) {
+                        MessagesController.getInstance(gaVar.a).getMainSettings().edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j11, false).apply();
                     }
-                    MessagesController.getInstance(faVar.a).getMainSettings().edit().putBoolean("show_gift_for_" + j11, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j11, true).apply();
+                    MessagesController.getInstance(gaVar.a).getMainSettings().edit().putBoolean("show_gift_for_" + j11, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j11, true).apply();
                     LaunchActivity launchActivity = LaunchActivity.H1;
                     if (launchActivity != null && (la0Var = launchActivity.x0) != null) {
                         la0Var.c(true);
@@ -103,7 +103,7 @@ public final /* synthetic */ class n8 implements Runnable {
                 }
                 break;
             default:
-                fa faVar2 = this.b;
+                ga gaVar2 = this.b;
                 TLObject tLObject2 = this.c;
                 TLRPC.TL_error tL_error2 = this.d;
                 Utilities.Callback2 callback22 = this.e;
@@ -118,15 +118,15 @@ public final /* synthetic */ class n8 implements Runnable {
                 org.telegram.ui.Components.xc X2 = (R2 == null || R2.visibleDialog != null) ? org.telegram.ui.Components.xc.X() : org.telegram.ui.Components.xc.a0(R2);
                 if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
                     if (tL_error2 != null && "BALANCE_TOO_LOW".equals(tL_error2.text)) {
-                        if (!MessagesController.getInstance(faVar2.a).starsPurchaseAvailable()) {
+                        if (!MessagesController.getInstance(gaVar2.a).starsPurchaseAvailable()) {
                             callback22.run(Boolean.FALSE, null);
-                            fa.e0(context2, d6Var2);
+                            ga.e0(context2, d6Var2);
                             break;
                         } else {
                             boolean[] zArr2 = {false};
-                            bd bdVar2 = new bd(context2, d6Var2, j12, 6, str2, new b4(faVar2, zArr2, j13, tLObject3, tL_textWithEntities, callback22), 0L);
-                            bdVar2.setOnDismissListener(new p8(callback22, zArr2, 1));
-                            bdVar2.show();
+                            cd cdVar2 = new cd(context2, d6Var2, j12, 6, str2, new z3(gaVar2, zArr2, j13, tLObject3, tL_textWithEntities, callback22), 0L);
+                            cdVar2.setOnDismissListener(new p8(callback22, zArr2, 1));
+                            cdVar2.show();
                             break;
                         }
                     } else if (tL_error2 != null && "STARGIFT_USAGE_LIMITED".equals(tL_error2.text)) {
@@ -134,17 +134,17 @@ public final /* synthetic */ class n8 implements Runnable {
                         break;
                     } else {
                         callback22.run(Boolean.FALSE, null);
-                        i0.a.s(R.string.UnknownErrorCode, new Object[]{tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS"}, X2, R.raw.error, 36);
+                        i2.d.s(R.string.UnknownErrorCode, new Object[]{tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS"}, X2, R.raw.error, 36);
                         break;
                     }
                 } else {
-                    Utilities.stageQueue.postRunnable(new o8(faVar2, (TLRPC.TL_payments_paymentResult) tLObject2, 2));
-                    faVar2.T(true);
+                    Utilities.stageQueue.postRunnable(new o8(gaVar2, (TLRPC.TL_payments_paymentResult) tLObject2, 2));
+                    gaVar2.T(true);
                     callback22.run(Boolean.TRUE, null);
-                    if (BirthdayController.getInstance(faVar2.a).contains(j13)) {
-                        MessagesController.getInstance(faVar2.a).getMainSettings().edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j13, false).apply();
+                    if (BirthdayController.getInstance(gaVar2.a).contains(j13)) {
+                        MessagesController.getInstance(gaVar2.a).getMainSettings().edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j13, false).apply();
                     }
-                    MessagesController.getInstance(faVar2.a).getMainSettings().edit().putBoolean("show_gift_for_" + j13, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j13, true).apply();
+                    MessagesController.getInstance(gaVar2.a).getMainSettings().edit().putBoolean("show_gift_for_" + j13, true).putBoolean(Calendar.getInstance().get(1) + "show_gift_for_" + j13, true).apply();
                     LaunchActivity launchActivity2 = LaunchActivity.H1;
                     if (launchActivity2 != null && (la0Var2 = launchActivity2.x0) != null) {
                         la0Var2.c(true);
@@ -155,8 +155,8 @@ public final /* synthetic */ class n8 implements Runnable {
         }
     }
 
-    public /* synthetic */ n8(fa faVar, TLObject tLObject, TLRPC.TL_error tL_error, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j10, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j11) {
-        this.b = faVar;
+    public /* synthetic */ n8(ga gaVar, TLObject tLObject, TLRPC.TL_error tL_error, Utilities.Callback2 callback2, Context context, org.telegram.ui.ActionBar.d6 d6Var, long j10, String str, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j11) {
+        this.b = gaVar;
         this.c = tLObject;
         this.d = tL_error;
         this.e = callback2;

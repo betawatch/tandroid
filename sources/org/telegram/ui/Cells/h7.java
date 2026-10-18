@@ -35,7 +35,7 @@ import org.telegram.ui.Components.lt;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.g10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class h7 extends FrameLayout implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.w5 E;
@@ -639,7 +639,7 @@ public class h7 extends FrameLayout implements DownloadController.FileDownloadPr
                     FileLog.e(e7);
                 }
                 setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(56.0f) + (this.M != null ? AndroidUtilities.dp(18.0f) : 0) + (this.c ? 1 : 0));
-                int B = LocaleController.isRTL ? org.telegram.messenger.q.B(8.0f, View.MeasureSpec.getSize(i10), AndroidUtilities.dp(52.0f)) : AndroidUtilities.dp(8.0f);
+                int B = LocaleController.isRTL ? org.telegram.messenger.g0.B(8.0f, View.MeasureSpec.getSize(i10), AndroidUtilities.dp(52.0f)) : AndroidUtilities.dp(8.0f);
                 int dp3 = AndroidUtilities.dp(f7) + B;
                 this.h = dp3;
                 int dp22 = AndroidUtilities.dp(6.0f);

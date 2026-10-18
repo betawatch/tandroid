@@ -1,8 +1,8 @@
 package gi;
 
-import ai.bb;
+import ai.cb;
 import ai.k7;
-import ai.ta;
+import ai.ua;
 import ai.v9;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,10 @@ import org.telegram.ui.Components.k10;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.p6;
-import org.telegram.ui.xq0;
 import org.telegram.ui.yh1;
+import org.telegram.ui.yq0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -38,13 +38,13 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new bb((TLRPC.UserFull) obj, (org.telegram.ui.web.q) this.c, this.b, (TLRPC.User) this.d, 3));
+                AndroidUtilities.runOnUIThread(new cb((TLRPC.UserFull) obj, (org.telegram.ui.web.r) this.c, this.b, (TLRPC.User) this.d, 3));
                 break;
             case 1:
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
                 TLRPC.Chat chat2 = (TLRPC.Chat) obj;
-                n2Var.showDialog(new ji.a(n2Var.getContext(), chat, -chat2.id, new ta(n2Var, this.b, chat2, chat, 1)));
+                n2Var.showDialog(new ji.a(n2Var.getContext(), chat, -chat2.id, new ua(n2Var, this.b, chat2, chat, 1)));
                 break;
             case 2:
                 p6 p6Var = (p6) this.c;
@@ -64,7 +64,7 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                 callback.run(Integer.valueOf(i11));
                 break;
             case 4:
-                Utilities.themeQueue.postRunnable(new yh1((rg.m2) this.c, this.b, (List) obj, new ArrayList(), (xq0) this.d, 1));
+                Utilities.themeQueue.postRunnable(new yh1((rg.m2) this.c, this.b, (List) obj, new ArrayList(), (yq0) this.d, 1));
                 break;
             default:
                 yh.q2 q2Var = (yh.q2) this.c;
@@ -82,7 +82,7 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                     if (arrayList.size() <= 1) {
                         if (arrayList.size() == 1) {
                             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            qc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, k7.Q1(savedStarGift.gift), c10.title)));
+                            qc R = xc.a0(n2Var2).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, k7.R1(savedStarGift.gift), c10.title)));
                             R.r = false;
                             R.j();
                             break;

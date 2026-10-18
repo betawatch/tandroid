@@ -7,10 +7,10 @@ import android.graphics.Path;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p0 extends i {
     public final /* synthetic */ int n = 2;
@@ -34,7 +34,7 @@ public final class p0 extends i {
                 float f11 = dp + dp2;
                 float f12 = f11 * 2.0f;
                 float measuredWidth = getMeasuredWidth() - f12;
-                float z10 = a6.z(getMeasuredHeight(), f12, 2.0f, f11);
+                float z10 = k3.z(getMeasuredHeight(), f12, 2.0f, f11);
                 if (f7 <= f11 - dp2 || f10 <= z10 - dp2 || f7 >= f11 + dp2 || f10 >= z10 + dp2) {
                     float f13 = f11 + measuredWidth;
                     if (f7 <= f13 - dp2 || f10 <= z10 - dp2 || f7 >= f13 + dp2 || f10 >= z10 + dp2) {
@@ -47,7 +47,7 @@ public final class p0 extends i {
                 float f14 = dp3 + dp4;
                 float f15 = f14 * 2.0f;
                 float measuredWidth2 = getMeasuredWidth() - f15;
-                float z11 = a6.z(getMeasuredHeight(), f15, 2.0f, f14);
+                float z11 = k3.z(getMeasuredHeight(), f15, 2.0f, f14);
                 if (f7 <= f14 - dp4 || f10 <= z11 - dp4 || f7 >= f14 + dp4 || f10 >= z11 + dp4) {
                     float f16 = f14 + measuredWidth2;
                     if (f7 <= f16 - dp4 || f10 <= z11 - dp4 || f7 >= f16 + dp4 || f10 >= z11 + dp4) {
@@ -92,7 +92,7 @@ public final class p0 extends i {
                 float f25 = dp9 + dp10;
                 float f26 = f25 * 2.0f;
                 float measuredWidth5 = getMeasuredWidth() - f26;
-                float z12 = a6.z(getMeasuredHeight(), f26, 2.0f, f25);
+                float z12 = k3.z(getMeasuredHeight(), f26, 2.0f, f25);
                 if (f7 <= f25 - dp10 || f10 <= z12 - dp10 || f7 >= f25 + dp10 || f10 >= z12 + dp10) {
                     float f27 = f25 + measuredWidth5;
                     if (f7 <= f27 - dp10 || f10 <= z12 - dp10 || f7 >= f27 + dp10 || f10 >= z12 + dp10) {
@@ -105,7 +105,7 @@ public final class p0 extends i {
                 float f28 = dp11 + dp12;
                 float f29 = f28 * 2.0f;
                 float measuredWidth6 = getMeasuredWidth() - f29;
-                float z13 = a6.z(getMeasuredHeight(), f29, 2.0f, f28);
+                float z13 = k3.z(getMeasuredHeight(), f29, 2.0f, f28);
                 if (f7 <= f28 - dp12 || f10 <= z13 - dp12 || f7 >= f28 + dp12 || f10 >= z13 + dp12) {
                     float f30 = f28 + measuredWidth6;
                     if (f7 <= f30 - dp12 || f10 <= z13 - dp12 || f7 >= f30 + dp12 || f10 >= z13 + dp12) {

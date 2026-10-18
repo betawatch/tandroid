@@ -2,7 +2,7 @@ package org.telegram.ui.Cells;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ya implements View.OnLongClickListener {
     public final /* synthetic */ int a = 1;
@@ -10,8 +10,8 @@ public final /* synthetic */ class ya implements View.OnLongClickListener {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ ya(ai.x9 x9Var, int i10, Runnable runnable) {
-        this.c = x9Var;
+    public /* synthetic */ ya(ai.y9 y9Var, int i10, Runnable runnable) {
+        this.c = y9Var;
         this.b = i10;
         this.d = runnable;
     }
@@ -24,9 +24,9 @@ public final /* synthetic */ class ya implements View.OnLongClickListener {
                 za zaVar = (za) this.d;
                 return abVar.b(zaVar.h, this.b);
             default:
-                ai.x9 x9Var = (ai.x9) this.c;
+                ai.y9 y9Var = (ai.y9) this.c;
                 Runnable runnable = (Runnable) this.d;
-                x9Var.g(this.b, true);
+                y9Var.g(this.b, true);
                 runnable.run();
                 return true;
         }

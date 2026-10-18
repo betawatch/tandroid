@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class rf0 extends FrameLayout {
     public static final float N = AndroidUtilities.dp(20.0f);
@@ -61,9 +61,9 @@ public final class rf0 extends FrameLayout {
         int i10 = !this.K ? AndroidUtilities.statusBarHeight : 0;
         float height = getHeight();
         float f11 = dw0Var.b;
-        float z10 = com.google.android.gms.internal.cast.a6.z(height, f11, 2.0f, i10);
+        float z10 = com.google.android.gms.internal.play_billing.k3.z(height, f11, 2.0f, i10);
         float f12 = dw0Var.a;
-        return new PointF(f10, (this.e.y * f12) + org.telegram.messenger.q.x(f12, f11, 2.0f, z10));
+        return new PointF(f10, (this.e.y * f12) + org.telegram.messenger.g0.x(f12, f11, 2.0f, z10));
     }
 
     private float getActualInnerRadius() {
@@ -163,7 +163,7 @@ public final class rf0 extends FrameLayout {
                 int i13 = !z10 ? AndroidUtilities.statusBarHeight : 0;
                 float height = getHeight();
                 float f20 = dw0Var.b;
-                float z12 = com.google.android.gms.internal.cast.a6.z(height, f20, 2.0f, i13);
+                float z12 = com.google.android.gms.internal.play_billing.k3.z(height, f20, 2.0f, i13);
                 PointF pointF = new PointF(Math.max(width, Math.min(dw0Var.a + width, this.a.x + f18)), Math.max(z12, Math.min(f20 + z12, this.a.y + f19)));
                 float f21 = pointF.x - width;
                 float f22 = dw0Var.a;
@@ -191,7 +191,7 @@ public final class rf0 extends FrameLayout {
                 int i14 = !z10 ? AndroidUtilities.statusBarHeight : 0;
                 float height2 = getHeight();
                 float f27 = dw0Var.b;
-                float z16 = com.google.android.gms.internal.cast.a6.z(height2, f27, 2.0f, i14);
+                float z16 = com.google.android.gms.internal.play_billing.k3.z(height2, f27, 2.0f, i14);
                 PointF pointF2 = new PointF(Math.max(width2, Math.min(dw0Var.a + width2, this.a.x + f25)), Math.max(z16, Math.min(f27 + z16, this.a.y + f26)));
                 float f28 = pointF2.x - width2;
                 float f29 = dw0Var.a;

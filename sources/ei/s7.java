@@ -26,7 +26,6 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -38,7 +37,7 @@ import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class s7 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener, ne.d {
     public String A0;
@@ -466,11 +465,11 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
             return false;
         }
         String lowerCase = str3.toLowerCase();
-        if (lowerCase.startsWith(str) || wh.w(" ", str, lowerCase)) {
+        if (lowerCase.startsWith(str) || org.telegram.messenger.g0.w(" ", str, lowerCase)) {
             return true;
         }
         String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-        return translitSafe.startsWith(str2) || wh.w(" ", str2, translitSafe);
+        return translitSafe.startsWith(str2) || org.telegram.messenger.g0.w(" ", str2, translitSafe);
     }
 
     @Override // org.telegram.ui.Components.bb
@@ -540,11 +539,11 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
                 while (i12 < size2) {
                     Object obj2 = arrayList3.get(i12);
                     i12++;
-                    ai.ic icVar = new ai.ic(this, i14);
+                    ai.jc jcVar = new ai.jc(this, i14);
                     int i15 = org.telegram.ui.Cells.g7.a;
                     f61 J = f61.J(org.telegram.ui.Cells.g7.class);
                     J.G = (MessageObject) obj2;
-                    J.H = icVar;
+                    J.H = jcVar;
                     arrayList.add(J);
                     i11 += AndroidUtilities.dp(56.0f);
                 }
@@ -575,7 +574,7 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
         this.N0.set(0.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight, this.containerView.getMeasuredWidth(), AndroidUtilities.dp(64.0f) + org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
         ArrayList arrayList = this.M0;
         ArrayList arrayList2 = this.O0;
-        fVar.g(zf.e0.a(arrayList, 1, arrayList2), arrayList2);
+        fVar.g(zf.f0.a(arrayList, 1, arrayList2), arrayList2);
         fVar.e(this.p0, this.containerView.getMeasuredWidth(), this.containerView.getMeasuredHeight());
     }
 
@@ -676,7 +675,7 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
             tL_messages_searchGlobal.q = str4;
             tL_messages_searchGlobal.limit = 20;
             if (arrayList.size() > 0) {
-                MessageObject messageObject = (MessageObject) i0.a.h(1, arrayList);
+                MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
                 tL_messages_searchGlobal.offset_id = messageObject.getId();
                 tL_messages_searchGlobal.offset_rate = this.t0;
                 tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(this.currentAccount).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));

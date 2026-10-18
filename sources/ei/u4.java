@@ -9,7 +9,7 @@ import org.telegram.ui.Components.cn0;
 import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class u4 implements ValueAnimator.AnimatorUpdateLis
         switch (i10) {
             case 0:
                 f6 f6Var = (f6) obj;
-                f6Var.A1.a = i0.b.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
+                f6Var.A1.a = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
                 f6Var.T0.invalidate();
                 break;
             case 1:
@@ -47,7 +47,7 @@ public final /* synthetic */ class u4 implements ValueAnimator.AnimatorUpdateLis
             case 2:
                 org.telegram.ui.Components.p6 p6Var = (org.telegram.ui.Components.p6) obj;
                 p6Var.getClass();
-                p6Var.u(i0.b.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11));
+                p6Var.u(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11));
                 p6Var.invalidateSelf();
                 break;
             case 3:
@@ -73,7 +73,7 @@ public final /* synthetic */ class u4 implements ValueAnimator.AnimatorUpdateLis
                 break;
             default:
                 rg.m0 m0Var = (rg.m0) obj;
-                m0Var.K1.a = i0.b.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
+                m0Var.K1.a = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
                 m0Var.c1.invalidate();
                 break;
         }

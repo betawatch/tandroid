@@ -12,7 +12,7 @@ import java.util.Iterator;
 import kotlin.jvm.internal.i;
 import m1.j;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class g {
     public static void A(StringBuilder sb2, String str, String str2, String str3, String str4) {
@@ -26,15 +26,11 @@ public abstract /* synthetic */ class g {
         return ((f7 * f10) / f11) + f12;
     }
 
-    public static int C(int i10, int i11, int i12, int i13) {
-        return ((i10 / i11) * i12) + i13;
-    }
-
-    public static String D(String str, String str2, String str3) {
+    public static String C(String str, String str2, String str3) {
         return str + str2 + str3;
     }
 
-    public static /* synthetic */ int E(String str) {
+    public static /* synthetic */ int D(String str) {
         if (str == null) {
             throw new NullPointerException("Name is null");
         }
@@ -147,7 +143,7 @@ public abstract /* synthetic */ class g {
             return 0;
         }
         try {
-            return E(str);
+            return D(str);
         } catch (IllegalArgumentException unused) {
             return 0;
         }

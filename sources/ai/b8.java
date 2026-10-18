@@ -5,7 +5,7 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b8 implements q0.a {
     public final /* synthetic */ int a;
@@ -23,10 +23,10 @@ public final /* synthetic */ class b8 implements q0.a {
         switch (this.a) {
             case 0:
                 c5.i iVar = (c5.i) this.b;
-                sc scVar = (sc) this.c;
+                tc tcVar = (tc) this.c;
                 int i10 = iVar.a;
                 boolean z10 = i10 == 0;
-                AndroidUtilities.runOnUIThread(new x7(scVar, z10, z10 ? null : BillingController.getResponseCodeString(i10), 1));
+                AndroidUtilities.runOnUIThread(new x7(tcVar, z10, z10 ? null : BillingController.getResponseCodeString(i10), 1));
                 break;
             case 1:
                 c5.i iVar2 = (c5.i) this.b;
@@ -65,9 +65,9 @@ public final /* synthetic */ class b8 implements q0.a {
                 break;
             default:
                 c5.i iVar4 = (c5.i) this.b;
-                ug.t tVar = (ug.t) this.c;
+                ug.u uVar = (ug.u) this.c;
                 if (iVar4.a == 0) {
-                    AndroidUtilities.runOnUIThread(new tg.p(tVar, 6));
+                    AndroidUtilities.runOnUIThread(new tg.p(uVar, 6));
                     break;
                 }
                 break;

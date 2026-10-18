@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z2 extends FrameLayout {
     public final LinearLayout a;
@@ -104,7 +104,7 @@ public final class z2 extends FrameLayout {
         }
         k9Var.setCount(min);
         k9Var.setVisibility(min <= 0 ? 8 : 0);
-        k9Var.getLayoutParams().width = min <= 1 ? AndroidUtilities.dp(36.0f) : AndroidUtilities.dp(i0.a.g(min, 1, 18, 30));
+        k9Var.getLayoutParams().width = min <= 1 ? AndroidUtilities.dp(36.0f) : AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(min, 1, 18, 30));
         if (z10) {
             this.a.requestLayout();
         }

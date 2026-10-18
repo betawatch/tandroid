@@ -42,7 +42,7 @@ import org.telegram.ui.Components.wp;
 import org.telegram.ui.jm;
 import org.telegram.ui.ko;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -83,19 +83,19 @@ public final /* synthetic */ class t implements Runnable {
             case 2:
                 k7 k7Var = (k7) obj;
                 k7Var.getClass();
-                k7Var.I2(k7Var.j1, AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.Gift2ActionWearDone : R.string.Gift2ActionWearOffDone, k7Var.P1())), true);
+                k7Var.L2(k7Var.j1, AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.Gift2ActionWearDone : R.string.Gift2ActionWearOffDone, k7Var.Q1())), true);
                 break;
             case 3:
                 k7 k7Var2 = ((h5) obj).T;
-                TL_stars.SavedStarGift U1 = k7Var2.U1(z10);
-                if (U1 != null) {
+                TL_stars.SavedStarGift V1 = k7Var2.V1(z10);
+                if (V1 != null) {
                     k7Var2.e1 = true;
-                    k7Var2.C2(U1, k7Var2.G0);
+                    k7Var2.F2(V1, k7Var2.G0);
                 } else {
-                    TL_stars.TL_starGiftUnique V1 = k7Var2.V1(z10);
-                    if (V1 != null) {
+                    TL_stars.TL_starGiftUnique W1 = k7Var2.W1(z10);
+                    if (W1 != null) {
                         k7Var2.e1 = true;
-                        k7Var2.A2(V1.slug, V1, k7Var2.G0);
+                        k7Var2.D2(W1.slug, W1, k7Var2.G0);
                     }
                 }
                 k7Var2.U0 = -1;
@@ -169,7 +169,7 @@ public final /* synthetic */ class t implements Runnable {
                 if (!z10) {
                     v2Var.s(d3Var.G, d3Var.H);
                 }
-                NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.s(v2Var, 2));
+                NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.t(v2Var, 2));
                 break;
             case 11:
                 ((hi.s0) obj).f(z10, false);
@@ -177,10 +177,10 @@ public final /* synthetic */ class t implements Runnable {
             case 12:
                 k2.u uVar2 = (k2.u) ((qf.b) obj).c;
                 String str = e2.m0.a;
-                i2.g0 g0Var = ((i2.a0) uVar2).a;
-                if (g0Var.d0 != z10) {
-                    g0Var.d0 = z10;
-                    g0Var.m.e(23, new i2.w(i11, z10));
+                i2.h0 h0Var = ((i2.b0) uVar2).a;
+                if (h0Var.d0 != z10) {
+                    h0Var.d0 = z10;
+                    h0Var.m.e(23, new i2.x(i11, z10));
                     break;
                 }
                 break;

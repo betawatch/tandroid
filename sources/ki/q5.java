@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class q5 extends ViewGroup {
     public final RectF E;
@@ -813,9 +813,9 @@ public final class q5 extends ViewGroup {
         this.d = new int[i18];
         int dp5 = AndroidUtilities.dp(g6Var2.a.compact ? 20.0f : 50.0f);
         int i20 = this.a.a.compact ? 5 : 12;
-        int b10 = i19 == 2 ? org.telegram.messenger.q.b(i20 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
+        int b10 = i19 == 2 ? org.telegram.messenger.g0.b(i20 * 4, size / 2, 0) : Math.max(0, Math.round(size / 1.5f));
         float f7 = i20 * 2;
-        int y3 = org.telegram.messenger.q.y(f7, b10, dp5);
+        int y3 = org.telegram.messenger.g0.y(f7, b10, dp5);
         for (int i21 = 0; i21 < i19; i21++) {
             this.c[i21] = dp5;
         }

@@ -43,7 +43,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i4 implements Runnable {
     public final /* synthetic */ int a;
@@ -190,15 +190,15 @@ public final /* synthetic */ class i4 implements Runnable {
                 return;
             case 4:
                 wl wlVar = (wl) this.c;
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) this.d;
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.d;
                 int i24 = this.b;
                 wlVar.getClass();
-                MessageObject messageObject = x0Var.getMessageObject();
+                MessageObject messageObject = w0Var.getMessageObject();
                 fm fmVar = wlVar.a;
                 fmVar.Q.j(i24, messageObject.getId(), true, messageObject.getDialogId() == fmVar.Q.L6 ? 1 : 0, true, 0);
                 return;
             case 5:
-                org.telegram.ui.Wallet.l5.C0(((org.telegram.ui.Components.al) this.c).getContext(), this.b, (org.telegram.ui.ActionBar.d6) this.d);
+                org.telegram.ui.Wallet.m5.C0(((org.telegram.ui.Components.al) this.c).getContext(), this.b, (org.telegram.ui.ActionBar.d6) this.d);
                 return;
             case 6:
                 org.telegram.ui.Components.fo foVar = (org.telegram.ui.Components.fo) this.c;
@@ -333,7 +333,7 @@ public final /* synthetic */ class i4 implements Runnable {
                 if (arrayList4.isEmpty()) {
                     tL_channels_searchPosts.offset_peer = new TLRPC.TL_inputPeerEmpty();
                 } else {
-                    MessageObject messageObject2 = (MessageObject) i0.a.h(r10, arrayList4);
+                    MessageObject messageObject2 = (MessageObject) i2.d.h(r10, arrayList4);
                     tL_channels_searchPosts.offset_rate = n40Var.Z;
                     tL_channels_searchPosts.offset_peer = MessagesController.getInstance(i33).getInputPeer(messageObject2.messageOwner.peer_id);
                 }
@@ -735,7 +735,7 @@ public final /* synthetic */ class i4 implements Runnable {
                 if (i49 != dv0Var.E) {
                     return;
                 }
-                dv0Var.y = ConnectionsManager.getInstance(dv0Var.d).sendRequest(tL_messages_search, new ai.m2(dv0Var, i49, i18));
+                dv0Var.y = ConnectionsManager.getInstance(dv0Var.d).sendRequest(tL_messages_search, new ai.n2(dv0Var, i49, i18));
                 return;
             case 22:
                 org.telegram.ui.Components.dv0 dv0Var2 = (org.telegram.ui.Components.dv0) this.c;

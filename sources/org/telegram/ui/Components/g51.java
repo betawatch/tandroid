@@ -32,7 +32,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProxyListActivity;
 import org.telegram.ui.jh1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g51 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
         this.c = obj2;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:201:0x05aa  */
+    /* JADX WARN: Removed duplicated region for block: B:202:0x05ac  */
     @Override // android.view.View.OnClickListener
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -53,11 +53,12 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
     public final void onClick(View view) {
         int i10;
         int i11 = 18;
-        int i12 = 5;
+        int i12 = 10;
+        int i13 = 5;
         ArrayList arrayList = null;
-        int i13 = 2;
-        int i14 = 0;
-        int i15 = 1;
+        int i14 = 2;
+        int i15 = 0;
+        int i16 = 1;
         switch (this.a) {
             case 0:
                 org.telegram.ui.tk tkVar = (org.telegram.ui.tk) this.b;
@@ -67,7 +68,7 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
             case 1:
                 UndoView undoView = (UndoView) this.b;
                 TLRPC.Message message = (TLRPC.Message) this.c;
-                int i16 = UndoView.e0;
+                int i17 = UndoView.e0;
                 undoView.e(1, true);
                 TLRPC.TL_payments_getPaymentReceipt tL_payments_getPaymentReceipt = new TLRPC.TL_payments_getPaymentReceipt();
                 tL_payments_getPaymentReceipt.msg_id = message.id;
@@ -150,7 +151,7 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                 break;
             case 7:
                 org.telegram.ui.hs hsVar = (org.telegram.ui.hs) this.b;
-                hsVar.showDialog(f5.l(hsVar.getParentActivity(), LocaleController.formatString(R.string.UserSuggestBirthdayTitle, UserObject.getForcedFirstName((TLRPC.User) this.c)), LocaleController.getString(R.string.UserSuggestBirthdayButton), null, new org.telegram.ui.v3(hsVar, i12), null, false, false, hsVar.r).a);
+                hsVar.showDialog(f5.l(hsVar.getParentActivity(), LocaleController.formatString(R.string.UserSuggestBirthdayTitle, UserObject.getForcedFirstName((TLRPC.User) this.c)), LocaleController.getString(R.string.UserSuggestBirthdayButton), null, new org.telegram.ui.v3(hsVar, i13), null, false, false, hsVar.r).a);
                 break;
             case 8:
                 org.telegram.ui.ct ctVar = (org.telegram.ui.ct) this.b;
@@ -236,16 +237,16 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                         arrayList = cVar.h;
                     }
                     if (arrayList != null) {
-                        for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                            if (((bi.b) arrayList.get(i17)).d == intValue2) {
+                        for (int i18 = 0; i18 < arrayList.size(); i18++) {
+                            if (((bi.b) arrayList.get(i18)).d == intValue2) {
                                 if (z16) {
-                                    if (!hashSet.contains(arrayList.get(i17))) {
-                                        hashSet.add((bi.b) arrayList.get(i17));
-                                        cVar.g((bi.b) arrayList.get(i17), true);
+                                    if (!hashSet.contains(arrayList.get(i18))) {
+                                        hashSet.add((bi.b) arrayList.get(i18));
+                                        cVar.g((bi.b) arrayList.get(i18), true);
                                     }
-                                } else if (hashSet.contains(arrayList.get(i17))) {
-                                    hashSet.remove(arrayList.get(i17));
-                                    cVar.g((bi.b) arrayList.get(i17), false);
+                                } else if (hashSet.contains(arrayList.get(i18))) {
+                                    hashSet.remove(arrayList.get(i18));
+                                    cVar.g((bi.b) arrayList.get(i18), false);
                                 }
                             }
                         }
@@ -285,7 +286,7 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                 org.telegram.ui.ey.D0((org.telegram.ui.ey) this.b, (BirthdayController.BirthdayState) this.c);
                 break;
             case 15:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.nt(i13, (org.telegram.ui.ey) this.b, (String) this.c), 250L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.nt(i14, (org.telegram.ui.ey) this.b, (String) this.c), 250L);
                 break;
             case 16:
                 org.telegram.ui.n10 n10Var = (org.telegram.ui.n10) this.b;
@@ -301,26 +302,23 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                 dialogFilter.order = n10Var.e.getMessagesController().getDialogFilters().size();
                 dialogFilter.unreadCount = -1;
                 dialogFilter.pendingUnreadCount = -1;
-                int i18 = 0;
-                while (i18 < 2) {
+                int i19 = 0;
+                while (i19 < 2) {
                     TLRPC.DialogFilter dialogFilter2 = suggestedFilter.filter;
-                    ArrayList<TLRPC.InputPeer> arrayList4 = i18 == 0 ? dialogFilter2.include_peers : dialogFilter2.exclude_peers;
-                    ArrayList<Long> arrayList5 = i18 == 0 ? dialogFilter.alwaysShow : dialogFilter.neverShow;
+                    ArrayList<TLRPC.InputPeer> arrayList4 = i19 == 0 ? dialogFilter2.include_peers : dialogFilter2.exclude_peers;
+                    ArrayList<Long> arrayList5 = i19 == 0 ? dialogFilter.alwaysShow : dialogFilter.neverShow;
                     int size = arrayList4.size();
-                    int i19 = 0;
-                    while (i19 < size) {
-                        TLRPC.InputPeer inputPeer = arrayList4.get(i19);
+                    int i20 = 0;
+                    while (i20 < size) {
+                        TLRPC.InputPeer inputPeer = arrayList4.get(i20);
                         long j10 = inputPeer.user_id;
                         if (j10 == 0) {
                             long j11 = inputPeer.chat_id;
-                            if (j11 == 0) {
-                                j11 = inputPeer.channel_id;
-                            }
-                            j10 = -j11;
+                            j10 = j11 != 0 ? -j11 : -inputPeer.channel_id;
                         }
-                        i19 = com.google.android.gms.internal.cast.a6.h(j10, arrayList5, i19, 1);
+                        i20 = com.google.android.gms.internal.play_billing.k3.h(j10, arrayList5, i20, 1);
                     }
-                    i18++;
+                    i19++;
                 }
                 TLRPC.DialogFilter dialogFilter3 = suggestedFilter.filter;
                 if (dialogFilter3.groups) {
@@ -388,8 +386,8 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                     xj0Var.d();
                     int[] iArr = {(xj0Var.getMeasuredWidth() / 2) + r14, (xj0Var.getMeasuredHeight() / 2) + r14};
                     xj0Var.getLocationInWindow(iArr);
-                    int i20 = iArr[0];
-                    int i21 = iArr[1];
+                    int i21 = iArr[0];
+                    int i22 = iArr[1];
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, O0, Boolean.FALSE, iArr, -1, Boolean.valueOf(z17), xj0Var);
                     xj0Var.setContentDescription(LocaleController.getString(!q6 ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
                     break;
@@ -404,17 +402,17 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                     bundle.putBoolean("onlySelect", true);
                     bundle.putBoolean("onlySelect", true);
                     bundle.putBoolean("checkCanWrite", false);
-                    int i22 = x70Var.c0;
-                    if (i22 == 1) {
+                    int i23 = x70Var.c0;
+                    if (i23 == 1) {
                         bundle.putInt("dialogsType", 6);
-                    } else if (i22 == 2) {
+                    } else if (i23 == 2) {
                         bundle.putInt("dialogsType", 5);
                     } else {
                         bundle.putInt("dialogsType", 4);
                     }
                     bundle.putBoolean("allowGlobalSearch", false);
                     org.telegram.ui.ey eyVar3 = new org.telegram.ui.ey(bundle);
-                    eyVar3.C2 = new org.telegram.ui.ov(x70Var, eyVar3);
+                    eyVar3.C2 = new org.telegram.ui.zu(i12, x70Var, eyVar3);
                     n2Var2.presentFragment(eyVar3);
                     break;
                 } else {
@@ -432,14 +430,14 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                 Pattern pattern = LaunchActivity.C1;
                 Integer num = (Integer) view.getTag();
                 localeInfoArr[0] = ((org.telegram.ui.Cells.p4) view).getCurrentLocale();
-                int i23 = 0;
-                while (i23 < 2) {
-                    p4VarArr[i23].a.a(i23 == num.intValue(), true);
-                    i23++;
+                int i24 = 0;
+                while (i24 < 2) {
+                    p4VarArr[i24].a.a(i24 == num.intValue(), true);
+                    i24++;
                 }
                 break;
             case 24:
-                f5.x((Context) this.c, LocaleController.getString(R.string.ExpireAfter), LocaleController.getString(R.string.SetTimeLimit), -1L, new org.telegram.ui.sa0((org.telegram.ui.cb0) this.b, i14));
+                f5.x((Context) this.c, LocaleController.getString(R.string.ExpireAfter), LocaleController.getString(R.string.SetTimeLimit), -1L, new org.telegram.ui.sa0((org.telegram.ui.cb0) this.b, i15));
                 break;
             case 25:
                 org.telegram.ui.cb0 cb0Var = (org.telegram.ui.cb0) this.b;
@@ -447,9 +445,9 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                 if (cb0Var.e == null) {
                     org.telegram.ui.za0 za0Var = cb0Var.f;
                     if (za0Var.e.h) {
-                        int i24 = -cb0Var.N;
-                        cb0Var.N = i24;
-                        AndroidUtilities.shakeViewSpring(za0Var, i24);
+                        int i25 = -cb0Var.N;
+                        cb0Var.N = i25;
+                        AndroidUtilities.shakeViewSpring(za0Var, i25);
                         break;
                     } else {
                         org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) view;
@@ -461,14 +459,14 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                             cb0Var.f.setChecked(false);
                             cb0Var.f.setCheckBoxIcon(R.drawable.permission_locked);
                             cb0Var.h.setText(LocaleController.getString(R.string.ApproveNewMembersDescriptionFrozen));
-                            org.telegram.ui.ra0 ra0Var = new org.telegram.ui.ra0(cb0Var, i14);
+                            org.telegram.ui.ra0 ra0Var = new org.telegram.ui.ra0(cb0Var, i15);
                             runnableArr[0] = ra0Var;
                             AndroidUtilities.runOnUIThread(ra0Var, 60L);
                             break;
                         } else {
                             cb0Var.f.setCheckBoxIcon(0);
                             cb0Var.h.setText(LocaleController.getString(R.string.ApproveNewMembersDescription2));
-                            org.telegram.ui.ra0 ra0Var2 = new org.telegram.ui.ra0(cb0Var, i15);
+                            org.telegram.ui.ra0 ra0Var2 = new org.telegram.ui.ra0(cb0Var, i16);
                             runnableArr[0] = ra0Var2;
                             AndroidUtilities.runOnUIThread(ra0Var2);
                             break;
@@ -504,24 +502,24 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                     l11 l11Var = new l11();
                     l11Var.a |= 256;
                     l11Var.b = indexOf;
-                    int i25 = lastIndexOf + 1;
-                    l11Var.c = i25;
-                    spannableStringBuilder.setSpan(new m11(l11Var, 0), indexOf, i25, 0);
+                    int i26 = lastIndexOf + 1;
+                    l11Var.c = i26;
+                    spannableStringBuilder.setSpan(new m11(l11Var, 0), indexOf, i26, 0);
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.LoginEmailResetTitle);
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(R.string.LoginEmailResetMessage));
-                int i26 = od0Var.G;
-                int i27 = i26 / 86400;
-                int i28 = i26 % 86400;
-                int i29 = i28 / 3600;
-                int i30 = (i28 % 3600) / 60;
-                if (i27 == 0 && i29 == 0) {
-                    i30 = Math.max(1, i30);
+                int i27 = od0Var.G;
+                int i28 = i27 / 86400;
+                int i29 = i27 % 86400;
+                int i30 = i29 / 3600;
+                int i31 = (i29 % 3600) / 60;
+                if (i28 == 0 && i30 == 0) {
+                    i31 = Math.max(1, i31);
                 }
-                alertDialog$Builder.a.T = AndroidUtilities.formatSpannable(replaceTags, spannableStringBuilder, (i27 == 0 || i29 == 0) ? (i29 == 0 || i30 == 0) ? i27 != 0 ? LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i27, new Object[0])) : i29 != 0 ? LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Hours", i27, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Minutes", i30, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Hours", i29, new Object[0]), LocaleController.formatPluralString("Minutes", i30, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Days", i27, new Object[0]), LocaleController.formatPluralString("Hours", i29, new Object[0])));
+                alertDialog$Builder.a.T = AndroidUtilities.formatSpannable(replaceTags, spannableStringBuilder, (i28 == 0 || i30 == 0) ? (i30 == 0 || i31 == 0) ? i28 != 0 ? LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Days", i28, new Object[0])) : i30 != 0 ? LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Hours", i28, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInSinglePattern, LocaleController.formatPluralString("Minutes", i31, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Hours", i30, new Object[0]), LocaleController.formatPluralString("Minutes", i31, new Object[0])) : LocaleController.formatString(R.string.LoginEmailResetInDoublePattern, LocaleController.formatPluralString("Days", i28, new Object[0]), LocaleController.formatPluralString("Hours", i30, new Object[0])));
                 alertDialog$Builder.k(LocaleController.getString(R.string.LoginEmailResetButton), new org.telegram.ui.wt(od0Var, 17));
-                i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+                i2.d.r(R.string.Cancel, alertDialog$Builder, null);
                 break;
             default:
                 org.telegram.ui.xd0 xd0Var = (org.telegram.ui.xd0) this.b;
@@ -532,7 +530,7 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
                         fg0Var.n1(0, true);
                         TLRPC.TL_auth_requestPasswordRecovery tL_auth_requestPasswordRecovery = new TLRPC.TL_auth_requestPasswordRecovery();
                         i10 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_auth_requestPasswordRecovery, new org.telegram.ui.vd0(xd0Var, i15), 10);
+                        ConnectionsManager.getInstance(i10).sendRequest(tL_auth_requestPasswordRecovery, new org.telegram.ui.vd0(xd0Var, i16), 10);
                         break;
                     } else {
                         AndroidUtilities.hideKeyboard(xd0Var.a);

@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class rp0 extends org.telegram.ui.ActionBar.m1 {
     public boolean A;
@@ -43,7 +43,7 @@ public abstract class rp0 extends org.telegram.ui.ActionBar.m1 {
     public boolean y;
     public ArrayList z;
 
-    public static void k(ef efVar, List list, Context context, org.telegram.ui.sn snVar, boolean z10, ai.s2 s2Var, View view, int i10) {
+    public static void k(ef efVar, List list, Context context, org.telegram.ui.sn snVar, boolean z10, ai.t2 t2Var, View view, int i10) {
         TLRPC.User user;
         TLRPC.TL_sendAsPeer tL_sendAsPeer = (TLRPC.TL_sendAsPeer) list.get(i10);
         if (efVar.y) {
@@ -54,9 +54,9 @@ public abstract class rp0 extends org.telegram.ui.ActionBar.m1 {
             im0 im0Var = efVar.v;
             qp0 qp0Var = (qp0) view;
             TLRPC.Peer peer = tL_sendAsPeer.peer;
-            ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) s2Var.b;
-            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) s2Var.c;
-            MessagesController messagesController = (MessagesController) s2Var.d;
+            ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) t2Var.b;
+            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) t2Var.c;
+            MessagesController messagesController = (MessagesController) t2Var.d;
             if (chatActivityEnterView.q0 == null) {
                 return;
             }
@@ -179,16 +179,16 @@ public abstract class rp0 extends org.telegram.ui.ActionBar.m1 {
         lp0Var.setAlpha(1.0f);
         ArrayList arrayList3 = new ArrayList();
         o1.k kVar = new o1.k(xVar, o1.h.o);
-        kVar.u = org.telegram.ui.Cells.t0.l(0.25f, 750.0f, 1.0f);
+        kVar.u = org.telegram.ui.Cells.c1.l(0.25f, 750.0f, 1.0f);
         kVar.b(new ip0(this, 0));
         o1.k kVar2 = new o1.k(xVar, o1.h.p);
-        kVar2.u = org.telegram.ui.Cells.t0.l(0.25f, 750.0f, 1.0f);
+        kVar2.u = org.telegram.ui.Cells.c1.l(0.25f, 750.0f, 1.0f);
         kVar2.b(new ip0(this, 1));
         o1.c cVar = o1.h.t;
         o1.k kVar3 = new o1.k(xVar, cVar);
-        kVar3.u = org.telegram.ui.Cells.t0.l(0.0f, 750.0f, 1.0f);
+        kVar3.u = org.telegram.ui.Cells.c1.l(0.0f, 750.0f, 1.0f);
         o1.k kVar4 = new o1.k(lp0Var, cVar);
-        kVar4.u = org.telegram.ui.Cells.t0.l(0.25f, 750.0f, 1.0f);
+        kVar4.u = org.telegram.ui.Cells.c1.l(0.25f, 750.0f, 1.0f);
         int i11 = 3;
         arrayList3.addAll(Arrays.asList(kVar, kVar2, kVar3, kVar4));
         for (o1.k kVar5 : kVarArr) {

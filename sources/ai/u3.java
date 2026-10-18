@@ -23,7 +23,7 @@ import org.telegram.ui.lz0;
 import org.telegram.ui.s50;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u3 implements org.telegram.ui.ActionBar.a2, ei.y7, org.telegram.ui.Components.e5, t5.b, s9.g, d50 {
     public final /* synthetic */ int a;
@@ -103,9 +103,9 @@ public final /* synthetic */ class u3 implements org.telegram.ui.ActionBar.a2, e
             case 0:
                 k7 k7Var = (k7) this.c;
                 TL_stars.starGiftDepositPayload[] stargiftdepositpayloadArr = (TL_stars.starGiftDepositPayload[]) this.d;
-                ug.l1 l1Var = (ug.l1) this.e;
+                ug.m1 m1Var = (ug.m1) this.e;
                 k7Var.getClass();
-                k7Var.H1(this.b, stargiftdepositpayloadArr[0], b2Var.g(i10, true, true), l1Var);
+                k7Var.I1(this.b, stargiftdepositpayloadArr[0], b2Var.g(i10, true, true), m1Var);
                 break;
             case 3:
                 ChatObject.Call call = (ChatObject.Call) this.c;
@@ -227,11 +227,11 @@ public final /* synthetic */ class u3 implements org.telegram.ui.ActionBar.a2, e
     }
 
     @Override // org.telegram.ui.Components.d50
-    public /* synthetic */ void P() {
+    public /* synthetic */ void F(float f7) {
     }
 
     @Override // org.telegram.ui.Components.d50
-    public /* synthetic */ void F(float f7) {
+    public /* synthetic */ void P() {
     }
 
     @Override // org.telegram.ui.Components.d50

@@ -30,7 +30,7 @@ import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
@@ -44,12 +44,13 @@ import org.telegram.ui.Components.ph;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.vg;
+import org.telegram.ui.Components.wh;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.hk;
 import org.telegram.ui.oi0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class q extends li implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] Q = {1, 2, 16, 8, 256, 4, 16384, 32768};
@@ -209,8 +210,8 @@ public final class q extends li implements NotificationCenter.NotificationCenter
     }
 
     public static void X(Context context, final String str, final Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var) {
-        org.telegram.ui.ActionBar.f3 i10 = wh.i(1, context, d6Var, true);
-        LinearLayout e = wh.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i10 = kk.i(1, context, d6Var, true);
+        LinearLayout e = kk.e(context, 1);
         final String[] strArr = {str == null ? "" : str};
         ImageView imageView = new ImageView(context);
         imageView.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
@@ -224,7 +225,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         horizontalScrollView.setVisibility(8);
         horizontalScrollView.addView(frameLayout, new FrameLayout.LayoutParams(-2, -2));
         e.addView(horizontalScrollView, w7.z5.t(-1, -2, 49, 12, 2, 12, 0));
-        ei.d f7 = wh.f(24, context, d6Var, true);
+        ei.d f7 = kk.f(24, context, d6Var, true);
         final boolean[] zArr = {false};
         final boolean[] zArr2 = {false};
         l8 l8Var = new l8(strArr, horizontalScrollView, f7, zArr2, new hg.o(strArr, 13), imageView, d6Var, new int[]{6}, 2);
@@ -319,7 +320,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         }
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + dp;
         w3 w3Var = this.r;
-        int C = org.telegram.messenger.q.C(110.0f, (this.L || this.E > 0) ? 0 : AndroidUtilities.navigationBarHeight, (w3Var.l3() || this.x || !tiVar.V0) ? 0 : AndroidUtilities.dp(62.0f)) + this.E;
+        int C = org.telegram.messenger.g0.C(110.0f, (this.L || this.E > 0) ? 0 : AndroidUtilities.navigationBarHeight, (w3Var.l3() || this.x || !tiVar.V0) ? 0 : AndroidUtilities.dp(62.0f)) + this.E;
         if (w3Var.getPaddingTop() != currentActionBarHeight || w3Var.getPaddingBottom() != C) {
             this.N = true;
             w3Var.o1(0, currentActionBarHeight, 0, C);
@@ -563,7 +564,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         int i10 = 0;
         boolean z11 = this.r.l3() || this.x;
         ti tiVar = this.b;
-        org.telegram.ui.Components.wh whVar = tiVar.A1;
+        wh whVar = tiVar.A1;
         if (tiVar.x2 != z11) {
             tiVar.x2 = z11;
             if (tiVar.V0) {
@@ -857,7 +858,7 @@ public final class q extends li implements NotificationCenter.NotificationCenter
         w3 w3Var = this.r;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if ((this.b.f0 instanceof sn) && w3Var.s2() && W()) {
-                org.telegram.messenger.q.q(R.string.RichEditorDraftSaved, new xc(this.s, this.a), R.raw.contact_check, 36);
+                org.telegram.messenger.g0.q(R.string.RichEditorDraftSaved, new xc(this.s, this.a), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!w3Var.i3(keyEvent)) {

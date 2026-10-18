@@ -2,7 +2,7 @@ package yh;
 
 import ai.g6;
 import ai.k7;
-import ai.ld;
+import ai.md;
 import ai.z6;
 import android.content.Context;
 import android.graphics.drawable.ShapeDrawable;
@@ -21,7 +21,7 @@ import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.d6;
@@ -41,7 +41,7 @@ import org.telegram.ui.aw0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class w extends bb implements GiftAuctionController.OnAuctionUpdateListener {
     public static final zc[] p0 = new zc[1];
@@ -276,19 +276,19 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
             }
             textView2.setBackground(h6.a0(i15, 285212671, 13, 13));
             textView2.setPadding(AndroidUtilities.dp(12.0f), i15, AndroidUtilities.dp(12.0f), i15);
-            TextView k10 = org.telegram.ui.Cells.t0.k(this.a0, textView2, z5.a(26.0f, 16.0f, 0.0f, 16.0f, 77.0f, -2, 81), context);
-            k10.setTypeface(AndroidUtilities.bold());
-            k10.setTextSize(1, 21.0f);
-            k10.setText(str2);
-            k10.setGravity(17);
-            k10.setTextColor(-1);
-            TextView k11 = org.telegram.ui.Cells.t0.k(this.a0, k10, z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 40.0f, -1, 87), context);
-            k11.setTextSize(1, 13.0f);
-            k11.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.Gift2AuctionLearnMore2), i15, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
-            k11.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-            k11.setGravity(17);
-            k11.setTextColor(-1342177281);
-            k11.setOnClickListener(new View.OnClickListener(this) { // from class: yh.r
+            TextView j12 = org.telegram.ui.Cells.c1.j(this.a0, textView2, z5.a(26.0f, 16.0f, 0.0f, 16.0f, 77.0f, -2, 81), context);
+            j12.setTypeface(AndroidUtilities.bold());
+            j12.setTextSize(1, 21.0f);
+            j12.setText(str2);
+            j12.setGravity(17);
+            j12.setTextColor(-1);
+            TextView j13 = org.telegram.ui.Cells.c1.j(this.a0, j12, z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 40.0f, -1, 87), context);
+            j13.setTextSize(1, 13.0f);
+            j13.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.Gift2AuctionLearnMore2), i15, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+            j13.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+            j13.setGravity(17);
+            j13.setTextColor(-1342177281);
+            j13.setOnClickListener(new View.OnClickListener(this) { // from class: yh.r
                 public final /* synthetic */ w b;
 
                 {
@@ -307,8 +307,8 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
                     }
                 }
             });
-            b6.b(k11, 0.02f, 1.5f);
-            this.a0.addView(k11, z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 12.0f, -1, 87));
+            b6.b(j13, 0.02f, 1.5f);
+            this.a0.addView(j13, z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 12.0f, -1, 87));
             sVar.setVisibility(8);
             textView.setVisibility(8);
             this.k0.setVisibility(8);
@@ -322,7 +322,7 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
             b6.b(x90Var3, 0.02f, 1.5f);
             this.Z.addView(x90Var3, z5.k(16.0f, 0.0f, 14.0f, 18.0f, -1, -2));
             ai.a aVar = new ai.a(ag.e.c(this.m0.previewAttributes, TL_stars.starGiftAttributeModel.class));
-            long j12 = starGift.upgrade_variants;
+            long j14 = starGift.upgrade_variants;
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
             for (int i27 = i15; i27 < 3; i27++) {
                 TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) aVar.c();
@@ -332,7 +332,7 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
                 }
             }
             int i28 = R.string.Gift2AuctionVariants;
-            String formatNumber3 = LocaleController.formatNumber(j12, ',');
+            String formatNumber3 = LocaleController.formatNumber(j14, ',');
             Object[] objArr5 = new Object[2];
             objArr5[i15] = spannableStringBuilder2;
             objArr5[1] = formatNumber3;
@@ -347,7 +347,7 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
             return;
         }
         zArr[0] = true;
-        GiftAuctionController.getInstance(wVar.currentAccount).getOrRequestAcquiredGifts(wVar.Y, new ai.w3(wVar, zArr, d6Var, 14));
+        GiftAuctionController.getInstance(wVar.currentAccount).getOrRequestAcquiredGifts(wVar.Y, new ai.w3(wVar, zArr, d6Var, 13));
     }
 
     public static void R(w wVar, long j10, Context context, d6 d6Var, Runnable runnable) {
@@ -385,7 +385,7 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
         if (context == null || starGift == null) {
             return;
         }
-        org.telegram.ui.ActionBar.f3 i10 = wh.i(1, context, null, false);
+        org.telegram.ui.ActionBar.f3 i10 = kk.i(1, context, null, false);
         runnable = i10.dismissRunnable;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -401,13 +401,13 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        wh.j(20.0f, R.string.GiftAuctionInfoHeader, 1, textView);
+        kk.j(20.0f, R.string.GiftAuctionInfoHeader, 1, textView);
         int i11 = h6.G6;
         textView.setTextColor(h6.w0(i11, d6Var));
         linearLayout.addView(textView, z5.t(-1, -2, 17, 20, 0, 20, 6));
         TextView textView2 = new TextView(context);
         textView2.setGravity(17);
-        wh.j(14.0f, R.string.GiftAuctionInfoText, 1, textView2);
+        kk.j(14.0f, R.string.GiftAuctionInfoText, 1, textView2);
         textView2.setTextColor(h6.w0(i11, d6Var));
         linearLayout.addView(textView2, z5.t(-1, -2, 17, 20, 0, 20, 16));
         aw0 aw0Var = new aw0(context, d6Var);
@@ -441,7 +441,7 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
         linearLayout.addView(aw0Var3, z5.k(6.0f, 0.0f, 6.0f, 8.0f, -1, -2));
         ei.d dVar = new ei.d(context, d6Var, true);
         dVar.setOnClickListener(new z6(6, runnable));
-        dVar.g(k7.z2(LocaleController.getString(R.string.Understood)), false, true);
+        dVar.g(k7.B2(LocaleController.getString(R.string.Understood)), false, true);
         linearLayout.addView(dVar, z5.k(16.0f, 10.0f, 16.0f, 8.0f, -1, 48));
         i10.customView = linearLayout;
         i10.show();
@@ -484,7 +484,7 @@ public final class w extends bb implements GiftAuctionController.OnAuctionUpdate
         if (auction2 != null && (tL_starGiftAuctionStateFinished = auction2.auctionStateFinished) != null) {
             zcVar2.setText(LocaleController.formatDateTime(tL_starGiftAuctionStateFinished.start_date, true));
             zcVar.setText(LocaleController.formatDateTime(this.m0.auctionStateFinished.end_date, true));
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(ld.Y0(false, org.telegram.messenger.q.h(this.m0.auctionStateFinished.average_price, ',', new StringBuilder("⭐️ ")), 0.8f, null));
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(md.Y0(false, org.telegram.messenger.g0.h(this.m0.auctionStateFinished.average_price, ',', new StringBuilder("⭐️ ")), 0.8f, null));
             spannableStringBuilder.append((CharSequence) " ").append((CharSequence) ad.b("?", new p(this, i13), this.resourcesProvider, null));
             this.e0.setText(spannableStringBuilder);
         } else if (auction2 != null && (tL_starGiftAuctionState = auction2.auctionStateActive) != null) {

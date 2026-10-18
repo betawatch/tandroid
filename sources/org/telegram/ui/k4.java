@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k4 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -36,7 +36,7 @@ public final class k4 extends AnimatorListenerAdapter {
                 if (x3Var != null) {
                     x3Var.m();
                 }
-                obj = i0.a.z(1, l4Var.d0);
+                obj = i2.d.A(1, l4Var.d0);
                 l4Var.O0.S(l4Var.u0[0].b);
                 org.telegram.ui.Cells.n9 n9Var = l4Var.O0;
                 n9Var.z0 = l4Var.u0[0].d;

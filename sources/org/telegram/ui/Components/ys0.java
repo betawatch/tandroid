@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ys0 implements zl0 {
     public final /* synthetic */ os0 a;
@@ -141,7 +141,7 @@ public final class ys0 implements zl0 {
                                         org.telegram.ui.ActionBar.e1 e1Var2 = new org.telegram.ui.ActionBar.e1(sv0Var2.getContext(), false, false);
                                         e1Var2.g(LocaleController.getString(R.string.ProfileJoinChannel), R.drawable.msg_addbot, null);
                                         e1Var2.setMinimumWidth(160);
-                                        e1Var2.setOnClickListener(new ai.ga(bu0Var, (TLRPC.Chat) tLObject, i10, 11));
+                                        e1Var2.setOnClickListener(new ai.ha(bu0Var, (TLRPC.Chat) tLObject, i10, 11));
                                         actionBarPopupWindow$ActionBarPopupWindowLayout.addView(e1Var2);
                                         n2Var.presentFragmentAsPreviewWithMenu(snVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
                                         return z10;

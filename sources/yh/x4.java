@@ -1,13 +1,13 @@
 package yh;
 
-import ai.hc;
+import ai.ic;
 import android.graphics.Canvas;
 import android.graphics.PointF;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class x4 extends s4.m0 {
     public final PointF a = new PointF();
@@ -21,7 +21,7 @@ public final class x4 extends s4.m0 {
     public final void b(Canvas canvas, RecyclerView recyclerView) {
         float f7;
         float f10;
-        hc hcVar;
+        ic icVar;
         float height = recyclerView.getHeight();
         y4 y4Var = this.b;
         t4 t4Var = y4Var.s0;
@@ -40,10 +40,10 @@ public final class x4 extends s4.m0 {
             height = Math.min(height, pointF.y);
             f10 = Math.max(f10, pointF.y + t4Var.getMeasuredHeight() + AndroidUtilities.dp(12.0f));
         }
-        if (height >= f10 || (hcVar = s4Var.L) == null) {
+        if (height >= f10 || (icVar = s4Var.L) == null) {
             return;
         }
-        float height2 = (f10 - height) / hcVar.getHeight();
+        float height2 = (f10 - height) / icVar.getHeight();
         canvas.save();
         canvas.clipRect(0.0f, height, recyclerView.getWidth(), f10);
         canvas.translate(f7, height);

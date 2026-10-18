@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class kb0 extends Drawable {
     public Paint a;
@@ -32,7 +32,7 @@ public final class kb0 extends Drawable {
         int i10 = bounds.left;
         float f7 = (i10 - centerX) * (i10 - centerX);
         int i11 = bounds.top;
-        this.g = (float) Math.ceil(Math.sqrt(com.google.android.gms.internal.cast.a6.x(i11, centerY, i11 - centerY, f7)));
+        this.g = (float) Math.ceil(Math.sqrt(com.google.android.gms.internal.play_billing.k3.y(i11, centerY, i11 - centerY, f7)));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:39:0x0049, code lost:
@@ -77,14 +77,14 @@ public final class kb0 extends Drawable {
             f7 = centerY;
             f11 = centerX;
             float f12 = 1.0f - interpolation;
-            float x10 = com.google.android.gms.internal.cast.a6.x(f11, centerX, f12, centerX);
-            float x11 = com.google.android.gms.internal.cast.a6.x(f7, centerY, f12, centerY);
+            float y3 = com.google.android.gms.internal.play_billing.k3.y(f11, centerX, f12, centerX);
+            float y10 = com.google.android.gms.internal.play_billing.k3.y(f7, centerY, f12, centerY);
             float f13 = this.g * interpolation;
             Paint paint3 = this.b;
             if (paint3 != null) {
                 paint = paint3;
             }
-            canvas.drawCircle(x10, x11, f13, paint);
+            canvas.drawCircle(y3, y10, f13, paint);
         }
         if (!this.f) {
             return;

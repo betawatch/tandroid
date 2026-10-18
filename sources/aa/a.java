@@ -37,7 +37,7 @@ import org.telegram.ui.xf1;
 import r9.d;
 import v7.b8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLevelsCallback {
     public final /* synthetic */ int a;
@@ -272,10 +272,10 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
     public void g(b2 b2Var, int i10) {
         switch (this.a) {
             case 13:
-                k7.v2(new xf1(6, null));
+                int i11 = k7.A1;
                 break;
             default:
-                int i11 = k7.A1;
+                k7.x2(new xf1(6, null));
                 break;
         }
     }
@@ -311,7 +311,7 @@ public final /* synthetic */ class a implements d, a2, k, NativeInstance.AudioLe
     }
 
     public /* synthetic */ a(k7 k7Var) {
-        this.a = 13;
+        this.a = 14;
     }
 
     @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback

@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ic1 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -526,10 +526,10 @@ public final class ic1 extends org.telegram.ui.Components.hm0 {
         boolean z12 = view instanceof org.telegram.ui.Cells.u1;
         mc1 mc1Var = this.f;
         if (!z12) {
-            if (view instanceof org.telegram.ui.Cells.x0) {
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
-                x0Var.setMessageObject(messageObject);
-                x0Var.setAlpha(1.0f);
+            if (view instanceof org.telegram.ui.Cells.w0) {
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+                w0Var.setMessageObject(messageObject);
+                w0Var.setAlpha(1.0f);
                 mc1Var.V0();
                 return;
             }
@@ -570,15 +570,15 @@ public final class ic1 extends org.telegram.ui.Components.hm0 {
         View view;
         mc1 mc1Var = this.f;
         if (i10 == 0) {
-            org.telegram.ui.Cells.u1 u1Var = new org.telegram.ui.Cells.u1(this.c, ((org.telegram.ui.ActionBar.n2) mc1Var).currentAccount, false, null, new lo0(this, 6));
+            org.telegram.ui.Cells.u1 u1Var = new org.telegram.ui.Cells.u1(this.c, ((org.telegram.ui.ActionBar.n2) mc1Var).currentAccount, false, null, new mo0(this, 6));
             u1Var.setDelegate(new rb.b(18));
             view = u1Var;
         } else {
             Context context = this.c;
             if (i10 == 1) {
-                org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(context, mc1Var.a, false);
-                x0Var.setDelegate(new sb.a(18));
-                view = x0Var;
+                org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context, mc1Var.a, false);
+                w0Var.setDelegate(new sb.a(18));
+                view = w0Var;
             } else if (i10 == 2) {
                 if (mc1Var.y0.getParent() != null) {
                     ((ViewGroup) mc1Var.y0.getParent()).removeView(mc1Var.y0);
@@ -597,6 +597,6 @@ public final class ic1 extends org.telegram.ui.Components.hm0 {
                 view = l41Var2;
             }
         }
-        return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }
 }

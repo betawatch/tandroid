@@ -5,7 +5,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class vi0 extends LinearLayout {
     public static final /* synthetic */ int d = 0;
@@ -23,10 +23,10 @@ public final class vi0 extends LinearLayout {
         setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
         int i10 = 0;
         while (i10 < 2) {
-            LinearLayout e = org.telegram.messenger.wh.e(context, 0);
+            LinearLayout e = org.telegram.messenger.kk.e(context, 0);
             for (int i11 = 0; i11 < 2; i11++) {
-                LinearLayout e7 = org.telegram.messenger.wh.e(context, 1);
-                LinearLayout e10 = org.telegram.messenger.wh.e(context, 0);
+                LinearLayout e7 = org.telegram.messenger.kk.e(context, 1);
+                LinearLayout e10 = org.telegram.messenger.kk.e(context, 0);
                 int i12 = (i10 * 2) + i11;
                 this.a[i12] = new TextView(context);
                 this.b[i12] = new TextView(context);

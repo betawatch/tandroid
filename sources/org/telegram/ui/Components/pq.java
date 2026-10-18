@@ -9,7 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class pq extends Drawable {
     public final Paint a;
@@ -51,7 +51,7 @@ public abstract class pq extends Drawable {
         Paint paint2 = this.a;
         if (a2 != 0) {
             this.g = Color.alpha(a2);
-            paint2.setColor(i0.b.o(a2, 255));
+            paint2.setColor(i0.a.o(a2, 255));
         }
         long j10 = this.b;
         if (j10 != 0) {
@@ -80,7 +80,7 @@ public abstract class pq extends Drawable {
         float f15 = this.d;
         if (f15 < 0.0f || f15 >= 90.0f) {
             if (f15 >= 90.0f && f15 < 180.0f) {
-                f12 = org.telegram.messenger.q.x(f15, 90.0f, 90.0f, 1.0f);
+                f12 = org.telegram.messenger.g0.x(f15, 90.0f, 90.0f, 1.0f);
                 f10 = 0.0f;
                 f7 = 0.0f;
                 f11 = 1.0f;
@@ -88,7 +88,7 @@ public abstract class pq extends Drawable {
                 if (f15 >= 270.0f && f15 < 360.0f) {
                     x10 = (f15 - 270.0f) / 90.0f;
                 } else if (f15 >= 360.0f && f15 < 450.0f) {
-                    x10 = org.telegram.messenger.q.x(f15, 360.0f, 90.0f, 1.0f);
+                    x10 = org.telegram.messenger.g0.x(f15, 360.0f, 90.0f, 1.0f);
                 } else if (f15 >= 450.0f && f15 < 540.0f) {
                     f10 = (f15 - 450.0f) / 90.0f;
                     f12 = 0.0f;
@@ -113,7 +113,7 @@ public abstract class pq extends Drawable {
                 f10 = 0.0f;
                 f12 = f10;
             } else {
-                f11 = org.telegram.messenger.q.x(f15, 180.0f, 90.0f, 1.0f);
+                f11 = org.telegram.messenger.g0.x(f15, 180.0f, 90.0f, 1.0f);
                 f10 = 0.0f;
                 f12 = 0.0f;
                 f7 = 0.0f;

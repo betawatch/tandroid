@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import com.android.billingclient.api.Purchase;
-import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
 import v7.y5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -45,7 +44,7 @@ public abstract class u {
         Bundle bundle = new Bundle();
         bundle.putInt("RESPONSE_CODE", iVar.a);
         bundle.putString("DEBUG_MESSAGE", iVar.c);
-        bundle.putInt("LOG_REASON", a6.b(i10));
+        bundle.putInt("LOG_REASON", k3.b(i10));
         return bundle;
     }
 

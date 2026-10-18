@@ -1,5 +1,6 @@
 package org.telegram.ui.ActionBar;
 
+import ai.x9;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -27,7 +28,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -64,7 +65,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.ud;
 import org.telegram.ui.vd;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -320,7 +321,7 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                 l4Var2.setHeight(47);
                 l4Var2.setText(LocaleController.getString("ChatHistory", R.string.ChatHistory));
                 linearLayout.addView(l4Var2);
-                LinearLayout e10 = wh.e(context, 1);
+                LinearLayout e10 = kk.e(context, 1);
                 linearLayout.addView(e10, w7.z5.n(-1, -2));
                 org.telegram.ui.Cells.i6[] i6VarArr = new org.telegram.ui.Cells.i6[2];
                 int i17 = 0;
@@ -371,7 +372,7 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                 boolean z13 = !zArr[0];
                 zArr[0] = z13;
                 ((org.telegram.ui.Cells.a2) view).c(z13, true);
-                ((ai.y3) obj).run();
+                ((x9) obj).run();
                 break;
             case 23:
                 int intValue = ((Integer) view.getTag()).intValue();

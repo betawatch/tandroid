@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b11 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -114,9 +114,9 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 return;
             }
             if (i10 == b11Var.F) {
-                Bundle a2 = z7.g5.a(j11, "dialog_id");
-                a2.putLong("topic_id", j10);
-                b11Var.presentFragment(new mk0(a2, d6Var));
+                Bundle b10 = zf.d0.b(j11, "dialog_id");
+                b10.putLong("topic_id", j10);
+                b11Var.presentFragment(new mk0(b10, d6Var));
                 return;
             }
             final int i12 = 1;
@@ -209,8 +209,8 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     org.telegram.ui.Components.sl0 sl0Var = (org.telegram.ui.Components.sl0) b11Var.a.T(b11Var.a.getChildAt(i11));
                     int i15 = sl0Var.f;
                     View view2 = sl0Var.a;
-                    int b10 = sl0Var.b();
-                    if (b10 != b11Var.y && b10 != b11Var.W) {
+                    int b11 = sl0Var.b();
+                    if (b11 != b11Var.y && b11 != b11Var.W) {
                         if (i15 == 0) {
                             ((org.telegram.ui.Cells.l4) view2).a(arrayList, b11Var.n);
                         } else if (i15 == 1) {
@@ -221,7 +221,7 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
                             ((org.telegram.ui.Cells.x8) view2).a(arrayList, b11Var.n);
                         } else if (i15 == 4) {
                             ((org.telegram.ui.Cells.j6) view2).b(arrayList, b11Var.n);
-                        } else if (i15 == 7 && b10 == b11Var.E) {
+                        } else if (i15 == 7 && b11 == b11Var.E) {
                             ((org.telegram.ui.Cells.v8) view2).e(arrayList, b11Var.n);
                         }
                     }
@@ -245,12 +245,12 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
             if (i10 == b11Var.E) {
                 org.telegram.ui.Cells.v8 v8Var2 = (org.telegram.ui.Cells.v8) view;
                 Switch r32 = v8Var2.e;
-                MessagesController.getNotificationsSettings(b11Var.currentAccount).edit().putBoolean(r.c.g(NotificationsSettingsFacade.PROPERTY_CONTENT_PREVIEW, str), !r32.h).apply();
+                MessagesController.getNotificationsSettings(b11Var.currentAccount).edit().putBoolean(r4.c.h(NotificationsSettingsFacade.PROPERTY_CONTENT_PREVIEW, str), !r32.h).apply();
                 v8Var2.setChecked(!r32.h);
                 return;
             }
             if (i10 == b11Var.R) {
-                b11Var.showDialog(org.telegram.ui.Components.f5.X(b11Var.getParentActivity(), b11Var.e, b11Var.f, r.c.g("calls_vibrate_", str), new Runnable(b11Var) { // from class: org.telegram.ui.x01
+                b11Var.showDialog(org.telegram.ui.Components.f5.X(b11Var.getParentActivity(), b11Var.e, b11Var.f, r4.c.h("calls_vibrate_", str), new Runnable(b11Var) { // from class: org.telegram.ui.x01
                     public final /* synthetic */ b11 b;
 
                     {
@@ -438,8 +438,8 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 return;
             }
             SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(b11Var.currentAccount);
-            int c10 = org.telegram.messenger.q.c("smart_max_count_", str, notificationsSettings2, 2);
-            int c11 = org.telegram.messenger.q.c("smart_delay_", str, notificationsSettings2, 180);
+            int c10 = org.telegram.messenger.g0.c("smart_max_count_", str, notificationsSettings2, 2);
+            int c11 = org.telegram.messenger.g0.c("smart_delay_", str, notificationsSettings2, 180);
             r14 = c10 != 0 ? c10 : 2;
             Activity parentActivity2 = b11Var.getParentActivity();
             w01 w01Var = new w01(b11Var, str);
@@ -525,23 +525,23 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
             linearLayout.setOrientation(0);
             linearLayout.setWeightSum(1.0f);
             x3Var.addView(linearLayout, w7.z5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
-            ai.ud udVar = new ai.ud(parentActivity2, 19);
+            ai.vd vdVar = new ai.vd(parentActivity2, 19);
             linearLayout.addView(l4Var, w7.z5.l(0.4f, 0, 270));
             linearLayout.addView(od0Var, w7.z5.o(0, -2, 0.2f, 16));
             linearLayout.addView(m4Var, w7.z5.l(0.4f, 0, 270));
-            udVar.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-            udVar.setGravity(17);
-            udVar.setTextColor(r12);
-            udVar.setTextSize(1, 14.0f);
-            udVar.setTypeface(AndroidUtilities.bold());
+            vdVar.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
+            vdVar.setGravity(17);
+            vdVar.setTextColor(r12);
+            vdVar.setTextSize(1, 14.0f);
+            vdVar.setTypeface(AndroidUtilities.bold());
             int dp = AndroidUtilities.dp(8.0f);
-            udVar.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, r13, r14, r14));
-            udVar.setText(LocaleController.getString(R.string.AutoDeleteConfirm));
-            x3Var.addView(udVar, w7.z5.t(-1, 48, 83, 16, 15, 16, 16));
+            vdVar.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, r13, r14, r14));
+            vdVar.setText(LocaleController.getString(R.string.AutoDeleteConfirm));
+            x3Var.addView(vdVar, w7.z5.t(-1, 48, 83, 16, 15, 16, 16));
             tr trVar = new tr(10);
             l4Var.setOnValueChangedListener(trVar);
             m4Var.setOnValueChangedListener(trVar);
-            udVar.setOnClickListener(new ci.c4(l4Var, m4Var, w01Var, a3Var, 7));
+            vdVar.setOnClickListener(new ci.c4(l4Var, m4Var, w01Var, a3Var, 7));
             a3Var.b(x3Var);
             org.telegram.ui.ActionBar.f3 f3Var = a3Var.a;
             f3Var.show();
@@ -846,7 +846,7 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.currentAccount);
                     String sharedPrefKey = NotificationsController.getSharedPrefKey(j10, j11);
                     boolean contains = notificationsSettings.contains(NotificationsSettingsFacade.PROPERTY_NOTIFY + sharedPrefKey);
-                    int c10 = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey, notificationsSettings, 0);
+                    int c10 = org.telegram.messenger.g0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, sharedPrefKey, notificationsSettings, 0);
                     if (c10 == 0) {
                         if (contains) {
                             this.n = true;

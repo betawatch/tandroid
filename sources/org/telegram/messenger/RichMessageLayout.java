@@ -118,7 +118,7 @@ import org.telegram.ui.gj0;
 import org.telegram.ui.kb0;
 import org.telegram.ui.u10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class RichMessageLayout {
     private static final int ORDERED_LIST_MARKER_START_DP = 6;
@@ -203,7 +203,7 @@ public class RichMessageLayout {
     public final ArrayList<RichUnsupportedBlock> unsupportedBlocksRoot;
     public View view;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class FoundLink {
         public int end;
         public StaticLayout layout;
@@ -213,7 +213,7 @@ public class RichMessageLayout {
         public float y;
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class PreviewView extends View implements org.telegram.ui.Cells.m9 {
         private boolean allowActions;
         private final int currentAccount;
@@ -231,7 +231,7 @@ public class RichMessageLayout {
         private Runnable textSelectionLongPressRunnable;
         private boolean translationLoading;
 
-        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+        /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
         public static final class Factory extends e61 {
             static {
                 e61.setup(new Factory());
@@ -273,7 +273,7 @@ public class RichMessageLayout {
             }
         }
 
-        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+        /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
         public static class PaddedTextLayoutBlock implements org.telegram.ui.Cells.y9 {
             private final org.telegram.ui.Cells.y9 inner;
             private final int px;
@@ -560,7 +560,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class QuoteBackground {
         int endBlockIndex;
         int level;
@@ -587,7 +587,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class QuoteRootSpan {
         public final int flags;
         public final TL_iv.RichText text;
@@ -598,7 +598,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static abstract class RichBlock implements ej0 {
         public int accessibilityLabelResId;
         public int accessibilityParentLabelResId;
@@ -1308,7 +1308,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichButton {
         private static final float ICON_OFFSET_X = 12.33f;
         private static final float ICON_OFFSET_Y = 11.66f;
@@ -1605,7 +1605,7 @@ public class RichMessageLayout {
                 }
             }
             float f10 = this.inline ? PRESS_SCALE_INLINE : PRESS_SCALE;
-            return com.google.android.gms.internal.cast.a6.x(1.0f, this.pressT, f10, 1.0f - f10);
+            return com.google.android.gms.internal.play_billing.k3.y(1.0f, this.pressT, f10, 1.0f - f10);
         }
 
         public int getTextWidth() {
@@ -1736,7 +1736,7 @@ public class RichMessageLayout {
                         if (!org.telegram.ui.ActionBar.h6.d1(i10) || z5Var == org.telegram.ui.ActionBar.z5.n) {
                             this.backgroundColor = this.layout.getThemedColor(i10);
                             if (org.telegram.ui.ActionBar.h6.d1(i11)) {
-                                this.backgroundPressedColor = i0.b.f(0.1f, this.backgroundColor, themedColor4);
+                                this.backgroundPressedColor = i0.a.f(0.1f, this.backgroundColor, themedColor4);
                             } else {
                                 this.backgroundPressedColor = this.layout.getThemedColor(i11);
                             }
@@ -1868,7 +1868,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichButtonRowBlock extends RichBlock {
         private static final int GAP = 7;
         private final Align align;
@@ -1878,7 +1878,7 @@ public class RichMessageLayout {
         private RichButton pressedButton;
         private RichButton touchButton;
 
-        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+        /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
         public enum Align {
             LEFT,
             RIGHT,
@@ -2231,7 +2231,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichButtonSpan extends ReplacementSpan {
         private static final int MARGIN_HORIZONTAL = 1;
         private final RectF bounds;
@@ -2399,7 +2399,7 @@ public class RichMessageLayout {
                 TL_iv.textConcat textconcat = (TL_iv.textConcat) richText;
                 if (!textconcat.texts.isEmpty()) {
                     boolean z13 = textconcat.texts.get(0) instanceof TL_iv.textCustomEmoji;
-                    z11 = i0.a.h(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
+                    z11 = i2.d.h(1, textconcat.texts) instanceof TL_iv.textCustomEmoji;
                     z10 = z13;
                     TL_keyboard.RichButtonStyle richButtonStyle = textbutton.style;
                     z12 = richButtonStyle == null && richButtonStyle.link;
@@ -2430,7 +2430,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichCaptionBlock extends RichBlock {
         public final Text caption;
         public final Text credit;
@@ -2629,7 +2629,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichCollageBlock extends RichBlock {
         private static Paint mediaBgPaint;
         public final TL_iv.pageBlockCollage block;
@@ -2934,7 +2934,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichDetailsBlock extends RichBlock {
         private static final float ARROW_HEIGHT_DP = 6.16f;
         private static final float ARROW_LEFT_DP = 22.6f;
@@ -2959,7 +2959,7 @@ public class RichMessageLayout {
             super(richMessageLayout, rect, i10);
             this.linePaint = new Paint(1);
             this.block = pageblockdetails;
-            Text text = new Text(richMessageLayout, charSequence, q.b(TEXT_RIGHT_DP, this.maxWidth - AndroidUtilities.dp(TEXT_LEFT_DP), 0));
+            Text text = new Text(richMessageLayout, charSequence, g0.b(TEXT_RIGHT_DP, this.maxWidth - AndroidUtilities.dp(TEXT_LEFT_DP), 0));
             this.title = text;
             this.texts = new Text[]{text};
             AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(richMessageLayout.getThemedColor(richMessageLayout.isOut() ? org.telegram.ui.ActionBar.h6.Ek : org.telegram.ui.ActionBar.h6.Dk));
@@ -2976,7 +2976,7 @@ public class RichMessageLayout {
         }
 
         private int getContentHeight() {
-            return q.y(12.66f, this.title.getHeight() + AndroidUtilities.dp(TEXT_TOP_DP), AndroidUtilities.dp(27.82f));
+            return g0.y(12.66f, this.title.getHeight() + AndroidUtilities.dp(TEXT_TOP_DP), AndroidUtilities.dp(27.82f));
         }
 
         private void toggle() {
@@ -3182,7 +3182,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichDetailsEndBlock extends RichBlock {
         private final Paint paint;
 
@@ -3193,7 +3193,7 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public int getHeight() {
-            return q.C(6.0f, this.padding.top, 1) + this.padding.bottom;
+            return g0.C(6.0f, this.padding.top, 1) + this.padding.bottom;
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
@@ -3223,7 +3223,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichDividerBlock extends RichBlock {
         public final Paint paint;
 
@@ -3262,7 +3262,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichMapBlock extends RichBlock {
         private static Paint mapBgPaint;
         public final TL_iv.pageBlockMap block;
@@ -3435,7 +3435,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichMathBlock extends RichBlock {
         private static final int HPAD = 0;
         private static final int VPAD = 8;
@@ -3495,7 +3495,7 @@ public class RichMessageLayout {
                 this.contentW = a2.b;
                 this.contentH = a2.c;
             }
-            int D = q.D(0.0f, 2, this.contentW);
+            int D = g0.D(0.0f, 2, this.contentW);
             this.contentWidth = D;
             this.maxScrollX = Math.max(0, D - i11);
         }
@@ -3525,7 +3525,7 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public int getHeight() {
-            return q.D(8.0f, 2, this.padding.top + this.contentH) + this.padding.bottom;
+            return g0.D(8.0f, 2, this.padding.top + this.contentH) + this.padding.bottom;
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
@@ -3556,7 +3556,7 @@ public class RichMessageLayout {
             Paint paint = this.paint;
             RichMessageLayout richMessageLayout = this.root;
             paint.setColor(richMessageLayout.getThemedColor(richMessageLayout.isOut() ? org.telegram.ui.ActionBar.h6.fc : org.telegram.ui.ActionBar.h6.ec));
-            int D = q.D(8.0f, 2, this.contentH);
+            int D = g0.D(8.0f, 2, this.contentH);
             if (this.maxScrollX > 0) {
                 RichMessageLayout richMessageLayout2 = this.root;
                 float f7 = -richMessageLayout2.padLeft;
@@ -3666,7 +3666,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichPhotoBlock extends RichMediaBlock {
         public final TL_iv.pageBlockPhoto block;
         public final TLRPC.Photo photo;
@@ -3743,7 +3743,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichPreformattedBlock extends RichBlock {
         private static final int BACKGROUND_OUTER_VPAD = 7;
         private static final int HPAD = 0;
@@ -3851,7 +3851,7 @@ public class RichMessageLayout {
             Text text = new Text(richMessageLayout, this.content, AndroidUtilities.dp(5000.0f), Layout.Alignment.ALIGN_NORMAL, 1.3f);
             this.text = text;
             this.texts = new Text[]{text};
-            int D = q.D(0.0f, 2, Math.max(0, text.right - text.left));
+            int D = g0.D(0.0f, 2, Math.max(0, text.right - text.left));
             this.contentWidth = D;
             int max = Math.max(0, D - this.viewportWidth);
             this.maxScrollX = max;
@@ -3913,7 +3913,7 @@ public class RichMessageLayout {
 
         private void drawTextContent(Canvas canvas, boolean z10, int i10, float f7) {
             int min = Math.min(this.viewportWidth, this.contentWidth);
-            int D = q.D(8.0f, 2, this.text.getHeight());
+            int D = g0.D(8.0f, 2, this.text.getHeight());
             if (this.padding.left > 0) {
                 canvas.save();
                 canvas.clipRect(0, 0, min, D);
@@ -3997,7 +3997,7 @@ public class RichMessageLayout {
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
         public int getHeight() {
-            return q.D(7.0f, 2, this.padding.top) + getBackgroundHeight() + this.padding.bottom;
+            return g0.D(7.0f, 2, this.padding.top) + getBackgroundHeight() + this.padding.bottom;
         }
 
         @Override // org.telegram.messenger.RichMessageLayout.RichBlock
@@ -4170,21 +4170,21 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichPullquoteBlock extends RichTextWithAuthorBlock {
         public RichPullquoteBlock(RichMessageLayout richMessageLayout, Rect rect, int i10, CharSequence charSequence, CharSequence charSequence2) {
             super(richMessageLayout, rect, i10, charSequence, charSequence2, Layout.Alignment.ALIGN_CENTER);
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichQuoteBlock extends RichTextWithAuthorBlock {
         public RichQuoteBlock(RichMessageLayout richMessageLayout, Rect rect, int i10, CharSequence charSequence, CharSequence charSequence2) {
             super(richMessageLayout, rect, i10, charSequence, charSequence2, Layout.Alignment.ALIGN_NORMAL);
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichSlideshowBlock extends RichBlock {
         private static Paint mediaBgPaint;
         private static Paint slideDotPaint;
@@ -4548,7 +4548,7 @@ public class RichMessageLayout {
                     slideDotPaint.setShadowLayer(AndroidUtilities.dpf2(f10), f22, AndroidUtilities.dpf2(1.0f), TLObject.FLAG_31);
                 }
                 float dp4 = AndroidUtilities.dp(5.0f) + (this.slideHeight - AndroidUtilities.dp(23.0f));
-                int dp5 = AndroidUtilities.dp(4.0f) + q.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
+                int dp5 = AndroidUtilities.dp(4.0f) + g0.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
                 float f23 = this.currentPage + this.pageOffset;
                 if (dp5 < i20) {
                     clamp = (i20 - dp5) / f7;
@@ -4729,7 +4729,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichTableBlock extends RichBlock implements c01 {
         private static final int VERTICAL_PADDING_DP = 10;
         private final ArrayList<CellBlock> cellBlocks;
@@ -4766,7 +4766,7 @@ public class RichMessageLayout {
         private VelocityTracker velocityTracker;
         private final int viewportWidth;
 
-        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+        /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
         public static final class CellBlock implements ej0 {
             final wz0 child;
 
@@ -5470,7 +5470,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichTextBlock extends RichBlock {
         private final boolean centered;
         protected int contentPaddingBottom;
@@ -5634,7 +5634,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichTextBlockQuote extends RichTextBlock {
         public final TL_iv.pageBlockBlockquote block;
         private org.telegram.ui.Components.yc bounce;
@@ -5803,7 +5803,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichTextWithAuthorBlock extends RichBlock {
         public final Text author;
         private final boolean centered;
@@ -5983,7 +5983,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichThinkingBlock extends RichBlock {
         public LinearGradient gradient;
         public int gradientColor;
@@ -6170,7 +6170,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichVideoBlock extends RichMediaBlock {
         public final TL_iv.pageBlockVideo block;
         public final TLRPC.Document document;
@@ -6306,7 +6306,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static final class SpoilerReveal {
         private ValueAnimator animator;
         private float cx;
@@ -6368,7 +6368,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class StyleSpan extends MetricAffectingSpan {
         public final int flags;
         private boolean fullSizeTableEmoji;
@@ -6476,7 +6476,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Text implements org.telegram.ui.Cells.y9, vz0 {
         private static final int EMOJI_LINE_HEIGHT_MIN_PERCENT = 70;
         private static Paint markPaint;
@@ -6513,7 +6513,7 @@ public class RichMessageLayout {
         public int x;
         public int y;
 
-        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+        /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
         public static class EmojiLineMetrics {
             private int contentCount;
             private int emojiCount;
@@ -7585,7 +7585,7 @@ public class RichMessageLayout {
 
     private void closeLists(StringBuilder sb2, ArrayList<Boolean> arrayList) {
         while (!arrayList.isEmpty()) {
-            sb2.append(((Boolean) i0.a.z(1, arrayList)).booleanValue() ? "</ol>" : "</ul>");
+            sb2.append(((Boolean) i2.d.A(1, arrayList)).booleanValue() ? "</ol>" : "</ul>");
         }
     }
 
@@ -8098,7 +8098,7 @@ public class RichMessageLayout {
         canvas.clipRect(dp, dp3, dp2, lerp2);
         int i10 = (int) dp;
         int i11 = (int) dp3;
-        this.pullquoteIcon.setBounds(AndroidUtilities.dp(8.0f) + i10, AndroidUtilities.dp(7.0f) + i11, q.C(8.0f, i10, intrinsicWidth), q.C(7.0f, i11, intrinsicHeight));
+        this.pullquoteIcon.setBounds(AndroidUtilities.dp(8.0f) + i10, AndroidUtilities.dp(7.0f) + i11, g0.C(8.0f, i10, intrinsicWidth), g0.C(7.0f, i11, intrinsicHeight));
         canvas.scale(-1.0f, -1.0f, this.pullquoteIcon.getBounds().centerX(), this.pullquoteIcon.getBounds().centerY());
         this.pullquoteIcon.draw(canvas);
         canvas.restore();
@@ -8106,7 +8106,7 @@ public class RichMessageLayout {
         canvas.clipRect(dp, dp3, dp2, lerp2);
         int i12 = (int) dp2;
         int i13 = (int) lerp2;
-        this.pullquoteIcon.setBounds(q.B(8.0f, i12, intrinsicWidth), q.B(7.0f, i13, intrinsicHeight), i12 - AndroidUtilities.dp(8.0f), i13 - AndroidUtilities.dp(7.0f));
+        this.pullquoteIcon.setBounds(g0.B(8.0f, i12, intrinsicWidth), g0.B(7.0f, i13, intrinsicHeight), i12 - AndroidUtilities.dp(8.0f), i13 - AndroidUtilities.dp(7.0f));
         canvas.scale(1.0f, -1.0f, this.pullquoteIcon.getBounds().centerX(), this.pullquoteIcon.getBounds().centerY());
         this.pullquoteIcon.draw(canvas);
         canvas.restore();
@@ -8747,9 +8747,9 @@ public class RichMessageLayout {
                     TL_iv.textPhone textphone = (TL_iv.textPhone) richText;
                     String d = jf.b.d(textphone.phone, false);
                     if (textphone.phone.startsWith("+")) {
-                        d = r.c.g("+", d);
+                        d = r4.c.h("+", d);
                     }
-                    formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l61(r.c.g("tel:", d), getTextStyleRun(1024)));
+                    formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l61(r4.c.h("tel:", d), getTextStyleRun(1024)));
                     return spannableStringBuilder;
                 }
                 if (richText instanceof TL_iv.textAnchor) {
@@ -8846,24 +8846,24 @@ public class RichMessageLayout {
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textAutoEmail) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l61(r.c.g("mailto:", getString(richText)), getTextStyleRun(1024)));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l61(r4.c.h("mailto:", getString(richText)), getTextStyleRun(1024)));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textAutoPhone) {
                         String string = getString(richText);
                         String d10 = jf.b.d(string, false);
                         if (string.startsWith("+")) {
-                            d10 = r.c.g("+", d10);
+                            d10 = r4.c.h("+", d10);
                         }
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l61(r.c.g("tel:", d10), getTextStyleRun(1024)));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new l61(r4.c.h("tel:", d10), getTextStyleRun(1024)));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textTonAddress) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new j61(r.c.g("tonaddress:", getString(richText)), (l11) null));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new j61(r4.c.h("tonaddress:", getString(richText)), (l11) null));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textBankCard) {
-                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new j61(r.c.g("card:", getString(richText)), (l11) null));
+                        formatTextAndSetSpan(richText.text, spannableStringBuilder, i10, new j61(r4.c.h("card:", getString(richText)), (l11) null));
                         return spannableStringBuilder;
                     }
                     if (richText instanceof TL_iv.textMentionName) {
@@ -8938,7 +8938,7 @@ public class RichMessageLayout {
         if (i10 >= 0 && i10 < this.blocks.size() && t1Var != null && (this.detailsAnimating || this.blockquoteAnimating)) {
             float max = Math.max(0.0f, Math.min(1.0f, t1Var.K1));
             RichBlock richBlock = this.blocks.get(i10);
-            int b10 = q.b(4.0f, richBlock.padding.bottom, 0);
+            int b10 = g0.b(4.0f, richBlock.padding.bottom, 0);
             return Math.round(AndroidUtilities.lerp((richBlock.prevY + richBlock.prevH) - (richBlock.prevVisible ? b10 : 0), (richBlock.currY + richBlock.currH) - (richBlock.currVisible ? b10 : 0), max));
         }
         boolean z10 = false;
@@ -8951,7 +8951,7 @@ public class RichMessageLayout {
             }
             if (isVisible) {
                 int height = ((t1Var == null || !(this.detailsAnimating || this.blockquoteAnimating)) ? richBlock2.getHeight() : AndroidUtilities.lerp(richBlock2.prevH, richBlock2.currH, Math.max(0.0f, Math.min(1.0f, t1Var.K1)))) + i11;
-                i11 = (r3 != i10 || richBlock2.padding.bottom <= AndroidUtilities.dp(4.0f)) ? height : q.A(4.0f, richBlock2.padding.bottom, height);
+                i11 = (r3 != i10 || richBlock2.padding.bottom <= AndroidUtilities.dp(4.0f)) ? height : g0.A(4.0f, richBlock2.padding.bottom, height);
             }
             if (r3 == i10) {
                 return i11;
@@ -9313,7 +9313,7 @@ public class RichMessageLayout {
         f3Var.applyBottomPadding = false;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        TextView f7 = q.f(context, 1, 16.0f);
+        TextView f7 = g0.f(context, 1, 16.0f);
         f7.setTypeface(AndroidUtilities.bold());
         f7.setText(LocaleController.getString(R.string.InstantViewReference));
         f7.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
@@ -9344,7 +9344,7 @@ public class RichMessageLayout {
             if (arrayList.size() <= i10) {
                 break;
             }
-            if (((Boolean) i0.a.z(1, arrayList)).booleanValue()) {
+            if (((Boolean) i2.d.A(1, arrayList)).booleanValue()) {
                 str = "</ol>";
             }
             sb2.append(str);
@@ -9360,10 +9360,10 @@ public class RichMessageLayout {
             sb2.append(str2);
             arrayList.add(Boolean.valueOf(z10));
         }
-        if (arrayList.isEmpty() || ((Boolean) i0.a.h(1, arrayList)).booleanValue() == z10) {
+        if (arrayList.isEmpty() || ((Boolean) i2.d.h(1, arrayList)).booleanValue() == z10) {
             return;
         }
-        sb2.append(((Boolean) i0.a.z(1, arrayList)).booleanValue() ? "</ol>" : "</ul>");
+        sb2.append(((Boolean) i2.d.A(1, arrayList)).booleanValue() ? "</ol>" : "</ul>");
         sb2.append(z10 ? "<ol>" : "<ul>");
         arrayList.add(Boolean.valueOf(z10));
     }
@@ -9653,7 +9653,7 @@ public class RichMessageLayout {
                 }
             }
         }
-        return ((RichBlock) i0.a.h(1, this.blocks)).forcesTimeToNewLine();
+        return ((RichBlock) i2.d.h(1, this.blocks)).forcesTimeToNewLine();
     }
 
     public CharSequence formatText(TL_iv.RichText richText) {
@@ -9735,7 +9735,7 @@ public class RichMessageLayout {
                 }
             }
         }
-        RichBlock richBlock = (RichBlock) i0.a.h(1, this.blocks);
+        RichBlock richBlock = (RichBlock) i2.d.h(1, this.blocks);
         return richBlock.forcesTimeToNewLine() ? getMinWidth() : richBlock.getLastLineWidth();
     }
 
@@ -10300,7 +10300,7 @@ public class RichMessageLayout {
         return spannableStringBuilder;
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichUnsupportedBlock extends RichBlock implements Drawable.Callback {
         public final int index;
         public final int level;
@@ -10532,7 +10532,7 @@ public class RichMessageLayout {
         drawInternal(canvas, t1Var, f10 > f7, f7, f10);
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class MediaCell implements DownloadController.FileDownloadProgressListener {
         private static ColorMatrixColorFilter fancyBlurFilter;
         public final float aspectRatio;
@@ -10988,9 +10988,9 @@ public class RichMessageLayout {
             this.h = i13;
             this.imageReceiver.setImageCoords(i10, i11, i12, i13);
             int i14 = this.buttonSize;
-            int C = i0.a.C(i12, i14, 2, i10);
+            int C = i2.d.C(i12, i14, 2, i10);
             this.buttonX = C;
-            int C2 = i0.a.C(i13, i14, 2, i11);
+            int C2 = i2.d.C(i13, i14, 2, i11);
             this.buttonY = C2;
             RadialProgress2 radialProgress2 = this.radialProgress;
             if (radialProgress2 != null) {
@@ -11165,7 +11165,7 @@ public class RichMessageLayout {
         textPaint2.setTextSize(AndroidUtilities.dp(this.fontSize));
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class AnchorSpan extends CharacterStyle {
         public final String name;
 
@@ -11178,7 +11178,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichAudioBlock extends RichBlock implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
         private final TextPaint audioTimePaint;
         public final TL_iv.pageBlockAudio block;
@@ -11221,7 +11221,7 @@ public class RichMessageLayout {
             radialProgress2.q(dp, dp2, dp + dp3, dp3 + dp2);
             yo0 yo0Var = new yo0(null);
             this.seekBar = yo0Var;
-            yo0Var.h = new e0(this, 12);
+            yo0Var.h = new d0(this, 12);
             layoutInner();
             updateButtonState(false);
         }
@@ -11310,7 +11310,7 @@ public class RichMessageLayout {
             this.layoutWidth = i10 + richMessageLayout.padLeft + richMessageLayout.padRight;
             int dp = AndroidUtilities.dp(50.0f) + this.buttonX + this.size;
             this.seekBarX = dp;
-            this.seekBarWidth = q.b(18.0f, this.layoutWidth - dp, 0);
+            this.seekBarWidth = g0.b(18.0f, this.layoutWidth - dp, 0);
             MessageObject messageObject = this.currentMessageObject;
             String musicAuthor = messageObject != null ? messageObject.getMusicAuthor(false) : null;
             MessageObject messageObject2 = this.currentMessageObject;
@@ -11319,7 +11319,7 @@ public class RichMessageLayout {
                 this.titleLayout = null;
                 this.seekBarY = ((this.size - AndroidUtilities.dp(30.0f)) / 2) + this.buttonY;
             } else {
-                SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.D(musicAuthor, " - ", musicTitle));
+                SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.C(musicAuthor, " - ", musicTitle));
                 if (!TextUtils.isEmpty(musicAuthor)) {
                     spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
                 }
@@ -11605,7 +11605,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class RichDocumentBlock extends RichBlock implements DownloadController.FileDownloadProgressListener {
         private static final int MIN_WIDTH_DP = 220;
         public final TL_iv.pageBlockDocument block;
@@ -11740,7 +11740,7 @@ public class RichMessageLayout {
 
         private void rebuildLayouts() {
             this.layoutWidth = getLayoutWidth();
-            int b10 = q.b(48.0f, this.layoutWidth - (this.hasPreview ? AndroidUtilities.dp(97.0f) + this.previewX : this.buttonTextSpacing + (this.buttonX + this.buttonSize)), AndroidUtilities.dp(40.0f));
+            int b10 = g0.b(48.0f, this.layoutWidth - (this.hasPreview ? AndroidUtilities.dp(97.0f) + this.previewX : this.buttonTextSpacing + (this.buttonX + this.buttonSize)), AndroidUtilities.dp(40.0f));
             this.titlePaint.setTextSize(AndroidUtilities.dp(this.root.fontSize - 1));
             this.titlePaint.setTypeface(AndroidUtilities.bold());
             this.sizePaint.setTextSize(AndroidUtilities.dp(this.root.fontSize - 3));
@@ -11998,7 +11998,7 @@ public class RichMessageLayout {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static abstract class RichMediaBlock extends RichBlock implements DownloadController.FileDownloadProgressListener {
         private static ColorMatrixColorFilter fancyBlurFilter;
         private static Paint mediaBgPaint;

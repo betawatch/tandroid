@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class v00 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int w = 0;
@@ -134,7 +134,7 @@ public final class v00 extends org.telegram.ui.ActionBar.f3 implements Notificat
         for (int i10 = 0; i10 < size; i10++) {
             long longValue = ((Long) arrayList.get(i10)).longValue();
             if (DialogObject.isEncryptedDialog(longValue)) {
-                TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(n2Var.getMessagesController(), longValue);
+                TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(n2Var.getMessagesController(), longValue);
                 if (l4 != null) {
                     longValue = l4.user_id;
                     if (arrayList2.contains(Long.valueOf(longValue))) {

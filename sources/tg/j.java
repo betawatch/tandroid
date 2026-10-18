@@ -3,7 +3,7 @@ package tg;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -20,16 +20,16 @@ public final class j implements Runnable {
         switch (this.a) {
             case 0:
                 n nVar = this.b;
-                AnimatorSet animatorSet = nVar.a0;
-                if ((animatorSet != null && animatorSet.isRunning()) || ((valueAnimator = nVar.W) != null && valueAnimator.isRunning())) {
-                    nVar.k(nVar.L);
+                AnimatorSet animatorSet = nVar.d0;
+                if ((animatorSet != null && animatorSet.isRunning()) || ((valueAnimator = nVar.c0) != null && valueAnimator.isRunning())) {
+                    nVar.l(nVar.L);
                     break;
                 } else {
-                    nVar.n();
+                    nVar.p();
                     break;
                 }
             default:
-                this.b.l();
+                this.b.n();
                 break;
         }
     }

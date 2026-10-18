@@ -5,7 +5,7 @@ import c3.j0;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class c0 {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final class c0 {
                         vVar.d = wVar.d;
                         vVar.O = wVar.P;
                         vVar.u = wVar.v;
-                        i0.a.u(vVar, j02);
+                        i2.d.u(vVar, j02);
                         j0VarArr[i10] = j02;
                         i10++;
                     }
@@ -99,7 +99,7 @@ public final class c0 {
                         vVar2.d = wVar2.d;
                         vVar2.O = wVar2.P;
                         vVar2.u = wVar2.v;
-                        i0.a.u(vVar2, j03);
+                        i2.d.u(vVar2, j03);
                         j0VarArr2[i11] = j03;
                         i11++;
                     }

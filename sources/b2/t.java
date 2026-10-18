@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.util.SparseBooleanArray;
 import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
-import com.google.android.gms.internal.play_billing.x3;
+import com.google.android.gms.internal.play_billing.y3;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
     public final /* synthetic */ int a;
@@ -158,13 +158,13 @@ public final class t implements s4.d0, androidx.lifecycle.a0, y9.i {
         return false;
     }
 
-    public void i(x3 x3Var) {
+    public void i(y3 y3Var) {
         if (this.b) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "Skipping logging since initialization failed.");
             return;
         }
         try {
-            ((l5.s) this.c).a(new i5.a(null, x3Var, i5.d.a, null), new k2.f0(4));
+            ((l5.s) this.c).a(new i5.a(null, y3Var, i5.d.a, null), new k2.f0(4));
         } catch (Throwable unused) {
             com.google.android.gms.internal.play_billing.u.h("BillingLogger", "logging failed.");
         }

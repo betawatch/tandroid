@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class hw extends s4.b0 {
     public boolean I;
@@ -214,7 +214,7 @@ public final class hw extends s4.b0 {
                                         top = 1.0f;
                                     }
                                     dyVar.a.setOverScrollMode(2);
-                                    i13 = (int) com.google.android.gms.internal.cast.a6.B(top, 0.25f, 0.45f, i10);
+                                    i13 = (int) com.google.android.gms.internal.play_billing.k3.B(top, 0.25f, 0.45f, i10);
                                     if (i13 > -1) {
                                         i13 = -1;
                                     }
@@ -361,7 +361,7 @@ public final class hw extends s4.b0 {
                                             }
                                         }
                                         if (dyVar.v == 2 && i12 - o03 != 0 && i10 < 0 && z14) {
-                                            dyVar.a.setViewsOffset(org.telegram.ui.Cells.t0.z(i10, 0.2f, 1.0f - (dyVar.a.getViewOffset() / AndroidUtilities.dp(72.0f)), dyVar.a.getViewOffset()));
+                                            dyVar.a.setViewsOffset(org.telegram.ui.Cells.c1.z(i10, 0.2f, 1.0f - (dyVar.a.getViewOffset() / AndroidUtilities.dp(72.0f)), dyVar.a.getViewOffset()));
                                         }
                                         kw kwVar5 = dyVar.n;
                                         z13 = z19;

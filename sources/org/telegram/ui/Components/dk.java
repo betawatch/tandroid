@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class dk extends s4.c0 {
     public final /* synthetic */ ig.e0 r;
@@ -17,7 +17,7 @@ public final class dk extends s4.c0 {
 
     @Override // s4.c0
     public final int k(int i10, View view) {
-        return org.telegram.messenger.q.A(56.0f, ((nk) this.r.V).r.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
+        return org.telegram.messenger.g0.A(56.0f, ((nk) this.r.V).r.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
     }
 
     @Override // s4.c0

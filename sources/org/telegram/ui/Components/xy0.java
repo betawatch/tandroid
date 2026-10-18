@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xy0 extends FrameLayout {
     public float E;
@@ -25,7 +25,7 @@ public final class xy0 extends FrameLayout {
     public Paint c;
     public Paint d;
     public boolean e;
-    public ai.hc f;
+    public ai.ic f;
     public TextView h;
     public TextView n;
     public TextView r;
@@ -51,9 +51,9 @@ public final class xy0 extends FrameLayout {
             textView4.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
             textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
             textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), i0.b.o(this.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), i0.a.o(this.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
             textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), i0.b.o(this.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), i0.a.o(this.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
             textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
         }
         this.y.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));

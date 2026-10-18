@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageSuggestionParams;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ze implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class ze implements Utilities.Callback {
             case 6:
                 View view = (View) obj;
                 if (!(view instanceof org.telegram.ui.Cells.u1)) {
-                    if (!(view instanceof org.telegram.ui.Cells.x0)) {
+                    if (!(view instanceof org.telegram.ui.Cells.w0)) {
                         if (!(view instanceof org.telegram.ui.Cells.w1)) {
                             if (!(view instanceof org.telegram.ui.Cells.b0)) {
                                 if (view instanceof org.telegram.ui.Cells.h0) {
@@ -73,15 +73,15 @@ public final /* synthetic */ class ze implements Utilities.Callback {
                             break;
                         }
                     } else {
-                        org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
-                        x0Var.e0 = snVar.y9();
-                        x0Var.i0 = snVar.H9();
+                        org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
+                        w0Var.e0 = snVar.y9();
+                        w0Var.i0 = snVar.H9();
                         snVar.G9();
                         snVar.V8();
                         int W8 = snVar.W8();
-                        if (x0Var.j0 != W8) {
-                            x0Var.j0 = W8;
-                            x0Var.invalidate();
+                        if (w0Var.j0 != W8) {
+                            w0Var.j0 = W8;
+                            w0Var.invalidate();
                             break;
                         }
                     }

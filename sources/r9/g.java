@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import w7.c7;
 import w7.f7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class g implements b {
     public static final f n = new f(0);
@@ -106,7 +106,7 @@ public final class g implements b {
                 this.a.put(aVar2, new n(new l9.d(i10, this, aVar2)));
             }
             arrayList5.addAll(h(arrayList3));
-            arrayList5.addAll(j());
+            arrayList5.addAll(i());
             e();
         }
         int size4 = arrayList5.size();
@@ -244,19 +244,7 @@ public final class g implements b {
         return arrayList2;
     }
 
-    @Override // r9.b
-    public final Set i(r rVar) {
-        qa.b bVar;
-        synchronized (this) {
-            bVar = (o) this.c.get(rVar);
-            if (bVar == null) {
-                bVar = n;
-            }
-        }
-        return (Set) bVar.get();
-    }
-
-    public final ArrayList j() {
+    public final ArrayList i() {
         HashMap hashMap = this.c;
         ArrayList arrayList = new ArrayList();
         HashMap hashMap2 = new HashMap();
@@ -290,6 +278,18 @@ public final class g implements b {
             }
         }
         return arrayList;
+    }
+
+    @Override // r9.b
+    public final Set j(r rVar) {
+        qa.b bVar;
+        synchronized (this) {
+            bVar = (o) this.c.get(rVar);
+            if (bVar == null) {
+                bVar = n;
+            }
+        }
+        return (Set) bVar.get();
     }
 
     @Override // r9.b

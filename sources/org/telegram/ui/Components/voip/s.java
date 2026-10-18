@@ -18,8 +18,8 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.r50;
 import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class s extends View {
     public r50 E;
     public int F;
@@ -64,9 +64,9 @@ public final class s extends View {
         baVar2.a = AndroidUtilities.dp(80.0f);
         baVar2.b = AndroidUtilities.dp(95.0f);
         baVar2.b();
-        paint.setColor(i0.b.f(0.0f, h6.x0(null, h6.pg, false), h6.x0(null, h6.qg, false)));
+        paint.setColor(i0.a.f(0.0f, h6.x0(null, h6.pg, false), h6.x0(null, h6.qg, false)));
         paint.setAlpha(102);
-        paint2.setColor(i0.b.o(-16777216, 127));
+        paint2.setColor(i0.a.o(-16777216, 127));
     }
 
     public static void a(s sVar, boolean z10) {

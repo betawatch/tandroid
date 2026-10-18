@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class mv0 extends ql0 {
     public final Context c;
@@ -49,7 +49,7 @@ public class mv0 extends ql0 {
                 return ((qu0) arrayList.get(i11)).a;
             }
         }
-        return ((qu0) i0.a.h(1, arrayList)).a;
+        return ((qu0) i2.d.h(1, arrayList)).a;
     }
 
     @Override // org.telegram.ui.Components.ql0

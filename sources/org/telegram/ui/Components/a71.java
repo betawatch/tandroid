@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class a71 extends im0 {
     public s4.b0 V2;
@@ -200,10 +200,10 @@ public class a71 extends im0 {
         this.W2 = s61Var;
         setAdapter(s61Var);
         if (callback5 != null) {
-            setOnItemClickListener(new s2(21, this, callback5));
+            setOnItemClickListener(new q2(22, this, callback5));
         }
         if (callback5Return != null) {
-            setOnItemLongClickListener(new s2(22, this, callback5Return));
+            setOnItemLongClickListener(new q2(23, this, callback5Return));
         }
         z61 z61Var = new z61(this);
         z61Var.m = false;

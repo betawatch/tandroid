@@ -9,8 +9,8 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class h {
     public final Paint a;
     public LinearGradient b;
@@ -48,10 +48,10 @@ public final class h {
 
     public final void b(int i10, int i11) {
         float f7 = this.e;
-        int[] iArr = {0, i0.b.o(i10, i11), 0};
+        int[] iArr = {0, i0.a.o(i10, i11), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(i10, 204), 0}, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.a.o(i10, 204), 0}, (float[]) null, tileMode);
         this.a.setShader(this.b);
         this.c.setShader(this.d);
     }
@@ -108,10 +108,10 @@ public final class h {
         int dp = AndroidUtilities.dp(i12);
         this.e = dp;
         float f7 = dp;
-        int[] iArr = {0, i0.b.o(-1, i10), 0};
+        int[] iArr = {0, i0.a.o(-1, i10), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(-1, i11), 0}, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.a.o(-1, i11), 0}, (float[]) null, tileMode);
         paint.setShader(this.b);
         paint2.setShader(this.d);
         paint2.setStyle(Paint.Style.STROKE);

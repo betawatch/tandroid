@@ -18,7 +18,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wa1 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -454,7 +454,7 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
             }
         }
         if (i23 == 21) {
-            ((oo0) view).set(themeActivity.getUserConfig().getCurrentUser());
+            ((po0) view).set(themeActivity.getUserConfig().getCurrentUser());
             return;
         }
         switch (i23) {
@@ -472,7 +472,7 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                     String A0 = z10 ? org.telegram.ui.ActionBar.h6.A0() : LocaleController.getString("AutoNightThemeOff", R.string.AutoNightThemeOff);
                     if (z10) {
                         int i34 = org.telegram.ui.ActionBar.h6.o;
-                        A0 = a1.g.D(i34 == 1 ? LocaleController.getString("AutoNightScheduled", R.string.AutoNightScheduled) : i34 == 3 ? LocaleController.getString("AutoNightSystemDefault", R.string.AutoNightSystemDefault) : LocaleController.getString("AutoNightAdaptive", R.string.AutoNightAdaptive), " ", A0);
+                        A0 = a1.g.C(i34 == 1 ? LocaleController.getString("AutoNightScheduled", R.string.AutoNightScheduled) : i34 == 3 ? LocaleController.getString("AutoNightSystemDefault", R.string.AutoNightSystemDefault) : LocaleController.getString("AutoNightAdaptive", R.string.AutoNightAdaptive), " ", A0);
                     }
                     i5Var.b(LocaleController.getString("AutoNightTheme", R.string.AutoNightTheme), A0, R.drawable.menu_night_mode_24, z10, 0, false, true, false);
                     break;
@@ -505,7 +505,7 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
     /* JADX WARN: Type inference failed for: r2v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, org.telegram.ui.Cells.ga] */
     /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View, android.view.ViewGroup, android.widget.LinearLayout, java.lang.Object, org.telegram.ui.sa1] */
     /* JADX WARN: Type inference failed for: r2v28 */
-    /* JADX WARN: Type inference failed for: r2v29, types: [org.telegram.ui.oo0] */
+    /* JADX WARN: Type inference failed for: r2v29, types: [org.telegram.ui.po0] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         ?? gaVar;
@@ -525,14 +525,14 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                 i5Var = new org.telegram.ui.Cells.d9(context);
                 break;
             case 3:
-                i5Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+                i5Var = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 4:
                 gaVar = new org.telegram.ui.Cells.ga(context);
                 gaVar.setWillNotDraw(false);
                 TextView textView = new TextView(context);
                 gaVar.a = textView;
-                org.telegram.messenger.wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+                org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
                 textView.setMaxLines(1);
                 textView.setSingleLine(true);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -560,33 +560,33 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                 break;
             case 9:
                 gaVar = new sa1(context);
-                gaVar.b = new org.telegram.ui.Cells.z0[2];
+                gaVar.b = new org.telegram.ui.Cells.y0[2];
                 gaVar.setOrientation(0);
                 gaVar.setPadding(AndroidUtilities.dp(21.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(21.0f), 0);
                 int i14 = 0;
                 while (true) {
-                    org.telegram.ui.Cells.z0[] z0VarArr = (org.telegram.ui.Cells.z0[]) gaVar.b;
-                    if (i14 >= z0VarArr.length) {
+                    org.telegram.ui.Cells.y0[] y0VarArr = (org.telegram.ui.Cells.y0[]) gaVar.b;
+                    if (i14 >= y0VarArr.length) {
                         i5Var = gaVar;
                         break;
                     } else {
                         boolean z11 = i14 == 1;
-                        org.telegram.ui.Cells.z0 z0Var = new org.telegram.ui.Cells.z0(context);
-                        z0Var.c = new RectF();
+                        org.telegram.ui.Cells.y0 y0Var = new org.telegram.ui.Cells.y0(context);
+                        y0Var.c = new RectF();
                         TextPaint textPaint = new TextPaint(1);
-                        z0Var.d = textPaint;
-                        z0Var.setWillNotDraw(false);
-                        z0Var.b = z11;
-                        z0Var.setContentDescription(LocaleController.getString(z11 ? R.string.ChatListExpanded : R.string.ChatListDefault));
+                        y0Var.d = textPaint;
+                        y0Var.setWillNotDraw(false);
+                        y0Var.b = z11;
+                        y0Var.setContentDescription(LocaleController.getString(z11 ? R.string.ChatListExpanded : R.string.ChatListDefault));
                         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
-                        org.telegram.ui.Cells.y0 y0Var = new org.telegram.ui.Cells.y0(z0Var, context);
-                        z0Var.a = y0Var;
-                        y0Var.setSize(AndroidUtilities.dp(20.0f));
-                        z0Var.addView(y0Var, w7.z5.a(22.0f, 0.0f, 26.0f, 10.0f, 0.0f, 22, 53));
-                        y0Var.a((z11 && SharedConfig.useThreeLinesLayout) || !(z11 || SharedConfig.useThreeLinesLayout), false);
-                        z0VarArr[i14] = z0Var;
-                        gaVar.addView(((org.telegram.ui.Cells.z0[]) gaVar.b)[i14], w7.z5.m(0.5f, -1, -1, i14 == 1 ? 10 : 0, 0, 0));
-                        ((org.telegram.ui.Cells.z0[]) gaVar.b)[i14].setOnClickListener(new ci.h2(3, gaVar, z11));
+                        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(y0Var, context);
+                        y0Var.a = x0Var;
+                        x0Var.setSize(AndroidUtilities.dp(20.0f));
+                        y0Var.addView(x0Var, w7.z5.a(22.0f, 0.0f, 26.0f, 10.0f, 0.0f, 22, 53));
+                        x0Var.a((z11 && SharedConfig.useThreeLinesLayout) || !(z11 || SharedConfig.useThreeLinesLayout), false);
+                        y0VarArr[i14] = y0Var;
+                        gaVar.addView(((org.telegram.ui.Cells.y0[]) gaVar.b)[i14], w7.z5.m(0.5f, -1, -1, i14 == 1 ? 10 : 0, 0, 0));
+                        ((org.telegram.ui.Cells.y0[]) gaVar.b)[i14].setOnClickListener(new ci.h2(3, gaVar, z11));
                         i14++;
                     }
                 }
@@ -617,7 +617,7 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                 ya1 ya1Var = new ya1(themeActivity, context);
                 ua1Var.setAdapter(ya1Var);
                 ua1Var.setOnItemClickListener(new pa1(this, ya1Var, ua1Var, 0));
-                ua1Var.setOnItemLongClickListener(new fr0(17, this, ya1Var));
+                ua1Var.setOnItemLongClickListener(new gn0(18, this, ya1Var));
                 ua1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(62.0f)));
                 i5Var = ua1Var;
                 break;
@@ -722,7 +722,7 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                 break;
             case 21:
                 i13 = ((org.telegram.ui.ActionBar.n2) themeActivity).currentAccount;
-                gaVar = new oo0(i13, 0L, this.c, themeActivity.getResourceProvider());
+                gaVar = new po0(i13, 0L, this.c, themeActivity.getResourceProvider());
                 i5Var = gaVar;
                 break;
         }

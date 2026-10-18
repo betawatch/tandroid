@@ -64,7 +64,7 @@ import org.telegram.ui.xu;
 import s4.g1;
 import s4.h1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n, SuccessContinuation {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     }
 
     public void H(Object obj, String str) {
-        ((ArrayList) this.b).add(a1.g.D(str, "=", String.valueOf(obj)));
+        ((ArrayList) this.b).add(a1.g.C(str, "=", String.valueOf(obj)));
     }
 
     @Override // org.telegram.ui.ActionBar.d6
@@ -587,7 +587,7 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
                 sb2.append('}');
                 return sb2.toString();
             case 18:
-                return "Bounds{lower=" + ((i0.c) this.b) + " upper=" + ((i0.c) this.c) + "}";
+                return "Bounds{lower=" + ((i0.b) this.b) + " upper=" + ((i0.b) this.c) + "}";
             default:
                 return super.toString();
         }
@@ -734,43 +734,15 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
         this.b = new na(photoViewer.b0, photoViewer.e0, 0, false);
     }
 
-    public void J() {
-    }
-
-    @Override // ei.zb
-    public /* synthetic */ void Q() {
-    }
-
-    @Override // org.telegram.ui.l7
-    public void W0() {
-    }
-
-    @Override // gh.a
-    public /* synthetic */ void b() {
-    }
-
-    @Override // org.telegram.ui.l7
-    public void clear() {
-    }
-
-    @Override // ne.f
-    public void m() {
-    }
-
-    @Override // ei.zb
-    public /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.Components.bp0
-    public void v() {
-    }
-
     @Override // ei.zb
     public /* synthetic */ void C(long j10) {
     }
 
     @Override // ei.zb
     public /* synthetic */ void E(boolean z10) {
+    }
+
+    public void J() {
     }
 
     @Override // ei.zb
@@ -786,11 +758,27 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     }
 
     @Override // ei.zb
+    public /* synthetic */ void Q() {
+    }
+
+    @Override // ei.zb
     public /* synthetic */ void S(float f7) {
     }
 
     @Override // ei.zb
     public /* synthetic */ void W(long j10) {
+    }
+
+    @Override // org.telegram.ui.l7
+    public void W0() {
+    }
+
+    @Override // gh.a
+    public /* synthetic */ void b() {
+    }
+
+    @Override // org.telegram.ui.l7
+    public void clear() {
     }
 
     @Override // ei.zb
@@ -809,6 +797,10 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     public /* synthetic */ void l(float f7) {
     }
 
+    @Override // ne.f
+    public void m() {
+    }
+
     @Override // org.telegram.ui.Components.x71
     public /* synthetic */ void onSeekFinished(j2.a aVar) {
     }
@@ -822,7 +814,15 @@ public class q implements ne.f, d6, bp0, gu, zb, l7, mm0, gh.a, x71, n5.b, y2.n,
     }
 
     @Override // ei.zb
+    public /* synthetic */ void q() {
+    }
+
+    @Override // ei.zb
     public /* synthetic */ void t(float f7) {
+    }
+
+    @Override // org.telegram.ui.Components.bp0
+    public void v() {
     }
 
     @Override // ei.zb

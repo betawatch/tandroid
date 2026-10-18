@@ -3,7 +3,7 @@ package rg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import ei.r5;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.kb0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x0 extends im0 {
     public final ArrayList V2;
@@ -111,14 +111,14 @@ public final class x0 extends im0 {
                         }
                         groupedMessages = currentMessagesGroup2;
                     }
-                } else if (childAt instanceof org.telegram.ui.Cells.x0) {
-                    org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) childAt;
-                    if (x0Var.K()) {
+                } else if (childAt instanceof org.telegram.ui.Cells.w0) {
+                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) childAt;
+                    if (w0Var.K()) {
                         canvas.save();
-                        canvas.translate(x0Var.getX(), x0Var.getY() + x0Var.getPaddingTop());
-                        canvas.scale(x0Var.getScaleX(), x0Var.getScaleY(), x0Var.getMeasuredWidth() / 2.0f, x0Var.getMeasuredHeight() / 2.0f);
-                        x0Var.A(canvas, true);
-                        x0Var.C(canvas, true);
+                        canvas.translate(w0Var.getX(), w0Var.getY() + w0Var.getPaddingTop());
+                        canvas.scale(w0Var.getScaleX(), w0Var.getScaleY(), w0Var.getMeasuredWidth() / 2.0f, w0Var.getMeasuredHeight() / 2.0f);
+                        w0Var.A(canvas, true);
+                        w0Var.C(canvas, true);
                         canvas.restore();
                     }
                 }
@@ -208,7 +208,7 @@ public final class x0 extends im0 {
                     boolean z11 = (groupedMessages2.transitionParams.cell.getScaleX() == 1.0f && groupedMessages2.transitionParams.cell.getScaleY() == 1.0f) ? false : z10;
                     if (z11) {
                         canvas.save();
-                        canvas.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), a6.z(f15, f13, f10, f13), a6.z(f18, f17, f10, f17));
+                        canvas.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), k3.z(f15, f13, f10, f13), k3.z(f18, f17, f10, f17));
                     }
                     MessageObject.GroupedMessages.TransitionParams transitionParams4 = groupedMessages2.transitionParams;
                     ArrayList arrayList2 = arrayList;
@@ -369,7 +369,7 @@ public final class x0 extends im0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        org.telegram.ui.Cells.x0 x0Var;
+        org.telegram.ui.Cells.w0 w0Var;
         float f7;
         float f10;
         boolean z10;
@@ -382,9 +382,9 @@ public final class x0 extends im0 {
         org.telegram.ui.Cells.u1 u1Var = null;
         if (view instanceof org.telegram.ui.Cells.u1) {
             u1Var = (org.telegram.ui.Cells.u1) view;
-            x0Var = null;
+            w0Var = null;
         } else {
-            x0Var = view instanceof org.telegram.ui.Cells.x0 ? (org.telegram.ui.Cells.x0) view : null;
+            w0Var = view instanceof org.telegram.ui.Cells.w0 ? (org.telegram.ui.Cells.w0) view : null;
         }
         boolean drawChild = super.drawChild(canvas, view, j10);
         if (u1Var != null && u1Var.U2()) {
@@ -392,10 +392,10 @@ public final class x0 extends im0 {
             canvas.translate(u1Var.getX(), u1Var.getY() + u1Var.getPaddingTop());
             u1Var.X1(canvas);
             canvas.restore();
-        } else if (x0Var != null) {
+        } else if (w0Var != null) {
             canvas.save();
-            canvas.translate(x0Var.getX(), x0Var.getY());
-            x0Var.B(canvas);
+            canvas.translate(w0Var.getX(), w0Var.getY());
+            w0Var.B(canvas);
             canvas.restore();
         }
         float f11 = 0.0f;
@@ -488,7 +488,7 @@ public final class x0 extends im0 {
                         if (!u1Var.o3()) {
                             f12 = 1.0f - f12;
                         }
-                        top2 = (int) a6.x(1.0f, f12, Math.min(top2, measuredHeight), top2 * f12);
+                        top2 = (int) k3.y(1.0f, f12, Math.min(top2, measuredHeight), top2 * f12);
                     }
                 } else if (top2 > measuredHeight) {
                     top2 = measuredHeight;

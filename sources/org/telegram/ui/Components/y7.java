@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y7 extends FrameLayout {
     public final RectF a;
@@ -150,10 +150,10 @@ public final class y7 extends FrameLayout {
                 }
                 z7Var.setVisibility(0);
                 i13 = ((org.telegram.ui.ActionBar.f3) k8Var).backgroundPaddingTop;
-                z7Var.setTranslationY(Math.max(0.0f, com.google.android.gms.internal.cast.a6.x(1.0f, k8Var.Q0, AndroidUtilities.dp(6.0f), (i25 - i13) - AndroidUtilities.dp(f11)) - z7Var.getTop()));
+                z7Var.setTranslationY(Math.max(0.0f, com.google.android.gms.internal.play_billing.k3.y(1.0f, k8Var.Q0, AndroidUtilities.dp(6.0f), (i25 - i13) - AndroidUtilities.dp(f11)) - z7Var.getTop()));
                 View view = k8Var.d;
                 i14 = ((org.telegram.ui.ActionBar.f3) k8Var).backgroundPaddingTop;
-                view.setTranslationY(Math.max(0.0f, com.google.android.gms.internal.cast.a6.x(1.0f, k8Var.Q0, AndroidUtilities.dp(6.0f), (i25 - i14) - AndroidUtilities.dp(f11)) - z7Var.getTop()));
+                view.setTranslationY(Math.max(0.0f, com.google.android.gms.internal.play_billing.k3.y(1.0f, k8Var.Q0, AndroidUtilities.dp(6.0f), (i25 - i14) - AndroidUtilities.dp(f11)) - z7Var.getTop()));
                 return;
             }
         }

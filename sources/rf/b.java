@@ -7,13 +7,13 @@ import android.os.Build;
 import android.os.SystemClock;
 import android.util.Log;
 import android.view.Choreographer;
-import androidx.mediarouter.app.f;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.ui.LaunchActivity;
+import r4.f;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b {
     public final LaunchActivity d;
@@ -29,8 +29,8 @@ public final class b {
     public final uf.a j = new uf.a("enter");
     public final uf.a k = new uf.a("leave");
     public final Choreographer l = Choreographer.getInstance();
-    public final r4.e m = new r4.e(this, 1);
-    public final f o = new f(this, 10);
+    public final f m = new f(this, 1);
+    public final androidx.mediarouter.app.f o = new androidx.mediarouter.app.f(this, 10);
 
     public b(LaunchActivity launchActivity) {
         this.d = launchActivity;
@@ -142,7 +142,7 @@ public final class b {
 
     public final boolean e() {
         LaunchActivity launchActivity = this.d;
-        return a6.s(launchActivity) && ((d) launchActivity.m0.e) != null;
+        return k3.s(launchActivity) && ((d) launchActivity.m0.e) != null;
     }
 
     public final void f() {
@@ -193,7 +193,7 @@ public final class b {
         this.e = true;
         IntentFilter intentFilter = new IntentFilter("PIP_CUSTOM_EVENT");
         int i10 = Build.VERSION.SDK_INT;
-        f fVar = this.o;
+        androidx.mediarouter.app.f fVar = this.o;
         LaunchActivity launchActivity = this.d;
         if (i10 >= 33) {
             launchActivity.registerReceiver(fVar, intentFilter, 4);

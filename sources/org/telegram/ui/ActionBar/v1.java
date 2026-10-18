@@ -15,7 +15,7 @@ import org.telegram.ui.fg0;
 import org.telegram.ui.t70;
 import org.telegram.ui.xm0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class v1 extends ScrollView {
     public final /* synthetic */ int a;
@@ -111,8 +111,8 @@ public final class v1 extends ScrollView {
                 t70 t70Var = (t70) this.b;
                 if (!t70Var.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.q.C(20.0f, t70Var.I, rect.top);
-                    rect.bottom = org.telegram.messenger.q.C(50.0f, t70Var.I, rect.bottom);
+                    rect.top = org.telegram.messenger.g0.C(20.0f, t70Var.I, rect.top);
+                    rect.bottom = org.telegram.messenger.g0.C(50.0f, t70Var.I, rect.bottom);
                     break;
                 } else {
                     t70Var.v = false;
@@ -134,8 +134,8 @@ public final class v1 extends ScrollView {
                 UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
                 if (!usersSelectActivity.v) {
                     rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-                    rect.top = org.telegram.messenger.q.C(20.0f, usersSelectActivity.Q, rect.top);
-                    rect.bottom = org.telegram.messenger.q.C(50.0f, usersSelectActivity.Q, rect.bottom);
+                    rect.top = org.telegram.messenger.g0.C(20.0f, usersSelectActivity.Q, rect.top);
+                    rect.bottom = org.telegram.messenger.g0.C(50.0f, usersSelectActivity.Q, rect.bottom);
                     break;
                 } else {
                     usersSelectActivity.v = false;

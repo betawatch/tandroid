@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0, org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, org.telegram.ui.Components.nh0, Utilities.Callback5, org.telegram.ui.Components.ke0, org.telegram.ui.ActionBar.k1, org.telegram.ui.Components.tl0, hg.z1, org.telegram.ui.Components.yl0, r0.n, org.telegram.ui.Components.xl0, pt, ne.d, fj0 {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
     @Override // r0.n
     public r0.k1 B0(View view, r0.k1 k1Var) {
         ba0 ba0Var = (ba0) this.b;
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
         if (!ba0Var.a.equals(defaultWindowInsets)) {
             ba0Var.a = defaultWindowInsets;
             ba0Var.requestLayout();
@@ -283,7 +283,7 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
                 ConnectionsManager.getInstance(i11).sendRequest(deleteaccount, new m(qe0Var, 12), 10);
                 break;
             case 25:
-                ((org.telegram.messenger.xi) obj).run();
+                ((org.telegram.messenger.wi) obj).run();
                 break;
             case 27:
                 mk0 mk0Var = ((ik0) obj).b;

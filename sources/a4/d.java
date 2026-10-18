@@ -2,7 +2,7 @@ package a4;
 
 import ah.i1;
 import ah.j1;
-import ai.de;
+import ai.ee;
 import android.util.Pair;
 import ci.q;
 import ci.s4;
@@ -10,7 +10,7 @@ import ci.w0;
 import ei.ac;
 import hg.g0;
 import hg.y1;
-import ig.x1;
+import ig.z1;
 import java.io.File;
 import java.util.Comparator;
 import org.telegram.messenger.camera.CameraController;
@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import s4.b1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Comparator {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class d implements Comparator {
                 i11 = ((TL_stars.SavedStarGift) obj).date;
                 break;
             case 5:
-                return (int) (((de) obj2).d - ((de) obj).d);
+                return (int) (((ee) obj2).d - ((ee) obj).d);
             case 6:
                 long j10 = ((bi.b) obj2).c;
                 long j11 = ((bi.b) obj).c;
@@ -116,7 +116,7 @@ public final /* synthetic */ class d implements Comparator {
             case 23:
                 return ((TL_account.TL_businessWeeklyOpen) obj).start_minute - ((TL_account.TL_businessWeeklyOpen) obj2).start_minute;
             case 24:
-                return ((x1) obj).c - ((x1) obj2).c;
+                return ((z1) obj).c - ((z1) obj2).c;
             case 25:
                 i10 = Integer.bitCount(((Integer) obj2).intValue());
                 i11 = Integer.bitCount(((Integer) obj).intValue());

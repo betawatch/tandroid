@@ -28,7 +28,7 @@ import org.telegram.ui.te;
 import org.telegram.ui.ti;
 import org.telegram.ui.we;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t3 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -70,21 +70,21 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
         int i10;
         switch (this.a) {
             case 0:
-                k7.S0((k7) this.c, (boolean[]) this.b, (TextView) this.d, (TL_stars.starGiftDepositPayload[]) this.e, (Runnable[]) this.f, (TL_stars.starGiftDepositPayload) obj);
+                k7.V0((k7) this.c, (boolean[]) this.b, (TextView) this.d, (TL_stars.starGiftDepositPayload[]) this.e, (Runnable[]) this.f, (TL_stars.starGiftDepositPayload) obj);
                 break;
             case 1:
                 sn snVar = (sn) this.c;
                 boolean[] zArr = (boolean[]) this.b;
                 pf.c cVar = (pf.c) this.d;
                 TLRPC.User[] userArr = (TLRPC.User[]) this.e;
-                i2.d1 d1Var = (i2.d1) this.f;
+                m4 m4Var = (m4) this.f;
                 TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
                 if (!zArr[0]) {
                     if (cVar != null) {
                         cVar.b();
                     }
                     userArr[0] = (walletuseraddress == null || walletuseraddress.user_id == 0) ? null : snVar.getMessagesController().getUser(Long.valueOf(walletuseraddress.user_id));
-                    d1Var.run();
+                    m4Var.run();
                     break;
                 }
                 break;
@@ -177,7 +177,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                 break;
             case 4:
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.c;
-                org.telegram.ui.Wallet.z6 z6Var = (org.telegram.ui.Wallet.z6) this.b;
+                org.telegram.ui.Wallet.c7 c7Var = (org.telegram.ui.Wallet.c7) this.b;
                 org.telegram.ui.Wallet.h0 h0Var = (org.telegram.ui.Wallet.h0) this.d;
                 org.telegram.ui.Wallet.j0 j0Var = (org.telegram.ui.Wallet.j0) this.e;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) this.f;
@@ -208,7 +208,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                         }
                     }
                 }
-                z6Var.run();
+                c7Var.run();
                 if (tL_error == null || (str = tL_error.text) == null) {
                     str = "NULL_ERROR";
                 }
@@ -219,7 +219,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                 TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) this.b;
                 SendMessagesHelper sendMessagesHelper = (SendMessagesHelper) this.d;
                 MessageObject messageObject2 = (MessageObject) this.e;
-                org.telegram.ui.Wallet.z6 z6Var2 = (org.telegram.ui.Wallet.z6) this.f;
+                org.telegram.ui.Wallet.c7 c7Var2 = (org.telegram.ui.Wallet.c7) this.f;
                 TLRPC.Updates updates2 = (TLRPC.Updates) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 TL_update.TL_updateSentWalletTransaction z17 = org.telegram.ui.Wallet.m0.z(updates2);
@@ -240,7 +240,7 @@ public final /* synthetic */ class t3 implements Utilities.Callback2 {
                             m0Var2.c(wallettransaction2, z17);
                             break;
                         } else {
-                            z6Var2.run();
+                            c7Var2.run();
                             if (tL_error2 == null || (str2 = tL_error2.text) == null) {
                                 str2 = "NULL_ERROR";
                             }

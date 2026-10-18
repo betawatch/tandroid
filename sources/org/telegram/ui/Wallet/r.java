@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.m71;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r implements Runnable {
     public final /* synthetic */ int a;
@@ -139,7 +139,7 @@ public final /* synthetic */ class r implements Runnable {
                         TLRPC.User user2 = user;
                         String str9 = str2;
                         wallettransaction.peer = m0.f(user2, str9, str5);
-                        z6 z6Var = new z6(m0Var3, wallettransaction, nftitem2, A, 3);
+                        c7 c7Var = new c7(m0Var3, wallettransaction, nftitem2, A, 3);
                         long nextLong = Utilities.random.nextLong();
                         wallettransaction.random_id = nextLong;
                         m0Var3.p.add(0, wallettransaction);
@@ -175,7 +175,7 @@ public final /* synthetic */ class r implements Runnable {
                             if (tL_updateWalletGaslessInfo2.available) {
                                 str6 = tL_updateWalletGaslessInfo2.relayer_address;
                                 m0.F("prepare sending");
-                                final t tVar = new t(m0Var3, z6Var, sendMessagesHelper, messageObject, wallettransaction, str9, A, nextLong, user2);
+                                final t tVar = new t(m0Var3, c7Var, sendMessagesHelper, messageObject, wallettransaction, str9, A, nextLong, user2);
                                 e2Var2 = e2Var;
                                 if (e2Var2 == null) {
                                     final int i11 = 0;
@@ -221,7 +221,7 @@ public final /* synthetic */ class r implements Runnable {
                         }
                         str6 = null;
                         m0.F("prepare sending");
-                        final t tVar2 = new t(m0Var3, z6Var, sendMessagesHelper, messageObject, wallettransaction, str9, A, nextLong, user2);
+                        final t tVar2 = new t(m0Var3, c7Var, sendMessagesHelper, messageObject, wallettransaction, str9, A, nextLong, user2);
                         e2Var2 = e2Var;
                         if (e2Var2 == null) {
                         }

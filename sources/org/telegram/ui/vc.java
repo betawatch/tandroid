@@ -10,10 +10,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class vc extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
-    public final po0 a;
+    public final qo0 a;
     public final uc b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final TextView d;
@@ -30,11 +30,11 @@ public final class vc extends FrameLayout implements org.telegram.ui.ActionBar.y
         this.h = ddVar;
         Context context = getContext();
         d6Var = ((org.telegram.ui.ActionBar.n2) ddVar).resourceProvider;
-        po0 po0Var = new po0(context, d6Var);
-        this.a = po0Var;
-        po0Var.setProgressToGradient(1.0f);
-        po0Var.F = true;
-        addView(po0Var, w7.z5.e(-1, -1, 119));
+        qo0 qo0Var = new qo0(context, d6Var);
+        this.a = qo0Var;
+        qo0Var.setProgressToGradient(1.0f);
+        qo0Var.F = true;
+        addView(qo0Var, w7.z5.e(-1, -1, 119));
         Context context2 = getContext();
         i10 = ((org.telegram.ui.ActionBar.n2) ddVar).currentAccount;
         long j10 = ddVar.a;

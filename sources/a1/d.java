@@ -1,7 +1,7 @@
 package a1;
 
 import ah.i1;
-import ai.fa;
+import ai.ga;
 import ai.l3;
 import ai.t0;
 import android.app.Activity;
@@ -42,7 +42,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -89,7 +89,7 @@ import w7.z5;
 import x2.k;
 import x2.m;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, BillingController.ProductDetailsResponseListenerLegacy, xx, a2, e5, md0, MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback, Utilities.Callback2Return, k {
     public final /* synthetic */ int a;
@@ -317,7 +317,7 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
                 AndroidUtilities.runOnUIThread(new t0(list, (Utilities.Callback2) this.b, (TLRPC.TL_inputStorePaymentStarsTopup) this.c, (TL_stars.TL_starsTopupOption) this.d, (Activity) this.e, 7));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new l3((fa) this.b, list, (s1) this.c, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.d, iVar, (Activity) this.e, 2));
+                AndroidUtilities.runOnUIThread(new l3((ga) this.b, list, (s1) this.c, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.d, iVar, (Activity) this.e, 2));
                 break;
         }
     }
@@ -429,7 +429,7 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
         j01 j01Var = (j01) this.e;
         Integer num = (Integer) obj;
         Float f7 = (Float) obj2;
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         LinearLayout linearLayout = new LinearLayout(context);
         e.addView(linearLayout, z5.t(-2, -2, 1, 0, 0, 0, 0));
         ImageView imageView = new ImageView(context);

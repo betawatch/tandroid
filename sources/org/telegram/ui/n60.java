@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, ne.d, View.OnClickListener, qh.d {
     public boolean E;
@@ -163,7 +163,7 @@ public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
             b2Var.q(500L);
             TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
             createconferencecall.random_id = Utilities.random.nextInt();
-            ConnectionsManager.getInstance(i13).sendRequest(createconferencecall, new ai.rb(i13, b2Var, context, d6Var, d60Var, 5));
+            ConnectionsManager.getInstance(i13).sendRequest(createconferencecall, new ai.sb(i13, b2Var, context, d6Var, d60Var, 5));
             return;
         }
         if (i10 == 0 && l60Var.F != 0 && !l60Var.n) {
@@ -259,7 +259,7 @@ public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                                 if (canAddAdmins) {
                                     b2Var3.R = LocaleController.getString(R.string.AddBotAdminAlert);
                                     b2Var3.T = LocaleController.getString(R.string.AddBotAsAdmin);
-                                    alertDialog$Builder2.k(LocaleController.getString(R.string.AddAsAdmin), new ov(7, n60Var, user));
+                                    alertDialog$Builder2.k(LocaleController.getString(R.string.AddAsAdmin), new zu(8, n60Var, user));
                                     alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
                                 } else {
                                     b2Var3.T = LocaleController.getString(R.string.CantAddBotAsAdmin);
@@ -700,7 +700,7 @@ public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         int i10 = this.a;
         int measuredHeight = this.actionBar.getMeasuredHeight() + AndroidUtilities.dp(i10 + 48) + ((int) this.b.e);
         int measuredWidth = this.n.getMeasuredWidth();
-        int B = org.telegram.messenger.q.B(i10, this.n.getMeasuredHeight(), dp);
+        int B = org.telegram.messenger.g0.B(i10, this.n.getMeasuredHeight(), dp);
         Rect rect = this.o0;
         rect.set(0, measuredHeight, measuredWidth, B);
         this.n.setClipBounds(rect);
@@ -890,7 +890,7 @@ public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
                     a2VarArr[0].setOnClickListener(new f20(a2VarArr, i12));
                     alertDialog$Builder.n(linearLayout);
                 }
-                alertDialog$Builder.k(LocaleController.getString(R.string.Add), new ov(8, this, a2VarArr));
+                alertDialog$Builder.k(LocaleController.getString(R.string.Add), new zu(9, this, a2VarArr));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 showDialog(b2Var);
                 return true;

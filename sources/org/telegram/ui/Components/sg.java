@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class sg extends FrameLayout {
     public final Drawable E;
@@ -491,7 +491,7 @@ public final class sg extends FrameLayout {
         r47.drawPath(r2, r6);
         r47.restore();
         r47.save();
-        r4.setBounds(r7 - (r4.getIntrinsicWidth() / 2), (int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r46.f.getHeight() + r14)), org.telegram.ui.Cells.t0.B(2, r7, r4), r4.getIntrinsicHeight() + ((int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r46.f.getHeight() + r14))));
+        r4.setBounds(r7 - (r4.getIntrinsicWidth() / 2), (int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r46.f.getHeight() + r14)), org.telegram.ui.Cells.c1.B(2, r7, r4), r4.getIntrinsicHeight() + ((int) (org.telegram.messenger.AndroidUtilities.dpf2(20.0f) + (r46.f.getHeight() + r14))));
         r4.draw(r47);
         r47.restore();
      */
@@ -599,9 +599,9 @@ public final class sg extends FrameLayout {
     /* JADX WARN: Code restructure failed: missing block: B:69:0x03b3, code lost:
     
         r4 = org.telegram.messenger.AndroidUtilities.dpf2(72.0f);
-        r3 = com.google.android.gms.internal.cast.a6.x(1.0f, r3, org.telegram.messenger.AndroidUtilities.dpf2(24.0f) * r14, r4 * r3);
+        r3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, r3, org.telegram.messenger.AndroidUtilities.dpf2(24.0f) * r14, r4 * r3);
         r5 = r8.q4;
-        r3 = com.google.android.gms.internal.cast.a6.x(1.0f, r5, r4, r3);
+        r3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, r5, r4, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:70:0x03d5, code lost:
     
@@ -613,7 +613,7 @@ public final class sg extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:72:0x03dc, code lost:
     
-        r2 = org.telegram.messenger.q.z(1.0f, r2, (1.0f - r10) * r8.i4, r5);
+        r2 = org.telegram.messenger.g0.z(1.0f, r2, (1.0f - r10) * r8.i4, r5);
         r9 = r7;
         r6 = r30 + r24;
         r47.scale(r2, r2, r9, r6);
@@ -658,7 +658,7 @@ public final class sg extends FrameLayout {
     
         r5 = 1.0f - r21;
         r7 = r25;
-        r12.set((r35 - org.telegram.messenger.AndroidUtilities.dpf2(6.0f)) - (org.telegram.messenger.AndroidUtilities.dpf2(r25) * r5), r6 - (org.telegram.messenger.AndroidUtilities.dpf2(r25) * r5), org.telegram.ui.Cells.t0.b(r7, r5, org.telegram.messenger.AndroidUtilities.dp(6.0f) + r34), org.telegram.ui.Cells.t0.b(r7, r5, r6 + org.telegram.messenger.AndroidUtilities.dp(12.0f)));
+        r12.set((r35 - org.telegram.messenger.AndroidUtilities.dpf2(6.0f)) - (org.telegram.messenger.AndroidUtilities.dpf2(r25) * r5), r6 - (org.telegram.messenger.AndroidUtilities.dpf2(r25) * r5), org.telegram.ui.Cells.c1.b(r7, r5, org.telegram.messenger.AndroidUtilities.dp(6.0f) + r34), org.telegram.ui.Cells.c1.b(r7, r5, r6 + org.telegram.messenger.AndroidUtilities.dp(12.0f)));
         r9 = r12.bottom;
         r2 = r12.centerX();
         r3 = r12.centerY();
@@ -688,10 +688,10 @@ public final class sg extends FrameLayout {
         r2 = org.telegram.messenger.AndroidUtilities.rectTmp;
         r2.set(0.0f, 0.0f, org.telegram.messenger.AndroidUtilities.dpf2(8.0f), org.telegram.messenger.AndroidUtilities.dpf2(8.0f));
         r1.save();
-        r1.clipRect(0.0f, 0.0f, getMeasuredWidth(), org.telegram.ui.Cells.t0.b(2.0f, r3, r24 + r9));
+        r1.clipRect(0.0f, 0.0f, getMeasuredWidth(), org.telegram.ui.Cells.c1.b(2.0f, r3, r24 + r9));
         r45 = r3;
         r11 = r33;
-        r1.translate(r35 - org.telegram.messenger.AndroidUtilities.dpf2(4.0f), (org.telegram.messenger.AndroidUtilities.dpf2(2.0f) * r8.n4) + org.telegram.ui.Cells.t0.b(12.0f, r9, (r12.top - org.telegram.messenger.AndroidUtilities.dp(6.0f)) - org.telegram.messenger.AndroidUtilities.lerp(org.telegram.messenger.AndroidUtilities.dpf2(2.0f), (1.0f - r8.o4) * org.telegram.messenger.AndroidUtilities.dpf2(1.5f), r11)));
+        r1.translate(r35 - org.telegram.messenger.AndroidUtilities.dpf2(4.0f), (org.telegram.messenger.AndroidUtilities.dpf2(2.0f) * r8.n4) + org.telegram.ui.Cells.c1.b(12.0f, r9, (r12.top - org.telegram.messenger.AndroidUtilities.dp(6.0f)) - org.telegram.messenger.AndroidUtilities.lerp(org.telegram.messenger.AndroidUtilities.dpf2(2.0f), (1.0f - r8.o4) * org.telegram.messenger.AndroidUtilities.dpf2(1.5f), r11)));
      */
     /* JADX WARN: Code restructure failed: missing block: B:81:0x05dc, code lost:
     
@@ -704,10 +704,10 @@ public final class sg extends FrameLayout {
     /* JADX WARN: Code restructure failed: missing block: B:83:0x05eb, code lost:
     
         r6 = r6;
-        r1.drawLine(org.telegram.messenger.AndroidUtilities.dpf2(8.0f), org.telegram.messenger.AndroidUtilities.dpf2(4.0f), org.telegram.messenger.AndroidUtilities.dpf2(8.0f), org.telegram.ui.Cells.t0.b(4.0f, r5, org.telegram.messenger.AndroidUtilities.dpf2(6.0f)), r6);
+        r1.drawLine(org.telegram.messenger.AndroidUtilities.dpf2(8.0f), org.telegram.messenger.AndroidUtilities.dpf2(4.0f), org.telegram.messenger.AndroidUtilities.dpf2(8.0f), org.telegram.ui.Cells.c1.b(4.0f, r5, org.telegram.messenger.AndroidUtilities.dpf2(6.0f)), r6);
         r47.drawArc(r2, 0.0f, -180.0f, false, r6);
         r1 = r47;
-        r1.drawLine(0.0f, org.telegram.messenger.AndroidUtilities.dpf2(4.0f), 0.0f, com.google.android.gms.internal.cast.a6.t(org.telegram.messenger.AndroidUtilities.dpf2(4.0f), r8.n4, r3, (((org.telegram.messenger.AndroidUtilities.dpf2(4.0f) * r8.o4) * r11) * (!r8.s4 ? 1 : 0)) + org.telegram.messenger.AndroidUtilities.dpf2(4.0f)), r6);
+        r1.drawLine(0.0f, org.telegram.messenger.AndroidUtilities.dpf2(4.0f), 0.0f, com.google.android.gms.internal.play_billing.k3.t(org.telegram.messenger.AndroidUtilities.dpf2(4.0f), r8.n4, r3, (((org.telegram.messenger.AndroidUtilities.dpf2(4.0f) * r8.o4) * r11) * (!r8.s4 ? 1 : 0)) + org.telegram.messenger.AndroidUtilities.dpf2(4.0f)), r6);
         r1.restore();
         r19 = 0.0f;
      */
@@ -830,13 +830,13 @@ public final class sg extends FrameLayout {
         if (chatActivityEnterView.s4) {
             dp = AndroidUtilities.dp(36.0f);
             f10 = 2.0f;
-            float b10 = org.telegram.ui.Cells.t0.b(14.0f, dp2, (((1.0f - f17) * AndroidUtilities.dpf2(30.0f)) + (AndroidUtilities.dp(60.0f) + measuredHeight)) - f7);
+            float b10 = org.telegram.ui.Cells.c1.b(14.0f, dp2, (((1.0f - f17) * AndroidUtilities.dpf2(30.0f)) + (AndroidUtilities.dp(60.0f) + measuredHeight)) - f7);
             dpf2 = AndroidUtilities.dpf2(2.0f) + (((dp / 2.0f) + b10) - AndroidUtilities.dpf2(8.0f));
             AndroidUtilities.dpf2(16.0f);
             AndroidUtilities.dpf2(2.0f);
             float f19 = dp2 > 0.4f ? 1.0f : dp2 / 0.4f;
             float f20 = chatActivityEnterView.n4;
-            f11 = com.google.android.gms.internal.cast.a6.D(1.0f, f19, f20 * 15.0f, (1.0f - dp2) * 9.0f * (1.0f - f20));
+            f11 = com.google.android.gms.internal.play_billing.k3.D(1.0f, f19, f20 * 15.0f, (1.0f - dp2) * 9.0f * (1.0f - f20));
             f12 = b10;
             f13 = dp2;
         } else {
@@ -931,7 +931,7 @@ public final class sg extends FrameLayout {
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.RecordingTrimTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.RecordingTrimText);
                             alertDialog$Builder.k(LocaleController.getString(R.string.OK), new s(eeVar, 19));
-                            i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+                            i2.d.r(R.string.Cancel, alertDialog$Builder, null);
                         } else {
                             eeVar.run();
                         }

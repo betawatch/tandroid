@@ -1,9 +1,9 @@
 package ci;
 
-import ai.bb;
-import ai.rb;
-import ai.tb;
+import ai.cb;
+import ai.sb;
 import ai.ub;
+import ai.vb;
 import android.content.SharedPreferences;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
@@ -21,7 +21,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.d70;
 import org.telegram.ui.di0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -48,19 +48,19 @@ public final /* synthetic */ class t8 implements RequestDelegate {
         switch (i10) {
             case 0:
                 TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj2;
-                rb rbVar = (rb) obj;
+                sb sbVar = (sb) obj;
                 if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && obj3 != null) {
-                    FileRefController.getInstance(i11).requestReference(obj3, tL_messages_getAttachedStickers, rbVar);
+                    FileRefController.getInstance(i11).requestReference(obj3, tL_messages_getAttachedStickers, sbVar);
                     break;
                 } else {
-                    rbVar.run(tLObject, tL_error);
+                    sbVar.run(tLObject, tL_error);
                     break;
                 }
             case 1:
-                AndroidUtilities.runOnUIThread(new tb(tLObject, (boolean[]) obj3, (Utilities.Callback) obj2, this.b, (TL_account.updateEmojiStatus) obj));
+                AndroidUtilities.runOnUIThread(new ub(tLObject, (boolean[]) obj3, (Utilities.Callback) obj2, this.b, (TL_account.updateEmojiStatus) obj));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new ub((d70) obj3, (org.telegram.ui.j4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.f1) obj));
+                AndroidUtilities.runOnUIThread(new vb((d70) obj3, (org.telegram.ui.j4) obj2, tL_error, tLObject, this.b, (org.telegram.ui.f1) obj));
                 break;
             case 3:
                 SharedPreferences sharedPreferences = (SharedPreferences) obj3;
@@ -70,11 +70,11 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                     AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.c2(b2Var, 0));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new tb((Object) sharedPreferences, tLObject, (Object) b2Var, this.b, (Object) n2Var, 22));
+                    AndroidUtilities.runOnUIThread(new ub((Object) sharedPreferences, tLObject, (Object) b2Var, this.b, (Object) n2Var, 22));
                     break;
                 }
             case 4:
-                AndroidUtilities.runOnUIThread(new tb(obj3, tLObject, obj2, this.b, obj, 23));
+                AndroidUtilities.runOnUIThread(new ub(obj3, tLObject, obj2, this.b, obj, 23));
                 break;
             case 5:
                 sv0 sv0Var = (sv0) obj3;
@@ -82,7 +82,7 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new vs((org.telegram.ui.ActionBar.b2[]) obj2, 2));
                 int i12 = this.b;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new bb(sv0Var, i12, tL_error, tL_messages_editMessage, 27));
+                    AndroidUtilities.runOnUIThread(new cb(sv0Var, i12, tL_error, tL_messages_editMessage, 27));
                     break;
                 } else {
                     MessagesController.getInstance(i12).lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
@@ -90,7 +90,7 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                 }
             case 6:
                 Pattern pattern = LaunchActivity.C1;
-                AndroidUtilities.runOnUIThread(new tb(obj3, tLObject, obj2, this.b, obj, 25), 2L);
+                AndroidUtilities.runOnUIThread(new ub(obj3, tLObject, obj2, this.b, obj, 25), 2L);
                 break;
             case 7:
                 di0 di0Var = (di0) obj3;
@@ -108,7 +108,7 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                 }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new ub((org.telegram.ui.web.a1) obj3, tLObject, this.b, (org.telegram.ui.web.x0) obj2, (z7) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new vb((org.telegram.ui.web.a1) obj3, tLObject, this.b, (org.telegram.ui.web.x0) obj2, (z7) obj, tL_error));
                 break;
         }
     }

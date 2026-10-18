@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.d11;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m0 extends Drawable {
     public final float a = 0.75f;
@@ -20,7 +20,7 @@ public final class m0 extends Drawable {
 
     public m0(Context context, int i10) {
         this.b = context.getResources().getDrawable(R.drawable.filled_stream_crown).mutate();
-        d11 d11Var = new d11(i0.a.j(i10, ""), 8.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
+        d11 d11Var = new d11(i2.d.j(i10, ""), 8.0f, AndroidUtilities.getTypeface("fonts/num.otf"));
         this.c = d11Var;
         d11Var.a.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }

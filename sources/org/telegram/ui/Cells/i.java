@@ -14,7 +14,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.qc1;
 import org.telegram.ui.so;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -35,9 +35,9 @@ public final class i extends ClickableSpan {
                 jVar.d((ClickableSpan) this.b, jVar.a, 0.0f);
                 break;
             case 1:
-                x0 x0Var = (x0) this.c;
-                if (x0Var.f1 != null) {
-                    x0Var.T((CharacterStyle) this.b);
+                w0 w0Var = (w0) this.c;
+                if (w0Var.f1 != null) {
+                    w0Var.T((CharacterStyle) this.b);
                     break;
                 }
                 break;
@@ -94,7 +94,7 @@ public final class i extends ClickableSpan {
                 break;
             default:
                 AndroidUtilities.addToClipboard((String) this.b);
-                ((org.telegram.ui.Wallet.t3) this.c).run();
+                ((org.telegram.ui.Wallet.u3) this.c).run();
                 break;
         }
     }

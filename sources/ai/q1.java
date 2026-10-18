@@ -9,9 +9,9 @@ import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.Components.yy;
 import org.telegram.ui.Components.zy;
-import org.telegram.ui.dp0;
+import org.telegram.ui.ep0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class q1 extends g.o {
     public final /* synthetic */ int c;
@@ -86,9 +86,9 @@ public final class q1 extends g.o {
                 }
                 return oy0Var.d.d;
             case 7:
-                dp0 dp0Var = (dp0) this.d;
-                if (i10 < dp0Var.b0 || i10 >= dp0Var.c0) {
-                    return (i10 < dp0Var.d0 || i10 >= dp0Var.e0) ? 3 : 1;
+                ep0 ep0Var = (ep0) this.d;
+                if (i10 < ep0Var.b0 || i10 >= ep0Var.c0) {
+                    return (i10 < ep0Var.d0 || i10 >= ep0Var.e0) ? 3 : 1;
                 }
                 return 1;
             case 8:
@@ -98,9 +98,9 @@ public final class q1 extends g.o {
                 }
                 return i12;
             default:
-                zh.k0 k0Var = (zh.k0) this.d;
-                if (k0Var.e.j(i10) == 0) {
-                    return k0Var.r;
+                zh.d0 d0Var = (zh.d0) this.d;
+                if (d0Var.e.j(i10) == 0) {
+                    return d0Var.r;
                 }
                 return 1;
         }

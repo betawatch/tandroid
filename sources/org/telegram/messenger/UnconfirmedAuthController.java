@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class UnconfirmedAuthController {
     private final int currentAccount;
@@ -113,7 +113,7 @@ public class UnconfirmedAuthController {
                 FileLog.e(e7);
             }
             sQLiteCursor.dispose();
-            AndroidUtilities.runOnUIThread(new vi(this, arrayList, hashSet, arrayList3, 3));
+            AndroidUtilities.runOnUIThread(new ui(this, arrayList, hashSet, arrayList3, 3));
         } catch (Throwable th2) {
             if (sQLiteCursor != null) {
                 sQLiteCursor.dispose();
@@ -256,7 +256,7 @@ public class UnconfirmedAuthController {
                 }
             };
         }
-        Utilities.raceCallbacks(new ai.e2(this, zArr, arrayList2, z10, callback, 12), callbackArr);
+        Utilities.raceCallbacks(new ei.s1(this, zArr, arrayList2, z10, callback, 11), callbackArr);
         if (z10) {
             HashSet hashSet = new HashSet();
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
@@ -358,7 +358,7 @@ public class UnconfirmedAuthController {
         saveCache();
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class UnconfirmedAuth extends TLObject {
         public boolean bot;
         public long bot_id;

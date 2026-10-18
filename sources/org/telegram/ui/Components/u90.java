@@ -10,11 +10,11 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class u90 {
     public View a;
-    public org.telegram.ui.Cells.c1 b;
+    public org.telegram.ui.Cells.b1 b;
     public final ArrayList c = new ArrayList();
     public int d = 0;
     public final ArrayList e = new ArrayList();
@@ -136,9 +136,9 @@ public final class u90 {
         } else if (z10 && (view = this.a) != null) {
             view.invalidate();
         }
-        org.telegram.ui.Cells.c1 c1Var = this.b;
-        if (c1Var != null) {
-            c1Var.run();
+        org.telegram.ui.Cells.b1 b1Var = this.b;
+        if (b1Var != null) {
+            b1Var.run();
         }
     }
 

@@ -48,7 +48,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class PopupNotificationActivity extends Activity implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int b0 = 0;
@@ -1449,8 +1449,8 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.PermissionNoAudioWithHint);
-        alertDialog$Builder.h(LocaleController.getString(R.string.PermissionOpenSettings), new qp0(this, 6));
-        org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+        alertDialog$Builder.h(LocaleController.getString(R.string.PermissionOpenSettings), new rp0(this, 6));
+        org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
     }
 
     @Override // android.app.Activity
@@ -1498,7 +1498,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         long dialogId = this.Q.getDialogId();
         this.b.Y0(this.Q.currentAccount, dialogId);
         if (DialogObject.isEncryptedDialog(dialogId)) {
-            this.M = MessagesController.getInstance(this.Q.currentAccount).getUser(Long.valueOf(org.telegram.messenger.q.l(MessagesController.getInstance(this.Q.currentAccount), dialogId).user_id));
+            this.M = MessagesController.getInstance(this.Q.currentAccount).getUser(Long.valueOf(org.telegram.messenger.g0.l(MessagesController.getInstance(this.Q.currentAccount), dialogId).user_id));
         } else if (DialogObject.isUserDialog(dialogId)) {
             this.M = MessagesController.getInstance(this.Q.currentAccount).getUser(Long.valueOf(dialogId));
         } else if (DialogObject.isChatDialog(dialogId)) {

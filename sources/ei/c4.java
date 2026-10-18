@@ -8,10 +8,10 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class c4 extends FrameLayout {
     public static final /* synthetic */ int d = 0;
@@ -21,7 +21,7 @@ public final class c4 extends FrameLayout {
 
     public c4(Context context) {
         super(context);
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         addView(e, w7.z5.e(-2, -2, 17));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;

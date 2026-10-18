@@ -11,7 +11,7 @@ import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.ViewConfiguration;
 import ci.j6;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
@@ -29,7 +29,7 @@ import org.telegram.ui.vf1;
 import v7.f7;
 import w7.r6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class e1 extends TextureView {
     public d1 a;
@@ -649,7 +649,7 @@ public class e1 extends TextureView {
                         e0Var.e = true;
                         if (z10 && (e0Var.a.getCurrentBrush() instanceof f)) {
                             e0Var.A = e0Var.a.getCurrentBrush();
-                            e0Var.a.g((m) r.c.e(1, m.a));
+                            e0Var.a.g((m) r4.c.f(1, m.a));
                         }
                     }
                     e0Var.m[e0Var.n] = w0Var;
@@ -698,7 +698,7 @@ public class e1 extends TextureView {
                                                     double d22 = a13;
                                                     double d23 = atan2;
                                                     f10 = scaleX;
-                                                    e0Var.k = (float) Math.atan2((Math.sin(d23) * d22) + (Math.sin(d21) * d20), i0.a.f(d23, d22, Math.cos(d21) * d20));
+                                                    e0Var.k = (float) Math.atan2((Math.sin(d23) * d22) + (Math.sin(d21) * d20), i2.d.f(d23, d22, Math.cos(d21) * d20));
                                                     e0Var.c(e0Var.a.getCurrentBrush().j(), false);
                                                 }
                                             } else {
@@ -909,7 +909,7 @@ public class e1 extends TextureView {
 
     public void setBrushSize(float f7) {
         float f10 = this.c.g.a;
-        this.v = a6.t(f10, 0.043945312f, f7, 0.00390625f * f10);
+        this.v = k3.t(f10, 0.043945312f, f7, 0.00390625f * f10);
         if (this.x instanceof l) {
             r1 r1Var = this.f;
             e1 e1Var = r1Var.a;

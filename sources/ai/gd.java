@@ -1,133 +1,356 @@
 package ai;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.text.style.ImageSpan;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import java.util.HashMap;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.WebFile;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.x90;
-import org.telegram.ui.Components.yq;
-import org.telegram.ui.Components.zq;
+import org.telegram.ui.f70;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class gd extends LinearLayout {
-    public static HashMap E;
-    public final int a;
-    public final org.telegram.ui.Components.h9 b;
-    public final org.telegram.ui.Components.w9 c;
-    public final org.telegram.ui.Components.w9 d;
-    public int e;
-    public final TextView f;
-    public final LinearLayout.LayoutParams h;
-    public final x90 n;
-    public final TextView r;
-    public final TextView s;
-    public final SpannableString v;
-    public final SpannableString w;
-    public boolean x;
-    public boolean y;
+public final class gd extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public gd(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.e = 1;
-        this.a = i10;
-        setOrientation(0);
-        w1 w1Var = new w1(this, context, d6Var);
-        addView(w1Var, w7.z5.o(72, -1, 0.0f, 115));
-        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
-        this.d = w9Var;
-        w9Var.setRoundRadius(AndroidUtilities.dp(46.0f));
-        w1Var.addView(w9Var, w7.z5.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 16));
-        this.b = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
-        this.c = w9Var2;
+    static {
+        e61.setup(new gd());
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:59:0x074d  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0750  */
+    @Override // org.telegram.ui.Components.e61
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        SpannableString spannableString;
+        int dp;
+        int i10;
+        boolean z11;
+        boolean z12;
+        String str;
+        long j10;
+        boolean z13;
+        hd hdVar = (hd) view;
+        TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) f61Var.G;
+        boolean z14 = f61Var.q;
+        org.telegram.ui.Components.w9 w9Var = hdVar.d;
+        SpannableString spannableString2 = hdVar.v;
+        SpannableString spannableString3 = hdVar.w;
+        org.telegram.ui.Components.h9 h9Var = hdVar.b;
+        int i11 = hdVar.a;
+        TextView textView = hdVar.r;
+        TextView textView2 = hdVar.s;
+        org.telegram.ui.Components.w9 w9Var2 = hdVar.c;
+        TextView textView3 = hdVar.f;
+        Integer num = 0;
+        x90 x90Var = hdVar.n;
+        long peerDialogId = DialogObject.getPeerDialogId(starsTransaction.peer.peer);
+        boolean z15 = starsTransaction.amount instanceof TL_stars.TL_starsTonAmount;
+        int i12 = starsTransaction.flags;
+        boolean z16 = (i12 & 131072) == 0 && (i12 & 65536) != 0;
+        boolean z17 = !(peerDialogId == 0 || starsTransaction.stargift_upgrade || starsTransaction.stargift_drop_original_details || starsTransaction.posts_search) || starsTransaction.subscription || starsTransaction.floodskip || !(starsTransaction.stargift == null || starsTransaction.stargift_upgrade || starsTransaction.stargift_drop_original_details) || (starsTransaction.gift && (starsTransaction.peer instanceof TL_stars.TL_starsTransactionPeerFragment));
+        hdVar.x = z17;
+        boolean z18 = z17;
+        LinearLayout.LayoutParams layoutParams = hdVar.h;
+        if (z18) {
+            spannableString = spannableString2;
+            dp = 0;
+        } else {
+            spannableString = spannableString2;
+            dp = AndroidUtilities.dp(4.33f);
+        }
+        layoutParams.bottomMargin = dp;
+        x90Var.setVisibility(hdVar.x ? 0 : 8);
+        textView.setTextSize(1, hdVar.x ? 13.0f : 14.0f);
+        textView.setText(LocaleController.formatShortDateTime(starsTransaction.date));
+        if (starsTransaction.refund) {
+            i10 = 2;
+            textView.setText(TextUtils.concat(textView.getText(), " — ", LocaleController.getString(R.string.StarsRefunded)));
+        } else {
+            i10 = 2;
+            if (starsTransaction.failed) {
+                textView.setText(TextUtils.concat(textView.getText(), " — ", LocaleController.getString(R.string.StarsFailed)));
+            } else if (starsTransaction.pending) {
+                textView.setText(TextUtils.concat(textView.getText(), " — ", LocaleController.getString(R.string.StarsPending)));
+            }
+        }
+        w9Var2.setTranslationX(0.0f);
+        w9Var2.setTranslationY(0.0f);
+        w9Var.setVisibility(8);
         w9Var2.setRoundRadius(AndroidUtilities.dp(46.0f));
-        w1Var.addView(w9Var2, w7.z5.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 16));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(19);
-        addView(linearLayout, w7.z5.o(-2, -1, 1.0f, 119));
-        TextView textView = new TextView(context);
-        this.f = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        int i11 = org.telegram.ui.ActionBar.h6.G6;
-        wh.o(i11, d6Var, textView, 1, 16.0f);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        textView.setSingleLine(true);
-        LinearLayout.LayoutParams k10 = w7.z5.k(0.0f, 0.0f, 0.0f, 4.33f, -1, -2);
-        this.h = k10;
-        linearLayout.addView(textView, k10);
-        x90 x90Var = new x90(context, null);
-        this.n = x90Var;
-        x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-        x90Var.setTextSize(1, 13.0f);
-        x90Var.setEllipsize(truncateAt);
-        x90Var.setSingleLine(true);
-        linearLayout.addView(x90Var, w7.z5.k(0.0f, 0.0f, 0.0f, 0.33f, -1, -2));
-        TextView textView2 = new TextView(context);
-        this.r = textView2;
-        wh.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView2, 1, 14.0f);
-        textView2.setEllipsize(truncateAt);
-        textView2.setSingleLine(true);
-        TextView i12 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView2, w7.z5.n(-1, -2), context);
-        this.s = i12;
-        i12.setTypeface(AndroidUtilities.bold());
-        i12.setTextSize(1, 15.3f);
-        i12.setGravity(5);
-        addView(i12, w7.z5.p(-2, -2, 0.0f, 21, 8, 0, 20, 0));
-        SpannableString spannableString = new SpannableString("⭐️");
-        this.v = spannableString;
-        Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
-        mutate.setBounds(0, 0, AndroidUtilities.dp(21.0f), AndroidUtilities.dp(21.0f));
-        spannableString.setSpan(new ImageSpan(mutate), 0, spannableString.length(), 33);
-        SpannableString spannableString2 = new SpannableString("TON");
-        this.w = spannableString2;
-        yq yqVar = new yq(0, context.getResources().getDrawable(R.drawable.mini_gram_72).mutate());
-        yqVar.recolorDrawable = false;
-        yqVar.setSize(AndroidUtilities.dp(18.0f));
-        yqVar.setTranslateY(AndroidUtilities.dp(0.5f));
-        spannableString2.setSpan(yqVar, 0, spannableString2.length(), 33);
+        if (starsTransaction.stargift_upgrade && starsTransaction.stargift != null) {
+            w9Var2.setImageDrawable(new u6(w9Var2, starsTransaction.stargift, 46, 0.25f));
+            textView3.setText(LocaleController.getString(R.string.Gift2TransactionUpgraded));
+            x90Var.setVisibility(8);
+        } else if (starsTransaction.stargift_drop_original_details && starsTransaction.stargift != null) {
+            w9Var2.setImageDrawable(new u6(w9Var2, starsTransaction.stargift, 46, 0.25f));
+            textView3.setText(LocaleController.getString(R.string.Gift2TransactionRemovedDescription));
+            x90Var.setVisibility(8);
+        } else {
+            if (!starsTransaction.posts_search) {
+                if (peerDialogId != 0) {
+                    if (UserObject.isService(peerDialogId)) {
+                        str = LocaleController.getString(R.string.StarsTransactionUnknown);
+                        w9Var2.setImageDrawable(hd.a(44, "fragment"));
+                        z12 = false;
+                    } else if (peerDialogId >= 0) {
+                        TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(peerDialogId));
+                        z12 = user == null;
+                        h9Var.r(user);
+                        w9Var2.e(user, h9Var);
+                        str = UserObject.getUserName(user);
+                    } else {
+                        TLRPC.Chat chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerDialogId));
+                        z12 = chat == null;
+                        h9Var.q(chat);
+                        w9Var2.e(chat, h9Var);
+                        str = chat == null ? "" : chat.title;
+                    }
+                    if (starsTransaction.stargift != null) {
+                        f70 f70Var = new f70(x90Var, 16.0f, i11);
+                        f70Var.a(4.0f);
+                        f70Var.f = false;
+                        SpannableString spannableString4 = new SpannableString("x");
+                        spannableString4.setSpan(f70Var, 0, 1, 33);
+                        md.b1(f70Var.b, starsTransaction.stargift, 16);
+                        textView3.setText(str);
+                        if (starsTransaction.offer) {
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x ");
+                            spannableStringBuilder.setSpan(new org.telegram.ui.Components.a6(starsTransaction.stargift.getDocument(), x90Var.getPaint().getFontMetricsInt()), 0, 1, 33);
+                            if (starsTransaction.amount.negative()) {
+                                spannableStringBuilder.append((CharSequence) LocaleController.getString(starsTransaction.refund ? R.string.StarGiftTransactionGiftSaleRefund : R.string.StarGiftTransactionGiftOffer));
+                            } else {
+                                spannableStringBuilder.append((CharSequence) LocaleController.getString(starsTransaction.refund ? R.string.StarGiftTransactionGiftOfferRefund : R.string.StarGiftTransactionGiftSale));
+                            }
+                            x90Var.setText(spannableStringBuilder);
+                        } else if (starsTransaction.stargift_resale) {
+                            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x ");
+                            spannableStringBuilder2.setSpan(new org.telegram.ui.Components.a6(starsTransaction.stargift.getDocument(), x90Var.getPaint().getFontMetricsInt()), 0, 1, 33);
+                            if (starsTransaction.amount.negative()) {
+                                spannableStringBuilder2.append((CharSequence) LocaleController.getString(starsTransaction.refund ? R.string.StarGiftTransactionGiftSaleRefund : R.string.StarGiftTransactionGiftPurchase));
+                            } else {
+                                spannableStringBuilder2.append((CharSequence) LocaleController.getString(starsTransaction.refund ? R.string.StarGiftTransactionGiftPurchaseRefund : R.string.StarGiftTransactionGiftSale));
+                            }
+                            x90Var.setText(spannableStringBuilder2);
+                        } else if (starsTransaction.stargift_prepaid_upgrade) {
+                            String string = LocaleController.getString(R.string.Gift2TransactionPrepaidUpgrade);
+                            CharSequence[] charSequenceArr = new CharSequence[3];
+                            charSequenceArr[0] = spannableString4;
+                            charSequenceArr[1] = " ";
+                            charSequenceArr[i10] = string;
+                            x90Var.setText(TextUtils.concat(charSequenceArr));
+                        } else if (starsTransaction.stargift instanceof TL_stars.TL_starGiftUnique) {
+                            x90Var.setText(LocaleController.getString(starsTransaction.refund ? R.string.StarGiftTransactionGiftTransferRefund : R.string.StarGiftTransactionGiftTransfer));
+                        } else if (starsTransaction.refund) {
+                            String string2 = LocaleController.getString(starsTransaction.stargift_auction_bid ? R.string.Gift2TransactionRefundedAuctionBid : starsTransaction.amount.amount > 0 ? starsTransaction.stargift_upgrade ? R.string.Gift2TransactionRefundedUpgrade : R.string.Gift2TransactionRefundedSent : R.string.Gift2TransactionRefundedConverted);
+                            CharSequence[] charSequenceArr2 = new CharSequence[3];
+                            charSequenceArr2[0] = spannableString4;
+                            charSequenceArr2[1] = " ";
+                            charSequenceArr2[i10] = string2;
+                            x90Var.setText(TextUtils.concat(charSequenceArr2));
+                        } else {
+                            String string3 = LocaleController.getString(starsTransaction.stargift_auction_bid ? R.string.Gift2TransactionAuctionBid : starsTransaction.amount.amount > 0 ? R.string.Gift2TransactionConverted : starsTransaction.stargift_upgrade ? R.string.Gift2TransactionUpgraded : R.string.Gift2TransactionSent);
+                            CharSequence[] charSequenceArr3 = new CharSequence[3];
+                            charSequenceArr3[0] = spannableString4;
+                            charSequenceArr3[1] = " ";
+                            charSequenceArr3[i10] = string3;
+                            x90Var.setText(TextUtils.concat(charSequenceArr3));
+                        }
+                    } else if (starsTransaction.subscription) {
+                        textView3.setText(str);
+                        int i13 = starsTransaction.subscription_period;
+                        if (i13 == 2592000) {
+                            x90Var.setVisibility(0);
+                            x90Var.setText(LocaleController.getString(R.string.StarsTransactionSubscriptionMonthly));
+                        } else {
+                            String str2 = i13 == 300 ? "5 minutes" : "Minute";
+                            x90Var.setVisibility(0);
+                            Locale locale = Locale.US;
+                            x90Var.setText(str2.concat(" subscription fee"));
+                        }
+                    } else if (starsTransaction.phonegroup_message) {
+                        textView3.setText(str);
+                        x90Var.setVisibility(z12 ? 8 : 0);
+                        x90Var.setText(LocaleController.getString(starsTransaction.reaction ? R.string.StarsTransactionLiveStoryReactionFee : R.string.StarsTransactionLiveStoryMessageFee));
+                    } else if (starsTransaction.paid_message) {
+                        textView3.setText(str);
+                        x90Var.setVisibility(z12 ? 8 : 0);
+                        x90Var.setText(LocaleController.formatPluralStringComma("StarsTransactionMessageFee", starsTransaction.paid_messages));
+                    } else if (starsTransaction.premium_gift) {
+                        textView3.setText(str);
+                        x90Var.setVisibility(z12 ? 8 : 0);
+                        x90Var.setText(LocaleController.getString(R.string.StarsTransactionPremiumGift));
+                    } else if (z16) {
+                        textView3.setText(str);
+                        x90Var.setVisibility(z12 ? 8 : 0);
+                        x90Var.setText(LocaleController.formatString(R.string.StarTransactionCommission, gi.l.H0(starsTransaction.starref_commission_permille)));
+                    } else if (starsTransaction.gift) {
+                        textView3.setText(str);
+                        x90Var.setVisibility(z12 ? 8 : 0);
+                        x90Var.setText(LocaleController.getString(R.string.StarsGiftReceived));
+                    } else if ((starsTransaction.flags & 8192) != 0) {
+                        textView3.setText(str);
+                        x90Var.setVisibility(z12 ? 8 : 0);
+                        x90Var.setText(LocaleController.getString(R.string.StarsGiveawayPrizeReceived));
+                    } else if (starsTransaction.reaction) {
+                        textView3.setText(str);
+                        x90Var.setVisibility(z12 ? 8 : 0);
+                        x90Var.setText(LocaleController.getString(R.string.StarsReactionsSent));
+                    } else if (starsTransaction.extended_media.isEmpty()) {
+                        z11 = z15;
+                        if (starsTransaction.photo != null) {
+                            f70 f70Var2 = new f70(x90Var, 14.0f, i11);
+                            f70Var2.a(4.0f);
+                            f70Var2.f = false;
+                            SpannableString spannableString5 = new SpannableString("x");
+                            spannableString5.setSpan(f70Var2, 0, 1, 33);
+                            f70Var2.b.setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(starsTransaction.photo)), "14_14", null, null, num, 0);
+                            textView3.setText(str);
+                            x90Var.setVisibility(z12 ? 8 : 0);
+                            String str3 = starsTransaction.title;
+                            x90Var.setText(Emoji.replaceEmoji(TextUtils.concat(spannableString5, " ", str3 != null ? str3 : ""), x90Var.getPaint().getFontMetricsInt(), false));
+                        } else {
+                            textView3.setText(str);
+                            x90Var.setVisibility(z12 ? 8 : 0);
+                            String str4 = starsTransaction.title;
+                            x90Var.setText(Emoji.replaceEmoji(str4 != null ? str4 : "", x90Var.getPaint().getFontMetricsInt(), false));
+                        }
+                    } else {
+                        if (z14) {
+                            textView3.setText(str);
+                            x90Var.setVisibility(0);
+                            x90Var.setText(LocaleController.getString(R.string.StarMediaPurchase));
+                        } else {
+                            textView3.setText(LocaleController.getString(R.string.StarMediaPurchase));
+                            x90Var.setVisibility(z12 ? 8 : 0);
+                            x90Var.setText(str);
+                        }
+                        hdVar.e = 0;
+                        int i14 = 0;
+                        while (i14 < Math.min(i10, starsTransaction.extended_media.size())) {
+                            TLRPC.MessageMedia messageMedia = starsTransaction.extended_media.get(i14);
+                            org.telegram.ui.Components.w9 w9Var3 = i14 == 0 ? w9Var2 : w9Var;
+                            w9Var3.setRoundRadius(AndroidUtilities.dp(12.0f));
+                            ImageLocation forPhoto = messageMedia instanceof TLRPC.TL_messageMediaPhoto ? ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(messageMedia.photo.sizes, AndroidUtilities.dp(46.0f), true), messageMedia.photo) : messageMedia instanceof TLRPC.TL_messageMediaDocument ? ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(messageMedia.document.thumbs, AndroidUtilities.dp(46.0f), true), messageMedia.document) : null;
+                            w9Var3.setVisibility(0);
+                            Integer num2 = num;
+                            w9Var3.l(forPhoto, "46_46", null, null, null, num2);
+                            hdVar.e++;
+                            i14++;
+                            num = num2;
+                            z15 = z15;
+                            i10 = 2;
+                        }
+                        z11 = z15;
+                        int i15 = 0;
+                        while (i15 < hdVar.e) {
+                            org.telegram.ui.Components.w9 w9Var4 = i15 == 0 ? w9Var2 : w9Var;
+                            float f7 = i15;
+                            w9Var4.setTranslationX(((f7 - (hdVar.e / 2.0f)) * AndroidUtilities.dp(4.33f)) + AndroidUtilities.dp(2.0f));
+                            w9Var4.setTranslationY((f7 - (hdVar.e / 2.0f)) * AndroidUtilities.dp(4.33f));
+                            i15++;
+                        }
+                    }
+                } else {
+                    z11 = z15;
+                    if (starsTransaction.floodskip) {
+                        textView3.setText(LocaleController.getString(R.string.StarsTransactionFloodskip));
+                        x90Var.setText(LocaleController.formatPluralStringComma("StarsTransactionFloodskipMessages", starsTransaction.floodskip_number));
+                        w9Var2.setImageDrawable(hd.a(44, "api"));
+                    } else {
+                        TL_stars.StarsTransactionPeer starsTransactionPeer = starsTransaction.peer;
+                        if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerAppStore) {
+                            textView3.setText(LocaleController.getString(R.string.StarsTransactionInApp));
+                            w9Var2.setImageDrawable(hd.a(44, "ios"));
+                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPlayMarket) {
+                            textView3.setText(LocaleController.getString(R.string.StarsTransactionInApp));
+                            w9Var2.setImageDrawable(hd.a(44, "android"));
+                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerFragment) {
+                            if (starsTransaction.gift) {
+                                textView3.setText(LocaleController.getString(R.string.StarsGiftReceived));
+                                x90Var.setText(LocaleController.getString(z11 ? R.string.StarsTransactionTONFromFragment : R.string.StarsTransactionUnknown));
+                                x90Var.setVisibility(0);
+                            } else {
+                                textView3.setText(LocaleController.getString((z14 || (!starsTransaction.refund ? !starsTransaction.amount.negative() : !starsTransaction.amount.positive())) ? R.string.StarsTransactionWithdrawFragment : R.string.StarsTransactionFragment));
+                            }
+                            w9Var2.setImageDrawable(hd.a(44, "fragment"));
+                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerPremiumBot) {
+                            textView3.setText(LocaleController.getString(R.string.StarsTransactionBot));
+                            w9Var2.setImageDrawable(hd.a(44, "premiumbot"));
+                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerUnsupported) {
+                            textView3.setText(LocaleController.getString(R.string.StarsTransactionUnsupported));
+                            w9Var2.setImageDrawable(hd.a(44, "?"));
+                        } else if (starsTransactionPeer instanceof TL_stars.TL_starsTransactionPeerAds) {
+                            textView3.setText(LocaleController.getString(R.string.StarsTransactionAds));
+                            w9Var2.setImageDrawable(hd.a(44, "ads"));
+                        } else {
+                            textView3.setText("");
+                            w9Var2.setImageDrawable(null);
+                        }
+                    }
+                }
+                TL_stars.StarsAmount starsAmount = starsTransaction.amount;
+                j10 = starsAmount.amount;
+                if (j10 <= 0 || (j10 == 0 && starsAmount.nanos > 0)) {
+                    textView2.setVisibility(0);
+                    textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.uj, false));
+                    textView2.setText(TextUtils.concat("+", md.J0(starsTransaction.amount), " ", !z11 ? spannableString3 : spannableString));
+                    z13 = z10;
+                } else {
+                    if (j10 < 0 || (j10 == 0 && starsAmount.nanos < 0)) {
+                        textView2.setVisibility(0);
+                        textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.wj, false));
+                        textView2.setText(TextUtils.concat(md.J0(starsTransaction.amount), " ", z11 ? spannableString3 : spannableString));
+                    } else {
+                        textView2.setVisibility(8);
+                    }
+                    z13 = z10;
+                }
+                hdVar.y = z13;
+                hdVar.setWillNotDraw(!z13);
+            }
+            w9Var2.setImageDrawable(hd.a(44, "search"));
+            textView3.setText(LocaleController.getString(R.string.StarsTransactionPostsSearch));
+            x90Var.setVisibility(8);
+        }
+        z11 = z15;
+        TL_stars.StarsAmount starsAmount2 = starsTransaction.amount;
+        j10 = starsAmount2.amount;
+        if (j10 <= 0) {
+        }
+        textView2.setVisibility(0);
+        textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.uj, false));
+        textView2.setText(TextUtils.concat("+", md.J0(starsTransaction.amount), " ", !z11 ? spannableString3 : spannableString));
+        z13 = z10;
+        hdVar.y = z13;
+        hdVar.setWillNotDraw(!z13);
     }
 
-    public static zq a(int i10, String str) {
-        if (i10 != 44) {
-            return org.telegram.ui.Cells.t6.a(i10, str);
-        }
-        if (E == null) {
-            E = new HashMap();
-        }
-        zq zqVar = (zq) E.get(str);
-        if (zqVar != null) {
-            return zqVar;
-        }
-        HashMap hashMap = E;
-        zq a2 = org.telegram.ui.Cells.t6.a(44, str);
-        hashMap.put(str, a2);
-        return a2;
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.y) {
-            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(72.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(72.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.h6.k0);
-        }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.x ? 71.0f : 58.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        hd hdVar = (hd) getCached();
+        return hdVar != null ? hdVar : new hd(context, i10, d6Var);
     }
 }

@@ -1,6 +1,6 @@
 package c1;
 
-import ai.oa;
+import ai.pa;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,7 +34,7 @@ import w7.b8;
 import w7.g0;
 import w7.i8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d extends ResultReceiver {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final class d extends ResultReceiver {
                                     break;
                                 default:
                                     c1.e eVar2 = (c1.e) eVar;
-                                    eVar2.f().execute(new oa(7, eVar2, (o) d));
+                                    eVar2.f().execute(new pa(7, eVar2, (o) d));
                                     break;
                             }
                             return id.i.a;
@@ -113,7 +113,7 @@ public final class d extends ResultReceiver {
                     if (a1.h.a(cancellationSignal)) {
                         return;
                     }
-                    eVar.f().execute(new oa(5, eVar, pVar));
+                    eVar.f().execute(new pa(5, eVar, pVar));
                     return;
                 } catch (i e7) {
                     CancellationSignal cancellationSignal2 = eVar.h;
@@ -130,7 +130,7 @@ public final class d extends ResultReceiver {
                     if (a1.h.a(cancellationSignal3)) {
                         return;
                     }
-                    eVar.f().execute(new oa(6, eVar, hVar));
+                    eVar.f().execute(new pa(6, eVar, hVar));
                     return;
                 }
             case 1:
@@ -199,7 +199,7 @@ public final class d extends ResultReceiver {
                     kotlin.jvm.internal.i.d(rVar, "getErrorCode(...)");
                     x0.a aVar = (x0.a) d1.f.a.get(rVar);
                     String str = kVar2.b;
-                    dVar = aVar == null ? new y0.a(new x0.a(26), r.c.g("unknown fido gms exception - ", str)) : (rVar == r.w && str != null && zd.j.b(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
+                    dVar = aVar == null ? new y0.a(new x0.a(26), r4.c.h("unknown fido gms exception - ", str)) : (rVar == r.w && str != null && zd.j.b(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
                 } else {
                     dVar = null;
                 }
@@ -423,7 +423,7 @@ public final class d extends ResultReceiver {
                                     break;
                                 default:
                                     c1.e eVar22 = (c1.e) executor12;
-                                    eVar22.f().execute(new oa(7, eVar22, (o) iVar6));
+                                    eVar22.f().execute(new pa(7, eVar22, (o) iVar6));
                                     break;
                             }
                             return id.i.a;

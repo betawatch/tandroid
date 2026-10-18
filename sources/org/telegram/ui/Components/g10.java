@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g10 extends FrameLayout {
     public ValueAnimator E;
@@ -96,11 +96,11 @@ public final class g10 extends FrameLayout {
             float d = this.e.d(this.d, false);
             float c11 = ((p6Var.c() + AndroidUtilities.dp(15.66f)) * d) + c10;
             Rect rect = AndroidUtilities.rectTmp2;
-            rect.set((int) (((getMeasuredWidth() - c11) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - p6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.q.a(getMeasuredWidth() - c11, getWidth(), 2.0f, c10), (int) (((getMeasuredHeight() + p6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
+            rect.set((int) (((getMeasuredWidth() - c11) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - p6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.g0.a(getMeasuredWidth() - c11, getWidth(), 2.0f, c10), (int) (((getMeasuredHeight() + p6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
             p6Var2.B = (int) (AndroidUtilities.lerp(0.5f, 1.0f, this.x) * (1.0f - this.h) * 255.0f);
             p6Var2.setBounds(rect);
             p6Var2.draw(canvas);
-            rect.set((int) (com.google.android.gms.internal.cast.a6.z(getMeasuredWidth(), c11, 2.0f, c10) + AndroidUtilities.dp(5.0f)), (int) ((getMeasuredHeight() - AndroidUtilities.dp(18.0f)) / 2.0f), (int) (Math.max(AndroidUtilities.dp(9.0f), p6Var.c()) + com.google.android.gms.internal.cast.a6.z(getMeasuredWidth(), c11, 2.0f, c10) + AndroidUtilities.dp(13.0f)), (int) ((AndroidUtilities.dp(18.0f) + getMeasuredHeight()) / 2.0f));
+            rect.set((int) (com.google.android.gms.internal.play_billing.k3.z(getMeasuredWidth(), c11, 2.0f, c10) + AndroidUtilities.dp(5.0f)), (int) ((getMeasuredHeight() - AndroidUtilities.dp(18.0f)) / 2.0f), (int) (Math.max(AndroidUtilities.dp(9.0f), p6Var.c()) + com.google.android.gms.internal.play_billing.k3.z(getMeasuredWidth(), c11, 2.0f, c10) + AndroidUtilities.dp(13.0f)), (int) ((AndroidUtilities.dp(18.0f) + getMeasuredHeight()) / 2.0f));
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(rect);
             if (this.s != 1.0f) {
@@ -111,7 +111,7 @@ public final class g10 extends FrameLayout {
             paint.setAlpha((int) ((1.0f - this.h) * 255.0f * d * d));
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), paint);
             rect.offset(-AndroidUtilities.dp(0.3f), -AndroidUtilities.dp(0.4f));
-            p6Var.B = (int) org.telegram.messenger.q.z(1.0f, this.h, 255.0f, d);
+            p6Var.B = (int) org.telegram.messenger.g0.z(1.0f, this.h, 255.0f, d);
             p6Var.setBounds(rect);
             p6Var.draw(canvas);
             if (this.s != 1.0f) {

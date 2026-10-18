@@ -18,7 +18,7 @@ import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c extends Drawable {
     public final Paint a;
@@ -57,7 +57,7 @@ public final class c extends Drawable {
 
     public static LinearGradient a(int i10, boolean z10) {
         int alpha = Color.alpha(i10);
-        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.b.o(i10, 0), i0.b.o(i10, (alpha * 96) / 285), i0.b.o(i10, (alpha * 176) / 285), i0.b.o(i10, (alpha * TLRPC.LAYER) / 285)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.b.o(i10, 0), i0.b.o(i10, (alpha * 96) / 255), i0.b.o(i10, (alpha * 176) / 255), i0.b.o(i10, (alpha * TLRPC.LAYER) / 255), i0.b.o(i10, (alpha * 255) / 255)}, (float[]) null, Shader.TileMode.CLAMP);
+        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i10, 0), i0.a.o(i10, (alpha * 96) / 285), i0.a.o(i10, (alpha * 176) / 285), i0.a.o(i10, (alpha * TLRPC.LAYER) / 285)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i10, 0), i0.a.o(i10, (alpha * 96) / 255), i0.a.o(i10, (alpha * 176) / 255), i0.a.o(i10, (alpha * TLRPC.LAYER) / 255), i0.a.o(i10, (alpha * 255) / 255)}, (float[]) null, Shader.TileMode.CLAMP);
     }
 
     public final void b(int i10, boolean z10) {

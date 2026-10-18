@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.d11;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class u6 extends br {
     public final float E;
@@ -37,7 +37,7 @@ public final class u6 extends br {
     public int K;
     public final Path c;
     public final RectF d;
-    public final ce e;
+    public final de e;
     public final int f;
     public final View h;
     public final ImageReceiver n;
@@ -71,7 +71,7 @@ public final class u6 extends br {
         this.f = i10;
         if (starGift instanceof TL_stars.TL_starGift) {
             float f12 = i10;
-            ld.a1(imageReceiver, starGift.sticker, (int) (0.75f * f12));
+            md.a1(imageReceiver, starGift.sticker, (int) (0.75f * f12));
             String str = starGift.title;
             d11 d11Var = new d11(str == null ? "Gift" : str, 16.0f, AndroidUtilities.bold());
             this.w = d11Var;
@@ -86,12 +86,12 @@ public final class u6 extends br {
             d11Var2.q(AndroidUtilities.dp(f13));
             d11Var2.a();
             d11Var2.n(1);
-            ce ceVar = new ce(1, 40);
-            this.e = ceVar;
+            de deVar = new de(1, 40);
+            this.e = deVar;
             float f14 = 0.45f * f12;
-            ceVar.f(-AndroidUtilities.dp(f14), -AndroidUtilities.dp(f14), AndroidUtilities.dp(f14), AndroidUtilities.dp(f12 * 0.25f));
+            deVar.f(-AndroidUtilities.dp(f14), -AndroidUtilities.dp(f14), AndroidUtilities.dp(f14), AndroidUtilities.dp(f12 * 0.25f));
             float dp = AndroidUtilities.dp(30.0f);
-            RectF rectF = ceVar.c;
+            RectF rectF = deVar.c;
             int width = (int) rectF.width();
             int height = (int) rectF.height();
             ArrayList arrayList = new ArrayList();
@@ -195,17 +195,17 @@ public final class u6 extends br {
                 i16 = 0;
             }
             int size = arrayList.size();
-            ArrayList arrayList3 = ceVar.b;
+            ArrayList arrayList3 = deVar.b;
             int size2 = size - arrayList3.size();
             for (int i28 = 0; i28 < size2; i28++) {
-                arrayList3.add(new be(ceVar));
+                arrayList3.add(new ce(deVar));
             }
             int size3 = arrayList.size();
-            ceVar.j = size3;
-            if (ceVar.l != null) {
+            deVar.j = size3;
+            if (deVar.l != null) {
                 e0.f0 f0Var = new e0.f0(size3);
-                ceVar.l = f0Var;
-                Bitmap bitmap = ceVar.d;
+                deVar.l = f0Var;
+                Bitmap bitmap = deVar.d;
                 float width2 = bitmap.getWidth();
                 float height2 = bitmap.getHeight();
                 int i29 = 0;
@@ -216,19 +216,19 @@ public final class u6 extends br {
                 }
             }
             long currentTimeMillis = System.currentTimeMillis();
-            for (int i31 = 0; i31 < ceVar.j; i31++) {
-                be beVar = (be) arrayList3.get(i31);
+            for (int i31 = 0; i31 < deVar.j; i31++) {
+                ce ceVar = (ce) arrayList3.get(i31);
                 PointF pointF5 = (PointF) arrayList.get(i31);
-                ceVar.c(beVar, currentTimeMillis, true);
-                beVar.a = pointF5.x + rectF.left;
-                beVar.b = pointF5.y + rectF.top;
-                beVar.h = AndroidUtilities.lerp(0.4f, 1.0f, Utilities.fastRandom.nextFloat());
-                beVar.e *= 1.25f;
+                deVar.c(ceVar, currentTimeMillis, true);
+                ceVar.a = pointF5.x + rectF.left;
+                ceVar.b = pointF5.y + rectF.top;
+                ceVar.h = AndroidUtilities.lerp(0.4f, 1.0f, Utilities.fastRandom.nextFloat());
+                ceVar.e *= 1.25f;
             }
         } else if (starGift != null) {
-            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) fa.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) fa.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
-            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) fa.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+            TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ga.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) ga.l(starGift.attributes, TL_stars.starGiftAttributePattern.class);
+            TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) ga.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
             if (stargiftattributepattern != null) {
                 p5Var.i(stargiftattributepattern.document, false);
             }
@@ -237,7 +237,7 @@ public final class u6 extends br {
                 p5Var.k(Integer.valueOf(stargiftattributebackdrop.pattern_color | (-16777216)));
             }
             if (stargiftattributemodel != null) {
-                ld.a1(imageReceiver, stargiftattributemodel.document, (int) (i10 * 0.75f));
+                md.a1(imageReceiver, stargiftattributemodel.document, (int) (i10 * 0.75f));
             }
         }
         ((Paint) this.b).setShader(this.s);
@@ -318,9 +318,9 @@ public final class u6 extends br {
         canvas.save();
         canvas.translate(rectF.centerX(), rectF.centerY());
         m1.a(canvas, this.K, this.r, rectF.width(), rectF.height(), 1.0f, this.E);
-        ce ceVar = this.e;
-        if (ceVar != null) {
-            ceVar.b(canvas, -1, 1.0f);
+        de deVar = this.e;
+        if (deVar != null) {
+            deVar.b(canvas, -1, 1.0f);
         }
         canvas.restore();
         d11 d11Var2 = this.w;

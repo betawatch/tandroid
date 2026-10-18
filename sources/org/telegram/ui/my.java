@@ -34,7 +34,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class my extends FrameLayout {
     public org.telegram.ui.Components.u9 a;
@@ -57,11 +57,11 @@ public final class my extends FrameLayout {
         int i10 = 0;
         setWillNotDraw(false);
         setPadding(0, AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f));
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         addView(e, w7.z5.e(-2, -2, 17));
-        org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(context);
-        x0Var.setCustomText(LocaleController.getString(R.string.WidgetPreview));
-        e.addView(x0Var, w7.z5.t(-2, -2, 17, 0, 0, 0, 4));
+        org.telegram.ui.Cells.w0 w0Var = new org.telegram.ui.Cells.w0(context);
+        w0Var.setCustomText(LocaleController.getString(R.string.WidgetPreview));
+        e.addView(w0Var, w7.z5.t(-2, -2, 17, 0, 0, 0, 4));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setBackgroundResource(R.drawable.widget_bg);
@@ -141,7 +141,7 @@ public final class my extends FrameLayout {
         CharSequence charSequence;
         SpannableStringBuilder valueOf;
         char c10;
-        String h;
+        String k10;
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence2;
         CharSequence charSequence3;
@@ -308,7 +308,7 @@ public final class my extends FrameLayout {
                                                     } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
                                                         charSequence = "🎮 " + messageObject.messageOwner.media.game.title;
                                                     } else if (messageObject.type == 14) {
-                                                        charSequence = com.google.android.gms.internal.cast.a6.k("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
+                                                        charSequence = com.google.android.gms.internal.play_billing.k3.k("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
                                                     } else {
                                                         charSequence = messageObject.messageText;
                                                         AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.d6) null);
@@ -369,14 +369,14 @@ public final class my extends FrameLayout {
                                                             color = getContext().getResources().getColor(R.color.widget_action_text);
                                                             TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
                                                             if (messageMedia2 instanceof TLRPC.TL_messageMediaPoll) {
-                                                                h = a1.g.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
+                                                                k10 = a1.g.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069");
                                                             } else if (messageMedia2 instanceof TLRPC.TL_messageMediaGame) {
-                                                                h = a1.g.p("🎮 \u2068", messageMedia2.game.title, "\u2069");
+                                                                k10 = a1.g.p("🎮 \u2068", messageMedia2.game.title, "\u2069");
                                                             } else {
-                                                                h = messageObject.type == 14 ? r.c.h("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString();
+                                                                k10 = messageObject.type == 14 ? org.telegram.ui.Cells.c1.k("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString();
                                                                 c11 = '\n';
                                                             }
-                                                            String replace = h.replace(c11, ' ');
+                                                            String replace = k10.replace(c11, ' ');
                                                             Object[] objArr3 = new Object[2];
                                                             objArr3[0] = replace;
                                                             objArr3[i12] = string;

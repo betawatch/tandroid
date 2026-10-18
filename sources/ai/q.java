@@ -23,7 +23,7 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.iu;
 import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -160,33 +160,33 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                 }
                 break;
             case 6:
-                ((ld) obj3).I0((ArrayList) obj, (s61) obj2);
+                ((md) obj3).I0((ArrayList) obj, (s61) obj2);
                 break;
             case 7:
-                ((uc) obj3).S((ArrayList) obj, (s61) obj2);
+                ((vc) obj3).S((ArrayList) obj, (s61) obj2);
                 break;
             case 8:
-                ((bd) obj3).S((ArrayList) obj, (s61) obj2);
-                break;
-            case 9:
                 ((cd) obj3).S((ArrayList) obj, (s61) obj2);
                 break;
+            case 9:
+                ((dd) obj3).S((ArrayList) obj, (s61) obj2);
+                break;
             case 10:
-                id idVar = (id) obj3;
+                jd jdVar = (jd) obj3;
                 ArrayList arrayList8 = (ArrayList) obj;
-                int i15 = idVar.c;
-                int i16 = idVar.d;
-                long j11 = idVar.f;
+                int i15 = jdVar.c;
+                int i16 = jdVar.d;
+                long j11 = jdVar.f;
                 if (j11 == 0) {
-                    fa y3 = fa.y(i15, idVar.e);
+                    ga y3 = ga.y(i15, jdVar.e);
                     ArrayList arrayList9 = y3.q[i16];
                     int size5 = arrayList9.size();
                     int i17 = 0;
                     while (i17 < size5) {
                         Object obj8 = arrayList9.get(i17);
                         i17++;
-                        int i18 = fd.a;
-                        f61 J = f61.J(fd.class);
+                        int i18 = gd.a;
+                        f61 J = f61.J(gd.class);
                         J.G = (TL_stars.StarsTransaction) obj8;
                         J.q = false;
                         arrayList8.add(J);
@@ -204,8 +204,8 @@ public final /* synthetic */ class q implements Utilities.Callback2 {
                     while (i12 < size6) {
                         Object obj9 = arrayList10.get(i12);
                         i12++;
-                        int i19 = fd.a;
-                        f61 J2 = f61.J(fd.class);
+                        int i19 = gd.a;
+                        f61 J2 = f61.J(gd.class);
                         J2.G = (TL_stars.StarsTransaction) obj9;
                         J2.q = true;
                         arrayList8.add(J2);

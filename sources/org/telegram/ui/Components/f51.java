@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.f51;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f51 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -29,7 +29,7 @@ public final /* synthetic */ class f51 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ f51(TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, int[] iArr, org.telegram.ui.ActionBar.d6 d6Var, boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, ai.ub ubVar) {
+    public /* synthetic */ f51(TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.f3[] f3VarArr, Context context, int[] iArr, org.telegram.ui.ActionBar.d6 d6Var, boolean[] zArr, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, ai.vb vbVar) {
         this.d = tL_urlAuthResultRequest;
         this.f = f3Var;
         this.h = f3VarArr;
@@ -38,7 +38,7 @@ public final /* synthetic */ class f51 implements Runnable {
         this.c = d6Var;
         this.e = zArr;
         this.r = inputtonconnectoauthsessionArr;
-        this.s = ubVar;
+        this.s = vbVar;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -193,13 +193,13 @@ public final /* synthetic */ class f51 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
                 boolean[] zArr2 = (boolean[]) this.e;
                 TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) this.r;
-                ai.ub ubVar = (ai.ub) this.s;
+                ai.vb vbVar = (ai.vb) this.s;
                 if (!tL_urlAuthResultRequest.request_wallet) {
                     org.telegram.ui.wk0.a = f3Var;
                     f3Var.show();
                     break;
                 } else {
-                    org.telegram.ui.Wallet.k2 B = org.telegram.ui.Wallet.f2.B(context, iArr[0], null, tL_urlAuthResultRequest, d6Var, new org.telegram.ui.n80(f3VarArr, zArr2, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest, f3Var, ubVar, 2), new org.telegram.ui.zg0(6, f3VarArr, zArr2));
+                    org.telegram.ui.Wallet.k2 B = org.telegram.ui.Wallet.f2.B(context, iArr[0], null, tL_urlAuthResultRequest, d6Var, new org.telegram.ui.n80(f3VarArr, zArr2, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest, f3Var, vbVar, 2), new org.telegram.ui.zg0(6, f3VarArr, zArr2));
                     f3VarArr[0] = B;
                     org.telegram.ui.wk0.a = B;
                     break;

@@ -30,7 +30,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j01 extends TableLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -145,7 +145,7 @@ public final class j01 extends TableLayout {
         c(str, LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterGiveawayCard().format(new Date(j10)), LocaleController.getInstance().getFormatterDay().format(new Date(j10))), null, null);
     }
 
-    public final TableRow h(CharSequence charSequence, CharSequence charSequence2, Runnable runnable, String str, org.telegram.ui.Wallet.c4 c4Var) {
+    public final TableRow h(CharSequence charSequence, CharSequence charSequence2, Runnable runnable, String str, org.telegram.ui.Wallet.d4 d4Var) {
         Context context = getContext();
         org.telegram.ui.ActionBar.d6 d6Var = this.a;
         zc zcVar = new zc(context, d6Var);
@@ -161,7 +161,7 @@ public final class j01 extends TableLayout {
         spannableStringBuilder.setSpan(new uc(3, runnable), 0, spannableStringBuilder.length(), 33);
         zcVar.setText(spannableStringBuilder);
         if (str != null) {
-            zcVar.O = new ad(str, c4Var, d6Var);
+            zcVar.O = new ad(str, d4Var, d6Var);
         }
         return l(zcVar, charSequence);
     }
@@ -170,7 +170,7 @@ public final class j01 extends TableLayout {
         h(str, charSequence, runnable, null, null);
     }
 
-    public final TableRow j(CharSequence charSequence, CharSequence charSequence2, int i10, ai.oa oaVar, String str, org.telegram.ui.Wallet.b4 b4Var) {
+    public final TableRow j(CharSequence charSequence, CharSequence charSequence2, int i10, ai.pa paVar, String str, org.telegram.ui.Wallet.c4 c4Var) {
         FrameLayout frameLayout = new FrameLayout(getContext());
         final x90 x90Var = new x90(getContext(), null);
         x90Var.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
@@ -186,14 +186,14 @@ public final class j01 extends TableLayout {
         x90Var.setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(10.66f), AndroidUtilities.dp(9.33f));
         frameLayout.addView(x90Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 34.0f, 0.0f, -1, 119));
         if (str != null) {
-            ad adVar = new ad(str, b4Var, d6Var);
+            ad adVar = new ad(str, c4Var, d6Var);
             final zc zcVar = new zc(getContext(), d6Var);
             zcVar.setTextSize(1, f7);
             zcVar.setPadding(0, AndroidUtilities.dp(9.33f), 0, AndroidUtilities.dp(9.33f));
             SpannableString spannableString = new SpannableString("btn");
             spannableString.setSpan(adVar, 0, spannableString.length(), 33);
             zcVar.setText(spannableString);
-            float f10 = (oaVar != null ? 34 : 0) + 12.66f;
+            float f10 = (paVar != null ? 34 : 0) + 12.66f;
             ((FrameLayout.LayoutParams) x90Var.getLayoutParams()).rightMargin = AndroidUtilities.dp(f10) + adVar.a();
             frameLayout.addView(zcVar, w7.z5.a(-2.0f, 0.0f, 0.0f, f10, 0.0f, -2, 53));
             frameLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Components.e01
@@ -208,13 +208,13 @@ public final class j01 extends TableLayout {
                 }
             });
         }
-        if (oaVar != null) {
+        if (paVar != null) {
             ImageView imageView = new ImageView(getContext());
             imageView.setImageResource(R.drawable.msg_copy);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             int i12 = org.telegram.ui.ActionBar.h6.v6;
             imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i12, d6Var), PorterDuff.Mode.SRC_IN));
-            imageView.setOnClickListener(new ca(26, charSequence2, oaVar));
+            imageView.setOnClickListener(new ca(26, charSequence2, paVar));
             w7.b6.a(imageView);
             imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.m1(0.1f, org.telegram.ui.ActionBar.h6.w0(i12, d6Var)), 7, -1));
             frameLayout.addView(imageView, w7.z5.e(30, 30, 21));
@@ -222,8 +222,8 @@ public final class j01 extends TableLayout {
         return l(frameLayout, charSequence);
     }
 
-    public final void k(String str, CharSequence charSequence, int i10, ai.oa oaVar) {
-        j(str, charSequence, i10, oaVar, null, null);
+    public final void k(String str, CharSequence charSequence, int i10, ai.pa paVar) {
+        j(str, charSequence, i10, paVar, null, null);
     }
 
     public final TableRow l(View view, CharSequence charSequence) {
@@ -254,7 +254,7 @@ public final class j01 extends TableLayout {
         ImageReceiver imageReceiver = l5Var.b;
         if (j10 == UserObject.ANONYMOUS) {
             str3 = LocaleController.getString(R.string.StarsTransactionHidden);
-            zq a2 = ai.gd.a(44, "anonymous");
+            zq a2 = ai.hd.a(44, "anonymous");
             int dp = AndroidUtilities.dp(16.0f);
             int dp2 = AndroidUtilities.dp(16.0f);
             a2.e = dp;
@@ -264,7 +264,7 @@ public final class j01 extends TableLayout {
             z11 = false;
         } else if (UserObject.isService(j10)) {
             str3 = LocaleController.getString(R.string.StarsTransactionUnknown);
-            zq a10 = ai.gd.a(44, "fragment");
+            zq a10 = ai.hd.a(44, "fragment");
             int dp3 = AndroidUtilities.dp(16.0f);
             int dp4 = AndroidUtilities.dp(16.0f);
             a10.e = dp3;
@@ -322,7 +322,7 @@ public final class j01 extends TableLayout {
         ImageReceiver imageReceiver = l5Var.b;
         if (j10 == UserObject.ANONYMOUS) {
             str3 = LocaleController.getString(R.string.StarsTransactionHidden);
-            zq a2 = ai.gd.a(44, "anonymous");
+            zq a2 = ai.hd.a(44, "anonymous");
             int dp = AndroidUtilities.dp(16.0f);
             int dp2 = AndroidUtilities.dp(16.0f);
             a2.e = dp;
@@ -332,7 +332,7 @@ public final class j01 extends TableLayout {
         } else {
             if (UserObject.isService(j10)) {
                 str3 = LocaleController.getString(R.string.StarsTransactionUnknown);
-                zq a10 = ai.gd.a(44, "fragment");
+                zq a10 = ai.hd.a(44, "fragment");
                 int dp3 = AndroidUtilities.dp(16.0f);
                 int dp4 = AndroidUtilities.dp(16.0f);
                 a10.e = dp3;

@@ -19,7 +19,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ey extends im0 {
     public boolean V2;
@@ -89,7 +89,7 @@ public final class ey extends im0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i0.a.z(i13, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(i13, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((cz) childAt);
@@ -149,7 +149,7 @@ public final class ey extends im0 {
                 i17++;
             }
             if (cyVar == null) {
-                cyVar = !arrayList2.isEmpty() ? (cy) i0.a.z(1, arrayList2) : new cy(this);
+                cyVar = !arrayList2.isEmpty() ? (cy) i2.d.A(1, arrayList2) : new cy(this);
                 cyVar.M = i16;
                 cyVar.e();
             }
@@ -220,7 +220,7 @@ public final class ey extends im0 {
                     int top = childAt.getTop() + ((int) childAt.getTranslationY());
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(top);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i0.a.z(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) i2.d.A(1, arrayList) : new ArrayList();
                         sparseArray.put(top, arrayList4);
                     }
                     arrayList4.add((cz) childAt);
@@ -270,7 +270,7 @@ public final class ey extends im0 {
                 i15++;
             }
             if (cyVar == null) {
-                cyVar = !arrayList2.isEmpty() ? (cy) i0.a.z(1, arrayList2) : new cy(this);
+                cyVar = !arrayList2.isEmpty() ? (cy) i2.d.A(1, arrayList2) : new cy(this);
                 cyVar.M = i14;
                 cyVar.e();
             }

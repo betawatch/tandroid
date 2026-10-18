@@ -10,7 +10,7 @@ import org.telegram.ui.Components.lu0;
 import org.telegram.ui.Components.sv0;
 import org.telegram.ui.Components.z20;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class s2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final class s2 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 0:
                 d3 d3Var = (d3) this.d;
-                d3Var.R = i0.b.f(1.0f, this.b, this.c);
+                d3Var.R = i0.a.f(1.0f, this.b, this.c);
                 d3Var.h();
                 break;
             case 1:
@@ -42,7 +42,7 @@ public final class s2 extends AnimatorListenerAdapter {
                 z20Var.F.setColorFilter(new PorterDuffColorFilter(z20Var.L, PorterDuff.Mode.MULTIPLY));
                 z20Var.E.setColor(z20Var.L);
                 z20Var.r.setColor(z20Var.M);
-                z20Var.J.d(i0.b.o(z20Var.M, 38));
+                z20Var.J.d(i0.a.o(z20Var.M, 38));
                 break;
             case 2:
                 sv0 sv0Var = (sv0) this.d;

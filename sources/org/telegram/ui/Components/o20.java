@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class o20 extends ScrollView {
     public final int a;
@@ -82,7 +82,7 @@ public class o20 extends ScrollView {
         n20Var.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         n20Var.a = animatorSet2;
-        animatorSet2.addListener(new ai.le(27, n20Var, arrayList3));
+        animatorSet2.addListener(new ai.me(27, n20Var, arrayList3));
         arrayList.clear();
         for (int i11 = 0; i11 < arrayList3.size(); i11++) {
             v30 v30Var = (v30) arrayList3.get(i11);
@@ -112,7 +112,7 @@ public class o20 extends ScrollView {
         n20Var.b = false;
         AnimatorSet animatorSet2 = new AnimatorSet();
         n20Var.a = animatorSet2;
-        animatorSet2.addListener(new ai.le(26, n20Var, v30Var));
+        animatorSet2.addListener(new ai.me(26, n20Var, v30Var));
         n20Var.a.setDuration(150L);
         arrayList.clear();
         arrayList.add(v30Var);
@@ -145,8 +145,8 @@ public class o20 extends ScrollView {
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.q.C(20.0f, this.n, rect.top);
-        rect.bottom = org.telegram.messenger.q.C(50.0f, this.n, rect.bottom);
+        rect.top = org.telegram.messenger.g0.C(20.0f, this.n, rect.top);
+        rect.bottom = org.telegram.messenger.g0.C(50.0f, this.n, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 

@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.sm;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class o5 extends org.telegram.ui.Components.w9 {
     public final Paint G;
@@ -63,7 +63,7 @@ public final class o5 extends org.telegram.ui.Components.w9 {
                     if (s5Var.L == null) {
                         wh.g gVar = new wh.g();
                         s5Var.L = gVar;
-                        gVar.h(i0.b.o(-1, (int) (Color.alpha(-1) * 0.325f)));
+                        gVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f)));
                     }
                     s5Var.L.setBounds(0, 0, getWidth(), getHeight());
                     s5Var.L.draw(canvas);
@@ -79,7 +79,7 @@ public final class o5 extends org.telegram.ui.Components.w9 {
             canvas.drawBitmap(s5Var.R, 0.0f, 0.0f, paint);
             long min = Math.min(16L, System.currentTimeMillis() - this.H);
             Float f10 = s5Var.S;
-            s5Var.T = t0.c(min, f10 == null ? 250.0f : f10.floatValue(), s5Var.T, 1.0f);
+            s5Var.T = c1.c(min, f10 == null ? 250.0f : f10.floatValue(), s5Var.T, 1.0f);
             this.H = System.currentTimeMillis();
             invalidate();
             if (s5Var.M != null) {

@@ -12,7 +12,7 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a1 extends hm0 {
     public final /* synthetic */ Context c;
@@ -53,8 +53,8 @@ public final class a1 extends hm0 {
         MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
         View view = b1Var.a;
         if (!(view instanceof org.telegram.ui.Cells.u1)) {
-            if (view instanceof org.telegram.ui.Cells.x0) {
-                ((org.telegram.ui.Cells.x0) view).setMessageObject(messageObject);
+            if (view instanceof org.telegram.ui.Cells.w0) {
+                ((org.telegram.ui.Cells.w0) view).setMessageObject(messageObject);
                 return;
             }
             return;

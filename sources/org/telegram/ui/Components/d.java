@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -383,7 +383,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     if (TextUtils.isEmpty(str)) {
                         F2 = r41.A(F2);
                     }
-                    arrayList.add(w41.a(5, str, r.c.u(F2, ""), substring, new b(e0Var, i13), e0Var.t0, new b(e0Var, i15), null));
+                    arrayList.add(w41.a(5, str, r4.c.u(F2, ""), substring, new b(e0Var, i13), e0Var.t0, new b(e0Var, i15), null));
                     if (e0Var.j0()) {
                         boolean z12 = e0Var.Z;
                         if (z12 || (richMessage3 = e0Var.b0) == null) {
@@ -586,14 +586,14 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                         if (str5 != null) {
                             String lowerCase2 = str5.toLowerCase();
                             String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                            if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.wh.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, translitSafe2)) {
+                            if (lowerCase2.startsWith(lowerCase) || org.telegram.messenger.g0.w(" ", lowerCase, lowerCase2) || translitSafe2.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
                                 z10 = true;
                                 str2 = audioEntry5.title;
                                 if (str2 == null) {
                                     String lowerCase3 = str2.toLowerCase();
                                     boolean z19 = z10;
                                     String translitSafe3 = AndroidUtilities.translitSafe(lowerCase3);
-                                    z10 = z19 || lowerCase3.startsWith(lowerCase) || org.telegram.messenger.wh.w(" ", lowerCase, lowerCase3) || translitSafe3.startsWith(translitSafe) || org.telegram.messenger.wh.w(" ", translitSafe, translitSafe3);
+                                    z10 = z19 || lowerCase3.startsWith(lowerCase) || org.telegram.messenger.g0.w(" ", lowerCase, lowerCase3) || translitSafe3.startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", translitSafe, translitSafe3);
                                 }
                                 if (z10) {
                                     if (!z18) {

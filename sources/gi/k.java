@@ -7,14 +7,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class k extends FrameLayout {
     public final ImageView a;
@@ -37,9 +36,9 @@ public final class k extends FrameLayout {
         textView.setTextColor(h6.w0(i10, d6Var));
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 14.0f);
-        TextView i11 = a6.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 1), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 1), context);
         this.c = i11;
-        wh.o(h6.z6, d6Var, i11, 1, 14.0f);
+        kk.o(h6.z6, d6Var, i11, 1, 14.0f);
         linearLayout.addView(i11, z5.t(-1, -2, 55, 0, 0, 0, 0));
     }
 

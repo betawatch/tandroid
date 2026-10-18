@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xr extends bb {
     public final boolean X;
@@ -34,7 +34,7 @@ public final class xr extends bb {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, org.telegram.ui.ActionBar.f3, org.telegram.ui.Components.bb, org.telegram.ui.Components.xr] */
     /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.ActionBar.f3] */
-    public xr(Context context, int i10, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ai.n2 n2Var, ci.b bVar) {
+    public xr(Context context, int i10, TL_phone.getGroupCallStreamRtmpUrl getgroupcallstreamrtmpurl, TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl, ai.o2 o2Var, ci.b bVar) {
         int i11;
         xr bbVar = new bb(context, null, false, false, bVar);
         bbVar.X = true;
@@ -42,20 +42,20 @@ public final class xr extends bb {
         bbVar.Y = null;
         bbVar.a0 = false;
         long peerDialogId = DialogObject.getPeerDialogId(getgroupcallstreamrtmpurl.peer);
-        boolean z10 = n2Var != null && (peerDialogId >= 0 || ChatObject.isCreator(MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId))));
-        if (n2Var != null) {
+        boolean z10 = o2Var != null && (peerDialogId >= 0 || ChatObject.isCreator(MessagesController.getInstance(i10).getChat(Long.valueOf(-peerDialogId))));
+        if (o2Var != null) {
             bbVar.f0 = true;
             ei.d dVar = new ei.d(context, bVar, true);
             dVar.g(LocaleController.getString(R.string.LiveStoryRTMPEnable), false, true);
             bbVar.containerView.addView(dVar, w7.z5.a(48.0f, 16.0f, 0.0f, 16.0f, (z10 ? 52 : 0) + 12, -1, 80));
-            dVar.setOnClickListener(new ai.v0(bbVar, n2Var, dVar, 21));
+            dVar.setOnClickListener(new ai.v0(bbVar, o2Var, dVar, 21));
             if (z10) {
                 ei.d dVar2 = new ei.d(context, bVar, false);
                 dVar2.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.r7, false));
                 dVar2.d.x(AndroidUtilities.bold());
                 dVar2.g(LocaleController.getString(R.string.LiveStoryRTMPRevoke), false, true);
                 bbVar = this;
-                dVar2.setOnClickListener(new ai.mb(this, context, bVar, dVar2, getgroupcallstreamrtmpurl, i10));
+                dVar2.setOnClickListener(new ai.nb(this, context, bVar, dVar2, getgroupcallstreamrtmpurl, i10));
                 bbVar.containerView.addView(dVar2, w7.z5.a(48.0f, 16.0f, 0.0f, 16.0f, 12.0f, -1, 80));
             }
         }
@@ -132,7 +132,7 @@ public final class xr extends bb {
         }
         arrayList.add(f61.k(xrVar.g0));
         arrayList.add(f61.B(null));
-        i0.a.p(R.string.VoipChatStreamSettings, arrayList);
+        i2.d.p(R.string.VoipChatStreamSettings, arrayList);
         String str2 = xrVar.b0;
         String string = LocaleController.getString(R.string.VoipChatStreamServerUrl);
         int i10 = vr.a;
@@ -208,7 +208,7 @@ public final class xr extends bb {
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Sh, this.resourcesProvider));
         int dp = AndroidUtilities.dp(8.0f);
         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, this.resourcesProvider);
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
         textView.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, w02, o10, o10));
         this.containerView.addView(textView, w7.z5.a(48.0f, 16.0f, 0.0f, 16.0f, (isCreator ? 52 : 0) + 12, -1, 80));
         textView.setOnClickListener(new ca(6, this, peer));

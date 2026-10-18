@@ -1,6 +1,6 @@
 package org.telegram.ui.ActionBar;
 
-import ai.hc;
+import ai.ic;
 import android.app.Dialog;
 import android.graphics.Paint;
 import android.os.Build;
@@ -15,12 +15,12 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i3 extends Dialog {
     public final t3 a;
     public final h3 b;
-    public final hc c;
+    public final ic c;
     public final Paint d;
     public boolean e;
 
@@ -30,13 +30,13 @@ public final class i3 extends Dialog {
         this.d = paint;
         this.a = t3Var;
         u3 windowView = t3Var.getWindowView();
-        hc hcVar = new hc(this, getContext(), 9);
-        this.c = hcVar;
+        ic icVar = new ic(this, getContext(), 9);
+        this.c = icVar;
         paint.setColor(h6.x0(null, h6.a7, false));
         h3 h3Var = new h3(windowView);
         this.b = h3Var;
         setContentView(h3Var, new ViewGroup.LayoutParams(-1, -1));
-        h3Var.addView(hcVar, w7.z5.e(-1, -2, 80));
+        h3Var.addView(icVar, w7.z5.e(-1, -2, 80));
         h3Var.setClipToPadding(false);
     }
 

@@ -97,7 +97,7 @@ import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.SecretMediaViewer;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class en implements org.telegram.ui.Cells.l1 {
     public final /* synthetic */ sn a;
@@ -257,9 +257,9 @@ public final class en implements org.telegram.ui.Cells.l1 {
                     i11 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
                     ChatObject.canUserDoChannelDirectAdminAction(i11, snVar.e, 5);
                 }
-                ai.y3 y3Var = new ai.y3(this, message, canManageMonoForum, messageObject, 12);
+                ai.x9 x9Var = new ai.x9(this, message, canManageMonoForum, messageObject, 11);
                 TLRPC.SuggestedPost suggestedPost = message.suggested_post;
-                snVar.j7(y3Var, ag.a.l(suggestedPost != null ? suggestedPost.price : null), !canManageMonoForum);
+                snVar.j7(x9Var, ag.a.l(suggestedPost != null ? suggestedPost.price : null), !canManageMonoForum);
                 return;
             }
             return;
@@ -289,7 +289,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
         editText.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : 0, AndroidUtilities.dp(8.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f));
         editText.setSelection(editText.getText().toString().length());
         e2Var.n(frameLayout);
-        e2Var.k(LocaleController.getString(R.string.Decline), new m4.y0(27, j3Var, editText));
+        e2Var.k(LocaleController.getString(R.string.Decline), new m4.w0(28, j3Var, editText));
         e2Var.h(LocaleController.getString(R.string.Cancel), null);
         b2Var.N = new org.telegram.ui.Components.q1(editText, i13);
         frameLayout.addView(editText, w7.z5.a(-2.0f, 23.0f, 0.0f, 23.0f, 21.0f, -1, 0));
@@ -363,7 +363,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
         SpannableString spannableString = new SpannableString(charSequence);
         spannableString.setSpan(new mi.h(false, textLayoutBlock.language, charSequence), 0, spannableString.length(), 33);
         AndroidUtilities.addToClipboard(spannableString);
-        org.telegram.messenger.wh.p(R.string.CodeCopied, org.telegram.ui.Components.xc.a0(this.a));
+        org.telegram.messenger.kk.p(R.string.CodeCopied, org.telegram.ui.Components.xc.a0(this.a));
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -706,7 +706,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
             if (!org.telegram.ui.Components.f5.g(parentActivity, i10, j10, false)) {
                 ArrayList<MessageObject> arrayList = (messageObject.getGroupId() == 0 || (groupedMessages = (MessageObject.GroupedMessages) snVar.x6.f(messageObject.getGroupId())) == null) ? null : groupedMessages.messages;
                 if (arrayList == null) {
-                    arrayList = org.telegram.messenger.q.k(messageObject);
+                    arrayList = org.telegram.messenger.g0.k(messageObject);
                 }
                 boolean z10 = j10 == UserConfig.getInstance(UserConfig.selectedAccount).clientUserId;
                 long j11 = j10;
@@ -807,7 +807,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
             final org.telegram.ui.ActionBar.d6 resourceProvider = snVar.getResourceProvider();
             final AtomicBoolean atomicBoolean = new AtomicBoolean(false);
             xmVar.d();
-            xmVar.b = new ug.c(atomicBoolean, 0);
+            xmVar.b = new ug.d(atomicBoolean, 0);
             TLRPC.MessageMedia messageMedia3 = messageObject.messageOwner.media;
             if (messageMedia3 instanceof TLRPC.TL_messageMediaGiveawayResults) {
                 TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageMedia3;
@@ -823,11 +823,11 @@ public final class en implements org.telegram.ui.Cells.l1 {
                 tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) messageMedia3;
             }
             final TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = tL_messageMediaGiveaway;
-            final String b11 = ug.h.b(messageObject);
+            final String b11 = ug.i.b(messageObject);
             TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-messageObject.getFromChatId()));
             final boolean z10 = chat != null && ChatObject.isChannelAndNotMegaGroup(chat);
             final long j10 = messageObject.messageOwner.date * 1000;
-            ug.q.d(messageObject, new Utilities.Callback(atomicBoolean, xmVar, z10, b11, j10, tL_messageMediaGiveaway2, parentActivity, resourceProvider) { // from class: ug.d
+            ug.r.d(messageObject, new Utilities.Callback(atomicBoolean, xmVar, z10, b11, j10, tL_messageMediaGiveaway2, parentActivity, resourceProvider) { // from class: ug.e
                 public final /* synthetic */ AtomicBoolean a;
                 public final /* synthetic */ pf.c b;
                 public final /* synthetic */ boolean c;
@@ -856,12 +856,12 @@ public final class en implements org.telegram.ui.Cells.l1 {
                     Context context = this.f;
                     d6 d6Var = this.g;
                     if (z11) {
-                        h.d(z12, str, (TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo, tL_messageMediaGiveaway3, context, d6Var);
+                        i.d(z12, str, (TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo, tL_messageMediaGiveaway3, context, d6Var);
                     } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
-                        h.e(z12, str, (TLRPC.TL_payments_giveawayInfoResults) payments_giveawayinfo, tL_messageMediaGiveaway3, context, d6Var);
+                        i.e(z12, str, (TLRPC.TL_payments_giveawayInfoResults) payments_giveawayinfo, tL_messageMediaGiveaway3, context, d6Var);
                     }
                 }
-            }, new ug.e(atomicBoolean, xmVar, 0));
+            }, new ug.f(atomicBoolean, xmVar, 0));
             return;
         }
         if (i10 == 21) {
@@ -934,7 +934,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
             }
         }
         if (i10 == 30) {
-            snVar.presentFragment(new sn(z7.g5.a(messageObject.messageOwner.media.user_id, "user_id")));
+            snVar.presentFragment(new sn(zf.d0.b(messageObject.messageOwner.media.user_id, "user_id")));
             return;
         }
         if (i10 == 31) {
@@ -950,7 +950,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                     String str5 = MessageObject.getMedia(messageObject.messageOwner).phone_number;
                     b10 = !TextUtils.isEmpty(str5) ? jf.b.c().b(str5) : LocaleController.getString(R.string.NumberUnknown);
                 } else {
-                    b10 = org.telegram.messenger.wh.g(new StringBuilder("+"), user2.phone, jf.b.c());
+                    b10 = org.telegram.messenger.kk.g(new StringBuilder("+"), user2.phone, jf.b.c());
                 }
                 Bundle bundle2 = new Bundle();
                 bundle2.putLong("user_id", user2.id);
@@ -1090,14 +1090,14 @@ public final class en implements org.telegram.ui.Cells.l1 {
             snVar2.Ab = tiVar;
         }
         i10 = ((org.telegram.ui.ActionBar.n2) this.a).currentAccount;
-        ai.fa y3 = ai.fa.y(i10, false);
+        ai.ga y3 = ai.ga.y(i10, false);
         Objects.requireNonNull(tiVar);
         vi viVar = new vi(tiVar, 8);
         Context context = LaunchActivity.H1;
         if (context == null) {
             context = ApplicationLoader.applicationContext;
         }
-        org.telegram.ui.ActionBar.d6 I = ai.fa.I();
+        org.telegram.ui.ActionBar.d6 I = ai.ga.I();
         if (messageObject != null && context != null) {
             long dialogId = messageObject.getDialogId();
             int id2 = messageObject.getId();
@@ -1113,7 +1113,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceMessage;
-            gVar = new ah.g(y3, ConnectionsManager.getInstance(y3.a).sendRequest(tL_payments_getPaymentForm, new ai.x2(y3, messageObject, tL_inputInvoiceMessage, viVar, 3)), 2);
+            gVar = new ah.g(y3, ConnectionsManager.getInstance(y3.a).sendRequest(tL_payments_getPaymentForm, new ai.y2(y3, messageObject, tL_inputInvoiceMessage, viVar, 3)), 2);
         }
         if (gVar != null) {
             tiVar.b = gVar;
@@ -1566,7 +1566,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                         w9Var.e(userOrChat, h9Var);
                         frameLayout.addView(w9Var, w7.z5.a(34.0f, 13.0f, 11.0f, 0.0f, 11.0f, 34, 51));
                         TextView textView = new TextView(context2);
-                        org.telegram.messenger.wh.o(org.telegram.ui.ActionBar.h6.j5, d6Var2, textView, 1, 14.0f);
+                        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.j5, d6Var2, textView, 1, 14.0f);
                         textView.setText(replaceTags);
                         textView.setMaxWidth(AndroidUtilities.dp(150.0f));
                         textView.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
@@ -1645,7 +1645,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                                 viewGroup2 = sv0Var3.T;
                                 if (viewGroup2 instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
                                     int i22 = 5;
-                                    ((ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup2).setOnSizeChangedListener(new qp0(sv0Var3, i22));
+                                    ((ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup2).setOnSizeChangedListener(new rp0(sv0Var3, i22));
                                     sv0Var3.T.setOnTouchListener(new e0(sv0Var3, i22));
                                 }
                                 if (z12) {
@@ -1876,7 +1876,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
         }
         if (messageObject2.isReplyToStory() && (storyItem = (message3 = messageObject2.messageOwner).replyStory) != null) {
             if (storyItem instanceof TL_stories.TL_storyItemDeleted) {
-                org.telegram.messenger.q.q(R.string.StoryNotFound, org.telegram.ui.Components.xc.a0(snVar), R.raw.story_bomb1, 36);
+                org.telegram.messenger.g0.q(R.string.StoryNotFound, org.telegram.ui.Components.xc.a0(snVar), R.raw.story_bomb1, 36);
                 return;
             }
             storyItem.dialogId = DialogObject.getPeerDialogId(message3.reply_to.peer);
@@ -1968,15 +1968,15 @@ public final class en implements org.telegram.ui.Cells.l1 {
                                                 snVar.M7 = true;
                                             }
                                         }
-                                        ai.tb tbVar = new ai.tb(this, i10, messageObject2, num, bArr, 19);
+                                        ai.ub ubVar = new ai.ub(this, i10, messageObject2, num, bArr, 19);
                                         if (!snVar.A0.N) {
-                                            tbVar.run();
+                                            ubVar.run();
                                             return;
                                         }
                                         snVar.r3 = false;
                                         snVar.pb(false, true, false);
                                         snVar.Jc(snVar.getMediaDataController().getMask(), snVar.getMediaDataController().getSearchPosition(), snVar.getMediaDataController().getSearchCount());
-                                        AndroidUtilities.runOnUIThread(tbVar, 80L);
+                                        AndroidUtilities.runOnUIThread(ubVar, 80L);
                                         return;
                                     }
                                     Integer num2 = num;
@@ -2050,7 +2050,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                                             bundle.putLong("chat_id", j12);
                                         }
                                         bundle.putInt("message_id", i10);
-                                        org.telegram.ui.ActionBar.n2 n2Var2 = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList) : n2Var;
+                                        org.telegram.ui.ActionBar.n2 n2Var2 = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList) : n2Var;
                                         if (n2Var2 == null || MessagesController.getInstance(launchActivity.O).checkCanOpenChat(bundle, n2Var2)) {
                                             AndroidUtilities.runOnUIThread(new u80(launchActivity, bundle, bArr2, i10, num2, str4, i13, j10, l0Var, n2Var2));
                                             return;
@@ -2333,7 +2333,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                                     hv0 hv0Var = new hv0(snVar3);
                                     ad1 ad1Var3 = ad1Var2;
                                     hv0Var.p0(MessageObject.getMedia(ad1Var3.G), false, i12);
-                                    hv0Var.e0 = new fr0(19, ad1Var3, snVar3);
+                                    hv0Var.e0 = new gn0(20, ad1Var3, snVar3);
                                     snVar3.presentFragment(hv0Var);
                                     ad1Var3.c(false);
                                     break;
@@ -2374,7 +2374,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                                     hv0 hv0Var = new hv0(snVar3);
                                     ad1 ad1Var3 = ad1Var2;
                                     hv0Var.p0(MessageObject.getMedia(ad1Var3.G), false, i12);
-                                    hv0Var.e0 = new fr0(19, ad1Var3, snVar3);
+                                    hv0Var.e0 = new gn0(20, ad1Var3, snVar3);
                                     snVar3.presentFragment(hv0Var);
                                     ad1Var3.c(false);
                                     break;
@@ -2448,7 +2448,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                                     hv0 hv0Var = new hv0(snVar3);
                                     ad1 ad1Var3 = ad1Var2;
                                     hv0Var.p0(MessageObject.getMedia(ad1Var3.G), false, i13);
-                                    hv0Var.e0 = new fr0(19, ad1Var3, snVar3);
+                                    hv0Var.e0 = new gn0(20, ad1Var3, snVar3);
                                     snVar3.presentFragment(hv0Var);
                                     ad1Var3.c(false);
                                     break;
@@ -2585,7 +2585,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                                         xc1Var6.addView(viewGroup4, e);
                                         viewGroup = ad1Var.S;
                                         if (viewGroup instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
-                                            ((ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup).setOnSizeChangedListener(new qp0(ad1Var, 21));
+                                            ((ActionBarPopupWindow$ActionBarPopupWindowLayout) viewGroup).setOnSizeChangedListener(new rp0(ad1Var, 21));
                                             ad1Var.S.setOnTouchListener(new e0(ad1Var, 7));
                                         }
                                         if (z14) {
@@ -2878,10 +2878,10 @@ public final class en implements org.telegram.ui.Cells.l1 {
 
     @Override // org.telegram.ui.Cells.l1
     public final void W1(org.telegram.ui.Cells.u1 u1Var, long j10) {
-        Bundle a2 = z7.g5.a(j10, "user_id");
+        Bundle b10 = zf.d0.b(j10, "user_id");
         org.telegram.ui.ActionBar.n2 n2Var = this.a;
-        if (n2Var.getMessagesController().checkCanOpenChat(a2, n2Var, u1Var.getMessageObject())) {
-            n2Var.presentFragment(new sn(a2));
+        if (n2Var.getMessagesController().checkCanOpenChat(b10, n2Var, u1Var.getMessageObject())) {
+            n2Var.presentFragment(new sn(b10));
         }
     }
 
@@ -2948,7 +2948,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
             if (publicUsername != null) {
                 spannableStringBuilder.append((CharSequence) "@").append((CharSequence) publicUsername).append((CharSequence) " ");
             } else {
-                SpannableString spannableString = new SpannableString(r.c.u(UserObject.getFirstName(user, false), " "));
+                SpannableString spannableString = new SpannableString(r4.c.u(UserObject.getFirstName(user, false), " "));
                 spannableString.setSpan(new org.telegram.ui.Components.m61("" + user.id, 3, null), 0, spannableString.length(), 33);
                 spannableStringBuilder.append((CharSequence) spannableString);
             }
@@ -3363,7 +3363,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                 i10 = RecyclerView.R(childAt);
                 if (i10 >= 0) {
                     if (!(childAt instanceof org.telegram.ui.Cells.u1)) {
-                        if (childAt instanceof org.telegram.ui.Cells.x0) {
+                        if (childAt instanceof org.telegram.ui.Cells.w0) {
                             i11 = snVar.Q8(childAt);
                             break;
                         }
@@ -3486,11 +3486,11 @@ public final class en implements org.telegram.ui.Cells.l1 {
                 org.telegram.ui.Cells.s1 s1Var = pollButtons.get(i16);
                 float y3 = ((u1Var.getY() + s1Var.b) - AndroidUtilities.dp(4.0f)) - snVar.s9;
                 snVar.q2 = AndroidUtilities.dp(13.3f) + s1Var.a;
-                int e = org.telegram.ui.Cells.t0.e(6.0f, s1Var.b, i12);
-                snVar.r2 = e;
+                int D = org.telegram.messenger.kk.D(6.0f, s1Var.b, i12);
+                snVar.r2 = D;
                 if (y3 > 0.0f) {
                     i15 = snVar.q2;
-                    i13 = e;
+                    i13 = D;
                     f7 = 0.0f;
                     break;
                 }
@@ -3983,7 +3983,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                 if (tiVar == null || i10 == 0) {
                     snVar.presentFragment(snVar2);
                 } else {
-                    AndroidUtilities.runOnUIThread(new ai.tb(this, tiVar, chat, i10, snVar2, 18), 5000L);
+                    AndroidUtilities.runOnUIThread(new ai.ub(this, tiVar, chat, i10, snVar2, 18), 5000L);
                     tiVar.d();
                 }
             }
@@ -4062,7 +4062,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
         x3Var2.l0 = new gh(9, this, x3Var2);
         x3Var2.s(AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FactCheckToast, str)));
         snVar.X0.addView(snVar.A1, w7.z5.a(520.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, 55));
-        snVar.X0.post(new i2.y(this, u1Var, i11, i10, 4));
+        snVar.X0.post(new i2.z(this, u1Var, i11, i10, 4));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:75:0x0118, code lost:
@@ -4128,7 +4128,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
         }
         ArrayList<MessageObject> arrayList = (messageObject.getGroupId() == 0 || (groupedMessages = (MessageObject.GroupedMessages) snVar.x6.f(messageObject.getGroupId())) == null) ? null : groupedMessages.messages;
         if (arrayList == null) {
-            arrayList = org.telegram.messenger.q.k(messageObject);
+            arrayList = org.telegram.messenger.g0.k(messageObject);
         }
         if (snVar.getMessagesController().storiesEnabled() && !messageObject.isSponsored() && (((message2 = messageObject.messageOwner) == null || !message2.noforwards) && (i12 = messageObject.type) != 17 && i12 != 12)) {
             long dialogId = messageObject.getDialogId();
@@ -4269,7 +4269,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                 i10 = RecyclerView.R(childAt);
                 if (i10 >= 0) {
                     if (!(childAt instanceof org.telegram.ui.Cells.u1)) {
-                        if (childAt instanceof org.telegram.ui.Cells.x0) {
+                        if (childAt instanceof org.telegram.ui.Cells.w0) {
                             i11 = snVar.Q8(childAt);
                             break;
                         }
@@ -4519,7 +4519,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                             s31 s31Var = new s31(f13, parentActivity);
                             f13.n = s31Var;
                             f13.e.addView(s31Var, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, 119, 53));
-                            lo0 lo0Var = new lo0(f13, 2);
+                            mo0 mo0Var = new mo0(f13, 2);
                             f13.U = new t31(f13, parentActivity);
                             View view2 = new View(parentActivity);
                             f13.T = view2;
@@ -4543,7 +4543,7 @@ public final class en implements org.telegram.ui.Cells.l1 {
                             c81Var2.m = -1;
                             c81Var2.n = -1;
                             c81Var2.A = 1509949439;
-                            c81Var2.j = lo0Var;
+                            c81Var2.j = mo0Var;
                             f13.U.addView(f13.R);
                             f13.e.addView(f13.U, w7.z5.e(-1, 48, 80));
                             es0 es0Var = new es0(null, new ci.b());

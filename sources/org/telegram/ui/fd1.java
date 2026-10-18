@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class fd1 extends org.telegram.ui.Components.hm0 {
     public int c;
@@ -108,7 +108,7 @@ public final class fd1 extends org.telegram.ui.Components.hm0 {
         View view2;
         if (i10 != 1) {
             if (i10 == 2) {
-                org.telegram.ui.Cells.z6 z6Var = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.t0) null);
+                org.telegram.ui.Cells.z6 z6Var = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
                 org.telegram.ui.Components.zq zqVar = new org.telegram.ui.Components.zq(new ColorDrawable(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false)), org.telegram.ui.ActionBar.h6.W0(viewGroup.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7));
                 zqVar.w = true;
                 z6Var.setBackground(zqVar);

@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class v70 extends j71 implements NotificationCenter.NotificationCenterDelegate {
     public final a0.h T;
@@ -118,7 +118,7 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         h20 h20Var = new h20(context, d6Var, false);
         this.t0 = h20Var;
         h20Var.setImageResource(R.drawable.floating_check);
-        h20Var.setOnClickListener(new ai.z3(this, context, j10, 4));
+        h20Var.setOnClickListener(new ai.c4(this, context, j10, 4));
         h20Var.e(false, false);
         h20Var.setContentDescription(LocaleController.getString(R.string.Next));
         this.containerView.addView(h20Var, h20.b());
@@ -258,7 +258,7 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, sb2, chat.title));
         }
         alertDialog$Builder.k(LocaleController.getString(R.string.Add), new tv(v70Var, 7));
-        i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public static /* synthetic */ void P(v70 v70Var, TLRPC.TL_error tL_error, TLObject tLObject) {
@@ -426,14 +426,14 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
                     if (childAt instanceof v30) {
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
                         if (childAt.getMeasuredWidth() + i13 > dp) {
-                            dp2 = org.telegram.messenger.q.C(8.0f, childAt.getMeasuredHeight(), dp2);
+                            dp2 = org.telegram.messenger.g0.C(8.0f, childAt.getMeasuredHeight(), dp2);
                             i13 = 0;
                         }
-                        i13 = org.telegram.messenger.q.C(9.0f, childAt.getMeasuredWidth(), i13);
+                        i13 = org.telegram.messenger.g0.C(9.0f, childAt.getMeasuredWidth(), i13);
                     }
                 }
                 int dp3 = AndroidUtilities.dp(42.0f) + dp2;
-                min = this.m0 == null ? this.g0 ? Math.min(this.s0, dp3) : 0 : org.telegram.messenger.q.b(52.0f, Math.min(this.s0, dp3), 0);
+                min = this.m0 == null ? this.g0 ? Math.min(this.s0, dp3) : 0 : org.telegram.messenger.g0.b(52.0f, Math.min(this.s0, dp3), 0);
                 int i14 = this.u0;
                 int dp4 = this.f0.m() > 0 ? AndroidUtilities.dp(56.0f) : 0;
                 this.u0 = dp4;

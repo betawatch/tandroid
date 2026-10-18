@@ -1,15 +1,15 @@
 package i2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f1 {
     public final u2.a a;
-    public final z0 b;
+    public final a1 b;
     public final e1 c;
 
-    public f1(u2.a aVar, z0 z0Var, e1 e1Var) {
+    public f1(u2.a aVar, a1 a1Var, e1 e1Var) {
         this.a = aVar;
-        this.b = z0Var;
+        this.b = a1Var;
         this.c = e1Var;
     }
 }

@@ -1,8 +1,8 @@
 package gi;
 
-import ai.hc;
-import ai.ud;
-import ai.va;
+import ai.ic;
+import ai.vd;
+import ai.wa;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -38,7 +38,7 @@ import org.telegram.ui.a20;
 import org.telegram.ui.x10;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class l extends a20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -105,26 +105,26 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
         textView.setTextSize(1, 16.0f);
         int i12 = h6.G6;
         textView.setTextColor(h6.w0(i12, lVar.resourceProvider));
-        org.telegram.messenger.q.n(R.string.AffiliateProgramStopText, textView);
+        org.telegram.messenger.g0.n(R.string.AffiliateProgramStopText, textView);
         linearLayout.addView(textView, z5.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
-        ud udVar = new ud(lVar.getParentActivity(), 2);
-        udVar.setPadding(AndroidUtilities.dp(15.0f), 0, 0, 0);
-        udVar.setTextSize(1, 16.0f);
-        udVar.setTextColor(h6.w0(i12, lVar.resourceProvider));
-        udVar.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.AffiliateProgramStopText1)));
-        linearLayout.addView(udVar, z5.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
-        ud udVar2 = new ud(lVar.getParentActivity(), 2);
-        udVar2.setPadding(AndroidUtilities.dp(15.0f), 0, 0, 0);
-        udVar2.setTextSize(1, 16.0f);
-        udVar2.setTextColor(h6.w0(i12, lVar.resourceProvider));
-        udVar2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.AffiliateProgramStopText2)));
-        linearLayout.addView(udVar2, z5.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
-        ud udVar3 = new ud(lVar.getParentActivity(), 2);
-        udVar3.setPadding(AndroidUtilities.dp(15.0f), 0, 0, 0);
-        udVar3.setTextSize(1, 16.0f);
-        udVar3.setTextColor(h6.w0(i12, lVar.resourceProvider));
-        udVar3.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.AffiliateProgramStopText3)));
-        linearLayout.addView(udVar3, z5.k(0.0f, 0.0f, 0.0f, 10.0f, -1, -2));
+        vd vdVar = new vd(lVar.getParentActivity(), 2);
+        vdVar.setPadding(AndroidUtilities.dp(15.0f), 0, 0, 0);
+        vdVar.setTextSize(1, 16.0f);
+        vdVar.setTextColor(h6.w0(i12, lVar.resourceProvider));
+        vdVar.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.AffiliateProgramStopText1)));
+        linearLayout.addView(vdVar, z5.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
+        vd vdVar2 = new vd(lVar.getParentActivity(), 2);
+        vdVar2.setPadding(AndroidUtilities.dp(15.0f), 0, 0, 0);
+        vdVar2.setTextSize(1, 16.0f);
+        vdVar2.setTextColor(h6.w0(i12, lVar.resourceProvider));
+        vdVar2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.AffiliateProgramStopText2)));
+        linearLayout.addView(vdVar2, z5.k(0.0f, 0.0f, 0.0f, 17.0f, -1, -2));
+        vd vdVar3 = new vd(lVar.getParentActivity(), 2);
+        vdVar3.setPadding(AndroidUtilities.dp(15.0f), 0, 0, 0);
+        vdVar3.setTextSize(1, 16.0f);
+        vdVar3.setTextColor(h6.w0(i12, lVar.resourceProvider));
+        vdVar3.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.AffiliateProgramStopText3)));
+        linearLayout.addView(vdVar3, z5.k(0.0f, 0.0f, 0.0f, 10.0f, -1, -2));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lVar.getParentActivity(), 0, lVar.resourceProvider);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.AffiliateProgramAlert);
         alertDialog$Builder.n(linearLayout);
@@ -158,7 +158,7 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
             alertDialog$Builder.a.T = LocaleController.getString(lVar.W ? R.string.AffiliateProgramStartAlertText : R.string.AffiliateProgramUpdateAlertText);
             alertDialog$Builder.n(frameLayout);
             alertDialog$Builder.k(LocaleController.getString(lVar.W ? R.string.AffiliateProgramStartAlertButton : R.string.AffiliateProgramUpdateAlertButton), new e1.c(eVar, 10));
-            i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+            i2.d.r(R.string.Cancel, alertDialog$Builder, null);
         }
     }
 
@@ -250,8 +250,8 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
         f61Var2.B = -1L;
         f61Var2.B = this.X == null ? -1 : r3.commission_permille;
         arrayList.add(f61Var2);
-        i0.a.A(R.string.AffiliateProgramCommissionInfo, arrayList);
-        i0.a.p(R.string.AffiliateProgramDuration, arrayList);
+        i2.d.B(R.string.AffiliateProgramCommissionInfo, arrayList);
+        i2.d.p(R.string.AffiliateProgramDuration, arrayList);
         String[] strArr = this.Z;
         List list = this.a0;
         if (strArr == null) {
@@ -294,7 +294,7 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
             }
         }
         arrayList.add(f61Var3);
-        i0.a.A(R.string.AffiliateProgramDurationInfo, arrayList);
+        i2.d.B(R.string.AffiliateProgramDurationInfo, arrayList);
         arrayList.add(h.a(2, getThemedColor(h6.uj), R.drawable.filled_earn_stars, LocaleController.getString(R.string.AffiliateProgramExistingProgramsTitle), LocaleController.getString(R.string.AffiliateProgramExistingProgramsText)));
         arrayList.add(f61.A(3, null));
         if (!this.W && this.Y.end_date == 0) {
@@ -338,7 +338,7 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
     public final View createView(Context context) {
         this.G = false;
         this.E = AndroidUtilities.dp(238.0f);
-        new hc(this, context, 3).setBackgroundColor(h6.x0(null, h6.i5, false));
+        new ic(this, context, 3).setBackgroundColor(h6.x0(null, h6.i5, false));
         super.createView(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.Q = frameLayout;
@@ -376,7 +376,7 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
         I0(false);
         ((FrameLayout) this.fragmentView).addView(this.S, z5.e(-1, -2, 87));
         this.c.setPadding(0, 0, 0, AndroidUtilities.dp(84.0f));
-        this.c.setOnItemClickListener(new va(this, 12));
+        this.c.setOnItemClickListener(new wa(this, 12));
         s4.k kVar = new s4.k();
         kVar.m = false;
         kVar.C = false;

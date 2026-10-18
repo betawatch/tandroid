@@ -15,7 +15,7 @@ import android.view.View;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class w4 extends View implements org.telegram.ui.Components.fi0 {
     public final boolean[] E;
@@ -217,12 +217,12 @@ public abstract class w4 extends View implements org.telegram.ui.Components.fi0 
                 paint6.setAlpha((int) (this.G * 85.0f));
                 paint5.setAlpha((int) (this.G * 255.0f));
             }
-            int B = org.telegram.messenger.wh.B((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
+            int A = org.telegram.messenger.kk.A((realCount - 1) * 2, getMeasuredWidth() - AndroidUtilities.dp(10.0f), realCount);
             int dp = AndroidUtilities.dp(8.0f);
             int i15 = 0;
             z10 = false;
             while (i15 < realCount) {
-                int dp2 = (B * i15) + AndroidUtilities.dp((i15 * 2) + 5);
+                int dp2 = (A * i15) + AndroidUtilities.dp((i15 * 2) + 5);
                 int i16 = this.K;
                 float f17 = f7;
                 RectF rectF = this.e;
@@ -252,7 +252,7 @@ public abstract class w4 extends View implements org.telegram.ui.Components.fi0 
                                     this.O = i17 * (-1);
                                 }
                             }
-                            rectF.set(dp2, dp, dp2 + B, AndroidUtilities.dp(2.0f) + dp);
+                            rectF.set(dp2, dp, dp2 + A, AndroidUtilities.dp(2.0f) + dp);
                             paint6.setAlpha((int) (((this.N * 48.0f) + 85.0f) * this.G));
                             canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), paint6);
                             f13 = f14;
@@ -262,7 +262,7 @@ public abstract class w4 extends View implements org.telegram.ui.Components.fi0 
                     }
                     f13 = 1.0f;
                     float f21 = dp2;
-                    rectF.set(f21, dp, (B * f13) + f21, AndroidUtilities.dp(2.0f) + dp);
+                    rectF.set(f21, dp, (A * f13) + f21, AndroidUtilities.dp(2.0f) + dp);
                     if (i15 != this.M) {
                         this.H[i15] = 0.75f;
                     } else if (this.b == 3) {
@@ -283,9 +283,9 @@ public abstract class w4 extends View implements org.telegram.ui.Components.fi0 
                     fArr3 = fArr;
                     float f25 = dp;
                     paint3 = paint5;
-                    float f26 = dp2 + B;
+                    float f26 = dp2 + A;
                     paint2 = paint4;
-                    canvas.clipRect((B * f22) + f24, f25, f26, AndroidUtilities.dp(2.0f) + dp);
+                    canvas.clipRect((A * f22) + f24, f25, f26, AndroidUtilities.dp(2.0f) + dp);
                     rectF.set(f24, f25, f26, AndroidUtilities.dp(2.0f) + dp);
                     paint6.setAlpha((int) (this.G * 85.0f));
                     canvas.drawRoundRect(rectF, AndroidUtilities.dp(f23), AndroidUtilities.dp(f23), paint6);
@@ -295,7 +295,7 @@ public abstract class w4 extends View implements org.telegram.ui.Components.fi0 
                 i11 = 80;
                 z10 = true;
                 float f212 = dp2;
-                rectF.set(f212, dp, (B * f13) + f212, AndroidUtilities.dp(2.0f) + dp);
+                rectF.set(f212, dp, (A * f13) + f212, AndroidUtilities.dp(2.0f) + dp);
                 if (i15 != this.M) {
                 }
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), i15 != this.M ? paint3 : paint6);

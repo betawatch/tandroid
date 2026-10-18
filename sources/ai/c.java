@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class c extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -31,14 +31,14 @@ public final class c extends LinearLayout implements NotificationCenter.Notifica
     public final void a() {
         ag.c cVar = this.e;
         int i10 = this.a;
-        ag.a s10 = fa.x(i10, cVar).s();
+        ag.a s10 = ga.x(i10, cVar).s();
         ag.c cVar2 = this.e;
         ag.c cVar3 = ag.c.a;
         TextView textView = this.c;
         org.telegram.ui.ActionBar.d6 d6Var = this.b;
         x90 x90Var = this.d;
         if (cVar2 == cVar3) {
-            textView.setText(ld.Y0(false, LocaleController.formatString(R.string.Gift2MessageStarsInfo, LocaleController.formatNumber(s10.a(), ',')), 0.6f, null));
+            textView.setText(md.Y0(false, LocaleController.formatString(R.string.Gift2MessageStarsInfo, LocaleController.formatNumber(s10.a(), ',')), 0.6f, null));
             int i11 = org.telegram.ui.ActionBar.h6.Gi;
             x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
             x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
@@ -48,7 +48,7 @@ public final class c extends LinearLayout implements NotificationCenter.Notifica
         if (cVar2 == ag.c.b) {
             SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2MessageStarsInfoTON, s10.b()));
             yq[] yqVarArr = this.f;
-            textView.setText(ld.Y0(true, replaceTags, 0.6f, yqVarArr));
+            textView.setText(md.Y0(true, replaceTags, 0.6f, yqVarArr));
             yqVarArr[0].setColorKey(org.telegram.ui.ActionBar.h6.Gi);
             StringBuilder sb2 = new StringBuilder(10);
             sb2.append('~');
@@ -56,8 +56,8 @@ public final class c extends LinearLayout implements NotificationCenter.Notifica
             int i12 = org.telegram.ui.ActionBar.h6.Hi;
             int w02 = org.telegram.ui.ActionBar.h6.w0(i12, d6Var);
             int i13 = org.telegram.ui.ActionBar.h6.Fi;
-            x90Var.setTextColor(i0.b.f(0.33f, w02, org.telegram.ui.ActionBar.h6.w0(i13, d6Var)));
-            x90Var.setLinkTextColor(i0.b.f(0.33f, org.telegram.ui.ActionBar.h6.w0(i12, d6Var), org.telegram.ui.ActionBar.h6.w0(i13, d6Var)));
+            x90Var.setTextColor(i0.a.f(0.33f, w02, org.telegram.ui.ActionBar.h6.w0(i13, d6Var)));
+            x90Var.setLinkTextColor(i0.a.f(0.33f, org.telegram.ui.ActionBar.h6.w0(i12, d6Var), org.telegram.ui.ActionBar.h6.w0(i13, d6Var)));
             x90Var.setText(sb2);
         }
     }
@@ -103,7 +103,7 @@ public final class c extends LinearLayout implements NotificationCenter.Notifica
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 13.0f);
-        org.telegram.ui.Cells.t0.q(org.telegram.ui.ActionBar.h6.Hi, d6Var, textView, 17);
+        org.telegram.ui.Cells.c1.q(org.telegram.ui.ActionBar.h6.Hi, d6Var, textView, 17);
         addView(textView, w7.z5.p(-2, -2, 0.0f, 17, 0, 0, 0, 0));
         x90 x90Var = new x90(context, d6Var);
         this.d = x90Var;

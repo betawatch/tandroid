@@ -12,14 +12,14 @@ import org.telegram.ui.Components.c11;
 import org.telegram.ui.Components.ex;
 import org.telegram.ui.Components.s00;
 import org.telegram.ui.ek0;
-import org.telegram.ui.fo0;
+import org.telegram.ui.go0;
 import org.telegram.ui.jf0;
 import org.telegram.ui.tm0;
 import org.telegram.ui.ua;
 import org.telegram.ui.w61;
 import org.telegram.ui.xo;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e6 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -91,7 +91,7 @@ public final /* synthetic */ class e6 implements RequestDelegate {
                 int i15 = tm0.R;
                 break;
             case 20:
-                List list = fo0.g1;
+                List list = go0.g1;
                 break;
             default:
                 int i16 = w61.e;

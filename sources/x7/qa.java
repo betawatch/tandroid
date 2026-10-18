@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class qa extends e9.j2 {
     public final /* synthetic */ e9.e b;
@@ -102,7 +102,7 @@ public final class qa extends e9.j2 {
                 ceil = size < 1073741824 ? (int) Math.ceil(size / 0.75d) : ConnectionsManager.DEFAULT_DATACENTER_ID;
             } else {
                 if (size < 0) {
-                    throw new IllegalArgumentException(i0.a.j(size, "expectedSize cannot be negative but was: "));
+                    throw new IllegalArgumentException(i2.d.j(size, "expectedSize cannot be negative but was: "));
                 }
                 ceil = size + 1;
             }

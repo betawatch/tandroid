@@ -1,203 +1,187 @@
 package ai;
 
-import android.content.Context;
-import android.os.SystemClock;
+import android.text.TextUtils;
+import java.io.File;
 import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.Collections;
+import java.util.concurrent.ExecutorService;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.TelegramMediaSession;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.eh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class wb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
     public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ wb(Object obj, long j10, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = j10;
-        this.c = i10;
-        this.e = obj2;
+    public /* synthetic */ wb(int i10, ei.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, org.telegram.ui.ActionBar.f3[] f3VarArr) {
+        this.e = dVar;
+        this.f = f3VarArr;
+        this.d = i10;
+        this.b = z10;
+        this.h = starsSubscription;
+        this.c = z11;
+        this.n = tLObject;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00bc  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        int i10 = this.a;
-        long j10 = this.b;
-        int i11 = this.c;
-        Object obj = this.e;
-        Object obj2 = this.d;
-        switch (i10) {
+        boolean z10;
+        String formatString;
+        File file;
+        File file2;
+        switch (this.a) {
             case 0:
-                ((ei.d) obj2).setLoading(false);
-                org.telegram.ui.ActionBar.f3 f3Var = ((org.telegram.ui.ActionBar.f3[]) obj)[0];
+                ei.d dVar = (ei.d) this.e;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.f;
+                int i10 = this.d;
+                boolean z11 = this.b;
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
+                boolean z12 = this.c;
+                TLObject tLObject = (TLObject) this.n;
+                dVar.setLoading(false);
+                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
                 if (f3Var != null) {
                     f3Var.dismiss();
                 }
-                fa.y(i11, false).S();
+                ga.y(i10, false).S();
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
-                    U.presentFragment(sn.W9(j10));
-                    break;
+                    if (z11 && !TextUtils.isEmpty(starsSubscription.title)) {
+                        formatString = LocaleController.formatString(R.string.StarsSubscriptionCancelledBizToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title);
+                        z10 = false;
+                    } else if (!z12 || TextUtils.isEmpty(starsSubscription.title)) {
+                        z10 = false;
+                        formatString = LocaleController.formatString(R.string.StarsSubscriptionCancelledToastText, LocaleController.formatDateChat(starsSubscription.until_date));
+                    } else {
+                        z10 = false;
+                        formatString = LocaleController.formatString(R.string.StarsSubscriptionCancelledBotToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title);
+                    }
+                    org.telegram.ui.Components.xc.a0(U).V(Collections.singletonList(tLObject), LocaleController.getString(R.string.StarsSubscriptionCancelledToast), AndroidUtilities.replaceTags(formatString), null).k(z10);
+                    return;
                 }
-                break;
+                return;
             case 1:
-                ((MediaDataController) obj2).lambda$putMenuBotsToCache$6((TLRPC.TL_attachMenuBots) obj, j10, i11);
-                break;
-            case 2:
-                ((MediaDataController) obj2).lambda$processLoadedStickers$104((ArrayList) obj, j10, i11);
-                break;
-            case 3:
-                ((MessagesController) obj2).lambda$checkPromoInfoInternal$167(j10, (TLRPC.TL_help_promoData) obj, i11);
-                break;
-            case 4:
-                ((MessagesController) obj2).lambda$processUpdateArray$391(j10, i11, (TLRPC.TL_sendMessageTextDraftAction) obj);
-                break;
-            case 5:
-                ((MessagesController) obj2).lambda$processUpdateArray$392(j10, i11, (TLRPC.TL_sendMessageRichMessageDraftAction) obj);
-                break;
-            case 6:
-                ((MessagesStorage) obj2).lambda$updateTopicData$48(j10, (TLRPC.TL_forumTopic) obj, i11);
-                break;
-            case 7:
-                ((MessagesStorage) obj2).lambda$updateMessageVoiceTranscriptionOpen$107(i11, j10, (TLRPC.Message) obj);
-                break;
-            case 8:
-                ((MessagesStorage) obj2).lambda$updateMessageReactions$104(i11, j10, (TLRPC.TL_messageReactions) obj);
-                break;
-            case 9:
-                ((MessagesStorage) obj2).lambda$updateChatDefaultBannedRights$180(j10, i11, (TLRPC.TL_chatBannedRights) obj);
-                break;
-            case 10:
-                ((SendMessagesHelper) obj2).lambda$sendNotificationCallback$33(j10, i11, (byte[]) obj);
-                break;
-            case 11:
-                ((TelegramMediaSession) obj2).lambda$loadMusicForDialog$7((MessagesStorage) obj, j10, i11);
-                break;
-            case 12:
-                ((TranslateController) obj2).lambda$checkLanguage$14((MessageObject) obj, j10, i11);
-                break;
-            case 13:
-                org.telegram.ui.l4 l4Var = (org.telegram.ui.l4) obj2;
-                TLObject tLObject = (TLObject) obj;
-                if (l4Var.G0 != 0) {
-                    l4Var.G0 = 0;
-                    l4Var.b0(false);
-                    if (tLObject != null) {
-                        TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject;
-                        MessagesController.getInstance(i11).putUsers(tL_contacts_resolvedPeer.users, false);
-                        MessagesStorage.getInstance(i11).putUsersAndChats(tL_contacts_resolvedPeer.users, tL_contacts_resolvedPeer.chats, false, true);
-                        if (!tL_contacts_resolvedPeer.users.isEmpty()) {
-                            l4Var.P(j10, tL_contacts_resolvedPeer.users.get(0));
-                            break;
+                ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$98(this.b, (TLRPC.Message) this.f, (ArrayList) this.h, this.c, (ArrayList) this.n, this.d);
+                return;
+            default:
+                si.s0 s0Var = (si.s0) this.e;
+                si.x xVar = (si.x) this.f;
+                boolean z13 = this.b;
+                File file3 = (File) this.h;
+                boolean z14 = this.c;
+                int i11 = this.d;
+                si.o0 o0Var = (si.o0) this.n;
+                s0Var.getClass();
+                long nanoTime = System.nanoTime();
+                try {
+                    xVar.g();
+                    s0Var.m.b("preview output finalized: size=" + xVar.a.length() + ", replace=" + z13 + ", elapsedMs=" + si.s0.f(nanoTime));
+                    s0Var.g();
+                    if (z13) {
+                        s0Var.s(file3, s0Var.G, s0Var.H, z14, i11);
+                        file = file3;
+                    } else {
+                        file = file3;
+                        try {
+                            try {
+                                File file4 = xVar.a;
+                                long j10 = s0Var.K;
+                                if (j10 <= 0) {
+                                    j10 = s0Var.E;
+                                }
+                                ExecutorService executorService = s0Var.k;
+                                try {
+                                    si.g0 g0Var = new si.g0(s0Var, o0Var, file4, j10, true);
+                                    s0Var = s0Var;
+                                    executorService.execute(g0Var);
+                                } catch (Exception e) {
+                                    e = e;
+                                    s0Var = s0Var;
+                                    s0Var.i.post(new si.e0(s0Var, e, 0));
+                                    if (file != null) {
+                                        w7.p7.c(file);
+                                    }
+                                    if (z13) {
+                                        file2 = xVar.a;
+                                        w7.p7.c(file2);
+                                        return;
+                                    }
+                                    return;
+                                }
+                            } catch (Exception e7) {
+                                e = e7;
+                            }
+                        } catch (Throwable th2) {
+                            th = th2;
+                            if (file != null) {
+                                w7.p7.c(file);
+                            }
+                            if (z13) {
+                                w7.p7.c(xVar.a);
+                            }
+                            throw th;
                         }
                     }
-                }
-                break;
-            case 14:
-                ((org.telegram.ui.p6) obj2).run(Float.valueOf(((int[]) obj)[0] / i11), Boolean.valueOf(System.currentTimeMillis() - j10 > 250));
-                break;
-            case 15:
-                ((ProfileActivity) obj2).getMessagesController().getStoriesController().b(i11, j10, (ArrayList) obj);
-                break;
-            case 16:
-                tc.u uVar = (tc.u) obj;
-                org.telegram.ui.Wallet.a1 a1Var = ((org.telegram.ui.Wallet.z0) obj2).c;
-                if (!a1Var.c(uVar, i11)) {
-                    a1Var.d("closing stale connected websocket; attempt=" + i11);
-                    uVar.c();
-                    break;
-                } else {
-                    a1Var.d("websocket connected after " + (SystemClock.elapsedRealtime() - j10) + " ms");
-                    org.telegram.ui.Wallet.x0 x0Var = a1Var.o;
-                    try {
-                        JSONArray put = new JSONArray().put(a1Var.b);
-                        StringBuilder sb2 = new StringBuilder("wallet-");
-                        int i12 = a1Var.g + 1;
-                        a1Var.g = i12;
-                        sb2.append(i12);
-                        a1Var.f = sb2.toString();
-                        JSONObject put2 = new JSONObject().put("operation", "subscribe").put("id", a1Var.f).put("types", new JSONArray().put("transactions").put("account_state_change")).put("include_address_book", true).put("addresses", put).put("min_finality", "pending");
-                        AndroidUtilities.cancelRunOnUIThread(x0Var);
-                        AndroidUtilities.runOnUIThread(x0Var, 30000L);
-                        a1Var.g(put2.toString());
-                        break;
-                    } catch (JSONException unused) {
-                        a1Var.f("could not encode subscription");
-                        return;
+                    s0Var.R = null;
+                    if (file != null) {
+                        w7.p7.c(file);
                     }
+                } catch (Exception e10) {
+                    e = e10;
+                    file = file3;
+                } catch (Throwable th3) {
+                    th = th3;
+                    file = file3;
+                    if (file != null) {
+                    }
+                    if (z13) {
+                    }
+                    throw th;
                 }
-            case 17:
-                org.telegram.ui.Wallet.f2 f2Var = (org.telegram.ui.Wallet.f2) obj2;
-                eh ehVar = (eh) obj;
-                f2Var.getClass();
-                TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
-                long j11 = this.b;
-                tonconnectgetpending.session_id = Long.valueOf(j11);
-                f2Var.f.sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.ui.Wallet.t1(f2Var, ehVar, j11, this.c, 0));
-                break;
-            default:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Context) obj2, 0, (org.telegram.ui.ActionBar.d6) obj);
-                String string = LocaleController.getString(R.string.WalletNetworkFee);
-                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
-                b2Var.R = string;
-                b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatSpannable(R.string.WalletNetworkFeeInfo, org.telegram.ui.Wallet.m0.w(i11).l(j10, true)));
-                org.telegram.messenger.q.p(R.string.WalletOK, alertDialog$Builder, null);
-                break;
+                if (z13) {
+                    file2 = xVar.a;
+                    w7.p7.c(file2);
+                    return;
+                }
+                return;
         }
     }
 
-    public /* synthetic */ wb(Object obj, long j10, Object obj2, int i10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = j10;
-        this.e = obj2;
-        this.c = i10;
+    public /* synthetic */ wb(SendMessagesHelper sendMessagesHelper, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i10) {
+        this.e = sendMessagesHelper;
+        this.b = z10;
+        this.f = message;
+        this.h = arrayList;
+        this.c = z11;
+        this.n = arrayList2;
+        this.d = i10;
     }
 
-    public /* synthetic */ wb(Object obj, Object obj2, int i10, long j10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.e = obj2;
-        this.c = i10;
-        this.b = j10;
-    }
-
-    public /* synthetic */ wb(Object obj, Object obj2, long j10, int i10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.e = obj2;
-        this.b = j10;
-        this.c = i10;
-    }
-
-    public /* synthetic */ wb(MessagesStorage messagesStorage, int i10, long j10, TLObject tLObject, int i11) {
-        this.a = i11;
-        this.d = messagesStorage;
-        this.c = i10;
-        this.b = j10;
-        this.e = tLObject;
+    public /* synthetic */ wb(si.s0 s0Var, si.x xVar, boolean z10, File file, boolean z11, int i10, si.o0 o0Var) {
+        this.e = s0Var;
+        this.f = xVar;
+        this.b = z10;
+        this.h = file;
+        this.c = z11;
+        this.d = i10;
+        this.n = o0Var;
     }
 }

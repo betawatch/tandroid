@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class go0 implements Runnable {
     public final /* synthetic */ int a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class go0 implements Runnable {
                 ou0 ou0Var = (ou0) this.b;
                 String str = (String) this.c;
                 if (!ou0Var.v.t1[ou0Var.r].a.isEmpty() && ((i10 = ou0Var.r) == 1 || i10 == 4)) {
-                    MessageObject messageObject = (MessageObject) i0.a.h(1, ou0Var.v.t1[i10].a);
+                    MessageObject messageObject = (MessageObject) i2.d.h(1, ou0Var.v.t1[i10].a);
                     int id2 = messageObject.getId();
                     long dialogId = messageObject.getDialogId();
                     sv0 sv0Var2 = ou0Var.v;
@@ -217,7 +217,7 @@ public final /* synthetic */ class go0 implements Runnable {
                 UndoView undoView = (UndoView) this.b;
                 TLObject tLObject3 = (TLObject) this.c;
                 if (tLObject3 instanceof TLRPC.PaymentReceipt) {
-                    undoView.s.presentFragment(new org.telegram.ui.fo0((TLRPC.PaymentReceipt) tLObject3));
+                    undoView.s.presentFragment(new org.telegram.ui.go0((TLRPC.PaymentReceipt) tLObject3));
                     break;
                 } else {
                     int i18 = UndoView.e0;
@@ -250,14 +250,14 @@ public final /* synthetic */ class go0 implements Runnable {
                                 dispatchQueue.postRunnable(new s71(a81Var, 0));
                                 break;
                             } else {
-                                i2.g0 g0Var = a81Var.d;
+                                i2.h0 h0Var = a81Var.d;
                                 TextureView textureView2 = a81Var.n;
-                                g0Var.F1();
-                                if (textureView2 != null && textureView2 == g0Var.X) {
-                                    g0Var.F1();
-                                    g0Var.s1();
-                                    g0Var.x1(null);
-                                    g0Var.q1(0, 0);
+                                h0Var.F1();
+                                if (textureView2 != null && textureView2 == h0Var.X) {
+                                    h0Var.F1();
+                                    h0Var.s1();
+                                    h0Var.x1(null);
+                                    h0Var.q1(0, 0);
                                 }
                                 a81Var.d.z1(a81Var.n);
                                 ArrayList arrayList6 = a81Var.N;
@@ -430,7 +430,7 @@ public final /* synthetic */ class go0 implements Runnable {
                             arrayList = arrayList10;
                         } else {
                             arrayList = arrayList10;
-                            if (!lowerCase2.contains(" ".concat(lowerCase)) && !lowerCase3.startsWith(translitSafe) && !org.telegram.messenger.wh.w(" ", translitSafe, lowerCase3) && !lowerCase4.startsWith(lowerCase) && !lowerCase4.contains(" ".concat(lowerCase)) && !lowerCase5.startsWith(translitSafe) && !org.telegram.messenger.wh.w(" ", translitSafe, lowerCase5) && !str4.startsWith(lowerCase) && !concat.startsWith(lowerCase)) {
+                            if (!lowerCase2.contains(" ".concat(lowerCase)) && !lowerCase3.startsWith(translitSafe) && !org.telegram.messenger.g0.w(" ", translitSafe, lowerCase3) && !lowerCase4.startsWith(lowerCase) && !lowerCase4.contains(" ".concat(lowerCase)) && !lowerCase5.startsWith(translitSafe) && !org.telegram.messenger.g0.w(" ", translitSafe, lowerCase5) && !str4.startsWith(lowerCase) && !concat.startsWith(lowerCase)) {
                                 arrayList10 = arrayList;
                             }
                         }

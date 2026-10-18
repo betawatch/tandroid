@@ -1,46 +1,25 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MediaController;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class fq0 implements org.telegram.ui.Components.jm0 {
-    public final /* synthetic */ kq0 a;
+public final class fq0 extends g.o {
+    public final /* synthetic */ lq0 c;
 
-    public fq0(kq0 kq0Var) {
-        this.a = kq0Var;
+    public fq0(lq0 lq0Var) {
+        this.c = lq0Var;
     }
 
-    @Override // org.telegram.ui.Components.jm0
-    public final void a(boolean z10) {
-        org.telegram.ui.ActionBar.d5 d5Var;
-        kq0 kq0Var = this.a;
-        kq0Var.W = z10 ? 1 : 0;
-        if (z10) {
-            d5Var = ((org.telegram.ui.ActionBar.n2) kq0Var).parentLayout;
-            d5Var.getView().requestDisallowInterceptTouchEvent(true);
+    @Override // g.o
+    public final int i(int i10) {
+        lq0 lq0Var = this.c;
+        if (lq0Var.L.j(i10) == 1 || lq0Var.Y || (lq0Var.J == null && TextUtils.isEmpty(lq0Var.v))) {
+            return lq0Var.M.J;
         }
-        kq0Var.K.d1(true);
-    }
-
-    @Override // org.telegram.ui.Components.jm0
-    public final boolean b(int i10) {
-        return this.a.L.j(i10) == 0;
-    }
-
-    @Override // org.telegram.ui.Components.jm0
-    public final void c(View view, boolean z10) {
-        if (z10 == this.a.X && (view instanceof org.telegram.ui.Cells.s5)) {
-            org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-            s5Var.w.c(s5Var);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jm0
-    public final boolean d(int i10) {
-        kq0 kq0Var = this.a;
-        MediaController.AlbumEntry albumEntry = kq0Var.J;
-        return kq0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i10).imageId) : ((MediaController.SearchImage) kq0Var.f.get(i10)).id);
+        int i11 = lq0Var.R;
+        int i12 = lq0Var.g0;
+        return i11 + (i10 % i12 != i12 - 1 ? AndroidUtilities.dp(2.0f) : 0);
     }
 }

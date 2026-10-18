@@ -45,7 +45,7 @@ import org.webrtc.EglRenderer;
 import org.webrtc.VideoFileRenderer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ay0 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,12 +61,12 @@ public final /* synthetic */ class ay0 implements Runnable {
     }
 
     private final void a() {
-        si.t0 t0Var = (si.t0) this.b;
-        si.p0 p0Var = (si.p0) this.c;
+        si.s0 s0Var = (si.s0) this.b;
+        si.o0 o0Var = (si.o0) this.c;
         File file = (File) this.d;
-        si.q0 q0Var = t0Var.e;
-        long j10 = p0Var.a;
-        y01 y01Var = (y01) q0Var;
+        si.p0 p0Var = s0Var.e;
+        long j10 = o0Var.a;
+        y01 y01Var = (y01) p0Var;
         synchronized (y01Var) {
             if (y01Var.d) {
                 return;
@@ -404,7 +404,7 @@ public final /* synthetic */ class ay0 implements Runnable {
                             int i28 = tL_messages_requestUrlAuth.flags;
                             tL_messages_requestUrlAuth.in_app_origin = originHost;
                             tL_messages_requestUrlAuth.flags = i28 | 12;
-                            ConnectionsManager.getInstance(a1Var3.M).sendRequest(tL_messages_requestUrlAuth, new ai.x2(a1Var3, tL_messages_requestUrlAuth, optString, originHost, 19), 2);
+                            ConnectionsManager.getInstance(a1Var3.M).sendRequest(tL_messages_requestUrlAuth, new ai.y2(a1Var3, tL_messages_requestUrlAuth, optString, originHost, 19), 2);
                             return;
                         } catch (Exception e11) {
                             FileLog.e(e11);
@@ -451,7 +451,7 @@ public final /* synthetic */ class ay0 implements Runnable {
                         arrayList8.add(b1Var);
                     }
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.t3(24, e1Var, arrayList8));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.u3(24, e1Var, arrayList8));
                 return;
             case 11:
                 org.telegram.ui.web.h2 h2Var = (org.telegram.ui.web.h2) this.b;
@@ -530,7 +530,7 @@ public final /* synthetic */ class ay0 implements Runnable {
                 pVar.B = bArr;
                 try {
                     pVar.o();
-                    i2.g0 a2 = new i2.n(pVar.a).a();
+                    i2.h0 a2 = new i2.o(pVar.a).a();
                     pVar.A = a2;
                     a2.p0(pVar.F);
                     pVar.A.r0(b2.o0.b(Uri.fromFile(file2)));
@@ -569,31 +569,31 @@ public final /* synthetic */ class ay0 implements Runnable {
                     countDownLatch.countDown();
                 }
             case 21:
-                si.t0 t0Var = (si.t0) this.b;
+                si.s0 s0Var = (si.s0) this.b;
                 si.x xVar = (si.x) this.c;
                 File file3 = (File) this.d;
-                Handler handler = t0Var.i;
+                Handler handler = s0Var.i;
                 try {
                     xVar.c(file3);
-                    t0Var.g();
+                    s0Var.g();
                     long e12 = w7.p7.e(file3) / 1000;
-                    t0Var.m.b("preview snapshot completed: durationMs=" + e12 + ", size=" + file3.length() + ", elapsedMs=" + si.t0.f(t0Var.J));
-                    handler.post(new si.f0(t0Var, e12, true ? 1 : 0));
+                    s0Var.m.b("preview snapshot completed: durationMs=" + e12 + ", size=" + file3.length() + ", elapsedMs=" + si.s0.f(s0Var.J));
+                    handler.post(new si.f0(s0Var, e12, true ? 1 : 0));
                     return;
                 } catch (Exception e13) {
-                    handler.post(new si.e0(t0Var, e13, i13));
+                    handler.post(new si.e0(s0Var, e13, i13));
                     return;
                 }
             case 22:
                 a();
                 return;
             case 23:
-                ((ug.v0) this.b).run(new Pair((HashMap) this.c, (ArrayList) this.d));
+                ((ug.w0) this.b).run(new Pair((HashMap) this.c, (ArrayList) this.d));
                 return;
             case 24:
                 TLObject tLObject2 = (TLObject) this.b;
                 MessagesController messagesController = (MessagesController) this.c;
-                ug.v0 v0Var = (ug.v0) this.d;
+                ug.w0 w0Var = (ug.w0) this.d;
                 if (tLObject2 instanceof TLRPC.TL_channels_channelParticipants) {
                     TLRPC.TL_channels_channelParticipants tL_channels_channelParticipants = (TLRPC.TL_channels_channelParticipants) tLObject2;
                     messagesController.putUsers(tL_channels_channelParticipants.users, false);
@@ -606,7 +606,7 @@ public final /* synthetic */ class ay0 implements Runnable {
                             arrayList10.add(messagesController.getInputPeer(peer));
                         }
                     }
-                    v0Var.run(arrayList10);
+                    w0Var.run(arrayList10);
                     return;
                 }
                 return;

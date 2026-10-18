@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lr implements Runnable {
     public final /* synthetic */ Utilities.Callback E;
@@ -34,14 +34,14 @@ public final /* synthetic */ class lr implements Runnable {
     public final /* synthetic */ kr f;
     public final /* synthetic */ org.telegram.ui.Cells.i3 h;
     public final /* synthetic */ int[] n;
-    public final /* synthetic */ ai.bb r;
+    public final /* synthetic */ ai.cb r;
     public final /* synthetic */ ei.d s;
     public final /* synthetic */ boolean v;
     public final /* synthetic */ int w;
     public final /* synthetic */ TLRPC.User x;
     public final /* synthetic */ boolean[] y;
 
-    public /* synthetic */ lr(boolean[] zArr, int[] iArr, org.telegram.ui.Cells.i3 i3Var, TreeSet treeSet, String[] strArr, kr krVar, org.telegram.ui.Cells.i3 i3Var2, int[] iArr2, ai.bb bbVar, ei.d dVar, boolean z10, int i10, TLRPC.User user, boolean[] zArr2, Utilities.Callback callback, org.telegram.ui.ActionBar.f3 f3Var, e2 e2Var, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Cells.d9 d9Var, Context context) {
+    public /* synthetic */ lr(boolean[] zArr, int[] iArr, org.telegram.ui.Cells.i3 i3Var, TreeSet treeSet, String[] strArr, kr krVar, org.telegram.ui.Cells.i3 i3Var2, int[] iArr2, ai.cb cbVar, ei.d dVar, boolean z10, int i10, TLRPC.User user, boolean[] zArr2, Utilities.Callback callback, org.telegram.ui.ActionBar.f3 f3Var, e2 e2Var, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Cells.d9 d9Var, Context context) {
         this.a = zArr;
         this.b = iArr;
         this.c = i3Var;
@@ -50,7 +50,7 @@ public final /* synthetic */ class lr implements Runnable {
         this.f = krVar;
         this.h = i3Var2;
         this.n = iArr2;
-        this.r = bbVar;
+        this.r = cbVar;
         this.s = dVar;
         this.v = z10;
         this.w = i10;
@@ -195,7 +195,7 @@ public final /* synthetic */ class lr implements Runnable {
                             }
                             new xc(f3Var2.topBulletinContainer, d6Var2).Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Gi, d6Var2))).j();
                         } else {
-                            org.telegram.ui.Cells.t0.t(f3Var2.topBulletinContainer, d6Var2, tL_error, false);
+                            org.telegram.ui.Cells.c1.t(f3Var2.topBulletinContainer, d6Var2, tL_error, false);
                         }
                     }
                     AndroidUtilities.hideKeyboard(f3Var2.getCurrentFocus());

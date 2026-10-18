@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.b6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class r0 implements DialogInterface.OnDismissListen
             case 0:
                 u0 u0Var = (u0) this.c;
                 boolean[] zArr = (boolean[]) this.b;
-                org.telegram.ui.web.q qVar = (org.telegram.ui.web.q) this.d;
+                org.telegram.ui.web.r rVar = (org.telegram.ui.web.r) this.d;
                 u0Var.getClass();
                 if (!zArr[0]) {
                     u0Var.d = true;
@@ -43,7 +43,7 @@ public final /* synthetic */ class r0 implements DialogInterface.OnDismissListen
                         ((Runnable) it.next()).run();
                     }
                     zArr[0] = true;
-                    qVar.run(Boolean.TRUE, Boolean.FALSE);
+                    rVar.run(Boolean.TRUE, Boolean.FALSE);
                     break;
                 }
                 break;

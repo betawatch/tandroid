@@ -1,6 +1,6 @@
 package yh;
 
-import ai.fa;
+import ai.ga;
 import ai.k7;
 import android.text.TextUtils;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.is0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t1 implements Runnable {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final /* synthetic */ class t1 implements Runnable {
         this.d = obj3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x00a4  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0046  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0056  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00a5  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -44,11 +44,11 @@ public final /* synthetic */ class t1 implements Runnable {
     public final void run() {
         boolean z10;
         boolean z11;
-        zh.b1 b1Var;
+        zh.t0 t0Var;
         String str;
         int i10;
         String str2;
-        zh.p0 p0Var;
+        zh.i0 i0Var;
         int i11;
         int i12;
         int i13 = this.a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class t1 implements Runnable {
                 is0Var.n();
                 TL_stars.TL_starGiftCollection c10 = is0Var.e.c(m2Var.e.d);
                 if (c10 != null) {
-                    xc.a0(is0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, k7.Q1(savedStarGift.gift), c10.title))).j();
+                    xc.a0(is0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, k7.R1(savedStarGift.gift), c10.title))).j();
                     break;
                 }
                 break;
@@ -141,9 +141,9 @@ public final /* synthetic */ class t1 implements Runnable {
                         arrayList3.clear();
                         arrayList2.clear();
                         arrayList.clear();
-                        arrayList3.addAll(fa.m(resalestargifts.attributes, TL_stars.starGiftAttributeModel.class));
-                        arrayList2.addAll(fa.m(resalestargifts.attributes, TL_stars.starGiftAttributeBackdrop.class));
-                        arrayList.addAll(fa.m(resalestargifts.attributes, TL_stars.starGiftAttributePattern.class));
+                        arrayList3.addAll(ga.m(resalestargifts.attributes, TL_stars.starGiftAttributeModel.class));
+                        arrayList2.addAll(ga.m(resalestargifts.attributes, TL_stars.starGiftAttributeBackdrop.class));
+                        arrayList.addAll(ga.m(resalestargifts.attributes, TL_stars.starGiftAttributePattern.class));
                         t3Var.i = resalestargifts.attributes_hash;
                     }
                     if (!resalestargifts.counters.isEmpty()) {
@@ -175,17 +175,17 @@ public final /* synthetic */ class t1 implements Runnable {
                 }
                 break;
             default:
-                zh.m0 m0Var = (zh.m0) obj3;
+                zh.f0 f0Var = (zh.f0) obj3;
                 List list = (List) obj;
-                TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops = ((zh.f) obj2).b;
+                TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops = ((zh.d) obj2).b;
                 ArrayList<TLRPC.TL_shareThemeBackdropOption> arrayList8 = tL_shareThemeBackdrops != null ? tL_shareThemeBackdrops.backdrops : null;
-                if (arrayList8 != null && arrayList8 != list && (b1Var = m0Var.d) != null && !m0Var.isFinished) {
-                    zh.z0 z0Var = b1Var.n;
-                    if (z0Var != null && z0Var.a == 0 && (i12 = z0Var.f) >= 0) {
+                if (arrayList8 != null && arrayList8 != list && (t0Var = f0Var.d) != null && !f0Var.isFinished) {
+                    zh.r0 r0Var = t0Var.n;
+                    if (r0Var != null && r0Var.a == 0 && (i12 = r0Var.f) >= 0) {
                         String[] strArr = zh.a.a;
                         if (i12 < strArr.length) {
                             str = strArr[i12];
-                            i10 = b1Var.w7;
+                            i10 = t0Var.N7;
                             if (i10 >= 0) {
                                 String[] strArr2 = zh.a.a;
                                 if (i10 < strArr2.length) {
@@ -202,41 +202,41 @@ public final /* synthetic */ class t1 implements Runnable {
                                                 }
                                             }
                                         }
-                                        i11 = zh.b1.q9;
-                                        b1Var.w7 = i11;
+                                        i11 = zh.t0.H9;
+                                        t0Var.N7 = i11;
                                         if (str != null) {
-                                            if (b1Var.r != null) {
-                                                b1Var.r = null;
-                                                b1Var.s = 1.0f;
+                                            if (t0Var.r != null) {
+                                                t0Var.r = null;
+                                                t0Var.s = 1.0f;
                                             }
                                             while (true) {
                                                 String[] strArr4 = zh.a.a;
                                                 if (i14 >= strArr4.length) {
-                                                    i14 = zh.b1.q9;
+                                                    i14 = zh.t0.H9;
                                                 } else if (!str.equals(strArr4[i14])) {
                                                     i14++;
                                                 }
                                             }
-                                            b1Var.n = zh.b1.s(i14);
-                                            u3.c cVar = b1Var.c;
+                                            t0Var.n = zh.t0.t(i14);
+                                            u3.c cVar = t0Var.c;
                                             if (cVar != null) {
-                                                ((zh.m0) cVar.a).V();
+                                                ((zh.f0) cVar.a).W();
                                             }
                                         }
-                                        b1Var.invalidate();
+                                        t0Var.invalidate();
                                     }
-                                    p0Var = m0Var.e;
-                                    if (p0Var != null && !p0Var.E) {
-                                        if (!p0Var.y) {
-                                            if (!p0Var.x) {
-                                                TLRPC.ShareTheme shareTheme = p0Var.H;
-                                                if (shareTheme instanceof TLRPC.TL_shareThemeBackdrop) {
-                                                    p0Var.a(shareTheme);
+                                    i0Var = f0Var.e;
+                                    if (i0Var != null && !i0Var.E) {
+                                        if (!i0Var.y) {
+                                            if (!i0Var.x) {
+                                                TLRPC.ShareTheme shareTheme = i0Var.H;
+                                                if ((shareTheme instanceof TLRPC.TL_shareThemeEmojiBackdrop) && (((TLRPC.TL_shareThemeEmojiBackdrop) shareTheme).flags & 1) != 0) {
+                                                    i0Var.a(shareTheme);
                                                     break;
                                                 }
                                             }
                                         } else {
-                                            p0Var.f();
+                                            i0Var.f();
                                             break;
                                         }
                                     }
@@ -245,20 +245,20 @@ public final /* synthetic */ class t1 implements Runnable {
                             str2 = null;
                             if (zh.a.a(arrayList8)) {
                             }
-                            p0Var = m0Var.e;
-                            if (p0Var != null) {
+                            i0Var = f0Var.e;
+                            if (i0Var != null) {
                             }
                         }
                     }
                     str = null;
-                    i10 = b1Var.w7;
+                    i10 = t0Var.N7;
                     if (i10 >= 0) {
                     }
                     str2 = null;
                     if (zh.a.a(arrayList8)) {
                     }
-                    p0Var = m0Var.e;
-                    if (p0Var != null) {
+                    i0Var = f0Var.e;
+                    if (i0Var != null) {
                     }
                 }
                 break;

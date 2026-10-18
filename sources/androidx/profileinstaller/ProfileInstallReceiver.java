@@ -11,9 +11,9 @@ import android.os.Process;
 import android.util.Log;
 import java.io.File;
 import r4.a;
-import r4.d;
+import r4.e;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class ProfileInstallReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -24,7 +24,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
         }
         String action = intent.getAction();
         if ("androidx.profileinstaller.action.INSTALL_PROFILE".equals(action)) {
-            d.s(context, new b(2), new k0.b(this, 22), true);
+            e.s(context, new b(2), new k0.b(this, 22), true);
             return;
         }
         if ("androidx.profileinstaller.action.SKIP_FILE".equals(action)) {
@@ -42,7 +42,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
                 }
                 k0.b bVar = new k0.b(this, 22);
                 try {
-                    d.e(context.getPackageManager().getPackageInfo(context.getApplicationContext().getPackageName(), 0), context.getFilesDir());
+                    e.e(context.getPackageManager().getPackageInfo(context.getApplicationContext().getPackageName(), 0), context.getFilesDir());
                     bVar.z(10, null);
                     return;
                 } catch (PackageManager.NameNotFoundException e) {
@@ -72,7 +72,7 @@ public class ProfileInstallReceiver extends BroadcastReceiver {
             bVar3.z(16, null);
             return;
         }
-        if (d.c(Build.VERSION.SDK_INT >= 24 ? a.a(context) : context.getCodeCacheDir())) {
+        if (e.c(Build.VERSION.SDK_INT >= 24 ? a.a(context) : context.getCodeCacheDir())) {
             bVar3.z(14, null);
         } else {
             bVar3.z(15, null);

@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -42,7 +42,7 @@ public class VideoFramesRewinder {
     private float lastSpeed = 1.0f;
     private Runnable prepareRunnable = new a(this, 2);
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class Frame {
         Bitmap bitmap;
         long position;
@@ -97,7 +97,7 @@ public class VideoFramesRewinder {
             }
         }
         while (!arrayList.isEmpty() && this.frames.size() < this.maxFramesCount) {
-            this.frames.add((Frame) i0.a.z(1, arrayList));
+            this.frames.add((Frame) i2.d.A(1, arrayList));
         }
         if (arrayList.size() > 0) {
             FileLog.d("[VideoFramesRewinder] prepared " + arrayList.size() + " more frames than I could fit :(");

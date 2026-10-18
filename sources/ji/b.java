@@ -1,7 +1,7 @@
 package ji;
 
 import ai.p;
-import ai.tc;
+import ai.uc;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.widget.TextView;
@@ -25,10 +25,10 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class b extends bb {
-    public final tc X;
+    public final uc X;
     public s61 Y;
 
     public b(Context context, TLRPC.Chat chat, Runnable runnable) {
@@ -48,12 +48,12 @@ public final class b extends bb {
         dVar2.setText(LocaleController.getString(isChannelAndNotMegaGroup ? R.string.CommunityInviteOnlyChannelMessageOwner : R.string.CommunityInviteOnlyGroupMessageOwner));
         dVar2.e();
         dVar2.setOnClickListener(new p(22, this, runnable));
-        tc tcVar = new tc(context, 3);
-        TextView textView = (TextView) tcVar.d;
-        TextView textView2 = (TextView) tcVar.c;
-        this.X = tcVar;
-        tcVar.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(17.0f));
-        ((w9) tcVar.b).e(chat, new h9(chat));
+        uc ucVar = new uc(context, 3);
+        TextView textView = (TextView) ucVar.d;
+        TextView textView2 = (TextView) ucVar.c;
+        this.X = ucVar;
+        ucVar.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(17.0f));
+        ((w9) ucVar.b).e(chat, new h9(chat));
         textView2.setText(DialogObject.getName(chat));
         int i11 = h6.G6;
         textView2.setTextColor(getThemedColor(i11));

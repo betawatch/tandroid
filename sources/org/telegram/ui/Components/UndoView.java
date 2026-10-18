@@ -47,7 +47,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.mc1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 @Deprecated
 /* loaded from: classes3.dex */
 public class UndoView extends FrameLayout {
@@ -534,7 +534,7 @@ public class UndoView extends FrameLayout {
                                                 Spannable replaceAnimatedEmoji = MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(dialogFilter.name, y1Var.getPaint().getFontMetricsInt(), false), dialogFilter.entities, y1Var.getPaint().getFontMetricsInt());
                                                 this.a = dialogFilter.title_noanimate ? 26 : 0;
                                                 if (longValue != 0) {
-                                                    long j11 = DialogObject.isEncryptedDialog(longValue) ? org.telegram.messenger.q.l(MessagesController.getInstance(i21), longValue).user_id : longValue;
+                                                    long j11 = DialogObject.isEncryptedDialog(longValue) ? org.telegram.messenger.g0.l(MessagesController.getInstance(i21), longValue).user_id : longValue;
                                                     if (DialogObject.isUserDialog(j11)) {
                                                         TLRPC.User user5 = MessagesController.getInstance(i21).getUser(Long.valueOf(j11));
                                                         String firstName2 = UserObject.getFirstName(user5);
@@ -847,7 +847,7 @@ public class UndoView extends FrameLayout {
                                         if (measuredWidth == 0) {
                                             measuredWidth = AndroidUtilities.displaySize.x;
                                         }
-                                        measureChildWithMargins(textView2, org.telegram.messenger.wh.c(16.0f, measuredWidth, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                                        measureChildWithMargins(textView2, org.telegram.messenger.kk.c(16.0f, measuredWidth, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                                         this.r = AndroidUtilities.dp(37.0f) + textView2.getMeasuredHeight();
                                     } else if (d()) {
                                         this.r = AndroidUtilities.dp(52.0f);
@@ -858,7 +858,7 @@ public class UndoView extends FrameLayout {
                                             measuredWidth2 = AndroidUtilities.displaySize.x;
                                         }
                                         View view = y1Var;
-                                        measureChildWithMargins(view, org.telegram.messenger.wh.c(16.0f, measuredWidth2, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                                        measureChildWithMargins(view, org.telegram.messenger.kk.c(16.0f, measuredWidth2, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                                         int measuredHeight = view.getMeasuredHeight();
                                         int i32 = this.K;
                                         int dp2 = AndroidUtilities.dp((i32 == 16 || i32 == 17 || i32 == 18 || i32 == 84 || i32 == 86) ? 14.0f : 28.0f) + measuredHeight;
@@ -1156,7 +1156,7 @@ public class UndoView extends FrameLayout {
                         xj0Var2.e(R.raw.voice_to_text, 36, 36);
                         xj0Var2.setProgress(0.0f);
                         xj0Var2.d();
-                        layoutParams.leftMargin = org.telegram.ui.Cells.t0.f(58.0f, R.string.PremiumMore, textView);
+                        layoutParams.leftMargin = org.telegram.ui.Cells.c1.e(58.0f, R.string.PremiumMore, textView);
                         layoutParams.rightMargin = AndroidUtilities.dp(26.0f) + ((int) Math.ceil(textView.getPaint().measureText(textView.getText().toString())));
                         int dp5 = AndroidUtilities.dp(6.0f);
                         layoutParams.bottomMargin = dp5;
@@ -1177,7 +1177,7 @@ public class UndoView extends FrameLayout {
                         xj0Var2.setProgress(0.0f);
                         xj0Var2.d();
                         textView2.setVisibility(0);
-                        layoutParams.leftMargin = org.telegram.ui.Cells.t0.f(58.0f, R.string.SwipeToReplyHintMessage, textView2);
+                        layoutParams.leftMargin = org.telegram.ui.Cells.c1.e(58.0f, R.string.SwipeToReplyHintMessage, textView2);
                         layoutParams.rightMargin = AndroidUtilities.dp(26.0f) + ((int) Math.ceil(textView.getPaint().measureText(textView.getText().toString())));
                         layoutParams.topMargin = AndroidUtilities.dp(6.0f);
                         layoutParams.height = -2;
@@ -1186,7 +1186,7 @@ public class UndoView extends FrameLayout {
                     } else if (i25 == 90 || i25 == 91 || i25 == 92 || i25 == 93 || i25 == 94) {
                         switch (i25) {
                             case 90:
-                                y1Var.setText(LocaleController.formatPluralString("BoostingSelectUpToWarningChannelsGroupsPlural", (int) ug.q.f(), new Object[0]));
+                                y1Var.setText(LocaleController.formatPluralString("BoostingSelectUpToWarningChannelsGroupsPlural", (int) ug.r.f(), new Object[0]));
                                 break;
                             case 91:
                                 y1Var.setText(LocaleController.getString(R.string.BoostingSelectUpToWarningUsers));
@@ -1418,7 +1418,7 @@ public class UndoView extends FrameLayout {
                     textPaint.setAlpha((int) (alpha * f13));
                 }
                 canvas.save();
-                canvas.translate(rectF.centerX() - (this.J / 2), com.google.android.gms.internal.cast.a6.D(1.0f, this.c0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(17.2f)));
+                canvas.translate(rectF.centerX() - (this.J / 2), com.google.android.gms.internal.play_billing.k3.D(1.0f, this.c0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(17.2f)));
                 this.a0.draw(canvas);
                 if (this.c0 != 1.0f) {
                     textPaint.setAlpha(alpha);

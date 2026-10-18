@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import v7.p8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class o extends k9.a implements y {
     public static final boolean d;
@@ -406,7 +406,7 @@ public abstract class o extends k9.a implements y {
                     t10.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = t10.toString();
                     if (nanos + 1000 < j11) {
-                        String u10 = r.c.u(sb2, " (plus ");
+                        String u10 = r4.c.u(sb2, " (plus ");
                         long j14 = -nanos;
                         long convert = timeUnit.convert(j14, TimeUnit.NANOSECONDS);
                         long nanos2 = j14 - timeUnit.toNanos(convert);
@@ -414,19 +414,19 @@ public abstract class o extends k9.a implements y {
                         if (convert > j11) {
                             String str = u10 + convert + " " + lowerCase;
                             if (z11) {
-                                str = r.c.u(str, ",");
+                                str = r4.c.u(str, ",");
                             }
-                            u10 = r.c.u(str, " ");
+                            u10 = r4.c.u(str, " ");
                         }
                         if (z11) {
                             u10 = u10 + nanos2 + " nanoseconds ";
                         }
-                        sb2 = r.c.u(u10, "delay)");
+                        sb2 = r4.c.u(u10, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(r.c.u(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(r4.c.u(sb2, " but future completed as timeout expired"));
                     }
-                    throw new TimeoutException(a1.g.D(sb2, " for ", oVar));
+                    throw new TimeoutException(a1.g.C(sb2, " for ", oVar));
                 }
                 Object obj4 = this.a;
                 if ((obj4 != null ? z10 : false) && (!(obj4 instanceof e))) {

@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.n9;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class k0 {
     public final h1 a;
@@ -34,7 +34,7 @@ public final class k0 {
         h1Var.setTextSize(1, Math.max(8, SharedConfig.fontSize - 2));
         h1Var.setHint(LocaleController.getString(R.string.AddCaption));
         h1Var.setListener(new qf.b(this, j0Var, false, 27));
-        h1Var.setDelegate(new ah.h0(22, this, j0Var));
+        h1Var.setDelegate(new ah.h0(23, this, j0Var));
         a();
     }
 

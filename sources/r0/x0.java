@@ -2,7 +2,7 @@ package r0;
 
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class x0 extends a1 {
     public final WindowInsets.Builder c;
@@ -20,28 +20,28 @@ public class x0 extends a1 {
     }
 
     @Override // r0.a1
-    public void d(i0.c cVar) {
-        this.c.setMandatorySystemGestureInsets(cVar.d());
+    public void d(i0.b bVar) {
+        this.c.setMandatorySystemGestureInsets(bVar.d());
     }
 
     @Override // r0.a1
-    public void e(i0.c cVar) {
-        this.c.setStableInsets(cVar.d());
+    public void e(i0.b bVar) {
+        this.c.setStableInsets(bVar.d());
     }
 
     @Override // r0.a1
-    public void f(i0.c cVar) {
-        this.c.setSystemGestureInsets(cVar.d());
+    public void f(i0.b bVar) {
+        this.c.setSystemGestureInsets(bVar.d());
     }
 
     @Override // r0.a1
-    public void g(i0.c cVar) {
-        this.c.setSystemWindowInsets(cVar.d());
+    public void g(i0.b bVar) {
+        this.c.setSystemWindowInsets(bVar.d());
     }
 
     @Override // r0.a1
-    public void h(i0.c cVar) {
-        this.c.setTappableElementInsets(cVar.d());
+    public void h(i0.b bVar) {
+        this.c.setTappableElementInsets(bVar.d());
     }
 
     public x0(k1 k1Var) {

@@ -1,7 +1,7 @@
 package ig;
 
-import ai.p2;
-import ai.va;
+import ai.q2;
+import ai.wa;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
@@ -25,7 +25,6 @@ import org.telegram.ui.ActionBar.j5;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.e2;
 import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
@@ -35,7 +34,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class k0 extends bb {
     public static final int g0 = -1;
@@ -50,7 +49,7 @@ public final class k0 extends bb {
     public boolean e0;
     public Boolean f0;
 
-    public k0(Activity activity, TL_account.TL_connectedBot tL_connectedBot, e2 e2Var, d6 d6Var) {
+    public k0(Activity activity, TL_account.TL_connectedBot tL_connectedBot, org.telegram.ui.Components.e2 e2Var, d6 d6Var) {
         super(2, (Context) activity, d6Var, false);
         this.X = tL_connectedBot;
         TLRPC.User user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(tL_connectedBot.bot_id));
@@ -101,7 +100,7 @@ public final class k0 extends bb {
         int i11 = this.backgroundPaddingLeft;
         im0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(72.0f));
         this.d.p1();
-        this.d.setOnItemClickListener(new va(this, 15));
+        this.d.setOnItemClickListener(new wa(this, 15));
         FrameLayout frameLayout = new FrameLayout(activity);
         frameLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
         frameLayout.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{h6.m1(0.0f, getThemedColor(i10)), getThemedColor(i10), getThemedColor(i10)}));
@@ -143,7 +142,7 @@ public final class k0 extends bb {
         tL_connectedBot.recipients = tL_businessBotRecipients;
         n2 U = LaunchActivity.U();
         if (U != null) {
-            i0.a.s(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(k0Var.Y)}, xc.a0(U), R.raw.contact_check, 36);
+            i2.d.s(R.string.BusinessBotUpdated, new Object[]{UserObject.getUserName(k0Var.Y)}, xc.a0(U), R.raw.contact_check, 36);
         }
     }
 
@@ -157,16 +156,16 @@ public final class k0 extends bb {
         TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
         updateconnectedbot.bot = MessagesController.getInstance(k0Var.currentAccount).getInputUser(tL_connectedBot.bot_id);
         updateconnectedbot.recipients = a0Var.b();
-        ConnectionsManager.getInstance(k0Var.currentAccount).sendRequest(updateconnectedbot, new p2(k0Var, tL_connectedBot, a0Var.c(), 10));
+        ConnectionsManager.getInstance(k0Var.currentAccount).sendRequest(updateconnectedbot, new q2(k0Var, tL_connectedBot, a0Var.c(), 10));
     }
 
-    public static /* synthetic */ void S(k0 k0Var, e2 e2Var) {
+    public static /* synthetic */ void S(k0 k0Var, org.telegram.ui.Components.e2 e2Var) {
         f.a(k0Var.currentAccount).b();
         e2Var.run();
         k0Var.dismiss();
     }
 
-    public static void T(k0 k0Var, TL_account.TL_connectedBot tL_connectedBot, e2 e2Var) {
+    public static void T(k0 k0Var, TL_account.TL_connectedBot tL_connectedBot, org.telegram.ui.Components.e2 e2Var) {
         ei.d dVar = k0Var.b0;
         if (dVar.N) {
             return;

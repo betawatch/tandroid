@@ -14,7 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.b0;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.r;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.IOException;
 import java.util.Collection;
@@ -45,7 +45,7 @@ import p4.v;
 import r7.z;
 import v7.i8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f implements l.i, i, bp0, ne.f, bh.h, a91, r, n5.b, v0.i, y2.g {
     public final /* synthetic */ int a;
@@ -97,12 +97,12 @@ public final class f implements l.i, i, bp0, ne.f, bh.h, a91, r, n5.b, v0.i, y2.
             case 4:
                 ng.h hVar = (ng.h) this.b;
                 float f10 = hVar.b;
-                float x10 = a6.x(hVar.c, f10, f7, f10);
-                hVar.d = x10;
+                float y3 = k3.y(hVar.c, f10, f7, f10);
+                hVar.d = y3;
                 if (z10) {
                     s6 s6Var = hVar.e;
                     s6Var.getClass();
-                    s6Var.c(null, x10);
+                    s6Var.c(null, y3);
                 }
                 hVar.invalidate();
                 break;

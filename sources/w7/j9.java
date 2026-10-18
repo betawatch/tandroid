@@ -3,14 +3,14 @@ package w7;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class j9 {
     public static String a(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String h;
+        String k10;
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -20,17 +20,17 @@ public abstract class j9 {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                h = "null";
+                k10 = "null";
             } else {
                 try {
-                    h = obj.toString();
+                    k10 = obj.toString();
                 } catch (Exception e) {
-                    String D = a1.g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    h = r.c.h("<", D, " threw ", e.getClass().getName(), ">");
+                    String C = a1.g.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e);
+                    k10 = org.telegram.ui.Cells.c1.k("<", C, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = h;
+            objArr[i11] = k10;
             i11++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));

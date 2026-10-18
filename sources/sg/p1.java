@@ -1,6 +1,6 @@
 package sg;
 
-import ai.va;
+import ai.wa;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
@@ -15,7 +15,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.lg0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class p1 extends im0 implements NotificationCenter.NotificationCenterDelegate, l0 {
     public final ArrayList V2;
@@ -55,7 +55,7 @@ public abstract class p1 extends im0 implements NotificationCenter.NotificationC
         setAdapter(new m1(s0Var));
         setClipChildren(false);
         setOnScrollListener(new kv(s0Var, 19));
-        setOnItemClickListener(new va(s0Var, 21));
+        setOnItemClickListener(new wa(s0Var, 21));
         MediaDataController.getInstance(i10).preloadPremiumPreviewStickers();
         arrayList.clear();
         arrayList.addAll(MediaDataController.getInstance(i10).premiumPreviewStickers);
@@ -92,13 +92,13 @@ public abstract class p1 extends im0 implements NotificationCenter.NotificationC
             }
             Collections.sort(arrayList, this.f3);
             if ((this.Y2 || this.h3) && arrayList.size() > 0 && !this.V2.isEmpty()) {
-                View view = (View) i0.a.h(1, arrayList);
+                View view = (View) i2.d.h(1, arrayList);
                 this.g3 = view;
                 x1(view, !this.Y2);
                 this.Y2 = false;
                 this.h3 = false;
-            } else if (this.g3 != i0.a.h(1, arrayList)) {
-                this.g3 = (View) i0.a.h(1, arrayList);
+            } else if (this.g3 != i2.d.h(1, arrayList)) {
+                this.g3 = (View) i2.d.h(1, arrayList);
                 if (this.b3) {
                     try {
                         performHapticFeedback(3);

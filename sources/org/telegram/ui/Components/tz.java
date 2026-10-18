@@ -59,7 +59,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class tz extends FrameLayout implements ne.d, NotificationCenter.NotificationCenterDelegate, qh.a {
     public static final /* synthetic */ int O2 = 0;
@@ -112,7 +112,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
     public final ci.t4 M1;
     public boolean M2;
     public final oh.b N;
-    public final ai.ud N0;
+    public final ai.vd N0;
     public boolean N1;
     public boolean N2;
     public final View O;
@@ -338,7 +338,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         if (z15) {
             v(true);
         }
-        i0.b.o(A(org.telegram.ui.ActionBar.h6.Wk), 30);
+        i0.a.o(A(org.telegram.ui.ActionBar.h6.Wk), 30);
         int dp = AndroidUtilities.dp(50.0f);
         this.b1 = dp;
         this.d0 = z13;
@@ -397,7 +397,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         this.s1 = paint;
         paint.setColor(A(org.telegram.ui.ActionBar.h6.af));
         float dp2 = AndroidUtilities.dp(6.0f);
-        ci.o1 o1Var = zf.i0.a;
+        ci.o1 o1Var = zf.j0.a;
         this.M1 = new ci.t4(dp2);
         qx qxVar2 = new qx(this, context);
         this.J = qxVar2;
@@ -1078,7 +1078,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
             xd0Var.setViewPager(gxVar);
             xd0Var.setShouldExpand(false);
             xd0Var.setIndicatorHeight(AndroidUtilities.dp(3.0f));
-            xd0Var.setIndicatorColor(i0.b.o(A(org.telegram.ui.ActionBar.h6.Oe), 20));
+            xd0Var.setIndicatorColor(i0.a.o(A(org.telegram.ui.ActionBar.h6.Oe), 20));
             xd0Var.setUnderlineHeight(0);
             xd0Var.setTabPaddingLeftRight(AndroidUtilities.dp(11.0f));
             xd0Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(11.0f));
@@ -1164,15 +1164,15 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
             view2.setVisibility(8);
         }
         addView(gxVar, 0, w7.z5.e(-1, -1, 51));
-        ai.ud udVar = new ai.ud(context2, 23);
-        this.N0 = udVar;
-        udVar.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(6.0f), A(org.telegram.ui.ActionBar.h6.qf)));
-        udVar.setTextColor(A(org.telegram.ui.ActionBar.h6.pf));
-        udVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(7.0f));
-        udVar.setGravity(16);
-        udVar.setTextSize(1, 14.0f);
-        udVar.setVisibility(4);
-        addView(udVar, w7.z5.a(-2.0f, 5.0f, 0.0f, 5.0f, 53.0f, -2, 81));
+        ai.vd vdVar = new ai.vd(context2, 23);
+        this.N0 = vdVar;
+        vdVar.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(6.0f), A(org.telegram.ui.ActionBar.h6.qf)));
+        vdVar.setTextColor(A(org.telegram.ui.ActionBar.h6.pf));
+        vdVar.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(7.0f));
+        vdVar.setGravity(16);
+        vdVar.setTextSize(1, 14.0f);
+        vdVar.setVisibility(4);
+        addView(vdVar, w7.z5.a(-2.0f, 5.0f, 0.0f, 5.0f, 53.0f, -2, 81));
         this.C1 = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 40.0f : 32.0f);
         Field field2 = ev.f;
         ev evVar = new ev(new dv(context2, d6Var2));
@@ -1391,7 +1391,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
             return CompoundEmoji.applyColor(str, str2);
         }
         if (Emoji.endsWithRightArrow(str)) {
-            str = com.google.android.gms.internal.cast.a6.j(2, 0, str);
+            str = com.google.android.gms.internal.play_billing.k3.j(2, 0, str);
             z10 = true;
         } else {
             z10 = false;
@@ -1399,18 +1399,18 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         int length = str.length();
         if (length > 2 && str.charAt(str.length() - 2) == 8205) {
             str3 = str.substring(str.length() - 2);
-            str = com.google.android.gms.internal.cast.a6.j(2, 0, str);
+            str = com.google.android.gms.internal.play_billing.k3.j(2, 0, str);
         } else if (length <= 3 || str.charAt(str.length() - 3) != 8205) {
             str3 = null;
         } else {
             str3 = str.substring(str.length() - 3);
-            str = com.google.android.gms.internal.cast.a6.j(3, 0, str);
+            str = com.google.android.gms.internal.play_billing.k3.j(3, 0, str);
         }
-        String u10 = r.c.u(str, str2);
+        String u10 = r4.c.u(str, str2);
         if (str3 != null) {
-            u10 = r.c.u(u10, str3);
+            u10 = r4.c.u(u10, str3);
         }
-        return z10 ? r.c.u(u10, "\u200d➡") : u10;
+        return z10 ? r4.c.u(u10, "\u200d➡") : u10;
     }
 
     public static void j(int i10, View view) {
@@ -1619,7 +1619,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
                         TLRPC.StickerSet stickerSet2 = stickerSet;
                         TLRPC.Document document2 = document;
                         boolean z12 = z10;
-                        mediaDataController.toggleStickerSet(context, tLObject2, document2, i10, n2Var, frameLayout, false, true, new i2.d1(tzVar, bVar2, tLObject2, stickerSet2, document2, z12, 10), false);
+                        mediaDataController.toggleStickerSet(context, tLObject2, document2, i10, n2Var, frameLayout, false, true, new ai.m4(tzVar, bVar2, tLObject2, stickerSet2, document2, z12), false);
                         tzVar.J(bVar2, tLObject2, stickerSet2, document2, z12, true);
                     }
                 });
@@ -1758,7 +1758,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         if (chat == null) {
             return;
         }
-        ai.ud udVar = this.N0;
+        ai.vd vdVar = this.N0;
         if (z10) {
             if (ChatObject.hasAdminRights(chat) || (tL_chatBannedRights = chat.default_banned_rights) == null || !(tL_chatBannedRights.send_stickers || (z11 && tL_chatBannedRights.send_plain))) {
                 TLRPC.TL_chatBannedRights tL_chatBannedRights2 = chat.banned_rights;
@@ -1767,19 +1767,19 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
                 }
                 if (!AndroidUtilities.isBannedForever(tL_chatBannedRights2)) {
                     if (z11) {
-                        udVar.setText(LocaleController.formatString("AttachPlainRestricted", R.string.AttachPlainRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
+                        vdVar.setText(LocaleController.formatString("AttachPlainRestricted", R.string.AttachPlainRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
                     }
                     if (z12) {
-                        udVar.setText(LocaleController.formatString("AttachGifRestricted", R.string.AttachGifRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
+                        vdVar.setText(LocaleController.formatString("AttachGifRestricted", R.string.AttachGifRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
                     } else {
-                        udVar.setText(LocaleController.formatString("AttachStickersRestricted", R.string.AttachStickersRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
+                        vdVar.setText(LocaleController.formatString("AttachStickersRestricted", R.string.AttachStickersRestricted, LocaleController.formatDateForBan(chat.banned_rights.until_date)));
                     }
                 } else if (z11) {
-                    udVar.setText(LocaleController.getString(R.string.AttachPlainRestrictedForever));
+                    vdVar.setText(LocaleController.getString(R.string.AttachPlainRestrictedForever));
                 } else if (z12) {
-                    udVar.setText(LocaleController.getString(R.string.AttachGifRestrictedForever));
+                    vdVar.setText(LocaleController.getString(R.string.AttachGifRestrictedForever));
                 } else {
-                    udVar.setText(LocaleController.getString(R.string.AttachStickersRestrictedForever));
+                    vdVar.setText(LocaleController.getString(R.string.AttachStickersRestrictedForever));
                 }
             } else {
                 org.telegram.ui.ActionBar.n2 n2Var = this.Y1;
@@ -1787,14 +1787,14 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
                     return;
                 }
                 if (z11) {
-                    udVar.setText(LocaleController.getString(R.string.GlobalAttachEmojiRestricted));
+                    vdVar.setText(LocaleController.getString(R.string.GlobalAttachEmojiRestricted));
                 } else if (z12) {
-                    udVar.setText(LocaleController.getString(R.string.GlobalAttachGifRestricted));
+                    vdVar.setText(LocaleController.getString(R.string.GlobalAttachGifRestricted));
                 } else {
-                    udVar.setText(LocaleController.getString(R.string.GlobalAttachStickersRestricted));
+                    vdVar.setText(LocaleController.getString(R.string.GlobalAttachStickersRestricted));
                 }
             }
-            udVar.setVisibility(0);
+            vdVar.setVisibility(0);
         }
         AnimatorSet animatorSet = this.J2;
         if (animatorSet != null) {
@@ -1803,7 +1803,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.J2 = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(udVar, (Property<ai.ud, Float>) View.ALPHA, z10 ? udVar.getAlpha() : 1.0f, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(udVar, (Property<ai.ud, Float>) View.TRANSLATION_Y, z10 ? AndroidUtilities.dp(12.0f) : udVar.getTranslationY(), z10 ? 0.0f : AndroidUtilities.dp(12.0f)));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(vdVar, (Property<ai.vd, Float>) View.ALPHA, z10 ? vdVar.getAlpha() : 1.0f, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(vdVar, (Property<ai.vd, Float>) View.TRANSLATION_Y, z10 ? AndroidUtilities.dp(12.0f) : vdVar.getTranslationY(), z10 ? 0.0f : AndroidUtilities.dp(12.0f)));
         e2.n0 n0Var = this.K2;
         if (n0Var != null) {
             AndroidUtilities.cancelRunOnUIThread(n0Var);
@@ -1987,10 +1987,10 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         if (imageView2 != null) {
             imageView2.setColorFilter(new PorterDuffColorFilter(z10 ? w(0.6f) : A(org.telegram.ui.ActionBar.h6.Re), PorterDuff.Mode.MULTIPLY));
         }
-        ai.ud udVar = this.N0;
-        if (udVar != null) {
-            ((ShapeDrawable) udVar.getBackground()).getPaint().setColor(A(org.telegram.ui.ActionBar.h6.qf));
-            udVar.setTextColor(A(org.telegram.ui.ActionBar.h6.pf));
+        ai.vd vdVar = this.N0;
+        if (vdVar != null) {
+            ((ShapeDrawable) vdVar.getBackground()).getPaint().setColor(A(org.telegram.ui.ActionBar.h6.qf));
+            vdVar.setTextColor(A(org.telegram.ui.ActionBar.h6.pf));
         }
         yy yyVar = this.j0;
         if (yyVar != null) {
@@ -2154,7 +2154,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
             Emoji.EmojiDrawable emojiDrawable = Emoji.getEmojiDrawable(str);
             if (emojiDrawable != null) {
                 TLRPC.Document emojiAnimatedSticker = MediaDataController.getInstance(i13).getEmojiAnimatedSticker(str);
-                String j10 = i0.a.j(i14 + 3, "tab");
+                String j10 = i2.d.j(i14 + 3, "tab");
                 int i15 = yxVar.x;
                 yxVar.x = i15 + 1;
                 wx0 wx0Var = (wx0) yxVar.n.get(j10);
@@ -2755,7 +2755,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         }
         canvas.save();
         if (this.n.getVisibility() != 8 && !this.u0 && this.w0) {
-            canvas.drawColor(i0.b.o(-1, 25));
+            canvas.drawColor(i0.a.o(-1, 25));
         }
         boolean drawChild = super.drawChild(canvas, view, j10);
         float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(this.p2);
@@ -2764,7 +2764,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
             int i10 = this.B2;
             GradientDrawable gradientDrawable = this.A2;
             if (i10 != m12) {
-                gradientDrawable.setColors(new int[]{m12, org.telegram.ui.ActionBar.h6.m1(0.66f, m12), i0.b.o(m12, 0)});
+                gradientDrawable.setColors(new int[]{m12, org.telegram.ui.ActionBar.h6.m1(0.66f, m12), i0.a.o(m12, 0)});
                 this.B2 = m12;
             }
             gradientDrawable.setBounds(0, getMeasuredHeight() - this.p2, getMeasuredWidth(), getMeasuredHeight());
@@ -3499,7 +3499,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
     }
 
     public final int w(float f7) {
-        return i0.b.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, this.Z1), (int) (f7 * 255.0f));
+        return i0.a.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, this.Z1), (int) (f7 * 255.0f));
     }
 
     public final s4.s x(int i10) {
@@ -3512,7 +3512,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         if (i10 == 2) {
             return this.i0;
         }
-        throw new IllegalArgumentException(i0.a.j(i10, "Unexpected argument: "));
+        throw new IllegalArgumentException(i2.d.j(i10, "Unexpected argument: "));
     }
 
     public final im0 y(int i10) {
@@ -3525,7 +3525,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         if (i10 == 2) {
             return this.h0;
         }
-        throw new IllegalArgumentException(i0.a.j(i10, "Unexpected argument: "));
+        throw new IllegalArgumentException(i2.d.j(i10, "Unexpected argument: "));
     }
 
     public final HorizontalScrollView z(int i10) {
@@ -3538,7 +3538,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         if (i10 == 2) {
             return this.p0;
         }
-        throw new IllegalArgumentException(i0.a.j(i10, "Unexpected argument: "));
+        throw new IllegalArgumentException(i2.d.j(i10, "Unexpected argument: "));
     }
 
     @Override // ne.d

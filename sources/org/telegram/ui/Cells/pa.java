@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pa extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -25,7 +25,7 @@ public final class pa extends FrameLayout {
         this.a = w9Var;
         TextView textView = new TextView(context);
         this.b = textView;
-        org.telegram.messenger.q.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, textView);
+        org.telegram.messenger.g0.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, textView);
         if (LocaleController.isRTL) {
             addView(w9Var, w7.z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, 30, 21));
             addView(textView, w7.z5.a(-2.0f, 12.0f, 0.0f, 56.0f, 0.0f, -1, 21));

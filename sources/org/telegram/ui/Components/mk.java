@@ -24,7 +24,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mk extends em0 {
     public long E;
@@ -369,7 +369,7 @@ public final class mk extends em0 {
                         tL_messages_search.max_date = (int) (j19 / 1000);
                     }
                     if (z13 && str4.equals(mkVar.J) && !arrayList4.isEmpty()) {
-                        tL_messages_search.offset_id = ((MessageObject) i0.a.h(1, arrayList4)).getId();
+                        tL_messages_search.offset_id = ((MessageObject) i2.d.h(1, arrayList4)).getId();
                     } else {
                         tL_messages_search.offset_id = 0;
                     }
@@ -401,7 +401,7 @@ public final class mk extends em0 {
                         tL_messages_searchGlobal2.max_date = (int) (j15 / 1000);
                     }
                     if (z13 && str4.equals(mkVar.J) && !arrayList4.isEmpty()) {
-                        MessageObject messageObject = (MessageObject) i0.a.h(1, arrayList4);
+                        MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList4);
                         tL_messages_searchGlobal2.offset_id = messageObject.getId();
                         tL_messages_searchGlobal2.offset_rate = mkVar.G;
                         TLRPC.Peer peer = messageObject.messageOwner.peer_id;
@@ -582,16 +582,16 @@ public final class mk extends em0 {
                 } else if (i10 != 4) {
                     view = new View(context);
                     view.setTag(-33024);
-                    return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+                    return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
                 }
             }
             org.telegram.ui.Cells.i7 i7Var = new org.telegram.ui.Cells.i7(context, i10 == 1 ? 1 : 2, nkVar.a);
             i7Var.setDrawDownloadIcon(false);
             view = i7Var;
-            return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+            return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
         }
         u3Var = new org.telegram.ui.Cells.u3(context, nkVar.a);
         view = u3Var;
-        return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }
 }

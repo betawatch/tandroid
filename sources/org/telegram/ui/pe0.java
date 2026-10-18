@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pe0 extends org.telegram.ui.Components.ow0 implements org.telegram.ui.Components.d50 {
     public String E;
@@ -364,7 +364,7 @@ public final class pe0 extends org.telegram.ui.Components.ow0 implements org.tel
         textView4.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         textView4.setGravity(16);
         frameLayout3.addView(textView4, w7.z5.a(56.0f, 14.0f, 0.0f, 70.0f, 32.0f, -2, 83));
-        m.g3.r(textView4);
+        m.g3.i(textView4);
         String string = LocaleController.getString("TermsOfServiceLogin", R.string.TermsOfServiceLogin);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         int indexOf = string.indexOf(42);

@@ -1,120 +1,100 @@
 package si;
 
-import ai.n3;
+import android.os.SystemClock;
 import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xc;
+import java.io.IOException;
+import org.telegram.ui.Components.ay0;
 import w7.p7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s0 b;
 
-    public /* synthetic */ i0(xc xcVar, boolean z10, TLRPC.Chat chat, d6 d6Var) {
-        this.c = xcVar;
-        this.b = z10;
-        this.d = chat;
-        this.e = d6Var;
+    public /* synthetic */ i0(s0 s0Var, int i10) {
+        this.a = i10;
+        this.b = s0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        boolean z10;
-        long j10;
-        int i10;
-        File file;
-        String string;
         switch (this.a) {
             case 0:
-                t0 t0Var = (t0) this.c;
-                x xVar = (x) this.d;
-                p0 p0Var = (p0) this.e;
-                long nanoTime = System.nanoTime();
-                try {
-                    xVar.g();
-                    File file2 = xVar.a;
-                    long e = p7.e(file2) / 1000;
-                    t0Var.m.b("active output finalized: size=" + file2.length() + ", durationMs=" + e + ", elapsedMs=" + t0.f(nanoTime));
-                    t0Var.g();
-                    long j11 = t0Var.o;
-                    if (e > j11) {
-                        z10 = true;
-                        j10 = j11;
-                        i10 = 1;
-                    } else {
-                        z10 = false;
-                        j10 = j11;
-                        i10 = 1;
-                    }
-                    long j12 = j10;
-                    boolean z11 = this.b;
-                    if (z11 && !z10) {
-                        try {
-                            t0Var.k.execute(new g0(t0Var, p0Var, xVar.a, e, true));
-                            return;
-                        } catch (Exception e7) {
-                            e = e7;
-                            t0Var = t0Var;
-                            t0Var.i.post(new e0(t0Var, e, 2));
-                            return;
-                        }
-                    }
-                    File file3 = xVar.a;
-                    try {
-                        long min = Math.min(j12, e);
-                        int i11 = z10 ? i10 : 2;
-                        file = file3;
-                        try {
-                            t0Var.s(file, 0L, min, z11, i11);
-                            p7.c(file);
-                            return;
-                        } catch (Throwable th2) {
-                            th = th2;
-                            p7.c(file);
-                            throw th;
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        file = file3;
-                    }
-                } catch (Exception e10) {
-                    e = e10;
+                s0 s0Var = this.b;
+                if (s0Var.W == 3) {
+                    s0Var.p();
+                    return;
                 }
-            default:
-                xc xcVar = (xc) this.c;
-                TLRPC.Chat chat = (TLRPC.Chat) this.d;
-                d6 d6Var = (d6) this.e;
-                int i12 = R.raw.star_premium_2;
-                boolean z12 = this.b;
-                String string2 = z12 ? LocaleController.getString("BoostingGiveawayCreated", R.string.BoostingGiveawayCreated) : LocaleController.getString("BoostingAwardsCreated", R.string.BoostingAwardsCreated);
-                if (z12) {
-                    string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckStatistic : R.string.BoostingCheckStatisticGroup);
-                } else {
-                    string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
-                }
-                qc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, h6.Gi, 0, new n3(chat), d6Var), i12);
-                M.j = 5000;
-                M.j();
                 return;
+            case 1:
+                s0 s0Var2 = this.b;
+                x xVar = s0Var2.Q;
+                File file = s0Var2.R;
+                if (xVar != null) {
+                    try {
+                        synchronized (xVar) {
+                            xVar.v = true;
+                            try {
+                                xVar.g();
+                            } finally {
+                                xVar.v = false;
+                            }
+                        }
+                    } catch (IOException unused) {
+                    }
+                    p7.c(xVar.a);
+                }
+                if (file != null) {
+                    p7.c(file);
+                    return;
+                }
+                return;
+            case 2:
+                s0 s0Var3 = this.b;
+                int i10 = s0Var3.W;
+                if (i10 == 2 || i10 == 6) {
+                    s0Var3.F = SystemClock.elapsedRealtime();
+                    s0Var3.m.b("recording started: retainedDurationMs=" + s0Var3.E);
+                    s0Var3.v(3);
+                    long j10 = s0Var3.o - s0Var3.E;
+                    if (j10 <= 0) {
+                        s0Var3.p();
+                        return;
+                    } else {
+                        s0Var3.i.postDelayed(s0Var3.T, j10);
+                        return;
+                    }
+                }
+                return;
+            default:
+                s0 s0Var4 = this.b;
+                s0Var4.B = false;
+                s0Var4.m.b("recording segment stopped: state=" + r4.c.w(s0Var4.W) + ", retainedDurationMs=" + s0Var4.E);
+                if (s0Var4.A) {
+                    s0Var4.A = false;
+                    s0Var4.i();
+                    return;
+                }
+                if (s0Var4.y) {
+                    s0Var4.y = false;
+                    s0Var4.j.execute(new ug.c(s0Var4, s0Var4.Q, s0Var4.z, s0Var4.P));
+                    return;
+                }
+                if (s0Var4.W != 4) {
+                    return;
+                }
+                try {
+                    File d = s0Var4.d("round_video_preview_");
+                    s0Var4.R = d;
+                    s0Var4.J = System.nanoTime();
+                    s0Var4.m.b("preview snapshot started: file=" + d.getName());
+                    s0Var4.j.execute(new ay0(s0Var4, s0Var4.Q, d, 21));
+                    return;
+                } catch (IOException e) {
+                    s0Var4.h(e);
+                    return;
+                }
         }
-    }
-
-    public /* synthetic */ i0(t0 t0Var, x xVar, boolean z10, p0 p0Var) {
-        this.c = t0Var;
-        this.d = xVar;
-        this.b = z10;
-        this.e = p0Var;
     }
 }

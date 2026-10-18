@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a90 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int r = 0;
@@ -168,7 +168,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
                 TLRPC.ChatInvite chatInvite7 = this.d;
                 z13 = (chatInvite7 == null && ((chatInvite7.channel && !chatInvite7.megagroup) || ChatObject.isChannelAndNotMegaGroup(chatInvite7.chat))) || (ChatObject.isChannel(this.e) && !this.e.megagroup);
                 isEmpty = TextUtils.isEmpty(str3);
-                TextView f10 = org.telegram.messenger.q.f(context, 1, 13.0f);
+                TextView f10 = org.telegram.messenger.g0.f(context, 1, 13.0f);
                 int i13 = org.telegram.ui.ActionBar.h6.r5;
                 f10.setTextColor(getThemedColor(i13));
                 f10.setSingleLine(true);
@@ -322,7 +322,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
         if (chatInvite72 == null) {
         }
         isEmpty = TextUtils.isEmpty(str3);
-        TextView f102 = org.telegram.messenger.q.f(context, 1, 13.0f);
+        TextView f102 = org.telegram.messenger.g0.f(context, 1, 13.0f);
         int i132 = org.telegram.ui.ActionBar.h6.r5;
         f102.setTextColor(getThemedColor(i132));
         f102.setSingleLine(true);
@@ -413,11 +413,11 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
         long j10 = chat.id;
         boolean z10 = !ChatObject.isChannelAndNotMegaGroup(chat);
         a90Var.getClass();
-        Bundle a2 = z7.g5.a(j10, "chat_id");
+        Bundle b10 = zf.d0.b(j10, "chat_id");
         MessagesController messagesController = MessagesController.getInstance(a90Var.currentAccount);
         org.telegram.ui.ActionBar.n2 n2Var2 = a90Var.c;
-        if (messagesController.checkCanOpenChat(a2, n2Var2)) {
-            n2Var2.presentFragment(new z80(a90Var, a2, z10, j10), n2Var2 instanceof org.telegram.ui.sn);
+        if (messagesController.checkCanOpenChat(b10, n2Var2)) {
+            n2Var2.presentFragment(new z80(a90Var, b10, z10, j10), n2Var2 instanceof org.telegram.ui.sn);
         }
     }
 
@@ -435,7 +435,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
         a90Var.dismiss();
         TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
         tL_messages_importChatInvite.hash = a90Var.b;
-        ConnectionsManager.getInstance(a90Var.currentAccount).sendRequestTyped(tL_messages_importChatInvite, null, new ai.sc(a90Var, j10, tL_messages_importChatInvite), 2);
+        ConnectionsManager.getInstance(a90Var.currentAccount).sendRequestTyped(tL_messages_importChatInvite, null, new ai.tc(a90Var, j10, tL_messages_importChatInvite), 2);
     }
 
     public static /* synthetic */ void s(final a90 a90Var, boolean z10, long j10) {
@@ -506,10 +506,10 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
             v80 v80Var = new v80(a90Var, (TLRPC.TL_chatInviteJoinResultWebView) tLObject, j10, 0);
             a90Var2 = a90Var;
             AndroidUtilities.runOnUIThread(v80Var);
-            AndroidUtilities.runOnUIThread(new ai.y3(a90Var2, tL_error, z10, tL_messages_importChatInvite, 19));
+            AndroidUtilities.runOnUIThread(new ai.x9(a90Var2, tL_error, z10, tL_messages_importChatInvite, 18));
         }
         a90Var2 = a90Var;
-        AndroidUtilities.runOnUIThread(new ai.y3(a90Var2, tL_error, z10, tL_messages_importChatInvite, 19));
+        AndroidUtilities.runOnUIThread(new ai.x9(a90Var2, tL_error, z10, tL_messages_importChatInvite, 18));
     }
 
     public static /* synthetic */ void v(a90 a90Var, TLRPC.TL_error tL_error, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {

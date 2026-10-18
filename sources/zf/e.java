@@ -31,7 +31,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.ff0;
 import p4.s0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class e {
     public static int A;
@@ -92,7 +92,7 @@ public final class e {
         sb2.append("_");
         sb2.append(i11);
         sb2.append(z10 ? "_nolimit" : " ");
-        File file3 = new File(file2, a1.g.s(sb2, i12 != 0 ? i0.a.j(i12, "_fitz") : "", ".pcache2"));
+        File file3 = new File(file2, a1.g.s(sb2, i12 != 0 ? i2.d.j(i12, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
         if (SharedConfig.getDevicePerformanceClass() < 2) {

@@ -1,6 +1,6 @@
 package ci;
 
-import ai.oa;
+import ai.pa;
 import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d2 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class d2 implements Runnable {
                         ei.x3 x3Var = new ei.x3(q4Var.getContext(), 3);
                         x3Var.l(1.0f, -22.0f);
                         q4Var.H0 = x3Var;
-                        x3Var.h(i0.b.o(i0.b.f(0.13f, -16777216, -1), 240));
+                        x3Var.h(i0.a.o(i0.a.f(0.13f, -16777216, -1), 240));
                         ei.x3 x3Var2 = q4Var.H0;
                         x3Var2.U = false;
                         x3Var2.s(LocaleController.getString(R.string.ReactionLongTapHint));
@@ -81,17 +81,17 @@ public final /* synthetic */ class d2 implements Runnable {
                 q4 q4Var3 = this.b;
                 Activity findActivity = AndroidUtilities.findActivity(q4Var3.getContext());
                 if (findActivity != null) {
-                    oa oaVar = new oa(15, q4Var3, findActivity);
+                    pa paVar = new pa(15, q4Var3, findActivity);
                     aa aaVar2 = ((r9) q4Var3.Q1).d;
                     z9 z9Var = aaVar2.z0;
                     if (z9Var != null) {
-                        z10 = z9Var.release(oaVar);
+                        z10 = z9Var.release(paVar);
                         aaVar2.z0 = null;
                     } else {
                         z10 = false;
                     }
                     if (!z10) {
-                        AndroidUtilities.runOnUIThread(oaVar, 80L);
+                        AndroidUtilities.runOnUIThread(paVar, 80L);
                         break;
                     }
                 }

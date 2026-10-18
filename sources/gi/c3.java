@@ -9,7 +9,6 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import com.google.android.gms.internal.cast.a6;
 import com.google.android.gms.internal.cast.z5;
 import ei.o8;
 import org.telegram.messenger.AndroidUtilities;
@@ -19,7 +18,7 @@ import org.telegram.ui.Components.le0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class c3 extends jw0 implements org.telegram.ui.ActionBar.u3 {
     public final /* synthetic */ d3 A0;
@@ -80,7 +79,7 @@ public final class c3 extends jw0 implements org.telegram.ui.ActionBar.u3 {
             z5 z5Var = d3Var.s;
             int lerp = AndroidUtilities.lerp((getWidth() - rect.left) - rect.right, getWidth(), d3Var.f0);
             getHeight();
-            z5Var.r(canvas, true, false, lerp, 1.0f - d3Var.f0);
+            z5Var.s(canvas, true, false, lerp, 1.0f - d3Var.f0);
             canvas.translate((1.0f - d3Var.f0) * (-rect.left), 0.0f);
             z10 = true;
         }
@@ -107,7 +106,7 @@ public final class c3 extends jw0 implements org.telegram.ui.ActionBar.u3 {
                 canvas.drawRect(0.0f, height - (f10 * ((z2Var == null || z2Var.getTotalHeight() <= 0) ? 1.0f - d3Var.f0 : 1.0f)), getWidth(), getHeight(), paint);
             }
             if (rect2.right > 0) {
-                canvas.drawRect(a6.D(1.0f, d3Var.f0, rect2.right, getWidth()), 0.0f, getWidth(), getHeight(), paint);
+                canvas.drawRect(com.google.android.gms.internal.play_billing.k3.D(1.0f, d3Var.f0, rect2.right, getWidth()), 0.0f, getWidth(), getHeight(), paint);
             }
         }
     }
@@ -219,7 +218,7 @@ public final class c3 extends jw0 implements org.telegram.ui.ActionBar.u3 {
                 int width = getWidth();
                 getHeight();
                 canvas2 = canvas;
-                z5Var.r(canvas2, false, false, width, 1.0f - d3Var.f0);
+                z5Var.s(canvas2, false, false, width, 1.0f - d3Var.f0);
             } else {
                 canvas2 = canvas;
             }

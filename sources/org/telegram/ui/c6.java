@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c6 extends pg.b {
     public final /* synthetic */ e6 d;
@@ -70,7 +70,7 @@ public final class c6 extends pg.b {
                 vaVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
                 view2 = vaVar;
             } else if (i10 == 3) {
-                view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.t0) null);
+                view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.c1) null);
             } else if (i10 == 4) {
                 org.telegram.ui.Cells.q8 q8Var = new org.telegram.ui.Cells.q8(viewGroup.getContext());
                 q8Var.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
@@ -78,7 +78,7 @@ public final class c6 extends pg.b {
                 q8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
                 view = q8Var;
             }
-            return com.google.android.gms.internal.cast.a6.l(view2, view2, -1, -2);
+            return com.google.android.gms.internal.play_billing.k3.l(view2, view2, -1, -2);
         }
         org.telegram.ui.Cells.q8 q8Var2 = new org.telegram.ui.Cells.q8(viewGroup.getContext());
         q8Var2.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
@@ -86,6 +86,6 @@ public final class c6 extends pg.b {
         q8Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
         view = q8Var2;
         view2 = view;
-        return com.google.android.gms.internal.cast.a6.l(view2, view2, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view2, view2, -1, -2);
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mk extends TextView {
     public final /* synthetic */ int a;
@@ -92,11 +92,11 @@ public final class mk extends TextView {
                 canvas.drawRoundRect(rectF2, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), (Paint) this.b);
                 break;
             case 6:
-                org.telegram.ui.Wallet.v5 v5Var = (org.telegram.ui.Wallet.v5) this.b;
-                float d = v5Var.k0.d(v5Var.i0, false);
+                org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.b;
+                float d = x5Var.k0.d(x5Var.i0, false);
                 TextPaint paint = getPaint();
                 Objects.requireNonNull(paint);
-                v5Var.d(d, true, new org.telegram.ui.Wallet.o2(paint, 3), new org.telegram.ui.Wallet.t3(6, this, canvas));
+                x5Var.d(d, true, new org.telegram.ui.Wallet.o2(paint, 3), new org.telegram.ui.Wallet.u3(6, this, canvas));
                 break;
             default:
                 super.onDraw(canvas);
@@ -136,7 +136,7 @@ public final class mk extends TextView {
                 break;
             case 7:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((org.telegram.ui.Wallet.l9) this.b).U));
+                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((org.telegram.ui.Wallet.o9) this.b).U));
                 break;
             case 8:
                 super.onMeasure(i10, i11);

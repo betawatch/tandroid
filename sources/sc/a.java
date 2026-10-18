@@ -1,13 +1,13 @@
 package sc;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import com.google.firebase.messaging.r;
 import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import nc.c;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
     public static final /* synthetic */ le.b b;
@@ -121,18 +121,18 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final void d(int i10) {
-        a6.p(te.a.c(e, this, this, new Integer(i10)));
+        k3.p(te.a.c(e, this, this, new Integer(i10)));
         this.a.d = i10;
     }
 
     public final void e(int i10) {
-        a6.p(te.a.c(c, this, this, new Integer(i10)));
+        k3.p(te.a.c(c, this, this, new Integer(i10)));
         this.a.b = i10;
     }
 
     @Override // com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        a6.p(te.a.c(x, this, this, byteBuffer));
+        k3.p(te.a.c(x, this, this, byteBuffer));
         b bVar = this.a;
         e5.b.r(bVar.a, byteBuffer);
         byteBuffer.put((byte) (bVar.b & 255));
@@ -191,7 +191,7 @@ public final class a extends com.googlecode.mp4parser.a {
     @Override // com.googlecode.mp4parser.a
     public final long getContentSize() {
         int i10;
-        a6.p(te.a.b(w, this, this));
+        k3.p(te.a.b(w, this, this));
         b bVar = this.a;
         ArrayList arrayList = bVar.f;
         int size = arrayList.size();

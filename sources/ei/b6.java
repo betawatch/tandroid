@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class b6 extends FrameLayout {
     public float a;
@@ -80,7 +80,7 @@ public final class b6 extends FrameLayout {
                 View childAt3 = g5Var.getChildAt(0);
                 x10 = AndroidUtilities.lerp(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (g5Var.getX() - barView.getLeft()), xaVar.D1);
                 y3 = AndroidUtilities.lerp(y3, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (g5Var.getY() - barView.getTop()), xaVar.D1);
-                i10 = i0.b.f(xaVar.D1, s1Var.a, this.c.b(0));
+                i10 = i0.a.f(xaVar.D1, s1Var.a, this.c.b(0));
             }
             float f7 = x10;
             float f10 = y3;
@@ -109,7 +109,7 @@ public final class b6 extends FrameLayout {
             rg.i1.y1(f7, f10, dp, paint.getColor(), canvas2);
             if (g5Var != null && g5Var.getSelectedColorIndex() == 0) {
                 paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * xaVar.D1));
-                canvas2.drawCircle(f7, f10, com.google.android.gms.internal.cast.a6.D(1.0f, xaVar.D1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);
+                canvas2.drawCircle(f7, f10, com.google.android.gms.internal.play_billing.k3.D(1.0f, xaVar.D1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);
             }
         }
         canvas2.restore();

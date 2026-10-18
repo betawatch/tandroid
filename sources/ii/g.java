@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import ci.i1;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import hi.r0;
 import hi.s0;
 import org.telegram.messenger.AndroidUtilities;
@@ -24,9 +24,9 @@ import org.telegram.ui.ActionBar.y5;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import w7.z5;
-import zf.f0;
+import zf.g0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class g extends FrameLayout implements y5 {
     public static final /* synthetic */ int F = 0;
@@ -54,7 +54,7 @@ public final class g extends FrameLayout implements y5 {
         if (Build.VERSION.SDK_INT >= 31) {
             gh.d dVar = new gh.d(null);
             this.s = dVar;
-            dVar.i(AndroidUtilities.dp(7.0f), f0.a());
+            dVar.i(AndroidUtilities.dp(7.0f), g0.a());
             dVar.h = true;
             bVar = new bh.b(dVar);
         } else {
@@ -225,7 +225,7 @@ public final class g extends FrameLayout implements y5 {
                 }
             }
         });
-        TextView i13 = a6.i(linearLayout, textView3, z5.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
+        TextView i13 = k3.i(linearLayout, textView3, z5.k(20.0f, 0.0f, 0.0f, 1.33f, -1, -2), context);
         this.n = i13;
         i13.setTextSize(1, 13.0f);
         i13.setBackground(h6.c0(AndroidUtilities.dp(12.0f), h6.m1(0.14f, h6.w0(h6.D6, d6Var))));

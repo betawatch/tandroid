@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ah0 extends Drawable {
     public final Paint a;
@@ -82,7 +82,7 @@ public final class ah0 extends Drawable {
                     canvas2 = canvas;
                     canvas2.saveLayerAlpha(bounds.left, bounds.top, bounds.right, bounds.bottom, i10, 31);
                 }
-                canvas2.translate(com.google.android.gms.internal.cast.a6.x(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds.centerX()), bounds.centerY());
+                canvas2.translate(com.google.android.gms.internal.play_billing.k3.y(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds.centerX()), bounds.centerY());
                 float f11 = this.d * 500.0f;
                 float interpolation = f11 >= 100.0f ? bs.j.getInterpolation(f11 / 100.0f) * (-5.0f) : f11 < 484.0f ? (bs.j.getInterpolation((f11 - 100.0f) / 384.0f) * 95.0f) - 5.0f : 90.0f;
                 int i11 = this.b;
@@ -118,7 +118,7 @@ public final class ah0 extends Drawable {
         i10 = this.g;
         if (i10 != 255) {
         }
-        canvas2.translate(com.google.android.gms.internal.cast.a6.x(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds2.centerX()), bounds2.centerY());
+        canvas2.translate(com.google.android.gms.internal.play_billing.k3.y(1.0f, this.d, AndroidUtilities.dp(1.0f), bounds2.centerX()), bounds2.centerY());
         float f112 = this.d * 500.0f;
         if (f112 >= 100.0f) {
         }

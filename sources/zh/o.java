@@ -1,10 +1,18 @@
 package zh;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class o extends s4.c0 {
-    @Override // s4.c0
-    public final int p() {
-        return -1;
+public final class o {
+    public final int a;
+    public final String b;
+    public final ArrayList c;
+    public int d;
+
+    public o(int i10, String str, ArrayList arrayList) {
+        this.a = i10;
+        this.b = str;
+        this.c = arrayList;
     }
 }

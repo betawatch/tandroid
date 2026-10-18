@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t30 extends FrameLayout {
     public final RectF a;
@@ -51,7 +51,7 @@ public final class t30 extends FrameLayout {
         if (i10 < 29 || s50Var.Q2 == null || !canvas.isHardwareAccelerated()) {
             paint.setColor(-14933463);
             canvas.drawRect(rectF3, paint);
-            paint.setColor(i0.b.k(234881023, -14933463));
+            paint.setColor(i0.a.k(234881023, -14933463));
             canvas.drawRect(rectF2, paint);
         } else {
             paint.setColor(-14933463);

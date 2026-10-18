@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s implements Runnable {
     public final /* synthetic */ boolean a;
@@ -65,7 +65,7 @@ public final class s implements Runnable {
             valueOf2 = valueOf;
         }
         if (actionBarLayout.H != null && valueOf != null && valueOf2 != null) {
-            int f10 = i0.b.f(w7.r.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
+            int f10 = i0.a.f(w7.r.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
             r rVar = actionBarLayout.G;
             if (rVar != null && rVar.sheetsStack != null) {
                 for (int i10 = 0; i10 < actionBarLayout.G.sheetsStack.size(); i10++) {

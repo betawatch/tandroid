@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class n1 extends f5 {
     private static final n1 zzb;
@@ -37,11 +37,11 @@ public final class n1 extends f5 {
         if (!f5Var.equals(n1Var)) {
             if (!j10.b.g()) {
                 f5 f5Var2 = (f5) f5Var.h(4, null);
-                g6.c.a(f5Var2.getClass()).d(f5Var2, j10.b);
+                f6.c.a(f5Var2.getClass()).d(f5Var2, j10.b);
                 j10.b = f5Var2;
             }
             f5 f5Var3 = j10.b;
-            g6.c.a(f5Var3.getClass()).d(f5Var3, n1Var);
+            f6.c.a(f5Var3.getClass()).d(f5Var3, n1Var);
         }
         return (m1) j10;
     }
@@ -107,7 +107,7 @@ public final class n1 extends f5 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new i6(zzb, "\u0001\u000f\u0000\u0001\u0001\u000f\u000f\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဇ\u0001\u0003စ\u0002\u0004ဆ\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007င\u0006\bင\u0007\tဉ\b\n᠌\t\u000bင\n\fဇ\u000b\rင\f\u000eင\r\u000fဇ\u000e", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", z.x, "zzj", z.w, "zzk", "zzl", "zzm", "zzn", z.P, "zzo", "zzp", "zzq", "zzr", "zzs"});
+            return new h6(zzb, "\u0001\u000f\u0000\u0001\u0001\u000f\u000f\u0000\u0000\u0000\u0001ဉ\u0000\u0002ဇ\u0001\u0003စ\u0002\u0004ဆ\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007င\u0006\bင\u0007\tဉ\b\n᠌\t\u000bင\n\fဇ\u000b\rင\f\u000eင\r\u000fဇ\u000e", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", "zzi", z.x, "zzj", z.w, "zzk", "zzl", "zzm", "zzn", z.P, "zzo", "zzp", "zzq", "zzr", "zzs"});
         }
         if (i11 == 3) {
             return new n1();

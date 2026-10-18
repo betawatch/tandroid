@@ -27,7 +27,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.ln0;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class o0 {
     public boolean A;
@@ -362,7 +362,7 @@ public final class o0 {
             canvas.scale(f27, f27, rectF3.centerX(), rectF3.top - AndroidUtilities.dp(f10));
             Paint paint = this.k;
             paint.setAlpha((int) (clamp * 255.0f));
-            paint.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33f), i0.b.o(-16777216, (int) (27.0f * clamp)));
+            paint.setShadowLayer(AndroidUtilities.dpf2(1.0f), 0.0f, AndroidUtilities.dpf2(0.33f), i0.a.o(-16777216, (int) (27.0f * clamp)));
             canvas.drawPath(path, paint);
             canvas.clipPath(path);
             d11 d11Var = this.v;
@@ -448,7 +448,7 @@ public final class o0 {
                             try {
                                 int pixel = bitmap.getPixel(bitmap.getWidth() / 2, bitmap.getHeight() - 2);
                                 fArr2 = new float[3];
-                                i0.b.c(fArr2, Color.red(pixel), Color.green(pixel), Color.blue(pixel));
+                                i0.a.c(fArr2, Color.red(pixel), Color.green(pixel), Color.blue(pixel));
                                 f17 = fArr2[1];
                             } catch (Exception e7) {
                                 FileLog.e(e7);
@@ -458,19 +458,19 @@ public final class o0 {
                                 if (f33 > 0.02f && f33 < 0.98f) {
                                     fArr2[1] = 0.25f;
                                     fArr2[2] = org.telegram.ui.ActionBar.h6.I.q() ? 0.35f : 0.65f;
-                                    paint2.setColor(i0.b.a(fArr2));
+                                    paint2.setColor(i0.a.a(fArr2));
                                     n0Var.m = true;
                                 }
                             }
                             fArr2[1] = f29;
                             fArr2[2] = org.telegram.ui.ActionBar.h6.I.q() ? 0.38f : 0.7f;
-                            paint2.setColor(i0.b.a(fArr2));
+                            paint2.setColor(i0.a.a(fArr2));
                             n0Var.m = true;
                         } else if (!n0Var.m && !n0Var.l) {
                             try {
-                                int f34 = i0.b.f(0.5f, h9VarArr[i16].b(), h9VarArr[i16].c());
+                                int f34 = i0.a.f(0.5f, h9VarArr[i16].b(), h9VarArr[i16].c());
                                 fArr = new float[3];
-                                i0.b.c(fArr, Color.red(f34), Color.green(f34), Color.blue(f34));
+                                i0.a.c(fArr, Color.red(f34), Color.green(f34), Color.blue(f34));
                                 f16 = fArr[1];
                             } catch (Exception e10) {
                                 e = e10;
@@ -480,7 +480,7 @@ public final class o0 {
                                 fArr[1] = Utilities.clamp(f16 - 0.06f, 0.4f, f29);
                                 fArr[2] = Utilities.clamp(fArr[2] - 0.08f, 0.5f, 0.2f);
                                 c10 = 39322;
-                                paint2.setColor(i0.b.a(fArr));
+                                paint2.setColor(i0.a.a(fArr));
                                 n0Var.l = true;
                                 RectF rectF7 = AndroidUtilities.rectTmp;
                                 canvas2.drawRoundRect(rectF7, AndroidUtilities.dp(f11), AndroidUtilities.dp(f11), paint2);
@@ -490,7 +490,7 @@ public final class o0 {
                             }
                             c10 = 39322;
                             fArr[2] = Utilities.clamp(fArr[2] - 0.1f, 0.6f, 0.3f);
-                            paint2.setColor(i0.b.a(fArr));
+                            paint2.setColor(i0.a.a(fArr));
                             n0Var.l = true;
                             RectF rectF72 = AndroidUtilities.rectTmp;
                             canvas2.drawRoundRect(rectF72, AndroidUtilities.dp(f11), AndroidUtilities.dp(f11), paint2);
@@ -541,7 +541,7 @@ public final class o0 {
                         float l10 = (f35 - (d11Var2.l() + AndroidUtilities.dp(drawable != null ? 17.0f : f11))) / f13;
                         float dp6 = AndroidUtilities.dp(54.0f) + AndroidUtilities.dp(4.165f);
                         if (drawable != null) {
-                            drawable.setBounds((int) ((z10 ? d11Var2.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) wh.y(drawable.getIntrinsicHeight(), f13, 0.625f, dp6), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + d11Var2.l() : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) a1.g.d(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp6));
+                            drawable.setBounds((int) ((z10 ? d11Var2.l() + AndroidUtilities.dp(1.33f) : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) kk.x(drawable.getIntrinsicHeight(), f13, 0.625f, dp6), (int) ((drawable.getIntrinsicWidth() * 0.625f) + (z10 ? AndroidUtilities.dp(1.33f) + d11Var2.l() : 0.0f) + l10 + AndroidUtilities.dp(3.0f)), (int) a1.g.d(drawable.getIntrinsicHeight(), 2.0f, 0.625f, dp6));
                             drawable.draw(canvas2);
                         }
                         float dp7 = AndroidUtilities.dp(!z10 ? 12.66f : 4.0f) + l10;
@@ -587,10 +587,10 @@ public final class o0 {
                     path2.addCircle((f38 / 2.0f) + f37, (AndroidUtilities.dp(54.0f) / 2.0f) + AndroidUtilities.dp(10.0f), AndroidUtilities.dp(54.0f) / 2.0f, direction);
                     float f39 = f38 * 0.4f;
                     RectF rectF9 = AndroidUtilities.rectTmp;
-                    rectF9.set(com.google.android.gms.internal.cast.a6.z(f38, f39, 2.0f, f37), AndroidUtilities.dp(69.0f), org.telegram.messenger.q.a(f38, f39, 2.0f, f37), AndroidUtilities.dp(79.0f));
+                    rectF9.set(com.google.android.gms.internal.play_billing.k3.z(f38, f39, 2.0f, f37), AndroidUtilities.dp(69.0f), org.telegram.messenger.g0.a(f38, f39, 2.0f, f37), AndroidUtilities.dp(79.0f));
                     path2.addRoundRect(rectF9, AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), direction);
                     float f40 = f38 * 0.35f;
-                    rectF9.set(com.google.android.gms.internal.cast.a6.z(f38, f40, 2.0f, f37), AndroidUtilities.dp(83.0f), org.telegram.messenger.q.a(f38, f40, 2.0f, f37), AndroidUtilities.dp(91.0f));
+                    rectF9.set(com.google.android.gms.internal.play_billing.k3.z(f38, f40, 2.0f, f37), AndroidUtilities.dp(83.0f), org.telegram.messenger.g0.a(f38, f40, 2.0f, f37), AndroidUtilities.dp(91.0f));
                     path2.addRoundRect(rectF9, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), direction);
                 }
                 if (this.s == null) {

@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class q90 extends LinearLayout {
     public n90 E;
@@ -87,7 +87,7 @@ public class q90 extends LinearLayout {
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setSingleLine(true);
-        TextView i10 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView2, w7.z5.p(0, 42, 1.0f, 0, 4, 0, 4, 0), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView2, w7.z5.p(0, 42, 1.0f, 0, 4, 0, 4, 0), context);
         this.f = i10;
         w7.b6.b(i10, 0.025f, 1.2f);
         i10.setGravity(17);
@@ -101,7 +101,7 @@ public class q90 extends LinearLayout {
         i10.setTextSize(1, 14.0f);
         i10.setTypeface(AndroidUtilities.bold());
         i10.setSingleLine(true);
-        TextView i11 = com.google.android.gms.internal.cast.a6.i(linearLayout, i10, w7.z5.m(1.0f, 0, 42, 4, 4, 0), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, i10, w7.z5.m(1.0f, 0, 42, 4, 4, 0), context);
         this.h = i11;
         w7.b6.b(i11, 0.025f, 1.2f);
         i11.setGravity(17);
@@ -326,11 +326,11 @@ public class q90 extends LinearLayout {
         textView2.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, x07, x08, x08));
         int dp3 = AndroidUtilities.dp(21.0f);
         int x09 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ka, false);
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
         textView3.setBackground(org.telegram.ui.ActionBar.h6.j0(dp3, dp3, dp3, dp3, x09, o10, o10));
         int dp4 = AndroidUtilities.dp(21.0f);
         int x010 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.e7, false);
-        int o11 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 76);
+        int o11 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 76);
         this.n.setBackground(org.telegram.ui.ActionBar.h6.j0(dp4, dp4, dp4, dp4, x010, o11, o11));
         this.a.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
         this.d.setColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.r5, false));
@@ -339,7 +339,7 @@ public class q90 extends LinearLayout {
         int i13 = org.telegram.ui.ActionBar.h6.n6;
         textView4.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
         int dp5 = AndroidUtilities.dp(6.0f);
-        int o12 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i13, false), 76);
+        int o12 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i13, false), 76);
         w1Var.setBackground(org.telegram.ui.ActionBar.h6.j0(dp5, dp5, dp5, dp5, 0, o12, o12));
         n90 n90Var = this.E;
         if (n90Var != null) {

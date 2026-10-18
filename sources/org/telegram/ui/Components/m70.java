@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m70 extends h71 {
     public float f;
@@ -65,8 +65,8 @@ public final class m70 extends h71 {
         }
         canvas.save();
         canvas.clipRect(0.0f, view.getY() - AndroidUtilities.dp(4.0f), getMeasuredWidth(), view.getY() + v70Var.k0 + 1.0f);
-        canvas.drawColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), (int) (v70Var.h0 * 255.0f)));
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d7, false), (int) (v70Var.h0 * 255.0f));
+        canvas.drawColor(i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), (int) (v70Var.h0 * 255.0f)));
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d7, false), (int) (v70Var.h0 * 255.0f));
         Paint paint = this.n;
         paint.setColor(o10);
         canvas.drawRect(0.0f, view.getY() + v70Var.k0, getMeasuredWidth(), view.getY() + v70Var.k0 + 1.0f, paint);

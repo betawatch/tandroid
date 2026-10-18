@@ -19,7 +19,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g50 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final TextView[] b;
@@ -45,7 +45,7 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         setCustomView(frameLayout);
         TextView textView = new TextView(context);
-        org.telegram.messenger.wh.k(20.0f, 1, textView);
+        org.telegram.messenger.kk.k(20.0f, 1, textView);
         int i10 = org.telegram.ui.ActionBar.h6.j5;
         textView.setTextColor(getThemedColor(i10));
         textView.setSingleLine(true);
@@ -105,7 +105,7 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         textView3.setEllipsize(truncateAt);
         textView3.setGravity(17);
         textView3.setTextColor(org.telegram.ui.ActionBar.h6.w0(i12, d6Var));
-        com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView3);
+        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView3);
         linearLayout.addView(textView3, w7.z5.t(-2, -2, 16, 10, 0, 0, 0));
         this.h = f50Var;
         f50Var.setBackground(null);

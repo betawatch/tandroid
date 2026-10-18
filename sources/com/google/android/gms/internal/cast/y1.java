@@ -4,7 +4,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class y1 extends f5 {
     private static final y1 zzb;
@@ -24,11 +24,11 @@ public final class y1 extends f5 {
     }
 
     public y1() {
-        h6 h6Var = h6.d;
-        this.zzh = h6Var;
-        this.zzi = h6Var;
-        this.zzj = h6Var;
-        this.zzk = h6Var;
+        g6 g6Var = g6.d;
+        this.zzh = g6Var;
+        this.zzi = g6Var;
+        this.zzj = g6Var;
+        this.zzk = g6Var;
     }
 
     public static x1 l() {
@@ -62,7 +62,7 @@ public final class y1 extends f5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String k10 = i0.a.k(list.size() - size, "Element at index ", " is null.");
+                String k10 = i2.d.k(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
@@ -94,7 +94,7 @@ public final class y1 extends f5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String k10 = i0.a.k(list.size() - size, "Element at index ", " is null.");
+                String k10 = i2.d.k(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
@@ -126,7 +126,7 @@ public final class y1 extends f5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String k10 = i0.a.k(list.size() - size, "Element at index ", " is null.");
+                String k10 = i2.d.k(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
@@ -158,7 +158,7 @@ public final class y1 extends f5 {
             Object obj = arrayList.get(i10);
             i10++;
             if (obj == null) {
-                String k10 = i0.a.k(list.size() - size, "Element at index ", " is null.");
+                String k10 = i2.d.k(list.size() - size, "Element at index ", " is null.");
                 int size3 = list.size();
                 while (true) {
                     size3--;
@@ -180,7 +180,7 @@ public final class y1 extends f5 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new i6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0004\u0000\u0001ဉ\u0000\u0002စ\u0001\u0003᠌\u0002\u0004\u001b\u0005\u001b\u0006\u001b\u0007\u001b", new Object[]{"zzd", "zze", "zzf", "zzg", z0.v, "zzh", w1.class, "zzi", u1.class, "zzj", c2.class, "zzk", a2.class});
+            return new h6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0004\u0000\u0001ဉ\u0000\u0002စ\u0001\u0003᠌\u0002\u0004\u001b\u0005\u001b\u0006\u001b\u0007\u001b", new Object[]{"zzd", "zze", "zzf", "zzg", z0.v, "zzh", w1.class, "zzi", u1.class, "zzj", c2.class, "zzk", a2.class});
         }
         if (i11 == 3) {
             return new y1();

@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.j9;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m1 extends FrameLayout {
     public final d6 a;
@@ -111,7 +111,7 @@ public final class m1 extends FrameLayout {
         if (isEmpty) {
             textViewArr[1].setText(LocaleController.formatPluralStringSpaced("HashtagMessagesFound", i10));
         } else {
-            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, r.c.g("@", str2)), h6.w0(h6.Oh, this.a), null));
+            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, r4.c.h("@", str2)), h6.w0(h6.Oh, this.a), null));
         }
         this.d[1].setText(LocaleController.formatString(R.string.HashtagMessagesFoundSubtitle, str));
     }

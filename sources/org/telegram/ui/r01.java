@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class r01 extends FrameLayout {
     public final Matrix E;
@@ -66,14 +66,14 @@ public final class r01 extends FrameLayout {
             this.e = peerColor.getBgColor1(org.telegram.ui.ActionBar.h6.I.q());
             int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.h6.I.q());
             this.f = bgColor2;
-            profileActivity.d1 = i0.b.f(0.25f, this.e, bgColor2);
+            profileActivity.d1 = i0.a.f(0.25f, this.e, bgColor2);
             int i10 = peerColor.patternColor;
             if (i10 != 0) {
                 this.G = i10;
                 this.H = org.telegram.ui.ActionBar.h6.m1(0.45f, i10);
             } else {
-                this.G = jp0.w0(this.e);
-                this.H = org.telegram.ui.ActionBar.h6.m1(0.15f, jp0.w0(this.e));
+                this.G = kp0.w0(this.e);
+                this.H = org.telegram.ui.ActionBar.h6.m1(0.15f, kp0.w0(this.e));
             }
         } else {
             profileActivity.d1 = this.a;
@@ -86,8 +86,8 @@ public final class r01 extends FrameLayout {
                 this.G = org.telegram.ui.ActionBar.h6.m1(0.5f, org.telegram.ui.ActionBar.h6.b(0.02f, 0.25f, org.telegram.ui.ActionBar.h6.w0(i11, profileActivity.A0)));
                 this.H = org.telegram.ui.ActionBar.h6.m1(0.35f, org.telegram.ui.ActionBar.h6.b(0.02f, 0.25f, org.telegram.ui.ActionBar.h6.w0(i11, profileActivity.A0)));
             } else {
-                this.G = jp0.w0(org.telegram.ui.ActionBar.h6.w0(i11, profileActivity.A0));
-                this.H = org.telegram.ui.ActionBar.h6.m1(0.15f, jp0.w0(org.telegram.ui.ActionBar.h6.w0(i11, profileActivity.A0)));
+                this.G = kp0.w0(org.telegram.ui.ActionBar.h6.w0(i11, profileActivity.A0));
+                this.H = org.telegram.ui.ActionBar.h6.m1(0.15f, kp0.w0(org.telegram.ui.ActionBar.h6.w0(i11, profileActivity.A0)));
             }
         }
         if (!z10) {
@@ -211,7 +211,7 @@ public final class r01 extends FrameLayout {
                     kVar4 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
                     float f13 = kVar4.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0.0f;
                     kVar5 = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
-                    float z13 = com.google.android.gms.internal.cast.a6.z(kVar5.getHeight(), f13, 2.0f, profileActivity.U3() + f13);
+                    float z13 = com.google.android.gms.internal.play_billing.k3.z(kVar5.getHeight(), f13, 2.0f, profileActivity.U3() + f13);
                     int measuredWidth = getMeasuredWidth();
                     float y3 = profileActivity.y3();
                     m0 m0Var = profileActivity.Y;

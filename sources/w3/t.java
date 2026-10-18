@@ -4,7 +4,7 @@ import e2.m0;
 import org.telegram.tgnet.TLObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t {
     public final q a;
@@ -51,7 +51,7 @@ public final class t {
         int length = iArr.length - 1;
         int i11 = -1;
         while (i10 <= length) {
-            int C = i0.a.C(length, i10, 2, i10);
+            int C = i2.d.C(length, i10, 2, i10);
             if (jArr[iArr[C]] <= j10) {
                 i10 = C + 1;
                 i11 = C;
@@ -84,7 +84,7 @@ public final class t {
         int i10 = 0;
         int i11 = -1;
         while (i10 <= length) {
-            int C = i0.a.C(length, i10, 2, i10);
+            int C = i2.d.C(length, i10, 2, i10);
             if (jArr[iArr[C]] >= j10) {
                 length = C - 1;
                 i11 = C;

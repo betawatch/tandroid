@@ -1,6 +1,6 @@
 package hg;
 
-import ai.rb;
+import ai.sb;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -46,7 +46,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.v40;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b2 implements MediaDataController.KeywordResultCallback, e2.o, org.telegram.ui.ActionBar.a2, m4.o0, e2.j, NativeInstance.PayloadCallback, Utilities.Callback3Return, t5.b {
     public final /* synthetic */ int a;
@@ -278,9 +278,9 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.d0;
-                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((n2) i0.a.h(1, arrayList))) {
+                if (!arrayList.isEmpty() && AndroidUtilities.isMapsInstalled((n2) i2.d.h(1, arrayList))) {
                     pc0 pc0Var = new pc0(0);
-                    pc0Var.F0 = new i2.q(hashMap, this.b, 12);
+                    pc0Var.F0 = new i2.r(hashMap, this.b, 12);
                     launchActivity.t0(pc0Var);
                     break;
                 }
@@ -310,7 +310,7 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
     @Override // t5.b
     public Object j() {
         ea.b bVar = (ea.b) this.c;
-        ((g3) bVar.d).U((l5.i) this.d, this.b + 1, false);
+        ((g3) bVar.d).P((l5.i) this.d, this.b + 1, false);
         return null;
     }
 
@@ -374,7 +374,7 @@ public final /* synthetic */ class b2 implements MediaDataController.KeywordResu
         TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = new TLRPC.TL_stickers_addStickerToSet();
         tL_stickers_addStickerToSet.stickerset = MediaDataController.getInputStickerSet(tL_messages_stickerSet.set);
         tL_stickers_addStickerToSet.sticker = MediaDataController.getInputStickerSetItem(document, str);
-        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_stickers_addStickerToSet, new rb(b2Var, i10, document, obj, tL_stickers_addStickerToSet, 8));
+        ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_stickers_addStickerToSet, new sb(b2Var, i10, document, obj, tL_stickers_addStickerToSet, 8));
         try {
             b2Var.q(350L);
         } catch (Exception unused) {

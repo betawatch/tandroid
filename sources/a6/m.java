@@ -75,7 +75,7 @@ import v7.j5;
 import v7.r8;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class m implements bl0, a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, u0, OnSuccessListener, n, ee.b, v1, j1, r, gb.n, z1 {
     public final /* synthetic */ int a;
@@ -253,7 +253,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         } else {
             qVar.l0.k = null;
         }
-        if (qVar.Q() && new androidx.biometric.e(new k6.h(k10, 1)).i(255) != 0) {
+        if (qVar.Q() && new androidx.biometric.e(new k6.h(k10, 1)).h(255) != 0) {
             qVar.l0.n = true;
             qVar.S();
         } else if (qVar.l0.p) {
@@ -290,7 +290,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         int i14 = 0;
         for (int i15 = 0; i15 < i13; i15++) {
             for (int i16 = 0; i16 < i13; i16++) {
-                if (i0.a.a(i12, i15, i16)) {
+                if (i2.d.a(i12, i15, i16)) {
                     bVar2.a(i16, i15);
                 }
             }
@@ -666,12 +666,9 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         return new String[]{"WEB_MESSAGE_LISTENER", "WEB_MESSAGE_ARRAY_BUFFER"};
     }
 
-    public Boolean h() {
-        Bundle bundle = (Bundle) this.b;
-        if (bundle.containsKey("firebase_sessions_enabled")) {
-            return Boolean.valueOf(bundle.getBoolean("firebase_sessions_enabled"));
-        }
-        return null;
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ boolean h() {
+        return true;
     }
 
     @Override // androidx.activity.result.b
@@ -715,9 +712,19 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // org.telegram.ui.Components.bl0
-    public /* synthetic */ boolean j() {
-        return true;
+    @Override // g6.n
+    public void j(String str, long j10, long j11, long j12) {
+        e6.o oVar = (e6.o) this.b;
+        try {
+            oVar.a(new e6.n(new Status(2103, null, null, null), 1));
+        } catch (IllegalStateException e) {
+            g6.b bVar = e6.h.k;
+            Log.e(bVar.a, bVar.d("Result already set when calling onRequestReplaced", new Object[0]), e);
+        }
+        Iterator it = oVar.q.i.iterator();
+        while (it.hasNext()) {
+            ((e6.g) it.next()).h(str, j10, 2103, j11, j12);
+        }
     }
 
     @Override // org.telegram.ui.Components.bl0
@@ -820,28 +827,13 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         j5.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
     }
 
-    @Override // g6.n
-    public void p(String str, long j10, long j11, long j12) {
-        e6.o oVar = (e6.o) this.b;
-        try {
-            oVar.a(new e6.n(new Status(2103, null, null, null), 1));
-        } catch (IllegalStateException e) {
-            g6.b bVar = e6.h.k;
-            Log.e(bVar.a, bVar.d("Result already set when calling onRequestReplaced", new Object[0]), e);
-        }
-        Iterator it = oVar.q.i.iterator();
-        while (it.hasNext()) {
-            ((e6.g) it.next()).h(str, j10, 2103, j11, j12);
-        }
-    }
-
     /* JADX WARN: Removed duplicated region for block: B:21:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
     @Override // ee.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object r(ee.c cVar, md.c cVar2) {
+    public Object p(ee.c cVar, md.c cVar2) {
         ee.a aVar;
         int i10;
         Throwable th2;
@@ -904,7 +896,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public /* synthetic */ boolean s() {
+    public /* synthetic */ boolean r() {
         return false;
     }
 
@@ -913,7 +905,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void t(String str, long j10, int i10, Object obj, long j11, long j12) {
+    public void s(String str, long j10, int i10, Object obj, long j11, long j12) {
         int i11;
         Iterator it;
         e6.o oVar = (e6.o) this.b;
@@ -944,6 +936,14 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
             ((e6.g) it.next()).h(str, j10, i11, j11, j12);
             i11 = i10;
         }
+    }
+
+    public Boolean t() {
+        Bundle bundle = (Bundle) this.b;
+        if (bundle.containsKey("firebase_sessions_enabled")) {
+            return Boolean.valueOf(bundle.getBoolean("firebase_sessions_enabled"));
+        }
+        return null;
     }
 
     public void u(e0 e0Var) {

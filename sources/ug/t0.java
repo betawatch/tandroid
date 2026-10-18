@@ -1,30 +1,35 @@
 package ug;
 
-import android.view.View;
+import j$.util.function.BiConsumer$-CC;
+import java.util.List;
+import java.util.function.BiConsumer;
+import org.telegram.ui.Components.bb;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t0 implements View.OnClickListener {
+public final /* synthetic */ class t0 implements BiConsumer {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x0 b;
+    public final /* synthetic */ bb b;
 
-    public /* synthetic */ t0(x0 x0Var, int i10) {
+    public /* synthetic */ t0(bb bbVar, int i10) {
         this.a = i10;
-        this.b = x0Var;
+        this.b = bbVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.util.function.BiConsumer
+    public final void accept(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                x0 x0Var = this.b;
-                x0Var.e0.clear();
-                x0Var.Y.d.b(true);
-                x0Var.c0(true, false);
+                ((y0) this.b).k0.addAll((List) obj2);
                 break;
             default:
-                this.b.X(false);
+                ((uh.f) this.b).b0.addAll((List) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
+        int i10 = this.a;
+        return BiConsumer$-CC.$default$andThen(this, biConsumer);
     }
 }

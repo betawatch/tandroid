@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t5 implements x5 {
     public final x5[] a;
@@ -10,7 +10,7 @@ public final class t5 implements x5 {
     }
 
     @Override // com.google.android.gms.internal.cast.x5
-    public final i6 zzb(Class cls) {
+    public final h6 zzb(Class cls) {
         for (int i10 = 0; i10 < 2; i10++) {
             x5 x5Var = this.a[i10];
             if (x5Var.zzc(cls)) {

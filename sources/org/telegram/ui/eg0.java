@@ -55,7 +55,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBoxSquare;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class eg0 extends org.telegram.ui.Components.ow0 implements AdapterView.OnItemSelectedListener, NotificationCenter.NotificationCenterDelegate {
     public final ArrayList E;
@@ -114,7 +114,7 @@ public final class eg0 extends org.telegram.ui.Components.ow0 implements Adapter
         setGravity(17);
         TextView textView = new TextView(context);
         this.c = textView;
-        com.google.android.gms.internal.cast.a6.m(18.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView);
         textView.setText(LocaleController.getString(fg0Var.F == 2 ? R.string.ChangePhoneNewNumber : R.string.YourNumber));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -606,7 +606,7 @@ public final class eg0 extends org.telegram.ui.Components.ow0 implements Adapter
                         AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(fg0Var7.getParentActivity());
                         alertDialog$Builder2.a.R = LocaleController.getString(R.string.AppName);
                         alertDialog$Builder2.a.T = LocaleController.getString("AccountAlreadyLoggedIn", R.string.AccountAlreadyLoggedIn);
-                        alertDialog$Builder2.k(LocaleController.getString("AccountSwitch", R.string.AccountSwitch), new i2.q(this, i18, 14));
+                        alertDialog$Builder2.k(LocaleController.getString("AccountSwitch", R.string.AccountSwitch), new i2.r(this, i18, 14));
                         alertDialog$Builder2.h(LocaleController.getString("OK", R.string.OK), null);
                         this.V.showDialog(alertDialog$Builder2.a);
                         this.V.k1(false, true);

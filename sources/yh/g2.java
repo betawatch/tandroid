@@ -1,6 +1,6 @@
 package yh;
 
-import ai.fa;
+import ai.ga;
 import ai.k7;
 import ai.m6;
 import ai.v9;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.gx;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g2 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ m2 a;
@@ -55,8 +55,8 @@ public final /* synthetic */ class g2 implements Utilities.Callback5, Utilities.
             if (!m2Var.n) {
                 k7 k7Var = new k7(m2Var.getContext(), m2Var.b, is0Var.c, m2Var.c, null);
                 k7Var.k1 = new b2(m2Var, 2);
-                k7Var.R0 = new org.telegram.ui.web.c0(22, m2Var, savedStarGift);
-                k7Var.C2(savedStarGift, m2Var.e);
+                k7Var.R0 = new org.telegram.ui.web.m(23, m2Var, savedStarGift);
+                k7Var.F2(savedStarGift, m2Var.e);
                 k7Var.show();
                 return;
             }
@@ -161,7 +161,7 @@ public final /* synthetic */ class g2 implements Utilities.Callback5, Utilities.
                                 Object obj8 = arrayList.get(i14);
                                 i14++;
                                 int i15 = size2;
-                                if (fa.k((TL_stars.SavedStarGift) obj8, savedStarGift)) {
+                                if (ga.k((TL_stars.SavedStarGift) obj8, savedStarGift)) {
                                     linearLayout = linearLayout2;
                                     z12 = z14;
                                     break;
@@ -240,30 +240,30 @@ public final /* synthetic */ class g2 implements Utilities.Callback5, Utilities.
                         } else {
                             str2 = str;
                         }
-                        if (k7.b2(i10, DialogObject.getPeerDialogId(tL_starGiftUnique.owner_id))) {
-                            boolean c22 = k7.c2(i10, tL_starGiftUnique);
+                        if (k7.c2(i10, DialogObject.getPeerDialogId(tL_starGiftUnique.owner_id))) {
+                            boolean d22 = k7.d2(i10, tL_starGiftUnique);
                             final int i17 = 0;
-                            I.c(c22 ? R.drawable.menu_takeoff : R.drawable.menu_wear, LocaleController.getString(c22 ? R.string.Gift2Unwear : R.string.Gift2Wear), new Runnable() { // from class: yh.c2
+                            I.c(d22 ? R.drawable.menu_takeoff : R.drawable.menu_wear, LocaleController.getString(d22 ? R.string.Gift2Unwear : R.string.Gift2Wear), new Runnable() { // from class: yh.c2
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i17) {
                                         case 0:
                                             m2 m2Var5 = m2Var2;
                                             l2 l2Var = new l2(m2Var5, m2Var5.getContext(), m2Var5.b, m2Var5.a.c, m2Var5.c, 0);
-                                            l2Var.C2(savedStarGift, null);
-                                            l2Var.N2(false);
+                                            l2Var.F2(savedStarGift, null);
+                                            l2Var.P2(false);
                                             break;
                                         case 1:
                                             m2 m2Var6 = m2Var2;
                                             l2 l2Var2 = new l2(m2Var6, m2Var6.getContext(), m2Var6.b, m2Var6.a.c, m2Var6.c, 1);
-                                            l2Var2.C2(savedStarGift, null);
-                                            l2Var2.f2();
+                                            l2Var2.F2(savedStarGift, null);
+                                            l2Var2.g2();
                                             break;
                                         default:
                                             m2 m2Var7 = m2Var2;
                                             l2 l2Var3 = new l2(m2Var7, m2Var7.getContext(), m2Var7.b, m2Var7.a.c, m2Var7.c, 2);
-                                            l2Var3.C2(savedStarGift, null);
-                                            l2Var3.o2();
+                                            l2Var3.F2(savedStarGift, null);
+                                            l2Var3.q2();
                                             break;
                                     }
                                 }
@@ -278,20 +278,20 @@ public final /* synthetic */ class g2 implements Utilities.Callback5, Utilities.
                                     case 0:
                                         m2 m2Var5 = m2Var2;
                                         l2 l2Var = new l2(m2Var5, m2Var5.getContext(), m2Var5.b, m2Var5.a.c, m2Var5.c, 0);
-                                        l2Var.C2(savedStarGift, null);
-                                        l2Var.N2(false);
+                                        l2Var.F2(savedStarGift, null);
+                                        l2Var.P2(false);
                                         break;
                                     case 1:
                                         m2 m2Var6 = m2Var2;
                                         l2 l2Var2 = new l2(m2Var6, m2Var6.getContext(), m2Var6.b, m2Var6.a.c, m2Var6.c, 1);
-                                        l2Var2.C2(savedStarGift, null);
-                                        l2Var2.f2();
+                                        l2Var2.F2(savedStarGift, null);
+                                        l2Var2.g2();
                                         break;
                                     default:
                                         m2 m2Var7 = m2Var2;
                                         l2 l2Var3 = new l2(m2Var7, m2Var7.getContext(), m2Var7.b, m2Var7.a.c, m2Var7.c, 2);
-                                        l2Var3.C2(savedStarGift, null);
-                                        l2Var3.o2();
+                                        l2Var3.F2(savedStarGift, null);
+                                        l2Var3.q2();
                                         break;
                                 }
                             }
@@ -305,7 +305,7 @@ public final /* synthetic */ class g2 implements Utilities.Callback5, Utilities.
                             I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new b2(m2Var2, 3), z10);
                         }
                     }
-                    if (k7.b2(i10, is0Var2.c)) {
+                    if (k7.c2(i10, is0Var2.c)) {
                         boolean z16 = savedStarGift.unsaved;
                         I.c(z16 ? R.drawable.msg_message : R.drawable.menu_hide_gift, LocaleController.getString(z16 ? R.string.Gift2ShowGift : R.string.Gift2HideGift), new t1(m2Var2, savedStarGift, h1Var2, 2), z10);
                     }
@@ -319,20 +319,20 @@ public final /* synthetic */ class g2 implements Utilities.Callback5, Utilities.
                                     case 0:
                                         m2 m2Var5 = m2Var2;
                                         l2 l2Var = new l2(m2Var5, m2Var5.getContext(), m2Var5.b, m2Var5.a.c, m2Var5.c, 0);
-                                        l2Var.C2(savedStarGift, null);
-                                        l2Var.N2(false);
+                                        l2Var.F2(savedStarGift, null);
+                                        l2Var.P2(false);
                                         break;
                                     case 1:
                                         m2 m2Var6 = m2Var2;
                                         l2 l2Var2 = new l2(m2Var6, m2Var6.getContext(), m2Var6.b, m2Var6.a.c, m2Var6.c, 1);
-                                        l2Var2.C2(savedStarGift, null);
-                                        l2Var2.f2();
+                                        l2Var2.F2(savedStarGift, null);
+                                        l2Var2.g2();
                                         break;
                                     default:
                                         m2 m2Var7 = m2Var2;
                                         l2 l2Var3 = new l2(m2Var7, m2Var7.getContext(), m2Var7.b, m2Var7.a.c, m2Var7.c, 2);
-                                        l2Var3.C2(savedStarGift, null);
-                                        l2Var3.o2();
+                                        l2Var3.F2(savedStarGift, null);
+                                        l2Var3.q2();
                                         break;
                                 }
                             }

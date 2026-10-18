@@ -16,7 +16,7 @@ import org.telegram.messenger.SecureDocument;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class vm0 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public final TextView a;
@@ -41,7 +41,7 @@ public final class vm0 extends FrameLayout implements DownloadController.FileDow
         addView(w9Var, w7.z5.a(48.0f, 21.0f, 8.0f, 21.0f, 0.0f, 48, (LocaleController.isRTL ? 5 : 3) | 48));
         TextView textView = new TextView(activity);
         this.a = textView;
-        org.telegram.messenger.wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+        org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -153,7 +153,7 @@ public final class vm0 extends FrameLayout implements DownloadController.FileDow
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.wh.D(64.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.kk.C(64.0f, 1, TLObject.FLAG_30));
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener

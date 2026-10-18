@@ -32,7 +32,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class h81 extends View implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -43,7 +43,7 @@ public abstract class h81 extends View implements NotificationCenter.Notificatio
     public final Paint J;
     public final RectF K;
     public final Matrix L;
-    public final org.telegram.ui.zq0 M;
+    public final org.telegram.ui.ar0 M;
     public org.telegram.ui.qt0 N;
     public double O;
     public boolean P;
@@ -76,7 +76,7 @@ public abstract class h81 extends View implements NotificationCenter.Notificatio
     public final Drawable x;
     public String y;
 
-    public h81(Context context, org.telegram.ui.zq0 zq0Var) {
+    public h81(Context context, org.telegram.ui.ar0 ar0Var) {
         super(context);
         this.n = -1;
         TextPaint textPaint = new TextPaint(1);
@@ -92,7 +92,7 @@ public abstract class h81 extends View implements NotificationCenter.Notificatio
         this.x = context.getResources().getDrawable(R.drawable.videopreview);
         textPaint.setTextSize(AndroidUtilities.dp(13.0f));
         textPaint.setColor(-1);
-        this.M = zq0Var;
+        this.M = ar0Var;
         ImageReceiver imageReceiver = new ImageReceiver();
         this.Q = imageReceiver;
         imageReceiver.setParentView(this);

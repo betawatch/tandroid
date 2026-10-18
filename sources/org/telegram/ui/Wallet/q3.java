@@ -1,66 +1,48 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.f61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q3 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ei.d b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 d;
+public final /* synthetic */ class q3 implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ m5 a;
 
-    public /* synthetic */ q3(ei.d dVar, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
-        this.a = i10;
-        this.b = dVar;
-        this.c = f3Var;
-        this.d = d6Var;
+    public /* synthetic */ q3(m5 m5Var) {
+        this.a = m5Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        String str = (String) obj;
-        switch (this.a) {
-            case 0:
-                this.b.setLoading(false);
-                boolean isEmpty = TextUtils.isEmpty(str);
-                org.telegram.ui.ActionBar.f3 f3Var = this.c;
-                if (!isEmpty) {
-                    new xc(f3Var.topBulletinContainer, this.d).e0(str, false);
-                    break;
-                } else {
-                    f3Var.dismiss();
-                    break;
-                }
-            case 1:
-                this.b.setLoading(false);
-                org.telegram.ui.ActionBar.f3 f3Var2 = this.c;
-                if (str == null) {
-                    f3Var2.dismiss();
-                    break;
-                } else {
-                    new xc(f3Var2.topBulletinContainer, this.d).e0(str, false);
-                    break;
-                }
-            default:
-                org.telegram.ui.ActionBar.f3 f3Var3 = this.c;
-                if (str == null) {
-                    this.b.setLoading(false);
-                    f3Var3.dismiss();
-                    break;
-                } else {
-                    new xc(f3Var3.topBulletinContainer, this.d).e0(str, false);
-                    break;
-                }
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        m5 m5Var = this.a;
+        m5Var.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            m5Var.getParentActivity().startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    public /* synthetic */ q3(org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.d6 d6Var, ei.d dVar) {
-        this.a = 2;
-        this.c = f3Var;
-        this.d = d6Var;
-        this.b = dVar;
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(this.a.X((f61) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        this.a.W((f61) obj, (View) obj2);
     }
 }

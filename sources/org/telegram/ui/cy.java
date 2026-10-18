@@ -15,7 +15,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cy extends s4.v {
     public s4.b1 d;
@@ -313,10 +313,10 @@ public final class cy extends s4.v {
             return;
         }
         eyVar.W0 = r2Var;
-        i2.y yVar = new i2.y(this, dialog, dyVar.d.h(), b1Var.b(), 5);
+        i2.z zVar = new i2.z(this, dialog, dyVar.d.h(), b1Var.b(), 5);
         eyVar.y4(true, true);
         if (Utilities.random.nextInt(MediaDataController.MAX_STYLE_RUNS_COUNT) != 1) {
-            yVar.run();
+            zVar.run();
             return;
         }
         if (eyVar.V0 == null) {
@@ -333,7 +333,7 @@ public final class cy extends s4.v {
             eyVar.V0 = ud0Var;
         }
         org.telegram.ui.Components.ud0 ud0Var2 = eyVar.V0;
-        ud0Var2.d = yVar;
+        ud0Var2.d = zVar;
         ud0Var2.h = 0.0f;
         ud0Var2.g = 0.0f;
         ud0Var2.e = System.currentTimeMillis();

@@ -1,6 +1,6 @@
 package tc;
 
-import ai.wb;
+import ai.xb;
 import b2.u0;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -15,10 +15,11 @@ import java.util.TreeMap;
 import ki.t1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Wallet.z0;
 import org.telegram.ui.web.l1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -81,7 +82,7 @@ public final class u {
                     z0 z0Var = (z0) obj;
                     try {
                         try {
-                            AndroidUtilities.runOnUIThread(new wb(z0Var, (u) bVar.b, z0Var.a, z0Var.b, 16));
+                            AndroidUtilities.runOnUIThread(new xb(z0Var, (u) bVar.b, z0Var.a, z0Var.b, 16));
                         } catch (Throwable unused) {
                             z0Var.getClass();
                         }
@@ -320,7 +321,7 @@ public final class u {
                 if (str2 != null && str2.length() != 0) {
                     arrayList.add(new String[]{"Authorization", "Basic " + d.a(k.a(str2))});
                 }
-                StringBuilder i12 = r.c.i(p5, "\r\n");
+                StringBuilder i12 = r4.c.i(p5, "\r\n");
                 int size = arrayList.size();
                 int i13 = 0;
                 int i14 = 0;
@@ -431,7 +432,7 @@ public final class u {
                                                         throw new n(14, "The opening handshake response does not contain 'Sec-WebSocket-Accept' header.", aVar);
                                                     }
                                                     try {
-                                                        if (!d.a(MessageDigest.getInstance("SHA-1").digest(k.a(r.c.u(a2, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
+                                                        if (!d.a(MessageDigest.getInstance("SHA-1").digest(k.a(r4.c.u(a2, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
                                                             throw new n(15, "The value of 'Sec-WebSocket-Accept' header is different from the expected one.", aVar);
                                                         }
                                                     } catch (Exception unused5) {
@@ -511,14 +512,14 @@ public final class u {
                                                                             }
                                                                             wVar2 = wVar;
                                                                             if (wVar2 != null) {
-                                                                                throw new n(16, r.c.g("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), aVar);
+                                                                                throw new n(16, r4.c.h("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), aVar);
                                                                             }
                                                                             String str6 = wVar2.a;
                                                                             h hVar2 = ((u) t1Var.b).c;
                                                                             if (str6 == null) {
                                                                                 hVar2.getClass();
                                                                             }
-                                                                            throw new n(17, r.c.g("The extension contained in the Sec-WebSocket-Extensions header is not supported: ", str6), aVar);
+                                                                            throw new n(17, r4.c.h("The extension contained in the Sec-WebSocket-Extensions header is not supported: ", str6), aVar);
                                                                         }
                                                                     }
                                                                 }
@@ -535,7 +536,7 @@ public final class u {
                                                             w wVar4 = (w) obj3;
                                                             if (wVar4 instanceof o) {
                                                                 if (wVar3 != null) {
-                                                                    throw new n(18, r.c.h("'", wVar3.a, "' extension and '", wVar4.a, "' extension conflict with each other."), aVar);
+                                                                    throw new n(18, c1.k("'", wVar3.a, "' extension and '", wVar4.a, "' extension conflict with each other."), aVar);
                                                                 }
                                                                 wVar3 = wVar4;
                                                             }

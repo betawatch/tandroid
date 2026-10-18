@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wx0 extends FrameLayout {
     public static int G;
@@ -22,7 +22,7 @@ public final class wx0 extends FrameLayout {
     public boolean d;
     public final w9 e;
     public final ImageView f;
-    public final ai.ud h;
+    public final ai.vd h;
     public final View n;
     public boolean r;
     public final int s;
@@ -60,16 +60,16 @@ public final class wx0 extends FrameLayout {
             addView(w9Var2, w7.z5.e(26, 26, 17));
             this.n = w9Var2;
         }
-        ai.ud udVar = new ai.ud(context, 25);
-        this.h = udVar;
-        udVar.addOnLayoutChangeListener(new y70(this, 1));
-        udVar.setLines(1);
-        udVar.setEllipsize(TextUtils.TruncateAt.END);
-        udVar.setTextSize(1, 11.0f);
-        udVar.setGravity(1);
-        udVar.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        addView(udVar, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 10.0f, -1, 81));
-        udVar.setVisibility(8);
+        ai.vd vdVar = new ai.vd(context, 25);
+        this.h = vdVar;
+        vdVar.addOnLayoutChangeListener(new y70(this, 1));
+        vdVar.setLines(1);
+        vdVar.setEllipsize(TextUtils.TruncateAt.END);
+        vdVar.setTextSize(1, 11.0f);
+        vdVar.setGravity(1);
+        vdVar.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
+        addView(vdVar, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 10.0f, -1, 81));
+        vdVar.setVisibility(8);
     }
 
     public final void a(float f7) {
@@ -93,10 +93,10 @@ public final class wx0 extends FrameLayout {
         view.setTranslationY((((AndroidUtilities.dp(36.0f - f10) / 2.0f) - (AndroidUtilities.dp(86.0f - f11) / 2.0f)) * f12) - (AndroidUtilities.dp(8.0f) * f7));
         view.setTranslationX(((AndroidUtilities.dp(33.0f - f10) / 2.0f) - (AndroidUtilities.dp(64.0f - f11) / 2.0f)) * f12);
         float max = Math.max(0.0f, (f7 - 0.5f) / 0.5f);
-        ai.ud udVar = this.h;
-        udVar.setAlpha(max);
-        udVar.setTranslationY((-AndroidUtilities.dp(40.0f)) * f12);
-        udVar.setTranslationX((-AndroidUtilities.dp(12.0f)) * f12);
+        ai.vd vdVar = this.h;
+        vdVar.setAlpha(max);
+        vdVar.setTranslationY((-AndroidUtilities.dp(40.0f)) * f12);
+        vdVar.setTranslationX((-AndroidUtilities.dp(12.0f)) * f12);
         view.setPivotX(0.0f);
         view.setPivotY(0.0f);
         float f13 = ((f10 / f11) * f12) + f7;

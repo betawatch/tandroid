@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ir0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int I = 0;
@@ -183,7 +183,7 @@ public final class ir0 extends FrameLayout implements NotificationCenter.Notific
                             this.b = 0;
                             hr0 hr0Var = this.H;
                             if (hr0Var != null) {
-                                ((org.telegram.ui.iv) hr0Var).h(0);
+                                ((org.telegram.ui.jv) hr0Var).h(0);
                                 return;
                             }
                             return;
@@ -264,7 +264,7 @@ public final class ir0 extends FrameLayout implements NotificationCenter.Notific
                     this.b = 0;
                     hr0 hr0Var2 = this.H;
                     if (hr0Var2 != null) {
-                        ((org.telegram.ui.iv) hr0Var2).h(0);
+                        ((org.telegram.ui.jv) hr0Var2).h(0);
                         return;
                     }
                     return;
@@ -321,7 +321,7 @@ public final class ir0 extends FrameLayout implements NotificationCenter.Notific
             if (i11 == i13 || (hr0Var = this.H) == null) {
                 return;
             }
-            ((org.telegram.ui.iv) hr0Var).h(i13);
+            ((org.telegram.ui.jv) hr0Var).h(i13);
             return;
         }
         arrayList = null;
@@ -457,7 +457,7 @@ public final class ir0 extends FrameLayout implements NotificationCenter.Notific
         if (i11 == i15 || (hr0Var = this.H) == null) {
             return;
         }
-        ((org.telegram.ui.iv) hr0Var).h(i15);
+        ((org.telegram.ui.jv) hr0Var).h(i15);
     }
 
     public final void j() {
@@ -490,7 +490,7 @@ public final class ir0 extends FrameLayout implements NotificationCenter.Notific
         gr0VarArr[0].setTranslationY(AndroidUtilities.dp(20.0f));
         ViewPropertyAnimator translationY = gr0VarArr[0].animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).translationY(0.0f);
         bs bsVar = bs.h;
-        org.telegram.messenger.wh.t(translationY, bsVar, 320L);
+        org.telegram.messenger.kk.t(translationY, bsVar, 320L);
         gr0 gr0Var3 = gr0VarArr[1];
         gr0Var3.getClass();
         gr0Var3.animate().scaleX(0.8f).scaleY(0.8f).alpha(0.0f).translationY(-AndroidUtilities.dp(20.0f)).setInterpolator(bsVar).setDuration(320L).withEndAction(new fr0(gr0Var3, 0)).start();

@@ -5,7 +5,7 @@ import java.nio.ByteOrder;
 import java.nio.ShortBuffer;
 import t7.u;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class AudioBufferConverter {
     private static final int BYTES_PER_SHORT = 2;
@@ -18,10 +18,10 @@ public class AudioBufferConverter {
             return;
         }
         if (i10 != 1 && i10 != 2) {
-            throw new UnsupportedOperationException(i0.a.k(i10, "Input channel count (", ") not supported."));
+            throw new UnsupportedOperationException(i2.d.k(i10, "Input channel count (", ") not supported."));
         }
         if (i11 != 1 && i11 != 2) {
-            throw new UnsupportedOperationException(i0.a.k(i11, "Output channel count (", ") not supported."));
+            throw new UnsupportedOperationException(i2.d.k(i11, "Output channel count (", ") not supported."));
         }
     }
 

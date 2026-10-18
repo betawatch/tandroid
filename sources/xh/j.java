@@ -33,12 +33,12 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.f9;
+import org.telegram.ui.Wallet.i9;
 import org.telegram.ui.sn;
 import tg.p;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class j extends Dialog {
     public final /* synthetic */ k E;
     public final int a;
@@ -275,7 +275,7 @@ public final class j extends Dialog {
         int i11 = (-this.f.getTop()) / 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addUpdateListener(new f9(this, width, left, top, width2, i11, 1));
+        ofFloat.addUpdateListener(new i9(this, width, left, top, width2, i11, 1));
         this.s.addListener(new dn0(this, z10, width, i10));
         this.s.setDuration(220L);
         this.s.setInterpolator(bs.f);
@@ -295,7 +295,7 @@ public final class j extends Dialog {
         canvas.save();
         n2 n2Var = this.E.g;
         ((LaunchActivity) n2Var.getParentActivity()).O().getView().draw(canvas);
-        canvas.drawColor(i0.b.o(-16777216, 76));
+        canvas.drawColor(i0.a.o(-16777216, 76));
         Dialog visibleDialog = n2Var.getVisibleDialog();
         if (visibleDialog != null) {
             visibleDialog.getWindow().getDecorView().draw(canvas);

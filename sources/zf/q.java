@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class q {
     public final ArrayList a = new ArrayList();
@@ -25,7 +25,7 @@ public class q {
         tL_messages_messages.messages.add(tL_message);
         ArrayList arrayList = (ArrayList) hVar.f(dialogId);
         if (arrayList == null) {
-            arrayList = org.telegram.messenger.q.j(dialogId, hVar);
+            arrayList = org.telegram.messenger.g0.j(dialogId, hVar);
         }
         arrayList.add(messageObject);
     }

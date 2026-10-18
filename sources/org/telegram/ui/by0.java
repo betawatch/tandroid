@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class by0 implements org.telegram.ui.ActionBar.i6 {
     public final /* synthetic */ int a;
@@ -103,32 +103,32 @@ public final /* synthetic */ class by0 implements org.telegram.ui.ActionBar.i6 {
                     View childAt2 = themeActivity.b.getChildAt(i16);
                     if (childAt2 instanceof org.telegram.ui.Cells.t) {
                         ((org.telegram.ui.Cells.t) childAt2).getAdapter().l();
-                    } else if (childAt2 instanceof oo0) {
-                        ((oo0) childAt2).a();
+                    } else if (childAt2 instanceof po0) {
+                        ((po0) childAt2).a();
                     }
                 }
                 for (int i17 = 0; i17 < themeActivity.b.getCachedChildCount(); i17++) {
                     View P = themeActivity.b.P(i17);
                     if (P instanceof org.telegram.ui.Cells.t) {
                         ((org.telegram.ui.Cells.t) P).getAdapter().l();
-                    } else if (P instanceof oo0) {
-                        ((oo0) P).a();
+                    } else if (P instanceof po0) {
+                        ((po0) P).a();
                     }
                 }
                 for (int i18 = 0; i18 < themeActivity.b.getHiddenChildCount(); i18++) {
                     View V = themeActivity.b.V(i18);
                     if (V instanceof org.telegram.ui.Cells.t) {
                         ((org.telegram.ui.Cells.t) V).getAdapter().l();
-                    } else if (V instanceof oo0) {
-                        ((oo0) V).a();
+                    } else if (V instanceof po0) {
+                        ((po0) V).a();
                     }
                 }
                 while (i11 < themeActivity.b.getAttachedScrapChildCount()) {
                     View O = themeActivity.b.O(i11);
                     if (O instanceof org.telegram.ui.Cells.t) {
                         ((org.telegram.ui.Cells.t) O).getAdapter().l();
-                    } else if (O instanceof oo0) {
-                        ((oo0) O).a();
+                    } else if (O instanceof po0) {
+                        ((po0) O).a();
                     }
                     i11++;
                 }

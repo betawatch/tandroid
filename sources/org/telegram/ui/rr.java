@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class rr implements TextWatcher {
     public final /* synthetic */ int a;
@@ -230,9 +230,9 @@ public final class rr implements TextWatcher {
                 }
                 break;
             default:
-                fo0 fo0Var = (fo0) this.d;
-                if (!fo0Var.n0) {
-                    org.telegram.ui.Components.o40 o40Var2 = (org.telegram.ui.Components.o40) fo0Var.f[9];
+                go0 go0Var = (go0) this.d;
+                if (!go0Var.n0) {
+                    org.telegram.ui.Components.o40 o40Var2 = (org.telegram.ui.Components.o40) go0Var.f[9];
                     int selectionStart4 = o40Var2.getSelectionStart();
                     String obj5 = o40Var2.getText().toString();
                     if (this.b == 3) {
@@ -249,7 +249,7 @@ public final class rr implements TextWatcher {
                         }
                         i33 = i34;
                     }
-                    fo0Var.n0 = true;
+                    go0Var.n0 = true;
                     String hintText4 = o40Var2.getHintText();
                     if (hintText4 != null) {
                         int i35 = 0;
@@ -278,7 +278,7 @@ public final class rr implements TextWatcher {
                         o40Var2.setSelection(Math.min(selectionStart4, o40Var2.length()));
                     }
                     o40Var2.invalidate();
-                    fo0Var.n0 = false;
+                    go0Var.n0 = false;
                     break;
                 }
                 break;

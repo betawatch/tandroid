@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static volatile com.google.firebase.messaging.q b;
@@ -85,7 +85,7 @@ public abstract class a {
         int length;
         int length2;
         int indexOf;
-        String h;
+        String k10;
         int i10 = 0;
         int i11 = 0;
         while (true) {
@@ -95,17 +95,17 @@ public abstract class a {
             }
             Object obj = objArr[i11];
             if (obj == null) {
-                h = "null";
+                k10 = "null";
             } else {
                 try {
-                    h = obj.toString();
+                    k10 = obj.toString();
                 } catch (Exception e) {
-                    String D = a1.g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    h = r.c.h("<", D, " threw ", e.getClass().getName(), ">");
+                    String C = a1.g.C(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(C), (Throwable) e);
+                    k10 = org.telegram.ui.Cells.c1.k("<", C, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i11] = h;
+            objArr[i11] = k10;
             i11++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
@@ -191,7 +191,7 @@ public abstract class a {
                 c10 = c("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(i0.a.j(i11, "negative size: "));
+                    throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
                 }
                 c10 = c("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -365,22 +365,22 @@ public abstract class a {
         switch (b10) {
             case 24:
                 if (j10 < 24) {
-                    throw new z4(r.c.f(j10, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
+                    throw new z4(r4.c.g(j10, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
                 }
                 return;
             case 25:
                 if (j10 < 256) {
-                    throw new z4(r.c.f(j10, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
+                    throw new z4(r4.c.g(j10, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
                 }
                 return;
             case 26:
                 if (j10 < 65536) {
-                    throw new z4(r.c.f(j10, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
+                    throw new z4(r4.c.g(j10, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
                 }
                 return;
             case 27:
                 if (j10 < 4294967296L) {
-                    throw new z4(r.c.f(j10, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
+                    throw new z4(r4.c.g(j10, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
                 }
                 return;
             default:
@@ -401,6 +401,6 @@ public abstract class a {
         if (i11 >= 0) {
             return c("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(i0.a.j(i11, "negative size: "));
+        throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
     }
 }

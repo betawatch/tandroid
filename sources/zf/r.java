@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class r extends q {
     public final void b(int i10, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i11) {
@@ -37,7 +37,7 @@ public final class r extends q {
             a0.h hVar2 = this.c;
             ArrayList arrayList2 = (ArrayList) hVar2.f(dialogId);
             if (arrayList2 == null) {
-                arrayList2 = org.telegram.messenger.q.j(dialogId, hVar2);
+                arrayList2 = org.telegram.messenger.g0.j(dialogId, hVar2);
             }
             arrayList2.add(messageObject);
             i10 = i13;

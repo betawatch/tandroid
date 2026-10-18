@@ -16,7 +16,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.gh;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
                 }
                 if (num.intValue() == 5) {
                     zArr[0] = false;
-                    uc.a(true, new ai.n2(9, f6Var, o5Var));
+                    uc.a(true, new ai.o2(9, f6Var, o5Var));
                     return Boolean.FALSE;
                 }
                 if (num.intValue() == 2) {
@@ -137,7 +137,7 @@ public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
                                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
                                 alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m4.y0(23, e0Var3, tL_aiComposeTone));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m4.w0(24, e0Var3, tL_aiComposeTone));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.o();
                                 break;
@@ -174,7 +174,7 @@ public final /* synthetic */ class e5 implements Utilities.CallbackReturn {
                                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AIEditorDeleteStyle);
                                 alertDialog$Builder.a.T = LocaleController.getString(R.string.AIEditorDeleteStyleText);
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m4.y0(23, e0Var3, tL_aiComposeTone));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new m4.w0(24, e0Var3, tL_aiComposeTone));
                                 alertDialog$Builder.d(-1);
                                 alertDialog$Builder.o();
                                 break;

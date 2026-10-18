@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class is implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class is implements Utilities.Callback2 {
                 TLRPC.TL_chatBannedRights tL_chatBannedRights2 = psVar.v0;
                 if (psVar.b0 != null) {
                     arrayList.add(f61.C(AndroidUtilities.dp(12.0f)));
-                    i0.a.p(R.string.DeleteAdditionalActions, arrayList);
+                    i2.d.p(R.string.DeleteAdditionalActions, arrayList);
                     psVar.U(arrayList, psVar.i0);
                     if (psVar.z0) {
                         osVar.g();
@@ -120,7 +120,7 @@ public final /* synthetic */ class is implements Utilities.Callback2 {
                             m10.K(i11 > 0);
                             m10.t = psVar.T();
                             m10.f = psVar.y0;
-                            m10.D = new ai.ga(psVar, i11, s61Var, 8);
+                            m10.D = new ai.ha(psVar, i11, s61Var, 8);
                             arrayList.add(m10);
                             if (!psVar.y0) {
                                 f61 y11 = f61.y(6, LocaleController.getString(R.string.SendMediaPermissionPhotos));

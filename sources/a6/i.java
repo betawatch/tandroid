@@ -15,6 +15,7 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.widget.TextView;
 import androidx.biometric.f0;
+import androidx.fragment.app.j0;
 import androidx.lifecycle.a0;
 import b2.a2;
 import b5.p;
@@ -24,7 +25,7 @@ import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.internal.i0;
 import com.google.android.gms.common.api.internal.r;
 import com.google.android.gms.common.api.internal.w0;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
@@ -46,7 +47,7 @@ import ei.zb;
 import g.q;
 import gb.n;
 import hg.z1;
-import i2.j0;
+import i2.k0;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -81,7 +82,7 @@ import org.telegram.ui.Components.sq0;
 import org.telegram.ui.Components.xo0;
 import rg.b2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, OnCompleteListener, d9.k, SuccessContinuation, o, zb, f6.a, w, n, z1, je.a, xo0 {
     public static i c;
@@ -313,9 +314,9 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
 
     @Override // a3.n0
     public void U() {
-        j0 j0Var = ((a3.n) this.b).Y;
-        if (j0Var != null) {
-            j0Var.a();
+        k0 k0Var = ((a3.n) this.b).Y;
+        if (k0Var != null) {
+            k0Var.a();
         }
     }
 
@@ -528,7 +529,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
     @Override // androidx.activity.result.b
     public void i(Object obj) {
         Map map = (Map) obj;
-        androidx.fragment.app.j0 j0Var = (androidx.fragment.app.j0) this.b;
+        j0 j0Var = (j0) this.b;
         ArrayList arrayList = new ArrayList(map.values());
         int[] iArr = new int[arrayList.size()];
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -841,7 +842,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
         }
         float f15 = cVar.a;
         float f16 = cVar.b;
-        if (a6.D(cVar2.a, f15, cVar3.b - f16, (cVar2.b - f16) * (cVar3.a - f15)) < 0.0f) {
+        if (k3.D(cVar2.a, f15, cVar3.b - f16, (cVar2.b - f16) * (cVar3.a - f15)) < 0.0f) {
             jc.c cVar10 = cVar3;
             cVar3 = cVar2;
             cVar2 = cVar10;
@@ -886,12 +887,12 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                 f10 = f19;
                 float f24 = (f18 - f16) + f20;
                 float f25 = 1.0f - (3.0f / i41);
-                int x10 = (int) a6.x(f23, f17, f25, f17);
-                int x11 = (int) a6.x(f24, f16, f25, f16);
+                int y3 = (int) k3.y(f23, f17, f25, f17);
+                int y10 = (int) k3.y(f24, f16, f25, f16);
                 f7 = f17;
                 for (int i42 = 4; i42 <= 16; i42 <<= 1) {
                     try {
-                        aVar = cVar4.I(f22, i42, x10, x11);
+                        aVar = cVar4.I(f22, i42, y3, y10);
                         break;
                     } catch (dc.e unused) {
                     }
@@ -987,7 +988,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                     int i51 = i49;
                     float f75 = fArr[i50];
                     jc.c cVar13 = cVar3;
-                    float c13 = r.c.c(f71, f75, f70 * f74, f72);
+                    float c13 = r4.c.c(f71, f75, f70 * f74, f72);
                     fArr[i51] = (((f59 * f75) + (f58 * f74)) + f60) / c13;
                     fArr[i50] = (((f75 * f65) + (f74 * f64)) + f66) / c13;
                     i49 = i51 + 2;
@@ -1127,7 +1128,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                     e12.h = new rb.b(11);
                     rVar = e12;
                     i14 = rVar.a;
-                    if (a6.s((rb.b) rVar.h)) {
+                    if (k3.s((rb.b) rVar.h)) {
                         dc.j jVar = jVarArr2[0];
                         jVarArr2[0] = jVarArr2[2];
                         jVarArr2[2] = jVar;
@@ -1169,7 +1170,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                 e122.h = new rb.b(11);
                 rVar = e122;
                 i14 = rVar.a;
-                if (a6.s((rb.b) rVar.h)) {
+                if (k3.s((rb.b) rVar.h)) {
                 }
                 eVar = new androidx.biometric.e((String) rVar.d, jVarArr2);
                 list = (List) rVar.e;
@@ -1185,7 +1186,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                 return eVar;
             }
             i14 = rVar.a;
-            if (a6.s((rb.b) rVar.h) && jVarArr2.length >= 3) {
+            if (k3.s((rb.b) rVar.h) && jVarArr2.length >= 3) {
                 dc.j jVar2 = jVarArr2[0];
                 jVarArr2[0] = jVarArr2[2];
                 jVarArr2[2] = jVar2;
@@ -1521,6 +1522,11 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
     public void V() {
     }
 
+    public i(JSONObject jSONObject) {
+        this.a = 10;
+        this.b = new c6.o(jSONObject);
+    }
+
     @Override // mg.o
     public void D(boolean z10) {
     }
@@ -1535,11 +1541,6 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
 
     @Override // a3.n0
     public void onVideoSizeChanged(a2 a2Var) {
-    }
-
-    public i(JSONObject jSONObject) {
-        this.a = 10;
-        this.b = new c6.o(jSONObject);
     }
 
     public i(int i10) {

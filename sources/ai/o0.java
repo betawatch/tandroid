@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class o0 extends org.telegram.ui.Components.bb {
     public l0 X;
@@ -28,25 +28,25 @@ public final class o0 extends org.telegram.ui.Components.bb {
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
-        jc jcVar = new jc(context, 70, 0);
-        frameLayout.addView(jcVar, w7.z5.d(-1.0f, -1));
+        kc kcVar = new kc(context, 70, 0);
+        frameLayout.addView(kcVar, w7.z5.d(-1.0f, -1));
         tg.n nVar = new tg.n(context, 1, 2);
         tg.g gVar = nVar.b;
         gVar.z = org.telegram.ui.ActionBar.h6.fk;
         gVar.A = org.telegram.ui.ActionBar.h6.gk;
         gVar.b();
-        nVar.setStarParticlesView(jcVar);
+        nVar.setStarParticlesView(kcVar);
         frameLayout.addView(nVar, w7.z5.a(170.0f, 0.0f, 32.0f, 0.0f, 24.0f, 170, 17));
         nVar.setPaused(false);
         linearLayout.addView(frameLayout, w7.z5.d(150.0f, -1));
         TextView textView = new TextView(context);
-        com.google.android.gms.internal.cast.a6.m(20.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(20.0f, 1, textView);
         int i11 = org.telegram.ui.ActionBar.h6.j5;
-        org.telegram.ui.Cells.t0.q(i11, this.resourcesProvider, textView, 17);
+        org.telegram.ui.Cells.c1.q(i11, this.resourcesProvider, textView, 17);
         textView.setText(LocaleController.getString(R.string.ExplainStarsTitle));
-        TextView i12 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView, w7.z5.t(-2, -2, 1, 0, 2, 0, 0), context);
+        TextView i12 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 1, 0, 2, 0, 0), context);
         i12.setTextSize(1, 14.0f);
-        org.telegram.ui.Cells.t0.q(i11, this.resourcesProvider, i12, 17);
+        org.telegram.ui.Cells.c1.q(i11, this.resourcesProvider, i12, 17);
         i12.setText(LocaleController.getString(R.string.ExplainStarsTitle2));
         linearLayout.addView(i12, w7.z5.t(-1, -2, 1, 16, 9, 16, 18));
         FrameLayout frameLayout2 = new FrameLayout(context);

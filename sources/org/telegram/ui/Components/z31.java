@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z31 extends View {
     public float a;
@@ -78,15 +78,15 @@ public final class z31 extends View {
         if (i10 == 0) {
             float max = (Math.max(0.4f, this.a) - 0.4f) / 0.6f;
             if (max != 0.0f) {
-                float C = (org.telegram.messenger.wh.C(21.0f, 2, getWidth()) * max) + AndroidUtilities.dp(21.0f);
+                float B = (org.telegram.messenger.kk.B(21.0f, 2, getWidth()) * max) + AndroidUtilities.dp(21.0f);
                 float height2 = getHeight() / 2.0f;
-                canvas.drawLine(AndroidUtilities.dp(21.0f), height2, C, height2, paint);
+                canvas.drawLine(AndroidUtilities.dp(21.0f), height2, B, height2, paint);
                 double dp2 = AndroidUtilities.dp(9.0f) * max;
-                float cos = (float) (C - (Math.cos(0.7853981633974483d) * dp2));
+                float cos = (float) (B - (Math.cos(0.7853981633974483d) * dp2));
                 float sin = (float) (Math.sin(0.7853981633974483d) * dp2);
                 canvas2 = canvas;
-                canvas2.drawLine(C, height2, cos, height2 - sin, paint);
-                canvas2.drawLine(C, height2, cos, height2 + sin, paint);
+                canvas2.drawLine(B, height2, cos, height2 - sin, paint);
+                canvas2.drawLine(B, height2, cos, height2 + sin, paint);
             } else {
                 canvas2 = canvas;
             }

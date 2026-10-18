@@ -27,7 +27,7 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.nc0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t2 extends Dialog {
     public ValueAnimator E;
@@ -73,11 +73,11 @@ public final class t2 extends Dialog {
         textView.setTextColor(-1);
         textView.setTextSize(1, 18.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout, textView, z5.a(-2.0f, 18.0f, 8.33f, 18.0f, 0.0f, -1, 55), context);
-        k10.setText(LocaleController.getString(R.string.StoryLinkPreviewSubtitle));
-        k10.setTextColor(-8421505);
-        k10.setTextSize(1, 14.0f);
-        frameLayout.addView(k10, z5.a(-2.0f, 18.0f, 31.0f, 18.0f, 0.0f, -1, 55));
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, z5.a(-2.0f, 18.0f, 8.33f, 18.0f, 0.0f, -1, 55), context);
+        j10.setText(LocaleController.getString(R.string.StoryLinkPreviewSubtitle));
+        j10.setTextColor(-8421505);
+        j10.setTextSize(1, 14.0f);
+        frameLayout.addView(j10, z5.a(-2.0f, 18.0f, 31.0f, 18.0f, 0.0f, -1, 55));
         ai.w1 w1Var2 = new ai.w1(this, context, 14);
         this.d = w1Var2;
         w1Var.addView(w1Var2, z5.a(-1.0f, 0.0f, 56.0f, 0.0f, 0.0f, -1, 119));

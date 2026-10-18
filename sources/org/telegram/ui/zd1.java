@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zd1 implements org.telegram.ui.Components.yo {
     public final /* synthetic */ TLRPC.TL_forumTopic a;
@@ -51,8 +51,8 @@ public final class zd1 implements org.telegram.ui.Components.yo {
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j10 = te1Var.a;
         TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.q.i(-j10, tL_forumTopic.id, sb2), true);
-        notificationsSettings.edit().putBoolean(org.telegram.messenger.q.i(-j10, tL_forumTopic.id, new StringBuilder("sound_enabled_")), !z10).apply();
+        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.g0.i(-j10, tL_forumTopic.id, sb2), true);
+        notificationsSettings.edit().putBoolean(org.telegram.messenger.g0.i(-j10, tL_forumTopic.id, new StringBuilder("sound_enabled_")), !z10).apply();
         te1Var.finishPreviewFragment();
         if (org.telegram.ui.Components.xc.a(te1Var)) {
             org.telegram.ui.Components.xc.S(z10 ? 1 : 0, te1Var, te1Var.getResourceProvider()).j();

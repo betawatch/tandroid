@@ -1,36 +1,31 @@
 package z7;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class xe {
-    public final Boolean a;
-    public final Boolean b;
-    public final Boolean c;
-    public final Boolean d;
-    public final Boolean e;
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final m e;
+    public final String f;
+    public final Boolean g;
+    public final Boolean h;
+    public final Boolean i;
+    public final Integer j;
+    public final Integer k;
 
-    public /* synthetic */ xe(com.google.android.gms.internal.cast.z5 z5Var) {
-        this.a = (Boolean) z5Var.b;
-        this.b = (Boolean) z5Var.c;
-        this.c = (Boolean) z5Var.a;
-        this.d = (Boolean) z5Var.d;
-        this.e = (Boolean) z5Var.e;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof xe)) {
-            return false;
-        }
-        xe xeVar = (xe) obj;
-        return n6.l.l(this.a, xeVar.a) && n6.l.l(this.b, xeVar.b) && n6.l.l(this.c, xeVar.c) && n6.l.l(this.d, xeVar.d) && n6.l.l(this.e, xeVar.e);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e});
+    public /* synthetic */ xe(v7.d8 d8Var) {
+        this.a = d8Var.a;
+        this.b = d8Var.b;
+        this.c = d8Var.c;
+        this.d = d8Var.d;
+        this.e = (m) d8Var.k;
+        this.f = d8Var.e;
+        this.g = (Boolean) d8Var.f;
+        this.h = (Boolean) d8Var.g;
+        this.i = (Boolean) d8Var.h;
+        this.j = d8Var.i;
+        this.k = (Integer) d8Var.j;
     }
 }

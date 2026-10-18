@@ -28,7 +28,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b80 implements Runnable {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class b80 implements Runnable {
                 Pattern pattern3 = LaunchActivity.C1;
                 String string = LocaleController.getString(R.string.AuthAnotherClient);
                 StringBuilder sb2 = new StringBuilder();
-                org.telegram.ui.Cells.t0.n(R.string.ErrorOccurred, "\n", sb2);
+                org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb2);
                 sb2.append(tL_error.text);
                 org.telegram.ui.Components.f5.t0(hVar, string, sb2.toString(), null);
                 break;
@@ -325,7 +325,7 @@ public final /* synthetic */ class b80 implements Runnable {
                 jf0 jf0Var = (jf0) this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Activity) this.c);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.CancelLinkSuccessTitle);
-                alertDialog$Builder.a.T = LocaleController.formatString("CancelLinkSuccess", R.string.CancelLinkSuccess, org.telegram.messenger.wh.g(new StringBuilder("+"), jf0Var.b, jf.b.c()));
+                alertDialog$Builder.a.T = LocaleController.formatString("CancelLinkSuccess", R.string.CancelLinkSuccess, org.telegram.messenger.kk.g(new StringBuilder("+"), jf0Var.b, jf.b.c()));
                 alertDialog$Builder.k(LocaleController.getString(R.string.Close), null);
                 alertDialog$Builder.a.setOnDismissListener(new df0(jf0Var, i12));
                 alertDialog$Builder.o();

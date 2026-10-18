@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class fo0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static org.telegram.ui.ActionBar.b2 H;
@@ -131,9 +131,9 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
         zn0Var.setImeOptions(6);
         zn0Var.setBackgroundDrawable(null);
         zn0Var.setPadding(0, 0, AndroidUtilities.dp(42.0f), 0);
-        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
         TextView textView = new TextView(context);
-        org.telegram.messenger.wh.o(i11, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.kk.o(i11, d6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SavedTagLabelTagText));
         e.addView(textView, w7.z5.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
         e.addView(zn0Var, w7.z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));

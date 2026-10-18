@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class q21 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int v = 0;
@@ -85,7 +85,7 @@ public final class q21 extends org.telegram.ui.ActionBar.f3 {
             }
             r02 = tL_messages_report;
         }
-        ConnectionsManager.getInstance(q21Var.currentAccount).sendRequest(r02, new ai.x2(q21Var, charSequence, bArr, str, 17));
+        ConnectionsManager.getInstance(q21Var.currentAccount).sendRequest(r02, new ai.y2(q21Var, charSequence, bArr, str, 17));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

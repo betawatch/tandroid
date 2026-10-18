@@ -1,17 +1,17 @@
 package rg;
 
 import org.telegram.ui.it0;
-import org.telegram.ui.rq0;
+import org.telegram.ui.sq0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c0 implements qg.d1 {
-    public final /* synthetic */ rq0 a;
+    public final /* synthetic */ sq0 a;
     public final /* synthetic */ it0 b;
 
-    public c0(it0 it0Var, rq0 rq0Var) {
+    public c0(it0 it0Var, sq0 sq0Var) {
         this.b = it0Var;
-        this.a = rq0Var;
+        this.a = sq0Var;
     }
 
     @Override // qg.d1

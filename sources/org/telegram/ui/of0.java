@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class of0 extends org.telegram.ui.Components.ow0 {
     public final ImageView a;
@@ -76,18 +76,18 @@ public final class of0 extends org.telegram.ui.Components.ow0 {
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), PorterDuff.Mode.SRC_IN));
         imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 1, -1));
         frameLayout.addView(imageView, w7.z5.a(32.0f, 0.0f, 16.0f, -2.0f, 0.0f, 32, 53));
-        ai.yd ydVar = new ai.yd(context, 1, 1, 1);
-        ydVar.setStarParticlesView(fVar);
+        ai.zd zdVar = new ai.zd(context, 1, 1, 1);
+        zdVar.setStarParticlesView(fVar);
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         int i11 = org.telegram.ui.ActionBar.h6.Mj;
-        canvas.drawColor(i0.b.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false)));
-        ydVar.setBackgroundBitmap(createBitmap);
-        tg.g gVar = ydVar.b;
+        canvas.drawColor(i0.a.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, i11, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false)));
+        zdVar.setBackgroundBitmap(createBitmap);
+        tg.g gVar = zdVar.b;
         gVar.z = i11;
         gVar.A = org.telegram.ui.ActionBar.h6.Lj;
         gVar.b();
-        frameLayout.addView(ydVar, w7.z5.e(160, 160, 1));
+        frameLayout.addView(zdVar, w7.z5.e(160, 160, 1));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(R.string.SMSFeeTitle));
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
@@ -108,7 +108,7 @@ public final class of0 extends org.telegram.ui.Components.ow0 {
         n0Var3.a(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SMSFee3Title), new lf0(this, 4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)), LocaleController.getString(R.string.SMSFee3Text), R.drawable.menu_feature_hands);
         addView(n0VarArr[2], w7.z5.t(-1, -2, 55, 0, 0, 0, 6));
         addView(new Space(context), w7.z5.o(0, 0, 1.0f, 119));
-        ei.d f7 = org.telegram.messenger.wh.f(24, context, null, true);
+        ei.d f7 = org.telegram.messenger.kk.f(24, context, null, true);
         this.b = f7;
         f7.setLoading(true);
         addView(f7, w7.z5.t(-1, 48, 7, 0, 16, 0, 16));
@@ -289,12 +289,12 @@ public final class of0 extends org.telegram.ui.Components.ow0 {
             }
             dVar.setVisibility(i12);
             dVar.setLoading(true);
-            ai.tb tbVar = new ai.tb((Object) this, string, str, string2, i13, 29);
+            ai.ub ubVar = new ai.ub((Object) this, string, str, string2, i13, 29);
             if (BillingController.getInstance().isReady()) {
-                tbVar.run();
+                ubVar.run();
                 return;
             } else {
-                BillingController.getInstance().whenSetuped(tbVar);
+                BillingController.getInstance().whenSetuped(ubVar);
                 return;
             }
         }

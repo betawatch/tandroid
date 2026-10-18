@@ -12,13 +12,13 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.rg1;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class l1 extends FrameLayout {
     public final xj0 a;
     public final xj0 b;
     public final org.telegram.ui.Cells.z c;
-    public org.telegram.ui.Components.s2 d;
+    public org.telegram.ui.Components.q2 d;
     public k1 e;
     public int f;
 
@@ -35,7 +35,7 @@ public final class l1 extends FrameLayout {
         xj0Var2.setAlpha(0.0f);
         addView(xj0Var, z5.d(37.0f, 37));
         addView(xj0Var2, z5.d(37.0f, 37));
-        org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(37.0f), 0, i0.b.o(-1, 76));
+        org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(37.0f), 0, i0.a.o(-1, 76));
         this.c = i02;
         i02.setCallback(this);
         setClickable(true);
@@ -88,12 +88,12 @@ public final class l1 extends FrameLayout {
                 getLocationOnScreen(iArr);
                 int i14 = iArr[0];
                 int i15 = iArr[1];
-                org.telegram.ui.Components.s2 s2Var = this.d;
+                org.telegram.ui.Components.q2 q2Var = this.d;
                 float width = (getWidth() / 2.0f) + i14;
                 float height = (getHeight() / 2.0f) + i15;
                 int i16 = this.f + 1;
-                m1 m1Var = (m1) s2Var.b;
-                Context context = (Context) s2Var.c;
+                m1 m1Var = (m1) q2Var.b;
+                Context context = (Context) q2Var.c;
                 if (i16 >= 4) {
                     xj0 xj0Var7 = new xj0(context);
                     int dp = AndroidUtilities.dp(133.0f);

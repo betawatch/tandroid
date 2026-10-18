@@ -1,7 +1,7 @@
 package hi;
 
-import ai.s3;
-import ai.sd;
+import ai.r3;
+import ai.td;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.ViewGroup;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class s0 implements ii.d {
     public final Context a;
@@ -40,7 +40,7 @@ public final class s0 implements ii.d {
     public final long e;
     public final TLRPC.Chat f;
     public r0 h;
-    public sd i;
+    public td i;
     public String k;
     public int l;
     public boolean m;
@@ -148,9 +148,9 @@ public final class s0 implements ii.d {
                 textView.setTextColor(h6.x0(null, h6.q7, false));
                 return;
             }
-            sd sdVar = this.i;
-            if (sdVar != null) {
-                sdVar.run();
+            td tdVar = this.i;
+            if (tdVar != null) {
+                tdVar.run();
             }
             this.i = null;
             b2 b2Var = new b2(this.a, 3, this.b);
@@ -173,11 +173,11 @@ public final class s0 implements ii.d {
         int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
         int i12 = this.d;
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i11, DialogObject.getShortName(i12, j10)));
-        sd sdVar = this.i;
-        if (sdVar != null) {
-            sdVar.run();
+        td tdVar = this.i;
+        if (tdVar != null) {
+            tdVar.run();
         }
-        this.i = new sd(this, j10, z10, 2);
+        this.i = new td(this, j10, z10, 2);
         Context context = this.a;
         d6 d6Var = this.b;
         org.telegram.ui.Components.pc pcVar = new org.telegram.ui.Components.pc(context, d6Var, false);
@@ -213,7 +213,7 @@ public final class s0 implements ii.d {
         }
         oc ocVar = new oc(context, d6Var, true, true);
         ocVar.e(LocaleController.getString(R.string.UndoNoCaps));
-        ocVar.a = new s3(this, j10, i13);
+        ocVar.a = new r3(this, j10, i13);
         ocVar.b = this.i;
         pcVar.setButton(ocVar);
         this.c.b(pcVar, 5000).j();

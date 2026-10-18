@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-import ai.rb;
+import ai.sb;
 import android.text.StaticLayout;
 import android.text.TextUtils;
 import android.view.View;
@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.n6, org.telegram.ui.Components.yl0, MessagesStorage.BooleanCallback, c5.p, org.telegram.ui.Components.voip.g3, e2.j, BillingController.ProductDetailsResponseListenerLegacy, org.telegram.ui.Components.d50 {
     public final /* synthetic */ int a;
@@ -72,7 +72,7 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
                     tL_photos_uploadProfilePhoto.flags |= 16;
                 }
                 int i12 = i10;
-                ConnectionsManager.getInstance(i12).sendRequest(tL_photos_uploadProfilePhoto, new rb(i12, photoSize2, photoSize, viVar, d5Var, 14));
+                ConnectionsManager.getInstance(i12).sendRequest(tL_photos_uploadProfilePhoto, new sb(i12, photoSize2, photoSize, viVar, d5Var, 15));
                 e50Var.i();
             }
         });
@@ -98,7 +98,7 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
                 org.telegram.ui.Components.co0 co0Var = (org.telegram.ui.Components.co0) arrayList.get(i10);
                 org.telegram.ui.Components.i80 H = org.telegram.ui.Components.i80.H(n2Var, view);
                 H.i = 3;
-                H.c(R.drawable.menu_tag_rename, LocaleController.getString(TextUtils.isEmpty(co0Var.c) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag), new ai.bb(fo0Var, i11, co0Var, d6Var), false);
+                H.c(R.drawable.menu_tag_rename, LocaleController.getString(TextUtils.isEmpty(co0Var.c) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag), new ai.cb(fo0Var, i11, co0Var, d6Var), false);
                 H.Z();
                 return true;
             }
@@ -109,12 +109,12 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
     @Override // e2.j
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.c;
-        ((u2.k0) obj).i(aVar.b, (u2.g0) aVar.c, (u2.u) this.d, (u2.c0) this.e, this.b);
+        ((u2.j0) obj).i(aVar.b, (u2.f0) aVar.c, (u2.t) this.d, (u2.b0) this.e, this.b);
     }
 
     @Override // c5.p
     public void b(c5.i iVar, List list) {
-        AndroidUtilities.runOnUIThread(new ai.ub(iVar, (org.telegram.ui.ActionBar.n2) this.c, list, this.b, (c5.g) this.d, (rw0) this.e, 13));
+        AndroidUtilities.runOnUIThread(new ai.vb(iVar, (org.telegram.ui.ActionBar.n2) this.c, list, this.b, (c5.g) this.d, (rw0) this.e, 13));
     }
 
     @Override // org.telegram.ui.Components.voip.g3
@@ -192,7 +192,7 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
                 connectionsManager.sendRequest(toggleusername, new RequestDelegate() { // from class: org.telegram.ui.ia
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ui(ja.this, str, tLObject, i15, z11, tL_error, tL_username, z10));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ti(ja.this, str, tLObject, i15, z11, tL_error, tL_username, z10));
                     }
                 });
                 uaVar.w.add(tL_username.username);
@@ -273,7 +273,7 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new ug.m(chat, this.b, arrayList, callback, 1));
+        AndroidUtilities.runOnUIThread(new ug.n(chat, this.b, arrayList, callback, 1));
     }
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback

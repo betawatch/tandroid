@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 final class zzsd {
     private static final zzsd zzb = new zzsd(true);
@@ -195,7 +195,7 @@ final class zzsd {
             zzA = zzqv.zzA(zza) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zza2 = ((zztc) value).zza();
-            zzx = a6.y(zza2, zza2, zzA3);
+            zzx = k3.x(zza2, zza2, zzA3);
         } else {
             int zza3 = ((zzsc) entry.getKey()).zza();
             int zzA4 = zzqv.zzA(8);

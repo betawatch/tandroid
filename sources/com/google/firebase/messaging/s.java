@@ -2,7 +2,7 @@ package com.google.firebase.messaging;
 
 import ah.i1;
 import ah.y0;
-import ai.s2;
+import ai.t2;
 import ai.z4;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -68,7 +68,7 @@ import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import sg.x0;
 import v7.s6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -358,7 +358,7 @@ public final /* synthetic */ class s implements Runnable {
                     MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
                 }
                 a2Var.J = currentKeyboardLanguage;
-                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, a2Var.H, false, new s2(a2Var, str2, mediaDataController, 6), null, false, false, false, true, 50, false);
+                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, a2Var.H, false, new t2(a2Var, str2, mediaDataController, 6), null, false, false, false, true, 50, false);
                 return;
             case 13:
                 h2 h2Var = (h2) ((ai.u) this.b).b;

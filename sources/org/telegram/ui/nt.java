@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nt implements Runnable {
     public final /* synthetic */ int a;
@@ -74,10 +74,10 @@ public final /* synthetic */ class nt implements Runnable {
                     f3Var.dismiss();
                     f3VarArr[0] = null;
                 }
-                AndroidUtilities.runOnUIThread(new dv(eyVar, 25), 300L);
+                AndroidUtilities.runOnUIThread(new ev(eyVar, 25), 300L);
                 break;
             case 5:
-                ((dy) obj).a.postOnAnimation(new dv((ey) obj2, 15));
+                ((dy) obj).a.postOnAnimation(new ev((ey) obj2, 15));
                 break;
             case 6:
                 ey eyVar2 = (ey) obj2;

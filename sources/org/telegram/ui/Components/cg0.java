@@ -31,7 +31,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cg0 extends FrameLayout implements h00, ei.rb {
     public final ImageView A0;
@@ -278,16 +278,16 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
         textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
         textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
         textView.setTypeface(AndroidUtilities.bold());
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout2, textView, w7.z5.e(-2, -1, 51), context);
-        this.g0 = k10;
-        k10.setTextSize(1, 14.0f);
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout2, textView, w7.z5.e(-2, -1, 51), context);
+        this.g0 = j10;
+        j10.setTextSize(1, 14.0f);
         int i16 = org.telegram.ui.ActionBar.h6.zf;
-        org.telegram.ui.Cells.t0.q(i16, d6Var, k10, 17);
-        k10.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(-12763843, 0, -1));
-        k10.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        k10.setText(LocaleController.getString(R.string.Done).toUpperCase());
-        k10.setTypeface(AndroidUtilities.bold());
-        frameLayout2.addView(k10, w7.z5.e(-2, -1, 53));
+        org.telegram.ui.Cells.c1.q(i16, d6Var, j10, 17);
+        j10.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(-12763843, 0, -1));
+        j10.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
+        j10.setText(LocaleController.getString(R.string.Done).toUpperCase());
+        j10.setTypeface(AndroidUtilities.bold());
+        frameLayout2.addView(j10, w7.z5.e(-2, -1, 53));
         LinearLayout linearLayout = new LinearLayout(context);
         frameLayout2.addView(linearLayout, w7.z5.e(-2, -1, 1));
         ImageView imageView = new ImageView(context);
@@ -1416,7 +1416,7 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
 
     @Override // org.telegram.ui.Components.h00
     public float getHighlightsValue() {
-        return com.google.android.gms.internal.cast.a6.v(this.P, 0.75f, 100.0f, 100.0f);
+        return com.google.android.gms.internal.play_billing.k3.w(this.P, 0.75f, 100.0f, 100.0f);
     }
 
     public TextureView getMyTextureView() {
@@ -1463,7 +1463,7 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
 
     @Override // org.telegram.ui.Components.h00
     public float getShadowsValue() {
-        return com.google.android.gms.internal.cast.a6.v(this.Q, 0.55f, 100.0f, 100.0f);
+        return com.google.android.gms.internal.play_billing.k3.w(this.Q, 0.55f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.h00

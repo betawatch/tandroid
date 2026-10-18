@@ -1,14 +1,14 @@
 package r0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class z0 extends y0 {
     public z0() {
     }
 
     @Override // r0.y0, r0.a1
-    public void c(int i10, i0.c cVar) {
-        this.c.setInsets(j1.a(i10), cVar.d());
+    public void c(int i10, i0.b bVar) {
+        this.c.setInsets(j1.a(i10), bVar.d());
     }
 
     @Override // r0.y0, r0.a1

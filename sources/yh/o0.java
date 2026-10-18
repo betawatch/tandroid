@@ -5,7 +5,7 @@ import java.util.List;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -33,9 +33,9 @@ public final /* synthetic */ class o0 implements Utilities.Callback {
                 List list = (List) obj;
                 p1 p1Var2 = this.b;
                 if (p1Var2.getContext() != null && p1Var2.isShown()) {
-                    ArrayList b10 = ug.q.b(1, list);
+                    ArrayList b10 = ug.r.b(1, list);
                     p1Var2.Z = b10;
-                    List c10 = ug.q.c(b10);
+                    List c10 = ug.r.c(b10);
                     p1Var2.Z = c10;
                     if (!((ArrayList) c10).isEmpty()) {
                         p1Var2.X();

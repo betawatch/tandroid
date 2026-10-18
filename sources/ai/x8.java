@@ -35,7 +35,7 @@ import org.telegram.ui.lz0;
 import org.telegram.ui.sn;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x8 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -62,13 +62,13 @@ public final /* synthetic */ class x8 implements Utilities.Callback {
         boolean z10 = false;
         switch (this.a) {
             case 0:
-                fa faVar = (fa) this.c;
+                ga gaVar = (ga) this.c;
                 HashSet hashSet = (HashSet) obj;
                 if (this.b) {
-                    SendMessagesHelper.getInstance(faVar.a).cancelSendingMessage(new ArrayList<>(hashSet));
+                    SendMessagesHelper.getInstance(gaVar.a).cancelSendingMessage(new ArrayList<>(hashSet));
                     break;
                 } else {
-                    faVar.getClass();
+                    gaVar.getClass();
                     break;
                 }
             case 1:
@@ -233,8 +233,8 @@ public final /* synthetic */ class x8 implements Utilities.Callback {
                         u1Var.forceLayout();
                         break;
                     }
-                } else if (view2 instanceof org.telegram.ui.Cells.x0) {
-                    ((org.telegram.ui.Cells.x0) view2).e0 = z15;
+                } else if (view2 instanceof org.telegram.ui.Cells.w0) {
+                    ((org.telegram.ui.Cells.w0) view2).e0 = z15;
                     break;
                 }
                 break;

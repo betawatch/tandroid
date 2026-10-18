@@ -39,7 +39,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.t21;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class TranslateController extends BaseController {
     private static final int GROUPING_TRANSLATIONS_TIMEOUT = 80;
@@ -78,7 +78,7 @@ public class TranslateController extends BaseController {
     private static final List<String> allLanguages = Arrays.asList("af", "sq", "am", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "zh-cn", "zh", "zh-tw", "co", "hr", "cs", "da", "nl", "en", "eo", "et", "fi", "fr", "fy", ImageLoader.AUTOPLAY_FILTER_NONLOOP, "ka", "de", "el", "gu", "ht", "ha", "haw", "he", "hi", "hmn", "hu", "is", "ig", "id", "ga", "it", "ja", "jv", "kn", "kk", "km", "rw", "ko", "ku", "ky", "lo", "la", "lv", "lt", "lb", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "ny", "or", "ps", "fa", "pl", "pt", "pt-br", "pa", "ro", "ru", "sm", "gd", "sr", "st", "sn", "sd", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tl", "tg", "ta", "tt", "te", "th", "tr", "tk", "uk", "ur", "ug", "uz", "vi", "cy", "xh", "yi", "yo", "zu");
     private static LinkedHashSet<String> suggestedLanguageCodes = null;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Language {
         public String code;
         public String displayName;
@@ -86,7 +86,7 @@ public class TranslateController extends BaseController {
         public String q;
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class MessageKey {
         public long dialogId;
         public int id;
@@ -97,7 +97,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class PendingPollTranslation {
         ArrayList<Utilities.Callback3<Integer, PollText, String>> callbacks;
         int delay;
@@ -117,7 +117,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class PendingRichTranslation {
         ArrayList<Utilities.Callback3<Integer, TL_iv.RichMessage, String>> callbacks;
         int delay;
@@ -134,7 +134,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class PendingTranslation {
         ArrayList<Utilities.Callback4<Boolean, Integer, TLRPC.TL_textWithEntities, String>> callbacks;
         int delay;
@@ -154,7 +154,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class PollText extends TLObject {
         public static final int constructor = 613759672;
         public ArrayList<TLRPC.PollAnswer> answers = new ArrayList<>();
@@ -257,7 +257,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class StoryKey {
         public long dialogId;
         public int storyId;
@@ -268,7 +268,7 @@ public class TranslateController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class TranslatableDecision {
         Set<Integer> certainlyTranslatable = new HashSet();
         Set<Integer> unknown = new HashSet();
@@ -654,7 +654,7 @@ public class TranslateController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$checkLanguage$15(MessageObject messageObject, long j10, int i10, Exception exc) {
-        AndroidUtilities.runOnUIThread(new ai.wb(this, messageObject, j10, i10, 12));
+        AndroidUtilities.runOnUIThread(new ai.xb(this, messageObject, j10, i10, 12));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1602,7 +1602,7 @@ public class TranslateController extends BaseController {
                     if (str3.length() <= 0 || str3.charAt(str3.length() - 1) != '!') {
                         z10 = false;
                     } else {
-                        str3 = com.google.android.gms.internal.cast.a6.j(1, 0, str3);
+                        str3 = com.google.android.gms.internal.play_billing.k3.j(1, 0, str3);
                         z10 = true;
                     }
                     if ("null".equals(str2)) {

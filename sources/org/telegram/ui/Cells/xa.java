@@ -33,7 +33,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.jj;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xa extends View implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int O = 0;
@@ -292,7 +292,7 @@ public final class xa extends View implements NotificationCenter.NotificationCen
         }
         float f13 = 0.0f;
         canvas.translate(0.0f, (getHeight() - this.J) / 2.0f);
-        float z10 = com.google.android.gms.internal.cast.a6.z(getHeight(), this.J, 2.0f, 0.0f);
+        float z10 = com.google.android.gms.internal.play_billing.k3.z(getHeight(), this.J, 2.0f, 0.0f);
         float f14 = 14.0f;
         canvas.translate(0.0f, AndroidUtilities.dp(14.0f));
         float dp = z10 + AndroidUtilities.dp(14.0f);
@@ -389,7 +389,7 @@ public final class xa extends View implements NotificationCenter.NotificationCen
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.y(16.0f, (int) this.J, 0));
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(16.0f, (int) this.J, 0));
     }
 
     @Override // android.view.View

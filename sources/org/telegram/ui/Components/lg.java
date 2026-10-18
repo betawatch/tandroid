@@ -39,7 +39,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lg implements Runnable {
     public final /* synthetic */ int a;
@@ -388,7 +388,7 @@ public final /* synthetic */ class lg implements Runnable {
                 }
                 ViewPropertyAnimator alpha2 = tc0Var.d.animate().alpha(1.0f);
                 bs bsVar = bs.h;
-                org.telegram.messenger.wh.t(alpha2, bsVar, 320L);
+                org.telegram.messenger.kk.t(alpha2, bsVar, 320L);
                 tc0Var.h.animate().alpha(0.0f).setInterpolator(bsVar).setDuration(320L).start();
                 if (tc0Var.E) {
                     tc0Var.setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 6, 0));
@@ -578,7 +578,7 @@ public final /* synthetic */ class lg implements Runnable {
                                 n2Var = n2Var3;
                             } else {
                                 n2Var = n2Var3;
-                                if (!org.telegram.messenger.wh.w(" ", str6, lowerCase2) && (translitString2 == null || (!translitString2.startsWith(str6) && !org.telegram.messenger.wh.w(" ", str6, translitString2)))) {
+                                if (!org.telegram.messenger.g0.w(" ", str6, lowerCase2) && (translitString2 == null || (!translitString2.startsWith(str6) && !org.telegram.messenger.g0.w(" ", str6, translitString2)))) {
                                     String publicUsername = UserObject.getPublicUsername(user3);
                                     r02 = (publicUsername == null || !publicUsername.startsWith(str6)) ? z12 : 2;
                                     if (r02 == 0) {

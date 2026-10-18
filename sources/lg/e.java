@@ -1,6 +1,6 @@
 package lg;
 
-import ai.ld;
+import ai.md;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.transition.ChangeBounds;
@@ -22,7 +22,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.q;
+import org.telegram.messenger.g0;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.z;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.ke;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -229,7 +229,7 @@ public class e extends FrameLayout {
                         objArr[0] = aVar.d;
                         textView3.setText(LocaleController.formatString(i26, objArr));
                     } else if (i11 == 2) {
-                        textView3.setText(ld.Y0(false, LocaleController.formatString(i23 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
+                        textView3.setText(md.Y0(false, LocaleController.formatString(i23 == 0 ? R.string.ChartInXTR : R.string.ChartInUSD, aVar.d), 0.7f, null));
                     } else {
                         textView3.setText(aVar.d);
                     }
@@ -263,7 +263,7 @@ public class e extends FrameLayout {
                         }
                     }
                 } else if (i23 == 0) {
-                    charSequence = ld.Y0(false, q.h(j12, ' ', new StringBuilder("XTR ")), 0.7f, null);
+                    charSequence = md.Y0(false, g0.h(j12, ' ', new StringBuilder("XTR ")), 0.7f, null);
                 } else {
                     charSequence = "≈" + BillingController.getInstance().formatCurrency((long) (j12 / f7), "USD");
                 }

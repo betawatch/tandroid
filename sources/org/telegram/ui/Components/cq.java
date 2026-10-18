@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import java.util.Random;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cq {
     public float g;
@@ -60,7 +60,7 @@ public final class cq {
             float f20 = f10 - f19;
             fArr2[1] = f20;
             float f21 = f13;
-            fArr2[2] = com.google.android.gms.internal.cast.a6.t(f18, fArr[i10], f14, f7 + f15);
+            fArr2[2] = com.google.android.gms.internal.play_billing.k3.t(f18, fArr[i10], f14, f7 + f15);
             fArr2[3] = f20;
             matrix.mapPoints(fArr2);
             int i12 = i10 + 1;
@@ -73,7 +73,7 @@ public final class cq {
             float f25 = f10 - f24;
             fArr3[1] = f25;
             float f26 = f12;
-            fArr3[2] = com.google.android.gms.internal.cast.a6.t(f23, fArr[i13], f14, f7 - f15);
+            fArr3[2] = com.google.android.gms.internal.play_billing.k3.t(f23, fArr[i13], f14, f7 - f15);
             fArr3[3] = f25;
             matrix.reset();
             matrix.setRotate(f16 * i13, f7, f10);

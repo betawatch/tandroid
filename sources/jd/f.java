@@ -1,6 +1,6 @@
 package jd;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -88,7 +88,7 @@ public abstract class f extends t8 {
         ArrayList arrayList = new ArrayList(jArr.length);
         int length2 = jArr.length;
         while (i10 < length2) {
-            i10 = a6.h(jArr[i10], arrayList, i10, 1);
+            i10 = k3.h(jArr[i10], arrayList, i10, 1);
         }
         return arrayList;
     }

@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class a extends View {
     public final ImageReceiver a;
@@ -56,7 +56,7 @@ public final class a extends View {
         String str3 = "";
         String str4 = "" + ((Object) str);
         this.b = str4;
-        this.c = i0.a.j(i10, "");
+        this.c = i2.d.j(i10, "");
         imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
         Drawable mutate = context.getResources().getDrawable(R.drawable.msg_media_gallery).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(1308622847, PorterDuff.Mode.MULTIPLY));

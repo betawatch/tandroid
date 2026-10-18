@@ -31,7 +31,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.dx0;
@@ -41,7 +41,7 @@ import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.y90;
 import org.telegram.ui.yz0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final int a0 = AndroidUtilities.dp(76.0f);
@@ -103,7 +103,7 @@ public abstract class j extends FrameLayout {
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setVisibility(8);
-        wh.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView, 1, 13.0f);
+        kk.o(org.telegram.ui.ActionBar.h6.z6, d6Var, textView, 1, 13.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -377,7 +377,7 @@ public abstract class j extends FrameLayout {
                     float lineBottom = (this.L.getLineBottom(lineCount) - this.L.getLineTop(lineCount)) - this.L.getBottomPadding();
                     float pow3 = 1.0f - ((float) Math.pow(this.T, 0.25d));
                     if (pow3 < 0.5d) {
-                        pow = com.google.android.gms.internal.cast.a6.C(pow3, 4.0f, pow3, pow3);
+                        pow = com.google.android.gms.internal.play_billing.k3.C(pow3, 4.0f, pow3, pow3);
                         f11 = lineTop;
                         f12 = 255.0f;
                     } else {
@@ -416,7 +416,7 @@ public abstract class j extends FrameLayout {
                                 int save = canvas.save();
                                 Point point = this.O[i12];
                                 if (point != null) {
-                                    point.set((int) ((f20 * f19) + this.c), (int) com.google.android.gms.internal.cast.a6.x(1.0f, f19, lineBottom, this.d + f11));
+                                    point.set((int) ((f20 * f19) + this.c), (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, f19, lineBottom, this.d + f11));
                                 }
                                 int i13 = this.N;
                                 if (i13 == -1 || i13 > i12) {
@@ -426,7 +426,7 @@ public abstract class j extends FrameLayout {
                                     staticLayout = staticLayout4;
                                     i11 = save;
                                     f15 = f11;
-                                    canvas.translate(f20 * f19, com.google.android.gms.internal.cast.a6.x(1.0f, f19, lineBottom, f15));
+                                    canvas.translate(f20 * f19, com.google.android.gms.internal.play_billing.k3.y(1.0f, f19, lineBottom, f15));
                                 } else {
                                     canvas.translate(f16, f11 + lineBottom);
                                     float width = staticLayout4.getWidth();

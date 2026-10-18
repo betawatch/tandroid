@@ -39,7 +39,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.u10;
 import v7.f7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w3 extends View {
     public float E;
@@ -301,7 +301,7 @@ public final class w3 extends View {
                 path.addRoundRect(rectF4, z10, z10, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(path);
-                float D = com.google.android.gms.internal.cast.a6.D(1.0f, w3Var.e, AndroidUtilities.dp(50.0f), rectF4.top);
+                float D = com.google.android.gms.internal.play_billing.k3.D(1.0f, w3Var.e, AndroidUtilities.dp(50.0f), rectF4.top);
                 rectF3.set(rectF4.left, D, rectF4.right, AndroidUtilities.dp(50.0f) + D);
                 w3Var.a.setupTab(w3Var.c);
                 w3Var.c.a(canvas, rectF3, z10, w3Var.e, 1.0f);
@@ -496,7 +496,7 @@ public final class w3 extends View {
                             paint3.setAlpha(i20);
                             canvas.drawRoundRect(rectF6, lerp5, lerp5, paint3);
                             canvas.save();
-                            canvas.translate(rectF6.left, r.c.c(AndroidUtilities.dp(50.0f), lerp4, rectF6.top, currentActionBarHeight));
+                            canvas.translate(rectF6.left, r4.c.c(AndroidUtilities.dp(50.0f), lerp4, rectF6.top, currentActionBarHeight));
                             canvas.scale(1.0f, AndroidUtilities.lerp(1.0f, 1.25f, f30));
                             if (m3Var != null && m3Var.m != null) {
                                 float width3 = rectF6.width() / m3Var.m.getWidth();

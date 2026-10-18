@@ -28,7 +28,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class yh0 extends View {
     public float E;
@@ -672,7 +672,7 @@ public final class yh0 extends View {
                     if (!vh0Var11.p) {
                         boolean z17 = AndroidUtilities.computePerceivedBrightness(this.Q) > 0.72f;
                         float a2 = (!z17 || Build.VERSION.SDK_INT >= 31) ? !z17 ? 1.0f : w7.r.a((this.d - 0.75f) / 0.25f, 0.0f, 1.0f) : 0.0f;
-                        int f30 = i0.b.f(a2, -16777216, -1);
+                        int f30 = i0.a.f(a2, -16777216, -1);
                         if (this.V == null || this.U != f30) {
                             this.U = f30;
                             this.V = new PorterDuffColorFilter(f30, PorterDuff.Mode.SRC_IN);
@@ -692,7 +692,7 @@ public final class yh0 extends View {
                         float f32 = dp * 0.5f;
                         vh0Var11.l.q(rectF8.width() - AndroidUtilities.dp(f21));
                         vh0Var11.m = vh0Var11.l.b.getLineCount() >= 3 ? 0.75f : vh0Var11.l.b.getLineCount() >= 2 ? 0.85f : 1.0f;
-                        float max2 = Math.max(0.0f, AndroidUtilities.dpf2(1.33f) + com.google.android.gms.internal.cast.a6.c(vh0Var11.l.j(), vh0Var11.m, f26, 3.0f));
+                        float max2 = Math.max(0.0f, AndroidUtilities.dpf2(1.33f) + com.google.android.gms.internal.play_billing.k3.c(vh0Var11.l.j(), vh0Var11.m, f26, 3.0f));
                         rect.set((int) (centerX3 - f32), (int) max2, (int) (centerX3 + f32), (int) (max2 + dp));
                         uj0 uj0Var = vh0Var11.k;
                         if (uj0Var != null) {

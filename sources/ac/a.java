@@ -28,7 +28,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public boolean a;
@@ -69,7 +69,7 @@ public final class a implements b {
                 if (i13 == 35) {
                     bVar = new x6.b(null);
                 } else if (i13 != 842094169) {
-                    throw new nb.a(i0.a.j(aVar.e, "Unsupported image format: "), 3);
+                    throw new nb.a(i2.d.j(aVar.e, "Unsupported image format: "), 3);
                 }
             }
             l.h(null);

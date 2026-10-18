@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.app.Activity;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class h31 extends org.telegram.ui.Components.q6 {
     public boolean s;
@@ -25,7 +25,7 @@ public final class h31 extends org.telegram.ui.Components.q6 {
         f6Var.d(f7, false);
         int i10 = org.telegram.ui.ActionBar.h6.y6;
         SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.w;
-        setTextColor(i0.b.f(f6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.n6)));
+        setTextColor(i0.a.f(f6Var.c, saveToGallerySettingsActivity.getThemedColor(i10), saveToGallerySettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.n6)));
         super.dispatchDraw(canvas);
     }
 

@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g0 extends hm0 {
     public final Context c;
@@ -56,41 +56,41 @@ public final class g0 extends hm0 {
         if (b1Var.f != 0) {
             return;
         }
-        u1 u1Var = (u1) b1Var.a;
+        w1 w1Var = (w1) b1Var.a;
         boolean z10 = i10 != h() + (-2);
         int i11 = i10 - 1;
         if (i11 >= 0) {
             ArrayList arrayList = this.d;
             if (i11 < arrayList.size()) {
                 obj = arrayList.get(i11);
-                if (obj instanceof x1) {
+                if (obj instanceof z1) {
                     return;
                 }
-                x1 x1Var = (x1) obj;
-                u1Var.a(x1Var, this.e, z10);
-                u1Var.d.a(this.f.w.contains(Integer.valueOf(x1Var.a)), false);
+                z1 z1Var = (z1) obj;
+                w1Var.a(z1Var, this.e, z10);
+                w1Var.d.a(this.f.w.contains(Integer.valueOf(z1Var.a)), false);
                 return;
             }
         }
         obj = null;
-        if (obj instanceof x1) {
+        if (obj instanceof z1) {
         }
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View u1Var;
+        View w1Var;
         Context context = this.c;
         if (i10 == 0) {
-            u1Var = new u1(context, this.f.a, false);
+            w1Var = new w1(context, this.f.a, false);
         } else if (i10 != 1) {
-            u1Var = new View(context);
-            u1Var.setTag(-33024);
+            w1Var = new View(context);
+            w1Var.setTag(-33024);
         } else {
-            u1Var = new View(context);
-            u1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
-            u1Var.setTag(-33024);
+            w1Var = new View(context);
+            w1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
+            w1Var.setTag(-33024);
         }
-        return new sl0(u1Var);
+        return new sl0(w1Var);
     }
 }

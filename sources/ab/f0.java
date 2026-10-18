@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import android.os.Build;
 import ki.t1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f0 {
     public static final f0 a = new f0();
@@ -13,12 +13,12 @@ public final class f0 {
 
     static {
         la.d dVar = new la.d();
-        dVar.a(e0.class, g.a);
-        dVar.a(n0.class, h.a);
-        dVar.a(j.class, e.a);
-        dVar.a(b.class, d.a);
-        dVar.a(a.class, c.a);
-        dVar.a(q.class, f.a);
+        dVar.d(e0.class, g.a);
+        dVar.d(n0.class, h.a);
+        dVar.d(j.class, e.a);
+        dVar.d(b.class, d.a);
+        dVar.d(a.class, c.a);
+        dVar.d(q.class, f.a);
         dVar.d = true;
         b = new t1(dVar, 4);
     }

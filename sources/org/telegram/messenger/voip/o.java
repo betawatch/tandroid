@@ -2,9 +2,10 @@ package org.telegram.messenger.voip;
 
 import android.content.Context;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Wallet.q5;
+import org.telegram.ui.Wallet.s5;
+import org.telegram.ui.Wallet.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +28,8 @@ public final /* synthetic */ class o implements Runnable {
                 break;
             default:
                 try {
-                    q5.g(this.b, this.c, this.d);
+                    s5.g(this.b, this.c, this.d);
+                    z5.e();
                     break;
                 } catch (RuntimeException e) {
                     FileLog.e(e);

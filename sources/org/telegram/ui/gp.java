@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class gp extends org.telegram.ui.Components.e90 {
     public final /* synthetic */ TLRPC.Chat w;
@@ -24,7 +24,7 @@ public final class gp extends org.telegram.ui.Components.e90 {
             return false;
         }
         kpVar.P = true;
-        e(new gh(18, this, c90Var), new ai.y3(this, this.w, z10, c90Var, 16));
+        e(new gh(18, this, c90Var), new ai.x9(this, this.w, z10, c90Var, 15));
         return true;
     }
 
@@ -35,7 +35,7 @@ public final class gp extends org.telegram.ui.Components.e90 {
             return false;
         }
         kpVar.O = true;
-        e(new gh(18, this, d90Var), new ai.y3(this, this.w, z10, d90Var, 15));
+        e(new gh(18, this, d90Var), new ai.x9(this, this.w, z10, d90Var, 14));
         return true;
     }
 
@@ -44,7 +44,7 @@ public final class gp extends org.telegram.ui.Components.e90 {
         if (ChatObject.isChannel(kpVar.f)) {
             runnable.run();
         } else {
-            kpVar.getMessagesController().convertToMegaGroup(kpVar.getParentActivity(), this.w.id, kpVar, new m4.y0(21, this, runnable), ghVar);
+            kpVar.getMessagesController().convertToMegaGroup(kpVar.getParentActivity(), this.w.id, kpVar, new m4.w0(22, this, runnable), ghVar);
         }
     }
 }

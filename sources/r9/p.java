@@ -1,8 +1,6 @@
 package r9;
 
-import org.telegram.ui.web.c0;
-
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class p implements qa.b {
     public static final r.a c = new r.a(6);
@@ -29,7 +27,7 @@ public final class p implements qa.b {
             if (bVar != fVar) {
                 bVar2 = bVar;
             } else {
-                this.a = new c0(5, this.a, aVar);
+                this.a = new org.telegram.ui.web.m(6, this.a, aVar);
                 bVar2 = null;
             }
         }

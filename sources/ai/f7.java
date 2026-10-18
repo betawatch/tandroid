@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.br;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class f7 extends br {
     public final View c;
@@ -47,7 +47,7 @@ public final class f7 extends br {
         paint2.setAlpha((int) (alpha * this.h));
         paint2.setStrokeWidth(AndroidUtilities.dpf2(1.33f));
         canvas.save();
-        canvas.translate(getBounds().centerX(), getBounds().centerY() - (org.telegram.ui.Cells.t0.b(1.166f, 2.0f, AndroidUtilities.dpf2(2.16f) * 3.0f) / 2.0f));
+        canvas.translate(getBounds().centerX(), getBounds().centerY() - (org.telegram.ui.Cells.c1.b(1.166f, 2.0f, AndroidUtilities.dpf2(2.16f) * 3.0f) / 2.0f));
         int i10 = 0;
         while (i10 < 4) {
             float f7 = i10 == 0 ? 1.0f - currentTimeMillis : i10 == 3 ? currentTimeMillis : 1.0f;

@@ -23,7 +23,7 @@ import org.telegram.ui.Components.uc0;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class p5 extends hm0 {
     public final ArrayList c = new ArrayList();
@@ -324,7 +324,7 @@ public final class p5 extends hm0 {
                         i4Var.setOnClickListener(new u80(runnable, 18));
                         int dp = AndroidUtilities.dp(8.0f);
                         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var);
-                        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.w0(i14, d6Var), 30);
+                        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.w0(i14, d6Var), 30);
                         i4Var.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, w02, o10, o10));
                         w7.b6.b(i4Var, 0.05f, 1.5f);
                         i4Var.addView(textView);

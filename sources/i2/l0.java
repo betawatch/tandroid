@@ -1,17 +1,19 @@
 package i2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l0 {
-    public final int a;
-    public final int b;
+    public final ArrayList a;
+    public final u2.h1 b;
     public final int c;
-    public final u2.i1 d;
+    public final long d;
 
-    public l0(int i10, int i11, int i12, u2.i1 i1Var) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i1Var;
+    public l0(ArrayList arrayList, u2.h1 h1Var, int i10, long j10) {
+        this.a = arrayList;
+        this.b = h1Var;
+        this.c = i10;
+        this.d = j10;
     }
 }

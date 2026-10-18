@@ -6,10 +6,10 @@ import org.telegram.ui.Components.nn;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.we0;
 import org.telegram.ui.ey;
-import org.telegram.ui.lv;
+import org.telegram.ui.mv;
 import org.telegram.ui.rj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -55,7 +55,7 @@ public final /* synthetic */ class q1 implements Runnable {
                                     break;
                                 }
                             } else {
-                                org.telegram.ui.ActionBar.b2 b2Var = org.telegram.ui.Components.f5.v(activity, new lv(eyVar, 0)).a;
+                                org.telegram.ui.ActionBar.b2 b2Var = org.telegram.ui.Components.f5.v(activity, new mv(eyVar, 0)).a;
                                 eyVar.T1 = b2Var;
                                 eyVar.showDialog(b2Var);
                                 break;

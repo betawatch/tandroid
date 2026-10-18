@@ -6,16 +6,16 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n91 extends WebView {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n91(org.telegram.ui.fo0 fo0Var, Context context) {
+    public n91(org.telegram.ui.go0 go0Var, Context context) {
         super(context);
-        this.b = fo0Var;
+        this.b = go0Var;
     }
 
     @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
@@ -60,7 +60,7 @@ public final class n91 extends WebView {
     public boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 1:
-                ((ViewGroup) ((org.telegram.ui.fo0) this.b).fragmentView).requestDisallowInterceptTouchEvent(true);
+                ((ViewGroup) ((org.telegram.ui.go0) this.b).fragmentView).requestDisallowInterceptTouchEvent(true);
                 break;
         }
         return super.onTouchEvent(motionEvent);

@@ -14,7 +14,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f extends Handler {
     public final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public final class f extends Handler {
             aVar.e = i10;
             ((n2.b) this.c).i.getClass();
             if (i10 <= 3) {
-                u2.u uVar = new u2.u(xVar.a, xVar.b, xVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, xVar.d);
+                u2.t tVar = new u2.t(xVar.a, xVar.b, xVar.c, SystemClock.elapsedRealtime(), SystemClock.elapsedRealtime() - aVar.c, xVar.d);
                 oa.d dVar = ((n2.b) this.c).i;
                 int i11 = aVar.e;
                 dVar.getClass();
@@ -52,7 +52,7 @@ public final class f extends Handler {
                 synchronized (((n2.b) this.c).o) {
                     le.b bVar = ((n2.b) this.c).y;
                     if (bVar != null) {
-                        ((k0) bVar.b).c(uVar);
+                        ((k0) bVar.b).c(tVar);
                     }
                 }
                 synchronized (this) {
@@ -79,7 +79,7 @@ public final class f extends Handler {
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
         Object obj;
-        u2.u uVar;
+        u2.t tVar;
         switch (this.a) {
             case 0:
                 androidx.mediarouter.app.q qVar = (androidx.mediarouter.app.q) this.c;
@@ -136,8 +136,8 @@ public final class f extends Handler {
                         synchronized (((n2.b) this.c).o) {
                             try {
                                 le.b bVar2 = ((n2.b) this.c).y;
-                                if (bVar2 != null && (uVar = k10.b) != null) {
-                                    ((k0) bVar2.b).c(new u2.u(uVar.a, uVar.b, uVar.c, uVar.d, SystemClock.elapsedRealtime() - aVar.c, uVar.f));
+                                if (bVar2 != null && (tVar = k10.b) != null) {
+                                    ((k0) bVar2.b).c(new u2.t(tVar.a, tVar.b, tVar.c, tVar.d, SystemClock.elapsedRealtime() - aVar.c, tVar.f));
                                 }
                             } finally {
                             }

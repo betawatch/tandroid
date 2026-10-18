@@ -42,7 +42,7 @@ import r0.y0;
 import r0.z0;
 import v7.q7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class ActionBarOverlayLayout extends ViewGroup implements k1, l, m {
     public static final int[] R = {R.attr.actionBarSize, android.R.attr.windowContentOverlay};
@@ -369,7 +369,7 @@ public class ActionBarOverlayLayout extends ViewGroup implements k1, l, m {
         r0.k1 k1Var = this.G;
         this.I = k1Var;
         if (this.n || z10) {
-            i0.c b10 = i0.c.b(k1Var.b(), this.I.d() + measuredHeight, this.I.c(), this.I.a());
+            i0.b b10 = i0.b.b(k1Var.b(), this.I.d() + measuredHeight, this.I.c(), this.I.a());
             r0.k1 k1Var2 = this.I;
             int i12 = Build.VERSION.SDK_INT;
             a1 z0Var = i12 >= 34 ? new z0(k1Var2) : i12 >= 30 ? new y0(k1Var2) : i12 >= 29 ? new x0(k1Var2) : new w0(k1Var2);

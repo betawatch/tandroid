@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b {
     public final gh.a a;
@@ -52,7 +52,7 @@ public final class b {
             eVar2.d.add(new ni.d(view, f7));
         }
         if (this.f != null && this.g != null && view != null) {
-            this.f.d(view, this.g, new h0(2, f7, new WeakReference(view)), z10);
+            this.f.d(view, this.g, new h0(3, f7, new WeakReference(view)), z10);
         }
         re.b bVar2 = this.d;
         if (bVar2 != null) {

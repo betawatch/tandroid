@@ -14,7 +14,7 @@ import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.s61;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class s4 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final long a;
@@ -90,7 +90,7 @@ public final class s4 extends org.telegram.ui.ActionBar.n2 implements Notificati
             if (this.actionBar.s()) {
                 x02 = h6.x0(null, h6.w8, false);
             }
-            if (i0.b.h(x02) > 0.699999988079071d) {
+            if (i0.a.h(x02) > 0.699999988079071d) {
                 return true;
             }
         }

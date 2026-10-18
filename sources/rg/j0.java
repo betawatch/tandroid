@@ -10,11 +10,11 @@ import android.graphics.SweepGradient;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.it0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j0 extends FrameLayout {
     public float a;
@@ -90,7 +90,7 @@ public final class j0 extends FrameLayout {
                 View childAt3 = i0Var.getChildAt(0);
                 x10 = AndroidUtilities.lerp(x10, (childAt3.getWidth() / 2.0f) + childAt3.getX() + (i0Var.getX() - barView.getLeft()), it0Var.N1);
                 y3 = AndroidUtilities.lerp(y3, (childAt3.getHeight() / 2.0f) + childAt3.getY() + (i0Var.getY() - barView.getTop()), it0Var.N1);
-                i10 = i0.b.f(it0Var.N1, s1Var.a, it0Var.V1.b(0));
+                i10 = i0.a.f(it0Var.N1, s1Var.a, it0Var.V1.b(0));
             }
             float f7 = x10;
             float f10 = y3;
@@ -119,7 +119,7 @@ public final class j0 extends FrameLayout {
             i1.y1(f7, f10, dp, paint.getColor(), canvas2);
             if (i0Var != null && i0Var.getSelectedColorIndex() == 0) {
                 paint3.setAlpha((int) (view.getAlpha() * paint3.getAlpha() * it0Var.N1));
-                canvas2.drawCircle(f7, f10, a6.D(1.0f, it0Var.N1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);
+                canvas2.drawCircle(f7, f10, k3.D(1.0f, it0Var.N1, paint3.getStrokeWidth() + AndroidUtilities.dp(3.0f), f11), paint3);
             }
         }
         canvas2.restore();

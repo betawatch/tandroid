@@ -4,7 +4,7 @@ import android.util.Log;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class v {
     public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
@@ -25,7 +25,7 @@ public final class v {
         }
         this.a = str3;
         this.b = str;
-        this.c = a1.g.D(str, "!", str2);
+        this.c = a1.g.C(str, "!", str2);
     }
 
     public final boolean equals(Object obj) {

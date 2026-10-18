@@ -1,53 +1,43 @@
 package i2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+import android.text.TextUtils;
+import v7.u6;
+
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f {
-    public final long a;
-    public final long b;
-    public long c = -9223372036854775807L;
-    public long d = -9223372036854775807L;
-    public long f = -9223372036854775807L;
-    public long g = -9223372036854775807L;
-    public float j = 0.97f;
-    public float i = 1.03f;
-    public float k = 1.0f;
-    public long l = -9223372036854775807L;
-    public long e = -9223372036854775807L;
-    public long h = -9223372036854775807L;
-    public long m = -9223372036854775807L;
-    public long n = -9223372036854775807L;
+    public final String a;
+    public final b2.w b;
+    public final b2.w c;
+    public final int d;
+    public final int e;
 
-    public f(long j10, long j11) {
-        this.a = j10;
-        this.b = j11;
+    public f(String str, b2.w wVar, b2.w wVar2, int i10, int i11) {
+        u6.g(i10 == 0 || i11 == 0);
+        u6.g(true ^ TextUtils.isEmpty(str));
+        this.a = str;
+        wVar.getClass();
+        this.b = wVar;
+        wVar2.getClass();
+        this.c = wVar2;
+        this.d = i10;
+        this.e = i11;
     }
 
-    public final void a() {
-        long j10;
-        long j11 = this.c;
-        if (j11 != -9223372036854775807L) {
-            j10 = this.d;
-            if (j10 == -9223372036854775807L) {
-                long j12 = this.f;
-                if (j12 != -9223372036854775807L && j11 < j12) {
-                    j11 = j12;
-                }
-                j10 = this.g;
-                if (j10 == -9223372036854775807L || j11 <= j10) {
-                    j10 = j11;
-                }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && f.class == obj.getClass()) {
+            f fVar = (f) obj;
+            if (this.d == fVar.d && this.e == fVar.e && this.a.equals(fVar.a) && this.b.equals(fVar.b) && this.c.equals(fVar.c)) {
+                return true;
             }
-        } else {
-            j10 = -9223372036854775807L;
         }
-        if (this.e == j10) {
-            return;
-        }
-        this.e = j10;
-        this.h = j10;
-        this.m = -9223372036854775807L;
-        this.n = -9223372036854775807L;
-        this.l = -9223372036854775807L;
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.c.hashCode() + ((this.b.hashCode() + a1.g.g((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
     }
 }

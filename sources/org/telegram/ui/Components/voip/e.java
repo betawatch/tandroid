@@ -20,14 +20,14 @@ import android.view.accessibility.AccessibilityNodeProvider;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.hh1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class e extends View {
     public boolean E;
     public boolean F;
@@ -119,7 +119,7 @@ public final class e extends View {
         this.V = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
-        org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(52.0f), 0, i0.b.o(-1, 76));
+        org.telegram.ui.Cells.z i02 = h6.i0(AndroidUtilities.dp(52.0f), 0, i0.a.o(-1, 76));
         this.S = i02;
         i02.setCallback(this);
     }
@@ -197,7 +197,7 @@ public final class e extends View {
         this.x = (AndroidUtilities.dp(8.0f) * 0.005f) + this.x;
         int measuredWidth = getMeasuredWidth();
         int i10 = this.v;
-        int B = org.telegram.messenger.q.B(46.0f, measuredWidth, i10);
+        int B = org.telegram.messenger.g0.B(46.0f, measuredWidth, i10);
         int dp5 = AndroidUtilities.dp(40.0f);
         int measuredWidth2 = getMeasuredWidth() - AndroidUtilities.dp(46.0f);
         int dp6 = AndroidUtilities.dp(40.0f) + i10;
@@ -321,9 +321,9 @@ public final class e extends View {
         super.onMeasure(i10, i11);
         int i12 = this.v;
         this.L = (getMeasuredWidth() / 2.0f) - ((i12 / 2.0f) + AndroidUtilities.dp(46.0f));
-        int B = wh.B(28.0f, i12, 2);
-        this.c.setBounds(B, B, AndroidUtilities.dp(28.0f) + B, AndroidUtilities.dp(28.0f) + B);
-        this.d.setBounds(B, B, AndroidUtilities.dp(28.0f) + B, AndroidUtilities.dp(28.0f) + B);
+        int A = kk.A(28.0f, i12, 2);
+        this.c.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
+        this.d.setBounds(A, A, AndroidUtilities.dp(28.0f) + A, AndroidUtilities.dp(28.0f) + A);
         float dp = AndroidUtilities.dp(3.0f);
         Paint paint = this.T;
         paint.setStrokeWidth(dp);

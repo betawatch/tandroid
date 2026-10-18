@@ -1,164 +1,89 @@
 package ig;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import java.nio.charset.StandardCharsets;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.al;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.i5;
-import org.telegram.ui.Components.p6;
-import org.telegram.ui.Wallet.l9;
+import android.text.TextUtils;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.pc0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
-public final class y0 extends EditTextBoldCursor {
-    public final /* synthetic */ int b = 0;
-    public int c;
-    public final i5 d;
-    public final p6 e;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate f;
+public final /* synthetic */ class y0 implements Utilities.Callback5, org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(b1 b1Var, Activity activity) {
-        super(activity);
-        this.f = b1Var;
-        this.d = new i5(this);
-        p6 p6Var = new p6(false, true, true);
-        this.e = p6Var;
-        p6Var.n(0.2f, 160L, bs.h);
-        p6Var.w(AndroidUtilities.dp(15.33f));
-        p6Var.setCallback(this);
-        p6Var.b = 5;
+    public /* synthetic */ y0(d1 d1Var, int i10) {
+        this.a = i10;
+        this.b = d1Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.b) {
-            case 0:
-                super.dispatchDraw(canvas);
-                int a2 = this.d.a(h6.w0(this.c < 0 ? h6.p7 : h6.P5, ((b1) this.f).getResourceProvider()), false);
-                p6 p6Var = this.e;
-                p6Var.u(a2);
-                p6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-                p6Var.draw(canvas);
-                break;
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
             case 1:
-                super.dispatchDraw(canvas);
-                int a10 = this.d.a(h6.w0(this.c <= 0 ? h6.p7 : h6.P5, ((al) this.f).a), false);
-                p6 p6Var2 = this.e;
-                p6Var2.u(a10);
-                int dp = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
-                int height = getHeight() + getScrollY();
-                p6Var2.setBounds(dp - AndroidUtilities.dp(48.0f), height - Math.min(AndroidUtilities.dp(44.0f), getHeight()), dp, height);
-                p6Var2.draw(canvas);
+                this.b.W();
+                break;
+            case 2:
+                this.b.finishFragment();
                 break;
             default:
-                super.dispatchDraw(canvas);
-                int a11 = this.d.a(h6.w0(this.c <= 0 ? h6.p7 : h6.P5, ((l9) this.f).getResourceProvider()), false);
-                p6 p6Var3 = this.e;
-                p6Var3.u(a11);
-                int dp2 = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
-                int height2 = getHeight() + getScrollY();
-                p6Var3.setBounds(dp2 - AndroidUtilities.dp(48.0f), height2 - Math.min(AndroidUtilities.dp(44.0f), getHeight()), dp2, height2);
-                p6Var3.draw(canvas);
+                d1 d1Var = this.b;
+                d1Var.b.a(1.0f);
+                TLRPC.UserFull userFull = d1Var.getMessagesController().getUserFull(d1Var.getUserConfig().getClientUserId());
+                TL_account.updateBusinessLocation updatebusinesslocation = new TL_account.updateBusinessLocation();
+                if (userFull != null) {
+                    userFull.business_location = null;
+                    userFull.flags2 &= -3;
+                }
+                d1Var.getConnectionsManager().sendRequest(updatebusinesslocation, new z0(d1Var, 1));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ku, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.b) {
-            case 0:
-                super.onTextChanged(charSequence, i10, i11, i12);
-                p6 p6Var = this.e;
-                if (p6Var != null) {
-                    this.c = 96 - charSequence.length();
-                    p6Var.a();
-                    String str = "";
-                    if (this.c <= 12) {
-                        str = "" + this.c;
-                    }
-                    p6Var.t(str, true, true);
-                    break;
-                }
-                break;
-            case 1:
-                super.onTextChanged(charSequence, i10, i11, i12);
-                p6 p6Var2 = this.e;
-                if (p6Var2 != null) {
-                    this.c = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-                    p6Var2.a();
-                    int i13 = this.c;
-                    p6Var2.t(i13 <= 100 ? Integer.toString(i13) : "", isAttachedToWindow(), true);
-                    invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.onTextChanged(charSequence, i10, i11, i12);
-                p6 p6Var3 = this.e;
-                if (p6Var3 != null) {
-                    this.c = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-                    p6Var3.a();
-                    int i14 = this.c;
-                    p6Var3.t(i14 <= 100 ? Integer.toString(i14) : "", isAttachedToWindow(), true);
-                    invalidate();
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        d1 d1Var = this.b;
+        f61 f61Var = (f61) obj;
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        int i10 = f61Var.d;
+        if (i10 != 1 && f61Var.c != d1Var.h) {
+            if (i10 == 2) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(d1Var.getParentActivity());
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.BusinessLocationClearTitle);
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.BusinessLocationClearMessage);
+                alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new y0(d1Var, 3));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                d1Var.showDialog(alertDialog$Builder.a);
+                return;
+            }
+            return;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        switch (this.b) {
-            case 0:
-                if (drawable == this.e || super.verifyDrawable(drawable)) {
-                }
-                break;
-            case 1:
-                if (drawable == this.e || super.verifyDrawable(drawable)) {
-                }
-                break;
-            default:
-                if (drawable == this.e || super.verifyDrawable(drawable)) {
-                }
-                break;
+        if (d1Var.x != null && f61Var.c != d1Var.h) {
+            d1Var.x = null;
+            d1Var.a.W2.N(true);
+            return;
         }
-        return true;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(al alVar, Context context) {
-        super(context);
-        this.f = alVar;
-        this.c = 960;
-        this.d = new i5(this);
-        p6 p6Var = new p6(false, true, true);
-        this.e = p6Var;
-        p6Var.n(0.2f, 160L, bs.h);
-        p6Var.w(AndroidUtilities.dp(15.33f));
-        p6Var.b = 5;
-        p6Var.setCallback(this);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(l9 l9Var, Activity activity) {
-        super(activity);
-        this.f = l9Var;
-        this.c = 960;
-        this.d = new i5(this);
-        p6 p6Var = new p6(false, true, true);
-        this.e = p6Var;
-        p6Var.n(0.2f, 160L, bs.h);
-        p6Var.w(AndroidUtilities.dp(15.33f));
-        p6Var.b = 5;
-        p6Var.setCallback(this);
+        pc0 pc0Var = new pc0(8);
+        if (d1Var.x != null) {
+            TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+            tL_channelLocation.address = d1Var.y;
+            tL_channelLocation.geo_point = d1Var.x;
+            pc0Var.A0 = tL_channelLocation;
+        }
+        pc0Var.F0 = new ah.h0(18, d1Var, pc0Var);
+        if (d1Var.x != null || TextUtils.isEmpty(d1Var.y)) {
+            d1Var.presentFragment(pc0Var);
+            return;
+        }
+        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(d1Var.getParentActivity(), 3, null);
+        b2Var.g0 = false;
+        b2Var.q(200L);
+        Utilities.searchQueue.postRunnable(new w0(d1Var, pc0Var, b2Var));
     }
 }

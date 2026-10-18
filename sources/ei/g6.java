@@ -37,7 +37,7 @@ import org.telegram.ui.xf1;
 import org.telegram.ui.z51;
 import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class g6 extends View implements ne.d {
     public final /* synthetic */ int a;
@@ -327,7 +327,7 @@ public final class g6 extends View implements ne.d {
                             i30Var.E = 1.0f;
                         }
                         invalidate();
-                        paint7.setColor(i0.b.f(i30Var.E, 1711607061, 1714752530));
+                        paint7.setColor(i0.a.f(i30Var.E, 1711607061, 1714752530));
                         canvas.drawCircle(getMeasuredWidth() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(25.0f), (AndroidUtilities.dp(5.0f) * i30Var.E) + AndroidUtilities.dp(35.0f), paint7);
                         break;
                     }
@@ -343,7 +343,7 @@ public final class g6 extends View implements ne.d {
                         invalidate();
                     }
                 }
-                paint7.setColor(i0.b.f(i30Var.E, 1711607061, 1714752530));
+                paint7.setColor(i0.a.f(i30Var.E, 1711607061, 1714752530));
                 canvas.drawCircle(getMeasuredWidth() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(25.0f), (AndroidUtilities.dp(5.0f) * i30Var.E) + AndroidUtilities.dp(35.0f), paint7);
             case 7:
                 canvas.drawColor(855638016);

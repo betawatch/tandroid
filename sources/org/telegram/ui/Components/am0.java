@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class am0 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,23 +40,23 @@ public final /* synthetic */ class am0 implements Runnable {
             default:
                 tg.i iVar = (tg.i) obj;
                 tg.n nVar = iVar.b;
-                ValueAnimator valueAnimator = nVar.W;
-                tg.h hVar = nVar.e0;
-                tg.h hVar2 = nVar.d0;
+                ValueAnimator valueAnimator = nVar.c0;
+                tg.h hVar = nVar.h0;
+                tg.h hVar2 = nVar.g0;
                 if (valueAnimator != null) {
                     valueAnimator.removeAllListeners();
-                    nVar.W.cancel();
-                    nVar.W = null;
+                    nVar.c0.cancel();
+                    nVar.c0 = null;
                 }
-                AnimatorSet animatorSet = nVar.a0;
+                AnimatorSet animatorSet = nVar.d0;
                 if (animatorSet != null) {
                     animatorSet.removeAllListeners();
-                    nVar.a0.cancel();
-                    nVar.a0 = null;
+                    nVar.d0.cancel();
+                    nVar.d0 = null;
                 }
                 if (Math.abs(nVar.b.d) <= 10.0f) {
-                    AndroidUtilities.cancelRunOnUIThread(nVar.b0);
-                    nVar.a0 = new AnimatorSet();
+                    AndroidUtilities.cancelRunOnUIThread(nVar.e0);
+                    nVar.d0 = new AnimatorSet();
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(nVar.b.d, f10);
                     ofFloat.addUpdateListener(hVar2);
                     long j10 = 220;
@@ -77,12 +77,12 @@ public final /* synthetic */ class am0 implements Runnable {
                     ofFloat4.setStartDelay(j10);
                     ofFloat4.setDuration(600L);
                     ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    nVar.a0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    nVar.a0.addListener(new vf1(iVar, 20));
-                    nVar.a0.start();
+                    nVar.d0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
+                    nVar.d0.addListener(new vf1(iVar, 20));
+                    nVar.d0.start();
                     break;
                 } else {
-                    nVar.l();
+                    nVar.n();
                     break;
                 }
         }

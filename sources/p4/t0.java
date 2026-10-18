@@ -20,7 +20,7 @@ import java.util.concurrent.Executor;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.Components.w31;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class t0 {
     public boolean a;
@@ -50,7 +50,7 @@ public final class t0 {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.c) this.c).x();
+            ((r4.d) this.c).x();
             return null;
         }
     }
@@ -166,10 +166,10 @@ public final class t0 {
         }
     }
 
-    public t0(AssetManager assetManager, Executor executor, r4.c cVar, String str, File file) {
+    public t0(AssetManager assetManager, Executor executor, r4.d dVar, String str, File file) {
         this.a = false;
         this.b = executor;
-        this.c = cVar;
+        this.c = dVar;
         this.f = str;
         this.e = file;
         int i10 = Build.VERSION.SDK_INT;
@@ -178,24 +178,24 @@ public final class t0 {
             switch (i10) {
                 case 24:
                 case 25:
-                    bArr = r4.d.h;
+                    bArr = r4.e.h;
                     break;
                 case 26:
-                    bArr = r4.d.g;
+                    bArr = r4.e.g;
                     break;
                 case 27:
-                    bArr = r4.d.f;
+                    bArr = r4.e.f;
                     break;
                 case 28:
                 case 29:
                 case MessageObject.TYPE_GIFT_STARS /* 30 */:
-                    bArr = r4.d.e;
+                    bArr = r4.e.e;
                     break;
                 case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
                 case 32:
                 case 33:
                 case 34:
-                    bArr = r4.d.d;
+                    bArr = r4.e.d;
                     break;
             }
         }

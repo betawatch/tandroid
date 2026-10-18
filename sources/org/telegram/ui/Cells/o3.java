@@ -23,12 +23,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ti0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class o3 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -52,7 +52,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         this.a = UserConfig.selectedAccount;
         TextView textView = new TextView(context);
         this.b = textView;
-        wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+        kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -62,7 +62,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         addView(textView, w7.z5.a(-2.0f, z10 ? 22.0f : 71.0f, 10.0f, z10 ? 71.0f : 22.0f, 0.0f, -2, z10 ? 5 : 3));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        wh.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
+        kk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
@@ -83,7 +83,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         TextView textView3 = new TextView(context);
         this.f = textView3;
         textView3.setGravity(17);
-        org.telegram.messenger.q.m(14.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Rh, false), 1, textView3);
+        org.telegram.messenger.g0.m(14.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Rh, false), 1, textView3);
         textView3.setText(LocaleController.getString(R.string.StickersRemove));
         addView(textView3, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
         sg.p0 p0Var = new sg.p0(AndroidUtilities.dp(4.0f), context, d6Var, false);
@@ -344,7 +344,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         int measuredWidth2 = textView.getMeasuredWidth();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) textView.getLayoutParams();
         if (measuredWidth2 < measuredWidth) {
-            layoutParams.rightMargin = i0.a.C(measuredWidth, measuredWidth2, 2, AndroidUtilities.dp(14.0f));
+            layoutParams.rightMargin = i2.d.C(measuredWidth, measuredWidth2, 2, AndroidUtilities.dp(14.0f));
         } else {
             layoutParams.rightMargin = AndroidUtilities.dp(14.0f);
         }

@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o71 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class o71 implements RequestDelegate {
                             }
                             str = str4;
                             str2 = str3;
-                            AndroidUtilities.runOnUIThread(new gn0(d91Var, str, str2, callback0Return, 21));
+                            AndroidUtilities.runOnUIThread(new hn0(d91Var, str, str2, callback0Return, 21));
                             return;
                         }
                     } else {
@@ -92,7 +92,7 @@ public final /* synthetic */ class o71 implements RequestDelegate {
                     str = null;
                     str2 = null;
                 }
-                AndroidUtilities.runOnUIThread(new gn0(d91Var, str, str2, callback0Return, 21));
+                AndroidUtilities.runOnUIThread(new hn0(d91Var, str, str2, callback0Return, 21));
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new h71((qc1) this.b, (String) this.c, tL_error, 1));
@@ -111,7 +111,7 @@ public final /* synthetic */ class o71 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new h71((pe1) this.b, (String) this.c, tLObject, 6));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new gn0((xf1) this.b, tLObject, (String) this.c, tL_error, 24));
+                AndroidUtilities.runOnUIThread(new hn0((xf1) this.b, tLObject, (String) this.c, tL_error, 24));
                 break;
             case 6:
                 xf1 xf1Var = (xf1) this.b;
@@ -124,13 +124,13 @@ public final /* synthetic */ class o71 implements RequestDelegate {
                     break;
                 }
             case 7:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.t3(17, (rh1) this.b, (int[]) this.c));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.u3(17, (rh1) this.b, (int[]) this.c));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new gn0((rg.m2) this.b, tLObject, (rg.k2) this.c, tL_error, 29));
+                AndroidUtilities.runOnUIThread(new hn0((rg.m2) this.b, tLObject, (rg.k2) this.c, tL_error, 29));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ay0(tLObject, (MessagesController) this.b, (ug.v0) this.c, 24));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.ay0(tLObject, (MessagesController) this.b, (ug.w0) this.c, 24));
                 break;
             case 10:
                 MessagesController messagesController = (MessagesController) this.b;

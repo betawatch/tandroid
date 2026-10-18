@@ -13,7 +13,7 @@ import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class mw implements ni.c, yl0, en0, ne.d {
                         i11 = AndroidUtilities.dp((r3 * 4) - (AndroidUtilities.isTablet() ? 5 : 1)) + (dvVar2.n[0] * i12);
                     }
                     if (iArr[0] - i11 < AndroidUtilities.dp(5.0f)) {
-                        i11 = org.telegram.ui.Cells.t0.e(5.0f, iArr[0] - i11, i11);
+                        i11 = org.telegram.messenger.kk.D(5.0f, iArr[0] - i11, i11);
                     } else if ((iArr[0] - i11) + dp > AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f)) {
                         i11 += ((iArr[0] - i11) + dp) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(5.0f));
                     }

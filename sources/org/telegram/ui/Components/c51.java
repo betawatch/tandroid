@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c51 extends bb {
     public final ImageView X;
@@ -215,7 +215,7 @@ public final class c51 extends bb {
         ei.d dVar = c51Var.Z;
         dVar.setLoading(false);
         if (tL_error != null) {
-            org.telegram.ui.Cells.t0.t(c51Var.topBulletinContainer, c51Var.resourcesProvider, tL_error, false);
+            org.telegram.ui.Cells.c1.t(c51Var.topBulletinContainer, c51Var.resourcesProvider, tL_error, false);
             dVar.setText(LocaleController.getString(R.string.OK));
             dVar.setOnClickListener(new t41(c51Var, 0));
         } else if (tL_messages_translateResult == null || tL_messages_translateResult.result.isEmpty()) {

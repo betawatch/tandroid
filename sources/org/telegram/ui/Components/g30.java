@@ -38,7 +38,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.mc1;
 import org.telegram.ui.uh1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g30 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class g30 implements Runnable {
     public final void run() {
         String str;
         int i10;
-        org.telegram.ui.fo0 fo0Var;
+        org.telegram.ui.go0 go0Var;
         xc d;
         int i11;
         int i12;
@@ -145,10 +145,10 @@ public final /* synthetic */ class g30 implements Runnable {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zy0Var.b.getContext());
                             alertDialog$Builder.a.R = LocaleController.getString(R.string.PrivacyBirthdayTooOftenTitle);
                             alertDialog$Builder.a.T = LocaleController.getString(R.string.PrivacyBirthdayTooOftenMessage);
-                            org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                            org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                             break;
                         } else {
-                            org.telegram.messenger.q.q(R.string.UnknownError, xc.a0(U), R.raw.error, 36);
+                            org.telegram.messenger.g0.q(R.string.UnknownError, xc.a0(U), R.raw.error, 36);
                             break;
                         }
                     }
@@ -196,7 +196,7 @@ public final /* synthetic */ class g30 implements Runnable {
                         }
                     }
                     if (tL_messages_myStickers.sets.size() == tL_messages_getMyStickers.limit) {
-                        tL_messages_getMyStickers.offset_id = ((TLRPC.StickerSetCovered) i0.a.h(1, tL_messages_myStickers.sets)).set.id;
+                        tL_messages_getMyStickers.offset_id = ((TLRPC.StickerSetCovered) i2.d.h(1, tL_messages_myStickers.sets)).set.id;
                         ConnectionsManager.getInstance(gtVar.r).sendRequest(tL_messages_getMyStickers, new org.telegram.ui.ea(gtVar, arrayList, tL_messages_getMyStickers, 7));
                         break;
                     }
@@ -244,7 +244,7 @@ public final /* synthetic */ class g30 implements Runnable {
                     break;
                 } else {
                     StringBuilder sb2 = new StringBuilder();
-                    org.telegram.ui.Cells.t0.n(R.string.ErrorOccurred, "\n", sb2);
+                    org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb2);
                     sb2.append(tL_error3.text);
                     launchActivity.F0(f5.M(launchActivity, null, sb2.toString()));
                     break;
@@ -387,28 +387,28 @@ public final /* synthetic */ class g30 implements Runnable {
                         d = org.telegram.ui.kb0.d();
                         i11 = R.string.PaymentInvoiceLinkInvalid;
                     }
-                    org.telegram.messenger.wh.q(i11, d, null);
+                    org.telegram.messenger.kk.q(i11, d, null);
                 } else if (!launchActivity5.isFinishing()) {
                     if (tLObject7 instanceof TLRPC.TL_payments_paymentFormStars) {
                         yh.o4 o4Var = launchActivity5.Y0;
                         launchActivity5.Y0 = null;
-                        ai.fa.y(i22, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new org.telegram.ui.fb0(kb0Var, 1), new org.telegram.ui.d90(o4Var, i20));
+                        ai.ga.y(i22, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject7, new org.telegram.ui.fb0(kb0Var, 1), new org.telegram.ui.d90(o4Var, i20));
                         break;
                     } else {
                         if (tLObject7 instanceof TLRPC.PaymentForm) {
                             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject7;
                             MessagesController.getInstance(i22).putUsers(paymentForm.users, false);
-                            fo0Var = new org.telegram.ui.fo0(paymentForm, null, str8, LaunchActivity.U());
+                            go0Var = new org.telegram.ui.go0(paymentForm, null, str8, LaunchActivity.U());
                         } else {
-                            fo0Var = tLObject7 instanceof TLRPC.PaymentReceipt ? new org.telegram.ui.fo0((TLRPC.PaymentReceipt) tLObject7) : null;
+                            go0Var = tLObject7 instanceof TLRPC.PaymentReceipt ? new org.telegram.ui.go0((TLRPC.PaymentReceipt) tLObject7) : null;
                         }
-                        if (fo0Var != null) {
+                        if (go0Var != null) {
                             yh.o4 o4Var2 = launchActivity5.Y0;
                             if (o4Var2 != null) {
                                 launchActivity5.Y0 = null;
-                                fo0Var.Z0 = new org.telegram.ui.jf(i19, o4Var2);
+                                go0Var.Z0 = new org.telegram.ui.jf(i19, o4Var2);
                             }
-                            kb0Var.u(fo0Var, false);
+                            kb0Var.u(go0Var, false);
                         }
                     }
                 }
@@ -524,9 +524,9 @@ public final /* synthetic */ class g30 implements Runnable {
                 if (tLObject11 instanceof TLRPC.PaymentForm) {
                     final TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject11;
                     fg0Var4.getMessagesController().putUsers(paymentForm2.users, false);
-                    org.telegram.ui.fo0 fo0Var2 = new org.telegram.ui.fo0(tL_inputInvoicePremiumAuthCode, paymentForm2, null, null, 4, null, null, null, null, null, null, false, null, fg0Var4, true);
-                    fo0Var2.V0 = true;
-                    fo0Var2.c1 = new Utilities.Callback() { // from class: org.telegram.ui.kf0
+                    org.telegram.ui.go0 go0Var2 = new org.telegram.ui.go0(tL_inputInvoicePremiumAuthCode, paymentForm2, null, null, 4, null, null, null, null, null, null, false, null, fg0Var4, true);
+                    go0Var2.V0 = true;
+                    go0Var2.c1 = new Utilities.Callback() { // from class: org.telegram.ui.kf0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj6) {
                             switch (i21) {
@@ -623,7 +623,7 @@ public final /* synthetic */ class g30 implements Runnable {
                             }
                         }
                     };
-                    fo0Var2.d1 = new Utilities.Callback() { // from class: org.telegram.ui.kf0
+                    go0Var2.d1 = new Utilities.Callback() { // from class: org.telegram.ui.kf0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj6) {
                             switch (i20) {
@@ -720,8 +720,8 @@ public final /* synthetic */ class g30 implements Runnable {
                             }
                         }
                     };
-                    fo0Var2.e1 = new org.telegram.ui.v10(of0Var, i20);
-                    fg0Var4.presentFragment(fo0Var2);
+                    go0Var2.e1 = new org.telegram.ui.v10(of0Var, i20);
+                    fg0Var4.presentFragment(go0Var2);
                     break;
                 } else if (tL_error10 != null) {
                     if ("PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error10.text)) {
@@ -793,7 +793,7 @@ public final /* synthetic */ class g30 implements Runnable {
                 xm0Var2.w1();
                 break;
             case 22:
-                org.telegram.ui.fo0.f0((org.telegram.ui.fo0) obj5, (TLRPC.TL_error) obj4, (TLObject) obj3, (String) obj2, (TL_account.getPassword) obj);
+                org.telegram.ui.go0.f0((org.telegram.ui.go0) obj5, (TLRPC.TL_error) obj4, (TLObject) obj3, (String) obj2, (TL_account.getPassword) obj);
                 break;
             case 23:
                 ClippingImageView[] clippingImageViewArr = (ClippingImageView[]) obj4;
@@ -909,7 +909,7 @@ public final /* synthetic */ class g30 implements Runnable {
                             break;
                         }
                     } else {
-                        org.telegram.messenger.q.q(R.string.UnknownError, xc.a0(privacyControlActivity2), R.raw.error, 36);
+                        org.telegram.messenger.g0.q(R.string.UnknownError, xc.a0(privacyControlActivity2), R.raw.error, 36);
                         break;
                     }
                 }
@@ -918,9 +918,9 @@ public final /* synthetic */ class g30 implements Runnable {
                 ProfileActivity profileActivity = (ProfileActivity) obj5;
                 TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) obj3;
                 TLRPC.User user2 = (TLRPC.User) obj2;
-                org.telegram.messenger.fk fkVar = (org.telegram.messenger.fk) obj;
+                org.telegram.messenger.ek ekVar = (org.telegram.messenger.ek) obj;
                 if (!(((TLRPC.ChannelParticipant) obj4) instanceof TLRPC.TL_channelParticipantAdmin) && !(chatParticipant instanceof TLRPC.TL_chatParticipantAdmin)) {
-                    fkVar.run(1);
+                    ekVar.run(1);
                     break;
                 } else {
                     AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(profileActivity.getParentActivity(), 0, profileActivity.A0);
@@ -928,7 +928,7 @@ public final /* synthetic */ class g30 implements Runnable {
                     org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder3.a;
                     b2Var3.R = string2;
                     b2Var3.T = LocaleController.formatString(R.string.AdminWillBeRemoved, ContactsController.formatName(user2.first_name, user2.last_name));
-                    alertDialog$Builder3.k(LocaleController.getString(R.string.OK), new org.telegram.ui.qp0(fkVar, 10));
+                    alertDialog$Builder3.k(LocaleController.getString(R.string.OK), new org.telegram.ui.rp0(ekVar, 10));
                     alertDialog$Builder3.h(LocaleController.getString(R.string.Cancel), null);
                     profileActivity.showDialog(b2Var3);
                     break;

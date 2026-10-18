@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f21 extends FrameLayout {
     public boolean E;
@@ -222,7 +222,7 @@ public final class f21 extends FrameLayout {
         }
         paint.setShader(this.y);
         canvas.drawRect(i19, f11, dp + i19, f12, paint);
-        a(canvas, i19 + i18, (int) com.google.android.gms.internal.cast.a6.x(1.0f, this.v, f13, f11), (Color.HSVToColor(fArr) & 16777215) | (((int) (this.v * 255.0f)) << 24));
+        a(canvas, i19 + i18, (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, this.v, f13, f11), (Color.HSVToColor(fArr) & 16777215) | (((int) (this.v * 255.0f)) << 24));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -234,7 +234,7 @@ public final class f21 extends FrameLayout {
 
     @Override // android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        int b10 = org.telegram.messenger.q.b(20.0f, (i10 / 2) - (this.b * 2), 1);
+        int b10 = org.telegram.messenger.g0.b(20.0f, (i10 / 2) - (this.b * 2), 1);
         this.r = b10;
         int i14 = b10 * 2;
         int i15 = b10 * 2;

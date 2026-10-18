@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.a2, e5, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, hh.b, aw0, bw0, eh.d, r0.n {
     public final /* synthetic */ int a;
@@ -139,7 +139,7 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
             case 2:
                 return String.format("%02d", Integer.valueOf(i10));
             case 3:
-                return i0.a.j(i10, "");
+                return i2.d.j(i10, "");
             case 4:
                 return String.format("%02d", Integer.valueOf(i10));
             case 5:
@@ -175,7 +175,7 @@ public final /* synthetic */ class k2 implements kd0, org.telegram.ui.ActionBar.
                         return LocaleController.getString(R.string.December);
                 }
             case 8:
-                return i0.a.j(i10, "");
+                return i2.d.j(i10, "");
         }
     }
 

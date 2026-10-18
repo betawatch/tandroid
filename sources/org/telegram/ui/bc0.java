@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class bc0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -70,38 +70,38 @@ public final class bc0 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                jp0 jp0Var = (jp0) obj;
-                nc ncVar = jp0Var.X;
+                kp0 kp0Var = (kp0) obj;
+                nc ncVar = kp0Var.X;
                 if (ncVar != null) {
                     if (ncVar.getParent() != null) {
-                        ((ViewGroup) jp0Var.X.getParent()).removeView(jp0Var.X);
+                        ((ViewGroup) kp0Var.X.getParent()).removeView(kp0Var.X);
                     }
-                    jp0Var.X = null;
+                    kp0Var.X = null;
                 }
-                jp0Var.Z = null;
+                kp0Var.Z = null;
                 super.onAnimationEnd(animator);
                 break;
             case 6:
-                mq0 mq0Var = (mq0) obj;
-                pq0 pq0Var = mq0Var.D0;
-                nq0[] nq0VarArr = pq0Var.n;
-                pq0Var.r = null;
-                if (pq0Var.w) {
-                    nq0VarArr[1].setVisibility(8);
+                nq0 nq0Var = (nq0) obj;
+                qq0 qq0Var = nq0Var.D0;
+                oq0[] oq0VarArr = qq0Var.n;
+                qq0Var.r = null;
+                if (qq0Var.w) {
+                    oq0VarArr[1].setVisibility(8);
                 } else {
-                    nq0 nq0Var = nq0VarArr[0];
-                    nq0VarArr[0] = nq0VarArr[1];
-                    nq0VarArr[1] = nq0Var;
-                    nq0Var.setVisibility(8);
-                    pq0Var.e = pq0Var.n[0].e == pq0Var.h.getFirstTabId();
-                    pq0Var.h.j(1.0f, pq0Var.n[0].e);
+                    oq0 oq0Var = oq0VarArr[0];
+                    oq0VarArr[0] = oq0VarArr[1];
+                    oq0VarArr[1] = oq0Var;
+                    oq0Var.setVisibility(8);
+                    qq0Var.e = qq0Var.n[0].e == qq0Var.h.getFirstTabId();
+                    qq0Var.h.j(1.0f, qq0Var.n[0].e);
                 }
-                pq0Var.s = false;
-                mq0Var.y0 = false;
-                mq0Var.x0 = false;
-                kVar = ((org.telegram.ui.ActionBar.n2) pq0Var).actionBar;
+                qq0Var.s = false;
+                nq0Var.y0 = false;
+                nq0Var.x0 = false;
+                kVar = ((org.telegram.ui.ActionBar.n2) qq0Var).actionBar;
                 kVar.setEnabled(true);
-                pq0Var.h.setEnabled(true);
+                qq0Var.h.setEnabled(true);
                 break;
             case 7:
                 PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.ml0) obj).c;

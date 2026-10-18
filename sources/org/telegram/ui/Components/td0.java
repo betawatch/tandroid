@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class td0 extends Dialog implements org.telegram.ui.ActionBar.a5 {
     public final ActionBarLayout a;
@@ -41,7 +41,7 @@ public final class td0 extends Dialog implements org.telegram.ui.ActionBar.a5 {
             frameLayout.setBackgroundColor(-1728053248);
             frameLayout.setOnClickListener(new u80(this, 3));
             actionBarLayout.setRemoveActionBarExtraHeight(true);
-            m.g3.r(actionBarLayout.getView());
+            m.g3.i(actionBarLayout.getView());
         }
         le0 le0Var = new le0(context);
         this.c = le0Var;
@@ -128,7 +128,7 @@ public final class td0 extends Dialog implements org.telegram.ui.ActionBar.a5 {
         frameLayout.setSystemUiVisibility(1280);
         frameLayout.setOnApplyWindowInsetsListener(new org.telegram.ui.ActionBar.g3(2));
         if (i10 >= 26) {
-            AndroidUtilities.setLightNavigationBar(this, i0.b.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) >= 0.9d);
+            AndroidUtilities.setLightNavigationBar(this, i0.a.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, true)) >= 0.9d);
         }
     }
 

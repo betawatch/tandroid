@@ -2,31 +2,31 @@ package a3;
 
 import ai.a7;
 import ai.b1;
-import ai.bd;
 import ai.c6;
 import ai.cd;
 import ai.d6;
 import ai.d7;
+import ai.dd;
 import ai.e7;
 import ai.g6;
 import ai.h1;
 import ai.i7;
 import ai.j7;
 import ai.l1;
-import ai.ld;
+import ai.md;
 import ai.s5;
 import ai.t5;
 import ai.u5;
 import ai.v5;
-import ai.vc;
 import ai.w5;
+import ai.wc;
 import ai.y5;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.opengl.Matrix;
 import android.os.Trace;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.nio.MappedByteBuffer;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
@@ -42,16 +42,15 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yw0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.s4;
 import org.telegram.ui.Wallet.t4;
-import org.telegram.ui.Wallet.w7;
+import org.telegram.ui.Wallet.u4;
+import org.telegram.ui.Wallet.z7;
 import org.telegram.ui.sn;
 import sg.x0;
 import v7.y7;
-import v7.z7;
 import w7.e8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -114,7 +113,7 @@ public final /* synthetic */ class d implements Runnable {
             case 6:
                 ai.c cVar = (ai.c) this.b;
                 cVar.getClass();
-                new cd(cVar.getContext(), cVar.b).show();
+                new dd(cVar.getContext(), cVar.b).show();
                 return;
             case 7:
                 ai.w wVar = (ai.w) this.b;
@@ -142,22 +141,22 @@ public final /* synthetic */ class d implements Runnable {
                 AndroidUtilities.showKeyboard(((l1) this.b).c);
                 return;
             case 12:
-                s4 s4Var = (s4) ((j7) this.b);
-                w7 w7Var = s4Var.c.k0;
-                if (w7Var != null) {
-                    TL_wallet.nftItem nftitem = s4Var.b;
-                    if (w7Var.C()) {
-                        w7Var.e0(w7Var.v(nftitem));
+                t4 t4Var = (t4) ((j7) this.b);
+                z7 z7Var = t4Var.c.k0;
+                if (z7Var != null) {
+                    TL_wallet.nftItem nftitem = t4Var.b;
+                    if (z7Var.C()) {
+                        z7Var.e0(z7Var.v(nftitem));
                         return;
                     }
                     return;
                 }
                 return;
             case 13:
-                t4 t4Var = (t4) ((i7) this.b);
-                w7 w7Var2 = t4Var.b.k0;
-                if (w7Var2 != null) {
-                    w7Var2.d0(t4Var.a);
+                u4 u4Var = (u4) ((i7) this.b);
+                z7 z7Var2 = u4Var.b.k0;
+                if (z7Var2 != null) {
+                    z7Var2.d0(u4Var.a);
                     return;
                 }
                 return;
@@ -214,7 +213,7 @@ public final /* synthetic */ class d implements Runnable {
                                 int i14 = 0;
                                 while (i14 < 16) {
                                     float f12 = fArr[i14];
-                                    fArr4[i14] = a6.x(fArr3[i14], f12, pow, f12);
+                                    fArr4[i14] = k3.y(fArr3[i14], f12, pow, f12);
                                     i14++;
                                     c14 = c14;
                                 }
@@ -346,10 +345,10 @@ public final /* synthetic */ class d implements Runnable {
                 ((l1[]) this.b)[0].dismiss();
                 return;
             case 23:
-                vc vcVar = (vc) this.b;
-                vcVar.getClass();
+                wc wcVar = (wc) this.b;
+                wcVar.getClass();
                 try {
-                    im0 currentListView2 = ((ld) vcVar.M0).R.getCurrentListView();
+                    im0 currentListView2 = ((md) wcVar.M0).R.getCurrentListView();
                     if (currentListView2 == null || currentListView2.getAdapter() == null) {
                         return;
                     }
@@ -359,10 +358,10 @@ public final /* synthetic */ class d implements Runnable {
                     return;
                 }
             case 24:
-                pf.d.r(((bd) this.b).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(((cd) this.b).getContext(), LocaleController.getString(R.string.StarsTOSLink));
                 return;
             case 25:
-                pf.d.r(((cd) this.b).getContext(), LocaleController.getString(R.string.StarsTOSLink));
+                pf.d.r(((dd) this.b).getContext(), LocaleController.getString(R.string.StarsTOSLink));
                 return;
             case 26:
                 ((androidx.activity.m) this.b).invalidateOptionsMenu();
@@ -403,12 +402,12 @@ public final /* synthetic */ class d implements Runnable {
                                 Context context = qVar.a;
                                 aVar.getClass();
                                 o0.h[] hVarArr = {d};
-                                y7 y7Var = i0.f.a;
+                                y7 y7Var = i0.e.a;
                                 e8.a("TypefaceCompat.createFromFontInfo");
                                 try {
-                                    Typeface b10 = i0.f.a.b(context, hVarArr, 0);
+                                    Typeface b10 = i0.e.a.b(context, hVarArr, 0);
                                     Trace.endSection();
-                                    MappedByteBuffer e = z7.e(qVar.a, d.a);
+                                    MappedByteBuffer e = v7.z7.e(qVar.a, d.a);
                                     if (e == null || b10 == null) {
                                         throw new RuntimeException("Unable to open file.");
                                     }

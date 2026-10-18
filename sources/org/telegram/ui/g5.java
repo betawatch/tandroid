@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g5 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -196,7 +196,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                             Context context = ApplicationLoader.applicationContext;
                             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
                             spannableStringBuilder.append((CharSequence) "  L");
-                            org.telegram.ui.Components.yq yqVar = new org.telegram.ui.Components.yq(0, new so0(i26, context, null, false));
+                            org.telegram.ui.Components.yq yqVar = new org.telegram.ui.Components.yq(0, new to0(i26, context, null, false));
                             yqVar.setTranslateY(AndroidUtilities.dp(1.0f));
                             spannableStringBuilder.setSpan(yqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                             string = spannableStringBuilder;
@@ -238,8 +238,8 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                     while (i19 < size3) {
                         Object obj5 = arrayList6.get(i19);
                         i19++;
-                        int i29 = ai.fd.a;
-                        org.telegram.ui.Components.f61 J3 = org.telegram.ui.Components.f61.J(ai.fd.class);
+                        int i29 = ai.gd.a;
+                        org.telegram.ui.Components.f61 J3 = org.telegram.ui.Components.f61.J(ai.gd.class);
                         J3.G = (TL_stars.StarsTransaction) obj5;
                         J3.q = true;
                         arrayList5.add(J3);
@@ -256,8 +256,8 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                     while (i20 < size4) {
                         Object obj6 = arrayList7.get(i20);
                         i20++;
-                        int i30 = ai.fd.a;
-                        org.telegram.ui.Components.f61 J4 = org.telegram.ui.Components.f61.J(ai.fd.class);
+                        int i30 = ai.gd.a;
+                        org.telegram.ui.Components.f61 J4 = org.telegram.ui.Components.f61.J(ai.gd.class);
                         J4.G = (TL_stars.StarsTransaction) obj6;
                         J4.q = true;
                         arrayList5.add(J4);
@@ -308,7 +308,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                     arrayList8.add(org.telegram.ui.Components.f61.B(LocaleController.formatString(R.string.AddContactShareNumberInfo, UserObject.getFirstName(user))));
                 }
                 arrayList8.add(org.telegram.ui.Components.f61.k(hsVar.d));
-                i0.a.A(R.string.AddNotesInfo, arrayList8);
+                i2.d.B(R.string.AddNotesInfo, arrayList8);
                 if (hsVar.I) {
                     charSequence2 = null;
                 } else {
@@ -443,7 +443,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                     J5.H = onClickListener2;
                     J5.K(wyVar.d);
                     arrayList9.add(J5);
-                    i0.a.A(R.string.TopicsLayoutInfo, arrayList9);
+                    i2.d.B(R.string.TopicsLayoutInfo, arrayList9);
                     break;
                 }
                 break;
@@ -462,7 +462,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                     }
                 } else if (tL_error2 != null) {
                     if ("AICOMPOSE_TONE_SLUG_INVALID".equalsIgnoreCase(tL_error2.text)) {
-                        org.telegram.messenger.q.q(R.string.AIEditorStyleNotFound, kb0.d(), R.raw.error, 36);
+                        org.telegram.messenger.g0.q(R.string.AIEditorStyleNotFound, kb0.d(), R.raw.error, 36);
                         break;
                     } else {
                         kb0.d().f0(tL_error2, false);
@@ -505,7 +505,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                 arrayList10.add(i36);
                 arrayList10.add(org.telegram.ui.Components.f61.A(2, null));
                 if (zv0Var.r) {
-                    i0.a.p(R.string.PriceForEachSuggestion, arrayList10);
+                    i2.d.p(R.string.PriceForEachSuggestion, arrayList10);
                     int[] a2 = org.telegram.ui.Cells.y7.a((int) zv0Var.getMessagesController().starsPaidMessageAmountMax, new int[]{0, 10, 50, 100, 200, MediaDataController.MAX_LINKS_COUNT, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000});
                     hk0 hk0Var = new hk0(i13);
                     org.telegram.ui.Cells.x7 x7Var = new org.telegram.ui.Cells.x7();
@@ -518,7 +518,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                     TLRPC.Chat chat3 = zv0Var.getMessagesController().getChat(Long.valueOf(zv0Var.a));
                     if (chat3 != null && !TextUtils.isEmpty(ChatObject.getPublicUsername(chat3))) {
                         zv0Var.c.setLink(zv0Var.getMessagesController().linkPrefix + "/" + ChatObject.getPublicUsername(chat3) + "?direct");
-                        i0.a.p(R.string.ChannelLinkDirectMessages, arrayList10);
+                        i2.d.p(R.string.ChannelLinkDirectMessages, arrayList10);
                         arrayList10.add(org.telegram.ui.Components.f61.j(5, zv0Var.c));
                         break;
                     }
@@ -617,7 +617,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                             i10 = ((org.telegram.ui.ActionBar.f3) q21Var).currentAccount;
                             i11 = ChatObject.isChannelAndNotMegaGroup(MessagesController.getInstance(i10).getChat(Long.valueOf(-j10))) ? R.string.Report2CommentInfoChannel : R.string.Report2CommentInfoGroup;
                         }
-                        i0.a.A(i11, arrayList11);
+                        i2.d.B(i11, arrayList11);
                         if (p21Var.r == null) {
                             Context context4 = p21Var.getContext();
                             d6Var2 = ((org.telegram.ui.ActionBar.f3) q21Var).resourcesProvider;
@@ -643,7 +643,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                         arrayList11.add(k12);
                         measuredHeight += 112;
                     }
-                    ((org.telegram.ui.Components.f61) i0.a.h(1, arrayList11)).j = true;
+                    ((org.telegram.ui.Components.f61) i2.d.h(1, arrayList11)).j = true;
                     if (q21Var.d && p21Var.a == 0) {
                         FrameLayout frameLayout2 = new FrameLayout(p21Var.getContext());
                         Context context5 = p21Var.getContext();

@@ -1,34 +1,94 @@
 package ai;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.sl0;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class kc extends s61 {
-    public final /* synthetic */ ld N;
+public final class kc extends sg.w1 {
+    public Paint[] n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kc(ld ldVar, im0 im0Var, Activity activity, int i10, int i11, q qVar, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(im0Var, activity, i10, i11, true, qVar, d6Var);
-        this.N = ldVar;
+    public kc(Context context, int i10, int i11) {
+        super(context);
+        this.r = i10;
+        this.s = i11;
+        c();
     }
 
-    @Override // org.telegram.ui.Components.s61, s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.d6 d6Var;
-        if (i10 != 42) {
-            return super.x(viewGroup, i10);
+    @Override // sg.w1
+    public final void a() {
+        int f7;
+        float f10;
+        int i10;
+        int i11;
+        sg.v1 v1Var = new sg.v1(this.r);
+        this.a = v1Var;
+        v1Var.O = 105;
+        int i12 = 0;
+        v1Var.M = false;
+        v1Var.G = false;
+        v1Var.K = true;
+        v1Var.H = true;
+        v1Var.J = false;
+        v1Var.m = true;
+        v1Var.h = true;
+        int i13 = this.s;
+        if (i13 == 1) {
+            v1Var.k = AndroidUtilities.dp(24.0f);
         }
-        ld ldVar = this.N;
-        Activity parentActivity = ldVar.getParentActivity();
-        int i11 = org.telegram.ui.ActionBar.h6.L6;
-        d6Var = ((org.telegram.ui.ActionBar.n2) ldVar).resourceProvider;
-        org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(parentActivity, i11, 21, 0, false, d6Var);
-        l4Var.setHeight(25);
-        return new sl0(l4Var);
+        this.n = new Paint[i13 == 2 ? 40 : 20];
+        while (true) {
+            Paint[] paintArr = this.n;
+            if (i12 >= paintArr.length) {
+                break;
+            }
+            paintArr[i12] = new Paint(1);
+            if (i13 == 2) {
+                if (i12 >= 20) {
+                    f10 = (i12 - 20) / 19.0f;
+                    i10 = -1005568;
+                    i11 = -2062336;
+                } else if (i12 % 5 == 0) {
+                    f7 = -2340;
+                } else {
+                    f10 = i12 / 19.0f;
+                    i10 = -10645;
+                    i11 = -20165;
+                }
+                f7 = i0.a.f(f10, i10, i11);
+            } else {
+                f7 = i0.a.f(i12 / (this.n.length - 1), -371690, -14281);
+            }
+            this.n[i12].setColorFilter(new PorterDuffColorFilter(f7, PorterDuff.Mode.SRC_IN));
+            i12++;
+        }
+        sg.v1 v1Var2 = this.a;
+        v1Var2.l = new jc(this, 0);
+        v1Var2.r = 17;
+        v1Var2.s = 18;
+        v1Var2.t = 19;
+        if (i13 == 2) {
+            v1Var2.N = true;
+            v1Var2.r = 9;
+            v1Var2.s = 11;
+            v1Var2.t = 13;
+            v1Var2.o = 1.6f;
+            v1Var2.x = 1400L;
+            v1Var2.y = 1600;
+            v1Var2.L = true;
+        }
+        v1Var2.Q = org.telegram.ui.ActionBar.h6.G6;
+        v1Var2.c();
+    }
+
+    @Override // sg.w1
+    public final int getStarsRectWidth() {
+        return getMeasuredWidth();
     }
 }

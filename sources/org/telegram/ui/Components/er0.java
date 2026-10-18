@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class er0 extends Drawable {
     public long a = 0;
@@ -44,7 +44,7 @@ public final class er0 extends Drawable {
         int dp;
         int dp2;
         int dp3;
-        int e;
+        int D;
         int i10;
         Drawable drawable = this.c;
         int intrinsicWidth = drawable.getIntrinsicWidth();
@@ -75,7 +75,7 @@ public final class er0 extends Drawable {
                     int dp6 = AndroidUtilities.dp(fArr[i17] * 6.0f);
                     dp2 = (AndroidUtilities.dp(3.0f) + intrinsicWidth2) - dp6;
                     dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(2.0f);
-                    e = org.telegram.ui.Cells.t0.e(3.0f, i16, dp6);
+                    D = org.telegram.messenger.kk.D(3.0f, i16, dp6);
                     i10 = dp5;
                 } else if (i14 == i11) {
                     i10 = AndroidUtilities.dp(5.0f * f10);
@@ -83,14 +83,14 @@ public final class er0 extends Drawable {
                     int dp7 = AndroidUtilities.dp(fArr[i17] * 15.0f);
                     dp2 = (AndroidUtilities.dp(2.0f) + intrinsicWidth2) - dp7;
                     dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(7.0f);
-                    e = org.telegram.ui.Cells.t0.e(2.0f, i16, dp7);
+                    D = org.telegram.messenger.kk.D(2.0f, i16, dp7);
                 } else if (i14 == 2) {
                     i10 = AndroidUtilities.dp(5.0f * f10);
                     dp = AndroidUtilities.dp(f10 * 18.0f);
                     int dp8 = AndroidUtilities.dp(fArr[i17] * 15.0f);
                     dp2 = (AndroidUtilities.dp(2.0f) + intrinsicWidth2) - dp8;
                     dp3 = (intrinsicHeight / 2) + intrinsicHeight2;
-                    e = org.telegram.ui.Cells.t0.e(2.0f, i16, dp8);
+                    D = org.telegram.messenger.kk.D(2.0f, i16, dp8);
                 } else if (i14 == i13) {
                     int dp9 = AndroidUtilities.dp(2.5f * f10);
                     dp = AndroidUtilities.dp(f10 * 6.5f);
@@ -98,17 +98,17 @@ public final class er0 extends Drawable {
                     dp2 = (AndroidUtilities.dp(7.0f) + intrinsicWidth2) - dp10;
                     dp3 = (intrinsicHeight / 2) + intrinsicHeight2;
                     i10 = dp9;
-                    e = org.telegram.ui.Cells.t0.e(7.0f, i16, dp10);
+                    D = org.telegram.messenger.kk.D(7.0f, i16, dp10);
                 } else {
                     i10 = AndroidUtilities.dp(5.0f * f10);
                     dp = AndroidUtilities.dp(f10 * 18.0f);
                     int dp11 = AndroidUtilities.dp(fArr[i17] * 15.0f);
                     dp2 = (AndroidUtilities.dp(42.0f) + intrinsicWidth2) - dp11;
                     dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(7.0f);
-                    e = org.telegram.ui.Cells.t0.e(42.0f, i16, dp11);
+                    D = org.telegram.messenger.kk.D(42.0f, i16, dp11);
                 }
                 float f11 = fArr[i17];
-                int x10 = (int) ((f11 < 0.5f ? f11 / 0.5f : org.telegram.messenger.q.x(f11, 0.5f, 0.5f, 1.0f)) * 255.0f);
+                int x10 = (int) ((f11 < 0.5f ? f11 / 0.5f : org.telegram.messenger.g0.x(f11, 0.5f, 0.5f, 1.0f)) * 255.0f);
                 Drawable drawable2 = this.d;
                 drawable2.setAlpha(x10);
                 int i18 = dp3 - dp;
@@ -117,7 +117,7 @@ public final class er0 extends Drawable {
                 drawable2.draw(canvas);
                 Drawable drawable3 = this.e;
                 drawable3.setAlpha(x10);
-                drawable3.setBounds(e - i10, i18, e + i10, i19);
+                drawable3.setBounds(D - i10, i18, D + i10, i19);
                 drawable3.draw(canvas);
             }
             i17++;

@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -40,17 +40,17 @@ public class NotificationsSettingsFacade {
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(this.currentAccount);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
         NotificationsController notificationsController = NotificationsController.getInstance(this.currentAccount);
-        int c10 = q.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
+        int c10 = g0.c(PROPERTY_NOTIFY, sharedPrefKey, getPreferences(), -1);
         boolean z11 = true;
-        int c11 = q.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
+        int c11 = g0.c(PROPERTY_NOTIFY_UNTIL, sharedPrefKey, getPreferences(), 0);
         SharedPreferences.Editor edit = getPreferences().edit();
         if ((peerNotifySettings.flags & 2) != 0) {
-            edit.putBoolean(r.c.g(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
+            edit.putBoolean(r4.c.h(PROPERTY_SILENT, sharedPrefKey), peerNotifySettings.silent);
         } else {
             edit.remove(PROPERTY_SILENT + sharedPrefKey);
         }
         if ((peerNotifySettings.flags & 64) != 0) {
-            edit.putBoolean(r.c.g(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
+            edit.putBoolean(r4.c.h(PROPERTY_STORIES_NOTIFY, sharedPrefKey), !peerNotifySettings.stories_muted);
         } else {
             edit.remove(PROPERTY_STORIES_NOTIFY + sharedPrefKey);
         }
@@ -152,9 +152,9 @@ public class NotificationsSettingsFacade {
         int i13 = 1;
         if (i12 != 0) {
             String sharedPrefKey = NotificationsController.getSharedPrefKey(j10, j11, true);
-            str = r.c.g("sound_", sharedPrefKey);
-            str3 = r.c.g("sound_path_", sharedPrefKey);
-            str2 = r.c.g("sound_document_id_", sharedPrefKey);
+            str = r4.c.h("sound_", sharedPrefKey);
+            str3 = r4.c.h("sound_path_", sharedPrefKey);
+            str2 = r4.c.h("sound_document_id_", sharedPrefKey);
         } else if (i10 == 0) {
             str = "GroupSound";
             str2 = "GroupSoundDocId";

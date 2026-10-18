@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ay0;
 import org.telegram.ui.lg0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -62,25 +62,25 @@ public final /* synthetic */ class h implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new a1.f(i11, tLObject, (r0) obj));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new a1.f(i15, (x9) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new a1.f(i15, (y9) obj, tLObject));
                 break;
             case 5:
-                ke keVar = (ke) obj;
+                le leVar = (le) obj;
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    MessagesStorage.getInstance(keVar.c).putMessages(new ArrayList<>(Arrays.asList(keVar.L.messageOwner)), true, true, true, 0, 0, 0L);
+                    MessagesStorage.getInstance(leVar.c).putMessages(new ArrayList<>(Arrays.asList(leVar.L.messageOwner)), true, true, true, 0, 0, 0L);
                     break;
                 } else {
-                    keVar.getClass();
+                    leVar.getClass();
                     break;
                 }
             case 6:
                 AndroidUtilities.runOnUIThread(new androidx.fragment.app.d((ei.a9) obj, i17));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new oa(19, (ci.u6) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new pa(19, (ci.u6) obj, tLObject));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new oa(21, (ci.w6) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new pa(21, (ci.w6) obj, tLObject));
                 break;
             case 9:
                 AndroidUtilities.runOnUIThread(new ci.v7(i18, (ei.t1) obj, tLObject));
@@ -119,13 +119,13 @@ public final /* synthetic */ class h implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ei.z1((ig.m) obj, tL_error, tLObject, i18));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new ei.z1((ig.t0) obj, tL_error, tLObject, i15));
+                AndroidUtilities.runOnUIThread(new ei.z1((ig.v0) obj, tL_error, tLObject, i15));
                 break;
             case 20:
-                AndroidUtilities.runOnUIThread(new ei.z1((ig.d1) obj, tL_error, tLObject, 29));
+                AndroidUtilities.runOnUIThread(new ei.z1((ig.f1) obj, tL_error, tLObject, 29));
                 break;
             case 21:
-                AndroidUtilities.runOnUIThread(new hi.t(i14, (ig.y1) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new hi.t(i14, (ig.a2) obj, tLObject));
                 break;
             case 22:
                 AndroidUtilities.runOnUIThread(new hi.t(20, (ki.x) obj, tLObject));
@@ -134,10 +134,10 @@ public final /* synthetic */ class h implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new hi.t(25, (ki.a5) obj, tLObject));
                 break;
             case 24:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.t3(i15, (org.telegram.ui.web.f2) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.u3(i15, (org.telegram.ui.web.f2) obj, tLObject));
                 break;
             case 25:
-                ug.v0 v0Var = (ug.v0) obj;
+                ug.w0 w0Var = (ug.w0) obj;
                 if (tLObject != null) {
                     TLRPC.TL_help_countriesList tL_help_countriesList = (TLRPC.TL_help_countriesList) tLObject;
                     HashMap hashMap = new HashMap();
@@ -169,7 +169,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                     Collections.sort(arrayList, lg0Var);
                     Iterator it = hashMap.values().iterator();
                     while (it.hasNext()) {
-                        Collections.sort((List) it.next(), new Comparator() { // from class: ug.o
+                        Collections.sort((List) it.next(), new Comparator() { // from class: ug.p
                             @Override // java.util.Comparator
                             public final int compare(Object obj2, Object obj3) {
                                 TLRPC.TL_help_country tL_help_country2 = (TLRPC.TL_help_country) obj2;
@@ -183,7 +183,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new ay0(v0Var, hashMap, arrayList, i16));
+                    AndroidUtilities.runOnUIThread(new ay0(w0Var, hashMap, arrayList, i16));
                     break;
                 }
                 break;
@@ -226,7 +226,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                     Collections.sort(arrayList2, lg0Var2);
                     Iterator it2 = hashMap2.values().iterator();
                     while (it2.hasNext()) {
-                        Collections.sort((List) it2.next(), new Comparator() { // from class: ug.o
+                        Collections.sort((List) it2.next(), new Comparator() { // from class: ug.p
                             @Override // java.util.Comparator
                             public final int compare(Object obj2, Object obj3) {
                                 TLRPC.TL_help_country tL_help_country22 = (TLRPC.TL_help_country) obj2;
@@ -245,7 +245,7 @@ public final /* synthetic */ class h implements RequestDelegate {
                 }
                 break;
             case 27:
-                AndroidUtilities.runOnUIThread(new uf.c(i13, (ug.l1) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new uf.c(i13, (ug.m1) obj, tLObject));
                 break;
             case 28:
                 AndroidUtilities.runOnUIThread(new uf.c(i14, (wf.c) obj, tLObject));

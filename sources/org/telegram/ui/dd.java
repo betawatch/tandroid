@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.WallPaper E;
@@ -657,8 +657,8 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
             this.H = f7;
             faVar.setOverrideBackground(f7);
         }
-        if (y03 instanceof gp0) {
-            ((gp0) y03).a(this.f, z10);
+        if (y03 instanceof hp0) {
+            ((hp0) y03).a(this.f, z10);
         } else if (y03 instanceof tc) {
             ((tc) y03).a(this.f, z10);
         }
@@ -710,8 +710,8 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
             ucVar3.a(this.f);
             vcVar3.d();
         }
-        if (y03 instanceof gp0) {
-            ((gp0) y03).a(this.s, true);
+        if (y03 instanceof hp0) {
+            ((hp0) y03).a(this.s, true);
         } else if (y03 instanceof tc) {
             ((tc) y03).a(this.f, true);
         }
@@ -1070,7 +1070,7 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j12));
         if (chat == null) {
             FileLog.e("channel is null in ChannelColorAcitivity");
-            org.telegram.messenger.q.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(this), R.raw.error, 36);
+            org.telegram.messenger.g0.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(this), R.raw.error, 36);
             return;
         }
         this.P.setLoading(true);

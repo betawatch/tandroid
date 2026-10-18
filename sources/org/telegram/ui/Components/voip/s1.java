@@ -15,7 +15,6 @@ import android.view.ViewPropertyAnimator;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
 import ci.v4;
-import com.google.android.gms.internal.cast.a6;
 import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
@@ -23,8 +22,8 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.rg1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class s1 extends FrameLayout {
     public float E;
     public float F;
@@ -88,7 +87,7 @@ public final class s1 extends FrameLayout {
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
         setOutlineProvider(new dh.b(this, 4));
         setClipToOutline(true);
-        paint.setColor(i0.b.o(-16777216, 102));
+        paint.setColor(i0.a.o(-16777216, 102));
         this.x = activity.getDrawable(R.drawable.calls_mute_mini);
     }
 
@@ -244,7 +243,7 @@ public final class s1 extends FrameLayout {
         canvas.scale((1.0f / getScaleX()) * s1Var.J * s1Var.K, (1.0f / getScaleY()) * s1Var.J * s1Var.K, f7, f10);
         canvas.drawCircle(f7, f10, AndroidUtilities.dp(14.0f), s1Var.w);
         Drawable drawable = s1Var.x;
-        drawable.setBounds(org.telegram.ui.Cells.t0.w(2, measuredWidth, drawable), org.telegram.ui.Cells.t0.g(2, measuredHeight, drawable), org.telegram.ui.Cells.t0.B(2, measuredWidth, drawable), org.telegram.ui.Cells.t0.A(2, measuredHeight, drawable));
+        drawable.setBounds(org.telegram.ui.Cells.c1.w(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.f(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.B(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.A(2, measuredHeight, drawable));
         drawable.draw(canvas);
         canvas.restore();
         if (s1Var.O) {
@@ -260,11 +259,11 @@ public final class s1 extends FrameLayout {
         float systemWindowInsetTop = this.n == null ? 0.0f : r1.getSystemWindowInsetTop() + this.H;
         float systemWindowInsetBottom = this.n != null ? r3.getSystemWindowInsetBottom() + this.I : 0.0f;
         View view = (View) parent;
-        float x10 = a6.x((view.getMeasuredWidth() - this.F) - this.G, i10, f7, this.F);
-        float x11 = a6.x((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i11, f10, systemWindowInsetTop);
+        float y3 = com.google.android.gms.internal.play_billing.k3.y((view.getMeasuredWidth() - this.F) - this.G, i10, f7, this.F);
+        float y10 = com.google.android.gms.internal.play_billing.k3.y((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i11, f10, systemWindowInsetTop);
         if (z10) {
             animate().setListener(null).cancel();
-            animate().scaleX(1.0f).scaleY(1.0f).translationX(x10).translationY(x11).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(bs.f).start();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(y3).translationY(y10).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(bs.f).start();
             return;
         }
         if (!this.S) {
@@ -273,8 +272,8 @@ public final class s1 extends FrameLayout {
             setScaleY(1.0f);
             animate().alpha(1.0f).setDuration(150L).start();
         }
-        setTranslationX(x10);
-        setTranslationY(x11);
+        setTranslationX(y3);
+        setTranslationY(y10);
     }
 
     public final void f() {

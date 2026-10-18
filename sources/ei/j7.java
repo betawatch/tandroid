@@ -25,7 +25,7 @@ import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class j7 extends View {
     public i7 E;
@@ -271,7 +271,7 @@ public final class j7 extends View {
                             f7Var.run(new h7(str, (TLRPC.Chat) userOrChat));
                         }
                     }
-                    runnable = messagesController.getUserNameResolver().resolve(str3, queryParameter, new ai.w3(f7Var, messagesController, str, 5));
+                    runnable = messagesController.getUserNameResolver().resolve(str3, queryParameter, new ai.w3(f7Var, messagesController, str, 4));
                 }
             }
         } catch (Exception e) {

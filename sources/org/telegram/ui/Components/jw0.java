@@ -26,7 +26,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public static DispatchQueue u0;
@@ -38,7 +38,7 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public int I;
     public boolean J;
     public uw0 K;
-    public ai.hc L;
+    public ai.ic L;
     public boolean M;
     public boolean N;
     public boolean O;
@@ -449,9 +449,9 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
             return;
         }
         if (this.L == null) {
-            ai.hc hcVar = new ai.hc(this, getContext(), 25);
-            this.L = hcVar;
-            addView(hcVar, 0, w7.z5.d(-1.0f, -1));
+            ai.ic icVar = new ai.ic(this, getContext(), 25);
+            this.L = icVar;
+            addView(icVar, 0, w7.z5.d(-1.0f, -1));
         }
         if (drawable instanceof wc0) {
             ((wc0) drawable).q(this.L);
@@ -500,7 +500,7 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
         int i11 = (int) (f10 / 12.0f);
         System.currentTimeMillis();
         ArrayList arrayList = this.S;
-        fw0 fw0Var = arrayList.size() > 0 ? (fw0) i0.a.z(1, arrayList) : null;
+        fw0 fw0Var = arrayList.size() > 0 ? (fw0) i2.d.A(1, arrayList) : null;
         if (fw0Var == null) {
             fw0Var = new fw0();
             fw0Var.c = Bitmap.createBitmap(i11, i10, Bitmap.Config.ARGB_8888);
@@ -712,9 +712,9 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public void setBackgroundTranslation(int i10) {
         if (i10 != this.E) {
             this.E = i10;
-            ai.hc hcVar = this.L;
-            if (hcVar != null) {
-                hcVar.invalidate();
+            ai.ic icVar = this.L;
+            if (icVar != null) {
+                icVar.invalidate();
             }
         }
     }
@@ -722,9 +722,9 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public void setBottomClip(int i10) {
         if (i10 != this.h) {
             this.h = i10;
-            ai.hc hcVar = this.L;
-            if (hcVar != null) {
-                hcVar.invalidate();
+            ai.ic icVar = this.L;
+            if (icVar != null) {
+                icVar.invalidate();
             }
         }
     }
@@ -736,9 +736,9 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public void setEmojiKeyboardHeight(int i10) {
         if (this.I != i10) {
             this.I = i10;
-            ai.hc hcVar = this.L;
-            if (hcVar != null) {
-                hcVar.invalidate();
+            ai.ic icVar = this.L;
+            if (icVar != null) {
+                icVar.invalidate();
             }
         }
     }
@@ -750,9 +750,9 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public void setSkipBackgroundDrawing(boolean z10) {
         if (this.J != z10) {
             this.J = z10;
-            ai.hc hcVar = this.L;
-            if (hcVar != null) {
-                hcVar.invalidate();
+            ai.ic icVar = this.L;
+            if (icVar != null) {
+                icVar.invalidate();
             }
         }
     }

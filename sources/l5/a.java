@@ -1,13 +1,13 @@
 package l5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a implements ja.d {
     public static final a a = new a();
-    public static final ja.c b = new ja.c("window", i0.a.o(i0.a.n(ma.e.class, new ma.a(1))));
-    public static final ja.c c = new ja.c("logSourceMetrics", i0.a.o(i0.a.n(ma.e.class, new ma.a(2))));
-    public static final ja.c d = new ja.c("globalMetrics", i0.a.o(i0.a.n(ma.e.class, new ma.a(3))));
-    public static final ja.c e = new ja.c("appNamespace", i0.a.o(i0.a.n(ma.e.class, new ma.a(4))));
+    public static final ja.c b = new ja.c("window", i2.d.o(i2.d.n(ma.e.class, new ma.a(1))));
+    public static final ja.c c = new ja.c("logSourceMetrics", i2.d.o(i2.d.n(ma.e.class, new ma.a(2))));
+    public static final ja.c d = new ja.c("globalMetrics", i2.d.o(i2.d.n(ma.e.class, new ma.a(3))));
+    public static final ja.c e = new ja.c("appNamespace", i2.d.o(i2.d.n(ma.e.class, new ma.a(4))));
 
     @Override // ja.a
     public final void a(Object obj, Object obj2) {

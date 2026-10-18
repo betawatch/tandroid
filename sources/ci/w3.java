@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class w3 implements View.OnClickListener {
                 w7 w7Var2 = MessagesController.getInstance(q4Var6.C2).getStoriesController().k;
                 TL_stories.StoryItem storyItem2 = o4Var2.a;
                 w7Var2.k(storyItem2.dialogId, storyItem2);
-                MessagesController.getInstance(q4Var6.C2).getTranslateController().translateStory(o4Var2.a, new ai.s3(new a4(h4Var6, 1), System.currentTimeMillis(), 4));
+                MessagesController.getInstance(q4Var6.C2).getTranslateController().translateStory(o4Var2.a, new ai.r3(new a4(h4Var6, 1), System.currentTimeMillis(), 4));
                 q4Var6.f1(false);
                 q4Var6.h3 = true;
                 q4Var6.K0.D(true);

@@ -2,7 +2,7 @@ package x7;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class d implements Map.Entry {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public abstract class d implements Map.Entry {
             case 0:
                 return getKey() + "=" + getValue();
             default:
-                return a1.g.D(String.valueOf(getKey()), "=", String.valueOf(getValue()));
+                return a1.g.C(String.valueOf(getKey()), "=", String.valueOf(getValue()));
         }
     }
 

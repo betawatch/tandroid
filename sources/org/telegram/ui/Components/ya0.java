@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class ya0 extends j71 {
     public final int T;
@@ -43,7 +43,7 @@ public abstract class ya0 extends j71 {
         this.d.p1();
         ai.u1 u1Var = this.d;
         xa0Var.p = u1Var;
-        u1Var.setOnItemClickListener(new ai.va(xa0Var, 22));
+        u1Var.setOnItemClickListener(new ai.wa(xa0Var, 22));
         s4.r0 onScrollListener = u1Var.getOnScrollListener();
         if (onScrollListener == null) {
             u1Var.setOnScrollListener(xa0Var.D);

@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ec extends FrameLayout {
     public final cc E;
@@ -91,7 +91,7 @@ public final class ec extends FrameLayout {
         xj0Var.setAutoRepeat(true);
         xj0Var.f(R.raw.statistic_preload, 120, 120, null);
         xj0Var.d();
-        TextView f7 = org.telegram.messenger.q.f(context, 1, 20.0f);
+        TextView f7 = org.telegram.messenger.g0.f(context, 1, 20.0f);
         f7.setTypeface(AndroidUtilities.bold());
         int i11 = org.telegram.ui.ActionBar.h6.Oi;
         f7.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
@@ -103,14 +103,14 @@ public final class ec extends FrameLayout {
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.wh.m(R.string.LoadingStatsDescription, textView, 1);
+        org.telegram.messenger.kk.m(R.string.LoadingStatsDescription, textView, 1);
         this.I.addView(xj0Var, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         this.I.addView(f7, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         this.I.addView(textView, w7.z5.q(-2, -2, 1));
         addView(this.I, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, 240, 17));
         this.I.setAlpha(0.0f);
         this.I.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
-        ai.fa.y(i10, false).v();
+        ai.ga.y(i10, false).v();
     }
 
     public final void a(CountDownLatch countDownLatch, ac acVar) {

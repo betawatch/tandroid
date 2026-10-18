@@ -1,6 +1,6 @@
 package ci;
 
-import ai.rb;
+import ai.sb;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.c61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class v8 extends View {
     public static Object I;
@@ -125,12 +125,12 @@ public final class v8 extends View {
             }
             tL_messages_getAttachedStickers.media = tL_inputStickeredMediaDocument;
         }
-        rb rbVar = new rb(this, obj, arrayList, zArr, i10, 2);
+        sb sbVar = new sb(this, obj, arrayList, zArr, i10, 2);
         if (I != obj || (vector = J) == null) {
-            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getAttachedStickers, new t8(obj, i10, tL_messages_getAttachedStickers, rbVar, 0));
+            ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getAttachedStickers, new t8(obj, i10, tL_messages_getAttachedStickers, sbVar, 0));
         } else {
             zArr[0] = false;
-            rbVar.run(vector, null);
+            sbVar.run(vector, null);
         }
     }
 

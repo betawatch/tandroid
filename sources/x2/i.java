@@ -11,10 +11,10 @@ import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
-import u2.r1;
+import u2.q1;
 import v7.b8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class i extends t1 {
     public static final i F0 = new i(new h());
@@ -126,7 +126,7 @@ public final class i extends t1 {
                 if (entry.getValue() != null) {
                     throw new ClassCastException();
                 }
-                arrayList2.add((r1) entry.getKey());
+                arrayList2.add((q1) entry.getKey());
                 arrayList.add(Integer.valueOf(keyAt));
             }
             c10.putIntArray(Q0, b8.f(arrayList));
@@ -168,8 +168,8 @@ public final class i extends t1 {
                                         Map map2 = (Map) sparseArray.valueAt(indexOfKey);
                                         if (map2.size() == map.size()) {
                                             for (Map.Entry entry : map.entrySet()) {
-                                                r1 r1Var = (r1) entry.getKey();
-                                                if (map2.containsKey(r1Var) && Objects.equals(entry.getValue(), map2.get(r1Var))) {
+                                                q1 q1Var = (q1) entry.getKey();
+                                                if (map2.containsKey(q1Var) && Objects.equals(entry.getValue(), map2.get(q1Var))) {
                                                 }
                                             }
                                         }

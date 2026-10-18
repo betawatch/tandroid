@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b {
     public static final i f = new i(3);
@@ -40,8 +40,8 @@ public final class b {
             if (iArr2[i14] > 0) {
                 int rgb = Color.rgb(b((i14 >> 10) & 31, 5, 8), b((i14 >> 5) & 31, 5, 8), b(i14 & 31, 5, 8));
                 float[] fArr = (float[]) this.e;
-                ThreadLocal threadLocal = i0.b.a;
-                i0.b.c(fArr, Color.red(rgb), Color.green(rgb), Color.blue(rgb));
+                ThreadLocal threadLocal = i0.a.a;
+                i0.a.c(fArr, Color.red(rgb), Color.green(rgb), Color.blue(rgb));
                 if (c(fArr)) {
                     iArr2[i14] = 0;
                 }

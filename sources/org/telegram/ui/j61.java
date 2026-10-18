@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class j61 extends org.telegram.ui.Components.bb {
     public TLRPC.Chat X;
@@ -287,7 +287,7 @@ public final class j61 extends org.telegram.ui.Components.bb {
                 org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                 b2Var.R = string;
                 b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.EditAdminTransferReadyAlertText2, j61Var.X.title, UserObject.getFirstName(user)));
-                alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferChangeOwner), new fr0(13, j61Var, user));
+                alertDialog$Builder.k(LocaleController.getString(R.string.EditAdminTransferChangeOwner), new gn0(14, j61Var, user));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.ActionBar.a2(j61Var) { // from class: org.telegram.ui.a61
                     public final /* synthetic */ j61 b;
 
@@ -373,9 +373,9 @@ public final class j61 extends org.telegram.ui.Components.bb {
         textView.setTextSize(1, 16.0f);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         if (ChatObject.isChannelAndNotMegaGroup(j61Var.X)) {
-            org.telegram.messenger.wh.r(R.string.EditChannelAdminTransferAlertText, new Object[]{UserObject.getFirstName(user)}, textView);
+            org.telegram.messenger.kk.r(R.string.EditChannelAdminTransferAlertText, new Object[]{UserObject.getFirstName(user)}, textView);
         } else {
-            org.telegram.messenger.wh.r(R.string.EditAdminTransferAlertText, new Object[]{UserObject.getFirstName(user)}, textView);
+            org.telegram.messenger.kk.r(R.string.EditAdminTransferAlertText, new Object[]{UserObject.getFirstName(user)}, textView);
         }
         linearLayout.addView(textView, w7.z5.n(-1, -2));
         LinearLayout linearLayout2 = new LinearLayout(j61Var.j0);
@@ -391,7 +391,7 @@ public final class j61 extends org.telegram.ui.Components.bb {
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView2.setTextSize(1, 16.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText1, textView2);
+        org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText1, textView2);
         if (LocaleController.isRTL) {
             linearLayout2.addView(textView2, w7.z5.n(-1, -2));
             linearLayout2.addView(imageView, w7.z5.q(-2, -2, 5));
@@ -410,7 +410,7 @@ public final class j61 extends org.telegram.ui.Components.bb {
         textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView3.setTextSize(1, 16.0f);
         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        org.telegram.messenger.q.n(R.string.EditAdminTransferAlertText2, textView3);
+        org.telegram.messenger.g0.n(R.string.EditAdminTransferAlertText2, textView3);
         if (LocaleController.isRTL) {
             linearLayout3.addView(textView3, w7.z5.n(-1, -2));
             i10 = 5;

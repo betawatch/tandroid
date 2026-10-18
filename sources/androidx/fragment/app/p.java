@@ -12,10 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class p extends s implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
     public Handler k0;
@@ -85,7 +85,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
                                 }
                             } else {
                                 n10 = n();
-                                if (a6.s(n10)) {
+                                if (k3.s(n10)) {
                                     this.v0.setOwnerActivity((Activity) n10);
                                 }
                                 this.v0.setCancelable(this.q0);
@@ -96,7 +96,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
                         }
                         O.requestWindowFeature(1);
                         n10 = n();
-                        if (a6.s(n10)) {
+                        if (k3.s(n10)) {
                         }
                         this.v0.setCancelable(this.q0);
                         this.v0.setOnCancelListener(this.m0);
@@ -222,7 +222,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
         j0 p5 = p();
         int i10 = this.s0;
         if (i10 < 0) {
-            throw new IllegalArgumentException(i0.a.j(i10, "Bad id: "));
+            throw new IllegalArgumentException(i2.d.j(i10, "Bad id: "));
         }
         p5.y(new h0(p5, i10), true);
         this.s0 = -1;

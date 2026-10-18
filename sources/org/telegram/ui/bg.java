@@ -5,7 +5,7 @@ import android.view.View;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class bg implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class bg implements View.OnLongClickListener {
                 sn snVar = (sn) this.b;
                 TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) this.c;
                 MessageObject messageObject = (MessageObject) this.d;
-                ai.ud udVar = (ai.ud) this.e;
+                ai.vd vdVar = (ai.vd) this.e;
                 TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = (TL_keyboard.TL_inlineButtonTypeUrl) ag.d.a(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class);
                 if (snVar.getParentActivity() == null) {
                     return false;
@@ -39,7 +39,7 @@ public final /* synthetic */ class bg implements View.OnLongClickListener {
                 }
                 snVar.ea(null, tL_inlineButtonTypeUrl.url, true, null, messageObject);
                 try {
-                    udVar.performHapticFeedback(0, 1);
+                    vdVar.performHapticFeedback(0, 1);
                 } catch (Exception unused) {
                 }
                 return true;

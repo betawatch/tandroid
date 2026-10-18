@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n40 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -28,9 +28,9 @@ public final class n40 extends AnimatorListenerAdapter {
                 ((u60) this.c).h = null;
                 break;
             case 4:
-                kq0 kq0Var = (kq0) this.c;
-                if (animator.equals(kq0Var.k0)) {
-                    kq0Var.k0 = null;
+                lq0 lq0Var = (lq0) this.c;
+                if (animator.equals(lq0Var.k0)) {
+                    lq0Var.k0 = null;
                     break;
                 }
                 break;
@@ -91,13 +91,13 @@ public final class n40 extends AnimatorListenerAdapter {
                 }
                 break;
             case 4:
-                kq0 kq0Var = (kq0) this.c;
-                if (animator.equals(kq0Var.k0)) {
+                lq0 lq0Var = (lq0) this.c;
+                if (animator.equals(lq0Var.k0)) {
                     if (!this.b) {
-                        kq0Var.Z.setVisibility(4);
-                        kq0Var.a0.setVisibility(4);
+                        lq0Var.Z.setVisibility(4);
+                        lq0Var.a0.setVisibility(4);
                     }
-                    kq0Var.k0 = null;
+                    lq0Var.k0 = null;
                     break;
                 }
                 break;

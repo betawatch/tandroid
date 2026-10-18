@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.m9 {
     public boolean E;
@@ -319,7 +319,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i15 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i22 * 14);
                         this.s = i15;
-                        i14 = org.telegram.messenger.wh.z(18.0f, i15, i12);
+                        i14 = org.telegram.messenger.kk.y(18.0f, i15, i12);
                         dp = i14;
                     }
                     TLRPC.Photo photo = this.L;
@@ -405,7 +405,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                                 }
                                 float f12 = dp2;
                                 float f13 = f7;
-                                this.x = (int) com.google.android.gms.internal.cast.a6.z(imageReceiver.getImageWidth(), f12, f13, imageReceiver.getImageX());
+                                this.x = (int) com.google.android.gms.internal.play_billing.k3.z(imageReceiver.getImageWidth(), f12, f13, imageReceiver.getImageX());
                                 int imageHeight = (int) (((imageReceiver.getImageHeight() - f12) / f13) + imageReceiver.getImageY());
                                 this.y = imageHeight;
                                 int i28 = this.x;
@@ -426,7 +426,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                         }
                         float f122 = dp2;
                         float f132 = f7;
-                        this.x = (int) com.google.android.gms.internal.cast.a6.z(imageReceiver.getImageWidth(), f122, f132, imageReceiver.getImageX());
+                        this.x = (int) com.google.android.gms.internal.play_billing.k3.z(imageReceiver.getImageWidth(), f122, f132, imageReceiver.getImageX());
                         int imageHeight2 = (int) (((imageReceiver.getImageHeight() - f122) / f132) + imageReceiver.getImageY());
                         this.y = imageHeight2;
                         int i282 = this.x;
@@ -442,7 +442,7 @@ public final class f2 extends FrameLayout implements DownloadController.FileDown
                         if (q6 != null) {
                             int height = this.c.d.getHeight() + AndroidUtilities.dp(4.0f);
                             this.w = height;
-                            i16 = org.telegram.messenger.q.C(4.0f, height, i16);
+                            i16 = org.telegram.messenger.g0.C(4.0f, height, i16);
                         }
                         int i29 = i16;
                         TL_iv.pageBlockPhoto pageblockphoto3 = this.N;

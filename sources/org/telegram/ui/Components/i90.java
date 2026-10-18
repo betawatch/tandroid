@@ -45,7 +45,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i90 implements Runnable {
     public final /* synthetic */ int a;
@@ -154,7 +154,7 @@ public final /* synthetic */ class i90 implements Runnable {
                     TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
                     tL_messages_reportSponsoredMessage.random_id = bArr;
                     tL_messages_reportSponsoredMessage.option = new byte[0];
-                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new org.telegram.messenger.gi(parentActivity, resourceProvider, bArr, eyVar2, go0Var, currentAccount));
+                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new org.telegram.messenger.fi(parentActivity, resourceProvider, bArr, eyVar2, go0Var, currentAccount));
                 }
                 i80Var.u();
                 break;
@@ -182,7 +182,7 @@ public final /* synthetic */ class i90 implements Runnable {
                 } else if (tL_error3 == null || tL_error3.code != -1000) {
                     String string = LocaleController.getString(R.string.ErrorOccurred);
                     if (tL_error3 != null) {
-                        StringBuilder i27 = r.c.i(string, "\n");
+                        StringBuilder i27 = r4.c.i(string, "\n");
                         i27.append(tL_error3.text);
                         string = i27.toString();
                     }
@@ -191,7 +191,7 @@ public final /* synthetic */ class i90 implements Runnable {
                     org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
                     b2Var.R = string2;
                     b2Var.T = string;
-                    org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                    org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                     break;
                 }
                 break;
@@ -395,7 +395,7 @@ public final /* synthetic */ class i90 implements Runnable {
                     } else {
                         b2Var2.R = LocaleController.getString(R.string.LanguageTitle);
                         formatString = tL_langPackLanguage.official ? LocaleController.formatString("LanguageAlert", R.string.LanguageAlert, tL_langPackLanguage.name, Integer.valueOf((int) Math.ceil((tL_langPackLanguage.translated_count / tL_langPackLanguage.strings_count) * 100.0f))) : LocaleController.formatString("LanguageCustomAlert", R.string.LanguageCustomAlert, tL_langPackLanguage.name, Integer.valueOf((int) Math.ceil((tL_langPackLanguage.translated_count / tL_langPackLanguage.strings_count) * 100.0f)));
-                        alertDialog$Builder2.k(LocaleController.getString(R.string.Change), new m4.y0(26, tL_langPackLanguage, launchActivity));
+                        alertDialog$Builder2.k(LocaleController.getString(R.string.Change), new m4.w0(27, tL_langPackLanguage, launchActivity));
                         alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
                     }
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(formatString));
@@ -430,7 +430,7 @@ public final /* synthetic */ class i90 implements Runnable {
                         break;
                     } else {
                         StringBuilder sb4 = new StringBuilder();
-                        org.telegram.ui.Cells.t0.n(R.string.ErrorOccurred, "\n", sb4);
+                        org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb4);
                         sb4.append(tL_error5.text);
                         launchActivity.F0(f5.M(launchActivity, null, sb4.toString()));
                         break;
@@ -570,7 +570,7 @@ public final /* synthetic */ class i90 implements Runnable {
                         } else if (tL_error10.code != -1000) {
                             String string3 = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
                             StringBuilder sb5 = new StringBuilder();
-                            org.telegram.ui.Cells.t0.n(R.string.ErrorOccurred, "\n", sb5);
+                            org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb5);
                             sb5.append(tL_error10.text);
                             fg0Var2.l1(string3, sb5.toString());
                         }
@@ -594,7 +594,7 @@ public final /* synthetic */ class i90 implements Runnable {
                 AccountInstance accountInstance3 = AccountInstance.getInstance(i18);
                 n4.s sVar = new n4.s(i21, z11);
                 sVar.K(oVar);
-                billingController.launchBillingFlow(parentActivity2, accountInstance3, (TLRPC.TL_inputStorePaymentAuthCode) obj, Collections.singletonList(sVar.j()));
+                billingController.launchBillingFlow(parentActivity2, accountInstance3, (TLRPC.TL_inputStorePaymentAuthCode) obj, Collections.singletonList(sVar.k()));
                 break;
             case 27:
                 org.telegram.ui.eg0 eg0Var = (org.telegram.ui.eg0) obj4;

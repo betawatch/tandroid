@@ -1,8 +1,8 @@
 package yh;
 
-import ai.fa;
+import ai.ad;
+import ai.ga;
 import ai.k7;
-import ai.zc;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -25,7 +25,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
@@ -55,7 +55,7 @@ import org.telegram.ui.y8;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
     public LinearLayout E;
@@ -106,7 +106,7 @@ public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
                 StringBuilder sb2 = new StringBuilder();
                 sb2.append(tL_starGiftUnique.title);
                 sb2.append(" #");
-                qc O = a02.O(document, string, LocaleController.formatString(i10, org.telegram.messenger.q.h(tL_starGiftUnique.num, ',', sb2)));
+                qc O = a02.O(document, string, LocaleController.formatString(i10, org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2)));
                 O.r = false;
                 O.j();
             } else {
@@ -284,7 +284,7 @@ public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         if (obj instanceof TL_stars.TL_starGiftUnique) {
             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
             k7 k7Var = new k7(h4Var.getParentActivity(), h4Var.currentAccount, h4Var.b, h4Var.resourceProvider, null);
-            k7Var.A2(tL_starGiftUnique.slug, tL_starGiftUnique, h4Var.d);
+            k7Var.D2(tL_starGiftUnique.slug, tL_starGiftUnique, h4Var.d);
             k7Var.R0 = new x2(h4Var);
             h4Var.showDialog(k7Var);
         }
@@ -318,11 +318,11 @@ public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         int v = h6.v(h6.w0(i10, this.resourceProvider), h6.m1(0.04f, h6.w0(i11, this.resourceProvider)));
         y8Var.setBackgroundColor(v);
         this.fragmentView = y8Var;
-        zc zcVar = new zc(context, this.currentAccount, this.resourceProvider);
-        zcVar.d = true;
-        b6.a(zcVar);
-        zcVar.setOnClickListener(new qg.n(12, this, zcVar));
-        this.actionBar.addView(zcVar, z5.a(-2.0f, 0.0f, 0.0f, 4.0f, 0.0f, -2, 85));
+        ad adVar = new ad(context, this.currentAccount, this.resourceProvider);
+        adVar.d = true;
+        b6.a(adVar);
+        adVar.setOnClickListener(new qg.n(12, this, adVar));
+        this.actionBar.addView(adVar, z5.a(-2.0f, 0.0f, 0.0f, 4.0f, 0.0f, -2, 85));
         c3 c3Var = new c3(this, new hg.o(this, 29), new x2(this), new x2(this));
         this.n = c3Var;
         c3Var.W2.r = false;
@@ -362,13 +362,13 @@ public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         };
         d6 d6Var = this.resourceProvider;
         l3 l3Var = new l3(context);
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         l3Var.addView(e, z5.e(-1, -2, 23));
         w9 w9Var = new w9(context);
         w9Var.setImageDrawable(new uj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         e.addView(w9Var, z5.q(130, 130, 17));
         TextView textView = new TextView(context);
-        wh.o(h6.G6, d6Var, textView, 1, 17.0f);
+        kk.o(h6.G6, d6Var, textView, 1, 17.0f);
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(LocaleController.getString(R.string.Gift2ResaleFiltersEmptyTitle));
@@ -385,7 +385,7 @@ public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         textView2.setTextColor(h6.w0(i13, d6Var));
         textView2.setBackground(h6.Z(h6.m1(0.1f, h6.w0(i13, d6Var)), 6, 6));
         textView2.setGravity(17);
-        textView2.setPadding(org.telegram.ui.Cells.t0.f(13.0f, R.string.Gift2ResaleFiltersEmptyClear, textView2), 0, AndroidUtilities.dp(13.0f), 0);
+        textView2.setPadding(org.telegram.ui.Cells.c1.e(13.0f, R.string.Gift2ResaleFiltersEmptyClear, textView2), 0, AndroidUtilities.dp(13.0f), 0);
         b6.a(textView2);
         e.addView(textView2, z5.t(-2, 27, 17, 32, 0, 32, 12));
         textView2.setOnClickListener(onClickListener);
@@ -425,7 +425,7 @@ public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         xpVar.setScaleY(0.8f);
         linearLayout2.addView(xpVar, z5.q(26, 26, 16));
         TextView textView3 = new TextView(context);
-        wh.o(h6.j5, this.resourceProvider, textView3, 1, 14.0f);
+        kk.o(h6.j5, this.resourceProvider, textView3, 1, 14.0f);
         textView3.setText(LocaleController.getString(R.string.GiftResaleStarsOnly));
         linearLayout2.addView(textView3, z5.t(-2, -2, 16, 9, 0, 0, 0));
         int dp = AndroidUtilities.dp(18.0f);
@@ -540,7 +540,7 @@ public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
         this.s.addView(linearLayout2, z5.d(-1.0f, -2));
         b6.b(this.s, 0.04f, 1.5f);
         y8Var.addView(this.s, z5.a(52.0f, 0.0f, 0.0f, 0.0f, AndroidUtilities.navigationBarHeight / AndroidUtilities.density, -2, 81));
-        fa y3 = fa.y(this.currentAccount, true);
+        ga y3 = ga.y(this.currentAccount, true);
         if (y3.e && !y3.s().k()) {
             this.s.setVisibility(8);
         }
@@ -874,7 +874,7 @@ public class h4 extends org.telegram.ui.ActionBar.n2 implements ne.d {
             if (this.actionBar.s()) {
                 x02 = h6.x0(null, h6.w8, false);
             }
-            if (i0.b.h(x02) > 0.699999988079071d) {
+            if (i0.a.h(x02) > 0.699999988079071d) {
                 return true;
             }
         }

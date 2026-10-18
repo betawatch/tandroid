@@ -33,7 +33,7 @@ import m5.e;
 import org.telegram.messenger.MediaDataController;
 import w7.l6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d implements e {
     public final t1 a;
@@ -47,23 +47,23 @@ public final class d implements e {
     public d(Context context, u5.a aVar, u5.a aVar2) {
         la.d dVar = new la.d();
         k5.c cVar = k5.c.a;
-        dVar.a(o.class, cVar);
-        dVar.a(i.class, cVar);
+        dVar.d(o.class, cVar);
+        dVar.d(i.class, cVar);
         f fVar = f.a;
-        dVar.a(s.class, fVar);
-        dVar.a(l.class, fVar);
+        dVar.d(s.class, fVar);
+        dVar.d(l.class, fVar);
         k5.d dVar2 = k5.d.a;
-        dVar.a(q.class, dVar2);
-        dVar.a(j.class, dVar2);
+        dVar.d(q.class, dVar2);
+        dVar.d(j.class, dVar2);
         k5.b bVar = k5.b.a;
-        dVar.a(k5.a.class, bVar);
-        dVar.a(h.class, bVar);
+        dVar.d(k5.a.class, bVar);
+        dVar.d(h.class, bVar);
         k5.e eVar = k5.e.a;
-        dVar.a(r.class, eVar);
-        dVar.a(k.class, eVar);
+        dVar.d(r.class, eVar);
+        dVar.d(k.class, eVar);
         g gVar = g.a;
-        dVar.a(v.class, gVar);
-        dVar.a(n.class, gVar);
+        dVar.d(v.class, gVar);
+        dVar.d(n.class, gVar);
         dVar.d = true;
         this.a = new t1(dVar, 4);
         this.c = context;
@@ -78,7 +78,7 @@ public final class d implements e {
         try {
             return new URL(str);
         } catch (MalformedURLException e) {
-            throw new IllegalArgumentException(r.c.g("Invalid url: ", str), e);
+            throw new IllegalArgumentException(r4.c.h("Invalid url: ", str), e);
         }
     }
 

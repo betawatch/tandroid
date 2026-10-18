@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class w81 extends org.telegram.ui.Components.hm0 {
     public int c0;
@@ -760,7 +760,7 @@ public final class w81 extends org.telegram.ui.Components.hm0 {
                     z7Var.setRoundRadius(AndroidUtilities.dp(46.0f) >> i11);
                 }
                 if (!messageObject2.isMusic()) {
-                    charSequence = a1.g.D(messageObject2.getMusicTitle().trim(), ", ", messageObject2.getMusicAuthor().trim());
+                    charSequence = a1.g.C(messageObject2.getMusicTitle().trim(), ", ", messageObject2.getMusicAuthor().trim());
                 } else if (messageObject2.isStory()) {
                     charSequence = LocaleController.getString(R.string.Story);
                 } else {
@@ -858,6 +858,6 @@ public final class w81 extends org.telegram.ui.Components.hm0 {
         } else {
             view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), 0, 0);
         }
-        return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }
 }

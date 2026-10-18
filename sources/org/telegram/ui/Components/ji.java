@@ -19,7 +19,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ji extends jw0 {
     public final ii A0;
@@ -144,7 +144,7 @@ public final class ji extends jw0 {
             } else if (i26 < currentActionBarHeight) {
                 float f16 = currentActionBarHeight - i26;
                 i24 = ((org.telegram.ui.ActionBar.f3) tiVar).backgroundPaddingTop;
-                f11 = org.telegram.ui.Cells.t0.v(f16, i24, 1.0f, 0.0f);
+                f11 = org.telegram.ui.Cells.c1.v(f16, i24, 1.0f, 0.0f);
                 f7 = 1.0f;
             } else {
                 f11 = 1.0f;
@@ -220,7 +220,7 @@ public final class ji extends jw0 {
                     f13 = f11;
                 } else if (tiVar.B0.f()) {
                     int customActionBarBackground = tiVar.B0.getCustomActionBarBackground();
-                    themedColor = i0.b.f(0.5f, customActionBarBackground, i0.b.h(customActionBarBackground) < 0.5d ? -1 : -16777216);
+                    themedColor = i0.a.f(0.5f, customActionBarBackground, i0.a.h(customActionBarBackground) < 0.5d ? -1 : -16777216);
                     if (whVar != null) {
                         alpha = whVar.getAlpha();
                         f13 = f7 - alpha;
@@ -408,7 +408,7 @@ public final class ji extends jw0 {
             f13 = 1.0f;
         } else if (i30 < currentActionBarHeight2) {
             i26 = ((org.telegram.ui.ActionBar.f3) tiVar).backgroundPaddingTop;
-            f13 = org.telegram.ui.Cells.t0.v(currentActionBarHeight2 - i30, i26, 1.0f, 0.0f);
+            f13 = org.telegram.ui.Cells.c1.v(currentActionBarHeight2 - i30, i26, 1.0f, 0.0f);
             f11 = 0.0f;
         } else {
             f11 = 0.0f;

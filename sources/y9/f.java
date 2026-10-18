@@ -17,9 +17,9 @@ import java.util.Map;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.sn0;
+import org.telegram.ui.tn0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f {
     public static final Charset b = Charset.forName("UTF-8");
@@ -163,9 +163,9 @@ public final class f {
                 closeable = r32;
             }
         }
-        String g10 = r.c.g("No userId set for session ", str);
+        String h = r4.c.h("No userId set for session ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", g10, null);
+            Log.d("FirebaseCrashlytics", h, null);
         }
         f(b10);
         return null;
@@ -249,9 +249,9 @@ public final class f {
         BufferedWriter bufferedWriter2 = null;
         try {
             try {
-                sn0 sn0Var = new sn0();
-                sn0Var.put("userId", str2);
-                obj = sn0Var.toString();
+                tn0 tn0Var = new tn0();
+                tn0Var.put("userId", str2);
+                obj = tn0Var.toString();
                 bufferedWriter = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(b10), b));
             } catch (Exception e) {
                 e = e;

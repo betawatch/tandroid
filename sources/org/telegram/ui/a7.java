@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a7 extends pg.b {
     public final Context d;
@@ -304,9 +304,9 @@ public final class a7 extends pg.b {
                     paint2.setStrokeCap(cap);
                     paint3.setStrokeCap(cap);
                     paint4.setStrokeCap(cap);
-                    ai.hc hcVar = new ai.hc(xy0Var, context, 27);
-                    xy0Var.f = hcVar;
-                    xy0Var.addView(hcVar, w7.z5.d(-2.0f, -1));
+                    ai.ic icVar = new ai.ic(xy0Var, context, 27);
+                    xy0Var.f = icVar;
+                    xy0Var.addView(icVar, w7.z5.d(-2.0f, -1));
                     LinearLayout linearLayout = new LinearLayout(context);
                     linearLayout.setOrientation(1);
                     xy0Var.addView(linearLayout, w7.z5.d(-2.0f, -1));
@@ -346,9 +346,9 @@ public final class a7 extends pg.b {
                     xy0Var.x = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Vi, false);
                     textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), xy0Var.x), (Drawable) null, (Drawable) null, (Drawable) null);
                     textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-                    textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), i0.b.o(xy0Var.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
+                    textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), i0.a.o(xy0Var.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
                     textView4.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-                    textView5.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), i0.b.o(xy0Var.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
+                    textView5.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), i0.a.o(xy0Var.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
                     textView5.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
                     textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), xy0Var.x), (Drawable) null, (Drawable) null, (Drawable) null);
                     textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));

@@ -8,11 +8,11 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d00 extends org.telegram.ui.Cells.l4 {
     public final TextView r;
-    public final ai.yc s;
+    public final ai.zc s;
     public int v;
     public final org.telegram.ui.Components.i5 w;
     public boolean x;
@@ -32,21 +32,21 @@ public final class d00 extends org.telegram.ui.Cells.l4 {
         this.r = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(p00Var.getThemedColor(org.telegram.ui.ActionBar.h6.z6));
-        org.telegram.messenger.wh.m(p00Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
+        org.telegram.messenger.kk.m(p00Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
         int i11 = (LocaleController.isRTL ? 3 : 5) | 48;
         float f7 = this.b;
         addView(textView, w7.z5.a(-1.0f, f7, 16.66f, f7, this.c, -1, i11));
         textView.setAlpha(0.0f);
-        ai.yc ycVar = new ai.yc(this, getContext());
-        this.s = ycVar;
-        this.w = new org.telegram.ui.Components.i5(ycVar, 320L, org.telegram.ui.Components.bs.h, 0);
-        ycVar.setTextSize(AndroidUtilities.dp(10.0f));
-        ycVar.setTypeface(AndroidUtilities.bold());
-        ycVar.setGravity(5);
-        ycVar.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
+        ai.zc zcVar = new ai.zc(this, getContext());
+        this.s = zcVar;
+        this.w = new org.telegram.ui.Components.i5(zcVar, 320L, org.telegram.ui.Components.bs.h, 0);
+        zcVar.setTextSize(AndroidUtilities.dp(10.0f));
+        zcVar.setTypeface(AndroidUtilities.bold());
+        zcVar.setGravity(5);
+        zcVar.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
         int i12 = LocaleController.isRTL ? 3 : 5;
         float f10 = this.b;
-        addView(ycVar, w7.z5.a(-1.0f, f10, 16.66f, f10, this.c, -1, i12 | 48));
+        addView(zcVar, w7.z5.a(-1.0f, f10, 16.66f, f10, this.c, -1, i12 | 48));
     }
 
     public final void d(int i10, boolean z10) {
@@ -61,9 +61,9 @@ public final class d00 extends org.telegram.ui.Cells.l4 {
             i11 = p00Var.getThemedColor(iArr[i10 % iArr.length]);
         }
         this.v = i11;
-        ai.yc ycVar = this.s;
+        ai.zc zcVar = this.s;
         if (!z11) {
-            ycVar.setEmojiColor(i11);
+            zcVar.setEmojiColor(i11);
         }
         if (!z10) {
             this.w.a(this.v, true);
@@ -73,7 +73,7 @@ public final class d00 extends org.telegram.ui.Cells.l4 {
             ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
             org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
             duration.setInterpolator(bsVar).start();
-            ycVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(bsVar).start();
+            zcVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(bsVar).start();
         }
     }
 
@@ -85,11 +85,11 @@ public final class d00 extends org.telegram.ui.Cells.l4 {
         if (charSequence.length() > 12) {
             charSequence = charSequence.subSequence(0, 12);
         }
-        ai.yc ycVar = this.s;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, ycVar.getPaint().getFontMetricsInt(), false);
+        ai.zc zcVar = this.s;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, zcVar.getPaint().getFontMetricsInt(), false);
         if (z10 && !LocaleController.isRTL) {
             z11 = true;
         }
-        ycVar.c(replaceEmoji, z11, true);
+        zcVar.c(replaceEmoji, z11, true);
     }
 }

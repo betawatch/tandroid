@@ -18,11 +18,11 @@ import android.view.View;
 import b2.l1;
 import b2.o1;
 import b2.z1;
+import e9.x1;
 import i2.i1;
 import i2.n1;
-import ig.d1;
-import ig.x1;
-import ig.y1;
+import ig.a2;
+import ig.f1;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -62,7 +62,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.sn;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -126,45 +126,45 @@ public final /* synthetic */ class t implements Runnable {
                 ((k0) this.b).s.presentFragment(sn.W9(((ii.e) this.c).b.id));
                 return;
             case 1:
-                i2.g0 g0Var = (i2.g0) this.b;
-                i2.m0 m0Var = (i2.m0) this.c;
-                int i13 = g0Var.J - m0Var.b;
-                g0Var.J = i13;
-                if (m0Var.d) {
-                    g0Var.K = m0Var.e;
-                    g0Var.L = true;
+                i2.h0 h0Var = (i2.h0) this.b;
+                i2.n0 n0Var = (i2.n0) this.c;
+                int i13 = h0Var.J - n0Var.b;
+                h0Var.J = i13;
+                if (n0Var.d) {
+                    h0Var.K = n0Var.e;
+                    h0Var.L = true;
                 }
                 if (i13 == 0) {
-                    o1 o1Var = ((i1) m0Var.f).a;
-                    if (!g0Var.p0.a.p() && o1Var.p()) {
-                        g0Var.q0 = -1;
-                        g0Var.r0 = 0L;
+                    o1 o1Var = ((i1) n0Var.f).a;
+                    if (!h0Var.p0.a.p() && o1Var.p()) {
+                        h0Var.q0 = -1;
+                        h0Var.r0 = 0L;
                     }
                     if (!o1Var.p()) {
                         List asList = Arrays.asList(((n1) o1Var).l);
-                        u6.p(asList.size() == g0Var.p.size());
+                        u6.p(asList.size() == h0Var.p.size());
                         for (int i14 = 0; i14 < asList.size(); i14++) {
-                            ((i2.c0) g0Var.p.get(i14)).c = (o1) asList.get(i14);
+                            ((i2.d0) h0Var.p.get(i14)).c = (o1) asList.get(i14);
                         }
                     }
                     long j11 = -9223372036854775807L;
-                    if (g0Var.L) {
-                        Object[] objArr = ((i1) m0Var.f).a.p() && g0Var.p0.a.p();
-                        boolean equals = ((i1) m0Var.f).b.equals(g0Var.p0.b);
-                        Object[] objArr2 = ((i1) m0Var.f).d == g0Var.p0.s;
+                    if (h0Var.L) {
+                        Object[] objArr = ((i1) n0Var.f).a.p() && h0Var.p0.a.p();
+                        boolean equals = ((i1) n0Var.f).b.equals(h0Var.p0.b);
+                        Object[] objArr2 = ((i1) n0Var.f).d == h0Var.p0.s;
                         if (objArr != false || (equals && objArr2 != false)) {
                             z12 = false;
                         }
                         if (z12) {
-                            i11 = g0Var.n0();
-                            if (o1Var.p() || ((i1) m0Var.f).b.b()) {
-                                j11 = ((i1) m0Var.f).d;
+                            i11 = h0Var.n0();
+                            if (o1Var.p() || ((i1) n0Var.f).b.b()) {
+                                j11 = ((i1) n0Var.f).d;
                             } else {
-                                i1 i1Var = (i1) m0Var.f;
-                                u2.g0 g0Var2 = i1Var.b;
+                                i1 i1Var = (i1) n0Var.f;
+                                u2.f0 f0Var = i1Var.b;
                                 long j12 = i1Var.d;
-                                Object obj = g0Var2.a;
-                                l1 l1Var = g0Var.o;
+                                Object obj = f0Var.a;
+                                l1 l1Var = h0Var.o;
                                 o1Var.g(obj, l1Var);
                                 j11 = j12 + l1Var.e;
                             }
@@ -177,15 +177,15 @@ public final /* synthetic */ class t implements Runnable {
                         j10 = -9223372036854775807L;
                         z10 = false;
                     }
-                    g0Var.L = false;
-                    g0Var.D1((i1) m0Var.f, 1, z10, g0Var.K, j10, i10, false);
+                    h0Var.L = false;
+                    h0Var.D1((i1) n0Var.f, 1, z10, h0Var.K, j10, i10, false);
                     return;
                 }
                 return;
             case 2:
-                i2.a0 a0Var = (i2.a0) this.b;
+                i2.b0 b0Var = (i2.b0) this.b;
                 SurfaceTexture surfaceTexture = (SurfaceTexture) this.c;
-                ArrayList arrayList2 = a0Var.a.t0;
+                ArrayList arrayList2 = b0Var.a.t0;
                 int size = arrayList2.size();
                 while (i12 < size) {
                     Object obj2 = arrayList2.get(i12);
@@ -210,25 +210,25 @@ public final /* synthetic */ class t implements Runnable {
                 ig.k0.S((ig.k0) this.b, (e2) this.c);
                 return;
             case 5:
-                MessagesController.getInstance(((ig.r0) this.b).currentAccount).lambda$processUpdates$377((TLRPC.Updates) ((TLObject) this.c), false);
+                MessagesController.getInstance(((ig.t0) this.b).currentAccount).lambda$processUpdates$377((TLRPC.Updates) ((TLObject) this.c), false);
                 return;
             case 6:
-                d1 d1Var = (d1) this.b;
+                f1 f1Var = (f1) this.b;
                 f61 f61Var = (f61) this.c;
-                d1Var.getClass();
-                d1Var.X(f61Var.d);
+                f1Var.getClass();
+                f1Var.X(f61Var.d);
                 return;
             case 7:
                 MessagesStorage messagesStorage = (MessagesStorage) this.b;
-                x1 x1Var = (x1) this.c;
+                ig.z1 z1Var = (ig.z1) this.c;
                 try {
                     try {
                         sQLitePreparedStatement2 = messagesStorage.getDatabase().executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?);");
                         sQLitePreparedStatement2.requery();
-                        sQLitePreparedStatement2.bindInteger(1, x1Var.a);
-                        sQLitePreparedStatement2.bindString(2, x1Var.b);
-                        sQLitePreparedStatement2.bindInteger(3, x1Var.c);
-                        sQLitePreparedStatement2.bindInteger(4, x1Var.f);
+                        sQLitePreparedStatement2.bindInteger(1, z1Var.a);
+                        sQLitePreparedStatement2.bindString(2, z1Var.b);
+                        sQLitePreparedStatement2.bindInteger(3, z1Var.c);
+                        sQLitePreparedStatement2.bindInteger(4, z1Var.f);
                         sQLitePreparedStatement2.step();
                     } catch (Exception e) {
                         FileLog.e(e);
@@ -245,21 +245,21 @@ public final /* synthetic */ class t implements Runnable {
                     throw th2;
                 }
             case 8:
-                y1 y1Var = (y1) this.b;
+                a2 a2Var = (a2) this.b;
                 MessagesStorage messagesStorage2 = (MessagesStorage) this.c;
-                ArrayList arrayList3 = y1Var.b;
+                ArrayList arrayList3 = a2Var.b;
                 try {
                     try {
                         SQLiteDatabase database = messagesStorage2.getDatabase();
                         database.executeFast("DELETE FROM business_replies").stepThis().dispose();
                         sQLitePreparedStatement = database.executeFast("REPLACE INTO business_replies VALUES(?, ?, ?, ?)");
                         for (int i15 = 0; i15 < arrayList3.size(); i15++) {
-                            x1 x1Var2 = (x1) arrayList3.get(i15);
+                            ig.z1 z1Var2 = (ig.z1) arrayList3.get(i15);
                             sQLitePreparedStatement.requery();
-                            sQLitePreparedStatement.bindInteger(1, x1Var2.a);
-                            sQLitePreparedStatement.bindString(2, x1Var2.b);
-                            sQLitePreparedStatement.bindInteger(3, x1Var2.c);
-                            sQLitePreparedStatement.bindInteger(4, x1Var2.f);
+                            sQLitePreparedStatement.bindInteger(1, z1Var2.a);
+                            sQLitePreparedStatement.bindString(2, z1Var2.b);
+                            sQLitePreparedStatement.bindInteger(3, z1Var2.c);
+                            sQLitePreparedStatement.bindInteger(4, z1Var2.f);
                             sQLitePreparedStatement.step();
                         }
                         if (sQLitePreparedStatement == null) {
@@ -280,10 +280,10 @@ public final /* synthetic */ class t implements Runnable {
                     throw th3;
                 }
             case 9:
-                y1 y1Var2 = (y1) this.b;
+                a2 a2Var2 = (a2) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
-                ArrayList arrayList4 = y1Var2.b;
-                int i16 = y1Var2.a;
+                ArrayList arrayList4 = a2Var2.b;
+                int i16 = a2Var2.a;
                 if (tLObject2 instanceof TLRPC.TL_messages_quickReplies) {
                     TLRPC.TL_messages_quickReplies tL_messages_quickReplies = (TLRPC.TL_messages_quickReplies) tLObject2;
                     MessagesController.getInstance(i16).putUsers(tL_messages_quickReplies.users, false);
@@ -292,12 +292,12 @@ public final /* synthetic */ class t implements Runnable {
                     ArrayList arrayList5 = new ArrayList();
                     for (int i17 = 0; i17 < tL_messages_quickReplies.quick_replies.size(); i17++) {
                         TLRPC.TL_quickReply tL_quickReply = tL_messages_quickReplies.quick_replies.get(i17);
-                        x1 x1Var3 = new x1();
-                        x1Var3.a = tL_quickReply.shortcut_id;
-                        x1Var3.b = tL_quickReply.shortcut;
-                        x1Var3.f = tL_quickReply.count;
-                        x1Var3.d = tL_quickReply.top_message;
-                        x1Var3.c = i17;
+                        ig.z1 z1Var3 = new ig.z1();
+                        z1Var3.a = tL_quickReply.shortcut_id;
+                        z1Var3.b = tL_quickReply.shortcut;
+                        z1Var3.f = tL_quickReply.count;
+                        z1Var3.d = tL_quickReply.top_message;
+                        z1Var3.c = i17;
                         int i18 = 0;
                         while (true) {
                             if (i18 < tL_messages_quickReplies.messages.size()) {
@@ -311,21 +311,21 @@ public final /* synthetic */ class t implements Runnable {
                         }
                         if (message != null) {
                             MessageObject messageObject = new MessageObject(i16, message, false, true);
-                            x1Var3.e = messageObject;
+                            z1Var3.e = messageObject;
                             messageObject.generateThumbs(false);
-                            x1Var3.e.applyQuickReply(tL_quickReply.shortcut, tL_quickReply.shortcut_id);
+                            z1Var3.e.applyQuickReply(tL_quickReply.shortcut, tL_quickReply.shortcut_id);
                         }
-                        arrayList5.add(x1Var3);
+                        arrayList5.add(z1Var3);
                     }
                     arrayList = arrayList5;
                 }
-                y1Var2.e = false;
+                a2Var2.e = false;
                 if (arrayList != null) {
                     arrayList4.clear();
                     arrayList4.addAll(arrayList);
                 }
-                y1Var2.f = true;
-                y1Var2.l();
+                a2Var2.f = true;
+                a2Var2.l();
                 NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                 return;
             case 10:
@@ -348,7 +348,7 @@ public final /* synthetic */ class t implements Runnable {
                 String str4 = (String) this.c;
                 k2.u uVar = (k2.u) bVar.c;
                 String str5 = e2.m0.a;
-                j2.f fVar2 = ((i2.a0) uVar).a.s;
+                j2.f fVar2 = ((i2.b0) uVar).a.s;
                 j2.a p5 = fVar2.p();
                 fVar2.q(p5, 1012, new j2.e(p5, str4, 12));
                 return;
@@ -357,7 +357,7 @@ public final /* synthetic */ class t implements Runnable {
                 i2.c cVar = (i2.c) this.c;
                 k2.u uVar2 = (k2.u) bVar2.c;
                 String str6 = e2.m0.a;
-                n4.s.i(((i2.a0) uVar2).a.F, cVar);
+                n4.s.i(((i2.b0) uVar2).a.F, cVar);
                 return;
             case 17:
                 k2.d0.a((k2.d0) this.b, (AudioRouting) this.c);
@@ -372,7 +372,7 @@ public final /* synthetic */ class t implements Runnable {
                 Context context = eVar.a;
                 b2.f fVar3 = eVar.j;
                 List a2 = eVar.a();
-                e9.x1 x1Var4 = k2.b.e;
+                x1 x1Var = k2.b.e;
                 eVar.b(k2.b.b(context, context.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), fVar3, audioDeviceInfo, a2));
                 return;
             case 19:
@@ -420,7 +420,7 @@ public final /* synthetic */ class t implements Runnable {
                     FileLog.e(e10);
                     str = null;
                 }
-                if (TextUtils.isEmpty(str) || !r.c.t(str)) {
+                if (TextUtils.isEmpty(str) || !r4.c.t(str)) {
                     try {
                         query = w3Var.getContext().getContentResolver().query(uri, new String[]{"_display_name"}, null, null, null);
                     } catch (Exception e11) {
@@ -499,7 +499,7 @@ public final /* synthetic */ class t implements Runnable {
                     }
                     str = str3;
                 }
-                if (TextUtils.isEmpty(str) || !r.c.t(str)) {
+                if (TextUtils.isEmpty(str) || !r4.c.t(str)) {
                     return;
                 }
                 AndroidUtilities.runOnUIThread(new t(22, w3Var, str));
@@ -646,9 +646,9 @@ public final /* synthetic */ class t implements Runnable {
                 ((m4.f0) this.b).u(null, (m1) this.c);
                 return;
             default:
-                m4.f0 f0Var = (m4.f0) this.b;
+                m4.f0 f0Var2 = (m4.f0) this.b;
                 Runnable runnable = (Runnable) this.c;
-                f0Var.getClass();
+                f0Var2.getClass();
                 runnable.run();
                 return;
         }

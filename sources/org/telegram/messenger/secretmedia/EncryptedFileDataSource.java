@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.Map;
 import org.telegram.messenger.FileLoader;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class EncryptedFileDataSource extends c {
     private int bytesRemaining;
@@ -19,7 +19,7 @@ public final class EncryptedFileDataSource extends c {
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th2) {
             super(th2);
@@ -62,7 +62,7 @@ public final class EncryptedFileDataSource extends c {
         long j11 = mVar.e;
         this.uri = uri;
         File file = new File(mVar.a.getPath());
-        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(FileLoader.getInternalCacheDir(), r.c.u(file.getName(), ".key")));
+        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(FileLoader.getInternalCacheDir(), r4.c.u(file.getName(), ".key")));
         this.fileInputStream = encryptedFileInputStream;
         encryptedFileInputStream.skip(j11);
         int length = (int) file.length();

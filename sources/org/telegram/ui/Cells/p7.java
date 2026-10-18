@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p7 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -109,7 +109,7 @@ public final class p7 extends FrameLayout {
             accessibilityNodeInfo.setText(LocaleController.getString(R.string.AttachLivePhoto));
         } else if (this.n.isVideo()) {
             StringBuilder sb2 = new StringBuilder();
-            t0.n(R.string.AttachVideo, ", ", sb2);
+            c1.n(R.string.AttachVideo, ", ", sb2);
             sb2.append(LocaleController.formatDuration((int) this.n.getDuration()));
             accessibilityNodeInfo.setText(sb2.toString());
         } else {

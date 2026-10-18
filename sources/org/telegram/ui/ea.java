@@ -21,7 +21,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ea implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public final /* synthetic */ class ea implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ai.t0(obj3, obj2, tL_error, tLObject, obj, 24));
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((sn) obj3, (pf.c) obj2, tLObject, (ai.g3) obj, 10));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i((sn) obj3, (pf.c) obj2, tLObject, (ai.e3) obj, 10));
                 break;
             case 4:
                 sn snVar = (sn) obj3;
@@ -163,7 +163,7 @@ public final /* synthetic */ class ea implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g30((ey) obj3, tLObject, (TLRPC.UserFull) obj2, (TL_account.TL_birthday) obj, tL_error, 5));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new gv((ey) obj3, (TLRPC.TL_attachMenuBot) obj2, (LaunchActivity) obj, i14));
+                AndroidUtilities.runOnUIThread(new hv((ey) obj3, (TLRPC.TL_attachMenuBot) obj2, (LaunchActivity) obj, i14));
                 break;
             case 10:
                 AndroidUtilities.runOnUIThread(new lq((n10) obj3, (org.telegram.ui.ActionBar.b2) obj2, (MessagesController.DialogFilter) obj, 9));
@@ -304,17 +304,17 @@ public final /* synthetic */ class ea implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g30((tm0) obj3, tL_error, (Bundle) obj2, tLObject, (TLRPC.TL_auth_resendCode) obj, 21));
                 break;
             case 28:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g30((fo0) obj3, tL_error, tLObject, (String) obj2, (TL_account.getPassword) obj, 22));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g30((go0) obj3, tL_error, tLObject, (String) obj2, (TL_account.getPassword) obj, 22));
                 break;
             default:
-                fo0 fo0Var = (fo0) obj3;
+                go0 go0Var = (go0) obj3;
                 zg0 zg0Var = (zg0) obj2;
                 TLObject tLObject2 = (TLObject) obj;
                 if (!(tLObject instanceof TLRPC.TL_payments_validatedRequestedInfo)) {
-                    AndroidUtilities.runOnUIThread(new en0(fo0Var, tL_error, tLObject2, 2));
+                    AndroidUtilities.runOnUIThread(new en0(go0Var, tL_error, tLObject2, 2));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new xe0(fo0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject, zg0Var, i12));
+                    AndroidUtilities.runOnUIThread(new xe0(go0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject, zg0Var, i12));
                     break;
                 }
         }

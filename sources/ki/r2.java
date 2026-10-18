@@ -33,9 +33,9 @@ import org.telegram.ui.Components.pw0;
 import org.telegram.ui.Components.qw0;
 import org.telegram.ui.Components.rw0;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.kq0;
+import org.telegram.ui.lq0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a;
@@ -128,7 +128,7 @@ public final /* synthetic */ class r2 implements Runnable {
                 }
                 final boolean z11 = this.c;
                 int i23 = this.b;
-                if (str == null || !r.c.t(str)) {
+                if (str == null || !r4.c.t(str)) {
                     Context context = w3Var.getContext();
                     try {
                         try {
@@ -235,7 +235,7 @@ public final /* synthetic */ class r2 implements Runnable {
                     str = null;
                 }
                 str2 = str;
-                if (str2 == null || !r.c.t(str2)) {
+                if (str2 == null || !r4.c.t(str2)) {
                     return;
                 }
                 if (z11) {
@@ -517,13 +517,13 @@ public final /* synthetic */ class r2 implements Runnable {
                 org.telegram.ui.Components.voip.d2.g(activity, this.b, inputGroupCall, this.c, groupCall, hashSet);
                 return;
             case 5:
-                kq0 kq0Var = (kq0) this.d;
+                lq0 lq0Var = (lq0) this.d;
                 String str5 = (String) this.f;
                 TLObject tLObject = (TLObject) this.e;
                 TLRPC.User user = (TLRPC.User) this.h;
-                HashMap hashMap = kq0Var.h;
-                ArrayList arrayList = kq0Var.f;
-                ArrayList arrayList2 = kq0Var.n;
+                HashMap hashMap = lq0Var.h;
+                ArrayList arrayList = lq0Var.f;
+                ArrayList arrayList2 = lq0Var.n;
                 int size = arrayList2.size();
                 int i29 = 0;
                 int i30 = 0;
@@ -540,14 +540,14 @@ public final /* synthetic */ class r2 implements Runnable {
                 while (arrayList2.size() > 20) {
                     a1.g.y(1, arrayList2);
                 }
-                kq0Var.c0();
-                if (this.b != kq0Var.y) {
+                lq0Var.c0();
+                if (this.b != lq0Var.y) {
                     return;
                 }
                 int size2 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    kq0Var.w = messages_botresults.next_offset;
+                    lq0Var.w = messages_botresults.next_offset;
                     int size3 = messages_botresults.results.size();
                     int i31 = 0;
                     i22 = 0;
@@ -565,7 +565,7 @@ public final /* synthetic */ class r2 implements Runnable {
                                         searchImage.document = botInlineResult.document;
                                         searchImage.size = 0;
                                         photo2 = botInlineResult.photo;
-                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, kq0Var.R, true)) != null) {
+                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, lq0Var.R, true)) != null) {
                                             botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                             botInlineResult.document.flags |= 1;
                                         }
@@ -627,18 +627,18 @@ public final /* synthetic */ class r2 implements Runnable {
                         i31++;
                         i29 = 0;
                     }
-                    kq0Var.s = size2 == arrayList.size() || kq0Var.w == null;
+                    lq0Var.s = size2 == arrayList.size() || lq0Var.w == null;
                 } else {
                     i22 = 0;
                 }
-                kq0Var.r = false;
+                lq0Var.r = false;
                 if (i22 != 0) {
-                    kq0Var.L.s(size2, i22);
-                } else if (kq0Var.s) {
+                    lq0Var.L.s(size2, i22);
+                } else if (lq0Var.s) {
                     z10 = true;
-                    kq0Var.L.u(arrayList.size() - 1);
+                    lq0Var.L.u(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        kq0Var.N.e(false, z10);
+                        lq0Var.N.e(false, z10);
                         return;
                     }
                     return;
@@ -705,9 +705,9 @@ public final /* synthetic */ class r2 implements Runnable {
         this.c = z10;
     }
 
-    public /* synthetic */ r2(kq0 kq0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
+    public /* synthetic */ r2(lq0 lq0Var, String str, int i10, TLObject tLObject, boolean z10, TLRPC.User user) {
         this.a = 5;
-        this.d = kq0Var;
+        this.d = lq0Var;
         this.f = str;
         this.b = i10;
         this.e = tLObject;

@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.ActionBar.t3 {
     public ValueAnimator E;
@@ -206,9 +206,9 @@ public final class x3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.A
         int j10 = j();
         n0 n0Var = this.K.h0;
         if (n0Var != null) {
-            j10 = i0.b.f(n0Var.a0, j10, n0Var.x);
+            j10 = i0.a.f(n0Var.a0, j10, n0Var.x);
         }
-        return i0.b.f(min, i10, j10);
+        return i0.a.f(min, i10, j10);
     }
 
     @Override // org.telegram.ui.ActionBar.j2
@@ -265,7 +265,7 @@ public final class x3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.A
         if (this.F && min > 0.25f) {
             if (SharedConfig.adaptableColorInBrowser) {
                 l4 l4Var = this.K;
-                f7 = i0.b.f(1.0f - (l4Var.u0[0].getVisibility() == 0 ? 1.0f - (l4Var.u0[0].getTranslationX() / l4Var.u0[0].getWidth()) : 0.0f), l4Var.u0[0].getActionBarColor(), l4Var.u0[1].getActionBarColor());
+                f7 = i0.a.f(1.0f - (l4Var.u0[0].getVisibility() == 0 ? 1.0f - (l4Var.u0[0].getTranslationX() / l4Var.u0[0].getWidth()) : 0.0f), l4Var.u0[0].getActionBarColor(), l4Var.u0[1].getActionBarColor());
             } else {
                 f7 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Pk, false);
             }
@@ -292,13 +292,13 @@ public final class x3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.A
             return org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sk, false);
         }
         l4 l4Var = this.K;
-        return i0.b.f(1.0f - (l4Var.u0[0].getVisibility() != 0 ? 0.0f : 1.0f - (l4Var.u0[0].getTranslationX() / l4Var.u0[0].getWidth())), l4Var.u0[0].getBackgroundColor(), l4Var.u0[1].getBackgroundColor());
+        return i0.a.f(1.0f - (l4Var.u0[0].getVisibility() != 0 ? 0.0f : 1.0f - (l4Var.u0[0].getTranslationX() / l4Var.u0[0].getWidth())), l4Var.u0[0].getBackgroundColor(), l4Var.u0[1].getBackgroundColor());
     }
 
     public final int k() {
         int dp = AndroidUtilities.dp(16.0f);
         View view = this.d;
-        return org.telegram.messenger.q.A(20.0f, l(), dp + (view == null ? AndroidUtilities.displaySize.y : view.getHeight()));
+        return org.telegram.messenger.g0.A(20.0f, l(), dp + (view == null ? AndroidUtilities.displaySize.y : view.getHeight()));
     }
 
     public final int l() {

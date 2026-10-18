@@ -45,7 +45,7 @@ import org.telegram.ui.df;
 import org.telegram.ui.eg0;
 import org.telegram.ui.en;
 import org.telegram.ui.fg0;
-import org.telegram.ui.fo0;
+import org.telegram.ui.go0;
 import org.telegram.ui.mm0;
 import org.telegram.ui.of0;
 import org.telegram.ui.sn;
@@ -53,7 +53,7 @@ import org.telegram.ui.st;
 import org.telegram.ui.xm0;
 import org.telegram.ui.z40;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a;
@@ -65,9 +65,9 @@ public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ u7(fa faVar, TLObject tLObject, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, Utilities.Callback callback, org.telegram.ui.Components.xc xcVar, TLRPC.TL_error tL_error) {
+    public /* synthetic */ u7(ga gaVar, TLObject tLObject, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, Utilities.Callback callback, org.telegram.ui.Components.xc xcVar, TLRPC.TL_error tL_error) {
         this.a = 1;
-        this.b = faVar;
+        this.b = gaVar;
         this.d = tLObject;
         this.e = messageObject;
         this.f = inputInvoice;
@@ -88,8 +88,8 @@ public final /* synthetic */ class u7 implements Runnable {
         int i12;
         int i13;
         ei.a8 m10;
-        fo0 fo0Var;
-        fo0 fo0Var2;
+        go0 go0Var;
+        go0 go0Var2;
         int i14 = this.a;
         int i15 = 7;
         int i16 = 2;
@@ -105,10 +105,10 @@ public final /* synthetic */ class u7 implements Runnable {
         switch (i14) {
             case 0:
                 ((boolean[]) obj5)[0] = true;
-                ((fa) obj7).Z((String) obj3, (TLRPC.ChatInvite) obj2, new w7((boolean[]) obj4, (Utilities.Callback2) obj, (Utilities.Callback) obj6));
+                ((ga) obj7).Z((String) obj3, (TLRPC.ChatInvite) obj2, new w7((boolean[]) obj4, (Utilities.Callback2) obj, (Utilities.Callback) obj6));
                 break;
             case 1:
-                fa faVar = (fa) obj7;
+                ga gaVar = (ga) obj7;
                 TLObject tLObject = (TLObject) obj5;
                 MessageObject messageObject = (MessageObject) obj4;
                 TLRPC.InputInvoice inputInvoice = (TLRPC.InputInvoice) obj3;
@@ -116,51 +116,51 @@ public final /* synthetic */ class u7 implements Runnable {
                 org.telegram.ui.Components.xc xcVar = (org.telegram.ui.Components.xc) obj2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
-                    faVar.a0(messageObject, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, callback);
+                    gaVar.a0(messageObject, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, callback);
                     break;
                 } else {
                     callback.run(Boolean.FALSE);
-                    i0.a.s(R.string.UnknownErrorCode, new Object[]{tL_error != null ? tL_error.text : "FAILED_GETTING_FORM"}, xcVar, R.raw.error, 36);
+                    i2.d.s(R.string.UnknownErrorCode, new Object[]{tL_error != null ? tL_error.text : "FAILED_GETTING_FORM"}, xcVar, R.raw.error, 36);
                     break;
                 }
             case 2:
-                fa faVar2 = (fa) obj7;
+                ga gaVar2 = (ga) obj7;
                 List list = (List) obj5;
-                sc scVar = (sc) obj4;
+                tc tcVar = (tc) obj4;
                 TLRPC.TL_inputStorePaymentStarsGift tL_inputStorePaymentStarsGift = (TLRPC.TL_inputStorePaymentStarsGift) obj3;
                 TL_stars.TL_starsGiftOption tL_starsGiftOption = (TL_stars.TL_starsGiftOption) obj2;
                 c5.i iVar = (c5.i) obj;
                 Activity activity = (Activity) obj6;
                 if (list.isEmpty()) {
-                    AndroidUtilities.runOnUIThread(new g8(scVar, i17));
+                    AndroidUtilities.runOnUIThread(new g8(tcVar, i17));
                     break;
                 } else {
                     c5.o oVar = (c5.o) list.get(0);
                     c5.l a2 = oVar.a();
                     if (a2 == null) {
-                        AndroidUtilities.runOnUIThread(new g8(scVar, i16));
+                        AndroidUtilities.runOnUIThread(new g8(tcVar, i16));
                         break;
                     } else {
                         tL_inputStorePaymentStarsGift.currency = a2.c;
                         tL_inputStorePaymentStarsGift.amount = (long) (Math.pow(10.0d, BillingController.getInstance().getCurrencyExp(tL_starsGiftOption.currency)) * (a2.b / Math.pow(10.0d, 6.0d)));
                         TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                         tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentStarsGift;
-                        ConnectionsManager.getInstance(faVar2.a).sendRequest(tL_payments_canPurchaseStore, new e8(oVar, iVar, scVar, activity, tL_inputStorePaymentStarsGift, list, 1));
+                        ConnectionsManager.getInstance(gaVar2.a).sendRequest(tL_payments_canPurchaseStore, new e8(oVar, iVar, tcVar, activity, tL_inputStorePaymentStarsGift, list, 1));
                         break;
                     }
                 }
             case 3:
-                ke keVar = (ke) obj7;
+                le leVar = (le) obj7;
                 ci.q0[] q0VarArr = (ci.q0[]) obj5;
                 int[] iArr = (int[]) obj4;
                 RectF rectF = (RectF) obj3;
                 View view = (View) obj2;
                 ah.j1 j1Var = (ah.j1) obj;
                 ah.g1 g1Var = (ah.g1) obj6;
-                if (keVar.d) {
+                if (leVar.d) {
                     ci.q0 q0Var = q0VarArr[0];
                     if (q0Var == null) {
-                        q0Var = keVar.O.d(keVar.P);
+                        q0Var = leVar.O.d(leVar.P);
                         q0VarArr[0] = q0Var;
                     }
                     if (q0Var != null) {
@@ -216,7 +216,7 @@ public final /* synthetic */ class u7 implements Runnable {
                 } else {
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                     tL_contacts_resolveUsername.username = str2;
-                    cVar.b = new df(snVar2, snVar2.getConnectionsManager().sendRequest(tL_contacts_resolveUsername, new ei.s1(snVar2, cVar, t3Var, z10, 2)), i15);
+                    cVar.b = new df(snVar2, snVar2.getConnectionsManager().sendRequest(tL_contacts_resolveUsername, new g4(snVar2, cVar, t3Var, z10, 3)), i15);
                     cVar.d();
                     break;
                 }
@@ -508,30 +508,30 @@ public final /* synthetic */ class u7 implements Runnable {
                 break;
             case 15:
                 TLRPC.TL_error tL_error7 = (TLRPC.TL_error) obj7;
-                ug.t tVar = (ug.t) obj5;
+                ug.u uVar = (ug.u) obj5;
                 TLObject tLObject9 = (TLObject) obj4;
                 MessagesController messagesController = (MessagesController) obj3;
                 TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode = (TLRPC.TL_inputInvoicePremiumGiftCode) obj2;
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj;
-                ug.t tVar2 = (ug.t) obj6;
+                ug.u uVar2 = (ug.u) obj6;
                 if (tL_error7 != null) {
-                    tVar.run(tL_error7);
+                    uVar.run(tL_error7);
                     break;
                 } else {
                     if (tLObject9 instanceof TLRPC.PaymentForm) {
                         TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject9;
                         paymentForm.invoice.recurring = true;
                         messagesController.putUsers(paymentForm.users, false);
-                        fo0Var = new fo0(paymentForm, tL_inputInvoicePremiumGiftCode, n2Var);
+                        go0Var = new go0(paymentForm, tL_inputInvoicePremiumGiftCode, n2Var);
                     } else {
-                        fo0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new fo0((TLRPC.PaymentReceipt) tLObject9) : null;
+                        go0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new go0((TLRPC.PaymentReceipt) tLObject9) : null;
                     }
-                    if (fo0Var != null) {
-                        fo0Var.Z0 = new org.telegram.ui.web.c0(14, tVar2, tVar);
-                        LaunchActivity.R().showAsSheet(fo0Var, new org.telegram.ui.ActionBar.l2());
+                    if (go0Var != null) {
+                        go0Var.Z0 = new org.telegram.ui.web.m(15, uVar2, uVar);
+                        LaunchActivity.R().showAsSheet(go0Var, new org.telegram.ui.ActionBar.l2());
                         break;
                     } else {
-                        tVar.run(null);
+                        uVar.run(null);
                         break;
                     }
                 }
@@ -551,13 +551,13 @@ public final /* synthetic */ class u7 implements Runnable {
                         TLRPC.PaymentForm paymentForm2 = (TLRPC.PaymentForm) tLObject10;
                         paymentForm2.invoice.recurring = true;
                         messagesController2.putUsers(paymentForm2.users, false);
-                        fo0Var2 = new fo0(paymentForm2, tL_inputInvoicePremiumGiftCode2, n2Var2);
+                        go0Var2 = new go0(paymentForm2, tL_inputInvoicePremiumGiftCode2, n2Var2);
                     } else {
-                        fo0Var2 = tLObject10 instanceof TLRPC.PaymentReceipt ? new fo0((TLRPC.PaymentReceipt) tLObject10) : null;
+                        go0Var2 = tLObject10 instanceof TLRPC.PaymentReceipt ? new go0((TLRPC.PaymentReceipt) tLObject10) : null;
                     }
-                    if (fo0Var2 != null) {
-                        fo0Var2.Z0 = new org.telegram.ui.web.c0(15, callback3, callback2);
-                        LaunchActivity.R().showAsSheet(fo0Var2, new org.telegram.ui.ActionBar.l2());
+                    if (go0Var2 != null) {
+                        go0Var2.Z0 = new org.telegram.ui.web.m(16, callback3, callback2);
+                        LaunchActivity.R().showAsSheet(go0Var2, new org.telegram.ui.ActionBar.l2());
                         break;
                     } else {
                         callback2.run(null);
@@ -567,9 +567,9 @@ public final /* synthetic */ class u7 implements Runnable {
         }
     }
 
-    public /* synthetic */ u7(fa faVar, boolean[] zArr, String str, TLRPC.ChatInvite chatInvite, boolean[] zArr2, Utilities.Callback2 callback2, Utilities.Callback callback) {
+    public /* synthetic */ u7(ga gaVar, boolean[] zArr, String str, TLRPC.ChatInvite chatInvite, boolean[] zArr2, Utilities.Callback2 callback2, Utilities.Callback callback) {
         this.a = 0;
-        this.b = faVar;
+        this.b = gaVar;
         this.d = zArr;
         this.f = str;
         this.h = chatInvite;

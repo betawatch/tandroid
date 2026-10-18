@@ -79,7 +79,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.r40 A0;
@@ -1586,8 +1586,8 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         if (this.n0 != null) {
             for (int i13 = 0; i13 < this.n0.getChildCount(); i13++) {
                 View childAt = this.n0.getChildAt(i13);
-                if (childAt instanceof org.telegram.ui.Cells.x0) {
-                    d1((org.telegram.ui.Cells.x0) childAt);
+                if (childAt instanceof org.telegram.ui.Cells.w0) {
+                    d1((org.telegram.ui.Cells.w0) childAt);
                     childAt.invalidate();
                 }
             }
@@ -1595,8 +1595,8 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         if (this.u0 != null) {
             for (int i14 = 0; i14 < this.u0.getChildCount(); i14++) {
                 View childAt2 = this.u0.getChildAt(i14);
-                if (childAt2 instanceof org.telegram.ui.Cells.x0) {
-                    d1((org.telegram.ui.Cells.x0) childAt2);
+                if (childAt2 instanceof org.telegram.ui.Cells.w0) {
+                    d1((org.telegram.ui.Cells.w0) childAt2);
                     childAt2.invalidate();
                 }
             }
@@ -2110,7 +2110,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                         colorDrawable = wc0Var;
                     } else if (C02 != 0) {
                         org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(org.telegram.ui.Components.v9.d(f6Var.n), new int[]{C0, C02});
-                        this.u1 = v9Var.f(ki.t1.u(0.5f, 3), new ub1(this, 0), 100L);
+                        this.u1 = v9Var.f(ki.t1.w(0.5f, 3), new ub1(this, 0), 100L);
                         colorDrawable = v9Var;
                     } else {
                         colorDrawable = new ColorDrawable(C0);
@@ -2351,7 +2351,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
             if (AndroidUtilities.isTablet()) {
                 this.s0.setOccupyStatusBar(false);
             }
-            i0.a.x(false, this.s0);
+            i2.d.y(false, this.s0);
             this.s0.setActionBarMenuOnItemClick(new ac1(this));
             i12 = 0;
             while (true) {
@@ -3682,7 +3682,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         this.s0 = createActionBar(context);
         if (AndroidUtilities.isTablet()) {
         }
-        i0.a.x(false, this.s0);
+        i2.d.y(false, this.s0);
         this.s0.setActionBarMenuOnItemClick(new ac1(this));
         i12 = 0;
         while (true) {
@@ -3810,7 +3810,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         return this.fragmentView;
     }
 
-    public final void d1(org.telegram.ui.Cells.x0 x0Var) {
+    public final void d1(org.telegram.ui.Cells.w0 w0Var) {
         float f7;
         if (this.x0 == null) {
             return;
@@ -3822,16 +3822,16 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         } else {
             f7 = this.X1 + 0.0f;
         }
-        float y3 = x0Var.getY() - ((-this.x0.J) + 0.0f);
+        float y3 = w0Var.getY() - ((-this.x0.J) + 0.0f);
         int measuredHeight = this.x0.getMeasuredHeight();
         float f10 = this.M1 ? this.n1 * this.o1 : 0.0f;
-        x0Var.w0 = true;
-        x0Var.v0 = measuredHeight;
-        x0Var.t0 = y3;
-        x0Var.u0 = f7;
-        x0Var.b2 = f10;
-        x0Var.c2.setColor(i0.b.o(-16777216, (int) (f10 * 255.0f)));
-        x0Var.invalidate();
+        w0Var.w0 = true;
+        w0Var.v0 = measuredHeight;
+        w0Var.t0 = y3;
+        w0Var.u0 = f7;
+        w0Var.b2 = f10;
+        w0Var.c2.setColor(i0.a.o(-16777216, (int) (f10 * 255.0f)));
+        w0Var.invalidate();
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

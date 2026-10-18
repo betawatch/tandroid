@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -94,48 +94,48 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 }
                 break;
             case 14:
-                dp0 dp0Var = (dp0) obj2;
+                ep0 ep0Var = (ep0) obj2;
                 View view = (View) obj;
-                jp0 jp0Var = dp0Var.p0;
-                if (!(view instanceof gp0)) {
+                kp0 kp0Var = ep0Var.p0;
+                if (!(view instanceof hp0)) {
                     if (!(view instanceof org.telegram.ui.Cells.q8)) {
-                        if (!(view instanceof cp0)) {
+                        if (!(view instanceof dp0)) {
                             if (!(view instanceof org.telegram.ui.Cells.l4)) {
-                                if (!(view instanceof ro0)) {
-                                    if (!(view instanceof ip0)) {
-                                        if (view instanceof bp0) {
-                                            ((bp0) view).a();
+                                if (!(view instanceof so0)) {
+                                    if (!(view instanceof jp0)) {
+                                        if (view instanceof cp0) {
+                                            ((cp0) view).a();
                                             break;
                                         }
                                     } else {
-                                        dp0Var.l((ip0) view);
+                                        ep0Var.l((jp0) view);
                                         break;
                                     }
                                 } else {
-                                    ((ro0) view).d.invalidate();
+                                    ((so0) view).d.invalidate();
                                     break;
                                 }
                             } else {
-                                view.setBackgroundColor(jp0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
+                                view.setBackgroundColor(kp0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
                                 break;
                             }
                         } else {
                             int i11 = org.telegram.ui.ActionBar.h6.d6;
-                            view.setBackgroundColor(jp0Var.getThemedColor(i11));
-                            cp0 cp0Var = (cp0) view;
-                            jp0 jp0Var2 = cp0Var.d.p0;
-                            cp0Var.setBackgroundColor(jp0Var2.getThemedColor(i11));
-                            cp0Var.a.setTextColor(jp0Var2.getThemedColor(org.telegram.ui.ActionBar.h6.G6));
+                            view.setBackgroundColor(kp0Var.getThemedColor(i11));
+                            dp0 dp0Var = (dp0) view;
+                            kp0 kp0Var2 = dp0Var.d.p0;
+                            dp0Var.setBackgroundColor(kp0Var2.getThemedColor(i11));
+                            dp0Var.a.setTextColor(kp0Var2.getThemedColor(org.telegram.ui.ActionBar.h6.G6));
                             break;
                         }
                     } else {
-                        view.setBackgroundColor(jp0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
+                        view.setBackgroundColor(kp0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
                         ((org.telegram.ui.Cells.q8) view).v();
                         break;
                     }
                 } else {
-                    view.setBackgroundColor(jp0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
-                    ((gp0) view).b();
+                    view.setBackgroundColor(kp0Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
+                    ((hp0) view).b();
                     break;
                 }
                 break;
@@ -143,7 +143,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 super/*android.widget.LinearLayout*/.draw((Canvas) obj);
                 break;
             case 16:
-                ((bp0) obj2).c.e();
+                ((cp0) obj2).c.e();
                 break;
             case 17:
                 ((ei.h1) obj2).D(((Integer) obj).intValue());
@@ -175,7 +175,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 Boolean bool = (Boolean) obj;
                 ViewPropertyAnimator scaleY = x90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
                 org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
-                org.telegram.messenger.wh.t(scaleY, bsVar, 600L);
+                org.telegram.messenger.kk.t(scaleY, bsVar, 600L);
                 x90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(bsVar).setDuration(600L).start();
                 break;
             case 21:

@@ -1,6 +1,6 @@
 package rg;
 
-import ai.yd;
+import ai.zd;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.KeyEvent;
@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.Components.dw0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n2 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public final class n2 extends FrameLayout {
                     canvas.save();
                     float e = o2Var.u0.e(o2Var.t0);
                     canvas.scale(1.0f - (e * 2.0f), 1.0f, dw0Var.a / 2.0f, 0.0f);
-                    canvas.skew(0.0f, org.telegram.messenger.q.z(1.0f, e, 4.0f * e, 0.25f));
+                    canvas.skew(0.0f, org.telegram.messenger.g0.z(1.0f, e, 4.0f * e, 0.25f));
                     imageReceiver.setImageCoords(0.0f, 0.0f, (int) dw0Var.a, (int) dw0Var.b);
                     imageReceiver.draw(canvas);
                     canvas.restore();
@@ -135,8 +135,8 @@ public final class n2 extends FrameLayout {
             case 4:
                 super.onMeasure(i10, i11);
                 sg.l1 l1Var = ((sg.k1) this.b).c;
-                yd ydVar = l1Var.r0;
-                if (ydVar == null) {
+                zd zdVar = l1Var.r0;
+                if (zdVar == null) {
                     View view = l1Var.B0;
                     if (view == null) {
                         f7 = 0.0f;
@@ -147,7 +147,7 @@ public final class n2 extends FrameLayout {
                         measuredHeight = l1Var.B0.getMeasuredHeight();
                     }
                 } else {
-                    top = ydVar.getTop();
+                    top = zdVar.getTop();
                     measuredHeight = l1Var.r0.getMeasuredHeight();
                 }
                 f7 = (measuredHeight / 2.0f) + top;

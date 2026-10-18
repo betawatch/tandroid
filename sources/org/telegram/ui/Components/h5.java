@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class h5 extends FrameLayout {
     public boolean a;
@@ -25,14 +25,14 @@ public final class h5 extends FrameLayout {
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         q6 q6Var = this.d;
         q6 q6Var2 = this.c;
-        int B = org.telegram.messenger.wh.B(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? AndroidUtilities.statusBarHeight : 0);
+        int A = org.telegram.messenger.kk.A(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? AndroidUtilities.statusBarHeight : 0);
         int i14 = this.b;
         if (q6Var.getVisibility() != 8) {
-            q6Var2.layout(i14, (AndroidUtilities.dp(1.0f) + B) - q6Var2.getPaddingTop(), q6Var2.getMeasuredWidth() + i14, q6Var2.getPaddingBottom() + ((AndroidUtilities.dp(1.3f) + (q6Var2.getTextHeight() + B)) - q6Var2.getPaddingTop()));
+            q6Var2.layout(i14, (AndroidUtilities.dp(1.0f) + A) - q6Var2.getPaddingTop(), q6Var2.getMeasuredWidth() + i14, q6Var2.getPaddingBottom() + ((AndroidUtilities.dp(1.3f) + (q6Var2.getTextHeight() + A)) - q6Var2.getPaddingTop()));
         } else {
-            q6Var2.layout(i14, (AndroidUtilities.dp(11.0f) + B) - q6Var2.getPaddingTop(), q6Var2.getMeasuredWidth() + i14, q6Var2.getPaddingBottom() + ((AndroidUtilities.dp(11.0f) + (q6Var2.getTextHeight() + B)) - q6Var2.getPaddingTop()));
+            q6Var2.layout(i14, (AndroidUtilities.dp(11.0f) + A) - q6Var2.getPaddingTop(), q6Var2.getMeasuredWidth() + i14, q6Var2.getPaddingBottom() + ((AndroidUtilities.dp(11.0f) + (q6Var2.getTextHeight() + A)) - q6Var2.getPaddingTop()));
         }
-        q6Var.layout(i14, AndroidUtilities.dp(20.0f) + B, q6Var.getMeasuredWidth() + i14, AndroidUtilities.dp(24.0f) + q6Var.getTextHeight() + B);
+        q6Var.layout(i14, AndroidUtilities.dp(20.0f) + A, q6Var.getMeasuredWidth() + i14, AndroidUtilities.dp(24.0f) + q6Var.getTextHeight() + A);
     }
 
     @Override // android.widget.FrameLayout, android.view.View

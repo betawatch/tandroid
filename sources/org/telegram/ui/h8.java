@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class h8 extends FrameLayout {
     public final org.telegram.ui.ActionBar.j5 a;
@@ -85,9 +85,9 @@ public final class h8 extends FrameLayout {
                 i8 i8Var = (i8) h8Var.n.get(i10, null);
                 if (i8Var != null) {
                     float f10 = i8Var.m;
-                    i8Var.l = com.google.android.gms.internal.cast.a6.x(i8Var.n, f10, f7, f10);
+                    i8Var.l = com.google.android.gms.internal.play_billing.k3.y(i8Var.n, f10, f7, f10);
                     float f11 = i8Var.j;
-                    i8Var.i = com.google.android.gms.internal.cast.a6.x(i8Var.k, f11, f7, f11);
+                    i8Var.i = com.google.android.gms.internal.play_billing.k3.y(i8Var.k, f11, f7, f11);
                 }
             }
         }
@@ -144,15 +144,15 @@ public final class h8 extends FrameLayout {
                 float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
                 float f20 = f19;
                 float f21 = f18;
-                float x10 = com.google.android.gms.internal.cast.a6.x(f20, f21, floatValue, f21);
+                float y3 = com.google.android.gms.internal.play_billing.k3.y(f20, f21, floatValue, f21);
                 j8 j8Var3 = j8Var2;
-                j8Var3.a = x10;
+                j8Var3.a = y3;
                 float f22 = f14;
                 float f23 = f16;
-                j8Var3.b = com.google.android.gms.internal.cast.a6.x(f22, f23, floatValue, f23);
+                j8Var3.b = com.google.android.gms.internal.play_billing.k3.y(f22, f23, floatValue, f23);
                 float f24 = f17;
                 float f25 = f11;
-                j8Var3.c = com.google.android.gms.internal.cast.a6.x(f24, f25, floatValue, f25);
+                j8Var3.c = com.google.android.gms.internal.play_billing.k3.y(f24, f25, floatValue, f25);
                 h8Var.invalidate();
             }
         });
@@ -400,13 +400,13 @@ public final class h8 extends FrameLayout {
                                 path.addCircle(f12, f13, dp8, Path.Direction.CW);
                                 canvas2.save();
                                 canvas2.clipPath(path);
-                                gVar.h(i0.b.o(-1, (int) (Color.alpha(-1) * 0.325f * i8Var.d)));
+                                gVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f * i8Var.d)));
                                 gVar.setBounds((int) (f12 - dp8), (int) (f13 - dp8), (int) (f12 + dp8), (int) (f13 + dp8));
                                 gVar.draw(canvas2);
                                 h8Var.invalidate();
                                 canvas2.restore();
                             }
-                            paint7.setColor(i0.b.o(-16777216, (int) (i8Var.d * 80.0f)));
+                            paint7.setColor(i0.a.o(-16777216, (int) (i8Var.d * 80.0f)));
                             canvas2.drawCircle(f12, f13, (AndroidUtilities.dp(44.0f) - i13) / 2.0f, paint7);
                             i8Var.f = true;
                             if (f16 != f15) {
@@ -433,13 +433,13 @@ public final class h8 extends FrameLayout {
                         path.addCircle(f12, f13, dp82, Path.Direction.CW);
                         canvas2.save();
                         canvas2.clipPath(path);
-                        gVar.h(i0.b.o(-1, (int) (Color.alpha(-1) * 0.325f * i8Var.d)));
+                        gVar.h(i0.a.o(-1, (int) (Color.alpha(-1) * 0.325f * i8Var.d)));
                         gVar.setBounds((int) (f12 - dp82), (int) (f13 - dp82), (int) (f12 + dp82), (int) (f13 + dp82));
                         gVar.draw(canvas2);
                         h8Var.invalidate();
                         canvas2.restore();
                     }
-                    paint7.setColor(i0.b.o(-16777216, (int) (i8Var.d * 80.0f)));
+                    paint7.setColor(i0.a.o(-16777216, (int) (i8Var.d * 80.0f)));
                     canvas2.drawCircle(f12, f13, (AndroidUtilities.dp(44.0f) - i13) / 2.0f, paint7);
                     i8Var.f = true;
                     if (f16 != f15) {

@@ -19,7 +19,7 @@ import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.tz;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class ub extends jw0 {
     public boolean A0;
@@ -118,7 +118,7 @@ public final class ub extends jw0 {
         Float f11 = vbVar.L;
         float floatValue = f11 != null ? f11.floatValue() : vbVar.K;
         if (vbVar.J == 0) {
-            canvas.drawColor(i0.b.o(-16777216, (int) ((1.0f - floatValue) * vbVar.I * 255.0f)));
+            canvas.drawColor(i0.a.o(-16777216, (int) ((1.0f - floatValue) * vbVar.I * 255.0f)));
         }
         float lerp = AndroidUtilities.lerp(vbVar.G, 0.0f, vbVar.I);
         if (vbVar.I != 1.0f) {
@@ -198,7 +198,7 @@ public final class ub extends jw0 {
                                         if (d7Var != null) {
                                             d7Var.setBounds((int) rectF3.left, (int) rectF3.top, (int) rectF3.right, (int) rectF3.bottom);
                                             org.telegram.ui.Cells.d7 d7Var2 = vbVar.F.d;
-                                            d7Var2.d = (int) com.google.android.gms.internal.cast.a6.C(clamp, 255.0f, clamp, clamp);
+                                            d7Var2.d = (int) com.google.android.gms.internal.play_billing.k3.C(clamp, 255.0f, clamp, clamp);
                                             d7Var2.draw(canvas);
                                         }
                                     }

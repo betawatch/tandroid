@@ -22,7 +22,7 @@ import org.telegram.ui.Components.nc0;
 import org.telegram.ui.Components.oc0;
 import org.telegram.ui.in;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class MessagePreviewParams {
     public CharacterStyle currentLink;
@@ -52,7 +52,7 @@ public class MessagePreviewParams {
     public boolean webpageTop;
     public boolean willSeeSenders;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class Messages {
         private long dialogId;
         public LongSparseArray<MessageObject.GroupedMessages> groupedMessagesMap;
@@ -206,7 +206,7 @@ public class MessagePreviewParams {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class PreviewMediaPoll extends TLRPC.TL_messageMediaPoll {
         public int totalVotersCached;
     }
@@ -239,7 +239,7 @@ public class MessagePreviewParams {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static ArrayList<MessageObject> singletonArrayList(MessageObject messageObject) {
-        return q.k(messageObject);
+        return g0.k(messageObject);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

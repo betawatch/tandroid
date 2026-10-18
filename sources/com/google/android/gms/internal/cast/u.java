@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Set;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class u {
     public static final g6.b i = new g6.b("SessionTransController", null);
@@ -76,7 +76,7 @@ public final class u {
                     aVar.c = Integer.valueOf(i10);
                     z5 z5Var = (z5) y0Var.b;
                     aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
-                    z5.D(z5Var, new y6(aVar));
+                    z5.D(z5Var, new x6(aVar));
                     break;
             }
         }

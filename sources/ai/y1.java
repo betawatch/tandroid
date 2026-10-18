@@ -13,7 +13,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class y1 extends FrameLayout implements ne.d {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -95,16 +95,16 @@ public final class y1 extends FrameLayout implements ne.d {
             f7 = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), org.telegram.ui.ActionBar.h6.m1(AndroidUtilities.lerp(0.15f, 1.0f, bVar.e), this.h.intValue()));
             e1Var.x = this.h;
             this.b.invalidate();
-            textView.setTextColor(i0.b.f(bVar.e, this.h.intValue(), -1));
+            textView.setTextColor(i0.a.f(bVar.e, this.h.intValue(), -1));
         } else if (this.s) {
             int i10 = org.telegram.ui.ActionBar.h6.d6;
             int x02 = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
             int i11 = org.telegram.ui.ActionBar.h6.G6;
-            int f10 = i0.b.f(bVar.e, i0.b.f(0.05f, x02, org.telegram.ui.ActionBar.h6.x0(null, i11, false)), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false));
-            textView.setTextColor(i0.b.f(bVar.e, i0.b.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, i10, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false)), -1));
+            int f10 = i0.a.f(bVar.e, i0.a.f(0.05f, x02, org.telegram.ui.ActionBar.h6.x0(null, i11, false)), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false));
+            textView.setTextColor(i0.a.f(bVar.e, i0.a.f(0.5f, org.telegram.ui.ActionBar.h6.x0(null, i10, false), org.telegram.ui.ActionBar.h6.x0(null, i11, false)), -1));
             f7 = f10;
         } else {
-            f7 = i0.b.f(0.5f, i0.b.o(this.v.a.center_color, 255), i0.b.o(this.v.a.pattern_color, 255));
+            f7 = i0.a.f(0.5f, i0.a.o(this.v.a.center_color, 255), i0.a.o(this.v.a.pattern_color, 255));
             textView.setTextColor(-1);
         }
         if (textView.getBackground() instanceof ShapeDrawable) {

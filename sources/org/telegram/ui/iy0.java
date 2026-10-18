@@ -5,7 +5,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class iy0 implements org.telegram.ui.ActionBar.r0, tu0, org.telegram.ui.Components.o8 {
     public final /* synthetic */ ProfileActivity a;
@@ -57,7 +57,7 @@ public final class iy0 implements org.telegram.ui.ActionBar.r0, tu0, org.telegra
         if (pz0Var != null && pz0Var.getCurrentListView() != null) {
             profileActivity.O.getCurrentListView().I0(true);
         }
-        profileActivity.e1.setBackgroundColor(i0.b.f(0.1f, profileActivity.P3(profileActivity.X4.f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.a7, profileActivity.A0)));
+        profileActivity.e1.setBackgroundColor(i0.a.f(0.1f, profileActivity.P3(profileActivity.X4.f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.a7, profileActivity.A0)));
     }
 
     @Override // org.telegram.ui.tu0

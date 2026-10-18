@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-import ai.ab;
+import ai.bb;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.f3;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m0 extends WebViewClient {
     public boolean a = true;
@@ -265,7 +265,7 @@ public final class m0 extends WebViewClient {
             alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
             alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new l0(this, 2));
             alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.a.setOnDismissListener(new ab(this, 10));
+            alertDialog$Builder.a.setOnDismissListener(new bb(this, 10));
             alertDialog$Builder.o();
             return true;
         } catch (Exception e) {

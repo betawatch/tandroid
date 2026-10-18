@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -24,7 +23,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class h0 extends nb {
     public final d6 a;
@@ -58,7 +57,7 @@ public final class h0 extends nb {
         int i10 = h6.Hi;
         textView.setTextColor(h6.w0(i10, d6Var));
         textView.setTypeface(AndroidUtilities.bold());
-        TextView i11 = a6.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 2), context);
+        TextView i11 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, z5.t(-1, -2, 55, 0, 0, 0, 2), context);
         this.e = i11;
         i11.setTextSize(1, 13.0f);
         i11.setTextColor(h6.w0(i10, d6Var));

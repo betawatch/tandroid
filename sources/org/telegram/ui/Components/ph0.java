@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ph0 extends FrameLayout {
     public float E;
@@ -136,11 +136,11 @@ public final class ph0 extends FrameLayout {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) getParent();
         float f12 = this.b;
         float f13 = ((f7 - measuredWidth) * f12) + measuredWidth;
-        float x10 = com.google.android.gms.internal.cast.a6.x(f10, measuredHeight, f12, measuredHeight) + actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingBottom() + actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingTop();
+        float y3 = com.google.android.gms.internal.play_billing.k3.y(f10, measuredHeight, f12, measuredHeight) + actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingBottom() + actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingTop();
         actionBarPopupWindow$ActionBarPopupWindowLayout.a = false;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleX((f13 + (actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingRight() + actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingLeft())) / actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth());
         if (z10) {
-            actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(Math.min(1.0f, x10 / actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight()));
+            actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(Math.min(1.0f, y3 / actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight()));
         }
         actionBarPopupWindow$ActionBarPopupWindowLayout.a = true;
         for (int i13 = 0; i13 < getChildCount(); i13++) {

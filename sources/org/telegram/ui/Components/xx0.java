@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xx0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class xx0 implements View.OnClickListener {
                 alertDialog$Builder.n(linearLayout);
                 linearLayout.addView(frameLayout, w7.z5.t(-1, 36, 51, 24, 6, 24, 0));
                 TextView textView = new TextView(context);
-                TextView f7 = org.telegram.messenger.q.f(context, 1, 16.0f);
+                TextView f7 = org.telegram.messenger.g0.f(context, 1, 16.0f);
                 f7.setTextColor(oy0Var6.getThemedColor(org.telegram.ui.ActionBar.h6.t5));
                 f7.setMaxLines(1);
                 f7.setLines(1);

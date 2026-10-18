@@ -12,7 +12,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class f4 extends v7.s5 implements j9.y {
     public static final boolean d;
@@ -115,7 +115,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
         try {
             executor.execute(runnable);
         } catch (RuntimeException e7) {
-            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", a6.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.play_billing.k3.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
         }
     }
 
@@ -156,7 +156,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
     /* JADX WARN: Multi-variable type inference failed */
     public String c() {
         if (this instanceof ScheduledFuture) {
-            return r.c.f(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return r4.c.g(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -432,7 +432,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
                 if (isDone()) {
                     throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                 }
-                throw new TimeoutException(a1.g.D(str, " for ", f4Var));
+                throw new TimeoutException(a1.g.C(str, " for ", f4Var));
             }
         } else {
             throw new InterruptedException();

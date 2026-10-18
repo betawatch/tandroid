@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mr implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final class mr implements Drawable.Callback {
                 ((nr) this.b).invalidateSelf();
                 break;
             default:
-                org.telegram.ui.Cells.x0 x0Var = ((p01) this.b).h;
-                if (x0Var != null) {
-                    x0Var.invalidate();
+                org.telegram.ui.Cells.w0 w0Var = ((p01) this.b).h;
+                if (w0Var != null) {
+                    w0Var.invalidate();
                     break;
                 }
                 break;

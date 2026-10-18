@@ -1,12 +1,12 @@
 package ki;
 
-import ai.ta;
+import ai.ua;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k2 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,15 +36,15 @@ public final /* synthetic */ class k2 implements Runnable {
                             String str = ((TL_iv.pageBlockPreformatted) aVar2.b).language;
                             int i10 = c6Var.I + 1;
                             c6Var.I = i10;
-                            ta taVar = new ta(c6Var, i10, aVar2, obj, 2);
+                            ua uaVar = new ua(c6Var, i10, aVar2, obj, 2);
                             mi.r rVar = mi.k.a;
                             SpannableString spannableString = new SpannableString(obj);
                             String b10 = mi.r.b(str);
                             if (!b10.isEmpty() && spannableString.length() != 0) {
-                                mi.k.a.d(spannableString.toString(), b10, new m4.y0(2, spannableString, taVar));
+                                mi.k.a.d(spannableString.toString(), b10, new m4.w0(3, spannableString, uaVar));
                                 break;
                             } else {
-                                AndroidUtilities.runOnUIThread(new m4.z(4, taVar, spannableString));
+                                AndroidUtilities.runOnUIThread(new m4.z(4, uaVar, spannableString));
                                 break;
                             }
                         }

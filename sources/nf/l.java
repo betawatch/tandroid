@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 import m.g3;
 import mi.q;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l extends lf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -25,7 +25,7 @@ public final class l extends lf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:104:0x0217, code lost:
     
-        r2 = r6.A(r0);
+        r2 = r6.v(r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:106:0x021b, code lost:
     
@@ -124,7 +124,7 @@ public final class l extends lf.a {
                 byte Z = bVar.Z();
                 hVar.a = Z;
                 if (Z != 2 && Z != 3 && Z != 4) {
-                    throw new c(i0.a.j(Z, "Unsupported ID3v2 version: "));
+                    throw new c(i2.d.j(Z, "Unsupported ID3v2 version: "));
                 }
                 byte Z2 = bVar.Z();
                 byte Z3 = bVar.Z();
@@ -349,8 +349,8 @@ public final class l extends lf.a {
                 s10 = 0;
             }
             str = a.b(97, 30, bArr3);
-            int b15 = i0.a.b(bArr3[127]);
-            r2 = b15 != 0 ? i0.a.d(b15) : null;
+            int b15 = i2.d.b(bArr3[127]);
+            r2 = b15 != 0 ? i2.d.d(b15) : null;
             if (bArr3[125] == 0 && (b10 = bArr3[126]) != 0) {
                 s11 = (short) (b10 & 255);
                 str2 = r2;

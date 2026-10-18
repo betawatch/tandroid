@@ -37,7 +37,7 @@ import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0 {
     public static Paint k0;
@@ -442,7 +442,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
             arrayList.add(x4Var);
         }
         while (arrayList.size() > m10.size()) {
-            x4 x4Var2 = (x4) i0.a.z(1, arrayList);
+            x4 x4Var2 = (x4) i2.d.A(1, arrayList);
             x4Var2.a.onDetachedFromWindow();
             x4Var2.b.onDetachedFromWindow();
             x4Var2.c = null;
@@ -466,7 +466,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
         this.w.bringToFront();
         this.x.bringToFront();
         while (arrayList2.size() > m10.size()) {
-            ImageView imageView = (ImageView) i0.a.z(1, arrayList2);
+            ImageView imageView = (ImageView) i2.d.A(1, arrayList2);
             removeView(imageView);
             this.K.remove(imageView);
             this.L.remove(imageView);
@@ -581,7 +581,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
             }
             int size = arrayList.size();
             float dp = AndroidUtilities.dp(5.0f) + ((getPaddingTop() + this.P) - AndroidUtilities.dp(23.0f));
-            int dp2 = AndroidUtilities.dp(4.0f) + org.telegram.messenger.q.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
+            int dp2 = AndroidUtilities.dp(4.0f) + org.telegram.messenger.g0.D(6.0f, size - 1, AndroidUtilities.dp(7.0f) * size);
             int paddingLeft = getPaddingLeft();
             int max = Math.max(0, (getWidth() - paddingLeft) - getPaddingRight());
             float f13 = this.W + this.a0;
@@ -602,7 +602,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
             canvas.clipRect(paddingLeft, (getPaddingTop() + this.P) - AndroidUtilities.dp(f10), max + paddingLeft, getPaddingTop() + this.P);
             for (int i10 = 0; i10 < size; i10++) {
                 float max2 = Math.max(0.0f, 1.0f - Math.abs(i10 - f13));
-                k0.setAlpha((int) com.google.android.gms.internal.cast.a6.A(max2, 95.0f, 160.0f, f12));
+                k0.setAlpha((int) com.google.android.gms.internal.play_billing.k3.A(max2, 95.0f, 160.0f, f12));
                 canvas.drawCircle(AndroidUtilities.dp(f11) + clamp + (AndroidUtilities.dp(f7) * i10), dp, (AndroidUtilities.dp(1.0f) * max2) + AndroidUtilities.dp(2.0f), k0);
             }
             canvas.restore();
@@ -689,7 +689,7 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
                         if (this.H) {
                             int left = (imageView2.getVisibility() == 0 ? imageView2.getLeft() : imageView.getLeft()) - AndroidUtilities.dp(4.0f);
                             if (imageView3.getMeasuredWidth() + i19 > left) {
-                                f7 = org.telegram.ui.Cells.t0.v(r9 - left, imageView3.getMeasuredWidth(), 1.0f, 0.0f);
+                                f7 = org.telegram.ui.Cells.c1.v(r9 - left, imageView3.getMeasuredWidth(), 1.0f, 0.0f);
                             }
                         }
                         imageView3.setAlpha(f7);

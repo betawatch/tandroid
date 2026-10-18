@@ -7,7 +7,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tg0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -46,7 +46,7 @@ public final /* synthetic */ class tg0 implements RequestDelegate {
                                         bh0 f02 = kh0Var2.f0();
                                         kh0Var2.j0.add(0, tL_chatInviteExported3);
                                         kh0Var2.h0(f02);
-                                        org.telegram.messenger.q.q(R.string.InviteRevokedHint, org.telegram.ui.Components.xc.a0(kh0Var2), R.raw.linkbroken, 36);
+                                        org.telegram.messenger.g0.q(R.string.InviteRevokedHint, org.telegram.ui.Components.xc.a0(kh0Var2), R.raw.linkbroken, 36);
                                         break;
                                     }
                                 }
@@ -86,7 +86,7 @@ public final /* synthetic */ class tg0 implements RequestDelegate {
                                         }
                                     }
                                     if (kh0Var3.getParentActivity() != null) {
-                                        org.telegram.messenger.q.q(R.string.InviteRevokedHint, org.telegram.ui.Components.xc.a0(kh0Var3), R.raw.linkbroken, 36);
+                                        org.telegram.messenger.g0.q(R.string.InviteRevokedHint, org.telegram.ui.Components.xc.a0(kh0Var3), R.raw.linkbroken, 36);
                                         break;
                                     }
                                 }
@@ -123,7 +123,7 @@ public final /* synthetic */ class tg0 implements RequestDelegate {
                                         bh0 f02 = kh0Var22.f0();
                                         kh0Var22.j0.add(0, tL_chatInviteExported3);
                                         kh0Var22.h0(f02);
-                                        org.telegram.messenger.q.q(R.string.InviteRevokedHint, org.telegram.ui.Components.xc.a0(kh0Var22), R.raw.linkbroken, 36);
+                                        org.telegram.messenger.g0.q(R.string.InviteRevokedHint, org.telegram.ui.Components.xc.a0(kh0Var22), R.raw.linkbroken, 36);
                                         break;
                                     }
                                 }
@@ -163,7 +163,7 @@ public final /* synthetic */ class tg0 implements RequestDelegate {
                                         }
                                     }
                                     if (kh0Var32.getParentActivity() != null) {
-                                        org.telegram.messenger.q.q(R.string.InviteRevokedHint, org.telegram.ui.Components.xc.a0(kh0Var32), R.raw.linkbroken, 36);
+                                        org.telegram.messenger.g0.q(R.string.InviteRevokedHint, org.telegram.ui.Components.xc.a0(kh0Var32), R.raw.linkbroken, 36);
                                         break;
                                     }
                                 }

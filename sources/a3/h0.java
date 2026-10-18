@@ -23,9 +23,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ey;
 import org.telegram.ui.sn;
 import org.telegram.ui.te1;
-import si.t0;
+import si.s0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,12 +52,12 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j11 = this.c;
                 m0 m0Var = (m0) sVar.c;
                 String str2 = e2.m0.a;
-                j2.f fVar = ((i2.a0) m0Var).a.s;
+                j2.f fVar = ((i2.b0) m0Var).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1016, new j2.c(p5, str, j11, j10, 17));
                 return;
             case 1:
-                k7.b1((k7) this.d, this.b, this.c, (Utilities.Callback) this.e);
+                k7.f0((k7) this.d, this.b, this.c, (Utilities.Callback) this.e);
                 return;
             case 2:
                 ((x0) this.d).n(this.b, (TLRPC.TL_textWithEntities) this.e, this.c);
@@ -69,7 +69,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 long j13 = this.c;
                 k2.u uVar = (k2.u) bVar.c;
                 String str4 = e2.m0.a;
-                j2.f fVar2 = ((i2.a0) uVar).a.s;
+                j2.f fVar2 = ((i2.b0) uVar).a.s;
                 j2.a p9 = fVar2.p();
                 fVar2.q(p9, 1008, new j2.c(p9, str3, j13, j12, 5));
                 return;
@@ -139,13 +139,13 @@ public final /* synthetic */ class h0 implements Runnable {
                 }
                 return;
             default:
-                t0 t0Var = (t0) this.d;
-                si.p0 p0Var = (si.p0) this.e;
+                s0 s0Var = (s0) this.d;
+                si.o0 o0Var = (si.o0) this.e;
                 long j18 = this.b;
                 long j19 = this.c;
-                synchronized (t0Var.g) {
-                    if (!p0Var.d && !p0Var.e) {
-                        ((y01) t0Var.e).a(p0Var.a, p0Var.b, j18, j19);
+                synchronized (s0Var.g) {
+                    if (!o0Var.d && !o0Var.e) {
+                        ((y01) s0Var.e).a(o0Var.a, o0Var.b, j18, j19);
                         return;
                     }
                     return;

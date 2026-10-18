@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class w0 implements DownloadListener {
     public final /* synthetic */ x0 a;
@@ -53,16 +53,16 @@ public final class w0 implements DownloadListener {
             }
             guessFileName = URLUtil.guessFileName(str, str3, str4);
             String escape = AndroidUtilities.escape(guessFileName);
-            a0 a0Var = new a0(this, str, str4, str2, escape, 4);
+            b0 b0Var = new b0(this, str, str4, str2, escape, 4);
             if (DownloadController.getInstance(UserConfig.selectedAccount).canDownloadMedia(8, j10)) {
-                a0Var.run();
+                b0Var.run();
                 return;
             }
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(x0Var.getContext());
             org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
             b2Var.R = LocaleController.getString(R.string.WebDownloadAlertTitle);
             b2Var.T = AndroidUtilities.replaceTags(j10 > 0 ? LocaleController.formatString(R.string.WebDownloadAlertInfoWithSize, escape, AndroidUtilities.formatFileSize(j10)) : LocaleController.formatString(R.string.WebDownloadAlertInfo, escape));
-            alertDialog$Builder.k(LocaleController.getString(R.string.WebDownloadAlertYes), new j5.b(a0Var, 28));
+            alertDialog$Builder.k(LocaleController.getString(R.string.WebDownloadAlertYes), new j5.b(b0Var, 28));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
             TextView textView = (TextView) alertDialog$Builder.o().d(-2);
             if (textView != null) {

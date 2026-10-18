@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class cc extends pg.b {
     public int d = -1;
@@ -192,8 +192,8 @@ public final class cc extends pg.b {
             case 8:
                 ci.i4 i4Var = new ci.i4(ecVar.getContext(), 9);
                 TextView textView = new TextView(ecVar.getContext());
-                org.telegram.messenger.wh.j(14.0f, ChatObject.isChannelAndNotMegaGroup(ecVar.J) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
-                com.google.android.gms.internal.cast.a6.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
+                org.telegram.messenger.kk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(ecVar.J) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
+                com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
                 i4Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 16.0f, 0.0f, 0.0f, -1, 0));
                 view = i4Var;
                 break;
@@ -234,6 +234,6 @@ public final class cc extends pg.b {
             default:
                 throw new UnsupportedOperationException();
         }
-        return com.google.android.gms.internal.cast.a6.l(view, view, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
     }
 }

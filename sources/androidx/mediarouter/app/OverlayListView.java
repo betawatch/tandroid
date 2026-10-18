@@ -7,11 +7,11 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.animation.Interpolator;
 import android.widget.ListView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class OverlayListView extends ListView {
     public final ArrayList a;
@@ -47,10 +47,10 @@ public final class OverlayListView extends ListView {
                     Rect rect2 = o0Var.f;
                     rect.top = rect2.top + i10;
                     rect.bottom = rect2.bottom + i10;
-                    float x10 = a6.x(o0Var.h, 1.0f, interpolation, 1.0f);
-                    o0Var.b = x10;
+                    float y3 = k3.y(o0Var.h, 1.0f, interpolation, 1.0f);
+                    o0Var.b = y3;
                     if (bitmapDrawable2 != null) {
-                        bitmapDrawable2.setAlpha((int) (x10 * 255.0f));
+                        bitmapDrawable2.setAlpha((int) (y3 * 255.0f));
                         bitmapDrawable2.setBounds(rect);
                     }
                     if (o0Var.j && max >= 1.0f) {

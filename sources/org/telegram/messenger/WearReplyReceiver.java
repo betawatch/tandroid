@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class WearReplyReceiver extends BroadcastReceiver {
     /* JADX INFO: Access modifiers changed from: private */
@@ -63,7 +63,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
             int length = iArr.length;
             int i11 = 0;
             while (i11 < length) {
-                i11 = com.google.android.gms.internal.cast.a6.f(iArr[i11], i11, 1, arrayList);
+                i11 = com.google.android.gms.internal.play_billing.k3.f(iArr[i11], i11, 1, arrayList);
             }
             accountInstance.getMessagesStorage().markVoiceMessageContentAsRead(j10, arrayList);
         }

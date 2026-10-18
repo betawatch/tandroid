@@ -4,19 +4,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import e2.i0;
-import i2.a0;
+import i2.b0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a extends BroadcastReceiver {
-    public final a0 a;
+    public final b0 a;
     public final i0 b;
     public final /* synthetic */ b c;
 
-    public a(b bVar, i0 i0Var, a0 a0Var) {
+    public a(b bVar, i0 i0Var, b0 b0Var) {
         this.c = bVar;
         this.b = i0Var;
-        this.a = a0Var;
+        this.a = b0Var;
     }
 
     @Override // android.content.BroadcastReceiver

@@ -1,6 +1,6 @@
 package yh;
 
-import ai.y9;
+import ai.z9;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -9,9 +9,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.o71;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class t3 implements y9 {
+public final class t3 implements z9 {
     public final int a;
     public final long b;
     public final Utilities.Callback c;
@@ -41,22 +41,22 @@ public final class t3 implements y9 {
         this.c = callback;
     }
 
-    @Override // ai.y9
+    @Override // ai.z9
     public final void a() {
         g(false);
     }
 
-    @Override // ai.y9
+    @Override // ai.z9
     public final int b(int i10) {
         return -1;
     }
 
-    @Override // ai.y9
+    @Override // ai.z9
     public final int c() {
         return this.e;
     }
 
-    @Override // ai.y9
+    @Override // ai.z9
     public final int e() {
         return this.d.size();
     }
@@ -160,7 +160,7 @@ public final class t3 implements y9 {
         }
     }
 
-    @Override // ai.y9
+    @Override // ai.z9
     public final Object get(int i10) {
         return this.d.get(i10);
     }
@@ -183,12 +183,12 @@ public final class t3 implements y9 {
         }
     }
 
-    @Override // ai.y9
+    @Override // ai.z9
     public final int indexOf(Object obj) {
         return this.d.indexOf(obj);
     }
 
-    @Override // ai.y9
+    @Override // ai.z9
     public final void d() {
     }
 }

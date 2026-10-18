@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b51 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -51,7 +51,7 @@ public final class b51 extends FrameLayout implements org.telegram.ui.ActionBar.
         addView(y41Var, w7.z5.d(-2.0f, -1));
         TextView textView = new TextView(context);
         this.d = textView;
-        textView.setPadding(org.telegram.ui.Cells.t0.f(8.0f, R.string.DescriptionMore, textView), 0, AndroidUtilities.dp(8.0f), 0);
+        textView.setPadding(org.telegram.ui.Cells.c1.e(8.0f, R.string.DescriptionMore, textView), 0, AndroidUtilities.dp(8.0f), 0);
         textView.setGravity(17);
         w7.b6.a(textView);
         addView(textView, w7.z5.a(18.0f, 0.0f, 1.0f, 0.0f, 0.0f, -2, 53));

@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class ra extends View {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -102,7 +102,7 @@ public abstract class ra extends View {
         if (e > 0.0f) {
             f10 = 41.0f;
             f11 = 9.0f;
-            paint.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var), (int) (((Math.abs((Math.floor(raVar.d) + 0.5d) - raVar.d) * 1.2000000476837158d) + 0.4000000059604645d) * 18.0d * e)));
+            paint.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var), (int) (((Math.abs((Math.floor(raVar.d) + 0.5d) - raVar.d) * 1.2000000476837158d) + 0.4000000059604645d) * 18.0d * e)));
             float paddingLeft = raVar.getPaddingLeft();
             float f13 = length;
             float floor = ((float) Math.floor(raVar.d)) * f13;
@@ -133,7 +133,7 @@ public abstract class ra extends View {
             float min2 = 1.0f - Math.min(1.0f, Math.abs(raVar.d - i11));
             int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.D6, d6Var);
             int i13 = org.telegram.ui.ActionBar.h6.G6;
-            int f17 = i0.b.f(min2, w02, org.telegram.ui.ActionBar.h6.w0(i13, d6Var));
+            int f17 = i0.a.f(min2, w02, org.telegram.ui.ActionBar.h6.w0(i13, d6Var));
             qaVar.d.setColor(f17);
             if (qaVar.m != f17) {
                 qaVar.m = f17;
@@ -145,7 +145,7 @@ public abstract class ra extends View {
             rect.set((int) (rectF2.centerX() - f18), AndroidUtilities.dp(f11), (int) (rectF2.centerX() + f18), AndroidUtilities.dp(f10));
             float e7 = qaVar.i.e(min2 > 0.6f);
             if (e < 1.0f) {
-                paint.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.w0(i13, d6Var), (int) ((1.0f - e) * e7 * 18.0f)));
+                paint.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(i13, d6Var), (int) ((1.0f - e) * e7 * 18.0f)));
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rect);
                 canvas.drawRoundRect(rectF3, AndroidUtilities.dp(f16), AndroidUtilities.dp(f16), paint);

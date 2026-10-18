@@ -8,7 +8,7 @@ import org.telegram.messenger.NotificationsSettingsFacade;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y01 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ String a;
@@ -74,10 +74,10 @@ public final class y01 extends org.telegram.ui.ActionBar.j {
                 gk0 gk0Var = new gk0();
                 gk0Var.d = j11;
                 gk0Var.b = true;
-                int c10 = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
+                int c10 = org.telegram.messenger.g0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
                 gk0Var.c = c10;
                 if (c10 != 0) {
-                    gk0Var.a = org.telegram.messenger.q.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
+                    gk0Var.a = org.telegram.messenger.g0.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
                 }
                 b11Var.r.r(gk0Var);
             }

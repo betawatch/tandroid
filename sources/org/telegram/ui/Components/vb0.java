@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vb0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final /* synthetic */ class vb0 implements View.OnClickListener {
                 is0 is0Var = ((yh.m2) frameLayout).a;
                 if (z10) {
                     is0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    xc.a0(is0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, ai.k7.Q1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    xc.a0(is0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, ai.k7.R1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 } else {
                     ai.v9 v9Var = is0Var.e;
                     int i12 = tL_starGiftCollection.collection_id;
@@ -79,7 +79,7 @@ public final /* synthetic */ class vb0 implements View.OnClickListener {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(savedStarGift);
                     v9Var.a(i12, arrayList);
-                    xc.a0(is0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, ai.k7.Q1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    xc.a0(is0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, ai.k7.R1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
                 i80Var.u();
                 is0Var.n();

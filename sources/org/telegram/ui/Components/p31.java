@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class p31 extends FrameLayout {
     public int E;
@@ -91,7 +91,7 @@ public final class p31 extends FrameLayout {
         this.s = textView;
         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var);
         int i11 = org.telegram.ui.ActionBar.h6.Oh;
-        textView.setTextColor(i0.b.f(this.Q, w02, org.telegram.ui.ActionBar.h6.w0(i11, d6Var)));
+        textView.setTextColor(i0.a.f(this.Q, w02, org.telegram.ui.ActionBar.h6.w0(i11, d6Var)));
         textView.setTextSize(1, 10.0f);
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.bold());
@@ -260,7 +260,7 @@ public final class p31 extends FrameLayout {
             this.L = ofFloat;
             ofFloat.addUpdateListener(new m31(this, i12));
             this.L.addListener(new n31(this, i11));
-            org.telegram.messenger.wh.l(2.0f, this.L);
+            org.telegram.messenger.kk.l(2.0f, this.L);
             this.L.setDuration(200L);
             this.L.start();
         }
@@ -344,7 +344,7 @@ public final class p31 extends FrameLayout {
     public final void g() {
         int i10 = org.telegram.ui.ActionBar.h6.z6;
         org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        int f7 = i0.b.f(this.N ? 1.0f : this.Q, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
+        int f7 = i0.a.f(this.N ? 1.0f : this.Q, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
         boolean z10 = this.O;
         w9 w9Var = this.n;
         if (z10) {
@@ -363,7 +363,7 @@ public final class p31 extends FrameLayout {
         imageView.setVisibility(this.Q <= 0.0f ? 8 : 0);
         int i10 = org.telegram.ui.ActionBar.h6.z6;
         org.telegram.ui.ActionBar.d6 d6Var = this.b;
-        this.s.setTextColor(i0.b.f(this.N ? 1.0f : this.Q, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var)));
+        this.s.setTextColor(i0.a.f(this.N ? 1.0f : this.Q, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var)));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

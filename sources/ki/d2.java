@@ -1,7 +1,7 @@
 package ki;
 
-import ai.ab;
-import ai.le;
+import ai.bb;
+import ai.me;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -45,7 +45,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -67,7 +67,7 @@ import org.telegram.ui.sa1;
 import org.telegram.ui.sn;
 import org.telegram.ui.ut0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class d2 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public tz A0;
@@ -205,7 +205,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
                 }
                 oi0 oi0Var2 = new oi0(d2Var.getParentActivity(), d2Var.getResourceProvider());
                 d2Var.O0 = oi0Var2;
-                oi0Var2.setOnDismissListener(new ab(d2Var, 8));
+                oi0Var2.setOnDismissListener(new bb(d2Var, 8));
                 long a2 = d2Var.J.a();
                 MessageObject messageObject = d2Var.J.n5;
                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -233,7 +233,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
                 messageObject2.isOutOwnerCached = Boolean.TRUE;
                 messageObject2.generateLayout(null);
                 messageObject2.notime = true;
-                d2Var.O0.q(org.telegram.messenger.q.k(messageObject2));
+                d2Var.O0.q(org.telegram.messenger.g0.k(messageObject2));
                 d2Var.y0.setScaleX(1.0f);
                 d2Var.y0.setScaleY(1.0f);
                 vg r10 = d2Var.O0.r(d2Var.y0, true, new j1(d2Var, 10));
@@ -247,7 +247,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
                 i80 H = i80.H(d2Var, d2Var.y0);
                 boolean isUserSelf = UserObject.isUserSelf(d2Var.J.i());
                 if (d2Var.J.G6()) {
-                    H.c(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new ai.s3(d2Var, a2, 15), false);
+                    H.c(R.drawable.msg_calendar2, LocaleController.getString(isUserSelf ? R.string.SetReminder : R.string.ScheduleMessage), new ai.r3(d2Var, a2, 15), false);
                     if (!isUserSelf && a2 > 0) {
                         H.c(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new i1(d2Var, 5), false);
                     }
@@ -659,7 +659,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
 
     public static void p0(Context context, final Runnable runnable, final Runnable runnable2, org.telegram.ui.ActionBar.d6 d6Var) {
         final int i10 = 0;
-        final org.telegram.ui.ActionBar.f3 i11 = wh.i(1, context, d6Var, false);
+        final org.telegram.ui.ActionBar.f3 i11 = kk.i(1, context, d6Var, false);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         i11.customView = linearLayout;
@@ -675,16 +675,16 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
         textView.setGravity(17);
         int i12 = h6.G6;
         textView.setTextColor(h6.w0(i12, d6Var));
-        TextView i13 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView, w7.z5.t(-1, -2, 49, 25, 16, 25, 0), context);
+        TextView i13 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-1, -2, 49, 25, 16, 25, 0), context);
         i13.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ArticleConversionText)));
         i13.setTextSize(1, 14.0f);
         i13.setGravity(17);
         i13.setTextColor(h6.w0(i12, d6Var));
         linearLayout.addView(i13, w7.z5.t(-1, -2, 49, 25, 11, 25, 0));
-        ei.d f7 = wh.f(24, context, d6Var, true);
+        ei.d f7 = kk.f(24, context, d6Var, true);
         f7.setText(LocaleController.getString(R.string.ArticleConversionSubscribe));
         linearLayout.addView(f7, w7.z5.t(-1, 48, 49, 14, 31, 14, 0));
-        ei.d f10 = wh.f(24, context, d6Var, false);
+        ei.d f10 = kk.f(24, context, d6Var, false);
         f10.setText(LocaleController.getString(R.string.ArticleConversionConvert));
         linearLayout.addView(f10, w7.z5.t(-1, 48, 49, 14, 2, 14, 6));
         i11.show();
@@ -739,7 +739,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
         }
         boolean N3 = this.P.N3();
         this.y0.setEnabled(N3);
-        wh.s(this.y0.animate(), N3 ? 1.0f : 0.5f, 150L);
+        kk.s(this.y0.animate(), N3 ? 1.0f : 0.5f, 150L);
     }
 
     public final void C0() {
@@ -1341,7 +1341,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.E = true;
         this.O.invalidate();
         ofFloat.addUpdateListener(new k1(this, i10));
-        ofFloat.addListener(new le(9, this, runnable));
+        ofFloat.addListener(new me(9, this, runnable));
         if (z10) {
             FrameLayout frameLayout = this.S;
             Property property = View.ALPHA;
@@ -1421,7 +1421,7 @@ public final class d2 extends org.telegram.ui.ActionBar.n2 implements Notificati
     @Override // org.telegram.ui.ActionBar.n2
     public final r0.k1 onInsetsInternal(View view, r0.k1 k1Var) {
         i80 i80Var;
-        i0.c f7 = k1Var.a.f(3);
+        i0.b f7 = k1Var.a.f(3);
         int i10 = k1Var.a.f(8).d;
         this.U0 = i10;
         int i11 = i10 - f7.d;

@@ -25,7 +25,7 @@ import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class p6 extends Drawable {
     public static final LinearInterpolator d0 = new LinearInterpolator();
@@ -272,7 +272,7 @@ public class p6 extends Drawable {
                     if ((i12 | (-4)) != -1) {
                         if ((i12 | (-6)) != -1) {
                             if ((i12 | (-2)) == -1) {
-                                f12 = com.google.android.gms.internal.cast.a6.z(width, f21, 2.0f, f12);
+                                f12 = com.google.android.gms.internal.play_billing.k3.z(width, f21, 2.0f, f12);
                             } else if (this.c) {
                             }
                         }
@@ -324,7 +324,7 @@ public class p6 extends Drawable {
                                 f7 = width;
                                 f10 = this.j;
                             } else if ((i14 | (-2)) == -1) {
-                                f27 = com.google.android.gms.internal.cast.a6.z(width, this.j, 2.0f, f27);
+                                f27 = com.google.android.gms.internal.play_billing.k3.z(width, this.j, 2.0f, f27);
                             } else if (z11 && !this.K) {
                                 f7 = width;
                                 f10 = this.j;
@@ -386,7 +386,7 @@ public class p6 extends Drawable {
                         f31 += width - this.d;
                     } else {
                         if ((i16 | (-2)) == -1) {
-                            f31 = com.google.android.gms.internal.cast.a6.z(width, this.d, 2.0f, f31);
+                            f31 = com.google.android.gms.internal.play_billing.k3.z(width, this.d, 2.0f, f31);
                         } else if (z12 && !this.K) {
                             f31 += width - this.d;
                         }

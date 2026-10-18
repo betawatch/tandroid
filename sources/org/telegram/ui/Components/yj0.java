@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class yj0 {
     public static DecelerateInterpolator A;
@@ -78,7 +78,7 @@ public final class yj0 {
         Drawable drawable2 = this.m;
         if (drawable2 != null) {
             if (this.n != null) {
-                drawable2.setAlpha((int) org.telegram.messenger.q.z(1.0f, this.j, 255.0f, f7));
+                drawable2.setAlpha((int) org.telegram.messenger.g0.z(1.0f, this.j, 255.0f, f7));
             } else {
                 drawable2.setAlpha((int) (f7 * 255.0f));
             }
@@ -124,25 +124,25 @@ public final class yj0 {
             canvas.drawRoundRect(rectF, height, height, paint);
             return;
         }
-        float C = a1.g.C((int) f7, 90, 90, 90);
-        float f11 = (-199.0f) + C;
-        float f12 = ((f7 + f10) - f11) / 360.0f;
+        float f11 = ((((int) f7) / 90) * 90) + 90;
+        float f12 = (-199.0f) + f11;
+        float f13 = ((f7 + f10) - f12) / 360.0f;
         Path path = this.w;
         path.rewind();
         path.addRoundRect(rectF, height, height, Path.Direction.CW);
         Matrix matrix = this.x;
         matrix.reset();
-        matrix.postRotate(C, rectF.centerX(), rectF.centerY());
+        matrix.postRotate(f11, rectF.centerX(), rectF.centerY());
         path.transform(matrix);
         PathMeasure pathMeasure = this.y;
         pathMeasure.setPath(path, false);
         float length = pathMeasure.getLength();
         Path path2 = this.z;
         path2.reset();
-        pathMeasure.getSegment(((f7 - f11) / 360.0f) * length, length * f12, path2, true);
+        pathMeasure.getSegment(((f7 - f12) / 360.0f) * length, length * f13, path2, true);
         path2.rLineTo(0.0f, 0.0f);
         canvas.drawPath(path2, paint);
-        if (f12 > 1.0f) {
+        if (f13 > 1.0f) {
             b(f7 + 90.0f, f10 - 90.0f, canvas, paint, rectF);
         }
     }

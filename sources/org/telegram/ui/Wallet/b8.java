@@ -1,40 +1,31 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b8 implements View.OnClickListener {
+public final /* synthetic */ class b8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ei.d b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f3 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
+    public final /* synthetic */ c8 b;
 
-    public /* synthetic */ b8(ei.d dVar, Utilities.Callback callback, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+    public /* synthetic */ b8(c8 c8Var, int i10) {
         this.a = i10;
-        this.b = dVar;
-        this.c = callback;
-        this.d = f3Var;
-        this.e = d6Var;
+        this.b = c8Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ei.d dVar = this.b;
-                dVar.setLoading(true);
-                this.c.run(new q3(dVar, this.d, this.e, 1));
+                c8 c8Var = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(c8Var.getParentActivity(), 0, c8Var.getResourceProvider());
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.WalletEnterSecretPhraseInfo);
+                org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
                 break;
             default:
-                ei.d dVar2 = this.b;
-                if (!dVar2.N) {
-                    dVar2.setLoading(true);
-                    this.c.run(new q3(this.d, this.e, dVar2));
-                    break;
-                }
+                this.b.Y();
                 break;
         }
     }

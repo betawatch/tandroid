@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b8 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -34,7 +34,7 @@ public final /* synthetic */ class b8 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new ai.b4((c8) this.c, tLObject, this.b, (View) this.d, (y7) this.e, (MessagesController) this.f, 3));
+                AndroidUtilities.runOnUIThread(new ai.z3((c8) this.c, tLObject, this.b, (View) this.d, (y7) this.e, (MessagesController) this.f, 3));
                 break;
             case 1:
                 ((ConferenceCall) this.c).lambda$poll$8((TL_phone.getGroupCallChainBlocks) this.d, this.b, (AtomicBoolean) this.e, (AtomicInteger) this.f, tLObject, tL_error);

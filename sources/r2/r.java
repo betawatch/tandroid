@@ -11,11 +11,12 @@ import android.os.SystemClock;
 import android.os.Trace;
 import android.util.Pair;
 import e0.e0;
+import e2.j0;
 import e2.m0;
 import e9.e2;
 import e9.m2;
 import e9.y0;
-import i2.j0;
+import i2.k0;
 import j$.util.Objects;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -32,11 +33,12 @@ import k2.x0;
 import ki.t1;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import u2.g0;
+import org.telegram.ui.Cells.c1;
+import u2.f0;
 import v7.f8;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class r extends i2.b {
     public static final byte[] Y0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -59,9 +61,9 @@ public abstract class r extends i2.b {
     public final h2.h M;
     public boolean M0;
     public final h2.h N;
-    public i2.l N0;
+    public i2.m N0;
     public final h2.h O;
-    public i2.d O0;
+    public i2.e O0;
     public final g P;
     public q P0;
     public final MediaCodec.BufferInfo Q;
@@ -80,7 +82,7 @@ public abstract class r extends i2.b {
     public i2.c W0;
     public n2.h X;
     public y0 X0;
-    public j0 Y;
+    public k0 Y;
     public MediaCrypto Z;
     public final long a0;
     public float b0;
@@ -148,7 +150,7 @@ public abstract class r extends i2.b {
         this.r0 = -9223372036854775807L;
         this.D0 = 0;
         this.E0 = 0;
-        this.O0 = new i2.d();
+        this.O0 = new i2.e();
         this.T0 = false;
         this.U0 = 0L;
         int i11 = y0.c;
@@ -286,7 +288,7 @@ public abstract class r extends i2.b {
         int i12;
         u6.p(!this.K0);
         g gVar2 = this.P;
-        if (gVar2.i()) {
+        if (gVar2.h()) {
             ByteBuffer byteBuffer = gVar2.c;
             int i13 = this.v0;
             int i14 = gVar2.s;
@@ -314,7 +316,7 @@ public abstract class r extends i2.b {
             this.z0 = false;
         }
         if (this.A0) {
-            if (gVar.i()) {
+            if (gVar.h()) {
                 return true;
             }
             this.y0 = false;
@@ -453,7 +455,7 @@ public abstract class r extends i2.b {
                         }
                     }
                 }
-                if (gVar.i()) {
+                if (gVar.h()) {
                     long j13 = this.w;
                     if (W(j13, gVar.r) != W(j13, hVar.e)) {
                         break;
@@ -465,13 +467,13 @@ public abstract class r extends i2.b {
                 r12 = 0;
             }
         }
-        if (gVar.i()) {
+        if (gVar.h()) {
             gVar.f();
         }
-        return gVar.i() || this.J0 || this.A0;
+        return gVar.h() || this.J0 || this.A0;
     }
 
-    public abstract i2.e H(o oVar, b2.w wVar, b2.w wVar2, boolean z10);
+    public abstract i2.f H(o oVar, b2.w wVar, b2.w wVar2, boolean z10);
 
     public n I(IllegalStateException illegalStateException, o oVar) {
         return new n(illegalStateException, oVar);
@@ -673,7 +675,7 @@ public abstract class r extends i2.b {
                                 }
                                 if (this.L0) {
                                     q S = S();
-                                    e2.j0 j0Var = S.d;
+                                    j0 j0Var = S.d;
                                     b2.w wVar2 = this.U;
                                     wVar2.getClass();
                                     j0Var.a(wVar2, j10);
@@ -838,7 +840,7 @@ public abstract class r extends i2.b {
             if (!oVar.e(this.I, wVar)) {
                 String c10 = b2.w.c(wVar);
                 Locale locale = Locale.US;
-                e2.a.l("MediaCodecRenderer", r.c.h("Format exceeds selected codec's capabilities [", c10, ", ", str, "]"));
+                e2.a.l("MediaCodecRenderer", c1.k("Format exceeds selected codec's capabilities [", c10, ", ", str, "]"));
             }
             this.h0 = P;
             this.e0 = wVar;
@@ -1083,9 +1085,9 @@ public abstract class r extends i2.b {
     public void c(int i10, Object obj) {
         int i11;
         if (i10 == 11) {
-            j0 j0Var = (j0) obj;
-            j0Var.getClass();
-            this.Y = j0Var;
+            k0 k0Var = (k0) obj;
+            k0Var.getClass();
+            this.Y = k0Var;
             return;
         }
         if (i10 != 21) {
@@ -1181,7 +1183,7 @@ public abstract class r extends i2.b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public i2.e e0(qf.b bVar) {
+    public i2.f e0(qf.b bVar) {
         b2.w wVar;
         int i10;
         h2.b h;
@@ -1213,7 +1215,7 @@ public abstract class r extends i2.b {
             }
             wVar = wVar2;
             n2.h hVar = (n2.h) bVar.b;
-            i0.a.D(this.X, hVar);
+            i2.d.D(this.X, hVar);
             this.X = hVar;
             this.U = wVar;
             if (this.y0) {
@@ -1257,10 +1259,10 @@ public abstract class r extends i2.b {
                     n0();
                     X();
                 }
-                return new i2.e(oVar.a, wVar3, wVar, 0, 128);
+                return new i2.f(oVar.a, wVar3, wVar, 0, 128);
             }
             boolean z11 = this.X != this.W;
-            i2.e H = H(oVar, wVar3, wVar, S().e);
+            i2.f H = H(oVar, wVar3, wVar, S().e);
             int i11 = H.d;
             if (i11 != 0) {
                 if (i11 == 1) {
@@ -1304,7 +1306,7 @@ public abstract class r extends i2.b {
                     }
                     i10 = 16;
                 }
-                return (i11 != 0 || (this.d0 == lVar && this.E0 != 3)) ? H : new i2.e(oVar.a, wVar3, wVar, 0, i10);
+                return (i11 != 0 || (this.d0 == lVar && this.E0 != 3)) ? H : new i2.f(oVar.a, wVar3, wVar, 0, i10);
             }
             if (this.F0) {
                 this.D0 = 1;
@@ -1322,7 +1324,7 @@ public abstract class r extends i2.b {
             a2.u = null;
             wVar = new b2.w(a2);
             n2.h hVar4 = (n2.h) bVar.b;
-            i0.a.D(this.X, hVar4);
+            i2.d.D(this.X, hVar4);
             this.X = hVar4;
             this.U = wVar;
             if (this.y0) {
@@ -1330,7 +1332,7 @@ public abstract class r extends i2.b {
         }
         wVar = wVar2;
         n2.h hVar42 = (n2.h) bVar.b;
-        i0.a.D(this.X, hVar42);
+        i2.d.D(this.X, hVar42);
         this.X = hVar42;
         this.U = wVar;
         if (this.y0) {
@@ -1542,7 +1544,7 @@ public abstract class r extends i2.b {
     }
 
     public final void s0(n2.h hVar) {
-        i0.a.D(this.W, hVar);
+        i2.d.D(this.W, hVar);
         this.W = hVar;
     }
 
@@ -1562,7 +1564,7 @@ public abstract class r extends i2.b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void u(b2.w[] wVarArr, long j10, long j11, g0 g0Var) {
+    public void u(b2.w[] wVarArr, long j10, long j11, f0 f0Var) {
         if (this.P0.c == -9223372036854775807L) {
             t0(new q(-9223372036854775807L, j10, j11));
             if (this.S0) {
@@ -1617,10 +1619,10 @@ public abstract class r extends i2.b {
             this.M0 = false;
             k0();
         }
-        i2.l lVar = this.N0;
-        if (lVar != null) {
+        i2.m mVar = this.N0;
+        if (mVar != null) {
             this.N0 = null;
-            throw lVar;
+            throw mVar;
         }
         try {
             if (this.K0) {
@@ -1709,7 +1711,7 @@ public abstract class r extends i2.b {
         try {
             B0();
             return false;
-        } catch (i2.l e) {
+        } catch (i2.m e) {
             e2.a.m("MediaCodecRenderer", "Failed to update the DRM session, releasing the codec instead.", e);
             return true;
         }

@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i01 implements Runnable {
     public final /* synthetic */ int a;
@@ -151,7 +151,7 @@ public final /* synthetic */ class i01 implements Runnable {
                 org.telegram.ui.Wallet.b2 b2Var3 = (org.telegram.ui.Wallet.b2) this.c;
                 TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) this.d;
                 org.telegram.ui.Wallet.x xVar = (org.telegram.ui.Wallet.x) this.e;
-                ai.q3 q3Var = (ai.q3) this.f;
+                ai.p3 p3Var = (ai.p3) this.f;
                 try {
                     bArr = Base64.decode(WalletEngine2.tonConnectCrypto(j0Var2, b2Var3.a, b2Var3.h, b2Var3.g, new JSONObject().put("challenge", Base64.encodeToString(tonconnectchallenge.challenge, 2))).getString("challengeAnswer"), 2);
                     h = null;
@@ -159,7 +159,7 @@ public final /* synthetic */ class i01 implements Runnable {
                     h = org.telegram.ui.Wallet.f2.h("decrypt challenge", e10);
                     bArr = null;
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.z6((Object) bArr, (Object) xVar, h, (Object) q3Var, 8));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.c7((Object) bArr, (Object) xVar, h, (Object) p3Var, 8));
                 return;
             case 6:
                 org.telegram.ui.Wallet.f2 f2Var2 = (org.telegram.ui.Wallet.f2) this.b;
@@ -205,12 +205,12 @@ public final /* synthetic */ class i01 implements Runnable {
                 }
             case 10:
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.b;
-                org.telegram.messenger.x xVar2 = (org.telegram.messenger.x) this.c;
+                org.telegram.messenger.w wVar = (org.telegram.messenger.w) this.c;
                 TLObject tLObject3 = (TLObject) this.d;
                 MessagesController messagesController2 = (MessagesController) this.e;
                 org.telegram.messenger.j2 j2Var = (org.telegram.messenger.j2) this.f;
                 if (tL_error3 != null) {
-                    xVar2.run(tL_error3);
+                    wVar.run(tL_error3);
                     return;
                 } else {
                     if (tLObject3 instanceof TL_stories.TL_premium_myBoosts) {
@@ -226,7 +226,7 @@ public final /* synthetic */ class i01 implements Runnable {
                 TLObject tLObject4 = (TLObject) this.b;
                 MessagesController messagesController3 = (MessagesController) this.c;
                 ci.z2 z2Var = (ci.z2) this.d;
-                ug.e eVar = (ug.e) this.e;
+                ug.f fVar = (ug.f) this.e;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.f;
                 if (tLObject4 instanceof TLRPC.TL_payments_checkedGiftCode) {
                     TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = (TLRPC.TL_payments_checkedGiftCode) tLObject4;
@@ -234,10 +234,10 @@ public final /* synthetic */ class i01 implements Runnable {
                     messagesController3.putUsers(tL_payments_checkedGiftCode.users, false);
                     z2Var.run(tL_payments_checkedGiftCode);
                 }
-                eVar.run(tL_error4);
+                fVar.run(tL_error4);
                 return;
             case 12:
-                ug.l1.S((ug.l1) this.b, (TLObject) this.c, (TLRPC.UserFull) this.d, (TL_account.TL_birthday) this.e, (TLRPC.TL_error) this.f);
+                ug.m1.S((ug.m1) this.b, (TLObject) this.c, (TLRPC.UserFull) this.d, (TL_account.TL_birthday) this.e, (TLRPC.TL_error) this.f);
                 return;
             default:
                 yh.y4 y4Var = (yh.y4) this.b;
@@ -259,7 +259,7 @@ public final /* synthetic */ class i01 implements Runnable {
                     AccountInstance accountInstance = AccountInstance.getInstance(i10);
                     n4.s sVar = new n4.s(9, false);
                     sVar.K(y4Var.e0.h);
-                    billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentGiftPremium, Collections.singletonList(sVar.j()));
+                    billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentGiftPremium, Collections.singletonList(sVar.k()));
                     return;
                 }
         }

@@ -13,13 +13,13 @@ import android.os.HandlerThread;
 import android.os.SystemClock;
 import android.util.Size;
 import android.view.Surface;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.ui.Components.ay0;
-import org.telegram.ui.Wallet.x5;
+import org.telegram.ui.Wallet.z5;
 import org.webrtc.EglBase;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class u {
     public EGLSurface B;
@@ -54,9 +54,9 @@ public final class u {
     public Size c;
     public float c0;
     public final Surface d;
-    public m0 d0;
+    public l0 d0;
     public final Surface e;
-    public m0 e0;
+    public l0 e0;
     public final boolean f;
     public int f0;
     public final int g;
@@ -136,7 +136,7 @@ public final class u {
         if (z10) {
             return;
         }
-        StringBuilder i10 = r.c.i(str, ": 0x");
+        StringBuilder i10 = r4.c.i(str, ": 0x");
         i10.append(Integer.toHexString(EGL14.eglGetError()));
         throw new IllegalStateException(i10.toString());
     }
@@ -243,7 +243,7 @@ public final class u {
                 if (!z11) {
                     long elapsedRealtimeNanos2 = SystemClock.elapsedRealtimeNanos();
                     float f7 = (elapsedRealtimeNanos2 - this.Y) / 1000000.0f;
-                    int d = u0.d(this.d0, this.e0, Math.round(f7));
+                    int d = t0.d(this.d0, this.e0, Math.round(f7));
                     this.i.b("camera switch first new frame: waitMs=" + f7 + ", rollingAverageMs=" + d);
                     this.W = 3;
                     this.X = elapsedRealtimeNanos2;
@@ -262,7 +262,7 @@ public final class u {
             d dVar = this.s;
             if (dVar != null) {
                 l2.f fVar = dVar.a;
-                ((t0) fVar.b).i.post(new p2.b(25, fVar, e));
+                ((s0) fVar.b).i.post(new p2.b(25, fVar, e));
             }
         }
     }
@@ -307,7 +307,7 @@ public final class u {
                         long j11 = this.Z;
                         if (j10 < j11) {
                             float max = Math.max(0.0f, Math.min(1.0f, j10 / j11));
-                            f10 = a6.B(max, 2.0f, 3.0f, max * max);
+                            f10 = k3.B(max, 2.0f, 3.0f, max * max);
                             f7 = 1.0f;
                         } else {
                             this.W = 4;
@@ -379,7 +379,7 @@ public final class u {
                 d dVar = this.s;
                 if (dVar != null) {
                     l2.f fVar = dVar.a;
-                    ((t0) fVar.b).i.post(new p2.b(25, fVar, e));
+                    ((s0) fVar.b).i.post(new p2.b(25, fVar, e));
                 }
             }
         } catch (RuntimeException e7) {
@@ -594,22 +594,22 @@ public final class u {
         }
         d0 d0Var = this.N;
         if (d0Var != null) {
-            d0Var.g.d();
-            d0Var.h.d();
+            d0Var.g.f();
+            d0Var.h.f();
             a0 a0Var = d0Var.i;
             if (a0Var != null) {
-                a0Var.d();
+                a0Var.f();
             }
             z zVar = d0Var.j;
             if (zVar != null) {
-                zVar.d();
+                zVar.f();
             }
-            d0Var.k.d();
-            d0Var.l.d();
-            d0Var.m.d();
-            x5 x5Var = d0Var.n;
-            if (x5Var != null) {
-                x5Var.d();
+            d0Var.k.f();
+            d0Var.l.f();
+            d0Var.m.f();
+            z5 z5Var = d0Var.n;
+            if (z5Var != null) {
+                z5Var.f();
             }
             int[] iArr = d0Var.t;
             GLES20.glDeleteTextures(iArr.length, iArr, 0);

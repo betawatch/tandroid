@@ -14,7 +14,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dw0;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.f6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b2 extends j {
     public boolean A0;
@@ -89,7 +89,7 @@ public final class b2 extends j {
         canvas.save();
         float e = this.s0.e(this.r0);
         canvas.scale(1.0f - (e * 2.0f), 1.0f, getMeasuredWidth() / 2.0f, 0.0f);
-        canvas.skew(0.0f, org.telegram.messenger.q.z(1.0f, e, 4.0f * e, 0.25f));
+        canvas.skew(0.0f, org.telegram.messenger.g0.z(1.0f, e, 4.0f * e, 0.25f));
         float e7 = this.C0.e(this.B0);
         float width = (view.getWidth() / 2.0f) + view.getX();
         float height = (view.getHeight() / 2.0f) + view.getY();
@@ -148,8 +148,8 @@ public final class b2 extends j {
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float A = wh.A(dp, 2.0f, getPositionX(), scaleX);
-        return new el0(A, wh.A(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + A) - A, dp2 * scaleX);
+        float z10 = kk.z(dp, 2.0f, getPositionX(), scaleX);
+        return new el0(z10, kk.z(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + z10) - z10, dp2 * scaleX);
     }
 
     @Override // rg.j

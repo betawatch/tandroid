@@ -8,16 +8,16 @@ import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
 import com.google.android.gms.internal.play_billing.g2;
 import com.google.android.gms.internal.play_billing.g3;
-import com.google.android.gms.internal.play_billing.g4;
 import com.google.android.gms.internal.play_billing.h4;
 import com.google.android.gms.internal.play_billing.i3;
 import com.google.android.gms.internal.play_billing.i4;
 import com.google.android.gms.internal.play_billing.j4;
 import com.google.android.gms.internal.play_billing.k4;
-import com.google.android.gms.internal.play_billing.m3;
+import com.google.android.gms.internal.play_billing.l4;
+import com.google.android.gms.internal.play_billing.n3;
 import com.google.android.gms.internal.play_billing.p0;
-import com.google.android.gms.internal.play_billing.p3;
 import com.google.android.gms.internal.play_billing.q0;
+import com.google.android.gms.internal.play_billing.q3;
 import com.google.android.gms.internal.play_billing.r0;
 import com.google.android.gms.internal.play_billing.t0;
 import com.google.android.gms.internal.play_billing.u0;
@@ -31,7 +31,7 @@ import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
 import v7.c6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class d0 extends c {
     public final Context C;
@@ -53,29 +53,29 @@ public final class d0 extends c {
             return new r0(0);
         }
         b0 b0Var = new b0(this, i10, 0);
-        h4 h4Var = new h4();
-        h4Var.c = new k4();
-        j4 j4Var = new j4(h4Var);
-        h4Var.b = j4Var;
-        h4Var.a = b0.class;
+        i4 i4Var = new i4();
+        i4Var.c = new l4();
+        k4 k4Var = new k4(i4Var);
+        i4Var.b = k4Var;
+        i4Var.a = b0.class;
         try {
-            b0Var.x(h4Var);
-            h4Var.a = "billingOverrideService.getBillingOverride";
-            return j4Var;
+            b0Var.x(i4Var);
+            i4Var.a = "billingOverrideService.getBillingOverride";
+            return k4Var;
         } catch (Exception e) {
             g2 g2Var = new g2(e);
-            c6 c6Var = g4.f;
-            i4 i4Var = j4Var.b;
-            if (c6Var.d(i4Var, null, g2Var)) {
-                g4.d(i4Var);
+            c6 c6Var = h4.f;
+            j4 j4Var = k4Var.b;
+            if (c6Var.d(j4Var, null, g2Var)) {
+                h4.d(j4Var);
             }
-            return j4Var;
+            return k4Var;
         }
     }
 
     public final void F(int i10, int i11, i iVar) {
         int i12 = e0.a;
-        g3 b10 = e0.b(i10, i11, iVar, null, m3.b);
+        g3 b10 = e0.b(i10, i11, iVar, null, n3.b);
         Objects.requireNonNull(b10, "ApiFailure should not be null");
         this.h.N(b10);
     }
@@ -163,8 +163,8 @@ public final class d0 extends c {
     }
 
     @Override // c5.c, c5.b
-    public final void c(a6.i iVar, org.telegram.messenger.e0 e0Var) {
-        G(7, new z(e0Var, 0), new v(this, iVar, e0Var, 1));
+    public final void c(a6.i iVar, org.telegram.messenger.d0 d0Var) {
+        G(7, new z(d0Var, 0), new v(this, iVar, d0Var, 1));
     }
 
     @Override // c5.c, c5.b
@@ -173,12 +173,12 @@ public final class d0 extends c {
             if (J()) {
                 com.google.android.gms.internal.play_billing.u.g("BillingClientTesting", "Billing Override Service connection is valid. No need to re-initialize.");
                 int i10 = e0.a;
-                i3 c10 = e0.c(26, m3.b);
+                i3 c10 = e0.c(26, n3.b);
                 Objects.requireNonNull(c10, "ApiSuccess should not be null");
                 n4.s sVar = this.h;
                 sVar.getClass();
                 try {
-                    sVar.V(c10, (p3) sVar.b);
+                    sVar.V(c10, (q3) sVar.b);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }

@@ -41,7 +41,7 @@ import org.telegram.ui.mg;
 import v7.u6;
 import w7.m6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, ne.k {
     public static l e;
@@ -361,7 +361,7 @@ public final class l implements OnSuccessListener, ne.k {
                 p6Var.w(AndroidUtilities.dp(13.0f));
                 p6Var.u(-1);
                 p6Var.x(AndroidUtilities.bold());
-                paint.setColor(i0.b.o(-16777216, 58));
+                paint.setColor(i0.a.o(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;
                 spannableStringBuilder.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);

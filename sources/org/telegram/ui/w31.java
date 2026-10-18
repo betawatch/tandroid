@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w31 implements r0.n, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class w31 implements r0.n, org.telegram.ui.ActionBa
 
     @Override // r0.n
     public r0.k1 B0(View view, r0.k1 k1Var) {
-        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
         z31 z31Var = this.b;
         z31Var.e = defaultWindowInsets;
         z31Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);

@@ -10,7 +10,7 @@ import org.telegram.ui.Components.em0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f0 extends em0 {
     public final ArrayList r;
@@ -25,7 +25,7 @@ public final class f0 extends em0 {
         int i10 = UserConfig.selectedAccount;
         this.s = i10;
         this.v = context;
-        arrayList.addAll(y1.f(i10).e());
+        arrayList.addAll(a2.f(i10).e());
     }
 
     @Override // org.telegram.ui.Components.ql0
@@ -84,16 +84,16 @@ public final class f0 extends em0 {
     @Override // org.telegram.ui.Components.em0
     public final void W(int i10, int i11, s4.b1 b1Var) {
         if (b1Var.f == 0) {
-            u1 u1Var = (u1) b1Var.a;
+            w1 w1Var = (w1) b1Var.a;
             Object O = O(i10, i11);
             boolean z10 = true;
             if (i10 == 1 && i11 == M(i10) - 1) {
                 z10 = false;
             }
-            if (O instanceof x1) {
-                x1 x1Var = (x1) O;
-                u1Var.a(x1Var, null, z10);
-                u1Var.d.a(this.w.w.contains(Integer.valueOf(x1Var.a)), false);
+            if (O instanceof z1) {
+                z1 z1Var = (z1) O;
+                w1Var.a(z1Var, null, z10);
+                w1Var.d.a(this.w.w.contains(Integer.valueOf(z1Var.a)), false);
             }
         }
     }
@@ -102,25 +102,25 @@ public final class f0 extends em0 {
     public final void l() {
         ArrayList arrayList = this.r;
         arrayList.clear();
-        arrayList.addAll(y1.f(this.s).e());
+        arrayList.addAll(a2.f(this.s).e());
         X(false);
         this.w.O();
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View u1Var;
+        View w1Var;
         Context context = this.v;
         if (i10 == 0) {
-            u1Var = new u1(context, this.w.a, false);
+            w1Var = new w1(context, this.w.a, false);
         } else if (i10 != 1) {
-            u1Var = new View(context);
-            u1Var.setTag(-33024);
+            w1Var = new View(context);
+            w1Var.setTag(-33024);
         } else {
-            u1Var = new View(context);
-            u1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
-            u1Var.setTag(-33024);
+            w1Var = new View(context);
+            w1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
+            w1Var.setTag(-33024);
         }
-        return new sl0(u1Var);
+        return new sl0(w1Var);
     }
 }

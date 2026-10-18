@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mz0 extends FrameLayout {
     public int E;
@@ -71,7 +71,7 @@ public final class mz0 extends FrameLayout {
     public final void c(int i10) {
         uj0[] uj0VarArr = this.r;
         if (uj0VarArr[i10] != null) {
-            int f7 = i0.b.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.c9, false));
+            int f7 = i0.a.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.c9, false));
             int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.e9, false);
             if (i10 != 2) {
                 uj0VarArr[i10].setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.SRC_IN));
@@ -117,20 +117,20 @@ public final class mz0 extends FrameLayout {
                 int i10 = org.telegram.ui.ActionBar.h6.M6;
                 paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
                 paint2.setColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
-                int z11 = org.telegram.messenger.wh.z(16.0f, AndroidUtilities.dp(21.0f) + AndroidUtilities.dp(132.0f), getMeasuredWidth());
+                int y3 = org.telegram.messenger.kk.y(16.0f, AndroidUtilities.dp(21.0f) + AndroidUtilities.dp(132.0f), getMeasuredWidth());
                 int dp = AndroidUtilities.dp(21.0f);
                 float f13 = dp;
-                float B = org.telegram.messenger.wh.B(48.0f, getMeasuredHeight(), 2);
-                rectF.set(f13, B, z11, getMeasuredHeight() - r9);
+                float A = org.telegram.messenger.kk.A(48.0f, getMeasuredHeight(), 2);
+                rectF.set(f13, A, y3, getMeasuredHeight() - r9);
                 if (this.E >= 0) {
                     this.E = iArr[lz0Var.getValue()];
                     this.x = 1.0f;
                     f7 = 1.0f;
-                    this.y = i0.b.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), org.telegram.ui.ActionBar.h6.x0(null, this.E, false));
+                    this.y = i0.a.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), org.telegram.ui.ActionBar.h6.x0(null, this.E, false));
                 } else {
                     f7 = 1.0f;
                     if (iArr[lz0Var.getValue()] != this.E) {
-                        this.y = i0.b.f(this.x, this.y, i0.b.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), org.telegram.ui.ActionBar.h6.x0(null, this.E, false)));
+                        this.y = i0.a.f(this.x, this.y, i0.a.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), org.telegram.ui.ActionBar.h6.x0(null, this.E, false)));
                         this.x = 0.0f;
                         this.E = iArr[lz0Var.getValue()];
                     }
@@ -147,11 +147,11 @@ public final class mz0 extends FrameLayout {
                 }
                 int i11 = this.y;
                 int i12 = org.telegram.ui.ActionBar.h6.d6;
-                paint3.setColor(i0.b.f(this.x, i11, i0.b.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), org.telegram.ui.ActionBar.h6.x0(null, this.E, false))));
+                paint3.setColor(i0.a.f(this.x, i11, i0.a.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), org.telegram.ui.ActionBar.h6.x0(null, this.E, false))));
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint3);
                 paint3.setColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
                 paint3.setAlpha(255);
-                rectF.set(f13, B, z11 - AndroidUtilities.dp(58.0f), getMeasuredHeight() - r9);
+                rectF.set(f13, A, y3 - AndroidUtilities.dp(58.0f), getMeasuredHeight() - r9);
                 rectF.inset(-AndroidUtilities.dp(1.0f), -AndroidUtilities.dp(1.0f));
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint3);
                 paint.setAlpha(31);
@@ -186,11 +186,11 @@ public final class mz0 extends FrameLayout {
         int i102 = org.telegram.ui.ActionBar.h6.M6;
         paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, i102, false));
         paint2.setColor(org.telegram.ui.ActionBar.h6.x0(null, i102, false));
-        int z112 = org.telegram.messenger.wh.z(16.0f, AndroidUtilities.dp(21.0f) + AndroidUtilities.dp(132.0f), getMeasuredWidth());
+        int y32 = org.telegram.messenger.kk.y(16.0f, AndroidUtilities.dp(21.0f) + AndroidUtilities.dp(132.0f), getMeasuredWidth());
         int dp2 = AndroidUtilities.dp(21.0f);
         float f132 = dp2;
-        float B2 = org.telegram.messenger.wh.B(48.0f, getMeasuredHeight(), 2);
-        rectF.set(f132, B2, z112, getMeasuredHeight() - r9);
+        float A2 = org.telegram.messenger.kk.A(48.0f, getMeasuredHeight(), 2);
+        rectF.set(f132, A2, y32, getMeasuredHeight() - r9);
         if (this.E >= 0) {
         }
         f10 = this.x;
@@ -198,11 +198,11 @@ public final class mz0 extends FrameLayout {
         }
         int i112 = this.y;
         int i122 = org.telegram.ui.ActionBar.h6.d6;
-        paint3.setColor(i0.b.f(this.x, i112, i0.b.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, i122, false), org.telegram.ui.ActionBar.h6.x0(null, this.E, false))));
+        paint3.setColor(i0.a.f(this.x, i112, i0.a.f(0.9f, org.telegram.ui.ActionBar.h6.x0(null, i122, false), org.telegram.ui.ActionBar.h6.x0(null, this.E, false))));
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint3);
         paint3.setColor(org.telegram.ui.ActionBar.h6.x0(null, i122, false));
         paint3.setAlpha(255);
-        rectF.set(f132, B2, z112 - AndroidUtilities.dp(58.0f), getMeasuredHeight() - r9);
+        rectF.set(f132, A2, y32 - AndroidUtilities.dp(58.0f), getMeasuredHeight() - r9);
         rectF.inset(-AndroidUtilities.dp(1.0f), -AndroidUtilities.dp(1.0f));
         canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paint3);
         paint.setAlpha(31);

@@ -15,7 +15,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class d2 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int b;
@@ -73,7 +73,7 @@ public final class d2 extends org.telegram.ui.Components.s6 {
                 s00Var.w0 = f7;
                 int i10 = s00Var.U;
                 org.telegram.ui.ActionBar.d6 d6Var = s00Var.a;
-                s00Var.T.setColor(i0.b.f(f7, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(s00Var.c0, d6Var)));
+                s00Var.T.setColor(i0.a.f(f7, org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(s00Var.c0, d6Var)));
                 ai.u1 u1Var = s00Var.F;
                 u1Var.f1();
                 u1Var.invalidate();

@@ -11,6 +11,7 @@ import mi.q;
 import n6.j;
 import n6.l;
 import org.telegram.tgnet.ConnectionsManager;
+import t0.h;
 import v7.z8;
 import w7.l8;
 import x7.d7;
@@ -29,7 +30,7 @@ import x7.o7;
 import x7.r0;
 import x7.s;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f extends rb.e {
     public boolean d = true;
@@ -103,7 +104,7 @@ public final class f extends rb.e {
             faVar.i.put(o7Var, Long.valueOf(elapsedRealtime2));
             com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
             lVar.c = m7.b;
-            u2.c cVar = new u2.c(12, false);
+            h hVar = new h(13, false);
             z5 z5Var = new z5();
             z5Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
             z5Var.c = n7Var;
@@ -111,7 +112,7 @@ public final class f extends rb.e {
             Boolean bool = Boolean.TRUE;
             z5Var.d = bool;
             z5Var.e = bool;
-            cVar.b = new g7(z5Var);
+            hVar.b = new g7(z5Var);
             int i11 = aVar.e;
             if (i11 == -1) {
                 Bitmap bitmap = aVar.a;
@@ -131,16 +132,16 @@ public final class f extends rb.e {
             q qVar = new q(27, b10);
             qVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
             qVar.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-            cVar.d = new e7(qVar);
-            cVar.c = this.e;
-            lVar.e = new f8(cVar);
+            hVar.d = new e7(qVar);
+            hVar.c = this.e;
+            lVar.e = new f8(hVar);
             rb.m.a.execute(new p(faVar, new a5.a(lVar, 0), o7Var, faVar.b(), 7));
         }
-        u2.c cVar2 = new u2.c(11, false);
-        cVar2.d = this.e;
-        cVar2.b = n7Var;
-        cVar2.c = Boolean.valueOf(this.d);
-        rb.m.a.execute(new da(this.g, new r0(cVar2), elapsedRealtime));
+        h hVar2 = new h(12, false);
+        hVar2.d = this.e;
+        hVar2.b = n7Var;
+        hVar2.c = Boolean.valueOf(this.d);
+        rb.m.a.execute(new da(this.g, new r0(hVar2), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
         z8 z8Var = this.h;
         int i12 = n7Var.a;

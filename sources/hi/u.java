@@ -13,7 +13,7 @@ import org.telegram.ui.Components.i80;
 import r0.h1;
 import r0.k1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utilities.Callback5Return {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class u implements Utilities.Callback5, r0.n, Utili
     @Override // r0.n
     public k1 B0(View view, k1 k1Var) {
         h1 h1Var = k1Var.a;
-        i0.c f7 = h1Var.f(527);
+        i0.b f7 = h1Var.f(527);
         k0 k0Var = this.b;
         k0Var.T = f7;
         k0Var.U = h1Var.f(519);

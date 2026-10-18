@@ -1,13 +1,13 @@
 package b1;
 
-import ai.oa;
+import ai.pa;
 import ci.v7;
 import com.google.android.gms.common.api.r;
 import java.util.concurrent.Executor;
 import v0.i;
 import v0.o;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements td.a {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class b implements td.a {
         Object cVar;
         switch (this.a) {
             case 0:
-                this.b.execute(new oa(3, this.c, this.d));
+                this.b.execute(new pa(3, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new oa(4, this.c, (o) this.d));
+                this.b.execute(new pa(4, this.c, (o) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));

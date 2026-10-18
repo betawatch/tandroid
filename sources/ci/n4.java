@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class n4 {
     public final Paint a;
@@ -60,13 +60,13 @@ public final class n4 {
         Paint paint2 = new Paint(1);
         this.b = paint2;
         paint2.setColor(-1);
-        int o10 = i0.b.o(-16777216, 102);
+        int o10 = i0.a.o(-16777216, 102);
         this.d = context.getDrawable(R.drawable.shadow_story_top);
         this.e = context.getDrawable(R.drawable.shadow_story_bottom);
         Paint paint3 = new Paint();
         this.c = paint3;
         paint3.setColor(o10);
-        this.f = new ColorDrawable(i0.b.f(0.1f, -16777216, -1));
+        this.f = new ColorDrawable(i0.a.f(0.1f, -16777216, -1));
     }
 
     public final void a(boolean z10, boolean z11) {

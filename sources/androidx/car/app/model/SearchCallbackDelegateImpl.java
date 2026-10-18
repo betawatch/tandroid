@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.ISearchCallback;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class SearchCallbackDelegateImpl implements o0 {
     private final ISearchCallback mStubCallback;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class SearchCallbackStub extends ISearchCallback.Stub {
         private final r0 mCallback;
 

@@ -28,7 +28,7 @@ import org.telegram.ui.jf1;
 import org.telegram.ui.lz0;
 import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements jf1, org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, xl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, qa.a {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final /* synthetic */ class f implements jf1, org.telegram.ui.ActionBar.a
             rawQuery.close();
             long j10 = this.b;
             if (z10) {
-                sQLiteDatabase.execSQL(r.c.f(j10, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
+                sQLiteDatabase.execSQL(r4.c.g(j10, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
                 return null;
             }
             ContentValues contentValues = new ContentValues();
@@ -135,7 +135,7 @@ public final /* synthetic */ class f implements jf1, org.telegram.ui.ActionBar.a
                 break;
             default:
                 s50 s50Var = (s50) this.c;
-                s50Var.d.getMessagesController().addUserToChat(s50Var.j1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.n2) s50Var.i0.O().getFragmentStack().get(s50Var.i0.O().getFragmentStack().size() - 1), new s3(s50Var, this.b, 28));
+                s50Var.d.getMessagesController().addUserToChat(s50Var.j1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.n2) s50Var.i0.O().getFragmentStack().get(s50Var.i0.O().getFragmentStack().size() - 1), new r3(s50Var, this.b, 28));
                 break;
         }
     }

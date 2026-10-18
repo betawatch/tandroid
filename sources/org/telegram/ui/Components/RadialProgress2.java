@@ -17,7 +17,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class RadialProgress2 {
     public float A;
@@ -281,7 +281,7 @@ public class RadialProgress2 {
             } else {
                 i11 = canvas5.save();
                 float f15 = f7;
-                float D = com.google.android.gms.internal.cast.a6.D(f15, this.s, 0.1f, f15);
+                float D = com.google.android.gms.internal.play_billing.k3.D(f15, this.s, 0.1f, f15);
                 this.D.scale(D, D, ceil, ceil2);
             }
             if (z12 && this.B) {
@@ -370,7 +370,7 @@ public class RadialProgress2 {
                     i13 = TLObject.FLAG_31;
                 }
                 float f20 = i28;
-                canvas.drawCircle(centerX, centerY, com.google.android.gms.internal.cast.a6.x(1.0f, this.s, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(f20) * f11), paint);
+                canvas.drawCircle(centerX, centerY, com.google.android.gms.internal.play_billing.k3.y(1.0f, this.s, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(f20) * f11), paint);
                 if (this.c) {
                     na0Var2.setBounds((int) (centerX - (AndroidUtilities.dp(f20) * f11)), (int) (centerY - (AndroidUtilities.dp(f20) * f11)), (int) ((AndroidUtilities.dp(f20) * f11) + centerX), (int) ((AndroidUtilities.dp(f20) * f11) + centerY));
                     na0Var2.draw(canvas);

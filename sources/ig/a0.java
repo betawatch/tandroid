@@ -1,6 +1,6 @@
 package ig;
 
-import ai.d4;
+import ai.f4;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class a0 {
     public final Context a;
@@ -62,27 +62,27 @@ public final class a0 {
         str = "";
         if (!this.h) {
             if ((d & 1) != 0) {
-                str2 = org.telegram.messenger.q.g(R.string.FilterExistingChats, a1.g.u(!TextUtils.isEmpty("") ? ", " : ""));
+                str2 = org.telegram.messenger.g0.g(R.string.FilterExistingChats, a1.g.u(!TextUtils.isEmpty("") ? ", " : ""));
             } else {
                 str2 = "";
             }
             if ((d & 2) != 0) {
                 if (!TextUtils.isEmpty(str2)) {
-                    str2 = r.c.u(str2, ", ");
+                    str2 = r4.c.u(str2, ", ");
                 }
-                str2 = org.telegram.messenger.q.g(R.string.FilterNewChats, a1.g.u(str2));
+                str2 = org.telegram.messenger.g0.g(R.string.FilterNewChats, a1.g.u(str2));
             }
             if ((d & 4) != 0) {
                 if (!TextUtils.isEmpty(str2)) {
-                    str2 = r.c.u(str2, ", ");
+                    str2 = r4.c.u(str2, ", ");
                 }
-                str2 = org.telegram.messenger.q.g(R.string.FilterContacts, a1.g.u(str2));
+                str2 = org.telegram.messenger.g0.g(R.string.FilterContacts, a1.g.u(str2));
             }
             if ((d & 8) != 0) {
                 if (!TextUtils.isEmpty(str2)) {
-                    str2 = r.c.u(str2, ", ");
+                    str2 = r4.c.u(str2, ", ");
                 }
-                str2 = org.telegram.messenger.q.g(R.string.FilterNonContacts, a1.g.u(str2));
+                str2 = org.telegram.messenger.g0.g(R.string.FilterNonContacts, a1.g.u(str2));
             }
             ArrayList arrayList2 = this.j;
             if (!arrayList2.isEmpty()) {
@@ -91,7 +91,7 @@ public final class a0 {
                     u10.append(LocaleController.formatPluralStringComma("Chats", arrayList2.size()));
                     str2 = u10.toString();
                 } else {
-                    StringBuilder i10 = r.c.i(str2, " + ");
+                    StringBuilder i10 = r4.c.i(str2, " + ");
                     i10.append(arrayList2.size());
                     str2 = i10.toString();
                 }
@@ -107,25 +107,25 @@ public final class a0 {
         if (z11 || this.h) {
             if (!z11 || this.h) {
                 if ((d & 1) != 0) {
-                    str = org.telegram.messenger.q.g(R.string.FilterExistingChats, a1.g.u(TextUtils.isEmpty("") ? "" : ", "));
+                    str = org.telegram.messenger.g0.g(R.string.FilterExistingChats, a1.g.u(TextUtils.isEmpty("") ? "" : ", "));
                 }
                 if ((d & 2) != 0) {
                     if (!TextUtils.isEmpty(str)) {
-                        str = r.c.u(str, ", ");
+                        str = r4.c.u(str, ", ");
                     }
-                    str = org.telegram.messenger.q.g(R.string.FilterNewChats, a1.g.u(str));
+                    str = org.telegram.messenger.g0.g(R.string.FilterNewChats, a1.g.u(str));
                 }
                 if ((d & 4) != 0) {
                     if (!TextUtils.isEmpty(str)) {
-                        str = r.c.u(str, ", ");
+                        str = r4.c.u(str, ", ");
                     }
-                    str = org.telegram.messenger.q.g(R.string.FilterContacts, a1.g.u(str));
+                    str = org.telegram.messenger.g0.g(R.string.FilterContacts, a1.g.u(str));
                 }
                 if ((d & 8) != 0) {
                     if (!TextUtils.isEmpty(str)) {
-                        str = r.c.u(str, ", ");
+                        str = r4.c.u(str, ", ");
                     }
-                    str = org.telegram.messenger.q.g(R.string.FilterNonContacts, a1.g.u(str));
+                    str = org.telegram.messenger.g0.g(R.string.FilterNonContacts, a1.g.u(str));
                 }
             }
             ArrayList arrayList3 = this.k;
@@ -135,7 +135,7 @@ public final class a0 {
                     u11.append(LocaleController.formatPluralStringComma("Chats", arrayList3.size()));
                     str = u11.toString();
                 } else {
-                    StringBuilder i11 = r.c.i(str, " + ");
+                    StringBuilder i11 = r4.c.i(str, " + ");
                     i11.append(arrayList3.size());
                     str = i11.toString();
                 }
@@ -360,7 +360,7 @@ public final class a0 {
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string;
         b2Var.T = LocaleController.formatString(!z12 ? R.string.BusinessRecipientsRemoveExcludeMessage : R.string.BusinessRecipientsRemoveIncludeMessage, peerName);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new d4(this, z12, f61Var, i11));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new f4(this, z12, f61Var, i11));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         if (n2Var != null) {
             n2Var.showDialog(b2Var);

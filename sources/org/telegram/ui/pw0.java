@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pw0 extends LinearLayout {
     public final TextView a;
@@ -232,10 +232,10 @@ public final class pw0 extends LinearLayout {
         TextView textView2 = this.b;
         if (i10 == 0) {
             textView.setText(LocaleController.getString(premiumPreviewFragment.p0 ? R.string.TelegramPremiumSubscribedTitle : R.string.TelegramPremium));
-            org.telegram.messenger.q.n((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.p0) ? R.string.TelegramPremiumSubscribedSubtitle : R.string.TelegramPremiumSubtitle, textView2);
+            org.telegram.messenger.g0.n((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.p0) ? R.string.TelegramPremiumSubscribedSubtitle : R.string.TelegramPremiumSubtitle, textView2);
         } else if (i10 == 1) {
             textView.setText(LocaleController.getString(premiumPreviewFragment.p0 ? R.string.TelegramPremiumSubscribedTitle : R.string.TelegramBusiness));
-            org.telegram.messenger.q.n((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.p0) ? R.string.TelegramBusinessSubscribedSubtitleTemp : R.string.TelegramBusinessSubtitleTemp, textView2);
+            org.telegram.messenger.g0.n((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.p0) ? R.string.TelegramBusinessSubscribedSubtitleTemp : R.string.TelegramBusinessSubtitleTemp, textView2);
         }
         textView2.getLayoutParams().width = Math.min(AndroidUtilities.displaySize.x - AndroidUtilities.dp(42.0f), ei.x3.a(textView2.getText(), textView2.getPaint()));
         boolean z10 = premiumPreviewFragment.p0 || BuildVars.IS_BILLING_UNAVAILABLE || premiumPreviewFragment.d.size() <= 1;

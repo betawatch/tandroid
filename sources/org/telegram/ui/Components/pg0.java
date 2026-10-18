@@ -13,7 +13,7 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pg0 extends View {
     public ValueAnimator E;
@@ -144,11 +144,11 @@ public final class pg0 extends View {
             if (f7 < 0.0f) {
                 this.r = 0.0f;
             } else {
-                float g10 = i0.a.g(this.b, 1, r4, dp) - f7;
+                float v = com.google.android.gms.internal.play_billing.k3.v(this.b, 1, r4, dp) - f7;
                 int measuredHeight = getMeasuredHeight() - dp;
                 int i14 = this.v;
-                if (g10 < measuredHeight - i14) {
-                    this.r = i0.a.g(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
+                if (v < measuredHeight - i14) {
+                    this.r = com.google.android.gms.internal.play_billing.k3.v(this.b, 1, i14, dp) - ((getMeasuredHeight() - dp) - this.v);
                 }
             }
             float f10 = (i10 - 1) * this.w;
@@ -188,7 +188,7 @@ public final class pg0 extends View {
     public final void d() {
         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ee, this.L);
         this.K = w02;
-        this.H.setColor(i0.b.o(w02, (int) ((Color.alpha(w02) / 255.0f) * 112.0f)));
+        this.H.setColor(i0.a.o(w02, (int) ((Color.alpha(w02) / 255.0f) * 112.0f)));
         this.I.setColor(this.K);
     }
 
@@ -257,15 +257,15 @@ public final class pg0 extends View {
                 Paint paint = this.H;
                 f10 = f11;
                 if (z10 && max >= this.f) {
-                    paint.setColor(i0.b.o(this.K, (int) ((f10 - this.y) * (Color.alpha(r4) / 255.0f) * 76.0f)));
+                    paint.setColor(i0.a.o(this.K, (int) ((f10 - this.y) * (Color.alpha(r4) / 255.0f) * 76.0f)));
                     canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
-                    paint.setColor(i0.b.o(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
+                    paint.setColor(i0.a.o(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
                 } else if (!z10 || max < this.e) {
                     canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
                 } else {
-                    paint.setColor(i0.b.o(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f * this.y)));
+                    paint.setColor(i0.a.o(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f * this.y)));
                     canvas.drawRoundRect(rectF, measuredWidth, measuredWidth, paint);
-                    paint.setColor(i0.b.o(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
+                    paint.setColor(i0.a.o(this.K, (int) ((Color.alpha(r4) / 255.0f) * 76.0f)));
                 }
             }
             max++;

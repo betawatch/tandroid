@@ -18,7 +18,7 @@ import org.telegram.ui.fg0;
 import org.telegram.ui.of0;
 import org.telegram.ui.xm0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ c9(fa faVar, boolean[] zArr, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
+    public /* synthetic */ c9(ga gaVar, boolean[] zArr, MessageObject messageObject, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, boolean[] zArr2, int i10, Utilities.Callback callback, Utilities.Callback callback2) {
         this.a = 0;
-        this.c = faVar;
+        this.c = gaVar;
         this.d = zArr;
         this.f = messageObject;
         this.h = inputInvoice;
@@ -59,9 +59,9 @@ public final /* synthetic */ class c9 implements Runnable {
         Object obj8 = this.c;
         switch (i10) {
             case 0:
-                fa faVar = (fa) obj8;
+                ga gaVar = (ga) obj8;
                 ((boolean[]) obj7)[0] = true;
-                faVar.a0((MessageObject) obj5, (TLRPC.InputInvoice) obj4, (TLRPC.TL_payments_paymentFormStars) obj3, new d9(faVar, (boolean[]) obj6, this.b, (Utilities.Callback) obj2, (Utilities.Callback) obj));
+                gaVar.a0((MessageObject) obj5, (TLRPC.InputInvoice) obj4, (TLRPC.TL_payments_paymentFormStars) obj3, new d9(gaVar, (boolean[]) obj6, this.b, (Utilities.Callback) obj2, (Utilities.Callback) obj));
                 break;
             case 1:
                 ((MessagesController) obj8).lambda$processLoadedDialogFilters$23((TLRPC.messages_Dialogs) obj7, (ArrayList) obj6, (TLRPC.messages_Dialogs) obj5, this.b, (ArrayList) obj4, (ArrayList) obj3, (ArrayList) obj2, (Runnable) obj);

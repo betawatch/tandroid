@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import g8.j;
+import i2.d;
 import java.util.Arrays;
 import java.util.Locale;
 import n6.l;
@@ -11,7 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import w7.f0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a extends o6.a {
     public static final Parcelable.Creator<a> CREATOR = new j(26);
@@ -47,7 +48,7 @@ public final class a extends o6.a {
     public final String toString() {
         Locale locale = Locale.US;
         String uri = this.b.toString();
-        StringBuilder m10 = i0.a.m("Image ", this.c, "x", this.d, " ");
+        StringBuilder m10 = d.m("Image ", this.c, "x", this.d, " ");
         m10.append(uri);
         return m10.toString();
     }

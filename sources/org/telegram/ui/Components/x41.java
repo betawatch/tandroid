@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x41 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -33,7 +33,7 @@ public final class x41 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.a = d6Var;
         setClipToPadding(false);
         setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(6.0f));
-        LinearLayout e = org.telegram.messenger.wh.e(context, 0);
+        LinearLayout e = org.telegram.messenger.kk.e(context, 0);
         addView(e, w7.z5.e(-2, -2, 19));
         TextView textView = new TextView(context);
         this.c = textView;
@@ -74,7 +74,7 @@ public final class x41 extends FrameLayout implements org.telegram.ui.ActionBar.
         xpVar.setDrawBackgroundAsArc(10);
         linearLayout2.addView(xpVar, w7.z5.t(22, 22, 16, 0, 0, 0, 0));
         TextView textView4 = new TextView(context);
-        org.telegram.ui.Cells.t0.r(org.telegram.ui.ActionBar.h6.j5, d6Var, textView4, 1, 14.0f);
+        org.telegram.ui.Cells.c1.r(org.telegram.ui.ActionBar.h6.j5, d6Var, textView4, 1, 14.0f);
         textView4.setText(LocaleController.getString(R.string.AIEditorEmojify));
         linearLayout2.addView(textView4, w7.z5.t(-2, -2, 16, 3, -1, 2, 0));
         addView(linearLayout2, w7.z5.a(-2.0f, 0.0f, -3.0f, -6.0f, -3.0f, -2, 21));
@@ -92,7 +92,7 @@ public final class x41 extends FrameLayout implements org.telegram.ui.ActionBar.
         linearLayout3.addView(imageView2, w7.z5.t(-2, -2, 16, 0, 0, 4, 0));
         TextView textView5 = new TextView(context);
         this.v = textView5;
-        com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView5);
+        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView5);
         textView5.setText(LocaleController.getString(R.string.AIEditorAnotherExample));
         linearLayout3.addView(textView5, w7.z5.q(-2, -2, 16));
         d();

@@ -23,7 +23,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.p51;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -388,8 +388,8 @@ public final /* synthetic */ class z1 implements Runnable {
                 }
                 break;
             case 20:
-                u2.g0 g0Var = (u2.g0) obj;
-                j2.f fVar = ((i2.x0) obj3).c;
+                u2.f0 f0Var = (u2.f0) obj;
+                j2.f fVar = ((i2.y0) obj3).c;
                 e9.x1 f10 = ((e9.k0) obj2).f();
                 com.google.firebase.messaging.l lVar = fVar.d;
                 b2.f1 f1Var = fVar.h;
@@ -397,22 +397,22 @@ public final /* synthetic */ class z1 implements Runnable {
                 lVar.getClass();
                 lVar.b = e9.n0.u(f10);
                 if (!f10.isEmpty()) {
-                    lVar.e = (u2.g0) f10.get(0);
-                    g0Var.getClass();
-                    lVar.f = g0Var;
+                    lVar.e = (u2.f0) f10.get(0);
+                    f0Var.getClass();
+                    lVar.f = f0Var;
                 }
-                if (((u2.g0) lVar.d) == null) {
-                    lVar.d = com.google.firebase.messaging.l.t(f1Var, (e9.n0) lVar.b, (u2.g0) lVar.e, (b2.l1) lVar.a);
+                if (((u2.f0) lVar.d) == null) {
+                    lVar.d = com.google.firebase.messaging.l.t(f1Var, (e9.n0) lVar.b, (u2.f0) lVar.e, (b2.l1) lVar.a);
                 }
                 lVar.M(f1Var.y0());
                 break;
             case 21:
                 Pair pair3 = (Pair) obj2;
-                ((i2.e1) obj3).b.h.c(((Integer) pair3.first).intValue(), (u2.g0) pair3.second, (oa.d) obj);
+                ((i2.e1) obj3).b.h.c(((Integer) pair3.first).intValue(), (u2.f0) pair3.second, (oa.d) obj);
                 break;
             case 22:
                 Pair pair4 = (Pair) obj2;
-                ((i2.e1) obj3).b.h.b(((Integer) pair4.first).intValue(), (u2.g0) pair4.second, (Exception) obj);
+                ((i2.e1) obj3).b.h.b(((Integer) pair4.first).intValue(), (u2.f0) pair4.second, (Exception) obj);
                 break;
             case 23:
                 ig.c cVar = (ig.c) obj3;
@@ -424,7 +424,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject5 instanceof TLRPC.TL_boolFalse) {
                     cVar.a.a(0.0f);
-                    wh.q(R.string.UnknownError, xc.a0(cVar), null);
+                    kk.q(R.string.UnknownError, xc.a0(cVar), null);
                     break;
                 } else {
                     cVar.finishFragment();
@@ -440,7 +440,7 @@ public final /* synthetic */ class z1 implements Runnable {
                     break;
                 } else if (tLObject6 instanceof TLRPC.TL_boolFalse) {
                     mVar.e.a(0.0f);
-                    wh.q(R.string.UnknownError, xc.a0(mVar), null);
+                    kk.q(R.string.UnknownError, xc.a0(mVar), null);
                     break;
                 } else {
                     if (mVar.E != null) {
@@ -474,23 +474,23 @@ public final /* synthetic */ class z1 implements Runnable {
                 ig.k0.Q((ig.k0) obj3, (TL_account.TL_connectedBot) obj2, (TL_account.TL_businessBotRecipients) obj);
                 break;
             case 28:
-                ig.t0 t0Var = (ig.t0) obj3;
+                ig.v0 v0Var = (ig.v0) obj3;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
                 TLObject tLObject7 = (TLObject) obj;
                 if (tL_error4 != null) {
-                    t0Var.a.a(0.0f);
+                    v0Var.a.a(0.0f);
                     xc.d0(tL_error4);
                     break;
                 } else if (tLObject7 instanceof TLRPC.TL_boolFalse) {
-                    t0Var.a.a(0.0f);
-                    wh.q(R.string.UnknownError, xc.a0(t0Var), null);
+                    v0Var.a.a(0.0f);
+                    kk.q(R.string.UnknownError, xc.a0(v0Var), null);
                     break;
                 } else {
-                    t0Var.finishFragment();
+                    v0Var.finishFragment();
                     break;
                 }
             default:
-                ig.d1.U((ig.d1) obj3, (TLRPC.TL_error) obj2, (TLObject) obj);
+                ig.f1.U((ig.f1) obj3, (TLRPC.TL_error) obj2, (TLObject) obj);
                 break;
         }
     }

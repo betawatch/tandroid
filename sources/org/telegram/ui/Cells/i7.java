@@ -34,7 +34,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.b10;
@@ -48,7 +48,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.g10;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class i7 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public MessageObject E;
@@ -101,7 +101,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
         }
         TextView textView = new TextView(context);
         this.d = textView;
-        t0.r(org.telegram.ui.ActionBar.h6.Bi, d6Var, textView, 1, 14.0f);
+        c1.r(org.telegram.ui.ActionBar.h6.Bi, d6Var, textView, 1, 14.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
@@ -129,7 +129,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
         TextView textView2 = new TextView(context);
         this.c = textView2;
         int i12 = org.telegram.ui.ActionBar.h6.G6;
-        t0.r(i12, d6Var, textView2, 1, 16.0f);
+        c1.r(i12, d6Var, textView2, 1, 16.0f);
         textView2.setEllipsize(truncateAt);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         if (i10 == 1) {
@@ -140,12 +140,12 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             addView(textView2, w7.z5.a(-2.0f, z16 ? 8.0f : 72.0f, 9.0f, z16 ? 72.0f : 8.0f, 0.0f, -1, (z16 ? 5 : 3) | 48));
             f7 = 14.0f;
         } else if (i10 == 2) {
-            LinearLayout e = wh.e(context, 0);
+            LinearLayout e = kk.e(context, 0);
             boolean z17 = LocaleController.isRTL;
             addView(e, w7.z5.a(-2.0f, z17 ? 16.0f : 72.0f, 5.0f, z17 ? 72.0f : 16.0f, 0.0f, -1, (z17 ? 5 : 3) | 48));
             TextView textView3 = new TextView(context);
             this.r = textView3;
-            wh.o(org.telegram.ui.ActionBar.h6.A6, d6Var, textView3, 1, 14.0f);
+            kk.o(org.telegram.ui.ActionBar.h6.A6, d6Var, textView3, 1, 14.0f);
             f7 = 14.0f;
             if (LocaleController.isRTL) {
                 e.addView(textView3, w7.z5.l(0.0f, -2, -2));
@@ -469,7 +469,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
     }
 
     public final void e() {
-        String D;
+        String C;
         MessageObject messageObject = this.E;
         if (messageObject == null || messageObject.getDocument() == null) {
             return;
@@ -478,19 +478,19 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
         long j10 = messageObject2.messageOwner.date * 1000;
         long j11 = this.N;
         if (j11 == 0) {
-            D = AndroidUtilities.formatFileSize(messageObject2.getDocument().size);
+            C = AndroidUtilities.formatFileSize(messageObject2.getDocument().size);
         } else {
             Locale locale = Locale.ENGLISH;
-            D = a1.g.D(AndroidUtilities.formatFileSize(j11), " / ", AndroidUtilities.formatFileSize(this.E.getDocument().size));
+            C = a1.g.C(AndroidUtilities.formatFileSize(j11), " / ", AndroidUtilities.formatFileSize(this.E.getDocument().size));
         }
         int i10 = this.H;
         org.telegram.ui.Components.z5 z5Var = this.e;
         if (i10 == 2) {
-            z5Var.setText(new SpannableStringBuilder().append((CharSequence) D).append(' ').append((CharSequence) this.I).append(' ').append(g10.d(this.E, true, 2, z5Var.getPaint())));
+            z5Var.setText(new SpannableStringBuilder().append((CharSequence) C).append(' ').append((CharSequence) this.I).append(' ').append(g10.d(this.E, true, 2, z5Var.getPaint())));
             this.r.setText(LocaleController.stringForMessageListDate(this.E.messageOwner.date));
             return;
         }
-        z5Var.setText(D + ", " + LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(new Date(j10)), LocaleController.getInstance().getFormatterDay().format(new Date(j10))));
+        z5Var.setText(C + ", " + LocaleController.formatString("formatDateAtTime", R.string.formatDateAtTime, LocaleController.getInstance().getFormatterYear().format(new Date(j10)), LocaleController.getInstance().getFormatterDay().format(new Date(j10))));
     }
 
     public final void f(boolean z10) {
@@ -625,7 +625,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
                 int measuredHeight = textView.getMeasuredHeight() - AndroidUtilities.dp(22.0f);
                 if (textView2 != null && textView2.getVisibility() == 0) {
                     textView2.layout(textView2.getLeft(), textView2.getTop() + measuredHeight, textView2.getRight(), textView2.getBottom() + measuredHeight);
-                    measuredHeight = org.telegram.messenger.q.C(3.0f, textView2.getMeasuredHeight(), measuredHeight);
+                    measuredHeight = org.telegram.messenger.g0.C(3.0f, textView2.getMeasuredHeight(), measuredHeight);
                 }
                 org.telegram.ui.Components.z5 z5Var = this.e;
                 z5Var.layout(z5Var.getLeft(), z5Var.getTop() + measuredHeight, z5Var.getRight(), z5Var.getBottom() + measuredHeight);
@@ -655,7 +655,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             this.Q = true;
             textView.setText(AndroidUtilities.ellipsizeCenterEnd(this.J, this.E.highlightedWords.get(0), textView.getMeasuredWidth(), textView.getPaint(), 130));
             this.Q = false;
-            measuredHeight = org.telegram.messenger.q.C(3.0f, textView.getMeasuredHeight(), measuredHeight);
+            measuredHeight = org.telegram.messenger.g0.C(3.0f, textView.getMeasuredHeight(), measuredHeight);
         }
         setMeasuredDimension(getMeasuredWidth(), measuredHeight);
     }

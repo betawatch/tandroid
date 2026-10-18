@@ -11,7 +11,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class s20 {
     public static final int x;
@@ -404,21 +404,21 @@ public final class s20 {
                                 o0Var = o0Var2;
                             }
                             if (photoViewer2.a6 == 1.0f) {
-                                float y10 = org.telegram.messenger.wh.y(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2));
-                                float y11 = org.telegram.messenger.wh.y(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.i1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.i1() / 2));
+                                float x13 = org.telegram.messenger.kk.x(3.0f, photoViewer2.a6, (motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2)) - photoViewer2.X5, motionEvent7.getX() - (photoViewer2.k1(photoViewer2.u4) / 2));
+                                float x14 = org.telegram.messenger.kk.x(3.0f, photoViewer2.a6, (motionEvent7.getY() - (photoViewer2.i1() / 2)) - photoViewer2.Y5, motionEvent7.getY() - (photoViewer2.i1() / 2));
                                 photoViewer2.w3(3.0f);
                                 float f17 = photoViewer2.E6;
-                                if (y10 >= f17) {
+                                if (x13 >= f17) {
                                     f17 = photoViewer2.F6;
                                 }
-                                y10 = f17;
+                                x13 = f17;
                                 float f18 = photoViewer2.G6;
-                                if (y11 >= f18) {
+                                if (x14 >= f18) {
                                     f18 = photoViewer2.H6;
                                 }
-                                y11 = f18;
+                                x14 = f18;
                                 z13 = true;
-                                photoViewer2.j0(3.0f, y10, y11, true);
+                                photoViewer2.j0(3.0f, x13, x14, true);
                             } else {
                                 z13 = true;
                                 photoViewer2.j0(1.0f, 0.0f, 0.0f, true);

@@ -19,7 +19,7 @@ import org.telegram.ui.ai1;
 import org.telegram.ui.ef0;
 import org.telegram.ui.lg0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class WearAuthListenerService extends x8.k {
     public static final String PATH_CANCEL = "/tg-wear-auth/cancel";
@@ -81,7 +81,7 @@ public class WearAuthListenerService extends x8.k {
             f3Var2.dismiss();
             ai1.c = null;
         }
-        org.telegram.ui.ActionBar.f3 i10 = wh.i(1, context, resourceProvider, false);
+        org.telegram.ui.ActionBar.f3 i10 = kk.i(1, context, resourceProvider, false);
         FrameLayout frameLayout = new FrameLayout(context);
         i10.customView = frameLayout;
         int i11 = UserConfig.selectedAccount;
@@ -124,7 +124,7 @@ public class WearAuthListenerService extends x8.k {
         if (arrayList.size() <= 1) {
             frameLayout2.setVisibility(8);
         }
-        LinearLayout e = wh.e(context, 1);
+        LinearLayout e = kk.e(context, 1);
         frameLayout.addView(e, w7.z5.e(-1, -1, 119));
         org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
         e.addView(w9Var2, w7.z5.r(130, 130, 49, 32.0f, 32.0f, 32.0f, 9.66f));
@@ -138,7 +138,7 @@ public class WearAuthListenerService extends x8.k {
         b11.setGravity(17);
         b11.setText(LocaleController.getString(R.string.WearAuthText));
         e.addView(b11, w7.z5.t(-1, -2, 49, 32, 0, 32, 24));
-        ei.d f7 = wh.f(24, context, resourceProvider, true);
+        ei.d f7 = kk.f(24, context, resourceProvider, true);
         f7.setText(LocaleController.getString(R.string.Next));
         e.addView(f7, w7.z5.t(-1, 48, 7, 12, 12, 12, 8));
         int i15 = org.telegram.ui.ActionBar.h6.a7;

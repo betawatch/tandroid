@@ -12,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class p5 extends Drawable implements x5 {
-    public ai.ce E;
+    public ai.de E;
     public Integer F;
     public int G;
     public PorterDuffColorFilter H;
@@ -91,13 +91,13 @@ public class p5 extends Drawable implements x5 {
         float e = this.e.e(this.y);
         pg pgVar = this.L;
         if (e > 0.0f) {
-            ai.ce ceVar = this.E;
-            ceVar.c.set(rect);
-            ceVar.e();
+            ai.de deVar = this.E;
+            deVar.c.set(rect);
+            deVar.e();
             this.E.d();
-            ai.ce ceVar2 = this.E;
+            ai.de deVar2 = this.E;
             Integer num = this.F;
-            ceVar2.a(canvas, org.telegram.ui.ActionBar.h6.m1(e, num == null ? -1 : num.intValue()));
+            deVar2.a(canvas, org.telegram.ui.ActionBar.h6.m1(e, num == null ? -1 : num.intValue()));
             zf.h.d().a(15, pgVar);
         } else {
             zf.h.d().f(pgVar);
@@ -383,7 +383,7 @@ public class p5 extends Drawable implements x5 {
         }
         if (z11) {
             if (this.E == null) {
-                this.E = new ai.ce(1, 8);
+                this.E = new ai.de(1, 8);
             }
             this.y = z10;
             invalidate();
@@ -391,7 +391,7 @@ public class p5 extends Drawable implements x5 {
         }
         this.y = z10;
         if (z10 && this.E == null) {
-            this.E = new ai.ce(1, 8);
+            this.E = new ai.de(1, 8);
         } else if (!z10 && this.E != null) {
             this.E = null;
         }

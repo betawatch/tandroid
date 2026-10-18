@@ -12,7 +12,7 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.c01;
 import org.telegram.ui.xf1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c01 extends org.telegram.ui.Cells.y6 {
     public final /* synthetic */ d01 h;
@@ -26,7 +26,7 @@ public final class c01 extends org.telegram.ui.Cells.y6 {
         setOrientation(1);
         TextView textView = new TextView(context);
         this.a = textView;
-        com.google.android.gms.internal.cast.a6.m(15.0f, 1, textView);
+        com.google.android.gms.internal.play_billing.k3.m(15.0f, 1, textView);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.L6, d6Var));
@@ -54,7 +54,7 @@ public final class c01 extends org.telegram.ui.Cells.y6 {
             textView2.setGravity(1);
             textView2.setEllipsize(TextUtils.TruncateAt.END);
             textView2.setGravity(17);
-            org.telegram.ui.Cells.t0.r(org.telegram.ui.ActionBar.h6.Sh, d6Var, textView2, 1, 14.0f);
+            org.telegram.ui.Cells.c1.r(org.telegram.ui.ActionBar.h6.Sh, d6Var, textView2, 1, 14.0f);
             linearLayout.addView(textView2, w7.z5.m(0.5f, 0, 44, i12 == 0 ? 0 : 4, i12 == 0 ? 4 : 0, 0));
             if (i12 == 0) {
                 this.c = textView2;

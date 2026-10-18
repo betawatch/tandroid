@@ -6,7 +6,7 @@ import android.graphics.drawable.GradientDrawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p9 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -41,7 +41,7 @@ public final /* synthetic */ class p9 implements Runnable {
                     Rect e = v9.e(orientation, i11, i12);
                     Bitmap createBitmap = Bitmap.createBitmap(i11, i12, Bitmap.Config.ARGB_8888);
                     Utilities.drawDitheredGradient(createBitmap, iArr, e.left, e.top, e.right, e.bottom);
-                    AndroidUtilities.runOnUIThread(new ai.ub(v9Var, runnableArr, createBitmap, t60Var, i10, w5VarArr, 9));
+                    AndroidUtilities.runOnUIThread(new ai.vb(v9Var, runnableArr, createBitmap, t60Var, i10, w5VarArr, 9));
                     return;
                 } catch (Throwable th2) {
                     AndroidUtilities.runOnUIThread(new p9(v9Var, runnableArr, t60Var, i10, w5VarArr));

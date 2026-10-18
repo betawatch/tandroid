@@ -24,7 +24,7 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class b2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
     public final d70 a;
@@ -114,7 +114,7 @@ public final class b2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
             }
             int intrinsicWidth2 = (int) (this.c.getIntrinsicWidth() * 0.8f);
             int intrinsicHeight = (int) (this.c.getIntrinsicHeight() * 0.8f);
-            int z10 = (int) com.google.android.gms.internal.cast.a6.z(imageReceiver.getImageWidth(), intrinsicWidth2, 2.0f, imageReceiver.getImageX());
+            int z10 = (int) com.google.android.gms.internal.play_billing.k3.z(imageReceiver.getImageWidth(), intrinsicWidth2, 2.0f, imageReceiver.getImageX());
             int imageHeight = (int) (((imageReceiver.getImageHeight() / 2.0f) - intrinsicHeight) + imageReceiver.getImageY());
             this.c.setAlpha((int) (imageReceiver.getCurrentAlpha() * 255.0f));
             this.c.setBounds(z10, imageHeight, intrinsicWidth2 + z10, intrinsicHeight + imageHeight);
@@ -163,7 +163,7 @@ public final class b2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
             if (pageblockmap.level > 0) {
                 i13 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r0 * 14);
                 this.n = i13;
-                i14 = org.telegram.messenger.wh.z(18.0f, i13, size);
+                i14 = org.telegram.messenger.kk.y(18.0f, i13, size);
                 dp = i14;
             } else {
                 this.n = AndroidUtilities.dp(18.0f);
@@ -216,7 +216,7 @@ public final class b2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
             if (q6 != null) {
                 int height = this.d.d.getHeight() + AndroidUtilities.dp(4.0f);
                 this.s = height;
-                i15 = org.telegram.messenger.q.C(4.0f, height, i15);
+                i15 = org.telegram.messenger.g0.C(4.0f, height, i15);
                 d3 d3Var = this.d;
                 d3Var.s = this.n;
                 d3Var.v = this.r;

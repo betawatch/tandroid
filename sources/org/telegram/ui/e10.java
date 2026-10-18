@@ -12,7 +12,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.e10;
 import org.telegram.ui.g10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class e10 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -161,13 +161,13 @@ public final class e10 extends org.telegram.ui.Components.hm0 {
                 r62 = new u00(this, context, 1);
                 r62.setIsSingleCell(true);
                 r62.setViewType(2);
-                return com.google.android.gms.internal.cast.a6.l(r62, r62, -1, -2);
+                return com.google.android.gms.internal.play_billing.k3.l(r62, r62, -1, -2);
             }
             FrameLayout u3Var = new org.telegram.ui.Cells.u3(context, null);
             u3Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.e7, false) & (-218103809));
             frameLayout = u3Var;
         }
         r62 = frameLayout;
-        return com.google.android.gms.internal.cast.a6.l(r62, r62, -1, -2);
+        return com.google.android.gms.internal.play_billing.k3.l(r62, r62, -1, -2);
     }
 }

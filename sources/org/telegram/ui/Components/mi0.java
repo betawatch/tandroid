@@ -14,7 +14,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotchInfoUtils;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class mi0 implements ni0 {
     public final float f;
@@ -120,9 +120,9 @@ public final class mi0 implements ni0 {
             oi0.a((oi0) tvVar.b, beginRecording);
             this.b.endRecording();
             float f20 = this.f;
-            float x11 = com.google.android.gms.internal.cast.a6.x(f20, 1.0f, 2.0f, com.google.android.gms.internal.cast.a6.t(oi0Var.f, 0.5f, f20, (f20 / 4.0f) + 1.0f));
+            float y10 = com.google.android.gms.internal.play_billing.k3.y(f20, 1.0f, 2.0f, com.google.android.gms.internal.play_billing.k3.t(oi0Var.f, 0.5f, f20, (f20 / 4.0f) + 1.0f));
             RecordingCanvas beginRecording2 = this.e.beginRecording();
-            float f21 = 1.0f / x11;
+            float f21 = 1.0f / y10;
             beginRecording2.scale(f21, f21, 0.0f, 0.0f);
             beginRecording2.drawRenderNode(this.b);
             this.e.endRecording();
@@ -201,12 +201,12 @@ public final class mi0 implements ni0 {
                 }
                 f11 = f17;
                 f12 = f16;
-                f13 = x11;
+                f13 = y10;
                 paint = paint3;
             } else {
                 f11 = f17;
                 f12 = f16;
-                f13 = x11;
+                f13 = y10;
                 paint = paint3;
                 beginRecording4.drawRect(0.0f, 0.0f, f12, AndroidUtilities.dp(32.0f), paint2);
                 path.rewind();

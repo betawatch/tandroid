@@ -30,7 +30,7 @@ import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.yo0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class z extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0, NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public int E;
@@ -287,7 +287,7 @@ public final class z extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0,
             this.L = null;
             this.J = ((i10 - AndroidUtilities.dp(30.0f)) / 2) + i11;
         } else {
-            SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.D(musicAuthor, " - ", musicTitle));
+            SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.C(musicAuthor, " - ", musicTitle));
             if (!TextUtils.isEmpty(musicAuthor)) {
                 spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
             }

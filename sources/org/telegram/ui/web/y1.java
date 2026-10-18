@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -85,7 +85,7 @@ public final /* synthetic */ class y1 implements Utilities.Callback {
                                 webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
                                     @JavascriptInterface
                                     public void done(String str2) {
-                                        AndroidUtilities.runOnUIThread(new a0(zArr2, webView, b2Var, str2, y1Var, 6));
+                                        AndroidUtilities.runOnUIThread(new b0(zArr2, webView, b2Var, str2, y1Var, 6));
                                     }
                                 }, "Instant");
                                 webView.loadUrl(str);

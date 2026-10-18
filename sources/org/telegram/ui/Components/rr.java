@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class rr extends bb {
     public final p80 X;
@@ -42,7 +42,7 @@ public final class rr extends bb {
         this.Z = arrayList2.size() > 1;
         this.a0 = ChatObject.canManageCalls(chat);
         Context context = this.containerView.getContext();
-        this.containerView.addView(new ai.hc(this, context, 17), w7.z5.a(120.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
+        this.containerView.addView(new ai.ic(this, context, 17), w7.z5.a(120.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
         TextView textView = new TextView(context);
         textView.setGravity(17);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -55,7 +55,7 @@ public final class rr extends bb {
         int dp = AndroidUtilities.dp(8.0f);
         int i10 = org.telegram.ui.ActionBar.h6.Oh;
         int x02 = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
-        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
+        int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
         textView.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, x02, o10, o10));
         this.containerView.addView(textView, w7.z5.a(48.0f, 16.0f, 0.0f, 16.0f, 60.0f, -1, 80));
         TextView textView2 = new TextView(context);
@@ -68,7 +68,7 @@ public final class rr extends bb {
         textView2.setLetterSpacing(0.025f);
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         int dp2 = AndroidUtilities.dp(8.0f);
-        int o11 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
+        int o11 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, i10, false), 120);
         textView2.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, 0, o11, o11));
         this.containerView.addView(textView2, w7.z5.a(48.0f, 16.0f, 0.0f, 16.0f, 6.0f, -1, 80));
         final int i11 = 0;

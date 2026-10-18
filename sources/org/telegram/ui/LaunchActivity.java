@@ -9,10 +9,13 @@ import android.app.KeyguardManager;
 import android.app.PictureInPictureParams;
 import android.app.PictureInPictureUiState;
 import android.content.ClipData;
+import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
@@ -20,6 +23,7 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.os.PowerManager;
 import android.os.StrictMode;
 import android.os.SystemClock;
@@ -43,6 +47,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.google.android.gms.common.api.Status;
 import java.io.BufferedReader;
 import java.io.File;
@@ -58,6 +63,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -69,11 +75,13 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.AutoDeleteMediaTask;
 import org.telegram.messenger.BackupAgent;
 import org.telegram.messenger.BetaUpdate;
+import org.telegram.messenger.BirthdayController;
 import org.telegram.messenger.BotGuardHelper;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.ChannelBoostsController;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.ContactsLoadingObserver;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -93,6 +101,8 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.OneUIUtilities;
+import org.telegram.messenger.OpenAttachedMenuBotReceiver;
+import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
@@ -106,6 +116,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.video.VideoAds;
 import org.telegram.messenger.voip.VideoCapturerDevice;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.messenger.voip.VoIPPendingCall;
+import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
@@ -127,7 +140,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, NotificationCenter.NotificationCenterDelegate, xx, sf.a {
     public static final Pattern C1 = Pattern.compile("^(?:http(?:s|)://|)([A-z0-9-]+?)\\.t\\.me");
@@ -140,7 +153,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
     public static b0 J1;
     public static LaunchActivity K1;
     public org.telegram.ui.Components.ne0 A0;
-    public ai.ne A1;
+    public ai.oe A1;
     public final ArrayList B0;
     public int B1;
     public org.telegram.ui.Components.c11 C0;
@@ -216,7 +229,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
     public final xk0 t1;
     public FrameLayout u0;
     public org.telegram.ui.ActionBar.b2 u1;
-    public ig.n1 v0;
+    public ig.p1 v0;
     public org.telegram.ui.ActionBar.b2 v1;
     public m0 w0;
     public boolean w1;
@@ -347,7 +360,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         }
         LaunchActivity launchActivity = H1;
         if (launchActivity != null && !launchActivity.P.isEmpty()) {
-            return ((ActionBarLayout) ((org.telegram.ui.ActionBar.d5) i0.a.h(1, H1.P))).t();
+            return ((ActionBarLayout) ((org.telegram.ui.ActionBar.d5) i2.d.h(1, H1.P))).t();
         }
         LaunchActivity launchActivity2 = H1;
         if (launchActivity2 == null || launchActivity2.O() == null) {
@@ -364,7 +377,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         }
         LaunchActivity launchActivity = H1;
         if (launchActivity != null && !launchActivity.P.isEmpty()) {
-            return ((org.telegram.ui.ActionBar.d5) i0.a.h(1, H1.P)).getLastFragment();
+            return ((org.telegram.ui.ActionBar.d5) i2.d.h(1, H1.P)).getLastFragment();
         }
         LaunchActivity launchActivity2 = H1;
         if (launchActivity2 == null || launchActivity2.O() == null) {
@@ -381,7 +394,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         }
         LaunchActivity launchActivity = H1;
         if (launchActivity != null && !launchActivity.P.isEmpty()) {
-            return ((org.telegram.ui.ActionBar.d5) i0.a.h(1, H1.P)).getSafeLastFragment();
+            return ((org.telegram.ui.ActionBar.d5) i2.d.h(1, H1.P)).getSafeLastFragment();
         }
         LaunchActivity launchActivity2 = H1;
         if (launchActivity2 == null || launchActivity2.O() == null) {
@@ -454,30 +467,30 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
 
     public static void c0(float f7, float f10, float f11) {
         View decorView;
-        ai.ne neVar;
+        ai.oe oeVar;
         LaunchActivity launchActivity = H1;
         if (launchActivity == null || (decorView = launchActivity.getWindow().getDecorView()) == null) {
             return;
         }
-        if (Build.VERSION.SDK_INT >= 33 && ((neVar = launchActivity.A1) == null || ((View) neVar.a) != decorView)) {
-            launchActivity.A1 = new ai.ne(decorView);
+        if (Build.VERSION.SDK_INT >= 33 && ((oeVar = launchActivity.A1) == null || ((View) oeVar.a) != decorView)) {
+            launchActivity.A1 = new ai.oe(decorView);
         }
-        ai.ne neVar2 = launchActivity.A1;
-        if (neVar2 != null) {
-            View view = (View) neVar2.a;
-            ArrayList arrayList = neVar2.b;
+        ai.oe oeVar2 = launchActivity.A1;
+        if (oeVar2 != null) {
+            View view = (View) oeVar2.a;
+            ArrayList arrayList = oeVar2.b;
             if (arrayList.size() >= 7) {
                 return;
             }
             float max = (Math.max(Math.max(v7.f7.a(0.0f, 0.0f, f7, f10), v7.f7.a(view.getWidth(), 0.0f, f7, f10)), Math.max(v7.f7.a(0.0f, view.getHeight(), f7, f10), v7.f7.a(view.getWidth(), view.getHeight(), f7, f10))) * 2.0f) / (AndroidUtilities.density * 1200.0f);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, max);
-            ai.me meVar = new ai.me(f7, f10, f11);
-            ofFloat.addUpdateListener(new ah.l0(1, neVar2, meVar));
-            ofFloat.addListener(new ai.le(0, neVar2, meVar));
+            ai.ne neVar = new ai.ne(f7, f10, f11);
+            ofFloat.addUpdateListener(new ah.l0(1, oeVar2, neVar));
+            ofFloat.addListener(new ai.me(0, oeVar2, neVar));
             ofFloat.setInterpolator(org.telegram.ui.Components.bs.g);
             ofFloat.setDuration((long) (max * 1000.0f));
-            arrayList.add(meVar);
-            neVar2.f1();
+            arrayList.add(neVar);
+            oeVar2.f1();
             ofFloat.start();
         }
     }
@@ -771,7 +784,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                             break;
                         case 1:
                             Pattern pattern2 = LaunchActivity.C1;
-                            AndroidUtilities.runOnUIThread(new ai.tb((ContextWrapper) this.b, tLObject, i10, str10, (Object) b80Var3, 27));
+                            AndroidUtilities.runOnUIThread(new ai.ub((ContextWrapper) this.b, tLObject, i10, str10, (Object) b80Var3, 27));
                             break;
                         default:
                             Pattern pattern3 = LaunchActivity.C1;
@@ -802,7 +815,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 break;
                             case 1:
                                 Pattern pattern2 = LaunchActivity.C1;
-                                AndroidUtilities.runOnUIThread(new ai.tb((ContextWrapper) this.b, tLObject, i10, str11, (Object) b80Var3, 27));
+                                AndroidUtilities.runOnUIThread(new ai.ub((ContextWrapper) this.b, tLObject, i10, str11, (Object) b80Var3, 27));
                                 break;
                             default:
                                 Pattern pattern3 = LaunchActivity.C1;
@@ -832,7 +845,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 case 0:
                                     LaunchActivity launchActivity2 = this.b;
                                     if (tL_error != null) {
-                                        org.telegram.messenger.q.q(R.string.GiftAuctionNotFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i0.a.h(1, launchActivity2.d0)), R.raw.error, 36);
+                                        org.telegram.messenger.g0.q(R.string.GiftAuctionNotFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.d.h(1, launchActivity2.d0)), R.raw.error, 36);
                                     } else {
                                         Pattern pattern = LaunchActivity.C1;
                                         if (tL_StarGiftAuctionState != null && (auction = GiftAuctionController.getInstance(launchActivity2.O).getAuction(tL_StarGiftAuctionState.gift.id)) != null) {
@@ -850,7 +863,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 default:
                                     LaunchActivity launchActivity3 = this.b;
                                     if (tL_error != null) {
-                                        org.telegram.messenger.q.q(R.string.GiftAuctionNotFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i0.a.h(1, launchActivity3.d0)), R.raw.error, 36);
+                                        org.telegram.messenger.g0.q(R.string.GiftAuctionNotFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.d.h(1, launchActivity3.d0)), R.raw.error, 36);
                                     } else {
                                         Pattern pattern2 = LaunchActivity.C1;
                                         if (tL_StarGiftAuctionState != null) {
@@ -890,7 +903,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 case 0:
                                     LaunchActivity launchActivity2 = this.b;
                                     if (tL_error != null) {
-                                        org.telegram.messenger.q.q(R.string.GiftAuctionNotFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i0.a.h(1, launchActivity2.d0)), R.raw.error, 36);
+                                        org.telegram.messenger.g0.q(R.string.GiftAuctionNotFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.d.h(1, launchActivity2.d0)), R.raw.error, 36);
                                     } else {
                                         Pattern pattern = LaunchActivity.C1;
                                         if (tL_StarGiftAuctionState != null && (auction = GiftAuctionController.getInstance(launchActivity2.O).getAuction(tL_StarGiftAuctionState.gift.id)) != null) {
@@ -908,7 +921,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 default:
                                     LaunchActivity launchActivity3 = this.b;
                                     if (tL_error != null) {
-                                        org.telegram.messenger.q.q(R.string.GiftAuctionNotFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i0.a.h(1, launchActivity3.d0)), R.raw.error, 36);
+                                        org.telegram.messenger.g0.q(R.string.GiftAuctionNotFound, org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.d.h(1, launchActivity3.d0)), R.raw.error, 36);
                                     } else {
                                         Pattern pattern2 = LaunchActivity.C1;
                                         if (tL_StarGiftAuctionState != null) {
@@ -947,7 +960,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                     break;
                                 case 1:
                                     Pattern pattern2 = LaunchActivity.C1;
-                                    AndroidUtilities.runOnUIThread(new ai.tb((ContextWrapper) this.b, tLObject, i10, str19, (Object) b80Var3, 27));
+                                    AndroidUtilities.runOnUIThread(new ai.ub((ContextWrapper) this.b, tLObject, i10, str19, (Object) b80Var3, 27));
                                     break;
                                 default:
                                     Pattern pattern3 = LaunchActivity.C1;
@@ -961,7 +974,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                     TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = new TLRPC.TL_inputInvoiceSlug();
                     tL_inputInvoiceSlug.slug = str18;
                     tL_payments_getPaymentForm.invoice = tL_inputInvoiceSlug;
-                    iArr2[0] = ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getPaymentForm, new ai.rb(this, tL_inputInvoiceSlug, b80Var3, i10, str18, 11));
+                    iArr2[0] = ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getPaymentForm, new ai.sb(this, tL_inputInvoiceSlug, b80Var3, i10, str18, 12));
                 } else {
                     if (str != null) {
                         if (cVar2 != null) {
@@ -1040,7 +1053,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                     AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(launchActivity3, 0, null);
                                     alertDialog$Builder3.a.R = LocaleController.getString(R.string.AffiliateLinkExpiredTitle);
                                     alertDialog$Builder3.a.T = LocaleController.getString(R.string.AffiliateLinkExpiredText);
-                                    i0.a.r(R.string.OK, alertDialog$Builder3, null);
+                                    i2.d.r(R.string.OK, alertDialog$Builder3, null);
                                     return;
                                 }
                                 if (launchActivity3.isFinishing()) {
@@ -1081,7 +1094,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 if (i33 != 0 && l14 != null) {
                                     ci.i7 storiesController2 = MessagesController.getInstance(launchActivity3.O).getStoriesController();
                                     long longValue2 = l14.longValue();
-                                    ai.ta taVar = new ai.ta(launchActivity3, b80Var7, l14, i33);
+                                    ai.ua uaVar = new ai.ua(launchActivity3, b80Var7, l14, i33);
                                     int i34 = storiesController2.a;
                                     ci.w6 B = storiesController2.B(longValue2, false);
                                     if (B != null) {
@@ -1092,17 +1105,17 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                             tL_storyAlbum.title = b10.b;
                                             tL_storyAlbum.icon_photo = b10.c;
                                             tL_storyAlbum.icon_video = b10.d;
-                                            taVar.run(tL_storyAlbum);
+                                            uaVar.run(tL_storyAlbum);
                                             return;
                                         }
                                         if (B.f) {
-                                            taVar.run(null);
+                                            uaVar.run(null);
                                             return;
                                         }
                                     }
                                     TL_stories.TL_getAlbums tL_getAlbums = new TL_stories.TL_getAlbums();
                                     tL_getAlbums.peer = MessagesController.getInstance(i34).getInputPeer(longValue2);
-                                    ConnectionsManager.getInstance(i34).sendRequest(tL_getAlbums, new ai.m2(i33, taVar));
+                                    ConnectionsManager.getInstance(i34).sendRequest(tL_getAlbums, new ai.n2(i33, uaVar));
                                     return;
                                 }
                                 final b80 b80Var8 = b80Var7;
@@ -1715,7 +1728,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                                 } else {
                                                                     str46 = str42;
                                                                 }
-                                                                org.telegram.ui.ActionBar.n2 n2Var = (arrayList.isEmpty() || str44 != null) ? null : (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList);
+                                                                org.telegram.ui.ActionBar.n2 n2Var = (arrayList.isEmpty() || str44 != null) ? null : (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList);
                                                                 if (n2Var == null || MessagesController.getInstance(i27).checkCanOpenChat(bundle, n2Var)) {
                                                                     boolean z36 = (n2Var instanceof sn) && ((sn) n2Var).a() == j10;
                                                                     if (z22 && z36) {
@@ -1771,14 +1784,14 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                                                 return;
                                                                             }
                                                                             LaunchActivity launchActivity6 = launchActivity4;
-                                                                            Bundle a2 = z7.g5.a(j12, "chat_id");
+                                                                            Bundle b11 = zf.d0.b(j12, "chat_id");
                                                                             if (str44 != null) {
-                                                                                a2.putString("voicechat", str44);
+                                                                                b11.putString("voicechat", str44);
                                                                             }
                                                                             if (z26) {
-                                                                                a2.putBoolean("videochat", true);
+                                                                                b11.putBoolean("videochat", true);
                                                                             }
-                                                                            launchActivity6.t0(te1.F0(launchActivity6, a2));
+                                                                            launchActivity6.t0(te1.F0(launchActivity6, b11));
                                                                             try {
                                                                                 b80Var6.run();
                                                                                 return;
@@ -1810,14 +1823,14 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                                         return;
                                                                     }
                                                                 }
-                                                                Bundle d = org.telegram.messenger.wh.d(2, "onlySelect", "dialogsType", true);
+                                                                Bundle d = org.telegram.messenger.kk.d(2, "onlySelect", "dialogsType", true);
                                                                 d.putBoolean("resetDelegate", false);
                                                                 d.putBoolean("closeFragment", false);
                                                                 d.putBoolean("allowGroups", str59 != null);
                                                                 d.putBoolean("allowChannels", str60 != null);
                                                                 String str91 = TextUtils.isEmpty(str59) ? TextUtils.isEmpty(str60) ? null : str60 : str59;
                                                                 ey eyVar = new ey(d);
-                                                                eyVar.C2 = new ig.k1(launchActivity4, i39, user5, str61, str91, eyVar);
+                                                                eyVar.C2 = new ig.m1(launchActivity4, i39, user5, str61, str91, eyVar);
                                                                 launchActivity4.t0(eyVar);
                                                             }
                                                             b80Var8.run();
@@ -1871,7 +1884,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                 TLRPC.User user6 = MessagesController.getInstance(i23).getUser(l11);
                                                 if (user6 == null || !user6.bot) {
                                                     d6Var = null;
-                                                    a02 = org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList));
+                                                    a02 = org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList));
                                                     i28 = R.string.BotSetAttachLinkNotBot;
                                                 } else if (user6.bot_attach_menu) {
                                                     long longValue4 = l11.longValue();
@@ -1879,11 +1892,11 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                                     tL_messages_getAttachMenuBot2.bot = MessagesController.getInstance(i23).getInputUser(longValue4);
                                                     ConnectionsManager.getInstance(i23).sendRequest(tL_messages_getAttachMenuBot2, new gi.z0(launchActivity2, i23, str35, str75, user6, str73, longValue4));
                                                 } else {
-                                                    a02 = org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList));
+                                                    a02 = org.telegram.ui.Components.xc.a0((org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList));
                                                     i28 = R.string.BotCantAddToAttachMenu;
                                                     d6Var = null;
                                                 }
-                                                org.telegram.messenger.wh.q(i28, a02, d6Var);
+                                                org.telegram.messenger.kk.q(i28, a02, d6Var);
                                             }
                                             b80Var8 = b80Var4;
                                             b80Var8.run();
@@ -1925,7 +1938,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 }
                                 TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
                                 tL_inputStickerSetShortName.short_name = str32;
-                                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList);
+                                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList);
                                 if (n2Var instanceof sn) {
                                     sn snVar = (sn) n2Var;
                                     oy0Var = new org.telegram.ui.Components.oy0(this, n2Var, tL_inputStickerSetShortName, null, (snVar.O0.getVisibility() == 0 || !((chat = snVar.e) == null || ChatObject.canSendStickers(chat))) ? null : snVar.Y, snVar.getResourceProvider());
@@ -1948,7 +1961,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 tL_inputStickerSetShortName2.short_name = str32;
                                 ArrayList arrayList2 = new ArrayList(1);
                                 arrayList2.add(tL_inputStickerSetShortName2);
-                                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList);
+                                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList);
                                 if (n2Var2 instanceof sn) {
                                     sn snVar2 = (sn) n2Var2;
                                     awVar = new org.telegram.ui.Components.aw(n2Var2, this, snVar2.getResourceProvider(), arrayList2);
@@ -1960,7 +1973,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 return;
                             }
                             if (str9 != null) {
-                                ey eyVar = new ey(org.telegram.messenger.wh.d(3, "onlySelect", "dialogsType", true));
+                                ey eyVar = new ey(org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true));
                                 i17 = i10;
                                 eyVar.C2 = new qg(this, z10, i17, str9);
                                 i16 = 0;
@@ -2113,7 +2126,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                             if (chat3 != null && ChatObject.isBoostSupported(chat3) && z14) {
                                                 w0(Long.valueOf(-l4.longValue()), b80Var3, cVar2, null);
                                             } else if (chat3 == null || !chat3.forum) {
-                                                org.telegram.ui.ActionBar.n2 n2Var3 = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList) : null;
+                                                org.telegram.ui.ActionBar.n2 n2Var3 = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList) : null;
                                                 if (n2Var3 == null || MessagesController.getInstance(i10).checkCanOpenChat(bundle, n2Var3)) {
                                                     iArr = iArr2;
                                                     i17 = i10;
@@ -2134,7 +2147,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                         } else if (i11 == 0) {
                             TLRPC.TL_messages_checkChatInvite tL_messages_checkChatInvite = new TLRPC.TL_messages_checkChatInvite();
                             tL_messages_checkChatInvite.hash = str2;
-                            iArr2[0] = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_checkChatInvite, new ai.rb(this, i10, b2Var4, b80Var3, str2, 12), 2);
+                            iArr2[0] = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_checkChatInvite, new ai.sb(this, i10, b2Var4, b80Var3, str2, 13), 2);
                             i17 = i10;
                             iArr = iArr2;
                             b2Var = b2Var4;
@@ -2228,9 +2241,9 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             } else {
                 this.z0.addView(ba0Var, w7.z5.d(-1.0f, -1));
             }
-            ig.n1 n1Var = new ig.n1(this, null, 5);
-            this.v0 = n1Var;
-            n1Var.setOccupyStatusBar(false);
+            ig.p1 p1Var = new ig.p1(this, null, 5);
+            this.v0 = p1Var;
+            p1Var.setOccupyStatusBar(false);
             this.v0.V(org.telegram.ui.ActionBar.h6.s0());
             this.t0.addView(this.v0, w7.z5.w(-1, -1));
             ViewGroup viewGroup = (ViewGroup) this.q0.getView().getParent();
@@ -2355,10 +2368,10 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         boolean z13;
         ArrayList arrayList = this.d0;
         boolean z14 = true;
-        org.telegram.ui.ActionBar.n2 n2Var = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList) : null;
+        org.telegram.ui.ActionBar.n2 n2Var = !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList) : null;
         char c10 = 2;
         if (n2Var != null && (n2Var.isRemovingFromStack() || n2Var.isInPreviewMode())) {
-            n2Var = arrayList.size() > 1 ? (org.telegram.ui.ActionBar.n2) i0.a.h(2, arrayList) : null;
+            n2Var = arrayList.size() > 1 ? (org.telegram.ui.ActionBar.n2) i2.d.h(2, arrayList) : null;
         }
         if (n2Var != null) {
             n2Var.hasForceLightStatusBar();
@@ -2372,7 +2385,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                     if (actionBarLayout.w() == null || actionBarLayout.w().getLastSheet() == null) {
                         ArrayList<org.telegram.ui.ActionBar.j2> arrayList2 = n2Var.sheetsStack;
                         if (arrayList2 != null && !arrayList2.isEmpty()) {
-                            org.telegram.ui.ActionBar.j2 j2Var = (org.telegram.ui.ActionBar.j2) i0.a.h(1, n2Var.sheetsStack);
+                            org.telegram.ui.ActionBar.j2 j2Var = (org.telegram.ui.ActionBar.j2) i2.d.h(1, n2Var.sheetsStack);
                             if (j2Var.isShown()) {
                                 z13 = j2Var.isAttachedLightStatusBar();
                             }
@@ -2385,7 +2398,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                     }
                 }
             } else {
-                z13 = i0.b.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.s8, true)) > 0.699999988079071d;
+                z13 = i0.a.h(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.s8, true)) > 0.699999988079071d;
             }
             AndroidUtilities.setLightStatusBar(this, z13);
         }
@@ -2437,12 +2450,12 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             ArrayList arrayList2 = this.f0;
             if (arrayList2.isEmpty()) {
                 ArrayList arrayList3 = this.d0;
-                n2Var = !arrayList3.isEmpty() ? (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList3) : null;
+                n2Var = !arrayList3.isEmpty() ? (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList3) : null;
             } else {
-                n2Var = (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList2);
+                n2Var = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList2);
             }
         } else {
-            n2Var = (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList);
+            n2Var = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList);
         }
         if (org.telegram.ui.Components.xc.a(n2Var)) {
             aVar.c(org.telegram.ui.Components.xc.a0(n2Var)).j();
@@ -2852,7 +2865,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                 p4Var2.setOnClickListener(new y50(this, 4));
                 linearLayout.addView(p4Var2, w7.z5.n(-1, 50));
                 alertDialog$Builder.n(linearLayout);
-                alertDialog$Builder.h(LocaleController.getString(R.string.OK), new ov(12, this, localeInfoArr2));
+                alertDialog$Builder.h(LocaleController.getString(R.string.OK), new zu(13, this, localeInfoArr2));
                 this.H0 = F0(alertDialog$Builder);
                 MessagesController.getGlobalMainSettings().edit().putString("language_showed2", str).commit();
             }
@@ -2884,7 +2897,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             p4Var22.setOnClickListener(new y50(this, 4));
             linearLayout2.addView(p4Var22, w7.z5.n(-1, 50));
             alertDialog$Builder2.n(linearLayout2);
-            alertDialog$Builder2.h(LocaleController.getString(R.string.OK), new ov(12, this, localeInfoArr22));
+            alertDialog$Builder2.h(LocaleController.getString(R.string.OK), new zu(13, this, localeInfoArr22));
             this.H0 = F0(alertDialog$Builder2);
             MessagesController.getGlobalMainSettings().edit().putString("language_showed2", str).commit();
         } catch (Exception e) {
@@ -3040,7 +3053,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             TextView textView = new TextView(this);
             int i12 = org.telegram.ui.ActionBar.h6.G6;
             f10 = 4.0f;
-            org.telegram.messenger.q.m(17.0f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), 1, textView);
+            org.telegram.messenger.g0.m(17.0f, org.telegram.ui.ActionBar.h6.x0(null, i12, false), 1, textView);
             textView.setText(LocaleController.getString(R.string.PrivacyPolicyAndTerms));
             linearLayout.addView(textView, w7.z5.t(-2, -2, 3, 0, 20, 0, 0));
             TextView textView2 = new TextView(this);
@@ -3442,7 +3455,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
     public final org.telegram.ui.ActionBar.d5 O() {
         ActionBarLayout actionBarLayout = this.q0;
         ArrayList arrayList = this.P;
-        return !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.d5) i0.a.h(1, arrayList) : actionBarLayout;
+        return !arrayList.isEmpty() ? (org.telegram.ui.ActionBar.d5) i2.d.h(1, arrayList) : actionBarLayout;
     }
 
     public final void O0(int i10) {
@@ -3545,19 +3558,11092 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         return this.g1;
     }
 
-    /*  JADX ERROR: Types fix failed
-        jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        	at jadx.core.dex.visitors.typeinference.FixTypesVisitor.visit(FixTypesVisitor.java:96)
-        */
-    public final boolean X(android.content.Intent r121, boolean r122, boolean r123, boolean r124, pf.c r125, boolean r126, boolean r127) {
-        /*
-            Method dump skipped, instructions count: 16328
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.ui.LaunchActivity.X(android.content.Intent, boolean, boolean, boolean, pf.c, boolean, boolean):boolean");
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:1326:0x1974, code lost:
+    
+        if (r9 < 2147483647L) goto L944;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:1669:0x2cd3, code lost:
+    
+        if (r1.longValue() == 0) goto L1224;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:488:0x0377, code lost:
+    
+        if (r1.T == null) goto L102;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x0193, code lost:
+    
+        if (r5.equals(r0) != false) goto L84;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:605:0x34c6, code lost:
+    
+        r52[0] = r9;
+        r3.O0(r9);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:865:0x0d63, code lost:
+    
+        if (r3.longValue() == 0) goto L549;
+     */
+    /* JADX WARN: Multi-variable search skipped. Vars limit reached: 8243 (expected less than 5000) */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:101:0x3ac4  */
+    /* JADX WARN: Removed duplicated region for block: B:1082:0x3032  */
+    /* JADX WARN: Removed duplicated region for block: B:1092:0x318f  */
+    /* JADX WARN: Removed duplicated region for block: B:1122:0x3210  */
+    /* JADX WARN: Removed duplicated region for block: B:1124:0x309c  */
+    /* JADX WARN: Removed duplicated region for block: B:119:0x406a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x4073  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x40ea  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x40b4  */
+    /* JADX WARN: Removed duplicated region for block: B:1463:0x2621 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:1479:0x2619 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x4101  */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x4128  */
+    /* JADX WARN: Removed duplicated region for block: B:1539:0x2aec  */
+    /* JADX WARN: Removed duplicated region for block: B:1592:0x2be1 A[Catch: Exception -> 0x2bf6, TRY_LEAVE, TryCatch #5 {Exception -> 0x2bf6, blocks: (B:1590:0x2bd7, B:1592:0x2be1), top: B:1589:0x2bd7 }] */
+    /* JADX WARN: Removed duplicated region for block: B:159:0x411c  */
+    /* JADX WARN: Removed duplicated region for block: B:1630:0x2bee  */
+    /* JADX WARN: Removed duplicated region for block: B:1680:0x2d19  */
+    /* JADX WARN: Removed duplicated region for block: B:1682:0x2dc4  */
+    /* JADX WARN: Removed duplicated region for block: B:1789:0x0463  */
+    /* JADX WARN: Removed duplicated region for block: B:1814:0x05e1  */
+    /* JADX WARN: Removed duplicated region for block: B:1816:0x05ec  */
+    /* JADX WARN: Removed duplicated region for block: B:254:0x3da5  */
+    /* JADX WARN: Removed duplicated region for block: B:257:0x3dc5  */
+    /* JADX WARN: Removed duplicated region for block: B:259:0x3db7  */
+    /* JADX WARN: Removed duplicated region for block: B:538:0x33a7  */
+    /* JADX WARN: Removed duplicated region for block: B:546:0x33dd  */
+    /* JADX WARN: Removed duplicated region for block: B:549:0x33fb  */
+    /* JADX WARN: Removed duplicated region for block: B:556:0x341a A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:586:0x3520 A[Catch: Exception -> 0x351c, TRY_LEAVE, TryCatch #14 {Exception -> 0x351c, blocks: (B:626:0x351b, B:625:0x3518, B:586:0x3520, B:621:0x3513), top: B:582:0x3470, inners: #31 }] */
+    /* JADX WARN: Removed duplicated region for block: B:665:0x35fb  */
+    /* JADX WARN: Removed duplicated region for block: B:667:0x360d  */
+    /* JADX WARN: Removed duplicated region for block: B:668:0x33e0  */
+    /* JADX WARN: Removed duplicated region for block: B:671:0x33f3  */
+    /* JADX WARN: Removed duplicated region for block: B:716:0x0926  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x037e  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x3a55  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x3a81  */
+    /* JADX WARN: Removed duplicated region for block: B:927:0x106b  */
+    /* JADX WARN: Removed duplicated region for block: B:985:0x1074  */
+    /* JADX WARN: Type inference failed for: r0v164, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r0v20, types: [org.telegram.ui.ActionBar.n2, org.telegram.ui.pg0] */
+    /* JADX WARN: Type inference failed for: r0v32, types: [org.telegram.ui.ActionBar.n2, org.telegram.ui.pg0] */
+    /* JADX WARN: Type inference failed for: r0v38, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r10v11 */
+    /* JADX WARN: Type inference failed for: r10v15 */
+    /* JADX WARN: Type inference failed for: r10v16 */
+    /* JADX WARN: Type inference failed for: r10v17 */
+    /* JADX WARN: Type inference failed for: r10v18, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r10v19 */
+    /* JADX WARN: Type inference failed for: r10v20 */
+    /* JADX WARN: Type inference failed for: r10v271 */
+    /* JADX WARN: Type inference failed for: r10v272 */
+    /* JADX WARN: Type inference failed for: r10v28 */
+    /* JADX WARN: Type inference failed for: r10v29, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r10v30 */
+    /* JADX WARN: Type inference failed for: r10v7 */
+    /* JADX WARN: Type inference failed for: r10v8, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r12v12 */
+    /* JADX WARN: Type inference failed for: r12v216 */
+    /* JADX WARN: Type inference failed for: r12v218 */
+    /* JADX WARN: Type inference failed for: r12v223 */
+    /* JADX WARN: Type inference failed for: r12v224 */
+    /* JADX WARN: Type inference failed for: r12v6, types: [android.os.Bundle, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r13v1 */
+    /* JADX WARN: Type inference failed for: r13v12 */
+    /* JADX WARN: Type inference failed for: r13v13 */
+    /* JADX WARN: Type inference failed for: r13v9 */
+    /* JADX WARN: Type inference failed for: r16v100 */
+    /* JADX WARN: Type inference failed for: r16v26, types: [java.lang.Integer] */
+    /* JADX WARN: Type inference failed for: r16v28 */
+    /* JADX WARN: Type inference failed for: r16v30 */
+    /* JADX WARN: Type inference failed for: r16v32 */
+    /* JADX WARN: Type inference failed for: r16v34 */
+    /* JADX WARN: Type inference failed for: r16v35 */
+    /* JADX WARN: Type inference failed for: r16v36 */
+    /* JADX WARN: Type inference failed for: r16v37 */
+    /* JADX WARN: Type inference failed for: r16v38 */
+    /* JADX WARN: Type inference failed for: r16v40 */
+    /* JADX WARN: Type inference failed for: r16v42 */
+    /* JADX WARN: Type inference failed for: r16v44 */
+    /* JADX WARN: Type inference failed for: r16v46 */
+    /* JADX WARN: Type inference failed for: r16v48 */
+    /* JADX WARN: Type inference failed for: r16v50 */
+    /* JADX WARN: Type inference failed for: r16v51 */
+    /* JADX WARN: Type inference failed for: r16v52 */
+    /* JADX WARN: Type inference failed for: r16v53 */
+    /* JADX WARN: Type inference failed for: r16v54 */
+    /* JADX WARN: Type inference failed for: r16v55 */
+    /* JADX WARN: Type inference failed for: r16v57 */
+    /* JADX WARN: Type inference failed for: r16v58 */
+    /* JADX WARN: Type inference failed for: r16v59 */
+    /* JADX WARN: Type inference failed for: r16v60 */
+    /* JADX WARN: Type inference failed for: r16v62 */
+    /* JADX WARN: Type inference failed for: r16v63 */
+    /* JADX WARN: Type inference failed for: r16v66 */
+    /* JADX WARN: Type inference failed for: r16v68 */
+    /* JADX WARN: Type inference failed for: r16v70 */
+    /* JADX WARN: Type inference failed for: r16v71 */
+    /* JADX WARN: Type inference failed for: r16v73 */
+    /* JADX WARN: Type inference failed for: r16v74 */
+    /* JADX WARN: Type inference failed for: r16v75 */
+    /* JADX WARN: Type inference failed for: r16v76 */
+    /* JADX WARN: Type inference failed for: r16v77 */
+    /* JADX WARN: Type inference failed for: r16v78 */
+    /* JADX WARN: Type inference failed for: r16v79 */
+    /* JADX WARN: Type inference failed for: r16v80 */
+    /* JADX WARN: Type inference failed for: r16v81 */
+    /* JADX WARN: Type inference failed for: r16v82 */
+    /* JADX WARN: Type inference failed for: r16v83 */
+    /* JADX WARN: Type inference failed for: r16v84 */
+    /* JADX WARN: Type inference failed for: r16v85 */
+    /* JADX WARN: Type inference failed for: r16v86 */
+    /* JADX WARN: Type inference failed for: r16v87 */
+    /* JADX WARN: Type inference failed for: r16v88 */
+    /* JADX WARN: Type inference failed for: r16v89 */
+    /* JADX WARN: Type inference failed for: r16v90 */
+    /* JADX WARN: Type inference failed for: r16v91 */
+    /* JADX WARN: Type inference failed for: r16v93 */
+    /* JADX WARN: Type inference failed for: r16v94 */
+    /* JADX WARN: Type inference failed for: r16v95 */
+    /* JADX WARN: Type inference failed for: r16v96 */
+    /* JADX WARN: Type inference failed for: r16v97 */
+    /* JADX WARN: Type inference failed for: r16v98 */
+    /* JADX WARN: Type inference failed for: r16v99 */
+    /* JADX WARN: Type inference failed for: r17v14, types: [java.lang.Long] */
+    /* JADX WARN: Type inference failed for: r17v16 */
+    /* JADX WARN: Type inference failed for: r17v18 */
+    /* JADX WARN: Type inference failed for: r17v19 */
+    /* JADX WARN: Type inference failed for: r17v20 */
+    /* JADX WARN: Type inference failed for: r17v21 */
+    /* JADX WARN: Type inference failed for: r17v22 */
+    /* JADX WARN: Type inference failed for: r17v23 */
+    /* JADX WARN: Type inference failed for: r17v24 */
+    /* JADX WARN: Type inference failed for: r17v25 */
+    /* JADX WARN: Type inference failed for: r17v26 */
+    /* JADX WARN: Type inference failed for: r17v27 */
+    /* JADX WARN: Type inference failed for: r17v28 */
+    /* JADX WARN: Type inference failed for: r17v29 */
+    /* JADX WARN: Type inference failed for: r17v30 */
+    /* JADX WARN: Type inference failed for: r17v31 */
+    /* JADX WARN: Type inference failed for: r17v32 */
+    /* JADX WARN: Type inference failed for: r17v33 */
+    /* JADX WARN: Type inference failed for: r17v34 */
+    /* JADX WARN: Type inference failed for: r17v35 */
+    /* JADX WARN: Type inference failed for: r17v36 */
+    /* JADX WARN: Type inference failed for: r17v37 */
+    /* JADX WARN: Type inference failed for: r17v38 */
+    /* JADX WARN: Type inference failed for: r17v39 */
+    /* JADX WARN: Type inference failed for: r17v40 */
+    /* JADX WARN: Type inference failed for: r17v41 */
+    /* JADX WARN: Type inference failed for: r17v42 */
+    /* JADX WARN: Type inference failed for: r17v43 */
+    /* JADX WARN: Type inference failed for: r17v44 */
+    /* JADX WARN: Type inference failed for: r17v45 */
+    /* JADX WARN: Type inference failed for: r17v46 */
+    /* JADX WARN: Type inference failed for: r17v47 */
+    /* JADX WARN: Type inference failed for: r17v48 */
+    /* JADX WARN: Type inference failed for: r17v49 */
+    /* JADX WARN: Type inference failed for: r17v50 */
+    /* JADX WARN: Type inference failed for: r17v51 */
+    /* JADX WARN: Type inference failed for: r17v52 */
+    /* JADX WARN: Type inference failed for: r17v53 */
+    /* JADX WARN: Type inference failed for: r17v54 */
+    /* JADX WARN: Type inference failed for: r17v55 */
+    /* JADX WARN: Type inference failed for: r17v56 */
+    /* JADX WARN: Type inference failed for: r17v57 */
+    /* JADX WARN: Type inference failed for: r17v58 */
+    /* JADX WARN: Type inference failed for: r17v59 */
+    /* JADX WARN: Type inference failed for: r17v60 */
+    /* JADX WARN: Type inference failed for: r17v61 */
+    /* JADX WARN: Type inference failed for: r17v62 */
+    /* JADX WARN: Type inference failed for: r17v63 */
+    /* JADX WARN: Type inference failed for: r17v64 */
+    /* JADX WARN: Type inference failed for: r17v65 */
+    /* JADX WARN: Type inference failed for: r17v66 */
+    /* JADX WARN: Type inference failed for: r17v68 */
+    /* JADX WARN: Type inference failed for: r17v69 */
+    /* JADX WARN: Type inference failed for: r17v70 */
+    /* JADX WARN: Type inference failed for: r17v71 */
+    /* JADX WARN: Type inference failed for: r17v72 */
+    /* JADX WARN: Type inference failed for: r17v73 */
+    /* JADX WARN: Type inference failed for: r17v74 */
+    /* JADX WARN: Type inference failed for: r17v75 */
+    /* JADX WARN: Type inference failed for: r18v21, types: [java.lang.Long] */
+    /* JADX WARN: Type inference failed for: r1v0, types: [android.app.Activity, android.content.Context, java.lang.Object, org.telegram.ui.LaunchActivity, org.telegram.ui.m5] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [android.app.Activity, android.content.Context, java.lang.Object, org.telegram.ui.LaunchActivity, org.telegram.ui.m5] */
+    /* JADX WARN: Type inference failed for: r1v10 */
+    /* JADX WARN: Type inference failed for: r1v12 */
+    /* JADX WARN: Type inference failed for: r1v13 */
+    /* JADX WARN: Type inference failed for: r1v14 */
+    /* JADX WARN: Type inference failed for: r1v2 */
+    /* JADX WARN: Type inference failed for: r1v4, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r1v7, types: [org.telegram.ui.LaunchActivity] */
+    /* JADX WARN: Type inference failed for: r1v8 */
+    /* JADX WARN: Type inference failed for: r21v22, types: [java.util.HashMap] */
+    /* JADX WARN: Type inference failed for: r21v24 */
+    /* JADX WARN: Type inference failed for: r21v26 */
+    /* JADX WARN: Type inference failed for: r21v28 */
+    /* JADX WARN: Type inference failed for: r21v30 */
+    /* JADX WARN: Type inference failed for: r21v31 */
+    /* JADX WARN: Type inference failed for: r21v32 */
+    /* JADX WARN: Type inference failed for: r21v33 */
+    /* JADX WARN: Type inference failed for: r21v34 */
+    /* JADX WARN: Type inference failed for: r21v36 */
+    /* JADX WARN: Type inference failed for: r21v38 */
+    /* JADX WARN: Type inference failed for: r21v39 */
+    /* JADX WARN: Type inference failed for: r21v40 */
+    /* JADX WARN: Type inference failed for: r21v41 */
+    /* JADX WARN: Type inference failed for: r21v42 */
+    /* JADX WARN: Type inference failed for: r21v43 */
+    /* JADX WARN: Type inference failed for: r21v44 */
+    /* JADX WARN: Type inference failed for: r21v45 */
+    /* JADX WARN: Type inference failed for: r21v46 */
+    /* JADX WARN: Type inference failed for: r21v47 */
+    /* JADX WARN: Type inference failed for: r21v48 */
+    /* JADX WARN: Type inference failed for: r21v49 */
+    /* JADX WARN: Type inference failed for: r21v50 */
+    /* JADX WARN: Type inference failed for: r21v51 */
+    /* JADX WARN: Type inference failed for: r21v52 */
+    /* JADX WARN: Type inference failed for: r21v53 */
+    /* JADX WARN: Type inference failed for: r21v54 */
+    /* JADX WARN: Type inference failed for: r21v55 */
+    /* JADX WARN: Type inference failed for: r21v56 */
+    /* JADX WARN: Type inference failed for: r21v57 */
+    /* JADX WARN: Type inference failed for: r21v58 */
+    /* JADX WARN: Type inference failed for: r21v59 */
+    /* JADX WARN: Type inference failed for: r21v60 */
+    /* JADX WARN: Type inference failed for: r21v61 */
+    /* JADX WARN: Type inference failed for: r21v62 */
+    /* JADX WARN: Type inference failed for: r21v63 */
+    /* JADX WARN: Type inference failed for: r21v64 */
+    /* JADX WARN: Type inference failed for: r21v65 */
+    /* JADX WARN: Type inference failed for: r21v66 */
+    /* JADX WARN: Type inference failed for: r21v67 */
+    /* JADX WARN: Type inference failed for: r21v68 */
+    /* JADX WARN: Type inference failed for: r21v69 */
+    /* JADX WARN: Type inference failed for: r21v70 */
+    /* JADX WARN: Type inference failed for: r21v71 */
+    /* JADX WARN: Type inference failed for: r21v72 */
+    /* JADX WARN: Type inference failed for: r21v73 */
+    /* JADX WARN: Type inference failed for: r21v74 */
+    /* JADX WARN: Type inference failed for: r21v75 */
+    /* JADX WARN: Type inference failed for: r21v76 */
+    /* JADX WARN: Type inference failed for: r21v78 */
+    /* JADX WARN: Type inference failed for: r21v79 */
+    /* JADX WARN: Type inference failed for: r21v80 */
+    /* JADX WARN: Type inference failed for: r21v81 */
+    /* JADX WARN: Type inference failed for: r21v82 */
+    /* JADX WARN: Type inference failed for: r21v83 */
+    /* JADX WARN: Type inference failed for: r21v84 */
+    /* JADX WARN: Type inference failed for: r21v85 */
+    /* JADX WARN: Type inference failed for: r26v0, types: [org.telegram.tgnet.TLRPC$TL_wallPaper] */
+    /* JADX WARN: Type inference failed for: r26v1 */
+    /* JADX WARN: Type inference failed for: r26v10 */
+    /* JADX WARN: Type inference failed for: r26v11 */
+    /* JADX WARN: Type inference failed for: r26v12 */
+    /* JADX WARN: Type inference failed for: r26v13 */
+    /* JADX WARN: Type inference failed for: r26v14 */
+    /* JADX WARN: Type inference failed for: r26v15 */
+    /* JADX WARN: Type inference failed for: r26v16 */
+    /* JADX WARN: Type inference failed for: r26v17 */
+    /* JADX WARN: Type inference failed for: r26v18 */
+    /* JADX WARN: Type inference failed for: r26v19 */
+    /* JADX WARN: Type inference failed for: r26v2 */
+    /* JADX WARN: Type inference failed for: r26v20 */
+    /* JADX WARN: Type inference failed for: r26v21 */
+    /* JADX WARN: Type inference failed for: r26v22 */
+    /* JADX WARN: Type inference failed for: r26v23 */
+    /* JADX WARN: Type inference failed for: r26v24 */
+    /* JADX WARN: Type inference failed for: r26v25 */
+    /* JADX WARN: Type inference failed for: r26v26 */
+    /* JADX WARN: Type inference failed for: r26v27 */
+    /* JADX WARN: Type inference failed for: r26v28 */
+    /* JADX WARN: Type inference failed for: r26v29 */
+    /* JADX WARN: Type inference failed for: r26v3 */
+    /* JADX WARN: Type inference failed for: r26v30 */
+    /* JADX WARN: Type inference failed for: r26v31 */
+    /* JADX WARN: Type inference failed for: r26v32 */
+    /* JADX WARN: Type inference failed for: r26v33 */
+    /* JADX WARN: Type inference failed for: r26v34 */
+    /* JADX WARN: Type inference failed for: r26v35 */
+    /* JADX WARN: Type inference failed for: r26v36 */
+    /* JADX WARN: Type inference failed for: r26v37 */
+    /* JADX WARN: Type inference failed for: r26v38 */
+    /* JADX WARN: Type inference failed for: r26v39 */
+    /* JADX WARN: Type inference failed for: r26v4 */
+    /* JADX WARN: Type inference failed for: r26v40 */
+    /* JADX WARN: Type inference failed for: r26v41 */
+    /* JADX WARN: Type inference failed for: r26v42 */
+    /* JADX WARN: Type inference failed for: r26v43 */
+    /* JADX WARN: Type inference failed for: r26v44 */
+    /* JADX WARN: Type inference failed for: r26v45 */
+    /* JADX WARN: Type inference failed for: r26v46 */
+    /* JADX WARN: Type inference failed for: r26v47 */
+    /* JADX WARN: Type inference failed for: r26v48 */
+    /* JADX WARN: Type inference failed for: r26v49 */
+    /* JADX WARN: Type inference failed for: r26v5 */
+    /* JADX WARN: Type inference failed for: r26v50 */
+    /* JADX WARN: Type inference failed for: r26v51 */
+    /* JADX WARN: Type inference failed for: r26v6 */
+    /* JADX WARN: Type inference failed for: r26v65 */
+    /* JADX WARN: Type inference failed for: r26v7 */
+    /* JADX WARN: Type inference failed for: r26v8 */
+    /* JADX WARN: Type inference failed for: r26v9 */
+    /* JADX WARN: Type inference failed for: r2v179 */
+    /* JADX WARN: Type inference failed for: r2v180 */
+    /* JADX WARN: Type inference failed for: r2v182, types: [java.lang.Long] */
+    /* JADX WARN: Type inference failed for: r2v183 */
+    /* JADX WARN: Type inference failed for: r2v184 */
+    /* JADX WARN: Type inference failed for: r2v200 */
+    /* JADX WARN: Type inference failed for: r2v201 */
+    /* JADX WARN: Type inference failed for: r2v207, types: [java.lang.Long] */
+    /* JADX WARN: Type inference failed for: r2v209 */
+    /* JADX WARN: Type inference failed for: r2v377, types: [java.lang.Long] */
+    /* JADX WARN: Type inference failed for: r2v379, types: [java.lang.Long] */
+    /* JADX WARN: Type inference failed for: r2v384 */
+    /* JADX WARN: Type inference failed for: r2v385 */
+    /* JADX WARN: Type inference failed for: r2v387 */
+    /* JADX WARN: Type inference failed for: r2v388 */
+    /* JADX WARN: Type inference failed for: r2v390, types: [java.lang.Long] */
+    /* JADX WARN: Type inference failed for: r2v393 */
+    /* JADX WARN: Type inference failed for: r2v496 */
+    /* JADX WARN: Type inference failed for: r2v502 */
+    /* JADX WARN: Type inference failed for: r2v503 */
+    /* JADX WARN: Type inference failed for: r3v10, types: [org.telegram.ui.ActionBar.ActionBarLayout] */
+    /* JADX WARN: Type inference failed for: r3v233, types: [java.lang.Long] */
+    /* JADX WARN: Type inference failed for: r3v234 */
+    /* JADX WARN: Type inference failed for: r3v243 */
+    /* JADX WARN: Type inference failed for: r3v7, types: [org.telegram.ui.ActionBar.ActionBarLayout] */
+    /* JADX WARN: Type inference failed for: r4v267 */
+    /* JADX WARN: Type inference failed for: r4v268 */
+    /* JADX WARN: Type inference failed for: r4v269 */
+    /* JADX WARN: Type inference failed for: r4v270 */
+    /* JADX WARN: Type inference failed for: r4v6, types: [android.content.Intent] */
+    /* JADX WARN: Type inference failed for: r56v1, types: [java.lang.Integer] */
+    /* JADX WARN: Type inference failed for: r58v0, types: [byte[]] */
+    /* JADX WARN: Type inference failed for: r58v1 */
+    /* JADX WARN: Type inference failed for: r58v10 */
+    /* JADX WARN: Type inference failed for: r58v11 */
+    /* JADX WARN: Type inference failed for: r58v12 */
+    /* JADX WARN: Type inference failed for: r58v13 */
+    /* JADX WARN: Type inference failed for: r58v14 */
+    /* JADX WARN: Type inference failed for: r58v15 */
+    /* JADX WARN: Type inference failed for: r58v16 */
+    /* JADX WARN: Type inference failed for: r58v17 */
+    /* JADX WARN: Type inference failed for: r58v18 */
+    /* JADX WARN: Type inference failed for: r58v19 */
+    /* JADX WARN: Type inference failed for: r58v2 */
+    /* JADX WARN: Type inference failed for: r58v20 */
+    /* JADX WARN: Type inference failed for: r58v21 */
+    /* JADX WARN: Type inference failed for: r58v22 */
+    /* JADX WARN: Type inference failed for: r58v23 */
+    /* JADX WARN: Type inference failed for: r58v24 */
+    /* JADX WARN: Type inference failed for: r58v25 */
+    /* JADX WARN: Type inference failed for: r58v26 */
+    /* JADX WARN: Type inference failed for: r58v27 */
+    /* JADX WARN: Type inference failed for: r58v28 */
+    /* JADX WARN: Type inference failed for: r58v29 */
+    /* JADX WARN: Type inference failed for: r58v3 */
+    /* JADX WARN: Type inference failed for: r58v30 */
+    /* JADX WARN: Type inference failed for: r58v31 */
+    /* JADX WARN: Type inference failed for: r58v32 */
+    /* JADX WARN: Type inference failed for: r58v33 */
+    /* JADX WARN: Type inference failed for: r58v34 */
+    /* JADX WARN: Type inference failed for: r58v35 */
+    /* JADX WARN: Type inference failed for: r58v36 */
+    /* JADX WARN: Type inference failed for: r58v37 */
+    /* JADX WARN: Type inference failed for: r58v38 */
+    /* JADX WARN: Type inference failed for: r58v39 */
+    /* JADX WARN: Type inference failed for: r58v4 */
+    /* JADX WARN: Type inference failed for: r58v48 */
+    /* JADX WARN: Type inference failed for: r58v5 */
+    /* JADX WARN: Type inference failed for: r58v6 */
+    /* JADX WARN: Type inference failed for: r58v7 */
+    /* JADX WARN: Type inference failed for: r58v8 */
+    /* JADX WARN: Type inference failed for: r58v9 */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean X(Intent intent, boolean z10, boolean z11, boolean z12, pf.c cVar, boolean z13, boolean z14) {
+        int[] iArr;
+        int[] iArr2;
+        String str;
+        int i10;
+        String str2;
+        String str3;
+        long j10;
+        long j11;
+        long j12;
+        long j13;
+        long j14;
+        long j15;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        int i21;
+        int i22;
+        int i23;
+        int i24;
+        int i25;
+        int i26;
+        int i27;
+        String str4;
+        int i28;
+        int i29;
+        long[] jArr;
+        String str5;
+        int i30;
+        String str6;
+        int i31;
+        String str7;
+        String str8;
+        int i32;
+        int[] iArr3;
+        boolean z15;
+        boolean z16;
+        ?? r10;
+        ?? r12;
+        ?? r42;
+        s50 s50Var;
+        int i33;
+        int i34;
+        int i35;
+        String str9;
+        org.telegram.ui.ActionBar.n2 lastFragment;
+        int i36;
+        int i37;
+        org.telegram.ui.ActionBar.n2 openSettings;
+        ?? r102;
+        boolean z17;
+        int i38;
+        int i39;
+        int i40;
+        boolean z18;
+        int i41;
+        ArrayList parcelableArrayListExtra;
+        String type;
+        ArrayList arrayList;
+        boolean z19;
+        Pattern compile;
+        int i42;
+        int i43;
+        int i44;
+        int i45;
+        int i46;
+        int i47;
+        int i48;
+        long[] jArr2;
+        int i49;
+        int i50;
+        String str10;
+        int[] iArr4;
+        int i51;
+        int i52;
+        int i53;
+        int i54;
+        int i55;
+        long j16;
+        String str11;
+        String str12;
+        String str13;
+        String str14;
+        String str15;
+        long j17;
+        String str16;
+        String str17;
+        Intent intent2;
+        String str18;
+        String str19;
+        String str20;
+        char c10;
+        int i56;
+        char c11;
+        char c12;
+        char c13;
+        long j18;
+        LaunchActivity launchActivity;
+        String str21;
+        int i57;
+        char c14;
+        int i58;
+        int i59;
+        String str22;
+        int i60;
+        String str23;
+        long j19;
+        String str24;
+        Object obj;
+        String str25;
+        String str26;
+        String str27;
+        String str28;
+        String str29;
+        int i61;
+        int i62;
+        ?? r58;
+        boolean z20;
+        boolean z21;
+        String str30;
+        boolean z22;
+        int[] iArr5;
+        boolean z23;
+        boolean z24;
+        String str31;
+        boolean z25;
+        String str32;
+        String str33;
+        int i63;
+        int i64;
+        boolean z26;
+        int i65;
+        String str34;
+        String str35;
+        String str36;
+        String str37;
+        String str38;
+        String str39;
+        String str40;
+        String str41;
+        String str42;
+        String str43;
+        String str44;
+        ?? r26;
+        String str45;
+        String str46;
+        String str47;
+        ?? r21;
+        String str48;
+        Integer num;
+        String str49;
+        ?? r17;
+        ?? r16;
+        boolean z27;
+        String str50;
+        String str51;
+        String str52;
+        String str53;
+        String str54;
+        String str55;
+        String str56;
+        String str57;
+        String str58;
+        String str59;
+        String str60;
+        String str61;
+        int i66;
+        int i67;
+        String str62;
+        String str63;
+        TL_account.sendConfirmPhoneCode sendconfirmphonecode;
+        String str64;
+        pf.c cVar2;
+        int i68;
+        Cursor query;
+        Throwable th2;
+        int i69;
+        int i70;
+        char c15;
+        int parseInt;
+        String queryParameter;
+        String queryParameter2;
+        byte[] g10;
+        String queryParameter3;
+        String queryParameter4;
+        String str65;
+        boolean z28;
+        String queryParameter5;
+        String queryParameter6;
+        String queryParameter7;
+        Integer parseInt2;
+        int intValue;
+        int intValue2;
+        String str66;
+        Integer num2;
+        String str67;
+        boolean z29;
+        Object obj2;
+        String str68;
+        String str69;
+        HashMap hashMap;
+        String str70;
+        HashMap hashMap2;
+        String str71;
+        long j20;
+        String str72;
+        String str73;
+        Integer parseInt3;
+        char c16;
+        boolean z30;
+        String str74;
+        char c17;
+        char c18;
+        char c19;
+        String queryParameter8;
+        String queryParameter9;
+        String str75;
+        boolean z31;
+        long j21;
+        long j22;
+        int parseInt4;
+        Intent intent3;
+        String str76;
+        int[] iArr6;
+        int i71;
+        int i72;
+        String str77;
+        long j23;
+        int i73;
+        String str78;
+        String str79;
+        int i74;
+        int i75;
+        long j24;
+        String str80;
+        long j25;
+        long j26;
+        Uri uri;
+        char c20;
+        char c21;
+        boolean z32;
+        String str81;
+        boolean z33;
+        int i76;
+        boolean z34;
+        String str82;
+        boolean z35;
+        boolean z36;
+        String str83;
+        String str84;
+        String str85;
+        String str86;
+        boolean z37;
+        String str87;
+        String str88;
+        String str89;
+        String str90;
+        String str91;
+        String str92;
+        String str93;
+        String str94;
+        String str95;
+        String str96;
+        String str97;
+        String str98;
+        String str99;
+        String str100;
+        int i77;
+        int i78;
+        int i79;
+        String str101;
+        String str102;
+        String str103;
+        String str104;
+        String str105;
+        boolean z38;
+        String str106;
+        TLRPC.TL_wallPaper tL_wallPaper;
+        String str107;
+        byte[] bArr;
+        String str108;
+        String str109;
+        Integer num3;
+        Long l4;
+        Integer num4;
+        String str110;
+        String str111;
+        String str112;
+        Long parseLong;
+        int i80;
+        String str113;
+        String str114;
+        String str115;
+        boolean z39;
+        Object obj3;
+        Integer num5;
+        byte[] bArr2;
+        String str116;
+        String str117;
+        String substring;
+        String str118;
+        String substring2;
+        ?? r22;
+        Long l10;
+        Integer num6;
+        Long l11;
+        boolean z40;
+        long j27;
+        String replace;
+        String str119;
+        String str120;
+        boolean z41;
+        String[] split;
+        String substring3;
+        int[] iArr7;
+        String str121;
+        long j28;
+        boolean z42;
+        Pattern compile2;
+        CharSequence charSequenceExtra;
+        Uri uri2;
+        String str122;
+        ?? r13 = this;
+        pf.c cVar3 = cVar;
+        if (ug.b0.T(intent, cVar3) || ug.m1.b0(intent) || AndroidUtilities.handleProxyIntent(r13, intent, true)) {
+            return true;
+        }
+        if (!"android.intent.action.MAIN".equals(intent.getAction())) {
+            if (PhotoViewer.D1() && PhotoViewer.t1().R1()) {
+                PhotoViewer.t1().G0(false, true);
+            }
+            ei.vb.w();
+        }
+        ig.l0 l0Var = r13.q1;
+        if (l0Var != null) {
+            l0Var.run(Boolean.TRUE);
+            r13.q1 = null;
+        }
+        int flags = intent.getFlags();
+        String action = intent.getAction();
+        int intExtra = intent.getIntExtra("currentAccount", UserConfig.selectedAccount);
+        int[] iArr8 = {intExtra};
+        r13.O0(intExtra);
+        boolean z43 = action != null && action.equals("voip");
+        boolean z44 = action != null && action.equals("voip_answer");
+        if ((z43 || z44) && !z10 && ApplicationLoader.mainInterfacePaused) {
+            r13.h1 = true;
+        }
+        if (z12 || !(AndroidUtilities.needShowPasscode(true) || SharedConfig.isWaitingForPasscodeEnter)) {
+            iArr = iArr8;
+        } else {
+            iArr = iArr8;
+            r13.K0(true, false, -1, -1, null);
+            UserConfig.getInstance(r13.O).saveConfig(false);
+            if (!z43 && !z44) {
+                r13.L0 = intent;
+                r13.M0 = z10;
+                r13.N0 = z11;
+                return false;
+            }
+        }
+        boolean booleanExtra = intent.getBooleanExtra("force_not_internal_apps", false);
+        boolean booleanExtra2 = intent.getBooleanExtra("force_request", false);
+        r13.U = null;
+        r13.R = null;
+        r13.S = null;
+        r13.T = null;
+        r13.V = null;
+        r13.Z = null;
+        r13.Y = null;
+        r13.W = null;
+        r13.X = null;
+        r13.a0 = null;
+        r13.b0 = null;
+        r13.h0 = null;
+        r13.i0 = null;
+        r13.j0 = null;
+        if ((1048576 & flags) == 0 && intent.getAction() != null && !z11) {
+            if ("android.intent.action.SEND".equals(intent.getAction())) {
+                if (!SharedConfig.directShare || intent.getExtras() == null) {
+                    iArr7 = iArr;
+                    str121 = "android.intent.action.MAIN";
+                } else {
+                    iArr7 = iArr;
+                    str121 = "android.intent.action.MAIN";
+                    j28 = intent.getExtras().getLong("dialogId", 0L);
+                    if (j28 == 0) {
+                        try {
+                            String string = intent.getExtras().getString("android.intent.extra.shortcut.ID");
+                            if (string != null) {
+                                List e = g0.f.e(ApplicationLoader.applicationContext);
+                                int size = e.size();
+                                for (int i81 = 0; i81 < size; i81++) {
+                                    g0.c cVar4 = (g0.c) e.get(i81);
+                                    if (string.equals(cVar4.b())) {
+                                        Bundle extras = cVar4.c().getExtras();
+                                        j28 = extras.getLong("dialogId", 0L);
+                                        str122 = extras.getString("hash", null);
+                                        break;
+                                    }
+                                }
+                            }
+                        } catch (Throwable th3) {
+                            FileLog.e(th3);
+                        }
+                        str122 = null;
+                    } else {
+                        str122 = intent.getExtras().getString("hash", null);
+                    }
+                    String str123 = SharedConfig.directShareHash;
+                    if (str123 != null) {
+                    }
+                }
+                j28 = 0;
+                String type2 = intent.getType();
+                if (type2 == null || !type2.equals("text/x-vcard")) {
+                    String stringExtra = intent.getStringExtra("android.intent.extra.TEXT");
+                    if (stringExtra == null && (charSequenceExtra = intent.getCharSequenceExtra("android.intent.extra.TEXT")) != null) {
+                        stringExtra = charSequenceExtra.toString();
+                    }
+                    String stringExtra2 = intent.getStringExtra("android.intent.extra.SUBJECT");
+                    if (!TextUtils.isEmpty(stringExtra)) {
+                        if ((stringExtra.startsWith("http://") || stringExtra.startsWith("https://")) && !TextUtils.isEmpty(stringExtra2)) {
+                            stringExtra = a1.g.C(stringExtra2, "\n", stringExtra);
+                        }
+                        r13.T = stringExtra;
+                    } else if (!TextUtils.isEmpty(stringExtra2)) {
+                        r13.T = stringExtra2;
+                    }
+                    Parcelable parcelableExtra = intent.getParcelableExtra("android.intent.extra.STREAM");
+                    if (parcelableExtra != null) {
+                        boolean z45 = parcelableExtra instanceof Uri;
+                        Parcelable parcelable = parcelableExtra;
+                        if (!z45) {
+                            parcelable = Uri.parse(parcelableExtra.toString());
+                        }
+                        Uri uri3 = (Uri) parcelable;
+                        boolean z46 = uri3 != null && AndroidUtilities.isInternalUri(uri3);
+                        if (!z46 && uri3 != null) {
+                            if ((type2 == null || !type2.startsWith("image/")) && !uri3.toString().toLowerCase().endsWith(".jpg")) {
+                                String uri4 = uri3.toString();
+                                if (j28 == 0 && uri4 != null) {
+                                    if (BuildVars.LOGS_ENABLED) {
+                                        FileLog.d("export path = ".concat(uri4));
+                                    }
+                                    Set<String> set = MessagesController.getInstance(iArr7[0]).exportUri;
+                                    String fixFileName = FileLoader.fixFileName(MediaController.getFileName(uri3));
+                                    Iterator<String> it = set.iterator();
+                                    while (it.hasNext()) {
+                                        try {
+                                            compile2 = Pattern.compile(it.next());
+                                        } catch (Exception e7) {
+                                            FileLog.e(e7);
+                                        }
+                                        if (!compile2.matcher(uri4).find() && !compile2.matcher(fixFileName).find()) {
+                                        }
+                                        r13.X = uri3;
+                                    }
+                                    if (r13.X == null && uri4.startsWith("content://com.kakao.talk") && uri4.endsWith("KakaoTalkChats.txt")) {
+                                        r13.X = uri3;
+                                    }
+                                }
+                                if (r13.X == null) {
+                                    String path = AndroidUtilities.getPath(uri3);
+                                    if (!BuildVars.NO_SCOPED_STORAGE) {
+                                        path = MediaController.copyFileToCache(uri3, "file");
+                                    }
+                                    if (path != null) {
+                                        if (path.startsWith("file:")) {
+                                            path = path.replace("file://", "");
+                                        }
+                                        if (type2 != null && type2.startsWith("video/")) {
+                                            r13.R = path;
+                                        } else if (type2 != null && type2.startsWith("audio/ogg") && type2.contains("codecs=opus") && MediaController.isOpusFile(path) == 1) {
+                                            r13.S = path;
+                                        } else {
+                                            if (r13.V == null) {
+                                                r13.V = new ArrayList();
+                                                r13.Z = new ArrayList();
+                                            }
+                                            r13.V.add(path);
+                                            r13.Z.add(uri3.toString());
+                                        }
+                                    } else {
+                                        if (r13.W == null) {
+                                            r13.W = new ArrayList();
+                                        }
+                                        r13.W.add(uri3);
+                                        r13.Y = type2;
+                                    }
+                                }
+                            } else {
+                                if (r13.U == null) {
+                                    r13.U = new ArrayList();
+                                }
+                                SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+                                sendingMediaInfo.uri = uri3;
+                                r13.U.add(sendingMediaInfo);
+                            }
+                        }
+                        z42 = z46;
+                    }
+                } else {
+                    try {
+                        uri2 = (Uri) intent.getExtras().get("android.intent.extra.STREAM");
+                    } catch (Exception e10) {
+                        e = e10;
+                    }
+                    if (uri2 != null) {
+                        ArrayList<TLRPC.User> loadVCardFromStream = AndroidUtilities.loadVCardFromStream(uri2, r13.O, false, null, null);
+                        r13.a0 = loadVCardFromStream;
+                        try {
+                            if (loadVCardFromStream.size() > 5) {
+                                r13.a0 = null;
+                                ArrayList arrayList2 = new ArrayList();
+                                r13.W = arrayList2;
+                                arrayList2.add(uri2);
+                                r13.Y = type2;
+                            } else {
+                                r13.b0 = uri2;
+                            }
+                            z42 = false;
+                        } catch (Exception e11) {
+                            e = e11;
+                            FileLog.e(e);
+                            z42 = true;
+                            if (z42) {
+                            }
+                            str2 = " ";
+                            str3 = "message_id";
+                            str = str121;
+                            iArr2 = iArr7;
+                            j11 = j28;
+                            str4 = null;
+                            i28 = -1;
+                            i29 = -1;
+                            j10 = 0;
+                            j12 = 0;
+                            jArr = null;
+                            str5 = null;
+                            j13 = 0;
+                            i11 = 0;
+                            i12 = 0;
+                            i13 = 0;
+                            i14 = 0;
+                            i15 = 0;
+                            i16 = 0;
+                            i17 = 0;
+                            str6 = null;
+                            i18 = 0;
+                            j14 = 0;
+                            i19 = 0;
+                            i20 = 0;
+                            i21 = 0;
+                            i22 = 0;
+                            i23 = 0;
+                            i40 = 0;
+                            i31 = -1;
+                            j15 = 0;
+                            i24 = 0;
+                            i25 = 0;
+                            i26 = 0;
+                            i27 = 0;
+                            str8 = null;
+                            str7 = null;
+                            i32 = i40;
+                            if (UserConfig.getInstance(r13.O).isClientActivated()) {
+                            }
+                            iArr3 = iArr2;
+                            z15 = false;
+                            z16 = z10;
+                            r10 = i16;
+                            r12 = z15;
+                            if (r10 == 0) {
+                            }
+                            if (z44) {
+                            }
+                            if (i14 == 0) {
+                            }
+                            r42.setAction(r12);
+                            return r10;
+                        }
+                    } else {
+                        z42 = true;
+                    }
+                }
+                if (z42) {
+                    Toast.makeText((Context) r13, "Unsupported content", 0).show();
+                }
+                str2 = " ";
+                str3 = "message_id";
+                str = str121;
+                iArr2 = iArr7;
+                j11 = j28;
+                str4 = null;
+                i28 = -1;
+                i29 = -1;
+                j10 = 0;
+                j12 = 0;
+                jArr = null;
+                str5 = null;
+                j13 = 0;
+                i11 = 0;
+                i12 = 0;
+                i13 = 0;
+                i14 = 0;
+                i15 = 0;
+                i16 = 0;
+                i17 = 0;
+                str6 = null;
+                i18 = 0;
+                j14 = 0;
+                i19 = 0;
+                i20 = 0;
+                i21 = 0;
+                i22 = 0;
+                i23 = 0;
+                i40 = 0;
+                i31 = -1;
+                j15 = 0;
+                i24 = 0;
+                i25 = 0;
+                i26 = 0;
+                i27 = 0;
+            } else {
+                int[] iArr9 = iArr;
+                if ("org.telegram.messenger.CREATE_STICKER_PACK".equals(intent.getAction())) {
+                    try {
+                        r13.h0 = intent.getParcelableArrayListExtra("android.intent.extra.STREAM");
+                        r13.i0 = intent.getStringArrayListExtra("STICKER_EMOJIS");
+                        r13.j0 = intent.getStringExtra("IMPORTER");
+                    } catch (Throwable th4) {
+                        FileLog.e(th4);
+                        r13.h0 = null;
+                        r13.i0 = null;
+                        r13.j0 = null;
+                    }
+                    str2 = " ";
+                    str3 = "message_id";
+                    str = "android.intent.action.MAIN";
+                    iArr2 = iArr9;
+                    j10 = 0;
+                    i10 = 0;
+                } else {
+                    if (!"android.intent.action.SEND_MULTIPLE".equals(intent.getAction())) {
+                        if ("android.intent.action.VIEW".equals(intent.getAction())) {
+                            Uri data = intent.getData();
+                            if (new kb0(r13, iArr9[0], cVar3, z14).g(data)) {
+                                if (!intent.hasExtra("actions.fulfillment.extra.ACTION_TOKEN")) {
+                                    return true;
+                                }
+                                com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l(6);
+                                String stringExtra3 = intent.getStringExtra("actions.fulfillment.extra.ACTION_TOKEN");
+                                n6.l.h(stringExtra3);
+                                lVar.f = stringExtra3;
+                                lVar.e = "http://schema.org/CompletedActionStatus";
+                                q9.d.b(r13).a(lVar.i());
+                                intent.removeExtra("actions.fulfillment.extra.ACTION_TOKEN");
+                                return true;
+                            }
+                            if (data != null) {
+                                String scheme = data.getScheme();
+                                if (scheme != null) {
+                                    switch (scheme.hashCode()) {
+                                        case -1140801766:
+                                            if (scheme.equals("tonsite")) {
+                                                c15 = 0;
+                                                break;
+                                            }
+                                            c15 = 65535;
+                                            break;
+                                        case 3699:
+                                            if (scheme.equals("tg")) {
+                                                c15 = 1;
+                                                break;
+                                            }
+                                            c15 = 65535;
+                                            break;
+                                        case 3213448:
+                                            if (scheme.equals("http")) {
+                                                c15 = 2;
+                                                break;
+                                            }
+                                            c15 = 65535;
+                                            break;
+                                        case 99617003:
+                                            if (scheme.equals("https")) {
+                                                c15 = 3;
+                                                break;
+                                            }
+                                            c15 = 65535;
+                                            break;
+                                        default:
+                                            c15 = 65535;
+                                            break;
+                                    }
+                                    str16 = scheme;
+                                    switch (c15) {
+                                        case 0:
+                                            pf.d.s(this, data);
+                                            intent.setAction(null);
+                                            if (cVar != null) {
+                                                cVar.b();
+                                                return false;
+                                            }
+                                            return false;
+                                        case 1:
+                                            String uri5 = data.toString();
+                                            if (uri5.startsWith("tg:premium_offer") || uri5.startsWith("tg://premium_offer")) {
+                                                str19 = " ";
+                                                str17 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                c10 = 15;
+                                                i56 = 1;
+                                                c11 = '\b';
+                                                c12 = 14;
+                                                c13 = 7;
+                                                j18 = 0;
+                                                str18 = "phone";
+                                                launchActivity = this;
+                                                AndroidUtilities.runOnUIThread(new b80(4, launchActivity, uri5));
+                                                intent2 = intent;
+                                                str20 = null;
+                                                break;
+                                            } else {
+                                                if (uri5.startsWith("tg:resolve")) {
+                                                    str19 = " ";
+                                                } else if (uri5.startsWith("tg://resolve")) {
+                                                    str19 = " ";
+                                                } else {
+                                                    if (uri5.startsWith("tg:invoice") || uri5.startsWith("tg://invoice")) {
+                                                        launchActivity = this;
+                                                        intent2 = intent;
+                                                        str44 = Uri.parse(uri5.replace("tg:invoice", "tg://invoice")).getQueryParameter("slug");
+                                                        str23 = "message_id";
+                                                        str22 = "phone";
+                                                        str19 = " ";
+                                                        str24 = "android.intent.action.MAIN";
+                                                        iArr5 = iArr9;
+                                                        str26 = str16;
+                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                        str21 = null;
+                                                        i66 = -1;
+                                                        str61 = null;
+                                                        str59 = null;
+                                                        str58 = null;
+                                                        str57 = null;
+                                                        str56 = null;
+                                                        str55 = null;
+                                                        str54 = null;
+                                                        str53 = null;
+                                                        str52 = null;
+                                                        str51 = null;
+                                                        str50 = null;
+                                                        z27 = false;
+                                                        r16 = null;
+                                                        r17 = null;
+                                                        str49 = null;
+                                                        num = null;
+                                                        str48 = null;
+                                                        r21 = null;
+                                                        str47 = null;
+                                                        str46 = null;
+                                                        str45 = null;
+                                                        r26 = null;
+                                                    } else if (uri5.startsWith("tg:stargift_auction") || uri5.startsWith("tg://stargift_auction")) {
+                                                        launchActivity = this;
+                                                        intent2 = intent;
+                                                        str33 = Uri.parse(uri5.replace("tg:stargift_auction", "tg://stargift_auction")).getQueryParameter("slug");
+                                                        str23 = "message_id";
+                                                        str22 = "phone";
+                                                        str19 = " ";
+                                                        str24 = "android.intent.action.MAIN";
+                                                        iArr5 = iArr9;
+                                                        str26 = str16;
+                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                        str21 = null;
+                                                        i66 = -1;
+                                                        str61 = null;
+                                                        str59 = null;
+                                                        str58 = null;
+                                                        str57 = null;
+                                                        str56 = null;
+                                                        str55 = null;
+                                                        str54 = null;
+                                                        str53 = null;
+                                                        str52 = null;
+                                                        str51 = null;
+                                                        str50 = null;
+                                                        z27 = false;
+                                                        r16 = null;
+                                                        r17 = null;
+                                                        str49 = null;
+                                                        num = null;
+                                                        str48 = null;
+                                                        r21 = null;
+                                                        str47 = null;
+                                                        str46 = null;
+                                                        str45 = null;
+                                                        r26 = null;
+                                                        str44 = null;
+                                                        str43 = null;
+                                                        str42 = null;
+                                                        str41 = null;
+                                                        str40 = null;
+                                                        j18 = 0;
+                                                        str39 = null;
+                                                        str38 = null;
+                                                        str37 = null;
+                                                        str36 = null;
+                                                        str35 = null;
+                                                        str34 = null;
+                                                        i65 = 0;
+                                                        z26 = false;
+                                                        i64 = 0;
+                                                        i63 = 0;
+                                                        str32 = null;
+                                                        z25 = false;
+                                                        str31 = null;
+                                                        z24 = false;
+                                                        z23 = false;
+                                                        z22 = false;
+                                                        str30 = null;
+                                                        z21 = false;
+                                                        z20 = false;
+                                                        r58 = null;
+                                                        i54 = 0;
+                                                        i62 = 0;
+                                                        i19 = 0;
+                                                        i61 = 0;
+                                                        i55 = 0;
+                                                        i20 = 0;
+                                                        i21 = 0;
+                                                        i22 = 0;
+                                                        i23 = 0;
+                                                        str29 = null;
+                                                        str12 = null;
+                                                        str13 = null;
+                                                        str28 = null;
+                                                        str27 = null;
+                                                        str14 = null;
+                                                        str15 = null;
+                                                        str25 = null;
+                                                        obj = null;
+                                                        j19 = 0;
+                                                        j17 = 0;
+                                                        i60 = 4;
+                                                        i59 = -1;
+                                                        i58 = 6;
+                                                        c14 = 2;
+                                                        i57 = 1;
+                                                        if (intent2.hasExtra(str60)) {
+                                                            i67 = i66;
+                                                            str62 = str59;
+                                                            str63 = str56;
+                                                        } else {
+                                                            i67 = i66;
+                                                            if (UserConfig.getInstance(launchActivity.O).isClientActivated()) {
+                                                                str62 = str59;
+                                                                if ("tg".equals(str26) && str62 == null) {
+                                                                    i70 = i57;
+                                                                    str63 = str56;
+                                                                    com.google.firebase.messaging.l lVar2 = new com.google.firebase.messaging.l(i58);
+                                                                    String stringExtra4 = intent2.getStringExtra(str60);
+                                                                    n6.l.h(stringExtra4);
+                                                                    lVar2.f = stringExtra4;
+                                                                    lVar2.e = i70 == 0 ? "http://schema.org/CompletedActionStatus" : "http://schema.org/FailedActionStatus";
+                                                                    q9.d.b(launchActivity).a(lVar2.i());
+                                                                    intent2.removeExtra(str60);
+                                                                }
+                                                            } else {
+                                                                str62 = str59;
+                                                            }
+                                                            i70 = 0;
+                                                            str63 = str56;
+                                                            com.google.firebase.messaging.l lVar22 = new com.google.firebase.messaging.l(i58);
+                                                            String stringExtra42 = intent2.getStringExtra(str60);
+                                                            n6.l.h(stringExtra42);
+                                                            lVar22.f = stringExtra42;
+                                                            lVar22.e = i70 == 0 ? "http://schema.org/CompletedActionStatus" : "http://schema.org/FailedActionStatus";
+                                                            q9.d.b(launchActivity).a(lVar22.i());
+                                                            intent2.removeExtra(str60);
+                                                        }
+                                                        if (str46 == null || UserConfig.getInstance(launchActivity.O).isClientActivated()) {
+                                                            if (str61 == null || str57 != null) {
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var.j();
+                                                                b2Var.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings;
+                                                                i51 = 0;
+                                                                tL_codeSettings.allow_flashcall = false;
+                                                                boolean hasServices = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings.allow_firebase = hasServices;
+                                                                tL_codeSettings.allow_app_hash = hasServices;
+                                                                SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                    sharedPreferences.edit().remove("sms_hash").apply();
+                                                                } else {
+                                                                    sharedPreferences.edit().putString("sms_hash", BuildVars.getSmsHash()).apply();
+                                                                }
+                                                                Bundle bundle = new Bundle();
+                                                                bundle.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity2 = launchActivity;
+                                                                String str124 = str61;
+                                                                r13 = launchActivity2;
+                                                                connectionsManager.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var, str124, bundle, sendconfirmphonecode, 8), 2);
+                                                            } else if (str58 == null && str40 == null && str52 == null && str63 == null && str55 == null && str51 == null && str54 == null && str48 == null && str41 == null && !z21 && r21 == null && str62 == null && str47 == null && str46 == null && r26 == null && str44 == null && str43 == null && r17 == null && str42 == null && str45 == null && str31 == null && str33 == null && str32 == null) {
+                                                                try {
+                                                                    query = launchActivity.getContentResolver().query(intent2.getData(), null, null, null, null);
+                                                                    try {
+                                                                    } catch (Exception e12) {
+                                                                        e = e12;
+                                                                        FileLog.e(e);
+                                                                        cVar3 = cVar;
+                                                                        r13 = launchActivity;
+                                                                        iArr4 = iArr5;
+                                                                        i52 = i62;
+                                                                        i53 = i61;
+                                                                        str11 = str29;
+                                                                        str = str24;
+                                                                        str2 = str19;
+                                                                        j16 = j19;
+                                                                        str10 = str23;
+                                                                        i51 = 0;
+                                                                        j13 = j16;
+                                                                        i24 = i52;
+                                                                        i11 = i51;
+                                                                        i12 = i11;
+                                                                        i13 = i12;
+                                                                        i14 = i13;
+                                                                        i15 = i14;
+                                                                        i16 = i15;
+                                                                        i18 = i16;
+                                                                        int i82 = i18;
+                                                                        i25 = i82 == true ? 1 : 0;
+                                                                        i17 = i53;
+                                                                        str5 = str11;
+                                                                        i26 = i54;
+                                                                        i27 = i55;
+                                                                        str4 = str12;
+                                                                        str8 = str13;
+                                                                        str7 = str14;
+                                                                        str6 = str15;
+                                                                        j12 = j17;
+                                                                        iArr2 = iArr4;
+                                                                        str3 = str10;
+                                                                        j11 = 0;
+                                                                        i28 = -1;
+                                                                        i29 = -1;
+                                                                        j10 = 0;
+                                                                        jArr = null;
+                                                                        j14 = 0;
+                                                                        i31 = -1;
+                                                                        j15 = 0;
+                                                                        i32 = i82;
+                                                                        if (UserConfig.getInstance(r13.O).isClientActivated()) {
+                                                                        }
+                                                                        iArr3 = iArr2;
+                                                                        z15 = false;
+                                                                        z16 = z10;
+                                                                        r10 = i16;
+                                                                        r12 = z15;
+                                                                        if (r10 == 0) {
+                                                                        }
+                                                                        if (z44) {
+                                                                        }
+                                                                        if (i14 == 0) {
+                                                                        }
+                                                                        r42.setAction(r12);
+                                                                        return r10;
+                                                                    }
+                                                                } catch (Exception e13) {
+                                                                    e = e13;
+                                                                }
+                                                                if (query != null) {
+                                                                    try {
+                                                                        if (query.moveToFirst()) {
+                                                                            long j29 = query.getLong(query.getColumnIndex("data4"));
+                                                                            int intValue3 = Utilities.parseInt((CharSequence) query.getString(query.getColumnIndex("account_name"))).intValue();
+                                                                            int i83 = i60;
+                                                                            int i84 = i59;
+                                                                            while (true) {
+                                                                                int i85 = i59;
+                                                                                if (i84 < i83) {
+                                                                                    if (i84 == i85) {
+                                                                                        try {
+                                                                                            i69 = iArr5[0];
+                                                                                        } catch (Throwable th5) {
+                                                                                            th = th5;
+                                                                                            th2 = th;
+                                                                                            try {
+                                                                                                query.close();
+                                                                                                throw th2;
+                                                                                            } catch (Throwable th6) {
+                                                                                                th2.addSuppressed(th6);
+                                                                                                throw th2;
+                                                                                            }
+                                                                                        }
+                                                                                    } else {
+                                                                                        i69 = i84;
+                                                                                    }
+                                                                                    if (i84 == i85 && MessagesStorage.getInstance(i69).containsLocalDialog(j29)) {
+                                                                                        break;
+                                                                                    }
+                                                                                    if (UserConfig.getInstance(i69).getClientUserId() == intValue3) {
+                                                                                        break;
+                                                                                    } else {
+                                                                                        i84++;
+                                                                                        i59 = i85;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            NotificationCenter.getInstance(iArr5[0]).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                                                                            try {
+                                                                                String string2 = query.getString(query.getColumnIndex("mimetype"));
+                                                                                if (TextUtils.equals(string2, "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call")) {
+                                                                                    j19 = j29;
+                                                                                    i61 = i57;
+                                                                                } else {
+                                                                                    j19 = j29;
+                                                                                    if (TextUtils.equals(string2, "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call.video")) {
+                                                                                        i55 = i57;
+                                                                                    }
+                                                                                }
+                                                                                if (query != null) {
+                                                                                    query.close();
+                                                                                }
+                                                                                cVar3 = cVar;
+                                                                                r13 = launchActivity;
+                                                                                iArr4 = iArr5;
+                                                                                i52 = i62;
+                                                                                i53 = i61;
+                                                                                str11 = str29;
+                                                                                str = str24;
+                                                                                str2 = str19;
+                                                                                j16 = j19;
+                                                                                str10 = str23;
+                                                                                i51 = 0;
+                                                                            } catch (Throwable th7) {
+                                                                                th2 = th7;
+                                                                                j19 = j29;
+                                                                                query.close();
+                                                                                throw th2;
+                                                                            }
+                                                                        }
+                                                                    } catch (Throwable th8) {
+                                                                        th = th8;
+                                                                    }
+                                                                }
+                                                                if (query != null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                r13 = launchActivity;
+                                                                iArr4 = iArr5;
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                j16 = j19;
+                                                                str10 = str23;
+                                                                i51 = 0;
+                                                            } else {
+                                                                if (str54 == null || !str54.startsWith("@")) {
+                                                                    str64 = str19;
+                                                                } else {
+                                                                    str64 = str19;
+                                                                    str54 = str64.concat(str54);
+                                                                }
+                                                                if (str58 == null || TextUtils.isEmpty(str21)) {
+                                                                    String str125 = str21;
+                                                                    cVar2 = cVar;
+                                                                    i68 = 0;
+                                                                    if (str55 == null || TextUtils.isEmpty(str125)) {
+                                                                        str2 = str64;
+                                                                        r13 = launchActivity;
+                                                                        iArr4 = iArr5;
+                                                                        str = str24;
+                                                                        str10 = str23;
+                                                                        r13.B0(iArr5[0], str58, str40, str52, str63, str53, str50, str49, str37, str54, str55, str51, str27, z27, r16, r17, str28, num, str48, r21, str47, str62, str46, str45, r26, str44, str43, str42, str41, z21, str34, 0, i67, str39, str38, str25, str36, str35, cVar, booleanExtra, i65, z26, i64, i63, str33, str32, z25, str31, z24, z23, z14, z22, booleanExtra2, str30, obj, z20, r58);
+                                                                        cVar3 = cVar;
+                                                                    } else {
+                                                                        launchActivity.n0(iArr5[0], str55, str125, cVar2);
+                                                                    }
+                                                                } else {
+                                                                    i68 = 0;
+                                                                    cVar2 = cVar;
+                                                                    launchActivity.o0(iArr5[0], str58, str21, cVar2);
+                                                                }
+                                                                str2 = str64;
+                                                                cVar3 = cVar2;
+                                                                r13 = launchActivity;
+                                                                i51 = i68;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str10 = str23;
+                                                            }
+                                                            i52 = i62;
+                                                            i53 = i61;
+                                                            str11 = str29;
+                                                            j16 = j19;
+                                                        } else {
+                                                            cVar3 = cVar;
+                                                            r13 = launchActivity;
+                                                            iArr4 = iArr5;
+                                                            str = str24;
+                                                            str2 = str19;
+                                                            str10 = str23;
+                                                        }
+                                                        i51 = 0;
+                                                        i52 = i62;
+                                                        i53 = i61;
+                                                        str11 = str29;
+                                                        j16 = j19;
+                                                    } else if (uri5.startsWith("tg:nft") || uri5.startsWith("tg://nft")) {
+                                                        launchActivity = this;
+                                                        intent2 = intent;
+                                                        str43 = Uri.parse(uri5.replace("tg:nft", "tg://nft")).getQueryParameter("slug");
+                                                        str23 = "message_id";
+                                                        str22 = "phone";
+                                                        str19 = " ";
+                                                        str24 = "android.intent.action.MAIN";
+                                                        iArr5 = iArr9;
+                                                        str26 = str16;
+                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                        str21 = null;
+                                                        i66 = -1;
+                                                        str61 = null;
+                                                        str59 = null;
+                                                        str58 = null;
+                                                        str57 = null;
+                                                        str56 = null;
+                                                        str55 = null;
+                                                        str54 = null;
+                                                        str53 = null;
+                                                        str52 = null;
+                                                        str51 = null;
+                                                        str50 = null;
+                                                        z27 = false;
+                                                        r16 = null;
+                                                        r17 = null;
+                                                        str49 = null;
+                                                        num = null;
+                                                        str48 = null;
+                                                        r21 = null;
+                                                        str47 = null;
+                                                        str46 = null;
+                                                        str45 = null;
+                                                        r26 = null;
+                                                        str44 = null;
+                                                        str42 = null;
+                                                        str41 = null;
+                                                        str40 = null;
+                                                        j18 = 0;
+                                                        str39 = null;
+                                                        str38 = null;
+                                                        str37 = null;
+                                                        str36 = null;
+                                                        str35 = null;
+                                                        str34 = null;
+                                                        i65 = 0;
+                                                        z26 = false;
+                                                        i64 = 0;
+                                                        i63 = 0;
+                                                        str33 = null;
+                                                        str32 = null;
+                                                        z25 = false;
+                                                        str31 = null;
+                                                        z24 = false;
+                                                        z23 = false;
+                                                        z22 = false;
+                                                        str30 = null;
+                                                        z21 = false;
+                                                        z20 = false;
+                                                        r58 = null;
+                                                        i54 = 0;
+                                                        i62 = 0;
+                                                        i19 = 0;
+                                                        i61 = 0;
+                                                        i55 = 0;
+                                                        i20 = 0;
+                                                        i21 = 0;
+                                                        i22 = 0;
+                                                        i23 = 0;
+                                                        str29 = null;
+                                                        str12 = null;
+                                                        str13 = null;
+                                                        str28 = null;
+                                                        str27 = null;
+                                                        str14 = null;
+                                                        str15 = null;
+                                                        str25 = null;
+                                                        obj = null;
+                                                        j19 = 0;
+                                                        j17 = 0;
+                                                        i60 = 4;
+                                                        i59 = -1;
+                                                        i58 = 6;
+                                                        c14 = 2;
+                                                        i57 = 1;
+                                                        if (intent2.hasExtra(str60)) {
+                                                        }
+                                                        if (str46 == null) {
+                                                        }
+                                                        if (str61 == null) {
+                                                        }
+                                                        cVar3 = cVar;
+                                                        iArr4 = iArr5;
+                                                        str = str24;
+                                                        str2 = str19;
+                                                        str10 = str23;
+                                                        org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                        b2Var2.j();
+                                                        b2Var2.show();
+                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                        sendconfirmphonecode.hash = str57;
+                                                        TLRPC.TL_codeSettings tL_codeSettings2 = new TLRPC.TL_codeSettings();
+                                                        sendconfirmphonecode.settings = tL_codeSettings2;
+                                                        i51 = 0;
+                                                        tL_codeSettings2.allow_flashcall = false;
+                                                        boolean hasServices2 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                        tL_codeSettings2.allow_firebase = hasServices2;
+                                                        tL_codeSettings2.allow_app_hash = hasServices2;
+                                                        SharedPreferences sharedPreferences2 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                        }
+                                                        Bundle bundle2 = new Bundle();
+                                                        bundle2.putString(str22, str61);
+                                                        ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(launchActivity.O);
+                                                        LaunchActivity launchActivity22 = launchActivity;
+                                                        String str1242 = str61;
+                                                        r13 = launchActivity22;
+                                                        connectionsManager2.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2, str1242, bundle2, sendconfirmphonecode, 8), 2);
+                                                        i52 = i62;
+                                                        i53 = i61;
+                                                        str11 = str29;
+                                                        j16 = j19;
+                                                    } else {
+                                                        if (uri5.startsWith("tg:contact") || uri5.startsWith("tg://contact")) {
+                                                            launchActivity = this;
+                                                            Uri parse = Uri.parse(uri5.replace("tg:contact", "tg://contact"));
+                                                            String queryParameter10 = parse.getQueryParameter("token");
+                                                            intent2 = intent;
+                                                            str21 = parse.getQueryParameter("free");
+                                                            str23 = "message_id";
+                                                            str22 = "phone";
+                                                            str19 = " ";
+                                                            str24 = "android.intent.action.MAIN";
+                                                            iArr5 = iArr9;
+                                                            str26 = str16;
+                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                            i66 = -1;
+                                                            str61 = null;
+                                                            str58 = null;
+                                                            str57 = null;
+                                                            str56 = null;
+                                                            str54 = null;
+                                                            str53 = null;
+                                                            str52 = null;
+                                                            str51 = null;
+                                                            str50 = null;
+                                                            z27 = false;
+                                                            r16 = null;
+                                                            r17 = null;
+                                                            str49 = null;
+                                                            num = null;
+                                                            str48 = null;
+                                                            r21 = null;
+                                                            str47 = null;
+                                                            str46 = null;
+                                                            str45 = null;
+                                                            r26 = null;
+                                                            str44 = null;
+                                                            str43 = null;
+                                                            str42 = null;
+                                                            str41 = null;
+                                                            str40 = null;
+                                                            j18 = 0;
+                                                            str39 = null;
+                                                            str38 = null;
+                                                            str37 = null;
+                                                            str36 = null;
+                                                            str35 = null;
+                                                            str34 = null;
+                                                            i65 = 0;
+                                                            z26 = false;
+                                                            i64 = 0;
+                                                            i63 = 0;
+                                                            str33 = null;
+                                                            str32 = null;
+                                                            z25 = false;
+                                                            str31 = null;
+                                                            z24 = false;
+                                                            z23 = false;
+                                                            z22 = false;
+                                                            str30 = null;
+                                                            z21 = false;
+                                                            z20 = false;
+                                                            r58 = null;
+                                                            i54 = 0;
+                                                            i62 = 0;
+                                                            i19 = 0;
+                                                            i61 = 0;
+                                                            i55 = 0;
+                                                            i20 = 0;
+                                                            i21 = 0;
+                                                            i22 = 0;
+                                                            i23 = 0;
+                                                            str29 = null;
+                                                            str12 = null;
+                                                            str13 = null;
+                                                            str28 = null;
+                                                            str27 = null;
+                                                            str14 = null;
+                                                            str15 = null;
+                                                            str25 = null;
+                                                            obj = null;
+                                                            j19 = 0;
+                                                            j17 = 0;
+                                                            i60 = 4;
+                                                            i59 = -1;
+                                                            i58 = 6;
+                                                            c14 = 2;
+                                                            i57 = 1;
+                                                            str55 = queryParameter10;
+                                                        } else if (uri5.startsWith("tg:privatepost") || uri5.startsWith("tg://privatepost")) {
+                                                            launchActivity = this;
+                                                            Uri parse2 = Uri.parse(uri5.replace("tg:privatepost", "tg://telegram.org").replace("tg://privatepost", "tg://telegram.org"));
+                                                            Integer parseInt5 = Utilities.parseInt((CharSequence) parse2.getQueryParameter("post"));
+                                                            Long parseLong2 = Utilities.parseLong(parse2.getQueryParameter("channel"));
+                                                            if (parseInt5.intValue() != 0) {
+                                                                j20 = 0;
+                                                                break;
+                                                            } else {
+                                                                j20 = 0;
+                                                            }
+                                                            parseLong2 = null;
+                                                            parseInt5 = null;
+                                                            Long parseLong3 = Utilities.parseLong(parse2.getQueryParameter("thread"));
+                                                            long longValue = parseLong3.longValue();
+                                                            ?? r23 = parseLong3;
+                                                            if (longValue == j20) {
+                                                                r23 = 0;
+                                                            }
+                                                            if (r23 == 0) {
+                                                                r23 = Utilities.parseLong(parse2.getQueryParameter("topic"));
+                                                                if (r23.longValue() == j20) {
+                                                                    str72 = "comment";
+                                                                    str73 = null;
+                                                                    parseInt3 = Utilities.parseInt((CharSequence) parse2.getQueryParameter(str72));
+                                                                    intent2 = intent;
+                                                                    if (parseInt3.intValue() != 0) {
+                                                                        r17 = parseLong2;
+                                                                        str28 = str73;
+                                                                        str23 = "message_id";
+                                                                        str22 = "phone";
+                                                                        str19 = " ";
+                                                                        str24 = "android.intent.action.MAIN";
+                                                                        iArr5 = iArr9;
+                                                                        str26 = str16;
+                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                        str21 = null;
+                                                                        i66 = -1;
+                                                                        str61 = null;
+                                                                        str58 = null;
+                                                                        str57 = null;
+                                                                        str56 = null;
+                                                                        str55 = null;
+                                                                        str54 = null;
+                                                                        str53 = null;
+                                                                        str52 = null;
+                                                                        str51 = null;
+                                                                        str50 = null;
+                                                                        z27 = false;
+                                                                        str49 = null;
+                                                                        num = null;
+                                                                    } else {
+                                                                        num = parseInt3;
+                                                                        r17 = parseLong2;
+                                                                        str28 = str73;
+                                                                        str23 = "message_id";
+                                                                        str22 = "phone";
+                                                                        str19 = " ";
+                                                                        str24 = "android.intent.action.MAIN";
+                                                                        iArr5 = iArr9;
+                                                                        str26 = str16;
+                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                        str21 = null;
+                                                                        i66 = -1;
+                                                                        str61 = null;
+                                                                        str58 = null;
+                                                                        str57 = null;
+                                                                        str56 = null;
+                                                                        str55 = null;
+                                                                        str54 = null;
+                                                                        str53 = null;
+                                                                        str52 = null;
+                                                                        str51 = null;
+                                                                        str50 = null;
+                                                                        z27 = false;
+                                                                        str49 = null;
+                                                                    }
+                                                                    str48 = null;
+                                                                    r21 = null;
+                                                                    str47 = null;
+                                                                    str46 = null;
+                                                                    str45 = null;
+                                                                    r26 = null;
+                                                                    str44 = null;
+                                                                    str43 = null;
+                                                                    str42 = null;
+                                                                    str41 = null;
+                                                                    str40 = null;
+                                                                    j18 = 0;
+                                                                    str39 = null;
+                                                                    str38 = null;
+                                                                    str37 = null;
+                                                                    str36 = null;
+                                                                    str35 = null;
+                                                                    str34 = null;
+                                                                    i65 = 0;
+                                                                    z26 = false;
+                                                                    i64 = 0;
+                                                                    i63 = 0;
+                                                                    str33 = null;
+                                                                    str32 = null;
+                                                                    z25 = false;
+                                                                    str31 = null;
+                                                                    z24 = false;
+                                                                    z23 = false;
+                                                                    z22 = false;
+                                                                    str30 = null;
+                                                                    z21 = false;
+                                                                    z20 = false;
+                                                                    r58 = null;
+                                                                    i54 = 0;
+                                                                    i62 = 0;
+                                                                    i19 = 0;
+                                                                    i61 = 0;
+                                                                    i55 = 0;
+                                                                    i20 = 0;
+                                                                    i21 = 0;
+                                                                    i22 = 0;
+                                                                    i23 = 0;
+                                                                    str29 = null;
+                                                                    str12 = null;
+                                                                    str13 = null;
+                                                                    str27 = null;
+                                                                    str14 = null;
+                                                                    str15 = null;
+                                                                    str25 = null;
+                                                                    obj = null;
+                                                                    j19 = 0;
+                                                                    j17 = 0;
+                                                                    i60 = 4;
+                                                                    i59 = -1;
+                                                                    i58 = 6;
+                                                                    c14 = 2;
+                                                                    i57 = 1;
+                                                                    r16 = parseInt5;
+                                                                }
+                                                            }
+                                                            str72 = "comment";
+                                                            str73 = r23;
+                                                            parseInt3 = Utilities.parseInt((CharSequence) parse2.getQueryParameter(str72));
+                                                            intent2 = intent;
+                                                            if (parseInt3.intValue() != 0) {
+                                                            }
+                                                            str48 = null;
+                                                            r21 = null;
+                                                            str47 = null;
+                                                            str46 = null;
+                                                            str45 = null;
+                                                            r26 = null;
+                                                            str44 = null;
+                                                            str43 = null;
+                                                            str42 = null;
+                                                            str41 = null;
+                                                            str40 = null;
+                                                            j18 = 0;
+                                                            str39 = null;
+                                                            str38 = null;
+                                                            str37 = null;
+                                                            str36 = null;
+                                                            str35 = null;
+                                                            str34 = null;
+                                                            i65 = 0;
+                                                            z26 = false;
+                                                            i64 = 0;
+                                                            i63 = 0;
+                                                            str33 = null;
+                                                            str32 = null;
+                                                            z25 = false;
+                                                            str31 = null;
+                                                            z24 = false;
+                                                            z23 = false;
+                                                            z22 = false;
+                                                            str30 = null;
+                                                            z21 = false;
+                                                            z20 = false;
+                                                            r58 = null;
+                                                            i54 = 0;
+                                                            i62 = 0;
+                                                            i19 = 0;
+                                                            i61 = 0;
+                                                            i55 = 0;
+                                                            i20 = 0;
+                                                            i21 = 0;
+                                                            i22 = 0;
+                                                            i23 = 0;
+                                                            str29 = null;
+                                                            str12 = null;
+                                                            str13 = null;
+                                                            str27 = null;
+                                                            str14 = null;
+                                                            str15 = null;
+                                                            str25 = null;
+                                                            obj = null;
+                                                            j19 = 0;
+                                                            j17 = 0;
+                                                            i60 = 4;
+                                                            i59 = -1;
+                                                            i58 = 6;
+                                                            c14 = 2;
+                                                            i57 = 1;
+                                                            r16 = parseInt5;
+                                                        } else if (uri5.startsWith("tg:bg") || uri5.startsWith("tg://bg")) {
+                                                            launchActivity = this;
+                                                            Uri parse3 = Uri.parse(uri5.replace("tg:bg", "tg://telegram.org").replace("tg://bg", "tg://telegram.org"));
+                                                            TLRPC.TL_wallPaper tL_wallPaper2 = new TLRPC.TL_wallPaper();
+                                                            tL_wallPaper2.settings = new TLRPC.TL_wallPaperSettings();
+                                                            String queryParameter11 = parse3.getQueryParameter("slug");
+                                                            tL_wallPaper2.slug = queryParameter11;
+                                                            if (queryParameter11 == null) {
+                                                                tL_wallPaper2.slug = parse3.getQueryParameter("color");
+                                                            }
+                                                            String str126 = tL_wallPaper2.slug;
+                                                            if (str126 == null || str126.length() != 6) {
+                                                                String str127 = tL_wallPaper2.slug;
+                                                                if (str127 != null && str127.length() >= 13 && AndroidUtilities.isValidWallChar(tL_wallPaper2.slug.charAt(6))) {
+                                                                    tL_wallPaper2.settings.background_color = Integer.parseInt(tL_wallPaper2.slug.substring(0, 6), 16) | (-16777216);
+                                                                    c16 = 7;
+                                                                    try {
+                                                                        tL_wallPaper2.settings.second_background_color = Integer.parseInt(tL_wallPaper2.slug.substring(7, 13), 16) | (-16777216);
+                                                                        if (tL_wallPaper2.slug.length() >= 20 && AndroidUtilities.isValidWallChar(tL_wallPaper2.slug.charAt(13))) {
+                                                                            tL_wallPaper2.settings.third_background_color = Integer.parseInt(tL_wallPaper2.slug.substring(14, 20), 16) | (-16777216);
+                                                                        }
+                                                                        if (tL_wallPaper2.slug.length() == 27 && AndroidUtilities.isValidWallChar(tL_wallPaper2.slug.charAt(20))) {
+                                                                            tL_wallPaper2.settings.fourth_background_color = Integer.parseInt(tL_wallPaper2.slug.substring(21), 16) | (-16777216);
+                                                                        }
+                                                                        try {
+                                                                            String queryParameter12 = parse3.getQueryParameter("rotation");
+                                                                            if (!TextUtils.isEmpty(queryParameter12)) {
+                                                                                tL_wallPaper2.settings.rotation = Utilities.parseInt((CharSequence) queryParameter12).intValue();
+                                                                            }
+                                                                        } catch (Exception unused) {
+                                                                        }
+                                                                        tL_wallPaper2.slug = null;
+                                                                        z30 = true;
+                                                                    } catch (Exception unused2) {
+                                                                    }
+                                                                }
+                                                                c16 = 7;
+                                                                z30 = false;
+                                                                if (z30) {
+                                                                    String queryParameter13 = parse3.getQueryParameter("mode");
+                                                                    if (queryParameter13 != null) {
+                                                                        str74 = " ";
+                                                                        String[] split2 = queryParameter13.toLowerCase().split(str74);
+                                                                        if (split2 != null && split2.length > 0) {
+                                                                            for (int i86 = 0; i86 < split2.length; i86++) {
+                                                                                if ("blur".equals(split2[i86])) {
+                                                                                    tL_wallPaper2.settings.blur = true;
+                                                                                } else if ("motion".equals(split2[i86])) {
+                                                                                    tL_wallPaper2.settings.motion = true;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    } else {
+                                                                        str74 = " ";
+                                                                    }
+                                                                    tL_wallPaper2.settings.intensity = Utilities.parseInt((CharSequence) parse3.getQueryParameter("intensity")).intValue();
+                                                                    try {
+                                                                        queryParameter9 = parse3.getQueryParameter("bg_color");
+                                                                    } catch (Exception unused3) {
+                                                                    }
+                                                                    try {
+                                                                        if (!TextUtils.isEmpty(queryParameter9)) {
+                                                                            try {
+                                                                                tL_wallPaper2.settings.background_color = Integer.parseInt(queryParameter9.substring(0, 6), 16) | (-16777216);
+                                                                            } catch (Exception unused4) {
+                                                                                c17 = 16;
+                                                                            }
+                                                                            if (queryParameter9.length() >= 13) {
+                                                                                c19 = '\b';
+                                                                                try {
+                                                                                    c17 = 16;
+                                                                                    try {
+                                                                                        tL_wallPaper2.settings.second_background_color = Integer.parseInt(queryParameter9.substring(8, 13), 16) | (-16777216);
+                                                                                    } catch (Exception unused5) {
+                                                                                        c18 = 14;
+                                                                                        queryParameter8 = parse3.getQueryParameter("rotation");
+                                                                                        if (!TextUtils.isEmpty(queryParameter8)) {
+                                                                                        }
+                                                                                        intent2 = intent;
+                                                                                        r26 = tL_wallPaper2;
+                                                                                        str23 = "message_id";
+                                                                                        str22 = "phone";
+                                                                                        str19 = str74;
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        iArr5 = iArr9;
+                                                                                        str26 = str16;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 0;
+                                                                                        i19 = 0;
+                                                                                        i61 = 0;
+                                                                                        i55 = 0;
+                                                                                        i20 = 0;
+                                                                                        i21 = 0;
+                                                                                        i22 = 0;
+                                                                                        i23 = 0;
+                                                                                        str29 = null;
+                                                                                        str12 = null;
+                                                                                        str13 = null;
+                                                                                        str28 = null;
+                                                                                        str27 = null;
+                                                                                        str14 = null;
+                                                                                        str15 = null;
+                                                                                        str25 = null;
+                                                                                        obj = null;
+                                                                                        j19 = 0;
+                                                                                        j17 = 0;
+                                                                                        i60 = 4;
+                                                                                        i59 = -1;
+                                                                                        i58 = 6;
+                                                                                        c14 = 2;
+                                                                                        i57 = 1;
+                                                                                        if (intent2.hasExtra(str60)) {
+                                                                                        }
+                                                                                        if (str46 == null) {
+                                                                                        }
+                                                                                        if (str61 == null) {
+                                                                                        }
+                                                                                        cVar3 = cVar;
+                                                                                        iArr4 = iArr5;
+                                                                                        str = str24;
+                                                                                        str2 = str19;
+                                                                                        str10 = str23;
+                                                                                        org.telegram.ui.ActionBar.b2 b2Var22 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                                        b2Var22.j();
+                                                                                        b2Var22.show();
+                                                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                                        sendconfirmphonecode.hash = str57;
+                                                                                        TLRPC.TL_codeSettings tL_codeSettings22 = new TLRPC.TL_codeSettings();
+                                                                                        sendconfirmphonecode.settings = tL_codeSettings22;
+                                                                                        i51 = 0;
+                                                                                        tL_codeSettings22.allow_flashcall = false;
+                                                                                        boolean hasServices22 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                                        tL_codeSettings22.allow_firebase = hasServices22;
+                                                                                        tL_codeSettings22.allow_app_hash = hasServices22;
+                                                                                        SharedPreferences sharedPreferences22 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                                        }
+                                                                                        Bundle bundle22 = new Bundle();
+                                                                                        bundle22.putString(str22, str61);
+                                                                                        ConnectionsManager connectionsManager22 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                                        LaunchActivity launchActivity222 = launchActivity;
+                                                                                        String str12422 = str61;
+                                                                                        r13 = launchActivity222;
+                                                                                        connectionsManager22.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22, str12422, bundle22, sendconfirmphonecode, 8), 2);
+                                                                                        i52 = i62;
+                                                                                        i53 = i61;
+                                                                                        str11 = str29;
+                                                                                        j16 = j19;
+                                                                                        j13 = j16;
+                                                                                        i24 = i52;
+                                                                                        i11 = i51;
+                                                                                        i12 = i11;
+                                                                                        i13 = i12;
+                                                                                        i14 = i13;
+                                                                                        i15 = i14;
+                                                                                        i16 = i15;
+                                                                                        i18 = i16;
+                                                                                        int i822 = i18;
+                                                                                        i25 = i822 == true ? 1 : 0;
+                                                                                        i17 = i53;
+                                                                                        str5 = str11;
+                                                                                        i26 = i54;
+                                                                                        i27 = i55;
+                                                                                        str4 = str12;
+                                                                                        str8 = str13;
+                                                                                        str7 = str14;
+                                                                                        str6 = str15;
+                                                                                        j12 = j17;
+                                                                                        iArr2 = iArr4;
+                                                                                        str3 = str10;
+                                                                                        j11 = 0;
+                                                                                        i28 = -1;
+                                                                                        i29 = -1;
+                                                                                        j10 = 0;
+                                                                                        jArr = null;
+                                                                                        j14 = 0;
+                                                                                        i31 = -1;
+                                                                                        j15 = 0;
+                                                                                        i32 = i822;
+                                                                                        if (UserConfig.getInstance(r13.O).isClientActivated()) {
+                                                                                        }
+                                                                                        iArr3 = iArr2;
+                                                                                        z15 = false;
+                                                                                        z16 = z10;
+                                                                                        r10 = i16;
+                                                                                        r12 = z15;
+                                                                                        if (r10 == 0) {
+                                                                                        }
+                                                                                        if (z44) {
+                                                                                        }
+                                                                                        if (i14 == 0) {
+                                                                                        }
+                                                                                        r42.setAction(r12);
+                                                                                        return r10;
+                                                                                    }
+                                                                                } catch (Exception unused6) {
+                                                                                    c17 = 16;
+                                                                                }
+                                                                                if (queryParameter9.length() >= 20) {
+                                                                                    try {
+                                                                                    } catch (Exception unused7) {
+                                                                                        c18 = 14;
+                                                                                    }
+                                                                                    if (AndroidUtilities.isValidWallChar(queryParameter9.charAt(13))) {
+                                                                                        c18 = 14;
+                                                                                        try {
+                                                                                            c17 = 16;
+                                                                                            try {
+                                                                                                tL_wallPaper2.settings.third_background_color = Integer.parseInt(queryParameter9.substring(14, 20), 16) | (-16777216);
+                                                                                            } catch (Exception unused8) {
+                                                                                            }
+                                                                                        } catch (Exception unused9) {
+                                                                                        }
+                                                                                        if (queryParameter9.length() == 27 && AndroidUtilities.isValidWallChar(queryParameter9.charAt(20))) {
+                                                                                            c17 = 16;
+                                                                                            tL_wallPaper2.settings.fourth_background_color = Integer.parseInt(queryParameter9.substring(21), 16) | (-16777216);
+                                                                                            queryParameter8 = parse3.getQueryParameter("rotation");
+                                                                                            if (!TextUtils.isEmpty(queryParameter8)) {
+                                                                                                tL_wallPaper2.settings.rotation = Utilities.parseInt((CharSequence) queryParameter8).intValue();
+                                                                                            }
+                                                                                        }
+                                                                                        c17 = 16;
+                                                                                        queryParameter8 = parse3.getQueryParameter("rotation");
+                                                                                        if (!TextUtils.isEmpty(queryParameter8)) {
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                                c18 = 14;
+                                                                                if (queryParameter9.length() == 27) {
+                                                                                    c17 = 16;
+                                                                                    tL_wallPaper2.settings.fourth_background_color = Integer.parseInt(queryParameter9.substring(21), 16) | (-16777216);
+                                                                                    queryParameter8 = parse3.getQueryParameter("rotation");
+                                                                                    if (!TextUtils.isEmpty(queryParameter8)) {
+                                                                                    }
+                                                                                }
+                                                                                c17 = 16;
+                                                                                queryParameter8 = parse3.getQueryParameter("rotation");
+                                                                                if (!TextUtils.isEmpty(queryParameter8)) {
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        queryParameter8 = parse3.getQueryParameter("rotation");
+                                                                        if (!TextUtils.isEmpty(queryParameter8)) {
+                                                                        }
+                                                                    } catch (Exception unused10) {
+                                                                    }
+                                                                    c17 = 16;
+                                                                    c18 = 14;
+                                                                    c19 = '\b';
+                                                                } else {
+                                                                    str74 = " ";
+                                                                    c17 = 16;
+                                                                    c18 = 14;
+                                                                    c19 = '\b';
+                                                                }
+                                                                intent2 = intent;
+                                                                r26 = tL_wallPaper2;
+                                                                str23 = "message_id";
+                                                                str22 = "phone";
+                                                                str19 = str74;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                iArr5 = iArr9;
+                                                                str26 = str16;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str21 = null;
+                                                                i66 = -1;
+                                                                str61 = null;
+                                                                str59 = null;
+                                                                str58 = null;
+                                                                str57 = null;
+                                                                str56 = null;
+                                                                str55 = null;
+                                                                str54 = null;
+                                                                str53 = null;
+                                                                str52 = null;
+                                                                str51 = null;
+                                                                str50 = null;
+                                                                z27 = false;
+                                                                r16 = null;
+                                                                r17 = null;
+                                                                str49 = null;
+                                                                num = null;
+                                                                str48 = null;
+                                                                r21 = null;
+                                                                str47 = null;
+                                                                str46 = null;
+                                                                str45 = null;
+                                                                str44 = null;
+                                                            } else {
+                                                                tL_wallPaper2.settings.background_color = Integer.parseInt(tL_wallPaper2.slug, 16) | (-16777216);
+                                                                tL_wallPaper2.slug = null;
+                                                                z30 = true;
+                                                                c16 = 7;
+                                                            }
+                                                            if (z30) {
+                                                            }
+                                                            intent2 = intent;
+                                                            r26 = tL_wallPaper2;
+                                                            str23 = "message_id";
+                                                            str22 = "phone";
+                                                            str19 = str74;
+                                                            str24 = "android.intent.action.MAIN";
+                                                            iArr5 = iArr9;
+                                                            str26 = str16;
+                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                            str21 = null;
+                                                            i66 = -1;
+                                                            str61 = null;
+                                                            str59 = null;
+                                                            str58 = null;
+                                                            str57 = null;
+                                                            str56 = null;
+                                                            str55 = null;
+                                                            str54 = null;
+                                                            str53 = null;
+                                                            str52 = null;
+                                                            str51 = null;
+                                                            str50 = null;
+                                                            z27 = false;
+                                                            r16 = null;
+                                                            r17 = null;
+                                                            str49 = null;
+                                                            num = null;
+                                                            str48 = null;
+                                                            r21 = null;
+                                                            str47 = null;
+                                                            str46 = null;
+                                                            str45 = null;
+                                                            str44 = null;
+                                                        } else {
+                                                            if (uri5.startsWith("tg:join") || uri5.startsWith("tg://join")) {
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str40 = Uri.parse(uri5.replace("tg:join", "tg://telegram.org").replace("tg://join", "tg://telegram.org")).getQueryParameter("invite");
+                                                                str23 = "message_id";
+                                                                str22 = "phone";
+                                                                str24 = "android.intent.action.MAIN";
+                                                                iArr5 = iArr9;
+                                                                str19 = " ";
+                                                                str26 = str16;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str21 = null;
+                                                                i66 = -1;
+                                                                str61 = null;
+                                                                str59 = null;
+                                                                str58 = null;
+                                                                str57 = null;
+                                                                str56 = null;
+                                                                str55 = null;
+                                                                str54 = null;
+                                                                str53 = null;
+                                                                str52 = null;
+                                                                str51 = null;
+                                                                str50 = null;
+                                                                z27 = false;
+                                                                r16 = null;
+                                                                r17 = null;
+                                                                str49 = null;
+                                                                num = null;
+                                                                str48 = null;
+                                                                r21 = null;
+                                                                str47 = null;
+                                                                str46 = null;
+                                                                str45 = null;
+                                                                r26 = null;
+                                                                str44 = null;
+                                                                str43 = null;
+                                                                str42 = null;
+                                                                str41 = null;
+                                                            } else {
+                                                                if (uri5.startsWith("tg:addstickers") || uri5.startsWith("tg://addstickers")) {
+                                                                    launchActivity = this;
+                                                                    intent2 = intent;
+                                                                    str52 = Uri.parse(uri5.replace("tg:addstickers", "tg://telegram.org").replace("tg://addstickers", "tg://telegram.org")).getQueryParameter("set");
+                                                                    str23 = "message_id";
+                                                                    str22 = "phone";
+                                                                    str24 = "android.intent.action.MAIN";
+                                                                    iArr5 = iArr9;
+                                                                    str19 = " ";
+                                                                    str26 = str16;
+                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                    str21 = null;
+                                                                    i66 = -1;
+                                                                    str61 = null;
+                                                                    str59 = null;
+                                                                    str58 = null;
+                                                                    str57 = null;
+                                                                    str56 = null;
+                                                                    str55 = null;
+                                                                    str54 = null;
+                                                                    str53 = null;
+                                                                    str51 = null;
+                                                                    str50 = null;
+                                                                    z27 = false;
+                                                                } else {
+                                                                    if (uri5.startsWith("tg:addemoji") || uri5.startsWith("tg://addemoji")) {
+                                                                        launchActivity = this;
+                                                                        String queryParameter14 = Uri.parse(uri5.replace("tg:addemoji", "tg://telegram.org").replace("tg://addemoji", "tg://telegram.org")).getQueryParameter("set");
+                                                                        intent2 = intent;
+                                                                        str23 = "message_id";
+                                                                        str22 = "phone";
+                                                                        str24 = "android.intent.action.MAIN";
+                                                                        iArr5 = iArr9;
+                                                                        str19 = " ";
+                                                                        str26 = str16;
+                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                        str21 = null;
+                                                                        str61 = null;
+                                                                        str59 = null;
+                                                                        str58 = null;
+                                                                        str57 = null;
+                                                                        str55 = null;
+                                                                        str54 = null;
+                                                                        str53 = null;
+                                                                        str52 = null;
+                                                                        str51 = null;
+                                                                        str50 = null;
+                                                                        z27 = false;
+                                                                        r16 = null;
+                                                                        r17 = null;
+                                                                        str49 = null;
+                                                                        num = null;
+                                                                        str48 = null;
+                                                                        r21 = null;
+                                                                        str47 = null;
+                                                                        str46 = null;
+                                                                        str45 = null;
+                                                                        r26 = null;
+                                                                        str44 = null;
+                                                                        str43 = null;
+                                                                        str42 = null;
+                                                                        str41 = null;
+                                                                        str40 = null;
+                                                                        j18 = 0;
+                                                                        str39 = null;
+                                                                        str38 = null;
+                                                                        str37 = null;
+                                                                        str36 = null;
+                                                                        str35 = null;
+                                                                        str34 = null;
+                                                                        i65 = 0;
+                                                                        z26 = false;
+                                                                        i64 = 0;
+                                                                        i63 = 0;
+                                                                        str33 = null;
+                                                                        str32 = null;
+                                                                        z25 = false;
+                                                                        str31 = null;
+                                                                        z24 = false;
+                                                                        z23 = false;
+                                                                        z22 = false;
+                                                                        str30 = null;
+                                                                        z21 = false;
+                                                                        z20 = false;
+                                                                        r58 = null;
+                                                                        i54 = 0;
+                                                                        i62 = 0;
+                                                                        i19 = 0;
+                                                                        i61 = 0;
+                                                                        i55 = 0;
+                                                                        i20 = 0;
+                                                                        i21 = 0;
+                                                                        i22 = 0;
+                                                                        i23 = 0;
+                                                                        str29 = null;
+                                                                        str12 = null;
+                                                                        str13 = null;
+                                                                        str28 = null;
+                                                                        str27 = null;
+                                                                        str14 = null;
+                                                                        str15 = null;
+                                                                        str25 = null;
+                                                                        obj = null;
+                                                                        j19 = 0;
+                                                                        j17 = 0;
+                                                                        i60 = 4;
+                                                                        i59 = -1;
+                                                                        i58 = 6;
+                                                                        c14 = 2;
+                                                                        i57 = 1;
+                                                                        str56 = queryParameter14;
+                                                                    } else if (uri5.startsWith("tg:msg") || uri5.startsWith("tg://msg") || uri5.startsWith("tg://share") || uri5.startsWith("tg:share")) {
+                                                                        launchActivity = this;
+                                                                        Uri parse4 = Uri.parse(uri5.replace("tg:msg", "tg://telegram.org").replace("tg://msg", "tg://telegram.org").replace("tg://share", "tg://telegram.org").replace("tg:share", "tg://telegram.org"));
+                                                                        String queryParameter15 = parse4.getQueryParameter("url");
+                                                                        str75 = queryParameter15 != null ? queryParameter15 : "";
+                                                                        if (parse4.getQueryParameter("text") != null) {
+                                                                            if (str75.length() > 0) {
+                                                                                str75 = str75.concat("\n");
+                                                                                z31 = true;
+                                                                            } else {
+                                                                                z31 = false;
+                                                                            }
+                                                                            StringBuilder u10 = a1.g.u(str75);
+                                                                            u10.append(parse4.getQueryParameter("text"));
+                                                                            str75 = u10.toString();
+                                                                        } else {
+                                                                            z31 = false;
+                                                                        }
+                                                                        String substring4 = str75.length() > 16384 ? str75.substring(0, 16384) : str75;
+                                                                        while (substring4.endsWith("\n")) {
+                                                                            substring4 = com.google.android.gms.internal.play_billing.k3.j(1, 0, substring4);
+                                                                        }
+                                                                        intent2 = intent;
+                                                                        str54 = substring4;
+                                                                        z27 = z31;
+                                                                        str23 = "message_id";
+                                                                        str22 = "phone";
+                                                                        str24 = "android.intent.action.MAIN";
+                                                                        iArr5 = iArr9;
+                                                                        str19 = " ";
+                                                                        str26 = str16;
+                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                        str21 = null;
+                                                                        i66 = -1;
+                                                                        str61 = null;
+                                                                        str59 = null;
+                                                                        str58 = null;
+                                                                        str57 = null;
+                                                                        str56 = null;
+                                                                        str55 = null;
+                                                                        str53 = null;
+                                                                        str52 = null;
+                                                                        str51 = null;
+                                                                        str50 = null;
+                                                                    } else if (uri5.startsWith("tg:confirmphone") || uri5.startsWith("tg://confirmphone")) {
+                                                                        launchActivity = this;
+                                                                        Uri parse5 = Uri.parse(uri5.replace("tg:confirmphone", "tg://telegram.org").replace("tg://confirmphone", "tg://telegram.org"));
+                                                                        str61 = parse5.getQueryParameter("phone");
+                                                                        intent2 = intent;
+                                                                        str23 = "message_id";
+                                                                        str22 = "phone";
+                                                                        str24 = "android.intent.action.MAIN";
+                                                                        iArr5 = iArr9;
+                                                                        str19 = " ";
+                                                                        str26 = str16;
+                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                        str21 = null;
+                                                                        str59 = null;
+                                                                        str58 = null;
+                                                                        str56 = null;
+                                                                        str55 = null;
+                                                                        str54 = null;
+                                                                        str53 = null;
+                                                                        str52 = null;
+                                                                        str51 = null;
+                                                                        str50 = null;
+                                                                        z27 = false;
+                                                                        r16 = null;
+                                                                        r17 = null;
+                                                                        str49 = null;
+                                                                        num = null;
+                                                                        str48 = null;
+                                                                        r21 = null;
+                                                                        str47 = null;
+                                                                        str46 = null;
+                                                                        str45 = null;
+                                                                        r26 = null;
+                                                                        str44 = null;
+                                                                        str43 = null;
+                                                                        str42 = null;
+                                                                        str41 = null;
+                                                                        str40 = null;
+                                                                        j18 = 0;
+                                                                        str39 = null;
+                                                                        str38 = null;
+                                                                        str37 = null;
+                                                                        str36 = null;
+                                                                        str35 = null;
+                                                                        str34 = null;
+                                                                        i65 = 0;
+                                                                        z26 = false;
+                                                                        i64 = 0;
+                                                                        i63 = 0;
+                                                                        str33 = null;
+                                                                        str32 = null;
+                                                                        z25 = false;
+                                                                        str31 = null;
+                                                                        z24 = false;
+                                                                        z23 = false;
+                                                                        z22 = false;
+                                                                        str30 = null;
+                                                                        z21 = false;
+                                                                        z20 = false;
+                                                                        r58 = null;
+                                                                        i54 = 0;
+                                                                        i62 = 0;
+                                                                        i19 = 0;
+                                                                        i61 = 0;
+                                                                        i55 = 0;
+                                                                        i20 = 0;
+                                                                        i21 = 0;
+                                                                        i22 = 0;
+                                                                        i23 = 0;
+                                                                        str29 = null;
+                                                                        str12 = null;
+                                                                        str13 = null;
+                                                                        str28 = null;
+                                                                        str27 = null;
+                                                                        str14 = null;
+                                                                        str15 = null;
+                                                                        str25 = null;
+                                                                        obj = null;
+                                                                        j19 = 0;
+                                                                        j17 = 0;
+                                                                        i60 = 4;
+                                                                        i59 = -1;
+                                                                        i58 = 6;
+                                                                        c14 = 2;
+                                                                        i57 = 1;
+                                                                        str57 = parse5.getQueryParameter("hash");
+                                                                    } else if (uri5.startsWith("tg:login") || uri5.startsWith("tg://login")) {
+                                                                        launchActivity = this;
+                                                                        Uri parse6 = Uri.parse(uri5.replace("tg:login", "tg://telegram.org").replace("tg://login", "tg://telegram.org"));
+                                                                        String queryParameter16 = parse6.getQueryParameter("token");
+                                                                        int intValue4 = Utilities.parseInt((CharSequence) parse6.getQueryParameter("code")).intValue();
+                                                                        intent2 = intent;
+                                                                        str46 = intValue4 != 0 ? i2.d.j(intValue4, "") : null;
+                                                                        str45 = queryParameter16;
+                                                                        iArr5 = iArr9;
+                                                                        str23 = "message_id";
+                                                                        str22 = "phone";
+                                                                        str24 = "android.intent.action.MAIN";
+                                                                        str19 = " ";
+                                                                        str26 = str16;
+                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                        str21 = null;
+                                                                        i66 = -1;
+                                                                        str61 = null;
+                                                                        str59 = null;
+                                                                        str58 = null;
+                                                                        str57 = null;
+                                                                        str56 = null;
+                                                                        str55 = null;
+                                                                        str54 = null;
+                                                                        str53 = null;
+                                                                        str52 = null;
+                                                                        str51 = null;
+                                                                        str50 = null;
+                                                                        z27 = false;
+                                                                        r16 = null;
+                                                                        r17 = null;
+                                                                        str49 = null;
+                                                                        num = null;
+                                                                        str48 = null;
+                                                                        r21 = null;
+                                                                        str47 = null;
+                                                                        r26 = null;
+                                                                        str44 = null;
+                                                                        str43 = null;
+                                                                        str42 = null;
+                                                                        str41 = null;
+                                                                        str40 = null;
+                                                                    } else {
+                                                                        if (uri5.startsWith("tg:openmessage") || uri5.startsWith("tg://openmessage")) {
+                                                                            launchActivity = this;
+                                                                            Uri parse7 = Uri.parse(uri5.replace("tg:openmessage", "tg://telegram.org").replace("tg://openmessage", "tg://telegram.org"));
+                                                                            String queryParameter17 = parse7.getQueryParameter("user_id");
+                                                                            String queryParameter18 = parse7.getQueryParameter("chat_id");
+                                                                            String queryParameter19 = parse7.getQueryParameter("message_id");
+                                                                            String queryParameter20 = parse7.getQueryParameter("account_user_id");
+                                                                            if (queryParameter17 != null) {
+                                                                                j21 = Long.parseLong(queryParameter17);
+                                                                                j22 = 0;
+                                                                                if (queryParameter19 != null) {
+                                                                                    try {
+                                                                                        parseInt4 = Integer.parseInt(queryParameter19);
+                                                                                    } catch (NumberFormatException unused11) {
+                                                                                    }
+                                                                                    if (queryParameter20 != null) {
+                                                                                        try {
+                                                                                            long parseLong4 = Long.parseLong(queryParameter20);
+                                                                                            int i87 = 0;
+                                                                                            while (true) {
+                                                                                                if (i87 < 4) {
+                                                                                                    UserConfig userConfig = UserConfig.getInstance(i87);
+                                                                                                    if (userConfig.isClientActivated() && userConfig.getClientUserId() == parseLong4) {
+                                                                                                        iArr9[0] = i87;
+                                                                                                        launchActivity.O0(i87);
+                                                                                                    } else {
+                                                                                                        i87++;
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        } catch (NumberFormatException unused12) {
+                                                                                        }
+                                                                                    }
+                                                                                    j19 = j21;
+                                                                                    i54 = parseInt4;
+                                                                                    iArr5 = iArr9;
+                                                                                    str23 = "message_id";
+                                                                                    str22 = "phone";
+                                                                                    j17 = j22;
+                                                                                    str24 = "android.intent.action.MAIN";
+                                                                                    str19 = " ";
+                                                                                    str26 = str16;
+                                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                    str21 = null;
+                                                                                    i66 = -1;
+                                                                                    str61 = null;
+                                                                                    str59 = null;
+                                                                                    str58 = null;
+                                                                                    str57 = null;
+                                                                                    str56 = null;
+                                                                                    str55 = null;
+                                                                                    str54 = null;
+                                                                                    str53 = null;
+                                                                                    str52 = null;
+                                                                                    str51 = null;
+                                                                                    str50 = null;
+                                                                                    z27 = false;
+                                                                                    r16 = null;
+                                                                                    r17 = null;
+                                                                                    str49 = null;
+                                                                                    num = null;
+                                                                                    str48 = null;
+                                                                                    r21 = null;
+                                                                                    str47 = null;
+                                                                                    str46 = null;
+                                                                                    str45 = null;
+                                                                                    r26 = null;
+                                                                                    str44 = null;
+                                                                                    str43 = null;
+                                                                                    str42 = null;
+                                                                                    str41 = null;
+                                                                                    str40 = null;
+                                                                                    j18 = 0;
+                                                                                    str39 = null;
+                                                                                    str38 = null;
+                                                                                    str37 = null;
+                                                                                    str36 = null;
+                                                                                    str35 = null;
+                                                                                    str34 = null;
+                                                                                    i65 = 0;
+                                                                                    z26 = false;
+                                                                                    i64 = 0;
+                                                                                    i63 = 0;
+                                                                                    str33 = null;
+                                                                                    str32 = null;
+                                                                                    z25 = false;
+                                                                                    str31 = null;
+                                                                                    z24 = false;
+                                                                                    z23 = false;
+                                                                                    z22 = false;
+                                                                                    str30 = null;
+                                                                                    z21 = false;
+                                                                                    z20 = false;
+                                                                                    r58 = null;
+                                                                                    i62 = 0;
+                                                                                    i19 = 0;
+                                                                                    i61 = 0;
+                                                                                    i55 = 0;
+                                                                                    i20 = 0;
+                                                                                    i21 = 0;
+                                                                                    i22 = 0;
+                                                                                    i23 = 0;
+                                                                                    str29 = null;
+                                                                                    str12 = null;
+                                                                                    str13 = null;
+                                                                                    str28 = null;
+                                                                                    str27 = null;
+                                                                                    str14 = null;
+                                                                                    str15 = null;
+                                                                                    str25 = null;
+                                                                                    obj = null;
+                                                                                }
+                                                                                parseInt4 = 0;
+                                                                                if (queryParameter20 != null) {
+                                                                                }
+                                                                                j19 = j21;
+                                                                                i54 = parseInt4;
+                                                                                iArr5 = iArr9;
+                                                                                str23 = "message_id";
+                                                                                str22 = "phone";
+                                                                                j17 = j22;
+                                                                                str24 = "android.intent.action.MAIN";
+                                                                                str19 = " ";
+                                                                                str26 = str16;
+                                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                str21 = null;
+                                                                                i66 = -1;
+                                                                                str61 = null;
+                                                                                str59 = null;
+                                                                                str58 = null;
+                                                                                str57 = null;
+                                                                                str56 = null;
+                                                                                str55 = null;
+                                                                                str54 = null;
+                                                                                str53 = null;
+                                                                                str52 = null;
+                                                                                str51 = null;
+                                                                                str50 = null;
+                                                                                z27 = false;
+                                                                                r16 = null;
+                                                                                r17 = null;
+                                                                                str49 = null;
+                                                                                num = null;
+                                                                                str48 = null;
+                                                                                r21 = null;
+                                                                                str47 = null;
+                                                                                str46 = null;
+                                                                                str45 = null;
+                                                                                r26 = null;
+                                                                                str44 = null;
+                                                                                str43 = null;
+                                                                                str42 = null;
+                                                                                str41 = null;
+                                                                                str40 = null;
+                                                                                j18 = 0;
+                                                                                str39 = null;
+                                                                                str38 = null;
+                                                                                str37 = null;
+                                                                                str36 = null;
+                                                                                str35 = null;
+                                                                                str34 = null;
+                                                                                i65 = 0;
+                                                                                z26 = false;
+                                                                                i64 = 0;
+                                                                                i63 = 0;
+                                                                                str33 = null;
+                                                                                str32 = null;
+                                                                                z25 = false;
+                                                                                str31 = null;
+                                                                                z24 = false;
+                                                                                z23 = false;
+                                                                                z22 = false;
+                                                                                str30 = null;
+                                                                                z21 = false;
+                                                                                z20 = false;
+                                                                                r58 = null;
+                                                                                i62 = 0;
+                                                                                i19 = 0;
+                                                                                i61 = 0;
+                                                                                i55 = 0;
+                                                                                i20 = 0;
+                                                                                i21 = 0;
+                                                                                i22 = 0;
+                                                                                i23 = 0;
+                                                                                str29 = null;
+                                                                                str12 = null;
+                                                                                str13 = null;
+                                                                                str28 = null;
+                                                                                str27 = null;
+                                                                                str14 = null;
+                                                                                str15 = null;
+                                                                                str25 = null;
+                                                                                obj = null;
+                                                                            } else {
+                                                                                if (queryParameter18 != null) {
+                                                                                    j22 = Long.parseLong(queryParameter18);
+                                                                                    j21 = 0;
+                                                                                    if (queryParameter19 != null) {
+                                                                                    }
+                                                                                    parseInt4 = 0;
+                                                                                    if (queryParameter20 != null) {
+                                                                                    }
+                                                                                    j19 = j21;
+                                                                                    i54 = parseInt4;
+                                                                                    iArr5 = iArr9;
+                                                                                    str23 = "message_id";
+                                                                                    str22 = "phone";
+                                                                                    j17 = j22;
+                                                                                    str24 = "android.intent.action.MAIN";
+                                                                                    str19 = " ";
+                                                                                    str26 = str16;
+                                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                    str21 = null;
+                                                                                    i66 = -1;
+                                                                                    str61 = null;
+                                                                                    str59 = null;
+                                                                                    str58 = null;
+                                                                                    str57 = null;
+                                                                                    str56 = null;
+                                                                                    str55 = null;
+                                                                                    str54 = null;
+                                                                                    str53 = null;
+                                                                                    str52 = null;
+                                                                                    str51 = null;
+                                                                                    str50 = null;
+                                                                                    z27 = false;
+                                                                                    r16 = null;
+                                                                                    r17 = null;
+                                                                                    str49 = null;
+                                                                                    num = null;
+                                                                                    str48 = null;
+                                                                                    r21 = null;
+                                                                                    str47 = null;
+                                                                                    str46 = null;
+                                                                                    str45 = null;
+                                                                                    r26 = null;
+                                                                                    str44 = null;
+                                                                                    str43 = null;
+                                                                                    str42 = null;
+                                                                                    str41 = null;
+                                                                                    str40 = null;
+                                                                                    j18 = 0;
+                                                                                    str39 = null;
+                                                                                    str38 = null;
+                                                                                    str37 = null;
+                                                                                    str36 = null;
+                                                                                    str35 = null;
+                                                                                    str34 = null;
+                                                                                    i65 = 0;
+                                                                                    z26 = false;
+                                                                                    i64 = 0;
+                                                                                    i63 = 0;
+                                                                                    str33 = null;
+                                                                                    str32 = null;
+                                                                                    z25 = false;
+                                                                                    str31 = null;
+                                                                                    z24 = false;
+                                                                                    z23 = false;
+                                                                                    z22 = false;
+                                                                                    str30 = null;
+                                                                                    z21 = false;
+                                                                                    z20 = false;
+                                                                                    r58 = null;
+                                                                                    i62 = 0;
+                                                                                    i19 = 0;
+                                                                                    i61 = 0;
+                                                                                    i55 = 0;
+                                                                                    i20 = 0;
+                                                                                    i21 = 0;
+                                                                                    i22 = 0;
+                                                                                    i23 = 0;
+                                                                                    str29 = null;
+                                                                                    str12 = null;
+                                                                                    str13 = null;
+                                                                                    str28 = null;
+                                                                                    str27 = null;
+                                                                                    str14 = null;
+                                                                                    str15 = null;
+                                                                                    str25 = null;
+                                                                                    obj = null;
+                                                                                }
+                                                                                j21 = 0;
+                                                                                j22 = 0;
+                                                                                if (queryParameter19 != null) {
+                                                                                }
+                                                                                parseInt4 = 0;
+                                                                                if (queryParameter20 != null) {
+                                                                                }
+                                                                                j19 = j21;
+                                                                                i54 = parseInt4;
+                                                                                iArr5 = iArr9;
+                                                                                str23 = "message_id";
+                                                                                str22 = "phone";
+                                                                                j17 = j22;
+                                                                                str24 = "android.intent.action.MAIN";
+                                                                                str19 = " ";
+                                                                                str26 = str16;
+                                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                str21 = null;
+                                                                                i66 = -1;
+                                                                                str61 = null;
+                                                                                str59 = null;
+                                                                                str58 = null;
+                                                                                str57 = null;
+                                                                                str56 = null;
+                                                                                str55 = null;
+                                                                                str54 = null;
+                                                                                str53 = null;
+                                                                                str52 = null;
+                                                                                str51 = null;
+                                                                                str50 = null;
+                                                                                z27 = false;
+                                                                                r16 = null;
+                                                                                r17 = null;
+                                                                                str49 = null;
+                                                                                num = null;
+                                                                                str48 = null;
+                                                                                r21 = null;
+                                                                                str47 = null;
+                                                                                str46 = null;
+                                                                                str45 = null;
+                                                                                r26 = null;
+                                                                                str44 = null;
+                                                                                str43 = null;
+                                                                                str42 = null;
+                                                                                str41 = null;
+                                                                                str40 = null;
+                                                                                j18 = 0;
+                                                                                str39 = null;
+                                                                                str38 = null;
+                                                                                str37 = null;
+                                                                                str36 = null;
+                                                                                str35 = null;
+                                                                                str34 = null;
+                                                                                i65 = 0;
+                                                                                z26 = false;
+                                                                                i64 = 0;
+                                                                                i63 = 0;
+                                                                                str33 = null;
+                                                                                str32 = null;
+                                                                                z25 = false;
+                                                                                str31 = null;
+                                                                                z24 = false;
+                                                                                z23 = false;
+                                                                                z22 = false;
+                                                                                str30 = null;
+                                                                                z21 = false;
+                                                                                z20 = false;
+                                                                                r58 = null;
+                                                                                i62 = 0;
+                                                                                i19 = 0;
+                                                                                i61 = 0;
+                                                                                i55 = 0;
+                                                                                i20 = 0;
+                                                                                i21 = 0;
+                                                                                i22 = 0;
+                                                                                i23 = 0;
+                                                                                str29 = null;
+                                                                                str12 = null;
+                                                                                str13 = null;
+                                                                                str28 = null;
+                                                                                str27 = null;
+                                                                                str14 = null;
+                                                                                str15 = null;
+                                                                                str25 = null;
+                                                                                obj = null;
+                                                                            }
+                                                                        } else if (uri5.startsWith("tg:passport") || uri5.startsWith("tg://passport") || uri5.startsWith("tg:secureid")) {
+                                                                            launchActivity = this;
+                                                                            Uri parse8 = Uri.parse(uri5.replace("tg:passport", "tg://telegram.org").replace("tg://passport", "tg://telegram.org").replace("tg:secureid", "tg://telegram.org"));
+                                                                            HashMap hashMap3 = new HashMap();
+                                                                            String queryParameter21 = parse8.getQueryParameter("scope");
+                                                                            if (!TextUtils.isEmpty(queryParameter21) && queryParameter21.startsWith("{") && queryParameter21.endsWith("}")) {
+                                                                                hashMap3.put("nonce", parse8.getQueryParameter("nonce"));
+                                                                            } else {
+                                                                                hashMap3.put("payload", parse8.getQueryParameter("payload"));
+                                                                            }
+                                                                            hashMap3.put("bot_id", parse8.getQueryParameter("bot_id"));
+                                                                            hashMap3.put("scope", queryParameter21);
+                                                                            hashMap3.put("public_key", parse8.getQueryParameter("public_key"));
+                                                                            hashMap3.put("callback_url", parse8.getQueryParameter("callback_url"));
+                                                                            r21 = hashMap3;
+                                                                            iArr5 = iArr9;
+                                                                            str22 = "phone";
+                                                                            str23 = "message_id";
+                                                                            str24 = "android.intent.action.MAIN";
+                                                                            str19 = " ";
+                                                                            str26 = str16;
+                                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                            str21 = null;
+                                                                            i66 = -1;
+                                                                            str61 = null;
+                                                                            str59 = null;
+                                                                            str58 = null;
+                                                                            str57 = null;
+                                                                            str56 = null;
+                                                                            str55 = null;
+                                                                            str54 = null;
+                                                                            str53 = null;
+                                                                            str52 = null;
+                                                                            str51 = null;
+                                                                            str50 = null;
+                                                                            z27 = false;
+                                                                            r16 = null;
+                                                                            r17 = null;
+                                                                            str49 = null;
+                                                                            num = null;
+                                                                            str48 = null;
+                                                                            str47 = null;
+                                                                            str46 = null;
+                                                                            str45 = null;
+                                                                            r26 = null;
+                                                                            str44 = null;
+                                                                            str43 = null;
+                                                                            str42 = null;
+                                                                            str41 = null;
+                                                                            str40 = null;
+                                                                            j18 = 0;
+                                                                            str39 = null;
+                                                                            str38 = null;
+                                                                            str37 = null;
+                                                                            str36 = null;
+                                                                            str35 = null;
+                                                                            str34 = null;
+                                                                            i65 = 0;
+                                                                            z26 = false;
+                                                                            i64 = 0;
+                                                                            i63 = 0;
+                                                                            str33 = null;
+                                                                            str32 = null;
+                                                                            z25 = false;
+                                                                            str31 = null;
+                                                                            z24 = false;
+                                                                            z23 = false;
+                                                                            z22 = false;
+                                                                            str30 = null;
+                                                                            z21 = false;
+                                                                            z20 = false;
+                                                                            r58 = null;
+                                                                            i54 = 0;
+                                                                            i62 = 0;
+                                                                            i19 = 0;
+                                                                            i61 = 0;
+                                                                            i55 = 0;
+                                                                            i20 = 0;
+                                                                            i21 = 0;
+                                                                            i22 = 0;
+                                                                            i23 = 0;
+                                                                            str29 = null;
+                                                                            str12 = null;
+                                                                            str13 = null;
+                                                                            str28 = null;
+                                                                            str27 = null;
+                                                                            str14 = null;
+                                                                            str15 = null;
+                                                                            str25 = null;
+                                                                            obj = null;
+                                                                            j19 = 0;
+                                                                            j17 = 0;
+                                                                        } else if (uri5.startsWith("tg:setlanguage") || uri5.startsWith("tg://setlanguage")) {
+                                                                            launchActivity = this;
+                                                                            str47 = Uri.parse(uri5.replace("tg:setlanguage", "tg://telegram.org").replace("tg://setlanguage", "tg://telegram.org")).getQueryParameter("lang");
+                                                                            intent2 = intent;
+                                                                            iArr5 = iArr9;
+                                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                            str22 = "phone";
+                                                                            str23 = "message_id";
+                                                                            str24 = "android.intent.action.MAIN";
+                                                                            str19 = " ";
+                                                                            str26 = str16;
+                                                                            str21 = null;
+                                                                            i66 = -1;
+                                                                            str61 = null;
+                                                                            str59 = null;
+                                                                            str58 = null;
+                                                                            str57 = null;
+                                                                            str56 = null;
+                                                                            str55 = null;
+                                                                            str54 = null;
+                                                                            str53 = null;
+                                                                            str52 = null;
+                                                                            str51 = null;
+                                                                            str50 = null;
+                                                                            z27 = false;
+                                                                            r16 = null;
+                                                                            r17 = null;
+                                                                            str49 = null;
+                                                                            num = null;
+                                                                            str48 = null;
+                                                                            r21 = null;
+                                                                            str46 = null;
+                                                                            str45 = null;
+                                                                            r26 = null;
+                                                                            str44 = null;
+                                                                            str43 = null;
+                                                                            str42 = null;
+                                                                            str41 = null;
+                                                                            str40 = null;
+                                                                        } else if (uri5.startsWith("tg:addtheme") || uri5.startsWith("tg://addtheme")) {
+                                                                            launchActivity = this;
+                                                                            str42 = Uri.parse(uri5.replace("tg:addtheme", "tg://telegram.org").replace("tg://addtheme", "tg://telegram.org")).getQueryParameter("slug");
+                                                                            intent2 = intent;
+                                                                            iArr5 = iArr9;
+                                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                            str22 = "phone";
+                                                                            str23 = "message_id";
+                                                                            str24 = "android.intent.action.MAIN";
+                                                                            str19 = " ";
+                                                                            str26 = str16;
+                                                                            str21 = null;
+                                                                            i66 = -1;
+                                                                            str61 = null;
+                                                                            str59 = null;
+                                                                            str58 = null;
+                                                                            str57 = null;
+                                                                            str56 = null;
+                                                                            str55 = null;
+                                                                            str54 = null;
+                                                                            str53 = null;
+                                                                            str52 = null;
+                                                                            str51 = null;
+                                                                            str50 = null;
+                                                                            z27 = false;
+                                                                            r16 = null;
+                                                                            r17 = null;
+                                                                            str49 = null;
+                                                                            num = null;
+                                                                            str48 = null;
+                                                                            r21 = null;
+                                                                            str47 = null;
+                                                                            str46 = null;
+                                                                            str45 = null;
+                                                                            r26 = null;
+                                                                            str44 = null;
+                                                                            str43 = null;
+                                                                            str41 = null;
+                                                                            str40 = null;
+                                                                        } else if (uri5.startsWith("tg:settings") || uri5.startsWith("tg://settings")) {
+                                                                            launchActivity = this;
+                                                                            if (uri5.contains("themes") || uri5.contains("theme")) {
+                                                                                intent2 = intent;
+                                                                                iArr5 = iArr9;
+                                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                str22 = "phone";
+                                                                                str23 = "message_id";
+                                                                                str24 = "android.intent.action.MAIN";
+                                                                                str19 = " ";
+                                                                                str26 = str16;
+                                                                                str21 = null;
+                                                                                i66 = -1;
+                                                                                str61 = null;
+                                                                                str59 = null;
+                                                                                str58 = null;
+                                                                                str57 = null;
+                                                                                str56 = null;
+                                                                                str55 = null;
+                                                                                str54 = null;
+                                                                                str53 = null;
+                                                                                str52 = null;
+                                                                                str51 = null;
+                                                                                str50 = null;
+                                                                                z27 = false;
+                                                                                r16 = null;
+                                                                                r17 = null;
+                                                                                str49 = null;
+                                                                                num = null;
+                                                                                str48 = null;
+                                                                                r21 = null;
+                                                                                str47 = null;
+                                                                                str46 = null;
+                                                                                str45 = null;
+                                                                                r26 = null;
+                                                                                str44 = null;
+                                                                                str43 = null;
+                                                                                str42 = null;
+                                                                                str41 = null;
+                                                                                str40 = null;
+                                                                                j18 = 0;
+                                                                                str39 = null;
+                                                                                str38 = null;
+                                                                                str37 = null;
+                                                                                str36 = null;
+                                                                                str35 = null;
+                                                                                str34 = null;
+                                                                                i65 = 0;
+                                                                                z26 = false;
+                                                                                i64 = 0;
+                                                                                i63 = 0;
+                                                                                str33 = null;
+                                                                                str32 = null;
+                                                                                z25 = false;
+                                                                                str31 = null;
+                                                                                z24 = false;
+                                                                                z23 = false;
+                                                                                z22 = false;
+                                                                                str30 = null;
+                                                                                z21 = false;
+                                                                                z20 = false;
+                                                                                r58 = null;
+                                                                                i54 = 0;
+                                                                                i62 = 2;
+                                                                            } else {
+                                                                                if (uri5.contains("devices")) {
+                                                                                    intent2 = intent;
+                                                                                    iArr5 = iArr9;
+                                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                    str22 = "phone";
+                                                                                    i62 = 3;
+                                                                                } else if (uri5.contains("folders")) {
+                                                                                    intent2 = intent;
+                                                                                    iArr5 = iArr9;
+                                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                    str22 = "phone";
+                                                                                    str23 = "message_id";
+                                                                                    str24 = "android.intent.action.MAIN";
+                                                                                    str19 = " ";
+                                                                                    str26 = str16;
+                                                                                    str21 = null;
+                                                                                    i66 = -1;
+                                                                                    str61 = null;
+                                                                                    str59 = null;
+                                                                                    str58 = null;
+                                                                                    str57 = null;
+                                                                                    str56 = null;
+                                                                                    str55 = null;
+                                                                                    str54 = null;
+                                                                                    str53 = null;
+                                                                                    str52 = null;
+                                                                                    str51 = null;
+                                                                                    str50 = null;
+                                                                                    z27 = false;
+                                                                                    r16 = null;
+                                                                                    r17 = null;
+                                                                                    str49 = null;
+                                                                                    num = null;
+                                                                                    str48 = null;
+                                                                                    r21 = null;
+                                                                                    str47 = null;
+                                                                                    str46 = null;
+                                                                                    str45 = null;
+                                                                                    r26 = null;
+                                                                                    str44 = null;
+                                                                                    str43 = null;
+                                                                                    str42 = null;
+                                                                                    str41 = null;
+                                                                                    str40 = null;
+                                                                                    j18 = 0;
+                                                                                    str39 = null;
+                                                                                    str38 = null;
+                                                                                    str37 = null;
+                                                                                    str36 = null;
+                                                                                    str35 = null;
+                                                                                    str34 = null;
+                                                                                    i65 = 0;
+                                                                                    z26 = false;
+                                                                                    i64 = 0;
+                                                                                    i63 = 0;
+                                                                                    str33 = null;
+                                                                                    str32 = null;
+                                                                                    z25 = false;
+                                                                                    str31 = null;
+                                                                                    z24 = false;
+                                                                                    z23 = false;
+                                                                                    z22 = false;
+                                                                                    str30 = null;
+                                                                                    z21 = false;
+                                                                                    z20 = false;
+                                                                                    r58 = null;
+                                                                                    i54 = 0;
+                                                                                    i62 = 4;
+                                                                                } else if (uri5.contains("change_number")) {
+                                                                                    intent2 = intent;
+                                                                                    iArr5 = iArr9;
+                                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                    str22 = "phone";
+                                                                                    str23 = "message_id";
+                                                                                    str24 = "android.intent.action.MAIN";
+                                                                                    str19 = " ";
+                                                                                    str26 = str16;
+                                                                                    str21 = null;
+                                                                                    i66 = -1;
+                                                                                    str61 = null;
+                                                                                    str59 = null;
+                                                                                    str58 = null;
+                                                                                    str57 = null;
+                                                                                    str56 = null;
+                                                                                    str55 = null;
+                                                                                    str54 = null;
+                                                                                    str53 = null;
+                                                                                    str52 = null;
+                                                                                    str51 = null;
+                                                                                    str50 = null;
+                                                                                    z27 = false;
+                                                                                    r16 = null;
+                                                                                    r17 = null;
+                                                                                    str49 = null;
+                                                                                    num = null;
+                                                                                    str48 = null;
+                                                                                    r21 = null;
+                                                                                    str47 = null;
+                                                                                    str46 = null;
+                                                                                    str45 = null;
+                                                                                    r26 = null;
+                                                                                    str44 = null;
+                                                                                    str43 = null;
+                                                                                    str42 = null;
+                                                                                    str41 = null;
+                                                                                    str40 = null;
+                                                                                    j18 = 0;
+                                                                                    str39 = null;
+                                                                                    str38 = null;
+                                                                                    str37 = null;
+                                                                                    str36 = null;
+                                                                                    str35 = null;
+                                                                                    str34 = null;
+                                                                                    i65 = 0;
+                                                                                    z26 = false;
+                                                                                    i64 = 0;
+                                                                                    i63 = 0;
+                                                                                    str33 = null;
+                                                                                    str32 = null;
+                                                                                    z25 = false;
+                                                                                    str31 = null;
+                                                                                    z24 = false;
+                                                                                    z23 = false;
+                                                                                    z22 = false;
+                                                                                    str30 = null;
+                                                                                    z21 = false;
+                                                                                    z20 = false;
+                                                                                    r58 = null;
+                                                                                    i54 = 0;
+                                                                                    i62 = 5;
+                                                                                } else if (uri5.contains("language")) {
+                                                                                    intent2 = intent;
+                                                                                    iArr5 = iArr9;
+                                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                    str22 = "phone";
+                                                                                    str23 = "message_id";
+                                                                                    str24 = "android.intent.action.MAIN";
+                                                                                    str19 = " ";
+                                                                                    str26 = str16;
+                                                                                    str21 = null;
+                                                                                    i66 = -1;
+                                                                                    str61 = null;
+                                                                                    str59 = null;
+                                                                                    str58 = null;
+                                                                                    str57 = null;
+                                                                                    str56 = null;
+                                                                                    str55 = null;
+                                                                                    str54 = null;
+                                                                                    str53 = null;
+                                                                                    str52 = null;
+                                                                                    str51 = null;
+                                                                                    str50 = null;
+                                                                                    z27 = false;
+                                                                                    r16 = null;
+                                                                                    r17 = null;
+                                                                                    str49 = null;
+                                                                                    num = null;
+                                                                                    str48 = null;
+                                                                                    r21 = null;
+                                                                                    str47 = null;
+                                                                                    str46 = null;
+                                                                                    str45 = null;
+                                                                                    r26 = null;
+                                                                                    str44 = null;
+                                                                                    str43 = null;
+                                                                                    str42 = null;
+                                                                                    str41 = null;
+                                                                                    str40 = null;
+                                                                                    j18 = 0;
+                                                                                    str39 = null;
+                                                                                    str38 = null;
+                                                                                    str37 = null;
+                                                                                    str36 = null;
+                                                                                    str35 = null;
+                                                                                    str34 = null;
+                                                                                    i65 = 0;
+                                                                                    z26 = false;
+                                                                                    i64 = 0;
+                                                                                    i63 = 0;
+                                                                                    str33 = null;
+                                                                                    str32 = null;
+                                                                                    z25 = false;
+                                                                                    str31 = null;
+                                                                                    z24 = false;
+                                                                                    z23 = false;
+                                                                                    z22 = false;
+                                                                                    str30 = null;
+                                                                                    z21 = false;
+                                                                                    z20 = false;
+                                                                                    r58 = null;
+                                                                                    i54 = 0;
+                                                                                    i62 = 10;
+                                                                                } else {
+                                                                                    if (uri5.contains("auto_delete")) {
+                                                                                        i62 = 11;
+                                                                                        intent2 = intent;
+                                                                                    } else if (uri5.contains("phone_privacy")) {
+                                                                                        intent2 = intent;
+                                                                                        iArr5 = iArr9;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str22 = "phone";
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 14;
+                                                                                    } else if (uri5.contains("privacy")) {
+                                                                                        intent2 = intent;
+                                                                                        iArr5 = iArr9;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str22 = "phone";
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 12;
+                                                                                    } else if (uri5.contains("?enablelogs")) {
+                                                                                        intent2 = intent;
+                                                                                        iArr5 = iArr9;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str22 = "phone";
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 7;
+                                                                                    } else if (uri5.contains("?sendlogs")) {
+                                                                                        intent2 = intent;
+                                                                                        iArr5 = iArr9;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str22 = "phone";
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 8;
+                                                                                    } else if (uri5.contains("?disablelogs")) {
+                                                                                        intent2 = intent;
+                                                                                        i62 = 9;
+                                                                                    } else if (uri5.contains("premium_sms")) {
+                                                                                        intent2 = intent;
+                                                                                        iArr5 = iArr9;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str22 = "phone";
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 13;
+                                                                                    } else if (uri5.contains("login_email")) {
+                                                                                        intent2 = intent;
+                                                                                        iArr5 = iArr9;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str22 = "phone";
+                                                                                        i62 = 15;
+                                                                                    } else {
+                                                                                        intent2 = intent;
+                                                                                        iArr5 = iArr9;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str22 = "phone";
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 1;
+                                                                                    }
+                                                                                    iArr5 = iArr9;
+                                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                    str22 = "phone";
+                                                                                }
+                                                                                str23 = "message_id";
+                                                                                str24 = "android.intent.action.MAIN";
+                                                                                str19 = " ";
+                                                                                str26 = str16;
+                                                                                str21 = null;
+                                                                                i66 = -1;
+                                                                                str61 = null;
+                                                                                str59 = null;
+                                                                                str58 = null;
+                                                                                str57 = null;
+                                                                                str56 = null;
+                                                                                str55 = null;
+                                                                                str54 = null;
+                                                                                str53 = null;
+                                                                                str52 = null;
+                                                                                str51 = null;
+                                                                                str50 = null;
+                                                                                z27 = false;
+                                                                                r16 = null;
+                                                                                r17 = null;
+                                                                                str49 = null;
+                                                                                num = null;
+                                                                                str48 = null;
+                                                                                r21 = null;
+                                                                                str47 = null;
+                                                                                str46 = null;
+                                                                                str45 = null;
+                                                                                r26 = null;
+                                                                                str44 = null;
+                                                                                str43 = null;
+                                                                                str42 = null;
+                                                                                str41 = null;
+                                                                                str40 = null;
+                                                                                j18 = 0;
+                                                                                str39 = null;
+                                                                                str38 = null;
+                                                                                str37 = null;
+                                                                                str36 = null;
+                                                                                str35 = null;
+                                                                                str34 = null;
+                                                                                i65 = 0;
+                                                                                z26 = false;
+                                                                                i64 = 0;
+                                                                                i63 = 0;
+                                                                                str33 = null;
+                                                                                str32 = null;
+                                                                                z25 = false;
+                                                                                str31 = null;
+                                                                                z24 = false;
+                                                                                z23 = false;
+                                                                                z22 = false;
+                                                                                str30 = null;
+                                                                                z21 = false;
+                                                                                z20 = false;
+                                                                                r58 = null;
+                                                                                i54 = 0;
+                                                                            }
+                                                                            i19 = 0;
+                                                                            i61 = 0;
+                                                                            i55 = 0;
+                                                                            i20 = 0;
+                                                                            i21 = 0;
+                                                                            i22 = 0;
+                                                                            i23 = 0;
+                                                                            str29 = null;
+                                                                            str12 = null;
+                                                                            str13 = null;
+                                                                            str28 = null;
+                                                                            str27 = null;
+                                                                            str14 = null;
+                                                                            str15 = null;
+                                                                            str25 = null;
+                                                                            obj = null;
+                                                                            j19 = 0;
+                                                                            j17 = 0;
+                                                                            i60 = 4;
+                                                                            i59 = -1;
+                                                                            i58 = 6;
+                                                                            c14 = 2;
+                                                                            i57 = 1;
+                                                                            if (intent2.hasExtra(str60)) {
+                                                                            }
+                                                                            if (str46 == null) {
+                                                                            }
+                                                                            if (str61 == null) {
+                                                                            }
+                                                                            cVar3 = cVar;
+                                                                            iArr4 = iArr5;
+                                                                            str = str24;
+                                                                            str2 = str19;
+                                                                            str10 = str23;
+                                                                            org.telegram.ui.ActionBar.b2 b2Var222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                            b2Var222.j();
+                                                                            b2Var222.show();
+                                                                            sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                            sendconfirmphonecode.hash = str57;
+                                                                            TLRPC.TL_codeSettings tL_codeSettings222 = new TLRPC.TL_codeSettings();
+                                                                            sendconfirmphonecode.settings = tL_codeSettings222;
+                                                                            i51 = 0;
+                                                                            tL_codeSettings222.allow_flashcall = false;
+                                                                            boolean hasServices222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                            tL_codeSettings222.allow_firebase = hasServices222;
+                                                                            tL_codeSettings222.allow_app_hash = hasServices222;
+                                                                            SharedPreferences sharedPreferences222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                            if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                            }
+                                                                            Bundle bundle222 = new Bundle();
+                                                                            bundle222.putString(str22, str61);
+                                                                            ConnectionsManager connectionsManager222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                            LaunchActivity launchActivity2222 = launchActivity;
+                                                                            String str124222 = str61;
+                                                                            r13 = launchActivity2222;
+                                                                            connectionsManager222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222, str124222, bundle222, sendconfirmphonecode, 8), 2);
+                                                                            i52 = i62;
+                                                                            i53 = i61;
+                                                                            str11 = str29;
+                                                                            j16 = j19;
+                                                                        } else {
+                                                                            if (uri5.startsWith("tg:search") || uri5.startsWith("tg://search")) {
+                                                                                launchActivity = this;
+                                                                                intent3 = intent;
+                                                                                str76 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                String queryParameter22 = Uri.parse(uri5.replace("tg:search", "tg://telegram.org").replace("tg://search", "tg://telegram.org")).getQueryParameter("query");
+                                                                                if (queryParameter22 != null) {
+                                                                                    str29 = queryParameter22.trim();
+                                                                                    intent2 = intent3;
+                                                                                    iArr5 = iArr9;
+                                                                                    str60 = str76;
+                                                                                    str22 = "phone";
+                                                                                    str23 = "message_id";
+                                                                                    str24 = "android.intent.action.MAIN";
+                                                                                    str19 = " ";
+                                                                                    str26 = str16;
+                                                                                    str21 = null;
+                                                                                    i66 = -1;
+                                                                                    str61 = null;
+                                                                                    str59 = null;
+                                                                                    str58 = null;
+                                                                                    str57 = null;
+                                                                                    str56 = null;
+                                                                                    str55 = null;
+                                                                                    str54 = null;
+                                                                                    str53 = null;
+                                                                                    str52 = null;
+                                                                                    str51 = null;
+                                                                                    str50 = null;
+                                                                                    z27 = false;
+                                                                                    r16 = null;
+                                                                                    r17 = null;
+                                                                                    str49 = null;
+                                                                                    num = null;
+                                                                                    str48 = null;
+                                                                                    r21 = null;
+                                                                                    str47 = null;
+                                                                                    str46 = null;
+                                                                                    str45 = null;
+                                                                                    r26 = null;
+                                                                                    str44 = null;
+                                                                                    str43 = null;
+                                                                                    str42 = null;
+                                                                                    str41 = null;
+                                                                                    str40 = null;
+                                                                                    j18 = 0;
+                                                                                    str39 = null;
+                                                                                    str38 = null;
+                                                                                    str37 = null;
+                                                                                    str36 = null;
+                                                                                    str35 = null;
+                                                                                    str34 = null;
+                                                                                    i65 = 0;
+                                                                                    z26 = false;
+                                                                                    i64 = 0;
+                                                                                    i63 = 0;
+                                                                                    str33 = null;
+                                                                                    str32 = null;
+                                                                                    z25 = false;
+                                                                                    str31 = null;
+                                                                                    z24 = false;
+                                                                                    z23 = false;
+                                                                                    z22 = false;
+                                                                                    str30 = null;
+                                                                                    z21 = false;
+                                                                                    z20 = false;
+                                                                                    r58 = null;
+                                                                                    i54 = 0;
+                                                                                    i62 = 0;
+                                                                                    i19 = 0;
+                                                                                    i61 = 0;
+                                                                                    i55 = 0;
+                                                                                    i20 = 0;
+                                                                                    i21 = 0;
+                                                                                    i22 = 0;
+                                                                                    i23 = 0;
+                                                                                    str12 = null;
+                                                                                    str13 = null;
+                                                                                    str28 = null;
+                                                                                    str27 = null;
+                                                                                    str14 = null;
+                                                                                    str15 = null;
+                                                                                    str25 = null;
+                                                                                    obj = null;
+                                                                                    j19 = 0;
+                                                                                    j17 = 0;
+                                                                                    i60 = 4;
+                                                                                    i59 = -1;
+                                                                                    i58 = 6;
+                                                                                    c14 = 2;
+                                                                                    i57 = 1;
+                                                                                    if (intent2.hasExtra(str60)) {
+                                                                                    }
+                                                                                    if (str46 == null) {
+                                                                                    }
+                                                                                    if (str61 == null) {
+                                                                                    }
+                                                                                    cVar3 = cVar;
+                                                                                    iArr4 = iArr5;
+                                                                                    str = str24;
+                                                                                    str2 = str19;
+                                                                                    str10 = str23;
+                                                                                    org.telegram.ui.ActionBar.b2 b2Var2222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                                    b2Var2222.j();
+                                                                                    b2Var2222.show();
+                                                                                    sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                                    sendconfirmphonecode.hash = str57;
+                                                                                    TLRPC.TL_codeSettings tL_codeSettings2222 = new TLRPC.TL_codeSettings();
+                                                                                    sendconfirmphonecode.settings = tL_codeSettings2222;
+                                                                                    i51 = 0;
+                                                                                    tL_codeSettings2222.allow_flashcall = false;
+                                                                                    boolean hasServices2222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                                    tL_codeSettings2222.allow_firebase = hasServices2222;
+                                                                                    tL_codeSettings2222.allow_app_hash = hasServices2222;
+                                                                                    SharedPreferences sharedPreferences2222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                                    if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                                    }
+                                                                                    Bundle bundle2222 = new Bundle();
+                                                                                    bundle2222.putString(str22, str61);
+                                                                                    ConnectionsManager connectionsManager2222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                                    LaunchActivity launchActivity22222 = launchActivity;
+                                                                                    String str1242222 = str61;
+                                                                                    r13 = launchActivity22222;
+                                                                                    connectionsManager2222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222, str1242222, bundle2222, sendconfirmphonecode, 8), 2);
+                                                                                    i52 = i62;
+                                                                                    i53 = i61;
+                                                                                    str11 = str29;
+                                                                                    j16 = j19;
+                                                                                } else {
+                                                                                    str29 = "";
+                                                                                    iArr5 = iArr9;
+                                                                                    str22 = "phone";
+                                                                                    str23 = "message_id";
+                                                                                    str24 = "android.intent.action.MAIN";
+                                                                                    str19 = " ";
+                                                                                    str26 = str16;
+                                                                                    str21 = null;
+                                                                                    i66 = -1;
+                                                                                    str61 = null;
+                                                                                    str59 = null;
+                                                                                    str58 = null;
+                                                                                    str56 = null;
+                                                                                    str55 = null;
+                                                                                    str54 = null;
+                                                                                    str53 = null;
+                                                                                    str52 = null;
+                                                                                    str51 = null;
+                                                                                    str50 = null;
+                                                                                    z27 = false;
+                                                                                    r16 = null;
+                                                                                    r17 = null;
+                                                                                    str49 = null;
+                                                                                    num = null;
+                                                                                    str48 = null;
+                                                                                    r21 = null;
+                                                                                    str47 = null;
+                                                                                    str46 = null;
+                                                                                    str45 = null;
+                                                                                    r26 = null;
+                                                                                    str44 = null;
+                                                                                    str43 = null;
+                                                                                    str42 = null;
+                                                                                    str41 = null;
+                                                                                    str40 = null;
+                                                                                    j18 = 0;
+                                                                                    str39 = null;
+                                                                                    str38 = null;
+                                                                                    str37 = null;
+                                                                                    str36 = null;
+                                                                                    str35 = null;
+                                                                                    str34 = null;
+                                                                                    i65 = 0;
+                                                                                    z26 = false;
+                                                                                    i64 = 0;
+                                                                                    i63 = 0;
+                                                                                    str33 = null;
+                                                                                    str32 = null;
+                                                                                    z25 = false;
+                                                                                    str31 = null;
+                                                                                    z24 = false;
+                                                                                    z23 = false;
+                                                                                    z22 = false;
+                                                                                    str30 = null;
+                                                                                    z21 = false;
+                                                                                    z20 = false;
+                                                                                    r58 = null;
+                                                                                    i54 = 0;
+                                                                                    i62 = 0;
+                                                                                    i19 = 0;
+                                                                                    i61 = 0;
+                                                                                    i55 = 0;
+                                                                                    i20 = 0;
+                                                                                    i21 = 0;
+                                                                                    i22 = 0;
+                                                                                    i23 = 0;
+                                                                                    str12 = null;
+                                                                                    str13 = null;
+                                                                                    str28 = null;
+                                                                                    str27 = null;
+                                                                                    str14 = null;
+                                                                                    str15 = null;
+                                                                                    str25 = null;
+                                                                                    obj = null;
+                                                                                    j19 = 0;
+                                                                                }
+                                                                            } else if (!uri5.startsWith("tg:calllog") && !uri5.startsWith("tg://calllog")) {
+                                                                                if (uri5.startsWith("tg:call") || uri5.startsWith("tg://call")) {
+                                                                                    launchActivity = this;
+                                                                                    iArr6 = iArr9;
+                                                                                    if (UserConfig.getInstance(launchActivity.O).isClientActivated()) {
+                                                                                        String queryParameter23 = data.getQueryParameter("slug");
+                                                                                        if (TextUtils.isEmpty(queryParameter23)) {
+                                                                                            if (ContactsController.getInstance(launchActivity.O).contactsLoaded) {
+                                                                                                intent3 = intent;
+                                                                                            } else {
+                                                                                                intent3 = intent;
+                                                                                                if (!intent3.hasExtra("extra_force_call")) {
+                                                                                                    Intent intent4 = new Intent(intent3);
+                                                                                                    str76 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                                    intent4.removeExtra(str76);
+                                                                                                    intent4.putExtra("extra_force_call", true);
+                                                                                                    i71 = 15;
+                                                                                                    ContactsLoadingObserver.observe(new zu(i71, launchActivity, intent4), 1000L);
+                                                                                                    i75 = 0;
+                                                                                                    i73 = 0;
+                                                                                                    i72 = 0;
+                                                                                                    i74 = 0;
+                                                                                                    str77 = null;
+                                                                                                    str78 = null;
+                                                                                                    str79 = null;
+                                                                                                    str80 = null;
+                                                                                                }
+                                                                                            }
+                                                                                            str76 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                            i71 = 15;
+                                                                                            String queryParameter24 = data.getQueryParameter("format");
+                                                                                            String queryParameter25 = data.getQueryParameter("name");
+                                                                                            String queryParameter26 = data.getQueryParameter("phone");
+                                                                                            ArrayList M = launchActivity.M(queryParameter25, queryParameter26);
+                                                                                            if (!M.isEmpty() || queryParameter26 == null) {
+                                                                                                long j30 = M.size() == 1 ? ((TLRPC.TL_contact) M.get(0)).user_id : 0L;
+                                                                                                if (j30 != 0) {
+                                                                                                    queryParameter25 = null;
+                                                                                                } else if (queryParameter25 == null) {
+                                                                                                    queryParameter25 = "";
+                                                                                                }
+                                                                                                boolean equalsIgnoreCase = MediaStreamTrack.VIDEO_TRACK_KIND.equalsIgnoreCase(queryParameter24);
+                                                                                                i72 = !equalsIgnoreCase ? 1 : 0;
+                                                                                                str77 = queryParameter25;
+                                                                                                j23 = j30;
+                                                                                                i73 = 0;
+                                                                                                str78 = null;
+                                                                                                str79 = null;
+                                                                                                i74 = equalsIgnoreCase ? 1 : 0;
+                                                                                                i75 = 1;
+                                                                                            } else {
+                                                                                                str79 = queryParameter26;
+                                                                                                str78 = queryParameter25;
+                                                                                                i75 = 0;
+                                                                                                i73 = 1;
+                                                                                                i72 = 0;
+                                                                                                i74 = 0;
+                                                                                                str77 = null;
+                                                                                                j23 = 0;
+                                                                                            }
+                                                                                            j24 = j23;
+                                                                                            str80 = null;
+                                                                                            i20 = i75;
+                                                                                            i22 = i73;
+                                                                                            i61 = i72;
+                                                                                            iArr5 = iArr6;
+                                                                                            str22 = "phone";
+                                                                                            i55 = i74;
+                                                                                            str12 = str77;
+                                                                                            str13 = str78;
+                                                                                            str14 = str79;
+                                                                                            str15 = str80;
+                                                                                            str23 = "message_id";
+                                                                                            str24 = "android.intent.action.MAIN";
+                                                                                            str19 = " ";
+                                                                                            str26 = str16;
+                                                                                            j19 = j24;
+                                                                                            str21 = null;
+                                                                                            i66 = -1;
+                                                                                            str61 = null;
+                                                                                            str59 = null;
+                                                                                            str58 = null;
+                                                                                            str56 = null;
+                                                                                            str55 = null;
+                                                                                            str54 = null;
+                                                                                            str53 = null;
+                                                                                            str52 = null;
+                                                                                            str51 = null;
+                                                                                            str50 = null;
+                                                                                            z27 = false;
+                                                                                            r16 = null;
+                                                                                            r17 = null;
+                                                                                            str49 = null;
+                                                                                            num = null;
+                                                                                            str48 = null;
+                                                                                            r21 = null;
+                                                                                            str47 = null;
+                                                                                            str46 = null;
+                                                                                            str45 = null;
+                                                                                            r26 = null;
+                                                                                            str44 = null;
+                                                                                            str43 = null;
+                                                                                            str42 = null;
+                                                                                            str41 = null;
+                                                                                            str40 = null;
+                                                                                            j18 = 0;
+                                                                                            str39 = null;
+                                                                                            str38 = null;
+                                                                                            str37 = null;
+                                                                                            str36 = null;
+                                                                                            str35 = null;
+                                                                                            str34 = null;
+                                                                                            i65 = 0;
+                                                                                            z26 = false;
+                                                                                            i64 = 0;
+                                                                                            i63 = 0;
+                                                                                            str33 = null;
+                                                                                            str32 = null;
+                                                                                            z25 = false;
+                                                                                            str31 = null;
+                                                                                            z24 = false;
+                                                                                            z23 = false;
+                                                                                            z22 = false;
+                                                                                            str30 = null;
+                                                                                            z21 = false;
+                                                                                            z20 = false;
+                                                                                            r58 = null;
+                                                                                            i54 = 0;
+                                                                                            i62 = 0;
+                                                                                            i19 = 0;
+                                                                                            i21 = 0;
+                                                                                            i23 = 0;
+                                                                                            str29 = null;
+                                                                                            str28 = null;
+                                                                                            str27 = null;
+                                                                                            str25 = null;
+                                                                                            obj = null;
+                                                                                        } else {
+                                                                                            intent3 = intent;
+                                                                                            str80 = queryParameter23;
+                                                                                            str76 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                            i75 = 0;
+                                                                                            i73 = 0;
+                                                                                            i72 = 0;
+                                                                                            i71 = 15;
+                                                                                            i74 = 0;
+                                                                                            str77 = null;
+                                                                                            str78 = null;
+                                                                                            str79 = null;
+                                                                                        }
+                                                                                        j24 = 0;
+                                                                                        i20 = i75;
+                                                                                        i22 = i73;
+                                                                                        i61 = i72;
+                                                                                        iArr5 = iArr6;
+                                                                                        str22 = "phone";
+                                                                                        i55 = i74;
+                                                                                        str12 = str77;
+                                                                                        str13 = str78;
+                                                                                        str14 = str79;
+                                                                                        str15 = str80;
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        j19 = j24;
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 0;
+                                                                                        i19 = 0;
+                                                                                        i21 = 0;
+                                                                                        i23 = 0;
+                                                                                        str29 = null;
+                                                                                        str28 = null;
+                                                                                        str27 = null;
+                                                                                        str25 = null;
+                                                                                        obj = null;
+                                                                                    }
+                                                                                } else {
+                                                                                    if (uri5.startsWith("tg:scanqr") || uri5.startsWith("tg://scanqr")) {
+                                                                                        launchActivity = this;
+                                                                                        intent2 = intent;
+                                                                                        iArr5 = iArr9;
+                                                                                        str22 = "phone";
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 0;
+                                                                                        i19 = 0;
+                                                                                        i61 = 0;
+                                                                                        i55 = 0;
+                                                                                        i20 = 0;
+                                                                                        i21 = 0;
+                                                                                        i22 = 0;
+                                                                                        i23 = 1;
+                                                                                    } else if (uri5.startsWith("tg:addcontact") || uri5.startsWith("tg://addcontact")) {
+                                                                                        launchActivity = this;
+                                                                                        Uri parse9 = Uri.parse(uri5.replace("tg:addcontact", "tg://telegram.org").replace("tg://addcontact", "tg://telegram.org"));
+                                                                                        String queryParameter27 = parse9.getQueryParameter("name");
+                                                                                        List<String> queryParameters = parse9.getQueryParameters("phone");
+                                                                                        intent2 = intent;
+                                                                                        str14 = (queryParameters == null || queryParameters.size() <= 0) ? null : queryParameters.get(0);
+                                                                                        str13 = queryParameter27;
+                                                                                        iArr5 = iArr9;
+                                                                                        str22 = "phone";
+                                                                                        str23 = "message_id";
+                                                                                        str24 = "android.intent.action.MAIN";
+                                                                                        str19 = " ";
+                                                                                        str26 = str16;
+                                                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                        str21 = null;
+                                                                                        i66 = -1;
+                                                                                        str61 = null;
+                                                                                        str59 = null;
+                                                                                        str58 = null;
+                                                                                        str57 = null;
+                                                                                        str56 = null;
+                                                                                        str55 = null;
+                                                                                        str54 = null;
+                                                                                        str53 = null;
+                                                                                        str52 = null;
+                                                                                        str51 = null;
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 0;
+                                                                                        i19 = 0;
+                                                                                        i61 = 0;
+                                                                                        i55 = 0;
+                                                                                        i20 = 0;
+                                                                                        i21 = 1;
+                                                                                        i22 = 0;
+                                                                                        i23 = 0;
+                                                                                        str29 = null;
+                                                                                        str12 = null;
+                                                                                        str28 = null;
+                                                                                        str27 = null;
+                                                                                        str15 = null;
+                                                                                        str25 = null;
+                                                                                        obj = null;
+                                                                                        j19 = 0;
+                                                                                        j17 = 0;
+                                                                                        i60 = 4;
+                                                                                        i59 = -1;
+                                                                                        i58 = 6;
+                                                                                        c14 = 2;
+                                                                                        i57 = 1;
+                                                                                        if (intent2.hasExtra(str60)) {
+                                                                                        }
+                                                                                        if (str46 == null) {
+                                                                                        }
+                                                                                        if (str61 == null) {
+                                                                                        }
+                                                                                        cVar3 = cVar;
+                                                                                        iArr4 = iArr5;
+                                                                                        str = str24;
+                                                                                        str2 = str19;
+                                                                                        str10 = str23;
+                                                                                        org.telegram.ui.ActionBar.b2 b2Var22222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                                        b2Var22222.j();
+                                                                                        b2Var22222.show();
+                                                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                                        sendconfirmphonecode.hash = str57;
+                                                                                        TLRPC.TL_codeSettings tL_codeSettings22222 = new TLRPC.TL_codeSettings();
+                                                                                        sendconfirmphonecode.settings = tL_codeSettings22222;
+                                                                                        i51 = 0;
+                                                                                        tL_codeSettings22222.allow_flashcall = false;
+                                                                                        boolean hasServices22222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                                        tL_codeSettings22222.allow_firebase = hasServices22222;
+                                                                                        tL_codeSettings22222.allow_app_hash = hasServices22222;
+                                                                                        SharedPreferences sharedPreferences22222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                                        }
+                                                                                        Bundle bundle22222 = new Bundle();
+                                                                                        bundle22222.putString(str22, str61);
+                                                                                        ConnectionsManager connectionsManager22222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                                        LaunchActivity launchActivity222222 = launchActivity;
+                                                                                        String str12422222 = str61;
+                                                                                        r13 = launchActivity222222;
+                                                                                        connectionsManager22222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222, str12422222, bundle22222, sendconfirmphonecode, 8), 2);
+                                                                                        i52 = i62;
+                                                                                        i53 = i61;
+                                                                                        str11 = str29;
+                                                                                        j16 = j19;
+                                                                                    } else {
+                                                                                        if (uri5.startsWith("tg:addlist") || uri5.startsWith("tg://addlist")) {
+                                                                                            launchActivity = this;
+                                                                                            intent2 = intent;
+                                                                                            str51 = Uri.parse(uri5.replace("tg:addlist", "tg://telegram.org").replace("tg://addlist", "tg://telegram.org")).getQueryParameter("slug");
+                                                                                            iArr5 = iArr9;
+                                                                                            str22 = "phone";
+                                                                                            str23 = "message_id";
+                                                                                            str24 = "android.intent.action.MAIN";
+                                                                                            str19 = " ";
+                                                                                            str26 = str16;
+                                                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                            str21 = null;
+                                                                                            i66 = -1;
+                                                                                            str61 = null;
+                                                                                            str59 = null;
+                                                                                            str58 = null;
+                                                                                            str57 = null;
+                                                                                            str56 = null;
+                                                                                            str55 = null;
+                                                                                            str54 = null;
+                                                                                            str53 = null;
+                                                                                            str52 = null;
+                                                                                        } else if (uri5.startsWith("tg:message") || uri5.startsWith("tg://message")) {
+                                                                                            launchActivity = this;
+                                                                                            intent2 = intent;
+                                                                                            str31 = Uri.parse(uri5.replace("tg:message", "tg://telegram.org").replace("tg://message", "tg://telegram.org")).getQueryParameter("slug");
+                                                                                            iArr5 = iArr9;
+                                                                                            str22 = "phone";
+                                                                                            str23 = "message_id";
+                                                                                            str24 = "android.intent.action.MAIN";
+                                                                                            str19 = " ";
+                                                                                            str26 = str16;
+                                                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                            str21 = null;
+                                                                                            i66 = -1;
+                                                                                            str61 = null;
+                                                                                            str59 = null;
+                                                                                            str58 = null;
+                                                                                            str57 = null;
+                                                                                            str56 = null;
+                                                                                            str55 = null;
+                                                                                            str54 = null;
+                                                                                            str53 = null;
+                                                                                            str52 = null;
+                                                                                            str51 = null;
+                                                                                            str50 = null;
+                                                                                            z27 = false;
+                                                                                            r16 = null;
+                                                                                            r17 = null;
+                                                                                            str49 = null;
+                                                                                            num = null;
+                                                                                            str48 = null;
+                                                                                            r21 = null;
+                                                                                            str47 = null;
+                                                                                            str46 = null;
+                                                                                            str45 = null;
+                                                                                            r26 = null;
+                                                                                            str44 = null;
+                                                                                            str43 = null;
+                                                                                            str42 = null;
+                                                                                            str41 = null;
+                                                                                            str40 = null;
+                                                                                            j18 = 0;
+                                                                                            str39 = null;
+                                                                                            str38 = null;
+                                                                                            str37 = null;
+                                                                                            str36 = null;
+                                                                                            str35 = null;
+                                                                                            str34 = null;
+                                                                                            i65 = 0;
+                                                                                            z26 = false;
+                                                                                            i64 = 0;
+                                                                                            i63 = 0;
+                                                                                            str33 = null;
+                                                                                            str32 = null;
+                                                                                            z25 = false;
+                                                                                            z24 = false;
+                                                                                            z23 = false;
+                                                                                            z22 = false;
+                                                                                            str30 = null;
+                                                                                            z21 = false;
+                                                                                            z20 = false;
+                                                                                            r58 = null;
+                                                                                            i54 = 0;
+                                                                                            i62 = 0;
+                                                                                            i19 = 0;
+                                                                                            i61 = 0;
+                                                                                            i55 = 0;
+                                                                                            i20 = 0;
+                                                                                            i21 = 0;
+                                                                                            i22 = 0;
+                                                                                            i23 = 0;
+                                                                                        } else if (uri5.startsWith("tg:stars_topup") || uri5.startsWith("tg://stars_topup")) {
+                                                                                            launchActivity = this;
+                                                                                            iArr6 = iArr9;
+                                                                                            Uri parse10 = Uri.parse(uri5.replace("tg:stars_topup", "tg://telegram.org").replace("tg://stars_topup", "tg://telegram.org"));
+                                                                                            try {
+                                                                                                j25 = (int) Long.parseLong(parse10.getQueryParameter("balance"));
+                                                                                                if (j25 >= 0) {
+                                                                                                    break;
+                                                                                                }
+                                                                                            } catch (Exception e14) {
+                                                                                                FileLog.e(e14);
+                                                                                            }
+                                                                                            j25 = 0;
+                                                                                            ai.ga.w(iArr6[0]).g0(launchActivity, j25, parse10.getQueryParameter("purpose"));
+                                                                                        } else {
+                                                                                            if (uri5.startsWith("tg:ton") || uri5.startsWith("tg://ton")) {
+                                                                                                if (cVar != null) {
+                                                                                                    cVar.b();
+                                                                                                }
+                                                                                                t0(new fi.g());
+                                                                                                return false;
+                                                                                            }
+                                                                                            if (uri5.startsWith("tg:stars") || uri5.startsWith("tg://stars")) {
+                                                                                                if (cVar != null) {
+                                                                                                    cVar.b();
+                                                                                                }
+                                                                                                t0(new ai.md());
+                                                                                                return false;
+                                                                                            }
+                                                                                            if (uri5.startsWith("tg:send_gift") || uri5.startsWith("tg://send_gift")) {
+                                                                                                String queryParameter28 = data.getQueryParameter("to");
+                                                                                                if (TextUtils.isEmpty(queryParameter28)) {
+                                                                                                    if (cVar != null) {
+                                                                                                        cVar.b();
+                                                                                                    }
+                                                                                                    ug.m1.f0(0, BirthdayController.getInstance(this.O).getState());
+                                                                                                    return false;
+                                                                                                }
+                                                                                                try {
+                                                                                                    j26 = Long.parseLong(queryParameter28);
+                                                                                                } catch (Exception unused13) {
+                                                                                                    j26 = 0;
+                                                                                                }
+                                                                                                if (j26 != 0) {
+                                                                                                    if (cVar != null) {
+                                                                                                        cVar.b();
+                                                                                                    }
+                                                                                                    if (MessagesController.getInstance(this.O).getUserOrChat(j26) != null) {
+                                                                                                        new yh.p1(this, iArr9[0], j26).show();
+                                                                                                        return false;
+                                                                                                    }
+                                                                                                    org.telegram.ui.ActionBar.n2 R = R();
+                                                                                                    if (R != null && (R instanceof sn)) {
+                                                                                                        ((sn) R).ub();
+                                                                                                    }
+                                                                                                } else {
+                                                                                                    if (cVar != null) {
+                                                                                                        cVar.d();
+                                                                                                    }
+                                                                                                    Runnable resolve = MessagesController.getInstance(iArr9[0]).getUserNameResolver().resolve(queryParameter28, null, new z(this, cVar, iArr9, 9));
+                                                                                                    if (cVar != null && resolve != null) {
+                                                                                                        cVar.e(resolve);
+                                                                                                    }
+                                                                                                }
+                                                                                                return false;
+                                                                                            }
+                                                                                            String replace2 = uri5.replace("tg://", "").replace("tg:", "");
+                                                                                            int indexOf = replace2.indexOf(63);
+                                                                                            if (indexOf >= 0) {
+                                                                                                replace2 = replace2.substring(0, indexOf);
+                                                                                            }
+                                                                                            launchActivity = this;
+                                                                                            intent2 = intent;
+                                                                                            str59 = replace2;
+                                                                                            str22 = "phone";
+                                                                                            str23 = "message_id";
+                                                                                            str24 = "android.intent.action.MAIN";
+                                                                                            iArr5 = iArr9;
+                                                                                            str19 = " ";
+                                                                                            str26 = str16;
+                                                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                            str21 = null;
+                                                                                            i66 = -1;
+                                                                                            str61 = null;
+                                                                                            str58 = null;
+                                                                                            str57 = null;
+                                                                                            str56 = null;
+                                                                                            str55 = null;
+                                                                                            str54 = null;
+                                                                                            str53 = null;
+                                                                                            str52 = null;
+                                                                                            str51 = null;
+                                                                                        }
+                                                                                        str50 = null;
+                                                                                        z27 = false;
+                                                                                        r16 = null;
+                                                                                        r17 = null;
+                                                                                        str49 = null;
+                                                                                        num = null;
+                                                                                        str48 = null;
+                                                                                        r21 = null;
+                                                                                        str47 = null;
+                                                                                        str46 = null;
+                                                                                        str45 = null;
+                                                                                        r26 = null;
+                                                                                        str44 = null;
+                                                                                        str43 = null;
+                                                                                        str42 = null;
+                                                                                        str41 = null;
+                                                                                        str40 = null;
+                                                                                        j18 = 0;
+                                                                                        str39 = null;
+                                                                                        str38 = null;
+                                                                                        str37 = null;
+                                                                                        str36 = null;
+                                                                                        str35 = null;
+                                                                                        str34 = null;
+                                                                                        i65 = 0;
+                                                                                        z26 = false;
+                                                                                        i64 = 0;
+                                                                                        i63 = 0;
+                                                                                        str33 = null;
+                                                                                        str32 = null;
+                                                                                        z25 = false;
+                                                                                        str31 = null;
+                                                                                        z24 = false;
+                                                                                        z23 = false;
+                                                                                        z22 = false;
+                                                                                        str30 = null;
+                                                                                        z21 = false;
+                                                                                        z20 = false;
+                                                                                        r58 = null;
+                                                                                        i54 = 0;
+                                                                                        i62 = 0;
+                                                                                        i19 = 0;
+                                                                                        i61 = 0;
+                                                                                        i55 = 0;
+                                                                                        i20 = 0;
+                                                                                        i21 = 0;
+                                                                                        i22 = 0;
+                                                                                        i23 = 0;
+                                                                                    }
+                                                                                    str29 = null;
+                                                                                    str12 = null;
+                                                                                    str13 = null;
+                                                                                    str28 = null;
+                                                                                    str27 = null;
+                                                                                    str14 = null;
+                                                                                    str15 = null;
+                                                                                    str25 = null;
+                                                                                    obj = null;
+                                                                                    j19 = 0;
+                                                                                    j17 = 0;
+                                                                                    i60 = 4;
+                                                                                    i59 = -1;
+                                                                                    i58 = 6;
+                                                                                    c14 = 2;
+                                                                                    i57 = 1;
+                                                                                    if (intent2.hasExtra(str60)) {
+                                                                                    }
+                                                                                    if (str46 == null) {
+                                                                                    }
+                                                                                    if (str61 == null) {
+                                                                                    }
+                                                                                    cVar3 = cVar;
+                                                                                    iArr4 = iArr5;
+                                                                                    str = str24;
+                                                                                    str2 = str19;
+                                                                                    str10 = str23;
+                                                                                    org.telegram.ui.ActionBar.b2 b2Var222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                                    b2Var222222.j();
+                                                                                    b2Var222222.show();
+                                                                                    sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                                    sendconfirmphonecode.hash = str57;
+                                                                                    TLRPC.TL_codeSettings tL_codeSettings222222 = new TLRPC.TL_codeSettings();
+                                                                                    sendconfirmphonecode.settings = tL_codeSettings222222;
+                                                                                    i51 = 0;
+                                                                                    tL_codeSettings222222.allow_flashcall = false;
+                                                                                    boolean hasServices222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                                    tL_codeSettings222222.allow_firebase = hasServices222222;
+                                                                                    tL_codeSettings222222.allow_app_hash = hasServices222222;
+                                                                                    SharedPreferences sharedPreferences222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                                    if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                                    }
+                                                                                    Bundle bundle222222 = new Bundle();
+                                                                                    bundle222222.putString(str22, str61);
+                                                                                    ConnectionsManager connectionsManager222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                                    LaunchActivity launchActivity2222222 = launchActivity;
+                                                                                    String str124222222 = str61;
+                                                                                    r13 = launchActivity2222222;
+                                                                                    connectionsManager222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222, str124222222, bundle222222, sendconfirmphonecode, 8), 2);
+                                                                                    i52 = i62;
+                                                                                    i53 = i61;
+                                                                                    str11 = str29;
+                                                                                    j16 = j19;
+                                                                                }
+                                                                                intent2 = intent;
+                                                                                iArr9 = iArr6;
+                                                                                str19 = " ";
+                                                                                str17 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                str20 = null;
+                                                                                c10 = 15;
+                                                                                i56 = 1;
+                                                                                c11 = '\b';
+                                                                                c12 = 14;
+                                                                                c13 = 7;
+                                                                                j18 = 0;
+                                                                                str18 = "phone";
+                                                                                break;
+                                                                            } else {
+                                                                                launchActivity = this;
+                                                                                intent2 = intent;
+                                                                                iArr5 = iArr9;
+                                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                                str22 = "phone";
+                                                                                str23 = "message_id";
+                                                                                str24 = "android.intent.action.MAIN";
+                                                                                str19 = " ";
+                                                                                str26 = str16;
+                                                                                str21 = null;
+                                                                                i66 = -1;
+                                                                                str61 = null;
+                                                                                str59 = null;
+                                                                                str58 = null;
+                                                                                str57 = null;
+                                                                                str56 = null;
+                                                                                str55 = null;
+                                                                                str54 = null;
+                                                                                str53 = null;
+                                                                                str52 = null;
+                                                                                str51 = null;
+                                                                                str50 = null;
+                                                                                z27 = false;
+                                                                                r16 = null;
+                                                                                r17 = null;
+                                                                                str49 = null;
+                                                                                num = null;
+                                                                                str48 = null;
+                                                                                r21 = null;
+                                                                                str47 = null;
+                                                                                str46 = null;
+                                                                                str45 = null;
+                                                                                r26 = null;
+                                                                                str44 = null;
+                                                                                str43 = null;
+                                                                                str42 = null;
+                                                                                str41 = null;
+                                                                                str40 = null;
+                                                                                j18 = 0;
+                                                                                str39 = null;
+                                                                                str38 = null;
+                                                                                str37 = null;
+                                                                                str36 = null;
+                                                                                str35 = null;
+                                                                                str34 = null;
+                                                                                i65 = 0;
+                                                                                z26 = false;
+                                                                                i64 = 0;
+                                                                                i63 = 0;
+                                                                                str33 = null;
+                                                                                str32 = null;
+                                                                                z25 = false;
+                                                                                str31 = null;
+                                                                                z24 = false;
+                                                                                z23 = false;
+                                                                                z22 = false;
+                                                                                str30 = null;
+                                                                                z21 = false;
+                                                                                z20 = false;
+                                                                                r58 = null;
+                                                                                i54 = 0;
+                                                                                i62 = 0;
+                                                                                i19 = 1;
+                                                                                i61 = 0;
+                                                                                i55 = 0;
+                                                                                i20 = 0;
+                                                                                i21 = 0;
+                                                                                i22 = 0;
+                                                                                i23 = 0;
+                                                                                str29 = null;
+                                                                                str12 = null;
+                                                                                str13 = null;
+                                                                                str28 = null;
+                                                                                str27 = null;
+                                                                                str14 = null;
+                                                                                str15 = null;
+                                                                                str25 = null;
+                                                                                obj = null;
+                                                                                j19 = 0;
+                                                                                j17 = 0;
+                                                                                i60 = 4;
+                                                                                i59 = -1;
+                                                                                i58 = 6;
+                                                                                c14 = 2;
+                                                                                i57 = 1;
+                                                                                if (intent2.hasExtra(str60)) {
+                                                                                }
+                                                                                if (str46 == null) {
+                                                                                }
+                                                                                if (str61 == null) {
+                                                                                }
+                                                                                cVar3 = cVar;
+                                                                                iArr4 = iArr5;
+                                                                                str = str24;
+                                                                                str2 = str19;
+                                                                                str10 = str23;
+                                                                                org.telegram.ui.ActionBar.b2 b2Var2222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                                b2Var2222222.j();
+                                                                                b2Var2222222.show();
+                                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                                sendconfirmphonecode.hash = str57;
+                                                                                TLRPC.TL_codeSettings tL_codeSettings2222222 = new TLRPC.TL_codeSettings();
+                                                                                sendconfirmphonecode.settings = tL_codeSettings2222222;
+                                                                                i51 = 0;
+                                                                                tL_codeSettings2222222.allow_flashcall = false;
+                                                                                boolean hasServices2222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                                tL_codeSettings2222222.allow_firebase = hasServices2222222;
+                                                                                tL_codeSettings2222222.allow_app_hash = hasServices2222222;
+                                                                                SharedPreferences sharedPreferences2222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                                }
+                                                                                Bundle bundle2222222 = new Bundle();
+                                                                                bundle2222222.putString(str22, str61);
+                                                                                ConnectionsManager connectionsManager2222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                                LaunchActivity launchActivity22222222 = launchActivity;
+                                                                                String str1242222222 = str61;
+                                                                                r13 = launchActivity22222222;
+                                                                                connectionsManager2222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222, str1242222222, bundle2222222, sendconfirmphonecode, 8), 2);
+                                                                                i52 = i62;
+                                                                                i53 = i61;
+                                                                                str11 = str29;
+                                                                                j16 = j19;
+                                                                            }
+                                                                            j17 = 0;
+                                                                            i60 = 4;
+                                                                            i59 = -1;
+                                                                            i58 = 6;
+                                                                            c14 = 2;
+                                                                            i57 = 1;
+                                                                            intent2 = intent3;
+                                                                            str60 = str76;
+                                                                            str57 = null;
+                                                                            if (intent2.hasExtra(str60)) {
+                                                                            }
+                                                                            if (str46 == null) {
+                                                                            }
+                                                                            if (str61 == null) {
+                                                                            }
+                                                                            cVar3 = cVar;
+                                                                            iArr4 = iArr5;
+                                                                            str = str24;
+                                                                            str2 = str19;
+                                                                            str10 = str23;
+                                                                            org.telegram.ui.ActionBar.b2 b2Var22222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                            b2Var22222222.j();
+                                                                            b2Var22222222.show();
+                                                                            sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                            sendconfirmphonecode.hash = str57;
+                                                                            TLRPC.TL_codeSettings tL_codeSettings22222222 = new TLRPC.TL_codeSettings();
+                                                                            sendconfirmphonecode.settings = tL_codeSettings22222222;
+                                                                            i51 = 0;
+                                                                            tL_codeSettings22222222.allow_flashcall = false;
+                                                                            boolean hasServices22222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                            tL_codeSettings22222222.allow_firebase = hasServices22222222;
+                                                                            tL_codeSettings22222222.allow_app_hash = hasServices22222222;
+                                                                            SharedPreferences sharedPreferences22222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                            if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                            }
+                                                                            Bundle bundle22222222 = new Bundle();
+                                                                            bundle22222222.putString(str22, str61);
+                                                                            ConnectionsManager connectionsManager22222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                            LaunchActivity launchActivity222222222 = launchActivity;
+                                                                            String str12422222222 = str61;
+                                                                            r13 = launchActivity222222222;
+                                                                            connectionsManager22222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222, str12422222222, bundle22222222, sendconfirmphonecode, 8), 2);
+                                                                            i52 = i62;
+                                                                            i53 = i61;
+                                                                            str11 = str29;
+                                                                            j16 = j19;
+                                                                        }
+                                                                        i60 = 4;
+                                                                        i59 = -1;
+                                                                        i58 = 6;
+                                                                        c14 = 2;
+                                                                        i57 = 1;
+                                                                        intent2 = intent;
+                                                                        if (intent2.hasExtra(str60)) {
+                                                                        }
+                                                                        if (str46 == null) {
+                                                                        }
+                                                                        if (str61 == null) {
+                                                                        }
+                                                                        cVar3 = cVar;
+                                                                        iArr4 = iArr5;
+                                                                        str = str24;
+                                                                        str2 = str19;
+                                                                        str10 = str23;
+                                                                        org.telegram.ui.ActionBar.b2 b2Var222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                        b2Var222222222.j();
+                                                                        b2Var222222222.show();
+                                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                        sendconfirmphonecode.hash = str57;
+                                                                        TLRPC.TL_codeSettings tL_codeSettings222222222 = new TLRPC.TL_codeSettings();
+                                                                        sendconfirmphonecode.settings = tL_codeSettings222222222;
+                                                                        i51 = 0;
+                                                                        tL_codeSettings222222222.allow_flashcall = false;
+                                                                        boolean hasServices222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                        tL_codeSettings222222222.allow_firebase = hasServices222222222;
+                                                                        tL_codeSettings222222222.allow_app_hash = hasServices222222222;
+                                                                        SharedPreferences sharedPreferences222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                        }
+                                                                        Bundle bundle222222222 = new Bundle();
+                                                                        bundle222222222.putString(str22, str61);
+                                                                        ConnectionsManager connectionsManager222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                        LaunchActivity launchActivity2222222222 = launchActivity;
+                                                                        String str124222222222 = str61;
+                                                                        r13 = launchActivity2222222222;
+                                                                        connectionsManager222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222, str124222222222, bundle222222222, sendconfirmphonecode, 8), 2);
+                                                                        i52 = i62;
+                                                                        i53 = i61;
+                                                                        str11 = str29;
+                                                                        j16 = j19;
+                                                                    }
+                                                                    i66 = -1;
+                                                                    if (intent2.hasExtra(str60)) {
+                                                                    }
+                                                                    if (str46 == null) {
+                                                                    }
+                                                                    if (str61 == null) {
+                                                                    }
+                                                                    cVar3 = cVar;
+                                                                    iArr4 = iArr5;
+                                                                    str = str24;
+                                                                    str2 = str19;
+                                                                    str10 = str23;
+                                                                    org.telegram.ui.ActionBar.b2 b2Var2222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                    b2Var2222222222.j();
+                                                                    b2Var2222222222.show();
+                                                                    sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                    sendconfirmphonecode.hash = str57;
+                                                                    TLRPC.TL_codeSettings tL_codeSettings2222222222 = new TLRPC.TL_codeSettings();
+                                                                    sendconfirmphonecode.settings = tL_codeSettings2222222222;
+                                                                    i51 = 0;
+                                                                    tL_codeSettings2222222222.allow_flashcall = false;
+                                                                    boolean hasServices2222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                    tL_codeSettings2222222222.allow_firebase = hasServices2222222222;
+                                                                    tL_codeSettings2222222222.allow_app_hash = hasServices2222222222;
+                                                                    SharedPreferences sharedPreferences2222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                    if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                    }
+                                                                    Bundle bundle2222222222 = new Bundle();
+                                                                    bundle2222222222.putString(str22, str61);
+                                                                    ConnectionsManager connectionsManager2222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                    LaunchActivity launchActivity22222222222 = launchActivity;
+                                                                    String str1242222222222 = str61;
+                                                                    r13 = launchActivity22222222222;
+                                                                    connectionsManager2222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222, str1242222222222, bundle2222222222, sendconfirmphonecode, 8), 2);
+                                                                    i52 = i62;
+                                                                    i53 = i61;
+                                                                    str11 = str29;
+                                                                    j16 = j19;
+                                                                }
+                                                                r16 = null;
+                                                                r17 = null;
+                                                                str49 = null;
+                                                                num = null;
+                                                                str48 = null;
+                                                                r21 = null;
+                                                                str47 = null;
+                                                                str46 = null;
+                                                                str45 = null;
+                                                                r26 = null;
+                                                                str44 = null;
+                                                                str43 = null;
+                                                                str42 = null;
+                                                                str41 = null;
+                                                                str40 = null;
+                                                            }
+                                                            j18 = 0;
+                                                            str39 = null;
+                                                            str38 = null;
+                                                            str37 = null;
+                                                            str36 = null;
+                                                            str35 = null;
+                                                            str34 = null;
+                                                            i65 = 0;
+                                                            z26 = false;
+                                                            i64 = 0;
+                                                            i63 = 0;
+                                                            str33 = null;
+                                                            str32 = null;
+                                                            z25 = false;
+                                                            str31 = null;
+                                                            z24 = false;
+                                                            z23 = false;
+                                                            z22 = false;
+                                                            str30 = null;
+                                                            z21 = false;
+                                                            z20 = false;
+                                                            r58 = null;
+                                                            i54 = 0;
+                                                            i62 = 0;
+                                                            i19 = 0;
+                                                            i61 = 0;
+                                                            i55 = 0;
+                                                            i20 = 0;
+                                                            i21 = 0;
+                                                            i22 = 0;
+                                                            i23 = 0;
+                                                            str29 = null;
+                                                            str12 = null;
+                                                            str13 = null;
+                                                            str28 = null;
+                                                            str27 = null;
+                                                            str14 = null;
+                                                            str15 = null;
+                                                            str25 = null;
+                                                            obj = null;
+                                                            j19 = 0;
+                                                            j17 = 0;
+                                                            i60 = 4;
+                                                            i59 = -1;
+                                                            i58 = 6;
+                                                            c14 = 2;
+                                                            i57 = 1;
+                                                            if (intent2.hasExtra(str60)) {
+                                                            }
+                                                            if (str46 == null) {
+                                                            }
+                                                            if (str61 == null) {
+                                                            }
+                                                            cVar3 = cVar;
+                                                            iArr4 = iArr5;
+                                                            str = str24;
+                                                            str2 = str19;
+                                                            str10 = str23;
+                                                            org.telegram.ui.ActionBar.b2 b2Var22222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                            b2Var22222222222.j();
+                                                            b2Var22222222222.show();
+                                                            sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                            sendconfirmphonecode.hash = str57;
+                                                            TLRPC.TL_codeSettings tL_codeSettings22222222222 = new TLRPC.TL_codeSettings();
+                                                            sendconfirmphonecode.settings = tL_codeSettings22222222222;
+                                                            i51 = 0;
+                                                            tL_codeSettings22222222222.allow_flashcall = false;
+                                                            boolean hasServices22222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                            tL_codeSettings22222222222.allow_firebase = hasServices22222222222;
+                                                            tL_codeSettings22222222222.allow_app_hash = hasServices22222222222;
+                                                            SharedPreferences sharedPreferences22222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                            if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                            }
+                                                            Bundle bundle22222222222 = new Bundle();
+                                                            bundle22222222222.putString(str22, str61);
+                                                            ConnectionsManager connectionsManager22222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                            LaunchActivity launchActivity222222222222 = launchActivity;
+                                                            String str12422222222222 = str61;
+                                                            r13 = launchActivity222222222222;
+                                                            connectionsManager22222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222, str12422222222222, bundle22222222222, sendconfirmphonecode, 8), 2);
+                                                            i52 = i62;
+                                                            i53 = i61;
+                                                            str11 = str29;
+                                                            j16 = j19;
+                                                        }
+                                                        str59 = null;
+                                                        if (intent2.hasExtra(str60)) {
+                                                        }
+                                                        if (str46 == null) {
+                                                        }
+                                                        if (str61 == null) {
+                                                        }
+                                                        cVar3 = cVar;
+                                                        iArr4 = iArr5;
+                                                        str = str24;
+                                                        str2 = str19;
+                                                        str10 = str23;
+                                                        org.telegram.ui.ActionBar.b2 b2Var222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                        b2Var222222222222.j();
+                                                        b2Var222222222222.show();
+                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                        sendconfirmphonecode.hash = str57;
+                                                        TLRPC.TL_codeSettings tL_codeSettings222222222222 = new TLRPC.TL_codeSettings();
+                                                        sendconfirmphonecode.settings = tL_codeSettings222222222222;
+                                                        i51 = 0;
+                                                        tL_codeSettings222222222222.allow_flashcall = false;
+                                                        boolean hasServices222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                        tL_codeSettings222222222222.allow_firebase = hasServices222222222222;
+                                                        tL_codeSettings222222222222.allow_app_hash = hasServices222222222222;
+                                                        SharedPreferences sharedPreferences222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                        }
+                                                        Bundle bundle222222222222 = new Bundle();
+                                                        bundle222222222222.putString(str22, str61);
+                                                        ConnectionsManager connectionsManager222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                        LaunchActivity launchActivity2222222222222 = launchActivity;
+                                                        String str124222222222222 = str61;
+                                                        r13 = launchActivity2222222222222;
+                                                        connectionsManager222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222222, str124222222222222, bundle222222222222, sendconfirmphonecode, 8), 2);
+                                                        i52 = i62;
+                                                        i53 = i61;
+                                                        str11 = str29;
+                                                        j16 = j19;
+                                                    }
+                                                    str43 = null;
+                                                    str42 = null;
+                                                    str41 = null;
+                                                    str40 = null;
+                                                    j18 = 0;
+                                                    str39 = null;
+                                                    str38 = null;
+                                                    str37 = null;
+                                                    str36 = null;
+                                                    str35 = null;
+                                                    str34 = null;
+                                                    i65 = 0;
+                                                    z26 = false;
+                                                    i64 = 0;
+                                                    i63 = 0;
+                                                    str33 = null;
+                                                    str32 = null;
+                                                    z25 = false;
+                                                    str31 = null;
+                                                    z24 = false;
+                                                    z23 = false;
+                                                    z22 = false;
+                                                    str30 = null;
+                                                    z21 = false;
+                                                    z20 = false;
+                                                    r58 = null;
+                                                    i54 = 0;
+                                                    i62 = 0;
+                                                    i19 = 0;
+                                                    i61 = 0;
+                                                    i55 = 0;
+                                                    i20 = 0;
+                                                    i21 = 0;
+                                                    i22 = 0;
+                                                    i23 = 0;
+                                                    str29 = null;
+                                                    str12 = null;
+                                                    str13 = null;
+                                                    str28 = null;
+                                                    str27 = null;
+                                                    str14 = null;
+                                                    str15 = null;
+                                                    str25 = null;
+                                                    obj = null;
+                                                    j19 = 0;
+                                                    j17 = 0;
+                                                    i60 = 4;
+                                                    i59 = -1;
+                                                    i58 = 6;
+                                                    c14 = 2;
+                                                    i57 = 1;
+                                                    if (intent2.hasExtra(str60)) {
+                                                    }
+                                                    if (str46 == null) {
+                                                    }
+                                                    if (str61 == null) {
+                                                    }
+                                                    cVar3 = cVar;
+                                                    iArr4 = iArr5;
+                                                    str = str24;
+                                                    str2 = str19;
+                                                    str10 = str23;
+                                                    org.telegram.ui.ActionBar.b2 b2Var2222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                    b2Var2222222222222.j();
+                                                    b2Var2222222222222.show();
+                                                    sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                    sendconfirmphonecode.hash = str57;
+                                                    TLRPC.TL_codeSettings tL_codeSettings2222222222222 = new TLRPC.TL_codeSettings();
+                                                    sendconfirmphonecode.settings = tL_codeSettings2222222222222;
+                                                    i51 = 0;
+                                                    tL_codeSettings2222222222222.allow_flashcall = false;
+                                                    boolean hasServices2222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                    tL_codeSettings2222222222222.allow_firebase = hasServices2222222222222;
+                                                    tL_codeSettings2222222222222.allow_app_hash = hasServices2222222222222;
+                                                    SharedPreferences sharedPreferences2222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                    if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                    }
+                                                    Bundle bundle2222222222222 = new Bundle();
+                                                    bundle2222222222222.putString(str22, str61);
+                                                    ConnectionsManager connectionsManager2222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                    LaunchActivity launchActivity22222222222222 = launchActivity;
+                                                    String str1242222222222222 = str61;
+                                                    r13 = launchActivity22222222222222;
+                                                    connectionsManager2222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222222, str1242222222222222, bundle2222222222222, sendconfirmphonecode, 8), 2);
+                                                    i52 = i62;
+                                                    i53 = i61;
+                                                    str11 = str29;
+                                                    j16 = j19;
+                                                }
+                                                Uri parse11 = Uri.parse(uri5.replace("tg:resolve", "tg://telegram.org").replace("tg://resolve", "tg://telegram.org"));
+                                                String queryParameter29 = parse11.getQueryParameter("domain");
+                                                if (queryParameter29 == null) {
+                                                    queryParameter29 = parse11.getQueryParameter("phone");
+                                                    if (queryParameter29 != null && queryParameter29.startsWith("+")) {
+                                                        queryParameter29 = queryParameter29.substring(1);
+                                                    }
+                                                }
+                                                String queryParameter30 = parse11.getQueryParameter("album");
+                                                if (queryParameter30 != null) {
+                                                    try {
+                                                        parseInt = Integer.parseInt(queryParameter30);
+                                                    } catch (Exception unused14) {
+                                                    }
+                                                    String queryParameter31 = parse11.getQueryParameter("appname");
+                                                    String queryParameter32 = parse11.getQueryParameter("startapp");
+                                                    boolean booleanQueryParameter = parse11.getBooleanQueryParameter("profile", false);
+                                                    String queryParameter33 = parse11.getQueryParameter("free");
+                                                    if ("telegrampassport".equals(queryParameter29)) {
+                                                        String queryParameter34 = parse11.getQueryParameter("start");
+                                                        String queryParameter35 = parse11.getQueryParameter("startgroup");
+                                                        queryParameter = parse11.getQueryParameter("startchannel");
+                                                        queryParameter2 = parse11.getQueryParameter("admin");
+                                                        Object parseInt6 = parse11.getQueryParameter("task") != null ? Utilities.parseInt((CharSequence) parse11.getQueryParameter("task")) : null;
+                                                        g10 = rh.f.g(parse11);
+                                                        queryParameter3 = parse11.getQueryParameter("game");
+                                                        queryParameter4 = parse11.getQueryParameter("voicechat");
+                                                        str65 = queryParameter35;
+                                                        boolean booleanQueryParameter2 = parse11.getBooleanQueryParameter("videochat", false);
+                                                        String queryParameter36 = parse11.getQueryParameter("livestream");
+                                                        z28 = booleanQueryParameter2;
+                                                        queryParameter5 = parse11.getQueryParameter("startattach");
+                                                        queryParameter6 = parse11.getQueryParameter("choose");
+                                                        queryParameter7 = parse11.getQueryParameter("attach");
+                                                        parseInt2 = Utilities.parseInt((CharSequence) parse11.getQueryParameter("post"));
+                                                        intValue = Utilities.parseInt((CharSequence) parse11.getQueryParameter("story")).intValue();
+                                                        intValue2 = Utilities.parseInt((CharSequence) parse11.getQueryParameter("collection")).intValue();
+                                                        str66 = queryParameter36;
+                                                        boolean booleanQueryParameter3 = parse11.getBooleanQueryParameter("direct", false);
+                                                        if (parseInt2.intValue() == 0) {
+                                                            parseInt2 = null;
+                                                        }
+                                                        Long parseLong5 = Utilities.parseLong(parse11.getQueryParameter("thread"));
+                                                        long longValue2 = parseLong5.longValue();
+                                                        j18 = 0;
+                                                        ?? r24 = parseLong5;
+                                                        if (longValue2 == 0) {
+                                                            r24 = 0;
+                                                        }
+                                                        if (r24 == 0) {
+                                                            r24 = Utilities.parseLong(parse11.getQueryParameter("topic"));
+                                                            if (r24.longValue() == 0) {
+                                                                r24 = 0;
+                                                            }
+                                                        }
+                                                        String queryParameter37 = parse11.getQueryParameter("text");
+                                                        Integer parseInt7 = Utilities.parseInt((CharSequence) parse11.getQueryParameter("comment"));
+                                                        if (parseInt7.intValue() == 0) {
+                                                            z29 = booleanQueryParameter3;
+                                                            obj2 = parseInt6;
+                                                            str67 = queryParameter29;
+                                                            str68 = queryParameter34;
+                                                            num2 = null;
+                                                        } else {
+                                                            String str128 = queryParameter29;
+                                                            num2 = parseInt7;
+                                                            str67 = str128;
+                                                            z29 = booleanQueryParameter3;
+                                                            obj2 = parseInt6;
+                                                            str68 = queryParameter34;
+                                                        }
+                                                        str69 = queryParameter37;
+                                                        hashMap = null;
+                                                        str70 = r24;
+                                                    } else {
+                                                        HashMap hashMap4 = new HashMap();
+                                                        String queryParameter38 = parse11.getQueryParameter("scope");
+                                                        if (!TextUtils.isEmpty(queryParameter38) && queryParameter38.startsWith("{") && queryParameter38.endsWith("}")) {
+                                                            hashMap4.put("nonce", parse11.getQueryParameter("nonce"));
+                                                        } else {
+                                                            hashMap4.put("payload", parse11.getQueryParameter("payload"));
+                                                        }
+                                                        hashMap4.put("bot_id", parse11.getQueryParameter("bot_id"));
+                                                        hashMap4.put("scope", queryParameter38);
+                                                        hashMap4.put("public_key", parse11.getQueryParameter("public_key"));
+                                                        hashMap4.put("callback_url", parse11.getQueryParameter("callback_url"));
+                                                        hashMap = hashMap4;
+                                                        str68 = null;
+                                                        str70 = null;
+                                                        str67 = null;
+                                                        queryParameter = null;
+                                                        queryParameter2 = null;
+                                                        str69 = null;
+                                                        num2 = null;
+                                                        obj2 = null;
+                                                        g10 = null;
+                                                        z29 = false;
+                                                        queryParameter3 = null;
+                                                        j18 = 0;
+                                                        queryParameter4 = null;
+                                                        str65 = null;
+                                                        z28 = false;
+                                                        queryParameter5 = null;
+                                                        queryParameter6 = null;
+                                                        queryParameter7 = null;
+                                                        parseInt2 = null;
+                                                        intValue = 0;
+                                                        intValue2 = 0;
+                                                        str66 = null;
+                                                    }
+                                                    if (TextUtils.isEmpty(str67)) {
+                                                        hashMap2 = hashMap;
+                                                        str71 = parse11.getQueryParameter("ref");
+                                                        if (!TextUtils.isEmpty(str71) || TextUtils.isEmpty(str68)) {
+                                                            if (TextUtils.isEmpty(str71) && !TextUtils.isEmpty(queryParameter32)) {
+                                                                for (String str129 : MessagesController.getInstance(iArr9[0]).starrefStartParamPrefixes) {
+                                                                    if (queryParameter32.startsWith(str129)) {
+                                                                        str71 = queryParameter32.substring(str129.length());
+                                                                    }
+                                                                }
+                                                            }
+                                                            str71 = str71;
+                                                        } else {
+                                                            Iterator<String> it2 = MessagesController.getInstance(iArr9[0]).starrefStartParamPrefixes.iterator();
+                                                            while (true) {
+                                                                if (it2.hasNext()) {
+                                                                    String str130 = str71;
+                                                                    String next = it2.next();
+                                                                    if (str68.startsWith(next)) {
+                                                                        str71 = str68.substring(next.length());
+                                                                    } else {
+                                                                        str71 = str130;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    } else {
+                                                        hashMap2 = hashMap;
+                                                        str71 = null;
+                                                    }
+                                                    intent2 = intent;
+                                                    str30 = str71;
+                                                    str28 = str70;
+                                                    z22 = booleanQueryParameter;
+                                                    str27 = str69;
+                                                    obj = obj2;
+                                                    r58 = g10;
+                                                    z20 = z29;
+                                                    str48 = queryParameter3;
+                                                    str23 = "message_id";
+                                                    j17 = j18;
+                                                    str24 = "android.intent.action.MAIN";
+                                                    iArr5 = iArr9;
+                                                    str26 = str16;
+                                                    str22 = "phone";
+                                                    str41 = queryParameter4;
+                                                    str50 = str65;
+                                                    z21 = z28;
+                                                    str39 = queryParameter5;
+                                                    str25 = queryParameter6;
+                                                    str38 = queryParameter7;
+                                                    r16 = parseInt2;
+                                                    i65 = intValue;
+                                                    i63 = intValue2;
+                                                    str34 = str66;
+                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                    str61 = null;
+                                                    str56 = null;
+                                                    str55 = null;
+                                                    str52 = null;
+                                                    str51 = null;
+                                                    z27 = false;
+                                                    r17 = null;
+                                                    str47 = null;
+                                                    str46 = null;
+                                                    str45 = null;
+                                                    r26 = null;
+                                                    str44 = null;
+                                                    str43 = null;
+                                                    str42 = null;
+                                                    str40 = null;
+                                                    z26 = false;
+                                                    str33 = null;
+                                                    str32 = null;
+                                                    z25 = false;
+                                                    str31 = null;
+                                                    z24 = false;
+                                                    z23 = false;
+                                                    i54 = 0;
+                                                    i62 = 0;
+                                                    i19 = 0;
+                                                    i61 = 0;
+                                                    i55 = 0;
+                                                    i20 = 0;
+                                                    i21 = 0;
+                                                    i22 = 0;
+                                                    i23 = 0;
+                                                    str29 = null;
+                                                    str12 = null;
+                                                    str13 = null;
+                                                    str14 = null;
+                                                    str15 = null;
+                                                    i60 = 4;
+                                                    i59 = -1;
+                                                    i58 = 6;
+                                                    c14 = 2;
+                                                    i57 = 1;
+                                                    i64 = parseInt;
+                                                    str21 = queryParameter33;
+                                                    num = num2;
+                                                    str35 = queryParameter32;
+                                                    r21 = hashMap2;
+                                                    j19 = j17;
+                                                    str36 = queryParameter31;
+                                                    str54 = null;
+                                                    launchActivity = this;
+                                                    str53 = str68;
+                                                    str49 = queryParameter;
+                                                    str37 = queryParameter2;
+                                                    i66 = -1;
+                                                    str57 = null;
+                                                    str58 = str67;
+                                                    str59 = null;
+                                                    if (intent2.hasExtra(str60)) {
+                                                    }
+                                                    if (str46 == null) {
+                                                    }
+                                                    if (str61 == null) {
+                                                    }
+                                                    cVar3 = cVar;
+                                                    iArr4 = iArr5;
+                                                    str = str24;
+                                                    str2 = str19;
+                                                    str10 = str23;
+                                                    org.telegram.ui.ActionBar.b2 b2Var22222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                    b2Var22222222222222.j();
+                                                    b2Var22222222222222.show();
+                                                    sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                    sendconfirmphonecode.hash = str57;
+                                                    TLRPC.TL_codeSettings tL_codeSettings22222222222222 = new TLRPC.TL_codeSettings();
+                                                    sendconfirmphonecode.settings = tL_codeSettings22222222222222;
+                                                    i51 = 0;
+                                                    tL_codeSettings22222222222222.allow_flashcall = false;
+                                                    boolean hasServices22222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                    tL_codeSettings22222222222222.allow_firebase = hasServices22222222222222;
+                                                    tL_codeSettings22222222222222.allow_app_hash = hasServices22222222222222;
+                                                    SharedPreferences sharedPreferences22222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                    if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                    }
+                                                    Bundle bundle22222222222222 = new Bundle();
+                                                    bundle22222222222222.putString(str22, str61);
+                                                    ConnectionsManager connectionsManager22222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                    LaunchActivity launchActivity222222222222222 = launchActivity;
+                                                    String str12422222222222222 = str61;
+                                                    r13 = launchActivity222222222222222;
+                                                    connectionsManager22222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222222, str12422222222222222, bundle22222222222222, sendconfirmphonecode, 8), 2);
+                                                    i52 = i62;
+                                                    i53 = i61;
+                                                    str11 = str29;
+                                                    j16 = j19;
+                                                }
+                                                parseInt = 0;
+                                                String queryParameter312 = parse11.getQueryParameter("appname");
+                                                String queryParameter322 = parse11.getQueryParameter("startapp");
+                                                boolean booleanQueryParameter4 = parse11.getBooleanQueryParameter("profile", false);
+                                                String queryParameter332 = parse11.getQueryParameter("free");
+                                                if ("telegrampassport".equals(queryParameter29)) {
+                                                }
+                                                if (TextUtils.isEmpty(str67)) {
+                                                }
+                                                intent2 = intent;
+                                                str30 = str71;
+                                                str28 = str70;
+                                                z22 = booleanQueryParameter4;
+                                                str27 = str69;
+                                                obj = obj2;
+                                                r58 = g10;
+                                                z20 = z29;
+                                                str48 = queryParameter3;
+                                                str23 = "message_id";
+                                                j17 = j18;
+                                                str24 = "android.intent.action.MAIN";
+                                                iArr5 = iArr9;
+                                                str26 = str16;
+                                                str22 = "phone";
+                                                str41 = queryParameter4;
+                                                str50 = str65;
+                                                z21 = z28;
+                                                str39 = queryParameter5;
+                                                str25 = queryParameter6;
+                                                str38 = queryParameter7;
+                                                r16 = parseInt2;
+                                                i65 = intValue;
+                                                i63 = intValue2;
+                                                str34 = str66;
+                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                str61 = null;
+                                                str56 = null;
+                                                str55 = null;
+                                                str52 = null;
+                                                str51 = null;
+                                                z27 = false;
+                                                r17 = null;
+                                                str47 = null;
+                                                str46 = null;
+                                                str45 = null;
+                                                r26 = null;
+                                                str44 = null;
+                                                str43 = null;
+                                                str42 = null;
+                                                str40 = null;
+                                                z26 = false;
+                                                str33 = null;
+                                                str32 = null;
+                                                z25 = false;
+                                                str31 = null;
+                                                z24 = false;
+                                                z23 = false;
+                                                i54 = 0;
+                                                i62 = 0;
+                                                i19 = 0;
+                                                i61 = 0;
+                                                i55 = 0;
+                                                i20 = 0;
+                                                i21 = 0;
+                                                i22 = 0;
+                                                i23 = 0;
+                                                str29 = null;
+                                                str12 = null;
+                                                str13 = null;
+                                                str14 = null;
+                                                str15 = null;
+                                                i60 = 4;
+                                                i59 = -1;
+                                                i58 = 6;
+                                                c14 = 2;
+                                                i57 = 1;
+                                                i64 = parseInt;
+                                                str21 = queryParameter332;
+                                                num = num2;
+                                                str35 = queryParameter322;
+                                                r21 = hashMap2;
+                                                j19 = j17;
+                                                str36 = queryParameter312;
+                                                str54 = null;
+                                                launchActivity = this;
+                                                str53 = str68;
+                                                str49 = queryParameter;
+                                                str37 = queryParameter2;
+                                                i66 = -1;
+                                                str57 = null;
+                                                str58 = str67;
+                                                str59 = null;
+                                                if (intent2.hasExtra(str60)) {
+                                                }
+                                                if (str46 == null) {
+                                                }
+                                                if (str61 == null) {
+                                                }
+                                                cVar3 = cVar;
+                                                iArr4 = iArr5;
+                                                str = str24;
+                                                str2 = str19;
+                                                str10 = str23;
+                                                org.telegram.ui.ActionBar.b2 b2Var222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                b2Var222222222222222.j();
+                                                b2Var222222222222222.show();
+                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                sendconfirmphonecode.hash = str57;
+                                                TLRPC.TL_codeSettings tL_codeSettings222222222222222 = new TLRPC.TL_codeSettings();
+                                                sendconfirmphonecode.settings = tL_codeSettings222222222222222;
+                                                i51 = 0;
+                                                tL_codeSettings222222222222222.allow_flashcall = false;
+                                                boolean hasServices222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                tL_codeSettings222222222222222.allow_firebase = hasServices222222222222222;
+                                                tL_codeSettings222222222222222.allow_app_hash = hasServices222222222222222;
+                                                SharedPreferences sharedPreferences222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                }
+                                                Bundle bundle222222222222222 = new Bundle();
+                                                bundle222222222222222.putString(str22, str61);
+                                                ConnectionsManager connectionsManager222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                LaunchActivity launchActivity2222222222222222 = launchActivity;
+                                                String str124222222222222222 = str61;
+                                                r13 = launchActivity2222222222222222;
+                                                connectionsManager222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222222222, str124222222222222222, bundle222222222222222, sendconfirmphonecode, 8), 2);
+                                                i52 = i62;
+                                                i53 = i61;
+                                                str11 = str29;
+                                                j16 = j19;
+                                            }
+                                            break;
+                                        case 2:
+                                        case 3:
+                                            String lowerCase = data.getHost().toLowerCase();
+                                            Matcher matcher = C1.matcher(lowerCase);
+                                            boolean find = matcher.find();
+                                            if (lowerCase.equals("telegram.me") || lowerCase.equals("t.me") || lowerCase.equals("telegram.dog") || find) {
+                                                if (find) {
+                                                    StringBuilder sb2 = new StringBuilder("https://t.me/");
+                                                    sb2.append(matcher.group(1));
+                                                    sb2.append(TextUtils.isEmpty(data.getPath()) ? "" : data.getPath());
+                                                    sb2.append(TextUtils.isEmpty(data.getQuery()) ? "" : "?" + data.getQuery());
+                                                    uri = Uri.parse(sb2.toString());
+                                                } else {
+                                                    uri = data;
+                                                }
+                                                String path2 = uri.getPath();
+                                                if (path2 != null && path2.length() > 1) {
+                                                    String substring5 = path2.substring(1);
+                                                    if (substring5.startsWith("$")) {
+                                                        substring3 = substring5.substring(1);
+                                                    } else if (substring5.startsWith("invoice/")) {
+                                                        substring3 = substring5.substring(substring5.indexOf(47) + 1);
+                                                    } else if (substring5.startsWith("nft/")) {
+                                                        str110 = substring5.substring(substring5.indexOf(47) + 1);
+                                                        z32 = false;
+                                                        str81 = null;
+                                                        z33 = false;
+                                                        i76 = -1;
+                                                        z34 = false;
+                                                        str82 = null;
+                                                        z35 = false;
+                                                        z36 = false;
+                                                        str83 = null;
+                                                        c20 = 3;
+                                                        c21 = 2;
+                                                        str52 = null;
+                                                        i79 = 0;
+                                                        i78 = 0;
+                                                        i77 = 0;
+                                                        str100 = null;
+                                                        str99 = null;
+                                                        str98 = null;
+                                                        str97 = null;
+                                                        str96 = null;
+                                                        str95 = null;
+                                                        str94 = null;
+                                                        str93 = null;
+                                                        str92 = null;
+                                                        str91 = null;
+                                                        str90 = null;
+                                                        str89 = null;
+                                                        str88 = null;
+                                                        str87 = null;
+                                                        z37 = false;
+                                                        str86 = null;
+                                                        z21 = false;
+                                                        str85 = null;
+                                                        str84 = null;
+                                                        str101 = null;
+                                                        str106 = null;
+                                                        z38 = false;
+                                                        str105 = null;
+                                                        str104 = null;
+                                                        str103 = null;
+                                                        str102 = null;
+                                                        tL_wallPaper = null;
+                                                        str107 = null;
+                                                        num4 = null;
+                                                        l4 = null;
+                                                        str28 = null;
+                                                        str27 = null;
+                                                        num3 = null;
+                                                        str109 = null;
+                                                        str108 = null;
+                                                        str25 = null;
+                                                        obj = null;
+                                                        bArr = null;
+                                                        str22 = "phone";
+                                                        str40 = str83;
+                                                        c14 = c21;
+                                                        str19 = " ";
+                                                        str56 = str100;
+                                                        str53 = str99;
+                                                        str23 = "message_id";
+                                                        str32 = str94;
+                                                        str50 = str93;
+                                                        str48 = str88;
+                                                        str41 = str86;
+                                                        str47 = str85;
+                                                        str42 = str84;
+                                                        str46 = str101;
+                                                        z23 = z38;
+                                                        str55 = str105;
+                                                        str21 = str104;
+                                                        r26 = tL_wallPaper;
+                                                        str44 = str107;
+                                                        str43 = str110;
+                                                        r16 = num4;
+                                                        r17 = l4;
+                                                        num = num3;
+                                                        r58 = bArr;
+                                                        r21 = null;
+                                                        str45 = null;
+                                                        j18 = 0;
+                                                        i54 = 0;
+                                                        i19 = 0;
+                                                        i61 = 0;
+                                                        i55 = 0;
+                                                        i22 = 0;
+                                                        i23 = 0;
+                                                        str29 = null;
+                                                        str12 = null;
+                                                        str13 = null;
+                                                        str14 = null;
+                                                        j19 = 0;
+                                                        j17 = 0;
+                                                        i60 = 4;
+                                                        i59 = -1;
+                                                        i58 = 6;
+                                                        i57 = 1;
+                                                        i64 = i78;
+                                                        i63 = i77;
+                                                        str24 = "android.intent.action.MAIN";
+                                                        str54 = str98;
+                                                        str49 = str92;
+                                                        str30 = str90;
+                                                        str37 = str89;
+                                                        z20 = z37;
+                                                        str31 = str102;
+                                                        str39 = str109;
+                                                        i21 = 0;
+                                                        str15 = str81;
+                                                        z27 = z33;
+                                                        z24 = z35;
+                                                        z22 = z36;
+                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                        str61 = str97;
+                                                        str33 = str95;
+                                                        str57 = str91;
+                                                        str35 = str87;
+                                                        str34 = str106;
+                                                        i62 = 0;
+                                                        z26 = z32;
+                                                        i66 = i76;
+                                                        z25 = z34;
+                                                        str58 = str82;
+                                                        iArr5 = iArr9;
+                                                        str38 = str108;
+                                                        str59 = null;
+                                                        launchActivity = this;
+                                                        intent2 = intent;
+                                                        str26 = str16;
+                                                        str36 = str96;
+                                                        i65 = i79;
+                                                        str51 = str103;
+                                                        i20 = 0;
+                                                        if (intent2.hasExtra(str60)) {
+                                                        }
+                                                        if (str46 == null) {
+                                                        }
+                                                        if (str61 == null) {
+                                                        }
+                                                        cVar3 = cVar;
+                                                        iArr4 = iArr5;
+                                                        str = str24;
+                                                        str2 = str19;
+                                                        str10 = str23;
+                                                        org.telegram.ui.ActionBar.b2 b2Var2222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                        b2Var2222222222222222.j();
+                                                        b2Var2222222222222222.show();
+                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                        sendconfirmphonecode.hash = str57;
+                                                        TLRPC.TL_codeSettings tL_codeSettings2222222222222222 = new TLRPC.TL_codeSettings();
+                                                        sendconfirmphonecode.settings = tL_codeSettings2222222222222222;
+                                                        i51 = 0;
+                                                        tL_codeSettings2222222222222222.allow_flashcall = false;
+                                                        boolean hasServices2222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                        tL_codeSettings2222222222222222.allow_firebase = hasServices2222222222222222;
+                                                        tL_codeSettings2222222222222222.allow_app_hash = hasServices2222222222222222;
+                                                        SharedPreferences sharedPreferences2222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                        }
+                                                        Bundle bundle2222222222222222 = new Bundle();
+                                                        bundle2222222222222222.putString(str22, str61);
+                                                        ConnectionsManager connectionsManager2222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                        LaunchActivity launchActivity22222222222222222 = launchActivity;
+                                                        String str1242222222222222222 = str61;
+                                                        r13 = launchActivity22222222222222222;
+                                                        connectionsManager2222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222222222, str1242222222222222222, bundle2222222222222222, sendconfirmphonecode, 8), 2);
+                                                        i52 = i62;
+                                                        i53 = i61;
+                                                        str11 = str29;
+                                                        j16 = j19;
+                                                        break;
+                                                    } else if (substring5.startsWith("bg/")) {
+                                                        TLRPC.TL_wallPaper tL_wallPaper3 = new TLRPC.TL_wallPaper();
+                                                        tL_wallPaper3.settings = new TLRPC.TL_wallPaperSettings();
+                                                        String replace3 = substring5.replace("bg/", "");
+                                                        tL_wallPaper3.slug = replace3;
+                                                        if (replace3 == null || replace3.length() != 6) {
+                                                            String str131 = tL_wallPaper3.slug;
+                                                            if (str131 != null && str131.length() >= 13 && AndroidUtilities.isValidWallChar(tL_wallPaper3.slug.charAt(6))) {
+                                                                tL_wallPaper3.settings.background_color = Integer.parseInt(tL_wallPaper3.slug.substring(0, 6), 16) | (-16777216);
+                                                                tL_wallPaper3.settings.second_background_color = Integer.parseInt(tL_wallPaper3.slug.substring(7, 13), 16) | (-16777216);
+                                                                if (tL_wallPaper3.slug.length() >= 20 && AndroidUtilities.isValidWallChar(tL_wallPaper3.slug.charAt(13))) {
+                                                                    tL_wallPaper3.settings.third_background_color = Integer.parseInt(tL_wallPaper3.slug.substring(14, 20), 16) | (-16777216);
+                                                                }
+                                                                if (tL_wallPaper3.slug.length() == 27 && AndroidUtilities.isValidWallChar(tL_wallPaper3.slug.charAt(20))) {
+                                                                    tL_wallPaper3.settings.fourth_background_color = Integer.parseInt(tL_wallPaper3.slug.substring(21), 16) | (-16777216);
+                                                                }
+                                                                try {
+                                                                    String queryParameter39 = uri.getQueryParameter("rotation");
+                                                                    if (!TextUtils.isEmpty(queryParameter39)) {
+                                                                        tL_wallPaper3.settings.rotation = Utilities.parseInt((CharSequence) queryParameter39).intValue();
+                                                                    }
+                                                                } catch (Exception unused15) {
+                                                                }
+                                                                tL_wallPaper3.slug = null;
+                                                            }
+                                                            z41 = false;
+                                                            if (!z41) {
+                                                                String queryParameter40 = uri.getQueryParameter("mode");
+                                                                if (queryParameter40 != null && (split = queryParameter40.toLowerCase().split(" ")) != null && split.length > 0) {
+                                                                    for (int i88 = 0; i88 < split.length; i88++) {
+                                                                        if ("blur".equals(split[i88])) {
+                                                                            tL_wallPaper3.settings.blur = true;
+                                                                        } else if ("motion".equals(split[i88])) {
+                                                                            tL_wallPaper3.settings.motion = true;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                String queryParameter41 = uri.getQueryParameter("intensity");
+                                                                if (TextUtils.isEmpty(queryParameter41)) {
+                                                                    tL_wallPaper3.settings.intensity = 50;
+                                                                } else {
+                                                                    tL_wallPaper3.settings.intensity = Utilities.parseInt((CharSequence) queryParameter41).intValue();
+                                                                }
+                                                                try {
+                                                                    String queryParameter42 = uri.getQueryParameter("bg_color");
+                                                                    if (TextUtils.isEmpty(queryParameter42)) {
+                                                                        tL_wallPaper3.settings.background_color = -1;
+                                                                    } else {
+                                                                        tL_wallPaper3.settings.background_color = Integer.parseInt(queryParameter42.substring(0, 6), 16) | (-16777216);
+                                                                        if (queryParameter42.length() >= 13) {
+                                                                            tL_wallPaper3.settings.second_background_color = Integer.parseInt(queryParameter42.substring(7, 13), 16) | (-16777216);
+                                                                            if (queryParameter42.length() >= 20 && AndroidUtilities.isValidWallChar(queryParameter42.charAt(13))) {
+                                                                                tL_wallPaper3.settings.third_background_color = Integer.parseInt(queryParameter42.substring(14, 20), 16) | (-16777216);
+                                                                            }
+                                                                            if (queryParameter42.length() == 27 && AndroidUtilities.isValidWallChar(queryParameter42.charAt(20))) {
+                                                                                tL_wallPaper3.settings.fourth_background_color = Integer.parseInt(queryParameter42.substring(21), 16) | (-16777216);
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                } catch (Exception unused16) {
+                                                                }
+                                                                try {
+                                                                    String queryParameter43 = uri.getQueryParameter("rotation");
+                                                                    if (!TextUtils.isEmpty(queryParameter43)) {
+                                                                        tL_wallPaper3.settings.rotation = Utilities.parseInt((CharSequence) queryParameter43).intValue();
+                                                                    }
+                                                                } catch (Exception unused17) {
+                                                                }
+                                                            }
+                                                            tL_wallPaper = tL_wallPaper3;
+                                                            z32 = false;
+                                                            str81 = null;
+                                                            z33 = false;
+                                                            i76 = -1;
+                                                            z34 = false;
+                                                            str82 = null;
+                                                            z35 = false;
+                                                            z36 = false;
+                                                            str83 = null;
+                                                            c20 = 3;
+                                                            c21 = 2;
+                                                            str52 = null;
+                                                            i79 = 0;
+                                                            i78 = 0;
+                                                            i77 = 0;
+                                                            str100 = null;
+                                                            str99 = null;
+                                                            str98 = null;
+                                                            str97 = null;
+                                                            str96 = null;
+                                                            str95 = null;
+                                                            str94 = null;
+                                                            str93 = null;
+                                                            str92 = null;
+                                                            str91 = null;
+                                                            str90 = null;
+                                                            str89 = null;
+                                                            str88 = null;
+                                                            str87 = null;
+                                                            z37 = false;
+                                                            str86 = null;
+                                                            z21 = false;
+                                                            str85 = null;
+                                                            str84 = null;
+                                                            str101 = null;
+                                                            str106 = null;
+                                                            z38 = false;
+                                                            str105 = null;
+                                                            str104 = null;
+                                                            str103 = null;
+                                                            str102 = null;
+                                                            str107 = null;
+                                                            str110 = null;
+                                                            num4 = null;
+                                                            l4 = null;
+                                                            str28 = null;
+                                                            str27 = null;
+                                                            num3 = null;
+                                                            str109 = null;
+                                                            str108 = null;
+                                                            str25 = null;
+                                                            obj = null;
+                                                            bArr = null;
+                                                            str22 = "phone";
+                                                            str40 = str83;
+                                                            c14 = c21;
+                                                            str19 = " ";
+                                                            str56 = str100;
+                                                            str53 = str99;
+                                                            str23 = "message_id";
+                                                            str32 = str94;
+                                                            str50 = str93;
+                                                            str48 = str88;
+                                                            str41 = str86;
+                                                            str47 = str85;
+                                                            str42 = str84;
+                                                            str46 = str101;
+                                                            z23 = z38;
+                                                            str55 = str105;
+                                                            str21 = str104;
+                                                            r26 = tL_wallPaper;
+                                                            str44 = str107;
+                                                            str43 = str110;
+                                                            r16 = num4;
+                                                            r17 = l4;
+                                                            num = num3;
+                                                            r58 = bArr;
+                                                            r21 = null;
+                                                            str45 = null;
+                                                            j18 = 0;
+                                                            i54 = 0;
+                                                            i19 = 0;
+                                                            i61 = 0;
+                                                            i55 = 0;
+                                                            i22 = 0;
+                                                            i23 = 0;
+                                                            str29 = null;
+                                                            str12 = null;
+                                                            str13 = null;
+                                                            str14 = null;
+                                                            j19 = 0;
+                                                            j17 = 0;
+                                                            i60 = 4;
+                                                            i59 = -1;
+                                                            i58 = 6;
+                                                            i57 = 1;
+                                                            i64 = i78;
+                                                            i63 = i77;
+                                                            str24 = "android.intent.action.MAIN";
+                                                            str54 = str98;
+                                                            str49 = str92;
+                                                            str30 = str90;
+                                                            str37 = str89;
+                                                            z20 = z37;
+                                                            str31 = str102;
+                                                            str39 = str109;
+                                                            i21 = 0;
+                                                            str15 = str81;
+                                                            z27 = z33;
+                                                            z24 = z35;
+                                                            z22 = z36;
+                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                            str61 = str97;
+                                                            str33 = str95;
+                                                            str57 = str91;
+                                                            str35 = str87;
+                                                            str34 = str106;
+                                                            i62 = 0;
+                                                            z26 = z32;
+                                                            i66 = i76;
+                                                            z25 = z34;
+                                                            str58 = str82;
+                                                            iArr5 = iArr9;
+                                                            str38 = str108;
+                                                            str59 = null;
+                                                            launchActivity = this;
+                                                            intent2 = intent;
+                                                            str26 = str16;
+                                                            str36 = str96;
+                                                            i65 = i79;
+                                                            str51 = str103;
+                                                            i20 = 0;
+                                                            if (intent2.hasExtra(str60)) {
+                                                            }
+                                                            if (str46 == null) {
+                                                            }
+                                                            if (str61 == null) {
+                                                            }
+                                                            cVar3 = cVar;
+                                                            iArr4 = iArr5;
+                                                            str = str24;
+                                                            str2 = str19;
+                                                            str10 = str23;
+                                                            org.telegram.ui.ActionBar.b2 b2Var22222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                            b2Var22222222222222222.j();
+                                                            b2Var22222222222222222.show();
+                                                            sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                            sendconfirmphonecode.hash = str57;
+                                                            TLRPC.TL_codeSettings tL_codeSettings22222222222222222 = new TLRPC.TL_codeSettings();
+                                                            sendconfirmphonecode.settings = tL_codeSettings22222222222222222;
+                                                            i51 = 0;
+                                                            tL_codeSettings22222222222222222.allow_flashcall = false;
+                                                            boolean hasServices22222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                            tL_codeSettings22222222222222222.allow_firebase = hasServices22222222222222222;
+                                                            tL_codeSettings22222222222222222.allow_app_hash = hasServices22222222222222222;
+                                                            SharedPreferences sharedPreferences22222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                            if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                            }
+                                                            Bundle bundle22222222222222222 = new Bundle();
+                                                            bundle22222222222222222.putString(str22, str61);
+                                                            ConnectionsManager connectionsManager22222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                            LaunchActivity launchActivity222222222222222222 = launchActivity;
+                                                            String str12422222222222222222 = str61;
+                                                            r13 = launchActivity222222222222222222;
+                                                            connectionsManager22222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222222222, str12422222222222222222, bundle22222222222222222, sendconfirmphonecode, 8), 2);
+                                                            i52 = i62;
+                                                            i53 = i61;
+                                                            str11 = str29;
+                                                            j16 = j19;
+                                                        } else {
+                                                            tL_wallPaper3.settings.background_color = Integer.parseInt(tL_wallPaper3.slug, 16) | (-16777216);
+                                                            tL_wallPaper3.slug = null;
+                                                        }
+                                                        z41 = true;
+                                                        if (!z41) {
+                                                        }
+                                                        tL_wallPaper = tL_wallPaper3;
+                                                        z32 = false;
+                                                        str81 = null;
+                                                        z33 = false;
+                                                        i76 = -1;
+                                                        z34 = false;
+                                                        str82 = null;
+                                                        z35 = false;
+                                                        z36 = false;
+                                                        str83 = null;
+                                                        c20 = 3;
+                                                        c21 = 2;
+                                                        str52 = null;
+                                                        i79 = 0;
+                                                        i78 = 0;
+                                                        i77 = 0;
+                                                        str100 = null;
+                                                        str99 = null;
+                                                        str98 = null;
+                                                        str97 = null;
+                                                        str96 = null;
+                                                        str95 = null;
+                                                        str94 = null;
+                                                        str93 = null;
+                                                        str92 = null;
+                                                        str91 = null;
+                                                        str90 = null;
+                                                        str89 = null;
+                                                        str88 = null;
+                                                        str87 = null;
+                                                        z37 = false;
+                                                        str86 = null;
+                                                        z21 = false;
+                                                        str85 = null;
+                                                        str84 = null;
+                                                        str101 = null;
+                                                        str106 = null;
+                                                        z38 = false;
+                                                        str105 = null;
+                                                        str104 = null;
+                                                        str103 = null;
+                                                        str102 = null;
+                                                        str107 = null;
+                                                        str110 = null;
+                                                        num4 = null;
+                                                        l4 = null;
+                                                        str28 = null;
+                                                        str27 = null;
+                                                        num3 = null;
+                                                        str109 = null;
+                                                        str108 = null;
+                                                        str25 = null;
+                                                        obj = null;
+                                                        bArr = null;
+                                                        str22 = "phone";
+                                                        str40 = str83;
+                                                        c14 = c21;
+                                                        str19 = " ";
+                                                        str56 = str100;
+                                                        str53 = str99;
+                                                        str23 = "message_id";
+                                                        str32 = str94;
+                                                        str50 = str93;
+                                                        str48 = str88;
+                                                        str41 = str86;
+                                                        str47 = str85;
+                                                        str42 = str84;
+                                                        str46 = str101;
+                                                        z23 = z38;
+                                                        str55 = str105;
+                                                        str21 = str104;
+                                                        r26 = tL_wallPaper;
+                                                        str44 = str107;
+                                                        str43 = str110;
+                                                        r16 = num4;
+                                                        r17 = l4;
+                                                        num = num3;
+                                                        r58 = bArr;
+                                                        r21 = null;
+                                                        str45 = null;
+                                                        j18 = 0;
+                                                        i54 = 0;
+                                                        i19 = 0;
+                                                        i61 = 0;
+                                                        i55 = 0;
+                                                        i22 = 0;
+                                                        i23 = 0;
+                                                        str29 = null;
+                                                        str12 = null;
+                                                        str13 = null;
+                                                        str14 = null;
+                                                        j19 = 0;
+                                                        j17 = 0;
+                                                        i60 = 4;
+                                                        i59 = -1;
+                                                        i58 = 6;
+                                                        i57 = 1;
+                                                        i64 = i78;
+                                                        i63 = i77;
+                                                        str24 = "android.intent.action.MAIN";
+                                                        str54 = str98;
+                                                        str49 = str92;
+                                                        str30 = str90;
+                                                        str37 = str89;
+                                                        z20 = z37;
+                                                        str31 = str102;
+                                                        str39 = str109;
+                                                        i21 = 0;
+                                                        str15 = str81;
+                                                        z27 = z33;
+                                                        z24 = z35;
+                                                        z22 = z36;
+                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                        str61 = str97;
+                                                        str33 = str95;
+                                                        str57 = str91;
+                                                        str35 = str87;
+                                                        str34 = str106;
+                                                        i62 = 0;
+                                                        z26 = z32;
+                                                        i66 = i76;
+                                                        z25 = z34;
+                                                        str58 = str82;
+                                                        iArr5 = iArr9;
+                                                        str38 = str108;
+                                                        str59 = null;
+                                                        launchActivity = this;
+                                                        intent2 = intent;
+                                                        str26 = str16;
+                                                        str36 = str96;
+                                                        i65 = i79;
+                                                        str51 = str103;
+                                                        i20 = 0;
+                                                        if (intent2.hasExtra(str60)) {
+                                                        }
+                                                        if (str46 == null) {
+                                                        }
+                                                        if (str61 == null) {
+                                                        }
+                                                        cVar3 = cVar;
+                                                        iArr4 = iArr5;
+                                                        str = str24;
+                                                        str2 = str19;
+                                                        str10 = str23;
+                                                        org.telegram.ui.ActionBar.b2 b2Var222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                        b2Var222222222222222222.j();
+                                                        b2Var222222222222222222.show();
+                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                        sendconfirmphonecode.hash = str57;
+                                                        TLRPC.TL_codeSettings tL_codeSettings222222222222222222 = new TLRPC.TL_codeSettings();
+                                                        sendconfirmphonecode.settings = tL_codeSettings222222222222222222;
+                                                        i51 = 0;
+                                                        tL_codeSettings222222222222222222.allow_flashcall = false;
+                                                        boolean hasServices222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                        tL_codeSettings222222222222222222.allow_firebase = hasServices222222222222222222;
+                                                        tL_codeSettings222222222222222222.allow_app_hash = hasServices222222222222222222;
+                                                        SharedPreferences sharedPreferences222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                        }
+                                                        Bundle bundle222222222222222222 = new Bundle();
+                                                        bundle222222222222222222.putString(str22, str61);
+                                                        ConnectionsManager connectionsManager222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                        LaunchActivity launchActivity2222222222222222222 = launchActivity;
+                                                        String str124222222222222222222 = str61;
+                                                        r13 = launchActivity2222222222222222222;
+                                                        connectionsManager222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222222222222, str124222222222222222222, bundle222222222222222222, sendconfirmphonecode, 8), 2);
+                                                        i52 = i62;
+                                                        i53 = i61;
+                                                        str11 = str29;
+                                                        j16 = j19;
+                                                    } else if (substring5.startsWith("login/")) {
+                                                        int intValue5 = Utilities.parseInt((CharSequence) substring5.replace("login/", "")).intValue();
+                                                        str101 = intValue5 != 0 ? i2.d.j(intValue5, "") : null;
+                                                        z32 = false;
+                                                        str81 = null;
+                                                        z33 = false;
+                                                        i76 = -1;
+                                                        z34 = false;
+                                                        str82 = null;
+                                                        z35 = false;
+                                                        z36 = false;
+                                                        str83 = null;
+                                                        c20 = 3;
+                                                        c21 = 2;
+                                                        str52 = null;
+                                                        i79 = 0;
+                                                        i78 = 0;
+                                                        i77 = 0;
+                                                        str100 = null;
+                                                        str99 = null;
+                                                        str98 = null;
+                                                        str97 = null;
+                                                        str96 = null;
+                                                        str95 = null;
+                                                        str94 = null;
+                                                        str93 = null;
+                                                        str92 = null;
+                                                        str91 = null;
+                                                        str90 = null;
+                                                        str89 = null;
+                                                        str88 = null;
+                                                        str87 = null;
+                                                        z37 = false;
+                                                        str86 = null;
+                                                        z21 = false;
+                                                        str85 = null;
+                                                        str84 = null;
+                                                        str106 = null;
+                                                        z38 = false;
+                                                        str105 = null;
+                                                        str104 = null;
+                                                        str103 = null;
+                                                        str102 = null;
+                                                        tL_wallPaper = null;
+                                                        str107 = null;
+                                                        str110 = null;
+                                                        num4 = null;
+                                                        l4 = null;
+                                                        str28 = null;
+                                                        str27 = null;
+                                                        num3 = null;
+                                                        str109 = null;
+                                                        str108 = null;
+                                                        str25 = null;
+                                                        obj = null;
+                                                        bArr = null;
+                                                        str22 = "phone";
+                                                        str40 = str83;
+                                                        c14 = c21;
+                                                        str19 = " ";
+                                                        str56 = str100;
+                                                        str53 = str99;
+                                                        str23 = "message_id";
+                                                        str32 = str94;
+                                                        str50 = str93;
+                                                        str48 = str88;
+                                                        str41 = str86;
+                                                        str47 = str85;
+                                                        str42 = str84;
+                                                        str46 = str101;
+                                                        z23 = z38;
+                                                        str55 = str105;
+                                                        str21 = str104;
+                                                        r26 = tL_wallPaper;
+                                                        str44 = str107;
+                                                        str43 = str110;
+                                                        r16 = num4;
+                                                        r17 = l4;
+                                                        num = num3;
+                                                        r58 = bArr;
+                                                        r21 = null;
+                                                        str45 = null;
+                                                        j18 = 0;
+                                                        i54 = 0;
+                                                        i19 = 0;
+                                                        i61 = 0;
+                                                        i55 = 0;
+                                                        i22 = 0;
+                                                        i23 = 0;
+                                                        str29 = null;
+                                                        str12 = null;
+                                                        str13 = null;
+                                                        str14 = null;
+                                                        j19 = 0;
+                                                        j17 = 0;
+                                                        i60 = 4;
+                                                        i59 = -1;
+                                                        i58 = 6;
+                                                        i57 = 1;
+                                                        i64 = i78;
+                                                        i63 = i77;
+                                                        str24 = "android.intent.action.MAIN";
+                                                        str54 = str98;
+                                                        str49 = str92;
+                                                        str30 = str90;
+                                                        str37 = str89;
+                                                        z20 = z37;
+                                                        str31 = str102;
+                                                        str39 = str109;
+                                                        i21 = 0;
+                                                        str15 = str81;
+                                                        z27 = z33;
+                                                        z24 = z35;
+                                                        z22 = z36;
+                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                        str61 = str97;
+                                                        str33 = str95;
+                                                        str57 = str91;
+                                                        str35 = str87;
+                                                        str34 = str106;
+                                                        i62 = 0;
+                                                        z26 = z32;
+                                                        i66 = i76;
+                                                        z25 = z34;
+                                                        str58 = str82;
+                                                        iArr5 = iArr9;
+                                                        str38 = str108;
+                                                        str59 = null;
+                                                        launchActivity = this;
+                                                        intent2 = intent;
+                                                        str26 = str16;
+                                                        str36 = str96;
+                                                        i65 = i79;
+                                                        str51 = str103;
+                                                        i20 = 0;
+                                                        if (intent2.hasExtra(str60)) {
+                                                        }
+                                                        if (str46 == null) {
+                                                        }
+                                                        if (str61 == null) {
+                                                        }
+                                                        cVar3 = cVar;
+                                                        iArr4 = iArr5;
+                                                        str = str24;
+                                                        str2 = str19;
+                                                        str10 = str23;
+                                                        org.telegram.ui.ActionBar.b2 b2Var2222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                        b2Var2222222222222222222.j();
+                                                        b2Var2222222222222222222.show();
+                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                        sendconfirmphonecode.hash = str57;
+                                                        TLRPC.TL_codeSettings tL_codeSettings2222222222222222222 = new TLRPC.TL_codeSettings();
+                                                        sendconfirmphonecode.settings = tL_codeSettings2222222222222222222;
+                                                        i51 = 0;
+                                                        tL_codeSettings2222222222222222222.allow_flashcall = false;
+                                                        boolean hasServices2222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                        tL_codeSettings2222222222222222222.allow_firebase = hasServices2222222222222222222;
+                                                        tL_codeSettings2222222222222222222.allow_app_hash = hasServices2222222222222222222;
+                                                        SharedPreferences sharedPreferences2222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                        }
+                                                        Bundle bundle2222222222222222222 = new Bundle();
+                                                        bundle2222222222222222222.putString(str22, str61);
+                                                        ConnectionsManager connectionsManager2222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                        LaunchActivity launchActivity22222222222222222222 = launchActivity;
+                                                        String str1242222222222222222222 = str61;
+                                                        r13 = launchActivity22222222222222222222;
+                                                        connectionsManager2222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222222222222, str1242222222222222222222, bundle2222222222222222222, sendconfirmphonecode, 8), 2);
+                                                        i52 = i62;
+                                                        i53 = i61;
+                                                        str11 = str29;
+                                                        j16 = j19;
+                                                    } else {
+                                                        if (substring5.startsWith("joinchat/")) {
+                                                            str83 = substring5.replace("joinchat/", "");
+                                                            z32 = false;
+                                                            str81 = null;
+                                                            z33 = false;
+                                                            i76 = -1;
+                                                            z34 = false;
+                                                            str82 = null;
+                                                            z35 = false;
+                                                            z36 = false;
+                                                        } else if (substring5.startsWith("+")) {
+                                                            String replace4 = substring5.replace("+", "");
+                                                            if (AndroidUtilities.isNumeric(replace4)) {
+                                                                str120 = uri.getQueryParameter("free");
+                                                                str119 = null;
+                                                            } else {
+                                                                str119 = replace4;
+                                                                replace4 = null;
+                                                                str120 = null;
+                                                            }
+                                                            str27 = uri.getQueryParameter("text");
+                                                            str82 = replace4;
+                                                            str83 = str119;
+                                                            str104 = str120;
+                                                            z32 = false;
+                                                            str81 = null;
+                                                            z33 = false;
+                                                            i76 = -1;
+                                                            z34 = false;
+                                                            z35 = false;
+                                                            z36 = false;
+                                                            c20 = 3;
+                                                            c21 = 2;
+                                                            str52 = null;
+                                                            i79 = 0;
+                                                            i78 = 0;
+                                                            i77 = 0;
+                                                            str100 = null;
+                                                            str99 = null;
+                                                            str98 = null;
+                                                            str97 = null;
+                                                            str96 = null;
+                                                            str95 = null;
+                                                            str94 = null;
+                                                            str93 = null;
+                                                            str92 = null;
+                                                            str91 = null;
+                                                            str90 = null;
+                                                            str89 = null;
+                                                            str88 = null;
+                                                            str87 = null;
+                                                            z37 = false;
+                                                            str86 = null;
+                                                            z21 = false;
+                                                            str85 = null;
+                                                            str84 = null;
+                                                            str101 = null;
+                                                            str106 = null;
+                                                            z38 = false;
+                                                            str105 = null;
+                                                            str103 = null;
+                                                            str102 = null;
+                                                            tL_wallPaper = null;
+                                                            str107 = null;
+                                                            str110 = null;
+                                                            num4 = null;
+                                                            l4 = null;
+                                                            str28 = null;
+                                                            num3 = null;
+                                                            str109 = null;
+                                                            str108 = null;
+                                                            str25 = null;
+                                                            obj = null;
+                                                            bArr = null;
+                                                            str22 = "phone";
+                                                            str40 = str83;
+                                                            c14 = c21;
+                                                            str19 = " ";
+                                                            str56 = str100;
+                                                            str53 = str99;
+                                                            str23 = "message_id";
+                                                            str32 = str94;
+                                                            str50 = str93;
+                                                            str48 = str88;
+                                                            str41 = str86;
+                                                            str47 = str85;
+                                                            str42 = str84;
+                                                            str46 = str101;
+                                                            z23 = z38;
+                                                            str55 = str105;
+                                                            str21 = str104;
+                                                            r26 = tL_wallPaper;
+                                                            str44 = str107;
+                                                            str43 = str110;
+                                                            r16 = num4;
+                                                            r17 = l4;
+                                                            num = num3;
+                                                            r58 = bArr;
+                                                            r21 = null;
+                                                            str45 = null;
+                                                            j18 = 0;
+                                                            i54 = 0;
+                                                            i19 = 0;
+                                                            i61 = 0;
+                                                            i55 = 0;
+                                                            i22 = 0;
+                                                            i23 = 0;
+                                                            str29 = null;
+                                                            str12 = null;
+                                                            str13 = null;
+                                                            str14 = null;
+                                                            j19 = 0;
+                                                            j17 = 0;
+                                                            i60 = 4;
+                                                            i59 = -1;
+                                                            i58 = 6;
+                                                            i57 = 1;
+                                                            i64 = i78;
+                                                            i63 = i77;
+                                                            str24 = "android.intent.action.MAIN";
+                                                            str54 = str98;
+                                                            str49 = str92;
+                                                            str30 = str90;
+                                                            str37 = str89;
+                                                            z20 = z37;
+                                                            str31 = str102;
+                                                            str39 = str109;
+                                                            i21 = 0;
+                                                            str15 = str81;
+                                                            z27 = z33;
+                                                            z24 = z35;
+                                                            z22 = z36;
+                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                            str61 = str97;
+                                                            str33 = str95;
+                                                            str57 = str91;
+                                                            str35 = str87;
+                                                            str34 = str106;
+                                                            i62 = 0;
+                                                            z26 = z32;
+                                                            i66 = i76;
+                                                            z25 = z34;
+                                                            str58 = str82;
+                                                            iArr5 = iArr9;
+                                                            str38 = str108;
+                                                            str59 = null;
+                                                            launchActivity = this;
+                                                            intent2 = intent;
+                                                            str26 = str16;
+                                                            str36 = str96;
+                                                            i65 = i79;
+                                                            str51 = str103;
+                                                            i20 = 0;
+                                                            if (intent2.hasExtra(str60)) {
+                                                            }
+                                                            if (str46 == null) {
+                                                            }
+                                                            if (str61 == null) {
+                                                            }
+                                                            cVar3 = cVar;
+                                                            iArr4 = iArr5;
+                                                            str = str24;
+                                                            str2 = str19;
+                                                            str10 = str23;
+                                                            org.telegram.ui.ActionBar.b2 b2Var22222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                            b2Var22222222222222222222.j();
+                                                            b2Var22222222222222222222.show();
+                                                            sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                            sendconfirmphonecode.hash = str57;
+                                                            TLRPC.TL_codeSettings tL_codeSettings22222222222222222222 = new TLRPC.TL_codeSettings();
+                                                            sendconfirmphonecode.settings = tL_codeSettings22222222222222222222;
+                                                            i51 = 0;
+                                                            tL_codeSettings22222222222222222222.allow_flashcall = false;
+                                                            boolean hasServices22222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                            tL_codeSettings22222222222222222222.allow_firebase = hasServices22222222222222222222;
+                                                            tL_codeSettings22222222222222222222.allow_app_hash = hasServices22222222222222222222;
+                                                            SharedPreferences sharedPreferences22222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                            if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                            }
+                                                            Bundle bundle22222222222222222222 = new Bundle();
+                                                            bundle22222222222222222222.putString(str22, str61);
+                                                            ConnectionsManager connectionsManager22222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                            LaunchActivity launchActivity222222222222222222222 = launchActivity;
+                                                            String str12422222222222222222222 = str61;
+                                                            r13 = launchActivity222222222222222222222;
+                                                            connectionsManager22222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222222222222, str12422222222222222222222, bundle22222222222222222222, sendconfirmphonecode, 8), 2);
+                                                            i52 = i62;
+                                                            i53 = i61;
+                                                            str11 = str29;
+                                                            j16 = j19;
+                                                        } else if (substring5.startsWith("addstickers/")) {
+                                                            str52 = substring5.replace("addstickers/", "");
+                                                            z32 = false;
+                                                            str81 = null;
+                                                            z33 = false;
+                                                            i76 = -1;
+                                                            z34 = false;
+                                                            str82 = null;
+                                                            z35 = false;
+                                                            z36 = false;
+                                                            str83 = null;
+                                                            c20 = 3;
+                                                            c21 = 2;
+                                                            i79 = 0;
+                                                            i78 = 0;
+                                                            i77 = 0;
+                                                            str100 = null;
+                                                            str99 = null;
+                                                            str98 = null;
+                                                            str97 = null;
+                                                            str96 = null;
+                                                            str95 = null;
+                                                            str94 = null;
+                                                            str93 = null;
+                                                            str92 = null;
+                                                            str91 = null;
+                                                            str90 = null;
+                                                            str89 = null;
+                                                            str88 = null;
+                                                            str87 = null;
+                                                            z37 = false;
+                                                            str86 = null;
+                                                            z21 = false;
+                                                            str85 = null;
+                                                            str84 = null;
+                                                            str101 = null;
+                                                            str106 = null;
+                                                            z38 = false;
+                                                            str105 = null;
+                                                            str104 = null;
+                                                            str103 = null;
+                                                            str102 = null;
+                                                            tL_wallPaper = null;
+                                                            str107 = null;
+                                                            str110 = null;
+                                                            num4 = null;
+                                                            l4 = null;
+                                                            str28 = null;
+                                                            str27 = null;
+                                                            num3 = null;
+                                                            str109 = null;
+                                                            str108 = null;
+                                                            str25 = null;
+                                                            obj = null;
+                                                            bArr = null;
+                                                            str22 = "phone";
+                                                            str40 = str83;
+                                                            c14 = c21;
+                                                            str19 = " ";
+                                                            str56 = str100;
+                                                            str53 = str99;
+                                                            str23 = "message_id";
+                                                            str32 = str94;
+                                                            str50 = str93;
+                                                            str48 = str88;
+                                                            str41 = str86;
+                                                            str47 = str85;
+                                                            str42 = str84;
+                                                            str46 = str101;
+                                                            z23 = z38;
+                                                            str55 = str105;
+                                                            str21 = str104;
+                                                            r26 = tL_wallPaper;
+                                                            str44 = str107;
+                                                            str43 = str110;
+                                                            r16 = num4;
+                                                            r17 = l4;
+                                                            num = num3;
+                                                            r58 = bArr;
+                                                            r21 = null;
+                                                            str45 = null;
+                                                            j18 = 0;
+                                                            i54 = 0;
+                                                            i19 = 0;
+                                                            i61 = 0;
+                                                            i55 = 0;
+                                                            i22 = 0;
+                                                            i23 = 0;
+                                                            str29 = null;
+                                                            str12 = null;
+                                                            str13 = null;
+                                                            str14 = null;
+                                                            j19 = 0;
+                                                            j17 = 0;
+                                                            i60 = 4;
+                                                            i59 = -1;
+                                                            i58 = 6;
+                                                            i57 = 1;
+                                                            i64 = i78;
+                                                            i63 = i77;
+                                                            str24 = "android.intent.action.MAIN";
+                                                            str54 = str98;
+                                                            str49 = str92;
+                                                            str30 = str90;
+                                                            str37 = str89;
+                                                            z20 = z37;
+                                                            str31 = str102;
+                                                            str39 = str109;
+                                                            i21 = 0;
+                                                            str15 = str81;
+                                                            z27 = z33;
+                                                            z24 = z35;
+                                                            z22 = z36;
+                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                            str61 = str97;
+                                                            str33 = str95;
+                                                            str57 = str91;
+                                                            str35 = str87;
+                                                            str34 = str106;
+                                                            i62 = 0;
+                                                            z26 = z32;
+                                                            i66 = i76;
+                                                            z25 = z34;
+                                                            str58 = str82;
+                                                            iArr5 = iArr9;
+                                                            str38 = str108;
+                                                            str59 = null;
+                                                            launchActivity = this;
+                                                            intent2 = intent;
+                                                            str26 = str16;
+                                                            str36 = str96;
+                                                            i65 = i79;
+                                                            str51 = str103;
+                                                            i20 = 0;
+                                                            if (intent2.hasExtra(str60)) {
+                                                            }
+                                                            if (str46 == null) {
+                                                            }
+                                                            if (str61 == null) {
+                                                            }
+                                                            cVar3 = cVar;
+                                                            iArr4 = iArr5;
+                                                            str = str24;
+                                                            str2 = str19;
+                                                            str10 = str23;
+                                                            org.telegram.ui.ActionBar.b2 b2Var222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                            b2Var222222222222222222222.j();
+                                                            b2Var222222222222222222222.show();
+                                                            sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                            sendconfirmphonecode.hash = str57;
+                                                            TLRPC.TL_codeSettings tL_codeSettings222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                            sendconfirmphonecode.settings = tL_codeSettings222222222222222222222;
+                                                            i51 = 0;
+                                                            tL_codeSettings222222222222222222222.allow_flashcall = false;
+                                                            boolean hasServices222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                            tL_codeSettings222222222222222222222.allow_firebase = hasServices222222222222222222222;
+                                                            tL_codeSettings222222222222222222222.allow_app_hash = hasServices222222222222222222222;
+                                                            SharedPreferences sharedPreferences222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                            if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                            }
+                                                            Bundle bundle222222222222222222222 = new Bundle();
+                                                            bundle222222222222222222222.putString(str22, str61);
+                                                            ConnectionsManager connectionsManager222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                            LaunchActivity launchActivity2222222222222222222222 = launchActivity;
+                                                            String str124222222222222222222222 = str61;
+                                                            r13 = launchActivity2222222222222222222222;
+                                                            connectionsManager222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222222222222222, str124222222222222222222222, bundle222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                            i52 = i62;
+                                                            i53 = i61;
+                                                            str11 = str29;
+                                                            j16 = j19;
+                                                        } else {
+                                                            if (substring5.startsWith("auction/")) {
+                                                                replace = substring5.replace("auction/", "");
+                                                            } else if (substring5.startsWith("stargift_auction/")) {
+                                                                replace = substring5.replace("stargift_auction/", "");
+                                                            } else if (substring5.startsWith("stargift_preview/")) {
+                                                                str94 = substring5.replace("stargift_preview/", "");
+                                                                z32 = false;
+                                                                str81 = null;
+                                                                z33 = false;
+                                                                i76 = -1;
+                                                                z34 = false;
+                                                                str82 = null;
+                                                                z35 = false;
+                                                                z36 = false;
+                                                                str83 = null;
+                                                                c20 = 3;
+                                                                c21 = 2;
+                                                                str52 = null;
+                                                                i79 = 0;
+                                                                i78 = 0;
+                                                                i77 = 0;
+                                                                str100 = null;
+                                                                str99 = null;
+                                                                str98 = null;
+                                                                str97 = null;
+                                                                str96 = null;
+                                                                str95 = null;
+                                                                str93 = null;
+                                                                str92 = null;
+                                                                str91 = null;
+                                                                str90 = null;
+                                                                str89 = null;
+                                                                str88 = null;
+                                                                str87 = null;
+                                                                z37 = false;
+                                                                str86 = null;
+                                                                z21 = false;
+                                                                str85 = null;
+                                                                str84 = null;
+                                                                str101 = null;
+                                                                str106 = null;
+                                                                z38 = false;
+                                                                str105 = null;
+                                                                str104 = null;
+                                                                str103 = null;
+                                                                str102 = null;
+                                                                tL_wallPaper = null;
+                                                                str107 = null;
+                                                                str110 = null;
+                                                                num4 = null;
+                                                                l4 = null;
+                                                                str28 = null;
+                                                                str27 = null;
+                                                                num3 = null;
+                                                                str109 = null;
+                                                                str108 = null;
+                                                                str25 = null;
+                                                                obj = null;
+                                                                bArr = null;
+                                                                str22 = "phone";
+                                                                str40 = str83;
+                                                                c14 = c21;
+                                                                str19 = " ";
+                                                                str56 = str100;
+                                                                str53 = str99;
+                                                                str23 = "message_id";
+                                                                str32 = str94;
+                                                                str50 = str93;
+                                                                str48 = str88;
+                                                                str41 = str86;
+                                                                str47 = str85;
+                                                                str42 = str84;
+                                                                str46 = str101;
+                                                                z23 = z38;
+                                                                str55 = str105;
+                                                                str21 = str104;
+                                                                r26 = tL_wallPaper;
+                                                                str44 = str107;
+                                                                str43 = str110;
+                                                                r16 = num4;
+                                                                r17 = l4;
+                                                                num = num3;
+                                                                r58 = bArr;
+                                                                r21 = null;
+                                                                str45 = null;
+                                                                j18 = 0;
+                                                                i54 = 0;
+                                                                i19 = 0;
+                                                                i61 = 0;
+                                                                i55 = 0;
+                                                                i22 = 0;
+                                                                i23 = 0;
+                                                                str29 = null;
+                                                                str12 = null;
+                                                                str13 = null;
+                                                                str14 = null;
+                                                                j19 = 0;
+                                                                j17 = 0;
+                                                                i60 = 4;
+                                                                i59 = -1;
+                                                                i58 = 6;
+                                                                i57 = 1;
+                                                                i64 = i78;
+                                                                i63 = i77;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                str54 = str98;
+                                                                str49 = str92;
+                                                                str30 = str90;
+                                                                str37 = str89;
+                                                                z20 = z37;
+                                                                str31 = str102;
+                                                                str39 = str109;
+                                                                i21 = 0;
+                                                                str15 = str81;
+                                                                z27 = z33;
+                                                                z24 = z35;
+                                                                z22 = z36;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str61 = str97;
+                                                                str33 = str95;
+                                                                str57 = str91;
+                                                                str35 = str87;
+                                                                str34 = str106;
+                                                                i62 = 0;
+                                                                z26 = z32;
+                                                                i66 = i76;
+                                                                z25 = z34;
+                                                                str58 = str82;
+                                                                iArr5 = iArr9;
+                                                                str38 = str108;
+                                                                str59 = null;
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str26 = str16;
+                                                                str36 = str96;
+                                                                i65 = i79;
+                                                                str51 = str103;
+                                                                i20 = 0;
+                                                                if (intent2.hasExtra(str60)) {
+                                                                }
+                                                                if (str46 == null) {
+                                                                }
+                                                                if (str61 == null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var2222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var2222222222222222222222.j();
+                                                                b2Var2222222222222222222222.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings2222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings2222222222222222222222;
+                                                                i51 = 0;
+                                                                tL_codeSettings2222222222222222222222.allow_flashcall = false;
+                                                                boolean hasServices2222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings2222222222222222222222.allow_firebase = hasServices2222222222222222222222;
+                                                                tL_codeSettings2222222222222222222222.allow_app_hash = hasServices2222222222222222222222;
+                                                                SharedPreferences sharedPreferences2222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                }
+                                                                Bundle bundle2222222222222222222222 = new Bundle();
+                                                                bundle2222222222222222222222.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager2222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity22222222222222222222222 = launchActivity;
+                                                                String str1242222222222222222222222 = str61;
+                                                                r13 = launchActivity22222222222222222222222;
+                                                                connectionsManager2222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222222222222222, str1242222222222222222222222, bundle2222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                j16 = j19;
+                                                            } else if (substring5.startsWith("call/")) {
+                                                                str81 = substring5.replace("call/", "");
+                                                                z32 = false;
+                                                                z33 = false;
+                                                                i76 = -1;
+                                                                z34 = false;
+                                                                str82 = null;
+                                                                z35 = false;
+                                                                z36 = false;
+                                                                str83 = null;
+                                                            } else if (substring5.startsWith("addemoji/")) {
+                                                                str100 = substring5.replace("addemoji/", "");
+                                                                z32 = false;
+                                                                str81 = null;
+                                                                z33 = false;
+                                                                i76 = -1;
+                                                                z34 = false;
+                                                                str82 = null;
+                                                                z35 = false;
+                                                                z36 = false;
+                                                                str83 = null;
+                                                                c20 = 3;
+                                                                c21 = 2;
+                                                                str52 = null;
+                                                                i79 = 0;
+                                                                i78 = 0;
+                                                                i77 = 0;
+                                                                str99 = null;
+                                                                str98 = null;
+                                                                str97 = null;
+                                                                str96 = null;
+                                                                str95 = null;
+                                                                str94 = null;
+                                                                str93 = null;
+                                                                str92 = null;
+                                                                str91 = null;
+                                                                str90 = null;
+                                                                str89 = null;
+                                                                str88 = null;
+                                                                str87 = null;
+                                                                z37 = false;
+                                                                str86 = null;
+                                                                z21 = false;
+                                                                str85 = null;
+                                                                str84 = null;
+                                                                str101 = null;
+                                                                str106 = null;
+                                                                z38 = false;
+                                                                str105 = null;
+                                                                str104 = null;
+                                                                str103 = null;
+                                                                str102 = null;
+                                                                tL_wallPaper = null;
+                                                                str107 = null;
+                                                                str110 = null;
+                                                                num4 = null;
+                                                                l4 = null;
+                                                                str28 = null;
+                                                                str27 = null;
+                                                                num3 = null;
+                                                                str109 = null;
+                                                                str108 = null;
+                                                                str25 = null;
+                                                                obj = null;
+                                                                bArr = null;
+                                                                str22 = "phone";
+                                                                str40 = str83;
+                                                                c14 = c21;
+                                                                str19 = " ";
+                                                                str56 = str100;
+                                                                str53 = str99;
+                                                                str23 = "message_id";
+                                                                str32 = str94;
+                                                                str50 = str93;
+                                                                str48 = str88;
+                                                                str41 = str86;
+                                                                str47 = str85;
+                                                                str42 = str84;
+                                                                str46 = str101;
+                                                                z23 = z38;
+                                                                str55 = str105;
+                                                                str21 = str104;
+                                                                r26 = tL_wallPaper;
+                                                                str44 = str107;
+                                                                str43 = str110;
+                                                                r16 = num4;
+                                                                r17 = l4;
+                                                                num = num3;
+                                                                r58 = bArr;
+                                                                r21 = null;
+                                                                str45 = null;
+                                                                j18 = 0;
+                                                                i54 = 0;
+                                                                i19 = 0;
+                                                                i61 = 0;
+                                                                i55 = 0;
+                                                                i22 = 0;
+                                                                i23 = 0;
+                                                                str29 = null;
+                                                                str12 = null;
+                                                                str13 = null;
+                                                                str14 = null;
+                                                                j19 = 0;
+                                                                j17 = 0;
+                                                                i60 = 4;
+                                                                i59 = -1;
+                                                                i58 = 6;
+                                                                i57 = 1;
+                                                                i64 = i78;
+                                                                i63 = i77;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                str54 = str98;
+                                                                str49 = str92;
+                                                                str30 = str90;
+                                                                str37 = str89;
+                                                                z20 = z37;
+                                                                str31 = str102;
+                                                                str39 = str109;
+                                                                i21 = 0;
+                                                                str15 = str81;
+                                                                z27 = z33;
+                                                                z24 = z35;
+                                                                z22 = z36;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str61 = str97;
+                                                                str33 = str95;
+                                                                str57 = str91;
+                                                                str35 = str87;
+                                                                str34 = str106;
+                                                                i62 = 0;
+                                                                z26 = z32;
+                                                                i66 = i76;
+                                                                z25 = z34;
+                                                                str58 = str82;
+                                                                iArr5 = iArr9;
+                                                                str38 = str108;
+                                                                str59 = null;
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str26 = str16;
+                                                                str36 = str96;
+                                                                i65 = i79;
+                                                                str51 = str103;
+                                                                i20 = 0;
+                                                                if (intent2.hasExtra(str60)) {
+                                                                }
+                                                                if (str46 == null) {
+                                                                }
+                                                                if (str61 == null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var22222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var22222222222222222222222.j();
+                                                                b2Var22222222222222222222222.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings22222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings22222222222222222222222;
+                                                                i51 = 0;
+                                                                tL_codeSettings22222222222222222222222.allow_flashcall = false;
+                                                                boolean hasServices22222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings22222222222222222222222.allow_firebase = hasServices22222222222222222222222;
+                                                                tL_codeSettings22222222222222222222222.allow_app_hash = hasServices22222222222222222222222;
+                                                                SharedPreferences sharedPreferences22222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                }
+                                                                Bundle bundle22222222222222222222222 = new Bundle();
+                                                                bundle22222222222222222222222.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager22222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity222222222222222222222222 = launchActivity;
+                                                                String str12422222222222222222222222 = str61;
+                                                                r13 = launchActivity222222222222222222222222;
+                                                                connectionsManager22222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222222222222222, str12422222222222222222222222, bundle22222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                j16 = j19;
+                                                            } else if (substring5.startsWith("msg/") || substring5.startsWith("share/")) {
+                                                                c20 = 3;
+                                                                c21 = 2;
+                                                                String queryParameter44 = uri.getQueryParameter("url");
+                                                                str75 = queryParameter44 != null ? queryParameter44 : "";
+                                                                if (uri.getQueryParameter("text") != null) {
+                                                                    str111 = "\n";
+                                                                    if (str75.length() > 0) {
+                                                                        str75 = str75.concat(str111);
+                                                                        z33 = true;
+                                                                    } else {
+                                                                        z33 = false;
+                                                                    }
+                                                                    StringBuilder u11 = a1.g.u(str75);
+                                                                    u11.append(uri.getQueryParameter("text"));
+                                                                    str75 = u11.toString();
+                                                                } else {
+                                                                    str111 = "\n";
+                                                                    z33 = false;
+                                                                }
+                                                                String substring6 = str75.length() > 16384 ? str75.substring(0, 16384) : str75;
+                                                                while (substring6.endsWith(str111)) {
+                                                                    substring6 = com.google.android.gms.internal.play_billing.k3.j(1, 0, substring6);
+                                                                }
+                                                                str98 = substring6;
+                                                                z32 = false;
+                                                                str81 = null;
+                                                                i76 = -1;
+                                                                z34 = false;
+                                                                str82 = null;
+                                                                z35 = false;
+                                                                z36 = false;
+                                                                str83 = null;
+                                                                str52 = null;
+                                                                i79 = 0;
+                                                                i78 = 0;
+                                                                i77 = 0;
+                                                                str100 = null;
+                                                                str99 = null;
+                                                                str97 = null;
+                                                                str96 = null;
+                                                                str95 = null;
+                                                                str94 = null;
+                                                                str93 = null;
+                                                                str92 = null;
+                                                                str91 = null;
+                                                                str90 = null;
+                                                                str89 = null;
+                                                                str88 = null;
+                                                                str87 = null;
+                                                                z37 = false;
+                                                                str86 = null;
+                                                                z21 = false;
+                                                                str85 = null;
+                                                                str84 = null;
+                                                                str101 = null;
+                                                                str106 = null;
+                                                                z38 = false;
+                                                                str105 = null;
+                                                                str104 = null;
+                                                                str103 = null;
+                                                                str102 = null;
+                                                                tL_wallPaper = null;
+                                                                str107 = null;
+                                                                str110 = null;
+                                                                num4 = null;
+                                                                l4 = null;
+                                                                str28 = null;
+                                                                str27 = null;
+                                                                num3 = null;
+                                                                str109 = null;
+                                                                str108 = null;
+                                                                str25 = null;
+                                                                obj = null;
+                                                                bArr = null;
+                                                                str22 = "phone";
+                                                                str40 = str83;
+                                                                c14 = c21;
+                                                                str19 = " ";
+                                                                str56 = str100;
+                                                                str53 = str99;
+                                                                str23 = "message_id";
+                                                                str32 = str94;
+                                                                str50 = str93;
+                                                                str48 = str88;
+                                                                str41 = str86;
+                                                                str47 = str85;
+                                                                str42 = str84;
+                                                                str46 = str101;
+                                                                z23 = z38;
+                                                                str55 = str105;
+                                                                str21 = str104;
+                                                                r26 = tL_wallPaper;
+                                                                str44 = str107;
+                                                                str43 = str110;
+                                                                r16 = num4;
+                                                                r17 = l4;
+                                                                num = num3;
+                                                                r58 = bArr;
+                                                                r21 = null;
+                                                                str45 = null;
+                                                                j18 = 0;
+                                                                i54 = 0;
+                                                                i19 = 0;
+                                                                i61 = 0;
+                                                                i55 = 0;
+                                                                i22 = 0;
+                                                                i23 = 0;
+                                                                str29 = null;
+                                                                str12 = null;
+                                                                str13 = null;
+                                                                str14 = null;
+                                                                j19 = 0;
+                                                                j17 = 0;
+                                                                i60 = 4;
+                                                                i59 = -1;
+                                                                i58 = 6;
+                                                                i57 = 1;
+                                                                i64 = i78;
+                                                                i63 = i77;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                str54 = str98;
+                                                                str49 = str92;
+                                                                str30 = str90;
+                                                                str37 = str89;
+                                                                z20 = z37;
+                                                                str31 = str102;
+                                                                str39 = str109;
+                                                                i21 = 0;
+                                                                str15 = str81;
+                                                                z27 = z33;
+                                                                z24 = z35;
+                                                                z22 = z36;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str61 = str97;
+                                                                str33 = str95;
+                                                                str57 = str91;
+                                                                str35 = str87;
+                                                                str34 = str106;
+                                                                i62 = 0;
+                                                                z26 = z32;
+                                                                i66 = i76;
+                                                                z25 = z34;
+                                                                str58 = str82;
+                                                                iArr5 = iArr9;
+                                                                str38 = str108;
+                                                                str59 = null;
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str26 = str16;
+                                                                str36 = str96;
+                                                                i65 = i79;
+                                                                str51 = str103;
+                                                                i20 = 0;
+                                                                if (intent2.hasExtra(str60)) {
+                                                                }
+                                                                if (str46 == null) {
+                                                                }
+                                                                if (str61 == null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var222222222222222222222222.j();
+                                                                b2Var222222222222222222222222.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings222222222222222222222222;
+                                                                i51 = 0;
+                                                                tL_codeSettings222222222222222222222222.allow_flashcall = false;
+                                                                boolean hasServices222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings222222222222222222222222.allow_firebase = hasServices222222222222222222222222;
+                                                                tL_codeSettings222222222222222222222222.allow_app_hash = hasServices222222222222222222222222;
+                                                                SharedPreferences sharedPreferences222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                }
+                                                                Bundle bundle222222222222222222222222 = new Bundle();
+                                                                bundle222222222222222222222222.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity2222222222222222222222222 = launchActivity;
+                                                                String str124222222222222222222222222 = str61;
+                                                                r13 = launchActivity2222222222222222222222222;
+                                                                connectionsManager222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222222222222222222, str124222222222222222222222222, bundle222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                j16 = j19;
+                                                            } else if (substring5.startsWith("confirmphone")) {
+                                                                String queryParameter45 = uri.getQueryParameter("phone");
+                                                                str91 = uri.getQueryParameter("hash");
+                                                                str97 = queryParameter45;
+                                                                z32 = false;
+                                                                str81 = null;
+                                                                z33 = false;
+                                                                i76 = -1;
+                                                                z34 = false;
+                                                                str82 = null;
+                                                                z35 = false;
+                                                                z36 = false;
+                                                                str83 = null;
+                                                                c20 = 3;
+                                                                c21 = 2;
+                                                                str52 = null;
+                                                                i79 = 0;
+                                                                i78 = 0;
+                                                                i77 = 0;
+                                                                str100 = null;
+                                                                str99 = null;
+                                                                str98 = null;
+                                                                str96 = null;
+                                                                str95 = null;
+                                                                str94 = null;
+                                                                str93 = null;
+                                                                str92 = null;
+                                                                str90 = null;
+                                                                str89 = null;
+                                                                str88 = null;
+                                                                str87 = null;
+                                                                z37 = false;
+                                                                str86 = null;
+                                                                z21 = false;
+                                                                str85 = null;
+                                                                str84 = null;
+                                                                str101 = null;
+                                                                str106 = null;
+                                                                z38 = false;
+                                                                str105 = null;
+                                                                str104 = null;
+                                                                str103 = null;
+                                                                str102 = null;
+                                                                tL_wallPaper = null;
+                                                                str107 = null;
+                                                                str110 = null;
+                                                                num4 = null;
+                                                                l4 = null;
+                                                                str28 = null;
+                                                                str27 = null;
+                                                                num3 = null;
+                                                                str109 = null;
+                                                                str108 = null;
+                                                                str25 = null;
+                                                                obj = null;
+                                                                bArr = null;
+                                                                str22 = "phone";
+                                                                str40 = str83;
+                                                                c14 = c21;
+                                                                str19 = " ";
+                                                                str56 = str100;
+                                                                str53 = str99;
+                                                                str23 = "message_id";
+                                                                str32 = str94;
+                                                                str50 = str93;
+                                                                str48 = str88;
+                                                                str41 = str86;
+                                                                str47 = str85;
+                                                                str42 = str84;
+                                                                str46 = str101;
+                                                                z23 = z38;
+                                                                str55 = str105;
+                                                                str21 = str104;
+                                                                r26 = tL_wallPaper;
+                                                                str44 = str107;
+                                                                str43 = str110;
+                                                                r16 = num4;
+                                                                r17 = l4;
+                                                                num = num3;
+                                                                r58 = bArr;
+                                                                r21 = null;
+                                                                str45 = null;
+                                                                j18 = 0;
+                                                                i54 = 0;
+                                                                i19 = 0;
+                                                                i61 = 0;
+                                                                i55 = 0;
+                                                                i22 = 0;
+                                                                i23 = 0;
+                                                                str29 = null;
+                                                                str12 = null;
+                                                                str13 = null;
+                                                                str14 = null;
+                                                                j19 = 0;
+                                                                j17 = 0;
+                                                                i60 = 4;
+                                                                i59 = -1;
+                                                                i58 = 6;
+                                                                i57 = 1;
+                                                                i64 = i78;
+                                                                i63 = i77;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                str54 = str98;
+                                                                str49 = str92;
+                                                                str30 = str90;
+                                                                str37 = str89;
+                                                                z20 = z37;
+                                                                str31 = str102;
+                                                                str39 = str109;
+                                                                i21 = 0;
+                                                                str15 = str81;
+                                                                z27 = z33;
+                                                                z24 = z35;
+                                                                z22 = z36;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str61 = str97;
+                                                                str33 = str95;
+                                                                str57 = str91;
+                                                                str35 = str87;
+                                                                str34 = str106;
+                                                                i62 = 0;
+                                                                z26 = z32;
+                                                                i66 = i76;
+                                                                z25 = z34;
+                                                                str58 = str82;
+                                                                iArr5 = iArr9;
+                                                                str38 = str108;
+                                                                str59 = null;
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str26 = str16;
+                                                                str36 = str96;
+                                                                i65 = i79;
+                                                                str51 = str103;
+                                                                i20 = 0;
+                                                                if (intent2.hasExtra(str60)) {
+                                                                }
+                                                                if (str46 == null) {
+                                                                }
+                                                                if (str61 == null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var2222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var2222222222222222222222222.j();
+                                                                b2Var2222222222222222222222222.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings2222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings2222222222222222222222222;
+                                                                i51 = 0;
+                                                                tL_codeSettings2222222222222222222222222.allow_flashcall = false;
+                                                                boolean hasServices2222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings2222222222222222222222222.allow_firebase = hasServices2222222222222222222222222;
+                                                                tL_codeSettings2222222222222222222222222.allow_app_hash = hasServices2222222222222222222222222;
+                                                                SharedPreferences sharedPreferences2222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                }
+                                                                Bundle bundle2222222222222222222222222 = new Bundle();
+                                                                bundle2222222222222222222222222.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager2222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity22222222222222222222222222 = launchActivity;
+                                                                String str1242222222222222222222222222 = str61;
+                                                                r13 = launchActivity22222222222222222222222222;
+                                                                connectionsManager2222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222222222222222222, str1242222222222222222222222222, bundle2222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                j16 = j19;
+                                                            } else if (substring5.startsWith("setlanguage/")) {
+                                                                str85 = substring5.substring(12);
+                                                                z32 = false;
+                                                                str81 = null;
+                                                                z33 = false;
+                                                                i76 = -1;
+                                                                z34 = false;
+                                                                str82 = null;
+                                                                z35 = false;
+                                                                z36 = false;
+                                                                str83 = null;
+                                                                c20 = 3;
+                                                                c21 = 2;
+                                                                str52 = null;
+                                                                i79 = 0;
+                                                                i78 = 0;
+                                                                i77 = 0;
+                                                                str100 = null;
+                                                                str99 = null;
+                                                                str98 = null;
+                                                                str97 = null;
+                                                                str96 = null;
+                                                                str95 = null;
+                                                                str94 = null;
+                                                                str93 = null;
+                                                                str92 = null;
+                                                                str91 = null;
+                                                                str90 = null;
+                                                                str89 = null;
+                                                                str88 = null;
+                                                                str87 = null;
+                                                                z37 = false;
+                                                                str86 = null;
+                                                                z21 = false;
+                                                                str84 = null;
+                                                                str101 = null;
+                                                                str106 = null;
+                                                                z38 = false;
+                                                                str105 = null;
+                                                                str104 = null;
+                                                                str103 = null;
+                                                                str102 = null;
+                                                                tL_wallPaper = null;
+                                                                str107 = null;
+                                                                str110 = null;
+                                                                num4 = null;
+                                                                l4 = null;
+                                                                str28 = null;
+                                                                str27 = null;
+                                                                num3 = null;
+                                                                str109 = null;
+                                                                str108 = null;
+                                                                str25 = null;
+                                                                obj = null;
+                                                                bArr = null;
+                                                                str22 = "phone";
+                                                                str40 = str83;
+                                                                c14 = c21;
+                                                                str19 = " ";
+                                                                str56 = str100;
+                                                                str53 = str99;
+                                                                str23 = "message_id";
+                                                                str32 = str94;
+                                                                str50 = str93;
+                                                                str48 = str88;
+                                                                str41 = str86;
+                                                                str47 = str85;
+                                                                str42 = str84;
+                                                                str46 = str101;
+                                                                z23 = z38;
+                                                                str55 = str105;
+                                                                str21 = str104;
+                                                                r26 = tL_wallPaper;
+                                                                str44 = str107;
+                                                                str43 = str110;
+                                                                r16 = num4;
+                                                                r17 = l4;
+                                                                num = num3;
+                                                                r58 = bArr;
+                                                                r21 = null;
+                                                                str45 = null;
+                                                                j18 = 0;
+                                                                i54 = 0;
+                                                                i19 = 0;
+                                                                i61 = 0;
+                                                                i55 = 0;
+                                                                i22 = 0;
+                                                                i23 = 0;
+                                                                str29 = null;
+                                                                str12 = null;
+                                                                str13 = null;
+                                                                str14 = null;
+                                                                j19 = 0;
+                                                                j17 = 0;
+                                                                i60 = 4;
+                                                                i59 = -1;
+                                                                i58 = 6;
+                                                                i57 = 1;
+                                                                i64 = i78;
+                                                                i63 = i77;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                str54 = str98;
+                                                                str49 = str92;
+                                                                str30 = str90;
+                                                                str37 = str89;
+                                                                z20 = z37;
+                                                                str31 = str102;
+                                                                str39 = str109;
+                                                                i21 = 0;
+                                                                str15 = str81;
+                                                                z27 = z33;
+                                                                z24 = z35;
+                                                                z22 = z36;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str61 = str97;
+                                                                str33 = str95;
+                                                                str57 = str91;
+                                                                str35 = str87;
+                                                                str34 = str106;
+                                                                i62 = 0;
+                                                                z26 = z32;
+                                                                i66 = i76;
+                                                                z25 = z34;
+                                                                str58 = str82;
+                                                                iArr5 = iArr9;
+                                                                str38 = str108;
+                                                                str59 = null;
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str26 = str16;
+                                                                str36 = str96;
+                                                                i65 = i79;
+                                                                str51 = str103;
+                                                                i20 = 0;
+                                                                if (intent2.hasExtra(str60)) {
+                                                                }
+                                                                if (str46 == null) {
+                                                                }
+                                                                if (str61 == null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var22222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var22222222222222222222222222.j();
+                                                                b2Var22222222222222222222222222.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings22222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings22222222222222222222222222;
+                                                                i51 = 0;
+                                                                tL_codeSettings22222222222222222222222222.allow_flashcall = false;
+                                                                boolean hasServices22222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings22222222222222222222222222.allow_firebase = hasServices22222222222222222222222222;
+                                                                tL_codeSettings22222222222222222222222222.allow_app_hash = hasServices22222222222222222222222222;
+                                                                SharedPreferences sharedPreferences22222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                }
+                                                                Bundle bundle22222222222222222222222222 = new Bundle();
+                                                                bundle22222222222222222222222222.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager22222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity222222222222222222222222222 = launchActivity;
+                                                                String str12422222222222222222222222222 = str61;
+                                                                r13 = launchActivity222222222222222222222222222;
+                                                                connectionsManager22222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222222222222222222, str12422222222222222222222222222, bundle22222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                j16 = j19;
+                                                            } else if (substring5.startsWith("addtheme/")) {
+                                                                str84 = substring5.substring(9);
+                                                                z32 = false;
+                                                                str81 = null;
+                                                                z33 = false;
+                                                                i76 = -1;
+                                                                z34 = false;
+                                                                str82 = null;
+                                                                z35 = false;
+                                                                z36 = false;
+                                                                str83 = null;
+                                                                c20 = 3;
+                                                                c21 = 2;
+                                                                str52 = null;
+                                                                i79 = 0;
+                                                                i78 = 0;
+                                                                i77 = 0;
+                                                                str100 = null;
+                                                                str99 = null;
+                                                                str98 = null;
+                                                                str97 = null;
+                                                                str96 = null;
+                                                                str95 = null;
+                                                                str94 = null;
+                                                                str93 = null;
+                                                                str92 = null;
+                                                                str91 = null;
+                                                                str90 = null;
+                                                                str89 = null;
+                                                                str88 = null;
+                                                                str87 = null;
+                                                                z37 = false;
+                                                                str86 = null;
+                                                                z21 = false;
+                                                                str85 = null;
+                                                                str101 = null;
+                                                                str106 = null;
+                                                                z38 = false;
+                                                                str105 = null;
+                                                                str104 = null;
+                                                                str103 = null;
+                                                                str102 = null;
+                                                                tL_wallPaper = null;
+                                                                str107 = null;
+                                                                str110 = null;
+                                                                num4 = null;
+                                                                l4 = null;
+                                                                str28 = null;
+                                                                str27 = null;
+                                                                num3 = null;
+                                                                str109 = null;
+                                                                str108 = null;
+                                                                str25 = null;
+                                                                obj = null;
+                                                                bArr = null;
+                                                                str22 = "phone";
+                                                                str40 = str83;
+                                                                c14 = c21;
+                                                                str19 = " ";
+                                                                str56 = str100;
+                                                                str53 = str99;
+                                                                str23 = "message_id";
+                                                                str32 = str94;
+                                                                str50 = str93;
+                                                                str48 = str88;
+                                                                str41 = str86;
+                                                                str47 = str85;
+                                                                str42 = str84;
+                                                                str46 = str101;
+                                                                z23 = z38;
+                                                                str55 = str105;
+                                                                str21 = str104;
+                                                                r26 = tL_wallPaper;
+                                                                str44 = str107;
+                                                                str43 = str110;
+                                                                r16 = num4;
+                                                                r17 = l4;
+                                                                num = num3;
+                                                                r58 = bArr;
+                                                                r21 = null;
+                                                                str45 = null;
+                                                                j18 = 0;
+                                                                i54 = 0;
+                                                                i19 = 0;
+                                                                i61 = 0;
+                                                                i55 = 0;
+                                                                i22 = 0;
+                                                                i23 = 0;
+                                                                str29 = null;
+                                                                str12 = null;
+                                                                str13 = null;
+                                                                str14 = null;
+                                                                j19 = 0;
+                                                                j17 = 0;
+                                                                i60 = 4;
+                                                                i59 = -1;
+                                                                i58 = 6;
+                                                                i57 = 1;
+                                                                i64 = i78;
+                                                                i63 = i77;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                str54 = str98;
+                                                                str49 = str92;
+                                                                str30 = str90;
+                                                                str37 = str89;
+                                                                z20 = z37;
+                                                                str31 = str102;
+                                                                str39 = str109;
+                                                                i21 = 0;
+                                                                str15 = str81;
+                                                                z27 = z33;
+                                                                z24 = z35;
+                                                                z22 = z36;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str61 = str97;
+                                                                str33 = str95;
+                                                                str57 = str91;
+                                                                str35 = str87;
+                                                                str34 = str106;
+                                                                i62 = 0;
+                                                                z26 = z32;
+                                                                i66 = i76;
+                                                                z25 = z34;
+                                                                str58 = str82;
+                                                                iArr5 = iArr9;
+                                                                str38 = str108;
+                                                                str59 = null;
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str26 = str16;
+                                                                str36 = str96;
+                                                                i65 = i79;
+                                                                str51 = str103;
+                                                                i20 = 0;
+                                                                if (intent2.hasExtra(str60)) {
+                                                                }
+                                                                if (str46 == null) {
+                                                                }
+                                                                if (str61 == null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var222222222222222222222222222.j();
+                                                                b2Var222222222222222222222222222.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings222222222222222222222222222;
+                                                                i51 = 0;
+                                                                tL_codeSettings222222222222222222222222222.allow_flashcall = false;
+                                                                boolean hasServices222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings222222222222222222222222222.allow_firebase = hasServices222222222222222222222222222;
+                                                                tL_codeSettings222222222222222222222222222.allow_app_hash = hasServices222222222222222222222222222;
+                                                                SharedPreferences sharedPreferences222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                }
+                                                                Bundle bundle222222222222222222222222222 = new Bundle();
+                                                                bundle222222222222222222222222222.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity2222222222222222222222222222 = launchActivity;
+                                                                String str124222222222222222222222222222 = str61;
+                                                                r13 = launchActivity2222222222222222222222222222;
+                                                                connectionsManager222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222222222222222222222, str124222222222222222222222222222, bundle222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                j16 = j19;
+                                                            } else if (substring5.equalsIgnoreCase("boost") || substring5.startsWith("boost/")) {
+                                                                c20 = 3;
+                                                                String queryParameter46 = uri.getQueryParameter("c");
+                                                                List<String> pathSegments = uri.getPathSegments();
+                                                                c21 = 2;
+                                                                if (pathSegments.size() >= 2) {
+                                                                    str112 = pathSegments.get(1);
+                                                                } else if (TextUtils.isEmpty(queryParameter46)) {
+                                                                    str112 = null;
+                                                                } else {
+                                                                    parseLong = Utilities.parseLong(queryParameter46);
+                                                                    str112 = null;
+                                                                    str82 = str112;
+                                                                    l4 = parseLong;
+                                                                    z32 = false;
+                                                                    str81 = null;
+                                                                    z33 = false;
+                                                                    i76 = -1;
+                                                                    z34 = true;
+                                                                    z35 = false;
+                                                                    z36 = false;
+                                                                    str83 = null;
+                                                                    str52 = null;
+                                                                    i79 = 0;
+                                                                    i78 = 0;
+                                                                    i77 = 0;
+                                                                    str100 = null;
+                                                                    str99 = null;
+                                                                    str98 = null;
+                                                                    str97 = null;
+                                                                    str96 = null;
+                                                                    str95 = null;
+                                                                    str94 = null;
+                                                                    str93 = null;
+                                                                    str92 = null;
+                                                                    str91 = null;
+                                                                    str90 = null;
+                                                                    str89 = null;
+                                                                    str88 = null;
+                                                                    str87 = null;
+                                                                    z37 = false;
+                                                                    str86 = null;
+                                                                    z21 = false;
+                                                                    str85 = null;
+                                                                    str84 = null;
+                                                                    str101 = null;
+                                                                    str106 = null;
+                                                                    z38 = false;
+                                                                    str105 = null;
+                                                                    str104 = null;
+                                                                    str103 = null;
+                                                                    str102 = null;
+                                                                    tL_wallPaper = null;
+                                                                    str107 = null;
+                                                                    str110 = null;
+                                                                    num4 = null;
+                                                                    str28 = null;
+                                                                    str27 = null;
+                                                                    num3 = null;
+                                                                    str109 = null;
+                                                                    str108 = null;
+                                                                    str25 = null;
+                                                                    obj = null;
+                                                                    bArr = null;
+                                                                    str22 = "phone";
+                                                                    str40 = str83;
+                                                                    c14 = c21;
+                                                                    str19 = " ";
+                                                                    str56 = str100;
+                                                                    str53 = str99;
+                                                                    str23 = "message_id";
+                                                                    str32 = str94;
+                                                                    str50 = str93;
+                                                                    str48 = str88;
+                                                                    str41 = str86;
+                                                                    str47 = str85;
+                                                                    str42 = str84;
+                                                                    str46 = str101;
+                                                                    z23 = z38;
+                                                                    str55 = str105;
+                                                                    str21 = str104;
+                                                                    r26 = tL_wallPaper;
+                                                                    str44 = str107;
+                                                                    str43 = str110;
+                                                                    r16 = num4;
+                                                                    r17 = l4;
+                                                                    num = num3;
+                                                                    r58 = bArr;
+                                                                    r21 = null;
+                                                                    str45 = null;
+                                                                    j18 = 0;
+                                                                    i54 = 0;
+                                                                    i19 = 0;
+                                                                    i61 = 0;
+                                                                    i55 = 0;
+                                                                    i22 = 0;
+                                                                    i23 = 0;
+                                                                    str29 = null;
+                                                                    str12 = null;
+                                                                    str13 = null;
+                                                                    str14 = null;
+                                                                    j19 = 0;
+                                                                    j17 = 0;
+                                                                    i60 = 4;
+                                                                    i59 = -1;
+                                                                    i58 = 6;
+                                                                    i57 = 1;
+                                                                    i64 = i78;
+                                                                    i63 = i77;
+                                                                    str24 = "android.intent.action.MAIN";
+                                                                    str54 = str98;
+                                                                    str49 = str92;
+                                                                    str30 = str90;
+                                                                    str37 = str89;
+                                                                    z20 = z37;
+                                                                    str31 = str102;
+                                                                    str39 = str109;
+                                                                    i21 = 0;
+                                                                    str15 = str81;
+                                                                    z27 = z33;
+                                                                    z24 = z35;
+                                                                    z22 = z36;
+                                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                    str61 = str97;
+                                                                    str33 = str95;
+                                                                    str57 = str91;
+                                                                    str35 = str87;
+                                                                    str34 = str106;
+                                                                    i62 = 0;
+                                                                    z26 = z32;
+                                                                    i66 = i76;
+                                                                    z25 = z34;
+                                                                    str58 = str82;
+                                                                    iArr5 = iArr9;
+                                                                    str38 = str108;
+                                                                    str59 = null;
+                                                                    launchActivity = this;
+                                                                    intent2 = intent;
+                                                                    str26 = str16;
+                                                                    str36 = str96;
+                                                                    i65 = i79;
+                                                                    str51 = str103;
+                                                                    i20 = 0;
+                                                                    if (intent2.hasExtra(str60)) {
+                                                                    }
+                                                                    if (str46 == null) {
+                                                                    }
+                                                                    if (str61 == null) {
+                                                                    }
+                                                                    cVar3 = cVar;
+                                                                    iArr4 = iArr5;
+                                                                    str = str24;
+                                                                    str2 = str19;
+                                                                    str10 = str23;
+                                                                    org.telegram.ui.ActionBar.b2 b2Var2222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                    b2Var2222222222222222222222222222.j();
+                                                                    b2Var2222222222222222222222222222.show();
+                                                                    sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                    sendconfirmphonecode.hash = str57;
+                                                                    TLRPC.TL_codeSettings tL_codeSettings2222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                    sendconfirmphonecode.settings = tL_codeSettings2222222222222222222222222222;
+                                                                    i51 = 0;
+                                                                    tL_codeSettings2222222222222222222222222222.allow_flashcall = false;
+                                                                    boolean hasServices2222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                    tL_codeSettings2222222222222222222222222222.allow_firebase = hasServices2222222222222222222222222222;
+                                                                    tL_codeSettings2222222222222222222222222222.allow_app_hash = hasServices2222222222222222222222222222;
+                                                                    SharedPreferences sharedPreferences2222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                    if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                    }
+                                                                    Bundle bundle2222222222222222222222222222 = new Bundle();
+                                                                    bundle2222222222222222222222222222.putString(str22, str61);
+                                                                    ConnectionsManager connectionsManager2222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                    LaunchActivity launchActivity22222222222222222222222222222 = launchActivity;
+                                                                    String str1242222222222222222222222222222 = str61;
+                                                                    r13 = launchActivity22222222222222222222222222222;
+                                                                    connectionsManager2222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222222222222222222222, str1242222222222222222222222222222, bundle2222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                    i52 = i62;
+                                                                    i53 = i61;
+                                                                    str11 = str29;
+                                                                    j16 = j19;
+                                                                }
+                                                                parseLong = null;
+                                                                str82 = str112;
+                                                                l4 = parseLong;
+                                                                z32 = false;
+                                                                str81 = null;
+                                                                z33 = false;
+                                                                i76 = -1;
+                                                                z34 = true;
+                                                                z35 = false;
+                                                                z36 = false;
+                                                                str83 = null;
+                                                                str52 = null;
+                                                                i79 = 0;
+                                                                i78 = 0;
+                                                                i77 = 0;
+                                                                str100 = null;
+                                                                str99 = null;
+                                                                str98 = null;
+                                                                str97 = null;
+                                                                str96 = null;
+                                                                str95 = null;
+                                                                str94 = null;
+                                                                str93 = null;
+                                                                str92 = null;
+                                                                str91 = null;
+                                                                str90 = null;
+                                                                str89 = null;
+                                                                str88 = null;
+                                                                str87 = null;
+                                                                z37 = false;
+                                                                str86 = null;
+                                                                z21 = false;
+                                                                str85 = null;
+                                                                str84 = null;
+                                                                str101 = null;
+                                                                str106 = null;
+                                                                z38 = false;
+                                                                str105 = null;
+                                                                str104 = null;
+                                                                str103 = null;
+                                                                str102 = null;
+                                                                tL_wallPaper = null;
+                                                                str107 = null;
+                                                                str110 = null;
+                                                                num4 = null;
+                                                                str28 = null;
+                                                                str27 = null;
+                                                                num3 = null;
+                                                                str109 = null;
+                                                                str108 = null;
+                                                                str25 = null;
+                                                                obj = null;
+                                                                bArr = null;
+                                                                str22 = "phone";
+                                                                str40 = str83;
+                                                                c14 = c21;
+                                                                str19 = " ";
+                                                                str56 = str100;
+                                                                str53 = str99;
+                                                                str23 = "message_id";
+                                                                str32 = str94;
+                                                                str50 = str93;
+                                                                str48 = str88;
+                                                                str41 = str86;
+                                                                str47 = str85;
+                                                                str42 = str84;
+                                                                str46 = str101;
+                                                                z23 = z38;
+                                                                str55 = str105;
+                                                                str21 = str104;
+                                                                r26 = tL_wallPaper;
+                                                                str44 = str107;
+                                                                str43 = str110;
+                                                                r16 = num4;
+                                                                r17 = l4;
+                                                                num = num3;
+                                                                r58 = bArr;
+                                                                r21 = null;
+                                                                str45 = null;
+                                                                j18 = 0;
+                                                                i54 = 0;
+                                                                i19 = 0;
+                                                                i61 = 0;
+                                                                i55 = 0;
+                                                                i22 = 0;
+                                                                i23 = 0;
+                                                                str29 = null;
+                                                                str12 = null;
+                                                                str13 = null;
+                                                                str14 = null;
+                                                                j19 = 0;
+                                                                j17 = 0;
+                                                                i60 = 4;
+                                                                i59 = -1;
+                                                                i58 = 6;
+                                                                i57 = 1;
+                                                                i64 = i78;
+                                                                i63 = i77;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                str54 = str98;
+                                                                str49 = str92;
+                                                                str30 = str90;
+                                                                str37 = str89;
+                                                                z20 = z37;
+                                                                str31 = str102;
+                                                                str39 = str109;
+                                                                i21 = 0;
+                                                                str15 = str81;
+                                                                z27 = z33;
+                                                                z24 = z35;
+                                                                z22 = z36;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str61 = str97;
+                                                                str33 = str95;
+                                                                str57 = str91;
+                                                                str35 = str87;
+                                                                str34 = str106;
+                                                                i62 = 0;
+                                                                z26 = z32;
+                                                                i66 = i76;
+                                                                z25 = z34;
+                                                                str58 = str82;
+                                                                iArr5 = iArr9;
+                                                                str38 = str108;
+                                                                str59 = null;
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str26 = str16;
+                                                                str36 = str96;
+                                                                i65 = i79;
+                                                                str51 = str103;
+                                                                i20 = 0;
+                                                                if (intent2.hasExtra(str60)) {
+                                                                }
+                                                                if (str46 == null) {
+                                                                }
+                                                                if (str61 == null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var22222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var22222222222222222222222222222.j();
+                                                                b2Var22222222222222222222222222222.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings22222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings22222222222222222222222222222;
+                                                                i51 = 0;
+                                                                tL_codeSettings22222222222222222222222222222.allow_flashcall = false;
+                                                                boolean hasServices22222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings22222222222222222222222222222.allow_firebase = hasServices22222222222222222222222222222;
+                                                                tL_codeSettings22222222222222222222222222222.allow_app_hash = hasServices22222222222222222222222222222;
+                                                                SharedPreferences sharedPreferences22222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                }
+                                                                Bundle bundle22222222222222222222222222222 = new Bundle();
+                                                                bundle22222222222222222222222222222.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager22222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity222222222222222222222222222222 = launchActivity;
+                                                                String str12422222222222222222222222222222 = str61;
+                                                                r13 = launchActivity222222222222222222222222222222;
+                                                                connectionsManager22222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222222222222222222222, str12422222222222222222222222222222, bundle22222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                j16 = j19;
+                                                            } else {
+                                                                if (substring5.startsWith("c/")) {
+                                                                    List<String> pathSegments2 = uri.getPathSegments();
+                                                                    if (pathSegments2.size() >= 3) {
+                                                                        l10 = Utilities.parseLong(pathSegments2.get(1));
+                                                                        num6 = Utilities.parseInt((CharSequence) pathSegments2.get(2));
+                                                                        if (num6.intValue() != 0) {
+                                                                            j27 = 0;
+                                                                            break;
+                                                                        } else {
+                                                                            j27 = 0;
+                                                                        }
+                                                                        l10 = null;
+                                                                        num6 = null;
+                                                                        Long parseLong6 = Utilities.parseLong(uri.getQueryParameter("thread"));
+                                                                        if (parseLong6.longValue() == j27) {
+                                                                            parseLong6 = null;
+                                                                        }
+                                                                        if (parseLong6 == null) {
+                                                                            Long parseLong7 = Utilities.parseLong(uri.getQueryParameter("topic"));
+                                                                            long longValue3 = parseLong7.longValue();
+                                                                            r22 = parseLong7;
+                                                                            if (longValue3 == j27) {
+                                                                                r22 = 0;
+                                                                            }
+                                                                        } else {
+                                                                            r22 = parseLong6;
+                                                                        }
+                                                                        if (r22 == 0 && num6 != null && pathSegments2.size() >= 4) {
+                                                                            r22 = Long.valueOf(num6.intValue());
+                                                                            num6 = Utilities.parseInt((CharSequence) pathSegments2.get(3));
+                                                                        }
+                                                                    } else {
+                                                                        r22 = 0;
+                                                                        l10 = null;
+                                                                        num6 = null;
+                                                                    }
+                                                                    if (uri.getQuery() == null || pathSegments2.size() != 2) {
+                                                                        l11 = l10;
+                                                                        z40 = false;
+                                                                    } else {
+                                                                        z40 = uri.getQuery().equals("boost");
+                                                                        l11 = Utilities.parseLong(pathSegments2.get(1));
+                                                                    }
+                                                                    Object parseInt8 = uri.getQueryParameter("task") != null ? Utilities.parseInt((CharSequence) uri.getQueryParameter("task")) : null;
+                                                                    bArr = rh.f.g(uri);
+                                                                    l4 = l11;
+                                                                    str28 = r22;
+                                                                    obj = parseInt8;
+                                                                    num4 = num6;
+                                                                    z32 = false;
+                                                                    str81 = null;
+                                                                    z33 = false;
+                                                                    str82 = null;
+                                                                    z35 = false;
+                                                                    z36 = false;
+                                                                    str83 = null;
+                                                                    c20 = 3;
+                                                                    c21 = 2;
+                                                                    str52 = null;
+                                                                    i79 = 0;
+                                                                    i78 = 0;
+                                                                    i77 = 0;
+                                                                    str100 = null;
+                                                                    str99 = null;
+                                                                    str98 = null;
+                                                                    str97 = null;
+                                                                    str96 = null;
+                                                                    str95 = null;
+                                                                    str94 = null;
+                                                                    str93 = null;
+                                                                    str92 = null;
+                                                                    str91 = null;
+                                                                    str90 = null;
+                                                                    str89 = null;
+                                                                    str88 = null;
+                                                                    str87 = null;
+                                                                    z37 = false;
+                                                                    str86 = null;
+                                                                    z21 = false;
+                                                                    str85 = null;
+                                                                    str84 = null;
+                                                                    str101 = null;
+                                                                    str106 = null;
+                                                                    z38 = false;
+                                                                    str105 = null;
+                                                                    str104 = null;
+                                                                    str103 = null;
+                                                                    str102 = null;
+                                                                    tL_wallPaper = null;
+                                                                    str107 = null;
+                                                                    str110 = null;
+                                                                    str27 = null;
+                                                                    num3 = null;
+                                                                    str109 = null;
+                                                                    str108 = null;
+                                                                    str25 = null;
+                                                                    z34 = z40;
+                                                                    i76 = -1;
+                                                                } else if (substring5.startsWith("contact/")) {
+                                                                    String substring7 = substring5.substring(8);
+                                                                    str104 = uri.getQueryParameter("free");
+                                                                    str105 = substring7;
+                                                                    z32 = false;
+                                                                    str81 = null;
+                                                                    z33 = false;
+                                                                    i76 = -1;
+                                                                    z34 = false;
+                                                                    str82 = null;
+                                                                    z35 = false;
+                                                                    z36 = false;
+                                                                    str83 = null;
+                                                                    c20 = 3;
+                                                                    c21 = 2;
+                                                                    str52 = null;
+                                                                    i79 = 0;
+                                                                    i78 = 0;
+                                                                    i77 = 0;
+                                                                    str100 = null;
+                                                                    str99 = null;
+                                                                    str98 = null;
+                                                                    str97 = null;
+                                                                    str96 = null;
+                                                                    str95 = null;
+                                                                    str94 = null;
+                                                                    str93 = null;
+                                                                    str92 = null;
+                                                                    str91 = null;
+                                                                    str90 = null;
+                                                                    str89 = null;
+                                                                    str88 = null;
+                                                                    str87 = null;
+                                                                    z37 = false;
+                                                                    str86 = null;
+                                                                    z21 = false;
+                                                                    str85 = null;
+                                                                    str84 = null;
+                                                                    str101 = null;
+                                                                    str106 = null;
+                                                                    z38 = false;
+                                                                    str103 = null;
+                                                                    str102 = null;
+                                                                    tL_wallPaper = null;
+                                                                    str107 = null;
+                                                                    str110 = null;
+                                                                    num4 = null;
+                                                                    l4 = null;
+                                                                    str28 = null;
+                                                                    str27 = null;
+                                                                    num3 = null;
+                                                                    str109 = null;
+                                                                    str108 = null;
+                                                                    str25 = null;
+                                                                    obj = null;
+                                                                    bArr = null;
+                                                                } else {
+                                                                    if (substring5.startsWith("folder/")) {
+                                                                        substring2 = substring5.substring(7);
+                                                                    } else if (substring5.startsWith("addlist/")) {
+                                                                        substring2 = substring5.substring(8);
+                                                                    } else if (substring5.startsWith("m/")) {
+                                                                        str102 = substring5.substring(2);
+                                                                        c21 = 2;
+                                                                        z32 = false;
+                                                                        str81 = null;
+                                                                        z33 = false;
+                                                                        i76 = -1;
+                                                                        z34 = false;
+                                                                        str82 = null;
+                                                                        z35 = false;
+                                                                        z36 = false;
+                                                                        str83 = null;
+                                                                        c20 = 3;
+                                                                        str52 = null;
+                                                                        i79 = 0;
+                                                                        i78 = 0;
+                                                                        i77 = 0;
+                                                                        str100 = null;
+                                                                        str99 = null;
+                                                                        str98 = null;
+                                                                        str97 = null;
+                                                                        str96 = null;
+                                                                        str95 = null;
+                                                                        str94 = null;
+                                                                        str93 = null;
+                                                                        str92 = null;
+                                                                        str91 = null;
+                                                                        str90 = null;
+                                                                        str89 = null;
+                                                                        str88 = null;
+                                                                        str87 = null;
+                                                                        z37 = false;
+                                                                        str86 = null;
+                                                                        z21 = false;
+                                                                        str85 = null;
+                                                                        str84 = null;
+                                                                        str101 = null;
+                                                                        str106 = null;
+                                                                        z38 = false;
+                                                                        str105 = null;
+                                                                        str104 = null;
+                                                                        str103 = null;
+                                                                        tL_wallPaper = null;
+                                                                        str107 = null;
+                                                                        str110 = null;
+                                                                        num4 = null;
+                                                                        l4 = null;
+                                                                        str28 = null;
+                                                                        str27 = null;
+                                                                        num3 = null;
+                                                                        str109 = null;
+                                                                        str108 = null;
+                                                                        str25 = null;
+                                                                        obj = null;
+                                                                        bArr = null;
+                                                                    } else if (substring5.length() >= 1) {
+                                                                        ArrayList arrayList3 = new ArrayList(uri.getPathSegments());
+                                                                        if (arrayList3.size() > 0) {
+                                                                            i80 = 0;
+                                                                            if (((String) arrayList3.get(0)).equals("s")) {
+                                                                                arrayList3.remove(0);
+                                                                            }
+                                                                        } else {
+                                                                            i80 = 0;
+                                                                        }
+                                                                        if (arrayList3.size() > 0) {
+                                                                            str113 = (String) arrayList3.get(i80);
+                                                                            String queryParameter47 = uri.getQueryParameter("free");
+                                                                            if (arrayList3.size() >= 3 && "c".equals(arrayList3.get(1))) {
+                                                                                i77 = Integer.parseInt((String) arrayList3.get(2));
+                                                                                z39 = false;
+                                                                                i79 = 0;
+                                                                                i78 = 0;
+                                                                                str118 = null;
+                                                                                num5 = null;
+                                                                                str96 = null;
+                                                                                if (uri.getQueryParameter("task") != null) {
+                                                                                }
+                                                                                bArr2 = rh.f.g(uri);
+                                                                                Object obj4 = r9;
+                                                                                str115 = queryParameter47;
+                                                                                str114 = str118;
+                                                                                obj3 = obj4;
+                                                                            } else if (arrayList3.size() >= 3 && "a".equals(arrayList3.get(1))) {
+                                                                                i78 = Integer.parseInt((String) arrayList3.get(2));
+                                                                                z39 = false;
+                                                                                i79 = 0;
+                                                                                i77 = 0;
+                                                                                str118 = null;
+                                                                                num5 = null;
+                                                                                str96 = null;
+                                                                                if (uri.getQueryParameter("task") != null) {
+                                                                                }
+                                                                                bArr2 = rh.f.g(uri);
+                                                                                Object obj42 = r9;
+                                                                                str115 = queryParameter47;
+                                                                                str114 = str118;
+                                                                                obj3 = obj42;
+                                                                            } else if (arrayList3.size() < 3 || !"s".equals(arrayList3.get(1))) {
+                                                                                if (arrayList3.size() > 1) {
+                                                                                    String str132 = (String) arrayList3.get(1);
+                                                                                    String queryParameter48 = uri.getQueryParameter("startapp");
+                                                                                    try {
+                                                                                        Integer parseInt9 = Utilities.parseInt((CharSequence) arrayList3.get(1));
+                                                                                        if (parseInt9.intValue() == 0) {
+                                                                                            parseInt9 = null;
+                                                                                        }
+                                                                                        str96 = str132;
+                                                                                        num5 = parseInt9;
+                                                                                        str118 = queryParameter48;
+                                                                                        z39 = false;
+                                                                                        i79 = 0;
+                                                                                        i78 = 0;
+                                                                                        i77 = 0;
+                                                                                    } catch (NumberFormatException unused18) {
+                                                                                        str96 = str132;
+                                                                                        str118 = queryParameter48;
+                                                                                        z39 = false;
+                                                                                        i79 = 0;
+                                                                                        i78 = 0;
+                                                                                        i77 = 0;
+                                                                                        num5 = null;
+                                                                                    }
+                                                                                    Object parseInt10 = uri.getQueryParameter("task") != null ? Utilities.parseInt((CharSequence) uri.getQueryParameter("task")) : null;
+                                                                                    bArr2 = rh.f.g(uri);
+                                                                                    Object obj422 = parseInt10;
+                                                                                    str115 = queryParameter47;
+                                                                                    str114 = str118;
+                                                                                    obj3 = obj422;
+                                                                                } else {
+                                                                                    if (arrayList3.size() == 1) {
+                                                                                        str118 = uri.getQueryParameter("startapp");
+                                                                                        z39 = false;
+                                                                                        i79 = 0;
+                                                                                        i78 = 0;
+                                                                                        i77 = 0;
+                                                                                        num5 = null;
+                                                                                        str96 = null;
+                                                                                        if (uri.getQueryParameter("task") != null) {
+                                                                                        }
+                                                                                        bArr2 = rh.f.g(uri);
+                                                                                        Object obj4222 = parseInt10;
+                                                                                        str115 = queryParameter47;
+                                                                                        str114 = str118;
+                                                                                        obj3 = obj4222;
+                                                                                    }
+                                                                                    z39 = false;
+                                                                                    i79 = 0;
+                                                                                    i78 = 0;
+                                                                                    i77 = 0;
+                                                                                    str118 = null;
+                                                                                    num5 = null;
+                                                                                    str96 = null;
+                                                                                    if (uri.getQueryParameter("task") != null) {
+                                                                                    }
+                                                                                    bArr2 = rh.f.g(uri);
+                                                                                    Object obj42222 = parseInt10;
+                                                                                    str115 = queryParameter47;
+                                                                                    str114 = str118;
+                                                                                    obj3 = obj42222;
+                                                                                }
+                                                                            } else if ("live".equalsIgnoreCase((String) arrayList3.get(2))) {
+                                                                                z39 = true;
+                                                                                i79 = 0;
+                                                                                i78 = 0;
+                                                                                i77 = 0;
+                                                                                str118 = null;
+                                                                                num5 = null;
+                                                                                str96 = null;
+                                                                                if (uri.getQueryParameter("task") != null) {
+                                                                                }
+                                                                                bArr2 = rh.f.g(uri);
+                                                                                Object obj422222 = parseInt10;
+                                                                                str115 = queryParameter47;
+                                                                                str114 = str118;
+                                                                                obj3 = obj422222;
+                                                                            } else {
+                                                                                i79 = Integer.parseInt((String) arrayList3.get(2));
+                                                                                z39 = false;
+                                                                                i78 = 0;
+                                                                                i77 = 0;
+                                                                                str118 = null;
+                                                                                num5 = null;
+                                                                                str96 = null;
+                                                                                if (uri.getQueryParameter("task") != null) {
+                                                                                }
+                                                                                bArr2 = rh.f.g(uri);
+                                                                                Object obj4222222 = parseInt10;
+                                                                                str115 = queryParameter47;
+                                                                                str114 = str118;
+                                                                                obj3 = obj4222222;
+                                                                            }
+                                                                        } else {
+                                                                            str113 = null;
+                                                                            str114 = null;
+                                                                            str115 = null;
+                                                                            z39 = false;
+                                                                            i79 = 0;
+                                                                            i78 = 0;
+                                                                            i77 = 0;
+                                                                            obj3 = null;
+                                                                            num5 = null;
+                                                                            str96 = null;
+                                                                            bArr2 = null;
+                                                                        }
+                                                                        int W = num5 != null ? W(uri) : -1;
+                                                                        String queryParameter49 = uri.getQueryParameter("start");
+                                                                        String str133 = str113;
+                                                                        String queryParameter50 = uri.getQueryParameter("startgroup");
+                                                                        if (TextUtils.isEmpty(str133)) {
+                                                                            str93 = queryParameter50;
+                                                                            str90 = null;
+                                                                        } else {
+                                                                            str93 = queryParameter50;
+                                                                            String queryParameter51 = uri.getQueryParameter("ref");
+                                                                            if (!TextUtils.isEmpty(queryParameter51) || TextUtils.isEmpty(queryParameter49)) {
+                                                                                str90 = queryParameter51;
+                                                                                if (TextUtils.isEmpty(str90) && !TextUtils.isEmpty(str114)) {
+                                                                                    Iterator<String> it3 = MessagesController.getInstance(iArr9[0]).starrefStartParamPrefixes.iterator();
+                                                                                    while (it3.hasNext()) {
+                                                                                        Iterator<String> it4 = it3;
+                                                                                        String next2 = it3.next();
+                                                                                        if (str114.startsWith(next2)) {
+                                                                                            substring = str114.substring(next2.length());
+                                                                                            str90 = substring;
+                                                                                        } else {
+                                                                                            it3 = it4;
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            } else {
+                                                                                str90 = queryParameter51;
+                                                                                Iterator<String> it5 = MessagesController.getInstance(iArr9[0]).starrefStartParamPrefixes.iterator();
+                                                                                while (it5.hasNext()) {
+                                                                                    Iterator<String> it6 = it5;
+                                                                                    String next3 = it5.next();
+                                                                                    if (queryParameter49.startsWith(next3)) {
+                                                                                        substring = queryParameter49.substring(next3.length());
+                                                                                        str90 = substring;
+                                                                                    } else {
+                                                                                        it5 = it6;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        str92 = uri.getQueryParameter("startchannel");
+                                                                        str89 = uri.getQueryParameter("admin");
+                                                                        str88 = uri.getQueryParameter("game");
+                                                                        str87 = str114;
+                                                                        z37 = uri.getBooleanQueryParameter("direct", false);
+                                                                        str86 = uri.getQueryParameter("voicechat");
+                                                                        boolean booleanQueryParameter5 = uri.getBooleanQueryParameter("videochat", false);
+                                                                        String queryParameter52 = uri.getQueryParameter("livestream");
+                                                                        z21 = booleanQueryParameter5;
+                                                                        String queryParameter53 = uri.getQueryParameter("startattach");
+                                                                        String queryParameter54 = uri.getQueryParameter("choose");
+                                                                        String queryParameter55 = uri.getQueryParameter("attach");
+                                                                        str106 = queryParameter52;
+                                                                        z35 = TextUtils.equals(uri.getQueryParameter("mode"), "compact");
+                                                                        z38 = TextUtils.equals(uri.getQueryParameter("mode"), "fullscreen");
+                                                                        z36 = uri.getBooleanQueryParameter("profile", false);
+                                                                        ?? parseLong8 = Utilities.parseLong(uri.getQueryParameter("thread"));
+                                                                        String queryParameter56 = uri.getQueryParameter("text");
+                                                                        z34 = uri.getQuery() != null ? uri.getQuery().equals("boost") : false;
+                                                                        if (parseLong8.longValue() == 0) {
+                                                                            parseLong8 = null;
+                                                                        }
+                                                                        if (parseLong8 == null) {
+                                                                            ?? parseLong9 = Utilities.parseLong(uri.getQueryParameter("topic"));
+                                                                            long longValue4 = parseLong9.longValue();
+                                                                            str116 = parseLong9;
+                                                                            if (longValue4 == 0) {
+                                                                                str116 = null;
+                                                                            }
+                                                                        } else {
+                                                                            str116 = parseLong8;
+                                                                        }
+                                                                        if (str116 != null || num5 == null) {
+                                                                            c20 = 3;
+                                                                            str117 = str116;
+                                                                        } else {
+                                                                            c20 = 3;
+                                                                            str117 = str116;
+                                                                            if (arrayList3.size() >= 3) {
+                                                                                ?? valueOf = Long.valueOf(num5.intValue());
+                                                                                num5 = Utilities.parseInt((CharSequence) arrayList3.get(2));
+                                                                                str117 = valueOf;
+                                                                            }
+                                                                        }
+                                                                        Integer parseInt11 = Utilities.parseInt((CharSequence) uri.getQueryParameter("comment"));
+                                                                        str82 = str133;
+                                                                        if (parseInt11.intValue() == 0) {
+                                                                            str27 = queryParameter56;
+                                                                            str28 = str117;
+                                                                            str104 = str115;
+                                                                            z32 = z39;
+                                                                            str99 = queryParameter49;
+                                                                            obj = obj3;
+                                                                            num4 = num5;
+                                                                            bArr = bArr2;
+                                                                            i76 = W;
+                                                                            str109 = queryParameter53;
+                                                                            str25 = queryParameter54;
+                                                                            str108 = queryParameter55;
+                                                                            str81 = null;
+                                                                            z33 = false;
+                                                                            str83 = null;
+                                                                            c21 = 2;
+                                                                            str52 = null;
+                                                                            str100 = null;
+                                                                            str98 = null;
+                                                                            str97 = null;
+                                                                            str95 = null;
+                                                                            str94 = null;
+                                                                            str91 = null;
+                                                                            str85 = null;
+                                                                            str84 = null;
+                                                                            str101 = null;
+                                                                            str105 = null;
+                                                                            str103 = null;
+                                                                            str102 = null;
+                                                                            tL_wallPaper = null;
+                                                                            str107 = null;
+                                                                            str110 = null;
+                                                                            l4 = null;
+                                                                            num3 = null;
+                                                                        } else {
+                                                                            num3 = parseInt11;
+                                                                            str27 = queryParameter56;
+                                                                            str28 = str117;
+                                                                            str104 = str115;
+                                                                            z32 = z39;
+                                                                            str99 = queryParameter49;
+                                                                            obj = obj3;
+                                                                            num4 = num5;
+                                                                            bArr = bArr2;
+                                                                            i76 = W;
+                                                                            str109 = queryParameter53;
+                                                                            str25 = queryParameter54;
+                                                                            str108 = queryParameter55;
+                                                                            str81 = null;
+                                                                            z33 = false;
+                                                                            str83 = null;
+                                                                            c21 = 2;
+                                                                            str52 = null;
+                                                                            str100 = null;
+                                                                            str98 = null;
+                                                                            str97 = null;
+                                                                            str95 = null;
+                                                                            str94 = null;
+                                                                            str91 = null;
+                                                                            str85 = null;
+                                                                            str84 = null;
+                                                                            str101 = null;
+                                                                            str105 = null;
+                                                                            str103 = null;
+                                                                            str102 = null;
+                                                                            tL_wallPaper = null;
+                                                                            str107 = null;
+                                                                            str110 = null;
+                                                                            l4 = null;
+                                                                        }
+                                                                    }
+                                                                    str103 = substring2;
+                                                                    z32 = false;
+                                                                    str81 = null;
+                                                                    z33 = false;
+                                                                    i76 = -1;
+                                                                    z34 = false;
+                                                                    str82 = null;
+                                                                    z35 = false;
+                                                                    z36 = false;
+                                                                    str83 = null;
+                                                                    c20 = 3;
+                                                                    c21 = 2;
+                                                                    str52 = null;
+                                                                    i79 = 0;
+                                                                    i78 = 0;
+                                                                    i77 = 0;
+                                                                    str100 = null;
+                                                                    str99 = null;
+                                                                    str98 = null;
+                                                                    str97 = null;
+                                                                    str96 = null;
+                                                                    str95 = null;
+                                                                    str94 = null;
+                                                                    str93 = null;
+                                                                    str92 = null;
+                                                                    str91 = null;
+                                                                    str90 = null;
+                                                                    str89 = null;
+                                                                    str88 = null;
+                                                                    str87 = null;
+                                                                    z37 = false;
+                                                                    str86 = null;
+                                                                    z21 = false;
+                                                                    str85 = null;
+                                                                    str84 = null;
+                                                                    str101 = null;
+                                                                    str106 = null;
+                                                                    z38 = false;
+                                                                    str105 = null;
+                                                                    str104 = null;
+                                                                    str102 = null;
+                                                                    tL_wallPaper = null;
+                                                                    str107 = null;
+                                                                    str110 = null;
+                                                                    num4 = null;
+                                                                    l4 = null;
+                                                                    str28 = null;
+                                                                    str27 = null;
+                                                                    num3 = null;
+                                                                    str109 = null;
+                                                                    str108 = null;
+                                                                    str25 = null;
+                                                                    obj = null;
+                                                                    bArr = null;
+                                                                }
+                                                                str22 = "phone";
+                                                                str40 = str83;
+                                                                c14 = c21;
+                                                                str19 = " ";
+                                                                str56 = str100;
+                                                                str53 = str99;
+                                                                str23 = "message_id";
+                                                                str32 = str94;
+                                                                str50 = str93;
+                                                                str48 = str88;
+                                                                str41 = str86;
+                                                                str47 = str85;
+                                                                str42 = str84;
+                                                                str46 = str101;
+                                                                z23 = z38;
+                                                                str55 = str105;
+                                                                str21 = str104;
+                                                                r26 = tL_wallPaper;
+                                                                str44 = str107;
+                                                                str43 = str110;
+                                                                r16 = num4;
+                                                                r17 = l4;
+                                                                num = num3;
+                                                                r58 = bArr;
+                                                                r21 = null;
+                                                                str45 = null;
+                                                                j18 = 0;
+                                                                i54 = 0;
+                                                                i19 = 0;
+                                                                i61 = 0;
+                                                                i55 = 0;
+                                                                i22 = 0;
+                                                                i23 = 0;
+                                                                str29 = null;
+                                                                str12 = null;
+                                                                str13 = null;
+                                                                str14 = null;
+                                                                j19 = 0;
+                                                                j17 = 0;
+                                                                i60 = 4;
+                                                                i59 = -1;
+                                                                i58 = 6;
+                                                                i57 = 1;
+                                                                i64 = i78;
+                                                                i63 = i77;
+                                                                str24 = "android.intent.action.MAIN";
+                                                                str54 = str98;
+                                                                str49 = str92;
+                                                                str30 = str90;
+                                                                str37 = str89;
+                                                                z20 = z37;
+                                                                str31 = str102;
+                                                                str39 = str109;
+                                                                i21 = 0;
+                                                                str15 = str81;
+                                                                z27 = z33;
+                                                                z24 = z35;
+                                                                z22 = z36;
+                                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                                str61 = str97;
+                                                                str33 = str95;
+                                                                str57 = str91;
+                                                                str35 = str87;
+                                                                str34 = str106;
+                                                                i62 = 0;
+                                                                z26 = z32;
+                                                                i66 = i76;
+                                                                z25 = z34;
+                                                                str58 = str82;
+                                                                iArr5 = iArr9;
+                                                                str38 = str108;
+                                                                str59 = null;
+                                                                launchActivity = this;
+                                                                intent2 = intent;
+                                                                str26 = str16;
+                                                                str36 = str96;
+                                                                i65 = i79;
+                                                                str51 = str103;
+                                                                i20 = 0;
+                                                                if (intent2.hasExtra(str60)) {
+                                                                }
+                                                                if (str46 == null) {
+                                                                }
+                                                                if (str61 == null) {
+                                                                }
+                                                                cVar3 = cVar;
+                                                                iArr4 = iArr5;
+                                                                str = str24;
+                                                                str2 = str19;
+                                                                str10 = str23;
+                                                                org.telegram.ui.ActionBar.b2 b2Var222222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                                b2Var222222222222222222222222222222.j();
+                                                                b2Var222222222222222222222222222222.show();
+                                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                                sendconfirmphonecode.hash = str57;
+                                                                TLRPC.TL_codeSettings tL_codeSettings222222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                                sendconfirmphonecode.settings = tL_codeSettings222222222222222222222222222222;
+                                                                i51 = 0;
+                                                                tL_codeSettings222222222222222222222222222222.allow_flashcall = false;
+                                                                boolean hasServices222222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                                tL_codeSettings222222222222222222222222222222.allow_firebase = hasServices222222222222222222222222222222;
+                                                                tL_codeSettings222222222222222222222222222222.allow_app_hash = hasServices222222222222222222222222222222;
+                                                                SharedPreferences sharedPreferences222222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                                }
+                                                                Bundle bundle222222222222222222222222222222 = new Bundle();
+                                                                bundle222222222222222222222222222222.putString(str22, str61);
+                                                                ConnectionsManager connectionsManager222222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                                LaunchActivity launchActivity2222222222222222222222222222222 = launchActivity;
+                                                                String str124222222222222222222222222222222 = str61;
+                                                                r13 = launchActivity2222222222222222222222222222222;
+                                                                connectionsManager222222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222222222222222222222222, str124222222222222222222222222222222, bundle222222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                                i52 = i62;
+                                                                i53 = i61;
+                                                                str11 = str29;
+                                                                j16 = j19;
+                                                            }
+                                                            str95 = replace;
+                                                            z32 = false;
+                                                            str81 = null;
+                                                            z33 = false;
+                                                            i76 = -1;
+                                                            z34 = false;
+                                                            str82 = null;
+                                                            z35 = false;
+                                                            z36 = false;
+                                                            str83 = null;
+                                                            c20 = 3;
+                                                            c21 = 2;
+                                                            str52 = null;
+                                                            i79 = 0;
+                                                            i78 = 0;
+                                                            i77 = 0;
+                                                            str100 = null;
+                                                            str99 = null;
+                                                            str98 = null;
+                                                            str97 = null;
+                                                            str96 = null;
+                                                            str94 = null;
+                                                            str93 = null;
+                                                            str92 = null;
+                                                            str91 = null;
+                                                            str90 = null;
+                                                            str89 = null;
+                                                            str88 = null;
+                                                            str87 = null;
+                                                            z37 = false;
+                                                            str86 = null;
+                                                            z21 = false;
+                                                            str85 = null;
+                                                            str84 = null;
+                                                            str101 = null;
+                                                            str106 = null;
+                                                            z38 = false;
+                                                            str105 = null;
+                                                            str104 = null;
+                                                            str103 = null;
+                                                            str102 = null;
+                                                            tL_wallPaper = null;
+                                                            str107 = null;
+                                                            str110 = null;
+                                                            num4 = null;
+                                                            l4 = null;
+                                                            str28 = null;
+                                                            str27 = null;
+                                                            num3 = null;
+                                                            str109 = null;
+                                                            str108 = null;
+                                                            str25 = null;
+                                                            obj = null;
+                                                            bArr = null;
+                                                            str22 = "phone";
+                                                            str40 = str83;
+                                                            c14 = c21;
+                                                            str19 = " ";
+                                                            str56 = str100;
+                                                            str53 = str99;
+                                                            str23 = "message_id";
+                                                            str32 = str94;
+                                                            str50 = str93;
+                                                            str48 = str88;
+                                                            str41 = str86;
+                                                            str47 = str85;
+                                                            str42 = str84;
+                                                            str46 = str101;
+                                                            z23 = z38;
+                                                            str55 = str105;
+                                                            str21 = str104;
+                                                            r26 = tL_wallPaper;
+                                                            str44 = str107;
+                                                            str43 = str110;
+                                                            r16 = num4;
+                                                            r17 = l4;
+                                                            num = num3;
+                                                            r58 = bArr;
+                                                            r21 = null;
+                                                            str45 = null;
+                                                            j18 = 0;
+                                                            i54 = 0;
+                                                            i19 = 0;
+                                                            i61 = 0;
+                                                            i55 = 0;
+                                                            i22 = 0;
+                                                            i23 = 0;
+                                                            str29 = null;
+                                                            str12 = null;
+                                                            str13 = null;
+                                                            str14 = null;
+                                                            j19 = 0;
+                                                            j17 = 0;
+                                                            i60 = 4;
+                                                            i59 = -1;
+                                                            i58 = 6;
+                                                            i57 = 1;
+                                                            i64 = i78;
+                                                            i63 = i77;
+                                                            str24 = "android.intent.action.MAIN";
+                                                            str54 = str98;
+                                                            str49 = str92;
+                                                            str30 = str90;
+                                                            str37 = str89;
+                                                            z20 = z37;
+                                                            str31 = str102;
+                                                            str39 = str109;
+                                                            i21 = 0;
+                                                            str15 = str81;
+                                                            z27 = z33;
+                                                            z24 = z35;
+                                                            z22 = z36;
+                                                            str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                            str61 = str97;
+                                                            str33 = str95;
+                                                            str57 = str91;
+                                                            str35 = str87;
+                                                            str34 = str106;
+                                                            i62 = 0;
+                                                            z26 = z32;
+                                                            i66 = i76;
+                                                            z25 = z34;
+                                                            str58 = str82;
+                                                            iArr5 = iArr9;
+                                                            str38 = str108;
+                                                            str59 = null;
+                                                            launchActivity = this;
+                                                            intent2 = intent;
+                                                            str26 = str16;
+                                                            str36 = str96;
+                                                            i65 = i79;
+                                                            str51 = str103;
+                                                            i20 = 0;
+                                                            if (intent2.hasExtra(str60)) {
+                                                            }
+                                                            if (str46 == null) {
+                                                            }
+                                                            if (str61 == null) {
+                                                            }
+                                                            cVar3 = cVar;
+                                                            iArr4 = iArr5;
+                                                            str = str24;
+                                                            str2 = str19;
+                                                            str10 = str23;
+                                                            org.telegram.ui.ActionBar.b2 b2Var2222222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                            b2Var2222222222222222222222222222222.j();
+                                                            b2Var2222222222222222222222222222222.show();
+                                                            sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                            sendconfirmphonecode.hash = str57;
+                                                            TLRPC.TL_codeSettings tL_codeSettings2222222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                            sendconfirmphonecode.settings = tL_codeSettings2222222222222222222222222222222;
+                                                            i51 = 0;
+                                                            tL_codeSettings2222222222222222222222222222222.allow_flashcall = false;
+                                                            boolean hasServices2222222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                            tL_codeSettings2222222222222222222222222222222.allow_firebase = hasServices2222222222222222222222222222222;
+                                                            tL_codeSettings2222222222222222222222222222222.allow_app_hash = hasServices2222222222222222222222222222222;
+                                                            SharedPreferences sharedPreferences2222222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                            if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                            }
+                                                            Bundle bundle2222222222222222222222222222222 = new Bundle();
+                                                            bundle2222222222222222222222222222222.putString(str22, str61);
+                                                            ConnectionsManager connectionsManager2222222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                            LaunchActivity launchActivity22222222222222222222222222222222 = launchActivity;
+                                                            String str1242222222222222222222222222222222 = str61;
+                                                            r13 = launchActivity22222222222222222222222222222222;
+                                                            connectionsManager2222222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222222222222222222222222, str1242222222222222222222222222222222, bundle2222222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                            i52 = i62;
+                                                            i53 = i61;
+                                                            str11 = str29;
+                                                            j16 = j19;
+                                                        }
+                                                        c20 = 3;
+                                                        c21 = 2;
+                                                        str52 = null;
+                                                        i79 = 0;
+                                                        i78 = 0;
+                                                        i77 = 0;
+                                                        str100 = null;
+                                                        str99 = null;
+                                                        str98 = null;
+                                                        str97 = null;
+                                                        str96 = null;
+                                                        str95 = null;
+                                                        str94 = null;
+                                                        str93 = null;
+                                                        str92 = null;
+                                                        str91 = null;
+                                                        str90 = null;
+                                                        str89 = null;
+                                                        str88 = null;
+                                                        str87 = null;
+                                                        z37 = false;
+                                                        str86 = null;
+                                                        z21 = false;
+                                                        str85 = null;
+                                                        str84 = null;
+                                                        str101 = null;
+                                                        str106 = null;
+                                                        z38 = false;
+                                                        str105 = null;
+                                                        str104 = null;
+                                                        str103 = null;
+                                                        str102 = null;
+                                                        tL_wallPaper = null;
+                                                        str107 = null;
+                                                        str110 = null;
+                                                        num4 = null;
+                                                        l4 = null;
+                                                        str28 = null;
+                                                        str27 = null;
+                                                        num3 = null;
+                                                        str109 = null;
+                                                        str108 = null;
+                                                        str25 = null;
+                                                        obj = null;
+                                                        bArr = null;
+                                                        str22 = "phone";
+                                                        str40 = str83;
+                                                        c14 = c21;
+                                                        str19 = " ";
+                                                        str56 = str100;
+                                                        str53 = str99;
+                                                        str23 = "message_id";
+                                                        str32 = str94;
+                                                        str50 = str93;
+                                                        str48 = str88;
+                                                        str41 = str86;
+                                                        str47 = str85;
+                                                        str42 = str84;
+                                                        str46 = str101;
+                                                        z23 = z38;
+                                                        str55 = str105;
+                                                        str21 = str104;
+                                                        r26 = tL_wallPaper;
+                                                        str44 = str107;
+                                                        str43 = str110;
+                                                        r16 = num4;
+                                                        r17 = l4;
+                                                        num = num3;
+                                                        r58 = bArr;
+                                                        r21 = null;
+                                                        str45 = null;
+                                                        j18 = 0;
+                                                        i54 = 0;
+                                                        i19 = 0;
+                                                        i61 = 0;
+                                                        i55 = 0;
+                                                        i22 = 0;
+                                                        i23 = 0;
+                                                        str29 = null;
+                                                        str12 = null;
+                                                        str13 = null;
+                                                        str14 = null;
+                                                        j19 = 0;
+                                                        j17 = 0;
+                                                        i60 = 4;
+                                                        i59 = -1;
+                                                        i58 = 6;
+                                                        i57 = 1;
+                                                        i64 = i78;
+                                                        i63 = i77;
+                                                        str24 = "android.intent.action.MAIN";
+                                                        str54 = str98;
+                                                        str49 = str92;
+                                                        str30 = str90;
+                                                        str37 = str89;
+                                                        z20 = z37;
+                                                        str31 = str102;
+                                                        str39 = str109;
+                                                        i21 = 0;
+                                                        str15 = str81;
+                                                        z27 = z33;
+                                                        z24 = z35;
+                                                        z22 = z36;
+                                                        str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                        str61 = str97;
+                                                        str33 = str95;
+                                                        str57 = str91;
+                                                        str35 = str87;
+                                                        str34 = str106;
+                                                        i62 = 0;
+                                                        z26 = z32;
+                                                        i66 = i76;
+                                                        z25 = z34;
+                                                        str58 = str82;
+                                                        iArr5 = iArr9;
+                                                        str38 = str108;
+                                                        str59 = null;
+                                                        launchActivity = this;
+                                                        intent2 = intent;
+                                                        str26 = str16;
+                                                        str36 = str96;
+                                                        i65 = i79;
+                                                        str51 = str103;
+                                                        i20 = 0;
+                                                        if (intent2.hasExtra(str60)) {
+                                                        }
+                                                        if (str46 == null) {
+                                                        }
+                                                        if (str61 == null) {
+                                                        }
+                                                        cVar3 = cVar;
+                                                        iArr4 = iArr5;
+                                                        str = str24;
+                                                        str2 = str19;
+                                                        str10 = str23;
+                                                        org.telegram.ui.ActionBar.b2 b2Var22222222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                        b2Var22222222222222222222222222222222.j();
+                                                        b2Var22222222222222222222222222222222.show();
+                                                        sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                        sendconfirmphonecode.hash = str57;
+                                                        TLRPC.TL_codeSettings tL_codeSettings22222222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                        sendconfirmphonecode.settings = tL_codeSettings22222222222222222222222222222222;
+                                                        i51 = 0;
+                                                        tL_codeSettings22222222222222222222222222222222.allow_flashcall = false;
+                                                        boolean hasServices22222222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                        tL_codeSettings22222222222222222222222222222222.allow_firebase = hasServices22222222222222222222222222222222;
+                                                        tL_codeSettings22222222222222222222222222222222.allow_app_hash = hasServices22222222222222222222222222222222;
+                                                        SharedPreferences sharedPreferences22222222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                        if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                        }
+                                                        Bundle bundle22222222222222222222222222222222 = new Bundle();
+                                                        bundle22222222222222222222222222222222.putString(str22, str61);
+                                                        ConnectionsManager connectionsManager22222222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                        LaunchActivity launchActivity222222222222222222222222222222222 = launchActivity;
+                                                        String str12422222222222222222222222222222222 = str61;
+                                                        r13 = launchActivity222222222222222222222222222222222;
+                                                        connectionsManager22222222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222222222222222222222222, str12422222222222222222222222222222222, bundle22222222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                        i52 = i62;
+                                                        i53 = i61;
+                                                        str11 = str29;
+                                                        j16 = j19;
+                                                    }
+                                                    str107 = substring3;
+                                                    z32 = false;
+                                                    str81 = null;
+                                                    z33 = false;
+                                                    i76 = -1;
+                                                    z34 = false;
+                                                    str82 = null;
+                                                    z35 = false;
+                                                    z36 = false;
+                                                    str83 = null;
+                                                    c20 = 3;
+                                                    c21 = 2;
+                                                    str52 = null;
+                                                    i79 = 0;
+                                                    i78 = 0;
+                                                    i77 = 0;
+                                                    str100 = null;
+                                                    str99 = null;
+                                                    str98 = null;
+                                                    str97 = null;
+                                                    str96 = null;
+                                                    str95 = null;
+                                                    str94 = null;
+                                                    str93 = null;
+                                                    str92 = null;
+                                                    str91 = null;
+                                                    str90 = null;
+                                                    str89 = null;
+                                                    str88 = null;
+                                                    str87 = null;
+                                                    z37 = false;
+                                                    str86 = null;
+                                                    z21 = false;
+                                                    str85 = null;
+                                                    str84 = null;
+                                                    str101 = null;
+                                                    str106 = null;
+                                                    z38 = false;
+                                                    str105 = null;
+                                                    str104 = null;
+                                                    str103 = null;
+                                                    str102 = null;
+                                                    tL_wallPaper = null;
+                                                    str110 = null;
+                                                    num4 = null;
+                                                    l4 = null;
+                                                    str28 = null;
+                                                    str27 = null;
+                                                    num3 = null;
+                                                    str109 = null;
+                                                    str108 = null;
+                                                    str25 = null;
+                                                    obj = null;
+                                                    bArr = null;
+                                                    str22 = "phone";
+                                                    str40 = str83;
+                                                    c14 = c21;
+                                                    str19 = " ";
+                                                    str56 = str100;
+                                                    str53 = str99;
+                                                    str23 = "message_id";
+                                                    str32 = str94;
+                                                    str50 = str93;
+                                                    str48 = str88;
+                                                    str41 = str86;
+                                                    str47 = str85;
+                                                    str42 = str84;
+                                                    str46 = str101;
+                                                    z23 = z38;
+                                                    str55 = str105;
+                                                    str21 = str104;
+                                                    r26 = tL_wallPaper;
+                                                    str44 = str107;
+                                                    str43 = str110;
+                                                    r16 = num4;
+                                                    r17 = l4;
+                                                    num = num3;
+                                                    r58 = bArr;
+                                                    r21 = null;
+                                                    str45 = null;
+                                                    j18 = 0;
+                                                    i54 = 0;
+                                                    i19 = 0;
+                                                    i61 = 0;
+                                                    i55 = 0;
+                                                    i22 = 0;
+                                                    i23 = 0;
+                                                    str29 = null;
+                                                    str12 = null;
+                                                    str13 = null;
+                                                    str14 = null;
+                                                    j19 = 0;
+                                                    j17 = 0;
+                                                    i60 = 4;
+                                                    i59 = -1;
+                                                    i58 = 6;
+                                                    i57 = 1;
+                                                    i64 = i78;
+                                                    i63 = i77;
+                                                    str24 = "android.intent.action.MAIN";
+                                                    str54 = str98;
+                                                    str49 = str92;
+                                                    str30 = str90;
+                                                    str37 = str89;
+                                                    z20 = z37;
+                                                    str31 = str102;
+                                                    str39 = str109;
+                                                    i21 = 0;
+                                                    str15 = str81;
+                                                    z27 = z33;
+                                                    z24 = z35;
+                                                    z22 = z36;
+                                                    str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                    str61 = str97;
+                                                    str33 = str95;
+                                                    str57 = str91;
+                                                    str35 = str87;
+                                                    str34 = str106;
+                                                    i62 = 0;
+                                                    z26 = z32;
+                                                    i66 = i76;
+                                                    z25 = z34;
+                                                    str58 = str82;
+                                                    iArr5 = iArr9;
+                                                    str38 = str108;
+                                                    str59 = null;
+                                                    launchActivity = this;
+                                                    intent2 = intent;
+                                                    str26 = str16;
+                                                    str36 = str96;
+                                                    i65 = i79;
+                                                    str51 = str103;
+                                                    i20 = 0;
+                                                    if (intent2.hasExtra(str60)) {
+                                                    }
+                                                    if (str46 == null) {
+                                                    }
+                                                    if (str61 == null) {
+                                                    }
+                                                    cVar3 = cVar;
+                                                    iArr4 = iArr5;
+                                                    str = str24;
+                                                    str2 = str19;
+                                                    str10 = str23;
+                                                    org.telegram.ui.ActionBar.b2 b2Var222222222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                    b2Var222222222222222222222222222222222.j();
+                                                    b2Var222222222222222222222222222222222.show();
+                                                    sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                    sendconfirmphonecode.hash = str57;
+                                                    TLRPC.TL_codeSettings tL_codeSettings222222222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                    sendconfirmphonecode.settings = tL_codeSettings222222222222222222222222222222222;
+                                                    i51 = 0;
+                                                    tL_codeSettings222222222222222222222222222222222.allow_flashcall = false;
+                                                    boolean hasServices222222222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                    tL_codeSettings222222222222222222222222222222222.allow_firebase = hasServices222222222222222222222222222222222;
+                                                    tL_codeSettings222222222222222222222222222222222.allow_app_hash = hasServices222222222222222222222222222222222;
+                                                    SharedPreferences sharedPreferences222222222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                    if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                    }
+                                                    Bundle bundle222222222222222222222222222222222 = new Bundle();
+                                                    bundle222222222222222222222222222222222.putString(str22, str61);
+                                                    ConnectionsManager connectionsManager222222222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                    LaunchActivity launchActivity2222222222222222222222222222222222 = launchActivity;
+                                                    String str124222222222222222222222222222222222 = str61;
+                                                    r13 = launchActivity2222222222222222222222222222222222;
+                                                    connectionsManager222222222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var222222222222222222222222222222222, str124222222222222222222222222222222222, bundle222222222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                    i52 = i62;
+                                                    i53 = i61;
+                                                    str11 = str29;
+                                                    j16 = j19;
+                                                }
+                                                c20 = 3;
+                                                c21 = 2;
+                                                z32 = false;
+                                                str81 = null;
+                                                z33 = false;
+                                                i76 = -1;
+                                                z34 = false;
+                                                str82 = null;
+                                                z35 = false;
+                                                z36 = false;
+                                                str83 = null;
+                                                str52 = null;
+                                                i79 = 0;
+                                                i78 = 0;
+                                                i77 = 0;
+                                                str100 = null;
+                                                str99 = null;
+                                                str98 = null;
+                                                str97 = null;
+                                                str96 = null;
+                                                str95 = null;
+                                                str94 = null;
+                                                str93 = null;
+                                                str92 = null;
+                                                str91 = null;
+                                                str90 = null;
+                                                str89 = null;
+                                                str88 = null;
+                                                str87 = null;
+                                                z37 = false;
+                                                str86 = null;
+                                                z21 = false;
+                                                str85 = null;
+                                                str84 = null;
+                                                str101 = null;
+                                                str106 = null;
+                                                z38 = false;
+                                                str105 = null;
+                                                str104 = null;
+                                                str103 = null;
+                                                str102 = null;
+                                                tL_wallPaper = null;
+                                                str107 = null;
+                                                str110 = null;
+                                                num4 = null;
+                                                l4 = null;
+                                                str28 = null;
+                                                str27 = null;
+                                                num3 = null;
+                                                str109 = null;
+                                                str108 = null;
+                                                str25 = null;
+                                                obj = null;
+                                                bArr = null;
+                                                str22 = "phone";
+                                                str40 = str83;
+                                                c14 = c21;
+                                                str19 = " ";
+                                                str56 = str100;
+                                                str53 = str99;
+                                                str23 = "message_id";
+                                                str32 = str94;
+                                                str50 = str93;
+                                                str48 = str88;
+                                                str41 = str86;
+                                                str47 = str85;
+                                                str42 = str84;
+                                                str46 = str101;
+                                                z23 = z38;
+                                                str55 = str105;
+                                                str21 = str104;
+                                                r26 = tL_wallPaper;
+                                                str44 = str107;
+                                                str43 = str110;
+                                                r16 = num4;
+                                                r17 = l4;
+                                                num = num3;
+                                                r58 = bArr;
+                                                r21 = null;
+                                                str45 = null;
+                                                j18 = 0;
+                                                i54 = 0;
+                                                i19 = 0;
+                                                i61 = 0;
+                                                i55 = 0;
+                                                i22 = 0;
+                                                i23 = 0;
+                                                str29 = null;
+                                                str12 = null;
+                                                str13 = null;
+                                                str14 = null;
+                                                j19 = 0;
+                                                j17 = 0;
+                                                i60 = 4;
+                                                i59 = -1;
+                                                i58 = 6;
+                                                i57 = 1;
+                                                i64 = i78;
+                                                i63 = i77;
+                                                str24 = "android.intent.action.MAIN";
+                                                str54 = str98;
+                                                str49 = str92;
+                                                str30 = str90;
+                                                str37 = str89;
+                                                z20 = z37;
+                                                str31 = str102;
+                                                str39 = str109;
+                                                i21 = 0;
+                                                str15 = str81;
+                                                z27 = z33;
+                                                z24 = z35;
+                                                z22 = z36;
+                                                str60 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                                str61 = str97;
+                                                str33 = str95;
+                                                str57 = str91;
+                                                str35 = str87;
+                                                str34 = str106;
+                                                i62 = 0;
+                                                z26 = z32;
+                                                i66 = i76;
+                                                z25 = z34;
+                                                str58 = str82;
+                                                iArr5 = iArr9;
+                                                str38 = str108;
+                                                str59 = null;
+                                                launchActivity = this;
+                                                intent2 = intent;
+                                                str26 = str16;
+                                                str36 = str96;
+                                                i65 = i79;
+                                                str51 = str103;
+                                                i20 = 0;
+                                                if (intent2.hasExtra(str60)) {
+                                                }
+                                                if (str46 == null) {
+                                                }
+                                                if (str61 == null) {
+                                                }
+                                                cVar3 = cVar;
+                                                iArr4 = iArr5;
+                                                str = str24;
+                                                str2 = str19;
+                                                str10 = str23;
+                                                org.telegram.ui.ActionBar.b2 b2Var2222222222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                                b2Var2222222222222222222222222222222222.j();
+                                                b2Var2222222222222222222222222222222222.show();
+                                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                                sendconfirmphonecode.hash = str57;
+                                                TLRPC.TL_codeSettings tL_codeSettings2222222222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                                sendconfirmphonecode.settings = tL_codeSettings2222222222222222222222222222222222;
+                                                i51 = 0;
+                                                tL_codeSettings2222222222222222222222222222222222.allow_flashcall = false;
+                                                boolean hasServices2222222222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                                tL_codeSettings2222222222222222222222222222222222.allow_firebase = hasServices2222222222222222222222222222222222;
+                                                tL_codeSettings2222222222222222222222222222222222.allow_app_hash = hasServices2222222222222222222222222222222222;
+                                                SharedPreferences sharedPreferences2222222222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                                }
+                                                Bundle bundle2222222222222222222222222222222222 = new Bundle();
+                                                bundle2222222222222222222222222222222222.putString(str22, str61);
+                                                ConnectionsManager connectionsManager2222222222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                                LaunchActivity launchActivity22222222222222222222222222222222222 = launchActivity;
+                                                String str1242222222222222222222222222222222222 = str61;
+                                                r13 = launchActivity22222222222222222222222222222222222;
+                                                connectionsManager2222222222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var2222222222222222222222222222222222, str1242222222222222222222222222222222222, bundle2222222222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                                i52 = i62;
+                                                i53 = i61;
+                                                str11 = str29;
+                                                j16 = j19;
+                                            }
+                                            break;
+                                        default:
+                                            launchActivity = this;
+                                            intent2 = intent;
+                                            str19 = " ";
+                                            str17 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                            str20 = null;
+                                            c10 = 15;
+                                            i56 = 1;
+                                            c11 = '\b';
+                                            c12 = 14;
+                                            c13 = 7;
+                                            j18 = 0;
+                                            str18 = "phone";
+                                            break;
+                                    }
+                                } else {
+                                    str16 = scheme;
+                                    str17 = "actions.fulfillment.extra.ACTION_TOKEN";
+                                    intent2 = intent;
+                                    str18 = "phone";
+                                    str19 = " ";
+                                    str20 = null;
+                                    c10 = 15;
+                                    i56 = 1;
+                                    c11 = '\b';
+                                    c12 = 14;
+                                    c13 = 7;
+                                    j18 = 0;
+                                    launchActivity = r13;
+                                }
+                                str21 = str20;
+                                str61 = str21;
+                                str59 = str61;
+                                str58 = str59;
+                                str57 = str58;
+                                str56 = str57;
+                                str55 = str56;
+                                str54 = str55;
+                                str53 = str54;
+                                str52 = str53;
+                                str51 = str52;
+                                str50 = str51;
+                                str49 = str50;
+                                str48 = str49;
+                                str46 = str48;
+                                str45 = str46;
+                                r26 = str45;
+                                str43 = r26;
+                                str42 = str43;
+                                str41 = str42;
+                                str40 = str41;
+                                str37 = str40;
+                                str34 = str37;
+                                str33 = str34;
+                                str32 = str33;
+                                str31 = str32;
+                                str30 = str31;
+                                r58 = str30;
+                                str29 = r58;
+                                str12 = str29;
+                                str13 = str12;
+                                str28 = str13;
+                                str27 = str28;
+                                str14 = str27;
+                                str15 = str14;
+                                str25 = str15;
+                                obj = str25;
+                                i57 = i56;
+                                str23 = "message_id";
+                                j17 = j18;
+                                str24 = "android.intent.action.MAIN";
+                                iArr5 = iArr9;
+                                str26 = str16;
+                                str22 = str18;
+                                i66 = -1;
+                                z27 = false;
+                                i65 = 0;
+                                z26 = false;
+                                i64 = 0;
+                                i63 = 0;
+                                z25 = false;
+                                z24 = false;
+                                z23 = false;
+                                z22 = false;
+                                z21 = false;
+                                z20 = false;
+                                i54 = 0;
+                                i62 = 0;
+                                i19 = 0;
+                                i61 = 0;
+                                i55 = 0;
+                                i20 = 0;
+                                i21 = 0;
+                                i22 = 0;
+                                i23 = 0;
+                                i60 = 4;
+                                i59 = -1;
+                                i58 = 6;
+                                c14 = 2;
+                                r16 = obj;
+                                r17 = r16;
+                                num = r17;
+                                r21 = num;
+                                str47 = r21;
+                                str44 = str47;
+                                str39 = str44;
+                                str38 = str39;
+                                str36 = str38;
+                                str35 = str36;
+                                str60 = str17;
+                                j19 = j17;
+                                if (intent2.hasExtra(str60)) {
+                                }
+                                if (str46 == null) {
+                                }
+                                if (str61 == null) {
+                                }
+                                cVar3 = cVar;
+                                iArr4 = iArr5;
+                                str = str24;
+                                str2 = str19;
+                                str10 = str23;
+                                org.telegram.ui.ActionBar.b2 b2Var22222222222222222222222222222222222 = new org.telegram.ui.ActionBar.b2(launchActivity);
+                                b2Var22222222222222222222222222222222222.j();
+                                b2Var22222222222222222222222222222222222.show();
+                                sendconfirmphonecode = new TL_account.sendConfirmPhoneCode();
+                                sendconfirmphonecode.hash = str57;
+                                TLRPC.TL_codeSettings tL_codeSettings22222222222222222222222222222222222 = new TLRPC.TL_codeSettings();
+                                sendconfirmphonecode.settings = tL_codeSettings22222222222222222222222222222222222;
+                                i51 = 0;
+                                tL_codeSettings22222222222222222222222222222222222.allow_flashcall = false;
+                                boolean hasServices22222222222222222222222222222222222 = PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices();
+                                tL_codeSettings22222222222222222222222222222222222.allow_firebase = hasServices22222222222222222222222222222222222;
+                                tL_codeSettings22222222222222222222222222222222222.allow_app_hash = hasServices22222222222222222222222222222222222;
+                                SharedPreferences sharedPreferences22222222222222222222222222222222222 = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+                                if (sendconfirmphonecode.settings.allow_app_hash) {
+                                }
+                                Bundle bundle22222222222222222222222222222222222 = new Bundle();
+                                bundle22222222222222222222222222222222222.putString(str22, str61);
+                                ConnectionsManager connectionsManager22222222222222222222222222222222222 = ConnectionsManager.getInstance(launchActivity.O);
+                                LaunchActivity launchActivity222222222222222222222222222222222222 = launchActivity;
+                                String str12422222222222222222222222222222222222 = str61;
+                                r13 = launchActivity222222222222222222222222222222222222;
+                                connectionsManager22222222222222222222222222222222222.sendRequest(sendconfirmphonecode, new ai.s9(r13, b2Var22222222222222222222222222222222222, str12422222222222222222222222222222222222, bundle22222222222222222222222222222222222, sendconfirmphonecode, 8), 2);
+                                i52 = i62;
+                                i53 = i61;
+                                str11 = str29;
+                                j16 = j19;
+                            } else {
+                                str2 = " ";
+                                str10 = "message_id";
+                                str = "android.intent.action.MAIN";
+                                iArr4 = iArr9;
+                                i51 = 0;
+                                i52 = 0;
+                                i53 = 0;
+                                i54 = 0;
+                                i19 = 0;
+                                i55 = 0;
+                                i20 = 0;
+                                i21 = 0;
+                                i22 = 0;
+                                i23 = 0;
+                                j16 = 0;
+                                str11 = null;
+                                str12 = null;
+                                str13 = null;
+                                str14 = null;
+                                str15 = null;
+                                j17 = 0;
+                            }
+                            j13 = j16;
+                            i24 = i52;
+                            i11 = i51;
+                            i12 = i11;
+                            i13 = i12;
+                            i14 = i13;
+                            i15 = i14;
+                            i16 = i15;
+                            i18 = i16;
+                            int i8222 = i18;
+                            i25 = i8222 == true ? 1 : 0;
+                            i17 = i53;
+                            str5 = str11;
+                            i26 = i54;
+                            i27 = i55;
+                            str4 = str12;
+                            str8 = str13;
+                            str7 = str14;
+                            str6 = str15;
+                            j12 = j17;
+                            iArr2 = iArr4;
+                            str3 = str10;
+                            j11 = 0;
+                            i28 = -1;
+                            i29 = -1;
+                            j10 = 0;
+                            jArr = null;
+                            j14 = 0;
+                            i31 = -1;
+                            j15 = 0;
+                            i32 = i8222;
+                        } else {
+                            i10 = 0;
+                            str2 = " ";
+                            str = "android.intent.action.MAIN";
+                            if (intent.getAction().equals("org.telegram.messenger.OPEN_ACCOUNT")) {
+                                i11 = 0;
+                                i12 = 0;
+                                i13 = 0;
+                                i14 = 0;
+                                i15 = 0;
+                                i16 = 0;
+                                i17 = 0;
+                                i18 = 0;
+                                i19 = 0;
+                                i20 = 0;
+                                i21 = 0;
+                                i22 = 0;
+                                i23 = 0;
+                                i40 = 0;
+                                i25 = 0;
+                                i26 = 0;
+                                i27 = 0;
+                                iArr2 = iArr9;
+                                str3 = "message_id";
+                                j11 = 0;
+                                str4 = null;
+                                i28 = -1;
+                                i29 = -1;
+                                j10 = 0;
+                                j12 = 0;
+                                jArr = null;
+                                str5 = null;
+                                j13 = 0;
+                                str6 = null;
+                                j14 = 0;
+                                i31 = -1;
+                                j15 = 0;
+                                i24 = 1;
+                            } else if (intent.getAction().equals("new_dialog")) {
+                                i11 = 0;
+                                i12 = 0;
+                                i14 = 0;
+                                i15 = 0;
+                                i16 = 0;
+                                i17 = 0;
+                                i18 = 0;
+                                i19 = 0;
+                                i20 = 0;
+                                i21 = 0;
+                                i22 = 0;
+                                i23 = 0;
+                                i40 = 0;
+                                i24 = 0;
+                                i25 = 0;
+                                i26 = 0;
+                                i27 = 0;
+                                iArr2 = iArr9;
+                                str3 = "message_id";
+                                j11 = 0;
+                                str4 = null;
+                                i28 = -1;
+                                i29 = -1;
+                                j10 = 0;
+                                j12 = 0;
+                                jArr = null;
+                                str5 = null;
+                                j13 = 0;
+                                i13 = 1;
+                                str6 = null;
+                                j14 = 0;
+                                i31 = -1;
+                                j15 = 0;
+                            } else if (intent.getAction().startsWith("com.tmessages.openchat")) {
+                                j12 = intent.getLongExtra("chatId", 0L);
+                                long[] longArrayExtra = intent.getLongArrayExtra("storyDialogIds");
+                                int intExtra2 = intent.getIntExtra("storyId", -1);
+                                j13 = intent.getLongExtra("userId", 0L);
+                                int intExtra3 = intent.getIntExtra("encId", 0);
+                                int intExtra4 = intent.getIntExtra("appWidgetId", 0);
+                                long longExtra = intent.getLongExtra("topicId", 0L);
+                                String stringExtra5 = intent.getStringExtra("oauth_url");
+                                if (stringExtra5 != null) {
+                                    TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = new TLRPC.TL_messages_requestUrlAuth();
+                                    tL_messages_requestUrlAuth.url = stringExtra5;
+                                    tL_messages_requestUrlAuth.flags |= 4;
+                                    ConnectionsManager.getInstance(iArr9[0]).sendRequest(tL_messages_requestUrlAuth, new ea((Object) r13, (TLObject) tL_messages_requestUrlAuth, stringExtra5, 15), 2);
+                                    j12 = 0;
+                                    j13 = 0;
+                                    longExtra = 0;
+                                    i48 = 0;
+                                    i43 = 0;
+                                    i44 = 0;
+                                    i45 = 0;
+                                    iArr2 = iArr9;
+                                    str3 = "message_id";
+                                    i46 = -1;
+                                    i47 = -1;
+                                    i50 = 1;
+                                } else {
+                                    iArr2 = iArr9;
+                                    if (intExtra4 != 0) {
+                                        i46 = intent.getIntExtra("appWidgetType", 0);
+                                        i47 = intExtra4;
+                                        j12 = 0;
+                                        j13 = 0;
+                                        longExtra = 0;
+                                        i48 = 0;
+                                        i50 = 0;
+                                        i44 = 0;
+                                        i45 = 0;
+                                        str3 = "message_id";
+                                        i43 = 6;
+                                    } else {
+                                        str3 = "message_id";
+                                        int intExtra5 = intent.getIntExtra(str3, 0);
+                                        if (intExtra2 != -1) {
+                                            NotificationCenter.getInstance(iArr2[0]).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                                            i49 = intExtra2;
+                                            longExtra = 0;
+                                            i48 = 0;
+                                            i43 = 0;
+                                            i44 = 0;
+                                            i45 = intExtra5;
+                                            i46 = -1;
+                                            i47 = -1;
+                                            jArr2 = null;
+                                        } else {
+                                            if (longArrayExtra != null) {
+                                                NotificationCenter.getInstance(iArr2[0]).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                                                j12 = 0;
+                                                j13 = 0;
+                                                longExtra = 0;
+                                                i44 = 0;
+                                                jArr2 = longArrayExtra;
+                                                i45 = intExtra5;
+                                                i46 = -1;
+                                                i47 = -1;
+                                                i48 = 1;
+                                                i49 = -1;
+                                                i43 = 0;
+                                                i50 = 0;
+                                            } else {
+                                                if (j12 != 0) {
+                                                    NotificationCenter.getInstance(iArr2[0]).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                                                    j13 = 0;
+                                                } else if (j13 != 0) {
+                                                    NotificationCenter.getInstance(iArr2[0]).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                                                    j12 = 0;
+                                                    longExtra = 0;
+                                                } else if (intExtra3 != 0) {
+                                                    NotificationCenter.getInstance(iArr2[0]).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                                                    j12 = 0;
+                                                    j13 = 0;
+                                                    longExtra = 0;
+                                                    i43 = 0;
+                                                    i44 = intExtra3;
+                                                    i45 = intExtra5;
+                                                    i46 = -1;
+                                                    i47 = -1;
+                                                    jArr2 = null;
+                                                    i49 = -1;
+                                                    i48 = 0;
+                                                    i50 = 0;
+                                                } else {
+                                                    j12 = 0;
+                                                    j13 = 0;
+                                                    longExtra = 0;
+                                                    i43 = 0;
+                                                    i44 = 0;
+                                                    i45 = intExtra5;
+                                                    i46 = -1;
+                                                    i47 = -1;
+                                                    i48 = 1;
+                                                    jArr2 = null;
+                                                    i49 = -1;
+                                                }
+                                                i48 = 0;
+                                                i43 = 0;
+                                                i44 = 0;
+                                                i45 = intExtra5;
+                                                i46 = -1;
+                                                i47 = -1;
+                                                jArr2 = null;
+                                                i49 = -1;
+                                            }
+                                            i31 = i47;
+                                            j11 = 0;
+                                            j14 = 0;
+                                            j15 = 0;
+                                            i17 = 0;
+                                            i19 = 0;
+                                            i20 = 0;
+                                            i21 = 0;
+                                            i22 = 0;
+                                            i23 = 0;
+                                            i32 = 0;
+                                            i27 = 0;
+                                            i18 = i48;
+                                            i24 = i43;
+                                            j10 = longExtra;
+                                            i25 = i44;
+                                            i26 = i45;
+                                            jArr = jArr2;
+                                            str4 = null;
+                                            str6 = null;
+                                            str8 = null;
+                                            str7 = null;
+                                            i29 = i46;
+                                            i11 = 0;
+                                            i12 = 0;
+                                            i14 = 0;
+                                            i15 = 0;
+                                            i16 = i50;
+                                            i28 = i49;
+                                            str5 = null;
+                                            i13 = 0;
+                                        }
+                                        i50 = i44;
+                                        i31 = i47;
+                                        j11 = 0;
+                                        j14 = 0;
+                                        j15 = 0;
+                                        i17 = 0;
+                                        i19 = 0;
+                                        i20 = 0;
+                                        i21 = 0;
+                                        i22 = 0;
+                                        i23 = 0;
+                                        i32 = 0;
+                                        i27 = 0;
+                                        i18 = i48;
+                                        i24 = i43;
+                                        j10 = longExtra;
+                                        i25 = i44;
+                                        i26 = i45;
+                                        jArr = jArr2;
+                                        str4 = null;
+                                        str6 = null;
+                                        str8 = null;
+                                        str7 = null;
+                                        i29 = i46;
+                                        i11 = 0;
+                                        i12 = 0;
+                                        i14 = 0;
+                                        i15 = 0;
+                                        i16 = i50;
+                                        i28 = i49;
+                                        str5 = null;
+                                        i13 = 0;
+                                    }
+                                }
+                                jArr2 = null;
+                                i49 = -1;
+                                i31 = i47;
+                                j11 = 0;
+                                j14 = 0;
+                                j15 = 0;
+                                i17 = 0;
+                                i19 = 0;
+                                i20 = 0;
+                                i21 = 0;
+                                i22 = 0;
+                                i23 = 0;
+                                i32 = 0;
+                                i27 = 0;
+                                i18 = i48;
+                                i24 = i43;
+                                j10 = longExtra;
+                                i25 = i44;
+                                i26 = i45;
+                                jArr = jArr2;
+                                str4 = null;
+                                str6 = null;
+                                str8 = null;
+                                str7 = null;
+                                i29 = i46;
+                                i11 = 0;
+                                i12 = 0;
+                                i14 = 0;
+                                i15 = 0;
+                                i16 = i50;
+                                i28 = i49;
+                                str5 = null;
+                                i13 = 0;
+                            } else {
+                                iArr2 = iArr9;
+                                str3 = "message_id";
+                                j10 = 0;
+                                if (intent.getAction().startsWith(OpenAttachedMenuBotReceiver.ACTION)) {
+                                    long longExtra2 = intent.getLongExtra("botId", 0L);
+                                    j11 = 0;
+                                    j13 = 0;
+                                    j14 = 0;
+                                    j15 = longExtra2;
+                                    i11 = 0;
+                                    i12 = 0;
+                                    i13 = 0;
+                                    i14 = 0;
+                                    if (longExtra2 != 0) {
+                                        i16 = 0;
+                                        i17 = 0;
+                                        i18 = 0;
+                                        i19 = 0;
+                                        i20 = 0;
+                                        i21 = 0;
+                                        i22 = 0;
+                                        i23 = 0;
+                                        i42 = 0;
+                                        i24 = 0;
+                                        i25 = 0;
+                                        i26 = 0;
+                                        i27 = 0;
+                                        str4 = null;
+                                        i28 = -1;
+                                        i29 = -1;
+                                        jArr = null;
+                                        str5 = null;
+                                        i15 = 1;
+                                    } else {
+                                        i15 = 0;
+                                        i16 = 0;
+                                        i17 = 0;
+                                        i18 = 0;
+                                        i19 = 0;
+                                        i20 = 0;
+                                        i21 = 0;
+                                        i22 = 0;
+                                        i23 = 0;
+                                        i42 = 0;
+                                        i24 = 0;
+                                        i25 = 0;
+                                        i26 = 0;
+                                        i27 = 0;
+                                        str4 = null;
+                                        i28 = -1;
+                                        i29 = -1;
+                                        jArr = null;
+                                        str5 = null;
+                                    }
+                                    str6 = null;
+                                    i31 = -1;
+                                    str8 = null;
+                                    str7 = null;
+                                    j12 = 0;
+                                    i32 = i42;
+                                } else {
+                                    if (intent.getAction().equals("com.tmessages.openplayer")) {
+                                        j11 = 0;
+                                        j12 = 0;
+                                        j13 = 0;
+                                        j14 = 0;
+                                        j15 = 0;
+                                        i12 = 0;
+                                        i13 = 0;
+                                        i14 = 0;
+                                        i15 = 0;
+                                        i16 = 0;
+                                        i17 = 0;
+                                        i18 = 0;
+                                        i19 = 0;
+                                        i20 = 0;
+                                        i21 = 0;
+                                        i22 = 0;
+                                        i23 = 0;
+                                        i30 = 0;
+                                        i24 = 0;
+                                        i25 = 0;
+                                        i26 = 0;
+                                        i27 = 0;
+                                        str4 = null;
+                                        i28 = -1;
+                                        i29 = -1;
+                                        jArr = null;
+                                        str5 = null;
+                                        i11 = 1;
+                                    } else if (intent.getAction().equals("org.tmessages.openlocations")) {
+                                        j11 = 0;
+                                        j12 = 0;
+                                        j13 = 0;
+                                        j14 = 0;
+                                        j15 = 0;
+                                        i11 = 0;
+                                        i13 = 0;
+                                        i14 = 0;
+                                        i15 = 0;
+                                        i16 = 0;
+                                        i17 = 0;
+                                        i18 = 0;
+                                        i19 = 0;
+                                        i20 = 0;
+                                        i21 = 0;
+                                        i22 = 0;
+                                        i23 = 0;
+                                        i30 = 0;
+                                        i24 = 0;
+                                        i25 = 0;
+                                        i26 = 0;
+                                        i27 = 0;
+                                        str4 = null;
+                                        i28 = -1;
+                                        i29 = -1;
+                                        jArr = null;
+                                        str5 = null;
+                                        i12 = 1;
+                                    } else if (action.equals("voip_chat")) {
+                                        j11 = 0;
+                                        j12 = 0;
+                                        j13 = 0;
+                                        j14 = 0;
+                                        j15 = 0;
+                                        i11 = 0;
+                                        i12 = 0;
+                                        i13 = 0;
+                                        i15 = 0;
+                                        i16 = 0;
+                                        i17 = 0;
+                                        i18 = 0;
+                                        i19 = 0;
+                                        i20 = 0;
+                                        i21 = 0;
+                                        i22 = 0;
+                                        i23 = 0;
+                                        i30 = 0;
+                                        i24 = 0;
+                                        i25 = 0;
+                                        i26 = 0;
+                                        i27 = 0;
+                                        str4 = null;
+                                        i28 = -1;
+                                        i29 = -1;
+                                        jArr = null;
+                                        str5 = null;
+                                        i14 = 1;
+                                    }
+                                    str6 = null;
+                                    i31 = -1;
+                                    i40 = i30;
+                                }
+                            }
+                        }
+                        if (UserConfig.getInstance(r13.O).isClientActivated()) {
+                            if (str5 != null) {
+                                org.telegram.ui.ActionBar.n2 lastFragmentIncludeMainTabs = r13.q0.getLastFragmentIncludeMainTabs();
+                                if (lastFragmentIncludeMainTabs instanceof ey) {
+                                    ey eyVar = (ey) lastFragmentIncludeMainTabs;
+                                    if (eyVar.f4()) {
+                                        if (eyVar.getFragmentView() == null || !z10) {
+                                            i33 = 1;
+                                            eyVar.o2 = str5;
+                                        } else {
+                                            i33 = 1;
+                                            eyVar.w4(str5, true);
+                                        }
+                                    }
+                                } else {
+                                    i33 = 1;
+                                    i18 = 1;
+                                }
+                                if (i28 <= 0) {
+                                    NotificationsController.getInstance(iArr2[i32]).processSeenStoryReactions(UserConfig.getInstance(iArr2[i32]).getClientUserId(), i28);
+                                    long clientUserId = UserConfig.getInstance(r13.O).getClientUserId();
+                                    if (j13 == j14) {
+                                        j13 = j12 != j14 ? -j12 : clientUserId;
+                                    }
+                                    r13.q0(i28, j13, j13 == UserConfig.getInstance(r13.O).getClientUserId() ? i33 : i32);
+                                } else {
+                                    if (jArr == null) {
+                                        if (j13 != j14) {
+                                            ?? r02 = i27;
+                                            if (i17 == 0 && r02 == 0) {
+                                                Bundle b10 = zf.d0.b(j13, "user_id");
+                                                int i89 = i26;
+                                                if (i89 != 0) {
+                                                    b10.putInt(str3, i89);
+                                                }
+                                                if (r13.d0.isEmpty() || MessagesController.getInstance(iArr2[0]).checkCanOpenChat(b10, (org.telegram.ui.ActionBar.n2) i2.d.h(i33, r13.d0))) {
+                                                    sn snVar = new sn(b10);
+                                                    org.telegram.ui.ActionBar.d5 O = r13.O();
+                                                    org.telegram.ui.ActionBar.b5 b5Var = new org.telegram.ui.ActionBar.b5(snVar);
+                                                    b5Var.a();
+                                                    if (((ActionBarLayout) O).R(b5Var)) {
+                                                        L();
+                                                        i39 = i33;
+                                                    }
+                                                }
+                                                i39 = i16;
+                                            } else if (i20 != 0) {
+                                                org.telegram.ui.ActionBar.n2 lastFragment2 = r13.q0.getLastFragment();
+                                                if (lastFragment2 != null) {
+                                                    org.telegram.ui.Components.f5.p(lastFragment2, lastFragment2.getMessagesController().getUser(Long.valueOf(j13)), r02);
+                                                }
+                                            } else {
+                                                VoIPPendingCall.startOrSchedule(r13, j13, r02, AccountInstance.getInstance(iArr2[0]));
+                                            }
+                                        } else {
+                                            int i90 = i26;
+                                            ?? r03 = i27;
+                                            if (j12 != j14) {
+                                                Bundle b11 = zf.d0.b(j12, "chat_id");
+                                                if (i90 != 0) {
+                                                    b11.putInt(str3, i90);
+                                                }
+                                                if (r13.d0.isEmpty() || MessagesController.getInstance(iArr2[0]).checkCanOpenChat(b11, (org.telegram.ui.ActionBar.n2) i2.d.h(i33, r13.d0))) {
+                                                    sn snVar2 = new sn(b11);
+                                                    if (j10 > j14) {
+                                                        TLRPC.TL_forumTopic findTopic = MessagesController.getInstance(r13.O).getTopicsController().findTopic(j12, j10);
+                                                        StringBuilder t10 = a1.g.t(j12, "LaunchActivity openForum ", str2);
+                                                        t10.append(j10);
+                                                        t10.append(" TL_forumTopic ");
+                                                        t10.append(findTopic);
+                                                        FileLog.d(t10.toString());
+                                                        if (findTopic == null) {
+                                                            long j31 = j12;
+                                                            MessagesController.getInstance(r13.O).getTopicsController().loadTopic(j31, j10, new a3.h0((Object) r13, j31, j10, snVar2, 15));
+                                                            return i33;
+                                                        }
+                                                        og.d.a(snVar2, MessagesStorage.TopicKey.of(-j12, j10));
+                                                    }
+                                                    org.telegram.ui.ActionBar.d5 O2 = r13.O();
+                                                    org.telegram.ui.ActionBar.b5 b5Var2 = new org.telegram.ui.ActionBar.b5(snVar2);
+                                                    b5Var2.a();
+                                                    if (((ActionBarLayout) O2).R(b5Var2)) {
+                                                        L();
+                                                        i39 = i33;
+                                                    }
+                                                }
+                                                i39 = i16;
+                                            } else {
+                                                String str134 = str2;
+                                                int i91 = i25;
+                                                if (i91 == 0) {
+                                                    if (i18 != 0) {
+                                                        if (AndroidUtilities.isTablet()) {
+                                                            ActionBarLayout actionBarLayout = r13.r0;
+                                                            if (actionBarLayout != null && !actionBarLayout.getFragmentStack().isEmpty()) {
+                                                                while (r13.r0.getFragmentStack().size() - i33 > 0) {
+                                                                    ActionBarLayout actionBarLayout2 = r13.r0;
+                                                                    actionBarLayout2.Z(actionBarLayout2.getFragmentStack().get(0));
+                                                                }
+                                                                r13.r0.k();
+                                                            }
+                                                        } else {
+                                                            r13.q0.X();
+                                                        }
+                                                        iArr3 = iArr2;
+                                                        z16 = false;
+                                                        i38 = 0;
+                                                        r12 = 0;
+                                                        r10 = i38;
+                                                        if (r10 == 0 && !z16) {
+                                                            if (AndroidUtilities.isTablet()) {
+                                                                if (r13.q0.getFragmentStack().isEmpty()) {
+                                                                    if (UserConfig.getInstance(r13.O).isClientActivated()) {
+                                                                        ?? pg0Var = new pg0();
+                                                                        ey l02 = pg0Var.l0(r12);
+                                                                        if (str5 != null) {
+                                                                            l02.o2 = str5;
+                                                                        }
+                                                                        r13.q0.c(-2, pg0Var);
+                                                                    } else {
+                                                                        r13.q0.c(-2, r13.Q());
+                                                                    }
+                                                                }
+                                                            } else if (UserConfig.getInstance(r13.O).isClientActivated()) {
+                                                                if (r13.q0.getFragmentStack().isEmpty()) {
+                                                                    ?? pg0Var2 = new pg0();
+                                                                    ey l03 = pg0Var2.l0(r12);
+                                                                    if (str5 != null) {
+                                                                        l03.o2 = str5;
+                                                                    }
+                                                                    r13.q0.c(-2, pg0Var2);
+                                                                }
+                                                            } else if (r13.r0.getFragmentStack().isEmpty()) {
+                                                                r13.r0.c(-2, r13.Q());
+                                                            }
+                                                            if (z13) {
+                                                                r13.q0.V();
+                                                                if (AndroidUtilities.isTablet()) {
+                                                                    r13.r0.V();
+                                                                    r13.s0.V();
+                                                                }
+                                                            }
+                                                        }
+                                                        if (z44) {
+                                                            Intent intent5 = intent;
+                                                            if (intent5.hasExtra("group_call_invite_msg_id")) {
+                                                                VoIPGroupNotification.answer(r13, iArr3[0], intent5.getIntExtra("group_call_invite_msg_id", 0));
+                                                                r42 = intent5;
+                                                            } else {
+                                                                VoIPPreNotificationService.answer(r13);
+                                                                r42 = intent5;
+                                                            }
+                                                        } else {
+                                                            Intent intent6 = intent;
+                                                            r42 = intent6;
+                                                            if (z43) {
+                                                                jh1.v(r13, iArr3[0]);
+                                                                r42 = intent6;
+                                                            }
+                                                        }
+                                                        if (i14 == 0 && !str.equals(r42.getAction()) && (s50Var = s50.D3) != null) {
+                                                            s50Var.dismiss();
+                                                        }
+                                                        r42.setAction(r12);
+                                                        return r10;
+                                                    }
+                                                    if (i11 == 0) {
+                                                        z15 = false;
+                                                        z17 = false;
+                                                        z17 = false;
+                                                        z15 = false;
+                                                        z17 = false;
+                                                        r12 = 0;
+                                                        z17 = false;
+                                                        r12 = 0;
+                                                        if (i12 == 0) {
+                                                            Uri uri6 = r13.X;
+                                                            if (uri6 != null) {
+                                                                r13.A0(uri6);
+                                                            } else {
+                                                                if (r13.h0 == null) {
+                                                                    if (r13.R == null && r13.S == null && r13.U == null && r13.T == null && r13.V == null && r13.a0 == null && r13.W == null) {
+                                                                        int i92 = i24;
+                                                                        if (i92 != 7) {
+                                                                            i35 = 8;
+                                                                            i34 = 9;
+                                                                            if (i92 != 8 && i92 != 9) {
+                                                                                if (i92 != 0) {
+                                                                                    if (i92 == i33) {
+                                                                                        openSettings = new z71();
+                                                                                    } else {
+                                                                                        if (i92 == 2) {
+                                                                                            openSettings = new ThemeActivity(0);
+                                                                                            r102 = false;
+                                                                                        } else if (i92 == 3) {
+                                                                                            openSettings = new SessionsActivity(0);
+                                                                                        } else if (i92 == 4) {
+                                                                                            openSettings = new FiltersSetupActivity();
+                                                                                        } else if (i92 == 5) {
+                                                                                            openSettings = new h(3);
+                                                                                            r102 = i33;
+                                                                                        } else {
+                                                                                            i37 = 6;
+                                                                                            if (i92 == 6) {
+                                                                                                openSettings = new ny(i29, i31);
+                                                                                            } else if (i92 == 10) {
+                                                                                                openSettings = new LanguageSelectActivity();
+                                                                                            } else if (i92 == 11) {
+                                                                                                openSettings = new v4();
+                                                                                            } else if (i92 == 12) {
+                                                                                                openSettings = new PrivacySettingsActivity();
+                                                                                            } else if (i92 == 14) {
+                                                                                                openSettings = new PrivacyControlActivity(6);
+                                                                                            } else {
+                                                                                                if (i92 == 15) {
+                                                                                                    ConnectionsManager.getInstance(r13.O).sendRequest(new TL_account.getPassword(), new q90(r13, 0), 10);
+                                                                                                } else {
+                                                                                                    ApplicationLoader applicationLoader = ApplicationLoader.applicationLoaderInstance;
+                                                                                                    if (applicationLoader != null) {
+                                                                                                        openSettings = applicationLoader.openSettings(i92);
+                                                                                                    }
+                                                                                                }
+                                                                                                openSettings = null;
+                                                                                            }
+                                                                                            r102 = false;
+                                                                                            if (i92 == i37) {
+                                                                                                org.telegram.ui.ActionBar.d5 O3 = r13.O();
+                                                                                                org.telegram.ui.ActionBar.b5 b5Var3 = new org.telegram.ui.ActionBar.b5(openSettings);
+                                                                                                b5Var3.a();
+                                                                                                ((ActionBarLayout) O3).R(b5Var3);
+                                                                                            } else {
+                                                                                                AndroidUtilities.runOnUIThread(new z70((Object) r13, openSettings, (boolean) r102, i33));
+                                                                                            }
+                                                                                            if (AndroidUtilities.isTablet()) {
+                                                                                                r13.q0.V();
+                                                                                                r13.s0.V();
+                                                                                            }
+                                                                                        }
+                                                                                        i37 = 6;
+                                                                                        if (i92 == i37) {
+                                                                                        }
+                                                                                        if (AndroidUtilities.isTablet()) {
+                                                                                        }
+                                                                                    }
+                                                                                    i37 = 6;
+                                                                                    r102 = false;
+                                                                                    if (i92 == i37) {
+                                                                                    }
+                                                                                    if (AndroidUtilities.isTablet()) {
+                                                                                    }
+                                                                                } else {
+                                                                                    int i93 = 14;
+                                                                                    if (i13 != 0) {
+                                                                                        Bundle h = a1.g.h("destroyAfterSelect", i33);
+                                                                                        org.telegram.ui.ActionBar.d5 O4 = r13.O();
+                                                                                        org.telegram.ui.ActionBar.b5 b5Var4 = new org.telegram.ui.ActionBar.b5(new ContactsActivity(h));
+                                                                                        b5Var4.a();
+                                                                                        ((ActionBarLayout) O4).R(b5Var4);
+                                                                                        if (AndroidUtilities.isTablet()) {
+                                                                                            r13.q0.V();
+                                                                                            r13.s0.V();
+                                                                                        }
+                                                                                    } else if (str4 != null) {
+                                                                                        Bundle bundle3 = new Bundle();
+                                                                                        bundle3.putBoolean("destroyAfterSelect", i33);
+                                                                                        bundle3.putBoolean("returnAsResult", i33);
+                                                                                        bundle3.putBoolean("onlyUsers", i33);
+                                                                                        bundle3.putBoolean("allowSelf", false);
+                                                                                        ContactsActivity contactsActivity = new ContactsActivity(bundle3);
+                                                                                        contactsActivity.q0(str4);
+                                                                                        contactsActivity.p0(new ai.f4((Object) r13, (boolean) r03, iArr2, i34));
+                                                                                        org.telegram.ui.ActionBar.d5 O5 = r13.O();
+                                                                                        org.telegram.ui.ActionBar.b5 b5Var5 = new org.telegram.ui.ActionBar.b5(contactsActivity);
+                                                                                        b5Var5.b(r13.q0.getLastFragment() instanceof ContactsActivity);
+                                                                                        ((ActionBarLayout) O5).R(b5Var5);
+                                                                                        if (AndroidUtilities.isTablet()) {
+                                                                                            r13.q0.V();
+                                                                                            r13.s0.V();
+                                                                                        }
+                                                                                    } else if (i23 != 0) {
+                                                                                        h hVar = new h(5);
+                                                                                        hVar.a0(new zu(i93, r13, hVar));
+                                                                                        org.telegram.ui.ActionBar.d5 O6 = r13.O();
+                                                                                        org.telegram.ui.ActionBar.b5 b5Var6 = new org.telegram.ui.ActionBar.b5(hVar);
+                                                                                        b5Var6.a();
+                                                                                        ((ActionBarLayout) O6).R(b5Var6);
+                                                                                        if (AndroidUtilities.isTablet()) {
+                                                                                            r13.q0.V();
+                                                                                            r13.s0.V();
+                                                                                        }
+                                                                                    } else if (!TextUtils.isEmpty(str6)) {
+                                                                                        u50.b(r13, r13.O, str6, cVar3);
+                                                                                    } else if (i21 != 0) {
+                                                                                        oj0 oj0Var = new oj0(r13, r13.q0.getLastFragment());
+                                                                                        String str135 = str8;
+                                                                                        if (str135 != null) {
+                                                                                            String[] split3 = str135.split(str134, 2);
+                                                                                            String str136 = split3[0];
+                                                                                            String str137 = split3.length > i33 ? split3[i33] : null;
+                                                                                            org.telegram.ui.Components.rd0 rd0Var = oj0Var.d;
+                                                                                            if (rd0Var != null) {
+                                                                                                rd0Var.getEditText().setText(str136);
+                                                                                            } else {
+                                                                                                oj0Var.K = str136;
+                                                                                            }
+                                                                                            org.telegram.ui.Components.rd0 rd0Var2 = oj0Var.e;
+                                                                                            if (rd0Var2 != null) {
+                                                                                                rd0Var2.getEditText().setText(str137);
+                                                                                            } else {
+                                                                                                oj0Var.L = str137;
+                                                                                            }
+                                                                                        }
+                                                                                        String str138 = str7;
+                                                                                        if (str138 != null) {
+                                                                                            oj0Var.x(jf.b.d(str138, i33), false);
+                                                                                        }
+                                                                                        oj0Var.show();
+                                                                                        if (AndroidUtilities.isTablet()) {
+                                                                                            r13.q0.V();
+                                                                                            r13.s0.V();
+                                                                                        }
+                                                                                    } else {
+                                                                                        String str139 = str8;
+                                                                                        String str140 = str7;
+                                                                                        if (i14 != 0) {
+                                                                                            s50.d1(r13, AccountInstance.getInstance(r13.O), null, null, false, null);
+                                                                                            if (s50.D3 != null) {
+                                                                                                s50.E3 = i33;
+                                                                                            }
+                                                                                        } else {
+                                                                                            if (i22 != 0) {
+                                                                                                org.telegram.ui.ActionBar.n2 lastFragment3 = r13.q0.getLastFragment();
+                                                                                                if (lastFragment3 == null || lastFragment3.getParentActivity() == null) {
+                                                                                                    i36 = i16;
+                                                                                                } else {
+                                                                                                    String t11 = oj0.t(r13, UserConfig.getInstance(r13.O).getCurrentUser(), str140);
+                                                                                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lastFragment3.getParentActivity());
+                                                                                                    alertDialog$Builder.l(LocaleController.getString(R.string.NewContactAlertTitle));
+                                                                                                    int i94 = R.string.NewContactAlertMessage;
+                                                                                                    Object[] objArr = new Object[i33];
+                                                                                                    objArr[0] = jf.b.c().b(t11);
+                                                                                                    alertDialog$Builder.g(AndroidUtilities.replaceTags(LocaleController.formatString("NewContactAlertMessage", i94, objArr)));
+                                                                                                    alertDialog$Builder.k(LocaleController.getString(R.string.NewContactAlertButton), new a1.d(r13, lastFragment3, t11, str139, 14));
+                                                                                                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                                                                                                    lastFragment3.showDialog(alertDialog$Builder.a());
+                                                                                                    i36 = i33;
+                                                                                                }
+                                                                                                z16 = z10;
+                                                                                                iArr3 = iArr2;
+                                                                                                r10 = i36;
+                                                                                                if (r10 == 0) {
+                                                                                                }
+                                                                                                if (z44) {
+                                                                                                }
+                                                                                                if (i14 == 0) {
+                                                                                                }
+                                                                                                r42.setAction(r12);
+                                                                                                return r10;
+                                                                                            }
+                                                                                            if (i19 != 0) {
+                                                                                                org.telegram.ui.ActionBar.d5 O7 = r13.O();
+                                                                                                org.telegram.ui.ActionBar.b5 b5Var7 = new org.telegram.ui.ActionBar.b5(new m9());
+                                                                                                b5Var7.a();
+                                                                                                ((ActionBarLayout) O7).R(b5Var7);
+                                                                                                if (AndroidUtilities.isTablet()) {
+                                                                                                    r13.q0.V();
+                                                                                                    r13.s0.V();
+                                                                                                }
+                                                                                            } else if (i15 != 0) {
+                                                                                                r13.v0(j15);
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        } else {
+                                                                            i34 = 9;
+                                                                            i35 = 8;
+                                                                        }
+                                                                        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
+                                                                            str9 = "Locked in release.";
+                                                                        } else if (i92 == 7) {
+                                                                            SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit();
+                                                                            BuildVars.LOGS_ENABLED = i33;
+                                                                            edit.putBoolean("logsEnabled", i33).commit();
+                                                                            str9 = "Logs enabled.";
+                                                                        } else {
+                                                                            if (i92 == i35) {
+                                                                                ProfileActivity.H4(r13, false);
+                                                                            } else if (i92 == i34) {
+                                                                                SharedPreferences.Editor edit2 = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit();
+                                                                                BuildVars.LOGS_ENABLED = false;
+                                                                                edit2.putBoolean("logsEnabled", false).commit();
+                                                                                str9 = "Logs disabled.";
+                                                                            }
+                                                                            str9 = null;
+                                                                        }
+                                                                        if (str9 != null && (lastFragment = r13.q0.getLastFragment()) != null) {
+                                                                            org.telegram.ui.Components.xc.a0(lastFragment).H(R.raw.info, str9).j();
+                                                                        }
+                                                                    } else {
+                                                                        if (!AndroidUtilities.isTablet()) {
+                                                                            NotificationCenter.getInstance(iArr2[0]).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                                                                        }
+                                                                        if (j11 != j14) {
+                                                                            ArrayList arrayList4 = new ArrayList();
+                                                                            arrayList4.add(MessagesStorage.TopicKey.of(j11, j14));
+                                                                            iArr3 = iArr2;
+                                                                            r13.w(null, arrayList4, null, false, true, 0, 0, null);
+                                                                            z16 = z10;
+                                                                            r10 = i16;
+                                                                            r12 = z15;
+                                                                            if (r10 == 0) {
+                                                                                if (AndroidUtilities.isTablet()) {
+                                                                                }
+                                                                                if (z13) {
+                                                                                }
+                                                                            }
+                                                                            if (z44) {
+                                                                            }
+                                                                            if (i14 == 0) {
+                                                                                s50Var.dismiss();
+                                                                            }
+                                                                            r42.setAction(r12);
+                                                                            return r10;
+                                                                        }
+                                                                        r13.j0(false);
+                                                                    }
+                                                                    z16 = z10;
+                                                                    iArr3 = iArr2;
+                                                                    r10 = i33;
+                                                                    if (r10 == 0) {
+                                                                    }
+                                                                    if (z44) {
+                                                                    }
+                                                                    if (i14 == 0) {
+                                                                    }
+                                                                    r42.setAction(r12);
+                                                                    return r10;
+                                                                }
+                                                                AndroidUtilities.runOnUIThread(new l80(r13, 3));
+                                                            }
+                                                            iArr3 = iArr2;
+                                                            z16 = z10;
+                                                            r10 = i16;
+                                                            r12 = z15;
+                                                            if (r10 == 0) {
+                                                            }
+                                                            if (z44) {
+                                                            }
+                                                            if (i14 == 0) {
+                                                            }
+                                                            r42.setAction(r12);
+                                                            return r10;
+                                                        }
+                                                        if (!r13.q0.getFragmentStack().isEmpty()) {
+                                                            r13.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.wv0(r13, new zu(16, r13, iArr2), null));
+                                                        }
+                                                    } else if (r13.q0.getFragmentStack().isEmpty()) {
+                                                        z17 = false;
+                                                    } else {
+                                                        z17 = false;
+                                                        r13.q0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.k8(r13, null));
+                                                    }
+                                                    z16 = z10;
+                                                    iArr3 = iArr2;
+                                                    r10 = 0;
+                                                    r12 = z17;
+                                                    if (r10 == 0) {
+                                                    }
+                                                    if (z44) {
+                                                    }
+                                                    if (i14 == 0) {
+                                                    }
+                                                    r42.setAction(r12);
+                                                    return r10;
+                                                }
+                                                sn snVar3 = new sn(org.telegram.ui.Cells.c1.i(i91, "enc_id"));
+                                                org.telegram.ui.ActionBar.d5 O8 = r13.O();
+                                                org.telegram.ui.ActionBar.b5 b5Var8 = new org.telegram.ui.ActionBar.b5(snVar3);
+                                                b5Var8.a();
+                                                if (((ActionBarLayout) O8).R(b5Var8)) {
+                                                    L();
+                                                    i39 = i33;
+                                                }
+                                                i39 = i16;
+                                            }
+                                        }
+                                        z16 = z10;
+                                        iArr3 = iArr2;
+                                        i38 = i39;
+                                        r12 = 0;
+                                        r10 = i38;
+                                        if (r10 == 0) {
+                                        }
+                                        if (z44) {
+                                        }
+                                        if (i14 == 0) {
+                                        }
+                                        r42.setAction(r12);
+                                        return r10;
+                                    }
+                                    NotificationCenter.getInstance(iArr2[i32]).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[i32]);
+                                    r13.p0(jArr, i33);
+                                }
+                            }
+                            i33 = 1;
+                            if (i28 <= 0) {
+                            }
+                        }
+                        iArr3 = iArr2;
+                        z15 = false;
+                        z16 = z10;
+                        r10 = i16;
+                        r12 = z15;
+                        if (r10 == 0) {
+                        }
+                        if (z44) {
+                        }
+                        if (i14 == 0) {
+                        }
+                        r42.setAction(r12);
+                        return r10;
+                    }
+                    try {
+                        parcelableArrayListExtra = intent.getParcelableArrayListExtra("android.intent.extra.STREAM");
+                        type = intent.getType();
+                    } catch (Exception e15) {
+                        FileLog.e(e15);
+                    }
+                    if (parcelableArrayListExtra != null) {
+                        int i95 = 0;
+                        while (i95 < parcelableArrayListExtra.size()) {
+                            Parcelable parcelable2 = (Parcelable) parcelableArrayListExtra.get(i95);
+                            boolean z47 = parcelable2 instanceof Uri;
+                            Parcelable parcelable3 = parcelable2;
+                            if (!z47) {
+                                parcelable3 = Uri.parse(parcelable2.toString());
+                            }
+                            Uri uri7 = (Uri) parcelable3;
+                            if (uri7 != null && AndroidUtilities.isInternalUri(uri7)) {
+                                parcelableArrayListExtra.remove(i95);
+                                i95--;
+                            }
+                            i95++;
+                        }
+                        if (parcelableArrayListExtra.isEmpty()) {
+                            arrayList = null;
+                            if (arrayList != null) {
+                                if (type == null || (!type.startsWith("image/") && !type.startsWith("video/"))) {
+                                    Set<String> set2 = MessagesController.getInstance(iArr9[0]).exportUri;
+                                    for (int i96 = 0; i96 < arrayList.size(); i96++) {
+                                        Parcelable parcelable4 = (Parcelable) arrayList.get(i96);
+                                        boolean z48 = parcelable4 instanceof Uri;
+                                        Parcelable parcelable5 = parcelable4;
+                                        if (!z48) {
+                                            parcelable5 = Uri.parse(parcelable4.toString());
+                                        }
+                                        Uri uri8 = (Uri) parcelable5;
+                                        String type3 = r13.getContentResolver().getType(uri8);
+                                        if (type3 == null || !(type3.startsWith("image/") || type3.startsWith("video/"))) {
+                                            String path3 = AndroidUtilities.getPath(uri8);
+                                            String obj5 = parcelable5.toString();
+                                            String str141 = obj5 == null ? path3 : obj5;
+                                            if (BuildVars.LOGS_ENABLED) {
+                                                FileLog.d("export path = " + str141);
+                                            }
+                                            if (str141 != null && r13.X == null) {
+                                                String fixFileName2 = FileLoader.fixFileName(MediaController.getFileName(uri8));
+                                                Iterator<String> it7 = set2.iterator();
+                                                while (it7.hasNext()) {
+                                                    try {
+                                                        compile = Pattern.compile(it7.next());
+                                                    } catch (Exception e16) {
+                                                        FileLog.e(e16);
+                                                    }
+                                                    if (!compile.matcher(str141).find() && !compile.matcher(fixFileName2).find()) {
+                                                    }
+                                                    r13.X = uri8;
+                                                    z19 = true;
+                                                }
+                                                z19 = false;
+                                                if (!z19) {
+                                                    if (str141.startsWith("content://com.kakao.talk") && str141.endsWith("KakaoTalkChats.txt")) {
+                                                        r13.X = uri8;
+                                                    }
+                                                }
+                                            }
+                                            if (path3 != null) {
+                                                if (path3.startsWith("file:")) {
+                                                    path3 = path3.replace("file://", "");
+                                                }
+                                                if (r13.V == null) {
+                                                    r13.V = new ArrayList();
+                                                    r13.Z = new ArrayList();
+                                                }
+                                                r13.V.add(path3);
+                                                r13.Z.add(str141);
+                                            } else {
+                                                if (r13.W == null) {
+                                                    r13.W = new ArrayList();
+                                                }
+                                                r13.W.add(uri8);
+                                                r13.Y = type;
+                                            }
+                                        } else {
+                                            if (r13.U == null) {
+                                                r13.U = new ArrayList();
+                                            }
+                                            SendMessagesHelper.SendingMediaInfo sendingMediaInfo2 = new SendMessagesHelper.SendingMediaInfo();
+                                            sendingMediaInfo2.uri = uri8;
+                                            sendingMediaInfo2.isVideo = type3.startsWith("video/");
+                                            r13.U.add(sendingMediaInfo2);
+                                        }
+                                    }
+                                    z18 = false;
+                                    if (z18) {
+                                        i41 = 0;
+                                    } else {
+                                        i41 = 0;
+                                        Toast.makeText((Context) r13, "Unsupported content", 0).show();
+                                    }
+                                    i10 = i41;
+                                    str2 = " ";
+                                    str3 = "message_id";
+                                    str = "android.intent.action.MAIN";
+                                    iArr2 = iArr9;
+                                    j10 = 0;
+                                }
+                                for (int i97 = 0; i97 < arrayList.size(); i97++) {
+                                    Parcelable parcelable6 = (Parcelable) arrayList.get(i97);
+                                    boolean z49 = parcelable6 instanceof Uri;
+                                    Parcelable parcelable7 = parcelable6;
+                                    if (!z49) {
+                                        parcelable7 = Uri.parse(parcelable6.toString());
+                                    }
+                                    Uri uri9 = (Uri) parcelable7;
+                                    if (r13.U == null) {
+                                        r13.U = new ArrayList();
+                                    }
+                                    SendMessagesHelper.SendingMediaInfo sendingMediaInfo3 = new SendMessagesHelper.SendingMediaInfo();
+                                    sendingMediaInfo3.uri = uri9;
+                                    String type4 = r13.getContentResolver().getType(uri9);
+                                    sendingMediaInfo3.isVideo = type4 != null ? type4.startsWith("video/") : type.startsWith("video/");
+                                    r13.U.add(sendingMediaInfo3);
+                                }
+                                z18 = false;
+                                if (z18) {
+                                }
+                                i10 = i41;
+                                str2 = " ";
+                                str3 = "message_id";
+                                str = "android.intent.action.MAIN";
+                                iArr2 = iArr9;
+                                j10 = 0;
+                            }
+                            z18 = true;
+                            if (z18) {
+                            }
+                            i10 = i41;
+                            str2 = " ";
+                            str3 = "message_id";
+                            str = "android.intent.action.MAIN";
+                            iArr2 = iArr9;
+                            j10 = 0;
+                        }
+                    }
+                    arrayList = parcelableArrayListExtra;
+                    if (arrayList != null) {
+                    }
+                    z18 = true;
+                    if (z18) {
+                    }
+                    i10 = i41;
+                    str2 = " ";
+                    str3 = "message_id";
+                    str = "android.intent.action.MAIN";
+                    iArr2 = iArr9;
+                    j10 = 0;
+                }
+            }
+            str8 = null;
+            str7 = null;
+            i32 = i40;
+            if (UserConfig.getInstance(r13.O).isClientActivated()) {
+            }
+            iArr3 = iArr2;
+            z15 = false;
+            z16 = z10;
+            r10 = i16;
+            r12 = z15;
+            if (r10 == 0) {
+            }
+            if (z44) {
+            }
+            if (i14 == 0) {
+            }
+            r42.setAction(r12);
+            return r10;
+        }
+        iArr2 = iArr;
+        str = "android.intent.action.MAIN";
+        i10 = 0;
+        str2 = " ";
+        str3 = "message_id";
+        j10 = 0;
+        j11 = j10;
+        j12 = j11;
+        j13 = j12;
+        j14 = j13;
+        j15 = j14;
+        i11 = i10;
+        i12 = i11;
+        i13 = i12;
+        i14 = i13;
+        i15 = i14;
+        i16 = i15;
+        i17 = i16;
+        i18 = i17;
+        i19 = i18;
+        i20 = i19;
+        i21 = i20;
+        i22 = i21;
+        i23 = i22;
+        int i98 = i23;
+        i24 = i98 == true ? 1 : 0;
+        i25 = i24;
+        i26 = i25;
+        i27 = i26;
+        str4 = null;
+        i28 = -1;
+        i29 = -1;
+        jArr = null;
+        str5 = null;
+        i30 = i98;
+        str6 = null;
+        i31 = -1;
+        i40 = i30;
+        str8 = null;
+        str7 = null;
+        i32 = i40;
+        if (UserConfig.getInstance(r13.O).isClientActivated()) {
+        }
+        iArr3 = iArr2;
+        z15 = false;
+        z16 = z10;
+        r10 = i16;
+        r12 = z15;
+        if (r10 == 0) {
+        }
+        if (z44) {
+        }
+        if (i14 == 0) {
+        }
+        r42.setAction(r12);
+        return r10;
     }
 
     public final void Y() {
@@ -3573,7 +14659,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         TLRPC.TL_contacts_importNoPaidMessagesToken tL_contacts_importNoPaidMessagesToken = new TLRPC.TL_contacts_importNoPaidMessagesToken();
         tL_contacts_importNoPaidMessagesToken.user_id = messagesController.getInputUser(user);
         tL_contacts_importNoPaidMessagesToken.token = str;
-        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_contacts_importNoPaidMessagesToken, new org.telegram.messenger.a(), new ai.u2(this, cVar, messagesController, user, 2));
+        ConnectionsManager.getInstance(i10).sendRequestTyped(tL_contacts_importNoPaidMessagesToken, new org.telegram.messenger.a(), new org.telegram.messenger.eh(this, cVar, messagesController, i10, user));
     }
 
     @Override // org.telegram.ui.ActionBar.a5
@@ -3859,7 +14945,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                         L0(i11, (TLRPC.TL_help_termsOfService) objArr[1]);
                         return;
                     }
-                    org.telegram.ui.ActionBar.n2 n2Var = !this.d0.isEmpty() ? (org.telegram.ui.ActionBar.n2) i0.a.h(1, this.d0) : null;
+                    org.telegram.ui.ActionBar.n2 n2Var = !this.d0.isEmpty() ? (org.telegram.ui.ActionBar.n2) i2.d.h(1, this.d0) : null;
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
                     if (n2Var != null) {
@@ -3871,7 +14957,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                         alertDialog$Builder.a.W = true;
                     }
                     if (num.intValue() != 2 && num.intValue() != 3) {
-                        alertDialog$Builder.h(LocaleController.getString(R.string.MoreInfo), new i2.q(this, i11, 11));
+                        alertDialog$Builder.h(LocaleController.getString(R.string.MoreInfo), new i2.r(this, i11, 11));
                     }
                     if (num.intValue() == 5) {
                         alertDialog$Builder.a.T = LocaleController.getString(R.string.NobodyLikesSpam3);
@@ -3929,13 +15015,13 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             if (this.d0.isEmpty()) {
                 return;
             }
-            ((org.telegram.ui.ActionBar.n2) i0.a.h(1, this.d0)).showDialog(alertDialog$Builder2.a());
+            ((org.telegram.ui.ActionBar.n2) i2.d.h(1, this.d0)).showDialog(alertDialog$Builder2.a());
             return;
         }
         if (i10 == NotificationCenter.didSetNewWallpapper) {
-            ig.n1 n1Var = this.v0;
-            if (n1Var != null) {
-                n1Var.V(org.telegram.ui.ActionBar.h6.s0());
+            ig.p1 p1Var = this.v0;
+            if (p1Var != null) {
+                p1Var.V(org.telegram.ui.ActionBar.h6.s0());
                 return;
             }
             return;
@@ -3945,8 +15031,8 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             return;
         }
         if (i10 == NotificationCenter.reloadInterface) {
-            boolean z13 = this.d0.size() > 1 && (i0.a.h(1, this.d0) instanceof ProfileActivity);
-            y0((!z13 || ((ProfileActivity) i0.a.h(1, this.d0)).h4()) ? z13 : false);
+            boolean z13 = this.d0.size() > 1 && (i2.d.h(1, this.d0) instanceof ProfileActivity);
+            y0((!z13 || ((ProfileActivity) i2.d.h(1, this.d0)).h4()) ? z13 : false);
             return;
         }
         if (i10 == NotificationCenter.suggestedLangpack) {
@@ -3959,7 +15045,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             }
             LaunchActivity launchActivity = H1;
             if (launchActivity == null || launchActivity.P() == null || H1.P().m((TLRPC.TL_webPage) objArr[0]) == null) {
-                ((org.telegram.ui.ActionBar.n2) i0.a.h(1, this.d0)).createArticleViewer(false).N(null, (TLRPC.TL_webPage) objArr[0], (String) objArr[1], null);
+                ((org.telegram.ui.ActionBar.n2) i2.d.h(1, this.d0)).createArticleViewer(false).N(null, (TLRPC.TL_webPage) objArr[0], (String) objArr[1], null);
                 return;
             }
             return;
@@ -4085,15 +15171,15 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                 if (objArr.length <= 1 || this.d0.isEmpty()) {
                     return;
                 }
-                org.telegram.ui.Components.f5.e0(this.O, (TLRPC.TL_error) objArr[2], (org.telegram.ui.ActionBar.n2) i0.a.h(1, this.d0), (TLObject) objArr[1], new Object[0]);
+                org.telegram.ui.Components.f5.e0(this.O, (TLRPC.TL_error) objArr[2], (org.telegram.ui.ActionBar.n2) i2.d.h(1, this.d0), (TLObject) objArr[1], new Object[0]);
                 return;
             }
             if (i10 == NotificationCenter.billingConfirmPurchaseError) {
-                org.telegram.ui.Components.f5.e0(this.O, (TLRPC.TL_error) objArr[1], (org.telegram.ui.ActionBar.n2) i0.a.h(1, this.d0), (TLObject) objArr[0], new Object[0]);
+                org.telegram.ui.Components.f5.e0(this.O, (TLRPC.TL_error) objArr[1], (org.telegram.ui.ActionBar.n2) i2.d.h(1, this.d0), (TLObject) objArr[0], new Object[0]);
                 return;
             }
             if (i10 == NotificationCenter.stickersImportComplete) {
-                MediaDataController.getInstance(i11).toggleStickerSet(this, (TLObject) objArr[0], 2, !this.d0.isEmpty() ? (org.telegram.ui.ActionBar.n2) i0.a.h(1, this.d0) : null, false, true);
+                MediaDataController.getInstance(i11).toggleStickerSet(this, (TLObject) objArr[0], 2, !this.d0.isEmpty() ? (org.telegram.ui.ActionBar.n2) i2.d.h(1, this.d0) : null, false, true);
                 return;
             }
             if (i10 == NotificationCenter.showBulletin) {
@@ -4102,7 +15188,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                 }
                 int intValue = ((Integer) objArr[0]).intValue();
                 org.telegram.ui.ActionBar.d3 container = (!s50.E3 || (s50Var = s50.D3) == null) ? null : s50Var.getContainer();
-                org.telegram.ui.ActionBar.n2 n2Var3 = container == null ? (org.telegram.ui.ActionBar.n2) i0.a.h(1, this.d0) : null;
+                org.telegram.ui.ActionBar.n2 n2Var3 = container == null ? (org.telegram.ui.ActionBar.n2) i2.d.h(1, this.d0) : null;
                 switch (intValue) {
                     case 0:
                         TLRPC.Document document = (TLRPC.Document) objArr[1];
@@ -4167,7 +15253,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                 if (this.d0.isEmpty()) {
                     return;
                 }
-                org.telegram.ui.ActionBar.n2 n2Var4 = (org.telegram.ui.ActionBar.n2) i0.a.h(1, this.d0);
+                org.telegram.ui.ActionBar.n2 n2Var4 = (org.telegram.ui.ActionBar.n2) i2.d.h(1, this.d0);
                 if (n2Var4.getParentActivity() != null) {
                     n2Var4.showDialog(new sg.j0(((Integer) objArr[0]).intValue(), this.O, n2Var4.getParentActivity(), n2Var4, null));
                     return;
@@ -4426,12 +15512,12 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                 if (VoIPService.getSharedInstance() == null) {
                     ArrayList arrayList = this.d0;
                     if (!arrayList.isEmpty() && ((!PhotoViewer.D1() || !PhotoViewer.t1().R1()) && keyEvent.getRepeatCount() == 0)) {
-                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList);
+                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList);
                         if (!(n2Var instanceof sn) || org.telegram.ui.ActionBar.n2.hasSheets(n2Var) || !((sn) n2Var).R9()) {
                             if (AndroidUtilities.isTablet()) {
                                 ArrayList arrayList2 = this.f0;
                                 if (!arrayList2.isEmpty()) {
-                                    org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList2);
+                                    org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList2);
                                     if (n2Var2 instanceof sn) {
                                         if (!org.telegram.ui.ActionBar.n2.hasSheets(n2Var2)) {
                                         }
@@ -4813,8 +15899,8 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
         alertDialog$Builder.a.R = valueOf;
         alertDialog$Builder.a.T = LocaleController.getString(R.string.EmailLoginChangeMessage);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ChangeEmail), new ov(11, this, fg0Var));
-        i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+        alertDialog$Builder.k(LocaleController.getString(R.string.ChangeEmail), new zu(12, this, fg0Var));
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:146:0x00ce, code lost:
@@ -5035,10 +16121,10 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         }
     }
 
-    public final void m0(TLRPC.TL_error tL_error, long j10) {
-        sn snVar = new sn(z7.g5.a(j10, "user_id"));
+    public final void m0(int i10, long j10, TLRPC.TL_error tL_error) {
+        sn snVar = new sn(zf.d0.b(j10, "user_id"));
         t0(snVar);
-        AndroidUtilities.runOnUIThread(new lq(tL_error, snVar, MessagesController.getInstance(this.O).getUser(Long.valueOf(j10)), 13), 300L);
+        AndroidUtilities.runOnUIThread(new lq(tL_error, snVar, MessagesController.getInstance(i10).getUser(Long.valueOf(j10)), 13), 300L);
     }
 
     public final void n0(int i10, String str, String str2, pf.c cVar) {
@@ -5048,7 +16134,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         MessagesController messagesController = MessagesController.getInstance(i10);
         TLRPC.TL_contacts_importContactToken tL_contacts_importContactToken = new TLRPC.TL_contacts_importContactToken();
         tL_contacts_importContactToken.token = str;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_contacts_importContactToken, new org.telegram.messenger.gi(this, cVar, str, messagesController, i10, str2));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_contacts_importContactToken, new ai.sb(this, cVar, messagesController, i10, str2, 11));
     }
 
     public final void o0(int i10, String str, String str2, pf.c cVar) {
@@ -5282,9 +16368,9 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         if (cvVar != null) {
             cvVar.onConfigurationChanged(configuration);
         }
-        ug.l lVar = ug.l.e;
-        if (lVar != null) {
-            lVar.onConfigurationChanged(configuration);
+        ug.m mVar = ug.m.e;
+        if (mVar != null) {
+            mVar.onConfigurationChanged(configuration);
         }
         Drawable[] drawableArr = PhotoViewer.U8;
         ThemeEditorView themeEditorView = ThemeEditorView.n;
@@ -6392,7 +17478,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
         ActionBarLayout actionBarLayout = this.q0;
         if (actionBarLayout != null) {
             if (!actionBarLayout.O0.isEmpty()) {
-                ((org.telegram.ui.ActionBar.n2) r.c.e(1, actionBarLayout.O0)).onUserLeaveHint();
+                ((org.telegram.ui.ActionBar.n2) r4.c.f(1, actionBarLayout.O0)).onUserLeaveHint();
             }
             org.telegram.ui.ActionBar.r rVar = actionBarLayout.G;
             if (rVar != null) {
@@ -6446,10 +17532,10 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             jArr2 = jArr3;
         }
         if (z10) {
-            for (int i13 = 0; i13 < jArr2.length; i13 = com.google.android.gms.internal.cast.a6.h(jArr2[i13], arrayList3, i13, 1)) {
+            for (int i13 = 0; i13 < jArr2.length; i13 = com.google.android.gms.internal.play_billing.k3.h(jArr2[i13], arrayList3, i13, 1)) {
             }
         } else {
-            for (int i14 = 0; i14 < jArr2.length; i14 = com.google.android.gms.internal.cast.a6.h(jArr2[i14], arrayList2, i14, 1)) {
+            for (int i14 = 0; i14 < jArr2.length; i14 = com.google.android.gms.internal.play_billing.k3.h(jArr2[i14], arrayList2, i14, 1)) {
             }
         }
         if (!arrayList3.isEmpty() && z10) {
@@ -6667,7 +17753,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             return;
         }
         ArrayList arrayList3 = this.d0;
-        org.telegram.ui.ActionBar.n2 n2Var = !arrayList3.isEmpty() ? (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList3) : null;
+        org.telegram.ui.ActionBar.n2 n2Var = !arrayList3.isEmpty() ? (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList3) : null;
         if (n2Var instanceof sn) {
             sn snVar = (sn) n2Var;
             if (snVar.a() == (-chat.id) && snVar.h4 && snVar.d() == tL_forumTopic2.id) {
@@ -6944,7 +18030,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
             if (arrayList11 != null && arrayList11.size() == 1) {
                 ArrayList arrayList12 = launchActivity4.d0;
                 if (!arrayList12.isEmpty()) {
-                    org.telegram.ui.Components.if0 if0Var = new org.telegram.ui.Components.if0((org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList12), null, null, launchActivity4.b0, null, null, null, null, null);
+                    org.telegram.ui.Components.if0 if0Var = new org.telegram.ui.Components.if0((org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList12), null, null, launchActivity4.b0, null, null, null, null, null);
                     snVar2 = snVar;
                     final int i17 = i15;
                     if0Var.K = new org.telegram.ui.Components.oj() { // from class: org.telegram.ui.t90
@@ -6998,7 +18084,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                         public final /* synthetic */ void c(ArrayList arrayList13, String str2, boolean z25, int i18, long j14, boolean z26) {
                         }
                     };
-                    ((org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList12)).showDialog(if0Var);
+                    ((org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList12)).showDialog(if0Var);
                     launchActivity3 = launchActivity4;
                     sn snVar5 = snVar2;
                     if (eyVar != null && snVar5 == null && !z21) {
@@ -7120,7 +18206,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                         int i21 = i15;
                                         j11 = j14;
                                         accountInstance = accountInstance2;
-                                        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList16, (ArrayList<String>) arrayList16, (ArrayList<Uri>) null, charSequence14, (String) null, j11, messageObject, messageObject, (TL_stories.StoryItem) null, (in) null, (MessageObject) null, z23, i21, (t0.i) null, (SendMessageChatArguments) null, 0L, false, 0L);
+                                        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList16, (ArrayList<String>) arrayList16, (ArrayList<Uri>) null, charSequence14, (String) null, j11, messageObject, messageObject, (TL_stories.StoryItem) null, (in) null, (MessageObject) null, z23, i21, (t0.j) null, (SendMessageChatArguments) null, 0L, false, 0L);
                                         z17 = z12;
                                         charSequence12 = charSequence14;
                                         i15 = i21;
@@ -7225,7 +18311,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                                 ArrayList arrayList21 = new ArrayList();
                                 arrayList21.add(launchActivity4.R);
                                 int i22 = i15;
-                                SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList21, (ArrayList<String>) arrayList21, (ArrayList<Uri>) null, charSequence18, (String) null, j11, messageObject, messageObject, (TL_stories.StoryItem) null, (in) null, (MessageObject) null, z23, i22, (t0.i) null, (SendMessageChatArguments) null, 0L, false, 0L);
+                                SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList21, (ArrayList<String>) arrayList21, (ArrayList<Uri>) null, charSequence18, (String) null, j11, messageObject, messageObject, (TL_stories.StoryItem) null, (in) null, (MessageObject) null, z23, i22, (t0.j) null, (SendMessageChatArguments) null, 0L, false, 0L);
                                 i15 = i22;
                                 charSequence12 = charSequence18;
                             }
@@ -7263,7 +18349,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                             }
                             CharSequence charSequence20 = charSequence12;
                             int i23 = i15;
-                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) launchActivity4.V, (ArrayList<String>) launchActivity4.Z, (ArrayList<Uri>) launchActivity4.W, charSequence20, launchActivity4.Y, j11, messageObject, messageObject, (TL_stories.StoryItem) null, (in) null, (MessageObject) null, z23, i23, (t0.i) null, (SendMessageChatArguments) null, 0L, false, 0L);
+                            SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) launchActivity4.V, (ArrayList<String>) launchActivity4.Z, (ArrayList<Uri>) launchActivity4.W, charSequence20, launchActivity4.Y, j11, messageObject, messageObject, (TL_stories.StoryItem) null, (in) null, (MessageObject) null, z23, i23, (t0.j) null, (SendMessageChatArguments) null, 0L, false, 0L);
                             i15 = i23;
                             charSequence4 = charSequence20;
                         } else {
@@ -7397,7 +18483,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                 }
                 CharSequence charSequence202 = charSequence12;
                 int i232 = i15;
-                SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) launchActivity4.V, (ArrayList<String>) launchActivity4.Z, (ArrayList<Uri>) launchActivity4.W, charSequence202, launchActivity4.Y, j11, messageObject, messageObject, (TL_stories.StoryItem) null, (in) null, (MessageObject) null, z23, i232, (t0.i) null, (SendMessageChatArguments) null, 0L, false, 0L);
+                SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) launchActivity4.V, (ArrayList<String>) launchActivity4.Z, (ArrayList<Uri>) launchActivity4.W, charSequence202, launchActivity4.Y, j11, messageObject, messageObject, (TL_stories.StoryItem) null, (in) null, (MessageObject) null, z23, i232, (t0.j) null, (SendMessageChatArguments) null, 0L, false, 0L);
                 i15 = i232;
                 charSequence4 = charSequence202;
                 AccountInstance accountInstance32 = accountInstance;
@@ -7488,7 +18574,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                             AtomicBoolean atomicBoolean = new AtomicBoolean();
                             LaunchActivity launchActivity2 = LaunchActivity.this;
                             ArrayList arrayList = launchActivity2.d0;
-                            org.telegram.ui.ActionBar.n2 n2Var = (arrayList == null || arrayList.isEmpty()) ? null : (org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList);
+                            org.telegram.ui.ActionBar.n2 n2Var = (arrayList == null || arrayList.isEmpty()) ? null : (org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList);
                             int i17 = i16;
                             TLRPC.User user3 = user2;
                             TLRPC.TL_messages_botApp tL_messages_botApp2 = tL_messages_botApp;
@@ -7618,7 +18704,7 @@ public class LaunchActivity extends m5 implements org.telegram.ui.ActionBar.a5, 
                         tL_help_getAppUpdate.source = "";
                     }
                     int i10 = this.O;
-                    ConnectionsManager.getInstance(i10).sendRequest(tL_help_getAppUpdate, new ai.m2(this, i10, 7));
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_help_getAppUpdate, new ai.n2(this, i10, 7));
                 }
             }
         }

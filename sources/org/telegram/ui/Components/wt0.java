@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class wt0 implements View.OnClickListener {
     public final /* synthetic */ long a;
@@ -118,15 +118,15 @@ public final class wt0 implements View.OnClickListener {
         final int i15 = 5;
         if (closestTab == 14) {
             yh.m2 currentPage = is0Var.getCurrentPage();
-            ai.x9 x9Var = currentPage.e;
-            if (x9Var == null) {
+            ai.y9 y9Var = currentPage.e;
+            if (y9Var == null) {
                 return;
             }
             long j12 = is0Var.c;
             int i16 = is0Var.b;
             boolean canUserDoAction = j12 == UserConfig.getInstance(i16).getClientUserId() ? true : j12 >= 0 ? false : ChatObject.canUserDoAction(MessagesController.getInstance(i16).getChat(Long.valueOf(-j12)), 5);
             final i80 H2 = i80.H(n2Var, imageView);
-            if (x9Var.c) {
+            if (y9Var.c) {
                 e1Var = null;
                 z12 = false;
             } else {
@@ -175,7 +175,7 @@ public final class wt0 implements View.OnClickListener {
                 z12 = true;
             }
             if (is0Var.e.h()) {
-                if (!x9Var.i().isEmpty() || currentPage.d) {
+                if (!y9Var.i().isEmpty() || currentPage.d) {
                     final int i18 = 2;
                     H2.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new Runnable(this) { // from class: org.telegram.ui.Components.rt0
                         public final /* synthetic */ wt0 b;
@@ -238,21 +238,21 @@ public final class wt0 implements View.OnClickListener {
                 e1Var2 = null;
                 e1Var3 = null;
             }
-            org.telegram.messenger.vj vjVar = new org.telegram.messenger.vj(e1Var, x9Var, h, h10, h11, h12, canUserDoAction, e1Var2, e1Var3, 3);
+            org.telegram.messenger.uj ujVar = new org.telegram.messenger.uj(e1Var, y9Var, h, h10, h11, h12, canUserDoAction, e1Var2, e1Var3, 3);
             org.telegram.ui.ActionBar.e1 e1Var5 = e1Var;
             org.telegram.ui.ActionBar.e1 e1Var6 = e1Var2;
             org.telegram.ui.ActionBar.e1 e1Var7 = e1Var3;
-            vjVar.run();
+            ujVar.run();
             if (e1Var5 != null) {
-                e1Var5.setOnClickListener(new ca(24, x9Var, vjVar));
+                e1Var5.setOnClickListener(new ca(24, y9Var, ujVar));
             }
-            yh.q2.j(h, x9Var, vjVar, 1);
-            yh.q2.j(h10, x9Var, vjVar, 2);
-            yh.q2.j(h11, x9Var, vjVar, 4);
-            yh.q2.j(h12, x9Var, vjVar, 8);
+            yh.q2.j(h, y9Var, ujVar, 1);
+            yh.q2.j(h10, y9Var, ujVar, 2);
+            yh.q2.j(h11, y9Var, ujVar, 4);
+            yh.q2.j(h12, y9Var, ujVar, 8);
             if (canUserDoAction) {
-                yh.q2.j(e1Var6, x9Var, vjVar, 256);
-                yh.q2.j(e1Var7, x9Var, vjVar, 512);
+                yh.q2.j(e1Var6, y9Var, ujVar, 256);
+                yh.q2.j(e1Var7, y9Var, ujVar, 512);
             }
             H2.Y = true;
             H2.J = false;
@@ -323,7 +323,7 @@ public final class wt0 implements View.OnClickListener {
                             wt0 wt0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = wt0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new s2(19, wt0Var, currentUser));
+                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new q2(20, wt0Var, currentUser));
                             break;
                     }
                 }
@@ -388,7 +388,7 @@ public final class wt0 implements View.OnClickListener {
                             wt0 wt0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = wt0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new s2(19, wt0Var, currentUser));
+                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new q2(20, wt0Var, currentUser));
                             break;
                     }
                 }
@@ -453,7 +453,7 @@ public final class wt0 implements View.OnClickListener {
                             wt0 wt0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = wt0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new s2(19, wt0Var, currentUser));
+                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new q2(20, wt0Var, currentUser));
                             break;
                     }
                 }
@@ -518,7 +518,7 @@ public final class wt0 implements View.OnClickListener {
                             wt0 wt0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = wt0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new s2(19, wt0Var, currentUser));
+                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new q2(20, wt0Var, currentUser));
                             break;
                     }
                 }
@@ -590,7 +590,7 @@ public final class wt0 implements View.OnClickListener {
                             wt0 wt0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = wt0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new s2(19, wt0Var, currentUser));
+                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new q2(20, wt0Var, currentUser));
                             break;
                     }
                 }
@@ -655,7 +655,7 @@ public final class wt0 implements View.OnClickListener {
                             wt0 wt0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = wt0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new s2(19, wt0Var, currentUser));
+                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new q2(20, wt0Var, currentUser));
                             break;
                     }
                 }
@@ -720,7 +720,7 @@ public final class wt0 implements View.OnClickListener {
                             wt0 wt0Var = this.b;
                             org.telegram.ui.ActionBar.n2 n2Var4 = wt0Var.d.v1;
                             TLRPC.User currentUser = n2Var4.getUserConfig().getCurrentUser();
-                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new s2(19, wt0Var, currentUser));
+                            f5.r(n2Var4, false, null, currentUser, false, true, false, true, new q2(20, wt0Var, currentUser));
                             break;
                     }
                 }

@@ -94,7 +94,7 @@ import org.telegram.ui.tu0;
 import org.telegram.ui.x51;
 import v7.f7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class c implements r, x51, a0, androidx.activity.result.b, tu0, j0, u0, OnCompleteListener, fb0, x71, f6.a, w, n, eb.n, r0, ri, e5, g1 {
     public static volatile c c;
@@ -960,16 +960,16 @@ public final class c implements r, x51, a0, androidx.activity.result.b, tu0, j0,
         return false;
     }
 
-    @Override // ki.g1
-    public /* synthetic */ boolean q(h1 h1Var) {
-        return false;
-    }
-
     @Override // org.telegram.ui.Components.ri
     public void r(gh ghVar) {
         int i10;
         i10 = ((n2) ((ig.m) this.b)).currentAccount;
         NotificationCenter.getInstance(i10).doOnIdle(ghVar);
+    }
+
+    @Override // org.telegram.ui.Components.fb0
+    public Paint.FontMetricsInt s() {
+        return ((m) this.b).f.getEditText().getPaint().getFontMetricsInt();
     }
 
     @Override // l.w
@@ -987,9 +987,9 @@ public final class c implements r, x51, a0, androidx.activity.result.b, tu0, j0,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.fb0
-    public Paint.FontMetricsInt w() {
-        return ((m) this.b).f.getEditText().getPaint().getFontMetricsInt();
+    @Override // ki.g1
+    public /* synthetic */ boolean w(h1 h1Var) {
+        return false;
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
@@ -1093,7 +1093,7 @@ public final class c implements r, x51, a0, androidx.activity.result.b, tu0, j0,
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
-    public void s(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    public void q(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 
     @Override // org.telegram.ui.Components.x71

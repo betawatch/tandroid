@@ -1,9 +1,9 @@
 package qg;
 
-import ai.ld;
+import ai.ad;
+import ai.md;
 import ai.q7;
-import ai.x9;
-import ai.zc;
+import ai.y9;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -21,7 +21,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.vj;
+import org.telegram.messenger.uj;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -32,7 +32,8 @@ import org.telegram.ui.sn;
 import rg.j2;
 import rg.m2;
 import tg.p;
-import ug.z;
+import ug.a0;
+import ug.i;
 import w7.z5;
 import yh.f4;
 import yh.g4;
@@ -40,7 +41,7 @@ import yh.h4;
 import yh.i4;
 import yh.l4;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -102,13 +103,13 @@ public final /* synthetic */ class n implements View.OnClickListener {
                 sg.j0.W((sg.j0) this.b, (Context) this.c);
                 break;
             case 4:
-                ug.q0 q0Var = (ug.q0) this.b;
+                ug.r0 r0Var = (ug.r0) this.b;
                 TLRPC.Chat chat = (TLRPC.Chat) this.c;
-                ArrayList arrayList = q0Var.X;
+                ArrayList arrayList = r0Var.X;
                 if (!arrayList.isEmpty()) {
-                    ug.b0 b0Var = q0Var.a0;
-                    if (!b0Var.N) {
-                        b0Var.setLoading(true);
+                    ug.c0 c0Var = r0Var.a0;
+                    if (!c0Var.N) {
+                        c0Var.setLoading(true);
                         ArrayList arrayList2 = new ArrayList();
                         HashSet hashSet = new HashSet();
                         int size = arrayList.size();
@@ -119,15 +120,15 @@ public final /* synthetic */ class n implements View.OnClickListener {
                             arrayList2.add(Integer.valueOf(tL_myBoost.slot));
                             hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_myBoost.peer)));
                         }
-                        ug.q.a(chat.id, arrayList2, new z2(q0Var, chat, arrayList2, hashSet, 17), new ig.l0(q0Var, 20));
+                        ug.r.a(chat.id, arrayList2, new z2(r0Var, chat, arrayList2, hashSet, 17), new ig.l0(r0Var, 20));
                         break;
                     }
                 }
                 break;
             case 5:
-                ug.l1 l1Var = (ug.l1) this.b;
+                ug.m1 m1Var = (ug.m1) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
-                HashSet hashSet2 = l1Var.h0;
+                HashSet hashSet2 = m1Var.h0;
                 int size2 = arrayList3.size();
                 while (i11 < size2) {
                     Object obj2 = arrayList3.get(i11);
@@ -135,21 +136,21 @@ public final /* synthetic */ class n implements View.OnClickListener {
                     Long l4 = (Long) obj2;
                     l4.getClass();
                     hashSet2.remove(l4);
-                    l1Var.n0.remove(l4);
+                    m1Var.n0.remove(l4);
                 }
-                l1Var.X();
-                l1Var.Z.b(true, hashSet2, new ug.y0(l1Var, i10), null);
-                l1Var.j0(true, true);
-                l1Var.Y();
+                m1Var.X();
+                m1Var.Z.b(true, hashSet2, new ug.z0(m1Var, i10), null);
+                m1Var.j0(true, true);
+                m1Var.Y();
                 break;
             case 6:
-                ug.l1.T((ug.l1) this.b, (TLRPC.User) this.c, view);
+                ug.m1.T((ug.m1) this.b, (TLRPC.User) this.c, view);
                 break;
             case 7:
                 final vg.e eVar = (vg.e) this.b;
                 final wg.a aVar = (wg.a) this.c;
                 if (!eVar.d) {
-                    ((ug.z) eVar).r.dismiss();
+                    ((ug.a0) eVar).r.dismiss();
                     break;
                 } else if (!aVar.a.N) {
                     aVar.b(true);
@@ -160,14 +161,14 @@ public final /* synthetic */ class n implements View.OnClickListener {
                             switch (i11) {
                                 case 0:
                                     aVar.b(false);
-                                    z zVar = (z) eVar;
-                                    AndroidUtilities.runOnUIThread(new p(zVar, 7), 200L);
-                                    zVar.r.dismiss();
+                                    a0 a0Var = (a0) eVar;
+                                    AndroidUtilities.runOnUIThread(new p(a0Var, 7), 200L);
+                                    a0Var.r.dismiss();
                                     break;
                                 default:
                                     aVar.b(false);
                                     e eVar2 = eVar;
-                                    ug.h.c((TLRPC.TL_error) obj3, eVar2.n, eVar2.c, new c(eVar2, 1));
+                                    i.c((TLRPC.TL_error) obj3, eVar2.n, eVar2.c, new c(eVar2, 1));
                                     break;
                             }
                         }
@@ -178,14 +179,14 @@ public final /* synthetic */ class n implements View.OnClickListener {
                             switch (i12) {
                                 case 0:
                                     aVar.b(false);
-                                    z zVar = (z) eVar;
-                                    AndroidUtilities.runOnUIThread(new p(zVar, 7), 200L);
-                                    zVar.r.dismiss();
+                                    a0 a0Var = (a0) eVar;
+                                    AndroidUtilities.runOnUIThread(new p(a0Var, 7), 200L);
+                                    a0Var.r.dismiss();
                                     break;
                                 default:
                                     aVar.b(false);
                                     e eVar2 = eVar;
-                                    ug.h.c((TLRPC.TL_error) obj3, eVar2.n, eVar2.c, new c(eVar2, 1));
+                                    i.c((TLRPC.TL_error) obj3, eVar2.n, eVar2.c, new c(eVar2, 1));
                                     break;
                             }
                         }
@@ -193,7 +194,7 @@ public final /* synthetic */ class n implements View.OnClickListener {
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                     TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
                     tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new ug.n(callback2, callback, i11), 2);
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new ug.o(callback2, callback, i11), 2);
                     break;
                 }
                 break;
@@ -202,9 +203,9 @@ public final /* synthetic */ class n implements View.OnClickListener {
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.c;
                 wg.f fVar = gVar.v;
                 if (fVar != null) {
-                    ug.y yVar2 = ((ug.s) fVar).a;
-                    yVar2.c0.remove(chat2);
-                    yVar2.b0(true, true);
+                    ug.z zVar = ((ug.t) fVar).a;
+                    zVar.c0.remove(chat2);
+                    zVar.b0(true, true);
                     break;
                 }
                 break;
@@ -219,10 +220,10 @@ public final /* synthetic */ class n implements View.OnClickListener {
                 break;
             case 12:
                 h4 h4Var = (h4) this.b;
-                zc zcVar = (zc) this.c;
+                ad adVar = (ad) this.c;
                 h4Var.getClass();
-                if (zcVar.f > 0) {
-                    h4Var.presentFragment(new ld());
+                if (adVar.f > 0) {
+                    h4Var.presentFragment(new md());
                     break;
                 }
                 break;
@@ -264,11 +265,11 @@ public final /* synthetic */ class n implements View.OnClickListener {
                 break;
             default:
                 i4 i4Var = (i4) this.b;
-                vj vjVar = (vj) this.c;
-                x9 x9Var = i4Var.c.Y;
-                x9Var.e = !x9Var.e;
-                vjVar.run();
-                x9Var.j(true);
+                uj ujVar = (uj) this.c;
+                y9 y9Var = i4Var.c.Y;
+                y9Var.e = !y9Var.e;
+                ujVar.run();
+                y9Var.j(true);
                 break;
         }
     }

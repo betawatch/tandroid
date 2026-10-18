@@ -1,11 +1,10 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import com.google.android.gms.internal.cast.a6;
 import org.telegram.ui.jh1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ float b;
@@ -28,7 +27,7 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
                 l0 l0Var = (l0) this.e;
                 l0Var.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l0Var.y0 = a6.x(1.0f, floatValue, 1.0f, this.b * floatValue);
+                l0Var.y0 = com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue, 1.0f, this.b * floatValue);
                 l0Var.r0 = this.c * floatValue;
                 l0Var.s0 = this.d * floatValue;
                 l0Var.invalidate();
@@ -36,7 +35,7 @@ public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateList
             case 1:
                 jh1 jh1Var = (jh1) this.e;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jh1Var.f1 = a6.x(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                jh1Var.f1 = com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue2, 1.0f, this.b * floatValue2);
                 jh1Var.Y0 = this.c * floatValue2;
                 jh1Var.Z0 = this.d * floatValue2;
                 jh1Var.s.invalidate();

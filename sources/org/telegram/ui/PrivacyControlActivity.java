@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50 {
     public boolean A0;
@@ -1143,7 +1143,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
                 globalPrivacySettings4.noncontact_peers_paid_stars = 0L;
                 globalPrivacySettings4.new_noncontact_peers_require_premium = i12 == 2;
             }
-            getConnectionsManager().sendRequest(setglobalprivacysettings, new ai.x2(this, zArr, globalPrivacySettings, setglobalprivacysettings, 16));
+            getConnectionsManager().sendRequest(setglobalprivacysettings, new ai.y2(this, zArr, globalPrivacySettings, setglobalprivacysettings, 16));
             return;
         }
         final AtomicInteger atomicInteger2 = new AtomicInteger(0);
@@ -1747,7 +1747,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
                         int size = tL_privacyValueAllowChatParticipants.chats.size();
                         int i15 = 0;
                         while (i15 < size) {
-                            i15 = com.google.android.gms.internal.cast.a6.h(-tL_privacyValueAllowChatParticipants.chats.get(i15).longValue(), this.G, i15, 1);
+                            i15 = com.google.android.gms.internal.play_billing.k3.h(-tL_privacyValueAllowChatParticipants.chats.get(i15).longValue(), this.G, i15, 1);
                         }
                     } else if (privacyRule instanceof TLRPC.TL_privacyValueAllowUsers) {
                         this.G.addAll(((TLRPC.TL_privacyValueAllowUsers) privacyRule).users);
@@ -1805,7 +1805,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
                     int size2 = tL_privacyValueAllowChatParticipants2.chats.size();
                     int i17 = 0;
                     while (i17 < size2) {
-                        i17 = com.google.android.gms.internal.cast.a6.h(-tL_privacyValueAllowChatParticipants2.chats.get(i17).longValue(), this.G, i17, 1);
+                        i17 = com.google.android.gms.internal.play_billing.k3.h(-tL_privacyValueAllowChatParticipants2.chats.get(i17).longValue(), this.G, i17, 1);
                         zArr6 = zArr6;
                         privacyRules2 = privacyRules2;
                         tL_privacyValueAllowChatParticipants2 = tL_privacyValueAllowChatParticipants2;
@@ -1822,7 +1822,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
                         TLRPC.TL_privacyValueDisallowChatParticipants tL_privacyValueDisallowChatParticipants = (TLRPC.TL_privacyValueDisallowChatParticipants) privacyRule2;
                         int i18 = 0;
                         for (int size3 = tL_privacyValueDisallowChatParticipants.chats.size(); i18 < size3; size3 = size3) {
-                            i18 = com.google.android.gms.internal.cast.a6.h(-tL_privacyValueDisallowChatParticipants.chats.get(i18).longValue(), this.H, i18, 1);
+                            i18 = com.google.android.gms.internal.play_billing.k3.h(-tL_privacyValueDisallowChatParticipants.chats.get(i18).longValue(), this.H, i18, 1);
                             zArr5 = zArr5;
                         }
                     } else {
@@ -2004,7 +2004,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity(), 0, this.resourceProvider);
                     alertDialog$Builder.a.R = LocaleController.getString(i12 == 1 ? R.string.CheckPrivacyInviteTitle : R.string.CheckPrivacyCallsTitle);
                     alertDialog$Builder.a.T = LocaleController.getString(i12 == 1 ? R.string.CheckPrivacyInviteText : R.string.CheckPrivacyCallsText);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.CheckPrivacyReview), new i2.q(this, i12, 17));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.CheckPrivacyReview), new i2.r(this, i12, 17));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ww0(this, 1));
                     alertDialog$Builder.o();
                     return;
@@ -2081,7 +2081,7 @@ public class PrivacyControlActivity extends org.telegram.ui.ActionBar.n2 impleme
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.CustomHelp);
                 }
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new fr0(7, this, globalMainSettings));
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new gn0(8, this, globalMainSettings));
                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
                 showDialog(alertDialog$Builder.a);
                 return;

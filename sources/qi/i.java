@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.concurrent.atomic.DesugarAtomicInteger;
 import java.net.IDN;
 import java.net.InetAddress;
@@ -38,7 +38,7 @@ import org.telegram.ui.web.a2;
 import org.telegram.ui.web.z1;
 import qg.g0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i implements n10 {
     public static i A;
@@ -83,7 +83,7 @@ public final class i implements n10 {
         new SecureRandom().nextBytes(bArr2);
         String encodeToString = Base64.encodeToString(bArr2, 11);
         this.h = encodeToString;
-        String concat2 = str3.isEmpty() ? "tdesktop-web-proxy-bridge-v1\n".concat(str2) : a6.k("tdesktop-web-proxy-bridge-v2\n", str2, "\n", str3);
+        String concat2 = str3.isEmpty() ? "tdesktop-web-proxy-bridge-v1\n".concat(str2) : k3.k("tdesktop-web-proxy-bridge-v2\n", str2, "\n", str3);
         Mac mac = Mac.getInstance("HmacSHA256");
         mac.init(new SecretKeySpec(bArr, "HmacSHA256"));
         this.g = concat + p5 + "?bridge=" + Base64.encodeToString(mac.doFinal(concat2.getBytes(StandardCharsets.UTF_8)), 11) + "#android=" + encodeToString;
@@ -242,7 +242,7 @@ public final class i implements n10 {
         }
         String trim = str.trim();
         if (trim.endsWith(".")) {
-            trim = a6.j(1, 0, trim);
+            trim = k3.j(1, 0, trim);
         }
         try {
             String lowerCase = IDN.toASCII(trim, 2).toLowerCase(Locale.US);

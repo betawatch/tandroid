@@ -1,13 +1,13 @@
 package f5;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import j$.util.DesugarCollections;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ le.b E;
@@ -70,7 +70,7 @@ public final class j extends com.googlecode.mp4parser.c {
             if (!str.endsWith(WebViewProviderFactoryBoundaryInterface.MULTI_COOKIE_VALUE_SEPARATOR)) {
                 this.s = false;
             } else {
-                this.f = a6.j(1, 0, this.f);
+                this.f = k3.j(1, 0, this.f);
                 this.s = true;
             }
         } catch (UnsupportedEncodingException e) {
@@ -105,10 +105,10 @@ public final class j extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("HandlerBox[handlerType=");
-        a6.p(te.a.b(w, this, this));
+        k3.p(te.a.b(w, this, this));
         sb2.append(this.e);
         sb2.append(";name=");
-        a6.p(te.a.b(E, this, this));
+        k3.p(te.a.b(E, this, this));
         return a1.g.s(sb2, this.f, "]");
     }
 }

@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.xq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class n8 extends FrameLayout {
     public final TextView a;
@@ -44,7 +44,7 @@ public final class n8 extends FrameLayout {
         linearLayout.setGravity(17);
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.messenger.q.m(15.0f, z12 ? a(0.6f) : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Te, d6Var), 1, textView);
+        org.telegram.messenger.g0.m(15.0f, z12 ? a(0.6f) : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Te, d6Var), 1, textView);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         textView.setSingleLine(true);
@@ -58,7 +58,7 @@ public final class n8 extends FrameLayout {
             a2 = w7.z5.a(-2.0f, z10 ? 5.0f : 15.0f, 5.0f, z10 ? 15.0f : 25.0f, 0.0f, -2, 51);
         }
         addView(linearLayout, a2);
-        TextView i10 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView, w7.z5.o(-2, -2, 1.0f, 16), context);
+        TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.o(-2, -2, 1.0f, 16), context);
         this.c = i10;
         i10.setTextColor(z12 ? a(0.6f) : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Te, d6Var));
         i10.setTextSize(1, 11.0f);
@@ -97,7 +97,7 @@ public final class n8 extends FrameLayout {
     }
 
     public final int a(float f7) {
-        return i0.b.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, this.v), (int) (f7 * 255.0f));
+        return i0.a.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, this.v), (int) (f7 * 255.0f));
     }
 
     public final void b(int i10, CharSequence charSequence) {
@@ -180,7 +180,7 @@ public final class n8 extends FrameLayout {
     @Override // android.view.ViewGroup
     public final void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
         if (view == this.b) {
-            i11 = org.telegram.messenger.q.C(16.0f, this.a.getMeasuredWidth(), i11);
+            i11 = org.telegram.messenger.g0.C(16.0f, this.a.getMeasuredWidth(), i11);
         }
         super.measureChildWithMargins(view, i10, i11, i12, i13);
     }

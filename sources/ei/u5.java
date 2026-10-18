@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.b61;
 import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class u5 implements uy {
     public final /* synthetic */ f6 a;
@@ -105,7 +105,7 @@ public final class u5 implements uy {
         alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
         alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new e1.c(this, 7));
-        i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     @Override // org.telegram.ui.Components.uy
@@ -149,18 +149,6 @@ public final class u5 implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
-    public final void q() {
-    }
-
-    @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.uy
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.uy
     public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
@@ -173,6 +161,10 @@ public final class u5 implements uy {
     }
 
     @Override // org.telegram.ui.Components.uy
+    public final void q() {
+    }
+
+    @Override // org.telegram.ui.Components.uy
     public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
     }
 
@@ -182,6 +174,14 @@ public final class u5 implements uy {
 
     @Override // org.telegram.ui.Components.uy
     public final /* synthetic */ void t(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.Components.uy
+    public final /* synthetic */ void u() {
+    }
+
+    @Override // org.telegram.ui.Components.uy
+    public final /* synthetic */ void w() {
     }
 
     @Override // org.telegram.ui.Components.uy

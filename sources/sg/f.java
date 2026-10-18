@@ -3,15 +3,15 @@ package sg;
 import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class f extends LinearLayout {
     public final TextView a;
@@ -24,12 +24,12 @@ public final class f extends LinearLayout {
         setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
         TextView textView = new TextView(context);
         this.a = textView;
-        a6.m(15.0f, 1, textView);
+        k3.m(15.0f, 1, textView);
         textView.setTextColor(h6.w0(h6.G6, d6Var));
         addView(textView, z5.p(-1, -2, 0.0f, 0, 16, 0, 16, 0));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        wh.o(h6.y6, d6Var, textView2, 1, 14.0f);
+        kk.o(h6.y6, d6Var, textView2, 1, 14.0f);
         addView(textView2, z5.p(-1, -2, 0.0f, 0, 16, 1, 16, 0));
         LimitPreviewView limitPreviewView = new LimitPreviewView(context, 0, 10, d6Var, 20);
         this.c = limitPreviewView;

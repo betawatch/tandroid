@@ -1,9 +1,9 @@
 package mc;
 
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b extends a {
     public static final /* synthetic */ le.b n;
@@ -18,7 +18,7 @@ public final class b extends a {
     }
 
     public final boolean equals(Object obj) {
-        a6.p(te.a.c(n, this, this, obj));
+        k3.p(te.a.c(n, this, this, obj));
         if (this == obj) {
             return true;
         }
@@ -31,7 +31,7 @@ public final class b extends a {
     }
 
     public final int hashCode() {
-        a6.p(te.a.b(r, this, this));
+        k3.p(te.a.b(r, this, this));
         ByteBuffer byteBuffer = this.e;
         if (byteBuffer != null) {
             return byteBuffer.hashCode();

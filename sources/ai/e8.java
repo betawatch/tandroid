@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.UserInfoActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class e8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new l8(tLObject, (c5.o) this.b, (c5.i) this.c, (org.telegram.ui.Wallet.s1) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.g, this.e, tL_error, 0));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new l8(tLObject, (c5.o) this.b, (c5.i) this.c, (sc) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));
+                AndroidUtilities.runOnUIThread(new l8(tLObject, (c5.o) this.b, (c5.i) this.c, (tc) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new l8((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.f, (TLRPC.UserFull) this.d, tLObject, (int[]) this.g, (ArrayList) this.e));

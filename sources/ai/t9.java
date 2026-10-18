@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -55,11 +55,11 @@ public final /* synthetic */ class t9 implements RequestDelegate {
                                         i13++;
                                         TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
                                         if (v9Var2.e(tL_starGiftCollection.collection_id) == null) {
-                                            x9 x9Var = new x9(i12, j10, false);
+                                            y9 y9Var = new y9(i12, j10, false);
                                             int i14 = tL_starGiftCollection.collection_id;
-                                            x9Var.c = true;
-                                            x9Var.d = i14;
-                                            v9Var2.h.put(Integer.valueOf(i14), x9Var);
+                                            y9Var.c = true;
+                                            y9Var.d = i14;
+                                            v9Var2.h.put(Integer.valueOf(i14), y9Var);
                                         }
                                     }
                                     v9Var2.d = true;
@@ -127,11 +127,11 @@ public final /* synthetic */ class t9 implements RequestDelegate {
                                         i13++;
                                         TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
                                         if (v9Var22.e(tL_starGiftCollection.collection_id) == null) {
-                                            x9 x9Var = new x9(i12, j10, false);
+                                            y9 y9Var = new y9(i12, j10, false);
                                             int i14 = tL_starGiftCollection.collection_id;
-                                            x9Var.c = true;
-                                            x9Var.d = i14;
-                                            v9Var22.h.put(Integer.valueOf(i14), x9Var);
+                                            y9Var.c = true;
+                                            y9Var.d = i14;
+                                            v9Var22.h.put(Integer.valueOf(i14), y9Var);
                                         }
                                     }
                                     v9Var22.d = true;
@@ -200,11 +200,11 @@ public final /* synthetic */ class t9 implements RequestDelegate {
                                         i13++;
                                         TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
                                         if (v9Var22.e(tL_starGiftCollection.collection_id) == null) {
-                                            x9 x9Var = new x9(i122, j10, false);
+                                            y9 y9Var = new y9(i122, j10, false);
                                             int i14 = tL_starGiftCollection.collection_id;
-                                            x9Var.c = true;
-                                            x9Var.d = i14;
-                                            v9Var22.h.put(Integer.valueOf(i14), x9Var);
+                                            y9Var.c = true;
+                                            y9Var.d = i14;
+                                            v9Var22.h.put(Integer.valueOf(i14), y9Var);
                                         }
                                     }
                                     v9Var22.d = true;

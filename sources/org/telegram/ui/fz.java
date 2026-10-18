@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fz implements Runnable {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final /* synthetic */ class fz implements Runnable {
                 u60Var.R.M(0);
                 break;
             case 10:
-                org.telegram.messenger.q.q(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(((x60) obj).c), R.raw.done, 36);
+                org.telegram.messenger.g0.q(R.string.GroupsEmojiPackUpdated, org.telegram.ui.Components.xc.a0(((x60) obj).c), R.raw.done, 36);
                 break;
             case 11:
                 l70 l70Var = (l70) obj;
@@ -201,9 +201,9 @@ public final /* synthetic */ class fz implements Runnable {
                 break;
             case 17:
                 ib0 ib0Var = (ib0) obj;
-                zh.b1 b1Var = ib0Var.d;
-                if (b1Var != null) {
-                    ib0Var.c0(b1Var.getCurrentLink());
+                zh.t0 t0Var = ib0Var.d;
+                if (t0Var != null) {
+                    ib0Var.d0(t0Var.getCurrentLink());
                     break;
                 }
                 break;

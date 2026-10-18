@@ -19,7 +19,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
@@ -48,8 +47,8 @@ import org.telegram.ui.j30;
 import org.telegram.ui.s50;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public abstract class l0 extends FrameLayout {
     public boolean A0;
     public ValueAnimator B0;
@@ -149,16 +148,16 @@ public abstract class l0 extends FrameLayout {
         d0Var.setImageDrawable(g2Var);
         d0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         d0Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        d0Var.setBackground(h6.g0(i0.b.o(-1, 55), 1, -1));
+        d0Var.setBackground(h6.g0(i0.a.o(-1, 55), 1, -1));
         View view = new View(context);
         this.m0 = view;
-        GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{0, i0.b.o(-16777216, 114)});
+        GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{0, i0.a.o(-16777216, 114)});
         this.a0 = gradientDrawable;
         view.setBackground(gradientDrawable);
         addView(view, z5.d(120.0f, -1));
         View view2 = new View(context);
         this.n0 = view2;
-        GradientDrawable gradientDrawable2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0, i0.b.o(-16777216, 114)});
+        GradientDrawable gradientDrawable2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0, i0.a.o(-16777216, 114)});
         this.b0 = gradientDrawable2;
         view2.setBackground(gradientDrawable2);
         view2.setVisibility((call == null || !h()) ? 8 : 0);
@@ -188,7 +187,7 @@ public abstract class l0 extends FrameLayout {
         e0 e0Var = new e0(j30Var, context);
         this.l0 = e0Var;
         int dp = AndroidUtilities.dp(20.0f);
-        int o10 = i0.b.o(-1, 100);
+        int o10 = i0.a.o(-1, 100);
         org.telegram.ui.Cells.z j02 = h6.j0(dp, dp, dp, dp, 0, o10, o10);
         f0 f0Var = new f0(j30Var, context, j02);
         this.f0 = f0Var;
@@ -229,11 +228,11 @@ public abstract class l0 extends FrameLayout {
         addView(e0Var, z5.e(56, -1, 51));
         TextView textView = new TextView(context);
         this.d0 = textView;
-        org.telegram.messenger.q.m(15.0f, -1, 1, textView);
+        org.telegram.messenger.g0.m(15.0f, -1, 1, textView);
         textView.setText(LocaleController.getString(R.string.CallVideoPin));
         TextView textView2 = new TextView(context);
         this.e0 = textView2;
-        org.telegram.messenger.q.m(15.0f, -1, 1, textView2);
+        org.telegram.messenger.g0.m(15.0f, -1, 1, textView2);
         textView2.setText(LocaleController.getString(R.string.CallVideoUnpin));
         addView(textView, z5.e(-2, -2, 51));
         addView(textView2, z5.e(-2, -2, 51));
@@ -245,10 +244,10 @@ public abstract class l0 extends FrameLayout {
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrPipMode));
         int dp4 = AndroidUtilities.dp(4.0f);
         imageView.setPadding(dp4, dp4, dp4, dp4);
-        imageView.setBackground(h6.g0(i0.b.o(-1, 55), 1, -1));
+        imageView.setBackground(h6.g0(i0.a.o(-1, 55), 1, -1));
         imageView.setOnClickListener(new g51(3, j30Var, s50Var));
         addView(imageView, z5.a(32.0f, 12.0f, 12.0f, 12.0f, 12.0f, 32, 53));
-        g0 g0Var = new g0(j30Var, context, h6.c0(AndroidUtilities.dp(18.0f), i0.b.o(h6.x0(null, h6.tg, false), 204)));
+        g0 g0Var = new g0(j30Var, context, h6.c0(AndroidUtilities.dp(18.0f), i0.a.o(h6.x0(null, h6.tg, false), 204)));
         this.I = g0Var;
         k9 k9Var = new k9(context, true);
         this.J = k9Var;
@@ -504,15 +503,15 @@ public abstract class l0 extends FrameLayout {
         float currentActionBarHeight = ((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - textView.getMeasuredHeight()) / 2.0f) - AndroidUtilities.dp(1.0f);
         yr yrVar = this.c0;
         float f15 = yrVar.g;
-        float x10 = (a6.x(1.0f, f15, measuredWidth2, measuredWidth4 * f15) - AndroidUtilities.dp(21.0f)) - (s50.G3 ? AndroidUtilities.dp(328.0f) : s50.F3 ? AndroidUtilities.dp(180.0f) : 0);
-        textView.setTranslationX(x10);
-        textView2.setTranslationX(x10);
+        float y10 = (com.google.android.gms.internal.play_billing.k3.y(1.0f, f15, measuredWidth2, measuredWidth4 * f15) - AndroidUtilities.dp(21.0f)) - (s50.G3 ? AndroidUtilities.dp(328.0f) : s50.F3 ? AndroidUtilities.dp(180.0f) : 0);
+        textView.setTranslationX(y10);
+        textView2.setTranslationX(y10);
         textView.setTranslationY(currentActionBarHeight);
         textView2.setTranslationY(currentActionBarHeight);
         f0 f0Var = this.f0;
-        f0Var.setTranslationX(x10 - AndroidUtilities.dp(36.0f));
+        f0Var.setTranslationX(y10 - AndroidUtilities.dp(36.0f));
         f0Var.setTranslationY((org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - f0Var.getMeasuredHeight()) / 2.0f);
-        e0Var.setTranslationX(x10 - AndroidUtilities.dp(44.0f));
+        e0Var.setTranslationX(y10 - AndroidUtilities.dp(44.0f));
         if (h()) {
             textView.setAlpha(0.0f);
             textView2.setAlpha(0.0f);

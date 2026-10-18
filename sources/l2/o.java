@@ -9,12 +9,12 @@ import c3.j0;
 import e2.m0;
 import e2.x;
 import org.telegram.ui.Components.ep0;
-import u2.c1;
+import u2.b1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class o implements j0 {
-    public final c1 a;
+    public final b1 a;
     public final qf.b b = new qf.b(22);
     public final l3.a c = new l3.a();
     public long d = -9223372036854775807L;
@@ -22,7 +22,7 @@ public final class o implements j0 {
 
     public o(p pVar, androidx.biometric.e eVar) {
         this.e = pVar;
-        this.a = new c1(eVar, null, null);
+        this.a = new b1(eVar, null, null);
     }
 
     @Override // c3.j0
@@ -70,11 +70,11 @@ public final class o implements j0 {
                 }
             }
         }
-        c1 c1Var = this.a;
-        ep0 ep0Var = c1Var.a;
-        synchronized (c1Var) {
-            int i13 = c1Var.s;
-            j11 = i13 == 0 ? -1L : c1Var.j(i13);
+        b1 b1Var = this.a;
+        ep0 ep0Var = b1Var.a;
+        synchronized (b1Var) {
+            int i13 = b1Var.s;
+            j11 = i13 == 0 ? -1L : b1Var.j(i13);
         }
         ep0Var.b(j11);
     }
@@ -86,16 +86,16 @@ public final class o implements j0 {
 
     @Override // c3.j0
     public final int f(b2.o oVar, int i10, boolean z10) {
-        c1 c1Var = this.a;
-        c1Var.getClass();
-        return c1Var.f(oVar, i10, z10);
+        b1 b1Var = this.a;
+        b1Var.getClass();
+        return b1Var.f(oVar, i10, z10);
     }
 
     @Override // c3.j0
     public final void g(x xVar, int i10, int i11) {
-        c1 c1Var = this.a;
-        c1Var.getClass();
-        c1Var.g(xVar, i10, 0);
+        b1 b1Var = this.a;
+        b1Var.getClass();
+        b1Var.g(xVar, i10, 0);
     }
 
     @Override // c3.j0

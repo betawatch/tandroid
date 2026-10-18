@@ -6,7 +6,7 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class z5 extends rg.d {
     public final Paint h;
@@ -78,12 +78,12 @@ public final class z5 extends rg.d {
         if (i10 != 0) {
             float f11 = this.r;
             if (f11 != 1.0f) {
-                this.r = org.telegram.ui.Cells.t0.c(min, 150.0f, f11, 1.0f);
+                this.r = org.telegram.ui.Cells.c1.c(min, 150.0f, f11, 1.0f);
                 invalidate();
                 if (i11 != 0) {
                     float f12 = this.s;
                     if (f12 != 1.0f) {
-                        this.s = org.telegram.ui.Cells.t0.c(min, 150.0f, f12, 1.0f);
+                        this.s = org.telegram.ui.Cells.c1.c(min, 150.0f, f12, 1.0f);
                         invalidate();
                         f7 = this.s;
                         Paint paint = this.h;
@@ -133,7 +133,7 @@ public final class z5 extends rg.d {
                 if (i11 == 0) {
                     float f15 = this.s;
                     if (f15 != 0.0f) {
-                        this.s = org.telegram.ui.Cells.t0.v(min, 150.0f, f15, 0.0f);
+                        this.s = org.telegram.ui.Cells.c1.v(min, 150.0f, f15, 0.0f);
                         invalidate();
                     }
                 }
@@ -149,7 +149,7 @@ public final class z5 extends rg.d {
         if (i10 == 0) {
             float f16 = this.r;
             if (f16 != 0.0f) {
-                this.r = org.telegram.ui.Cells.t0.v(min, 150.0f, f16, 0.0f);
+                this.r = org.telegram.ui.Cells.c1.v(min, 150.0f, f16, 0.0f);
                 invalidate();
             }
         }

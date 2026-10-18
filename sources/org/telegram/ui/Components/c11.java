@@ -9,7 +9,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class c11 extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -28,7 +28,7 @@ public final class c11 extends FrameLayout {
         LaunchActivity launchActivity = ca0Var.a;
         ArrayList arrayList = launchActivity.d0;
         if (!arrayList.isEmpty()) {
-            ((org.telegram.ui.ActionBar.n2) i0.a.h(1, arrayList)).onResume();
+            ((org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList)).onResume();
         }
         launchActivity.C0.animate().alpha(0.0f).setDuration(150L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.fz(ca0Var, 16)).start();
         TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();

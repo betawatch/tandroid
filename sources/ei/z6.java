@@ -33,7 +33,7 @@ import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class z6 extends View implements r2 {
     public boolean A0;
@@ -464,7 +464,7 @@ public final class z6 extends View implements r2 {
         float f41 = lerp + lerp2;
         rectF4.set(f39, f40 - lerp2, f41, f40 + lerp2);
         float f42 = f12 - f11;
-        int f43 = i0.b.f(max * f42, -1, -577231);
+        int f43 = i0.a.f(max * f42, -1, -577231);
         Paint paint4 = this.r;
         paint4.setColor(f43);
         if (f11 > f13) {
@@ -630,7 +630,7 @@ public final class z6 extends View implements r2 {
         if (d18 < 1.0f) {
             canvas3.save();
             f26 = f16;
-            float z12 = org.telegram.messenger.q.z(1.0f, d18, ycVar4.a(0.2f), f26);
+            float z12 = org.telegram.messenger.g0.z(1.0f, d18, ycVar4.a(0.2f), f26);
             canvas3.scale(z12, z12, this.l0, this.j0);
             canvas3.rotate(f6Var2.d(this.M, false) - getRotation(), this.l0, this.j0);
             canvas3.drawCircle(this.l0, this.j0, AndroidUtilities.dp(22.0f), this.w);
@@ -712,7 +712,7 @@ public final class z6 extends View implements r2 {
                 a(pointF6.x, pointF6.y, d28 + 1.5707963705062866d, f71, this.V0);
                 a(pointF7.x, pointF7.y, d29 - 1.5707963705062866d, f71, this.W0);
                 float f72 = f18;
-                float C = com.google.android.gms.internal.cast.a6.C(f19, f22, f72, f7);
+                float C = com.google.android.gms.internal.play_billing.k3.C(f19, f22, f72, f7);
                 if (C > 0.0f) {
                     Path path3 = this.N0;
                     path3.rewind();
@@ -979,13 +979,13 @@ public final class z6 extends View implements r2 {
 
     @Override // ei.r2
     public void setInvert(float f7) {
-        this.s.setColor(i0.b.f(f7, -1, -16777216));
-        this.w.setColor(i0.b.f(f7, 1677721600, 369098752));
-        this.E.setColor(i0.b.f(f7, 1493172223, 285212671));
-        this.F.setColor(i0.b.f(f7, 402653184, 805306368));
-        int f10 = i0.b.f(f7, -1, -16777216);
+        this.s.setColor(i0.a.f(f7, -1, -16777216));
+        this.w.setColor(i0.a.f(f7, 1677721600, 369098752));
+        this.E.setColor(i0.a.f(f7, 1493172223, 285212671));
+        this.F.setColor(i0.a.f(f7, 402653184, 805306368));
+        int f10 = i0.a.f(f7, -1, -16777216);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         this.d.setColorFilter(new PorterDuffColorFilter(f10, mode));
-        this.f.setColorFilter(new PorterDuffColorFilter(i0.b.f(f7, -1, -16777216), mode));
+        this.f.setColorFilter(new PorterDuffColorFilter(i0.a.f(f7, -1, -16777216), mode));
     }
 }

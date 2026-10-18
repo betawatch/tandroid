@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class gf0 extends FrameLayout {
     public TextView a;
@@ -52,7 +52,7 @@ public final class gf0 extends FrameLayout {
         if (r72 != null) {
             measureChildWithMargins(r72, i10, 0, i11, 0);
         }
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.q.y(20.0f, textView2.getMeasuredHeight() + textView.getMeasuredHeight(), AndroidUtilities.dp(64.0f)) + (this.e ? 1 : 0));
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.y(20.0f, textView2.getMeasuredHeight() + textView.getMeasuredHeight(), AndroidUtilities.dp(64.0f)) + (this.e ? 1 : 0));
     }
 
     public void setChecked(boolean z10) {

@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import m2.t;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class g extends lf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -151,14 +151,14 @@ public final class g extends lf.a {
                     try {
                         if (e7.charAt(0) == '(') {
                             int indexOf = e7.indexOf(41);
-                            if (indexOf > 1 && (i10 = i0.a.b(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
+                            if (indexOf > 1 && (i10 = i2.d.b(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
                                 this.h = e7.substring(i12);
                             }
                         } else {
-                            i10 = i0.a.b(Integer.parseInt(e7));
+                            i10 = i2.d.b(Integer.parseInt(e7));
                         }
                         if (i10 != 0) {
-                            this.h = i0.a.d(i10);
+                            this.h = i2.d.d(i10);
                             return;
                         }
                         return;

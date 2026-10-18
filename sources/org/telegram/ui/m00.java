@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m00 extends pg.b {
     public final Context d;
@@ -117,10 +117,10 @@ public final class m00 extends pg.b {
                     p00Var.I.setText(LocaleController.getString(R.string.FolderTagColor));
                     break;
                 case 10:
-                    gp0 gp0Var = (gp0) view;
-                    gp0Var.setCloseAsLock(!p00Var.getUserConfig().isPremium());
-                    gp0Var.a(p00Var.getUserConfig().isPremium() ? p00Var.E : -1, false);
-                    gp0Var.setOnColorClick(new org.telegram.ui.Components.qy(9, this, gp0Var));
+                    hp0 hp0Var = (hp0) view;
+                    hp0Var.setCloseAsLock(!p00Var.getUserConfig().isPremium());
+                    hp0Var.a(p00Var.getUserConfig().isPremium() ? p00Var.E : -1, false);
+                    hp0Var.setOnColorClick(new org.telegram.ui.Components.qy(9, this, hp0Var));
                     break;
                 case 11:
                     e00 e00Var = (e00) view;
@@ -214,7 +214,7 @@ public final class m00 extends pg.b {
                 view = j00Var;
                 break;
             case 3:
-                view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+                view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 4:
                 vz vzVar = new vz(context);
@@ -265,7 +265,7 @@ public final class m00 extends pg.b {
                 Activity parentActivity = p00Var.getParentActivity();
                 i13 = ((org.telegram.ui.ActionBar.n2) p00Var).currentAccount;
                 d6Var2 = ((org.telegram.ui.ActionBar.n2) p00Var).resourceProvider;
-                view = new gp0(2, i13, parentActivity, d6Var2);
+                view = new hp0(2, i13, parentActivity, d6Var2);
                 break;
             case 11:
                 d6Var3 = ((org.telegram.ui.ActionBar.n2) p00Var).resourceProvider;

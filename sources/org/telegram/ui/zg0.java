@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zg0 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,8 +47,8 @@ public final /* synthetic */ class zg0 implements Runnable {
         TLRPC.Chat chat;
         String formatString;
         org.telegram.ui.Components.qc M;
-        eo0 eo0Var;
-        eo0 eo0Var2;
+        fo0 fo0Var;
+        fo0 fo0Var2;
         hk hkVar;
         String str = "";
         int i12 = 18;
@@ -300,53 +300,53 @@ public final /* synthetic */ class zg0 implements Runnable {
                 ((sm0) this.b).a.K = ((TLRPC.TL_error) this.c).text;
                 break;
             case 14:
-                fo0 fo0Var = (fo0) this.b;
+                go0 go0Var = (go0) this.b;
                 View view = (View) this.c;
-                fo0Var.D0(false);
+                go0Var.D0(false);
                 view.callOnClick();
                 break;
             case 15:
-                fo0 fo0Var2 = (fo0) this.b;
+                go0 go0Var2 = (go0) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
-                fo0Var2.H0(true, false);
+                go0Var2.H0(true, false);
                 if (tL_error2 != null) {
                     if (tL_error2.text.startsWith("CODE_INVALID")) {
-                        org.telegram.ui.Cells.j3 j3Var = fo0Var2.S;
+                        org.telegram.ui.Cells.j3 j3Var = go0Var2.S;
                         try {
                             j3Var.performHapticFeedback(3, 2);
                         } catch (Exception unused) {
                         }
                         AndroidUtilities.shakeViewSpring(j3Var, 2.5f);
-                        org.telegram.ui.Cells.j3 j3Var2 = fo0Var2.S;
+                        org.telegram.ui.Cells.j3 j3Var2 = go0Var2.S;
                         j3Var2.a.setText("");
                         j3Var2.b = false;
                         j3Var2.setWillNotDraw(true);
                         break;
                     } else if (tL_error2.text.startsWith("FLOOD_WAIT")) {
                         int intValue = Utilities.parseInt((CharSequence) tL_error2.text).intValue();
-                        fo0Var2.F0(LocaleController.getString(R.string.AppName), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                        go0Var2.F0(LocaleController.getString(R.string.AppName), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
                         break;
                     } else {
-                        fo0Var2.F0(LocaleController.getString(R.string.AppName), tL_error2.text);
+                        go0Var2.F0(LocaleController.getString(R.string.AppName), tL_error2.text);
                         break;
                     }
-                } else if (fo0Var2.getParentActivity() != null) {
-                    cn0 cn0Var = fo0Var2.d0;
+                } else if (go0Var2.getParentActivity() != null) {
+                    cn0 cn0Var = go0Var2.d0;
                     if (cn0Var != null) {
                         AndroidUtilities.cancelRunOnUIThread(cn0Var);
-                        fo0Var2.d0 = null;
+                        go0Var2.d0 = null;
                     }
-                    fo0Var2.t0();
+                    go0Var2.t0();
                     break;
                 }
                 break;
             case 16:
-                fo0.W((fo0) this.b, (TLRPC.TL_payments_validatedRequestedInfo) this.c);
+                go0.W((go0) this.b, (TLRPC.TL_payments_validatedRequestedInfo) this.c);
                 break;
             case 17:
-                fo0 fo0Var3 = (fo0) this.b;
+                go0 go0Var3 = (go0) this.b;
                 TLRPC.Message[] messageArr = (TLRPC.Message[]) this.c;
-                Context parentActivity = fo0Var3.getParentActivity();
+                Context parentActivity = go0Var3.getParentActivity();
                 if (parentActivity == null) {
                     parentActivity = ApplicationLoader.applicationContext;
                 }
@@ -354,30 +354,30 @@ public final /* synthetic */ class zg0 implements Runnable {
                     parentActivity = LaunchActivity.H1;
                 }
                 if (parentActivity != null) {
-                    fo0Var3.a1 = true;
-                    fo0Var3.f1 = 1;
-                    TLRPC.InputInvoice inputInvoice = fo0Var3.b1;
+                    go0Var3.a1 = true;
+                    go0Var3.f1 = 1;
+                    TLRPC.InputInvoice inputInvoice = go0Var3.b1;
                     boolean z10 = inputInvoice instanceof TLRPC.TL_inputInvoiceStars;
                     boolean z11 = z10 && (((TLRPC.TL_inputInvoiceStars) inputInvoice).purpose instanceof TLRPC.TL_inputStorePaymentStarsGift);
                     boolean z12 = z10 && (((TLRPC.TL_inputInvoiceStars) inputInvoice).purpose instanceof TLRPC.TL_inputStorePaymentStarsGiveaway);
-                    if (!z10 && (eo0Var2 = fo0Var3.Z0) != null) {
-                        eo0Var2.c(1);
+                    if (!z10 && (fo0Var2 = go0Var3.Z0) != null) {
+                        fo0Var2.c(1);
                     }
-                    fo0Var3.t0();
-                    if (z10 && (eo0Var = fo0Var3.Z0) != null) {
-                        eo0Var.c(fo0Var3.f1);
+                    go0Var3.t0();
+                    if (z10 && (fo0Var = go0Var3.Z0) != null) {
+                        fo0Var.c(go0Var3.f1);
                     }
-                    long r02 = fo0Var3.r0();
+                    long r02 = go0Var3.r0();
                     if (r02 > 0) {
-                        str = UserObject.getForcedFirstName(fo0Var3.getMessagesController().getUser(Long.valueOf(r02)));
-                    } else if (r02 < 0 && (chat = fo0Var3.getMessagesController().getChat(Long.valueOf(-r02))) != null) {
+                        str = UserObject.getForcedFirstName(go0Var3.getMessagesController().getUser(Long.valueOf(r02)));
+                    } else if (r02 < 0 && (chat = go0Var3.getMessagesController().getChat(Long.valueOf(-r02))) != null) {
                         str = chat.title;
                     }
-                    long q02 = fo0Var3.q0();
+                    long q02 = go0Var3.q0();
                     int i21 = z10 ? (z11 || z12) ? R.raw.stars_send : R.raw.stars_topup : R.raw.payment_success;
                     String string = z10 ? LocaleController.getString(z12 ? R.string.StarsGiveawaySentPopup : z11 ? R.string.StarsGiftSentPopup : R.string.StarsAcquired) : null;
                     if (!z10) {
-                        formatString = LocaleController.formatString(R.string.PaymentInfoHint, fo0Var3.R0[0], fo0Var3.q0);
+                        formatString = LocaleController.formatString(R.string.PaymentInfoHint, go0Var3.R0[0], go0Var3.q0);
                     } else if (z12) {
                         formatString = LocaleController.formatPluralStringComma("StarsGiveawaySentPopupInfo", (int) q02);
                     } else {
@@ -397,7 +397,7 @@ public final /* synthetic */ class zg0 implements Runnable {
                         qcVar.r = false;
                         qcVar.j = 5000;
                         if (messageArr[0] != null) {
-                            ci.z3 z3Var = new ci.z3(fo0Var3, qcVar, z11, messageArr, 3);
+                            ci.z3 z3Var = new ci.z3(go0Var3, qcVar, z11, messageArr, 3);
                             org.telegram.ui.Components.ub ubVar = qcVar.e;
                             if (ubVar != null) {
                                 ubVar.setOnClickListener(z3Var);
@@ -426,10 +426,10 @@ public final /* synthetic */ class zg0 implements Runnable {
                 }
                 break;
             case 20:
-                ai.v2 v2Var = (ai.v2) this.b;
+                ai.w2 w2Var = (ai.w2) this.b;
                 Bitmap bitmap = (Bitmap) this.c;
                 Drawable[] drawableArr2 = PhotoViewer.U8;
-                v2Var.run(bitmap);
+                w2Var.run(bitmap);
                 break;
             case 21:
                 PhotoViewer photoViewer3 = (PhotoViewer) this.b;

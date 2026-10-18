@@ -24,10 +24,9 @@ import org.telegram.tgnet.TLRPC;
 import v7.u6;
 import x8.m;
 import y8.e0;
-import zh.m0;
-import zh.p0;
+import zh.f0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class c implements w2.a, OnCompleteListener {
     public final Object a;
@@ -703,31 +702,31 @@ public final class c implements w2.a, OnCompleteListener {
 
     public void i(int i10) {
         TLRPC.TL_exportedNoPaidMessagesToken b10;
-        p0 p0Var = ((m0) this.a).e;
-        if (p0Var != null) {
-            int i11 = p0Var.a;
-            if (p0Var.d == i10) {
+        zh.i0 i0Var = ((f0) this.a).e;
+        if (i0Var != null) {
+            int i11 = i0Var.a;
+            if (i0Var.d == i10) {
                 return;
             }
-            if (p0Var.c.d && i10 == 2) {
+            if (i0Var.c.d && i10 == 2) {
                 i10 = 1;
             }
-            p0Var.d = i10;
-            MessagesController.getMainSettings(i11).edit().putBoolean("qrNoPaidPermanent", p0Var.d == 2).apply();
-            int i12 = p0Var.d;
+            i0Var.d = i10;
+            MessagesController.getMainSettings(i11).edit().putBoolean("qrNoPaidPermanent", i0Var.d == 2).apply();
+            int i12 = i0Var.d;
             if (i12 == 0) {
-                if (p0Var.n != 0) {
-                    ConnectionsManager.getInstance(i11).cancelRequest(p0Var.n, true);
-                    p0Var.n = 0;
+                if (i0Var.n != 0) {
+                    ConnectionsManager.getInstance(i11).cancelRequest(i0Var.n, true);
+                    i0Var.n = 0;
                     return;
                 }
                 return;
             }
-            if (i12 == 2 && (b10 = p0Var.b()) != null) {
-                p0Var.f = b10;
-                p0Var.b.setFreeLink(p0Var.c(b10));
+            if (i12 == 2 && (b10 = i0Var.b()) != null) {
+                i0Var.f = b10;
+                i0Var.b.setFreeLink(i0Var.c(b10));
             }
-            p0Var.h(false, p0Var.d == 1);
+            i0Var.h(false, i0Var.d == 1);
         }
     }
 

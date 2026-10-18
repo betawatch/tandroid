@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.c61;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class r9 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int d0 = 0;
@@ -515,8 +515,8 @@ public final class r9 extends org.telegram.ui.ActionBar.f3 implements Notificati
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, this.resourcesProvider);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.StoryRestrictions);
         alertDialog$Builder.a.T = AndroidUtilities.replaceCharSequence("%s", LocaleController.getString(R.string.StoryRestrictionsInfo), spannableStringBuilder);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new ai.s2(this, p9Var, runnable, 7));
-        i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Proceed), new ai.t2(this, p9Var, runnable, 7));
+        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
     }
 
     public final ArrayList i1() {

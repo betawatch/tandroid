@@ -2,10 +2,11 @@ package a3;
 
 import ah.d1;
 import ah.i1;
-import ai.fa;
+import ah.l1;
+import ai.ga;
 import ai.k7;
-import ai.m3;
-import ai.s2;
+import ai.n3;
+import ai.t2;
 import ai.u0;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -26,6 +27,7 @@ import ci.p3;
 import ci.q3;
 import ci.q4;
 import ci.r9;
+import ci.s2;
 import ci.s6;
 import ci.t6;
 import ci.x6;
@@ -65,12 +67,12 @@ import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import ug.l1;
+import ug.m1;
 import v7.q8;
 import w7.z5;
 import yh.b2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -120,14 +122,14 @@ public final /* synthetic */ class l0 implements Runnable {
             case 0:
                 n4.s sVar = (n4.s) this.b;
                 b2.w wVar = (b2.w) this.c;
-                i2.e eVar2 = (i2.e) this.d;
+                i2.f fVar = (i2.f) this.d;
                 m0 m0Var = (m0) sVar.c;
                 String str = e2.m0.a;
-                i2.g0 g0Var = ((i2.a0) m0Var).a;
-                g0Var.S = wVar;
-                j2.f fVar = g0Var.s;
-                j2.a p5 = fVar.p();
-                fVar.q(p5, 1017, new j2.e(p5, wVar, eVar2, 0));
+                i2.h0 h0Var = ((i2.b0) m0Var).a;
+                h0Var.S = wVar;
+                j2.f fVar2 = h0Var.s;
+                j2.a p5 = fVar2.p();
+                fVar2.q(p5, 1017, new j2.e(p5, wVar, fVar, 0));
                 return;
             case 1:
                 ai.x xVar = (ai.x) this.b;
@@ -144,7 +146,7 @@ public final /* synthetic */ class l0 implements Runnable {
             case 3:
                 k7 k7Var = (k7) this.b;
                 Long l4 = (Long) this.c;
-                k7Var.q2(l4.longValue(), new m3(k7Var, l4, (l1[]) this.d, 0));
+                k7Var.s2(l4.longValue(), new n3(k7Var, l4, (m1[]) this.d, 0));
                 return;
             case 4:
                 k7 k7Var2 = (k7) this.b;
@@ -160,7 +162,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 if (b2Var != null) {
                     b2Var.run();
                 }
-                i0.a.s(R.string.Gift2ResaleDisable, new Object[]{k7Var2.P1()}, k7Var2.getBulletinFactory(), R.raw.contact_check, 36);
+                i2.d.s(R.string.Gift2ResaleDisable, new Object[]{k7Var2.Q1()}, k7Var2.getBulletinFactory(), R.raw.contact_check, 36);
                 return;
             case 5:
                 k7 k7Var3 = (k7) this.b;
@@ -171,7 +173,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 k7Var3.getBulletinFactory().f0(tL_error, false);
                 return;
             case 6:
-                k7.J0((k7) this.b, (TLObject) this.c, (MessageObject) this.d);
+                k7.K0((k7) this.b, (TLObject) this.c, (MessageObject) this.d);
                 return;
             case 7:
                 Runnable runnable = (Runnable) this.b;
@@ -179,7 +181,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;
                 runnable.run();
                 cVar3.c(false);
-                k7.v2(twoStepVerificationActivity);
+                k7.x2(twoStepVerificationActivity);
                 return;
             case 8:
                 TLRPC.Document document3 = (TLRPC.Document) this.b;
@@ -195,7 +197,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 k7.U((k7) this.b, (org.telegram.ui.ActionBar.b2) this.c, (MessageObject) this.d);
                 return;
             case 10:
-                k7.k1((k7) this.b, (TL_stars.TL_starGiftUnique) this.c, (String) this.d);
+                k7.m1((k7) this.b, (TL_stars.TL_starGiftUnique) this.c, (String) this.d);
                 return;
             case 11:
                 TLObject tLObject2 = (TLObject) this.b;
@@ -224,20 +226,20 @@ public final /* synthetic */ class l0 implements Runnable {
                     callback.run((TLRPC.TL_payments_paymentFormStarGift) tLObject3);
                     return;
                 } else {
-                    fa.e(tL_error2 != null ? tL_error2.text : "NO_PAYMENT_FORM");
+                    ga.e(tL_error2 != null ? tL_error2.text : "NO_PAYMENT_FORM");
                     callback.run(null);
                     return;
                 }
             case 13:
-                fa faVar = (fa) this.b;
+                ga gaVar = (ga) this.b;
                 TLObject tLObject4 = (TLObject) this.c;
                 Runnable runnable3 = (Runnable) this.d;
-                ArrayList arrayList = faVar.v;
-                boolean[] zArr = faVar.r;
-                ArrayList[] arrayListArr = faVar.q;
-                int i11 = faVar.a;
-                boolean z17 = !faVar.e;
-                faVar.c = System.currentTimeMillis();
+                ArrayList arrayList = gaVar.v;
+                boolean[] zArr = gaVar.r;
+                ArrayList[] arrayListArr = gaVar.q;
+                int i11 = gaVar.a;
+                boolean z17 = !gaVar.e;
+                gaVar.c = System.currentTimeMillis();
                 if (tLObject4 instanceof TL_stars.StarsStatus) {
                     TL_stars.StarsStatus starsStatus = (TL_stars.StarsStatus) tLObject4;
                     MessagesController.getInstance(i11).putUsers(starsStatus.users, false);
@@ -264,13 +266,13 @@ public final /* synthetic */ class l0 implements Runnable {
                         boolean[] zArr3 = zArr;
                         for (?? r22 = z13; r22 < 3; r22++) {
                             zArr3[r22] = (!arrayListArr[r22].isEmpty() || zArr3[r22]) ? z10 : z13;
-                            boolean[] zArr4 = faVar.u;
+                            boolean[] zArr4 = gaVar.u;
                             boolean z20 = (starsStatus.flags & 1) == 0 ? z10 : z13;
                             zArr4[r22] = z20;
                             if (z20) {
-                                faVar.t[r22] = z13;
+                                gaVar.t[r22] = z13;
                             }
-                            faVar.s[r22] = zArr4[r22] ? null : starsStatus.next_offset;
+                            gaVar.s[r22] = zArr4[r22] ? null : starsStatus.next_offset;
                         }
                         z14 = z10;
                     } else {
@@ -280,28 +282,28 @@ public final /* synthetic */ class l0 implements Runnable {
                     }
                     if (arrayList.isEmpty()) {
                         arrayList.addAll(starsStatus.subscriptions);
-                        faVar.x = z13;
-                        faVar.w = starsStatus.subscriptions_next_offset;
-                        faVar.y = (starsStatus.flags & 4) == 0 ? z10 : false;
+                        gaVar.x = z13;
+                        gaVar.w = starsStatus.subscriptions_next_offset;
+                        gaVar.y = (starsStatus.flags & 4) == 0 ? z10 : false;
                         z11 = z10;
                     } else {
                         z11 = false;
                     }
-                    long j10 = faVar.f.amount;
+                    long j10 = gaVar.f.amount;
                     TL_stars.StarsAmount starsAmount = starsStatus.balance;
                     if (j10 != starsAmount.amount) {
                         z17 = z10;
                     }
-                    faVar.f = starsAmount;
-                    faVar.g = 0L;
+                    gaVar.f = starsAmount;
+                    gaVar.g = 0L;
                     z12 = z14;
                 } else {
                     z10 = true;
                     z11 = false;
                     z12 = false;
                 }
-                faVar.d = false;
-                faVar.e = z10;
+                gaVar.d = false;
+                gaVar.e = z10;
                 if (z17) {
                     NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starBalanceUpdated, new Object[0]);
                 }
@@ -317,16 +319,16 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 return;
             case 14:
-                fa faVar2 = (fa) this.b;
+                ga gaVar2 = (ga) this.b;
                 HashSet hashSet = (HashSet) this.c;
                 Runnable runnable4 = (Runnable) this.d;
-                faVar2.getClass();
+                gaVar2.getClass();
                 Iterator it = hashSet.iterator();
                 while (it.hasNext()) {
                     Integer num = (Integer) it.next();
                     num.intValue();
-                    faVar2.Q.remove(num);
-                    faVar2.R.remove(num);
+                    gaVar2.Q.remove(num);
+                    gaVar2.R.remove(num);
                 }
                 runnable4.run();
                 return;
@@ -362,7 +364,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 IOnDoneCallback iOnDoneCallback = (IOnDoneCallback) this.b;
                 String str5 = (String) this.c;
                 try {
-                    androidx.car.app.utils.g.d(str5.concat(" onSuccess"), new s2(iOnDoneCallback, ((androidx.car.app.utils.a) this.d).a(), str5, true ? 1 : 0));
+                    androidx.car.app.utils.g.d(str5.concat(" onSuccess"), new t2(iOnDoneCallback, ((androidx.car.app.utils.a) this.d).a(), str5, true ? 1 : 0));
                     return;
                 } catch (RuntimeException e7) {
                     androidx.car.app.utils.g.f(iOnDoneCallback, str5, e7);
@@ -401,7 +403,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 ImageReceiver imageReceiver = q4Var.l3;
                 boolean[] zArr6 = {false};
                 n7 n7Var = q4Var.E0;
-                n7Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setListener(new ci.s2(true ? 1 : 0, n7Var)).setDuration(150L).start();
+                n7Var.animate().alpha(0.0f).scaleX(0.8f).scaleY(0.8f).setListener(new s2(true ? 1 : 0, n7Var)).setDuration(150L).start();
                 int dp = AndroidUtilities.dp(8.0f);
                 n7 n7Var2 = new n7(q4Var.getContext(), q4Var.x1);
                 q4Var.E0 = n7Var2;
@@ -415,9 +417,9 @@ public final /* synthetic */ class l0 implements Runnable {
                 } else {
                     eVar = null;
                 }
-                ah.e eVar3 = q4Var.m3;
-                if (eVar3 != null) {
-                    eVar3.d(q4Var);
+                ah.e eVar2 = q4Var.m3;
+                if (eVar2 != null) {
+                    eVar2.d(q4Var);
                     q4Var.m3 = eVar;
                 }
                 q4Var.p3 = false;
@@ -443,7 +445,7 @@ public final /* synthetic */ class l0 implements Runnable {
                         TL_stories.StoryItem storyItem4 = o4Var.a;
                         TL_stories.StoryViews storyViews = storyItem4.views;
                         storyViews.reactions_count++;
-                        ah.l1.b(null, storyItem4.sent_reaction, storyViews);
+                        l1.b(null, storyItem4.sent_reaction, storyViews);
                         q4Var.k1(true);
                     }
                 }
@@ -481,7 +483,7 @@ public final /* synthetic */ class l0 implements Runnable {
                 d6 d6Var = (d6) this.c;
                 TL_stories.StoryItem storyItem5 = (TL_stories.StoryItem) this.d;
                 q4 q4Var2 = h4Var.l;
-                f5.R(q4Var2.getContext(), null, d6Var, new s2(h4Var, storyItem5, d6Var, i10));
+                f5.R(q4Var2.getContext(), null, d6Var, new t2(h4Var, storyItem5, d6Var, i10));
                 h4 h4Var2 = q4Var2.t1;
                 if (h4Var2 != null) {
                     h4Var2.a();

@@ -3,7 +3,6 @@ package org.telegram.ui;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Looper;
-import android.os.SystemClock;
 import android.util.LongSparseArray;
 import com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver;
 import java.io.File;
@@ -24,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ff0 implements Runnable {
     public final /* synthetic */ int a;
@@ -40,47 +39,47 @@ public final /* synthetic */ class ff0 implements Runnable {
         switch (this.a) {
             case 0:
                 CallReceiver.checkLastReceivedCall();
-                return;
+                break;
             case 1:
                 org.telegram.ui.Components.xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                return;
+                break;
             case 2:
                 org.telegram.ui.Components.xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                return;
+                break;
             case 3:
                 Drawable[] drawableArr = PhotoViewer.U8;
-                return;
+                break;
             case 4:
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-                if (U == null || (a02 = org.telegram.ui.Components.xc.a0(U)) == null) {
-                    return;
+                if (U != null && (a02 = org.telegram.ui.Components.xc.a0(U)) != null) {
+                    org.telegram.ui.Components.qc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                    M.j = 5000;
+                    M.j();
+                    break;
                 }
-                org.telegram.ui.Components.qc M = a02.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
-                M.j = 5000;
-                M.j();
-                return;
+                break;
             case 5:
                 int i11 = j81.d0;
-                return;
+                break;
             case 6:
                 org.telegram.ui.ActionBar.h6.N = false;
                 org.telegram.ui.ActionBar.h6.E(false);
-                return;
+                break;
             case 7:
                 if (VoIPService.getSharedState() != null) {
                     VoIPService.getSharedState().acceptIncomingCall();
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 8:
                 org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
-                if (U2 == null) {
-                    return;
+                if (U2 != null) {
+                    org.telegram.ui.Components.qc M2 = org.telegram.ui.Components.xc.a0(U2).M(LocaleController.getString(R.string.WalletBackupDisabled), LocaleController.getString(R.string.WalletBackupDisabledInfo), R.raw.contact_check);
+                    M2.j = 5000;
+                    M2.j();
+                    break;
                 }
-                org.telegram.ui.Components.qc M2 = org.telegram.ui.Components.xc.a0(U2).M(LocaleController.getString(R.string.WalletBackupDisabled), LocaleController.getString(R.string.WalletBackupDisabledInfo), R.raw.contact_check);
-                M2.j = 5000;
-                M2.j();
-                return;
+                break;
             case 9:
                 CopyOnWriteArrayList copyOnWriteArrayList = org.telegram.ui.Wallet.q0.i;
                 Iterator it = copyOnWriteArrayList.iterator();
@@ -93,14 +92,14 @@ public final /* synthetic */ class ff0 implements Runnable {
                         runnable.run();
                     }
                 }
-                return;
+                break;
             case 10:
                 int[][] iArr = WallpapersListActivity.k0;
                 PhotoViewer.t1().G0(false, false);
-                return;
+                break;
             case 11:
                 Utilities.globalQueue.postRunnable(new ff0(13));
-                return;
+                break;
             case 12:
                 ArrayList arrayList = new ArrayList();
                 LongSparseArray longSparseArray = new LongSparseArray();
@@ -119,8 +118,8 @@ public final /* synthetic */ class ff0 implements Runnable {
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.t3(23, arrayList, longSparseArray));
-                return;
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.u3(23, arrayList, longSparseArray));
+                break;
             case 13:
                 try {
                     File file2 = new File(FileLoader.getDirectory(4), "webhistory.dat");
@@ -151,7 +150,7 @@ public final /* synthetic */ class ff0 implements Runnable {
                         FileOutputStream fileOutputStream = new FileOutputStream(file2);
                         fileOutputStream.write(serializedData3.toByteArray());
                         fileOutputStream.close();
-                        return;
+                        break;
                     } catch (Exception e7) {
                         FileLog.e(e7);
                         return;
@@ -161,45 +160,45 @@ public final /* synthetic */ class ff0 implements Runnable {
                     return;
                 }
             case 14:
-                return;
+                break;
             case 15:
                 qg.l0.b();
-                return;
+                break;
             case 16:
                 int i13 = AlarmManagerSchedulerBroadcastReceiver.a;
-                return;
+                break;
             case 17:
                 Looper myLooper = Looper.myLooper();
                 if (myLooper != null) {
                     myLooper.quit();
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 18:
                 Looper myLooper2 = Looper.myLooper();
                 if (myLooper2 != null) {
                     myLooper2.quit();
-                    return;
+                    break;
                 }
-                return;
+                break;
             case 19:
                 NotificationCenter.getInstance(UserConfig.selectedAccount).postNotificationNameOnUIThread(NotificationCenter.customStickerCreated, new Object[0]);
-                return;
+                break;
             case 20:
                 float[] fArr = sg.z1.U;
-                return;
+                break;
             case 21:
-                ug.l1.f0(0, null);
-                return;
+                ug.m1.f0(0, null);
+                break;
             case 22:
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                if (R == null) {
-                    return;
+                if (R != null) {
+                    org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new PremiumPreviewFragment(0, "gifts"), l2Var);
+                    break;
                 }
-                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
-                l2Var.a = true;
-                R.showAsSheet(new PremiumPreviewFragment(0, "gifts"), l2Var);
-                return;
+                break;
             case 23:
                 a5.a aVar = zf.e.B;
                 if (aVar != null) {
@@ -219,30 +218,12 @@ public final /* synthetic */ class ff0 implements Runnable {
                         Utilities.globalQueue.postRunnable(new qg.f0(arrayList4, 1));
                     }
                     zf.e.B = null;
-                    return;
+                    break;
                 }
-                return;
-            case 24:
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                ArrayList arrayList5 = zh.e.a;
-                synchronized (arrayList5) {
-                    try {
-                        for (int size4 = arrayList5.size() - 1; size4 >= 0; size4--) {
-                            ArrayList arrayList6 = zh.e.a;
-                            if (elapsedRealtime - ((zh.d) arrayList6.get(size4)).b >= 10000) {
-                                ((zh.d) arrayList6.remove(size4)).a.recycle();
-                            }
-                        }
-                        if (!zh.e.a.isEmpty()) {
-                            AndroidUtilities.runOnUIThread(zh.e.b, 10000L);
-                        }
-                    } finally {
-                    }
-                }
-                return;
+                break;
             default:
                 org.telegram.ui.Components.xc.X().N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
-                return;
+                break;
         }
     }
 

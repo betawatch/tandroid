@@ -3,57 +3,100 @@ package ai;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
+import android.text.SpannableString;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
-import org.telegram.ui.d00;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.kk;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class yc extends org.telegram.ui.Components.q6 {
-    public final /* synthetic */ int s = 0;
-    public final Object v;
-    public final /* synthetic */ ViewGroup w;
+public final class yc extends FrameLayout {
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final Drawable b;
+    public final Drawable c;
+    public final TextView d;
+    public final org.telegram.ui.Components.q6 e;
+    public SpannableString f;
+    public boolean h;
+    public int n;
+    public final org.telegram.ui.Components.f6 r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yc(zc zcVar, Context context, Drawable drawable) {
-        super(context, false, false, false);
-        this.w = zcVar;
-        this.v = drawable;
+    public yc(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.r = new org.telegram.ui.Components.f6(this, 0L, 500L, bs.h);
+        this.a = d6Var;
+        Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
+        this.b = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var), PorterDuff.Mode.SRC_IN));
+        this.c = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
+        setWillNotDraw(false);
+        TextView textView = new TextView(context);
+        this.d = textView;
+        kk.k(15.0f, 1, textView);
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        addView(textView, w7.z5.i(-2.0f, -2.0f, 8388627, 48.0f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, false, false, false);
+        this.e = q6Var;
+        q6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        q6Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
+        q6Var.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(q6Var, w7.z5.i(-2.0f, 21.0f, 8388629, 0.0f, 0.0f, 19.0f, 0.0f));
     }
 
     @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        switch (this.s) {
-            case 0:
-                Drawable drawable = (Drawable) this.v;
-                if (!((zc) this.w).d) {
-                    int measuredWidth = (int) ((getMeasuredWidth() - getDrawable().c()) - AndroidUtilities.dp(20.0f));
-                    drawable.setBounds(measuredWidth, wh.B(17.0f, getMeasuredHeight(), 2), AndroidUtilities.dp(17.0f) + measuredWidth, (AndroidUtilities.dp(17.0f) + getMeasuredHeight()) / 2);
-                    drawable.draw(canvas);
-                }
-                super.dispatchDraw(canvas);
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        float d = this.r.d(this.n, false);
+        float f7 = LocaleController.isRTL ? -1.0f : 1.0f;
+        float dp = AndroidUtilities.dp(24.0f);
+        float dp2 = AndroidUtilities.dp(24.0f);
+        float dp3 = AndroidUtilities.dp(2.5f);
+        float width = LocaleController.isRTL ? (getWidth() - AndroidUtilities.dp(19.0f)) - dp : AndroidUtilities.dp(19.0f);
+        int ceil = ((int) Math.ceil(d)) - 1;
+        while (true) {
+            if (ceil < 0) {
                 break;
-            default:
-                d00 d00Var = (d00) this.w;
-                int a2 = d00Var.w.a(d00Var.v, false);
-                setTextColor(a2);
-                Paint paint = (Paint) this.v;
-                paint.setColor(org.telegram.ui.ActionBar.h6.m1(org.telegram.ui.ActionBar.h6.I.q() ? 0.2f : 0.1f, a2));
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set((getWidth() - getDrawable().c()) - AndroidUtilities.dpf2(9.32f), (getHeight() - AndroidUtilities.dpf2(14.66f)) / 2.0f, getWidth(), (AndroidUtilities.dpf2(14.66f) + getHeight()) / 2.0f);
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
-                super.dispatchDraw(canvas);
-                break;
+            }
+            float clamp = Utilities.clamp(d - ceil, 1.0f, 0.0f);
+            float f10 = (((ceil - 1) - (1.0f - clamp)) * dp3 * f7) + width;
+            float measuredHeight = (getMeasuredHeight() - dp2) / 2.0f;
+            int i10 = (int) f10;
+            int i11 = (int) measuredHeight;
+            int i12 = (int) (f10 + dp);
+            int i13 = (int) (measuredHeight + dp2);
+            Drawable drawable = this.b;
+            drawable.setBounds(i10, i11, i12, i13);
+            int i14 = (int) (clamp * 255.0f);
+            drawable.setAlpha(i14);
+            drawable.draw(canvas);
+            Drawable drawable2 = this.c;
+            drawable2.setBounds(i10, i11, i12, i13);
+            drawable2.setAlpha(i14);
+            drawable2.draw(canvas);
+            ceil--;
+        }
+        if (this.h) {
+            org.telegram.ui.ActionBar.d6 d6Var = this.a;
+            Paint n10 = d6Var != null ? d6Var.n("paintDivider") : null;
+            if (n10 == null) {
+                n10 = org.telegram.ui.ActionBar.h6.k0;
+            }
+            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight(), n10);
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yc(d00 d00Var, Context context) {
-        super(context, false, true, true);
-        this.w = d00Var;
-        this.v = new Paint(1);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

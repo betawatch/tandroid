@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class t2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final class t2 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        int f7 = i0.b.f(1.0f, this.a, this.b);
+        int f7 = i0.a.f(1.0f, this.a, this.b);
         d3 d3Var = this.d;
         d3Var.Q = f7;
         d3Var.h();

@@ -17,10 +17,10 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.la0;
 import org.telegram.ui.n80;
-import org.telegram.ui.qo0;
+import org.telegram.ui.ro0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -60,17 +60,17 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                 ((eh) obj3).run((b2) obj, (String) obj2);
                 break;
             case 3:
-                k8.b0((k8) obj4, (Utilities.Callback) obj3, (j0) obj, (String) obj2);
+                n8.b0((n8) obj4, (Utilities.Callback) obj3, (j0) obj, (String) obj2);
                 break;
             case 4:
-                t9 t9Var = (t9) obj4;
+                w9 w9Var = (w9) obj4;
                 p pVar = (p) obj3;
                 TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
                 if (((String) obj2) == null) {
                     pVar.run(walletuseraddress != null ? walletuseraddress.address : null);
                     break;
                 } else {
-                    t9Var.V.setLoading(false);
+                    w9Var.V.setLoading(false);
                     break;
                 }
             case 5:
@@ -100,24 +100,24 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                 }
                 break;
             case 6:
-                ug.y yVar = (ug.y) obj4;
+                ug.z zVar = (ug.z) obj4;
                 TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption = (TL_stars.TL_starsGiveawayOption) obj3;
                 Boolean bool = (Boolean) obj;
                 String str3 = (String) obj2;
-                yVar.q0.a.setLoading(false);
-                if (yVar.getContext() != null) {
+                zVar.q0.a.setLoading(false);
+                if (zVar.getContext() != null) {
                     org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     la0 la0Var = LaunchActivity.H1.x0;
                     if (U != null) {
                         if (!bool.booleanValue()) {
                             if (str3 != null) {
-                                yVar.dismiss();
-                                i0.a.s(R.string.UnknownErrorCode, new Object[]{str3}, xc.a0(U), R.raw.error, 36);
+                                zVar.dismiss();
+                                i2.d.s(R.string.UnknownErrorCode, new Object[]{str3}, xc.a0(U), R.raw.error, 36);
                                 break;
                             }
                         } else {
-                            yVar.dismiss();
-                            sn W9 = sn.W9(-yVar.b0.id);
+                            zVar.dismiss();
+                            sn W9 = sn.W9(-zVar.b0.id);
                             U.presentFragment(W9);
                             U.whenFullyVisible(new uf.c(i11, W9, tL_starsGiveawayOption));
                             if (la0Var != null) {
@@ -131,7 +131,7 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
             case 7:
                 yh.p2 p2Var = (yh.p2) obj4;
                 ArrayList arrayList2 = (ArrayList) obj;
-                ArrayList arrayList3 = ((ai.x9) obj3).l;
+                ArrayList arrayList3 = ((ai.y9) obj3).l;
                 int size2 = arrayList3.size();
                 int i14 = 0;
                 while (i14 < size2) {
@@ -139,8 +139,8 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                     i14++;
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj6;
                     if (savedStarGift.pinned_to_top) {
-                        int i15 = qo0.a;
-                        f61 J = f61.J(qo0.class);
+                        int i15 = ro0.a;
+                        f61 J = f61.J(ro0.class);
                         J.G = savedStarGift;
                         J.K(p2Var.b == savedStarGift.gift.id);
                         J.u = 1;
@@ -149,17 +149,17 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                 }
                 break;
             default:
-                zh.p0 p0Var = (zh.p0) obj4;
+                zh.i0 i0Var = (zh.i0) obj4;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (p0Var.w == ((int[]) obj3)[0]) {
-                    p0Var.w = 0;
+                if (i0Var.w == ((int[]) obj3)[0]) {
+                    i0Var.w = 0;
                 }
                 if (tL_error2 != null) {
                     FileLog.e("QrShare: setShareTheme " + tL_error2.text);
-                    if (!p0Var.E) {
-                        zh.b1 b1Var = p0Var.b;
-                        b1Var.getClass();
-                        b1Var.W0(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
+                    if (!i0Var.E) {
+                        zh.t0 t0Var = i0Var.b;
+                        t0Var.getClass();
+                        t0Var.c1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
                         break;
                     }
                 }

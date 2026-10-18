@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewParent;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.dm0;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class y extends m0 {
     public int E;
@@ -91,14 +91,14 @@ public class y extends m0 {
             if (f12 == f13) {
                 uVar.r = b1Var2.a.getTranslationX();
             } else {
-                uVar.r = a6.x(f13, f12, uVar.x, f12);
+                uVar.r = k3.y(f13, f12, uVar.x, f12);
             }
             float f14 = uVar.b;
             float f15 = uVar.d;
             if (f14 == f15) {
                 uVar.s = b1Var2.a.getTranslationY();
             } else {
-                uVar.s = a6.x(f15, f14, uVar.x, f14);
+                uVar.s = k3.y(f15, f14, uVar.x, f14);
             }
             int save = canvas.save();
             vVar.m(canvas, recyclerView, uVar.e, uVar.r, uVar.s, uVar.f, false);

@@ -24,8 +24,8 @@ import org.telegram.ui.sn;
 import qg.g0;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
     public final Rect E;
     public ViewTreeObserver F;
@@ -107,7 +107,7 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         h20.d(j5Var, cVar.H.e);
         int i10 = h6.A6;
         sn snVar = cVar.d;
-        j5Var.setTextColor(i0.b.f(cVar.I.e, h6.w0(i10, snVar.getResourceProvider()), h6.w0(h6.p7, snVar.getResourceProvider())));
+        j5Var.setTextColor(i0.a.f(cVar.I.e, h6.w0(i10, snVar.getResourceProvider()), h6.w0(h6.p7, snVar.getResourceProvider())));
     }
 
     public e getAttachedMedia() {

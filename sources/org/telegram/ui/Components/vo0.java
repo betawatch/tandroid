@@ -32,7 +32,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class vo0 extends c91 implements org.telegram.ui.f10, NotificationCenter.NotificationCenterDelegate, ch.a {
     public static final /* synthetic */ int Y0 = 0;
@@ -117,7 +117,7 @@ public abstract class vo0 extends c91 implements org.telegram.ui.f10, Notificati
         if (i11 == 15) {
             ArrayList P3 = eyVar.P3(i13, i11, i12, true);
             ArrayList arrayList = new ArrayList();
-            for (int i14 = 0; i14 < P3.size(); i14 = com.google.android.gms.internal.cast.a6.h(((TLRPC.Dialog) P3.get(i14)).id, arrayList, i14, 1)) {
+            for (int i14 = 0; i14 < P3.size(); i14 = com.google.android.gms.internal.play_billing.k3.h(((TLRPC.Dialog) P3.get(i14)).id, arrayList, i14, 1)) {
             }
             this.b0.q0 = arrayList;
         }
@@ -1051,7 +1051,7 @@ public abstract class vo0 extends c91 implements org.telegram.ui.f10, Notificati
                 org.telegram.ui.x00 x00Var = this.L0;
                 oo0Var.A0 = x00Var;
                 if (x00Var != null) {
-                    ((org.telegram.ui.iv) x00Var).i(false, null, oo0Var.y0, oo0Var.z0);
+                    ((org.telegram.ui.jv) x00Var).i(false, null, oo0Var.y0, oo0Var.z0);
                 }
             }
         } else if (view instanceof org.telegram.ui.g10) {

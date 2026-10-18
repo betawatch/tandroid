@@ -8,10 +8,10 @@ import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.RichMessageLayout;
-import r.c;
+import r4.c;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class PredefMacros {
     static {
@@ -1253,7 +1253,7 @@ public class PredefMacros {
     public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(c.g("Invalid name for the command :", str));
+            throw new ParseException(c.h("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         Integer num = str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2));
@@ -1412,7 +1412,7 @@ public class PredefMacros {
     public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(c.g("Invalid name for the command :", str));
+            throw new ParseException(c.h("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], (str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2))).intValue());

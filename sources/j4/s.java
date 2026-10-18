@@ -2,11 +2,12 @@ package j4;
 
 import b2.v0;
 import c3.j0;
-import i2.m0;
+import e2.m0;
+import i2.n0;
 import java.util.Collections;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final c0 a;
@@ -16,11 +17,11 @@ public final class s implements i {
     public boolean e;
     public long l;
     public final boolean[] f = new boolean[3];
-    public final m0 g = new m0(32);
-    public final m0 h = new m0(33);
-    public final m0 i = new m0(34);
-    public final m0 j = new m0(39);
-    public final m0 k = new m0(40);
+    public final n0 g = new n0(32);
+    public final n0 h = new n0(33);
+    public final n0 i = new n0(34);
+    public final n0 j = new n0(39);
+    public final n0 k = new n0(40);
     public long m = -9223372036854775807L;
     public final e2.x n = new e2.x();
 
@@ -32,7 +33,7 @@ public final class s implements i {
     public final void a(e2.x xVar) {
         int i10;
         this.c.getClass();
-        String str = e2.m0.a;
+        String str = m0.a;
         while (xVar.a() > 0) {
             int i11 = xVar.b;
             int i12 = xVar.c;
@@ -84,21 +85,21 @@ public final class s implements i {
             rVar.i = true;
         }
         if (!this.e) {
-            m0 m0Var = this.g;
-            m0Var.e(i11);
-            m0 m0Var2 = this.h;
-            m0Var2.e(i11);
-            m0 m0Var3 = this.i;
-            m0Var3.e(i11);
-            if (m0Var.d && m0Var2.d && m0Var3.d) {
+            n0 n0Var = this.g;
+            n0Var.e(i11);
+            n0 n0Var2 = this.h;
+            n0Var2.e(i11);
+            n0 n0Var3 = this.i;
+            n0Var3.e(i11);
+            if (n0Var.d && n0Var2.d && n0Var3.d) {
                 String str = this.b;
-                int i12 = m0Var.e;
-                byte[] bArr = new byte[m0Var2.e + i12 + m0Var3.e];
-                System.arraycopy((byte[]) m0Var.f, 0, bArr, 0, i12);
-                System.arraycopy((byte[]) m0Var2.f, 0, bArr, m0Var.e, m0Var2.e);
-                System.arraycopy((byte[]) m0Var3.f, 0, bArr, m0Var.e + m0Var2.e, m0Var3.e);
+                int i12 = n0Var.e;
+                byte[] bArr = new byte[n0Var2.e + i12 + n0Var3.e];
+                System.arraycopy((byte[]) n0Var.f, 0, bArr, 0, i12);
+                System.arraycopy((byte[]) n0Var2.f, 0, bArr, n0Var.e, n0Var2.e);
+                System.arraycopy((byte[]) n0Var3.f, 0, bArr, n0Var.e + n0Var2.e, n0Var3.e);
                 String str2 = null;
-                f2.m k10 = f2.q.k((byte[]) m0Var2.f, 3, m0Var2.e, null);
+                f2.m k10 = f2.q.k((byte[]) n0Var2.f, 3, n0Var2.e, null);
                 f2.j jVar = k10.b;
                 if (jVar != null) {
                     str2 = e2.g.a(jVar.a, jVar.c, jVar.d, jVar.f, jVar.b, jVar.e);
@@ -125,17 +126,17 @@ public final class s implements i {
                 this.e = true;
             }
         }
-        m0 m0Var4 = this.j;
-        boolean e = m0Var4.e(i11);
+        n0 n0Var4 = this.j;
+        boolean e = n0Var4.e(i11);
         e2.x xVar = this.n;
         if (e) {
-            xVar.L(f2.q.p(m0Var4.e, (byte[]) m0Var4.f), (byte[]) m0Var4.f);
+            xVar.L(f2.q.p(n0Var4.e, (byte[]) n0Var4.f), (byte[]) n0Var4.f);
             xVar.O(5);
             cVar.a(j11, xVar);
         }
-        m0 m0Var5 = this.k;
-        if (m0Var5.e(i11)) {
-            xVar.L(f2.q.p(m0Var5.e, (byte[]) m0Var5.f), (byte[]) m0Var5.f);
+        n0 n0Var5 = this.k;
+        if (n0Var5.e(i11)) {
+            xVar.L(f2.q.p(n0Var5.e, (byte[]) n0Var5.f), (byte[]) n0Var5.f);
             xVar.O(5);
             cVar.a(j11, xVar);
         }
@@ -177,7 +178,7 @@ public final class s implements i {
     @Override // j4.i
     public final void e(boolean z10) {
         this.c.getClass();
-        String str = e2.m0.a;
+        String str = m0.a;
         if (z10) {
             this.a.d.c(0);
             b(this.l, 0, 0, this.m);

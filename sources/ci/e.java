@@ -17,7 +17,7 @@ import org.telegram.ui.dd;
 import org.telegram.ui.ff0;
 import org.telegram.ui.t21;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -46,15 +46,15 @@ public final /* synthetic */ class e implements Utilities.Callback {
                 break;
             case 3:
                 View view2 = (View) obj;
-                if (view2 instanceof ig.u1) {
-                    ((ig.u1) view2).c.invalidate();
+                if (view2 instanceof ig.w1) {
+                    ((ig.w1) view2).c.invalidate();
                     break;
                 }
                 break;
             case 4:
                 View view3 = (View) obj;
-                if (view3 instanceof ig.u1) {
-                    ((ig.u1) view3).d.a(false, true);
+                if (view3 instanceof ig.w1) {
+                    ((ig.w1) view3).d.a(false, true);
                     break;
                 }
                 break;
@@ -104,8 +104,8 @@ public final /* synthetic */ class e implements Utilities.Callback {
                     g5Var.b.invalidate();
                     g5Var.c.invalidate();
                     break;
-                } else if (view7 instanceof ig.u1) {
-                    ((ig.u1) view7).c.invalidate();
+                } else if (view7 instanceof ig.w1) {
+                    ((ig.w1) view7).c.invalidate();
                     break;
                 } else {
                     view7.invalidate();

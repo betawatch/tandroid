@@ -28,7 +28,7 @@ import r0.i0;
 import r0.l0;
 import v7.q7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView E;
@@ -64,7 +64,7 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z10) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int C = i0.a.C(i12, measuredHeight, 2, i11);
+        int C = i2.d.C(i12, measuredHeight, 2, i11);
         if (z10) {
             view.layout(i10 - measuredWidth, C, i10, measuredHeight + C);
         } else {

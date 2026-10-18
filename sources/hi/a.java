@@ -10,7 +10,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class a extends Drawable {
     public int b;
@@ -29,8 +29,8 @@ public final class a extends Drawable {
             this.b = x03;
             drawable.setColorFilter(new PorterDuffColorFilter(x03, PorterDuff.Mode.SRC_IN));
         }
-        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), h6.m0(i0.b.o(x03, this.c)));
-        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), h6.m0(i0.b.o(x02, this.c)));
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), h6.m0(i0.a.o(x03, this.c)));
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), h6.m0(i0.a.o(x02, this.c)));
         zf.p.d(drawable, exactCenterX, exactCenterY, 17);
         canvas.translate(0.0f, AndroidUtilities.dp(0.66f));
         canvas.save();

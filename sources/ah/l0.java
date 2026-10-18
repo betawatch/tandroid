@@ -1,7 +1,7 @@
 package ah;
 
-import ai.me;
 import ai.ne;
+import ai.oe;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.graphics.LinearGradient;
@@ -44,7 +44,7 @@ import org.telegram.ui.mh1;
 import org.telegram.ui.sn;
 import rg.a2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -72,11 +72,11 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 t0Var.m.k0.invalidate();
                 break;
             case 1:
-                ne neVar = (ne) this.b;
-                me meVar = (me) this.c;
-                neVar.getClass();
-                meVar.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                neVar.f1();
+                oe oeVar = (oe) this.b;
+                ne neVar = (ne) this.c;
+                oeVar.getClass();
+                neVar.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                oeVar.f1();
                 break;
             case 2:
                 ci.q qVar = (ci.q) this.b;
@@ -162,10 +162,10 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 bVar3.i(intValue);
                 break;
             case 9:
-                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.b;
-                org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) this.c;
-                w0Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x0Var.invalidate();
+                org.telegram.ui.Cells.v0 v0Var = (org.telegram.ui.Cells.v0) this.b;
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.c;
+                v0Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w0Var.invalidate();
                 break;
             case 10:
                 og.a aVar = (og.a) this.b;
@@ -173,13 +173,13 @@ public final /* synthetic */ class l0 implements ValueAnimator.AnimatorUpdateLis
                 aVar.getClass();
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 Paint paint = new Paint(1);
-                LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, new int[]{i0.b.f(floatValue5, iArr[0], aVar.h[0]), i0.b.f(floatValue5, iArr[1], aVar.h[1])}, (float[]) null, Shader.TileMode.CLAMP);
+                LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, new int[]{i0.a.f(floatValue5, iArr[0], aVar.h[0]), i0.a.f(floatValue5, iArr[1], aVar.h[1])}, (float[]) null, Shader.TileMode.CLAMP);
                 aVar.b = linearGradient;
                 linearGradient.setLocalMatrix(aVar.c);
                 paint.setShader(aVar.b);
                 aVar.a.setPaint(paint, 0);
-                aVar.g.setColor(i0.b.f(0.1f, i0.b.f(floatValue5, iArr[1], aVar.h[1]), -1));
-                aVar.f.setColor(i0.b.f(0.1f, i0.b.f(floatValue5, iArr[0], aVar.h[0]), -16777216));
+                aVar.g.setColor(i0.a.f(0.1f, i0.a.f(floatValue5, iArr[1], aVar.h[1]), -1));
+                aVar.f.setColor(i0.a.f(0.1f, i0.a.f(floatValue5, iArr[0], aVar.h[0]), -16777216));
                 aVar.invalidateSelf();
                 break;
             case 11:

@@ -38,7 +38,7 @@ import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public class e7 extends FrameLayout {
     public final int[] A0;
@@ -97,7 +97,7 @@ public class e7 extends FrameLayout {
     public int w;
     public final RectF w0;
     public final FrameLayout x;
-    public ce x0;
+    public de x0;
     public final x90[] y;
     public final int[] y0;
     public final int[] z0;
@@ -394,9 +394,9 @@ public class e7 extends FrameLayout {
         i1Var.b(LocaleController.getString(R.string.GiftCrafted), true);
         yh.k1 k1Var = i1Var.a;
         if (k1Var.v == null) {
-            ce ceVar = new ce(2, 12);
-            k1Var.v = ceVar;
-            ceVar.h = 5.0f;
+            de deVar = new de(2, 12);
+            k1Var.v = deVar;
+            deVar.h = 5.0f;
         }
         Path path = k1Var.f;
         float f13 = k1Var.s;
@@ -438,7 +438,7 @@ public class e7 extends FrameLayout {
                 radialGradientArr[1].setLocalMatrix(matrixArr[1]);
                 canvas.drawRect(0.0f, 0.0f, f11, f12, paintArr[1]);
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = stargiftattributebackdropArr[1];
-                i11 = i0.b.k(i0.b.o(i0.b.f(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216)), paintArr[1].getAlpha()), 0);
+                i11 = i0.a.k(i0.a.o(i0.a.f(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216)), paintArr[1].getAlpha()), 0);
             }
             if (this.t0 <= 0.0f || stargiftattributebackdropArr[2] == null) {
                 return i11;
@@ -449,7 +449,7 @@ public class e7 extends FrameLayout {
             radialGradientArr[2].setLocalMatrix(matrixArr[2]);
             canvas.drawRect(0.0f, 0.0f, f11, f12, paintArr[2]);
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = stargiftattributebackdropArr[2];
-            return i0.b.k(i0.b.o(i0.b.f(0.25f, stargiftattributebackdrop2.edge_color | (-16777216), stargiftattributebackdrop2.pattern_color | (-16777216)), paintArr[2].getAlpha()), i11);
+            return i0.a.k(i0.a.o(i0.a.f(0.25f, stargiftattributebackdrop2.edge_color | (-16777216), stargiftattributebackdrop2.pattern_color | (-16777216)), paintArr[2].getAlpha()), i11);
         }
         if (this.t0 > 0.0f && stargiftattributebackdropArr[2] != null) {
             paintArr[2].setAlpha((int) (this.V.a(1) * 255.0f));
@@ -458,7 +458,7 @@ public class e7 extends FrameLayout {
             radialGradientArr[2].setLocalMatrix(matrixArr[2]);
             canvas.drawRect(0.0f, 0.0f, f11, f12, paintArr[2]);
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop3 = stargiftattributebackdropArr[2];
-            i11 = i0.b.k(i0.b.o(i0.b.f(0.25f, stargiftattributebackdrop3.edge_color | (-16777216), stargiftattributebackdrop3.pattern_color | (-16777216)), paintArr[2].getAlpha()), 0);
+            i11 = i0.a.k(i0.a.o(i0.a.f(0.25f, stargiftattributebackdrop3.edge_color | (-16777216), stargiftattributebackdrop3.pattern_color | (-16777216)), paintArr[2].getAlpha()), 0);
         }
         if (this.t0 >= 1.0f || stargiftattributebackdropArr[1] == null) {
             return i11;
@@ -469,7 +469,7 @@ public class e7 extends FrameLayout {
         radialGradientArr[1].setLocalMatrix(matrixArr[1]);
         canvas.drawRect(0.0f, 0.0f, f11, f12, paintArr[1]);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop4 = stargiftattributebackdropArr[1];
-        return i0.b.k(i0.b.o(i0.b.f(0.25f, stargiftattributebackdrop4.edge_color | (-16777216), stargiftattributebackdrop4.pattern_color | (-16777216)), paintArr[1].getAlpha()), i11);
+        return i0.a.k(i0.a.o(i0.a.f(0.25f, stargiftattributebackdrop4.edge_color | (-16777216), stargiftattributebackdrop4.pattern_color | (-16777216)), paintArr[1].getAlpha()), i11);
     }
 
     public final void c(Canvas canvas, float f7, float f10, float f11, float f12) {
@@ -479,7 +479,7 @@ public class e7 extends FrameLayout {
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = stargiftattributebackdropArr[1];
         int i10 = stargiftattributebackdrop == null ? 0 : stargiftattributebackdrop.pattern_color | (-16777216);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = stargiftattributebackdropArr[2];
-        int f13 = i0.b.f(this.t0, i10, stargiftattributebackdrop2 != null ? stargiftattributebackdrop2.pattern_color | (-16777216) : 0);
+        int f13 = i0.a.f(this.t0, i10, stargiftattributebackdrop2 != null ? stargiftattributebackdrop2.pattern_color | (-16777216) : 0);
         org.telegram.ui.Components.p5[] p5VarArr = this.r0;
         p5VarArr[1].k(Integer.valueOf(f13));
         m1.a(canvas, 0, p5VarArr[1], f11, f12, this.V.a(1), this.u0);
@@ -543,7 +543,7 @@ public class e7 extends FrameLayout {
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = stargiftattributebackdropArr[1];
                 int i14 = stargiftattributebackdrop2 == null ? w02 : stargiftattributebackdrop2.text_color | (-16777216);
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop3 = stargiftattributebackdropArr[2];
-                i10 = i0.b.f(this.t0, i14, stargiftattributebackdrop3 == null ? w02 : stargiftattributebackdrop3.text_color | (-16777216));
+                i10 = i0.a.f(this.t0, i14, stargiftattributebackdrop3 == null ? w02 : stargiftattributebackdrop3.text_color | (-16777216));
             }
             x90Var.setTextColor(i10);
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop4 = stargiftattributebackdropArr[i13];
@@ -577,7 +577,7 @@ public class e7 extends FrameLayout {
         float f11 = f7;
         int dp = AndroidUtilities.dp(24.0f);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop5 = stargiftattributebackdropArr[0];
-        this.v.setBackground(org.telegram.ui.ActionBar.h6.c0(dp, stargiftattributebackdrop5 == null ? 553648127 : i0.b.f(0.25f, stargiftattributebackdrop5.edge_color | (-16777216), stargiftattributebackdrop5.pattern_color | (-16777216))));
+        this.v.setBackground(org.telegram.ui.ActionBar.h6.c0(dp, stargiftattributebackdrop5 == null ? 553648127 : i0.a.f(0.25f, stargiftattributebackdrop5.edge_color | (-16777216), stargiftattributebackdrop5.pattern_color | (-16777216))));
         x90 x90Var2 = x90VarArr[2];
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop6 = stargiftattributebackdropArr[0];
         if (stargiftattributebackdrop6 != null) {
@@ -685,7 +685,7 @@ public class e7 extends FrameLayout {
             while (i11 < iArr6.length) {
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = stargiftattributebackdropArr[0];
                 iArr5[i11] = stargiftattributebackdrop2.text_color | (-16777216);
-                iArr6[i11] = i0.b.f(0.25f, stargiftattributebackdrop2.edge_color | (-16777216), stargiftattributebackdrop2.pattern_color | (-16777216));
+                iArr6[i11] = i0.a.f(0.25f, stargiftattributebackdrop2.edge_color | (-16777216), stargiftattributebackdrop2.pattern_color | (-16777216));
                 iArr4[i11] = stargiftattributebackdropArr[0].pattern_color | (-16777216);
                 i11++;
                 f13 = f13;
@@ -787,7 +787,7 @@ public class e7 extends FrameLayout {
             }
             if (e7Var.V.a(2) > f15) {
                 if (e7Var.x0 == null) {
-                    e7Var.x0 = new ce(i10, 12);
+                    e7Var.x0 = new de(i10, 12);
                 }
                 FrameLayout frameLayout2 = e7Var.b;
                 float measuredWidth = (frameLayout2.getMeasuredWidth() / f16) + frameLayout2.getX();
@@ -838,8 +838,8 @@ public class e7 extends FrameLayout {
         x90[] x90VarArr = this.y;
         TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = this.W;
         if (z14) {
-            stargiftattributebackdropArr[0] = (TL_stars.starGiftAttributeBackdrop) fa.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-            g(0, (TL_stars.starGiftAttributePattern) fa.l(starGift.attributes, TL_stars.starGiftAttributePattern.class), false);
+            stargiftattributebackdropArr[0] = (TL_stars.starGiftAttributeBackdrop) ga.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+            g(0, (TL_stars.starGiftAttributePattern) ga.l(starGift.attributes, TL_stars.starGiftAttributePattern.class), false);
             x90VarArr[0].setTextSize(1, 13.0f);
             sa1Var.setVisibility(z13 ? 0 : 8);
             ah.v[] vVarArr = this.I;
@@ -853,12 +853,12 @@ public class e7 extends FrameLayout {
                 boolean z15 = starGift.resale_ton_only;
                 ag.c cVar = ag.c.b;
                 ag.a resellAmount = starGift.getResellAmount(z15 ? cVar : ag.c.a);
-                CharSequence formatSpannable = LocaleController.formatSpannable(R.string.GiftOnSale, ld.T0("⭐️ " + ((Object) ld.K0(resellAmount.o(), 1.0f, ',')), resellAmount.a == cVar), Float.valueOf(0.9f));
+                CharSequence formatSpannable = LocaleController.formatSpannable(R.string.GiftOnSale, md.T0("⭐️ " + ((Object) md.K0(resellAmount.o(), 1.0f, ',')), resellAmount.a == cVar), Float.valueOf(0.9f));
                 TextView textView = this.O;
                 textView.setText(formatSpannable);
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = stargiftattributebackdropArr[0];
-                textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), i0.b.f(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216))));
-                if (k7.a2(UserConfig.selectedAccount, DialogObject.getPeerDialogId(starGift.owner_id))) {
+                textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), i0.a.f(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216))));
+                if (k7.b2(UserConfig.selectedAccount, DialogObject.getPeerDialogId(starGift.owner_id))) {
                     textView.setOnClickListener(new y6(this, 1));
                     w7.b6.a(textView);
                 } else {
@@ -904,8 +904,8 @@ public class e7 extends FrameLayout {
             sa1Var.setVisibility(8);
         }
         e(0, stargiftattributebackdropArr[0]);
-        ld.b1(this.d[0].getImageReceiver(), starGift, 160);
-        this.e[0] = (TL_stars.starGiftAttributeModel) fa.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
+        md.b1(this.d[0].getImageReceiver(), starGift, 160);
+        this.e[0] = (TL_stars.starGiftAttributeModel) ga.l(starGift.attributes, TL_stars.starGiftAttributeModel.class);
         d(this.V);
     }
 
@@ -1104,7 +1104,7 @@ public class e7 extends FrameLayout {
             TL_stars.starGiftAttributeModel stargiftattributemodel = v1Var.c;
             TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = this.e;
             stargiftattributemodelArr[i12] = stargiftattributemodel;
-            ld.a1(w9VarArr[i12].getImageReceiver(), stargiftattributemodelArr[this.s0 + 1].document, 160);
+            md.a1(w9VarArr[i12].getImageReceiver(), stargiftattributemodelArr[this.s0 + 1].document, 160);
             a();
             float f7 = this.s0;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f - f7, f7);
@@ -1118,9 +1118,9 @@ public class e7 extends FrameLayout {
     }
 
     public void setPreviewingAttributes(ArrayList<TL_stars.StarGiftAttribute> arrayList) {
-        this.a0 = new a(fa.m(arrayList, TL_stars.starGiftAttributeModel.class));
-        this.b0 = new a(fa.m(arrayList, TL_stars.starGiftAttributePattern.class));
-        this.c0 = new a(fa.m(arrayList, TL_stars.starGiftAttributeBackdrop.class));
+        this.a0 = new a(ga.m(arrayList, TL_stars.starGiftAttributeModel.class));
+        this.b0 = new a(ga.m(arrayList, TL_stars.starGiftAttributePattern.class));
+        this.c0 = new a(ga.m(arrayList, TL_stars.starGiftAttributeBackdrop.class));
         this.y[1].setTextSize(1, 14.0f);
         this.H.setVisibility(8);
         this.t0 = 0.0f;
@@ -1130,12 +1130,12 @@ public class e7 extends FrameLayout {
         TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = this.e;
         stargiftattributemodelArr[1] = stargiftattributemodel;
         org.telegram.ui.Components.w9[] w9VarArr = this.d;
-        ld.a1(w9VarArr[1].getImageReceiver(), stargiftattributemodelArr[1].document, 160);
+        md.a1(w9VarArr[1].getImageReceiver(), stargiftattributemodelArr[1].document, 160);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) this.c0.c();
         this.W[1] = stargiftattributebackdrop;
         e(1, stargiftattributebackdrop);
         stargiftattributemodelArr[2] = (TL_stars.starGiftAttributeModel) this.a0.f;
-        ld.a1(w9VarArr[2].getImageReceiver(), stargiftattributemodelArr[2].document, 160);
+        md.a1(w9VarArr[2].getImageReceiver(), stargiftattributemodelArr[2].document, 160);
         a3.d dVar = this.j0;
         AndroidUtilities.cancelRunOnUIThread(dVar);
         AndroidUtilities.runOnUIThread(dVar, 2500L);
@@ -1153,9 +1153,9 @@ public class e7 extends FrameLayout {
             duration.setInterpolator(bsVar).setListener(new c7(this, 2)).setListener(new c7(this, 1)).start();
             x90VarArr[0].animate().alpha(1.0f).setDuration(420L).setInterpolator(bsVar).start();
         } else {
-            textView.setText(LocaleController.formatSpannable(R.string.GiftOnSale, ld.V0(aVar.a == ag.c.b, "⭐️ " + ((Object) ld.K0(aVar.o(), 1.0f, ',')), 0.9f, null, 0.0f, 1.0f)));
+            textView.setText(LocaleController.formatSpannable(R.string.GiftOnSale, md.V0(aVar.a == ag.c.b, "⭐️ " + ((Object) md.K0(aVar.o(), 1.0f, ',')), 0.9f, null, 0.0f, 1.0f)));
             TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.W[0];
-            textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), i0.b.f(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216))));
+            textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(12.0f), i0.a.f(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216))));
             textView.setVisibility(0);
             this.e0 = true;
             ViewPropertyAnimator duration2 = textView.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(420L);

@@ -10,7 +10,7 @@ import c3.a0;
 import c3.g0;
 import c3.j0;
 import c3.k0;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import e2.x;
 import e9.l0;
 import e9.n0;
@@ -25,7 +25,7 @@ import java.util.Locale;
 import org.telegram.messenger.MediaController;
 import v7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class l implements c3.o {
     public long A;
@@ -193,7 +193,7 @@ public final class l implements c3.o {
                                 t0 t0Var = bVar == null ? null : new t0(bVar);
                                 v vVar = new v();
                                 vVar.k = t0Var;
-                                i0.a.u(vVar, j02);
+                                i2.d.u(vVar, j02);
                                 this.B.H();
                                 this.B.g0(new c3.t(-9223372036854775807L));
                             }
@@ -813,7 +813,7 @@ public final class l implements c3.o {
                         int i20 = i10;
                         while (i20 < d10.size()) {
                             int intValue = ((Integer) d10.get(i20)).intValue();
-                            i20 = a6.f(intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? i10 : 4 : 3 : 2 : 1, i20, 1, arrayList6);
+                            i20 = k3.f(intValue != 0 ? intValue != 1 ? intValue != 2 ? intValue != 3 ? i10 : 4 : 3 : 2 : 1, i20, 1, arrayList6);
                         }
                         arrayList = arrayList6;
                         c10 = 3;
@@ -1020,7 +1020,7 @@ public final class l implements c3.o {
                                 a2.q = v0.n(str);
                                 if (Objects.equals(str3, "audio/mpeg")) {
                                     kVar2 = kVar;
-                                    i0.a.u(a2, kVar2.c);
+                                    i2.d.u(a2, kVar2.c);
                                 } else {
                                     kVar2 = kVar;
                                     kVar2.f = new w(a2);

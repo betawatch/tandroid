@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import ei.y3;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final TextView a;
@@ -43,7 +43,7 @@ public class c extends FrameLayout {
         this.n = measureText;
         TextView textView = new TextView(context);
         this.a = textView;
-        a6.m(15.0f, 1, textView);
+        k3.m(15.0f, 1, textView);
         addView(textView, z5.a(-2.0f, 16.0f, 0.0f, measureText, 0.0f, -2, 8388627));
         TextView textView2 = new TextView(context);
         this.d = textView2;

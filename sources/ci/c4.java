@@ -1,6 +1,6 @@
 package ci;
 
-import ai.ld;
+import ai.md;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -41,7 +41,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.v21;
 import org.telegram.ui.w01;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -122,12 +122,12 @@ public final /* synthetic */ class c4 implements View.OnClickListener {
                 break;
             case 3:
                 boolean[] zArr = (boolean[]) obj4;
-                org.telegram.ui.web.z zVar = (org.telegram.ui.web.z) obj3;
+                org.telegram.ui.web.a0 a0Var = (org.telegram.ui.web.a0) obj3;
                 String[] strArr2 = (String[]) obj2;
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj;
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    zVar.run(strArr2[0]);
+                    a0Var.run(strArr2[0]);
                 }
                 f3Var.dismiss();
                 break;
@@ -208,7 +208,7 @@ public final /* synthetic */ class c4 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = tiVar.j0;
                 if (chatAttachAlertPhotoLayout != null) {
-                    ld.h1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new ai.q5(i11, tiVar, e1Var), d6Var);
+                    md.h1(context, chatAttachAlertPhotoLayout.getStarsPrice(), true, new ai.q5(i11, tiVar, e1Var), d6Var);
                     break;
                 }
                 break;
@@ -292,10 +292,10 @@ public final /* synthetic */ class c4 implements View.OnClickListener {
                 break;
             default:
                 yh.p2 p2Var = (yh.p2) obj4;
-                ai.x9 x9Var = (ai.x9) obj3;
+                ai.y9 y9Var = (ai.y9) obj3;
                 TL_stars.SavedStarGift savedStarGift2 = (TL_stars.SavedStarGift) obj2;
                 Utilities.Callback0Return callback0Return = (Utilities.Callback0Return) obj;
-                ArrayList i20 = x9Var.i();
+                ArrayList i20 = y9Var.i();
                 int i21 = 0;
                 while (true) {
                     if (i21 < i20.size()) {
@@ -311,16 +311,16 @@ public final /* synthetic */ class c4 implements View.OnClickListener {
                     savedStarGift.pinned_to_top = false;
                     i20.set(i12, savedStarGift2);
                     savedStarGift2.pinned_to_top = true;
-                    ArrayList arrayList4 = x9Var.l;
+                    ArrayList arrayList4 = y9Var.l;
                     arrayList4.removeAll(i20);
-                    if (x9Var.e && !x9Var.c) {
+                    if (y9Var.e && !y9Var.c) {
                         Collections.sort(arrayList4, new a4.d(4));
                     }
                     arrayList4.addAll(0, i20);
-                    NotificationCenter.getInstance(x9Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(x9Var.b), x9Var);
-                    x9Var.m();
+                    NotificationCenter.getInstance(y9Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(y9Var.b), y9Var);
+                    y9Var.m();
                     p2Var.dismiss();
-                    ((xc) callback0Return.run()).M(LocaleController.formatString(R.string.Gift2ReplacedPinTitle, ai.k7.Q1(savedStarGift2.gift)), LocaleController.formatString(R.string.Gift2ReplacedPinSubtitle, ai.k7.Q1(savedStarGift.gift)), R.raw.ic_pin).j();
+                    ((xc) callback0Return.run()).M(LocaleController.formatString(R.string.Gift2ReplacedPinTitle, ai.k7.R1(savedStarGift2.gift)), LocaleController.formatString(R.string.Gift2ReplacedPinSubtitle, ai.k7.R1(savedStarGift.gift)), R.raw.ic_pin).j();
                     break;
                 }
                 break;

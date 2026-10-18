@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -75,16 +75,16 @@ public final /* synthetic */ class w implements Runnable {
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
                             String num = Integer.toString(((d1) it.next()).a);
-                            String g10 = r.c.g("feature_usage_timestamp_reported_feature_", num);
-                            if (!sharedPreferences.contains(g10)) {
-                                g10 = r.c.g("feature_usage_timestamp_detected_feature_", num);
+                            String h = r4.c.h("feature_usage_timestamp_reported_feature_", num);
+                            if (!sharedPreferences.contains(h)) {
+                                h = r4.c.h("feature_usage_timestamp_detected_feature_", num);
                             }
-                            String g11 = r.c.g("feature_usage_timestamp_reported_feature_", num);
-                            if (!TextUtils.equals(g10, g11)) {
-                                long j12 = sharedPreferences.getLong(g10, 0L);
-                                edit.remove(g10);
+                            String h10 = r4.c.h("feature_usage_timestamp_reported_feature_", num);
+                            if (!TextUtils.equals(h, h10)) {
+                                long j12 = sharedPreferences.getLong(h, 0L);
+                                edit.remove(h);
                                 if (j12 != 0) {
-                                    edit.putLong(g11, j12);
+                                    edit.putLong(h10, j12);
                                 }
                             }
                         }

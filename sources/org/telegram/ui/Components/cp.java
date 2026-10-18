@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class cp extends LinearLayout {
     public cl0 a;
@@ -183,7 +183,7 @@ public abstract class cp extends LinearLayout {
 
     public void setPopupWindowLayout(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new s2(13, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setOnSizeChangedListener(new q2(14, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
         if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
             ph0 swipeBack = actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack();
             swipeBack.x.add(new oh0() { // from class: org.telegram.ui.Components.bp

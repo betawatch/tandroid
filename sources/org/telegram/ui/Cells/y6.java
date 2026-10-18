@@ -9,13 +9,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.j61;
 import org.telegram.ui.Components.l11;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class y6 extends LinearLayout {
     public TextView a;
@@ -55,7 +55,7 @@ public abstract class y6 extends LinearLayout {
             }
             return;
         }
-        textView2.setText(LocaleController.formatString(R.string.CheckPhoneNumber, wh.g(new StringBuilder("+"), MessagesController.getInstance(i11).getUser(Long.valueOf(UserConfig.getInstance(i11).clientUserId)).phone, jf.b.c())));
+        textView2.setText(LocaleController.formatString(R.string.CheckPhoneNumber, kk.g(new StringBuilder("+"), MessagesController.getInstance(i11).getUser(Long.valueOf(UserConfig.getInstance(i11).clientUserId)).phone, jf.b.c())));
         String string = LocaleController.getString(R.string.CheckPhoneNumberInfo);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         int indexOf = string.indexOf("**");

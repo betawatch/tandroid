@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class z5 extends View {
     public final Paint a;
@@ -77,7 +77,7 @@ public final class z5 extends View {
         float min = Math.min(getWidth(), getHeight()) / 2.0f;
         int i11 = 0;
         while (i11 < 6) {
-            float c10 = r.c.c(i11, 60.0f, 12.5f, currentTimeMillis);
+            float c10 = r4.c.c(i11, 60.0f, 12.5f, currentTimeMillis);
             path.moveTo(width, height);
             double d10 = ((c10 - 12.5f) / 180.0f) * 3.141592653589793d;
             path.lineTo((((float) Math.cos(d10)) * min) + width, (((float) Math.sin(d10)) * min) + height);

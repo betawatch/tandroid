@@ -14,7 +14,7 @@ import org.telegram.ui.Components.yl0;
 import org.telegram.ui.Components.yp;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ia implements yl0, zf.m, ImageReceiver.ImageReceiverDelegate, FlagSecureReason.FlagSecureCondition, yp, Utilities.Callback2Return {
     public final /* synthetic */ int a;
@@ -58,31 +58,31 @@ public final /* synthetic */ class ia implements yl0, zf.m, ImageReceiver.ImageR
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         uj0 lottieAnimation;
-        u0 u0Var;
+        t0 t0Var;
         int v;
         MessageObject messageObject;
         switch (this.a) {
             case 2:
-                x0 x0Var = (x0) this.b;
-                if (z10 && (lottieAnimation = x0Var.I.getLottieAnimation()) != null) {
-                    MessageObject messageObject2 = x0Var.P0;
+                w0 w0Var = (w0) this.b;
+                if (z10 && (lottieAnimation = w0Var.I.getLottieAnimation()) != null) {
+                    MessageObject messageObject2 = w0Var.P0;
                     if (messageObject2 != null && !messageObject2.playedGiftAnimation) {
                         messageObject2.playedGiftAnimation = true;
                         lottieAnimation.N(0, false, false);
                         AndroidUtilities.runOnUIThread(new r0(lottieAnimation, 0));
-                        if (messageObject2.wasUnread || x0Var.L1) {
+                        if (messageObject2.wasUnread || w0Var.L1) {
                             messageObject2.wasUnread = false;
-                            x0Var.L1 = false;
+                            w0Var.L1 = false;
                             try {
-                                x0Var.performHapticFeedback(3, 2);
+                                w0Var.performHapticFeedback(3, 2);
                             } catch (Exception unused) {
                             }
-                            if (x0Var.getContext() instanceof LaunchActivity) {
-                                ((LaunchActivity) x0Var.getContext()).x0.c(false);
+                            if (w0Var.getContext() instanceof LaunchActivity) {
+                                ((LaunchActivity) w0Var.getContext()).x0.c(false);
                             }
-                            TLRPC.VideoSize videoSize = x0Var.I1;
-                            if (videoSize != null && (u0Var = x0Var.f1) != null) {
-                                u0Var.c1(x0Var, x0Var.H1, videoSize);
+                            TLRPC.VideoSize videoSize = w0Var.I1;
+                            if (videoSize != null && (t0Var = w0Var.f1) != null) {
+                                t0Var.c1(w0Var, w0Var.H1, videoSize);
                                 break;
                             }
                         }

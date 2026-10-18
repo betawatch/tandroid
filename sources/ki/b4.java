@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class b4 extends FrameLayout {
     public final ImageView E;
@@ -1451,7 +1451,7 @@ public final class b4 extends FrameLayout {
             return;
         }
         y1Var.setEnabled(z10);
-        wh.s(y1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
+        kk.s(y1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
     }
 
     public void setSendLoading(boolean z10) {

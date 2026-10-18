@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ex0 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -320,9 +320,9 @@ public final class ex0 extends org.telegram.ui.Components.hm0 {
                             } else {
                                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                                 Locale locale = Locale.ENGLISH;
-                                String g10 = r.c.g("https://t.me/+", privacyControlActivity.getUserConfig().getClientPhone());
-                                SpannableString spannableString = new SpannableString(g10);
-                                spannableString.setSpan(new dx0(this, g10), 0, g10.length(), 33);
+                                String h = r4.c.h("https://t.me/+", privacyControlActivity.getUserConfig().getClientPhone());
+                                SpannableString spannableString = new SpannableString(h);
+                                spannableString.setSpan(new dx0(this, h), 0, h.length(), 33);
                                 spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.PrivacyPhoneInfo)).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString(R.string.PrivacyPhoneInfo4)).append((CharSequence) "\n").append((CharSequence) spannableString);
                                 d9Var.setText(spannableStringBuilder);
                             }
@@ -495,11 +495,11 @@ public final class ex0 extends org.telegram.ui.Components.hm0 {
                 i22 = privacyControlActivity.priceRow;
                 if (i10 == i22) {
                     int[] a2 = org.telegram.ui.Cells.y7.a((int) privacyControlActivity.getMessagesController().starsPaidMessageAmountMax, new int[]{1, 10, 50, 100, 200, MediaDataController.MAX_LINKS_COUNT, 400, 500, MediaDataController.MAX_STYLE_RUNS_COUNT, 2500, 5000, 7500, 9000, 10000});
-                    qp0 qp0Var = new qp0(this, i33);
+                    rp0 rp0Var = new rp0(this, i33);
                     org.telegram.ui.Cells.x7 x7Var = new org.telegram.ui.Cells.x7();
                     x7Var.c = a2;
                     x7Var.d = 20;
-                    x7Var.e = qp0Var;
+                    x7Var.e = rp0Var;
                     y7Var.d((int) Utilities.clamp(privacyControlActivity.L, privacyControlActivity.getMessagesController().starsPaidMessageAmountMax, 1L), x7Var, new cx0(this, r8 ? 1 : 0));
                     return;
                 }
@@ -653,7 +653,7 @@ public final class ex0 extends org.telegram.ui.Components.hm0 {
                 break;
             case 5:
             default:
-                view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null);
+                view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.c1) null);
                 break;
             case 6:
                 org.telegram.ui.Cells.q8 q8Var = new org.telegram.ui.Cells.q8(privacyControlActivity.getParentActivity());

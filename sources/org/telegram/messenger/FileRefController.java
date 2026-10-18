@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class FileRefController extends BaseController {
     private static volatile FileRefController[] Instance = new FileRefController[4];
@@ -32,7 +32,7 @@ public class FileRefController extends BaseController {
     private ArrayList<Waiter> savedGifsWaiters;
     private ArrayList<Waiter> wallpaperWaiters;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class CachedResult {
         private long firstQueryTime;
         private TLObject response;
@@ -41,7 +41,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Requester {
         private Object[] args;
         private boolean completed;
@@ -52,7 +52,7 @@ public class FileRefController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class Waiter {
         private String locationKey;
         private String parentKey;
@@ -1929,7 +1929,7 @@ public class FileRefController extends BaseController {
             StringBuilder sb2 = new StringBuilder("fileref updated for ");
             sb2.append(requester.args[0]);
             sb2.append(" ");
-            i0.a.v(requester.locationKey, sb2);
+            i2.d.v(requester.locationKey, sb2);
         }
         if (requester.args[0] instanceof TL_stories.TL_storyItem) {
             ((TL_stories.TL_storyItem) requester.args[0]).media.document.file_reference = bArr;

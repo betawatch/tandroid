@@ -6,7 +6,7 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.ui.Components.bl0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class m3 implements bl0 {
     public final /* synthetic */ q4 a;
@@ -16,7 +16,7 @@ public final class m3 implements bl0 {
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ boolean j() {
+    public final /* synthetic */ boolean h() {
         return true;
     }
 
@@ -31,7 +31,7 @@ public final class m3 implements bl0 {
         if (z10) {
             org.telegram.ui.Components.f5.Z(q4Var.C2, 1, q4Var.B1, new l3(this, z10, i1Var, view));
         } else {
-            q4Var.n0(new ai.y3(this, view, i1Var, z10, z11));
+            q4Var.n0(new ai.x9(this, view, i1Var, z10, z11));
         }
     }
 
@@ -58,7 +58,7 @@ public final class m3 implements bl0 {
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public final /* synthetic */ boolean s() {
+    public final /* synthetic */ boolean r() {
         return false;
     }
 }

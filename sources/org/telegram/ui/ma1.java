@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class ma1 extends FrameLayout {
     public final org.telegram.ui.Components.cp0 a;
@@ -32,7 +32,7 @@ public final class ma1 extends FrameLayout {
         this.a = cp0Var;
         cp0Var.setReportChanges(true);
         cp0Var.setSeparatorsCount(18);
-        cp0Var.setDelegate(new lo0(this, 4));
+        cp0Var.setDelegate(new mo0(this, 4));
         cp0Var.setImportantForAccessibility(2);
         addView(cp0Var, w7.z5.a(38.0f, 5.0f, 5.0f, 39.0f, 0.0f, -1, 51));
     }

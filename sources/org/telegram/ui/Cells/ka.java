@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ka implements Runnable {
     public final /* synthetic */ int a;
@@ -76,22 +76,22 @@ public final /* synthetic */ class ka implements Runnable {
                 }
                 break;
             case 2:
-                x0 x0Var = (x0) this.b;
-                x0Var.f1.X1(x0Var, ((TLRPC.TL_messageActionGiftCode) this.c).slug);
+                w0 w0Var = (w0) this.b;
+                w0Var.f1.X1(w0Var, ((TLRPC.TL_messageActionGiftCode) this.c).slug);
                 break;
             case 3:
-                final x0 x0Var2 = (x0) this.b;
+                final w0 w0Var2 = (w0) this.b;
                 final org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
                 TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
-                tL_resolveStarGiftOffer.offer_msg_id = x0Var2.getMessageObject().getId();
+                tL_resolveStarGiftOffer.offer_msg_id = w0Var2.getMessageObject().getId();
                 tL_resolveStarGiftOffer.decline = true;
-                ConnectionsManager.getInstance(x0Var2.H).sendRequestTyped(tL_resolveStarGiftOffer, new Utilities.Callback2() { // from class: org.telegram.ui.Cells.s0
+                ConnectionsManager.getInstance(w0Var2.H).sendRequestTyped(tL_resolveStarGiftOffer, new Utilities.Callback2() { // from class: org.telegram.ui.Cells.s0
                     @Override // org.telegram.messenger.Utilities.Callback2
                     public final void run(Object obj, Object obj2) {
                         TLRPC.Updates updates = (TLRPC.Updates) obj;
                         TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                         if (updates != null) {
-                            MessagesController.getInstance(x0.this.H).lambda$processUpdates$377(updates, false);
+                            MessagesController.getInstance(w0.this.H).lambda$processUpdates$377(updates, false);
                         }
                         if (tL_error != null) {
                             AndroidUtilities.runOnUIThread(new ka(4, n2Var, tL_error));
@@ -108,7 +108,7 @@ public final /* synthetic */ class ka implements Runnable {
                 u1Var3.O0.draw((Canvas) this.c);
                 break;
             case 6:
-                ((u1) this.b).post(new c1(8, (u1) this.c));
+                ((u1) this.b).post(new b1(8, (u1) this.c));
                 break;
             case 7:
                 l8 l8Var = (l8) this.b;

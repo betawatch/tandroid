@@ -26,7 +26,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class x50 extends DispatchQueue {
     public Integer E;
@@ -200,7 +200,7 @@ public final class x50 extends DispatchQueue {
                 float f12 = 0.5f - f10;
                 float f13 = f7 + 0.5f;
                 float f14 = f10 + 0.5f;
-                m60Var2.J0 = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(32));
+                m60Var2.J0 = org.telegram.messenger.kk.h(ByteBuffer.allocateDirect(32));
                 this.H.J0.put(new float[]{f11, f12, f13, f12, f11, f14, f13, f14}).position(0);
                 return;
             }
@@ -251,7 +251,7 @@ public final class x50 extends DispatchQueue {
             float f18 = 0.5f - f16;
             float f19 = f15 + 0.5f;
             float f20 = f16 + 0.5f;
-            m60Var5.J0 = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(32));
+            m60Var5.J0 = org.telegram.messenger.kk.h(ByteBuffer.allocateDirect(32));
             this.H.J0.put(new float[]{f17, f18, f19, f18, f17, f20, f19, f20}).position(0);
             return;
         }
@@ -266,7 +266,7 @@ public final class x50 extends DispatchQueue {
                 EGLSurface eGLSurface2 = this.e;
                 if (!egl102.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, this.d)) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.wh.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                        org.telegram.messenger.kk.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                         return;
                     }
                     return;
@@ -469,7 +469,7 @@ public final class x50 extends DispatchQueue {
         z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.wh.v(this.b, new StringBuilder("InstantCamera eglGetDisplay failed "));
+                org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglGetDisplay failed "));
             }
             finish();
         } else if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
@@ -477,7 +477,7 @@ public final class x50 extends DispatchQueue {
             EGLConfig[] eGLConfigArr = new EGLConfig[1];
             if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 0, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                 if (BuildVars.LOGS_ENABLED) {
-                    org.telegram.messenger.wh.v(this.b, new StringBuilder("InstantCamera eglChooseConfig failed "));
+                    org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglChooseConfig failed "));
                 }
                 finish();
             } else if (iArr[0] > 0) {
@@ -486,7 +486,7 @@ public final class x50 extends DispatchQueue {
                 this.d = eglCreateContext;
                 if (eglCreateContext == null) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.wh.v(this.b, new StringBuilder("InstantCamera eglCreateContext failed "));
+                        org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglCreateContext failed "));
                     }
                     finish();
                 } else {
@@ -496,7 +496,7 @@ public final class x50 extends DispatchQueue {
                         this.e = eglCreateWindowSurface;
                         if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                             if (BuildVars.LOGS_ENABLED) {
-                                org.telegram.messenger.wh.v(this.b, new StringBuilder("InstantCamera createWindowSurface failed "));
+                                org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera createWindowSurface failed "));
                             }
                             finish();
                         } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -516,10 +516,10 @@ public final class x50 extends DispatchQueue {
                             if (m60Var.i1 == null) {
                                 m60Var.i1 = new f60(m60Var);
                             }
-                            FloatBuffer h = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(48));
+                            FloatBuffer h = org.telegram.messenger.kk.h(ByteBuffer.allocateDirect(48));
                             m60Var.I0 = h;
                             h.put(fArr).position(0);
-                            FloatBuffer h10 = org.telegram.messenger.wh.h(ByteBuffer.allocateDirect(32));
+                            FloatBuffer h10 = org.telegram.messenger.kk.h(ByteBuffer.allocateDirect(32));
                             m60Var.J0 = h10;
                             h10.put(fArr2).position(0);
                             Matrix.setIdentityM(m60Var.G0, 0);
@@ -579,7 +579,7 @@ public final class x50 extends DispatchQueue {
                             }
                         } else {
                             if (BuildVars.LOGS_ENABLED) {
-                                org.telegram.messenger.wh.v(this.b, new StringBuilder("InstantCamera eglMakeCurrent failed "));
+                                org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglMakeCurrent failed "));
                             }
                             finish();
                         }
@@ -595,7 +595,7 @@ public final class x50 extends DispatchQueue {
             }
         } else {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.wh.v(this.b, new StringBuilder("InstantCamera eglInitialize failed "));
+                org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglInitialize failed "));
             }
             finish();
         }

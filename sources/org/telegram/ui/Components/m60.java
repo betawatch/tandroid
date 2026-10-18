@@ -54,7 +54,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class m60 extends r60 implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] m1 = {285904780, -1394191079};
@@ -337,7 +337,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
         imageView.setAlpha(0.0f);
         addView(imageView, w7.z5.e(48, 48, 17));
         Paint paint = new Paint(1);
-        paint.setColor(i0.b.o(-16777216, 40));
+        paint.setColor(i0.a.o(-16777216, 40));
         org.telegram.ui.gl glVar = new org.telegram.ui.gl(this, getContext(), paint);
         this.r0 = glVar;
         int i14 = AndroidUtilities.roundPlayingMessageSize;
@@ -971,7 +971,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             StringBuilder sb2 = new StringBuilder("InstantCamera preview w = ");
             sb2.append(sizeArr[0].mWidth);
             sb2.append(" h = ");
-            org.telegram.messenger.q.o(sizeArr[0].mHeight, sb2);
+            org.telegram.messenger.g0.o(sizeArr[0].mHeight, sb2);
         }
         return true;
     }

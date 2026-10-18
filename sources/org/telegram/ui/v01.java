@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class v01 extends View {
     public static final String[] s = {"🎉", "🎆", "🎈"};
@@ -156,7 +156,7 @@ public final class v01 extends View {
                     float f12 = dp;
                     float f13 = 0.88f * f12;
                     boolean z11 = z10;
-                    float c10 = com.google.android.gms.internal.cast.a6.c(f13, this.b.d.size() - 1, getWidth(), f7);
+                    float c10 = com.google.android.gms.internal.play_billing.k3.c(f13, this.b.d.size() - 1, getWidth(), f7);
                     float f14 = pointF.x;
                     float f15 = f7;
                     float f16 = pointF.y;

@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class be0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -42,7 +42,7 @@ public final /* synthetic */ class be0 implements Runnable {
                                         if (tL_error.code != -1000) {
                                             String string = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
                                             StringBuilder sb2 = new StringBuilder();
-                                            org.telegram.ui.Cells.t0.n(R.string.ErrorOccurred, "\n", sb2);
+                                            org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb2);
                                             sb2.append(tL_error.text);
                                             fg0Var.l1(string, sb2.toString());
                                             break;
@@ -98,7 +98,7 @@ public final /* synthetic */ class be0 implements Runnable {
                         } else if (tL_error2.code != -1000) {
                             String string2 = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
                             StringBuilder sb3 = new StringBuilder();
-                            org.telegram.ui.Cells.t0.n(R.string.ErrorOccurred, "\n", sb3);
+                            org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb3);
                             sb3.append(tL_error2.text);
                             fg0Var2.l1(string2, sb3.toString());
                         }

@@ -2,7 +2,7 @@ package si;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -43,8 +43,8 @@ public final /* synthetic */ class e implements Runnable {
                 if (kVar3.V && !kVar3.b0 && kVar3.x == nVar) {
                     kVar3.k();
                     kVar3.j.b("common A/V start completed: segmentElapsedMs=" + k.z(kVar3.E0));
-                    t0 t0Var = (t0) kVar3.k.b;
-                    t0Var.i.post(new j0(t0Var, 2));
+                    s0 s0Var = (s0) kVar3.k.b;
+                    s0Var.i.post(new i0(s0Var, 2));
                     return;
                 }
                 return;

@@ -1,6 +1,6 @@
 package org.telegram.ui.ActionBar;
 
-import ai.le;
+import ai.me;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
@@ -40,7 +40,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
@@ -54,7 +54,7 @@ import org.telegram.ui.Components.wo0;
 import org.telegram.ui.Components.x00;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements ne.d, y5 {
     public CharSequence A0;
@@ -408,7 +408,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 this.r.setVisibility(0);
                 this.r.setAlpha(0.0f);
             }
-            wh.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
+            kk.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
         }
         j5 j5Var = j5VarArr[1];
         if (j5Var != null) {
@@ -650,7 +650,7 @@ public class k extends FrameLayout implements ne.d, y5 {
         }
         if (i10 == 0 || this.O0) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        } else if (i0.b.h(i10) < 0.699999988079071d) {
+        } else if (i0.a.h(i10) < 0.699999988079071d) {
             AndroidUtilities.setLightStatusBar((Activity) getContext(), false);
         } else {
             AndroidUtilities.setLightStatusBar((Activity) getContext(), true);
@@ -668,7 +668,7 @@ public class k extends FrameLayout implements ne.d, y5 {
             this.P.playTogether(ofFloat);
         }
         this.P.setDuration(200L);
-        this.P.addListener(new le(11, this, zArr));
+        this.P.addListener(new me(11, this, zArr));
         this.P.start();
         ImageView imageView = this.e;
         if (imageView != null) {
@@ -730,12 +730,12 @@ public class k extends FrameLayout implements ne.d, y5 {
             int i11 = this.p1;
             int w03 = i11 == -1 ? 0 : h6.w0(i11, d6Var);
             if (w03 == 0) {
-                w03 = i0.b.o(w02, 0);
+                w03 = i0.a.o(w02, 0);
             }
             if (w02 == 0) {
-                w02 = i0.b.o(w03, 0);
+                w02 = i0.a.o(w03, 0);
             }
-            setBackgroundColor(i0.b.f(f7, w02, w03));
+            setBackgroundColor(i0.a.f(f7, w02, w03));
             setShadowAlpha((int) ((1.0f - this.s1) * 255.0f));
             if (this.K0) {
                 invalidate();
@@ -969,7 +969,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                                     int i13 = AndroidUtilities.statusBarHeight;
                                     float nextFloat = Utilities.random.nextFloat() * getMeasuredWidth();
                                     float f11 = 20.0f;
-                                    float nextFloat2 = (Utilities.random.nextFloat() * org.telegram.messenger.q.B(20.0f, getMeasuredHeight(), i13)) + i13;
+                                    float nextFloat2 = (Utilities.random.nextFloat() * org.telegram.messenger.g0.B(20.0f, getMeasuredHeight(), i13)) + i13;
                                     int nextInt = Utilities.random.nextInt(4);
                                     int i14 = nextInt != 0 ? nextInt != 1 ? nextInt != 2 ? nextInt != 3 ? -5752 : -15088582 : -207021 : -843755 : -13357350;
                                     int i15 = 0;
@@ -1335,7 +1335,7 @@ public class k extends FrameLayout implements ne.d, y5 {
             }
             if (i10 == 0 || this.O0) {
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-            } else if (i0.b.h(i10) < 0.699999988079071d) {
+            } else if (i0.a.h(i10) < 0.699999988079071d) {
                 AndroidUtilities.setLightStatusBar((Activity) getContext(), false);
             } else {
                 AndroidUtilities.setLightStatusBar((Activity) getContext(), true);
@@ -1356,7 +1356,7 @@ public class k extends FrameLayout implements ne.d, y5 {
             int i10 = this.x;
             if (i10 == 0 || this.w == 0 || this.O0) {
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-            } else if (i0.b.h(i10) < 0.699999988079071d) {
+            } else if (i0.a.h(i10) < 0.699999988079071d) {
                 AndroidUtilities.setLightStatusBar((Activity) getContext(), false);
             } else {
                 AndroidUtilities.setLightStatusBar((Activity) getContext(), true);
@@ -1585,7 +1585,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 } else if (AndroidUtilities.isTablet()) {
                     f7 = 74.0f;
                 }
-                makeMeasureSpec = wh.c(f7, size, TLObject.FLAG_30);
+                makeMeasureSpec = kk.c(f7, size, TLObject.FLAG_30);
                 if (!kVar.y) {
                     kVar.E.r(0.0f);
                 }
@@ -1613,7 +1613,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 } else {
                     i13 = 0;
                 }
-                int max = Math.max(org.telegram.messenger.q.B(16.0f, size - i13, dp) - kVar.a0, 0);
+                int max = Math.max(org.telegram.messenger.g0.B(16.0f, size - i13, dp) - kVar.a0, 0);
                 boolean z10 = kVar.y0;
                 int i16 = 20;
                 if (((z10 && i15 == 0) || (!z10 && i15 == i14)) && kVar.w0 && kVar.x0) {
@@ -1797,7 +1797,7 @@ public class k extends FrameLayout implements ne.d, y5 {
         int i14 = this.x;
         if (i14 == 0 || this.O0) {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
-        } else if (i0.b.h(i14) < 0.699999988079071d) {
+        } else if (i0.a.h(i14) < 0.699999988079071d) {
             AndroidUtilities.setLightStatusBar((Activity) getContext(), false);
         } else {
             AndroidUtilities.setLightStatusBar((Activity) getContext(), true);

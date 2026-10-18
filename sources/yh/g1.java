@@ -1,7 +1,7 @@
 package yh;
 
-import ai.eb;
-import ai.ld;
+import ai.fb;
+import ai.md;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -24,7 +24,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class g1 extends e61 {
     public static final /* synthetic */ int a = 0;
@@ -67,7 +67,7 @@ public final class g1 extends e61 {
             TextView textView4 = h1Var.M;
             int d = kVar.d();
             if (h1Var.j0 != kVar) {
-                eb d12 = ld.d1(w9Var, w9Var.getImageReceiver(), d);
+                fb d12 = md.d1(w9Var, w9Var.getImageReceiver(), d);
                 h1Var.N = d12;
                 d12.run();
                 h1Var.N = null;
@@ -90,7 +90,7 @@ public final class g1 extends e61 {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("" + LocaleController.formatNumber(kVar.g(), ','));
                 spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
                 yq[] yqVarArr = new yq[1];
-                textView4.setText(ld.Y0(false, LocaleController.formatSpannable(R.string.PremiumOrStarsPrice, spannableStringBuilder), 0.48f, yqVarArr));
+                textView4.setText(md.Y0(false, LocaleController.formatSpannable(R.string.PremiumOrStarsPrice, spannableStringBuilder), 0.48f, yqVarArr));
                 yqVarArr[0].spaceScaleX = 0.8f;
             }
             FrameLayout.LayoutParams layoutParams = h1Var.E;

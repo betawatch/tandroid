@@ -2,7 +2,6 @@ package k0;
 
 import a1.g;
 import a6.m;
-import ai.s3;
 import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -26,8 +25,8 @@ import androidx.profileinstaller.ProfileInstallReceiver;
 import androidx.recyclerview.widget.RecyclerView;
 import bh.h;
 import com.google.android.gms.common.api.internal.o;
-import com.google.firebase.messaging.d;
 import gi.m4;
+import i2.k0;
 import j$.util.DesugarCollections;
 import java.io.EOFException;
 import java.security.Signature;
@@ -57,6 +56,7 @@ import ki.z0;
 import l.i;
 import l.k;
 import l.w;
+import md.c;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
@@ -82,7 +82,7 @@ import org.telegram.ui.web.a1;
 import org.telegram.ui.x9;
 import qf.e;
 import r2.j;
-import r4.c;
+import r4.d;
 import rg.m2;
 import rg.v1;
 import s4.b1;
@@ -92,9 +92,9 @@ import s4.o0;
 import td.p;
 import x2.n;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, c, o, v1, d0 {
+public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, d, o, v1, d0 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -103,7 +103,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         this.b = obj;
     }
 
-    public static FingerprintManager w(Context context) {
+    public static FingerprintManager q(Context context) {
         int i10 = Build.VERSION.SDK_INT;
         if (i10 == 23) {
             return (FingerprintManager) context.getSystemService(FingerprintManager.class);
@@ -193,11 +193,11 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         int i12;
         int i13;
         RecyclerView recyclerView = (RecyclerView) this.b;
-        int L = recyclerView.e.L();
+        int G = recyclerView.e.G();
         int i14 = i11 + i10;
-        for (int i15 = 0; i15 < L; i15++) {
-            View K = recyclerView.e.K(i15);
-            b1 U = RecyclerView.U(K);
+        for (int i15 = 0; i15 < G; i15++) {
+            View F = recyclerView.e.F(i15);
+            b1 U = RecyclerView.U(F);
             if (U != null && !U.r() && (i13 = U.c) >= i10 && i13 < i14) {
                 U.a(2);
                 if (obj == null) {
@@ -210,7 +210,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
                     }
                     U.m.add(obj);
                 }
-                ((o0) K.getLayoutParams()).c = true;
+                ((o0) F.getLayoutParams()).c = true;
             }
         }
         e eVar = recyclerView.b;
@@ -265,9 +265,9 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
 
     public void O(int i10, int i11) {
         RecyclerView recyclerView = (RecyclerView) this.b;
-        int L = recyclerView.e.L();
-        for (int i12 = 0; i12 < L; i12++) {
-            b1 U = RecyclerView.U(recyclerView.e.K(i12));
+        int G = recyclerView.e.G();
+        for (int i12 = 0; i12 < G; i12++) {
+            b1 U = RecyclerView.U(recyclerView.e.F(i12));
             if (U != null && !U.r() && U.c >= i10) {
                 U.n(i11, false);
                 recyclerView.u0.f = true;
@@ -315,9 +315,9 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
 
     @Override // k2.x
     public void T() {
-        i2.j0 j0Var = ((w0) this.b).Y;
-        if (j0Var != null) {
-            j0Var.a();
+        k0 k0Var = ((w0) this.b).Y;
+        if (k0Var != null) {
+            k0Var.a();
         }
     }
 
@@ -366,7 +366,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         int i17;
         int i18;
         RecyclerView recyclerView = (RecyclerView) this.b;
-        int L = recyclerView.e.L();
+        int G = recyclerView.e.G();
         int i19 = -1;
         if (i10 < i11) {
             i13 = i10;
@@ -377,8 +377,8 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
             i13 = i11;
             i14 = 1;
         }
-        for (int i20 = 0; i20 < L; i20++) {
-            b1 U = RecyclerView.U(recyclerView.e.K(i20));
+        for (int i20 = 0; i20 < G; i20++) {
+            b1 U = RecyclerView.U(recyclerView.e.F(i20));
             if (U != null && (i18 = U.c) >= i13 && i18 <= i12) {
                 if (i18 == i10) {
                     U.n(i11 - i10, false);
@@ -413,7 +413,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
     }
 
     public byte Z() {
-        int read = ((d) this.b).read();
+        int read = ((com.google.firebase.messaging.d) this.b).read();
         if (read >= 0) {
             return (byte) read;
         }
@@ -421,7 +421,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
     }
 
     @Override // k1.f
-    public Object a(p pVar, md.c cVar) {
+    public Object a(p pVar, c cVar) {
         return ((z) this.b).a(new n1.c(pVar, null, 0), cVar);
     }
 
@@ -477,7 +477,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
     public void c0(long j10) {
         long j11 = 0;
         while (j11 < j10) {
-            long skip = ((d) this.b).skip(j10 - j11);
+            long skip = ((com.google.firebase.messaging.d) this.b).skip(j10 - j11);
             if (skip <= 0) {
                 throw new EOFException();
             }
@@ -503,7 +503,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         qf.b bVar = w0Var.a1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new s3(bVar, j10, 13));
+            handler.post(new ai.r3(bVar, j10, 13));
         }
     }
 
@@ -572,8 +572,8 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         } else {
             cancellationSignal = null;
         }
-        FingerprintManager w9 = w((Context) this.b);
-        if (w9 != null) {
+        FingerprintManager q6 = q((Context) this.b);
+        if (q6 != null) {
             if (eVar != null) {
                 Mac mac = (Mac) eVar.d;
                 Signature signature = (Signature) eVar.b;
@@ -586,7 +586,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
                     cryptoObject = new FingerprintManager.CryptoObject(mac);
                 }
             }
-            w9.authenticate(cryptoObject, cancellationSignal, 0, new a(mVar), null);
+            q6.authenticate(cryptoObject, cancellationSignal, 0, new a(mVar), null);
         }
     }
 
@@ -602,9 +602,9 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
 
     @Override // k2.x
     public void k() {
-        i2.j0 j0Var = ((w0) this.b).Y;
-        if (j0Var != null) {
-            j0Var.a.i0 = true;
+        k0 k0Var = ((w0) this.b).Y;
+        if (k0Var != null) {
+            k0Var.a.i0 = true;
         }
     }
 
@@ -800,11 +800,6 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         return ((a1) this.b).i0;
     }
 
-    @Override // ki.g1
-    public /* synthetic */ boolean q(h1 h1Var) {
-        return false;
-    }
-
     @Override // bh.h
     public void r(Canvas canvas) {
         switch (this.a) {
@@ -886,7 +881,12 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         }
     }
 
-    @Override // r4.c
+    @Override // ki.g1
+    public /* synthetic */ boolean w(h1 h1Var) {
+        return false;
+    }
+
+    @Override // r4.d
     public void x() {
         Log.d("ProfileInstaller", "DIAGNOSTIC_PROFILE_IS_COMPRESSED");
     }
@@ -896,7 +896,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         ((g0) this.b).p(i10, i11);
     }
 
-    @Override // r4.c
+    @Override // r4.d
     public void z(int i10, Object obj) {
         String str;
         switch (i10) {

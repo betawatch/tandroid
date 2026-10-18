@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hk0 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.kd0, Utilities.Callback2Return, org.telegram.ui.Components.mw0, q3.g, g2.g, qg.j0 {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class hk0 implements org.telegram.ui.ActionBar.a2, 
 
     @Override // org.telegram.messenger.Utilities.Callback2Return
     public Object run(Object obj, Object obj2) {
-        return ((Integer) obj).intValue() == 0 ? ai.ld.Y0(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
+        return ((Integer) obj).intValue() == 0 ? ai.md.Y0(false, LocaleController.formatPluralStringComma("Stars", ((Integer) obj2).intValue()), 0.66f, null) : LocaleController.formatNumber(r4.intValue(), ',');
     }
 
     @Override // org.telegram.ui.Components.mw0

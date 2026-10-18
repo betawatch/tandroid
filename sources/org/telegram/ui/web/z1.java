@@ -14,12 +14,12 @@ import org.telegram.ui.Cells.b6;
 import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.xj0;
-import org.telegram.ui.Wallet.o6;
-import org.telegram.ui.Wallet.p6;
+import org.telegram.ui.Wallet.r6;
+import org.telegram.ui.Wallet.s6;
 import org.telegram.ui.r91;
 import rg.v2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -210,10 +210,10 @@ public final /* synthetic */ class z1 implements Runnable {
                 fVar2.v = null;
                 Choreographer.getInstance().removeFrameCallback(fVar2);
                 fVar2.F = 0L;
-                o6 o6Var = (o6) fVar2;
-                p6 p6Var = o6Var.L;
-                if (p6Var.d == o6Var) {
-                    p6.c(p6Var);
+                r6 r6Var = (r6) fVar2;
+                s6 s6Var = r6Var.L;
+                if (s6Var.d == r6Var) {
+                    s6.c(s6Var);
                     return;
                 }
                 return;

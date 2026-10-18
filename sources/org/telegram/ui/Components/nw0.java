@@ -14,7 +14,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class nw0 extends View {
     public int E;
@@ -127,7 +127,7 @@ public final class nw0 extends View {
                 int i15 = this.f;
                 float f14 = ((i14 + i15) * d) + f13 + (i15 / 2);
                 int i16 = org.telegram.ui.ActionBar.h6.N6;
-                paint.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.w0(i16, d6Var2), 80));
+                paint.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(i16, d6Var2), 80));
                 float f15 = dp;
                 canvas2.drawCircle(f14, f15, AndroidUtilities.dp(d10 * 12.0f), paint);
                 paint.setColor(org.telegram.ui.ActionBar.h6.w0(i16, d6Var2));
@@ -148,7 +148,7 @@ public final class nw0 extends View {
             int w03 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.N6, d6Var2);
             int i21 = this.J;
             int i22 = i12;
-            int f19 = i0.b.f(a2, w02, org.telegram.ui.ActionBar.h6.m1((i21 == Integer.MIN_VALUE || i13 > i21) ? f18 : 0.5f, w03));
+            int f19 = i0.a.f(a2, w02, org.telegram.ui.ActionBar.h6.m1((i21 == Integer.MIN_VALUE || i13 > i21) ? f18 : 0.5f, w03));
             paint.setColor(f19);
             Paint paint2 = this.c;
             paint2.setColor(f19);
@@ -177,7 +177,7 @@ public final class nw0 extends View {
                         i10 = i20;
                         float[] fArr = new float[i22];
                         fArr[z11 ? 1 : 0] = AndroidUtilities.dp(6.0f);
-                        fArr[1] = org.telegram.messenger.wh.C(8.0f, dp4, r12) / (dp4 - 1);
+                        fArr[1] = org.telegram.messenger.kk.B(8.0f, dp4, r12) / (dp4 - 1);
                         paint2.setPathEffect(new DashPathEffect(fArr, 0.0f));
                         this.e = dp4;
                     } else {
@@ -195,7 +195,7 @@ public final class nw0 extends View {
             }
             int i27 = this.G[i13];
             String str = this.F[i13];
-            int f22 = i0.b.f(max, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var));
+            int f22 = i0.a.f(max, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var));
             TextPaint textPaint = this.d;
             textPaint.setColor(f22);
             if (this.H != null) {

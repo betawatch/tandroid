@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class s2 {
     public final Context a;
@@ -57,7 +57,7 @@ public final class s2 {
     }
 
     public static int f(float f7) {
-        return f7 < 0.5f ? i0.b.f(Utilities.clamp(f7 / 0.5f, 1.0f, 0.0f), -7544833, -1) : i0.b.f(Utilities.clamp((f7 - 0.5f) / 0.5f, 1.0f, 0.0f), -1, -70004);
+        return f7 < 0.5f ? i0.a.f(Utilities.clamp(f7 / 0.5f, 1.0f, 0.0f), -7544833, -1) : i0.a.f(Utilities.clamp((f7 - 0.5f) / 0.5f, 1.0f, 0.0f), -1, -70004);
     }
 
     public final void a(r2 r2Var) {
@@ -140,7 +140,7 @@ public final class s2 {
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
             this.r = android.support.v4.media.session.x.b(f7, f10, min, jArr, fArr);
         } else {
-            this.r = new RadialGradient(this.j * 0.5f, this.k * 0.4f, (2.0f - this.h) * (Math.min(r1, r11) / 2.0f) * 1.35f, new int[]{i0.b.o(this.n, 0), this.n}, new float[]{AndroidUtilities.lerp(0.9f, 0.22f, this.h), 1.0f}, Shader.TileMode.CLAMP);
+            this.r = new RadialGradient(this.j * 0.5f, this.k * 0.4f, (2.0f - this.h) * (Math.min(r1, r11) / 2.0f) * 1.35f, new int[]{i0.a.o(this.n, 0), this.n}, new float[]{AndroidUtilities.lerp(0.9f, 0.22f, this.h), 1.0f}, Shader.TileMode.CLAMP);
         }
         this.s.setShader(this.r);
         p2Var.invalidate();

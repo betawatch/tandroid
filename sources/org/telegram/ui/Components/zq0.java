@@ -17,7 +17,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ua1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class zq0 extends hm0 {
     public int G;
@@ -323,7 +323,7 @@ public final class zq0 extends hm0 {
             u3Var.setText(LocaleController.getString(R.string.Recent));
             view = u3Var;
         } else if (i10 == 4) {
-            view = new ai.hc(this, context, 23);
+            view = new ai.ic(this, context, 23);
         } else if (i10 != 5) {
             View view2 = new View(context);
             view2.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp((!dr0Var.h0 || dr0Var.o0[1] == null) ? 56.0f : 109.0f)));

@@ -1,6 +1,6 @@
 package hg;
 
-import ai.ld;
+import ai.md;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -40,7 +40,7 @@ import org.telegram.ui.mg;
 import org.telegram.ui.oi0;
 import rg.t2;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -219,7 +219,7 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WebRecentClearTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WebRecentClearText);
                 alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(kVar));
-                i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+                i2.d.r(R.string.Cancel, alertDialog$Builder, null);
                 break;
             case 16:
                 ((qg.y) this.b).dismiss();
@@ -242,41 +242,41 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 PremiumPreviewFragment.k0(l1Var.t0, null, "profile", null);
                 break;
             case 22:
-                final ug.e0 e0Var = (ug.e0) this.b;
-                wg.a aVar3 = e0Var.Q0;
+                final ug.f0 f0Var = (ug.f0) this.b;
+                wg.a aVar3 = f0Var.Q0;
                 if (!aVar3.a.N) {
                     aVar3.b(true);
-                    String str = e0Var.R0;
+                    String str = f0Var.R0;
                     final int i11 = 0;
-                    Utilities.Callback callback = new Utilities.Callback() { // from class: ug.d0
+                    Utilities.Callback callback = new Utilities.Callback() { // from class: ug.e0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             switch (i11) {
                                 case 0:
-                                    e0 e0Var2 = e0Var;
-                                    e0Var2.Q0.b(false);
-                                    e0Var2.dismiss();
-                                    AndroidUtilities.runOnUIThread(new c0(e0Var2, 1), 200L);
+                                    f0 f0Var2 = f0Var;
+                                    f0Var2.Q0.b(false);
+                                    f0Var2.dismiss();
+                                    AndroidUtilities.runOnUIThread(new d0(f0Var2, 1), 200L);
                                     break;
                                 default:
-                                    e0.d0(e0Var, (TLRPC.TL_error) obj);
+                                    f0.d0(f0Var, (TLRPC.TL_error) obj);
                                     break;
                             }
                         }
                     };
                     final int i12 = 1;
-                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: ug.d0
+                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: ug.e0
                         @Override // org.telegram.messenger.Utilities.Callback
                         public final void run(Object obj) {
                             switch (i12) {
                                 case 0:
-                                    e0 e0Var2 = e0Var;
-                                    e0Var2.Q0.b(false);
-                                    e0Var2.dismiss();
-                                    AndroidUtilities.runOnUIThread(new c0(e0Var2, 1), 200L);
+                                    f0 f0Var2 = f0Var;
+                                    f0Var2.Q0.b(false);
+                                    f0Var2.dismiss();
+                                    AndroidUtilities.runOnUIThread(new d0(f0Var2, 1), 200L);
                                     break;
                                 default:
-                                    e0.d0(e0Var, (TLRPC.TL_error) obj);
+                                    f0.d0(f0Var, (TLRPC.TL_error) obj);
                                     break;
                             }
                         }
@@ -284,15 +284,15 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                     ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                     TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
                     tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new ug.n(callback2, callback, 0), 2);
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new ug.o(callback2, callback, 0), 2);
                     break;
                 }
                 break;
             case 23:
-                ((ug.h0) this.b).dismiss();
+                ((ug.i0) this.b).dismiss();
                 break;
             case 24:
-                ((ug.z) ((vg.e) this.b)).r.dismiss();
+                ((ug.a0) ((vg.e) this.b)).r.dismiss();
                 break;
             case 25:
                 Runnable runnable = ((yg.c) this.b).d;
@@ -311,12 +311,12 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 if (((yh.p1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
                     l2 l2Var = new l2();
                     l2Var.a = true;
-                    R.showAsSheet(new ld(), l2Var);
+                    R.showAsSheet(new md(), l2Var);
                     break;
                 }
                 break;
             default:
-                ((zh.t) this.b).c.b.a.presentFragment(new PremiumPreviewFragment(0, "qr_emoji"));
+                ((zh.n) this.b).c.b.a.presentFragment(new PremiumPreviewFragment(0, "qr_emoji"));
                 break;
         }
     }

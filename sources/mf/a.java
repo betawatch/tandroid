@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class a extends lf.a {
     public static final Logger s = Logger.getLogger(a.class.getName());
@@ -415,9 +415,9 @@ public final class a extends lf.a {
                                                             String str5 = this.h;
                                                             if (str5 == null || str5.trim().length() == 0) {
                                                                 if (k11.i() == 2) {
-                                                                    int b10 = i0.a.b(dataInputStream5.readShort() - r62);
+                                                                    int b10 = i2.d.b(dataInputStream5.readShort() - r62);
                                                                     if (b10 != 0) {
-                                                                        this.h = i0.a.d(b10);
+                                                                        this.h = i2.d.d(b10);
                                                                     }
                                                                 } else {
                                                                     this.h = k11.m();

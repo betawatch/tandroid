@@ -57,7 +57,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.vo;
 import org.telegram.ui.xo;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x7 implements Runnable {
     public final /* synthetic */ int a;
@@ -101,7 +101,7 @@ public final /* synthetic */ class x7 implements Runnable {
                 ((Utilities.Callback2) obj2).run(Boolean.valueOf(z10), (String) obj);
                 return;
             case 1:
-                ((sc) obj2).run(Boolean.valueOf(z10), (String) obj);
+                ((tc) obj2).run(Boolean.valueOf(z10), (String) obj);
                 return;
             case 2:
                 ((org.telegram.ui.Wallet.s1) obj2).run(Boolean.valueOf(z10), (String) obj);
@@ -227,7 +227,7 @@ public final /* synthetic */ class x7 implements Runnable {
                     break;
                 }
                 sQLiteCursor.dispose();
-                AndroidUtilities.runOnUIThread(new e2(yVar, arrayList5, arrayList6, arrayList7, this.b, 3));
+                AndroidUtilities.runOnUIThread(new ei.s1(yVar, arrayList5, arrayList6, arrayList7, this.b, 2));
                 return;
             case 6:
                 ((ji.a) obj2).Q((Utilities.Callback) obj, z10, false);
@@ -384,7 +384,7 @@ public final /* synthetic */ class x7 implements Runnable {
                 org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
                 b2Var2.R = string;
                 b2Var2.T = LocaleController.getString(R.string.UsernameActivateErrorMessage);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new d4(voVar, (TLRPC.TL_username) obj, z10, i12));
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new f4(voVar, (TLRPC.TL_username) obj, z10, i12));
                 alertDialog$Builder.o();
                 return;
             case 18:

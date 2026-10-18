@@ -1,6 +1,6 @@
 package qg;
 
-import ai.tc;
+import ai.uc;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Path;
@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.d6;
@@ -20,11 +20,11 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.t6;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y extends f3 {
     public static final /* synthetic */ int s = 0;
-    public final tc b;
+    public final uc b;
     public final ImageView c;
     public final t6 d;
     public final Path e;
@@ -60,26 +60,26 @@ public final class y extends f3 {
         t6Var.d = Color.alpha(-65536) / 255.0f;
         t6Var.a();
         t6Var.invalidate();
-        tc tcVar = new tc(context, 5);
-        tcVar.setOrientation(1);
+        uc ucVar = new uc(context, 5);
+        ucVar.setOrientation(1);
         u uVar = new u(this, context);
-        tcVar.b = uVar;
+        ucVar.b = uVar;
         uVar.a(this.f);
-        tcVar.c = new t(this, context);
-        tcVar.d = new x(this, context);
+        ucVar.c = new t(this, context);
+        ucVar.d = new x(this, context);
         q qVar = new q(context, this.resourcesProvider);
-        qVar.setAdapter(new r(tcVar));
-        tcVar.addView(qVar, z5.l(1.0f, -1, 0));
-        tcVar.addView(t6Var, z5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        qVar.setAdapter(new r(ucVar));
+        ucVar.addView(qVar, z5.l(1.0f, -1, 0));
+        ucVar.addView(t6Var, z5.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(16);
         linearLayout2.addView(imageView, z5.n(28, 28));
         linearLayout2.addView(qVar.n(8, false), z5.p(-1, 40, 1.0f, 16, 12, 0, 12, 0));
         linearLayout2.addView(imageView2, z5.n(28, 28));
-        tcVar.addView(linearLayout2, z5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
-        this.b = tcVar;
-        linearLayout.addView(tcVar, z5.n(-1, 0));
+        ucVar.addView(linearLayout2, z5.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        this.b = ucVar;
+        linearLayout.addView(ucVar, z5.n(-1, 0));
         p pVar = new p(this, context, linearLayout);
         pVar.addView(linearLayout);
         setCustomView(pVar);
@@ -103,16 +103,16 @@ public final class y extends f3 {
                 this.r = true;
             }
         }
-        tc tcVar = this.b;
-        if (i11 != 5 && (findFocus = tcVar.findFocus()) != null) {
+        uc ucVar = this.b;
+        if (i11 != 5 && (findFocus = ucVar.findFocus()) != null) {
             findFocus.clearFocus();
             AndroidUtilities.hideKeyboard(findFocus);
         }
         if (i11 != 3) {
-            ((u) tcVar.b).a(i10);
+            ((u) ucVar.b).a(i10);
         }
         if (i11 != 0) {
-            t tVar = (t) tcVar.c;
+            t tVar = (t) ucVar.c;
             boolean z10 = i11 != 1;
             tVar.n.f = i10;
             float[] fArr = tVar.h;
@@ -120,7 +120,7 @@ public final class y extends f3 {
             if (z10) {
                 float f7 = (fArr[1] * 0.5f) + 1.0f;
                 float f10 = fArr[2];
-                tVar.d = f7 - (f10 <= 0.5f ? 1.0f - (((1.0f - f10) * 0.22000003f) + 0.78f) : a6.D(1.0f, f10, 0.22f, 1.0f));
+                tVar.d = f7 - (f10 <= 0.5f ? 1.0f - (((1.0f - f10) * 0.22000003f) + 0.78f) : k3.D(1.0f, f10, 0.22f, 1.0f));
                 tVar.e = fArr[0] / 360.0f;
             }
             tVar.invalidate();
@@ -132,7 +132,7 @@ public final class y extends f3 {
             t6Var.a();
             t6Var.invalidate();
         }
-        x xVar = (x) tcVar.d;
+        x xVar = (x) ucVar.d;
         xVar.e = true;
         xVar.a.b();
         xVar.b.b();

@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y41 extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ z51 c;
@@ -310,7 +310,7 @@ public final class y41 extends org.telegram.ui.Components.hm0 {
             String str = fyVar.b.title;
             boolean z15 = (fyVar.e || UserConfig.getInstance(i14).isPremium()) ? false : true;
             boolean z16 = fyVar.f;
-            ai.ga gaVar = new ai.ga(this, fyVar, i20, 17);
+            ai.ha haVar = new ai.ha(this, fyVar, i20, 17);
             sg.p0 p0Var = c51Var.c;
             FrameLayout frameLayout = c51Var.a;
             c51Var.d = str;
@@ -319,13 +319,13 @@ public final class y41 extends org.telegram.ui.Components.hm0 {
                 frameLayout.setVisibility(8);
                 r92 = 0;
                 p0Var.setVisibility(0);
-                p0Var.a(LocaleController.formatString("UnlockPremiumEmojiPack", R.string.UnlockPremiumEmojiPack, str), gaVar, false);
+                p0Var.a(LocaleController.formatString("UnlockPremiumEmojiPack", R.string.UnlockPremiumEmojiPack, str), haVar, false);
             } else {
                 i12 = 8;
                 r92 = 0;
                 p0Var.setVisibility(8);
                 frameLayout.setVisibility(0);
-                frameLayout.setOnClickListener(gaVar);
+                frameLayout.setOnClickListener(haVar);
             }
             if (z16) {
                 formatString = LocaleController.getString(R.string.Added);
@@ -506,7 +506,7 @@ public final class y41 extends org.telegram.ui.Components.hm0 {
                 i51Var3.e = new org.telegram.ui.Components.a6(document3, (Paint.FontMetricsInt) null);
                 i51Var3.d = document3;
                 i51Var3.v = tL_starGiftUnique;
-                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ai.fa.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ai.ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
                 if (stargiftattributebackdrop != null) {
                     i51Var3.w = Integer.valueOf(stargiftattributebackdrop.pattern_color | (-1879048192));
                 }
@@ -554,7 +554,7 @@ public final class y41 extends org.telegram.ui.Components.hm0 {
             d51Var.a = textView;
             textView.setTextSize(1, 12.0f);
             textView.setTextColor(-1);
-            textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(11.0f), z51Var.g1 ? org.telegram.ui.ActionBar.h6.v(z51Var.f1, org.telegram.ui.ActionBar.h6.m1(0.4f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false))) : i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Te, false), 99)));
+            textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(11.0f), z51Var.g1 ? org.telegram.ui.ActionBar.h6.v(z51Var.f1, org.telegram.ui.ActionBar.h6.m1(0.4f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false))) : i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Te, false), 99)));
             textView.setTypeface(AndroidUtilities.bold());
             textView.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.66f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f));
             d51Var.addView(textView, w7.z5.e(-2, -2, 17));

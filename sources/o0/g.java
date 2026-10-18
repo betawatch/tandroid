@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import v7.y7;
 import w7.e8;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final a0.j a = new a0.j(16);
@@ -77,9 +77,9 @@ public abstract class g {
                 }
                 if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
                     h[] hVarArr = (h[]) list2.get(0);
-                    y7 y7Var = i0.f.a;
+                    y7 y7Var = i0.e.a;
                     e8.a("TypefaceCompat.createFromFontInfo");
-                    b10 = i0.f.a.b(context, hVarArr, i10);
+                    b10 = i0.e.a.b(context, hVarArr, i10);
                     Trace.endSection();
                     if (b10 != null) {
                         return new f(-3);
@@ -87,9 +87,9 @@ public abstract class g {
                     jVar.b(str, b10);
                     return new f(b10);
                 }
-                y7 y7Var2 = i0.f.a;
+                y7 y7Var2 = i0.e.a;
                 e8.a("TypefaceCompat.createFromFontInfoWithFallback");
-                b10 = i0.f.a.c(context, list2, i10);
+                b10 = i0.e.a.c(context, list2, i10);
                 Trace.endSection();
                 if (b10 != null) {
                 }

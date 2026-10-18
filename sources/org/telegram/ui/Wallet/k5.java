@@ -1,144 +1,226 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
+import android.animation.ValueAnimator;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.TelegramQRCodeWriter;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class k5 extends Drawable {
-    public static Path f;
-    public final /* synthetic */ int a;
-    public final Paint b;
-    public final Path c;
-    public final Object d;
-    public final Object e;
+public final class k5 extends FrameLayout {
+    public final TextView a;
+    public final FrameLayout b;
+    public final FrameLayout c;
+    public final FrameLayout d;
+    public r0 e;
+    public boolean f;
+    public boolean h;
+    public ValueAnimator n;
 
-    public k5(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                Paint paint = new Paint(1);
-                this.b = paint;
-                this.c = new Path();
-                this.d = new Matrix();
-                this.e = new Rect();
-                paint.setColor(-1);
-                break;
-            default:
-                this.b = new Paint(1);
-                this.c = new Path();
-                this.d = new RectF();
-                this.e = new float[]{AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), 0.0f, 0.0f, 0.0f, 0.0f};
-                break;
+    public k5(Context context, String str) {
+        super(context);
+        Bitmap bitmap;
+        ActivityManager activityManager;
+        addView(new b5(context, str), w7.z5.e(-1, -1, 17));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(20.0f), -1));
+        frameLayout.setCameraDistance(AndroidUtilities.dp(8000.0f));
+        addView(frameLayout, w7.z5.a(244.0f, 0.0f, 22.0f, 0.0f, 0.0f, 212, 49));
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        this.c = frameLayout2;
+        frameLayout.addView(frameLayout2, w7.z5.d(-1.0f, -1));
+        FrameLayout frameLayout3 = new FrameLayout(context);
+        frameLayout2.addView(frameLayout3, w7.z5.a(164.0f, 0.0f, 24.0f, 0.0f, 0.0f, 164, 49));
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        boolean z10 = SharedConfig.getDevicePerformanceClass() == 0 || LiteMode.isPowerSaverApplied() || (activityManager = (ActivityManager) context.getSystemService("activity")) == null || activityManager.getDeviceConfigurationInfo().reqGlEsVersion < 196608;
+        float[] fArr = new float[1];
+        try {
+            HashMap hashMap = new HashMap();
+            hashMap.put(dc.b.a, ic.c.d);
+            hashMap.put(dc.b.c, 0);
+            TelegramQRCodeWriter telegramQRCodeWriter = new TelegramQRCodeWriter();
+            telegramQRCodeWriter.setCenterDrawable(!z10 ? new ColorDrawable(0) : context.getResources().getDrawable(R.drawable.mini_gram_72).mutate());
+            bitmap = telegramQRCodeWriter.encode("ton://transfer/".concat(str), 768, 768, hashMap, null);
+            fArr[0] = telegramQRCodeWriter.getImageSize() / bitmap.getWidth();
+        } catch (Exception e) {
+            FileLog.e(e);
+            bitmap = null;
         }
-    }
+        imageView.setImageBitmap(bitmap);
+        frameLayout3.addView(imageView, w7.z5.d(-1.0f, -1));
+        if (!z10) {
+            float f7 = fArr[0];
+            if (f7 > 0.0f) {
+                int round = Math.round(f7 * 164.0f * 1.35f);
+                frameLayout3.addView(new o8(context), w7.z5.e(round, round, 17));
+            }
+        }
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setText(LocaleController.getString(R.string.WalletCopyAddress));
+        textView.setTextColor(-15556886);
+        textView.setTextSize(1, 14.0f);
+        textView.setGravity(17);
+        textView.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
+        textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+        textView.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(12.0f), 0);
+        int dp = AndroidUtilities.dp(18.0f);
+        textView.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, -984578, -1903620, -1903620));
+        Drawable mutate = context.getResources().getDrawable(R.drawable.wallet_copy).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(-15556886, PorterDuff.Mode.SRC_IN));
+        mutate.setBounds(0, 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
+        textView.setCompoundDrawables(mutate, null, null, null);
+        w7.b6.a(textView);
+        this.c.addView(textView, w7.z5.a(28.0f, 0.0f, 202.0f, 0.0f, 0.0f, -2, 49));
+        FrameLayout frameLayout4 = new FrameLayout(context);
+        this.d = frameLayout4;
+        frameLayout4.setVisibility(4);
+        frameLayout4.setRotationY(180.0f);
+        this.b.addView(frameLayout4, w7.z5.d(-1.0f, -1));
+        TextView textView2 = new TextView(context);
+        String replace = str.replace(" ", "");
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        int i10 = 0;
+        int i11 = 0;
+        while (i10 < replace.length()) {
+            if (i11 > 0) {
+                spannableStringBuilder.append(i11 % 3 == 0 ? '\n' : ' ');
+            }
+            int length = spannableStringBuilder.length();
+            int i12 = i10 + 4;
+            spannableStringBuilder.append((CharSequence) replace, i10, Math.min(i12, replace.length()));
+            if ((i11 & 1) != 0) {
+                spannableStringBuilder.setSpan(new ForegroundColorSpan(-7434605), length, spannableStringBuilder.length(), 33);
+            }
+            i11++;
+            i10 = i12;
+        }
+        textView2.setText(spannableStringBuilder);
+        textView2.setTextColor(-16777216);
+        textView2.setTextSize(1, 18.0f);
+        textView2.setTypeface(m5.m0(context));
+        textView2.setGravity(17);
+        textView2.setIncludeFontPadding(false);
+        textView2.setMaxLines(4);
+        textView2.setLineSpacing(0.0f, 1.0f);
+        TextView j10 = org.telegram.ui.Cells.c1.j(this.d, textView2, w7.z5.a(112.0f, 8.0f, 32.0f, 8.0f, 0.0f, -1, 55), context);
+        j10.setText(LocaleController.getString(R.string.WalletAddressCopiedShort));
+        j10.setTextColor(-15556886);
+        j10.setTextSize(1, 14.0f);
+        j10.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+        j10.setGravity(17);
+        j10.setCompoundDrawablePadding(AndroidUtilities.dp(3.0f));
+        Drawable mutate2 = context.getResources().getDrawable(R.drawable.msg_text_check).mutate();
+        mutate2.setColorFilter(new PorterDuffColorFilter(-15556886, PorterDuff.Mode.SRC_IN));
+        mutate2.setBounds(0, 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f));
+        j10.setCompoundDrawables(mutate2, null, null, null);
+        TextView j11 = org.telegram.ui.Cells.c1.j(this.d, j10, w7.z5.a(28.0f, 0.0f, 149.0f, 0.0f, 0.0f, -2, 49), context);
+        j11.setText(LocaleController.getString(R.string.WalletShowMyQR));
+        j11.setTextColor(-15556886);
+        j11.setTextSize(1, 14.0f);
+        j11.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+        j11.setGravity(17);
+        j11.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+        int dp2 = AndroidUtilities.dp(18.0f);
+        j11.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, -984578, -1903620, -1903620));
+        w7.b6.a(j11);
+        this.d.addView(j11, w7.z5.a(28.0f, 0.0f, 202.0f, 0.0f, 0.0f, -2, 49));
+        final int i13 = 0;
+        View.OnClickListener onClickListener = new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.j5
+            public final /* synthetic */ k5 b;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                canvas.drawPath(this.c, this.b);
-                break;
-            default:
-                Rect rect = (Rect) this.e;
-                Matrix matrix = (Matrix) this.d;
-                Rect bounds = getBounds();
-                if (!bounds.isEmpty()) {
-                    boolean equals = bounds.equals(rect);
-                    Path path = this.c;
-                    if (!equals) {
-                        rect.set(bounds);
-                        matrix.setScale(bounds.width() / 52.0f, bounds.height() / 52.0f);
-                        matrix.postTranslate(bounds.left, bounds.top);
-                        if (f == null) {
-                            f = v7.x7.d("M25.0339 38.8535L16.4947 44.2223C15.6075 44.7802 14.4361 44.5131 13.8782 43.6258C13.6038 43.1893 13.5188 42.6601 13.6426 42.1598L15.0264 36.5704C15.4811 34.7334 16.7041 33.1809 18.3835 32.3088L26.359 28.1671C26.7894 27.9436 26.9572 27.4137 26.7337 26.9833C26.5595 26.6481 26.1903 26.4617 25.8172 26.5208L16.9312 27.9261C14.8088 28.2617 12.6463 27.6475 11.0173 26.2465L7.5978 23.3054C6.8032 22.622 6.71306 21.4239 7.39646 20.6293C7.7225 20.2503 8.18486 20.0153 8.68322 19.9753L18.8056 19.1622C19.5221 19.1046 20.1443 18.6473 20.4134 17.9809L24.2843 8.39097C24.6766 7.41912 25.7823 6.94929 26.7542 7.34157C27.232 7.53443 27.6108 7.91321 27.8037 8.39097L31.6745 17.9809C31.9435 18.6473 32.5659 19.1046 33.2822 19.1622L43.4582 19.9795C44.5029 20.0634 45.2817 20.9784 45.1978 22.023C45.1582 22.5159 44.9279 22.9737 44.5559 23.2992L36.7229 30.1527C36.1947 30.6149 35.9647 31.3308 36.125 32.0141L38.5201 42.2261C38.7594 43.2465 38.1263 44.2677 37.106 44.507C36.6119 44.6228 36.0921 44.536 35.6626 44.2659L27.054 38.8535C26.4366 38.4654 25.6513 38.4654 25.0339 38.8535Z");
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i13) {
+                    case 0:
+                        k5 k5Var = this.b;
+                        if (!k5Var.f && !k5Var.h) {
+                            r0 r0Var = k5Var.e;
+                            if (r0Var != null) {
+                                r0Var.run();
+                            }
+                            k5Var.a(true);
+                            break;
                         }
-                        f.transform(matrix, path);
-                    }
-                    canvas.drawPath(path, this.b);
-                    break;
+                        break;
+                    default:
+                        this.b.a(false);
+                        break;
                 }
-                break;
-        }
+            }
+        };
+        frameLayout3.setOnClickListener(onClickListener);
+        this.a.setOnClickListener(onClickListener);
+        final int i14 = 1;
+        j11.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.j5
+            public final /* synthetic */ k5 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i14) {
+                    case 0:
+                        k5 k5Var = this.b;
+                        if (!k5Var.f && !k5Var.h) {
+                            r0 r0Var = k5Var.e;
+                            if (r0Var != null) {
+                                r0Var.run();
+                            }
+                            k5Var.a(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        this.b.a(false);
+                        break;
+                }
+            }
+        });
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        switch (this.a) {
-            case 1:
-                return AndroidUtilities.dp(18.0f);
-            default:
-                return super.getIntrinsicHeight();
+    public final void a(boolean z10) {
+        if (this.f == z10 || this.h) {
+            return;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        switch (this.a) {
-            case 1:
-                return AndroidUtilities.dp(18.0f);
-            default:
-                return super.getIntrinsicWidth();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
-        switch (this.a) {
-            case 0:
-                super.onBoundsChange(rect);
-                RectF rectF = (RectF) this.d;
-                rectF.set(rect);
-                Path path = this.c;
-                path.reset();
-                path.addRoundRect(rectF, (float[]) this.e, Path.Direction.CW);
-                this.b.setShader(new LinearGradient(0.0f, rect.top, 0.0f, rect.bottom, new int[]{-16216082, -12207881}, new float[]{0.15f, 0.53f}, Shader.TileMode.CLAMP));
-                break;
-            default:
-                super.onBoundsChange(rect);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.setAlpha(i10);
-                invalidateSelf();
-                break;
-            default:
-                this.b.setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                this.b.setColorFilter(colorFilter);
-                invalidateSelf();
-                break;
-            default:
-                this.b.setColorFilter(colorFilter);
-                break;
-        }
+        this.h = true;
+        this.f = z10;
+        FrameLayout frameLayout = this.b;
+        frameLayout.setLayerType(2, null);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(frameLayout.getRotationY(), z10 ? 180.0f : 0.0f);
+        this.n = ofFloat;
+        ofFloat.setDuration(420L);
+        this.n.setInterpolator(bs.h);
+        this.n.addUpdateListener(new u2(this, 3));
+        this.n.addListener(new vf1(this, 5));
+        this.n.start();
     }
 }

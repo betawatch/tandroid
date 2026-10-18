@@ -15,7 +15,7 @@ import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.GraphicsEnvironment;
 import ru.noties.jlatexmath.awt.Toolkit;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class TeXFormula {
     public static final int BOLD = 2;
@@ -41,7 +41,7 @@ public class TeXFormula {
     public static String[] symbolFormulaMappings = new String[65536];
     public static Map<Character.UnicodeBlock, FontInfos> externalFontMap = new HashMap();
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public static class FontInfos {
         String sansserif;
         String serif;
@@ -52,7 +52,7 @@ public class TeXFormula {
         }
     }
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public class TeXIconBuilder {
         private Integer align;
         private Color fgcolor;

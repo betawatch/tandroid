@@ -28,7 +28,7 @@ import org.telegram.ui.n60;
 import org.telegram.ui.pc0;
 import org.telegram.ui.x10;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i3 extends View {
     public final /* synthetic */ int a = 4;
@@ -64,7 +64,7 @@ public final class i3 extends View {
                     org.telegram.ui.Components.j6 j6Var = (org.telegram.ui.Components.j6) this.b;
                     j6Var.setColor(j6Var.b.a(org.telegram.ui.ActionBar.h6.w0(k31Var.I, j6Var.a), false));
                     textColor = k31Var.getTextColor();
-                    j6Var.setColor(i0.b.f(k31Var.F, j6Var.getColor(), textColor));
+                    j6Var.setColor(i0.a.f(k31Var.F, j6Var.getColor(), textColor));
                     j6Var.setAlpha((int) (j6Var.getAlpha() * i10));
                     canvas.drawRoundRect(rectF, dp, dp2, j6Var);
                     p6Var.p(rectF);
@@ -179,7 +179,7 @@ public final class i3 extends View {
                     rectF.set(0.0f, 0.0f, getLayoutParams().width, getMeasuredHeight());
                     ba0Var.e(rectF);
                     ba0Var.k(24.0f);
-                    ba0Var.g(i0.b.o(-1, 20), i0.b.o(-1, 50), i0.b.o(-1, 50), i0.b.o(-1, 70));
+                    ba0Var.g(i0.a.o(-1, 20), i0.a.o(-1, 50), i0.a.o(-1, 50), i0.a.o(-1, 70));
                     ba0Var.draw(canvas);
                     invalidate();
                     canvas.restore();

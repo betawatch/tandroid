@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public class SpaceAtom extends Atom {
     private static UnitConversion[] unitConversions;
@@ -17,7 +17,7 @@ public class SpaceAtom extends Atom {
     private int wUnit;
     private float width;
 
-    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
     public interface UnitConversion {
         float getPixelConversion(TeXEnvironment teXEnvironment);
     }

@@ -3,10 +3,10 @@ package rf;
 import android.app.Activity;
 import android.content.ComponentCallbacks2;
 import android.view.View;
-import i2.g0;
+import i2.h0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class c {
     public final Activity a;
@@ -15,7 +15,7 @@ public final class c {
     public int d;
     public int e = 0;
     public boolean f = false;
-    public g0 g;
+    public h0 g;
     public int h;
     public int i;
     public View j;

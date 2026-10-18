@@ -1,6 +1,6 @@
 package gi;
 
-import ai.fa;
+import ai.ga;
 import ai.u4;
 import android.app.Activity;
 import android.content.Context;
@@ -28,10 +28,10 @@ import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ey;
-import org.telegram.ui.fo0;
+import org.telegram.ui.go0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class y2 implements org.telegram.ui.web.g0 {
     public boolean a;
@@ -188,29 +188,29 @@ public final class y2 implements org.telegram.ui.web.g0 {
         u2 u2Var = d3Var.v;
         c3 c3Var = d3Var.e;
         org.telegram.ui.ActionBar.n2 lastFragment = ((LaunchActivity) d3Var.k0).O().getLastFragment();
-        fo0 fo0Var = null;
+        go0 go0Var = null;
         if (tLObject instanceof TLRPC.TL_payments_paymentFormStars) {
             AndroidUtilities.hideKeyboard(c3Var);
             org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(d3Var.getContext(), 3, null);
             b2Var.q(150L);
-            fa.y(d3Var.G, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new u4(b2Var, 1), new ai.n2(18, this, str));
+            ga.y(d3Var.G, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new u4(b2Var, 1), new ai.o2(18, this, str));
             return;
         }
         if (tLObject instanceof TLRPC.PaymentForm) {
             TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject;
             MessagesController.getInstance(d3Var.G).putUsers(paymentForm.users, false);
-            fo0Var = new fo0(paymentForm, null, str, lastFragment);
+            go0Var = new go0(paymentForm, null, str, lastFragment);
         } else if (tLObject instanceof TLRPC.PaymentReceipt) {
-            fo0Var = new fo0((TLRPC.PaymentReceipt) tLObject);
+            go0Var = new go0((TLRPC.PaymentReceipt) tLObject);
         }
-        if (fo0Var != null) {
+        if (go0Var != null) {
             u2Var.e(u2Var.getTopActionBarOffsetY() + (-u2Var.getOffsetY()));
             AndroidUtilities.hideKeyboard(c3Var);
             td0 td0Var = new td0(this.b);
             td0Var.show();
-            fo0Var.Z0 = new ai.s2(this, td0Var, str, 9);
-            fo0Var.Y0 = this.c;
-            td0Var.c(fo0Var);
+            go0Var.Z0 = new ai.t2(this, td0Var, str, 9);
+            go0Var.Y0 = this.c;
+            td0Var.c(go0Var);
         }
     }
 

@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class sa1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -110,26 +110,26 @@ public final class sa1 extends LinearLayout {
                 super.dispatchDraw(canvas);
                 break;
             case 22:
-                zh.w wVar = (zh.w) this.b;
-                sa1 sa1Var = wVar.c;
-                int i10 = wVar.e;
+                zh.q qVar = (zh.q) this.b;
+                sa1 sa1Var = qVar.c;
+                int i10 = qVar.e;
                 if (i10 >= 0 && i10 < sa1Var.getChildCount()) {
                     float width2 = (r2.getWidth() / 2.0f) + r2.getLeft();
-                    if (sa1Var.getChildAt(wVar.e).getWidth() != 0) {
-                        if (Float.isNaN(wVar.f)) {
-                            wVar.f = width2;
+                    if (sa1Var.getChildAt(qVar.e).getWidth() != 0) {
+                        if (Float.isNaN(qVar.f)) {
+                            qVar.f = width2;
                         } else {
-                            float f13 = wVar.f;
+                            float f13 = qVar.f;
                             if (f13 != width2) {
                                 float f14 = width2 - f13;
                                 if (Math.abs(f14) >= 0.5f) {
-                                    width2 = (f14 * 0.3f) + wVar.f;
+                                    width2 = (f14 * 0.3f) + qVar.f;
                                 }
-                                wVar.f = width2;
+                                qVar.f = width2;
                                 sa1Var.invalidate();
                             }
                         }
-                        canvas.drawCircle(wVar.f, sa1Var.getHeight() / 2.0f, (wVar.getHeight() - AndroidUtilities.dp(6.0f)) / 2.0f, wVar.d);
+                        canvas.drawCircle(qVar.f, sa1Var.getHeight() / 2.0f, (qVar.getHeight() - AndroidUtilities.dp(6.0f)) / 2.0f, qVar.d);
                     }
                 }
                 super.dispatchDraw(canvas);
@@ -151,7 +151,7 @@ public final class sa1 extends LinearLayout {
                 }
                 return false;
             case 2:
-                if (((ai.ld) this.b).f0) {
+                if (((ai.md) this.b).f0) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
                 return false;
@@ -351,11 +351,11 @@ public final class sa1 extends LinearLayout {
                 super.invalidate();
                 int i10 = 0;
                 while (true) {
-                    org.telegram.ui.Cells.z0[] z0VarArr = (org.telegram.ui.Cells.z0[]) this.b;
-                    if (i10 >= z0VarArr.length) {
+                    org.telegram.ui.Cells.y0[] y0VarArr = (org.telegram.ui.Cells.y0[]) this.b;
+                    if (i10 >= y0VarArr.length) {
                         break;
                     } else {
-                        z0VarArr[i10].invalidate();
+                        y0VarArr[i10].invalidate();
                         i10++;
                     }
                 }
@@ -398,7 +398,7 @@ public final class sa1 extends LinearLayout {
                     View childAt = getChildAt(i15);
                     if (childAt != ((org.telegram.ui.Components.iw) this.b).s.F && childAt != null) {
                         childAt.layout(paddingLeft, i14 - (childAt.getMeasuredHeight() / 2), childAt.getMeasuredWidth() + paddingLeft, (childAt.getMeasuredHeight() / 2) + i14);
-                        paddingLeft = org.telegram.messenger.q.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
+                        paddingLeft = org.telegram.messenger.g0.C(2.0f, childAt.getMeasuredWidth(), paddingLeft);
                     }
                 }
                 break;
@@ -541,7 +541,7 @@ public final class sa1 extends LinearLayout {
                 break;
             case 19:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(getMeasuredWidth(), Math.round((1.0f - ((org.telegram.ui.Wallet.l5) this.b).B0) * getMeasuredHeight()));
+                setMeasuredDimension(getMeasuredWidth(), Math.round((1.0f - ((org.telegram.ui.Wallet.m5) this.b).B0) * getMeasuredHeight()));
                 break;
             default:
                 super.onMeasure(i10, i11);

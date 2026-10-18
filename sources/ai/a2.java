@@ -30,7 +30,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.ms;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class a2 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int D0 = 0;
@@ -127,10 +127,10 @@ public final class a2 extends org.telegram.ui.Components.bb {
         int i12 = org.telegram.ui.ActionBar.h6.i5;
         int themedColor = getThemedColor(i12);
         int i13 = org.telegram.ui.ActionBar.h6.h5;
-        setBackgroundColor(i0.b.f(0.1f, themedColor, getThemedColor(i13)));
+        setBackgroundColor(i0.a.f(0.1f, themedColor, getThemedColor(i13)));
         fixNavigationBar();
         gh.c cVar = new gh.c();
-        cVar.a(i0.b.f(0.1f, getThemedColor(i12), getThemedColor(i13)));
+        cVar.a(i0.a.f(0.1f, getThemedColor(i12), getThemedColor(i13)));
         if (Build.VERSION.SDK_INT < 31 || !SharedConfig.chatBlurEnabled()) {
             this.s0 = null;
             this.t0 = null;
@@ -252,15 +252,15 @@ public final class a2 extends org.telegram.ui.Components.bb {
         int i18 = 17;
         textView.setGravity(17);
         textView.setTextColor(-1);
-        TextView k10 = org.telegram.ui.Cells.t0.k(frameLayout, textView, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 102.0f, -1, 87), context);
-        this.p0 = k10;
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 102.0f, -1, 87), context);
+        this.p0 = j10;
         float f7 = 13.0f;
-        k10.setTextSize(1, 13.0f);
-        k10.setText(LocaleController.getString(R.string.Gift2PreviewRandomTraits));
-        k10.setGravity(17);
+        j10.setTextSize(1, 13.0f);
+        j10.setText(LocaleController.getString(R.string.Gift2PreviewRandomTraits));
+        j10.setGravity(17);
         int i19 = -1879048193;
-        k10.setTextColor(-1879048193);
-        frameLayout.addView(k10, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 82.0f, -1, 87));
+        j10.setTextColor(-1879048193);
+        frameLayout.addView(j10, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 82.0f, -1, 87));
         LinearLayout linearLayout = new LinearLayout(context);
         this.Y = linearLayout;
         linearLayout.setOrientation(0);
@@ -273,10 +273,10 @@ public final class a2 extends org.telegram.ui.Components.bb {
             if (i20 >= w1VarArr.length) {
                 this.l0.addView(this.Y, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 18.0f, -1, 87));
                 this.containerView.addView(this.l0, w7.z5.e(-1, 315, 55));
-                int f10 = i0.b.f(0.1f, getThemedColor(org.telegram.ui.ActionBar.h6.i5), getThemedColor(org.telegram.ui.ActionBar.h6.h5));
+                int f10 = i0.a.f(0.1f, getThemedColor(org.telegram.ui.ActionBar.h6.i5), getThemedColor(org.telegram.ui.ActionBar.h6.h5));
                 View view = new View(context);
                 this.q0 = view;
-                view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{i0.b.o(f10, 160), f10 & 16777215}));
+                view.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{i0.a.o(f10, 160), f10 & 16777215}));
                 view.setAlpha(0.0f);
                 FrameLayout.LayoutParams e = w7.z5.e(-1, 0, 48);
                 e.height = AndroidUtilities.statusBarHeight;
@@ -432,7 +432,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
         }
         w1[] w1VarArr = this.Z;
         ((org.telegram.ui.Components.q6) w1VarArr[0].c).c(s1Var.getUpgradeImageViewAttribute().name, z10, true);
-        ((org.telegram.ui.Components.q6) w1VarArr[0].d).setText(k7.W1(s1Var.getUpgradeImageViewAttribute().rarity, new Integer[1]));
+        ((org.telegram.ui.Components.q6) w1VarArr[0].d).setText(k7.X1(s1Var.getUpgradeImageViewAttribute().rarity, new Integer[1]));
         ((org.telegram.ui.Components.q6) w1VarArr[1].c).c(s1Var.getUpgradeBackdropAttribute().name, z10, true);
         ((org.telegram.ui.Components.q6) w1VarArr[1].d).c(gi.l.H0(s1Var.getUpgradeBackdropAttribute().getRarityPermille()), z10, true);
         ((org.telegram.ui.Components.q6) w1VarArr[2].c).c(s1Var.getUpgradePatternAttribute().name, z10, true);

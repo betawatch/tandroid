@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                         b2Var.R = string;
                         b2Var.T = LocaleController.formatString("AutoDeleteConfirmMessage", R.string.AutoDeleteConfirmMessage, LocaleController.formatTTLString(i14 * 60));
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new m4.v0(17));
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Enable), new m4.y0(5, v4Var, view));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Enable), new m4.w0(6, v4Var, view));
                         alertDialog$Builder.o();
                         break;
                     } else {
@@ -163,7 +163,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 runnable.run();
                 break;
             case 17:
-                org.telegram.messenger.wh.n(3, (org.telegram.ui.ActionBar.n2) obj);
+                org.telegram.messenger.kk.n(3, (org.telegram.ui.ActionBar.n2) obj);
                 break;
             case 18:
                 final xu xuVar = (xu) obj;
@@ -292,7 +292,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                                     alertDialog$Builder4.a.R = LocaleController.getString(R.string.FilterDelete);
                                     alertDialog$Builder4.a.T = LocaleController.getString(R.string.FilterDeleteAlert);
                                     alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
-                                    alertDialog$Builder4.k(LocaleController.getString(R.string.Delete), new ov(5, n10Var3, dialogFilter2));
+                                    alertDialog$Builder4.k(LocaleController.getString(R.string.Delete), new zu(6, n10Var3, dialogFilter2));
                                     org.telegram.ui.ActionBar.b2 b2Var4 = alertDialog$Builder4.a;
                                     filtersSetupActivity3.showDialog(b2Var4);
                                     TextView textView = (TextView) b2Var4.d(-1);
@@ -335,7 +335,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                                     alertDialog$Builder4.a.R = LocaleController.getString(R.string.FilterDelete);
                                     alertDialog$Builder4.a.T = LocaleController.getString(R.string.FilterDeleteAlert);
                                     alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
-                                    alertDialog$Builder4.k(LocaleController.getString(R.string.Delete), new ov(5, n10Var3, dialogFilter2));
+                                    alertDialog$Builder4.k(LocaleController.getString(R.string.Delete), new zu(6, n10Var3, dialogFilter2));
                                     org.telegram.ui.ActionBar.b2 b2Var4 = alertDialog$Builder4.a;
                                     filtersSetupActivity3.showDialog(b2Var4);
                                     TextView textView = (TextView) b2Var4.d(-1);

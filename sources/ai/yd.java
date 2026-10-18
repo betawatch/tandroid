@@ -1,79 +1,27 @@
 package ai;
 
-import android.content.Context;
+import android.os.Bundle;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
-public final class yd extends tg.n {
-    public final /* synthetic */ int f0;
+public final class yd extends sn {
+    public final /* synthetic */ boolean Qc;
+    public final /* synthetic */ le Rc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yd(Context context, int i10, int i11, int i12) {
-        super(context, i10, i11);
-        this.f0 = i12;
+    public yd(le leVar, Bundle bundle, boolean z10) {
+        super(bundle);
+        this.Rc = leVar;
+        this.Qc = z10;
     }
 
-    @Override // tg.n
-    public void n() {
-        switch (this.f0) {
-            case 0:
-                break;
-            default:
-                super.n();
-                break;
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        if (this.Qc) {
+            return;
         }
-    }
-
-    @Override // tg.n, android.view.TextureView, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.f0) {
-            case 1:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 2:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 3:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            case 4:
-                super.onAttachedToWindow();
-                setPaused(false);
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
-        }
-    }
-
-    @Override // tg.n, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.f0) {
-            case 1:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 2:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 3:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            case 4:
-                super.onDetachedFromWindow();
-                setPaused(true);
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
-    }
-
-    private final void p() {
+        this.Rc.show();
     }
 }

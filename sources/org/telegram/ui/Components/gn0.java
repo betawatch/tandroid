@@ -34,7 +34,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public abstract class gn0 extends HorizontalScrollView {
     public static final /* synthetic */ int t0 = 0;
@@ -146,7 +146,7 @@ public abstract class gn0 extends HorizontalScrollView {
     }
 
     public final FrameLayout b(int i10, Drawable drawable) {
-        String j10 = i0.a.j(i10, "tab");
+        String j10 = i2.d.j(i10, "tab");
         int i11 = this.x;
         this.x = i11 + 1;
         FrameLayout frameLayout = (FrameLayout) this.n.get(j10);
@@ -169,7 +169,7 @@ public abstract class gn0 extends HorizontalScrollView {
     }
 
     public final wx0 c(int i10, Drawable drawable) {
-        String j10 = i0.a.j(i10, "tab");
+        String j10 = i2.d.j(i10, "tab");
         int i11 = this.x;
         this.x = i11 + 1;
         wx0 wx0Var = (wx0) this.n.get(j10);
@@ -247,7 +247,7 @@ public abstract class gn0 extends HorizontalScrollView {
                 }
                 wx0Var.E = false;
                 if (this.g0) {
-                    wx0Var.setTranslationX(com.google.android.gms.internal.cast.a6.x(1.0f, this.i0, i11 * f11, f12) + wx0Var.b);
+                    wx0Var.setTranslationX(com.google.android.gms.internal.play_billing.k3.y(1.0f, this.i0, i11 * f11, f12) + wx0Var.b);
                 } else {
                     wx0Var.setTranslationX(wx0Var.b);
                 }
@@ -256,7 +256,7 @@ public abstract class gn0 extends HorizontalScrollView {
         }
         float height = getHeight();
         if (this.g0) {
-            height = com.google.android.gms.internal.cast.a6.D(1.0f, this.i0, AndroidUtilities.dp(50.0f), getHeight());
+            height = com.google.android.gms.internal.play_billing.k3.D(1.0f, this.i0, AndroidUtilities.dp(50.0f), getHeight());
         }
         float f14 = height;
         float d = this.p0.d(this.o0 ? 1.0f : 0.0f, false);
@@ -315,9 +315,9 @@ public abstract class gn0 extends HorizontalScrollView {
             org.telegram.ui.ActionBar.d6 d6Var = this.O;
             Paint paint = this.n0;
             if (z10) {
-                paint.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, d6Var), (int) 12.75f));
+                paint.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, d6Var), (int) 12.75f));
             } else {
-                paint.setColor(i0.b.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Me, d6Var), 46));
+                paint.setColor(i0.a.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Me, d6Var), 46));
                 paint.setAlpha((int) (paint.getAlpha() * d));
             }
             canvas2 = canvas;

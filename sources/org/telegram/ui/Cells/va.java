@@ -30,7 +30,7 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.gk0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class va extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.Components.h9 E;
@@ -86,7 +86,7 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
             textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(32.0f), org.telegram.ui.ActionBar.h6.m1(0.12f, w02)));
             textView.setOnClickListener(onClickListener);
         } else if (z12 && TextUtils.isEmpty(str)) {
-            textView.setPadding(t0.f(6.0f, R.string.AddTag, textView), AndroidUtilities.dp(0.66f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
+            textView.setPadding(c1.e(6.0f, R.string.AddTag, textView), AndroidUtilities.dp(0.66f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
             textView.setTranslationX(AndroidUtilities.dp(6.0f));
             textView.setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.m1(0.12f, w02), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f)));
             textView.setOnClickListener(onClickListener);
@@ -239,11 +239,11 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
                 string = LocaleController.getString(R.string.NotificationsOff);
             }
             if (gk0Var.f) {
-                string = r.c.u(string, ", Auto");
+                string = r4.c.u(string, ", Auto");
             }
         }
         if (DialogObject.isEncryptedDialog(gk0Var.d)) {
-            TLRPC.EncryptedChat l4 = org.telegram.messenger.q.l(MessagesController.getInstance(i10), gk0Var.d);
+            TLRPC.EncryptedChat l4 = org.telegram.messenger.g0.l(MessagesController.getInstance(i10), gk0Var.d);
             if (l4 == null || (user = MessagesController.getInstance(i10).getUser(Long.valueOf(l4.user_id))) == null) {
                 return;
             }
@@ -293,7 +293,7 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
         TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
         String publicUsername = UserObject.getPublicUsername(user);
         if (user != null) {
-            e(user, null, !TextUtils.isEmpty(publicUsername) ? r.c.g("@", publicUsername) : user.bot ? LocaleController.getString(R.string.Bot) : user.contact ? LocaleController.getString(R.string.FilterContact) : LocaleController.getString(R.string.FilterNonContact), z10);
+            e(user, null, !TextUtils.isEmpty(publicUsername) ? r4.c.h("@", publicUsername) : user.bot ? LocaleController.getString(R.string.Bot) : user.contact ? LocaleController.getString(R.string.FilterContact) : LocaleController.getString(R.string.FilterNonContact), z10);
         }
     }
 
@@ -898,9 +898,9 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
             TextView textView = new TextView(context);
             this.r = textView;
             textView.setGravity(17);
-            t0.r(org.telegram.ui.ActionBar.h6.Sh, d6Var, textView, 1, 14.0f);
+            c1.r(org.telegram.ui.ActionBar.h6.Sh, d6Var, textView, 1, 14.0f);
             textView.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{14.0f}, org.telegram.ui.ActionBar.h6.Oh));
-            textView.setPadding(t0.f(17.0f, R.string.Add, textView), 0, AndroidUtilities.dp(17.0f), 0);
+            textView.setPadding(c1.e(17.0f, R.string.Add, textView), 0, AndroidUtilities.dp(17.0f), 0);
             boolean z12 = LocaleController.isRTL;
             addView(textView, w7.z5.a(28.0f, z12 ? 14.0f : 0.0f, 15.0f, z12 ? 0.0f : 14.0f, 0.0f, -2, (z12 ? 3 : 5) | 48));
             i12 = (int) Math.ceil((textView.getPaint().measureText(textView.getText().toString()) + AndroidUtilities.dp(48.0f)) / AndroidUtilities.density);

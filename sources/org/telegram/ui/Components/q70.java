@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q70 implements Runnable {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class q70 implements Runnable {
                         while (true) {
                             if (i11 < i12) {
                                 String str5 = strArr[i11];
-                                if (str.startsWith(str5) || org.telegram.messenger.wh.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.wh.w(" ", str5, translitString2)))) {
+                                if (str.startsWith(str5) || org.telegram.messenger.g0.w(" ", str5, str) || (translitString2 != null && (translitString2.startsWith(str5) || org.telegram.messenger.g0.w(" ", str5, translitString2)))) {
                                     i10 = 1;
                                 } else {
                                     if (publicUsername != null && publicUsername.startsWith(str5)) {
@@ -109,7 +109,7 @@ public final /* synthetic */ class q70 implements Runnable {
                                     z10 = true;
                                     if (i10 != 1) {
                                         obj = null;
-                                        arrayList4.add(AndroidUtilities.generateSearchName(r.c.g("@", publicUsername), null, "@" + str5));
+                                        arrayList4.add(AndroidUtilities.generateSearchName(r4.c.h("@", publicUsername), null, "@" + str5));
                                     } else if (z14) {
                                         TLRPC.User user2 = (TLRPC.User) tLObject;
                                         arrayList4.add(AndroidUtilities.generateSearchName(user2.first_name, user2.last_name, str5));

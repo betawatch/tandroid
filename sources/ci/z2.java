@@ -42,7 +42,7 @@ import org.telegram.ui.od;
 import org.telegram.ui.sn;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -333,7 +333,7 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                     tL_messages_sendBotRequestedPeer2.webapp_req_id = str4;
                     tL_messages_sendBotRequestedPeer2.button_id = tL_buttonTypeRequestPeer2.button_id;
                     tL_messages_sendBotRequestedPeer2.requested_peers.add(MessagesController.getInputPeer(user3));
-                    ConnectionsManager.getInstance(a1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer2, new org.telegram.messenger.a(), new ai.u2(a1Var, z7Var, str4, user3, 4));
+                    ConnectionsManager.getInstance(a1Var.M).sendRequestTyped(tL_messages_sendBotRequestedPeer2, new org.telegram.messenger.a(), new ai.v2(a1Var, z7Var, str4, user3, 3));
                     a1Var.x(z7Var, "requested_chat_sent", org.telegram.ui.web.a1.A(str4, "req_id"));
                     break;
                 }
@@ -366,13 +366,13 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                         TLRPC.User user4 = i22;
                         boolean z10 = tL_payments_checkedGiftCode.used_date != 0;
                         org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
-                        if (R2 != null && ug.e0.S0 == null) {
-                            ug.e0 e0Var = new ug.e0(R2, UserConfig.selectedAccount, user4, new sg.k(tL_premiumGiftOption), str7, z10, R2.getResourceProvider());
-                            e0Var.show();
-                            ug.e0.S0 = e0Var;
+                        if (R2 != null && ug.f0.S0 == null) {
+                            ug.f0 f0Var = new ug.f0(R2, UserConfig.selectedAccount, user4, new sg.k(tL_premiumGiftOption), str7, z10, R2.getResourceProvider());
+                            f0Var.show();
+                            ug.f0.S0 = f0Var;
                         }
                     } else {
-                        n2Var.showDialog(new ug.a0(n2Var, tL_payments_checkedGiftCode, str7));
+                        n2Var.showDialog(new ug.b0(n2Var, tL_payments_checkedGiftCode, str7));
                     }
                     if (cVar != null) {
                         cVar.b();
@@ -381,10 +381,10 @@ public final /* synthetic */ class z2 implements Utilities.Callback {
                 }
                 break;
             case 17:
-                MessagesController.getInstance(r13.currentAccount).getBoostsController().getBoostsStats(-((TLRPC.Chat) obj4).id, new z2((ug.q0) obj5, (TL_stories.TL_premium_myBoosts) obj, (ArrayList) obj3, (HashSet) obj2, 18));
+                MessagesController.getInstance(r13.currentAccount).getBoostsController().getBoostsStats(-((TLRPC.Chat) obj4).id, new z2((ug.r0) obj5, (TL_stories.TL_premium_myBoosts) obj, (ArrayList) obj3, (HashSet) obj2, 18));
                 break;
             case 18:
-                ((ug.q0) obj5).dismiss();
+                ((ug.r0) obj5).dismiss();
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostedChannelByUser, (TL_stories.TL_premium_myBoosts) obj4, Integer.valueOf(((ArrayList) obj3).size()), Integer.valueOf(((HashSet) obj2).size()), (TL_stories.TL_premium_boostsStatus) obj);
                 break;
             default:

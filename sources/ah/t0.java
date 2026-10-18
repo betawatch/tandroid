@@ -20,7 +20,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bs;
@@ -37,7 +37,7 @@ import org.telegram.ui.t41;
 import org.telegram.ui.w41;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class t0 {
     public final int[] A;
@@ -130,7 +130,7 @@ public final class t0 {
         float f7 = r11;
         vVar.addView(s0Var, z5.a(-1.0f, f7, f7, f7, 16.0f, -1, i10 == 5 ? 85 : 48));
         vVar.setClipChildren(false);
-        if (i10 == 1 || (cl0Var.getDelegate() != null && cl0Var.getDelegate().s())) {
+        if (i10 == 1 || (cl0Var.getDelegate() != null && cl0Var.getDelegate().r())) {
             n0Var.setBackgroundDelegate(new h0(i11, this, cl0Var));
         }
         if (z12) {
@@ -374,7 +374,7 @@ public final class t0 {
             this.x.setInterpolator(bs.h);
         } else if (this.w) {
             this.x.setDuration(450L);
-            wh.l(0.5f, this.x);
+            kk.l(0.5f, this.x);
         } else {
             this.x.setDuration(350L);
             this.x.setInterpolator(bs.f);

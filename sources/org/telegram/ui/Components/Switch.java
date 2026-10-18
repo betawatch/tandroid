@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public class Switch extends View {
     public int E;
@@ -329,7 +329,7 @@ public class Switch extends View {
                                 canvas.scale(f21, f21, f19, f20);
                             }
                             Drawable drawable2 = this.F;
-                            drawable2.setBounds(org.telegram.ui.Cells.t0.w(2, dp2, drawable2), org.telegram.ui.Cells.t0.g(2, measuredHeight2, this.F), org.telegram.ui.Cells.t0.B(2, dp2, this.F), org.telegram.ui.Cells.t0.A(2, measuredHeight2, this.F));
+                            drawable2.setBounds(org.telegram.ui.Cells.c1.w(2, dp2, drawable2), org.telegram.ui.Cells.c1.f(2, measuredHeight2, this.F), org.telegram.ui.Cells.c1.B(2, dp2, this.F), org.telegram.ui.Cells.c1.A(2, measuredHeight2, this.F));
                             this.F.draw(canvas4);
                             if (z10) {
                                 canvas.restore();

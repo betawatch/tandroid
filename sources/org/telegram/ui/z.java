@@ -40,7 +40,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -296,7 +296,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                             ybVar.a.setImageDrawable(Emoji.getEmojiBigDrawable("🎲"));
                         }
                         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.StakeDiceToast));
-                        spannableStringBuilder2.append((CharSequence) ai.ld.N0(j10));
+                        spannableStringBuilder2.append((CharSequence) ai.md.N0(j10));
                         spannableStringBuilder2.append((CharSequence) "  ").append((CharSequence) org.telegram.ui.Components.ad.b(LocaleController.getString(R.string.StakeDiceToastChange), new m71(i13, snVar3, j3Var), snVar3.getResourceProvider(), null));
                         AndroidUtilities.removeFromParent(ybVar.b);
                         org.telegram.ui.Components.zc zcVar = new org.telegram.ui.Components.zc(snVar3.getContext());
@@ -307,7 +307,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         ybVar.b.setEllipsize(TextUtils.TruncateAt.END);
                         ybVar.b.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
                         ybVar.addView(ybVar.b, w7.z5.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-                        ybVar.b.setText(ai.ld.Q0(spannableStringBuilder2, 0.9f, 0.0f, 1.0f));
+                        ybVar.b.setText(ai.md.Q0(spannableStringBuilder2, 0.9f, 0.0f, 1.0f));
                         ybVar.b.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Gi, snVar3.getResourceProvider()));
                         ybVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Hi, snVar3.getResourceProvider()));
                         ybVar.b.setSingleLine(false);
@@ -349,7 +349,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 alertDialog$Builder.a.G = 9;
                 alertDialog$Builder.h(LocaleController.getString(z11 ? R.string.MessageShowSensitiveContentMediaTextClosedButton : R.string.Cancel), null);
                 if (!z11) {
-                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.ik(enVar2, u1Var, zArr, z10, contentsettings));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.hk(enVar2, u1Var, zArr, z10, contentsettings));
                 }
                 snVar4.showDialog(alertDialog$Builder.a);
                 break;
@@ -400,7 +400,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 userArr[0] = user2;
                 if (user2 == null) {
                     kb0Var.c();
-                    org.telegram.messenger.wh.q(R.string.NoUsernameFound, kb0.d(), null);
+                    org.telegram.messenger.kk.q(R.string.NoUsernameFound, kb0.d(), null);
                     break;
                 } else {
                     i90Var.run();
@@ -456,13 +456,13 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i21).getStickerSets(5);
                 HashSet hashSet2 = new HashSet();
                 String translitSafe = AndroidUtilities.translitSafe(str11);
-                String g10 = r.c.g(" ", translitSafe);
+                String h = r4.c.h(" ", translitSafe);
                 if (stickerSets != null) {
                     for (int i22 = 0; i22 < stickerSets.size(); i22++) {
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = stickerSets.get(i22);
                         if (tL_messages_stickerSet2 != null && (stickerSet2 = tL_messages_stickerSet2.set) != null && stickerSet2.title != null && tL_messages_stickerSet2.documents != null && !hashSet2.contains(Long.valueOf(stickerSet2.id))) {
                             String translitSafe2 = AndroidUtilities.translitSafe(tL_messages_stickerSet2.set.title);
-                            if (translitSafe2.startsWith(translitSafe) || translitSafe2.contains(g10)) {
+                            if (translitSafe2.startsWith(translitSafe) || translitSafe2.contains(h)) {
                                 arrayList4.add(new w51(translitSafe2));
                                 arrayList4.addAll(tL_messages_stickerSet2.documents);
                                 hashSet2.add(Long.valueOf(tL_messages_stickerSet2.set.id));
@@ -476,7 +476,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i15);
                         if (stickerSetCovered != null && (stickerSet = stickerSetCovered.set) != null && stickerSet.title != null && !hashSet2.contains(Long.valueOf(stickerSet.id))) {
                             String translitSafe3 = AndroidUtilities.translitSafe(stickerSetCovered.set.title);
-                            if (translitSafe3.startsWith(translitSafe) || translitSafe3.contains(g10)) {
+                            if (translitSafe3.startsWith(translitSafe) || translitSafe3.contains(h)) {
                                 if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
                                     TLRPC.TL_messages_stickerSet stickerSet3 = MediaDataController.getInstance(i21).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), Integer.valueOf(stickerSetCovered.set.hash), true);
                                     arrayList = stickerSet3 != null ? stickerSet3.documents : null;

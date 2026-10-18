@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static ExecutorService a;
@@ -43,7 +43,7 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder i10 = r.c.i(str, "\n  ");
+        StringBuilder i10 = r4.c.i(str, "\n  ");
         i10.append(replace.replace("\n", "\n  "));
         i10.append('\n');
         return i10.toString();
@@ -115,7 +115,7 @@ public abstract class a {
 
     public static void k(MediaFormat mediaFormat, List list) {
         for (int i10 = 0; i10 < list.size(); i10++) {
-            mediaFormat.setByteBuffer(i0.a.j(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
+            mediaFormat.setByteBuffer(i2.d.j(i10, "csd-"), ByteBuffer.wrap((byte[]) list.get(i10)));
         }
     }
 

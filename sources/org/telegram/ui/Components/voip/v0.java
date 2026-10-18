@@ -30,8 +30,8 @@ import org.telegram.ui.s50;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* loaded from: classes4.dex */
 public abstract class v0 extends FrameLayout implements VoIPService.StateListener {
     public boolean a;
     public final z4.g b;
@@ -91,7 +91,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         nVar.setTypeface(AndroidUtilities.bold());
         nVar.setText(LocaleController.getString(R.string.VoipShareVideo));
         int dp = AndroidUtilities.dp(6.0f);
-        int o10 = i0.b.o(h6.x0(null, i10, false), 76);
+        int o10 = i0.a.o(h6.x0(null, i10, false), 76);
         nVar.setForeground(h6.j0(dp, dp, dp, dp, 0, o10, o10));
         nVar.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
         nVar.setOnClickListener(new hg.r0(this, 12));
@@ -137,7 +137,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         xj0 xj0Var = new xj0(context);
         this.e = xj0Var;
         xj0Var.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
-        xj0Var.setBackground(h6.K(AndroidUtilities.dp(48.0f), i0.b.o(-16777216, 76)));
+        xj0Var.setBackground(h6.K(AndroidUtilities.dp(48.0f), i0.a.o(-16777216, 76)));
         uj0 uj0Var = new uj0(R.raw.voice_mini, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
         xj0Var.setAnimation(uj0Var);
         xj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
@@ -264,7 +264,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
     }
 
     public int getBackgroundColor() {
-        return i0.b.o(h6.x0(null, h6.gg, false), (int) (getAlpha() * 1.0f * 255.0f));
+        return i0.a.o(h6.x0(null, h6.gg, false), (int) (getAlpha() * 1.0f * 255.0f));
     }
 
     @Override // android.view.View

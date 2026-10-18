@@ -41,7 +41,7 @@ import androidx.appcompat.widget.ActionBarOverlayLayout;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.ContentFrameLayout;
 import androidx.appcompat.widget.Toolbar;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -57,7 +57,7 @@ import r0.l0;
 import v7.j7;
 import w7.u6;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class r extends g implements l.i, LayoutInflater.Factory2 {
     public static final a0.l q0 = new a0.l(0);
@@ -576,7 +576,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         ActionMenuView actionMenuView;
         m.i iVar;
         t tVar = this.d;
-        if ((!(tVar instanceof r0.j) && !a6.s(tVar)) || (decorView = this.f.getDecorView()) == null || !u6.a(decorView, keyEvent)) {
+        if ((!(tVar instanceof r0.j) && !k3.s(tVar)) || (decorView = this.f.getDecorView()) == null || !u6.a(decorView, keyEvent)) {
             if (keyEvent.getKeyCode() == 82) {
                 m mVar = this.h;
                 Window.Callback callback = this.f.getCallback();
@@ -968,7 +968,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         l();
         if (this.O && this.n == null) {
             t tVar = this.d;
-            if (a6.s(tVar)) {
+            if (k3.s(tVar)) {
                 this.n = new a0(tVar);
             }
             a0 a0Var = this.n;

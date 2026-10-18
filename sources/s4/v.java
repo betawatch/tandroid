@@ -1,6 +1,6 @@
 package s4;
 
-import ai.ae;
+import ai.be;
 import android.graphics.Canvas;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,11 +8,11 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ly;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public abstract class v {
-    public static final ae b = new ae(2);
-    public static final ae c = new ae(3);
+    public static final be b = new be(2);
+    public static final be c = new be(3);
     public int a = -1;
 
     public static int c(int i10, int i11) {

@@ -1,53 +1,21 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.DesugarCollections;
-import java.util.AbstractList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.RandomAccess;
+import java.lang.reflect.Field;
+import java.security.PrivilegedExceptionAction;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
-public final class p6 extends AbstractList implements RandomAccess, o5 {
-    public final n5 a;
-
-    public p6(n5 n5Var) {
-        this.a = n5Var;
-    }
-
-    @Override // com.google.android.gms.internal.cast.o5
-    public final Object c(int i10) {
-        return this.a.b.get(i10);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object get(int i10) {
-        return this.a.get(i10);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
-    public final Iterator iterator() {
-        return new o6(this);
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i10) {
-        return new n6(this, i10);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.a.b.size();
-    }
-
-    @Override // com.google.android.gms.internal.cast.o5
-    public final List zzh() {
-        return DesugarCollections.unmodifiableList(this.a.b);
-    }
-
-    @Override // com.google.android.gms.internal.cast.o5
-    public final o5 zzd() {
-        return this;
+public final class p6 implements PrivilegedExceptionAction {
+    @Override // java.security.PrivilegedExceptionAction
+    public final /* bridge */ /* synthetic */ Object run() {
+        for (Field field : Unsafe.class.getDeclaredFields()) {
+            field.setAccessible(true);
+            Object obj = field.get(null);
+            if (Unsafe.class.isInstance(obj)) {
+                return (Unsafe) Unsafe.class.cast(obj);
+            }
+        }
+        return null;
     }
 }

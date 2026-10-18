@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class xh implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -50,16 +50,16 @@ public final class xh implements ViewTreeObserver.OnPreDrawListener {
                 }
                 break;
             case 3:
-                tp0 tp0Var = (tp0) this.b;
-                if (tp0Var.getParentActivity() != null) {
+                up0 up0Var = (up0) this.b;
+                if (up0Var.getParentActivity() != null) {
                     int rotation2 = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                    tp0Var.f = 2;
+                    up0Var.f = 2;
                     if (!AndroidUtilities.isTablet() && (rotation2 == 3 || rotation2 == 1)) {
-                        tp0Var.f = 4;
+                        up0Var.f = 4;
                     }
-                    tp0Var.n.l();
+                    up0Var.n.l();
                 }
-                org.telegram.ui.Components.im0 im0Var = ((tp0) this.b).h;
+                org.telegram.ui.Components.im0 im0Var = ((up0) this.b).h;
                 if (im0Var != null) {
                     im0Var.getViewTreeObserver().removeOnPreDrawListener(this);
                     break;

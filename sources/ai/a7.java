@@ -3,7 +3,7 @@ package ai;
 import android.animation.ValueAnimator;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a7 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class a7 implements ValueAnimator.AnimatorUpdateLis
             case 1:
                 e7 e7Var2 = this.b;
                 e7Var2.getClass();
-                float t10 = com.google.android.gms.internal.cast.a6.t((float) Math.pow((r6 * 2.0f) - 2.0f, 2.0d), 0.075f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                float t10 = com.google.android.gms.internal.play_billing.k3.t((float) Math.pow((r6 * 2.0f) - 2.0f, 2.0d), 0.075f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
                 e7Var2.u0 = t10;
                 FrameLayout frameLayout = e7Var2.b;
                 frameLayout.setScaleX(t10);

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class ma implements ja {
     public final r9.n a;
@@ -32,19 +32,19 @@ public final class ma implements ja {
         l5.s sVar = (l5.s) this.a.get();
         iaVar.getClass();
         pa paVar = pa.c;
-        u2.c cVar = (u2.c) eVar.b;
+        t0.h hVar = (t0.h) eVar.b;
         ((v7.d8) eVar.c).h = false;
         v7.d8 d8Var = (v7.d8) eVar.c;
         d8Var.f = Boolean.FALSE;
-        cVar.b = new l9(d8Var);
+        hVar.b = new l9(d8Var);
         try {
             pa.b();
-            k7 k7Var = new k7(cVar);
-            u2.c cVar2 = new u2.c(6);
-            paVar.a(cVar2);
-            HashMap hashMap = new HashMap((HashMap) cVar2.b);
-            HashMap hashMap2 = new HashMap((HashMap) cVar2.c);
-            e eVar2 = (e) cVar2.d;
+            k7 k7Var = new k7(hVar);
+            t0.h hVar2 = new t0.h(7);
+            paVar.a(hVar2);
+            HashMap hashMap = new HashMap((HashMap) hVar2.b);
+            HashMap hashMap2 = new HashMap((HashMap) hVar2.c);
+            e eVar2 = (e) hVar2.d;
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             try {
                 fVar = new f(byteArrayOutputStream, hashMap, hashMap2, eVar2);

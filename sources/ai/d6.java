@@ -37,7 +37,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class d6 extends FrameLayout {
     public final org.telegram.ui.Components.z5 E;
@@ -303,31 +303,31 @@ public final class d6 extends FrameLayout {
         textView3.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.5f, -1));
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setGravity(17);
-        TextView k10 = org.telegram.ui.Cells.t0.k(this.R, textView3, w7.z5.a(-2.0f, 0.0f, 383.0f, 0.0f, 0.0f, -1, 49), context);
-        this.L = k10;
-        k10.setTextSize(1, 13.0f);
-        k10.setTextColor(-1);
-        k10.setTypeface(AndroidUtilities.bold());
-        k10.setGravity(17);
-        k10.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
-        k10.setBackground(new t6(AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.h6.m1(0.08f, -1)));
-        TextView k11 = org.telegram.ui.Cells.t0.k(this.R, k10, w7.z5.a(27.0f, 0.0f, 0.0f, 0.0f, 74.0f, -2, 81), context);
-        k11.setTextSize(1, 13.0f);
-        k11.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.5f, -1));
-        k11.setGravity(17);
-        k11.setText(LocaleController.getString(R.string.GiftCraftProgressText));
-        TextView k12 = org.telegram.ui.Cells.t0.k(this.R, k11, w7.z5.a(-2.0f, 42.0f, 0.0f, 42.0f, 24.0f, -1, 81), context);
-        k12.setText(LocaleController.getString(R.string.GiftCraftFailedTitle));
-        k12.setTextColor(-505270);
-        k12.setTextSize(1, 20.0f);
-        k12.setTypeface(AndroidUtilities.bold());
-        k12.setGravity(17);
-        TextView k13 = org.telegram.ui.Cells.t0.k(this.S, k12, w7.z5.a(-2.0f, 32.0f, 352.0f, 32.0f, 0.0f, -1, 55), context);
-        this.M = k13;
-        k13.setTextColor(-17253);
-        k13.setTextSize(1, 13.0f);
-        k13.setGravity(17);
-        this.S.addView(k13, w7.z5.a(-2.0f, 32.0f, 383.0f, 32.0f, 0.0f, -1, 55));
+        TextView j10 = org.telegram.ui.Cells.c1.j(this.R, textView3, w7.z5.a(-2.0f, 0.0f, 383.0f, 0.0f, 0.0f, -1, 49), context);
+        this.L = j10;
+        j10.setTextSize(1, 13.0f);
+        j10.setTextColor(-1);
+        j10.setTypeface(AndroidUtilities.bold());
+        j10.setGravity(17);
+        j10.setPadding(AndroidUtilities.dp(9.0f), 0, AndroidUtilities.dp(9.0f), 0);
+        j10.setBackground(new t6(AndroidUtilities.dp(14.0f), org.telegram.ui.ActionBar.h6.m1(0.08f, -1)));
+        TextView j11 = org.telegram.ui.Cells.c1.j(this.R, j10, w7.z5.a(27.0f, 0.0f, 0.0f, 0.0f, 74.0f, -2, 81), context);
+        j11.setTextSize(1, 13.0f);
+        j11.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.5f, -1));
+        j11.setGravity(17);
+        j11.setText(LocaleController.getString(R.string.GiftCraftProgressText));
+        TextView j12 = org.telegram.ui.Cells.c1.j(this.R, j11, w7.z5.a(-2.0f, 42.0f, 0.0f, 42.0f, 24.0f, -1, 81), context);
+        j12.setText(LocaleController.getString(R.string.GiftCraftFailedTitle));
+        j12.setTextColor(-505270);
+        j12.setTextSize(1, 20.0f);
+        j12.setTypeface(AndroidUtilities.bold());
+        j12.setGravity(17);
+        TextView j13 = org.telegram.ui.Cells.c1.j(this.S, j12, w7.z5.a(-2.0f, 32.0f, 352.0f, 32.0f, 0.0f, -1, 55), context);
+        this.M = j13;
+        j13.setTextColor(-17253);
+        j13.setTextSize(1, 13.0f);
+        j13.setGravity(17);
+        this.S.addView(j13, w7.z5.a(-2.0f, 32.0f, 383.0f, 32.0f, 0.0f, -1, 55));
         LinearLayout linearLayout7 = new LinearLayout(context);
         this.N = linearLayout7;
         linearLayout7.setOrientation(0);
@@ -560,8 +560,8 @@ public final class d6 extends FrameLayout {
                 if ((starGift2 != null ? starGift2 : null) != null) {
                     i16++;
                     TL_stars.StarGift starGift3 = starGift2 != null ? starGift2 : null;
-                    TL_stars.starGiftAttributePattern stargiftattributepattern2 = (TL_stars.starGiftAttributePattern) fa.l(starGift3.attributes, TL_stars.starGiftAttributePattern.class);
-                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = (TL_stars.starGiftAttributeBackdrop) fa.l(starGift3.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                    TL_stars.starGiftAttributePattern stargiftattributepattern2 = (TL_stars.starGiftAttributePattern) ga.l(starGift3.attributes, TL_stars.starGiftAttributePattern.class);
+                    TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = (TL_stars.starGiftAttributeBackdrop) ga.l(starGift3.attributes, TL_stars.starGiftAttributeBackdrop.class);
                     hashMap3.put(Integer.valueOf(stargiftattributebackdrop2.backdrop_id), Integer.valueOf(((Integer) Map.-EL.getOrDefault(hashMap3, Integer.valueOf(stargiftattributebackdrop2.backdrop_id), 0)).intValue() + 1));
                     hashMap4.put(Long.valueOf(stargiftattributepattern2.document.id), Integer.valueOf(((Integer) Map.-EL.getOrDefault(hashMap4, Long.valueOf(stargiftattributepattern2.document.id), 0)).intValue() + 1));
                 }
@@ -606,7 +606,7 @@ public final class d6 extends FrameLayout {
                             if (starGift4 == null) {
                                 starGift4 = null;
                             }
-                            stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) fa.l(starGift4.attributes, TL_stars.starGiftAttributeBackdrop.class);
+                            stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) ga.l(starGift4.attributes, TL_stars.starGiftAttributeBackdrop.class);
                             if (stargiftattributebackdrop.backdrop_id == intValue) {
                                 break;
                             }
@@ -676,7 +676,7 @@ public final class d6 extends FrameLayout {
                             if (starGift5 == null) {
                                 starGift5 = null;
                             }
-                            TL_stars.starGiftAttributePattern stargiftattributepattern3 = (TL_stars.starGiftAttributePattern) fa.l(starGift5.attributes, TL_stars.starGiftAttributePattern.class);
+                            TL_stars.starGiftAttributePattern stargiftattributepattern3 = (TL_stars.starGiftAttributePattern) ga.l(starGift5.attributes, TL_stars.starGiftAttributePattern.class);
                             if (stargiftattributepattern3 != null) {
                                 r5VarArr = r5VarArr3;
                                 if (stargiftattributepattern3.document.id == longValue) {

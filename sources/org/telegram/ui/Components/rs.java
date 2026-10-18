@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class rs {
     public final org.telegram.ui.Cells.r2 a;
@@ -36,7 +36,7 @@ public final class rs {
                 break;
             }
             qs qsVar = (qs) arrayList.get(i11);
-            dp = org.telegram.messenger.wh.z(4.0f, qsVar.e, dp);
+            dp = org.telegram.messenger.kk.y(4.0f, qsVar.e, dp);
             if (dp < 0) {
                 break;
             }
@@ -56,7 +56,7 @@ public final class rs {
             if (qsVar2 == null || qsVar2.a != size) {
                 qs qsVar3 = new qs();
                 qsVar3.a = size;
-                d11 d11Var = new d11(i0.a.j(size, "+"), 10.0f, AndroidUtilities.bold());
+                d11 d11Var = new d11(i2.d.j(size, "+"), 10.0f, AndroidUtilities.bold());
                 d11Var.s(this.a);
                 qsVar3.c = d11Var;
                 int dp2 = AndroidUtilities.dp(9.32f);

@@ -1,16 +1,16 @@
 package yh;
 
-import ai.x9;
+import ai.y9;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.vj;
+import org.telegram.messenger.uj;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class i4 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.u0 a;
@@ -32,7 +32,7 @@ public final class i4 extends org.telegram.ui.ActionBar.j {
         org.telegram.ui.ActionBar.e1 e1Var;
         org.telegram.ui.ActionBar.e1 e1Var2;
         l4 l4Var = this.c;
-        x9 x9Var = l4Var.Y;
+        y9 y9Var = l4Var.Y;
         if (i10 != 1) {
             if (i10 == -1) {
                 l4Var.dismiss();
@@ -82,16 +82,16 @@ public final class i4 extends org.telegram.ui.ActionBar.j {
             e1Var = null;
             e1Var2 = null;
         }
-        vj vjVar = new vj(this, e1Var3, h, h10, h11, h12, canUserDoAction, e1Var, e1Var2, 4);
-        vjVar.run();
-        e1Var3.setOnClickListener(new qg.n(15, this, vjVar));
-        q2.j(h, x9Var, vjVar, 1);
-        q2.j(h10, x9Var, vjVar, 2);
-        q2.j(h11, x9Var, vjVar, 4);
-        q2.j(h12, x9Var, vjVar, 8);
+        uj ujVar = new uj(this, e1Var3, h, h10, h11, h12, canUserDoAction, e1Var, e1Var2, 4);
+        ujVar.run();
+        e1Var3.setOnClickListener(new qg.n(15, this, ujVar));
+        q2.j(h, y9Var, ujVar, 1);
+        q2.j(h10, y9Var, ujVar, 2);
+        q2.j(h11, y9Var, ujVar, 4);
+        q2.j(h12, y9Var, ujVar, 8);
         if (canUserDoAction) {
-            q2.j(e1Var, x9Var, vjVar, 256);
-            q2.j(e1Var2, x9Var, vjVar, 512);
+            q2.j(e1Var, y9Var, ujVar, 256);
+            q2.j(e1Var2, y9Var, ujVar, 512);
         }
         F.Y = true;
         F.J = false;

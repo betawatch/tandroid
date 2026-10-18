@@ -34,7 +34,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class g10 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public static final SpannableStringBuilder[] s0 = new SpannableStringBuilder[3];
@@ -169,7 +169,7 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
             return "";
         }
         if (messageObject.isQuickReply()) {
-            ig.x1 c10 = ig.y1.f(messageObject.currentAccount).c(messageObject.getQuickReplyId());
+            ig.z1 c10 = ig.a2.f(messageObject.currentAccount).c(messageObject.getQuickReplyId());
             return c10 == null ? "" : c10.b;
         }
         if (messageObject.isSponsored()) {
@@ -380,7 +380,7 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
                     this.R = PhotoViewer.t1().c;
                     return;
                 } else {
-                    ArrayList k10 = org.telegram.messenger.q.k(messageObject);
+                    ArrayList k10 = org.telegram.messenger.g0.k(messageObject);
                     PhotoViewer.t1().K2(null, n2Var, null);
                     PhotoViewer.t1().b2(k10, 0, 0L, 0L, 0L, t00Var);
                     this.R = PhotoViewer.t1().c;
@@ -587,7 +587,7 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
             arrayList3.clear();
             x00 x00Var = this.h0;
             if (x00Var != null) {
-                ((iv) x00Var).i(false, null, null, false);
+                ((jv) x00Var).i(false, null, null, false);
             }
         }
         final int i10 = this.P + 1;
@@ -659,7 +659,7 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
                     }
                     if (z15 && str5.equals(g10Var.w) && !arrayList5.isEmpty()) {
                         i15 = 1;
-                        MessageObject messageObject = (MessageObject) i0.a.h(1, arrayList5);
+                        MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList5);
                         tL_messages_searchGlobal2.offset_id = messageObject.getId();
                         tL_messages_searchGlobal2.offset_rate = g10Var.v;
                         tL_messages_searchGlobal2.offset_peer = MessagesController.getInstance(i12).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -685,7 +685,7 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
                         tL_messages_search.max_date = (int) (j19 / 1000);
                     }
                     if (z16 && str6.equals(g10Var.w) && !arrayList5.isEmpty()) {
-                        tL_messages_search.offset_id = ((MessageObject) i0.a.h(1, arrayList5)).getId();
+                        tL_messages_search.offset_id = ((MessageObject) i2.d.h(1, arrayList5)).getId();
                     } else {
                         tL_messages_search.offset_id = 0;
                     }
@@ -933,7 +933,7 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
                                         x00Var2 = g10Var3.h0;
                                         i22 = r12;
                                         if (x00Var2 != null) {
-                                            ((iv) x00Var2).i(TextUtils.isEmpty(g10Var3.Q), arrayList26, arrayList18, g10Var3.e0);
+                                            ((jv) x00Var2).i(TextUtils.isEmpty(g10Var3.Q), arrayList26, arrayList18, g10Var3.e0);
                                             i22 = r12;
                                         }
                                     }
@@ -1008,7 +1008,7 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
         if (arrayList.isEmpty()) {
             return;
         }
-        ((iv) x00Var).i(false, arrayList, this.d0, this.e0);
+        ((jv) x00Var).i(false, arrayList, this.d0, this.e0);
     }
 
     public final void j(int i10, int i11, boolean z10) {

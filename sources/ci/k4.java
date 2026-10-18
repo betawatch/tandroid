@@ -20,7 +20,7 @@ import org.telegram.ui.u60;
 import org.telegram.ui.uh1;
 import org.telegram.ui.vh1;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final class k4 extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G;
@@ -106,7 +106,7 @@ public final class k4 extends org.telegram.ui.Components.w9 {
                     int measuredHeight = getMeasuredHeight() / 2;
                     canvas2.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(20.0f), zaVar.n.r);
                     Drawable drawable = zaVar.n.v;
-                    drawable.setBounds(org.telegram.ui.Cells.t0.w(2, measuredWidth, drawable), org.telegram.ui.Cells.t0.g(2, measuredHeight, zaVar.n.v), org.telegram.ui.Cells.t0.B(2, measuredWidth, zaVar.n.v), org.telegram.ui.Cells.t0.A(2, measuredHeight, zaVar.n.v));
+                    drawable.setBounds(org.telegram.ui.Cells.c1.w(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.f(2, measuredHeight, zaVar.n.v), org.telegram.ui.Cells.c1.B(2, measuredWidth, zaVar.n.v), org.telegram.ui.Cells.c1.A(2, measuredHeight, zaVar.n.v));
                     zaVar.n.v.draw(canvas2);
                     break;
                 }
@@ -157,7 +157,7 @@ public final class k4 extends org.telegram.ui.Components.w9 {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.G) {
             case 1:
-                return drawable == ((ig.b1) this.H).r || super.verifyDrawable(drawable);
+                return drawable == ((ig.d1) this.H).r || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }

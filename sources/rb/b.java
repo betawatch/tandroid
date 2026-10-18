@@ -21,15 +21,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Cells.l1;
 import org.telegram.ui.Cells.o9;
-import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.xu0;
 import r2.u;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class b implements cg.a, dg.a, fa.a, gb.n, n6.k, r9.d, l1, u, u5.a, v9.a, Continuation, y6.d {
     public static volatile b b;
@@ -72,7 +72,7 @@ public final class b implements cg.a, dg.a, fa.a, gb.n, n6.k, r9.d, l1, u, u5.a,
             throw new IllegalArgumentException("Illegal use of UpsampleAudioResampler");
         }
         if (i12 != 1 && i12 != 2) {
-            throw new IllegalArgumentException(i0.a.j(i12, "Illegal use of UpsampleAudioResampler. Channels:"));
+            throw new IllegalArgumentException(i2.d.j(i12, "Illegal use of UpsampleAudioResampler. Channels:"));
         }
         int remaining = shortBuffer.remaining() / i12;
         int ceil = ((int) Math.ceil((i11 / i10) * remaining)) - remaining;
@@ -418,7 +418,7 @@ public final class b implements cg.a, dg.a, fa.a, gb.n, n6.k, r9.d, l1, u, u5.a,
     @Override // org.telegram.ui.Cells.l1
     public /* synthetic */ boolean d1(MessageObject messageObject) {
         int i10 = this.a;
-        return t0.a(messageObject);
+        return c1.a(messageObject);
     }
 
     @Override // org.telegram.ui.Cells.l1

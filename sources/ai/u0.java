@@ -23,7 +23,7 @@ import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.ut0;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -115,7 +115,7 @@ public final /* synthetic */ class u0 implements Utilities.Callback2 {
                     break;
                 } else if (arrayList != null) {
                     if (arrayList.isEmpty()) {
-                        org.telegram.messenger.q.q(R.string.CommunityNoChatsToAdd, org.telegram.ui.Components.xc.a0(n2Var2), R.raw.info, 36);
+                        org.telegram.messenger.g0.q(R.string.CommunityNoChatsToAdd, org.telegram.ui.Components.xc.a0(n2Var2), R.raw.info, 36);
                         break;
                     } else if (arrayList.isEmpty()) {
                         org.telegram.ui.Components.xc.a0(n2Var2).Q(R.raw.info, 36, "").j();
@@ -134,7 +134,7 @@ public final /* synthetic */ class u0 implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
                 int i12 = this.b;
                 if (tL_error3 != null) {
-                    AndroidUtilities.runOnUIThread(new bb(f1Var, i12, tL_error3, tL_channels_joinChannel, 10));
+                    AndroidUtilities.runOnUIThread(new cb(f1Var, i12, tL_error3, tL_channels_joinChannel, 10));
                     break;
                 } else {
                     boolean z11 = false;
@@ -258,7 +258,7 @@ public final /* synthetic */ class u0 implements Utilities.Callback2 {
                 if (textView != null && wallettransaction != null) {
                     long j12 = wallettransaction.fee;
                     if (j12 > 0) {
-                        textView.setText(org.telegram.ui.Wallet.l5.r0(this.b, j12, d6Var2));
+                        textView.setText(org.telegram.ui.Wallet.m5.r0(this.b, j12, d6Var2));
                         break;
                     }
                 }

@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class l70 extends org.telegram.ui.ActionBar.f3 {
     public int E;
@@ -224,9 +224,9 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
         boolean z10;
         Object obj;
         int i11;
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.wh.i(1, context, d6Var, false);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.kk.i(1, context, d6Var, false);
         org.telegram.ui.ActionBar.f3[] f3VarArr = new org.telegram.ui.ActionBar.f3[1];
-        ?? e = org.telegram.messenger.wh.e(context, 1);
+        ?? e = org.telegram.messenger.kk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f));
         e.setClipChildren(false);
         e.setClipToPadding(false);
@@ -263,10 +263,10 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
         imageView2.setTranslationX(AndroidUtilities.dp(34.0f));
         imageView2.setTranslationY(AndroidUtilities.dp(35.0f));
         TextView textView = new TextView(context);
-        org.telegram.ui.Cells.t0.r(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 20.0f);
+        org.telegram.ui.Cells.c1.r(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 20.0f);
         textView.setGravity(17);
         textView.setText(LocaleController.getString(R.string.StarsSubscriptionTitle));
-        TextView i13 = com.google.android.gms.internal.cast.a6.i(e, textView, w7.z5.t(-1, -2, 17, 20, 0, 20, 4), context);
+        TextView i13 = com.google.android.gms.internal.play_billing.k3.i(e, textView, w7.z5.t(-1, -2, 17, 20, 0, 20, 4), context);
         i13.setTextSize(1, 14.0f);
         i13.setGravity(17);
         int i14 = org.telegram.ui.ActionBar.h6.B6;
@@ -277,7 +277,7 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
             obj = "min";
             Object[] objArr = new Object[1];
             objArr[z10] = Long.valueOf(tL_starsSubscriptionPricing.amount);
-            i13.setText(ai.ld.Y0(z10, LocaleController.formatString(i16, objArr), 0.8f, null));
+            i13.setText(ai.md.Y0(z10, LocaleController.formatString(i16, objArr), 0.8f, null));
             i11 = i14;
         } else {
             obj = "min";
@@ -288,9 +288,9 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
             Object[] objArr2 = new Object[2];
             objArr2[z11 ? 1 : 0] = Long.valueOf(tL_starsSubscriptionPricing.amount);
             objArr2[1] = obj2;
-            i13.setText(ai.ld.Y0(z11, String.format(locale, "⭐%1$d/%2$s", objArr2), 0.8f, null));
+            i13.setText(ai.md.Y0(z11, String.format(locale, "⭐%1$d/%2$s", objArr2), 0.8f, null));
         }
-        TextView i17 = com.google.android.gms.internal.cast.a6.i(e, i13, w7.z5.t(-1, -2, 17, 20, 0, 20, 4), context);
+        TextView i17 = com.google.android.gms.internal.play_billing.k3.i(e, i13, w7.z5.t(-1, -2, 17, 20, 0, 20, 4), context);
         i17.setTextSize(1, 14.0f);
         i17.setGravity(17);
         i17.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
@@ -416,7 +416,7 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
                     }
                     org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context, 3, null);
                     b2Var.q(120L);
-                    MessagesController.getInstance(l70Var.currentAccount).getChannelParticipant(MessagesController.getInstance(l70Var.currentAccount).getChat(Long.valueOf(j10)), user, new ai.r3(l70Var, b2Var, context, j10, tL_chatInviteExported, tL_chatInviteImporter));
+                    MessagesController.getInstance(l70Var.currentAccount).getChannelParticipant(MessagesController.getInstance(l70Var.currentAccount).getChat(Long.valueOf(j10)), user, new ai.q3(l70Var, b2Var, context, j10, tL_chatInviteExported, tL_chatInviteImporter, 1));
                     return;
                 }
                 return;

@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes4.dex */
 public abstract class a0 extends FrameLayout implements l4 {
     public a a;
@@ -41,14 +41,14 @@ public abstract class a0 extends FrameLayout implements l4 {
         if (aVar == null || !aVar.n) {
             i11 = this.e;
         } else {
-            i11 = aVar.l <= 0 ? 0 : AndroidUtilities.dp(i0.a.g(r3, 1, 16, 10));
+            i11 = aVar.l <= 0 ? 0 : AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r3, 1, 16, 10));
         }
         a aVar2 = this.a;
         if (aVar2 == null || !aVar2.o) {
             i12 = this.h;
         } else {
             if (aVar2.m > 0) {
-                i12 = AndroidUtilities.dp(i0.a.g(r7, 1, 16, 10));
+                i12 = AndroidUtilities.dp(com.google.android.gms.internal.play_billing.k3.v(r7, 1, 16, 10));
             }
         }
         int i13 = i10 + e;

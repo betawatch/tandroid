@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class z5 extends a20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -94,7 +94,7 @@ public final class z5 extends a20 implements NotificationCenter.NotificationCent
                     } else {
                         tL_payments_checkedGiftCode.boost = boost;
                     }
-                    new ug.a0(z5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
+                    new ug.b0(z5Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
                 } else if (z10 && boost.user_id == -1) {
                     org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(z5Var.getParentActivity(), z5Var.getResourceProvider());
                     ybVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
@@ -106,14 +106,14 @@ public final class z5 extends a20 implements NotificationCenter.NotificationCent
                     z5Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
                 }
             } else {
-                ai.ld.f1(context, z5Var.Q, z5Var.P, boost, z5Var.getResourceProvider());
+                ai.md.f1(context, z5Var.Q, z5Var.P, boost, z5Var.getResourceProvider());
             }
         }
         if (view instanceof org.telegram.ui.Cells.q8) {
-            ug.l.n(z5Var, z5Var.resourceProvider, j10, null);
+            ug.m.n(z5Var, z5Var.resourceProvider, j10, null);
         }
         if (view instanceof zg.c) {
-            ug.l.n(z5Var, z5Var.resourceProvider, j10, ((zg.c) view).getPrepaidGiveaway());
+            ug.m.n(z5Var, z5Var.resourceProvider, j10, ((zg.c) view).getPrepaidGiveaway());
         }
         if (((y5) z5Var.a0.get(i10)).a == 9) {
             z5Var.F0(Boolean.valueOf(z5Var.b0 == 1));
@@ -307,30 +307,30 @@ public final class z5 extends a20 implements NotificationCenter.NotificationCent
         TLRPC.Chat chat = (TLRPC.Chat) objArr[0];
         boolean booleanValue = ((Boolean) objArr[1]).booleanValue();
         List fragmentStack = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) r.c.e(2, fragmentStack) : null;
+        org.telegram.ui.ActionBar.n2 n2Var = fragmentStack.size() >= 2 ? (org.telegram.ui.ActionBar.n2) r4.c.f(2, fragmentStack) : null;
         if (n2Var instanceof ko) {
             ((ActionBarLayout) getParentLayout()).a0(n2Var, false);
         }
         List fragmentStack2 = getParentLayout().getFragmentStack();
-        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) r.c.e(2, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.n2 n2Var2 = fragmentStack2.size() >= 2 ? (org.telegram.ui.ActionBar.n2) r4.c.f(2, fragmentStack2) : null;
         if (!booleanValue) {
             finishFragment();
             if ((n2Var2 instanceof ProfileActivity) || (n2Var2 instanceof sn)) {
-                ug.h.f(n2Var2, chat, false);
+                ug.i.f(n2Var2, chat, false);
                 return;
             }
             return;
         }
-        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) r.c.e(3, fragmentStack2) : null;
+        org.telegram.ui.ActionBar.n2 n2Var3 = fragmentStack2.size() >= 3 ? (org.telegram.ui.ActionBar.n2) r4.c.f(3, fragmentStack2) : null;
         if (n2Var2 instanceof ProfileActivity) {
             ((ActionBarLayout) getParentLayout()).a0(n2Var2, false);
         }
         finishFragment();
         if (n2Var3 instanceof sn) {
-            ug.h.f(n2Var3, chat, true);
+            ug.i.f(n2Var3, chat, true);
         }
         if (n2Var2 instanceof sn) {
-            ug.h.f(n2Var2, chat, true);
+            ug.i.f(n2Var2, chat, true);
         }
     }
 

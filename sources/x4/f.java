@@ -1,9 +1,9 @@
 package x4;
 
 import android.animation.TypeEvaluator;
-import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.play_billing.k3;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class f implements TypeEvaluator {
     public static final f a = new f();
@@ -20,12 +20,12 @@ public final class f implements TypeEvaluator {
         float pow4 = (float) Math.pow(((intValue2 >> 16) & 255) / 255.0f, 2.2d);
         float pow5 = (float) Math.pow(((intValue2 >> 8) & 255) / 255.0f, 2.2d);
         float pow6 = (float) Math.pow((intValue2 & 255) / 255.0f, 2.2d);
-        float x10 = a6.x(f11, f10, f7, f10);
-        float x11 = a6.x(pow4, pow, f7, pow);
-        float x12 = a6.x(pow5, pow2, f7, pow2);
-        float x13 = a6.x(pow6, pow3, f7, pow3);
-        float pow7 = ((float) Math.pow(x11, 0.45454545454545453d)) * 255.0f;
-        float pow8 = ((float) Math.pow(x12, 0.45454545454545453d)) * 255.0f;
-        return Integer.valueOf(Math.round(((float) Math.pow(x13, 0.45454545454545453d)) * 255.0f) | (Math.round(pow7) << 16) | (Math.round(x10 * 255.0f) << 24) | (Math.round(pow8) << 8));
+        float y3 = k3.y(f11, f10, f7, f10);
+        float y10 = k3.y(pow4, pow, f7, pow);
+        float y11 = k3.y(pow5, pow2, f7, pow2);
+        float y12 = k3.y(pow6, pow3, f7, pow3);
+        float pow7 = ((float) Math.pow(y10, 0.45454545454545453d)) * 255.0f;
+        float pow8 = ((float) Math.pow(y11, 0.45454545454545453d)) * 255.0f;
+        return Integer.valueOf(Math.round(((float) Math.pow(y12, 0.45454545454545453d)) * 255.0f) | (Math.round(pow7) << 16) | (Math.round(y3 * 255.0f) << 24) | (Math.round(pow8) << 8));
     }
 }

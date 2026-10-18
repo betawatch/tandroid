@@ -11,10 +11,10 @@ import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.wh;
+import org.telegram.messenger.kk;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class u extends View {
     public final Paint a;
@@ -48,9 +48,9 @@ public final class u extends View {
         for (int i10 = 0; i10 < 12; i10++) {
             for (int i11 = 0; i11 < 10; i11++) {
                 if (i11 == 0) {
-                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i0.b.f(i10 / 11.0f, -1, -16777216)));
+                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i0.a.f(i10 / 11.0f, -1, -16777216)));
                 } else {
-                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i11 < 6 ? i0.b.f(((5 - i11) / 4.0f) * 0.5f, this.b[i10], -16777216) : i0.b.f(wh.y(9 - i11, 5.0f, 0.5f, 0.5f), this.b[i10], -1)));
+                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i11 < 6 ? i0.a.f(((5 - i11) / 4.0f) * 0.5f, this.b[i10], -16777216) : i0.a.f(kk.x(9 - i11, 5.0f, 0.5f, 0.5f), this.b[i10], -1)));
                 }
             }
         }

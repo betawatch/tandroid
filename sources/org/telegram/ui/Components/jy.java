@@ -22,7 +22,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class jy extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ tz E;
@@ -76,7 +76,7 @@ public final class jy extends FrameLayout implements NotificationCenter.Notifica
         addView(frameLayout, w7.z5.h(-2.0f, -1.0f, 8388725));
         TextView textView2 = new TextView(context);
         this.e = textView2;
-        com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView2);
+        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView2);
         textView2.setText(LocaleController.getString(R.string.Add));
         textView2.setTextColor(tzVar.A(org.telegram.ui.ActionBar.h6.Sh));
         int i11 = org.telegram.ui.ActionBar.h6.Oh;
@@ -87,7 +87,7 @@ public final class jy extends FrameLayout implements NotificationCenter.Notifica
         frameLayout.addView(textView2, w7.z5.h(-2.0f, 26.0f, 8388661));
         TextView textView3 = new TextView(context);
         this.f = textView3;
-        com.google.android.gms.internal.cast.a6.m(14.0f, 1, textView3);
+        com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView3);
         textView3.setText(LocaleController.getString(R.string.StickersRemove));
         textView3.setTextColor(tzVar.A(org.telegram.ui.ActionBar.h6.Rh));
         textView3.setBackground(org.telegram.ui.ActionBar.x5.d(new float[]{16.0f}, 0, tzVar.A(i11) & 452984831));

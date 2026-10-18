@@ -1,6 +1,6 @@
 package ig;
 
-import ai.p2;
+import ai.q2;
 import ai.x7;
 import android.text.TextUtils;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.rd;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class y {
     public static volatile y[] e = new y[4];
@@ -76,7 +76,7 @@ public final class y {
             tL_inputBusinessChatLink.flags |= 2;
         }
         editbusinesschatlink.link = tL_inputBusinessChatLink;
-        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new p2(this, tL_businessChatLink, rdVar, 9));
+        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new q2(this, tL_businessChatLink, rdVar, 9));
     }
 
     public final TL_account.TL_businessChatLink c(String str) {

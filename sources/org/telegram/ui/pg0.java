@@ -33,7 +33,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes3.dex */
 public final class pg0 extends qg1 implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public FrameLayout E;
@@ -147,7 +147,7 @@ public final class pg0 extends qg1 implements NotificationCenter.NotificationCen
                             } else {
                                 org.telegram.ui.ActionBar.e1 e1Var6 = e1Var5;
                                 long j10 = dialog.id;
-                                if (DialogObject.isEncryptedDialog(j10) && (l4 = org.telegram.messenger.q.l(messagesController, j10)) != null) {
+                                if (DialogObject.isEncryptedDialog(j10) && (l4 = org.telegram.messenger.g0.l(messagesController, j10)) != null) {
                                     j10 = l4.user_id;
                                 }
                                 e1Var3 = e1Var6;
@@ -721,7 +721,7 @@ public final class pg0 extends qg1 implements NotificationCenter.NotificationCen
         int themedColor = getThemedColor(org.telegram.ui.ActionBar.h6.a7);
         int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.h6.d6);
         pg1 pg1Var = this.c;
-        this.R.a(i0.b.f(pg1Var != null ? pg1Var.r(0) : 1.0f, themedColor, themedColor2));
+        this.R.a(i0.a.f(pg1Var != null ? pg1Var.r(0) : 1.0f, themedColor, themedColor2));
         View view = this.H;
         if (view != null) {
             view.invalidate();
@@ -882,7 +882,7 @@ public final class pg0 extends qg1 implements NotificationCenter.NotificationCen
                 textView.setMaxLines(2);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
                 linearLayout.addView(textView, w7.z5.p(0, -2, 1.0f, 16, 13, 0, 14, 0));
-                linearLayout.setOnClickListener(new ai.ga(this, intValue, H, 14));
+                linearLayout.setOnClickListener(new ai.ha(this, intValue, H, 14));
                 H.r(linearLayout, w7.z5.n(230, 48));
             }
         }

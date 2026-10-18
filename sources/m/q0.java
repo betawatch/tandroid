@@ -22,7 +22,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.ThemedSpinnerAdapter;
 import v7.q7;
 
-/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
 /* loaded from: classes.dex */
 public final class q0 extends Spinner {
     public static final int[] r = {R.attr.spinnerMode};
@@ -49,8 +49,8 @@ public final class q0 extends Spinner {
         this.n = new Rect();
         c3.a(this, getContext());
         int[] iArr = f.a.v;
-        g3 P = g3.P(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-        TypedArray typedArray2 = (TypedArray) P.c;
+        g3 K = g3.K(context, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+        TypedArray typedArray2 = (TypedArray) K.c;
         this.a = new e2.c(this);
         int resourceId = typedArray2.getResourceId(4, 0);
         if (resourceId != 0) {
@@ -95,11 +95,11 @@ public final class q0 extends Spinner {
             j0Var.c = typedArray2.getString(2);
         } else if (i10 == 1) {
             n0 n0Var = new n0(this, this.b, attributeSet);
-            g3 P2 = g3.P(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
-            this.h = ((TypedArray) P2.c).getLayoutDimension(3, -2);
-            n0Var.j(P2.F(1));
+            g3 K2 = g3.K(this.b, attributeSet, iArr, org.telegram.messenger.beta.R.attr.spinnerStyle);
+            this.h = ((TypedArray) K2.c).getLayoutDimension(3, -2);
+            n0Var.j(K2.A(1));
             n0Var.S = typedArray2.getString(2);
-            P2.Q();
+            K2.L();
             this.f = n0Var;
             this.c = new f0(this, this, n0Var);
         }
@@ -109,7 +109,7 @@ public final class q0 extends Spinner {
             arrayAdapter.setDropDownViewResource(org.telegram.messenger.beta.R.layout.support_simple_spinner_dropdown_item);
             setAdapter((SpinnerAdapter) arrayAdapter);
         }
-        P.Q();
+        K.L();
         this.e = true;
         SpinnerAdapter spinnerAdapter = this.d;
         if (spinnerAdapter != null) {
