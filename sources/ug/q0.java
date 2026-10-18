@@ -11,7 +11,7 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.h6;
@@ -20,7 +20,7 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.x90;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class q0 extends LinearLayout {
     public final ArrayList a;
@@ -40,7 +40,7 @@ public final class q0 extends LinearLayout {
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         this.d = frameLayout2;
         frameLayout2.setClipChildren(false);
-        frameLayout.addView(frameLayout2, z5.a(70.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
+        frameLayout.addView(frameLayout2, z5.d(-1, 70.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         m0 m0Var = new m0(context);
         ImageView imageView = new ImageView(m0Var.getContext());
         imageView.setImageResource(R.drawable.msg_arrow_avatar);
@@ -54,7 +54,7 @@ public final class q0 extends LinearLayout {
         addView(frameLayout, z5.k(0.0f, 15.0f, 0.0f, 0.0f, -1, 70));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
-        kk.j(20.0f, R.string.BoostingReassignBoost, 1, textView);
+        lk.j(20.0f, R.string.BoostingReassignBoost, 1, textView);
         textView.setTextColor(h6.x0(null, h6.G6, false));
         addView(textView, z5.t(-2, -2, 1, 0, 15, 0, 7));
         x90 x90Var = new x90(getContext(), null);

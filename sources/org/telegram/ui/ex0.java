@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ex0 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -688,7 +688,7 @@ public final class ex0 extends org.telegram.ui.Components.hm0 {
                         w9Var2.h(forLocal, "50_50", null, UserConfig.getInstance(i11).getCurrentUser());
                     }
                 }
-                privacyControlActivity.w0.addView(privacyControlActivity.v0, w7.z5.a(30.0f, 21.0f, 0.0f, 21.0f, 0.0f, 30, 16));
+                privacyControlActivity.w0.addView(privacyControlActivity.v0, w7.z5.d(30, 30.0f, 16, 21.0f, 0.0f, 21.0f, 0.0f));
                 privacyControlActivity.w0.i(LocaleController.getString(R.string.RemovePublicPhoto), false);
                 privacyControlActivity.w0.getImageView().setVisibility(0);
                 privacyControlActivity.w0.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.L0(false));
@@ -716,7 +716,7 @@ public final class ex0 extends org.telegram.ui.Components.hm0 {
                 spannableStringBuilder.setSpan(yqVar, spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
                 dVar.g(spannableStringBuilder, false, true);
                 dVar.setOnClickListener(new y50(this, 23));
-                frameLayout.addView(dVar, w7.z5.a(48.0f, 18.0f, 0.0f, 18.0f, 16.0f, -1, 119));
+                frameLayout.addView(dVar, w7.z5.d(-1, 48.0f, 119, 18.0f, 0.0f, 18.0f, 16.0f));
                 view = frameLayout;
                 break;
         }

@@ -2,7 +2,7 @@ package ug;
 
 import ai.bd;
 import ai.ga;
-import ai.q2;
+import ai.k2;
 import ai.vc;
 import android.content.Context;
 import android.content.Intent;
@@ -69,9 +69,9 @@ import org.telegram.ui.e20;
 import org.telegram.ui.sn;
 import w7.b6;
 import w7.z5;
-import yh.p1;
+import yh.o1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class m1 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public static e1 J0;
@@ -109,7 +109,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public float t0;
     public mb0 u0;
     public final BirthdayController.BirthdayState v0;
-    public final p4.s0 w0;
+    public final p8.b w0;
     public int x0;
     public zq y0;
     public String z0;
@@ -130,7 +130,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
         this.q0 = AndroidUtilities.dp(120.0f);
         this.r0 = new ArrayList();
         this.s0 = false;
-        this.w0 = new p4.s0(this, 9);
+        this.w0 = new p8.b(this, 8);
         this.x0 = -1;
         this.C0 = new HashSet();
         this.currentAccount = i10;
@@ -401,10 +401,10 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                     new xc(m1Var.container, d6Var).Q(R.raw.error, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserDisallowedGifts, DialogObject.getShortName(j10)))).j();
                     return;
                 }
-                p1 p1Var = new p1(m1Var.getContext(), i11, j10, r.c(r.b(1, m1Var.r0)), new a1(m1Var, true ? 1 : 0));
+                o1 o1Var = new o1(m1Var.getContext(), i11, j10, r.c(r.b(1, m1Var.r0)), new a1(m1Var, true ? 1 : 0));
                 BirthdayController.BirthdayState birthdayState = m1Var.v0;
-                p1Var.W(birthdayState != null && birthdayState.contains(j10));
-                p1Var.show();
+                o1Var.W(birthdayState != null && birthdayState.contains(j10));
+                o1Var.show();
                 return;
             }
             if (i10 == 4 && hashSet.isEmpty()) {
@@ -607,7 +607,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             userFull.flags2 |= 32;
             userFull.birthday = tL_birthday;
         }
-        ConnectionsManager.getInstance(m1Var.currentAccount).sendRequest(updatebirthday, new q2(m1Var, userFull, tL_birthday2, 25), 1024);
+        ConnectionsManager.getInstance(m1Var.currentAccount).sendRequest(updatebirthday, new k2(m1Var, userFull, tL_birthday2, 25), 1024);
         MessagesController.getInstance(m1Var.currentAccount).invalidateContentSettings();
         MessagesController.getInstance(m1Var.currentAccount).removeSuggestion(0L, "BIRTHDAY_SETUP");
         NotificationCenter.getInstance(m1Var.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
@@ -760,7 +760,7 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
     public final vg.g Z(vg.g gVar) {
         int i10 = this.X;
         if (i10 != 4) {
-            gVar.n = i10 == 3 ? null : new qg.n(6, this, gVar.c);
+            gVar.n = i10 == 3 ? null : new org.telegram.ui.web.c(7, this, gVar.c);
             return gVar;
         }
         TLRPC.User user = gVar.c;
@@ -936,10 +936,10 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                         new xc(this.container, this.resourcesProvider).Q(R.raw.error, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.UserDisallowedGifts, DialogObject.getShortName(j10)))).j();
                         return;
                     }
-                    p1 p1Var = new p1(getContext(), this.currentAccount, j10, c10, new a1(this, r5 ? 1 : 0));
+                    o1 o1Var = new o1(getContext(), this.currentAccount, j10, c10, new a1(this, r5 ? 1 : 0));
                     BirthdayController.BirthdayState birthdayState = this.v0;
-                    p1Var.W(birthdayState != null && birthdayState.contains(j10));
-                    p1Var.show();
+                    o1Var.W(birthdayState != null && birthdayState.contains(j10));
+                    o1Var.show();
                 }
             }
         }
@@ -1254,9 +1254,9 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
                     }
                     if (gVar != null && arrayList4.size() > 0 && !hashSet3.isEmpty()) {
                         String string6 = LocaleController.getString(R.string.DeselectAll);
-                        qg.n nVar = new qg.n(5, this, arrayList4);
+                        org.telegram.ui.web.c cVar = new org.telegram.ui.web.c(6, this, arrayList4);
                         gVar.h = string6;
-                        gVar.m = nVar;
+                        gVar.m = cVar;
                     }
                 }
             }
@@ -1269,9 +1269,9 @@ public class m1 extends bb implements NotificationCenter.NotificationCenterDeleg
             }
             if (gVar != null) {
                 String string62 = LocaleController.getString(R.string.DeselectAll);
-                qg.n nVar2 = new qg.n(5, this, arrayList4);
+                org.telegram.ui.web.c cVar2 = new org.telegram.ui.web.c(6, this, arrayList4);
                 gVar.h = string62;
-                gVar.m = nVar2;
+                gVar.m = cVar2;
             }
         } else {
             ArrayList arrayList11 = this.k0;

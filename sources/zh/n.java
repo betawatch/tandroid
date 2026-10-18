@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class n extends FrameLayout {
     public final TextView a;
@@ -29,7 +29,7 @@ public final class n extends FrameLayout {
         textView.setSingleLine();
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        addView(textView, z5.a(-1.0f, 15.0f, 8.0f, 15.0f, 0.0f, -1, 51));
+        addView(textView, z5.d(-1, -1.0f, 51, 15.0f, 8.0f, 15.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextColor(-1);
@@ -43,6 +43,6 @@ public final class n extends FrameLayout {
         gradientDrawable.setCornerRadius(AndroidUtilities.dp(13.0f));
         textView2.setBackground(gradientDrawable);
         textView2.setOnClickListener(new hg.r0(this, 29));
-        addView(textView2, z5.a(26.0f, 0.0f, 4.0f, 12.0f, 0.0f, -2, 21));
+        addView(textView2, z5.d(-2, 26.0f, 21, 0.0f, 4.0f, 12.0f, 0.0f));
     }
 }

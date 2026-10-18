@@ -19,7 +19,7 @@ import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class t5 extends pg.b {
     public final /* synthetic */ z5 d;
@@ -191,12 +191,12 @@ public final class t5 extends pg.b {
                 view = new org.telegram.ui.Cells.s3(z5Var.getParentActivity(), 8);
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 8:
-                ci.i4 i4Var = new ci.i4(z5Var.getParentActivity(), 7);
+                ci.h4 h4Var = new ci.h4(z5Var.getParentActivity(), 7);
                 TextView textView = new TextView(z5Var.getParentActivity());
-                org.telegram.messenger.kk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(z5Var.g0) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
+                org.telegram.messenger.lk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(z5Var.g0) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
                 com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
-                i4Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 16.0f, 0.0f, 0.0f, -1, 0));
-                view = i4Var;
+                h4Var.addView(textView, w7.z5.d(-1, -2.0f, 0, 0.0f, 16.0f, 0.0f, 0.0f));
+                view = h4Var;
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 9:
                 s5 s5Var = new s5(z5Var.getParentActivity(), 0);
@@ -231,7 +231,7 @@ public final class t5 extends pg.b {
                 scrollSlidingTextTabStrip.d();
                 ah.v vVar = new ah.v(this, z5Var.getParentActivity());
                 z5Var.T.setDelegate(new g(this, 6));
-                vVar.addView(z5Var.T, w7.z5.d(48.0f, -2));
+                vVar.addView(z5Var.T, w7.z5.c(48.0f, -2));
                 view = vVar;
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);
             case 14:

@@ -16,10 +16,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Wallet.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class s3 implements n5.b {
     public Object a;
@@ -83,35 +82,42 @@ public final class s3 implements n5.b {
 
     public void c(int i10, int i11, float f7, float f10, boolean z10, float[] fArr) {
         float[] fArr2 = (float[]) this.a;
-        b6.d(fArr2, i10, i11);
-        float[] fArr3 = (float[]) this.b;
-        Matrix.setLookAtM(fArr3, 0, 0.0f, 0.0f, 6.7f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
-        float[] fArr4 = (float[]) this.c;
-        b6.c(f7, f10, fArr4);
-        float[] fArr5 = (float[]) this.d;
-        Matrix.multiplyMM(fArr5, 0, fArr3, 0, fArr4, 0);
-        Matrix.multiplyMM((float[]) this.e, 0, fArr2, 0, fArr5, 0);
-        float f11 = z10 ? 0.0125f : -0.0125f;
-        float f12 = z10 ? 1.0f : -1.0f;
-        float f13 = -f12;
-        float f14 = f11;
-        d(f14, 0.618561f, f12, i10, i11, fArr, 0);
-        d(f14, 0.618561f, f13, i10, i11, fArr, 2);
-        d(f14, -0.593561f, f13, i10, i11, fArr, 4);
-        d(f14, -0.593561f, f12, i10, i11, fArr, 6);
+        float f11 = (i10 - i11) / 0.3902439f;
+        if (f11 <= 0.0f || f11 > i10) {
+            f11 = i10;
+        }
+        Matrix.perspectiveM(fArr2, 0, (float) Math.toDegrees(Math.atan(Math.tan(Math.toRadians(5.199999809265137d)) * (i11 / Math.max(1.0f, f11 / 1.64f))) * 2.0d), i10 / Math.max(1, i11), 0.1f, 20.0f);
+        Matrix.setLookAtM((float[]) this.b, 0, 0.0f, 0.0f, 6.7f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+        float[] fArr3 = (float[]) this.c;
+        Matrix.setIdentityM(fArr3, 0);
+        Matrix.rotateM(fArr3, 0, -f7, 1.0f, 0.0f, 0.0f);
+        Matrix.rotateM(fArr3, 0, -f10, 0.0f, 1.0f, 0.0f);
+        Matrix.rotateM(fArr3, 0, 90.0f, 0.0f, 1.0f, 0.0f);
+        Matrix.translateM(fArr3, 0, -0.02f, 0.0f, 0.0f);
+        Matrix.scaleM(fArr3, 0, 0.965f, 0.965f, 0.965f);
+        Matrix.multiplyMM((float[]) this.d, 0, (float[]) this.b, 0, (float[]) this.c, 0);
+        Matrix.multiplyMM((float[]) this.e, 0, (float[]) this.a, 0, (float[]) this.d, 0);
+        float f12 = z10 ? 0.0125f : -0.0125f;
+        float f13 = z10 ? 1.0f : -1.0f;
+        float f14 = -f13;
+        d(f12, 0.618561f, f13, i10, i11, fArr, 0);
+        d(f12, 0.618561f, f14, i10, i11, fArr, 2);
+        d(f12, -0.593561f, f14, i10, i11, fArr, 4);
+        d(f12, -0.593561f, f13, i10, i11, fArr, 6);
     }
 
-    public void d(float f7, float f10, float f11, int i10, int i11, float[] fArr, int i12) {
+    public float d(float f7, float f10, float f11, int i10, int i11, float[] fArr, int i12) {
         float[] fArr2 = (float[]) this.f;
         fArr2[0] = f7;
         fArr2[1] = f10;
         fArr2[2] = f11;
         fArr2[3] = 1.0f;
+        Matrix.multiplyMV((float[]) this.h, 0, (float[]) this.e, 0, fArr2, 0);
         float[] fArr3 = (float[]) this.h;
-        Matrix.multiplyMV(fArr3, 0, (float[]) this.e, 0, fArr2, 0);
         float f12 = 1.0f / fArr3[3];
         fArr[i12] = com.google.android.gms.internal.play_billing.k3.t(fArr3[0], f12, 0.5f, 0.5f) * i10;
         fArr[i12 + 1] = org.telegram.ui.Cells.c1.z(fArr3[1], f12, 0.5f, 0.5f) * i11;
+        return fArr3[2] * f12;
     }
 
     public void e(c6 c6Var) {
@@ -199,21 +205,6 @@ public final class s3 implements n5.b {
         return bVar2;
     }
 
-    public s3(ki.o0 o0Var, d6 d6Var) {
-        this.a = o0Var;
-        this.b = d6Var;
-    }
-
-    public s3(String str, ca.c cVar, com.google.firebase.messaging.r rVar) {
-        this.d = new c2.b(this, false);
-        this.e = new c2.b(this, true);
-        this.f = new c5.b0(17, (short) 0);
-        this.h = new AtomicMarkableReference(null, false);
-        this.c = str;
-        this.a = new y9.f(cVar);
-        this.b = rVar;
-    }
-
     public s3() {
         this.a = new float[16];
         this.b = new float[16];
@@ -222,5 +213,20 @@ public final class s3 implements n5.b {
         this.e = new float[16];
         this.f = new float[4];
         this.h = new float[4];
+    }
+
+    public s3(ki.o0 o0Var, d6 d6Var) {
+        this.a = o0Var;
+        this.b = d6Var;
+    }
+
+    public s3(String str, ca.c cVar, com.google.firebase.messaging.r rVar) {
+        this.d = new c2.b(this, false);
+        this.e = new c2.b(this, true);
+        this.f = new c5.b0(18, (short) 0);
+        this.h = new AtomicMarkableReference(null, false);
+        this.c = str;
+        this.a = new y9.f(cVar);
+        this.b = rVar;
     }
 }

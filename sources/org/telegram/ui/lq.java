@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lq implements Runnable {
     public final /* synthetic */ int a;
@@ -281,7 +281,7 @@ public final /* synthetic */ class lq implements Runnable {
                     if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
                         org.telegram.ui.ActionBar.b2 w02 = org.telegram.ui.Components.f5.w0(externalActionActivity, LocaleController.getString(R.string.UpdateAppAlert), true);
                         if (w02 != null) {
-                            w02.setOnDismissListener(new ai.v3(10, externalActionActivity, tL_error));
+                            w02.setOnDismissListener(new ai.x3(10, externalActionActivity, tL_error));
                         } else {
                             externalActionActivity.setResult(1, new Intent().putExtra("error", tL_error.text));
                             externalActionActivity.finish();
@@ -562,9 +562,9 @@ public final /* synthetic */ class lq implements Runnable {
                 pc0Var3.finishFragment();
                 break;
             case 25:
-                fg0 fg0Var = (fg0) obj3;
-                fg0Var.getClass();
-                fg0Var.g1((Bundle) obj2, (TLRPC.auth_SentCode) ((TLObject) obj), true);
+                eg0 eg0Var = (eg0) obj3;
+                eg0Var.getClass();
+                eg0Var.g1((Bundle) obj2, (TLRPC.auth_SentCode) ((TLObject) obj), true);
                 break;
             case 26:
                 org.telegram.ui.Components.ao aoVar = (org.telegram.ui.Components.ao) obj3;
@@ -578,20 +578,20 @@ public final /* synthetic */ class lq implements Runnable {
             case 27:
                 TLObject tLObject8 = (TLObject) obj2;
                 Bundle bundle = (Bundle) obj;
-                fg0 fg0Var2 = ((od0) obj3).W;
-                if (!(tLObject8 instanceof TL_account.TL_emailVerified) || fg0Var2.F != 3) {
+                eg0 eg0Var2 = ((od0) obj3).W;
+                if (!(tLObject8 instanceof TL_account.TL_emailVerified) || eg0Var2.F != 3) {
                     if (!(tLObject8 instanceof TL_account.TL_emailVerifiedLogin)) {
                         if (tLObject8 instanceof TLRPC.TL_auth_authorization) {
-                            fg0Var2.o1((TLRPC.TL_auth_authorization) tLObject8, false);
+                            eg0Var2.o1((TLRPC.TL_auth_authorization) tLObject8, false);
                             break;
                         }
                     } else {
-                        fg0Var2.g1(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject8).sent_code, true);
+                        eg0Var2.g1(bundle, ((TL_account.TL_emailVerifiedLogin) tLObject8).sent_code, true);
                         break;
                     }
                 } else {
-                    fg0Var2.finishFragment();
-                    fg0Var2.d0.run();
+                    eg0Var2.finishFragment();
+                    eg0Var2.d0.run();
                     break;
                 }
                 break;
@@ -599,42 +599,42 @@ public final /* synthetic */ class lq implements Runnable {
                 pe0 pe0Var = (pe0) obj3;
                 TLObject tLObject9 = (TLObject) obj2;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj;
-                fg0 fg0Var3 = pe0Var.O;
+                eg0 eg0Var3 = pe0Var.O;
                 pe0Var.H = false;
                 if (!(tLObject9 instanceof TLRPC.TL_auth_authorization)) {
-                    fg0Var3.k1(false, true);
+                    eg0Var3.k1(false, true);
                     if (!tL_error4.text.contains("PHONE_NUMBER_INVALID")) {
                         if (!tL_error4.text.contains("PHONE_CODE_EMPTY") && !tL_error4.text.contains("PHONE_CODE_INVALID")) {
                             if (!tL_error4.text.contains("PHONE_CODE_EXPIRED")) {
                                 if (!tL_error4.text.contains("FIRSTNAME_INVALID")) {
                                     if (!tL_error4.text.contains("LASTNAME_INVALID")) {
-                                        fg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error4.text);
+                                        eg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error4.text);
                                         break;
                                     } else {
-                                        fg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidLastName", R.string.InvalidLastName));
+                                        eg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidLastName", R.string.InvalidLastName));
                                         break;
                                     }
                                 } else {
-                                    fg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidFirstName", R.string.InvalidFirstName));
+                                    eg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidFirstName", R.string.InvalidFirstName));
                                     break;
                                 }
                             } else {
                                 pe0Var.c(true);
-                                fg0Var3.u1(0, true, null, true);
-                                fg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                                eg0Var3.u1(0, true, null, true);
+                                eg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                                 break;
                             }
                         } else {
-                            fg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", R.string.InvalidCode));
+                            eg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidCode", R.string.InvalidCode));
                             break;
                         }
                     } else {
-                        fg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
+                        eg0Var3.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
                         break;
                     }
                 } else {
                     pe0Var.o();
-                    fg0Var3.v1(false, true);
+                    eg0Var3.v1(false, true);
                     pe0Var.postDelayed(new b80(19, pe0Var, tLObject9), 150L);
                     break;
                 }

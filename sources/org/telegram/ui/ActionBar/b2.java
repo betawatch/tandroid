@@ -49,7 +49,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.y6;
 import org.telegram.ui.h80;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int c1 = 0;
@@ -296,7 +296,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                 z1 z1Var2 = this.a1;
                 int dp = AndroidUtilities.dp(8.0f);
                 float dp2 = AndroidUtilities.dp(20.0f);
-                ci.o1 o1Var = zf.j0.a;
+                ci.n1 n1Var = zf.j0.a;
                 z1Var2.setOutlineProvider(new zf.i0(dp, dp2));
                 this.a1.setClipToOutline(true);
                 this.i0 = false;
@@ -374,7 +374,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
             AndroidUtilities.removeFromParent(this.a1);
             AndroidUtilities.removeFromParent(this.Z0);
             this.Y0.addView(this.a1, w7.z5.e(-2, -2, 17));
-            this.Y0.addView(this.Z0, w7.z5.a(-2.0f, 0.0f, 48.0f, 0.0f, 0.0f, -2, 49));
+            this.Y0.addView(this.Z0, w7.z5.d(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
             viewGroup = this.Y0;
         }
         if (z10) {
@@ -471,8 +471,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
             FrameLayout frameLayout3 = this.s;
             wh.n nVar3 = this.f;
             boolean z14 = this.W;
-            int i17 = (z14 ? 1 : LocaleController.isRTL ? 5 : 3) | 48;
-            frameLayout3.addView(nVar3, w7.z5.a(-2.0f, 0.0f, 19.0f, 0.0f, z14 ? 4.0f : this.S != null ? 2 : this.P != null ? 14 : 10, -2, i17));
+            frameLayout3.addView(nVar3, w7.z5.d(-2, -2.0f, (z14 ? 1 : LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 19.0f, 0.0f, z14 ? 4.0f : this.S != null ? 2 : this.P != null ? 14 : 10));
         }
         if (this.S != null) {
             TextView textView = new TextView(getContext());
@@ -573,21 +572,21 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
             this.n.setVisibility(0);
         }
         if (this.P != null) {
-            int i18 = 0;
+            int i17 = 0;
             while (true) {
                 CharSequence[] charSequenceArr = this.P;
-                if (i18 >= charSequenceArr.length) {
+                if (i17 >= charSequenceArr.length) {
                     break;
                 }
-                if (charSequenceArr[i18] != null) {
+                if (charSequenceArr[i17] != null) {
                     x1 x1Var = new x1(getContext(), d6Var);
-                    CharSequence charSequence = this.P[i18];
+                    CharSequence charSequence = this.P[i17];
                     int[] iArr = this.Q;
-                    x1Var.a(iArr != null ? iArr[i18] : 0, charSequence);
-                    x1Var.setTag(Integer.valueOf(i18));
+                    x1Var.a(iArr != null ? iArr[i17] : 0, charSequence);
+                    x1Var.setTag(Integer.valueOf(i17));
                     this.N0.add(x1Var);
                     this.w.addView(x1Var, w7.z5.n(-1, 50));
-                    final int i19 = 2;
+                    final int i18 = 2;
                     x1Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ActionBar.r1
                         public final /* synthetic */ b2 b;
 
@@ -597,7 +596,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
 
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view2) {
-                            switch (i19) {
+                            switch (i18) {
                                 case 0:
                                     this.b.dismiss();
                                     break;
@@ -617,7 +616,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                         }
                     });
                 }
-                i18++;
+                i17++;
             }
         }
         View view2 = this.b;
@@ -627,7 +626,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
             }
             this.w.addView(this.b, w7.z5.n(-1, this.e));
         }
-        int i20 = 28;
+        int i19 = 28;
         if (objArr != false) {
             if (!this.I0) {
                 TextPaint textPaint = new TextPaint();
@@ -700,7 +699,7 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                     f13 = 6.0f;
                     this.t0.addView(w1Var, w7.z5.e(-2, 40, 53));
                 }
-                w1Var.setOnClickListener(new ai.p(i20, this, w1Var));
+                w1Var.setOnClickListener(new ai.p(i19, this, w1Var));
             } else {
                 f12 = 64.0f;
                 f13 = 6.0f;
@@ -766,8 +765,8 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                 w1Var4.setOnClickListener(new s1(i10, this, w1Var4));
             }
             if (this.I0) {
-                for (int i21 = 1; i21 < this.t0.getChildCount(); i21++) {
-                    ((ViewGroup.MarginLayoutParams) this.t0.getChildAt(i21).getLayoutParams()).topMargin = AndroidUtilities.dp(f13);
+                for (int i20 = 1; i20 < this.t0.getChildCount(); i20++) {
+                    ((ViewGroup.MarginLayoutParams) this.t0.getChildAt(i20).getLayoutParams()).topMargin = AndroidUtilities.dp(f13);
                 }
             }
         }
@@ -788,9 +787,9 @@ public class b2 extends Dialog implements Drawable.Callback, NotificationCenter.
                 layoutParams3.dimAmount = 0.0f;
                 layoutParams3.flags ^= 2;
             }
-            int i22 = AndroidUtilities.displaySize.x;
-            this.L = i22;
-            int min = Math.min(AndroidUtilities.isTablet() ? AndroidUtilities.isSmallTablet() ? AndroidUtilities.dp(446.0f) : AndroidUtilities.dp(496.0f) : AndroidUtilities.dp(356.0f), (i22 - AndroidUtilities.dp(48.0f)) - (this.V0 * 2));
+            int i21 = AndroidUtilities.displaySize.x;
+            this.L = i21;
+            int min = Math.min(AndroidUtilities.isTablet() ? AndroidUtilities.isSmallTablet() ? AndroidUtilities.dp(446.0f) : AndroidUtilities.dp(496.0f) : AndroidUtilities.dp(356.0f), (i21 - AndroidUtilities.dp(48.0f)) - (this.V0 * 2));
             Rect rect2 = this.A0;
             layoutParams3.width = min + rect2.left + rect2.right;
         }

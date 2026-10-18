@@ -53,7 +53,7 @@ import org.telegram.ui.Components.xr;
 import org.telegram.ui.n60;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -224,42 +224,42 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                 });
                 break;
             case 3:
-                ci.g2 g2Var = (ci.g2) this.b;
+                ci.f2 f2Var = (ci.f2) this.b;
                 long[] jArr = (long[]) this.c;
                 org.telegram.ui.ActionBar.f3 f3Var3 = (org.telegram.ui.ActionBar.f3) this.d;
-                g2Var.run(Long.valueOf(jArr[0]));
+                f2Var.run(Long.valueOf(jArr[0]));
                 f3Var3.dismiss();
                 break;
             case 4:
-                ci.h4 h4Var = (ci.h4) this.b;
+                ci.g4 g4Var = (ci.g4) this.b;
                 ei.p9 p9Var = (ei.p9) this.c;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.d;
-                ci.q4 q4Var = h4Var.l;
-                q4Var.F0(p9Var, storyItem);
-                ci.h4 h4Var2 = q4Var.t1;
-                if (h4Var2 != null) {
-                    h4Var2.a();
+                ci.p4 p4Var = g4Var.l;
+                p4Var.F0(p9Var, storyItem);
+                ci.g4 g4Var2 = p4Var.t1;
+                if (g4Var2 != null) {
+                    g4Var2.a();
                     break;
                 }
                 break;
             case 5:
-                ci.h4 h4Var3 = (ci.h4) this.b;
+                ci.g4 g4Var3 = (ci.g4) this.b;
                 org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.c;
-                ci.aa aaVar = (ci.aa) this.d;
+                ci.z9 z9Var = (ci.z9) this.d;
                 e1Var.performHapticFeedback(3);
                 org.telegram.ui.Components.xc X = org.telegram.ui.Components.xc.X();
                 if (X != null) {
-                    X.Q(R.raw.ic_save_to_gallery, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SaveStoryToGalleryPremiumHint), new pa(16, h4Var3, aaVar))).j();
+                    X.Q(R.raw.ic_save_to_gallery, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.SaveStoryToGalleryPremiumHint), new pa(16, g4Var3, z9Var))).j();
                     break;
                 }
                 break;
             case 6:
-                ci.d5 d5Var = (ci.d5) this.b;
+                ci.c5 c5Var = (ci.c5) this.b;
                 ArrayList arrayList = (ArrayList) this.c;
                 i80 i80Var = (i80) this.d;
-                z4 z4Var = new z4(d5Var, 2);
-                ci.u5 u5Var = d5Var.b;
-                new aw(z4Var, u5Var.getContext(), u5Var.s, arrayList).show();
+                z4 z4Var = new z4(c5Var, 2);
+                ci.t5 t5Var = c5Var.b;
+                new aw(z4Var, t5Var.getContext(), t5Var.s, arrayList).show();
                 i80Var.u();
                 break;
             case 7:
@@ -329,12 +329,12 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
                         break;
                     }
                 } else {
-                    qg.y yVar = new qg.y(context2, xaVar.G1);
-                    xaVar.T1 = yVar;
-                    yVar.n(xaVar.A1.a, 2);
-                    yVar.n = new ei.h5(xaVar, u0Var);
-                    yVar.h = new b8(2, xaVar, u0Var);
-                    yVar.show();
+                    qg.x xVar = new qg.x(context2, xaVar.G1);
+                    xaVar.T1 = xVar;
+                    xVar.n(xaVar.A1.a, 2);
+                    xVar.n = new ei.h5(xaVar, u0Var);
+                    xVar.h = new b8(2, xaVar, u0Var);
+                    xVar.show();
                     break;
                 }
                 break;
@@ -381,13 +381,13 @@ public final /* synthetic */ class v0 implements View.OnClickListener {
             case 16:
                 org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) this.b;
                 Runnable runnable3 = (Runnable) this.c;
-                org.telegram.ui.Components.c5 c5Var = (org.telegram.ui.Components.c5) this.d;
+                org.telegram.ui.Components.c5 c5Var2 = (org.telegram.ui.Components.c5) this.d;
                 org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
                 if (b2Var != null) {
                     b2Var.setOnDismissListener(null);
                 }
                 runnable3.run();
-                c5Var.a(((org.telegram.ui.Cells.k) view).getAccountNumber());
+                c5Var2.a(((org.telegram.ui.Cells.k) view).getAccountNumber());
                 break;
             case 17:
                 ArrayList arrayList3 = (ArrayList) this.b;

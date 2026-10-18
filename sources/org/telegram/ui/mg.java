@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mg implements Runnable {
     public final /* synthetic */ int a;
@@ -29,16 +29,16 @@ public final /* synthetic */ class mg implements Runnable {
         switch (i10) {
             case 0:
                 hk hkVar = snVar.Y;
-                if (hkVar != null && snVar.Cc != null) {
+                if (hkVar != null && snVar.Dc != null) {
                     if (hkVar.r0()) {
                         snVar.Y.k0(false);
-                        AndroidUtilities.showKeyboard(snVar.Cc.a);
-                        snVar.Cc.b.a.a(false, true);
+                        AndroidUtilities.showKeyboard(snVar.Dc.a);
+                        snVar.Dc.b.a.a(false, true);
                         break;
                     } else {
                         snVar.Y.S0(false, false, false);
                         snVar.Y.q1();
-                        snVar.Cc.b.a.a(true, true);
+                        snVar.Dc.b.a.a(true, true);
                         break;
                     }
                 }
@@ -195,7 +195,7 @@ public final /* synthetic */ class mg implements Runnable {
                 snVar.y1.u();
                 break;
             default:
-                int i17 = sn.Hc;
+                int i17 = sn.Ic;
                 snVar.c7();
                 break;
         }

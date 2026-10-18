@@ -15,10 +15,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class q extends HorizontalScrollView {
-    public org.telegram.ui.web.m a;
+    public org.telegram.ui.web.n a;
     public x b;
     public final sa1 c;
     public final Paint d;
@@ -87,22 +87,22 @@ public final class q extends HorizontalScrollView {
     public final void draw(Canvas canvas) {
         float f7;
         x xVar;
-        org.telegram.ui.web.m mVar = this.a;
-        if (mVar != null) {
+        org.telegram.ui.web.n nVar = this.a;
+        if (nVar != null) {
             float scrollX = getScrollX();
             float width = getWidth() + getScrollX();
             float height = getHeight();
-            f0 f0Var = (f0) mVar.b;
-            q qVar = (q) mVar.c;
-            RectF rectF = f0Var.k0;
-            int[] iArr = f0Var.i0;
-            int[] iArr2 = f0Var.g0;
-            Path path = f0Var.j0;
-            RectF rectF2 = f0Var.f0;
-            if (f0Var.X != null && f0Var.d != null) {
-                float f10 = f0Var.Y;
+            f0 f0Var = (f0) nVar.b;
+            q qVar = (q) nVar.c;
+            RectF rectF = f0Var.m0;
+            int[] iArr = f0Var.k0;
+            int[] iArr2 = f0Var.i0;
+            Path path = f0Var.l0;
+            RectF rectF2 = f0Var.h0;
+            if (f0Var.Z != null && f0Var.d != null) {
+                float f10 = f0Var.a0;
                 f7 = 2.0f;
-                rectF2.set(scrollX + f10, f0Var.Z + 0.0f, width - f10, height - f0Var.a0);
+                rectF2.set(scrollX + f10, f0Var.b0 + 0.0f, width - f10, height - f0Var.c0);
                 canvas.save();
                 path.rewind();
                 path.addRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, Path.Direction.CW);
@@ -114,22 +114,22 @@ public final class q extends HorizontalScrollView {
                 float f11 = 1.0f / max;
                 canvas.scale(f11, f11);
                 rectF.set((rectF2.left - scrollX) * max, (rectF2.top - 0.0f) * max, (rectF2.right - scrollX) * max, (rectF2.bottom - 0.0f) * max);
-                t0 t0Var = f0Var.d;
+                u0 u0Var = f0Var.d;
                 int i10 = iArr2[0];
                 int i11 = iArr[0];
                 int i12 = iArr2[1];
                 int i13 = iArr[1];
-                Paint paint = t0Var.z1;
-                paint.setColor(t0Var.t0());
+                Paint paint = u0Var.z1;
+                paint.setColor(u0Var.t0());
                 canvas.drawRect(rectF, paint);
                 canvas.restore();
-                if (f0Var.l0 == null) {
-                    f0Var.l0 = new Paint(1);
+                if (f0Var.n0 == null) {
+                    f0Var.n0 = new Paint(1);
                 }
-                Paint paint2 = f0Var.l0;
-                r0 r0Var = f0Var.d.n;
-                paint2.setColor(r0Var != null ? r0Var.h : 872415231);
-                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, f0Var.l0);
+                Paint paint2 = f0Var.n0;
+                s0 s0Var = f0Var.d.n;
+                paint2.setColor(s0Var != null ? s0Var.h : 872415231);
+                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, f0Var.n0);
                 super.draw(canvas);
                 xVar = this.b;
                 if (xVar == null) {
@@ -137,10 +137,10 @@ public final class q extends HorizontalScrollView {
                     float width2 = getWidth() + getScrollX();
                     float height2 = getHeight();
                     f0 f0Var2 = xVar.a;
-                    RectF rectF3 = f0Var2.n0;
-                    float f12 = f0Var2.Y;
-                    rectF3.set(scrollX2 + f12, 0.0f + f0Var2.Z, width2 - f12, height2 - f0Var2.a0);
-                    f0Var2.m0.a(canvas, rectF3, rectF3.height() / f7, 0, 1.0f);
+                    RectF rectF3 = f0Var2.p0;
+                    float f12 = f0Var2.a0;
+                    rectF3.set(scrollX2 + f12, 0.0f + f0Var2.b0, width2 - f12, height2 - f0Var2.c0);
+                    f0Var2.o0.a(canvas, rectF3, rectF3.height() / f7, 0, 1.0f);
                     return;
                 }
                 return;

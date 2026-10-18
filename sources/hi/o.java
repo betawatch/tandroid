@@ -49,7 +49,7 @@ import org.telegram.ui.sn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class o extends n2 implements d50, NotificationCenter.NotificationCenterDelegate, ne.d {
     public e50 E;
@@ -296,8 +296,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setAllowOverlayTitle(true);
-        int i11 = 6;
-        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, i11));
+        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 6));
         gh.c cVar = new gh.c();
         cVar.a(getThemedColor(h6.d6));
         this.actionBar.M(new bh.b(cVar), fh.c.o(this.resourceProvider), false);
@@ -313,7 +312,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         String name = DialogObject.getName(this.H);
         this.e = name;
         d6 d6Var = this.resourceProvider;
-        ah.x xVar = new ah.x(context, i11);
+        ah.x xVar = new ah.x(context, 7);
         ai.t tVar = new ai.t(context, i10);
         xVar.b = tVar;
         tVar.setTextColor(h6.w0(h6.G6, d6Var));
@@ -326,12 +325,12 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         tVar.setInputType(tVar.getInputType() | 16384);
         tVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(11.0f));
         tVar.setMinHeight(AndroidUtilities.dp(50.0f));
-        xVar.addView(tVar, z5.a(-2.0f, 13.0f, 0.0f, 13.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 16));
+        xVar.addView(tVar, z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
         this.n = xVar;
         tVar.setText(name);
         ((ai.t) this.n.b).setSelection(name.length());
-        int i12 = 2;
-        ((ai.t) this.n.b).addTextChangedListener(new ai.u(this, i12));
+        int i11 = 2;
+        ((ai.t) this.n.b).addTextChangedListener(new ai.u(this, i11));
         di.n nVar2 = new di.n(this, context);
         this.G = nVar2;
         nVar2.setTextColor(getThemedColor(h6.Sh));
@@ -341,18 +340,18 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         this.G.setGravity(17);
         this.G.setVisibility(8);
         this.G.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        this.G.setOnClickListener(new hg.r0(this, i12));
+        this.G.setOnClickListener(new hg.r0(this, i11));
         b6.a(this.G);
-        this.actionBar.addView(this.G, z5.a(56.0f, 0.0f, 0.0f, 12.0f, 0.0f, -2, 85));
+        this.actionBar.addView(this.G, z5.d(-2, 56.0f, 85, 0.0f, 0.0f, 12.0f, 0.0f));
         g6 g6Var = new g6(this, context);
         this.s = g6Var;
-        this.r.addView(g6Var, z5.a(72.0f, 0.0f, 0.0f, 0.0f, 28.0f, 72, 81));
+        this.r.addView(g6Var, z5.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.x = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(30.0f));
         this.x.setProgressColor(-1);
         this.x.setNoProgress(false);
-        this.r.addView(this.x, z5.a(64.0f, 0.0f, 0.0f, 0.0f, 32.0f, 64, 81));
+        this.r.addView(this.x, z5.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         a0(false, false);
         a71 a71Var = new a71(this, new i(this, i10), new j(this), new j(this));
         this.d = a71Var;
@@ -361,7 +360,7 @@ public final class o extends n2 implements d50, NotificationCenter.NotificationC
         a71Var2.W2.r = false;
         a71Var2.p1();
         this.actionBar.setBackground(null);
-        this.c.addView(this.d, z5.d(-1.0f, -1));
+        this.c.addView(this.d, z5.c(-1.0f, -1));
         this.c.addView(this.actionBar, z5.e(-1, -2, 48));
         w1 w1Var2 = this.c;
         j jVar = new j(this);

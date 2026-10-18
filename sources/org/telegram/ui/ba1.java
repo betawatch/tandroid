@@ -37,9 +37,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class ba1 implements oh0 {
+public final class ba1 implements nh0 {
     public final sn A;
     public final LinearGradient B;
     public final float C;
@@ -348,7 +348,7 @@ public final class ba1 implements oh0 {
                     this.i = j5Var2.getTextColor();
                     this.j -= AndroidUtilities.dp(46.0f);
                 }
-                this.S = im0Var.getPaddingBottom() - (snVar.sc - AndroidUtilities.dp(44.0f));
+                this.S = im0Var.getPaddingBottom() - (snVar.tc - AndroidUtilities.dp(44.0f));
                 this.u = new Matrix();
                 Paint paint2 = new Paint(1);
                 this.v = paint2;
@@ -460,7 +460,7 @@ public final class ba1 implements oh0 {
         this.c = z11;
         if (z11) {
         }
-        this.S = im0Var.getPaddingBottom() - (snVar.sc - AndroidUtilities.dp(44.0f));
+        this.S = im0Var.getPaddingBottom() - (snVar.tc - AndroidUtilities.dp(44.0f));
         this.u = new Matrix();
         Paint paint22 = new Paint(1);
         this.v = paint22;
@@ -525,7 +525,7 @@ public final class ba1 implements oh0 {
     /* JADX WARN: Removed duplicated region for block: B:86:0x0641  */
     /* JADX WARN: Removed duplicated region for block: B:89:0x064e  */
     /* JADX WARN: Removed duplicated region for block: B:96:0x06da  */
-    @Override // org.telegram.ui.oh0
+    @Override // org.telegram.ui.nh0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -673,7 +673,7 @@ public final class ba1 implements oh0 {
         float f66 = f14;
         float f67 = 1.0f - f66;
         float f68 = (backgroundDrawableTop * f66) + (y13 * f67);
-        float b10 = org.telegram.messenger.kk.b(backgroundDrawableTop, u1Var2.getBackgroundDrawableBottom() - u1Var2.getBackgroundDrawableTop(), f66, (this.x - siVar.getY()) * f67);
+        float b10 = org.telegram.messenger.lk.b(backgroundDrawableTop, u1Var2.getBackgroundDrawableBottom() - u1Var2.getBackgroundDrawableTop(), f66, (this.x - siVar.getY()) * f67);
         int dp = (int) ((AndroidUtilities.dp(4.0f) * f12) + u1Var2.getBackgroundDrawableRight() + f62);
         MessageObject messageObject3 = this.k;
         org.telegram.ui.ActionBar.f5 y22 = !messageObject3.isAnimatedEmojiStickers() ? u1Var2.y2(true) : null;

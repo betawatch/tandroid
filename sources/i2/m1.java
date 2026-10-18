@@ -1,8 +1,8 @@
 package i2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final class m1 extends u2.r {
+public final class m1 extends u2.s {
     public final b2.n1 f;
 
     public m1(b2.o1 o1Var) {
@@ -10,7 +10,7 @@ public final class m1 extends u2.r {
         this.f = new b2.n1();
     }
 
-    @Override // u2.r, b2.o1
+    @Override // u2.s, b2.o1
     public final b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
         b2.o1 o1Var = this.e;
         b2.l1 f7 = o1Var.f(i10, l1Var, z10);

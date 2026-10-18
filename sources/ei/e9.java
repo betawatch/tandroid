@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.em;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class e9 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final class e9 extends s4.r0 {
             case 3:
                 if (i10 == 0 && this.b) {
                     this.b = false;
-                    ((org.telegram.ui.Wallet.i5) this.c).f();
+                    ((org.telegram.ui.Wallet.j5) this.c).f();
                     break;
                 }
                 break;
@@ -144,7 +144,7 @@ public final class e9 extends s4.r0 {
                         boolean z12 = tiVar.R;
                         if (z11 != z12) {
                             this.b = z12;
-                            kk.s(emVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
+                            lk.s(emVar.getFastScroll().animate(), this.b ? 1.0f : 0.0f, 100L);
                         }
                     } else {
                         emVar.getFastScroll().setAlpha(0.0f);
@@ -163,9 +163,9 @@ public final class e9 extends s4.r0 {
         }
     }
 
-    public e9(org.telegram.ui.Wallet.i5 i5Var) {
+    public e9(org.telegram.ui.Wallet.j5 j5Var) {
         this.a = 3;
-        this.c = i5Var;
+        this.c = j5Var;
         this.b = false;
     }
 }

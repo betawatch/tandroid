@@ -4,14 +4,14 @@ import android.content.Context;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ns0 extends org.telegram.ui.g11 {
     public final /* synthetic */ sv0 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ns0(sv0 sv0Var, Context context, jw0 jw0Var, ci.w6 w6Var, ms0 ms0Var) {
-        super(context, jw0Var, w6Var, ms0Var);
+    public ns0(sv0 sv0Var, Context context, jw0 jw0Var, ci.v6 v6Var, ms0 ms0Var) {
+        super(context, jw0Var, v6Var, ms0Var);
         this.H = sv0Var;
     }
 

@@ -75,7 +75,7 @@ import v7.j5;
 import v7.r8;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class m implements bl0, a0, androidx.activity.result.b, WebMessageListenerBoundaryInterface, u0, OnSuccessListener, n, ee.b, v1, j1, r, gb.n, z1 {
     public final /* synthetic */ int a;
@@ -253,7 +253,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         } else {
             qVar.l0.k = null;
         }
-        if (qVar.Q() && new androidx.biometric.e(new k6.h(k10, 1)).h(255) != 0) {
+        if (qVar.Q() && new androidx.biometric.e(new k6.h(k10, 1)).i(255) != 0) {
             qVar.l0.n = true;
             qVar.S();
         } else if (qVar.l0.p) {
@@ -450,7 +450,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
                 iArr2[i61] = bArr3[i61] & 255;
             }
             try {
-                int G = ((ya.c) this.b).G(bArr3.length - i60, iArr2);
+                int G = ((ya.d) this.b).G(bArr3.length - i60, iArr2);
                 for (int i62 = 0; i62 < i60; i62++) {
                     bArr3[i62] = (byte) iArr2[i62];
                 }
@@ -666,9 +666,12 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         return new String[]{"WEB_MESSAGE_LISTENER", "WEB_MESSAGE_ARRAY_BUFFER"};
     }
 
-    @Override // org.telegram.ui.Components.bl0
-    public /* synthetic */ boolean h() {
-        return true;
+    public Boolean h() {
+        Bundle bundle = (Bundle) this.b;
+        if (bundle.containsKey("firebase_sessions_enabled")) {
+            return Boolean.valueOf(bundle.getBoolean("firebase_sessions_enabled"));
+        }
+        return null;
     }
 
     @Override // androidx.activity.result.b
@@ -712,19 +715,9 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         }
     }
 
-    @Override // g6.n
-    public void j(String str, long j10, long j11, long j12) {
-        e6.o oVar = (e6.o) this.b;
-        try {
-            oVar.a(new e6.n(new Status(2103, null, null, null), 1));
-        } catch (IllegalStateException e) {
-            g6.b bVar = e6.h.k;
-            Log.e(bVar.a, bVar.d("Result already set when calling onRequestReplaced", new Object[0]), e);
-        }
-        Iterator it = oVar.q.i.iterator();
-        while (it.hasNext()) {
-            ((e6.g) it.next()).h(str, j10, 2103, j11, j12);
-        }
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ boolean j() {
+        return true;
     }
 
     @Override // org.telegram.ui.Components.bl0
@@ -789,12 +782,12 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         a5.a aVar2;
         WebMessageBoundaryInterface webMessageBoundaryInterface = (WebMessageBoundaryInterface) androidx.activity.result.c.a(WebMessageBoundaryInterface.class, invocationHandler);
         InvocationHandler[] ports = webMessageBoundaryInterface.getPorts();
-        ya.c[] cVarArr = new ya.c[ports.length];
+        ya.d[] dVarArr = new ya.d[ports.length];
         for (int i10 = 0; i10 < ports.length; i10++) {
             InvocationHandler invocationHandler3 = ports[i10];
-            ya.c cVar = new ya.c(6);
-            cVar.b = (WebMessagePortBoundaryInterface) androidx.activity.result.c.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
-            cVarArr[i10] = cVar;
+            ya.d dVar = new ya.d(6);
+            dVar.b = (WebMessagePortBoundaryInterface) androidx.activity.result.c.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
+            dVarArr[i10] = dVar;
         }
         if (b5.m.a.b()) {
             WebMessagePayloadBoundaryInterface webMessagePayloadBoundaryInterface = (WebMessagePayloadBoundaryInterface) androidx.activity.result.c.a(WebMessagePayloadBoundaryInterface.class, webMessageBoundaryInterface.getMessagePayload());
@@ -827,13 +820,28 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
         j5.a("com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES", (Bundle) obj);
     }
 
+    @Override // g6.n
+    public void p(String str, long j10, long j11, long j12) {
+        e6.o oVar = (e6.o) this.b;
+        try {
+            oVar.a(new e6.n(new Status(2103, null, null, null), 1));
+        } catch (IllegalStateException e) {
+            g6.b bVar = e6.h.k;
+            Log.e(bVar.a, bVar.d("Result already set when calling onRequestReplaced", new Object[0]), e);
+        }
+        Iterator it = oVar.q.i.iterator();
+        while (it.hasNext()) {
+            ((e6.g) it.next()).h(str, j10, 2103, j11, j12);
+        }
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:21:0x0035  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
     @Override // ee.b
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object p(ee.c cVar, md.c cVar2) {
+    public Object r(ee.c cVar, md.c cVar2) {
         ee.a aVar;
         int i10;
         Throwable th2;
@@ -896,7 +904,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
     }
 
     @Override // org.telegram.ui.Components.bl0
-    public /* synthetic */ boolean r() {
+    public /* synthetic */ boolean s() {
         return false;
     }
 
@@ -905,7 +913,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void s(String str, long j10, int i10, Object obj, long j11, long j12) {
+    public void t(String str, long j10, int i10, Object obj, long j11, long j12) {
         int i11;
         Iterator it;
         e6.o oVar = (e6.o) this.b;
@@ -936,14 +944,6 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
             ((e6.g) it.next()).h(str, j10, i11, j11, j12);
             i11 = i10;
         }
-    }
-
-    public Boolean t() {
-        Bundle bundle = (Bundle) this.b;
-        if (bundle.containsKey("firebase_sessions_enabled")) {
-            return Boolean.valueOf(bundle.getBoolean("firebase_sessions_enabled"));
-        }
-        return null;
     }
 
     public void u(e0 e0Var) {
@@ -1073,7 +1073,7 @@ public final class m implements bl0, a0, androidx.activity.result.b, WebMessageL
             case 27:
                 break;
             case 28:
-                this.b = new ya.c(gc.a.h, 21);
+                this.b = new ya.d(gc.a.h, 21);
                 break;
             default:
                 this.b = new LinkedHashMap();

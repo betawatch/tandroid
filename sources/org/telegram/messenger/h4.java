@@ -1,29 +1,39 @@
 package org.telegram.messenger;
 
+import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h4 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
+public final /* synthetic */ class h4 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ BaseController c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ h4(int i10, Utilities.Callback callback) {
-        this.a = i10;
-        this.b = callback;
+    public /* synthetic */ h4(GiftAuctionController giftAuctionController, long j10, TL_payments.TL_StarGiftAuctionState tL_StarGiftAuctionState) {
+        this.c = giftAuctionController;
+        this.b = j10;
+        this.d = tL_StarGiftAuctionState;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                GiftAuctionController.lambda$requestAuctionUpgrades$5(this.b, (TL_stars.starGiftUpgradeAttributes) obj, (TLRPC.TL_error) obj2);
+                ((GiftAuctionController) this.c).lambda$subscribeToGiftAuctionStateInternal$0(this.b, (TL_payments.TL_StarGiftAuctionState) this.d, (ArrayList) obj);
                 break;
             default:
-                MediaDataController.lambda$searchStickerSets$250(this.b, (TLRPC.messages_FoundStickerSets) obj, (TLRPC.TL_error) obj2);
+                ((TranslateController) this.c).lambda$checkTranslation$4((MessageObject) this.d, this.b, (TLRPC.TL_textWithEntities) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ h4(TranslateController translateController, MessageObject messageObject, long j10) {
+        this.c = translateController;
+        this.d = messageObject;
+        this.b = j10;
     }
 }

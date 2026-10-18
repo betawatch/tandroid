@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r01 extends FrameLayout {
     public final Matrix E;
@@ -135,7 +135,7 @@ public final class r01 extends FrameLayout {
         org.telegram.ui.ActionBar.y yVar;
         org.telegram.ui.ActionBar.k kVar4;
         org.telegram.ui.ActionBar.k kVar5;
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
         ProfileActivity profileActivity = this.N;
         kVar = ((org.telegram.ui.ActionBar.n2) profileActivity).actionBar;
@@ -198,7 +198,7 @@ public final class r01 extends FrameLayout {
                 if (!z11) {
                     if (p5Var != null) {
                         Drawable drawable = p5Var.f[0];
-                        if ((drawable instanceof org.telegram.ui.Components.r5) && (g3Var = ((org.telegram.ui.Components.r5) drawable).k) != null && g3Var.hasImageLoaded()) {
+                        if ((drawable instanceof org.telegram.ui.Components.r5) && (f3Var = ((org.telegram.ui.Components.r5) drawable).k) != null && f3Var.hasImageLoaded()) {
                             this.L = true;
                         }
                     }

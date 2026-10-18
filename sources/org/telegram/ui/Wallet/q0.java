@@ -45,10 +45,10 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.uy0;
-import org.telegram.ui.ff0;
+import org.telegram.ui.mj0;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class q0 {
     public static final Object f = new Object();
@@ -524,7 +524,7 @@ public final class q0 {
     }
 
     public final void p(long j10, byte[] bArr, j0 j0Var, Utilities.Callback callback) {
-        h.execute(new ai.f3(this, bArr == null ? "" : o(bArr), j0Var == null ? null : j0Var.b(), l(), j10, callback));
+        h.execute(new ai.h3(this, bArr == null ? "" : o(bArr), j0Var == null ? null : j0Var.b(), l(), j10, callback));
     }
 
     public final SharedPreferences q() {
@@ -649,7 +649,7 @@ public final class q0 {
                     }
                 }
                 Os.rename(file2.getAbsolutePath(), file.getAbsolutePath());
-                AndroidUtilities.runOnUIThread(new ff0(9));
+                AndroidUtilities.runOnUIThread(new mj0(8));
             } finally {
             }
         } finally {

@@ -1,117 +1,54 @@
 package yh;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.x90;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.f6;
 import org.telegram.ui.sa1;
-import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class n1 extends e61 {
-    public static final /* synthetic */ int a = 0;
+public final class n1 extends FrameLayout {
+    public final sa1 a;
+    public int b;
+    public final f6 c;
+    public final ArrayList d;
+    public final RectF e;
+    public final RectF f;
+    public final RectF h;
+    public final Paint n;
+    public int r;
 
-    static {
-        e61.setup(new n1());
+    public n1(Context context) {
+        super(context);
+        this.d = new ArrayList();
+        this.e = new RectF();
+        this.f = new RectF();
+        this.h = new RectF();
+        this.n = new Paint(1);
+        this.r = TLObject.FLAG_31;
+        sa1 sa1Var = new sa1(this, context, 21);
+        this.a = sa1Var;
+        sa1Var.setClipToPadding(false);
+        sa1Var.setClipChildren(false);
+        sa1Var.setOrientation(0);
+        sa1Var.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(10.0f));
+        addView(sa1Var, z5.e(-2, -1, 1));
+        setHorizontalScrollBarEnabled(false);
+        setClipToPadding(false);
+        setClipChildren(false);
+        this.c = new f6(sa1Var, 0L, 320L, bs.h);
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
-        o1 o1Var = (o1) view;
-        int i10 = f61Var.d;
-        ArrayList arrayList = (ArrayList) f61Var.G;
-        int i11 = f61Var.z;
-        Utilities.Callback callback = (Utilities.Callback) f61Var.H;
-        sa1 sa1Var = o1Var.a;
-        ArrayList arrayList2 = o1Var.d;
-        boolean z11 = o1Var.r == i10;
-        o1Var.r = i10;
-        if (arrayList2.size() != arrayList.size()) {
-            int i12 = 0;
-            int i13 = 0;
-            while (true) {
-                if (i12 >= arrayList2.size()) {
-                    break;
-                }
-                CharSequence charSequence = i13 < arrayList.size() ? (CharSequence) arrayList.get(i13) : null;
-                if (charSequence == null) {
-                    sa1Var.removeView((View) arrayList2.remove(i12));
-                    i12--;
-                } else {
-                    ((TextView) arrayList2.get(i12)).setText(charSequence);
-                }
-                i13++;
-                i12++;
-            }
-            while (i13 < arrayList.size()) {
-                x90 x90Var = new x90(o1Var.getContext(), null);
-                x90Var.setGravity(17);
-                x90Var.setText((CharSequence) arrayList.get(i13));
-                x90Var.setTypeface(AndroidUtilities.bold());
-                x90Var.setTextColor(h6.v(h6.x0(null, h6.b6, false), h6.x0(null, h6.c6, false)));
-                x90Var.setTextSize(1, 14.0f);
-                x90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-                x90Var.setEllipsize(TextUtils.TruncateAt.END);
-                x90Var.setSingleLine();
-                x90Var.setMaxLines(1);
-                b6.b(x90Var, 0.075f, 1.4f);
-                sa1Var.addView(x90Var, z5.n(-2, 26));
-                arrayList2.add(x90Var);
-                i13++;
-            }
-        }
-        o1Var.b = i11;
-        if (!z11) {
-            o1Var.c.d(i11, true);
-        }
-        sa1Var.invalidate();
-        for (int i14 = 0; i14 < arrayList2.size(); i14++) {
-            ((TextView) arrayList2.get(i14)).setOnClickListener(new org.telegram.ui.Components.a0(i14, 1, callback));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final boolean contentsEquals(f61 f61Var, f61 f61Var2) {
-        return f61Var.z == f61Var2.z && f61Var.H == f61Var2.H && equals(f61Var, f61Var2);
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final View createView(Context context, im0 im0Var, int i10, int i11, d6 d6Var) {
-        return new o1(context);
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final boolean equals(f61 f61Var, f61 f61Var2) {
-        if (f61Var.d == f61Var2.d) {
-            ArrayList arrayList = (ArrayList) f61Var.G;
-            ArrayList arrayList2 = (ArrayList) f61Var2.G;
-            if (arrayList == arrayList2) {
-                return true;
-            }
-            if (arrayList == null && arrayList2 == null) {
-                return true;
-            }
-            if (arrayList != null && arrayList2 != null && arrayList.size() == arrayList2.size()) {
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    if (TextUtils.equals((CharSequence) arrayList.get(i10), (CharSequence) arrayList2.get(i10))) {
-                    }
-                }
-                return true;
-            }
-        }
-        return false;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

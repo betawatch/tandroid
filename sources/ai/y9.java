@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class y9 implements z9 {
     public final int a;
@@ -275,7 +275,7 @@ public final class y9 implements z9 {
                 i10++;
                 togglestargiftspinnedtotop.stargift.add(h((TL_stars.SavedStarGift) obj));
             }
-            ConnectionsManager.getInstance(i11).sendRequest(togglestargiftspinnedtotop, new ci.e6(8), 64);
+            ConnectionsManager.getInstance(i11).sendRequest(togglestargiftspinnedtotop, new ci.d6(8), 64);
             return;
         }
         TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();

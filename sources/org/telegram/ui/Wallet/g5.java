@@ -1,60 +1,27 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class g5 extends LinearLayout {
-    public final RectF a;
-    public final RectF b;
-    public final RectF c;
-    public final Paint d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
-    public final /* synthetic */ h5 f;
+public final /* synthetic */ class g5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i5 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g5(h5 h5Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
-        super(context);
-        this.f = h5Var;
-        this.e = d6Var;
-        this.a = new RectF();
-        this.b = new RectF();
-        this.c = new RectF();
-        this.d = new Paint(1);
+    public /* synthetic */ g5(i5 i5Var, int i10) {
+        this.a = i10;
+        this.b = i5Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        h5 h5Var = this.f;
-        float d = h5Var.f.d(h5Var.d, false);
-        double d10 = d;
-        int floor = (int) Math.floor(d10);
-        TextView[] textViewArr = h5Var.c;
-        int clamp = Utilities.clamp(floor, textViewArr.length, 0);
-        int clamp2 = Utilities.clamp((int) Math.ceil(d10), textViewArr.length, 0);
-        RectF rectF = this.a;
-        if (clamp >= 0 && clamp < textViewArr.length) {
-            TextView textView = textViewArr[clamp];
-            rectF.set(textView.getX(), textView.getY(), textView.getX() + textView.getWidth(), textView.getY() + textView.getHeight());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new g5(this.b, 1));
+                break;
+            default:
+                this.b.a();
+                break;
         }
-        RectF rectF2 = this.b;
-        if (clamp2 >= 0 && clamp2 < textViewArr.length) {
-            TextView textView2 = textViewArr[clamp2];
-            rectF2.set(textView2.getX(), textView2.getY(), textView2.getX() + textView2.getWidth(), textView2.getY() + textView2.getHeight());
-        }
-        RectF rectF3 = this.c;
-        AndroidUtilities.lerp(rectF, rectF2, d - clamp, rectF3);
-        int m12 = org.telegram.ui.ActionBar.h6.m1(0.1f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, this.e));
-        Paint paint = this.d;
-        paint.setColor(m12);
-        canvas.drawRoundRect(rectF3, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), paint);
-        super.dispatchDraw(canvas);
     }
 }

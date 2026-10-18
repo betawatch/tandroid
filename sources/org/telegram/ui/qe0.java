@@ -12,10 +12,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class qe0 extends org.telegram.ui.Components.ow0 {
-    public final /* synthetic */ fg0 E;
+    public final /* synthetic */ eg0 E;
     public final org.telegram.ui.Components.xj0 a;
     public final TextView b;
     public final TextView c;
@@ -32,9 +32,9 @@ public final class qe0 extends org.telegram.ui.Components.ow0 {
     public Boolean y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qe0(fg0 fg0Var, Context context) {
+    public qe0(eg0 eg0Var, Context context) {
         super(context);
-        this.E = fg0Var;
+        this.E = eg0Var;
         setOrientation(1);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -54,7 +54,7 @@ public final class qe0 extends org.telegram.ui.Components.ow0 {
         textView.setText(LocaleController.getString(R.string.ResetAccount));
         textView.setGravity(17);
         textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        linearLayout.addView(textView, w7.z5.a(-2.0f, 32.0f, 16.0f, 32.0f, 0.0f, -1, 1));
+        linearLayout.addView(textView, w7.z5.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTextSize(1, 14.0f);

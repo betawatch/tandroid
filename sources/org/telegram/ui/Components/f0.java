@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -302,7 +302,7 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                                     UndoView undoView2 = undoView;
                                     if (undoView2 == null) {
                                         k10Var.l0.a(true);
-                                        k10Var.z0 = n2Var.getConnectionsManager().sendRequest(tL_chatlists_joinChatlistInvite, new ai.q2(k10Var, lastFragment, arrayList4, 15));
+                                        k10Var.z0 = n2Var.getConnectionsManager().sendRequest(tL_chatlists_joinChatlistInvite, new ai.k2(k10Var, lastFragment, arrayList4, 15));
                                         break;
                                     } else {
                                         ArrayList<Long> arrayList5 = new ArrayList<>();
@@ -422,7 +422,7 @@ public final /* synthetic */ class f0 implements View.OnClickListener {
                 }
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(m1Var.e, z11 ? 1.0f : 0.0f);
                 m1Var.f = ofFloat;
-                ofFloat.addUpdateListener(new ci.v4(m1Var, i14));
+                ofFloat.addUpdateListener(new ci.u4(m1Var, i14));
                 m1Var.f.addListener(new ah.p0(i13, m1Var, z11));
                 m1Var.f.setDuration(320L);
                 m1Var.f.setInterpolator(bs.h);

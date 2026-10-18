@@ -27,7 +27,7 @@ import org.telegram.ui.Components.ru;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class i {
     public static void a(b2 b2Var, boolean z10) {
@@ -178,7 +178,7 @@ public abstract class i {
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatString("BoostingGiveawayParticipant", R.string.BoostingGiveawayParticipant, str)));
         }
         b2Var.T = spannableStringBuilder;
-        alertDialog$Builder.k(LocaleController.getString("OK", R.string.OK), new si.a(11));
+        alertDialog$Builder.k(LocaleController.getString("OK", R.string.OK), new sg.y(12));
         a(alertDialog$Builder.o(), false);
     }
 
@@ -269,7 +269,7 @@ public abstract class i {
         if (i13 > 0) {
             spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGiveawayUsedLinksPlural", i13, new Object[0])));
         }
-        int i14 = 11;
+        int i14 = 12;
         if (tL_payments_giveawayInfoResults.refunded) {
             String string3 = LocaleController.getString("BoostingGiveawayCanceledByPayment", R.string.BoostingGiveawayCanceledByPayment);
             TextView f7 = org.telegram.messenger.g0.f(context, i11, 14.0f);
@@ -282,7 +282,7 @@ public abstract class i {
             f7.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
             b2Var.c = f7;
             b2Var.T = spannableStringBuilder;
-            alertDialog$Builder.k(LocaleController.getString("Close", R.string.Close), new si.a(i14));
+            alertDialog$Builder.k(LocaleController.getString("Close", R.string.Close), new sg.y(i14));
             a(alertDialog$Builder.o(), true);
             return;
         }
@@ -292,10 +292,10 @@ public abstract class i {
             if ((tL_payments_giveawayInfoResults.flags & 16) == 0) {
                 alertDialog$Builder.k(LocaleController.getString("BoostingGiveawayViewPrize", R.string.BoostingGiveawayViewPrize), new qg.g0(tL_payments_giveawayInfoResults, 20));
             }
-            alertDialog$Builder.h(LocaleController.getString("Close", R.string.Close), new si.a(i14));
+            alertDialog$Builder.h(LocaleController.getString("Close", R.string.Close), new sg.y(i14));
         } else {
             string = LocaleController.getString("BoostingGiveawayYouNotWon", R.string.BoostingGiveawayYouNotWon);
-            alertDialog$Builder.k(LocaleController.getString("Close", R.string.Close), new si.a(i14));
+            alertDialog$Builder.k(LocaleController.getString("Close", R.string.Close), new sg.y(i14));
         }
         ru ruVar = new ru(context);
         NotificationCenter.listenEmojiLoading(ruVar);
@@ -339,7 +339,7 @@ public abstract class i {
         b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string;
         b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("CantBoostTooOftenDescription", R.string.CantBoostTooOftenDescription, str));
-        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new si.a(15));
+        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new sg.y(16));
         alertDialog$Builder.o();
     }
 
@@ -355,7 +355,7 @@ public abstract class i {
         AndroidUtilities.runOnUIThread(new tg.p(replaceTags, 3), 450L);
     }
 
-    public static void i(long j10, sg.j0 j0Var) {
+    public static void i(long j10, sg.k0 k0Var) {
         TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-j10));
         n2 R = LaunchActivity.R();
         if (R == null) {
@@ -366,8 +366,8 @@ public abstract class i {
         b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string;
         b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGetMoreBoostByGiftingCount", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, chat.title));
-        alertDialog$Builder.h(LocaleController.getString("GiftPremium", R.string.GiftPremium), new sg.x(j0Var, 3));
-        alertDialog$Builder.k(LocaleController.getString("Close", R.string.Close), new si.a(11));
+        alertDialog$Builder.h(LocaleController.getString("GiftPremium", R.string.GiftPremium), new sg.x(k0Var, 3));
+        alertDialog$Builder.k(LocaleController.getString("Close", R.string.Close), new sg.y(12));
         alertDialog$Builder.o();
     }
 

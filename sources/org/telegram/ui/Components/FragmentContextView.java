@@ -56,7 +56,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class FragmentContextView extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, GroupCallMessagesController.CallMessageListener {
     public static final float[] Q0 = {0.5f, 1.0f, 1.2f, 1.5f, 1.7f, 2.0f};
@@ -126,7 +126,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
     public int s0;
     public final org.telegram.ui.Cells.k7 t0;
     public final AnimationNotificationsLocker u0;
-    public ci.i4 v;
+    public ci.h4 v;
     public final AnimationNotificationsLocker v0;
     public View w;
     public boolean w0;
@@ -355,10 +355,10 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         p6Var.u(-1);
         p6Var.w(AndroidUtilities.dp(14.0f));
         p6Var.x(AndroidUtilities.bold());
-        addView(this.s, w7.z5.a(36.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        addView(this.s, w7.z5.d(-1, 36.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         View view = new View(context);
         this.w = view;
-        this.s.addView(view, w7.z5.d(-1.0f, -1));
+        this.s.addView(view, w7.z5.c(-1.0f, -1));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -589,13 +589,13 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.x.setAutoRepeat(true);
         this.x.f(R.raw.import_progress, 30, 30, null);
         this.x.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.w0(i11, d6Var)));
-        addView(this.x, w7.z5.a(22.0f, 7.0f, 7.0f, 0.0f, 0.0f, 22, 51));
+        addView(this.x, w7.z5.d(22, 22.0f, 51, 7.0f, 7.0f, 0.0f, 0.0f));
         z10 z10Var = new z10(this, context, context, 0);
         this.d = z10Var;
-        addView(z10Var, w7.z5.a(36.0f, 35.0f, 0.0f, 36, 0.0f, -1, 51));
+        addView(z10Var, w7.z5.d(-1, 36.0f, 51, 35.0f, 0.0f, 36, 0.0f));
         z10 z10Var2 = new z10(this, context, context, 1);
         this.e = z10Var2;
-        addView(z10Var2, w7.z5.a(36.0f, 35.0f, 10.0f, 36, 0.0f, -1, 51));
+        addView(z10Var2, w7.z5.d(-1, 36.0f, 51, 35.0f, 10.0f, 36, 0.0f));
         org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
         this.O = hVar;
         hVar.g = 1.0f;
@@ -613,7 +613,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.M.setTypeface(AndroidUtilities.bold());
         this.M.setGravity(17);
         this.M.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        addView(this.M, w7.z5.a(28.0f, 0.0f, 10.0f, 14.0f, 0.0f, -2, 53));
+        addView(this.M, w7.z5.d(-2, 28.0f, 53, 0.0f, 10.0f, 14.0f, 0.0f));
         final int i13 = 3;
         this.M.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.s10
             public final /* synthetic */ FragmentContextView b;
@@ -837,7 +837,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.K.setContentDescription(LocaleController.getString(R.string.Unmute));
         this.K.setOnClickListener(new ah.f(13));
         this.K.setVisibility(8);
-        addView(this.K, w7.z5.a(36.0f, 0.0f, 0.0f, 36.0f, 0.0f, 36, 53));
+        addView(this.K, w7.z5.d(36, 36.0f, 53, 0.0f, 0.0f, 36.0f, 0.0f));
         if (!this.o0) {
             h();
         }
@@ -855,7 +855,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.y.setAnimation(this.E);
         this.y.setScaleType(scaleType);
         this.y.setVisibility(8);
-        addView(this.y, w7.z5.a(36.0f, 0.0f, 0.0f, 2.0f, 0.0f, 36, 53));
+        addView(this.y, w7.z5.d(36, 36.0f, 53, 0.0f, 0.0f, 2.0f, 0.0f));
         final int i15 = 4;
         this.y.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.s10
             public final /* synthetic */ FragmentContextView b;
@@ -1070,7 +1070,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
         this.F.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i14, d6Var), mode));
         this.F.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(i14, d6Var) & 436207615, 1, AndroidUtilities.dp(14.0f)));
         this.F.setScaleType(scaleType);
-        addView(this.F, w7.z5.a(36.0f, 0.0f, 0.0f, 4.0f, 0.0f, 36, 53));
+        addView(this.F, w7.z5.d(36, 36.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
         final int i16 = 0;
         this.F.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.s10
             public final /* synthetic */ FragmentContextView b;
@@ -1279,9 +1279,9 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 }
             }
         });
-        ci.i4 i4Var = new ci.i4(getContext(), 15);
-        this.v = i4Var;
-        addView(i4Var, w7.z5.a(-2.0f, 96.0f, 3.0f, 96.0f, 0.0f, -1, 48));
+        ci.h4 h4Var = new ci.h4(getContext(), 15);
+        this.v = h4Var;
+        addView(h4Var, w7.z5.d(-1, -2.0f, 48, 96.0f, 3.0f, 96.0f, 0.0f));
         final int i17 = 1;
         setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.s10
             public final /* synthetic */ FragmentContextView b;
@@ -2499,7 +2499,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             this.G.setPadding(0, 1, 0, 0);
         }
         this.G.setAdditionalXOffset(AndroidUtilities.dp(8.0f));
-        addView(this.G, w7.z5.a(36.0f, 0.0f, 0.0f, 36.0f, 0.0f, 36, 53));
+        addView(this.G, w7.z5.d(36, 36.0f, 53, 0.0f, 0.0f, 36.0f, 0.0f));
         this.G.setOnClickListener(new ca(i12, this, fArr));
         this.G.setOnLongClickListener(new u10(this, i11));
         r(false);
@@ -2658,8 +2658,8 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             this.e.setTranslationX(0.0f);
         }
         float f7 = v;
-        this.d.setLayoutParams(w7.z5.a(20.0f, f7, 5.0f, call.isScheduled() ? 90 : 36, 0.0f, -1, 51));
-        this.e.setLayoutParams(w7.z5.a(20.0f, f7, 25.0f, call.isScheduled() ? 90 : 36, 0.0f, -1, 51));
+        this.d.setLayoutParams(w7.z5.d(-1, 20.0f, 51, f7, 5.0f, call.isScheduled() ? 90 : 36, 0.0f));
+        this.e.setLayoutParams(w7.z5.d(-1, 20.0f, 51, f7, 25.0f, call.isScheduled() ? 90 : 36, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -2749,12 +2749,12 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onCameraFirstFrameAvailable() {
-        org.telegram.messenger.voip.u0.b(this);
+        org.telegram.messenger.voip.t0.b(this);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onCameraSwitch(boolean z10) {
-        org.telegram.messenger.voip.u0.c(this, z10);
+        org.telegram.messenger.voip.t0.c(this, z10);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -2807,7 +2807,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onMediaStateUpdated(int i10, int i11) {
-        org.telegram.messenger.voip.u0.d(this, i10, i11);
+        org.telegram.messenger.voip.t0.d(this, i10, i11);
     }
 
     @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
@@ -2839,12 +2839,12 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onScreenOnChange(boolean z10) {
-        org.telegram.messenger.voip.u0.e(this, z10);
+        org.telegram.messenger.voip.t0.e(this, z10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onSignalBarsCountChanged(int i10) {
-        org.telegram.messenger.voip.u0.f(this, i10);
+        org.telegram.messenger.voip.t0.f(this, i10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
@@ -2854,7 +2854,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onVideoAvailableChange(boolean z10) {
-        org.telegram.messenger.voip.u0.h(this, z10);
+        org.telegram.messenger.voip.t0.h(this, z10);
     }
 
     public final void p() {
@@ -3051,7 +3051,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             k9Var.setStyle(this.U);
             this.b0.setLayoutParams(w7.z5.e(108, getStyleHeight(), 51));
         }
-        this.s.setLayoutParams(w7.z5.a(getStyleHeight(), 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        this.s.setLayoutParams(w7.z5.d(-1, getStyleHeight(), 51, 0.0f, 0.0f, 0.0f, 0.0f));
         float f7 = this.S;
         if (f7 > 0.0f && f7 != AndroidUtilities.dp2(getStyleHeight())) {
             setTopPadding(AndroidUtilities.dp2(getStyleHeight()));
@@ -3082,7 +3082,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 }
                 i12++;
             }
-            this.d.setLayoutParams(w7.z5.a(-2.0f, 0.0f, -1.0f, 0, 0.0f, -2, 17));
+            this.d.setLayoutParams(w7.z5.d(-2, -2.0f, 17, 0.0f, -1.0f, 0, 0.0f));
             return;
         }
         if (i10 == 5) {
@@ -3116,7 +3116,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
                 u0Var.setVisibility(8);
                 this.G.setTag(null);
             }
-            this.d.setLayoutParams(w7.z5.a(36.0f, 35.0f, 0.0f, 36, 0.0f, -1, 51));
+            this.d.setLayoutParams(w7.z5.d(-1, 36.0f, 51, 35.0f, 0.0f, 36, 0.0f));
             return;
         }
         if (i10 == 0 || i10 == 2) {
@@ -3145,19 +3145,19 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             }
             this.d.setTag(Integer.valueOf(org.telegram.ui.ActionBar.h6.u7));
             if (i10 == 6) {
-                this.b.setLayoutParams(w7.z5.a(36.0f, 8.0f, 0.0f, 0.0f, 0.0f, 36, 51));
-                this.d.setLayoutParams(w7.z5.a(36.0f, 51.0f, 0.0f, 36, 0.0f, -1, 51));
+                this.b.setLayoutParams(w7.z5.d(36, 36.0f, 51, 8.0f, 0.0f, 0.0f, 0.0f));
+                this.d.setLayoutParams(w7.z5.d(-1, 36.0f, 51, 51.0f, 0.0f, 36, 0.0f));
                 this.F.setVisibility(8);
                 return;
             } else {
                 if (i10 != 0) {
-                    this.b.setLayoutParams(w7.z5.a(36.0f, 8.0f, 0.0f, 0.0f, 0.0f, 36, 51));
-                    this.d.setLayoutParams(w7.z5.a(36.0f, 51.0f, 0.0f, 36, 0.0f, -1, 51));
+                    this.b.setLayoutParams(w7.z5.d(36, 36.0f, 51, 8.0f, 0.0f, 0.0f, 0.0f));
+                    this.d.setLayoutParams(w7.z5.d(-1, 36.0f, 51, 51.0f, 0.0f, 36, 0.0f));
                     this.F.setContentDescription(LocaleController.getString(R.string.AccDescrStopLiveLocation));
                     return;
                 }
-                this.b.setLayoutParams(w7.z5.a(36.0f, 3.0f, 0.0f, 0.0f, 0.0f, 36, 51));
-                this.d.setLayoutParams(w7.z5.a(36.0f, 37.0f, 0.0f, 36, 0.0f, -1, 51));
+                this.b.setLayoutParams(w7.z5.d(36, 36.0f, 51, 3.0f, 0.0f, 0.0f, 0.0f));
+                this.d.setLayoutParams(w7.z5.d(-1, 36.0f, 51, 37.0f, 0.0f, 36, 0.0f));
                 h();
                 org.telegram.ui.ActionBar.u0 u0Var2 = this.G;
                 if (u0Var2 != null) {
@@ -3260,7 +3260,7 @@ public class FragmentContextView extends FrameLayout implements NotificationCent
             this.b.setVisibility(8);
             this.e.setVisibility(8);
             this.M.setVisibility(8);
-            this.d.setLayoutParams(w7.z5.a(-2.0f, 0.0f, 0.0f, 0, 0.0f, -2, 17));
+            this.d.setLayoutParams(w7.z5.d(-2, -2.0f, 17, 0.0f, 0.0f, 0, 0.0f));
             this.d.setPadding(AndroidUtilities.dp(88.0f), 0, AndroidUtilities.dp(88.0f) + this.N, 0);
             org.telegram.ui.ActionBar.u0 u0Var4 = this.G;
             if (u0Var4 != null) {

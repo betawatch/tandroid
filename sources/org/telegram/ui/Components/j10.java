@@ -20,7 +20,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class j10 extends FrameLayout {
     public final boolean a;
@@ -117,7 +117,7 @@ public final class j10 extends FrameLayout {
         paint3.setShader(linearGradient2);
         paint3.setXfermode(new PorterDuffXfermode(mode));
         this.c = i10Var;
-        addView(i10Var, w7.z5.a(44.0f, 0.0f, 17.33f, 0.0f, 0.0f, -1, 55));
+        addView(i10Var, w7.z5.d(-1, 44.0f, 55, 0.0f, 17.33f, 0.0f, 0.0f));
         z5 z5Var = new z5(context);
         int i12 = org.telegram.ui.ActionBar.h6.G6;
         z5Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
@@ -133,7 +133,7 @@ public final class j10 extends FrameLayout {
         int i13 = org.telegram.ui.ActionBar.h6.Oh;
         d6Var = ((org.telegram.ui.ActionBar.f3) k10Var).resourcesProvider;
         z5Var.setEmojiColor(org.telegram.ui.ActionBar.h6.w0(i13, d6Var));
-        addView(z5Var, w7.z5.a(-2.0f, 32.0f, 78.3f, 32.0f, 0.0f, -1, 48));
+        addView(z5Var, w7.z5.d(-1, -2.0f, 48, 32.0f, 78.3f, 32.0f, 0.0f));
         z5 z5Var2 = new z5(context);
         this.d = z5Var2;
         z5Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
@@ -141,7 +141,7 @@ public final class j10 extends FrameLayout {
         z5Var2.setLines(2);
         z5Var2.setGravity(17);
         z5Var2.setLineSpacing(0.0f, 1.15f);
-        addView(z5Var2, w7.z5.a(-2.0f, 32.0f, 113.0f, 32.0f, 0.0f, -1, 48));
+        addView(z5Var2, w7.z5.d(-1, -2.0f, 48, 32.0f, 113.0f, 32.0f, 0.0f));
         a();
     }
 

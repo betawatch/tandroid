@@ -79,7 +79,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadController.FileDownloadProgressListener, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.r40 A0;
@@ -291,14 +291,14 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         if (mc1Var.getParentActivity() == null) {
             return;
         }
-        sg.j0 j0Var = new sg.j0(23, mc1Var.currentAccount, mc1Var.getParentActivity(), mc1Var, mc1Var.a);
-        j0Var.H1(canApplyBoost);
-        j0Var.G1(mc1Var.V1, true);
-        j0Var.I1(mc1Var.J1);
+        sg.k0 k0Var = new sg.k0(23, mc1Var.currentAccount, mc1Var.getParentActivity(), mc1Var, mc1Var.a);
+        k0Var.H1(canApplyBoost);
+        k0Var.G1(mc1Var.V1, true);
+        k0Var.I1(mc1Var.J1);
         if (!mc1Var.U0()) {
-            j0Var.Q0 = new za1(mc1Var, 1);
+            k0Var.Q0 = new za1(mc1Var, 1);
         }
-        mc1Var.showDialog(j0Var);
+        mc1Var.showDialog(k0Var);
     }
 
     public static void V(mc1 mc1Var) {
@@ -491,25 +491,25 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
     /* JADX WARN: Removed duplicated region for block: B:85:0x03d0  */
     /* JADX WARN: Removed duplicated region for block: B:90:0x03ea  */
     /* JADX WARN: Removed duplicated region for block: B:95:0x0400  */
-    /* JADX WARN: Type inference failed for: r12v13 */
-    /* JADX WARN: Type inference failed for: r12v14 */
-    /* JADX WARN: Type inference failed for: r12v17 */
-    /* JADX WARN: Type inference failed for: r12v18 */
-    /* JADX WARN: Type inference failed for: r12v2 */
-    /* JADX WARN: Type inference failed for: r12v3 */
-    /* JADX WARN: Type inference failed for: r12v38 */
-    /* JADX WARN: Type inference failed for: r12v39 */
-    /* JADX WARN: Type inference failed for: r12v40 */
-    /* JADX WARN: Type inference failed for: r12v41 */
+    /* JADX WARN: Type inference failed for: r13v13 */
+    /* JADX WARN: Type inference failed for: r13v14 */
+    /* JADX WARN: Type inference failed for: r13v17 */
+    /* JADX WARN: Type inference failed for: r13v18 */
+    /* JADX WARN: Type inference failed for: r13v2 */
+    /* JADX WARN: Type inference failed for: r13v3 */
+    /* JADX WARN: Type inference failed for: r13v38 */
+    /* JADX WARN: Type inference failed for: r13v39 */
+    /* JADX WARN: Type inference failed for: r13v40 */
+    /* JADX WARN: Type inference failed for: r13v41 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void N0(boolean z10) {
         int i10;
-        ?? r12;
+        ?? r13;
         boolean z11;
         boolean z12;
-        ?? r122;
+        ?? r132;
         File file;
         boolean z13;
         Object obj;
@@ -543,7 +543,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
             }
         }
         if (!getUserConfig().isPremium() && z10) {
-            showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) this, 22, true));
+            showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) this, 22, true));
             return;
         }
         org.telegram.ui.ActionBar.g6 g6Var = org.telegram.ui.ActionBar.h6.I;
@@ -568,7 +568,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                         }
                         obj3 = null;
                         z12 = false;
-                        r12 = obj3;
+                        r13 = obj3;
                         if (this.F1) {
                         }
                         obj = this.B1;
@@ -643,9 +643,9 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                 if (obj4 instanceof vh1) {
                     vh1 vh1Var = (vh1) obj4;
                     if (vh1Var.b != 0 || "t".equals(vh1Var.a)) {
-                        r122 = 0;
+                        r132 = 0;
                         z12 = false;
-                        z13 = r122;
+                        z13 = r132;
                     } else {
                         try {
                         } catch (Exception e12) {
@@ -676,12 +676,12 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                             if (!z12) {
                                 try {
                                     z11 = AndroidUtilities.copyFile(file, file3);
-                                    r12 = z19;
+                                    r13 = z19;
                                 } catch (Exception e13) {
                                     e = e13;
                                     FileLog.e(e);
                                     z11 = false;
-                                    r12 = z19;
+                                    r13 = z19;
                                     if (this.F1) {
                                     }
                                     obj = this.B1;
@@ -723,7 +723,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                             z12 = false;
                             FileLog.e(e);
                             z11 = false;
-                            r12 = z19;
+                            r13 = z19;
                             if (this.F1) {
                             }
                             obj = this.B1;
@@ -761,7 +761,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                         }
                     }
                 } else {
-                    r12 = 0;
+                    r13 = 0;
                     obj3 = null;
                     obj3 = null;
                     if (obj4 instanceof MediaController.SearchImage) {
@@ -844,7 +844,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                     z11 = false;
                     z12 = false;
                 }
-                r12 = 0;
+                r13 = 0;
                 if (this.F1) {
                     try {
                         FileOutputStream fileOutputStream5 = new FileOutputStream(new File(ApplicationLoader.getFilesDirFixed(), j12));
@@ -863,7 +863,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                     str = tL_wallPaper.slug;
                     z14 = z12;
                     i13 = 0;
-                    file2 = r12;
+                    file2 = r13;
                     i11 = 45;
                     z15 = z11;
                     i14 = 0;
@@ -966,7 +966,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                             if (this.J1 != 0) {
                                 if (file2 == null || getMessagesController().uploadingWallpaperInfo != a6Var2222) {
                                     z18 = false;
-                                    ChatThemeController.getInstance(this.currentAccount).setWallpaperToPeer(this.J1, null, a6Var2222, this.q0, new ah.j(23));
+                                    ChatThemeController.getInstance(this.currentAccount).setWallpaperToPeer(this.J1, null, a6Var2222, this.q0, new ah.j(22));
                                 } else {
                                     tL_wallPaper = new TLRPC.TL_wallPaper();
                                     TLRPC.TL_wallPaperSettings tL_wallPaperSettings = new TLRPC.TL_wallPaperSettings();
@@ -1097,12 +1097,12 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                 if (z17) {
                 }
             } else {
-                r122 = 0;
+                r132 = 0;
                 z12 = false;
-                z13 = r122;
+                z13 = r132;
             }
             z11 = true;
-            r12 = z13;
+            r13 = z13;
             if (this.F1) {
             }
             obj = this.B1;
@@ -1139,7 +1139,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
             }
         }
         z12 = false;
-        r12 = obj3;
+        r13 = obj3;
         if (this.F1) {
         }
         obj = this.B1;
@@ -2110,7 +2110,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                         colorDrawable = wc0Var;
                     } else if (C02 != 0) {
                         org.telegram.ui.Components.v9 v9Var = new org.telegram.ui.Components.v9(org.telegram.ui.Components.v9.d(f6Var.n), new int[]{C0, C02});
-                        this.u1 = v9Var.f(ki.t1.w(0.5f, 3), new ub1(this, 0), 100L);
+                        this.u1 = v9Var.f(ki.t1.u(0.5f, 3), new ub1(this, 0), 100L);
                         colorDrawable = v9Var;
                     } else {
                         colorDrawable = new ColorDrawable(C0);
@@ -2324,7 +2324,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
             m0 m0Var = new m0(this, context, 24);
             this.m0 = m0Var;
             m0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.d6));
-            this.m0.addView(this.actionBar, w7.z5.d(-2.0f, -1));
+            this.m0.addView(this.actionBar, w7.z5.c(-2.0f, -1));
             org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context);
             this.n0 = im0Var;
             im0Var.setVerticalScrollBarEnabled(true);
@@ -2360,7 +2360,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                     break;
                 }
                 bc1VarArr[i12] = new bc1(this, (Activity) getContext());
-                this.t0.addView(bc1VarArr[i12], w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 51));
+                this.t0.addView(bc1VarArr[i12], w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 48.0f));
                 i12++;
             }
             bc1 bc1Var = bc1VarArr[0];
@@ -2431,7 +2431,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                     this.e.g(3, LocaleController.getString(R.string.ColorPickerMyMessages));
                     this.e.D();
                     this.e.setForceSmoothKeyboard(true);
-                    this.s0.addView(this.e, w7.z5.a(-1.0f, AndroidUtilities.isTablet() ? 64.0f : 56.0f, 0.0f, 40.0f, 0.0f, -2, 51));
+                    this.s0.addView(this.e, w7.z5.d(-2, -1.0f, 51, AndroidUtilities.isTablet() ? 64.0f : 56.0f, 0.0f, 40.0f, 0.0f));
                     this.e.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ab1
                         public final /* synthetic */ mc1 b;
 
@@ -2478,7 +2478,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                     this.h.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, mutate, (Drawable) null);
                     this.h.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
                     this.h.setPadding(0, 0, AndroidUtilities.dp(10.0f), 0);
-                    this.e.addView(this.h, w7.z5.a(-2.0f, 16.0f, 0.0f, 0.0f, 1.0f, -2, 16));
+                    this.e.addView(this.h, w7.z5.d(-2, -2.0f, 16, 16.0f, 0.0f, 0.0f, 1.0f));
                 } else {
                     TLRPC.TL_theme tL_theme = g6Var.F;
                     String n12 = tL_theme != null ? tL_theme.title : g6Var.n();
@@ -2516,7 +2516,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
             this.u0.setLayoutManager(new s4.b0(1, true));
             this.u0.setVerticalScrollbarPosition(!LocaleController.isRTL ? 1 : 2);
             if (i11 != 1) {
-                this.t0.addView(this.u0, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 273.0f, -1, 51));
+                this.t0.addView(this.u0, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 273.0f));
                 this.u0.setOnItemClickListener(new bb1(this, i24));
                 i14 = -1;
             } else {
@@ -2524,7 +2524,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                 this.t0.addView(this.u0, w7.z5.e(-1, -1, 51));
             }
             this.u0.setOnScrollListener(new k3(this, 29));
-            this.t0.addView(this.s0, w7.z5.d(-2.0f, i14));
+            this.t0.addView(this.s0, w7.z5.c(-2.0f, i14));
             org.telegram.ui.Components.f91 f91Var = new org.telegram.ui.Components.f91(context);
             this.v1 = f91Var;
             f91Var.b(new bb1(this, i26));
@@ -2570,7 +2570,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                         }
                     });
                     if (this.J1 <= 0 || this.K1 || this.q0 != null) {
-                        this.C0.addView(this.z1, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 81));
+                        this.C0.addView(this.z1, w7.z5.d(-1, 48.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
                     } else {
                         cc1 cc1Var2 = new cc1(context, this);
                         this.A1 = cc1Var2;
@@ -2618,8 +2618,8 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                                 }
                             }
                         });
-                        this.C0.addView(this.z1, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 58.0f, -1, 81));
-                        this.C0.addView(this.A1, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 81));
+                        this.C0.addView(this.z1, w7.z5.d(-1, 48.0f, 81, 0.0f, 0.0f, 0.0f, 58.0f));
+                        this.C0.addView(this.A1, w7.z5.d(-1, 48.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
                     }
                     if (this.M1) {
                         ai.n5 n5Var = new ai.n5(this, (Activity) getContext());
@@ -3340,7 +3340,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                                     this.e2.setPadding(AndroidUtilities.dp(f10), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(f10), AndroidUtilities.dp(8.0f));
                                     this.e2.setEllipsize(TextUtils.TruncateAt.MIDDLE);
                                     this.e2.setGravity(16);
-                                    viewGroupArr[i22].addView(this.e2, w7.z5.a(48.0f, 0.0f, 21.0f, 0.0f, 0.0f, -1, 51));
+                                    viewGroupArr[i22].addView(this.e2, w7.z5.d(-1, 48.0f, 51, 0.0f, 21.0f, 0.0f, 0.0f));
                                     ua1 ua1Var = new ua1(context);
                                     this.P0 = ua1Var;
                                     s4.b0 b0Var = new s4.b0(0, false);
@@ -3351,18 +3351,18 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                                     this.Q0 = kc1Var;
                                     ua1Var2.setAdapter(kc1Var);
                                     this.P0.i(new ci.l(9));
-                                    viewGroupArr[i22].addView(this.P0, w7.z5.a(100.0f, 0.0f, 76.0f, 0.0f, 0.0f, -1, 51));
+                                    viewGroupArr[i22].addView(this.P0, w7.z5.d(-1, 100.0f, 51, 0.0f, 76.0f, 0.0f, 0.0f));
                                     this.P0.setOnItemClickListener(new h11(this, 8));
                                     org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(context);
                                     this.S0 = l4Var;
                                     l4Var.setText(LocaleController.getString(R.string.BackgroundIntensity));
-                                    viewGroupArr[i22].addView(this.S0, w7.z5.a(-2.0f, 0.0f, 175.0f, 0.0f, 0.0f, -1, 51));
+                                    viewGroupArr[i22].addView(this.S0, w7.z5.d(-1, -2.0f, 51, 0.0f, 175.0f, 0.0f, 0.0f));
                                     org.telegram.ui.Cells.j0 j0Var = new org.telegram.ui.Cells.j0(context, (mb1) getResourceProvider());
                                     this.T0 = j0Var;
                                     j0Var.setProgress(this.l1);
                                     this.T0.setReportChanges(true);
                                     this.T0.setDelegate(new ob1(this));
-                                    viewGroupArr[i22].addView(this.T0, w7.z5.a(38.0f, 5.0f, 211.0f, 5.0f, 0.0f, -1, 51));
+                                    viewGroupArr[i22].addView(this.T0, w7.z5.d(-1, 38.0f, 51, 5.0f, 211.0f, 5.0f, 0.0f));
                                 } else {
                                     org.telegram.ui.Components.wq wqVar = new org.telegram.ui.Components.wq(context, this.g0, new pb1(this));
                                     this.V = wqVar;
@@ -3387,7 +3387,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
                                             }
                                         }
                                     } else {
-                                        viewGroupArr[i22].addView(this.V, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 1));
+                                        viewGroupArr[i22].addView(this.V, w7.z5.d(-1, -1.0f, 1, 0.0f, 0.0f, 0.0f, 48.0f));
                                     }
                                 }
                                 i22++;
@@ -3514,11 +3514,11 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
             gVar.b(new o2(this, 2));
             this.j0.setAdapter(new k70(this, i45));
             AndroidUtilities.setViewPagerEdgeEffectColor(this.j0, getThemedColor(org.telegram.ui.ActionBar.h6.s8));
-            this.k0.addView(this.j0, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, i11 != 0 ? 48.0f : 0.0f, -1, 51));
+            this.k0.addView(this.j0, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, i11 != 0 ? 48.0f : 0.0f));
             UndoView undoView = new UndoView(context, this);
             this.l0 = undoView;
             undoView.setAdditionalTranslationY(AndroidUtilities.dp(51.0f));
-            this.k0.addView(this.l0, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+            this.k0.addView(this.l0, w7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
             if (i11 != 0) {
                 View view = new View(context);
                 view.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.V5));
@@ -3656,7 +3656,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         m0 m0Var2 = new m0(this, context, 24);
         this.m0 = m0Var2;
         m0Var2.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.d6));
-        this.m0.addView(this.actionBar, w7.z5.d(-2.0f, -1));
+        this.m0.addView(this.actionBar, w7.z5.c(-2.0f, -1));
         org.telegram.ui.Components.im0 im0Var3 = new org.telegram.ui.Components.im0(context);
         this.n0 = im0Var3;
         im0Var3.setVerticalScrollBarEnabled(true);
@@ -3690,7 +3690,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
             if (i12 < 2) {
             }
             bc1VarArr[i12] = new bc1(this, (Activity) getContext());
-            this.t0.addView(bc1VarArr[i12], w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 51));
+            this.t0.addView(bc1VarArr[i12], w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 48.0f));
             i12++;
         }
         bc1 bc1Var2 = bc1VarArr[0];
@@ -3718,7 +3718,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         if (i11 != 1) {
         }
         this.u0.setOnScrollListener(new k3(this, 29));
-        this.t0.addView(this.s0, w7.z5.d(-2.0f, i14));
+        this.t0.addView(this.s0, w7.z5.c(-2.0f, i14));
         org.telegram.ui.Components.f91 f91Var2 = new org.telegram.ui.Components.f91(context);
         this.v1 = f91Var2;
         f91Var2.b(new bb1(this, i262));
@@ -3786,11 +3786,11 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         gVar2.b(new o2(this, 2));
         this.j0.setAdapter(new k70(this, i452));
         AndroidUtilities.setViewPagerEdgeEffectColor(this.j0, getThemedColor(org.telegram.ui.ActionBar.h6.s8));
-        this.k0.addView(this.j0, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, i11 != 0 ? 48.0f : 0.0f, -1, 51));
+        this.k0.addView(this.j0, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, i11 != 0 ? 48.0f : 0.0f));
         UndoView undoView2 = new UndoView(context, this);
         this.l0 = undoView2;
         undoView2.setAdditionalTranslationY(AndroidUtilities.dp(51.0f));
-        this.k0.addView(this.l0, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+        this.k0.addView(this.l0, w7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
         if (i11 != 0) {
         }
         if (i11 == i23) {
@@ -3962,7 +3962,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
             this.A0.setVisibility(4);
             this.A0.setText(LocaleController.getString(R.string.BackgroundAnimateInfo));
             this.A0.setExtraTranslationY(AndroidUtilities.dp(6.0f));
-            this.k0.addView(this.A0, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+            this.k0.addView(this.A0, w7.z5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
         }
         AndroidUtilities.runOnUIThread(new m71(7, this, globalMainSettings), 500L);
     }
@@ -4670,7 +4670,7 @@ public class mc1 extends org.telegram.ui.ActionBar.n2 implements DownloadControl
         }
         int i10 = this.b;
         if ((i10 == 2 || i10 == 1) && this.p1 == null) {
-            AndroidUtilities.runOnUIThread(new ff0(6));
+            AndroidUtilities.runOnUIThread(new mj0(5));
         }
         if (i10 == 2) {
             Bitmap bitmap = this.w1;

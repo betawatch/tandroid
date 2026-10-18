@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ad0 implements o1.g {
     public final /* synthetic */ int a;
@@ -23,17 +23,17 @@ public final /* synthetic */ class ad0 implements o1.g {
         Object obj = this.b;
         switch (i10) {
             case 0:
-                tf0 tf0Var = ((fg0) obj).b0;
-                if (tf0Var != null) {
-                    int i11 = tf0.E;
-                    View view = tf0Var.c;
-                    ViewGroup viewGroup = tf0Var.b;
-                    PointF pointF = tf0Var.y;
+                sf0 sf0Var = ((eg0) obj).b0;
+                if (sf0Var != null) {
+                    int i11 = sf0.E;
+                    View view = sf0Var.c;
+                    ViewGroup viewGroup = sf0Var.b;
+                    PointF pointF = sf0Var.y;
                     ih.j.b(view, viewGroup, pointF);
-                    org.telegram.ui.Components.h20 h20Var = tf0Var.h;
+                    org.telegram.ui.Components.h20 h20Var = sf0Var.h;
                     h20Var.setTranslationX(pointF.x);
                     h20Var.setTranslationY(pointF.y);
-                    tf0Var.requestLayout();
+                    sf0Var.requestLayout();
                     break;
                 }
                 break;

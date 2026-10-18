@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 import javax.net.SocketFactory;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class f0 {
     public final int a;
@@ -33,7 +33,7 @@ public final class f0 {
             int i12 = this.b;
             if ((i12 != 2 || (inetAddress instanceof Inet4Address)) && (i12 != 3 || (inetAddress instanceof Inet6Address))) {
                 int i13 = i11 + this.c;
-                c5.b0 b0Var2 = new c5.b0(i13, 11);
+                c5.b0 b0Var2 = new c5.b0(i13, 12);
                 arrayList.add(new tc.t(hVar, (SocketFactory) this.d, new InetSocketAddress(inetAddress, ((tc.a) this.e).b), this.a, b0Var, b0Var2));
                 b0Var = b0Var2;
                 i11 = i13;

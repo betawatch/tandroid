@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ew0 extends FrameLayout {
     public boolean a;
@@ -49,7 +49,7 @@ public final class ew0 extends FrameLayout {
         org.telegram.ui.ActionBar.k kVar7;
         PremiumPreviewFragment premiumPreviewFragment = this.d;
         boolean z10 = premiumPreviewFragment.h0;
-        sg.z0 z0Var = premiumPreviewFragment.m0;
+        sg.a1 a1Var = premiumPreviewFragment.m0;
         if (Build.VERSION.SDK_INT >= 31 && premiumPreviewFragment.u0 != null) {
             premiumPreviewFragment.j0();
         }
@@ -122,7 +122,7 @@ public final class ew0 extends FrameLayout {
             premiumPreviewFragment.K.invalidate();
             premiumPreviewFragment.J.invalidate();
         }
-        z0Var.d(0, (-getMeasuredWidth()) * 0.1f * premiumPreviewFragment.b0, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
+        a1Var.d(0, (-getMeasuredWidth()) * 0.1f * premiumPreviewFragment.b0, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
         if (z10) {
             int i11 = org.telegram.ui.ActionBar.h6.a7;
             int themedColor = premiumPreviewFragment.getThemedColor(i11);
@@ -147,7 +147,7 @@ public final class ew0 extends FrameLayout {
         } else {
             r11 = 0;
             canvas2 = canvas;
-            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), z0Var.f);
+            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), a1Var.f);
         }
         super.dispatchDraw(canvas);
         if (premiumPreviewFragment.J.getVisibility() != 0) {

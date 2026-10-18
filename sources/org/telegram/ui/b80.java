@@ -28,7 +28,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b80 implements Runnable {
     public final /* synthetic */ int a;
@@ -249,10 +249,10 @@ public final /* synthetic */ class b80 implements Runnable {
             case 17:
                 xd0 xd0Var = (xd0) this.b;
                 TLObject tLObject3 = (TLObject) this.c;
-                fg0 fg0Var = xd0Var.y;
-                fg0Var.k1(false, false);
+                eg0 eg0Var = xd0Var.y;
+                eg0Var.k1(false, false);
                 AndroidUtilities.hideKeyboard(xd0Var.a);
-                fg0Var.o1((TLRPC.TL_auth_authorization) tLObject3, false);
+                eg0Var.o1((TLRPC.TL_auth_authorization) tLObject3, false);
                 break;
             case 18:
                 xd0 xd0Var2 = (xd0) this.b;
@@ -299,50 +299,50 @@ public final /* synthetic */ class b80 implements Runnable {
             case 21:
                 qe0 qe0Var = (qe0) this.b;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.c;
-                fg0 fg0Var2 = qe0Var.E;
-                fg0Var2.k1(false, true);
+                eg0 eg0Var2 = qe0Var.E;
+                eg0Var2.k1(false, true);
                 if (tL_error3 == null) {
                     if (qe0Var.r != null && qe0Var.s != null && qe0Var.v != null) {
                         Bundle bundle2 = new Bundle();
                         bundle2.putString("phoneFormated", qe0Var.r);
                         bundle2.putString("phoneHash", qe0Var.s);
                         bundle2.putString("code", qe0Var.v);
-                        fg0Var2.u1(5, true, bundle2, false);
+                        eg0Var2.u1(5, true, bundle2, false);
                         break;
                     } else {
-                        fg0Var2.u1(0, true, null, true);
+                        eg0Var2.u1(0, true, null, true);
                         break;
                     }
                 } else if (tL_error3.text.equals("2FA_RECENT_CONFIRM")) {
-                    fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", R.string.ResetAccountCancelledAlert));
+                    eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ResetAccountCancelledAlert", R.string.ResetAccountCancelledAlert));
                     break;
                 } else {
-                    fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error3.text);
+                    eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error3.text);
                     break;
                 }
                 break;
             case 22:
-                jf0 jf0Var = (jf0) this.b;
+                if0 if0Var = (if0) this.b;
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder((Activity) this.c);
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.CancelLinkSuccessTitle);
-                alertDialog$Builder.a.T = LocaleController.formatString("CancelLinkSuccess", R.string.CancelLinkSuccess, org.telegram.messenger.kk.g(new StringBuilder("+"), jf0Var.b, jf.b.c()));
+                alertDialog$Builder.a.T = LocaleController.formatString("CancelLinkSuccess", R.string.CancelLinkSuccess, org.telegram.messenger.lk.g(new StringBuilder("+"), if0Var.b, jf.b.c()));
                 alertDialog$Builder.k(LocaleController.getString(R.string.Close), null);
-                alertDialog$Builder.a.setOnDismissListener(new df0(jf0Var, i12));
+                alertDialog$Builder.a.setOnDismissListener(new df0(if0Var, i12));
                 alertDialog$Builder.o();
                 break;
             case 23:
-                jf0 jf0Var2 = (jf0) this.b;
+                if0 if0Var2 = (if0) this.b;
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) this.c;
-                jf0Var2.getClass();
-                jf0Var2.e0 = tL_error4.text;
+                if0Var2.getClass();
+                if0Var2.e0 = tL_error4.text;
                 break;
             case 24:
-                ((jf0) this.b).s0.o1((TLRPC.TL_auth_authorization) ((TLObject) this.c), false);
+                ((if0) this.b).s0.o1((TLRPC.TL_auth_authorization) ((TLObject) this.c), false);
                 break;
             case 25:
-                jf0 jf0Var3 = (jf0) this.b;
+                if0 if0Var3 = (if0) this.b;
                 Runnable runnable3 = (Runnable) this.c;
-                sr srVar = jf0Var3.f;
+                sr srVar = if0Var3.f;
                 int i16 = 0;
                 while (true) {
                     vr[] vrVarArr2 = srVar.f;
@@ -359,37 +359,37 @@ public final /* synthetic */ class b80 implements Runnable {
                 ((v3) this.b).run((String) this.c);
                 break;
             case 27:
-                eg0 eg0Var = (eg0) this.b;
+                dg0 dg0Var = (dg0) this.b;
                 ArrayList arrayList2 = (ArrayList) this.c;
-                fg0 fg0Var3 = eg0Var.V;
+                eg0 eg0Var3 = dg0Var.V;
                 SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-                if (!globalMainSettings.getBoolean("firstloginshow", true) && !fg0Var3.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_PHONE_STATE")) {
-                    fg0Var3.getParentActivity().requestPermissions((String[]) arrayList2.toArray(new String[0]), 7);
+                if (!globalMainSettings.getBoolean("firstloginshow", true) && !eg0Var3.getParentActivity().shouldShowRequestPermissionRationale("android.permission.READ_PHONE_STATE")) {
+                    eg0Var3.getParentActivity().requestPermissions((String[]) arrayList2.toArray(new String[0]), 7);
                     break;
                 } else {
                     globalMainSettings.edit().putBoolean("firstloginshow", false).commit();
-                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(fg0Var3.getParentActivity());
+                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(eg0Var3.getParentActivity());
                     alertDialog$Builder2.m(R.raw.incoming_calls, 46, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.L5, false), null);
                     alertDialog$Builder2.k(LocaleController.getString("Continue", R.string.Continue), null);
                     String string2 = LocaleController.getString("AllowFillNumber", R.string.AllowFillNumber);
                     org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder2.a;
                     b2Var2.T = string2;
-                    fg0Var3.n = fg0Var3.showDialog(b2Var2, true, null);
-                    fg0Var3.c0 = true;
+                    eg0Var3.n = eg0Var3.showDialog(b2Var2, true, null);
+                    eg0Var3.c0 = true;
                     break;
                 }
                 break;
             case 28:
-                ig0.V((ig0) this.b, (org.telegram.ui.ActionBar.b2) this.c);
+                hg0.V((hg0) this.b, (org.telegram.ui.ActionBar.b2) this.c);
                 break;
             default:
-                kh0 kh0Var = (kh0) this.b;
+                jh0 jh0Var = (jh0) this.b;
                 TLRPC.TL_error tL_error5 = (TLRPC.TL_error) this.c;
-                kh0Var.c0 = false;
+                jh0Var.c0 = false;
                 if (tL_error5 == null) {
-                    bh0 f02 = kh0Var.f0();
-                    kh0Var.j0.clear();
-                    kh0Var.h0(f02);
+                    ah0 f02 = jh0Var.f0();
+                    jh0Var.j0.clear();
+                    jh0Var.h0(f02);
                     break;
                 }
                 break;

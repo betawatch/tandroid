@@ -2,7 +2,7 @@ package ai;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class zd extends tg.n {
     public final /* synthetic */ int i0;
@@ -11,6 +11,17 @@ public final class zd extends tg.n {
     public /* synthetic */ zd(Context context, int i10, int i11, int i12) {
         super(context, i10, i11);
         this.i0 = i12;
+    }
+
+    @Override // tg.n
+    public void n() {
+        switch (this.i0) {
+            case 0:
+                break;
+            default:
+                super.n();
+                break;
+        }
     }
 
     @Override // tg.n, android.view.TextureView, android.view.View
@@ -63,17 +74,6 @@ public final class zd extends tg.n {
         }
     }
 
-    @Override // tg.n
-    public void p() {
-        switch (this.i0) {
-            case 0:
-                break;
-            default:
-                super.p();
-                break;
-        }
-    }
-
-    private final void r() {
+    private final void p() {
     }
 }

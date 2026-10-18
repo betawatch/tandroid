@@ -22,7 +22,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class n10 extends pg.b {
     public final Context d;
@@ -319,21 +319,21 @@ public final class n10 extends pg.b {
                         o10 o10Var = new o10(context);
                         TextView textView = new TextView(context);
                         o10Var.a = textView;
-                        org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+                        org.telegram.messenger.lk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
                         textView.setMaxLines(1);
                         textView.setSingleLine(true);
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                         textView.setEllipsize(truncateAt);
                         textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                        o10Var.addView(textView, w7.z5.a(-2.0f, 22.0f, 10.0f, 22.0f, 0.0f, -2, LocaleController.isRTL ? 5 : 3));
+                        o10Var.addView(textView, w7.z5.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, 22.0f, 10.0f, 22.0f, 0.0f));
                         TextView textView2 = new TextView(context);
                         o10Var.b = textView2;
-                        org.telegram.messenger.kk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
+                        org.telegram.messenger.lk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
                         textView2.setMaxLines(1);
                         textView2.setSingleLine(true);
                         textView2.setEllipsize(truncateAt);
                         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-                        o10Var.addView(textView2, w7.z5.a(-2.0f, 22.0f, 35.0f, 22.0f, 0.0f, -2, LocaleController.isRTL ? 5 : 3));
+                        o10Var.addView(textView2, w7.z5.d(-2, -2.0f, LocaleController.isRTL ? 5 : 3, 22.0f, 35.0f, 22.0f, 0.0f));
                         org.telegram.ui.Components.ti0 ti0Var = new org.telegram.ui.Components.ti0(context);
                         o10Var.c = ti0Var;
                         ti0Var.setText(LocaleController.getString(R.string.Add));
@@ -368,14 +368,14 @@ public final class n10 extends pg.b {
             xj0Var.setScaleType(ImageView.ScaleType.CENTER);
             xj0Var.d();
             xj0Var.setImportantForAccessibility(2);
-            k10Var.addView(xj0Var, w7.z5.a(90.0f, 0.0f, 14.0f, 0.0f, 0.0f, 90, 49));
+            k10Var.addView(xj0Var, w7.z5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
             xj0Var.setOnClickListener(new a(k10Var, 26));
             TextView textView3 = new TextView(context);
             textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B6, false));
             textView3.setTextSize(1, 14.0f);
             textView3.setGravity(17);
             textView3.setText(replaceTags);
-            k10Var.addView(textView3, w7.z5.a(-2.0f, 40.0f, 121.0f, 40.0f, 24.0f, -1, 49));
+            k10Var.addView(textView3, w7.z5.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
             frameLayout = k10Var;
         }
         return new org.telegram.ui.Components.sl0(frameLayout);

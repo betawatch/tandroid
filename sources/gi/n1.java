@@ -13,7 +13,7 @@ import org.telegram.ui.Components.RadioButton;
 import w7.d6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class n1 extends FrameLayout {
     public final String a;
@@ -27,7 +27,7 @@ public final class n1 extends FrameLayout {
         this.b = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
         radioButton.b(h6.x0(null, h6.D5, false), h6.x0(null, h6.E5, false));
-        addView(radioButton, z5.a(22.0f, 20.0f, 0.0f, 0.0f, 0.0f, 22, 19));
+        addView(radioButton, z5.d(22, 22.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
         TextView b10 = d6.b(context, 16.0f, h6.G6, true, null);
         b10.setText(o1Var.c);
         addView(b10, z5.t(-1, -2, 7, 62, 9, 8, 0));

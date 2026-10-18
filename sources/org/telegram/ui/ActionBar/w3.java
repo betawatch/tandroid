@@ -39,7 +39,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.u10;
 import v7.f7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class w3 extends View {
     public float E;
@@ -114,9 +114,9 @@ public final class w3 extends View {
             j3Var.run(null);
             return;
         }
-        final SurfaceTexture c10 = c9.b.c();
-        c10.setDefaultBufferSize(viewGroup.getWidth(), viewGroup.getHeight());
-        final Surface surface = new Surface(c10);
+        final SurfaceTexture b10 = org.telegram.messenger.y3.b();
+        b10.setDefaultBufferSize(viewGroup.getWidth(), viewGroup.getHeight());
+        final Surface surface = new Surface(b10);
         final Bitmap createBitmap = Bitmap.createBitmap(viewGroup.getWidth(), viewGroup.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas lockHardwareCanvas = surface.lockHardwareCanvas();
         lockHardwareCanvas.translate(0.0f, f7);
@@ -128,7 +128,7 @@ public final class w3 extends View {
                 j3 j3Var2 = j3.this;
                 Bitmap bitmap = createBitmap;
                 Surface surface2 = surface;
-                SurfaceTexture surfaceTexture = c10;
+                SurfaceTexture surfaceTexture = b10;
                 if (i10 == 0) {
                     j3Var2.run(bitmap);
                 } else {

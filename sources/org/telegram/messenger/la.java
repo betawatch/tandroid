@@ -1,58 +1,75 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class la implements RequestDelegate {
+public final /* synthetic */ class la implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ MessagesController b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ArrayList f;
 
-    public /* synthetic */ la(MessagesController messagesController, long j10, Object obj, TLObject tLObject, int i10) {
-        this.a = i10;
+    public /* synthetic */ la(MessagesController messagesController, long j10, int i10, long j11, ArrayList arrayList, int i11) {
+        this.a = i11;
         this.b = messagesController;
         this.c = j10;
-        this.d = obj;
-        this.e = tLObject;
+        this.e = i10;
+        this.d = j11;
+        this.f = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$getSavedReactionTags$489(this.c, (TLRPC.messages_SavedReactionTags) this.d, (TLRPC.TL_messages_getSavedReactionTags) this.e, tLObject, tL_error);
+                long j10 = this.d;
+                ArrayList arrayList = this.f;
+                int i10 = this.e;
+                this.b.lambda$checkUnreadReactionsInternal2$425(this.c, i10, j10, arrayList);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$deleteSavedDialog$142(this.c, (int[]) this.d, (TLRPC.InputPeer) this.e, tLObject, tL_error);
+                int i11 = this.e;
+                ArrayList arrayList2 = this.f;
+                this.b.lambda$checkUnreadPollVotesInternal2$436(this.c, this.d, i11, arrayList2);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$addUsersToChannel$273((org.telegram.ui.ActionBar.n2) this.d, (TLRPC.TL_channels_inviteToChannel) this.e, this.c, tLObject, tL_error);
+                int i12 = this.e;
+                ArrayList arrayList3 = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$427(this.c, this.d, i12, arrayList3);
+                break;
+            case 3:
+                int i13 = this.e;
+                ArrayList arrayList4 = this.f;
+                this.b.lambda$checkUnreadPollVotesInternal2$438(this.c, this.d, i13, arrayList4);
+                break;
+            case 4:
+                long j11 = this.d;
+                ArrayList arrayList5 = this.f;
+                int i14 = this.e;
+                this.b.lambda$checkUnreadPollVotesInternal2$432(this.c, i14, j11, arrayList5);
+                break;
+            case 5:
+                int i15 = this.e;
+                ArrayList arrayList6 = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$431(this.c, this.d, i15, arrayList6);
                 break;
             default:
-                ((TopicsController) this.b).lambda$pinTopic$20((org.telegram.ui.ActionBar.n2) this.d, this.c, (ArrayList) this.e, tLObject, tL_error);
+                int i16 = this.e;
+                ArrayList arrayList7 = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$429(this.c, this.d, i16, arrayList7);
                 break;
         }
     }
 
-    public /* synthetic */ la(MessagesController messagesController, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_channels_inviteToChannel tL_channels_inviteToChannel, long j10) {
-        this.a = 2;
+    public /* synthetic */ la(MessagesController messagesController, long j10, long j11, int i10, ArrayList arrayList, int i11) {
+        this.a = i11;
         this.b = messagesController;
-        this.d = n2Var;
-        this.e = tL_channels_inviteToChannel;
         this.c = j10;
-    }
-
-    public /* synthetic */ la(TopicsController topicsController, org.telegram.ui.ActionBar.n2 n2Var, long j10, ArrayList arrayList) {
-        this.a = 3;
-        this.b = topicsController;
-        this.d = n2Var;
-        this.c = j10;
-        this.e = arrayList;
+        this.d = j11;
+        this.e = i10;
+        this.f = arrayList;
     }
 }

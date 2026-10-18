@@ -8,7 +8,6 @@ import ah.t0;
 import ah.w;
 import ah.w0;
 import ah.y;
-import ai.d2;
 import ai.fa;
 import ai.ga;
 import ai.i0;
@@ -54,7 +53,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sn;
 import v0.i;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -156,6 +155,7 @@ public final /* synthetic */ class f implements Runnable {
                     xc.a0(a0Var2).t(str5, null).j();
                     break;
                 }
+                break;
             case 9:
                 a6 a6Var3 = (a6) obj;
                 ah.a0 a0Var3 = ((y) obj2).e2;
@@ -256,7 +256,7 @@ public final /* synthetic */ class f implements Runnable {
                 NotificationCenter.getInstance(i17).lambda$postNotificationNameOnUIThread$1(NotificationCenter.channelSuggestedBotsUpdate, Long.valueOf(i0Var.b));
                 break;
             case 15:
-                k7.C0((k7) obj2, (TL_stars.TL_payments_uniqueStarGift) obj);
+                k7.z0((k7) obj2, (TL_stars.TL_payments_uniqueStarGift) obj);
                 break;
             case 16:
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj;
@@ -277,7 +277,7 @@ public final /* synthetic */ class f implements Runnable {
                 }
                 break;
             case 17:
-                k7.O0((k7) obj2, (Long) obj);
+                k7.L0((k7) obj2, (Long) obj);
                 break;
             case 18:
                 k7 k7Var = (k7) obj2;
@@ -299,7 +299,7 @@ public final /* synthetic */ class f implements Runnable {
                 break;
             case 21:
                 k7 k7Var2 = (k7) obj2;
-                xc.a0((sn) obj).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(k7Var2.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new d2(k7Var2, 10)).k(true);
+                xc.a0((sn) obj).K(R.raw.gift, LocaleController.getString(R.string.StarsGiftUpgradeCompleted), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StarsGiftUpgradeCompletedText, DialogObject.getShortName(k7Var2.X))), LocaleController.getString(R.string.StarsGiftUpgradeCompletedMoreButton), new ai.b2(k7Var2, i13)).k(true);
                 break;
             case 22:
                 k7 k7Var3 = (k7) obj2;
@@ -375,7 +375,7 @@ public final /* synthetic */ class f implements Runnable {
                     break;
                 }
                 break;
-            default:
+            case 28:
                 y9 y9Var = (y9) obj2;
                 TLObject tLObject4 = (TLObject) obj;
                 ArrayList arrayList5 = y9Var.l;
@@ -395,6 +395,9 @@ public final /* synthetic */ class f implements Runnable {
                         break;
                     }
                 }
+                break;
+            default:
+                ((MessagesController) obj2).lambda$processUpdates$377((TLRPC.Updates) ((TLObject) obj), false);
                 break;
         }
     }

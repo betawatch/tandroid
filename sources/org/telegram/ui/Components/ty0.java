@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class ty0 {
     public static void a(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.d6 d6Var) {
@@ -76,7 +76,7 @@ public abstract class ty0 {
         numberTextView.a(50, false);
         numberTextView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B6, false));
         numberTextView.setImportantForAccessibility(2);
-        frameLayout.addView(numberTextView, w7.z5.a(20.0f, 0.0f, 2.0f, 4.0f, 0.0f, 26, (LocaleController.isRTL ? 3 : 5) | 16));
+        frameLayout.addView(numberTextView, w7.z5.d(26, 20.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, 2.0f, 4.0f, 0.0f));
         ry0Var.addTextChangedListener(new sy0(numberTextView, ry0Var));
         if (z10) {
             ry0Var.setText(stickerSet.title);

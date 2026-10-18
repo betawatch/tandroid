@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a7 extends pg.b {
     public final Context d;
@@ -306,12 +306,12 @@ public final class a7 extends pg.b {
                     paint4.setStrokeCap(cap);
                     ai.ic icVar = new ai.ic(xy0Var, context, 27);
                     xy0Var.f = icVar;
-                    xy0Var.addView(icVar, w7.z5.d(-2.0f, -1));
+                    xy0Var.addView(icVar, w7.z5.c(-2.0f, -1));
                     LinearLayout linearLayout = new LinearLayout(context);
                     linearLayout.setOrientation(1);
-                    xy0Var.addView(linearLayout, w7.z5.d(-2.0f, -1));
-                    ci.i4 i4Var = new ci.i4(context, 20);
-                    linearLayout.addView(i4Var, w7.z5.k(21.0f, 40.0f, 21.0f, 16.0f, -1, -2));
+                    xy0Var.addView(linearLayout, w7.z5.c(-2.0f, -1));
+                    ci.h4 h4Var = new ci.h4(context, 20);
+                    linearLayout.addView(h4Var, w7.z5.k(21.0f, 40.0f, 21.0f, 16.0f, -1, -2));
                     TextView textView = new TextView(context);
                     xy0Var.v = textView;
                     int i12 = org.telegram.ui.ActionBar.h6.y6;
@@ -352,11 +352,11 @@ public final class a7 extends pg.b {
                     textView5.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
                     textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(10.0f), xy0Var.x), (Drawable) null, (Drawable) null, (Drawable) null);
                     textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-                    i4Var.addView(textView, w7.z5.d(-2.0f, -2));
-                    i4Var.addView(textView3, w7.z5.d(-2.0f, -2));
-                    i4Var.addView(textView2, w7.z5.d(-2.0f, -2));
-                    i4Var.addView(textView5, w7.z5.d(-2.0f, -2));
-                    i4Var.addView(textView4, w7.z5.d(-2.0f, -2));
+                    h4Var.addView(textView, w7.z5.c(-2.0f, -2));
+                    h4Var.addView(textView3, w7.z5.c(-2.0f, -2));
+                    h4Var.addView(textView2, w7.z5.c(-2.0f, -2));
+                    h4Var.addView(textView5, w7.z5.c(-2.0f, -2));
+                    h4Var.addView(textView4, w7.z5.c(-2.0f, -2));
                     View view = new View(xy0Var.getContext());
                     xy0Var.w = view;
                     linearLayout.addView(view, w7.z5.t(-1, -2, 0, 21, 0, 0, 0));

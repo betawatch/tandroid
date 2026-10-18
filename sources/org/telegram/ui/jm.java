@@ -25,7 +25,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class jm implements org.telegram.ui.Components.og {
     public int a;
@@ -366,7 +366,7 @@ public final class jm implements org.telegram.ui.Components.og {
         org.telegram.ui.Components.dg dgVar = hkVar.U0;
         boolean z11 = false;
         boolean z12 = dgVar != null && dgVar.getCurrentPage() == 0;
-        ne.b bVar = snVar.xc;
+        ne.b bVar = snVar.yc;
         if (z10 && !z12) {
             z11 = true;
         }
@@ -398,7 +398,7 @@ public final class jm implements org.telegram.ui.Components.og {
                     org.telegram.ui.Components.r40 r40Var2 = new org.telegram.ui.Components.r40(9, snVar.getParentActivity(), snVar.ea, false);
                     snVar.f2 = r40Var2;
                     r40Var2.setVisibility(8);
-                    lmVar.addView(snVar.f2, indexOfChild + 1, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+                    lmVar.addView(snVar.f2, indexOfChild + 1, w7.z5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
                 }
                 TLRPC.UserFull userFull = snVar.a8;
                 if (userFull != null && userFull.voice_messages_forbidden) {
@@ -696,7 +696,7 @@ public final class jm implements org.telegram.ui.Components.og {
         hk hkVar = snVar.Y;
         boolean z10 = hkVar.z3;
         org.telegram.ui.Components.dg dgVar = hkVar.U0;
-        snVar.xc.a(z10 && !(dgVar != null && dgVar.getCurrentPage() == 0), true);
+        snVar.yc.a(z10 && !(dgVar != null && dgVar.getCurrentPage() == 0), true);
         if (z10) {
             Activity parentActivity = snVar.getParentActivity();
             i11 = ((org.telegram.ui.ActionBar.n2) snVar).classGuid;
@@ -763,9 +763,9 @@ public final class jm implements org.telegram.ui.Components.og {
     @Override // org.telegram.ui.Components.og
     public final void q2() {
         sn snVar = this.c;
-        ci.b3 b3Var = snVar.J1;
-        if (b3Var != null) {
-            b3Var.L1(null, 0);
+        ci.a3 a3Var = snVar.J1;
+        if (a3Var != null) {
+            a3Var.L1(null, 0);
         }
         snVar.ca();
     }

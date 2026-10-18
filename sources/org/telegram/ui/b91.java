@@ -17,7 +17,7 @@ import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class b91 extends FrameLayout {
     public final Window a;
@@ -41,7 +41,7 @@ public abstract class b91 extends FrameLayout {
             this.a = null;
         }
         this.s = i10;
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
         this.h = new l41(context, 2);
         lg.c cVar = new lg.c(getContext(), d6Var);
         this.d = cVar;
@@ -131,11 +131,11 @@ public abstract class b91 extends FrameLayout {
         frameLayout.addView(this.b.t0, -2, -2);
         frameLayout.addView(this.c);
         frameLayout.addView(this.c.t0, -2, -2);
-        frameLayout.addView(radialProgressView, w7.z5.a(44.0f, 0.0f, 0.0f, 0.0f, 60.0f, 44, 17));
+        frameLayout.addView(radialProgressView, w7.z5.d(44, 44.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setTextSize(1, 15.0f);
-        frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, -2, 17));
+        frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         radialProgressView.setVisibility(8);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.s5, d6Var));
         this.b.setDateSelectionListener(new rp0(this, 18));
@@ -190,9 +190,9 @@ public abstract class b91 extends FrameLayout {
         this.b.setVisibility(0);
         this.c.setVisibility(4);
         this.b.setHeader(this.d);
-        e.addView(this.d, w7.z5.d(52.0f, -1));
-        e.addView(frameLayout, w7.z5.d(-2.0f, -1));
-        e.addView(this.h, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -1, 7));
+        e.addView(this.d, w7.z5.c(52.0f, -1));
+        e.addView(frameLayout, w7.z5.c(-2.0f, -1));
+        e.addView(this.h, w7.z5.d(-1, -2.0f, 7, 10.0f, 0.0f, 10.0f, 0.0f));
         if (this.s == 4) {
             frameLayout.setClipChildren(false);
             frameLayout.setClipToPadding(false);
@@ -381,7 +381,7 @@ public abstract class b91 extends FrameLayout {
                 a10Var.a(fVar.n, false);
                 a10Var.setOnTouchListener(new org.telegram.ui.Components.rl0());
                 a10Var.setOnClickListener(new ef0(17, a91Var, fVar));
-                a10Var.setOnLongClickListener(new ci.m2(6, a91Var, fVar));
+                a10Var.setOnLongClickListener(new ci.l2(6, a91Var, fVar));
             }
         }
         long j10 = this.r.c;

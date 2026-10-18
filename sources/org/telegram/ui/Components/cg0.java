@@ -31,7 +31,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cg0 extends FrameLayout implements h00, ei.rb {
     public final ImageView A0;
@@ -586,7 +586,7 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.t0 = frameLayout3;
         frameLayout3.setVisibility(4);
-        frameLayout.addView(frameLayout3, w7.z5.a(78.0f, 0.0f, (!z11 ? 40 : 0) + 40, 0.0f, 0.0f, -1, 1));
+        frameLayout.addView(frameLayout3, w7.z5.d(-1, 78.0f, 1, 0.0f, (!z11 ? 40 : 0) + 40, 0.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         frameLayout3.addView(linearLayout2, w7.z5.e(-2, -2, 1));
@@ -615,7 +615,7 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
                 textView2.setText(string3.substring(0, 1).toUpperCase() + string3.substring(1).toLowerCase());
                 textView2.setTextColor(-10831009);
                 this.u0[i20].b(-10831009, -10831009);
-                frameLayout4.addView(textView2, w7.z5.a(-2.0f, 0.0f, 38.0f, 0.0f, 0.0f, -2, 49));
+                frameLayout4.addView(textView2, w7.z5.d(-2, -2.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
                 linearLayout2.addView(frameLayout4, w7.z5.k(i20 == 0 ? 0.0f : 30.0f, 0.0f, 0.0f, 0.0f, -2, -2));
                 final int i21 = 3;
                 frameLayout4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vf0
@@ -712,7 +712,7 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
                     textView2.setTextColor(-12734994);
                     this.u0[i20].b(-12734994, -12734994);
                 }
-                frameLayout4.addView(textView2, w7.z5.a(-2.0f, 0.0f, 38.0f, 0.0f, 0.0f, -2, 49));
+                frameLayout4.addView(textView2, w7.z5.d(-2, -2.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
                 linearLayout2.addView(frameLayout4, w7.z5.k(i20 == 0 ? 0.0f : 30.0f, 0.0f, 0.0f, 0.0f, -2, -2));
                 final int i212 = 3;
                 frameLayout4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vf0
@@ -803,7 +803,7 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
                 });
                 i20++;
             }
-            frameLayout4.addView(textView2, w7.z5.a(-2.0f, 0.0f, 38.0f, 0.0f, 0.0f, -2, 49));
+            frameLayout4.addView(textView2, w7.z5.d(-2, -2.0f, 49, 0.0f, 38.0f, 0.0f, 0.0f));
             linearLayout2.addView(frameLayout4, w7.z5.k(i20 == 0 ? 0.0f : 30.0f, 0.0f, 0.0f, 0.0f, -2, -2));
             final int i2122 = 3;
             frameLayout4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vf0
@@ -897,14 +897,14 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
         FrameLayout frameLayout5 = new FrameLayout(context);
         this.n0 = frameLayout5;
         frameLayout5.setVisibility(4);
-        this.f0.addView(frameLayout5, w7.z5.a(60.0f, 0.0f, (z11 ? 0 : 40) + 40, 0.0f, 0.0f, 280, 1));
+        this.f0.addView(frameLayout5, w7.z5.d(280, 60.0f, 1, 0.0f, (z11 ? 0 : 40) + 40, 0.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.q0 = textView3;
         textView3.setCompoundDrawablePadding(AndroidUtilities.dp(2.0f));
         textView3.setTextSize(1, 13.0f);
         textView3.setGravity(1);
         textView3.setText(LocaleController.getString(R.string.BlurOff));
-        frameLayout5.addView(textView3, w7.z5.d(60.0f, 80));
+        frameLayout5.addView(textView3, w7.z5.c(60.0f, 80));
         final int i22 = 4;
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vf0
             public final /* synthetic */ cg0 b;
@@ -998,7 +998,7 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
         textView4.setTextSize(1, 13.0f);
         textView4.setGravity(1);
         textView4.setText(LocaleController.getString(R.string.BlurRadial));
-        frameLayout5.addView(textView4, w7.z5.a(80.0f, 100.0f, 0.0f, 0.0f, 0.0f, 80, 51));
+        frameLayout5.addView(textView4, w7.z5.d(80, 80.0f, 51, 100.0f, 0.0f, 0.0f, 0.0f));
         final int i23 = 5;
         textView4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vf0
             public final /* synthetic */ cg0 b;
@@ -1092,7 +1092,7 @@ public final class cg0 extends FrameLayout implements h00, ei.rb {
         textView5.setTextSize(1, 13.0f);
         textView5.setGravity(1);
         textView5.setText(LocaleController.getString(R.string.BlurLinear));
-        frameLayout5.addView(textView5, w7.z5.a(80.0f, 200.0f, 0.0f, 0.0f, 0.0f, 80, 51));
+        frameLayout5.addView(textView5, w7.z5.d(80, 80.0f, 51, 200.0f, 0.0f, 0.0f, 0.0f));
         final int i24 = 6;
         textView5.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vf0
             public final /* synthetic */ cg0 b;

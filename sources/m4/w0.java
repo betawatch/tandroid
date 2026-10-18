@@ -1,6 +1,6 @@
 package m4;
 
-import ai.t2;
+import ai.r2;
 import ai.ua;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -30,7 +30,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ae;
+import org.telegram.messenger.be;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLObject;
@@ -84,7 +84,7 @@ import org.telegram.ui.y3;
 import org.telegram.ui.yo;
 import v7.q8;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui.Cells.v, xl0, a2, xx, a5, e5, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, lk0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, jf1 {
     public final /* synthetic */ int a;
@@ -229,7 +229,7 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
                         l4Var.b0(true);
                         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                         tL_contacts_resolveUsername.username = "previews";
-                        l4Var.G0 = ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new ae(l4Var, i11, j10));
+                        l4Var.G0 = ConnectionsManager.getInstance(i11).sendRequest(tL_contacts_resolveUsername, new be(l4Var, i11, j10));
                         return;
                     }
                     return;
@@ -286,9 +286,9 @@ public final /* synthetic */ class w0 implements e2.j, g1, mi.n, org.telegram.ui
     public Object e(f0 f0Var, v vVar, int i10) {
         switch (this.a) {
             case 1:
-                return f0Var.j() ? q8.b(new s1(-100)) : e2.m0.g0((j9.y) ((g1) this.b).e(f0Var, vVar, i10), new t2(f0Var, vVar, (v0) this.c, 15));
+                return f0Var.j() ? q8.b(new s1(-100)) : e2.m0.g0((j9.y) ((g1) this.b).e(f0Var, vVar, i10), new r2(f0Var, vVar, (v0) this.c, 15));
             default:
-                return f0Var.j() ? q8.b(new s1(-100)) : e2.m0.g0((j9.y) ((g1) this.b).e(f0Var, vVar, i10), new t2(f0Var, vVar, (f1) this.c, 16));
+                return f0Var.j() ? q8.b(new s1(-100)) : e2.m0.g0((j9.y) ((g1) this.b).e(f0Var, vVar, i10), new r2(f0Var, vVar, (f1) this.c, 16));
         }
     }
 

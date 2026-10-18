@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class e51 extends FrameLayout {
     public final TextView a;
@@ -28,7 +28,7 @@ public final class e51 extends FrameLayout {
     public e51(z51 z51Var, Context context, boolean z10) {
         super(context);
         this.f = z51Var;
-        LinearLayout e = org.telegram.messenger.kk.e(context, 0);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 0);
         addView(e, w7.z5.e(-2, -2, z10 ? 3 : 17));
         org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
         this.b = xj0Var;

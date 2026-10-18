@@ -9,7 +9,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
-import ci.v7;
+import ci.u7;
 import e2.g0;
 import e2.i0;
 import e2.n0;
@@ -28,7 +28,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public boolean a;
@@ -121,7 +121,7 @@ public final class a implements b {
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(true);
         i0 i0Var2 = (i0) this.e;
-        i0Var2.a.postDelayed(new v7(20, this, atomicBoolean), 1000L);
+        i0Var2.a.postDelayed(new u7(20, this, atomicBoolean), 1000L);
         i0Var.d(new o0(this, atomicBoolean, z10, z11, 0));
     }
 

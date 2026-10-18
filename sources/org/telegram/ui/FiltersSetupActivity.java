@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public i10 a;
@@ -48,7 +48,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
         int i11 = l10Var.a;
         if (i11 == 6) {
             if (!filtersSetupActivity.getUserConfig().isPremium()) {
-                filtersSetupActivity.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) filtersSetupActivity, 35, true));
+                filtersSetupActivity.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) filtersSetupActivity, 35, true));
                 return;
             }
             TLRPC.TL_messages_toggleDialogFilterTags tL_messages_toggleDialogFilterTags = new TLRPC.TL_messages_toggleDialogFilterTags();
@@ -73,7 +73,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
             return;
         }
         if (dialogFilter.locked) {
-            filtersSetupActivity.showDialog(new sg.j0(3, filtersSetupActivity.currentAccount, context, filtersSetupActivity, null));
+            filtersSetupActivity.showDialog(new sg.k0(3, filtersSetupActivity.currentAccount, context, filtersSetupActivity, null));
         } else {
             filtersSetupActivity.presentFragment(new p00(dialogFilter, null));
         }
@@ -82,7 +82,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
     public final void X(org.telegram.ui.ActionBar.d5 d5Var) {
         int size = getMessagesController().getDialogFilters().size();
         if ((size - 1 >= getMessagesController().dialogFiltersLimitDefault && !getUserConfig().isPremium()) || size >= getMessagesController().dialogFiltersLimitPremium) {
-            showDialog(new sg.j0(3, this.currentAccount, getParentActivity(), this, null));
+            showDialog(new sg.k0(3, this.currentAccount, getParentActivity(), this, null));
         } else if (d5Var != null) {
             ((ActionBarLayout) d5Var).P(new p00(null, null));
         }
@@ -96,7 +96,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
             FrameLayout frameLayout = (FrameLayout) this.fragmentView;
             UndoView undoView = new UndoView(getParentActivity());
             this.d = undoView;
-            frameLayout.addView(undoView, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+            frameLayout.addView(undoView, w7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
             this.d.setTranslationY(-getBottomInset());
         }
         return this.d;
@@ -225,7 +225,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
         s4.y yVar = new s4.y(new q10(this));
         this.c = yVar;
         yVar.d(this.a);
-        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
         i10 i10Var2 = this.a;
         n10 n10Var = new n10(this, context);
         this.b = n10Var;
@@ -307,7 +307,7 @@ public class FiltersSetupActivity extends org.telegram.ui.ActionBar.n2 implement
                 MessagesController.DialogFilter dialogFilter = dialogFilters.get(i11);
                 i11 = com.google.android.gms.internal.play_billing.k3.f(dialogFilter.id, i11, 1, tL_messages_updateDialogFiltersOrder.order);
             }
-            getConnectionsManager().sendRequest(tL_messages_updateDialogFiltersOrder, new ci.e6(8));
+            getConnectionsManager().sendRequest(tL_messages_updateDialogFiltersOrder, new ci.d6(8));
         }
         super.onFragmentDestroy();
     }

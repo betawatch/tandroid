@@ -15,7 +15,7 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.b11;
 import ug.r;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w2 implements Runnable {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 ((FileLoadOperation) obj3).lambda$getDownloadedLengthFromOffset$5((long[]) obj2, this.b, this.c, (CountDownLatch) obj);
                 break;
             case 1:
-                ((GiftAuctionController) obj3).lambda$sendBid$6((Utilities.Callback2) obj2, this.b, (yh.m) obj, this.c);
+                ((GiftAuctionController) obj3).lambda$sendBid$6((Utilities.Callback2) obj2, this.b, (yh.l) obj, this.c);
                 break;
             case 2:
                 ((MediaController) obj3).lambda$trimCurrentRecording$27((File) obj2, this.b, this.c, (Runnable) obj);
@@ -175,7 +175,7 @@ public final /* synthetic */ class w2 implements Runnable {
                 tL_payments_launchPrepaidGiveaway.giveaway_id = prepaidGiveaway.id;
                 tL_payments_launchPrepaidGiveaway.peer = messagesController.getInputPeer(-chat.id);
                 tL_payments_launchPrepaidGiveaway.purpose = tL_inputStorePaymentStarsGiveaway;
-                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.q2(uVar, messagesController, xVar, 23));
+                connectionsManager.sendRequest(tL_payments_launchPrepaidGiveaway, new ai.k2(uVar, messagesController, xVar, 23));
                 break;
         }
     }
@@ -207,12 +207,12 @@ public final /* synthetic */ class w2 implements Runnable {
         this.c = j11;
     }
 
-    public /* synthetic */ w2(GiftAuctionController giftAuctionController, Utilities.Callback2 callback2, long j10, yh.m mVar, long j11) {
+    public /* synthetic */ w2(GiftAuctionController giftAuctionController, Utilities.Callback2 callback2, long j10, yh.l lVar, long j11) {
         this.a = 1;
         this.d = giftAuctionController;
         this.e = callback2;
         this.b = j10;
-        this.f = mVar;
+        this.f = lVar;
         this.c = j11;
     }
 }

@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class mz0 extends FrameLayout {
     public int E;
@@ -117,10 +117,10 @@ public final class mz0 extends FrameLayout {
                 int i10 = org.telegram.ui.ActionBar.h6.M6;
                 paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
                 paint2.setColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
-                int y3 = org.telegram.messenger.kk.y(16.0f, AndroidUtilities.dp(21.0f) + AndroidUtilities.dp(132.0f), getMeasuredWidth());
+                int y3 = org.telegram.messenger.lk.y(16.0f, AndroidUtilities.dp(21.0f) + AndroidUtilities.dp(132.0f), getMeasuredWidth());
                 int dp = AndroidUtilities.dp(21.0f);
                 float f13 = dp;
-                float A = org.telegram.messenger.kk.A(48.0f, getMeasuredHeight(), 2);
+                float A = org.telegram.messenger.lk.A(48.0f, getMeasuredHeight(), 2);
                 rectF.set(f13, A, y3, getMeasuredHeight() - r9);
                 if (this.E >= 0) {
                     this.E = iArr[lz0Var.getValue()];
@@ -186,10 +186,10 @@ public final class mz0 extends FrameLayout {
         int i102 = org.telegram.ui.ActionBar.h6.M6;
         paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, i102, false));
         paint2.setColor(org.telegram.ui.ActionBar.h6.x0(null, i102, false));
-        int y32 = org.telegram.messenger.kk.y(16.0f, AndroidUtilities.dp(21.0f) + AndroidUtilities.dp(132.0f), getMeasuredWidth());
+        int y32 = org.telegram.messenger.lk.y(16.0f, AndroidUtilities.dp(21.0f) + AndroidUtilities.dp(132.0f), getMeasuredWidth());
         int dp2 = AndroidUtilities.dp(21.0f);
         float f132 = dp2;
-        float A2 = org.telegram.messenger.kk.A(48.0f, getMeasuredHeight(), 2);
+        float A2 = org.telegram.messenger.lk.A(48.0f, getMeasuredHeight(), 2);
         rectF.set(f132, A2, y32, getMeasuredHeight() - r9);
         if (this.E >= 0) {
         }

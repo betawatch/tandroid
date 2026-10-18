@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.dm0;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class y extends m0 {
     public int E;
@@ -46,7 +46,7 @@ public class y extends m0 {
     public int w = -1;
     public int y = 0;
     public final ArrayList F = new ArrayList();
-    public final p4.s0 I = new p4.s0(this, 4);
+    public final p8.b I = new p8.b(this, 3);
     public View M = null;
     public final dm0 P = new dm0(this);
 

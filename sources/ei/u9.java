@@ -14,13 +14,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u9 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -61,25 +61,25 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                 vb vbVar2 = this.b;
                 vbVar2.V(a8Var2, false);
                 int i10 = vbVar2.c;
-                ci.i7 storiesController = MessagesController.getInstance(i10).getStoriesController();
+                ci.h7 storiesController = MessagesController.getInstance(i10).getStoriesController();
                 a0.h hVar = storiesController.e;
                 int i11 = storiesController.a;
                 ArrayList arrayList = storiesController.h;
                 ArrayList arrayList2 = storiesController.g;
-                ci.h7 h7Var = new ci.h7(storiesController, a8Var2);
+                ci.g7 g7Var = new ci.g7(storiesController, a8Var2);
                 boolean z11 = a8Var2.g;
-                long j10 = h7Var.J;
+                long j10 = g7Var.J;
                 if (z11) {
                     HashMap hashMap = (HashMap) hVar.f(j10);
                     if (hashMap == null) {
                         hashMap = new HashMap();
                         hVar.k(hashMap, j10);
                     }
-                    hashMap.put(Integer.valueOf(a8Var2.f), h7Var);
+                    hashMap.put(Integer.valueOf(a8Var2.f), g7Var);
                 } else {
-                    storiesController.d(j10, h7Var, storiesController.b, false);
+                    storiesController.d(j10, g7Var, storiesController.b, false);
                 }
-                storiesController.d(j10, h7Var, storiesController.c, true);
+                storiesController.d(j10, g7Var, storiesController.c, true);
                 if (j10 != UserConfig.getInstance(i11).clientUserId) {
                     int i12 = 0;
                     while (true) {
@@ -113,7 +113,7 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                         storiesController.O(j10);
                     }
                 }
-                h7Var.d();
+                g7Var.d();
                 NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                 if (a8Var2.c && !a8Var2.g) {
                     MessagesController.getInstance(i10).getStoriesController().w.b(a8Var2);
@@ -176,7 +176,7 @@ public final /* synthetic */ class u9 implements Utilities.Callback {
                 }
                 vbVar5.X0.x(2, bool.booleanValue());
                 vbVar5.Y0.clearAnimation();
-                kk.s(vbVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
+                lk.s(vbVar5.Y0.animate(), bool.booleanValue() ? 0.0f : 1.0f, 120L);
                 org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
                 if (qcVar != null && qcVar.a == 2) {
                     qcVar.l();

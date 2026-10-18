@@ -30,7 +30,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.wz;
 import org.telegram.ui.ms;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class a2 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int D0 = 0;
@@ -225,7 +225,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
         s1Var.setPreviewingAttributes(arrayList);
         s1Var.removeView(s1Var.P);
         int i16 = -1;
-        frameLayout.addView(s1Var, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(s1Var, w7.z5.c(-1.0f, -1));
         int i17 = this.backgroundPaddingLeft;
         frameLayout.setPadding(i17, 0, i17, 0);
         ImageView imageView = new ImageView(context);
@@ -236,7 +236,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
         imageView.setScaleType(scaleType);
         imageView.setOnClickListener(new ah.g0(this, 4));
         w7.b6.a(imageView);
-        frameLayout.addView(imageView, w7.z5.a(32.0f, 12.0f, 14.0f, 0.0f, 0.0f, 32, 51));
+        frameLayout.addView(imageView, w7.z5.d(32, 32.0f, 51, 12.0f, 14.0f, 0.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.n0 = imageView2;
         imageView2.setBackground(org.telegram.ui.ActionBar.h6.a0(0, 285212671, 16, 16));
@@ -244,7 +244,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
         imageView2.setScaleType(scaleType);
         imageView2.setOnClickListener(new p(3, this, arrayList));
         w7.b6.a(imageView2);
-        frameLayout.addView(imageView2, w7.z5.a(32.0f, 0.0f, 14.0f, 12.0f, 0.0f, 32, 53));
+        frameLayout.addView(imageView2, w7.z5.d(32, 32.0f, 53, 0.0f, 14.0f, 12.0f, 0.0f));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 21.0f);
@@ -252,7 +252,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
         int i18 = 17;
         textView.setGravity(17);
         textView.setTextColor(-1);
-        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 102.0f, -1, 87), context);
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.d(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 102.0f), context);
         this.p0 = j10;
         float f7 = 13.0f;
         j10.setTextSize(1, 13.0f);
@@ -260,7 +260,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
         j10.setGravity(17);
         int i19 = -1879048193;
         j10.setTextColor(-1879048193);
-        frameLayout.addView(j10, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 82.0f, -1, 87));
+        frameLayout.addView(j10, w7.z5.d(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 82.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.Y = linearLayout;
         linearLayout.setOrientation(0);
@@ -271,7 +271,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
         while (true) {
             w1[] w1VarArr = this.Z;
             if (i20 >= w1VarArr.length) {
-                this.l0.addView(this.Y, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 18.0f, -1, 87));
+                this.l0.addView(this.Y, w7.z5.d(-1, -2.0f, 87, 16.0f, 0.0f, 16.0f, 18.0f));
                 this.containerView.addView(this.l0, w7.z5.e(-1, 315, 55));
                 int f10 = i0.a.f(0.1f, getThemedColor(org.telegram.ui.ActionBar.h6.i5), getThemedColor(org.telegram.ui.ActionBar.h6.h5));
                 View view = new View(context);
@@ -287,14 +287,14 @@ public final class a2 extends org.telegram.ui.Components.bb {
                 c12.q(AndroidUtilities.dp(28.0f));
                 c12.o(new eh.b(org.telegram.ui.ActionBar.h6.d6, d6Var));
                 this.j0.setBackground(c12);
-                this.containerView.addView(this.j0, w7.z5.a(64.0f, 0.0f, 0.0f, 0.0f, 5.0f, 268, 81));
+                this.containerView.addView(this.j0, w7.z5.d(268, 64.0f, 81, 0.0f, 0.0f, 0.0f, 5.0f));
                 this.v0 = new v1((TL_stars.starGiftAttributeBackdrop) ag.e.d(arrayList, TL_stars.starGiftAttributeBackdrop.class), (TL_stars.starGiftAttributePattern) ag.e.d(arrayList, TL_stars.starGiftAttributePattern.class), (TL_stars.starGiftAttributeModel) ag.e.d(arrayList, TL_stars.starGiftAttributeModel.class));
                 this.k0.N(false);
                 U(false);
                 return;
             }
+            w1 w1Var = new w1(context);
             float f11 = f7;
-            w1 w1Var = new w1(context, 0);
             w1Var.setClipChildren(false);
             org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, true, false, false);
             w1Var.c = q6Var;
@@ -302,13 +302,13 @@ public final class a2 extends org.telegram.ui.Components.bb {
             q6Var.setTextSize(AndroidUtilities.dp(f11));
             q6Var.setTextColor(i16);
             q6Var.setGravity(i18);
-            w1Var.addView(q6Var, w7.z5.a(16.0f, 4.0f, 6.0f, 4.0f, 0.0f, -1, 49));
+            w1Var.addView(q6Var, w7.z5.d(-1, 16.0f, 49, 4.0f, 6.0f, 4.0f, 0.0f));
             TextView textView2 = new TextView(context);
             w1Var.b = textView2;
             textView2.setTextSize(1, 12.0f);
             textView2.setTextColor(i19);
             textView2.setGravity(i18);
-            w1Var.addView(textView2, w7.z5.a(-2.0f, 4.0f, 20.0f, 4.0f, 0.0f, -1, 49));
+            w1Var.addView(textView2, w7.z5.d(-1, -2.0f, 49, 4.0f, 20.0f, 4.0f, 0.0f));
             org.telegram.ui.Components.q6 q6Var2 = new org.telegram.ui.Components.q6(context, false, false, false);
             w1Var.d = q6Var2;
             q6Var2.setTypeface(AndroidUtilities.bold());
@@ -318,7 +318,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
             q6Var2.setTextSize(AndroidUtilities.dp(11.0f));
             q6Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.0f));
             q6Var2.setSizeableBackground(new t6(AndroidUtilities.dp(10.0f), 285212671));
-            w1Var.addView(q6Var2, w7.z5.a(16.0f, 0.0f, -9.0f, -4.0f, 0.0f, -1, 53));
+            w1Var.addView(q6Var2, w7.z5.d(-1, 16.0f, 53, 0.0f, -9.0f, -4.0f, 0.0f));
             w1VarArr[i20] = w1Var;
             if (i20 == 0) {
                 ((TextView) this.Z[i20].b).setText(LocaleController.getString(R.string.GiftPreviewModel));
@@ -368,7 +368,7 @@ public final class a2 extends org.telegram.ui.Components.bb {
         if (Build.VERSION.SDK_INT < 31 || (fVar = this.s0) == null) {
             return;
         }
-        if (w7.m6.a(i10, 2)) {
+        if (w7.k6.a(i10, 2)) {
             org.telegram.ui.ActionBar.d3 d3Var = this.container;
             z1 z1Var = this.j0;
             PointF pointF = this.z0;

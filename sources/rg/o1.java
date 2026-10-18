@@ -21,7 +21,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.xj0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class o1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final List w = Arrays.asList(new l1(0, 1, 20, 0), new l1(0, 2, 20, 40), new l1(1, 0, 0, 20), new l1(1, 2, 60, 40), new l1(2, 0, 40, 20), new l1(2, 1, 40, 60));
@@ -73,7 +73,7 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
                 }
             }
         });
-        addView(view, z5.a(24.0f, 0.0f, 0.0f, 16.0f, 0.0f, 24, 48));
+        addView(view, z5.d(24, 24.0f, 48, 0.0f, 0.0f, 16.0f, 0.0f));
         xj0 xj0Var = new xj0(context);
         this.b = xj0Var;
         xj0Var.f(R.raw.photo_text_allign, 24, 24, null);
@@ -114,7 +114,7 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
             }
         });
         xj0Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        addView(xj0Var, z5.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        addView(xj0Var, z5.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_text_outlined);
@@ -149,7 +149,7 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
                 }
             }
         });
-        addView(imageView, z5.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        addView(imageView, z5.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.d = imageView2;
         imageView2.setImageResource(R.drawable.msg_add);
@@ -186,7 +186,7 @@ public final class o1 extends FrameLayout implements NotificationCenter.Notifica
             }
         });
         imageView2.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        addView(imageView2, z5.a(28.0f, 0.0f, 0.0f, 16.0f, 0.0f, 28, 16));
+        addView(imageView2, z5.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         n1 n1Var = new n1(context);
         this.f = n1Var;
         n1Var.setCurrent(true);

@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class nd1 extends FrameLayout {
     public ValueAnimator a;
@@ -48,7 +48,7 @@ public final class nd1 extends FrameLayout {
                 this.a = ofFloat;
                 ofFloat.addUpdateListener(new e11(this, 14));
                 this.a.addListener(new bc0(this, 28));
-                org.telegram.messenger.kk.l(5.0f, this.a);
+                org.telegram.messenger.lk.l(5.0f, this.a);
                 this.a.setDuration(350L);
                 this.a.start();
             }

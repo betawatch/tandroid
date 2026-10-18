@@ -2,7 +2,7 @@ package gi;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import ci.z7;
+import ci.y7;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.b6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class r0 implements DialogInterface.OnDismissListen
             case 0:
                 u0 u0Var = (u0) this.c;
                 boolean[] zArr = (boolean[]) this.b;
-                org.telegram.ui.web.r rVar = (org.telegram.ui.web.r) this.d;
+                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.d;
                 u0Var.getClass();
                 if (!zArr[0]) {
                     u0Var.d = true;
@@ -43,7 +43,7 @@ public final /* synthetic */ class r0 implements DialogInterface.OnDismissListen
                         ((Runnable) it.next()).run();
                     }
                     zArr[0] = true;
-                    rVar.run(Boolean.TRUE, Boolean.FALSE);
+                    sVar.run(Boolean.TRUE, Boolean.FALSE);
                     break;
                 }
                 break;
@@ -74,15 +74,15 @@ public final /* synthetic */ class r0 implements DialogInterface.OnDismissListen
                 callback2.run(Integer.valueOf(t3Var.getValue() + (r3Var.getValue() * 60)));
                 break;
             case 4:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.c;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.c;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
-                z7 z7Var = (z7) this.d;
-                a1Var.getClass();
+                y7 y7Var = (y7) this.d;
+                b1Var.getClass();
                 if (!atomicBoolean.get()) {
-                    a1Var.x(z7Var, "popup_closed", new JSONObject());
+                    b1Var.x(y7Var, "popup_closed", new JSONObject());
                 }
-                a1Var.c0 = null;
-                a1Var.e0 = System.currentTimeMillis();
+                b1Var.c0 = null;
+                b1Var.e0 = System.currentTimeMillis();
                 break;
             case 5:
                 b6 b6Var = (b6) this.c;
@@ -95,11 +95,11 @@ public final /* synthetic */ class r0 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                yh.q2 q2Var = (yh.q2) this.c;
-                yh.y1 y1Var = (yh.y1) this.b;
+                yh.p2 p2Var = (yh.p2) this.c;
+                yh.x1 x1Var = (yh.x1) this.b;
                 Activity activity3 = (Activity) this.d;
-                AndroidUtilities.hideKeyboard(y1Var);
-                AndroidUtilities.requestAdjustResize(activity3, q2Var.a.getClassGuid());
+                AndroidUtilities.hideKeyboard(x1Var);
+                AndroidUtilities.requestAdjustResize(activity3, p2Var.a.getClassGuid());
                 break;
         }
     }

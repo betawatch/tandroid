@@ -35,7 +35,7 @@ import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.un;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class e extends em0 {
     public final boolean E;
@@ -322,7 +322,7 @@ public abstract class e extends em0 {
             q4Var.a = textView;
             k3.m(22.0f, 1, textView);
             k3.o(h6.B6, null, false, textView, 17);
-            q4Var.addView(textView, z5.a(-1.0f, 12.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+            q4Var.addView(textView, z5.d(-1, -1.0f, 119, 12.0f, 0.0f, 0.0f, 0.0f));
             view2 = q4Var;
         } else {
             view2 = view;
@@ -568,7 +568,7 @@ public abstract class e extends em0 {
         View view2;
         Context context = this.s;
         if (i10 == 0) {
-            va vaVar = new va(58, 1, context, false);
+            va vaVar = new va(context, 58, 1, false);
             vaVar.setCallCellStyle(58);
             view = vaVar;
         } else if (i10 == 1) {

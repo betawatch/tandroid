@@ -7,7 +7,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q7 implements q0.a {
     public final /* synthetic */ int a;
@@ -66,12 +66,12 @@ public final /* synthetic */ class q7 implements q0.a {
                 ((hg.m) obj2).R.x4(((Float) obj).floatValue());
                 break;
             case 5:
-                ((qg.v) obj2).h(((Integer) obj).intValue());
+                ((qg.u) obj2).h(((Integer) obj).intValue());
                 break;
             default:
-                yh.y4 y4Var = (yh.y4) obj2;
+                yh.x4 x4Var = (yh.x4) obj2;
                 if (((c5.i) obj).a == 0) {
-                    AndroidUtilities.runOnUIThread(new yh.o4(y4Var, 1));
+                    AndroidUtilities.runOnUIThread(new yh.n4(x4Var, 1));
                     break;
                 }
                 break;

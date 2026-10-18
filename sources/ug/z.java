@@ -1,7 +1,7 @@
 package ug;
 
 import ai.ga;
-import ai.q2;
+import ai.k2;
 import ai.rc;
 import ai.s9;
 import android.app.Activity;
@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ci.y4;
+import ci.x4;
 import com.google.android.gms.internal.play_billing.k3;
 import gi.d3;
 import gi.j4;
@@ -62,7 +62,7 @@ import org.telegram.ui.g20;
 import org.telegram.ui.md0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class z extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList X;
@@ -151,7 +151,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         int i15 = this.backgroundPaddingLeft;
         im0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(68.0f));
         this.d.setOnScrollListener(new y());
-        this.d.setOnItemClickListener(new y4(23, this, n2Var));
+        this.d.setOnItemClickListener(new x4(23, this, n2Var));
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
         this.b0 = chat;
         vg.b bVar = this.g0;
@@ -171,7 +171,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         this.q0 = aVar;
         aVar.setOnClickListener(new ur(this, prepaidGiveaway, j10, n2Var));
         a0(false);
-        this.containerView.addView(aVar, z5.a(68.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
+        this.containerView.addView(aVar, z5.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         r.j(this.currentAccount, chat, new u(this, i10));
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starGiveawayOptionsLoaded);
     }
@@ -188,7 +188,6 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         if (aVar.a.N) {
             return;
         }
-        int i11 = 14;
         if (zVar.Z()) {
             TL_stories.TL_prepaidStarsGiveaway tL_prepaidStarsGiveaway = prepaidGiveaway instanceof TL_stories.TL_prepaidStarsGiveaway ? (TL_stories.TL_prepaidStarsGiveaway) prepaidGiveaway : null;
             w2 w2Var = new w2(zVar, prepaidGiveaway, tL_prepaidStarsGiveaway, j10, tL_prepaidStarsGiveaway != null ? tL_prepaidStarsGiveaway.stars : 0L, 8);
@@ -202,14 +201,14 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
             b2Var.R = string;
             b2Var.T = AndroidUtilities.replaceTags(LocaleController.getString(R.string.BoostingStartGiveawayConfirmText));
             alertDialog$Builder.k(LocaleController.getString(R.string.Start), new qg.g0(w2Var, 21));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new si.a(i11));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new sg.y(15));
             alertDialog$Builder.o();
             return;
         }
-        int i12 = zVar.h0;
-        int i13 = wg.d.v;
-        char c10 = 3;
-        if (i12 == 3) {
+        int i11 = zVar.h0;
+        int i12 = wg.d.v;
+        int i13 = 3;
+        if (i11 == 3) {
             Activity findActivity = AndroidUtilities.findActivity(zVar.getContext());
             if (findActivity == null) {
                 findActivity = LaunchActivity.H1;
@@ -300,11 +299,11 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceStars;
-            ConnectionsManager.getInstance(i17).sendRequest(tL_payments_getPaymentForm, new q2(y3, s1Var, tL_inputInvoiceStars, i16));
+            ConnectionsManager.getInstance(i17).sendRequest(tL_payments_getPaymentForm, new k2(y3, s1Var, tL_inputInvoiceStars, i16));
             return;
         }
         int i20 = 2;
-        int i21 = 11;
+        int i21 = 12;
         if (zVar.i0 == 1) {
             ArrayList b10 = r.b(arrayList3.size(), arrayList4);
             for (int i22 = 0; i22 < b10.size(); i22++) {
@@ -332,7 +331,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
                             b2 b2Var2 = alertDialog$Builder2.a;
                             b2Var2.R = string2;
                             b2Var2.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReduceUsersTextPlural", i24, join));
-                            alertDialog$Builder2.k(LocaleController.getString("OK", R.string.OK), new si.a(i21));
+                            alertDialog$Builder2.k(LocaleController.getString("OK", R.string.OK), new sg.y(i21));
                             alertDialog$Builder2.o();
                             return;
                         }
@@ -345,8 +344,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
             return;
         }
         ArrayList b11 = r.b(zVar.V(), arrayList4);
-        int i25 = 0;
-        while (i25 < b11.size()) {
+        for (int i25 = 0; i25 < b11.size(); i25++) {
             TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption3 = (TLRPC.TL_premiumGiftCodeOption) b11.get(i25);
             if (tL_premiumGiftCodeOption3.months == zVar.l0) {
                 if (r.h()) {
@@ -387,8 +385,8 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
                         b2 b2Var3 = alertDialog$Builder3.a;
                         b2Var3.R = string3;
                         b2Var3.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingReduceQuantityTextPlural", i30, formatPluralString, Integer.valueOf(i31)));
-                        alertDialog$Builder3.k(LocaleController.getString("Reduce", R.string.Reduce), new org.telegram.ui.web.m(i11, uVar, tL_premiumGiftCodeOption5));
-                        alertDialog$Builder3.h(LocaleController.getString("Cancel", R.string.Cancel), new si.a(i21));
+                        alertDialog$Builder3.k(LocaleController.getString("Reduce", R.string.Reduce), new org.telegram.ui.web.n(14, uVar, tL_premiumGiftCodeOption5));
+                        alertDialog$Builder3.h(LocaleController.getString("Cancel", R.string.Cancel), new sg.y(i21));
                         alertDialog$Builder3.o();
                         return;
                     }
@@ -401,7 +399,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
                 boolean z14 = zVar.x0;
                 boolean z15 = zVar.w0;
                 String str3 = zVar.v0;
-                u uVar2 = new u(zVar, 3);
+                u uVar2 = new u(zVar, i13);
                 u uVar3 = new u(zVar, 4);
                 if (r.h()) {
                     MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
@@ -496,13 +494,10 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
                 connectionsManager2.sendRequest(tL_payments_getPaymentForm2, new s9(uVar3, messagesController2, tL_inputInvoicePremiumGiftCode, n2Var, uVar2, 13));
                 return;
             }
-            i25++;
-            c10 = c10;
         }
     }
 
     public static void R(z zVar, n2 n2Var, View view) {
-        d5 d5Var;
         n2.e eVar;
         ArrayList arrayList = zVar.d0;
         s sVar = zVar.y0;
@@ -639,11 +634,11 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         long j10 = zVar.m0;
         t tVar = new t(zVar);
         d6 d6Var = zVar.resourcesProvider;
-        d5 d5Var2 = new d5(d6Var);
+        d5 d5Var = new d5(d6Var);
         a3 a3Var = new a3(context, d6Var);
         a3Var.a();
         od0 od0Var = new od0(context, d6Var);
-        int i16 = d5Var2.a;
+        int i16 = d5Var.a;
         od0Var.setTextColor(i16);
         od0Var.setTextOffset(AndroidUtilities.dp(10.0f));
         od0Var.setItemCount(5);
@@ -660,7 +655,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         hVar.setItemCount(5);
         hVar.setTextColor(i16);
         hVar.setTextOffset(-AndroidUtilities.dp(34.0f));
-        d4 d4Var = new d4(context, d5Var2, od0Var, gVar, hVar);
+        d4 d4Var = new d4(context, d5Var, od0Var, gVar, hVar);
         d4Var.setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
         d4Var.addView(frameLayout, z5.t(-1, -2, 51, 22, 0, 0, 4));
@@ -668,7 +663,7 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         textView.setText(LocaleController.getString("BoostingSelectDateTime", R.string.BoostingSelectDateTime));
         textView.setTextColor(i16);
         k3.m(20.0f, 1, textView);
-        frameLayout.addView(textView, z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
+        frameLayout.addView(textView, z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
         textView.setOnTouchListener(new di.d(2));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
@@ -698,16 +693,15 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
         gVar.setMinValue(0);
         gVar.setMaxValue(23);
         linearLayout.addView(gVar, z5.l(0.2f, 0, 270));
-        gVar.setFormatter(new si.a(12));
+        gVar.setFormatter(new sg.y(13));
         gVar.setOnValueChangedListener(j4Var);
         hVar.setMinValue(0);
         hVar.setMaxValue(11);
         hVar.setValue(0);
-        hVar.setFormatter(new si.a(13));
+        hVar.setFormatter(new sg.y(14));
         linearLayout.addView(hVar, z5.l(0.3f, 0, 270));
         hVar.setOnValueChangedListener(j4Var);
         if (j10 > 0) {
-            d5Var = d5Var2;
             calendar.setTimeInMillis(System.currentTimeMillis());
             calendar.set(12, 0);
             calendar.set(13, 0);
@@ -722,8 +716,6 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
             j4Var.q(od0Var, od0Var.getValue());
             gVar.getValue();
             j4Var.q(gVar, gVar.getValue());
-        } else {
-            d5Var = d5Var2;
         }
         md0Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
         md0Var.setGravity(17);
@@ -744,19 +736,19 @@ public final class z extends bb implements NotificationCenter.NotificationCenter
     }
 
     public static void S(z zVar) {
-        sg.l1 l1Var = new sg.l1(zVar.n, zVar.currentAccount, null, zVar.resourcesProvider);
+        sg.m1 m1Var = new sg.m1(zVar.n, zVar.currentAccount, null, zVar.resourcesProvider);
         int i10 = 1;
-        l1Var.setOnDismissListener(new v(zVar, i10));
-        l1Var.setOnShowListener(new w(zVar, i10));
-        l1Var.show();
+        m1Var.setOnDismissListener(new v(zVar, i10));
+        m1Var.setOnShowListener(new w(zVar, i10));
+        m1Var.show();
     }
 
     public static void T(z zVar) {
-        sg.l1 l1Var = new sg.l1(zVar.n, zVar.currentAccount, null, zVar.resourcesProvider);
+        sg.m1 m1Var = new sg.m1(zVar.n, zVar.currentAccount, null, zVar.resourcesProvider);
         int i10 = 0;
-        l1Var.setOnDismissListener(new v(zVar, i10));
-        l1Var.setOnShowListener(new w(zVar, i10));
-        l1Var.show();
+        m1Var.setOnDismissListener(new v(zVar, i10));
+        m1Var.setOnShowListener(new w(zVar, i10));
+        m1Var.show();
     }
 
     @Override // org.telegram.ui.Components.bb

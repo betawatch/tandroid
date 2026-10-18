@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m50 extends org.telegram.ui.Components.hm0 {
     public int E;
@@ -469,7 +469,7 @@ public final class m50 extends org.telegram.ui.Components.hm0 {
             k50Var.a = w9Var;
             w9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
             boolean z10 = LocaleController.isRTL;
-            k50Var.addView(w9Var, w7.z5.a(46.0f, z10 ? 0.0f : 11.0f, 6.0f, z10 ? 11.0f : 0.0f, 0.0f, 46, (z10 ? 5 : 3) | 48));
+            k50Var.addView(w9Var, w7.z5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 11.0f, 6.0f, z10 ? 11.0f : 0.0f, 0.0f));
             org.telegram.ui.ActionBar.j5 j5Var3 = new org.telegram.ui.ActionBar.j5(context);
             k50Var.b = j5Var3;
             j5Var3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ng, false));
@@ -477,7 +477,7 @@ public final class m50 extends org.telegram.ui.Components.hm0 {
             j5Var3.setTextSize(16);
             j5Var3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
             boolean z11 = LocaleController.isRTL;
-            k50Var.addView(j5Var3, w7.z5.a(20.0f, z11 ? 54.0f : 67.0f, 10.0f, z11 ? 67.0f : 54.0f, 0.0f, -1, (z11 ? 5 : 3) | 48));
+            k50Var.addView(j5Var3, w7.z5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 54.0f : 67.0f, 10.0f, z11 ? 67.0f : 54.0f, 0.0f));
             org.telegram.ui.ActionBar.j5 j5Var4 = new org.telegram.ui.ActionBar.j5(context);
             k50Var.c = j5Var4;
             j5Var4.setTextSize(15);
@@ -485,7 +485,7 @@ public final class m50 extends org.telegram.ui.Components.hm0 {
             j5Var4.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, k50Var.n, false));
             j5Var4.l(LocaleController.getString(R.string.Invited), false);
             boolean z12 = LocaleController.isRTL;
-            k50Var.addView(j5Var4, w7.z5.a(20.0f, z12 ? 54.0f : 67.0f, 32.0f, z12 ? 67.0f : 54.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
+            k50Var.addView(j5Var4, w7.z5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 54.0f : 67.0f, 32.0f, z12 ? 67.0f : 54.0f, 0.0f));
             ImageView imageView3 = new ImageView(context);
             k50Var.d = imageView3;
             imageView3.setScaleType(ImageView.ScaleType.CENTER);
@@ -493,7 +493,7 @@ public final class m50 extends org.telegram.ui.Components.hm0 {
             imageView3.setImportantForAccessibility(2);
             imageView3.setPadding(0, 0, AndroidUtilities.dp(4.0f), 0);
             imageView3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, k50Var.n, false), PorterDuff.Mode.MULTIPLY));
-            k50Var.addView(imageView3, w7.z5.a(-1.0f, 6.0f, 0.0f, 6.0f, 0.0f, 48, (LocaleController.isRTL ? 3 : 5) | 16));
+            k50Var.addView(imageView3, w7.z5.d(48, -1.0f, (LocaleController.isRTL ? 3 : 5) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
             k50Var.setWillNotDraw(false);
             k50Var.setFocusable(true);
             view = k50Var;

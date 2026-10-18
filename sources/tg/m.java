@@ -11,9 +11,8 @@ import javax.microedition.khronos.opengles.GL10;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.EmuDetector;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Wallet.e6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m extends Thread {
     public final SurfaceTexture a;
@@ -26,8 +25,8 @@ public final class m extends Thread {
         this.a = surfaceTexture;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01f8 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x01f2 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x01e3 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x01dd A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -62,13 +61,13 @@ public final class m extends Thread {
                 nVar3.s = eGLConfigArr[0];
             }
         }
-        if (nVar3.s == null) {
+        EGLConfig eGLConfig = nVar3.s;
+        if (eGLConfig == null) {
             throw new RuntimeException("eglConfig not initialized");
         }
-        int i11 = nVar3.k() ? 3 : 2;
+        int i11 = nVar3.S == 4 ? 3 : 2;
         EGL10 egl102 = nVar3.r;
         EGLDisplay eGLDisplay = nVar3.f;
-        EGLConfig eGLConfig = nVar3.s;
         EGLContext eGLContext = EGL10.EGL_NO_CONTEXT;
         EGLContext eglCreateContext = egl102.eglCreateContext(eGLDisplay, eGLConfig, eGLContext, new int[]{12440, i11, 12344});
         nVar3.n = eglCreateContext;
@@ -106,7 +105,7 @@ public final class m extends Thread {
                 }
             }
             n nVar4 = this.d;
-            if (nVar4.b != null && (!nVar4.G || (!nVar4.W && (nVar4 instanceof e6)))) {
+            if (nVar4.b != null && !nVar4.G) {
                 long nanoTime2 = System.nanoTime();
                 n.a(this.d, (nanoTime2 - nanoTime) / 1.0E9f);
                 if (!this.c) {
@@ -119,13 +118,12 @@ public final class m extends Thread {
                 nVar = this.d;
             } catch (InterruptedException unused) {
             }
-            if (nVar.b != null && (!nVar.G || (!nVar.W && (nVar instanceof e6)))) {
+            if (nVar.b != null && !nVar.G) {
                 z10 = false;
                 if (z10) {
-                    n nVar5 = this.d;
-                    long h = nVar5.h(nVar5.w) - (System.nanoTime() - nanoTime);
-                    if (h > 0) {
-                        Thread.sleep(h / 1000000, (int) (h % 1000000));
+                    long nanoTime3 = this.d.w - (System.nanoTime() - nanoTime);
+                    if (nanoTime3 > 0) {
+                        Thread.sleep(nanoTime3 / 1000000, (int) (nanoTime3 % 1000000));
                     }
                 } else {
                     Thread.sleep(100L);

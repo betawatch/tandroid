@@ -4,9 +4,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class k2 extends ci.y7 {
+public final class k2 extends ci.x7 {
     public final /* synthetic */ r2 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,12 +15,12 @@ public final class k2 extends ci.y7 {
         this.S = r2Var;
     }
 
-    @Override // ci.y7
+    @Override // ci.x7
     public final boolean c(TLRPC.Chat chat, TLRPC.User user) {
         return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.O0) ? false : true;
     }
 
-    @Override // ci.y7
+    @Override // ci.x7
     public final boolean d(long j10) {
         r2 r2Var = this.S;
         int i10 = r2Var.F0;
@@ -44,7 +44,7 @@ public final class k2 extends ci.y7 {
         return true;
     }
 
-    @Override // ci.y7
+    @Override // ci.x7
     public final void e() {
         r2 r2Var = this.S;
         n2 n2Var = r2Var.d0;
@@ -54,7 +54,7 @@ public final class k2 extends ci.y7 {
         n2Var.g(r2Var);
     }
 
-    @Override // ci.y7
+    @Override // ci.x7
     public final void f(long j10) {
         r2 r2Var = this.S;
         n2 n2Var = r2Var.d0;

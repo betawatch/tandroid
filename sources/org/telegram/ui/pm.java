@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pm implements Runnable {
     public final /* synthetic */ int a;
@@ -23,21 +23,21 @@ public final /* synthetic */ class pm implements Runnable {
                 en enVar = this.b;
                 enVar.getClass();
                 sn snVar2 = enVar.a;
-                new sg.x0((org.telegram.ui.ActionBar.n2) snVar2, 8, true).show();
+                new sg.y0((org.telegram.ui.ActionBar.n2) snVar2, 8, true).show();
                 snVar2.getMessagesController().pressTranscribeButton();
                 break;
             case 2:
                 en enVar2 = this.b;
                 enVar2.getClass();
                 sn snVar3 = enVar2.a;
-                new sg.x0((org.telegram.ui.ActionBar.n2) snVar3, 8, true).show();
+                new sg.y0((org.telegram.ui.ActionBar.n2) snVar3, 8, true).show();
                 snVar3.getMessagesController().pressTranscribeButton();
                 break;
             case 3:
                 en enVar3 = this.b;
                 enVar3.getClass();
                 sn snVar4 = enVar3.a;
-                new sg.x0((org.telegram.ui.ActionBar.n2) snVar4, 8, true).show();
+                new sg.y0((org.telegram.ui.ActionBar.n2) snVar4, 8, true).show();
                 snVar4.getMessagesController().pressTranscribeButton();
                 break;
             case 4:
@@ -62,7 +62,7 @@ public final /* synthetic */ class pm implements Runnable {
                 break;
             default:
                 sn snVar7 = this.b.a;
-                snVar7.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) snVar7, 39, false));
+                snVar7.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) snVar7, 39, false));
                 break;
         }
     }

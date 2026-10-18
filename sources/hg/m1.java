@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import ci.u6;
+import ci.t6;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.j9;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m1 extends FrameLayout {
     public final d6 a;
@@ -54,7 +54,7 @@ public final class m1 extends FrameLayout {
             this.c[i10].setTextSize(1, 14.0f);
             int i11 = 8;
             this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
-            addView(this.c[i10], z5.a(-2.0f, 76.0f, 7.0f, 40.0f, 0.0f, -1, 48));
+            addView(this.c[i10], z5.d(-1, -2.0f, 48, 76.0f, 7.0f, 40.0f, 0.0f));
             this.d[i10] = new TextView(context);
             this.d[i10].setTextColor(h6.w0(h6.z6, d6Var));
             this.d[i10].setTextSize(1, 12.0f);
@@ -63,32 +63,32 @@ public final class m1 extends FrameLayout {
                 i11 = 0;
             }
             textView.setVisibility(i11);
-            addView(this.d[i10], z5.a(-2.0f, 76.0f, 26.33f, 40.0f, 0.0f, -1, 48));
+            addView(this.d[i10], z5.d(-1, -2.0f, 48, 76.0f, 26.33f, 40.0f, 0.0f));
             i10++;
         }
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_arrowright);
         imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.P5, d6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, z5.a(24.0f, 0.0f, 0.0f, 8.66f, 0.0f, 24, 21));
+        addView(imageView, z5.d(24, 24.0f, 21, 0.0f, 0.0f, 8.66f, 0.0f));
     }
 
-    public final boolean a(u6 u6Var) {
+    public final boolean a(t6 t6Var) {
         String str;
         j9 j9Var;
         int i10 = 0;
         int i11 = 0;
         while (true) {
-            ArrayList arrayList = u6Var.i;
-            str = u6Var.D;
+            ArrayList arrayList = t6Var.i;
+            str = t6Var.D;
             int size = arrayList.size();
             j9Var = this.b;
             if (i10 >= size || i11 >= 3) {
                 break;
             }
-            MessageObject messageObject = (MessageObject) u6Var.i.get(i10);
+            MessageObject messageObject = (MessageObject) t6Var.i.get(i10);
             long j10 = messageObject.storyItem.dialogId;
             TextUtils.isEmpty(str);
-            j9Var.l(i11, messageObject.storyItem, u6Var.c);
+            j9Var.l(i11, messageObject.storyItem, t6Var.c);
             i11++;
             i10++;
         }
@@ -97,11 +97,11 @@ public final class m1 extends FrameLayout {
         boolean isEmpty = TextUtils.isEmpty(str);
         TextView[] textViewArr = this.c;
         if (isEmpty) {
-            textViewArr[0].setText(LocaleController.formatPluralStringSpaced("HashtagStoriesFound", u6Var.J));
+            textViewArr[0].setText(LocaleController.formatPluralStringSpaced("HashtagStoriesFound", t6Var.J));
         } else {
-            textViewArr[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagStoriesFoundChannel", u6Var.J, "@" + str), h6.w0(h6.Oh, this.a), null));
+            textViewArr[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagStoriesFoundChannel", t6Var.J, "@" + str), h6.w0(h6.Oh, this.a), null));
         }
-        this.d[0].setText(LocaleController.formatString(R.string.HashtagStoriesFoundSubtitle, u6Var.C));
+        this.d[0].setText(LocaleController.formatString(R.string.HashtagStoriesFoundSubtitle, t6Var.C));
         return i11 > 0;
     }
 

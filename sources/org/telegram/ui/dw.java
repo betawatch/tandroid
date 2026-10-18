@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class dw implements org.telegram.ui.Components.n00 {
     public final /* synthetic */ Context a;
@@ -72,7 +72,7 @@ public final class dw implements org.telegram.ui.Components.n00 {
         if (p00Var.f) {
             eyVar.z0.i(i13);
             i11 = ((org.telegram.ui.ActionBar.n2) eyVar).currentAccount;
-            eyVar.showDialog(new sg.j0(3, i11, this.a, eyVar, null));
+            eyVar.showDialog(new sg.k0(3, i11, this.a, eyVar, null));
             return;
         }
         ArrayList<MessagesController.DialogFilter> dialogFilters = eyVar.getMessagesController().getDialogFilters();

@@ -21,7 +21,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.eh;
+import org.telegram.messenger.fh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -53,14 +53,14 @@ import org.telegram.ui.d51;
 import org.telegram.ui.ey;
 import org.telegram.ui.g31;
 import org.telegram.ui.o71;
-import org.telegram.ui.pg0;
+import org.telegram.ui.og0;
 import org.telegram.ui.r91;
 import org.telegram.ui.sn;
 import org.telegram.ui.w41;
 import org.telegram.ui.y41;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ha implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -299,7 +299,7 @@ public final /* synthetic */ class ha implements View.OnClickListener {
                 ey.v0((ey) obj2, i16, (i80) obj);
                 break;
             case 14:
-                pg0.Y((pg0) obj2, i16, (i80) obj);
+                og0.Y((og0) obj2, i16, (i80) obj);
                 break;
             case 15:
                 boolean[] zArr = (boolean[]) obj2;
@@ -326,7 +326,7 @@ public final /* synthetic */ class ha implements View.OnClickListener {
                 if (!fyVar.e && !UserConfig.getInstance(z51Var.V).isPremium()) {
                     org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
                     if (R2 != null) {
-                        R2.showDialog(new sg.x0(z51Var.c1, z51Var.getContext(), z51Var.V, 11, false));
+                        R2.showDialog(new sg.y0(z51Var.c1, z51Var.getContext(), z51Var.V, 11, false));
                         break;
                     }
                 } else {
@@ -353,7 +353,7 @@ public final /* synthetic */ class ha implements View.OnClickListener {
                 break;
             case 18:
                 ((org.telegram.ui.Wallet.l) obj).run(Integer.valueOf(i16));
-                ((org.telegram.ui.Wallet.h5) obj2).setSelected(i16);
+                ((org.telegram.ui.Wallet.i5) obj2).setSelected(i16);
                 break;
             case 19:
                 ei.d dVar = (ei.d) obj2;
@@ -366,7 +366,7 @@ public final /* synthetic */ class ha implements View.OnClickListener {
                         tL_messages_requestUrlAuth.flags |= 4;
                         tL_messages_requestUrlAuth.url = "https://web.telegram.org/";
                         int i23 = this.b;
-                        ConnectionsManager.getInstance(i23).sendRequestTyped(tL_messages_requestUrlAuth, new org.telegram.messenger.a(), new eh(dVar, f3Var, i23, view, z5Var));
+                        ConnectionsManager.getInstance(i23).sendRequestTyped(tL_messages_requestUrlAuth, new org.telegram.messenger.a(), new fh(dVar, f3Var, i23, view, z5Var));
                         break;
                     } else {
                         FileLog.d("wear-auth: login pressed with no session/key");
@@ -376,7 +376,7 @@ public final /* synthetic */ class ha implements View.OnClickListener {
                 break;
             case 20:
                 SharedConfig.setSearchEngineType(i16);
-                ((org.telegram.ui.Cells.q8) ((View) obj2)).u(org.telegram.ui.web.m1.a().a, true);
+                ((org.telegram.ui.Cells.q8) ((View) obj2)).u(org.telegram.ui.web.n1.a().a, true);
                 ((Dialog) ((AtomicReference) obj).get()).dismiss();
                 break;
             case 21:

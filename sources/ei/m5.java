@@ -20,7 +20,7 @@ import org.telegram.ui.Components.od0;
 import org.telegram.ui.Components.p31;
 import org.telegram.ui.Components.up0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class m5 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -131,8 +131,8 @@ public final class m5 extends LinearLayout {
         switch (this.a) {
             case 8:
                 super.onAttachedToWindow();
-                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.y4) this.b);
-                getViewTreeObserver().addOnWindowFocusChangeListener(((org.telegram.ui.Wallet.o9) this.c).H);
+                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.z4) this.b);
+                getViewTreeObserver().addOnWindowFocusChangeListener(((org.telegram.ui.Wallet.i9) this.c).H);
                 break;
             default:
                 super.onAttachedToWindow();
@@ -144,8 +144,8 @@ public final class m5 extends LinearLayout {
     public void onDetachedFromWindow() {
         switch (this.a) {
             case 8:
-                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.y4) this.b);
-                getViewTreeObserver().removeOnWindowFocusChangeListener(((org.telegram.ui.Wallet.o9) this.c).H);
+                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.z4) this.b);
+                getViewTreeObserver().removeOnWindowFocusChangeListener(((org.telegram.ui.Wallet.i9) this.c).H);
                 super.onDetachedFromWindow();
                 break;
             default:
@@ -262,11 +262,11 @@ public final class m5 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m5(org.telegram.ui.Wallet.o9 o9Var, Context context) {
+    public m5(org.telegram.ui.Wallet.i9 i9Var, Context context) {
         super(context);
         this.a = 8;
-        this.c = o9Var;
-        this.b = new org.telegram.ui.Wallet.y4(3, this);
+        this.c = i9Var;
+        this.b = new org.telegram.ui.Wallet.z4(3, this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

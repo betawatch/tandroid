@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.WallPaper E;
@@ -857,8 +857,8 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         org.telegram.ui.Components.im0 im0Var2 = this.M;
         int i10 = org.telegram.ui.ActionBar.h6.a7;
         im0Var2.setBackgroundColor(getThemedColor(i10));
-        frameLayout.addView(this.M, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 68.0f, -1, 119));
-        this.M.setOnItemClickListener(new ci.y4(4, this, chatFull));
+        frameLayout.addView(this.M, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 68.0f));
+        this.M.setOnItemClickListener(new ci.x4(4, this, chatFull));
         s4.k kVar = new s4.k();
         kVar.n(350L);
         kVar.o(org.telegram.ui.Components.bs.h);
@@ -874,7 +874,7 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.O = frameLayout2;
         frameLayout2.setBackgroundColor(getThemedColor(i10));
-        this.O.addView(this.P, w7.z5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 80));
+        this.O.addView(this.P, w7.z5.d(-1, 48.0f, 80, 10.0f, 10.0f, 10.0f, 10.0f));
         frameLayout.addView(this.O, w7.z5.e(-1, 68, 80));
         setBulletinDelegate(new b9(this, 1));
         this.fragmentView = frameLayout;
@@ -1065,7 +1065,7 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
             return;
         }
         int[] iArr2 = {0};
-        final ci.z2 z2Var = new ci.z2(this, new boolean[]{false}, new int[]{0}, iArr2, 4);
+        final ci.y2 y2Var = new ci.y2(this, new boolean[]{false}, new int[]{0}, iArr2, 4);
         long j12 = -j11;
         TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j12));
         if (chat == null) {
@@ -1127,25 +1127,25 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 case 1:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 case 2:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 default:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                             }
                         }
@@ -1198,25 +1198,25 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 case 1:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 case 2:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 default:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                             }
                         }
@@ -1279,25 +1279,25 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 case 1:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 case 2:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                                 default:
                                     if (tLObject instanceof TLRPC.Updates) {
                                         this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                                     }
-                                    z2Var.run(tL_error);
+                                    y2Var.run(tL_error);
                                     break;
                             }
                         }
@@ -1367,25 +1367,25 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                         if (tLObject instanceof TLRPC.Updates) {
                             this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                         }
-                        z2Var.run(tL_error);
+                        y2Var.run(tL_error);
                         break;
                     case 1:
                         if (tLObject instanceof TLRPC.Updates) {
                             this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                         }
-                        z2Var.run(tL_error);
+                        y2Var.run(tL_error);
                         break;
                     case 2:
                         if (tLObject instanceof TLRPC.Updates) {
                             this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                         }
-                        z2Var.run(tL_error);
+                        y2Var.run(tL_error);
                         break;
                     default:
                         if (tLObject instanceof TLRPC.Updates) {
                             this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                         }
-                        z2Var.run(tL_error);
+                        y2Var.run(tL_error);
                         break;
                 }
             }
@@ -1419,25 +1419,25 @@ public class dd extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                         if (tLObject instanceof TLRPC.Updates) {
                             this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                         }
-                        z2Var.run(tL_error);
+                        y2Var.run(tL_error);
                         break;
                     case 1:
                         if (tLObject instanceof TLRPC.Updates) {
                             this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                         }
-                        z2Var.run(tL_error);
+                        y2Var.run(tL_error);
                         break;
                     case 2:
                         if (tLObject instanceof TLRPC.Updates) {
                             this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                         }
-                        z2Var.run(tL_error);
+                        y2Var.run(tL_error);
                         break;
                     default:
                         if (tLObject instanceof TLRPC.Updates) {
                             this.b.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
                         }
-                        z2Var.run(tL_error);
+                        y2Var.run(tL_error);
                         break;
                 }
             }

@@ -31,7 +31,7 @@ import org.telegram.ui.hk;
 import org.telegram.ui.la0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class vc extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public final uc X;
@@ -132,7 +132,7 @@ public final class vc extends org.telegram.ui.Components.bb implements Notificat
         x90Var2.setMaxWidth(ei.x3.a(x90Var2.getText(), x90Var2.getPaint()));
         frameLayout.addView(x90Var2, w7.z5.e(-2, -1, 17));
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
-        this.containerView.addView(new z00(getContext()), w7.z5.d(-1.0f, -1));
+        this.containerView.addView(new z00(getContext()), w7.z5.c(-1.0f, -1));
         s61 s61Var = this.b0;
         if (s61Var != null) {
             s61Var.N(false);
@@ -204,7 +204,7 @@ public final class vc extends org.telegram.ui.Components.bb implements Notificat
                 tL_payments_getPaymentForm.flags |= 1;
             }
             tL_payments_getPaymentForm.invoice = tL_inputInvoiceStars;
-            ConnectionsManager.getInstance(i11).sendRequest(tL_payments_getPaymentForm, new q2(y3, tcVar, tL_inputInvoiceStars, 2));
+            ConnectionsManager.getInstance(i11).sendRequest(tL_payments_getPaymentForm, new k2(y3, tcVar, tL_inputInvoiceStars, 2));
         }
     }
 
@@ -228,7 +228,7 @@ public final class vc extends org.telegram.ui.Components.bb implements Notificat
                 i2.d.s(R.string.UnknownErrorCode, new Object[]{str}, org.telegram.ui.Components.xc.a0(U), R.raw.error, 36);
             }
         } else {
-            org.telegram.ui.Components.qc K = org.telegram.ui.Components.xc.a0(U).K(R.raw.stars_send, LocaleController.getString(R.string.StarsGiftSentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftSentPopupInfo", (int) f61Var.B, UserObject.getForcedFirstName(vcVar.Z))), LocaleController.getString(R.string.ViewInChat), new o4(j10, i10));
+            org.telegram.ui.Components.qc K = org.telegram.ui.Components.xc.a0(U).K(R.raw.stars_send, LocaleController.getString(R.string.StarsGiftSentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftSentPopupInfo", (int) f61Var.B, UserObject.getForcedFirstName(vcVar.Z))), LocaleController.getString(R.string.ViewInChat), new l4(j10, i10));
             K.j = 5000;
             K.k(true);
             if (la0Var != null) {

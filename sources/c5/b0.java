@@ -32,7 +32,7 @@ import javax.net.ssl.SSLSocketFactory;
 import org.telegram.messenger.MediaDataController;
 import v7.q8;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
     public final /* synthetic */ int a;
@@ -65,7 +65,36 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return obj;
     }
 
-    public void c(long j10) {
+    public void c(int i10, int i11, int i12) {
+        if (i12 == 0 || i10 >= i11) {
+            return;
+        }
+        int i13 = this.b;
+        if (i13 >= 3) {
+            int[] iArr = (int[]) this.c;
+            if (iArr[i13 - 1] == i12 && iArr[i13 - 2] == i10) {
+                iArr[i13 - 2] = i11;
+                return;
+            }
+        }
+        int i14 = i13 + 3;
+        int[] iArr2 = (int[]) this.c;
+        if (i14 > iArr2.length) {
+            this.c = Arrays.copyOf(iArr2, iArr2.length * 2);
+        }
+        int[] iArr3 = (int[]) this.c;
+        int i15 = this.b;
+        int i16 = i15 + 1;
+        this.b = i16;
+        iArr3[i15] = i10;
+        int i17 = i15 + 2;
+        this.b = i17;
+        iArr3[i16] = i11;
+        this.b = i15 + 3;
+        iArr3[i17] = i12;
+    }
+
+    public void d(long j10) {
         int i10 = this.b;
         long[] jArr = (long[]) this.c;
         if (i10 == jArr.length) {
@@ -75,16 +104,6 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         int i11 = this.b;
         this.b = i11 + 1;
         jArr2[i11] = j10;
-    }
-
-    public void d(long[] jArr) {
-        int length = this.b + jArr.length;
-        long[] jArr2 = (long[]) this.c;
-        if (length > jArr2.length) {
-            this.c = Arrays.copyOf(jArr2, Math.max(jArr2.length * 2, length));
-        }
-        System.arraycopy(jArr, 0, (long[]) this.c, this.b, jArr.length);
-        this.b = length;
     }
 
     @Override // e2.d
@@ -101,11 +120,26 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return codecCapabilities.isFeatureSupported(str);
     }
 
+    public void g(long[] jArr) {
+        int length = this.b + jArr.length;
+        long[] jArr2 = (long[]) this.c;
+        if (length > jArr2.length) {
+            this.c = Arrays.copyOf(jArr2, Math.max(jArr2.length * 2, length));
+        }
+        System.arraycopy(jArr, 0, (long[]) this.c, this.b, jArr.length);
+        this.b = length;
+    }
+
+    @Override // r2.u
+    public boolean h(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        return codecCapabilities.isFeatureRequired(str);
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r8v1, types: [android.widget.ListAdapter] */
     /* JADX WARN: Type inference failed for: r8v3 */
     /* JADX WARN: Type inference failed for: r8v4 */
-    public g.f g() {
+    public g.f i() {
         g.b bVar = (g.b) this.c;
         g.f fVar = new g.f(bVar.a, this.b);
         View view = bVar.e;
@@ -173,12 +207,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return fVar;
     }
 
-    @Override // r2.u
-    public boolean h(String str, MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.isFeatureRequired(str);
-    }
-
-    public tc.u i(String str) {
+    public tc.u j(String str) {
         Matcher matcher;
         String str2;
         Matcher matcher2;
@@ -260,15 +289,6 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         throw new IllegalArgumentException("The scheme part is empty.");
     }
 
-    public void j(int i10) {
-        ByteBuffer allocate = ByteBuffer.allocate(i10);
-        int position = ((ByteBuffer) this.c).position();
-        ((ByteBuffer) this.c).position(0);
-        allocate.put((ByteBuffer) this.c);
-        allocate.position(position);
-        this.c = allocate;
-    }
-
     @Override // r2.u
     public int k() {
         if (((MediaCodecInfo[]) this.c) == null) {
@@ -277,14 +297,23 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return ((MediaCodecInfo[]) this.c).length;
     }
 
-    public byte l(int i10) {
+    public void l(int i10) {
+        ByteBuffer allocate = ByteBuffer.allocate(i10);
+        int position = ((ByteBuffer) this.c).position();
+        ((ByteBuffer) this.c).position(0);
+        allocate.put((ByteBuffer) this.c);
+        allocate.position(position);
+        this.c = allocate;
+    }
+
+    public byte m(int i10) {
         if (i10 < 0 || this.b <= i10) {
             throw new IndexOutOfBoundsException(String.format("Bad index: index=%d, length=%d", Integer.valueOf(i10), Integer.valueOf(this.b)));
         }
         return ((ByteBuffer) this.c).get(i10);
     }
 
-    public long m(int i10) {
+    public long n(int i10) {
         if (i10 >= 0 && i10 < this.b) {
             return ((long[]) this.c)[i10];
         }
@@ -293,41 +322,41 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         throw new IndexOutOfBoundsException(l4.toString());
     }
 
-    public boolean n(int i10) {
-        return ((1 << (i10 % 8)) & l(i10 / 8)) != 0;
+    public boolean o(int i10) {
+        return ((1 << (i10 % 8)) & m(i10 / 8)) != 0;
     }
 
-    public synchronized List o() {
+    public synchronized List p() {
         return DesugarCollections.unmodifiableList(new ArrayList((ArrayList) this.c));
     }
 
-    public void p(int i10) {
+    public void q(int i10) {
         int capacity = ((ByteBuffer) this.c).capacity();
         int i11 = this.b;
         if (capacity < i11 + 1) {
-            j(i11 + 1024);
+            l(i11 + 1024);
         }
         ((ByteBuffer) this.c).put((byte) i10);
         this.b++;
     }
 
-    public void q(byte[] bArr) {
+    public void r(byte[] bArr) {
         int capacity = ((ByteBuffer) this.c).capacity();
         int i10 = this.b;
         if (capacity < bArr.length + i10) {
-            j(i10 + bArr.length + 1024);
+            l(i10 + bArr.length + 1024);
         }
         ((ByteBuffer) this.c).put(bArr);
         this.b += bArr.length;
     }
 
-    public int r(int i10, int[] iArr) {
+    public int s(int i10, int[] iArr) {
         int i11 = iArr[0];
         int i12 = 1;
         int i13 = 0;
         int i14 = 0;
         while (i13 < i10) {
-            if (n(i11 + i13)) {
+            if (o(i11 + i13)) {
                 i14 += i12;
             }
             i13++;
@@ -337,7 +366,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return i14;
     }
 
-    public long s(c3.l lVar) {
+    public long t(c3.l lVar) {
         e2.x xVar = (e2.x) this.c;
         int i10 = 0;
         lVar.j(xVar.a, 0, 1, false);
@@ -361,27 +390,11 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return i14;
     }
 
-    public void t(Object instance) {
-        Object[] objArr = (Object[]) this.c;
-        kotlin.jvm.internal.i.e(instance, "instance");
-        int i10 = this.b;
-        for (int i11 = 0; i11 < i10; i11++) {
-            if (objArr[i11] == instance) {
-                throw new IllegalStateException("Already in the pool!");
-            }
-        }
-        int i12 = this.b;
-        if (i12 < objArr.length) {
-            objArr[i12] = instance;
-            this.b = i12 + 1;
-        }
-    }
-
     public String toString() {
         switch (this.a) {
-            case 7:
+            case 8:
                 return new String((char[]) this.c, 0, this.b);
-            case 14:
+            case 15:
                 i9.a aVar = (i9.a) this.c;
                 ArrayList arrayList = new ArrayList(aVar.b);
                 for (int i10 = 0; i10 < aVar.b; i10++) {
@@ -403,7 +416,23 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return q8.c(((e2.d) this.c).v(bArr), new j5.b(this, 18));
     }
 
-    public byte[] w(int i10, int i11) {
+    public void w(Object instance) {
+        Object[] objArr = (Object[]) this.c;
+        kotlin.jvm.internal.i.e(instance, "instance");
+        int i10 = this.b;
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (objArr[i11] == instance) {
+                throw new IllegalStateException("Already in the pool!");
+            }
+        }
+        int i12 = this.b;
+        if (i12 < objArr.length) {
+            objArr[i12] = instance;
+            this.b = i12 + 1;
+        }
+    }
+
+    public byte[] x(int i10, int i11) {
         int i12 = i11 - i10;
         if (i12 < 0 || i10 < 0 || this.b < i11) {
             throw new IllegalArgumentException(String.format("Bad range: beginIndex=%d, endIndex=%d, length=%d", Integer.valueOf(i10), Integer.valueOf(i11), Integer.valueOf(this.b)));
@@ -415,7 +444,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
         return bArr;
     }
 
-    public String x(i4 i4Var) {
+    public String y(i4 i4Var) {
         d0 d0Var = (d0) this.c;
         int i10 = this.b;
         try {
@@ -464,13 +493,13 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
     public b0(int i10, short s10) {
         this.a = i10;
         switch (i10) {
-            case 12:
+            case 13:
                 this.c = new sb.a();
                 break;
-            case 13:
+            case 14:
                 this.c = new e2.x(8);
                 break;
-            case 17:
+            case 18:
                 this.c = new ArrayList();
                 this.b = 128;
                 break;
@@ -484,21 +513,21 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
     public b0(int i10, int i11) {
         this.a = i11;
         switch (i11) {
-            case 8:
+            case 9:
                 if (i10 > 0) {
                     this.c = new Object[i10];
                     return;
                 }
                 throw new IllegalArgumentException("The max pool size must be > 0");
-            case 9:
+            case 10:
             default:
                 this.c = new long[i10];
                 return;
-            case 10:
+            case 11:
                 this.c = ByteBuffer.allocate(i10);
                 this.b = 0;
                 return;
-            case 11:
+            case 12:
                 this.c = new CountDownLatch(1);
                 this.b = i10;
                 return;
@@ -507,7 +536,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
 
     public b0(int i10, int[] iArr) {
         i9.a aVar;
-        this.a = 14;
+        this.a = 15;
         this.b = i10;
         if (iArr != null) {
             i9.a aVar2 = i9.a.c;
@@ -532,7 +561,7 @@ public final /* synthetic */ class b0 implements e2.d, r2.u, c3.g0 {
     }
 
     public b0(boolean z10, boolean z11, boolean z12) {
-        this.a = 9;
+        this.a = 10;
         this.b = (z10 || z11 || z12) ? 1 : 0;
     }
 }

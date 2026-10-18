@@ -37,7 +37,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c7 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static volatile boolean k0 = false;
@@ -132,7 +132,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
             FileLog.e(e);
         }
         c7Var.getMediaDataController().ringtoneDataStore.b();
-        AndroidUtilities.runOnUIThread(new ai.r3(c7Var, j10, 22), 150L);
+        AndroidUtilities.runOnUIThread(new ai.t3(c7Var, j10, 22), 150L);
         MediaDataController.getInstance(c7Var.currentAccount).checkAllMedia(true);
         c7Var.getFileLoader().getFileDatabase().getQueue().postRunnable(new g6(c7Var, 1));
         q6Var.run();
@@ -397,7 +397,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
             FileLoader.getInstance(c7Var.currentAccount).clearFilePaths();
         }
         FileLoader.getInstance(c7Var.currentAccount).checkCurrentDownloadsFiles();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.o8((Object) c7Var, (boolean) i19, j10, (Object) q6Var, 8));
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.p8((Object) c7Var, (boolean) i19, j10, (Object) q6Var, 8));
     }
 
     public static void X(c7 c7Var, ValueAnimator valueAnimator) {
@@ -656,13 +656,13 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.d0.setTextSize(AndroidUtilities.dp(18.0f));
         this.d0.setTypeface(AndroidUtilities.bold());
         this.d0.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
-        frameLayout.addView(this.d0, w7.z5.a(18.0f, 0.0f, -11.0f, 18.0f, 0.0f, -1, 19));
+        frameLayout.addView(this.d0, w7.z5.d(-1, 18.0f, 19, 0.0f, -11.0f, 18.0f, 0.0f));
         org.telegram.ui.Components.q6 q6Var2 = new org.telegram.ui.Components.q6(context, true, true, true);
         this.e0 = q6Var2;
         q6Var2.b(0.35f, 350L, bsVar);
         this.e0.setTextSize(AndroidUtilities.dp(14.0f));
         this.e0.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false));
-        frameLayout.addView(this.e0, w7.z5.a(18.0f, 0.0f, 10.0f, 18.0f, 0.0f, -1, 19));
+        frameLayout.addView(this.e0, w7.z5.d(-1, 18.0f, 19, 0.0f, 10.0f, 18.0f, 0.0f));
         TextView textView = new TextView(context);
         this.f0 = textView;
         textView.setTextSize(1, 14.0f);
@@ -674,9 +674,9 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.f0.setText(LocaleController.getString(R.string.CacheClear));
         this.f0.setOnClickListener(new a(this, 5));
         if (LocaleController.isRTL) {
-            frameLayout.addView(this.f0, w7.z5.a(28.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, 19));
+            frameLayout.addView(this.f0, w7.z5.d(-2, 28.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
         } else {
-            frameLayout.addView(this.f0, w7.z5.a(28.0f, 0.0f, 0.0f, 14.0f, 0.0f, -2, 21));
+            frameLayout.addView(this.f0, w7.z5.d(-2, 28.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
         }
         org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(2, R.drawable.ic_ab_other);
         org.telegram.ui.ActionBar.e1 e = a2.e(3, R.drawable.msg_delete, LocaleController.getString(R.string.ClearLocalDatabase));
@@ -714,7 +714,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
         s4.b0 b0Var = new s4.b0(1, false);
         this.c = b0Var;
         u1Var2.setLayoutManager(b0Var);
-        k6Var.addView(this.b, w7.z5.d(-1.0f, -1));
+        k6Var.addView(this.b, w7.z5.c(-1.0f, -1));
         this.b.setAdapter(this.a);
         l6 l6Var = new l6(this);
         l6Var.n(350L);
@@ -724,7 +724,7 @@ public final class c7 extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.b.setItemAnimator(l6Var);
         this.b.setOnItemClickListener(new f6(this));
         this.b.j(new ei.e9(this, i10));
-        k6Var.addView(this.actionBar, w7.z5.d(-2.0f, -1));
+        k6Var.addView(this.actionBar, w7.z5.c(-2.0f, -1));
         this.V.setTargetListView(this.b);
         return this.fragmentView;
     }

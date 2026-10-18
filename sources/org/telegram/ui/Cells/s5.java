@@ -30,14 +30,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class s5 extends FrameLayout {
     public static final Rect a0 = new Rect();
@@ -85,17 +85,17 @@ public final class s5 extends FrameLayout {
         setWillNotDraw(false);
         n5 n5Var = new n5(this, context);
         this.b = n5Var;
-        addView(n5Var, w7.z5.d(80.0f, 80));
+        addView(n5Var, w7.z5.c(80.0f, 80));
         o5 o5Var = new o5(this, context);
         this.a = o5Var;
         o5Var.setBlurAllowed(true);
-        n5Var.addView(o5Var, w7.z5.d(-1.0f, -1));
+        n5Var.addView(o5Var, w7.z5.c(-1.0f, -1));
         p5 p5Var = new p5(context, 0);
         p5Var.b = new RectF();
         this.h = p5Var;
         p5Var.setWillNotDraw(false);
         p5Var.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(5.0f), 0);
-        n5Var.addView(p5Var, w7.z5.a(17.0f, 4.0f, 0.0f, 0.0f, 4.0f, -2, 83));
+        n5Var.addView(p5Var, w7.z5.d(-2, 17.0f, 83, 4.0f, 0.0f, 0.0f, 4.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.play_mini_video);
@@ -106,17 +106,17 @@ public final class s5 extends FrameLayout {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
-        p5Var.addView(textView, w7.z5.a(-2.0f, 13.0f, -0.7f, 0.0f, 0.0f, -2, 19));
+        p5Var.addView(textView, w7.z5.d(-2, -2.0f, 19, 13.0f, -0.7f, 0.0f, 0.0f));
         xp xpVar = new xp(context, 24, d6Var);
         this.d = xpVar;
         xpVar.setDrawBackgroundAsArc(7);
         xpVar.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
-        addView(xpVar, w7.z5.a(26.0f, 52.0f, 4.0f, 0.0f, 0.0f, 26, 51));
+        addView(xpVar, w7.z5.d(26, 26.0f, 51, 52.0f, 4.0f, 0.0f, 0.0f));
         xpVar.setVisibility(0);
         setFocusable(true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
-        addView(frameLayout, w7.z5.a(42.0f, 38.0f, 0.0f, 0.0f, 0.0f, 42, 51));
+        addView(frameLayout, w7.z5.d(42, 42.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         this.y = AndroidUtilities.dp(80.0f);
     }
 
@@ -499,7 +499,7 @@ public final class s5 extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (this.x) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), kk.C(2.0f, this.y, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.y, TLObject.FLAG_30), lk.C(2.0f, this.y, TLObject.FLAG_30));
             return;
         }
         if (this.E) {

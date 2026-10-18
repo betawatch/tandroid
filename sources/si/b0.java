@@ -1,16 +1,15 @@
 package si;
 
 import android.opengl.GLES20;
-import org.telegram.ui.Wallet.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class b0 extends z5 {
+public final class b0 extends z {
+    public final int e;
     public final int f;
     public final int g;
     public final int h;
     public final int i;
-    public final int j;
 
     /* JADX WARN: Illegal instructions before constructor call */
     /*
@@ -31,11 +30,11 @@ public final class b0 extends z5 {
         int glGetUniformLocation4 = GLES20.glGetUniformLocation(this.a, "oldBackground");
         int glGetUniformLocation5 = GLES20.glGetUniformLocation(this.a, "newBackground");
         int glGetUniformLocation6 = GLES20.glGetUniformLocation(this.a, "maskTexture");
-        this.f = GLES20.glGetUniformLocation(this.a, "oldBlurStep");
-        this.g = GLES20.glGetUniformLocation(this.a, "oldMipBias");
-        this.h = GLES20.glGetUniformLocation(this.a, "oldBlurMix");
-        this.i = GLES20.glGetUniformLocation(this.a, "newBlur");
-        this.j = GLES20.glGetUniformLocation(this.a, "mixValue");
+        this.e = GLES20.glGetUniformLocation(this.a, "oldBlurStep");
+        this.f = GLES20.glGetUniformLocation(this.a, "oldMipBias");
+        this.g = GLES20.glGetUniformLocation(this.a, "oldBlurMix");
+        this.h = GLES20.glGetUniformLocation(this.a, "newBlur");
+        this.i = GLES20.glGetUniformLocation(this.a, "mixValue");
         GLES20.glUseProgram(this.a);
         GLES20.glUniform1i(glGetUniformLocation, 1);
         GLES20.glUniform1i(glGetUniformLocation2, 2);

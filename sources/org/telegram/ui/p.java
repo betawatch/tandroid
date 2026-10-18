@@ -12,7 +12,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class p extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -161,7 +161,7 @@ public final class p extends org.telegram.ui.ActionBar.n2 implements Notificatio
         } else {
             vzVar.setText(LocaleController.getString(R.string.ArchivedMasksEmpty));
         }
-        frameLayout.addView(this.c, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.c, w7.z5.c(-1.0f, -1));
         if (this.I) {
             this.c.b();
         } else {
@@ -177,7 +177,7 @@ public final class p extends org.telegram.ui.ActionBar.n2 implements Notificatio
         im0Var2.setLayoutManager(b0Var);
         this.e.p1();
         this.actionBar.setAdaptiveBackground(this.e);
-        frameLayout.addView(this.e, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.e, w7.z5.c(-1.0f, -1));
         this.e.setAdapter(this.b);
         int i11 = 1;
         this.e.setOnItemClickListener(new i(this, i11));

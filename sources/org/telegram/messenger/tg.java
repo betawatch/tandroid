@@ -1,61 +1,37 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class tg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
+import android.app.NotificationChannel;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_iv;
 
-    public /* synthetic */ tg(NotificationsController notificationsController, int i10) {
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class tg implements Vector.TLDeserializer, org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ tg(int i10) {
         this.a = i10;
-        this.b = notificationsController;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
+        return (NotificationChannel) obj;
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
         switch (this.a) {
-            case 0:
-                this.b.lambda$playInChatSound$41();
-                break;
-            case 1:
-                this.b.lambda$cleanup$3();
-                break;
             case 2:
-                this.b.lambda$hideNotifications$37();
-                break;
-            case 3:
-                this.b.lambda$repeatNotificationMaybe$42();
-                break;
-            case 4:
-                this.b.lambda$processIgnoreStories$18();
-                break;
-            case 5:
-                this.b.lambda$updateBadge$35();
-                break;
-            case 6:
-                this.b.lambda$deleteAllNotificationChannels$45();
-                break;
-            case 7:
-                this.b.lambda$playOutChatSound$50();
-                break;
-            case 8:
-                this.b.checkStoryPushes();
-                break;
-            case 9:
-                this.b.lambda$new$0();
-                break;
-            case 10:
-                this.b.lambda$new$1();
-                break;
-            case 11:
-                this.b.lambda$showNotifications$36();
-                break;
-            case 12:
-                this.b.lambda$forceShowPopupForReply$8();
-                break;
+                return TL_iv.RichText.TLdeserialize(inputSerializedData, i10, z10);
             default:
-                this.b.lambda$processIgnoreStoryReactions$19();
-                break;
+                return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        SharedConfig.lambda$checkSdCard$1(b2Var, i10);
     }
 }

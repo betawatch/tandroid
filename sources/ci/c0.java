@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -41,20 +41,20 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
         String str2;
         switch (this.a) {
             case 0:
-                n2 n2Var = (n2) this.b;
+                m2 m2Var = (m2) this.b;
                 v0 v0Var = (v0) this.c;
                 Boolean bool = (Boolean) obj;
                 Boolean bool2 = (Boolean) obj3;
-                int i10 = n2Var.N;
+                int i10 = m2Var.N;
                 if (((Boolean) obj2).booleanValue()) {
                     TL_phone.deleteGroupCallParticipantMessages deletegroupcallparticipantmessages = new TL_phone.deleteGroupCallParticipantMessages();
-                    deletegroupcallparticipantmessages.call = n2Var.O;
+                    deletegroupcallparticipantmessages.call = m2Var.O;
                     deletegroupcallparticipantmessages.participant = MessagesController.getInstance(i10).getInputPeer(v0Var.c);
                     deletegroupcallparticipantmessages.report_spam = bool.booleanValue();
                     ConnectionsManager.getInstance(i10).sendRequest(deletegroupcallparticipantmessages, null);
                     long j10 = v0Var.c;
-                    ArrayList arrayList = n2Var.r;
-                    ArrayList arrayList2 = n2Var.s;
+                    ArrayList arrayList = m2Var.r;
+                    ArrayList arrayList2 = m2Var.s;
                     int i11 = 0;
                     boolean z10 = false;
                     while (i11 < arrayList.size()) {
@@ -69,7 +69,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                             arrayList2.remove(i12);
                                             z10 = true;
                                         } else {
-                                            n2Var.m();
+                                            m2Var.m();
                                         }
                                     } else {
                                         i12++;
@@ -77,30 +77,30 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                 }
                             }
                             arrayList.remove(i11);
-                            n2Var.e.N(true);
+                            m2Var.e.N(true);
                             i11--;
                         }
                         i11++;
                     }
                     if (z10) {
                         ConnectionsManager.getInstance(i10).getCurrentTime();
-                        Collections.sort(arrayList2, new a4.d(n2Var, 12));
-                        n2Var.n.N(true);
-                        n2Var.t();
+                        Collections.sort(arrayList2, new a4.d(m2Var, 12));
+                        m2Var.n.N(true);
+                        m2Var.t();
                     }
                 } else {
                     TL_phone.deleteGroupCallMessages deletegroupcallmessages = new TL_phone.deleteGroupCallMessages();
-                    deletegroupcallmessages.call = n2Var.O;
+                    deletegroupcallmessages.call = m2Var.O;
                     deletegroupcallmessages.messages.add(Integer.valueOf(v0Var.a));
                     ConnectionsManager.getInstance(i10).sendRequest(deletegroupcallmessages, null);
-                    n2Var.c(v0Var.a);
+                    m2Var.c(v0Var.a);
                 }
                 if (bool2.booleanValue()) {
-                    if (n2Var.M >= 0) {
-                        MessagesController.getInstance(i10).blockPeer(n2Var.M);
+                    if (m2Var.M >= 0) {
+                        MessagesController.getInstance(i10).blockPeer(m2Var.M);
                         return;
                     } else {
-                        MessagesController.getInstance(i10).deleteParticipantFromChat(-n2Var.M, MessagesController.getInstance(i10).getInputPeer(v0Var.c), false, true);
+                        MessagesController.getInstance(i10).deleteParticipantFromChat(-m2Var.M, MessagesController.getInstance(i10).getInputPeer(v0Var.c), false, true);
                         return;
                     }
                 }
@@ -175,12 +175,12 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                 return;
             case 3:
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.b;
-                org.telegram.ui.Wallet.j8 j8Var = (org.telegram.ui.Wallet.j8) this.c;
+                org.telegram.ui.Wallet.d8 d8Var = (org.telegram.ui.Wallet.d8) this.c;
                 TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 if (tL_error == null) {
                     m0Var.i0(walletState);
-                    j8Var.run(null);
+                    d8Var.run(null);
                     return;
                 }
                 String str5 = tL_error.text;
@@ -189,7 +189,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                 }
                 org.telegram.ui.Wallet.m0.i("failed to disable backup: ".concat(str5));
                 String str6 = tL_error.text;
-                j8Var.run(str6 != null ? str6 : "NULL_ERROR");
+                d8Var.run(str6 != null ? str6 : "NULL_ERROR");
                 return;
             case 4:
                 final org.telegram.ui.Wallet.m0 m0Var2 = (org.telegram.ui.Wallet.m0) this.b;
@@ -277,7 +277,7 @@ public final /* synthetic */ class c0 implements Utilities.Callback3 {
                                         return;
                                     }
                                 }
-                                Utilities.stageQueue.postRunnable(new ai.b2(m0Var3, encryptedsecretphrasepartArr2, j11, kVar, 24));
+                                Utilities.stageQueue.postRunnable(new ai.b3(m0Var3, encryptedsecretphrasepartArr2, j11, kVar, 24));
                             }
                         }
                     }, intValue, 0);

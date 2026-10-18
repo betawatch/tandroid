@@ -1,39 +1,50 @@
 package ci;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.dq;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u1 b;
+public final class s1 extends View {
+    public final /* synthetic */ int a = 1;
+    public final dq b;
 
-    public /* synthetic */ s1(u1 u1Var, int i10) {
-        this.a = i10;
-        this.b = u1Var;
+    public s1(Context context) {
+        super(context);
+        this.b = new dq(AndroidUtilities.dp(36.0f), AndroidUtilities.dp(2.0f), -13522392);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                this.b.d.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                int dp = AndroidUtilities.dp(1.0f);
+                int width = (getWidth() - dp) - dp;
+                int height = (getHeight() - dp) - dp;
+                dq dqVar = this.b;
+                dqVar.setBounds(dp, dp, width, height);
+                dqVar.draw(canvas);
+                invalidate();
                 break;
             default:
-                u1 u1Var = this.b;
-                u1Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u1Var.n = floatValue;
-                View view = u1Var.b;
-                view.setAlpha(1.0f - floatValue);
-                view.setScaleX(1.0f - u1Var.n);
-                view.setScaleY(1.0f - u1Var.n);
-                u1Var.c.setColorFilter(new PorterDuffColorFilter(i0.a.f(u1Var.n, -1, -2960428), PorterDuff.Mode.SRC_IN));
-                u1Var.a.invalidate();
+                int width2 = getWidth();
+                int height2 = getHeight();
+                dq dqVar2 = this.b;
+                dqVar2.setBounds(0, 0, width2, height2);
+                dqVar2.setAlpha(255);
+                dqVar2.draw(canvas);
+                invalidate();
+                super.onDraw(canvas);
                 break;
         }
+    }
+
+    public s1(Activity activity) {
+        super(activity);
+        this.b = new dq(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(3.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.m5, false));
     }
 }

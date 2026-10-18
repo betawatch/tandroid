@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wl implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ fm a;
@@ -47,10 +47,10 @@ public final class wl implements org.telegram.ui.Cells.t0 {
             return;
         }
         i10 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
-        sg.l1 l1Var = new sg.l1(snVar, i10, snVar.i(), new sg.k(tL_premiumGiftOption), null, snVar.ea);
-        l1Var.J0 = false;
-        l1Var.c0 = w0Var.getMessageObject().isOut();
-        snVar.showDialog(l1Var);
+        sg.m1 m1Var = new sg.m1(snVar, i10, snVar.i(), new sg.k(tL_premiumGiftOption), null, snVar.ea);
+        m1Var.J0 = false;
+        m1Var.c0 = w0Var.getMessageObject().isOut();
+        snVar.showDialog(m1Var);
     }
 
     @Override // org.telegram.ui.Cells.t0
@@ -245,7 +245,7 @@ public final class wl implements org.telegram.ui.Cells.t0 {
         t12.K2(null, snVar, snVar.ea);
         TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 640);
         if (w0Var.getMessageObject().type == 24) {
-            ci.aa orCreateStoryViewer = snVar.getOrCreateStoryViewer();
+            ci.z9 orCreateStoryViewer = snVar.getOrCreateStoryViewer();
             pj pjVar = snVar.x0;
             orCreateStoryViewer.getClass();
             MessageObject messageObject2 = w0Var.getMessageObject();
@@ -254,7 +254,7 @@ public final class wl implements org.telegram.ui.Cells.t0 {
                 TL_stories.StoryItem storyItem = messageMedia.storyItem;
                 storyItem.dialogId = DialogObject.getPeerDialogId(messageMedia.peer);
                 storyItem.messageId = messageObject2.getId();
-                orCreateStoryViewer.F(snVar.getParentActivity(), messageObject2.messageOwner.media.storyItem, ci.r7.a(pjVar));
+                orCreateStoryViewer.F(snVar.getParentActivity(), messageObject2.messageOwner.media.storyItem, ci.q7.a(pjVar));
                 return;
             }
             return;
@@ -343,7 +343,7 @@ public final class wl implements org.telegram.ui.Cells.t0 {
             e50Var.a = snVar;
             e50Var.e();
             e50Var.c.j0.r0(null, videoSize2, 0L);
-            e50Var.b = new ai.u3(snVar, new TLRPC.FileLocation[1], new TLRPC.FileLocation[1], snVar.getUserConfig().getClientUserId(), 8);
+            e50Var.b = new ai.w3(snVar, new TLRPC.FileLocation[1], new TLRPC.FileLocation[1], snVar.getUserConfig().getClientUserId(), 8);
             return;
         }
         ArrayList arrayList2 = new ArrayList();
@@ -401,7 +401,7 @@ public final class wl implements org.telegram.ui.Cells.t0 {
     @Override // org.telegram.ui.Cells.t0
     public final void s1(long j10) {
         sn snVar = this.a.Q;
-        int i10 = sn.Hc;
+        int i10 = sn.Ic;
         snVar.sa(j10);
     }
 

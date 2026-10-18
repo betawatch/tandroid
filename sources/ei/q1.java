@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.ui.Components.aw;
 import org.telegram.ui.Components.ey;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.jy;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.zv;
-import org.telegram.ui.dj0;
+import org.telegram.ui.cj0;
 import org.telegram.ui.ep0;
-import org.telegram.ui.sh0;
+import org.telegram.ui.rh0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class q1 extends s4.m0 {
     public final /* synthetic */ int a;
@@ -49,7 +49,7 @@ public final class q1 extends s4.m0 {
                         rect.right = AndroidUtilities.dp(24.0f);
                         break;
                     } else {
-                        rect.right = kk.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
+                        rect.right = lk.B(58.0f, h, tVar.getWidth() - AndroidUtilities.dp(36.0f)) / (h - 1);
                         break;
                     }
                 } else {
@@ -106,7 +106,7 @@ public final class q1 extends s4.m0 {
                 break;
             case 5:
                 recyclerView.getClass();
-                if (RecyclerView.R(view) == ((sh0) this.b).c.size() - 1) {
+                if (RecyclerView.R(view) == ((rh0) this.b).c.size() - 1) {
                     rect.bottom = AndroidUtilities.dp(4.0f);
                     break;
                 }
@@ -115,9 +115,9 @@ public final class q1 extends s4.m0 {
                 super.a(rect, view, recyclerView, y0Var);
                 recyclerView.getClass();
                 int R = RecyclerView.R(view);
-                dj0 dj0Var = (dj0) this.b;
-                if (R == dj0Var.c0.size()) {
-                    rect.bottom = dj0Var.l0;
+                cj0 cj0Var = (cj0) this.b;
+                if (R == cj0Var.c0.size()) {
+                    rect.bottom = cj0Var.l0;
                     break;
                 }
                 break;

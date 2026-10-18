@@ -16,7 +16,7 @@ import org.telegram.ui.Components.fp0;
 import org.telegram.ui.Components.ow0;
 import org.telegram.ui.Components.ym0;
 import org.telegram.ui.ad1;
-import org.telegram.ui.fg0;
+import org.telegram.ui.eg0;
 import org.telegram.ui.ko;
 import org.telegram.ui.m30;
 import org.telegram.ui.s50;
@@ -25,9 +25,9 @@ import org.telegram.ui.sv0;
 import org.telegram.ui.x3;
 import org.telegram.ui.x31;
 import org.telegram.ui.z31;
-import rg.t2;
+import rg.s2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class q0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -196,9 +196,9 @@ public final class q0 extends AnimatorListenerAdapter {
                 return;
             case 9:
                 ow0 ow0Var = (ow0) this.c;
-                fg0 fg0Var = (fg0) this.d;
-                if (fg0Var.J == 0 && this.b) {
-                    fg0Var.v1(true, true);
+                eg0 eg0Var = (eg0) this.d;
+                if (eg0Var.J == 0 && this.b) {
+                    eg0Var.v1(true, true);
                 }
                 ow0Var.setVisibility(8);
                 ow0Var.g();
@@ -256,14 +256,14 @@ public final class q0 extends AnimatorListenerAdapter {
                 }
                 return;
             case 13:
-                t2 t2Var = (t2) this.d;
-                ai.r rVar = t2Var.c;
+                s2 s2Var = (s2) this.d;
+                ai.r rVar = s2Var.c;
                 float f11 = this.b ? 1.0f : 0.0f;
-                t2Var.y = f11;
+                s2Var.y = f11;
                 rVar.setAlpha(f11);
-                rVar.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
-                rVar.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, t2Var.y));
-                t2Var.b.invalidate();
+                rVar.setScaleX(AndroidUtilities.lerp(0.9f, 1.0f, s2Var.y));
+                rVar.setScaleY(AndroidUtilities.lerp(0.9f, 1.0f, s2Var.y));
+                s2Var.b.invalidate();
                 Runnable runnable6 = (Runnable) this.c;
                 if (runnable6 != null) {
                     AndroidUtilities.runOnUIThread(runnable6);

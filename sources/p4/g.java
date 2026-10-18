@@ -13,9 +13,9 @@ import android.util.Log;
 import android.util.SparseArray;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.web.a2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class g extends p {
     public final String f;
@@ -27,7 +27,7 @@ public final class g extends p {
     public final /* synthetic */ k p;
     public final SparseArray j = new SparseArray();
     public final AtomicInteger l = new AtomicInteger(1);
-    public final z1 m = new z1(this, 2);
+    public final a2 m = new a2(this, 2);
     public int n = -1;
 
     public g(k kVar, MediaRouter2.RoutingController routingController, String str) {
@@ -54,9 +54,9 @@ public final class g extends p {
         routingController.setVolume(i10);
         this.n = i10;
         Handler handler = this.k;
-        z1 z1Var = this.m;
-        handler.removeCallbacks(z1Var);
-        handler.postDelayed(z1Var, 1000L);
+        a2 a2Var = this.m;
+        handler.removeCallbacks(a2Var);
+        handler.postDelayed(a2Var, 1000L);
     }
 
     @Override // p4.q
@@ -73,9 +73,9 @@ public final class g extends p {
         this.n = max;
         this.g.setVolume(max);
         Handler handler = this.k;
-        z1 z1Var = this.m;
-        handler.removeCallbacks(z1Var);
-        handler.postDelayed(z1Var, 1000L);
+        a2 a2Var = this.m;
+        handler.removeCallbacks(a2Var);
+        handler.postDelayed(a2Var, 1000L);
     }
 
     @Override // p4.p

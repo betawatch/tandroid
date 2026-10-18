@@ -68,7 +68,7 @@ import org.telegram.ui.Components.pm0;
 import org.telegram.ui.Components.s61;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class w3 extends a71 {
     public static final ArrayList q4 = new ArrayList();
@@ -12323,7 +12323,7 @@ public final class w3 extends a71 {
                     TL_iv.PageBlock pageBlock = row.b;
                     if (pageBlock instanceof TL_iv.pageBlockMath) {
                         TL_iv.pageBlockMath pageblockmath = (TL_iv.pageBlockMath) pageBlock;
-                        q.X(getContext(), TextUtils.isEmpty(pageblockmath.source) ? "" : pageblockmath.source, new ai.o2(28, this, pageblockmath), this.e3);
+                        q.X(getContext(), TextUtils.isEmpty(pageblockmath.source) ? "" : pageblockmath.source, new ai.n2(28, this, pageblockmath), this.e3);
                     }
                 }
                 this.v3 = null;

@@ -1,9 +1,9 @@
 package ki;
 
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.oi0;
+import org.telegram.ui.ni0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -20,9 +20,9 @@ public final /* synthetic */ class d implements Runnable {
             case 0:
                 q qVar = this.b;
                 qVar.K(2147483646, true, 0, false, 0L);
-                oi0 oi0Var = qVar.O;
-                if (oi0Var != null) {
-                    oi0Var.h(false);
+                ni0 ni0Var = qVar.O;
+                if (ni0Var != null) {
+                    ni0Var.h(false);
                     qVar.O = null;
                     break;
                 }
@@ -30,9 +30,9 @@ public final /* synthetic */ class d implements Runnable {
             case 1:
                 q qVar2 = this.b;
                 qVar2.K(0, false, 0, false, 0L);
-                oi0 oi0Var2 = qVar2.O;
-                if (oi0Var2 != null) {
-                    oi0Var2.h(true);
+                ni0 ni0Var2 = qVar2.O;
+                if (ni0Var2 != null) {
+                    ni0Var2.h(true);
                     qVar2.O = null;
                     break;
                 }
@@ -40,7 +40,7 @@ public final /* synthetic */ class d implements Runnable {
             case 2:
                 q qVar3 = this.b;
                 if (!UserConfig.getInstance(qVar3.n).isPremium()) {
-                    new sg.x0(qVar3.b.f0, qVar3.getContext(), qVar3.n, 43, true).show();
+                    new sg.y0(qVar3.b.f0, qVar3.getContext(), qVar3.n, 43, true).show();
                     break;
                 }
                 break;

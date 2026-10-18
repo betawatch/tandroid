@@ -1,51 +1,56 @@
 package ai;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ey;
+import android.os.Bundle;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l4 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b2 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Object g;
+public final /* synthetic */ class l4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
 
-    public /* synthetic */ l4(k7 k7Var, pf.c cVar, org.telegram.ui.ActionBar.b2 b2Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, CharSequence charSequence) {
-        this.d = k7Var;
-        this.e = cVar;
-        this.b = b2Var;
-        this.f = tL_starGiftUnique;
-        this.c = j10;
-        this.g = charSequence;
+    public /* synthetic */ l4(long j10, int i10) {
+        this.a = i10;
+        this.b = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new p4((k7) this.d, (pf.c) this.e, this.b, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.c, (CharSequence) this.g));
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", this.b);
+                    bundle.putBoolean("my_profile", true);
+                    bundle.putBoolean("open_gifts", true);
+                    U.presentFragment(new ProfileActivity(bundle, null));
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                if (U2 != null) {
+                    U2.presentFragment(sn.W9(this.b));
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
+                if (U3 != null) {
+                    U3.presentFragment(sn.W9(this.b));
+                    break;
+                }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new p4((ey) this.d, this.b, tLObject, (TLRPC.User) this.e, (TLRPC.Chat) this.f, this.c, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
+                org.telegram.ui.ActionBar.n2 U4 = LaunchActivity.U();
+                if (U4 != null) {
+                    U4.presentFragment(sn.W9(this.b));
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ l4(ey eyVar, org.telegram.ui.ActionBar.b2 b2Var, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = eyVar;
-        this.b = b2Var;
-        this.e = user;
-        this.f = chat;
-        this.c = j10;
-        this.g = tL_messages_checkHistoryImportPeer;
     }
 }

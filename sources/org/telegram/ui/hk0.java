@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hk0 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.kd0, Utilities.Callback2Return, org.telegram.ui.Components.mw0, q3.g, g2.g, qg.j0 {
     public final /* synthetic */ int a;
@@ -31,18 +31,16 @@ public final /* synthetic */ class hk0 implements org.telegram.ui.ActionBar.a2, 
     @Override // qg.j0
     public Typeface a() {
         switch (this.a) {
-            case 24:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
             case 25:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
             case 26:
-                return Typeface.create("serif", 1);
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
             case 27:
-                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
+                return Typeface.create("serif", 1);
             case 28:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
+                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
             default:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
         }
     }
 
@@ -74,6 +72,7 @@ public final /* synthetic */ class hk0 implements org.telegram.ui.ActionBar.a2, 
             case 10:
             case 11:
             case 12:
+            case 14:
             default:
                 b2Var.dismiss();
                 break;
@@ -95,13 +94,13 @@ public final /* synthetic */ class hk0 implements org.telegram.ui.ActionBar.a2, 
             case 13:
                 b2Var.dismiss();
                 break;
-            case 14:
-                b2Var.dismiss();
-                break;
             case 15:
                 b2Var.dismiss();
                 break;
             case 16:
+                b2Var.dismiss();
+                break;
+            case 17:
                 b2Var.dismiss();
                 break;
         }

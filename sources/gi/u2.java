@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotFullscreenButtons;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class u2 extends e4 {
     public final /* synthetic */ int c0;
@@ -62,7 +62,7 @@ public final class u2 extends e4 {
                         if (z2Var != null && z2Var.getTotalHeight() > 0) {
                             size -= z2Var.getTotalHeight();
                         }
-                        super.onMeasure(i10, kk.C(24.0f, size, TLObject.FLAG_30));
+                        super.onMeasure(i10, lk.C(24.0f, size, TLObject.FLAG_30));
                         break;
                     }
                 }
@@ -86,7 +86,7 @@ public final class u2 extends e4 {
                 if (z2Var != null) {
                     size -= z2Var.getTotalHeight();
                 }
-                super.onMeasure(i10, kk.C(24.0f, size, TLObject.FLAG_30));
+                super.onMeasure(i10, lk.C(24.0f, size, TLObject.FLAG_30));
             default:
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(((View.MeasureSpec.getSize(i11) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(84.0f)) + ((f4) this.d0).N, TLObject.FLAG_30));
                 break;

@@ -5,11 +5,11 @@ import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer;
 import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
-import ci.p4;
+import ci.o4;
 import java.util.ArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class k {
     public final Context a;
@@ -22,7 +22,7 @@ public class k {
     }
 
     public k2.t0 a(Context context) {
-        return new p4(context).a();
+        return new o4(context).a();
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(14:(2:22|23)|24|25|26|(2:27|28)|(5:29|30|31|32|33)|(5:35|36|37|38|39)|41|42|87|(0)|90|91|92) */

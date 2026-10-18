@@ -17,7 +17,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -33,7 +33,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.xc;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f1 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public a71 a;
@@ -69,7 +69,7 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
             return;
         }
         f1Var.b.a(0.0f);
-        kk.q(R.string.UnknownError, xc.a0(f1Var), null);
+        lk.q(R.string.UnknownError, xc.a0(f1Var), null);
     }
 
     public static void V(f1 f1Var, ArrayList arrayList) {
@@ -344,7 +344,7 @@ public final class f1 extends n2 implements NotificationCenter.NotificationCente
         a71Var.p1();
         a71 a71Var2 = this.a;
         a71Var2.W2.r = false;
-        frameLayout.addView(a71Var2, z5.d(-1.0f, -1));
+        frameLayout.addView(a71Var2, z5.c(-1.0f, -1));
         this.actionBar.A(this.a, true);
         e0();
         this.fragmentView = frameLayout;

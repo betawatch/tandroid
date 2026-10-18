@@ -1,70 +1,80 @@
 package org.telegram.ui.web;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
+import ei.w3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.r5;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.zq;
 import org.telegram.ui.mk;
-import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class w1 extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final mk c;
-    public r5 d;
-    public String e;
-    public boolean f;
+public final class w1 extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public w1(Context context) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        addView(imageView, z5.a(32.0f, 16.0f, 0.0f, 0.0f, 0.0f, 32, 19));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextColor(h6.x0(null, h6.G6, false));
-        textView.setTextSize(1, 16.0f);
-        textView.setMaxLines(1);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        addView(textView, z5.a(-2.0f, 68.0f, 7.0f, 54.0f, 0.0f, -1, 55));
-        mk mkVar = new mk(this, context, 8);
-        this.c = mkVar;
-        mkVar.setTextColor(h6.x0(null, h6.y6, false));
-        mkVar.setTextSize(1, 13.0f);
-        mkVar.setMaxLines(1);
-        mkVar.setEllipsize(truncateAt);
-        mkVar.setPivotX(0.0f);
-        addView(mkVar, z5.a(-2.0f, 68.0f, 30.0f, 54.0f, 0.0f, -1, 55));
-        ImageView imageView2 = new ImageView(context);
-        imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        imageView2.setImageResource(R.drawable.ic_ab_other);
-        imageView2.setColorFilter(new PorterDuffColorFilter(h6.x0(null, h6.A6, false), PorterDuff.Mode.SRC_IN));
-        addView(imageView2, z5.a(32.0f, 0.0f, 0.0f, 18.0f, 0.0f, 32, 21));
+    static {
+        e61.setup(new w1());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.f) {
-            canvas.drawRect(AndroidUtilities.dp(64.0f), getHeight() - 1, getWidth(), getHeight(), h6.k0);
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        x1 x1Var = (x1) view;
+        String str = f61Var.n;
+        String str2 = (String) f61Var.l;
+        long j10 = f61Var.B;
+        ImageView imageView = x1Var.a;
+        x1Var.b.setText(str);
+        mk mkVar = x1Var.c;
+        mkVar.setText(str2);
+        if (TextUtils.isEmpty(str)) {
+            mkVar.setTranslationY(-AndroidUtilities.dp(14.0f));
+            mkVar.setScaleX(1.3f);
+            mkVar.setScaleY(1.3f);
+        } else {
+            mkVar.setTranslationY(0.0f);
+            mkVar.setScaleX(1.0f);
+            mkVar.setScaleY(1.0f);
         }
+        x1Var.e = str2;
+        if (TextUtils.isEmpty(str)) {
+            str = (str2.isEmpty() || TextUtils.isEmpty(str2)) ? "" : str2;
+        }
+        String charSequence = str.toString();
+        r5 r5Var = x1Var.d;
+        if (r5Var != null) {
+            r5Var.o(imageView);
+            x1Var.d = null;
+        }
+        if (j10 != 0) {
+            r5 n10 = r5.n(UserConfig.selectedAccount, j10, null, 1);
+            x1Var.d = n10;
+            n10.a(imageView);
+            imageView.setImageDrawable(x1Var.d);
+        } else {
+            zq zqVar = new zq(h6.c0(AndroidUtilities.dp(6.0f), h6.m1(0.1f, h6.x0(null, h6.G6, false))), new w3(charSequence));
+            int dp = AndroidUtilities.dp(28.0f);
+            int dp2 = AndroidUtilities.dp(28.0f);
+            zqVar.h = dp;
+            zqVar.n = dp2;
+            imageView.setImageDrawable(zqVar);
+        }
+        x1Var.f = z10;
+        x1Var.invalidate();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, d6 d6Var) {
+        return new x1(context);
     }
 }

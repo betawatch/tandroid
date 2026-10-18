@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c3 implements Runnable {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final class c3 implements Runnable {
                                     l4Var.B0.setTypeface(AndroidUtilities.bold());
                                     l4Var.B0.setText(LocaleController.getString(R.string.Copy).toUpperCase());
                                     l4Var.B0.setOnClickListener(new s(l4Var, 5));
-                                    l4Var.A0.addView(l4Var.B0, w7.z5.d(48.0f, -2));
+                                    l4Var.A0.addView(l4Var.B0, w7.z5.c(48.0f, -2));
                                     org.telegram.ui.ActionBar.m1 m1Var2 = new org.telegram.ui.ActionBar.m1(l4Var.A0, -2, -2);
                                     l4Var.H = m1Var2;
                                     m1Var2.b = false;

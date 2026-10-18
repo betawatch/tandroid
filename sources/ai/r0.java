@@ -35,7 +35,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.ey;
 import org.telegram.ui.nx;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -121,7 +121,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                         DispatchQueue dispatchQueue = Utilities.globalQueue;
                         NativeInstance nativeInstance = h1Var.E;
                         Objects.requireNonNull(nativeInstance);
-                        dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance, 3));
+                        dispatchQueue.postRunnable(new org.telegram.messenger.voip.q0(nativeInstance, 3));
                         h1Var.M.clear();
                         h1Var.E = null;
                     }
@@ -132,37 +132,37 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                 }
                 break;
             case 7:
-                ci.aa aaVar = (ci.aa) this.b;
-                aaVar.k1 = false;
-                aaVar.P();
+                ci.z9 z9Var = (ci.z9) this.b;
+                z9Var.k1 = false;
+                z9Var.P();
                 break;
             case 8:
-                ci.u5 u5Var = (ci.u5) obj;
-                ci.c6 c6Var = ((ci.z5) this.b).e;
+                ci.t5 t5Var = (ci.t5) obj;
+                ci.b6 b6Var = ((ci.y5) this.b).e;
                 while (true) {
-                    ArrayList arrayList = c6Var.G;
+                    ArrayList arrayList = b6Var.G;
                     if (i12 >= arrayList.size()) {
                         break;
                     } else {
-                        if (u5Var != arrayList.get(i12)) {
-                            ((ci.u5) arrayList.get(i12)).getClass();
+                        if (t5Var != arrayList.get(i12)) {
+                            ((ci.t5) arrayList.get(i12)).getClass();
                         }
                         i12++;
                     }
                 }
             case 9:
-                ci.n8 n8Var = (ci.n8) this.b;
+                ci.m8 m8Var = (ci.m8) this.b;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
-                n8Var.p = true;
+                m8Var.p = true;
                 if (storyItem != null && (str2 = storyItem.caption) != null) {
-                    n8Var.m = true;
-                    n8Var.l = str2;
-                    n8Var.f = TextUtils.isEmpty(str2);
-                    View view = n8Var.r;
+                    m8Var.m = true;
+                    m8Var.l = str2;
+                    m8Var.f = TextUtils.isEmpty(str2);
+                    View view = m8Var.r;
                     if (view != null) {
                         view.invalidate();
                     }
-                    Runnable runnable = n8Var.s;
+                    Runnable runnable = m8Var.s;
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -177,7 +177,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
                     arrayList2.add(str3);
                     vVar.i(true);
                 }
-                AndroidUtilities.runOnUIThread(new ci.v7(12, vVar, str3), 120L);
+                AndroidUtilities.runOnUIThread(new ci.u7(12, vVar, str3), 120L);
                 break;
             case 11:
                 ((ei.m) this.b).x(((Integer) obj).intValue());
@@ -205,7 +205,7 @@ public final /* synthetic */ class r0 implements Utilities.Callback {
             case 14:
                 ei.s2 s2Var = (ei.s2) this.b;
                 s2Var.h(-1.0f);
-                AndroidUtilities.runOnUIThread(new ci.v7(25, s2Var, (Runnable) obj), 80L);
+                AndroidUtilities.runOnUIThread(new ci.u7(25, s2Var, (Runnable) obj), 80L);
                 break;
             case 15:
                 ((ei.q3) this.b).s.animate().translationY(((-((Integer) obj).intValue()) / 2.0f) + AndroidUtilities.dp(80.0f)).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();

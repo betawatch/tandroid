@@ -36,7 +36,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import w7.r;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
@@ -67,11 +67,11 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     private List<a> getBuiltInDebugItems() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new a("Theme"));
-        arrayList.add(new a("Draw action bar shadow", new j(19)));
+        arrayList.add(new a("Draw action bar shadow", new j(18)));
         arrayList.add(new a("Show blur settings", new c(this, 0)));
         arrayList.add(new a(LocaleController.getString(R.string.DebugGeneral)));
         arrayList.add(new a(LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuDisableWebViewDebug : R.string.DebugMenuEnableWebViewDebug), new c(this, 1)));
-        arrayList.add(new a(h6.I.q() ? "Switch to day theme" : "Switch to dark theme", new j(20)));
+        arrayList.add(new a(h6.I.q() ? "Switch to day theme" : "Switch to dark theme", new j(19)));
         arrayList.add(new a(LocaleController.getString(R.string.DebugSendLogs), new c(this, 2)));
         return arrayList;
     }

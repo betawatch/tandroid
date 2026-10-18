@@ -10,7 +10,7 @@ import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class o6 extends FrameLayout {
     public final u90 a;
@@ -25,7 +25,7 @@ public final class o6 extends FrameLayout {
         checkBoxSquare.setFocusable(false);
         checkBoxSquare.setFocusableInTouchMode(false);
         checkBoxSquare.setClickable(false);
-        addView(checkBoxSquare, w7.z5.a(18.0f, 21.0f, 0.0f, 21.0f, 0.0f, 18, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(checkBoxSquare, w7.z5.d(18, 18.0f, (LocaleController.isRTL ? 5 : 3) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
         u90 u90Var = new u90(this);
         this.a = u90Var;
         x90 x90Var = new x90(context, u90Var, d6Var);
@@ -37,7 +37,7 @@ public final class o6 extends FrameLayout {
         x90Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         x90Var.setEllipsize(TextUtils.TruncateAt.END);
         boolean z10 = LocaleController.isRTL;
-        addView(x90Var, w7.z5.a(-1.0f, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f, -1, (z10 ? 5 : 3) | 48));
+        addView(x90Var, w7.z5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 16.0f : 58.0f, 21.0f, z10 ? 58.0f : 16.0f, 21.0f));
         setWillNotDraw(false);
     }
 

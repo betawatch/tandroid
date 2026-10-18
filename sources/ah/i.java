@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.t4;
+import ci.s4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout {
     public static final /* synthetic */ int e = 0;
@@ -42,7 +42,7 @@ public final class i extends FrameLayout {
         int dp = AndroidUtilities.dp(36.0f);
         int i11 = h6.d6;
         hVar.setBackground(h6.i0(dp, d6Var != null ? d6Var.u(i11) : h6.x0(null, i11, false), x02));
-        hVar.setOutlineProvider(new t4(18));
+        hVar.setOutlineProvider(new s4(18));
         hVar.setElevation(AndroidUtilities.dp(1.0f));
         hVar.setClipToOutline(true);
         setClickable(true);

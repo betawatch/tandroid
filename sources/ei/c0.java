@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class c0 extends VideoPlayerHolderBase {
     public final /* synthetic */ int a;
@@ -35,11 +35,11 @@ public final class c0 extends VideoPlayerHolderBase {
                 d0Var.p.invalidate();
                 break;
             default:
-                sg.z1 z1Var = (sg.z1) this.b;
-                TextureView textureView = z1Var.J;
-                if (textureView != null && !z1Var.F) {
+                sg.a2 a2Var = (sg.a2) this.b;
+                TextureView textureView = a2Var.J;
+                if (textureView != null && !a2Var.F) {
                     textureView.setAlpha(0.0f);
-                    textureView.animate().alpha(1.0f).setListener(new vf1(this, 17)).setDuration(200L);
+                    textureView.animate().alpha(1.0f).setListener(new vf1(this, 16)).setDuration(200L);
                     break;
                 }
                 break;
@@ -50,8 +50,8 @@ public final class c0 extends VideoPlayerHolderBase {
     public void onStateChanged(boolean z10, int i10) {
         switch (this.a) {
             case 1:
-                sg.z1 z1Var = (sg.z1) this.b;
-                c0 c0Var = z1Var.H;
+                sg.a2 a2Var = (sg.a2) this.b;
+                c0 c0Var = a2Var.H;
                 if (c0Var != null) {
                     if (i10 != 4) {
                         if (i10 == 1) {
@@ -60,7 +60,7 @@ public final class c0 extends VideoPlayerHolderBase {
                         }
                     } else {
                         c0Var.seekTo(0L);
-                        z1Var.H.play();
+                        a2Var.H.play();
                         break;
                     }
                 }

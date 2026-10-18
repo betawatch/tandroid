@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class mk extends TextView {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final class mk extends TextView {
                 float d = x5Var.k0.d(x5Var.i0, false);
                 TextPaint paint = getPaint();
                 Objects.requireNonNull(paint);
-                x5Var.d(d, true, new org.telegram.ui.Wallet.o2(paint, 3), new org.telegram.ui.Wallet.u3(6, this, canvas));
+                x5Var.b(d, true, new org.telegram.ui.Wallet.o2(paint, 3), new org.telegram.ui.Wallet.v3(7, this, canvas));
                 break;
             default:
                 super.onDraw(canvas);
@@ -136,11 +136,11 @@ public final class mk extends TextView {
                 break;
             case 7:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((org.telegram.ui.Wallet.o9) this.b).U));
+                setMeasuredDimension(getMeasuredWidth(), Math.round(getMeasuredHeight() * ((org.telegram.ui.Wallet.i9) this.b).U));
                 break;
             case 8:
                 super.onMeasure(i10, i11);
-                ((org.telegram.ui.web.w1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
+                ((org.telegram.ui.web.x1) this.b).c.setPivotY(getMeasuredHeight() / 2.0f);
                 break;
             default:
                 super.onMeasure(i10, i11);

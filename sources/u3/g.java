@@ -49,7 +49,7 @@ import org.telegram.tgnet.TLObject;
 import v7.u6;
 import z3.k;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class g implements o {
     public static final byte[] k0 = {49, 10, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 32, 45, 45, 62, 32, 48, 48, 58, 48, 48, 58, 48, 48, 44, 48, 48, 48, 10};
@@ -183,7 +183,7 @@ public final class g implements o {
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        b0 b0Var = new b0(13, (short) 0);
+        b0 b0Var = new b0(14, (short) 0);
         x xVar = (x) b0Var.c;
         l lVar = (l) pVar;
         long j10 = lVar.c;
@@ -205,20 +205,20 @@ public final class g implements o {
                 lVar.j(xVar.a, 0, 1, false);
                 C = ((C << 8) & (-256)) | (xVar.a[0] & 255);
             } else {
-                long s10 = b0Var.s(lVar);
+                long t10 = b0Var.t(lVar);
                 long j12 = b0Var.b;
-                if (s10 != Long.MIN_VALUE && (j10 == -1 || j12 + s10 < j10)) {
+                if (t10 != Long.MIN_VALUE && (j10 == -1 || j12 + t10 < j10)) {
                     while (true) {
                         long j13 = b0Var.b;
-                        long j14 = j12 + s10;
+                        long j14 = j12 + t10;
                         if (j13 < j14) {
-                            if (b0Var.s(lVar) != Long.MIN_VALUE) {
-                                long s11 = b0Var.s(lVar);
-                                if (s11 < 0 || s11 > 2147483647L) {
+                            if (b0Var.t(lVar) != Long.MIN_VALUE) {
+                                long t11 = b0Var.t(lVar);
+                                if (t11 < 0 || t11 > 2147483647L) {
                                     break;
                                 }
-                                if (s11 != 0) {
-                                    int i12 = (int) s11;
+                                if (t11 != 0) {
+                                    int i12 = (int) t11;
                                     lVar.v(i12, false);
                                     b0Var.b += i12;
                                 }

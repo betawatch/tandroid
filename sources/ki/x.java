@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -27,7 +27,7 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class x extends bb {
     public final int X;
@@ -58,7 +58,7 @@ public final class x extends bb {
         textView.setTypeface(AndroidUtilities.bold());
         int i12 = h6.G6;
         org.telegram.ui.Cells.c1.q(i12, d6Var, textView, 19);
-        frameLayout.addView(textView, w7.z5.a(56.0f, 22.0f, 6.0f, 56.0f, 0.0f, -1, 51));
+        frameLayout.addView(textView, w7.z5.d(-1, 56.0f, 51, 22.0f, 6.0f, 56.0f, 0.0f));
         this.I = AndroidUtilities.dp(-8.0f);
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.ic_close_white);
@@ -110,7 +110,7 @@ public final class x extends bb {
                 }
             }
         });
-        frameLayout.addView(imageView, w7.z5.a(48.0f, 0.0f, 10.0f, 12.0f, 0.0f, 48, 53));
+        frameLayout.addView(imageView, w7.z5.d(48, 48.0f, 53, 0.0f, 10.0f, 12.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.b0 = frameLayout2;
         RichMessageLayout.PreviewView previewView = new RichMessageLayout.PreviewView(context, i10, d6Var);
@@ -119,7 +119,7 @@ public final class x extends bb {
         int dp = AndroidUtilities.dp(12.0f);
         int i14 = h6.d6;
         previewView.setBackground(h6.c0(dp, h6.w0(i14, d6Var)));
-        frameLayout2.addView(previewView, w7.z5.d(-2.0f, -1));
+        frameLayout2.addView(previewView, w7.z5.c(-2.0f, -1));
         frameLayout2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), 0);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.d0 = frameLayout3;
@@ -130,9 +130,9 @@ public final class x extends bb {
         g3Var.setMaxLines(5);
         i3Var.setBackground(h6.c0(AndroidUtilities.dp(20.0f), h6.w0(i14, d6Var)));
         g3Var.addTextChangedListener(new w(this));
-        frameLayout3.addView(i3Var, w7.z5.d(-2.0f, -1));
+        frameLayout3.addView(i3Var, w7.z5.c(-2.0f, -1));
         frameLayout3.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        ei.d f7 = kk.f(24, context, d6Var, true);
+        ei.d f7 = lk.f(24, context, d6Var, true);
         this.f0 = f7;
         f7.g(LocaleController.getString(R.string.ArticleAIGenerate), false, true);
         final int i15 = 1;
@@ -180,7 +180,7 @@ public final class x extends bb {
                 }
             }
         });
-        this.containerView.addView(f7, w7.z5.a(48.0f, 12.0f, 12.0f, 12.0f, 12.0f, -1, 87));
+        this.containerView.addView(f7, w7.z5.d(-1, 48.0f, 87, 12.0f, 12.0f, 12.0f, 12.0f));
         ((ViewGroup.MarginLayoutParams) f7.getLayoutParams()).leftMargin += this.backgroundPaddingLeft;
         ((ViewGroup.MarginLayoutParams) f7.getLayoutParams()).rightMargin += this.backgroundPaddingLeft;
         s4.k kVar = new s4.k();

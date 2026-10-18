@@ -49,7 +49,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class f3 extends Dialog implements j2 {
     private static final boolean AVOID_SYSTEM_CUTOUT_FULLSCREEN = false;
@@ -706,7 +706,7 @@ public class f3 extends Dialog implements j2 {
             }
             this.titleView.setGravity(16);
             i10 = 48;
-            this.containerView.addView(this.titleView, w7.z5.d(this.multipleLinesTitle ? -2.0f : 48, -1));
+            this.containerView.addView(this.titleView, w7.z5.c(this.multipleLinesTitle ? -2.0f : 48, -1));
             this.titleView.setOnTouchListener(new di.d(1));
         } else {
             i10 = 0;
@@ -717,14 +717,14 @@ public class f3 extends Dialog implements j2 {
                 ((ViewGroup) this.customView.getParent()).removeView(this.customView);
             }
             if (this.useBackgroundTopPadding) {
-                this.containerView.addView(this.customView, w7.z5.a(-2.0f, 0.0f, i10, 0.0f, 0.0f, -1, this.customViewGravity));
+                this.containerView.addView(this.customView, w7.z5.d(-1, -2.0f, this.customViewGravity, 0.0f, i10, 0.0f, 0.0f));
             } else {
                 this.containerView.setClipToPadding(false);
                 this.containerView.setClipChildren(false);
                 this.container.setClipToPadding(false);
                 this.container.setClipChildren(false);
                 float f7 = i10;
-                this.containerView.addView(this.customView, w7.z5.a(-2.0f, 0.0f, f7, 0.0f, 0.0f, -1, this.customViewGravity));
+                this.containerView.addView(this.customView, w7.z5.d(-1, -2.0f, this.customViewGravity, 0.0f, f7, 0.0f, 0.0f));
                 ((ViewGroup.MarginLayoutParams) this.customView.getLayoutParams()).topMargin = AndroidUtilities.dp(f7) + (-this.backgroundPaddingTop);
             }
         } else if (this.items != null) {
@@ -739,7 +739,7 @@ public class f3 extends Dialog implements j2 {
                     CharSequence charSequence = this.items[i11];
                     int[] iArr = this.itemIcons;
                     y2Var.a(charSequence, iArr != null ? iArr[i11] : 0, null, this.bigTitle);
-                    this.containerView.addView(y2Var, w7.z5.a(48.0f, 0.0f, i10, 0.0f, 0.0f, -1, 51));
+                    this.containerView.addView(y2Var, w7.z5.d(-1, 48.0f, 51, 0.0f, i10, 0.0f, 0.0f));
                     i10 += 48;
                     y2Var.setTag(Integer.valueOf(i11));
                     y2Var.setOnClickListener(new w(this, 2));

@@ -7,7 +7,7 @@ import m.g3;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class i extends l {
     public static final Parcelable.Creator<i> CREATOR = new r0(15);
@@ -67,17 +67,17 @@ public final class i extends l {
         g3 g3Var = new g3(getClass().getSimpleName());
         n7.l0 l0Var = n7.n0.d;
         byte[] t10 = this.a.t();
-        g3Var.T(l0Var.c(t10.length, t10), "keyHandle");
+        g3Var.Y(l0Var.c(t10.length, t10), "keyHandle");
         byte[] t11 = this.b.t();
-        g3Var.T(l0Var.c(t11.length, t11), "clientDataJSON");
+        g3Var.Y(l0Var.c(t11.length, t11), "clientDataJSON");
         byte[] t12 = this.c.t();
-        g3Var.T(l0Var.c(t12.length, t12), "authenticatorData");
+        g3Var.Y(l0Var.c(t12.length, t12), "authenticatorData");
         byte[] t13 = this.d.t();
-        g3Var.T(l0Var.c(t13.length, t13), "signature");
+        g3Var.Y(l0Var.c(t13.length, t13), "signature");
         n7.t0 t0Var = this.e;
         byte[] t14 = t0Var == null ? null : t0Var.t();
         if (t14 != null) {
-            g3Var.T(l0Var.c(t14.length, t14), "userHandle");
+            g3Var.Y(l0Var.c(t14.length, t14), "userHandle");
         }
         return g3Var.toString();
     }

@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final /* synthetic */ class r implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 l4 l4Var = this.b;
-                ci.i4 i4Var = l4Var.q0;
+                ci.h4 h4Var = l4Var.q0;
                 float f7 = -((Integer) obj).intValue();
                 l4Var.p0 = f7;
-                i4Var.setTranslationY(((1.0f - l4Var.Y0) * AndroidUtilities.dp(51.0f)) + f7);
+                h4Var.setTranslationY(((1.0f - l4Var.Y0) * AndroidUtilities.dp(51.0f)) + f7);
                 break;
             case 1:
                 String str = (String) obj;
@@ -64,16 +64,16 @@ public final /* synthetic */ class r implements Utilities.Callback {
                 }
                 break;
             default:
-                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj;
+                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj;
                 l4 l4Var4 = this.b;
-                if (l4Var4.L != null && b1Var != null) {
+                if (l4Var4.L != null && c1Var != null) {
                     l4Var4.h0.k(false);
                     o3 o3Var2 = l4Var4.u0[0];
                     if (o3Var2 != null && o3Var2.getWebView() != null) {
-                        l4Var4.u0[0].getWebView().e(b1Var.c, b1Var.d);
+                        l4Var4.u0[0].getWebView().e(c1Var.c, c1Var.d);
                         break;
                     } else {
-                        pf.d.m(b1Var.c);
+                        pf.d.m(c1Var.c);
                         break;
                     }
                 }

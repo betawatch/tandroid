@@ -6,13 +6,12 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class x10 extends View {
     public final /* synthetic */ int a;
@@ -65,12 +64,12 @@ public final class x10 extends View {
                 break;
             case 13:
                 super.onAttachedToWindow();
-                yh.m1 m1Var = (yh.m1) this.b;
-                if (m1Var != null && !m1Var.i) {
-                    m1Var.i = true;
-                    m1Var.a();
-                    ig.l0 l0Var = new ig.l0(m1Var, 26);
-                    m1Var.h = l0Var;
+                yh.l1 l1Var = (yh.l1) this.b;
+                if (l1Var != null && !l1Var.i) {
+                    l1Var.i = true;
+                    l1Var.a();
+                    ig.l0 l0Var = new ig.l0(l1Var, 26);
+                    l1Var.h = l0Var;
                     LiteMode.addOnPowerSaverAppliedListener(l0Var);
                     break;
                 }
@@ -105,11 +104,11 @@ public final class x10 extends View {
                 break;
             case 13:
                 super.onDetachedFromWindow();
-                yh.m1 m1Var = (yh.m1) this.b;
-                if (m1Var != null && m1Var.i) {
-                    m1Var.i = false;
-                    m1Var.a();
-                    LiteMode.removeOnPowerSaverAppliedListener(m1Var.h);
+                yh.l1 l1Var = (yh.l1) this.b;
+                if (l1Var != null && l1Var.i) {
+                    l1Var.i = false;
+                    l1Var.a();
+                    LiteMode.removeOnPowerSaverAppliedListener(l1Var.h);
                     break;
                 }
                 break;
@@ -125,7 +124,7 @@ public final class x10 extends View {
         int i10 = 2;
         switch (this.a) {
             case 2:
-                canvas.drawColor(((dj0) this.b).getThemedColor(org.telegram.ui.ActionBar.h6.e7));
+                canvas.drawColor(((cj0) this.b).getThemedColor(org.telegram.ui.ActionBar.h6.e7));
                 break;
             case 3:
                 up0 up0Var = (up0) this.b;
@@ -139,7 +138,7 @@ public final class x10 extends View {
                 up0Var.T.set(measuredWidth - i11, 0.0f, i11 + measuredWidth, getMeasuredHeight());
                 canvas.drawRoundRect(up0Var.T, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), up0Var.U);
                 up0Var.U.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B5, false));
-                up0Var.T.set(AndroidUtilities.dp(2.0f) + r8, AndroidUtilities.dp(2.0f), r5 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
+                up0Var.T.set(AndroidUtilities.dp(2.0f) + r9, AndroidUtilities.dp(2.0f), r5 - AndroidUtilities.dp(2.0f), getMeasuredHeight() - AndroidUtilities.dp(2.0f));
                 canvas.drawRoundRect(up0Var.T, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), up0Var.U);
                 canvas.drawText(format, measuredWidth - (r4 / 2), AndroidUtilities.dp(16.2f), up0Var.S);
                 break;
@@ -174,44 +173,38 @@ public final class x10 extends View {
                 break;
             case 11:
                 final org.telegram.ui.Wallet.x5 x5Var = (org.telegram.ui.Wallet.x5) this.b;
-                float d = x5Var.O.d(x5Var.N, false);
-                FrameLayout frameLayout = x5Var.G;
-                if (frameLayout instanceof org.telegram.ui.Wallet.f6) {
-                    ((org.telegram.ui.Wallet.f6) frameLayout).setEngravingAlpha(1.0f - d);
-                }
-                if (x5Var.U != null && d > 0.0f && getWidth() > 0) {
-                    Paint paint = x5Var.M;
+                float d = x5Var.L.d(x5Var.K, false);
+                if (x5Var.R != null && d > 0.0f && getWidth() > 0) {
                     float width = x5Var.getFrontFace().getWidth();
                     float height = x5Var.getFrontFace().getHeight();
                     float f7 = width / 1640.0f;
-                    float f10 = !x5Var.s ? 0.51061195f : 0.5002976f;
-                    paint.setTypeface(org.telegram.ui.Wallet.x5.h(x5Var.getContext()));
+                    Paint paint = x5Var.J;
+                    paint.setTypeface(org.telegram.ui.Wallet.x5.f(x5Var.getContext()));
                     paint.setTextSize(47.345238f * f7);
                     paint.setTextAlign(Paint.Align.CENTER);
-                    float[] fArr = x5Var.e0;
-                    paint.setColor((fArr == null || fArr.length < 18) ? org.telegram.ui.Wallet.n7.a(null, 0) : i0.a.f(fArr[8], org.telegram.ui.Wallet.n7.a(fArr, 0), org.telegram.ui.Wallet.n7.a(fArr, 1)));
+                    paint.setColor(org.telegram.ui.Wallet.h7.b(x5Var.b0));
                     paint.setAlpha((int) (255.0f * d));
                     Paint.FontMetrics fontMetrics = paint.getFontMetrics();
-                    final float f11 = (-(fontMetrics.ascent + fontMetrics.descent)) * 0.5f;
-                    final float f12 = 27.333332f * f7;
-                    final String[] split = org.telegram.ui.Wallet.x5.g(x5Var.U).split("\\n");
+                    final float f10 = 0.5f * (-(fontMetrics.ascent + fontMetrics.descent));
+                    final float f11 = 27.333332f * f7;
+                    final String[] split = org.telegram.ui.Wallet.x5.e(x5Var.R).split("\\n");
                     canvas.save();
-                    canvas.translate(f7 * 1527.738f, f10 * height);
+                    canvas.translate(f7 * 1527.738f, 0.5002976f * height);
                     canvas.rotate(90.0f);
-                    x5Var.d(d, false, new org.telegram.ui.Wallet.o2(x5Var, i10), new Runnable() { // from class: org.telegram.ui.Wallet.u5
+                    x5Var.b(d, false, new org.telegram.ui.Wallet.o2(x5Var, i10), new Runnable() { // from class: org.telegram.ui.Wallet.u5
                         @Override // java.lang.Runnable
                         public final void run() {
                             x5 x5Var2 = x5.this;
                             x5Var2.getClass();
                             String[] strArr = split;
                             String str = strArr[0];
-                            float f13 = f12;
-                            float f14 = f11;
-                            Paint paint2 = x5Var2.M;
+                            float f12 = f11;
+                            float f13 = f10;
+                            Paint paint2 = x5Var2.J;
                             Canvas canvas2 = canvas;
-                            canvas2.drawText(str, 0.0f, (-f13) + f14, paint2);
+                            canvas2.drawText(str, 0.0f, (-f12) + f13, paint2);
                             if (strArr.length > 1) {
-                                canvas2.drawText(strArr[1], 0.0f, f13 + f14, paint2);
+                                canvas2.drawText(strArr[1], 0.0f, f12 + f13, paint2);
                             }
                         }
                     });
@@ -221,9 +214,9 @@ public final class x10 extends View {
                 break;
             case 12:
                 super.onDraw(canvas);
-                sg.j0 j0Var = (sg.j0) this.b;
-                if (j0Var.p0 - j0Var.o0 > 1) {
-                    d6Var = ((org.telegram.ui.ActionBar.f3) j0Var).resourcesProvider;
+                sg.k0 k0Var = (sg.k0) this.b;
+                if (k0Var.p0 - k0Var.o0 > 1) {
+                    d6Var = ((org.telegram.ui.ActionBar.f3) k0Var).resourcesProvider;
                     Paint U0 = org.telegram.ui.ActionBar.h6.U0("paintDivider", d6Var);
                     if (U0 == null) {
                         U0 = org.telegram.ui.ActionBar.h6.k0;
@@ -327,27 +320,27 @@ public final class x10 extends View {
     public void setBackground(Drawable drawable) {
         switch (this.a) {
             case 13:
-                if (((yh.m1) this.b) != null) {
+                if (((yh.l1) this.b) != null) {
                     if (isAttachedToWindow()) {
-                        yh.m1 m1Var = (yh.m1) this.b;
-                        if (m1Var.i) {
-                            m1Var.i = false;
-                            m1Var.a();
-                            LiteMode.removeOnPowerSaverAppliedListener(m1Var.h);
+                        yh.l1 l1Var = (yh.l1) this.b;
+                        if (l1Var.i) {
+                            l1Var.i = false;
+                            l1Var.a();
+                            LiteMode.removeOnPowerSaverAppliedListener(l1Var.h);
                         }
                     }
                     this.b = null;
                 }
                 super.setBackground(drawable);
-                if (drawable instanceof yh.m1) {
-                    this.b = (yh.m1) drawable;
+                if (drawable instanceof yh.l1) {
+                    this.b = (yh.l1) drawable;
                     if (isAttachedToWindow()) {
-                        yh.m1 m1Var2 = (yh.m1) this.b;
-                        if (!m1Var2.i) {
-                            m1Var2.i = true;
-                            m1Var2.a();
-                            ig.l0 l0Var = new ig.l0(m1Var2, 26);
-                            m1Var2.h = l0Var;
+                        yh.l1 l1Var2 = (yh.l1) this.b;
+                        if (!l1Var2.i) {
+                            l1Var2.i = true;
+                            l1Var2.a();
+                            ig.l0 l0Var = new ig.l0(l1Var2, 26);
+                            l1Var2.h = l0Var;
                             LiteMode.addOnPowerSaverAppliedListener(l0Var);
                             break;
                         }

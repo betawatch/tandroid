@@ -1,6 +1,56 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+import android.graphics.Rect;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public abstract class i7 {
+public final /* synthetic */ class i7 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ i7(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        switch (this.a) {
+            case 0:
+                t7 t7Var = (t7) this.b;
+                t7Var.getClass();
+                if (i12 - i10 != i16 - i14 || i13 - i11 != i17 - i15) {
+                    Iterator it = t7Var.f.values().iterator();
+                    while (it.hasNext()) {
+                        ((s7) it.next()).K = false;
+                    }
+                    t7Var.f0();
+                    break;
+                }
+                break;
+            default:
+                w7 w7Var = (w7) this.b;
+                if (i13 - i11 >= i17 - i15) {
+                    w7Var.getClass();
+                    break;
+                } else {
+                    ArrayList arrayList = w7Var.v;
+                    int size = arrayList.size();
+                    int i18 = 0;
+                    while (i18 < size) {
+                        Object obj = arrayList.get(i18);
+                        i18++;
+                        ga gaVar = (ga) obj;
+                        if (gaVar.hasFocus()) {
+                            gaVar.requestRectangleOnScreen(new Rect(0, 0, gaVar.getWidth(), gaVar.getHeight()), true);
+                            break;
+                        }
+                    }
+                    break;
+                }
+        }
+    }
 }

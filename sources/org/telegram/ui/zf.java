@@ -6,7 +6,7 @@ import android.os.SystemClock;
 import android.view.View;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zf implements ch.a {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class zf implements ch.a {
                 sn snVar = lmVar.J0;
                 sn snVar2 = snVar.da;
                 lm lmVar2 = snVar2 != null ? snVar2.X0 : snVar.X0;
-                float f7 = snVar.yc.e;
+                float f7 = snVar.zc.e;
                 int i10 = (int) ((1.0f - f7) * 255.0f);
                 int i11 = (int) (255.0f * f7);
                 if (f7 > 0.0f) {

@@ -2,6 +2,7 @@ package k0;
 
 import a1.g;
 import a6.m;
+import ai.t3;
 import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -78,21 +79,20 @@ import org.telegram.ui.Components.m60;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.x71;
 import org.telegram.ui.n9;
-import org.telegram.ui.web.a1;
+import org.telegram.ui.web.b1;
 import org.telegram.ui.x9;
 import qf.e;
 import r2.j;
 import r4.d;
 import rg.m2;
 import rg.v1;
-import s4.b1;
 import s4.d0;
 import s4.g0;
 import s4.o0;
 import td.p;
 import x2.n;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, d, o, v1, d0 {
     public final /* synthetic */ int a;
@@ -103,7 +103,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         this.b = obj;
     }
 
-    public static FingerprintManager q(Context context) {
+    public static FingerprintManager w(Context context) {
         int i10 = Build.VERSION.SDK_INT;
         if (i10 == 23) {
             return (FingerprintManager) context.getSystemService(FingerprintManager.class);
@@ -140,10 +140,10 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
 
     @Override // org.telegram.ui.x9
     public void E(String str) {
-        a1 a1Var = (a1) this.b;
+        b1 b1Var = (b1) this.b;
         try {
-            a1Var.P = System.currentTimeMillis();
-            a1Var.y("qr_text_received", new JSONObject().put("data", str));
+            b1Var.P = System.currentTimeMillis();
+            b1Var.y("qr_text_received", new JSONObject().put("data", str));
         } catch (JSONException e) {
             FileLog.e(e);
         }
@@ -193,11 +193,11 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         int i12;
         int i13;
         RecyclerView recyclerView = (RecyclerView) this.b;
-        int G = recyclerView.e.G();
+        int L = recyclerView.e.L();
         int i14 = i11 + i10;
-        for (int i15 = 0; i15 < G; i15++) {
-            View F = recyclerView.e.F(i15);
-            b1 U = RecyclerView.U(F);
+        for (int i15 = 0; i15 < L; i15++) {
+            View K = recyclerView.e.K(i15);
+            s4.b1 U = RecyclerView.U(K);
             if (U != null && !U.r() && (i13 = U.c) >= i10 && i13 < i14) {
                 U.a(2);
                 if (obj == null) {
@@ -210,13 +210,13 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
                     }
                     U.m.add(obj);
                 }
-                ((o0) F.getLayoutParams()).c = true;
+                ((o0) K.getLayoutParams()).c = true;
             }
         }
         e eVar = recyclerView.b;
         ArrayList arrayList2 = (ArrayList) eVar.e;
         for (int size = arrayList2.size() - 1; size >= 0; size--) {
-            b1 b1Var = (b1) arrayList2.get(size);
+            s4.b1 b1Var = (s4.b1) arrayList2.get(size);
             if (b1Var != null && (i12 = b1Var.c) >= i10 && i12 < i14) {
                 b1Var.a(2);
                 eVar.f(size);
@@ -265,9 +265,9 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
 
     public void O(int i10, int i11) {
         RecyclerView recyclerView = (RecyclerView) this.b;
-        int G = recyclerView.e.G();
-        for (int i12 = 0; i12 < G; i12++) {
-            b1 U = RecyclerView.U(recyclerView.e.F(i12));
+        int L = recyclerView.e.L();
+        for (int i12 = 0; i12 < L; i12++) {
+            s4.b1 U = RecyclerView.U(recyclerView.e.K(i12));
             if (U != null && !U.r() && U.c >= i10) {
                 U.n(i11, false);
                 recyclerView.u0.f = true;
@@ -276,7 +276,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         ArrayList arrayList = (ArrayList) recyclerView.b.e;
         int size = arrayList.size();
         for (int i13 = 0; i13 < size; i13++) {
-            b1 b1Var = (b1) arrayList.get(i13);
+            s4.b1 b1Var = (s4.b1) arrayList.get(i13);
             if (b1Var != null && b1Var.c >= i10) {
                 b1Var.n(i11, true);
             }
@@ -366,7 +366,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         int i17;
         int i18;
         RecyclerView recyclerView = (RecyclerView) this.b;
-        int G = recyclerView.e.G();
+        int L = recyclerView.e.L();
         int i19 = -1;
         if (i10 < i11) {
             i13 = i10;
@@ -377,8 +377,8 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
             i13 = i11;
             i14 = 1;
         }
-        for (int i20 = 0; i20 < G; i20++) {
-            b1 U = RecyclerView.U(recyclerView.e.F(i20));
+        for (int i20 = 0; i20 < L; i20++) {
+            s4.b1 U = RecyclerView.U(recyclerView.e.K(i20));
             if (U != null && (i18 = U.c) >= i13 && i18 <= i12) {
                 if (i18 == i10) {
                     U.n(i11 - i10, false);
@@ -399,7 +399,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         }
         int size = arrayList.size();
         for (int i21 = 0; i21 < size; i21++) {
-            b1 b1Var = (b1) arrayList.get(i21);
+            s4.b1 b1Var = (s4.b1) arrayList.get(i21);
             if (b1Var != null && (i17 = b1Var.c) >= i16 && i17 <= i15) {
                 if (i17 == i10) {
                     b1Var.n(i11 - i10, false);
@@ -503,7 +503,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         qf.b bVar = w0Var.a1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new ai.r3(bVar, j10, 13));
+            handler.post(new t3(bVar, j10, 13));
         }
     }
 
@@ -572,8 +572,8 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
         } else {
             cancellationSignal = null;
         }
-        FingerprintManager q6 = q((Context) this.b);
-        if (q6 != null) {
+        FingerprintManager w9 = w((Context) this.b);
+        if (w9 != null) {
             if (eVar != null) {
                 Mac mac = (Mac) eVar.d;
                 Signature signature = (Signature) eVar.b;
@@ -586,7 +586,7 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
                     cryptoObject = new FingerprintManager.CryptoObject(mac);
                 }
             }
-            q6.authenticate(cryptoObject, cancellationSignal, 0, new a(mVar), null);
+            w9.authenticate(cryptoObject, cancellationSignal, 0, new a(mVar), null);
         }
     }
 
@@ -740,9 +740,9 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
 
     @Override // org.telegram.ui.x9
     public void onDismiss() {
-        a1 a1Var = (a1) this.b;
-        a1Var.y("scan_qr_popup_closed", null);
-        a1Var.h0 = false;
+        b1 b1Var = (b1) this.b;
+        b1Var.y("scan_qr_popup_closed", null);
+        b1Var.h0 = false;
     }
 
     @Override // org.telegram.ui.Components.x71
@@ -797,7 +797,12 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
 
     @Override // org.telegram.ui.x9
     public String p0() {
-        return ((a1) this.b).i0;
+        return ((b1) this.b).i0;
+    }
+
+    @Override // ki.g1
+    public /* synthetic */ boolean q(h1 h1Var) {
+        return false;
     }
 
     @Override // bh.h
@@ -879,11 +884,6 @@ public final class b implements x, j0, g1, w, i, f, n5.b, e5, h, x71, oe.a, x9, 
             }
             r3Var.a.u4(charSequence.toString());
         }
-    }
-
-    @Override // ki.g1
-    public /* synthetic */ boolean w(h1 h1Var) {
-        return false;
     }
 
     @Override // r4.d

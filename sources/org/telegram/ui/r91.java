@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r91 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -91,7 +91,7 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public ec j0;
     public ke k0;
     public final boolean l0;
-    public rg0 m0;
+    public qg0 m0;
     public d91 n;
     public ph.b[] n0;
     public int o0;
@@ -111,7 +111,7 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public boolean x0;
     public d91 y;
     public e91 y0;
-    public ci.a7 z0;
+    public ci.z6 z0;
 
     public r91(Bundle bundle) {
         super(bundle);
@@ -854,9 +854,9 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final void c0() {
         int i10 = AndroidUtilities.navigationBarHeight;
         int i11 = AndroidUtilities.statusBarHeight;
-        rg0 rg0Var = this.m0;
-        if (rg0Var != null) {
-            rg0Var.setTranslationY(-i10);
+        qg0 qg0Var = this.m0;
+        if (qg0Var != null) {
+            qg0Var.setTranslationY(-i10);
         }
         int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + i11;
         int dp = (this.c ? AndroidUtilities.dp(72.0f) : 0) + i10;
@@ -902,9 +902,9 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
             arrayList.add(ph.b.b(context, r91Var.resourceProvider, ph.a.P, R.string.Monetization));
         }
         r91Var.n0 = (ph.b[]) arrayList.toArray(new ph.b[0]);
-        rg0 rg0Var = new rg0(context, r91Var.resourceProvider);
-        r91Var.m0 = rg0Var;
-        rg0Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
+        qg0 qg0Var = new qg0(context, r91Var.resourceProvider);
+        r91Var.m0 = qg0Var;
+        qg0Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
         int i10 = 0;
         while (true) {
             ph.b[] bVarArr = r91Var.n0;
@@ -1001,11 +1001,11 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView2.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.kk.m(R.string.LoadingStatsDescription, textView2, 1);
+        org.telegram.messenger.lk.m(R.string.LoadingStatsDescription, textView2, 1);
         r91Var.b0.addView(r91Var.W, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         r91Var.b0.addView(textView, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         r91Var.b0.addView(textView2, w7.z5.q(-2, -2, 1));
-        frameLayout3.addView(r91Var.b0, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, 240, 17));
+        frameLayout3.addView(r91Var.b0, w7.z5.d(240, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         if (r91Var.X == null) {
             r91Var.X = new w81(r91Var);
         }
@@ -1025,7 +1025,7 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
         r91Var.R.getAvatarImageView().setScaleX(0.9f);
         r91Var.R.getAvatarImageView().setScaleY(0.9f);
         r91Var.R.setRightAvatarPadding(-AndroidUtilities.dp(3.0f));
-        r91Var.actionBar.addView(r91Var.R, 0, w7.z5.a(-1.0f, !r91Var.inPreviewMode ? 50.0f : 0.0f, 0.0f, 40.0f, 0.0f, -2, 51));
+        r91Var.actionBar.addView(r91Var.R, 0, w7.z5.d(-2, -1.0f, 51, !r91Var.inPreviewMode ? 50.0f : 0.0f, 0.0f, 40.0f, 0.0f));
         TLRPC.Chat chat2 = r91Var.getMessagesController().getChat(Long.valueOf(j10));
         r91Var.R.setChatAvatar(chat2);
         r91Var.R.setTitle(chat2 == null ? "" : chat2.title);
@@ -1066,7 +1066,7 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
         ArrayList arrayList;
         int i12 = 0;
         if (i10 == NotificationCenter.storiesListUpdated) {
-            if (((ci.a7) objArr[0]) == this.z0) {
+            if (((ci.z6) objArr[0]) == this.z0) {
                 j0();
                 o0();
                 if (this.X != null) {
@@ -1369,9 +1369,9 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
         getNotificationCenter().addObserver(this, NotificationCenter.chatInfoDidLoad);
         getNotificationCenter().addObserver(this, NotificationCenter.boostByChannelCreated);
         getNotificationCenter().addObserver(this, NotificationCenter.storiesListUpdated);
-        ci.i7 storiesController = getMessagesController().getStoriesController();
+        ci.h7 storiesController = getMessagesController().getStoriesController();
         long j10 = this.b;
-        ci.a7 A = storiesController.A(-j10, 2, -1, true);
+        ci.z6 A = storiesController.A(-j10, 2, -1, true);
         this.z0 = A;
         if (A != null) {
             this.A0 = A.o();
@@ -1396,9 +1396,9 @@ public final class r91 extends org.telegram.ui.ActionBar.n2 implements Notificat
             b2Var.dismiss();
             b2VarArr[0] = null;
         }
-        ci.a7 a7Var = this.z0;
-        if (a7Var != null) {
-            a7Var.z(this.A0);
+        ci.z6 z6Var = this.z0;
+        if (z6Var != null) {
+            z6Var.z(this.A0);
         }
         super.onFragmentDestroy();
     }

@@ -1,16 +1,38 @@
 package ci;
 
-import org.telegram.ui.Components.x20;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class j7 extends x20 {
-    public int n;
-    public int o;
+public final class j7 implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ TextView a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ TextView c;
+    public final /* synthetic */ l7 d;
 
-    @Override // org.telegram.ui.Components.x20
-    public final void e() {
-        d(org.telegram.ui.ActionBar.h6.x0(null, this.n, false), org.telegram.ui.ActionBar.h6.x0(null, this.o, false), 0, 0);
-        super.e();
+    public j7(l7 l7Var, TextView textView, View view, TextView textView2) {
+        this.d = l7Var;
+        this.a = textView;
+        this.b = view;
+        this.c = textView2;
+    }
+
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        int[] iArr = new int[2];
+        TextView textView = this.a;
+        textView.getLocationOnScreen(iArr);
+        int dp = AndroidUtilities.dp(24.0f) + iArr[1];
+        int measuredHeight = this.b.getMeasuredHeight();
+        l7 l7Var = this.d;
+        if (dp > measuredHeight) {
+            textView.setLayoutParams(w7.z5.k(0.0f, 13.0f, 0.0f, 0.0f, -2, -2));
+            this.c.setLayoutParams(w7.z5.k(68.0f, 8.0f, 68.0f, 13.0f, -2, -2));
+            l7Var.requestLayout();
+        }
+        l7Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
     }
 }

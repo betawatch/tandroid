@@ -39,9 +39,9 @@ import org.telegram.ui.ch1;
 import org.telegram.ui.lp0;
 import org.telegram.ui.lq0;
 import org.telegram.ui.lv0;
+import org.telegram.ui.ng0;
 import org.telegram.ui.og0;
 import org.telegram.ui.oz0;
-import org.telegram.ui.pg0;
 import org.telegram.ui.pg1;
 import org.telegram.ui.pz0;
 import org.telegram.ui.r40;
@@ -54,7 +54,7 @@ import org.telegram.ui.xl0;
 import org.telegram.ui.xm0;
 import org.telegram.ui.yp0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -231,20 +231,20 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                 }
                 break;
             case 21:
-                pg0 pg0Var = (pg0) obj;
-                ValueAnimator valueAnimator = pg0Var.c.Q;
+                og0 og0Var = (og0) obj;
+                ValueAnimator valueAnimator = og0Var.c.Q;
                 if (valueAnimator == null || !valueAnimator.isRunning()) {
-                    pg1 pg1Var = pg0Var.c;
+                    pg1 pg1Var = og0Var.c;
                     if (!pg1Var.H) {
                         if (pg1Var.getCurrentPosition() == i13) {
-                            Object X = pg0Var.X();
-                            if (X instanceof og0) {
-                                ((og0) X).s();
+                            Object X = og0Var.X();
+                            if (X instanceof ng0) {
+                                ((ng0) X).s();
                                 break;
                             }
                         } else {
-                            pg0Var.m0(i13, true);
-                            pg0Var.c.D(i13);
+                            og0Var.m0(i13, true);
+                            og0Var.c.D(i13);
                             break;
                         }
                     }
@@ -348,16 +348,16 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                             D.Q(null);
                             break;
                         } else {
-                            profileActivity.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) profileActivity, 14, true));
+                            profileActivity.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) profileActivity, 14, true));
                             break;
                         }
                     }
                 }
                 if (!sv0.y0(profileActivity.O.getClosestTab())) {
                     long clientUserId = profileActivity.getUserConfig().getClientUserId();
-                    org.telegram.messenger.o8 o8Var = profileActivity.z5;
-                    if (o8Var != null) {
-                        o8Var.run();
+                    org.telegram.messenger.p8 p8Var = profileActivity.z5;
+                    if (p8Var != null) {
+                        p8Var.run();
                         profileActivity.z5 = null;
                     }
                     org.telegram.ui.Components.qc.e();
@@ -390,7 +390,7 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                         profileActivity.getMessagesController().getStoriesController().n0(clientUserId, arrayList6, false);
                         boolean[] zArr3 = {false};
                         boolean z13 = z12;
-                        profileActivity.z5 = new org.telegram.messenger.o8(profileActivity, clientUserId, arrayList6, z13, 9);
+                        profileActivity.z5 = new org.telegram.messenger.p8(profileActivity, clientUserId, arrayList6, z13, 9);
                         z zVar = new z(profileActivity, zArr3, arrayList6, zArr2, clientUserId, 14);
                         (z13 ? org.telegram.ui.Components.xc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), zVar).j() : org.telegram.ui.Components.xc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, zVar).j()).v = new lv0(i18, profileActivity, zArr3);
                         break;
@@ -400,9 +400,9 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                     pz0 pz0Var3 = profileActivity.O;
                     int j12 = pz0Var3.j1(pz0Var3.getClosestTab());
                     String w9 = profileActivity.getMessagesController().getStoriesController().w(j12, a2);
-                    org.telegram.messenger.o8 o8Var2 = profileActivity.z5;
-                    if (o8Var2 != null) {
-                        o8Var2.run();
+                    org.telegram.messenger.p8 p8Var2 = profileActivity.z5;
+                    if (p8Var2 != null) {
+                        p8Var2.run();
                         profileActivity.z5 = null;
                     }
                     org.telegram.ui.Components.qc.e();
@@ -431,17 +431,17 @@ public final /* synthetic */ class n1 implements View.OnClickListener {
                 r91Var.m0(i13, true);
                 break;
             case 28:
-                org.telegram.ui.Wallet.la laVar = (org.telegram.ui.Wallet.la) obj;
-                EditText editText = laVar.a;
-                TextView[] textViewArr = laVar.N;
+                org.telegram.ui.Wallet.ga gaVar = (org.telegram.ui.Wallet.ga) obj;
+                EditText editText = gaVar.a;
+                TextView[] textViewArr = gaVar.N;
                 TextView textView = textViewArr[i13];
                 if (textView != null && !TextUtils.isEmpty(textView.getText())) {
                     String charSequence = textViewArr[i13].getText().toString();
                     editText.setText(charSequence);
                     editText.setSelection(charSequence.length());
-                    laVar.a();
-                    laVar.a();
-                    Runnable runnable = laVar.r;
+                    gaVar.a();
+                    gaVar.a();
+                    Runnable runnable = gaVar.r;
                     if (runnable != null) {
                         editText.post(runnable);
                         break;

@@ -15,7 +15,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.x20;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout {
     public final w9 a;
@@ -46,7 +46,7 @@ public final class g extends FrameLayout {
             w9 w9Var = new w9(context);
             this.a = w9Var;
             w9Var.setRoundRadius((int) (AndroidUtilities.dp(65.0f) / 2.0f));
-            addView(w9Var, z5.a(65.0f, 0.0f, 32.0f, 0.0f, 0.0f, 65, 1));
+            addView(w9Var, z5.d(65, 65.0f, 1, 0.0f, 32.0f, 0.0f, 0.0f));
             TLRPC.User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
             h9 h9Var = new h9((d6) null);
             h9Var.r(currentUser);
@@ -55,7 +55,7 @@ public final class g extends FrameLayout {
             k3.m(20.0f, 1, textView);
             textView.setTextColor(h6.w0(h6.G6, d6Var));
             textView.setText(LocaleController.getString(R.string.UpgradedStories));
-            addView(textView, z5.a(-2.0f, 0.0f, 111.0f, 0.0f, 0.0f, -2, 1));
+            addView(textView, z5.d(-2, -2.0f, 1, 0.0f, 111.0f, 0.0f, 0.0f));
             x20Var.m = true;
             x20Var.a = true;
             x20Var.d(h6.x0(null, h6.Mj, false), h6.x0(null, h6.Lj, false), 0, 0);
@@ -79,17 +79,17 @@ public final class g extends FrameLayout {
             gVar.A = h6.Lj;
             gVar.b();
             addView(zdVar, z5.e(160, 160, 1));
-            zdVar.o(100L);
+            zdVar.m(100L);
             TextView f7 = org.telegram.messenger.g0.f(context, 1, 20.0f);
             f7.setTypeface(AndroidUtilities.bold());
             f7.setTextColor(h6.w0(h6.G6, d6Var));
-            kk.m(R.string.TelegramBusiness, f7, 17);
-            addView(f7, z5.a(-2.0f, 33.0f, 150.0f, 33.0f, 0.0f, -2, 1));
+            lk.m(R.string.TelegramBusiness, f7, 17);
+            addView(f7, z5.d(-2, -2.0f, 1, 33.0f, 150.0f, 33.0f, 0.0f));
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
             textView2.setTextColor(h6.w0(h6.z6, d6Var));
-            kk.m(R.string.TelegramBusinessSubtitle2, textView2, 17);
-            addView(textView2, z5.a(-2.0f, 33.0f, 183.0f, 33.0f, 20.0f, -2, 1));
+            lk.m(R.string.TelegramBusinessSubtitle2, textView2, 17);
+            addView(textView2, z5.d(-2, -2.0f, 1, 33.0f, 183.0f, 33.0f, 20.0f));
         }
     }
 

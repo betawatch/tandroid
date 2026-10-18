@@ -3,7 +3,7 @@ package ug;
 import ai.bd;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.y4;
+import ci.x4;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r0 extends bb {
     public final ArrayList X;
@@ -59,7 +59,7 @@ public final class r0 extends bb {
         this.a0 = c0Var;
         c0Var.k();
         c0Var.setCounterColor(-6785796);
-        c0Var.setOnClickListener(new qg.n(4, this, chat));
+        c0Var.setOnClickListener(new org.telegram.ui.web.c(5, this, chat));
         bdVar.addView(c0Var, z5.q(-1, 48, 87));
         ViewGroup viewGroup = this.containerView;
         int i11 = this.backgroundPaddingLeft;
@@ -67,7 +67,7 @@ public final class r0 extends bb {
         im0 im0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
         im0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new y4(24, this, chat));
+        this.d.setOnItemClickListener(new x4(24, this, chat));
         fixNavigationBar();
         O();
         T(false);

@@ -47,7 +47,7 @@ import org.telegram.ui.j30;
 import org.telegram.ui.s50;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class l0 extends FrameLayout {
     public boolean A0;
@@ -154,7 +154,7 @@ public abstract class l0 extends FrameLayout {
         GradientDrawable gradientDrawable = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{0, i0.a.o(-16777216, 114)});
         this.a0 = gradientDrawable;
         view.setBackground(gradientDrawable);
-        addView(view, z5.d(120.0f, -1));
+        addView(view, z5.c(120.0f, -1));
         View view2 = new View(context);
         this.n0 = view2;
         GradientDrawable gradientDrawable2 = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, new int[]{0, i0.a.o(-16777216, 114)});
@@ -246,7 +246,7 @@ public abstract class l0 extends FrameLayout {
         imageView.setPadding(dp4, dp4, dp4, dp4);
         imageView.setBackground(h6.g0(i0.a.o(-1, 55), 1, -1));
         imageView.setOnClickListener(new g51(3, j30Var, s50Var));
-        addView(imageView, z5.a(32.0f, 12.0f, 12.0f, 12.0f, 12.0f, 32, 53));
+        addView(imageView, z5.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
         g0 g0Var = new g0(j30Var, context, h6.c0(AndroidUtilities.dp(18.0f), i0.a.o(h6.x0(null, h6.tg, false), 204)));
         this.I = g0Var;
         k9 k9Var = new k9(context, true);
@@ -254,7 +254,7 @@ public abstract class l0 extends FrameLayout {
         k9Var.setStyle(10);
         g0Var.setClipChildren(false);
         g0Var.setClipToPadding(false);
-        g0Var.addView(k9Var, z5.a(32.0f, 0.0f, 0.0f, 0.0f, 0.0f, 100, 16));
+        g0Var.addView(k9Var, z5.d(100, 32.0f, 16, 0.0f, 0.0f, 0.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.K = textView3;
         textView3.setTextSize(1, 14.0f);
@@ -262,13 +262,13 @@ public abstract class l0 extends FrameLayout {
         textView3.setLines(1);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
         g0Var.addView(textView3, z5.e(-2, -2, 16));
-        addView(g0Var, z5.a(36.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, 1));
+        addView(g0Var, z5.d(-2, 36.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
         this.a = ViewConfiguration.get(getContext()).getScaledTouchSlop();
         for (int i12 = 0; i12 < 2; i12++) {
             this.K0[i12] = new h0(j30Var, context);
             this.K0[i12].setHideAnimationType(2);
             this.K0[i12].setAdditionalTranslationY(AndroidUtilities.dp(10.0f));
-            addView(this.K0[i12], z5.a(-2.0f, 16.0f, 0.0f, 0.0f, 8.0f, -1, 80));
+            addView(this.K0[i12], z5.d(-1, -2.0f, 80, 16.0f, 0.0f, 0.0f, 8.0f));
         }
         this.f0.setVisibility(8);
         setIsTablet(s50.G3);

@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class j71 extends org.telegram.ui.ActionBar.f3 {
     public float E;
@@ -92,7 +92,7 @@ public abstract class j71 extends org.telegram.ui.ActionBar.f3 {
         i71Var.x = true;
         i71Var.d();
         i71Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-        frameLayout.addView(i71Var, w7.z5.a(48.0f, 7.0f, 7.0f, 7.0f, 7.0f, -1, 51));
+        frameLayout.addView(i71Var, w7.z5.d(-1, 48.0f, 51, 7.0f, 7.0f, 7.0f, 7.0f));
         b10 b10Var = new b10(context, null);
         this.v = b10Var;
         b10Var.setViewType(6);
@@ -100,7 +100,7 @@ public abstract class j71 extends org.telegram.ui.ActionBar.f3 {
         b10Var.setUseHeaderOffset(true);
         rx0 rx0Var = new rx0(context, b10Var, 1, null);
         this.s = rx0Var;
-        rx0Var.addView(b10Var, 0, w7.z5.a(-1.0f, 0.0f, 2.0f, 0.0f, 0.0f, -1, 0));
+        rx0Var.addView(b10Var, 0, w7.z5.d(-1, -1.0f, 0, 0.0f, 2.0f, 0.0f, 0.0f));
         String string = LocaleController.getString(R.string.NoResult);
         wh.n nVar = rx0Var.d;
         nVar.setText(string);
@@ -119,7 +119,7 @@ public abstract class j71 extends org.telegram.ui.ActionBar.f3 {
         x90Var.setTag(Integer.valueOf(i17));
         x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i17, d6Var2));
         rx0Var.G = i18;
-        this.containerView.addView(rx0Var, w7.z5.a(-1.0f, 0.0f, 62.0f, 0.0f, 0.0f, -1, 51));
+        this.containerView.addView(rx0Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 62.0f, 0.0f, 0.0f));
         ai.u1 u1Var = new ai.u1(this, context, d6Var, 25);
         this.d = u1Var;
         u1Var.setOverScrollMode(2);
@@ -135,7 +135,7 @@ public abstract class j71 extends org.telegram.ui.ActionBar.f3 {
         u1Var.setLayoutManager(yzVar);
         u1Var.setHorizontalScrollBarEnabled(false);
         u1Var.setVerticalScrollBarEnabled(false);
-        this.containerView.addView(u1Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        this.containerView.addView(u1Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         u1Var.setOnScrollListener(new kv(this, 12));
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 51);
         layoutParams.topMargin = AndroidUtilities.dp(58.0f);
@@ -264,9 +264,9 @@ public abstract class j71 extends org.telegram.ui.ActionBar.f3 {
             this.b.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             this.b.setEllipsize(TextUtils.TruncateAt.END);
             TextView textView2 = this.b;
-            FrameLayout.LayoutParams a2 = w7.z5.a(36.0f, 16.0f, 0.0f, 0.0f, 0.0f, -1, 51);
+            FrameLayout.LayoutParams d = w7.z5.d(-1, 36.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f);
             FrameLayout frameLayout = this.c;
-            frameLayout.addView(textView2, a2);
+            frameLayout.addView(textView2, d);
             ((FrameLayout.LayoutParams) this.w.getLayoutParams()).topMargin = AndroidUtilities.dp(30.0f);
             frameLayout.getLayoutParams().height = AndroidUtilities.dp(94.0f);
         }

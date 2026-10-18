@@ -18,7 +18,7 @@ import org.telegram.ui.s50;
 import org.telegram.ui.sh;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -30,13 +30,13 @@ public final /* synthetic */ class z0 implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ z0(int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j10, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
+    public /* synthetic */ z0(int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j10, d6 d6Var, org.telegram.ui.web.u uVar, ai.s0 s0Var) {
         this.c = i10;
         this.d = b2Var;
         this.e = context;
         this.b = j10;
         this.f = d6Var;
-        this.g = tVar;
+        this.g = uVar;
         this.h = s0Var;
     }
 
@@ -51,7 +51,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
         switch (i10) {
             case 0:
                 ai.s0 s0Var = (ai.s0) obj;
-                AndroidUtilities.runOnUIThread(new b1(tLObject, this.c, (org.telegram.ui.ActionBar.b2) obj5, (Context) obj3, this.b, (d6) obj4, (org.telegram.ui.web.t) obj2, s0Var));
+                AndroidUtilities.runOnUIThread(new b1(tLObject, this.c, (org.telegram.ui.ActionBar.b2) obj5, (Context) obj3, this.b, (d6) obj4, (org.telegram.ui.web.u) obj2, s0Var));
                 break;
             case 1:
                 s50.x((s50) obj5, this.b, (HashSet) obj3, (AtomicInteger) obj4, this.c, (ChatObject.Call) obj2, (String) obj, tLObject, tL_error);

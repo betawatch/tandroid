@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class lx implements org.telegram.ui.et {
     public final /* synthetic */ tz a;
@@ -93,7 +93,7 @@ public final class lx implements org.telegram.ui.et {
         if (AndroidUtilities.addToClipboard(valueOf)) {
             tz tzVar = this.a;
             org.telegram.ui.ActionBar.n2 n2Var = tzVar.Y1;
-            org.telegram.messenger.kk.p(R.string.EmojiCopied, n2Var != null ? xc.a0(n2Var) : new xc(tzVar.r, tzVar.Z1));
+            org.telegram.messenger.lk.p(R.string.EmojiCopied, n2Var != null ? xc.a0(n2Var) : new xc(tzVar.r, tzVar.Z1));
         }
     }
 
@@ -303,7 +303,7 @@ public final class lx implements org.telegram.ui.et {
         MessagesController.getInstance(tzVar.c1).updateEmojiStatus(emojiStatus);
         yt ytVar = new yt(2, this, tL_emojiStatusEmpty);
         if (document != null) {
-            (n2Var != null ? xc.a0(n2Var) : new xc(frameLayout, d6Var)).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), ytVar).j();
+            (n2Var != null ? xc.a0(n2Var) : new xc(frameLayout, d6Var)).r(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), ytVar).j();
             return;
         }
         ic icVar = new ic(tzVar.getContext(), d6Var);

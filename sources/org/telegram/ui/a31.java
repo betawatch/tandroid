@@ -1,8 +1,9 @@
 package org.telegram.ui;
 
 import android.app.Activity;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a31 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -45,11 +46,17 @@ public final class a31 extends org.telegram.ui.ActionBar.j {
                 z71 z71Var = (z71) this.b;
                 if (i10 != -1) {
                     if (i10 == 2) {
-                        z71Var.l0(new ig0(null));
+                        z71Var.l0(new hg0(null));
                         break;
                     }
-                } else {
+                } else if (!z71Var.M) {
                     z71Var.finishFragment();
+                    break;
+                } else {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", z71Var.getUserConfig().getClientUserId());
+                    bundle.putBoolean("immediate", true);
+                    z71Var.presentFragment(new zh.f0(bundle));
                     break;
                 }
                 break;
@@ -130,33 +137,33 @@ public final class a31 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 13:
-                org.telegram.ui.Wallet.o9 o9Var = (org.telegram.ui.Wallet.o9) this.b;
+                org.telegram.ui.Wallet.i9 i9Var = (org.telegram.ui.Wallet.i9) this.b;
                 if (i10 != -1) {
                     if (i10 != 2) {
                         if (i10 == 3) {
-                            o9Var.o0();
+                            i9Var.o0();
                             break;
                         }
                     } else {
-                        Activity parentActivity = o9Var.getParentActivity();
-                        i11 = ((org.telegram.ui.ActionBar.n2) o9Var).currentAccount;
-                        org.telegram.ui.Wallet.m5.C0(parentActivity, i11, o9Var.getResourceProvider());
+                        Activity parentActivity = i9Var.getParentActivity();
+                        i11 = ((org.telegram.ui.ActionBar.n2) i9Var).currentAccount;
+                        org.telegram.ui.Wallet.n5.D0(parentActivity, i11, i9Var.getResourceProvider());
                         break;
                     }
                 } else {
-                    o9Var.finishFragment();
+                    i9Var.finishFragment();
                     break;
                 }
                 break;
             case 14:
                 if (i10 == -1) {
-                    ((sg.x0) this.b).dismiss();
+                    ((sg.y0) this.b).dismiss();
                     break;
                 }
                 break;
             default:
                 if (i10 == -1) {
-                    ((yh.h4) this.b).finishFragment();
+                    ((yh.g4) this.b).finishFragment();
                     break;
                 }
                 break;

@@ -4,7 +4,7 @@ import java.nio.ByteBuffer;
 import org.telegram.tgnet.TLObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class g extends h2.h {
     public long r;
@@ -22,7 +22,7 @@ public final class g extends h2.h {
         u6.g(!hVar.getFlag(TLObject.FLAG_30));
         u6.g(!hVar.hasSupplementalData());
         u6.g(!hVar.isEndOfStream());
-        if (h()) {
+        if (i()) {
             if (this.s >= this.v) {
                 return false;
             }
@@ -50,7 +50,7 @@ public final class g extends h2.h {
         return true;
     }
 
-    public final boolean h() {
+    public final boolean i() {
         return this.s > 0;
     }
 }

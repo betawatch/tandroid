@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class bb extends org.telegram.ui.ActionBar.f3 {
     public boolean E;
@@ -498,7 +498,7 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
             y3.setHasFixedSize(true);
             y3.setAdapter(x(y3));
             setCustomView(jw0Var);
-            jw0Var.addView(y3, w7.z5.d(-2.0f, -1));
+            jw0Var.addView(y3, w7.z5.c(-2.0f, -1));
         } else {
             y3.setAdapter(new za(this, x(y3), context));
             this.containerView = jw0Var;
@@ -513,7 +513,7 @@ public abstract class bb extends org.telegram.ui.ActionBar.f3 {
             xaVar.setTitle(A());
             xaVar.setActionBarMenuOnItemClick(new org.telegram.ui.ga(this, 10));
             jw0Var.addView(y3);
-            jw0Var.addView(xaVar, w7.z5.a(-2.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 0));
+            jw0Var.addView(xaVar, w7.z5.d(-1, -2.0f, 0, 6.0f, 0.0f, 6.0f, 0.0f));
             y3.j(new ah.d0(jw0Var, 20));
         }
         if (i10 == 2) {

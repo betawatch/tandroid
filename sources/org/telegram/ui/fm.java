@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class fm extends org.telegram.ui.Components.jl0 {
     public int E;
@@ -262,8 +262,8 @@ public final class fm extends org.telegram.ui.Components.jl0 {
             Q(this.J + indexOf);
             return null;
         }
-        int i11 = sn.Jc;
-        sn.Jc = i11 + 1;
+        int i11 = sn.Kc;
+        sn.Kc = i11 + 1;
         messageObject2.stableId = i11;
         O(true);
         return null;
@@ -1096,7 +1096,7 @@ public final class fm extends org.telegram.ui.Components.jl0 {
                 u1Var.H8 = snVar.V8();
                 u1Var.I8 = snVar.W8();
                 if (messageObject2.isSponsored()) {
-                    AndroidUtilities.doOnPreDraw(u1Var, new ah.j(23));
+                    AndroidUtilities.doOnPreDraw(u1Var, new ah.j(22));
                 }
                 int i29 = i10 + 2;
                 if (c92 == null) {
@@ -1382,9 +1382,9 @@ public final class fm extends org.telegram.ui.Components.jl0 {
                                                     if (!mfVar2.q0) {
                                                         mfVar2.s = true;
                                                         mfVar2.q0 = true;
-                                                        bi0 bi0Var = mfVar2.X;
-                                                        if (bi0Var != null) {
-                                                            bi0Var.invalidate();
+                                                        ai0 ai0Var = mfVar2.X;
+                                                        if (ai0Var != null) {
+                                                            ai0Var.invalidate();
                                                         }
                                                         org.telegram.ui.Components.vg vgVar = mfVar2.W;
                                                         if (vgVar != null) {
@@ -1427,7 +1427,7 @@ public final class fm extends org.telegram.ui.Components.jl0 {
                                                         } else {
                                                             i21 = 1;
                                                         }
-                                                        mfVar2.e(new th0(mfVar2, i21), false);
+                                                        mfVar2.e(new sh0(mfVar2, i21), false);
                                                         mfVar2.F.invalidate();
                                                         mfVar2.c();
                                                     }

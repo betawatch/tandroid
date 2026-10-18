@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f8 extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ Context a;
@@ -270,7 +270,7 @@ public final class f8 extends GestureDetector.SimpleOnGestureListener {
         k8Var.v.setVisibility(8);
         k8Var.v.setFitsSystemWindows(true);
         d5Var = ((org.telegram.ui.ActionBar.n2) k8Var).parentLayout;
-        d5Var.getOverlayContainerView().addView(k8Var.v, w7.z5.d(-1.0f, -1));
+        d5Var.getOverlayContainerView().addView(k8Var.v, w7.z5.c(-1.0f, -1));
         k8.b0(k8Var);
         k8Var.presentFragmentAsPreviewWithMenu(snVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
     }
@@ -291,18 +291,18 @@ public final class f8 extends GestureDetector.SimpleOnGestureListener {
         if (d5Var != null) {
             if (((k8Var.e0 == 1 && h8Var.n != null) || k8Var.f0 != null) && (a2 = a(motionEvent.getX(), motionEvent.getY())) != null && (messageObject = a2.a) != null && (bVar = k8Var.M) != null) {
                 if (k8Var.f0 != null) {
-                    ci.aa orCreateStoryViewer = k8Var.getOrCreateStoryViewer();
+                    ci.z9 orCreateStoryViewer = k8Var.getOrCreateStoryViewer();
                     Context context = h8Var.getContext();
                     MessageObject messageObject2 = a2.a;
                     TL_stories.StoryItem storyItem = messageObject2.storyItem;
                     int id2 = messageObject2.getId();
-                    ci.a7 a7Var = k8Var.f0;
+                    ci.z6 z6Var = k8Var.f0;
                     g gVar = k8Var.g0;
                     orCreateStoryViewer.h = UserConfig.selectedAccount;
                     ArrayList arrayList = new ArrayList();
-                    arrayList.add(Long.valueOf(a7Var.d));
+                    arrayList.add(Long.valueOf(z6Var.d));
                     orCreateStoryViewer.P0 = id2;
-                    orCreateStoryViewer.G(context, storyItem, arrayList, 0, a7Var, null, gVar, true);
+                    orCreateStoryViewer.G(context, storyItem, arrayList, 0, z6Var, null, gVar, true);
                 } else {
                     int id3 = messageObject.getId();
                     int i10 = a2.c;

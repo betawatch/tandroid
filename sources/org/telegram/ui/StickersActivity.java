@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class StickersActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Components.a71 a;
@@ -221,7 +221,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.n2 implements No
                 return;
             } else {
                 if (l8Var.F == view) {
-                    stickersActivity.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) stickersActivity, 11, false));
+                    stickersActivity.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) stickersActivity, 11, false));
                     return;
                 }
                 return;
@@ -1184,7 +1184,7 @@ public class StickersActivity extends org.telegram.ui.ActionBar.n2 implements No
         this.b = i0Var;
         i0Var.j1(1);
         this.a.setLayoutManager(this.b);
-        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
         return this.fragmentView;
     }
 

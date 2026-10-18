@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class d4 extends FrameLayout {
     public ChatObject.Call E;
@@ -413,14 +413,14 @@ public class d4 extends FrameLayout {
         this.b = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(w9Var, w7.z5.a(46.0f, z10 ? 0.0f : 11.0f, 6.0f, z10 ? 11.0f : 0.0f, 0.0f, 46, (z10 ? 5 : 3) | 48));
+        addView(w9Var, w7.z5.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 11.0f, 6.0f, z10 ? 11.0f : 0.0f, 0.0f));
         y3 y3Var = new y3(this, context);
         this.x = y3Var;
         y3Var.setSize(AndroidUtilities.dp(26.0f));
         y3Var.setProgressColor(-1);
         y3Var.setNoProgress(false);
         boolean z11 = LocaleController.isRTL;
-        addView(y3Var, w7.z5.a(46.0f, z11 ? 0.0f : 11.0f, 6.0f, z11 ? 11.0f : 0.0f, 0.0f, 46, (z11 ? 5 : 3) | 48));
+        addView(y3Var, w7.z5.d(46, 46.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 11.0f, 6.0f, z11 ? 11.0f : 0.0f, 0.0f));
         AndroidUtilities.updateViewVisibilityAnimated(y3Var, false, 1.0f, false);
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
@@ -430,7 +430,7 @@ public class d4 extends FrameLayout {
         j5Var.setDrawablePadding(AndroidUtilities.dp(6.0f));
         j5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(j5Var, w7.z5.a(20.0f, z12 ? 54.0f : 67.0f, 10.0f, z12 ? 67.0f : 54.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
+        addView(j5Var, w7.z5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 54.0f : 67.0f, 10.0f, z12 ? 67.0f : 54.0f, 0.0f));
         this.r = new org.telegram.ui.Components.p5(AndroidUtilities.dp(20.0f), 9, j5Var, false);
         this.s = new org.telegram.ui.Components.p5(AndroidUtilities.dp(20.0f), 9, j5Var, false);
         Drawable drawable = context.getResources().getDrawable(R.drawable.voice_volume_mini);
@@ -450,7 +450,7 @@ public class d4 extends FrameLayout {
                 this.d[i15].setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.rg, false));
                 View view = this.d[i15];
                 boolean z13 = LocaleController.isRTL;
-                addView(view, w7.z5.a(-2.0f, z13 ? 54.0f : 67.0f, 32.0f, z13 ? 67.0f : 54.0f, 0.0f, -1, (z13 ? 5 : 3) | 48));
+                addView(view, w7.z5.d(-1, -2.0f, (z13 ? 5 : 3) | 48, z13 ? 54.0f : 67.0f, 32.0f, z13 ? 67.0f : 54.0f, 0.0f));
             } else {
                 if (i15 == 0) {
                     this.d[i15].setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.pg, false));
@@ -468,7 +468,7 @@ public class d4 extends FrameLayout {
                 }
                 View view2 = this.d[i15];
                 boolean z14 = LocaleController.isRTL;
-                addView(view2, w7.z5.a(20.0f, z14 ? 54.0f : 67.0f, 32.0f, z14 ? 67.0f : 54.0f, 0.0f, -1, (z14 ? 5 : 3) | 48));
+                addView(view2, w7.z5.d(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? 54.0f : 67.0f, 32.0f, z14 ? 67.0f : 54.0f, 0.0f));
             }
             i15++;
         }
@@ -478,7 +478,7 @@ public class d4 extends FrameLayout {
         j5Var2.setTextSize(15);
         j5Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.rg, false));
         j5Var2.setVisibility(8);
-        addView(j5Var2, w7.z5.a(60.0f, 14.0f, 32.0f, 14.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(j5Var2, w7.z5.d(-1, 60.0f, (LocaleController.isRTL ? 5 : 3) | 48, 14.0f, 32.0f, 14.0f, 0.0f));
         uj0 uj0Var = new uj0(R.raw.voice_outlined2, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(32.0f), true, null);
         this.h = uj0Var;
         this.n = new uj0(R.raw.hand_1, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(32.0f), true, null);
@@ -493,7 +493,7 @@ public class d4 extends FrameLayout {
         }
         xj0Var.setBackground(g02);
         xj0Var.setImportantForAccessibility(2);
-        addView(xj0Var, w7.z5.a(-1.0f, 6.0f, 0.0f, 6.0f, 0.0f, 48, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(xj0Var, w7.z5.d(48, -1.0f, (LocaleController.isRTL ? 3 : 5) | 16, 6.0f, 0.0f, 6.0f, 0.0f));
         xj0Var.setOnClickListener(new a(this, i10));
         this.a = new b4(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(29.0f));
         setWillNotDraw(false);

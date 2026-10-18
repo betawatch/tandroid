@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a6 implements Runnable {
     public final /* synthetic */ int a;
@@ -129,7 +129,7 @@ public final class a6 implements Runnable {
                     EGLSurface eGLSurface = j70Var3.f;
                     if (!egl10.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, j70Var3.e)) {
                         if (BuildVars.LOGS_ENABLED) {
-                            org.telegram.messenger.kk.v(((j70) this.b).b, new StringBuilder("eglMakeCurrent failed "));
+                            org.telegram.messenger.lk.v(((j70) this.b).b, new StringBuilder("eglMakeCurrent failed "));
                             break;
                         }
                     }
@@ -185,13 +185,13 @@ public final class a6 implements Runnable {
                 }
                 break;
             case 10:
-                ((wi0) this.b).T.animate().alpha(1.0f).setDuration(230L);
+                ((vi0) this.b).T.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 11:
-                dj0 dj0Var = (dj0) this.b;
-                String str = dj0Var.j0;
+                cj0 cj0Var = (cj0) this.b;
+                String str = cj0Var.j0;
                 if (str != null) {
-                    dj0.R(dj0Var, str);
+                    cj0.R(cj0Var, str);
                     break;
                 }
                 break;

@@ -24,7 +24,7 @@ import org.telegram.ui.Components.w9;
 import w7.z5;
 import zf.p;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class b extends FrameLayout implements y5 {
     public final d6 a;
@@ -39,7 +39,7 @@ public final class b extends FrameLayout implements y5 {
         w9 w9Var = new w9(context);
         this.b = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
-        addView(w9Var, z5.a(32.0f, 20.0f, 0.0f, 0.0f, 0.0f, 32, 19));
+        addView(w9Var, z5.d(32, 32.0f, 19, 20.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
@@ -57,12 +57,12 @@ public final class b extends FrameLayout implements y5 {
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
         linearLayout.addView(textView2, z5.k(0.0f, 2.0f, 0.0f, 0.0f, -1, -2));
-        addView(linearLayout, z5.a(-2.0f, 67.0f, 0.0f, 48.0f, 1.0f, -1, 19));
+        addView(linearLayout, z5.d(-1, -2.0f, 19, 67.0f, 0.0f, 48.0f, 1.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.msg_inputarrow);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, z5.a(24.0f, 0.0f, 0.0f, 11.0f, 0.0f, 24, 21));
+        addView(imageView, z5.d(24, 24.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
         d();
     }
 

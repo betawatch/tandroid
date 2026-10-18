@@ -1,6 +1,7 @@
 package gi;
 
 import ai.ub;
+import android.content.Context;
 import android.text.style.CharacterStyle;
 import java.util.ArrayList;
 import ki.c6;
@@ -18,9 +19,11 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Cells.n9;
+import org.telegram.ui.Wallet.p5;
+import org.telegram.ui.Wallet.s5;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,8 +42,8 @@ public final /* synthetic */ class m4 implements Runnable {
         this.c = i11;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:126:0x02d2 A[LOOP:1: B:106:0x025a->B:126:0x02d2, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0293 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x02f6 A[LOOP:1: B:108:0x027e->B:128:0x02f6, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x02b7 A[SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -56,7 +59,7 @@ public final /* synthetic */ class m4 implements Runnable {
             case 0:
                 TLRPC.User user = (TLRPC.User) this.d;
                 TLRPC.Document document = (TLRPC.Document) this.e;
-                r4.g(this.b, user, document, this.c, new h4((org.telegram.ui.web.r) this.f, document, 0));
+                r4.g(this.b, user, document, this.c, new h4((org.telegram.ui.web.s) this.f, document, 0));
                 break;
             case 1:
                 hg.t1 t1Var = (hg.t1) this.d;
@@ -230,10 +233,10 @@ public final /* synthetic */ class m4 implements Runnable {
                 }
                 break;
             case 4:
-                ya.c cVar = (ya.c) this.d;
+                ya.d dVar = (ya.d) this.d;
                 ki.h1 h1Var3 = (ki.h1) this.e;
                 n9 n9Var3 = (n9) this.f;
-                o5 o5Var = (o5) cVar.b;
+                o5 o5Var = (o5) dVar.b;
                 int length4 = h1Var3.length();
                 int i32 = this.b;
                 if (length4 >= i32 && h1Var3.getSelectionStart() != h1Var3.getSelectionEnd() && n9Var3.j0(o5Var, 0, this.c, i32)) {
@@ -288,7 +291,7 @@ public final /* synthetic */ class m4 implements Runnable {
             case 7:
                 ((MediaController) this.d).lambda$loadMoreMusic$11(this.b, (TLRPC.TL_error) this.e, (TLObject) this.f, this.c);
                 break;
-            default:
+            case 8:
                 sn snVar = (sn) this.d;
                 CharacterStyle characterStyle = (CharacterStyle) this.e;
                 org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) this.f;
@@ -297,16 +300,22 @@ public final /* synthetic */ class m4 implements Runnable {
                 snVar.yb = characterStyle;
                 u1Var.invalidate();
                 break;
+            default:
+                s5 s5Var = (s5) this.d;
+                Context context = (Context) this.e;
+                p5 p5Var = (p5) this.f;
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.h(s5Var, new org.telegram.ui.Wallet.o5(context.getApplicationContext(), this.b, this.c, p5Var), p5Var, 14));
+                break;
         }
     }
 
-    public /* synthetic */ m4(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.r rVar) {
+    public /* synthetic */ m4(int i10, TLRPC.User user, TLRPC.Document document, int i11, org.telegram.ui.web.s sVar) {
         this.a = 0;
         this.b = i10;
         this.d = user;
         this.e = document;
         this.c = i11;
-        this.f = rVar;
+        this.f = sVar;
     }
 
     public /* synthetic */ m4(Object obj, Object obj2, int i10, Object obj3, int i11, int i12) {
@@ -325,5 +334,14 @@ public final /* synthetic */ class m4 implements Runnable {
         this.c = i11;
         this.e = characterStyle;
         this.f = u1Var;
+    }
+
+    public /* synthetic */ m4(s5 s5Var, Context context, int i10, int i11, p5 p5Var) {
+        this.a = 9;
+        this.d = s5Var;
+        this.e = context;
+        this.b = i10;
+        this.c = i11;
+        this.f = p5Var;
     }
 }

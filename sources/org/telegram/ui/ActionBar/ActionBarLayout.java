@@ -38,7 +38,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import ci.aa;
+import ci.z9;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,7 +56,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.bd;
+import org.telegram.messenger.cd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.bs;
@@ -65,15 +65,15 @@ import org.telegram.ui.Components.n9;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fg0;
+import org.telegram.ui.eg0;
 import org.telegram.ui.l80;
 import org.telegram.ui.nn;
-import org.telegram.ui.pg0;
+import org.telegram.ui.og0;
 import org.telegram.ui.qn;
 import org.telegram.ui.ry;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements d5, ng.b {
     public static Drawable p1;
@@ -627,11 +627,11 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         }
         int i13 = 0;
         while (true) {
-            arrayList = aa.y1;
+            arrayList = z9.y1;
             if (i13 >= arrayList.size()) {
                 break;
             }
-            ((aa) arrayList.get(i13)).q(false);
+            ((z9) arrayList.get(i13)).q(false);
             i13++;
         }
         arrayList.clear();
@@ -775,13 +775,13 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         if (z13) {
             if (!(n2Var2 instanceof sn)) {
                 float dp4 = AndroidUtilities.dp(actionBarPopupWindow$ActionBarPopupWindowLayout == null ? 24.0f : 12.0f);
-                ci.o1 o1Var = zf.j0.a;
+                ci.n1 n1Var = zf.j0.a;
                 view.setOutlineProvider(new zf.i0(0, dp4));
             } else if (actionBarPopupWindow$ActionBarPopupWindowLayout != null) {
                 view.setOutlineProvider(new t());
             } else {
                 float dp5 = AndroidUtilities.dp(29.0f);
-                ci.o1 o1Var2 = zf.j0.a;
+                ci.n1 n1Var2 = zf.j0.a;
                 view.setOutlineProvider(new zf.i0(0, dp5));
             }
             view.setClipToOutline(true);
@@ -874,9 +874,9 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         this.a0 = z13;
         this.v0 = System.currentTimeMillis();
         this.W = true;
-        bd bdVar = new bd(this, z13, actionBarPopupWindow$ActionBarPopupWindowLayout, z10, n2Var, n2Var2);
+        cd cdVar = new cd(this, z13, actionBarPopupWindow$ActionBarPopupWindowLayout, z10, n2Var, n2Var2);
         n2 n2Var3 = n2Var;
-        this.z0 = bdVar;
+        this.z0 = cdVar;
         boolean needDelayOpenAnimation = n2Var2.needDelayOpenAnimation();
         boolean z16 = !needDelayOpenAnimation;
         if (!needDelayOpenAnimation) {
@@ -1134,7 +1134,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
                 if (!n2Var.hasOwnBackground && view2.getBackground() == null) {
                     view2.setBackgroundColor(h6.x0(null, h6.d6, false));
                 }
-                this.s.addView(view2, w7.z5.d(-1.0f, -1));
+                this.s.addView(view2, w7.z5.c(-1.0f, -1));
                 this.s.setShouldHandleBottomInsets(n2Var.getEdgeToEdgeSupportMode());
                 this.s.setDrawNavigationBar(n2Var.drawEdgeNavigationBar());
                 k kVar2 = n2Var.actionBar;
@@ -1178,7 +1178,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
                     view3.setBackgroundColor(h6.x0(null, h6.d6, false));
                 }
                 v vVar = this.s;
-                vVar.addView(view3, Utilities.clamp(0, vVar.getChildCount(), 0), w7.z5.d(-1.0f, -1));
+                vVar.addView(view3, Utilities.clamp(0, vVar.getChildCount(), 0), w7.z5.c(-1.0f, -1));
                 this.s.setShouldHandleBottomInsets(n2Var.getEdgeToEdgeSupportMode());
                 this.s.setDrawNavigationBar(n2Var.drawEdgeNavigationBar());
                 k kVar3 = n2Var.actionBar;
@@ -1252,7 +1252,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
                     viewGroup3.removeView(view2);
                 }
             }
-            this.s.addView(view2, w7.z5.d(-1.0f, -1));
+            this.s.addView(view2, w7.z5.c(-1.0f, -1));
             this.s.setShouldHandleBottomInsets(n2Var2.getEdgeToEdgeSupportMode());
             this.s.setDrawNavigationBar(n2Var2.drawEdgeNavigationBar());
             k kVar2 = n2Var2.actionBar;
@@ -1442,7 +1442,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
                 int width2 = getWidth();
                 getY();
                 getHeight();
-                z5Var.s(canvas, z10, z11, width2, 1.0f);
+                z5Var.r(canvas, z10, z11, width2, 1.0f);
                 canvas2 = canvas;
                 this.U0 = false;
             }
@@ -1726,7 +1726,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
                 if (i10 != 0) {
                     h6.T = 2000;
                     h6.U = SystemClock.elapsedRealtime();
-                    AndroidUtilities.runOnUIThread(new ah.j(21), 2100L);
+                    AndroidUtilities.runOnUIThread(new ah.j(20), 2100L);
                 }
             }
             h6.I = g6Var3;
@@ -1839,7 +1839,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
 
     public n2 getLastFragmentIncludeMainTabs() {
         n2 lastFragment = getLastFragment();
-        return lastFragment instanceof pg0 ? ((pg0) lastFragment).X() : lastFragment;
+        return lastFragment instanceof og0 ? ((og0) lastFragment).X() : lastFragment;
     }
 
     @Override // org.telegram.ui.ActionBar.d5
@@ -2631,7 +2631,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
             }
             if (view.getParent() != this.w) {
                 AndroidUtilities.removeFromParent(view);
-                this.w.addView(view, w7.z5.d(-1.0f, -1));
+                this.w.addView(view, w7.z5.c(-1.0f, -1));
                 this.w.setShouldHandleBottomInsets(this.G.getEdgeToEdgeSupportMode());
             }
             this.G.onResume();
@@ -2797,7 +2797,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
         }
         for (int size = getFragmentStack().size() - 1; size >= 0; size--) {
             n2 n2Var = (n2) getFragmentStack().get(size);
-            if (n2Var != null && !n2Var.isFinishing() && !n2Var.isRemovingFromStack() && fg0.class.isInstance(n2Var)) {
+            if (n2Var != null && !n2Var.isFinishing() && !n2Var.isRemovingFromStack() && eg0.class.isInstance(n2Var)) {
                 return n2Var;
             }
         }
@@ -2828,7 +2828,7 @@ public class ActionBarLayout extends FrameLayout implements d5, ng.b {
             }
             if (view.getParent() != this.w) {
                 AndroidUtilities.removeFromParent(view);
-                this.w.addView(view, w7.z5.d(-1.0f, -1));
+                this.w.addView(view, w7.z5.c(-1.0f, -1));
                 this.w.setShouldHandleBottomInsets(this.G.getEdgeToEdgeSupportMode());
                 this.w.setDrawNavigationBar(this.G.drawEdgeNavigationBar());
             }

@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class g80 extends View {
     public final Bitmap a;
@@ -217,7 +217,7 @@ public final class g80 extends View {
                     canvas2.clipPath(path);
                 }
                 if (!(view instanceof org.telegram.ui.Cells.s7)) {
-                    if (!(view instanceof yh.h1) || i80Var.N == 0 || i80Var.O == 0) {
+                    if (!(view instanceof yh.g1) || i80Var.N == 0 || i80Var.O == 0) {
                         if (i80Var.L) {
                             canvas.saveLayerAlpha(0.0f, 0.0f, view.getWidth(), view.getHeight(), (int) (this.w * f7), 31);
                             canvas2 = canvas;
@@ -233,13 +233,13 @@ public final class g80 extends View {
                         }
                         canvas2.restore();
                     } else if (view.getAlpha() >= 1.0f) {
-                        ((yh.h1) view).a(this, canvas2, width, f17, this.w);
+                        ((yh.g1) view).a(this, canvas2, width, f17, this.w);
                         canvas2 = canvas;
                     } else {
                         canvas.saveLayerAlpha(0.0f, 0.0f, width, f17, (int) (this.w * f7), 31);
                         float lerp = AndroidUtilities.lerp(1.0f, 0.9f, this.w);
                         canvas.scale(lerp, lerp, width / 2.0f, f17 / 2.0f);
-                        ((yh.h1) view).a(this, canvas, width, f17, this.w);
+                        ((yh.g1) view).a(this, canvas, width, f17, this.w);
                         canvas.restore();
                         canvas2 = canvas;
                     }

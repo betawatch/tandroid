@@ -15,7 +15,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class t7 extends FrameLayout {
     public final int a;
@@ -31,7 +31,7 @@ public final class t7 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(activity);
         this.c = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
-        addView(w9Var, w7.z5.a(30.0f, 14.0f, 0.0f, 0.0f, 0.0f, 30, 19));
+        addView(w9Var, w7.z5.d(30, 30.0f, 19, 14.0f, 0.0f, 0.0f, 0.0f));
         TextView textView = new TextView(activity);
         this.d = textView;
         textView.setTextSize(1, 14.0f);
@@ -40,11 +40,11 @@ public final class t7 extends FrameLayout {
         textView.setSingleLine();
         textView.setLines(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, w7.z5.a(-2.0f, 53.0f, 11.33f, 12.0f, 0.0f, -1, 51));
+        addView(textView, w7.z5.d(-1, -2.0f, 51, 53.0f, 11.33f, 12.0f, 0.0f));
         TextView textView2 = new TextView(activity);
         textView2.setTextSize(1, 12.0f);
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.85f, -1));
-        addView(textView2, w7.z5.a(-2.0f, 53.0f, 29.33f, 12.0f, 0.0f, -1, 51));
+        addView(textView2, w7.z5.d(-1, -2.0f, 51, 53.0f, 29.33f, 12.0f, 0.0f));
         textView2.setText(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.LiveStoryPeerChange), false, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(0.33f), 1.0f));
         set(null);
     }

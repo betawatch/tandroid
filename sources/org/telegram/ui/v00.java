@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v00 extends s4.r0 {
     public final /* synthetic */ g10 a;
@@ -26,7 +26,7 @@ public final class v00 extends s4.r0 {
     @Override // s4.r0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
         g10 g10Var = this.a;
-        ci.i3 i3Var = g10Var.m0;
+        ci.h3 h3Var = g10Var.m0;
         s4.b0 b0Var = g10Var.j0;
         ne.b bVar = g10Var.a;
         fz fzVar = g10Var.n0;
@@ -47,9 +47,9 @@ public final class v00 extends s4.r0 {
                 CharSequence text = u3Var.getText();
                 if (!TextUtils.isEmpty(text) && u3Var.getAlpha() > 0.0f) {
                     String charSequence = text.toString();
-                    if (!TextUtils.equals((String) i3Var.d, charSequence)) {
-                        i3Var.d = charSequence;
-                        ((org.telegram.ui.Components.p6) i3Var.b).t(charSequence, true, true);
+                    if (!TextUtils.equals((String) h3Var.d, charSequence)) {
+                        h3Var.d = charSequence;
+                        ((org.telegram.ui.Components.p6) h3Var.b).t(charSequence, true, true);
                     }
                     if (i11 != 0) {
                         AndroidUtilities.cancelRunOnUIThread(fzVar);
@@ -79,13 +79,13 @@ public final class v00 extends s4.r0 {
             MessageObject messageObject = t7Var.e <= 0 ? null : t7Var.b[0];
             if (messageObject != null) {
                 int i12 = messageObject.messageOwner.date;
-                i3Var.getClass();
+                h3Var.getClass();
                 String formatDateChat = LocaleController.formatDateChat(i12);
-                if (TextUtils.equals((String) i3Var.d, formatDateChat)) {
+                if (TextUtils.equals((String) h3Var.d, formatDateChat)) {
                     return;
                 }
-                i3Var.d = formatDateChat;
-                ((org.telegram.ui.Components.p6) i3Var.b).t(formatDateChat, true, true);
+                h3Var.d = formatDateChat;
+                ((org.telegram.ui.Components.p6) h3Var.b).t(formatDateChat, true, true);
             }
         }
     }

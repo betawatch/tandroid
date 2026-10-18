@@ -7,11 +7,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ek0;
 import org.telegram.ui.go0;
 import org.telegram.ui.vn0;
-import t0.h;
 import vc.g;
 import w7.o9;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class a extends AsyncTask {
     public final /* synthetic */ String a;
@@ -30,7 +29,7 @@ public final class a extends AsyncTask {
     public final Object doInBackground(Object[] objArr) {
         b bVar = this.d;
         try {
-            h c10 = xc.b.c(o9.a(this.b), new e(this.a, 3));
+            u2.c c10 = xc.b.c(o9.a(this.b), new e(this.a, 3));
             Object obj = bVar.a;
             return new c(c10, null);
         } catch (g e) {
@@ -43,14 +42,14 @@ public final class a extends AsyncTask {
     public final void onPostExecute(Object obj) {
         c cVar = (c) obj;
         Object obj2 = this.d.a;
-        h hVar = cVar.a;
+        u2.c cVar2 = cVar.a;
         vn0 vn0Var = this.c;
-        if (hVar != null) {
+        if (cVar2 != null) {
             go0 go0Var = vn0Var.a;
             if (go0Var.Q0) {
                 return;
             }
-            go0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) hVar.c, (String) hVar.b);
+            go0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) cVar2.c, (String) cVar2.b);
             AndroidUtilities.runOnUIThread(new ek0(vn0Var, 9));
             return;
         }

@@ -9,7 +9,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LiteMode;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class b0 extends n0 {
     public int A;
@@ -642,7 +642,7 @@ public class b0 extends n0 {
             if (U != null && !U.r()) {
                 if (!U.h() || U.j() || b0Var.b.w.b) {
                     b0Var.q(r10);
-                    b0Var.a.t(r10);
+                    b0Var.a.y(r10);
                     eVar2.i(q6);
                     b0Var.b.f.m0(U);
                 } else {

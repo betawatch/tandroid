@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class kc extends sg.j0 {
+public final class kc extends sg.k0 {
     public final /* synthetic */ int W0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class kc extends sg.j0 {
         this.W0 = i12;
     }
 
-    @Override // sg.j0
+    @Override // sg.k0
     public final int p1() {
         return this.W0;
     }

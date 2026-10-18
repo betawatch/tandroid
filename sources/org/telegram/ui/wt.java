@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0, org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, org.telegram.ui.Components.nh0, Utilities.Callback5, org.telegram.ui.Components.ke0, org.telegram.ui.ActionBar.k1, org.telegram.ui.Components.tl0, hg.z1, org.telegram.ui.Components.yl0, r0.n, org.telegram.ui.Components.xl0, pt, ne.d, fj0 {
+public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0, org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, org.telegram.ui.Components.nh0, Utilities.Callback5, org.telegram.ui.Components.ke0, org.telegram.ui.ActionBar.k1, org.telegram.ui.Components.tl0, hg.z1, org.telegram.ui.Components.yl0, r0.n, org.telegram.ui.Components.xl0, pt, ne.d, ej0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -65,19 +65,19 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
 
     @Override // org.telegram.ui.pt
     public void L0(kt ktVar) {
-        eg0 eg0Var = (eg0) this.b;
-        eg0Var.I = true;
+        dg0 dg0Var = (dg0) this.b;
+        dg0Var.I = true;
         String str = ktVar.c;
-        eg0Var.a.setText(str);
-        eg0Var.t(str, ktVar);
-        eg0Var.y = ktVar;
-        eg0Var.x = 0;
-        eg0Var.I = false;
+        dg0Var.a.setText(str);
+        dg0Var.t(str, ktVar);
+        dg0Var.y = ktVar;
+        dg0Var.x = 0;
+        dg0Var.I = false;
         MessagesController.getGlobalMainSettings().edit().putString("phone_code_last_matched_" + ktVar.c, ktVar.d).apply();
-        AndroidUtilities.runOnUIThread(new uf0(eg0Var, 4), 300L);
-        bg0 bg0Var = eg0Var.b;
-        bg0Var.requestFocus();
-        bg0Var.setSelection(bg0Var.length());
+        AndroidUtilities.runOnUIThread(new tf0(dg0Var, 4), 300L);
+        ag0 ag0Var = dg0Var.b;
+        ag0Var.requestFocus();
+        ag0Var.setSelection(ag0Var.length());
     }
 
     @Override // hg.z1
@@ -103,19 +103,19 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
             case 13:
                 break;
             case 22:
-                final wi0 wi0Var = (wi0) this.b;
-                if (i10 >= wi0Var.I && i10 < wi0Var.J) {
+                final vi0 vi0Var = (vi0) this.b;
+                if (i10 >= vi0Var.I && i10 < vi0Var.J) {
                     try {
                         view.performHapticFeedback(0, 2);
                     } catch (Exception unused) {
                     }
-                    final MessageObject messageObject = (MessageObject) wi0Var.x.get(i10 - wi0Var.I);
+                    final MessageObject messageObject = (MessageObject) vi0Var.x.get(i10 - vi0Var.I);
                     final long dialogId = MessageObject.getDialogId(messageObject.messageOwner);
                     final boolean isUserDialog = DialogObject.isUserDialog(dialogId);
                     ArrayList arrayList = new ArrayList();
                     ArrayList arrayList2 = new ArrayList();
                     ArrayList arrayList3 = new ArrayList();
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(wi0Var.getParentActivity(), 0, wi0Var.getResourceProvider());
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(vi0Var.getParentActivity(), 0, vi0Var.getResourceProvider());
                     if (messageObject.isStory()) {
                         arrayList.add(LocaleController.getString(isUserDialog ? R.string.OpenProfile : R.string.OpenChannel2));
                         arrayList3.add(Integer.valueOf(isUserDialog ? R.drawable.msg_openprofile : R.drawable.msg_channel));
@@ -126,10 +126,10 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
                     arrayList2.add(0);
                     CharSequence[] charSequenceArr = (CharSequence[]) arrayList.toArray(new CharSequence[arrayList2.size()]);
                     int[] intArray = AndroidUtilities.toIntArray(arrayList3);
-                    DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ri0
+                    DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.qi0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i11) {
-                            org.telegram.ui.ActionBar.n2 n2Var = wi0.this;
+                            org.telegram.ui.ActionBar.n2 n2Var = vi0.this;
                             n2Var.getClass();
                             MessageObject messageObject2 = messageObject;
                             boolean isStory = messageObject2.isStory();
@@ -156,7 +156,7 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
                     b2Var.P = charSequenceArr;
                     b2Var.Q = intArray;
                     b2Var.M = onClickListener;
-                    wi0Var.showDialog(b2Var);
+                    vi0Var.showDialog(b2Var);
                     break;
                 }
                 break;
@@ -174,7 +174,7 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
         return false;
     }
 
-    @Override // org.telegram.ui.fj0
+    @Override // org.telegram.ui.ej0
     public void b(Canvas canvas) {
         ((Layout) this.b).draw(canvas);
     }
@@ -271,19 +271,19 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
                 break;
             case 18:
                 xd0 xd0Var = (xd0) obj;
-                fg0.n0(xd0Var.y, xd0Var.s, xd0Var.v, xd0Var.w);
+                eg0.n0(xd0Var.y, xd0Var.s, xd0Var.v, xd0Var.w);
                 break;
             case 19:
                 qe0 qe0Var = (qe0) obj;
-                fg0 fg0Var = qe0Var.E;
-                fg0Var.n1(0, true);
+                eg0 eg0Var = qe0Var.E;
+                eg0Var.n1(0, true);
                 TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
                 deleteaccount.reason = "Forgot password";
-                i11 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+                i11 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
                 ConnectionsManager.getInstance(i11).sendRequest(deleteaccount, new m(qe0Var, 12), 10);
                 break;
             case 25:
-                ((org.telegram.messenger.wi) obj).run();
+                ((org.telegram.messenger.xi) obj).run();
                 break;
             case 27:
                 mk0 mk0Var = ((ik0) obj).b;
@@ -345,7 +345,7 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
                         tL_inputDocument.file_reference = new byte[0];
                     }
                     saveringtone.unsave = true;
-                    mk0Var.getConnectionsManager().sendRequest(saveringtone, new ci.e6(8));
+                    mk0Var.getConnectionsManager().sendRequest(saveringtone, new ci.d6(8));
                 }
                 mk0.W(mk0Var);
                 mk0Var.c0();
@@ -459,10 +459,10 @@ public final /* synthetic */ class wt implements org.telegram.ui.Components.mw0,
 
     @Override // ne.d
     public void u(int i10, float f7, float f10, ne.e eVar) {
-        rg0 rg0Var = (rg0) this.b;
-        rg0Var.getClass();
-        rg0Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.019f, f7));
-        rg0Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.019f, f7));
+        qg0 qg0Var = (qg0) this.b;
+        qg0Var.getClass();
+        qg0Var.setScaleX(AndroidUtilities.lerp(1.0f, 1.019f, f7));
+        qg0Var.setScaleY(AndroidUtilities.lerp(1.0f, 1.019f, f7));
     }
 
     @Override // hg.z1

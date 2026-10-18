@@ -11,7 +11,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class x5 extends FrameLayout {
     public final /* synthetic */ z5 a;
@@ -46,14 +46,14 @@ public final class x5 extends FrameLayout {
                         long j10 = z5Var2.P;
                         ChannelBoostsController.CanApplyBoost canApplyBoost = z5Var2.S;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = z5Var2.R;
-                        int i12 = sg.j0.V0;
+                        int i12 = sg.k0.V0;
                         if (canApplyBoost != null && tL_premium_boostsStatus != null && z5Var2.getParentActivity() != null) {
-                            sg.j0 j0Var = new sg.j0(19, z5Var2.getCurrentAccount(), z5Var2.getParentActivity(), z5Var2, z5Var2.getResourceProvider());
-                            j0Var.H1(canApplyBoost);
-                            j0Var.G1(tL_premium_boostsStatus, true);
-                            j0Var.I1(j10);
-                            j0Var.g0 = null;
-                            z5Var2.showDialog(j0Var);
+                            sg.k0 k0Var = new sg.k0(19, z5Var2.getCurrentAccount(), z5Var2.getParentActivity(), z5Var2, z5Var2.getResourceProvider());
+                            k0Var.H1(canApplyBoost);
+                            k0Var.G1(tL_premium_boostsStatus, true);
+                            k0Var.I1(j10);
+                            k0Var.g0 = null;
+                            z5Var2.showDialog(k0Var);
                             break;
                         }
                         break;
@@ -67,10 +67,10 @@ public final class x5 extends FrameLayout {
                         break;
                     default:
                         z5 z5Var4 = x5Var.a;
-                        sg.j0 j0Var2 = new sg.j0(31, z5Var4.Q, x5Var.getContext(), z5Var4, z5Var4.getResourceProvider());
-                        j0Var2.G1(z5Var4.R, true);
-                        j0Var2.I1(z5Var4.P);
-                        z5Var4.showDialog(j0Var2);
+                        sg.k0 k0Var2 = new sg.k0(31, z5Var4.Q, x5Var.getContext(), z5Var4, z5Var4.getResourceProvider());
+                        k0Var2.G1(z5Var4.R, true);
+                        k0Var2.I1(z5Var4.P);
+                        z5Var4.showDialog(k0Var2);
                         break;
                 }
             }
@@ -94,14 +94,14 @@ public final class x5 extends FrameLayout {
                         long j10 = z5Var2.P;
                         ChannelBoostsController.CanApplyBoost canApplyBoost = z5Var2.S;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = z5Var2.R;
-                        int i12 = sg.j0.V0;
+                        int i12 = sg.k0.V0;
                         if (canApplyBoost != null && tL_premium_boostsStatus != null && z5Var2.getParentActivity() != null) {
-                            sg.j0 j0Var = new sg.j0(19, z5Var2.getCurrentAccount(), z5Var2.getParentActivity(), z5Var2, z5Var2.getResourceProvider());
-                            j0Var.H1(canApplyBoost);
-                            j0Var.G1(tL_premium_boostsStatus, true);
-                            j0Var.I1(j10);
-                            j0Var.g0 = null;
-                            z5Var2.showDialog(j0Var);
+                            sg.k0 k0Var = new sg.k0(19, z5Var2.getCurrentAccount(), z5Var2.getParentActivity(), z5Var2, z5Var2.getResourceProvider());
+                            k0Var.H1(canApplyBoost);
+                            k0Var.G1(tL_premium_boostsStatus, true);
+                            k0Var.I1(j10);
+                            k0Var.g0 = null;
+                            z5Var2.showDialog(k0Var);
                             break;
                         }
                         break;
@@ -115,10 +115,10 @@ public final class x5 extends FrameLayout {
                         break;
                     default:
                         z5 z5Var4 = x5Var.a;
-                        sg.j0 j0Var2 = new sg.j0(31, z5Var4.Q, x5Var.getContext(), z5Var4, z5Var4.getResourceProvider());
-                        j0Var2.G1(z5Var4.R, true);
-                        j0Var2.I1(z5Var4.P);
-                        z5Var4.showDialog(j0Var2);
+                        sg.k0 k0Var2 = new sg.k0(31, z5Var4.Q, x5Var.getContext(), z5Var4, z5Var4.getResourceProvider());
+                        k0Var2.G1(z5Var4.R, true);
+                        k0Var2.I1(z5Var4.P);
+                        z5Var4.showDialog(k0Var2);
                         break;
                 }
             }
@@ -142,14 +142,14 @@ public final class x5 extends FrameLayout {
                         long j10 = z5Var2.P;
                         ChannelBoostsController.CanApplyBoost canApplyBoost = z5Var2.S;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = z5Var2.R;
-                        int i122 = sg.j0.V0;
+                        int i122 = sg.k0.V0;
                         if (canApplyBoost != null && tL_premium_boostsStatus != null && z5Var2.getParentActivity() != null) {
-                            sg.j0 j0Var = new sg.j0(19, z5Var2.getCurrentAccount(), z5Var2.getParentActivity(), z5Var2, z5Var2.getResourceProvider());
-                            j0Var.H1(canApplyBoost);
-                            j0Var.G1(tL_premium_boostsStatus, true);
-                            j0Var.I1(j10);
-                            j0Var.g0 = null;
-                            z5Var2.showDialog(j0Var);
+                            sg.k0 k0Var = new sg.k0(19, z5Var2.getCurrentAccount(), z5Var2.getParentActivity(), z5Var2, z5Var2.getResourceProvider());
+                            k0Var.H1(canApplyBoost);
+                            k0Var.G1(tL_premium_boostsStatus, true);
+                            k0Var.I1(j10);
+                            k0Var.g0 = null;
+                            z5Var2.showDialog(k0Var);
                             break;
                         }
                         break;
@@ -163,10 +163,10 @@ public final class x5 extends FrameLayout {
                         break;
                     default:
                         z5 z5Var4 = x5Var.a;
-                        sg.j0 j0Var2 = new sg.j0(31, z5Var4.Q, x5Var.getContext(), z5Var4, z5Var4.getResourceProvider());
-                        j0Var2.G1(z5Var4.R, true);
-                        j0Var2.I1(z5Var4.P);
-                        z5Var4.showDialog(j0Var2);
+                        sg.k0 k0Var2 = new sg.k0(31, z5Var4.Q, x5Var.getContext(), z5Var4, z5Var4.getResourceProvider());
+                        k0Var2.G1(z5Var4.R, true);
+                        k0Var2.I1(z5Var4.P);
+                        z5Var4.showDialog(k0Var2);
                         break;
                 }
             }
@@ -178,6 +178,6 @@ public final class x5 extends FrameLayout {
             linearLayout.addView(n5Var2, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
         linearLayout.addView(n5Var3, w7.z5.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        addView(linearLayout, w7.z5.a(-2.0f, 0.0f, 19.0f, 0.0f, 0.0f, -2, 1));
+        addView(linearLayout, w7.z5.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
     }
 }

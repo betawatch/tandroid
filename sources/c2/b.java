@@ -18,7 +18,7 @@ import android.view.WindowManager;
 import c3.c0;
 import c3.j0;
 import ci.i1;
-import ci.p3;
+import ci.o3;
 import com.google.firebase.messaging.FirebaseMessaging;
 import e2.i0;
 import e9.c2;
@@ -60,7 +60,7 @@ import tc.v;
 import v7.u6;
 import w7.a0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class b implements c3.q {
     public static b e;
@@ -76,7 +76,7 @@ public final class b implements c3.q {
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
         animatorSet.playTogether(i(suVarArr[0], 0, 255, 0, 300), i(suVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), i(suVarArr[2], 0, 255, 300, 300), i(suVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), i(suVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), i(suVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
-        animatorSet.addListener(new p3(this, view));
+        animatorSet.addListener(new o3(this, view));
     }
 
     public static void a(kc.e[][][] eVarArr, int i10, kc.e eVar) {

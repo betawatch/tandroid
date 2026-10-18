@@ -17,7 +17,7 @@ import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.un;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class g9 extends pg.b {
     public final Context d;
@@ -26,7 +26,7 @@ public final class g9 extends pg.b {
     public im0 h;
     public final /* synthetic */ k9 n;
 
-    public g9(k9 k9Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, d9 d9Var, ci.e4 e4Var) {
+    public g9(k9 k9Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, d9 d9Var, ci.d4 d4Var) {
         this.n = k9Var;
         this.d = context;
         this.e = d6Var;

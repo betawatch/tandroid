@@ -33,11 +33,11 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.ki0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.i9;
+import org.telegram.ui.Wallet.c9;
 import org.telegram.ui.sn;
 import tg.p;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class j extends Dialog {
     public final /* synthetic */ k E;
@@ -275,7 +275,7 @@ public final class j extends Dialog {
         int i11 = (-this.f.getTop()) / 2;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addUpdateListener(new i9(this, width, left, top, width2, i11, 1));
+        ofFloat.addUpdateListener(new c9(this, width, left, top, width2, i11, 1));
         this.s.addListener(new dn0(this, z10, width, i10));
         this.s.setDuration(220L);
         this.s.setInterpolator(bs.f);

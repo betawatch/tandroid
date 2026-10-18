@@ -22,7 +22,7 @@ import org.telegram.ui.Components.j9;
 import org.telegram.ui.re;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class d {
     public final n2 a;
@@ -113,7 +113,7 @@ public final class d {
             LinearLayout linearLayout = new LinearLayout(n2Var.getParentActivity());
             this.f = linearLayout;
             linearLayout.setOrientation(0);
-            this.d.addView(this.f, z5.a(-1.0f, 0.0f, 0.0f, 100.0f, 0.0f, -1, 48));
+            this.d.addView(this.f, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 100.0f, 0.0f));
             v vVar = new v(1, n2Var.getParentActivity(), false);
             this.e = vVar;
             vVar.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
@@ -121,7 +121,7 @@ public final class d {
             for (int i11 = 0; i11 < j9Var.c.length; i11++) {
                 j9Var.l(0, null, 0);
             }
-            this.f.addView(this.e, z5.a(-1.0f, 8.0f, 0.0f, 10.0f, 0.0f, -2, 48));
+            this.f.addView(this.e, z5.d(-2, -1.0f, 48, 8.0f, 0.0f, 10.0f, 0.0f));
             TextView textView = new TextView(n2Var.getParentActivity());
             this.g = textView;
             textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -130,7 +130,7 @@ public final class d {
             this.g.setText((CharSequence) null);
             this.g.setTextColor(n2Var.getThemedColor(h6.fe));
             this.g.setTypeface(AndroidUtilities.bold());
-            this.f.addView(this.g, z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
+            this.f.addView(this.g, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             ImageView imageView = new ImageView(n2Var.getParentActivity());
             this.h = imageView;
             imageView.setBackground(h6.g0(n2Var.getThemedColor(h6.x7) & 436207615, 1, AndroidUtilities.dp(14.0f)));
@@ -166,7 +166,7 @@ public final class d {
                     }
                 }
             });
-            this.d.addView(this.h, z5.a(-1.0f, 0.0f, 0.0f, 4.0f, 0.0f, 36, 53));
+            this.d.addView(this.h, z5.d(36, -1.0f, 53, 0.0f, 0.0f, 4.0f, 0.0f));
             TLRPC.ChatFull chatFull = this.j;
             if (chatFull != null) {
                 e(chatFull.requests_pending, chatFull.recent_requesters, false);

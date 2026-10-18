@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
     public TL_iv.pageBlockChannel E;
@@ -57,7 +57,7 @@ public final class f1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
         TextView textView = new TextView(context);
         this.d = textView;
         com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
-        org.telegram.messenger.kk.m(R.string.ChannelJoin, textView, 19);
+        org.telegram.messenger.lk.m(R.string.ChannelJoin, textView, 19);
         addView(textView, w7.z5.e(-2, 39, 53));
         textView.setOnClickListener(new org.telegram.ui.ActionBar.s1(3, this, d70Var));
         ImageView imageView = new ImageView(context);
@@ -251,7 +251,7 @@ public final class f1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
                 int i12 = ((l4) d70Var).X;
                 TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                 tL_contacts_resolveUsername.username = chat2.username;
-                ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new ci.t8(d70Var, this.b, i12, this, 2));
+                ConnectionsManager.getInstance(i12).sendRequest(tL_contacts_resolveUsername, new ci.s8(d70Var, this.b, i12, this, 2));
             }
             a(1, false);
         } else {

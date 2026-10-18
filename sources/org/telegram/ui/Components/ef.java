@@ -17,13 +17,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ef extends rp0 {
     public final /* synthetic */ ChatActivityEnterView H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ef(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.sn snVar, MessagesController messagesController, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final ai.t2 t2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+    public ef(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.sn snVar, MessagesController messagesController, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final ai.r2 r2Var, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
         this.H = chatActivityEnterView;
         this.b = true;
@@ -35,9 +35,9 @@ public final class ef extends rp0 {
         this.G = new ArrayList();
         this.r = peer;
         this.s = tL_channels_sendAsPeers;
-        ah.x xVar = new ah.x(this, context, 21);
+        ah.x xVar = new ah.x(this, context, 22);
         this.t = xVar;
-        xVar.setLayoutParams(w7.z5.d(-2.0f, -2));
+        xVar.setLayoutParams(w7.z5.c(-2.0f, -2));
         setContentView(xVar);
         setWidth(-2);
         setHeight(-2);
@@ -54,7 +54,7 @@ public final class ef extends rp0 {
         lp0Var.setOrientation(1);
         TextView textView = new TextView(context);
         this.p = textView;
-        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.m5, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.lk.o(org.telegram.ui.ActionBar.h6.m5, d6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SendMessageAsTitle));
         textView.setTypeface(AndroidUtilities.bold(), 1);
         int dp = AndroidUtilities.dp(18.0f);
@@ -72,7 +72,7 @@ public final class ef extends rp0 {
         im0Var.setOnItemClickListener(new wl0() { // from class: org.telegram.ui.Components.kp0
             @Override // org.telegram.ui.Components.wl0
             public final void a(int i10, View view) {
-                rp0.k(ef.this, arrayList, context, snVar, z10, t2Var, view, i10);
+                rp0.k(ef.this, arrayList, context, snVar, z10, r2Var, view, i10);
             }
         });
         im0Var.setOverScrollMode(2);
@@ -83,8 +83,8 @@ public final class ef extends rp0 {
         drawable.setAlpha(153);
         view.setBackground(drawable);
         view.setAlpha(0.0f);
-        frameLayout.addView(view, w7.z5.d(4.0f, -1));
-        lp0Var.addView(frameLayout, w7.z5.d(-2.0f, -1));
+        frameLayout.addView(view, w7.z5.c(4.0f, -1));
+        lp0Var.addView(frameLayout, w7.z5.c(-2.0f, -1));
         xVar.addView(lp0Var);
     }
 

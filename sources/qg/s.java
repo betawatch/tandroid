@@ -5,101 +5,115 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Paint a;
     public final Paint b;
-    public int c;
-    public int d;
-    public final /* synthetic */ y e;
+    public final Paint c;
+    public float d;
+    public float e;
+    public final Drawable f;
+    public final float[] h;
+    public final /* synthetic */ x n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s(y yVar, Context context) {
+    public s(x xVar, Context context) {
         super(context);
-        this.e = yVar;
+        this.n = xVar;
         this.a = new Paint(1);
+        this.b = new Paint(1);
         Paint paint = new Paint(1);
-        this.b = paint;
+        this.c = paint;
+        this.h = new float[3];
+        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(3.0f));
         paint.setColor(-1);
         paint.setStyle(Paint.Style.FILL_AND_STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+        this.f = context.getDrawable(R.drawable.knob_shadow);
     }
 
-    public final void a() {
-        int argb;
-        int argb2;
-        int i10 = this.c;
-        y yVar = this.e;
-        if (i10 == 1) {
-            argb = Color.argb(255, Color.red(yVar.f), 0, Color.blue(yVar.f));
-            argb2 = Color.argb(255, Color.red(yVar.f), 255, Color.blue(yVar.f));
-        } else if (i10 != 2) {
-            argb = Color.argb(255, 0, Color.green(yVar.f), Color.blue(yVar.f));
-            argb2 = Color.argb(255, 255, Color.green(yVar.f), Color.blue(yVar.f));
+    public final void a(MotionEvent motionEvent) {
+        this.d = (motionEvent.getX() - getPaddingLeft()) / ((getWidth() - getPaddingLeft()) - getPaddingRight());
+        float y3 = (motionEvent.getY() - getPaddingTop()) / ((getHeight() - getPaddingTop()) - getPaddingBottom());
+        this.e = y3;
+        float[] fArr = this.h;
+        fArr[0] = y3 * 360.0f;
+        float f7 = this.d;
+        if (f7 <= 0.22f || f7 >= 0.78f) {
+            fArr[1] = AndroidUtilities.lerp(1.0f, 0.0f, f7 <= 0.22f ? 1.0f - (f7 / 0.22f) : (f7 - 0.78f) / 0.22000003f);
+            float f10 = this.d;
+            fArr[2] = f10 > 0.22f ? AndroidUtilities.lerp(1.0f, 0.0f, (f10 - 0.78f) / 0.22000003f) : 1.0f;
         } else {
-            argb = Color.argb(255, Color.red(yVar.f), Color.green(yVar.f), 0);
-            argb2 = Color.argb(255, Color.red(yVar.f), Color.green(yVar.f), 255);
+            fArr[1] = 1.0f;
+            fArr[2] = 1.0f;
         }
-        this.a.setShader(new LinearGradient(0.0f, 0.0f, getWidth(), 0.0f, new int[]{argb, argb2}, (float[]) null, Shader.TileMode.CLAMP));
-    }
-
-    public final void b(float f7) {
-        float dp = AndroidUtilities.dp(6.0f);
-        float a2 = w7.r.a(((f7 - dp) + (AndroidUtilities.dp(13.0f) - (this.b.getStrokeWidth() / 2.0f))) / (getWidth() - (dp * 2.0f)), 0.0f, 1.0f);
-        int i10 = this.c;
-        y yVar = this.e;
-        yVar.n(i0.a.o(i10 != 1 ? i10 != 2 ? Color.argb(255, (int) (a2 * 255.0f), Color.green(yVar.f), Color.blue(yVar.f)) : Color.argb(255, Color.red(yVar.f), Color.green(yVar.f), (int) (a2 * 255.0f)) : Color.argb(255, Color.red(yVar.f), (int) (a2 * 255.0f), Color.blue(yVar.f)), Color.alpha(yVar.f)), 4);
+        int HSVToColor = Color.HSVToColor(fArr);
+        x xVar = this.n;
+        xVar.f = HSVToColor;
+        xVar.n(HSVToColor, 0);
         invalidate();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        float height = getHeight() / 2.0f;
-        float dp = AndroidUtilities.dp(6.0f);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(dp, height - dp, getWidth() - dp, height + dp);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.a);
-        int i10 = this.c;
-        y yVar = this.e;
-        float red = (i10 != 1 ? i10 != 2 ? Color.red(yVar.f) : Color.blue(yVar.f) : Color.green(yVar.f)) / 255.0f;
-        float dp2 = AndroidUtilities.dp(13.0f);
-        Paint paint = this.b;
-        float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
-        float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * red) + dp) - strokeWidth);
-        canvas.drawCircle(max, height, dp2, paint);
-        rg.i1.y1(max, height, strokeWidth, this.d, canvas);
+        rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.a);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.b);
+        float dp = AndroidUtilities.dp(13.0f);
+        Paint paint = this.c;
+        float strokeWidth = dp - (paint.getStrokeWidth() / 2.0f);
+        float dp2 = AndroidUtilities.dp(16.0f);
+        int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
+        int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
+        float f7 = width;
+        float a2 = w7.r.a(this.d * f7, dp2, f7 - dp2) + getPaddingLeft();
+        float f10 = height;
+        float a10 = w7.r.a(this.e * f10, dp2, f10 - dp2) + getPaddingTop();
+        Rect rect = AndroidUtilities.rectTmp2;
+        Drawable drawable = this.f;
+        drawable.getPadding(rect);
+        int i10 = (int) ((a2 - dp) - rect.left);
+        int i11 = (int) ((a10 - dp) - rect.top);
+        int i12 = rect.bottom;
+        drawable.setBounds(i10, i11, (int) (a2 + dp + i12), (int) (a10 + dp + i12));
+        drawable.draw(canvas);
+        canvas.drawCircle(a2, a10, dp, paint);
+        rg.i1.y1(a2, a10, strokeWidth, i0.a.o(this.n.f, 255), canvas);
     }
 
     @Override // android.view.View
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         super.onSizeChanged(i10, i11, i12, i13);
-        a();
+        this.a.setShader(new LinearGradient(0.0f, getPaddingTop(), 0.0f, i11 - getPaddingBottom(), new int[]{-65536, -256, -16711936, -16711681, -16776961, -65281, -65536}, (float[]) null, Shader.TileMode.CLAMP));
+        this.b.setShader(new LinearGradient(getPaddingLeft(), 0.0f, i10 - getPaddingRight(), 0.0f, new int[]{-1, 0, 0, -16777216}, new float[]{0.06f, 0.22f, 0.78f, 0.94f}, Shader.TileMode.MIRROR));
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 0) {
-            if (actionMasked == 1) {
-                b(motionEvent.getX());
-                getParent().requestDisallowInterceptTouchEvent(false);
-            } else if (actionMasked != 2) {
-                if (actionMasked == 3) {
-                    getParent().requestDisallowInterceptTouchEvent(false);
-                }
-            }
-            return true;
+        if (actionMasked == 0) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+            a(motionEvent);
+        } else if (actionMasked == 1) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+            a(motionEvent);
+        } else if (actionMasked == 2) {
+            a(motionEvent);
+        } else if (actionMasked == 3) {
+            getParent().requestDisallowInterceptTouchEvent(false);
         }
-        getParent().requestDisallowInterceptTouchEvent(true);
-        b(motionEvent.getX());
         return true;
     }
 }

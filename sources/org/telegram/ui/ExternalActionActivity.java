@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class ExternalActionActivity extends Activity implements org.telegram.ui.ActionBar.a5 {
     public static final ArrayList x = new ArrayList();
@@ -90,11 +90,11 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
                     this.v = z11;
                     this.r = i10;
                     this.s = i11;
-                    fg0 fg0Var = new fg0();
+                    eg0 eg0Var = new eg0();
                     if (AndroidUtilities.isTablet()) {
-                        this.d.c(-1, fg0Var);
+                        this.d.c(-1, eg0Var);
                     } else {
-                        this.c.c(-1, fg0Var);
+                        this.c.c(-1, eg0Var);
                     }
                     if (!AndroidUtilities.isTablet()) {
                         this.e.setVisibility(8);
@@ -341,7 +341,7 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
             this.d.setDrawerLayoutContainer(this.f);
         } else {
             RelativeLayout relativeLayout2 = new RelativeLayout(this);
-            this.f.addView(relativeLayout2, w7.z5.d(-1.0f, -1));
+            this.f.addView(relativeLayout2, w7.z5.c(-1.0f, -1));
             ig.p1 p1Var2 = new ig.p1(this, d5Var, 3);
             this.e = p1Var2;
             p1Var2.setOccupyStatusBar(false);
@@ -355,7 +355,7 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
         this.c.setDelegate(this);
         org.telegram.ui.Components.le0 le0Var = new org.telegram.ui.Components.le0(this);
         this.b = le0Var;
-        this.f.addView(le0Var, w7.z5.d(-1.0f, -1));
+        this.f.addView(le0Var, w7.z5.c(-1.0f, -1));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeOtherAppActivities, this);
         this.c.X();
         ActionBarLayout actionBarLayout2 = this.d;

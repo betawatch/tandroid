@@ -48,9 +48,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne.d, NotificationCenter.NotificationCenterDelegate, og0, qh.d {
+public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne.d, NotificationCenter.NotificationCenterDelegate, ng0, qh.d {
     public boolean E;
     public boolean F;
     public boolean G;
@@ -433,7 +433,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.ActionBar.n2, org.telegram.ui.og0
+    @Override // org.telegram.ui.ActionBar.n2, org.telegram.ui.ng0
     public final boolean S(MotionEvent motionEvent, boolean z10) {
         org.telegram.ui.Components.im0 im0Var = this.f;
         return im0Var == null || im0Var.getFastScroll() == null || !this.f.getFastScroll().n;
@@ -570,7 +570,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         this.e.e(true, false);
         this.e.d.setText(LocaleController.getString(R.string.NoResult));
         this.e.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-        this.y.addView(this.e, w7.z5.a(-1.0f, 12.0f, 64.0f, 12.0f, 0.0f, -1, 119));
+        this.y.addView(this.e, w7.z5.d(-1, -1.0f, 119, 12.0f, 64.0f, 12.0f, 0.0f));
         s4.k kVar = new s4.k();
         kVar.C = false;
         kVar.n(150L);
@@ -591,8 +591,8 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         y8 y8Var2 = this.y;
         org.telegram.ui.Components.im0 im0Var3 = this.f;
         float f7 = -this.a;
-        y8Var2.addView(im0Var3, w7.z5.a(-1.0f, 0.0f, f7, 0.0f, f7, -1, 3));
-        this.y.addView(this.Z, w7.z5.a(52.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 48));
+        y8Var2.addView(im0Var3, w7.z5.d(-1, -1.0f, 3, 0.0f, f7, 0.0f, f7));
+        this.y.addView(this.Z, w7.z5.d(-1, 52.0f, 48, 6.0f, 0.0f, 6.0f, 0.0f));
         this.f.setEmptyView(this.e);
         org.telegram.ui.Components.im0 im0Var4 = this.f;
         im0Var4.W1 = true;
@@ -1126,8 +1126,8 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         }
     }
 
-    public final void p0(ai.f4 f4Var) {
-        this.W = f4Var;
+    public final void p0(ai.d4 d4Var) {
+        this.W = d4Var;
     }
 
     public final void q0(String str) {
@@ -1181,7 +1181,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         this.f0.a(hVar.m(), z12);
     }
 
-    @Override // org.telegram.ui.og0
+    @Override // org.telegram.ui.ng0
     public final void s() {
         if (this.n.L0() < 15) {
             this.f.x0(0);
@@ -1203,7 +1203,7 @@ public class ContactsActivity extends org.telegram.ui.ActionBar.n2 implements ne
         }
     }
 
-    @Override // org.telegram.ui.og0
+    @Override // org.telegram.ui.ng0
     public final gh.d z() {
         return this.v0;
     }

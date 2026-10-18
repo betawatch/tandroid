@@ -18,7 +18,7 @@ import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class lb extends r {
     public final Path R1;
@@ -138,9 +138,9 @@ public final class lb extends r {
         vb vbVar = this.S1;
         k6 k6Var = vbVar.b1;
         if (!vbVar.N1 && !z10) {
-            ci.i7 storiesController = MessagesController.getInstance(this.U).getStoriesController();
+            ci.h7 storiesController = MessagesController.getInstance(this.U).getStoriesController();
             int A = vbVar.A();
-            ci.c7 o10 = storiesController.o();
+            ci.b7 o10 = storiesController.o();
             if (o10 == null || !o10.a(storiesController.a, A) || ((a8Var = vbVar.K1) != null && a8Var.g)) {
                 z11 = true;
                 k6Var.setShareEnabled(z11);

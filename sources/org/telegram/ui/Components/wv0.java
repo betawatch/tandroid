@@ -15,7 +15,7 @@ import org.telegram.messenger.LocationController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wv0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final ai.u1 b;
@@ -35,7 +35,7 @@ public final class wv0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         this.d = mutate;
         int i10 = org.telegram.ui.ActionBar.h6.h5;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
-        ah.x xVar = new ah.x(this, context, 22);
+        ah.x xVar = new ah.x(this, context, 23);
         this.containerView = xVar;
         xVar.setWillNotDraw(false);
         ViewGroup viewGroup = this.containerView;
@@ -54,10 +54,10 @@ public final class wv0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         u1Var.setGlowColor(getThemedColor(org.telegram.ui.ActionBar.h6.A5));
         u1Var.setOnScrollListener(new kv(this, 9));
         u1Var.setOnItemClickListener(new j(this, 13));
-        this.containerView.addView(u1Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 51));
+        this.containerView.addView(u1Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 48.0f));
         View view = new View(context);
         view.setBackgroundResource(R.drawable.header_shadow_reverse);
-        this.containerView.addView(view, w7.z5.a(3.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 83));
+        this.containerView.addView(view, w7.z5.d(-1, 3.0f, 83, 0.0f, 0.0f, 0.0f, 48.0f));
         lg0 lg0Var = new lg0(context);
         lg0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
         TextView textView = new TextView(context);
@@ -75,7 +75,7 @@ public final class wv0 extends org.telegram.ui.ActionBar.f3 implements Notificat
         linearLayout.setPadding(AndroidUtilities.dp(33.0f), 0, AndroidUtilities.dp(33.0f), 0);
         lg0Var.addView(linearLayout, w7.z5.e(-2, -1, 53));
         TextView textView2 = new TextView(context);
-        org.telegram.messenger.kk.k(13.0f, 1, textView2);
+        org.telegram.messenger.lk.k(13.0f, 1, textView2);
         com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.li, null, false, textView2, 17);
         textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(11.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ki, false)));
         textView2.setMinWidth(AndroidUtilities.dp(23.0f));

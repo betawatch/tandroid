@@ -34,7 +34,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class r {
     public static final WeakHashMap k = new WeakHashMap();
@@ -161,7 +161,7 @@ public final class r {
         } catch (Exception e) {
             FileLog.e(e);
         }
-        if (new androidx.biometric.e(new k6.h(context, 1)).h(15) == 0) {
+        if (new androidx.biometric.e(new k6.h(context, 1)).i(15) == 0) {
             str = "unknown";
             if (str == null) {
                 jSONObject.put("available", true);
@@ -331,7 +331,7 @@ public final class r {
         edit.apply();
     }
 
-    public final void l(String str, final String str2, final ai.w3 w3Var) {
+    public final void l(String str, final String str2, final ai.y3 y3Var) {
         j(str, false, str2, new Utilities.Callback3() { // from class: gi.o
             @Override // org.telegram.messenger.Utilities.Callback3
             public final void run(Object obj, Object obj2, Object obj3) {
@@ -363,7 +363,7 @@ public final class r {
                         bool = Boolean.FALSE;
                     }
                 }
-                w3Var.run(bool);
+                y3Var.run(bool);
             }
         });
     }

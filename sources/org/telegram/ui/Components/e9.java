@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class e9 extends org.telegram.ui.ActionBar.n2 {
     public static final int[][] c0 = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
@@ -181,7 +181,7 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         this.b.setClipChildren(false);
         this.r.addView(this.b, w7.z5.t(-1, -1, 0, 12, 0, 12, 12));
         this.r.setClipChildren(false);
-        w8Var.addView(this.r, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 0));
+        w8Var.addView(this.r, w7.z5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 64.0f));
         View view = new View(getParentActivity());
         this.e = view;
         view.setVisibility(8);
@@ -210,11 +210,11 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
         this.x.g(this.s, false, true);
         this.x.setOnClickListener(new f0(this, 2));
         this.y = new FrameLayout(context);
-        w8Var.addView(this.x, w7.z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80));
-        w8Var.addView(this.y, w7.z5.a(80.0f, 8.0f, 16.0f, 8.0f, 64.0f, -1, 80));
+        w8Var.addView(this.x, w7.z5.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f));
+        w8Var.addView(this.y, w7.z5.d(-1, 80.0f, 80, 8.0f, 16.0f, 8.0f, 64.0f));
         w8Var.addView(this.actionBar);
         w8Var.addView(this.H);
-        w8Var.addView(this.e, w7.z5.d(-1.0f, -1));
+        w8Var.addView(this.e, w7.z5.c(-1.0f, -1));
         fd fdVar = new fd(w8Var);
         this.K = fdVar;
         fdVar.h = new q8(this, 0);
@@ -538,13 +538,13 @@ public final class e9 extends org.telegram.ui.ActionBar.n2 {
     public final void h0(boolean z10, long j10, TLRPC.Document document) {
         x8 x8Var = this.a;
         x8Var.a = j10;
-        ci.k4 k4Var = x8Var.c;
+        ci.j4 j4Var = x8Var.c;
         x8Var.b = document;
         if (j10 == 0) {
-            k4Var.setAnimatedEmojiDrawable(null);
+            j4Var.setAnimatedEmojiDrawable(null);
             this.a.c.getImageReceiver().setImage(ImageLocation.getForDocument(document), "100_100", null, null, DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.h6.m6, 0.2f), 0L, "tgs", document, 0);
         } else {
-            k4Var.setAnimatedEmojiDrawable(new r5(14, this.currentAccount, j10));
+            j4Var.setAnimatedEmojiDrawable(new r5(14, this.currentAccount, j10));
             this.a.c.getImageReceiver().clearImage();
         }
         if (this.a.getImageReceiver() != null && this.a.getImageReceiver().getAnimation() != null) {

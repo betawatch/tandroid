@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a2 extends ViewGroup implements org.telegram.ui.Cells.m9, g3 {
     public final d70 a;
@@ -56,7 +56,7 @@ public final class a2 extends ViewGroup implements org.telegram.ui.Cells.m9, g3 
         d70Var.getClass();
         int dp = measuredWidth - AndroidUtilities.dp(15);
         b4 b4Var = this.w.c;
-        return org.telegram.messenger.kk.B(12.0f, b4Var.f, dp - b4Var.c);
+        return org.telegram.messenger.lk.B(12.0f, b4Var.f, dp - b4Var.c);
     }
 
     @Override // org.telegram.ui.Cells.m9
@@ -147,7 +147,7 @@ public final class a2 extends ViewGroup implements org.telegram.ui.Cells.m9, g3 
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.kk.a(this);
+        return org.telegram.messenger.lk.a(this);
     }
 
     @Override // android.view.View, org.telegram.ui.Cells.v9
@@ -197,7 +197,7 @@ public final class a2 extends ViewGroup implements org.telegram.ui.Cells.m9, g3 
                 d70Var.getClass();
                 int dp2 = measuredWidth - AndroidUtilities.dp(15);
                 b4 b4Var = this.w.c;
-                canvas.translate(org.telegram.messenger.kk.B(12.0f, b4Var.f, dp2 - b4Var.c), (this.f + this.h) - (this.x ? AndroidUtilities.dp(1.0f) : 0));
+                canvas.translate(org.telegram.messenger.lk.B(12.0f, b4Var.f, dp2 - b4Var.c), (this.f + this.h) - (this.x ? AndroidUtilities.dp(1.0f) : 0));
             }
             this.w.i.draw(canvas, this);
             canvas.restore();

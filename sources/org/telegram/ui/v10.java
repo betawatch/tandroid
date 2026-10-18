@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v10 implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -29,10 +29,10 @@ public final /* synthetic */ class v10 implements Utilities.CallbackReturn {
                     break;
                 }
             case 1:
-                of0 of0Var = (of0) this.b;
+                nf0 nf0Var = (nf0) this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
                 if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    AndroidUtilities.runOnUIThread(new lf0(of0Var, 1));
+                    AndroidUtilities.runOnUIThread(new kf0(nf0Var, 1));
                     break;
                 } else {
                     break;

@@ -50,7 +50,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -82,7 +82,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.x10;
 import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class md extends a20 implements NotificationCenter.NotificationCenterDelegate {
     public static DecimalFormat h0;
@@ -696,8 +696,8 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         if (context == null) {
             return;
         }
-        org.telegram.ui.ActionBar.f3 i11 = kk.i(1, context, d6Var, false);
-        LinearLayout e = kk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i11 = lk.i(1, context, d6Var, false);
+        LinearLayout e = lk.e(context, 1);
         e.setPadding(0, AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(4.0f));
         e.setClipChildren(false);
         e.setClipToPadding(false);
@@ -706,7 +706,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         frameLayout.setClipToPadding(false);
         e.addView(frameLayout, w7.z5.t(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 7, 0, 0, 0, 10));
         kc kcVar = new kc(context, 70, 0);
-        frameLayout.addView(kcVar, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(kcVar, w7.z5.c(-1.0f, -1));
         int i12 = 2;
         tg.n nVar = new tg.n(context, 1, 2);
         tg.g gVar = nVar.b;
@@ -714,7 +714,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         gVar.A = org.telegram.ui.ActionBar.h6.gk;
         gVar.b();
         nVar.setStarParticlesView(kcVar);
-        frameLayout.addView(nVar, w7.z5.a(170.0f, 0.0f, 32.0f, 0.0f, 24.0f, 170, 17));
+        frameLayout.addView(nVar, w7.z5.d(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         nVar.setPaused(false);
         TextView textView = new TextView(context);
         org.telegram.ui.Cells.c1.r(org.telegram.ui.ActionBar.h6.j5, d6Var, textView, 1, 20.0f);
@@ -779,7 +779,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
 
     public static l1 g1(Context context, int i10, TL_stars.TL_starGiftUnique tL_starGiftUnique, Utilities.Callback2 callback2, org.telegram.ui.ActionBar.d6 d6Var) {
         ag.c cVar = ag.c.a;
-        l1 l1Var = new l1(context, d6Var, i10, tL_starGiftUnique == null ? ag.a.g(MessagesController.getInstance(i10).config.starsStarGiftResaleAmountMin.get(), cVar) : tL_starGiftUnique.resale_ton_only ? tL_starGiftUnique.getResellAmount(ag.c.b) : tL_starGiftUnique.getResellAmount(cVar), new o2(5, callback2, r8));
+        l1 l1Var = new l1(context, d6Var, i10, tL_starGiftUnique == null ? ag.a.g(MessagesController.getInstance(i10).config.starsStarGiftResaleAmountMin.get(), cVar) : tL_starGiftUnique.resale_ton_only ? tL_starGiftUnique.getResellAmount(ag.c.b) : tL_starGiftUnique.getResellAmount(cVar), new n2(5, callback2, r8));
         l1[] l1VarArr = {l1Var};
         l1Var.show();
         return l1VarArr[0];
@@ -790,7 +790,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         org.telegram.ui.ActionBar.f3[] f3VarArr;
         int i10 = 1;
         Object[] objArr = 0;
-        org.telegram.ui.ActionBar.f3 i11 = kk.i(1, context, d6Var, false);
+        org.telegram.ui.ActionBar.f3 i11 = lk.i(1, context, d6Var, false);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setClipChildren(false);
@@ -798,7 +798,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         linearLayout.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
-        kk.j(20.0f, R.string.PaidContentTitle, 1, textView);
+        lk.j(20.0f, R.string.PaidContentTitle, 1, textView);
         int i12 = org.telegram.ui.ActionBar.h6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i12, d6Var));
         linearLayout.addView(textView, w7.z5.k(4.0f, 0.0f, 4.0f, 18.0f, -1, -2));
@@ -836,18 +836,18 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 16.0f);
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.A6, false));
-        sd0Var.addView(textView2, w7.z5.a(-2.0f, 0.0f, 0.0f, 14.0f, 0.0f, -2, 21));
+        sd0Var.addView(textView2, w7.z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
         x90 x90Var = new x90(context, null);
         x90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PaidContentInfo), new ra(context, 4)), true));
         x90Var.setTextSize(1, 12.0f);
         x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
         x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, d6Var));
         linearLayout.addView(x90Var, w7.z5.k(14.0f, 3.0f, 14.0f, 24.0f, -1, -2));
-        final ei.d f7 = kk.f(24, context, d6Var, true);
+        final ei.d f7 = lk.f(24, context, d6Var, true);
         f7.g(LocaleController.getString(j10 > 0 ? R.string.PaidContentUpdateButton : R.string.PaidContentButton), false, true);
         linearLayout.addView(f7, w7.z5.n(-1, 48));
         if (j10 > 0 && z10) {
-            dVar = kk.f(24, context, d6Var, false);
+            dVar = lk.f(24, context, d6Var, false);
             dVar.g(LocaleController.getString(R.string.PaidContentClearButton), false, false);
             linearLayout.addView(dVar, w7.z5.k(0.0f, 4.0f, 0.0f, 0.0f, -1, 48));
         }
@@ -998,7 +998,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context, d6Var, false, false);
         f3Var2.fixNavigationBar();
         org.telegram.ui.ActionBar.f3[] f3VarArr7 = new org.telegram.ui.ActionBar.f3[1];
-        final LinearLayout e = kk.e(context, 1);
+        final LinearLayout e = lk.e(context, 1);
         e.setPadding(0, AndroidUtilities.dp((z16 || starsTransaction.gift || (starsTransaction.stargift_resale && (starsTransaction.stargift instanceof TL_stars.TL_starGiftUnique))) ? 0.0f : 20.0f), 0, AndroidUtilities.dp(8.0f));
         e.setClipChildren(false);
         e.setClipToPadding(false);
@@ -1457,12 +1457,12 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
                                                     case 0:
                                                         org.telegram.ui.ActionBar.f3 f3Var4 = f3VarArr5[0];
                                                         Objects.requireNonNull(f3Var4);
-                                                        new yh.p1(context6, i18, peerDialogId4, null, new r0(f3Var4, 4)).show();
+                                                        new yh.o1(context6, i18, peerDialogId4, null, new r0(f3Var4, 4)).show();
                                                         break;
                                                     default:
                                                         org.telegram.ui.ActionBar.f3 f3Var5 = f3VarArr5[0];
                                                         Objects.requireNonNull(f3Var5);
-                                                        new yh.p1(context6, i18, peerDialogId4, null, new r0(f3Var5, 4)).show();
+                                                        new yh.o1(context6, i18, peerDialogId4, null, new r0(f3Var5, 4)).show();
                                                         break;
                                                 }
                                             }
@@ -1583,12 +1583,12 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
                                                 case 0:
                                                     org.telegram.ui.ActionBar.f3 f3Var4 = f3VarArr5[0];
                                                     Objects.requireNonNull(f3Var4);
-                                                    new yh.p1(context, i10, peerDialogId4, null, new r0(f3Var4, 4)).show();
+                                                    new yh.o1(context, i10, peerDialogId4, null, new r0(f3Var4, 4)).show();
                                                     break;
                                                 default:
                                                     org.telegram.ui.ActionBar.f3 f3Var5 = f3VarArr5[0];
                                                     Objects.requireNonNull(f3Var5);
-                                                    new yh.p1(context, i10, peerDialogId4, null, new r0(f3Var5, 4)).show();
+                                                    new yh.o1(context, i10, peerDialogId4, null, new r0(f3Var5, 4)).show();
                                                     break;
                                             }
                                         }
@@ -2350,7 +2350,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
                     f7 = 16.0f;
                     if (starsTransaction2.description != null && starsTransaction2.extended_media.isEmpty()) {
                         TextView textView2 = new TextView(context2);
-                        kk.o(i12, d6Var2, textView2, 1, 16.0f);
+                        lk.o(i12, d6Var2, textView2, 1, 16.0f);
                         textView2.setGravity(17);
                         textView2.setText(starsTransaction2.description);
                         linearLayout.addView(textView2, w7.z5.t(-1, -2, 17, 36, 0, 36, 4));
@@ -2442,7 +2442,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         f7 = 16.0f;
         if (starsTransaction2.description != null) {
             TextView textView22 = new TextView(context2);
-            kk.o(i12, d6Var2, textView22, 1, 16.0f);
+            lk.o(i12, d6Var2, textView22, 1, 16.0f);
             textView22.setGravity(17);
             textView22.setText(starsTransaction2.description);
             linearLayout.addView(textView22, w7.z5.t(-1, -2, 17, 36, 0, 36, 4));
@@ -3153,7 +3153,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         gVar.A = org.telegram.ui.ActionBar.h6.gk;
         gVar.b();
         this.Q.setStarParticlesView(this.e);
-        this.P.addView(this.Q, w7.z5.a(190.0f, 0.0f, 12.0f, 0.0f, 24.0f, 190, 17));
+        this.P.addView(this.Q, w7.z5.d(190, 190.0f, 17, 0.0f, 12.0f, 0.0f, 24.0f));
         m0(LocaleController.getString(R.string.TelegramStars), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.TelegramStarsInfo2), new ra(context, 1)), true), this.P, null);
         this.c.setOverScrollMode(2);
         s4.k kVar = new s4.k();
@@ -3165,7 +3165,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         this.c.setOnItemClickListener(new wa(this, 0));
         z00 z00Var = new z00(getParentActivity());
         this.T = z00Var;
-        this.s.addView(z00Var, w7.z5.d(-1.0f, -1));
+        this.s.addView(z00Var, w7.z5.c(-1.0f, -1));
         ga y3 = ga.y(this.currentAccount, false);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.U = linearLayout;
@@ -3186,14 +3186,14 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
         f70Var.f = false;
         f70Var.h = -AndroidUtilities.dp(3.0f);
         this.V.setSpan(f70Var, 0, 1, 33);
-        this.U.addView(this.W, w7.z5.a(40.0f, 24.0f, 0.0f, 24.0f, 0.0f, -1, 17));
+        this.U.addView(this.W, w7.z5.d(-1, 40.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
         TextView textView = new TextView(getParentActivity());
         this.X = textView;
         textView.setTextSize(1, 14.0f);
         this.X.setGravity(17);
         this.X.setText(LocaleController.getString(R.string.YourStarsBalance));
         this.X.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, this.resourceProvider));
-        this.U.addView(this.X, w7.z5.a(-2.0f, 24.0f, 0.0f, 24.0f, 0.0f, -1, 17));
+        this.U.addView(this.X, w7.z5.d(-1, -2.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
         ah.x xVar = new ah.x(this, getParentActivity(), 2);
         this.Z = xVar;
@@ -3283,7 +3283,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
             }
         });
         this.b0.addView(this.Y, w7.z5.p(-1, 48, 17.0f, 1, 0, 0, 0, 0));
-        this.U.addView(frameLayout2, w7.z5.a(48.0f, 20.0f, 17.0f, 20.0f, 0.0f, -1, 17));
+        this.U.addView(frameLayout2, w7.z5.d(-1, 48.0f, 17, 20.0f, 17.0f, 20.0f, 0.0f));
         ei.d dVar4 = new ei.d(getParentActivity(), this.resourceProvider, false);
         this.d0 = dVar4;
         dVar4.e();
@@ -3313,7 +3313,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
                 }
             }
         });
-        this.U.addView(this.d0, w7.z5.a(48.0f, 20.0f, 8.0f, 20.0f, 0.0f, -1, 17));
+        this.U.addView(this.d0, w7.z5.d(-1, 48.0f, 17, 20.0f, 8.0f, 20.0f, 0.0f));
         l1();
         lc lcVar = this.g0;
         if (lcVar != null) {
@@ -3511,7 +3511,7 @@ public final class md extends a20 implements NotificationCenter.NotificationCent
     }
 
     @Override // org.telegram.ui.a20
-    public final sg.w1 p0() {
+    public final sg.x1 p0() {
         return new kc(getParentActivity(), 75, 1);
     }
 

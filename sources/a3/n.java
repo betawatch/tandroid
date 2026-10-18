@@ -29,10 +29,10 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
-import u2.c1;
+import u2.e1;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class n extends r2.r {
     public static final int[] S1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1694,7 +1694,7 @@ public final class n extends r2.r {
                     if (Build.VERSION.SDK_INT < 35) {
                         throw new IllegalStateException();
                     }
-                    lVar.g();
+                    lVar.f();
                 }
             }
         }
@@ -1828,7 +1828,7 @@ public final class n extends r2.r {
         List F0 = F0(context, iVar, wVar, z10, z11);
         HashMap hashMap = r2.w.a;
         ArrayList arrayList = new ArrayList(F0);
-        Collections.sort(arrayList, new t5(new org.telegram.ui.web.m(3, context, wVar), 4));
+        Collections.sort(arrayList, new t5(new org.telegram.ui.web.n(3, context, wVar), 4));
         return arrayList;
     }
 
@@ -1855,13 +1855,13 @@ public final class n extends r2.r {
         K0();
     }
 
-    public final void S0(u2.f0 f0Var) {
+    public final void S0(u2.g0 g0Var) {
         o1 o1Var = this.F;
         if (o1Var.p()) {
             this.P1 = -9223372036854775807L;
             return;
         }
-        int b10 = o1Var.b(f0Var.a);
+        int b10 = o1Var.b(g0Var.a);
         if (b10 == -1) {
             this.P1 = -9223372036854775807L;
         } else {
@@ -2534,9 +2534,9 @@ public final class n extends r2.r {
             if (k()) {
                 e = this.y;
             } else {
-                c1 c1Var = this.r;
-                c1Var.getClass();
-                e = c1Var.e();
+                e1 e1Var = this.r;
+                e1Var.getClass();
+                e = e1Var.e();
             }
             if (!e) {
                 if (!(this.v0 >= 0)) {
@@ -2569,7 +2569,7 @@ public final class n extends r2.r {
         try {
             super.n();
         } finally {
-            sVar.t(this.O0);
+            sVar.s(this.O0);
             sVar.M(a2.d);
         }
     }
@@ -2795,9 +2795,9 @@ public final class n extends r2.r {
     }
 
     @Override // r2.r, i2.b
-    public final void u(b2.w[] wVarArr, long j10, long j11, u2.f0 f0Var) {
-        super.u(wVarArr, j10, j11, f0Var);
-        S0(f0Var);
+    public final void u(b2.w[] wVarArr, long j10, long j11, u2.g0 g0Var) {
+        super.u(wVarArr, j10, j11, g0Var);
+        S0(g0Var);
         b0 b0Var = this.i1;
         if (b0Var != null) {
             b0Var.b();
@@ -2931,9 +2931,9 @@ public final class n extends r2.r {
 
     @Override // i2.b
     public final void v() {
-        u2.f0 f0Var = this.G;
-        if (f0Var != null) {
-            S0(f0Var);
+        u2.g0 g0Var = this.G;
+        if (g0Var != null) {
+            S0(g0Var);
         }
     }
 
@@ -3031,7 +3031,7 @@ public final class n extends r2.r {
             if (!F02.isEmpty()) {
                 HashMap hashMap = r2.w.a;
                 ArrayList arrayList = new ArrayList(F02);
-                Collections.sort(arrayList, new t5(new org.telegram.ui.web.m(i13, context, wVar), i14));
+                Collections.sort(arrayList, new t5(new org.telegram.ui.web.n(i13, context, wVar), i14));
                 r2.o oVar3 = (r2.o) arrayList.get(0);
                 if (oVar3.e(context, wVar) && oVar3.f(wVar)) {
                     i10 = 32;

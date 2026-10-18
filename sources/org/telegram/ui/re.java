@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class re implements org.telegram.ui.Components.n60, org.telegram.ui.Components.q60, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.so, MessagesStorage.BooleanCallback, org.telegram.ui.Components.jk0, ResultCallback, xh.c, kh.a, kh.b, i60, gs, org.telegram.ui.Components.yl0, kh.d, org.telegram.ui.Components.kl0 {
     public final /* synthetic */ int a;
@@ -259,9 +259,9 @@ public final /* synthetic */ class re implements org.telegram.ui.Components.n60,
         if (i10 == 5) {
             snVar.d9(false);
         } else if (i10 == 0) {
-            ci.b3 b3Var = snVar.J1;
-            if (b3Var != null) {
-                b3Var.L1(null, 0);
+            ci.a3 a3Var = snVar.J1;
+            if (a3Var != null) {
+                a3Var.L1(null, 0);
             }
             snVar.ca();
         }

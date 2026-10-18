@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bb implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class bb implements DialogInterface.OnDismissListen
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
-        org.telegram.ui.web.g0 g0Var;
+        org.telegram.ui.web.h0 h0Var;
         switch (this.a) {
             case 0:
                 ((w8) this.b).run();
@@ -32,10 +32,10 @@ public final /* synthetic */ class bb implements DialogInterface.OnDismissListen
                 ((androidx.fragment.app.d) this.b).run();
                 break;
             case 4:
-                ci.aa aaVar = (ci.aa) this.b;
-                if (dialogInterface == aaVar.u0) {
-                    aaVar.u0 = null;
-                    aaVar.P();
+                ci.z9 z9Var = (ci.z9) this.b;
+                if (dialogInterface == z9Var.u0) {
+                    z9Var.u0 = null;
+                    z9Var.P();
                     break;
                 }
                 break;
@@ -61,33 +61,33 @@ public final /* synthetic */ class bb implements DialogInterface.OnDismissListen
                 }
                 break;
             case 10:
-                org.telegram.ui.web.a1 a1Var = ((org.telegram.ui.web.m0) this.b).e.Q;
-                if (a1Var != null && (g0Var = a1Var.c) != null) {
-                    g0Var.y();
+                org.telegram.ui.web.b1 b1Var = ((org.telegram.ui.web.n0) this.b).e.Q;
+                if (b1Var != null && (h0Var = b1Var.c) != null) {
+                    h0Var.y();
                     break;
                 }
                 break;
             case 11:
-                org.telegram.ui.web.g0 g0Var2 = ((org.telegram.ui.web.t0) this.b).b.e.Q.c;
-                if (g0Var2 != null) {
-                    g0Var2.y();
+                org.telegram.ui.web.h0 h0Var2 = ((org.telegram.ui.web.u0) this.b).b.e.Q.c;
+                if (h0Var2 != null) {
+                    h0Var2.y();
                     break;
                 }
                 break;
             case 12:
-                sg.j0 j0Var = (sg.j0) this.b;
-                j0Var.f0 = false;
-                j0Var.x0.d0 = true;
-                j0Var.E0.invalidate();
-                j0Var.x0.invalidate();
+                sg.k0 k0Var = (sg.k0) this.b;
+                k0Var.f0 = false;
+                k0Var.x0.d0 = true;
+                k0Var.E0.invalidate();
+                k0Var.x0.invalidate();
                 break;
             case 13:
-                sg.l1 l1Var = (sg.l1) this.b;
-                zd zdVar = l1Var.r0;
+                sg.m1 m1Var = (sg.m1) this.b;
+                zd zdVar = m1Var.r0;
                 if (zdVar != null) {
                     zdVar.setDialogVisible(false);
                 }
-                l1Var.q0.setPaused(false);
+                m1Var.q0.setPaused(false);
                 break;
             default:
                 ((xh.k) this.b).s = null;

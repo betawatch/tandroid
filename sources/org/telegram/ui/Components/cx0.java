@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cx0 extends View {
     public final x9 a;
@@ -70,7 +70,7 @@ public final class cx0 extends View {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         float e = this.c.e(this.d);
-        int A = org.telegram.messenger.kk.A(24.0f, getMeasuredWidth(), 2);
+        int A = org.telegram.messenger.lk.A(24.0f, getMeasuredWidth(), 2);
         int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
         canvas.save();
         canvas.translate(A, measuredHeight);

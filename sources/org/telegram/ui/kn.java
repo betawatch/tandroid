@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class kn extends org.telegram.ui.ActionBar.g5 {
     public float r;
@@ -34,11 +34,11 @@ public final class kn extends org.telegram.ui.ActionBar.g5 {
     @Override // org.telegram.ui.ActionBar.g5
     public final boolean b() {
         sn snVar = this.s;
-        if (!snVar.Ac.f) {
+        if (!snVar.Bc.f) {
             if (snVar.u3 != null && snVar.p1 != null) {
                 View currentView = snVar.q1.getCurrentView();
                 sn snVar2 = currentView instanceof un ? ((un) currentView).a : snVar;
-                if (!snVar2.yc.f) {
+                if (!snVar2.zc.f) {
                     snVar2.Pb(true);
                     return false;
                 }
@@ -48,7 +48,7 @@ public final class kn extends org.telegram.ui.ActionBar.g5 {
                     snVar.p1.a.d(i10, i10);
                     return false;
                 }
-            } else if (snVar.yc.f) {
+            } else if (snVar.zc.f) {
                 snVar.Pb(false);
                 return false;
             }
@@ -118,8 +118,8 @@ public final class kn extends org.telegram.ui.ActionBar.g5 {
         snVar.u3 = null;
         snVar.j0.setSearchFieldHint(LocaleController.getString(snVar.J9() ? R.string.SavedTagSearchHint : R.string.Search));
         snVar.j0.setSearchFieldCaption(null);
-        snVar.zc.a(false, true);
         snVar.Ac.a(false, true);
+        snVar.Bc.a(false, true);
         org.telegram.ui.ActionBar.x xVar = snVar.i0;
         if (xVar != null && xVar.o != null) {
             org.telegram.ui.ActionBar.u0 u0Var = snVar.h0;
@@ -244,7 +244,7 @@ public final class kn extends org.telegram.ui.ActionBar.g5 {
         ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
         ofFloat.setDuration(320L);
         ofFloat.start();
-        snVar.yc.a(false, true);
+        snVar.zc.a(false, true);
         snVar.Lc();
         snVar.q3 = null;
         snVar.Mc();
@@ -405,7 +405,7 @@ public final class kn extends org.telegram.ui.ActionBar.g5 {
     @Override // org.telegram.ui.ActionBar.g5
     public final void q(EditText editText) {
         sn snVar = this.s;
-        ne.b bVar = snVar.Ac;
+        ne.b bVar = snVar.Bc;
         if (snVar.u3 == null) {
             snVar.Pb(false);
         }

@@ -20,7 +20,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class b51 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -48,28 +48,28 @@ public final class b51 extends FrameLayout implements org.telegram.ui.ActionBar.
         y41Var.setMaxLines(1);
         y41Var.setSingleLine();
         y41Var.setEllipsize(TextUtils.TruncateAt.END);
-        addView(y41Var, w7.z5.d(-2.0f, -1));
+        addView(y41Var, w7.z5.c(-2.0f, -1));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setPadding(org.telegram.ui.Cells.c1.e(8.0f, R.string.DescriptionMore, textView), 0, AndroidUtilities.dp(8.0f), 0);
         textView.setGravity(17);
         w7.b6.a(textView);
-        addView(textView, w7.z5.a(18.0f, 0.0f, 1.0f, 0.0f, 0.0f, -2, 53));
+        addView(textView, w7.z5.d(-2, 18.0f, 53, 0.0f, 1.0f, 0.0f, 0.0f));
         z41 z41Var = new z41(context);
         this.f = z41Var;
         NotificationCenter.listenEmojiLoading(z41Var);
         z41Var.setTextSize(1, 16.0f);
         z41Var.setTextIsSelectable(true);
-        FrameLayout.LayoutParams d = w7.z5.d(-2.0f, -1);
-        this.e = d;
-        addView(z41Var, d);
+        FrameLayout.LayoutParams c10 = w7.z5.c(-2.0f, -1);
+        this.e = c10;
+        addView(z41Var, c10);
         ImageView imageView = new ImageView(context);
         this.n = imageView;
         imageView.setImageResource(R.drawable.msg_copy);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setContentDescription(LocaleController.getString(R.string.Copy));
         w7.b6.a(imageView);
-        addView(imageView, w7.z5.a(38.0f, 0.0f, 0.0f, -16.0f, -12.0f, 38, 85));
+        addView(imageView, w7.z5.d(38, 38.0f, 85, 0.0f, 0.0f, -16.0f, -12.0f));
         imageView.setVisibility(8);
         d();
     }

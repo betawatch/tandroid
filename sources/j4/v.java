@@ -3,7 +3,7 @@ package j4;
 import b2.v0;
 import b2.w0;
 import c3.j0;
-import ci.c7;
+import ci.b7;
 import e2.m0;
 import e9.n0;
 import e9.x1;
@@ -12,7 +12,7 @@ import v7.l8;
 import v7.n7;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class v implements i {
     public String e;
@@ -28,7 +28,7 @@ public final class v implements i {
     public final e2.x a = new e2.x(new byte[15], 2);
     public final a4.g b = new a4.g();
     public final e2.x c = new e2.x();
-    public final c7 p = new c7();
+    public final b7 p = new b7();
     public int q = -2147483647;
     public int r = -1;
     public long t = -1;
@@ -70,7 +70,7 @@ public final class v implements i {
             int i20 = 1;
             if (i17 != 0) {
                 e2.x xVar2 = this.c;
-                c7 c7Var = this.p;
+                b7 b7Var = this.p;
                 if (i17 == 1) {
                     int a2 = xVar.a();
                     e2.x xVar3 = this.a;
@@ -84,7 +84,7 @@ public final class v implements i {
                         gVar.k(i21, bArr2);
                         gVar.d();
                         int a10 = l8.a(gVar, 3, 8, 8);
-                        c7Var.b = a10;
+                        b7Var.b = a10;
                         if (a10 != -1) {
                             u6.g(Math.max(Math.max(2, 8), 32) <= 63);
                             n7.a(n7.a(3L, 255L), 4294967296L);
@@ -102,13 +102,13 @@ public final class v implements i {
                                     }
                                 }
                                 j12 = i22;
-                                c7Var.c = j12;
+                                b7Var.c = j12;
                                 if (j12 != -1) {
                                     if (j12 > 16) {
-                                        throw w0.c("Contains sub-stream with an invalid packet label " + c7Var.c);
+                                        throw w0.c("Contains sub-stream with an invalid packet label " + b7Var.c);
                                     }
                                     if (j12 == 0) {
-                                        int i24 = c7Var.b;
+                                        int i24 = b7Var.b;
                                         if (i24 == 1) {
                                             throw w0.a(null, "Mpegh3daConfig packet with invalid packet label 0");
                                         }
@@ -120,7 +120,7 @@ public final class v implements i {
                                         }
                                     }
                                     int a11 = l8.a(gVar, 11, 24, 24);
-                                    c7Var.d = a11;
+                                    b7Var.d = a11;
                                     if (a11 != -1) {
                                         z10 = true;
                                         if (z10) {
@@ -128,7 +128,7 @@ public final class v implements i {
                                         } else {
                                             i16 = 0;
                                             this.n = 0;
-                                            this.o = c7Var.d + i21 + this.o;
+                                            this.o = b7Var.d + i21 + this.o;
                                         }
                                         if (z10) {
                                             int i25 = xVar3.c;
@@ -140,7 +140,7 @@ public final class v implements i {
                                             xVar3.N(i16);
                                             this.f.d(xVar3.c, xVar3);
                                             xVar3.K(2);
-                                            xVar2.K(c7Var.d);
+                                            xVar2.K(b7Var.d);
                                             this.m = true;
                                             this.d = 2;
                                         }
@@ -148,7 +148,7 @@ public final class v implements i {
                                 }
                             }
                             j12 = -1;
-                            c7Var.c = j12;
+                            b7Var.c = j12;
                             if (j12 != -1) {
                             }
                         }
@@ -164,7 +164,7 @@ public final class v implements i {
                     if (i17 != 2) {
                         throw new IllegalStateException();
                     }
-                    int i26 = c7Var.b;
+                    int i26 = b7Var.b;
                     if (i26 == 1 || i26 == 17) {
                         int i27 = xVar.b;
                         int min2 = Math.min(xVar.a(), xVar2.a());
@@ -172,14 +172,14 @@ public final class v implements i {
                         xVar2.O(min2);
                         xVar.N(i27);
                     }
-                    int min3 = Math.min(xVar.a(), c7Var.d - this.n);
+                    int min3 = Math.min(xVar.a(), b7Var.d - this.n);
                     this.f.d(min3, xVar);
                     int i28 = this.n + min3;
                     this.n = i28;
-                    if (i28 != c7Var.d) {
+                    if (i28 != b7Var.d) {
                         continue;
                     } else {
-                        int i29 = c7Var.b;
+                        int i29 = b7Var.b;
                         if (i29 == 1) {
                             byte[] bArr3 = xVar2.a;
                             a4.g gVar2 = new a4.g(bArr3, bArr3.length);
@@ -420,7 +420,7 @@ public final class v implements i {
                                                     this.q = (int) (i13 * d);
                                                     this.r = (int) (i30 * d);
                                                     j10 = this.t;
-                                                    j11 = c7Var.c;
+                                                    j11 = b7Var.c;
                                                     if (j10 != j11) {
                                                         this.t = j11;
                                                         String concat = g10 != -1 ? "mhm1".concat(String.format(".%02X", Integer.valueOf(g10))) : "mhm1";
@@ -442,7 +442,7 @@ public final class v implements i {
                                                     this.q = (int) (i13 * d);
                                                     this.r = (int) (i30 * d);
                                                     j10 = this.t;
-                                                    j11 = c7Var.c;
+                                                    j11 = b7Var.c;
                                                     if (j10 != j11) {
                                                     }
                                                     i11 = 1;
@@ -456,7 +456,7 @@ public final class v implements i {
                                                     this.q = (int) (i13 * d);
                                                     this.r = (int) (i30 * d);
                                                     j10 = this.t;
-                                                    j11 = c7Var.c;
+                                                    j11 = b7Var.c;
                                                     if (j10 != j11) {
                                                     }
                                                     i11 = 1;
@@ -470,7 +470,7 @@ public final class v implements i {
                                                     this.q = (int) (i13 * d);
                                                     this.r = (int) (i30 * d);
                                                     j10 = this.t;
-                                                    j11 = c7Var.c;
+                                                    j11 = b7Var.c;
                                                     if (j10 != j11) {
                                                     }
                                                     i11 = 1;

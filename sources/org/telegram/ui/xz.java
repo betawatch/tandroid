@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class xz extends FrameLayout {
     public final TextView a;
@@ -32,7 +32,7 @@ public final class xz extends FrameLayout {
         boolean z10 = LocaleController.isRTL;
         textView.setPadding(z10 ? 16 : 0, 0, z10 ? 0 : 16, 0);
         boolean z11 = LocaleController.isRTL;
-        addView(textView, w7.z5.a(-2.0f, z11 ? 0.0f : 64.0f, 0.0f, z11 ? 64.0f : 0.0f, 0.0f, -1, 23));
+        addView(textView, w7.z5.d(-1, -2.0f, 23, z11 ? 0.0f : 64.0f, 0.0f, z11 ? 64.0f : 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
@@ -44,7 +44,7 @@ public final class xz extends FrameLayout {
         imageView.setImageDrawable(new org.telegram.ui.Components.zq(drawable, drawable2));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         boolean z12 = LocaleController.isRTL;
-        addView(imageView, w7.z5.a(32.0f, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f, 32, (z12 ? 5 : 3) | 16));
+        addView(imageView, w7.z5.d(32, 32.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 16.0f, 0.0f, z12 ? 16.0f : 0.0f, 0.0f));
     }
 
     @Override // android.view.View

@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.lx0;
 import org.telegram.ui.Components.vn0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class h2 extends FrameLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -35,10 +35,10 @@ public final class h2 extends FrameLayout {
         this.b = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(18.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Ie, d6Var)));
         frameLayout.setClipToOutline(true);
-        frameLayout.setOutlineProvider(new ci.o1(2));
-        addView(frameLayout, w7.z5.a(36.0f, 10.0f, 6.0f, 10.0f, 8.0f, -1, 119));
+        frameLayout.setOutlineProvider(new ci.n1(2));
+        addView(frameLayout, w7.z5.d(-1, 36.0f, 119, 10.0f, 6.0f, 10.0f, 8.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
-        frameLayout.addView(frameLayout2, w7.z5.a(40.0f, 38.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        frameLayout.addView(frameLayout2, w7.z5.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
@@ -67,7 +67,7 @@ public final class h2 extends FrameLayout {
         e2Var.setCursorSize(AndroidUtilities.dp(20.0f));
         e2Var.setCursorWidth(1.5f);
         e2Var.setTranslationY(AndroidUtilities.dp(-2.0f));
-        frameLayout2.addView(e2Var, w7.z5.a(40.0f, 0.0f, 0.0f, 28.0f, 0.0f, -1, 51));
+        frameLayout2.addView(e2Var, w7.z5.d(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
         e2Var.addTextChangedListener(new ai.u(this, 1));
         ImageView imageView2 = new ImageView(context);
         this.n = imageView2;
@@ -250,7 +250,7 @@ public final class h2 extends FrameLayout {
                     }
                 }
             });
-            frameLayout.addView(this.f, Math.max(0, frameLayout.getChildCount() - 1), w7.z5.a(36.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+            frameLayout.addView(this.f, Math.max(0, frameLayout.getChildCount() - 1), w7.z5.d(-1, 36.0f, 51, 36.0f, 0.0f, 0.0f, 0.0f));
         }
     }
 

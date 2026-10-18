@@ -2,14 +2,14 @@ package di;
 
 import android.content.Context;
 import android.view.View;
-import ci.t6;
+import ci.s6;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.hs0;
 import org.telegram.ui.Components.r41;
 import org.telegram.ui.Components.u81;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class b extends u81 {
     public final /* synthetic */ Context a;
@@ -24,9 +24,9 @@ public final class b extends u81 {
     public final void b(View view, int i10, int i11) {
         r rVar = (r) view;
         hs0 hs0Var = this.b;
-        t6 t6Var = i10 == 0 ? hs0Var.e : (t6) hs0Var.f.get(i10 - 1);
-        t6Var.H(null);
-        rVar.setList(t6Var);
+        s6 s6Var = i10 == 0 ? hs0Var.e : (s6) hs0Var.f.get(i10 - 1);
+        s6Var.H(null);
+        rVar.setList(s6Var);
         rVar.setVisibleHeight(hs0Var.v);
     }
 
@@ -45,7 +45,7 @@ public final class b extends u81 {
         if (i10 == 0) {
             return 0;
         }
-        return ((t6) this.b.f.get(i10 - 1)).E.hashCode();
+        return ((s6) this.b.f.get(i10 - 1)).E.hashCode();
     }
 
     @Override // org.telegram.ui.Components.u81
@@ -53,7 +53,7 @@ public final class b extends u81 {
         if (i10 == 0) {
             return LocaleController.getString(R.string.ProfileBotLanguageGeneral);
         }
-        String F = r41.F(((t6) this.b.f.get(i10 - 1)).E, null, null);
+        String F = r41.F(((s6) this.b.f.get(i10 - 1)).E, null, null);
         if (F == null) {
             return null;
         }

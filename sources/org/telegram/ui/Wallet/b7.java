@@ -1,36 +1,22 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b7 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ Utilities.Callback d;
+public final class b7 {
+    public final CountDownLatch a = new CountDownLatch(1);
+    public int b;
+    public byte[] c;
+    public WalletEngine2.HttpTransport.HostException d;
 
-    public /* synthetic */ b7(WalletEngine2 walletEngine2, String str, Utilities.Callback callback) {
-        this.b = walletEngine2;
-        this.c = str;
-        this.d = callback;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$previewSignMessage$7(this.d, this.c);
-                break;
-            default:
-                this.b.lambda$getTransactionByHash$39(this.c, this.d);
-                break;
+    public final synchronized void a(byte[] bArr, WalletEngine2.HttpTransport.HostException hostException) {
+        if (this.a.getCount() == 0) {
+            return;
         }
-    }
-
-    public /* synthetic */ b7(WalletEngine2 walletEngine2, Utilities.Callback callback, String str) {
-        this.b = walletEngine2;
-        this.d = callback;
-        this.c = str;
+        this.c = bArr;
+        this.d = hostException;
+        this.a.countDown();
     }
 }

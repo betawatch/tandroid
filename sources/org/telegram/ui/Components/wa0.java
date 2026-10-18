@@ -30,7 +30,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.ActionBar.g2 E;
@@ -403,10 +403,10 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ci.a7 a7Var;
-                    ci.a7 a7Var2;
-                    ci.a7 a7Var3;
-                    ci.a7 a7Var4;
+                    ci.z6 z6Var;
+                    ci.z6 z6Var2;
+                    ci.z6 z6Var3;
+                    ci.z6 z6Var4;
                     int i17;
                     int i18 = i16;
                     wa0 wa0Var = this.b;
@@ -453,16 +453,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
                                 au0 au0Var = ta0Var2.c0;
-                                if (au0Var != null && (a7Var2 = au0Var.s) != null) {
-                                    a7Var2.n = z13;
-                                    a7Var2.o = z14;
-                                    a7Var2.d(true);
+                                if (au0Var != null && (z6Var2 = au0Var.s) != null) {
+                                    z6Var2.n = z13;
+                                    z6Var2.o = z14;
+                                    z6Var2.d(true);
                                 }
                                 gs0 gs0Var = ta0Var2.e0;
-                                if (gs0Var != null && (a7Var = gs0Var.s) != null) {
-                                    a7Var.n = z13;
-                                    a7Var.o = z14;
-                                    a7Var.d(true);
+                                if (gs0Var != null && (z6Var = gs0Var.s) != null) {
+                                    z6Var.n = z13;
+                                    z6Var.o = z14;
+                                    z6Var.d(true);
                                     break;
                                 }
                             }
@@ -485,16 +485,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
                                 au0 au0Var2 = ta0Var3.c0;
-                                if (au0Var2 != null && (a7Var4 = au0Var2.s) != null) {
-                                    a7Var4.n = z17;
-                                    a7Var4.o = z18;
-                                    a7Var4.d(true);
+                                if (au0Var2 != null && (z6Var4 = au0Var2.s) != null) {
+                                    z6Var4.n = z17;
+                                    z6Var4.o = z18;
+                                    z6Var4.d(true);
                                 }
                                 gs0 gs0Var2 = ta0Var3.e0;
-                                if (gs0Var2 != null && (a7Var3 = gs0Var2.s) != null) {
-                                    a7Var3.n = z17;
-                                    a7Var3.o = z18;
-                                    a7Var3.d(true);
+                                if (gs0Var2 != null && (z6Var3 = gs0Var2.s) != null) {
+                                    z6Var3.n = z17;
+                                    z6Var3.o = z18;
+                                    z6Var3.d(true);
                                     break;
                                 }
                             }
@@ -559,10 +559,10 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ci.a7 a7Var;
-                    ci.a7 a7Var2;
-                    ci.a7 a7Var3;
-                    ci.a7 a7Var4;
+                    ci.z6 z6Var;
+                    ci.z6 z6Var2;
+                    ci.z6 z6Var3;
+                    ci.z6 z6Var4;
                     int i172;
                     int i18 = i17;
                     wa0 wa0Var = this.b;
@@ -609,16 +609,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
                                 au0 au0Var = ta0Var2.c0;
-                                if (au0Var != null && (a7Var2 = au0Var.s) != null) {
-                                    a7Var2.n = z13;
-                                    a7Var2.o = z14;
-                                    a7Var2.d(true);
+                                if (au0Var != null && (z6Var2 = au0Var.s) != null) {
+                                    z6Var2.n = z13;
+                                    z6Var2.o = z14;
+                                    z6Var2.d(true);
                                 }
                                 gs0 gs0Var = ta0Var2.e0;
-                                if (gs0Var != null && (a7Var = gs0Var.s) != null) {
-                                    a7Var.n = z13;
-                                    a7Var.o = z14;
-                                    a7Var.d(true);
+                                if (gs0Var != null && (z6Var = gs0Var.s) != null) {
+                                    z6Var.n = z13;
+                                    z6Var.o = z14;
+                                    z6Var.d(true);
                                     break;
                                 }
                             }
@@ -641,16 +641,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
                                 au0 au0Var2 = ta0Var3.c0;
-                                if (au0Var2 != null && (a7Var4 = au0Var2.s) != null) {
-                                    a7Var4.n = z17;
-                                    a7Var4.o = z18;
-                                    a7Var4.d(true);
+                                if (au0Var2 != null && (z6Var4 = au0Var2.s) != null) {
+                                    z6Var4.n = z17;
+                                    z6Var4.o = z18;
+                                    z6Var4.d(true);
                                 }
                                 gs0 gs0Var2 = ta0Var3.e0;
-                                if (gs0Var2 != null && (a7Var3 = gs0Var2.s) != null) {
-                                    a7Var3.n = z17;
-                                    a7Var3.o = z18;
-                                    a7Var3.d(true);
+                                if (gs0Var2 != null && (z6Var3 = gs0Var2.s) != null) {
+                                    z6Var3.n = z17;
+                                    z6Var3.o = z18;
+                                    z6Var3.d(true);
                                     break;
                                 }
                             }
@@ -712,10 +712,10 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ci.a7 a7Var;
-                    ci.a7 a7Var2;
-                    ci.a7 a7Var3;
-                    ci.a7 a7Var4;
+                    ci.z6 z6Var;
+                    ci.z6 z6Var2;
+                    ci.z6 z6Var3;
+                    ci.z6 z6Var4;
                     int i172;
                     int i182 = i18;
                     wa0 wa0Var = this.b;
@@ -762,16 +762,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
                                 au0 au0Var = ta0Var2.c0;
-                                if (au0Var != null && (a7Var2 = au0Var.s) != null) {
-                                    a7Var2.n = z13;
-                                    a7Var2.o = z14;
-                                    a7Var2.d(true);
+                                if (au0Var != null && (z6Var2 = au0Var.s) != null) {
+                                    z6Var2.n = z13;
+                                    z6Var2.o = z14;
+                                    z6Var2.d(true);
                                 }
                                 gs0 gs0Var = ta0Var2.e0;
-                                if (gs0Var != null && (a7Var = gs0Var.s) != null) {
-                                    a7Var.n = z13;
-                                    a7Var.o = z14;
-                                    a7Var.d(true);
+                                if (gs0Var != null && (z6Var = gs0Var.s) != null) {
+                                    z6Var.n = z13;
+                                    z6Var.o = z14;
+                                    z6Var.d(true);
                                     break;
                                 }
                             }
@@ -794,16 +794,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
                                 au0 au0Var2 = ta0Var3.c0;
-                                if (au0Var2 != null && (a7Var4 = au0Var2.s) != null) {
-                                    a7Var4.n = z17;
-                                    a7Var4.o = z18;
-                                    a7Var4.d(true);
+                                if (au0Var2 != null && (z6Var4 = au0Var2.s) != null) {
+                                    z6Var4.n = z17;
+                                    z6Var4.o = z18;
+                                    z6Var4.d(true);
                                 }
                                 gs0 gs0Var2 = ta0Var3.e0;
-                                if (gs0Var2 != null && (a7Var3 = gs0Var2.s) != null) {
-                                    a7Var3.n = z17;
-                                    a7Var3.o = z18;
-                                    a7Var3.d(true);
+                                if (gs0Var2 != null && (z6Var3 = gs0Var2.s) != null) {
+                                    z6Var3.n = z17;
+                                    z6Var3.o = z18;
+                                    z6Var3.d(true);
                                     break;
                                 }
                             }
@@ -872,10 +872,10 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ci.a7 a7Var;
-                    ci.a7 a7Var2;
-                    ci.a7 a7Var3;
-                    ci.a7 a7Var4;
+                    ci.z6 z6Var;
+                    ci.z6 z6Var2;
+                    ci.z6 z6Var3;
+                    ci.z6 z6Var4;
                     int i172;
                     int i182 = i19;
                     wa0 wa0Var = this.b;
@@ -922,16 +922,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
                                 au0 au0Var = ta0Var2.c0;
-                                if (au0Var != null && (a7Var2 = au0Var.s) != null) {
-                                    a7Var2.n = z13;
-                                    a7Var2.o = z14;
-                                    a7Var2.d(true);
+                                if (au0Var != null && (z6Var2 = au0Var.s) != null) {
+                                    z6Var2.n = z13;
+                                    z6Var2.o = z14;
+                                    z6Var2.d(true);
                                 }
                                 gs0 gs0Var = ta0Var2.e0;
-                                if (gs0Var != null && (a7Var = gs0Var.s) != null) {
-                                    a7Var.n = z13;
-                                    a7Var.o = z14;
-                                    a7Var.d(true);
+                                if (gs0Var != null && (z6Var = gs0Var.s) != null) {
+                                    z6Var.n = z13;
+                                    z6Var.o = z14;
+                                    z6Var.d(true);
                                     break;
                                 }
                             }
@@ -954,16 +954,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
                                 au0 au0Var2 = ta0Var3.c0;
-                                if (au0Var2 != null && (a7Var4 = au0Var2.s) != null) {
-                                    a7Var4.n = z17;
-                                    a7Var4.o = z18;
-                                    a7Var4.d(true);
+                                if (au0Var2 != null && (z6Var4 = au0Var2.s) != null) {
+                                    z6Var4.n = z17;
+                                    z6Var4.o = z18;
+                                    z6Var4.d(true);
                                 }
                                 gs0 gs0Var2 = ta0Var3.e0;
-                                if (gs0Var2 != null && (a7Var3 = gs0Var2.s) != null) {
-                                    a7Var3.n = z17;
-                                    a7Var3.o = z18;
-                                    a7Var3.d(true);
+                                if (gs0Var2 != null && (z6Var3 = gs0Var2.s) != null) {
+                                    z6Var3.n = z17;
+                                    z6Var3.o = z18;
+                                    z6Var3.d(true);
                                     break;
                                 }
                             }
@@ -1027,10 +1027,10 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ci.a7 a7Var;
-                    ci.a7 a7Var2;
-                    ci.a7 a7Var3;
-                    ci.a7 a7Var4;
+                    ci.z6 z6Var;
+                    ci.z6 z6Var2;
+                    ci.z6 z6Var3;
+                    ci.z6 z6Var4;
                     int i172;
                     int i182 = i20;
                     wa0 wa0Var = this.b;
@@ -1077,16 +1077,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
                                 au0 au0Var = ta0Var2.c0;
-                                if (au0Var != null && (a7Var2 = au0Var.s) != null) {
-                                    a7Var2.n = z13;
-                                    a7Var2.o = z14;
-                                    a7Var2.d(true);
+                                if (au0Var != null && (z6Var2 = au0Var.s) != null) {
+                                    z6Var2.n = z13;
+                                    z6Var2.o = z14;
+                                    z6Var2.d(true);
                                 }
                                 gs0 gs0Var = ta0Var2.e0;
-                                if (gs0Var != null && (a7Var = gs0Var.s) != null) {
-                                    a7Var.n = z13;
-                                    a7Var.o = z14;
-                                    a7Var.d(true);
+                                if (gs0Var != null && (z6Var = gs0Var.s) != null) {
+                                    z6Var.n = z13;
+                                    z6Var.o = z14;
+                                    z6Var.d(true);
                                     break;
                                 }
                             }
@@ -1109,16 +1109,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
                                 au0 au0Var2 = ta0Var3.c0;
-                                if (au0Var2 != null && (a7Var4 = au0Var2.s) != null) {
-                                    a7Var4.n = z17;
-                                    a7Var4.o = z18;
-                                    a7Var4.d(true);
+                                if (au0Var2 != null && (z6Var4 = au0Var2.s) != null) {
+                                    z6Var4.n = z17;
+                                    z6Var4.o = z18;
+                                    z6Var4.d(true);
                                 }
                                 gs0 gs0Var2 = ta0Var3.e0;
-                                if (gs0Var2 != null && (a7Var3 = gs0Var2.s) != null) {
-                                    a7Var3.n = z17;
-                                    a7Var3.o = z18;
-                                    a7Var3.d(true);
+                                if (gs0Var2 != null && (z6Var3 = gs0Var2.s) != null) {
+                                    z6Var3.n = z17;
+                                    z6Var3.o = z18;
+                                    z6Var3.d(true);
                                     break;
                                 }
                             }
@@ -1196,13 +1196,13 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
             j5VarArr[i22].setLeftDrawableTopPadding(-AndroidUtilities.dp(1.3f));
             j5VarArr[i22].setScrollNonFitText(true);
             j5VarArr[i22].setImportantForAccessibility(2);
-            frameLayoutArr[i22].addView(j5VarArr[i22], w7.z5.a(-2.0f, z10 ? 118.0f : 72.0f, 0.0f, 56.0f, 0.0f, -2, 51));
+            frameLayoutArr[i22].addView(j5VarArr[i22], w7.z5.d(-2, -2.0f, 51, z10 ? 118.0f : 72.0f, 0.0f, 56.0f, 0.0f));
             q6 q6Var = new q6(context, true, true, true);
             q6VarArr[i22] = q6Var;
             q6Var.b(0.4f, 320L, bs.h);
             q6VarArr[i22].setTextSize(AndroidUtilities.dp(14.0f));
             q6VarArr[i22].setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Pi, false));
-            frameLayoutArr[i22].addView(q6VarArr[i22], w7.z5.a(-2.0f, z10 ? 118.0f : 72.0f, 0.0f, 56.0f, 0.0f, -2, 51));
+            frameLayoutArr[i22].addView(q6VarArr[i22], w7.z5.d(-2, -2.0f, 51, z10 ? 118.0f : 72.0f, 0.0f, 56.0f, 0.0f));
             if (i22 != 0) {
                 frameLayoutArr[i22].setAlpha(0.0f);
             }
@@ -1219,7 +1219,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
         h9Var3.l = true;
         this.y.setVisibility(z10 ? 0 : 8);
         this.y.setImageDrawable(h9Var3);
-        frameLayout.addView(this.y, w7.z5.a(42.0f, 64.0f, 0.0f, 0.0f, 0.0f, 42, 51));
+        frameLayout.addView(this.y, w7.z5.d(42, 42.0f, 51, 64.0f, 0.0f, 0.0f, 0.0f));
         q6 q6Var2 = new q6(context, true, true, true);
         this.F = q6Var2;
         q6Var2.b(0.4f, 320L, bs.h);
@@ -1229,7 +1229,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
         int i24 = org.telegram.ui.ActionBar.h6.G6;
         q6Var3.setTextColor(getThemedColor(i24));
         this.F.setTypeface(AndroidUtilities.bold());
-        frameLayout.addView(this.F, w7.z5.a(-1.0f, (z10 ? 48 : 0) + 72, -2.0f, 72.0f, 0.0f, -2, 23));
+        frameLayout.addView(this.F, w7.z5.d(-2, -1.0f, 23, (z10 ? 48 : 0) + 72, -2.0f, 72.0f, 0.0f));
         if (this.a == 1) {
             va0 va0Var = new va0(context, getResourceProvider());
             this.R = va0Var;
@@ -1254,10 +1254,10 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
 
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    ci.a7 a7Var;
-                    ci.a7 a7Var2;
-                    ci.a7 a7Var3;
-                    ci.a7 a7Var4;
+                    ci.z6 z6Var;
+                    ci.z6 z6Var2;
+                    ci.z6 z6Var3;
+                    ci.z6 z6Var4;
                     int i172;
                     int i182 = i25;
                     wa0 wa0Var = this.b;
@@ -1304,16 +1304,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z13 = wa0Var.L;
                                 boolean z14 = wa0Var.M;
                                 au0 au0Var = ta0Var2.c0;
-                                if (au0Var != null && (a7Var2 = au0Var.s) != null) {
-                                    a7Var2.n = z13;
-                                    a7Var2.o = z14;
-                                    a7Var2.d(true);
+                                if (au0Var != null && (z6Var2 = au0Var.s) != null) {
+                                    z6Var2.n = z13;
+                                    z6Var2.o = z14;
+                                    z6Var2.d(true);
                                 }
                                 gs0 gs0Var = ta0Var2.e0;
-                                if (gs0Var != null && (a7Var = gs0Var.s) != null) {
-                                    a7Var.n = z13;
-                                    a7Var.o = z14;
-                                    a7Var.d(true);
+                                if (gs0Var != null && (z6Var = gs0Var.s) != null) {
+                                    z6Var.n = z13;
+                                    z6Var.o = z14;
+                                    z6Var.d(true);
                                     break;
                                 }
                             }
@@ -1336,16 +1336,16 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
                                 boolean z17 = wa0Var.L;
                                 boolean z18 = wa0Var.M;
                                 au0 au0Var2 = ta0Var3.c0;
-                                if (au0Var2 != null && (a7Var4 = au0Var2.s) != null) {
-                                    a7Var4.n = z17;
-                                    a7Var4.o = z18;
-                                    a7Var4.d(true);
+                                if (au0Var2 != null && (z6Var4 = au0Var2.s) != null) {
+                                    z6Var4.n = z17;
+                                    z6Var4.o = z18;
+                                    z6Var4.d(true);
                                 }
                                 gs0 gs0Var2 = ta0Var3.e0;
-                                if (gs0Var2 != null && (a7Var3 = gs0Var2.s) != null) {
-                                    a7Var3.n = z17;
-                                    a7Var3.o = z18;
-                                    a7Var3.d(true);
+                                if (gs0Var2 != null && (z6Var3 = gs0Var2.s) != null) {
+                                    z6Var3.n = z17;
+                                    z6Var3.o = z18;
+                                    z6Var3.d(true);
                                     break;
                                 }
                             }
@@ -1417,7 +1417,7 @@ public final class wa0 extends org.telegram.ui.ActionBar.n2 implements lv0, ng.b
         }
         int i26 = this.a;
         if (i26 == 1 || i26 == 2) {
-            qa0Var.addView(this.V, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 119));
+            qa0Var.addView(this.V, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 64.0f));
         } else {
             qa0Var.addView(this.V);
         }

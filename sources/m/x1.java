@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class x1 extends ViewGroup {
     public int E;
@@ -40,9 +40,9 @@ public abstract class x1 extends ViewGroup {
         this.c = 0;
         this.e = 8388659;
         int[] iArr = f.a.n;
-        g3 K = g3.K(context, attributeSet, iArr, i10);
-        r0.i0.i(this, context, iArr, attributeSet, (TypedArray) K.c, i10);
-        TypedArray typedArray = (TypedArray) K.c;
+        g3 P = g3.P(context, attributeSet, iArr, i10);
+        r0.i0.i(this, context, iArr, attributeSet, (TypedArray) P.c, i10);
+        TypedArray typedArray = (TypedArray) P.c;
         int i11 = typedArray.getInt(1, -1);
         if (i11 >= 0) {
             setOrientation(i11);
@@ -58,10 +58,10 @@ public abstract class x1 extends ViewGroup {
         this.h = typedArray.getFloat(4, -1.0f);
         this.b = typedArray.getInt(3, -1);
         this.n = typedArray.getBoolean(7, false);
-        setDividerDrawable(K.A(5));
+        setDividerDrawable(P.F(5));
         this.y = typedArray.getInt(8, 0);
         this.E = typedArray.getDimensionPixelSize(6, 0);
-        K.L();
+        P.Q();
     }
 
     public final void c(Canvas canvas, int i10) {

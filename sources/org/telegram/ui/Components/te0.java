@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class te0 extends org.telegram.ui.ActionBar.f3 {
     public final TextView b;
@@ -50,7 +50,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         imageView.setOnClickListener(new u80(this, 4));
         int dp = AndroidUtilities.dp(8.0f);
         imageView.setPadding(dp, dp, dp, dp);
-        frameLayout.addView(imageView, w7.z5.a(36.0f, 6.0f, 8.0f, 8.0f, 0.0f, 36, 8388661));
+        frameLayout.addView(imageView, w7.z5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
         q90 q90Var = new q90(context, n60Var, this, true, z10);
         this.h = q90Var;
         q90Var.setPermanent(true);
@@ -79,7 +79,7 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
         textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
         TextView textView3 = new TextView(context);
         this.d = textView3;
-        org.telegram.messenger.kk.m(R.string.ManageInviteLinks, textView3, 17);
+        org.telegram.messenger.lk.m(R.string.ManageInviteLinks, textView3, 17);
         textView3.setEllipsize(TextUtils.TruncateAt.END);
         textView3.setSingleLine(true);
         textView3.setTypeface(AndroidUtilities.bold());
@@ -117,9 +117,9 @@ public final class te0 extends org.telegram.ui.ActionBar.f3 {
     }
 
     public static void o(te0 te0Var, TLRPC.ChatFull chatFull, org.telegram.ui.n60 n60Var) {
-        org.telegram.ui.kh0 kh0Var = new org.telegram.ui.kh0(chatFull.id, 0L, 0);
-        kh0Var.g0(chatFull, chatFull.exported_invite);
-        n60Var.presentFragment(kh0Var);
+        org.telegram.ui.jh0 jh0Var = new org.telegram.ui.jh0(chatFull.id, 0L, 0);
+        jh0Var.g0(chatFull, chatFull.exported_invite);
+        n60Var.presentFragment(jh0Var);
         super.dismiss();
     }
 

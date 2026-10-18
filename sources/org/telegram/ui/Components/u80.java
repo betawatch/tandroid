@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u80 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final /* synthetic */ class u80 implements View.OnClickListener {
             case 12:
                 fo0 fo0Var = (fo0) this.b;
                 fo0Var.getClass();
-                new sg.x0(fo0Var.b, 24, true).show();
+                new sg.y0(fo0Var.b, 24, true).show();
                 break;
             case 13:
                 ((vo0) this.b).Q(false);
@@ -158,7 +158,7 @@ public final /* synthetic */ class u80 implements View.OnClickListener {
                 ((rx0) this.b).b.getImageReceiver().startAnimation();
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread((ci.l5) this.b, 100L);
+                AndroidUtilities.runOnUIThread((ci.k5) this.b, 100L);
                 break;
             case 19:
                 ((EditTextBoldCursor) this.b).setText("");
@@ -181,7 +181,7 @@ public final /* synthetic */ class u80 implements View.OnClickListener {
                 } else {
                     i10 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
                     MessagesController.getNotificationsSettings(i10).edit().putInt("dialog_show_translate_count" + snVar.a(), 14).commit();
-                    snVar.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) snVar, 13, false));
+                    snVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) snVar, 13, false));
                 }
                 snVar.Uc(true);
                 break;

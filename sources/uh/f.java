@@ -50,7 +50,7 @@ import ug.t0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f extends bb implements ne.d {
     public static final /* synthetic */ int r0 = 0;
@@ -127,8 +127,8 @@ public final class f extends bb implements ne.d {
         this.g0 = n5Var;
         int i11 = this.backgroundPaddingLeft;
         n5Var.setPadding(i11, 0, i11, 0);
-        n5Var.addView(k20Var, z5.a(40.0f, 10.0f, 0.0f, 10.0f, 0.0f, -1, 48));
-        n5Var.addView(o20Var, z5.a(144.0f, -3.0f, 40.0f, -3.0f, 0.0f, -1, 48));
+        n5Var.addView(k20Var, z5.d(-1, 40.0f, 48, 10.0f, 0.0f, 10.0f, 0.0f));
+        n5Var.addView(o20Var, z5.d(-1, 144.0f, 48, -3.0f, 40.0f, -3.0f, 0.0f));
         u3 u3Var = new u3(context, 18, d6Var);
         this.i0 = u3Var;
         u3Var.setTranslationY(AndroidUtilities.dp(48.0f));
@@ -137,7 +137,7 @@ public final class f extends bb implements ne.d {
         this.containerView.addView(n5Var, z5.e(-1, 216, 48));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setPadding(AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(10.0f) + AndroidUtilities.navigationBarHeight);
-        frameLayout.addView(dVar, z5.d(48.0f, -1));
+        frameLayout.addView(dVar, z5.c(48.0f, -1));
         this.containerView.addView(frameLayout, z5.e(-1, -2, 80));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.n0 = frameLayout2;

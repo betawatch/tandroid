@@ -1,6 +1,5 @@
 package hi;
 
-import ai.o2;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -22,7 +21,7 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.h9;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
@@ -46,7 +45,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             fVar2.getMessagesController().getChat(Long.valueOf(-fVar2.a));
-            fVar2.showDialog(new ji.a(fVar2.getParentActivity(), chat, fVar2.a, new o2(19, fVar2, chat)));
+            fVar2.showDialog(new ji.a(fVar2.getParentActivity(), chat, fVar2.a, new ai.n2(19, fVar2, chat)));
         }
     }
 
@@ -109,7 +108,7 @@ public final class f extends n2 implements NotificationCenter.NotificationCenter
         a71 a71Var2 = this.e;
         a71Var2.W2.r = false;
         a71Var2.p1();
-        this.d.addView(this.e, z5.d(-1.0f, -1));
+        this.d.addView(this.e, z5.c(-1.0f, -1));
         this.d.addView(this.actionBar, z5.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.d;
         this.fragmentView = frameLayout2;

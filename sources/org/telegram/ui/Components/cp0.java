@@ -30,7 +30,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class cp0 extends FrameLayout {
     public static float[] j0;
@@ -613,7 +613,7 @@ public class cp0 extends FrameLayout {
                 }
             } else {
                 f11 = 8.0f;
-                float x10 = org.telegram.messenger.kk.x(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f17);
+                float x10 = org.telegram.messenger.lk.x(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f17);
                 this.F = x10;
                 if (x10 < f18) {
                     this.F = f18;
@@ -875,7 +875,7 @@ public class cp0 extends FrameLayout {
         ap0 ap0Var = new ap0(this, context, context, 0);
         this.N = ap0Var;
         ap0Var.x = true;
-        addView(ap0Var, w7.z5.d(-2.0f, -1));
+        addView(ap0Var, w7.z5.c(-2.0f, -1));
         setImportantForAccessibility(1);
         org.telegram.ui.Cells.g1 g1Var = new org.telegram.ui.Cells.g1(this, z10);
         this.a = g1Var;

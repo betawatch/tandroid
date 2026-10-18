@@ -12,9 +12,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Wallet.s1;
 import org.telegram.ui.iq;
-import yh.u3;
+import yh.t3;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class i0 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -22,7 +22,7 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
     public final g0 G;
     public TLRPC.ShareTheme H;
     public final int a;
-    public final t0 b;
+    public final u0 b;
     public final h0 c;
     public int d = 0;
     public boolean e;
@@ -38,7 +38,7 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
 
     /* JADX WARN: Type inference failed for: r0v1, types: [zh.g0] */
     /* JADX WARN: Type inference failed for: r0v2, types: [zh.g0] */
-    public i0(int i10, t0 t0Var, h0 h0Var) {
+    public i0(int i10, u0 u0Var, h0 h0Var) {
         final int i11 = 0;
         this.F = new Runnable(this) { // from class: zh.g0
             public final /* synthetic */ i0 b;
@@ -80,19 +80,19 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
             }
         };
         this.a = i10;
-        this.b = t0Var;
+        this.b = u0Var;
         this.c = h0Var;
     }
 
     public final void a(TLRPC.ShareTheme shareTheme) {
         this.H = shareTheme;
         boolean z10 = shareTheme instanceof TLRPC.TL_shareThemeGift;
-        t0 t0Var = this.b;
+        u0 u0Var = this.b;
         if (z10) {
             TL_stars.StarGift starGift = ((TLRPC.TL_shareThemeGift) shareTheme).stargift;
             if (starGift instanceof TL_stars.TL_starGiftUnique) {
                 TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) starGift;
-                ArrayList arrayList = t0Var.v1;
+                ArrayList arrayList = u0Var.v1;
                 int i10 = 0;
                 while (true) {
                     if (i10 >= arrayList.size()) {
@@ -108,31 +108,31 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
                     arrayList.add(0, tL_starGiftUnique);
                     i10 = 0;
                 }
-                q0 q0Var = t0Var.F;
-                if (q0Var.a == 2 && q0Var.q == i10) {
+                r0 r0Var = u0Var.F;
+                if (r0Var.a == 2 && r0Var.q == i10) {
                     return;
                 }
-                t0Var.d2 = true;
-                t0Var.I.clear();
-                Runnable runnable = t0Var.c2;
+                u0Var.e2 = true;
+                u0Var.I.clear();
+                Runnable runnable = u0Var.d2;
                 if (runnable != null) {
                     runnable.run();
                 }
-                t0Var.M7 = i10;
-                t0Var.O7 = t0Var.e2 ? 1.0f : 0.0f;
-                t0Var.P7 = 1.0f;
-                t0Var.I0(t0Var.getWidth() / 2.0f, (t0Var.l() / 2.0f) + t0Var.m(), i10);
-                t0Var.d2 = false;
+                u0Var.M7 = i10;
+                u0Var.O7 = u0Var.f2 ? 1.0f : 0.0f;
+                u0Var.P7 = 1.0f;
+                u0Var.I0(u0Var.getWidth() / 2.0f, (u0Var.l() / 2.0f) + u0Var.m(), i10);
+                u0Var.e2 = false;
                 return;
             }
         }
         if (!(shareTheme instanceof TLRPC.TL_shareThemeEmojiBackdrop)) {
-            t0Var.d(t0.H9);
+            u0Var.d(u0.H9);
             return;
         }
         TLRPC.TL_shareThemeEmojiBackdrop tL_shareThemeEmojiBackdrop = (TLRPC.TL_shareThemeEmojiBackdrop) shareTheme;
         int i11 = tL_shareThemeEmojiBackdrop.flags;
-        t0Var.e(tL_shareThemeEmojiBackdrop.backdrop_id, (i11 & 2) != 0 ? tL_shareThemeEmojiBackdrop.emojis : null, (i11 & 1) != 0);
+        u0Var.e(tL_shareThemeEmojiBackdrop.backdrop_id, (i11 & 2) != 0 ? tL_shareThemeEmojiBackdrop.emojis : null, (i11 & 1) != 0);
     }
 
     public final TLRPC.TL_exportedNoPaidMessagesToken b() {
@@ -185,7 +185,7 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
         if (d == null) {
             return;
         }
-        ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getShareTheme, new org.telegram.messenger.a(), new u3(this, 3));
+        ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getShareTheme, new org.telegram.messenger.a(), new t3(this, 3));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -206,14 +206,14 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
         this.y = false;
         h0 h0Var = this.c;
         if (h0Var.g) {
-            t0 t0Var = this.b;
-            TL_stars.TL_starGiftUnique themeGift = t0Var.getThemeGift();
-            ArrayList<TLRPC.Reaction> pickedEmoji = t0Var.getPickedEmoji();
+            u0 u0Var = this.b;
+            TL_stars.TL_starGiftUnique themeGift = u0Var.getThemeGift();
+            ArrayList<TLRPC.Reaction> pickedEmoji = u0Var.getPickedEmoji();
             g0 g0Var = this.G;
             TLRPC.TL_shareThemeGift tL_shareThemeGift2 = null;
             if (themeGift == null) {
-                int themeBackdropIndex = t0Var.getThemeBackdropIndex();
-                if (themeBackdropIndex >= 0 && themeBackdropIndex != t0.H9) {
+                int themeBackdropIndex = u0Var.getThemeBackdropIndex();
+                if (themeBackdropIndex >= 0 && themeBackdropIndex != u0.H9) {
                     z10 = true;
                 }
                 if (z10 && a.h == null) {
@@ -256,7 +256,7 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
                 if (tL_inputSavedStarGiftChat != null) {
                 }
             } else {
-                long themeGiftSavedId = t0Var.getThemeGiftSavedId();
+                long themeGiftSavedId = u0Var.getThemeGiftSavedId();
                 TLRPC.InputPeer d = d();
                 if (themeGiftSavedId != 0 && d != null) {
                     TL_stars.TL_inputSavedStarGiftChat tL_inputSavedStarGiftChat2 = new TL_stars.TL_inputSavedStarGiftChat();
@@ -274,12 +274,12 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
                 tL_shareThemeGift2 = tL_shareThemeGift;
             }
             this.H = tL_shareThemeGift2;
-            u0[] u0VarArr = u0.d;
+            v0[] v0VarArr = v0.d;
             int i10 = this.a;
-            if (u0VarArr[i10] == null) {
-                u0VarArr[i10] = new u0(i10);
+            if (v0VarArr[i10] == null) {
+                v0VarArr[i10] = new v0(i10);
             }
-            u0VarArr[i10].a(h0Var.f, this.H);
+            v0VarArr[i10].a(h0Var.f, this.H);
             this.v = tL_shareThemeGift;
             AndroidUtilities.cancelRunOnUIThread(g0Var);
             AndroidUtilities.runOnUIThread(g0Var, 700L);
@@ -364,29 +364,29 @@ public final class i0 implements NotificationCenter.NotificationCenterDelegate {
         } else {
             j10 = globalPrivacySettings.noncontact_peers_paid_stars;
         }
-        t0 t0Var = this.b;
-        t0Var.setFeeStars(j10);
+        u0 u0Var = this.b;
+        u0Var.setFeeStars(j10);
         if (j10 <= 0 || this.e) {
             return;
         }
         this.e = true;
         if (!this.c.d && this.d == 0 && MessagesController.getMainSettings(i10).getBoolean("qrNoPaidPermanent", false)) {
             this.d = 2;
-            t0Var.v0 = true;
-            t0Var.w0 = false;
-            t0Var.B0 = 1.0f;
-            t0Var.D0 = 1.0f;
-            t0Var.C0 = 1.0f;
-            t0Var.F0 = true;
-            t0Var.G0 = 1.0f;
-            t0Var.y2 = null;
-            t0Var.z2 = -1;
-            t0Var.t1(false);
-            t0Var.invalidate();
+            u0Var.v0 = true;
+            u0Var.w0 = false;
+            u0Var.B0 = 1.0f;
+            u0Var.D0 = 1.0f;
+            u0Var.C0 = 1.0f;
+            u0Var.F0 = true;
+            u0Var.G0 = 1.0f;
+            u0Var.z2 = null;
+            u0Var.A2 = -1;
+            u0Var.u1(false);
+            u0Var.invalidate();
             TLRPC.TL_exportedNoPaidMessagesToken b10 = b();
             this.f = b10;
             if (b10 != null) {
-                t0Var.setFreeLink(c(b10));
+                u0Var.setFreeLink(c(b10));
             }
             h(false, false);
         }

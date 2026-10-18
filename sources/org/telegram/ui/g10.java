@@ -34,7 +34,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class g10 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public static final SpannableStringBuilder[] s0 = new SpannableStringBuilder[3];
@@ -76,7 +76,7 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
     public final s4.b0 j0;
     public final u00 k0;
     public final AnimationNotificationsLocker l0;
-    public final ci.i3 m0;
+    public final ci.h3 m0;
     public final ArrayList n;
     public final fz n0;
     public f10 o0;
@@ -123,14 +123,14 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
         u1Var.setSectionsType(2);
         u1Var.setSkipDrawSection(true);
         u1Var.setOnScrollListener(new v00(this));
-        ci.i3 i3Var = new ci.i3(parentActivity);
-        this.m0 = i3Var;
+        ci.h3 h3Var = new ci.h3(parentActivity);
+        this.m0 = h3Var;
         String formatDateChat = LocaleController.formatDateChat((int) (System.currentTimeMillis() / 1000));
-        if (!TextUtils.equals((String) i3Var.d, formatDateChat)) {
-            i3Var.d = formatDateChat;
-            ((org.telegram.ui.Components.p6) i3Var.b).t(formatDateChat, true, true);
+        if (!TextUtils.equals((String) h3Var.d, formatDateChat)) {
+            h3Var.d = formatDateChat;
+            ((org.telegram.ui.Components.p6) h3Var.b).t(formatDateChat, true, true);
         }
-        addView(i3Var, w7.z5.a(33.0f, 0.0f, -2.0f, 0.0f, 0.0f, -1, 49));
+        addView(h3Var, w7.z5.d(-1, 33.0f, 49, 0.0f, -2.0f, 0.0f, 0.0f));
         this.T = new z00(this);
         this.U = new e10(this, getContext());
         this.V = new b10(this, getContext(), 1);
@@ -250,10 +250,10 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
 
     public final void b() {
         float f7 = this.a.e;
-        ci.i3 i3Var = this.m0;
-        i3Var.setTranslationY((1.0f - f7) * (-AndroidUtilities.dp(24.0f)));
-        i3Var.setAlpha(f7);
-        i3Var.setVisibility(f7 > 0.0f ? 0 : 4);
+        ci.h3 h3Var = this.m0;
+        h3Var.setTranslationY((1.0f - f7) * (-AndroidUtilities.dp(24.0f)));
+        h3Var.setAlpha(f7);
+        h3Var.setVisibility(f7 > 0.0f ? 0 : 4);
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -1076,11 +1076,11 @@ public final class g10 extends FrameLayout implements NotificationCenter.Notific
         eVar.b(0, 0);
         eVar.f = 1.0f;
         eVar.h = 1.0f;
-        ci.i3 i3Var = this.m0;
-        dh.d c10 = bVar.c(i3Var, eVar, false);
-        i3Var.c = c10;
+        ci.h3 h3Var = this.m0;
+        dh.d c10 = bVar.c(h3Var, eVar, false);
+        h3Var.c = c10;
         c10.q(AndroidUtilities.dp(11.5f));
-        ((dh.d) i3Var.c).p(AndroidUtilities.dp(5.0f));
+        ((dh.d) h3Var.c).p(AndroidUtilities.dp(5.0f));
     }
 
     public void setChatPreviewDelegate(org.telegram.ui.Components.ro0 ro0Var) {

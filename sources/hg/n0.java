@@ -15,7 +15,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.zq;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class n0 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -30,11 +30,11 @@ public final class n0 extends FrameLayout {
         this.a = d6Var;
         w9 w9Var = new w9(context);
         this.b = w9Var;
-        addView(w9Var, z5.d(30.0f, 30));
+        addView(w9Var, z5.c(30.0f, 30));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 14.0f);
-        addView(textView, z5.a(-2.0f, 36.0f, 0.0f, 14.0f, 0.0f, -2, 16));
+        addView(textView, z5.d(-2, -2.0f, 16, 36.0f, 0.0f, 14.0f, 0.0f));
         a();
     }
 

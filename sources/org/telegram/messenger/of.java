@@ -1,58 +1,100 @@
 package org.telegram.messenger;
 
+import android.graphics.Bitmap;
+import android.os.Build;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.Serializable;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class of implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
     public final /* synthetic */ Object h;
+    public final /* synthetic */ Cloneable n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ of(MessagesStorage messagesStorage, long j10, ArrayList arrayList, boolean z10, int i10, int i11) {
-        this.f = messagesStorage;
-        this.e = j10;
-        this.h = arrayList;
-        this.b = z10;
-        this.c = i10;
-        this.d = i11;
+    public /* synthetic */ of(MessagesStorage messagesStorage, int i10, ArrayList arrayList, int i11, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
+        this.e = messagesStorage;
+        this.b = i10;
+        this.d = arrayList;
+        this.c = i11;
+        this.n = hVar;
+        this.r = hVar2;
+        this.f = arrayList2;
+        this.h = arrayList3;
+        this.s = countDownLatch;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesStorage) this.f).lambda$markMessagesAsDeleted$229(this.e, (ArrayList) this.h, this.b, this.c, this.d);
-                break;
+                ((MessagesStorage) this.e).lambda$getWidgetDialogs$169(this.b, this.d, this.c, (a0.h) this.n, (a0.h) this.r, (ArrayList) this.f, (ArrayList) this.h, (CountDownLatch) this.s);
+                return;
             default:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;
-                CharSequence charSequence = (CharSequence) this.h;
-                chatActivityEnterView.f0 = null;
-                chatActivityEnterView.o0(true);
-                org.telegram.ui.Components.pf pfVar = chatActivityEnterView.E0;
-                if (pfVar != null) {
-                    pfVar.setText("");
+                zf.e eVar = (zf.e) this.e;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.f;
+                Bitmap[] bitmapArr = (Bitmap[]) this.h;
+                int i10 = this.b;
+                zf.z[] zVarArr = (zf.z[]) this.n;
+                int i11 = this.c;
+                RandomAccessFile randomAccessFile = (RandomAccessFile) this.r;
+                ArrayList arrayList = this.d;
+                CountDownLatch[] countDownLatchArr = (CountDownLatch[]) this.s;
+                if (eVar.o.get() || atomicBoolean.get()) {
+                    return;
                 }
-                org.telegram.ui.Components.og ogVar = chatActivityEnterView.Z2;
-                if (ogVar != null) {
-                    ogVar.L(charSequence, this.b, this.c, this.d, this.e);
-                    break;
+                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.WEBP;
+                if (Build.VERSION.SDK_INT <= 28) {
+                    compressFormat = Bitmap.CompressFormat.PNG;
                 }
-                break;
+                bitmapArr[i10].compress(compressFormat, eVar.l, zVarArr[i10]);
+                int i12 = zVarArr[i10].b;
+                try {
+                    synchronized (eVar.h) {
+                        zf.d dVar = new zf.d(i11);
+                        dVar.c = (int) randomAccessFile.length();
+                        arrayList.add(dVar);
+                        randomAccessFile.write(zVarArr[i10].a, 0, i12);
+                        dVar.b = i12;
+                        zVarArr[i10].b();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    try {
+                        randomAccessFile.close();
+                    } catch (Exception unused) {
+                    } catch (Throwable th2) {
+                        atomicBoolean.set(true);
+                        throw th2;
+                    }
+                    atomicBoolean.set(true);
+                }
+                countDownLatchArr[i10].countDown();
+                return;
         }
     }
 
-    public /* synthetic */ of(ChatActivityEnterView chatActivityEnterView, CharSequence charSequence, boolean z10, int i10, int i11, long j10) {
-        this.f = chatActivityEnterView;
-        this.h = charSequence;
-        this.b = z10;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ of(zf.e eVar, AtomicBoolean atomicBoolean, Bitmap[] bitmapArr, int i10, zf.z[] zVarArr, int i11, RandomAccessFile randomAccessFile, ArrayList arrayList, CountDownLatch[] countDownLatchArr) {
+        this.e = eVar;
+        this.f = atomicBoolean;
+        this.h = bitmapArr;
+        this.b = i10;
+        this.n = zVarArr;
+        this.c = i11;
+        this.r = randomAccessFile;
+        this.d = arrayList;
+        this.s = countDownLatchArr;
     }
 }

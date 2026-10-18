@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class rx0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -392,7 +392,7 @@ public class rx0 extends FrameLayout implements NotificationCenter.NotificationC
         sa1Var.addView(nVar, w7.z5.t(-2, -2, 1, 0, 12, 0, 0));
         sa1Var.addView(x90Var, w7.z5.t(-2, -2, 1, 0, 8, 0, 0));
         sa1Var.addView(dVar, w7.z5.t(-1, 48, 1, 28, 16, 28, 0));
-        addView(sa1Var, w7.z5.a(-2.0f, 46.0f, 0.0f, 46.0f, 30.0f, -2, 17));
+        addView(sa1Var, w7.z5.d(-2, -2.0f, 17, 46.0f, 0.0f, 46.0f, 30.0f));
         if (view == null) {
             RadialProgressView radialProgressView = new RadialProgressView(context, d6Var);
             this.c = radialProgressView;

@@ -1,72 +1,171 @@
 package yh;
 
-import android.content.Context;
+import ai.v9;
+import ai.y9;
 import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
+import android.text.TextPaint;
 import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.b91;
-import org.telegram.ui.Components.c91;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.is0;
-import org.telegram.ui.Components.yq;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.Components.u81;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class v1 extends c91 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.n2 T;
-    public final /* synthetic */ is0 U;
+public final class v1 extends u81 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d6 b;
+    public final /* synthetic */ is0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v1(is0 is0Var, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
-        super(context, null);
-        this.U = is0Var;
-        this.T = n2Var;
+    public v1(is0 is0Var, int i10, d6 d6Var) {
+        this.c = is0Var;
+        this.a = i10;
+        this.b = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.c91
-    public final void h() {
-        is0 is0Var = this.U;
-        b91 b91Var = is0Var.n;
-        if (!is0Var.b() || b91Var == null) {
-            return;
-        }
-        if (is0Var.J == null) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.g0.g(R.string.Gift2NewCollection, new StringBuilder("+ ")));
-            yq yqVar = new yq(R.drawable.poll_add_plus, 0);
-            yqVar.spaceScaleX = 0.8f;
-            spannableStringBuilder.setSpan(yqVar, 0, 1, 33);
-            is0Var.J = spannableStringBuilder;
-        }
-        b91Var.a(-1, is0Var.J);
-    }
-
-    @Override // org.telegram.ui.Components.c91
-    public final boolean i(MotionEvent motionEvent) {
-        return !this.U.g();
-    }
-
-    @Override // org.telegram.ui.Components.c91
-    public final void w(boolean z10) {
-        is0 is0Var = this.U;
-        is0Var.l();
-        org.telegram.ui.ActionBar.n2 n2Var = this.T;
-        if (n2Var instanceof ProfileActivity) {
-            ((ProfileActivity) n2Var).R();
-            View fragmentView = n2Var.getFragmentView();
-            if (fragmentView != null) {
-                fragmentView.invalidate();
+    @Override // org.telegram.ui.Components.u81
+    public final void a(ArrayList arrayList) {
+        is0 is0Var = this.c;
+        q1 q1Var = is0Var.N;
+        v9 v9Var = is0Var.e;
+        ArrayList arrayList2 = new ArrayList();
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            Integer num = (Integer) obj;
+            int intValue = num.intValue();
+            if (intValue != -1 && intValue != -2) {
+                arrayList2.add(num);
             }
         }
-        is0Var.o();
+        v9Var.getClass();
+        HashMap hashMap = new HashMap();
+        ArrayList arrayList3 = v9Var.e;
+        int size2 = arrayList3.size();
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj2 = arrayList3.get(i11);
+            i11++;
+            TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj2;
+            hashMap.put(Integer.valueOf(tL_starGiftCollection.collection_id), tL_starGiftCollection);
+        }
+        ArrayList arrayList4 = new ArrayList();
+        int size3 = arrayList2.size();
+        int i12 = 0;
+        while (i12 < size3) {
+            Object obj3 = arrayList2.get(i12);
+            i12++;
+            Integer num2 = (Integer) obj3;
+            num2.getClass();
+            TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) hashMap.get(num2);
+            if (tL_starGiftCollection2 != null) {
+                arrayList4.add(tL_starGiftCollection2);
+            }
+        }
+        arrayList3.clear();
+        arrayList3.addAll(arrayList4);
+        v9Var.j();
+        l2 currentPage = is0Var.getCurrentPage();
+        if (currentPage != null) {
+            int f7 = currentPage.d ? v9Var.f(currentPage.e.d) + 1 : 0;
+            is0Var.n.e(0.0f, f7, f7);
+        }
+        AndroidUtilities.cancelRunOnUIThread(q1Var);
+        AndroidUtilities.runOnUIThread(q1Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.c91
-    public final void z(int i10) {
-        this.U.l();
-        org.telegram.ui.ActionBar.n2 n2Var = this.T;
-        if (n2Var instanceof ProfileActivity) {
-            ((ProfileActivity) n2Var).R();
+    @Override // org.telegram.ui.Components.u81
+    public final void b(View view, int i10, int i11) {
+        y9 y9Var;
+        boolean z10;
+        is0 is0Var = this.c;
+        v9 v9Var = is0Var.e;
+        l2 l2Var = (l2) view;
+        if (i11 == 0) {
+            y9Var = is0Var.d;
+            z10 = false;
+        } else {
+            int i12 = i10 - 1;
+            if (i12 < 0) {
+                v9Var.getClass();
+            } else if (i12 < v9Var.d().size()) {
+                y9Var = v9Var.e(((TL_stars.TL_starGiftCollection) v9Var.d().get(i12)).collection_id);
+                z10 = true;
+            }
+            y9Var = null;
+            z10 = true;
         }
+        l2Var.d = z10;
+        l2Var.e = y9Var;
+        if (y9Var != null) {
+            y9Var.a();
+        }
+        l2Var.f(false);
+        LinearLayout linearLayout = l2Var.E;
+        if (linearLayout != null) {
+            linearLayout.setVisibility(l2Var.a.e.h() ? 0 : 8);
+        }
+        l2Var.setVisibleHeight(is0Var.Q);
+        l2Var.setHasTabs(!v9Var.d().isEmpty());
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final boolean c(int i10) {
+        return i10 != 0;
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final View d(int i10) {
+        if (i10 == -1) {
+            return null;
+        }
+        return new l2(this.c, this.a, this.b);
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final int e() {
+        return this.c.e.d().size() + 1;
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final int f(int i10) {
+        if (i10 == 0) {
+            return -2;
+        }
+        return ((TL_stars.TL_starGiftCollection) this.c.e.d().get(i10 - 1)).collection_id;
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final CharSequence g(int i10) {
+        if (i10 == 0) {
+            return LocaleController.getString(R.string.Gift2CollectionAll);
+        }
+        TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c.e.d().get(i10 - 1);
+        if (tL_starGiftCollection == null) {
+            return null;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_starGiftCollection.title);
+        if (tL_starGiftCollection.icon != null) {
+            TextPaint textPaint = new TextPaint(1);
+            textPaint.setTextSize(AndroidUtilities.dp(16.0f));
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("e ");
+            spannableStringBuilder2.setSpan(new a6(tL_starGiftCollection.icon, textPaint.getFontMetricsInt()), 0, 1, 33);
+            spannableStringBuilder.insert(0, (CharSequence) spannableStringBuilder2);
+        }
+        return spannableStringBuilder;
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final int h(int i10) {
+        return i10 == 0 ? 0 : 1;
     }
 }

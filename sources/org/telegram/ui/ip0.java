@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class ip0 extends FrameLayout {
     public final RectF E;
@@ -31,7 +31,7 @@ public class ip0 extends FrameLayout {
     public final org.telegram.ui.Components.p5 r;
     public final org.telegram.ui.Components.p5 s;
     public final org.telegram.ui.Components.p5 v;
-    public final ci.a8 w;
+    public final ci.z7 w;
     public final org.telegram.ui.Components.f6 x;
     public MessagesController.PeerColor y;
 
@@ -44,7 +44,7 @@ public class ip0 extends FrameLayout {
         org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         this.e = h9Var;
         this.v = new org.telegram.ui.Components.p5(AndroidUtilities.dp(20.0f), 13, this, false);
-        this.w = new ci.a8(this);
+        this.w = new ci.z7(this);
         this.x = new org.telegram.ui.Components.f6(this, 320L, org.telegram.ui.Components.bs.h);
         this.E = new RectF();
         this.b = i10;
@@ -62,13 +62,13 @@ public class ip0 extends FrameLayout {
         flVar.setTextSize(20);
         flVar.setTypeface(AndroidUtilities.bold());
         flVar.setWidthWrapContent(true);
-        addView(flVar, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 40.33f, -2, 81));
+        addView(flVar, w7.z5.d(-2, -2.0f, 81, 16.0f, 0.0f, 16.0f, 40.33f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.h = j5Var;
         j5Var.setTextSize(14);
         j5Var.setTextColor(-2130706433);
         j5Var.setGravity(1);
-        addView(j5Var, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 20.66f, -2, 81));
+        addView(j5Var, w7.z5.d(-2, -2.0f, 81, 16.0f, 0.0f, 16.0f, 20.66f));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(96.0f));
         if (z10) {
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));

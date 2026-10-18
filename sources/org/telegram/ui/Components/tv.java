@@ -22,9 +22,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.StickersActivity;
 import org.telegram.ui.te1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tv implements org.telegram.ui.ActionBar.q0, Utilities.Callback5, org.telegram.ui.ActionBar.a2, hg.z1, GenericProvider, p90, of0, yl0, org.telegram.ui.xx, ci.q7, MessagesStorage.StringCallback, e91, LanguageDetector.StringCallback, mw0 {
+public final /* synthetic */ class tv implements org.telegram.ui.ActionBar.q0, Utilities.Callback5, org.telegram.ui.ActionBar.a2, hg.z1, GenericProvider, p90, of0, yl0, org.telegram.ui.xx, ci.p7, MessagesStorage.StringCallback, e91, LanguageDetector.StringCallback, mw0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -91,11 +91,11 @@ public final /* synthetic */ class tv implements org.telegram.ui.ActionBar.q0, U
         }
     }
 
-    @Override // ci.q7
+    @Override // ci.p7
     public void b(boolean z10) {
-        ci.a7 a7Var = (ci.a7) this.b;
+        ci.z6 z6Var = (ci.z6) this.b;
         if (z10) {
-            a7Var.p(30, false);
+            z6Var.p(30, false);
         }
     }
 
@@ -211,8 +211,8 @@ public final /* synthetic */ class tv implements org.telegram.ui.ActionBar.q0, U
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        ci.i7 storiesController;
-        ci.i7 storiesController2;
+        ci.h7 storiesController;
+        ci.h7 storiesController2;
         switch (this.a) {
             case 20:
                 final sv0 sv0Var = ((ms0) this.b).d;
@@ -224,15 +224,15 @@ public final /* synthetic */ class tv implements org.telegram.ui.ActionBar.q0, U
                         int i11 = i10;
                         int i12 = 7;
                         sv0 sv0Var2 = sv0Var;
-                        ci.b7 b7Var = (ci.b7) obj;
+                        ci.a7 a7Var = (ci.a7) obj;
                         switch (i11) {
                             case 0:
                                 int[] iArr = sv0.d2;
-                                AndroidUtilities.runOnUIThread(new go0(i12, sv0Var2, b7Var), 100L);
+                                AndroidUtilities.runOnUIThread(new go0(i12, sv0Var2, a7Var), 100L);
                                 break;
                             default:
                                 int[] iArr2 = sv0.d2;
-                                AndroidUtilities.runOnUIThread(new go0(i12, sv0Var2, b7Var), 100L);
+                                AndroidUtilities.runOnUIThread(new go0(i12, sv0Var2, a7Var), 100L);
                                 break;
                         }
                     }
@@ -248,15 +248,15 @@ public final /* synthetic */ class tv implements org.telegram.ui.ActionBar.q0, U
                         int i112 = i11;
                         int i12 = 7;
                         sv0 sv0Var22 = sv0Var2;
-                        ci.b7 b7Var = (ci.b7) obj;
+                        ci.a7 a7Var = (ci.a7) obj;
                         switch (i112) {
                             case 0:
                                 int[] iArr = sv0.d2;
-                                AndroidUtilities.runOnUIThread(new go0(i12, sv0Var22, b7Var), 100L);
+                                AndroidUtilities.runOnUIThread(new go0(i12, sv0Var22, a7Var), 100L);
                                 break;
                             default:
                                 int[] iArr2 = sv0.d2;
-                                AndroidUtilities.runOnUIThread(new go0(i12, sv0Var22, b7Var), 100L);
+                                AndroidUtilities.runOnUIThread(new go0(i12, sv0Var22, a7Var), 100L);
                                 break;
                         }
                     }

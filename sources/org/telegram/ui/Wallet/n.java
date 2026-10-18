@@ -8,7 +8,7 @@ import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -74,80 +74,65 @@ public final /* synthetic */ class n implements Runnable {
                 ((j2) this.b).dismiss();
                 return;
             case 6:
-                y2 y2Var = (y2) this.b;
-                if (y2Var.P || y2Var.O) {
-                    return;
-                }
-                hh.d.c(y2Var.E, y2Var.h);
-                y2Var.F.d();
-                y2Var.a(1.0f);
-                return;
-            case 7:
                 ((org.telegram.ui.Cells.w0) this.b).invalidate();
                 return;
-            case 8:
+            case 7:
                 AndroidUtilities.removeFromParent((ei.x3) this.b);
                 return;
-            case 9:
-                i5 i5Var = (i5) this.b;
-                u61 u61Var = i5Var.c;
+            case 8:
+                j5 j5Var = (j5) this.b;
+                u61 u61Var = j5Var.c;
                 if (u61Var == null || u61Var.getScrollState() != 0) {
                     return;
                 }
-                a71 t02 = i5Var.j.t0();
-                if ((t02 == null || t02.getScrollState() == 0) && (d = i5Var.d(i5Var.c.V2)) != null) {
-                    s4.b0 b0Var = i5Var.c.V2;
+                a71 u02 = j5Var.j.u0();
+                if ((u02 == null || u02.getScrollState() == 0) && (d = j5Var.d(j5Var.c.V2)) != null) {
+                    s4.b0 b0Var = j5Var.c.V2;
                     b0Var.getClass();
                     int i10 = new int[]{0, s4.n0.z(d) - b0Var.F()}[1];
                     if (i10 != 0) {
-                        i5Var.c.v0(0, i10, null);
+                        j5Var.c.v0(0, i10, null);
                         return;
                     }
                     return;
                 }
                 return;
-            case 10:
-                ((p5) this.b).performClick();
-                return;
-            case 11:
-                ((f6) this.b).performClick();
-                return;
-            case 12:
+            case 9:
                 ((WalletEngine2) this.b).lambda$close$53();
                 return;
-            case 13:
-                o8 o8Var = (o8) this.b;
-                boolean z10 = o8Var.h != -1;
-                if (!z10 && !o8Var.s) {
-                    o8Var.c = o8Var.c();
-                    o8Var.d = 0.0f;
+            case 10:
+                i8 i8Var = (i8) this.b;
+                boolean z10 = i8Var.h != -1;
+                if (!z10 && !i8Var.s) {
+                    i8Var.c = i8Var.c();
+                    i8Var.d = 0.0f;
                 }
-                boolean z11 = z10 || o8Var.s || o8Var.e > 1.001f;
-                k3 k3Var = o8Var.b;
-                float f7 = o8Var.c;
-                float f10 = o8Var.d;
-                k3Var.r = f7;
-                k3Var.s = f10;
-                k3Var.v = z11;
-                k3Var.w = z11;
+                boolean z11 = z10 || i8Var.s || i8Var.e > 1.001f;
+                l3 l3Var = i8Var.b;
+                float f7 = i8Var.c;
+                float f10 = i8Var.d;
+                l3Var.r = f7;
+                l3Var.s = f10;
+                l3Var.v = z11;
+                l3Var.w = z11;
                 return;
-            case 14:
-                v8 v8Var = (v8) this.b;
-                v8Var.removeSelfFromStack();
-                Runnable runnable2 = v8Var.f;
+            case 11:
+                p8 p8Var = (p8) this.b;
+                p8Var.removeSelfFromStack();
+                Runnable runnable2 = p8Var.f;
                 if (runnable2 != null) {
                     runnable2.run();
                     return;
                 }
                 return;
-            case 15:
+            case 12:
                 ((org.telegram.ui.Cells.t3) this.b).requestLayout();
                 return;
-            case 16:
-                xc.a0((w9) this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+            case 13:
+                xc.a0((r9) this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 return;
             default:
-                ((da) this.b).U();
+                ((y9) this.b).U();
                 return;
         }
     }

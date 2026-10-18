@@ -7,9 +7,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class fi extends nh0 {
+public final class fi extends mh0 {
     public final /* synthetic */ sn e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -25,7 +25,7 @@ public final class fi extends nh0 {
         b10Var.f(org.telegram.ui.ActionBar.h6.G8, org.telegram.ui.ActionBar.h6.i6, -1);
         b10Var.setViewType(13);
         b10Var.setIsSingleCell(false);
-        addView(b10Var, w7.z5.d(-1.0f, -2));
+        addView(b10Var, w7.z5.c(-1.0f, -2));
         org.telegram.ui.Components.x90 x90Var = new org.telegram.ui.Components.x90(context, null);
         this.b = x90Var;
         x90Var.setTextSize(1, 14.0f);
@@ -36,12 +36,12 @@ public final class fi extends nh0 {
         x90Var.setSingleLine();
         x90Var.setLines(1);
         x90Var.setMaxLines(1);
-        addView(x90Var, w7.z5.a(-2.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 19));
+        addView(x90Var, w7.z5.d(-1, -2.0f, 19, 12.0f, 0.0f, 12.0f, 0.0f));
         TLRPC.TL_channels_getMessageAuthor tL_channels_getMessageAuthor = new TLRPC.TL_channels_getMessageAuthor();
         tL_channels_getMessageAuthor.channel = MessagesController.getInstance(i10).getInputChannel(-messageObject.getDialogId());
         tL_channels_getMessageAuthor.id = messageObject.getId();
         x90Var.setAlpha(0.0f);
-        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.n2(this, i10, 8));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_getMessageAuthor, new ai.m2(this, i10, 8));
         setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I5, false), 6, 0));
         setEnabled(false);
     }

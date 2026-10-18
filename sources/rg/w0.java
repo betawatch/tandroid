@@ -24,7 +24,7 @@ import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.dw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class w0 extends FrameLayout {
     public float E;
@@ -84,7 +84,7 @@ public abstract class w0 extends FrameLayout {
         w1Var.setValueOverride(bVar);
         w1Var.setTranslationX(-AndroidUtilities.dp(18.0f));
         w1Var.setAlpha(0.0f);
-        addView(w1Var, z5.d(-1.0f, -1));
+        addView(w1Var, z5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -99,7 +99,7 @@ public abstract class w0 extends FrameLayout {
         textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
         textView.setTextColor(-1);
         textView.setGravity(17);
-        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, z5.a(44.0f, -8.0f, 0.0f, 0.0f, 0.0f, -2, 3), context);
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, z5.d(-2, 44.0f, 3, -8.0f, 0.0f, 0.0f, 0.0f), context);
         this.v = j10;
         k3.m(15.0f, 1, j10);
         int i12 = h6.zf;
@@ -108,7 +108,7 @@ public abstract class w0 extends FrameLayout {
         j10.setText(LocaleController.getString(R.string.Save).toUpperCase());
         j10.setTextColor(h6.x0(null, i12, false));
         j10.setGravity(17);
-        frameLayout.addView(j10, z5.a(44.0f, 0.0f, 0.0f, -8.0f, 0.0f, -2, 5));
+        frameLayout.addView(j10, z5.d(-2, 44.0f, 5, 0.0f, 0.0f, -8.0f, 0.0f));
     }
 
     private dw0 getPaintingSize() {

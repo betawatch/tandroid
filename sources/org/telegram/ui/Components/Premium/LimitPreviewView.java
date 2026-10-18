@@ -36,19 +36,19 @@ import org.telegram.ui.Components.su;
 import org.telegram.ui.Components.uz;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.n40;
+import sg.a1;
 import sg.p;
 import sg.q;
 import sg.s;
 import sg.t;
-import sg.z0;
 import w7.r;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class LimitPreviewView extends LinearLayout {
     public static final /* synthetic */ int l0 = 0;
-    public z0 E;
+    public a1 E;
     public int F;
     public boolean G;
     public boolean H;
@@ -897,8 +897,8 @@ public class LimitPreviewView extends LinearLayout {
         this.R = true;
     }
 
-    public void setStaticGradinet(z0 z0Var) {
-        this.E = z0Var;
+    public void setStaticGradinet(a1 a1Var) {
+        this.E = a1Var;
     }
 
     public void setStatus(int i10, int i11, boolean z10) {
@@ -986,11 +986,11 @@ public class LimitPreviewView extends LinearLayout {
         textView.setGravity(16);
         textView.setTextColor(h6.w0(i13, d6Var));
         if (LocaleController.isRTL) {
-            dh0Var.addView(q6Var, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 5));
-            dh0Var.addView(textView, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 3));
+            dh0Var.addView(q6Var, z5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            dh0Var.addView(textView, z5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            dh0Var.addView(q6Var, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 3));
-            dh0Var.addView(textView, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 5));
+            dh0Var.addView(q6Var, z5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            dh0Var.addView(textView, z5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         dh0 dh0Var2 = new dh0(this, context, false);
         this.g0 = dh0Var2;
@@ -1008,16 +1008,16 @@ public class LimitPreviewView extends LinearLayout {
         q6Var2.setGravity(21);
         q6Var2.setTextColor(-1);
         if (LocaleController.isRTL) {
-            dh0Var2.addView(textView2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 5));
-            dh0Var2.addView(q6Var2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 3));
+            dh0Var2.addView(textView2, z5.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            dh0Var2.addView(q6Var2, z5.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            dh0Var2.addView(textView2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 3));
-            dh0Var2.addView(q6Var2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 5));
+            dh0Var2.addView(textView2, z5.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            dh0Var2.addView(q6Var2, z5.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         n5 n5Var = new n5(this, context, d6Var);
         this.I = n5Var;
-        n5Var.addView(dh0Var, z5.d(30.0f, -1));
-        n5Var.addView(dh0Var2, z5.d(30.0f, -1));
+        n5Var.addView(dh0Var, z5.c(30.0f, -1));
+        n5Var.addView(dh0Var2, z5.c(30.0f, -1));
         addView(n5Var, z5.p(-1, 30, 0.0f, 0, 14, i10 != 0 ? 12 : 0, 14, 0));
     }
 }

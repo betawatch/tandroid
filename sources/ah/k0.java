@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import ci.v8;
+import ci.u8;
 import ei.c6;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.o9;
@@ -19,11 +19,11 @@ import org.telegram.ui.Components.ob0;
 import org.telegram.ui.Components.voip.t2;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.x8;
-import org.telegram.ui.oi0;
+import org.telegram.ui.ni0;
 import org.telegram.ui.x31;
 import org.telegram.ui.z31;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -56,12 +56,12 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 1:
-                v8 v8Var = (v8) this.c;
-                v8Var.getClass();
-                v8Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v8Var.invalidate();
+                u8 u8Var = (u8) this.c;
+                u8Var.getClass();
+                u8Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                u8Var.invalidate();
                 if (this.b) {
-                    v8Var.requestLayout();
+                    u8Var.requestLayout();
                     break;
                 }
                 break;
@@ -149,16 +149,16 @@ public final /* synthetic */ class k0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 10:
-                oi0 oi0Var = (oi0) this.c;
+                ni0 ni0Var = (ni0) this.c;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                oi0Var.E = floatValue4;
-                oi0Var.H.setAlpha(floatValue4);
-                oi0Var.K.setAlpha(oi0Var.E);
-                if (!this.b && (viewGroup = oi0Var.Z) != null) {
-                    viewGroup.setAlpha(oi0Var.E);
+                ni0Var.E = floatValue4;
+                ni0Var.H.setAlpha(floatValue4);
+                ni0Var.K.setAlpha(ni0Var.E);
+                if (!this.b && (viewGroup = ni0Var.Z) != null) {
+                    viewGroup.setAlpha(ni0Var.E);
                 }
-                oi0Var.F.invalidate();
-                oi0Var.G.invalidate();
+                ni0Var.F.invalidate();
+                ni0Var.G.invalidate();
                 break;
             case 11:
                 z31 z31Var = (z31) this.c;

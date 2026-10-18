@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xe implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class xe implements View.OnClickListener {
         switch (i11) {
             case 0:
                 sn snVar2 = this.b;
-                sg.j0.D1(snVar2, snVar2.D1, snVar2.E1, snVar2.T5, false);
+                sg.k0.D1(snVar2, snVar2.D1, snVar2.E1, snVar2.T5, false);
                 break;
             case 1:
                 snVar.getClass();
@@ -50,7 +50,7 @@ public final /* synthetic */ class xe implements View.OnClickListener {
                 break;
             case 2:
                 if (snVar.K3 != null) {
-                    snVar.Pb(!snVar.yc.f);
+                    snVar.Pb(!snVar.zc.f);
                     break;
                 }
                 break;
@@ -103,19 +103,19 @@ public final /* synthetic */ class xe implements View.OnClickListener {
                 break;
             case 8:
                 if (AndroidUtilities.addToClipboard(snVar.d5.sponsoredInfo)) {
-                    org.telegram.messenger.kk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea));
+                    org.telegram.messenger.lk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea));
                     break;
                 }
                 break;
             case 9:
                 if (AndroidUtilities.addToClipboard(snVar.d5.sponsoredAdditionalInfo)) {
-                    org.telegram.messenger.kk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea));
+                    org.telegram.messenger.lk.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(snVar.getParentActivity()), snVar.ea));
                     break;
                 }
                 break;
             case 10:
                 if (snVar.X0 != null && snVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.kk.i(1, snVar.X0.getContext(), null, false);
+                    org.telegram.ui.ActionBar.f3 i15 = org.telegram.messenger.lk.i(1, snVar.X0.getContext(), null, false);
                     Activity parentActivity = snVar.getParentActivity();
                     qn qnVar = snVar.ea;
                     final e81 e81Var = new e81(parentActivity);
@@ -221,7 +221,7 @@ public final /* synthetic */ class xe implements View.OnClickListener {
                     e.addView(x90Var4, w7.z5.t(-1, -2, 0, 0, 14, 0, 0));
                     ScrollView scrollView = new ScrollView(e81Var.getContext());
                     scrollView.addView(e);
-                    e81Var.addView(scrollView, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 22.0f, -1, 0));
+                    e81Var.addView(scrollView, w7.z5.d(-1, -2.0f, 0, 0.0f, 12.0f, 0.0f, 22.0f));
                     i15.customView = e81Var;
                     i15.show();
                     break;
@@ -232,7 +232,7 @@ public final /* synthetic */ class xe implements View.OnClickListener {
                 break;
             case 12:
                 snVar.getClass();
-                snVar.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) snVar, 28, true));
+                snVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) snVar, 28, true));
                 break;
             case 13:
                 sn snVar3 = this.b;

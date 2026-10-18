@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class lz0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -92,7 +92,7 @@ public final class lz0 extends org.telegram.ui.ActionBar.j {
             return;
         }
         if (i10 == 3) {
-            Bundle d = org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true);
+            Bundle d = org.telegram.messenger.lk.d(3, "onlySelect", "dialogsType", true);
             d.putString("selectAlertString", LocaleController.getString(R.string.SendContactToText));
             d.putString("selectAlertStringGroup", LocaleController.getString(R.string.SendContactToGroupText));
             ey eyVar = new ey(d);
@@ -142,7 +142,7 @@ public final class lz0 extends org.telegram.ui.ActionBar.j {
                 ProfileActivity profileActivity5 = this.b;
                 Activity parentActivity = profileActivity5.getParentActivity();
                 i19 = ((org.telegram.ui.ActionBar.n2) this.b).currentAccount;
-                new sg.x0(profileActivity5, parentActivity, i19, false, 41, false, null).show();
+                new sg.y0(profileActivity5, parentActivity, i19, false, 41, false, null).show();
                 return;
             }
             Context context = this.a;
@@ -153,7 +153,7 @@ public final class lz0 extends org.telegram.ui.ActionBar.j {
                 return;
             }
             boolean[] zArr = new boolean[1];
-            org.telegram.ui.ActionBar.f3 i25 = org.telegram.messenger.kk.i(1, context, null, false);
+            org.telegram.ui.ActionBar.f3 i25 = org.telegram.messenger.lk.i(1, context, null, false);
             runnable = i25.dismissRunnable;
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(1);
@@ -167,7 +167,7 @@ public final class lz0 extends org.telegram.ui.ActionBar.j {
             TextView textView2 = new TextView(context);
             textView2.setTypeface(AndroidUtilities.bold());
             textView2.setGravity(17);
-            org.telegram.messenger.kk.j(20.0f, R.string.DisableSharingInfoHeader, 1, textView2);
+            org.telegram.messenger.lk.j(20.0f, R.string.DisableSharingInfoHeader, 1, textView2);
             int i26 = org.telegram.ui.ActionBar.h6.G6;
             textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(i26, d6Var));
             linearLayout.addView(textView2, w7.z5.t(-1, -2, 17, 20, 0, 20, 14));
@@ -436,7 +436,7 @@ public final class lz0 extends org.telegram.ui.ActionBar.j {
             if (user3 == null) {
                 return;
             }
-            Bundle d10 = org.telegram.messenger.kk.d(2, "onlySelect", "dialogsType", true);
+            Bundle d10 = org.telegram.messenger.lk.d(2, "onlySelect", "dialogsType", true);
             d10.putBoolean("resetDelegate", false);
             d10.putBoolean("closeFragment", false);
             ey eyVar2 = new ey(d10);
@@ -503,9 +503,9 @@ public final class lz0 extends org.telegram.ui.ActionBar.j {
         }
         if (i10 == 48) {
             ProfileActivity profileActivity13 = this.b;
-            org.telegram.ui.Wallet.o9 o9Var = new org.telegram.ui.Wallet.o9(profileActivity13.getMessagesController().getUser(Long.valueOf(this.b.f1)));
-            o9Var.c0 = true;
-            profileActivity13.presentFragment(o9Var);
+            org.telegram.ui.Wallet.i9 i9Var = new org.telegram.ui.Wallet.i9(profileActivity13.getMessagesController().getUser(Long.valueOf(this.b.f1)));
+            i9Var.c0 = true;
+            profileActivity13.presentFragment(i9Var);
             return;
         }
         if (i10 == 39) {
@@ -777,7 +777,7 @@ public final class lz0 extends org.telegram.ui.ActionBar.j {
             return;
         }
         if (i10 == 31) {
-            this.b.presentFragment(new ig0(null));
+            this.b.presentFragment(new hg0(null));
             return;
         }
         if (i10 != 33) {

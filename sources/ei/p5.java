@@ -8,17 +8,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class p5 extends sn {
-    public final /* synthetic */ Utilities.Callback2 Qc;
-    public final /* synthetic */ f6 Rc;
+    public final /* synthetic */ Utilities.Callback2 Rc;
+    public final /* synthetic */ f6 Sc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public p5(f6 f6Var, Utilities.Callback2 callback2) {
         super(null);
-        this.Rc = f6Var;
-        this.Qc = callback2;
+        this.Sc = f6Var;
+        this.Rc = callback2;
     }
 
     @Override // org.telegram.ui.sn
@@ -53,7 +53,7 @@ public final class p5 extends sn {
                 if (tL_geoPointAddress != null) {
                     tL_mediaAreaGeoPoint3.flags |= 1;
                 }
-                Utilities.globalQueue.postRunnable(new ci.v7(27, messageMedia, tL_mediaAreaGeoPoint3));
+                Utilities.globalQueue.postRunnable(new ci.u7(27, messageMedia, tL_mediaAreaGeoPoint3));
                 tL_mediaAreaGeoPoint = tL_mediaAreaGeoPoint3;
             } else {
                 TL_stories.TL_inputMediaAreaVenue tL_inputMediaAreaVenue = new TL_stories.TL_inputMediaAreaVenue();
@@ -63,17 +63,17 @@ public final class p5 extends sn {
             }
             tL_mediaAreaGeoPoint2 = tL_mediaAreaGeoPoint;
         }
-        this.Qc.run(messageMedia, tL_mediaAreaGeoPoint2);
+        this.Rc.run(messageMedia, tL_mediaAreaGeoPoint2);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
     public final Activity getParentActivity() {
-        return AndroidUtilities.findActivity(this.Rc.getContext());
+        return AndroidUtilities.findActivity(this.Sc.getContext());
     }
 
     @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
     public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
-        return this.Rc.G1;
+        return this.Sc.G1;
     }
 
     @Override // org.telegram.ui.sn, org.telegram.ui.Components.bh

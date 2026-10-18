@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t5 implements Comparator {
     public final /* synthetic */ int a;
@@ -40,18 +40,18 @@ public final /* synthetic */ class t5 implements Comparator {
                 float[] fArr = ((w5) this.b).r;
                 return Float.compare(fArr[((Integer) obj).intValue()], fArr[((Integer) obj2).intValue()]);
             case 1:
-                ci.i7 i7Var = (ci.i7) this.b;
-                int i10 = i7Var.a;
+                ci.h7 h7Var = (ci.h7) this.b;
+                int i10 = h7Var.a;
                 TL_stories.PeerStories peerStories = (TL_stories.PeerStories) obj;
                 TL_stories.PeerStories peerStories2 = (TL_stories.PeerStories) obj2;
                 long peerDialogId = DialogObject.getPeerDialogId(peerStories.peer);
                 long peerDialogId2 = DialogObject.getPeerDialogId(peerStories2.peer);
-                boolean K = i7Var.K(peerDialogId);
-                boolean K2 = i7Var.K(peerDialogId2);
-                boolean J = i7Var.J(peerDialogId);
-                boolean J2 = i7Var.J(peerDialogId2);
-                boolean F = i7Var.F(peerDialogId);
-                boolean F2 = i7Var.F(peerDialogId2);
+                boolean K = h7Var.K(peerDialogId);
+                boolean K2 = h7Var.K(peerDialogId2);
+                boolean J = h7Var.J(peerDialogId);
+                boolean J2 = h7Var.J(peerDialogId2);
+                boolean F = h7Var.F(peerDialogId);
+                boolean F2 = h7Var.F(peerDialogId2);
                 if (F != F2) {
                     return (F2 ? 1 : 0) - (F ? 1 : 0);
                 }

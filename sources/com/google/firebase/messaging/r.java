@@ -35,11 +35,10 @@ import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
-import p4.s0;
 import z9.t0;
 import z9.z0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class r {
     public static r f;
@@ -767,7 +766,7 @@ public final class r {
         this.d = new Object();
         this.e = new ThreadLocal();
         this.b = executorService;
-        executorService.execute(new s0(this, 11));
+        executorService.execute(new p8.b(this, 10));
     }
 
     public r(le.b bVar, Object obj, Object obj2, Object[] objArr) {

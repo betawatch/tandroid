@@ -25,7 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class h implements c6.f {
     public static final g6.b k = new g6.b("RemoteMediaClient", null);
@@ -52,7 +52,7 @@ public final class h implements c6.f {
         androidx.biometric.e eVar = new androidx.biometric.e(this);
         this.d = eVar;
         this.c = mVar;
-        mVar.h = new ya.c(this, 14);
+        mVar.h = new ya.d(this, 14);
         mVar.c = eVar;
         this.e = new c(this);
     }
@@ -417,9 +417,9 @@ public final class h implements c6.f {
                                                 }
                                                 if ((i11 & 32) != 0) {
                                                     mVar.e = SystemClock.elapsedRealtime();
-                                                    ya.c cVar = mVar.h;
-                                                    if (cVar != null) {
-                                                        h hVar = (h) cVar.b;
+                                                    ya.d dVar = mVar.h;
+                                                    if (dVar != null) {
+                                                        h hVar = (h) dVar.b;
                                                         Iterator it11 = hVar.h.iterator();
                                                         if (it11.hasNext()) {
                                                             throw a1.g.j(it11);

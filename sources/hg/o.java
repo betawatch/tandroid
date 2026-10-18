@@ -44,14 +44,14 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.u61;
 import org.telegram.ui.d91;
 import org.telegram.ui.ey;
-import org.telegram.ui.lg0;
-import yh.a3;
-import yh.h4;
+import org.telegram.ui.kg0;
+import yh.g4;
+import yh.l2;
 import yh.m2;
-import yh.n2;
-import yh.t3;
+import yh.s3;
+import yh.z2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -64,15 +64,15 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
 
     private final void a(Object obj, Object obj2) {
         final int i10;
-        final org.telegram.ui.web.k kVar = (org.telegram.ui.web.k) this.b;
+        final org.telegram.ui.web.l lVar = (org.telegram.ui.web.l) this.b;
         ArrayList arrayList = (ArrayList) obj;
-        org.telegram.ui.web.i iVar = kVar.y;
-        ArrayList arrayList2 = kVar.x;
-        if (!kVar.b && arrayList2.isEmpty()) {
-            arrayList.add(f61.k(kVar.d));
+        org.telegram.ui.web.j jVar = lVar.y;
+        ArrayList arrayList2 = lVar.x;
+        if (!lVar.b && arrayList2.isEmpty()) {
+            arrayList.add(f61.k(lVar.d));
         }
         final int i11 = 0;
-        SharedPreferences sharedPreferences = kVar.getContext().getSharedPreferences("webhistory", 0);
+        SharedPreferences sharedPreferences = lVar.getContext().getSharedPreferences("webhistory", 0);
         ArrayList arrayList3 = new ArrayList();
         String string = sharedPreferences.getString("queries_json", null);
         if (string != null) {
@@ -81,21 +81,21 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 JSONArray jSONArray = new JSONArray(string);
                 for (int i12 = 0; i12 < jSONArray.length(); i12++) {
                     JSONObject jSONObject = jSONArray.getJSONObject(i12);
-                    org.telegram.ui.web.j jVar = new org.telegram.ui.web.j(jSONObject.optString("name"), jSONObject.optLong("usage", System.currentTimeMillis()));
-                    jVar.c = jSONObject.optDouble("rank", 0.0d);
-                    arrayList4.add(jVar);
+                    org.telegram.ui.web.k kVar = new org.telegram.ui.web.k(jSONObject.optString("name"), jSONObject.optLong("usage", System.currentTimeMillis()));
+                    kVar.c = jSONObject.optDouble("rank", 0.0d);
+                    arrayList4.add(kVar);
                 }
-                Collections.sort(arrayList4, new lg0(12));
+                Collections.sort(arrayList4, new kg0(12));
                 int size = arrayList4.size();
                 int i13 = 0;
                 while (i13 < size) {
                     Object obj3 = arrayList4.get(i13);
                     i13++;
-                    org.telegram.ui.web.j jVar2 = (org.telegram.ui.web.j) obj3;
+                    org.telegram.ui.web.k kVar2 = (org.telegram.ui.web.k) obj3;
                     if (arrayList3.size() >= 20) {
                         break;
                     } else {
-                        arrayList3.add(jVar2.a);
+                        arrayList3.add(kVar2.a);
                     }
                 }
             } catch (Exception unused) {
@@ -104,7 +104,7 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
         arrayList2.size();
         arrayList3.size();
         if (!arrayList2.isEmpty()) {
-            arrayList.add(f61.k(kVar.v));
+            arrayList.add(f61.k(lVar.v));
         }
         int i14 = 0;
         while (true) {
@@ -120,14 +120,14 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 public final void onClick(View view) {
                     switch (i11) {
                         case 0:
-                            org.telegram.ui.r rVar = kVar.M;
+                            org.telegram.ui.r rVar = lVar.M;
                             if (rVar != null) {
                                 rVar.run(str);
                                 break;
                             }
                             break;
                         default:
-                            org.telegram.ui.r rVar2 = kVar.M;
+                            org.telegram.ui.r rVar2 = lVar.M;
                             if (rVar2 != null) {
                                 rVar2.run(str);
                                 break;
@@ -136,20 +136,20 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                     }
                 }
             };
-            int i15 = org.telegram.ui.web.d.a;
-            f61 J = f61.J(org.telegram.ui.web.d.class);
+            int i15 = org.telegram.ui.web.e.a;
+            f61 J = f61.J(org.telegram.ui.web.e.class);
             J.z = 1;
             J.l = str;
             J.D = onClickListener;
             J.q = z10;
             J.r = z11;
             J.G = Boolean.TRUE;
-            J.H = kVar;
+            J.H = lVar;
             arrayList.add(J);
             i14++;
         }
         if (!arrayList3.isEmpty()) {
-            arrayList.add(f61.r(LocaleController.getString(R.string.WebSectionRecent), LocaleController.getString(R.string.WebRecentClear), new r0(kVar, 15)));
+            arrayList.add(f61.r(LocaleController.getString(R.string.WebSectionRecent), LocaleController.getString(R.string.WebRecentClear), new r0(lVar, 15)));
             int i16 = 0;
             while (i16 < arrayList3.size()) {
                 final String str2 = (String) arrayList3.get(i16);
@@ -160,14 +160,14 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                     public final void onClick(View view) {
                         switch (i10) {
                             case 0:
-                                org.telegram.ui.r rVar = kVar.M;
+                                org.telegram.ui.r rVar = lVar.M;
                                 if (rVar != null) {
                                     rVar.run(str2);
                                     break;
                                 }
                                 break;
                             default:
-                                org.telegram.ui.r rVar2 = kVar.M;
+                                org.telegram.ui.r rVar2 = lVar.M;
                                 if (rVar2 != null) {
                                     rVar2.run(str2);
                                     break;
@@ -176,30 +176,30 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                         }
                     }
                 };
-                int i17 = org.telegram.ui.web.d.a;
-                f61 J2 = f61.J(org.telegram.ui.web.d.class);
+                int i17 = org.telegram.ui.web.e.a;
+                f61 J2 = f61.J(org.telegram.ui.web.e.class);
                 J2.z = 0;
                 J2.l = str2;
                 J2.D = onClickListener2;
                 J2.q = z12;
                 J2.r = z13;
                 J2.G = Boolean.TRUE;
-                J2.H = kVar;
+                J2.H = lVar;
                 arrayList.add(J2);
                 i16++;
             }
         }
-        if (iVar != null) {
-            ArrayList arrayList5 = iVar.a;
+        if (jVar != null) {
+            ArrayList arrayList5 = jVar.a;
             if (arrayList5.isEmpty()) {
                 return;
             }
             arrayList.add(f61.q(LocaleController.getString(R.string.WebSectionBookmarks)));
             while (i11 < arrayList5.size()) {
                 MessageObject messageObject = (MessageObject) arrayList5.get(i11);
-                if (!TextUtils.isEmpty(org.telegram.ui.web.k.a(messageObject))) {
-                    int i18 = org.telegram.ui.web.g.a;
-                    f61 J3 = f61.J(org.telegram.ui.web.g.class);
+                if (!TextUtils.isEmpty(org.telegram.ui.web.l.a(messageObject))) {
+                    int i18 = org.telegram.ui.web.h.a;
+                    f61 J3 = f61.J(org.telegram.ui.web.h.class);
                     J3.z = 3;
                     J3.q = true;
                     J3.H = messageObject;
@@ -207,7 +207,7 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 }
                 i11++;
             }
-            if (iVar.f) {
+            if (jVar.f) {
                 return;
             }
             arrayList.add(f61.o(arrayList.size(), 32));
@@ -217,32 +217,32 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
     }
 
     private final void b(Object obj, Object obj2) {
-        ((ArrayList) obj).add(f61.j(-1, ((yh.w) this.b).Z));
+        ((ArrayList) obj).add(f61.j(-1, ((yh.v) this.b).Z));
     }
 
     private final void c(Object obj, Object obj2) {
-        ((ArrayList) obj).add(f61.j(-1, ((yh.d0) this.b).Z));
+        ((ArrayList) obj).add(f61.j(-1, ((yh.c0) this.b).Z));
     }
 
     private final void d(Object obj, Object obj2) {
         int i10;
-        m2 m2Var = (m2) this.b;
+        l2 l2Var = (l2) this.b;
         ArrayList arrayList = (ArrayList) obj;
-        is0 is0Var = m2Var.a;
-        y9 y9Var = m2Var.e;
+        is0 is0Var = l2Var.a;
+        y9 y9Var = l2Var.e;
         if (y9Var == null) {
             return;
         }
         if ((!y9Var.e || y9Var.g != 783) && y9Var.l.size() <= 0) {
-            y9 y9Var2 = m2Var.e;
+            y9 y9Var2 = l2Var.e;
             if (y9Var2.j && !y9Var2.i) {
                 return;
             }
         }
-        y9 y9Var3 = m2Var.e;
+        y9 y9Var3 = l2Var.e;
         int i11 = 1;
         int max = Math.max(1, (y9Var3 == null || (i10 = y9Var3.n) == 0) ? 3 : Math.min(3, i10));
-        y9 y9Var4 = m2Var.e;
+        y9 y9Var4 = l2Var.e;
         if (y9Var4 != null) {
             ArrayList arrayList2 = y9Var4.l;
             int size = arrayList2.size();
@@ -252,23 +252,23 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 Object obj3 = arrayList2.get(i13);
                 i13++;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj3;
-                boolean z10 = m2Var.d;
-                int i14 = yh.g1.a;
-                f61 J = f61.J(yh.g1.class);
+                boolean z10 = l2Var.d;
+                int i14 = yh.f1.a;
+                f61 J = f61.J(yh.f1.class);
                 J.u = 1;
                 J.z = 0;
                 J.G = savedStarGift;
                 J.q = true;
                 J.f = false;
                 J.r = z10;
-                J.h = m2Var.n && (m2Var.e != is0Var.d || savedStarGift.pinned_to_top);
+                J.h = l2Var.n && (l2Var.e != is0Var.d || savedStarGift.pinned_to_top);
                 arrayList.add(J);
                 i12--;
                 if (i12 == 0) {
                     i12 = 3;
                 }
             }
-            y9 y9Var5 = m2Var.e;
+            y9 y9Var5 = l2Var.e;
             if (y9Var5.i || !y9Var5.j) {
                 int i15 = 0;
                 while (true) {
@@ -282,14 +282,14 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 }
             }
         }
-        if (is0Var.d == m2Var.e) {
+        if (is0Var.d == l2Var.e) {
             arrayList.add(f61.C(AndroidUtilities.dp(20.0f)));
-            if (is0Var.c == UserConfig.getInstance(m2Var.b).getClientUserId()) {
-                int w02 = h6.w0(h6.z6, m2Var.c);
+            if (is0Var.c == UserConfig.getInstance(l2Var.b).getClientUserId()) {
+                int w02 = h6.w0(h6.z6, l2Var.c);
                 String string = LocaleController.getString(R.string.ProfileGiftsInfo);
                 int dp = AndroidUtilities.dp(24.0f);
-                int i16 = n2.a;
-                f61 J2 = f61.J(n2.class);
+                int i16 = m2.a;
+                f61 J2 = f61.J(m2.class);
                 J2.l = string;
                 J2.z = 17;
                 J2.B = w02;
@@ -304,10 +304,10 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
             arrayList.add(f61.C(AndroidUtilities.dp(82.0f)));
         }
         if (!arrayList.isEmpty()) {
-            arrayList.add(0, f61.C(AndroidUtilities.dp(m2Var.I ? 42.0f : 12.0f)));
+            arrayList.add(0, f61.C(AndroidUtilities.dp(l2Var.I ? 42.0f : 12.0f)));
         }
-        if (m2Var.f.getSpanCount() != max) {
-            AndroidUtilities.runOnUIThread(new yh.s1(m2Var, max, i11));
+        if (l2Var.f.getSpanCount() != max) {
+            AndroidUtilities.runOnUIThread(new yh.r1(l2Var, max, i11));
         }
         is0Var.o();
         is0Var.post(new tg.p(is0Var, 19));
@@ -1232,7 +1232,7 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 r5 r5Var = (r5) this.b;
                 r5Var.y0 = ((Integer) obj).intValue();
                 r5Var.z0 = ((Integer) obj2).intValue();
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.z1(r5Var, 12), 60L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a2(r5Var, 12), 60L);
                 break;
             case 19:
                 uh.f fVar = (uh.f) this.b;
@@ -1284,12 +1284,12 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 if (list != null) {
                     for (TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift : list) {
                         GiftAuctionController.Auction auction = cVar.Y;
-                        qg.n nVar = new qg.n(11, cVar, tL_StarGiftAuctionAcquiredGift);
+                        org.telegram.ui.web.c cVar2 = new org.telegram.ui.web.c(12, cVar, tL_StarGiftAuctionAcquiredGift);
                         int i39 = yh.a.a;
                         f61 J3 = f61.J(yh.a.class);
                         J3.G = tL_StarGiftAuctionAcquiredGift;
                         J3.H = auction;
-                        J3.D = nVar;
+                        J3.D = cVar2;
                         arrayList19.add(J3);
                     }
                     arrayList19.add(f61.C(AndroidUtilities.dp(16.0f)));
@@ -1301,7 +1301,7 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 break;
             case 24:
                 ArrayList arrayList20 = (ArrayList) obj;
-                arrayList20.add(((yh.n) this.b).Y);
+                arrayList20.add(((yh.m) this.b).Y);
                 arrayList20.add(f61.C(AndroidUtilities.dp(16.0f)));
                 break;
             case 25:
@@ -1311,24 +1311,24 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                 c(obj, obj2);
                 break;
             case 27:
-                ((yh.p1) this.b).V((ArrayList) obj, (s61) obj2);
+                ((yh.o1) this.b).V((ArrayList) obj, (s61) obj2);
                 break;
             case 28:
                 d(obj, obj2);
                 break;
             default:
-                h4 h4Var = (h4) this.b;
+                g4 g4Var = (g4) this.b;
                 ArrayList arrayList21 = (ArrayList) obj;
-                t3 t3Var = h4Var.d;
-                ArrayList arrayList22 = t3Var.d;
+                s3 s3Var = g4Var.d;
+                ArrayList arrayList22 = s3Var.d;
                 int size5 = arrayList22.size();
                 int i40 = 0;
                 while (i40 < size5) {
                     Object obj8 = arrayList22.get(i40);
                     i40++;
-                    arrayList21.add(yh.g1.a(0, (TL_stars.TL_starGiftUnique) obj8, false, false, false, true, false));
+                    arrayList21.add(yh.f1.a(0, (TL_stars.TL_starGiftUnique) obj8, false, false, false, true, false));
                 }
-                if (t3Var.t || !t3Var.u) {
+                if (s3Var.t || !s3Var.u) {
                     f61 o10 = f61.o(-1, 34);
                     o10.u = 1;
                     arrayList21.add(o10);
@@ -1338,7 +1338,7 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                     f61 o12 = f61.o(-3, 34);
                     o12.u = 1;
                     arrayList21.add(o12);
-                    if (t3Var.d.isEmpty()) {
+                    if (s3Var.d.isEmpty()) {
                         f61 o13 = f61.o(-4, 34);
                         o13.u = 1;
                         arrayList21.add(o13);
@@ -1377,11 +1377,11 @@ public final /* synthetic */ class o implements Utilities.Callback2 {
                         arrayList21.add(o24);
                     }
                 }
-                boolean z15 = arrayList21.isEmpty() && !t3Var.t;
-                if (h4Var.x != z15) {
-                    h4Var.x = z15;
-                    h4Var.w.setVisibility(0);
-                    h4Var.w.animate().alpha(z15 ? 1.0f : 0.0f).scaleX(z15 ? 1.0f : 0.95f).scaleY(z15 ? 1.0f : 0.95f).setInterpolator(bs.h).setDuration(320L).setListener(new a3(h4Var, z15, 1)).start();
+                boolean z15 = arrayList21.isEmpty() && !s3Var.t;
+                if (g4Var.x != z15) {
+                    g4Var.x = z15;
+                    g4Var.w.setVisibility(0);
+                    g4Var.w.animate().alpha(z15 ? 1.0f : 0.0f).scaleX(z15 ? 1.0f : 0.95f).scaleY(z15 ? 1.0f : 0.95f).setInterpolator(bs.h).setDuration(320L).setListener(new z2(g4Var, z15, 1)).start();
                     break;
                 }
                 break;

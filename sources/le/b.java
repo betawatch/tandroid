@@ -59,7 +59,7 @@ import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.u20;
 import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.zg0;
-import org.telegram.ui.Wallet.w9;
+import org.telegram.ui.Wallet.r9;
 import org.telegram.ui.xu0;
 import p6.c;
 import qg.b1;
@@ -77,13 +77,14 @@ import s4.o0;
 import s6.e;
 import s6.f;
 import t7.u;
-import u2.d1;
-import u2.q1;
+import u2.f1;
+import u2.g1;
+import u2.s1;
 import v7.i8;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final class b implements OnCompleteListener, l, d, o0.a, d1, l1, h, q71, n, z1, r, m, o, v1, h1, w2.d, Continuation {
+public final class b implements OnCompleteListener, l, d, o0.a, f1, l1, h, q71, n, z1, r, m, o, v1, h1, w2.d, Continuation {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -381,11 +382,11 @@ public final class b implements OnCompleteListener, l, d, o0.a, d1, l1, h, q71, 
 
     @Override // hg.z1
     public void f(int i10) {
-        w9 w9Var = (w9) this.b;
-        if (w9Var.n || i10 != w9Var.I) {
+        r9 r9Var = (r9) this.b;
+        if (r9Var.n || i10 != r9Var.I) {
             return;
         }
-        w9Var.d0(w9Var.M.getText().toString().trim());
+        r9Var.d0(r9Var.M.getText().toString().trim());
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -418,7 +419,7 @@ public final class b implements OnCompleteListener, l, d, o0.a, d1, l1, h, q71, 
                 i12++;
             }
         }
-        kVar.I = new q1(p1VarArr);
+        kVar.I = new s1(p1VarArr);
         kVar.G.h(kVar);
     }
 
@@ -745,8 +746,8 @@ public final class b implements OnCompleteListener, l, d, o0.a, d1, l1, h, q71, 
         ((j) this.b).h(f7);
     }
 
-    @Override // u2.d1
-    public void v(u2.e1 e1Var) {
+    @Override // u2.f1
+    public void v(g1 g1Var) {
         k kVar = (k) this.b;
         kVar.G.v(kVar);
     }

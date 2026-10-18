@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class al0 extends FrameLayout {
     public boolean E;
@@ -51,7 +51,7 @@ public final class al0 extends FrameLayout {
     public final zk0 c;
     public final ImageReceiver d;
     public ah.i1 e;
-    public sg.b1 f;
+    public sg.c1 f;
     public float h;
     public boolean n;
     public boolean r;
@@ -117,15 +117,15 @@ public final class al0 extends FrameLayout {
         boolean z10 = (i12 == 3 && !isPremium) || (i12 == 5 && i1Var.d && !isPremium);
         al0Var.H = z10;
         if (z10 && al0Var.f == null) {
-            sg.b1 b1Var = new sg.b1(al0Var.getContext(), 1, null);
-            al0Var.f = b1Var;
-            b1Var.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+            sg.c1 c1Var = new sg.c1(al0Var.getContext(), 1, null);
+            al0Var.f = c1Var;
+            c1Var.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             al0Var.f.setImageReceiver(zk0Var3.getImageReceiver());
-            al0Var.addView(al0Var.f, w7.z5.a(18.0f, 8.0f, 8.0f, 0.0f, 0.0f, 18, 17));
+            al0Var.addView(al0Var.f, w7.z5.d(18, 18.0f, 17, 8.0f, 8.0f, 0.0f, 0.0f));
         }
-        sg.b1 b1Var2 = al0Var.f;
-        if (b1Var2 != null) {
-            b1Var2.setVisibility(al0Var.H ? 0 : 8);
+        sg.c1 c1Var2 = al0Var.f;
+        if (c1Var2 != null) {
+            c1Var2.setVisibility(al0Var.H ? 0 : 8);
         }
         al0Var.d();
         al0Var.e = i1Var;
@@ -140,9 +140,9 @@ public final class al0 extends FrameLayout {
             if (zk0Var2.getImageReceiver().getLottieAnimation() != null) {
                 zk0Var2.getImageReceiver().getLottieAnimation().N(0, false, false);
             }
-            sg.b1 b1Var3 = al0Var.f;
-            if (b1Var3 != null) {
-                b1Var3.setAnimatedEmojiDrawable(null);
+            sg.c1 c1Var3 = al0Var.f;
+            if (c1Var3 != null) {
+                c1Var3.setAnimatedEmojiDrawable(null);
             }
         } else {
             zk0Var.getImageReceiver().clearImage();
@@ -162,9 +162,9 @@ public final class al0 extends FrameLayout {
             }
             zk0Var.setAnimatedEmojiDrawable(r5Var);
             zk0Var3.setAnimatedEmojiDrawable(r5Var2);
-            sg.b1 b1Var4 = al0Var.f;
-            if (b1Var4 != null) {
-                b1Var4.setAnimatedEmojiDrawable(r5Var2);
+            sg.c1 c1Var4 = al0Var.f;
+            if (c1Var4 != null) {
+                c1Var4.setAnimatedEmojiDrawable(r5Var2);
             }
         }
         al0Var.setFocusable(true);
@@ -294,7 +294,7 @@ public final class al0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         if (this.w && this.x) {
             float measuredWidth = getMeasuredWidth() >> 1;
             float measuredHeight = getMeasuredHeight() >> 1;
@@ -304,11 +304,11 @@ public final class al0 extends FrameLayout {
             canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth2, (i1Var == null || !i1Var.a) ? cl0Var.H0 : cl0Var.I0);
         }
         r5 r5Var = this.b.e;
-        if (r5Var != null && (g3Var = r5Var.k) != null) {
+        if (r5Var != null && (f3Var = r5Var.k) != null) {
             if (this.y == 0) {
-                g3Var.setRoundRadius(AndroidUtilities.dp(6.0f), 0, 0, AndroidUtilities.dp(6.0f));
+                f3Var.setRoundRadius(AndroidUtilities.dp(6.0f), 0, 0, AndroidUtilities.dp(6.0f));
             } else {
-                g3Var.setRoundRadius(this.w ? AndroidUtilities.dp(6.0f) : 0);
+                f3Var.setRoundRadius(this.w ? AndroidUtilities.dp(6.0f) : 0);
             }
         }
         ah.i1 i1Var2 = this.e;
@@ -377,9 +377,9 @@ public final class al0 extends FrameLayout {
                 imageReceiver.setAllowStartLottieAnimation(false);
                 MediaDataController.getInstance(cl0Var.J).preloadImage(imageReceiver, ImageLocation.getForDocument(tL_availableReaction.around_animation), ah.d1.a());
             }
-            sg.b1 b1Var = this.f;
-            if (b1Var != null) {
-                b1Var.setImageReceiver(zk0Var2.getImageReceiver());
+            sg.c1 c1Var = this.f;
+            if (c1Var != null) {
+                c1Var.setImageReceiver(zk0Var2.getImageReceiver());
             }
         }
     }
@@ -449,7 +449,7 @@ public final class al0 extends FrameLayout {
                     this.N = true;
                     this.L = motionEvent.getX();
                     this.M = motionEvent.getY();
-                    if (this.h == 1.0f && !this.H && (i10 = cl0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((bl0Var = cl0Var.g0) == null || bl0Var.h())) {
+                    if (this.h == 1.0f && !this.H && (i10 = cl0Var.M0) != 3 && i10 != 4 && i10 != 5 && ((bl0Var = cl0Var.g0) == null || bl0Var.j())) {
                         AndroidUtilities.runOnUIThread(xk0Var, ViewConfiguration.getLongPressTimeout());
                     }
                 }

@@ -1,6 +1,6 @@
 package rh;
 
-import ci.b2;
+import ci.a2;
 import java.util.ArrayList;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
@@ -8,9 +8,8 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.f61;
-import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -39,13 +38,13 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     long peerDialogId = DialogObject.getPeerDialogId(messagePeerVote.peer);
                     TLObject userOrChat = MessagesController.getInstance(pVar.a).getUserOrChat(peerDialogId);
                     int i12 = messagePeerVote.date;
-                    b2 b2Var = new b2(pVar, peerDialogId, 3);
+                    a2 a2Var = new a2(pVar, peerDialogId, 3);
                     int i13 = m.a;
                     f61 J = f61.J(m.class);
                     J.G = userOrChat;
                     J.B = peerDialogId;
                     J.z = i12;
-                    J.D = b2Var;
+                    J.D = a2Var;
                     arrayList.add(J);
                 }
                 if (!pVar.h) {
@@ -79,9 +78,9 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     pVar.g = str;
                     pVar.h = str == null;
                     pVar.j.addAll(tL_messages_votesList.votes);
-                    z1 z1Var = pVar.e;
-                    if (z1Var != null) {
-                        z1Var.run();
+                    org.telegram.ui.web.a2 a2Var2 = pVar.e;
+                    if (a2Var2 != null) {
+                        a2Var2.run();
                         break;
                     }
                 }

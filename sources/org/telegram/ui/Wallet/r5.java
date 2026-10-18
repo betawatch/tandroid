@@ -1,88 +1,125 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.opengl.GLES20;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class r5 {
-    public float a = 1.0f;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final int j;
-    public final int k;
-    public final int l;
-    public final int m;
-    public final int n;
-    public final int o;
-    public final int p;
-    public final int q;
-    public final int r;
-    public final int s;
-    public final int t;
-    public final int u;
-    public final int v;
-    public final int w;
+public final class r5 extends FrameLayout {
+    public final Matrix a;
+    public boolean b;
+    public final Path c;
+    public final float[] d;
+    public final /* synthetic */ s5 e;
 
-    public r5(Context context, String str, String str2, String str3, String str4) {
-        this.b = -1;
-        int b10 = w7.v7.b(context, "wallet-card-".concat(str3), b(str, str4), b(str2, str4), "aPosition", "aNormal");
-        this.c = b10;
-        this.d = GLES20.glGetUniformLocation(b10, "uStickerPaletteFrom[0]");
-        this.e = GLES20.glGetUniformLocation(b10, "uStickerPaletteTo[0]");
-        this.f = GLES20.glGetUniformLocation(b10, "uStickerReveal");
-        this.g = GLES20.glGetUniformLocation(b10, "uStickerToneScale");
-        this.h = GLES20.glGetUniformLocation(b10, "uDiamondTint[0]");
-        this.i = GLES20.glGetUniformLocation(b10, "uEngravingInk[0]");
-        this.j = GLES20.glGetAttribLocation(b10, "aPosition");
-        this.k = GLES20.glGetAttribLocation(b10, "aNormal");
-        this.l = GLES20.glGetUniformLocation(b10, "uMVPMatrix");
-        this.m = GLES20.glGetUniformLocation(b10, "uModelViewMatrix");
-        this.o = GLES20.glGetUniformLocation(b10, "uFinishPixelScale");
-        this.b = GLES20.glGetUniformLocation(b10, "uEngravingAlpha");
-        this.n = GLES20.glGetUniformLocation(b10, "uCardGradientRotation");
-        int glGetUniformLocation = GLES20.glGetUniformLocation(b10, "uCardDetailTexture");
-        int glGetUniformLocation2 = GLES20.glGetUniformLocation(b10, "uEngravingTexture");
-        this.p = GLES20.glGetUniformLocation(b10, "uEngravingTexel");
-        this.q = GLES20.glGetAttribLocation(b10, "aFlecksRegion");
-        this.r = GLES20.glGetAttribLocation(b10, "aFlecksCorner");
-        this.s = GLES20.glGetUniformLocation(b10, "uFlecksPadding");
-        this.t = GLES20.glGetUniformLocation(b10, "uMainLightDirection");
-        this.u = GLES20.glGetUniformLocation(b10, "uQrCenter");
-        this.v = GLES20.glGetUniformLocation(b10, "uDiamondBounds");
-        this.w = GLES20.glGetUniformLocation(b10, "uDiamondAlpha");
-        GLES20.glUseProgram(b10);
-        GLES20.glUniform1i(GLES20.glGetUniformLocation(b10, "uFinishLut"), 4);
-        GLES20.glUniform1i(glGetUniformLocation, 0);
-        GLES20.glUniform1i(glGetUniformLocation2, 1);
-        GLES20.glUniform1i(GLES20.glGetUniformLocation(b10, "uEngravingNormalTexture"), 5);
-        GLES20.glUniform4f(GLES20.glGetUniformLocation(b10, "uEngravingFieldBounds"), 0.875f, 0.0f, 0.125f, 1.0f);
-        GLES20.glUniform1i(GLES20.glGetUniformLocation(b10, "uFlecksTiles"), 2);
-        GLES20.glUniform1i(GLES20.glGetUniformLocation(b10, "uFlecksTail"), 3);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r5(s5 s5Var, Context context) {
+        super(context);
+        this.e = s5Var;
+        this.a = new Matrix();
+        this.c = new Path();
+        this.d = new float[8];
+        setClipChildren(false);
+        setClipToPadding(false);
     }
 
-    public static String b(String str, String str2) {
-        int indexOf = str.indexOf(10) + 1;
-        return str.substring(0, indexOf) + str2 + str.substring(indexOf);
-    }
-
-    public final void a(float[] fArr, float[] fArr2, float f7, float f10, float f11, float f12, float f13) {
-        GLES20.glUseProgram(this.c);
-        GLES20.glUniform1f(this.n, f11);
-        GLES20.glUniform1f(this.o, f13);
-        int i10 = this.b;
-        if (i10 >= 0) {
-            GLES20.glUniform1f(i10, this.a);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        s5 s5Var = this.e;
+        o5 o5Var = s5Var.b;
+        if (o5Var != null) {
+            float[] fArr = (float[]) s5Var.f.b;
+            float[] fArr2 = o5Var.k;
+            float[] fArr3 = o5Var.l;
+            Paint paint = o5Var.b;
+            Paint paint2 = o5Var.d;
+            Path path = o5Var.p;
+            if (o5Var.q != 0.0f) {
+                int a2 = h7.a(fArr, -16216082);
+                int a10 = h7.a(fArr, -15291399);
+                paint.setShader(null);
+                paint.setAlpha(255);
+                paint.setColor(o5.d(0.55f, 0.0f, 0.0f, a2, a10));
+                path.rewind();
+                boolean z10 = true;
+                path.moveTo(fArr3[0], fArr3[1]);
+                int i10 = 1;
+                while (i10 < 76) {
+                    int i11 = i10 * 2;
+                    path.lineTo(fArr3[i11], fArr3[i11 + 1]);
+                    i10++;
+                    z10 = z10;
+                }
+                path.close();
+                canvas.drawPath(path, paint);
+                paint2.setShader(null);
+                paint2.setAlpha(255);
+                float f7 = 0.6f;
+                paint2.setStrokeWidth(o5Var.q * 0.6f);
+                int[] iArr = o5Var.o;
+                int length = iArr.length;
+                int i12 = 0;
+                while (i12 < length) {
+                    int i13 = iArr[i12];
+                    int i14 = (i13 + 1) % 76;
+                    int i15 = i13 * 2;
+                    int i16 = i14 * 2;
+                    float[] fArr4 = o5Var.j;
+                    float f10 = (fArr4[i15] + fArr4[i16]) * 0.5f;
+                    int i17 = i15 + 1;
+                    int i18 = i16 + 1;
+                    float f11 = (fArr4[i17] + fArr4[i18]) * 0.5f;
+                    float f12 = f7;
+                    int[] iArr2 = iArr;
+                    int i19 = length;
+                    float sqrt = 1.0f / ((float) Math.sqrt(r4.c.c(f11, f11, f10 * f10, 0.0144f)));
+                    float f13 = f10 * sqrt;
+                    float f14 = f11 * sqrt;
+                    int d = o5.d((0.38f * o5.c((o5Var.Y * (o5Var.r ? -0.12f : 0.12f) * sqrt) + (o5Var.X * f14) + (o5Var.W * f13))) + 0.36f, 0.06f, ((float) Math.pow(o5.c((r2 * o5Var.b0) + (f14 * o5Var.a0) + (f13 * o5Var.Z)), 24.0d)) * 0.1f, a2, a10);
+                    paint.setColor(d);
+                    paint2.setColor(d);
+                    path.rewind();
+                    path.moveTo(fArr2[i15], fArr2[i17]);
+                    path.lineTo(fArr2[i16], fArr2[i18]);
+                    path.lineTo(fArr3[i16], fArr3[i18]);
+                    path.lineTo(fArr3[i15], fArr3[i17]);
+                    path.close();
+                    paint2.setStrokeWidth(o5Var.q * f12);
+                    canvas.drawPath(path, paint);
+                    canvas.drawPath(path, paint2);
+                    paint2.setColor(o5.d(0.75f, 0.0f, 0.0f, d, d));
+                    paint2.setStrokeWidth(o5Var.q * 0.7f);
+                    canvas.drawLine(fArr3[i15], fArr3[i17], fArr3[i16], fArr3[i18], paint2);
+                    i12++;
+                    iArr = iArr2;
+                    f7 = f12;
+                    length = i19;
+                }
+            }
         }
-        GLES20.glUniformMatrix4fv(this.l, 1, false, fArr, 0);
-        GLES20.glUniformMatrix4fv(this.m, 1, false, fArr2, 0);
-        GLES20.glUniform3f(this.t, f7, f10, 0.83f);
-        GLES20.glUniform2f(this.u, ((336.0f - f12) - 24.0f) / 336.0f, 0.44878048f);
+        if (this.b) {
+            int save = canvas.save();
+            canvas.concat(this.a);
+            float width = getWidth();
+            float height = getHeight();
+            Path path2 = this.c;
+            path2.rewind();
+            path2.addRoundRect(0.0f, 0.0f, width, height, (width * 0.15f) / 2.0f, (0.15f * height) / 1.212122f, Path.Direction.CW);
+            canvas.clipPath(path2);
+            super.dispatchDraw(canvas);
+            canvas.restoreToCount(save);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        s5 s5Var = this.e;
+        s5Var.f0 = -1;
+        s5Var.b(s5Var.W, s5Var.c0);
     }
 }

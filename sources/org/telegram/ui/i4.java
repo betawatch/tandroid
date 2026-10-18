@@ -43,7 +43,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i4 implements Runnable {
     public final /* synthetic */ int a;
@@ -198,7 +198,7 @@ public final /* synthetic */ class i4 implements Runnable {
                 fmVar.Q.j(i24, messageObject.getId(), true, messageObject.getDialogId() == fmVar.Q.L6 ? 1 : 0, true, 0);
                 return;
             case 5:
-                org.telegram.ui.Wallet.m5.C0(((org.telegram.ui.Components.al) this.c).getContext(), this.b, (org.telegram.ui.ActionBar.d6) this.d);
+                org.telegram.ui.Wallet.n5.D0(((org.telegram.ui.Components.al) this.c).getContext(), this.b, (org.telegram.ui.ActionBar.d6) this.d);
                 return;
             case 6:
                 org.telegram.ui.Components.fo foVar = (org.telegram.ui.Components.fo) this.c;
@@ -314,9 +314,9 @@ public final /* synthetic */ class i4 implements Runnable {
                 sb2.append(n40Var.b0[0] ? "$" : "#");
                 sb2.append(n40Var.Y);
                 String sb3 = sb2.toString();
-                ci.u6 u6Var = n40Var.Q;
-                if (u6Var == null || !TextUtils.equals(u6Var.C, sb3)) {
-                    n40Var.Q = new ci.u6(i33, null, sb3);
+                ci.t6 t6Var = n40Var.Q;
+                if (t6Var == null || !TextUtils.equals(t6Var.C, sb3)) {
+                    n40Var.Q = new ci.t6(i33, null, sb3);
                 }
                 if (n40Var.Q.i.size() <= 0) {
                     r10 = 1;
@@ -735,7 +735,7 @@ public final /* synthetic */ class i4 implements Runnable {
                 if (i49 != dv0Var.E) {
                     return;
                 }
-                dv0Var.y = ConnectionsManager.getInstance(dv0Var.d).sendRequest(tL_messages_search, new ai.n2(dv0Var, i49, i18));
+                dv0Var.y = ConnectionsManager.getInstance(dv0Var.d).sendRequest(tL_messages_search, new ai.m2(dv0Var, i49, i18));
                 return;
             case 22:
                 org.telegram.ui.Components.dv0 dv0Var2 = (org.telegram.ui.Components.dv0) this.c;

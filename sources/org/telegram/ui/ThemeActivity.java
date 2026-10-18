@@ -43,7 +43,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -144,7 +144,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
     public int y0;
     public int z0;
 
-    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
     public static class InnerAccentView extends View {
         public final Paint a;
         public ObjectAnimator b;
@@ -254,8 +254,8 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
             callback.run(Boolean.TRUE);
             return;
         }
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.kk.i(1, context, d6Var, false);
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.lk.i(1, context, d6Var, false);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         e.setClipChildren(false);
         e.setClipToPadding(false);
@@ -269,7 +269,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
         e.addView(frameLayout, w7.z5.t(80, 80, 1, 0, 20, 0, 8));
         int i13 = org.telegram.ui.ActionBar.h6.j5;
         TextView b10 = w7.d6.b(context, 20.0f, i13, true, d6Var);
-        org.telegram.messenger.kk.m(R.string.AgeVerificationTitle, b10, 17);
+        org.telegram.messenger.lk.m(R.string.AgeVerificationTitle, b10, 17);
         e.addView(b10, w7.z5.t(-1, -2, 7, 24, 8, 24, 8));
         TextView b11 = w7.d6.b(context, 14.0f, i13, false, d6Var);
         b11.setText(AndroidUtilities.replaceTags(LocaleController.getString("AgeVerificationText" + str2)));
@@ -494,7 +494,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
                 return;
             }
             final AtomicReference atomicReference = new AtomicReference();
-            LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+            LinearLayout e = org.telegram.messenger.lk.e(context, 1);
             CharSequence[] charSequenceArr = {LocaleController.getString("DistanceUnitsAutomatic", R.string.DistanceUnitsAutomatic), LocaleController.getString("DistanceUnitsKilometers", R.string.DistanceUnitsKilometers), LocaleController.getString("DistanceUnitsMiles", R.string.DistanceUnitsMiles)};
             final int i17 = 0;
             while (i17 < 3) {
@@ -556,13 +556,13 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
                 return;
             }
             final AtomicReference atomicReference2 = new AtomicReference();
-            LinearLayout e7 = org.telegram.messenger.kk.e(context, 1);
-            ArrayList b10 = org.telegram.ui.web.m1.b();
+            LinearLayout e7 = org.telegram.messenger.lk.e(context, 1);
+            ArrayList b10 = org.telegram.ui.web.n1.b();
             int size = b10.size();
             CharSequence[] charSequenceArr2 = new CharSequence[size];
             final int i18 = 0;
             while (i18 < size) {
-                charSequenceArr2[i18] = ((org.telegram.ui.web.m1) b10.get(i18)).a;
+                charSequenceArr2[i18] = ((org.telegram.ui.web.n1) b10.get(i18)).a;
                 org.telegram.ui.Cells.k6 k6Var2 = new org.telegram.ui.Cells.k6(themeActivity.getParentActivity(), null);
                 float f11 = f10;
                 k6Var2.setPadding(AndroidUtilities.dp(f10), 0, AndroidUtilities.dp(f11), 0);
@@ -623,7 +623,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
                 return;
             }
             final AtomicReference atomicReference3 = new AtomicReference();
-            LinearLayout e10 = org.telegram.messenger.kk.e(context, 1);
+            LinearLayout e10 = org.telegram.messenger.lk.e(context, 1);
             org.telegram.ui.Cells.k6 k6Var3 = new org.telegram.ui.Cells.k6(themeActivity.getParentActivity(), null);
             k6Var3.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
             int i19 = org.telegram.ui.ActionBar.h6.g7;
@@ -819,7 +819,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
         }
         if (i10 == themeActivity.browserRow) {
             if ((!LocaleController.isRTL || f7 > AndroidUtilities.dp(76.0f)) && (LocaleController.isRTL || f7 < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f))) {
-                themeActivity.presentFragment(new org.telegram.ui.web.x1(null));
+                themeActivity.presentFragment(new org.telegram.ui.web.y1(null));
                 return;
             } else {
                 themeActivity.getMessagesController().toggleWebBrowserInAppEnabled();
@@ -1111,7 +1111,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
             }
             i20++;
         }
-        Collections.sort(arrayList, new lg0(7));
+        Collections.sort(arrayList, new kg0(7));
         if (i10 == 3) {
             int i21 = this.J0;
             this.w0 = i21;
@@ -1493,7 +1493,7 @@ public class ThemeActivity extends org.telegram.ui.ActionBar.n2 implements Notif
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setAdapter(this.a);
         ((s4.k) this.b.getItemAnimator()).C = false;
-        frameLayout.addView(this.b, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.b, w7.z5.c(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setOnItemClickListener(new gn0(17, this, context));
         if (i10 == 0) {

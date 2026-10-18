@@ -11,7 +11,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class o0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final class o0 implements TextWatcher {
 
     @Override // android.text.TextWatcher
     public final void afterTextChanged(Editable editable) {
-        org.telegram.ui.web.k kVar;
+        org.telegram.ui.web.l lVar;
         String str;
         boolean z10;
         String str2;
@@ -40,8 +40,8 @@ public final class o0 implements TextWatcher {
         switch (this.a) {
             case 0:
                 l4 l4Var = (l4) this.b;
-                if (l4Var.h0.W && (kVar = l4Var.i0) != null) {
-                    kVar.setInput(editable == null ? null : editable.toString());
+                if (l4Var.h0.W && (lVar = l4Var.i0) != null) {
+                    lVar.setInput(editable == null ? null : editable.toString());
                     break;
                 }
                 break;
@@ -50,9 +50,9 @@ public final class o0 implements TextWatcher {
             case 2:
                 ko koVar = (ko) this.b;
                 koVar.r.n(5L, koVar.v.getText().toString(), null);
-                ci.k4 k4Var = koVar.e;
-                if (k4Var != null) {
-                    k4Var.invalidate();
+                ci.j4 j4Var = koVar.e;
+                if (j4Var != null) {
+                    j4Var.invalidate();
                     break;
                 }
                 break;
@@ -110,22 +110,22 @@ public final class o0 implements TextWatcher {
             case 9:
                 break;
             case 10:
-                eg0 eg0Var = (eg0) this.b;
-                HashMap hashMap = eg0Var.F;
-                ArrayList arrayList = eg0Var.E;
-                mj0 mj0Var = eg0Var.a;
-                bg0 bg0Var = eg0Var.b;
-                if (!eg0Var.I) {
+                dg0 dg0Var = (dg0) this.b;
+                HashMap hashMap = dg0Var.F;
+                ArrayList arrayList = dg0Var.E;
+                lj0 lj0Var = dg0Var.a;
+                ag0 ag0Var = dg0Var.b;
+                if (!dg0Var.I) {
                     int i11 = 1;
-                    eg0Var.I = true;
+                    dg0Var.I = true;
                     int i12 = 0;
-                    String d = jf.b.d(mj0Var.getText().toString(), false);
-                    mj0Var.setText(d);
+                    String d = jf.b.d(lj0Var.getText().toString(), false);
+                    lj0Var.setText(d);
                     String str6 = null;
                     if (d.length() == 0) {
-                        eg0Var.setCountryButtonText(null);
-                        bg0Var.setHintText((String) null);
-                        eg0Var.x = 1;
+                        dg0Var.setCountryButtonText(null);
+                        ag0Var.setHintText((String) null);
+                        dg0Var.x = 1;
                         z11 = false;
                     } else {
                         int i13 = 4;
@@ -158,8 +158,8 @@ public final class o0 implements TextWatcher {
                                         obj = (kt) list.get(i12);
                                     }
                                     if (obj != null) {
-                                        str = d.substring(i13) + bg0Var.getText().toString();
-                                        mj0Var.setText(substring);
+                                        str = d.substring(i13) + ag0Var.getText().toString();
+                                        lj0Var.setText(substring);
                                         d = substring;
                                         z10 = true;
                                     } else {
@@ -174,9 +174,9 @@ public final class o0 implements TextWatcher {
                                 }
                             }
                             if (!z10) {
-                                str = d.substring(1) + bg0Var.getText().toString();
+                                str = d.substring(1) + ag0Var.getText().toString();
                                 d = d.substring(0, 1);
-                                mj0Var.setText(d);
+                                lj0Var.setText(d);
                             }
                         } else {
                             str = null;
@@ -208,9 +208,9 @@ public final class o0 implements TextWatcher {
                         }
                         String str7 = str;
                         if (i15 == 1 && ktVar4 != null && str7 == null) {
-                            str2 = d.substring(ktVar4.c.length()) + bg0Var.getText().toString();
+                            str2 = d.substring(ktVar4.c.length()) + ag0Var.getText().toString();
                             d = ktVar4.c;
-                            mj0Var.setText(d);
+                            lj0Var.setText(d);
                         } else {
                             str2 = str7;
                         }
@@ -240,26 +240,26 @@ public final class o0 implements TextWatcher {
                             ktVar = (kt) list2.get(0);
                         }
                         if (ktVar != null) {
-                            eg0Var.H = true;
-                            eg0Var.y = ktVar;
-                            eg0Var.t(d, ktVar);
-                            eg0Var.x = i10;
+                            dg0Var.H = true;
+                            dg0Var.y = ktVar;
+                            dg0Var.t(d, ktVar);
+                            dg0Var.x = i10;
                         } else {
-                            eg0Var.setCountryButtonText(null);
-                            bg0Var.setHintText((String) null);
-                            eg0Var.x = 2;
+                            dg0Var.setCountryButtonText(null);
+                            ag0Var.setHintText((String) null);
+                            dg0Var.x = 2;
                         }
                         if (!z10) {
-                            mj0Var.setSelection(mj0Var.getText().length());
+                            lj0Var.setSelection(lj0Var.getText().length());
                         }
                         if (str2 != null) {
-                            bg0Var.requestFocus();
-                            bg0Var.setText(str2);
-                            bg0Var.setSelection(bg0Var.length());
+                            ag0Var.requestFocus();
+                            ag0Var.setText(str2);
+                            ag0Var.setSelection(ag0Var.length());
                         }
                         z11 = false;
                     }
-                    eg0Var.I = z11;
+                    dg0Var.I = z11;
                     break;
                 }
                 break;
@@ -322,9 +322,9 @@ public final class o0 implements TextWatcher {
                             }
                             if (!z12) {
                                 str5 = str4.substring(1) + oj0Var.Q.getText().toString();
-                                mj0 mj0Var2 = oj0Var.O;
+                                lj0 lj0Var2 = oj0Var.O;
                                 str4 = str4.substring(0, 1);
-                                mj0Var2.setText(str4);
+                                lj0Var2.setText(str4);
                             }
                         } else {
                             str4 = d10;
@@ -348,9 +348,9 @@ public final class o0 implements TextWatcher {
                         }
                         if (i21 == 1 && ktVar8 != null && str5 == null) {
                             str5 = str4.substring(ktVar8.c.length()) + oj0Var.Q.getText().toString();
-                            mj0 mj0Var3 = oj0Var.O;
+                            lj0 lj0Var3 = oj0Var.O;
                             String str9 = ktVar8.c;
-                            mj0Var3.setText(str9);
+                            lj0Var3.setText(str9);
                             str4 = str9;
                         }
                         List list4 = (List) hashMap2.get(str4);
@@ -383,14 +383,14 @@ public final class o0 implements TextWatcher {
                             oj0Var.Q.setHintText((String) null);
                         }
                         if (!z12) {
-                            mj0 mj0Var4 = oj0Var.O;
-                            mj0Var4.setSelection(mj0Var4.getText().length());
+                            lj0 lj0Var4 = oj0Var.O;
+                            lj0Var4.setSelection(lj0Var4.getText().length());
                         }
                         if (str5 != null && str5.length() != 0) {
                             oj0Var.Q.requestFocus();
                             oj0Var.Q.setText(str5);
-                            mj0 mj0Var5 = oj0Var.Q;
-                            mj0Var5.setSelection(mj0Var5.length());
+                            lj0 lj0Var5 = oj0Var.Q;
+                            lj0Var5.setSelection(lj0Var5.length());
                         }
                     }
                     oj0Var.E = false;
@@ -481,7 +481,7 @@ public final class o0 implements TextWatcher {
                 if (qrVar.x) {
                     qrVar.F.setDuration(220L);
                 } else {
-                    org.telegram.messenger.kk.l(1.5f, qrVar.F);
+                    org.telegram.messenger.lk.l(1.5f, qrVar.F);
                     qrVar.F.setDuration(350L);
                 }
                 qrVar.F.start();
@@ -506,10 +506,10 @@ public final class o0 implements TextWatcher {
                 }
                 break;
             case 9:
-                jf0 jf0Var = (jf0) obj;
-                ue0 ue0Var = jf0Var.r0;
-                if (jf0Var.q0) {
-                    jf0Var.removeCallbacks(ue0Var);
+                if0 if0Var = (if0) obj;
+                ue0 ue0Var = if0Var.r0;
+                if (if0Var.q0) {
+                    if0Var.removeCallbacks(ue0Var);
                     ue0Var.run();
                     break;
                 }

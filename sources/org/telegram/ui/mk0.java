@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class mk0 extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.Components.ek, NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -262,7 +262,7 @@ public final class mk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
             org.telegram.ui.Components.oo ooVar = new org.telegram.ui.Components.oo(context, null, false, this.h);
             this.K = ooVar;
             ooVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-            this.actionBar.addView(this.K, 0, w7.z5.a(-1.0f, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f, -2, 51));
+            this.actionBar.addView(this.K, 0, w7.z5.d(-2, -1.0f, 51, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f));
             if (this.L >= 0) {
                 TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.L));
                 if (user != null) {
@@ -297,7 +297,7 @@ public final class mk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         this.e = im0Var;
         im0Var.p1();
         this.actionBar.setAdaptiveBackground(this.e);
-        frameLayout.addView(this.e, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.e, w7.z5.c(-1.0f, -1));
         jk0 jk0Var = new jk0(this);
         this.f = jk0Var;
         jk0Var.C(true);
@@ -305,7 +305,7 @@ public final class mk0 extends org.telegram.ui.ActionBar.n2 implements org.teleg
         ((s4.k) this.e.getItemAnimator()).m = false;
         ((s4.k) this.e.getItemAnimator()).C = false;
         this.e.setLayoutManager(new s4.b0());
-        this.e.setOnItemClickListener(new ci.y4(20, this, context));
+        this.e.setOnItemClickListener(new ci.x4(20, this, context));
         this.e.setOnItemLongClickListener(new wt(this, 26));
         getMediaDataController().ringtoneDataStore.g(false);
         this.a.clear();

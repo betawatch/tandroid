@@ -1,13 +1,13 @@
 package vf;
 
-import ci.i3;
+import ci.h3;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class b {
-    public final i3 a;
+    public final h3 a;
 
-    public b(i3 i3Var) {
-        this.a = i3Var;
+    public b(h3 h3Var) {
+        this.a = h3Var;
     }
 }

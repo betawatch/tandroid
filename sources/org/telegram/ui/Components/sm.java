@@ -19,7 +19,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class sm extends ql0 {
     public final Context c;
@@ -354,7 +354,7 @@ public final class sm extends ql0 {
             spannableStringBuilder.setSpan(new yq(R.drawable.camera, 0), 0, 1, 33);
             spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.GalleryAccessAllowAccessCamera));
             dVar.g(spannableStringBuilder, false, true);
-            frameLayout.addView(dVar, w7.z5.a(44.0f, 10.0f, 0.0f, 10.0f, 12.0f, -2, 81));
+            frameLayout.addView(dVar, w7.z5.d(-2, 44.0f, 81, 10.0f, 0.0f, 10.0f, 12.0f));
             return new sl0(frameLayout);
         }
         org.telegram.ui.Cells.m5 m5Var = new org.telegram.ui.Cells.m5(context);
@@ -365,17 +365,17 @@ public final class sm extends ql0 {
         int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.aa, d6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
-        m5Var.addView(imageView, w7.z5.a(44.0f, 5.0f, 0.0f, 0.0f, 27.0f, 44, 17));
+        m5Var.addView(imageView, w7.z5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
         ImageView imageView2 = new ImageView(context);
         m5Var.b = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ba, d6Var), mode));
-        m5Var.addView(imageView2, w7.z5.a(44.0f, 5.0f, 0.0f, 0.0f, 27.0f, 44, 17));
+        m5Var.addView(imageView2, w7.z5.d(44, 44.0f, 17, 5.0f, 0.0f, 0.0f, 27.0f));
         TextView textView = new TextView(context);
         m5Var.c = textView;
-        org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.ca, d6Var, textView, 1, 12.0f);
+        org.telegram.messenger.lk.o(org.telegram.ui.ActionBar.h6.ca, d6Var, textView, 1, 12.0f);
         textView.setGravity(17);
-        m5Var.addView(textView, w7.z5.a(-2.0f, 5.0f, 13.0f, 5.0f, 0.0f, -2, 17));
+        m5Var.addView(textView, w7.z5.d(-2, -2.0f, 17, 5.0f, 13.0f, 5.0f, 0.0f));
         m5Var.d = AndroidUtilities.dp(80.0f);
         return new sl0(m5Var);
     }

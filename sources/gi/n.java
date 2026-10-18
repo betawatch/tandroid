@@ -30,7 +30,7 @@ import org.telegram.ui.sn;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class n extends FrameLayout {
     public static final /* synthetic */ int n = 0;
@@ -204,7 +204,7 @@ public final class n extends FrameLayout {
                     }
                 });
                 textView2.setOnClickListener(new ah.g0(mfVar, 24));
-                setOnClickListener(new ci.c4(this, snVar, messageObject, str2, 1));
+                setOnClickListener(new ci.b4(this, snVar, messageObject, str2, 1));
                 imageView.setOnClickListener(new ah.g0(mfVar2, 25));
             }
             TLRPC.PhotoSize closestPhotoSizeWithSize4 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 48, true, null, true);
@@ -251,7 +251,7 @@ public final class n extends FrameLayout {
             }
         });
         textView22.setOnClickListener(new ah.g0(mfVar, 24));
-        setOnClickListener(new ci.c4(this, snVar, messageObject, str2, 1));
+        setOnClickListener(new ci.b4(this, snVar, messageObject, str2, 1));
         imageView.setOnClickListener(new ah.g0(mfVar2, 25));
     }
 }

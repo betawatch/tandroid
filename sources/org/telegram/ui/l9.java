@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l9 extends FrameLayout {
     public final org.telegram.ui.Cells.h6 a;
@@ -28,7 +28,7 @@ public final class l9 extends FrameLayout {
         int i10 = -AndroidUtilities.dp(4.0f);
         h6Var.b0 = 0;
         h6Var.c0 = i10;
-        addView(h6Var, w7.z5.d(-1.0f, -1));
+        addView(h6Var, w7.z5.c(-1.0f, -1));
         ti0Var.setText(string);
         ti0Var.setTextSize(1, 14.0f);
         ti0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));

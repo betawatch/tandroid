@@ -7,15 +7,15 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class td0 implements TextWatcher {
     public final /* synthetic */ int a = 0;
     public boolean b;
     public final /* synthetic */ ViewGroup c;
 
-    public td0(rg.v2 v2Var) {
-        this.c = v2Var;
+    public td0(rg.u2 u2Var) {
+        this.c = u2Var;
     }
 
     @Override // android.text.TextWatcher
@@ -38,20 +38,20 @@ public final class td0 implements TextWatcher {
                 }
                 break;
             default:
-                rg.v2 v2Var = (rg.v2) this.c;
-                rg.u2 u2Var = v2Var.q0;
-                if (this.b && v2Var.w0 > 0 && v2Var.x0 > 0 && !v2Var.z0 && u2Var.getLayout() != null) {
+                rg.u2 u2Var = (rg.u2) this.c;
+                rg.t2 t2Var = u2Var.q0;
+                if (this.b && u2Var.w0 > 0 && u2Var.x0 > 0 && !u2Var.z0 && t2Var.getLayout() != null) {
                     float f7 = AndroidUtilities.displaySize.y / 3.0f;
-                    float height = u2Var.getLayout().getHeight();
-                    if (height > f7 && (clamp = Utilities.clamp((int) ((f7 / height) * v2Var.getBaseFontSize()), v2Var.x0, v2Var.w0)) != v2Var.getBaseFontSize()) {
-                        v2Var.setBaseFontSize(clamp);
-                        Runnable runnable = v2Var.y0;
+                    float height = t2Var.getLayout().getHeight();
+                    if (height > f7 && (clamp = Utilities.clamp((int) ((f7 / height) * u2Var.getBaseFontSize()), u2Var.x0, u2Var.w0)) != u2Var.getBaseFontSize()) {
+                        u2Var.setBaseFontSize(clamp);
+                        Runnable runnable = u2Var.y0;
                         if (runnable != null) {
                             runnable.run();
                         }
                     }
                 }
-                v2Var.s();
+                u2Var.s();
                 break;
         }
     }

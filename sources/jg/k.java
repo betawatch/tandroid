@@ -6,12 +6,12 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.text.TextPaint;
-import ci.v4;
+import ci.u4;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // jg.g
@@ -47,7 +47,7 @@ public final class k extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e = g.e(this.j0, this.l0, new v4(this, 4));
+                    ValueAnimator e = g.e(this.j0, this.l0, new u4(this, 4));
                     this.d0 = e;
                     e.start();
                 }

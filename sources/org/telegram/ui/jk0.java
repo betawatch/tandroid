@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class jk0 extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ mk0 c;
@@ -150,7 +150,7 @@ public final class jk0 extends org.telegram.ui.Components.hm0 {
             radioButton.setSize(AndroidUtilities.dp(20.0f));
             radioButton.b(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.g7, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h7, d6Var));
             boolean z10 = LocaleController.isRTL;
-            lk0Var.addView(radioButton, w7.z5.a(22.0f, z10 ? 0 : 20, 0.0f, z10 ? 20 : 0, 0.0f, 22, (z10 ? 5 : 3) | 16));
+            lk0Var.addView(radioButton, w7.z5.d(22, 22.0f, (z10 ? 5 : 3) | 16, z10 ? 0 : 20, 0.0f, z10 ? 20 : 0, 0.0f));
             org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(context, 24, d6Var);
             lk0Var.c = xpVar;
             int i11 = org.telegram.ui.ActionBar.h6.d6;
@@ -158,18 +158,18 @@ public final class jk0 extends org.telegram.ui.Components.hm0 {
             xpVar.setDrawUnchecked(false);
             xpVar.setDrawBackgroundAsArc(3);
             boolean z11 = LocaleController.isRTL;
-            lk0Var.addView(xpVar, w7.z5.a(26.0f, z11 ? 0 : 18, 0.0f, z11 ? 18 : 0, 0.0f, 26, (z11 ? 5 : 3) | 16));
+            lk0Var.addView(xpVar, w7.z5.d(26, 26.0f, (z11 ? 5 : 3) | 16, z11 ? 0 : 18, 0.0f, z11 ? 18 : 0, 0.0f));
             xpVar.a(true, false);
             TextView textView = new TextView(context);
             lk0Var.a = textView;
-            org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
+            org.telegram.messenger.lk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 16.0f);
             textView.setLines(1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setEllipsize(TextUtils.TruncateAt.END);
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             boolean z12 = LocaleController.isRTL;
-            lk0Var.addView(textView, w7.z5.a(-2.0f, z12 ? 23 : 61, 0.0f, z12 ? 61 : 23, 0.0f, -2, (z12 ? 5 : 3) | 16));
+            lk0Var.addView(textView, w7.z5.d(-2, -2.0f, (z12 ? 5 : 3) | 16, z12 ? 23 : 61, 0.0f, z12 ? 61 : 23, 0.0f));
             lk0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
             view = lk0Var;
         } else if (i10 == 2) {

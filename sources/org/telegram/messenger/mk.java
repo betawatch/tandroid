@@ -1,37 +1,147 @@
 package org.telegram.messenger;
 
-import android.icu.text.Collator;
-import java.util.Comparator;
-import java.util.HashMap;
-import org.telegram.messenger.LocaleController;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.util.LongSparseArray;
+import android.util.SparseIntArray;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.TranslateController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class mk implements Comparator {
+public final /* synthetic */ class mk implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ mk(Object obj, int i10) {
+    public /* synthetic */ mk(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.d = obj;
+        this.c = obj2;
+        this.e = obj3;
+        this.b = obj4;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$getMusicDialogsSortedByVisibleOrder$1;
-        int lambda$getLocales$3;
-        int lambda$getLanguages$1;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$getMusicDialogsSortedByVisibleOrder$1 = TelegramMediaSession.lambda$getMusicDialogsSortedByVisibleOrder$1((HashMap) this.b, (Long) obj, (Long) obj2);
-                return lambda$getMusicDialogsSortedByVisibleOrder$1;
+                ((SendMessagesHelper.ImportingHistory.1) this.d).lambda$run$0((TLObject) this.c, (TLRPC.TL_messages_initHistoryImport) this.e, (TLRPC.TL_error) this.b);
+                break;
             case 1:
-                lambda$getLocales$3 = TranslateController.lambda$getLocales$3((LocaleController.LocaleInfo) this.b, (LocaleController.LocaleInfo) obj, (LocaleController.LocaleInfo) obj2);
-                return lambda$getLocales$3;
+                ((SendMessagesHelper.ImportingStickers.1) this.d).lambda$run$0((TLRPC.TL_error) this.b, (TLRPC.TL_stickers_createStickerSet) this.e, (TLObject) this.c);
+                break;
+            case 2:
+                ((TranslateController) this.d).lambda$detectPhotoLanguage$41((MessageObject) this.c, (TranslateController.MessageKey) this.e, (Utilities.Callback) this.b);
+                break;
+            case 3:
+                ((TranslateController) this.d).lambda$detectStoryLanguage$31((TL_stories.StoryItem) this.c, (String) this.e, (TranslateController.StoryKey) this.b);
+                break;
+            case 4:
+                AndroidUtilities.lambda$showProxyAlert$21((boolean[]) this.d, (org.telegram.ui.Components.zc[]) this.c, (qi.a) this.e, (Activity) this.b);
+                break;
+            case 5:
+                ((FilePathDatabase) this.d).lambda$lookupFiles$7((ArrayList) this.c, (LongSparseArray) this.e, (CountDownLatch) this.b);
+                break;
+            case 6:
+                ((FilePathDatabase) this.d).lambda$checkMediaExistance$2((ArrayList) this.c, (long[]) this.e, (CountDownLatch) this.b);
+                break;
+            case 7:
+                ((FileRefController) this.d).lambda$requestReferenceFromServer$0((String) this.c, (String) this.e, (ci.r6) this.b);
+                break;
+            case 8:
+                ((ImageLoader) this.d).lambda$replaceImageInCache$5((String) this.c, (String) this.e, (ImageLocation) this.b);
+                break;
+            case 9:
+                ((LocationController) this.d).lambda$loadSharingLocations$16((ArrayList) this.c, (ArrayList) this.e, (ArrayList) this.b);
+                break;
+            case 10:
+                ((MediaController) this.d).lambda$generateWaveform$40((String) this.c, (String) this.e, (MessageObject) this.b);
+                break;
+            case 11:
+                ((MediaController) this.d).lambda$prepareResumedRecording$25((File) this.c, (TLRPC.TL_document) this.e, (MediaDataController.DraftVoice) this.b);
+                break;
+            case 12:
+                ((MediaController) this.d).lambda$generateWaveform$39((String) this.c, (byte[]) this.e, (MessageObject) this.b);
+                break;
+            case 13:
+                ((MediaDataController) this.d).lambda$getEmojiSuggestions$220((String[]) this.c, (MediaDataController.KeywordResultCallback) this.e, (ArrayList) this.b);
+                break;
+            case 14:
+                MediaDataController.lambda$getEmojiSuggestions$223((CountDownLatch) this.d, (MediaDataController.KeywordResultCallback) this.c, (ArrayList) this.e, (String) this.b);
+                break;
+            case 15:
+                MediaDataController.lambda$getAnimatedEmojiByKeywords$217((String) this.d, (ArrayList) this.c, (ArrayList) this.e, (Utilities.Callback) this.b);
+                break;
+            case 16:
+                ((MediaDataController) this.d).lambda$getEmojiNames$219((String[]) this.c, (String) this.e, (Utilities.Callback) this.b);
+                break;
+            case 17:
+                ((MediaDataController) this.d).lambda$fillWithAnimatedEmoji$228((boolean[]) this.c, (ArrayList[]) this.e, (x6) this.b);
+                break;
+            case 18:
+                ((MediaDataController) this.d).lambda$loadSavedReactions$240((TLRPC.TL_error) this.b, (TLObject) this.c, (SharedPreferences) this.e);
+                break;
+            case 19:
+                ((MessagesController) this.d).lambda$addUsersToChannel$271((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_inviteToChannel) this.e);
+                break;
+            case 20:
+                ((MessagesController) this.d).lambda$getDifference$356((TLRPC.updates_Difference) this.c, (a0.h) this.e, (a0.h) this.b);
+                break;
+            case 21:
+                ((MessagesController) this.d).lambda$createChat$255((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_createChat) this.e);
+                break;
+            case 22:
+                ((MessagesController) this.d).lambda$createChat$258((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_channels_createChannel) this.e);
+                break;
+            case 23:
+                ((MessagesController) this.d).lambda$setUserAdminRole$105((TLRPC.TL_error) this.b, (org.telegram.ui.ActionBar.n2) this.c, (TLRPC.TL_messages_editChatAdmin) this.e);
+                break;
+            case 24:
+                ((MessagesController) this.d).lambda$completeDialogsReset$210((TLRPC.messages_Dialogs) this.c, (a0.h) this.e, (a0.h) this.b);
+                break;
+            case 25:
+                ((MessagesController) this.d).lambda$getDifference$355((ArrayList) this.c, (TLRPC.updates_Difference) this.e, (a0.h) this.b);
+                break;
+            case 26:
+                ((MessagesStorage) this.d).lambda$putEncryptedChat$178((TLRPC.EncryptedChat) this.c, (TLRPC.User) this.e, (TLRPC.Dialog) this.b);
+                break;
+            case 27:
+                ((MessagesStorage) this.d).lambda$addRecentLocalFile$82((TLRPC.Document) this.c, (String) this.e, (String) this.b);
+                break;
+            case 28:
+                ((MessagesStorage) this.d).lambda$markMessagesAsRead$219((LongSparseIntArray) this.c, (LongSparseIntArray) this.e, (SparseIntArray) this.b);
+                break;
             default:
-                lambda$getLanguages$1 = TranslateController.lambda$getLanguages$1((Collator) this.b, (TranslateController.Language) obj, (TranslateController.Language) obj2);
-                return lambda$getLanguages$1;
+                ((SavedMessagesController) this.d).lambda$loadDialogs$2((TLObject) this.c, (ArrayList) this.e, (TLRPC.TL_error) this.b);
+                break;
         }
+    }
+
+    public /* synthetic */ mk(BaseController baseController, TLRPC.TL_error tL_error, Object obj, Object obj2, int i10) {
+        this.a = i10;
+        this.d = baseController;
+        this.b = tL_error;
+        this.c = obj;
+        this.e = obj2;
+    }
+
+    public /* synthetic */ mk(SendMessagesHelper.ImportingStickers.1 r22, TLRPC.TL_error tL_error, TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet, TLObject tLObject) {
+        this.a = 1;
+        this.d = r22;
+        this.b = tL_error;
+        this.e = tL_stickers_createStickerSet;
+        this.c = tLObject;
     }
 }

@@ -26,7 +26,7 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class zg0 implements tf.a {
     public static final cw0 n0 = new cw0(new k2(28), new k2(29));
@@ -54,7 +54,7 @@ public final class zg0 implements tf.a {
     public float Z;
     public float a0;
     public WindowManager b;
-    public ci.i3 b0;
+    public ci.h3 b0;
     public WindowManager.LayoutParams c;
     public boolean c0;
     public org.telegram.ui.f d;
@@ -147,9 +147,9 @@ public final class zg0 implements tf.a {
         r71Var.e(false);
         r71Var.d(!z10);
         r71Var.f(true);
-        ci.i3 i3Var = zg0Var.b0;
-        if (i3Var != null) {
-            i3Var.invalidate();
+        ci.h3 h3Var = zg0Var.b0;
+        if (h3Var != null) {
+            h3Var.invalidate();
         }
         yg0 yg0Var = zg0Var.h;
         if (yg0Var != null) {
@@ -277,10 +277,10 @@ public final class zg0 implements tf.a {
                 zg0Var.e = new yg0(zg0Var, context, i13);
                 org.telegram.ui.f fVar = new org.telegram.ui.f(zg0Var, context, i12);
                 zg0Var.d = fVar;
-                fVar.addView(zg0Var.e, w7.z5.d(-1.0f, -1));
+                fVar.addView(zg0Var.e, w7.z5.c(-1.0f, -1));
                 yg0 yg0Var = zg0Var.e;
                 float dp = AndroidUtilities.dp(10.0f);
-                ci.o1 o1Var = zf.j0.a;
+                ci.n1 n1Var = zf.j0.a;
                 yg0Var.setOutlineProvider(new zf.i0(0, dp));
                 zg0Var.e.setClipToOutline(true);
                 zg0Var.e.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.gg, false));
@@ -288,10 +288,10 @@ public final class zg0 implements tf.a {
                 if (view.getParent() != null) {
                     ((ViewGroup) zg0Var.f.getParent()).removeView(zg0Var.f);
                 }
-                zg0Var.e.addView(zg0Var.f, w7.z5.d(-1.0f, -1));
+                zg0Var.e.addView(zg0Var.f, w7.z5.c(-1.0f, -1));
                 View view2 = new View(context);
                 zg0Var.k0 = view2;
-                zg0Var.e.addView(view2, w7.z5.d(-1.0f, -1));
+                zg0Var.e.addView(view2, w7.z5.c(-1.0f, -1));
                 zg0Var.Q.n = new le.b(zg0Var, 10);
                 zg0Var.h = new yg0(zg0Var, context, i12);
                 yg0 yg0Var2 = zg0Var.h;
@@ -301,7 +301,7 @@ public final class zg0 implements tf.a {
                 zg0Var.h.setAlpha(0.0f);
                 View view3 = new View(context);
                 view3.setBackgroundColor(1275068416);
-                zg0Var.h.addView(view3, w7.z5.d(-1.0f, -1));
+                zg0Var.h.addView(view3, w7.z5.c(-1.0f, -1));
                 int dp2 = AndroidUtilities.dp(8.0f);
                 ImageView imageView = new ImageView(context);
                 imageView.setImageResource(R.drawable.pip_video_close);
@@ -315,14 +315,14 @@ public final class zg0 implements tf.a {
                 imageView.setOnClickListener(new ah.f(14));
                 float f11 = 38;
                 float f12 = 4;
-                zg0Var.h.addView(imageView, w7.z5.a(f11, 0.0f, f12, f12, 0.0f, 38, 5));
+                zg0Var.h.addView(imageView, w7.z5.d(38, f11, 5, 0.0f, f12, f12, 0.0f));
                 ImageView imageView2 = new ImageView(context);
                 imageView2.setImageResource(R.drawable.pip_video_expand);
                 imageView2.setColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i14, false), mode);
                 imageView2.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, i15, false), 1, -1));
                 imageView2.setPadding(dp2, dp2, dp2, dp2);
-                imageView2.setOnClickListener(new ci.h2(6, zg0Var, z12));
-                zg0Var.h.addView(imageView2, w7.z5.a(f11, 0.0f, f12, 48, 0.0f, 38, 5));
+                imageView2.setOnClickListener(new ci.g2(6, zg0Var, z12));
+                zg0Var.h.addView(imageView2, w7.z5.d(38, f11, 5, 0.0f, f12, 48, 0.0f));
                 ImageView imageView3 = new ImageView(context);
                 zg0Var.X = imageView3;
                 imageView3.setColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i14, false), mode);
@@ -333,10 +333,10 @@ public final class zg0 implements tf.a {
                 zg0Var.n = z13;
                 zg0Var.X.setVisibility((!z13 || ((kg0Var2 = zg0Var.r) != null && kg0Var2.x)) ? 0 : 8);
                 zg0Var.h.addView(zg0Var.X, w7.z5.e(38, 38, 17));
-                ci.i3 i3Var = new ci.i3(zg0Var, context);
-                zg0Var.b0 = i3Var;
-                zg0Var.h.addView(i3Var, w7.z5.d(-1.0f, -1));
-                zg0Var.e.addView(zg0Var.h, w7.z5.d(-1.0f, -1));
+                ci.h3 h3Var = new ci.h3(zg0Var, context);
+                zg0Var.b0 = h3Var;
+                zg0Var.h.addView(h3Var, w7.z5.c(-1.0f, -1));
+                zg0Var.e.addView(zg0Var.h, w7.z5.c(-1.0f, -1));
                 zg0Var.b = (WindowManager) (z12 ? activity : ApplicationLoader.applicationContext).getSystemService("window");
                 WindowManager.LayoutParams b10 = uf.b.b(context, z12);
                 zg0Var.c = b10;

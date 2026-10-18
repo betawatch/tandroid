@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class q extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final TL_aicompose.AiComposeTone X;
@@ -55,7 +55,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
         int i10 = org.telegram.ui.ActionBar.h6.G6;
         imageView.setColorFilter(getThemedColor(i10));
         imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.m1(0.1f, getThemedColor(i10)), 1, -1));
-        this.containerView.addView(imageView, w7.z5.a(54.0f, 0.0f, 0.0f, 8.0f, 0.0f, 54, 53));
+        this.containerView.addView(imageView, w7.z5.d(54, 54.0f, 53, 0.0f, 0.0f, 8.0f, 0.0f));
         w7.b6.b(imageView, 0.1f, 1.5f);
         imageView.setOnClickListener(new n(this, 0));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -64,7 +64,7 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
         frameLayout.setClipChildren(false);
         FrameLayout frameLayout2 = new FrameLayout(context);
         frameLayout2.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(100.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var)));
-        frameLayout.addView(frameLayout2, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, 0.0f, 100, 17));
+        frameLayout.addView(frameLayout2, w7.z5.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
         w9 w9Var = new w9(context);
         w9Var.setAnimatedEmojiDrawable(new r5(4, this.currentAccount, aiComposeTone.emoji_id));
         frameLayout2.addView(w9Var, w7.z5.e(64, 64, 17));
@@ -112,13 +112,13 @@ public final class q extends bb implements NotificationCenter.NotificationCenter
         this.containerView.addView(frameLayout3, e);
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.d0 = frameLayout4;
-        FrameLayout.LayoutParams a2 = w7.z5.a(-2.0f, 6.0f, 0.0f, 6.0f, 60.0f, -1, 80);
-        int i15 = a2.leftMargin;
+        FrameLayout.LayoutParams d = w7.z5.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 60.0f);
+        int i15 = d.leftMargin;
         int i16 = this.backgroundPaddingLeft;
-        a2.leftMargin = i15 + i16;
-        a2.rightMargin += i16;
-        this.containerView.addView(frameLayout4, a2);
-        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
+        d.leftMargin = i15 + i16;
+        d.rightMargin += i16;
+        this.containerView.addView(frameLayout4, d);
+        ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
         this.e0 = f7;
         f7.setText(LocaleController.getString(V() ? R.string.AIEditorStyleDone : R.string.AIEditorAddStyle));
         f7.setOnClickListener(new ai.v0(this, aiComposeTone, d6Var, 14));

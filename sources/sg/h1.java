@@ -1,42 +1,24 @@
 package sg;
 
-import android.animation.ValueAnimator;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.ui.Components.ml0;
+import ai.z4;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.aw;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class h1 extends aw {
+    public final /* synthetic */ m1 W;
 
-    public /* synthetic */ h1(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h1(m1 m1Var, z4 z4Var, Context context, d6 d6Var, ArrayList arrayList) {
+        super(z4Var, context, d6Var, arrayList);
+        this.W = m1Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                ml0 ml0Var = (ml0) this.b;
-                Drawable drawable = (Drawable) this.c;
-                ml0Var.getClass();
-                drawable.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                View view = ((l1) ml0Var.c).A0;
-                if (!(view instanceof org.telegram.ui.Cells.u1)) {
-                    view.invalidate();
-                    break;
-                } else {
-                    ((org.telegram.ui.Cells.u1) view).a3();
-                    break;
-                }
-            default:
-                ((s4.k) this.b).P((s4.b1) this.c);
-                break;
-        }
+    @Override // org.telegram.ui.Components.aw
+    public final void Z() {
+        this.W.dismiss();
     }
 }

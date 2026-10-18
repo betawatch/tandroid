@@ -1,10 +1,11 @@
 package ah;
 
+import ai.b3;
+import ai.k2;
 import ai.k7;
-import ai.o2;
-import ai.q2;
-import ai.r3;
-import ai.y2;
+import ai.n2;
+import ai.t3;
+import ai.w2;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.RectF;
@@ -19,10 +20,10 @@ import b2.p1;
 import b2.q1;
 import b2.s1;
 import b2.t1;
-import ci.aa;
-import ci.h4;
-import ci.o4;
-import ci.q4;
+import ci.g4;
+import ci.n4;
+import ci.p4;
+import ci.z9;
 import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -53,7 +54,6 @@ import ki.g6;
 import ki.i4;
 import ki.o5;
 import ki.r5;
-import ki.t3;
 import ki.w3;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
@@ -91,7 +91,7 @@ import org.telegram.ui.kc0;
 import org.telegram.ui.pc0;
 import org.telegram.ui.z41;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureListener, v8, OnCompleteListener, Continuation, r9.d, xl0, yl0, Utilities.Callback3Return, kc0, e2.p, e2.o, ki.o0, gu, i4, m4.o0, e2.j {
     public final /* synthetic */ int a;
@@ -311,9 +311,9 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                         }
                         d6Var2 = ((f3) r9Var).resourcesProvider;
                         i80 F = i80.F(k9Var, d6Var2, view);
-                        F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new r3(k9Var, clientUserId, 7), false);
+                        F.c(R.drawable.msg_addfolder, LocaleController.getString(R.string.StoriesAlbumNewAlbum), new t3(k9Var, clientUserId, 7), false);
                         F.k();
-                        i80.f(F, r9Var.j1().B(clientUserId, true), r9Var.v, false, null, new o2(11, k9Var, F));
+                        i80.f(F, r9Var.j1().B(clientUserId, true), r9Var.v, false, null, new n2(11, k9Var, F));
                         F.Z();
                         return;
                     }
@@ -337,7 +337,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                     }
                     getgroupcallstreamrtmpurl.peer = inputPeer2;
                     i11 = ((f3) r9Var).currentAccount;
-                    ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamrtmpurl, new q2(k9Var, b2Var, getgroupcallstreamrtmpurl));
+                    ConnectionsManager.getInstance(i11).sendRequest(getgroupcallstreamrtmpurl, new k2(k9Var, b2Var, getgroupcallstreamrtmpurl));
                     return;
                 }
                 return;
@@ -492,7 +492,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                         b2Var3.q(50L);
                         i15 = ((f3) r9Var).currentAccount;
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(i15);
-                        messagesStorage.getStorageQueue().postRunnable(new ai.b2(k9Var, chat2, messagesStorage, j10, 12));
+                        messagesStorage.getStorageQueue().postRunnable(new b3(k9Var, chat2, messagesStorage, j10, 12));
                     } else {
                         k9Var.d(j10, chatFull.participants);
                     }
@@ -553,25 +553,25 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
     public void e(p9 p9Var, boolean z10, boolean z11, boolean z12, boolean z13, TLRPC.InputPeer inputPeer, int i10, p6 p6Var, com.google.firebase.messaging.s sVar) {
         switch (this.a) {
             case 5:
-                q4 q4Var = (q4) this.b;
+                p4 p4Var = (p4) this.b;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
                 TL_stories.TL_stories_editStory tL_stories_editStory = new TL_stories.TL_stories_editStory();
-                tL_stories_editStory.peer = MessagesController.getInstance(q4Var.C2).getInputPeer(storyItem.dialogId);
+                tL_stories_editStory.peer = MessagesController.getInstance(p4Var.C2).getInputPeer(storyItem.dialogId);
                 tL_stories_editStory.id = storyItem.id;
                 tL_stories_editStory.flags |= 4;
                 tL_stories_editStory.privacy_rules = p9Var.b;
-                ConnectionsManager.getInstance(q4Var.C2).sendRequest(tL_stories_editStory, new y2(q4Var, p6Var, storyItem, p9Var, 5));
+                ConnectionsManager.getInstance(p4Var.C2).sendRequest(tL_stories_editStory, new w2(p4Var, p6Var, storyItem, p9Var, 5));
                 break;
             default:
-                h4 h4Var = (h4) this.b;
+                g4 g4Var = (g4) this.b;
                 r9 r9Var = (r9) this.c;
-                q4 q4Var2 = h4Var.l;
-                o4 o4Var = q4Var2.O1;
-                TL_stories.StoryItem storyItem2 = o4Var.a;
+                p4 p4Var2 = g4Var.l;
+                n4 n4Var = p4Var2.O1;
+                TL_stories.StoryItem storyItem2 = n4Var.a;
                 if ((storyItem2 != null && storyItem2.pinned) != z12) {
-                    MessagesController.getInstance(q4Var2.C2).getStoriesController().o0(q4Var2.B1, q4Var2.v1, z12, null);
+                    MessagesController.getInstance(p4Var2.C2).getStoriesController().o0(p4Var2.B1, p4Var2.v1, z12, null);
                 }
-                TL_stories.StoryItem storyItem3 = o4Var.a;
+                TL_stories.StoryItem storyItem3 = n4Var.a;
                 if (storyItem3 != null) {
                     TLRPC.MessageMedia messageMedia = storyItem3.media;
                     if (messageMedia instanceof TLRPC.TL_messageMediaVideoStream) {
@@ -580,7 +580,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
                         togglegroupcallsettings.call = inputGroupCall;
                         togglegroupcallsettings.messages_enabled = Boolean.valueOf(z10);
                         togglegroupcallsettings.send_paid_messages_stars = Long.valueOf(i10);
-                        ConnectionsManager.getInstance(q4Var2.C2).sendRequest(togglegroupcallsettings, new ai.g(8, h4Var, r9Var));
+                        ConnectionsManager.getInstance(p4Var2.C2).sendRequest(togglegroupcallsettings, new ai.g(8, g4Var, r9Var));
                         break;
                     }
                 }
@@ -626,13 +626,13 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
     public void g(b2 b2Var, int i10) {
         switch (this.a) {
             case 2:
-                k7.f1((k7) this.b, (ug.m1) this.c, b2Var, i10);
+                k7.d1((k7) this.b, (ug.m1) this.c, b2Var, i10);
                 break;
             case 7:
-                h4 h4Var = (h4) this.b;
-                ci.h1 h1Var = ((aa) this.c).A0;
+                g4 g4Var = (g4) this.b;
+                ci.h1 h1Var = ((z9) this.c).A0;
                 if (h1Var == null) {
-                    q4.f0(h4Var.l);
+                    p4.f0(g4Var.l);
                     break;
                 } else if (!h1Var.w) {
                     TL_phone.discardGroupCall discardgroupcall = new TL_phone.discardGroupCall();
@@ -683,7 +683,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
     public void invoke(Object obj) {
         switch (this.a) {
             case 20:
-                ((j2.b) obj).e((j2.a) this.b, (u2.b0) this.c);
+                ((j2.b) obj).e((j2.a) this.b, (u2.c0) this.c);
                 break;
             default:
                 ((j2.b) obj).onRenderedFirstFrame((j2.a) this.b);
@@ -770,7 +770,7 @@ public final /* synthetic */ class h0 implements z41, jf1, a2, ih.h, OnFailureLi
 
     @Override // ki.i4
     public void run(long j10) {
-        t3 t3Var = (t3) this.b;
+        ki.t3 t3Var = (ki.t3) this.b;
         String str = (String) this.c;
         TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
         tL_inlineButtonTypeUserProfile.user_id = j10;

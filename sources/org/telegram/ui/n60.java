@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, ne.d, View.OnClickListener, qh.d {
     public boolean E;
@@ -66,7 +66,7 @@ public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
     public org.telegram.ui.Components.v30 b0;
     public final ne.b c;
     public int c0;
-    public ci.i3 d;
+    public ci.h3 d;
     public org.telegram.ui.Components.te0 d0;
     public ei.g6 e;
     public boolean e0;
@@ -426,8 +426,8 @@ public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
         this.n.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         org.telegram.ui.Components.im0 im0Var3 = this.n;
         float f7 = -this.a;
-        m0Var.addView(im0Var3, w7.z5.a(-1.0f, 0.0f, f7, 0.0f, f7, -1, 119));
-        this.n.setOnItemClickListener(new ci.y4(17, this, context));
+        m0Var.addView(im0Var3, w7.z5.d(-1, -1.0f, 119, 0.0f, f7, 0.0f, f7));
+        this.n.setOnItemClickListener(new ci.x4(17, this, context));
         this.n.setOnScrollListener(new k3(this, 13));
         org.telegram.ui.Components.im0 im0Var4 = this.n;
         im0Var4.W1 = true;
@@ -453,7 +453,7 @@ public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
             this.F = new ai.w1(this, context);
             View view = new View(context);
             view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d7, this.resourceProvider));
-            this.F.addView(view, w7.z5.a(1.0f / AndroidUtilities.density, 0.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+            this.F.addView(view, w7.z5.d(-1, 1.0f / AndroidUtilities.density, 55, 0.0f, 0.0f, 0.0f, 0.0f));
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(0);
             linearLayout.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
@@ -480,11 +480,11 @@ public class n60 extends org.telegram.ui.ActionBar.n2 implements NotificationCen
             g0();
         }
         s0();
-        ci.i3 i3Var = new ci.i3(this, context);
-        this.d = i3Var;
-        m0Var.addView(i3Var, w7.z5.e(-1, 0, 48));
+        ci.h3 h3Var = new ci.h3(this, context);
+        this.d = h3Var;
+        m0Var.addView(h3Var, w7.z5.e(-1, 0, 48));
         m0Var.addView(this.actionBar);
-        m0Var.addView(this.f, w7.z5.a(40.0f, 11.0f, 0.0f, 11.0f, 0.0f, -1, 48));
+        m0Var.addView(this.f, w7.z5.d(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
         m0Var.addView(this.h);
         org.telegram.ui.Components.im0 im0Var5 = this.n;
         Objects.requireNonNull(im0Var5);

@@ -40,7 +40,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -63,8 +63,8 @@ import org.telegram.ui.Components.ym0;
 import org.telegram.ui.Components.zd0;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
-import org.telegram.ui.Wallet.m5;
-import org.telegram.ui.Wallet.y4;
+import org.telegram.ui.Wallet.n5;
+import org.telegram.ui.Wallet.z4;
 import org.telegram.ui.c51;
 import org.telegram.ui.cc;
 import org.telegram.ui.d51;
@@ -85,7 +85,7 @@ import org.telegram.ui.z31;
 import org.telegram.ui.z51;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final /* synthetic */ int a;
@@ -140,8 +140,6 @@ public final class v extends FrameLayout {
         j5[] j5VarArr;
         float f7;
         org.telegram.ui.Cells.z zVar;
-        Canvas canvas2;
-        int save;
         int i10 = 0;
         switch (this.a) {
             case 6:
@@ -350,25 +348,7 @@ public final class v extends FrameLayout {
                 break;
             case 29:
                 super.dispatchDraw(canvas);
-                m5 m5Var = (m5) this.c;
-                if (m5Var.G) {
-                    float alpha = m5Var.d.getVisibility() == 0 ? m5Var.d.getAlpha() : 0.0f;
-                    if (alpha > 0.0f) {
-                        if (alpha < 1.0f) {
-                            int i14 = (int) (alpha * 255.0f);
-                            canvas2 = canvas;
-                            save = canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), i14);
-                        } else {
-                            canvas2 = canvas;
-                            save = canvas2.save();
-                        }
-                        canvas2.concat(m5Var.J);
-                        canvas2.translate(-m5Var.t0.getLeft(), -m5Var.t0.getTop());
-                        super.drawChild(canvas2, m5Var.t0, getDrawingTime());
-                        canvas2.restoreToCount(save);
-                        break;
-                    }
-                }
+                ((n5) this.c).getClass();
                 break;
             default:
                 super.dispatchDraw(canvas);
@@ -558,12 +538,12 @@ public final class v extends FrameLayout {
                 }
                 return false;
             case 29:
-                m5 m5Var = (m5) this.c;
-                if (view != m5Var.t0 || !m5Var.F) {
+                n5 n5Var = (n5) this.c;
+                if (view != n5Var.r0 || !n5Var.E) {
                     return super.drawChild(canvas, view, j10);
                 }
                 int save = canvas.save();
-                canvas.concat(m5Var.J);
+                canvas.concat(n5Var.H);
                 boolean drawChild4 = super.drawChild(canvas, view, j10);
                 canvas.restoreToCount(save);
                 return drawChild4;
@@ -662,7 +642,7 @@ public final class v extends FrameLayout {
                 break;
             case 29:
                 super.onAttachedToWindow();
-                getViewTreeObserver().addOnPreDrawListener((y4) this.b);
+                getViewTreeObserver().addOnPreDrawListener((z4) this.b);
                 break;
             default:
                 super.onAttachedToWindow();
@@ -715,7 +695,7 @@ public final class v extends FrameLayout {
                 ((ImageReceiver) this.b).onDetachedFromWindow();
                 break;
             case 29:
-                getViewTreeObserver().removeOnPreDrawListener((y4) this.b);
+                getViewTreeObserver().removeOnPreDrawListener((z4) this.b);
                 super.onDetachedFromWindow();
                 break;
             default:
@@ -982,7 +962,7 @@ public final class v extends FrameLayout {
                 super.onLayout(z10, i10, i11, i12, i13);
                 int i14 = (i13 - i11) / 4;
                 int i15 = i14 * 3;
-                int A = kk.A(275.0f, i15, 2);
+                int A = lk.A(275.0f, i15, 2);
                 l70 l70Var = (l70) this.c;
                 FrameLayout frameLayout = l70Var.r;
                 frameLayout.layout(0, A, frameLayout.getMeasuredWidth(), l70Var.r.getMeasuredHeight() + A);
@@ -1010,7 +990,7 @@ public final class v extends FrameLayout {
                 }
                 break;
             case 21:
-                int dp4 = AndroidUtilities.dp(25.0f) + AndroidUtilities.dp(150.0f) + kk.A(275.0f, ((i13 - i11) / 4) * 3, 2);
+                int dp4 = AndroidUtilities.dp(25.0f) + AndroidUtilities.dp(150.0f) + lk.A(275.0f, ((i13 - i11) / 4) * 3, 2);
                 int dp5 = AndroidUtilities.dp(18.0f);
                 TextView textView2 = (TextView) this.b;
                 textView2.layout(dp5, dp4, textView2.getMeasuredWidth() + dp5, textView2.getMeasuredHeight() + dp4);
@@ -1148,7 +1128,7 @@ public final class v extends FrameLayout {
                 break;
             case 7:
                 super.onMeasure(i10, i11);
-                super.onMeasure(i10, kk.C(8.0f, ((LinearLayout) this.b).getMeasuredHeight(), TLObject.FLAG_30));
+                super.onMeasure(i10, lk.C(8.0f, ((LinearLayout) this.b).getMeasuredHeight(), TLObject.FLAG_30));
                 break;
             case 12:
                 super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
@@ -1307,11 +1287,11 @@ public final class v extends FrameLayout {
                             if (motionEvent.getPointerCount() == 2 && !secretMediaViewer.p0 && secretMediaViewer.Z0) {
                                 secretMediaViewer.f1 = true;
                                 secretMediaViewer.y0 = (((float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0))) / secretMediaViewer.N0) * secretMediaViewer.O0;
-                                secretMediaViewer.w0 = kk.x(secretMediaViewer.y0, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
+                                secretMediaViewer.w0 = lk.x(secretMediaViewer.y0, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
                                 float height = secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2);
                                 float height2 = (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0;
                                 float f11 = secretMediaViewer.y0;
-                                secretMediaViewer.x0 = kk.x(f11, secretMediaViewer.O0, height2, height);
+                                secretMediaViewer.x0 = lk.x(f11, secretMediaViewer.O0, height2, height);
                                 secretMediaViewer.n(f11);
                                 secretMediaViewer.e.invalidate();
                             } else if (motionEvent.getPointerCount() == 1) {
@@ -1395,8 +1375,8 @@ public final class v extends FrameLayout {
                                     secretMediaViewer.n(1.0f);
                                     secretMediaViewer.c(1.0f, 0.0f, 0.0f, true);
                                 } else if (f17 > 3.0f) {
-                                    float x11 = kk.x(3.0f, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
-                                    float x12 = kk.x(3.0f, secretMediaViewer.O0, (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0, secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2));
+                                    float x11 = lk.x(3.0f, secretMediaViewer.O0, (secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2)) - secretMediaViewer.R0, secretMediaViewer.P0 - (secretMediaViewer.e.getWidth() / 2));
+                                    float x12 = lk.x(3.0f, secretMediaViewer.O0, (secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2)) - secretMediaViewer.S0, secretMediaViewer.Q0 - (secretMediaViewer.e.getHeight() / 2));
                                     secretMediaViewer.n(3.0f);
                                     float f18 = secretMediaViewer.V0;
                                     if (x11 >= f18) {
@@ -1610,19 +1590,19 @@ public final class v extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v(m5 m5Var, Context context) {
-        super(context);
-        this.a = 29;
-        this.c = m5Var;
-        this.b = new y4(0, this);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v(Context context, TextView textView, TextView textView2) {
         super(context);
         this.a = 21;
         this.b = textView;
         this.c = textView2;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v(n5 n5Var, Context context) {
+        super(context);
+        this.a = 29;
+        this.c = n5Var;
+        this.b = new z4(0, this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -1694,14 +1674,14 @@ public final class v extends FrameLayout {
                 this.b = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-                addView(imageView, z5.a(24.0f, 0.0f, 8.0f, 0.0f, 0.0f, 24, 49));
+                addView(imageView, z5.d(24, 24.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setTextSize(1, 12.0f);
                 textView.setTextColor(-1);
                 textView.setGravity(17);
-                addView(textView, z5.a(-2.0f, 4.0f, 35.0f, 4.0f, 0.0f, -1, 49));
+                addView(textView, z5.d(-1, -2.0f, 49, 4.0f, 35.0f, 4.0f, 0.0f));
                 break;
         }
     }

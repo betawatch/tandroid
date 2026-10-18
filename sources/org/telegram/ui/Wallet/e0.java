@@ -1,11 +1,12 @@
 package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
+import ei.ka;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class e0 {
     public String e;
@@ -103,7 +104,7 @@ public final class e0 {
         this.j = z10;
         this.k = null;
         g();
-        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(getnfts, new org.telegram.messenger.a(), new ei.ka(3, this, z10));
+        this.l = ConnectionsManager.getInstance(this.m.a).sendRequestTyped(getnfts, new org.telegram.messenger.a(), new ka(3, this, z10));
     }
 
     public final void g() {

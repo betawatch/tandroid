@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class n40 extends s61 {
     public final int N;
     public final ArrayList O;
     public boolean P;
-    public ci.u6 Q;
+    public ci.t6 Q;
     public boolean R;
     public boolean S;
     public int T;
@@ -56,10 +56,10 @@ public abstract class n40 extends s61 {
     }
 
     public final void V() {
-        ci.u6 u6Var = this.Q;
-        if (u6Var != null && u6Var.I != 0) {
-            ConnectionsManager.getInstance(u6Var.c).cancelRequest(u6Var.I, true);
-            u6Var.I = 0;
+        ci.t6 t6Var = this.Q;
+        if (t6Var != null && t6Var.I != 0) {
+            ConnectionsManager.getInstance(t6Var.c).cancelRequest(t6Var.I, true);
+            t6Var.I = 0;
         }
         this.P = false;
         if (this.U >= 0) {

@@ -17,9 +17,9 @@ import android.util.Pair;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
-import ci.aa;
+import ci.p9;
 import ci.q9;
-import ci.r9;
+import ci.z9;
 import ei.f6;
 import ei.yb;
 import gi.f4;
@@ -58,7 +58,7 @@ import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 import org.telegram.ui.l4;
 import rg.r1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -195,18 +195,18 @@ public final /* synthetic */ class o implements Runnable {
                 uaVar.run(null);
                 break;
             case 7:
-                r9 r9Var = (r9) this.c;
+                q9 q9Var = (q9) this.c;
                 ArrayList arrayList2 = (ArrayList) this.d;
                 int i20 = this.b;
-                aa aaVar = r9Var.d;
-                q9 q9Var = aaVar.n0;
-                int i21 = aaVar.h;
-                q9Var.A0 = arrayList2;
-                q9Var.y0 = i21;
-                q9Var.setAdapter(null);
-                q9Var.setAdapter(q9Var.z0);
-                q9Var.setCurrentItem(i20);
-                q9Var.C0 = true;
+                z9 z9Var = q9Var.d;
+                p9 p9Var = z9Var.n0;
+                int i21 = z9Var.h;
+                p9Var.A0 = arrayList2;
+                p9Var.y0 = i21;
+                p9Var.setAdapter(null);
+                p9Var.setAdapter(p9Var.z0);
+                p9Var.setCurrentItem(i20);
+                p9Var.C0 = true;
                 break;
             case 8:
                 CopyOnWriteArraySet copyOnWriteArraySet = (CopyOnWriteArraySet) this.c;
@@ -298,7 +298,7 @@ public final /* synthetic */ class o implements Runnable {
             case 17:
                 i2.e1 e1Var = (i2.e1) this.c;
                 Pair pair = (Pair) this.d;
-                e1Var.b.h.a(((Integer) pair.first).intValue(), (u2.f0) pair.second, this.b);
+                e1Var.b.h.a(((Integer) pair.first).intValue(), (u2.g0) pair.second, this.b);
                 break;
             case 18:
                 ig.y yVar = (ig.y) this.c;

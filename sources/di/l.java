@@ -1,10 +1,10 @@
 package di;
 
 import android.content.Context;
-import ci.a7;
+import ci.z6;
 import org.telegram.ui.Components.rx0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class l extends q {
     public final /* synthetic */ r v;
@@ -24,8 +24,8 @@ public final class l extends q {
         }
         rx0 rx0Var = rVar.y;
         if (rx0Var != null) {
-            a7 a7Var = this.e;
-            rx0Var.e(a7Var != null && a7Var.k(), true);
+            z6 z6Var = this.e;
+            rx0Var.e(z6Var != null && z6Var.k(), true);
         }
     }
 }

@@ -20,7 +20,7 @@ import org.telegram.ui.hs;
 import org.telegram.ui.lq;
 import org.telegram.ui.vi;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class sb implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class sb implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new vb((ei.d) obj4, tLObject, (org.telegram.ui.ActionBar.f3[]) obj2, (org.telegram.ui.ActionBar.d6) obj, this.d, (TLRPC.TL_messages_checkChatInvite) obj3, 0));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new vb((ci.v8) obj4, tLObject, this.c, (ArrayList) obj, (boolean[]) obj3, this.d, 1));
+                AndroidUtilities.runOnUIThread(new vb((ci.u8) obj4, tLObject, this.c, (ArrayList) obj, (boolean[]) obj3, this.d, 1));
                 break;
             case 3:
                 AndroidUtilities.runOnUIThread(new hg.d1((hg.e1) obj4, this.d, (ArrayList) obj2, (a0.h) obj, tL_error, tLObject, (MessagesController) obj3, 0));
@@ -94,7 +94,7 @@ public final /* synthetic */ class sb implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new hg.d1((LaunchActivity) obj4, tL_error, tLObject, this.d, (org.telegram.ui.ActionBar.b2) obj2, (b80) obj, (String) obj3));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new hg.d1((org.telegram.ui.web.a1) obj4, (String) obj3, tLObject, tL_error, this.d, (org.telegram.ui.web.x0) obj2, (ci.z7) obj));
+                AndroidUtilities.runOnUIThread(new hg.d1((org.telegram.ui.web.b1) obj4, (String) obj3, tLObject, tL_error, this.d, (org.telegram.ui.web.y0) obj2, (ci.y7) obj));
                 break;
             default:
                 int i12 = this.d;
@@ -139,12 +139,12 @@ public final /* synthetic */ class sb implements RequestDelegate {
         this.d = i10;
     }
 
-    public /* synthetic */ sb(org.telegram.ui.web.a1 a1Var, String str, int i10, org.telegram.ui.web.x0 x0Var, ci.z7 z7Var) {
+    public /* synthetic */ sb(org.telegram.ui.web.b1 b1Var, String str, int i10, org.telegram.ui.web.y0 y0Var, ci.y7 y7Var) {
         this.a = 14;
-        this.b = a1Var;
+        this.b = b1Var;
         this.f = str;
         this.d = i10;
-        this.c = x0Var;
-        this.e = z7Var;
+        this.c = y0Var;
+        this.e = y7Var;
     }
 }

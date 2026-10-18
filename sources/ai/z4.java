@@ -15,7 +15,7 @@ import org.telegram.ui.Components.td0;
 import org.telegram.ui.Components.vv;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class z4 extends org.telegram.ui.ActionBar.n2 {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
             default:
                 return super.getContext();
             case 2:
-                return ((ci.d5) this.b).b.getContext();
+                return ((ci.c5) this.b).b.getContext();
             case 4:
                 return ((ei.f6) this.b).getContext();
             case 5:
@@ -101,7 +101,7 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
             default:
                 return super.getFragmentView();
             case 10:
-                viewGroup2 = ((org.telegram.ui.ActionBar.f3) ((sg.l1) this.b)).containerView;
+                viewGroup2 = ((org.telegram.ui.ActionBar.f3) ((sg.m1) this.b)).containerView;
                 return viewGroup2;
         }
     }
@@ -120,7 +120,7 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
             default:
                 return super.getLayoutContainer();
             case 10:
-                return ((sg.l1) this.b).M0;
+                return ((sg.m1) this.b).M0;
         }
     }
 
@@ -135,7 +135,7 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
                 }
                 return null;
             case 1:
-                Activity findActivity = AndroidUtilities.findActivity(((ci.q4) this.b).getContext());
+                Activity findActivity = AndroidUtilities.findActivity(((ci.p4) this.b).getContext());
                 return findActivity == null ? LaunchActivity.H1 : findActivity;
             case 2:
             case 6:
@@ -155,9 +155,9 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
                 }
                 return null;
             case 9:
-                return ((org.telegram.ui.web.a1) this.b).W;
+                return ((org.telegram.ui.web.b1) this.b).W;
             case 10:
-                org.telegram.ui.ActionBar.n2 n2Var = ((sg.l1) this.b).t0;
+                org.telegram.ui.ActionBar.n2 n2Var = ((sg.m1) this.b).t0;
                 if (n2Var == null) {
                     return null;
                 }
@@ -165,12 +165,12 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
             case 11:
                 return ((org.telegram.ui.ActionBar.n2) this.b).getParentActivity();
             case 12:
-                yh.y4 y4Var = (yh.y4) this.b;
-                Activity ownerActivity = y4Var.getOwnerActivity();
+                yh.x4 x4Var = (yh.x4) this.b;
+                Activity ownerActivity = x4Var.getOwnerActivity();
                 if (ownerActivity == null) {
                     ownerActivity = LaunchActivity.H1;
                 }
-                return ownerActivity == null ? AndroidUtilities.findActivity(y4Var.getContext()) : ownerActivity;
+                return ownerActivity == null ? AndroidUtilities.findActivity(x4Var.getContext()) : ownerActivity;
         }
     }
 
@@ -181,12 +181,12 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
         org.telegram.ui.ActionBar.d6 d6Var3;
         switch (this.a) {
             case 1:
-                return new ci.t2(0, ((ci.q4) this.b).B0);
+                return new ci.s2(0, ((ci.p4) this.b).B0);
             case 2:
-                return ((ci.d5) this.b).b.s;
+                return ((ci.c5) this.b).b.s;
             case 3:
                 d6Var = ((org.telegram.ui.ActionBar.f3) ((ei.o5) this.b)).resourcesProvider;
-                return new ci.t2(5, d6Var);
+                return new ci.s2(5, d6Var);
             case 4:
                 return ((ei.f6) this.b).G1;
             case 5:
@@ -200,11 +200,11 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
             case 7:
                 return ((jy) this.b).E.Z1;
             case 9:
-                return new ci.t2(9, ((org.telegram.ui.web.a1) this.b).e);
+                return new ci.s2(9, ((org.telegram.ui.web.b1) this.b).e);
             case 11:
                 return new mi.q((org.telegram.ui.ActionBar.d6) new ci.b());
             case 12:
-                d6Var3 = ((org.telegram.ui.ActionBar.f3) ((yh.y4) this.b)).resourcesProvider;
+                d6Var3 = ((org.telegram.ui.ActionBar.f3) ((yh.x4) this.b)).resourcesProvider;
                 return d6Var3;
         }
     }
@@ -254,11 +254,11 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
     public boolean presentFragment(org.telegram.ui.ActionBar.n2 n2Var) {
         switch (this.a) {
             case 1:
-                ci.aa aaVar = ((ci.q4) this.b).J0;
-                if (aaVar == null) {
+                ci.z9 z9Var = ((ci.p4) this.b).J0;
+                if (z9Var == null) {
                     return true;
                 }
-                aaVar.H(n2Var);
+                z9Var.H(n2Var);
                 return true;
             case 4:
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
@@ -283,9 +283,9 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
                 dialog.show();
                 return dialog;
             case 1:
-                ci.aa aaVar = ((ci.q4) this.b).J0;
-                if (aaVar != null) {
-                    aaVar.showDialog(dialog);
+                ci.z9 z9Var = ((ci.p4) this.b).J0;
+                if (z9Var != null) {
+                    z9Var.showDialog(dialog);
                 } else if (dialog != null) {
                     dialog.show();
                 }
@@ -322,10 +322,10 @@ public final class z4 extends org.telegram.ui.ActionBar.n2 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(org.telegram.ui.web.a1 a1Var) {
+    public z4(org.telegram.ui.web.b1 b1Var) {
         super(null);
         this.a = 9;
-        this.b = a1Var;
-        this.currentAccount = a1Var.M;
+        this.b = b1Var;
+        this.currentAccount = b1Var.M;
     }
 }

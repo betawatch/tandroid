@@ -20,9 +20,9 @@ import org.telegram.ui.s50;
 import org.telegram.ui.sn;
 import org.telegram.ui.v40;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements q7, kg1, m4.g1, e2.j, org.telegram.ui.ActionBar.a2, zf.m, MessagesController.ErrorDelegate, wh.k {
+public final /* synthetic */ class f implements p7, kg1, m4.g1, e2.j, org.telegram.ui.ActionBar.a2, zf.m, MessagesController.ErrorDelegate, wh.k {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -104,20 +104,20 @@ public final /* synthetic */ class f implements q7, kg1, m4.g1, e2.j, org.telegr
         ((m4.m1) obj).N0((b2.f) this.c, this.b);
     }
 
-    @Override // ci.q7
+    @Override // ci.p7
     public void b(boolean z10) {
         r rVar = (r) this.c;
         if (!this.b && z10) {
             boolean z11 = rVar.b == 1;
-            i7 i7Var = rVar.s;
+            h7 h7Var = rVar.s;
             if (z11) {
-                if (!i7Var.z) {
+                if (!h7Var.z) {
                     return;
                 }
-            } else if (!i7Var.p) {
+            } else if (!h7Var.p) {
                 return;
             }
-            i7Var.Q(z11);
+            h7Var.Q(z11);
         }
     }
 

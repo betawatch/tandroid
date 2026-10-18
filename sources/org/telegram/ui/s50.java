@@ -94,7 +94,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class s50 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate, VoIPService.StateListener, ne.d {
     public static s50 D3;
@@ -312,7 +312,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
     public final x20 x;
     public boolean x0;
     public final org.telegram.ui.ActionBar.e1 x1;
-    public final org.telegram.ui.Components.rc x2;
+    public final org.telegram.ui.Components.sc x2;
     public Boolean x3;
     public final ImageView y;
     public float y0;
@@ -358,7 +358,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         this.t2 = new ArrayList();
         this.v2 = new e20(this, i11);
         this.w2 = new a30(this);
-        this.x2 = new org.telegram.ui.Components.rc(24);
+        this.x2 = new org.telegram.ui.Components.sc(23);
         this.y2 = new e20(this, 1);
         this.z2 = false;
         this.A2 = new a6(this, 6);
@@ -483,26 +483,26 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             j5Var.setTypeface(AndroidUtilities.bold());
             j5Var.setTextSize(18);
             j5Var.k(LocaleController.getString(R.string.VoipChatStartsIn));
-            this.containerView.addView(j5Var, w7.z5.a(-2.0f, 21.0f, 0.0f, 21.0f, 311.0f, -2, 49));
+            this.containerView.addView(j5Var, w7.z5.d(-2, -2.0f, 49, 21.0f, 0.0f, 21.0f, 311.0f));
             x40 x40Var = new x40(this, launchActivity);
             this.V = x40Var;
             x40Var.setGravity(17);
             x40Var.setTextColor(-1);
             x40Var.setTypeface(AndroidUtilities.bold());
             x40Var.setTextSize(60);
-            this.containerView.addView(x40Var, w7.z5.a(-2.0f, 21.0f, 0.0f, 21.0f, 231.0f, -2, 49));
+            this.containerView.addView(x40Var, w7.z5.d(-2, -2.0f, 49, 21.0f, 0.0f, 21.0f, 231.0f));
             org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(launchActivity);
             this.W = j5Var2;
             j5Var2.setGravity(17);
             j5Var2.setTextColor(-1);
             j5Var2.setTypeface(AndroidUtilities.bold());
             j5Var2.setTextSize(18);
-            this.containerView.addView(j5Var2, w7.z5.a(-2.0f, 21.0f, 0.0f, 21.0f, 201.0f, -2, 49));
+            this.containerView.addView(j5Var2, w7.z5.d(-2, -2.0f, 49, 21.0f, 0.0f, 21.0f, 201.0f));
         }
         if (s1()) {
             h50 h50Var = new h50(this, launchActivity);
             this.U0 = h50Var;
-            this.containerView.addView(h50Var, w7.z5.a(80.0f, 0.0f, 44.0f, 0.0f, 0.0f, -1, 51));
+            this.containerView.addView(h50Var, w7.z5.d(-1, 80.0f, 51, 0.0f, 44.0f, 0.0f, 0.0f));
         }
         y40 y40Var = new y40(this, launchActivity);
         this.Q = y40Var;
@@ -527,7 +527,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         xzVar.z1(q20Var);
         y40Var.i(new r20(this));
         xzVar.C1();
-        this.containerView.addView(y40Var, w7.z5.a(-1.0f, 14.0f, 14.0f, 14.0f, 231.0f, -1, 51));
+        this.containerView.addView(y40Var, w7.z5.d(-1, -1.0f, 51, 14.0f, 14.0f, 14.0f, 231.0f));
         y40Var.setAdapter(m50Var);
         y40Var.setTopBottomSelectorRadius(13);
         y40Var.setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.eg));
@@ -536,11 +536,11 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         if (s1()) {
             q50 q50Var = new q50(this, getContext());
             this.B1 = q50Var;
-            this.containerView.addView(q50Var, w7.z5.a(0.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 49));
+            this.containerView.addView(q50Var, w7.z5.d(-1, 0.0f, 49, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(launchActivity);
         this.n2 = im0Var;
-        this.containerView.addView(im0Var, w7.z5.a(-1.0f, 14.0f, 14.0f, 324.0f, 14.0f, -1, 51));
+        this.containerView.addView(im0Var, w7.z5.d(-1, -1.0f, 51, 14.0f, 14.0f, 324.0f, 14.0f));
         x50 x50Var = new x50(call, this.currentAccount, this);
         this.o2 = x50Var;
         im0Var.setAdapter(x50Var);
@@ -634,7 +634,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         t2Var3.setTextSize(12);
         t2Var3.d(false, false);
         org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(launchActivity);
-        t2Var3.addView(xj0Var, w7.z5.a(32.0f, 0.0f, 10.0f, 0.0f, 0.0f, 32, 1));
+        t2Var3.addView(xj0Var, w7.z5.d(32, 32.0f, 1, 0.0f, 10.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.uj0 uj0Var2 = new org.telegram.ui.Components.uj0(R.raw.camera_flip, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
         this.G2 = uj0Var2;
         xj0Var.setAnimation(uj0Var2);
@@ -654,7 +654,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         imageView.setScaleX(1.11f);
         imageView.setScaleY(1.11f);
-        t2Var4.addView(imageView, w7.z5.a(30.0f, 0.0f, 11.0f, 0.0f, 0.0f, 30, 1));
+        t2Var4.addView(imageView, w7.z5.d(30, 30.0f, 1, 0.0f, 11.0f, 0.0f, 0.0f));
         t2Var4.setOnClickListener(new c20(this, 11));
         w20Var.a(t2Var4);
         w20Var.a(t2Var2);
@@ -715,7 +715,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         this.y = imageView2;
         imageView2.setVisibility(8);
         imageView2.setImageResource(R.drawable.voice_expand);
-        t2Var7.addView(imageView2, w7.z5.a(24.0f, 0.0f, 13.0f, 0.0f, 0.0f, 24, 49));
+        t2Var7.addView(imageView2, w7.z5.d(24, 24.0f, 49, 0.0f, 13.0f, 0.0f, 0.0f));
         if (this.a1 != null && s1() && !this.a1.isScheduled()) {
             imageView2.setVisibility(0);
             x20Var.setVisibility(8);
@@ -785,9 +785,9 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         linearLayout.setOrientation(0);
         linearLayout.addView(b30Var, w7.z5.l(1.0f, 0, -2));
         linearLayout.addView(d30Var, w7.z5.k(6.0f, 4.0f, 0.0f, 0.0f, -2, 18));
-        this.containerView.addView(c30Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
-        this.containerView.addView(linearLayout, w7.z5.a(-2.0f, 23.0f, 0.0f, 48.0f, 0.0f, -2, 51));
-        this.containerView.addView(o40Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        this.containerView.addView(c30Var, w7.z5.d(-1, -2.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.containerView.addView(linearLayout, w7.z5.d(-2, -2.0f, 51, 23.0f, 0.0f, 48.0f, 0.0f));
+        this.containerView.addView(o40Var, w7.z5.d(-1, -2.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(launchActivity);
         this.z1 = linearLayout2;
         linearLayout2.setOrientation(0);
@@ -799,12 +799,12 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         this.g0 = view;
         view.setAlpha(0.0f);
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.v0(org.telegram.ui.ActionBar.h6.V5));
-        this.containerView.addView(view, w7.z5.d(1.0f, -1));
+        this.containerView.addView(view, w7.z5.c(1.0f, -1));
         for (int i22 = 0; i22 < 2; i22++) {
             this.j0[i22] = new e30(this, launchActivity);
             this.j0[i22].setAdditionalTranslationY(AndroidUtilities.dp(10.0f));
             this.j0[i22].setTranslationZ(AndroidUtilities.dp(5.0f));
-            this.containerView.addView(this.j0[i22], w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+            this.containerView.addView(this.j0[i22], w7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
         }
         org.telegram.ui.Cells.k kVar2 = new org.telegram.ui.Cells.k(launchActivity, true);
         this.k0 = kVar2;
@@ -979,7 +979,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         o30 o30Var = new o30(this, launchActivity);
         this.b2 = o30Var;
         this.containerView.addView(j30Var);
-        j30Var.addView(f30Var, w7.z5.a(80.0f, 0.0f, 0.0f, 0.0f, 100.0f, -1, 80));
+        j30Var.addView(f30Var, w7.z5.d(-1, 80.0f, 80, 0.0f, 0.0f, 0.0f, 100.0f));
         this.e.setWillNotDraw(false);
         View view2 = new View(launchActivity);
         this.J2 = view2;
@@ -1001,7 +1001,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         if (this.a1 != null) {
             hVar.C0(this.d.getCurrentAccount(), this.a1.getInputGroupCall(false));
         }
-        this.containerView.addView(hVar, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
+        this.containerView.addView(hVar, w7.z5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(launchActivity, false, true, true);
         this.M = q6Var;
         q6Var.setGravity(17);
@@ -1020,11 +1020,11 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         r30Var.s();
         t30 t30Var = new t30(this, launchActivity);
         this.G = t30Var;
-        this.containerView.addView(t30Var, w7.z5.d(-1.0f, -1));
+        this.containerView.addView(t30Var, w7.z5.c(-1.0f, -1));
         u30 u30Var = new u30(launchActivity);
         this.F = u30Var;
-        u30Var.addView(r30Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 48.0f, 0.0f, -1, 80));
-        u30Var.addView(q6Var, w7.z5.a(16.0f, 0.0f, 0.0f, 0.0f, 32.0f, 52, 85));
+        u30Var.addView(r30Var, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 48.0f, 0.0f));
+        u30Var.addView(q6Var, w7.z5.d(52, 16.0f, 85, 0.0f, 0.0f, 0.0f, 32.0f));
         q6Var.setTranslationY(-AndroidUtilities.dp(20.0f));
         this.containerView.addView(u30Var, w7.z5.e(-1, -2, 80));
         ImageView imageView3 = new ImageView(launchActivity);
@@ -1048,9 +1048,9 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         u30Var.addView(imageView3, w7.z5.e(48, 48, 85));
         u30Var.addView(imageView4, w7.z5.e(48, 48, 85));
         this.containerView.addView(o30Var);
-        m30Var.addView(l30Var, w7.z5.d(-1.0f, -1));
-        m30Var.addView(k30Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
-        this.containerView.addView(m30Var, w7.z5.a(-1.0f, 14.0f, 14.0f, 14.0f, 14.0f, -1, 0));
+        m30Var.addView(l30Var, w7.z5.c(-1.0f, -1));
+        m30Var.addView(k30Var, w7.z5.d(-1, -1.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.containerView.addView(m30Var, w7.z5.d(-1, -1.0f, 0, 14.0f, 14.0f, 14.0f, 14.0f));
         P0(false);
         this.P.l();
         if (G3) {
@@ -1066,7 +1066,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             if (ChatObject.isChannel(this.Z0) && (chat2 = this.Z0) != null && !chat2.megagroup) {
                 textView.setTag(1);
             }
-            this.containerView.addView(textView, w7.z5.a(-2.0f, 21.0f, 0.0f, 21.0f, 100.0f, -2, 81));
+            this.containerView.addView(textView, w7.z5.d(-2, -2.0f, 81, 21.0f, 0.0f, 21.0f, 100.0f));
             org.telegram.ui.Components.od0 od0Var = new org.telegram.ui.Components.od0(launchActivity);
             od0Var.setTextColor(-1);
             od0Var.setSelectorColor(-9598483);
@@ -1091,14 +1091,14 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             y30Var.setTextColor(-1);
             y30Var.setTypeface(AndroidUtilities.bold());
             y30Var.setTextSize(1, 14.0f);
-            this.containerView.addView(y30Var, w7.z5.a(48.0f, 21.0f, 0.0f, 21.0f, 20.5f, -1, 81));
+            this.containerView.addView(y30Var, w7.z5.d(-1, 48.0f, 81, 21.0f, 0.0f, 21.0f, 20.5f));
             launchActivity2 = launchActivity;
             y30Var.setOnClickListener(new org.telegram.messenger.video.f(this, od0Var, w30Var, x30Var, chat, accountInstance, inputPeer2, 1));
             a40 a40Var = new a40(launchActivity2, od0Var, w30Var, x30Var);
             this.R = a40Var;
             a40Var.setWeightSum(1.0f);
             a40Var.setOrientation(0);
-            this.containerView.addView(a40Var, w7.z5.a(270.0f, 0.0f, 50.0f, 0.0f, 0.0f, -1, 51));
+            this.containerView.addView(a40Var, w7.z5.d(-1, 270.0f, 51, 0.0f, 50.0f, 0.0f, 0.0f));
             long currentTimeMillis = System.currentTimeMillis();
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(currentTimeMillis);
@@ -1291,7 +1291,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             r40Var.setAlpha(0.0f);
             s50Var.n0.setVisibility(4);
             s50Var.n0.setShowingDuration(4000L);
-            s50Var.containerView.addView(s50Var.n0, w7.z5.a(-2.0f, 19.0f, 0.0f, 19.0f, 0.0f, -2, 51));
+            s50Var.containerView.addView(s50Var.n0, w7.z5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
             s50Var.n0.setText(LocaleController.getString(R.string.VoipChatReminderHint));
             s50Var.n0.d();
         }
@@ -1536,7 +1536,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                 D3 = new s50(launchActivity, accountInstance, call, chat2, null, z10, str);
             }
             D3.i0 = launchActivity;
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.rc(23));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.sc(22));
         }
     }
 
@@ -1870,7 +1870,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         }
         sharedInstance.getAccount();
         org.telegram.ui.Cells.a2[] a2VarArr = new org.telegram.ui.Cells.a2[1];
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
         if (!sharedInstance.isConference() || (call != null && (groupCall = call.call) != null && groupCall.creator)) {
             org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(context, 1);
             a2VarArr[0] = a2Var;
@@ -1902,7 +1902,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         }
         alertDialog$Builder.n(e);
         alertDialog$Builder.a.I = org.telegram.ui.ActionBar.h6.pg;
-        alertDialog$Builder.k(LocaleController.getString(R.string.VoipGroupLeave), new ai.u3(call, a2VarArr, selfId, runnable, 3));
+        alertDialog$Builder.k(LocaleController.getString(R.string.VoipGroupLeave), new ai.w3(call, a2VarArr, selfId, runnable, 3));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         if (z10) {
             alertDialog$Builder.a.P0 = false;
@@ -2020,9 +2020,9 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         if (U == null) {
             return;
         }
-        sg.j0 j0Var = new sg.j0(34, s50Var.currentAccount, U.getContext(), U, new ci.k0());
-        j0Var.J1(null, arrayList, arrayList2, arrayList3, str);
-        j0Var.show();
+        sg.k0 k0Var = new sg.k0(34, s50Var.currentAccount, U.getContext(), U, new ci.k0());
+        k0Var.J1(null, arrayList, arrayList2, arrayList3, str);
+        k0Var.show();
     }
 
     public final void A1() {
@@ -2240,20 +2240,20 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         R1();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:251:0x02d2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:251:0x02d0, code lost:
     
         if ((r14 instanceof org.telegram.tgnet.TLRPC.TL_chatParticipantCreator) == false) goto L102;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:254:0x02ec, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:254:0x02ea, code lost:
     
         if (r25 == (-j1())) goto L105;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:62:0x028f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x028d, code lost:
     
         if (r7.admin_rights.manage_call != false) goto L105;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0108  */
     /* JADX WARN: Type inference failed for: r4v95 */
     /* JADX WARN: Type inference failed for: r4v96, types: [android.graphics.drawable.Drawable, boolean[]] */
     /* JADX WARN: Type inference failed for: r4v98 */
@@ -2311,7 +2311,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                     this.Y2 = lVar;
                     this.Z2 = lVar.getRenderer();
                     if (!G3 && !F3) {
-                        this.containerView.addView(d4Var, w7.z5.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 0));
+                        this.containerView.addView(d4Var, w7.z5.d(-1, -2.0f, 0, 14.0f, 0.0f, 14.0f, 0.0f));
                     }
                     if (d4Var != null) {
                         boolean z13 = (F3 || G3 || AndroidUtilities.isInMultiwindow) ? false : true;
@@ -2348,7 +2348,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                             m5Var2.addView(linearLayout, w7.z5.k(0.0f, p50Var != null ? -8.0f : 0.0f, 0.0f, 0.0f, -2, -2));
                             org.telegram.ui.ActionBar.v1 v1Var2 = new org.telegram.ui.ActionBar.v1(getContext(), R.style.scrollbarShapeStyle, m5Var2);
                             v1Var2.setClipToPadding(false);
-                            actionBarPopupWindow$ActionBarPopupWindowLayout.addView(v1Var2, w7.z5.d(-2.0f, -2));
+                            actionBarPopupWindow$ActionBarPopupWindowLayout.addView(v1Var2, w7.z5.c(-2.0f, -2));
                             p50 p50Var2 = p50Var;
                             long peerId = MessageObject.getPeerId(participant.peer);
                             ArrayList arrayList = new ArrayList(2);
@@ -2495,7 +2495,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                                 e1Var.setTag(arrayList3.get(i14));
                                 TLRPC.GroupCallParticipant groupCallParticipant = participant;
                                 ArrayList arrayList4 = arrayList3;
-                                e1Var.setOnClickListener(new ci.d6(this, i14, arrayList4, groupCallParticipant, 3));
+                                e1Var.setOnClickListener(new ci.c6(this, i14, arrayList4, groupCallParticipant, 3));
                                 i14++;
                                 participant = groupCallParticipant;
                                 arrayList2 = arrayList2;
@@ -2555,7 +2555,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                             if (z11) {
                                 this.f2 = true;
                                 actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                                this.containerView.addView(this.e2, w7.z5.d(-2.0f, -2));
+                                this.containerView.addView(this.e2, w7.z5.c(-2.0f, -2));
                                 this.g2 = true;
                                 o30 o30Var = this.b2;
                                 if (o30Var == null) {
@@ -2663,7 +2663,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                         if (renderer != null && renderer.b) {
                             this.Z2 = null;
                         }
-                        this.containerView.addView(d4Var, w7.z5.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 0));
+                        this.containerView.addView(d4Var, w7.z5.d(-1, -2.0f, 0, 14.0f, 0.0f, 14.0f, 0.0f));
                     }
                 } else {
                     d4Var = (org.telegram.ui.Cells.d4) view;
@@ -2683,7 +2683,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             r40Var.setAlpha(0.0f);
             this.m0.setVisibility(4);
             this.m0.setShowingDuration(3000L);
-            this.containerView.addView(this.m0, w7.z5.a(-2.0f, 19.0f, 0.0f, 19.0f, 0.0f, -2, 51));
+            this.containerView.addView(this.m0, w7.z5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
             if (ChatObject.isChannelOrGiga(this.Z0)) {
                 this.m0.setText(LocaleController.getString(R.string.VoipChannelRecording));
             } else {
@@ -5319,7 +5319,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                 TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
                 exportgroupcallinvite.call = this.a1.getInputGroupCall();
                 exportgroupcallinvite.can_self_unmute = i10 == 1;
-                accountInstance.getConnectionsManager().sendRequest(exportgroupcallinvite, new org.telegram.messenger.voip.m0(this, i10, z10, 1));
+                accountInstance.getConnectionsManager().sendRequest(exportgroupcallinvite, new org.telegram.messenger.voip.l0(this, i10, z10, 1));
                 i10++;
             }
             return;
@@ -5438,7 +5438,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
                             return;
                         }
                         s50Var.d.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
-                        AndroidUtilities.runOnUIThread(new ai.b2(s50Var, j11, b2VarArr2, user, 20));
+                        AndroidUtilities.runOnUIThread(new ai.b3(s50Var, j11, b2VarArr2, user, 20));
                     }
                 });
                 if (sendRequest != 0) {
@@ -5494,7 +5494,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onCameraFirstFrameAvailable() {
-        org.telegram.messenger.voip.u0.b(this);
+        org.telegram.messenger.voip.t0.b(this);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
@@ -5529,17 +5529,17 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onMediaStateUpdated(int i10, int i11) {
-        org.telegram.messenger.voip.u0.d(this, i10, i11);
+        org.telegram.messenger.voip.t0.d(this, i10, i11);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onScreenOnChange(boolean z10) {
-        org.telegram.messenger.voip.u0.e(this, z10);
+        org.telegram.messenger.voip.t0.e(this, z10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onSignalBarsCountChanged(int i10) {
-        org.telegram.messenger.voip.u0.f(this, i10);
+        org.telegram.messenger.voip.t0.f(this, i10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
@@ -5550,7 +5550,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onVideoAvailableChange(boolean z10) {
-        org.telegram.messenger.voip.u0.h(this, z10);
+        org.telegram.messenger.voip.t0.h(this, z10);
     }
 
     public final boolean p1() {
@@ -5751,7 +5751,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             h9Var.u(AndroidUtilities.dp(12.0f));
             org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(getContext());
             w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-            frameLayout.addView(w9Var, w7.z5.a(40.0f, 22.0f, 5.0f, 22.0f, 0.0f, 40, (LocaleController.isRTL ? 5 : 3) | 48));
+            frameLayout.addView(w9Var, w7.z5.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 48, 22.0f, 5.0f, 22.0f, 0.0f));
             h9Var.j(this.currentAccount, user);
             boolean z10 = user instanceof TLRPC.User;
             if (z10) {
@@ -5776,21 +5776,21 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             String str4 = chat2 != null ? chat2.title : "";
             if (i10 != 2) {
                 textView3.setText(LocaleController.getString(R.string.VoipGroupAddMemberTitle));
-                org.telegram.messenger.kk.r(R.string.VoipGroupAddMemberText, new Object[]{str, str4}, textView2);
+                org.telegram.messenger.lk.r(R.string.VoipGroupAddMemberText, new Object[]{str, str4}, textView2);
             } else if (p1()) {
                 textView3.setText(LocaleController.getString(R.string.VoipConferenceRemoveMemberAlertTitle2));
-                org.telegram.messenger.kk.r(R.string.VoipConferenceRemoveMemberAlertText2, new Object[]{str}, textView2);
+                org.telegram.messenger.lk.r(R.string.VoipConferenceRemoveMemberAlertText2, new Object[]{str}, textView2);
             } else {
                 textView3.setText(LocaleController.getString(R.string.VoipGroupRemoveMemberAlertTitle2));
                 if (ChatObject.isChannelOrGiga(this.Z0)) {
-                    org.telegram.messenger.kk.r(R.string.VoipChannelRemoveMemberAlertText2, new Object[]{str, str4}, textView2);
+                    org.telegram.messenger.lk.r(R.string.VoipChannelRemoveMemberAlertText2, new Object[]{str, str4}, textView2);
                 } else {
-                    org.telegram.messenger.kk.r(R.string.VoipGroupRemoveMemberAlertText2, new Object[]{str, str4}, textView2);
+                    org.telegram.messenger.lk.r(R.string.VoipGroupRemoveMemberAlertText2, new Object[]{str, str4}, textView2);
                 }
             }
             boolean z11 = LocaleController.isRTL;
-            frameLayout.addView(textView3, w7.z5.a(-2.0f, z11 ? 21 : 76, 11.0f, z11 ? 76 : 21, 0.0f, -1, (z11 ? 5 : 3) | 48));
-            frameLayout.addView(textView2, w7.z5.a(-2.0f, 24.0f, 57.0f, 24.0f, 9.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+            frameLayout.addView(textView3, w7.z5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 76, 11.0f, z11 ? 76 : 21, 0.0f));
+            frameLayout.addView(textView2, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 57.0f, 24.0f, 9.0f));
             if (i10 == 2) {
                 alertDialog$Builder2.k(LocaleController.getString(R.string.VoipGroupUserRemove), new zu(i11, this, user));
             } else if (z10) {
@@ -5902,7 +5902,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             numberTextView.setTextSize(15);
             numberTextView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B6, false));
             numberTextView.setImportantForAccessibility(2);
-            frameLayout2.addView(numberTextView, w7.z5.a(20.0f, 0.0f, 14.0f, 21.0f, 0.0f, 20, LocaleController.isRTL ? 3 : 5));
+            frameLayout2.addView(numberTextView, w7.z5.d(20, 20.0f, LocaleController.isRTL ? 3 : 5, 0.0f, 14.0f, 21.0f, 0.0f));
             editText2.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(24.0f) : 0, AndroidUtilities.dp(f7), LocaleController.isRTL ? 0 : AndroidUtilities.dp(24.0f), AndroidUtilities.dp(f7));
             editText2.addTextChangedListener(new org.telegram.ui.Components.tq(i18, numberTextView));
             AndroidUtilities.updateViewVisibilityAnimated(numberTextView, false, 0.0f, false);
@@ -5914,7 +5914,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             alertDialog$Builder4.k(LocaleController.getString(R.string.Save), dVar);
             alertDialog$Builder4.h(LocaleController.getString(R.string.Cancel), null);
             b2Var2.N = new org.telegram.ui.Components.q1(editText2, 1);
-            frameLayout2.addView(editText2, w7.z5.a(-2.0f, 23.0f, 12.0f, 23.0f, 21.0f, -1, 0));
+            frameLayout2.addView(editText2, w7.z5.d(-1, -2.0f, 0, 23.0f, 12.0f, 23.0f, 21.0f));
             editText2.requestFocus();
             AndroidUtilities.showKeyboard(editText2);
             editText2.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.t1
@@ -5968,7 +5968,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         String string2 = LocaleController.getString(j10 > 0 ? R.string.VoipEditName : R.string.VoipEditTitle);
         org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder5.a;
         b2Var3.R = string2;
-        LinearLayout e = org.telegram.messenger.kk.e(context2, 1);
+        LinearLayout e = org.telegram.messenger.lk.e(context2, 1);
         EditText editText3 = new EditText(context2);
         int i20 = org.telegram.ui.ActionBar.h6.hg;
         editText3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i20, false));
@@ -6014,7 +6014,7 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         org.telegram.ui.ActionBar.a2 q1Var = new gi.q1(editText3, j10, i19, editText);
         alertDialog$Builder5.k(LocaleController.getString(R.string.Save), q1Var);
         alertDialog$Builder5.h(LocaleController.getString(R.string.Cancel), null);
-        b2Var3.N = new ai.v3(i14, editText3, editText);
+        b2Var3.N = new ai.x3(i14, editText3, editText);
         b2Var3.i(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ug, false));
         b2Var3.show();
         b2Var3.o(org.telegram.ui.ActionBar.h6.x0(null, i20, false));
@@ -6120,9 +6120,9 @@ public final class s50 extends org.telegram.ui.ActionBar.f3 implements Notificat
             if (z10) {
                 o30Var.setAlpha(0.0f);
             }
-            org.telegram.messenger.kk.s(o30Var.animate(), z10 ? 1.0f : 0.0f, 220L);
+            org.telegram.messenger.lk.s(o30Var.animate(), z10 ? 1.0f : 0.0f, 220L);
         }
-        org.telegram.messenger.kk.s(k30Var.animate(), z10 ? 1.0f : 0.0f, 220L);
+        org.telegram.messenger.lk.s(k30Var.animate(), z10 ? 1.0f : 0.0f, 220L);
         if (!z10 && (tVar2 = this.Z2) != null) {
             tVar2.h = false;
             tVar2.j(true);

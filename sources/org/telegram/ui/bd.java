@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class bd extends FrameLayout {
     public final int a;
@@ -41,7 +41,7 @@ public final class bd extends FrameLayout {
         this.e = b10Var;
         b10Var.setViewType(14);
         b10Var.setVisibility(0);
-        addView(b10Var, w7.z5.a(104.0f, 16.0f, 13.0f, 16.0f, 6.0f, -1, 8388611));
+        addView(b10Var, w7.z5.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
         ua1 ua1Var = new ua1(activity, 4, d6Var);
         this.d = ua1Var;
         ua1Var.setClipToPadding(false);
@@ -54,7 +54,7 @@ public final class bd extends FrameLayout {
         zc zcVar = new zc(this, i10, d6Var);
         this.h = zcVar;
         ua1Var.setAdapter(zcVar);
-        addView(ua1Var, w7.z5.d(130.0f, -1));
+        addView(ua1Var, w7.z5.c(130.0f, -1));
         ua1Var.setOnItemClickListener(new i(this, 3));
         ChatThemeController chatThemeController = ChatThemeController.getInstance(i10);
         chatThemeController.preloadAllWallpaperThumbs(true);

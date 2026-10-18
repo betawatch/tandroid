@@ -17,14 +17,14 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class vv extends FrameLayout {
     public final x90 a;
     public final TextView b;
     public final TextView c;
     public final TextView d;
-    public final sg.p0 e;
+    public final sg.q0 e;
     public final org.telegram.ui.ActionBar.u0 f;
     public final boolean h;
     public final ai.z4 n;
@@ -67,9 +67,9 @@ public final class vv extends FrameLayout {
                 int dp = AndroidUtilities.dp(4.0f);
                 f10 = 28.0f;
                 d6Var4 = ((org.telegram.ui.ActionBar.f3) awVar).resourcesProvider;
-                sg.p0 p0Var = new sg.p0(dp, context, d6Var4, false);
-                this.e = p0Var;
-                p0Var.a(LocaleController.getString(R.string.Unlock), new View.OnClickListener(this) { // from class: org.telegram.ui.Components.sv
+                sg.q0 q0Var = new sg.q0(dp, context, d6Var4, false);
+                this.e = q0Var;
+                q0Var.a(LocaleController.getString(R.string.Unlock), new View.OnClickListener(this) { // from class: org.telegram.ui.Components.sv
                     public final /* synthetic */ vv b;
 
                     {
@@ -106,18 +106,18 @@ public final class vv extends FrameLayout {
                         }
                     }
                 }, false);
-                p0Var.setIcon(R.raw.unlock_icon);
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) p0Var.getIconView().getLayoutParams();
+                q0Var.setIcon(R.raw.unlock_icon);
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) q0Var.getIconView().getLayoutParams();
                 marginLayoutParams.leftMargin = AndroidUtilities.dp(1.0f);
                 marginLayoutParams.topMargin = AndroidUtilities.dp(1.0f);
                 int dp2 = AndroidUtilities.dp(20.0f);
                 marginLayoutParams.height = dp2;
                 marginLayoutParams.width = dp2;
-                ((ViewGroup.MarginLayoutParams) p0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
-                p0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-                addView(p0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
-                p0Var.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
-                f12 = (AndroidUtilities.dp(16.0f) + p0Var.getMeasuredWidth()) / AndroidUtilities.density;
+                ((ViewGroup.MarginLayoutParams) q0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
+                q0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+                addView(q0Var, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 15.66f, 5.66f, 0.0f));
+                q0Var.measure(View.MeasureSpec.makeMeasureSpec(99999, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
+                f12 = (AndroidUtilities.dp(16.0f) + q0Var.getMeasuredWidth()) / AndroidUtilities.density;
             }
             TextView textView = new TextView(context);
             this.c = textView;
@@ -260,7 +260,7 @@ public final class vv extends FrameLayout {
             u0Var.setIcon(R.drawable.ic_ab_other);
             u0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(awVar.getThemedColor(org.telegram.ui.ActionBar.h6.Ni), 1, -1));
             i10 = ((org.telegram.ui.ActionBar.f3) awVar).backgroundPaddingLeft;
-            addView(u0Var, w7.z5.a(40.0f, 0.0f, 5.0f, 5.0f - (i10 / AndroidUtilities.density), 0.0f, 40, 53));
+            addView(u0Var, w7.z5.d(40, 40.0f, 53, 0.0f, 5.0f, 5.0f - (i10 / AndroidUtilities.density), 0.0f));
             u0Var.e(1, R.drawable.msg_share, LocaleController.getString(R.string.StickersShare));
             u0Var.e(2, R.drawable.msg_link, LocaleController.getString(R.string.CopyLink));
             final int i17 = 3;

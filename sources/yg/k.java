@@ -6,7 +6,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import android.widget.ImageView;
-import ci.l4;
+import ci.k4;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
@@ -28,7 +28,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k extends wg.c {
     public boolean E;
@@ -58,7 +58,7 @@ public final class k extends wg.c {
             xpVar.setDrawUnchecked(false);
             xpVar.setDrawBackgroundAsArc(3);
             boolean z13 = LocaleController.isRTL;
-            addView(xpVar, z5.a(24.0f, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f, 24, (z13 ? 5 : 3) | 48));
+            addView(xpVar, z5.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 40.0f, 33.0f, z13 ? 39.0f : 0.0f, 0.0f));
             d();
         } else if (z10) {
             xp xpVar2 = new xp(context, 21, d6Var);
@@ -72,7 +72,7 @@ public final class k extends wg.c {
             xpVar2.setDrawBackgroundAsArc(10);
             addView(xpVar2);
             xpVar2.a(false, false);
-            xpVar2.setLayoutParams(z5.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+            xpVar2.setLayoutParams(z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
             d();
         } else {
             this.v = null;
@@ -85,7 +85,7 @@ public final class k extends wg.c {
         int w02 = h6.w0(h6.Ac, d6Var);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
-        addView(imageView, z5.a(32.0f, 12.0f, 0.0f, 12.0f, 0.0f, 32, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView, z5.d(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.y = imageView2;
         imageView2.setScaleType(scaleType);
@@ -93,14 +93,14 @@ public final class k extends wg.c {
         int i10 = h6.Oh;
         imageView2.setColorFilter(new PorterDuffColorFilter(h6.w0(i10, d6Var), mode));
         boolean z14 = LocaleController.isRTL;
-        addView(imageView2, z5.a(32.0f, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f, 32, (z14 ? 3 : 5) | 16));
+        addView(imageView2, z5.d(32, 32.0f, (z14 ? 3 : 5) | 16, z14 ? 52.0f : 12.0f, 0.0f, z14 ? 12.0f : 52.0f, 0.0f));
         imageView2.setVisibility(8);
         ImageView imageView3 = new ImageView(context);
         this.F = imageView3;
         imageView3.setScaleType(scaleType);
         imageView3.setImageResource(R.drawable.menu_videocall);
         imageView3.setColorFilter(new PorterDuffColorFilter(h6.w0(i10, d6Var), mode));
-        addView(imageView3, z5.a(32.0f, 12.0f, 0.0f, 12.0f, 0.0f, 32, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView3, z5.d(32, 32.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         imageView3.setVisibility(8);
     }
 
@@ -238,9 +238,9 @@ public final class k extends wg.c {
         w9Var.setRoundRadius(dp);
         w9Var.e(chat, h9Var);
         String str = chat.title;
-        l4 l4Var = this.d;
-        l4Var.k(str);
-        l4Var.i(null);
+        k4 k4Var = this.d;
+        k4Var.k(str);
+        k4Var.i(null);
         if (i10 <= 0) {
             i10 = chat.participants_count;
         }
@@ -293,20 +293,20 @@ public final class k extends wg.c {
         w9Var.setRoundRadius(dp);
         w9Var.e(this.I, h9Var);
         String str = this.I.title;
-        l4 l4Var = this.d;
-        l4Var.k(str);
+        k4 k4Var = this.d;
+        k4Var.k(str);
         int w02 = h6.w0(h6.r5, this.a);
         j5 j5Var = this.e;
         j5Var.setTextColor(w02);
         setSubtitle(LocaleController.formatString(R.string.BoostExpireOn, LocaleController.getInstance().getFormatterBoostExpired().format(new Date(tL_myBoost.expires * 1000))));
         int i10 = tL_myBoost.cooldown_until_date;
         if (i10 <= 0) {
-            l4Var.setAlpha(1.0f);
+            k4Var.setAlpha(1.0f);
             j5Var.setAlpha(1.0f);
             i(1.0f, false);
         } else {
             setSubtitle(LocaleController.formatString(R.string.BoostingAvailableIn, f((i10 * 1000) - System.currentTimeMillis())));
-            l4Var.setAlpha(0.65f);
+            k4Var.setAlpha(0.65f);
             j5Var.setAlpha(0.65f);
             i(0.3f, false);
         }
@@ -333,8 +333,8 @@ public final class k extends wg.c {
         w9Var.setRoundRadius(dp);
         w9Var.e(user, h9Var);
         String userName = UserObject.getUserName(user);
-        l4 l4Var = this.d;
-        l4Var.k(userName);
+        k4 k4Var = this.d;
+        k4Var.k(userName);
         boolean[] zArr = this.s;
         zArr[0] = false;
         if (UserObject.isBot(user)) {
@@ -355,6 +355,6 @@ public final class k extends wg.c {
         int x02 = h6.x0(null, h6.z9, false);
         boolean s10 = k3.s(user);
         ex0 ex0Var = this.K;
-        l4Var.i(s10 ? ex0Var.a(user, null, x02, false) : ex0Var.a(null, null, x02, false));
+        k4Var.i(s10 ? ex0Var.a(user, null, x02, false) : ex0Var.a(null, null, x02, false));
     }
 }

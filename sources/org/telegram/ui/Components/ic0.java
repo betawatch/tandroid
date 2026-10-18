@@ -31,7 +31,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ic0 extends FrameLayout {
     public final nc0 E;
@@ -141,7 +141,7 @@ public final class ic0 extends FrameLayout {
         vVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.s8, kc0Var));
         ac0 ac0Var = new ac0(this);
         this.e = ac0Var;
-        ac0Var.D = new ci.o2(this, i14);
+        ac0Var.D = new ci.n2(this, i14);
         bc0 bc0Var = new bc0(this, context3, kc0Var);
         this.f = bc0Var;
         dc0 dc0Var = new dc0(this, bc0Var, kc0Var);
@@ -159,8 +159,8 @@ public final class ic0 extends FrameLayout {
         bc0Var.setLayoutManager(wb0Var);
         bc0Var.i(new yb0());
         y8Var.addView(bc0Var);
-        addView(y8Var, w7.z5.a(400.0f, 8.0f, 0.0f, 8.0f, 0.0f, -1, 0));
-        y8Var.addView(vVar, w7.z5.d(-2.0f, -1));
+        addView(y8Var, w7.z5.d(-1, 400.0f, 0, 8.0f, 0.0f, 8.0f, 0.0f));
+        y8Var.addView(vVar, w7.z5.c(-2.0f, -1));
         ?? actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert2, 1, getContext(), kc0Var);
         this.s = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().setOnForegroundOpenFinished(new ub0(this, i11));
@@ -170,7 +170,7 @@ public final class ic0 extends FrameLayout {
         c10.j.e = true;
         c10.q(AndroidUtilities.dp(12.0f));
         actionBarPopupWindow$ActionBarPopupWindowLayout.setBackground(c10);
-        addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.z5.d(-2.0f, -2));
+        addView(actionBarPopupWindow$ActionBarPopupWindowLayout, w7.z5.c(-2.0f, -2));
         if (i10 != 0 || (messages = messagePreviewParams4.replyMessage) == null) {
             messagePreviewParams = messagePreviewParams4;
             if (i10 != 1 || messagePreviewParams.forwardMessages == null) {
@@ -1650,7 +1650,7 @@ public final class ic0 extends FrameLayout {
                 r11 = 0;
                 messagePreviewParams2 = messagePreviewParams4;
             } else {
-                LinearLayout e7 = org.telegram.messenger.kk.e(context3, 1);
+                LinearLayout e7 = org.telegram.messenger.lk.e(context3, 1);
                 if (z13) {
                     drawable = null;
                     messagePreviewParams3 = messagePreviewParams4;
@@ -2274,8 +2274,8 @@ public final class ic0 extends FrameLayout {
                         }
                     }
                 });
-                frameLayout2.addView(zb0Var, w7.z5.d(48.0f, -1));
-                frameLayout2.addView(zb0Var2, w7.z5.d(48.0f, -1));
+                frameLayout2.addView(zb0Var, w7.z5.c(48.0f, -1));
+                frameLayout2.addView(zb0Var2, w7.z5.c(48.0f, -1));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout2, w7.z5.n(-1, 48));
                 r11 = drawable;
             }
@@ -2681,8 +2681,8 @@ public final class ic0 extends FrameLayout {
                         }
                     }
                 });
-                frameLayout3.addView(e1Var9, w7.z5.d(48.0f, -1));
-                frameLayout3.addView(e1Var8, w7.z5.d(48.0f, -1));
+                frameLayout3.addView(e1Var9, w7.z5.c(48.0f, -1));
+                frameLayout3.addView(e1Var8, w7.z5.c(48.0f, -1));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.a(frameLayout3, w7.z5.n(-1, 48));
             }
             if (!messagePreviewParams.noforwards && !messagePreviewParams.hasSecretMessages) {
@@ -3113,7 +3113,7 @@ public final class ic0 extends FrameLayout {
         if (n10.getParent() instanceof ViewGroup) {
             ((ViewGroup) n10.getParent()).removeView(n10);
         }
-        ic0Var2.addView(n10, w7.z5.a(-1.0f, 0.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / AndroidUtilities.density, 0.0f, 0.0f, -1, 51));
+        ic0Var2.addView(n10, w7.z5.d(-1, -1.0f, 51, 0.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / AndroidUtilities.density, 0.0f, 0.0f));
         ic0Var2.e.S(ic0Var2.f);
     }
 

@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class id1 extends org.telegram.ui.ActionBar.n2 {
     public float E;
@@ -98,7 +98,7 @@ public final class id1 extends org.telegram.ui.ActionBar.n2 {
         this.r.c();
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.F = radialProgressView;
-        frameLayout.addView(radialProgressView, w7.z5.d(-2.0f, -2));
+        frameLayout.addView(radialProgressView, w7.z5.c(-2.0f, -2));
         this.d.E();
         this.F.setVisibility(8);
         frameLayout.addView(this.a);
@@ -127,7 +127,7 @@ public final class id1 extends org.telegram.ui.ActionBar.n2 {
         this.c.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
         frameLayout.addView(this.n, w7.z5.e(-1, 64, 80));
         this.n.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
-        this.n.addView(this.c, w7.z5.a(-1.0f, 16.0f, 12.0f, 16.0f, 12.0f, -1, 0));
+        this.n.addView(this.c, w7.z5.d(-1, -1.0f, 0, 16.0f, 12.0f, 16.0f, 12.0f));
         this.n.setVisibility(8);
         this.c.setOnClickListener(new i31(this, 6));
         return this.fragmentView;

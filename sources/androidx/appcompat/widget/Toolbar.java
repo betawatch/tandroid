@@ -50,7 +50,7 @@ import r0.i0;
 import v7.q7;
 import w7.q;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class Toolbar extends ViewGroup {
     public final int E;
@@ -477,9 +477,9 @@ public class Toolbar extends ViewGroup {
             o3Var.i = getSubtitle();
             o3Var.g = o3Var.h != null;
             o3Var.f = getNavigationIcon();
-            g3 K = g3.K(getContext(), null, f.a.a, R.attr.actionBarStyle);
-            TypedArray typedArray = (TypedArray) K.c;
-            o3Var.o = K.A(15);
+            g3 P = g3.P(getContext(), null, f.a.a, R.attr.actionBarStyle);
+            TypedArray typedArray = (TypedArray) P.c;
+            o3Var.o = P.F(15);
             CharSequence text = typedArray.getText(27);
             if (!TextUtils.isEmpty(text)) {
                 o3Var.g = true;
@@ -498,14 +498,14 @@ public class Toolbar extends ViewGroup {
                     setSubtitle(text2);
                 }
             }
-            Drawable A = K.A(20);
-            if (A != null) {
-                o3Var.e = A;
+            Drawable F = P.F(20);
+            if (F != null) {
+                o3Var.e = F;
                 o3Var.c();
             }
-            Drawable A2 = K.A(17);
-            if (A2 != null) {
-                o3Var.d = A2;
+            Drawable F2 = P.F(17);
+            if (F2 != null) {
+                o3Var.d = F2;
                 o3Var.c();
             }
             if (o3Var.f == null && (drawable = o3Var.o) != null) {
@@ -566,7 +566,7 @@ public class Toolbar extends ViewGroup {
             if (resourceId4 != 0) {
                 setPopupTheme(resourceId4);
             }
-            K.L();
+            P.Q();
             if (R.string.abc_action_bar_up_description != o3Var.n) {
                 o3Var.n = R.string.abc_action_bar_up_description;
                 if (TextUtils.isEmpty(getNavigationContentDescription())) {
@@ -1577,9 +1577,9 @@ public class Toolbar extends ViewGroup {
         this.j0 = new androidx.activity.i(this, 25);
         Context context2 = getContext();
         int[] iArr = f.a.x;
-        g3 K = g3.K(context2, attributeSet, iArr, i10);
-        i0.i(this, context, iArr, attributeSet, (TypedArray) K.c, i10);
-        TypedArray typedArray = (TypedArray) K.c;
+        g3 P = g3.P(context2, attributeSet, iArr, i10);
+        i0.i(this, context, iArr, attributeSet, (TypedArray) P.c, i10);
+        TypedArray typedArray = (TypedArray) P.c;
         this.w = typedArray.getResourceId(28, 0);
         this.x = typedArray.getResourceId(19, 0);
         this.M = typedArray.getInteger(0, 8388627);
@@ -1627,7 +1627,7 @@ public class Toolbar extends ViewGroup {
         }
         this.K = typedArray.getDimensionPixelOffset(10, TLObject.FLAG_31);
         this.L = typedArray.getDimensionPixelOffset(6, TLObject.FLAG_31);
-        this.f = K.A(4);
+        this.f = P.F(4);
         this.h = typedArray.getText(3);
         CharSequence text = typedArray.getText(21);
         if (!TextUtils.isEmpty(text)) {
@@ -1639,32 +1639,32 @@ public class Toolbar extends ViewGroup {
         }
         this.s = getContext();
         setPopupTheme(typedArray.getResourceId(17, 0));
-        Drawable A = K.A(16);
-        if (A != null) {
-            setNavigationIcon(A);
+        Drawable F = P.F(16);
+        if (F != null) {
+            setNavigationIcon(F);
         }
         CharSequence text3 = typedArray.getText(15);
         if (!TextUtils.isEmpty(text3)) {
             setNavigationContentDescription(text3);
         }
-        Drawable A2 = K.A(11);
-        if (A2 != null) {
-            setLogo(A2);
+        Drawable F2 = P.F(11);
+        if (F2 != null) {
+            setLogo(F2);
         }
         CharSequence text4 = typedArray.getText(12);
         if (!TextUtils.isEmpty(text4)) {
             setLogoDescription(text4);
         }
         if (typedArray.hasValue(29)) {
-            setTitleTextColor(K.z(29));
+            setTitleTextColor(P.E(29));
         }
         if (typedArray.hasValue(20)) {
-            setSubtitleTextColor(K.z(20));
+            setSubtitleTextColor(P.E(20));
         }
         if (typedArray.hasValue(14)) {
             getMenuInflater().inflate(typedArray.getResourceId(14, 0), getMenu());
         }
-        K.L();
+        P.Q();
     }
 
     public void setOnMenuItemClickListener(l3 l3Var) {

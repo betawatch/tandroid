@@ -59,7 +59,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.t11;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.ff0;
+import org.telegram.ui.mj0;
 import org.telegram.ui.o71;
 import org.telegram.ui.yq0;
 import w7.z5;
@@ -67,7 +67,7 @@ import x7.fa;
 import x7.m7;
 import x7.o7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m2 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int r0 = 0;
@@ -190,7 +190,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
         w1Var.setValueOverride(new k0.b(this, 24));
         w1Var.setTranslationX(-AndroidUtilities.dp(18.0f));
         w1Var.setAlpha(0.0f);
-        addView(w1Var, z5.d(-1.0f, -1));
+        addView(w1Var, z5.c(-1.0f, -1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:103:0x023c  */
@@ -490,7 +490,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
         if (k2Var.m != null) {
             h();
             k2Var.m.run(k2Var.b, k2Var.e.document);
-            AndroidUtilities.runOnUIThread(new ff0(19), 250L);
+            AndroidUtilities.runOnUIThread(new mj0(19), 250L);
             return;
         }
         final int i12 = 0;
@@ -1767,7 +1767,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
         if (k2Var.h) {
             h();
             NotificationCenter.getInstance(i10).postNotificationNameOnUIThread(NotificationCenter.customStickerCreated, Boolean.FALSE);
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.z1(k2Var, 14), 350L);
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a2(k2Var, 14), 350L);
             Utilities.Callback callback = k2Var.n;
             if (callback != null) {
                 callback.run(Boolean.TRUE);
@@ -2418,7 +2418,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
         if (t0Var != null) {
             t0Var.setProgress(1.0f);
         }
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.j(this, i10, 8), 450L);
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.j(this, i10, 9), 450L);
         Utilities.Callback callback2 = k2Var.n;
         if (callback2 != null) {
             callback2.run(Boolean.TRUE);
@@ -2762,7 +2762,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
         if (this.S == null) {
             t11 t11Var = new t11(getContext(), new d2(this, 1));
             this.S = t11Var;
-            addView(t11Var, z5.d(-1.0f, -1));
+            addView(t11Var, z5.c(-1.0f, -1));
         }
         return this.S;
     }
@@ -2886,7 +2886,7 @@ public final class m2 extends FrameLayout implements NotificationCenter.Notifica
             com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
             lVar.c = m7.b;
             rb.m.a.execute(new com.google.android.gms.internal.cast.p(faVar, new a5.a(lVar, 1), o7.c, faVar.b(), 7));
-            new ImageLabelerImpl((rb.e) dVar2.a.R0(aVar), (Executor) dVar2.b.a.get(), new k6.c("vision.ica", 1L)).g(a10).addOnSuccessListener(new qg.g0(this, 13)).addOnFailureListener(new r.a(8));
+            new ImageLabelerImpl((rb.e) dVar2.a.R0(aVar), (Executor) dVar2.b.a.get(), new k6.c("vision.ica", 1L)).g(a10).addOnSuccessListener(new qg.g0(this, 13)).addOnFailureListener(new qg.e0(9));
         }
         List<TLRPC.TL_availableReaction> enabledReactionsList = MediaDataController.getInstance(this.a).getEnabledReactionsList();
         for (int i15 = 0; i15 < Math.min(enabledReactionsList.size(), 9); i15++) {

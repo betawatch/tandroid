@@ -11,12 +11,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m61 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Components.wz X;
     public final ei.d Y;
-    public final ci.a7 Z;
+    public final ci.z6 Z;
     public final HashMap a0;
     public final int b0;
     public int c0;
@@ -26,7 +26,7 @@ public final class m61 extends org.telegram.ui.Components.bb implements Notifica
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public m61(org.telegram.ui.ActionBar.n2 n2Var, long j10, int i10, ai.e4 e4Var) {
+    public m61(org.telegram.ui.ActionBar.n2 n2Var, long j10, int i10, ai.c4 c4Var) {
         super(r2, n2Var, new org.telegram.ui.Components.ab(r3));
         Activity parentActivity = n2Var.getParentActivity();
         org.telegram.ui.Components.ab abVar = new org.telegram.ui.Components.ab();
@@ -36,7 +36,7 @@ public final class m61 extends org.telegram.ui.Components.bb implements Notifica
         abVar.g = n2Var.getResourceProvider();
         this.a0 = new HashMap();
         this.b0 = i10;
-        ci.a7 A = MessagesController.getInstance(n2Var.getCurrentAccount()).getStoriesController().A(j10, 1, -1, true);
+        ci.z6 A = MessagesController.getInstance(n2Var.getCurrentAccount()).getStoriesController().A(j10, 1, -1, true);
         this.Z = A;
         A.p(30, false);
         this.K = AndroidUtilities.dp(12.0f);
@@ -46,16 +46,16 @@ public final class m61 extends org.telegram.ui.Components.bb implements Notifica
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, this.resourcesProvider));
         int i11 = this.backgroundPaddingLeft;
         frameLayout.setPadding(i11, 0, i11, 0);
-        this.containerView.addView(frameLayout, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
+        this.containerView.addView(frameLayout, w7.z5.d(-1, -2.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         View view = new View(getContext());
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d7, this.resourcesProvider));
-        frameLayout.addView(view, w7.z5.b(-1.0f, 1.0f / AndroidUtilities.density, 55));
+        frameLayout.addView(view, w7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 55));
         ei.d dVar = new ei.d(getContext(), this.resourcesProvider, true);
         this.Y = dVar;
         dVar.g(LocaleController.getString(R.string.StoriesAlbumMenuAddStories), false, true);
         dVar.setEnabled(false);
-        dVar.setOnClickListener(new ef0(13, this, e4Var));
-        frameLayout.addView(dVar, w7.z5.a(48.0f, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f, -1, 119));
+        dVar.setOnClickListener(new ef0(13, this, c4Var));
+        frameLayout.addView(dVar, w7.z5.d(-1, 48.0f, 119, 10.0f, (1.0f / AndroidUtilities.density) + 10.0f, 10.0f, 10.0f));
         getContext();
         org.telegram.ui.Components.wz wzVar = new org.telegram.ui.Components.wz(i10, false);
         this.X = wzVar;
@@ -81,13 +81,13 @@ public final class m61 extends org.telegram.ui.Components.bb implements Notifica
         org.telegram.ui.Components.wz wzVar = this.X;
         int L0 = wzVar.L0();
         int abs = L0 == -1 ? 0 : Math.abs(wzVar.N0() - L0) + 1;
-        ci.a7 a7Var = this.Z;
-        if (a7Var != null) {
+        ci.z6 z6Var = this.Z;
+        if (z6Var != null) {
             int i10 = L0 + abs;
-            int i11 = a7Var.i();
+            int i11 = z6Var.i();
             int i12 = this.b0;
             if (i10 > i11 - i12) {
-                a7Var.p(Math.min(100, Math.max(1, i12 / 2) * i12 * i12), false);
+                z6Var.p(Math.min(100, Math.max(1, i12 / 2) * i12 * i12), false);
             }
         }
     }
@@ -123,7 +123,7 @@ public final class m61 extends org.telegram.ui.Components.bb implements Notifica
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.storiesListUpdated && ((ci.a7) objArr[0]) == this.Z) {
+        if (i10 == NotificationCenter.storiesListUpdated && ((ci.z6) objArr[0]) == this.Z) {
             this.d0.N(false);
             Q();
         }

@@ -45,7 +45,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0, org.telegram.ui.Components.kk0, org.telegram.ui.Components.e5, LanguageDetector.StringCallback, a5, org.telegram.ui.ActionBar.a2, MessagesStorage.LongCallback, org.telegram.ui.Components.xl0, MessagesController.NewMessageCallback, xx, jf1, org.telegram.ui.Components.voip.g3, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -226,7 +226,7 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
                     tL_channels_toggleUsername.username = tL_username.username;
                     boolean z10 = tL_username.active;
                     tL_channels_toggleUsername.active = !z10;
-                    yoVar.getConnectionsManager().sendRequest(tL_channels_toggleUsername, new ai.g4(voVar, tL_channels_toggleUsername, tL_username, z10, 4));
+                    yoVar.getConnectionsManager().sendRequest(tL_channels_toggleUsername, new ai.f4(voVar, tL_channels_toggleUsername, tL_username, z10, 4));
                     yoVar.P.add(tL_username.username);
                     ((ra) view).setLoading(true);
                 }
@@ -370,10 +370,10 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
             f3Var.dismiss();
             ai1.c = null;
         }
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.kk.i(1, context, resourceProvider, false);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.lk.i(1, context, resourceProvider, false);
         FrameLayout frameLayout = new FrameLayout(context);
         i12.customView = frameLayout;
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
         frameLayout.addView(e, w7.z5.e(-1, -1, 119));
         TextView b10 = w7.d6.b(context, 20.0f, org.telegram.ui.ActionBar.h6.j5, true, resourceProvider);
         b10.setGravity(17);
@@ -391,7 +391,7 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
             i10++;
         }
         e.addView(linearLayout, w7.z5.t(-2, -2, 49, 32, 12, 32, 12));
-        ei.d f7 = org.telegram.messenger.kk.f(24, context, resourceProvider, true);
+        ei.d f7 = org.telegram.messenger.lk.f(24, context, resourceProvider, true);
         f7.setText(LocaleController.getString(R.string.WearAuthEmojisLogIn));
         e.addView(f7, w7.z5.t(-1, 48, 7, 12, 12, 12, 8));
         int i13 = org.telegram.ui.ActionBar.h6.a7;
@@ -485,7 +485,7 @@ public final /* synthetic */ class e7 implements org.telegram.ui.Components.zl0,
                     b2Var.R = string;
                     b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, UserObject.getUserName(user), chat == null ? "" : chat.title));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.AddBot), new ai.u3(lz0Var, j13, eyVar, user, 4));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.AddBot), new ai.w3(lz0Var, j13, eyVar, user, 4));
                     profileActivity.showDialog(b2Var);
                     break;
                 } else {

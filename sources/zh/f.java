@@ -16,10 +16,10 @@ import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.TelegramQRCodeWriter;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f {
     public static final float S;
@@ -151,7 +151,7 @@ public final class f {
                     float f10 = i14 + 0.5f;
                     float f11 = eVar.f;
                     int i15 = (int) ((f10 * f11) + f7);
-                    int b10 = (int) kk.b(i13, 0.5f, f11, f7);
+                    int b10 = (int) lk.b(i13, 0.5f, f11, f7);
                     boolean z10 = false;
                     for (int i16 = -1; i16 <= 1 && !z10; i16++) {
                         z10 = Color.alpha(encode.getPixel(Math.max(0, Math.min(eVar.b - 1, ((int) ((((float) i16) * eVar.f) * 0.3f)) + i15)), b10)) > 40;
@@ -191,7 +191,7 @@ public final class f {
 
     public static float g(e eVar, float f7) {
         float f10 = 1.0f - f7;
-        return kk.b(eVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
+        return lk.b(eVar.e, 6.0f, 1.0f - (((f10 * 0.45f) + 0.55f) * (f10 * f10)), -1.5f);
     }
 
     public static boolean h(e eVar, int i10, int i11) {
@@ -302,7 +302,7 @@ public final class f {
                         float f11 = eVar.g;
                         float f12 = eVar.f;
                         fArr[i16] = ((i18 + 0.5f) * f12) + f11;
-                        eVar.o[i16] = kk.b(i17, 0.5f, f12, f11);
+                        eVar.o[i16] = lk.b(i17, 0.5f, f12, f11);
                         float f13 = hypot * 0.5f;
                         eVar.p[i16] = h ? f13 * 0.85f : f13 + (floor * 0.06f);
                         eVar.q[i16] = eVar.h[i21];
@@ -360,27 +360,27 @@ public final class f {
         return f7 <= 0.04045f ? f7 / 12.92f : (float) Math.pow((f7 + 0.055f) / 1.055f, 2.4000000953674316d);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:183:0x031d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:170:0x0318, code lost:
     
         r7 = r7 + 1;
         r5 = 2400;
         r15 = 1.0f;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x0a31  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x09f9  */
-    /* JADX WARN: Removed duplicated region for block: B:302:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x0136  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0146  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x088a  */
-    /* JADX WARN: Removed duplicated region for block: B:88:0x09c2  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x09da  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x09f5  */
-    /* JADX WARN: Removed duplicated region for block: B:98:0x0a07  */
-    /* JADX WARN: Type inference failed for: r0v30 */
-    /* JADX WARN: Type inference failed for: r0v31 */
-    /* JADX WARN: Type inference failed for: r0v32, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v78 */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x09e3  */
+    /* JADX WARN: Removed duplicated region for block: B:299:0x0139  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0137  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0147  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x0877  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x09ae  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x09c6  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x09e1  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x09f1  */
+    /* JADX WARN: Removed duplicated region for block: B:99:0x0a1d  */
+    /* JADX WARN: Type inference failed for: r0v28 */
+    /* JADX WARN: Type inference failed for: r0v29 */
+    /* JADX WARN: Type inference failed for: r0v30, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v76 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -388,48 +388,44 @@ public final class f {
         float f12;
         byte[] bArr;
         float f13;
-        RectF rectF;
         float f14;
         float f15;
         f fVar;
         boolean z10;
-        float f16;
         Canvas canvas2;
+        RectF rectF;
+        float f16;
         float f17;
         float f18;
-        float f19;
-        float f20;
         e eVar;
         Paint paint;
         Paint paint2;
-        Rect rect;
-        float f21;
-        RectF rectF2;
         e eVar2;
+        RectF rectF2;
+        Rect rect;
+        float f19;
         int i10;
-        float f22;
         int i11;
-        float f23;
-        RectF rectF3;
-        Random random;
-        float f24;
-        Random random2;
-        e eVar3;
         int i12;
+        Rect rect2;
         int i13;
+        RectF rectF3;
+        e eVar3;
+        int i14;
+        float f20;
         ?? r02;
         e eVar4;
-        float f25;
-        int i14;
+        float f21;
         int i15;
         int i16;
         int i17;
-        float f26;
+        int i18;
+        float f22;
         float x10;
-        float f27;
-        float f28;
-        float f29;
-        float f30;
+        float f23;
+        float f24;
+        float f25;
+        float f26;
         float dp;
         float max;
         long currentTimeMillis = System.currentTimeMillis();
@@ -438,7 +434,7 @@ public final class f {
         if (this.m == null) {
             return;
         }
-        float f31 = 1.0f;
+        float f27 = 1.0f;
         if (this.q == 2 && this.o < 1.0f && canvas.isHardwareAccelerated() && (Build.VERSION.SDK_INT < 29 || SharedConfig.getDevicePerformanceClass() != 2)) {
             if (this.p == 0) {
                 this.p = currentTimeMillis;
@@ -446,15 +442,15 @@ public final class f {
             this.o = 1.0f;
             this.F = false;
         }
-        int i18 = this.q;
-        long j10 = (i18 != 1 && i18 == 2) ? 380L : 450L;
-        float f32 = this.o;
-        if (f32 < 1.0f && this.p == 0) {
+        int i19 = this.q;
+        long j10 = (i19 != 1 && i19 == 2) ? 380L : 450L;
+        float f28 = this.o;
+        if (f28 < 1.0f && this.p == 0) {
             this.p = currentTimeMillis;
         }
-        if (i18 != 2 || (this.D < 0.0f && !this.F)) {
+        if (i19 != 2 || (this.D < 0.0f && !this.F)) {
             f12 = 0.01f;
-            if (f32 < 1.0f) {
+            if (f28 < 1.0f) {
                 this.o = Math.min(1.0f, (currentTimeMillis - this.p) / j10);
             }
         } else {
@@ -463,28 +459,28 @@ public final class f {
             }
             this.F = true;
             long j11 = currentTimeMillis - this.E;
-            float[] fArr = v0.b;
+            float[] fArr = w0.b;
             float min2 = Math.min(1.0f, j11 / Math.max(100.0f, fArr[51]));
-            float f33 = fArr[53] / 100.0f;
-            if (f33 > 0.01f) {
-                float f34 = S;
-                min2 = min2 < f33 ? (min2 * f34) / f33 : (((1.0f - f34) * (min2 - f33)) / Math.max(0.01f, 1.0f - f33)) + f34;
+            float f29 = fArr[53] / 100.0f;
+            if (f29 > 0.01f) {
+                float f30 = S;
+                min2 = min2 < f29 ? (min2 * f30) / f29 : (((1.0f - f30) * (min2 - f29)) / Math.max(0.01f, 1.0f - f29)) + f30;
             }
             float o10 = o(min2 * 0.467f);
-            float f35 = fArr[52];
-            if (f35 > 0.0f) {
-                float f36 = T;
-                if (min2 > f36) {
-                    float o11 = o(f36 * 0.467f);
-                    float f37 = 1.0f - f36;
+            float f31 = fArr[52];
+            if (f31 > 0.0f) {
+                float f32 = T;
+                if (min2 > f32) {
+                    float o11 = o(f32 * 0.467f);
+                    float f33 = 1.0f - f32;
                     f12 = 0.01f;
-                    float min3 = Math.min(((o((f36 + 0.002f) * 0.467f) - o11) / 0.002f) * f37, (1.0f - o11) * 3.0f);
-                    float f38 = (min2 - f36) / f37;
-                    float f39 = f38 * f38;
-                    float f40 = f39 * f38;
-                    float f41 = f39 * 3.0f;
-                    o10 = ((((((f40 * (-2.0f)) + f41) * 1.0f) + ((((f40 - (f39 * 2.0f)) + f38) * min3) + ((((f40 * 2.0f) - f41) + 1.0f) * o11))) - o10) * f35) + o10;
-                    max = Math.max(f32, min2 < 1.0f ? 1.0f : Math.min(1.0f, o10));
+                    float min3 = Math.min(((o((f32 + 0.002f) * 0.467f) - o11) / 0.002f) * f33, (1.0f - o11) * 3.0f);
+                    float f34 = (min2 - f32) / f33;
+                    float f35 = f34 * f34;
+                    float f36 = f35 * f34;
+                    float f37 = f35 * 3.0f;
+                    o10 = ((((((f36 * (-2.0f)) + f37) * 1.0f) + ((((f36 - (f35 * 2.0f)) + f34) * min3) + ((((f36 * 2.0f) - f37) + 1.0f) * o11))) - o10) * f31) + o10;
+                    max = Math.max(f28, min2 < 1.0f ? 1.0f : Math.min(1.0f, o10));
                     this.o = max;
                     if (max >= 1.0f) {
                         this.F = false;
@@ -492,7 +488,7 @@ public final class f {
                 }
             }
             f12 = 0.01f;
-            max = Math.max(f32, min2 < 1.0f ? 1.0f : Math.min(1.0f, o10));
+            max = Math.max(f28, min2 < 1.0f ? 1.0f : Math.min(1.0f, o10));
             this.o = max;
             if (max >= 1.0f) {
             }
@@ -500,11 +496,12 @@ public final class f {
         PorterDuffColorFilter porterDuffColorFilter = this.z;
         Paint paint3 = this.t;
         paint3.setColorFilter(porterDuffColorFilter);
-        float f42 = f11 / 2.0f;
-        this.B = f7 + f42;
-        this.C = f10 + f42;
-        int i19 = this.q;
+        float f38 = f11 / 2.0f;
+        this.B = f7 + f38;
+        this.C = f10 + f38;
+        int i20 = this.q;
         RectF rectF4 = this.w;
+        float f39 = 0.3f;
         float[] fArr2 = this.j;
         float[] fArr3 = this.i;
         float[] fArr4 = this.h;
@@ -516,169 +513,161 @@ public final class f {
         float[] fArr10 = this.b;
         float[] fArr11 = this.a;
         byte[] bArr2 = this.k;
-        if (i19 == 2) {
-            float f43 = this.o;
-            if (f43 < 1.0f) {
+        if (i20 == 2) {
+            float f40 = this.o;
+            if (f40 < 1.0f) {
                 bArr = bArr2;
-                rectF = rectF4;
-                e(canvas, this.m, f7, f10, f11, f43);
+                e(canvas, this.m, f7, f10, f11, f40);
                 fVar = this;
                 canvas2 = canvas;
-                f20 = 0.0f;
-                f17 = min;
-                f18 = 1.6f;
-                f19 = 255.0f;
-                f16 = 0.3f;
-                i17 = fVar.l - 1;
-                while (i17 >= 0) {
-                    float f44 = fArr5[i17] + f17;
-                    fArr5[i17] = f44;
-                    if (f44 >= fArr6[i17]) {
-                        int i20 = fVar.l - 1;
-                        fVar.l = i20;
-                        fArr11[i17] = fArr11[i20];
-                        fArr10[i17] = fArr10[i20];
-                        fArr8[i17] = fArr8[i20];
-                        fArr7[i17] = fArr7[i20];
-                        fArr9[i17] = fArr9[i20];
-                        fArr6[i17] = fArr6[i20];
-                        fArr5[i17] = fArr5[i20];
-                        fArr4[i17] = fArr4[i20];
-                        fArr3[i17] = fArr3[i20];
-                        fArr2[i17] = fArr2[i20];
-                        bArr[i17] = bArr[i20];
+                f18 = 0.0f;
+                rectF = rectF4;
+                f16 = min;
+                f17 = 1.6f;
+                i18 = fVar.l - 1;
+                while (i18 >= 0) {
+                    float f41 = fArr5[i18] + f16;
+                    fArr5[i18] = f41;
+                    if (f41 >= fArr6[i18]) {
+                        int i21 = fVar.l - 1;
+                        fVar.l = i21;
+                        fArr11[i18] = fArr11[i21];
+                        fArr10[i18] = fArr10[i21];
+                        fArr8[i18] = fArr8[i21];
+                        fArr7[i18] = fArr7[i21];
+                        fArr9[i18] = fArr9[i21];
+                        fArr6[i18] = fArr6[i21];
+                        fArr5[i18] = fArr5[i21];
+                        fArr4[i18] = fArr4[i21];
+                        fArr3[i18] = fArr3[i21];
+                        fArr2[i18] = fArr2[i21];
+                        bArr[i18] = bArr[i21];
                     } else {
-                        boolean isNaN = Float.isNaN(fArr2[i17]);
+                        boolean isNaN = Float.isNaN(fArr2[i18]);
                         Paint paint4 = fVar.u;
-                        if (isNaN || fArr5[i17] >= f20) {
+                        if (isNaN || fArr5[i18] >= f18) {
                             RectF rectF5 = fVar.r;
                             if (isNaN) {
-                                fArr7[i17] = fArr7[i17] - (AndroidUtilities.dp(20.0f) * f17);
-                                f26 = f17;
-                                fArr8[i17] = k3.B(f26, 2.4f, 1.0f, fArr8[i17]);
-                                fArr7[i17] = k3.B(f26, 3.0f, 1.0f, fArr7[i17]);
-                                if (!rectF5.isEmpty() && fArr10[i17] < rectF5.top - AndroidUtilities.dp(56.0f)) {
-                                    fArr7[i17] = fArr7[i17] * 0.85f;
+                                fArr7[i18] = fArr7[i18] - (AndroidUtilities.dp(20.0f) * f16);
+                                f22 = f16;
+                                fArr8[i18] = k3.B(f22, 2.4f, 1.0f, fArr8[i18]);
+                                fArr7[i18] = k3.B(f22, 3.0f, 1.0f, fArr7[i18]);
+                                if (!rectF5.isEmpty() && fArr10[i18] < rectF5.top - AndroidUtilities.dp(56.0f)) {
+                                    fArr7[i18] = fArr7[i18] * 0.85f;
                                 }
                             } else {
-                                float max2 = Math.max(f20, 1.0f - (f17 * 6.5f));
-                                fArr8[i17] = fArr8[i17] * max2;
-                                fArr7[i17] = (fArr7[i17] * max2) - (AndroidUtilities.dp(260.0f) * f17);
-                                f26 = f17;
+                                float max2 = Math.max(f18, 1.0f - (f16 * 6.5f));
+                                fArr8[i18] = fArr8[i18] * max2;
+                                fArr7[i18] = (fArr7[i18] * max2) - (AndroidUtilities.dp(260.0f) * f16);
+                                f22 = f16;
                             }
-                            fArr11[i17] = (fArr8[i17] * f26) + fArr11[i17];
-                            fArr10[i17] = (fArr7[i17] * f26) + fArr10[i17];
-                            fArr4[i17] = (fArr3[i17] * f26) + fArr4[i17];
-                            float f45 = fArr5[i17] / fArr6[i17];
+                            fArr11[i18] = (fArr8[i18] * f22) + fArr11[i18];
+                            fArr10[i18] = (fArr7[i18] * f22) + fArr10[i18];
+                            fArr4[i18] = (fArr3[i18] * f22) + fArr4[i18];
+                            float f42 = fArr5[i18] / fArr6[i18];
                             if (isNaN) {
-                                if (f45 < 0.08f) {
-                                    f27 = f45 / 0.08f;
+                                if (f42 < 0.08f) {
+                                    f23 = f42 / 0.08f;
                                 } else {
-                                    x10 = org.telegram.messenger.g0.x(f45, 0.08f, 0.92f, 1.0f);
+                                    x10 = org.telegram.messenger.g0.x(f42, 0.08f, 0.92f, 1.0f);
                                     if (isNaN) {
-                                        dp = (rectF5.top - AndroidUtilities.dp(56.0f)) - fArr10[i17];
+                                        dp = (rectF5.top - AndroidUtilities.dp(56.0f)) - fArr10[i18];
                                         if (dp > 0.0f) {
                                         }
                                     }
-                                    f28 = 1.0f;
-                                    float f46 = f28 - f45;
-                                    float f47 = fArr9[i17] * (f28 - ((f28 - (f46 * f46)) * (isNaN ? 0.35f : 0.85f)));
-                                    if (bArr[i17] != 2) {
+                                    f24 = 1.0f;
+                                    float f43 = f24 - f42;
+                                    float f44 = fArr9[i18] * (f24 - ((f24 - (f43 * f43)) * (isNaN ? 0.35f : 0.85f)));
+                                    if (bArr[i18] != 2) {
                                     }
-                                    i17--;
-                                    f17 = f26;
-                                    f20 = 0.0f;
                                 }
-                            } else if (f45 < 0.35f) {
+                            } else if (f42 < 0.35f) {
                                 x10 = 1.0f;
                                 if (isNaN && !rectF5.isEmpty()) {
-                                    dp = (rectF5.top - AndroidUtilities.dp(56.0f)) - fArr10[i17];
+                                    dp = (rectF5.top - AndroidUtilities.dp(56.0f)) - fArr10[i18];
                                     if (dp > 0.0f) {
-                                        f28 = 1.0f;
+                                        f24 = 1.0f;
                                         x10 *= Math.max(0.0f, 1.0f - (dp / AndroidUtilities.dp(24.0f)));
-                                        float f462 = f28 - f45;
-                                        float f472 = fArr9[i17] * (f28 - ((f28 - (f462 * f462)) * (isNaN ? 0.35f : 0.85f)));
-                                        if (bArr[i17] != 2) {
+                                        float f432 = f24 - f42;
+                                        float f442 = fArr9[i18] * (f24 - ((f24 - (f432 * f432)) * (isNaN ? 0.35f : 0.85f)));
+                                        if (bArr[i18] != 2) {
                                             paint4.setColor(-1);
-                                            float f48 = x10 * f19;
-                                            paint4.setAlpha((int) (f48 * 0.9f));
-                                            canvas2.drawCircle(fArr11[i17], fArr10[i17], f472, paint4);
-                                            paint4.setAlpha((int) (f48 * 0.22f));
-                                            canvas2.drawCircle(fArr11[i17], fArr10[i17], f472 * 2.6f, paint4);
+                                            float f45 = x10 * 255.0f;
+                                            paint4.setAlpha((int) (f45 * 0.9f));
+                                            canvas2.drawCircle(fArr11[i18], fArr10[i18], f442, paint4);
+                                            paint4.setAlpha((int) (f45 * 0.22f));
+                                            canvas2.drawCircle(fArr11[i18], fArr10[i18], f442 * 2.6f, paint4);
+                                            i18--;
+                                            f16 = f22;
+                                            f18 = 0.0f;
                                         } else {
                                             if (rectF5.isEmpty()) {
-                                                f29 = 0.0f;
-                                                f30 = 0.0f;
+                                                f25 = 0.0f;
+                                                f26 = 0.0f;
                                             } else {
-                                                float f49 = rectF5.left;
-                                                float f50 = fArr11[i17];
-                                                f29 = 0.0f;
-                                                float max3 = Math.max(f49 - f50, Math.max(0.0f, f50 - rectF5.right));
-                                                float f51 = rectF5.top;
-                                                float f52 = fArr10[i17];
-                                                f30 = Math.min(1.0f, Math.max(max3, Math.max(f51 - f52, Math.max(0.0f, f52 - rectF5.bottom))) / AndroidUtilities.dp(36.0f));
+                                                float f46 = rectF5.left;
+                                                float f47 = fArr11[i18];
+                                                f25 = 0.0f;
+                                                float max3 = Math.max(f46 - f47, Math.max(0.0f, f47 - rectF5.right));
+                                                float f48 = rectF5.top;
+                                                float f49 = fArr10[i18];
+                                                f26 = Math.min(1.0f, Math.max(max3, Math.max(f48 - f49, Math.max(0.0f, f49 - rectF5.bottom))) / AndroidUtilities.dp(36.0f));
                                             }
-                                            paint4.setColor(f30 > f29 ? j(f30, fVar.y, -1) : fVar.y);
-                                            paint4.setAlpha((int) (x10 * f19));
+                                            paint4.setColor(f26 > f25 ? j(f26, fVar.y, -1) : fVar.y);
+                                            paint4.setAlpha((int) (x10 * 255.0f));
                                             canvas2.save();
-                                            canvas2.rotate(fArr4[i17], fArr11[i17], fArr10[i17]);
-                                            float f53 = fArr11[i17];
-                                            float f54 = f472 / 2.0f;
-                                            float f55 = fArr10[i17];
-                                            rectF.set(f53 - f54, f55 - f54, f53 + f54, f55 + f54);
-                                            float f56 = f472 * f16;
-                                            canvas2.drawRoundRect(rectF, f56, f56, paint4);
-                                            if (bArr[i17] == 1) {
-                                                float sin = (float) Math.sin(Math.min(1.0f, f45 * f18) * 3.141592653589793d);
+                                            canvas2.rotate(fArr4[i18], fArr11[i18], fArr10[i18]);
+                                            float f50 = fArr11[i18];
+                                            float f51 = f442 / 2.0f;
+                                            float f52 = fArr10[i18];
+                                            rectF.set(f50 - f51, f52 - f51, f50 + f51, f52 + f51);
+                                            float f53 = f442 * f39;
+                                            canvas2.drawRoundRect(rectF, f53, f53, paint4);
+                                            if (bArr[i18] == 1) {
+                                                float sin = (float) Math.sin(Math.min(1.0f, f42 * f17) * 3.141592653589793d);
                                                 paint4.setColor(-1);
                                                 paint4.setAlpha((int) (x10 * 200.0f * sin));
-                                                canvas2.drawRoundRect(rectF, f56, f56, paint4);
+                                                canvas2.drawRoundRect(rectF, f53, f53, paint4);
                                             }
                                             canvas2.restore();
+                                            i18--;
+                                            f16 = f22;
+                                            f18 = 0.0f;
                                         }
-                                        i17--;
-                                        f17 = f26;
-                                        f20 = 0.0f;
                                     }
                                 }
-                                f28 = 1.0f;
-                                float f4622 = f28 - f45;
-                                float f4722 = fArr9[i17] * (f28 - ((f28 - (f4622 * f4622)) * (isNaN ? 0.35f : 0.85f)));
-                                if (bArr[i17] != 2) {
+                                f24 = 1.0f;
+                                float f4322 = f24 - f42;
+                                float f4422 = fArr9[i18] * (f24 - ((f24 - (f4322 * f4322)) * (isNaN ? 0.35f : 0.85f)));
+                                if (bArr[i18] != 2) {
                                 }
-                                i17--;
-                                f17 = f26;
-                                f20 = 0.0f;
                             } else {
-                                f27 = org.telegram.messenger.g0.x(f45, 0.35f, 0.65f, 1.0f);
+                                f23 = org.telegram.messenger.g0.x(f42, 0.35f, 0.65f, 1.0f);
                             }
-                            x10 = f27;
+                            x10 = f23;
                             if (isNaN) {
                             }
-                            f28 = 1.0f;
-                            float f46222 = f28 - f45;
-                            float f47222 = fArr9[i17] * (f28 - ((f28 - (f46222 * f46222)) * (isNaN ? 0.35f : 0.85f)));
-                            if (bArr[i17] != 2) {
+                            f24 = 1.0f;
+                            float f43222 = f24 - f42;
+                            float f44222 = fArr9[i18] * (f24 - ((f24 - (f43222 * f43222)) * (isNaN ? 0.35f : 0.85f)));
+                            if (bArr[i18] != 2) {
                             }
-                            i17--;
-                            f17 = f26;
-                            f20 = 0.0f;
                         } else {
                             paint4.setColor(fVar.y);
                             paint4.setAlpha(255);
-                            float f57 = fArr9[i17];
-                            float f58 = fArr11[i17];
-                            float f59 = f57 / 2.0f;
-                            float f60 = fArr10[i17];
-                            rectF.set(f58 - f59, f60 - f59, f58 + f59, f60 + f59);
-                            float f61 = f57 * f16;
-                            canvas2.drawRoundRect(rectF, f61, f61, paint4);
+                            float f54 = fArr9[i18];
+                            float f55 = fArr11[i18];
+                            float f56 = f54 / 2.0f;
+                            float f57 = fArr10[i18];
+                            rectF.set(f55 - f56, f57 - f56, f55 + f56, f57 + f56);
+                            float f58 = f54 * f39;
+                            canvas2.drawRoundRect(rectF, f58, f58, paint4);
                         }
                     }
-                    f26 = f17;
-                    i17--;
-                    f17 = f26;
-                    f20 = 0.0f;
+                    f22 = f16;
+                    i18--;
+                    f16 = f22;
+                    f18 = 0.0f;
                 }
             }
             bArr = bArr2;
@@ -687,11 +676,10 @@ public final class f {
             bArr = bArr2;
             f13 = 3.0f;
         }
-        rectF = rectF4;
-        int i21 = 2400;
-        Random random3 = this.x;
-        float f62 = f13;
-        if (i19 != 1 || (eVar4 = this.n) == null) {
+        int i22 = 2400;
+        Random random = this.x;
+        float f59 = f13;
+        if (i20 != 1 || (eVar4 = this.n) == null) {
             f14 = f7;
             f15 = f10;
             fVar = this;
@@ -701,69 +689,67 @@ public final class f {
             if (this.o < 1.0f) {
                 if (this.G) {
                     this.G = false;
-                    float f63 = f11 / eVar4.b;
-                    int i22 = 0;
-                    loop1: while (i22 < eVar4.e) {
-                        int i23 = 0;
+                    float f60 = f11 / eVar4.b;
+                    int i23 = 0;
+                    loop1: while (i23 < eVar4.e) {
+                        int i24 = 0;
                         while (true) {
-                            int i24 = eVar4.e;
-                            if (i23 < i24) {
-                                f16 = 0.3f;
-                                if (!eVar4.h[(i24 * i22) + i23] || ((i23 >= (i15 = eVar4.j) && i23 < (i16 = eVar4.k) && i22 >= i15 && i22 < i16) || random3.nextFloat() < 0.4f)) {
-                                    i14 = i23;
+                            int i25 = eVar4.e;
+                            if (i24 < i25) {
+                                if (!eVar4.h[(i25 * i23) + i24] || ((i24 >= (i16 = eVar4.j) && i24 < (i17 = eVar4.k) && i23 >= i16 && i23 < i17) || random.nextFloat() < 0.4f)) {
+                                    i15 = i24;
                                 } else {
-                                    int i25 = this.l;
-                                    if (i25 >= i21) {
-                                        i25 = -1;
+                                    int i26 = this.l;
+                                    if (i26 >= i22) {
+                                        i26 = -1;
                                     } else {
-                                        this.l = i25 + 1;
+                                        this.l = i26 + 1;
                                     }
-                                    if (i25 < 0) {
+                                    if (i26 < 0) {
                                         break loop1;
                                     }
-                                    float f64 = eVar4.g;
-                                    float f65 = eVar4.f;
-                                    float f66 = ((((i23 + 0.5f) * f65) + f64) * f63) + f7;
-                                    float f67 = ((((i22 + 0.5f) * f65) + f64) * f63) + f10;
-                                    float f68 = f66 - this.B;
-                                    float max4 = Math.max(f31, Math.abs(f68));
-                                    float nextFloat = (random3.nextFloat() * AndroidUtilities.dp(900.0f)) + AndroidUtilities.dp(1000.0f);
-                                    i14 = i23;
-                                    float radians = (float) Math.toRadians((random3.nextFloat() - 0.5f) * 36.0f);
-                                    bArr[i25] = (byte) (random3.nextFloat() < 0.12f ? 1 : 0);
-                                    fArr11[i25] = f66;
-                                    fArr10[i25] = f67;
-                                    fArr9[i25] = ((random3.nextFloat() * 0.6f) + 0.7f) * eVar4.f * f63;
+                                    float f61 = eVar4.g;
+                                    float f62 = eVar4.f;
+                                    float f63 = ((((i24 + 0.5f) * f62) + f61) * f60) + f7;
+                                    float f64 = ((((i23 + 0.5f) * f62) + f61) * f60) + f10;
+                                    float f65 = f63 - this.B;
+                                    float max4 = Math.max(f27, Math.abs(f65));
+                                    float nextFloat = (random.nextFloat() * AndroidUtilities.dp(900.0f)) + AndroidUtilities.dp(1000.0f);
+                                    i15 = i24;
+                                    float radians = (float) Math.toRadians((random.nextFloat() - 0.5f) * 36.0f);
+                                    bArr[i26] = (byte) (random.nextFloat() < 0.12f ? 1 : 0);
+                                    fArr11[i26] = f63;
+                                    fArr10[i26] = f64;
+                                    fArr9[i26] = ((random.nextFloat() * 0.6f) + 0.7f) * eVar4.f * f60;
                                     double d = radians;
-                                    fArr8[i25] = (Math.min(1.0f, max4 / (f11 * 0.5f)) * Math.signum(f68) * nextFloat * 0.18f) + (((float) Math.sin(d)) * nextFloat);
-                                    fArr7[i25] = (-((float) Math.cos(d))) * nextFloat;
-                                    fArr6[i25] = c1.d(random3, 0.06f, 0.24f);
-                                    fArr5[i25] = (-(((eVar4.e - 1) - i22) / 4)) * 0.018f;
-                                    fArr4[i25] = random3.nextFloat() * 90.0f;
-                                    fArr3[i25] = (random3.nextFloat() - 0.5f) * 720.0f;
-                                    fArr2[i25] = 1.0f;
+                                    fArr8[i26] = (Math.min(1.0f, max4 / (f11 * 0.5f)) * Math.signum(f65) * nextFloat * 0.18f) + (((float) Math.sin(d)) * nextFloat);
+                                    fArr7[i26] = (-((float) Math.cos(d))) * nextFloat;
+                                    fArr6[i26] = c1.d(random, 0.06f, 0.24f);
+                                    fArr5[i26] = (-(((eVar4.e - 1) - i23) / 4)) * 0.018f;
+                                    fArr4[i26] = random.nextFloat() * 90.0f;
+                                    fArr3[i26] = (random.nextFloat() - 0.5f) * 720.0f;
+                                    fArr2[i26] = 1.0f;
                                 }
-                                i23 = i14 + 1;
-                                i21 = 2400;
-                                f31 = 1.0f;
+                                i24 = i15 + 1;
+                                i22 = 2400;
+                                f27 = 1.0f;
                             }
                         }
                     }
                 }
-                f16 = 0.3f;
                 float max5 = Math.max(0.0f, this.o / 0.92f);
                 if (max5 > 0.0f) {
                     if (max5 >= 1.0f) {
-                        f25 = 1.0f;
+                        f21 = 1.0f;
                     } else if (max5 < 0.45f) {
-                        float f69 = 1.0f - (max5 / 0.45f);
-                        f25 = ((1.0f - (f69 * f69)) * 0.12f) + 0.92f;
+                        float f66 = 1.0f - (max5 / 0.45f);
+                        f21 = ((1.0f - (f66 * f66)) * 0.12f) + 0.92f;
                     } else {
-                        float f70 = (max5 - 0.45f) / 0.55f;
-                        f25 = 1.04f - ((f62 - (f70 * 2.0f)) * ((0.04f * f70) * f70));
+                        float f67 = (max5 - 0.45f) / 0.55f;
+                        f21 = 1.04f - ((f59 - (f67 * 2.0f)) * ((0.04f * f67) * f67));
                     }
                     canvas.save();
-                    canvas.scale(f25, f25, this.B, this.C);
+                    canvas.scale(f21, f21, this.B, this.C);
                     e(canvas, this.m, f7, f10, f11, max5);
                     fVar = this;
                     canvas.restore();
@@ -771,52 +757,51 @@ public final class f {
                     fVar = this;
                 }
                 canvas2 = canvas;
-                f17 = min;
-                f18 = 1.6f;
-                f19 = 255.0f;
-                f20 = 0.0f;
-                i17 = fVar.l - 1;
-                while (i17 >= 0) {
+                rectF = rectF4;
+                f16 = min;
+                f17 = 1.6f;
+                f18 = 0.0f;
+                i18 = fVar.l - 1;
+                while (i18 >= 0) {
                 }
             }
             f14 = f7;
             f15 = f10;
             fVar = this;
         }
-        float f71 = 0.5f;
-        f16 = 0.3f;
-        float f72 = 0.45f;
+        float f68 = 0.5f;
+        float f69 = 0.45f;
         if (fVar.o >= 1.0f || (eVar = fVar.n) == null) {
             canvas2 = canvas;
-            float f73 = f15;
-            f17 = min;
-            f18 = 1.6f;
-            f19 = 255.0f;
-            f20 = 0.0f;
-            float f74 = f14;
+            float f70 = f15;
+            rectF = rectF4;
+            f16 = min;
+            float f71 = f14;
+            f17 = 1.6f;
+            f18 = 0.0f;
             e eVar5 = fVar.m;
-            int i26 = eVar5.b;
-            rectF.set(f74, f73, f74 + f11, f73 + f11);
+            int i27 = eVar5.b;
+            rectF.set(f71, f70, f71 + f11, f70 + f11);
             canvas2.drawBitmap(eVar5.a, eVar5.c, rectF, paint3);
         } else {
             e eVar6 = fVar.m;
             l(eVar);
-            int i27 = eVar.g;
+            int i28 = eVar.g;
             l(eVar6);
-            Rect rect2 = eVar6.c;
-            int i28 = eVar6.g;
+            Rect rect3 = eVar6.c;
+            int i29 = eVar6.g;
             fVar.f(Math.max(eVar.m, eVar6.m));
             Bitmap bitmap = fVar.H;
             Bitmap bitmap2 = eVar.a;
             Paint paint5 = fVar.I;
             if (bitmap != bitmap2) {
                 Bitmap bitmap3 = eVar.a;
-                f17 = min;
+                f16 = min;
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 paint5.setShader(new BitmapShader(bitmap3, tileMode, tileMode));
                 fVar.H = eVar.a;
             } else {
-                f17 = min;
+                f16 = min;
             }
             Bitmap bitmap4 = fVar.J;
             Bitmap bitmap5 = eVar6.a;
@@ -832,249 +817,240 @@ public final class f {
             }
             float g10 = g(eVar, fVar.o);
             float g11 = g(eVar6, fVar.o);
-            float f75 = f11 / eVar.b;
-            float f76 = f11 / eVar6.b;
-            int i29 = 0;
+            float f72 = f11 / eVar.b;
+            float f73 = f11 / eVar6.b;
             int i30 = 0;
-            while (i29 < eVar.m) {
-                if (eVar.q[i29]) {
+            int i31 = 0;
+            while (i30 < eVar.m) {
+                if (eVar.q[i30]) {
                     int[] iArr = eVar.r;
-                    int i31 = i29 * 4;
-                    int i32 = iArr[i31];
-                    int i33 = iArr[i31 + 1];
-                    i11 = i29;
-                    int i34 = (i33 * eVar.e) + i32;
-                    float f77 = (eVar.i[i34] * 3.2f) + ((r11 - 1) - i33);
-                    if (g10 > f77) {
+                    int i32 = i30 * 4;
+                    int i33 = iArr[i32];
+                    int i34 = iArr[i32 + 1];
+                    i12 = i30;
+                    int i35 = (i34 * eVar.e) + i33;
+                    float f74 = (eVar.i[i35] * 3.2f) + ((r10 - 1) - i34);
+                    if (g10 > f74) {
                         boolean[] zArr = fVar.s;
-                        if (zArr[i34]) {
-                            f23 = f76;
+                        if (zArr[i35]) {
+                            rect2 = rect3;
+                            i13 = i29;
                         } else {
-                            zArr[i34] = z10;
-                            float f78 = i27;
-                            float f79 = i32 + 0.5f;
-                            float f80 = eVar.f;
-                            float f81 = (((f79 * f80) + f78) * f75) + f14;
-                            float f82 = ((((i33 + 0.5f) * f80) + f78) * f75) + f15;
-                            float f83 = f80 * f75;
-                            float f84 = f81 - fVar.B;
-                            float f85 = f82 - fVar.C;
-                            rectF3 = rectF;
-                            f23 = f76;
-                            float max6 = Math.max(1.0f, (float) Math.hypot(f84, f85));
-                            float f86 = f84 / max6;
-                            float f87 = f85 / max6;
-                            float nextFloat2 = random3.nextFloat();
-                            int i35 = (nextFloat2 > 0.12f ? 1 : (nextFloat2 == 0.12f ? 0 : -1));
-                            int i36 = i35 < 0 ? 2 : nextFloat2 < 0.7f ? 3 : 5;
-                            int i37 = 0;
-                            while (i37 < i36) {
-                                float f88 = f87;
-                                int i38 = fVar.l;
-                                int i39 = i36;
-                                if (i38 >= 2400) {
-                                    i38 = -1;
+                            zArr[i35] = z10;
+                            float f75 = i28;
+                            float f76 = i33 + 0.5f;
+                            float f77 = eVar.f;
+                            float f78 = (((f76 * f77) + f75) * f72) + f14;
+                            float f79 = ((((i34 + 0.5f) * f77) + f75) * f72) + f15;
+                            float f80 = f77 * f72;
+                            float f81 = f78 - fVar.B;
+                            float f82 = f79 - fVar.C;
+                            rectF3 = rectF4;
+                            rect2 = rect3;
+                            i13 = i29;
+                            float max6 = Math.max(1.0f, (float) Math.hypot(f81, f82));
+                            float f83 = f81 / max6;
+                            float f84 = f82 / max6;
+                            float nextFloat2 = random.nextFloat();
+                            int i36 = (nextFloat2 > 0.12f ? 1 : (nextFloat2 == 0.12f ? 0 : -1));
+                            int i37 = i36 < 0 ? 2 : nextFloat2 < 0.7f ? 3 : 5;
+                            int i38 = 0;
+                            while (i38 < i37) {
+                                int i39 = fVar.l;
+                                int i40 = i37;
+                                if (i39 >= 2400) {
+                                    i39 = -1;
                                 } else {
-                                    fVar.l = i38 + 1;
+                                    fVar.l = i39 + 1;
                                 }
-                                if (i38 < 0) {
+                                if (i39 < 0) {
                                     break;
                                 }
-                                boolean z11 = (i37 <= 0 || random3.nextFloat() >= f16) ? false : z10;
+                                boolean z11 = (i38 <= 0 || random.nextFloat() >= f39) ? false : z10;
                                 if (z11) {
-                                    i13 = i38;
+                                    f20 = f84;
                                     r02 = 2;
-                                } else if (random3.nextFloat() < 0.14f) {
-                                    i13 = i38;
+                                } else if (random.nextFloat() < 0.14f) {
+                                    f20 = f84;
                                     r02 = z10;
                                 } else {
-                                    i13 = i38;
+                                    f20 = f84;
                                     r02 = 0;
                                 }
-                                bArr[i13] = (byte) r02;
-                                fArr11[i13] = ((random3.nextFloat() - 0.5f) * f83 * 0.5f) + f81;
-                                fArr10[i13] = ((random3.nextFloat() - 0.5f) * f83 * 0.5f) + f82;
+                                bArr[i39] = (byte) r02;
+                                fArr11[i39] = ((random.nextFloat() - 0.5f) * f80 * 0.5f) + f78;
+                                fArr10[i39] = ((random.nextFloat() - 0.5f) * f80 * 0.5f) + f79;
                                 if (z11) {
-                                    fArr9[i13] = AndroidUtilities.dpf2((random3.nextFloat() * 0.9f) + 0.9f);
-                                } else if (i37 != 0 || i35 >= 0) {
-                                    fArr9[i13] = ((random3.nextFloat() * 0.55f) + f16) * f83;
+                                    fArr9[i39] = AndroidUtilities.dpf2((random.nextFloat() * 0.9f) + 0.9f);
+                                } else if (i38 != 0 || i36 >= 0) {
+                                    fArr9[i39] = ((random.nextFloat() * 0.55f) + f39) * f80;
                                 } else {
-                                    fArr9[i13] = ((random3.nextFloat() * f72) + 1.25f) * f83;
+                                    fArr9[i39] = ((random.nextFloat() * f69) + 1.25f) * f80;
                                 }
-                                float nextFloat3 = (random3.nextFloat() * AndroidUtilities.dp(150.0f)) + AndroidUtilities.dp(110.0f);
-                                float f89 = f72;
-                                float f90 = f86;
-                                int i40 = i35;
-                                float d10 = c1.d(random3, 0.35f, f89);
-                                fArr8[i13] = ((random3.nextFloat() - 0.5f) * AndroidUtilities.dp(90.0f)) + (f90 * nextFloat3 * d10);
-                                fArr7[i13] = k3.D(1.0f, d10, nextFloat3, (f88 * nextFloat3) * d10) - AndroidUtilities.dp(30.0f);
-                                fArr6[i13] = c1.d(random3, 0.2f, f16);
-                                fArr5[i13] = 0.0f;
-                                fArr4[i13] = random3.nextFloat() * 90.0f;
-                                fArr3[i13] = (random3.nextFloat() - 0.5f) * 720.0f;
-                                fArr2[i13] = Float.NaN;
-                                i37++;
-                                f86 = f90;
-                                f87 = f88;
-                                i36 = i39;
-                                i35 = i40;
-                                f72 = 0.45f;
+                                float nextFloat3 = (random.nextFloat() * AndroidUtilities.dp(150.0f)) + AndroidUtilities.dp(110.0f);
+                                float f85 = f83;
+                                float d10 = c1.d(random, 0.35f, f69);
+                                fArr8[i39] = ((random.nextFloat() - 0.5f) * AndroidUtilities.dp(90.0f)) + (f85 * nextFloat3 * d10);
+                                fArr7[i39] = k3.D(1.0f, d10, nextFloat3, (f20 * nextFloat3) * d10) - AndroidUtilities.dp(30.0f);
+                                fArr6[i39] = c1.d(random, 0.2f, f39);
+                                fArr5[i39] = 0.0f;
+                                fArr4[i39] = random.nextFloat() * 90.0f;
+                                fArr3[i39] = (random.nextFloat() - 0.5f) * 720.0f;
+                                fArr2[i39] = Float.NaN;
+                                i38++;
+                                i36 = i36;
+                                i37 = i40;
+                                f84 = f20;
+                                f83 = f85;
+                                f69 = 0.45f;
                             }
                             eVar3 = eVar;
-                            i12 = i27;
-                            random2 = random3;
-                            i29 = i11 + 1;
-                            random3 = random2;
-                            rectF = rectF3;
-                            f76 = f23;
+                            i14 = i28;
+                            i30 = i12 + 1;
                             eVar = eVar3;
-                            i27 = i12;
-                            f16 = 0.3f;
-                            f72 = 0.45f;
+                            rectF4 = rectF3;
+                            rect3 = rect2;
+                            i29 = i13;
+                            i28 = i14;
+                            f39 = 0.3f;
+                            f69 = 0.45f;
                         }
                     } else {
-                        f23 = f76;
-                        rectF3 = rectF;
-                        float min4 = 1.0f - Math.min(1.0f, (f77 - g10) / 2.2f);
-                        if (min4 > 0.0f) {
-                            random = random3;
-                            f24 = AndroidUtilities.dpf2(1.4f) * ((float) Math.sin((fVar.o * 60.0f) + (i33 * 7) + (i32 * 13))) * min4;
-                        } else {
-                            random = random3;
-                            f24 = 0.0f;
-                        }
-                        float dpf2 = (-min4) * AndroidUtilities.dpf2(1.5f);
-                        random2 = random;
-                        float f91 = i27;
-                        float f92 = i32;
-                        float f93 = eVar.f;
-                        float f94 = (f92 * f93) + f91;
-                        float f95 = (i33 * f93) + f91;
-                        float f96 = f94 + f93;
+                        rect2 = rect3;
+                        i13 = i29;
+                        rectF3 = rectF4;
+                        float min4 = 1.0f - Math.min(1.0f, (f74 - g10) / 2.2f);
+                        float dpf2 = min4 > 0.0f ? AndroidUtilities.dpf2(1.4f) * ((float) Math.sin((fVar.o * 60.0f) + (i34 * 7) + (i33 * 13))) * min4 : 0.0f;
+                        float dpf22 = AndroidUtilities.dpf2(1.5f) * (-min4);
+                        float f86 = i28;
+                        float f87 = i33;
+                        float f88 = eVar.f;
+                        float f89 = (f87 * f88) + f86;
+                        float f90 = (i34 * f88) + f86;
+                        float f91 = f89 + f88;
                         eVar3 = eVar;
-                        float f97 = f95 + f93;
-                        i12 = i27;
-                        m(fVar.L, fVar.M, fVar.P, i30, r4.c.c(f94, f75, f14, f24), r4.c.c(f95, f75, f15, dpf2), r4.c.c(f96, f75, f14, f24), r4.c.c(f97, f75, f15, dpf2), f94, f95, f96, f97, (((int) k3.B(min4, 0.25f, 1.0f, 255.0f)) << 24) | fVar.n());
-                        i30++;
-                        i29 = i11 + 1;
-                        random3 = random2;
-                        rectF = rectF3;
-                        f76 = f23;
+                        float f92 = f90 + f88;
+                        i14 = i28;
+                        m(fVar.L, fVar.M, fVar.P, i31, r4.c.c(f89, f72, f14, dpf2), r4.c.c(f90, f72, f15, dpf22), r4.c.c(f91, f72, f14, dpf2), r4.c.c(f92, f72, f15, dpf22), f89, f90, f91, f92, (((int) k3.B(min4, 0.25f, 1.0f, 255.0f)) << 24) | fVar.n());
+                        i31++;
+                        i30 = i12 + 1;
                         eVar = eVar3;
-                        i27 = i12;
-                        f16 = 0.3f;
-                        f72 = 0.45f;
+                        rectF4 = rectF3;
+                        rect3 = rect2;
+                        i29 = i13;
+                        i28 = i14;
+                        f39 = 0.3f;
+                        f69 = 0.45f;
                     }
                 } else {
-                    f23 = f76;
-                    i11 = i29;
+                    rect2 = rect3;
+                    i13 = i29;
+                    i12 = i30;
                 }
-                rectF3 = rectF;
+                rectF3 = rectF4;
                 eVar3 = eVar;
-                i12 = i27;
-                random2 = random3;
-                i29 = i11 + 1;
-                random3 = random2;
-                rectF = rectF3;
-                f76 = f23;
+                i14 = i28;
+                i30 = i12 + 1;
                 eVar = eVar3;
-                i27 = i12;
-                f16 = 0.3f;
-                f72 = 0.45f;
+                rectF4 = rectF3;
+                rect3 = rect2;
+                i29 = i13;
+                i28 = i14;
+                f39 = 0.3f;
+                f69 = 0.45f;
             }
-            float f98 = f76;
-            RectF rectF6 = rectF;
-            f20 = 0.0f;
-            float f99 = 3.2f;
+            Rect rect4 = rect3;
+            int i41 = i29;
+            RectF rectF6 = rectF4;
+            f18 = 0.0f;
+            float f93 = 3.2f;
             boolean z12 = z10;
-            int i41 = 0;
             int i42 = 0;
-            while (i41 < eVar6.m) {
-                if (eVar6.q[i41]) {
+            int i43 = 0;
+            while (i42 < eVar6.m) {
+                if (eVar6.q[i42]) {
                     int[] iArr2 = eVar6.r;
-                    int i43 = i41 * 4;
-                    int i44 = iArr2[i43];
-                    int i45 = iArr2[i43 + 1];
-                    float c10 = r4.c.c(eVar6.i[(i45 * eVar6.e) + i44], f99, (r9 - 1) - i45, 1.6f);
+                    int i44 = i42 * 4;
+                    int i45 = iArr2[i44];
+                    int i46 = iArr2[i44 + 1];
+                    float c10 = r4.c.c(eVar6.i[(i46 * eVar6.e) + i45], f93, (r6 - 1) - i46, 1.6f);
                     if (g11 <= c10) {
-                        f22 = f98;
+                        i11 = i41;
                         z12 = false;
-                        f99 = 3.2f;
+                        f93 = 3.2f;
                     } else {
                         float min5 = Math.min(1.0f, (g11 - c10) / 2.4f);
-                        float f100 = i28;
-                        float f101 = eVar6.f;
-                        float f102 = (i44 * f101) + f100;
-                        float f103 = (i45 * f101) + f100;
-                        float f104 = f102 + f101;
-                        float f105 = f103 + f101;
-                        float f106 = min5 - 1.0f;
-                        f99 = 3.2f;
-                        float f107 = (((f106 * 2.2f * f106) + (f106 * 3.2f * f106 * f106) + 1.0f) * 0.65f) + 0.35f;
-                        if (min5 >= 1.0f || (min5 > 0.4f && Math.abs(f107 - 1.0f) < f12)) {
-                            f22 = f98;
-                            m(fVar.N, fVar.O, fVar.Q, i42, (f102 * f22) + f14, (f103 * f22) + f15, (f104 * f22) + f14, (f105 * f22) + f15, f102, f103, f104, f105, fVar.n() | (-16777216));
-                            i42++;
+                        i11 = i41;
+                        float f94 = i11;
+                        float f95 = eVar6.f;
+                        float f96 = (i45 * f95) + f94;
+                        float f97 = (i46 * f95) + f94;
+                        float f98 = f96 + f95;
+                        float f99 = f97 + f95;
+                        float f100 = min5 - 1.0f;
+                        f93 = 3.2f;
+                        float f101 = (((f100 * 2.2f * f100) + (f100 * 3.2f * f100 * f100) + 1.0f) * 0.65f) + 0.35f;
+                        if (min5 >= 1.0f || (min5 > 0.4f && Math.abs(f101 - 1.0f) < f12)) {
+                            m(fVar.N, fVar.O, fVar.Q, i43, (f96 * f73) + f14, (f97 * f73) + f15, (f98 * f73) + f14, (f99 * f73) + f15, f96, f97, f98, f99, fVar.n() | (-16777216));
+                            i43++;
                         } else {
-                            float f108 = ((f102 + f104) * f71 * f98) + f14;
-                            float f109 = ((f103 + f105) * f71 * f98) + f15;
-                            f22 = f98;
-                            float C = k3.C(eVar6.f, f71, f22, f107);
-                            m(fVar.N, fVar.O, fVar.Q, i42, f108 - C, f109 - C, f108 + C, f109 + C, f102, f103, f104, f105, (((int) (Math.min(1.0f, min5 * 2.5f) * 255.0f)) << 24) | fVar.n());
-                            i42++;
+                            float f102 = ((f96 + f98) * f68 * f73) + f14;
+                            float f103 = ((f97 + f99) * f68 * f73) + f15;
+                            float C = k3.C(eVar6.f, f68, f73, f101);
+                            m(fVar.N, fVar.O, fVar.Q, i43, f102 - C, f103 - C, f102 + C, f103 + C, f96, f97, f98, f99, (((int) (Math.min(1.0f, min5 * 2.5f) * 255.0f)) << 24) | fVar.n());
+                            i43++;
                             z12 = false;
                         }
                     }
                 } else {
-                    f22 = f98;
+                    i11 = i41;
                 }
-                i41++;
-                f98 = f22;
-                f71 = 0.5f;
+                i42++;
+                i41 = i11;
+                f68 = 0.5f;
             }
-            float f110 = f98;
-            f19 = 255.0f;
-            if (i30 == 0 && z12) {
+            int i47 = i41;
+            if (i31 == 0 && z12) {
                 fVar.o = 1.0f;
                 rectF = rectF6;
                 rectF.set(f14, f15, f14 + f11, f15 + f11);
-                canvas.drawBitmap(eVar6.a, rect2, rectF, paint3);
+                canvas.drawBitmap(eVar6.a, rect4, rectF, paint3);
                 canvas2 = canvas;
-                f18 = 1.6f;
-                f16 = 0.3f;
+                f17 = 1.6f;
+                f39 = 0.3f;
             } else {
-                if (i30 > 0) {
+                if (i31 > 0) {
+                    f17 = 1.6f;
                     paint2 = paint3;
-                    rect = rect2;
-                    f21 = f110;
+                    i10 = i47;
+                    f19 = f73;
                     rectF2 = rectF6;
-                    i10 = i28;
-                    f18 = 1.6f;
-                    f16 = 0.3f;
+                    rect = rect4;
+                    f39 = 0.3f;
                     eVar2 = eVar6;
-                    canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i30 * 8, fVar.L, 0, fVar.M, 0, fVar.P, 0, fVar.R, 0, i30 * 6, paint);
+                    canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i31 * 8, fVar.L, 0, fVar.M, 0, fVar.P, 0, fVar.R, 0, i31 * 6, paint);
                 } else {
                     paint2 = paint3;
-                    rect = rect2;
-                    f21 = f110;
-                    rectF2 = rectF6;
-                    f18 = 1.6f;
-                    f16 = 0.3f;
                     eVar2 = eVar6;
-                    i10 = i28;
+                    rectF2 = rectF6;
+                    rect = rect4;
+                    f19 = f73;
+                    f17 = 1.6f;
+                    i10 = i47;
+                    f39 = 0.3f;
                 }
-                if (i42 > 0) {
+                if (i43 > 0) {
                     canvas2 = canvas;
-                    canvas2.drawVertices(Canvas.VertexMode.TRIANGLES, i42 * 8, fVar.N, 0, fVar.O, 0, fVar.Q, 0, fVar.R, 0, i42 * 6, paint6);
+                    canvas2.drawVertices(Canvas.VertexMode.TRIANGLES, i43 * 8, fVar.N, 0, fVar.O, 0, fVar.Q, 0, fVar.R, 0, i43 * 6, paint6);
                 } else {
                     canvas2 = canvas;
                 }
-                float f111 = i10;
-                float f112 = eVar2.j;
-                float f113 = eVar2.f;
-                float f114 = f21;
-                float A = k3.A(f112, f113, f111, f114);
-                float A2 = k3.A(eVar2.k, f113, f111, f114);
+                float f104 = i10;
+                float f105 = eVar2.j;
+                float f106 = eVar2.f;
+                float f107 = f19;
+                float A = k3.A(f105, f106, f104, f107);
+                float A2 = k3.A(eVar2.k, f106, f104, f107);
                 canvas2.save();
                 canvas2.clipRect(A + f7, A + f10, A2 + f7, A2 + f10);
                 rectF = rectF2;
@@ -1083,8 +1059,8 @@ public final class f {
                 canvas2.restore();
             }
         }
-        i17 = fVar.l - 1;
-        while (i17 >= 0) {
+        i18 = fVar.l - 1;
+        while (i18 >= 0) {
         }
     }
 

@@ -4,7 +4,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class km extends org.telegram.ui.ActionBar.o1 {
     public final /* synthetic */ lm x;
@@ -40,8 +40,8 @@ public final class km extends org.telegram.ui.ActionBar.o1 {
         if (z12 || !snVar.N5) {
             return false;
         }
-        ci.b3 b3Var = snVar.J1;
-        if (b3Var != null && b3Var.isShowing()) {
+        ci.a3 a3Var = snVar.J1;
+        if (a3Var != null && a3Var.isShowing()) {
             return false;
         }
         hk hkVar = snVar.Y;
@@ -57,8 +57,8 @@ public final class km extends org.telegram.ui.ActionBar.o1 {
         if (snVar.getParentLayout() == null || !((ActionBarLayout) snVar.getParentLayout()).n) {
             snVar.w9 = f7;
             snVar.x9 = f10;
-            ci.b3 b3Var = snVar.J1;
-            if (b3Var == null || !b3Var.isShowing()) {
+            ci.a3 a3Var = snVar.J1;
+            if (a3Var == null || !a3Var.isShowing()) {
                 kVar = ((org.telegram.ui.ActionBar.n2) snVar).actionBar;
                 kVar.setTranslationY(f7);
                 xk xkVar = snVar.bb;

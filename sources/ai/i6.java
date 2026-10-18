@@ -30,12 +30,12 @@ import org.telegram.ui.Components.ls0;
 import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.od0;
 import org.telegram.ui.Components.w31;
-import org.telegram.ui.of0;
+import org.telegram.ui.nf0;
 import org.telegram.ui.vm0;
 import org.telegram.ui.xm0;
 import org.telegram.ui.yq0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, md0, MediaDataController.KeywordResultCallback, BillingController.ProductDetailsResponseListenerLegacy, OnFailureListener, Utilities.Callback2Return {
     public final /* synthetic */ int a;
@@ -114,7 +114,7 @@ public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, m
 
     @Override // org.telegram.messenger.BillingController.ProductDetailsResponseListenerLegacy
     public void onProductDetailsResponse(c5.i iVar, List list) {
-        AndroidUtilities.runOnUIThread(new hg.d1((of0) this.c, (String) this.d, iVar, list, (String) this.e, (String) this.f, this.b));
+        AndroidUtilities.runOnUIThread(new hg.d1((nf0) this.c, (String) this.d, iVar, list, (String) this.e, (String) this.f, this.b));
     }
 
     @Override // org.telegram.ui.Components.md0
@@ -205,9 +205,9 @@ public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, m
         this.e = d6Var;
     }
 
-    public /* synthetic */ i6(of0 of0Var, String str, String str2, String str3, int i10) {
+    public /* synthetic */ i6(nf0 nf0Var, String str, String str2, String str3, int i10) {
         this.a = 3;
-        this.c = of0Var;
+        this.c = nf0Var;
         this.d = str;
         this.e = str2;
         this.f = str3;
@@ -248,11 +248,11 @@ public final /* synthetic */ class i6 implements org.telegram.ui.ActionBar.a2, m
             }
             i80 H = i80.H(n2Var, view);
             H.W(new ls0(is0Var));
-            H.l(R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new yh.r1(is0Var, 0), h);
+            H.l(R.drawable.menu_gift_add, LocaleController.getString(R.string.Gift2CollectionsAdd), new yh.q1(is0Var, 0), h);
             H.l(R.drawable.msg_share, LocaleController.getString(R.string.Gift2CollectionsShare), new hg.d1(is0Var, i12, publicUsername, tL_starGiftCollection2, context, d6Var, n2Var, 17), !TextUtils.isEmpty(publicUsername));
-            H.l(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new uf.c(18, is0Var, tL_starGiftCollection2), h);
-            H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new yh.r1(is0Var, 1), h);
-            H.m(h, R.drawable.msg_delete, LocaleController.getString(R.string.Gift2CollectionsDelete), true, new w31(is0Var, i11, tL_starGiftCollection2, 25));
+            H.l(R.drawable.msg_edit, LocaleController.getString(R.string.Gift2CollectionsRename), new u2.q0(19, is0Var, tL_starGiftCollection2), h);
+            H.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2CollectionsReorder), new yh.q1(is0Var, 1), h);
+            H.m(h, R.drawable.msg_delete, LocaleController.getString(R.string.Gift2CollectionsDelete), true, new w31(is0Var, i11, tL_starGiftCollection2, 26));
             is0Var.I = H;
             H.Z();
             return Boolean.TRUE;

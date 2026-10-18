@@ -19,7 +19,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -210,7 +210,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                                                 DispatchQueue dispatchQueue = Utilities.globalQueue;
                                                 NativeInstance nativeInstance2 = h1Var4.E;
                                                 Objects.requireNonNull(nativeInstance2);
-                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance2, 3));
+                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.q0(nativeInstance2, 3));
                                                 h1Var4.M.clear();
                                                 h1Var4.E = null;
                                             }
@@ -324,7 +324,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                                                 DispatchQueue dispatchQueue = Utilities.globalQueue;
                                                 NativeInstance nativeInstance22 = h1Var42.E;
                                                 Objects.requireNonNull(nativeInstance22);
-                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance22, 3));
+                                                dispatchQueue.postRunnable(new org.telegram.messenger.voip.q0(nativeInstance22, 3));
                                                 h1Var42.M.clear();
                                                 h1Var42.E = null;
                                             }

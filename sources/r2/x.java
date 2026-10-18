@@ -9,8 +9,9 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import ki.t1;
+import org.telegram.ui.web.g2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -51,8 +52,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void f(p2.b bVar) {
-        bVar.run();
+    public final void f() {
+        this.a.detachOutputSurface();
     }
 
     @Override // r2.l
@@ -61,8 +62,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void g() {
-        this.a.detachOutputSurface();
+    public final void g(g2 g2Var) {
+        g2Var.run();
     }
 
     @Override // r2.l

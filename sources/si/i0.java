@@ -4,9 +4,9 @@ import android.os.SystemClock;
 import java.io.File;
 import java.io.IOException;
 import org.telegram.ui.Components.ay0;
-import w7.p7;
+import w7.n7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,24 +29,24 @@ public final /* synthetic */ class i0 implements Runnable {
                 return;
             case 1:
                 s0 s0Var2 = this.b;
-                x xVar = s0Var2.Q;
+                w wVar = s0Var2.Q;
                 File file = s0Var2.R;
-                if (xVar != null) {
+                if (wVar != null) {
                     try {
-                        synchronized (xVar) {
-                            xVar.v = true;
+                        synchronized (wVar) {
+                            wVar.v = true;
                             try {
-                                xVar.g();
+                                wVar.g();
                             } finally {
-                                xVar.v = false;
+                                wVar.v = false;
                             }
                         }
                     } catch (IOException unused) {
                     }
-                    p7.c(xVar.a);
+                    n7.c(wVar.a);
                 }
                 if (file != null) {
-                    p7.c(file);
+                    n7.c(file);
                     return;
                 }
                 return;

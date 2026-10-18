@@ -50,7 +50,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.Components.d50, NotificationCenter.NotificationCenterDelegate {
     public TLRPC.TL_chatBannedRights A0;
@@ -102,7 +102,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
     public FrameLayout c0;
     public LinearLayout d;
     public org.telegram.ui.Cells.ba d0;
-    public ci.k4 e;
+    public ci.j4 e;
     public org.telegram.ui.Cells.z6 e0;
     public ei.g6 f;
     public org.telegram.ui.Cells.q8 f0;
@@ -187,13 +187,13 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
             koVar.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new bo(koVar, 2));
         }
         koVar.n0(false, true);
-        ci.k4 k4Var = koVar.e;
+        ci.j4 j4Var = koVar.e;
         org.telegram.ui.Components.h9 h9Var = koVar.r;
         Object obj = koVar.D0;
         if (obj == null) {
             obj = koVar.x0;
         }
-        k4Var.h(null, null, h9Var, obj);
+        j4Var.h(null, null, h9Var, obj);
         koVar.R0.M(0);
         koVar.b0.e.d();
     }
@@ -206,7 +206,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         if (U == null) {
             return;
         }
-        Bundle d = org.telegram.messenger.kk.d(16, "onlySelect", "dialogsType", true);
+        Bundle d = org.telegram.messenger.lk.d(16, "onlySelect", "dialogsType", true);
         d.putBoolean("resetDelegate", false);
         ey eyVar = new ey(d);
         eyVar.setCurrentAccount(i10);
@@ -219,15 +219,15 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         if (koVar.getParentActivity() == null) {
             return;
         }
-        sg.j0 j0Var = new sg.j0(35, koVar.currentAccount, koVar.getParentActivity(), koVar, koVar.getResourceProvider());
-        j0Var.H1(canApplyBoost);
-        j0Var.G1(tL_premium_boostsStatus, true);
-        j0Var.I1(j10);
+        sg.k0 k0Var = new sg.k0(35, koVar.currentAccount, koVar.getParentActivity(), koVar, koVar.getResourceProvider());
+        k0Var.H1(canApplyBoost);
+        k0Var.G1(tL_premium_boostsStatus, true);
+        k0Var.I1(j10);
         TLRPC.Chat chat = koVar.getMessagesController().getChat(Long.valueOf(-j10));
         if (chat != null) {
-            j0Var.Q0 = new gh(11, koVar, chat);
+            k0Var.Q0 = new gh(11, koVar, chat);
         }
-        koVar.showDialog(j0Var);
+        koVar.showDialog(k0Var);
     }
 
     public static void Z(ko koVar) {
@@ -363,7 +363,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         org.telegram.ui.Components.wo0 wo0Var = new org.telegram.ui.Components.wo0(context, this.w, this.resourceProvider, false);
         this.x = wo0Var;
         wo0Var.setFillViewport(true);
-        kdVar.addView(this.x, w7.z5.d(-1.0f, -1));
+        kdVar.addView(this.x, w7.z5.c(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.x);
         this.x.addView(rVar, new FrameLayout.LayoutParams(-1, -2));
         rVar.setOrientation(1);
@@ -375,20 +375,20 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         rVar.addView(this.d, w7.z5.n(-1, -2));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d.addView(frameLayout2, w7.z5.n(-1, -2));
-        ci.k4 k4Var = new ci.k4(this, context, 6);
-        this.e = k4Var;
-        k4Var.setRoundRadius(this.F0 ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(32.0f));
+        ci.j4 j4Var = new ci.j4(this, context, 6);
+        this.e = j4Var;
+        j4Var.setRoundRadius(this.F0 ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(32.0f));
         int i16 = 5;
         if (this.D0 != null || ChatObject.canChangeChatInfo(this.x0)) {
-            ci.k4 k4Var2 = this.e;
+            ci.j4 j4Var2 = this.e;
             boolean z10 = LocaleController.isRTL;
-            frameLayout2.addView(k4Var2, w7.z5.a(64.0f, z10 ? 0.0f : 16.0f, 12.0f, z10 ? 16.0f : 0.0f, 8.0f, 64, (z10 ? 5 : 3) | 48));
+            frameLayout2.addView(j4Var2, w7.z5.d(64, 64.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 16.0f, 12.0f, z10 ? 16.0f : 0.0f, 8.0f));
             Paint paint = new Paint(1);
             paint.setColor(1426063360);
             ei.g6 g6Var = new ei.g6(this, context, paint, i16);
             this.f = g6Var;
             boolean z11 = LocaleController.isRTL;
-            frameLayout2.addView(g6Var, w7.z5.a(64.0f, z11 ? 0.0f : 16.0f, 12.0f, z11 ? 16.0f : 0.0f, 8.0f, 64, (z11 ? 5 : 3) | 48));
+            frameLayout2.addView(g6Var, w7.z5.d(64, 64.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 16.0f, 12.0f, z11 ? 16.0f : 0.0f, 8.0f));
             RadialProgressView radialProgressView = new RadialProgressView(context);
             this.n = radialProgressView;
             radialProgressView.setSize(AndroidUtilities.dp(30.0f));
@@ -396,7 +396,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
             this.n.setNoProgress(false);
             RadialProgressView radialProgressView2 = this.n;
             boolean z12 = LocaleController.isRTL;
-            frameLayout2.addView(radialProgressView2, w7.z5.a(64.0f, z12 ? 0.0f : 16.0f, 12.0f, z12 ? 16.0f : 0.0f, 8.0f, 64, (z12 ? 5 : 3) | 48));
+            frameLayout2.addView(radialProgressView2, w7.z5.d(64, 64.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 16.0f, 12.0f, z12 ? 16.0f : 0.0f, 8.0f));
             n0(false, false);
             this.d.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.wn
                 public final /* synthetic */ ko b;
@@ -472,7 +472,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -608,10 +608,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -666,9 +666,9 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 }
             });
         } else {
-            ci.k4 k4Var3 = this.e;
+            ci.j4 j4Var3 = this.e;
             boolean z13 = LocaleController.isRTL;
-            frameLayout2.addView(k4Var3, w7.z5.a(64.0f, z13 ? 0.0f : 16.0f, 12.0f, z13 ? 16.0f : 0.0f, 12.0f, 64, (z13 ? 5 : 3) | 48));
+            frameLayout2.addView(j4Var3, w7.z5.d(64, 64.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 16.0f, 12.0f, z13 ? 16.0f : 0.0f, 12.0f));
         }
         org.telegram.ui.Components.qu quVar2 = new org.telegram.ui.Components.qu(context, kdVar, this);
         this.v = quVar2;
@@ -689,7 +689,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         this.v.setFilters(new InputFilter[]{new InputFilter.LengthFilter(128)});
         org.telegram.ui.Components.qu quVar5 = this.v;
         boolean z14 = LocaleController.isRTL;
-        frameLayout2.addView(quVar5, w7.z5.a(-2.0f, z14 ? 5.0f : 96.0f, 0.0f, z14 ? 96.0f : 5.0f, 0.0f, -1, 16));
+        frameLayout2.addView(quVar5, w7.z5.d(-1, -2.0f, 16, z14 ? 5.0f : 96.0f, 0.0f, z14 ? 96.0f : 5.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         this.y = linearLayout2;
         linearLayout2.setOrientation(1);
@@ -774,7 +774,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -910,10 +910,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -1085,7 +1085,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 ko koVar6 = this.b;
-                                koVar6.presentFragment(new lh0(koVar6.w0));
+                                koVar6.presentFragment(new kh0(koVar6.w0));
                                 break;
                             case 4:
                                 ko koVar7 = this.b;
@@ -1221,10 +1221,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 ko koVar19 = this.b;
-                                kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                koVar19.presentFragment(kh0Var);
+                                jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                koVar19.presentFragment(jh0Var);
                                 break;
                             case 23:
                                 ko koVar20 = this.b;
@@ -1359,7 +1359,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 ko koVar6 = this.b;
-                                koVar6.presentFragment(new lh0(koVar6.w0));
+                                koVar6.presentFragment(new kh0(koVar6.w0));
                                 break;
                             case 4:
                                 ko koVar7 = this.b;
@@ -1495,10 +1495,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 ko koVar19 = this.b;
-                                kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                koVar19.presentFragment(kh0Var);
+                                jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                koVar19.presentFragment(jh0Var);
                                 break;
                             case 23:
                                 ko koVar20 = this.b;
@@ -1633,7 +1633,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 ko koVar6 = this.b;
-                                koVar6.presentFragment(new lh0(koVar6.w0));
+                                koVar6.presentFragment(new kh0(koVar6.w0));
                                 break;
                             case 4:
                                 ko koVar7 = this.b;
@@ -1769,10 +1769,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 ko koVar19 = this.b;
-                                kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                koVar19.presentFragment(kh0Var);
+                                jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                koVar19.presentFragment(jh0Var);
                                 break;
                             case 23:
                                 ko koVar20 = this.b;
@@ -1908,7 +1908,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 ko koVar6 = this.b;
-                                koVar6.presentFragment(new lh0(koVar6.w0));
+                                koVar6.presentFragment(new kh0(koVar6.w0));
                                 break;
                             case 4:
                                 ko koVar7 = this.b;
@@ -2044,10 +2044,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 ko koVar19 = this.b;
-                                kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                koVar19.presentFragment(kh0Var);
+                                jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                koVar19.presentFragment(jh0Var);
                                 break;
                             case 23:
                                 ko koVar20 = this.b;
@@ -2184,7 +2184,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 ko koVar6 = this.b;
-                                koVar6.presentFragment(new lh0(koVar6.w0));
+                                koVar6.presentFragment(new kh0(koVar6.w0));
                                 break;
                             case 4:
                                 ko koVar7 = this.b;
@@ -2320,10 +2320,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 ko koVar19 = this.b;
-                                kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                koVar19.presentFragment(kh0Var);
+                                jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                koVar19.presentFragment(jh0Var);
                                 break;
                             case 23:
                                 ko koVar20 = this.b;
@@ -2423,7 +2423,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 this.F.addView(this.M, w7.z5.n(-1, i10));
                 frameLayout = frameLayout2;
                 koVar = this;
-                this.M.setOnClickListener(new ai.c4(this, new boolean[]{false}, j11, 1));
+                this.M.setOnClickListener(new ai.q3(this, new boolean[]{false}, j11, 1));
             }
             if (!koVar.I0 && ChatObject.canBlockUsers(koVar.x0) && (ChatObject.isChannel(koVar.x0) || koVar.x0.creator)) {
                 org.telegram.ui.Cells.q8 q8Var12 = new org.telegram.ui.Cells.q8(context3);
@@ -2539,7 +2539,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 3:
                                 ko koVar6 = this.b;
-                                koVar6.presentFragment(new lh0(koVar6.w0));
+                                koVar6.presentFragment(new kh0(koVar6.w0));
                                 break;
                             case 4:
                                 ko koVar7 = this.b;
@@ -2675,10 +2675,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                 break;
                             case 22:
                                 ko koVar19 = this.b;
-                                kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                 TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                koVar19.presentFragment(kh0Var);
+                                jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                koVar19.presentFragment(jh0Var);
                                 break;
                             case 23:
                                 ko koVar20 = this.b;
@@ -2740,7 +2740,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 q8Var13.setBackground(org.telegram.ui.ActionBar.h6.L0(true));
                 koVar.Q.l(R.drawable.msg_topics, LocaleController.getString(R.string.ChannelTopics), koVar.F0);
                 koVar.Q.getCheckBox().setIcon(koVar.G0 ? 0 : R.drawable.permission_locked);
-                koVar.F.addView(koVar.Q, w7.z5.d(-2.0f, -1));
+                koVar.F.addView(koVar.Q, w7.z5.c(-2.0f, -1));
                 koVar.Q.setOnClickListener(new org.telegram.ui.ActionBar.s1(16, koVar, frameLayout));
             } else {
                 context2 = context;
@@ -2862,7 +2862,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     ko koVar6 = this.b;
-                                    koVar6.presentFragment(new lh0(koVar6.w0));
+                                    koVar6.presentFragment(new kh0(koVar6.w0));
                                     break;
                                 case 4:
                                     ko koVar7 = this.b;
@@ -2998,10 +2998,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     ko koVar19 = this.b;
-                                    kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                    jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                    kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                    koVar19.presentFragment(kh0Var);
+                                    jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                    koVar19.presentFragment(jh0Var);
                                     break;
                                 case 23:
                                     ko koVar20 = this.b;
@@ -3133,7 +3133,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     ko koVar6 = this.b;
-                                    koVar6.presentFragment(new lh0(koVar6.w0));
+                                    koVar6.presentFragment(new kh0(koVar6.w0));
                                     break;
                                 case 4:
                                     ko koVar7 = this.b;
@@ -3269,10 +3269,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     ko koVar19 = this.b;
-                                    kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                    jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                    kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                    koVar19.presentFragment(kh0Var);
+                                    jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                    koVar19.presentFragment(jh0Var);
                                     break;
                                 case 23:
                                     ko koVar20 = this.b;
@@ -3404,7 +3404,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     ko koVar6 = this.b;
-                                    koVar6.presentFragment(new lh0(koVar6.w0));
+                                    koVar6.presentFragment(new kh0(koVar6.w0));
                                     break;
                                 case 4:
                                     ko koVar7 = this.b;
@@ -3540,10 +3540,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     ko koVar19 = this.b;
-                                    kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                    jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                    kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                    koVar19.presentFragment(kh0Var);
+                                    jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                    koVar19.presentFragment(jh0Var);
                                     break;
                                 case 23:
                                     ko koVar20 = this.b;
@@ -3676,7 +3676,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 3:
                                         ko koVar6 = this.b;
-                                        koVar6.presentFragment(new lh0(koVar6.w0));
+                                        koVar6.presentFragment(new kh0(koVar6.w0));
                                         break;
                                     case 4:
                                         ko koVar7 = this.b;
@@ -3812,10 +3812,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 22:
                                         ko koVar19 = this.b;
-                                        kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                        jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                         TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                        kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                        koVar19.presentFragment(kh0Var);
+                                        jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                        koVar19.presentFragment(jh0Var);
                                         break;
                                     case 23:
                                         ko koVar20 = this.b;
@@ -3948,7 +3948,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     ko koVar6 = this.b;
-                                    koVar6.presentFragment(new lh0(koVar6.w0));
+                                    koVar6.presentFragment(new kh0(koVar6.w0));
                                     break;
                                 case 4:
                                     ko koVar7 = this.b;
@@ -4084,10 +4084,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     ko koVar19 = this.b;
-                                    kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                    jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                    kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                    koVar19.presentFragment(kh0Var);
+                                    jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                    koVar19.presentFragment(jh0Var);
                                     break;
                                 case 23:
                                     ko koVar20 = this.b;
@@ -4219,7 +4219,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     ko koVar6 = this.b;
-                                    koVar6.presentFragment(new lh0(koVar6.w0));
+                                    koVar6.presentFragment(new kh0(koVar6.w0));
                                     break;
                                 case 4:
                                     ko koVar7 = this.b;
@@ -4355,10 +4355,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     ko koVar19 = this.b;
-                                    kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                    jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                    kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                    koVar19.presentFragment(kh0Var);
+                                    jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                    koVar19.presentFragment(jh0Var);
                                     break;
                                 case 23:
                                     ko koVar20 = this.b;
@@ -4491,7 +4491,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 3:
                                         ko koVar6 = this.b;
-                                        koVar6.presentFragment(new lh0(koVar6.w0));
+                                        koVar6.presentFragment(new kh0(koVar6.w0));
                                         break;
                                     case 4:
                                         ko koVar7 = this.b;
@@ -4627,10 +4627,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 22:
                                         ko koVar19 = this.b;
-                                        kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                        jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                         TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                        kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                        koVar19.presentFragment(kh0Var);
+                                        jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                        koVar19.presentFragment(jh0Var);
                                         break;
                                     case 23:
                                         ko koVar20 = this.b;
@@ -4764,7 +4764,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     ko koVar6 = this.b;
-                                    koVar6.presentFragment(new lh0(koVar6.w0));
+                                    koVar6.presentFragment(new kh0(koVar6.w0));
                                     break;
                                 case 4:
                                     ko koVar7 = this.b;
@@ -4900,10 +4900,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     ko koVar19 = this.b;
-                                    kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                    jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                    kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                    koVar19.presentFragment(kh0Var);
+                                    jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                    koVar19.presentFragment(jh0Var);
                                     break;
                                 case 23:
                                     ko koVar20 = this.b;
@@ -5038,7 +5038,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 3:
                                         ko koVar6 = this.b;
-                                        koVar6.presentFragment(new lh0(koVar6.w0));
+                                        koVar6.presentFragment(new kh0(koVar6.w0));
                                         break;
                                     case 4:
                                         ko koVar7 = this.b;
@@ -5174,10 +5174,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 22:
                                         ko koVar19 = this.b;
-                                        kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                        jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                         TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                        kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                        koVar19.presentFragment(kh0Var);
+                                        jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                        koVar19.presentFragment(jh0Var);
                                         break;
                                     case 23:
                                         ko koVar20 = this.b;
@@ -5312,7 +5312,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 3:
                                         ko koVar6 = this.b;
-                                        koVar6.presentFragment(new lh0(koVar6.w0));
+                                        koVar6.presentFragment(new kh0(koVar6.w0));
                                         break;
                                     case 4:
                                         ko koVar7 = this.b;
@@ -5448,10 +5448,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                         break;
                                     case 22:
                                         ko koVar19 = this.b;
-                                        kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                        jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                         TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                        kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                        koVar19.presentFragment(kh0Var);
+                                        jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                        koVar19.presentFragment(jh0Var);
                                         break;
                                     case 23:
                                         ko koVar20 = this.b;
@@ -5628,7 +5628,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -5764,10 +5764,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -5899,7 +5899,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -6035,10 +6035,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -6170,7 +6170,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -6306,10 +6306,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -6442,7 +6442,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -6578,10 +6578,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -6713,7 +6713,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -6849,10 +6849,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -6987,7 +6987,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -7123,10 +7123,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -7262,7 +7262,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -7398,10 +7398,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -7574,7 +7574,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -7710,10 +7710,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -7848,7 +7848,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -7984,10 +7984,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -8129,7 +8129,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -8265,10 +8265,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -8402,7 +8402,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -8538,10 +8538,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -8675,7 +8675,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -8811,10 +8811,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -8971,7 +8971,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -9107,10 +9107,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -9425,7 +9425,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                     } else {
                         koVar2.d0.b(LocaleController.getString(R.string.DeleteAndExitButton), false);
                     }
-                    koVar2.c0.addView(koVar2.d0, w7.z5.d(f7, -1));
+                    koVar2.c0.addView(koVar2.d0, w7.z5.c(f7, -1));
                     koVar2.d0.setOnClickListener(new View.OnClickListener(koVar2) { // from class: org.telegram.ui.wn
                         public final /* synthetic */ ko b;
 
@@ -9500,7 +9500,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 3:
                                     ko koVar6 = this.b;
-                                    koVar6.presentFragment(new lh0(koVar6.w0));
+                                    koVar6.presentFragment(new kh0(koVar6.w0));
                                     break;
                                 case 4:
                                     ko koVar7 = this.b;
@@ -9636,10 +9636,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                                     break;
                                 case 22:
                                     ko koVar19 = this.b;
-                                    kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                                    jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                                     TLRPC.ChatFull chatFull8 = koVar19.y0;
-                                    kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                                    koVar19.presentFragment(kh0Var);
+                                    jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                                    koVar19.presentFragment(jh0Var);
                                     break;
                                 case 23:
                                     ko koVar20 = this.b;
@@ -9699,7 +9699,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                 }
                 UndoView undoView = new UndoView(context2);
                 koVar2.c = undoView;
-                kdVar.addView(undoView, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+                kdVar.addView(undoView, w7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
                 org.telegram.ui.Components.qu quVar6 = koVar2.v;
                 TLRPC.User user3 = koVar2.D0;
                 quVar6.setText(Emoji.replaceEmoji(user3 == null ? ContactsController.formatName(user3) : koVar2.x0.title, koVar2.v.getEditText().getPaint().getFontMetricsInt(), true));
@@ -9737,7 +9737,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
             koVar2.d0.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.L0(false));
             if (koVar2.D0 == null) {
             }
-            koVar2.c0.addView(koVar2.d0, w7.z5.d(f7, -1));
+            koVar2.c0.addView(koVar2.d0, w7.z5.c(f7, -1));
             koVar2.d0.setOnClickListener(new View.OnClickListener(koVar2) { // from class: org.telegram.ui.wn
                 public final /* synthetic */ ko b;
 
@@ -9812,7 +9812,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 3:
                             ko koVar6 = this.b;
-                            koVar6.presentFragment(new lh0(koVar6.w0));
+                            koVar6.presentFragment(new kh0(koVar6.w0));
                             break;
                         case 4:
                             ko koVar7 = this.b;
@@ -9948,10 +9948,10 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
                             break;
                         case 22:
                             ko koVar19 = this.b;
-                            kh0 kh0Var = new kh0(koVar19.w0, 0L, 0);
+                            jh0 jh0Var = new jh0(koVar19.w0, 0L, 0);
                             TLRPC.ChatFull chatFull8 = koVar19.y0;
-                            kh0Var.g0(chatFull8, chatFull8.exported_invite);
-                            koVar19.presentFragment(kh0Var);
+                            jh0Var.g0(chatFull8, chatFull8.exported_invite);
+                            koVar19.presentFragment(jh0Var);
                             break;
                         case 23:
                             ko koVar20 = this.b;
@@ -10011,7 +10011,7 @@ public class ko extends org.telegram.ui.ActionBar.n2 implements org.telegram.ui.
         }
         UndoView undoView2 = new UndoView(context2);
         koVar2.c = undoView2;
-        kdVar.addView(undoView2, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+        kdVar.addView(undoView2, w7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
         org.telegram.ui.Components.qu quVar62 = koVar2.v;
         TLRPC.User user32 = koVar2.D0;
         quVar62.setText(Emoji.replaceEmoji(user32 == null ? ContactsController.formatName(user32) : koVar2.x0.title, koVar2.v.getEditText().getPaint().getFontMetricsInt(), true));

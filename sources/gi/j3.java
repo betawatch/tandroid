@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import ci.o5;
+import ci.n5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -184,14 +184,14 @@ public final /* synthetic */ class j3 implements Runnable {
                 ArrayList arrayList9 = mkVar.N;
                 ArrayList arrayList10 = mkVar.L;
                 nk nkVar = mkVar.X;
-                o5 o5Var = nkVar.L;
+                n5 n5Var = nkVar.L;
                 if (this.b == mkVar.T) {
                     mkVar.S = false;
                     if (tL_error == null) {
                         ck ckVar = nkVar.r;
-                        o5Var.e(false, true);
-                        x90 x90Var = o5Var.e;
-                        wh.n nVar = o5Var.d;
+                        n5Var.e(false, true);
+                        x90 x90Var = n5Var.e;
+                        wh.n nVar = n5Var.d;
                         TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                         mkVar.G = messages_messages.next_rate;
                         ck ckVar2 = ckVar;
@@ -284,12 +284,12 @@ public final /* synthetic */ class j3 implements Runnable {
                             break;
                         }
                     } else {
-                        wh.n nVar2 = o5Var.d;
-                        x90 x90Var2 = o5Var.e;
+                        wh.n nVar2 = n5Var.d;
+                        x90 x90Var2 = n5Var.e;
                         nVar2.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
                         x90Var2.setVisibility(0);
                         x90Var2.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                        o5Var.e(false, true);
+                        n5Var.e(false, true);
                         break;
                     }
                 }

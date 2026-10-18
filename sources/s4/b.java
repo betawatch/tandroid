@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class b {
     public static boolean i = true;
@@ -134,7 +134,7 @@ public final class b {
                 a j10 = j(i16, o10, aVar.c, i14);
                 f(j10, i12);
                 j10.c = null;
-                b0Var.t(j10);
+                b0Var.w(j10);
                 if (aVar.a == 4) {
                     i12 += i14;
                 }
@@ -146,12 +146,12 @@ public final class b {
         }
         Object obj = aVar.c;
         aVar.c = null;
-        b0Var.t(aVar);
+        b0Var.w(aVar);
         if (i14 > 0) {
             a j11 = j(aVar.a, o10, obj, i14);
             f(j11, i12);
             j11.c = null;
-            b0Var.t(j11);
+            b0Var.w(j11);
         }
     }
 
@@ -411,7 +411,7 @@ public final class b {
                                 if (aVar3.d == 0) {
                                     arrayList.remove(i18);
                                     aVar3.c = null;
-                                    b0Var2.t(aVar3);
+                                    b0Var2.w(aVar3);
                                 }
                             }
                         }
@@ -430,7 +430,7 @@ public final class b {
                                     arrayList.set(size, aVar3);
                                     arrayList.remove(i18);
                                     aVar2.c = obj;
-                                    b0Var2.t(aVar2);
+                                    b0Var2.w(aVar2);
                                 } else {
                                     if (z11) {
                                         if (aVar != null) {
@@ -543,7 +543,7 @@ public final class b {
                                 } else {
                                     arrayList.remove(size);
                                     aVar3.c = null;
-                                    b0Var2.t(aVar3);
+                                    b0Var2.w(aVar3);
                                 }
                                 if (j10 != null) {
                                     arrayList.add(size, j10);
@@ -627,7 +627,7 @@ public final class b {
                 }
                 if (i47 != aVar4.d) {
                     aVar4.c = null;
-                    b0Var.t(aVar4);
+                    b0Var.w(aVar4);
                     i12 = 2;
                     aVar4 = j(2, i44, null, i47);
                 } else {
@@ -676,7 +676,7 @@ public final class b {
                 if (i51 != aVar4.d) {
                     Object obj2 = aVar4.c;
                     aVar4.c = null;
-                    b0Var.t(aVar4);
+                    b0Var.w(aVar4);
                     aVar4 = j(4, i50, obj2, i51);
                 }
                 if (c12 == 0) {
@@ -698,7 +698,7 @@ public final class b {
         for (int i10 = 0; i10 < size; i10++) {
             a aVar = (a) arrayList.get(i10);
             aVar.c = null;
-            ((c5.b0) this.c).t(aVar);
+            ((c5.b0) this.c).w(aVar);
         }
         arrayList.clear();
     }
@@ -861,12 +861,12 @@ public final class b {
                 if (i18 == aVar2.b || i18 < 0) {
                     arrayList.remove(size2);
                     aVar2.c = null;
-                    b0Var.t(aVar2);
+                    b0Var.w(aVar2);
                 }
             } else if (aVar2.d <= 0) {
                 arrayList.remove(size2);
                 aVar2.c = null;
-                b0Var.t(aVar2);
+                b0Var.w(aVar2);
             }
         }
         return i10;
@@ -884,7 +884,7 @@ public final class b {
 
     public b(k0.b bVar) {
         this.a = 0;
-        this.c = new c5.b0(30, 8);
+        this.c = new c5.b0(30, 9);
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.b = 0;

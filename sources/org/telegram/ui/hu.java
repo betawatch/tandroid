@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class hu extends pg.b {
     public final /* synthetic */ int d;
@@ -296,7 +296,7 @@ public final class hu extends pg.b {
                     textView.setGravity(17);
                     textView.setTextSize(1, 13.0f);
                     textView.setTextColor(nuVar.getThemedColor(org.telegram.ui.ActionBar.h6.y6));
-                    muVar.addView(textView, w7.z5.a(-2.0f, 24.0f, 0.0f, 24.0f, 14.0f, -1, 119));
+                    muVar.addView(textView, w7.z5.d(-1, -2.0f, 119, 24.0f, 0.0f, 24.0f, 14.0f));
                     muVar.setTag(-33024);
                     view = muVar;
                 } else if (i10 == 3) {

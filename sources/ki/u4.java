@@ -37,7 +37,7 @@ import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0 {
     public static Paint k0;
@@ -111,12 +111,12 @@ public final class u4 extends a0 implements org.telegram.ui.ActionBar.y5, m9, l0
         ImageView h = h();
         this.w = h;
         h.setImageResource(R.drawable.iv_media_add);
-        addView(h, w7.z5.a(32.0f, 12.0f, 12.0f, 12.0f, 12.0f, 32, 53));
+        addView(h, w7.z5.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
         h.setOnClickListener(new r4(this, 1));
         ImageView h10 = h();
         this.x = h10;
         h10.setVisibility(8);
-        addView(h10, w7.z5.a(32.0f, 12.0f, 12.0f, 66.0f, 12.0f, 32, 53));
+        addView(h10, w7.z5.d(32, 32.0f, 53, 12.0f, 12.0f, 66.0f, 12.0f));
         h10.setOnClickListener(new r4(this, 2));
         d();
     }

@@ -1,61 +1,108 @@
 package ci;
 
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class c7 implements c3.g0 {
-    public final /* synthetic */ int a = 1;
-    public int b;
-    public long c;
-    public int d;
+public final class c7 extends z6 {
+    public final ArrayList C;
 
-    public /* synthetic */ c7() {
+    public c7(int i10, ArrayList arrayList) {
+        super(i10, 0L, 3, -1, null);
+        this.C = new ArrayList();
+        F(arrayList);
     }
 
-    public boolean a(int i10, int i11) {
-        int i12 = this.d;
-        if (i12 != 1) {
-            if ((i12 == 2 || i12 == 3) && ConnectionsManager.getInstance(i10).getCurrentTime() >= this.c) {
-                return false;
+    public final void F(ArrayList arrayList) {
+        int i10;
+        ArrayList arrayList2 = this.i;
+        arrayList2.size();
+        int i11 = 0;
+        int i12 = 0;
+        while (true) {
+            int size = arrayList.size();
+            i10 = this.c;
+            if (i11 >= size) {
+                break;
             }
-        } else if (this.b >= i11) {
-            return false;
+            TL_stories.StoryItem storyItem = (TL_stories.StoryItem) arrayList.get(i11);
+            if (storyItem != null) {
+                storyItem.messageId = arrayList2.size();
+                MessageObject messageObject = new MessageObject(i10, storyItem);
+                messageObject.generateThumbs(false);
+                ArrayList arrayList3 = new ArrayList();
+                arrayList3.add(Integer.valueOf(arrayList2.size()));
+                this.C.add(arrayList3);
+                arrayList2.add(messageObject);
+                i12++;
+            }
+            i11++;
         }
-        return true;
-    }
-
-    public int b() {
-        int i10 = this.d;
-        if (i10 != 2) {
-            return i10 != 3 ? 14 : 16;
-        }
-        return 15;
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 2:
-                StringBuilder sb2 = new StringBuilder("AtomSizeTooSmall{type=");
-                sb2.append(e2.m0.e0(this.b));
-                sb2.append(", size=");
-                sb2.append(this.c);
-                sb2.append(", minHeaderSize=");
-                return a1.g.n(this.d, "}", sb2);
-            default:
-                return super.toString();
+        if (i12 > 0) {
+            NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesListUpdated, this);
         }
     }
 
-    public c7(int i10, long j10, int i11) {
-        this.b = i10;
-        this.c = j10;
-        this.d = i11;
+    @Override // ci.z6
+    public final MessageObject f(int i10) {
+        if (i10 < 0) {
+            return null;
+        }
+        ArrayList arrayList = this.i;
+        if (i10 >= arrayList.size()) {
+            return null;
+        }
+        return (MessageObject) arrayList.get(i10);
     }
 
-    public c7(int i10, int i11, long j10) {
-        this.d = i10;
-        this.c = j10;
-        this.b = i11;
+    @Override // ci.z6
+    public final int g() {
+        return this.i.size();
+    }
+
+    @Override // ci.z6
+    public final ArrayList h() {
+        return new ArrayList(this.C);
+    }
+
+    @Override // ci.z6
+    public final int i() {
+        return this.i.size();
+    }
+
+    @Override // ci.z6
+    public final boolean k() {
+        return false;
+    }
+
+    @Override // ci.z6
+    public final boolean l() {
+        return false;
+    }
+
+    @Override // ci.z6
+    public final boolean q(int i10, List list, boolean z10) {
+        return false;
+    }
+
+    @Override // ci.z6
+    public final boolean r(int i10) {
+        return false;
+    }
+
+    @Override // ci.z6
+    public final void j() {
+    }
+
+    @Override // ci.z6
+    public final void s() {
+    }
+
+    @Override // ci.z6
+    public final void x() {
     }
 }

@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class ab extends FrameLayout {
     public int a;
@@ -64,7 +64,7 @@ public abstract class ab extends FrameLayout {
 
     public final void c(int i10, boolean z10, boolean z11) {
         za zaVar = this.c[i10];
-        ci.k4 k4Var = zaVar.a;
+        ci.j4 j4Var = zaVar.a;
         CheckBox checkBox = zaVar.c;
         if (checkBox.getVisibility() != 0) {
             checkBox.setVisibility(0);
@@ -78,13 +78,13 @@ public abstract class ab extends FrameLayout {
         if (z11) {
             AnimatorSet animatorSet2 = new AnimatorSet();
             zaVar.f = animatorSet2;
-            animatorSet2.playTogether(ObjectAnimator.ofFloat(k4Var, "scaleX", z10 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(k4Var, "scaleY", z10 ? 0.8875f : 1.0f));
+            animatorSet2.playTogether(ObjectAnimator.ofFloat(j4Var, "scaleX", z10 ? 0.8875f : 1.0f), ObjectAnimator.ofFloat(j4Var, "scaleY", z10 ? 0.8875f : 1.0f));
             zaVar.f.setDuration(200L);
             zaVar.f.addListener(new ah.p0(26, zaVar, z10));
             zaVar.f.start();
         } else {
-            k4Var.setScaleX(z10 ? 0.8875f : 1.0f);
-            k4Var.setScaleY(z10 ? 0.8875f : 1.0f);
+            j4Var.setScaleX(z10 ? 0.8875f : 1.0f);
+            j4Var.setScaleY(z10 ? 0.8875f : 1.0f);
         }
         zaVar.invalidate();
     }
@@ -146,7 +146,7 @@ public abstract class ab extends FrameLayout {
     public final void onMeasure(int i10, int i11) {
         int i12 = 0;
         if (this.d == 1) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), kk.C(6.0f, this.a, TLObject.FLAG_30));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30), lk.C(6.0f, this.a, TLObject.FLAG_30));
             setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
             return;
         }

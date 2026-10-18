@@ -11,7 +11,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class e10 extends hm0 {
     public final /* synthetic */ k10 c;
@@ -195,7 +195,7 @@ public final class e10 extends hm0 {
                 d9Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
                 j10Var2 = d9Var;
             } else if (i10 == 2) {
-                ?? f4Var = new org.telegram.ui.Cells.f4(1, 0, k10Var.getContext(), false);
+                ?? f4Var = new org.telegram.ui.Cells.f4(k10Var.getContext(), 1, 0, false);
                 f4Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
                 j10Var = f4Var;
             } else if (i10 == 3) {

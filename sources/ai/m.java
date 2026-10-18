@@ -28,7 +28,7 @@ import org.telegram.ui.kz0;
 import org.telegram.ui.lz0;
 import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -71,17 +71,17 @@ public final /* synthetic */ class m implements Runnable {
                 }
                 return;
             case 1:
-                ci.q4 q4Var = (ci.q4) obj4;
+                ci.p4 p4Var = (ci.p4) obj4;
                 final MessagesController messagesController = (MessagesController) obj3;
                 String str = (String) obj;
                 TLObject tLObject2 = (TLObject) obj2;
-                ci.i7 storiesController = messagesController.getStoriesController();
+                ci.h7 storiesController = messagesController.getStoriesController();
                 final long j11 = this.b;
                 final boolean z11 = this.c;
                 storiesController.i0(j11, z11, false);
                 n2.e eVar = new n2.e(7, false);
                 final int i11 = 0;
-                eVar.b = new Runnable() { // from class: ci.j2
+                eVar.b = new Runnable() { // from class: ci.i2
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
@@ -95,7 +95,7 @@ public final /* synthetic */ class m implements Runnable {
                     }
                 };
                 final int i12 = 1;
-                eVar.c = new Runnable() { // from class: ci.j2
+                eVar.c = new Runnable() { // from class: ci.i2
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i12) {
@@ -108,12 +108,12 @@ public final /* synthetic */ class m implements Runnable {
                         }
                     }
                 };
-                org.telegram.ui.Components.qc V = new org.telegram.ui.Components.xc(q4Var.d1, q4Var.B0).V(Arrays.asList(tLObject2), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, eVar);
+                org.telegram.ui.Components.qc V = new org.telegram.ui.Components.xc(p4Var.d1, p4Var.B0).V(Arrays.asList(tLObject2), !z11 ? AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToDialogs, ContactsController.formatName(str, null, 10))) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 10))), null, eVar);
                 V.a = 2;
                 V.k(true);
                 return;
             case 2:
-                ci.i7 i7Var = (ci.i7) obj4;
+                ci.h7 h7Var = (ci.h7) obj4;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
                 Utilities.Callback callback = (Utilities.Callback) obj2;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj;
@@ -126,10 +126,10 @@ public final /* synthetic */ class m implements Runnable {
                         callback.run(Boolean.FALSE);
                         return;
                     }
-                    MessagesController messagesController2 = MessagesController.getInstance(i7Var.a);
+                    MessagesController messagesController2 = MessagesController.getInstance(h7Var.a);
                     ChannelBoostsController boostsController = messagesController2.getBoostsController();
                     long j12 = this.b;
-                    boostsController.getBoostsStats(j12, new w2(i7Var, callback, messagesController2, j12, 2));
+                    boostsController.getBoostsStats(j12, new u2(h7Var, callback, messagesController2, j12, 2));
                     return;
                 }
                 if (tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
@@ -155,7 +155,7 @@ public final /* synthetic */ class m implements Runnable {
                 }
                 org.telegram.ui.ActionBar.n2 R2 = LaunchActivity.R();
                 if (z10 && R2 != null) {
-                    R2.showDialog(new sg.x0(R2, 14, true));
+                    R2.showDialog(new sg.y0(R2, 14, true));
                 }
                 callback.run(Boolean.FALSE);
                 return;
@@ -217,12 +217,12 @@ public final /* synthetic */ class m implements Runnable {
                 MessagesController.getInstance(i13).putChats(tL_contacts_resolvedPeer.chats, false);
                 TLRPC.User user = MessagesController.getInstance(i13).getUser(Long.valueOf(tL_contacts_resolvedPeer.peer.user_id));
                 if (user != null) {
-                    org.telegram.ui.Wallet.o9 o9Var = new org.telegram.ui.Wallet.o9(user);
-                    o9Var.r = j10;
-                    o9Var.d0 = str3;
-                    o9Var.e0 = z10;
-                    o9Var.c0 = true;
-                    kb0Var.u(o9Var, false);
+                    org.telegram.ui.Wallet.i9 i9Var = new org.telegram.ui.Wallet.i9(user);
+                    i9Var.r = j10;
+                    i9Var.d0 = str3;
+                    i9Var.e0 = z10;
+                    i9Var.c0 = true;
+                    kb0Var.u(i9Var, false);
                     return;
                 }
                 return;
@@ -236,8 +236,8 @@ public final /* synthetic */ class m implements Runnable {
         }
     }
 
-    public /* synthetic */ m(ci.q4 q4Var, MessagesController messagesController, long j10, boolean z10, String str, TLObject tLObject) {
-        this.e = q4Var;
+    public /* synthetic */ m(ci.p4 p4Var, MessagesController messagesController, long j10, boolean z10, String str, TLObject tLObject) {
+        this.e = p4Var;
         this.f = messagesController;
         this.b = j10;
         this.c = z10;
@@ -245,8 +245,8 @@ public final /* synthetic */ class m implements Runnable {
         this.d = tLObject;
     }
 
-    public /* synthetic */ m(ci.i7 i7Var, TLRPC.TL_error tL_error, boolean z10, long j10, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var) {
-        this.e = i7Var;
+    public /* synthetic */ m(ci.h7 h7Var, TLRPC.TL_error tL_error, boolean z10, long j10, Utilities.Callback callback, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.e = h7Var;
         this.f = tL_error;
         this.c = z10;
         this.b = j10;

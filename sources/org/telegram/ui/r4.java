@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r4 extends org.telegram.ui.ActionBar.n2 {
     public org.telegram.ui.Components.im0 a;
@@ -32,7 +32,7 @@ public final class r4 extends org.telegram.ui.ActionBar.n2 {
         this.b = q4Var;
         im0Var2.setAdapter(q4Var);
         this.a.setOnItemClickListener(new i(this, 2));
-        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
         return this.fragmentView;
     }
 }

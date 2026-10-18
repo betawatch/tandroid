@@ -1,37 +1,45 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ti;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.WebFile;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class z9 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ti a;
-    public final /* synthetic */ s6 b;
-    public final /* synthetic */ aa c;
+public final class z9 extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public z9(aa aaVar, ti tiVar, s6 s6Var) {
-        this.c = aaVar;
-        this.a = tiVar;
-        this.b = s6Var;
+    static {
+        e61.setup(new z9());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.c.b();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.b();
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        if (this.a != null) {
-            AndroidUtilities.hideKeyboard(this.b);
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        aa aaVar = (aa) view;
+        TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) f61Var.G;
+        aaVar.getClass();
+        TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession.manifest;
+        if (tonconnectmanifest != null) {
+            TLRPC.WebDocument webDocument = tonconnectmanifest.icon;
+            if (webDocument != null) {
+                aaVar.b.n(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), "28_28", null, tonconnectsession.manifest);
+            }
+            aaVar.c.setText(tonconnectsession.manifest.name);
+            aaVar.d.setText(AndroidUtilities.getHostAuthority(tonconnectsession.manifest.url));
         }
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new aa(context, d6Var);
     }
 }

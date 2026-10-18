@@ -14,7 +14,7 @@ import org.telegram.messenger.IMapsProvider;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
     public final /* synthetic */ int a;
@@ -79,9 +79,9 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                 if (hkVar != null) {
                     hkVar.d();
                 }
-                ci.b3 b3Var = snVar.J1;
-                if (b3Var != null) {
-                    b3Var.e1();
+                ci.a3 a3Var = snVar.J1;
+                if (a3Var != null) {
+                    a3Var.e1();
                 }
                 pj pjVar = snVar.x0;
                 if (pjVar != null) {
@@ -234,9 +234,9 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                 snVar.s9();
                 break;
             case 5:
-                ci.k4 k4Var = ((ko) this.b).e;
-                if (k4Var != null) {
-                    k4Var.invalidate();
+                ci.j4 j4Var = ((ko) this.b).e;
+                if (j4Var != null) {
+                    j4Var.invalidate();
                     break;
                 }
                 break;
@@ -327,8 +327,8 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                 }
                 break;
             case 14:
-                ci.i3 i3Var = ((g10) this.b).m0;
-                if (i3Var != null && (dVar = (dh.d) i3Var.c) != null) {
+                ci.h3 h3Var = ((g10) this.b).m0;
+                if (h3Var != null && (dVar = (dh.d) h3Var.c) != null) {
                     dVar.v();
                     break;
                 }
@@ -450,18 +450,18 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                 }
                 break;
             case 22:
-                ((fg0) this.b).y1();
+                ((eg0) this.b).y1();
                 break;
             case 23:
-                ((pg0) this.b).e0();
+                ((og0) this.b).e0();
                 break;
             case 24:
-                kh0 kh0Var = (kh0) this.b;
-                org.telegram.ui.Components.im0 im0Var5 = kh0Var.b;
+                jh0 jh0Var = (jh0) this.b;
+                org.telegram.ui.Components.im0 im0Var5 = jh0Var.b;
                 if (im0Var5 != null) {
                     int childCount12 = im0Var5.getChildCount();
                     for (int i26 = 0; i26 < childCount12; i26++) {
-                        View childAt12 = kh0Var.b.getChildAt(i26);
+                        View childAt12 = jh0Var.b.getChildAt(i26);
                         if (childAt12 instanceof org.telegram.ui.Cells.a5) {
                             ((org.telegram.ui.Cells.a5) childAt12).c(0);
                         }
@@ -470,41 +470,41 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.i6 {
                         }
                     }
                 }
-                org.telegram.ui.Components.l70 l70Var2 = kh0Var.l0;
+                org.telegram.ui.Components.l70 l70Var2 = jh0Var.l0;
                 if (l70Var2 != null) {
                     l70Var2.d();
                     break;
                 }
                 break;
             case 25:
-                wi0 wi0Var = (wi0) this.b;
-                org.telegram.ui.Components.im0 im0Var6 = wi0Var.f;
+                vi0 vi0Var = (vi0) this.b;
+                org.telegram.ui.Components.im0 im0Var6 = vi0Var.f;
                 if (im0Var6 != null) {
                     int childCount13 = im0Var6.getChildCount();
                     for (int i27 = 0; i27 < childCount13; i27++) {
-                        wi0Var.d0(wi0Var.f.getChildAt(i27));
+                        vi0Var.d0(vi0Var.f.getChildAt(i27));
                     }
-                    int hiddenChildCount = wi0Var.f.getHiddenChildCount();
+                    int hiddenChildCount = vi0Var.f.getHiddenChildCount();
                     for (int i28 = 0; i28 < hiddenChildCount; i28++) {
-                        wi0Var.d0(wi0Var.f.V(i28));
+                        vi0Var.d0(vi0Var.f.V(i28));
                     }
-                    int cachedChildCount = wi0Var.f.getCachedChildCount();
+                    int cachedChildCount = vi0Var.f.getCachedChildCount();
                     for (int i29 = 0; i29 < cachedChildCount; i29++) {
-                        wi0Var.d0(wi0Var.f.P(i29));
+                        vi0Var.d0(vi0Var.f.P(i29));
                     }
-                    int attachedScrapChildCount = wi0Var.f.getAttachedScrapChildCount();
+                    int attachedScrapChildCount = vi0Var.f.getAttachedScrapChildCount();
                     for (int i30 = 0; i30 < attachedScrapChildCount; i30++) {
-                        wi0Var.d0(wi0Var.f.O(i30));
+                        vi0Var.d0(vi0Var.f.O(i30));
                     }
-                    wi0Var.f.getRecycledViewPool().a();
+                    vi0Var.f.getRecycledViewPool().a();
                 }
-                jg.f fVar2 = wi0Var.c0;
+                jg.f fVar2 = vi0Var.c0;
                 if (fVar2 != null) {
                     fVar2.a = true;
                 }
-                View subtitleTextView = wi0Var.b0.getSubtitleTextView();
+                View subtitleTextView = vi0Var.b0.getSubtitleTextView();
                 if (subtitleTextView instanceof org.telegram.ui.ActionBar.j5) {
-                    ((org.telegram.ui.ActionBar.j5) subtitleTextView).setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Pi, wi0Var.getResourceProvider()));
+                    ((org.telegram.ui.ActionBar.j5) subtitleTextView).setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Pi, vi0Var.getResourceProvider()));
                     break;
                 }
                 break;

@@ -18,7 +18,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wa1 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -216,7 +216,7 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                 themeActivity.O0 = false;
                 return;
             } else if (i10 == themeActivity.L) {
-                baVar.c(LocaleController.getString(R.string.SearchEngine), org.telegram.ui.web.m1.a().a, themeActivity.P0, false);
+                baVar.c(LocaleController.getString(R.string.SearchEngine), org.telegram.ui.web.n1.a().a, themeActivity.P0, false);
                 return;
             } else {
                 if (i10 == themeActivity.M) {
@@ -532,18 +532,18 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                 gaVar.setWillNotDraw(false);
                 TextView textView = new TextView(context);
                 gaVar.a = textView;
-                org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+                org.telegram.messenger.lk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
                 textView.setMaxLines(1);
                 textView.setSingleLine(true);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
                 textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
                 boolean z10 = LocaleController.isRTL;
-                gaVar.addView(textView, w7.z5.a(-1.0f, z10 ? 71.0f : 21.0f, 0.0f, z10 ? 21.0f : 23.0f, 0.0f, -1, (z10 ? 5 : 3) | 48));
+                gaVar.addView(textView, w7.z5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 71.0f : 21.0f, 0.0f, z10 ? 21.0f : 23.0f, 0.0f));
                 ImageView imageView = new ImageView(context);
                 gaVar.b = imageView;
                 imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Mh, false), PorterDuff.Mode.MULTIPLY));
                 imageView.setImageResource(R.drawable.sticker_added);
-                gaVar.addView(imageView, w7.z5.a(14.0f, 23.0f, 0.0f, 23.0f, 0.0f, 19, (LocaleController.isRTL ? 3 : 5) | 16));
+                gaVar.addView(imageView, w7.z5.d(19, 14.0f, (LocaleController.isRTL ? 3 : 5) | 16, 23.0f, 0.0f, 23.0f, 0.0f));
                 i5Var = gaVar;
                 break;
             case 5:
@@ -582,11 +582,11 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                         org.telegram.ui.Cells.x0 x0Var = new org.telegram.ui.Cells.x0(y0Var, context);
                         y0Var.a = x0Var;
                         x0Var.setSize(AndroidUtilities.dp(20.0f));
-                        y0Var.addView(x0Var, w7.z5.a(22.0f, 0.0f, 26.0f, 10.0f, 0.0f, 22, 53));
+                        y0Var.addView(x0Var, w7.z5.d(22, 22.0f, 53, 0.0f, 26.0f, 10.0f, 0.0f));
                         x0Var.a((z11 && SharedConfig.useThreeLinesLayout) || !(z11 || SharedConfig.useThreeLinesLayout), false);
                         y0VarArr[i14] = y0Var;
                         gaVar.addView(((org.telegram.ui.Cells.y0[]) gaVar.b)[i14], w7.z5.m(0.5f, -1, -1, i14 == 1 ? 10 : 0, 0, 0));
-                        ((org.telegram.ui.Cells.y0[]) gaVar.b)[i14].setOnClickListener(new ci.h2(3, gaVar, z11));
+                        ((org.telegram.ui.Cells.y0[]) gaVar.b)[i14].setOnClickListener(new ci.g2(3, gaVar, z11));
                         i14++;
                     }
                 }
@@ -668,12 +668,12 @@ public final class wa1 extends org.telegram.ui.Components.hm0 {
                 lz0Var.setOnValueChangedListener(new org.telegram.ui.Components.kz0(mz0Var));
                 lz0Var.setImportantForAccessibility(2);
                 lz0Var.setValue(SharedConfig.getChatSwipeAction(i11));
-                mz0Var.addView(lz0Var, w7.z5.a(-1.0f, 21.0f, 0.0f, 21.0f, 0.0f, 132, 5));
+                mz0Var.addView(lz0Var, w7.z5.d(132, -1.0f, 5, 21.0f, 0.0f, 21.0f, 0.0f));
                 mz0Var.setWillNotDraw(false);
                 mz0Var.s = 0;
                 for (int i16 = 0; i16 < 2; i16++) {
                     mz0Var.v[i16] = new org.telegram.ui.Components.xj0(context);
-                    mz0Var.addView(mz0Var.v[i16], w7.z5.a(28.0f, 0.0f, 0.0f, 184.0f, 0.0f, 28, 21));
+                    mz0Var.addView(mz0Var.v[i16], w7.z5.d(28, 28.0f, 21, 0.0f, 0.0f, 184.0f, 0.0f));
                 }
                 org.telegram.ui.Components.uj0 a2 = mz0Var.a(mz0Var.f.getValue());
                 if (a2 != null) {

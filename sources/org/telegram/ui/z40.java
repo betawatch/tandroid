@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z40 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -79,13 +79,13 @@ public final /* synthetic */ class z40 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i90(obj2, tLObject, obj, tL_error, 20));
                 break;
             case 8:
-                fg0 fg0Var = (fg0) obj2;
+                eg0 eg0Var = (eg0) obj2;
                 Bundle bundle = (Bundle) obj;
                 if (tLObject != null && !(((TLRPC.auth_SentCode) tLObject).type instanceof TLRPC.TL_auth_sentCodeTypeFirebaseSms)) {
-                    AndroidUtilities.runOnUIThread(new lq(fg0Var, bundle, tLObject, 25));
+                    AndroidUtilities.runOnUIThread(new lq(eg0Var, bundle, tLObject, 25));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new qc0(fg0Var, 2));
+                    AndroidUtilities.runOnUIThread(new qc0(eg0Var, 2));
                     break;
                 }
                 break;
@@ -93,10 +93,10 @@ public final /* synthetic */ class z40 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i90(obj2, tLObject, obj, tL_error, 23));
                 break;
             case 10:
-                AndroidUtilities.runOnUIThread(new xe0((jf0) obj2, tL_error, (TL_account.confirmPhone) obj, i13));
+                AndroidUtilities.runOnUIThread(new xe0((if0) obj2, tL_error, (TL_account.confirmPhone) obj, i13));
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new xe0((eg0) obj2, tLObject, (HashMap) obj, i12));
+                AndroidUtilities.runOnUIThread(new xe0((dg0) obj2, tLObject, (HashMap) obj, i12));
                 break;
             case 12:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i90(obj2, tL_error, tLObject, obj, 27));
@@ -119,7 +119,7 @@ public final /* synthetic */ class z40 implements RequestDelegate {
                     AndroidUtilities.runOnUIThread(new en0(go0Var, tL_error, tLObject2, i14));
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new zg0(i11, go0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
+                    AndroidUtilities.runOnUIThread(new yg0(i11, go0Var, (TLRPC.TL_payments_validatedRequestedInfo) tLObject));
                     break;
                 }
             case 17:
@@ -156,7 +156,7 @@ public final /* synthetic */ class z40 implements RequestDelegate {
                             }
                         }
                         go0Var2.getMessagesController().lambda$processUpdates$377(updates, false);
-                        AndroidUtilities.runOnUIThread(new zg0(17, go0Var2, messageArr));
+                        AndroidUtilities.runOnUIThread(new yg0(17, go0Var2, messageArr));
                         break;
                     } else {
                         callback.run((TLRPC.TL_payments_paymentResult) tLObject);

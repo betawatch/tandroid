@@ -19,7 +19,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class bc implements Runnable {
     public final /* synthetic */ int a;
@@ -115,9 +115,9 @@ public final /* synthetic */ class bc implements Runnable {
                 ((e2.j0) this.b).getClass();
                 return;
             case 13:
-                ci.u6 u6Var = ((hg.n1) this.b).y;
-                if (u6Var != null) {
-                    u6Var.p(3, true);
+                ci.t6 t6Var = ((hg.n1) this.b).y;
+                if (t6Var != null) {
+                    t6Var.p(3, true);
                     return;
                 }
                 return;
@@ -197,7 +197,7 @@ public final /* synthetic */ class bc implements Runnable {
                 f1Var.Y(true);
                 return;
             case 23:
-                ((ci.z2) this.b).run(Boolean.FALSE);
+                ((ci.y2) this.b).run(Boolean.FALSE);
                 return;
             case 24:
                 NotificationCenter.getInstance(((ig.a2) this.b).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);

@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Path a;
@@ -103,7 +103,7 @@ public final class s extends View {
         Paint paint = limitPreviewView.K;
         if (limitPreviewView.J) {
             measuredHeight = getMeasuredHeight();
-            a1 d = a1.d();
+            b1 d = b1.d();
             int measuredWidth = limitPreviewView.getMeasuredWidth();
             int measuredHeight2 = limitPreviewView.getMeasuredHeight();
             globalXOffset2 = limitPreviewView.getGlobalXOffset();
@@ -111,7 +111,7 @@ public final class s extends View {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(0.0f, AndroidUtilities.dp(3.0f), getMeasuredWidth(), measuredHeight - AndroidUtilities.dp(3.0f));
             float f7 = measuredHeight / 2.0f;
-            a1 d10 = a1.d();
+            b1 d10 = b1.d();
             if (d10.c == null) {
                 d10.c = new Paint(1);
             }
@@ -122,7 +122,7 @@ public final class s extends View {
                 this.v = false;
                 b();
             }
-            a1 d11 = a1.d();
+            b1 d11 = b1.d();
             int measuredWidth2 = limitPreviewView.getMeasuredWidth();
             int measuredHeight3 = limitPreviewView.getMeasuredHeight();
             globalXOffset = limitPreviewView.getGlobalXOffset();
@@ -133,18 +133,18 @@ public final class s extends View {
             float f11 = f10 / 2.0f;
             boolean z10 = limitPreviewView.R;
             TextPaint textPaint = this.c;
-            canvas.drawRoundRect(rectF2, f11, f11, z10 ? paint : limitPreviewView.e0 != null ? textPaint : a1.d().e());
-            Paint e = a1.d().e();
+            canvas.drawRoundRect(rectF2, f11, f11, z10 ? paint : limitPreviewView.e0 != null ? textPaint : b1.d().e());
+            Paint e = b1.d().e();
             CornerPathEffect cornerPathEffect = this.b;
             e.setPathEffect(cornerPathEffect);
             if (limitPreviewView.e0 != null) {
                 textPaint.setPathEffect(cornerPathEffect);
             }
             if (!limitPreviewView.R) {
-                paint = limitPreviewView.e0 != null ? textPaint : a1.d().e();
+                paint = limitPreviewView.e0 != null ? textPaint : b1.d().e();
             }
             canvas.drawPath(this.a, paint);
-            a1.d().e().setPathEffect(null);
+            b1.d().e().setPathEffect(null);
             if (limitPreviewView.e0 != null) {
                 textPaint.setPathEffect(null);
             }

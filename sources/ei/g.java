@@ -22,7 +22,7 @@ import org.telegram.ui.Components.mu;
 import org.telegram.ui.Components.qu;
 import org.telegram.ui.Components.tz;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class g extends qu {
     public org.telegram.ui.Components.na V;
@@ -73,7 +73,7 @@ public final class g extends qu {
         if (emojiView != null) {
             emojiView.H2 = true;
             emojiView.setClipToOutline(true);
-            emojiView.setOutlineProvider(new ci.o1(1));
+            emojiView.setOutlineProvider(new ci.n1(1));
         }
     }
 

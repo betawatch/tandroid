@@ -1,24 +1,22 @@
 package u2;
 
-import e9.x1;
-
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final class r1 extends b2.w0 {
-    public final e9.n0 c;
+public final class r1 extends s {
+    public final b2.o0 f;
 
-    public r1(String str, x1 x1Var) {
-        super(str, null, false, 1);
-        this.c = e9.n0.u(x1Var);
+    public r1(b2.o1 o1Var, b2.o0 o0Var) {
+        super(o1Var);
+        this.f = o0Var;
     }
 
-    @Override // b2.w0, java.lang.Throwable
-    public final String getMessage() {
-        String message = super.getMessage();
-        e9.n0 n0Var = this.c;
-        if (n0Var.isEmpty()) {
-            return message;
-        }
-        return message + "\nsniff failures: " + n0Var;
+    @Override // u2.s, b2.o1
+    public final b2.n1 m(int i10, b2.n1 n1Var, long j10) {
+        super.m(i10, n1Var, j10);
+        b2.o0 o0Var = this.f;
+        n1Var.c = o0Var;
+        b2.j0 j0Var = o0Var.b;
+        n1Var.b = null;
+        return n1Var;
     }
 }

@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class UserInfoActivity extends org.telegram.ui.Components.v61 implements NotificationCenter.NotificationCenterDelegate {
     public String E;
@@ -68,7 +68,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.v61 implements 
         if (tL_error == null) {
             if (tLObject2 instanceof TLRPC.TL_boolFalse) {
                 userInfoActivity.v.a(0.0f);
-                org.telegram.messenger.kk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(userInfoActivity), null);
+                org.telegram.messenger.lk.q(R.string.UnknownError, org.telegram.ui.Components.xc.a0(userInfoActivity), null);
                 return;
             }
             userInfoActivity.P = true;
@@ -135,7 +135,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.v61 implements 
                 arrayList2.add(Integer.valueOf(i10));
             }
         }
-        Collections.sort(arrayList2, new lg0(8));
+        Collections.sort(arrayList2, new kg0(8));
         arrayList.add(org.telegram.ui.Components.f61.t(LocaleController.getString(R.string.EditProfileName)));
         this.firstNameRow = arrayList.size();
         arrayList.add(org.telegram.ui.Components.f61.k(this.d));
@@ -149,7 +149,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.v61 implements 
         i2.d.p(R.string.EditAccountInfoHeader, arrayList);
         if (currentUser != null) {
             this.numberRow = arrayList.size();
-            arrayList.add(v71.a(7, -11154873, -14175180, R.drawable.settings_calls, org.telegram.messenger.kk.g(new StringBuilder("+"), currentUser.phone, jf.b.c()), LocaleController.getString(R.string.TapToChangePhone), null));
+            arrayList.add(v71.a(7, -11154873, -14175180, R.drawable.settings_calls, org.telegram.messenger.lk.g(new StringBuilder("+"), currentUser.phone, jf.b.c()), LocaleController.getString(R.string.TapToChangePhone), null));
         }
         this.usernameRow = arrayList.size();
         if (UserObject.getPublicUsername(currentUser) != null) {
@@ -291,13 +291,13 @@ public class UserInfoActivity extends org.telegram.ui.Components.v61 implements 
                 i10--;
             }
             if (i10 > 0 && num != null) {
-                presentFragment(new fg0(num.intValue()));
+                presentFragment(new eg0(num.intValue()));
                 return;
             } else {
                 if (UserConfig.hasPremiumOnAccounts()) {
                     return;
                 }
-                showDialog(new sg.j0(7, this.currentAccount, getParentActivity(), this, null));
+                showDialog(new sg.k0(7, this.currentAccount, getParentActivity(), this, null));
                 return;
             }
         }
@@ -364,7 +364,7 @@ public class UserInfoActivity extends org.telegram.ui.Components.v61 implements 
         } else if (i13 == 8) {
             presentFragment(new ua(null));
         } else if (i13 == 11) {
-            presentFragment(new ig0(null));
+            presentFragment(new hg0(null));
         }
     }
 

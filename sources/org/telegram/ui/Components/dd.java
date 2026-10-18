@@ -25,7 +25,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class dd extends View {
     public static final int[] W;
@@ -45,7 +45,7 @@ public abstract class dd extends View {
     public final p6 N;
     public final p6 O;
     public final p6 P;
-    public sg.v1 Q;
+    public sg.w1 Q;
     public boolean R;
     public boolean S;
     public int T;
@@ -570,21 +570,21 @@ public abstract class dd extends View {
         }
         if (f46 > 0.0f) {
             if (this.Q == null) {
-                sg.v1 v1Var = new sg.v1(25);
-                this.Q = v1Var;
-                v1Var.O = 100;
-                v1Var.M = z10;
-                v1Var.G = z10;
-                v1Var.K = false;
-                v1Var.H = z10;
-                v1Var.r = 18;
-                v1Var.B = false;
-                v1Var.j = AndroidUtilities.dp(80.0f);
-                sg.v1 v1Var2 = this.Q;
-                v1Var2.w = 0.85f;
-                v1Var2.v = 0.85f;
-                v1Var2.u = 0.85f;
-                v1Var2.c();
+                sg.w1 w1Var = new sg.w1(25);
+                this.Q = w1Var;
+                w1Var.O = 100;
+                w1Var.M = z10;
+                w1Var.G = z10;
+                w1Var.K = false;
+                w1Var.H = z10;
+                w1Var.r = 18;
+                w1Var.B = false;
+                w1Var.j = AndroidUtilities.dp(80.0f);
+                sg.w1 w1Var2 = this.Q;
+                w1Var2.w = 0.85f;
+                w1Var2.v = 0.85f;
+                w1Var2.u = 0.85f;
+                w1Var2.c();
                 rectF = rectF14;
             } else {
                 RectF rectF15 = this.E;
@@ -1111,9 +1111,9 @@ public abstract class dd extends View {
         matrix2.reset();
         matrix2.setTranslate(rectF.left, -rectF.centerY());
         this.J.setLocalMatrix(matrix2);
-        sg.v1 v1Var = this.Q;
-        if (v1Var != null) {
-            v1Var.a.set(0.0f, 0.0f, AndroidUtilities.dp(140.0f), AndroidUtilities.dp(140.0f));
+        sg.w1 w1Var = this.Q;
+        if (w1Var != null) {
+            w1Var.a.set(0.0f, 0.0f, AndroidUtilities.dp(140.0f), AndroidUtilities.dp(140.0f));
             this.Q.a.offset((getMeasuredWidth() - this.Q.a.width()) / 2.0f, (getMeasuredHeight() - this.Q.a.height()) / 2.0f);
             this.Q.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
             this.Q.f();

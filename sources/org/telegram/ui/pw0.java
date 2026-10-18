@@ -20,7 +20,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class pw0 extends LinearLayout {
     public final TextView a;
@@ -44,7 +44,7 @@ public final class pw0 extends LinearLayout {
         addView(frameLayout, w7.z5.q(i11, i11, 1));
         lw0 lw0Var = new lw0(this, context, premiumPreviewFragment.h0 ? 1 : 0, i10 == 1 ? 1 : 0, context);
         this.d = lw0Var;
-        frameLayout.addView(lw0Var, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(lw0Var, w7.z5.c(-1.0f, -1));
         frameLayout.setClipChildren(false);
         setClipChildren(false);
         TextView textView = new TextView(context);

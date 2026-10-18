@@ -20,20 +20,20 @@ import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.ff0;
-import sg.l1;
+import org.telegram.ui.mj0;
+import sg.m1;
 import ug.a0;
 import ug.b0;
 import ug.u;
 import ug.x;
-import yh.d0;
-import yh.e1;
-import yh.k1;
-import yh.m1;
-import yh.p1;
-import yh.q2;
+import yh.c0;
+import yh.d1;
+import yh.j1;
+import yh.l1;
+import yh.o1;
+import yh.p2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -361,15 +361,15 @@ public final /* synthetic */ class p implements Runnable {
                 n2 n2Var = b0Var.n;
                 i11 = ((f3) b0Var).currentAccount;
                 d6Var = ((f3) b0Var).resourcesProvider;
-                l1 l1Var = new l1(n2Var, i11, null, null, null, d6Var);
-                l1Var.J0 = true;
-                l1Var.c0 = true;
-                b0Var.n.showDialog(l1Var);
+                m1 m1Var = new m1(n2Var, i11, null, null, null, d6Var);
+                m1Var.J0 = true;
+                m1Var.c0 = true;
+                b0Var.n.showDialog(m1Var);
                 return;
             case 8:
                 ((f3) this.b).dismiss();
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedMultiGiftsSelector, new Object[0]);
-                AndroidUtilities.runOnUIThread(new ff0(21), 220L);
+                AndroidUtilities.runOnUIThread(new mj0(21), 220L);
                 return;
             case 9:
                 ((uh.f) this.b).d0.N(true);
@@ -386,36 +386,36 @@ public final /* synthetic */ class p implements Runnable {
                 ((yg.b) this.b).f();
                 return;
             case 13:
-                yh.n nVar = (yh.n) this.b;
-                nVar.h0.setTranslationX(nVar.g0.getAnimatedWidth() + AndroidUtilities.dp(28.0f));
+                yh.m mVar = (yh.m) this.b;
+                mVar.h0.setTranslationX(mVar.g0.getAnimatedWidth() + AndroidUtilities.dp(28.0f));
                 return;
             case 14:
-                ((d0) this.b).onBackPressed();
+                ((c0) this.b).onBackPressed();
                 return;
             case 15:
-                s61 s61Var = ((p1) this.b).Y;
+                s61 s61Var = ((o1) this.b).Y;
                 if (s61Var != null) {
                     s61Var.N(false);
                     return;
                 }
                 return;
             case 16:
-                ((e1) this.b).c();
+                ((d1) this.b).c();
                 return;
             case 17:
-                ((k1) this.b).invalidateSelf();
+                ((j1) this.b).invalidateSelf();
                 return;
             case 18:
-                m1 m1Var = (m1) this.b;
-                de deVar = m1Var.e;
+                l1 l1Var = (l1) this.b;
+                de deVar = l1Var.e;
                 if (deVar != null) {
                     deVar.d();
-                    m1Var.invalidateSelf();
+                    l1Var.invalidateSelf();
                     return;
                 }
                 return;
             case 19:
-                ((q2) this.b).o();
+                ((p2) this.b).o();
                 return;
             case 20:
                 try {
@@ -425,18 +425,18 @@ public final /* synthetic */ class p implements Runnable {
                     return;
                 }
             case 21:
-                zf.n nVar2 = (zf.n) this.b;
-                long j11 = nVar2.b;
+                zf.n nVar = (zf.n) this.b;
+                long j11 = nVar.b;
                 if (j11 > 0) {
                     long j12 = j11 - 1;
-                    nVar2.b = j12;
-                    nVar2.a.i(j12);
+                    nVar.b = j12;
+                    nVar.a.i(j12);
                 }
-                if (nVar2.b <= 0) {
-                    nVar2.c = false;
+                if (nVar.b <= 0) {
+                    nVar.c = false;
                 }
-                if (nVar2.c) {
-                    AndroidUtilities.runOnUIThread(nVar2.d, 1000L);
+                if (nVar.c) {
+                    AndroidUtilities.runOnUIThread(nVar.d, 1000L);
                     return;
                 }
                 return;

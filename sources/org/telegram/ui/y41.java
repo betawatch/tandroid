@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class y41 extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ z51 c;
@@ -311,19 +311,19 @@ public final class y41 extends org.telegram.ui.Components.hm0 {
             boolean z15 = (fyVar.e || UserConfig.getInstance(i14).isPremium()) ? false : true;
             boolean z16 = fyVar.f;
             ai.ha haVar = new ai.ha(this, fyVar, i20, 17);
-            sg.p0 p0Var = c51Var.c;
+            sg.q0 q0Var = c51Var.c;
             FrameLayout frameLayout = c51Var.a;
             c51Var.d = str;
             if (z15) {
                 i12 = 8;
                 frameLayout.setVisibility(8);
                 r92 = 0;
-                p0Var.setVisibility(0);
-                p0Var.a(LocaleController.formatString("UnlockPremiumEmojiPack", R.string.UnlockPremiumEmojiPack, str), haVar, false);
+                q0Var.setVisibility(0);
+                q0Var.a(LocaleController.formatString("UnlockPremiumEmojiPack", R.string.UnlockPremiumEmojiPack, str), haVar, false);
             } else {
                 i12 = 8;
                 r92 = 0;
-                p0Var.setVisibility(8);
+                q0Var.setVisibility(8);
                 frameLayout.setVisibility(0);
                 frameLayout.setOnClickListener(haVar);
             }
@@ -357,10 +357,10 @@ public final class y41 extends org.telegram.ui.Components.hm0 {
                 float f7 = z15 ? 1.0f : 0.0f;
                 c51Var.f = f7;
                 frameLayout.setAlpha(1.0f - f7);
-                p0Var.setAlpha(c51Var.f);
-                p0Var.setScaleX(c51Var.f);
-                p0Var.setScaleY(c51Var.f);
-                p0Var.setVisibility(c51Var.h.booleanValue() ? 0 : i12);
+                q0Var.setAlpha(c51Var.f);
+                q0Var.setScaleX(c51Var.f);
+                q0Var.setScaleY(c51Var.f);
+                q0Var.setVisibility(c51Var.h.booleanValue() ? 0 : i12);
                 return;
             }
             return;
@@ -572,11 +572,11 @@ public final class y41 extends org.telegram.ui.Components.hm0 {
             c51Var.a = frameLayout;
             frameLayout.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{8.0f}, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var)));
             frameLayout.addView(t3Var, w7.z5.e(-1, -2, 17));
-            c51Var.addView(frameLayout, w7.z5.d(-1.0f, -1));
-            sg.p0 p0Var = new sg.p0(c51Var.getContext(), d6Var, false);
-            c51Var.c = p0Var;
-            p0Var.setIcon(R.raw.unlock_icon);
-            c51Var.addView(p0Var, w7.z5.d(-1.0f, -1));
+            c51Var.addView(frameLayout, w7.z5.c(-1.0f, -1));
+            sg.q0 q0Var = new sg.q0(c51Var.getContext(), d6Var, false);
+            c51Var.c = q0Var;
+            q0Var.setIcon(R.raw.unlock_icon);
+            c51Var.addView(q0Var, w7.z5.c(-1.0f, -1));
             view = c51Var;
         } else if (i10 == 6) {
             md0 md0Var = new md0(z51Var.getContext(), 3);

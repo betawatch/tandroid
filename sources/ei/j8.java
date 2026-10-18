@@ -22,7 +22,7 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.nc0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class j8 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public f8 X;
@@ -32,7 +32,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
     public final d b0;
     public boolean c0;
     public boolean d0;
-    public ai.o2 e0;
+    public ai.n2 e0;
     public long f0;
     public TLRPC.WebPage g0;
     public boolean h0;
@@ -44,10 +44,10 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
     public boolean n0;
     public boolean o0;
 
-    public j8(Context context, t5 t5Var, r6 r6Var, ai.o2 o2Var) {
+    public j8(Context context, t5 t5Var, r6 r6Var, ai.n2 n2Var) {
         super(context, null, true, true, 2, t5Var);
         this.k0 = new c8(this, 0);
-        this.e0 = o2Var;
+        this.e0 = n2Var;
         fixNavigationBar();
         L();
         this.I = AndroidUtilities.dp(4.0f);
@@ -73,7 +73,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
         int m13 = org.telegram.ui.ActionBar.h6.m1(0.15f, themedColor);
         textView.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, m12, m13, m13));
         w7.b6.b(textView, 0.1f, 1.5f);
-        i3Var.addView(textView, w7.z5.a(26.0f, 0.0f, 4.0f, 24.0f, 3.0f, -2, 21));
+        i3Var.addView(textView, w7.z5.d(-2, 26.0f, 21, 0.0f, 4.0f, 24.0f, 3.0f));
         p6 p6Var = new p6(8, this, textView);
         textView.setOnClickListener(new ai.p(15, this, p6Var));
         p6Var.run();
@@ -91,7 +91,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
         dVar.g(LocaleController.getString(R.string.StoryLinkAdd), false, true);
         dVar.setOnClickListener(new b8(this, 1));
         dVar.setEnabled(W(i3Var.getText().toString()));
-        frameLayout.addView(dVar, w7.z5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
+        frameLayout.addView(dVar, w7.z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         this.v = 0.2f;
         this.O = true;
         this.smoothKeyboardAnimationEnabled = true;
@@ -136,7 +136,7 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
             }
             return;
         }
-        rg.t2 t2Var = new rg.t2(context, j8Var.currentAccount);
+        rg.s2 s2Var = new rg.s2(context, j8Var.currentAccount);
         rg.n0 n0Var = new rg.n0();
         n0Var.c = i3Var2.b.getText().toString();
         n0Var.b = j8Var.m0 ? i3Var.b.getText().toString() : null;
@@ -145,16 +145,16 @@ public final class j8 extends org.telegram.ui.Components.bb implements Notificat
         n0Var.e = j8Var.o0;
         n0Var.f = j8Var.n0;
         ai.r0 r0Var = new ai.r0(j8Var, 21);
-        t2Var.G = n0Var;
+        s2Var.G = n0Var;
         int i11 = (webPage2 == null || (webPage2.photo == null && !MessageObject.isVideoDocument(webPage2.document))) ? 8 : 0;
-        nc0 nc0Var = t2Var.x;
+        nc0 nc0Var = s2Var.x;
         nc0Var.setVisibility(i11);
-        t2Var.f.b(t2Var.a, n0Var, false);
-        t2Var.w.a(!n0Var.f, false);
+        s2Var.f.b(s2Var.a, n0Var, false);
+        s2Var.w.a(!n0Var.f, false);
         nc0Var.a(!n0Var.e, false);
-        t2Var.H = r0Var;
-        t2Var.e.setImageDrawable(new w3(r6Var, 7));
-        t2Var.show();
+        s2Var.H = r0Var;
+        s2Var.e.setImageDrawable(new w3(r6Var, 7));
+        s2Var.show();
     }
 
     public static /* synthetic */ void R(j8 j8Var) {

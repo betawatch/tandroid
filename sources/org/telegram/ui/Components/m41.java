@@ -17,7 +17,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m41 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -86,11 +86,11 @@ public final /* synthetic */ class m41 implements View.OnClickListener {
                         break;
                     }
                 } else {
-                    qg.y yVar = new qg.y(context, it0Var.Q1);
-                    yVar.n(it0Var.K1.a, 2);
-                    yVar.n = new rg.u(it0Var, bitmap);
-                    yVar.h = new rg.m(it0Var, 1);
-                    yVar.show();
+                    qg.x xVar = new qg.x(context, it0Var.Q1);
+                    xVar.n(it0Var.K1.a, 2);
+                    xVar.n = new rg.u(it0Var, bitmap);
+                    xVar.h = new rg.m(it0Var, 1);
+                    xVar.show();
                     break;
                 }
                 break;
@@ -98,25 +98,25 @@ public final /* synthetic */ class m41 implements View.OnClickListener {
                 ((yg.h) callback).a(view, (HashSet) obj2, (Runnable) obj);
                 break;
             case 4:
-                new yh.n((Context) obj2, null, null, (GiftAuctionController.Auction) obj).show();
+                new yh.m((Context) obj2, null, null, (GiftAuctionController.Auction) obj).show();
                 ((yh.e) callback).dismiss();
                 break;
             case 5:
-                yh.n.S((yh.n) callback, (boolean[]) obj2, (org.telegram.ui.ActionBar.d6) obj);
+                yh.m.S((yh.m) callback, (boolean[]) obj2, (org.telegram.ui.ActionBar.d6) obj);
                 break;
             case 6:
-                yh.w.S((yh.w) callback, (Context) obj2, (org.telegram.ui.ActionBar.d6) obj);
+                yh.v.S((yh.v) callback, (Context) obj2, (org.telegram.ui.ActionBar.d6) obj);
                 break;
             case 7:
-                yh.w.Q((yh.w) callback, (boolean[]) obj2, (org.telegram.ui.ActionBar.d6) obj);
+                yh.v.Q((yh.v) callback, (boolean[]) obj2, (org.telegram.ui.ActionBar.d6) obj);
                 break;
             default:
-                yh.m2 m2Var = (yh.m2) callback;
+                yh.l2 l2Var = (yh.l2) callback;
                 ((i80) obj2).u();
-                is0 is0Var = m2Var.a;
-                yh.e2 e2Var = new yh.e2(m2Var, (TL_stars.SavedStarGift) obj, i11);
-                HashMap hashMap = yh.q2.T;
-                is0Var.h(null, e2Var);
+                is0 is0Var = l2Var.a;
+                yh.d2 d2Var = new yh.d2(l2Var, (TL_stars.SavedStarGift) obj, i11);
+                HashMap hashMap = yh.p2.T;
+                is0Var.h(null, d2Var);
                 break;
         }
     }

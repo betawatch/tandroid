@@ -45,7 +45,7 @@ import org.telegram.ui.Components.wo0;
 import org.telegram.ui.v21;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -213,9 +213,9 @@ public final /* synthetic */ class z implements Runnable {
                 o2.j jVar = (o2.j) this.c;
                 le.b bVar = qVar3.c;
                 Uri uri = jVar.x;
-                p2.d dVar2 = (p2.d) ((o2.k) bVar.b).b.d.get(uri);
-                if (dVar2 != null) {
-                    p2.d.b(dVar2, uri, true);
+                p2.c cVar = (p2.c) ((o2.k) bVar.b).b.d.get(uri);
+                if (cVar != null) {
+                    p2.c.b(cVar, uri, true);
                     return;
                 }
                 return;
@@ -248,7 +248,7 @@ public final /* synthetic */ class z implements Runnable {
                 }
                 return;
             case 9:
-                ((VideoAds) this.b).lambda$showPremium$19((sg.x0) this.c);
+                ((VideoAds) this.b).lambda$showPremium$19((sg.y0) this.c);
                 return;
             case 10:
                 ((VideoAds) this.b).lambda$load$0((TLObject) this.c);
@@ -275,7 +275,7 @@ public final /* synthetic */ class z implements Runnable {
                 ((VoIPService) this.b).lambda$createGroupInstance$71((String) this.c);
                 return;
             case 18:
-                ((VoIPService) this.b).lambda$startConferenceGroupCall$56((org.telegram.messenger.voip.l0) this.c);
+                ((VoIPService) this.b).lambda$startConferenceGroupCall$56((org.telegram.messenger.voip.k0) this.c);
                 return;
             case 19:
                 ((VoIPService) this.b).lambda$startScreenCapture$58((TLRPC.Updates) this.c);

@@ -4,9 +4,9 @@ import android.graphics.Canvas;
 import android.util.SparseArray;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import ci.a7;
-import ci.e6;
-import ci.t6;
+import ci.d6;
+import ci.s6;
+import ci.z6;
 import java.util.ArrayList;
 import ki.a2;
 import org.telegram.messenger.DownloadController;
@@ -34,7 +34,7 @@ import org.telegram.ui.xo;
 import org.telegram.ui.yo;
 import s4.b1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f extends s4.v {
     public final /* synthetic */ int d;
@@ -219,9 +219,9 @@ public final class f extends s4.v {
                 int b10 = b1Var.b();
                 int b11 = b1Var2.b();
                 ArrayList arrayList2 = lVar.n;
-                a7 a7Var = lVar.e;
-                if (a7Var != null && b10 >= 0 && b10 < a7Var.i.size() && b11 >= 0 && b11 < lVar.e.i.size()) {
-                    if (lVar.e instanceof t6) {
+                z6 z6Var = lVar.e;
+                if (z6Var != null && b10 >= 0 && b10 < z6Var.i.size() && b11 >= 0 && b11 < lVar.e.i.size()) {
+                    if (lVar.e instanceof s6) {
                         arrayList = new ArrayList();
                         for (int i13 = 0; i13 < lVar.e.i.size(); i13++) {
                             arrayList.add(Integer.valueOf(((MessageObject) lVar.e.i.get(i13)).getId()));
@@ -436,15 +436,15 @@ public final class f extends s4.v {
                 if (i10 == 0) {
                     l lVar = rVar.v;
                     ArrayList arrayList2 = lVar.n;
-                    a7 a7Var = lVar.e;
-                    if (a7Var != null && lVar.r) {
-                        if (a7Var instanceof t6) {
+                    z6 z6Var = lVar.e;
+                    if (z6Var != null && lVar.r) {
+                        if (z6Var instanceof s6) {
                             arrayList = new ArrayList();
                             for (int i11 = 0; i11 < lVar.e.i.size(); i11++) {
                                 arrayList.add(Integer.valueOf(((MessageObject) lVar.e.i.get(i11)).getId()));
                             }
                         } else {
-                            arrayList = a7Var.g;
+                            arrayList = z6Var.g;
                         }
                         boolean z10 = arrayList2.size() != arrayList.size();
                         if (!z10) {
@@ -508,7 +508,7 @@ public final class f extends s4.v {
                                 }
                             }
                             tL_channels_reorderUsernames.order = arrayList5;
-                            yoVar.getConnectionsManager().sendRequest(tL_channels_reorderUsernames, new e6(10));
+                            yoVar.getConnectionsManager().sendRequest(tL_channels_reorderUsernames, new d6(10));
                             yoVar.X.usernames.clear();
                             yoVar.X.usernames.addAll(arrayList4);
                             yoVar.X.usernames.addAll(arrayList3);

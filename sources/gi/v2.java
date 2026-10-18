@@ -8,9 +8,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class v2 extends org.telegram.ui.web.a1 {
+public final class v2 extends org.telegram.ui.web.b1 {
     public final /* synthetic */ int S0;
     public final /* synthetic */ Object T0;
 
@@ -21,7 +21,7 @@ public final class v2 extends org.telegram.ui.web.a1 {
         this.T0 = obj;
     }
 
-    @Override // org.telegram.ui.web.a1
+    @Override // org.telegram.ui.web.b1
     public void D(boolean z10, String str) {
         switch (this.S0) {
             case 0:
@@ -42,34 +42,34 @@ public final class v2 extends org.telegram.ui.web.a1 {
         }
     }
 
-    @Override // org.telegram.ui.web.a1
-    public final void J(org.telegram.ui.web.x0 x0Var) {
+    @Override // org.telegram.ui.web.b1
+    public final void J(org.telegram.ui.web.y0 y0Var) {
         switch (this.S0) {
             case 0:
                 d3 d3Var = (d3) this.T0;
-                d3Var.v.setWebView(x0Var);
-                y0 y0Var = d3Var.B0;
-                if (y0Var != null) {
-                    y0Var.k = x0Var;
+                d3Var.v.setWebView(y0Var);
+                y0 y0Var2 = d3Var.B0;
+                if (y0Var2 != null) {
+                    y0Var2.k = y0Var;
                 }
-                d3Var.m0.setWebView(x0Var);
+                d3Var.m0.setWebView(y0Var);
                 d3Var.G();
                 break;
             default:
-                ((f4) this.T0).J.setWebView(x0Var);
+                ((f4) this.T0).J.setWebView(y0Var);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.web.a1
-    public void K(org.telegram.ui.web.x0 x0Var) {
+    @Override // org.telegram.ui.web.b1
+    public void K(org.telegram.ui.web.y0 y0Var) {
         switch (this.S0) {
             case 0:
                 d3 d3Var = (d3) this.T0;
-                y0 y0Var = d3Var.B0;
-                if (y0Var != null && y0Var.k == x0Var) {
-                    y0Var.k = null;
-                    y0Var.b();
+                y0 y0Var2 = d3Var.B0;
+                if (y0Var2 != null && y0Var2.k == y0Var) {
+                    y0Var2.k = null;
+                    y0Var2.b();
                 }
                 d3Var.m0.setWebView(null);
                 break;

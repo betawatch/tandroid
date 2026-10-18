@@ -2,9 +2,9 @@ package qg;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.web.a2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final class r0 extends AnimatorListenerAdapter {
             case 0:
                 s0 s0Var = this.b;
                 s0Var.K = null;
-                s0Var.f.f(new z1(this, 4));
+                s0Var.f.f(new a2(this, 4));
                 break;
             default:
-                this.b.f.f(new z1(this, 5));
+                this.b.f.f(new a2(this, 5));
                 break;
         }
     }

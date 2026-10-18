@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class sb0 extends org.telegram.ui.ActionBar.n2 {
     public FrameLayout a;
@@ -148,7 +148,7 @@ public final class sb0 extends org.telegram.ui.ActionBar.n2 {
                                     rb0Var.c(mb0Var, true);
                                     int U = sb0Var.U(i12);
                                     imageView.clearAnimation();
-                                    org.telegram.messenger.kk.t(imageView.animate().rotation((U < 0 || !sb0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 240L);
+                                    org.telegram.messenger.lk.t(imageView.animate().rotation((U < 0 || !sb0Var.n[U]) ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 240L);
                                 }
                                 rb0Var.f.c(LiteMode.isEnabled(i12), true);
                             } else {
@@ -200,7 +200,7 @@ public final class sb0 extends org.telegram.ui.ActionBar.n2 {
         kVar.C = false;
         kVar.m = false;
         this.b.setItemAnimator(kVar);
-        this.a.addView(this.b, w7.z5.d(-1.0f, -1));
+        this.a.addView(this.b, w7.z5.c(-1.0f, -1));
         this.b.setOnItemClickListener(new wt(this, 16));
         this.fragmentView = this.a;
         this.f = AndroidUtilities.isTablet() ? 360864 : LiteMode.FLAGS_CHAT;

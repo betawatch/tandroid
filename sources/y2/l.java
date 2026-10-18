@@ -5,10 +5,10 @@ import android.os.SystemClock;
 import e2.m0;
 import java.io.IOException;
 import java.util.concurrent.Executors;
-import p4.s0;
+import sg.y;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class l implements m {
     public static final k4.d d = new k4.d(0, -9223372036854775807L, false);
@@ -23,7 +23,7 @@ public final class l implements m {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public l(String str) {
-        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new si.a(28)));
+        this(new z2.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new y(29)));
         String concat = "ExoPlayer:Loader:".concat(str);
         String str2 = m0.a;
     }
@@ -65,7 +65,7 @@ public final class l implements m {
         }
         z2.a aVar = this.a;
         if (jVar != null) {
-            aVar.execute(new s0(jVar, 12));
+            aVar.execute(new p8.b(jVar, 11));
         }
         aVar.b.accept(aVar.a);
     }

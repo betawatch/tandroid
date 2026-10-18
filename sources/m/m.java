@@ -16,7 +16,7 @@ import android.widget.AutoCompleteTextView;
 import v7.q7;
 import w7.x7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class m extends AutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -29,11 +29,11 @@ public class m extends AutoCompleteTextView implements u0.k {
         super(context, attributeSet, i10);
         d3.a(context);
         c3.a(this, getContext());
-        g3 K = g3.K(getContext(), attributeSet, d, i10);
-        if (((TypedArray) K.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(K.A(0));
+        g3 P = g3.P(getContext(), attributeSet, d, i10);
+        if (((TypedArray) P.c).hasValue(0)) {
+            setDropDownBackgroundDrawable(P.F(0));
         }
-        K.L();
+        P.Q();
         e2.c cVar = new e2.c(this);
         this.a = cVar;
         cVar.f(attributeSet, i10);

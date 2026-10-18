@@ -28,7 +28,7 @@ import org.telegram.ui.Components.s61;
 import s4.o0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class a extends bb {
     public s61 X;
@@ -63,7 +63,7 @@ public final class a extends bb {
                 h6Var.t(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
             }
         }
-        frameLayout.addView(h6Var, z5.d(-2.0f, i10));
+        frameLayout.addView(h6Var, z5.c(-2.0f, i10));
         im0 im0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
         im0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);

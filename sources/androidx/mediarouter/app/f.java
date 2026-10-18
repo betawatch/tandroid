@@ -8,7 +8,7 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
-import ci.v7;
+import ci.u7;
 import com.google.firebase.messaging.FirebaseMessaging;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -16,9 +16,9 @@ import java.util.Iterator;
 import java.util.concurrent.Executor;
 import org.telegram.ui.Components.nk;
 import org.telegram.ui.Components.pg;
-import p4.t0;
+import p4.s0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class f extends BroadcastReceiver {
                 }
                 return;
             case 2:
-                ((Executor) ((e2.w) this.b).c).execute(new v7(18, this, context));
+                ((Executor) ((e2.w) this.b).c).execute(new u7(18, this, context));
                 return;
             case 3:
                 ((g.o) this.b).k();
@@ -95,7 +95,7 @@ public final class f extends BroadcastReceiver {
                     return;
                 }
             case 9:
-                ((t0) this.b).c();
+                ((s0) this.b).c();
                 return;
             default:
                 if ("PIP_CUSTOM_EVENT".equals(intent.getAction())) {

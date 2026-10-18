@@ -50,7 +50,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.uq;
 import org.telegram.ui.vq;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -94,8 +94,8 @@ public final /* synthetic */ class z implements Runnable {
         int i10 = 3;
         int i11 = 2;
         SQLitePreparedStatement sQLitePreparedStatement = null;
-        int i12 = 0;
-        int i13 = 1;
+        int i12 = 1;
+        int i13 = 0;
         switch (this.a) {
             case 0:
                 k0 k0Var = (k0) this.d;
@@ -190,7 +190,7 @@ public final /* synthetic */ class z implements Runnable {
                 long j15 = this.c;
                 faVar.getClass();
                 if (tLObject4 != null) {
-                    Utilities.stageQueue.postRunnable(new zh.k0(1, messagesController, tLObject4));
+                    Utilities.stageQueue.postRunnable(new a1.f(29, messagesController, tLObject4));
                     return;
                 }
                 if (tL_error != null) {
@@ -379,21 +379,21 @@ public final /* synthetic */ class z implements Runnable {
                 profileActivity2.getMessagesController().getStoriesController().n0(j23, arrayList3, false);
                 return;
             default:
-                yh.p1 p1Var = (yh.p1) this.d;
+                yh.o1 o1Var = (yh.o1) this.d;
                 y9 y9Var = (y9) this.e;
                 long j24 = this.c;
                 Utilities.Callback callback3 = (Utilities.Callback) this.f;
                 Context context = (Context) this.b;
-                yh.v0 v0Var = p1Var.l0;
+                yh.u0 u0Var = o1Var.l0;
                 int i18 = 0;
                 while (i18 < i11) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    if (i18 == i13) {
+                    if (i18 == i12) {
                         formatString = LocaleController.getString(R.string.Gift2StarsCollectibleInfo);
                     } else {
                         int i19 = R.string.Gift2StarsInfo;
-                        Object[] objArr = new Object[i13];
-                        objArr[i12] = p1Var.e0;
+                        Object[] objArr = new Object[i12];
+                        objArr[i13] = o1Var.e0;
                         formatString = LocaleController.formatString(i19, objArr);
                     }
                     spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(formatString));
@@ -401,9 +401,9 @@ public final /* synthetic */ class z implements Runnable {
                     spannableStringBuilder.append((CharSequence) " ");
                     HashSet hashSet = new HashSet();
                     HashSet hashSet2 = new HashSet();
-                    int i20 = i12;
-                    while (i12 < y9Var.l.size() && hashSet.size() < i10) {
-                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) y9Var.l.get(i12);
+                    int i20 = i13;
+                    while (i13 < y9Var.l.size() && hashSet.size() < i10) {
+                        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) y9Var.l.get(i13);
                         if (savedStarGift == null || (starGift = savedStarGift.gift) == null || (document = starGift.getDocument()) == null) {
                             str2 = str10;
                         } else {
@@ -413,7 +413,7 @@ public final /* synthetic */ class z implements Runnable {
                                 hashSet.add(Long.valueOf(document.id));
                             }
                         }
-                        i12++;
+                        i13++;
                         str10 = str2;
                         i10 = 3;
                     }
@@ -429,21 +429,21 @@ public final /* synthetic */ class z implements Runnable {
                         while (it.hasNext()) {
                             TLRPC.Document document3 = (TLRPC.Document) it.next();
                             spannableStringBuilder2.append((CharSequence) "\u2060e");
-                            spannableStringBuilder2.setSpan(new org.telegram.ui.Components.a6(document3, v0Var.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
+                            spannableStringBuilder2.setSpan(new org.telegram.ui.Components.a6(document3, u0Var.getPaint().getFontMetricsInt()), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 33);
                         }
                         spannableStringBuilder2.append((CharSequence) " >");
-                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new ac0(p1Var, callback3, j24, 5)), true));
+                        spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(spannableStringBuilder2, new ac0(o1Var, callback3, j24, 5)), true));
                     } else {
                         spannableStringBuilder.append(AndroidUtilities.replaceArrows(AndroidUtilities.makeClickable(LocaleController.getString(R.string.Gift2StarsInfoLink), new ra(context, 12)), true));
                     }
-                    TextView textView = i18 == 0 ? v0Var : p1Var.m0;
+                    TextView textView = i18 == 0 ? u0Var : o1Var.m0;
                     textView.setText(spannableStringBuilder);
                     textView.setMaxWidth(ei.x3.a(textView.getText(), textView.getPaint()));
                     i18++;
-                    i12 = i20;
+                    i13 = i20;
                     i10 = 3;
                     i11 = 2;
-                    i13 = 1;
+                    i12 = 1;
                 }
                 return;
         }
@@ -521,9 +521,9 @@ public final /* synthetic */ class z implements Runnable {
         this.b = tLObject2;
     }
 
-    public /* synthetic */ z(yh.p1 p1Var, y9 y9Var, long j10, Utilities.Callback callback, Context context) {
+    public /* synthetic */ z(yh.o1 o1Var, y9 y9Var, long j10, Utilities.Callback callback, Context context) {
         this.a = 15;
-        this.d = p1Var;
+        this.d = o1Var;
         this.e = y9Var;
         this.c = j10;
         this.f = callback;

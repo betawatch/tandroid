@@ -2,7 +2,7 @@ package ug;
 
 import ai.bd;
 import ai.p9;
-import ai.v3;
+import ai.x3;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Canvas;
@@ -50,11 +50,11 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.kv;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.mh0;
+import org.telegram.ui.lh0;
 import org.telegram.ui.o71;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class y0 extends bb {
     public final ei.d X;
@@ -81,7 +81,7 @@ public final class y0 extends bb {
     public j s0;
     public int t0;
     public l u0;
-    public final p4.s0 v0;
+    public final p8.b v0;
 
     public y0(n2 n2Var, long j10) {
         super(n2Var, false);
@@ -98,7 +98,7 @@ public final class y0 extends bb {
         this.k0 = new ArrayList();
         this.l0 = new LinkedHashMap();
         this.p0 = AndroidUtilities.dp(134.0f);
-        this.v0 = new p4.s0(this, 8);
+        this.v0 = new p8.b(this, 7);
         this.backgroundPaddingLeft = 0;
         this.q0 = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
         ((ViewGroup) this.e.getParent()).removeView(this.e);
@@ -201,16 +201,16 @@ public final class y0 extends bb {
             if (chat != null && !ChatObject.isPublic(chat) && hashSet.contains(Long.valueOf(j10))) {
                 Context context = y0Var.n.getContext();
                 d6 d6Var = y0Var.resourcesProvider;
-                mh0 mh0Var = new mh0(y0Var, j10, 4);
+                lh0 lh0Var = new lh0(y0Var, j10, 4);
                 s0 s0Var = new s0(y0Var, 2);
                 AtomicBoolean atomicBoolean = new AtomicBoolean(false);
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
                 boolean isChannelAndNotMegaGroup = ChatObject.isChannelAndNotMegaGroup(chat);
                 alertDialog$Builder.a.R = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingGiveawayPrivateChannel : R.string.BoostingGiveawayPrivateGroup);
                 alertDialog$Builder.a.T = LocaleController.getString(isChannelAndNotMegaGroup ? R.string.BoostingGiveawayPrivateChannelWarning : R.string.BoostingGiveawayPrivateGroupWarning);
-                alertDialog$Builder.k(LocaleController.getString("Add", R.string.Add), new org.telegram.ui.web.m(13, atomicBoolean, s0Var));
-                alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), new si.a(11));
-                alertDialog$Builder.j(new v3(18, atomicBoolean, mh0Var));
+                alertDialog$Builder.k(LocaleController.getString("Add", R.string.Add), new org.telegram.ui.web.n(13, atomicBoolean, s0Var));
+                alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), new sg.y(12));
+                alertDialog$Builder.j(new x3(18, atomicBoolean, lh0Var));
                 alertDialog$Builder.o();
             } else if (chat != null) {
                 y0Var.S();

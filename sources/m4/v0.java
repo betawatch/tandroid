@@ -18,7 +18,7 @@ import org.telegram.ui.vr;
 import org.telegram.utils.code.highlight.PrismaHighlighter;
 import v7.q8;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, mw0, Utilities.Callback2Return, ih.h, vl0, aw0, bw0 {
     public final /* synthetic */ int a;
@@ -84,7 +84,7 @@ public final /* synthetic */ class v0 implements e2.j, g1, n2.m, d9.k, a2, mw0, 
     public Object apply(Object obj) {
         o2.q qVar = (o2.q) obj;
         qVar.e();
-        return e9.n0.u(e9.s.x(qVar.Y.b, new si.a(9)));
+        return e9.n0.u(e9.s.x(qVar.Y.b, new sg.y(10)));
     }
 
     @Override // org.telegram.ui.Components.bw0

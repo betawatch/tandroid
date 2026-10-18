@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class r5 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -28,19 +28,19 @@ public final class r5 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(13.0f));
-        addView(w9Var, w7.z5.a(26.0f, 0.0f, 11.33f, 0.0f, 0.0f, 26, 49));
+        addView(w9Var, w7.z5.d(26, 26.0f, 49, 0.0f, 11.33f, 0.0f, 0.0f));
         y5 y5Var = new y5(context);
         this.b = y5Var;
         y5Var.e = AndroidUtilities.dp(18.0f);
         y5Var.a.setStrokeWidth(AndroidUtilities.dp(3.0f));
-        addView(y5Var, w7.z5.a(48.0f, 0.0f, 0.66f, 0.0f, 0.0f, 48, 49));
+        addView(y5Var, w7.z5.d(48, 48.0f, 49, 0.0f, 0.66f, 0.0f, 0.0f));
         org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, false, false, false);
         this.c = q6Var;
         q6Var.setTypeface(AndroidUtilities.bold());
         q6Var.setGravity(17);
         q6Var.setTextSize(AndroidUtilities.dp(12.0f));
         q6Var.setTextColor(-1);
-        addView(q6Var, w7.z5.a(14.0f, 0.0f, 39.0f, 0.0f, 0.0f, -1, 48));
+        addView(q6Var, w7.z5.d(-1, 14.0f, 48, 0.0f, 39.0f, 0.0f, 0.0f));
         c(0.0f, false);
         w7.b6.a(this);
     }

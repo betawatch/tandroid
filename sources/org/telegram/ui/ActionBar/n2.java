@@ -22,8 +22,8 @@ import android.view.ViewParent;
 import android.view.Window;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.FrameLayout;
-import ci.aa;
-import ci.m7;
+import ci.l7;
+import ci.y9;
 import ci.z9;
 import java.util.ArrayList;
 import org.telegram.messenger.AccountInstance;
@@ -51,7 +51,7 @@ import org.telegram.ui.rp0;
 import org.telegram.ui.ry;
 import org.telegram.ui.z21;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class n2 {
     protected k actionBar;
@@ -116,10 +116,10 @@ public abstract class n2 {
         if (this.sheetsStack == null) {
             this.sheetsStack = new ArrayList<>();
         }
-        aa lastStoryViewer = getLastStoryViewer();
+        z9 lastStoryViewer = getLastStoryViewer();
         if (lastStoryViewer != null) {
             lastStoryViewer.v0 = j2Var;
-            j2Var.setOnDismissListener(new ci.t3(lastStoryViewer, 3));
+            j2Var.setOnDismissListener(new ci.s3(lastStoryViewer, 3));
         }
         this.sheetsStack.add(j2Var);
         updateSheetsVisibility();
@@ -252,18 +252,18 @@ public abstract class n2 {
         return l4Var;
     }
 
-    public aa createOverlayStoryViewer() {
+    public z9 createOverlayStoryViewer() {
         if (this.sheetsStack == null) {
             this.sheetsStack = new ArrayList<>();
         }
-        aa aaVar = new aa(this);
+        z9 z9Var = new z9(this);
         d5 d5Var = this.parentLayout;
         if (d5Var != null && ((ActionBarLayout) d5Var).b) {
-            aaVar.r1 = true;
+            z9Var.r1 = true;
         }
-        this.sheetsStack.add(aaVar);
+        this.sheetsStack.add(z9Var);
         updateSheetsVisibility();
-        return aaVar;
+        return z9Var;
     }
 
     public View createView(Context context) {
@@ -459,14 +459,14 @@ public abstract class n2 {
         return null;
     }
 
-    public aa getLastStoryViewer() {
+    public z9 getLastStoryViewer() {
         ArrayList<j2> arrayList = this.sheetsStack;
         if (arrayList == null || arrayList.isEmpty()) {
             return null;
         }
         for (int size = this.sheetsStack.size() - 1; size >= 0; size--) {
-            if ((this.sheetsStack.get(size) instanceof aa) && this.sheetsStack.get(size).isShown()) {
-                return (aa) this.sheetsStack.get(size);
+            if ((this.sheetsStack.get(size) instanceof z9) && this.sheetsStack.get(size).isShown()) {
+                return (z9) this.sheetsStack.get(size);
             }
         }
         return null;
@@ -529,21 +529,21 @@ public abstract class n2 {
         return getAccountInstance().getNotificationsSettings();
     }
 
-    public aa getOrCreateStoryViewer() {
+    public z9 getOrCreateStoryViewer() {
         if (this.sheetsStack == null) {
             this.sheetsStack = new ArrayList<>();
         }
-        aa aaVar = (this.sheetsStack.isEmpty() || !(i2.d.h(1, this.sheetsStack) instanceof aa)) ? null : (aa) i2.d.h(1, this.sheetsStack);
-        if (aaVar == null) {
-            aaVar = new aa(this);
+        z9 z9Var = (this.sheetsStack.isEmpty() || !(i2.d.h(1, this.sheetsStack) instanceof z9)) ? null : (z9) i2.d.h(1, this.sheetsStack);
+        if (z9Var == null) {
+            z9Var = new z9(this);
             d5 d5Var = this.parentLayout;
             if (d5Var != null && ((ActionBarLayout) d5Var).b) {
-                aaVar.r1 = true;
+                z9Var.r1 = true;
             }
-            this.sheetsStack.add(aaVar);
+            this.sheetsStack.add(z9Var);
             updateSheetsVisibility();
         }
-        return aaVar;
+        return z9Var;
     }
 
     public Activity getParentActivity() {
@@ -708,7 +708,7 @@ public abstract class n2 {
         if (this.sheetsStack != null) {
             for (int i10 = 0; i10 < this.sheetsStack.size(); i10++) {
                 j2 j2Var = this.sheetsStack.get(i10);
-                if ((j2Var instanceof aa) && view == ((aa) j2Var).s) {
+                if ((j2Var instanceof z9) && view == ((z9) j2Var).s) {
                     return true;
                 }
             }
@@ -886,11 +886,11 @@ public abstract class n2 {
             FileLog.e(e);
         }
         if (getLastStoryViewer() != null) {
-            aa lastStoryViewer = getLastStoryViewer();
+            z9 lastStoryViewer = getLastStoryViewer();
             lastStoryViewer.s1 = true;
-            z9 z9Var = lastStoryViewer.z0;
-            if (z9Var != null) {
-                z9Var.release(null);
+            y9 y9Var = lastStoryViewer.z0;
+            if (y9Var != null) {
+                y9Var.release(null);
                 lastStoryViewer.z0 = null;
             }
             if (lastStoryViewer.E0 == null) {
@@ -908,9 +908,9 @@ public abstract class n2 {
                     lastStoryViewer.A0 = null;
                 }
             }
-            m7 m7Var = lastStoryViewer.u1;
-            if (m7Var != null) {
-                m7Var.b();
+            l7 l7Var = lastStoryViewer.u1;
+            if (l7Var != null) {
+                l7Var.b();
             }
             getLastStoryViewer().P();
         }
@@ -932,17 +932,17 @@ public abstract class n2 {
             kVar.P();
         }
         if (getLastStoryViewer() != null) {
-            aa lastStoryViewer = getLastStoryViewer();
+            z9 lastStoryViewer = getLastStoryViewer();
             lastStoryViewer.s1 = false;
             if (!org.telegram.ui.l4.x().V && lastStoryViewer.t() != null) {
                 lastStoryViewer.t().f1(false);
             }
-            m7 m7Var = lastStoryViewer.u1;
-            if (m7Var != null) {
-                m7Var.a(false);
+            l7 l7Var = lastStoryViewer.u1;
+            if (l7Var != null) {
+                l7Var.a(false);
             }
-            if (ci.p1.Z.S) {
-                ci.p1.j();
+            if (ci.o1.Z.S) {
+                ci.o1.j();
             }
             getLastStoryViewer().P();
         }
@@ -1359,7 +1359,7 @@ public abstract class n2 {
                 try {
                     this.visibleDialog = dialog;
                     dialog.setCanceledOnTouchOutside(true);
-                    this.visibleDialog.setOnDismissListener(new ai.v3(5, this, onDismissListener));
+                    this.visibleDialog.setOnDismissListener(new ai.x3(5, this, onDismissListener));
                     this.visibleDialog.show();
                     return this.visibleDialog;
                 } catch (Exception e7) {
@@ -1385,29 +1385,29 @@ public abstract class n2 {
         return allowPresentFragment() && (d5Var = this.parentLayout) != null && ((ActionBarLayout) d5Var).R(b5Var);
     }
 
-    public aa getOrCreateStoryViewer(int i10) {
+    public z9 getOrCreateStoryViewer(int i10) {
         if (this.sheetsStack == null) {
             this.sheetsStack = new ArrayList<>();
         }
-        aa aaVar = null;
-        aa aaVar2 = (this.sheetsStack.isEmpty() || !(i2.d.h(1, this.sheetsStack) instanceof aa)) ? null : (aa) i2.d.h(1, this.sheetsStack);
-        if (aaVar2 == null || aaVar2.h == i10) {
-            aaVar = aaVar2;
+        z9 z9Var = null;
+        z9 z9Var2 = (this.sheetsStack.isEmpty() || !(i2.d.h(1, this.sheetsStack) instanceof z9)) ? null : (z9) i2.d.h(1, this.sheetsStack);
+        if (z9Var2 == null || z9Var2.h == i10) {
+            z9Var = z9Var2;
         } else {
-            aaVar2.q(true);
-            removeSheet(aaVar2);
+            z9Var2.q(true);
+            removeSheet(z9Var2);
         }
-        if (aaVar != null) {
-            return aaVar;
+        if (z9Var != null) {
+            return z9Var;
         }
-        aa aaVar3 = new aa(this);
+        z9 z9Var3 = new z9(this);
         d5 d5Var = this.parentLayout;
         if (d5Var != null && ((ActionBarLayout) d5Var).b) {
-            aaVar3.r1 = true;
+            z9Var3.r1 = true;
         }
-        this.sheetsStack.add(aaVar3);
+        this.sheetsStack.add(z9Var3);
         updateSheetsVisibility();
-        return aaVar3;
+        return z9Var3;
     }
 
     public void onBottomSheetCreated() {

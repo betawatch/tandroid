@@ -24,7 +24,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fi;
+import org.telegram.messenger.gi;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -35,9 +35,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.kh0;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.t60;
+import org.telegram.ui.ci0;
 import org.telegram.ui.d60;
 import org.telegram.ui.d70;
-import org.telegram.ui.di0;
 import org.telegram.ui.hk0;
 import org.telegram.ui.hs;
 import org.telegram.ui.j61;
@@ -46,7 +46,7 @@ import org.telegram.ui.tk0;
 import org.telegram.ui.vi;
 import org.telegram.ui.wk0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class vb implements Runnable {
     public final /* synthetic */ int a;
@@ -104,7 +104,7 @@ public final /* synthetic */ class vb implements Runnable {
                     break;
                 }
             case 1:
-                ci.v8.a((ci.v8) this.d, (TLObject) this.b, this.e, (ArrayList) this.f, (boolean[]) this.h, this.c);
+                ci.u8.a((ci.u8) this.d, (TLObject) this.b, this.e, (ArrayList) this.f, (boolean[]) this.h, this.c);
                 break;
             case 2:
                 m4.i1 i1Var = (m4.i1) this.d;
@@ -242,7 +242,7 @@ public final /* synthetic */ class vb implements Runnable {
                     TLRPC.GroupCall groupCall2 = groupcall.call;
                     tL_inputGroupCall2.id = groupCall2.id;
                     tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-                    ConnectionsManager.getInstance(i14).sendRequest(exportgroupcallinvite, new fi(b2Var, context, i14, exportgroupcallinvite, d6Var2, d60Var));
+                    ConnectionsManager.getInstance(i14).sendRequest(exportgroupcallinvite, new gi(b2Var, context, i14, exportgroupcallinvite, d6Var2, d60Var));
                     break;
                 } else {
                     b2Var.dismiss();
@@ -272,7 +272,7 @@ public final /* synthetic */ class vb implements Runnable {
                     tk0Var.run();
                     break;
                 } else {
-                    wk0.c(context2, this.c, tL_urlAuthResultRequest.match_codes, tL_urlAuthResultRequest.domain, new qy(16, strArr, tk0Var), true, new ah.j(23), n2Var.getResourceProvider());
+                    wk0.c(context2, this.c, tL_urlAuthResultRequest.match_codes, tL_urlAuthResultRequest.domain, new qy(16, strArr, tk0Var), true, new ah.j(22), n2Var.getResourceProvider());
                     break;
                 }
             case 13:
@@ -282,7 +282,7 @@ public final /* synthetic */ class vb implements Runnable {
                 c5.g gVar = (c5.g) this.f;
                 rw0 rw0Var = (rw0) this.h;
                 if (iVar.a == 0) {
-                    di0 di0Var = new di0(1, n2Var2);
+                    ci0 ci0Var = new ci0(1, n2Var2);
                     int i16 = this.c;
                     if (list != null && !list.isEmpty() && !UserConfig.getInstance(i16).isPremium()) {
                         for (Purchase purchase : list) {
@@ -297,27 +297,27 @@ public final /* synthetic */ class vb implements Runnable {
                                     tL_inputStorePaymentPremiumSubscription.upgrade = true;
                                 }
                                 tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentPremiumSubscription;
-                                ConnectionsManager.getInstance(i16).sendRequest(tL_payments_assignPlayMarketTransaction, new ci.t8(i16, di0Var, n2Var2, tL_payments_assignPlayMarketTransaction), 66);
+                                ConnectionsManager.getInstance(i16).sendRequest(tL_payments_assignPlayMarketTransaction, new ci.s8(i16, ci0Var, n2Var2, tL_payments_assignPlayMarketTransaction), 66);
                                 break;
                             }
                         }
                     }
-                    BillingController.getInstance().addResultListener(BillingController.PREMIUM_PRODUCT_ID, new org.telegram.ui.j3(di0Var, 4));
+                    BillingController.getInstance().addResultListener(BillingController.PREMIUM_PRODUCT_ID, new org.telegram.ui.j3(ci0Var, 4));
                     TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = new TLRPC.TL_payments_canPurchaseStore();
                     TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription2 = new TLRPC.TL_inputStorePaymentPremiumSubscription();
                     if (gVar != null) {
                         tL_inputStorePaymentPremiumSubscription2.upgrade = true;
                     }
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumSubscription2;
-                    ConnectionsManager.getInstance(i16).sendRequest(tL_payments_canPurchaseStore, new fi(i16, 5, n2Var2, rw0Var, gVar, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
+                    ConnectionsManager.getInstance(i16).sendRequest(tL_payments_canPurchaseStore, new gi(i16, 5, n2Var2, rw0Var, gVar, tL_payments_canPurchaseStore, tL_inputStorePaymentPremiumSubscription2));
                     break;
                 }
                 break;
             case 14:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.d;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.d;
                 TLObject tLObject4 = (TLObject) this.b;
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.e;
-                ci.z7 z7Var = (ci.z7) this.f;
+                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.e;
+                ci.y7 y7Var = (ci.y7) this.f;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.h;
                 boolean z12 = tLObject4 instanceof TLRPC.TL_boolTrue;
                 int i17 = this.c;
@@ -325,23 +325,23 @@ public final /* synthetic */ class vb implements Runnable {
                     try {
                         JSONObject jSONObject = new JSONObject();
                         jSONObject.put("status", "allowed");
-                        org.telegram.ui.web.a1.w(i17, x0Var, z7Var, "write_access_requested", jSONObject);
+                        org.telegram.ui.web.b1.w(i17, y0Var, y7Var, "write_access_requested", jSONObject);
                         break;
                     } catch (Exception e7) {
                         FileLog.e(e7);
                         return;
                     }
                 } else if (tL_error2 != null) {
-                    a1Var.Y(tL_error2.text);
+                    b1Var.Y(tL_error2.text);
                     break;
                 } else {
                     String[] strArr2 = {"cancelled"};
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(a1Var.getContext());
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b1Var.getContext());
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.BotWebViewRequestWriteTitle);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.BotWebViewRequestWriteMessage);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewRequestAllow), new org.telegram.ui.web.m(1, a1Var, strArr2));
-                    alertDialog$Builder.h(LocaleController.getString(R.string.BotWebViewRequestDontAllow), new hk0(17));
-                    a1Var.X(3, alertDialog$Builder.a, new org.telegram.ui.web.x(strArr2, i17, x0Var, z7Var, 1));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewRequestAllow), new org.telegram.ui.web.n(1, b1Var, strArr2));
+                    alertDialog$Builder.h(LocaleController.getString(R.string.BotWebViewRequestDontAllow), new hk0(18));
+                    b1Var.X(3, alertDialog$Builder.a, new org.telegram.ui.web.y(strArr2, i17, y0Var, y7Var, 1));
                     break;
                 }
             default:
@@ -380,7 +380,7 @@ public final /* synthetic */ class vb implements Runnable {
                         UserConfig.getInstance(i18).setCurrentUser(user);
                         UserConfig.getInstance(i18).saveConfig(true);
                         viVar.run();
-                        org.telegram.ui.Components.xc.a0(d5Var.getLastFragment()).V(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new org.telegram.ui.Wallet.j(i18, d5Var, 10)), null).j();
+                        org.telegram.ui.Components.xc.a0(d5Var.getLastFragment()).V(Collections.singletonList(user), AndroidUtilities.replaceTags(LocaleController.getString(R.string.ApplyAvatarHintTitle)), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ApplyAvatarHint), new org.telegram.ui.Wallet.j(i18, d5Var, 11)), null).j();
                         break;
                     }
                 }
@@ -468,13 +468,13 @@ public final /* synthetic */ class vb implements Runnable {
         this.h = f1Var;
     }
 
-    public /* synthetic */ vb(org.telegram.ui.web.a1 a1Var, TLObject tLObject, int i10, org.telegram.ui.web.x0 x0Var, ci.z7 z7Var, TLRPC.TL_error tL_error) {
+    public /* synthetic */ vb(org.telegram.ui.web.b1 b1Var, TLObject tLObject, int i10, org.telegram.ui.web.y0 y0Var, ci.y7 y7Var, TLRPC.TL_error tL_error) {
         this.a = 14;
-        this.d = a1Var;
+        this.d = b1Var;
         this.b = tLObject;
         this.c = i10;
-        this.e = x0Var;
-        this.f = z7Var;
+        this.e = y0Var;
+        this.f = y7Var;
         this.h = tL_error;
     }
 }

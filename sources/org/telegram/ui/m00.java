@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m00 extends pg.b {
     public final Context d;
@@ -189,7 +189,7 @@ public final class m00 extends pg.b {
                 view = new org.telegram.ui.Cells.l4(context, 22);
                 break;
             case 1:
-                org.telegram.ui.Cells.va vaVar = new org.telegram.ui.Cells.va(6, 0, context, false);
+                org.telegram.ui.Cells.va vaVar = new org.telegram.ui.Cells.va(context, 6, 0, false);
                 vaVar.setSelfAsSavedMessages(true);
                 view = vaVar;
                 break;
@@ -223,7 +223,7 @@ public final class m00 extends pg.b {
                 ImageView imageView = new ImageView(context);
                 vzVar.a = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                vzVar.addView(imageView, w7.z5.a(24.0f, 24.0f, 0.0f, 24.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+                vzVar.addView(imageView, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 24.0f, 0.0f, 24.0f, 0.0f));
                 TextView textView = new TextView(context);
                 vzVar.b = textView;
                 textView.setTextSize(1, 16.0f);
@@ -233,7 +233,7 @@ public final class m00 extends pg.b {
                 textView.setPadding(z10 ? 24 : 0, 0, z10 ? 0 : 24, 0);
                 textView.setGravity(LocaleController.isRTL ? 5 : 3);
                 boolean z11 = LocaleController.isRTL;
-                vzVar.addView(textView, w7.z5.a(-2.0f, z11 ? 0.0f : 72.0f, 0.0f, z11 ? 72.0f : 0.0f, 0.0f, -1, 23));
+                vzVar.addView(textView, w7.z5.d(-1, -2.0f, 23, z11 ? 0.0f : 72.0f, 0.0f, z11 ? 72.0f : 0.0f, 0.0f));
                 view = vzVar;
                 break;
             case 5:
@@ -243,7 +243,7 @@ public final class m00 extends pg.b {
                 xj0Var.f(R.raw.filter_new, 100, 100, null);
                 xj0Var.setScaleType(ImageView.ScaleType.CENTER);
                 xj0Var.d();
-                f00Var.addView(xj0Var, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, 0.0f, 100, 17));
+                f00Var.addView(xj0Var, w7.z5.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
                 xj0Var.setOnClickListener(new a(f00Var, 23));
                 view = f00Var;
                 break;

@@ -5,15 +5,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class j70 extends org.telegram.ui.Cells.va {
     public final TextView a0;
     public final TextView b0;
 
     public j70(Context context) {
-        super(6, 0, context, true);
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        super(context, 6, 0, true);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
         TextView textView = new TextView(context);
         this.a0 = textView;
         org.telegram.messenger.g0.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, textView);
@@ -23,6 +23,6 @@ public final class j70 extends org.telegram.ui.Cells.va {
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false));
         textView2.setTextSize(1, 13.0f);
         e.addView(textView2, w7.z5.t(-2, -2, 5, 0, 1, 0, 0));
-        addView(e, w7.z5.a(-2.0f, 18.0f, 0.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(e, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
     }
 }

@@ -1,7 +1,7 @@
 package androidx.car.app.utils;
 
 import a3.l0;
-import ai.t2;
+import ai.r2;
 import ai.y0;
 import android.os.RemoteException;
 import android.util.Log;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static IOnDoneCallback a() {
@@ -64,7 +64,7 @@ public abstract class g {
     }
 
     public static void f(IOnDoneCallback iOnDoneCallback, String str, Exception exc) {
-        d(str.concat(" onFailure"), new t2(iOnDoneCallback, exc, str, 2));
+        d(str.concat(" onFailure"), new r2(iOnDoneCallback, exc, str, 2));
     }
 
     public static List g(List list) {

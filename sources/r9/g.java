@@ -14,10 +14,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-import w7.c7;
-import w7.f7;
+import org.telegram.ui.web.g2;
+import w7.a7;
+import w7.b7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class g implements b {
     public static final f n = new f(0);
@@ -91,11 +92,11 @@ public final class g implements b {
                 }
             }
             if (this.a.isEmpty()) {
-                c7.a(arrayList3);
+                a7.a(arrayList3);
             } else {
                 ArrayList arrayList6 = new ArrayList(this.a.keySet());
                 arrayList6.addAll(arrayList3);
-                c7.a(arrayList6);
+                a7.a(arrayList6);
             }
             int size3 = arrayList3.size();
             int i15 = 0;
@@ -106,7 +107,7 @@ public final class g implements b {
                 this.a.put(aVar2, new n(new l9.d(i10, this, aVar2)));
             }
             arrayList5.addAll(h(arrayList3));
-            arrayList5.addAll(i());
+            arrayList5.addAll(j());
             e();
         }
         int size4 = arrayList5.size();
@@ -217,7 +218,7 @@ public final class g implements b {
 
     @Override // r9.b
     public final synchronized qa.b g(r rVar) {
-        f7.a(rVar, "Null interface requested.");
+        b7.a(rVar, "Null interface requested.");
         return (qa.b) this.b.get(rVar);
     }
 
@@ -234,7 +235,7 @@ public final class g implements b {
                 for (r rVar : aVar.b) {
                     HashMap hashMap = this.b;
                     if (hashMap.containsKey(rVar)) {
-                        arrayList2.add(new p2.b(10, (p) ((qa.b) hashMap.get(rVar)), bVar));
+                        arrayList2.add(new g2(11, (p) ((qa.b) hashMap.get(rVar)), bVar));
                     } else {
                         hashMap.put(rVar, bVar);
                     }
@@ -244,7 +245,19 @@ public final class g implements b {
         return arrayList2;
     }
 
-    public final ArrayList i() {
+    @Override // r9.b
+    public final Set i(r rVar) {
+        qa.b bVar;
+        synchronized (this) {
+            bVar = (o) this.c.get(rVar);
+            if (bVar == null) {
+                bVar = n;
+            }
+        }
+        return (Set) bVar.get();
+    }
+
+    public final ArrayList j() {
         HashMap hashMap = this.c;
         ArrayList arrayList = new ArrayList();
         HashMap hashMap2 = new HashMap();
@@ -265,7 +278,7 @@ public final class g implements b {
                 o oVar = (o) hashMap.get(entry2.getKey());
                 Iterator it = ((Set) entry2.getValue()).iterator();
                 while (it.hasNext()) {
-                    arrayList.add(new p2.b(11, oVar, (qa.b) it.next()));
+                    arrayList.add(new g2(12, oVar, (qa.b) it.next()));
                 }
             } else {
                 r rVar2 = (r) entry2.getKey();
@@ -278,18 +291,6 @@ public final class g implements b {
             }
         }
         return arrayList;
-    }
-
-    @Override // r9.b
-    public final Set j(r rVar) {
-        qa.b bVar;
-        synchronized (this) {
-            bVar = (o) this.c.get(rVar);
-            if (bVar == null) {
-                bVar = n;
-            }
-        }
-        return (Set) bVar.get();
     }
 
     @Override // r9.b

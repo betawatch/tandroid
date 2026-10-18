@@ -34,7 +34,7 @@ import org.telegram.ui.Components.ca0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.jc0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v7 extends FrameLayout {
     public boolean E;
@@ -82,9 +82,9 @@ public final class v7 extends FrameLayout {
         j5Var.setScrollNonFitText(true);
         if (z10) {
             boolean z11 = LocaleController.isRTL;
-            addView(w9Var, w7.z5.a(42.0f, z11 ? 0.0f : 15.0f, 12.0f, z11 ? 15.0f : 0.0f, 0.0f, 42, (z11 ? 5 : 3) | 48));
+            addView(w9Var, w7.z5.d(42, 42.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 15.0f, 12.0f, z11 ? 15.0f : 0.0f, 0.0f));
             boolean z12 = LocaleController.isRTL;
-            addView(j5Var, w7.z5.a(20.0f, z12 ? i10 : 73.0f, 12.0f, z12 ? 73.0f : 16.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
+            addView(j5Var, w7.z5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? i10 : 73.0f, 12.0f, z12 ? 73.0f : 16.0f, 0.0f));
             TextView textView = new TextView(context);
             this.d = textView;
             textView.setSingleLine();
@@ -93,12 +93,12 @@ public final class v7 extends FrameLayout {
             textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
             textView.setGravity(LocaleController.isRTL ? 5 : 3);
             boolean z13 = LocaleController.isRTL;
-            addView(textView, w7.z5.a(-2.0f, z13 ? i10 : 73.0f, 33.0f, z13 ? 73.0f : i10, 0.0f, -1, (z13 ? 5 : 3) | 48));
+            addView(textView, w7.z5.d(-1, -2.0f, (z13 ? 5 : 3) | 48, z13 ? i10 : 73.0f, 33.0f, z13 ? 73.0f : i10, 0.0f));
         } else {
             boolean z14 = LocaleController.isRTL;
-            addView(w9Var, w7.z5.a(42.0f, z14 ? 0.0f : 15.0f, 6.0f, z14 ? 15.0f : 0.0f, 0.0f, 42, (z14 ? 5 : 3) | 48));
+            addView(w9Var, w7.z5.d(42, 42.0f, (z14 ? 5 : 3) | 48, z14 ? 0.0f : 15.0f, 6.0f, z14 ? 15.0f : 0.0f, 0.0f));
             boolean z15 = LocaleController.isRTL;
-            addView(j5Var, w7.z5.a(-2.0f, z15 ? i10 : 74.0f, 17.0f, z15 ? 74.0f : i10, 0.0f, -2, (z15 ? 5 : 3) | 48));
+            addView(j5Var, w7.z5.d(-2, -2.0f, (z15 ? 5 : 3) | 48, z15 ? i10 : 74.0f, 17.0f, z15 ? 74.0f : i10, 0.0f));
         }
         setWillNotDraw(false);
     }

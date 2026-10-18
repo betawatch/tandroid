@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class go extends li {
     public final vz n;
@@ -28,7 +28,7 @@ public final class go extends li {
         vzVar.setText(LocaleController.getString(R.string.NoPhotos));
         vzVar.setOnTouchListener(null);
         vzVar.setTextSize(16);
-        addView(vzVar, w7.z5.d(-2.0f, -1));
+        addView(vzVar, w7.z5.c(-2.0f, -1));
         vzVar.a(R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         TLRPC.Chat m12 = this.b.m1();
         if (i10 == 1) {
@@ -52,7 +52,7 @@ public final class go extends li {
         im0Var.setAdapter(z7Var);
         im0Var.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
         im0Var.setOnScrollListener(new ah.d0(this, 28));
-        addView(im0Var, w7.z5.d(-1.0f, -1));
+        addView(im0Var, w7.z5.c(-1.0f, -1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x0038  */

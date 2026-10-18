@@ -30,7 +30,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.k5;
+import org.telegram.messenger.l5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.a2;
 import org.telegram.ui.ActionBar.b2;
@@ -56,9 +56,9 @@ import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PrivacyControlActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.dj0;
+import org.telegram.ui.cj0;
+import org.telegram.ui.dg0;
 import org.telegram.ui.eg0;
-import org.telegram.ui.fg0;
 import org.telegram.ui.gm0;
 import org.telegram.ui.hj;
 import org.telegram.ui.kc0;
@@ -67,7 +67,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.xm0;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.BooleanCallback, kd0, ImageReceiver.ImageReceiverDelegate, e5, yl0, xl0, a2, kc0, tl0, zl0 {
     public final /* synthetic */ int a;
@@ -84,10 +84,10 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
     public void C(int i10, int i11, boolean z10) {
         switch (this.a) {
             case 7:
-                AndroidUtilities.runOnUIThread(new hg.n(i10, this.b, (yo) this.c, 7), 16L);
+                AndroidUtilities.runOnUIThread(new hg.n(i10, this.b, (yo) this.c, 8), 16L);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new hg.n(i10, this.b, (uo) this.c, 8), 16L);
+                AndroidUtilities.runOnUIThread(new hg.n(i10, this.b, (uo) this.c, 9), 16L);
                 break;
         }
     }
@@ -185,7 +185,7 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
                 ContactsActivity.U((ContactsActivity) this.c, this.b, view, i10);
                 break;
             default:
-                dj0.Q((dj0) this.c, this.b, view);
+                cj0.Q((cj0) this.c, this.b, view);
                 break;
         }
     }
@@ -224,7 +224,7 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        k5.a(this, i10, str, drawable);
+        l5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.Components.kd0
@@ -267,13 +267,13 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
                 profileActivity.d.u(this.b);
                 break;
             case 14:
-                fg0 fg0Var = ((eg0) this.c).V;
+                eg0 eg0Var = ((dg0) this.c).V;
                 int i11 = UserConfig.selectedAccount;
                 int i12 = this.b;
                 if (i11 != i12) {
-                    ((LaunchActivity) fg0Var.getParentActivity()).O0(i12);
+                    ((LaunchActivity) eg0Var.getParentActivity()).O0(i12);
                 }
-                fg0Var.finishFragment();
+                eg0Var.finishFragment();
                 break;
             case 16:
                 xm0 xm0Var = ((gm0) this.c).a;
@@ -307,7 +307,7 @@ public final /* synthetic */ class r implements e2.o, e2.j, MessagesStorage.Bool
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        k5.b(this, imageReceiver);
+        l5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.ui.Components.tl0

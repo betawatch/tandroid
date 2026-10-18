@@ -6,12 +6,12 @@ import android.os.SystemClock;
 import java.lang.reflect.Method;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class l0 {
     public boolean A;
     public long B;
-    public final ya.c a;
+    public final ya.d a;
     public final e2.g0 b;
     public final long[] c;
     public final AudioTrack d;
@@ -38,8 +38,8 @@ public final class l0 {
     public long y;
     public long z;
 
-    public l0(ya.c cVar, e2.g0 g0Var, AudioTrack audioTrack, int i10, int i11, int i12) {
-        this.a = cVar;
+    public l0(ya.d dVar, e2.g0 g0Var, AudioTrack audioTrack, int i10, int i11, int i12) {
+        this.a = dVar;
         this.b = g0Var;
         this.d = audioTrack;
         try {
@@ -49,7 +49,7 @@ public final class l0 {
         this.c = new long[10];
         this.z = -9223372036854775807L;
         this.y = -9223372036854775807L;
-        this.h = new b0(audioTrack, cVar);
+        this.h = new b0(audioTrack, dVar);
         int sampleRate = audioTrack.getSampleRate();
         this.e = sampleRate;
         boolean M = e2.m0.M(i10);

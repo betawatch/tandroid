@@ -23,7 +23,7 @@ import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l0 extends hm0 {
     public final /* synthetic */ r0 c;
@@ -87,7 +87,7 @@ public final class l0 extends hm0 {
                 int indexOf = TextUtils.indexOf(replaceTags, "%3$s");
                 replaceTags.replace(indexOf, indexOf + 4, (CharSequence) replaceSingleTag);
                 x90Var.setText(replaceTags, TextView.BufferType.EDITABLE);
-                x90Var.post(new org.telegram.ui.Wallet.j(q0Var, indexOf, 9));
+                x90Var.post(new org.telegram.ui.Wallet.j(q0Var, indexOf, 10));
             } catch (Exception e) {
                 FileLog.e(e);
             }

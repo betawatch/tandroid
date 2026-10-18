@@ -26,7 +26,7 @@ import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vz;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class i0 extends li implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public final vz E;
@@ -56,13 +56,13 @@ public final class i0 extends li implements NotificationCenter.NotificationCente
         e2Var.addTextChangedListener(c0Var);
         e2Var.setHint(LocaleController.getString(R.string.BusinessRepliesSearch));
         frameLayout.addView(siVar, z5.g());
-        FrameLayout.LayoutParams a2 = z5.a(48.0f, 7.0f, 8.0f, 7.0f, 4.0f, -1, 51);
-        ((ViewGroup.MarginLayoutParams) a2).topMargin += AndroidUtilities.statusBarHeight;
-        frameLayout.addView(piVar, a2);
+        FrameLayout.LayoutParams d = z5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
+        ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
+        frameLayout.addView(piVar, d);
         vz vzVar = new vz(context, d6Var);
         this.E = vzVar;
         vzVar.c();
-        addView(vzVar, z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 51));
+        addView(vzVar, z5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         ai.u1 u1Var = new ai.u1(this, context, d6Var, 4);
         this.s = u1Var;
         u1Var.p1();
@@ -80,7 +80,7 @@ public final class i0 extends li implements NotificationCenter.NotificationCente
         u1Var.setHorizontalScrollBarEnabled(false);
         u1Var.setVerticalScrollBarEnabled(false);
         u1Var.setClipToPadding(false);
-        addView(u1Var, z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        addView(u1Var, z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         f0 f0Var = new f0(this, context);
         this.x = f0Var;
         u1Var.setAdapter(f0Var);

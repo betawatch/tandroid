@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -19,9 +19,9 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.ey;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class f0 extends sg.l1 {
+public final class f0 extends sg.m1 {
     public static f0 S0;
     public final wg.a Q0;
     public final String R0;
@@ -43,7 +43,7 @@ public final class f0 extends sg.l1 {
             dVar.setEnabled(true);
             dVar.g(LocaleController.getString(R.string.GiftPremiumActivateForFree), false, true);
             aVar2.b.setBackgroundColor(h6.w0(h6.h5, aVar2.c));
-            this.containerView.addView(this.Q0, z5.a(68.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
+            this.containerView.addView(this.Q0, z5.d(-1, 68.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         fixNavigationBar();
     }
@@ -54,32 +54,32 @@ public final class f0 extends sg.l1 {
     }
 
     public static void e0(f0 f0Var) {
-        sg.l1 l1Var = new sg.l1(f0Var.n, UserConfig.selectedAccount, null, null, null, f0Var.resourcesProvider);
-        l1Var.J0 = true;
-        l1Var.K0 = true;
-        l1Var.c0 = true;
-        f0Var.n.showDialog(l1Var);
+        sg.m1 m1Var = new sg.m1(f0Var.n, UserConfig.selectedAccount, null, null, null, f0Var.resourcesProvider);
+        m1Var.J0 = true;
+        m1Var.K0 = true;
+        m1Var.c0 = true;
+        f0Var.n.showDialog(m1Var);
     }
 
     public static void f0(f0 f0Var) {
         String str = "https://t.me/giftcode/" + f0Var.R0;
-        ey eyVar = new ey(kk.d(3, "onlySelect", "dialogsType", true));
-        eyVar.C2 = new org.telegram.ui.web.m(17, f0Var, str);
+        ey eyVar = new ey(lk.d(3, "onlySelect", "dialogsType", true));
+        eyVar.C2 = new org.telegram.ui.web.n(17, f0Var, str);
         f0Var.n.presentFragment(eyVar);
         f0Var.dismiss();
     }
 
-    @Override // sg.l1
+    @Override // sg.m1
     public final int Y() {
         return 6;
     }
 
-    @Override // sg.l1
+    @Override // sg.m1
     public final void Z(View view) {
         ((wg.t) view).setSlug(this.R0);
     }
 
-    @Override // sg.l1
+    @Override // sg.m1
     public final View a0(Context context, int i10) {
         if (i10 != 6) {
             return null;
@@ -89,7 +89,7 @@ public final class f0 extends sg.l1 {
         return tVar;
     }
 
-    @Override // sg.l1
+    @Override // sg.m1
     public final void b0(boolean z10) {
         super.b0(z10);
         this.P0.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
@@ -98,7 +98,7 @@ public final class f0 extends sg.l1 {
         this.P0.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceSingleTag(LocaleController.getString("GiftPremiumAboutThisLink", R.string.GiftPremiumAboutThisLink), h6.gc, 0, new d0(this, 0)), AndroidUtilities.replaceTags(LocaleController.getString("GiftPremiumAboutThisLinkEnd", R.string.GiftPremiumAboutThisLinkEnd))));
     }
 
-    @Override // sg.l1
+    @Override // sg.m1
     public final void c0() {
         int i10 = this.f0;
         this.g0 = i10;

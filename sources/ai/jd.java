@@ -6,7 +6,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.b10;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class jd extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final a71 a;
@@ -27,7 +27,7 @@ public final class jd extends FrameLayout implements NotificationCenter.Notifica
         this.h = new id(j10, i11, i10, z10);
         a71 a71Var = new a71(context, i11, i12, true, new q(this, 10), new a1.c(this, 11), null, d6Var);
         this.a = a71Var;
-        addView(a71Var, w7.z5.d(-1.0f, -1));
+        addView(a71Var, w7.z5.c(-1.0f, -1));
         a71Var.setOnScrollListener(new ah.d0(this, 4));
     }
 

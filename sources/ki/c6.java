@@ -40,7 +40,7 @@ import org.telegram.ui.Components.gj0;
 import org.telegram.ui.Components.gu;
 import org.telegram.ui.Components.pm0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y5, m9 {
     public static final /* synthetic */ int V = 0;
@@ -714,7 +714,7 @@ public final class c6 extends FrameLayout implements org.telegram.ui.ActionBar.y
             linearLayout3.setOrientation(0);
             this.s.setBackground(h6.Z(h6.w0(h6.i6, this.a), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f)));
             this.s.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-            addView(this.s, w7.z5.a(-2.0f, 0.0f, -15.0f, -5.0f, 0.0f, -2, 53));
+            addView(this.s, w7.z5.d(-2, -2.0f, 53, 0.0f, -15.0f, -5.0f, 0.0f));
             TextView textView = new TextView(getContext());
             this.v = textView;
             textView.setTextSize(1, 12.0f);

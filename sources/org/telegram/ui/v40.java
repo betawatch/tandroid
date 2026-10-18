@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v40 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Activity a;
@@ -137,7 +137,7 @@ public final class v40 extends org.telegram.ui.ActionBar.j {
             if (m1Var == null || !m1Var.isShowing()) {
                 return;
             }
-            u0Var.b.measure(org.telegram.messenger.kk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+            u0Var.b.measure(org.telegram.messenger.lk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
             u0Var.O(true, true);
             return;
         }

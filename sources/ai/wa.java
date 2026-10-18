@@ -33,7 +33,7 @@ import org.telegram.ui.px;
 import org.telegram.ui.sn;
 import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class wa implements wl0 {
     public final /* synthetic */ int a;
@@ -86,13 +86,13 @@ public final /* synthetic */ class wa implements wl0 {
                             break;
                         }
                     } else {
-                        ci.aa orCreateStoryViewer = n2Var.getOrCreateStoryViewer();
+                        ci.z9 orCreateStoryViewer = n2Var.getOrCreateStoryViewer();
                         Context context = rVar.getContext();
                         int id2 = messageObject.getId();
-                        ci.t6 t6Var = rVar.a;
-                        ci.r7 a2 = ci.r7.a(rVar.f);
+                        ci.s6 s6Var = rVar.a;
+                        ci.q7 a2 = ci.q7.a(rVar.f);
                         a2.s += ((n2Var instanceof ProfileActivity) && ((ProfileActivity) n2Var).t1) ? AndroidUtilities.dp(68.0f) : 0;
-                        orCreateStoryViewer.C(context, id2, t6Var, a2);
+                        orCreateStoryViewer.C(context, id2, s6Var, a2);
                         break;
                     }
                 }
@@ -168,8 +168,8 @@ public final /* synthetic */ class wa implements wl0 {
                 e.j = str;
                 e.a.edit().putString("typeface", str).apply();
                 rg.j jVar = xaVar.J0;
-                if (jVar instanceof rg.v2) {
-                    ((rg.v2) jVar).setTypeface(l0Var);
+                if (jVar instanceof rg.u2) {
+                    ((rg.u2) jVar).setTypeface(l0Var);
                 }
                 xaVar.O0(false);
                 break;
@@ -268,10 +268,10 @@ public final /* synthetic */ class wa implements wl0 {
                 if (O instanceof ig.z1) {
                     if (UserConfig.getInstance(tiVar.M1).isPremium()) {
                         ig.z1 z1Var = (ig.z1) O;
-                        org.telegram.ui.Components.f5.Z(tiVar.M1, z1Var.a(), tiVar.p1(), new o2(23, i0Var, z1Var));
+                        org.telegram.ui.Components.f5.Z(tiVar.M1, z1Var.a(), tiVar.p1(), new n2(23, i0Var, z1Var));
                         break;
                     } else if (tiVar.f0 != null) {
-                        new sg.x0(tiVar.f0, i0Var.getContext(), tiVar.M1, true, 31, false, null).show();
+                        new sg.y0(tiVar.f0, i0Var.getContext(), tiVar.M1, true, 31, false, null).show();
                         break;
                     }
                 }
@@ -332,8 +332,8 @@ public final /* synthetic */ class wa implements wl0 {
                 e7.j = str2;
                 e7.a.edit().putString("typeface", str2).apply();
                 rg.j jVar2 = it0Var.S0;
-                if (jVar2 instanceof rg.v2) {
-                    ((rg.v2) jVar2).setTypeface(l0Var2);
+                if (jVar2 instanceof rg.u2) {
+                    ((rg.u2) jVar2).setTypeface(l0Var2);
                 }
                 it0Var.A0(false);
                 break;
@@ -345,14 +345,14 @@ public final /* synthetic */ class wa implements wl0 {
                 u0Var.e = true;
                 break;
             case 20:
-                sg.j0.X((sg.j0) this.b, view);
+                sg.k0.X((sg.k0) this.b, view);
                 break;
             case 21:
-                sg.s0 s0Var = (sg.s0) this.b;
+                sg.t0 t0Var = (sg.t0) this.b;
                 if (view != null) {
-                    s0Var.x1(view, true);
-                    s0Var.b3 = false;
-                    s0Var.v0(0, view.getTop() - ((s0Var.getMeasuredHeight() - view.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
+                    t0Var.x1(view, true);
+                    t0Var.b3 = false;
+                    t0Var.v0(0, view.getTop() - ((t0Var.getMeasuredHeight() - view.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
                     break;
                 }
                 break;
@@ -363,10 +363,10 @@ public final /* synthetic */ class wa implements wl0 {
                 ((xh.k) this.b).h(view);
                 break;
             case 24:
-                yh.l4 l4Var = (yh.l4) this.b;
-                ei.d dVar = l4Var.c0;
-                HashSet hashSet = l4Var.Z;
-                s61 s61Var2 = l4Var.e0;
+                yh.k4 k4Var = (yh.k4) this.b;
+                ei.d dVar = k4Var.c0;
+                HashSet hashSet = k4Var.Z;
+                s61 s61Var2 = k4Var.e0;
                 if (s61Var2 != null && (G = s61Var2.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TL_stars.SavedStarGift) {
@@ -375,11 +375,11 @@ public final /* synthetic */ class wa implements wl0 {
                         long j10 = i18 == 0 ? savedStarGift.saved_id : i18;
                         if (hashSet.contains(Long.valueOf(j10))) {
                             hashSet.remove(Long.valueOf(j10));
-                            ((yh.h1) view).b(false, true);
+                            ((yh.g1) view).b(false, true);
                             G.e = false;
                         } else {
                             hashSet.add(Long.valueOf(j10));
-                            ((yh.h1) view).b(true, true);
+                            ((yh.g1) view).b(true, true);
                             G.e = true;
                         }
                         dVar.setEnabled(hashSet.size() > 0);
@@ -396,19 +396,19 @@ public final /* synthetic */ class wa implements wl0 {
                         zh.f0 f0Var2 = c0Var.a;
                         if (f0Var2.d != null) {
                             if (f0Var2.getUserConfig().isPremium() || ((d0Var = f0Var2.h) != null && d0Var.H.contains(Long.valueOf(j11)))) {
-                                zh.t0 t0Var = f0Var2.d;
-                                int i19 = t0Var.b;
+                                zh.u0 u0Var2 = f0Var2.d;
+                                int i19 = u0Var2.b;
                                 String o10 = a1.g.o(j11, "c:");
-                                HashMap hashMap = t0Var.J;
+                                HashMap hashMap = u0Var2.J;
                                 if (!hashMap.containsKey(o10)) {
                                     org.telegram.ui.Components.r5 m10 = org.telegram.ui.Components.r5.m(i19, 2, document2);
-                                    m10.a(t0Var);
+                                    m10.a(u0Var2);
                                     hashMap.put(o10, m10);
                                 }
                                 if (o10 != null && !o10.startsWith("c:")) {
                                     o10 = o10.replace("️", "");
                                 }
-                                ArrayList arrayList4 = t0Var.I;
+                                ArrayList arrayList4 = u0Var2.I;
                                 int indexOf = arrayList4.indexOf(o10);
                                 if (indexOf >= 0) {
                                     arrayList4.remove(indexOf);
@@ -418,8 +418,8 @@ public final /* synthetic */ class wa implements wl0 {
                                     }
                                     arrayList4.add(o10);
                                 }
-                                t0Var.c();
-                                t0Var.i0();
+                                u0Var2.c();
+                                u0Var2.i0();
                                 zh.d0 d0Var2 = f0Var2.h;
                                 if (d0Var2 != null) {
                                     ArrayList a10 = d0Var2.a();
@@ -440,10 +440,10 @@ public final /* synthetic */ class wa implements wl0 {
                                     break;
                                 }
                             } else {
-                                zh.t0 t0Var2 = f0Var2.d;
-                                t0Var2.getClass();
-                                t0Var2.c1(0, LocaleController.getString(R.string.QrPremiumEmojiToast), LocaleController.getString(R.string.QrPremiumSubscribe));
-                                t0Var2.i0();
+                                zh.u0 u0Var3 = f0Var2.d;
+                                u0Var3.getClass();
+                                u0Var3.d1(0, LocaleController.getString(R.string.QrPremiumEmojiToast), LocaleController.getString(R.string.QrPremiumSubscribe));
+                                u0Var3.i0();
                                 break;
                             }
                         }

@@ -28,7 +28,7 @@ import org.telegram.ui.jf1;
 import org.telegram.ui.lz0;
 import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements jf1, org.telegram.ui.ActionBar.a2, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, xl0, MessagesController.IsInChatCheckedCallback, t5.b, s5.e, qa.a {
     public final /* synthetic */ int a;
@@ -107,7 +107,7 @@ public final /* synthetic */ class f implements jf1, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.l5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -135,7 +135,7 @@ public final /* synthetic */ class f implements jf1, org.telegram.ui.ActionBar.a
                 break;
             default:
                 s50 s50Var = (s50) this.c;
-                s50Var.d.getMessagesController().addUserToChat(s50Var.j1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.n2) s50Var.i0.O().getFragmentStack().get(s50Var.i0.O().getFragmentStack().size() - 1), new r3(s50Var, this.b, 28));
+                s50Var.d.getMessagesController().addUserToChat(s50Var.j1(), (TLRPC.User) this.d, 0, null, (org.telegram.ui.ActionBar.n2) s50Var.i0.O().getFragmentStack().get(s50Var.i0.O().getFragmentStack().size() - 1), new t3(s50Var, this.b, 28));
                 break;
         }
     }
@@ -164,7 +164,7 @@ public final /* synthetic */ class f implements jf1, org.telegram.ui.ActionBar.a
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.l5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.messenger.ChatObject.Call.OnParticipantsLoad

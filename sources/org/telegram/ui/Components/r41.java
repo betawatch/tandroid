@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class r41 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final String[] R = {"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:94.0) Gecko/20100101 Firefox/94.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:95.0) Gecko/20100101 Firefox/95.0", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36"};
@@ -113,7 +113,7 @@ public abstract class r41 extends org.telegram.ui.ActionBar.f3 implements Notifi
             }
         } catch (Exception unused) {
         }
-        this.E.addView(this.F, w7.z5.d(-1.0f, -1));
+        this.E.addView(this.F, w7.z5.c(-1.0f, -1));
         if (this.h != null) {
             RichMessageLayout.PreviewView previewView = new RichMessageLayout.PreviewView(context, this.currentAccount, null);
             this.n = previewView;
@@ -165,7 +165,7 @@ public abstract class r41 extends org.telegram.ui.ActionBar.f3 implements Notifi
         this.L = view2;
         view2.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.V5));
         view2.setAlpha(0.0f);
-        frameLayout.addView(view2, w7.z5.b(-1.0f, AndroidUtilities.getShadowHeight() / AndroidUtilities.dpf2(1.0f), 55));
+        frameLayout.addView(view2, w7.z5.a(-1.0f, AndroidUtilities.getShadowHeight() / AndroidUtilities.dpf2(1.0f), 55));
         TextView textView = new TextView(context);
         textView.setLines(1);
         textView.setSingleLine(true);
@@ -178,7 +178,7 @@ public abstract class r41 extends org.telegram.ui.ActionBar.f3 implements Notifi
         textView.setText(LocaleController.getString(R.string.CloseTranslation));
         textView.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{24.0f}, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false)));
         textView.setOnClickListener(new u80(this, 22));
-        frameLayout.addView(textView, w7.z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 87));
+        frameLayout.addView(textView, w7.z5.d(-1, 48.0f, 87, 16.0f, 16.0f, 16.0f, 16.0f));
         this.containerView.addView(frameLayout, w7.z5.e(-1, -2, 87));
         N();
     }
@@ -437,7 +437,7 @@ public abstract class r41 extends org.telegram.ui.ActionBar.f3 implements Notifi
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        org.telegram.messenger.kk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) r41Var.containerView, r41Var.resourcesProvider), null);
+        org.telegram.messenger.lk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) r41Var.containerView, r41Var.resourcesProvider), null);
         n41 n41Var = r41Var.x.e;
         String str = r41Var.w;
         r41Var.v = str;
@@ -470,7 +470,7 @@ public abstract class r41 extends org.telegram.ui.ActionBar.f3 implements Notifi
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        org.telegram.messenger.kk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) r41Var.containerView, r41Var.resourcesProvider), null);
+        org.telegram.messenger.lk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) r41Var.containerView, r41Var.resourcesProvider), null);
         n41 n41Var = r41Var.x.e;
         String str = r41Var.w;
         r41Var.v = str;
@@ -499,7 +499,7 @@ public abstract class r41 extends org.telegram.ui.ActionBar.f3 implements Notifi
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(R.string.TranslationFailedAlert2));
             return;
         }
-        org.telegram.messenger.kk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) r41Var.containerView, r41Var.resourcesProvider), null);
+        org.telegram.messenger.lk.q(R.string.TranslationFailedAlert2, new xc((FrameLayout) r41Var.containerView, r41Var.resourcesProvider), null);
         n41 n41Var = r41Var.x.e;
         String str = r41Var.w;
         r41Var.v = str;
@@ -522,7 +522,7 @@ public abstract class r41 extends org.telegram.ui.ActionBar.f3 implements Notifi
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 1, LocaleController.getString(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2));
                 return;
             }
-            org.telegram.messenger.kk.q(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2, new xc((FrameLayout) r41Var.containerView, r41Var.resourcesProvider), null);
+            org.telegram.messenger.lk.q(bool.booleanValue() ? R.string.TranslationFailedAlert1 : R.string.TranslationFailedAlert2, new xc((FrameLayout) r41Var.containerView, r41Var.resourcesProvider), null);
             n41 n41Var = r41Var.x.e;
             String str2 = r41Var.w;
             r41Var.v = str2;

@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ky extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -113,12 +113,12 @@ public final class ky extends org.telegram.ui.Components.hm0 {
             q8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
             frameLayout = q8Var;
         } else if (i10 != 2) {
-            FrameLayout f4Var = new org.telegram.ui.Cells.f4(0, 0, context, false);
+            FrameLayout f4Var = new org.telegram.ui.Cells.f4(context, 0, 0, false);
             ImageView imageView = new ImageView(context);
             imageView.setImageResource(R.drawable.list_reorder);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
             f4Var.setTag(R.id.object_tag, imageView);
-            f4Var.addView(imageView, w7.z5.a(-1.0f, 10.0f, 0.0f, 10.0f, 0.0f, 40, (LocaleController.isRTL ? 3 : 5) | 16));
+            f4Var.addView(imageView, w7.z5.d(40, -1.0f, (LocaleController.isRTL ? 3 : 5) | 16, 10.0f, 0.0f, 10.0f, 0.0f));
             imageView.setOnTouchListener(new ei.p1(5, this, f4Var));
             imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.b9, false), PorterDuff.Mode.MULTIPLY));
             frameLayout = f4Var;

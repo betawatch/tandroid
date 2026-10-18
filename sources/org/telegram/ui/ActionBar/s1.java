@@ -28,7 +28,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
@@ -48,7 +48,6 @@ import org.telegram.ui.au;
 import org.telegram.ui.be;
 import org.telegram.ui.d70;
 import org.telegram.ui.dq;
-import org.telegram.ui.ef0;
 import org.telegram.ui.ey;
 import org.telegram.ui.h7;
 import org.telegram.ui.i9;
@@ -65,7 +64,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.ud;
 import org.telegram.ui.vd;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -135,10 +134,10 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                         }
                     } else if (o3Var.getWebView() != null && !l4Var.h0.W) {
                         if (l4Var.i0 != null) {
-                            org.telegram.ui.web.x0 webView = o3Var.getWebView();
+                            org.telegram.ui.web.y0 webView = o3Var.getWebView();
                             String title = webView != null ? webView.getTitle() : null;
-                            String u10 = org.telegram.ui.web.a1.u(webView != null ? webView.getUrl() : null);
-                            org.telegram.ui.web.k kVar = l4Var.i0;
+                            String u10 = org.telegram.ui.web.b1.u(webView != null ? webView.getUrl() : null);
+                            org.telegram.ui.web.l lVar = l4Var.i0;
                             Bitmap favicon = webView != null ? webView.getFavicon() : null;
                             if (TextUtils.isEmpty(title)) {
                                 title = LocaleController.getString(R.string.WebEmpty);
@@ -149,16 +148,16 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                             org.telegram.ui.r rVar = new org.telegram.ui.r(l4Var, i12);
                             org.telegram.ui.r rVar2 = new org.telegram.ui.r(l4Var, 2);
                             org.telegram.ui.a0 a0Var = new org.telegram.ui.a0(l4Var, u10, o3Var, i13);
-                            org.telegram.ui.web.c cVar = kVar.w;
-                            ImageView imageView = kVar.f;
+                            org.telegram.ui.web.d dVar = lVar.w;
+                            ImageView imageView = lVar.f;
                             if (favicon == null) {
                                 imageView.setImageResource(R.drawable.msg_language);
-                                imageView.setColorFilter(new PorterDuffColorFilter(kVar.H, PorterDuff.Mode.SRC_IN));
+                                imageView.setColorFilter(new PorterDuffColorFilter(lVar.H, PorterDuff.Mode.SRC_IN));
                             } else {
-                                imageView.setImageDrawable(new BitmapDrawable(kVar.getContext().getResources(), favicon));
+                                imageView.setImageDrawable(new BitmapDrawable(lVar.getContext().getResources(), favicon));
                                 imageView.setColorFilter((ColorFilter) null);
                             }
-                            TextView textView = kVar.r;
+                            TextView textView = lVar.r;
                             textView.setText(Emoji.replaceEmoji(title, textView.getPaint().getFontMetricsInt(), false));
                             try {
                                 try {
@@ -172,17 +171,17 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                                 FileLog.e(e7);
                                 str = str2;
                             }
-                            TextView textView2 = kVar.s;
+                            TextView textView2 = lVar.s;
                             textView2.setText(Emoji.replaceEmoji(str, textView2.getPaint().getFontMetricsInt(), false));
-                            kVar.L = zVar;
-                            kVar.M = rVar;
-                            kVar.N = rVar2;
-                            kVar.e.setOnClickListener(new ef0(29, kVar, yVar));
-                            kVar.n.setOnClickListener(a0Var);
-                            kVar.b = false;
-                            kVar.setInput(null);
-                            cVar.W2.N(true);
-                            cVar.u0(0);
+                            lVar.L = zVar;
+                            lVar.M = rVar;
+                            lVar.N = rVar2;
+                            lVar.e.setOnClickListener(new org.telegram.ui.web.c(0, lVar, yVar));
+                            lVar.n.setOnClickListener(a0Var);
+                            lVar.b = false;
+                            lVar.setInput(null);
+                            dVar.W2.N(true);
+                            dVar.u0(0);
                         }
                         org.telegram.ui.n0 n0Var = l4Var.h0;
                         j3 j3Var = new j3(4, o3Var, activity);
@@ -264,15 +263,15 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
             case 8:
                 ke keVar = (ke) obj2;
                 r91 r91Var = (r91) obj;
-                ei.d dVar = keVar.K0;
-                if (view.isEnabled() && !dVar.N) {
+                ei.d dVar2 = keVar.K0;
+                if (view.isEnabled() && !dVar2.N) {
                     be beVar = keVar.Q0;
                     if (beVar == null || !beVar.N) {
                         TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
                         ud udVar = new ud(keVar, twoStepVerificationActivity, i13);
                         twoStepVerificationActivity.Z = 1;
                         twoStepVerificationActivity.b0 = udVar;
-                        dVar.setLoading(true);
+                        dVar2.setLoading(true);
                         twoStepVerificationActivity.s0(new vd(keVar, r91Var, twoStepVerificationActivity, i13));
                         break;
                     }
@@ -321,7 +320,7 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                 l4Var2.setHeight(47);
                 l4Var2.setText(LocaleController.getString("ChatHistory", R.string.ChatHistory));
                 linearLayout.addView(l4Var2);
-                LinearLayout e10 = kk.e(context, 1);
+                LinearLayout e10 = lk.e(context, 1);
                 linearLayout.addView(e10, w7.z5.n(-1, -2));
                 org.telegram.ui.Cells.i6[] i6VarArr = new org.telegram.ui.Cells.i6[2];
                 int i17 = 0;
@@ -351,7 +350,7 @@ public final /* synthetic */ class s1 implements View.OnClickListener {
                 dq.V((dq) obj2, (a3) obj, view);
                 break;
             case 18:
-                new sg.x0(((org.telegram.ui.Components.e0) obj2).getContext(), 42, (d6) obj).show();
+                new sg.y0(((org.telegram.ui.Components.e0) obj2).getContext(), 42, (d6) obj).show();
                 break;
             case 19:
                 org.telegram.ui.Components.y.R((org.telegram.ui.Components.y) obj2, (d6) obj);

@@ -14,7 +14,7 @@ import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class dt0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final class dt0 extends AnimatorListenerAdapter {
         } else if (i10 == 4) {
             photoViewer.O1 = true;
             photoViewer.e0.invalidate();
-            photoViewer.e0.post(new zg0(25, this, photoViewer.N1));
+            photoViewer.e0.post(new yg0(25, this, photoViewer.N1));
             photoViewer.N1 = null;
             photoViewer.v5.m(false, true);
             photoViewer.w5.m(false, true);
@@ -133,9 +133,9 @@ public final class dt0 extends AnimatorListenerAdapter {
         if (m2Var != null) {
             arrayList2.add(ObjectAnimator.ofFloat(m2Var, (Property<rg.m2, Float>) property2, 1.0f));
         }
-        ci.i3 i3Var = photoViewer.s5;
-        if (i3Var != null) {
-            arrayList2.add(ObjectAnimator.ofFloat(i3Var, (Property<ci.i3, Float>) property2, 1.0f));
+        ci.h3 h3Var = photoViewer.s5;
+        if (h3Var != null) {
+            arrayList2.add(ObjectAnimator.ofFloat(h3Var, (Property<ci.h3, Float>) property2, 1.0f));
         }
         arrayList2.add(ObjectAnimator.ofFloat(photoViewer.S0, (Property<ki.y1, Float>) property, 0.0f));
         if (photoViewer.c2 != 1) {

@@ -24,11 +24,11 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.sc;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class k2 implements VoIPService.StateListener, tf.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean U = false;
@@ -66,7 +66,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
     public final g2 Q = new g2(this, 1);
     public final i2 T = new i2(this);
 
-    public k2(int i10, int i11, Context context, boolean z10) {
+    public k2(Context context, int i10, int i11, boolean z10) {
         this.f = i10;
         this.h = i11;
         float f7 = i11 * 0.4f;
@@ -102,12 +102,12 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
             imageView.setImageResource(R.drawable.pip_close);
             imageView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
             imageView.setContentDescription(LocaleController.getString(R.string.Close));
-            j2Var.addView(imageView, z5.a(40.0f, 4.0f, 4.0f, 4.0f, 0.0f, 40, 53));
+            j2Var.addView(imageView, z5.d(40, 40.0f, 53, 4.0f, 4.0f, 4.0f, 0.0f));
             ImageView imageView2 = new ImageView(context);
             imageView2.setImageResource(R.drawable.pip_enlarge);
             imageView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
             imageView2.setContentDescription(LocaleController.getString(R.string.Open));
-            j2Var.addView(imageView2, z5.a(40.0f, 4.0f, 4.0f, 4.0f, 0.0f, 40, 51));
+            j2Var.addView(imageView2, z5.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new ah.f(17));
             imageView2.setOnClickListener(new g51(6, this, context));
         }
@@ -160,7 +160,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
             layoutParams.type = 2003;
         }
         layoutParams.flags = 16778120;
-        V = new k2(i11, i12, activity, false);
+        V = new k2(activity, i11, i12, false);
         WindowManager windowManager = AndroidUtilities.checkInlinePermissions(activity) ? (WindowManager) ApplicationLoader.applicationContext.getSystemService("window") : (WindowManager) activity.getSystemService("window");
         k2 k2Var = V;
         k2Var.M = i10;
@@ -386,7 +386,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onCameraFirstFrameAvailable() {
-        org.telegram.messenger.voip.u0.b(this);
+        org.telegram.messenger.voip.t0.b(this);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
@@ -434,7 +434,7 @@ public final class k2 implements VoIPService.StateListener, tf.a, NotificationCe
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final void onStateChanged(int i10) {
         if (i10 == 11 || i10 == 17 || i10 == 4 || i10 == 10) {
-            AndroidUtilities.runOnUIThread(new rc(21), 200L);
+            AndroidUtilities.runOnUIThread(new sc(20), 200L);
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance == null) {

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k3 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -154,7 +154,7 @@ public final class k3 extends s4.r0 {
                 break;
             case 21:
                 if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(((dj0) this.b).Y.getEditText());
+                    AndroidUtilities.hideKeyboard(((cj0) this.b).Y.getEditText());
                     break;
                 }
                 break;
@@ -343,15 +343,15 @@ public final class k3 extends s4.r0 {
                 }
                 break;
             case 19:
-                ((oi0) obj).K.invalidate();
+                ((ni0) obj).K.invalidate();
                 break;
             case 20:
-                wi0 wi0Var = (wi0) obj;
-                int L02 = wi0Var.h.L0();
-                int abs = L02 != -1 ? Math.abs(wi0Var.h.N0() - L02) + 1 : 0;
+                vi0 vi0Var = (vi0) obj;
+                int L02 = vi0Var.h.L0();
+                int abs = L02 != -1 ? Math.abs(vi0Var.h.N0() - L02) + 1 : 0;
                 int h = recyclerView.getAdapter().h();
-                if (abs > 0 && !wi0Var.V && !wi0Var.E && !wi0Var.x.isEmpty() && L02 + abs >= h - 5 && wi0Var.y) {
-                    wi0Var.b0();
+                if (abs > 0 && !vi0Var.V && !vi0Var.E && !vi0Var.x.isEmpty() && L02 + abs >= h - 5 && vi0Var.y) {
+                    vi0Var.b0();
                     break;
                 }
                 break;
@@ -421,7 +421,7 @@ public final class k3 extends s4.r0 {
                 if (z71Var.c.I1) {
                     AndroidUtilities.hideKeyboard(z71Var.fragmentView);
                 }
-                if (Build.VERSION.SDK_INT >= 31 && (fVar4 = z71Var.V) != null) {
+                if (Build.VERSION.SDK_INT >= 31 && (fVar4 = z71Var.W) != null) {
                     fVar4.f(i10, i11);
                     z71Var.i0();
                     break;

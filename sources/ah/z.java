@@ -3,10 +3,10 @@ package ah;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.view.View;
-import ci.p1;
+import ci.o1;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class z extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class z extends AnimatorListenerAdapter {
         View view;
         switch (this.a) {
             case 1:
-                rf.d dVar = p1.Z.L;
+                rf.d dVar = o1.Z.L;
                 if (dVar != null && (view = dVar.j) != null) {
                     dVar.e(view);
                     break;

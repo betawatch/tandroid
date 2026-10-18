@@ -1,76 +1,50 @@
 package yh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.a6;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class l0 extends View {
-    public final k0 a;
+public final /* synthetic */ class l0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o1 b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    public l0(Context context) {
-        super(context);
-        k0 k0Var = new k0();
-        this.a = k0Var;
-        k0Var.r = this;
-        k0Var.d.setParentView(this);
+    public /* synthetic */ l0(o1 o1Var, Utilities.Callback callback, int i10) {
+        this.a = i10;
+        this.b = o1Var;
+        this.c = callback;
     }
 
-    public k0 getDrawable() {
-        return this.a;
-    }
-
-    public TextPaint getTextPaint() {
-        return this.a.c;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.d.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        k0 k0Var = this.a;
-        k0Var.d.onDetachedFromWindow();
-        a6.release((View) null, k0Var.q);
-        k0Var.q = null;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int paddingLeft = getPaddingLeft();
-        int paddingTop = getPaddingTop();
-        int width = getWidth() - getPaddingRight();
-        int height = getHeight() - getPaddingBottom();
-        k0 k0Var = this.a;
-        k0Var.setBounds(paddingLeft, paddingTop, width, height);
-        k0Var.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = (View.MeasureSpec.getSize(i10) - getPaddingLeft()) - getPaddingRight();
-        k0 k0Var = this.a;
-        k0Var.b(size);
-        setMeasuredDimension(getPaddingRight() + getPaddingLeft() + k0Var.t, getPaddingBottom() + getPaddingTop() + k0Var.u);
-    }
-
-    public void setMessage(CharSequence charSequence) {
-        k0 k0Var = this.a;
-        k0Var.m = charSequence;
-        k0Var.s = -1;
-        requestLayout();
-    }
-
-    public void setUser(TLObject tLObject) {
-        this.a.c(tLObject);
-        invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                o1 o1Var = this.b;
+                Utilities.Callback callback = this.c;
+                if (callback != null) {
+                    o1Var.getClass();
+                    callback.run(Boolean.FALSE);
+                }
+                o1Var.dismiss();
+                break;
+            case 1:
+                o1 o1Var2 = this.b;
+                Utilities.Callback callback2 = this.c;
+                if (callback2 != null) {
+                    o1Var2.getClass();
+                    callback2.run(Boolean.FALSE);
+                }
+                o1Var2.dismiss();
+                break;
+            default:
+                o1 o1Var3 = this.b;
+                Utilities.Callback callback3 = this.c;
+                if (callback3 != null) {
+                    o1Var3.getClass();
+                    callback3.run(Boolean.FALSE);
+                }
+                o1Var3.dismiss();
+                break;
+        }
     }
 }

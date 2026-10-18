@@ -17,10 +17,10 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c50 extends Dialog {
-    public final ci.i3 a;
+    public final ci.h3 a;
     public final x10 b;
     public Bitmap c;
     public Paint d;
@@ -36,9 +36,9 @@ public final class c50 extends Dialog {
         this.b = x10Var;
         x10Var.setVisibility(4);
         AndroidUtilities.makeGlobalBlurBitmap(new org.telegram.ui.Components.qy(10, this, x10Var), 14.0f);
-        ci.i3 i3Var = new ci.i3(this, context, x10Var);
-        this.a = i3Var;
-        i3Var.setOnClickListener(new a(this, 28));
+        ci.h3 h3Var = new ci.h3(this, context, x10Var);
+        this.a = h3Var;
+        h3Var.setOnClickListener(new a(this, 28));
     }
 
     public final void b(float f7, b50 b50Var) {

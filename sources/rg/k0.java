@@ -11,14 +11,14 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.q6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k0 extends FrameLayout {
     public final /* synthetic */ int a = 2;
@@ -26,24 +26,24 @@ public final class k0 extends FrameLayout {
     public final KeyEvent.Callback c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(sg.x0 x0Var, Context context, sg.z0 z0Var) {
+    public k0(sg.y0 y0Var, Context context, sg.a1 a1Var) {
         super(context);
-        this.c = x0Var;
-        this.b = z0Var;
+        this.c = y0Var;
+        this.b = a1Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public void dispatchDraw(Canvas canvas) {
         switch (this.a) {
             case 1:
-                ((sg.z0) this.b).d(0, 0.0f, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
+                ((sg.a1) this.b).d(0, 0.0f, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, AndroidUtilities.dp(2.0f), getMeasuredWidth(), AndroidUtilities.dp(18.0f) + getMeasuredHeight());
                 canvas.save();
                 canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                sg.z0 z0Var = (sg.z0) this.b;
-                z0Var.f.setAlpha(((sg.x0) this.c).K);
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(24.0f) - 1, AndroidUtilities.dp(24.0f) - 1, z0Var.f);
+                sg.a1 a1Var = (sg.a1) this.b;
+                a1Var.f.setAlpha(((sg.y0) this.c).K);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(24.0f) - 1, AndroidUtilities.dp(24.0f) - 1, a1Var.f);
                 canvas.restore();
                 super.dispatchDraw(canvas);
                 break;
@@ -80,7 +80,7 @@ public final class k0 extends FrameLayout {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                super.onMeasure(i10, kk.C(2.0f, ((sg.x0) this.c).s, TLObject.FLAG_30));
+                super.onMeasure(i10, lk.C(2.0f, ((sg.y0) this.c).s, TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -90,7 +90,7 @@ public final class k0 extends FrameLayout {
 
     public k0(Context context, d6 d6Var) {
         super(context);
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = lk.e(context, 1);
         q6 q6Var = new q6(context, false, false, false);
         this.b = q6Var;
         int i10 = h6.G6;

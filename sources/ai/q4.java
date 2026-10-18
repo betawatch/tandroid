@@ -40,7 +40,7 @@ import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.sn;
 import org.telegram.ui.te1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q4 implements org.telegram.ui.ActionBar.a2, xl0 {
     public final /* synthetic */ int a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class q4 implements org.telegram.ui.ActionBar.a2, x
                             a2Var.setBackground(org.telegram.ui.ActionBar.h6.L0(false));
                             a2Var.e(LocaleController.getString(R.string.MessageShowSensitiveContentAlways), "", zArr[0], false, false);
                             a2Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : AndroidUtilities.dp(16.0f), 0);
-                            frameLayout.addView(a2Var, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+                            frameLayout.addView(a2Var, w7.z5.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                             a2Var.setOnClickListener(new t0(6, zArr));
                         }
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, n2Var2 == null ? null : n2Var2.getResourceProvider());
@@ -334,7 +334,7 @@ public final /* synthetic */ class q4 implements org.telegram.ui.ActionBar.a2, x
                 q31 q31Var = (q31) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
                 HashSet hashSet = (HashSet) this.e;
-                org.telegram.ui.Components.rc rcVar = (org.telegram.ui.Components.rc) this.f;
+                org.telegram.ui.Components.sc scVar = (org.telegram.ui.Components.sc) this.f;
                 int size = arrayList.size();
                 int i11 = 0;
                 while (true) {
@@ -342,7 +342,7 @@ public final /* synthetic */ class q4 implements org.telegram.ui.ActionBar.a2, x
                     if (i11 >= size) {
                         q31Var.e0.addAll(hashSet);
                         q31Var.o();
-                        org.telegram.ui.Components.xc.a0(q31Var.h).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new b2(q31Var, hashSet, arrayList, j10, 18), new go0(q31Var, arrayList, rcVar, 13)).j();
+                        org.telegram.ui.Components.xc.a0(q31Var.h).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new b3(q31Var, hashSet, arrayList, j10, 18), new go0(q31Var, arrayList, scVar, 13)).j();
                         b2Var.dismiss();
                         break;
                     } else {
@@ -365,13 +365,13 @@ public final /* synthetic */ class q4 implements org.telegram.ui.ActionBar.a2, x
         this.b = j10;
     }
 
-    public /* synthetic */ q4(q31 q31Var, ArrayList arrayList, long j10, HashSet hashSet, org.telegram.ui.Components.rc rcVar) {
+    public /* synthetic */ q4(q31 q31Var, ArrayList arrayList, long j10, HashSet hashSet, org.telegram.ui.Components.sc scVar) {
         this.a = 3;
         this.c = q31Var;
         this.d = arrayList;
         this.b = j10;
         this.e = hashSet;
-        this.f = rcVar;
+        this.f = scVar;
     }
 
     @Override // org.telegram.ui.Components.xl0

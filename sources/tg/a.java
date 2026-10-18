@@ -12,9 +12,9 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import w7.v7;
+import w7.t7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a {
     public static final String[] D = {"crownGradient", "pavilionGradient", "lightSweep", "crownSweep", "rightCrownSweep", "leftCrownSweep", "pavilionSweep", "rightPavilionSweep", "leftPavilionSweep"};
@@ -52,7 +52,7 @@ public final class a {
         try {
             String[] strArr = {"diamond", "sparkle", "copy"};
             for (int i11 = 0; i11 < 3; i11++) {
-                this.a[i11] = v7.b(context, "diamond", j(context, i11 == 2 ? "fullscreenVertex" : strArr[i11] + "Vertex"), j(context, strArr[i11] + "Fragment"), "position", "normal");
+                this.a[i11] = t7.a(context, j(context, i11 == 2 ? "fullscreenVertex" : strArr[i11] + "Vertex"), j(context, strArr[i11] + "Fragment"));
             }
             float[] a2 = a(context, "frames");
             this.m = a2;

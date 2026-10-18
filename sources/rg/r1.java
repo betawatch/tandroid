@@ -21,7 +21,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.vf1;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r1 extends LinearLayout {
     public final xj0[] a;
@@ -156,7 +156,7 @@ public final class r1 extends LinearLayout {
                 this.r = duration;
                 duration.setInterpolator(bs.f);
                 this.r.addUpdateListener(new i6(this, 17));
-                this.r.addListener(new vf1(this, 15));
+                this.r.addListener(new vf1(this, 14));
                 this.r.start();
             }
         }
@@ -178,12 +178,12 @@ public final class r1 extends LinearLayout {
                     if (this.r != null) {
                         if (this.h != i10) {
                             a(i10);
-                            post(new org.telegram.ui.web.z1(childAt, 13));
+                            post(new org.telegram.ui.web.a2(childAt, 13));
                             return true;
                         }
                     } else if (this.f != i10) {
                         a(i10);
-                        post(new org.telegram.ui.web.z1(childAt, 13));
+                        post(new org.telegram.ui.web.a2(childAt, 13));
                         return true;
                     }
                 }

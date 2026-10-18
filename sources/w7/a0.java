@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class a0 {
     public static n2.w a(g2.h hVar, String str, byte[] bArr, Map map) {
@@ -26,9 +26,9 @@ public abstract class a0 {
                 g2.k kVar = new g2.k(b0Var, mVar2);
                 try {
                     byte[] b10 = f9.f.b(kVar);
-                    u2.t tVar = new u2.t(mVar, b0Var.c, b0Var.d, SystemClock.elapsedRealtime(), 0L, b10.length);
+                    u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, SystemClock.elapsedRealtime(), 0L, b10.length);
                     mi.q qVar = new mi.q(b10);
-                    qVar.c = tVar;
+                    qVar.c = uVar;
                     n2.w wVar = new n2.w(qVar);
                     try {
                         kVar.close();

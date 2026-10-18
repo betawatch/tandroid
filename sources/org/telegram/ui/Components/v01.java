@@ -22,7 +22,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v01 extends LinearLayout {
     public final int a;
@@ -51,12 +51,12 @@ public final class v01 extends LinearLayout {
         y8Var.V(ei.r6.e(null, i10, j10, org.telegram.ui.ActionBar.h6.I.q()));
         yu0 yu0Var = new yu0(context, i10);
         this.d = yu0Var;
-        y8Var.addView(yu0Var, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 12.0f, -1, 87));
+        y8Var.addView(yu0Var, w7.z5.d(-1, -2.0f, 87, 0.0f, 12.0f, 0.0f, 12.0f));
         this.e = new h9((org.telegram.ui.ActionBar.d6) null);
         w9 w9Var = new w9(context);
         this.f = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(21.0f));
-        y8Var.addView(w9Var, w7.z5.a(42.0f, 8.0f, 0.0f, 0.0f, 12.0f, 42, 83));
+        y8Var.addView(w9Var, w7.z5.d(42, 42.0f, 83, 8.0f, 0.0f, 0.0f, 12.0f));
         addView(y8Var, w7.z5.q(-1, -2, 7));
         org.telegram.ui.Cells.c6 c6Var = new org.telegram.ui.Cells.c6(context, 0, null, d6Var);
         this.h = c6Var;
@@ -68,7 +68,7 @@ public final class v01 extends LinearLayout {
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.menu_delete_old);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var), PorterDuff.Mode.SRC_IN));
-        c6Var.addView(imageView, w7.z5.a(24.0f, 0.0f, 0.0f, 20.0f, 0.0f, 24, 21));
+        c6Var.addView(imageView, w7.z5.d(24, 24.0f, 21, 0.0f, 0.0f, 20.0f, 0.0f));
         w7.b6.a(imageView);
         imageView.setOnClickListener(new u80(textView, 19));
         q6 q6Var = new q6(context, false, true, false);
@@ -80,7 +80,7 @@ public final class v01 extends LinearLayout {
         q6Var.setGravity(17);
         q6Var.setAllowCancel(true);
         q6Var.setScaleProperty(0.6f);
-        c6Var.addView(q6Var, w7.z5.a(50.0f, 0.0f, 0.0f, 44.0f, 0.0f, 56, 117));
+        c6Var.addView(q6Var, w7.z5.d(56, 50.0f, 117, 0.0f, 0.0f, 44.0f, 0.0f));
         textView.addTextChangedListener(new o01(this));
         addView(c6Var, w7.z5.q(-1, -2, 7));
         yu0Var.setDelegate(new n2.e(this, textView, false, 8));
@@ -97,7 +97,7 @@ public final class v01 extends LinearLayout {
         if (chat == null) {
             return;
         }
-        final org.telegram.ui.ActionBar.f3 i13 = org.telegram.messenger.kk.i(1, context, d6Var2, true);
+        final org.telegram.ui.ActionBar.f3 i13 = org.telegram.messenger.lk.i(1, context, d6Var2, true);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         i13.customView = linearLayout;
@@ -110,7 +110,7 @@ public final class v01 extends LinearLayout {
         TextView b10 = w7.d6.b(context, 20.0f, i15, true, null);
         b10.setGravity(17);
         b10.setText(LocaleController.getString(z11 ? R.string.TagInfoOwnerTitle : z10 ? R.string.TagInfoAdminTitle : R.string.TagInfoMemberTitle));
-        linearLayout.addView(b10, w7.z5.a(-2.0f, 32.0f, 15.0f, 32.0f, 0.0f, -1, 49));
+        linearLayout.addView(b10, w7.z5.d(-1, -2.0f, 49, 32.0f, 15.0f, 32.0f, 0.0f));
         TextView b11 = w7.d6.b(context, 14.0f, i15, false, null);
         b11.setGravity(17);
         b11.setLineSpacing(AndroidUtilities.dp(3.0f), 1.0f);
@@ -137,7 +137,7 @@ public final class v01 extends LinearLayout {
         }
         int i17 = 2;
         b11.setText(AndroidUtilities.replaceCharSequence("un1", AndroidUtilities.replaceTags(LocaleController.formatString(z11 ? R.string.TagInfoOwnerText : z10 ? R.string.TagInfoAdminText : R.string.TagInfoMemberText, UserObject.getFirstName(user), chat.title)), spannableStringBuilder));
-        linearLayout.addView(b11, w7.z5.a(-2.0f, 32.0f, 10.0f, 32.0f, 25.0f, -1, 49));
+        linearLayout.addView(b11, w7.z5.d(-1, -2.0f, 49, 32.0f, 10.0f, 32.0f, 25.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout.addView(linearLayout2, w7.z5.t(-1, -2, 7, 16, 0, 16, 16));
@@ -147,7 +147,7 @@ public final class v01 extends LinearLayout {
             r01Var.setDelegate(new s01(i18 == 1, z11));
             t01 t01Var = new t01(context, d6Var2, r01Var);
             t01Var.V(ei.r6.e(null, i12, j11, org.telegram.ui.ActionBar.h6.I.q()));
-            t01Var.addView(r01Var, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 12.0f, -1, 87));
+            t01Var.addView(r01Var, w7.z5.d(-1, -2.0f, 87, 0.0f, 12.0f, 0.0f, 12.0f));
             linearLayout2.addView(t01Var, w7.z5.p(0, -1, 1.0f, 119, i18 == 1 ? 6 : 0, 0, i18 == 0 ? 6 : 0, 0));
             t01Var.setClipToOutline(true);
             t01Var.setOutlineProvider(new n01());
@@ -176,7 +176,7 @@ public final class v01 extends LinearLayout {
             i18 = i19 + 1;
             j11 = j10;
         }
-        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var2, true);
+        ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var2, true);
         boolean z13 = (ChatObject.canManageTags(chat) && (!z10 || ((!z11 && z12) || UserObject.isUserSelf(user)))) || (ChatObject.canManageMyTag(chat) && UserObject.isUserSelf(user));
         if (!z13 && !ChatObject.canManageTags(chat) && !chat.creator && chat.admin_rights == null && !z11) {
             TextView b12 = w7.d6.b(context, 12.0f, org.telegram.ui.ActionBar.h6.y6, false, null);
@@ -222,7 +222,7 @@ public final class v01 extends LinearLayout {
     public static void c(Context context, int i10, long j10, TLRPC.User user, String str, final boolean z10, boolean z11, org.telegram.ui.ActionBar.d6 d6Var) {
         MessagesController messagesController = MessagesController.getInstance(i10);
         messagesController.getChat(Long.valueOf(-j10));
-        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.kk.i(1, context, d6Var, true);
+        org.telegram.ui.ActionBar.f3 i11 = org.telegram.messenger.lk.i(1, context, d6Var, true);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         i11.customView = linearLayout;
@@ -238,7 +238,7 @@ public final class v01 extends LinearLayout {
         imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, AndroidUtilities.dp(18.0f)));
         linearLayout2.addView(imageView, w7.z5.t(32, 32, 21, 0, 0, 10, 0));
         linearLayout.addView(linearLayout2, w7.z5.k(0.0f, 6.0f, 0.0f, 6.0f, -1, -2));
-        final ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
+        final ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
         final boolean z12 = !TextUtils.isEmpty(str) || z10;
         f7.setText(LocaleController.getString((TextUtils.isEmpty(str) && !z10 && z12) ? R.string.MemberTagButtonRemove : z12 ? R.string.MemberTagButtonEdit : R.string.MemberTagButtonAdd));
         final String[] strArr = {str == null ? "" : str};

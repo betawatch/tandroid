@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ou implements uy {
     public final /* synthetic */ qu a;
@@ -121,9 +121,9 @@ public final class ou implements uy {
     public final void q() {
         org.telegram.ui.ActionBar.n2 n2Var = this.a.h;
         if (n2Var == null) {
-            new sg.x0((org.telegram.ui.ActionBar.n2) new ai.z4(this, 5), 11, false).show();
+            new sg.y0((org.telegram.ui.ActionBar.n2) new ai.z4(this, 5), 11, false).show();
         } else {
-            n2Var.showDialog(new sg.x0(n2Var, 11, false));
+            n2Var.showDialog(new sg.y0(n2Var, 11, false));
         }
     }
 

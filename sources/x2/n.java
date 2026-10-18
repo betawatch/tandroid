@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.util.Pair;
 import b2.a0;
 import b2.p1;
+import b2.q1;
 import b2.r1;
 import b2.t1;
 import b2.w;
@@ -25,15 +26,15 @@ import java.util.Map;
 import java.util.RandomAccess;
 import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.lg0;
-import u2.q1;
+import org.telegram.ui.kg0;
+import u2.s1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class n extends s {
-    public static final v1 l = new y(new lg0(18));
+    public static final v1 l = new y(new kg0(18));
     public final Object d;
     public final Context e;
     public final oa.d f;
@@ -76,11 +77,11 @@ public final class n extends s {
     public static void d(r rVar, i iVar, o[] oVarArr) {
         int i10 = rVar.a;
         for (int i11 = 0; i11 < i10; i11++) {
-            q1 q1Var = rVar.c[i11];
+            s1 s1Var = rVar.c[i11];
             Map map = (Map) iVar.D0.get(i11);
-            if (map != null && map.containsKey(q1Var)) {
+            if (map != null && map.containsKey(s1Var)) {
                 Map map2 = (Map) iVar.D0.get(i11);
-                if (map2 != null && map2.get(q1Var) != null) {
+                if (map2 != null && map2.get(s1Var) != null) {
                     throw new ClassCastException();
                 }
                 oVarArr[i11] = null;
@@ -99,30 +100,30 @@ public final class n extends s {
 
     public static void f(r rVar, i iVar, o[] oVarArr) {
         int i10 = rVar.a;
-        q1[] q1VarArr = rVar.c;
+        s1[] s1VarArr = rVar.c;
         HashMap hashMap = new HashMap();
         for (int i11 = 0; i11 < i10; i11++) {
-            g(q1VarArr[i11], iVar, hashMap);
+            g(s1VarArr[i11], iVar, hashMap);
         }
         g(rVar.f, iVar, hashMap);
         for (int i12 = 0; i12 < i10; i12++) {
-            b2.q1 q1Var = (b2.q1) hashMap.get(Integer.valueOf(rVar.b[i12]));
+            q1 q1Var = (q1) hashMap.get(Integer.valueOf(rVar.b[i12]));
             if (q1Var != null) {
                 p1 p1Var = q1Var.a;
                 n0 n0Var = q1Var.b;
-                oVarArr[i12] = (n0Var.isEmpty() || q1VarArr[i12].b(p1Var) == -1) ? null : new o(p1Var, b8.f(n0Var));
+                oVarArr[i12] = (n0Var.isEmpty() || s1VarArr[i12].b(p1Var) == -1) ? null : new o(p1Var, b8.f(n0Var));
             }
         }
     }
 
-    public static void g(q1 q1Var, t1 t1Var, HashMap hashMap) {
-        for (int i10 = 0; i10 < q1Var.a; i10++) {
-            b2.q1 q1Var2 = (b2.q1) t1Var.H.get(q1Var.a(i10));
-            if (q1Var2 != null) {
-                p1 p1Var = q1Var2.a;
-                b2.q1 q1Var3 = (b2.q1) hashMap.get(Integer.valueOf(p1Var.c));
-                if (q1Var3 == null || (q1Var3.b.isEmpty() && !q1Var2.b.isEmpty())) {
-                    hashMap.put(Integer.valueOf(p1Var.c), q1Var2);
+    public static void g(s1 s1Var, t1 t1Var, HashMap hashMap) {
+        for (int i10 = 0; i10 < s1Var.a; i10++) {
+            q1 q1Var = (q1) t1Var.H.get(s1Var.a(i10));
+            if (q1Var != null) {
+                p1 p1Var = q1Var.a;
+                q1 q1Var2 = (q1) hashMap.get(Integer.valueOf(p1Var.c));
+                if (q1Var2 == null || (q1Var2.b.isEmpty() && !q1Var.b.isEmpty())) {
+                    hashMap.put(Integer.valueOf(p1Var.c), q1Var);
                 }
             }
         }
@@ -179,13 +180,13 @@ public final class n extends s {
         return true;
     }
 
-    public static o o(q1 q1Var, int[][] iArr, i iVar) {
+    public static o o(s1 s1Var, int[][] iArr, i iVar) {
         if (iVar.w.a != 2) {
             int i10 = 0;
             p1 p1Var = null;
             g gVar = null;
-            for (int i11 = 0; i11 < q1Var.a; i11++) {
-                p1 a2 = q1Var.a(i11);
+            for (int i11 = 0; i11 < s1Var.a; i11++) {
+                p1 a2 = s1Var.a(i11);
                 int[] iArr2 = iArr[i11];
                 for (int i12 = 0; i12 < a2.a; i12++) {
                     if (i2.d.e(iArr2[i12], iVar.B0)) {
@@ -216,9 +217,9 @@ public final class n extends s {
         int i13 = 0;
         while (i13 < i12) {
             if (i10 == rVar2.b[i13]) {
-                q1 q1Var = rVar2.c[i13];
-                for (int i14 = 0; i14 < q1Var.a; i14++) {
-                    p1 a2 = q1Var.a(i14);
+                s1 s1Var = rVar2.c[i13];
+                for (int i14 = 0; i14 < s1Var.a; i14++) {
+                    p1 a2 = s1Var.a(i14);
                     x1 b10 = kVar.b(i13, a2, iArr[i13][i14]);
                     int i15 = a2.a;
                     boolean[] zArr = new boolean[i15];

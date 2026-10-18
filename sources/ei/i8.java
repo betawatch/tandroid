@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ca0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class i8 extends FrameLayout {
     public final Paint a;
@@ -38,11 +38,11 @@ public final class i8 extends FrameLayout {
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.filled_link);
         imageView.setColorFilter(new PorterDuffColorFilter(-15033089, PorterDuff.Mode.SRC_IN));
-        addView(imageView, w7.z5.a(48.0f, 9.0f, 0.0f, 0.0f, 0.0f, 48, 19));
+        addView(imageView, w7.z5.d(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.c = imageView2;
         imageView2.setBackground(new g8(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(2.4f), -15033089));
-        addView(imageView2, w7.z5.a(48.0f, 9.0f, 0.0f, 0.0f, 0.0f, 48, 19));
+        addView(imageView2, w7.z5.d(48, 48.0f, 19, 9.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, false, false, false);
         this.d = q6Var;
         q6Var.setTextColor(-15033089);
@@ -50,14 +50,14 @@ public final class i8 extends FrameLayout {
         q6Var.setTypeface(AndroidUtilities.bold());
         q6Var.setEllipsizeByGradient(true);
         q6Var.getDrawable().M = AndroidUtilities.displaySize.x;
-        addView(q6Var, w7.z5.a(24.0f, 57.0f, 2.33f, 48.0f, 0.0f, -1, 55));
+        addView(q6Var, w7.z5.d(-1, 24.0f, 55, 57.0f, 2.33f, 48.0f, 0.0f));
         org.telegram.ui.Components.q6 q6Var2 = new org.telegram.ui.Components.q6(context, false, false, false);
         this.e = q6Var2;
         q6Var2.setTextColor(-8355712);
         q6Var2.setTextSize(AndroidUtilities.dp(14.21f));
         q6Var2.setEllipsizeByGradient(true);
         q6Var2.getDrawable().M = AndroidUtilities.displaySize.x;
-        addView(q6Var2, w7.z5.a(24.0f, 57.0f, 20.66f, 48.0f, 0.0f, -1, 55));
+        addView(q6Var2, w7.z5.d(-1, 24.0f, 55, 57.0f, 20.66f, 48.0f, 0.0f));
         int textColor = q6Var.getTextColor();
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
@@ -78,7 +78,7 @@ public final class i8 extends FrameLayout {
         imageView3.setImageResource(R.drawable.input_clear);
         imageView3.setScaleType(scaleType);
         imageView3.setBackground(org.telegram.ui.ActionBar.h6.g0(436207615, 1, AndroidUtilities.dp(18.0f)));
-        addView(imageView3, w7.z5.a(48.0f, 0.0f, 0.0f, 4.0f, 0.0f, 48, 21));
+        addView(imageView3, w7.z5.d(48, 48.0f, 21, 0.0f, 0.0f, 4.0f, 0.0f));
     }
 
     @Override // android.view.View

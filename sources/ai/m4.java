@@ -43,7 +43,7 @@ import org.telegram.ui.vo;
 import org.telegram.ui.xo;
 import org.telegram.ui.yo;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m4 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,12 +70,12 @@ public final /* synthetic */ class m4 implements Runnable {
         Bitmap bitmap;
         switch (this.a) {
             case 0:
-                k7.P0((k7) this.c, (TLRPC.TL_error) this.d, (Utilities.Callback) this.e, (TwoStepVerificationActivity) this.f, this.b, (TLObject) this.h);
+                k7.k1((k7) this.c, (TLRPC.TL_error) this.d, (Utilities.Callback) this.e, (TwoStepVerificationActivity) this.f, this.b, (TLObject) this.h);
                 break;
             case 1:
                 i2.e1 e1Var = (i2.e1) this.c;
                 Pair pair = (Pair) this.d;
-                e1Var.b.h.g(((Integer) pair.first).intValue(), (u2.f0) pair.second, (u2.t) this.e, (u2.b0) this.f, (IOException) this.h, this.b);
+                e1Var.b.h.g(((Integer) pair.first).intValue(), (u2.g0) pair.second, (u2.u) this.e, (u2.c0) this.f, (IOException) this.h, this.b);
                 break;
             case 2:
                 ((ContactsController) this.c).lambda$mergePhonebookAndTelegramContacts$41(this.b, (ArrayList) this.d, (HashMap) this.e, (HashMap) this.f, (ArrayList) this.h);
@@ -259,7 +259,7 @@ public final /* synthetic */ class m4 implements Runnable {
                 st.R((st) this.c, (TLObject) this.h, (ei.d) this.e, this.b, (HashSet) this.f, (TLRPC.TL_error) this.d);
                 break;
             default:
-                org.telegram.ui.Wallet.y7 y7Var = (org.telegram.ui.Wallet.y7) this.c;
+                org.telegram.ui.Wallet.s7 s7Var = (org.telegram.ui.Wallet.s7) this.c;
                 int[] iArr = (int[]) this.d;
                 int[] iArr2 = (int[]) this.e;
                 int[] iArr3 = (int[]) this.f;
@@ -268,10 +268,10 @@ public final /* synthetic */ class m4 implements Runnable {
                     iArr3[i12] = iArr[i12] >>> 24;
                 }
                 for (int i13 = 0; i13 < 288; i13++) {
-                    w7.k6.a(i13 * 288, 1, iArr3, iArr4);
+                    w7.i6.a(i13 * 288, 1, iArr3, iArr4);
                 }
                 for (int i14 = 0; i14 < 288; i14++) {
-                    w7.k6.a(i14, 288, iArr3, iArr4);
+                    w7.i6.a(i14, 288, iArr3, iArr4);
                 }
                 for (int i15 = 0; i15 < 82944; i15++) {
                     int i16 = iArr[i15];
@@ -307,12 +307,12 @@ public final /* synthetic */ class m4 implements Runnable {
                         createBitmap.recycle();
                         createScaledBitmap.recycle();
                         extractAlpha.recycle();
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.h(y7Var, iArr2, bitmap, 17));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.h(s7Var, iArr2, bitmap, 19));
                         break;
                     }
                 }
                 bitmap = null;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.h(y7Var, iArr2, bitmap, 17));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.h(s7Var, iArr2, bitmap, 19));
         }
     }
 

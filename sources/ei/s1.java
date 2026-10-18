@@ -32,7 +32,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -54,7 +54,7 @@ import org.telegram.ui.rx;
 import org.telegram.ui.sn;
 import org.telegram.ui.xf1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -205,7 +205,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 sn snVar = (sn) this.c;
                 pf.c cVar = (pf.c) this.e;
                 TLObject tLObject3 = (TLObject) this.d;
-                ai.t3 t3Var = (ai.t3) this.f;
+                ai.v3 v3Var = (ai.v3) this.f;
                 boolean z16 = this.b;
                 cVar.b();
                 if (tLObject3 instanceof TLRPC.TL_contacts_resolvedPeer) {
@@ -218,11 +218,11 @@ public final /* synthetic */ class s1 implements Runnable {
                     } else if (peerDialogId < 0) {
                         obj = snVar.getMessagesController().getChat(Long.valueOf(-peerDialogId));
                     }
-                    t3Var.run(obj, Boolean.valueOf(z16));
+                    v3Var.run(obj, Boolean.valueOf(z16));
                     return;
                 }
                 obj = null;
-                t3Var.run(obj, Boolean.valueOf(z16));
+                v3Var.run(obj, Boolean.valueOf(z16));
                 return;
             case 15:
                 org.telegram.ui.Components.oa oaVar = (org.telegram.ui.Components.oa) this.c;
@@ -257,7 +257,7 @@ public final /* synthetic */ class s1 implements Runnable {
                 TextView textView = (TextView) this.e;
                 ClipboardManager clipboardManager = (ClipboardManager) iuVar.getContext().getSystemService("clipboard");
                 boolean z19 = z18 && (TextUtils.isEmpty(tVar.getText()) || TextUtils.equals(tVar.getText().toString(), str4)) && clipboardManager != null && clipboardManager.hasPrimaryClip();
-                kk.t(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), bs.h, 300L);
+                lk.t(textView.animate().alpha(z19 ? 1.0f : 0.0f).scaleX(z19 ? 1.0f : 0.7f).scaleY(z19 ? 1.0f : 0.7f), bs.h, 300L);
                 return;
             case 17:
                 bz bzVar = (bz) this.c;
@@ -445,7 +445,7 @@ public final /* synthetic */ class s1 implements Runnable {
                     button.setScaleY(0.6f);
                     button.setAlpha(0.0f);
                     button.setVisibility(0);
-                    kk.t(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), bs.h, 360L);
+                    lk.t(button.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f), bs.h, 360L);
                     org.telegram.ui.Components.qc qcVar2 = eyVar.e4;
                     qcVar2.j = 5000;
                     qcVar2.i(false);
@@ -465,7 +465,7 @@ public final /* synthetic */ class s1 implements Runnable {
             case 23:
                 si.s0 s0Var = (si.s0) this.c;
                 boolean z23 = this.b;
-                si.x xVar = (si.x) this.d;
+                si.w wVar = (si.w) this.d;
                 si.o0 o0Var = (si.o0) this.e;
                 File file4 = (File) this.f;
                 s0Var.getClass();
@@ -474,21 +474,21 @@ public final /* synthetic */ class s1 implements Runnable {
                     s0Var.g();
                     long j10 = s0Var.E;
                     if (z23) {
-                        synchronized (xVar) {
-                            xVar.v = true;
+                        synchronized (wVar) {
+                            wVar.v = true;
                             try {
-                                xVar.g();
+                                wVar.g();
                             } finally {
-                                xVar.v = false;
+                                wVar.v = false;
                             }
                         }
                         s0Var.g();
                         s0Var.k(o0Var, 1);
-                        file2 = xVar.a;
+                        file2 = wVar.a;
                         try {
                             s0Var.c(true);
                             str = "resume prepared without remux: retainedDurationMs=";
-                            a3.z a10 = w7.p7.a(file4, s0Var.Q, s0Var.G, s0Var.H, true);
+                            a3.z a10 = w7.n7.a(file4, s0Var.Q, s0Var.G, s0Var.H, true);
                             j10 = a10.b;
                             s0Var.m.b("resume trim remux completed: requested=" + s0Var.G + ".." + s0Var.H + ", actualStartMs=" + a10.a + ", retainedDurationMs=" + j10 + ", outputSize=" + s0Var.Q.a.length() + ", elapsedMs=" + si.s0.f(nanoTime));
                         } catch (Exception e10) {
@@ -497,20 +497,20 @@ public final /* synthetic */ class s1 implements Runnable {
                             try {
                                 s0Var.i.post(new si.e0(s0Var, e, 1));
                                 if (file4 != null) {
-                                    w7.p7.c(file4);
+                                    w7.n7.c(file4);
                                 }
                                 if (file == null) {
-                                    w7.p7.c(file);
+                                    w7.n7.c(file);
                                     return;
                                 }
                                 return;
                             } catch (Throwable th3) {
                                 th = th3;
                                 if (file4 != null) {
-                                    w7.p7.c(file4);
+                                    w7.n7.c(file4);
                                 }
                                 if (file != null) {
-                                    w7.p7.c(file);
+                                    w7.n7.c(file);
                                 }
                                 throw th;
                             }
@@ -534,10 +534,10 @@ public final /* synthetic */ class s1 implements Runnable {
                     }
                     s0Var.i.post(new si.f0(s0Var, j10, objArr == true ? 1 : 0));
                     if (file4 != null) {
-                        w7.p7.c(file4);
+                        w7.n7.c(file4);
                     }
                     if (file2 != null) {
-                        w7.p7.c(file2);
+                        w7.n7.c(file2);
                         return;
                     }
                     return;
@@ -667,11 +667,11 @@ public final /* synthetic */ class s1 implements Runnable {
         this.e = passwordinputsettings;
     }
 
-    public /* synthetic */ s1(si.s0 s0Var, boolean z10, si.x xVar, si.o0 o0Var, File file) {
+    public /* synthetic */ s1(si.s0 s0Var, boolean z10, si.w wVar, si.o0 o0Var, File file) {
         this.a = 23;
         this.c = s0Var;
         this.b = z10;
-        this.d = xVar;
+        this.d = wVar;
         this.e = o0Var;
         this.f = file;
     }

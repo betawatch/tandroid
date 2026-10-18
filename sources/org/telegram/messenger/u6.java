@@ -2,34 +2,43 @@ package org.telegram.messenger;
 
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController.MediaLoader b;
+    public final /* synthetic */ int b;
     public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ u6(MediaController.MediaLoader mediaLoader, int i10, int i11) {
-        this.a = i11;
-        this.b = mediaLoader;
-        this.c = i10;
+    public /* synthetic */ u6(int i10, int i11, String str) {
+        this.a = 3;
+        this.b = i10;
+        this.c = i11;
+        this.d = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$didReceivedNotification$11(this.c);
+                ((MediaController.8) this.d).lambda$onStateChanged$0(this.b, this.c);
                 break;
             case 1:
-                this.b.lambda$copyFile$9(this.c);
+                ((MediaDataController) this.d).lambda$processLoadedStickers$106(this.b, this.c);
                 break;
             case 2:
-                this.b.lambda$copyFile$10(this.c);
+                ((NotificationsController) this.d).lambda$deleteNotificationChannelGlobal$44(this.b, this.c);
                 break;
             default:
-                this.b.lambda$processLivePhotoMessage$6(this.c);
+                PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ u6(Object obj, int i10, int i11, int i12) {
+        this.a = i12;
+        this.d = obj;
+        this.b = i10;
+        this.c = i11;
     }
 }

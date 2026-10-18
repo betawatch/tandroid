@@ -52,10 +52,10 @@ import java.util.concurrent.Executor;
 import k2.y;
 import r2.n;
 import r2.p;
-import u2.b0;
-import u2.f0;
+import u2.c0;
+import u2.g0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class i implements b {
     public y0 E;
@@ -110,8 +110,8 @@ public final class i implements b {
     }
 
     @Override // j2.b
-    public final void b(b0 b0Var) {
-        this.M = b0Var.a;
+    public final void b(c0 c0Var) {
+        this.M = c0Var.a;
     }
 
     @Override // j2.b
@@ -702,18 +702,18 @@ public final class i implements b {
     }
 
     @Override // j2.b
-    public final void e(a aVar, b0 b0Var) {
-        f0 f0Var = aVar.d;
-        if (f0Var == null) {
+    public final void e(a aVar, c0 c0Var) {
+        g0 g0Var = aVar.d;
+        if (g0Var == null) {
             return;
         }
-        w wVar = b0Var.c;
+        w wVar = c0Var.c;
         wVar.getClass();
-        int i10 = b0Var.d;
+        int i10 = c0Var.d;
         o1 o1Var = aVar.b;
-        f0Var.getClass();
-        a5.a aVar2 = new a5.a(wVar, i10, this.c.d(o1Var, f0Var), 9);
-        int i11 = b0Var.b;
+        g0Var.getClass();
+        a5.a aVar2 = new a5.a(wVar, i10, this.c.d(o1Var, g0Var), 9);
+        int i11 = c0Var.b;
         if (i11 != 0) {
             if (i11 == 1) {
                 this.G = aVar2;
@@ -731,9 +731,9 @@ public final class i implements b {
 
     @Override // j2.b
     public final void f(a aVar, int i10, long j10) {
-        f0 f0Var = aVar.d;
-        if (f0Var != null) {
-            String d = this.c.d(aVar.b, f0Var);
+        g0 g0Var = aVar.d;
+        if (g0Var != null) {
+            String d = this.c.d(aVar.b, g0Var);
             HashMap hashMap = this.r;
             Long l4 = (Long) hashMap.get(d);
             HashMap hashMap2 = this.n;
@@ -797,10 +797,10 @@ public final class i implements b {
         return this.d.getSessionId();
     }
 
-    public final void r(o1 o1Var, f0 f0Var) {
+    public final void r(o1 o1Var, g0 g0Var) {
         int b10;
         PlaybackMetrics.Builder builder = this.v;
-        if (f0Var == null || (b10 = o1Var.b(f0Var.a)) == -1) {
+        if (g0Var == null || (b10 = o1Var.b(g0Var.a)) == -1) {
             return;
         }
         l1 l1Var = this.h;
@@ -823,18 +823,18 @@ public final class i implements b {
     }
 
     public final void s(a aVar, String str) {
-        f0 f0Var = aVar.d;
-        if (f0Var == null || !f0Var.b()) {
+        g0 g0Var = aVar.d;
+        if (g0Var == null || !g0Var.b()) {
             p();
             this.s = str;
             this.v = new PlaybackMetrics.Builder().setPlayerName("AndroidXMedia3").setPlayerVersion("1.10.1");
-            r(aVar.b, f0Var);
+            r(aVar.b, g0Var);
         }
     }
 
     public final void t(a aVar, String str) {
-        f0 f0Var = aVar.d;
-        if ((f0Var == null || !f0Var.b()) && str.equals(this.s)) {
+        g0 g0Var = aVar.d;
+        if ((g0Var == null || !g0Var.b()) && str.equals(this.s)) {
             p();
         }
         this.n.remove(str);

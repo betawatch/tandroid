@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class hp extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -137,7 +137,7 @@ public final class hp extends org.telegram.ui.Components.hm0 {
                 dpVar.b = da0Var;
                 w9Var.setImageDrawable(da0Var);
                 dpVar.addView(w9Var, w7.z5.t(104, 104, 49, 0, 2, 0, 0));
-                epVar.addView(dpVar, w7.z5.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, 49));
+                epVar.addView(dpVar, w7.z5.d(-2, -2.0f, 49, 0.0f, 10.0f, 0.0f, 0.0f));
                 TextView textView = new TextView(context);
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.g9, false));
                 textView.setTextSize(1, 14.0f);
@@ -158,7 +158,7 @@ public final class hp extends org.telegram.ui.Components.hm0 {
                         textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("DiscussionGroupHelp", R.string.DiscussionGroupHelp, chat2.title)));
                     }
                 }
-                epVar.addView(textView, w7.z5.a(-2.0f, 52.0f, 143.0f, 52.0f, 18.0f, -1, 51));
+                epVar.addView(textView, w7.z5.d(-1, -2.0f, 51, 52.0f, 143.0f, 52.0f, 18.0f));
                 epVar.setTag(-33024);
                 a5Var = epVar;
             } else {

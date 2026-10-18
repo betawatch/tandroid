@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nv implements org.telegram.ui.Components.wl0 {
     public final /* synthetic */ int a;
@@ -24,11 +24,11 @@ public final /* synthetic */ class nv implements org.telegram.ui.Components.wl0 
                 ey eyVar = this.b;
                 Object obj = eyVar.C0.v0.G(i10).G;
                 if (!(obj instanceof MessageObject)) {
-                    if (obj instanceof ci.u6) {
-                        ci.u6 u6Var = (ci.u6) obj;
+                    if (obj instanceof ci.t6) {
+                        ci.t6 t6Var = (ci.t6) obj;
                         Bundle i11 = org.telegram.ui.Cells.c1.i(3, TeXSymbolParser.TYPE_ATTR);
-                        i11.putString("hashtag", u6Var.C);
-                        i11.putInt("storiesCount", u6Var.J);
+                        i11.putString("hashtag", t6Var.C);
+                        i11.putInt("storiesCount", t6Var.J);
                         eyVar.presentFragment(new org.telegram.ui.Components.wa0(i11, null));
                         break;
                     }

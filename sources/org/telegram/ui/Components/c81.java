@@ -15,7 +15,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c81 {
     public static Paint Q;
@@ -193,7 +193,7 @@ public final class c81 {
                     this.t = dp;
                 }
             } else {
-                float x10 = org.telegram.messenger.kk.x(j10, 60.0f, AndroidUtilities.dp(1.0f), f27);
+                float x10 = org.telegram.messenger.lk.x(j10, 60.0f, AndroidUtilities.dp(1.0f), f27);
                 this.t = x10;
                 if (x10 < dp) {
                     this.t = dp;

@@ -19,7 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ci.c4;
+import ci.b4;
 import ci.k0;
 import gi.g2;
 import ig.e2;
@@ -62,10 +62,10 @@ import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.q21;
-import sg.x0;
+import sg.y0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static final LruCache<VideoAdsLocation, VideoAdsCache> cached = new LruCache<>(3);
@@ -85,7 +85,7 @@ public class VideoAds {
     private boolean loading;
     private final int msg_id;
     private Runnable onPopupCallback;
-    private x0 premiumSheet;
+    private y0 premiumSheet;
     private int requestId;
     private int start_delay;
     public boolean videoWasPlaying;
@@ -95,7 +95,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 1);
 
-    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
     public static class AdLayout extends nb {
         public final ImageView buttonView;
         public final w9 imageView;
@@ -154,7 +154,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -285,7 +285,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
     public static class VideoAdsCache {
         final ArrayList<TLRPC.TL_sponsoredMessage> ads = new ArrayList<>();
         int betweenDelay;
@@ -299,7 +299,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -606,7 +606,7 @@ public class VideoAds {
             textView.setText(pf.d.u(parse, null, null, pf.d.a(parse.getHost()), null));
             textView.setBackground(h6.Z(k0Var.u(h6.I5), 0, tL_sponsoredMessage.additional_info == null ? 6 : 0));
             i80Var = i80Var2;
-            textView.setOnClickListener(new c4(this, i80Var, tL_sponsoredMessage, context2, 4));
+            textView.setOnClickListener(new b4(this, i80Var, tL_sponsoredMessage, context2, 4));
             textView.setOnLongClickListener(new View.OnLongClickListener() { // from class: org.telegram.messenger.video.h
                 @Override // android.view.View.OnLongClickListener
                 public final boolean onLongClick(View view2) {
@@ -835,8 +835,8 @@ public class VideoAds {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$showPremium$19(x0 x0Var) {
-        if (x0Var == this.premiumSheet) {
+    public /* synthetic */ void lambda$showPremium$19(y0 y0Var) {
+        if (y0Var == this.premiumSheet) {
             this.premiumSheet = null;
             checkPopupShownCallback();
         }
@@ -967,12 +967,12 @@ public class VideoAds {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void showPremium() {
-        x0 x0Var = this.premiumSheet;
-        if (x0Var != null) {
-            x0Var.dismiss();
+        y0 y0Var = this.premiumSheet;
+        if (y0Var != null) {
+            y0Var.dismiss();
             this.premiumSheet = null;
         }
-        x0 x0Var2 = new x0(new n2() { // from class: org.telegram.messenger.video.VideoAds.2
+        y0 y0Var2 = new y0(new n2() { // from class: org.telegram.messenger.video.VideoAds.2
             @Override // org.telegram.ui.ActionBar.n2
             public Context getContext() {
                 return AndroidUtilities.findActivity(LaunchActivity.H1);
@@ -989,9 +989,9 @@ public class VideoAds {
                 return findActivity == null ? LaunchActivity.H1 : findActivity;
             }
         }, 3, true);
-        this.premiumSheet = x0Var2;
-        x0Var2.setOnDismissListener(new z(9, this, x0Var2));
-        x0Var2.show();
+        this.premiumSheet = y0Var2;
+        y0Var2.setOnDismissListener(new z(9, this, y0Var2));
+        y0Var2.show();
         checkPopupShownCallback();
     }
 
@@ -1000,8 +1000,8 @@ public class VideoAds {
         if (i80Var != null && i80Var.D()) {
             return true;
         }
-        x0 x0Var = this.premiumSheet;
-        return x0Var != null && x0Var.isShown();
+        y0 y0Var = this.premiumSheet;
+        return y0Var != null && y0Var.isShown();
     }
 
     public void logSponsoredClicked(TLRPC.TL_sponsoredMessage tL_sponsoredMessage) {
@@ -1080,7 +1080,7 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;

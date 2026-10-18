@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.te1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class he implements org.telegram.ui.cj0, org.telegram.ui.xx {
+public final /* synthetic */ class he implements org.telegram.ui.bj0, org.telegram.ui.xx {
     public final /* synthetic */ ChatActivityEnterView a;
     public final /* synthetic */ MessageObject b;
     public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
@@ -34,7 +34,7 @@ public final /* synthetic */ class he implements org.telegram.ui.cj0, org.telegr
         return false;
     }
 
-    @Override // org.telegram.ui.cj0
+    @Override // org.telegram.ui.bj0
     public void a(ArrayList arrayList) {
         int i10 = ChatActivityEnterView.n5;
         if (arrayList.isEmpty()) {

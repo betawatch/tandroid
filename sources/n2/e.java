@@ -64,7 +64,6 @@ import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.v01;
 import org.telegram.ui.Components.zl0;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Wallet.m5;
 import org.telegram.ui.cw;
 import org.telegram.ui.dy;
 import org.telegram.ui.ey;
@@ -73,13 +72,14 @@ import org.telegram.ui.xu0;
 import r7.z;
 import s4.b1;
 import s4.i1;
-import sg.z0;
+import sg.a1;
+import u2.d1;
 import v7.d8;
 import w7.pa;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.android.gms.common.api.internal.r, SuccessContinuation {
+public final class e implements bp0, l1, zl0, gh.a, p2.t, ne.d, com.google.android.gms.common.api.internal.r, SuccessContinuation {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -229,9 +229,9 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
         return null;
     }
 
-    @Override // p2.u
+    @Override // p2.t
     public y2.n J() {
-        return new mi.q(22, ((p2.u) this.b).J(), (List) this.c);
+        return new mi.q(22, ((p2.t) this.b).J(), (List) this.c);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -259,8 +259,8 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
     }
 
     public boolean O() {
-        m5 m5Var = (m5) this.c;
-        return m5Var.J0 > 0.0f || m5Var.v0();
+        org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) this.c;
+        return n5Var.H0 > 0.0f || n5Var.w0();
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -303,9 +303,9 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
         return false;
     }
 
-    @Override // p2.u
-    public y2.n U(p2.q qVar, p2.n nVar) {
-        return new mi.q(22, ((p2.u) this.b).U(qVar, nVar), (List) this.c);
+    @Override // p2.t
+    public y2.n U(p2.p pVar, p2.m mVar) {
+        return new mi.q(22, ((p2.t) this.b).U(pVar, mVar), (List) this.c);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -483,7 +483,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
                     i1Var.a = 0;
                     i1Var.b = null;
                     i1Var.c = null;
-                    i1.d.t(i1Var);
+                    i1.d.w(i1Var);
                 }
                 return u0Var;
             }
@@ -560,7 +560,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
         String str = m0.a;
         o10.getClass();
         fVar.getClass();
-        fVar.obtainMessage(1, new a(u2.t.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), o10)).sendToTarget();
+        fVar.obtainMessage(1, new a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), o10)).sendToTarget();
     }
 
     @Override // org.telegram.ui.Components.bp0
@@ -697,7 +697,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
             i1Var.a = 0;
             i1Var.b = null;
             i1Var.c = null;
-            i1.d.t(i1Var);
+            i1.d.w(i1Var);
         }
     }
 
@@ -817,7 +817,7 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
                 return new c3.n();
             }
             if (i10 == iArr[i11]) {
-                return ((u2.b1[]) this.c)[i11];
+                return ((d1[]) this.c)[i11];
             }
             i11++;
         }
@@ -912,13 +912,13 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
     public void y(Canvas canvas, float f7, float f10, float f11, float f12) {
         Paint paint = (Paint) this.b;
         PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.c;
-        z0 z0Var = premiumPreviewFragment.m0;
+        a1 a1Var = premiumPreviewFragment.m0;
         if (premiumPreviewFragment.h0) {
             paint.setColor(premiumPreviewFragment.getThemedColor(h6.a7));
             canvas.drawRect(f7, f10, f11, f12, paint);
         } else {
-            z0Var.d(0, (-premiumPreviewFragment.d0.getMeasuredWidth()) * 0.1f * premiumPreviewFragment.b0, 0, premiumPreviewFragment.d0.getMeasuredWidth(), 0.0f, premiumPreviewFragment.d0.getMeasuredHeight());
-            canvas.drawRect(f7, f10, f11, f12, z0Var.f);
+            a1Var.d(0, (-premiumPreviewFragment.d0.getMeasuredWidth()) * 0.1f * premiumPreviewFragment.b0, 0, premiumPreviewFragment.d0.getMeasuredWidth(), 0.0f, premiumPreviewFragment.d0.getMeasuredHeight());
+            canvas.drawRect(f7, f10, f11, f12, a1Var.f);
         }
     }
 
@@ -961,10 +961,10 @@ public final class e implements bp0, l1, zl0, gh.a, p2.u, ne.d, com.google.andro
         this.c = resources.getResourcePackageName(R.string.common_google_play_services_unknown_issue);
     }
 
-    public e(t0.h hVar) {
+    public e(u2.c cVar) {
         this.a = 23;
         this.c = new d8();
-        this.b = hVar;
+        this.b = cVar;
         pa.b();
     }
 

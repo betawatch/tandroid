@@ -21,7 +21,7 @@ import org.telegram.ui.Components.r5;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class v1 {
     /* JADX WARN: Multi-variable type inference failed */
@@ -54,15 +54,15 @@ public abstract class v1 {
         w9 w9Var2 = new w9(activity);
         w9Var2.setEmojiColorFilter(new PorterDuffColorFilter(h6.x0(null, h6.z9, false), PorterDuff.Mode.SRC_IN));
         w9Var2.setAnimatedEmojiDrawable(r5.n(i10, botVerifierSettings.icon, null, 3));
-        frameLayout2.addView(w9Var2, z5.a(20.0f, 34.0f, 0.0f, 0.0f, 0.0f, 20, 19));
+        frameLayout2.addView(w9Var2, z5.d(20, 20.0f, 19, 34.0f, 0.0f, 0.0f, 0.0f));
         j5 j5Var = new j5(activity);
         j5Var.setTextColor(h6.x0(null, h6.j5, false));
         j5Var.setTextSize(13);
         j5Var.setEllipsizeByGradient(true);
         j5Var.l(str, false);
         j5Var.setWidthWrapContent(true);
-        frameLayout2.addView(j5Var, z5.a(-2.0f, 57.0f, 0.0f, 10.0f, 0.0f, -2, 19));
-        frameLayout.addView(frameLayout2, z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 0.0f, -2, 17));
+        frameLayout2.addView(j5Var, z5.d(-2, -2.0f, 19, 57.0f, 0.0f, 10.0f, 0.0f));
+        frameLayout.addView(frameLayout2, z5.d(-2, -2.0f, 17, 16.0f, 0.0f, 16.0f, 0.0f));
         final boolean[] zArr = new boolean[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.BotRemoveVerificationTitle);

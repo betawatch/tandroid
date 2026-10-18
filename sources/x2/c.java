@@ -6,10 +6,10 @@ import b2.w;
 import e2.m0;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.ui.lg0;
+import org.telegram.ui.kg0;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class c implements p {
     public final p1 a;
@@ -30,7 +30,7 @@ public abstract class c implements p {
         for (int i11 = 0; i11 < iArr.length; i11++) {
             this.d[i11] = p1Var.d[iArr[i11]];
         }
-        Arrays.sort(this.d, new lg0(17));
+        Arrays.sort(this.d, new kg0(17));
         this.c = new int[this.b];
         while (true) {
             int i12 = this.b;

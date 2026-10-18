@@ -42,7 +42,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class u91 extends ViewGroup implements x71, AudioManager.OnAudioFocusChangeListener {
     public String E;
@@ -178,7 +178,7 @@ public final class u91 extends ViewGroup implements x71, AudioManager.OnAudioFoc
         if (g10 != null) {
             g10.addView(q91Var);
         } else {
-            addView(q91Var, w7.z5.d(-1.0f, -1));
+            addView(q91Var, w7.z5.c(-1.0f, -1));
         }
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.a0 = radialProgressView;
@@ -188,7 +188,7 @@ public final class u91 extends ViewGroup implements x71, AudioManager.OnAudioFoc
         this.b0 = imageView2;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView2.setScaleType(scaleType);
-        q91Var.addView(imageView2, w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 5.0f, 56, 85));
+        q91Var.addView(imageView2, w7.z5.d(56, 56.0f, 85, 0.0f, 0.0f, 0.0f, 5.0f));
         final int i10 = 0;
         imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.l91
             public final /* synthetic */ u91 b;
@@ -1317,10 +1317,10 @@ public final class u91 extends ViewGroup implements x71, AudioManager.OnAudioFoc
         imageView.setVisibility(0);
         if (this.T) {
             imageView.setImageResource(R.drawable.ic_outfullscreen);
-            imageView.setLayoutParams(w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 1.0f, 56, 85));
+            imageView.setLayoutParams(w7.z5.d(56, 56.0f, 85, 0.0f, 0.0f, 0.0f, 1.0f));
         } else {
             imageView.setImageResource(R.drawable.ic_gofullscreen);
-            imageView.setLayoutParams(w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 5.0f, 56, 85));
+            imageView.setLayoutParams(w7.z5.d(56, 56.0f, 85, 0.0f, 0.0f, 0.0f, 5.0f));
         }
     }
 

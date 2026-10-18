@@ -9,9 +9,9 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.im0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public abstract class b extends FrameLayout implements l0 {
+public abstract class b extends FrameLayout implements m0 {
     public final d6 a;
     public final im0 b;
     public final s4.b0 c;
@@ -27,7 +27,7 @@ public abstract class b extends FrameLayout implements l0 {
         this.c = b0Var;
         im0Var.setLayoutManager(b0Var);
         im0Var.setClipToPadding(false);
-        addView(im0Var, z5.d(-1.0f, -1));
+        addView(im0Var, z5.c(-1.0f, -1));
     }
 
     public abstract s4.g0 a();
@@ -42,7 +42,7 @@ public abstract class b extends FrameLayout implements l0 {
         canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, U0);
     }
 
-    @Override // sg.l0
+    @Override // sg.m0
     public void setOffset(float f7) {
         if (Math.abs(f7 / getMeasuredWidth()) == 1.0f) {
             im0 im0Var = this.b;

@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
     public final /* synthetic */ int a;
@@ -161,45 +161,45 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
         PremiumPreviewFragment premiumPreviewFragment = pw0Var.n;
         ArrayList arrayList = premiumPreviewFragment.d;
         mw0 mw0Var = pw0Var.e;
-        if (view.isEnabled() && (view instanceof sg.q1)) {
-            sg.q1 q1Var = (sg.q1) view;
-            premiumPreviewFragment.e = arrayList.indexOf(q1Var.getTier());
+        if (view.isEnabled() && (view instanceof sg.r1)) {
+            sg.r1 r1Var = (sg.r1) view;
+            premiumPreviewFragment.e = arrayList.indexOf(r1Var.getTier());
             boolean z10 = true;
             premiumPreviewFragment.t0(true);
-            q1Var.c(true, true);
+            r1Var.c(true, true);
             for (int i11 = 0; i11 < mw0Var.getChildCount(); i11++) {
                 View childAt = mw0Var.getChildAt(i11);
-                if (childAt instanceof sg.q1) {
-                    sg.q1 q1Var2 = (sg.q1) childAt;
-                    if (q1Var2.getTier() != q1Var.getTier()) {
-                        q1Var2.c(false, true);
+                if (childAt instanceof sg.r1) {
+                    sg.r1 r1Var2 = (sg.r1) childAt;
+                    if (r1Var2.getTier() != r1Var.getTier()) {
+                        r1Var2.c(false, true);
                     }
                 }
             }
             for (int i12 = 0; i12 < mw0Var.getHiddenChildCount(); i12++) {
                 View V = mw0Var.V(i12);
-                if (V instanceof sg.q1) {
-                    sg.q1 q1Var3 = (sg.q1) V;
-                    if (q1Var3.getTier() != q1Var.getTier()) {
-                        q1Var3.c(false, true);
+                if (V instanceof sg.r1) {
+                    sg.r1 r1Var3 = (sg.r1) V;
+                    if (r1Var3.getTier() != r1Var.getTier()) {
+                        r1Var3.c(false, true);
                     }
                 }
             }
             for (int i13 = 0; i13 < mw0Var.getCachedChildCount(); i13++) {
                 View P = mw0Var.P(i13);
-                if (P instanceof sg.q1) {
-                    sg.q1 q1Var4 = (sg.q1) P;
-                    if (q1Var4.getTier() != q1Var.getTier()) {
-                        q1Var4.c(false, true);
+                if (P instanceof sg.r1) {
+                    sg.r1 r1Var4 = (sg.r1) P;
+                    if (r1Var4.getTier() != r1Var.getTier()) {
+                        r1Var4.c(false, true);
                     }
                 }
             }
             for (int i14 = 0; i14 < mw0Var.getAttachedScrapChildCount(); i14++) {
                 View O = mw0Var.O(i14);
-                if (O instanceof sg.q1) {
-                    sg.q1 q1Var5 = (sg.q1) O;
-                    if (q1Var5.getTier() != q1Var.getTier()) {
-                        q1Var5.c(false, true);
+                if (O instanceof sg.r1) {
+                    sg.r1 r1Var5 = (sg.r1) O;
+                    if (r1Var5.getTier() != r1Var.getTier()) {
+                        r1Var5.c(false, true);
                     }
                 }
             }
@@ -664,7 +664,7 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                         a02 = org.telegram.ui.Components.xc.a0(p00Var);
                         i11 = R.string.FilterInviteErrorExcluded;
                     }
-                    org.telegram.messenger.kk.q(i11, a02, null);
+                    org.telegram.messenger.lk.q(i11, a02, null);
                     return;
                 }
                 return;
@@ -866,20 +866,20 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                     return;
                 }
             case 18:
-                ((oi0) this.b).onBackPressed();
+                ((ni0) this.b).onBackPressed();
                 return;
             case 19:
-                wi0 wi0Var = (wi0) this.b;
-                int i24 = wi0Var.I;
-                if (i10 < i24 || i10 >= wi0Var.J) {
+                vi0 vi0Var = (vi0) this.b;
+                int i24 = vi0Var.I;
+                if (i10 < i24 || i10 >= vi0Var.J) {
                     return;
                 }
-                MessageObject messageObject2 = (MessageObject) wi0Var.x.get(i10 - i24);
+                MessageObject messageObject2 = (MessageObject) vi0Var.x.get(i10 - i24);
                 if (messageObject2.isStory()) {
-                    if (wi0Var.a0(messageObject2)) {
+                    if (vi0Var.a0(messageObject2)) {
                         return;
                     }
-                    wi0Var.getOrCreateStoryViewer().F(wi0Var.getParentActivity(), messageObject2.storyItem, ci.r7.a(wi0Var.f));
+                    vi0Var.getOrCreateStoryViewer().F(vi0Var.getParentActivity(), messageObject2.storyItem, ci.q7.a(vi0Var.f));
                     return;
                 }
                 long dialogId = MessageObject.getDialogId(messageObject2.messageOwner);
@@ -891,8 +891,8 @@ public final /* synthetic */ class i implements org.telegram.ui.Components.wl0 {
                 }
                 bundle3.putInt("message_id", messageObject2.getId());
                 bundle3.putBoolean("need_remove_previous_same_chat_activity", false);
-                if (wi0Var.getMessagesController().checkCanOpenChat(bundle3, wi0Var)) {
-                    wi0Var.presentFragment(new sn(bundle3));
+                if (vi0Var.getMessagesController().checkCanOpenChat(bundle3, vi0Var)) {
+                    vi0Var.presentFragment(new sn(bundle3));
                     return;
                 }
                 return;

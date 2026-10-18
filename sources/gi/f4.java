@@ -27,7 +27,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.q21;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f4 extends li implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -230,7 +230,7 @@ public final class f4 extends li implements NotificationCenter.NotificationCente
         return this.G;
     }
 
-    public org.telegram.ui.web.a1 getWebViewContainer() {
+    public org.telegram.ui.web.b1 getWebViewContainer() {
         return this.n;
     }
 
@@ -308,8 +308,8 @@ public final class f4 extends li implements NotificationCenter.NotificationCente
         this.Q = true;
     }
 
-    public void setDelegate(org.telegram.ui.web.g0 g0Var) {
-        this.n.setDelegate(g0Var);
+    public void setDelegate(org.telegram.ui.web.h0 h0Var) {
+        this.n.setDelegate(h0Var);
     }
 
     public void setMeasureOffsetY(int i10) {
@@ -375,7 +375,7 @@ public final class f4 extends li implements NotificationCenter.NotificationCente
             z3Var.setVisibility(0);
             v2Var.setBotUser(MessagesController.getInstance(this.F).getUser(Long.valueOf(this.v)));
             v2Var.s(this.F, this.v);
-            NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.t(v2Var, 2));
+            NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.u(v2Var, 2));
             return;
         }
         if (i10 == R.id.menu_delete_bot) {

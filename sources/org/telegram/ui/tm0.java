@@ -25,7 +25,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class tm0 extends org.telegram.ui.Components.ow0 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int R = 0;
@@ -89,11 +89,11 @@ public final class tm0 extends org.telegram.ui.Components.ow0 implements Notific
             imageView.setImageResource(R.drawable.phone_activate);
             boolean z10 = LocaleController.isRTL;
             if (z10) {
-                frameLayout.addView(imageView, w7.z5.a(76.0f, 2.0f, 2.0f, 0.0f, 0.0f, 64, 19));
-                frameLayout.addView(textView, w7.z5.a(-2.0f, 82.0f, 0.0f, 0.0f, 0.0f, -1, LocaleController.isRTL ? 5 : 3));
+                frameLayout.addView(imageView, w7.z5.d(64, 76.0f, 19, 2.0f, 2.0f, 0.0f, 0.0f));
+                frameLayout.addView(textView, w7.z5.d(-1, -2.0f, LocaleController.isRTL ? 5 : 3, 82.0f, 0.0f, 0.0f, 0.0f));
             } else {
-                frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 82.0f, 0.0f, -1, z10 ? 5 : 3));
-                frameLayout.addView(imageView, w7.z5.a(76.0f, 0.0f, 2.0f, 0.0f, 2.0f, 64, 21));
+                frameLayout.addView(textView, w7.z5.d(-1, -2.0f, z10 ? 5 : 3, 0.0f, 0.0f, 82.0f, 0.0f));
+                frameLayout.addView(imageView, w7.z5.d(64, 76.0f, 21, 0.0f, 2.0f, 0.0f, 2.0f));
             }
         } else {
             textView.setGravity(49);
@@ -105,19 +105,19 @@ public final class tm0 extends org.telegram.ui.Components.ow0 implements Notific
                 int x02 = org.telegram.ui.ActionBar.h6.x0(null, i12, false);
                 PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
                 imageView2.setColorFilter(new PorterDuffColorFilter(x02, mode));
-                frameLayout2.addView(imageView2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, 51));
+                frameLayout2.addView(imageView2, w7.z5.d(-2, -2.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                 ImageView imageView3 = new ImageView(context);
                 this.h = imageView3;
                 imageView3.setImageResource(R.drawable.sms_bubble);
                 imageView3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.P9, false), mode));
-                frameLayout2.addView(imageView3, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, 51));
+                frameLayout2.addView(imageView3, w7.z5.d(-2, -2.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                 textView2.setText(LocaleController.getString(R.string.SentAppCodeTitle));
             } else {
                 ImageView imageView4 = new ImageView(context);
                 this.h = imageView4;
                 imageView4.setImageResource(R.drawable.sms_code);
                 imageView4.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.P9, false), PorterDuff.Mode.MULTIPLY));
-                frameLayout2.addView(imageView4, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, 51));
+                frameLayout2.addView(imageView4, w7.z5.d(-2, -2.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                 textView2.setText(LocaleController.getString(R.string.SentSmsCodeTitle));
             }
             addView(textView2, w7.z5.t(-2, -2, 49, 0, 18, 0, 0));
@@ -208,7 +208,7 @@ public final class tm0 extends org.telegram.ui.Components.ow0 implements Notific
         tL_auth_cancelCode.phone_number = this.a;
         tL_auth_cancelCode.phone_code_hash = this.b;
         i10 = ((org.telegram.ui.ActionBar.n2) xm0Var).currentAccount;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_auth_cancelCode, new ci.e6(19), 2);
+        ConnectionsManager.getInstance(i10).sendRequest(tL_auth_cancelCode, new ci.d6(19), 2);
         s();
         r();
         int i11 = this.L;
@@ -416,7 +416,7 @@ public final class tm0 extends org.telegram.ui.Components.ow0 implements Notific
         if (this.a == null) {
             return;
         }
-        String g10 = org.telegram.messenger.kk.g(new StringBuilder("+"), this.a, jf.b.c());
+        String g10 = org.telegram.messenger.lk.g(new StringBuilder("+"), this.a, jf.b.c());
         if (i12 == 2) {
             charSequence = AndroidUtilities.replaceTags(LocaleController.formatString("SentSmsCode", R.string.SentSmsCode, LocaleController.addNbsp(g10)));
         } else if (i12 == 3) {

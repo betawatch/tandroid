@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class o51 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final FrameLayout a;
@@ -51,9 +51,9 @@ public abstract class o51 extends FrameLayout implements org.telegram.ui.ActionB
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(dp, org.telegram.ui.ActionBar.h6.w0(i12, d6Var)));
         frameLayout.setClipToOutline(true);
         float dp2 = AndroidUtilities.dp(18.0f);
-        ci.o1 o1Var = zf.j0.a;
+        ci.n1 n1Var = zf.j0.a;
         frameLayout.setOutlineProvider(new zf.i0(0, dp2));
-        addView(frameLayout, w7.z5.a(36.0f, 8.0f, 12.0f, 8.0f, 8.0f, -1, 55));
+        addView(frameLayout, w7.z5.d(-1, 36.0f, 55, 8.0f, 12.0f, 8.0f, 8.0f));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -120,7 +120,7 @@ public abstract class o51 extends FrameLayout implements org.telegram.ui.ActionB
         frameLayout.addView(imageView, w7.z5.e(36, 36, 51));
         org.telegram.ui.Components.dh0 dh0Var = new org.telegram.ui.Components.dh0(q41Var, context, z10);
         this.d = dh0Var;
-        frameLayout.addView(dh0Var, w7.z5.a(-1.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        frameLayout.addView(dh0Var, w7.z5.d(-1, -1.0f, 119, 36.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Cells.b6 b6Var = new org.telegram.ui.Cells.b6(q41Var, context, d6Var, i11);
         this.h = b6Var;
         b6Var.addTextChangedListener(new o0(q41Var, 15));
@@ -139,7 +139,7 @@ public abstract class o51 extends FrameLayout implements org.telegram.ui.ActionB
         b6Var.setSingleLine(true);
         b6Var.setLines(1);
         b6Var.setTranslationY(AndroidUtilities.dp(-1.0f));
-        dh0Var.addView(b6Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 32.0f, 0.0f, -1, 119));
+        dh0Var.addView(b6Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 32.0f, 0.0f));
         if (z10) {
             View view = new View(context);
             this.e = view;
@@ -371,7 +371,7 @@ public abstract class o51 extends FrameLayout implements org.telegram.ui.ActionB
                         }
                     }
                 });
-                this.a.addView(this.n, w7.z5.a(-1.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+                this.a.addView(this.n, w7.z5.d(-1, -1.0f, 119, 36.0f, 0.0f, 0.0f, 0.0f));
             }
             i11 = 1;
             n51 n51Var3 = new n51(this, getContext(), i11, z51Var.Z0);
@@ -448,7 +448,7 @@ public abstract class o51 extends FrameLayout implements org.telegram.ui.ActionB
                     }
                 }
             });
-            this.a.addView(this.n, w7.z5.a(-1.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+            this.a.addView(this.n, w7.z5.d(-1, -1.0f, 119, 36.0f, 0.0f, 0.0f, 0.0f));
         }
     }
 

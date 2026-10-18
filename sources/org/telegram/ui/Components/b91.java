@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class b91 extends FrameLayout {
     public static final /* synthetic */ int s0 = 0;
@@ -158,7 +158,7 @@ public abstract class b91 extends FrameLayout {
         if (i10 == 9 || i10 == 10) {
             addView(u1Var, w7.z5.e(-2, -1, 1));
         } else {
-            addView(u1Var, w7.z5.d(-1.0f, -1));
+            addView(u1Var, w7.z5.c(-1.0f, -1));
         }
     }
 

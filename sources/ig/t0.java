@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ci.i4;
+import ci.h4;
 import ei.g8;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
@@ -19,7 +19,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -37,7 +37,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class t0 extends n2 {
     public static final int U = -1;
@@ -84,7 +84,7 @@ public final class t0 extends n2 {
     public FrameLayout e;
     public EditTextBoldCursor f;
     public View h;
-    public i4 n;
+    public h4 n;
     public TextView r;
     public ImageView s;
     public a0 v;
@@ -114,7 +114,7 @@ public final class t0 extends n2 {
         }
         if (tLObject instanceof TLRPC.TL_boolFalse) {
             t0Var.a.a(0.0f);
-            kk.q(R.string.UnknownError, xc.a0(t0Var), null);
+            lk.q(R.string.UnknownError, xc.a0(t0Var), null);
             return;
         }
         if (tLObject instanceof TLRPC.Updates) {
@@ -976,7 +976,7 @@ public final class t0 extends n2 {
         this.f.addTextChangedListener(new ai.u(this, 3));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.e = frameLayout2;
-        frameLayout2.addView(this.f, z5.a(-1.0f, 21.0f, 15.0f, 21.0f, 15.0f, -1, 48));
+        frameLayout2.addView(this.f, z5.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
         int i12 = h6.d6;
         frameLayout3.setBackgroundColor(getThemedColor(i12));
@@ -987,10 +987,10 @@ public final class t0 extends n2 {
         View view2 = this.h;
         float f7 = 1.0f / AndroidUtilities.density;
         boolean z10 = LocaleController.isRTL;
-        frameLayout4.addView(view2, z5.a(f7, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f, -1, 87));
-        i4 i4Var = new i4(context, 3);
-        this.n = i4Var;
-        i4Var.setBackgroundColor(getThemedColor(i12));
+        frameLayout4.addView(view2, z5.d(-1, f7, 87, z10 ? 0 : 21, 0.0f, z10 ? 21 : 0, 0.0f));
+        h4 h4Var = new h4(context, 3);
+        this.n = h4Var;
+        h4Var.setBackgroundColor(getThemedColor(i12));
         TextView textView = new TextView(context);
         this.r = textView;
         textView.setText(LocaleController.getString(R.string.BusinessBotNotFound));
@@ -1018,7 +1018,7 @@ public final class t0 extends n2 {
         a71Var.p1();
         a71 a71Var2 = this.c;
         a71Var2.W2.r = false;
-        frameLayout.addView(a71Var2, z5.d(-1.0f, -1));
+        frameLayout.addView(a71Var2, z5.c(-1.0f, -1));
         this.actionBar.A(this.c, true);
         this.fragmentView = frameLayout;
         return frameLayout;

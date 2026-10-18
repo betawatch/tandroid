@@ -46,7 +46,7 @@ import org.telegram.ui.ad1;
 import org.telegram.ui.hd1;
 import org.telegram.ui.id1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class az0 implements Runnable {
     public final /* synthetic */ int a;
@@ -262,7 +262,7 @@ public final /* synthetic */ class az0 implements Runnable {
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.c;
                 AndroidUtilities.addToClipboard(str2);
                 if (i17 == 1) {
-                    org.telegram.messenger.kk.p(R.string.PhoneCopied, new xc(f3Var.getContainer(), d6Var2));
+                    org.telegram.messenger.lk.p(R.string.PhoneCopied, new xc(f3Var.getContainer(), d6Var2));
                     return;
                 } else {
                     new xc(f3Var.getContainer(), d6Var2).k(false).j();
@@ -407,7 +407,7 @@ public final /* synthetic */ class az0 implements Runnable {
                 return;
             case 8:
                 boolean[] zArr = (boolean[]) this.d;
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.e;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.e;
                 TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = (TLRPC.TL_messages_requestUrlAuth) this.c;
                 int i21 = this.b;
                 org.telegram.ui.wk0.a = null;
@@ -415,14 +415,14 @@ public final /* synthetic */ class az0 implements Runnable {
                     return;
                 }
                 zArr[0] = true;
-                if (a1Var != null) {
-                    boolean z11 = org.telegram.ui.web.a1.P0;
+                if (b1Var != null) {
+                    boolean z11 = org.telegram.ui.web.b1.P0;
                     try {
                         jSONObject = new JSONObject();
                     } catch (Exception unused2) {
                         jSONObject = null;
                     }
-                    a1Var.y("oauth_result_failed", jSONObject);
+                    b1Var.y("oauth_result_failed", jSONObject);
                 }
                 if (tL_messages_requestUrlAuth == null || TextUtils.isEmpty(tL_messages_requestUrlAuth.url)) {
                     return;
@@ -458,7 +458,7 @@ public final /* synthetic */ class az0 implements Runnable {
                         dVar.b = false;
                         bVar = dVar.a();
                         if (bVar.c.k()) {
-                            m.g3 g3Var = new m.g3(23);
+                            m.g3 g3Var = new m.g3(22);
                             Bitmap bitmap2 = bitmapHolder.bitmap;
                             int width = bitmap2.getWidth();
                             int height = bitmap2.getHeight();
@@ -556,59 +556,59 @@ public final /* synthetic */ class az0 implements Runnable {
                     return;
                 }
             case 15:
-                org.telegram.ui.Wallet.a1 a1Var2 = (org.telegram.ui.Wallet.a1) this.d;
+                org.telegram.ui.Wallet.a1 a1Var = (org.telegram.ui.Wallet.a1) this.d;
                 tc.u uVar = (tc.u) this.c;
                 int i28 = this.b;
                 String str7 = (String) this.e;
-                if (a1Var2.c(uVar, i28)) {
-                    a1Var2.f(str7);
+                if (a1Var.c(uVar, i28)) {
+                    a1Var.f(str7);
                     return;
                 }
-                a1Var2.d("ignoring stale socket callback; attempt=" + i28 + ", " + str7);
+                a1Var.d("ignoring stale socket callback; attempt=" + i28 + ", " + str7);
                 return;
             case 16:
                 org.telegram.ui.Wallet.z0 z0Var = (org.telegram.ui.Wallet.z0) this.d;
                 tc.u uVar2 = (tc.u) this.e;
                 int i29 = this.b;
                 JSONObject jSONObject2 = (JSONObject) this.c;
-                org.telegram.ui.Wallet.a1 a1Var3 = z0Var.c;
-                if (a1Var3.c(uVar2, i29)) {
-                    org.telegram.ui.Wallet.m0 m0Var = a1Var3.c;
-                    String str8 = a1Var3.b;
-                    org.telegram.ui.Cells.k7 k7Var = a1Var3.p;
+                org.telegram.ui.Wallet.a1 a1Var2 = z0Var.c;
+                if (a1Var2.c(uVar2, i29)) {
+                    org.telegram.ui.Wallet.m0 m0Var = a1Var2.c;
+                    String str8 = a1Var2.b;
+                    org.telegram.ui.Cells.k7 k7Var = a1Var2.p;
                     String optString = jSONObject2.optString("status");
                     if ((jSONObject2.has("error") && !jSONObject2.isNull("error")) || "error".equals(optString)) {
-                        a1Var3.d("subscription error; id=" + jSONObject2.optString("id") + ", code=" + jSONObject2.optString("code") + ", status=" + optString + ", error=" + jSONObject2.opt("error") + ", message=" + jSONObject2.optString("message"));
-                        a1Var3.f("subscription rejected");
+                        a1Var2.d("subscription error; id=" + jSONObject2.optString("id") + ", code=" + jSONObject2.optString("code") + ", status=" + optString + ", error=" + jSONObject2.opt("error") + ", message=" + jSONObject2.optString("message"));
+                        a1Var2.f("subscription rejected");
                         return;
                     }
                     if ("subscribed".equals(optString)) {
-                        a1Var3.d("subscription acknowledgement: " + jSONObject2);
-                        if (TextUtils.equals(a1Var3.f, jSONObject2.optString("id"))) {
-                            a1Var3.e = true;
-                            a1Var3.j = 0;
-                            a1Var3.l = SystemClock.elapsedRealtime();
-                            AndroidUtilities.cancelRunOnUIThread(a1Var3.o);
+                        a1Var2.d("subscription acknowledgement: " + jSONObject2);
+                        if (TextUtils.equals(a1Var2.f, jSONObject2.optString("id"))) {
+                            a1Var2.e = true;
+                            a1Var2.j = 0;
+                            a1Var2.l = SystemClock.elapsedRealtime();
+                            AndroidUtilities.cancelRunOnUIThread(a1Var2.o);
                             AndroidUtilities.cancelRunOnUIThread(k7Var);
                             AndroidUtilities.runOnUIThread(k7Var, 15000L);
-                            a1Var3.d("subscription acknowledged; requested transactions and account state");
+                            a1Var2.d("subscription acknowledged; requested transactions and account state");
                             return;
                         }
                         return;
                     }
                     if ("pong".equals(optString) && "heartbeat".equals(jSONObject2.optString("id"))) {
-                        a1Var3.d("received pong");
-                        a1Var3.l = SystemClock.elapsedRealtime();
+                        a1Var2.d("received pong");
+                        a1Var2.l = SystemClock.elapsedRealtime();
                         return;
                     }
-                    if (!a1Var3.e) {
-                        a1Var3.d("ignoring message before subscription; type=" + jSONObject2.optString(TeXSymbolParser.TYPE_ATTR) + ", status=" + optString);
+                    if (!a1Var2.e) {
+                        a1Var2.d("ignoring message before subscription; type=" + jSONObject2.optString(TeXSymbolParser.TYPE_ATTR) + ", status=" + optString);
                         return;
                     }
                     String optString2 = jSONObject2.optString(TeXSymbolParser.TYPE_ATTR);
                     if (!"account_state_change".equals(optString2) || org.telegram.ui.Wallet.m0.a(str8, jSONObject2.optString("account"))) {
                         if (!"transactions".equals(optString2) && !"account_state_change".equals(optString2) && !"trace_invalidated".equals(optString2)) {
-                            a1Var3.d("ignoring message; type=" + optString2 + ", status=" + optString);
+                            a1Var2.d("ignoring message; type=" + optString2 + ", status=" + optString);
                             return;
                         }
                         JSONArray optJSONArray2 = jSONObject2.optJSONArray("transactions");
@@ -619,7 +619,7 @@ public final /* synthetic */ class az0 implements Runnable {
                         v.append(jSONObject2.optString("trace_external_hash_norm"));
                         v.append(optJSONArray2 == null ? "" : ", transactions=" + optJSONArray2.length());
                         v.append(optJSONObject != null ? ", balance=" + optJSONObject.optString("balance") : "");
-                        a1Var3.d(v.toString());
+                        a1Var2.d(v.toString());
                         if (!"transactions".equals(optString2)) {
                             m0Var.K(jSONObject2);
                             return;
@@ -643,7 +643,7 @@ public final /* synthetic */ class az0 implements Runnable {
                             m0Var.K(jSONObject3);
                             return;
                         } catch (JSONException unused3) {
-                            a1Var3.d("could not filter streaming transactions");
+                            a1Var2.d("could not filter streaming transactions");
                             return;
                         }
                     }
@@ -651,15 +651,15 @@ public final /* synthetic */ class az0 implements Runnable {
                 }
                 return;
             case 17:
-                org.telegram.ui.web.a1 a1Var4 = (org.telegram.ui.web.a1) this.d;
+                org.telegram.ui.web.b1 b1Var2 = (org.telegram.ui.web.b1) this.d;
                 int i31 = this.b;
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.e;
-                ci.z7 z7Var = (ci.z7) this.c;
-                SendMessagesHelper.getInstance(a1Var4.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(a1Var4.M).getCurrentUser(), a1Var4.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
+                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) this.e;
+                ci.y7 y7Var = (ci.y7) this.c;
+                SendMessagesHelper.getInstance(b1Var2.M).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(b1Var2.M).getCurrentUser(), b1Var2.U.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));
                 try {
                     JSONObject jSONObject4 = new JSONObject();
                     jSONObject4.put("status", "sent");
-                    org.telegram.ui.web.a1.w(i31, x0Var, z7Var, "phone_requested", jSONObject4);
+                    org.telegram.ui.web.b1.w(i31, y0Var, y7Var, "phone_requested", jSONObject4);
                     return;
                 } catch (Exception e7) {
                     FileLog.e(e7);
@@ -705,7 +705,7 @@ public final /* synthetic */ class az0 implements Runnable {
                         throw th3;
                     }
                 } catch (t5.a unused4) {
-                    ((m.g3) bVar2.d).P(iVar, i33 + 1, false);
+                    ((m.g3) bVar2.d).U(iVar, i33 + 1, false);
                 }
                 runnable.run();
                 return;
@@ -714,21 +714,21 @@ public final /* synthetic */ class az0 implements Runnable {
                 m2Var.m((Bitmap) this.e, this.b, m2Var.T, m2Var.U, (org.telegram.ui.yq0) this.c);
                 return;
             case 21:
-                sg.j0.S((sg.j0) this.d, (ArrayList) this.c, this.b, (TLRPC.TL_messages_inactiveChats) this.e);
+                sg.k0.S((sg.k0) this.d, (ArrayList) this.c, this.b, (TLRPC.TL_messages_inactiveChats) this.e);
                 return;
             case 22:
-                ((zh.t0) this.d).c1(this.b, (String) this.e, (String) this.c);
+                ((zh.u0) this.d).d1(this.b, (String) this.e, (String) this.c);
                 return;
             default:
-                zh.t0 t0Var = (zh.t0) this.d;
+                zh.u0 u0Var = (zh.u0) this.d;
                 Bitmap bitmap3 = (Bitmap) this.e;
                 int[] iArr2 = (int[]) this.c;
                 int i34 = this.b;
-                t0Var.W4 = false;
-                if (t0Var.X4 == null) {
-                    t0Var.X4 = bitmap3;
-                    t0Var.Y4 = iArr2;
-                    t0Var.Z4 = i34;
+                u0Var.W4 = false;
+                if (u0Var.X4 == null) {
+                    u0Var.X4 = bitmap3;
+                    u0Var.Y4 = iArr2;
+                    u0Var.Z4 = i34;
                     return;
                 }
                 return;

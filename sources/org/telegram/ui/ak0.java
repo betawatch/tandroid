@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ak0 extends pg.b {
     public final Context d;
@@ -103,7 +103,7 @@ public final class ak0 extends pg.b {
                 yj0 yj0Var = (yj0) view;
                 yj0Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
                 CharSequence charSequence = zj0Var.e;
-                org.telegram.messenger.kk.t(yj0Var.R.animate().rotation(zj0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 340L);
+                org.telegram.messenger.lk.t(yj0Var.R.animate().rotation(zj0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.bs.h, 340L);
                 yj0Var.i(charSequence, z10);
                 break;
         }
@@ -123,7 +123,7 @@ public final class ak0 extends pg.b {
                 l4Var = new org.telegram.ui.Cells.v8(context);
                 break;
             case 2:
-                l4Var = new org.telegram.ui.Cells.va(6, 0, context, false);
+                l4Var = new org.telegram.ui.Cells.va(context, 6, 0, false);
                 break;
             case 3:
                 l4Var = new org.telegram.ui.Cells.x8(context, null);
@@ -149,7 +149,7 @@ public final class ak0 extends pg.b {
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
                 imageView.setColorFilter(new PorterDuffColorFilter(notificationsCustomSettingsActivity.getThemedColor(org.telegram.ui.ActionBar.h6.v6), PorterDuff.Mode.SRC_IN));
                 imageView.setImageResource(R.drawable.msg_expand);
-                yj0Var.addView(imageView, w7.z5.a(24.0f, 17.0f, 0.0f, 17.0f, 0.0f, 24, (LocaleController.isRTL ? 3 : 5) | 16));
+                yj0Var.addView(imageView, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
                 l4Var = yj0Var;
                 break;
         }

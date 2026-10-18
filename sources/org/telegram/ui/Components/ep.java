@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ep implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class ep implements Runnable {
                 org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
                 l2Var.a = true;
                 d02.setResourceProvider(snVar.getResourceProvider());
-                l2Var.c = new rc(7);
+                l2Var.c = new sc(6);
                 l2Var.d = new ep(wpVar, 3);
                 l2Var.b = new ep(wpVar, 4);
                 l2Var.e = true;

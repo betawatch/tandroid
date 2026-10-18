@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -33,10 +33,10 @@ public final /* synthetic */ class rd implements View.OnFocusChangeListener {
                 }
                 break;
             case 2:
-                fg0 fg0Var = ((od0) this.b).W;
+                eg0 eg0Var = ((od0) this.b).W;
                 if (z10) {
-                    fg0Var.c.setEditText((EditText) view);
-                    fg0Var.c.setDispatchBackWhenEmpty(true);
+                    eg0Var.c.setEditText((EditText) view);
+                    eg0Var.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
@@ -56,10 +56,10 @@ public final /* synthetic */ class rd implements View.OnFocusChangeListener {
                 sd0Var3.b(f12, f12, true);
                 break;
             case 6:
-                fg0 fg0Var2 = ((ie0) this.b).y;
+                eg0 eg0Var2 = ((ie0) this.b).y;
                 if (z10) {
-                    fg0Var2.c.setEditText((EditText) view);
-                    fg0Var2.c.setDispatchBackWhenEmpty(true);
+                    eg0Var2.c.setEditText((EditText) view);
+                    eg0Var2.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
@@ -69,15 +69,15 @@ public final /* synthetic */ class rd implements View.OnFocusChangeListener {
                 sd0Var4.b(f13, f13, true);
                 break;
             case 8:
-                fg0 fg0Var3 = ((jf0) this.b).s0;
+                eg0 eg0Var3 = ((if0) this.b).s0;
                 if (z10) {
-                    fg0Var3.c.setEditText((EditText) view);
-                    fg0Var3.c.setDispatchBackWhenEmpty(true);
+                    eg0Var3.c.setEditText((EditText) view);
+                    eg0Var3.c.setDispatchBackWhenEmpty(true);
                     break;
                 }
                 break;
             case 9:
-                org.telegram.ui.Components.sd0 sd0Var5 = ((eg0) this.b).e;
+                org.telegram.ui.Components.sd0 sd0Var5 = ((dg0) this.b).e;
                 float f14 = z10 ? 1.0f : 0.0f;
                 sd0Var5.b(f14, f14, true);
                 break;

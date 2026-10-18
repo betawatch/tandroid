@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class i51 extends View {
     public Drawable E;
@@ -99,7 +99,7 @@ public final class i51 extends View {
             return;
         }
         Context context = getContext();
-        int i10 = sg.b1.L;
+        int i10 = sg.c1.L;
         this.J = new h51(this, context);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30);
         this.J.measure(makeMeasureSpec, makeMeasureSpec);
@@ -168,7 +168,7 @@ public final class i51 extends View {
         this.I = ofFloat;
         ofFloat.addUpdateListener(new f51(this, 1));
         this.I.addListener(new g51(this, 1));
-        org.telegram.messenger.kk.l(5.0f, this.I);
+        org.telegram.messenger.lk.l(5.0f, this.I);
         this.I.setDuration(350L);
         this.I.start();
         d(false, true);
@@ -213,9 +213,9 @@ public final class i51 extends View {
             Drawable drawable = this.E;
             if (drawable instanceof org.telegram.ui.Components.r5) {
                 ((org.telegram.ui.Components.r5) drawable).p(this.U);
-                ci.g3 g3Var = ((org.telegram.ui.Components.r5) this.E).k;
-                if (g3Var != null) {
-                    g3Var.setEmojiPaused(false);
+                ci.f3 f3Var = ((org.telegram.ui.Components.r5) this.E).k;
+                if (f3Var != null) {
+                    f3Var.setEmojiPaused(false);
                 }
             }
             ImageReceiver imageReceiver = this.h;
@@ -304,7 +304,7 @@ public final class i51 extends View {
             this.I = ofFloat;
             ofFloat.addUpdateListener(new f51(this, 0));
             this.I.addListener(new g51(this, 0));
-            org.telegram.messenger.kk.l(5.0f, this.I);
+            org.telegram.messenger.lk.l(5.0f, this.I);
             this.I.setDuration(350L);
             this.I.start();
         }

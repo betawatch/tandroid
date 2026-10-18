@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
@@ -26,10 +26,10 @@ import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.u90;
 import org.telegram.ui.Components.x90;
-import sg.v1;
+import sg.w1;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r extends FrameLayout {
     public final zd a;
@@ -44,7 +44,7 @@ public final class r extends FrameLayout {
     public r(Context context, d6 d6Var) {
         super(context);
         this.e = d6Var;
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = lk.e(context, 1);
         zd zdVar = new zd(context, 1, 0, 4);
         this.a = zdVar;
         Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
@@ -61,17 +61,17 @@ public final class r extends FrameLayout {
         this.b = oVar;
         this.h = new Paint[20];
         a(0.0f);
-        v1 v1Var = oVar.a;
-        v1Var.q = false;
-        v1Var.K = false;
-        v1Var.L = true;
-        v1Var.H = true;
-        v1Var.l = new jc(this, 5);
-        v1Var.c();
+        w1 w1Var = oVar.a;
+        w1Var.q = false;
+        w1Var.K = false;
+        w1Var.L = true;
+        w1Var.H = true;
+        w1Var.l = new jc(this, 5);
+        w1Var.c();
         zdVar.setStarParticlesView(oVar);
         TextView textView = new TextView(context);
         this.c = textView;
-        kk.k(22.0f, 1, textView);
+        lk.k(22.0f, 1, textView);
         int i11 = h6.G6;
         c1.q(i11, d6Var, textView, 1);
         e.addView(textView, z5.t(-2, -2, 1, 24, -8, 24, 0));
@@ -85,7 +85,7 @@ public final class r extends FrameLayout {
         x90Var.setMovementMethod(LinkMovementMethod.getInstance());
         x90Var.setLinkTextColor(h6.w0(h6.J6, d6Var));
         x90Var.setImportantForAccessibility(2);
-        e.addView(x90Var, z5.a(-2.0f, 24.0f, 8.0f, 24.0f, 18.0f, -1, 17));
+        e.addView(x90Var, z5.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
         setClipChildren(false);
         addView(oVar, z5.e(-1, 234, 48));
         addView(e);
@@ -167,7 +167,7 @@ public final class r extends FrameLayout {
         final float[] fArr = {0.0f};
         AndroidUtilities.cancelRunOnUIThread(zdVar.e0);
         zdVar.d();
-        zdVar.n();
+        zdVar.l();
         this.n.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: wg.m
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {

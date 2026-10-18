@@ -27,7 +27,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r80 extends org.telegram.ui.ActionBar.f3 {
     public static ArrayList G;
@@ -230,9 +230,9 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
         n80Var.setSelectorDrawableColor(0);
         n80Var.setGlowColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.A5, false));
         n80Var.setOnScrollListener(new o80(r80Var));
-        n80Var.setOnItemClickListener(new ci.y4(11, r80Var, chat));
+        n80Var.setOnItemClickListener(new ci.x4(11, r80Var, chat));
         if (i10 != 0) {
-            viewGroup.addView(n80Var, w7.z5.a(-1.0f, 0.0f, 100.0f, 0.0f, 80.0f, -1, 51));
+            viewGroup.addView(n80Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 100.0f, 0.0f, 80.0f));
         } else {
             n80Var.setSelectorDrawableColor(0);
             n80Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
@@ -246,7 +246,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
         }
         TextView textView = new TextView(context);
         r80Var.e = textView;
-        org.telegram.messenger.kk.k(20.0f, 1, textView);
+        org.telegram.messenger.lk.k(20.0f, 1, textView);
         if (i10 == 2) {
             textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ng, false));
         } else {
@@ -269,7 +269,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
             } else {
                 textView.setText(LocaleController.getString(R.string.VoipGroupJoinAs));
             }
-            viewGroup.addView(textView, w7.z5.a(-2.0f, 23.0f, 8.0f, 23.0f, 0.0f, -2, 51));
+            viewGroup.addView(textView, w7.z5.d(-2, -2.0f, 51, 23.0f, 8.0f, 23.0f, 0.0f));
         }
         TextView textView2 = new TextView(r80Var.getContext());
         r80Var.f = textView2;
@@ -316,7 +316,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
                 r80Var.f.setText(LocaleController.getString(R.string.VoipGroupStartAsInfo));
             }
             r80Var.f.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-            viewGroup.addView(r80Var.f, w7.z5.a(-2.0f, 23.0f, 0.0f, 23.0f, 5.0f, -2, 51));
+            viewGroup.addView(r80Var.f, w7.z5.d(-2, -2.0f, 51, 23.0f, 0.0f, 23.0f, 5.0f));
         }
         if (i10 == 0) {
             viewGroup.addView(r80Var.d, w7.z5.t(r80Var.h.size() < 5 ? -2 : -1, 95, 49, 0, 6, 0, 0));
@@ -335,7 +335,7 @@ public final class r80 extends org.telegram.ui.ActionBar.f3 {
             ((View) t00Var2.c).setOnClickListener(new f0(r80Var, 28));
             viewGroup.addView(t00Var2, w7.z5.t(-1, 50, 51, 0, 0, 0, 0));
         } else {
-            viewGroup.addView(t00Var, w7.z5.a(50.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 83));
+            viewGroup.addView(t00Var, w7.z5.d(-1, 50.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         r80Var.y(chat, false);
         if (n2Var == null) {

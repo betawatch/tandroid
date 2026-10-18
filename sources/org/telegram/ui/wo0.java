@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wo0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -28,18 +28,18 @@ public final /* synthetic */ class wo0 implements Utilities.Callback {
                 ep0Var2.K = starGift;
                 kp0 kp0Var = ep0Var2.p0;
                 if (starGift == null) {
-                    yh.t3 t3Var = ep0Var2.J;
-                    if (t3Var != null) {
-                        t3Var.f();
+                    yh.s3 s3Var = ep0Var2.J;
+                    if (s3Var != null) {
+                        s3Var.f();
                         ep0Var2.J = null;
                     }
                 } else {
-                    yh.t3 t3Var2 = ep0Var2.J;
-                    if (t3Var2 == null || t3Var2.b != starGift.id) {
+                    yh.s3 s3Var2 = ep0Var2.J;
+                    if (s3Var2 == null || s3Var2.b != starGift.id) {
                         i10 = ((org.telegram.ui.ActionBar.n2) kp0Var).currentAccount;
-                        yh.t3 t3Var3 = new yh.t3(ep0Var2.K.id, i10, new wo0(xo0Var, 2));
-                        ep0Var2.J = t3Var3;
-                        t3Var3.g(false);
+                        yh.s3 s3Var3 = new yh.s3(ep0Var2.K.id, i10, new wo0(xo0Var, 2));
+                        ep0Var2.J = s3Var3;
+                        s3Var3.g(false);
                     }
                 }
                 ep0.a(ep0Var2);

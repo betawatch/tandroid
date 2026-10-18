@@ -16,7 +16,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f30 extends FrameLayout {
     public float a;
@@ -24,7 +24,7 @@ public final class f30 extends FrameLayout {
     public boolean c;
     public AnimatorSet d;
     public final e30 e;
-    public final rc f;
+    public final sc f;
     public final /* synthetic */ float h;
     public final /* synthetic */ i30 n;
 
@@ -34,7 +34,7 @@ public final class f30 extends FrameLayout {
         this.n = i30Var;
         this.h = f7;
         this.e = new e30(this);
-        this.f = new rc(11);
+        this.f = new sc(10);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -384,7 +384,7 @@ public final class f30 extends FrameLayout {
         ofFloat9.setStartDelay((long) (f29 * 0.7f));
         ofFloat9.setDuration((long) (f29 * 0.3f));
         animatorSet.playTogether(ofFloat9);
-        AndroidUtilities.runOnUIThread(new rc(10), 370L);
+        AndroidUtilities.runOnUIThread(new sc(9), 370L);
         long j11 = j10 + 530;
         ObjectAnimator ofFloat10 = ObjectAnimator.ofFloat(g6Var, (Property<ei.g6, Float>) property, 1.0f, 1.05f);
         ofFloat10.setDuration(j11);

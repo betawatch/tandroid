@@ -27,12 +27,12 @@ import org.telegram.ui.Components.s11;
 import org.telegram.ui.Components.t11;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.dr0;
-import org.telegram.ui.ff0;
 import org.telegram.ui.i41;
+import org.telegram.ui.mj0;
 import org.telegram.ui.sq0;
 import org.telegram.ui.xe0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class oc implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -288,13 +288,13 @@ public final /* synthetic */ class oc implements Utilities.Callback {
                                 Utilities.themeQueue.postRunnable(new dr0(photoViewer, b10, 3));
                                 sq0 sq0Var = new sq0(photoViewer, 13);
                                 xe0 xe0Var = new xe0(photoViewer, b10, sq0Var, 19);
-                                ff0 ff0Var = new ff0(3);
+                                mj0 mj0Var = new mj0(2);
                                 r11 r11Var = thanosEffect.a;
                                 if (r11Var != null) {
-                                    r11Var.c(matrix3, bitmap2, xe0Var, ff0Var);
+                                    r11Var.c(matrix3, bitmap2, xe0Var, mj0Var);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new s11(matrix3, bitmap2, xe0Var, ff0Var));
+                                    thanosEffect.c.add(new s11(matrix3, bitmap2, xe0Var, mj0Var));
                                 }
                                 AndroidUtilities.runOnUIThread(sq0Var, 1200L);
                             }

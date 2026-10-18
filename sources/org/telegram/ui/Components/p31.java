@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class p31 extends FrameLayout {
     public int E;
@@ -67,7 +67,7 @@ public final class p31 extends FrameLayout {
         this.d = m5Var;
         m5Var.setWillNotDraw(false);
         m5Var.setOrientation(1);
-        addView(m5Var, w7.z5.a(-1.0f, 1.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        addView(m5Var, w7.z5.d(-1, -1.0f, 119, 1.0f, 0.0f, 0.0f, 0.0f));
         w7.b6.a(m5Var);
         p6 p6Var = new p6(false, false, false);
         this.f = p6Var;
@@ -102,7 +102,7 @@ public final class p31 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.v = imageView;
         imageView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(2.33f), org.telegram.ui.ActionBar.h6.w0(i11, d6Var)));
-        addView(imageView, w7.z5.a(-1.0f, -3.0f, 3.0f, 0.0f, 3.0f, 6, 115));
+        addView(imageView, w7.z5.d(6, -1.0f, 115, -3.0f, 3.0f, 0.0f, 3.0f));
         imageView.setTranslationX(-AndroidUtilities.dp(3.0f));
         imageView.setVisibility(8);
     }
@@ -260,7 +260,7 @@ public final class p31 extends FrameLayout {
             this.L = ofFloat;
             ofFloat.addUpdateListener(new m31(this, i12));
             this.L.addListener(new n31(this, i11));
-            org.telegram.messenger.kk.l(2.0f, this.L);
+            org.telegram.messenger.lk.l(2.0f, this.L);
             this.L.setDuration(200L);
             this.L.start();
         }

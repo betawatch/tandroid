@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class e70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public TextView a;
@@ -56,13 +56,13 @@ public final class e70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.f = linearLayout;
         linearLayout.setOrientation(1);
         this.f.setWeightSum(100.0f);
-        frameLayout.addView(this.f, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.f, w7.z5.c(-1.0f, -1));
         ?? frameLayout2 = new FrameLayout(context);
         frameLayout2.setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
         this.f.addView(frameLayout2, w7.z5.l(50.0f, -1, -1));
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-        frameLayout2.addView(imageView, w7.z5.d(-1.0f, -1));
+        frameLayout2.addView(imageView, w7.z5.c(-1.0f, -1));
         m0 m0Var = new m0(this, context, 8);
         this.d = m0Var;
         m0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
@@ -95,7 +95,7 @@ public final class e70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         this.c.setGravity(17);
         this.c.setTextSize(1, 32.0f);
-        this.d.addView(this.c, w7.z5.d(-2.0f, -2));
+        this.d.addView(this.c, w7.z5.c(-2.0f, -2));
         TLRPC.EncryptedChat encryptedChat = MessagesController.getInstance(this.currentAccount).getEncryptedChat(Integer.valueOf(this.h));
         if (encryptedChat != null) {
             org.telegram.ui.Components.w40 w40Var = new org.telegram.ui.Components.w40();

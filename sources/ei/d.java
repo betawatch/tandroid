@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aa0;
 import org.telegram.ui.Components.ba0;
@@ -25,12 +25,12 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.be;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public class d extends FrameLayout implements aa0 {
     public boolean E;
     public int F;
-    public ci.v7 G;
+    public ci.u7 G;
     public float H;
     public ValueAnimator I;
     public boolean J;
@@ -98,7 +98,7 @@ public class d extends FrameLayout implements aa0 {
             this.Q = ofFloat;
             ofFloat.addUpdateListener(new b(this, 0));
             this.Q.addListener(new c(this, i12));
-            kk.l(2.0f, this.Q);
+            lk.l(2.0f, this.Q);
             this.Q.setDuration(200L);
             this.Q.start();
         }
@@ -555,7 +555,7 @@ public class d extends FrameLayout implements aa0 {
         w7.b6.b(this, 0.02f, 1.2f);
         View view = new View(context);
         this.r = view;
-        addView(view, w7.z5.d(-1.0f, -1));
+        addView(view, w7.z5.c(-1.0f, -1));
         if (z10) {
             int dp = AndroidUtilities.dp(8.0f);
             int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var);

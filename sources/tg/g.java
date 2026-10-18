@@ -11,9 +11,9 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public class g implements GLSurfaceView.Renderer {
+public final class g implements GLSurfaceView.Renderer {
     public final int D;
     public final int E;
     public boolean F;
@@ -87,7 +87,7 @@ public class g implements GLSurfaceView.Renderer {
     }
 
     @Override // android.opengl.GLSurfaceView.Renderer
-    public void onDrawFrame(GL10 gl10) {
+    public final void onDrawFrame(GL10 gl10) {
         int i10;
         GLES20.glClear(16640);
         GLES20.glEnable(2929);
@@ -188,7 +188,7 @@ public class g implements GLSurfaceView.Renderer {
     }
 
     @Override // android.opengl.GLSurfaceView.Renderer
-    public void onSurfaceChanged(GL10 gl10, int i10, int i11) {
+    public final void onSurfaceChanged(GL10 gl10, int i10, int i11) {
         this.a = i10;
         this.b = i11;
         GLES20.glViewport(0, 0, i10, i11);
@@ -196,7 +196,7 @@ public class g implements GLSurfaceView.Renderer {
     }
 
     @Override // android.opengl.GLSurfaceView.Renderer
-    public void onSurfaceCreated(GL10 gl10, EGLConfig eGLConfig) {
+    public final void onSurfaceCreated(GL10 gl10, EGLConfig eGLConfig) {
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         o oVar = this.c;
         if (oVar != null) {

@@ -11,7 +11,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.ui.hk0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class j extends b8.b {
     public final /* synthetic */ int b = 2;
@@ -199,7 +199,7 @@ public final class j extends b8.b {
                         com.google.android.gms.common.api.internal.u b12 = com.google.android.gms.common.api.internal.v.b();
                         b12.c = new androidx.biometric.e(e0Var2, readString4, iVar, i12);
                         b12.a = 8406;
-                        e0Var2.e(1, b12.a()).addOnCompleteListener(new ya.c(this, 13));
+                        e0Var2.e(1, b12.a()).addOnCompleteListener(new ya.d(this, 13));
                     }
                     parcel2.writeNoException();
                     break;

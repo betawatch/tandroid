@@ -26,7 +26,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public static DispatchQueue u0;
@@ -451,7 +451,7 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
         if (this.L == null) {
             ai.ic icVar = new ai.ic(this, getContext(), 25);
             this.L = icVar;
-            addView(icVar, 0, w7.z5.d(-1.0f, -1));
+            addView(icVar, 0, w7.z5.c(-1.0f, -1));
         }
         if (drawable instanceof wc0) {
             ((wc0) drawable).q(this.L);
@@ -547,7 +547,7 @@ public class jw0 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     }
 
     public boolean Y() {
-        return !(this instanceof yh.s4);
+        return !(this instanceof yh.r4);
     }
 
     @Override // android.view.ViewGroup, android.view.View

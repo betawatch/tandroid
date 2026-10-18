@@ -9,7 +9,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.l4;
+import ci.k4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -24,13 +24,13 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class c extends FrameLayout {
     public final d6 a;
     public final h9 b;
     public final w9 c;
-    public final l4 d;
+    public final k4 d;
     public final j5 e;
     public final RadioButton f;
     public final Paint h;
@@ -52,15 +52,15 @@ public abstract class c extends FrameLayout {
         this.c = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
         addView(w9Var);
-        l4 l4Var = new l4(context, 5);
-        this.d = l4Var;
-        NotificationCenter.listenEmojiLoading(l4Var);
+        k4 k4Var = new k4(context, 5);
+        this.d = k4Var;
+        NotificationCenter.listenEmojiLoading(k4Var);
         NotificationCenter.listenEmojiLoading(w9Var);
-        l4Var.setTextSize(16);
+        k4Var.setTextSize(16);
         int i10 = h6.j5;
-        l4Var.setTextColor(h6.w0(i10, d6Var));
-        l4Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(l4Var);
+        k4Var.setTextColor(h6.w0(i10, d6Var));
+        k4Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(k4Var);
         j5 j5Var = new j5(context);
         this.e = j5Var;
         j5Var.setTextSize(14);
@@ -97,44 +97,35 @@ public abstract class c extends FrameLayout {
         float f10;
         float f11;
         float f12;
-        float f13;
-        int i10 = (LocaleController.isRTL ? 5 : 3) | 16;
-        float f14 = 53.0f;
-        if (b()) {
-            f7 = 53.0f;
-        } else {
-            f7 = 53.0f;
-            f14 = 16.0f;
-        }
-        this.c.setLayoutParams(z5.a(40.0f, f14, 0.0f, b() ? f7 : 16.0f, 0.0f, 40, i10));
+        this.c.setLayoutParams(z5.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, b() ? 53.0f : 16.0f, 0.0f, b() ? 53.0f : 16.0f, 0.0f));
         boolean z10 = LocaleController.isRTL;
-        int i11 = (z10 ? 5 : 3) | 16;
+        int i10 = (z10 ? 5 : 3) | 16;
         if (z10) {
-            f10 = 20.0f;
+            f7 = 20.0f;
         } else {
+            f7 = b() ? 105 : 70;
+        }
+        if (LocaleController.isRTL) {
             f10 = b() ? 105 : 70;
-        }
-        if (LocaleController.isRTL) {
-            f11 = b() ? 105 : 70;
         } else {
-            f11 = 20.0f;
+            f10 = 20.0f;
         }
-        this.d.setLayoutParams(z5.a(-2.0f, f10, 0.0f, f11, 0.0f, -1, i11));
+        this.d.setLayoutParams(z5.d(-1, -2.0f, i10, f7, 0.0f, f10, 0.0f));
         boolean z11 = LocaleController.isRTL;
-        int i12 = (z11 ? 5 : 3) | 16;
+        int i11 = (z11 ? 5 : 3) | 16;
         if (z11) {
-            f12 = 20.0f;
+            f11 = 20.0f;
         } else {
-            f12 = b() ? 105 : 70;
+            f11 = b() ? 105 : 70;
         }
         if (LocaleController.isRTL) {
-            f13 = b() ? 105 : 70;
+            f12 = b() ? 105 : 70;
         } else {
-            f13 = 20.0f;
+            f12 = 20.0f;
         }
-        this.e.setLayoutParams(z5.a(-2.0f, f12, 0.0f, f13, 0.0f, -1, i12));
+        this.e.setLayoutParams(z5.d(-1, -2.0f, i11, f11, 0.0f, f12, 0.0f));
         boolean z12 = LocaleController.isRTL;
-        this.f.setLayoutParams(z5.a(22.0f, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f, 22, (z12 ? 5 : 3) | 16));
+        this.f.setLayoutParams(z5.d(22, 22.0f, (z12 ? 5 : 3) | 16, z12 ? 15.0f : 20.0f, 0.0f, z12 ? 20.0f : 15.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -184,23 +175,23 @@ public abstract class c extends FrameLayout {
 
     public void setSubtitle(CharSequence charSequence) {
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        l4 l4Var = this.d;
+        k4 k4Var = this.d;
         j5 j5Var = this.e;
         if (isEmpty) {
-            l4Var.setTranslationY(0.0f);
+            k4Var.setTranslationY(0.0f);
             j5Var.setVisibility(8);
         } else {
-            l4Var.setTranslationY(AndroidUtilities.dp(-9.0f));
+            k4Var.setTranslationY(AndroidUtilities.dp(-9.0f));
             j5Var.setTranslationY(AndroidUtilities.dp(12.0f));
             j5Var.l(charSequence, false);
             j5Var.setVisibility(0);
         }
         if (this.c.getVisibility() == 8) {
             if (LocaleController.isRTL) {
-                l4Var.setTranslationX(AndroidUtilities.dp(40.0f));
+                k4Var.setTranslationX(AndroidUtilities.dp(40.0f));
                 j5Var.setTranslationX(AndroidUtilities.dp(40.0f));
             } else {
-                l4Var.setTranslationX(AndroidUtilities.dp(-40.0f));
+                k4Var.setTranslationX(AndroidUtilities.dp(-40.0f));
                 j5Var.setTranslationX(AndroidUtilities.dp(-40.0f));
             }
         }

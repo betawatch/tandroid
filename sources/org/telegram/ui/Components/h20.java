@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class h20 extends FrameLayout implements ne.d {
     public final ne.b a;
@@ -32,11 +32,11 @@ public final class h20 extends FrameLayout implements ne.d {
     }
 
     public static FrameLayout.LayoutParams b() {
-        return w7.z5.a(48.0f, 20.0f, 0.0f, 20.0f, 14.0f, 48, (LocaleController.isRTL ? 3 : 5) | 80);
+        return w7.z5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static FrameLayout.LayoutParams c() {
-        return w7.z5.a(48.0f, 20.0f, 0.0f, 20.0f, 14.0f, 48, (LocaleController.isRTL ? 3 : 5) | 80);
+        return w7.z5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 80, 20.0f, 0.0f, 20.0f, 14.0f);
     }
 
     public static void d(View view, float f7) {
@@ -177,12 +177,12 @@ public final class h20 extends FrameLayout implements ne.d {
         xj0 xj0Var = new xj0(context);
         this.c = xj0Var;
         xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(xj0Var, w7.z5.d(-1.0f, -1));
+        addView(xj0Var, w7.z5.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));
         radialProgressView.setStrokeWidth(2.0f);
-        addView(radialProgressView, w7.z5.d(-1.0f, -1));
+        addView(radialProgressView, w7.z5.c(-1.0f, -1));
         d(radialProgressView, 0.0f);
         w7.b6.a(this);
         if (!z10) {

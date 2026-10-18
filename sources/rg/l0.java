@@ -14,7 +14,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.vf1;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l0 extends LinearLayout {
     public final TextView a;
@@ -85,7 +85,7 @@ public final class l0 extends LinearLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
         ofFloat.addUpdateListener(new ah.k0(12, this, z10));
-        this.h.addListener(new vf1(this, 14));
+        this.h.addListener(new vf1(this, 13));
         this.h.setInterpolator(bs.h);
         this.h.setDuration(420L);
         this.h.start();

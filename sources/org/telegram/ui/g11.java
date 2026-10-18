@@ -13,7 +13,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class g11 extends org.telegram.ui.Components.ga implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -21,26 +21,26 @@ public abstract class g11 extends org.telegram.ui.Components.ga implements Notif
     public final sy0 G;
     public final di.a h;
     public final org.telegram.ui.Components.b91 n;
-    public final ci.w6 r;
+    public final ci.v6 r;
     public final f11 s;
     public int v;
     public boolean w;
     public ValueAnimator x;
     public float y;
 
-    public g11(Context context, org.telegram.ui.Components.jw0 jw0Var, ci.w6 w6Var, final org.telegram.ui.Components.ms0 ms0Var) {
+    public g11(Context context, org.telegram.ui.Components.jw0 jw0Var, ci.v6 v6Var, final org.telegram.ui.Components.ms0 ms0Var) {
         super(context, jw0Var);
         this.F = new Rect();
-        this.r = w6Var;
-        Objects.requireNonNull(w6Var);
-        this.G = new sy0(w6Var, 7);
+        this.r = v6Var;
+        Objects.requireNonNull(v6Var);
+        this.G = new sy0(v6Var, 7);
         final org.telegram.ui.Components.ns0 ns0Var = (org.telegram.ui.Components.ns0) this;
         di.a aVar = new di.a(ns0Var, context, ms0Var);
         this.h = aVar;
         aVar.setAllowDisallowInterceptTouch(true);
         f11 f11Var = new f11(ns0Var);
         this.s = f11Var;
-        f11Var.a = w6Var.a();
+        f11Var.a = v6Var.a();
         aVar.setAdapter(f11Var);
         aVar.setTranslationY(AndroidUtilities.dp(42.0f));
         org.telegram.ui.Components.b91 n10 = aVar.n(10, true);
@@ -51,7 +51,7 @@ public abstract class g11 extends org.telegram.ui.Components.ga implements Notif
         n10.setPreTabClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.d11
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                ci.i7 storiesController;
+                ci.h7 storiesController;
                 Integer num = (Integer) obj;
                 switch (i10) {
                     case 0:
@@ -185,7 +185,7 @@ public abstract class g11 extends org.telegram.ui.Components.ga implements Notif
         n10.setOnTabLongClick(new Utilities.Callback2Return() { // from class: org.telegram.ui.d11
             @Override // org.telegram.messenger.Utilities.Callback2Return
             public final Object run(Object obj, Object obj2) {
-                ci.i7 storiesController;
+                ci.h7 storiesController;
                 Integer num = (Integer) obj;
                 switch (i11) {
                     case 0:
@@ -316,18 +316,18 @@ public abstract class g11 extends org.telegram.ui.Components.ga implements Notif
             }
         });
         addView(n10, w7.z5.e(-1, 42, 48));
-        c(!w6Var.h.isEmpty(), false, true);
+        c(!v6Var.h.isEmpty(), false, true);
     }
 
     public final void a() {
         org.telegram.ui.Components.b91 b91Var = this.n;
         int currentTabId = b91Var != null ? b91Var.getCurrentTabId() : 0;
-        ci.w6 w6Var = this.r;
-        boolean a2 = w6Var.a();
+        ci.v6 v6Var = this.r;
+        boolean a2 = v6Var.a();
         f11 f11Var = this.s;
         f11Var.a = a2;
         this.h.o(true);
-        c(!w6Var.h.isEmpty(), true, false);
+        c(!v6Var.h.isEmpty(), true, false);
         int i10 = this.v;
         if (i10 > 0) {
             if (f11Var.i(i10) != -1) {
@@ -337,7 +337,7 @@ public abstract class g11 extends org.telegram.ui.Components.ga implements Notif
             }
             return;
         }
-        if (b91Var == null || currentTabId <= 0 || w6Var.b(currentTabId) != null) {
+        if (b91Var == null || currentTabId <= 0 || v6Var.b(currentTabId) != null) {
             return;
         }
         b91Var.d(0, 0);
@@ -395,9 +395,9 @@ public abstract class g11 extends org.telegram.ui.Components.ga implements Notif
     @Override // org.telegram.ui.Components.ga, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ci.w6 w6Var = this.r;
-        NotificationCenter.getInstance(w6Var.a).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
-        if (this.E == w6Var.h.isEmpty() || this.s.a != w6Var.a()) {
+        ci.v6 v6Var = this.r;
+        NotificationCenter.getInstance(v6Var.a).addObserver(this, NotificationCenter.storyAlbumsCollectionsUpdate);
+        if (this.E == v6Var.h.isEmpty() || this.s.a != v6Var.a()) {
             a();
         }
     }
@@ -452,9 +452,9 @@ public abstract class g11 extends org.telegram.ui.Components.ga implements Notif
             return;
         }
         AndroidUtilities.cancelRunOnUIThread(this.G);
-        ci.w6 w6Var = this.r;
-        w6Var.e();
-        w6Var.f(false);
+        ci.v6 v6Var = this.r;
+        v6Var.e();
+        v6Var.f(false);
         int currentPosition = b91Var.getCurrentPosition();
         f11 f11Var = this.s;
         int f7 = f11Var.f(currentPosition);

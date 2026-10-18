@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class ra extends FrameLayout {
     public float E;
@@ -56,7 +56,7 @@ public abstract class ra extends FrameLayout {
         j5Var.setTextSize(16);
         j5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
         j5Var.setEllipsizeByGradient(true);
-        addView(j5Var, w7.z5.a(-2.0f, 70.0f, 9.0f, 0.0f, 50.0f, -1, 48));
+        addView(j5Var, w7.z5.d(-1, -2.0f, 48, 70.0f, 9.0f, 0.0f, 50.0f));
         ImageView imageView = new ImageView(getContext());
         this.d = imageView;
         org.telegram.ui.Components.dq dqVar = new org.telegram.ui.Components.dq(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(1.35f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var));
@@ -66,13 +66,13 @@ public abstract class ra extends FrameLayout {
         imageView.setAlpha(0.0f);
         imageView.setVisibility(0);
         dqVar.setBounds(0, 0, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f));
-        addView(imageView, w7.z5.a(14.0f, 70.0f, 35.0f, 0.0f, 0.0f, 14, 48));
+        addView(imageView, w7.z5.d(14, 14.0f, 48, 70.0f, 35.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(getContext(), false, true, true);
         this.f = q6Var;
         q6Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
         q6Var.b(0.4f, 120L, org.telegram.ui.Components.bs.g);
         q6Var.setTextSize(AndroidUtilities.dp(13.0f));
-        addView(q6Var, w7.z5.a(-2.0f, 70.0f, 23.0f, 0.0f, 0.0f, -1, 48));
+        addView(q6Var, w7.z5.d(-1, -2.0f, 48, 70.0f, 23.0f, 0.0f, 0.0f));
         Drawable[] drawableArr = {context.getDrawable(R.drawable.msg_link_1).mutate(), context.getDrawable(R.drawable.msg_link_2).mutate()};
         this.h = drawableArr;
         Drawable drawable = drawableArr[0];

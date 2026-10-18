@@ -48,7 +48,7 @@ import org.telegram.ui.Components.yq;
 import org.telegram.ui.y41;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a0 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public final LinkedHashMap E;
@@ -441,7 +441,7 @@ public final class a0 extends n2 implements NotificationCenter.NotificationCente
         LinearLayout linearLayout = new LinearLayout(context);
         this.f = linearLayout;
         linearLayout.setOrientation(1);
-        this.h.addView(this.f, z5.d(-2.0f, -1));
+        this.h.addView(this.f, z5.c(-2.0f, -1));
         this.f.addView(l4Var, z5.n(-1, -2));
         d6 resourceProvider = getResourceProvider();
         int i14 = this.J;
@@ -622,8 +622,8 @@ public final class a0 extends n2 implements NotificationCenter.NotificationCente
             }
         });
         vVar.addView(this.y);
-        vVar.addView(this.w, z5.a(74.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
-        this.w.addView(this.v, z5.a(48.0f, 13.0f, 13.0f, 13.0f, 13.0f, -1, 80));
+        vVar.addView(this.w, z5.d(-1, 74.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.w.addView(this.v, z5.d(-1, 48.0f, 80, 13.0f, 13.0f, 13.0f, 13.0f));
         vVar.setBackgroundColor(h6.x0(null, i20, false));
         x xVar = new x(this, context, 0);
         this.c = xVar;
@@ -934,7 +934,7 @@ public final class a0 extends n2 implements NotificationCenter.NotificationCente
             i iVar = new i(getParentActivity(), getResourceProvider());
             this.d = iVar;
             iVar.setOnBackspace(new m(this, 1));
-            this.c.addView(this.d, z5.a(-2.0f, 0.0f, 0.0f, 8.0f, 8.0f, -1, 85));
+            this.c.addView(this.d, z5.d(-1, -2.0f, 85, 0.0f, 0.0f, 8.0f, 8.0f));
             ArrayList arrayList = this.F;
             int size = arrayList.size();
             int i10 = 0;

@@ -14,10 +14,10 @@ import org.telegram.ui.Cells.sa;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.dd;
-import org.telegram.ui.ff0;
+import org.telegram.ui.mj0;
 import org.telegram.ui.t21;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class e implements Utilities.Callback {
     public final void run(Object obj) {
         MessageObject messageObject;
         MessageObject messageObject2;
-        int i10 = 2;
+        int i10 = 1;
         switch (this.a) {
             case 0:
                 View view = (View) obj;
@@ -139,7 +139,7 @@ public final /* synthetic */ class e implements Utilities.Callback {
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new ff0(i10));
+                    AndroidUtilities.runOnUIThread(new mj0(i10));
                     break;
                 }
                 break;
@@ -171,15 +171,15 @@ public final /* synthetic */ class e implements Utilities.Callback {
                 break;
             case 22:
                 View view11 = (View) obj;
-                if (view11 instanceof org.telegram.ui.web.h) {
-                    ((org.telegram.ui.web.h) view11).setChecked(false);
+                if (view11 instanceof org.telegram.ui.web.i) {
+                    ((org.telegram.ui.web.i) view11).setChecked(false);
                     break;
                 }
                 break;
             case 23:
                 View view12 = (View) obj;
-                if (view12 instanceof org.telegram.ui.web.h) {
-                    ((org.telegram.ui.web.h) view12).setChecked(false);
+                if (view12 instanceof org.telegram.ui.web.i) {
+                    ((org.telegram.ui.web.i) view12).setChecked(false);
                     break;
                 }
                 break;

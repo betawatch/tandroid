@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wf implements org.telegram.ui.Components.lk0 {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class wf implements org.telegram.ui.Components.lk0 
                                         } else {
                                             snVar2.getClass();
                                         }
-                                        new org.telegram.ui.Components.ps(snVar2, snVar2.e, arrayList, arrayList2, channelParticipantArr2, snVar2.L6, (int) snVar2.d(), snVar2.R3, true, new ah.j(22)).show();
+                                        new org.telegram.ui.Components.ps(snVar2, snVar2.e, arrayList, arrayList2, channelParticipantArr2, snVar2.L6, (int) snVar2.d(), snVar2.R3, true, new ah.j(21)).show();
                                         break;
                                     default:
                                         sn snVar3 = snVar;
@@ -66,7 +66,7 @@ public final /* synthetic */ class wf implements org.telegram.ui.Components.lk0 
                                         } else {
                                             snVar3.getClass();
                                         }
-                                        new org.telegram.ui.Components.ps(snVar3, snVar3.e, arrayList, arrayList2, channelParticipantArr3, snVar3.L6, (int) snVar3.d(), snVar3.R3, true, new ah.j(22)).show();
+                                        new org.telegram.ui.Components.ps(snVar3, snVar3.e, arrayList, arrayList2, channelParticipantArr3, snVar3.L6, (int) snVar3.d(), snVar3.R3, true, new ah.j(21)).show();
                                         break;
                                 }
                             }
@@ -105,7 +105,7 @@ public final /* synthetic */ class wf implements org.telegram.ui.Components.lk0 
                                     } else {
                                         snVar22.getClass();
                                     }
-                                    new org.telegram.ui.Components.ps(snVar22, snVar22.e, arrayList3, arrayList4, channelParticipantArr22, snVar22.L6, (int) snVar22.d(), snVar22.R3, true, new ah.j(22)).show();
+                                    new org.telegram.ui.Components.ps(snVar22, snVar22.e, arrayList3, arrayList4, channelParticipantArr22, snVar22.L6, (int) snVar22.d(), snVar22.R3, true, new ah.j(21)).show();
                                     break;
                                 default:
                                     sn snVar3 = snVar2;
@@ -117,7 +117,7 @@ public final /* synthetic */ class wf implements org.telegram.ui.Components.lk0 
                                     } else {
                                         snVar3.getClass();
                                     }
-                                    new org.telegram.ui.Components.ps(snVar3, snVar3.e, arrayList3, arrayList4, channelParticipantArr3, snVar3.L6, (int) snVar3.d(), snVar3.R3, true, new ah.j(22)).show();
+                                    new org.telegram.ui.Components.ps(snVar3, snVar3.e, arrayList3, arrayList4, channelParticipantArr3, snVar3.L6, (int) snVar3.d(), snVar3.R3, true, new ah.j(21)).show();
                                     break;
                             }
                         }

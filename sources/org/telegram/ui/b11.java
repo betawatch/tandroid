@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class b11 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -519,7 +519,7 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
             textView2.setTextColor(r10);
             textView2.setTextSize(1, 20.0f);
             textView2.setTypeface(AndroidUtilities.bold());
-            frameLayout.addView(textView2, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
+            frameLayout.addView(textView2, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
             textView2.setOnTouchListener(new di.d(10));
             LinearLayout linearLayout = new LinearLayout(parentActivity2);
             linearLayout.setOrientation(0);
@@ -541,7 +541,7 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
             tr trVar = new tr(10);
             l4Var.setOnValueChangedListener(trVar);
             m4Var.setOnValueChangedListener(trVar);
-            vdVar.setOnClickListener(new ci.c4(l4Var, m4Var, w01Var, a3Var, 7));
+            vdVar.setOnClickListener(new ci.b4(l4Var, m4Var, w01Var, a3Var, 7));
             a3Var.b(x3Var);
             org.telegram.ui.ActionBar.f3 f3Var = a3Var.a;
             f3Var.show();
@@ -575,7 +575,7 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.Components.oo ooVar = new org.telegram.ui.Components.oo(context, null, false, d6Var);
         this.s = ooVar;
         ooVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        this.actionBar.addView(this.s, 0, w7.z5.a(-1.0f, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f, -2, 51));
+        this.actionBar.addView(this.s, 0, w7.z5.d(-2, -1.0f, 51, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f));
         this.actionBar.setAllowOverlayTitle(false);
         if (j10 >= 0) {
             TLRPC.User user = getMessagesController().getUser(Long.valueOf(j10));
@@ -605,7 +605,7 @@ public final class b11 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.a = im0Var;
         im0Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
-        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
         org.telegram.ui.Components.im0 im0Var2 = this.a;
         z01 z01Var = new z01(this, context);
         this.b = z01Var;

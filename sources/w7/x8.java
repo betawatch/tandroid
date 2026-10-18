@@ -2,7 +2,7 @@ package w7;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class x8 {
     public static r9.a a(String str, String str2) {
@@ -17,7 +17,7 @@ public abstract class x8 {
         b2.m0 a2 = r9.a.a(ya.a.class);
         a2.b = 1;
         a2.a(r9.j.a(Context.class));
-        a2.f = new org.telegram.ui.web.m(20, str, f0Var);
+        a2.f = new org.telegram.ui.web.n(20, str, f0Var);
         return a2.b();
     }
 }

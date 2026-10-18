@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class da extends org.telegram.ui.ActionBar.n2 {
     public ca a;
@@ -50,7 +50,7 @@ public final class da extends org.telegram.ui.ActionBar.n2 {
             UserConfig.getInstance(daVar.currentAccount).saveConfig(true);
             NotificationCenter.getInstance(daVar.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.mainUserInfoChanged, new Object[0]);
             NotificationCenter.getInstance(daVar.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
-            ConnectionsManager.getInstance(daVar.currentAccount).sendRequest(updateprofile, new ci.e6(8));
+            ConnectionsManager.getInstance(daVar.currentAccount).sendRequest(updateprofile, new ci.d6(8));
         }
     }
 

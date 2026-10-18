@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class v5 extends org.telegram.ui.Components.q6 {
     public final /* synthetic */ int s;
@@ -24,22 +24,22 @@ public final class v5 extends org.telegram.ui.Components.q6 {
                 float c10 = getDrawable().c();
                 x5 x5Var = this.v;
                 float a2 = x5Var.a();
-                float min = (((c10 > 0.0f ? Math.min(1.0f, x5Var.b0 / c10) : 1.0f) - a2) * x5Var.a0) + a2;
+                float min = (((c10 > 0.0f ? Math.min(1.0f, x5Var.V / c10) : 1.0f) - a2) * x5Var.U) + a2;
                 x5Var.b = min;
                 int save = canvas.save();
                 canvas.scale(min, min, 0.0f, getHeight() / 2.0f);
-                float d = (1.0f - x5Var.a0) * x5Var.j0.d(x5Var.h0, false);
+                float d = (1.0f - x5Var.U) * x5Var.j0.d(x5Var.h0, false);
                 org.telegram.ui.Components.p6 drawable = getDrawable();
                 Objects.requireNonNull(drawable);
-                x5Var.d(d, false, new o2(drawable, 4), new u3(7, this, canvas));
+                x5Var.b(d, false, new o2(drawable, 4), new v3(8, this, canvas));
                 canvas.restoreToCount(save);
                 break;
             default:
                 x5 x5Var2 = this.v;
-                float d10 = (1.0f - x5Var2.a0) * x5Var2.j0.d(x5Var2.h0, false);
+                float d10 = (1.0f - x5Var2.U) * x5Var2.j0.d(x5Var2.h0, false);
                 org.telegram.ui.Components.p6 drawable2 = getDrawable();
                 Objects.requireNonNull(drawable2);
-                x5Var2.d(d10, false, new o2(drawable2, 4), new u3(8, this, canvas));
+                x5Var2.b(d10, false, new o2(drawable2, 4), new v3(9, this, canvas));
                 break;
         }
     }

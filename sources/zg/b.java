@@ -7,7 +7,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import ci.k4;
+import ci.j4;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -19,7 +19,7 @@ import org.telegram.ui.Cells.va;
 import org.telegram.ui.Components.h9;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class b extends va {
     public final TextView a0;
@@ -30,7 +30,7 @@ public final class b extends va {
     public final a f0;
 
     public b(Context context) {
-        super(0, 0, context, false);
+        super(context, 0, 0, false);
         this.f0 = new a(getContext());
         this.b0 = new FrameLayout(getContext());
         TextView textView = new TextView(getContext());
@@ -39,11 +39,11 @@ public final class b extends va {
         this.a0.setTypeface(AndroidUtilities.bold());
         this.a0.setTextSize(12.0f);
         this.a0.setGravity(17);
-        this.b0.addView(this.a0, z5.d(22.0f, -2));
+        this.b0.addView(this.a0, z5.c(22.0f, -2));
         this.b0.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         FrameLayout frameLayout = this.b0;
         boolean z10 = LocaleController.isRTL;
-        addView(frameLayout, z5.a(-2.0f, z10 ? 9 : 0, 9.0f, z10 ? 0 : 9, 0.0f, -2, (z10 ? 3 : 5) | 48));
+        addView(frameLayout, z5.d(-2, -2.0f, (z10 ? 3 : 5) | 48, z10 ? 9 : 0, 9.0f, z10 ? 0 : 9, 0.0f));
     }
 
     private void setAvatarColorByMonths(int i10) {
@@ -83,24 +83,24 @@ public final class b extends va {
             frameLayout.setVisibility(0);
             int i10 = ((boost.expires - boost.date) / 30) / 86400;
             long j10 = boost.stars;
-            k4 k4Var = this.a;
+            j4 j4Var = this.a;
             h9 h9Var = this.E;
             if (j10 > 0) {
                 j5Var.l(LocaleController.formatPluralString("BoostingBoostStars", (int) j10, new Object[0]), false);
                 h9Var.g(26);
-                k4Var.e(null, h9Var);
+                j4Var.e(null, h9Var);
                 j5Var.i(null);
             } else if (boost.unclaimed) {
                 j5Var.l(LocaleController.getString(R.string.BoostingUnclaimed), false);
                 h9Var.g(18);
                 setAvatarColorByMonths(i10);
-                k4Var.e(null, h9Var);
+                j4Var.e(null, h9Var);
                 j5Var.i(null);
             } else if (boost.user_id == -1) {
                 j5Var.l(LocaleController.getString(R.string.BoostingToBeDistributed), false);
                 h9Var.g(19);
                 setAvatarColorByMonths(i10);
-                k4Var.e(null, h9Var);
+                j4Var.e(null, h9Var);
                 j5Var.i(null);
             }
             String format = LocaleController.getInstance().getFormatterBoostExpired().format(new Date(boost.expires * 1000));

@@ -5,18 +5,18 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class nv0 extends ci.ja {
+public final class nv0 extends ci.ia {
     public final /* synthetic */ pv0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nv0(pv0 pv0Var, ci.i7 i7Var, long j10, int i10) {
-        super(i10, j10, i7Var);
+    public nv0(pv0 pv0Var, ci.h7 h7Var, long j10, int i10) {
+        super(i10, j10, h7Var);
         this.h = pv0Var;
     }
 
-    @Override // ci.ja
+    @Override // ci.ia
     public final void a(ArrayList arrayList) {
         rs0 rs0Var;
         MessageObject messageObject;
@@ -46,12 +46,12 @@ public final class nv0 extends ci.ja {
         }
     }
 
-    @Override // ci.ja
+    @Override // ci.ia
     public final boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
         TL_stories.StoryItem storyItem;
-        ci.a7 a7Var = this.h.s;
+        ci.z6 z6Var = this.h.s;
         ArrayList<TL_stories.StoryViews> arrayList2 = tL_stories_storyViews.views;
-        a7Var.getClass();
+        z6Var.getClass();
         if (arrayList != null && arrayList2 != null) {
             boolean z10 = false;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
@@ -61,14 +61,14 @@ public final class nv0 extends ci.ja {
                     break;
                 }
                 TL_stories.StoryViews storyViews = arrayList2.get(i10);
-                MessageObject messageObject = (MessageObject) a7Var.j.get(num);
+                MessageObject messageObject = (MessageObject) z6Var.j.get(num);
                 if (messageObject != null && (storyItem = messageObject.storyItem) != null) {
                     storyItem.views = storyViews;
                     z10 = true;
                 }
             }
             if (z10) {
-                a7Var.x();
+                z6Var.x();
             }
         }
         return true;

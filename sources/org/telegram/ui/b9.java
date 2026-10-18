@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class b9 implements org.telegram.ui.Components.ob {
     public final /* synthetic */ int a;
@@ -120,15 +120,15 @@ public final class b9 implements org.telegram.ui.Components.ob {
                 ey eyVar = (ey) this.b;
                 return eyVar.Y2 != 0 ? AndroidUtilities.dp(60.0f) + eyVar.g4 : eyVar.k3();
             case 5:
-                i12 = ((pg0) this.b).L;
+                i12 = ((og0) this.b).L;
                 i11 = AndroidUtilities.dp(64.0f);
                 break;
             case 6:
                 PhotoViewer photoViewer = ((du0) this.b).E0;
                 int i13 = 0;
                 if (!photoViewer.R4) {
-                    ci.i4 i4Var = photoViewer.i0;
-                    if (i4Var != null && i4Var.getVisibility() == 0) {
+                    ci.h4 h4Var = photoViewer.i0;
+                    if (h4Var != null && h4Var.getVisibility() == 0) {
                         i13 = (int) ((photoViewer.i0.getAlpha() * photoViewer.i0.getHeight()) + 0);
                     }
                     org.telegram.ui.Components.e40 e40Var = photoViewer.l1;

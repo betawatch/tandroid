@@ -29,7 +29,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -206,7 +206,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
                 a2Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.L0(false));
                 a2Var.e(LocaleController.formatString("TerminateWebSessionStop", R.string.TerminateWebSessionStop, firstName), "", false, false, false);
                 a2Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : AndroidUtilities.dp(16.0f), 0);
-                frameLayout.addView(a2Var, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+                frameLayout.addView(a2Var, w7.z5.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                 a2Var.setOnClickListener(new o8(i14, zArr));
                 b2Var3.G = 16;
                 alertDialog$Builder3.n(frameLayout);
@@ -414,7 +414,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
             int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ka, false);
             int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), 120);
             textView5.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, x03, o10, o10));
-            linearLayout2.addView(textView5, w7.z5.a(48.0f, 16.0f, 15.0f, 16.0f, 16.0f, -1, 0));
+            linearLayout2.addView(textView5, w7.z5.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
             textView5.setOnClickListener(new u61(w61Var, f71Var, tL_authorization, sessionsActivity));
         }
         ScrollView scrollView = new ScrollView(parentActivity);
@@ -533,7 +533,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
         i10 i10Var2 = this.b;
         i10Var2.W1 = true;
         i10Var2.X1 = 0;
-        frameLayout.addView(i10Var2, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(i10Var2, w7.z5.c(-1.0f, -1));
         this.b.setAdapter(this.a);
         s4.k kVar = new s4.k();
         kVar.n(150L);
@@ -545,7 +545,7 @@ public class SessionsActivity extends org.telegram.ui.ActionBar.n2 implements No
         if (i11 == 0) {
             e71 e71Var = new e71(this, context);
             this.s = e71Var;
-            frameLayout.addView(e71Var, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+            frameLayout.addView(e71Var, w7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
         }
         m0();
         return this.fragmentView;

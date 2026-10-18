@@ -11,7 +11,7 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.CameraView;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final /* synthetic */ class v implements Runnable {
                 if (frameLayout != null) {
                     frameLayout.removeView(wVar);
                 }
-                if (f0Var.E == wVar) {
-                    f0Var.E = null;
+                if (f0Var.F == wVar) {
+                    f0Var.F = null;
                 }
-                t0 t0Var = f0Var.d;
-                if (t0Var != null) {
-                    t0Var.setScanHidden(false);
+                u0 u0Var = f0Var.d;
+                if (u0Var != null) {
+                    u0Var.setScanHidden(false);
                     break;
                 }
                 break;
@@ -76,9 +76,9 @@ public final /* synthetic */ class v implements Runnable {
                     cameraView.setUseMaxPreview(true);
                     cameraView.setOptimizeForBarcode(true);
                     cameraView.setAlpha(0.0f);
-                    cameraView.setDelegate(new org.telegram.ui.web.m(26, wVar4, cameraView));
+                    cameraView.setDelegate(new org.telegram.ui.web.n(26, wVar4, cameraView));
                     wVar4.b = cameraView;
-                    wVar4.addView(cameraView, 0, z5.d(-1.0f, -1));
+                    wVar4.addView(cameraView, 0, z5.c(-1.0f, -1));
                     break;
                 }
                 break;

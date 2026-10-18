@@ -47,7 +47,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.mc1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 @Deprecated
 /* loaded from: classes3.dex */
 public class UndoView extends FrameLayout {
@@ -759,9 +759,9 @@ public class UndoView extends FrameLayout {
                                             xj0Var = xj0Var2;
                                             if (longValue == UserConfig.getInstance(i21).clientUserId) {
                                                 if (num.intValue() == 1) {
-                                                    y1Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), new rc(19)));
+                                                    y1Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessageToSavedMessages), new sc(18)));
                                                 } else {
-                                                    y1Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), new rc(19)));
+                                                    y1Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.FwdMessagesToSavedMessages), new sc(18)));
                                                 }
                                                 xj0Var.e(R.raw.saved_messages, 30, 30);
                                             } else {
@@ -847,7 +847,7 @@ public class UndoView extends FrameLayout {
                                         if (measuredWidth == 0) {
                                             measuredWidth = AndroidUtilities.displaySize.x;
                                         }
-                                        measureChildWithMargins(textView2, org.telegram.messenger.kk.c(16.0f, measuredWidth, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                                        measureChildWithMargins(textView2, org.telegram.messenger.lk.c(16.0f, measuredWidth, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                                         this.r = AndroidUtilities.dp(37.0f) + textView2.getMeasuredHeight();
                                     } else if (d()) {
                                         this.r = AndroidUtilities.dp(52.0f);
@@ -858,7 +858,7 @@ public class UndoView extends FrameLayout {
                                             measuredWidth2 = AndroidUtilities.displaySize.x;
                                         }
                                         View view = y1Var;
-                                        measureChildWithMargins(view, org.telegram.messenger.kk.c(16.0f, measuredWidth2, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
+                                        measureChildWithMargins(view, org.telegram.messenger.lk.c(16.0f, measuredWidth2, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(0, 0), 0);
                                         int measuredHeight = view.getMeasuredHeight();
                                         int i32 = this.K;
                                         int dp2 = AndroidUtilities.dp((i32 == 16 || i32 == 17 || i32 == 18 || i32 == 84 || i32 == 86) ? 14.0f : 28.0f) + measuredHeight;
@@ -1496,7 +1496,7 @@ public class UndoView extends FrameLayout {
         int i11 = org.telegram.ui.ActionBar.h6.Gi;
         y1Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
         y1Var.setMovementMethod(new o61(this));
-        addView(y1Var, w7.z5.a(-2.0f, 45.0f, 13.0f, 0.0f, 0.0f, -2, 51));
+        addView(y1Var, w7.z5.d(-2, -2.0f, 51, 45.0f, 13.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextSize(1, 13.0f);
@@ -1506,7 +1506,7 @@ public class UndoView extends FrameLayout {
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        addView(textView, w7.z5.a(-2.0f, 58.0f, 27.0f, 8.0f, 0.0f, -2, 51));
+        addView(textView, w7.z5.d(-2, -2.0f, 51, 58.0f, 27.0f, 8.0f, 0.0f));
         xj0 xj0Var = new xj0(context);
         this.f = xj0Var;
         xj0Var.setScaleType(ImageView.ScaleType.CENTER);
@@ -1526,16 +1526,16 @@ public class UndoView extends FrameLayout {
         xj0Var.h(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), "luc2");
         xj0Var.h(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), "luc1");
         xj0Var.h(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), "Oval");
-        addView(xj0Var, w7.z5.a(-2.0f, 3.0f, 0.0f, 0.0f, 0.0f, 54, 19));
+        addView(xj0Var, w7.z5.d(54, -2.0f, 19, 3.0f, 0.0f, 0.0f, 0.0f));
         w9 w9Var = new w9(context);
         this.h = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(15.0f));
-        addView(w9Var, w7.z5.a(30.0f, 15.0f, 0.0f, 0.0f, 0.0f, 30, 19));
+        addView(w9Var, w7.z5.d(30, 30.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.n = linearLayout;
         linearLayout.setOrientation(0);
         linearLayout.setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.w0(i11, d6Var) & 587202559, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
-        addView(linearLayout, w7.z5.a(-2.0f, 0.0f, 0.0f, 11.0f, 0.0f, -2, 21));
+        addView(linearLayout, w7.z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 11.0f, 0.0f));
         linearLayout.setOnClickListener(new n61(this, 0));
         ImageView imageView = new ImageView(context);
         this.e = imageView;

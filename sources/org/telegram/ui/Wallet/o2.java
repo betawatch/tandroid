@@ -1,12 +1,13 @@
 package org.telegram.ui.Wallet;
 
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.xf1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o2 implements org.telegram.ui.ActionBar.a2, r0.n, ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ int a;
@@ -19,16 +20,16 @@ public final /* synthetic */ class o2 implements org.telegram.ui.ActionBar.a2, r
 
     @Override // r0.n
     public r0.k1 B0(View view, r0.k1 k1Var) {
-        y2 y2Var = (y2) this.b;
-        y2Var.H = k1Var.a.f(647);
-        y2Var.h.requestLayout();
+        z2 z2Var = (z2) this.b;
+        z2Var.H = k1Var.a.f(647);
+        z2Var.h.requestLayout();
         return r0.k1.b;
     }
 
     public void a(float f7, float f10, float f11, int i10) {
         switch (this.a) {
             case 2:
-                ((x5) this.b).M.setShadowLayer(f7, f11, -f10, i10);
+                ((x5) this.b).J.setShadowLayer(f7 * 2.0f, f11, -f10, i0.a.o(i10, Math.round(Color.alpha(i10) * 0.5f)));
                 break;
             case 3:
                 ((TextPaint) this.b).setShadowLayer(f7, f10, f11, i10);
@@ -41,12 +42,12 @@ public final /* synthetic */ class o2 implements org.telegram.ui.ActionBar.a2, r
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ((y7) this.b).d0.h0();
+        ((s7) this.b).d0.f0();
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.l5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -56,13 +57,13 @@ public final /* synthetic */ class o2 implements org.telegram.ui.ActionBar.a2, r
                 ((org.telegram.ui.ActionBar.n2) this.b).presentFragment(new xf1(6, null));
                 break;
             default:
-                n8.Z((n8) this.b, b2Var, i10);
+                h8.Z((h8) this.b, b2Var, i10);
                 break;
         }
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.l5.b(this, imageReceiver);
     }
 }

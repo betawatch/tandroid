@@ -42,7 +42,7 @@ import org.telegram.ui.d91;
 import org.telegram.ui.ko;
 import org.telegram.ui.r91;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class x extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final CharSequence E;
@@ -522,7 +522,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
         this.d.getAvatarImageView().setScaleX(0.9f);
         this.d.getAvatarImageView().setScaleY(0.9f);
         this.d.setRightAvatarPadding(-AndroidUtilities.dp(3.0f));
-        this.actionBar.addView(this.d, 0, w7.z5.a(-1.0f, !this.inPreviewMode ? 50.0f : 0.0f, 0.0f, 40.0f, 0.0f, -2, 51));
+        this.actionBar.addView(this.d, 0, w7.z5.d(-2, -1.0f, 51, !this.inPreviewMode ? 50.0f : 0.0f, 0.0f, 40.0f, 0.0f));
         TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.b));
         this.d.k(user, true);
         this.d.setTitle(UserObject.getUserName(user));
@@ -565,7 +565,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
         int i13 = org.telegram.ui.ActionBar.h6.y6;
         q6Var4.setTextColor(org.telegram.ui.ActionBar.h6.w0(i13, getResourceProvider()));
         this.L.setTextSize(AndroidUtilities.dp(14.0f));
-        this.H.addView(this.L, w7.z5.a(17.0f, 22.0f, 4.0f, 22.0f, 0.0f, -1, 49));
+        this.H.addView(this.L, w7.z5.d(-1, 17.0f, 49, 22.0f, 4.0f, 22.0f, 0.0f));
         s sVar = new s(this, context, 0);
         this.M = sVar;
         sVar.setText(LocaleController.getString(R.string.BotStarsWithdrawPlaceholder));
@@ -651,7 +651,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
             this.I.addView(new Space(context), w7.z5.o(8, 48, 0.0f, 119));
             this.I.addView(this.S, w7.z5.o(-1, 48, 1.0f, 119));
         }
-        this.H.addView(this.I, w7.z5.a(48.0f, 18.0f, 13.0f, 18.0f, 0.0f, -1, 55));
+        this.H.addView(this.I, w7.z5.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
         r rVar2 = new r(context, 1);
         this.U = rVar2;
         rVar2.setOrientation(1);
@@ -670,7 +670,7 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
         q6Var6.setGravity(17);
         this.X.setTextColor(org.telegram.ui.ActionBar.h6.w0(i13, this.resourceProvider));
         this.X.setTextSize(AndroidUtilities.dp(14.0f));
-        this.U.addView(this.X, w7.z5.a(17.0f, 22.0f, 4.0f, 22.0f, 0.0f, -1, 49));
+        this.U.addView(this.X, w7.z5.d(-1, 17.0f, 49, 22.0f, 4.0f, 22.0f, 0.0f));
         ei.d dVar2 = new ei.d(context, this.resourceProvider, true);
         dVar2.setRoundRadius(24);
         this.Y = dVar2;
@@ -708,12 +708,12 @@ public final class x extends org.telegram.ui.ActionBar.n2 implements Notificatio
                 }
             }
         });
-        this.U.addView(this.Y, w7.z5.a(48.0f, 18.0f, 13.0f, 18.0f, 0.0f, -1, 55));
+        this.U.addView(this.Y, w7.z5.d(-1, 48.0f, 55, 18.0f, 13.0f, 18.0f, 0.0f));
         a71 a71Var = new a71(this, new q(this, 0), new k(this), new k(this));
         this.e = a71Var;
         a71Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.a7));
         this.e.p1();
-        wVar.addView(this.e, w7.z5.d(-1.0f, -1));
+        wVar.addView(this.e, w7.z5.c(-1.0f, -1));
         this.e.setOnScrollListener(new ah.d0(this, 1));
         this.actionBar.setAdaptiveBackground(this.e);
         this.fragmentView = wVar;

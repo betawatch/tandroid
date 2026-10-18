@@ -16,7 +16,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ez implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class ez implements View.OnClickListener {
                 String str = lzVar.s;
                 if (str != null) {
                     AndroidUtilities.addToClipboard(str);
-                    org.telegram.messenger.kk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(lzVar.r));
+                    org.telegram.messenger.lk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(lzVar.r));
                     break;
                 }
                 break;
@@ -71,7 +71,7 @@ public final /* synthetic */ class ez implements View.OnClickListener {
                         ei.g6 g6Var = new ei.g6(lzVar2, lzVar2.getContext(), overlayContainerView, 9);
                         xh xhVar = new xh(g6Var, 1);
                         overlayContainerView.getViewTreeObserver().addOnPreDrawListener(xhVar);
-                        overlayContainerView.addView(g6Var, w7.z5.d(-1.0f, -1));
+                        overlayContainerView.addView(g6Var, w7.z5.c(-1.0f, -1));
                         float f10 = 0.0f;
                         g6Var.setAlpha(0.0f);
                         g6Var.animate().alpha(1.0f).setDuration(150L);
@@ -100,7 +100,7 @@ public final /* synthetic */ class ez implements View.OnClickListener {
                 String str2 = lzVar3.s;
                 if (str2 != null) {
                     AndroidUtilities.addToClipboard(str2);
-                    org.telegram.messenger.kk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(lzVar3.r));
+                    org.telegram.messenger.lk.p(R.string.LinkCopied, org.telegram.ui.Components.xc.a0(lzVar3.r));
                     break;
                 }
                 break;

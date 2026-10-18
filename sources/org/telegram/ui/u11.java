@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class u11 extends org.telegram.ui.ActionBar.n2 {
     public float[] E;
@@ -228,7 +228,7 @@ public final class u11 extends org.telegram.ui.ActionBar.n2 {
         this.b.setFillViewport(true);
         AndroidUtilities.setScrollViewEdgeEffectColor(this.b, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.s8, false));
         int i10 = -1;
-        frameLayout.addView(this.b, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.b, w7.z5.c(-1.0f, -1));
         this.c.setOrientation(1);
         this.b.addView(this.c, new FrameLayout.LayoutParams(-1, -2));
         final int i11 = 0;
@@ -380,7 +380,7 @@ public final class u11 extends org.telegram.ui.ActionBar.n2 {
             EditTextBoldCursor editTextBoldCursor2 = this.a[i14];
             editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
             this.a[i14].setPadding(0, 0, 0, 0);
-            frameLayout2.addView(this.a[i14], w7.z5.a(-1.0f, 17.0f, i14 == 0 ? 12.0f : 0.0f, 17.0f, 0.0f, -1, 51));
+            frameLayout2.addView(this.a[i14], w7.z5.d(-1, -1.0f, 51, 17.0f, i14 == 0 ? 12.0f : 0.0f, 17.0f, 0.0f));
             this.a[i14].setOnEditorActionListener(new ma(this, 10));
             i14++;
             i13 = 5;

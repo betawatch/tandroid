@@ -22,7 +22,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.y5 {
     public final AnimationNotificationsLocker E;
@@ -71,29 +71,29 @@ public class k20 extends FrameLayout implements ne.d, org.telegram.ui.ActionBar.
         if (Build.VERSION.SDK_INT >= 35) {
             e2Var.setLocalePreferredLineHeightForMinimumUsed(false);
         }
-        addView(e2Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        addView(e2Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setImageResource(R.drawable.outline_search_1_24);
-        addView(imageView, w7.z5.a(24.0f, 12.0f, 0.0f, 12.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(imageView, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.h = linearLayout;
         linearLayout.setOrientation(0);
-        addView(linearLayout, w7.z5.a(-1.0f, 32.0f, 0.0f, 32.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(linearLayout, w7.z5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 16, 32.0f, 0.0f, 32.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.miniplayer_close);
         imageView2.setVisibility(8);
         imageView2.setOnClickListener(new f0(this, 16));
-        addView(imageView2, w7.z5.a(24.0f, 12.0f, 0.0f, 12.0f, 0.0f, 24, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView2, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
         sa1 sa1Var = new sa1(this, getContext(), 9);
         this.G = sa1Var;
         sa1Var.setOrientation(0);
         sa1Var.setVisibility(0);
-        addView(sa1Var, w7.z5.a(32.0f, 4.0f, 0.0f, 4.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(sa1Var, w7.z5.d(-2, 32.0f, (LocaleController.isRTL ? 5 : 3) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
         setWillNotDraw(false);
         b();
         d();

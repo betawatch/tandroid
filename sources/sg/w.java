@@ -14,36 +14,36 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.x10;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
+    public final /* synthetic */ k0 b;
 
-    public /* synthetic */ w(j0 j0Var, int i10) {
+    public /* synthetic */ w(k0 k0Var, int i10) {
         this.a = i10;
-        this.b = j0Var;
+        this.b = k0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        j0 j0Var = this.b;
+        k0 k0Var = this.b;
         switch (i10) {
             case 0:
                 if (LaunchActivity.R() != null) {
                     l2 l2Var = new l2();
                     l2Var.a = true;
-                    j0Var.K0.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), l2Var);
+                    k0Var.K0.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), l2Var);
                     break;
                 }
                 break;
             case 1:
-                j0Var.x0.e(j0Var.b0, false);
-                j0Var.A1();
+                k0Var.x0.e(k0Var.b0, false);
+                k0Var.A1();
                 break;
             case 2:
-                HashSet hashSet = j0Var.y0;
+                HashSet hashSet = k0Var.y0;
                 xc X = xc.X();
                 if (X != null) {
                     if (hashSet.size() != 1) {
@@ -56,20 +56,20 @@ public final /* synthetic */ class w implements Runnable {
                 }
                 break;
             case 3:
-                ei.d dVar = j0Var.S0;
-                TLRPC.ChatFull u12 = j0Var.u1();
+                ei.d dVar = k0Var.S0;
+                TLRPC.ChatFull u12 = k0Var.u1();
                 dVar.b(Math.max(u12.boosts_unrestrict - u12.boosts_applied, 0), false);
                 break;
             default:
-                if (ChatObject.hasAdminRights(j0Var.t1())) {
-                    if (j0Var.E0.getParent() != null) {
-                        ((ViewGroup) j0Var.E0.getParent()).removeView(j0Var.E0);
+                if (ChatObject.hasAdminRights(k0Var.t1())) {
+                    if (k0Var.E0.getParent() != null) {
+                        ((ViewGroup) k0Var.E0.getParent()).removeView(k0Var.E0);
                     }
-                    x10 x10Var = j0Var.L0;
+                    x10 x10Var = k0Var.L0;
                     if (x10Var != null && x10Var.getParent() != null) {
-                        ((ViewGroup) j0Var.L0.getParent()).removeView(j0Var.L0);
+                        ((ViewGroup) k0Var.L0.getParent()).removeView(k0Var.L0);
                     }
-                    j0Var.d.setPadding(0, 0, 0, 0);
+                    k0Var.d.setPadding(0, 0, 0, 0);
                     break;
                 }
                 break;

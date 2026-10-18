@@ -5,9 +5,9 @@ import android.graphics.Matrix;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class h5 implements qg.v {
+public final class h5 implements qg.u {
     public boolean a;
     public final /* synthetic */ qg.u0 b;
     public final /* synthetic */ xa c;
@@ -17,12 +17,12 @@ public final class h5 implements qg.v {
         this.b = u0Var;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final void a() {
         this.a = true;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final void b(Canvas canvas) {
         v5 v5Var = this.c.O0;
         Matrix matrix = v5Var.getMatrix();
@@ -33,32 +33,32 @@ public final class h5 implements qg.v {
         throw null;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final boolean c() {
         return this.a;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final void d() {
         this.a = false;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final View e() {
         return this.c;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final FrameLayout f() {
         return this.c.V0;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final boolean g() {
         return false;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final void h(int i10) {
         xa xaVar = this.c;
         xaVar.H0(false);

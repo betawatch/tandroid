@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.AndroidUtilities;
@@ -36,9 +37,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class kb0 {
+    public static final Pattern k = Pattern.compile("^[a-z0-9_]{1,32}$");
     public final LaunchActivity a;
     public final int b;
     public final pf.c c;
@@ -378,12 +380,13 @@ public final class kb0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v31, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v36 */
-    /* JADX WARN: Type inference failed for: r0v62 */
+    /* JADX WARN: Type inference failed for: r0v36, types: [int] */
+    /* JADX WARN: Type inference failed for: r0v41 */
+    /* JADX WARN: Type inference failed for: r0v67 */
     /* JADX WARN: Type inference failed for: r17v0, types: [org.telegram.ui.kb0] */
     /* JADX WARN: Type inference failed for: r4v21, types: [ei.m8, ei.na] */
     public final boolean g(Uri uri) {
+        String str;
         Uri s10;
         List<String> pathSegments;
         Long l4;
@@ -406,12 +409,12 @@ public final class kb0 {
                         if (find) {
                             StringBuilder sb2 = new StringBuilder("https://t.me/");
                             sb2.append(matcher.group(1));
-                            String str = "";
+                            String str2 = "";
                             sb2.append(TextUtils.isEmpty(uri2.getPath()) ? "" : uri2.getPath());
                             if (!TextUtils.isEmpty(uri2.getQuery())) {
-                                str = "?" + uri2.getQuery();
+                                str2 = "?" + uri2.getQuery();
                             }
-                            sb2.append(str);
+                            sb2.append(str2);
                             uri2 = Uri.parse(sb2.toString());
                         }
                         String path = uri2.getPath();
@@ -419,26 +422,40 @@ public final class kb0 {
                             String substring = path.substring(1);
                             List<String> pathSegments2 = uri2.getPathSegments();
                             if (pathSegments2 != null && !pathSegments2.isEmpty()) {
-                                String str2 = pathSegments2.get(0);
-                                String str3 = pathSegments2.size() > 1 ? pathSegments2.get(1) : null;
-                                if ("sendgrams".equalsIgnoreCase(str2)) {
+                                String str3 = pathSegments2.get(0);
+                                String str4 = pathSegments2.size() > 1 ? pathSegments2.get(1) : null;
+                                if ("sendgrams".equalsIgnoreCase(str3)) {
                                     return l(uri2);
                                 }
-                                if ("$".equalsIgnoreCase(str2)) {
+                                if ("getpremium".equalsIgnoreCase(str3)) {
+                                    String queryParameter = uri2.getQueryParameter("ref");
+                                    if (queryParameter != null) {
+                                        String lowerCase = queryParameter.toLowerCase(Locale.ROOT);
+                                        if (k.matcher(lowerCase).matches()) {
+                                            str = r4.c.h("tme_getpremium_", lowerCase);
+                                            u(new PremiumPreviewFragment(0, str), false);
+                                            return true;
+                                        }
+                                    }
+                                    str = "tme_getpremium";
+                                    u(new PremiumPreviewFragment(0, str), false);
+                                    return true;
+                                }
+                                if ("$".equalsIgnoreCase(str3)) {
                                     return i(substring.substring(1));
                                 }
-                                if ("invoice".equalsIgnoreCase(str2)) {
-                                    return i(str3);
+                                if ("invoice".equalsIgnoreCase(str3)) {
+                                    return i(str4);
                                 }
-                                if ("addstyle".equalsIgnoreCase(str2)) {
-                                    return h(str3);
+                                if ("addstyle".equalsIgnoreCase(str3)) {
+                                    return h(str4);
                                 }
-                                if ("oauth".equalsIgnoreCase(str2)) {
+                                if ("oauth".equalsIgnoreCase(str3)) {
                                     return k(uri2, uri2.getQueryParameter("startapp"));
                                 }
-                                if ("newbot".equalsIgnoreCase(str2)) {
+                                if ("newbot".equalsIgnoreCase(str3)) {
                                     if (pathSegments2.size() >= 2) {
-                                        j(str3, pathSegments2.size() >= 3 ? pathSegments2.get(2) : null, uri2.getQueryParameter("name"));
+                                        j(str4, pathSegments2.size() >= 3 ? pathSegments2.get(2) : null, uri2.getQueryParameter("name"));
                                         return true;
                                     }
                                     return true;
@@ -460,16 +477,16 @@ public final class kb0 {
                             arrayList.add(0, authority);
                         }
                         if (!arrayList.isEmpty()) {
-                            String str4 = (String) arrayList.get(0);
-                            String str5 = arrayList.size() > 1 ? (String) arrayList.get(1) : null;
-                            if ("sendgrams".equalsIgnoreCase(str4)) {
+                            String str5 = (String) arrayList.get(0);
+                            String str6 = arrayList.size() > 1 ? (String) arrayList.get(1) : null;
+                            if ("sendgrams".equalsIgnoreCase(str5)) {
                                 return l(s11);
                             }
-                            if ("newbot".equalsIgnoreCase(str4)) {
+                            if ("newbot".equalsIgnoreCase(str5)) {
                                 j(s11.getQueryParameter("manager"), s11.getQueryParameter("username"), s11.getQueryParameter("name"));
                                 return true;
                             }
-                            if ("resolve".equalsIgnoreCase(str4)) {
+                            if ("resolve".equalsIgnoreCase(str5)) {
                                 List<String> pathSegments4 = s11.getPathSegments();
                                 if (pathSegments4 != null) {
                                     ArrayList arrayList2 = new ArrayList(pathSegments4);
@@ -479,41 +496,41 @@ public final class kb0 {
                                     }
                                     if (!arrayList2.isEmpty()) {
                                         arrayList2.remove(0);
-                                        String queryParameter = s11.getQueryParameter("domain");
-                                        String queryParameter2 = s11.getQueryParameter("startapp");
-                                        if ("sendgrams".equalsIgnoreCase(queryParameter)) {
+                                        String queryParameter2 = s11.getQueryParameter("domain");
+                                        String queryParameter3 = s11.getQueryParameter("startapp");
+                                        if ("sendgrams".equalsIgnoreCase(queryParameter2)) {
                                             return l(s11);
                                         }
-                                        if ("oauth".equalsIgnoreCase(queryParameter) && !TextUtils.isEmpty(queryParameter2)) {
-                                            return k(s11, queryParameter2);
+                                        if ("oauth".equalsIgnoreCase(queryParameter2) && !TextUtils.isEmpty(queryParameter3)) {
+                                            return k(s11, queryParameter3);
                                         }
                                     }
                                 }
                             } else {
-                                if ("invoice".equalsIgnoreCase(str4)) {
+                                if ("invoice".equalsIgnoreCase(str5)) {
                                     return i(s11.getQueryParameter("slug"));
                                 }
-                                if ("oauth".equalsIgnoreCase(str4)) {
+                                if ("oauth".equalsIgnoreCase(str5)) {
                                     return k(s11, s11.getQueryParameter("token"));
                                 }
-                                if ("settings".equalsIgnoreCase(str4)) {
+                                if ("settings".equalsIgnoreCase(str5)) {
                                     return m(arrayList.subList(1, arrayList.size()));
                                 }
-                                if ("chats".equalsIgnoreCase(str4)) {
-                                    "search".equalsIgnoreCase(str5);
-                                    "edit".equalsIgnoreCase(str5);
-                                    "emoji-status".equalsIgnoreCase(str5);
+                                if ("chats".equalsIgnoreCase(str5)) {
+                                    "search".equalsIgnoreCase(str6);
+                                    "edit".equalsIgnoreCase(str6);
+                                    "emoji-status".equalsIgnoreCase(str6);
                                 }
-                                if ("new".equalsIgnoreCase(str4)) {
-                                    if ("group".equalsIgnoreCase(str5)) {
+                                if ("new".equalsIgnoreCase(str5)) {
+                                    if ("group".equalsIgnoreCase(str6)) {
                                         u(new n60(new Bundle()), false);
                                         return true;
                                     }
-                                    if ("contact".equalsIgnoreCase(str5)) {
+                                    if ("contact".equalsIgnoreCase(str6)) {
                                         new oj0(launchActivity, LaunchActivity.U()).show();
                                         return true;
                                     }
-                                    if (!"channel".equalsIgnoreCase(str5)) {
+                                    if (!"channel".equalsIgnoreCase(str6)) {
                                         u(new ContactsActivity(a1.g.h("destroyAfterSelect", true)), false);
                                         return true;
                                     }
@@ -526,9 +543,9 @@ public final class kb0 {
                                     globalMainSettings.edit().putBoolean("channel_intro", true).commit();
                                     return true;
                                 }
-                                if ("post".equalsIgnoreCase(str4)) {
-                                    ?? r02 = MediaStreamTrack.VIDEO_TRACK_KIND.equalsIgnoreCase(str5);
-                                    if ("live".equalsIgnoreCase(str5)) {
+                                if ("post".equalsIgnoreCase(str5)) {
+                                    ?? r02 = MediaStreamTrack.VIDEO_TRACK_KIND.equalsIgnoreCase(str6);
+                                    if ("live".equalsIgnoreCase(str6)) {
                                         r02 = -1;
                                     }
                                     ei.vb D = ei.vb.D(launchActivity, i10);
@@ -548,8 +565,8 @@ public final class kb0 {
                                     D.Q(null);
                                     return true;
                                 }
-                                if ("contacts".equalsIgnoreCase(str4)) {
-                                    if ("new".equalsIgnoreCase(str5)) {
+                                if ("contacts".equalsIgnoreCase(str5)) {
+                                    if ("new".equalsIgnoreCase(str6)) {
                                         new oj0(launchActivity, LaunchActivity.U()).show();
                                         return true;
                                     }
@@ -557,15 +574,15 @@ public final class kb0 {
                                     bundle.putBoolean("needPhonebook", true);
                                     bundle.putBoolean("needFinishFragment", true);
                                     u(new ContactsActivity(bundle), false);
-                                    "search".equalsIgnoreCase(str5);
-                                    "sort".equalsIgnoreCase(str5);
-                                    if ("invite".equalsIgnoreCase(str5)) {
+                                    "search".equalsIgnoreCase(str6);
+                                    "sort".equalsIgnoreCase(str6);
+                                    if ("invite".equalsIgnoreCase(str6)) {
                                         x("phonebookRow");
                                         return true;
                                     }
                                     return true;
                                 }
-                                if ("addstyle".equalsIgnoreCase(str4)) {
+                                if ("addstyle".equalsIgnoreCase(str5)) {
                                     return h(s11.getQueryParameter("slug"));
                                 }
                             }
@@ -579,34 +596,34 @@ public final class kb0 {
                             arrayList3.add(0, authority3);
                         }
                         if (!arrayList3.isEmpty()) {
-                            String str6 = (String) arrayList3.get(0);
-                            String str7 = arrayList3.size() > 1 ? (String) arrayList3.get(1) : null;
-                            if (!"transfer".equalsIgnoreCase(str6)) {
+                            String str7 = (String) arrayList3.get(0);
+                            String str8 = arrayList3.size() > 1 ? (String) arrayList3.get(1) : null;
+                            if (!"transfer".equalsIgnoreCase(str7)) {
                                 return false;
                             }
-                            if (arrayList3.size() == 2 && WalletEngine2.isValidRecipientAddress(str7)) {
+                            if (arrayList3.size() == 2 && WalletEngine2.isValidRecipientAddress(str8)) {
                                 try {
                                     l4 = Long.valueOf(Long.parseLong(s10.getQueryParameter("amount")));
                                 } catch (Throwable unused) {
                                     l4 = null;
                                 }
-                                String queryParameter3 = s10.getQueryParameter("text");
-                                if (TextUtils.isEmpty(queryParameter3)) {
-                                    queryParameter3 = s10.getQueryParameter("comment");
+                                String queryParameter4 = s10.getQueryParameter("text");
+                                if (TextUtils.isEmpty(queryParameter4)) {
+                                    queryParameter4 = s10.getQueryParameter("comment");
                                 }
-                                String r10 = r(queryParameter3);
+                                String r10 = r(queryParameter4);
                                 boolean booleanQueryParameter = s10.getBooleanQueryParameter("encrypted", false);
                                 try {
-                                    org.telegram.ui.Wallet.o9 o9Var = new org.telegram.ui.Wallet.o9(str7);
+                                    org.telegram.ui.Wallet.i9 i9Var = new org.telegram.ui.Wallet.i9(str8);
                                     if (l4 != null && l4.longValue() > 0) {
-                                        o9Var.r = l4.longValue();
+                                        i9Var.r = l4.longValue();
                                     }
                                     if (!TextUtils.isEmpty(r10)) {
-                                        o9Var.d0 = r10;
-                                        o9Var.e0 = booleanQueryParameter;
+                                        i9Var.d0 = r10;
+                                        i9Var.e0 = booleanQueryParameter;
                                     }
-                                    o9Var.c0 = true;
-                                    u(o9Var, false);
+                                    i9Var.c0 = true;
+                                    u(i9Var, false);
                                     return true;
                                 } catch (Throwable th2) {
                                     FileLog.e(th2);
@@ -722,7 +739,7 @@ public final class kb0 {
         j10 = 0;
         long j11 = j10;
         if (TextUtils.isEmpty(queryParameter2)) {
-            u(new org.telegram.ui.Wallet.m5(), false);
+            u(new org.telegram.ui.Wallet.n5(), false);
             return true;
         }
         if (queryParameter2.startsWith("@") || queryParameter2.matches("[a-zA-Z0-9_]{1,32}")) {
@@ -737,12 +754,12 @@ public final class kb0 {
                 return true;
             }
         } else if (WalletEngine2.isValidRecipientAddress(queryParameter2)) {
-            org.telegram.ui.Wallet.o9 o9Var = new org.telegram.ui.Wallet.o9(queryParameter2);
-            o9Var.r = j11;
-            o9Var.d0 = r10;
-            o9Var.e0 = booleanQueryParameter;
-            o9Var.c0 = true;
-            u(o9Var, false);
+            org.telegram.ui.Wallet.i9 i9Var = new org.telegram.ui.Wallet.i9(queryParameter2);
+            i9Var.r = j11;
+            i9Var.d0 = r10;
+            i9Var.e0 = booleanQueryParameter;
+            i9Var.c0 = true;
+            u(i9Var, false);
             return true;
         }
         return true;
@@ -763,7 +780,7 @@ public final class kb0 {
         int i11;
         int i12;
         org.telegram.ui.ActionBar.n2 U;
-        pg0 pg0Var;
+        og0 og0Var;
         ApplicationLoader applicationLoader;
         org.telegram.ui.ActionBar.n2 openSettings;
         if (list == null) {
@@ -837,11 +854,11 @@ public final class kb0 {
                     while (true) {
                         z10 = z11;
                         if (size < 0) {
-                            pg0Var = null;
+                            og0Var = null;
                             break;
                         }
-                        if (e.getFragmentStack().get(size) instanceof pg0) {
-                            pg0Var = (pg0) e.getFragmentStack().get(size);
+                        if (e.getFragmentStack().get(size) instanceof og0) {
+                            og0Var = (og0) e.getFragmentStack().get(size);
                             break;
                         }
                         if (size > 0) {
@@ -850,8 +867,8 @@ public final class kb0 {
                         size++;
                         z11 = z10;
                     }
-                    if (pg0Var != null && "search".equalsIgnoreCase(str2)) {
-                        pg0Var.c.D(2);
+                    if (og0Var != null && "search".equalsIgnoreCase(str2)) {
+                        og0Var.c.D(2);
                         return z10;
                     }
                 } else {
@@ -1454,7 +1471,7 @@ public final class kb0 {
                                 }
                                 if ("send-gift".equalsIgnoreCase(str)) {
                                     if ("self".equalsIgnoreCase(str2)) {
-                                        new yh.p1(this.a, this.b, f().getClientUserId(), null, null).show();
+                                        new yh.o1(this.a, this.b, f().getClientUserId(), null, null).show();
                                         return true;
                                     }
                                     ug.m1.f0(0, BirthdayController.getInstance(i13).getState());
@@ -1554,7 +1571,7 @@ public final class kb0 {
                         x("browserRow");
                         return true;
                     }
-                    t(new org.telegram.ui.web.x1(null));
+                    t(new org.telegram.ui.web.y1(null));
                     if ("enable-browser".equalsIgnoreCase(str3)) {
                         x("enableRow");
                     }
@@ -1689,7 +1706,7 @@ public final class kb0 {
             if (!launchActivity.isFinishing() && !launchActivity.isDestroyed()) {
                 TL_wallet.tonConnectGetPending tonconnectgetpending = new TL_wallet.tonConnectGetPending();
                 tonconnectgetpending.dapp_client_id = str;
-                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.messenger.eh(this, str, str2, str3, i10, 2));
+                this.h = ConnectionsManager.getInstance(this.b).sendRequestTyped(tonconnectgetpending, new org.telegram.messenger.a(), new org.telegram.messenger.fh(this, str, str2, str3, i10, 2));
                 return;
             }
         }

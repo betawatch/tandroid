@@ -1,13 +1,13 @@
 package da;
 
-import ai.w3;
 import ai.x9;
+import ai.y3;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
 import b2.p1;
-import ci.v7;
+import ci.u7;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e9.k0;
 import e9.n0;
@@ -43,7 +43,7 @@ import x2.k;
 import x2.n;
 import x9.w;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements g, MessagesStorage.LongCallback, a2, MessagesController.ErrorDelegate, k {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
         if (this.b) {
             boolean z10 = true;
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            new Thread(new v7(11, cVar, countDownLatch)).start();
+            new Thread(new u7(11, cVar, countDownLatch)).start();
             TimeUnit timeUnit = TimeUnit.SECONDS;
             ExecutorService executorService = w.a;
             boolean z11 = false;
@@ -192,7 +192,7 @@ public final /* synthetic */ class b implements g, MessagesStorage.LongCallback,
                     AndroidUtilities.hideKeyboard(ry0Var);
                     b2 b2Var2 = new b2(context2, 3, z13 ? null : new ci.b());
                     b2Var2.q(250L);
-                    callback2.run(trim2, new w3(b2Var2, b2Var, ry0Var, 9));
+                    callback2.run(trim2, new y3(b2Var2, b2Var, ry0Var, 9));
                     break;
                 } else {
                     ry0Var.setErrorText(".");

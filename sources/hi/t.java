@@ -62,7 +62,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.sn;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -161,9 +161,9 @@ public final /* synthetic */ class t implements Runnable {
                                 j11 = ((i1) n0Var.f).d;
                             } else {
                                 i1 i1Var = (i1) n0Var.f;
-                                u2.f0 f0Var = i1Var.b;
+                                u2.g0 g0Var = i1Var.b;
                                 long j12 = i1Var.d;
-                                Object obj = f0Var.a;
+                                Object obj = g0Var.a;
                                 l1 l1Var = h0Var.o;
                                 o1Var.g(obj, l1Var);
                                 j11 = j12 + l1Var.e;
@@ -646,9 +646,9 @@ public final /* synthetic */ class t implements Runnable {
                 ((m4.f0) this.b).u(null, (m1) this.c);
                 return;
             default:
-                m4.f0 f0Var2 = (m4.f0) this.b;
+                m4.f0 f0Var = (m4.f0) this.b;
                 Runnable runnable = (Runnable) this.c;
-                f0Var2.getClass();
+                f0Var.getClass();
                 runnable.run();
                 return;
         }

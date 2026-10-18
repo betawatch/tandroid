@@ -18,7 +18,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class i {
     public static i q;
@@ -51,7 +51,7 @@ public final class i {
                 return;
             }
             boolean z10 = false;
-            b0 b0Var = new b0(15, z10, z10);
+            b0 b0Var = new b0(16, z10, z10);
             b0Var.c = new float[Math.max(64, 2)];
             b0Var.b = 0;
             b0VarArr[i10] = b0Var;

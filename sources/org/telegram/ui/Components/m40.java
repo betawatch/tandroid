@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m40 extends FrameLayout {
     public final int a;
@@ -42,8 +42,8 @@ public final class m40 extends FrameLayout {
         frameLayout.addView(imageView, w7.z5.e(56, 56, 49));
         TextView textView = new TextView(activity);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
-        org.telegram.messenger.kk.m(R.string.HashtagSearchPlaceholder, textView, 17);
-        frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 56.0f, 0.0f, 0.0f, -2, 81));
+        org.telegram.messenger.lk.m(R.string.HashtagSearchPlaceholder, textView, 17);
+        frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
         addView(frameLayout, w7.z5.e(210, -2, 17));
         a71Var.setEmptyView(frameLayout);
     }

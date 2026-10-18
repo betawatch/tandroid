@@ -68,7 +68,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class go0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public static final List g1 = Arrays.asList("http", "https");
@@ -256,7 +256,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         if (go0Var.C0.saved_info != null && !go0Var.T0) {
             TLRPC.TL_payments_clearSavedInfo tL_payments_clearSavedInfo = new TLRPC.TL_payments_clearSavedInfo();
             tL_payments_clearSavedInfo.info = true;
-            ConnectionsManager.getInstance(go0Var.currentAccount).sendRequest(tL_payments_clearSavedInfo, new ci.e6(20), go0Var.W0 ? 8 : 0);
+            ConnectionsManager.getInstance(go0Var.currentAccount).sendRequest(tL_payments_clearSavedInfo, new ci.d6(20), go0Var.W0 ? 8 : 0);
         }
         go0Var.t0();
         go0Var.D0(false);
@@ -287,7 +287,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
     }
 
     public static void Z(go0 go0Var) {
-        ConnectionsManager.getInstance(go0Var.currentAccount).sendRequest(new TL_account.resendPasswordEmail(), new ci.e6(20), go0Var.W0 ? 8 : 0);
+        ConnectionsManager.getInstance(go0Var.currentAccount).sendRequest(new TL_account.resendPasswordEmail(), new ci.d6(20), go0Var.W0 ? 8 : 0);
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(go0Var.getParentActivity());
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ResendCodeInfo);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
@@ -452,7 +452,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         int i11 = 1;
         if (z10 && go0Var.C0.saved_info != null && go0Var.I0 == null) {
             go0Var.D0(true);
-            zg0 zg0Var = new zg0(14, go0Var, view);
+            yg0 yg0Var = new yg0(14, go0Var, view);
             if (go0Var.Q0) {
                 return;
             }
@@ -475,7 +475,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo2 = go0Var.I0;
             tL_payments_validateRequestedInfo2.save = true;
             tL_payments_validateRequestedInfo2.info = go0Var.C0.saved_info;
-            ConnectionsManager.getInstance(go0Var.currentAccount).sendRequest(tL_payments_validateRequestedInfo2, new ea(go0Var, zg0Var, tL_payments_validateRequestedInfo2, 29), (go0Var.W0 ? 8 : 0) | 2);
+            ConnectionsManager.getInstance(go0Var.currentAccount).sendRequest(tL_payments_validateRequestedInfo2, new ea(go0Var, yg0Var, tL_payments_validateRequestedInfo2, 29), (go0Var.W0 ? 8 : 0) | 2);
             return;
         }
         if (z10) {
@@ -1309,36 +1309,36 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:178:0x030c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:178:0x030b, code lost:
     
         if (r15.email_requested == false) goto L75;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:482:0x0ff9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:482:0x0ff8, code lost:
     
         if (r11.email_requested == false) goto L466;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:187:0x0781  */
-    /* JADX WARN: Removed duplicated region for block: B:190:0x079b  */
-    /* JADX WARN: Removed duplicated region for block: B:193:0x07b0  */
-    /* JADX WARN: Removed duplicated region for block: B:196:0x07c7  */
-    /* JADX WARN: Removed duplicated region for block: B:199:0x0802  */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x0861  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x08ef  */
-    /* JADX WARN: Removed duplicated region for block: B:250:0x081b  */
-    /* JADX WARN: Removed duplicated region for block: B:261:0x07d4  */
-    /* JADX WARN: Removed duplicated region for block: B:268:0x0791  */
-    /* JADX WARN: Removed duplicated region for block: B:313:0x0b9b  */
-    /* JADX WARN: Removed duplicated region for block: B:325:0x0c00  */
-    /* JADX WARN: Removed duplicated region for block: B:328:0x0c30  */
-    /* JADX WARN: Removed duplicated region for block: B:331:0x0c5e  */
-    /* JADX WARN: Removed duplicated region for block: B:333:0x0d22  */
-    /* JADX WARN: Removed duplicated region for block: B:352:0x0d42  */
-    /* JADX WARN: Removed duplicated region for block: B:353:0x0c7b  */
-    /* JADX WARN: Removed duplicated region for block: B:363:0x0c32  */
-    /* JADX WARN: Removed duplicated region for block: B:364:0x0c0d  */
-    /* JADX WARN: Removed duplicated region for block: B:371:0x0bf1  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0212  */
+    /* JADX WARN: Removed duplicated region for block: B:187:0x0780  */
+    /* JADX WARN: Removed duplicated region for block: B:190:0x079a  */
+    /* JADX WARN: Removed duplicated region for block: B:193:0x07af  */
+    /* JADX WARN: Removed duplicated region for block: B:196:0x07c6  */
+    /* JADX WARN: Removed duplicated region for block: B:199:0x0801  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x0860  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x08ee  */
+    /* JADX WARN: Removed duplicated region for block: B:250:0x081a  */
+    /* JADX WARN: Removed duplicated region for block: B:261:0x07d3  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x0790  */
+    /* JADX WARN: Removed duplicated region for block: B:313:0x0b9a  */
+    /* JADX WARN: Removed duplicated region for block: B:325:0x0bff  */
+    /* JADX WARN: Removed duplicated region for block: B:328:0x0c2f  */
+    /* JADX WARN: Removed duplicated region for block: B:331:0x0c5d  */
+    /* JADX WARN: Removed duplicated region for block: B:333:0x0d21  */
+    /* JADX WARN: Removed duplicated region for block: B:352:0x0d41  */
+    /* JADX WARN: Removed duplicated region for block: B:353:0x0c7a  */
+    /* JADX WARN: Removed duplicated region for block: B:363:0x0c31  */
+    /* JADX WARN: Removed duplicated region for block: B:364:0x0c0c  */
+    /* JADX WARN: Removed duplicated region for block: B:371:0x0bf0  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x0211  */
     /* JADX WARN: Type inference failed for: r4v162, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout] */
     /* JADX WARN: Type inference failed for: r4v166, types: [android.view.ViewGroup] */
     /* JADX WARN: Type inference failed for: r4v167, types: [android.view.ViewGroup] */
@@ -1437,7 +1437,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
             this.r.setScaleX(0.1f);
             this.r.setScaleY(0.1f);
             this.r.setVisibility(4);
-            this.n.addView(this.r, w7.z5.d(-1.0f, -1));
+            this.n.addView(this.r, w7.z5.c(-1.0f, -1));
         }
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.fragmentView = frameLayout2;
@@ -1446,7 +1446,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.E = scrollView;
         scrollView.setFillViewport(true);
         AndroidUtilities.setScrollViewEdgeEffectColor(this.E, getThemedColor(org.telegram.ui.ActionBar.h6.s8));
-        frameLayout2.addView(this.E, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, this.u0 == 4 ? 48.0f : 0.0f, -1, 51));
+        frameLayout2.addView(this.E, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, this.u0 == 4 ? 48.0f : 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.Q = linearLayout;
         linearLayout.setOrientation(1);
@@ -1488,7 +1488,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 } else {
                     i11 = i21;
                     bufferedReader.close();
-                    Collections.sort(this.a, new lg0(2));
+                    Collections.sort(this.a, new kg0(2));
                     this.f = new EditTextBoldCursor[10];
                     i12 = i11;
                     while (i12 < i24) {
@@ -1698,7 +1698,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         } else {
                             this.f[i12].setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
                             this.f[i12].setGravity(LocaleController.isRTL ? 5 : i19);
-                            frameLayout.addView(this.f[i12], w7.z5.a(-2.0f, 21.0f, 12.0f, 21.0f, 6.0f, -1, 51));
+                            frameLayout.addView(this.f[i12], w7.z5.d(-1, -2.0f, 51, 21.0f, 12.0f, 21.0f, 6.0f));
                         }
                         this.f[i12].setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.bn0
                             public final /* synthetic */ go0 b;
@@ -1943,7 +1943,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 }
                 e = e7;
                 FileLog.e(e);
-                Collections.sort(this.a, new lg0(2));
+                Collections.sort(this.a, new kg0(2));
                 this.f = new EditTextBoldCursor[10];
                 i12 = i11;
                 while (i12 < i24) {
@@ -2015,7 +2015,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                     CookieManager.getInstance().setAcceptThirdPartyCookies(this.w, true);
                     this.w.addJavascriptInterface(new PaymentFormActivity$TelegramWebviewProxy(this), "TelegramWebviewProxy");
                     this.w.setWebViewClient(new zn0(this, context));
-                    this.Q.addView(this.w, w7.z5.d(-2.0f, -1));
+                    this.Q.addView(this.w, w7.z5.c(-2.0f, -1));
                     this.K[2] = new org.telegram.ui.Cells.z6(context, (Object) null);
                     this.Q.addView(this.K[2], w7.z5.n(-1, -2));
                     org.telegram.ui.Cells.v8 v8Var2 = new org.telegram.ui.Cells.v8(context, this.Y0);
@@ -2171,7 +2171,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                             }
                             this.f[i39].setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
                             this.f[i39].setGravity(!LocaleController.isRTL ? 5 : 3);
-                            frameLayout3.addView(this.f[i39], w7.z5.a(-2.0f, 21.0f, 12.0f, 21.0f, 6.0f, -1, 51));
+                            frameLayout3.addView(this.f[i39], w7.z5.d(-1, -2.0f, 51, 21.0f, 12.0f, 21.0f, 6.0f));
                             final int i43 = 3;
                             this.f[i39].setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.bn0
                                 public final /* synthetic */ go0 b;
@@ -2290,7 +2290,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 this.Q.addView(this.M[0], w7.z5.n(-1, -2));
                             } else if (i39 == 0) {
                                 n0(context);
-                                frameLayout3.addView(this.O, w7.z5.a(-2.0f, 0.0f, 0.0f, 4.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 16));
+                                frameLayout3.addView(this.O, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, 0.0f, 4.0f, 0.0f));
                             }
                             if (!z13) {
                                 org.telegram.ui.Components.un unVar2 = new org.telegram.ui.Components.un(context, 19);
@@ -2312,7 +2312,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         }
                         this.f[i39].setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
                         this.f[i39].setGravity(!LocaleController.isRTL ? 5 : 3);
-                        frameLayout3.addView(this.f[i39], w7.z5.a(-2.0f, 21.0f, 12.0f, 21.0f, 6.0f, -1, 51));
+                        frameLayout3.addView(this.f[i39], w7.z5.d(-1, -2.0f, 51, 21.0f, 12.0f, 21.0f, 6.0f));
                         final int i432 = 3;
                         this.f[i39].setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.bn0
                             public final /* synthetic */ go0 b;
@@ -2522,7 +2522,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         }
                         this.f[i46].setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
                         this.f[i46].setGravity(LocaleController.isRTL ? 5 : 3);
-                        frameLayout4.addView(this.f[i46], w7.z5.a(-2.0f, 21.0f, 12.0f, 21.0f, 6.0f, -1, 51));
+                        frameLayout4.addView(this.f[i46], w7.z5.d(-1, -2.0f, 51, 21.0f, 12.0f, 21.0f, 6.0f));
                         final int i50 = 4;
                         this.f[i46].setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.bn0
                             public final /* synthetic */ go0 b;
@@ -2717,7 +2717,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         this.f[0].setHint(LocaleController.getInstance().formatCurrencyString(0L, this.C0.invoice.currency));
                         this.f[0].setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
                         this.f[0].setGravity(LocaleController.isRTL ? 3 : 5);
-                        frameLayout5.addView(this.f[0], w7.z5.a(-2.0f, 21.0f, 9.0f, 21.0f, 1.0f, -1, 51));
+                        frameLayout5.addView(this.f[0], w7.z5.d(-1, -2.0f, 51, 21.0f, 9.0f, 21.0f, 1.0f));
                         this.f[0].addTextChangedListener(new in0(this));
                         this.f[0].setOnEditorActionListener(new org.telegram.ui.Components.t2(3));
                         this.f[0].requestFocus();
@@ -2728,7 +2728,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                             horizontalScrollView.setClipToPadding(false);
                             horizontalScrollView.setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
                             horizontalScrollView.setFillViewport(true);
-                            frameLayout5.addView(horizontalScrollView, w7.z5.a(30.0f, 0.0f, 44.0f, 0.0f, 0.0f, -1, 51));
+                            frameLayout5.addView(horizontalScrollView, w7.z5.d(-1, 30.0f, 51, 0.0f, 44.0f, 0.0f, 0.0f));
                             int[] iArr = new int[1];
                             int[] iArr2 = new int[1];
                             int size2 = this.C0.invoice.suggested_tip_amounts.size();
@@ -2755,7 +2755,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                                 f7.setGravity(17);
                                 this.s0.addView(f7, w7.z5.t(-2, -1, 19, 0, 0, i57 != size2 + (-1) ? 9 : 0, 0));
                                 String str9 = str6;
-                                f7.setOnClickListener(new ai.c4(this, f7, longValue, 6));
+                                f7.setOnClickListener(new ai.q3(this, f7, longValue, 6));
                                 int dp = AndroidUtilities.dp(30.0f) + ((int) Math.ceil(f7.getPaint().measureText(formatCurrencyString)));
                                 f7.setTag(R.id.width_tag, Integer.valueOf(dp));
                                 iArr[0] = Math.max(iArr[0], dp);
@@ -2881,7 +2881,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         this.W = new co0(this, context);
                         View view = new View(context);
                         view.setBackground(org.telegram.ui.ActionBar.h6.g0(getThemedColor(org.telegram.ui.ActionBar.h6.i6), 2, -1));
-                        this.W.addView(view, w7.z5.d(-1.0f, -1));
+                        this.W.addView(view, w7.z5.c(-1.0f, -1));
                         frameLayout2.addView(this.W, w7.z5.e(-1, 48, 80));
                         this.W.setOnClickListener(new ef0(4, this, str));
                         TextView textView2 = new TextView(context);
@@ -2892,13 +2892,13 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         this.U.setTextSize(1, 14.0f);
                         this.U.setGravity(17);
                         this.U.setTypeface(AndroidUtilities.bold());
-                        this.W.addView(this.U, w7.z5.d(-1.0f, -1));
+                        this.W.addView(this.U, w7.z5.c(-1.0f, -1));
                         org.telegram.ui.Components.dr drVar2 = new org.telegram.ui.Components.dr(context, 0);
                         this.s = drVar2;
                         drVar2.setVisibility(4);
                         int themedColor2 = getThemedColor(i64);
                         this.s.a(805306367 & themedColor2, themedColor2);
-                        this.W.addView(this.s, w7.z5.d(-1.0f, -1));
+                        this.W.addView(this.s, w7.z5.c(-1.0f, -1));
                         this.W.a(this.F, false);
                         this.U.setAlpha(!this.F ? 0.8f : 1.0f);
                         this.n.setEnabled(false);
@@ -2965,11 +2965,11 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                             this.V.setText(spannableStringBuilder);
                             this.V.setBackground(org.telegram.ui.ActionBar.h6.h0(getThemedColor(org.telegram.ui.ActionBar.h6.d6), getThemedColor(org.telegram.ui.ActionBar.h6.i6)));
                             this.V.setOnClickListener(new zm0(this, 5));
-                            frameLayout2.addView(this.V, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 80));
+                            frameLayout2.addView(this.V, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 48.0f));
                         }
                         WebView webView = this.w;
                         if (webView != null) {
-                            frameLayout2.addView(webView, w7.z5.d(-1.0f, -1));
+                            frameLayout2.addView(webView, w7.z5.c(-1.0f, -1));
                             this.w.setVisibility(8);
                         }
                     }
@@ -3172,7 +3172,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         }
                         this.f[i70].setPadding(0, 0, 0, AndroidUtilities.dp(6.0f));
                         this.f[i70].setGravity(LocaleController.isRTL ? 5 : 3);
-                        frameLayout6.addView(this.f[i70], w7.z5.a(-2.0f, 21.0f, 12.0f, 21.0f, 6.0f, -1, 51));
+                        frameLayout6.addView(this.f[i70], w7.z5.d(-1, -2.0f, 51, 21.0f, 12.0f, 21.0f, 6.0f));
                         final int i74 = 1;
                         this.f[i70].setOnEditorActionListener(new TextView.OnEditorActionListener(this) { // from class: org.telegram.ui.bn0
                             public final /* synthetic */ go0 b;
@@ -3488,14 +3488,14 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         } else {
             this.P.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
         }
-        this.O.addView(this.P, w7.z5.d(48.0f, -1));
+        this.O.addView(this.P, w7.z5.c(48.0f, -1));
         this.P.setOnClickListener(new zm0(this, 12));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setWeightSum(2.0f);
         linearLayout.setGravity(16);
         linearLayout.setOrientation(1);
         linearLayout.setDuplicateParentStateEnabled(true);
-        this.P.addView(linearLayout, w7.z5.d(-1.0f, -1));
+        this.P.addView(linearLayout, w7.z5.c(-1.0f, -1));
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imageView.setDuplicateParentStateEnabled(true);
@@ -3505,7 +3505,7 @@ public final class go0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         imageView2.setScaleType(ImageView.ScaleType.FIT_XY);
         imageView2.setDuplicateParentStateEnabled(true);
         imageView2.setImageResource(R.drawable.googlepay_button_overlay);
-        this.P.addView(imageView2, w7.z5.d(-1.0f, -1));
+        this.P.addView(imageView2, w7.z5.c(-1.0f, -1));
     }
 
     public final void o0(String str) {

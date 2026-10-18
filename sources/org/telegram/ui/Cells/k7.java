@@ -18,7 +18,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.FragmentContextView;
@@ -62,7 +62,7 @@ import org.telegram.ui.j30;
 import org.telegram.ui.sn;
 import org.telegram.ui.ui;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k7 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final class k7 implements Runnable {
         this.b = obj;
     }
 
-    /* JADX WARN: Type inference failed for: r4v42, types: [org.telegram.ui.Components.bm] */
+    /* JADX WARN: Type inference failed for: r4v19, types: [org.telegram.ui.Components.bm] */
     @Override // java.lang.Runnable
     public final void run() {
         int dp;
@@ -140,7 +140,7 @@ public final class k7 implements Runnable {
                     k8Var2.K0 = currentTimeMillis;
                     long j11 = currentTimeMillis - k8Var2.L0;
                     int i15 = k8Var2.J0;
-                    float f10 = ((long) ((f7 * r5) + (((i15 == 1 ? 3L : i15 == 2 ? 6L : 12L) * j10) - j10))) / duration;
+                    float f10 = ((long) ((f7 * r2) + (((i15 == 1 ? 3L : i15 == 2 ? 6L : 12L) * j10) - j10))) / duration;
                     if (f10 < 0.0f) {
                         f10 = 0.0f;
                     }
@@ -233,7 +233,7 @@ public final class k7 implements Runnable {
                 }
                 break;
             case 9:
-                c2.b bVar = (c2.b) ((ci.p3) obj).d;
+                c2.b bVar = (c2.b) ((ci.o3) obj).d;
                 if (bVar.a && !((ArrayList) bVar.d).isEmpty() && !((AnimatorSet) bVar.c).isRunning()) {
                     try {
                         ((AnimatorSet) bVar.c).start();
@@ -488,7 +488,7 @@ public final class k7 implements Runnable {
                                     n2Var.getParentActivity().requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 21);
                                 }
                             } else {
-                                kk.q(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, cmVar.c), null);
+                                lk.q(R.string.GlobalAttachVideoRestricted, new xc(chatAttachAlertPhotoLayout.P, cmVar.c), null);
                             }
                         }
                     }
@@ -548,6 +548,7 @@ public final class k7 implements Runnable {
                     j30Var.setUiVisible(false);
                     break;
                 }
+                break;
             case 26:
                 org.telegram.ui.Wallet.a1 a1Var = (org.telegram.ui.Wallet.a1) obj;
                 if (a1Var.d && a1Var.e && a1Var.k != null) {
@@ -563,59 +564,52 @@ public final class k7 implements Runnable {
                 }
                 break;
             case 27:
-                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) obj;
-                if (m5Var.a != null && m5Var.d != null) {
-                    m5Var.P0();
-                    if (m5Var.r) {
-                        m5Var.a.postOnAnimation(this);
+                org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) obj;
+                if (n5Var.a != null && n5Var.d != null) {
+                    n5Var.P0();
+                    if (n5Var.r) {
+                        n5Var.a.postOnAnimation(this);
                         break;
                     }
                 }
                 break;
             case 28:
-                org.telegram.ui.Wallet.p5 p5Var = (org.telegram.ui.Wallet.p5) obj;
-                org.telegram.ui.Wallet.d6 d6Var = p5Var.x;
-                if (p5Var.isAttachedToWindow()) {
-                    d6Var.b(System.nanoTime());
-                    p5Var.G = d6Var.a ? Math.max(-15.0f, Math.min(15.0f, d6Var.b - d6Var.d)) : 0.0f;
-                    float max3 = d6Var.a ? Math.max(-15.0f, Math.min(15.0f, d6Var.c - d6Var.e)) : 0.0f;
-                    float f14 = p5Var.G;
-                    float f15 = p5Var.H;
-                    float y3 = com.google.android.gms.internal.play_billing.k3.y(f14, f15, 1.0f, f15);
-                    p5Var.H = y3;
-                    float f16 = p5Var.I;
-                    float y10 = com.google.android.gms.internal.play_billing.k3.y(max3, f16, 1.0f, f16);
-                    p5Var.I = y10;
-                    float f17 = p5Var.U;
-                    p5Var.b((y3 * f17) + p5Var.J + p5Var.T, (y10 * f17) + p5Var.K);
-                    p5Var.postOnAnimation(this);
+                org.telegram.ui.Wallet.s5 s5Var = (org.telegram.ui.Wallet.s5) obj;
+                org.telegram.ui.Wallet.z5 z5Var = s5Var.F;
+                if (s5Var.isAttachedToWindow()) {
+                    long nanoTime = System.nanoTime();
+                    if (z5Var.a) {
+                        if (z5Var.j == 0) {
+                            z5Var.j = nanoTime;
+                        } else {
+                            float min = Math.min(0.1f, Math.max(0.0f, (nanoTime - r4) * 1.0E-9f));
+                            z5Var.j = nanoTime;
+                            if (z5Var.i - z5Var.h >= 1000000000) {
+                                float exp = 1.0f - ((float) Math.exp((-min) / 1.0f));
+                                float f14 = z5Var.d;
+                                z5Var.d = com.google.android.gms.internal.play_billing.k3.y(z5Var.b, f14, exp, f14);
+                                float f15 = z5Var.e;
+                                z5Var.e = com.google.android.gms.internal.play_billing.k3.y(z5Var.c, f15, exp, f15);
+                            }
+                        }
+                    }
+                    s5Var.J = z5Var.a ? Math.max(-15.0f, Math.min(15.0f, z5Var.b - z5Var.d)) : 0.0f;
+                    float max3 = z5Var.a ? Math.max(-15.0f, Math.min(15.0f, z5Var.c - z5Var.e)) : 0.0f;
+                    float f16 = s5Var.J;
+                    float f17 = s5Var.K;
+                    float y3 = com.google.android.gms.internal.play_billing.k3.y(f16, f17, 1.0f, f17);
+                    s5Var.K = y3;
+                    float f18 = s5Var.L;
+                    float y10 = com.google.android.gms.internal.play_billing.k3.y(max3, f18, 1.0f, f18);
+                    s5Var.L = y10;
+                    float f19 = s5Var.b0;
+                    s5Var.b((y3 * f19) + s5Var.M + s5Var.a0, (y10 * f19) + s5Var.N);
+                    s5Var.postOnAnimation(this);
                     break;
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.f6 f6Var = (org.telegram.ui.Wallet.f6) obj;
-                org.telegram.ui.Wallet.d6 d6Var2 = f6Var.H;
-                if (f6Var.h) {
-                    d6Var2.b(System.nanoTime());
-                    f6Var.O = d6Var2.a ? Math.max(-15.0f, Math.min(15.0f, d6Var2.b - d6Var2.d)) : 0.0f;
-                    float b10 = org.telegram.ui.Wallet.f6.b((d6Var2.a ? Math.max(-15.0f, Math.min(15.0f, d6Var2.c - d6Var2.e)) : 0.0f) * 1.5f, -15.0f, 15.0f);
-                    float f18 = f6Var.O;
-                    float f19 = f6Var.P;
-                    float y11 = com.google.android.gms.internal.play_billing.k3.y(f18, f19, 1.0f, f19);
-                    f6Var.P = y11;
-                    float f20 = f6Var.Q;
-                    float y12 = com.google.android.gms.internal.play_billing.k3.y(b10, f20, 1.0f, f20);
-                    f6Var.Q = y12;
-                    float f21 = f6Var.M;
-                    org.telegram.ui.Wallet.b6 b6Var = f6Var.a.i0;
-                    float f22 = (y11 * f21) + b6Var.i + f6Var.L;
-                    f6Var.K = f22;
-                    float f23 = (y12 * f21) + b6Var.d;
-                    f6Var.N = f23;
-                    f6Var.a(f22, f23);
-                    f6Var.postOnAnimation(this);
-                    break;
-                }
+                ((p4.s0) obj).c();
                 break;
         }
     }

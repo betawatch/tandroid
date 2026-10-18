@@ -3,14 +3,14 @@ package di;
 import ai.r0;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.y4;
+import ci.x4;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bb;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class u extends bb {
     public final int X;
@@ -32,7 +32,7 @@ public final class u extends bb {
         im0 im0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         im0Var.setPadding(i10, 0, i10, 0);
-        this.d.setOnItemClickListener(new y4(1, this, r0Var));
+        this.d.setOnItemClickListener(new x4(1, this, r0Var));
     }
 
     @Override // org.telegram.ui.Components.bb

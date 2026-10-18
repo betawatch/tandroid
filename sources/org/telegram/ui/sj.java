@@ -14,7 +14,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class sj extends s4.t {
     public boolean S;
@@ -183,7 +183,7 @@ public final class sj extends s4.t {
         if (!z10) {
             i11 = super.o0(i10, eVar, y0Var);
         }
-        if (!snVar.wc.f) {
+        if (!snVar.xc.f) {
             SparseArray[] sparseArrayArr = snVar.W5;
             if (sparseArrayArr[0].size() <= 0 && sparseArrayArr[1].size() <= 0 && i10 > 0 && i11 == 0 && (((ChatObject.isChannel(snVar.e) && !snVar.e.megagroup) || (snVar.h4 && !UserObject.isBotForum(snVar.f))) && (i12 = snVar.R3) != 3 && i12 != 9 && i12 != 1 && snVar.x0.getScrollState() == 1)) {
                 pj pjVar = snVar.x0;
@@ -248,7 +248,7 @@ public final class sj extends s4.t {
             snVar.x0.setOverScrollMode(2);
         }
         if (snVar.P9 != null) {
-            ne.b bVar = snVar.uc;
+            ne.b bVar = snVar.vc;
             if (snVar.N9 > 0.0f && snVar.x0.getScrollState() == 1) {
                 z11 = true;
             }

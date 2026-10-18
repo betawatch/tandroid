@@ -21,7 +21,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class z20 extends FrameLayout implements org.telegram.ui.Components.voip.n0 {
     public final TextPaint E;
@@ -69,7 +69,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
         w9 w9Var = new w9(context);
         this.d = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(w9Var, w7.z5.a(40.0f, 0.0f, 9.0f, 0.0f, 9.0f, 40, 1));
+        addView(w9Var, w7.z5.d(40, 40.0f, 1, 0.0f, 9.0f, 0.0f, 9.0f));
         setWillNotDraw(false);
         paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.tg, false));
         paint2.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.qg, false));
@@ -79,7 +79,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
         org.telegram.ui.ld ldVar = new org.telegram.ui.ld(this, context, 1);
         this.F = ldVar;
         ldVar.setScaleType(ImageView.ScaleType.CENTER);
-        addView(ldVar, w7.z5.d(24.0f, 24));
+        addView(ldVar, w7.z5.c(24.0f, 24));
     }
 
     private void setSelectedProgress(float f7) {
@@ -117,7 +117,7 @@ public final class z20 extends FrameLayout implements org.telegram.ui.Components
     public final void c(Canvas canvas) {
         if (this.w != null) {
             canvas.save();
-            int A = org.telegram.messenger.kk.A(24.0f, getMeasuredWidth() - this.y, 2);
+            int A = org.telegram.messenger.lk.A(24.0f, getMeasuredWidth() - this.y, 2);
             int alpha = (int) (getAlpha() * this.s * 255.0f);
             TextPaint textPaint = this.E;
             textPaint.setAlpha(alpha);

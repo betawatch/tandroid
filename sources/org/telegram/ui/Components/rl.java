@@ -47,7 +47,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class rl extends li implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int E0 = 0;
@@ -171,7 +171,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
         searchField.setCursorColor(org.telegram.ui.ActionBar.h6.w0(i11, this.a));
         searchField.setHintTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Vd, this.a));
         new FrameLayout.LayoutParams(-1, AndroidUtilities.dp(21.0f)).gravity = 83;
-        ah.x xVar = new ah.x(this, context, 12);
+        ah.x xVar = new ah.x(this, context, 13);
         this.N = xVar;
         xVar.setWillNotDraw(false);
         View view = new View(context);
@@ -189,8 +189,8 @@ public final class rl extends li implements NotificationCenter.NotificationCente
         org.telegram.ui.Cells.z j02 = org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, w02, w03, w03);
         w7.b6.a(plVar);
         plVar.setTranslationZ(AndroidUtilities.dp(2.0f));
-        ci.o1 o1Var = zf.j0.a;
-        plVar.setOutlineProvider(o1Var);
+        ci.n1 n1Var = zf.j0.a;
+        plVar.setOutlineProvider(n1Var);
         plVar.setBackground(j02);
         int i14 = org.telegram.ui.ActionBar.h6.vi;
         plVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(i14, this.a));
@@ -199,7 +199,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
         plVar.setText(LocaleController.getString(R.string.PlacesInThisArea));
         plVar.setGravity(17);
         plVar.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        xVar.addView(plVar, w7.z5.a(40.0f, 80.0f, 12.0f, 80.0f, 0.0f, -2, 49));
+        xVar.addView(plVar, w7.z5.d(-2, 40.0f, 49, 80.0f, 12.0f, 80.0f, 0.0f));
         final int i15 = 2;
         plVar.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bl
             public final /* synthetic */ rl b;
@@ -240,10 +240,10 @@ public final class rl extends li implements NotificationCenter.NotificationCente
         org.telegram.ui.Cells.z i02 = org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(40.0f), org.telegram.ui.ActionBar.h6.w0(i12, this.a), org.telegram.ui.ActionBar.h6.w0(i13, this.a));
         w7.b6.a(u0Var);
         u0Var.setTranslationZ(AndroidUtilities.dp(2.0f));
-        u0Var.setOutlineProvider(o1Var);
+        u0Var.setOutlineProvider(n1Var);
         u0Var.setBackground(i02);
         u0Var.setIcon(R.drawable.msg_map_type);
-        xVar.addView(u0Var, w7.z5.a(40.0f, 0.0f, 12.0f, 12.0f, 0.0f, 40, 53));
+        xVar.addView(u0Var, w7.z5.d(40, 40.0f, 53, 0.0f, 12.0f, 12.0f, 0.0f));
         final int i16 = 0;
         u0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bl
             public final /* synthetic */ rl b;
@@ -277,7 +277,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
         org.telegram.ui.Cells.z i03 = org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(40.0f), org.telegram.ui.ActionBar.h6.w0(i12, this.a), org.telegram.ui.ActionBar.h6.w0(i13, this.a));
         w7.b6.a(imageView);
         imageView.setTranslationZ(AndroidUtilities.dp(2.0f));
-        imageView.setOutlineProvider(o1Var);
+        imageView.setOutlineProvider(n1Var);
         imageView.setBackground(i03);
         imageView.setImageResource(R.drawable.msg_current_location);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -286,7 +286,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
         imageView.setColorFilter(new PorterDuffColorFilter(w04, mode));
         imageView.setTag(Integer.valueOf(i14));
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMyLocation));
-        xVar.addView(imageView, w7.z5.a(40.0f, 0.0f, 0.0f, 12.0f, 12.0f, 40, 85));
+        xVar.addView(imageView, w7.z5.d(40, 40.0f, 85, 0.0f, 0.0f, 12.0f, 12.0f));
         final int i17 = 1;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.bl
             public final /* synthetic */ rl b;
@@ -320,7 +320,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
         linearLayout.setGravity(1);
         linearLayout.setPadding(0, AndroidUtilities.dp(160.0f), 0, 0);
         linearLayout.setVisibility(8);
-        addView(linearLayout, w7.z5.d(-1.0f, -1));
+        addView(linearLayout, w7.z5.c(-1.0f, -1));
         linearLayout.setOnTouchListener(new di.d(15));
         ImageView imageView2 = new ImageView(context);
         this.w = imageView2;
@@ -495,7 +495,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
 
     public static /* synthetic */ void O(rl rlVar, org.telegram.ui.sn snVar, TLRPC.TL_messageMediaGeo tL_messageMediaGeo, org.telegram.ui.ActionBar.d6 d6Var, Long l4) {
         if (snVar != null && snVar.c()) {
-            f5.L(rlVar.getParentActivity(), snVar.a(), new ai.t2(rlVar, tL_messageMediaGeo, l4, 27), d6Var);
+            f5.L(rlVar.getParentActivity(), snVar.a(), new ai.r2(rlVar, tL_messageMediaGeo, l4, 27), d6Var);
         } else {
             rlVar.x0.b(tL_messageMediaGeo, rlVar.y0, true, 0, l4.longValue());
             rlVar.b.dismiss(true);
@@ -574,7 +574,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
                 tL_messageMediaGeo.geo = tL_geoPoint;
                 tL_geoPoint.lat = AndroidUtilities.fixLocationCoord(rlVar.r0.getLatitude());
                 tL_messageMediaGeo.geo._long = AndroidUtilities.fixLocationCoord(rlVar.r0.getLongitude());
-                f5.Z(tiVar.M1, tiVar.l1() + 1, tiVar.p1(), new ci.z2(rlVar, snVar, tL_messageMediaGeo, d6Var, 6));
+                f5.Z(tiVar.M1, tiVar.l1() + 1, tiVar.p1(), new ci.y2(rlVar, snVar, tL_messageMediaGeo, d6Var, 6));
                 return;
             }
             rlVar2 = rlVar;
@@ -596,7 +596,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
         }
         Object J = s0Var.J(i10);
         if (J instanceof TLRPC.TL_messageMediaVenue) {
-            f5.Z(tiVar.M1, tiVar.l1() + 1, tiVar.p1(), new ci.z2(rlVar2, snVar2, (TLRPC.TL_messageMediaVenue) J, d6Var2, 7));
+            f5.Z(tiVar.M1, tiVar.l1() + 1, tiVar.p1(), new ci.y2(rlVar2, snVar2, (TLRPC.TL_messageMediaVenue) J, d6Var2, 7));
         }
     }
 
@@ -810,7 +810,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
             ah.x xVar = this.N;
             xVar.addView(view, 0, e);
             xVar.addView(this.F, 1, w7.z5.e(-1, AndroidUtilities.dp(10.0f) + this.z0, 51));
-            xVar.addView(this.M, 2, w7.z5.d(-1.0f, -1));
+            xVar.addView(this.M, 2, w7.z5.c(-1.0f, -1));
         }
         this.E.setVisibility(0);
         IMapsProvider.IMapView iMapView = this.I;
@@ -1335,7 +1335,7 @@ public final class rl extends li implements NotificationCenter.NotificationCente
             plVar.c = min;
             plVar.setTranslationY(min + plVar.b);
             this.n.setTranslationY(-this.B0);
-            int D = org.telegram.messenger.kk.D(48.0f, (this.A0 - this.B0) / 2, max);
+            int D = org.telegram.messenger.lk.D(48.0f, (this.A0 - this.B0) / 2, max);
             this.s0 = D;
             this.S.setTranslationY(D);
             if (i13 != this.B0) {

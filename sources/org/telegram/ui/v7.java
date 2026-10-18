@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class v7 extends FrameLayout implements org.telegram.ui.Components.fd0 {
     public final ArrayList a;
@@ -47,21 +47,21 @@ public abstract class v7 extends FrameLayout implements org.telegram.ui.Componen
                 org.telegram.ui.Components.c91 c91Var = new org.telegram.ui.Components.c91(getContext(), null);
                 this.h = c91Var;
                 c91Var.setAllowDisallowInterceptTouch(false);
-                addView(c91Var, w7.z5.a(-1.0f, 0.0f, 48.0f, 0.0f, 0.0f, -1, 0));
+                addView(c91Var, w7.z5.d(-1, -1.0f, 0, 0.0f, 48.0f, 0.0f, 0.0f));
                 org.telegram.ui.Components.b91 n10 = c91Var.n(3, true);
                 this.b = n10;
-                addView(n10, w7.z5.d(48.0f, -1));
+                addView(n10, w7.z5.c(48.0f, -1));
                 View view = new View(getContext());
                 this.c = view;
                 view.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d7, false));
-                addView(view, w7.z5.a(1.0f, 0.0f, 48.0f, 0.0f, 0.0f, -1, 0));
+                addView(view, w7.z5.d(-1, 1.0f, 0, 0.0f, 48.0f, 0.0f, 0.0f));
                 view.getLayoutParams().height = 1;
                 c91Var.setAdapter(new h7(this, context, n2Var));
                 LinearLayout linearLayout = new LinearLayout(context);
                 linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
                 linearLayout.setAlpha(0.0f);
                 linearLayout.setClickable(true);
-                addView(linearLayout, w7.z5.d(48.0f, -1));
+                addView(linearLayout, w7.z5.c(48.0f, -1));
                 AndroidUtilities.updateViewVisibilityAnimated(linearLayout, false, 1.0f, false);
                 ImageView imageView = new ImageView(context);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);

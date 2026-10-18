@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -169,17 +169,17 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
     }
 
     private final void f(Object obj, Object obj2) {
-        ci.u6 u6Var;
+        ci.t6 t6Var;
         n40 n40Var = (n40) this.b;
         ArrayList arrayList = (ArrayList) obj;
         ArrayList arrayList2 = n40Var.O;
         int i10 = 0;
-        boolean z10 = n40Var.P && (u6Var = n40Var.Q) != null && u6Var.i.size() > 0;
+        boolean z10 = n40Var.P && (t6Var = n40Var.Q) != null && t6Var.i.size() > 0;
         if (z10) {
-            ci.u6 u6Var2 = n40Var.Q;
+            ci.t6 t6Var2 = n40Var.Q;
             int i11 = hg.l1.a;
             f61 J = f61.J(hg.l1.class);
-            J.G = u6Var2;
+            J.G = t6Var2;
             arrayList.add(J);
         }
         n40Var.R = z10;

@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class nz extends org.telegram.ui.ActionBar.n2 {
     public boolean E;
@@ -85,15 +85,15 @@ public final class nz extends org.telegram.ui.ActionBar.n2 {
         nzVar.e0(false);
         nzVar.E = false;
         if (tL_error != null && "INVITES_TOO_MUCH".equals(tL_error.text)) {
-            nzVar.showDialog(new sg.j0(12, nzVar.currentAccount, nzVar.getParentActivity(), nzVar, null));
+            nzVar.showDialog(new sg.k0(12, nzVar.currentAccount, nzVar.getParentActivity(), nzVar, null));
             return;
         }
         if (tL_error != null && "INVITE_PEERS_TOO_MUCH".equals(tL_error.text)) {
-            nzVar.showDialog(new sg.j0(4, nzVar.currentAccount, nzVar.getParentActivity(), nzVar, null));
+            nzVar.showDialog(new sg.k0(4, nzVar.currentAccount, nzVar.getParentActivity(), nzVar, null));
         } else if (tL_error == null || !"CHATLISTS_TOO_MUCH".equals(tL_error.text)) {
             nzVar.finishFragment();
         } else {
-            nzVar.showDialog(new sg.j0(13, nzVar.currentAccount, nzVar.getParentActivity(), nzVar, null));
+            nzVar.showDialog(new sg.k0(13, nzVar.currentAccount, nzVar.getParentActivity(), nzVar, null));
         }
     }
 
@@ -136,7 +136,7 @@ public final class nz extends org.telegram.ui.ActionBar.n2 {
                     return;
                 }
                 if (arrayList.size() + 1 > nzVar.a0()) {
-                    nzVar.showDialog(new sg.j0(4, nzVar.currentAccount, nzVar.getParentActivity(), nzVar, null));
+                    nzVar.showDialog(new sg.k0(4, nzVar.currentAccount, nzVar.getParentActivity(), nzVar, null));
                     return;
                 }
                 nzVar2 = nzVar;
@@ -336,7 +336,7 @@ public final class nz extends org.telegram.ui.ActionBar.n2 {
         this.a = ua1Var;
         ua1Var.setLayoutManager(new s4.b0(1, false));
         this.a.setVerticalScrollBarEnabled(false);
-        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.a, w7.z5.c(-1.0f, -1));
         ua1 ua1Var2 = this.a;
         mz mzVar = new mz(this);
         this.b = mzVar;

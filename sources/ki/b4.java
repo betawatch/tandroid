@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.h6;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.yg;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class b4 extends FrameLayout {
     public final ImageView E;
@@ -111,12 +111,12 @@ public final class b4 extends FrameLayout {
         w7.b6.a(imageView);
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrGoBack));
         imageView.setOnClickListener(new ah.f(lVar, 7));
-        frameLayout.addView(imageView, w7.z5.a(44.0f, 8.0f, 8.0f, 8.0f, 8.0f, 44, 51));
+        frameLayout.addView(imageView, w7.z5.d(44, 44.0f, 51, 8.0f, 8.0f, 8.0f, 8.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.h = linearLayout;
         linearLayout.setOrientation(0);
         linearLayout.setBackground(new c2(h6.c0(AndroidUtilities.dp(22.0f), h6.w0(i11, d6Var))));
-        frameLayout.addView(linearLayout, w7.z5.a(44.0f, 8.0f, 8.0f, 8.0f, 8.0f, 82, 53));
+        frameLayout.addView(linearLayout, w7.z5.d(82, 44.0f, 53, 8.0f, 8.0f, 8.0f, 8.0f));
         ImageView imageView2 = new ImageView(context);
         this.n = imageView2;
         imageView2.setImageResource(R.drawable.iv_undo);
@@ -377,13 +377,13 @@ public final class b4 extends FrameLayout {
         frameLayout4.addView(frameLayout5, w7.z5.e(-2, 44, 81));
         w1 w1Var = new w1(context, 1);
         w1Var.setClipToOutline(true);
-        w1Var.setOutlineProvider(new ci.o1(5));
+        w1Var.setOutlineProvider(new ci.n1(5));
         LinearLayout linearLayout3 = new LinearLayout(context);
         this.y = linearLayout3;
         linearLayout3.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         linearLayout3.setOrientation(0);
         w1Var.addView(linearLayout3);
-        frameLayout5.addView(w1Var, w7.z5.d(-1.0f, -1));
+        frameLayout5.addView(w1Var, w7.z5.c(-1.0f, -1));
         ah ahVar = new ah(context, 24);
         this.x = ahVar;
         ahVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
@@ -575,12 +575,12 @@ public final class b4 extends FrameLayout {
         frameLayout6.addView(xj0Var, w7.z5.e(-1, -1, 119));
         FrameLayout frameLayout7 = new FrameLayout(context);
         frameLayout7.setBackground(new c2(h6.c0(AndroidUtilities.dp(22.0f), h6.w0(i11, d6Var))));
-        sa1Var.addView(frameLayout7, w7.z5.d(44.0f, -2));
+        sa1Var.addView(frameLayout7, w7.z5.c(44.0f, -2));
         a4 a4Var = new a4(this, context, 0);
         a4Var.setHorizontalScrollBarEnabled(false);
         a4Var.setClipToOutline(true);
-        a4Var.setOutlineProvider(new ci.o1(6));
-        frameLayout7.addView(a4Var, w7.z5.d(-1.0f, -1));
+        a4Var.setOutlineProvider(new ci.n1(6));
+        frameLayout7.addView(a4Var, w7.z5.c(-1.0f, -1));
         LinearLayout linearLayout4 = new LinearLayout(context);
         this.J = linearLayout4;
         linearLayout4.setOrientation(0);
@@ -749,7 +749,7 @@ public final class b4 extends FrameLayout {
         linearLayout5.setOrientation(0);
         linearLayout5.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         linearLayout5.setBackground(new c2(h6.c0(AndroidUtilities.dp(22.0f), h6.w0(i11, d6Var))));
-        sa1Var.addView(linearLayout5, w7.z5.a(44.0f, 8.0f, 0.0f, 0.0f, 0.0f, -2, 80));
+        sa1Var.addView(linearLayout5, w7.z5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
         z1 z1Var3 = new z1(context, R.drawable.media_link_24, d6Var);
         this.O = z1Var3;
         z1Var3.c(i11);
@@ -905,7 +905,7 @@ public final class b4 extends FrameLayout {
         linearLayout6.setOrientation(0);
         linearLayout6.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         linearLayout6.setBackground(new c2(h6.c0(AndroidUtilities.dp(22.0f), h6.w0(i11, d6Var))));
-        sa1Var.addView(linearLayout6, w7.z5.a(44.0f, 8.0f, 0.0f, 0.0f, 0.0f, -2, 80));
+        sa1Var.addView(linearLayout6, w7.z5.d(-2, 44.0f, 80, 8.0f, 0.0f, 0.0f, 0.0f));
         z1 z1Var5 = new z1(context, R.drawable.iv_math, d6Var);
         this.R = z1Var5;
         z1Var5.c(i11);
@@ -988,7 +988,7 @@ public final class b4 extends FrameLayout {
         linearLayout7.setOrientation(0);
         linearLayout7.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         linearLayout7.setBackground(new c2(h6.c0(AndroidUtilities.dp(22.0f), h6.w0(i11, d6Var))));
-        sa1Var.addView(linearLayout7, 0, w7.z5.a(44.0f, 0.0f, 0.0f, 8.0f, 0.0f, -2, 80));
+        sa1Var.addView(linearLayout7, 0, w7.z5.d(-2, 44.0f, 80, 0.0f, 0.0f, 8.0f, 0.0f));
         z1 z1Var6 = new z1(context, R.drawable.input_ai, d6Var);
         z1Var6.setImageDrawable(new org.telegram.ui.Components.i0(context));
         z1Var6.c(i11);
@@ -1451,7 +1451,7 @@ public final class b4 extends FrameLayout {
             return;
         }
         y1Var.setEnabled(z10);
-        kk.s(y1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
+        lk.s(y1Var.animate(), z10 ? 1.0f : 0.5f, 150L);
     }
 
     public void setSendLoading(boolean z10) {

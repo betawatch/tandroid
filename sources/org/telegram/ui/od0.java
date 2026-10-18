@@ -29,7 +29,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class od0 extends org.telegram.ui.Components.ow0 {
     public boolean E;
@@ -50,7 +50,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
     public final gd0 T;
     public final gd0 U;
     public boolean V;
-    public final /* synthetic */ fg0 W;
+    public final /* synthetic */ eg0 W;
     public final kd0 a;
     public final TextView b;
     public final wh.n c;
@@ -68,18 +68,18 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Removed duplicated region for block: B:15:0x008d  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00fb  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x02d0  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x02e7  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00fe  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x02ce  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02e5  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00fc  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x0090  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public od0(fg0 fg0Var, Context context, boolean z10) {
+    public od0(eg0 eg0Var, Context context, boolean z10) {
         super(context);
         int i10;
-        this.W = fg0Var;
+        this.W = eg0Var;
         this.S = new gd0(this, 4);
         this.T = new gd0(this, 6);
         this.U = new gd0(this, 7);
@@ -89,7 +89,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         FrameLayout frameLayout = new FrameLayout(context);
         org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
         this.w = xj0Var;
-        if (!z10 || fg0Var.F == 3) {
+        if (!z10 || eg0Var.F == 3) {
             xj0Var.f(R.raw.email_check_inbox, 120, 120, null);
         } else {
             xj0Var.f(R.raw.email_setup_heart, 120, 120, null);
@@ -106,10 +106,10 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
                 TextView textView = new TextView(context);
                 this.b = textView;
                 com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView);
-                textView.setText(LocaleController.getString(fg0Var.F != 3 ? R.string.CheckYourNewEmail : z10 ? R.string.VerificationCode : R.string.CheckYourEmail));
+                textView.setText(LocaleController.getString(eg0Var.F != 3 ? R.string.CheckYourNewEmail : z10 ? R.string.VerificationCode : R.string.CheckYourEmail));
                 textView.setGravity(17);
                 textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                addView(textView, w7.z5.a(-2.0f, 32.0f, 16.0f, 32.0f, 0.0f, -1, 1));
+                addView(textView, w7.z5.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
                 wh.n nVar = new wh.n(context, null, false);
                 this.c = nVar;
                 nVar.setTextSize(1, 14.0f);
@@ -190,7 +190,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
                 });
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 this.h = frameLayout2;
-                AndroidUtilities.updateViewVisibilityAnimated(frameLayout2, fg0Var.F == 3 && !z10, 1.0f, false);
+                AndroidUtilities.updateViewVisibilityAnimated(frameLayout2, eg0Var.F == 3 && !z10, 1.0f, false);
                 ai.vd vdVar = new ai.vd(context, 29);
                 this.n = vdVar;
                 vdVar.setText(LocaleController.getString(R.string.LoginCantAccessThisEmail));
@@ -328,7 +328,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
                 AndroidUtilities.updateViewVisibilityAnimated(textView3, false, 1.0f, false);
                 org.telegram.ui.Components.ea0 ea0Var = new org.telegram.ui.Components.ea0(context);
                 this.v = ea0Var;
-                m.g3.i(ea0Var);
+                m.g3.r(ea0Var);
                 nd0 nd0Var = new nd0(context, i12);
                 this.Q = nd0Var;
                 Animation loadAnimation = AnimationUtils.loadAnimation(context, R.anim.text_in);
@@ -354,10 +354,10 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
                 if (z10) {
                     frameLayout4.addView(nd0Var, w7.z5.e(-1, -2, 48));
                     frameLayout4.addView(frameLayout2, w7.z5.e(-1, -2, 48));
-                    frameLayout4.addView(ea0Var, w7.z5.a(16.0f, 0.0f, 0.0f, 0.0f, 16.0f, -1, 17));
-                    frameLayout4.addView(textView2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 16.0f, -1, 80));
+                    frameLayout4.addView(ea0Var, w7.z5.d(-1, 16.0f, 17, 0.0f, 0.0f, 0.0f, 16.0f));
+                    frameLayout4.addView(textView2, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 16.0f));
                 } else {
-                    frameLayout4.addView(nd0Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 32.0f, -1, 80));
+                    frameLayout4.addView(nd0Var, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
                 }
                 addView(frameLayout4, w7.z5.l(1.0f, -1, 0));
             }
@@ -368,10 +368,10 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         TextView textView5 = new TextView(context);
         this.b = textView5;
         com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView5);
-        textView5.setText(LocaleController.getString(fg0Var.F != 3 ? R.string.CheckYourNewEmail : z10 ? R.string.VerificationCode : R.string.CheckYourEmail));
+        textView5.setText(LocaleController.getString(eg0Var.F != 3 ? R.string.CheckYourNewEmail : z10 ? R.string.VerificationCode : R.string.CheckYourEmail));
         textView5.setGravity(17);
         textView5.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView5, w7.z5.a(-2.0f, 32.0f, 16.0f, 32.0f, 0.0f, -1, 1));
+        addView(textView5, w7.z5.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
         wh.n nVar2 = new wh.n(context, null, false);
         this.c = nVar2;
         nVar2.setTextSize(1, 14.0f);
@@ -452,7 +452,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         });
         FrameLayout frameLayout22 = new FrameLayout(context);
         this.h = frameLayout22;
-        AndroidUtilities.updateViewVisibilityAnimated(frameLayout22, fg0Var.F == 3 && !z10, 1.0f, false);
+        AndroidUtilities.updateViewVisibilityAnimated(frameLayout22, eg0Var.F == 3 && !z10, 1.0f, false);
         ai.vd vdVar2 = new ai.vd(context, 29);
         this.n = vdVar2;
         vdVar2.setText(LocaleController.getString(R.string.LoginCantAccessThisEmail));
@@ -590,7 +590,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         AndroidUtilities.updateViewVisibilityAnimated(textView32, false, 1.0f, false);
         org.telegram.ui.Components.ea0 ea0Var2 = new org.telegram.ui.Components.ea0(context);
         this.v = ea0Var2;
-        m.g3.i(ea0Var2);
+        m.g3.r(ea0Var2);
         nd0 nd0Var2 = new nd0(context, i12);
         this.Q = nd0Var2;
         Animation loadAnimation3 = AnimationUtils.loadAnimation(context, R.anim.text_in);
@@ -649,9 +649,9 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         }
         String code = kd0Var.getCode();
         int length = code.length();
-        fg0 fg0Var = this.W;
+        eg0 eg0Var = this.W;
         if (length == 0 && this.F == null) {
-            if (fg0Var.getParentActivity() == null) {
+            if (eg0Var.getParentActivity() == null) {
                 return;
             }
             try {
@@ -666,8 +666,8 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
             return;
         }
         this.E = true;
-        fg0Var.n1(0, true);
-        if (fg0Var.F == 3) {
+        eg0Var.n1(0, true);
+        if (eg0Var.F == 3) {
             TL_account.verifyEmail verifyemail = new TL_account.verifyEmail();
             verifyemail.purpose = new TLRPC.TL_emailVerifyPurposeLoginChange();
             TLRPC.TL_emailVerificationCode tL_emailVerificationCode = new TLRPC.TL_emailVerificationCode();
@@ -707,7 +707,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
                 vrVar3.j(0.0f);
             }
         }
-        i10 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_signIn, new dd0(this, code, 0), 10);
     }
 
@@ -716,7 +716,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         if (this.x) {
             this.x = false;
         } else {
-            AndroidUtilities.runOnUIThread(new gd0(this, 8), fg0.t0);
+            AndroidUtilities.runOnUIThread(new gd0(this, 8), eg0.t0);
         }
     }
 
@@ -760,8 +760,8 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         this.K = this.y.getString("email");
         this.G = this.y.getInt("resetAvailablePeriod");
         this.H = this.y.getInt("resetPendingDate");
-        fg0 fg0Var = this.W;
-        int i10 = fg0Var.F;
+        eg0 eg0Var = this.W;
+        int i10 = eg0Var.F;
         int i11 = 8;
         FrameLayout frameLayout = this.h;
         wh.n nVar = this.c;
@@ -788,7 +788,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
             vrVar.setOnFocusChangeListener(new rd(this, 2));
         }
         kd0Var.setText("");
-        if (!this.N && fg0Var.F != 3) {
+        if (!this.N && eg0Var.F != 3) {
             String string = this.y.getString("emailPattern");
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
             int indexOf = string.indexOf(42);
@@ -808,7 +808,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         }
         this.v.setVisibility(i11);
         this.d.setVisibility(i11);
-        fg0.T0(fg0Var, kd0Var.f[0]);
+        eg0.T0(eg0Var, kd0Var.f[0]);
         kd0Var.requestFocus();
         if (!z10 && bundle.containsKey("nextType")) {
             AndroidUtilities.runOnUIThread(this.T, bundle.getInt("timeout"));
@@ -878,7 +878,7 @@ public final class od0 extends org.telegram.ui.Components.ow0 {
         AndroidUtilities.updateViewVisibilityAnimated(this.h, (z10 || this.W.F == 3 || this.P) ? false : true);
         org.telegram.ui.Components.ea0 ea0Var = this.v;
         if (ea0Var.getVisibility() != 8) {
-            ea0Var.setLayoutParams(w7.z5.a(16.0f, 0.0f, 0.0f, 0.0f, z10 ? 8.0f : 16.0f, -1, 17));
+            ea0Var.setLayoutParams(w7.z5.d(-1, 16.0f, 17, 0.0f, 0.0f, 0.0f, z10 ? 8.0f : 16.0f));
             ea0Var.requestLayout();
         }
     }

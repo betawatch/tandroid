@@ -17,7 +17,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class tu extends LinearLayout {
     public final ua1 a;
@@ -43,7 +43,7 @@ public final class tu extends LinearLayout {
         this.s = i10;
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        addView(frameLayout, w7.z5.d(-2.0f, -1));
+        addView(frameLayout, w7.z5.c(-2.0f, -1));
         org.telegram.ui.Components.up upVar = new org.telegram.ui.Components.up(n2Var.getCurrentAccount(), 0L, null, (i10 == 0 || i10 == -1) ? 0 : 1);
         this.c = upVar;
         ua1 ua1Var = new ua1(getContext(), 8, d6Var);
@@ -58,16 +58,16 @@ public final class tu extends LinearLayout {
         c();
         ua1Var.setFocusable(false);
         ua1Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        ua1Var.setOnItemClickListener(new ci.y4(15, this, n2Var));
+        ua1Var.setOnItemClickListener(new ci.x4(15, this, n2Var));
         org.telegram.ui.Components.b10 b10Var = new org.telegram.ui.Components.b10(getContext(), null);
         b10Var.setViewType(14);
         b10Var.setVisibility(0);
         if (i10 == 0 || i10 == -1) {
-            frameLayout.addView(b10Var, w7.z5.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
-            frameLayout.addView(ua1Var, w7.z5.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
+            frameLayout.addView(b10Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
+            frameLayout.addView(ua1Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
         } else {
-            frameLayout.addView(b10Var, w7.z5.a(104.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
-            frameLayout.addView(ua1Var, w7.z5.a(-2.0f, 0.0f, 8.0f, 0.0f, 8.0f, -1, 8388611));
+            frameLayout.addView(b10Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
+            frameLayout.addView(ua1Var, w7.z5.d(-1, -2.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
         }
         ua1Var.setEmptyView(b10Var);
         ua1Var.W1 = true;
@@ -82,11 +82,11 @@ public final class tu extends LinearLayout {
             this.e = q8Var;
             q8Var.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), 2, -1));
             q8Var.w = 21;
-            addView(q8Var, w7.z5.d(-2.0f, -1));
+            addView(q8Var, w7.z5.c(-2.0f, -1));
             org.telegram.ui.Cells.q8 q8Var2 = new org.telegram.ui.Cells.q8(context);
             this.f = q8Var2;
             q8Var2.m(R.drawable.msg_colors, LocaleController.getString(R.string.SettingsBrowseThemes), false);
-            addView(q8Var2, w7.z5.d(-2.0f, -1));
+            addView(q8Var2, w7.z5.c(-2.0f, -1));
             q8Var.setOnClickListener(new ru(this, context, n2Var));
             uj0Var.h = true;
             q8Var2.setOnClickListener(new a(n2Var, 17));

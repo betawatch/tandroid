@@ -18,9 +18,9 @@ import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.hq0;
 import s4.b1;
-import sg.j1;
+import sg.k1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f extends hm0 {
     public final /* synthetic */ k c;
@@ -132,9 +132,9 @@ public final class f extends hm0 {
         if (i10 == 1) {
             view = new View(viewGroup.getContext());
         } else if (i10 == 2) {
-            j1 j1Var = new j1(viewGroup.getContext(), 1);
-            j1Var.setTag(-33024);
-            view = j1Var;
+            k1 k1Var = new k1(viewGroup.getContext(), 1);
+            k1Var.setTag(-33024);
+            view = k1Var;
         } else if (i10 == 3) {
             view = new View(viewGroup.getContext());
         } else if (i10 != 4) {

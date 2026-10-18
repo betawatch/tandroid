@@ -1,14 +1,42 @@
 package ci;
 
-import android.text.StaticLayout;
-
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class o8 {
-    public org.telegram.ui.Components.w5 a;
-    public StaticLayout b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
+public final /* synthetic */ class o8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p8 b;
+
+    public /* synthetic */ o8(p8 p8Var, int i10) {
+        this.a = i10;
+        this.b = p8Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                q8 q8Var = this.b.v;
+                q8Var.s = 0;
+                q8Var.requestLayout();
+                r8 r8Var = q8Var.J;
+                r8Var.L(r8Var.getWidth(), r8Var.getHeight());
+                r8Var.requestLayout();
+                break;
+            case 1:
+                q8 q8Var2 = this.b.v;
+                q8Var2.s = 0;
+                q8Var2.requestLayout();
+                r8 r8Var2 = q8Var2.J;
+                r8Var2.L(r8Var2.getWidth(), r8Var2.getHeight());
+                r8Var2.requestLayout();
+                break;
+            case 2:
+                p8 p8Var = this.b;
+                p8Var.v.post(new o8(p8Var, 3));
+                break;
+            default:
+                this.b.v.x = true;
+                break;
+        }
+    }
 }

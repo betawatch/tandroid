@@ -3,7 +3,7 @@ package hg;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.u6;
+import ci.t6;
 import com.google.android.gms.internal.play_billing.k3;
 import ei.bc;
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.b10;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class n1 extends hm0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
@@ -33,7 +33,7 @@ public final class n1 extends hm0 implements NotificationCenter.NotificationCent
     public final int v;
     public final boolean w;
     public String x;
-    public u6 y;
+    public t6 y;
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
     public final int r = UserConfig.selectedAccount;

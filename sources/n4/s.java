@@ -2,7 +2,7 @@ package n4;
 
 import ab.c0;
 import ah.h0;
-import ai.t2;
+import ai.r2;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.app.PendingIntent;
@@ -34,9 +34,9 @@ import b2.r0;
 import b2.w0;
 import c5.f0;
 import c6.e0;
-import ci.aa;
-import ci.h4;
-import ci.q4;
+import ci.g4;
+import ci.p4;
+import ci.y9;
 import ci.z9;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.internal.play_billing.b4;
@@ -87,7 +87,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ti;
-import p4.u0;
+import p4.t0;
 import r0.i0;
 import r0.l0;
 import v7.q8;
@@ -95,7 +95,7 @@ import v7.s6;
 import v7.u6;
 import w7.b9;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class s implements ee.b, f0, com.google.android.gms.common.api.internal.r, d9.k, g6.n, ef.b, z3.m, c3.i, u3, e2.d, n5.b {
     public final /* synthetic */ int a;
@@ -115,14 +115,14 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
                 throw new ClassCastException();
             }
             List list = (List) entry.getValue();
-            if (!r(cVar, list).equals(r((i2.c) sVar.c, list))) {
+            if (!k(cVar, list).equals(k((i2.c) sVar.c, list))) {
                 throw null;
             }
         }
         sVar.c = cVar;
     }
 
-    public static i2.c r(i2.c cVar, List list) {
+    public static i2.c k(i2.c cVar, List list) {
         cVar.getClass();
         Map map = cVar.a;
         HashMap hashMap = new HashMap(map);
@@ -203,14 +203,14 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
 
     public void F(boolean z10, boolean z11, float f7) {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
-        h4 h4Var = (h4) this.c;
-        aa aaVar = h4Var.e;
-        aa.B1 = f7;
-        z9 z9Var = aaVar.z0;
-        if (z9Var != null) {
-            z9Var.setSpeed(f7);
+        g4 g4Var = (g4) this.c;
+        z9 z9Var = g4Var.e;
+        z9.B1 = f7;
+        y9 y9Var = z9Var.z0;
+        if (y9Var != null) {
+            y9Var.setSpeed(f7);
         }
-        q4.a0(h4Var.l, z10);
+        p4.a0(g4Var.l, z10);
         if (!z11 || actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() == null) {
             return;
         }
@@ -980,21 +980,13 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
             tiVar2.c2 = new t7.u(11);
             tiVar2.P = true;
             tiVar2.A1.setVisibility(8);
-            tiVar2.w2 = new t2(qVar, aVar, tiVar2, 11);
+            tiVar2.w2 = new r2(qVar, aVar, tiVar2, 11);
             tiVar2.t1();
             tiVar2.show();
         }
     }
 
-    @Override // g6.n
-    public void j(String str, long j10, long j11, long j12) {
-        g6.n nVar = (g6.n) this.b;
-        if (nVar != null) {
-            nVar.j(str, j10, j11, j12);
-        }
-    }
-
-    public c5.e k() {
+    public c5.e j() {
         if (((c5.o) this.b) != null) {
             return new c5.e(this);
         }
@@ -1053,10 +1045,12 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         AndroidUtilities.runOnUIThread(dVar, 1000L);
     }
 
-    @Override // ee.b
-    public Object p(ee.c cVar, md.c cVar2) {
-        Object p5 = ((qf.b) this.b).p(new ab.a0(cVar, (c0) this.c), cVar2);
-        return p5 == ld.a.a ? p5 : id.i.a;
+    @Override // g6.n
+    public void p(String str, long j10, long j11, long j12) {
+        g6.n nVar = (g6.n) this.b;
+        if (nVar != null) {
+            nVar.p(str, j10, j11, j12);
+        }
     }
 
     @Override // ki.u3
@@ -1073,8 +1067,23 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         }
     }
 
+    @Override // ee.b
+    public Object r(ee.c cVar, md.c cVar2) {
+        Object r10 = ((qf.b) this.b).r(new ab.a0(cVar, (c0) this.c), cVar2);
+        return r10 == ld.a.a ? r10 : id.i.a;
+    }
+
+    public void s(i2.e eVar) {
+        synchronized (eVar) {
+        }
+        Handler handler = (Handler) this.b;
+        if (handler != null) {
+            handler.post(new a3.k0(this, eVar, 1));
+        }
+    }
+
     @Override // g6.n
-    public void s(String str, long j10, int i10, Object obj, long j11, long j12) {
+    public void t(String str, long j10, int i10, Object obj, long j11, long j12) {
         int i11;
         g6.m mVar = (g6.m) this.c;
         if (((g6.n) this.b) != null) {
@@ -1090,16 +1099,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
             } else {
                 i11 = i10;
             }
-            ((g6.n) this.b).s(str, j10, i11, obj, j11, j12);
-        }
-    }
-
-    public void t(i2.e eVar) {
-        synchronized (eVar) {
-        }
-        Handler handler = (Handler) this.b;
-        if (handler != null) {
-            handler.post(new a3.k0(this, eVar, 1));
+            ((g6.n) this.b).t(str, j10, i11, obj, j11, j12);
         }
     }
 
@@ -1288,7 +1288,7 @@ public final class s implements ee.b, f0, com.google.android.gms.common.api.inte
         this.a = 0;
         if (!TextUtils.isEmpty(str)) {
             if (componentName == null) {
-                int i10 = u0.b;
+                int i10 = t0.b;
                 Intent intent = new Intent("android.intent.action.MEDIA_BUTTON");
                 intent.setPackage(context.getPackageName());
                 List<ResolveInfo> queryBroadcastReceivers = context.getPackageManager().queryBroadcastReceivers(intent, 0);

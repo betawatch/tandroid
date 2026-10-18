@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -61,27 +61,27 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 ((sb0) obj2).Y();
                 break;
             case 10:
-                of0 of0Var = (of0) obj2;
+                nf0 nf0Var = (nf0) obj2;
                 String str = (String) obj;
-                of0Var.getClass();
+                nf0Var.getClass();
                 FileLog.d("LoginBilling purchased done " + str);
                 if ("CANCELLED".equalsIgnoreCase(str)) {
-                    of0Var.b.setLoading(false);
+                    nf0Var.b.setLoading(false);
                     break;
                 }
                 break;
             case 11:
-                oi0 oi0Var = (oi0) obj2;
+                ni0 ni0Var = (ni0) obj2;
                 Integer num = (Integer) obj;
-                oi0Var.getClass();
-                boolean z10 = num.intValue() - oi0Var.e.d > AndroidUtilities.dp(20.0f);
-                oi0Var.b0 = z10;
-                oi0Var.d0.animate().translationY((z10 ? Math.min(oi0Var.c0, (oi0Var.F.getHeight() - num.intValue()) - oi0Var.d0.getMeasuredHeight()) : oi0Var.c0) - oi0Var.d0.getTop()).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
+                ni0Var.getClass();
+                boolean z10 = num.intValue() - ni0Var.e.d > AndroidUtilities.dp(20.0f);
+                ni0Var.b0 = z10;
+                ni0Var.d0.animate().translationY((z10 ? Math.min(ni0Var.c0, (ni0Var.F.getHeight() - num.intValue()) - ni0Var.d0.getMeasuredHeight()) : ni0Var.c0) - ni0Var.d0.getTop()).setDuration(250L).setInterpolator(org.telegram.ui.ActionBar.o1.w).start();
                 break;
             case 12:
-                dj0 dj0Var = (dj0) obj2;
-                dj0Var.j0 = (String) obj;
-                a6 a6Var = dj0Var.t0;
+                cj0 cj0Var = (cj0) obj2;
+                cj0Var.j0 = (String) obj;
+                a6 a6Var = cj0Var.t0;
                 AndroidUtilities.cancelRunOnUIThread(a6Var);
                 AndroidUtilities.runOnUIThread(a6Var, 100L);
                 break;
@@ -175,7 +175,7 @@ public final /* synthetic */ class v3 implements Utilities.Callback {
                 Boolean bool = (Boolean) obj;
                 ViewPropertyAnimator scaleY = x90VarArr[0].animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).scaleX(bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 0.8f : 1.0f);
                 org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
-                org.telegram.messenger.kk.t(scaleY, bsVar, 600L);
+                org.telegram.messenger.lk.t(scaleY, bsVar, 600L);
                 x90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(bsVar).setDuration(600L).start();
                 break;
             case 21:

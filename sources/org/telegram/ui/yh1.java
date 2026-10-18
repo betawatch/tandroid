@@ -11,7 +11,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yh1 implements Runnable {
     public final /* synthetic */ int a;
@@ -107,35 +107,35 @@ public final /* synthetic */ class yh1 implements Runnable {
                         m2Var.E = null;
                         m2Var.y = true;
                         m2Var.x = false;
-                        AndroidUtilities.runOnUIThread(new p2.b(14, m2Var, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.web.g2(15, m2Var, arrayList));
                         break;
                     }
                 }
                 break;
             default:
-                yh.p1 p1Var = (yh.p1) this.c;
+                yh.o1 o1Var = (yh.o1) this.c;
                 Context context = (Context) this.d;
                 int i13 = this.b;
                 TL_stars.StarGift starGift = (TL_stars.StarGift) this.e;
                 Utilities.Callback callback = (Utilities.Callback) this.f;
-                long j10 = p1Var.c0;
-                yh.m0 m0Var = new yh.m0(p1Var, callback, 2);
+                long j10 = o1Var.c0;
+                yh.l0 l0Var = new yh.l0(o1Var, callback, 2);
                 boolean z11 = starGift.limited;
                 boolean z12 = false;
-                if (z11 && (disallowedGiftsSettings2 = p1Var.b0) != null && disallowedGiftsSettings2.disallow_limited_stargifts) {
+                if (z11 && (disallowedGiftsSettings2 = o1Var.b0) != null && disallowedGiftsSettings2.disallow_limited_stargifts) {
                     z10 = false;
                     z12 = true;
                 } else {
                     z10 = false;
                 }
-                new yh.s0(p1Var, context, i13, starGift, j10, m0Var, z12, (z11 && (disallowedGiftsSettings = p1Var.b0) != null && disallowedGiftsSettings.disallow_unique_stargifts) ? true : z10).show();
+                new yh.r0(o1Var, context, i13, starGift, j10, l0Var, z12, (z11 && (disallowedGiftsSettings = o1Var.b0) != null && disallowedGiftsSettings.disallow_unique_stargifts) ? true : z10).show();
                 break;
         }
     }
 
-    public /* synthetic */ yh1(yh.p1 p1Var, Context context, int i10, TL_stars.StarGift starGift, Utilities.Callback callback) {
+    public /* synthetic */ yh1(yh.o1 o1Var, Context context, int i10, TL_stars.StarGift starGift, Utilities.Callback callback) {
         this.a = 2;
-        this.c = p1Var;
+        this.c = o1Var;
         this.d = context;
         this.b = i10;
         this.e = starGift;

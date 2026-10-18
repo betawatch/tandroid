@@ -26,7 +26,7 @@ import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.ef0;
 import org.telegram.ui.i01;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
         this.c = obj3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:66:0x020d  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0216  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x020b  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0214  */
     @Override // org.telegram.messenger.Utilities.Callback2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -52,11 +52,10 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
         String str2;
         String str3;
         int i10 = this.a;
-        int i11 = 27;
-        int i12 = 8;
+        int i11 = 8;
         str = "NULL_ERROR";
         TL_toncenter.onrampProviderInfo onrampproviderinfo = null;
-        int i13 = 0;
+        int i12 = 0;
         Object obj3 = this.b;
         Object obj4 = this.c;
         Object obj5 = this.d;
@@ -67,10 +66,10 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                 Utilities.Callback2 callback2 = (Utilities.Callback2) obj4;
                 TL_wallet.userAddresses useraddresses = (TL_wallet.userAddresses) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                int i14 = m0Var.a;
+                int i13 = m0Var.a;
                 if (useraddresses != null && useraddresses.addresses.size() > 0) {
-                    MessagesController.getInstance(i14).putUsers(useraddresses.users, false);
-                    MessagesStorage.getInstance(i14).putUsersAndChats(useraddresses.users, null, true, true);
+                    MessagesController.getInstance(i13).putUsers(useraddresses.users, false);
+                    MessagesStorage.getInstance(i13).putUsersAndChats(useraddresses.users, null, true, true);
                     TL_wallet.walletUserAddress walletuseraddress = useraddresses.addresses.get(0);
                     long j10 = walletuseraddress.user_id;
                     if (j10 != 0) {
@@ -80,7 +79,7 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                     callback2.run(walletuseraddress, tL_error != null ? tL_error.text : null);
                     break;
                 } else {
-                    m0Var.Z(str4, new p(m0Var, callback2, str4, i13));
+                    m0Var.Z(str4, new p(m0Var, callback2, str4, i12));
                     break;
                 }
                 break;
@@ -158,7 +157,7 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                             callback.run("STORAGE_CHANGED");
                             break;
                         } else {
-                            m0Var4.c.p(UserConfig.getInstance(m0Var4.a).getClientUserId(), tL_walletState.public_key, j0Var2, new qy(i11, j0Var2.b(), callback));
+                            m0Var4.c.p(UserConfig.getInstance(m0Var4.a).getClientUserId(), tL_walletState.public_key, j0Var2, new qy(27, j0Var2.b(), callback));
                             break;
                         }
                     } else {
@@ -174,31 +173,31 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                 }
             case 5:
                 m0 m0Var5 = (m0) obj3;
-                j8 j8Var = (j8) obj5;
+                d8 d8Var = (d8) obj5;
                 h0 h0Var = (h0) obj4;
                 j0 j0Var3 = (j0) obj;
                 String str10 = (String) obj2;
-                int i15 = m0Var5.a;
+                int i14 = m0Var5.a;
                 if (j0Var3 == null) {
                     m0.i("disable backup: no current phrase ".concat(str10 == null ? "NULL_ERROR" : str10));
-                    j8Var.run(str10 != null ? str10 : "NULL_ERROR");
+                    d8Var.run(str10 != null ? str10 : "NULL_ERROR");
                     break;
                 } else {
                     m0.F("disable backup: ready!");
                     if (m0Var5.b == null) {
                         m0.i("disable backup: no engine");
-                        j8Var.run("NULL_ENGINE");
+                        d8Var.run("NULL_ENGINE");
                         break;
                     } else {
                         String s10 = m0Var5.s();
                         byte[] x10 = m0Var5.x();
                         if (TextUtils.isEmpty(s10)) {
                             m0.i("disable backup: empty address");
-                            j8Var.run("NULL_ADDRESS");
+                            d8Var.run("NULL_ADDRESS");
                             break;
                         } else if (x10 == null || x10.length <= 0) {
                             m0.i("disable backup: no public key");
-                            j8Var.run("NULL_PUBLIC_KEY");
+                            d8Var.run("NULL_PUBLIC_KEY");
                             break;
                         } else {
                             try {
@@ -210,18 +209,14 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                                 wallettransaction2.pending = true;
                                 wallettransaction2.comment = null;
                                 wallettransaction2.comment_encrypted = false;
-                                wallettransaction2.date = ConnectionsManager.getInstance(i15).getCurrentTime();
+                                wallettransaction2.date = ConnectionsManager.getInstance(i14).getCurrentTime();
                                 wallettransaction2.amount = 0L;
                                 TL_wallet.walletTransactionPeerAddress wallettransactionpeeraddress = new TL_wallet.walletTransactionPeerAddress();
                                 wallettransactionpeeraddress.address = s10;
                                 wallettransaction2.peer = wallettransactionpeeraddress;
-                                c7 c7Var = new c7(m0Var5, b10, wallettransaction2, A, 5);
-                                boolean z10 = true;
+                                w6 w6Var = new w6(m0Var5, b10, wallettransaction2, A, 5);
                                 TL_wallet.sendTransfer sendtransfer = h0Var.a;
-                                if (sendtransfer.data_gasless == null) {
-                                    z10 = false;
-                                }
-                                wallettransaction2.gasless = z10;
+                                wallettransaction2.gasless = sendtransfer.data_gasless != null;
                                 wallettransaction2.random_id = sendtransfer.random_id;
                                 wallettransaction2.gaslessMessageBodyHash = sendtransfer.gaslessMessageBodyHash;
                                 wallettransaction2.normalMessageBodyHash = sendtransfer.normalMessageBodyHash;
@@ -229,12 +224,12 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                                 A.j();
                                 A.h();
                                 m0Var5.Q();
-                                j8Var.run(null);
+                                d8Var.run(null);
                                 m0.F("disable backup: prepared sendTransfer, sending");
-                                ConnectionsManager.getInstance(i15).sendRequestTyped(h0Var.a, new org.telegram.messenger.a(), new ai.t3(m0Var5, c7Var, h0Var, b10, wallettransaction2, 4));
+                                ConnectionsManager.getInstance(i14).sendRequestTyped(h0Var.a, new org.telegram.messenger.a(), new ai.v3(m0Var5, w6Var, h0Var, b10, wallettransaction2, 4));
                                 break;
                             } catch (IllegalStateException unused) {
-                                j8Var.run("CANCELLED");
+                                d8Var.run("CANCELLED");
                                 return;
                             }
                         }
@@ -307,9 +302,9 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                 } else {
                     ArrayList<T> arrayList = vector.objects;
                     int size = arrayList.size();
-                    while (i13 < size) {
-                        Object obj7 = arrayList.get(i13);
-                        i13++;
+                    while (i12 < size) {
+                        Object obj7 = arrayList.get(i12);
+                        i12++;
                         TL_toncenter.onrampProviderInfo onrampproviderinfo2 = (TL_toncenter.onrampProviderInfo) obj7;
                         if (onrampproviderinfo2.supports_base_currencies && (onrampproviderinfo2.crypto_currencies.contains("GRAM") || onrampproviderinfo2.crypto_currencies.contains("gram"))) {
                             onrampproviderinfo = onrampproviderinfo2;
@@ -319,7 +314,7 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                                 createonrampsession.crypto_currency = "gram";
                                 createonrampsession.base_currency = m0Var7.h.g();
                                 createonrampsession.provider = onrampproviderinfo.id;
-                                connectionsManager.sendRequestTyped(createonrampsession, new org.telegram.messenger.a(), new d(callback3, i12));
+                                connectionsManager.sendRequestTyped(createonrampsession, new org.telegram.messenger.a(), new d(callback3, i11));
                                 break;
                             } else {
                                 callback3.run("NO_SUITABLE_PROVIDER");
@@ -333,16 +328,16 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                 }
                 break;
             default:
-                final n8 n8Var = (n8) obj5;
+                final h8 h8Var = (h8) obj5;
                 final m0 m0Var8 = (m0) obj3;
                 final Long l4 = (Long) obj;
                 String str12 = (String) obj2;
                 ((org.telegram.ui.ActionBar.b2) obj4).dismiss();
                 if (l4 != null) {
-                    Activity parentActivity = n8Var.getParentActivity();
+                    Activity parentActivity = h8Var.getParentActivity();
                     if (parentActivity != null) {
-                        final org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(parentActivity, 1, n8Var.getResourceProvider());
-                        a2Var.setBackground(org.telegram.ui.ActionBar.h6.g0(n8Var.getThemedColor(org.telegram.ui.ActionBar.h6.i6), 7, AndroidUtilities.dp(12.0f)));
+                        final org.telegram.ui.Cells.a2 a2Var = new org.telegram.ui.Cells.a2(parentActivity, 1, h8Var.getResourceProvider());
+                        a2Var.setBackground(org.telegram.ui.ActionBar.h6.g0(h8Var.getThemedColor(org.telegram.ui.ActionBar.h6.i6), 7, AndroidUtilities.dp(12.0f)));
                         a2Var.e(LocaleController.getString(R.string.WalletUpdateSecretPhrase), "", false, false, false);
                         a2Var.setMultiline(true);
                         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) a2Var.getCheckBoxView().getLayoutParams();
@@ -352,17 +347,17 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                         a2Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(4.0f) : 0, AndroidUtilities.dp(12.0f), LocaleController.isRTL ? 0 : AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f));
                         TextView textView = new TextView(parentActivity);
                         textView.setTextSize(1, 14.0f);
-                        textView.setTextColor(n8Var.getThemedColor(org.telegram.ui.ActionBar.h6.j5));
+                        textView.setTextColor(h8Var.getThemedColor(org.telegram.ui.ActionBar.h6.j5));
                         textView.setGravity(17);
-                        textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(10.0f), n8Var.getThemedColor(org.telegram.ui.ActionBar.h6.a7)));
+                        textView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(10.0f), h8Var.getThemedColor(org.telegram.ui.ActionBar.h6.a7)));
                         textView.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
                         textView.setText(l4.longValue() > 0 ? LocaleController.formatSpannable(R.string.WalletUpdateSecretPhraseInfoWithFee, m0.m(l4.longValue(), false), m0Var8.l(l4.longValue(), true)) : LocaleController.getString(R.string.WalletUpdateSecretPhraseInfo));
                         textView.setVisibility(8);
-                        a2Var.setOnClickListener(new ef0(i11, a2Var, textView));
+                        a2Var.setOnClickListener(new ef0(28, a2Var, textView));
                         LinearLayout e7 = org.telegram.messenger.g0.e(parentActivity, 1);
                         e7.addView(a2Var, w7.z5.t(-1, -2, 83, 8, 0, 8, 0));
                         e7.addView(textView, w7.z5.k(16.0f, 8.0f, 16.0f, 16.0f, -1, -2));
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(parentActivity, 0, n8Var.getResourceProvider());
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(parentActivity, 0, h8Var.getResourceProvider());
                         String string = LocaleController.getString(R.string.WalletDisableBackupTitle);
                         org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
                         b2Var2.R = string;
@@ -371,41 +366,41 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                         alertDialog$Builder.n(e7);
                         b2Var2.a = AndroidUtilities.dp(312.0f);
                         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                        alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.Wallet.k8
+                        alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.Wallet.e8
                             @Override // org.telegram.ui.ActionBar.a2
-                            public final void g(org.telegram.ui.ActionBar.b2 b2Var3, int i16) {
+                            public final void g(org.telegram.ui.ActionBar.b2 b2Var3, int i15) {
                                 org.telegram.ui.Cells.a2 a2Var2 = a2Var;
                                 if (a2Var2.isEnabled()) {
                                     boolean b11 = a2Var2.b();
                                     a2Var2.setEnabled(false);
-                                    pf.c g10 = b2Var3.g(i16, true, true);
+                                    pf.c g10 = b2Var3.g(i15, true, true);
                                     g10.d();
-                                    n8 n8Var2 = n8.this;
+                                    h8 h8Var2 = h8.this;
                                     m0 m0Var9 = m0Var8;
                                     if (!b11) {
-                                        m0Var9.y(new f8(n8Var2, g10, m0Var9, 0), false, true);
+                                        m0Var9.y(new z7(h8Var2, g10, m0Var9, 0), false, true);
                                         return;
                                     }
                                     long u10 = m0Var9.u();
                                     Long l10 = l4;
                                     if (u10 >= l10.longValue()) {
-                                        f8 f8Var = new f8(n8Var2, g10, m0Var9, 1);
+                                        z7 z7Var = new z7(h8Var2, g10, m0Var9, 1);
                                         m0.F("prepare disable backup");
-                                        m0Var9.y(new ai.q5(25, m0Var9, f8Var), true, false);
+                                        m0Var9.y(new ai.q5(25, m0Var9, z7Var), true, false);
                                         return;
                                     }
-                                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(n8Var2.getParentActivity(), 0, n8Var2.getResourceProvider());
+                                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(h8Var2.getParentActivity(), 0, h8Var2.getResourceProvider());
                                     String string2 = LocaleController.getString(R.string.WalletNotEnoughGram);
                                     org.telegram.ui.ActionBar.b2 b2Var4 = alertDialog$Builder2.a;
                                     b2Var4.R = string2;
                                     b2Var4.T = LocaleController.formatSpannable(R.string.WalletUpdateSecretPhraseInsufficientFunds, m0.m(l10.longValue(), false), m0Var9.l(l10.longValue(), true));
-                                    alertDialog$Builder2.h(LocaleController.getString(R.string.WalletNotNow), new si.a(11));
-                                    alertDialog$Builder2.k(LocaleController.getString(R.string.WalletTopUp), new o2(n8Var2, 6));
+                                    alertDialog$Builder2.h(LocaleController.getString(R.string.WalletNotNow), new sg.y(12));
+                                    alertDialog$Builder2.k(LocaleController.getString(R.string.WalletTopUp), new o2(h8Var2, 6));
                                     alertDialog$Builder2.o();
                                 }
                             }
                         });
-                        n8Var.showDialog(b2Var2);
+                        h8Var.showDialog(b2Var2);
                         TextView textView2 = (TextView) b2Var2.d(-1);
                         if (textView2 != null) {
                             textView2.setTextColor(b2Var2.e(org.telegram.ui.ActionBar.h6.q7));
@@ -413,7 +408,7 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
                         }
                     }
                 } else {
-                    xc.a0(n8Var).e0(str12 != null ? str12 : "NULL_ERROR", false);
+                    xc.a0(h8Var).e0(str12 != null ? str12 : "NULL_ERROR", false);
                     break;
                 }
                 break;
@@ -441,9 +436,9 @@ public final /* synthetic */ class k implements Utilities.Callback2 {
         this.c = str2;
     }
 
-    public /* synthetic */ k(n8 n8Var, org.telegram.ui.ActionBar.b2 b2Var, m0 m0Var) {
+    public /* synthetic */ k(h8 h8Var, org.telegram.ui.ActionBar.b2 b2Var, m0 m0Var) {
         this.a = 11;
-        this.d = n8Var;
+        this.d = h8Var;
         this.c = b2Var;
         this.b = m0Var;
     }

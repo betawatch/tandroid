@@ -23,7 +23,7 @@ import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
 import org.telegram.ui.ut0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -258,7 +258,7 @@ public final /* synthetic */ class u0 implements Utilities.Callback2 {
                 if (textView != null && wallettransaction != null) {
                     long j12 = wallettransaction.fee;
                     if (j12 > 0) {
-                        textView.setText(org.telegram.ui.Wallet.m5.r0(this.b, j12, d6Var2));
+                        textView.setText(org.telegram.ui.Wallet.n5.s0(this.b, j12, d6Var2));
                         break;
                     }
                 }

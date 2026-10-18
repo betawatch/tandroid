@@ -34,7 +34,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hk;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class n3 extends FrameLayout {
     public static final HashMap K = new HashMap();
@@ -286,7 +286,7 @@ public final class n3 extends FrameLayout {
         b2Var.R = str;
         b2Var.T = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
         alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new s7(this, zArr, m3Var, callback, r8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.t2(zArr, callback, r8, 17));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.r2(zArr, callback, r8, 17));
         b2[] b2VarArr = {b2Var};
         b2Var.setOnDismissListener(new r9(zArr, callback));
         b2VarArr[0].show();

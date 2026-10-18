@@ -12,8 +12,8 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.t6;
-import ci.v4;
+import ci.s6;
+import ci.u4;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.rx0;
 import s4.y;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class r extends FrameLayout {
     public static final /* synthetic */ int a0 = 0;
@@ -54,7 +54,7 @@ public final class r extends FrameLayout {
     public int U;
     public final Rect V;
     public final /* synthetic */ hs0 W;
-    public t6 a;
+    public s6 a;
     public boolean b;
     public float c;
     public int d;
@@ -96,7 +96,7 @@ public final class r extends FrameLayout {
         iVar.setClipToPadding(false);
         iVar.setSectionsType(2);
         iVar.setLayoutManager(hVar);
-        addView(iVar, z5.d(-1.0f, -1));
+        addView(iVar, z5.c(-1.0f, -1));
         iVar.i(new j(this, 0));
         iVar.setOnItemClickListener(new wa(this, 5));
         iVar.setOnItemLongClickListener(new a1.c(this, 29));
@@ -108,7 +108,7 @@ public final class r extends FrameLayout {
         ku0Var.i(new j(this, 1));
         kVar2.y1(this.e);
         ku0Var.setVisibility(8);
-        addView(ku0Var, z5.d(-1.0f, -1));
+        addView(ku0Var, z5.c(-1.0f, -1));
         l lVar = new l(this, context);
         this.v = lVar;
         iVar.setAdapter(lVar);
@@ -123,7 +123,7 @@ public final class r extends FrameLayout {
         this.y = rx0Var;
         rx0Var.setVisibility(8);
         rx0Var.setAnimateLayoutChange(true);
-        addView(rx0Var, z5.d(-1.0f, -1));
+        addView(rx0Var, z5.c(-1.0f, -1));
         rx0Var.setOnTouchListener(new d(0));
         rx0Var.e(true, false);
         rx0Var.b.setVisibility(8);
@@ -149,7 +149,7 @@ public final class r extends FrameLayout {
         this.F = dVar2;
         dVar2.setMinWidth(AndroidUtilities.dp(200.0f));
         rx0Var.a.addView(dVar2, z5.q(-2, 44, 17));
-        rx0Var.addView(mVar, 0, z5.d(-1.0f, -1));
+        rx0Var.addView(mVar, 0, z5.c(-1.0f, -1));
         iVar.setEmptyView(rx0Var);
         iVar.W1 = true;
         iVar.X1 = 0;
@@ -178,7 +178,7 @@ public final class r extends FrameLayout {
                 int i10 = 1;
                 boolean z10 = f7 > 0.2f;
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
-                ofFloat.addUpdateListener(new v4(this, i10));
+                ofFloat.addUpdateListener(new u4(this, i10));
                 ofFloat.addListener(new p0(6, this, z10));
                 ofFloat.setInterpolator(bs.f);
                 ofFloat.setDuration(200L);
@@ -247,11 +247,11 @@ public final class r extends FrameLayout {
     public final void c() {
         String string;
         int i10 = this.W.b;
-        t6 t6Var = this.a;
-        int size = t6Var == null ? 0 : t6Var.i.size();
-        t6 t6Var2 = this.a;
+        s6 s6Var = this.a;
+        int size = s6Var == null ? 0 : s6Var.i.size();
+        s6 s6Var2 = this.a;
         int i11 = 1;
-        boolean z10 = t6Var2 == null || TextUtils.isEmpty(t6Var2.E);
+        boolean z10 = s6Var2 == null || TextUtils.isEmpty(s6Var2.E);
         int i12 = size > 0 ? 0 : 8;
         o oVar = this.J;
         oVar.setVisibility(i12);
@@ -316,21 +316,21 @@ public final class r extends FrameLayout {
         iVar.setPadding(iVar.getPaddingLeft(), iVar.W2, iVar.getPaddingRight(), this.J.getMeasuredHeight() + AndroidUtilities.dp(42.0f));
     }
 
-    public void setList(t6 t6Var) {
-        if (this.a != t6Var) {
+    public void setList(s6 s6Var) {
+        if (this.a != s6Var) {
             this.H = false;
             this.I = false;
             this.d = this.W.y;
         }
-        this.a = t6Var;
+        this.a = s6Var;
         l lVar = this.v;
-        lVar.e = t6Var;
+        lVar.e = s6Var;
         if (lVar != lVar.s.w) {
             lVar.M();
         }
         lVar.l();
         q qVar = this.w;
-        qVar.e = t6Var;
+        qVar.e = s6Var;
         if (qVar != qVar.s.w) {
             qVar.M();
         }

@@ -18,7 +18,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rd implements Runnable {
     public final /* synthetic */ int a;
@@ -216,7 +216,7 @@ public final /* synthetic */ class rd implements Runnable {
             case 21:
                 org.telegram.ui.sn snVar4 = chatActivityEnterView.P2;
                 if (snVar4 != null) {
-                    snVar4.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) snVar4, 43, true));
+                    snVar4.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) snVar4, 43, true));
                     break;
                 }
                 break;

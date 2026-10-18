@@ -19,7 +19,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class w6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
@@ -57,7 +57,7 @@ public final class w6 extends FrameLayout implements NotificationCenter.Notifica
         linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), d6Var), w7.z5.t(-1, -2, 7, 32, 0, 32, 16));
         linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), d6Var), w7.z5.t(-1, -2, 7, 32, 0, 32, 16));
         if (viVar != null) {
-            ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
+            ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
             f7.g(LocaleController.getString("GotIt"), false, true);
             f7.setOnClickListener(new v6(0, viVar));
             linearLayout.addView(f7, w7.z5.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
@@ -70,7 +70,7 @@ public final class w6 extends FrameLayout implements NotificationCenter.Notifica
         int i11 = org.telegram.ui.ActionBar.h6.j5;
         imageView.setColorFilter(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
         imageView.setImageResource(i10);
-        frameLayout.addView(imageView, w7.z5.a(24.0f, 0.0f, 8.0f, 0.0f, 0.0f, 24, 51));
+        frameLayout.addView(imageView, w7.z5.d(24, 24.0f, 51, 0.0f, 8.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         TextView textView = new TextView(getContext());
@@ -84,7 +84,7 @@ public final class w6 extends FrameLayout implements NotificationCenter.Notifica
         textView2.setTextSize(0, AndroidUtilities.dp(14.0f));
         textView2.setText(str2);
         linearLayout.addView(textView2, w7.z5.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
-        frameLayout.addView(linearLayout, w7.z5.a(-2.0f, 41.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+        frameLayout.addView(linearLayout, w7.z5.d(-1, -2.0f, 55, 41.0f, 0.0f, 0.0f, 0.0f));
         return frameLayout;
     }
 

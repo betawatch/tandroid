@@ -25,7 +25,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.sn;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class r extends n2 implements ne.d {
     public final ne.b a;
@@ -76,7 +76,7 @@ public final class r extends n2 implements ne.d {
         setHasOwnBackground(true);
         s0 s0Var = new s0(getParentActivity(), this.resourceProvider, xc.a0(this), this.currentAccount, this.b);
         this.v = s0Var;
-        s0Var.h = new ya.c(this, 23);
+        s0Var.h = new ya.d(this, 23);
         s0Var.d();
         this.v.e();
         final int i10 = 0;
@@ -96,7 +96,7 @@ public final class r extends n2 implements ne.d {
         a71Var2.p1();
         this.d.j(new ah.d0(this, 10));
         this.actionBar.setAdaptiveBackground(this.d);
-        this.c.addView(this.d, z5.d(-1.0f, -1));
+        this.c.addView(this.d, z5.c(-1.0f, -1));
         kh.f fVar = new kh.f(context);
         this.e = fVar;
         fVar.setupColorKey(i11);

@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eb0 implements Runnable {
     public final /* synthetic */ int a;
@@ -152,7 +152,7 @@ public final /* synthetic */ class eb0 implements Runnable {
                 TLRPC.UserFull userFull = profileActivity16.w2;
                 if (userFull != null) {
                     AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(userFull.note, false));
-                    org.telegram.messenger.kk.p(R.string.TextCopied, org.telegram.ui.Components.xc.a0(profileActivity16));
+                    org.telegram.messenger.lk.p(R.string.TextCopied, org.telegram.ui.Components.xc.a0(profileActivity16));
                     break;
                 }
                 break;

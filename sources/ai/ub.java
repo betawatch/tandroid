@@ -37,8 +37,8 @@ import org.telegram.messenger.TelegramMediaSession;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
-import org.telegram.messenger.rg;
+import org.telegram.messenger.lk;
+import org.telegram.messenger.sg;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
@@ -63,8 +63,8 @@ import org.telegram.ui.b80;
 import org.telegram.ui.en;
 import org.telegram.ui.ey;
 import org.telegram.ui.kb0;
-import org.telegram.ui.of0;
-import org.telegram.ui.pg0;
+import org.telegram.ui.nf0;
+import org.telegram.ui.og0;
 import org.telegram.ui.px;
 import org.telegram.ui.qm;
 import org.telegram.ui.s50;
@@ -72,7 +72,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.ti;
 import org.telegram.ui.zm;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ub implements Runnable {
     public final /* synthetic */ int a;
@@ -344,7 +344,7 @@ public final /* synthetic */ class ub implements Runnable {
                 break;
             case 5:
                 Pair pair = (Pair) obj2;
-                ((i2.e1) obj4).b.h.i(((Integer) pair.first).intValue(), (u2.f0) pair.second, (u2.t) obj, (u2.b0) obj3, this.b);
+                ((i2.e1) obj4).b.h.i(((Integer) pair.first).intValue(), (u2.g0) pair.second, (u2.u) obj, (u2.c0) obj3, this.b);
                 break;
             case 6:
                 m4.p0 p0Var = (m4.p0) obj4;
@@ -393,7 +393,7 @@ public final /* synthetic */ class ub implements Runnable {
                 ((MessagesStorage) obj4).lambda$putSentFile$170((String) obj3, (TLObject) obj, i12, (String) obj2);
                 break;
             case 12:
-                ((NotificationCenter) obj4).lambda$listen$5((View) obj2, (View.OnAttachStateChangeListener) obj, (rg) obj3, i12);
+                ((NotificationCenter) obj4).lambda$listen$5((View) obj2, (View.OnAttachStateChangeListener) obj, (sg) obj3, i12);
                 break;
             case 13:
                 ((TelegramMediaSession) obj4).lambda$loadChats$4(i12, (ArrayList) obj2, (a0.h) obj, (a0.h) obj3);
@@ -526,9 +526,9 @@ public final /* synthetic */ class ub implements Runnable {
                 ArrayList arrayList12 = (ArrayList) obj;
                 ArrayList arrayList13 = (ArrayList) obj3;
                 if (LaunchActivity.D1 && (R = LaunchActivity.R()) != null && R.getParentActivity() != null) {
-                    sg.j0 j0Var = new sg.j0(11, this.b, R.getParentActivity(), R, null);
-                    j0Var.J1(chat4, arrayList11, arrayList12, arrayList13, null);
-                    j0Var.show();
+                    sg.k0 k0Var = new sg.k0(11, this.b, R.getParentActivity(), R, null);
+                    k0Var.J1(chat4, arrayList11, arrayList12, arrayList13, null);
+                    k0Var.show();
                     break;
                 }
                 break;
@@ -683,7 +683,7 @@ public final /* synthetic */ class ub implements Runnable {
                         }
                         ey eyVar = new ey(h);
                         eyVar.C2 = launchActivity;
-                        if (!AndroidUtilities.isTablet() ? launchActivity.q0.getFragmentStack().size() <= 1 || !(launchActivity.q0.getFragmentStack().get(launchActivity.q0.getFragmentStack().size() - 1) instanceof pg0) : launchActivity.r0.getFragmentStack().isEmpty() || !(launchActivity.r0.getFragmentStack().get(launchActivity.r0.getFragmentStack().size() - 1) instanceof pg0)) {
+                        if (!AndroidUtilities.isTablet() ? launchActivity.q0.getFragmentStack().size() <= 1 || !(launchActivity.q0.getFragmentStack().get(launchActivity.q0.getFragmentStack().size() - 1) instanceof og0) : launchActivity.r0.getFragmentStack().isEmpty() || !(launchActivity.r0.getFragmentStack().get(launchActivity.r0.getFragmentStack().size() - 1) instanceof og0)) {
                             z15 = false;
                         }
                         ((ActionBarLayout) launchActivity.O()).S(eyVar, z15, false);
@@ -823,7 +823,7 @@ public final /* synthetic */ class ub implements Runnable {
                     FileLog.e(e12);
                     return;
                 }
-                kk.q(i10, a02, null);
+                lk.q(i10, a02, null);
                 break;
             case 28:
                 ((kb0) obj4).v((String) obj3, i12 + 1, (String) obj2, (String) obj);
@@ -836,7 +836,7 @@ public final /* synthetic */ class ub implements Runnable {
                 aVar.a = str4;
                 arrayList18.add(aVar.a());
                 FileLog.d("LoginBilling querying \"" + str4 + "\" product");
-                BillingController.getInstance().queryProductDetails(arrayList18, new i6((of0) obj4, str4, (String) obj2, (String) obj, this.b));
+                BillingController.getInstance().queryProductDetails(arrayList18, new i6((nf0) obj4, str4, (String) obj2, (String) obj, this.b));
                 break;
         }
     }

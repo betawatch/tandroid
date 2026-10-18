@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ie0 extends org.telegram.ui.Components.ow0 {
     public final kd0 a;
@@ -28,17 +28,17 @@ public final class ie0 extends org.telegram.ui.Components.ow0 {
     public String v;
     public boolean w;
     public final ge0 x;
-    public final /* synthetic */ fg0 y;
+    public final /* synthetic */ eg0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x00d9 A[LOOP:0: B:9:0x00d7->B:10:0x00d9, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x00d8 A[LOOP:0: B:9:0x00d6->B:10:0x00d8, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public ie0(fg0 fg0Var, Context context) {
+    public ie0(eg0 eg0Var, Context context) {
         super(context);
         int i10;
-        this.y = fg0Var;
+        this.y = eg0Var;
         this.x = new ge0(this, 1);
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -59,7 +59,7 @@ public final class ie0 extends org.telegram.ui.Components.ow0 {
                 textView.setText(LocaleController.getString(R.string.EnterCode));
                 textView.setGravity(17);
                 textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                addView(textView, w7.z5.a(-2.0f, 32.0f, 16.0f, 32.0f, 0.0f, -1, 1));
+                addView(textView, w7.z5.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
                 TextView textView2 = new TextView(context);
                 this.c = textView2;
                 textView2.setTextSize(1, 14.0f);
@@ -85,9 +85,9 @@ public final class ie0 extends org.telegram.ui.Components.ow0 {
                 nVar.setMaxLines(2);
                 nVar.setOnClickListener(new y50(this, 5));
                 FrameLayout frameLayout2 = new FrameLayout(context);
-                frameLayout2.addView(nVar, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 32.0f, -1, 80));
+                frameLayout2.addView(nVar, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
                 addView(frameLayout2, w7.z5.l(1.0f, -1, 0));
-                m.g3.i(nVar);
+                m.g3.r(nVar);
             }
         }
         i10 = 8;
@@ -99,7 +99,7 @@ public final class ie0 extends org.telegram.ui.Components.ow0 {
         textView3.setText(LocaleController.getString(R.string.EnterCode));
         textView3.setGravity(17);
         textView3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView3, w7.z5.a(-2.0f, 32.0f, 16.0f, 32.0f, 0.0f, -1, 1));
+        addView(textView3, w7.z5.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
         TextView textView22 = new TextView(context);
         this.c = textView22;
         textView22.setTextSize(1, 14.0f);
@@ -122,9 +122,9 @@ public final class ie0 extends org.telegram.ui.Components.ow0 {
         nVar2.setMaxLines(2);
         nVar2.setOnClickListener(new y50(this, 5));
         FrameLayout frameLayout22 = new FrameLayout(context);
-        frameLayout22.addView(nVar2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 32.0f, -1, 80));
+        frameLayout22.addView(nVar2, w7.z5.d(-1, -2.0f, 80, 0.0f, 0.0f, 0.0f, 32.0f));
         addView(frameLayout22, w7.z5.l(1.0f, -1, 0));
-        m.g3.i(nVar2);
+        m.g3.r(nVar2);
     }
 
     @Override // org.telegram.ui.Components.ow0
@@ -172,17 +172,17 @@ public final class ie0 extends org.telegram.ui.Components.ow0 {
             return;
         }
         this.n = true;
-        fg0 fg0Var = this.y;
-        fg0Var.n1(0, true);
+        eg0 eg0Var = this.y;
+        eg0Var.n1(0, true);
         TLRPC.TL_auth_checkRecoveryPassword tL_auth_checkRecoveryPassword = new TLRPC.TL_auth_checkRecoveryPassword();
         tL_auth_checkRecoveryPassword.code = code;
-        i10 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_checkRecoveryPassword, new z40(9, this, code), 10);
     }
 
     @Override // org.telegram.ui.Components.ow0
     public final void j() {
-        AndroidUtilities.runOnUIThread(new ge0(this, 0), fg0.t0);
+        AndroidUtilities.runOnUIThread(new ge0(this, 0), eg0.t0);
     }
 
     @Override // org.telegram.ui.Components.ow0
@@ -235,7 +235,7 @@ public final class ie0 extends org.telegram.ui.Components.ow0 {
             valueOf.setSpan(new org.telegram.ui.Components.m11(l11Var, 0), indexOf, i10, 0);
         }
         this.d.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailNoAccess), valueOf));
-        fg0.T0(this.y, kd0Var);
+        eg0.T0(this.y, kd0Var);
         kd0Var.requestFocus();
     }
 

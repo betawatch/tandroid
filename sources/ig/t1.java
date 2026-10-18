@@ -3,30 +3,30 @@ package ig;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
-import ci.z2;
+import ci.y2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class t1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ q1 a;
     public final /* synthetic */ int b;
     public final /* synthetic */ z1 c;
     public final /* synthetic */ TextView d;
-    public final /* synthetic */ z2 e;
+    public final /* synthetic */ y2 e;
     public final /* synthetic */ Utilities.Callback f;
     public final /* synthetic */ org.telegram.ui.ActionBar.b2[] g;
     public final /* synthetic */ View h;
 
-    public t1(q1 q1Var, int i10, z1 z1Var, TextView textView, z2 z2Var, Utilities.Callback callback, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
+    public t1(q1 q1Var, int i10, z1 z1Var, TextView textView, y2 y2Var, Utilities.Callback callback, org.telegram.ui.ActionBar.b2[] b2VarArr, View view) {
         this.a = q1Var;
         this.b = i10;
         this.c = z1Var;
         this.d = textView;
-        this.e = z2Var;
+        this.e = y2Var;
         this.f = callback;
         this.g = b2VarArr;
         this.h = view;

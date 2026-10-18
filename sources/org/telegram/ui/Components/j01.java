@@ -30,7 +30,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class j01 extends TableLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -145,7 +145,7 @@ public final class j01 extends TableLayout {
         c(str, LocaleController.formatString(R.string.formatDateAtTime, LocaleController.getInstance().getFormatterGiveawayCard().format(new Date(j10)), LocaleController.getInstance().getFormatterDay().format(new Date(j10))), null, null);
     }
 
-    public final TableRow h(CharSequence charSequence, CharSequence charSequence2, Runnable runnable, String str, org.telegram.ui.Wallet.d4 d4Var) {
+    public final TableRow h(CharSequence charSequence, CharSequence charSequence2, Runnable runnable, String str, org.telegram.ui.Wallet.e4 e4Var) {
         Context context = getContext();
         org.telegram.ui.ActionBar.d6 d6Var = this.a;
         zc zcVar = new zc(context, d6Var);
@@ -161,7 +161,7 @@ public final class j01 extends TableLayout {
         spannableStringBuilder.setSpan(new uc(3, runnable), 0, spannableStringBuilder.length(), 33);
         zcVar.setText(spannableStringBuilder);
         if (str != null) {
-            zcVar.O = new ad(str, d4Var, d6Var);
+            zcVar.O = new ad(str, e4Var, d6Var);
         }
         return l(zcVar, charSequence);
     }
@@ -170,7 +170,7 @@ public final class j01 extends TableLayout {
         h(str, charSequence, runnable, null, null);
     }
 
-    public final TableRow j(CharSequence charSequence, CharSequence charSequence2, int i10, ai.pa paVar, String str, org.telegram.ui.Wallet.c4 c4Var) {
+    public final TableRow j(CharSequence charSequence, CharSequence charSequence2, int i10, ai.pa paVar, String str, org.telegram.ui.Wallet.d4 d4Var) {
         FrameLayout frameLayout = new FrameLayout(getContext());
         final x90 x90Var = new x90(getContext(), null);
         x90Var.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
@@ -184,9 +184,9 @@ public final class j01 extends TableLayout {
         x90Var.setText(charSequence2);
         x90Var.setDisablePaddingsOffsetY(true);
         x90Var.setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(10.66f), AndroidUtilities.dp(9.33f));
-        frameLayout.addView(x90Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 34.0f, 0.0f, -1, 119));
+        frameLayout.addView(x90Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 34.0f, 0.0f));
         if (str != null) {
-            ad adVar = new ad(str, c4Var, d6Var);
+            ad adVar = new ad(str, d4Var, d6Var);
             final zc zcVar = new zc(getContext(), d6Var);
             zcVar.setTextSize(1, f7);
             zcVar.setPadding(0, AndroidUtilities.dp(9.33f), 0, AndroidUtilities.dp(9.33f));
@@ -195,7 +195,7 @@ public final class j01 extends TableLayout {
             zcVar.setText(spannableString);
             float f10 = (paVar != null ? 34 : 0) + 12.66f;
             ((FrameLayout.LayoutParams) x90Var.getLayoutParams()).rightMargin = AndroidUtilities.dp(f10) + adVar.a();
-            frameLayout.addView(zcVar, w7.z5.a(-2.0f, 0.0f, 0.0f, f10, 0.0f, -2, 53));
+            frameLayout.addView(zcVar, w7.z5.d(-2, -2.0f, 53, 0.0f, 0.0f, f10, 0.0f));
             frameLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: org.telegram.ui.Components.e01
                 @Override // android.view.View.OnLayoutChangeListener
                 public final void onLayoutChange(View view, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19) {
@@ -507,7 +507,7 @@ public final class j01 extends TableLayout {
         x90Var.setText(spannableStringBuilder);
         x90Var.setDisablePaddingsOffsetY(true);
         x90Var.setPadding(AndroidUtilities.dp(12.66f), AndroidUtilities.dp(9.33f), AndroidUtilities.dp(10.66f), AndroidUtilities.dp(9.33f));
-        frameLayout.addView(x90Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        frameLayout.addView(x90Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
         l(frameLayout, str);
     }
 }

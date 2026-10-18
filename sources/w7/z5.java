@@ -7,27 +7,27 @@ import android.widget.RelativeLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class z5 {
-    public static FrameLayout.LayoutParams a(float f7, float f10, float f11, float f12, float f13, int i10, int i11) {
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(i10), z(f7), i11);
-        layoutParams.setMargins(AndroidUtilities.dp(f10), AndroidUtilities.dp(f11), AndroidUtilities.dp(f12), AndroidUtilities.dp(f13));
-        return layoutParams;
-    }
-
-    public static FrameLayout.LayoutParams b(float f7, float f10, int i10) {
+    public static FrameLayout.LayoutParams a(float f7, float f10, int i10) {
         return new FrameLayout.LayoutParams(z(f7), z(f10), i10);
     }
 
-    public static FrameLayout.LayoutParams c(float f7, float f10, int i10, float f11, float f12, float f13, float f14) {
+    public static FrameLayout.LayoutParams b(float f7, float f10, int i10, float f11, float f12, float f13, float f14) {
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(f7), z(f10), i10);
         layoutParams.setMargins(AndroidUtilities.dp(f11), AndroidUtilities.dp(f12), AndroidUtilities.dp(f13), AndroidUtilities.dp(f14));
         return layoutParams;
     }
 
-    public static FrameLayout.LayoutParams d(float f7, int i10) {
+    public static FrameLayout.LayoutParams c(float f7, int i10) {
         return new FrameLayout.LayoutParams(z(i10), z(f7));
+    }
+
+    public static FrameLayout.LayoutParams d(int i10, float f7, int i11, float f10, float f11, float f12, float f13) {
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(z(i10), z(f7), i11);
+        layoutParams.setMargins(AndroidUtilities.dp(f10), AndroidUtilities.dp(f11), AndroidUtilities.dp(f12), AndroidUtilities.dp(f13));
+        return layoutParams;
     }
 
     public static FrameLayout.LayoutParams e(int i10, int i11, int i12) {
@@ -41,7 +41,7 @@ public abstract class z5 {
     }
 
     public static FrameLayout.LayoutParams g() {
-        return d(-1.0f, -1);
+        return c(-1.0f, -1);
     }
 
     public static FrameLayout.LayoutParams h(float f7, float f10, int i10) {

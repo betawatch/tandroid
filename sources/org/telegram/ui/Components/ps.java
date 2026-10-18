@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ps extends bb {
     public static final /* synthetic */ int G0 = 0;
@@ -379,7 +379,7 @@ public final class ps extends bb {
         boolean z11 = false;
         ls lsVar = new ls(psVar, 0 == true ? 1 : 0);
         Pattern pattern = f5.a;
-        LinearLayout e = org.telegram.messenger.kk.e(context2, 1);
+        LinearLayout e = org.telegram.messenger.lk.e(context2, 1);
         org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context2, 0, d6Var);
         String string = LocaleController.getString(R.string.CommunityBanUserTitle);
@@ -415,7 +415,7 @@ public final class ps extends bb {
                 textView.setText(charSequence);
                 ((w9) w1Var.c).e(chat, new h9(chat));
                 w1Var.setBackground(org.telegram.ui.ActionBar.h6.L0(z10));
-                w1Var.setOnClickListener(new ai.c4(b2VarArr, lsVar, longValue, 3));
+                w1Var.setOnClickListener(new ai.q3(b2VarArr, lsVar, longValue, 3));
                 e.addView(w1Var, w7.z5.n(-1, -2));
                 context2 = context;
                 size = i12;
@@ -520,7 +520,7 @@ public final class ps extends bb {
             tL_messages_search.flags |= 1;
             tL_messages_search.filter = new TLRPC.TL_inputMessagesFilterEmpty();
             tL_messages_search.limit = 1;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_search, new ci.t8(this, inputPeer, i11, iArr, 4));
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_search, new ci.s8(this, inputPeer, i11, iArr, 4));
         }
     }
 
@@ -585,7 +585,7 @@ public final class ps extends bb {
             ls lsVar = new ls(this, i10);
             js jsVar = new js(this, 0);
             Pattern pattern = f5.a;
-            LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+            LinearLayout e = org.telegram.messenger.lk.e(context, 1);
             org.telegram.ui.ActionBar.b2[] b2VarArr = new org.telegram.ui.ActionBar.b2[1];
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
             String string = LocaleController.getString(R.string.CommunityBanWarningTitle);
@@ -628,7 +628,7 @@ public final class ps extends bb {
                     w1Var.setBackground(org.telegram.ui.ActionBar.h6.L0(r15));
                     ?? r12 = e;
                     z12 = r15;
-                    w1Var.setOnClickListener(new ai.c4(b2VarArr, lsVar, j13, 2));
+                    w1Var.setOnClickListener(new ai.q3(b2VarArr, lsVar, j13, 2));
                     r12.addView(w1Var, w7.z5.n(-1, -2));
                     i12 = i13;
                     e = r12;

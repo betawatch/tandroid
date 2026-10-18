@@ -24,7 +24,7 @@ import org.telegram.ui.sn;
 import qg.g0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
     public final Rect E;
@@ -81,7 +81,7 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         d dVar = new d(getContext(), 36);
         this.c = dVar;
         dVar.setBackground(h6.g0(h6.w0(i11, d6Var), 1, -1));
-        dVar.setOnClickListener(new qg.n(2, this, snVar));
+        dVar.setOnClickListener(new org.telegram.ui.web.c(3, this, snVar));
         w7.b6.a(dVar);
         j5 j5Var = new j5(getContext());
         this.f = j5Var;
@@ -94,11 +94,11 @@ public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawLi
         addView(l41Var, layoutParams);
         l41 l41Var2 = new l41(activity, 8);
         this.v = l41Var2;
-        l41Var.addView(l41Var2, z5.d(-2.0f, -1));
+        l41Var.addView(l41Var2, z5.c(-2.0f, -1));
         l41Var2.addView(j5Var, z5.e(54, 24, 53));
         l41Var2.addView(bVar, z5.e(44, 44, 51));
-        l41Var2.addView(dVar, z5.a(44.0f, 0.0f, 0.0f, 5.0f, 0.0f, 44, 53));
-        l41Var2.addView(b6Var, z5.a(-2.0f, 39.0f, 0.0f, 47.0f, 0.0f, -1, 119));
+        l41Var2.addView(dVar, z5.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
+        l41Var2.addView(b6Var, z5.d(-1, -2.0f, 119, 39.0f, 0.0f, 47.0f, 0.0f));
         b6Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f));
     }
 

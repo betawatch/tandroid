@@ -14,7 +14,7 @@ import android.view.ViewPropertyAnimator;
 import android.view.animation.Interpolator;
 import android.view.animation.OvershootInterpolator;
 import b2.u0;
-import ci.o3;
+import ci.n3;
 import com.google.android.gms.internal.play_billing.k3;
 import ei.i6;
 import hg.j0;
@@ -54,7 +54,7 @@ import r0.i0;
 import s4.b1;
 import s4.y0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class m extends s4.k {
     public static final bs V = new bs(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
@@ -299,7 +299,7 @@ public abstract class m extends s4.k {
                             t1Var.k0 = (-lVar2.s) - u1Var.getAnimationOffsetX();
                             t1Var.l0 = (-lVar2.t) - u1Var.getAnimationOffsetX();
                         }
-                        ofFloat3.addUpdateListener(new o3(lVar2, t1Var, u1Var, 3));
+                        ofFloat3.addUpdateListener(new n3(lVar2, t1Var, u1Var, 3));
                         z12 = false;
                         animatorSet.playTogether(ofFloat3);
                     }

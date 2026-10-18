@@ -1,44 +1,50 @@
 package u2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final class z extends b2.o1 {
-    public final b2.o0 e;
+public final class z extends s {
+    public static final Object h = new Object();
+    public final Object f;
+    public final Object g;
 
-    public z(b2.o0 o0Var) {
-        this.e = o0Var;
+    public z(b2.o1 o1Var, Object obj, Object obj2) {
+        super(o1Var);
+        this.f = obj;
+        this.g = obj2;
     }
 
-    @Override // b2.o1
+    @Override // u2.s, b2.o1
     public final int b(Object obj) {
-        return obj == y.h ? 0 : -1;
+        Object obj2;
+        if (h.equals(obj) && (obj2 = this.g) != null) {
+            obj = obj2;
+        }
+        return this.e.b(obj);
     }
 
-    @Override // b2.o1
+    @Override // u2.s, b2.o1
     public final b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
-        l1Var.h(z10 ? 0 : null, z10 ? y.h : null, 0, -9223372036854775807L, 0L, b2.c.c, true);
+        this.e.f(i10, l1Var, z10);
+        if (Objects.equals(l1Var.b, this.g) && z10) {
+            l1Var.b = h;
+        }
         return l1Var;
     }
 
-    @Override // b2.o1
-    public final int h() {
-        return 1;
-    }
-
-    @Override // b2.o1
+    @Override // u2.s, b2.o1
     public final Object l(int i10) {
-        return y.h;
+        Object l4 = this.e.l(i10);
+        return Objects.equals(l4, this.g) ? h : l4;
     }
 
-    @Override // b2.o1
+    @Override // u2.s, b2.o1
     public final b2.n1 m(int i10, b2.n1 n1Var, long j10) {
-        n1Var.b(b2.n1.q, this.e, null, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, false, true, null, 0L, -9223372036854775807L, 0, 0, 0L);
-        n1Var.k = true;
+        this.e.m(i10, n1Var, j10);
+        if (Objects.equals(n1Var.a, this.f)) {
+            n1Var.a = b2.n1.q;
+        }
         return n1Var;
-    }
-
-    @Override // b2.o1
-    public final int o() {
-        return 1;
     }
 }

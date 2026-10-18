@@ -1,30 +1,28 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class h6 extends FrameLayout {
-    public final /* synthetic */ k6 a;
+public final /* synthetic */ class h6 implements o1.f {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h6(k6 k6Var, Context context) {
-        super(context);
-        this.a = k6Var;
+    public /* synthetic */ h6(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.translate(-getLeft(), -getTop());
-        k6 k6Var = this.a;
-        k6Var.j.c(canvas);
-        canvas.restore();
-        super.dispatchDraw(canvas);
-        if (k6Var.j.d()) {
-            postInvalidateOnAnimation();
+    @Override // o1.f
+    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                m6.b((m6) this.b, z10, f7);
+                break;
+            default:
+                i9 i9Var = (i9) this.b;
+                i9Var.X = null;
+                i9Var.Y = 1.0f;
+                i9Var.A0();
+                break;
         }
     }
 }

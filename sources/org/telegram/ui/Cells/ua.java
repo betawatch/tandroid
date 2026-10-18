@@ -19,11 +19,11 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ua extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
-    public final ci.l4 b;
+    public final ci.k4 b;
     public final org.telegram.ui.ActionBar.j5 c;
     public final ImageView d;
     public final org.telegram.ui.Components.h9 e;
@@ -45,28 +45,28 @@ public final class ua extends FrameLayout {
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(24.0f));
         boolean z10 = LocaleController.isRTL;
-        addView(w9Var, w7.z5.a(48.0f, z10 ? 0.0f : 11, 11.0f, z10 ? 11 : 0.0f, 0.0f, 48, (z10 ? 5 : 3) | 48));
-        ci.l4 l4Var = new ci.l4(context, 3);
-        this.b = l4Var;
-        NotificationCenter.listenEmojiLoading(l4Var);
-        l4Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
-        l4Var.setTextSize(17);
-        l4Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        addView(w9Var, w7.z5.d(48, 48.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 11, 11.0f, z10 ? 11 : 0.0f, 0.0f));
+        ci.k4 k4Var = new ci.k4(context, 3);
+        this.b = k4Var;
+        NotificationCenter.listenEmojiLoading(k4Var);
+        k4Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        k4Var.setTextSize(17);
+        k4Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z11 = LocaleController.isRTL;
-        addView(l4Var, w7.z5.a(20.0f, z11 ? 28 : 72, 14.5f, z11 ? 72 : 28, 0.0f, -1, (z11 ? 5 : 3) | 48));
+        addView(k4Var, w7.z5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28 : 72, 14.5f, z11 ? 72 : 28, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         j5Var.setTextSize(14);
         j5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(j5Var, w7.z5.a(20.0f, z12 ? 28.0f : 72, 37.5f, z12 ? 72 : 28.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
+        addView(j5Var, w7.z5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72, 37.5f, z12 ? 72 : 28.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.m6, d6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(8);
         boolean z13 = LocaleController.isRTL;
-        addView(imageView, w7.z5.a(-2.0f, z13 ? 0.0f : 16.0f, 0.0f, z13 ? 16.0f : 0.0f, 0.0f, -2, (z13 ? 5 : 3) | 16));
+        addView(imageView, w7.z5.d(-2, -2.0f, (z13 ? 5 : 3) | 16, z13 ? 0.0f : 16.0f, 0.0f, z13 ? 16.0f : 0.0f, 0.0f));
     }
 
     public final void a(TLObject tLObject, String str) {

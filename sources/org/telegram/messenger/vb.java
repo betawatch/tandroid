@@ -1,48 +1,49 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class vb implements RequestDelegate {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class vb implements Runnable {
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ MessagesController b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ vb(int i10, long j10, long j11, ArrayList arrayList, MessagesController messagesController) {
-        this.a = i10;
+    public /* synthetic */ vb(MessagesController messagesController, long j10, long j11, ArrayList arrayList) {
         this.b = messagesController;
         this.c = j10;
-        this.d = j11;
-        this.e = arrayList;
+        this.e = j11;
+        this.d = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkUnreadPollVotesInternal2$433(this.c, this.d, this.e, tLObject, tL_error);
+                this.b.lambda$checkUnreadPollVotesInternal2$434(this.c, this.e, 0, this.d);
                 break;
             case 1:
-                this.b.lambda$checkUnreadPollVotesInternal2$435(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 2:
-                this.b.lambda$checkUnreadPollVotesInternal2$437(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$checkUnreadReactionsInternal2$426(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$checkUnreadReactionsInternal2$428(this.c, this.d, this.e, tLObject, tL_error);
+                this.b.lambda$processUpdateArray$422(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$checkUnreadReactionsInternal2$430(this.c, this.d, this.e, tLObject, tL_error);
+                this.b.lambda$deleteMessagesByPush$369(this.d, this.c, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ vb(MessagesController messagesController, long j10, ArrayList arrayList, long j11) {
+        this.b = messagesController;
+        this.c = j10;
+        this.d = arrayList;
+        this.e = j11;
+    }
+
+    public /* synthetic */ vb(MessagesController messagesController, ArrayList arrayList, long j10, long j11) {
+        this.b = messagesController;
+        this.d = arrayList;
+        this.c = j10;
+        this.e = j11;
     }
 }

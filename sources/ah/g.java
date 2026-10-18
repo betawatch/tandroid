@@ -6,8 +6,8 @@ import android.os.Looper;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.util.StateSet;
-import ci.i7;
-import ci.v7;
+import ci.h7;
+import ci.u7;
 import ei.a8;
 import ei.n2;
 import ei.vb;
@@ -39,7 +39,7 @@ import org.telegram.ui.ti;
 import org.telegram.ui.v4;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -89,13 +89,13 @@ public final /* synthetic */ class g implements Runnable {
                 ((c2.g) obj).b.onAudioFocusChange(i12);
                 break;
             case 4:
-                i7 i7Var = (i7) obj;
-                ArrayList arrayList = i7Var.g;
-                i7Var.v(arrayList);
-                t5 t5Var = i7Var.J;
+                h7 h7Var = (h7) obj;
+                ArrayList arrayList = h7Var.g;
+                h7Var.v(arrayList);
+                t5 t5Var = h7Var.J;
                 Collections.sort(arrayList, t5Var);
-                ArrayList arrayList2 = i7Var.h;
-                i7Var.v(arrayList2);
+                ArrayList arrayList2 = h7Var.h;
+                h7Var.v(arrayList2);
                 Collections.sort(arrayList2, t5Var);
                 NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                 break;
@@ -174,7 +174,7 @@ public final /* synthetic */ class g implements Runnable {
                 cVar.getClass();
                 u6.p(Looper.myLooper() == ((e2.i0) cVar.c).a.getLooper());
                 cVar.a++;
-                cVar.i(new v7(16, cVar, vVar));
+                cVar.i(new u7(16, cVar, vVar));
                 cVar.n(Integer.valueOf(i12));
                 break;
             case 15:

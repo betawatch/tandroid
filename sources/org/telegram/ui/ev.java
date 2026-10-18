@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ev implements Runnable {
     public final /* synthetic */ int a;
@@ -198,7 +198,7 @@ public final /* synthetic */ class ev implements Runnable {
             case 14:
                 ey eyVar12 = this.b;
                 eyVar12.getClass();
-                eyVar12.presentFragment(new org.telegram.ui.Wallet.m5());
+                eyVar12.presentFragment(new org.telegram.ui.Wallet.n5());
                 break;
             case 15:
                 this.b.j3();

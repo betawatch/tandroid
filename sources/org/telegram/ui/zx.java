@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
+public final class zx extends org.telegram.ui.Components.ia implements ci.o7 {
     public static final /* synthetic */ int t3 = 0;
     public boolean b3;
     public boolean c3;
@@ -49,7 +49,7 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
     public float n3;
     public float o3;
     public boolean p3;
-    public ci.ia q3;
+    public ci.ha q3;
     public int r3;
     public final /* synthetic */ ey s3;
 
@@ -112,7 +112,7 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
         return !(view instanceof org.telegram.ui.Cells.l4) || view.isClickable();
     }
 
-    @Override // ci.p7
+    @Override // ci.o7
     public final void a(int[] iArr) {
         int paddingTop = (int) (getPaddingTop() + this.s3.N);
         iArr[0] = paddingTop;
@@ -464,7 +464,7 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
             rectF4.set(measuredWidth, i25, f28, i25 + dp);
             float f29 = ud0Var.g;
             float f30 = 35.0f;
-            int z14 = (int) (f29 < 0.5f ? org.telegram.messenger.kk.z(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
+            int z14 = (int) (f29 < 0.5f ? org.telegram.messenger.lk.z(f29, 0.5f, 1.0f, 35.0f) : ((f29 - 0.5f) * 35.0f) / 0.5f);
             float f31 = z14;
             float f32 = 360 - (z14 * 2);
             canvas.drawArc(rectF4, f31, f32, true, paint4);
@@ -597,11 +597,11 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
         }
         if (this.q3 == null) {
             i10 = ((org.telegram.ui.ActionBar.n2) eyVar).currentAccount;
-            ci.ia[] iaVarArr = ci.ia.f;
-            if (iaVarArr[i10] == null) {
-                iaVarArr[i10] = new ci.ia(i10);
+            ci.ha[] haVarArr = ci.ha.f;
+            if (haVarArr[i10] == null) {
+                haVarArr[i10] = new ci.ha(i10);
             }
-            this.q3 = iaVarArr[i10];
+            this.q3 = haVarArr[i10];
         }
         this.q3.a(this);
     }
@@ -874,7 +874,7 @@ public final class zx extends org.telegram.ui.Components.ia implements ci.p7 {
                             fArr[1] = 0.0f;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(fArr);
                             ofFloat.addUpdateListener(new e3(this, 10));
-                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.kk.x(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
+                            ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.lk.x(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                             ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
                             setScrollEnabled(false);
                             ofFloat.addListener(new org.telegram.ui.Components.n31(this, 25));

@@ -49,10 +49,10 @@ import org.telegram.ui.Components.c61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.gn0;
-import org.telegram.ui.lg0;
+import org.telegram.ui.kg0;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class m0 {
     public static volatile m0[] O = new m0[4];
@@ -1710,7 +1710,7 @@ public final class m0 {
             t(str, null);
             h0((d0) this.N.get(str));
         }
-        Collections.sort(this.G, new lg0(9));
+        Collections.sort(this.G, new kg0(9));
     }
 
     public final void V() {
@@ -1763,7 +1763,7 @@ public final class m0 {
         performapirequest.post = true;
         performapirequest.endpoint = "/api/v2/runGetMethod";
         JSONArray jSONArray = new JSONArray();
-        boolean z10 = org.telegram.ui.web.a1.P0;
+        boolean z10 = org.telegram.ui.web.b1.P0;
         try {
             jSONObject = new JSONObject();
             jSONObject.put("address", str);
@@ -2080,19 +2080,19 @@ public final class m0 {
         return null;
     }
 
-    public final d0 t(final String str, i8 i8Var) {
+    public final d0 t(final String str, c8 c8Var) {
         HashMap hashMap = this.N;
         d0 d0Var = (d0) hashMap.get(str);
         if (d0Var != null && !d0Var.e) {
-            if (i8Var != null) {
-                d0Var.f.add(i8Var);
+            if (c8Var != null) {
+                d0Var.f.add(c8Var);
             }
             return null;
         }
         int i10 = this.a;
         if (d0Var != null && d0Var.e && ConnectionsManager.getInstance(i10).getCurrentTime() < d0Var.d + 300) {
-            if (i8Var != null) {
-                i8Var.run(d0Var);
+            if (c8Var != null) {
+                c8Var.run(d0Var);
             }
             return d0Var;
         }
@@ -2102,8 +2102,8 @@ public final class m0 {
         d0Var2.f = arrayList;
         d0Var2.a = str;
         d0Var2.d = ConnectionsManager.getInstance(i10).getCurrentTime();
-        if (i8Var != null) {
-            arrayList.add(i8Var);
+        if (c8Var != null) {
+            arrayList.add(c8Var);
         }
         hashMap.put(str, d0Var2);
         final int i11 = 1;

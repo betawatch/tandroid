@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ay extends hm0 {
     public int E;
@@ -609,7 +609,7 @@ public final class ay extends hm0 {
                 MediaDataController.getInstance(i13).getStickerSet(fyVar2.d, false);
                 fyVar2.d = null;
             }
-            sg.p0 p0Var = jyVar.h;
+            sg.q0 q0Var = jyVar.h;
             if (fyVar2 == null) {
                 return;
             }
@@ -618,9 +618,9 @@ public final class ay extends hm0 {
             jyVar.b.l(fyVar2.b.title, false);
             jyVar.c.setVisibility(fyVar2.i ? 0 : 8);
             if (!fyVar2.f || fyVar2.b.official) {
-                p0Var.a(LocaleController.getString(R.string.Unlock), new iy(jyVar, 6), false);
+                q0Var.a(LocaleController.getString(R.string.Unlock), new iy(jyVar, 6), false);
             } else {
-                p0Var.a(LocaleController.getString(R.string.Restore), new iy(jyVar, 5), false);
+                q0Var.a(LocaleController.getString(R.string.Restore), new iy(jyVar, 5), false);
             }
             jyVar.a(false);
             return;
@@ -748,10 +748,10 @@ public final class ay extends hm0 {
                 FrameLayout frameLayout = new FrameLayout(gyVar.getContext());
                 frameLayout.setBackground(org.telegram.ui.ActionBar.x5.e(new float[]{8.0f}, tzVar.A(org.telegram.ui.ActionBar.h6.Oh)));
                 frameLayout.addView(q6Var, w7.z5.e(-1, -2, 17));
-                gyVar.addView(frameLayout, w7.z5.d(-1.0f, -1));
-                sg.p0 p0Var = new sg.p0(gyVar.getContext(), d6Var, false);
-                p0Var.setIcon(R.raw.unlock_icon);
-                gyVar.addView(p0Var, w7.z5.d(-1.0f, -1));
+                gyVar.addView(frameLayout, w7.z5.c(-1.0f, -1));
+                sg.q0 q0Var = new sg.q0(gyVar.getContext(), d6Var, false);
+                q0Var.setIcon(R.raw.unlock_icon);
+                gyVar.addView(q0Var, w7.z5.c(-1.0f, -1));
                 view = gyVar;
             } else if (i10 == 4) {
                 Context context = tzVar.getContext();

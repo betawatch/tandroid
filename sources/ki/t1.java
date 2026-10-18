@@ -59,11 +59,11 @@ import org.telegram.ui.bs0;
 import org.telegram.ui.it0;
 import org.telegram.ui.kb0;
 import org.telegram.ui.n9;
-import org.telegram.ui.oi0;
+import org.telegram.ui.ni0;
 import org.telegram.ui.x9;
 import w7.v8;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, n5.b, o0.a, q71, fb0, mg.o, x71, hg.z1, x9, com.google.android.gms.common.api.internal.o, rg.v1, s4.h1, com.google.android.gms.common.api.internal.r {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
         list.add(trim2);
     }
 
-    public static float[] u(ArrayList arrayList) {
+    public static float[] s(ArrayList arrayList) {
         float f7;
         int i10;
         int i11;
@@ -272,7 +272,7 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
         return fArr;
     }
 
-    public static t1 w(float f7, int i10) {
+    public static t1 u(float f7, int i10) {
         Point point = AndroidUtilities.displaySize;
         int i11 = (int) (point.x * f7);
         int i12 = (int) (point.y * f7);
@@ -296,9 +296,9 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
             case 0:
                 d2 d2Var = (d2) this.b;
                 d2Var.s0(i10, i11, z10);
-                oi0 oi0Var = d2Var.O0;
-                if (oi0Var != null) {
-                    oi0Var.i();
+                ni0 ni0Var = d2Var.O0;
+                if (ni0Var != null) {
+                    ni0Var.i();
                     d2Var.O0 = null;
                     break;
                 }
@@ -318,27 +318,27 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
     public void E(String str) {
         String trim;
         int i10;
-        org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) this.b;
+        org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) this.b;
         if (str == null) {
             trim = "";
         } else {
             try {
                 trim = str.trim();
             } catch (Throwable unused) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.n3(m5Var, 7));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.o3(n5Var, 7));
                 return;
             }
         }
         Uri parse = Uri.parse(trim);
         String scheme = parse.getScheme();
-        if (("ton".equalsIgnoreCase(scheme) || "tc".equalsIgnoreCase(scheme)) && (m5Var.getParentActivity() instanceof LaunchActivity)) {
-            LaunchActivity launchActivity = (LaunchActivity) m5Var.getParentActivity();
-            i10 = ((org.telegram.ui.ActionBar.n2) m5Var).currentAccount;
+        if (("ton".equalsIgnoreCase(scheme) || "tc".equalsIgnoreCase(scheme)) && (n5Var.getParentActivity() instanceof LaunchActivity)) {
+            LaunchActivity launchActivity = (LaunchActivity) n5Var.getParentActivity();
+            i10 = ((org.telegram.ui.ActionBar.n2) n5Var).currentAccount;
             if (new kb0(launchActivity, i10, null, false).g(parse)) {
                 return;
             }
         }
-        AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.n3(m5Var, 7));
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.o3(n5Var, 7));
     }
 
     @Override // ki.j0
@@ -486,7 +486,7 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
         int indexOfChild = gVar.a.indexOfChild(view);
         if (indexOfChild >= 0) {
             if (((ad.d) g3Var.c).F(indexOfChild)) {
-                g3Var.S(view);
+                g3Var.X(view);
             }
             gVar.a(indexOfChild);
         }
@@ -666,7 +666,7 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
         long j12 = oVar.a;
         g2.m mVar = oVar.b;
         g2.b0 b0Var = oVar.d;
-        u2.t tVar = new u2.t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         int i11 = oVar.c;
         hVar.m.getClass();
         for (Throwable th2 = iOException; th2 != null; th2 = th2.getCause()) {
@@ -677,7 +677,7 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
         }
         min = Math.min((i10 - 1) * MediaDataController.MAX_STYLE_RUNS_COUNT, 5000);
         k4.d dVar = min == -9223372036854775807L ? y2.l.f : new k4.d(0, min, false);
-        hVar.q.t(tVar, i11, iOException, !dVar.a());
+        hVar.q.t(uVar, i11, iOException, !dVar.a());
         return dVar;
     }
 
@@ -688,19 +688,19 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
 
     @Override // y2.g
     public void l(y2.i iVar, long j10, long j11, int i10) {
-        u2.t tVar;
+        u2.u uVar;
         y2.o oVar = (y2.o) iVar;
         l2.h hVar = (l2.h) this.b;
         if (i10 == 0) {
             long j12 = oVar.a;
-            tVar = new u2.t(oVar.b, j10);
+            uVar = new u2.u(oVar.b, j10);
         } else {
             long j13 = oVar.a;
             g2.m mVar = oVar.b;
             g2.b0 b0Var = oVar.d;
-            tVar = new u2.t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+            uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         }
-        hVar.q.v(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
+        hVar.q.v(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
     }
 
     public String m(Object obj) {
@@ -724,9 +724,9 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
         long j13 = oVar.a;
         g2.m mVar = oVar.b;
         g2.b0 b0Var = oVar.d;
-        u2.t tVar = new u2.t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         hVar.m.getClass();
-        hVar.q.r(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        hVar.q.r(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         m2.c cVar = (m2.c) oVar.f;
         m2.c cVar2 = hVar.G;
         int size = cVar2 == null ? 0 : cVar2.m.size();
@@ -781,15 +781,15 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
             hVar.z(true);
             return;
         }
-        m2.t tVar2 = cVar3.i;
-        if (tVar2 == null) {
+        m2.t tVar = cVar3.i;
+        if (tVar == null) {
             hVar.w();
             return;
         }
-        String str = tVar2.b;
+        String str = tVar.b;
         if (Objects.equals(str, "urn:mpeg:dash:utc:direct:2014") || Objects.equals(str, "urn:mpeg:dash:utc:direct:2012")) {
             try {
-                hVar.K = e2.m0.V(tVar2.c) - hVar.J;
+                hVar.K = e2.m0.V(tVar.c) - hVar.J;
                 hVar.z(true);
                 return;
             } catch (b2.w0 e) {
@@ -798,11 +798,11 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
             }
         }
         if (Objects.equals(str, "urn:mpeg:dash:utc:http-iso:2014") || Objects.equals(str, "urn:mpeg:dash:utc:http-iso:2012")) {
-            hVar.A(tVar2, new l2.g());
+            hVar.A(tVar, new l2.g());
             return;
         }
         if (Objects.equals(str, "urn:mpeg:dash:utc:http-xsdate:2014") || Objects.equals(str, "urn:mpeg:dash:utc:http-xsdate:2012")) {
-            hVar.A(tVar2, new sb.a(12));
+            hVar.A(tVar, new sb.a(12));
         } else if (Objects.equals(str, "urn:mpeg:dash:utc:ntp:2014") || Objects.equals(str, "urn:mpeg:dash:utc:ntp:2012")) {
             hVar.w();
         } else {
@@ -881,11 +881,6 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.fb0
-    public Paint.FontMetricsInt s() {
-        return ((ti) this.b).H0.getEditText().getPaint().getFontMetricsInt();
-    }
-
     @Override // ki.j0
     public org.telegram.ui.Cells.n9 t() {
         m4 m4Var = ((o4) this.b).G;
@@ -906,6 +901,11 @@ public class t1 implements org.telegram.ui.Components.e5, j0, m.f2, y2.g, m.y0, 
             }
             s3Var.a.u4(charSequence.toString());
         }
+    }
+
+    @Override // org.telegram.ui.Components.fb0
+    public Paint.FontMetricsInt w() {
+        return ((ti) this.b).H0.getEditText().getPaint().getFontMetricsInt();
     }
 
     @Override // o0.a

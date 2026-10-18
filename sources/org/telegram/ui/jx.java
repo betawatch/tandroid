@@ -7,7 +7,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class jx implements bh.h, org.telegram.ui.Components.ro0, org.telegram.ui.Components.zl0, ei.mb, org.telegram.ui.Components.j20 {
     public final /* synthetic */ int a;
@@ -59,10 +59,10 @@ public final class jx implements bh.h, org.telegram.ui.Components.ro0, org.teleg
     }
 
     @Override // ei.mb
-    public void b(long j10, ai.r3 r3Var) {
+    public void b(long j10, ai.t3 t3Var) {
         ey eyVar = this.b;
         if (eyVar.E0 == null) {
-            r3Var.run();
+            t3Var.run();
             return;
         }
         eyVar.v4(false, true);
@@ -73,7 +73,7 @@ public final class jx implements bh.h, org.telegram.ui.Components.ro0, org.teleg
         } else {
             eyVar.E0.k(j10);
         }
-        eyVar.e0[0].a.getViewTreeObserver().addOnPreDrawListener(new zl(1, this, r3Var));
+        eyVar.e0[0].a.getViewTreeObserver().addOnPreDrawListener(new zl(1, this, t3Var));
     }
 
     public void c(hg.o0 o0Var) {

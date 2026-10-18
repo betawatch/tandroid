@@ -45,7 +45,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i90 implements Runnable {
     public final /* synthetic */ int a;
@@ -154,7 +154,7 @@ public final /* synthetic */ class i90 implements Runnable {
                     TLRPC.TL_messages_reportSponsoredMessage tL_messages_reportSponsoredMessage = new TLRPC.TL_messages_reportSponsoredMessage();
                     tL_messages_reportSponsoredMessage.random_id = bArr;
                     tL_messages_reportSponsoredMessage.option = new byte[0];
-                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new org.telegram.messenger.fi(parentActivity, resourceProvider, bArr, eyVar2, go0Var, currentAccount));
+                    ConnectionsManager.getInstance(currentAccount).sendRequest(tL_messages_reportSponsoredMessage, new org.telegram.messenger.gi(parentActivity, resourceProvider, bArr, eyVar2, go0Var, currentAccount));
                 }
                 i80Var.u();
                 break;
@@ -501,22 +501,22 @@ public final /* synthetic */ class i90 implements Runnable {
                 org.telegram.ui.ie0 ie0Var = (org.telegram.ui.ie0) obj4;
                 String str5 = (String) obj3;
                 TLRPC.TL_error tL_error9 = (TLRPC.TL_error) obj2;
-                org.telegram.ui.fg0 fg0Var = ie0Var.y;
-                fg0Var.k1(false, true);
+                org.telegram.ui.eg0 eg0Var = ie0Var.y;
+                eg0Var.k1(false, true);
                 ie0Var.n = false;
                 if (((TLObject) obj) instanceof TLRPC.TL_boolTrue) {
                     Bundle bundle = new Bundle();
                     bundle.putString("emailCode", str5);
                     bundle.putString("password", ie0Var.h);
-                    fg0Var.u1(9, true, bundle, false);
+                    eg0Var.u1(9, true, bundle, false);
                     break;
                 } else if (tL_error9 != null && !tL_error9.text.startsWith("CODE_INVALID")) {
                     if (tL_error9.text.startsWith("FLOOD_WAIT")) {
                         int intValue = Utilities.parseInt((CharSequence) tL_error9.text).intValue();
-                        fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                        eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
                         break;
                     } else {
-                        fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error9.text);
+                        eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error9.text);
                         break;
                     }
                 } else {
@@ -525,24 +525,24 @@ public final /* synthetic */ class i90 implements Runnable {
                 }
                 break;
             case 24:
-                org.telegram.ui.jf0 jf0Var = (org.telegram.ui.jf0) obj4;
+                org.telegram.ui.if0 if0Var = (org.telegram.ui.if0) obj4;
                 TLRPC.TL_error tL_error10 = (TLRPC.TL_error) obj2;
                 Bundle bundle2 = (Bundle) obj3;
                 TLObject tLObject7 = (TLObject) obj;
-                org.telegram.ui.fg0 fg0Var2 = jf0Var.s0;
-                jf0Var.d0 = false;
+                org.telegram.ui.eg0 eg0Var2 = if0Var.s0;
+                if0Var.d0 = false;
                 if (tL_error10 == null) {
-                    jf0Var.o0 = bundle2;
+                    if0Var.o0 = bundle2;
                     if (tLObject7 instanceof TLRPC.TL_auth_sentCode) {
                         TLRPC.TL_auth_sentCode tL_auth_sentCode = (TLRPC.TL_auth_sentCode) tLObject7;
-                        jf0Var.p0 = tL_auth_sentCode;
+                        if0Var.p0 = tL_auth_sentCode;
                         TLRPC.auth_SentCodeType auth_sentcodetype = tL_auth_sentCode.type;
                         if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeSmsPhrase) {
-                            jf0Var.g0 = 17;
+                            if0Var.g0 = 17;
                         } else if (auth_sentcodetype instanceof TLRPC.TL_auth_sentCodeTypeSmsWord) {
-                            jf0Var.g0 = 16;
+                            if0Var.g0 = 16;
                         }
-                        fg0Var2.g1(bundle2, tL_auth_sentCode, true);
+                        eg0Var2.g1(bundle2, tL_auth_sentCode, true);
                     } else if (tLObject7 instanceof TLRPC.TL_auth_sentCodePaymentRequired) {
                         TLRPC.TL_auth_sentCodePaymentRequired tL_auth_sentCodePaymentRequired = (TLRPC.TL_auth_sentCodePaymentRequired) tLObject7;
                         bundle2.putString("product", tL_auth_sentCodePaymentRequired.store_product);
@@ -552,58 +552,58 @@ public final /* synthetic */ class i90 implements Runnable {
                         bundle2.putString("currency", tL_auth_sentCodePaymentRequired.currency);
                         bundle2.putInt("premium_days", tL_auth_sentCodePaymentRequired.premium_days);
                         bundle2.putLong("amount", tL_auth_sentCodePaymentRequired.amount);
-                        fg0Var2.u1(18, true, bundle2, true);
+                        eg0Var2.u1(18, true, bundle2, true);
                     }
                 } else {
                     String str6 = tL_error10.text;
                     if (str6 != null) {
                         if (str6.contains("PHONE_NUMBER_INVALID")) {
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidPhoneNumber));
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidPhoneNumber));
                         } else if (tL_error10.text.contains("PHONE_CODE_EMPTY") || tL_error10.text.contains("PHONE_CODE_INVALID")) {
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
                         } else if (tL_error10.text.contains("PHONE_CODE_EXPIRED")) {
-                            jf0Var.c(true);
-                            fg0Var2.u1(0, true, null, true);
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
+                            if0Var.c(true);
+                            eg0Var2.u1(0, true, null, true);
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.CodeExpired));
                         } else if (tL_error10.text.startsWith("FLOOD_WAIT")) {
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.FloodWait));
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.FloodWait));
                         } else if (tL_error10.code != -1000) {
                             String string3 = LocaleController.getString(R.string.RestorePasswordNoEmailTitle);
                             StringBuilder sb5 = new StringBuilder();
                             org.telegram.ui.Cells.c1.n(R.string.ErrorOccurred, "\n", sb5);
                             sb5.append(tL_error10.text);
-                            fg0Var2.l1(string3, sb5.toString());
+                            eg0Var2.l1(string3, sb5.toString());
                         }
                     }
                 }
-                jf0Var.z(false);
+                if0Var.z(false);
                 break;
             case 25:
-                org.telegram.ui.of0.o((org.telegram.ui.of0) obj4, (String) obj3, (String) obj2, (String) obj);
+                org.telegram.ui.nf0.o((org.telegram.ui.nf0) obj4, (String) obj3, (String) obj2, (String) obj);
                 break;
             case 26:
                 c5.o oVar = (c5.o) obj3;
                 org.telegram.ui.v3 v3Var = (org.telegram.ui.v3) obj2;
-                org.telegram.ui.fg0 fg0Var3 = ((org.telegram.ui.of0) obj4).v;
-                fg0Var3.e = true;
+                org.telegram.ui.eg0 eg0Var3 = ((org.telegram.ui.nf0) obj4).v;
+                eg0Var3.e = true;
                 BillingController.getInstance().addResultListener(oVar.c, new org.telegram.ui.j3(v3Var, i22));
-                BillingController.getInstance().setOnCanceled(new org.telegram.ui.nf0(v3Var, i23));
+                BillingController.getInstance().setOnCanceled(new org.telegram.ui.mf0(v3Var, i23));
                 BillingController billingController = BillingController.getInstance();
-                Activity parentActivity2 = fg0Var3.getParentActivity();
-                i18 = ((org.telegram.ui.ActionBar.n2) fg0Var3).currentAccount;
+                Activity parentActivity2 = eg0Var3.getParentActivity();
+                i18 = ((org.telegram.ui.ActionBar.n2) eg0Var3).currentAccount;
                 AccountInstance accountInstance3 = AccountInstance.getInstance(i18);
                 n4.s sVar = new n4.s(i21, z11);
                 sVar.K(oVar);
-                billingController.launchBillingFlow(parentActivity2, accountInstance3, (TLRPC.TL_inputStorePaymentAuthCode) obj, Collections.singletonList(sVar.k()));
+                billingController.launchBillingFlow(parentActivity2, accountInstance3, (TLRPC.TL_inputStorePaymentAuthCode) obj, Collections.singletonList(sVar.j()));
                 break;
             case 27:
-                org.telegram.ui.eg0 eg0Var = (org.telegram.ui.eg0) obj4;
+                org.telegram.ui.dg0 dg0Var = (org.telegram.ui.dg0) obj4;
                 TLRPC.TL_error tL_error11 = (TLRPC.TL_error) obj2;
                 TLObject tLObject8 = (TLObject) obj;
                 String str7 = (String) obj3;
-                eg0Var.K = false;
-                org.telegram.ui.fg0 fg0Var4 = eg0Var.V;
-                fg0Var4.v1(false, true);
+                dg0Var.K = false;
+                org.telegram.ui.eg0 eg0Var4 = dg0Var.V;
+                eg0Var4.v1(false, true);
                 if (tL_error11 == null) {
                     TL_account.Password password = (TL_account.Password) tLObject8;
                     if (TwoStepVerificationActivity.i0(password, true)) {
@@ -612,35 +612,35 @@ public final /* synthetic */ class i90 implements Runnable {
                         password.serializeToStream(serializedData);
                         bundle3.putString("password", Utilities.bytesToHex(serializedData.toByteArray()));
                         bundle3.putString("phoneFormated", str7);
-                        fg0Var4.u1(6, true, bundle3, false);
+                        eg0Var4.u1(6, true, bundle3, false);
                         break;
                     } else {
-                        f5.w0(fg0Var4.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                        f5.w0(eg0Var4.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                         break;
                     }
                 } else {
-                    fg0Var4.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error11.text);
+                    eg0Var4.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error11.text);
                     break;
                 }
             case 28:
-                org.telegram.ui.ti0 ti0Var = (org.telegram.ui.ti0) obj4;
+                org.telegram.ui.si0 si0Var = (org.telegram.ui.si0) obj4;
                 kg.b bVar = (kg.b) obj3;
                 String str8 = (String) obj2;
                 org.telegram.ui.q91 q91Var = (org.telegram.ui.q91) obj;
-                org.telegram.ui.wi0 wi0Var = ti0Var.v.d;
+                org.telegram.ui.vi0 vi0Var = si0Var.v.d;
                 if (bVar != null) {
-                    wi0Var.v.put(str8, bVar);
+                    vi0Var.v.put(str8, bVar);
                 }
                 if (bVar != null && !q91Var.b && (i19 = q91Var.a) >= 0) {
-                    View m10 = wi0Var.h.m(i19);
+                    View m10 = vi0Var.h.m(i19);
                     if (m10 instanceof org.telegram.ui.b91) {
-                        ti0Var.r.e = bVar;
+                        si0Var.r.e = bVar;
                         org.telegram.ui.b91 b91Var = (org.telegram.ui.b91) m10;
                         b91Var.b.t0.d(false, false);
                         b91Var.g(false);
                     }
                 }
-                ti0Var.f();
+                si0Var.f();
                 break;
             default:
                 org.telegram.ui.ck0 ck0Var = (org.telegram.ui.ck0) obj4;
@@ -704,9 +704,9 @@ public final /* synthetic */ class i90 implements Runnable {
         this.e = runnable;
     }
 
-    public /* synthetic */ i90(org.telegram.ui.jf0 jf0Var, TLRPC.TL_error tL_error, Bundle bundle, TLObject tLObject) {
+    public /* synthetic */ i90(org.telegram.ui.if0 if0Var, TLRPC.TL_error tL_error, Bundle bundle, TLObject tLObject) {
         this.a = 24;
-        this.b = jf0Var;
+        this.b = if0Var;
         this.d = tL_error;
         this.c = bundle;
         this.e = tLObject;

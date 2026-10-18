@@ -3,7 +3,7 @@ Built-By: Signflinger
 Created-By: Android Gradle 8.13.2
 
 Name: AndroidManifest.xml
-SHA-256-Digest: GmNQgRkExTplqrXYIlwQawLJPu5LUOcKelrsj4xhZ/U=
+SHA-256-Digest: MRoLzd06GAxLz1r4ndJ30thFYYIni1XsVdJ47lOlGoo=
 
 Name: DebugProbesKt.bin
 SHA-256-Digest: hv7NAjXUWDmEUIHB+RyaWLQLCueH8kK9uo+RUNpF0Os=
@@ -184,7 +184,7 @@ Name: META-INF/services/ce.b
 SHA-256-Digest: Pqx28uuIaJCwMw3dULdyAPYDKAcIT8VxmCXaJJXrtgw=
 
 Name: META-INF/version-control-info.textproto
-SHA-256-Digest: e+02xFh4UsP/pKZ5pSq6Z2l2YFgMv5/lUzkA/QcPq08=
+SHA-256-Digest: q+i1d4HSlKyEQOVmcEVBhCx3VnL/2ZlHI1BnEkqn6No=
 
 Name: assets/PhoneFormats.dat
 SHA-256-Digest: 3lhMCMspXMG+qtRMfAdIiZVAfmSvEaJ6PSvP7jxXttA=
@@ -208,10 +208,10 @@ Name: assets/day.attheme
 SHA-256-Digest: iJcTtt/cA0lO2c8nJ3/qkEvJMZOXLxtWmnkHMxiYvPw=
 
 Name: assets/dexopt/baseline.prof
-SHA-256-Digest: YWY1z1u6aI5251stHc9ZGV0bjNskJ/3ij3AcBWio7qA=
+SHA-256-Digest: RPmQe/EZn00i00tN157VD1Gx149KE1vkB1/awKPcyUg=
 
 Name: assets/dexopt/baseline.profm
-SHA-256-Digest: 3uHDhxIvVm6+/HeQF9/YztVck6z40T+jQE/2HiDfgiw=
+SHA-256-Digest: hS9W8A3RferhC9NnaCJ1bR7bSz/WMy52rzfrzI7I7PA=
 
 Name: assets/emoji.pack
 SHA-256-Digest: xCAP2LDvvyJnKXwITyP49JDQOhxV12yH6i+EQyh2llI=
@@ -326,24 +326,6 @@ SHA-256-Digest: tdTA4qA54/0d2zGRHSkeibaR6eetdDE9TuQAbSvKR7M=
 
 Name: assets/lottie_meta.bin
 SHA-256-Digest: BMJzHv+/cbTbx9UYwM6Wl+ZVOW1o4BaWzf4eelZAXjU=
-
-Name: assets/models/card.binobj
-SHA-256-Digest: 9L6NtUdisIEn9q4Q339pjmJ4f6BzH+UtARLJrnJZd7A=
-
-Name: assets/models/card.obj
-SHA-256-Digest: zcb9NZRQKtKhDa2dSJ4Jy13z6MbqgjTOUN2YsAm9tww=
-
-Name: assets/models/card_back.binobj
-SHA-256-Digest: 8MDIK5X+YmMWJUctejpSfIY9e9Hb2pquBZsRKDVkaVI=
-
-Name: assets/models/card_edge.binobj
-SHA-256-Digest: K88XBUN80AbZexWkVPeYnMo1HLmjYAzx7IQc/L/N+cM=
-
-Name: assets/models/card_front.binobj
-SHA-256-Digest: l/SGAqChFfgVhPXBs8u/1I31EoSlEntiIp6VxpOCUy0=
-
-Name: assets/models/card_rim.binobj
-SHA-256-Digest: nR4Qcw6T+4pgDYCDbaRBtnrn0xhf98w/jlNulBpAhI4=
 
 Name: assets/models/coin_border.png
 SHA-256-Digest: PWOVButO/8X6TWx+0EBKPb8DR5cLGzuJrihMV7Iz/1U=
@@ -607,21 +589,6 @@ SHA-256-Digest: X4l+2mgK5P8ON8P4MBl70qEjTCWRyVmkYjRJA6+SsfM=
 Name: assets/shaders/vertex2.glsl
 SHA-256-Digest: 9flw+Q1nzREspOETmlqYeSWFnsOAsN34OiaPJ7cxWLo=
 
-Name: assets/shaders/wallet_card_diamond_fragment.glsl
-SHA-256-Digest: tJyGC79V1ALrvnGQmQp/2X0DBSfheJT3oG/43hem3zc=
-
-Name: assets/shaders/wallet_card_fragment.glsl
-SHA-256-Digest: cfC0Xz6l0khIMOsPGXR+OhZeDDcINumAW4hSTnLBL5I=
-
-Name: assets/shaders/wallet_card_rim_fragment.glsl
-SHA-256-Digest: LDsAJ0J2xDmWp7XfWAoElIeqS9JUNInLhiVHWSATXKw=
-
-Name: assets/shaders/wallet_card_rim_vertex.glsl
-SHA-256-Digest: 21auOt2HRL1PRSifFes9D2qK32l4Gm/TVaOAYwO4Krk=
-
-Name: assets/shaders/wallet_card_vertex.glsl
-SHA-256-Digest: ArRu7Mp2VQ8s1wmuLi2MMiMzmjCtOJ73efYEtu1g7Gs=
-
 Name: assets/shapes.dat
 SHA-256-Digest: /6vyM17dx2oO19x5jy6OX7Z7mIzWvGGnUQkjKNrIdlc=
 
@@ -630,6 +597,177 @@ SHA-256-Digest: 8tT23lfEiRHa7ons6mBqj+F80+8lvwdJZcivKlLLYi8=
 
 Name: assets/tflite_langid.tflite.jpg
 SHA-256-Digest: f5Mfb3wd0OxZGs53gN+RZFpFD6/INQXz/0XOXvfIRBs=
+
+Name: assets/wallet_card_2d/face_0_0.webp
+SHA-256-Digest: MgAl2xB+RwXISf2mcU3HGheTOmkQXa3KwoxsYKGQyEw=
+
+Name: assets/wallet_card_2d/face_0_1.webp
+SHA-256-Digest: OKPbBbTWZTGx66FnDSVu2H3nehKCAamuVHf35AiVlUo=
+
+Name: assets/wallet_card_2d/face_0_2.webp
+SHA-256-Digest: GRPN7ExiiVVdHUxz22LmH3TDIdPDEOTk8QINCYAjrF0=
+
+Name: assets/wallet_card_2d/face_0_3.webp
+SHA-256-Digest: rjxjZm3BLRW3Tc4WLr0qtyS3ARze1sfl4vR8DPsvjtU=
+
+Name: assets/wallet_card_2d/face_0_4.webp
+SHA-256-Digest: 9ixRarBjr1f0Nu1jZTBjbD3As2+P+PKVfyefLC11ZwA=
+
+Name: assets/wallet_card_2d/face_0_5.webp
+SHA-256-Digest: 9/T0JsVtpWlkze7zGuDKIrf4OYFFtWd5iI9wGxZ0Nxc=
+
+Name: assets/wallet_card_2d/face_0_6.webp
+SHA-256-Digest: nGCN1cJLmkUXhdajIMKGIwkuvHHpApm40UJ9a5O1fDs=
+
+Name: assets/wallet_card_2d/face_0_7.webp
+SHA-256-Digest: vKg81DvulhGauiL6NaWk6TdyKOvaIFsSgRgmJDMsuOM=
+
+Name: assets/wallet_card_2d/face_1_0.webp
+SHA-256-Digest: yISl2rByiepWQGl4ipcvuqvN9AnZlMi7gXUHaKWqBrA=
+
+Name: assets/wallet_card_2d/face_1_1.webp
+SHA-256-Digest: vh3kK/VFporMhzAB4/f2YHasnqBZZqgqGuq13vCeXd4=
+
+Name: assets/wallet_card_2d/face_1_2.webp
+SHA-256-Digest: iWmh1TYIseuyB7y2LqWid05aoSYh3O3m2C0tLveafI0=
+
+Name: assets/wallet_card_2d/face_1_3.webp
+SHA-256-Digest: 84MCW5sSWsJUSnY2FoagZyymKbO3y/36z9dgtvUVoNI=
+
+Name: assets/wallet_card_2d/face_1_4.webp
+SHA-256-Digest: cDlmQBU7r8DW7zU7S9UaMImfeAnSQqwqCmr0dYliUj8=
+
+Name: assets/wallet_card_2d/face_1_5.webp
+SHA-256-Digest: dPeT57Vf3l8lDjMR2xchuLQtB8cfREHV+apGanO/BCo=
+
+Name: assets/wallet_card_2d/face_1_6.webp
+SHA-256-Digest: xC8pWhFa6XpwCXRtum8yvhB5GqDBhkw1W5lSCe8XwMI=
+
+Name: assets/wallet_card_2d/face_1_7.webp
+SHA-256-Digest: hwseDNxsBejkHbfzZc5ZJ7g7SRfQYapH764zSRqlylo=
+
+Name: assets/wallet_card_2d/finish_dark.webp
+SHA-256-Digest: igmpSjUqfjWsIUoCwjqHYBnFoltSkMTeixDEMpyXTeM=
+
+Name: assets/wallet_card_2d/finish_light.webp
+SHA-256-Digest: Yo7u8oW//tEyRPWuzhHWMEaMG84+HmKb0eyzwC1x+DA=
+
+Name: assets/wallet_card_2d/grain.webp
+SHA-256-Digest: Zo+0RpLbEdY6tAv015bbOrAB2ybel7k1f3+k9LlNiqk=
+
+Name: assets/wallet_card_2d/groove_across.webp
+SHA-256-Digest: //wzhW9uj4L/RH0tPqdxlAxNHk+qry+UcDhmiuseres=
+
+Name: assets/wallet_card_2d/groove_along.webp
+SHA-256-Digest: V2BbT0DO6CrBqiXomAyWvhSa/zBQuIqNLmVPwMLoQjw=
+
+Name: assets/wallet_card_2d/icon_info_dark_0.webp
+SHA-256-Digest: o/qZ8dQgj2UerTf81Fj6TzbPEwRMJFvdv+oZPSAb/nk=
+
+Name: assets/wallet_card_2d/icon_info_dark_1.webp
+SHA-256-Digest: 691j+ULRcNLQwcTR+hhy+fNp/htU9Nw6cNhhDRw1o1U=
+
+Name: assets/wallet_card_2d/icon_info_dark_2.webp
+SHA-256-Digest: ezaPEuhVtqR/KX9Q5NnuzLwSHdG8iX6U9M+cwt/inDo=
+
+Name: assets/wallet_card_2d/icon_info_dark_3.webp
+SHA-256-Digest: kb1Uf19ll/NRbXm0H02hbFrZo9fKa05povjoISwIqHc=
+
+Name: assets/wallet_card_2d/icon_info_dark_4.webp
+SHA-256-Digest: Sxs98W/PhGSKK5OHD8VeBgEOyITmdShx/2QyWS752/I=
+
+Name: assets/wallet_card_2d/icon_info_dark_5.webp
+SHA-256-Digest: RFsbDlwStuNehLV2y43BXfhJjibUVAahNg6V8lNtbHo=
+
+Name: assets/wallet_card_2d/icon_info_dark_6.webp
+SHA-256-Digest: 19RxokyCMHMMKEDDDVTViTXRfnAkkMFnmQ4Wtj9Gvw4=
+
+Name: assets/wallet_card_2d/icon_info_dark_7.webp
+SHA-256-Digest: v/R3LlJqVn16aK4eRGqu/IITD6L0jCUhi7yKryXAq60=
+
+Name: assets/wallet_card_2d/icon_info_light_0.webp
+SHA-256-Digest: XTvZ+XS2Et2AmniF24e4I5FL7pNcK8a8VYt20xNtHys=
+
+Name: assets/wallet_card_2d/icon_info_light_1.webp
+SHA-256-Digest: 6xyhnD0TD7pVgqcuq4MSLdq0KNu8mxgSqZIWCmoSXkg=
+
+Name: assets/wallet_card_2d/icon_info_light_2.webp
+SHA-256-Digest: 0DoRLTf8b+PpDZ8aLR3eic4y7J7/Q65FBV7ZKVYLzyo=
+
+Name: assets/wallet_card_2d/icon_info_light_3.webp
+SHA-256-Digest: Q5UyMLmf0OQ4W9nFW7+0Hinx5Fj9EcdEW2cK8ouO+MQ=
+
+Name: assets/wallet_card_2d/icon_info_light_4.webp
+SHA-256-Digest: cb1MWEUb8XUUJjzeIETGb2xmydVkcg9hv21jQnSlD7s=
+
+Name: assets/wallet_card_2d/icon_info_light_5.webp
+SHA-256-Digest: hT6Immppn5jv0KnTchWs85YhRm/Cf8f3jsrn4f8nu1A=
+
+Name: assets/wallet_card_2d/icon_info_light_6.webp
+SHA-256-Digest: YSs71OU1ohLBVlhmpJpx9B4aWuVZhq0Cklc2ZA9dsTI=
+
+Name: assets/wallet_card_2d/icon_info_light_7.webp
+SHA-256-Digest: nGIBQhev+DQh4hIfbSbiLzGmZRxFQuG9Gh7La2s3QzQ=
+
+Name: assets/wallet_card_2d/icon_info_mask.webp
+SHA-256-Digest: /biBRf4mMt3jJFRQCSJAVe64O/P0h01w4FguXMhl04k=
+
+Name: assets/wallet_card_2d/icon_qr_dark_0.webp
+SHA-256-Digest: ojRXGjo4bNk6IxqOCOP6E29e4sT9xt+6GufGPUjLytA=
+
+Name: assets/wallet_card_2d/icon_qr_dark_1.webp
+SHA-256-Digest: WkUx3MEkzme++egnXzjXJZrvpMQt2JeFP11+8f5w2lg=
+
+Name: assets/wallet_card_2d/icon_qr_dark_2.webp
+SHA-256-Digest: c3kLOBm60Sv7EEP2Xz/wMuV9cb2+xuQp7GS47HX/bp8=
+
+Name: assets/wallet_card_2d/icon_qr_dark_3.webp
+SHA-256-Digest: 9RmQaaDXN5JOocQ4Zp8NewUBUxH6NMAoYWUC3bhUeiE=
+
+Name: assets/wallet_card_2d/icon_qr_dark_4.webp
+SHA-256-Digest: p/RDgqiqfyTVoicgu5daEoOe1ZiY2CVQaAQZcrn2Omc=
+
+Name: assets/wallet_card_2d/icon_qr_dark_5.webp
+SHA-256-Digest: wJC0uVvLzPPIcAAqgBKnbO4f6PHhhjYSt2o4Ib25s3w=
+
+Name: assets/wallet_card_2d/icon_qr_dark_6.webp
+SHA-256-Digest: JtHbF2heOTrLtEMQWEdSWnfKYpmicDB3yimj3hMl+7g=
+
+Name: assets/wallet_card_2d/icon_qr_dark_7.webp
+SHA-256-Digest: CwGI1JVOuFgMMWkeOppGetCFIcycQQQhhJCeKN30P7U=
+
+Name: assets/wallet_card_2d/icon_qr_light_0.webp
+SHA-256-Digest: 0GAPHS+9V6SLXW7JrBoJETjC8kFQLc+OmAr54t0DKlE=
+
+Name: assets/wallet_card_2d/icon_qr_light_1.webp
+SHA-256-Digest: TCzpFr3hZk8nj92d+yY9v2ENCkyiRsTDeer2Uly3Rtk=
+
+Name: assets/wallet_card_2d/icon_qr_light_2.webp
+SHA-256-Digest: XgWBF8B5Sh0Mu1JKeJ6ffH0XjBFMZEUITBs8chD+JUI=
+
+Name: assets/wallet_card_2d/icon_qr_light_3.webp
+SHA-256-Digest: SefaBmWnmCwjhJVPhHNdp2iifIfNjmbeBgtO8bSkz94=
+
+Name: assets/wallet_card_2d/icon_qr_light_4.webp
+SHA-256-Digest: cDIEpZE1bRNFSYq9uVYFbUO1s2D+7OXIdQ4aDCws68I=
+
+Name: assets/wallet_card_2d/icon_qr_light_5.webp
+SHA-256-Digest: CXq2wH+WP6k7v3DTz4NweG15zFGijU9i8JZBMvQC2xY=
+
+Name: assets/wallet_card_2d/icon_qr_light_6.webp
+SHA-256-Digest: CKVdex1pygY+x5c7krK4449BRN8Xuymo+29addXwUNw=
+
+Name: assets/wallet_card_2d/icon_qr_light_7.webp
+SHA-256-Digest: aXWdfyMdWGOUVz6nvgJ9KEz8eRaQHDHfUgzNwPiFpUA=
+
+Name: assets/wallet_card_2d/icon_qr_mask.webp
+SHA-256-Digest: MZHMT1iO7LC3MXLsTNR+QFHoAXIW991XcGxdSxdiB0k=
+
+Name: assets/wallet_card_2d/qr_brush_dark.webp
+SHA-256-Digest: 9QmhhchFeR2sdatxma5/30a3sJj+OkPErA3eV+MMzXY=
+
+Name: assets/wallet_card_2d/qr_brush_light.webp
+SHA-256-Digest: w9OxFNKFxqVkmT1aUT1FfBcRaJUyWy8fd/aVO65dX24=
 
 Name: assets/youtube_embed.html
 SHA-256-Digest: ZHWakuIoaPOnvDc4GQhSCv+brjHvLF48+ZisL5wNbAU=
@@ -647,16 +785,16 @@ Name: car-app-api.level
 SHA-256-Digest: EBWbryYrQ6ktldtZ2uH3LGRRJzAWYeCjzk44spWpfFg=
 
 Name: classes.dex
-SHA-256-Digest: qgwh9KOz+saVb5APuCbmkgXmSGwLnTMXBi/XScJj3ls=
+SHA-256-Digest: lWQR8Rd1gk2JGQcZGIBjayjNCJINpTfocnCQlM8Bcnk=
 
 Name: classes2.dex
 SHA-256-Digest: ebEL/AxUOotAyAj/V3sWv/2+l/jo7ZTe2pduLzK45gc=
 
 Name: classes3.dex
-SHA-256-Digest: STVp6Q/9FAPb4eYJhTz0Re+W/aB6PcOPqvAPdCiQA64=
+SHA-256-Digest: SCtYmdjHz/78mqcid/4Qt2jxufbH38cl8ukGsvRRfPU=
 
 Name: classes4.dex
-SHA-256-Digest: NYQ0Hyu0IeTRtoJuVrdIqC9eyabt31LQgA4FOisSMZ8=
+SHA-256-Digest: v3ST6NF6ibbwgZMJ8o/K42CCeGEI0fwL28mGX9BxEYI=
 
 Name: client_analytics.proto
 SHA-256-Digest: DHZzJ3Z3KyYFKFWPm2daSVKcrXhcQhyhG0hxebgWJhA=
@@ -743,25 +881,25 @@ Name: lib/arm64-v8a/liblanguage_id_l2c_jni.so
 SHA-256-Digest: uT5lpIIA30Xbv8guF1YK5omxtGKrTs3OX9LAk4AuGpQ=
 
 Name: lib/arm64-v8a/libtmessages.49.so
-SHA-256-Digest: N89IC0XmQ9KNoZYSCNx43t3lJCwv33ko208nQjSTMGs=
+SHA-256-Digest: Rd/RqmTkOoLyG5U7EOXV4cvtjFk6gAAgz59dN9HfQZU=
 
 Name: lib/armeabi-v7a/liblanguage_id_l2c_jni.so
 SHA-256-Digest: j44kxjqsegNaodVgozdNX1IFOVBnzdYmAdiZcNX97/E=
 
 Name: lib/armeabi-v7a/libtmessages.49.so
-SHA-256-Digest: vqxrVDq6t3urRbgFieeEtXUT+ioFWU+xcu5HibBP/6k=
+SHA-256-Digest: aYjO7GtIvFdMdKzk1Y+fGYiikZ3QRH6Mt3GqLxzzVq0=
 
 Name: lib/x86/liblanguage_id_l2c_jni.so
 SHA-256-Digest: qAeifCg3sqi9ut1U8cXYt2XHgTFo1A+U75ai2uFE4Ws=
 
 Name: lib/x86/libtmessages.49.so
-SHA-256-Digest: +4OyuoP4+qNrDTCj/XSf0T+8v+ekZxpRiXt2m4iV6l4=
+SHA-256-Digest: sdPsZiV8+YuK8UV5L0nj4B1iXwpHdeNq07RqVmN9ebo=
 
 Name: lib/x86_64/liblanguage_id_l2c_jni.so
 SHA-256-Digest: mtvZSIjLfEfmsLlKIUUZnL47nk7qSOr8mvR6bD0PTUo=
 
 Name: lib/x86_64/libtmessages.49.so
-SHA-256-Digest: Q8j7jupOzYTVjaBnPIqu56+/GclsdecR57LueI+F3ro=
+SHA-256-Digest: 5HYyL01c1np6sjoQbPREaOY4ghKmqTXgXlDsHAur3TY=
 
 Name: messaging_event.proto
 SHA-256-Digest: CxNKn/4hQW/iJfN09E9uyli0dRn+rkyQuC4lZ36NVs4=
@@ -22136,7 +22274,7 @@ Name: res/zzZ.xml
 SHA-256-Digest: xqWCaouE8r0YBVgJc0Xzan/HN/Oq7BrXyFux9BXwV7A=
 
 Name: resources.arsc
-SHA-256-Digest: l3v2+MCf12GwUgECyAo032QlYaNfma6jmpPi3qtn7pY=
+SHA-256-Digest: yEdf01c1khyWJsJlWNVAI4ZdgxHjeZmS6YqVsn1M13k=
 
 Name: version.txt
 SHA-256-Digest: cZQJx0x+5QAGq9BLLED2ycADi2VSsLq3f+qG6DWbzDg=

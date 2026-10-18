@@ -22,7 +22,6 @@ import n6.l;
 import n6.o;
 import rb.g;
 import rb.j;
-import t0.h;
 import tb.b;
 import v7.b6;
 import v7.c7;
@@ -36,7 +35,7 @@ import v7.y8;
 import v7.z8;
 import vb.e;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final y8 a;
@@ -76,9 +75,9 @@ public class LanguageIdentifierImpl implements b {
         eVar.d(this.c);
         qi.e eVar2 = new qi.e();
         eVar2.c = this.f;
-        h hVar = new h(6, false);
-        hVar.c = k();
-        eVar2.d = new g7(hVar);
+        u2.c cVar = new u2.c(5, false);
+        cVar.c = k();
+        eVar2.d = new g7(cVar);
         a aVar = new a(eVar2, 1);
         y8 y8Var = this.a;
         Task task = y8Var.e;
@@ -124,19 +123,19 @@ public class LanguageIdentifierImpl implements b {
         boolean z11 = false;
         if (hashMap.get(j6Var) == null || elapsedRealtime2 - ((Long) hashMap.get(j6Var)).longValue() > TimeUnit.SECONDS.toMillis(30L)) {
             hashMap.put(j6Var, Long.valueOf(elapsedRealtime2));
-            h hVar = new h(6, z11);
-            hVar.c = k();
-            h hVar2 = new h(5, z11);
-            hVar2.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            hVar2.d = Boolean.valueOf(z10);
-            hVar2.c = i6Var;
-            hVar.b = new b6(hVar2);
+            u2.c cVar = new u2.c(5, z11);
+            cVar.c = k();
+            u2.c cVar2 = new u2.c(4, z11);
+            cVar2.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
+            cVar2.d = Boolean.valueOf(z10);
+            cVar2.c = i6Var;
+            cVar.b = new b6(cVar2);
             if (e7Var != null) {
-                hVar.d = e7Var;
+                cVar.d = e7Var;
             }
             qi.e eVar = new qi.e();
             eVar.c = this.f;
-            eVar.d = new g7(hVar);
+            eVar.d = new g7(cVar);
             a aVar = new a(eVar, 0);
             Task task = y8Var.e;
             rb.m.a.execute(new p(y8Var, aVar, j6Var, task.isSuccessful() ? (String) task.getResult() : i.c.a(y8Var.g), 6));

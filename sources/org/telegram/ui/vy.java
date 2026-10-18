@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class vy extends LinearLayout {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -39,7 +39,7 @@ public final class vy extends LinearLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.c = w9Var;
         w9Var.setImageDrawable(new org.telegram.ui.Components.uj0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
-        frameLayout.addView(w9Var, w7.z5.a(160.0f, 0.0f, 12.33f, 0.0f, 0.0f, 160, 49));
+        frameLayout.addView(w9Var, w7.z5.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         int i10 = org.telegram.ui.ActionBar.h6.z6;
         TextView b10 = w7.d6.b(context, 14.0f, i10, true, null);
@@ -56,7 +56,7 @@ public final class vy extends LinearLayout {
         TextView b11 = w7.d6.b(context, 14.0f, i12, true, null);
         b11.setText(LocaleController.getString(R.string.TopicsLayoutTabs));
         frameLayout3.addView(b11, w7.z5.e(-2, -2, 17));
-        frameLayout.addView(frameLayout2, w7.z5.a(26.0f, 0.0f, 182.0f, 0.0f, 0.0f, -2, 49));
+        frameLayout.addView(frameLayout2, w7.z5.d(-2, 26.0f, 49, 0.0f, 182.0f, 0.0f, 0.0f));
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.e = frameLayout4;
         w7.b6.b(frameLayout4, 0.05f, 1.25f);
@@ -64,7 +64,7 @@ public final class vy extends LinearLayout {
         org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
         this.f = w9Var2;
         w9Var2.setImageDrawable(new org.telegram.ui.Components.uj0(R.raw.topics_list, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
-        frameLayout4.addView(w9Var2, w7.z5.a(160.0f, 0.0f, 12.33f, 0.0f, 0.0f, 160, 49));
+        frameLayout4.addView(w9Var2, w7.z5.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout5 = new FrameLayout(context);
         TextView b12 = w7.d6.b(context, 14.0f, i10, true, null);
         b12.setPadding(org.telegram.ui.Cells.c1.e(12.0f, R.string.TopicsLayoutList, b12), 0, AndroidUtilities.dp(12.0f), 0);
@@ -77,7 +77,7 @@ public final class vy extends LinearLayout {
         TextView b13 = w7.d6.b(context, 14.0f, i12, true, null);
         b13.setText(LocaleController.getString(R.string.TopicsLayoutList));
         frameLayout6.addView(b13, w7.z5.e(-2, -2, 17));
-        frameLayout4.addView(frameLayout5, w7.z5.a(26.0f, 0.0f, 182.0f, 0.0f, 0.0f, -2, 49));
+        frameLayout4.addView(frameLayout5, w7.z5.d(-2, 26.0f, 49, 0.0f, 182.0f, 0.0f, 0.0f));
         a(false, false);
     }
 

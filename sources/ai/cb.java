@@ -72,7 +72,7 @@ import org.telegram.ui.px;
 import org.telegram.ui.qn;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class cb implements Runnable {
     public final /* synthetic */ int a;
@@ -127,40 +127,40 @@ public final /* synthetic */ class cb implements Runnable {
                 k7Var.show();
                 break;
             case 1:
-                ci.a7 a7Var = (ci.a7) obj3;
+                ci.z6 z6Var = (ci.z6) obj3;
                 ArrayList arrayList = (ArrayList) obj2;
                 TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) obj;
-                AbstractSet abstractSet = a7Var.k;
-                int i23 = a7Var.f;
-                AbstractSet abstractSet2 = a7Var.l;
-                a7Var.A = -1;
+                AbstractSet abstractSet = z6Var.k;
+                int i23 = z6Var.f;
+                AbstractSet abstractSet2 = z6Var.l;
+                z6Var.A = -1;
                 StringBuilder sb2 = new StringBuilder("StoriesList ");
-                int i24 = a7Var.e;
+                int i24 = z6Var.e;
                 sb2.append(i24);
                 sb2.append("{");
-                long j10 = a7Var.d;
+                long j10 = z6Var.d;
                 sb2.append(j10);
                 sb2.append("} loaded {");
-                sb2.append(ci.i7.a(arrayList));
+                sb2.append(ci.h7.a(arrayList));
                 i2.d.v("}", sb2);
-                ArrayList arrayList2 = a7Var.g;
+                ArrayList arrayList2 = z6Var.g;
                 arrayList2.clear();
                 arrayList2.addAll(tL_stories_stories.pinned_to_top);
-                int i25 = a7Var.c;
+                int i25 = z6Var.c;
                 boolean z10 = false;
                 MessagesController.getInstance(i25).putUsers(tL_stories_stories.users, false);
                 MessagesController.getInstance(i25).putChats(tL_stories_stories.chats, false);
                 MessagesStorage.getInstance(i25).putUsersAndChats(tL_stories_stories.users, tL_stories_stories.chats, true, true);
-                a7Var.u = false;
-                a7Var.s = tL_stories_stories.count;
+                z6Var.u = false;
+                z6Var.s = tL_stories_stories.count;
                 int i26 = 0;
                 while (i26 < arrayList.size()) {
-                    a7Var.t((MessageObject) arrayList.get(i26), z10);
+                    z6Var.t((MessageObject) arrayList.get(i26), z10);
                     i26++;
                     z10 = false;
                 }
-                boolean z11 = abstractSet2.size() >= a7Var.s;
-                a7Var.r = z11;
+                boolean z11 = abstractSet2.size() >= z6Var.s;
+                z6Var.r = z11;
                 if (z11) {
                     Iterator it = abstractSet.iterator();
                     while (it.hasNext()) {
@@ -168,7 +168,7 @@ public final /* synthetic */ class cb implements Runnable {
                         int intValue = num.intValue();
                         if (!abstractSet2.contains(num)) {
                             it.remove();
-                            a7Var.u(intValue, false);
+                            z6Var.u(intValue, false);
                         }
                     }
                 } else if (i23 <= 0) {
@@ -187,40 +187,40 @@ public final /* synthetic */ class cb implements Runnable {
                         i10 = -1;
                         i19 = i10;
                     }
-                    int n10 = a7Var.n();
+                    int n10 = z6Var.n();
                     Iterator it2 = abstractSet.iterator();
                     while (it2.hasNext()) {
                         Integer num3 = (Integer) it2.next();
                         int intValue3 = num3.intValue();
                         if (!abstractSet2.contains(num3) && intValue3 >= i19 && intValue3 <= n10) {
                             it2.remove();
-                            a7Var.u(intValue3, false);
+                            z6Var.u(intValue3, false);
                         }
                     }
                 }
-                a7Var.d(true);
-                if (a7Var.r) {
-                    if (ci.a7.B == null) {
-                        ci.a7.B = new HashMap();
+                z6Var.d(true);
+                if (z6Var.r) {
+                    if (ci.z6.B == null) {
+                        ci.z6.B = new HashMap();
                     }
-                    ci.a7.B.put(Integer.valueOf(Objects.hash(Integer.valueOf(i25), Integer.valueOf(i24), Long.valueOf(j10), Integer.valueOf(i23))), Long.valueOf(System.currentTimeMillis()));
+                    ci.z6.B.put(Integer.valueOf(Objects.hash(Integer.valueOf(i25), Integer.valueOf(i24), Long.valueOf(j10), Integer.valueOf(i23))), Long.valueOf(System.currentTimeMillis()));
                 } else {
-                    a7Var.w();
+                    z6Var.w();
                 }
-                a7Var.x();
+                z6Var.x();
                 break;
             case 2:
                 AndroidUtilities.runOnUIThread(new ei.z1(MessagesStorage.getInstance(i19).getUsers((ArrayList) obj3), (HashMap) obj2, (Utilities.Callback) obj, 9));
                 break;
             case 3:
                 TLRPC.UserFull userFull2 = (TLRPC.UserFull) obj3;
-                org.telegram.ui.web.r rVar = (org.telegram.ui.web.r) obj2;
+                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) obj2;
                 TLRPC.User user = (TLRPC.User) obj;
                 if (userFull2 == null) {
-                    rVar.run(Boolean.FALSE, "cancelled");
+                    sVar.run(Boolean.FALSE, "cancelled");
                     break;
                 } else {
-                    gi.r4.b(i19, user, userFull2, rVar);
+                    gi.r4.b(i19, user, userFull2, sVar);
                     break;
                 }
             case 4:

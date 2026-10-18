@@ -1,6 +1,5 @@
 package hg;
 
-import ai.q7;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.PorterDuff;
@@ -11,9 +10,9 @@ import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import ci.i4;
-import ci.i7;
-import ci.r7;
+import ci.h4;
+import ci.h7;
+import ci.q7;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -75,7 +74,7 @@ import org.telegram.ui.yx;
 import org.telegram.ui.zx;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class m extends hm0 implements n2 {
     public static final boolean c0 = BuildVars.DEBUG_PRIVATE_VERSION;
@@ -132,7 +131,7 @@ public class m extends hm0 implements n2 {
             jVar.b = new HashSet();
             jVar.c = new HashSet();
             jVar.d = new ArrayList();
-            jVar.e = new ah.j(jVar, 16);
+            jVar.e = new ah.j(jVar, 15);
             this.P = jVar;
         }
         this.T = requestPeerType;
@@ -647,7 +646,7 @@ public class m extends hm0 implements n2 {
 
     @Override // org.telegram.ui.Cells.n2
     public final void c() {
-        i7 storiesController = MessagesController.getInstance(this.F).getStoriesController();
+        h7 storiesController = MessagesController.getInstance(this.F).getStoriesController();
         ArrayList arrayList = storiesController.h;
         if (arrayList.isEmpty()) {
             return;
@@ -660,7 +659,7 @@ public class m extends hm0 implements n2 {
                 arrayList2.add(Long.valueOf(peerDialogId));
             }
         }
-        this.R.getOrCreateStoryViewer().G(this.c, null, arrayList2, 0, null, null, new r7(this.K, true), false);
+        this.R.getOrCreateStoryViewer().G(this.c, null, arrayList2, 0, null, null, new q7(this.K, true), false);
     }
 
     @Override // org.telegram.ui.Cells.n2
@@ -670,7 +669,7 @@ public class m extends hm0 implements n2 {
         if (MessagesController.getInstance(i10).getStoriesController().I(r2Var.getDialogId())) {
             ey eyVar = this.R;
             eyVar.getOrCreateStoryViewer().getClass();
-            eyVar.getOrCreateStoryViewer().D(eyVar.getParentActivity(), r2Var.getDialogId(), r7.a((im0) r2Var.getParent()));
+            eyVar.getOrCreateStoryViewer().D(eyVar.getParentActivity(), r2Var.getDialogId(), q7.a((im0) r2Var.getParent()));
         }
     }
 
@@ -896,7 +895,7 @@ public class m extends hm0 implements n2 {
             int i18 = this.h;
             if (i18 != 7 && i18 != 8) {
                 x2Var.setOnUtyanAnimationEndListener(new f(this, r13 ? 1 : 0));
-                x2Var.setOnUtyanAnimationUpdateListener(new q7(this, 4));
+                x2Var.setOnUtyanAnimationUpdateListener(new ai.q7(this, 4));
                 if (!x2Var.d && this.f == 0) {
                     eyVar.x4(0.0f);
                     for (dy dyVar : eyVar.e0) {
@@ -1089,7 +1088,7 @@ public class m extends hm0 implements n2 {
     /* JADX WARN: Type inference failed for: r2v4 */
     /* JADX WARN: Type inference failed for: r2v5, types: [org.telegram.ui.Components.b10] */
     /* JADX WARN: Type inference failed for: r2v6, types: [android.view.ViewGroup, org.telegram.ui.Cells.l4] */
-    /* JADX WARN: Type inference failed for: r2v7, types: [android.view.View, android.view.ViewGroup, ci.i4] */
+    /* JADX WARN: Type inference failed for: r2v7, types: [android.view.View, android.view.ViewGroup, ci.h4] */
     /* JADX WARN: Type inference failed for: r2v8, types: [android.view.View, org.telegram.ui.Cells.a0, org.telegram.ui.Cells.s2] */
     /* JADX WARN: Type inference failed for: r2v9, types: [org.telegram.ui.Cells.x2] */
     @Override // s4.g0
@@ -1153,15 +1152,15 @@ public class m extends hm0 implements n2 {
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.L6, false));
                 textView.setText(LocaleController.getString(R.string.RecentlyViewedHide));
                 textView.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
-                r22.addView(textView, z5.a(-1.0f, 17.0f, 15.0f, 17.0f, 0.0f, -1, (LocaleController.isRTL ? 3 : 5) | 48));
+                r22.addView(textView, z5.d(-1, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 17.0f, 15.0f, 17.0f, 0.0f));
                 textView.setOnClickListener(new ah.g0(this, 28));
                 break;
             case 3:
-                r22 = new i4(context, 2);
+                r22 = new h4(context, 2);
                 r22.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
                 View view = new View(context);
                 view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.W0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7));
-                r22.addView(view, z5.d(-1.0f, -1));
+                r22.addView(view, z5.c(-1.0f, -1));
                 break;
             case 4:
                 r22 = new s2(context);
@@ -1178,7 +1177,7 @@ public class m extends hm0 implements n2 {
                 r22 = new x2(context);
                 break;
             case 6:
-                r22 = new va(8, 0, context, false);
+                r22 = new va(context, 8, 0, false);
                 break;
             case 7:
                 r22 = new l4(context);
@@ -1235,7 +1234,7 @@ public class m extends hm0 implements n2 {
                 break;
             case 19:
                 r22 = new l(this, context);
-                r22.addView(new w6(this.c, this.F, null, new f(this, 1), null), z5.a(-1.0f, 0.0f, -40.0f, 0.0f, 0.0f, -1, 17));
+                r22.addView(new w6(this.c, this.F, null, new f(this, 1), null), z5.d(-1, -1.0f, 17, 0.0f, -40.0f, 0.0f, 0.0f));
                 break;
             case 20:
                 r22 = new u3(context, null);

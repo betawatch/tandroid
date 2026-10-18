@@ -16,7 +16,7 @@ import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.j01;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class g7 extends org.telegram.ui.Components.ua {
     public final ArrayList a0;
@@ -92,11 +92,11 @@ public final class g7 extends org.telegram.ui.Components.ua {
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, this.resourcesProvider));
         View view = new View(getContext());
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d7, this.resourcesProvider));
-        this.Y.addView(view, w7.z5.b(-1.0f, 1.0f / AndroidUtilities.density, 55));
+        this.Y.addView(view, w7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 55));
         ei.d dVar = new ei.d(getContext(), this.resourcesProvider, true);
         this.Z = dVar;
         float f17 = f16 + 16.0f;
-        this.Y.addView(dVar, w7.z5.a(48.0f, f17, 16.0f, f17, 16.0f, -1, 119));
+        this.Y.addView(dVar, w7.z5.d(-1, 48.0f, 119, f17, 16.0f, f17, 16.0f));
         this.containerView.addView(this.Y, w7.z5.e(-1, -2, 87));
         im0 im0Var = this.d;
         im0Var.setPadding(im0Var.getPaddingLeft(), im0Var.getPaddingTop(), im0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + im0Var.getPaddingBottom());

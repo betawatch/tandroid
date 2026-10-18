@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a = 1;
@@ -33,13 +33,13 @@ public final /* synthetic */ class l4 implements DialogInterface.OnDismissListen
             case 0:
                 Context context = (Context) this.e;
                 TLRPC.User user = (TLRPC.User) this.f;
-                org.telegram.ui.web.r rVar = (org.telegram.ui.web.r) this.h;
+                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.h;
                 if (!this.b[0]) {
                     boolean[] zArr = this.c;
                     if (!zArr[0]) {
                         zArr[0] = true;
                         r4.e(context, this.d, user.id);
-                        rVar.run(Boolean.TRUE, "cancelled");
+                        sVar.run(Boolean.TRUE, "cancelled");
                         break;
                     }
                 }
@@ -64,12 +64,12 @@ public final /* synthetic */ class l4 implements DialogInterface.OnDismissListen
         }
     }
 
-    public /* synthetic */ l4(boolean[] zArr, boolean[] zArr2, Context context, int i10, TLRPC.User user, org.telegram.ui.web.r rVar) {
+    public /* synthetic */ l4(boolean[] zArr, boolean[] zArr2, Context context, int i10, TLRPC.User user, org.telegram.ui.web.s sVar) {
         this.b = zArr;
         this.c = zArr2;
         this.e = context;
         this.d = i10;
         this.f = user;
-        this.h = rVar;
+        this.h = sVar;
     }
 }

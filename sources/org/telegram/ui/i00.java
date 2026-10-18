@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class i00 extends FrameLayout {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -50,14 +50,14 @@ public abstract class i00 extends FrameLayout {
         q6Var.setGravity(LocaleController.isRTL ? 5 : 3);
         q6Var.setEllipsizeByGradient(true);
         boolean z10 = LocaleController.isRTL;
-        addView(q6Var, w7.z5.a(20.0f, z10 ? 56.0f : 64.0f, 10.33f, z10 ? 64.0f : 56.0f, 0.0f, -1, 55));
+        addView(q6Var, w7.z5.d(-1, 20.0f, 55, z10 ? 56.0f : 64.0f, 10.33f, z10 ? 64.0f : 56.0f, 0.0f));
         org.telegram.ui.Components.q6 q6Var2 = new org.telegram.ui.Components.q6(context, false, false, false);
         this.h = q6Var2;
         q6Var2.setTextSize(AndroidUtilities.dp(13.0f));
         q6Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false));
         q6Var2.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z11 = LocaleController.isRTL;
-        addView(q6Var2, w7.z5.a(16.0f, z11 ? 56.0f : 64.0f, 33.33f, z11 ? 64.0f : 56.0f, 0.0f, -1, 55));
+        addView(q6Var2, w7.z5.d(-1, 16.0f, 55, z11 ? 56.0f : 64.0f, 33.33f, z11 ? 64.0f : 56.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         imageView.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_ab_other));
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -68,7 +68,7 @@ public abstract class i00 extends FrameLayout {
         imageView.setOnClickListener(new a(this, 24));
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
         boolean z12 = LocaleController.isRTL;
-        addView(imageView, w7.z5.a(40.0f, z12 ? 8.0f : 4.0f, 4.0f, z12 ? 4.0f : 8.0f, 4.0f, 40, (z12 ? 3 : 5) | 16));
+        addView(imageView, w7.z5.d(40, 40.0f, (z12 ? 3 : 5) | 16, z12 ? 8.0f : 4.0f, 4.0f, z12 ? 4.0f : 8.0f, 4.0f));
         Paint paint = new Paint();
         this.n = paint;
         paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false));

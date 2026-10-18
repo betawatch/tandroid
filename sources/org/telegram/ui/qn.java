@@ -40,7 +40,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.Components.kc0 {
     public BitmapShader E;
@@ -89,14 +89,14 @@ public final class qn implements org.telegram.ui.ActionBar.d6, org.telegram.ui.C
             org.telegram.ui.ActionBar.c4 c4Var = this.f;
             if (c4Var != null || dialogWallpaper != null) {
                 l(c4Var, dialogWallpaper, false);
-                AndroidUtilities.runOnUIThread(new ah.j(25));
+                AndroidUtilities.runOnUIThread(new ah.j(24));
             }
         }
         if (ThemeEditorView.n == null) {
             org.telegram.ui.ActionBar.h6.o1(true, true);
             return;
         }
-        AndroidUtilities.runOnUIThread(new ah.j(25));
+        AndroidUtilities.runOnUIThread(new ah.j(24));
     }
 
     @Override // org.telegram.ui.ActionBar.d6

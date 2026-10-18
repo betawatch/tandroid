@@ -41,7 +41,7 @@ import org.telegram.ui.Components.ja;
 import org.telegram.ui.Components.na;
 import org.telegram.ui.ai1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
     public Object a;
@@ -635,22 +635,22 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         return new q5.a((Executor) ((hd.a) this.b).get(), (m5.d) ((hd.a) this.c).get(), (m.g3) ((m.g3) this.a).get(), (s5.d) ((hd.a) this.d).get(), (t5.c) ((hd.a) this.e).get());
     }
 
-    @Override // org.telegram.ui.Components.bl0
-    public /* synthetic */ boolean h() {
-        return true;
-    }
-
     @Override // z3.d
-    public int i() {
+    public int h() {
         return ((long[]) this.c).length;
     }
 
     @Override // r9.b
-    public Set j(r9.r rVar) {
+    public Set i(r9.r rVar) {
         if (((Set) this.d).contains(rVar)) {
-            return ((r9.b) this.e).j(rVar);
+            return ((r9.b) this.e).i(rVar);
         }
         throw new androidx.car.app.j("Attempting to request an undeclared dependency Set<" + rVar + ">.");
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public /* synthetic */ boolean j() {
+        return true;
     }
 
     @Override // org.telegram.ui.Components.bl0
@@ -774,12 +774,7 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
         throw new IllegalStateException("Missing required properties:".concat(str));
     }
 
-    @Override // org.telegram.ui.Components.bl0
-    public boolean r() {
-        return true;
-    }
-
-    public void s(Canvas canvas, boolean z10, boolean z11, int i10, float f7) {
+    public void r(Canvas canvas, boolean z10, boolean z11, int i10, float f7) {
         RectF rectF = (RectF) this.c;
         float[] fArr = (float[]) this.a;
         Paint paint = (Paint) this.e;
@@ -808,6 +803,11 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
             canvas.drawPath(path, paint);
         }
         canvas.clipPath(path);
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public boolean s() {
+        return true;
     }
 
     @Override // ne.d
@@ -840,7 +840,7 @@ public final class z5 implements bl0, z3.d, ne.d, n5.b, r9.b {
     }
 
     public Set y(Class cls) {
-        return j(r9.r.a(cls));
+        return i(r9.r.a(cls));
     }
 
     public void z(Bitmap bitmap) {

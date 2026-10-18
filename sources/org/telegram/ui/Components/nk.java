@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class nk extends li {
     public static final /* synthetic */ int g0 = 0;
@@ -54,7 +54,7 @@ public final class nk extends li {
     public AnimatorSet I;
     public final b10 J;
     public boolean K;
-    public final ci.o5 L;
+    public final ci.n5 L;
     public float M;
     public boolean N;
     public File O;
@@ -192,11 +192,11 @@ public final class nk extends li {
         b10 b10Var = new b10(context, d6Var);
         this.J = b10Var;
         addView(b10Var);
-        ci.o5 o5Var = new ci.o5(this, context, b10Var, d6Var);
-        this.L = o5Var;
-        addView(o5Var, w7.z5.d(-1.0f, -1));
-        o5Var.setVisibility(8);
-        o5Var.setOnTouchListener(new di.d(14));
+        ci.n5 n5Var = new ci.n5(this, context, b10Var, d6Var);
+        this.L = n5Var;
+        addView(n5Var, w7.z5.c(-1.0f, -1));
+        n5Var.setVisibility(8);
+        n5Var.setOnTouchListener(new di.d(14));
         ck ckVar = new ck(this, context, d6Var, 0);
         this.s = ckVar;
         ckVar.setSectionsType(2);
@@ -208,7 +208,7 @@ public final class nk extends li {
         gk gkVar2 = new gk(this, context);
         this.w = gkVar2;
         ckVar.setAdapter(gkVar2);
-        addView(ckVar, w7.z5.d(-1.0f, -1));
+        addView(ckVar, w7.z5.c(-1.0f, -1));
         ckVar.setVisibility(8);
         ck ckVar2 = new ck(this, context, d6Var, 1);
         this.r = ckVar2;
@@ -224,7 +224,7 @@ public final class nk extends li {
         ckVar2.setLayoutManager(e0Var);
         ckVar2.setClipToPadding(false);
         ckVar2.setAdapter(this.v);
-        addView(ckVar2, w7.z5.d(-1.0f, -1));
+        addView(ckVar2, w7.z5.c(-1.0f, -1));
         this.y = new mk(this, context);
         ckVar2.setOnScrollListener(new ah.d0(this, 24));
         final int i12 = 0;
@@ -834,10 +834,10 @@ public final class nk extends li {
                     return false;
                 }
                 if ((hkVar.f.length() > FileLoader.DEFAULT_MAX_FILE_SIZE && !UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) || hkVar.f.length() > 4194304000L) {
-                    sg.j0 j0Var = new sg.j0(6, UserConfig.selectedAccount, tiVar.getContainer().getContext(), tiVar.f0, null);
-                    j0Var.N0 = true;
-                    j0Var.M1();
-                    j0Var.show();
+                    sg.k0 k0Var = new sg.k0(6, UserConfig.selectedAccount, tiVar.getContainer().getContext(), tiVar.f0, null);
+                    k0Var.N0 = true;
+                    k0Var.M1();
+                    k0Var.show();
                     return false;
                 }
                 if (this.V >= 0) {
@@ -984,11 +984,11 @@ public final class nk extends li {
 
     public final void X() {
         View childAt;
-        ci.o5 o5Var = this.L;
-        if (o5Var.getVisibility() == 0 && (childAt = this.r.getChildAt(0)) != null) {
-            float translationY = o5Var.getTranslationY();
-            this.M = (childAt.getTop() + (o5Var.getMeasuredHeight() - getMeasuredHeight())) / 2;
-            o5Var.setTranslationY(translationY);
+        ci.n5 n5Var = this.L;
+        if (n5Var.getVisibility() == 0 && (childAt = this.r.getChildAt(0)) != null) {
+            float translationY = n5Var.getTranslationY();
+            this.M = (childAt.getTop() + (n5Var.getMeasuredHeight() - getMeasuredHeight())) / 2;
+            n5Var.setTranslationY(translationY);
         }
     }
 

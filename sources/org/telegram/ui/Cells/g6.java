@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ba0;
@@ -22,7 +22,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.nq;
 import org.telegram.ui.uz0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class g6 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -42,11 +42,11 @@ public abstract class g6 extends FrameLayout implements org.telegram.ui.ActionBa
         Context context = n2Var.getContext();
         org.telegram.ui.ActionBar.d6 resourceProvider = n2Var.getResourceProvider();
         this.a = resourceProvider;
-        LinearLayout e = kk.e(context, 0);
-        addView(e, w7.z5.a(-2.0f, 16.66f, 11.6f, 16.66f, 0.0f, -1, 55));
+        LinearLayout e = lk.e(context, 0);
+        addView(e, w7.z5.d(-1, -2.0f, 55, 16.66f, 11.6f, 16.66f, 0.0f));
         TextView textView = new TextView(context);
         this.b = textView;
-        kk.k(14.0f, 1, textView);
+        lk.k(14.0f, 1, textView);
         textView.setText(LocaleController.getString(R.string.ProfileChannel));
         e.addView(textView, w7.z5.q(-2, -2, 51));
         nq nqVar = new nq(context);

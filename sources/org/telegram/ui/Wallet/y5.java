@@ -1,45 +1,111 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.LinearGradient;
-import android.graphics.Path;
-import android.graphics.Shader;
+import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.os.Handler;
+import android.os.Looper;
+import android.view.View;
+import android.view.WindowManager;
+import java.util.Iterator;
+import java.util.WeakHashMap;
+import org.telegram.ui.Components.e60;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class y5 {
-    public final Path a;
-    public final LinearGradient b;
-    public final float c;
-    public final float d;
-    public final float e;
-    public final float f;
+public final class y5 implements SensorEventListener {
+    public static y5 G;
+    public float E;
+    public final SensorManager a;
+    public final Sensor b;
+    public final WindowManager c;
+    public boolean r;
+    public boolean s;
+    public float v;
+    public float w;
+    public float y;
+    public final Handler d = new Handler(Looper.getMainLooper());
+    public final WeakHashMap e = new WeakHashMap();
+    public final float[] f = new float[9];
+    public final float[] h = new float[9];
+    public final float[] n = new float[3];
+    public int x = -1;
+    public final e60 F = new e60(this, 1);
 
-    public y5(float f7, float f10, float f11, float f12, float f13, int i10, int i11) {
-        Path path = new Path();
-        this.a = path;
-        float f14 = 0.14999998f * f11;
-        path.rewind();
-        float f15 = f7 - f11;
-        path.moveTo(f15, f10);
-        float f16 = f7 - f14;
-        float f17 = f10 - f14;
-        path.lineTo(f16, f17);
-        float f18 = f10 - f11;
-        path.lineTo(f7, f18);
-        float f19 = f7 + f14;
-        path.lineTo(f19, f17);
-        float f20 = f7 + f11;
-        path.lineTo(f20, f10);
-        float f21 = f14 + f10;
-        path.lineTo(f19, f21);
-        float f22 = f11 + f10;
-        path.lineTo(f7, f22);
-        path.lineTo(f16, f21);
-        path.close();
-        this.c = f15 - 1.0f;
-        this.d = f18 - 1.0f;
-        this.e = f20 + 1.0f;
-        this.f = f22 + 1.0f;
-        this.b = new LinearGradient(f7 - f12, f10 - f13, f7 + f12, f10 + f13, i10, i11, Shader.TileMode.CLAMP);
+    public y5(Context context) {
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.a = sensorManager;
+        this.c = (WindowManager) context.getSystemService("window");
+        Sensor defaultSensor = sensorManager == null ? null : sensorManager.getDefaultSensor(15);
+        if (defaultSensor == null && sensorManager != null) {
+            defaultSensor = sensorManager.getDefaultSensor(11);
+        }
+        this.b = defaultSensor;
+    }
+
+    public final void a() {
+        if (this.r) {
+            this.a.unregisterListener(this);
+        }
+        this.s = false;
+        this.r = false;
+        this.d.removeCallbacks(this.F);
+        this.E = 0.0f;
+        this.y = 0.0f;
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        int i10;
+        float[] fArr = sensorEvent.values;
+        float[] fArr2 = this.f;
+        SensorManager.getRotationMatrixFromVector(fArr2, fArr);
+        int rotation = this.c.getDefaultDisplay().getRotation();
+        if (this.x != rotation) {
+            this.s = false;
+            this.x = rotation;
+        }
+        int i11 = this.x;
+        int i12 = 129;
+        if (i11 == 1) {
+            i10 = 129;
+            i12 = 2;
+        } else {
+            i10 = 130;
+            if (i11 != 2) {
+                if (i11 == 3) {
+                    i12 = 130;
+                    i10 = 1;
+                } else {
+                    i10 = 2;
+                    i12 = 1;
+                }
+            }
+        }
+        float[] fArr3 = this.h;
+        SensorManager.remapCoordinateSystem(fArr2, i12, i10, fArr3);
+        float[] fArr4 = this.n;
+        SensorManager.getOrientation(fArr3, fArr4);
+        if (!this.s) {
+            this.v = fArr4[1];
+            this.w = fArr4[2];
+            this.s = true;
+        }
+        float max = Math.max(-1.0f, Math.min(1.0f, ((float) Math.IEEEremainder(fArr4[2] - this.w, 6.283185307179586d)) / 0.45f));
+        float max2 = Math.max(-1.0f, Math.min(1.0f, ((float) Math.IEEEremainder(fArr4[1] - this.v, 6.283185307179586d)) / 0.45f));
+        float f7 = this.y;
+        this.y = com.google.android.gms.internal.play_billing.k3.y(max, f7, 0.12f, f7);
+        float f10 = this.E;
+        this.E = com.google.android.gms.internal.play_billing.k3.y(max2, f10, 0.12f, f10);
+        Iterator it = this.e.keySet().iterator();
+        while (it.hasNext()) {
+            ((View) it.next()).invalidate();
+        }
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

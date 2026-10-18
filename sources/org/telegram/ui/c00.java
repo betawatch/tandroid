@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c00 extends org.telegram.ui.Components.bb {
     public final MessagesController.DialogFilter X;
@@ -47,15 +47,15 @@ public final class c00 extends org.telegram.ui.Components.bb {
         textView.setText(LocaleController.getString(R.string.FolderLinkShareButton));
         textView.setGravity(17);
         textView.setOnClickListener(new a(this, 21));
-        FrameLayout.LayoutParams a2 = w7.z5.a(48.0f, 16.0f, 10.0f, 16.0f, 10.0f, -1, 87);
-        int i10 = a2.leftMargin;
+        FrameLayout.LayoutParams d = w7.z5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f);
+        int i10 = d.leftMargin;
         int i11 = this.backgroundPaddingLeft;
-        a2.leftMargin = i10 + i11;
-        a2.rightMargin += i11;
-        this.containerView.addView(textView, a2);
+        d.leftMargin = i10 + i11;
+        d.rightMargin += i11;
+        this.containerView.addView(textView, d);
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.Z = frameLayout;
-        this.containerView.addView(frameLayout, w7.z5.a(100.0f, 6.0f, 0.0f, 6.0f, 0.0f, -1, 80));
+        this.containerView.addView(frameLayout, w7.z5.d(-1, 100.0f, 80, 6.0f, 0.0f, 6.0f, 0.0f));
         U();
     }
 

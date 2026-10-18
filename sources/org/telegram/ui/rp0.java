@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rp0 implements org.telegram.ui.Cells.w5, org.telegram.ui.Components.o71, org.telegram.ui.ActionBar.a2, org.telegram.ui.ActionBar.l1, r0.n, Utilities.Callback2Return, org.telegram.ui.Cells.z4, LanguageDetector.ExceptionCallback, RequestTimeDelegate, Utilities.Callback5, org.telegram.ui.ActionBar.m2, org.telegram.ui.Components.yl0, jg.e, hg.z1 {
     public final /* synthetic */ int a;
@@ -60,38 +60,38 @@ public final /* synthetic */ class rp0 implements org.telegram.ui.Cells.w5, org.
                 }
                 break;
             default:
-                pg0 pg0Var = (pg0) ((qg1) this.b);
+                og0 og0Var = (og0) ((qg1) this.b);
                 i0.b defaultWindowInsets2 = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
                 int i11 = defaultWindowInsets2.a;
-                pg0Var.M = i11;
+                og0Var.M = i11;
                 int i12 = defaultWindowInsets2.c;
-                pg0Var.N = i12;
-                pg0Var.L = defaultWindowInsets2.d;
-                View view2 = pg0Var.y.b;
+                og0Var.N = i12;
+                og0Var.L = defaultWindowInsets2.d;
+                View view2 = og0Var.y.b;
                 boolean z10 = view2 != null && view2.getVisibility() == 0;
                 int dp2 = z10 ? AndroidUtilities.dp(44.0f) : 0;
-                pg0Var.y.setPadding(0, 0, 0, pg0Var.L);
-                int dp3 = AndroidUtilities.dp(72.0f) + pg0Var.L + dp2;
-                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) pg0Var.H.getLayoutParams();
+                og0Var.y.setPadding(0, 0, 0, og0Var.L);
+                int dp3 = AndroidUtilities.dp(72.0f) + og0Var.L + dp2;
+                ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) og0Var.H.getLayoutParams();
                 if (marginLayoutParams.height != dp3) {
                     marginLayoutParams.height = dp3;
-                    pg0Var.H.setLayoutParams(marginLayoutParams);
+                    og0Var.H.setLayoutParams(marginLayoutParams);
                 }
-                int i13 = z10 ? pg0Var.L + dp2 : 0;
-                ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) pg0Var.c.getLayoutParams();
+                int i13 = z10 ? og0Var.L + dp2 : 0;
+                ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) og0Var.c.getLayoutParams();
                 if (marginLayoutParams2.bottomMargin != i13 || marginLayoutParams2.leftMargin != i11 || marginLayoutParams2.rightMargin != i12) {
                     marginLayoutParams2.leftMargin = i11;
                     marginLayoutParams2.rightMargin = i12;
                     marginLayoutParams2.bottomMargin = i13;
-                    pg0Var.c.setLayoutParams(marginLayoutParams2);
+                    og0Var.c.setLayoutParams(marginLayoutParams2);
                 }
-                pg0Var.E.setPadding(i11, 0, i12, pg0Var.L);
+                og0Var.E.setPadding(i11, 0, i12, og0Var.L);
                 if (z10) {
-                    k1Var = k1Var.a.m(0, 0, 0, pg0Var.L);
+                    k1Var = k1Var.a.m(0, 0, 0, og0Var.L);
                 }
-                pg0Var.i0();
-                pg0Var.h0();
-                SparseArray sparseArray = pg0Var.a;
+                og0Var.i0();
+                og0Var.h0();
+                SparseArray sparseArray = og0Var.a;
                 int size = sparseArray.size();
                 for (int i14 = 0; i14 < size; i14++) {
                     og1 og1Var = (og1) sparseArray.valueAt(i14);
@@ -151,7 +151,7 @@ public final /* synthetic */ class rp0 implements org.telegram.ui.Cells.w5, org.
                                     case 0:
                                         r91 r91Var2 = r91Var;
                                         r91Var2.getClass();
-                                        r91Var2.presentFragment(new wi0(messageObject));
+                                        r91Var2.presentFragment(new vi0(messageObject));
                                         break;
                                     default:
                                         r91 r91Var3 = r91Var;
@@ -173,7 +173,7 @@ public final /* synthetic */ class rp0 implements org.telegram.ui.Cells.w5, org.
                                     case 0:
                                         r91 r91Var2 = r91Var;
                                         r91Var2.getClass();
-                                        r91Var2.presentFragment(new wi0(messageObject));
+                                        r91Var2.presentFragment(new vi0(messageObject));
                                         break;
                                     default:
                                         r91 r91Var3 = r91Var;
@@ -273,7 +273,7 @@ public final /* synthetic */ class rp0 implements org.telegram.ui.Cells.w5, org.
                     return;
                 }
             case 10:
-                ((org.telegram.messenger.ek) this.b).run(1);
+                ((org.telegram.messenger.fk) this.b).run(1);
                 break;
             case 13:
                 ProxyListActivity proxyListActivity = ((k11) this.b).b;
@@ -410,7 +410,7 @@ public final /* synthetic */ class rp0 implements org.telegram.ui.Cells.w5, org.
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j10) {
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.lh((SharedConfig.ProxyInfo) this.b, j10, 1));
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.mh((SharedConfig.ProxyInfo) this.b, j10, 1));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2Return

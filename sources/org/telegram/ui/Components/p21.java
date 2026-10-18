@@ -36,7 +36,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class p21 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public TextPaint E;
@@ -102,9 +102,9 @@ public class p21 extends FrameLayout implements NotificationCenter.NotificationC
         w9Var.getImageReceiver().setAllowStartLottieAnimation(false);
         w9Var.getImageReceiver().setAutoRepeat(0);
         if (i11 == 0 || i11 == 3 || i11 == 2) {
-            addView(w9Var, w7.z5.a(28.0f, 0.0f, 0.0f, 0.0f, 12.0f, 28, 81));
+            addView(w9Var, w7.z5.d(28, 28.0f, 81, 0.0f, 0.0f, 0.0f, 12.0f));
         } else {
-            addView(w9Var, w7.z5.a(36.0f, 0.0f, 0.0f, 0.0f, 12.0f, 36, 81));
+            addView(w9Var, w7.z5.d(36, 36.0f, 81, 0.0f, 0.0f, 0.0f, 12.0f));
         }
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
         paint.setStyle(Paint.Style.STROKE);

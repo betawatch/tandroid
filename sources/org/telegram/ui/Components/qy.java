@@ -41,7 +41,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qy implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -164,7 +164,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                     return;
                 }
             case 5:
-                sv0.j((sv0) obj4, (TL_stories.StoryItem) obj3, (ci.b7) obj);
+                sv0.j((sv0) obj4, (TL_stories.StoryItem) obj3, (ci.a7) obj);
                 return;
             case 6:
                 org.telegram.ui.gt gtVar = (org.telegram.ui.gt) obj4;
@@ -203,7 +203,7 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 Integer num = (Integer) obj;
                 org.telegram.ui.p00 p00Var = ((org.telegram.ui.m00) obj4).e;
                 if (!p00Var.getUserConfig().isPremium()) {
-                    p00Var.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) p00Var, 35, true));
+                    p00Var.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) p00Var, 35, true));
                     return;
                 }
                 int intValue = num.intValue();
@@ -250,26 +250,26 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 kb0Var.u(new org.telegram.ui.jb0(bundle2, user, userArr, j10), false);
                 return;
             case 12:
-                org.telegram.ui.dj0 dj0Var = (org.telegram.ui.dj0) obj4;
+                org.telegram.ui.cj0 cj0Var = (org.telegram.ui.cj0) obj4;
                 String str = (String) obj3;
                 List<TLRPC.User> list = (List) obj;
                 HashSet hashSet = new HashSet();
-                ArrayList arrayList5 = dj0Var.f0;
+                ArrayList arrayList5 = cj0Var.f0;
                 arrayList5.clear();
                 if (list != null) {
                     for (TLRPC.User user2 : list) {
-                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && dj0Var.S(user2)) {
+                        if (user2 != null && !hashSet.contains(Long.valueOf(user2.id)) && cj0Var.S(user2)) {
                             arrayList5.add(user2);
                             hashSet.add(Long.valueOf(user2.id));
                         }
                     }
                 }
-                Boolean bool2 = dj0Var.r0;
+                Boolean bool2 = cj0Var.r0;
                 if (bool2 == null || !bool2.booleanValue()) {
-                    dj0Var.V(true, true);
+                    cj0Var.V(true, true);
                     return;
                 }
-                qy qyVar = new qy(13, dj0Var, hashSet);
+                qy qyVar = new qy(13, cj0Var, hashSet);
                 MessagesController messagesController2 = MessagesController.getInstance(UserConfig.selectedAccount);
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                 if (str == null || str.isEmpty()) {
@@ -280,21 +280,21 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                     tL_contacts_search.limit = 50;
                     i14 = connectionsManager.sendRequest(tL_contacts_search, new org.telegram.ui.o71(10, messagesController2, qyVar));
                 }
-                dj0Var.m0 = i14;
+                cj0Var.m0 = i14;
                 return;
             case 13:
-                org.telegram.ui.dj0 dj0Var2 = (org.telegram.ui.dj0) obj4;
+                org.telegram.ui.cj0 cj0Var2 = (org.telegram.ui.cj0) obj4;
                 HashSet hashSet2 = (HashSet) obj3;
                 List<TLRPC.User> list2 = (List) obj;
                 if (list2 != null) {
                     for (TLRPC.User user3 : list2) {
-                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && dj0Var2.S(user3)) {
-                            dj0Var2.f0.add(user3);
+                        if (user3 != null && !hashSet2.contains(Long.valueOf(user3.id)) && cj0Var2.S(user3)) {
+                            cj0Var2.f0.add(user3);
                             hashSet2.add(Long.valueOf(user3.id));
                         }
                     }
                 }
-                dj0Var2.V(true, true);
+                cj0Var2.V(true, true);
                 return;
             case 14:
                 org.telegram.ui.oj0 oj0Var = (org.telegram.ui.oj0) obj4;
@@ -302,13 +302,13 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 TLRPC.User user4 = (TLRPC.User) obj;
                 if (user4 == null) {
                     oj0Var.R.setImageDrawable(null);
-                    oj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is not on Telegram. **Invite >**", new org.telegram.ui.zg0(i12, oj0Var, str2)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+                    oj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is not on Telegram. **Invite >**", new org.telegram.ui.yg0(i12, oj0Var, str2)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
                 } else {
                     Drawable mutate = oj0Var.getContext().getResources().getDrawable(R.drawable.msg_text_check).mutate();
                     mutate.setColorFilter(new PorterDuffColorFilter(oj0Var.getThemedColor(org.telegram.ui.ActionBar.h6.v6), PorterDuff.Mode.SRC_IN));
                     oj0Var.R.setImageDrawable(mutate);
                     if (user4.contact) {
-                        oj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is already in your contacts. **View >**", new org.telegram.ui.zg0(i13, oj0Var, user4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+                        oj0Var.v.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag("This phone number is already in your contacts. **View >**", new org.telegram.ui.yg0(i13, oj0Var, user4)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
                     } else {
                         oj0Var.v.setText("This phone number is on Telegram.");
                     }
@@ -473,15 +473,15 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 }
             case 26:
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj4;
-                org.telegram.ui.Wallet.j8 j8Var = (org.telegram.ui.Wallet.j8) obj3;
+                org.telegram.ui.Wallet.d8 d8Var = (org.telegram.ui.Wallet.d8) obj3;
                 String str6 = (String) obj;
                 if (str6 != null) {
                     org.telegram.ui.Wallet.m0.i("disableBackupWithoutUpdatingPhrase: ".concat(str6));
-                    j8Var.run(str6);
+                    d8Var.run(str6);
                     return;
                 } else {
                     org.telegram.ui.Wallet.m0.F("sending disableBackup to server");
-                    org.telegram.ui.Wallet.s2.a(m0Var.a, new gi.c(7), null, null, null, new ci.c0(i13, m0Var, j8Var), true, true, new org.telegram.ui.pa0(obj2, i15));
+                    org.telegram.ui.Wallet.s2.a(m0Var.a, new gi.c(7), null, null, null, new ci.c0(i13, m0Var, d8Var), true, true, new org.telegram.ui.pa0(obj2, i15));
                     return;
                 }
             case 27:
@@ -500,10 +500,10 @@ public final /* synthetic */ class qy implements Utilities.Callback {
                 }
             case 28:
                 ((org.telegram.ui.Wallet.j0) obj4).close();
-                ((org.telegram.ui.Wallet.d8) obj3).run((String) obj);
+                ((org.telegram.ui.Wallet.x7) obj3).run((String) obj);
                 return;
             default:
-                ((org.telegram.ui.Wallet.m0) obj4).q.put((TL_wallet.walletTransaction) obj, (ai.e4) obj3);
+                ((org.telegram.ui.Wallet.m0) obj4).q.put((TL_wallet.walletTransaction) obj, (ai.c4) obj3);
                 return;
         }
     }

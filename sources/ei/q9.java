@@ -24,7 +24,7 @@ import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.xp;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class q9 extends FrameLayout {
     public Path E;
@@ -253,7 +253,7 @@ public final class q9 extends FrameLayout {
         float f11;
         int i10 = (LocaleController.isRTL ? 5 : 3) | 16;
         boolean z10 = this.s;
-        this.c.setLayoutParams(w7.z5.a(40.0f, z10 ? 53.0f : 16.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f, 40, i10));
+        this.c.setLayoutParams(w7.z5.d(40, 40.0f, i10, z10 ? 53.0f : 16.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         boolean z11 = LocaleController.isRTL;
         int i11 = (z11 ? 5 : 3) | 16;
         float f12 = 20.0f;
@@ -267,7 +267,7 @@ public final class q9 extends FrameLayout {
         } else {
             f10 = 20.0f;
         }
-        this.d.setLayoutParams(w7.z5.a(-2.0f, f7, 0.0f, f10, 0.0f, -1, i11));
+        this.d.setLayoutParams(w7.z5.d(-1, -2.0f, i11, f7, 0.0f, f10, 0.0f));
         boolean z12 = LocaleController.isRTL;
         int i12 = (z12 ? 5 : 3) | 16;
         if (z12) {
@@ -278,9 +278,9 @@ public final class q9 extends FrameLayout {
         if (z12) {
             f12 = this.s ? 105 : 68;
         }
-        this.e.setLayoutParams(w7.z5.a(-2.0f, f11, 0.0f, f12, 0.0f, -1, i12));
-        this.f.setLayoutParams(w7.z5.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
-        this.h.setLayoutParams(w7.z5.a(22.0f, 14.0f, 0.0f, 15.0f, 0.0f, 22, (LocaleController.isRTL ? 5 : 3) | 16));
+        this.e.setLayoutParams(w7.z5.d(-1, -2.0f, i12, f11, 0.0f, f12, 0.0f));
+        this.f.setLayoutParams(w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 14.0f, 0.0f));
+        this.h.setLayoutParams(w7.z5.d(22, 22.0f, (LocaleController.isRTL ? 5 : 3) | 16, 14.0f, 0.0f, 15.0f, 0.0f));
     }
 
     public final SpannableStringBuilder g(CharSequence charSequence) {

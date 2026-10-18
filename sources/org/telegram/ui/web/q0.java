@@ -1,44 +1,48 @@
 package org.telegram.ui.web;
 
-import android.webkit.JsResult;
+import android.webkit.GeolocationPermissions;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q0 implements org.telegram.ui.ActionBar.a2 {
+public final /* synthetic */ class q0 implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ JsResult c;
+    public final /* synthetic */ v0 b;
+    public final /* synthetic */ GeolocationPermissions.Callback c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ q0(boolean[] zArr, JsResult jsResult, int i10) {
+    public /* synthetic */ q0(v0 v0Var, GeolocationPermissions.Callback callback, String str, int i10) {
         this.a = i10;
-        this.b = zArr;
-        this.c = jsResult;
+        this.b = v0Var;
+        this.c = callback;
+        this.d = str;
     }
 
-    @Override // org.telegram.ui.ActionBar.a2
-    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    this.c.cancel();
-                    break;
-                }
-                break;
-            case 1:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    this.c.confirm();
-                    break;
+                v0 v0Var = this.b;
+                if (v0Var.a != null) {
+                    v0Var.a = null;
+                    boolean booleanValue = bool.booleanValue();
+                    GeolocationPermissions.Callback callback = this.c;
+                    String str = this.d;
+                    if (!booleanValue) {
+                        callback.invoke(str, false, false);
+                        break;
+                    } else {
+                        b1.a(v0Var.e.Q, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new q0(v0Var, callback, str, 1));
+                        break;
+                    }
                 }
                 break;
             default:
-                boolean[] zArr3 = this.b;
-                if (!zArr3[0]) {
-                    zArr3[0] = true;
-                    this.c.confirm();
+                v0 v0Var2 = this.b;
+                v0Var2.getClass();
+                this.c.invoke(this.d, bool.booleanValue(), false);
+                if (bool.booleanValue()) {
+                    v0Var2.e.Q.T = true;
                     break;
                 }
                 break;

@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -86,11 +86,11 @@ public final /* synthetic */ class g0 implements Runnable {
                 ConnectionsManager.getInstance(i14).sendRequest(tL_fulfillStarsSubscription, new c0(dVar, (org.telegram.ui.ActionBar.f3[]) obj, i14, this.c, 1));
                 break;
             case 2:
-                ci.i7 i7Var = (ci.i7) obj3;
+                ci.h7 h7Var = (ci.h7) obj3;
                 TLObject tLObject2 = (TLObject) obj;
                 String str = (String) obj2;
-                int i15 = i7Var.a;
-                HashSet hashSet = i7Var.t;
+                int i15 = h7Var.a;
+                HashSet hashSet = h7Var.t;
                 if (tLObject2 != null) {
                     TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject2;
                     MessagesController.getInstance(i15).putUsers(tL_stories_stories.users, false);
@@ -105,7 +105,7 @@ public final /* synthetic */ class g0 implements Runnable {
                         }
                     }
                 }
-                i7Var.W.remove(str);
+                h7Var.W.remove(str);
                 if (storyItem == null) {
                     Iterator it = hashSet.iterator();
                     while (true) {
@@ -117,14 +117,14 @@ public final /* synthetic */ class g0 implements Runnable {
                         }
                     }
                     hashSet.add(str);
-                    i7Var.l.edit().putStringSet("unsupported_stories_checked", hashSet).apply();
+                    h7Var.l.edit().putStringSet("unsupported_stories_checked", hashSet).apply();
                     break;
                 } else {
                     storyItem.dialogId = j10;
                     TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
                     tL_updateStory.peer = MessagesController.getInstance(i15).getPeer(j10);
                     tL_updateStory.story = storyItem;
-                    i7Var.Z(tL_updateStory);
+                    h7Var.Z(tL_updateStory);
                     break;
                 }
             case 3:
@@ -177,7 +177,7 @@ public final /* synthetic */ class g0 implements Runnable {
                     break;
                 }
             default:
-                new yh.y4((Context) obj3, this.b, ((GiftAuctionController.Auction) obj2).gift, null, this.c, (Runnable) obj, false, false).show();
+                new yh.x4((Context) obj3, this.b, ((GiftAuctionController.Auction) obj2).gift, null, this.c, (Runnable) obj, false, false).show();
                 break;
         }
     }

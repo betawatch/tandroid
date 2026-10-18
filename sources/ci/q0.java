@@ -34,7 +34,7 @@ import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.h80;
 import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class q0 extends FrameLayout implements h80 {
     public final TextView E;
@@ -73,7 +73,7 @@ public final class q0 extends FrameLayout implements h80 {
         uc ucVar = new uc(this, context);
         this.h = ucVar;
         ucVar.setOrientation(0);
-        addView(ucVar, w7.z5.a(-2.0f, 0.0f, 0.5f, 0.0f, 0.5f, -2, 51));
+        addView(ucVar, w7.z5.d(-2, -2.0f, 51, 0.0f, 0.5f, 0.0f, 0.5f));
         this.x = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.w = w9Var;

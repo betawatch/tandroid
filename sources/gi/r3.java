@@ -19,7 +19,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class r3 extends FrameLayout {
     public final int a;
@@ -40,23 +40,23 @@ public final class r3 extends FrameLayout {
         w9 w9Var = new w9(context);
         this.c = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(46.0f));
-        addView(w9Var, z5.a(46.0f, 13.0f, 0.0f, 13.0f, 0.0f, 46, 19));
+        addView(w9Var, z5.d(46, 46.0f, 19, 13.0f, 0.0f, 13.0f, 0.0f));
         View view = new View(context);
         this.d = view;
         view.setBackground(h6.K(AndroidUtilities.dp(11.0f), h6.w0(h6.d6, d6Var)));
-        addView(view, z5.a(22.0f, 40.0f, 15.0f, 0.0f, 0.0f, 22, 19));
+        addView(view, z5.d(22, 22.0f, 19, 40.0f, 15.0f, 0.0f, 0.0f));
         View view2 = new View(context);
         this.e = view2;
         view2.setBackground(h6.K(AndroidUtilities.dp(9.665f), h6.w0(h6.uj, d6Var)));
-        addView(view2, z5.c(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
+        addView(view2, z5.b(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.f = imageView;
         imageView.setScaleX(0.6f);
         imageView.setScaleY(0.6f);
-        addView(imageView, z5.c(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
+        addView(imageView, z5.b(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        addView(linearLayout, z5.a(-2.0f, 66.0f, 8.66f, 10.0f, 0.0f, -1, 55));
+        addView(linearLayout, z5.d(-1, -2.0f, 55, 66.0f, 8.66f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.h = textView;
         textView.setMaxLines(1);
@@ -80,7 +80,7 @@ public final class r3 extends FrameLayout {
         imageView2.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.M6, d6Var), PorterDuff.Mode.SRC_IN));
         imageView2.setImageResource(R.drawable.msg_arrowright);
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView2, z5.a(24.0f, 0.0f, 0.0f, 10.0f, 0.0f, 24, 21));
+        addView(imageView2, z5.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
     }
 
     @Override // android.view.ViewGroup, android.view.View

@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class rp0 extends org.telegram.ui.ActionBar.m1 {
     public boolean A;
@@ -43,7 +43,7 @@ public abstract class rp0 extends org.telegram.ui.ActionBar.m1 {
     public boolean y;
     public ArrayList z;
 
-    public static void k(ef efVar, List list, Context context, org.telegram.ui.sn snVar, boolean z10, ai.t2 t2Var, View view, int i10) {
+    public static void k(ef efVar, List list, Context context, org.telegram.ui.sn snVar, boolean z10, ai.r2 r2Var, View view, int i10) {
         TLRPC.User user;
         TLRPC.TL_sendAsPeer tL_sendAsPeer = (TLRPC.TL_sendAsPeer) list.get(i10);
         if (efVar.y) {
@@ -54,9 +54,9 @@ public abstract class rp0 extends org.telegram.ui.ActionBar.m1 {
             im0 im0Var = efVar.v;
             qp0 qp0Var = (qp0) view;
             TLRPC.Peer peer = tL_sendAsPeer.peer;
-            ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) t2Var.b;
-            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) t2Var.c;
-            MessagesController messagesController = (MessagesController) t2Var.d;
+            ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) r2Var.b;
+            TLRPC.ChatFull chatFull = (TLRPC.ChatFull) r2Var.c;
+            MessagesController messagesController = (MessagesController) r2Var.d;
             if (chatActivityEnterView.q0 == null) {
                 return;
             }

@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class t80 extends org.telegram.ui.ActionBar.f3 {
     public boolean b;
@@ -29,7 +29,7 @@ public abstract class t80 extends org.telegram.ui.ActionBar.f3 {
         linearLayout.addView(w9Var, w7.z5.t(90, 90, 49, 0, 29, 0, 0));
         w9Var.e(chat, new h9(chat));
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.k(18.0f, 1, textView);
+        org.telegram.messenger.lk.k(18.0f, 1, textView);
         com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.j5, null, false, textView, 1);
         TextView i10 = com.google.android.gms.internal.play_billing.k3.i(linearLayout, textView, w7.z5.t(-2, -2, 49, 17, 24, 17, 0), context);
         i10.setTextSize(1, 14.0f);
@@ -56,7 +56,7 @@ public abstract class t80 extends org.telegram.ui.ActionBar.f3 {
         View view = new View(context);
         s80Var.a = view;
         view.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
-        s80Var.addView(view, w7.z5.a(-1.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 0));
+        s80Var.addView(view, w7.z5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
         TextView textView2 = new TextView(context);
         s80Var.b = textView2;
         textView2.setLines(1);

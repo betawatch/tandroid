@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class q21 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int v = 0;
@@ -85,7 +85,7 @@ public final class q21 extends org.telegram.ui.ActionBar.f3 {
             }
             r02 = tL_messages_report;
         }
-        ConnectionsManager.getInstance(q21Var.currentAccount).sendRequest(r02, new ai.y2(q21Var, charSequence, bArr, str, 17));
+        ConnectionsManager.getInstance(q21Var.currentAccount).sendRequest(r02, new ai.w2(q21Var, charSequence, bArr, str, 17));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -207,7 +207,7 @@ public final class q21 extends org.telegram.ui.ActionBar.f3 {
                 if (!q21Var.d && "MESSAGE_ID_REQUIRED".equals(tL_error.text)) {
                     long j10 = q21Var.r;
                     String charSequence2 = charSequence.toString();
-                    int i10 = sn.Hc;
+                    int i10 = sn.Ic;
                     org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U != null) {
                         Bundle bundle = new Bundle();

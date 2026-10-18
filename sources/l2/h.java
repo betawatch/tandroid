@@ -24,12 +24,13 @@ import java.util.List;
 import java.util.Map;
 import ki.t1;
 import m2.t;
-import u2.d0;
-import u2.f0;
+import u2.e0;
+import u2.g0;
+import u2.u;
 import v7.n7;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class h extends u2.a {
     public y2.l A;
@@ -209,10 +210,10 @@ public final class h extends u2.a {
     }
 
     @Override // u2.a
-    public final d0 c(f0 f0Var, androidx.biometric.e eVar, long j10) {
-        int intValue = ((Integer) f0Var.a).intValue() - this.N;
-        a5.a b10 = b(f0Var);
-        n2.k kVar = new n2.k(this.d.c, 0, f0Var);
+    public final e0 c(g0 g0Var, androidx.biometric.e eVar, long j10) {
+        int intValue = ((Integer) g0Var.a).intValue() - this.N;
+        a5.a b10 = b(g0Var);
+        n2.k kVar = new n2.k(this.d.c, 0, g0Var);
         int i10 = this.N + intValue;
         m2.c cVar = this.G;
         c0 c0Var = this.B;
@@ -254,8 +255,8 @@ public final class h extends u2.a {
     }
 
     @Override // u2.a
-    public final void o(d0 d0Var) {
-        b bVar = (b) d0Var;
+    public final void o(e0 e0Var) {
+        b bVar = (b) e0Var;
         p pVar = bVar.x;
         pVar.r = true;
         pVar.d.removeCallbacksAndMessages(null);
@@ -330,9 +331,9 @@ public final class h extends u2.a {
         long j12 = oVar.a;
         g2.m mVar = oVar.b;
         b0 b0Var = oVar.d;
-        u2.t tVar = new u2.t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        u uVar = new u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         this.m.getClass();
-        this.q.q(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.q.q(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final void y(IOException iOException) {

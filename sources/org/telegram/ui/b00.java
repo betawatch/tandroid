@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class b00 extends FrameLayout {
     public final /* synthetic */ c00 a;
@@ -28,7 +28,7 @@ public final class b00 extends FrameLayout {
         imageView.setImageResource(R.drawable.msg_limit_links);
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         imageView.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false)));
-        addView(imageView, w7.z5.a(44.0f, 0.0f, 22.0f, 0.0f, 0.0f, 54, 49));
+        addView(imageView, w7.z5.d(54, 44.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
         wh.n nVar = new wh.n(context);
         nVar.setTypeface(AndroidUtilities.bold());
         nVar.setTextSize(1, 20.0f);
@@ -38,20 +38,20 @@ public final class b00 extends FrameLayout {
         nVar.setText(c00Var.S(nVar));
         MessagesController.DialogFilter dialogFilter = c00Var.X;
         nVar.s = (dialogFilter == null || !dialogFilter.title_noanimate) ? 0 : 26;
-        addView(nVar, w7.z5.a(-2.0f, 20.0f, 84.0f, 20.0f, 0.0f, -2, 49));
+        addView(nVar, w7.z5.d(-2, -2.0f, 49, 20.0f, 84.0f, 20.0f, 0.0f));
         TextView textView = new TextView(context);
         textView.setText(c00Var.Y.isEmpty() ? LocaleController.getString(R.string.FolderLinkShareSubtitleEmpty) : LocaleController.getString(R.string.FolderLinkShareSubtitle));
         textView.setLines(2);
         textView.setGravity(1);
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
-        addView(textView, w7.z5.a(-2.0f, 30.0f, 117.0f, 30.0f, 0.0f, -2, 49));
+        addView(textView, w7.z5.d(-2, -2.0f, 49, 30.0f, 117.0f, 30.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         imageView2.setScaleType(scaleType);
         imageView2.setImageResource(R.drawable.msg_close);
         imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.C6, false), PorterDuff.Mode.MULTIPLY));
         imageView2.setOnClickListener(new a(this, 22));
-        addView(imageView2, w7.z5.a(48.0f, 0.0f, -4.0f, 2.0f, 0.0f, 48, 53));
+        addView(imageView2, w7.z5.d(48, 48.0f, 53, 0.0f, -4.0f, 2.0f, 0.0f));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

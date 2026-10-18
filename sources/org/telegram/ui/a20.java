@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -38,7 +38,7 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
     public final w10 b;
     public org.telegram.ui.Components.im0 c;
     public Drawable d;
-    public sg.w1 e;
+    public sg.x1 e;
     public boolean f;
     public boolean h;
     public float n;
@@ -110,11 +110,11 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
         this.c.j(new k3(this, 11));
         this.y = new ai.bd(context);
         z10 z10Var = this.s;
-        sg.w1 p02 = p0();
+        sg.x1 p02 = p0();
         this.e = p02;
-        z10Var.addView(p02, w7.z5.d(-2.0f, -1));
-        this.s.addView(this.y, w7.z5.d(-2.0f, -1));
-        this.s.addView(this.c, w7.z5.d(-1.0f, -1));
+        z10Var.addView(p02, w7.z5.c(-2.0f, -1));
+        this.s.addView(this.y, w7.z5.c(-2.0f, -1));
+        this.s.addView(this.c, w7.z5.c(-1.0f, -1));
         this.s.addView(this.actionBar);
         this.fragmentView = this.s;
         this.actionBar.setBackground(null);
@@ -207,9 +207,9 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
     @Override // org.telegram.ui.ActionBar.n2
     public void onPause() {
         super.onPause();
-        sg.w1 w1Var = this.e;
-        if (w1Var != null) {
-            w1Var.setPaused(true);
+        sg.x1 x1Var = this.e;
+        if (x1Var != null) {
+            x1Var.setPaused(true);
         }
     }
 
@@ -219,7 +219,7 @@ public abstract class a20 extends org.telegram.ui.ActionBar.n2 {
         this.e.setPaused(false);
     }
 
-    public sg.w1 p0() {
+    public sg.x1 p0() {
         return new gi.f(getParentActivity(), 2);
     }
 

@@ -1,6 +1,6 @@
 package ig;
 
-import ai.f4;
+import ai.d4;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.UsersSelectActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a0 {
     public final Context a;
@@ -360,7 +360,7 @@ public final class a0 {
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         b2Var.R = string;
         b2Var.T = LocaleController.formatString(!z12 ? R.string.BusinessRecipientsRemoveExcludeMessage : R.string.BusinessRecipientsRemoveIncludeMessage, peerName);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new f4(this, z12, f61Var, i11));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Remove), new d4(this, z12, f61Var, i11));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         if (n2Var != null) {
             n2Var.showDialog(b2Var);

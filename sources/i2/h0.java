@@ -30,7 +30,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class h0 extends ai.c1 implements q {
     public final bi.a A;
@@ -47,7 +47,7 @@ public final class h0 extends ai.c1 implements q {
     public boolean L;
     public final q1 M;
     public r1 N;
-    public u2.h1 O;
+    public u2.j1 O;
     public b2.b1 P;
     public b2.r0 Q;
     public b2.r0 R;
@@ -92,7 +92,7 @@ public final class h0 extends ai.c1 implements q {
     public i1 p0;
     public final boolean q;
     public int q0;
-    public final u2.e0 r;
+    public final u2.f0 r;
     public long r0;
     public final j2.f s;
     public org.telegram.messenger.f1 s0;
@@ -168,7 +168,7 @@ public final class h0 extends ai.c1 implements q {
             }
             x2.s sVar = (x2.s) oVar.e.get();
             c1Var.i = sVar;
-            c1Var.r = (u2.e0) oVar.d.get();
+            c1Var.r = (u2.f0) oVar.d.get();
             y2.f b11 = y2.f.b(oVar.g.b);
             c1Var.u = b11;
             c1Var.q = oVar.l;
@@ -185,7 +185,7 @@ public final class h0 extends ai.c1 implements q {
             CopyOnWriteArraySet copyOnWriteArraySet = new CopyOnWriteArraySet();
             c1Var.n = copyOnWriteArraySet;
             c1Var.p = new ArrayList();
-            c1Var.O = new u2.f1();
+            c1Var.O = new u2.h1();
             b[] bVarArr2 = c1Var.g;
             x2.t tVar = new x2.t(new o1[bVarArr2.length], new x2.p[bVarArr2.length], v1.b, null);
             c1Var.b = tVar;
@@ -554,15 +554,15 @@ public final class h0 extends ai.c1 implements q {
         b2.n1 n1Var = (b2.n1) this.a;
         b2.l1 l1Var = this.o;
         b2.o1 o1Var = i1Var2.a;
-        u2.f0 f0Var = i1Var2.b;
+        u2.g0 g0Var = i1Var2.b;
         b2.o1 o1Var2 = i1Var.a;
-        u2.f0 f0Var2 = i1Var.b;
+        u2.g0 g0Var2 = i1Var.b;
         if (o1Var2.p() && o1Var.p()) {
             pair = new Pair(Boolean.FALSE, -1);
         } else if (o1Var2.p() != o1Var.p()) {
             pair = new Pair(Boolean.TRUE, 3);
-        } else if (o1Var.m(o1Var.g(f0Var.a, l1Var).c, n1Var, 0L).a.equals(o1Var2.m(o1Var2.g(f0Var2.a, l1Var).c, n1Var, 0L).a)) {
-            pair = (z10 && i11 == 0 && f0Var.d < f0Var2.d) ? new Pair(Boolean.TRUE, 0) : (z10 && i11 == 1 && z11) ? new Pair(Boolean.TRUE, 2) : new Pair(Boolean.FALSE, -1);
+        } else if (o1Var.m(o1Var.g(g0Var.a, l1Var).c, n1Var, 0L).a.equals(o1Var2.m(o1Var2.g(g0Var2.a, l1Var).c, n1Var, 0L).a)) {
+            pair = (z10 && i11 == 0 && g0Var.d < g0Var2.d) ? new Pair(Boolean.TRUE, 0) : (z10 && i11 == 1 && z11) ? new Pair(Boolean.TRUE, 2) : new Pair(Boolean.FALSE, -1);
         } else {
             if (z10 && i11 == 0) {
                 i13 = 1;
@@ -639,8 +639,8 @@ public final class h0 extends ai.c1 implements q {
             }
             if (i11 == 0) {
                 if (i1Var2.b.b()) {
-                    u2.f0 f0Var3 = i1Var2.b;
-                    j13 = l1Var2.a(f0Var3.b, f0Var3.c);
+                    u2.g0 g0Var3 = i1Var2.b;
+                    j13 = l1Var2.a(g0Var3.b, g0Var3.c);
                     m12 = m1(i1Var2);
                 } else if (i1Var2.b.e != -1) {
                     j13 = m1(this.p0);
@@ -662,8 +662,8 @@ public final class h0 extends ai.c1 implements q {
             }
             long h02 = e2.m0.h0(j13);
             long h03 = e2.m0.h0(m12);
-            u2.f0 f0Var4 = i1Var2.b;
-            b2.e1 e1Var = new b2.e1(obj, i14, o0Var2, obj2, i15, h02, h03, f0Var4.b, f0Var4.c);
+            u2.g0 g0Var4 = i1Var2.b;
+            b2.e1 e1Var = new b2.e1(obj, i14, o0Var2, obj2, i15, h02, h03, g0Var4.b, g0Var4.c);
             b2.n1 n1Var2 = (b2.n1) this.a;
             int n02 = n0();
             int A = A();
@@ -684,8 +684,8 @@ public final class h0 extends ai.c1 implements q {
             int i19 = A;
             long h04 = e2.m0.h0(j10);
             long h05 = this.p0.b.b() ? e2.m0.h0(m1(this.p0)) : h04;
-            u2.f0 f0Var5 = this.p0.b;
-            this.m.c(11, new b2(i11, e1Var, new b2.e1(obj3, n02, o0Var3, obj4, i19, h04, h05, f0Var5.b, f0Var5.c), 1));
+            u2.g0 g0Var5 = this.p0.b;
+            this.m.c(11, new b2(i11, e1Var, new b2.e1(obj3, n02, o0Var3, obj4, i19, h04, h05, g0Var5.b, g0Var5.c), 1));
         } else {
             z12 = booleanValue;
             z13 = equals2;
@@ -1356,7 +1356,7 @@ public final class h0 extends ai.c1 implements q {
                 d0 d0Var = (d0) arrayList.get(i13);
                 b2.o1 o1Var = d0Var.c;
                 b2.o0 o0Var = (b2.o0) list.get(i13 - i10);
-                d0Var.c = o1Var instanceof u2.p1 ? new u2.p1(((u2.p1) o1Var).e, o0Var) : new u2.p1(o1Var, o0Var);
+                d0Var.c = o1Var instanceof u2.r1 ? new u2.r1(((u2.r1) o1Var).e, o0Var) : new u2.r1(o1Var, o0Var);
             }
             D1(this.p0.j(new n1(arrayList, this.O)), 0, false, 4, -9223372036854775807L, -1, false);
             return;
@@ -1640,9 +1640,9 @@ public final class h0 extends ai.c1 implements q {
                 this.O = this.O.f(i10, arrayList2.size());
                 n1 n1Var = new n1(arrayList3, this.O);
                 i1 o12 = o1(i1Var, n1Var, l1(o1Var, n1Var, k1(i1Var), i1(i1Var)));
-                u2.h1 h1Var = this.O;
+                u2.j1 j1Var = this.O;
                 e2.i0 i0Var = this.l.n;
-                l0 l0Var = new l0(arrayList2, h1Var, -1, -9223372036854775807L);
+                l0 l0Var = new l0(arrayList2, j1Var, -1, -9223372036854775807L);
                 i0Var.getClass();
                 e2.h0 c10 = e2.i0.c();
                 c10.a = i0Var.a.obtainMessage(18, i10, 0, l0Var);
@@ -1841,12 +1841,12 @@ public final class h0 extends ai.c1 implements q {
             return z();
         }
         i1 i1Var = this.p0;
-        u2.f0 f0Var = i1Var.b;
+        u2.g0 g0Var = i1Var.b;
         b2.o1 o1Var = i1Var.a;
-        Object obj = f0Var.a;
+        Object obj = g0Var.a;
         b2.l1 l1Var = this.o;
         o1Var.g(obj, l1Var);
-        return e2.m0.h0(l1Var.a(f0Var.b, f0Var.c));
+        return e2.m0.h0(l1Var.a(g0Var.b, g0Var.c));
     }
 
     @Override // b2.f1
@@ -1878,10 +1878,10 @@ public final class h0 extends ai.c1 implements q {
     }
 
     public final long i1(i1 i1Var) {
-        u2.f0 f0Var = i1Var.b;
+        u2.g0 g0Var = i1Var.b;
         long j10 = i1Var.c;
         b2.o1 o1Var = i1Var.a;
-        if (!f0Var.b()) {
+        if (!g0Var.b()) {
             return e2.m0.h0(j1(i1Var));
         }
         Object obj = i1Var.b.a;
@@ -1999,16 +1999,16 @@ public final class h0 extends ai.c1 implements q {
         long i12 = i1(i1Var);
         i1 j10 = i1Var.j(o1Var);
         if (o1Var.p()) {
-            u2.f0 f0Var = i1.u;
+            u2.g0 g0Var = i1.u;
             long S = e2.m0.S(this.r0);
-            i1 c10 = j10.d(f0Var, S, S, S, 0L, u2.q1.d, this.b, x1.e).c(f0Var);
+            i1 c10 = j10.d(g0Var, S, S, S, 0L, u2.s1.d, this.b, x1.e).c(g0Var);
             c10.q = c10.s;
             return c10;
         }
         Object obj = j10.b.a;
         String str = e2.m0.a;
         boolean equals = obj.equals(pair.first);
-        u2.f0 f0Var2 = !equals ? new u2.f0(pair.first) : j10.b;
+        u2.g0 g0Var2 = !equals ? new u2.g0(pair.first) : j10.b;
         long longValue = ((Long) pair.second).longValue();
         long S2 = e2.m0.S(i12);
         if (!o1Var2.p()) {
@@ -2018,9 +2018,9 @@ public final class h0 extends ai.c1 implements q {
             }
         }
         if (!equals || longValue < S2) {
-            u2.f0 f0Var3 = f0Var2;
-            u6.p(!f0Var3.b());
-            u2.q1 q1Var = !equals ? u2.q1.d : j10.h;
+            u2.g0 g0Var3 = g0Var2;
+            u6.p(!g0Var3.b());
+            u2.s1 s1Var = !equals ? u2.s1.d : j10.h;
             x2.t tVar = !equals ? this.b : j10.i;
             if (equals) {
                 list = j10.j;
@@ -2028,30 +2028,30 @@ public final class h0 extends ai.c1 implements q {
                 e9.l0 l0Var = e9.n0.b;
                 list = x1.e;
             }
-            i1 c11 = j10.d(f0Var3, longValue, longValue, longValue, 0L, q1Var, tVar, list).c(f0Var3);
+            i1 c11 = j10.d(g0Var3, longValue, longValue, longValue, 0L, s1Var, tVar, list).c(g0Var3);
             c11.q = longValue;
             return c11;
         }
         if (longValue != S2) {
-            u2.f0 f0Var4 = f0Var2;
-            u6.p(!f0Var4.b());
+            u2.g0 g0Var4 = g0Var2;
+            u6.p(!g0Var4.b());
             long max = Math.max(0L, j10.r - (longValue - S2));
             long j11 = j10.q;
             if (j10.k.equals(j10.b)) {
                 j11 = longValue + max;
             }
-            i1 d = j10.d(f0Var4, longValue, longValue, longValue, max, j10.h, j10.i, j10.j);
+            i1 d = j10.d(g0Var4, longValue, longValue, longValue, max, j10.h, j10.i, j10.j);
             d.q = j11;
             return d;
         }
         int b10 = o1Var.b(j10.k.a);
-        if (b10 != -1 && o1Var.f(b10, this.o, false).c == o1Var.g(f0Var2.a, this.o).c) {
+        if (b10 != -1 && o1Var.f(b10, this.o, false).c == o1Var.g(g0Var2.a, this.o).c) {
             return j10;
         }
-        o1Var.g(f0Var2.a, this.o);
-        long a2 = f0Var2.b() ? this.o.a(f0Var2.b, f0Var2.c) : this.o.d;
-        u2.f0 f0Var5 = f0Var2;
-        i1 c12 = j10.d(f0Var5, j10.s, j10.s, j10.d, a2 - j10.s, j10.h, j10.i, j10.j).c(f0Var5);
+        o1Var.g(g0Var2.a, this.o);
+        long a2 = g0Var2.b() ? this.o.a(g0Var2.b, g0Var2.c) : this.o.d;
+        u2.g0 g0Var5 = g0Var2;
+        i1 c12 = j10.d(g0Var5, j10.s, j10.s, j10.d, a2 - j10.s, j10.h, j10.i, j10.j).c(g0Var5);
         c12.q = a2;
         return c12;
     }
@@ -2143,11 +2143,11 @@ public final class h0 extends ai.c1 implements q {
                 o12 = n1(o12, 4);
             }
         }
-        u2.h1 h1Var = this.O;
+        u2.j1 j1Var = this.O;
         e2.i0 i0Var = this.l.n;
         i0Var.getClass();
         e2.h0 c10 = e2.i0.c();
-        c10.a = i0Var.a.obtainMessage(20, i10, i11, h1Var);
+        c10.a = i0Var.a.obtainMessage(20, i10, i11, j1Var);
         c10.b();
         return o12;
     }
@@ -2207,10 +2207,10 @@ public final class h0 extends ai.c1 implements q {
         n1 n1Var = new n1(arrayList, this.O);
         i1 i1Var = this.p0;
         i1 o12 = o1(i1Var, n1Var, l1(y02, n1Var, k1(i1Var), i1(this.p0)));
-        u2.h1 h1Var = this.O;
+        u2.j1 j1Var = this.O;
         q0 q0Var = this.l;
         q0Var.getClass();
-        q0Var.n.b(19, new m0(i10, min, min2, h1Var)).b();
+        q0Var.n.b(19, new m0(i10, min, min2, j1Var)).b();
         D1(o12, 0, false, 5, -9223372036854775807L, -1, false);
     }
 

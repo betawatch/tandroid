@@ -20,10 +20,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class te0 extends org.telegram.ui.Components.ow0 {
-    public final /* synthetic */ fg0 E;
+    public final /* synthetic */ eg0 E;
     public final org.telegram.ui.Components.sd0 a;
     public final EditTextBoldCursor b;
     public final TextView c;
@@ -41,16 +41,16 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x00d5  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00d8  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x00d2  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00d5  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0067  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public te0(fg0 fg0Var, Context context) {
+    public te0(eg0 eg0Var, Context context) {
         super(context);
         int i10;
-        this.E = fg0Var;
+        this.E = eg0Var;
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
         org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
@@ -67,10 +67,10 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
                 TextView textView = new TextView(context);
                 this.c = textView;
                 com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView);
-                textView.setText(LocaleController.getString(fg0Var.F != 3 ? R.string.EnterNewEmail : R.string.AddEmailTitle));
+                textView.setText(LocaleController.getString(eg0Var.F != 3 ? R.string.EnterNewEmail : R.string.AddEmailTitle));
                 textView.setGravity(17);
                 textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                addView(textView, w7.z5.a(-2.0f, 32.0f, 16.0f, 32.0f, 0.0f, -1, 1));
+                addView(textView, w7.z5.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
                 org.telegram.ui.Components.x90 x90Var = new org.telegram.ui.Components.x90(context, null);
                 this.d = x90Var;
                 x90Var.setTextSize(1, 14.0f);
@@ -80,7 +80,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
                 addView(x90Var, w7.z5.t(-2, -2, 1, 32, 8, 32, 0));
                 org.telegram.ui.Components.sd0 sd0Var = new org.telegram.ui.Components.sd0(context, null);
                 this.a = sd0Var;
-                sd0Var.setText(LocaleController.getString(fg0Var.F != 3 ? R.string.YourNewEmail : R.string.YourEmail));
+                sd0Var.setText(LocaleController.getString(eg0Var.F != 3 ? R.string.YourNewEmail : R.string.YourEmail));
                 EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
                 this.b = editTextBoldCursor;
                 editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -115,11 +115,11 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
                 this.f = ea0Var;
                 addView(new Space(context), w7.z5.l(1.0f, 0, 0));
                 FrameLayout frameLayout2 = new FrameLayout(context);
-                frameLayout2.addView(textView2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 24.0f, -2, 83));
-                frameLayout2.addView(ea0Var, w7.z5.a(16.0f, 0.0f, 0.0f, 0.0f, 70.0f, -2, 83));
+                frameLayout2.addView(textView2, w7.z5.d(-2, -2.0f, 83, 0.0f, 0.0f, 0.0f, 24.0f));
+                frameLayout2.addView(ea0Var, w7.z5.d(-2, 16.0f, 83, 0.0f, 0.0f, 0.0f, 70.0f));
                 ea0Var.setMeasureAfter(textView2);
                 addView(frameLayout2, w7.z5.n(-1, -2));
-                m.g3.i(frameLayout2);
+                m.g3.r(frameLayout2);
                 frameLayout2.setOnClickListener(new y50(this, i11));
             }
         }
@@ -129,10 +129,10 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
         TextView textView3 = new TextView(context);
         this.c = textView3;
         com.google.android.gms.internal.play_billing.k3.m(18.0f, 1, textView3);
-        textView3.setText(LocaleController.getString(fg0Var.F != 3 ? R.string.EnterNewEmail : R.string.AddEmailTitle));
+        textView3.setText(LocaleController.getString(eg0Var.F != 3 ? R.string.EnterNewEmail : R.string.AddEmailTitle));
         textView3.setGravity(17);
         textView3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView3, w7.z5.a(-2.0f, 32.0f, 16.0f, 32.0f, 0.0f, -1, 1));
+        addView(textView3, w7.z5.d(-1, -2.0f, 1, 32.0f, 16.0f, 32.0f, 0.0f));
         org.telegram.ui.Components.x90 x90Var2 = new org.telegram.ui.Components.x90(context, null);
         this.d = x90Var2;
         x90Var2.setTextSize(1, 14.0f);
@@ -142,7 +142,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
         addView(x90Var2, w7.z5.t(-2, -2, 1, 32, 8, 32, 0));
         org.telegram.ui.Components.sd0 sd0Var2 = new org.telegram.ui.Components.sd0(context, null);
         this.a = sd0Var2;
-        sd0Var2.setText(LocaleController.getString(fg0Var.F != 3 ? R.string.YourNewEmail : R.string.YourEmail));
+        sd0Var2.setText(LocaleController.getString(eg0Var.F != 3 ? R.string.YourNewEmail : R.string.YourEmail));
         EditTextBoldCursor editTextBoldCursor2 = new EditTextBoldCursor(context);
         this.b = editTextBoldCursor2;
         editTextBoldCursor2.setCursorSize(AndroidUtilities.dp(20.0f));
@@ -177,11 +177,11 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
         this.f = ea0Var2;
         addView(new Space(context), w7.z5.l(1.0f, 0, 0));
         FrameLayout frameLayout22 = new FrameLayout(context);
-        frameLayout22.addView(textView22, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 24.0f, -2, 83));
-        frameLayout22.addView(ea0Var2, w7.z5.a(16.0f, 0.0f, 0.0f, 0.0f, 70.0f, -2, 83));
+        frameLayout22.addView(textView22, w7.z5.d(-2, -2.0f, 83, 0.0f, 0.0f, 0.0f, 24.0f));
+        frameLayout22.addView(ea0Var2, w7.z5.d(-2, 16.0f, 83, 0.0f, 0.0f, 0.0f, 70.0f));
         ea0Var2.setMeasureAfter(textView22);
         addView(frameLayout22, w7.z5.n(-1, -2));
-        m.g3.i(frameLayout22);
+        m.g3.r(frameLayout22);
         frameLayout22.setOnClickListener(new y50(this, i112));
     }
 
@@ -212,10 +212,10 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
         bundle.putString("email", obj);
         bundle.putBoolean("setup", true);
         GoogleSignInAccount googleSignInAccount2 = this.y;
-        fg0 fg0Var = this.E;
+        eg0 eg0Var = this.E;
         if (googleSignInAccount2 != null) {
             TL_account.verifyEmail verifyemail = new TL_account.verifyEmail();
-            if (fg0Var.F == 3) {
+            if (eg0Var.F == 3) {
                 verifyemail.purpose = new TLRPC.TL_emailVerifyPurposeLoginChange();
             } else {
                 TLRPC.TL_emailVerifyPurposeLoginSetup tL_emailVerifyPurposeLoginSetup = new TLRPC.TL_emailVerifyPurposeLoginSetup();
@@ -227,7 +227,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
             tL_emailVerificationGoogle.token = this.y.c;
             verifyemail.verification = tL_emailVerificationGoogle;
             this.y = null;
-            i11 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+            i11 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
             ConnectionsManager.getInstance(i11).sendRequest(verifyemail, new ea(this, bundle, verifyemail, 21), 10);
             return;
         }
@@ -236,9 +236,9 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
             return;
         }
         this.r = true;
-        fg0Var.n1(0, true);
+        eg0Var.n1(0, true);
         TL_account.sendVerifyEmailCode sendverifyemailcode = new TL_account.sendVerifyEmailCode();
-        if (fg0Var.F == 3) {
+        if (eg0Var.F == 3) {
             sendverifyemailcode.purpose = new TLRPC.TL_emailVerifyPurposeLoginChange();
         } else {
             TLRPC.TL_emailVerifyPurposeLoginSetup tL_emailVerifyPurposeLoginSetup2 = new TLRPC.TL_emailVerifyPurposeLoginSetup();
@@ -247,13 +247,13 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
             sendverifyemailcode.purpose = tL_emailVerifyPurposeLoginSetup2;
         }
         sendverifyemailcode.email = obj;
-        i10 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+        i10 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
         ConnectionsManager.getInstance(i10).sendRequest(sendverifyemailcode, new ea(this, bundle, sendverifyemailcode, 22), 10);
     }
 
     @Override // org.telegram.ui.Components.ow0
     public final void j() {
-        AndroidUtilities.runOnUIThread(new re0(this, 0), fg0.t0);
+        AndroidUtilities.runOnUIThread(new re0(this, 0), eg0.t0);
     }
 
     @Override // org.telegram.ui.Components.ow0
@@ -296,7 +296,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
         int i10 = (bundle.getBoolean("googleSignInAllowed") && PushListenerController.GooglePushListenerServiceProvider.INSTANCE.hasServices()) ? 0 : 8;
         this.f.setVisibility(i10);
         this.e.setVisibility(i10);
-        fg0.T0(this.E, editTextBoldCursor);
+        eg0.T0(this.E, editTextBoldCursor);
         editTextBoldCursor.requestFocus();
     }
 
@@ -316,8 +316,8 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
 
     public final void o() {
         org.telegram.ui.Components.sd0 sd0Var = this.a;
-        fg0 fg0Var = this.E;
-        if (fg0Var.getParentActivity() == null) {
+        eg0 eg0Var = this.E;
+        if (eg0Var.getParentActivity() == null) {
             return;
         }
         try {
@@ -325,7 +325,7 @@ public final class te0 extends org.telegram.ui.Components.ow0 {
         } catch (Exception unused) {
         }
         this.b.requestFocus();
-        fg0.U0(fg0Var, sd0Var, true);
+        eg0.U0(eg0Var, sd0Var, true);
         postDelayed(new re0(this, 1), 300L);
     }
 }

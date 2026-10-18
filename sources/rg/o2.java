@@ -1,163 +1,39 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.PointF;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.dw0;
-import org.telegram.ui.Components.el0;
-import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.uj0;
-import w7.z5;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public class o2 extends j {
-    public final TLRPC.Document q0;
-    public final Object r0;
-    public final int s0;
-    public boolean t0;
-    public final f6 u0;
-    public final dw0 v0;
-    public final n2 w0;
-    public final ImageReceiver x0;
+public final /* synthetic */ class o2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s2 b;
 
-    public o2(Context context, PointF pointF, float f7, float f10, dw0 dw0Var, TLRPC.Document document, Object obj) {
-        super(context, pointF);
-        this.s0 = -1;
-        int i10 = 0;
-        this.t0 = false;
-        this.x0 = new ImageReceiver();
-        setRotation(f7);
-        setScale(f10);
-        this.q0 = document;
-        this.v0 = dw0Var;
-        this.r0 = obj;
-        while (true) {
-            if (i10 >= document.attributes.size()) {
+    public /* synthetic */ o2(s2 s2Var, int i10) {
+        this.a = i10;
+        this.b = s2Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                super/*android.app.Dialog*/.dismiss();
                 break;
-            }
-            TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i10);
-            if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
-                TLRPC.TL_maskCoords tL_maskCoords = documentAttribute.mask_coords;
-                if (tL_maskCoords != null) {
-                    this.s0 = tL_maskCoords.n;
+            case 1:
+                AndroidUtilities.runOnUIThread(new o2(this.b, 0));
+                break;
+            case 2:
+                this.b.dismiss();
+                break;
+            default:
+                s2 s2Var = this.b;
+                ai.r0 r0Var = s2Var.H;
+                if (r0Var != null) {
+                    r0Var.run(null);
+                    s2Var.H = null;
                 }
-            } else {
-                i10++;
-            }
+                s2Var.dismiss();
+                break;
         }
-        n2 n2Var = new n2(this, context);
-        this.w0 = n2Var;
-        addView(n2Var, z5.d(-1.0f, -1));
-        this.u0 = new f6(n2Var, 0L, 500L, bs.h);
-        this.x0.setAspectFit(true);
-        this.x0.setInvalidateAll(true);
-        this.x0.setParentView(n2Var);
-        this.x0.setImage(ImageLocation.getForDocument(document), (String) null, ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document), (String) null, "webp", obj, 1);
-        this.x0.setDelegate(new qg.g0(this, 14));
-        k();
-    }
-
-    @Override // rg.j
-    public final i a() {
-        z1 z1Var = new z1(this, getContext(), 2);
-        z1Var.r = new RectF();
-        return z1Var;
-    }
-
-    public int getAnchor() {
-        return this.s0;
-    }
-
-    public dw0 getBaseSize() {
-        return this.v0;
-    }
-
-    public long getDuration() {
-        ImageReceiver imageReceiver = this.x0;
-        uj0 lottieAnimation = imageReceiver.getLottieAnimation();
-        if (lottieAnimation != null) {
-            return lottieAnimation.r();
-        }
-        if (imageReceiver.getAnimation() != null) {
-            return r0.d[4];
-        }
-        return 0L;
-    }
-
-    public Object getParentObject() {
-        return this.r0;
-    }
-
-    @Override // rg.j
-    public el0 getSelectionBounds() {
-        ViewGroup viewGroup = (ViewGroup) getParent();
-        if (viewGroup == null) {
-            return new el0();
-        }
-        float scaleX = viewGroup.getScaleX();
-        float scale = (getScale() + 0.5f) * getMeasuredWidth();
-        float f7 = scale / 2.0f;
-        float f10 = scale * scaleX;
-        return new el0((getPositionX() - f7) * scaleX, (getPositionY() - f7) * scaleX, f10, f10);
-    }
-
-    public TLRPC.Document getSticker() {
-        return this.q0;
-    }
-
-    @Override // rg.j
-    public final void k() {
-        dw0 dw0Var = this.v0;
-        float f7 = dw0Var.a / 2.0f;
-        float f10 = dw0Var.b / 2.0f;
-        setX(getPositionX() - f7);
-        setY(getPositionY() - f10);
-        m();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.x0.onAttachedToWindow();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.x0.onDetachedFromWindow();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        dw0 dw0Var = this.v0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) dw0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) dw0Var.b, TLObject.FLAG_30));
-    }
-
-    public final void r(boolean z10) {
-        boolean z11 = !this.t0;
-        this.t0 = z11;
-        if (!z10) {
-            this.u0.f(z11, true);
-        }
-        this.w0.invalidate();
-    }
-
-    public o2(Context context, o2 o2Var, PointF pointF) {
-        this(context, pointF, o2Var.getRotation(), o2Var.getScale(), o2Var.v0, o2Var.q0, o2Var.r0);
-        if (o2Var.t0) {
-            r(false);
-        }
-    }
-
-    public void q(uj0 uj0Var) {
     }
 }

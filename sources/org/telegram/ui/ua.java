@@ -24,7 +24,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ua extends org.telegram.ui.ActionBar.n2 {
     public static final Paint H = new Paint(1);
@@ -118,7 +118,7 @@ public final class ua extends org.telegram.ui.ActionBar.n2 {
                 reorderusernames3.order = arrayList3;
                 reorderusernames = reorderusernames3;
             }
-            uaVar.getConnectionsManager().sendRequest(reorderusernames, new ci.e6(9));
+            uaVar.getConnectionsManager().sendRequest(reorderusernames, new ci.d6(9));
             ArrayList<TLRPC.TL_username> arrayList4 = new ArrayList<>();
             arrayList4.addAll(arrayList2);
             arrayList4.addAll(arrayList);
@@ -224,7 +224,7 @@ public final class ua extends org.telegram.ui.ActionBar.n2 {
         im0Var2.setAdapter(laVar);
         this.b.setSelectorDrawableColor(getThemedColor(org.telegram.ui.ActionBar.h6.i6));
         new s4.y(new pa(this)).d(this.b);
-        ((FrameLayout) this.fragmentView).addView(this.b, w7.z5.d(-1.0f, -1));
+        ((FrameLayout) this.fragmentView).addView(this.b, w7.z5.c(-1.0f, -1));
         this.fragmentView.setOnTouchListener(new di.d(6));
         this.b.setOnItemClickListener(new ja(this));
         AndroidUtilities.runOnUIThread(new ut0(this, 19), 40L);

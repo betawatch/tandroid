@@ -13,7 +13,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class x41 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -33,7 +33,7 @@ public final class x41 extends FrameLayout implements org.telegram.ui.ActionBar.
         this.a = d6Var;
         setClipToPadding(false);
         setPadding(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(6.0f));
-        LinearLayout e = org.telegram.messenger.kk.e(context, 0);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 0);
         addView(e, w7.z5.e(-2, -2, 19));
         TextView textView = new TextView(context);
         this.c = textView;
@@ -45,7 +45,7 @@ public final class x41 extends FrameLayout implements org.telegram.ui.ActionBar.
         linearLayout.setOrientation(0);
         linearLayout.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(1.0f));
         w7.b6.a(linearLayout);
-        e.addView(linearLayout, w7.z5.a(-2.0f, -6.0f, 0.0f, 0.0f, 0.0f, -2, 19));
+        e.addView(linearLayout, w7.z5.d(-2, -2.0f, 19, -6.0f, 0.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextSize(1, 14.0f);
@@ -77,14 +77,14 @@ public final class x41 extends FrameLayout implements org.telegram.ui.ActionBar.
         org.telegram.ui.Cells.c1.r(org.telegram.ui.ActionBar.h6.j5, d6Var, textView4, 1, 14.0f);
         textView4.setText(LocaleController.getString(R.string.AIEditorEmojify));
         linearLayout2.addView(textView4, w7.z5.t(-2, -2, 16, 3, -1, 2, 0));
-        addView(linearLayout2, w7.z5.a(-2.0f, 0.0f, -3.0f, -6.0f, -3.0f, -2, 21));
+        addView(linearLayout2, w7.z5.d(-2, -2.0f, 21, 0.0f, -3.0f, -6.0f, -3.0f));
         w7.b6.b(linearLayout2, 0.025f, 1.5f);
         LinearLayout linearLayout3 = new LinearLayout(context);
         this.r = linearLayout3;
         linearLayout3.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(3.0f));
         linearLayout3.setOrientation(0);
         linearLayout3.setVisibility(8);
-        addView(linearLayout3, w7.z5.a(-2.0f, 0.0f, 0.0f, -6.0f, 0.0f, -2, 53));
+        addView(linearLayout3, w7.z5.d(-2, -2.0f, 53, 0.0f, 0.0f, -6.0f, 0.0f));
         w7.b6.b(linearLayout3, 0.025f, 1.5f);
         ImageView imageView2 = new ImageView(context);
         this.s = imageView2;

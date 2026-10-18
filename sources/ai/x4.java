@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x4 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -30,7 +30,7 @@ public final /* synthetic */ class x4 implements Utilities.Callback {
         int i11;
         switch (this.a) {
             case 0:
-                k7.T((k7) this.e, this.b, this.c, this.d, (ug.m1[]) this.f, (TL_stars.TL_starGiftUnique) this.g, (Long) obj);
+                k7.S((k7) this.e, this.b, this.c, this.d, (ug.m1[]) this.f, (TL_stars.TL_starGiftUnique) this.g, (Long) obj);
                 break;
             default:
                 org.telegram.ui.Components.r3 r3Var = (org.telegram.ui.Components.r3) this.e;

@@ -14,11 +14,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class iu0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final FrameLayout a;
-    public final ci.i4 b;
+    public final ci.h4 b;
     public final org.telegram.ui.ActionBar.j5[] c;
     public final org.telegram.ui.Components.q6 d;
     public AnimatorSet e;
@@ -34,12 +34,12 @@ public final class iu0 extends FrameLayout implements NotificationCenter.Notific
         this.a = frameLayout;
         frameLayout.setPadding(AndroidUtilities.dp(56.0f), 0, 0, 0);
         addView(frameLayout, w7.z5.e(-1, -1, 119));
-        ci.i4 i4Var = new ci.i4(activity, 25);
-        this.b = i4Var;
-        i4Var.setPivotX(AndroidUtilities.dp(16.0f));
-        i4Var.setPadding(AndroidUtilities.dp(16.0f), 0, 0, 0);
-        i4Var.setClipToPadding(false);
-        frameLayout.addView(i4Var, w7.z5.e(-1, -1, 119));
+        ci.h4 h4Var = new ci.h4(activity, 25);
+        this.b = h4Var;
+        h4Var.setPivotX(AndroidUtilities.dp(16.0f));
+        h4Var.setPadding(AndroidUtilities.dp(16.0f), 0, 0, 0);
+        h4Var.setClipToPadding(false);
+        frameLayout.addView(h4Var, w7.z5.e(-1, -1, 119));
         this.c = new org.telegram.ui.ActionBar.j5[2];
         for (int i10 = 0; i10 < 2; i10++) {
             this.c[i10] = new org.telegram.ui.ActionBar.j5(activity);
@@ -60,7 +60,7 @@ public final class iu0 extends FrameLayout implements NotificationCenter.Notific
         q6Var.setEllipsizeByGradient(true);
         q6Var.setImportantForAccessibility(1);
         q6Var.setAccessibilityLiveRegion(1);
-        this.a.addView(q6Var, w7.z5.a(20.0f, 16.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        this.a.addView(q6Var, w7.z5.d(-1, 20.0f, 51, 16.0f, 0.0f, 0.0f, 0.0f));
     }
 
     public final void a(CharSequence charSequence, boolean z10) {
@@ -76,16 +76,16 @@ public final class iu0 extends FrameLayout implements NotificationCenter.Notific
             }
             Point point = AndroidUtilities.displaySize;
             int dp = AndroidUtilities.dp((!isEmpty ? 30 : 33) - (point.x > point.y ? 6 : 0));
-            ci.i4 i4Var = this.b;
+            ci.h4 h4Var = this.b;
             if (z10) {
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(ObjectAnimator.ofFloat(q6Var, (Property<org.telegram.ui.Components.q6, Float>) View.ALPHA, !isEmpty ? 1.0f : 0.0f));
                 float[] fArr = {dp};
                 Property property = View.TRANSLATION_Y;
                 arrayList.add(ObjectAnimator.ofFloat(q6Var, (Property<org.telegram.ui.Components.q6, Float>) property, fArr));
-                arrayList.add(ObjectAnimator.ofFloat(i4Var, (Property<ci.i4, Float>) property, isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f)));
-                arrayList.add(ObjectAnimator.ofFloat(i4Var, (Property<ci.i4, Float>) View.SCALE_X, !isEmpty ? 0.87f : 1.0f));
-                arrayList.add(ObjectAnimator.ofFloat(i4Var, (Property<ci.i4, Float>) View.SCALE_Y, isEmpty ? 1.0f : 0.87f));
+                arrayList.add(ObjectAnimator.ofFloat(h4Var, (Property<ci.h4, Float>) property, isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f)));
+                arrayList.add(ObjectAnimator.ofFloat(h4Var, (Property<ci.h4, Float>) View.SCALE_X, !isEmpty ? 0.87f : 1.0f));
+                arrayList.add(ObjectAnimator.ofFloat(h4Var, (Property<ci.h4, Float>) View.SCALE_Y, isEmpty ? 1.0f : 0.87f));
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 this.f = animatorSet2;
                 animatorSet2.playTogether(arrayList);
@@ -94,9 +94,9 @@ public final class iu0 extends FrameLayout implements NotificationCenter.Notific
             } else {
                 q6Var.setAlpha(!isEmpty ? 1.0f : 0.0f);
                 q6Var.setTranslationY(dp);
-                i4Var.setTranslationY(isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f));
-                i4Var.setScaleX(!isEmpty ? 0.87f : 1.0f);
-                i4Var.setScaleY(isEmpty ? 1.0f : 0.87f);
+                h4Var.setTranslationY(isEmpty ? 0.0f : AndroidUtilities.dp(-12.0f));
+                h4Var.setScaleX(!isEmpty ? 0.87f : 1.0f);
+                h4Var.setScaleY(isEmpty ? 1.0f : 0.87f);
             }
         }
         q6Var.c(charSequence, z10, true);

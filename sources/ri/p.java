@@ -1,6 +1,6 @@
 package ri;
 
-import ai.b2;
+import ai.b3;
 import android.content.Context;
 import android.media.AudioRecord;
 import android.os.Build;
@@ -17,12 +17,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.ui.Components.ay0;
 import org.telegram.ui.go;
-import org.telegram.ui.mh0;
+import org.telegram.ui.lh0;
 import ri.i;
 import ri.j;
 import ri.p;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class p {
     public static final pb.a G = new pb.a(22);
@@ -382,7 +382,7 @@ public final class p {
                         bArr = null;
                     }
                     byte[] bArr2 = bArr;
-                    pVar.h.post(new b2(pVar, jVar2, j10, bArr2, 27));
+                    pVar.h.post(new b3(pVar, jVar2, j10, bArr2, 27));
                 }
             });
             return;
@@ -550,7 +550,7 @@ public final class p {
                     long max2 = Math.max(0L, d);
                     p pVar = (p) eVar.c;
                     pVar.a((j) eVar.b, max2);
-                    pVar.h.post(new mh0(eVar, eVar.a, 3));
+                    pVar.h.post(new lh0(eVar, eVar.a, 3));
                     bVar2.g.post(new ri.a(bVar2, 1));
                 } catch (Throwable th2) {
                     bVar2.d.a("capture failed", th2);

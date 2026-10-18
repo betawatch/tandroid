@@ -16,7 +16,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f0 extends h0 {
     public final w9 h;
@@ -64,9 +64,9 @@ public final class f0 extends h0 {
         this.h = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(9.0f));
         w9Var.e(k0Var.f, h9Var);
-        this.a.addView(w9Var, z5.c(27.33f, 27.33f, 83, 14.33f, 0.0f, 0.0f, 14.33f));
+        this.a.addView(w9Var, z5.b(27.33f, 27.33f, 83, 14.33f, 0.0f, 0.0f, 14.33f));
         this.c.addView(this.a, z5.e(-1, 56, 48));
-        this.c.addView(k0Var.y, z5.a(40.0f, 11.0f, 0.0f, 11.0f, 0.0f, -1, 48));
+        this.c.addView(k0Var.y, z5.d(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
         org.telegram.ui.ActionBar.y n10 = this.a.n();
         n10.setGlassMode(true);
         n10.setTranslationX(-AndroidUtilities.dp(7.0f));

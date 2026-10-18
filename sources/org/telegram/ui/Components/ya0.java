@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class ya0 extends j71 {
     public final int T;
@@ -53,13 +53,13 @@ public abstract class ya0 extends j71 {
         int indexOfChild = ((ViewGroup) this.d.getParent()).indexOfChild(this.d);
         b10 b10 = xa0Var.b();
         this.V = b10;
-        this.containerView.addView(b10, indexOfChild, w7.z5.d(-1.0f, -1));
+        this.containerView.addView(b10, indexOfChild, w7.z5.c(-1.0f, -1));
         rx0 a2 = xa0Var.a();
         this.W = a2;
-        this.containerView.addView(a2, indexOfChild, w7.z5.d(-1.0f, -1));
+        this.containerView.addView(a2, indexOfChild, w7.z5.c(-1.0f, -1));
         rx0 c10 = xa0Var.c();
         this.X = c10;
-        this.containerView.addView(c10, indexOfChild, w7.z5.d(-1.0f, -1));
+        this.containerView.addView(c10, indexOfChild, w7.z5.c(-1.0f, -1));
         xa0Var.e();
     }
 

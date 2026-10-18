@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.k4;
+import ci.j4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.DocumentObject;
@@ -31,7 +31,7 @@ import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.s61;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class d1 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -46,7 +46,7 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
     public FrameLayout h;
     public c1 n;
     public oq r;
-    public k4 s;
+    public j4 s;
     public boolean v;
     public TLRPC.TL_businessLocation w;
     public TLRPC.GeoPoint x;
@@ -194,13 +194,13 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
     }
 
     public final void Y() {
-        k4 k4Var;
+        j4 j4Var;
         c1 c1Var = this.n;
-        if (c1Var == null || (k4Var = this.s) == null) {
+        if (c1Var == null || (j4Var = this.s) == null) {
             return;
         }
         if (this.x == null) {
-            k4Var.setImageBitmap(null);
+            j4Var.setImageBitmap(null);
             return;
         }
         c1Var.setAlpha(0.0f);
@@ -209,9 +209,9 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
         float f7 = AndroidUtilities.density;
         int i10 = (int) (measuredWidth / f7);
         int min = Math.min(2, (int) Math.ceil(f7));
-        k4 k4Var2 = this.s;
+        j4 j4Var2 = this.s;
         TLRPC.GeoPoint geoPoint = this.x;
-        k4Var2.n(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i10, min * 240, 15, min)), a1.g.m(i10, "_240"), this.r, null);
+        j4Var2.n(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint.lat, geoPoint._long, 0L, min * i10, min * 240, 15, min)), a1.g.m(i10, "_240"), this.r, null);
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -251,7 +251,7 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
         this.f.setFilters(new InputFilter[]{new b1()});
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.e = frameLayout2;
-        frameLayout2.addView(this.f, z5.a(-1.0f, 21.0f, 15.0f, 21.0f, 15.0f, -1, 48));
+        frameLayout2.addView(this.f, z5.d(-1, -1.0f, 48, 21.0f, 15.0f, 21.0f, 15.0f));
         FrameLayout frameLayout3 = this.e;
         int i14 = h6.d6;
         frameLayout3.setBackgroundColor(getThemedColor(i14));
@@ -263,7 +263,7 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
             a1Var4.setSelection(a1Var4.getText().length());
             this.d = false;
         }
-        this.s = new k4(this, context, i10);
+        this.s = new j4(this, context, i10);
         SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, h6.Pb, 0.2f);
         svgThumb.setColorKey(i13, getResourceProvider());
         svgThumb.setAspectCenter(true);
@@ -275,15 +275,15 @@ public final class d1 extends n2 implements NotificationCenter.NotificationCente
         this.n = new c1(this, context);
         FrameLayout frameLayout4 = new FrameLayout(context);
         this.h = frameLayout4;
-        frameLayout4.addView(this.s, z5.d(-1.0f, -1));
-        this.h.addView(this.n, z5.a(-2.0f, 0.0f, -31.0f, 0.0f, 0.0f, -2, 17));
+        frameLayout4.addView(this.s, z5.c(-1.0f, -1));
+        this.h.addView(this.n, z5.d(-2, -2.0f, 17, 0.0f, -31.0f, 0.0f, 0.0f));
         Y();
         a71 a71Var = new a71(this, new hg.o(this, 7), new y0(this, i12), null);
         this.a = a71Var;
         a71Var.p1();
         a71 a71Var2 = this.a;
         a71Var2.W2.r = false;
-        frameLayout.addView(a71Var2, z5.d(-1.0f, -1));
+        frameLayout.addView(a71Var2, z5.c(-1.0f, -1));
         this.actionBar.A(this.a, true);
         X();
         this.fragmentView = frameLayout;

@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class p00 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -158,7 +158,7 @@ public final class p00 extends org.telegram.ui.ActionBar.n2 {
             }
         }
         if (arrayList.size() > (p00Var.getUserConfig().isPremium() ? p00Var.getMessagesController().dialogFiltersChatsLimitPremium : p00Var.getMessagesController().dialogFiltersChatsLimitDefault)) {
-            p00Var.showDialog(new sg.j0(4, p00Var.currentAccount, p00Var.getParentActivity(), p00Var, null));
+            p00Var.showDialog(new sg.k0(4, p00Var.currentAccount, p00Var.getParentActivity(), p00Var, null));
             return;
         }
         if (arrayList.isEmpty()) {
@@ -233,39 +233,39 @@ public final class p00 extends org.telegram.ui.ActionBar.n2 {
             return;
         }
         if ("INVITE_PEERS_TOO_MUCH".equals(tL_error.text)) {
-            new sg.j0(4, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
+            new sg.k0(4, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
             return;
         }
         if ("PEERS_LIST_EMPTY".equals(tL_error.text)) {
-            org.telegram.messenger.kk.q(R.string.FolderLinkNoChatsError, xcVar, null);
+            org.telegram.messenger.lk.q(R.string.FolderLinkNoChatsError, xcVar, null);
             return;
         }
         if ("USER_CHANNELS_TOO_MUCH".equals(tL_error.text)) {
-            org.telegram.messenger.kk.q(R.string.FolderLinkOtherAdminLimitError, xcVar, null);
+            org.telegram.messenger.lk.q(R.string.FolderLinkOtherAdminLimitError, xcVar, null);
             return;
         }
         if ("CHANNELS_TOO_MUCH".equals(tL_error.text)) {
-            new sg.j0(5, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
+            new sg.k0(5, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
             return;
         }
         if ("INVITES_TOO_MUCH".equals(tL_error.text)) {
-            new sg.j0(12, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
+            new sg.k0(12, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
             return;
         }
         if ("CHATLISTS_TOO_MUCH".equals(tL_error.text)) {
-            new sg.j0(13, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
+            new sg.k0(13, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
             return;
         }
         if ("INVITE_SLUG_EXPIRED".equals(tL_error.text)) {
-            org.telegram.messenger.kk.q(R.string.NoFolderFound, xcVar, null);
+            org.telegram.messenger.lk.q(R.string.NoFolderFound, xcVar, null);
             return;
         }
         if ("FILTER_INCLUDE_TOO_MUCH".equals(tL_error.text)) {
-            new sg.j0(4, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
+            new sg.k0(4, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
         } else if (!"DIALOG_FILTERS_TOO_MUCH".equals(tL_error.text)) {
-            org.telegram.messenger.kk.q(R.string.UnknownError, xcVar, null);
+            org.telegram.messenger.lk.q(R.string.UnknownError, xcVar, null);
         } else {
-            new sg.j0(3, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
+            new sg.k0(3, n2Var.getCurrentAccount(), n2Var.getContext(), n2Var, null).show();
         }
     }
 
@@ -493,7 +493,7 @@ public final class p00 extends org.telegram.ui.ActionBar.n2 {
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setLayoutManager(new s4.b0(1, false));
         this.a.setVerticalScrollBarEnabled(false);
-        p1Var.addView(this.a, w7.z5.d(-1.0f, -1));
+        p1Var.addView(this.a, w7.z5.c(-1.0f, -1));
         ai.u1 u1Var2 = this.a;
         m00 m00Var = new m00(this, context);
         this.b = m00Var;
@@ -881,7 +881,7 @@ public final class p00 extends org.telegram.ui.ActionBar.n2 {
             }
         }
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ai.f4(this, g00Var, z10, 8));
+        alertDialog$Builder.k(LocaleController.getString(R.string.StickersRemove), new ai.d4(this, g00Var, z10, 8));
         showDialog(b2Var);
         TextView textView = (TextView) b2Var.d(-1);
         if (textView != null) {

@@ -33,7 +33,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.ua;
 import org.telegram.ui.xb;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class d implements View.OnTouchListener {
                 int i14 = xb.Q0;
                 break;
             case 8:
-                int i15 = sn.Hc;
+                int i15 = sn.Ic;
                 break;
             case 10:
                 Pattern pattern = f5.a;

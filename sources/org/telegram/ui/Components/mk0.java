@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class mk0 extends FrameLayout {
     public lk0 E;
@@ -73,13 +73,13 @@ public final class mk0 extends FrameLayout {
         ek0Var.j(new gk0(this, b0Var));
         ek0Var.setVerticalScrollBarEnabled(true);
         ek0Var.setAlpha(0.0f);
-        addView(ek0Var, w7.z5.d(-1.0f, -1));
+        addView(ek0Var, w7.z5.c(-1.0f, -1));
         hk0 hk0Var = new hk0(this, context, d6Var);
         this.h = hk0Var;
         hk0Var.f(org.telegram.ui.ActionBar.h6.G8, org.telegram.ui.ActionBar.h6.i6, -1);
         hk0Var.setIsSingleCell(true);
         hk0Var.setItemsCount(this.a);
-        addView(hk0Var, w7.z5.d(-1.0f, -1));
+        addView(hk0Var, w7.z5.c(-1.0f, -1));
         if (reaction != null && (reaction instanceof TLRPC.TL_reactionCustomEmoji) && !MessagesController.getInstance(i10).premiumFeaturesBlocked()) {
             arrayList.clear();
             arrayList.add(ah.i1.d(reaction));

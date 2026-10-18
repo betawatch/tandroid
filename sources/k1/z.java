@@ -15,9 +15,9 @@ import org.telegram.tgnet.TLObject;
 import v7.g8;
 import v7.h8;
 import v7.i8;
-import w7.l7;
+import w7.h7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class z implements f {
     public static final LinkedHashSet r = new LinkedHashSet();
@@ -580,18 +580,18 @@ public final class z implements f {
                             try {
                                 throw th2;
                             } catch (Throwable th5) {
-                                l7.a(fileInputStream, th2);
+                                h7.a(fileInputStream, th2);
                                 throw th5;
                             }
                         }
                     }
-                    l7.a(fileInputStream, null);
+                    h7.a(fileInputStream, null);
                     return obj;
                 }
             }
             if (i10 != 0) {
             }
-            l7.a(fileInputStream, null);
+            h7.a(fileInputStream, null);
             return obj;
         } catch (FileNotFoundException e7) {
             e = e7;
@@ -880,13 +880,13 @@ public final class z implements f {
                             try {
                                 throw th;
                             } catch (Throwable th4) {
-                                l7.a(fileOutputStream, th);
+                                h7.a(fileOutputStream, th);
                                 throw th4;
                             }
                         }
                     }
                     fileOutputStream2.getFD().sync();
-                    l7.a(fileOutputStream, null);
+                    h7.a(fileOutputStream, null);
                     if (!r32.renameTo(zVar.c())) {
                         return iVar;
                     }
@@ -896,7 +896,7 @@ public final class z implements f {
             if (r32 != 0) {
             }
             fileOutputStream2.getFD().sync();
-            l7.a(fileOutputStream, null);
+            h7.a(fileOutputStream, null);
             if (!r32.renameTo(zVar.c())) {
             }
         } catch (IOException e) {

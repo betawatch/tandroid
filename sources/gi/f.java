@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.y10;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class f extends sg.w1 {
+public final class f extends sg.x1 {
     public final /* synthetic */ int n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,26 +16,26 @@ public final class f extends sg.w1 {
         this.n = i10;
     }
 
-    @Override // sg.w1
+    @Override // sg.x1
     public final void a() {
         switch (this.n) {
             case 0:
                 super.a();
-                sg.v1 v1Var = this.a;
-                v1Var.q = true;
-                v1Var.K = false;
-                v1Var.L = true;
-                v1Var.H = true;
-                v1Var.c();
+                sg.w1 w1Var = this.a;
+                w1Var.q = true;
+                w1Var.K = false;
+                w1Var.L = true;
+                w1Var.H = true;
+                w1Var.c();
                 break;
             case 1:
                 super.a();
-                sg.v1 v1Var2 = this.a;
-                v1Var2.q = true;
-                v1Var2.K = false;
-                v1Var2.L = true;
-                v1Var2.H = true;
-                v1Var2.c();
+                sg.w1 w1Var2 = this.a;
+                w1Var2.q = true;
+                w1Var2.K = false;
+                w1Var2.L = true;
+                w1Var2.H = true;
+                w1Var2.c();
                 break;
             case 2:
                 y10 y10Var = new y10(50);
@@ -53,50 +53,50 @@ public final class f extends sg.w1 {
                 y10Var.c();
                 break;
             case 3:
-                sg.v1 v1Var3 = this.a;
-                v1Var3.q = true;
-                v1Var3.K = false;
-                v1Var3.H = true;
-                v1Var3.J = true;
-                v1Var3.k = AndroidUtilities.dp(-14.0f);
-                sg.v1 v1Var4 = this.a;
-                v1Var4.x = 2000L;
-                v1Var4.y = 3000;
-                v1Var4.r = 16;
-                v1Var4.G = false;
-                v1Var4.O = 28;
-                v1Var4.Q = h6.Mj;
-                v1Var4.c();
+                sg.w1 w1Var3 = this.a;
+                w1Var3.q = true;
+                w1Var3.K = false;
+                w1Var3.H = true;
+                w1Var3.J = true;
+                w1Var3.k = AndroidUtilities.dp(-14.0f);
+                sg.w1 w1Var4 = this.a;
+                w1Var4.x = 2000L;
+                w1Var4.y = 3000;
+                w1Var4.r = 16;
+                w1Var4.G = false;
+                w1Var4.O = 28;
+                w1Var4.Q = h6.Mj;
+                w1Var4.c();
                 break;
             case 4:
-                sg.v1 v1Var5 = this.a;
-                v1Var5.q = true;
-                v1Var5.K = false;
-                v1Var5.H = true;
-                v1Var5.J = true;
-                v1Var5.k = AndroidUtilities.dp(-14.0f);
-                sg.v1 v1Var6 = this.a;
-                v1Var6.x = 2000L;
-                v1Var6.y = 3000;
-                v1Var6.r = 16;
-                v1Var6.G = false;
-                v1Var6.O = 28;
-                v1Var6.Q = h6.Mj;
-                v1Var6.c();
+                sg.w1 w1Var5 = this.a;
+                w1Var5.q = true;
+                w1Var5.K = false;
+                w1Var5.H = true;
+                w1Var5.J = true;
+                w1Var5.k = AndroidUtilities.dp(-14.0f);
+                sg.w1 w1Var6 = this.a;
+                w1Var6.x = 2000L;
+                w1Var6.y = 3000;
+                w1Var6.r = 16;
+                w1Var6.G = false;
+                w1Var6.O = 28;
+                w1Var6.Q = h6.Mj;
+                w1Var6.c();
                 break;
             default:
                 super.a();
-                sg.v1 v1Var7 = this.a;
-                v1Var7.q = true;
-                v1Var7.K = false;
-                v1Var7.L = true;
-                v1Var7.H = true;
-                v1Var7.c();
+                sg.w1 w1Var7 = this.a;
+                w1Var7.q = true;
+                w1Var7.K = false;
+                w1Var7.L = true;
+                w1Var7.H = true;
+                w1Var7.c();
                 break;
         }
     }
 
-    @Override // sg.w1
+    @Override // sg.x1
     public int getStarsRectWidth() {
         switch (this.n) {
             case 0:
@@ -110,7 +110,7 @@ public final class f extends sg.w1 {
         }
     }
 
-    @Override // sg.w1, android.view.View
+    @Override // sg.x1, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.n) {
             case 3:

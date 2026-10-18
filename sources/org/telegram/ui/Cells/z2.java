@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class z2 extends FrameLayout {
     public final LinearLayout a;
@@ -65,26 +65,26 @@ public final class z2 extends FrameLayout {
         this.a = linearLayout2;
         linearLayout2.setOrientation(0);
         if (LocaleController.isRTL) {
-            linearLayout2.addView(linearLayout, w7.z5.a(-1.0f, 7.0f, 0.0f, 7.0f, 0.0f, -1, 16));
-            linearLayout2.addView(k9Var, w7.z5.a(-1.0f, 0.0f, 0.0f, -2.0f, 0.0f, 0, 16));
-            linearLayout2.addView(w9Var, w7.z5.a(36.0f, 0.0f, 0.0f, -2.0f, 0.0f, 36, 21));
+            linearLayout2.addView(linearLayout, w7.z5.d(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
+            linearLayout2.addView(k9Var, w7.z5.d(0, -1.0f, 16, 0.0f, 0.0f, -2.0f, 0.0f));
+            linearLayout2.addView(w9Var, w7.z5.d(36, 36.0f, 21, 0.0f, 0.0f, -2.0f, 0.0f));
         } else {
-            linearLayout2.addView(w9Var, w7.z5.a(36.0f, -2.0f, 0.0f, 0.0f, 0.0f, 36, 19));
-            linearLayout2.addView(k9Var, w7.z5.a(-1.0f, -2.0f, 0.0f, 0.0f, 0.0f, 0, 16));
-            linearLayout2.addView(linearLayout, w7.z5.a(-1.0f, 7.0f, 0.0f, 7.0f, 0.0f, -1, 16));
+            linearLayout2.addView(w9Var, w7.z5.d(36, 36.0f, 19, -2.0f, 0.0f, 0.0f, 0.0f));
+            linearLayout2.addView(k9Var, w7.z5.d(0, -1.0f, 16, -2.0f, 0.0f, 0.0f, 0.0f));
+            linearLayout2.addView(linearLayout, w7.z5.d(-1, -1.0f, 16, 7.0f, 0.0f, 7.0f, 0.0f));
         }
-        addView(linearLayout2, w7.z5.d(-1.0f, -1));
+        addView(linearLayout2, w7.z5.c(-1.0f, -1));
         linearLayout2.setClipChildren(false);
         linearLayout2.setClipToPadding(false);
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setImageResource(R.drawable.arrow_newchat);
-        addView(imageView, w7.z5.a(16.0f, 4.0f, 0.0f, 4.0f, 0.0f, 16, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView, w7.z5.d(16, 16.0f, (LocaleController.isRTL ? 3 : 5) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.f = imageView2;
         imageView2.setImageResource(R.drawable.msg_close);
         imageView2.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
-        addView(imageView2, w7.z5.a(36.0f, -4.0f, 0.0f, -4.0f, 0.0f, 36, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(imageView2, w7.z5.d(36, 36.0f, (LocaleController.isRTL ? 3 : 5) | 16, -4.0f, 0.0f, -4.0f, 0.0f));
         imageView2.setVisibility(8);
         setClipToPadding(false);
         setClipChildren(false);

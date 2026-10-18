@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wx0 extends FrameLayout {
     public static int G;
@@ -68,7 +68,7 @@ public final class wx0 extends FrameLayout {
         vdVar.setTextSize(1, 11.0f);
         vdVar.setGravity(1);
         vdVar.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
-        addView(vdVar, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 10.0f, -1, 81));
+        addView(vdVar, w7.z5.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
         vdVar.setVisibility(8);
     }
 

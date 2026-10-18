@@ -15,7 +15,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class d2 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int b;
@@ -38,7 +38,7 @@ public final class d2 extends org.telegram.ui.Components.s6 {
                 f2Var.invalidate();
                 break;
             case 1:
-                sn.Ic = f7;
+                sn.Jc = f7;
                 sn snVar = (sn) this.c;
                 snVar.R6.setSaturation(f7);
                 snVar.Q6.setColorFilter(new ColorMatrixColorFilter(snVar.R6));
@@ -113,7 +113,7 @@ public final class d2 extends org.telegram.ui.Components.s6 {
             case 0:
                 return Float.valueOf(((f2) this.c).g0);
             case 1:
-                return Float.valueOf(sn.Ic);
+                return Float.valueOf(sn.Jc);
             case 2:
                 return Float.valueOf(((org.telegram.ui.Components.k8) this.c).Q0);
             case 3:

@@ -5,10 +5,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
-import w7.a7;
-import w7.z6;
+import w7.w6;
+import w7.x6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class t extends q implements List, RandomAccess {
     public static final r b = new r(u.e, 0);
@@ -39,7 +39,7 @@ public abstract class t extends q implements List, RandomAccess {
             if (size == list.size()) {
                 if (list instanceof RandomAccess) {
                     for (int i10 = 0; i10 < size; i10++) {
-                        if (z6.a(get(i10), list.get(i10))) {
+                        if (w6.a(get(i10), list.get(i10))) {
                         }
                     }
                     return true;
@@ -48,7 +48,7 @@ public abstract class t extends q implements List, RandomAccess {
                 Iterator it = list.iterator();
                 while (true) {
                     if (listIterator.hasNext()) {
-                        if (!it.hasNext() || !z6.a(listIterator.next(), it.next())) {
+                        if (!it.hasNext() || !w6.a(listIterator.next(), it.next())) {
                             break;
                         }
                     } else if (!it.hasNext()) {
@@ -119,7 +119,7 @@ public abstract class t extends q implements List, RandomAccess {
     @Override // java.util.List
     /* renamed from: q */
     public t subList(int i10, int i11) {
-        a7.b(i10, i11, size());
+        x6.b(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? u.e : new s(this, i10, i12);
     }
@@ -129,7 +129,7 @@ public abstract class t extends q implements List, RandomAccess {
     public final r listIterator(int i10) {
         int size = size();
         if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(a7.c(i10, size, "index"));
+            throw new IndexOutOfBoundsException(x6.c(i10, size, "index"));
         }
         return isEmpty() ? b : new r(this, i10);
     }

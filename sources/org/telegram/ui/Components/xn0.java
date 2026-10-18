@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xn0 implements wl0 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class xn0 implements wl0 {
                 ai.u1 u1Var = fo0Var.d;
                 if (i10 >= 0 && i10 < arrayList.size()) {
                     if (!UserConfig.getInstance(this.b).isPremium()) {
-                        new sg.x0(this.c, 24, true).show();
+                        new sg.y0(this.c, 24, true).show();
                         break;
                     } else {
                         long j10 = ((co0) arrayList.get(i10)).a.h;
@@ -60,11 +60,11 @@ public final /* synthetic */ class xn0 implements wl0 {
                 }
                 break;
             default:
-                sg.l1 l1Var = (sg.l1) this.d;
+                sg.m1 m1Var = (sg.m1) this.d;
                 if (view instanceof org.telegram.ui.aw0) {
                     org.telegram.ui.aw0 aw0Var = (org.telegram.ui.aw0) view;
                     PremiumPreviewFragment.q0(this.b, aw0Var.f.a);
-                    l1Var.showDialog(new sg.x0(this.c, aw0Var.f.a, false));
+                    m1Var.showDialog(new sg.y0(this.c, aw0Var.f.a, false));
                     break;
                 }
                 break;

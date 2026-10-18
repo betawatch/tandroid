@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.recyclerview.widget.RecyclerView;
-import ci.b3;
+import ci.a3;
 import ei.b4;
 import ei.n2;
 import ei.r6;
@@ -47,7 +47,7 @@ import org.telegram.ui.Components.v61;
 import org.telegram.ui.gt;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m extends v61 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.InputDocument E;
@@ -56,7 +56,7 @@ public final class m extends v61 implements NotificationCenter.NotificationCente
     public String H;
     public long I;
     public boolean J;
-    public b3 L;
+    public a3 L;
     public as e;
     public org.telegram.ui.ActionBar.u0 f;
     public j h;
@@ -80,22 +80,22 @@ public final class m extends v61 implements NotificationCenter.NotificationCente
             mVar2 = mVar;
         } else {
             mVar2 = mVar;
-            b3 b3Var = new b3(mVar2, mVar.getParentActivity(), mVar, mVar.resourceProvider, 1);
-            mVar2.L = b3Var;
-            b3Var.c2 = new ya.c(mVar2, 24);
+            a3 a3Var = new a3(mVar2, mVar.getParentActivity(), mVar, mVar.resourceProvider, 1);
+            mVar2.L = a3Var;
+            a3Var.c2 = new ya.d(mVar2, 24);
         }
         mVar2.L.j0.f0();
         mVar2.L.N1(1, false);
-        b3 b3Var2 = mVar2.L;
-        b3Var2.X1 = true;
-        b3Var2.k1(new hg.o(mVar2, 3));
+        a3 a3Var2 = mVar2.L;
+        a3Var2.X1 = true;
+        a3Var2.k1(new hg.o(mVar2, 3));
         mVar2.L.t1();
-        b3 b3Var3 = mVar2.L;
-        b3Var3.r = null;
+        a3 a3Var3 = mVar2.L;
+        a3Var3.r = null;
         if (mVar2.visibleDialog != null) {
-            b3Var3.show();
+            a3Var3.show();
         } else {
-            mVar2.showDialog(b3Var3);
+            mVar2.showDialog(a3Var3);
         }
     }
 
@@ -238,7 +238,7 @@ public final class m extends v61 implements NotificationCenter.NotificationCente
         kVar.setScaleType(ImageView.ScaleType.MATRIX);
         kVar.setImageDrawable(r6.e(null, this.currentAccount, getUserConfig().getClientUserId(), h6.I.q()));
         this.h.addView(kVar, z5.e(-1, -1, 119));
-        this.h.addView(this.n, z5.a(-2.0f, 42.0f, 18.0f, 42.0f, 18.0f, -2, 17));
+        this.h.addView(this.n, z5.d(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
         l lVar = new l(this, context, LocaleController.getString(R.string.BusinessIntroTitleHint), getMessagesController().introTitleLengthLimit, this.resourceProvider, 0);
         this.s = lVar;
         lVar.h = true;

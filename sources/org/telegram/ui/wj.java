@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wj extends s4.r0 {
     public boolean b;
@@ -37,7 +37,7 @@ public final class wj extends s4.r0 {
             snVar.k9(true);
             snVar.l9(true);
             if (SharedConfig.getDevicePerformanceClass() == 0) {
-                int i11 = sn.Hc;
+                int i11 = sn.Ic;
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
             }
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startSpoilers, new Object[0]);
@@ -68,7 +68,7 @@ public final class wj extends s4.r0 {
             snVar.l3 = true;
         }
         if (SharedConfig.getDevicePerformanceClass() == 0) {
-            int i12 = sn.Hc;
+            int i12 = sn.Ic;
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         }
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopSpoilers, new Object[0]);

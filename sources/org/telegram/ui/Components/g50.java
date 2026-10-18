@@ -19,7 +19,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class g50 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public final TextView[] b;
@@ -45,13 +45,13 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         setCustomView(frameLayout);
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.k(20.0f, 1, textView);
+        org.telegram.messenger.lk.k(20.0f, 1, textView);
         int i10 = org.telegram.ui.ActionBar.h6.j5;
         textView.setTextColor(getThemedColor(i10));
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
-        frameLayout.addView(textView, w7.z5.a(-2.0f, 17.0f, 20.0f, 17.0f, 0.0f, -2, 51));
+        frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 51, 17.0f, 20.0f, 17.0f, 0.0f));
         uj0 uj0Var = new uj0(R.raw.import_finish, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f), false, null);
         this.r = uj0Var;
         uj0Var.J(true);
@@ -60,20 +60,20 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         xj0Var.setAutoRepeat(true);
         xj0Var.f(R.raw.import_loop, 120, 120, null);
         xj0Var.d();
-        frameLayout.addView(xj0Var, w7.z5.a(160.0f, 17.0f, 79.0f, 17.0f, 0.0f, 160, 49));
+        frameLayout.addView(xj0Var, w7.z5.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
         xj0Var.getAnimatedDrawable().S(178, hqVar);
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setTextSize(1, 24.0f);
         textView2.setTextColor(getThemedColor(i10));
-        frameLayout.addView(textView2, w7.z5.a(-2.0f, 17.0f, 262.0f, 17.0f, 0.0f, -2, 49));
+        frameLayout.addView(textView2, w7.z5.d(-2, -2.0f, 49, 17.0f, 262.0f, 17.0f, 0.0f));
         g90 g90Var = new g90(getContext());
         this.d = g90Var;
         int i11 = org.telegram.ui.ActionBar.h6.Oh;
         g90Var.setProgressColor(getThemedColor(i11));
         g90Var.setBackColor(getThemedColor(org.telegram.ui.ActionBar.h6.G5));
-        frameLayout.addView(g90Var, w7.z5.a(4.0f, 50.0f, 307.0f, 50.0f, 0.0f, -1, 51));
+        frameLayout.addView(g90Var, w7.z5.d(-1, 4.0f, 51, 50.0f, 307.0f, 50.0f, 0.0f));
         f50 f50Var = new f50(context);
         View view = new View(context);
         f50Var.a = view;
@@ -81,7 +81,7 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         int w02 = org.telegram.ui.ActionBar.h6.w0(i11, d6Var);
         int w03 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Qh, d6Var);
         view.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, w02, w03, w03));
-        f50Var.addView(view, w7.z5.a(-1.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 0));
+        f50Var.addView(view, w7.z5.d(-1, -1.0f, 0, 16.0f, 16.0f, 16.0f, 16.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         f50Var.d = linearLayout;
         linearLayout.setOrientation(0);
@@ -114,18 +114,18 @@ public final class g50 extends org.telegram.ui.ActionBar.f3 implements Notificat
         view.setOnClickListener(new f0(this, 26));
         view.setPivotY(AndroidUtilities.dp(48.0f));
         view.setScaleY(0.04f);
-        frameLayout.addView(f50Var, w7.z5.a(50.0f, 34.0f, 247.0f, 34.0f, 0.0f, -1, 51));
+        frameLayout.addView(f50Var, w7.z5.d(-1, 50.0f, 51, 34.0f, 247.0f, 34.0f, 0.0f));
         for (int i13 = 0; i13 < 2; i13++) {
             this.b[i13] = new TextView(context);
             this.b[i13].setTextSize(1, 16.0f);
             this.b[i13].setTypeface(AndroidUtilities.bold());
             this.b[i13].setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.j5));
-            frameLayout.addView(this.b[i13], w7.z5.a(-2.0f, 17.0f, 340.0f, 17.0f, 0.0f, -2, 49));
+            frameLayout.addView(this.b[i13], w7.z5.d(-2, -2.0f, 49, 17.0f, 340.0f, 17.0f, 0.0f));
             this.s[i13] = new TextView(context);
             this.s[i13].setTextSize(1, 14.0f);
             this.s[i13].setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.r5));
             this.s[i13].setGravity(1);
-            frameLayout.addView(this.s[i13], w7.z5.a(-2.0f, 30.0f, 368.0f, 30.0f, 44.0f, -2, 49));
+            frameLayout.addView(this.s[i13], w7.z5.d(-2, -2.0f, 49, 30.0f, 368.0f, 30.0f, 44.0f));
             if (i13 == 0) {
                 this.s[i13].setText(LocaleController.getString(R.string.ImportImportingInfo));
             } else {

@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.media.MediaFormat;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class zs0 implements a3.y {
     public final /* synthetic */ PhotoViewer a;
@@ -17,7 +17,7 @@ public final class zs0 implements a3.y {
         org.telegram.ui.Components.a81 a81Var;
         PhotoViewer photoViewer = this.a;
         if (photoViewer.J4 && (a81Var = photoViewer.F2) != null) {
-            AndroidUtilities.runOnUIThread(new zg0(24, this, a81Var));
+            AndroidUtilities.runOnUIThread(new yg0(24, this, a81Var));
         }
     }
 }

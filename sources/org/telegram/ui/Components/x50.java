@@ -26,7 +26,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class x50 extends DispatchQueue {
     public Integer E;
@@ -149,9 +149,8 @@ public final class x50 extends DispatchQueue {
         boolean z11;
         f60 f60Var;
         int i10 = message.what;
-        int i11 = 12;
-        final int i12 = 1;
-        final int i13 = 0;
+        final int i11 = 1;
+        final int i12 = 0;
         if (i10 != 0) {
             if (i10 == 1) {
                 finish();
@@ -200,7 +199,7 @@ public final class x50 extends DispatchQueue {
                 float f12 = 0.5f - f10;
                 float f13 = f7 + 0.5f;
                 float f14 = f10 + 0.5f;
-                m60Var2.J0 = org.telegram.messenger.kk.h(ByteBuffer.allocateDirect(32));
+                m60Var2.J0 = org.telegram.messenger.lk.h(ByteBuffer.allocateDirect(32));
                 this.H.J0.put(new float[]{f11, f12, f13, f12, f11, f14, f13, f14}).position(0);
                 return;
             }
@@ -242,7 +241,7 @@ public final class x50 extends DispatchQueue {
             if (this.H.B0) {
                 this.H.p("GL input recreated: surface=0");
             }
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.i4(this.H, i13, this.n[0], i11));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.i4(this.H, i12, this.n[0], 12));
             c();
             m60 m60Var5 = this.H;
             float f15 = (1.0f / m60Var5.L0) / 2.0f;
@@ -251,14 +250,14 @@ public final class x50 extends DispatchQueue {
             float f18 = 0.5f - f16;
             float f19 = f15 + 0.5f;
             float f20 = f16 + 0.5f;
-            m60Var5.J0 = org.telegram.messenger.kk.h(ByteBuffer.allocateDirect(32));
+            m60Var5.J0 = org.telegram.messenger.lk.h(ByteBuffer.allocateDirect(32));
             this.H.J0.put(new float[]{f17, f18, f19, f18, f17, f20, f19, f20}).position(0);
             return;
         }
-        int i14 = message.arg1;
-        int i15 = message.arg2;
-        boolean z12 = (i15 & 1) != 0;
-        boolean z13 = (i15 & 2) != 0;
+        int i13 = message.arg1;
+        int i14 = message.arg2;
+        boolean z12 = (i14 & 1) != 0;
+        boolean z13 = (i14 & 2) != 0;
         if (this.f) {
             if (!this.d.equals(this.b.eglGetCurrentContext()) || !this.e.equals(this.b.eglGetCurrentSurface(12377))) {
                 EGL10 egl102 = this.b;
@@ -266,7 +265,7 @@ public final class x50 extends DispatchQueue {
                 EGLSurface eGLSurface2 = this.e;
                 if (!egl102.eglMakeCurrent(eGLDisplay2, eGLSurface2, eGLSurface2, this.d)) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.kk.v(this.b, new StringBuilder("eglMakeCurrent failed "));
+                        org.telegram.messenger.lk.v(this.b, new StringBuilder("eglMakeCurrent failed "));
                         return;
                     }
                     return;
@@ -299,7 +298,7 @@ public final class x50 extends DispatchQueue {
 
                             @Override // java.lang.Runnable
                             public final void run() {
-                                switch (i13) {
+                                switch (i12) {
                                     case 0:
                                         this.b.H.r0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
                                         break;
@@ -332,13 +331,13 @@ public final class x50 extends DispatchQueue {
                     f60Var2.T.sendMessage(f60Var2.T.obtainMessage(0, 1, 0));
                 }
                 f60Var2.F0 = true;
-                int i16 = MessagesController.getInstance(f60Var2.H0.f).roundVideoSize;
-                int i17 = MessagesController.getInstance(f60Var2.H0.f).roundVideoBitrate * 1024;
-                AndroidUtilities.runOnUIThread(new rc(i11));
+                int i15 = MessagesController.getInstance(f60Var2.H0.f).roundVideoSize;
+                int i16 = MessagesController.getInstance(f60Var2.H0.f).roundVideoBitrate * 1024;
+                AndroidUtilities.runOnUIThread(new sc(11));
                 f60Var2.a = s50Var;
-                f60Var2.d = i16;
-                f60Var2.e = i16;
-                f60Var2.f = i17;
+                f60Var2.d = i15;
+                f60Var2.e = i15;
+                f60Var2.f = i16;
                 f60Var2.w = eglGetCurrentContext;
                 synchronized (f60Var2.U) {
                     try {
@@ -384,9 +383,9 @@ public final class x50 extends DispatchQueue {
                 SurfaceTexture surfaceTexture2 = this.n[m60Var11.k1];
                 m60 m60Var12 = this.H;
                 if (m60Var12.u0) {
-                    i14 = m60Var12.k1;
+                    i13 = m60Var12.k1;
                 }
-                f60Var3.f(surfaceTexture2, Integer.valueOf(i14), System.nanoTime());
+                f60Var3.f(surfaceTexture2, Integer.valueOf(i13), System.nanoTime());
             }
             this.n[this.H.k1].getTransformMatrix(this.H.G0);
             GLES20.glUseProgram(this.r);
@@ -419,7 +418,7 @@ public final class x50 extends DispatchQueue {
 
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i12) {
+                        switch (i11) {
                             case 0:
                                 this.b.H.r0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
                                 break;
@@ -469,7 +468,7 @@ public final class x50 extends DispatchQueue {
         z10 = false;
         if (eglGetDisplay == EGL10.EGL_NO_DISPLAY) {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglGetDisplay failed "));
+                org.telegram.messenger.lk.v(this.b, new StringBuilder("InstantCamera eglGetDisplay failed "));
             }
             finish();
         } else if (this.b.eglInitialize(eglGetDisplay, new int[2])) {
@@ -477,7 +476,7 @@ public final class x50 extends DispatchQueue {
             EGLConfig[] eGLConfigArr = new EGLConfig[1];
             if (!this.b.eglChooseConfig(this.c, new int[]{12352, 4, 12324, 8, 12323, 8, 12322, 8, 12321, 0, 12325, 0, 12326, 0, 12344}, eGLConfigArr, 1, iArr)) {
                 if (BuildVars.LOGS_ENABLED) {
-                    org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglChooseConfig failed "));
+                    org.telegram.messenger.lk.v(this.b, new StringBuilder("InstantCamera eglChooseConfig failed "));
                 }
                 finish();
             } else if (iArr[0] > 0) {
@@ -486,7 +485,7 @@ public final class x50 extends DispatchQueue {
                 this.d = eglCreateContext;
                 if (eglCreateContext == null) {
                     if (BuildVars.LOGS_ENABLED) {
-                        org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglCreateContext failed "));
+                        org.telegram.messenger.lk.v(this.b, new StringBuilder("InstantCamera eglCreateContext failed "));
                     }
                     finish();
                 } else {
@@ -496,7 +495,7 @@ public final class x50 extends DispatchQueue {
                         this.e = eglCreateWindowSurface;
                         if (eglCreateWindowSurface == null || eglCreateWindowSurface == EGL10.EGL_NO_SURFACE) {
                             if (BuildVars.LOGS_ENABLED) {
-                                org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera createWindowSurface failed "));
+                                org.telegram.messenger.lk.v(this.b, new StringBuilder("InstantCamera createWindowSurface failed "));
                             }
                             finish();
                         } else if (this.b.eglMakeCurrent(this.c, eglCreateWindowSurface, eglCreateWindowSurface, this.d)) {
@@ -516,10 +515,10 @@ public final class x50 extends DispatchQueue {
                             if (m60Var.i1 == null) {
                                 m60Var.i1 = new f60(m60Var);
                             }
-                            FloatBuffer h = org.telegram.messenger.kk.h(ByteBuffer.allocateDirect(48));
+                            FloatBuffer h = org.telegram.messenger.lk.h(ByteBuffer.allocateDirect(48));
                             m60Var.I0 = h;
                             h.put(fArr).position(0);
-                            FloatBuffer h10 = org.telegram.messenger.kk.h(ByteBuffer.allocateDirect(32));
+                            FloatBuffer h10 = org.telegram.messenger.lk.h(ByteBuffer.allocateDirect(32));
                             m60Var.J0 = h10;
                             h10.put(fArr2).position(0);
                             Matrix.setIdentityM(m60Var.G0, 0);
@@ -579,7 +578,7 @@ public final class x50 extends DispatchQueue {
                             }
                         } else {
                             if (BuildVars.LOGS_ENABLED) {
-                                org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglMakeCurrent failed "));
+                                org.telegram.messenger.lk.v(this.b, new StringBuilder("InstantCamera eglMakeCurrent failed "));
                             }
                             finish();
                         }
@@ -595,7 +594,7 @@ public final class x50 extends DispatchQueue {
             }
         } else {
             if (BuildVars.LOGS_ENABLED) {
-                org.telegram.messenger.kk.v(this.b, new StringBuilder("InstantCamera eglInitialize failed "));
+                org.telegram.messenger.lk.v(this.b, new StringBuilder("InstantCamera eglInitialize failed "));
             }
             finish();
         }

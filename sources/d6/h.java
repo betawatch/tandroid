@@ -1,6 +1,6 @@
 package d6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public interface h {
     void d(f fVar, String str);
@@ -9,15 +9,15 @@ public interface h {
 
     void i(f fVar, boolean z10);
 
-    void n(f fVar, int i10);
+    void j(f fVar, int i10);
 
-    void q(f fVar);
+    void n(f fVar);
 
-    void r(f fVar, int i10);
+    void s(f fVar, int i10);
 
-    void t(f fVar);
+    void u(f fVar);
 
-    void u(f fVar, String str);
+    void w(f fVar, String str);
 
     void x(f fVar, int i10);
 }

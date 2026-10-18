@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class b61 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -92,7 +92,7 @@ public final class b61 extends FrameLayout implements NotificationCenter.Notific
         r51Var.setOnScrollListener(new u51(this));
         r51Var.setAdapter(a61Var);
         r51Var.setOnItemClickListener(jVar);
-        addView(r51Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        addView(r51Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         View view = new View(context);
         this.f = view;
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.V5, d6Var));
@@ -110,7 +110,7 @@ public final class b61 extends FrameLayout implements NotificationCenter.Notific
     private void setShadowVisible(boolean z10) {
         if (this.G != z10) {
             this.G = z10;
-            org.telegram.messenger.kk.s(this.f.animate(), z10 ? 1.0f : 0.0f, 200L);
+            org.telegram.messenger.lk.s(this.f.animate(), z10 ? 1.0f : 0.0f, 200L);
         }
     }
 

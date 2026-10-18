@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.ui.it0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class u implements qg.v {
+public final class u implements qg.u {
     public boolean a;
     public final /* synthetic */ Bitmap b;
     public final /* synthetic */ it0 c;
@@ -20,12 +20,12 @@ public final class u implements qg.v {
         this.b = bitmap;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final void a() {
         this.a = true;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final void b(Canvas canvas) {
         b0 b0Var = this.c.W0;
         Matrix matrix = b0Var.getMatrix();
@@ -39,32 +39,32 @@ public final class u implements qg.v {
         canvas.restore();
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final boolean c() {
         return this.a;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final void d() {
         this.a = false;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final View e() {
         return this.c;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final FrameLayout f() {
         return this.c.e1;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final boolean g() {
         return this.b != null;
     }
 
-    @Override // qg.v
+    @Override // qg.u
     public final void h(int i10) {
         it0 it0Var = this.c;
         it0Var.x0(false);

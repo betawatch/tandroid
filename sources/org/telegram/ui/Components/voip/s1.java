@@ -14,7 +14,7 @@ import android.view.ViewParent;
 import android.view.ViewPropertyAnimator;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import ci.v4;
+import ci.u4;
 import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.rg1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class s1 extends FrameLayout {
     public float E;
@@ -53,7 +53,7 @@ public final class s1 extends FrameLayout {
     public float d;
     public ValueAnimator d0;
     public boolean e;
-    public final v4 e0;
+    public final u4 e0;
     public int f;
     public ValueAnimator f0;
     public final i6 g0;
@@ -82,7 +82,7 @@ public final class s1 extends FrameLayout {
         this.K = 0.0f;
         this.Q = -1.0f;
         this.R = true;
-        this.e0 = new v4(this, 10);
+        this.e0 = new u4(this, 10);
         this.g0 = new i6(this, 11);
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
         setOutlineProvider(new dh.b(this, 4));

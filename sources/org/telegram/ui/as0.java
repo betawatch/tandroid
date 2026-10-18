@@ -34,7 +34,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class as0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 a;
@@ -172,7 +172,7 @@ public final class as0 extends org.telegram.ui.ActionBar.j {
     /* JADX WARN: Code restructure failed: missing block: B:355:0x08bd, code lost:
     
         r8.setPadding(r9, r11, r10, r11);
-        r2.addView(r8, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        r2.addView(r8, w7.z5.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         r8.setOnClickListener(new org.telegram.ui.o8(r5, r0));
         r3.n(r2);
         r3.a.G = 9;

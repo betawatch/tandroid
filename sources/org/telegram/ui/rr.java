@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class rr implements TextWatcher {
     public final /* synthetic */ int a;
@@ -69,11 +69,11 @@ public final class rr implements TextWatcher {
                 }
                 break;
             case 1:
-                eg0 eg0Var = (eg0) this.d;
-                bg0 bg0Var = eg0Var.b;
-                if (!eg0Var.J) {
-                    int selectionStart = bg0Var.getSelectionStart();
-                    String obj2 = bg0Var.getText().toString();
+                dg0 dg0Var = (dg0) this.d;
+                ag0 ag0Var = dg0Var.b;
+                if (!dg0Var.J) {
+                    int selectionStart = ag0Var.getSelectionStart();
+                    String obj2 = ag0Var.getText().toString();
                     if (this.b == 3) {
                         obj2 = obj2.substring(0, this.c) + obj2.substring(this.c + 1);
                         selectionStart--;
@@ -88,8 +88,8 @@ public final class rr implements TextWatcher {
                         }
                         i24 = i25;
                     }
-                    eg0Var.J = true;
-                    String hintText = bg0Var.getHintText();
+                    dg0Var.J = true;
+                    String hintText = ag0Var.getHintText();
                     if (hintText != null) {
                         int i26 = 0;
                         while (true) {
@@ -114,11 +114,11 @@ public final class rr implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb2);
                     if (selectionStart >= 0) {
-                        bg0Var.setSelection(Math.min(selectionStart, bg0Var.length()));
+                        ag0Var.setSelection(Math.min(selectionStart, ag0Var.length()));
                     }
-                    bg0Var.invalidate();
-                    eg0Var.q();
-                    eg0Var.J = false;
+                    ag0Var.invalidate();
+                    dg0Var.q();
+                    dg0Var.J = false;
                     break;
                 }
                 break;
@@ -167,8 +167,8 @@ public final class rr implements TextWatcher {
                     }
                     editable.replace(0, editable.length(), sb3);
                     if (selectionStart2 >= 0) {
-                        mj0 mj0Var = oj0Var.Q;
-                        mj0Var.setSelection(Math.min(selectionStart2, mj0Var.length()));
+                        lj0 lj0Var = oj0Var.Q;
+                        lj0Var.setSelection(Math.min(selectionStart2, lj0Var.length()));
                     }
                     oj0Var.Q.invalidate();
                     oj0Var.F = false;

@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class i30 implements NotificationCenter.NotificationCenterDelegate {
     public static i30 d0 = null;
@@ -92,7 +92,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         k9Var.setDelegate(new hq(this, 19));
         g(false);
         f30Var.addView(k9Var, w7.z5.e(108, 36, 49));
-        ah.x xVar = new ah.x(this, context, 18);
+        ah.x xVar = new ah.x(this, context, 19);
         this.b = xVar;
         ei.g6 g6Var = new ei.g6(this, context);
         this.c = g6Var;
@@ -107,7 +107,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         uj0Var.h = true;
         xj0Var.setAnimation(uj0Var);
         xj0Var.setColorFilter(-1);
-        frameLayout.addView(xj0Var, w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 25.0f, 40, 17));
+        frameLayout.addView(xj0Var, w7.z5.d(40, 40.0f, 17, 0.0f, 0.0f, 0.0f, 25.0f));
         org.telegram.ui.x7 x7Var = new org.telegram.ui.x7(this, context, 2);
         this.e = x7Var;
         x7Var.setOnClickListener(new f0(this, 20));
@@ -125,7 +125,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         w9 w9Var = new w9(context);
         m30Var.e = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(22.0f));
-        l30Var.addView(w9Var, w7.z5.d(44.0f, 44));
+        l30Var.addView(w9Var, w7.z5.c(44.0f, 44));
         int dp = AndroidUtilities.dp(6.0f);
         int o10 = i0.a.o(-1, 76);
         l30Var.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, 0, o10, o10));
@@ -144,7 +144,7 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         i11.setTextSize(12.0f);
         i11.setTextColor(i0.a.o(-1, 153));
         linearLayout.addView(i11, w7.z5.n(-1, -2));
-        l30Var.addView(linearLayout, w7.z5.a(-2.0f, 55.0f, 0.0f, 0.0f, 0.0f, -1, 16));
+        l30Var.addView(linearLayout, w7.z5.d(-1, -2.0f, 16, 55.0f, 0.0f, 0.0f, 0.0f));
         m30Var.addView(l30Var, w7.z5.t(-1, -2, 0, 10, 10, 10, 10));
         org.telegram.ui.Components.voip.t2 t2Var = new org.telegram.ui.Components.voip.t2(context, 44.0f);
         m30Var.c = t2Var;
@@ -298,13 +298,13 @@ public final class i30 implements NotificationCenter.NotificationCenterDelegate 
         org.telegram.ui.Components.voip.p1 p1Var = new org.telegram.ui.Components.voip.p1(context);
         p1Var.setChildSize(68);
         p1Var.setUseStartPadding(false);
-        p1Var.addView(t2Var, w7.z5.d(63.0f, 68));
-        p1Var.addView(t2Var2, w7.z5.d(63.0f, 68));
-        p1Var.addView(t2Var3, w7.z5.d(63.0f, 68));
+        p1Var.addView(t2Var, w7.z5.c(63.0f, 68));
+        p1Var.addView(t2Var2, w7.z5.c(63.0f, 68));
+        p1Var.addView(t2Var3, w7.z5.c(63.0f, 68));
         m30Var.setWillNotDraw(false);
         m30Var.addView(p1Var, w7.z5.t(-1, -2, 0, 6, 0, 6, 0));
         this.f = m30Var;
-        x7Var.addView(m30Var, w7.z5.d(-2.0f, -2));
+        x7Var.addView(m30Var, w7.z5.c(-2.0f, -2));
     }
 
     public static WindowManager.LayoutParams b(Context context) {

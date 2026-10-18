@@ -22,7 +22,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class c91 extends FrameLayout {
     public static final es0 S = new es0(1);
@@ -35,7 +35,7 @@ public class c91 extends FrameLayout {
     public final float K;
     public u81 L;
     public s81 M;
-    public final ci.v4 N;
+    public final ci.u4 N;
     public final Rect O;
     public boolean P;
     public ValueAnimator Q;
@@ -60,7 +60,7 @@ public class c91 extends FrameLayout {
         this.c = 1.0f;
         this.h = new SparseArray();
         this.J = new AnimationNotificationsLocker();
-        this.N = new ci.v4(this, 9);
+        this.N = new ci.u4(this, 9);
         this.O = new Rect();
         this.P = true;
         this.a = d6Var;

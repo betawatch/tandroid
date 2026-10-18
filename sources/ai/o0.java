@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class o0 extends org.telegram.ui.Components.bb {
     public l0 X;
@@ -29,16 +29,16 @@ public final class o0 extends org.telegram.ui.Components.bb {
         frameLayout.setClipChildren(false);
         frameLayout.setClipToPadding(false);
         kc kcVar = new kc(context, 70, 0);
-        frameLayout.addView(kcVar, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(kcVar, w7.z5.c(-1.0f, -1));
         tg.n nVar = new tg.n(context, 1, 2);
         tg.g gVar = nVar.b;
         gVar.z = org.telegram.ui.ActionBar.h6.fk;
         gVar.A = org.telegram.ui.ActionBar.h6.gk;
         gVar.b();
         nVar.setStarParticlesView(kcVar);
-        frameLayout.addView(nVar, w7.z5.a(170.0f, 0.0f, 32.0f, 0.0f, 24.0f, 170, 17));
+        frameLayout.addView(nVar, w7.z5.d(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         nVar.setPaused(false);
-        linearLayout.addView(frameLayout, w7.z5.d(150.0f, -1));
+        linearLayout.addView(frameLayout, w7.z5.c(150.0f, -1));
         TextView textView = new TextView(context);
         com.google.android.gms.internal.play_billing.k3.m(20.0f, 1, textView);
         int i11 = org.telegram.ui.ActionBar.h6.j5;
@@ -53,7 +53,7 @@ public final class o0 extends org.telegram.ui.Components.bb {
         ei.d dVar = new ei.d(context, this.resourcesProvider, true);
         dVar.g(LocaleController.getString(R.string.ExplainStarsButton), false, true);
         dVar.setOnClickListener(new ah.g0(this, 1));
-        frameLayout2.addView(dVar, w7.z5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
+        frameLayout2.addView(dVar, w7.z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         int i13 = this.backgroundPaddingLeft;
         frameLayout2.setPadding(i13, 0, i13, 0);
         frameLayout2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false));

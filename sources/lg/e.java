@@ -31,7 +31,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.ke;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -87,11 +87,11 @@ public class e extends FrameLayout {
         radialProgressView.setSize(AndroidUtilities.dp(12.0f));
         radialProgressView.setStrokeWidth(AndroidUtilities.dp(0.5f));
         radialProgressView.setVisibility(8);
-        addView(linearLayout, z5.a(-2.0f, 0.0f, 22.0f, 0.0f, 0.0f, -2, 0));
-        addView(textView, z5.a(-2.0f, 4.0f, 0.0f, 4.0f, 0.0f, -2, 8388611));
-        addView(textView2, z5.a(-2.0f, 4.0f, 0.0f, 4.0f, 0.0f, -2, 8388613));
-        addView(imageView, z5.a(18.0f, 0.0f, 2.0f, 0.0f, 0.0f, 18, 8388661));
-        addView(radialProgressView, z5.a(18.0f, 0.0f, 2.0f, 0.0f, 0.0f, 18, 8388661));
+        addView(linearLayout, z5.d(-2, -2.0f, 0, 0.0f, 22.0f, 0.0f, 0.0f));
+        addView(textView, z5.d(-2, -2.0f, 8388611, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(textView2, z5.d(-2, -2.0f, 8388613, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(imageView, z5.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
+        addView(radialProgressView, z5.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
         b();
     }
 

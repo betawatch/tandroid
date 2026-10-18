@@ -1,50 +1,44 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class ai0 extends qy {
-    public final int[] N;
-    public final /* synthetic */ oi0 O;
+public final class ai0 extends org.telegram.ui.Components.vg {
+    public final /* synthetic */ org.telegram.ui.Components.vg l0;
+    public final /* synthetic */ boolean m0;
+    public final /* synthetic */ ni0 n0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai0(oi0 oi0Var, zh0 zh0Var, int i10) {
-        super(i10, zh0Var);
-        this.O = oi0Var;
-        this.N = new int[2];
+    public ai0(ni0 ni0Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.vg vgVar, boolean z10) {
+        super(i10, context, d6Var, false);
+        this.n0 = ni0Var;
+        this.l0 = vgVar;
+        this.m0 = z10;
     }
 
-    @Override // org.telegram.ui.qy
-    public final void g(py pyVar) {
-        oi0 oi0Var = this.O;
-        hi0 hi0Var = oi0Var.K;
-        if (pyVar == null) {
-            return;
-        }
-        if (oi0Var.l0 != null) {
-            pyVar.c = true;
-            float f7 = (qy.f() * AndroidUtilities.density) / 1.3f;
-            float f10 = f7 / 3.0f;
-            pyVar.d = f10;
-            pyVar.e = f10;
-            pyVar.a = Utilities.clamp(oi0Var.l0.right - (0.75f * f7), AndroidUtilities.displaySize.x - f7, 0.0f);
-            pyVar.b = oi0Var.l0.bottom - (f7 / 2.0f);
-            return;
-        }
-        org.telegram.ui.Cells.u1 u1Var = oi0Var.Q;
-        if (u1Var == null || !u1Var.isAttachedToWindow() || oi0Var.Q.getMessageObject() == null || oi0Var.Q.getMessageObject().getId() != oi0Var.R) {
-            return;
-        }
-        oi0Var.Q.getLocationOnScreen(this.N);
-        pyVar.c = true;
-        float f11 = (qy.f() * AndroidUtilities.density) / 1.3f;
-        float f12 = f11 / 3.0f;
-        pyVar.d = f12;
-        pyVar.e = f12;
-        float f13 = f11 / 2.0f;
-        pyVar.a = Utilities.clamp(((hi0Var.getScaleX() * oi0Var.Q.getTimeX()) + r8[0]) - f13, AndroidUtilities.displaySize.x - f11, 0.0f);
-        pyVar.b = ((hi0Var.getScaleY() * oi0Var.Q.getTimeY()) + r8[1]) - f13;
+    @Override // org.telegram.ui.Components.vg
+    public final boolean d() {
+        return this.l0.d();
+    }
+
+    @Override // org.telegram.ui.Components.vg
+    public final boolean e() {
+        return this.l0.e();
+    }
+
+    @Override // org.telegram.ui.Components.vg
+    public final boolean f() {
+        return (this.m0 && this.n0.q0 && this.r <= 0) ? false : true;
+    }
+
+    @Override // org.telegram.ui.Components.vg
+    public final int getFillColor() {
+        return this.l0.getFillColor();
+    }
+
+    @Override // org.telegram.ui.Components.vg
+    public final boolean j() {
+        return this.l0.j();
     }
 }

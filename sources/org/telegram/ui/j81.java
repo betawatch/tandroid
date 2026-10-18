@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class j81 extends org.telegram.ui.Components.bb {
     public static final /* synthetic */ int d0 = 0;
@@ -43,7 +43,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
         cVar.setScaleX(0.6f);
         cVar.setScaleY(0.6f);
         cVar.setAlpha(0.0f);
-        this.container.addView(cVar, 0, w7.z5.a(-2.0f, 0.0f, 48.0f, 0.0f, 0.0f, -2, 49));
+        this.container.addView(cVar, 0, w7.z5.d(-2, -2.0f, 49, 0.0f, 48.0f, 0.0f, 0.0f));
         w7.b6.a(cVar);
         cVar.setOnClickListener(new ai.pd(context, 1, d6Var));
         TLRPC.EmojiGameInfo emojiGameInfo = MessagesController.getInstance(i10).stakeDiceInfo;
@@ -148,7 +148,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
             TextView textView = new TextView(context);
             textView.setTextSize(1, 16.0f);
             textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.A6, false));
-            sd0Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 14.0f, 0.0f, -2, 21));
+            sd0Var.addView(textView, w7.z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 14.0f, 0.0f));
             long j10 = tL_emojiGameDiceInfo.prev_stake;
             j10 = j10 <= 0 ? 1000000000L : j10;
             editTextBoldCursor.setText(ai.md.N0(j10));
@@ -178,7 +178,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
             long[] jArr = MessagesController.getInstance(i10).tonStakediceStakeSuggestedAmounts;
             int i18 = 0;
             while (i18 < Utilities.divCeil(jArr.length, 3)) {
-                LinearLayout e = org.telegram.messenger.kk.e(context, 0);
+                LinearLayout e = org.telegram.messenger.lk.e(context, 0);
                 int i19 = 0;
                 while (true) {
                     int i20 = i18 * 3;
@@ -223,7 +223,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
                         }
                         if (TextUtils.isEmpty(text) || parseDouble >= MessagesController.getInstance(i21).tonStakeddiceStakeAmountMin / 1.0E9d) {
                             if (ai.ga.y(i21, true).f.toDouble() < parseDouble) {
-                                new fi.f(context, d6Var, ag.a.i((long) (parseDouble * 1.0E9d), ag.c.b), true, new ff0(5));
+                                new fi.f(context, d6Var, ag.a.i((long) (parseDouble * 1.0E9d), ag.c.b), true, new mj0(4));
                                 return;
                             } else {
                                 j3Var.run(Long.valueOf((long) (parseDouble * 1.0E9d)));
@@ -265,7 +265,7 @@ public final class j81 extends org.telegram.ui.Components.bb {
             if (cVar != null) {
                 cVar.setEnabled(z10);
                 cVar.setClickable(z10);
-                org.telegram.messenger.kk.s(cVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
+                org.telegram.messenger.lk.s(cVar.animate().scaleX(z10 ? 1.0f : 0.6f).scaleY(z10 ? 1.0f : 0.6f), z10 ? 1.0f : 0.0f, 180L);
             }
         }
     }

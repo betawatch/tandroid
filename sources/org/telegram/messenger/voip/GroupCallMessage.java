@@ -4,9 +4,9 @@ import ah.i1;
 import java.util.ArrayList;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
-import w7.m6;
+import w7.k6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class GroupCallMessage {
     private static final int FLAG_IS_OUT = 1;
@@ -60,19 +60,19 @@ public class GroupCallMessage {
     }
 
     public boolean isOut() {
-        return m6.a(this.flags, 1);
+        return k6.a(this.flags, 1);
     }
 
     public boolean isSendConfirmed() {
-        return m6.a(this.flags, 8);
+        return k6.a(this.flags, 8);
     }
 
     public boolean isSendDelayed() {
-        return m6.a(this.flags, 2);
+        return k6.a(this.flags, 2);
     }
 
     public boolean isSendError() {
-        return m6.a(this.flags, 4);
+        return k6.a(this.flags, 4);
     }
 
     public void notifyStateUpdate() {
@@ -87,19 +87,19 @@ public class GroupCallMessage {
     }
 
     public void setIsOut(boolean z10) {
-        this.flags = m6.b(this.flags, 1, z10);
+        this.flags = k6.b(this.flags, 1, z10);
     }
 
     public void setIsSendConfirmed(boolean z10) {
-        this.flags = m6.b(this.flags, 8, z10);
+        this.flags = k6.b(this.flags, 8, z10);
     }
 
     public void setIsSendDelayed(boolean z10) {
-        this.flags = m6.b(this.flags, 2, z10);
+        this.flags = k6.b(this.flags, 2, z10);
     }
 
     public void setIsSendError(boolean z10) {
-        this.flags = m6.b(this.flags, 4, z10);
+        this.flags = k6.b(this.flags, 4, z10);
     }
 
     public void subscribeToStateUpdates(Runnable runnable) {

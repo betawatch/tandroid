@@ -26,7 +26,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -98,9 +98,9 @@ public final class a implements o {
         }
         z zVar = (z) c0Var;
         b0 b0Var = zVar.b;
-        long m10 = b0Var.b == 0 ? -9223372036854775807L : b0Var.m(m0.c(zVar.a, j10));
-        this.k = m10;
-        if (Math.abs(this.q - m10) < 20000) {
+        long n10 = b0Var.b == 0 ? -9223372036854775807L : b0Var.n(m0.c(zVar.a, j10));
+        this.k = n10;
+        if (Math.abs(this.q - n10) < 20000) {
             return;
         }
         this.p = true;
@@ -163,15 +163,15 @@ public final class a implements o {
                     long position = pVar.getPosition() + this.f;
                     b0 b0Var = zVar.b;
                     int i14 = b0Var.b;
-                    if (i14 == 0 || j10 - b0Var.m(i14 - 1) >= 100000) {
+                    if (i14 == 0 || j10 - b0Var.n(i14 - 1) >= 100000) {
                         b0 b0Var2 = zVar.a;
                         b0 b0Var3 = zVar.b;
                         if (b0Var3.b == 0 && j10 > 0) {
-                            b0Var2.c(0L);
-                            b0Var3.c(0L);
+                            b0Var2.d(0L);
+                            b0Var3.d(0L);
                         }
-                        b0Var2.c(position);
-                        b0Var3.c(j10);
+                        b0Var2.d(position);
+                        b0Var3.d(j10);
                     }
                     if (this.p && Math.abs(this.q - j10) < 20000) {
                         this.p = false;

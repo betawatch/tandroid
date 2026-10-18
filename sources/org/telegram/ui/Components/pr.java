@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class pr extends hm0 {
     public final /* synthetic */ rr c;
@@ -130,7 +130,7 @@ public final class pr extends hm0 {
             qrVar.addView(textView2, w7.z5.t(-2, -2, 1, 28, 0, 28, 17));
             frameLayout = qrVar;
         } else {
-            frameLayout = new org.telegram.ui.Cells.f4(1, 0, context, false);
+            frameLayout = new org.telegram.ui.Cells.f4(context, 1, 0, false);
         }
         frameLayout.setLayoutParams(new s4.o0(-1, -2));
         return new sl0(frameLayout);

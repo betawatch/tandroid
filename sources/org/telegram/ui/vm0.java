@@ -16,7 +16,7 @@ import org.telegram.messenger.SecureDocument;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class vm0 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public final TextView a;
@@ -38,16 +38,16 @@ public final class vm0 extends FrameLayout implements DownloadController.FileDow
         this.d = new org.telegram.ui.Components.yj0(this);
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(activity);
         this.c = w9Var;
-        addView(w9Var, w7.z5.a(48.0f, 21.0f, 8.0f, 21.0f, 0.0f, 48, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(w9Var, w7.z5.d(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 8.0f, 21.0f, 0.0f));
         TextView textView = new TextView(activity);
         this.a = textView;
-        org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+        org.telegram.messenger.lk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.z5.a(-2.0f, z10 ? 21 : 81, 10.0f, z10 ? 81 : 21, 0.0f, -2, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.z5.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 81, 10.0f, z10 ? 81 : 21, 0.0f));
         TextView textView2 = new TextView(activity);
         this.b = textView2;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false));
@@ -58,7 +58,7 @@ public final class vm0 extends FrameLayout implements DownloadController.FileDow
         textView2.setSingleLine(true);
         textView2.setPadding(0, 0, 0, 0);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.z5.a(-2.0f, z11 ? 21 : 81, 35.0f, z11 ? 81 : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
+        addView(textView2, w7.z5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 81, 35.0f, z11 ? 81 : 21, 0.0f));
         setWillNotDraw(false);
     }
 
@@ -153,7 +153,7 @@ public final class vm0 extends FrameLayout implements DownloadController.FileDow
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.kk.C(64.0f, 1, TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), org.telegram.messenger.lk.C(64.0f, 1, TLObject.FLAG_30));
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener

@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class m implements RequestDelegate {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0170  */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v1, types: [int] */
     /* JADX WARN: Type inference failed for: r13v6 */
@@ -105,10 +105,10 @@ public final /* synthetic */ class m implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new b80(21, (qe0) obj, tL_error));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new xe0((jf0) obj, tL_error, tLObject2, 1));
+                AndroidUtilities.runOnUIThread(new xe0((if0) obj, tL_error, tLObject2, 1));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new xe0((of0) obj, tLObject2, tL_error));
+                AndroidUtilities.runOnUIThread(new xe0((nf0) obj, tLObject2, tL_error));
                 break;
             case 15:
                 AndroidUtilities.runOnUIThread(new ek0((NotificationsSettingsActivity) obj, 0));
@@ -116,7 +116,7 @@ public final /* synthetic */ class m implements RequestDelegate {
             case 16:
                 sm0 sm0Var = (sm0) obj;
                 if (tL_error != null && tL_error.text != null) {
-                    AndroidUtilities.runOnUIThread(new zg0(13, sm0Var, tL_error));
+                    AndroidUtilities.runOnUIThread(new yg0(13, sm0Var, tL_error));
                     break;
                 }
                 break;
@@ -253,7 +253,7 @@ public final /* synthetic */ class m implements RequestDelegate {
             default:
                 xh1 xh1Var = (xh1) obj;
                 if (tLObject2 != null) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.u3(19, xh1Var, tLObject2));
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.v3(i13, xh1Var, tLObject2));
                     break;
                 }
                 break;

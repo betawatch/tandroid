@@ -21,7 +21,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class t70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, View.OnClickListener, ne.d, qh.d {
     public boolean E;
@@ -227,7 +227,7 @@ public final class t70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         v1Var.setVerticalScrollBarEnabled(false);
         s70 s70Var = new s70(this, context);
         this.f = s70Var;
-        this.e.addView(s70Var, w7.z5.d(108.0f, -1));
+        this.e.addView(s70Var, w7.z5.c(108.0f, -1));
         this.d = new r70(this, context, this.e);
         org.telegram.ui.Components.b10 b10Var = new org.telegram.ui.Components.b10(context, null);
         b10Var.setViewType(6);
@@ -253,7 +253,7 @@ public final class t70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.h.setVerticalScrollBarEnabled(true);
         this.h.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         this.h.setClipToPadding(false);
-        m0Var.addView(this.h, w7.z5.a(-1.0f, 0.0f, -this.a, 0.0f, 0.0f, -1, 119));
+        m0Var.addView(this.h, w7.z5.d(-1, -1.0f, 119, 0.0f, -this.a, 0.0f, 0.0f));
         this.h.setOnItemClickListener(new i(this, 15));
         this.h.setOnScrollListener(new k3(this, 16));
         org.telegram.ui.ActionBar.g2 g2Var = new org.telegram.ui.ActionBar.g2(false);
@@ -276,7 +276,7 @@ public final class t70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         }
         m0Var.addView(this.c, org.telegram.ui.Components.h20.b());
         m0Var.addView(this.actionBar);
-        m0Var.addView(this.d, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
+        m0Var.addView(this.d, w7.z5.d(-1, -2.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
         LaunchActivity launchActivity = LaunchActivity.H1;
         if (launchActivity != null) {
             launchActivity.g1.d.add(this);

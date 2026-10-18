@@ -15,7 +15,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.c91;
 import org.telegram.ui.Components.d61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class h7 extends View {
     public final /* synthetic */ int a = 1;
@@ -122,14 +122,14 @@ public final class h7 extends View {
                 canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, (Paint) this.c);
                 break;
             default:
-                org.telegram.ui.Wallet.n4 n4Var = (org.telegram.ui.Wallet.n4) this.e;
-                n4Var.getClass();
-                int themedColor = n4Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6);
+                org.telegram.ui.Wallet.o4 o4Var = (org.telegram.ui.Wallet.o4) this.e;
+                o4Var.getClass();
+                int themedColor = o4Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6);
                 Paint paint2 = this.b;
                 paint2.setColor(themedColor);
-                n4Var.b0.getLocationInWindow((int[]) this.c);
+                o4Var.b0.getLocationInWindow((int[]) this.c);
                 getLocationInWindow((int[]) this.d);
-                for (View view : ((c91) n4Var.b0).getViewPages()) {
+                for (View view : ((c91) o4Var.b0).getViewPages()) {
                     if (view != null && view.getVisibility() == 0) {
                         canvas.save();
                         canvas.translate(view.getLeft() + (r6[0] - r7[0]), view.getTop() + (r6[1] - r7[1]));
@@ -192,9 +192,9 @@ public final class h7 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h7(org.telegram.ui.Wallet.n4 n4Var, Context context) {
+    public h7(org.telegram.ui.Wallet.o4 o4Var, Context context) {
         super(context);
-        this.e = n4Var;
+        this.e = o4Var;
         this.b = new Paint(1);
         this.c = new int[2];
         this.d = new int[2];

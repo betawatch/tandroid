@@ -23,7 +23,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ep0 extends FrameLayout {
     public static final /* synthetic */ int q0 = 0;
@@ -32,7 +32,7 @@ public final class ep0 extends FrameLayout {
     public boolean G;
     public boolean H;
     public TL_stars.TL_starGiftUnique I;
-    public yh.t3 J;
+    public yh.s3 J;
     public TL_stars.StarGift K;
     public final ArrayList L;
     public final HashMap M;
@@ -137,7 +137,7 @@ public final class ep0 extends FrameLayout {
         vo0Var.setAdapter(xo0Var);
         vo0Var.setOnItemClickListener(new org.telegram.ui.Components.nn0(this, i10, 1));
         vo0Var.j(new yo0(this, i10));
-        addView(vo0Var, w7.z5.d(-1.0f, -1));
+        addView(vo0Var, w7.z5.c(-1.0f, -1));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("l");
         spannableStringBuilder.setSpan(new org.telegram.ui.Components.yq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
         String string = LocaleController.getString(kp0Var.a ? R.string.ChannelColorApply : R.string.UserColorApply);
@@ -180,9 +180,9 @@ public final class ep0 extends FrameLayout {
             zo0Var.r = kp0Var;
             zo0Var.setClipToOutline(true);
             float dp = AndroidUtilities.dp(16.0f);
-            ci.o1 o1Var = zf.j0.a;
+            ci.n1 n1Var = zf.j0.a;
             zo0Var.setOutlineProvider(new zf.i0(0, dp));
-            addView(zo0Var, w7.z5.a(-2.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 55));
+            addView(zo0Var, w7.z5.d(-1, -2.0f, 55, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         Context context5 = getContext();
         d6Var2 = ((org.telegram.ui.ActionBar.n2) kp0Var).resourceProvider;
@@ -202,7 +202,7 @@ public final class ep0 extends FrameLayout {
         jp0Var.G = c10;
         jp0Var.F = new uo0(this, objArr == true ? 1 : 0);
         jp0Var.setVisibility(4);
-        addView(jp0Var, w7.z5.a(36.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 55));
+        addView(jp0Var, w7.z5.d(-1, 36.0f, 55, 12.0f, 0.0f, 12.0f, 0.0f));
         View view3 = this.a;
         if (view3 != null) {
             addView(view3, w7.z5.e(-1, -2, 55));
@@ -541,10 +541,10 @@ public final class ep0 extends FrameLayout {
                 so0 so0Var = (so0) childAt;
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible3 = this.r;
                 so0Var.b((tL_emojiStatusCollectible3 != null && tL_emojiStatusCollectible3.collectible_id == so0Var.getGiftId()) || ((tL_peerColorCollectible2 = this.s) != null && tL_peerColorCollectible2.collectible_id == so0Var.getGiftId()), true);
-            } else if (childAt instanceof yh.h1) {
-                yh.h1 h1Var = (yh.h1) childAt;
+            } else if (childAt instanceof yh.g1) {
+                yh.g1 g1Var = (yh.g1) childAt;
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible4 = this.r;
-                h1Var.e((tL_emojiStatusCollectible4 != null && tL_emojiStatusCollectible4.collectible_id == h1Var.getGiftId()) || ((tL_peerColorCollectible = this.s) != null && tL_peerColorCollectible.collectible_id == h1Var.getGiftId()), true);
+                g1Var.e((tL_emojiStatusCollectible4 != null && tL_emojiStatusCollectible4.collectible_id == g1Var.getGiftId()) || ((tL_peerColorCollectible = this.s) != null && tL_peerColorCollectible.collectible_id == g1Var.getGiftId()), true);
             }
             i14++;
         }
@@ -636,8 +636,8 @@ public final class ep0 extends FrameLayout {
                 this.f0 = size2;
                 int i22 = this.k0;
                 this.c0 = i22;
-                yh.t3 t3Var = this.J;
-                if (t3Var.t || !t3Var.u) {
+                yh.s3 s3Var = this.J;
+                if (s3Var.t || !s3Var.u) {
                     this.d0 = i22;
                     int i23 = 3 - (size2 % 3);
                     if (size2 <= 0) {

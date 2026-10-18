@@ -3,32 +3,32 @@ package org.telegram.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cd0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fg0 b;
+    public final /* synthetic */ eg0 b;
 
-    public /* synthetic */ cd0(fg0 fg0Var, int i10) {
+    public /* synthetic */ cd0(eg0 eg0Var, int i10) {
         this.a = i10;
-        this.b = fg0Var;
+        this.b = eg0Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                fg0 fg0Var = this.b;
-                if (fg0Var.d == animator) {
-                    fg0Var.d = null;
+                eg0 eg0Var = this.b;
+                if (eg0Var.d == animator) {
+                    eg0Var.d = null;
                     break;
                 }
                 break;
             default:
-                fg0 fg0Var2 = this.b;
-                fg0Var2.c.setVisibility(8);
-                if (fg0Var2.d == animator) {
-                    fg0Var2.d = null;
+                eg0 eg0Var2 = this.b;
+                eg0Var2.c.setVisibility(8);
+                if (eg0Var2.d == animator) {
+                    eg0Var2.d = null;
                     break;
                 }
                 break;

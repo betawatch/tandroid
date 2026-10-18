@@ -1,9 +1,9 @@
 package ai;
 
 import android.view.animation.Interpolator;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class be implements Interpolator {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class be implements Interpolator {
                     return (f7 / 0.33f) * 0.1f;
                 }
                 float f10 = f7 - 0.33f;
-                return f10 < 0.33f ? kk.x(f10, 0.34f, 0.15f, 0.1f) : (((f10 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
+                return f10 < 0.33f ? lk.x(f10, 0.34f, 0.15f, 0.1f) : (((f10 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
             case 2:
                 return f7 * f7 * f7 * f7 * f7;
             case 3:

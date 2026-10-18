@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class wb implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -83,7 +83,7 @@ public final /* synthetic */ class wb implements Runnable {
                 return;
             default:
                 si.s0 s0Var = (si.s0) this.e;
-                si.x xVar = (si.x) this.f;
+                si.w wVar = (si.w) this.f;
                 boolean z13 = this.b;
                 File file3 = (File) this.h;
                 boolean z14 = this.c;
@@ -92,8 +92,8 @@ public final /* synthetic */ class wb implements Runnable {
                 s0Var.getClass();
                 long nanoTime = System.nanoTime();
                 try {
-                    xVar.g();
-                    s0Var.m.b("preview output finalized: size=" + xVar.a.length() + ", replace=" + z13 + ", elapsedMs=" + si.s0.f(nanoTime));
+                    wVar.g();
+                    s0Var.m.b("preview output finalized: size=" + wVar.a.length() + ", replace=" + z13 + ", elapsedMs=" + si.s0.f(nanoTime));
                     s0Var.g();
                     if (z13) {
                         s0Var.s(file3, s0Var.G, s0Var.H, z14, i11);
@@ -102,7 +102,7 @@ public final /* synthetic */ class wb implements Runnable {
                         file = file3;
                         try {
                             try {
-                                File file4 = xVar.a;
+                                File file4 = wVar.a;
                                 long j10 = s0Var.K;
                                 if (j10 <= 0) {
                                     j10 = s0Var.E;
@@ -117,11 +117,11 @@ public final /* synthetic */ class wb implements Runnable {
                                     s0Var = s0Var;
                                     s0Var.i.post(new si.e0(s0Var, e, 0));
                                     if (file != null) {
-                                        w7.p7.c(file);
+                                        w7.n7.c(file);
                                     }
                                     if (z13) {
-                                        file2 = xVar.a;
-                                        w7.p7.c(file2);
+                                        file2 = wVar.a;
+                                        w7.n7.c(file2);
                                         return;
                                     }
                                     return;
@@ -132,17 +132,17 @@ public final /* synthetic */ class wb implements Runnable {
                         } catch (Throwable th2) {
                             th = th2;
                             if (file != null) {
-                                w7.p7.c(file);
+                                w7.n7.c(file);
                             }
                             if (z13) {
-                                w7.p7.c(xVar.a);
+                                w7.n7.c(wVar.a);
                             }
                             throw th;
                         }
                     }
                     s0Var.R = null;
                     if (file != null) {
-                        w7.p7.c(file);
+                        w7.n7.c(file);
                     }
                 } catch (Exception e10) {
                     e = e10;
@@ -157,8 +157,8 @@ public final /* synthetic */ class wb implements Runnable {
                     throw th;
                 }
                 if (z13) {
-                    file2 = xVar.a;
-                    w7.p7.c(file2);
+                    file2 = wVar.a;
+                    w7.n7.c(file2);
                     return;
                 }
                 return;
@@ -175,9 +175,9 @@ public final /* synthetic */ class wb implements Runnable {
         this.d = i10;
     }
 
-    public /* synthetic */ wb(si.s0 s0Var, si.x xVar, boolean z10, File file, boolean z11, int i10, si.o0 o0Var) {
+    public /* synthetic */ wb(si.s0 s0Var, si.w wVar, boolean z10, File file, boolean z11, int i10, si.o0 o0Var) {
         this.e = s0Var;
-        this.f = xVar;
+        this.f = wVar;
         this.b = z10;
         this.h = file;
         this.c = z11;

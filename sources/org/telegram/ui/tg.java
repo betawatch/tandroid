@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tg implements Utilities.Callback0Return {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class tg implements Utilities.Callback0Return {
                             snVar.v0 = t11Var3;
                             org.telegram.ui.Components.t11[] t11VarArr = {t11Var3};
                             lm lmVar = snVar.X0;
-                            lmVar.addView(t11Var3, lmVar.indexOfChild(snVar.x0) + 1, w7.z5.d(-1.0f, -1));
+                            lmVar.addView(t11Var3, lmVar.indexOfChild(snVar.x0) + 1, w7.z5.c(-1.0f, -1));
                         }
                     }
                     return snVar.v0;

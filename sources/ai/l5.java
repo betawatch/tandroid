@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.co0;
@@ -21,12 +21,12 @@ import org.telegram.ui.Components.fo0;
 import org.telegram.ui.Components.hm0;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.qh0;
 import org.telegram.ui.rh0;
-import org.telegram.ui.sh0;
 import org.telegram.ui.th1;
 import org.telegram.ui.xh1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class l5 extends hm0 {
     public final /* synthetic */ int c;
@@ -81,7 +81,7 @@ public final class l5 extends hm0 {
             case 3:
                 return ((fo0) obj).r.size();
             case 4:
-                return ((sh0) obj).c.size();
+                return ((rh0) obj).c.size();
             case 5:
                 int[][] iArr = WallpapersListActivity.k0;
                 return 12;
@@ -183,9 +183,9 @@ public final class l5 extends hm0 {
                 }
                 break;
             case 4:
-                rh0 rh0Var = (rh0) b1Var.a;
-                sh0 sh0Var = (sh0) this.d;
-                rh0Var.a((TLObject) sh0Var.c.get(i10), false, ((Integer) sh0Var.b.get(i10)).intValue());
+                qh0 qh0Var = (qh0) b1Var.a;
+                rh0 rh0Var = (rh0) this.d;
+                qh0Var.a((TLObject) rh0Var.c.get(i10), false, ((Integer) rh0Var.b.get(i10)).intValue());
                 break;
             case 5:
                 ((th1) b1Var.a).a = WallpapersListActivity.m0[i10];
@@ -225,9 +225,9 @@ public final class l5 extends hm0 {
                 fo0 fo0Var = (fo0) this.d;
                 return new sl0(new eo0(fo0Var, fo0Var.getContext()));
             case 4:
-                rh0 rh0Var = new rh0(viewGroup.getContext());
-                rh0Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(50.0f)));
-                return new sl0(rh0Var);
+                qh0 qh0Var = new qh0(viewGroup.getContext());
+                qh0Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(50.0f)));
+                return new sl0(qh0Var);
             case 5:
                 xh1 xh1Var = (xh1) this.d;
                 return new sl0(new th1(xh1Var.E, xh1Var.c));
@@ -244,16 +244,16 @@ public final class l5 extends hm0 {
                     ImageView imageView = new ImageView(context);
                     iVar.c = imageView;
                     imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-                    iVar.addView(imageView, w7.z5.a(28.0f, 25.0f, 12.0f, 16.0f, 0.0f, 28, 0));
+                    iVar.addView(imageView, w7.z5.d(28, 28.0f, 0, 25.0f, 12.0f, 16.0f, 0.0f));
                     TextView textView = new TextView(context);
                     iVar.a = textView;
                     textView.setTypeface(AndroidUtilities.bold());
-                    kk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 14.0f);
-                    iVar.addView(textView, w7.z5.a(-2.0f, 68.0f, 8.0f, 16.0f, 0.0f, -1, 0));
+                    lk.o(org.telegram.ui.ActionBar.h6.G6, d6Var, textView, 1, 14.0f);
+                    iVar.addView(textView, w7.z5.d(-1, -2.0f, 0, 68.0f, 8.0f, 16.0f, 0.0f));
                     TextView textView2 = new TextView(context);
                     iVar.b = textView2;
-                    kk.o(org.telegram.ui.ActionBar.h6.y6, d6Var, textView2, 1, 14.0f);
-                    iVar.addView(textView2, w7.z5.a(-2.0f, 68.0f, 28.0f, 16.0f, 8.0f, -1, 0));
+                    lk.o(org.telegram.ui.ActionBar.h6.y6, d6Var, textView2, 1, 14.0f);
+                    iVar.addView(textView2, w7.z5.d(-1, -2.0f, 0, 68.0f, 28.0f, 16.0f, 8.0f));
                     view = iVar;
                 }
                 return com.google.android.gms.internal.play_billing.k3.l(view, view, -1, -2);

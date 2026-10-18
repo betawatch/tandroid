@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k40 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public float E;
@@ -25,8 +25,8 @@ public final class k40 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final String a;
     public final String b;
     public final String c;
-    public final ci.u6 d;
-    public ci.i4 e;
+    public final ci.t6 d;
+    public ci.h4 e;
     public org.telegram.ui.ck f;
     public FrameLayout h;
     public h40 n;
@@ -60,7 +60,7 @@ public final class k40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         }
         sb2.append(str2);
         this.a = sb2.toString();
-        this.d = new ci.u6(this.currentAccount, this.c, this.b);
+        this.d = new ci.t6(this.currentAccount, this.c, this.b);
     }
 
     public final void U(boolean z10, boolean z11) {
@@ -147,9 +147,9 @@ public final class k40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(getThemedColor(i10));
-        ci.i4 i4Var = new ci.i4(context, 16);
-        this.e = i4Var;
-        frameLayout.addView(i4Var, w7.z5.e(-1, -1, 119));
+        ci.h4 h4Var = new ci.h4(context, 16);
+        this.e = h4Var;
+        frameLayout.addView(h4Var, w7.z5.e(-1, -1, 119));
         HashtagSearchController.getInstance(this.currentAccount).clearSearchResults(3);
         Bundle bundle = new Bundle();
         bundle.putInt("chatMode", 7);
@@ -171,18 +171,18 @@ public final class k40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         }
         this.n.setBackgroundColor(getThemedColor(i10));
         h40 h40Var2 = this.n;
-        ci.u6 u6Var = this.d;
-        h40Var2.T1 = u6Var;
+        ci.t6 t6Var = this.d;
+        h40Var2.T1 = t6Var;
         au0 au0Var = h40Var2.c0;
-        au0Var.s = u6Var;
+        au0Var.s = t6Var;
         au0Var.l();
         pv0 pv0Var = h40Var2.d0;
-        pv0Var.s = u6Var;
+        pv0Var.s = t6Var;
         pv0Var.l();
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.h = frameLayout2;
         frameLayout2.setBackgroundColor(getThemedColor(i10));
-        this.h.addView(this.n, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 49.0f, -1, 119));
+        this.h.addView(this.n, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 49.0f));
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.s = frameLayout3;
         frameLayout3.setBackgroundColor(getThemedColor(i10));
@@ -191,18 +191,18 @@ public final class k40 extends org.telegram.ui.ActionBar.n2 implements Notificat
         textView.setTypeface(AndroidUtilities.bold());
         this.v.setTextSize(1, 15.0f);
         this.v.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.ye));
-        this.v.setText(LocaleController.formatPluralString("FoundStories", u6Var.J, new Object[0]));
-        this.s.addView(this.v, w7.z5.a(-2.0f, 18.0f, 0.0f, 18.0f, 0.0f, -1, 19));
+        this.v.setText(LocaleController.formatPluralString("FoundStories", t6Var.J, new Object[0]));
+        this.s.addView(this.v, w7.z5.d(-1, -2.0f, 19, 18.0f, 0.0f, 18.0f, 0.0f));
         View view = new View(context);
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d7, this.resourceProvider));
-        this.s.addView(view, w7.z5.b(-1.0f, 1.0f / AndroidUtilities.density, 55));
+        this.s.addView(view, w7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 55));
         this.h.addView(this.s, w7.z5.e(-1, 49, 87));
         this.e.addView(this.h, w7.z5.e(-1, -1, 119));
         hg.m1 m1Var = new hg.m1(context, this.resourceProvider);
         this.r = m1Var;
         m1Var.setBackground(org.telegram.ui.ActionBar.h6.h0(getThemedColor(i10), getThemedColor(org.telegram.ui.ActionBar.h6.i6)));
         this.r.setOnClickListener(new f0(this, 24));
-        V(this.r.a(u6Var), false);
+        V(this.r.a(t6Var), false);
         this.r.b(HashtagSearchController.getInstance(this.currentAccount).getCount(3), this.b, this.c);
         frameLayout.addView(this.r, w7.z5.e(-1, 48, 55));
         U(false, false);
@@ -225,15 +225,15 @@ public final class k40 extends org.telegram.ui.ActionBar.n2 implements Notificat
             return;
         }
         Object obj = objArr[0];
-        ci.u6 u6Var = this.d;
-        if (obj == u6Var) {
+        ci.t6 t6Var = this.d;
+        if (obj == t6Var) {
             hg.m1 m1Var2 = this.r;
             if (m1Var2 != null) {
-                V(m1Var2.a(u6Var), true);
+                V(m1Var2.a(t6Var), true);
             }
             TextView textView = this.v;
             if (textView != null) {
-                textView.setText(LocaleController.formatPluralString("FoundStories", u6Var.J, new Object[0]));
+                textView.setText(LocaleController.formatPluralString("FoundStories", t6Var.J, new Object[0]));
             }
         }
     }
@@ -246,11 +246,11 @@ public final class k40 extends org.telegram.ui.ActionBar.n2 implements Notificat
     @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
         ArrayList arrayList = getMessagesController().getStoriesController().I;
-        ci.u6 u6Var = this.d;
-        arrayList.add(u6Var);
+        ci.t6 t6Var = this.d;
+        arrayList.add(t6Var);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.storiesListUpdated);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.hashtagSearchUpdated);
-        u6Var.p(18, true);
+        t6Var.p(18, true);
         return super.onFragmentCreate();
     }
 

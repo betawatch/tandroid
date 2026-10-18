@@ -1,8 +1,8 @@
 package hg;
 
-import ai.t2;
-import ai.v3;
+import ai.r2;
 import ai.vd;
+import ai.x3;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
@@ -65,7 +65,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.sn;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class j1 extends hm0 implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList A0;
@@ -509,9 +509,9 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
                     alertDialog$Builder.a.R = LocaleController.getString(R.string.ShareYouLocationTitle);
                     alertDialog$Builder.a.T = LocaleController.getString(R.string.ShareYouLocationInline);
                     boolean[] zArr = new boolean[1];
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new t2(this, zArr, user2, 10));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new r2(this, zArr, user2, 10));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ah.h0(15, this, zArr));
-                    this.G0.showDialog(alertDialog$Builder.a, new v3(this, zArr, 4));
+                    this.G0.showDialog(alertDialog$Builder.a, new x3(this, zArr, 4));
                 }
             }
         }
@@ -1670,16 +1670,16 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
             i1 i1Var = (i1) this.A0.get(i11);
             TLRPC.Document document = i1Var.a;
             Object obj = i1Var.b;
-            sg.b1 b1Var2 = c8Var.n;
+            sg.c1 c1Var = c8Var.n;
             w9 w9Var = c8Var.a;
             c8Var.c = obj;
             boolean isPremiumSticker = MessageObject.isPremiumSticker(document);
             c8Var.s = isPremiumSticker;
             if (isPremiumSticker) {
-                b1Var2.setColor(h6.x0(null, h6.d6, false));
-                b1Var2.H = true;
-                b1Var2.I = false;
-                b1Var2.invalidate();
+                c1Var.setColor(h6.x0(null, h6.d6, false));
+                c1Var.H = true;
+                c1Var.I = false;
+                c1Var.invalidate();
             }
             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
             SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document, h6.a7, 1.0f, 1.0f, c8Var.v);
@@ -1713,7 +1713,7 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
             } else {
                 c8Var.r = false;
             }
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) b1Var2.getLayoutParams();
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) c1Var.getLayoutParams();
             if (UserConfig.getInstance(UserConfig.selectedAccount).isPremium()) {
                 int dp = AndroidUtilities.dp(16.0f);
                 layoutParams.width = dp;
@@ -1721,7 +1721,7 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
                 layoutParams.gravity = 85;
                 layoutParams.bottomMargin = AndroidUtilities.dp(8.0f);
                 layoutParams.rightMargin = AndroidUtilities.dp(8.0f);
-                b1Var2.setPadding(AndroidUtilities.dp(f7), AndroidUtilities.dp(f7), AndroidUtilities.dp(f7), AndroidUtilities.dp(f7));
+                c1Var.setPadding(AndroidUtilities.dp(f7), AndroidUtilities.dp(f7), AndroidUtilities.dp(f7), AndroidUtilities.dp(f7));
             } else {
                 int dp2 = AndroidUtilities.dp(24.0f);
                 layoutParams.width = dp2;
@@ -1729,10 +1729,10 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
                 layoutParams.gravity = 81;
                 layoutParams.rightMargin = 0;
                 layoutParams.bottomMargin = 0;
-                b1Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                c1Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
             }
-            b1Var2.setLocked(!UserConfig.getInstance(UserConfig.selectedAccount).isPremium());
-            AndroidUtilities.updateViewVisibilityAnimated(b1Var2, c8Var.r, 0.9f, false);
+            c1Var.setLocked(!UserConfig.getInstance(UserConfig.selectedAccount).isPremium());
+            AndroidUtilities.updateViewVisibilityAnimated(c1Var, c8Var.r, 0.9f, false);
             c8Var.invalidate();
             c8Var.setClearsInputField(true);
             return;
@@ -1888,7 +1888,7 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
                     textView.setEllipsize(TextUtils.TruncateAt.END);
                     textView.setMaxLines(1);
                     textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                    i0Var.addView(textView, z5.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+                    i0Var.addView(textView, z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 14.0f, 0.0f, 14.0f, 0.0f));
                     view = i0Var;
                 } else if (i10 == 3) {
                     TextView textView2 = new TextView(context);
@@ -1907,13 +1907,13 @@ public final class j1 extends hm0 implements NotificationCenter.NotificationCent
                         c8Var.a = w9Var;
                         w9Var.setAspectFit(true);
                         w9Var.setLayerNum(1);
-                        c8Var.addView(w9Var, z5.a(66.0f, 0.0f, 5.0f, 0.0f, 0.0f, 66, 1));
+                        c8Var.addView(w9Var, z5.d(66, 66.0f, 1, 0.0f, 5.0f, 0.0f, 0.0f));
                         c8Var.setFocusable(true);
-                        sg.b1 b1Var = new sg.b1(context, 1, null);
-                        c8Var.n = b1Var;
-                        b1Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-                        b1Var.setImageReceiver(w9Var.getImageReceiver());
-                        c8Var.addView(b1Var, z5.a(24.0f, 0.0f, 0.0f, 0.0f, 0.0f, 24, 81));
+                        sg.c1 c1Var = new sg.c1(context, 1, null);
+                        c8Var.n = c1Var;
+                        c1Var.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                        c1Var.setImageReceiver(w9Var.getImageReceiver());
+                        c8Var.addView(c1Var, z5.d(24, 24.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
                         view2 = c8Var;
                     } else {
                         View unVar = new un(context, 6);

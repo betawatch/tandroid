@@ -36,7 +36,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements wl0 {
     public final /* synthetic */ int a;
@@ -196,7 +196,7 @@ public final /* synthetic */ class j implements wl0 {
                     textView.setTypeface(AndroidUtilities.bold());
                     textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Sh, false));
                     frameLayout.addView(textView, w7.z5.e(-2, -2, 17));
-                    linearLayout.addView(frameLayout, w7.z5.a(48.0f, 16.0f, -8.0f, 16.0f, 16.0f, -1, 0));
+                    linearLayout.addView(frameLayout, w7.z5.d(-1, 48.0f, 0, 16.0f, -8.0f, 16.0f, 16.0f));
                     frameLayout.setOnClickListener(new org.telegram.ui.ActionBar.s1(29, e9Var, zArr));
                     e9Var.S.setCustomView(linearLayout);
                     s8 s8Var2 = e9Var.S;
@@ -287,7 +287,7 @@ public final /* synthetic */ class j implements wl0 {
                     if ((size > eyVar.getMessagesController().dialogFiltersChatsLimitDefault && !eyVar.getUserConfig().isPremium()) || size > eyVar.getMessagesController().dialogFiltersChatsLimitPremium) {
                         Context context = eyVar.fragmentView.getContext();
                         i12 = ((org.telegram.ui.ActionBar.n2) eyVar).currentAccount;
-                        eyVar.showDialog(new sg.j0(4, i12, context, eyVar, null));
+                        eyVar.showDialog(new sg.k0(4, i12, context, eyVar, null));
                         v00Var.dismiss();
                         break;
                     }

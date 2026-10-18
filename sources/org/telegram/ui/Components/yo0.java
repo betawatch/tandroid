@@ -20,7 +20,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class yo0 {
     public static Paint D;
@@ -125,7 +125,7 @@ public class yo0 {
                     this.r = dp;
                 }
             } else {
-                float x10 = org.telegram.messenger.kk.x(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f12);
+                float x10 = org.telegram.messenger.lk.x(elapsedRealtime, 60.0f, AndroidUtilities.dp(1.0f), f12);
                 this.r = x10;
                 if (x10 < dp) {
                     this.r = dp;

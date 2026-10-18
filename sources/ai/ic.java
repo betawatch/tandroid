@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.co;
@@ -38,7 +38,7 @@ import org.telegram.ui.ey;
 import org.telegram.ui.qt0;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class ic extends View {
     public final /* synthetic */ int a;
@@ -455,14 +455,14 @@ public final class ic extends View {
                     f13 = 1.0f;
                     paint = paint6;
                 } else {
-                    int dp3 = AndroidUtilities.dp(24.0f) + ((int) (kk.B(24.0f, 2, getMeasuredWidth()) * xy0Var.F));
+                    int dp3 = AndroidUtilities.dp(24.0f) + ((int) (lk.B(24.0f, 2, getMeasuredWidth()) * xy0Var.F));
                     f13 = 1.0f;
                     canvas.drawLine(dp2, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(24.0f) + r2, AndroidUtilities.dp(20.0f), paint5);
                     canvas.drawRect(dp3, AndroidUtilities.dp(20.0f) - AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f) + dp3, AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(20.0f), paint6);
                     paint = paint6;
                 }
                 if (!xy0Var.e) {
-                    int B3 = (int) (kk.B(24.0f, 2, getMeasuredWidth()) * xy0Var.E);
+                    int B3 = (int) (lk.B(24.0f, 2, getMeasuredWidth()) * xy0Var.E);
                     if (B3 < AndroidUtilities.dp(f13)) {
                         B3 = AndroidUtilities.dp(f13);
                     }

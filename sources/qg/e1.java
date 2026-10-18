@@ -10,7 +10,7 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.ViewConfiguration;
-import ci.j6;
+import ci.i6;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -26,17 +26,18 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.vf1;
+import org.telegram.ui.web.g2;
 import v7.f7;
-import w7.r6;
+import w7.p6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class e1 extends TextureView {
     public d1 a;
     public v1 b;
     public final s0 c;
     public c1 d;
-    public final e0 e;
+    public final d0 e;
     public final r1 f;
     public Bitmap h;
     public Bitmap n;
@@ -55,7 +56,7 @@ public class e1 extends TextureView {
         this.c = s0Var;
         s0Var.f = this;
         setSurfaceTextureListener(new a1(this, jaVar));
-        this.e = new e0(this);
+        this.e = new d0(this);
         y0 y0Var = new y0(this, 0);
         r1 r1Var = new r1();
         Paint paint = new Paint(1);
@@ -93,10 +94,10 @@ public class e1 extends TextureView {
 
     public final void a() {
         y0 y0Var = new y0(this, 2);
-        e0 e0Var = this.e;
-        e0Var.g = new w0(e0Var.a.getPainting().g.a, 0.0d, 1.0d);
-        e0Var.l = true;
-        e0Var.a(new d(), false, y0Var);
+        d0 d0Var = this.e;
+        d0Var.g = new w0(d0Var.a.getPainting().g.a, 0.0d, 1.0d);
+        d0Var.l = true;
+        d0Var.a(new d(), false, y0Var);
     }
 
     public final void b() {
@@ -123,7 +124,7 @@ public class e1 extends TextureView {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         Bitmap[] bitmapArr = new Bitmap[1];
         try {
-            c1Var.postRunnable(new j6(c1Var, z10, z11, bitmapArr, countDownLatch));
+            c1Var.postRunnable(new i6(c1Var, z10, z11, bitmapArr, countDownLatch));
             countDownLatch.await();
         } catch (Exception e) {
             FileLog.e(e);
@@ -431,81 +432,81 @@ public class e1 extends TextureView {
             }
             return;
         }
-        final e0 e0Var = this.e;
+        final d0 d0Var = this.e;
         float scaleX = getScaleX();
-        if (e0Var.x != null || e0Var.r != null) {
+        if (d0Var.x != null || d0Var.r != null) {
             return;
         }
         int actionMasked2 = motionEvent.getActionMasked();
         float x11 = motionEvent.getX();
-        float height2 = e0Var.a.getHeight() - motionEvent.getY();
-        float[] fArr2 = e0Var.u;
+        float height2 = d0Var.a.getHeight() - motionEvent.getY();
+        float[] fArr2 = d0Var.u;
         fArr2[0] = x11;
         fArr2[1] = height2;
-        e0Var.t.mapPoints(fArr2);
-        float currentTimeMillis = System.currentTimeMillis() - e0Var.v;
-        e0Var.w = w7.r.a(e0Var.w - (currentTimeMillis / 125.0f), 0.6f, 1.0f);
-        if (e0Var.a.getCurrentBrush() != null && (e0Var.a.getCurrentBrush() instanceof a)) {
-            e0Var.w = 1.0f - e0Var.w;
+        d0Var.t.mapPoints(fArr2);
+        float currentTimeMillis = System.currentTimeMillis() - d0Var.v;
+        d0Var.w = w7.r.a(d0Var.w - (currentTimeMillis / 125.0f), 0.6f, 1.0f);
+        if (d0Var.a.getCurrentBrush() != null && (d0Var.a.getCurrentBrush() instanceof a)) {
+            d0Var.w = 1.0f - d0Var.w;
         }
-        e0Var.v = System.currentTimeMillis();
-        float f28 = e0Var.w;
+        d0Var.v = System.currentTimeMillis();
+        float f28 = d0Var.w;
         if (motionEvent.getToolType(motionEvent.getActionIndex()) == 2) {
-            f28 = Math.max(0.1f, e0.B.getInterpolation(motionEvent.getPressure()));
+            f28 = Math.max(0.1f, d0.B.getInterpolation(motionEvent.getPressure()));
             if ((motionEvent.getButtonState() & 32) == 32) {
                 z10 = true;
-                if (e0Var.a.getCurrentBrush() != null) {
-                    f28 = (AndroidUtilities.lerp(e0Var.a.getCurrentBrush().j(), 1.0f, w7.r.a(e0Var.o / 16.0f, 0.0f, 1.0f)) * (f28 - 1.0f)) + 1.0f;
+                if (d0Var.a.getCurrentBrush() != null) {
+                    f28 = (AndroidUtilities.lerp(d0Var.a.getCurrentBrush().j(), 1.0f, w7.r.a(d0Var.o / 16.0f, 0.0f, 1.0f)) * (f28 - 1.0f)) + 1.0f;
                 }
-                float[] fArr3 = e0Var.u;
+                float[] fArr3 = d0Var.u;
                 double d14 = fArr3[0];
                 double d15 = fArr3[1];
                 double d16 = f28;
                 w0 w0Var = new w0(d14, d15, d16);
                 if (actionMasked2 != 0) {
                     if (actionMasked2 == 1) {
-                        if (e0Var.z) {
-                            e0Var.z = false;
+                        if (d0Var.z) {
+                            d0Var.z = false;
                             return;
                         }
-                        e0Var.l = false;
-                        e0Var.s.c();
-                        AndroidUtilities.cancelRunOnUIThread(e0Var.y);
-                        s0 painting = e0Var.a.getPainting();
+                        d0Var.l = false;
+                        d0Var.s.c();
+                        AndroidUtilities.cancelRunOnUIThread(d0Var.y);
+                        s0 painting = d0Var.a.getPainting();
                         if (painting.d == null || !painting.H || painting.q == 0) {
-                            if (!e0Var.e) {
-                                d1 d1Var2 = e0Var.a.a;
+                            if (!d0Var.e) {
+                                d1 d1Var2 = d0Var.a.a;
                                 if (d1Var2 == null || d1Var2.d()) {
                                     w0Var.d = true;
                                     t0 t0Var = new t0();
                                     Vector vector = new Vector();
                                     t0Var.b = vector;
                                     vector.add(w0Var);
-                                    e0Var.b(t0Var);
+                                    d0Var.b(t0Var);
                                 }
-                                e0Var.n = 0;
-                            } else if (e0Var.n > 0) {
-                                e0Var.c(e0Var.a.getCurrentBrush().j(), true);
-                                if (e0Var.a.getCurrentBrush() instanceof a) {
-                                    final float f29 = e0Var.k;
-                                    final w0 w0Var2 = e0Var.m[e0Var.n - 1];
-                                    w0 w0Var3 = e0Var.h;
+                                d0Var.n = 0;
+                            } else if (d0Var.n > 0) {
+                                d0Var.c(d0Var.a.getCurrentBrush().j(), true);
+                                if (d0Var.a.getCurrentBrush() instanceof a) {
+                                    final float f29 = d0Var.k;
+                                    final w0 w0Var2 = d0Var.m[d0Var.n - 1];
+                                    w0 w0Var3 = d0Var.h;
                                     double d17 = w0Var3 == null ? d16 : w0Var3.c;
-                                    final float currentWeight = e0Var.a.getCurrentWeight() * ((float) d17) * 12.0f;
-                                    ValueAnimator valueAnimator = e0Var.r;
+                                    final float currentWeight = d0Var.a.getCurrentWeight() * ((float) d17) * 12.0f;
+                                    ValueAnimator valueAnimator = d0Var.r;
                                     if (valueAnimator != null) {
                                         valueAnimator.cancel();
                                     }
                                     final float[] fArr4 = new float[1];
                                     final boolean[] zArr = new boolean[1];
                                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                                    e0Var.r = ofFloat;
+                                    d0Var.r = ofFloat;
                                     final double d18 = d17;
-                                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: qg.z
+                                    ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: qg.y
                                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                                            e0 e0Var2 = e0.this;
-                                            e0Var2.getClass();
+                                            d0 d0Var2 = d0.this;
+                                            d0Var2.getClass();
                                             float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
                                             double d19 = f29;
                                             double cos = Math.cos(d19 - 2.5918139392115793d);
@@ -522,14 +523,14 @@ public class e1 extends TextureView {
                                             double d27 = (d23 * d26) + d25;
                                             double d28 = d18;
                                             double d29 = floatValue;
-                                            e0Var2.b(new t0(new w0[]{new w0(d24, d27, d28), new w0((d22 * d29) + d20, (d26 * d29) + d25, d28, 0)}));
+                                            d0Var2.b(new t0(new w0[]{new w0(d24, d27, d28), new w0((d22 * d29) + d20, (d26 * d29) + d25, d28, 0)}));
                                             double cos2 = Math.cos(d19 + 2.5918139392115793d);
                                             double sin2 = Math.sin(d19 + 2.748893571891069d);
                                             double d30 = w0Var4.a;
                                             double d31 = cos2 * d21;
                                             double d32 = fArr5[0];
                                             double d33 = sin2 * d21;
-                                            e0Var2.b(new t0(new w0[]{new w0((d31 * d32) + d30, (d32 * d33) + d25, d28), new w0((d31 * d29) + d30, (d33 * d29) + d25, d28, 0)}));
+                                            d0Var2.b(new t0(new w0[]{new w0((d31 * d32) + d30, (d32 * d33) + d25, d28), new w0((d31 * d29) + d30, (d33 * d29) + d25, d28, 0)}));
                                             boolean[] zArr2 = zArr;
                                             if (!zArr2[0] && floatValue > 0.4f) {
                                                 zArr2[0] = true;
@@ -538,21 +539,21 @@ public class e1 extends TextureView {
                                             fArr5[0] = floatValue;
                                         }
                                     });
-                                    e0Var.r.addListener(new vf1(e0Var, 13));
-                                    e0Var.r.setDuration(240L);
-                                    e0Var.r.setInterpolator(bs.h);
-                                    e0Var.r.start();
+                                    d0Var.r.addListener(new vf1(d0Var, 12));
+                                    d0Var.r.setDuration(240L);
+                                    d0Var.r.setInterpolator(bs.h);
+                                    d0Var.r.start();
                                 }
                             }
                             r72 = 0;
-                            e0Var.a.getPainting().c(null, e0Var.a.getCurrentColor(), true, new a0(e0Var, 0 == true ? 1 : 0));
-                            e0Var.n = r72;
-                            e0Var.o = r72;
-                            e0Var.j = r72;
-                            e0Var.b = r72;
-                            e0Var.p = 0.0d;
-                            e0Var.q = 0.0d;
-                            d1Var = e0Var.a.a;
+                            d0Var.a.getPainting().c(null, d0Var.a.getCurrentColor(), true, new z(d0Var, 0 == true ? 1 : 0));
+                            d0Var.n = r72;
+                            d0Var.o = r72;
+                            d0Var.j = r72;
+                            d0Var.b = r72;
+                            d0Var.p = 0.0d;
+                            d0Var.q = 0.0d;
+                            d1Var = d0Var.a.a;
                             if (d1Var == null) {
                                 d1Var.e();
                                 return;
@@ -573,96 +574,96 @@ public class e1 extends TextureView {
                         painting.L.start();
                         BotWebViewVibrationEffect.IMPACT_RIGID.vibrate();
                         r72 = 0;
-                        e0Var.n = r72;
-                        e0Var.o = r72;
-                        e0Var.j = r72;
-                        e0Var.b = r72;
-                        e0Var.p = 0.0d;
-                        e0Var.q = 0.0d;
-                        d1Var = e0Var.a.a;
+                        d0Var.n = r72;
+                        d0Var.o = r72;
+                        d0Var.j = r72;
+                        d0Var.b = r72;
+                        d0Var.p = 0.0d;
+                        d0Var.q = 0.0d;
+                        d1Var = d0Var.a.a;
                         if (d1Var == null) {
                         }
                     } else if (actionMasked2 != 2) {
                         if (actionMasked2 != 3) {
                             return;
                         }
-                        if (e0Var.z) {
-                            e0Var.z = false;
+                        if (d0Var.z) {
+                            d0Var.z = false;
                             return;
                         }
-                        e0Var.l = false;
-                        e0Var.s.c();
-                        s0 painting2 = e0Var.a.getPainting();
+                        d0Var.l = false;
+                        d0Var.s.c();
+                        s0 painting2 = d0Var.a.getPainting();
                         if (painting2.L != null) {
                             i11 = 1;
                         } else {
                             i11 = 1;
                             painting2.f.f(new o0(painting2, r63 == true ? 1 : 0, i11));
                         }
-                        AndroidUtilities.cancelRunOnUIThread(e0Var.y);
-                        s0 painting3 = e0Var.a.getPainting();
+                        AndroidUtilities.cancelRunOnUIThread(d0Var.y);
+                        s0 painting3 = d0Var.a.getPainting();
                         painting3.f.f(new p0(painting3, i11));
-                        e0Var.n = 0;
-                        e0Var.o = 0;
-                        e0Var.j = false;
-                        e0Var.b = false;
-                        e0Var.p = 0.0d;
-                        e0Var.q = 0.0d;
-                        m mVar = e0Var.A;
+                        d0Var.n = 0;
+                        d0Var.o = 0;
+                        d0Var.j = false;
+                        d0Var.b = false;
+                        d0Var.p = 0.0d;
+                        d0Var.q = 0.0d;
+                        m mVar = d0Var.A;
                         if (mVar != null) {
-                            e0Var.a.g(mVar);
-                            e0Var.A = null;
+                            d0Var.a.g(mVar);
+                            d0Var.A = null;
                             return;
                         }
                         return;
                     }
                 }
-                if (e0Var.z) {
-                    if (!e0Var.b) {
-                        e0Var.b = true;
-                        e0Var.e = false;
-                        e0Var.c = true;
-                        e0Var.g = w0Var;
-                        e0Var.d = System.currentTimeMillis();
-                        e0Var.m[0] = w0Var;
-                        e0Var.n = 1;
-                        e0Var.o = 1;
-                        e0Var.j = false;
-                        e0Var.f = true;
-                        e0Var.l = true;
-                        AndroidUtilities.runOnUIThread(e0Var.y, ViewConfiguration.getLongPressTimeout());
+                if (d0Var.z) {
+                    if (!d0Var.b) {
+                        d0Var.b = true;
+                        d0Var.e = false;
+                        d0Var.c = true;
+                        d0Var.g = w0Var;
+                        d0Var.d = System.currentTimeMillis();
+                        d0Var.m[0] = w0Var;
+                        d0Var.n = 1;
+                        d0Var.o = 1;
+                        d0Var.j = false;
+                        d0Var.f = true;
+                        d0Var.l = true;
+                        AndroidUtilities.runOnUIThread(d0Var.y, ViewConfiguration.getLongPressTimeout());
                         return;
                     }
-                    float a12 = w0Var.a(e0Var.g);
+                    float a12 = w0Var.a(d0Var.g);
                     if (a12 < AndroidUtilities.dp(5.0f) / scaleX) {
                         return;
                     }
-                    if (e0Var.l && (a12 > AndroidUtilities.dp(6.0f) / scaleX || e0Var.n > 4)) {
-                        e0Var.l = false;
-                        AndroidUtilities.cancelRunOnUIThread(e0Var.y);
+                    if (d0Var.l && (a12 > AndroidUtilities.dp(6.0f) / scaleX || d0Var.n > 4)) {
+                        d0Var.l = false;
+                        AndroidUtilities.cancelRunOnUIThread(d0Var.y);
                     }
-                    if (!e0Var.e) {
-                        d1 d1Var3 = e0Var.a.a;
+                    if (!d0Var.e) {
+                        d1 d1Var3 = d0Var.a.a;
                         if (d1Var3 != null) {
                             d1Var3.f();
                         }
-                        e0Var.e = true;
-                        if (z10 && (e0Var.a.getCurrentBrush() instanceof f)) {
-                            e0Var.A = e0Var.a.getCurrentBrush();
-                            e0Var.a.g((m) r4.c.f(1, m.a));
+                        d0Var.e = true;
+                        if (z10 && (d0Var.a.getCurrentBrush() instanceof f)) {
+                            d0Var.A = d0Var.a.getCurrentBrush();
+                            d0Var.a.g((m) r4.c.f(1, m.a));
                         }
                     }
-                    e0Var.m[e0Var.n] = w0Var;
-                    if (e0Var.a.getPainting() == null || !e0Var.a.getPainting().G) {
+                    d0Var.m[d0Var.n] = w0Var;
+                    if (d0Var.a.getPainting() == null || !d0Var.a.getPainting().G) {
                         f7 = a12;
-                        if (System.currentTimeMillis() - e0Var.d > 3000) {
-                            e0Var.s.c();
-                            s0 painting4 = e0Var.a.getPainting();
+                        if (System.currentTimeMillis() - d0Var.d > 3000) {
+                            d0Var.s.c();
+                            s0 painting4 = d0Var.a.getPainting();
                             if (painting4.L == null) {
                                 painting4.f.f(new o0(painting4, r62 == true ? 1 : 0, 1));
                             }
-                        } else if ((e0Var.a.getCurrentBrush() instanceof f) || (e0Var.a.getCurrentBrush() instanceof c)) {
-                            m1 m1Var = e0Var.s;
+                        } else if ((d0Var.a.getCurrentBrush() instanceof f) || (d0Var.a.getCurrentBrush() instanceof c)) {
+                            m1 m1Var = d0Var.s;
                             boolean z13 = f7 > ((float) AndroidUtilities.dp(6.0f)) / scaleX;
                             synchronized (m1Var) {
                                 m1Var.b.add(new j1(d14, d15));
@@ -681,40 +682,40 @@ public class e1 extends TextureView {
                                         r42 = 1;
                                         atomicBoolean.set(true);
                                         dispatchQueue.postRunnable(i1Var, 150L);
-                                        i10 = e0Var.n + r42;
-                                        e0Var.n = i10;
-                                        e0Var.o += r42;
+                                        i10 = d0Var.n + r42;
+                                        d0Var.n = i10;
+                                        d0Var.o += r42;
                                         if (i10 != 3) {
-                                            w0[] w0VarArr = e0Var.m;
+                                            w0[] w0VarArr = d0Var.m;
                                             w0 w0Var4 = w0VarArr[2];
                                             double d19 = w0Var4.b;
                                             w0 w0Var5 = w0VarArr[r42];
                                             float atan2 = (float) Math.atan2(d19 - w0Var5.b, w0Var4.a - w0Var5.a);
-                                            if (e0Var.j) {
+                                            if (d0Var.j) {
                                                 float a13 = w7.r.a(f7 / (AndroidUtilities.dp(16.0f) / scaleX), 0.0f, 1.0f);
                                                 if (a13 > 0.4f) {
                                                     double d20 = 1.0f - a13;
-                                                    double d21 = e0Var.k;
+                                                    double d21 = d0Var.k;
                                                     double d22 = a13;
                                                     double d23 = atan2;
                                                     f10 = scaleX;
-                                                    e0Var.k = (float) Math.atan2((Math.sin(d23) * d22) + (Math.sin(d21) * d20), i2.d.f(d23, d22, Math.cos(d21) * d20));
-                                                    e0Var.c(e0Var.a.getCurrentBrush().j(), false);
+                                                    d0Var.k = (float) Math.atan2((Math.sin(d23) * d22) + (Math.sin(d21) * d20), i2.d.f(d23, d22, Math.cos(d21) * d20));
+                                                    d0Var.c(d0Var.a.getCurrentBrush().j(), false);
                                                 }
                                             } else {
-                                                e0Var.k = atan2;
-                                                e0Var.j = r42;
+                                                d0Var.k = atan2;
+                                                d0Var.j = r42;
                                             }
                                             f10 = scaleX;
-                                            e0Var.c(e0Var.a.getCurrentBrush().j(), false);
+                                            d0Var.c(d0Var.a.getCurrentBrush().j(), false);
                                         } else {
                                             f10 = scaleX;
                                         }
-                                        e0Var.g = w0Var;
+                                        d0Var.g = w0Var;
                                         if (f7 > AndroidUtilities.dp(8.0f) / f10) {
-                                            e0Var.h = w0Var;
+                                            d0Var.h = w0Var;
                                         }
-                                        e0Var.w = w7.r.a((currentTimeMillis / 75.0f) + e0Var.w, 0.6f, 1.0f);
+                                        d0Var.w = w7.r.a((currentTimeMillis / 75.0f) + d0Var.w, 0.6f, 1.0f);
                                         return;
                                     }
                                 }
@@ -724,31 +725,31 @@ public class e1 extends TextureView {
                         f7 = a12;
                     }
                     r42 = 1;
-                    i10 = e0Var.n + r42;
-                    e0Var.n = i10;
-                    e0Var.o += r42;
+                    i10 = d0Var.n + r42;
+                    d0Var.n = i10;
+                    d0Var.o += r42;
                     if (i10 != 3) {
                     }
-                    e0Var.g = w0Var;
+                    d0Var.g = w0Var;
                     if (f7 > AndroidUtilities.dp(8.0f) / f10) {
                     }
-                    e0Var.w = w7.r.a((currentTimeMillis / 75.0f) + e0Var.w, 0.6f, 1.0f);
+                    d0Var.w = w7.r.a((currentTimeMillis / 75.0f) + d0Var.w, 0.6f, 1.0f);
                     return;
                 }
                 return;
             }
         }
         z10 = false;
-        if (e0Var.a.getCurrentBrush() != null) {
+        if (d0Var.a.getCurrentBrush() != null) {
         }
-        float[] fArr32 = e0Var.u;
+        float[] fArr32 = d0Var.u;
         double d142 = fArr32[0];
         double d152 = fArr32[1];
         double d162 = f28;
         w0 w0Var6 = new w0(d142, d152, d162);
         if (actionMasked2 != 0) {
         }
-        if (e0Var.z) {
+        if (d0Var.z) {
         }
     }
 
@@ -757,7 +758,7 @@ public class e1 extends TextureView {
         if (c1Var == null) {
             return;
         }
-        c1Var.postRunnable(new p2.b(2, this, runnable));
+        c1Var.postRunnable(new g2(3, this, runnable));
     }
 
     public m getCurrentBrush() {
@@ -807,14 +808,14 @@ public class e1 extends TextureView {
             r1Var.o = matrix2;
             matrix.invert(matrix2);
         } else {
-            e0 e0Var = this.e;
-            e0Var.getClass();
+            d0 d0Var = this.e;
+            d0Var.getClass();
             Matrix matrix3 = new Matrix();
-            e0Var.t = matrix3;
+            d0Var.t = matrix3;
             matrix.invert(matrix3);
         }
         c1 c1Var = this.d;
-        s0Var.y = r6.c(r6.b(c1Var.n, c1Var.r), r6.a(matrix));
+        s0Var.y = p6.c(p6.b(c1Var.n, c1Var.r), p6.a(matrix));
     }
 
     public void setBrush(m mVar) {

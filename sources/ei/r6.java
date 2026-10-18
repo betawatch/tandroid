@@ -57,7 +57,7 @@ import org.telegram.ui.Components.rc0;
 import org.telegram.ui.Components.wc0;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class r6 extends FrameLayout {
     public static final /* synthetic */ int B0 = 0;
@@ -195,9 +195,9 @@ public abstract class r6 extends FrameLayout {
                         if (file == null) {
                             return;
                         }
-                        ai.u3 u3Var = new ai.u3(r6Var, a8Var, j11, file.getPath(), 1);
+                        ai.w3 w3Var = new ai.w3(r6Var, a8Var, j11, file.getPath(), 1);
                         boolean z10 = a8Var.K;
-                        bitmapArr[0] = a8.q(u3Var, measuredWidth, i10, !z10 ? a8Var.Q : 0, !z10);
+                        bitmapArr[0] = a8.q(w3Var, measuredWidth, i10, !z10 ? a8Var.Q : 0, !z10);
                         zArr[0] = false;
                     }
                 }
@@ -373,7 +373,7 @@ public abstract class r6 extends FrameLayout {
     }
 
     private void setupImage(a8 a8Var) {
-        Utilities.searchQueue.postRunnable(new ci.v7(29, this, a8Var));
+        Utilities.searchQueue.postRunnable(new ci.u7(29, this, a8Var));
     }
 
     public abstract void b();
@@ -975,7 +975,7 @@ public abstract class r6 extends FrameLayout {
             a81 a81Var2 = new a81();
             this.y = a81Var2;
             a81Var2.y = z11;
-            a81Var2.J = new ya.c(this, 16);
+            a81Var2.J = new ya.d(this, 16);
             a81Var2.D(Uri.fromFile(new File(a8Var.y)), "other");
             c();
             if (this.e != null && getDuration() > 0) {

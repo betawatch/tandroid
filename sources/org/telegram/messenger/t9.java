@@ -1,55 +1,87 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import android.os.Bundle;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class t9 implements RequestDelegate {
+public final /* synthetic */ class t9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ t9(BaseController baseController, Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+    public /* synthetic */ t9(MessagesController messagesController, long j10, int i10) {
         this.a = i10;
-        this.b = baseController;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
+        this.b = messagesController;
+        this.c = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$checkCanOpenChat$455((org.telegram.ui.ActionBar.b2) this.c, (pf.c) this.d, (org.telegram.ui.ActionBar.n2) this.e, (Bundle) this.f, tLObject, tL_error);
+                this.b.lambda$setDefaultBannedRole$96(this.c);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$didReceivedNotification$50((TLRPC.TL_theme) this.c, (org.telegram.ui.ActionBar.g6) this.d, (TLRPC.TL_inputThemeSettings) this.e, (org.telegram.ui.ActionBar.f6) this.f, tLObject, tL_error);
+                this.b.lambda$setChatReactions$473(this.c);
                 break;
             case 2:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$28((Context) this.d, (org.telegram.ui.ActionBar.b2) this.c, (byte[]) this.e, (TLRPC.User) this.f, tLObject, tL_error);
+                this.b.lambda$deleteParticipantFromChat$311(this.c);
+                break;
+            case 3:
+                this.b.lambda$setBoostsToUnblockRestrictions$94(this.c);
+                break;
+            case 4:
+                this.b.lambda$deleteDialog$139(this.c);
+                break;
+            case 5:
+                this.b.lambda$addUserToChat$297(this.c);
+                break;
+            case 6:
+                this.b.lambda$addUserToChat$308(this.c);
+                break;
+            case 7:
+                this.b.lambda$addUserToChat$306(this.c);
+                break;
+            case 8:
+                this.b.lambda$processUpdateArray$386(this.c);
+                break;
+            case 9:
+                this.b.lambda$getSavedReactionTags$491(this.c);
+                break;
+            case 10:
+                this.b.lambda$getChannelDifference$333(this.c);
+                break;
+            case 11:
+                this.b.lambda$getChannelDifference$334(this.c);
+                break;
+            case 12:
+                this.b.lambda$getChannelDifference$335(this.c);
+                break;
+            case 13:
+                this.b.lambda$getChannelDifference$336(this.c);
+                break;
+            case 14:
+                this.b.lambda$setChannelSlowMode$92(this.c);
+                break;
+            case 15:
+                this.b.lambda$deleteParticipantFromChat$314(this.c);
+                break;
+            case 16:
+                this.b.lambda$deleteDialog$138(this.c);
+                break;
+            case 17:
+                this.b.lambda$removeDialog$133(this.c);
+                break;
+            case 18:
+                this.b.lambda$setParticipantBannedRole$89(this.c);
+                break;
+            case 19:
+                this.b.lambda$getChannelDifference$343(this.c);
+                break;
+            case 20:
+                this.b.lambda$getChannelDifference$344(this.c);
                 break;
             default:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$59((TLRPC.InputMedia) this.c, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e, (MessageObject) this.f, tLObject, tL_error);
+                this.b.lambda$getChannelDifference$342(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ t9(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.b2 b2Var, byte[] bArr, TLRPC.User user) {
-        this.a = 2;
-        this.b = secretChatHelper;
-        this.d = context;
-        this.c = b2Var;
-        this.e = bArr;
-        this.f = user;
     }
 }

@@ -20,11 +20,11 @@ import androidx.lifecycle.z;
 import c5.b0;
 import c5.g0;
 import c5.y;
-import ci.aa;
-import ci.j8;
-import ci.q4;
+import ci.i8;
+import ci.p4;
+import ci.p9;
 import ci.q9;
-import ci.r9;
+import ci.z9;
 import com.google.android.gms.common.api.internal.c1;
 import com.google.android.gms.common.api.internal.l1;
 import com.google.android.gms.common.api.internal.o0;
@@ -37,9 +37,9 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.Cells.a0;
 import org.telegram.ui.Cells.s6;
 import org.telegram.ui.Cells.u5;
-import rg.v2;
+import rg.u2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class i implements Runnable {
     public final /* synthetic */ int a;
@@ -142,21 +142,21 @@ public final class i implements Runnable {
                 yVar.c(iVar2);
                 return;
             case 9:
-                q4 q4Var = (q4) this.b;
-                if (q4Var.K1 && q4Var.b1) {
-                    aa aaVar = ((r9) q4Var.Q1).d;
-                    aaVar.l1 = false;
-                    aaVar.P();
+                p4 p4Var = (p4) this.b;
+                if (p4Var.K1 && p4Var.b1) {
+                    z9 z9Var = ((q9) p4Var.Q1).d;
+                    z9Var.l1 = false;
+                    z9Var.P();
                     return;
                 }
                 return;
             case 10:
-                ((q9) this.b).L0 = false;
+                ((p9) this.b).L0 = false;
                 return;
             case 11:
-                j8 j8Var = (j8) this.b;
-                j8Var.b = false;
-                j8Var.invalidate();
+                i8 i8Var = (i8) this.b;
+                i8Var.b = false;
+                i8Var.invalidate();
                 return;
             case 12:
                 com.google.android.gms.common.api.internal.f0 f0Var2 = (com.google.android.gms.common.api.internal.f0) this.b;
@@ -200,8 +200,8 @@ public final class i implements Runnable {
                 }
             case 18:
                 rg.j jVar = ((xa) this.b).J0;
-                if (jVar instanceof v2) {
-                    ((v2) jVar).getEditText();
+                if (jVar instanceof u2) {
+                    ((u2) jVar).getEditText();
                     return;
                 }
                 return;

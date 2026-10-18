@@ -1,30 +1,41 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h3 implements Runnable {
+public final /* synthetic */ class h3 implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l3 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ h3(l3 l3Var, int i10) {
+    public /* synthetic */ h3(Object obj, int i10) {
         this.a = i10;
-        this.b = l3Var;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
+        u61 u61Var;
         switch (this.a) {
             case 0:
-                org.telegram.ui.Cells.w0 w0Var = this.b.a;
-                if (w0Var.getParent() instanceof View) {
-                    ((View) w0Var.getParent()).invalidate();
-                    break;
+                m3 m3Var = (m3) this.b;
+                m3Var.getClass();
+                if (i10 == NotificationCenter.userInfoDidLoad && i11 == m3Var.w0 && m3Var.x0 != 0 && objArr.length > 1) {
+                    Object obj = objArr[0];
+                    if ((obj instanceof Long) && ((Long) obj).longValue() == m3Var.x0) {
+                        m3Var.p(m3.h((TLRPC.UserFull) objArr[1]), true);
+                        break;
+                    }
                 }
                 break;
             default:
-                this.b.s();
+                r9 r9Var = (r9) this.b;
+                if (!r9Var.n && (u61Var = r9Var.a) != null) {
+                    u61Var.W2.N(true);
+                    break;
+                }
                 break;
         }
     }

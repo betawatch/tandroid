@@ -30,7 +30,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ua1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ca implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -172,7 +172,7 @@ public final /* synthetic */ class ca implements View.OnClickListener {
                                 r40Var.setAlpha(0.0f);
                                 snVar2.o2.setVisibility(4);
                                 snVar2.o2.setShowingDuration(4000L);
-                                snVar2.X0.addView(snVar2.o2, w7.z5.a(-2.0f, 19.0f, 0.0f, 19.0f, 0.0f, -2, 51));
+                                snVar2.X0.addView(snVar2.o2, w7.z5.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
                             }
                             int i18 = snVar2.Z7.ttl_period;
                             snVar2.o2.setText(LocaleController.formatString("AutoDeleteSetInfo", R.string.AutoDeleteSetInfo, i18 > 86400 ? LocaleController.formatPluralString("Days", i18 / 86400, new Object[0]) : i18 >= 3600 ? LocaleController.formatPluralString("Hours", i18 / 3600, new Object[0]) : i18 >= 60 ? LocaleController.formatPluralString("Minutes", i18 / 60, new Object[0]) : LocaleController.formatPluralString("Seconds", i18, new Object[0])));
@@ -432,7 +432,7 @@ public final /* synthetic */ class ca implements View.OnClickListener {
             case 24:
                 ai.y9 y9Var = (ai.y9) obj2;
                 y9Var.e = !y9Var.e;
-                ((org.telegram.messenger.uj) obj).run();
+                ((org.telegram.messenger.vj) obj).run();
                 y9Var.j(true);
                 break;
             case 25:

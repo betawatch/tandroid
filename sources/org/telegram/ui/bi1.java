@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class bi1 {
     public org.telegram.ui.Cells.a2 a;
@@ -20,7 +20,7 @@ public final class bi1 {
         bi1 bi1Var = new bi1();
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.TermsOfUse);
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
         TextView textView = new TextView(context);
         textView.setLetterSpacing(0.025f);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, false));
@@ -36,7 +36,7 @@ public final class bi1 {
         bi1Var.a.e(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotWebAppDisclaimerCheck), new dv(context, 8)), "", false, false, false);
         alertDialog$Builder.n(e);
         alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new org.telegram.ui.Components.c3(1, callback, zArr));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new hk0(15));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new hk0(16));
         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
         bi1Var.b = b2Var;
         b2Var.show();

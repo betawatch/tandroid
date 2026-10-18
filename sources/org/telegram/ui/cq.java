@@ -13,7 +13,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cq extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -1637,13 +1637,13 @@ public final class cq extends org.telegram.ui.Components.hm0 {
                 dqVar.e.addView(dqVar.f, w7.z5.e(-2, -2, 17));
                 dqVar.e.setBackground(org.telegram.ui.ActionBar.x5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.h6.Oh));
                 dqVar.e.setOnClickListener(new a(this, 14));
-                dqVar.d.addView(dqVar.e, w7.z5.a(48.0f, 14.0f, 28.0f, 14.0f, 14.0f, -1, 119));
+                dqVar.d.addView(dqVar.e, w7.z5.d(-1, 48.0f, 119, 14.0f, 28.0f, 14.0f, 14.0f));
                 dqVar.d.setLayoutParams(new s4.o0(-1, -2));
                 View view3 = new View(context);
                 view3.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
                 dqVar.d.setClipChildren(false);
                 dqVar.d.setClipToPadding(false);
-                dqVar.d.addView(view3, w7.z5.a(800.0f, 0.0f, 0.0f, 0.0f, -800.0f, -1, 87));
+                dqVar.d.addView(view3, w7.z5.d(-1, 800.0f, 87, 0.0f, 0.0f, 0.0f, -800.0f));
                 view2 = dqVar.d;
                 break;
             case 10:

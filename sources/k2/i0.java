@@ -10,7 +10,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class i0 {
     public static final Object t = new Object();
@@ -48,7 +48,7 @@ public final class i0 {
         } else {
             this.h = -1;
         }
-        this.f = new l0(new ya.c(this, 26), g0Var, audioTrack, oVar.a, this.h, oVar.f);
+        this.f = new l0(new ya.d(this, 26), g0Var, audioTrack, oVar.a, this.h, oVar.f);
         if (Build.VERSION.SDK_INT >= 24 && iVar != null) {
             this.e = new d0(audioTrack, iVar);
         }
@@ -232,7 +232,7 @@ public final class i0 {
                     z13 = timestamp;
                     audioTimestamp = audioTimestamp22;
                 } else {
-                    ya.c cVar = b0Var2.c;
+                    ya.d dVar = b0Var2.c;
                     long j17 = audioTimestamp22.nanoTime / 1000;
                     z13 = timestamp;
                     audioTimestamp = audioTimestamp22;
@@ -242,9 +242,9 @@ public final class i0 {
                         long j18 = j12;
                         if (Math.abs(B - j18) > 5000000) {
                             long j19 = a0Var.e;
-                            cVar.getClass();
+                            dVar.getClass();
                             audioTrack = audioTrack2;
-                            e2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (frame position mismatch): " + j19 + ", " + j17 + ", " + nanoTime + ", " + j18 + ", " + ((i0) cVar.b).b());
+                            e2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (frame position mismatch): " + j19 + ", " + j17 + ", " + nanoTime + ", " + j18 + ", " + ((i0) dVar.b).b());
                             b0Var = b0Var;
                             i11 = 4;
                             b0Var.a(4);
@@ -339,8 +339,8 @@ public final class i0 {
                         return j142;
                     }
                     long j27 = a0Var.e;
-                    cVar.getClass();
-                    e2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (system clock mismatch): " + j27 + ", " + j17 + ", " + nanoTime + ", " + j12 + ", " + ((i0) cVar.b).b());
+                    dVar.getClass();
+                    e2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (system clock mismatch): " + j27 + ", " + j17 + ", " + nanoTime + ", " + j12 + ", " + ((i0) dVar.b).b());
                     b0Var2.a(4);
                     b0Var = b0Var2;
                     audioTrack = audioTrack2;

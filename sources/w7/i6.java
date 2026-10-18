@@ -1,12 +1,38 @@
 package w7;
 
-import android.graphics.Path;
+import org.telegram.messenger.DispatchQueue;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class i6 {
-    public static void a(Path path, float f7, float f10) {
-        path.rewind();
-        path.addRoundRect(0.0f, 0.0f, f7, f10, (f7 * 0.15f) / 2.0f, (0.15f * f10) / 1.212122f, Path.Direction.CW);
+    public static DispatchQueue a;
+
+    public static void a(int i10, int i11, int[] iArr, int[] iArr2) {
+        int i12;
+        for (int i13 = 0; i13 < 315; i13++) {
+            int i14 = i13 - 7;
+            iArr2[i13] = (i14 < 0 || i14 >= 288) ? 0 : iArr[(i14 * i11) + i10];
+        }
+        int i15 = 0;
+        while (i15 < 315) {
+            iArr2[i15 + 315] = iArr2[i15];
+            int i16 = i15 + 1;
+            while (true) {
+                i12 = i15 + 15;
+                if (i16 >= i12) {
+                    break;
+                }
+                iArr2[i16 + 315] = Math.max(iArr2[i16 + 314], iArr2[i16]);
+                i16++;
+            }
+            iArr2[i15 + 644] = iArr2[i15 + 14];
+            for (int i17 = i15 + 13; i17 >= i15; i17--) {
+                iArr2[i17 + 630] = Math.max(iArr2[i17 + 631], iArr2[i17]);
+            }
+            i15 = i12;
+        }
+        for (int i18 = 0; i18 < 288; i18++) {
+            iArr[(i18 * i11) + i10] = Math.max(iArr2[i18 + 630], iArr2[i18 + 329]);
+        }
     }
 }

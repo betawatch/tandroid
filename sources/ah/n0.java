@@ -17,7 +17,7 @@ import org.telegram.ui.i51;
 import org.telegram.ui.sn;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class n0 extends z51 {
     public final /* synthetic */ cl0 d2;
@@ -47,7 +47,7 @@ public final class n0 extends z51 {
                 vVar.performHapticFeedback(3);
             } catch (Exception unused) {
             }
-            new xc(vVar, null).q(document, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiReaction)), LocaleController.getString(R.string.PremiumMore), new a3.d(this, 5)).j();
+            new xc(vVar, null).r(document, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiReaction)), LocaleController.getString(R.string.PremiumMore), new a3.d(this, 5)).j();
             return;
         }
         if (l4 == null && document == null) {

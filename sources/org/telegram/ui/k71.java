@@ -15,7 +15,7 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k71 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Components.w9 a;
@@ -31,7 +31,7 @@ public final class k71 extends FrameLayout implements NotificationCenter.Notific
         this.c = hVar;
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
-        addView(w9Var, w7.z5.a(120.0f, 0.0f, 16.0f, 0.0f, 0.0f, 120, 1));
+        addView(w9Var, w7.z5.d(120, 120.0f, 1, 0.0f, 16.0f, 0.0f, 0.0f));
         hVar.j = false;
         hVar.n = 1.2f;
         w9Var.setOnClickListener(new b8(this, 2));
@@ -43,7 +43,7 @@ public final class k71 extends FrameLayout implements NotificationCenter.Notific
         org.telegram.ui.ActionBar.h6.x0(null, i12, false);
         org.telegram.ui.ActionBar.h6.x0(null, i11, false);
         org.telegram.ui.Components.x90 x90Var = new org.telegram.ui.Components.x90(context, null);
-        addView(x90Var, w7.z5.a(-2.0f, 36.0f, 152.0f, 36.0f, 0.0f, -1, 0));
+        addView(x90Var, w7.z5.d(-1, -2.0f, 0, 36.0f, 152.0f, 36.0f, 0.0f));
         x90Var.setGravity(1);
         x90Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         x90Var.setTextSize(1, 15.0f);
@@ -87,7 +87,7 @@ public final class k71 extends FrameLayout implements NotificationCenter.Notific
         int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Qh, false);
         mkVar.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, x02, x03, x03));
         mkVar.setOnClickListener(new i31(this, 3));
-        addView(mkVar, w7.z5.a(48.0f, 16.0f, 15.0f, 16.0f, 16.0f, -1, 80));
+        addView(mkVar, w7.z5.d(-1, 48.0f, 80, 16.0f, 15.0f, 16.0f, 16.0f));
         a();
     }
 

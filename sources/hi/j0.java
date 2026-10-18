@@ -6,14 +6,14 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.f3;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.a71;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class j0 extends h0 {
     public final /* synthetic */ k0 h;
@@ -40,7 +40,7 @@ public final class j0 extends h0 {
         a71Var2.setClipToPadding(false);
         this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
         this.d.j(new ah.d0(this, 12));
-        this.c.addView(this.d, 0, z5.d(-1.0f, -1));
+        this.c.addView(this.d, 0, z5.c(-1.0f, -1));
         d6Var2 = ((f3) k0Var).resourcesProvider;
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, d6Var2);
         this.a = kVar;
@@ -55,7 +55,7 @@ public final class j0 extends h0 {
         this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
         this.a.setActionBarMenuOnItemClick(new ah.s(this, 10));
         this.c.addView(this.a, z5.e(-1, 56, 48));
-        LinearLayout e = kk.e(context, 0);
+        LinearLayout e = lk.e(context, 0);
         e.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(12.0f));
         d6Var3 = ((f3) k0Var).resourcesProvider;
         ei.d dVar = new ei.d(context, d6Var3, true);

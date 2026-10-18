@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class za1 implements Runnable {
     public final /* synthetic */ int a;
@@ -156,7 +156,7 @@ public final /* synthetic */ class za1 implements Runnable {
                     r40Var.setAlpha(0.0f);
                     r40Var.setVisibility(4);
                     r40Var.setShowingDuration(4000L);
-                    mc1Var.k0.addView(r40Var, w7.z5.a(-2.0f, 4.0f, 0.0f, 4.0f, 0.0f, -2, 51));
+                    mc1Var.k0.addView(r40Var, w7.z5.d(-2, -2.0f, 51, 4.0f, 0.0f, 4.0f, 0.0f));
                     if (mc1Var.p1.a()) {
                         r40Var.setText(LocaleController.getString(R.string.PreviewWallpaperDay));
                     } else {

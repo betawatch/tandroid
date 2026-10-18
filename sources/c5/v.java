@@ -29,7 +29,7 @@ import w7.sa;
 import w7.ua;
 import y8.k0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -67,9 +67,9 @@ public final /* synthetic */ class v implements Runnable {
         n2.e eVar = (n2.e) this.c;
         j7 j7Var = j7.b;
         String str2 = (String) this.d;
-        t0.h hVar = (t0.h) eVar.b;
-        hVar.c = j7Var;
-        l9 l9Var = (l9) hVar.b;
+        u2.c cVar = (u2.c) eVar.b;
+        cVar.c = j7Var;
+        l9 l9Var = (l9) cVar.b;
         if (l9Var != null) {
             str = l9Var.d;
             int i10 = r2.a;

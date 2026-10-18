@@ -8,7 +8,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class d00 extends org.telegram.ui.Cells.l4 {
     public final TextView r;
@@ -32,10 +32,10 @@ public final class d00 extends org.telegram.ui.Cells.l4 {
         this.r = textView;
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(p00Var.getThemedColor(org.telegram.ui.ActionBar.h6.z6));
-        org.telegram.messenger.kk.m(p00Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
+        org.telegram.messenger.lk.m(p00Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
         int i11 = (LocaleController.isRTL ? 3 : 5) | 48;
         float f7 = this.b;
-        addView(textView, w7.z5.a(-1.0f, f7, 16.66f, f7, this.c, -1, i11));
+        addView(textView, w7.z5.d(-1, -1.0f, i11, f7, 16.66f, f7, this.c));
         textView.setAlpha(0.0f);
         ai.zc zcVar = new ai.zc(this, getContext());
         this.s = zcVar;
@@ -46,7 +46,7 @@ public final class d00 extends org.telegram.ui.Cells.l4 {
         zcVar.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
         int i12 = LocaleController.isRTL ? 3 : 5;
         float f10 = this.b;
-        addView(zcVar, w7.z5.a(-1.0f, f10, 16.66f, f10, this.c, -1, i12 | 48));
+        addView(zcVar, w7.z5.d(-1, -1.0f, i12 | 48, f10, 16.66f, f10, this.c));
     }
 
     public final void d(int i10, boolean z10) {

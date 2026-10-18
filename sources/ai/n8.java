@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.la0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n8 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -69,7 +69,7 @@ public final /* synthetic */ class n8 implements Runnable {
                             break;
                         } else {
                             boolean[] zArr = {false};
-                            cd cdVar = new cd(context, d6Var, j10, 6, str, new z3(gaVar, zArr, tL_payments_paymentFormStarGift, starGift, j11, callback2), 0L);
+                            cd cdVar = new cd(context, d6Var, j10, 6, str, new a4(gaVar, zArr, tL_payments_paymentFormStarGift, starGift, j11, callback2), 0L);
                             cdVar.setOnDismissListener(new p8(callback2, zArr, 2));
                             cdVar.show();
                             break;
@@ -124,7 +124,7 @@ public final /* synthetic */ class n8 implements Runnable {
                             break;
                         } else {
                             boolean[] zArr2 = {false};
-                            cd cdVar2 = new cd(context2, d6Var2, j12, 6, str2, new z3(gaVar2, zArr2, j13, tLObject3, tL_textWithEntities, callback22), 0L);
+                            cd cdVar2 = new cd(context2, d6Var2, j12, 6, str2, new a4(gaVar2, zArr2, j13, tLObject3, tL_textWithEntities, callback22), 0L);
                             cdVar2.setOnDismissListener(new p8(callback22, zArr2, 1));
                             cdVar2.show();
                             break;

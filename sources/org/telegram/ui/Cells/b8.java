@@ -13,13 +13,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.k91;
 import org.telegram.ui.o91;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class b8 extends FrameLayout {
     public final z7 a;
@@ -30,7 +30,7 @@ public abstract class b8 extends FrameLayout {
     public final TextView f;
     public final Paint h;
     public final org.telegram.ui.Components.h9 n;
-    public final ci.y7 r;
+    public final ci.x7 r;
     public final org.telegram.ui.ActionBar.d6 s;
     public o91 v;
     public final TLRPC.ChatFull w;
@@ -40,17 +40,17 @@ public abstract class b8 extends FrameLayout {
         super(context);
         this.h = new Paint(1);
         this.n = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
-        this.r = new ci.y7(null, false);
+        this.r = new ci.x7(null, false);
         this.w = chatFull;
         this.s = d6Var;
         z7 z7Var = new z7(this, context, d6Var);
         this.a = z7Var;
         setClipChildren(false);
         boolean z10 = LocaleController.isRTL;
-        addView(z7Var, w7.z5.a(46.0f, !z10 ? 12.0f : 16.0f, 0.0f, !z10 ? 16.0f : 12.0f, 0.0f, 46, (!z10 ? 8388611 : 8388613) | 16));
+        addView(z7Var, w7.z5.d(46, 46.0f, (!z10 ? 8388611 : 8388613) | 16, !z10 ? 12.0f : 16.0f, 0.0f, !z10 ? 16.0f : 12.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        LinearLayout e = kk.e(context, 0);
+        LinearLayout e = lk.e(context, 0);
         a8 a8Var = new a8(context);
         this.b = a8Var;
         NotificationCenter.listenEmojiLoading(a8Var);
@@ -70,7 +70,7 @@ public abstract class b8 extends FrameLayout {
             e.addView(a8Var, w7.z5.p(0, -2, 1.0f, 0, 0, 0, 16, 0));
             e.addView(textView, w7.z5.q(-2, -2, 80));
         }
-        linearLayout.addView(e, w7.z5.a(-2.0f, 0.0f, 7.0f, 0.0f, 0.0f, -1, 8388659));
+        linearLayout.addView(e, w7.z5.d(-1, -2.0f, 8388659, 0.0f, 7.0f, 0.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.e = textView2;
         textView2.setTextSize(1, 13.0f);
@@ -87,7 +87,7 @@ public abstract class b8 extends FrameLayout {
         textView4.setTextSize(1, 13.0f);
         textView4.setTextColor(-16777216);
         textView4.setGravity(16);
-        LinearLayout e7 = kk.e(context, 0);
+        LinearLayout e7 = lk.e(context, 0);
         if (LocaleController.isRTL) {
             e7.addView(textView3, w7.z5.t(-2, -2, 16, 0, 0, 10, 0));
             e7.addView(textView4, w7.z5.q(-2, -2, 16));
@@ -97,9 +97,9 @@ public abstract class b8 extends FrameLayout {
             e7.addView(textView4, w7.z5.q(-2, -2, 16));
             e7.addView(textView3, w7.z5.t(-2, -2, 16, 10, 0, 0, 0));
         }
-        linearLayout.addView(e7, w7.z5.a(-2.0f, 0.0f, 3.0f, 0.0f, 9.0f, -1, 8388659));
+        linearLayout.addView(e7, w7.z5.d(-1, -2.0f, 8388659, 0.0f, 3.0f, 0.0f, 9.0f));
         boolean z11 = LocaleController.isRTL;
-        addView(linearLayout, w7.z5.a(-2.0f, !z11 ? 72.0f : 18.0f, 0.0f, !z11 ? 18.0f : 72.0f, 0.0f, -1, 0));
+        addView(linearLayout, w7.z5.d(-1, -2.0f, 0, !z11 ? 72.0f : 18.0f, 0.0f, !z11 ? 18.0f : 72.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.h6.j5;
         a8Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
@@ -151,7 +151,7 @@ public abstract class b8 extends FrameLayout {
         return this.v;
     }
 
-    public ci.y7 getStoryAvatarParams() {
+    public ci.x7 getStoryAvatarParams() {
         return this.r;
     }
 

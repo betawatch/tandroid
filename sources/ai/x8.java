@@ -35,7 +35,7 @@ import org.telegram.ui.lz0;
 import org.telegram.ui.sn;
 import org.telegram.ui.z70;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x8 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -72,11 +72,11 @@ public final /* synthetic */ class x8 implements Utilities.Callback {
                     break;
                 }
             case 1:
-                ci.q4 q4Var = (ci.q4) this.c;
+                ci.p4 p4Var = (ci.p4) this.c;
                 boolean z11 = this.b;
-                ci.r3 r3Var = q4Var.c1;
-                org.telegram.ui.ActionBar.d6 d6Var = q4Var.B0;
-                new org.telegram.ui.Components.xc(r3Var, d6Var).o(z11 ? org.telegram.ui.Components.wc.h : org.telegram.ui.Components.wc.e, d6Var).j();
+                ci.q3 q3Var = p4Var.c1;
+                org.telegram.ui.ActionBar.d6 d6Var = p4Var.B0;
+                new org.telegram.ui.Components.xc(q3Var, d6Var).o(z11 ? org.telegram.ui.Components.wc.h : org.telegram.ui.Components.wc.e, d6Var).j();
                 break;
             case 2:
                 Utilities.Callback callback = (Utilities.Callback) this.c;
@@ -267,12 +267,12 @@ public final /* synthetic */ class x8 implements Utilities.Callback {
                 }
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new z70((org.telegram.ui.web.k) this.c, (String) obj, this.b, 15));
+                AndroidUtilities.runOnUIThread(new z70((org.telegram.ui.web.l) this.c, (String) obj, this.b, 15));
                 break;
             default:
-                org.telegram.ui.web.x1 x1Var = (org.telegram.ui.web.x1) this.c;
-                x1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
-                x1Var.a.W2.N(true);
+                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.c;
+                y1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
+                y1Var.a.W2.N(true);
                 break;
         }
     }

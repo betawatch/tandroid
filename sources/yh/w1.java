@@ -1,171 +1,59 @@
 package yh;
 
-import ai.v9;
-import ai.y9;
-import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.a6;
+import org.telegram.ui.Components.dr0;
 import org.telegram.ui.Components.is0;
-import org.telegram.ui.Components.u81;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class w1 extends u81 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d6 b;
-    public final /* synthetic */ is0 c;
+public final class w1 extends dr0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b1;
+    public final /* synthetic */ is0 c1;
 
-    public w1(is0 is0Var, int i10, d6 d6Var) {
-        this.c = is0Var;
-        this.a = i10;
-        this.b = d6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w1(is0 is0Var, Context context, String str, String str2, d6 d6Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(context, null, str, false, str2, false, d6Var);
+        this.c1 = is0Var;
+        this.b1 = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.u81
-    public final void a(ArrayList arrayList) {
-        is0 is0Var = this.c;
-        r1 r1Var = is0Var.N;
-        v9 v9Var = is0Var.e;
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            Integer num = (Integer) obj;
-            int intValue = num.intValue();
-            if (intValue != -1 && intValue != -2) {
-                arrayList2.add(num);
+    @Override // org.telegram.ui.Components.dr0
+    public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        xc a02;
+        if (z10 && (a02 = xc.a0(this.b1)) != null) {
+            if (hVar.m() == 1) {
+                long j10 = hVar.j(0);
+                if (j10 == UserConfig.getInstance(this.currentAccount).clientUserId) {
+                    qc G = a02.G(R.raw.saved_messages, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedToSavedMessages, new Object[0])));
+                    G.r = false;
+                    G.j();
+                } else if (j10 < 0) {
+                    qc G2 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, tL_forumTopic != null ? tL_forumTopic.title : MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10)).title)));
+                    G2.r = false;
+                    G2.j();
+                } else {
+                    qc G3 = a02.G(R.raw.forward, 5000, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCollectionSharedTo, MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(j10)).first_name)));
+                    G3.r = false;
+                    G3.j();
+                }
+            } else {
+                qc Q = a02.Q(R.raw.forward, 36, AndroidUtilities.replaceTags(LocaleController.formatPluralString("GiftCollectionSharedToManyChats", hVar.m(), Integer.valueOf(hVar.m()))));
+                Q.r = false;
+                Q.j();
+            }
+            try {
+                this.c1.performHapticFeedback(3);
+            } catch (Exception unused) {
             }
         }
-        v9Var.getClass();
-        HashMap hashMap = new HashMap();
-        ArrayList arrayList3 = v9Var.e;
-        int size2 = arrayList3.size();
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj2 = arrayList3.get(i11);
-            i11++;
-            TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj2;
-            hashMap.put(Integer.valueOf(tL_starGiftCollection.collection_id), tL_starGiftCollection);
-        }
-        ArrayList arrayList4 = new ArrayList();
-        int size3 = arrayList2.size();
-        int i12 = 0;
-        while (i12 < size3) {
-            Object obj3 = arrayList2.get(i12);
-            i12++;
-            Integer num2 = (Integer) obj3;
-            num2.getClass();
-            TL_stars.TL_starGiftCollection tL_starGiftCollection2 = (TL_stars.TL_starGiftCollection) hashMap.get(num2);
-            if (tL_starGiftCollection2 != null) {
-                arrayList4.add(tL_starGiftCollection2);
-            }
-        }
-        arrayList3.clear();
-        arrayList3.addAll(arrayList4);
-        v9Var.j();
-        m2 currentPage = is0Var.getCurrentPage();
-        if (currentPage != null) {
-            int f7 = currentPage.d ? v9Var.f(currentPage.e.d) + 1 : 0;
-            is0Var.n.e(0.0f, f7, f7);
-        }
-        AndroidUtilities.cancelRunOnUIThread(r1Var);
-        AndroidUtilities.runOnUIThread(r1Var, 1000L);
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final void b(View view, int i10, int i11) {
-        y9 y9Var;
-        boolean z10;
-        is0 is0Var = this.c;
-        v9 v9Var = is0Var.e;
-        m2 m2Var = (m2) view;
-        if (i11 == 0) {
-            y9Var = is0Var.d;
-            z10 = false;
-        } else {
-            int i12 = i10 - 1;
-            if (i12 < 0) {
-                v9Var.getClass();
-            } else if (i12 < v9Var.d().size()) {
-                y9Var = v9Var.e(((TL_stars.TL_starGiftCollection) v9Var.d().get(i12)).collection_id);
-                z10 = true;
-            }
-            y9Var = null;
-            z10 = true;
-        }
-        m2Var.d = z10;
-        m2Var.e = y9Var;
-        if (y9Var != null) {
-            y9Var.a();
-        }
-        m2Var.f(false);
-        LinearLayout linearLayout = m2Var.E;
-        if (linearLayout != null) {
-            linearLayout.setVisibility(m2Var.a.e.h() ? 0 : 8);
-        }
-        m2Var.setVisibleHeight(is0Var.Q);
-        m2Var.setHasTabs(!v9Var.d().isEmpty());
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final boolean c(int i10) {
-        return i10 != 0;
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final View d(int i10) {
-        if (i10 == -1) {
-            return null;
-        }
-        return new m2(this.c, this.a, this.b);
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final int e() {
-        return this.c.e.d().size() + 1;
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final int f(int i10) {
-        if (i10 == 0) {
-            return -2;
-        }
-        return ((TL_stars.TL_starGiftCollection) this.c.e.d().get(i10 - 1)).collection_id;
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final CharSequence g(int i10) {
-        if (i10 == 0) {
-            return LocaleController.getString(R.string.Gift2CollectionAll);
-        }
-        TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c.e.d().get(i10 - 1);
-        if (tL_starGiftCollection == null) {
-            return null;
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_starGiftCollection.title);
-        if (tL_starGiftCollection.icon != null) {
-            TextPaint textPaint = new TextPaint(1);
-            textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("e ");
-            spannableStringBuilder2.setSpan(new a6(tL_starGiftCollection.icon, textPaint.getFontMetricsInt()), 0, 1, 33);
-            spannableStringBuilder.insert(0, (CharSequence) spannableStringBuilder2);
-        }
-        return spannableStringBuilder;
-    }
-
-    @Override // org.telegram.ui.Components.u81
-    public final int h(int i10) {
-        return i10 == 0 ? 0 : 1;
     }
 }

@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a5 extends FrameLayout {
     public boolean E;
@@ -35,7 +35,7 @@ public final class a5 extends FrameLayout {
     public int K;
     public z4 L;
     public final int M;
-    public final ci.y7 N;
+    public final ci.x7 N;
     public final y4 a;
     public final org.telegram.ui.ActionBar.j5 b;
     public final org.telegram.ui.ActionBar.j5 c;
@@ -55,7 +55,7 @@ public final class a5 extends FrameLayout {
         super(context);
         this.K = -1;
         this.M = UserConfig.selectedAccount;
-        this.N = new ci.y7(null, false);
+        this.N = new ci.x7(null, false);
         this.d = d6Var;
         this.H = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, d6Var);
         this.I = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.n6, d6Var);
@@ -65,7 +65,7 @@ public final class a5 extends FrameLayout {
         this.a = y4Var;
         y4Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         boolean z11 = LocaleController.isRTL;
-        addView(y4Var, w7.z5.a(46.0f, z11 ? 0.0f : i10 + 7, 8.0f, z11 ? i10 + 7 : 0.0f, 0.0f, 46, (z11 ? 5 : 3) | 48));
+        addView(y4Var, w7.z5.d(46, 46.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : i10 + 7, 8.0f, z11 ? i10 + 7 : 0.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.b = j5Var;
         j5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
@@ -73,14 +73,14 @@ public final class a5 extends FrameLayout {
         j5Var.setTypeface(AndroidUtilities.bold());
         j5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(j5Var, w7.z5.a(20.0f, z12 ? 46.0f : i11 + 68, 11.5f, z12 ? i11 + 68 : 46.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
+        addView(j5Var, w7.z5.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 46.0f : i11 + 68, 11.5f, z12 ? i11 + 68 : 46.0f, 0.0f));
         NotificationCenter.listenEmojiLoading(j5Var);
         org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var2;
         j5Var2.setTextSize(14);
         j5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z13 = LocaleController.isRTL;
-        addView(j5Var2, w7.z5.a(20.0f, z13 ? 28.0f : i11 + 68, 34.5f, z13 ? i11 + 68 : 28.0f, 0.0f, -1, (z13 ? 5 : 3) | 48));
+        addView(j5Var2, w7.z5.d(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 28.0f : i11 + 68, 34.5f, z13 ? i11 + 68 : 28.0f, 0.0f));
         if (z10) {
             ImageView imageView = new ImageView(context);
             this.f = imageView;
@@ -122,7 +122,7 @@ public final class a5 extends FrameLayout {
             boolean d = this.L.d(this, false);
             imageView.setVisibility(d ? 0 : 4);
             boolean z11 = LocaleController.isRTL;
-            j5Var2.setLayoutParams(w7.z5.a(20.0f, z11 ? d ? 46 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : d ? 46 : 28, 0.0f, -1, (z11 ? 5 : 3) | 48));
+            j5Var2.setLayoutParams(w7.z5.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? d ? 46 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : d ? 46 : 28, 0.0f));
             boolean z12 = LocaleController.isRTL;
             int i11 = (z12 ? 5 : 3) | 48;
             float f11 = z12 ? d ? 46 : 28 : i10 + 68;
@@ -131,13 +131,13 @@ public final class a5 extends FrameLayout {
             } else {
                 f10 = d ? 46 : 28;
             }
-            j5Var.setLayoutParams(w7.z5.a(20.0f, f11, 34.5f, f10, 0.0f, -1, i11));
+            j5Var.setLayoutParams(w7.z5.d(-1, 20.0f, i11, f11, 34.5f, f10, 0.0f));
         } else {
             ImageView imageView2 = this.h;
             if (imageView2 != null) {
                 boolean z13 = imageView2.getVisibility() == 0;
                 boolean z14 = LocaleController.isRTL;
-                j5Var2.setLayoutParams(w7.z5.a(20.0f, z14 ? z13 ? 54 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : z13 ? 54 : 28, 0.0f, -1, (z14 ? 5 : 3) | 48));
+                j5Var2.setLayoutParams(w7.z5.d(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? z13 ? 54 : 28 : i10 + 68, (charSequence2 == null || charSequence2.length() > 0) ? 11.5f : 20.5f, LocaleController.isRTL ? i10 + 68 : z13 ? 54 : 28, 0.0f));
                 boolean z15 = LocaleController.isRTL;
                 int i12 = (z15 ? 5 : 3) | 48;
                 float f12 = z15 ? z13 ? 54 : 28 : i10 + 68;
@@ -146,7 +146,7 @@ public final class a5 extends FrameLayout {
                 } else {
                     f7 = z13 ? 54 : 28;
                 }
-                j5Var.setLayoutParams(w7.z5.a(20.0f, f12, 34.5f, f7, 0.0f, -1, i12));
+                j5Var.setLayoutParams(w7.z5.d(-1, 20.0f, i12, f12, 34.5f, f7, 0.0f));
             }
         }
         this.F = z10;
@@ -324,7 +324,7 @@ public final class a5 extends FrameLayout {
         return this.n;
     }
 
-    public ci.y7 getStoryAvatarParams() {
+    public ci.x7 getStoryAvatarParams() {
         return this.N;
     }
 

@@ -27,7 +27,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class if0 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int O = 0;
@@ -58,8 +58,8 @@ public final class if0 extends org.telegram.ui.ActionBar.f3 {
     /* JADX WARN: Removed duplicated region for block: B:36:0x010d  */
     /* JADX WARN: Removed duplicated region for block: B:46:0x01e6  */
     /* JADX WARN: Removed duplicated region for block: B:62:0x025b  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x02fb  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0305  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x02f9  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0303  */
     /* JADX WARN: Removed duplicated region for block: B:70:0x0265  */
     /* JADX WARN: Removed duplicated region for block: B:73:0x015a  */
     /* JADX WARN: Removed duplicated region for block: B:76:0x0172  */
@@ -204,7 +204,7 @@ public final class if0 extends org.telegram.ui.ActionBar.f3 {
                     this.c = af0Var;
                     af0Var.setClipToPadding(false);
                     af0Var.setVerticalScrollBarEnabled(false);
-                    ze0Var.addView(af0Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 77.0f, -1, 51));
+                    ze0Var.addView(af0Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 77.0f));
                     LinearLayout linearLayout = new LinearLayout(parentActivity);
                     this.d = linearLayout;
                     linearLayout.setOrientation(1);
@@ -240,19 +240,19 @@ public final class if0 extends org.telegram.ui.ActionBar.f3 {
                     } else {
                         bf0Var.setTitle(LocaleController.getString(R.string.AddContactPhonebookTitle));
                     }
-                    this.containerView.addView(bf0Var, w7.z5.d(-2.0f, -1));
+                    this.containerView.addView(bf0Var, w7.z5.c(-2.0f, -1));
                     bf0Var.setActionBarMenuOnItemClick(new cf0(this));
                     View view = new View(parentActivity);
                     this.f = view;
                     view.setAlpha(0.0f);
                     int i17 = org.telegram.ui.ActionBar.h6.V5;
                     view.setBackgroundColor(getThemedColor(i17));
-                    this.containerView.addView(view, w7.z5.d(1.0f, -1));
+                    this.containerView.addView(view, w7.z5.c(1.0f, -1));
                     View view2 = new View(parentActivity);
                     this.h = view2;
                     view2.setBackgroundColor(getThemedColor(i17));
                     view2.setAlpha(0.0f);
-                    this.containerView.addView(view2, w7.z5.a(1.0f, 0.0f, 0.0f, 0.0f, 77.0f, -1, 83));
+                    this.containerView.addView(view2, w7.z5.d(-1, 1.0f, 83, 0.0f, 0.0f, 0.0f, 77.0f));
                     TextView textView = new TextView(parentActivity);
                     this.n = textView;
                     textView.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
@@ -269,7 +269,7 @@ public final class if0 extends org.telegram.ui.ActionBar.f3 {
                     int themedColor = getThemedColor(org.telegram.ui.ActionBar.h6.Oh);
                     int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.h6.Qh);
                     textView.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, themedColor, themedColor2, themedColor2));
-                    ze0Var.addView(textView, w7.z5.a(48.0f, 14.0f, 14.0f, 14.0f, 14.0f, -1, 83));
+                    ze0Var.addView(textView, w7.z5.d(-1, 48.0f, 83, 14.0f, 14.0f, 14.0f, 14.0f));
                     textView.setOnClickListener(new ca(20, this, d6Var));
                 }
             }
@@ -301,7 +301,7 @@ public final class if0 extends org.telegram.ui.ActionBar.f3 {
         this.c = af0Var2;
         af0Var2.setClipToPadding(false);
         af0Var2.setVerticalScrollBarEnabled(false);
-        ze0Var2.addView(af0Var2, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 77.0f, -1, 51));
+        ze0Var2.addView(af0Var2, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 77.0f));
         LinearLayout linearLayout2 = new LinearLayout(parentActivity2);
         this.d = linearLayout2;
         linearLayout2.setOrientation(1);
@@ -322,19 +322,19 @@ public final class if0 extends org.telegram.ui.ActionBar.f3 {
         bf0Var2.setAlpha(0.0f);
         if (this.J) {
         }
-        this.containerView.addView(bf0Var2, w7.z5.d(-2.0f, -1));
+        this.containerView.addView(bf0Var2, w7.z5.c(-2.0f, -1));
         bf0Var2.setActionBarMenuOnItemClick(new cf0(this));
         View view3 = new View(parentActivity2);
         this.f = view3;
         view3.setAlpha(0.0f);
         int i172 = org.telegram.ui.ActionBar.h6.V5;
         view3.setBackgroundColor(getThemedColor(i172));
-        this.containerView.addView(view3, w7.z5.d(1.0f, -1));
+        this.containerView.addView(view3, w7.z5.c(1.0f, -1));
         View view22 = new View(parentActivity2);
         this.h = view22;
         view22.setBackgroundColor(getThemedColor(i172));
         view22.setAlpha(0.0f);
-        this.containerView.addView(view22, w7.z5.a(1.0f, 0.0f, 0.0f, 0.0f, 77.0f, -1, 83));
+        this.containerView.addView(view22, w7.z5.d(-1, 1.0f, 83, 0.0f, 0.0f, 0.0f, 77.0f));
         TextView textView2 = new TextView(parentActivity2);
         this.n = textView2;
         textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
@@ -348,7 +348,7 @@ public final class if0 extends org.telegram.ui.ActionBar.f3 {
         int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.h6.Oh);
         int themedColor22 = getThemedColor(org.telegram.ui.ActionBar.h6.Qh);
         textView2.setBackground(org.telegram.ui.ActionBar.h6.j0(dp2, dp2, dp2, dp2, themedColor3, themedColor22, themedColor22));
-        ze0Var2.addView(textView2, w7.z5.a(48.0f, 14.0f, 14.0f, 14.0f, 14.0f, -1, 83));
+        ze0Var2.addView(textView2, w7.z5.d(-1, 48.0f, 83, 14.0f, 14.0f, 14.0f, 14.0f));
         textView2.setOnClickListener(new ca(20, this, d6Var));
     }
 

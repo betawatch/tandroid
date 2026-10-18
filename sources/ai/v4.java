@@ -5,7 +5,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v4 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -22,15 +22,15 @@ public final /* synthetic */ class v4 implements RequestDelegate {
             case 0:
                 final int i10 = 1;
                 final k7 k7Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.k2
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.i2
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                k7.h1(k7Var, tLObject, tL_error);
+                                k7.e1(k7Var, tLObject, tL_error);
                                 break;
                             default:
-                                k7.z0(k7Var, tLObject, tL_error);
+                                k7.x0(k7Var, tLObject, tL_error);
                                 break;
                         }
                     }
@@ -39,15 +39,15 @@ public final /* synthetic */ class v4 implements RequestDelegate {
             default:
                 final int i11 = 0;
                 final k7 k7Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.k2
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ai.i2
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i11) {
                             case 0:
-                                k7.h1(k7Var2, tLObject, tL_error);
+                                k7.e1(k7Var2, tLObject, tL_error);
                                 break;
                             default:
-                                k7.z0(k7Var2, tLObject, tL_error);
+                                k7.x0(k7Var2, tLObject, tL_error);
                                 break;
                         }
                     }

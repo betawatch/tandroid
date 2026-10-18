@@ -3,9 +3,9 @@ package f5;
 import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import w7.h7;
+import w7.f7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class k extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ le.b E;
@@ -43,13 +43,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = h7.b(e5.b.j(byteBuffer));
-            this.f = h7.b(e5.b.j(byteBuffer));
+            this.e = f7.b(e5.b.j(byteBuffer));
+            this.f = f7.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.j(byteBuffer);
         } else {
-            this.e = h7.b(e5.b.i(byteBuffer));
-            this.f = h7.b(e5.b.i(byteBuffer));
+            this.e = f7.b(e5.b.i(byteBuffer));
+            this.f = f7.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
         }
@@ -66,13 +66,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(h7.a(this.e));
-            byteBuffer.putLong(h7.a(this.f));
+            byteBuffer.putLong(f7.a(this.e));
+            byteBuffer.putLong(f7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) h7.a(this.e));
-            byteBuffer.putInt((int) h7.a(this.f));
+            byteBuffer.putInt((int) f7.a(this.e));
+            byteBuffer.putInt((int) f7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }

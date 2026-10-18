@@ -4,7 +4,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class hd1 extends org.telegram.ui.Components.hm0 {
     public final ArrayList c = new ArrayList();
@@ -39,6 +39,6 @@ public final class hd1 extends org.telegram.ui.Components.hm0 {
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.sl0(new org.telegram.ui.Cells.f4(1, 0, viewGroup.getContext(), false));
+        return new org.telegram.ui.Components.sl0(new org.telegram.ui.Cells.f4(viewGroup.getContext(), 1, 0, false));
     }
 }

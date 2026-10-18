@@ -1,92 +1,81 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
+import android.graphics.drawable.BitmapDrawable;
+import android.view.KeyEvent;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c9 implements Utilities.Callback3 {
+public final /* synthetic */ class c9 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o9 b;
-    public final /* synthetic */ m0 c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ KeyEvent.Callback g;
 
-    public /* synthetic */ c9(o9 o9Var, m0 m0Var, long j10, int i10) {
-        this.a = i10;
-        this.b = o9Var;
-        this.c = m0Var;
-        this.d = j10;
+    public /* synthetic */ c9(KeyEvent.Callback callback, float f7, float f10, float f11, float f12, int i10, int i11) {
+        this.a = i11;
+        this.g = callback;
+        this.b = f7;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
+        this.f = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback3
-    public final void run(Object obj, Object obj2, Object obj3) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                String str = (String) obj;
-                final Utilities.Callback callback = (Utilities.Callback) obj3;
-                final o9 o9Var = this.b;
-                final int i10 = 0;
-                this.c.b0(o9Var.e, o9Var.f, this.d, str, ((Boolean) obj2).booleanValue() ? o9Var.l0() : null, null, o9Var.h, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.f9
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj4) {
-                        String str2 = (String) obj4;
-                        switch (i10) {
-                            case 0:
-                                if (!"PASSCODE_FAILED".equalsIgnoreCase(str2)) {
-                                    callback.run(str2);
-                                    if (str2 == null) {
-                                        o9 o9Var2 = o9Var;
-                                        o9Var2.fragmentView.postDelayed(new x8(o9Var2, 4), 220L);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (!"PASSCODE_FAILED".equalsIgnoreCase(str2)) {
-                                    callback.run(str2);
-                                    if (str2 == null) {
-                                        o9 o9Var3 = o9Var;
-                                        o9Var3.fragmentView.postDelayed(new x8(o9Var3, 4), 220L);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                }, new b9(o9Var, 2), null);
+                h9 h9Var = (h9) this.g;
+                h9Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                bs bsVar = bs.h;
+                float interpolation = bsVar.getInterpolation(floatValue);
+                float interpolation2 = bsVar.getInterpolation(Math.min(1.0f, (floatValue * 320.0f) / 120.0f));
+                m6 m6Var = h9Var.c;
+                float f7 = this.c;
+                float f10 = this.b;
+                m6Var.setAlpha(((f7 - f10) * interpolation2) + f10);
+                TextView textView = h9Var.e;
+                float f11 = this.e;
+                float f12 = this.d;
+                textView.setAlpha(((f11 - f12) * interpolation2) + f12);
+                FrameLayout frameLayout = h9Var.d;
+                frameLayout.getLayoutParams().width = Math.round(((h9Var.x - r3) * interpolation) + this.f);
+                frameLayout.requestLayout();
                 break;
             default:
-                String str2 = (String) obj;
-                final Utilities.Callback callback2 = (Utilities.Callback) obj3;
-                final o9 o9Var2 = this.b;
-                final int i11 = 1;
-                this.c.b0(o9Var2.e, o9Var2.f, this.d, str2, ((Boolean) obj2).booleanValue() ? o9Var2.l0() : null, null, o9Var2.h, new Utilities.Callback() { // from class: org.telegram.ui.Wallet.f9
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj4) {
-                        String str22 = (String) obj4;
-                        switch (i11) {
-                            case 0:
-                                if (!"PASSCODE_FAILED".equalsIgnoreCase(str22)) {
-                                    callback2.run(str22);
-                                    if (str22 == null) {
-                                        o9 o9Var22 = o9Var2;
-                                        o9Var22.fragmentView.postDelayed(new x8(o9Var22, 4), 220L);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                if (!"PASSCODE_FAILED".equalsIgnoreCase(str22)) {
-                                    callback2.run(str22);
-                                    if (str22 == null) {
-                                        o9 o9Var3 = o9Var2;
-                                        o9Var3.fragmentView.postDelayed(new x8(o9Var3, 4), 220L);
-                                        break;
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                }, new b9(o9Var2, 3), null);
+                xh.j jVar = (xh.j) this.g;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                jVar.x = floatValue2;
+                float f13 = this.b;
+                float y3 = com.google.android.gms.internal.play_billing.k3.y(1.0f, f13, floatValue2, f13);
+                xh.i iVar = jVar.y;
+                iVar.setScaleX(y3);
+                iVar.setScaleY(y3);
+                iVar.setTranslationX((1.0f - jVar.x) * this.c);
+                iVar.setTranslationY((1.0f - jVar.x) * this.d);
+                int i10 = (int) ((1.0f - jVar.x) * this.e);
+                jVar.h.N(i10, i10);
+                float a2 = w7.r.a((jVar.x * 2.0f) - 1.0f, 0.0f, 1.0f);
+                jVar.c.setAlpha((int) (a2 * 255.0f));
+                jVar.d.setAlpha(a2);
+                jVar.e.setAlpha(a2);
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = jVar.f;
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setTranslationY((1.0f - jVar.x) * this.f);
+                actionBarPopupWindow$ActionBarPopupWindowLayout.setAlpha(a2);
+                BitmapDrawable bitmapDrawable = jVar.w;
+                if (bitmapDrawable != null) {
+                    bitmapDrawable.setAlpha((int) (jVar.x * 255.0f));
+                }
+                jVar.n.setAlpha(a2);
                 break;
         }
     }

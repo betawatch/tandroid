@@ -23,7 +23,7 @@ import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.y9;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class o5 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
     public c3 E;
@@ -60,7 +60,7 @@ public final class o5 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
         h1Var.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), 0);
         h1Var.setHint(LocaleController.getString(R.string.ArticleTableTitleHint));
         h1Var.setCenterEmptyHint(true);
-        h1Var.setListener(new ya.c(this, 29));
+        h1Var.setListener(new ya.d(this, 29));
         h1Var.setDelegate(new j5.b(this, 9));
         addView(h1Var);
         a4 a4Var = new a4(this, context, 1);
@@ -68,7 +68,7 @@ public final class o5 extends a0 implements org.telegram.ui.ActionBar.y5, m9 {
         a4Var.setClipChildren(false);
         a4Var.setClipToPadding(false);
         a4Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
-        addView(a4Var, w7.z5.a(-2.0f, 0.0f, 6.0f, 0.0f, 0.0f, -1, 51));
+        addView(a4Var, w7.z5.d(-1, -2.0f, 51, 0.0f, 6.0f, 0.0f, 0.0f));
         q5 q5Var = new q5(context, d6Var);
         this.v = q5Var;
         n5 n5Var = new n5(this, context);

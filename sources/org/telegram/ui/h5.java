@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class h5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int F = 0;
@@ -55,14 +55,14 @@ public abstract class h5 extends FrameLayout implements NotificationCenter.Notif
         View view = new View(context);
         this.v = view;
         view.setOnClickListener(new a(this, 4));
-        addView(view, w7.z5.d(-1.0f, -1));
+        addView(view, w7.z5.c(-1.0f, -1));
         m0 m0Var = new m0(this, context, 2);
         this.b = m0Var;
-        addView(m0Var, w7.z5.d(-1.0f, -1));
+        addView(m0Var, w7.z5.c(-1.0f, -1));
         z4 z4Var = new z4(context, d6Var);
         this.c = z4Var;
         float dp = AndroidUtilities.dp(12.0f);
-        ci.o1 o1Var = zf.j0.a;
+        ci.n1 n1Var = zf.j0.a;
         z4Var.setOutlineProvider(new zf.i0(0, dp));
         z4Var.setElevation(AndroidUtilities.dp(4.0f));
         z4Var.setClipToOutline(true);

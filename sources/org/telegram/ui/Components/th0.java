@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class th0 extends FrameLayout {
     public final w9 E;
@@ -74,7 +74,7 @@ public final class th0 extends FrameLayout {
         ai.r rVar = new ai.r(context, 5);
         this.y = rVar;
         rVar.setOrientation(1);
-        frameLayout.addView(rVar, w7.z5.a(-2.0f, 32.0f, 0.0f, 32.0f, 0.0f, -2, 17));
+        frameLayout.addView(rVar, w7.z5.d(-2, -2.0f, 17, 32.0f, 0.0f, 32.0f, 0.0f));
         w9 w9Var = new w9(context);
         this.E = w9Var;
         w9Var.setVisibility(8);
@@ -97,7 +97,7 @@ public final class th0 extends FrameLayout {
         textView2.setMaxLines(4);
         textView2.setEllipsize(truncateAt);
         rVar.addView(textView2, w7.z5.t(-2, -2, 1, 0, 9, 0, 0));
-        ei.d f7 = org.telegram.messenger.kk.f(24, context, null, true);
+        ei.d f7 = org.telegram.messenger.lk.f(24, context, null, true);
         this.H = f7;
         rVar.addView(f7, w7.z5.t(-1, 44, 7, 0, 19, 0, 0));
         TextView textView3 = new TextView(context);

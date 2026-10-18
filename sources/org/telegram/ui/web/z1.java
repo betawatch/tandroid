@@ -1,222 +1,132 @@
 package org.telegram.ui.web;
 
-import android.graphics.RectF;
-import android.view.Choreographer;
+import android.R;
+import android.app.Activity;
+import android.content.Context;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.internal.cast.z5;
-import ei.r5;
+import android.view.ViewGroup;
+import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import java.io.InputStream;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Cells.b6;
-import org.telegram.ui.Components.l60;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.xj0;
-import org.telegram.ui.Wallet.r6;
-import org.telegram.ui.Wallet.s6;
-import org.telegram.ui.r91;
-import rg.v2;
+import org.telegram.messenger.Timer;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z1 implements Runnable {
+public final /* synthetic */ class z1 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ Timer.Task b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ Timer d;
+    public final /* synthetic */ j2 e;
+    public final /* synthetic */ Utilities.Callback f;
 
-    public /* synthetic */ z1(Object obj, int i10) {
+    public /* synthetic */ z1(Timer.Task task, boolean[] zArr, Timer timer, j2 j2Var, Utilities.Callback callback, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = task;
+        this.c = zArr;
+        this.d = timer;
+        this.e = j2Var;
+        this.f = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        long cameraFlipElapsedMs;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                ((boolean[]) this.b)[0] = true;
-                return;
-            case 1:
-                ((p4.e) this.b).k();
-                return;
-            case 2:
-                ((p4.g) this.b).n = -1;
-                return;
-            case 3:
-                ((ll0) this.b).b();
-                return;
-            case 4:
-                le.b bVar = ((qg.r0) this.b).b.a;
-                if (bVar != null) {
-                    bVar.a0();
-                    return;
-                }
-                return;
-            case 5:
-                qg.s0 s0Var = ((qg.r0) this.b).b;
-                if (s0Var.d == null) {
-                    s0Var.L = null;
-                    return;
-                }
-                int currentColor = s0Var.f.getCurrentColor();
-                s0Var.l(s0Var.b, false, false);
-                a5.a d = s0Var.d(s0Var.b, currentColor, new RectF(s0Var.h));
-                s0Var.b();
-                qg.h1 h1Var = s0Var.d;
-                RectF rectF = new RectF();
-                s0Var.h = rectF;
-                h1Var.a(rectF);
-                s0Var.p(s0Var.e(h1Var, currentColor, new RectF(s0Var.h)), false);
-                s0Var.p(d, false);
-                s0Var.e(h1Var, currentColor, null);
-                s0Var.d = null;
-                s0Var.J = 0.0f;
-                s0Var.L = null;
-                return;
-            case 6:
-                ((qg.c1) ((p4.s0) this.b).b).y.a.a();
-                return;
-            case 7:
-                qg.u1 u1Var = ((qg.v1) this.b).a;
-                if (u1Var != null) {
-                    u1Var.e();
-                    return;
-                }
-                return;
-            case 8:
-                qh.c cVar = (qh.c) this.b;
-                qh.b bVar2 = cVar.c;
-                if (bVar2 == qh.b.b) {
-                    cVar.a(qh.b.a, true);
-                    return;
-                } else {
-                    if (bVar2 == qh.b.c) {
-                        cVar.a(qh.b.d, true);
-                        return;
-                    }
-                    return;
-                }
-            case 9:
-                qi.c cVar2 = (qi.c) this.b;
-                AndroidUtilities.runOnUIThread(new qi.b(cVar2.a, cVar2.b, 1), 500L);
-                return;
-            case 10:
-                r2.f fVar = (r2.f) this.b;
-                synchronized (fVar.a) {
-                    try {
-                        if (fVar.m) {
-                            return;
+                Timer.Task task = this.b;
+                boolean[] zArr = this.c;
+                Timer timer = this.d;
+                j2 j2Var = this.e;
+                Utilities.Callback callback = this.f;
+                InputStream inputStream = (InputStream) obj;
+                Timer.done(task);
+                if (!zArr[0]) {
+                    Timer.Task start = Timer.start(timer, "readHTML");
+                    String str = j2Var.a;
+                    final z1 z1Var = new z1(start, zArr, timer, j2Var, callback, 1);
+                    if (inputStream != null) {
+                        Context context = LaunchActivity.H1;
+                        if (context == null) {
+                            context = ApplicationLoader.applicationContext;
                         }
-                        long j10 = fVar.l - 1;
-                        fVar.l = j10;
-                        if (j10 > 0) {
-                            return;
-                        }
-                        if (j10 < 0) {
-                            fVar.c(new IllegalStateException());
-                            return;
+                        Activity findActivity = AndroidUtilities.findActivity(context);
+                        if (findActivity != null) {
+                            View rootView = findActivity.findViewById(R.id.content).getRootView();
+                            if (!(rootView instanceof ViewGroup)) {
+                                z1Var.run(null);
+                                break;
+                            } else {
+                                final c2 c2Var = new c2(context);
+                                ((ViewGroup) rootView).addView(c2Var);
+                                final WebView webView = new WebView(context);
+                                WebSettings settings = webView.getSettings();
+                                settings.setAllowContentAccess(false);
+                                settings.setDatabaseEnabled(false);
+                                settings.setAllowFileAccess(false);
+                                settings.setJavaScriptEnabled(true);
+                                settings.setSaveFormData(false);
+                                settings.setGeolocationEnabled(false);
+                                settings.setDomStorageEnabled(false);
+                                settings.setAllowFileAccessFromFileURLs(false);
+                                settings.setAllowUniversalAccessFromFileURLs(false);
+                                webView.setWebViewClient(new d2(j2Var, inputStream));
+                                webView.setWebChromeClient(new e2());
+                                c2Var.addView(webView, z5.c(-1.0f, -1));
+                                final boolean[] zArr2 = {false};
+                                webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
+                                    @JavascriptInterface
+                                    public void done(String str2) {
+                                        AndroidUtilities.runOnUIThread(new c0(zArr2, webView, c2Var, str2, z1Var, 6));
+                                    }
+                                }, "Instant");
+                                webView.loadUrl(str);
+                                break;
+                            }
                         } else {
-                            fVar.a();
-                            return;
+                            z1Var.run(null);
+                            break;
                         }
-                    } finally {
+                    } else {
+                        z1Var.run(null);
+                        break;
                     }
                 }
-            case 11:
-                com.google.firebase.messaging.r rVar = (com.google.firebase.messaging.r) this.b;
-                ((s5.g) ((t5.c) rVar.e)).f(new qg.g0(rVar, 5));
-                return;
-            case 12:
-                r5 r5Var = (r5) this.b;
-                r5Var.x0 = true;
-                r5Var.s();
-                return;
-            case 13:
-                ((View) this.b).performClick();
-                return;
-            case 14:
-                MediaDataController.getInstance(UserConfig.selectedAccount).addRecentSticker(2, null, ((rg.k2) this.b).f.document, (int) (System.currentTimeMillis() / 1000), false);
-                return;
-            case 15:
-                AndroidUtilities.showKeyboard(((v2) this.b).q0);
-                return;
-            case 16:
-                AndroidUtilities.showKeyboard(((rh.c) this.b).a);
-                return;
-            case 17:
-                rh.c cVar3 = (rh.c) ((b6) this.b).d;
-                org.telegram.ui.Cells.u1 u1Var2 = cVar3.n;
-                if (u1Var2 == null || u1Var2.getDelegate() == null) {
-                    return;
-                }
-                cVar3.n.getDelegate().x1(cVar3.n, false);
-                return;
-            case 18:
-                ((rh.q) this.b).c.W2.N(true);
-                return;
-            case 19:
-                ((rh.p) this.b).a();
-                return;
-            case 20:
-                RecyclerView recyclerView = (RecyclerView) this.b;
-                if (recyclerView.getAdapter() != null) {
-                    recyclerView.getAdapter().l();
-                    return;
-                }
-                return;
-            case 21:
-                sg.j0 j0Var = ((sg.c0) this.b).c;
-                j0Var.n.presentFragment(r91.d0(j0Var.t1(), true));
-                return;
-            case 22:
-                xj0 xj0Var = ((sg.p0) this.b).y;
-                xj0Var.getAnimatedDrawable().N(0, true, false);
-                xj0Var.d();
-                return;
-            case 23:
-                ((sg.v0) this.b).b.A();
-                return;
-            case 24:
-                sg.p1 p1Var = (sg.p1) this.b;
-                int size = 1073741823 - (1073741823 % p1Var.V2.size());
-                s4.b0 b0Var = p1Var.W2;
-                p1Var.j3 = size;
-                b0Var.h1(size, (p1Var.getMeasuredHeight() - p1Var.getChildAt(0).getMeasuredHeight()) >> 1);
-                p1Var.x1(null, false);
-                return;
-            case 25:
-                ((sg.r1) this.b).invalidate();
-                return;
-            case 26:
-                ((sg.z1) this.b).a();
-                return;
-            case 27:
-                l60 l60Var = (l60) ((l2.f) this.b).b;
-                l60Var.p0 = true;
-                StringBuilder sb2 = new StringBuilder("RoundVideo camera flip first frame: elapsedMs=");
-                cameraFlipElapsedMs = l60Var.getCameraFlipElapsedMs();
-                sb2.append(cameraFlipElapsedMs);
-                FileLog.d(sb2.toString());
-                l60Var.t(true);
-                l60.l(l60Var);
-                return;
-            case 28:
-                ((z5) this.b).A();
-                return;
+                break;
             default:
-                tg.f fVar2 = ((tg.d) this.b).d;
-                fVar2.s = false;
-                fVar2.v = null;
-                Choreographer.getInstance().removeFrameCallback(fVar2);
-                fVar2.F = 0L;
-                r6 r6Var = (r6) fVar2;
-                s6 s6Var = r6Var.L;
-                if (s6Var.d == r6Var) {
-                    s6.c(s6Var);
-                    return;
+                Timer.Task task2 = this.b;
+                boolean[] zArr3 = this.c;
+                Timer timer2 = this.d;
+                j2 j2Var2 = this.e;
+                Utilities.Callback callback2 = this.f;
+                JSONObject jSONObject = (JSONObject) obj;
+                Timer.done(task2);
+                if (!zArr3[0]) {
+                    Timer.Task start2 = Timer.start(timer2, "parseJSON");
+                    try {
+                        j2Var2.c = j2Var2.i(j2Var2.a, jSONObject);
+                    } catch (Exception e) {
+                        Timer.log(timer2, "error: " + e);
+                        FileLog.e(e);
+                    }
+                    Timer.done(start2);
+                    callback2.run(j2Var2);
+                    TLRPC.TL_webPage tL_webPage = j2Var2.c;
+                    if (tL_webPage != null) {
+                        j2.e.put(tL_webPage, j2Var2);
+                    }
+                    Timer.finish(timer2);
+                    break;
                 }
-                return;
+                break;
         }
     }
 }

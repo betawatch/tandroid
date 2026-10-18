@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class at extends s61 {
     public final int N;
@@ -119,7 +119,7 @@ public class at extends s61 {
                 } else {
                     tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(messageObject.messageOwner.peer_id);
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.k0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
                 if (z10) {
                     this.a0 = true;
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
@@ -135,7 +135,7 @@ public class at extends s61 {
         tL_messages_searchGlobal.offset_rate = 0;
         tL_messages_searchGlobal.offset_id = 0;
         tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.k0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
         if (z10) {
         }
     }

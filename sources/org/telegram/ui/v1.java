@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
     public final u1 a;
@@ -200,7 +200,7 @@ public final class v1 extends FrameLayout implements org.telegram.ui.Cells.m9 {
                 int dp2 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(r15 * 14);
                 this.n = dp2;
                 this.e = dp2;
-                i13 = org.telegram.messenger.kk.y(18.0f, dp2, size);
+                i13 = org.telegram.messenger.lk.y(18.0f, dp2, size);
                 i14 = i13;
             } else {
                 this.n = 0;

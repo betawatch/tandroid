@@ -15,10 +15,10 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.vg;
-import org.telegram.ui.oi0;
+import org.telegram.ui.ni0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c5 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -100,14 +100,14 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                             if (!a32.isEmpty()) {
                                 org.telegram.ui.ActionBar.n2 n2Var = tiVar.f0;
                                 sn snVar = n2Var instanceof sn ? (sn) n2Var : null;
-                                oi0 oi0Var = qVar.O;
-                                if (oi0Var != null) {
-                                    oi0Var.h(false);
+                                ni0 ni0Var = qVar.O;
+                                if (ni0Var != null) {
+                                    ni0Var.h(false);
                                     qVar.O = null;
                                 }
-                                oi0 oi0Var2 = new oi0(qVar.getContext(), d6Var);
-                                qVar.O = oi0Var2;
-                                oi0Var2.setOnDismissListener(new ai.bb(qVar, 7));
+                                ni0 ni0Var2 = new ni0(qVar.getContext(), d6Var);
+                                qVar.O = ni0Var2;
+                                ni0Var2.setOnDismissListener(new ai.bb(qVar, 7));
                                 long p12 = tiVar.p1();
                                 MessageObject messageObject = snVar != null ? snVar.n5 : null;
                                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
@@ -142,18 +142,18 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                                 vg r10 = qVar.O.r(sendButton, true, new hg.r0(qVar, 8));
                                 if (r10 != null) {
                                     r10.setBackground(new ki.c2(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var))));
-                                    oi0 oi0Var3 = qVar.O;
+                                    ni0 ni0Var3 = qVar.O;
                                     int dp = AndroidUtilities.dp(44.0f);
                                     z10 = true;
-                                    oi0Var3.m0 = true;
-                                    oi0Var3.Y = dp;
+                                    ni0Var3.m0 = true;
+                                    ni0Var3.Y = dp;
                                 } else {
                                     z10 = true;
                                 }
                                 i80 F2 = i80.F(qVar, d6Var, sendButton);
                                 boolean z12 = (snVar == null || !UserObject.isUserSelf(snVar.i())) ? false : z10;
                                 if (snVar != null && snVar.G6()) {
-                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.r3(qVar, p12, 14), false);
+                                    F2.c(R.drawable.msg_calendar2, LocaleController.getString(z12 ? R.string.SetReminder : R.string.ScheduleMessage), new ai.t3(qVar, p12, 14), false);
                                     if (!z12 && p12 > 0) {
                                         F2.c(R.drawable.msg_online, LocaleController.getString(R.string.SendWhenOnline), new ki.d(qVar, 0), false);
                                     }
@@ -176,7 +176,7 @@ public final /* synthetic */ class c5 implements View.OnLongClickListener {
                     }
                     break;
                 } else {
-                    new sg.x0(tiVar.f0, qVar.getContext(), qVar.n, 43, true).show();
+                    new sg.y0(tiVar.f0, qVar.getContext(), qVar.n, 43, true).show();
                     break;
                 }
                 break;

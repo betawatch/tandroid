@@ -54,7 +54,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m60 extends r60 implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] m1 = {285904780, -1394191079};
@@ -199,7 +199,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
         this.b1 = linearLayout;
         linearLayout.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
         linearLayout.setOrientation(0);
-        addView(linearLayout, w7.z5.a(56.0f, 1.0f, 0.0f, 0.0f, 0.0f, -2, 83));
+        addView(linearLayout, w7.z5.d(-2, 56.0f, 83, 1.0f, 0.0f, 0.0f, 0.0f));
         ei.q2 q2Var = new ei.q2(context);
         this.v = q2Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -248,7 +248,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
                                 m60Var.h.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 m60Var.r0.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 ofFloat.addUpdateListener(new r50(m60Var, zArr, n50Var));
-                                ofFloat.addListener(new ci.p3(m60Var, zArr, n50Var, 6));
+                                ofFloat.addListener(new ci.o3(m60Var, zArr, n50Var, 6));
                                 ofFloat.start();
                                 break;
                             }
@@ -308,7 +308,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
                                 m60Var.h.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 m60Var.r0.setCameraDistance(r2.getMeasuredHeight() * 8.0f);
                                 ofFloat.addUpdateListener(new r50(m60Var, zArr, n50Var));
-                                ofFloat.addListener(new ci.p3(m60Var, zArr, n50Var, 6));
+                                ofFloat.addListener(new ci.o3(m60Var, zArr, n50Var, 6));
                                 ofFloat.start();
                                 break;
                             }
@@ -781,7 +781,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
             TextureView textureView = new TextureView(getContext());
             this.q0 = textureView;
             textureView.setSurfaceTextureListener(new t50(this, 0));
-            this.h.addView(this.q0, w7.z5.d(-1.0f, -1));
+            this.h.addView(this.q0, w7.z5.c(-1.0f, -1));
             this.Y0 = true;
             this.g1 = z10;
             setVisibility(0);
@@ -1162,7 +1162,7 @@ public final class m60 extends r60 implements NotificationCenter.NotificationCen
     public final void r(boolean z10, boolean z11) {
         n60 n60Var = this.a;
         if (n60Var != null) {
-            ((org.telegram.ui.re) n60Var).b.vc.a(z10, true);
+            ((org.telegram.ui.re) n60Var).b.wc.a(z10, true);
         }
         AnimatorSet animatorSet = this.e0;
         if (animatorSet != null) {

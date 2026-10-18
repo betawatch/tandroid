@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i2 implements Runnable {
     public final /* synthetic */ int a;
@@ -81,7 +81,7 @@ public final /* synthetic */ class i2 implements Runnable {
                 MediaDataController.lambda$loadReplyMessagesForMessages$172((AtomicInteger) this.b, (Runnable) this.c);
                 break;
             case 18:
-                MediaDataController.lambda$fillWithAnimatedEmoji$229((boolean[]) this.b, (w6) this.c);
+                MediaDataController.lambda$fillWithAnimatedEmoji$229((boolean[]) this.b, (x6) this.c);
                 break;
             case 19:
                 ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);

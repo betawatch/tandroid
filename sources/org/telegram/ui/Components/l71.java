@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l71 extends Drawable implements x5, y6, NotificationCenter.NotificationCenterDelegate {
     public final x20 a;
@@ -187,9 +187,9 @@ public final class l71 extends Drawable implements x5, y6, NotificationCenter.No
         int width = ((int) (getBounds().width() * 0.7f)) >> 1;
         r5 r5Var = this.h;
         if (r5Var != null) {
-            ci.g3 g3Var = r5Var.k;
-            if (g3Var != null) {
-                g3Var.setRoundRadius((int) (width * 2 * 0.13f));
+            ci.f3 f3Var = r5Var.k;
+            if (f3Var != null) {
+                f3Var.setRoundRadius((int) (width * 2 * 0.13f));
             }
             r5Var.setBounds(centerX - width, centerY - width, centerX + width, centerY + width);
             r5Var.draw(canvas);

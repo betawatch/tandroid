@@ -8,7 +8,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class m3 {
     public boolean A;
@@ -24,7 +24,7 @@ public class m3 {
     public gi.y0 K;
     public boolean L;
     public gi.t4 a;
-    public org.telegram.ui.web.x0 b;
+    public org.telegram.ui.web.y0 b;
     public org.telegram.ui.o3 c;
     public Object d;
     public boolean e;
@@ -52,9 +52,9 @@ public class m3 {
 
     public final void a() {
         try {
-            org.telegram.ui.web.x0 x0Var = this.b;
-            if (x0Var != null) {
-                x0Var.destroy();
+            org.telegram.ui.web.y0 y0Var = this.b;
+            if (y0Var != null) {
+                y0Var.destroy();
                 this.b = null;
             }
             org.telegram.ui.l4 l4Var = this.J;

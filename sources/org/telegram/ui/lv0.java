@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lv0 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class lv0 implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int i10;
-        org.telegram.messenger.o8 o8Var;
+        org.telegram.messenger.p8 p8Var;
         int i11;
         ArrayList arrayList;
         String str;
@@ -158,8 +158,8 @@ public final /* synthetic */ class lv0 implements Runnable {
                 break;
             case 14:
                 ProfileActivity profileActivity7 = (ProfileActivity) obj2;
-                if (!((boolean[]) obj)[0] && (o8Var = profileActivity7.z5) != null) {
-                    o8Var.run();
+                if (!((boolean[]) obj)[0] && (p8Var = profileActivity7.z5) != null) {
+                    p8Var.run();
                 }
                 profileActivity7.z5 = null;
                 break;

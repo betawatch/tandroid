@@ -70,7 +70,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -105,9 +105,9 @@ import org.telegram.ui.o00;
 import org.telegram.ui.yw;
 import org.telegram.ui.z21;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
+public class r2 extends a0 implements ci.n7, org.telegram.ui.ActionBar.y5 {
     public boolean A0;
     public boolean A1;
     public boolean A2;
@@ -217,7 +217,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
     public boolean S1;
     public boolean S2;
     public final ne.b S3;
-    public sg.z0 S4;
+    public sg.a1 S4;
     public Paint T;
     public boolean T0;
     public Paint T1;
@@ -592,7 +592,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
             org.telegram.ui.ActionBar.h6.t0.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, this.J4));
             canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(11.33f) * e, org.telegram.ui.ActionBar.h6.t0);
             if (this.S4 == null) {
-                this.S4 = new sg.z0(org.telegram.ui.ActionBar.h6.Lj, org.telegram.ui.ActionBar.h6.Mj, -1, -1, this.J4);
+                this.S4 = new sg.a1(org.telegram.ui.ActionBar.h6.Lj, org.telegram.ui.ActionBar.h6.Mj, -1, -1, this.J4);
             }
             this.S4.d((int) (centerX - AndroidUtilities.dp(10.0f)), 0.0f, (int) (centerY - AndroidUtilities.dp(10.0f)), (int) (AndroidUtilities.dp(10.0f) + centerX), 0.0f, (int) (AndroidUtilities.dp(10.0f) + centerY));
             canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(10.0f) * e, this.S4.f);
@@ -2234,7 +2234,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                                 this.f2 = user4;
                                 if (user4 == null || DialogObject.getEmojiStatusDocumentId(user4.emoji_status) == j10) {
                                     this.D2 = true;
-                                    p5Var.g(sg.a1.d().e, z10);
+                                    p5Var.g(sg.b1.d().e, z10);
                                     p5Var.m(z13, z10);
                                 } else {
                                     this.D2 = z11;
@@ -2251,7 +2251,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                                 this.g2 = chat5;
                                 if (chat5 == null || DialogObject.getEmojiStatusDocumentId(chat5.emoji_status) == j10) {
                                     this.D2 = true;
-                                    p5Var.g(sg.a1.d().e, z10);
+                                    p5Var.g(sg.b1.d().e, z10);
                                     p5Var.m(false, z10);
                                 } else {
                                     this.D2 = true;
@@ -2690,7 +2690,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
         boolean z38 = (this.P || (getMeasuredWidth() == 0 && getMeasuredHeight() == 0)) ? z22 : true;
         if (!z30) {
             int i42 = this.u0.y;
-            ci.d8.r(MessagesController.getInstance(i15).getStoriesController(), getDialogId());
+            ci.c8.r(MessagesController.getInstance(i15).getStoriesController(), getDialogId());
         }
         if (!z10) {
             this.c1 = (this.Z0 || this.b1) ? 1.0f : f7;
@@ -3098,7 +3098,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
 
     @Override // org.telegram.ui.Cells.a0, android.view.View
     public final void invalidate() {
-        if (ci.aa.x1) {
+        if (ci.z9.x1) {
             return;
         }
         super.invalidate();
@@ -3510,7 +3510,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                             f11 = measuredWidth;
                         }
                         int measuredWidth2 = (r2Var4.getMeasuredWidth() - AndroidUtilities.dp(43.0f)) - (r2Var4.y1.getIntrinsicWidth() / 2);
-                        int A = kk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
+                        int A = lk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
                         int intrinsicWidth = (r2Var4.y1.getIntrinsicWidth() / 2) + measuredWidth2;
                         int intrinsicHeight = (r2Var4.y1.getIntrinsicHeight() / 2) + A;
                         if (r2Var4.B1 <= f10) {
@@ -3653,7 +3653,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
             if (r2Var4.B1 >= f7) {
             }
             int measuredWidth22 = (r2Var4.getMeasuredWidth() - AndroidUtilities.dp(43.0f)) - (r2Var4.y1.getIntrinsicWidth() / 2);
-            int A2 = kk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
+            int A2 = lk.A(52.0f, r2Var4.getMeasuredHeight(), 2);
             int intrinsicWidth2 = (r2Var4.y1.getIntrinsicWidth() / 2) + measuredWidth22;
             int intrinsicHeight2 = (r2Var4.y1.getIntrinsicHeight() / 2) + A2;
             if (r2Var4.B1 <= f10) {
@@ -4984,7 +4984,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                             }
                         } else {
                             icVar2 = icVar;
-                            Drawable drawable6 = sg.a1.d().e;
+                            Drawable drawable6 = sg.b1.d().e;
                             int dp14 = r2Var3.H2 - AndroidUtilities.dp(f24);
                             if (!z17 && !SharedConfig.useThreeLinesLayout) {
                                 f392222 = 15.5f;
@@ -5104,7 +5104,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                 if (z38) {
                     k2Var.z = 1;
                 }
-                ci.d8.h(r2Var.H0, canvas3, imageReceiver, k2Var);
+                ci.c8.h(r2Var.H0, canvas3, imageReceiver, k2Var);
                 if (k2Var.w) {
                     r2Var.y();
                 }
@@ -6391,7 +6391,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                                                     this.n4.m(DialogObject.isEmojiStatusCollectible(this.f2.emoji_status), false);
                                                 } else {
                                                     this.D2 = true;
-                                                    p5Var2.g(sg.a1.d().e, false);
+                                                    p5Var2.g(sg.b1.d().e, false);
                                                     this.n4.m(false, false);
                                                 }
                                             }
@@ -8029,7 +8029,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                     int dp12 = AndroidUtilities.dp(5.0f) + this.L2 + i18;
                     this.T2 = dp12;
                     this.X2 = AndroidUtilities.dp(5.5f) + dp12;
-                    this.x2 = kk.D(8.0f, org.telegram.ui.ActionBar.h6.W0.getIntrinsicWidth() + dp11, this.x2);
+                    this.x2 = lk.D(8.0f, org.telegram.ui.ActionBar.h6.W0.getIntrinsicWidth() + dp11, this.x2);
                 } else {
                     int i44 = (this.L2 - i19) - dp11;
                     this.X2 = i44;
@@ -8548,7 +8548,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                     this.c3 += dp21;
                     this.r3 += dp21;
                 } else {
-                    this.N3 = kk.y(12.666f, this.O3, getMeasuredWidth() - AndroidUtilities.dp(15.666f));
+                    this.N3 = lk.y(12.666f, this.O3, getMeasuredWidth() - AndroidUtilities.dp(15.666f));
                 }
                 this.G3 = true;
             } else {
@@ -8572,7 +8572,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
                     this.c3 += dp22;
                     this.r3 += dp22;
                 } else {
-                    int y3 = kk.y(12.666f, this.h4, getMeasuredWidth()) - AndroidUtilities.dp(15.666f);
+                    int y3 = lk.y(12.666f, this.h4, getMeasuredWidth()) - AndroidUtilities.dp(15.666f);
                     int i47 = this.O3;
                     this.e4 = y3 - (i47 != 0 ? i47 + AndroidUtilities.dp(f7) : 0);
                 }
@@ -9286,7 +9286,7 @@ public class r2 extends a0 implements ci.o7, org.telegram.ui.ActionBar.y5 {
 
     @Override // android.view.View
     public final void invalidate(int i10, int i11, int i12, int i13) {
-        if (ci.aa.x1) {
+        if (ci.z9.x1) {
             return;
         }
         super.invalidate(i10, i11, i12, i13);

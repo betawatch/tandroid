@@ -30,14 +30,14 @@ import org.telegram.ui.Components.p6;
 import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xj0;
-import org.telegram.ui.qg0;
-import sg.a1;
+import org.telegram.ui.pg0;
+import sg.b1;
 import w7.r;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout implements qg0, d {
+public final class b extends FrameLayout implements pg0, d {
     public static final RectF V = new RectF();
     public TLRPC.TL_attachMenuBot E;
     public final TextPaint F;
@@ -81,7 +81,7 @@ public final class b extends FrameLayout implements qg0, d {
         this.S = 1.0f;
         xj0 xj0Var = new xj0(context);
         this.b = xj0Var;
-        addView(xj0Var, z5.a(44.0f, 0.0f, -6.0f, 0.0f, 0.0f, 44, 49));
+        addView(xj0Var, z5.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
         xj0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
         TextView textView = new TextView(context);
         this.a = textView;
@@ -92,7 +92,7 @@ public final class b extends FrameLayout implements qg0, d {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         this.F = new TextPaint(textView.getPaint());
-        addView(textView, z5.a(-2.0f, 0.0f, 28.33f, 0.0f, 0.0f, -1, 49));
+        addView(textView, z5.d(-1, -2.0f, 49, 0.0f, 28.33f, 0.0f, 0.0f));
         p6 p6Var = new p6(false, false, false);
         this.f = p6Var;
         p6Var.x(AndroidUtilities.bold());
@@ -108,7 +108,7 @@ public final class b extends FrameLayout implements qg0, d {
         bVar.y = aVar;
         bVar.a.setText(LocaleController.getString(i10));
         bVar.a(false);
-        bVar.b.setLayoutParams(z5.a(24.0f, 0.0f, 4.0f, 0.0f, 0.0f, 24, 49));
+        bVar.b.setLayoutParams(z5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
         bVar.w = h6.w0(h6.cl, d6Var);
         bVar.s = h6.w0(h6.al, d6Var);
         bVar.v = h6.w0(h6.bl, d6Var);
@@ -281,8 +281,8 @@ public final class b extends FrameLayout implements qg0, d {
                 if (this.L == null) {
                     this.L = getContext().getResources().getDrawable(R.drawable.star).mutate();
                 }
-                a1.d().f(0.0f, 0.0f, AndroidUtilities.dp(96.0f), AndroidUtilities.dp(16.0f));
-                canvas.drawRoundRect(rectF, dpf26, dpf26, a1.d().e());
+                b1.d().f(0.0f, 0.0f, AndroidUtilities.dp(96.0f), AndroidUtilities.dp(16.0f));
+                canvas.drawRoundRect(rectF, dpf26, dpf26, b1.d().e());
                 int dpf27 = (int) (dpf22 - AndroidUtilities.dpf2(7.0f));
                 int dpf28 = (int) (dpf23 - AndroidUtilities.dpf2(7.0f));
                 this.L.setBounds(dpf27, dpf28, AndroidUtilities.dp(14.0f) + dpf27, AndroidUtilities.dp(14.0f) + dpf28);

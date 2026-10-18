@@ -12,8 +12,9 @@ import ld.a;
 import md.i;
 import td.p;
 import v7.i8;
+import ya.d;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 final class zzr extends i implements p {
     int zza;
@@ -89,7 +90,7 @@ final class zzr extends i implements p {
                 a8.f fVar = new a8.f(context, a8.f.k, com.google.android.gms.common.api.b.p, com.google.android.gms.common.api.i.c);
                 u b10 = v.b();
                 b10.d = new k6.c[]{l8.f.a};
-                b10.c = new ya.c(aVar2, 1);
+                b10.c = new d(aVar2, 1);
                 b10.a = 34002;
                 Task e = fVar.e(0, b10.a());
                 kotlin.jvm.internal.i.d(e, "doRead(...)");

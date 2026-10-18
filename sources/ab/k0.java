@@ -5,7 +5,7 @@ import com.google.android.gms.tasks.Task;
 import org.telegram.tgnet.TLObject;
 import v7.i8;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class k0 implements g0 {
     public static final double f = Math.random();
@@ -85,7 +85,7 @@ public final class k0 implements g0 {
         j0 j0Var;
         int i10;
         boolean z10;
-        Boolean t10;
+        Boolean h;
         if (cVar instanceof j0) {
             j0Var = (j0) cVar;
             int i11 = j0Var.d;
@@ -112,9 +112,9 @@ public final class k0 implements g0 {
                     i8.b(obj);
                 }
                 cb.h hVar2 = k0Var.c;
-                t10 = hVar2.a.t();
-                if (t10 == null) {
-                    z10 = t10.booleanValue();
+                h = hVar2.a.h();
+                if (h == null) {
+                    z10 = h.booleanValue();
                 } else {
                     Boolean a2 = hVar2.b.a();
                     if (a2 != null) {
@@ -140,8 +140,8 @@ public final class k0 implements g0 {
         if (i10 != 0) {
         }
         cb.h hVar22 = k0Var.c;
-        t10 = hVar22.a.t();
-        if (t10 == null) {
+        h = hVar22.a.h();
+        if (h == null) {
         }
         if (z10) {
         }

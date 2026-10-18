@@ -11,7 +11,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
 import org.telegram.ui.Components.gt;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class k extends e1 {
     public static TimeInterpolator E;
@@ -135,7 +135,7 @@ public class k extends e1 {
         }
         ViewPropertyAnimator animate = view.animate();
         this.z.add(b1Var);
-        animate.setUpdateListener(new sg.h1(1, this, b1Var));
+        animate.setUpdateListener(new sg.i1(1, this, b1Var));
         Interpolator interpolator = this.o;
         if (interpolator != null) {
             animate.setInterpolator(interpolator);

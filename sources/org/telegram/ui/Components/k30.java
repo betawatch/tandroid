@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k30 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,14 +31,14 @@ public final /* synthetic */ class k30 implements Runnable {
             case 2:
                 Activity findActivity = AndroidUtilities.findActivity(this.b);
                 if (findActivity instanceof LaunchActivity) {
-                    ((LaunchActivity) findActivity).t0(new PremiumPreviewFragment(0, sg.j0.B1(10)));
+                    ((LaunchActivity) findActivity).t0(new PremiumPreviewFragment(0, sg.k0.B1(10)));
                     break;
                 }
                 break;
             default:
                 Activity findActivity2 = AndroidUtilities.findActivity(this.b);
                 if (findActivity2 instanceof LaunchActivity) {
-                    ((LaunchActivity) findActivity2).t0(new PremiumPreviewFragment(0, sg.j0.B1(9)));
+                    ((LaunchActivity) findActivity2).t0(new PremiumPreviewFragment(0, sg.k0.B1(9)));
                     break;
                 }
                 break;

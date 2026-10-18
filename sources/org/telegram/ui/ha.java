@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.n6, org.telegram.ui.Components.yl0, MessagesStorage.BooleanCallback, c5.p, org.telegram.ui.Components.voip.g3, e2.j, BillingController.ProductDetailsResponseListenerLegacy, org.telegram.ui.Components.d50 {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
             int i11 = this.b;
             if (UserConfig.getInstance(i11).isPremium()) {
                 if (!UserConfig.getInstance(i11).isPremium()) {
-                    new sg.x0(n2Var, 24, true).show();
+                    new sg.y0(n2Var, 24, true).show();
                     return true;
                 }
                 org.telegram.ui.Components.do0 do0Var = ((org.telegram.ui.Components.eo0) view).a;
@@ -109,7 +109,7 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
     @Override // e2.j
     public void accept(Object obj) {
         a5.a aVar = (a5.a) this.c;
-        ((u2.j0) obj).i(aVar.b, (u2.f0) aVar.c, (u2.t) this.d, (u2.b0) this.e, this.b);
+        ((u2.k0) obj).i(aVar.b, (u2.g0) aVar.c, (u2.u) this.d, (u2.c0) this.e, this.b);
     }
 
     @Override // c5.p
@@ -192,7 +192,7 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
                 connectionsManager.sendRequest(toggleusername, new RequestDelegate() { // from class: org.telegram.ui.ia
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ti(ja.this, str, tLObject, i15, z11, tL_error, tL_username, z10));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ui(ja.this, str, tLObject, i15, z11, tL_error, tL_username, z10));
                     }
                 });
                 uaVar.w.add(tL_username.username);
@@ -233,7 +233,7 @@ public final /* synthetic */ class ha implements org.telegram.ui.ActionBar.a2, o
                 tL_messages_editMessage.peer = MessagesController.getInstance(i16).getInputPeer(sv0Var.j1);
                 tL_messages_editMessage.id = messageObject.getId();
                 tL_messages_editMessage.flags |= 16384;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xr0(b2VarArr, i16, ConnectionsManager.getInstance(i16).sendRequest(tL_messages_editMessage, new ci.t8(sv0Var, b2VarArr, i16, tL_messages_editMessage, 5)), i14), 500L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.xr0(b2VarArr, i16, ConnectionsManager.getInstance(i16).sendRequest(tL_messages_editMessage, new ci.s8(sv0Var, b2VarArr, i16, tL_messages_editMessage, 5)), i14), 500L);
                 break;
         }
     }

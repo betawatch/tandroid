@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class jq0 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -142,7 +142,7 @@ public final class jq0 extends org.telegram.ui.Components.hm0 {
                 frameLayout.setLayoutParams(new s4.o0(-1, -2));
                 RadialProgressView radialProgressView = new RadialProgressView(context, null);
                 radialProgressView.setProgressColor(-11371101);
-                frameLayout.addView(radialProgressView, w7.z5.d(-1.0f, -1));
+                frameLayout.addView(radialProgressView, w7.z5.c(-1.0f, -1));
                 viewGroup3 = frameLayout;
             } else if (i10 == 2) {
                 viewGroup3 = new org.telegram.ui.Cells.i7(context, 1, null);

@@ -14,7 +14,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class vz extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -29,7 +29,7 @@ public final class vz extends FrameLayout {
         super(context);
         this.a = d6Var;
         View radialProgressView = new RadialProgressView(context, null);
-        addView(radialProgressView, w7.z5.d(-2.0f, -2));
+        addView(radialProgressView, w7.z5.c(-2.0f, -2));
         this.c = radialProgressView;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
@@ -49,7 +49,7 @@ public final class vz extends FrameLayout {
         org.telegram.ui.Cells.c1.q(org.telegram.ui.ActionBar.h6.c7, d6Var, textView, 1);
         textView.setText(LocaleController.getString(R.string.NoResult));
         linearLayout.addView(textView, w7.z5.q(-2, -2, 17));
-        addView(linearLayout, w7.z5.d(-2.0f, -2));
+        addView(linearLayout, w7.z5.c(-2.0f, -2));
         AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
         setOnTouchListener(new di.d(18));

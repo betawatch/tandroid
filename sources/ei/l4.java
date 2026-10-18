@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d11;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.f61;
 import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class l4 extends FrameLayout {
     public final Paint E;
@@ -253,7 +253,7 @@ public abstract class l4 extends FrameLayout {
         g4Var.animate().cancel();
         if (z11) {
             g4Var.setVisibility(0);
-            kk.t(g4Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new ah.p0(11, this, z10)).setUpdateListener(new ah.c0(this, 28)), bs.h, 360L);
+            lk.t(g4Var.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.65f).scaleY(z10 ? 1.0f : 0.65f).setListener(new ah.p0(11, this, z10)).setUpdateListener(new ah.c0(this, 28)), bs.h, 360L);
         } else {
             g4Var.setVisibility(z10 ? 0 : 8);
             g4Var.setAlpha(z10 ? 1.0f : 0.0f);

@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eg implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -74,36 +74,36 @@ public final /* synthetic */ class eg implements Utilities.Callback2 {
                 }
                 break;
             default:
-                org.telegram.ui.Wallet.z7 z7Var = (org.telegram.ui.Wallet.z7) obj4;
+                org.telegram.ui.Wallet.t7 t7Var = (org.telegram.ui.Wallet.t7) obj4;
                 TL_wallet.card cardVar = (TL_wallet.card) obj3;
                 TL_wallet.card cardVar2 = (TL_wallet.card) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                z7Var.a1 = 0;
+                t7Var.f1 = 0;
                 if (cardVar2 == null) {
                     if (cardVar != null) {
-                        org.telegram.ui.Wallet.z7.g0(i11, cardVar);
+                        org.telegram.ui.Wallet.t7.e0(i11, cardVar);
                     }
-                    if (!z7Var.V0) {
+                    if (!t7Var.a1) {
                         if (tL_error3 != null) {
-                            org.telegram.ui.Components.xc.a0(z7Var.a).f0(tL_error3, false);
+                            org.telegram.ui.Components.xc.a0(t7Var.a).f0(tL_error3, false);
                         }
-                        z7Var.Y0 = false;
-                        TL_wallet.card cardVar3 = z7Var.W0;
+                        t7Var.d1 = false;
+                        TL_wallet.card cardVar3 = t7Var.b1;
                         if (cardVar3 != null) {
-                            z7Var.d(cardVar3);
+                            t7Var.d(cardVar3);
                             break;
                         }
                     }
                 } else {
-                    org.telegram.ui.Wallet.z7.g0(i11, cardVar2);
-                    if (!z7Var.V0) {
-                        if (!z7Var.Y0) {
-                            z7Var.d(cardVar2);
+                    org.telegram.ui.Wallet.t7.e0(i11, cardVar2);
+                    if (!t7Var.a1) {
+                        if (!t7Var.d1) {
+                            t7Var.d(cardVar2);
                             break;
                         } else {
-                            z7Var.W0 = cardVar2;
-                            z7Var.X0 = org.telegram.ui.Wallet.z7.V(cardVar2);
-                            z7Var.S();
+                            t7Var.b1 = cardVar2;
+                            t7Var.c1 = org.telegram.ui.Wallet.t7.T(cardVar2);
+                            t7Var.Q();
                             break;
                         }
                     }

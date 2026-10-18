@@ -63,9 +63,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class z71 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50, og0, ne.d {
+public final class z71 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50, ng0, ne.d {
     public org.telegram.ui.Components.h9 E;
     public org.telegram.ui.Components.w9 F;
     public FrameLayout G;
@@ -83,16 +83,17 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public int S;
     public int T;
     public int U;
-    public final bh.f V;
-    public final gh.d W;
+    public boolean V;
+    public final bh.f W;
     public final gh.d X;
-    public bh.l Y;
-    public final ArrayList Z;
+    public final gh.d Y;
+    public bh.l Z;
     public final ne.b a;
-    public final RectF a0;
+    public final ArrayList a0;
     public y8 b;
     public final RectF b0;
     public org.telegram.ui.Components.a71 c;
+    public final RectF c0;
     public ei.g6 d;
     public org.telegram.ui.ActionBar.u0 e;
     public org.telegram.ui.ActionBar.u0 f;
@@ -515,14 +516,14 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
             }
             i22++;
         }
-        Collections.sort(z71Var.R, new lg0(6));
+        Collections.sort(z71Var.R, new kg0(6));
         Set<String> set = z71Var.getMessagesController().pendingSuggestions;
         int i23 = 1;
         if (set.contains("PREMIUM_GRACE")) {
             arrayList.add(x71.a(LocaleController.getString(R.string.GraceSuggestionTitle), LocaleController.getString(R.string.GraceSuggestionMessage), null, null, LocaleController.getString(R.string.GraceSuggestionButton), new n71(z71Var, i11)));
             arrayList.add(org.telegram.ui.Components.f61.B(null));
         } else if (set.contains("VALIDATE_PHONE_NUMBER") && z71Var.getUserConfig().getCurrentUser() != null) {
-            arrayList.add(x71.a(LocaleController.formatString(R.string.CheckPhoneNumber, org.telegram.messenger.kk.g(new StringBuilder("+"), z71Var.getUserConfig().getCurrentUser().phone, jf.b.c())), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CheckPhoneNumberInfo), new l71(z71Var, i23)), LocaleController.getString(R.string.CheckPhoneNumberNo), new n71(z71Var, i23), ai.k7.B2(LocaleController.getString(R.string.CheckPhoneNumberYes2)), new n71(z71Var, 2)));
+            arrayList.add(x71.a(LocaleController.formatString(R.string.CheckPhoneNumber, org.telegram.messenger.lk.g(new StringBuilder("+"), z71Var.getUserConfig().getCurrentUser().phone, jf.b.c())), AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CheckPhoneNumberInfo), new l71(z71Var, i23)), LocaleController.getString(R.string.CheckPhoneNumberNo), new n71(z71Var, i23), ai.k7.B2(LocaleController.getString(R.string.CheckPhoneNumberYes2)), new n71(z71Var, 2)));
             arrayList.add(org.telegram.ui.Components.f61.B(null));
         } else if (set.contains("VALIDATE_PASSWORD")) {
             arrayList.add(x71.a(LocaleController.getString(R.string.YourPasswordHeader), LocaleController.getString(R.string.YourPasswordRemember), LocaleController.getString(R.string.YourPasswordRememberNo), new n71(z71Var, 3), LocaleController.getString(R.string.YourPasswordRememberYes), new n71(z71Var, i10)));
@@ -1274,7 +1275,7 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
                 z71Var.presentFragment(new c31(null));
                 break;
             case 25:
-                z71Var.l0(new org.telegram.ui.Wallet.m5());
+                z71Var.l0(new org.telegram.ui.Wallet.n5());
                 break;
             case 26:
                 z71Var.presentFragment(new r4(null));
@@ -1393,9 +1394,11 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
     public final View createView(Context context) {
         this.b = new y8(this, context, 7);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.V = true;
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.L();
         this.actionBar.setTitle(LocaleController.getString(R.string.Settings));
+        this.actionBar.setAdditionalTextLeft(-AndroidUtilities.dp(4.0f));
         this.actionBar.setActionBarMenuOnItemClick(new a31(this, 4));
         this.actionBar.setAddToContainer(false);
         this.actionBar.setOccupyStatusBar(true);
@@ -1424,7 +1427,7 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.Components.a71 a71Var2 = this.c;
         y8 y8Var = this.b;
         Objects.requireNonNull(a71Var2);
-        this.Y = new bh.l(a71Var2, y8Var, new x8(a71Var2, 0));
+        this.Z = new bh.l(a71Var2, y8Var, new x8(a71Var2, 0));
         this.c.C0(new l71(this, 2));
         this.b.addView(this.c, w7.z5.e(-1, -1, 119));
         ei.g6 g6Var = new ei.g6(this, context);
@@ -1439,20 +1442,20 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.x = new FrameLayout(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.y = frameLayout;
-        this.x.addView(frameLayout, w7.z5.a(120.0f, 0.0f, 11.0f, 0.0f, 0.0f, 120, 49));
+        this.x.addView(frameLayout, w7.z5.d(120, 120.0f, 49, 0.0f, 11.0f, 0.0f, 0.0f));
         this.y.setOnClickListener(new n71(this, 5));
         w7.b6.a(this.y);
         this.E = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.F = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(90.0f));
-        this.y.addView(this.F, w7.z5.a(90.0f, 0.0f, 15.0f, 0.0f, 0.0f, 90, 49));
+        this.y.addView(this.F, w7.z5.d(90, 90.0f, 49, 0.0f, 15.0f, 0.0f, 0.0f));
         org.telegram.ui.Cells.y3 y3Var = new org.telegram.ui.Cells.y3(this, context);
         this.s = y3Var;
         y3Var.setSize(AndroidUtilities.dp(26.0f));
         this.s.setProgressColor(-1);
         this.s.setNoProgress(false);
-        this.y.addView(this.s, w7.z5.a(90.0f, 0.0f, 15.0f, 0.0f, 0.0f, 90, 49));
+        this.y.addView(this.s, w7.z5.d(90, 90.0f, 49, 0.0f, 15.0f, 0.0f, 0.0f));
         n0(false, false);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.G = frameLayout2;
@@ -1466,8 +1469,8 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         this.I.setImageResource(R.drawable.filled_premium_camera);
         this.H.addView(this.I, w7.z5.e(22, 22, 17));
-        this.G.addView(this.H, w7.z5.d(30.0f, 30));
-        this.y.addView(this.G, w7.z5.a(34.0f, 32.0f, 75.0f, 0.0f, 0.0f, 34, 49));
+        this.G.addView(this.H, w7.z5.c(30.0f, 30));
+        this.y.addView(this.G, w7.z5.d(34, 34.0f, 49, 32.0f, 75.0f, 0.0f, 0.0f));
         w7.b6.a(this.G);
         TextView textView = new TextView(context);
         this.J = textView;
@@ -1478,13 +1481,13 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
         TextView textView2 = this.J;
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView2.setEllipsize(truncateAt);
-        TextView j10 = org.telegram.ui.Cells.c1.j(this.x, this.J, w7.z5.a(-2.0f, 16.0f, 126.33299f, 16.0f, 0.0f, -1, 49), context);
+        TextView j10 = org.telegram.ui.Cells.c1.j(this.x, this.J, w7.z5.d(-1, -2.0f, 49, 16.0f, 126.33299f, 16.0f, 0.0f), context);
         this.K = j10;
         j10.setTextSize(1, 13.0f);
         this.K.setGravity(17);
         this.K.setSingleLine();
         this.K.setEllipsize(truncateAt);
-        TextView j11 = org.telegram.ui.Cells.c1.j(this.x, this.K, w7.z5.a(-2.0f, 0.0f, 156.0f, 0.0f, 0.0f, -1, 49), context);
+        TextView j11 = org.telegram.ui.Cells.c1.j(this.x, this.K, w7.z5.d(-1, -2.0f, 49, 0.0f, 156.0f, 0.0f, 0.0f), context);
         this.L = j11;
         j11.setTextSize(1, 14.0f);
         this.L.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.B6));
@@ -1551,18 +1554,18 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
 
     public final void i0() {
         bh.f fVar;
-        if (Build.VERSION.SDK_INT < 31 || (fVar = this.V) == null) {
+        if (Build.VERSION.SDK_INT < 31 || (fVar = this.W) == null) {
             return;
         }
         int dp = AndroidUtilities.dp(48.0f);
         int measuredHeight = (this.fragmentView.getMeasuredHeight() - this.S) - AndroidUtilities.dp(8.0f);
         int dp2 = measuredHeight - AndroidUtilities.dp(56.0f);
-        this.a0.set(0.0f, -dp, this.fragmentView.getMeasuredWidth(), this.actionBar.getMeasuredHeight() + dp);
-        RectF rectF = this.b0;
+        this.b0.set(0.0f, -dp, this.fragmentView.getMeasuredWidth(), this.actionBar.getMeasuredHeight() + dp);
+        RectF rectF = this.c0;
         rectF.set(0.0f, dp2, this.fragmentView.getMeasuredWidth(), measuredHeight);
         rectF.inset(0.0f, LiteMode.isEnabled(262144) ? 0.0f : -AndroidUtilities.dp(48.0f));
-        fVar.g(this.M ? 2 : 1, this.Z);
-        fVar.e(this.Y, this.fragmentView.getMeasuredWidth(), this.fragmentView.getMeasuredHeight());
+        fVar.g(this.M ? 2 : 1, this.a0);
+        fVar.e(this.Z, this.fragmentView.getMeasuredWidth(), this.fragmentView.getMeasuredHeight());
     }
 
     @Override // org.telegram.ui.ActionBar.n2
@@ -1576,10 +1579,27 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
     }
 
     public final void j0() {
-        org.telegram.ui.ActionBar.u0 u0Var = this.f;
-        ne.b bVar = this.a;
-        org.telegram.ui.Components.h20.d(u0Var, 1.0f - bVar.e);
-        org.telegram.ui.Components.h20.d(this.actionBar.getBackButton(), AndroidUtilities.lerp(this.M ? 0.0f : 1.0f, 1.0f, bVar.e));
+        float f7 = this.a.e;
+        org.telegram.ui.Components.h20.d(this.f, 1.0f - f7);
+        if (!this.M) {
+            org.telegram.ui.Components.h20.d(this.actionBar.getBackButton(), 1.0f);
+            return;
+        }
+        ImageView backButton = this.actionBar.getBackButton();
+        if (backButton == null) {
+            return;
+        }
+        boolean z10 = f7 > 0.5f;
+        if (z10 != this.V) {
+            this.V = z10;
+            backButton.setImageResource(z10 ? R.drawable.ic_ab_back : R.drawable.outline_header_qr_24);
+            backButton.setContentDescription(LocaleController.getString(z10 ? R.string.AccDescrGoBack : R.string.QrCode));
+        }
+        float abs = Math.abs((f7 * 2.0f) - 1.0f);
+        backButton.setVisibility(0);
+        backButton.setAlpha(abs);
+        backButton.setScaleX(AndroidUtilities.lerp(0.4f, 1.0f, abs));
+        backButton.setScaleY(AndroidUtilities.lerp(0.4f, 1.0f, abs));
     }
 
     public final void l0(org.telegram.ui.ActionBar.n2 n2Var) {
@@ -1788,7 +1808,7 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.c.invalidate();
     }
 
-    @Override // org.telegram.ui.og0
+    @Override // org.telegram.ui.ng0
     public final void s() {
         this.c.x0(0);
     }
@@ -1805,9 +1825,9 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
         return false;
     }
 
-    @Override // org.telegram.ui.og0
+    @Override // org.telegram.ui.ng0
     public final gh.d z() {
-        return this.X;
+        return this.Y;
     }
 
     public z71(Bundle bundle) {
@@ -1816,22 +1836,23 @@ public final class z71 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.O = 0;
         this.R = new ArrayList();
         this.U = -1;
+        this.V = true;
         ArrayList arrayList = new ArrayList();
-        this.Z = arrayList;
+        this.a0 = arrayList;
         RectF rectF = new RectF();
-        this.a0 = rectF;
+        this.b0 = rectF;
         RectF rectF2 = new RectF();
-        this.b0 = rectF2;
+        this.c0 = rectF2;
         arrayList.add(rectF);
         arrayList.add(rectF2);
         if (Build.VERSION.SDK_INT >= 31) {
-            this.V = new bh.f(false);
-            this.W = new gh.d(null);
+            this.W = new bh.f(false);
             this.X = new gh.d(null);
+            this.Y = new gh.d(null);
         } else {
-            this.V = null;
             this.W = null;
             this.X = null;
+            this.Y = null;
         }
     }
 

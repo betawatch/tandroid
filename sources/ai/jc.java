@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ti;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class jc implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -34,7 +34,7 @@ public final /* synthetic */ class jc implements Utilities.CallbackReturn {
                 fi.c cVar = (fi.c) this.b;
                 return cVar.n[((Integer) obj).intValue() % cVar.n.length];
             case 3:
-                return new org.telegram.ui.Wallet.u3(26, (org.telegram.ui.n0) this.b, (Integer) obj);
+                return new org.telegram.ui.Wallet.v3(27, (org.telegram.ui.n0) this.b, (Integer) obj);
             case 4:
                 rg.m0 m0Var = (rg.m0) this.b;
                 if (((Integer) obj).intValue() == 2) {

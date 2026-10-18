@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k31 extends FrameLayout {
     public org.telegram.ui.l5 E;
@@ -32,7 +32,7 @@ public final class k31 extends FrameLayout {
     public up0 c;
     public final x90 d;
     public final p6 e;
-    public final ci.i3 f;
+    public final ci.h3 f;
     public final ImageView h;
     public boolean n;
     public final f6 r;
@@ -58,7 +58,7 @@ public final class k31 extends FrameLayout {
         this.d = x90Var;
         x90Var.setTextSize(1, 14.0f);
         x90Var.setTypeface(AndroidUtilities.bold());
-        addView(x90Var, w7.z5.a(-2.0f, 11.0f, 0.0f, 11.0f, 0.0f, -2, 19));
+        addView(x90Var, w7.z5.d(-2, -2.0f, 19, 11.0f, 0.0f, 11.0f, 0.0f));
         w7.b6.a(x90Var);
         ImageView imageView = new ImageView(context);
         this.h = imageView;
@@ -69,10 +69,10 @@ public final class k31 extends FrameLayout {
         p6Var.x(AndroidUtilities.bold());
         p6Var.M = AndroidUtilities.displaySize.x;
         p6Var.b = 17;
-        ci.i3 i3Var = new ci.i3(this, context, d6Var);
-        this.f = i3Var;
-        addView(i3Var, w7.z5.a(-2.0f, 4.66f, 0.0f, 11.0f, 0.0f, -2, 21));
-        w7.b6.a(i3Var);
+        ci.h3 h3Var = new ci.h3(this, context, d6Var);
+        this.f = h3Var;
+        addView(h3Var, w7.z5.d(-2, -2.0f, 21, 4.66f, 0.0f, 11.0f, 0.0f));
+        w7.b6.a(h3Var);
         h();
     }
 
@@ -210,7 +210,7 @@ public final class k31 extends FrameLayout {
             this.K = ofFloat;
             ofFloat.addUpdateListener(new i31(this, 0));
             this.K.addListener(new c80(this, 29));
-            org.telegram.messenger.kk.l(2.0f, this.K);
+            org.telegram.messenger.lk.l(2.0f, this.K);
             this.K.setDuration(200L);
             this.K.start();
         }
@@ -299,17 +299,17 @@ public final class k31 extends FrameLayout {
         x90 x90Var = this.d;
         x90Var.layout(dp, i16 - (x90Var.getMeasuredHeight() / 2), x90Var.getMeasuredWidth() + AndroidUtilities.dp(11.0f), (x90Var.getMeasuredHeight() / 2) + i16);
         float f7 = this.e.d;
-        ci.i3 i3Var = this.f;
+        ci.h3 h3Var = this.f;
         if (f7 > 0.0f) {
-            i3Var.layout((i14 - AndroidUtilities.dp(11.0f)) - i3Var.getMeasuredWidth(), i16 - (i3Var.getMeasuredHeight() / 2), i14 - AndroidUtilities.dp(11.0f), (i3Var.getMeasuredHeight() / 2) + i16);
+            h3Var.layout((i14 - AndroidUtilities.dp(11.0f)) - h3Var.getMeasuredWidth(), i16 - (h3Var.getMeasuredHeight() / 2), i14 - AndroidUtilities.dp(11.0f), (h3Var.getMeasuredHeight() / 2) + i16);
         } else {
-            i3Var.layout(AndroidUtilities.dp(4.66f) + x90Var.getMeasuredWidth() + AndroidUtilities.dp(11.0f), i16 - (i3Var.getMeasuredHeight() / 2), i3Var.getMeasuredWidth() + AndroidUtilities.dp(4.66f) + x90Var.getMeasuredWidth() + AndroidUtilities.dp(11.0f), (i3Var.getMeasuredHeight() / 2) + i16);
+            h3Var.layout(AndroidUtilities.dp(4.66f) + x90Var.getMeasuredWidth() + AndroidUtilities.dp(11.0f), i16 - (h3Var.getMeasuredHeight() / 2), h3Var.getMeasuredWidth() + AndroidUtilities.dp(4.66f) + x90Var.getMeasuredWidth() + AndroidUtilities.dp(11.0f), (h3Var.getMeasuredHeight() / 2) + i16);
         }
-        if (this.v != 0 && i3Var.getLeft() != this.v) {
-            i3Var.setTranslationX((-i3Var.getLeft()) + this.v);
-            i3Var.animate().translationX(0.0f).setDuration(320L).setInterpolator(bs.h).start();
+        if (this.v != 0 && h3Var.getLeft() != this.v) {
+            h3Var.setTranslationX((-h3Var.getLeft()) + this.v);
+            h3Var.animate().translationX(0.0f).setDuration(320L).setInterpolator(bs.h).start();
         }
-        this.v = i3Var.getLeft();
+        this.v = h3Var.getLeft();
     }
 
     @Override // android.widget.FrameLayout, android.view.View

@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class z2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.m9 {
     public static final /* synthetic */ int V = 0;
@@ -91,8 +91,8 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
         this.f = frameLayout;
         o4Var.addView(textureView, w7.z5.e(-1, -2, 1));
         frameLayout.addView(o4Var, w7.z5.e(-1, -1, 17));
-        addView(frameLayout, w7.z5.d(-2.0f, -1));
-        addView(f1Var, w7.z5.d(-2.0f, -1));
+        addView(frameLayout, w7.z5.c(-2.0f, -1));
+        addView(f1Var, w7.z5.c(-2.0f, -1));
     }
 
     private int getIconForCurrentState() {
@@ -436,7 +436,7 @@ public final class z2 extends FrameLayout implements DownloadController.FileDown
                     } else {
                         i15 = AndroidUtilities.dp(18.0f) + AndroidUtilities.dp(i20 * 14);
                         this.x = i15;
-                        i14 = org.telegram.messenger.kk.y(18.0f, i15, i12);
+                        i14 = org.telegram.messenger.lk.y(18.0f, i15, i12);
                         dp = i14;
                     }
                     TLRPC.Document document = this.O;

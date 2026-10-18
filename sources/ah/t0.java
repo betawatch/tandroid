@@ -20,7 +20,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.bs;
@@ -37,7 +37,7 @@ import org.telegram.ui.t41;
 import org.telegram.ui.w41;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class t0 {
     public final int[] A;
@@ -113,13 +113,13 @@ public final class t0 {
                 m41Var.invalidate();
             }
         }
-        n0Var.setOnLongPressedListener(new ya.c(cl0Var, r11));
+        n0Var.setOnLongPressedListener(new ya.d(cl0Var, r11));
         n0Var.setOnRecentClearedListener(new sb.a(i12));
         n0Var.setRecentReactions(arrayList);
         n0Var.setSelectedReactions((HashSet<i1>) hashSet);
         n0Var.setDrawBackground(false);
         n0Var.s(null);
-        s0Var.addView(n0Var, z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 0));
+        s0Var.addView(n0Var, z5.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
         r11 = i10 != 5 ? 16 : 2;
         if (i10 == 5) {
             s0Var.setClipChildren(false);
@@ -128,9 +128,9 @@ public final class t0 {
             vVar.setClipToPadding(false);
         }
         float f7 = r11;
-        vVar.addView(s0Var, z5.a(-1.0f, f7, f7, f7, 16.0f, -1, i10 == 5 ? 85 : 48));
+        vVar.addView(s0Var, z5.d(-1, -1.0f, i10 == 5 ? 85 : 48, f7, f7, f7, 16.0f));
         vVar.setClipChildren(false);
-        if (i10 == 1 || (cl0Var.getDelegate() != null && cl0Var.getDelegate().r())) {
+        if (i10 == 1 || (cl0Var.getDelegate() != null && cl0Var.getDelegate().s())) {
             n0Var.setBackgroundDelegate(new h0(i11, this, cl0Var));
         }
         if (z12) {
@@ -374,7 +374,7 @@ public final class t0 {
             this.x.setInterpolator(bs.h);
         } else if (this.w) {
             this.x.setDuration(450L);
-            kk.l(0.5f, this.x);
+            lk.l(0.5f, this.x);
         } else {
             this.x.setDuration(350L);
             this.x.setInterpolator(bs.f);

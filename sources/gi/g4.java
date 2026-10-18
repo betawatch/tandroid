@@ -19,7 +19,7 @@ import org.telegram.ui.p6;
 import org.telegram.ui.yh1;
 import org.telegram.ui.yq0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new cb((TLRPC.UserFull) obj, (org.telegram.ui.web.r) this.c, this.b, (TLRPC.User) this.d, 3));
+                AndroidUtilities.runOnUIThread(new cb((TLRPC.UserFull) obj, (org.telegram.ui.web.s) this.c, this.b, (TLRPC.User) this.d, 3));
                 break;
             case 1:
                 org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
@@ -67,16 +67,16 @@ public final /* synthetic */ class g4 implements Utilities.Callback {
                 Utilities.themeQueue.postRunnable(new yh1((rg.m2) this.c, this.b, (List) obj, new ArrayList(), (yq0) this.d, 1));
                 break;
             default:
-                yh.q2 q2Var = (yh.q2) this.c;
+                yh.p2 p2Var = (yh.p2) this.c;
                 int i12 = this.b;
-                yh.m2 m2Var = (yh.m2) this.d;
+                yh.l2 l2Var = (yh.l2) this.d;
                 ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.ActionBar.n2 n2Var2 = q2Var.a;
-                v9 v9Var = q2Var.e;
+                org.telegram.ui.ActionBar.n2 n2Var2 = p2Var.a;
+                v9 v9Var = p2Var.e;
                 v9Var.a(i12, arrayList);
-                m2Var.f(true);
-                q2Var.f(true);
-                q2Var.n();
+                l2Var.f(true);
+                p2Var.f(true);
+                p2Var.n();
                 TL_stars.TL_starGiftCollection c10 = v9Var.c(i12);
                 if (c10 != null) {
                     if (arrayList.size() <= 1) {

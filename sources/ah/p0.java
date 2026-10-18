@@ -8,10 +8,10 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import ci.aa;
-import ci.n2;
-import ci.p1;
-import ci.q4;
+import ci.m2;
+import ci.o1;
+import ci.p4;
+import ci.z9;
 import ei.f6;
 import ei.i9;
 import ei.l4;
@@ -36,7 +36,7 @@ import org.telegram.ui.ra;
 import org.telegram.ui.sn;
 import org.telegram.ui.x4;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class p0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -133,35 +133,35 @@ public final class p0 extends AnimatorListenerAdapter {
                 rVar.b();
                 break;
             case 2:
-                n2 n2Var = (n2) this.c;
-                u1 u1Var = n2Var.c;
+                m2 m2Var = (m2) this.c;
+                u1 u1Var = m2Var.c;
                 boolean z11 = this.b;
                 u1Var.setAlpha(z11 ? 0.0f : 1.0f);
-                n2Var.a.setAlpha(z11 ? 0.0f : 0.5f);
-                n2Var.invalidate();
+                m2Var.a.setAlpha(z11 ? 0.0f : 0.5f);
+                m2Var.invalidate();
                 break;
             case 3:
-                p1 p1Var = (p1) this.c;
-                p1Var.b.removeViewImmediate(p1Var.d);
-                p1Var.f.b();
-                if (this.b && (h1Var = p1Var.v) != null && h1Var != ci.h1.W) {
+                o1 o1Var = (o1) this.c;
+                o1Var.b.removeViewImmediate(o1Var.d);
+                o1Var.f.b();
+                if (this.b && (h1Var = o1Var.v) != null && h1Var != ci.h1.W) {
                     h1Var.e();
                 }
-                p1Var.v = null;
-                p1Var.s = true;
-                p1Var.G = null;
-                p1Var.E = false;
+                o1Var.v = null;
+                o1Var.s = true;
+                o1Var.G = null;
+                o1Var.E = false;
                 break;
             case 4:
-                aa aaVar = (aa) this.c;
-                aaVar.J0.unlock();
-                aaVar.e0 = this.b ? aaVar.w.c : 0.0f;
-                q4 currentPeerView = aaVar.n0.getCurrentPeerView();
+                z9 z9Var = (z9) this.c;
+                z9Var.J0.unlock();
+                z9Var.e0 = this.b ? z9Var.w.c : 0.0f;
+                p4 currentPeerView = z9Var.n0.getCurrentPeerView();
                 if (currentPeerView != null) {
                     currentPeerView.invalidate();
                 }
-                aaVar.v.invalidate();
-                aaVar.v1 = null;
+                z9Var.v.invalidate();
+                z9Var.v1 = null;
                 break;
             case 5:
                 di.v vVar = (di.v) this.c;

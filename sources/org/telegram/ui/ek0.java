@@ -15,7 +15,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ek0 implements Runnable {
     public final /* synthetic */ int a;
@@ -161,18 +161,18 @@ public final /* synthetic */ class ek0 implements Runnable {
                     TL_stars.StarGift starGift = (TL_stars.StarGift) ep0Var.M.get(1);
                     ep0Var.K = starGift;
                     if (starGift == null) {
-                        yh.t3 t3Var = ep0Var.J;
-                        if (t3Var != null) {
-                            t3Var.f();
+                        yh.s3 s3Var = ep0Var.J;
+                        if (s3Var != null) {
+                            s3Var.f();
                             ep0Var.J = null;
                         }
                     } else {
-                        yh.t3 t3Var2 = ep0Var.J;
-                        if (t3Var2 == null || t3Var2.b != starGift.id) {
+                        yh.s3 s3Var2 = ep0Var.J;
+                        if (s3Var2 == null || s3Var2.b != starGift.id) {
                             i11 = ((org.telegram.ui.ActionBar.n2) kp0Var).currentAccount;
-                            yh.t3 t3Var3 = new yh.t3(ep0Var.K.id, i11, new v3(cp0Var, i13));
-                            ep0Var.J = t3Var3;
-                            t3Var3.g(false);
+                            yh.s3 s3Var3 = new yh.s3(ep0Var.K.id, i11, new v3(cp0Var, i13));
+                            ep0Var.J = s3Var3;
+                            s3Var3.g(false);
                         }
                     }
                     ep0.a(ep0Var);
@@ -279,7 +279,7 @@ public final /* synthetic */ class ek0 implements Runnable {
                 premiumPreviewFragment.showDialog(new v21(premiumPreviewFragment.getParentActivity(), false, premiumPreviewFragment.getResourceProvider(), null));
                 break;
             case 25:
-                ((org.telegram.messenger.ek) obj).run(0);
+                ((org.telegram.messenger.fk) obj).run(0);
                 break;
             case 26:
                 AndroidUtilities.addToClipboard((String) obj);

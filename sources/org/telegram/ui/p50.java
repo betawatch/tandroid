@@ -25,7 +25,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class p50 extends FrameLayout {
     public int E;
@@ -73,7 +73,7 @@ public final class p50 extends FrameLayout {
         xj0Var.setScaleType(ImageView.ScaleType.CENTER);
         xj0Var.setAnimation(uj0Var);
         xj0Var.setTag(this.r == 0.0d ? 1 : null);
-        addView(xj0Var, w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(xj0Var, w7.z5.d(-2, 40.0f, (LocaleController.isRTL ? 5 : 3) | 16, 0.0f, 0.0f, 0.0f, 0.0f));
         uj0Var.P(this.r == 0.0d ? 17 : 34);
         uj0Var.N(uj0Var.f - 1, false, true);
         TextView textView = new TextView(context);

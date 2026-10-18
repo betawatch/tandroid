@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
     public final org.telegram.ui.ActionBar.j5 a;
@@ -67,7 +67,7 @@ public final class y extends FrameLayout {
         View view = new View(context);
         this.e = view;
         view.setBackground(org.telegram.ui.ActionBar.h6.L0(false));
-        addView(view, w7.z5.d(-1.0f, -1));
+        addView(view, w7.z5.c(-1.0f, -1));
         setWillNotDraw(false);
     }
 

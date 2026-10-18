@@ -1,6 +1,5 @@
 package e1;
 
-import ai.o2;
 import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,7 +11,7 @@ import b2.t1;
 import b2.y0;
 import c3.g;
 import c3.u;
-import ci.e6;
+import ci.d6;
 import com.google.android.gms.tasks.OnSuccessListener;
 import e2.m0;
 import e2.o;
@@ -85,7 +84,7 @@ import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.yl0;
 import qg.u1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, yl0, Utilities.Callback5, u1, CameraController.VideoTakeCallback, g, o, w {
     public final /* synthetic */ int a;
@@ -245,7 +244,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                         f7.a(c10.b);
                         TLRPC.TL_messages_deleteQuickReplyShortcut tL_messages_deleteQuickReplyShortcut = new TLRPC.TL_messages_deleteQuickReplyShortcut();
                         tL_messages_deleteQuickReplyShortcut.shortcut_id = c10.a;
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new e6(6));
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_deleteQuickReplyShortcut, new d6(6));
                         if ("hello".equals(c10.b)) {
                             ConnectionsManager.getInstance(i12).sendRequest(new TL_account.updateBusinessGreetingMessage(), null);
                             TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
@@ -298,7 +297,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
             case 22:
             case 23:
             default:
-                ((j2.b) obj).b((u2.b0) this.b);
+                ((j2.b) obj).b((u2.c0) this.b);
                 break;
             case 24:
                 ((j2.b) obj).h((y0) this.b);
@@ -485,7 +484,7 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
                 } else if (i12 == -2) {
                     d2 d2Var = new d2(null);
                     d2Var.n = f1Var.r;
-                    d2Var.c = new o2(24, f1Var, view);
+                    d2Var.c = new ai.n2(24, f1Var, view);
                     f1Var.presentFragment(d2Var);
                     break;
                 } else if (f61Var2.a == 5 && i12 >= 0 && i12 < f1Var.h.length) {
@@ -711,9 +710,9 @@ public final /* synthetic */ class c implements OnSuccessListener, l1, a2, kl0, 
         }
     }
 
-    public /* synthetic */ c(j2.a aVar, u2.t tVar, u2.b0 b0Var, IOException iOException, boolean z10) {
+    public /* synthetic */ c(j2.a aVar, u2.u uVar, u2.c0 c0Var, IOException iOException, boolean z10) {
         this.a = 27;
-        this.b = b0Var;
+        this.b = c0Var;
     }
 
     public /* synthetic */ c(Object obj, int i10) {

@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iy implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -49,13 +49,13 @@ public final /* synthetic */ class iy implements View.OnClickListener {
                 }
                 break;
             case 1:
-                sg.p0 p0Var = jyVar.h;
+                sg.q0 q0Var = jyVar.h;
                 TextView textView = jyVar.f;
                 TextView textView2 = jyVar.e;
                 if (textView2 == null || textView2.getVisibility() != 0 || !textView2.isEnabled()) {
                     if (textView == null || textView.getVisibility() != 0 || !textView.isEnabled()) {
-                        if (p0Var != null && p0Var.getVisibility() == 0 && p0Var.r.isEnabled()) {
-                            p0Var.performClick();
+                        if (q0Var != null && q0Var.getVisibility() == 0 && q0Var.r.isEnabled()) {
+                            q0Var.performClick();
                             break;
                         }
                     } else {

@@ -42,18 +42,18 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.am0;
 import org.telegram.ui.bm0;
 import org.telegram.ui.df;
+import org.telegram.ui.dg0;
 import org.telegram.ui.eg0;
 import org.telegram.ui.en;
-import org.telegram.ui.fg0;
 import org.telegram.ui.go0;
 import org.telegram.ui.mm0;
-import org.telegram.ui.of0;
+import org.telegram.ui.nf0;
 import org.telegram.ui.sn;
 import org.telegram.ui.st;
 import org.telegram.ui.xm0;
 import org.telegram.ui.z40;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u7 implements Runnable {
     public final /* synthetic */ int a;
@@ -204,19 +204,19 @@ public final /* synthetic */ class u7 implements Runnable {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj5;
                 TLObject tLObject2 = (TLObject) obj4;
                 TLObject tLObject3 = (TLObject) obj2;
-                t3 t3Var = (t3) obj;
+                v3 v3Var = (v3) obj;
                 String str2 = (String) obj3;
                 pf.c cVar = (pf.c) obj6;
                 if (tL_error2 != null && "USERNAME_PURCHASE_AVAILABLE".equals(tL_error2.text)) {
                     z10 = true;
                 }
                 if (tLObject2 != null || (tL_error2 == null && (tLObject3 instanceof TLRPC.TL_boolTrue))) {
-                    t3Var.run(tLObject2, Boolean.valueOf(z10));
+                    v3Var.run(tLObject2, Boolean.valueOf(z10));
                     break;
                 } else {
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                     tL_contacts_resolveUsername.username = str2;
-                    cVar.b = new df(snVar2, snVar2.getConnectionsManager().sendRequest(tL_contacts_resolveUsername, new g4(snVar2, cVar, t3Var, z10, 3)), i15);
+                    cVar.b = new df(snVar2, snVar2.getConnectionsManager().sendRequest(tL_contacts_resolveUsername, new f4(snVar2, cVar, v3Var, z10, 3)), i15);
                     cVar.d();
                     break;
                 }
@@ -261,19 +261,19 @@ public final /* synthetic */ class u7 implements Runnable {
                 Pattern pattern = LaunchActivity.C1;
                 ((org.telegram.ui.ActionBar.b2) obj5).dismiss();
                 if (tL_error4 == null) {
-                    fg0 fg0Var = new fg0();
-                    fg0Var.G = str3;
-                    fg0Var.H = bundle;
-                    fg0Var.I = (TLRPC.TL_auth_sentCode) tLObject5;
-                    fg0Var.F = 1;
-                    launchActivity.t0(fg0Var);
+                    eg0 eg0Var = new eg0();
+                    eg0Var.G = str3;
+                    eg0Var.H = bundle;
+                    eg0Var.I = (TLRPC.TL_auth_sentCode) tLObject5;
+                    eg0Var.F = 1;
+                    launchActivity.t0(eg0Var);
                     break;
                 } else {
                     org.telegram.ui.Components.f5.e0(launchActivity.O, tL_error4, launchActivity.O().getLastFragment(), sendconfirmphonecode, new Object[0]);
                     break;
                 }
             case 8:
-                of0 of0Var = (of0) obj7;
+                nf0 nf0Var = (nf0) obj7;
                 List<Purchase> list2 = (List) obj4;
                 String str4 = (String) obj3;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj2;
@@ -288,7 +288,7 @@ public final /* synthetic */ class u7 implements Runnable {
                             tL_dataJSON.data = purchase.a;
                             tL_inputStorePaymentAuthCode.restore = true;
                             tL_payments_assignPlayMarketTransaction.purpose = tL_inputStorePaymentAuthCode;
-                            of0Var.v.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new s9(of0Var, tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore2, i90Var, 9), 74);
+                            nf0Var.v.getConnectionsManager().sendRequest(tL_payments_assignPlayMarketTransaction, new s9(nf0Var, tL_inputStorePaymentAuthCode, purchase, tL_payments_canPurchaseStore2, i90Var, 9), 74);
                             break;
                         }
                     }
@@ -296,40 +296,40 @@ public final /* synthetic */ class u7 implements Runnable {
                 i90Var.run();
                 break;
             case 9:
-                eg0 eg0Var = (eg0) obj7;
+                dg0 dg0Var = (dg0) obj7;
                 TLRPC.TL_error tL_error5 = (TLRPC.TL_error) obj5;
                 TLObject tLObject6 = (TLObject) obj4;
                 Bundle bundle2 = (Bundle) obj2;
                 String str5 = (String) obj3;
                 m.g3 g3Var = (m.g3) obj;
                 TLObject tLObject7 = (TLObject) obj6;
-                fg0 fg0Var2 = eg0Var.V;
-                eg0Var.K = false;
+                eg0 eg0Var2 = dg0Var.V;
+                dg0Var.K = false;
                 if (tL_error5 != null) {
                     String str6 = tL_error5.text;
                     if (str6 != null) {
                         if (str6.contains("SESSION_PASSWORD_NEEDED")) {
                             TL_account.getPassword getpassword = new TL_account.getPassword();
-                            i12 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
-                            ConnectionsManager.getInstance(i12).sendRequest(getpassword, new z40(12, eg0Var, str5), 10);
+                            i12 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
+                            ConnectionsManager.getInstance(i12).sendRequest(getpassword, new z40(12, dg0Var, str5), 10);
                         } else if (tL_error5.text.contains("PHONE_NUMBER_INVALID")) {
-                            fg0.m1(fg0Var2, str5, g3Var, false);
+                            eg0.m1(eg0Var2, str5, g3Var, false);
                         } else if (tL_error5.text.contains("PHONE_PASSWORD_FLOOD")) {
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                         } else if (tL_error5.text.contains("PHONE_NUMBER_FLOOD")) {
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", R.string.PhoneNumberFlood));
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("PhoneNumberFlood", R.string.PhoneNumberFlood));
                         } else if (tL_error5.text.contains("PHONE_NUMBER_BANNED")) {
-                            fg0.m1(fg0Var2, str5, g3Var, true);
+                            eg0.m1(eg0Var2, str5, g3Var, true);
                         } else if (tL_error5.text.contains("PHONE_CODE_EMPTY") || tL_error5.text.contains("PHONE_CODE_INVALID")) {
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString(R.string.InvalidCode));
                         } else if (tL_error5.text.contains("PHONE_CODE_EXPIRED")) {
-                            fg0Var2.u1(0, true, null, true);
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                            eg0Var2.u1(0, true, null, true);
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                         } else if (tL_error5.text.startsWith("FLOOD_WAIT")) {
-                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
+                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                         } else if (tL_error5.code != -1000) {
-                            i11 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
-                            org.telegram.ui.Components.f5.e0(i11, tL_error5, fg0Var2, tLObject7, (String) g3Var.d);
+                            i11 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
+                            org.telegram.ui.Components.f5.e0(i11, tL_error5, eg0Var2, tLObject7, (String) g3Var.d);
                         }
                     }
                 } else if (tLObject6 instanceof TLRPC.TL_auth_sentCodeSuccess) {
@@ -337,17 +337,17 @@ public final /* synthetic */ class u7 implements Runnable {
                     if (auth_authorization instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
                         TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) auth_authorization).terms_of_service;
                         if (tL_help_termsOfService != null) {
-                            fg0Var2.p0 = tL_help_termsOfService;
+                            eg0Var2.p0 = tL_help_termsOfService;
                         }
-                        fg0Var2.u1(5, true, bundle2, false);
+                        eg0Var2.u1(5, true, bundle2, false);
                     } else {
-                        fg0Var2.o1((TLRPC.TL_auth_authorization) auth_authorization, false);
+                        eg0Var2.o1((TLRPC.TL_auth_authorization) auth_authorization, false);
                     }
                 } else {
-                    fg0Var2.g1(bundle2, (TLRPC.auth_SentCode) tLObject6, true);
+                    eg0Var2.g1(bundle2, (TLRPC.auth_SentCode) tLObject6, true);
                 }
-                if (!fg0Var2.o0) {
-                    fg0Var2.k1(false, true);
+                if (!eg0Var2.o0) {
+                    eg0Var2.k1(false, true);
                     break;
                 }
                 break;
@@ -391,7 +391,7 @@ public final /* synthetic */ class u7 implements Runnable {
                 org.telegram.ui.Wallet.x xVar = (org.telegram.ui.Wallet.x) obj6;
                 f2Var.getClass();
                 try {
-                    AndroidUtilities.runOnUIThread(new l3(f2Var, str8, bArr, xVar, tonconnectsession, org.telegram.ui.Wallet.f2.r(j0Var, tonconnectsession, str8, bArr, tonconnectnexteventid.event_id), 21));
+                    AndroidUtilities.runOnUIThread(new j3(f2Var, str8, bArr, xVar, tonconnectsession, org.telegram.ui.Wallet.f2.r(j0Var, tonconnectsession, str8, bArr, tonconnectnexteventid.event_id), 21));
                     break;
                 } catch (Exception e) {
                     xVar.run(org.telegram.ui.Wallet.f2.h("prepare disconnect", e));
@@ -434,7 +434,7 @@ public final /* synthetic */ class u7 implements Runnable {
                     return;
                 }
             case 14:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) obj7;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) obj7;
                 int[] iArr2 = (int[]) obj5;
                 File file = (File) obj4;
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) obj2;
@@ -482,7 +482,7 @@ public final /* synthetic */ class u7 implements Runnable {
                     if (str10 != null) {
                         m10.C0 = str10;
                     }
-                    if (!TextUtils.isEmpty(str11) && UserConfig.getInstance(a1Var.M).isPremium()) {
+                    if (!TextUtils.isEmpty(str11) && UserConfig.getInstance(b1Var.M).isPremium()) {
                         if (m10.T0 == null) {
                             m10.T0 = new ArrayList();
                         }
@@ -499,7 +499,7 @@ public final /* synthetic */ class u7 implements Runnable {
                         }
                         m10.T0.add(mediaEntity);
                     }
-                    ei.vb.D(a1Var.W, UserConfig.selectedAccount).T(null, m10);
+                    ei.vb.D(b1Var.W, UserConfig.selectedAccount).T(null, m10);
                     b2Var.c(500L);
                     break;
                 } else {
@@ -527,7 +527,7 @@ public final /* synthetic */ class u7 implements Runnable {
                         go0Var = tLObject9 instanceof TLRPC.PaymentReceipt ? new go0((TLRPC.PaymentReceipt) tLObject9) : null;
                     }
                     if (go0Var != null) {
-                        go0Var.Z0 = new org.telegram.ui.web.m(15, uVar2, uVar);
+                        go0Var.Z0 = new org.telegram.ui.web.n(15, uVar2, uVar);
                         LaunchActivity.R().showAsSheet(go0Var, new org.telegram.ui.ActionBar.l2());
                         break;
                     } else {
@@ -556,7 +556,7 @@ public final /* synthetic */ class u7 implements Runnable {
                         go0Var2 = tLObject10 instanceof TLRPC.PaymentReceipt ? new go0((TLRPC.PaymentReceipt) tLObject10) : null;
                     }
                     if (go0Var2 != null) {
-                        go0Var2.Z0 = new org.telegram.ui.web.m(16, callback3, callback2);
+                        go0Var2.Z0 = new org.telegram.ui.web.n(16, callback3, callback2);
                         LaunchActivity.R().showAsSheet(go0Var2, new org.telegram.ui.ActionBar.l2());
                         break;
                     } else {
@@ -611,13 +611,13 @@ public final /* synthetic */ class u7 implements Runnable {
         this.n = callback2;
     }
 
-    public /* synthetic */ u7(sn snVar, TLRPC.TL_error tL_error, TLObject tLObject, TLObject tLObject2, t3 t3Var, String str, pf.c cVar) {
+    public /* synthetic */ u7(sn snVar, TLRPC.TL_error tL_error, TLObject tLObject, TLObject tLObject2, v3 v3Var, String str, pf.c cVar) {
         this.a = 5;
         this.b = snVar;
         this.d = tL_error;
         this.e = tLObject;
         this.h = tLObject2;
-        this.n = t3Var;
+        this.n = v3Var;
         this.f = str;
         this.c = cVar;
     }

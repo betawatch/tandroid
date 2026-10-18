@@ -25,7 +25,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.te1;
 import si.s0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class h0 implements Runnable {
                 fVar.q(p5, 1016, new j2.c(p5, str, j11, j10, 17));
                 return;
             case 1:
-                k7.f0((k7) this.d, this.b, this.c, (Utilities.Callback) this.e);
+                k7.n0((k7) this.d, this.b, this.c, (Utilities.Callback) this.e);
                 return;
             case 2:
                 ((x0) this.d).n(this.b, (TLRPC.TL_textWithEntities) this.e, this.c);

@@ -23,9 +23,6 @@ import com.google.android.gms.internal.play_billing.u;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import j$.util.DesugarCollections;
-import java.io.BufferedInputStream;
-import java.io.DataInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -39,9 +36,9 @@ import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.mg;
 import v7.u6;
-import w7.m6;
+import w7.k6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, ne.k {
     public static l e;
@@ -57,16 +54,7 @@ public final class l implements OnSuccessListener, ne.k {
         this.c = arrayList2;
     }
 
-    public static float[] g(DataInputStream dataInputStream) {
-        int readInt = dataInputStream.readInt();
-        float[] fArr = new float[readInt];
-        for (int i10 = 0; i10 < readInt; i10++) {
-            fArr[i10] = dataInputStream.readFloat();
-        }
-        return fArr;
-    }
-
-    public static synchronized l k(Context context) {
+    public static synchronized l j(Context context) {
         l lVar;
         synchronized (l.class) {
             try {
@@ -159,7 +147,7 @@ public final class l implements OnSuccessListener, ne.k {
         ((mg) this.c).run();
     }
 
-    public void h() {
+    public void g() {
         HandlerThread handlerThread;
         synchronized (this.b) {
             try {
@@ -177,9 +165,9 @@ public final class l implements OnSuccessListener, ne.k {
         }
     }
 
-    public void i(int i10, boolean z10, boolean z11) {
+    public void h(int i10, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = m6.b(this.a, 1 << i10, z10);
+        int b10 = k6.b(this.a, 1 << i10, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
@@ -187,7 +175,7 @@ public final class l implements OnSuccessListener, ne.k {
         }
     }
 
-    public void j(Throwable th2) {
+    public void i(Throwable th2) {
         d0 d0Var = (d0) this.d;
         if (th2 instanceof TimeoutException) {
             d0Var.F(102, 28, g0.p);
@@ -199,7 +187,7 @@ public final class l implements OnSuccessListener, ne.k {
         ((Runnable) this.c).run();
     }
 
-    public synchronized Task l(k kVar) {
+    public synchronized Task k(k kVar) {
         try {
             if (Log.isLoggable("MessengerIpcClient", 3)) {
                 Log.d("MessengerIpcClient", "Queueing ".concat(kVar.toString()));
@@ -274,69 +262,6 @@ public final class l implements OnSuccessListener, ne.k {
         this.c = obj2;
         this.d = obj3;
         this.a = i10;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:27:0x008e A[Catch: all -> 0x005b, TRY_LEAVE, TryCatch #2 {all -> 0x005b, blocks: (B:5:0x0017, B:6:0x003b, B:8:0x003f, B:11:0x004a, B:13:0x005d, B:15:0x006c, B:18:0x0070, B:19:0x0074, B:21:0x007c, B:24:0x0080, B:25:0x0084, B:27:0x008e), top: B:4:0x0017, outer: #0 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public l(Context context, String str) {
-        float f7;
-        int i10;
-        int i11;
-        try {
-            DataInputStream dataInputStream = new DataInputStream(new BufferedInputStream(context.getAssets().open(str), 16384));
-            try {
-                float[] g10 = g(dataInputStream);
-                float[] g11 = g(dataInputStream);
-                float[] g12 = g(dataInputStream);
-                int readInt = dataInputStream.readInt();
-                this.a = readInt;
-                int i12 = readInt * 3;
-                this.b = new float[i12];
-                this.c = new float[readInt * 2];
-                this.d = new float[i12];
-                for (int i13 = 0; i13 < this.a; i13++) {
-                    int readInt2 = dataInputStream.readInt() * 3;
-                    for (int i14 = 0; i14 < 3; i14++) {
-                        ((float[]) this.d)[(i13 * 3) + i14] = g10[readInt2 + i14] * 1.0f;
-                    }
-                    int readInt3 = dataInputStream.readInt() * 2;
-                    float[] fArr = (float[]) this.c;
-                    int i15 = i13 * 2;
-                    float f10 = 0.0f;
-                    if (readInt3 >= 0 && readInt3 < g11.length) {
-                        f7 = g11[readInt3];
-                        fArr[i15] = f7;
-                        i10 = readInt3 + 1;
-                        int i16 = i15 + 1;
-                        if (i10 >= 0 && i10 < g11.length) {
-                            f10 = 1.0f - g11[i10];
-                        }
-                        fArr[i16] = f10;
-                        int readInt4 = dataInputStream.readInt() * 3;
-                        for (i11 = 0; i11 < 3; i11++) {
-                            ((float[]) this.b)[(i13 * 3) + i11] = g12[readInt4 + i11];
-                        }
-                    }
-                    f7 = 0.0f;
-                    fArr[i15] = f7;
-                    i10 = readInt3 + 1;
-                    int i162 = i15 + 1;
-                    if (i10 >= 0) {
-                        f10 = 1.0f - g11[i10];
-                    }
-                    fArr[i162] = f10;
-                    int readInt42 = dataInputStream.readInt() * 3;
-                    while (i11 < 3) {
-                    }
-                }
-                dataInputStream.close();
-            } finally {
-            }
-        } catch (IOException e7) {
-            e7.printStackTrace();
-        }
     }
 
     public l(int i10, String str, int i11, ArrayList arrayList, byte[] bArr) {

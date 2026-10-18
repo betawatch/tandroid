@@ -1,15 +1,15 @@
 package e9;
 
 import java.io.Serializable;
-import org.telegram.ui.lg0;
+import org.telegram.ui.kg0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class y extends v1 implements Serializable {
-    public final lg0 a;
+    public final kg0 a;
 
-    public y(lg0 lg0Var) {
-        this.a = lg0Var;
+    public y(kg0 kg0Var) {
+        this.a = kg0Var;
     }
 
     @Override // java.util.Comparator

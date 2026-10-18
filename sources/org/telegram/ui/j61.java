@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class j61 extends org.telegram.ui.Components.bb {
     public TLRPC.Chat X;
@@ -62,7 +62,7 @@ public final class j61 extends org.telegram.ui.Components.bb {
         imageView.setImageResource(R.drawable.smiles_inputsearch);
         int i10 = org.telegram.ui.ActionBar.h6.P5;
         imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i10), PorterDuff.Mode.SRC_IN));
-        frameLayout2.addView(imageView, w7.z5.a(24.0f, 11.0f, 0.0f, 0.0f, 0.0f, 24, 19));
+        frameLayout2.addView(imageView, w7.z5.d(24, 24.0f, 19, 11.0f, 0.0f, 0.0f, 0.0f));
         b61 b61Var = new b61(context);
         this.c0 = b61Var;
         b61Var.setTextColor(getThemedColor(org.telegram.ui.ActionBar.h6.R5));
@@ -82,11 +82,11 @@ public final class j61 extends org.telegram.ui.Components.bb {
         b61Var.addTextChangedListener(new c61(this));
         b61Var.setHint(LocaleController.getString(R.string.SearchMembers));
         frameLayout2.addView(b61Var, w7.z5.e(-1, -1, 119));
-        frameLayout.addView(frameLayout2, w7.z5.a(40.0f, 11.0f, 0.0f, 11.0f, 0.0f, -1, 23));
+        frameLayout.addView(frameLayout2, w7.z5.d(-1, 40.0f, 23, 11.0f, 0.0f, 11.0f, 0.0f));
         ViewGroup viewGroup = this.containerView;
         int max = Math.max(0, viewGroup.indexOfChild(this.e));
         float f7 = this.backgroundPaddingLeft / AndroidUtilities.density;
-        viewGroup.addView(frameLayout, max, w7.z5.a(64.0f, f7, 0.0f, f7, 0.0f, -1, 55));
+        viewGroup.addView(frameLayout, max, w7.z5.d(-1, 64.0f, 55, f7, 0.0f, f7, 0.0f));
         d61 d61Var = new d61(context);
         this.d0 = d61Var;
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
@@ -122,7 +122,7 @@ public final class j61 extends org.telegram.ui.Components.bb {
         V(false);
         ViewGroup viewGroup2 = this.containerView;
         float f10 = (this.backgroundPaddingLeft / AndroidUtilities.density) + 10.0f;
-        viewGroup2.addView(dVar, w7.z5.a(48.0f, f10, 10.0f, f10, 10.0f, -1, 87));
+        viewGroup2.addView(dVar, w7.z5.d(-1, 48.0f, 87, f10, 10.0f, f10, 10.0f));
         dVar.setOnClickListener(new i31(this, 2));
         org.telegram.ui.Components.s61 s61Var = this.i0;
         if (s61Var != null) {
@@ -347,7 +347,7 @@ public final class j61 extends org.telegram.ui.Components.bb {
                 if (U2 == null) {
                     return;
                 }
-                j61Var.showDialog(new sg.j0(5, j61Var.currentAccount, j61Var.j0, U2, null));
+                j61Var.showDialog(new sg.k0(5, j61Var.currentAccount, j61Var.j0, U2, null));
                 return;
             }
             org.telegram.ui.ActionBar.n2 U3 = LaunchActivity.U();
@@ -373,9 +373,9 @@ public final class j61 extends org.telegram.ui.Components.bb {
         textView.setTextSize(1, 16.0f);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         if (ChatObject.isChannelAndNotMegaGroup(j61Var.X)) {
-            org.telegram.messenger.kk.r(R.string.EditChannelAdminTransferAlertText, new Object[]{UserObject.getFirstName(user)}, textView);
+            org.telegram.messenger.lk.r(R.string.EditChannelAdminTransferAlertText, new Object[]{UserObject.getFirstName(user)}, textView);
         } else {
-            org.telegram.messenger.kk.r(R.string.EditAdminTransferAlertText, new Object[]{UserObject.getFirstName(user)}, textView);
+            org.telegram.messenger.lk.r(R.string.EditAdminTransferAlertText, new Object[]{UserObject.getFirstName(user)}, textView);
         }
         linearLayout.addView(textView, w7.z5.n(-1, -2));
         LinearLayout linearLayout2 = new LinearLayout(j61Var.j0);

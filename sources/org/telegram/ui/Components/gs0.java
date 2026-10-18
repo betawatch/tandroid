@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class gs0 extends pv0 {
     public final /* synthetic */ sv0 G;
@@ -23,8 +23,8 @@ public final class gs0 extends pv0 {
         }
         if (W != null) {
             ct0 ct0Var = W.w;
-            ci.a7 a7Var = this.s;
-            ct0Var.e(a7Var != null && (a7Var.k() || (sv0Var.j0() && this.s.g() > 0)), true);
+            ci.z6 z6Var = this.s;
+            ct0Var.e(z6Var != null && (z6Var.k() || (sv0Var.j0() && this.s.g() > 0)), true);
         }
     }
 }

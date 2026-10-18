@@ -35,7 +35,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.v30;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class k9 extends FrameLayout implements View.OnClickListener, NotificationCenter.NotificationCenterDelegate {
     public final x8 E;
@@ -118,7 +118,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         im0Var.setClipToPadding(false);
         im0Var.setTranslateSelector(true);
         d6Var5 = ((org.telegram.ui.ActionBar.f3) r9Var).resourcesProvider;
-        g9 g9Var = new g9(this, context, d6Var5, d9Var, new ci.e4(r9Var, 2));
+        g9 g9Var = new g9(this, context, d6Var5, d9Var, new ci.d4(r9Var, 2));
         this.n = g9Var;
         im0Var.setAdapter(g9Var);
         g9Var.h = im0Var;
@@ -127,7 +127,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         im0Var.setLayoutManager(b0Var);
         im0Var.setOnScrollListener(new e9(this, 0));
         im0Var.setOnItemClickListener(new ah.h0(12, this, context));
-        frameLayout.addView(im0Var, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(im0Var, w7.z5.c(-1.0f, -1));
         f9 f9Var = new f9(this);
         f9Var.n(350L);
         f9Var.o(bs.h);
@@ -166,7 +166,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         this.s = view;
         d6Var9 = ((org.telegram.ui.ActionBar.f3) r9Var).resourcesProvider;
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i12, d6Var9));
-        addView(view, w7.z5.a(500.0f, 0.0f, 0.0f, 0.0f, -500.0f, -1, 87));
+        addView(view, w7.z5.d(-1, 500.0f, 87, 0.0f, 0.0f, 0.0f, -500.0f));
         addView(i9Var, w7.z5.e(-1, -2, 87));
     }
 
@@ -416,7 +416,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
         dVar2.setEnabled(true);
         dVar2.g(LocaleController.getString(R.string.StoryPrivacyButtonSaveCloseFriends), z10, true);
         i10 = ((org.telegram.ui.ActionBar.f3) r9Var).currentAccount;
-        ci.i7 storiesController = MessagesController.getInstance(i10).getStoriesController();
+        ci.h7 storiesController = MessagesController.getInstance(i10).getStoriesController();
         if (!storiesController.O) {
             while (true) {
                 a0.h hVar = this.b;
@@ -1137,7 +1137,7 @@ public final class k9 extends FrameLayout implements View.OnClickListener, Notif
                             Iterator it3 = hashSet.iterator();
                             while (it3.hasNext()) {
                                 Iterator it4 = it3;
-                                ci.b7 b10 = r9Var.j1().B(j10, true).b(((Integer) it3.next()).intValue());
+                                ci.a7 b10 = r9Var.j1().B(j10, true).b(((Integer) it3.next()).intValue());
                                 if (b10 != null) {
                                     if (sb2.length() != 0) {
                                         sb2.append(", ");

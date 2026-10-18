@@ -2,7 +2,7 @@ package j2;
 
 import android.content.SharedPreferences;
 import android.widget.EditText;
-import ci.e6;
+import ci.d6;
 import e2.o;
 import e2.x;
 import java.util.List;
@@ -29,7 +29,7 @@ import org.telegram.ui.Components.sv0;
 import v7.u6;
 import z3.n;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements o, e1, g1, RequestDelegateTimestamp, a2, MessagesStorage.StringCallback, e2.j {
     public final /* synthetic */ int a;
@@ -105,7 +105,7 @@ public final /* synthetic */ class d implements o, e1, g1, RequestDelegateTimest
                     updateprofile.about = trim;
                     updateprofile.flags |= 4;
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.showBulletin, 2, Long.valueOf(j10));
-                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new e6(12), 2);
+                    ConnectionsManager.getInstance(i12).sendRequest(updateprofile, new d6(12), 2);
                 } else {
                     long j11 = -j10;
                     TLRPC.ChatFull chatFull = MessagesController.getInstance(i12).getChatFull(j11);

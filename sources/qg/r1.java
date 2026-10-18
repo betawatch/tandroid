@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.w31;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r1 {
     public e1 a;
@@ -85,7 +85,7 @@ public final class r1 {
         if (h1Var2 == null) {
             painting.getClass();
         } else if (painting.r != null) {
-            painting.f.f(new w31(painting, h1Var2, currentColor, 22));
+            painting.f.f(new w31(painting, h1Var2, currentColor, 23));
         }
         this.m.clear();
         this.n.clear();

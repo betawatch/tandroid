@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import ci.l4;
+import ci.k4;
 import ig.l0;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,13 +29,13 @@ import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xp;
-import qg.n;
 import s4.b1;
 import s4.o0;
+import u2.q0;
 import w7.z5;
 import yg.k;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class h extends pg.b {
     public final d6 d;
@@ -56,7 +56,7 @@ public final class h extends pg.b {
         this.d = d6Var;
         l0 l0Var = new l0(this, 24);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new uf.c(4, messagesStorage, l0Var));
+        messagesStorage.getStorageQueue().postRunnable(new q0(5, messagesStorage, l0Var));
     }
 
     @Override // org.telegram.ui.Components.hm0
@@ -157,7 +157,7 @@ public final class h extends pg.b {
                             return;
                         }
                         AndroidUtilities.removeFromParent(gVar.q);
-                        frameLayout.addView(gVar.q, z5.d(-2.0f, -1));
+                        frameLayout.addView(gVar.q, z5.c(-2.0f, -1));
                         return;
                     }
                     return;
@@ -174,10 +174,10 @@ public final class h extends pg.b {
                 u3Var.setText(Emoji.replaceWithRestrictedEmoji(gVar.g, u3Var.getTextView(), (Runnable) null));
                 if (!TextUtils.isEmpty(gVar.h)) {
                     CharSequence charSequence2 = gVar.h;
-                    n nVar = gVar.m;
+                    org.telegram.ui.web.c cVar = gVar.m;
                     t3 t3Var = u3Var.b;
                     t3Var.c(charSequence2, false, true);
-                    t3Var.setOnClickListener(nVar);
+                    t3Var.setOnClickListener(cVar);
                     t3Var.setVisibility(0);
                 }
             }
@@ -195,8 +195,8 @@ public final class h extends pg.b {
             w9 w9Var = kVar.c;
             w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
             w9Var.setImageDrawable(drawable);
-            l4 l4Var = kVar.d;
-            l4Var.k(charSequence3);
+            k4 k4Var = kVar.d;
+            k4Var.k(charSequence3);
             boolean[] zArr = kVar.s;
             zArr[0] = false;
             kVar.setSubtitle(charSequence4);
@@ -205,7 +205,7 @@ public final class h extends pg.b {
             if (xpVar != null) {
                 xpVar.setAlpha(1.0f);
             }
-            l4Var.i(null);
+            k4Var.i(null);
         } else {
             TLRPC.User user = gVar.c;
             if (user != null) {

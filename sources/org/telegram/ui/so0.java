@@ -9,37 +9,37 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class so0 extends FrameLayout {
     public long a;
     public TL_stars.starGiftAttributeBackdrop b;
     public TL_stars.starGiftAttributePattern c;
     public final FrameLayout d;
-    public final yh.e1 e;
+    public final yh.d1 e;
     public final org.telegram.ui.Components.w9 f;
-    public final yh.i1 h;
+    public final yh.h1 h;
     public TLRPC.Document n;
 
     public so0(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
-        yh.e1 e1Var = new yh.e1(frameLayout, d6Var, false);
-        this.e = e1Var;
-        frameLayout.setBackground(e1Var);
+        yh.d1 d1Var = new yh.d1(frameLayout, d6Var, false);
+        this.e = d1Var;
+        frameLayout.setBackground(d1Var);
         addView(frameLayout, w7.z5.e(-1, -1, 119));
         w7.b6.b(frameLayout, 0.025f, 1.25f);
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.f = w9Var;
-        frameLayout.addView(w9Var, w7.z5.a(80.0f, 0.0f, 12.0f, 0.0f, 12.0f, 80, 17));
+        frameLayout.addView(w9Var, w7.z5.d(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f));
         if (!z10) {
             this.h = null;
             return;
         }
-        yh.i1 i1Var = new yh.i1(context);
-        this.h = i1Var;
-        addView(i1Var, w7.z5.a(-2.0f, 0.0f, 2.0f, 1.0f, 0.0f, -2, 53));
+        yh.h1 h1Var = new yh.h1(context);
+        this.h = h1Var;
+        addView(h1Var, w7.z5.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
     }
 
     public final void a(int i10, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
@@ -50,9 +50,9 @@ public final class so0 extends FrameLayout {
         this.b = (TL_stars.starGiftAttributeBackdrop) ai.ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
         this.c = (TL_stars.starGiftAttributePattern) ai.ga.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
         TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.b;
-        yh.e1 e1Var = this.e;
-        e1Var.d(stargiftattributebackdrop);
-        e1Var.e(this.c);
+        yh.d1 d1Var = this.e;
+        d1Var.d(stargiftattributebackdrop);
+        d1Var.e(this.c);
     }
 
     public final void b(boolean z10, boolean z11) {

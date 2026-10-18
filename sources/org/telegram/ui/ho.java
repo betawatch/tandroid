@@ -14,7 +14,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ho extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -292,11 +292,11 @@ public final class ho extends AnimatorListenerAdapter {
             case 17:
                 org.telegram.ui.Components.le0 le0Var = (org.telegram.ui.Components.le0) this.c;
                 TextView textView = le0Var.w;
-                ci.i4 i4Var = le0Var.e;
+                ci.h4 h4Var = le0Var.e;
                 float f11 = this.b ? 1.0f : 0.0f;
-                i4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f11));
-                i4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f11));
-                i4Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, f11));
+                h4Var.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f11));
+                h4Var.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f11));
+                h4Var.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, f11));
                 textView.setScaleX(AndroidUtilities.lerp(1.0f, 0.9f, f11));
                 textView.setScaleY(AndroidUtilities.lerp(1.0f, 0.9f, f11));
                 textView.setAlpha(AndroidUtilities.lerp(1.0f, 0.0f, f11));

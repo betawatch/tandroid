@@ -1,66 +1,40 @@
 package yh;
 
+import ai.m6;
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.c61;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.xj0;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class n3 extends e61 {
-    public static final /* synthetic */ int a = 0;
+public final class n3 extends org.telegram.ui.ActionBar.e1 {
+    public final int L;
+    public long M;
+    public l3 N;
 
-    static {
-        e61.setup(new n3());
+    public n3(Context context, int i10, d6 d6Var) {
+        super(0, context, d6Var, false, false);
+        this.L = i10;
+        setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        c(h6.w0(h6.E8, d6Var), h6.w0(h6.F8, d6Var));
+        setIconColor(-1);
+        this.c.setTranslationX(AndroidUtilities.dp(2.0f));
+        this.c.setScaleX(1.2f);
+        this.c.setScaleY(1.2f);
+        a(2);
+        setBackground(null);
+        this.c.addOnAttachStateChangeListener(new m6(this, 14));
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
-        o3 o3Var = (o3) view;
-        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) f61Var.G;
-        int i10 = f61Var.z;
-        String str = (String) f61Var.l;
-        boolean z11 = f61Var.e;
-        xj0 xj0Var = o3Var.c;
-        m3 m3Var = o3Var.N;
-        if (m3Var == null || o3Var.M != stargiftattributemodel.document.id) {
-            o3Var.M = stargiftattributemodel.document.id;
-            if (m3Var != null) {
-                m3Var.o(xj0Var);
-            }
-            o3Var.N = new m3(3, o3Var.L, stargiftattributemodel.document);
+    @Override // org.telegram.ui.ActionBar.e1, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        if (View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = AndroidUtilities.dp(250.0f);
         }
-        if (xj0Var.isAttachedToWindow()) {
-            o3Var.N.a(xj0Var);
-        }
-        CharSequence charSequence = stargiftattributemodel.name;
-        if (!TextUtils.isEmpty(str)) {
-            charSequence = AndroidUtilities.highlightText(charSequence, str, o3Var.F);
-        }
-        if (i10 > 0) {
-            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
-            spannableStringBuilder.append((CharSequence) "  ");
-            int length = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) Integer.toString(i10));
-            spannableStringBuilder.setSpan(new c61(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
-            charSequence = spannableStringBuilder;
-        }
-        o3Var.g(charSequence, 0, o3Var.N);
-        o3Var.setChecked(z11);
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final View createView(Context context, im0 im0Var, int i10, int i11, d6 d6Var) {
-        return new o3(context, i10, d6Var);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i11);
     }
 }

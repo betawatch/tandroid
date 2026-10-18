@@ -10,7 +10,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v4 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                     f6 f6Var3 = f6Var;
                                     f6Var3.getClass();
                                     try {
-                                        ((rg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((rg.u2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -122,8 +122,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                     break;
                                 case 5:
                                     rg.j jVar6 = jVar;
-                                    if (jVar6 instanceof rg.o2) {
-                                        ((rg.o2) jVar6).r(true);
+                                    if (jVar6 instanceof rg.n2) {
+                                        ((rg.n2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.a2) {
                                         ((rg.a2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.b2) {
@@ -156,19 +156,19 @@ public final /* synthetic */ class v4 implements Runnable {
                                     rg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF P0 = f6Var9.P0(jVar7);
-                                        if (jVar7 instanceof rg.o2) {
-                                            rg.j o2Var = new rg.o2(f6Var9.getContext(), (rg.o2) jVar7, P0);
-                                            o2Var.setDelegate(f6Var9);
-                                            z5Var2.addView(o2Var);
+                                        if (jVar7 instanceof rg.n2) {
+                                            rg.j n2Var = new rg.n2(f6Var9.getContext(), (rg.n2) jVar7, P0);
+                                            n2Var.setDelegate(f6Var9);
+                                            z5Var2.addView(n2Var);
                                             f6Var9.f0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof rg.v2) {
-                                            rg.v2 v2Var = new rg.v2(f6Var9.getContext(), (rg.v2) jVar7, P0);
-                                            v2Var.setDelegate(f6Var9);
-                                            v2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            z5Var2.addView(v2Var, w7.z5.d(-2.0f, -2));
+                                            jVar2 = n2Var;
+                                        } else if (jVar7 instanceof rg.u2) {
+                                            rg.u2 u2Var = new rg.u2(f6Var9.getContext(), (rg.u2) jVar7, P0);
+                                            u2Var.setDelegate(f6Var9);
+                                            u2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            z5Var2.addView(u2Var, w7.z5.c(-2.0f, -2));
                                             f6Var9.f0();
-                                            jVar2 = v2Var;
+                                            jVar2 = u2Var;
                                         }
                                         f6Var9.A0(jVar2);
                                         f6Var9.C0(null, true);
@@ -185,7 +185,7 @@ public final /* synthetic */ class v4 implements Runnable {
                     });
                     linearLayout.addView(textView, w7.z5.n(-2, 44));
                 }
-                if (jVar instanceof rg.v2) {
+                if (jVar instanceof rg.u2) {
                     TextView textView2 = new TextView(f6Var.getContext());
                     textView2.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.E8, t5Var));
                     textView2.setGravity(16);
@@ -227,7 +227,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                         f6 f6Var3 = f6Var;
                                         f6Var3.getClass();
                                         try {
-                                            ((rg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                            ((rg.u2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                         } catch (Exception e) {
                                             FileLog.e(e);
                                         }
@@ -270,8 +270,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                         break;
                                     case 5:
                                         rg.j jVar6 = jVar;
-                                        if (jVar6 instanceof rg.o2) {
-                                            ((rg.o2) jVar6).r(true);
+                                        if (jVar6 instanceof rg.n2) {
+                                            ((rg.n2) jVar6).r(true);
                                         } else if (jVar6 instanceof rg.a2) {
                                             ((rg.a2) jVar6).r(true);
                                         } else if (jVar6 instanceof rg.b2) {
@@ -304,19 +304,19 @@ public final /* synthetic */ class v4 implements Runnable {
                                         rg.j jVar7 = jVar;
                                         if (jVar7 != null) {
                                             PointF P0 = f6Var9.P0(jVar7);
-                                            if (jVar7 instanceof rg.o2) {
-                                                rg.j o2Var = new rg.o2(f6Var9.getContext(), (rg.o2) jVar7, P0);
-                                                o2Var.setDelegate(f6Var9);
-                                                z5Var2.addView(o2Var);
+                                            if (jVar7 instanceof rg.n2) {
+                                                rg.j n2Var = new rg.n2(f6Var9.getContext(), (rg.n2) jVar7, P0);
+                                                n2Var.setDelegate(f6Var9);
+                                                z5Var2.addView(n2Var);
                                                 f6Var9.f0();
-                                                jVar2 = o2Var;
-                                            } else if (jVar7 instanceof rg.v2) {
-                                                rg.v2 v2Var = new rg.v2(f6Var9.getContext(), (rg.v2) jVar7, P0);
-                                                v2Var.setDelegate(f6Var9);
-                                                v2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                                z5Var2.addView(v2Var, w7.z5.d(-2.0f, -2));
+                                                jVar2 = n2Var;
+                                            } else if (jVar7 instanceof rg.u2) {
+                                                rg.u2 u2Var = new rg.u2(f6Var9.getContext(), (rg.u2) jVar7, P0);
+                                                u2Var.setDelegate(f6Var9);
+                                                u2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                                z5Var2.addView(u2Var, w7.z5.c(-2.0f, -2));
                                                 f6Var9.f0();
-                                                jVar2 = v2Var;
+                                                jVar2 = u2Var;
                                             }
                                             f6Var9.A0(jVar2);
                                             f6Var9.C0(null, true);
@@ -363,7 +363,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                         f6 f6Var3 = f6Var;
                                         f6Var3.getClass();
                                         try {
-                                            ((rg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                            ((rg.u2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                         } catch (Exception e) {
                                             FileLog.e(e);
                                         }
@@ -406,8 +406,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                         break;
                                     case 5:
                                         rg.j jVar6 = jVar;
-                                        if (jVar6 instanceof rg.o2) {
-                                            ((rg.o2) jVar6).r(true);
+                                        if (jVar6 instanceof rg.n2) {
+                                            ((rg.n2) jVar6).r(true);
                                         } else if (jVar6 instanceof rg.a2) {
                                             ((rg.a2) jVar6).r(true);
                                         } else if (jVar6 instanceof rg.b2) {
@@ -440,19 +440,19 @@ public final /* synthetic */ class v4 implements Runnable {
                                         rg.j jVar7 = jVar;
                                         if (jVar7 != null) {
                                             PointF P0 = f6Var9.P0(jVar7);
-                                            if (jVar7 instanceof rg.o2) {
-                                                rg.j o2Var = new rg.o2(f6Var9.getContext(), (rg.o2) jVar7, P0);
-                                                o2Var.setDelegate(f6Var9);
-                                                z5Var2.addView(o2Var);
+                                            if (jVar7 instanceof rg.n2) {
+                                                rg.j n2Var = new rg.n2(f6Var9.getContext(), (rg.n2) jVar7, P0);
+                                                n2Var.setDelegate(f6Var9);
+                                                z5Var2.addView(n2Var);
                                                 f6Var9.f0();
-                                                jVar2 = o2Var;
-                                            } else if (jVar7 instanceof rg.v2) {
-                                                rg.v2 v2Var = new rg.v2(f6Var9.getContext(), (rg.v2) jVar7, P0);
-                                                v2Var.setDelegate(f6Var9);
-                                                v2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                                z5Var2.addView(v2Var, w7.z5.d(-2.0f, -2));
+                                                jVar2 = n2Var;
+                                            } else if (jVar7 instanceof rg.u2) {
+                                                rg.u2 u2Var = new rg.u2(f6Var9.getContext(), (rg.u2) jVar7, P0);
+                                                u2Var.setDelegate(f6Var9);
+                                                u2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                                z5Var2.addView(u2Var, w7.z5.c(-2.0f, -2));
                                                 f6Var9.f0();
-                                                jVar2 = v2Var;
+                                                jVar2 = u2Var;
                                             }
                                             f6Var9.A0(jVar2);
                                             f6Var9.C0(null, true);
@@ -500,7 +500,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                     f6 f6Var3 = f6Var;
                                     f6Var3.getClass();
                                     try {
-                                        ((rg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((rg.u2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -543,8 +543,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                     break;
                                 case 5:
                                     rg.j jVar6 = jVar;
-                                    if (jVar6 instanceof rg.o2) {
-                                        ((rg.o2) jVar6).r(true);
+                                    if (jVar6 instanceof rg.n2) {
+                                        ((rg.n2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.a2) {
                                         ((rg.a2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.b2) {
@@ -577,19 +577,19 @@ public final /* synthetic */ class v4 implements Runnable {
                                     rg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF P0 = f6Var9.P0(jVar7);
-                                        if (jVar7 instanceof rg.o2) {
-                                            rg.j o2Var = new rg.o2(f6Var9.getContext(), (rg.o2) jVar7, P0);
-                                            o2Var.setDelegate(f6Var9);
-                                            z5Var2.addView(o2Var);
+                                        if (jVar7 instanceof rg.n2) {
+                                            rg.j n2Var = new rg.n2(f6Var9.getContext(), (rg.n2) jVar7, P0);
+                                            n2Var.setDelegate(f6Var9);
+                                            z5Var2.addView(n2Var);
                                             f6Var9.f0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof rg.v2) {
-                                            rg.v2 v2Var = new rg.v2(f6Var9.getContext(), (rg.v2) jVar7, P0);
-                                            v2Var.setDelegate(f6Var9);
-                                            v2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            z5Var2.addView(v2Var, w7.z5.d(-2.0f, -2));
+                                            jVar2 = n2Var;
+                                        } else if (jVar7 instanceof rg.u2) {
+                                            rg.u2 u2Var = new rg.u2(f6Var9.getContext(), (rg.u2) jVar7, P0);
+                                            u2Var.setDelegate(f6Var9);
+                                            u2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            z5Var2.addView(u2Var, w7.z5.c(-2.0f, -2));
                                             f6Var9.f0();
-                                            jVar2 = v2Var;
+                                            jVar2 = u2Var;
                                         }
                                         f6Var9.A0(jVar2);
                                         f6Var9.C0(null, true);
@@ -636,7 +636,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                     f6 f6Var3 = f6Var;
                                     f6Var3.getClass();
                                     try {
-                                        ((rg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((rg.u2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -679,8 +679,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                     break;
                                 case 5:
                                     rg.j jVar6 = jVar;
-                                    if (jVar6 instanceof rg.o2) {
-                                        ((rg.o2) jVar6).r(true);
+                                    if (jVar6 instanceof rg.n2) {
+                                        ((rg.n2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.a2) {
                                         ((rg.a2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.b2) {
@@ -713,19 +713,19 @@ public final /* synthetic */ class v4 implements Runnable {
                                     rg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF P0 = f6Var9.P0(jVar7);
-                                        if (jVar7 instanceof rg.o2) {
-                                            rg.j o2Var = new rg.o2(f6Var9.getContext(), (rg.o2) jVar7, P0);
-                                            o2Var.setDelegate(f6Var9);
-                                            z5Var2.addView(o2Var);
+                                        if (jVar7 instanceof rg.n2) {
+                                            rg.j n2Var = new rg.n2(f6Var9.getContext(), (rg.n2) jVar7, P0);
+                                            n2Var.setDelegate(f6Var9);
+                                            z5Var2.addView(n2Var);
                                             f6Var9.f0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof rg.v2) {
-                                            rg.v2 v2Var = new rg.v2(f6Var9.getContext(), (rg.v2) jVar7, P0);
-                                            v2Var.setDelegate(f6Var9);
-                                            v2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            z5Var2.addView(v2Var, w7.z5.d(-2.0f, -2));
+                                            jVar2 = n2Var;
+                                        } else if (jVar7 instanceof rg.u2) {
+                                            rg.u2 u2Var = new rg.u2(f6Var9.getContext(), (rg.u2) jVar7, P0);
+                                            u2Var.setDelegate(f6Var9);
+                                            u2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            z5Var2.addView(u2Var, w7.z5.c(-2.0f, -2));
                                             f6Var9.f0();
-                                            jVar2 = v2Var;
+                                            jVar2 = u2Var;
                                         }
                                         f6Var9.A0(jVar2);
                                         f6Var9.C0(null, true);
@@ -742,7 +742,7 @@ public final /* synthetic */ class v4 implements Runnable {
                     });
                     linearLayout.addView(g03, w7.z5.n(-2, 44));
                 }
-                if ((jVar instanceof rg.o2) || (jVar instanceof rg.b2) || (jVar instanceof rg.x1) || (jVar instanceof rg.a2)) {
+                if ((jVar instanceof rg.n2) || (jVar instanceof rg.b2) || (jVar instanceof rg.x1) || (jVar instanceof rg.a2)) {
                     TextView g04 = f6Var.g0(4, LocaleController.getString(R.string.Flip));
                     final int i15 = 5;
                     g04.setOnClickListener(new View.OnClickListener() { // from class: ei.a5
@@ -773,7 +773,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                     f6 f6Var3 = f6Var;
                                     f6Var3.getClass();
                                     try {
-                                        ((rg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((rg.u2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -816,8 +816,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                     break;
                                 case 5:
                                     rg.j jVar6 = jVar;
-                                    if (jVar6 instanceof rg.o2) {
-                                        ((rg.o2) jVar6).r(true);
+                                    if (jVar6 instanceof rg.n2) {
+                                        ((rg.n2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.a2) {
                                         ((rg.a2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.b2) {
@@ -850,19 +850,19 @@ public final /* synthetic */ class v4 implements Runnable {
                                     rg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF P0 = f6Var9.P0(jVar7);
-                                        if (jVar7 instanceof rg.o2) {
-                                            rg.j o2Var = new rg.o2(f6Var9.getContext(), (rg.o2) jVar7, P0);
-                                            o2Var.setDelegate(f6Var9);
-                                            z5Var2.addView(o2Var);
+                                        if (jVar7 instanceof rg.n2) {
+                                            rg.j n2Var = new rg.n2(f6Var9.getContext(), (rg.n2) jVar7, P0);
+                                            n2Var.setDelegate(f6Var9);
+                                            z5Var2.addView(n2Var);
                                             f6Var9.f0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof rg.v2) {
-                                            rg.v2 v2Var = new rg.v2(f6Var9.getContext(), (rg.v2) jVar7, P0);
-                                            v2Var.setDelegate(f6Var9);
-                                            v2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            z5Var2.addView(v2Var, w7.z5.d(-2.0f, -2));
+                                            jVar2 = n2Var;
+                                        } else if (jVar7 instanceof rg.u2) {
+                                            rg.u2 u2Var = new rg.u2(f6Var9.getContext(), (rg.u2) jVar7, P0);
+                                            u2Var.setDelegate(f6Var9);
+                                            u2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            z5Var2.addView(u2Var, w7.z5.c(-2.0f, -2));
                                             f6Var9.f0();
-                                            jVar2 = v2Var;
+                                            jVar2 = u2Var;
                                         }
                                         f6Var9.A0(jVar2);
                                         f6Var9.C0(null, true);
@@ -921,7 +921,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                     f6 f6Var3 = f6Var;
                                     f6Var3.getClass();
                                     try {
-                                        ((rg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((rg.u2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -964,8 +964,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                     break;
                                 case 5:
                                     rg.j jVar6 = jVar;
-                                    if (jVar6 instanceof rg.o2) {
-                                        ((rg.o2) jVar6).r(true);
+                                    if (jVar6 instanceof rg.n2) {
+                                        ((rg.n2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.a2) {
                                         ((rg.a2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.b2) {
@@ -998,19 +998,19 @@ public final /* synthetic */ class v4 implements Runnable {
                                     rg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF P0 = f6Var9.P0(jVar7);
-                                        if (jVar7 instanceof rg.o2) {
-                                            rg.j o2Var = new rg.o2(f6Var9.getContext(), (rg.o2) jVar7, P0);
-                                            o2Var.setDelegate(f6Var9);
-                                            z5Var2.addView(o2Var);
+                                        if (jVar7 instanceof rg.n2) {
+                                            rg.j n2Var = new rg.n2(f6Var9.getContext(), (rg.n2) jVar7, P0);
+                                            n2Var.setDelegate(f6Var9);
+                                            z5Var2.addView(n2Var);
                                             f6Var9.f0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof rg.v2) {
-                                            rg.v2 v2Var = new rg.v2(f6Var9.getContext(), (rg.v2) jVar7, P0);
-                                            v2Var.setDelegate(f6Var9);
-                                            v2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            z5Var2.addView(v2Var, w7.z5.d(-2.0f, -2));
+                                            jVar2 = n2Var;
+                                        } else if (jVar7 instanceof rg.u2) {
+                                            rg.u2 u2Var = new rg.u2(f6Var9.getContext(), (rg.u2) jVar7, P0);
+                                            u2Var.setDelegate(f6Var9);
+                                            u2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            z5Var2.addView(u2Var, w7.z5.c(-2.0f, -2));
                                             f6Var9.f0();
-                                            jVar2 = v2Var;
+                                            jVar2 = u2Var;
                                         }
                                         f6Var9.A0(jVar2);
                                         f6Var9.C0(null, true);
@@ -1026,7 +1026,7 @@ public final /* synthetic */ class v4 implements Runnable {
                         }
                     });
                     linearLayout.addView(textView3, w7.z5.n(-2, 44));
-                } else if (!z11 && !z10 && !(jVar instanceof rg.b2) && !(jVar instanceof rg.t0) && !(jVar instanceof rg.w2) && !(jVar instanceof rg.q0) && !(jVar instanceof rg.a2)) {
+                } else if (!z11 && !z10 && !(jVar instanceof rg.b2) && !(jVar instanceof rg.t0) && !(jVar instanceof rg.v2) && !(jVar instanceof rg.q0) && !(jVar instanceof rg.a2)) {
                     TextView textView4 = new TextView(f6Var.getContext());
                     textView4.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.E8, t5Var));
                     textView4.setLines(1);
@@ -1067,7 +1067,7 @@ public final /* synthetic */ class v4 implements Runnable {
                                     f6 f6Var3 = f6Var;
                                     f6Var3.getClass();
                                     try {
-                                        ((rg.v2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
+                                        ((rg.u2) jVar4).getEditText().onTextContextMenuItem(android.R.id.pasteAsPlainText);
                                     } catch (Exception e) {
                                         FileLog.e(e);
                                     }
@@ -1110,8 +1110,8 @@ public final /* synthetic */ class v4 implements Runnable {
                                     break;
                                 case 5:
                                     rg.j jVar6 = jVar;
-                                    if (jVar6 instanceof rg.o2) {
-                                        ((rg.o2) jVar6).r(true);
+                                    if (jVar6 instanceof rg.n2) {
+                                        ((rg.n2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.a2) {
                                         ((rg.a2) jVar6).r(true);
                                     } else if (jVar6 instanceof rg.b2) {
@@ -1144,19 +1144,19 @@ public final /* synthetic */ class v4 implements Runnable {
                                     rg.j jVar7 = jVar;
                                     if (jVar7 != null) {
                                         PointF P0 = f6Var9.P0(jVar7);
-                                        if (jVar7 instanceof rg.o2) {
-                                            rg.j o2Var = new rg.o2(f6Var9.getContext(), (rg.o2) jVar7, P0);
-                                            o2Var.setDelegate(f6Var9);
-                                            z5Var2.addView(o2Var);
+                                        if (jVar7 instanceof rg.n2) {
+                                            rg.j n2Var = new rg.n2(f6Var9.getContext(), (rg.n2) jVar7, P0);
+                                            n2Var.setDelegate(f6Var9);
+                                            z5Var2.addView(n2Var);
                                             f6Var9.f0();
-                                            jVar2 = o2Var;
-                                        } else if (jVar7 instanceof rg.v2) {
-                                            rg.v2 v2Var = new rg.v2(f6Var9.getContext(), (rg.v2) jVar7, P0);
-                                            v2Var.setDelegate(f6Var9);
-                                            v2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
-                                            z5Var2.addView(v2Var, w7.z5.d(-2.0f, -2));
+                                            jVar2 = n2Var;
+                                        } else if (jVar7 instanceof rg.u2) {
+                                            rg.u2 u2Var = new rg.u2(f6Var9.getContext(), (rg.u2) jVar7, P0);
+                                            u2Var.setDelegate(f6Var9);
+                                            u2Var.setMaxWidth(f6Var9.R1 - AndroidUtilities.dp(32.0f));
+                                            z5Var2.addView(u2Var, w7.z5.c(-2.0f, -2));
                                             f6Var9.f0();
-                                            jVar2 = v2Var;
+                                            jVar2 = u2Var;
                                         }
                                         f6Var9.A0(jVar2);
                                         f6Var9.C0(null, true);

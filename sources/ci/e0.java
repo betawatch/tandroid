@@ -46,7 +46,7 @@ import org.telegram.ui.et;
 import org.telegram.ui.ey;
 import org.telegram.ui.gt;
 import org.telegram.ui.mc1;
-import org.telegram.ui.of0;
+import org.telegram.ui.nf0;
 import org.telegram.ui.sk0;
 import org.telegram.ui.sn;
 import org.telegram.ui.t21;
@@ -55,7 +55,7 @@ import org.telegram.ui.tk;
 import org.telegram.ui.ua1;
 import org.telegram.ui.ut0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -105,23 +105,23 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                 f3Var.dismiss();
                 break;
             case 1:
-                q4 q4Var = (q4) this.b;
+                p4 p4Var = (p4) this.b;
                 org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.c;
-                aa aaVar = (aa) this.d;
+                z9 z9Var = (z9) this.d;
                 Context context = (Context) this.e;
-                n4 n4Var = (n4) this.f;
-                o4 o4Var = q4Var.O1;
-                ((r9) q4Var.Q1).g(true);
-                q4Var.s1 = null;
+                m4 m4Var = (m4) this.f;
+                n4 n4Var = p4Var.O1;
+                ((q9) p4Var.Q1).g(true);
+                p4Var.s1 = null;
                 boolean[] zArr = {false};
-                if (q4Var.C1) {
-                    i7 storiesController = MessagesController.getInstance(q4Var.C2).getStoriesController();
+                if (p4Var.C1) {
+                    h7 storiesController = MessagesController.getInstance(p4Var.C2).getStoriesController();
                     j10 = 0;
                     if (storiesController.Q == 0) {
                         storiesController.P();
                     }
-                    MessagesController.getInstance(q4Var.C2).getStoriesController().R();
-                    ei.a1 a1Var = MessagesController.getInstance(q4Var.C2).getStoriesController().w;
+                    MessagesController.getInstance(p4Var.C2).getStoriesController().R();
+                    ei.a1 a1Var = MessagesController.getInstance(p4Var.C2).getStoriesController().w;
                     if (!a1Var.c && !a1Var.d) {
                         a1Var.d = true;
                         ei.x0 x0Var = new ei.x0(a1Var, i11);
@@ -131,56 +131,56 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                 } else {
                     j10 = 0;
                 }
-                if (!q4Var.C1) {
-                    i7 storiesController2 = MessagesController.getInstance(q4Var.C2).getStoriesController();
-                    TL_stories.StoryItem storyItem = o4Var.a;
+                if (!p4Var.C1) {
+                    h7 storiesController2 = MessagesController.getInstance(p4Var.C2).getStoriesController();
+                    TL_stories.StoryItem storyItem = n4Var.a;
                     int i12 = storiesController2.a;
                     if (storyItem == null || storyItem.dialogId == UserConfig.getInstance(i12).getClientUserId() || ((storyItem.dialogId <= j10 || (user = MessagesController.getInstance(i12).getUser(Long.valueOf(storyItem.dialogId))) == null || !user.bot || !user.bot_can_edit) && (storyItem.dialogId >= j10 || (chat = MessagesController.getInstance(i12).getChat(Long.valueOf(-storyItem.dialogId))) == null || (!chat.creator && ((!(z11 = storyItem.out) || (tL_chatAdminRights2 = chat.admin_rights) == null || (!tL_chatAdminRights2.post_stories && !tL_chatAdminRights2.edit_stories)) && (z11 || (tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.edit_stories)))))) {
                         z10 = false;
-                        h4 h4Var = new h4(q4Var, q4Var.getContext(), d6Var, d6Var, aaVar, o4Var.e, !q4Var.C1 || ((q4Var.D1 || q4Var.I0()) && z10), z10, context, n4Var, zArr);
-                        q4Var.t1 = h4Var;
-                        ImageView imageView = q4Var.w0;
+                        g4 g4Var = new g4(p4Var, p4Var.getContext(), d6Var, d6Var, z9Var, n4Var.e, !p4Var.C1 || ((p4Var.D1 || p4Var.I0()) && z10), z10, context, m4Var, zArr);
+                        p4Var.t1 = g4Var;
+                        ImageView imageView = p4Var.w0;
                         int dp = AndroidUtilities.dp(6.0f) + (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
-                        h4Var.b = true;
-                        h4Var.a.showAsDropDown(imageView, 0, dp);
+                        g4Var.b = true;
+                        g4Var.a.showAsDropDown(imageView, 0, dp);
                         break;
                     }
                 }
                 z10 = true;
-                h4 h4Var2 = new h4(q4Var, q4Var.getContext(), d6Var, d6Var, aaVar, o4Var.e, !q4Var.C1 || ((q4Var.D1 || q4Var.I0()) && z10), z10, context, n4Var, zArr);
-                q4Var.t1 = h4Var2;
-                ImageView imageView2 = q4Var.w0;
+                g4 g4Var2 = new g4(p4Var, p4Var.getContext(), d6Var, d6Var, z9Var, n4Var.e, !p4Var.C1 || ((p4Var.D1 || p4Var.I0()) && z10), z10, context, m4Var, zArr);
+                p4Var.t1 = g4Var2;
+                ImageView imageView2 = p4Var.w0;
                 int dp2 = AndroidUtilities.dp(6.0f) + (-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight());
-                h4Var2.b = true;
-                h4Var2.a.showAsDropDown(imageView2, 0, dp2);
+                g4Var2.b = true;
+                g4Var2.a.showAsDropDown(imageView2, 0, dp2);
                 break;
             case 2:
-                h4 h4Var3 = (h4) this.b;
+                g4 g4Var3 = (g4) this.b;
                 org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) this.c;
                 Context context2 = (Context) this.d;
-                aa aaVar2 = (aa) this.e;
-                n4 n4Var2 = (n4) this.f;
-                q4 q4Var2 = h4Var3.l;
+                z9 z9Var2 = (z9) this.e;
+                m4 m4Var2 = (m4) this.f;
+                p4 p4Var2 = g4Var3.l;
                 if (view.getAlpha() < 1.0f) {
-                    int i13 = -q4Var2.r1;
-                    q4Var2.r1 = i13;
+                    int i13 = -p4Var2.r1;
+                    p4Var2.r1 = i13;
                     AndroidUtilities.shakeViewSpring(view, i13);
-                    new xc(q4Var2.c1, d6Var2).t("Wait until current upload is complete", null).j();
+                    new xc(p4Var2.c1, d6Var2).t("Wait until current upload is complete", null).j();
                     break;
                 } else {
                     Activity findActivity = AndroidUtilities.findActivity(context2);
                     if (findActivity != null) {
-                        h4Var3.c = true;
-                        h4 h4Var4 = q4Var2.t1;
-                        if (h4Var4 != null) {
-                            h4Var4.a();
+                        g4Var3.c = true;
+                        g4 g4Var4 = p4Var2.t1;
+                        if (g4Var4 != null) {
+                            g4Var4.a();
                         }
-                        ai.y0 y0Var = new ai.y0(h4Var3, findActivity, aaVar2, n4Var2, 8);
-                        aa aaVar3 = ((r9) q4Var2.Q1).d;
-                        z9 z9Var = aaVar3.z0;
-                        if (z9Var != null) {
-                            z12 = z9Var.release(y0Var);
-                            aaVar3.z0 = null;
+                        ai.y0 y0Var = new ai.y0(g4Var3, findActivity, z9Var2, m4Var2, 8);
+                        z9 z9Var3 = ((q9) p4Var2.Q1).d;
+                        y9 y9Var = z9Var3.z0;
+                        if (y9Var != null) {
+                            z12 = y9Var.release(y0Var);
+                            z9Var3.z0 = null;
                         }
                         if (!z12) {
                             y0Var.run();
@@ -190,30 +190,30 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                 }
                 break;
             case 3:
-                h4 h4Var5 = (h4) this.b;
+                g4 g4Var5 = (g4) this.b;
                 Context context3 = (Context) this.c;
                 TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) this.d;
-                aa aaVar4 = (aa) this.e;
-                n4 n4Var3 = (n4) this.f;
-                q4 q4Var3 = h4Var5.l;
-                File h = q4Var3.O1.h();
+                z9 z9Var4 = (z9) this.e;
+                m4 m4Var3 = (m4) this.f;
+                p4 p4Var3 = g4Var5.l;
+                File h = p4Var3.O1.h();
                 if (h == null || !h.exists()) {
-                    q4Var3.a1();
+                    p4Var3.a1();
                     break;
                 } else {
                     Activity findActivity2 = AndroidUtilities.findActivity(context3);
                     if (findActivity2 != null) {
-                        h4Var5.c = true;
-                        h4 h4Var6 = q4Var3.t1;
-                        if (h4Var6 != null) {
-                            h4Var6.a();
+                        g4Var5.c = true;
+                        g4 g4Var6 = p4Var3.t1;
+                        if (g4Var6 != null) {
+                            g4Var6.a();
                         }
-                        ai.t0 t0Var = new ai.t0(h4Var5, findActivity2, storyItem2, aaVar4, n4Var3, 10);
-                        aa aaVar5 = ((r9) q4Var3.Q1).d;
-                        z9 z9Var2 = aaVar5.z0;
-                        if (z9Var2 != null) {
-                            z13 = z9Var2.release(t0Var);
-                            aaVar5.z0 = null;
+                        ai.t0 t0Var = new ai.t0(g4Var5, findActivity2, storyItem2, z9Var4, m4Var3, 10);
+                        z9 z9Var5 = ((q9) p4Var3.Q1).d;
+                        y9 y9Var2 = z9Var5.z0;
+                        if (y9Var2 != null) {
+                            z13 = y9Var2.release(t0Var);
+                            z9Var5.z0 = null;
                         }
                         if (!z13) {
                             t0Var.run();
@@ -490,17 +490,17 @@ public final /* synthetic */ class e0 implements View.OnClickListener {
                 }
                 break;
             case 14:
-                of0 of0Var = (of0) this.b;
+                nf0 nf0Var = (nf0) this.b;
                 c5.o oVar = (c5.o) this.c;
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) this.d;
                 String str7 = (String) this.e;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) this.f;
-                ei.d dVar2 = of0Var.b;
+                ei.d dVar2 = nf0Var.b;
                 if (!dVar2.N) {
                     dVar2.setLoading(true);
-                    org.telegram.ui.v3 v3Var = new org.telegram.ui.v3(of0Var, 10);
+                    org.telegram.ui.v3 v3Var = new org.telegram.ui.v3(nf0Var, 10);
                     FileLog.d("LoginBilling, querying done purchases...");
-                    BillingController.getInstance().queryPurchases("inapp", new ai.s7(of0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new i90(of0Var, oVar, v3Var, tL_inputStorePaymentAuthCode, 26)));
+                    BillingController.getInstance().queryPurchases("inapp", new ai.s7(nf0Var, str7, tL_inputStorePaymentAuthCode, tL_payments_canPurchaseStore, new i90(nf0Var, oVar, v3Var, tL_inputStorePaymentAuthCode, 26)));
                     break;
                 }
                 break;

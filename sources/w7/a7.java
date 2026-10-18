@@ -1,36 +1,91 @@
 package w7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class a7 {
-    public static void a(int i10, int i11) {
-        String a2;
-        if (i10 < 0 || i10 >= i11) {
-            if (i10 < 0) {
-                a2 = b7.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
-            } else {
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
+    public static void a(ArrayList arrayList) {
+        HashMap hashMap = new HashMap(arrayList.size());
+        int size = arrayList.size();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            r9.a aVar = (r9.a) obj;
+            r9.h hVar = new r9.h(aVar);
+            for (r9.r rVar : aVar.b) {
+                boolean z10 = aVar.e == 0;
+                r9.i iVar = new r9.i(rVar, !z10);
+                if (!hashMap.containsKey(iVar)) {
+                    hashMap.put(iVar, new HashSet());
                 }
-                a2 = b7.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
+                Set set = (Set) hashMap.get(iVar);
+                if (!set.isEmpty() && z10) {
+                    throw new IllegalArgumentException("Multiple components provide " + rVar + ".");
+                }
+                set.add(hVar);
             }
-            throw new IndexOutOfBoundsException(a2);
         }
-    }
-
-    public static void b(int i10, int i11, int i12) {
-        if (i10 < 0 || i11 < i10 || i11 > i12) {
-            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? c(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? c(i11, i12, "end index") : b7.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            for (r9.h hVar2 : (Set) it.next()) {
+                for (r9.j jVar : hVar2.a.c) {
+                    if (jVar.c == 0) {
+                        Set<r9.h> set2 = (Set) hashMap.get(new r9.i(jVar.a, jVar.b == 2));
+                        if (set2 != null) {
+                            for (r9.h hVar3 : set2) {
+                                hVar2.b.add(hVar3);
+                                hVar3.c.add(hVar2);
+                            }
+                        }
+                    }
+                }
+            }
         }
-    }
-
-    public static String c(int i10, int i11, String str) {
-        if (i10 < 0) {
-            return b7.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
+        HashSet hashSet = new HashSet();
+        Iterator it2 = hashMap.values().iterator();
+        while (it2.hasNext()) {
+            hashSet.addAll((Set) it2.next());
         }
-        if (i11 >= 0) {
-            return b7.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
+        HashSet hashSet2 = new HashSet();
+        Iterator it3 = hashSet.iterator();
+        while (it3.hasNext()) {
+            r9.h hVar4 = (r9.h) it3.next();
+            if (hVar4.c.isEmpty()) {
+                hashSet2.add(hVar4);
+            }
         }
-        throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
+        while (!hashSet2.isEmpty()) {
+            r9.h hVar5 = (r9.h) hashSet2.iterator().next();
+            hashSet2.remove(hVar5);
+            i10++;
+            Iterator it4 = hVar5.b.iterator();
+            while (it4.hasNext()) {
+                r9.h hVar6 = (r9.h) it4.next();
+                hVar6.c.remove(hVar5);
+                if (hVar6.c.isEmpty()) {
+                    hashSet2.add(hVar6);
+                }
+            }
+        }
+        if (i10 == arrayList.size()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it5 = hashSet.iterator();
+        while (it5.hasNext()) {
+            r9.h hVar7 = (r9.h) it5.next();
+            if (!hVar7.c.isEmpty() && !hVar7.b.isEmpty()) {
+                arrayList2.add(hVar7.a);
+            }
+        }
+        throw new r9.k("Dependency cycle detected: " + Arrays.toString(arrayList2.toArray()));
     }
 }

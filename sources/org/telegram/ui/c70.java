@@ -16,7 +16,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -208,15 +208,15 @@ public final class c70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         b10Var.setViewType(19);
         this.c.setIsSingleCell(true);
         this.c.setItemsCount((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.dpf2(58.0f)));
-        this.a.addView(this.c, w7.z5.d(-1.0f, -1));
+        this.a.addView(this.c, w7.z5.c(-1.0f, -1));
         org.telegram.ui.Components.rx0 rx0Var = new org.telegram.ui.Components.rx0(context, this.c, 1, null);
         this.b = rx0Var;
-        m.g3.i(rx0Var);
+        m.g3.r(rx0Var);
         this.a.addView(this.b);
         frameLayout.addView(this.a);
         this.a.setVisibility(8);
         this.d.setEmptyView(this.a);
-        frameLayout.addView(this.d, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.d, w7.z5.c(-1.0f, -1));
         this.d.setAdapter(this.e);
         this.d.setOnItemClickListener(new i(this, 14));
         this.d.setOnScrollListener(new k3(this, 15));

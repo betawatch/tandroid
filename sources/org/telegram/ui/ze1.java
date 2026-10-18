@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ze1 extends org.telegram.ui.ActionBar.n2 {
     public xe1 a;
@@ -27,7 +27,7 @@ public final class ze1 extends org.telegram.ui.ActionBar.n2 {
         tL_inputNotifyForumTopic.peer = ze1Var.getMessagesController().getInputPeer(ze1Var.c);
         tL_inputNotifyForumTopic.top_msg_id = i10;
         updatenotifysettings.peer = tL_inputNotifyForumTopic;
-        ze1Var.getConnectionsManager().sendRequest(updatenotifysettings, new ci.e6(8));
+        ze1Var.getConnectionsManager().sendRequest(updatenotifysettings, new ci.d6(8));
     }
 
     public final void V() {

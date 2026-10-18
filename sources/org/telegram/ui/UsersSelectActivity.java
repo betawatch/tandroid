@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class UsersSelectActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, View.OnClickListener {
     public org.telegram.ui.Components.h5 E;
@@ -136,7 +136,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.n2 implements
                 TLRPC.Chat chat = (TLRPC.Chat) object;
                 j10 = -chat.id;
                 if (usersSelectActivity.x == 1 && !ChatObject.canUserDoAdminAction(chat, 13)) {
-                    org.telegram.messenger.kk.q(R.string.NeedAdminRightForSetAutoDeleteTimer, org.telegram.ui.Components.xc.a0(usersSelectActivity), null);
+                    org.telegram.messenger.lk.q(R.string.NeedAdminRightForSetAutoDeleteTimer, org.telegram.ui.Components.xc.a0(usersSelectActivity), null);
                     return;
                 }
             }
@@ -146,9 +146,9 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.n2 implements
                 usersSelectActivity2 = usersSelectActivity;
             } else {
                 if ((!z10 && !usersSelectActivity.getUserConfig().isPremium() && usersSelectActivity.w >= MessagesController.getInstance(usersSelectActivity.currentAccount).dialogFiltersChatsLimitDefault) || usersSelectActivity.w >= MessagesController.getInstance(usersSelectActivity.currentAccount).dialogFiltersChatsLimitPremium) {
-                    sg.j0 j0Var = new sg.j0(4, usersSelectActivity.currentAccount, context, usersSelectActivity, null);
-                    j0Var.w0 = usersSelectActivity.w;
-                    usersSelectActivity.showDialog(j0Var);
+                    sg.k0 k0Var = new sg.k0(4, usersSelectActivity.currentAccount, context, usersSelectActivity, null);
+                    k0Var.w0 = usersSelectActivity.w;
+                    usersSelectActivity.showDialog(k0Var);
                     return;
                 }
                 usersSelectActivity2 = usersSelectActivity;
@@ -360,7 +360,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.n2 implements
             this.E = h5Var;
             org.telegram.ui.ActionBar.k kVar = this.actionBar;
             boolean z10 = LocaleController.isRTL;
-            kVar.addView(h5Var, w7.z5.a(-1.0f, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f, -1, 0));
+            kVar.addView(h5Var, w7.z5.d(-1, -1.0f, 0, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f));
             this.actionBar.setAllowOverlayTitle(false);
         }
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
@@ -386,7 +386,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.n2 implements
         fVar.addView(this.a);
         ng1 ng1Var = new ng1(this, context);
         this.b = ng1Var;
-        this.a.addView(ng1Var, w7.z5.d(-2.0f, -1));
+        this.a.addView(ng1Var, w7.z5.c(-2.0f, -1));
         final int i13 = 0;
         this.b.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.ig1
             public final /* synthetic */ UsersSelectActivity b;
@@ -462,7 +462,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.n2 implements
         this.d.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         this.d.i(new ci.l(10));
         fVar.addView(this.d);
-        this.d.setOnItemClickListener(new ci.y4(22, this, context));
+        this.d.setOnItemClickListener(new ci.x4(22, this, context));
         this.d.setOnScrollListener(new dd1(this, 2));
         this.s = org.telegram.ui.Components.h20.b();
         org.telegram.ui.Components.h20 h20Var = new org.telegram.ui.Components.h20(context, this.resourceProvider, false);

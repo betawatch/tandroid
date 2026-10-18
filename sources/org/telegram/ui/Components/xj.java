@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class xj extends li implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public final rj E;
@@ -59,14 +59,14 @@ public final class xj extends li implements NotificationCenter.NotificationCente
         e2Var.setHint(string);
         e2Var.addTextChangedListener(new lj(this));
         frameLayout.addView(siVar, w7.z5.g());
-        FrameLayout.LayoutParams a2 = w7.z5.a(48.0f, 7.0f, 8.0f, 7.0f, 4.0f, -1, 51);
-        ((ViewGroup.MarginLayoutParams) a2).topMargin += AndroidUtilities.statusBarHeight;
-        frameLayout.addView(piVar, a2);
+        FrameLayout.LayoutParams d = w7.z5.d(-1, 48.0f, 51, 7.0f, 8.0f, 7.0f, 4.0f);
+        ((ViewGroup.MarginLayoutParams) d).topMargin += AndroidUtilities.statusBarHeight;
+        frameLayout.addView(piVar, d);
         vz vzVar = new vz(context, d6Var);
         this.G = vzVar;
         vzVar.c();
         vzVar.setText(LocaleController.getString(R.string.NoContacts));
-        addView(vzVar, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 51));
+        addView(vzVar, w7.z5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
         ai.u1 u1Var = new ai.u1(this, context, d6Var, 13);
         this.s = u1Var;
         this.c = u1Var;
@@ -83,12 +83,12 @@ public final class xj extends li implements NotificationCenter.NotificationCente
         u1Var.setHorizontalScrollBarEnabled(false);
         u1Var.setVerticalScrollBarEnabled(false);
         u1Var.setClipToPadding(false);
-        addView(u1Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        addView(u1Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         rj rjVar = new rj(this, context);
         this.E = rjVar;
         u1Var.setAdapter(rjVar);
         u1Var.setGlowColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A5, this.a));
-        u1Var.setOnItemClickListener(new ci.y4(10, this, d6Var));
+        u1Var.setOnItemClickListener(new ci.x4(10, this, d6Var));
         u1Var.setOnScrollListener(new ah.d0(this, 23));
         u1Var.setOnItemLongClickListener(new jj(this));
         FrameLayout.LayoutParams e = w7.z5.e(-1, 60, 51);

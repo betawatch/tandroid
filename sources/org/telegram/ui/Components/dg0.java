@@ -7,7 +7,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class dg0 extends FrameLayout {
     public final ei.gc a;
@@ -34,16 +34,16 @@ public final class dg0 extends FrameLayout {
         ei.gc gcVar = new ei.gc(context, null, null, d6Var, jaVar);
         this.a = gcVar;
         gcVar.X0 = true;
-        addView(gcVar, w7.z5.a(388, 0.0f, 0.0f, 0.0f, 74.0f, -1, 87));
+        addView(gcVar, w7.z5.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
         ei.d dVar = new ei.d(context, d6Var, true);
         this.b = dVar;
         dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
         dVar.e();
-        addView(dVar, w7.z5.a(48.0f, 16.0f, 10.0f, 16.0f, 16.0f, -1, 87));
+        addView(dVar, w7.z5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 16.0f));
         xt xtVar = new xt(context, LocaleController.getString(R.string.EditorSetCoverGallery));
         this.c = xtVar;
         xtVar.setOnClickListener(new ai.v0(this, context, d6Var, 29));
-        addView(xtVar, w7.z5.a(32.0f, 60.0f, 0.0f, 60.0f, 134.0f, -1, 87));
+        addView(xtVar, w7.z5.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
         gcVar.setDelegate(new mi.q(this));
     }
 

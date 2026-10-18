@@ -18,7 +18,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cg0;
 import org.telegram.ui.Components.e00;
@@ -31,7 +31,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.ui.b60;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e4 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -120,7 +120,7 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 saVar.getClass();
                 if (LaunchActivity.D1) {
                     if (arrayList == null || arrayList.size() == 0) {
-                        kk.q(R.string.UnknownError, new xc(org.telegram.ui.Components.lb.a(saVar.getContext()), null), null);
+                        lk.q(R.string.UnknownError, new xc(org.telegram.ui.Components.lb.a(saVar.getContext()), null), null);
                     } else {
                         LinearLayout linearLayout = new LinearLayout(saVar.getContext());
                         linearLayout.setOrientation(1);
@@ -185,9 +185,9 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                         dVar.F = 5;
                         dVar.b(5, false);
                         dVar.setShowZero(false);
-                        ci.v7 v7Var = new ci.v7(22, dVar, gVar);
-                        dVar.G = v7Var;
-                        AndroidUtilities.runOnUIThread(v7Var, 1000L);
+                        ci.u7 u7Var = new ci.u7(22, dVar, gVar);
+                        dVar.G = u7Var;
+                        AndroidUtilities.runOnUIThread(u7Var, 1000L);
                         dVar.setOnClickListener(new org.telegram.ui.Cells.y2(dVar, f3Var, i13));
                     }
                 }
@@ -209,18 +209,18 @@ public final /* synthetic */ class e4 implements Utilities.Callback {
                 b60.e1((b60) obj2, i12, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                org.telegram.ui.Wallet.w9 w9Var = (org.telegram.ui.Wallet.w9) obj2;
+                org.telegram.ui.Wallet.r9 r9Var = (org.telegram.ui.Wallet.r9) obj2;
                 String str2 = (String) obj;
-                if (!w9Var.n && i12 == w9Var.I) {
-                    w9Var.y = 0;
-                    w9Var.K = false;
+                if (!r9Var.n && i12 == r9Var.I) {
+                    r9Var.y = 0;
+                    r9Var.K = false;
                     String userFriendlyAddress = WalletEngine2.isValidRecipientAddress(str2) ? WalletEngine2.toUserFriendlyAddress(str2) : null;
-                    w9Var.w = userFriendlyAddress;
-                    d dVar2 = w9Var.V;
+                    r9Var.w = userFriendlyAddress;
+                    d dVar2 = r9Var.V;
                     if (dVar2 != null) {
                         dVar2.setEnabled(userFriendlyAddress != null);
                     }
-                    w9Var.a.W2.N(true);
+                    r9Var.a.W2.N(true);
                     break;
                 }
                 break;

@@ -23,12 +23,12 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ti0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class o3 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -38,7 +38,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
     public final org.telegram.ui.Components.w9 d;
     public final ti0 e;
     public final TextView f;
-    public final sg.p0 h;
+    public final sg.q0 h;
     public AnimatorSet n;
     public TLRPC.StickerSetCovered r;
     public boolean s;
@@ -52,29 +52,29 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         this.a = UserConfig.selectedAccount;
         TextView textView = new TextView(context);
         this.b = textView;
-        kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+        lk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.z5.a(-2.0f, z10 ? 22.0f : 71.0f, 10.0f, z10 ? 71.0f : 22.0f, 0.0f, -2, z10 ? 5 : 3));
+        addView(textView, w7.z5.d(-2, -2.0f, z10 ? 5 : 3, z10 ? 22.0f : 71.0f, 10.0f, z10 ? 71.0f : 22.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.c = textView2;
-        kk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
+        lk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 13.0f, 1);
         textView2.setMaxLines(1);
         textView2.setSingleLine(true);
         textView2.setEllipsize(truncateAt);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.z5.a(-2.0f, z11 ? 100.0f : 71.0f, 35.0f, z11 ? 71.0f : 100.0f, 0.0f, -2, z11 ? 5 : 3));
+        addView(textView2, w7.z5.d(-2, -2.0f, z11 ? 5 : 3, z11 ? 100.0f : 71.0f, 35.0f, z11 ? 71.0f : 100.0f, 0.0f));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.d = w9Var;
         w9Var.setAspectFit(true);
         w9Var.setLayerNum(1);
         boolean z12 = LocaleController.isRTL;
-        addView(w9Var, w7.z5.a(48.0f, z12 ? 0.0f : 12.0f, 8.0f, z12 ? 12.0f : 0.0f, 0.0f, 48, (z12 ? 5 : 3) | 48));
+        addView(w9Var, w7.z5.d(48, 48.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 12.0f, 8.0f, z12 ? 12.0f : 0.0f, 0.0f));
         ti0 ti0Var = new ti0(context);
         this.e = ti0Var;
         ti0Var.setText(LocaleController.getString(R.string.Add));
@@ -86,20 +86,20 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         org.telegram.messenger.g0.m(14.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Rh, false), 1, textView3);
         textView3.setText(LocaleController.getString(R.string.StickersRemove));
         addView(textView3, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
-        sg.p0 p0Var = new sg.p0(AndroidUtilities.dp(4.0f), context, d6Var, false);
-        this.h = p0Var;
-        p0Var.setIcon(R.raw.unlock_icon);
-        p0Var.a(LocaleController.getString(R.string.Unlock), new a(this, 4), false);
-        p0Var.setVisibility(8);
+        sg.q0 q0Var = new sg.q0(AndroidUtilities.dp(4.0f), context, d6Var, false);
+        this.h = q0Var;
+        q0Var.setIcon(R.raw.unlock_icon);
+        q0Var.a(LocaleController.getString(R.string.Unlock), new a(this, 4), false);
+        q0Var.setVisibility(8);
         try {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) p0Var.getIconView().getLayoutParams();
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) q0Var.getIconView().getLayoutParams();
             marginLayoutParams.leftMargin = AndroidUtilities.dp(1.0f);
             marginLayoutParams.topMargin = AndroidUtilities.dp(1.0f);
             int dp = AndroidUtilities.dp(20.0f);
             marginLayoutParams.height = dp;
             marginLayoutParams.width = dp;
-            ((ViewGroup.MarginLayoutParams) p0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
-            p0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+            ((ViewGroup.MarginLayoutParams) q0Var.getTextView().getLayoutParams()).leftMargin = AndroidUtilities.dp(3.0f);
+            q0Var.getChildAt(0).setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         } catch (Exception unused) {
         }
         addView(this.h, w7.z5.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 10.0f, 0.0f));
@@ -220,15 +220,15 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         this.s = z11 || MediaDataController.getInstance(i10).isStickerPackInstalled(stickerSetCovered2.set.id);
         boolean z15 = !UserConfig.getInstance(i10).isPremium() && MessageObject.isPremiumEmojiPack(stickerSetCovered2);
         this.v = z15;
-        sg.p0 p0Var = this.h;
+        sg.q0 q0Var = this.h;
         TextView textView2 = this.f;
         if (z12) {
             if (z15) {
-                p0Var.setVisibility(0);
+                q0Var.setVisibility(0);
                 textView2.setVisibility(0);
                 ti0Var.setVisibility(0);
             } else {
-                p0Var.setVisibility(0);
+                q0Var.setVisibility(0);
                 if (this.s) {
                     textView2.setVisibility(0);
                 } else {
@@ -247,17 +247,17 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
             ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property2, fArr2);
             float[] fArr3 = {(!this.s || this.v) ? 0.0f : 1.0f};
             Property property3 = View.SCALE_Y;
-            animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, fArr3), ObjectAnimator.ofFloat(ti0Var, (Property<ti0, Float>) property, (this.s || this.v) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(ti0Var, (Property<ti0, Float>) property2, (this.s || this.v) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<sg.p0, Float>) property3, !this.v ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<sg.p0, Float>) property2, !this.v ? 0.0f : 1.0f), ObjectAnimator.ofFloat(p0Var, (Property<sg.p0, Float>) property3, !this.v ? 0.0f : 1.0f));
+            animatorSet3.playTogether(ofFloat, ofFloat2, ObjectAnimator.ofFloat(textView2, (Property<TextView, Float>) property3, fArr3), ObjectAnimator.ofFloat(ti0Var, (Property<ti0, Float>) property, (this.s || this.v) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(ti0Var, (Property<ti0, Float>) property2, (this.s || this.v) ? 0.0f : 1.0f), ObjectAnimator.ofFloat(q0Var, (Property<sg.q0, Float>) property3, !this.v ? 0.0f : 1.0f), ObjectAnimator.ofFloat(q0Var, (Property<sg.q0, Float>) property2, !this.v ? 0.0f : 1.0f), ObjectAnimator.ofFloat(q0Var, (Property<sg.q0, Float>) property3, !this.v ? 0.0f : 1.0f));
             this.n.addListener(new m3(this));
             this.n.setInterpolator(new OvershootInterpolator(1.02f));
             this.n.start();
             return;
         }
         if (z15) {
-            p0Var.setVisibility(0);
-            p0Var.setAlpha(1.0f);
-            p0Var.setScaleX(1.0f);
-            p0Var.setScaleY(1.0f);
+            q0Var.setVisibility(0);
+            q0Var.setAlpha(1.0f);
+            q0Var.setScaleX(1.0f);
+            q0Var.setScaleY(1.0f);
             ti0Var.setVisibility(4);
             ti0Var.setAlpha(0.0f);
             ti0Var.setScaleX(0.0f);
@@ -268,10 +268,10 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
             textView2.setScaleY(0.0f);
             return;
         }
-        p0Var.setVisibility(8);
-        p0Var.setAlpha(0.0f);
-        p0Var.setScaleX(0.0f);
-        p0Var.setScaleY(0.0f);
+        q0Var.setVisibility(8);
+        q0Var.setAlpha(0.0f);
+        q0Var.setScaleX(0.0f);
+        q0Var.setScaleY(0.0f);
         if (this.s) {
             textView2.setVisibility(0);
             textView2.setAlpha(1.0f);

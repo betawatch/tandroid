@@ -5,7 +5,7 @@ import org.telegram.messenger.DocumentObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class ImageLocation {
     public static final int TYPE_BIG = 0;
@@ -20,7 +20,7 @@ public class ImageLocation {
     public long documentId;
     public byte[] file_reference;
     public int imageType;
-    public org.telegram.ui.web.g2 instantFile;
+    public org.telegram.ui.web.i2 instantFile;
     public byte[] iv;
     public byte[] key;
     public TLRPC.TL_fileLocationToBeDeprecated location;
@@ -53,12 +53,12 @@ public class ImageLocation {
         return imageLocation;
     }
 
-    public static ImageLocation getForInstantFile(org.telegram.ui.web.g2 g2Var) {
-        if (g2Var == null) {
+    public static ImageLocation getForInstantFile(org.telegram.ui.web.i2 i2Var) {
+        if (i2Var == null) {
             return null;
         }
         ImageLocation imageLocation = new ImageLocation();
-        imageLocation.instantFile = g2Var;
+        imageLocation.instantFile = i2Var;
         return imageLocation;
     }
 
@@ -290,9 +290,9 @@ public class ImageLocation {
         if (webFile != null) {
             return Utilities.MD5(webFile.url);
         }
-        org.telegram.ui.web.g2 g2Var = this.instantFile;
-        if (g2Var != null) {
-            return Utilities.MD5(g2Var.b);
+        org.telegram.ui.web.i2 i2Var = this.instantFile;
+        if (i2Var != null) {
+            return Utilities.MD5(i2Var.b);
         }
         TLRPC.Document document = this.document;
         if (document == null) {

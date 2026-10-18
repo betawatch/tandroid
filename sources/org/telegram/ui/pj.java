@@ -43,9 +43,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class pj extends ci.q5 {
+public final class pj extends ci.p5 {
     public int X2;
     public final ArrayList Y2;
     public final ArrayList Z2;
@@ -299,7 +299,7 @@ public final class pj extends ci.q5 {
             int i18 = org.telegram.ui.ActionBar.h6.i6;
             boolean z16 = z14;
             int f14 = i0.a.f(z15 ? 0.9f : 0.5f, org.telegram.ui.ActionBar.h6.w0(i18, d6Var), Color.argb(z15 ? 33 : 3, 255, 255, 255));
-            int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.w0(i18, d6Var), z15 ? 24 : sn.Hc);
+            int o10 = i0.a.o(org.telegram.ui.ActionBar.h6.w0(i18, d6Var), z15 ? 24 : sn.Ic);
             if (snVar.a7 != o10 || snVar.Z6 != f14) {
                 snVar.Z6 = f14;
                 snVar.a7 = o10;
@@ -362,7 +362,7 @@ public final class pj extends ci.q5 {
             }
             if (paint3.getShader() != X0.getShader()) {
                 paint3.setShader(X0.getShader());
-                colorMatrix.setSaturation(sn.Ic);
+                colorMatrix.setSaturation(sn.Jc);
                 paint3.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
             }
             int i23 = 0;
@@ -1555,7 +1555,7 @@ public final class pj extends ci.q5 {
                     i13 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
                     np npVar2 = new np(i13, snVar.fragmentView, snVar.T5, snVar.ua, snVar.va, snVar.d(), snVar.ea);
                     snVar.P9 = npVar2;
-                    npVar2.S = snVar.uc.e;
+                    npVar2.S = snVar.vc.e;
                     ArrayList arrayList = snVar.fb;
                     if (arrayList != null && !arrayList.isEmpty()) {
                         snVar.P9.i((TLRPC.Chat) snVar.fb.get(0));
@@ -1751,7 +1751,7 @@ public final class pj extends ci.q5 {
         org.telegram.ui.ActionBar.k kVar;
         np npVar;
         sn snVar = this.x3;
-        ne.b bVar = snVar.uc;
+        ne.b bVar = snVar.vc;
         mm mmVar = snVar.c9;
         mmVar.getClass();
         final int i10 = 3;
@@ -2621,11 +2621,11 @@ public final class pj extends ci.q5 {
                     if (!w0Var.M()) {
                         return;
                     }
-                    org.telegram.ui.Wallet.l3 l3Var = w0Var.I0;
+                    org.telegram.ui.Wallet.m3 m3Var = w0Var.I0;
                     float f7 = (x10 - w0Var.K0) - (w0Var.j0 / 2.0f);
                     float paddingTop = (y3 - w0Var.L0) - w0Var.getPaddingTop();
-                    org.telegram.ui.Wallet.k3 k3Var = l3Var.m;
-                    if (k3Var != null && k3Var.n && l3Var.w.contains((int) f7, (int) paddingTop)) {
+                    org.telegram.ui.Wallet.l3 l3Var = m3Var.m;
+                    if (l3Var != null && l3Var.n && m3Var.w.contains((int) f7, (int) paddingTop)) {
                         return;
                     }
                 }
@@ -2714,7 +2714,7 @@ public final class pj extends ci.q5 {
                             T13 = messageObject;
                         }
                         snVar.n5 = T13;
-                        Bundle d = org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true);
+                        Bundle d = org.telegram.messenger.lk.d(3, "onlySelect", "dialogsType", true);
                         d.putBoolean("quote", true);
                         d.putBoolean("reply_to", true);
                         long peerDialogId = DialogObject.getPeerDialogId(T13.getFromPeer());

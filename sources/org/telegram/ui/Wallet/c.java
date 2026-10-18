@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class c extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -33,11 +33,11 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.y5
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.b = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(8.0f));
-        addView(w9Var, w7.z5.a(46.0f, 15.0f, 0.0f, 0.0f, 0.0f, 46, 19));
+        addView(w9Var, w7.z5.d(46, 46.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
-        addView(linearLayout, w7.z5.a(-1.0f, 71.0f, 0.0f, 20.0f, 0.0f, -1, 119));
+        addView(linearLayout, w7.z5.d(-1, -1.0f, 119, 71.0f, 0.0f, 20.0f, 0.0f));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setSingleLine(true);
@@ -91,9 +91,9 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.y5
             return;
         }
         this.f = z10;
-        FrameLayout.LayoutParams a2 = z10 ? w7.z5.a(-1.0f, 3.33f, 4.0f, 3.33f, 4.0f, -1, 119) : w7.z5.a(46.0f, 15.0f, 0.0f, 0.0f, 0.0f, 46, 19);
+        FrameLayout.LayoutParams d = z10 ? w7.z5.d(-1, -1.0f, 119, 3.33f, 4.0f, 3.33f, 4.0f) : w7.z5.d(46, 46.0f, 19, 15.0f, 0.0f, 0.0f, 0.0f);
         org.telegram.ui.Components.w9 w9Var = this.b;
-        w9Var.setLayoutParams(a2);
+        w9Var.setLayoutParams(d);
         w9Var.setRoundRadius(AndroidUtilities.dp(z10 ? 11.0f : 8.0f));
         ((View) this.c.getParent()).setVisibility(z10 ? 8 : 0);
     }

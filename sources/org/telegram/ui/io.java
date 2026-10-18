@@ -4,7 +4,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class io extends bu0 {
     public final /* synthetic */ ko a;
@@ -47,9 +47,9 @@ public final class io extends bu0 {
                     lu0Var = new lu0();
                     lu0Var.b = iArr[0];
                     lu0Var.c = iArr[1];
-                    ci.k4 k4Var = koVar.e;
-                    lu0Var.d = k4Var;
-                    ImageReceiver imageReceiver = k4Var.getImageReceiver();
+                    ci.j4 j4Var = koVar.e;
+                    lu0Var.d = j4Var;
+                    ImageReceiver imageReceiver = j4Var.getImageReceiver();
                     lu0Var.a = imageReceiver;
                     if (j10 == 0) {
                         j10 = -koVar.w0;
@@ -76,9 +76,9 @@ public final class io extends bu0 {
                     lu0Var = new lu0();
                     lu0Var.b = iArr2[0];
                     lu0Var.c = iArr2[1];
-                    ci.k4 k4Var2 = koVar.e;
-                    lu0Var.d = k4Var2;
-                    ImageReceiver imageReceiver2 = k4Var2.getImageReceiver();
+                    ci.j4 j4Var2 = koVar.e;
+                    lu0Var.d = j4Var2;
+                    ImageReceiver imageReceiver2 = j4Var2.getImageReceiver();
                     lu0Var.a = imageReceiver2;
                     if (j10 == 0) {
                     }

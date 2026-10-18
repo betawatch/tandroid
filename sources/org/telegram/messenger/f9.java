@@ -1,41 +1,39 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f9 implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ SharedPreferences e;
-    public final /* synthetic */ boolean[] f;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ f9(MediaDataController mediaDataController, TLRPC.TL_error tL_error, TLObject tLObject, SharedPreferences sharedPreferences, boolean[] zArr, int i10) {
-        this.a = i10;
+    public /* synthetic */ f9(MediaDataController mediaDataController, boolean z10, int i10, ArrayList arrayList) {
         this.b = mediaDataController;
-        this.c = tL_error;
-        this.d = tLObject;
-        this.e = sharedPreferences;
-        this.f = zArr;
+        this.c = z10;
+        this.d = i10;
+        this.e = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                SharedPreferences sharedPreferences = this.e;
-                boolean[] zArr = this.f;
-                this.b.lambda$loadRecentAndTopReactions$238(this.c, this.d, sharedPreferences, zArr);
+                this.b.lambda$loadRecents$48(this.c, this.e, this.d);
                 break;
             default:
-                SharedPreferences sharedPreferences2 = this.e;
-                boolean[] zArr2 = this.f;
-                this.b.lambda$loadRecentAndTopReactions$236(this.c, this.d, sharedPreferences2, zArr2);
+                this.b.lambda$processLoadedRecentDocuments$53(this.c, this.d, this.e);
                 break;
         }
+    }
+
+    public /* synthetic */ f9(MediaDataController mediaDataController, boolean z10, ArrayList arrayList, int i10) {
+        this.b = mediaDataController;
+        this.c = z10;
+        this.e = arrayList;
+        this.d = i10;
     }
 }

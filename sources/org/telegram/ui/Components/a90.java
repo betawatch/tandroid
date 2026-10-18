@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a90 extends org.telegram.ui.ActionBar.f3 {
     public static final /* synthetic */ int r = 0;
@@ -101,7 +101,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
                 imageView.setOnClickListener(new u80(this, i11));
                 int dp = AndroidUtilities.dp(8.0f);
                 imageView.setPadding(dp, dp, dp, dp);
-                frameLayout.addView(imageView, w7.z5.a(36.0f, 6.0f, 8.0f, 8.0f, 0.0f, 36, 8388661));
+                frameLayout.addView(imageView, w7.z5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
                 w9 w9Var = new w9(context);
                 w9Var.setRoundRadius(AndroidUtilities.dp(45.0f));
                 linearLayout.addView(w9Var, w7.z5.t(90, 90, 49, 0, 27, 0, 0));
@@ -276,7 +276,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
                 textView5.setTextSize(1, 14.0f);
                 textView5.setTypeface(AndroidUtilities.bold());
                 linearLayout.addView(textView5, w7.z5.t(-1, 48, 8388611, 14, 0, 14, 14));
-                textView5.setOnClickListener(new ci.b2(this, j10, 1));
+                textView5.setOnClickListener(new ci.a2(this, j10, 1));
                 return;
             }
             TLRPC.Chat chat5 = (TLRPC.Chat) tLObject;
@@ -300,7 +300,7 @@ public final class a90 extends org.telegram.ui.ActionBar.f3 {
         imageView2.setOnClickListener(new u80(this, i11));
         int dp4 = AndroidUtilities.dp(8.0f);
         imageView2.setPadding(dp4, dp4, dp4, dp4);
-        frameLayout3.addView(imageView2, w7.z5.a(36.0f, 6.0f, 8.0f, 8.0f, 0.0f, 36, 8388661));
+        frameLayout3.addView(imageView2, w7.z5.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
         w9 w9Var2 = new w9(context);
         w9Var2.setRoundRadius(AndroidUtilities.dp(45.0f));
         linearLayout.addView(w9Var2, w7.z5.t(90, 90, 49, 0, 27, 0, 0));

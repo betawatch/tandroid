@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -554,11 +554,11 @@ public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
             return true;
         }
         if (!ChatObject.isChannel(dqVar.w)) {
-            sg.j0 j0Var = new sg.j0(11, dqVar.currentAccount, dqVar.getParentActivity(), dqVar, dqVar.getResourceProvider());
+            sg.k0 k0Var = new sg.k0(11, dqVar.currentAccount, dqVar.getParentActivity(), dqVar, dqVar.getResourceProvider());
             ArrayList arrayList = new ArrayList();
             arrayList.add(dqVar.v);
-            j0Var.J1(dqVar.w, arrayList, null, null, null);
-            j0Var.show();
+            k0Var.J1(dqVar.w, arrayList, null, null, null);
+            k0Var.show();
         }
         return false;
     }
@@ -1169,7 +1169,7 @@ public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
                 dqVar.presentFragment(new id1(1));
                 return;
             } else {
-                dqVar.showDialog(new sg.j0(5, dqVar.currentAccount, dqVar.getParentActivity(), dqVar, null));
+                dqVar.showDialog(new sg.k0(5, dqVar.currentAccount, dqVar.getParentActivity(), dqVar, null));
                 return;
             }
         }
@@ -1393,11 +1393,11 @@ public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         kVar.n(350L);
         this.b.setItemAnimator(kVar);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout.addView(this.b, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.b, w7.z5.c(-1.0f, -1));
         this.b.p1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setOnScrollListener(new k3(this, 6));
-        this.b.setOnItemClickListener(new ci.y4(7, this, context));
+        this.b.setOnItemClickListener(new ci.x4(7, this, context));
         return this.fragmentView;
     }
 
@@ -1569,7 +1569,7 @@ public class dq extends org.telegram.ui.ActionBar.n2 implements NotificationCent
         }
         tL_channels_editCreator.password = inputCheckPasswordSRP != null ? inputCheckPasswordSRP : new TLRPC.TL_inputCheckPasswordEmpty();
         tL_channels_editCreator.user_id = getMessagesController().getInputUser(this.v);
-        getConnectionsManager().sendRequest(tL_channels_editCreator, new ai.y2(this, inputCheckPasswordSRP, twoStepVerificationActivity, tL_channels_editCreator, 11));
+        getConnectionsManager().sendRequest(tL_channels_editCreator, new ai.w2(this, inputCheckPasswordSRP, twoStepVerificationActivity, tL_channels_editCreator, 11));
     }
 
     public final boolean q0() {

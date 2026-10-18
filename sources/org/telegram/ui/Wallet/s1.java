@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.eh;
+import org.telegram.messenger.fh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
@@ -20,7 +20,7 @@ import org.telegram.ui.n80;
 import org.telegram.ui.ro0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s1 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -36,8 +36,7 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         int i10 = this.a;
-        int i11 = 5;
-        int i12 = 0;
+        int i11 = 0;
         Object obj3 = this.c;
         Object obj4 = this.b;
         switch (i10) {
@@ -57,20 +56,20 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                 break;
             case 2:
                 ((j0) obj4).close();
-                ((eh) obj3).run((b2) obj, (String) obj2);
+                ((fh) obj3).run((b2) obj, (String) obj2);
                 break;
             case 3:
-                n8.b0((n8) obj4, (Utilities.Callback) obj3, (j0) obj, (String) obj2);
+                h8.b0((h8) obj4, (Utilities.Callback) obj3, (j0) obj, (String) obj2);
                 break;
             case 4:
-                w9 w9Var = (w9) obj4;
+                r9 r9Var = (r9) obj4;
                 p pVar = (p) obj3;
                 TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
                 if (((String) obj2) == null) {
                     pVar.run(walletuseraddress != null ? walletuseraddress.address : null);
                     break;
                 } else {
-                    w9Var.V.setLoading(false);
+                    r9Var.V.setLoading(false);
                     break;
                 }
             case 5:
@@ -78,23 +77,23 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                 String str2 = (String) obj3;
                 TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) obj;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                int i13 = rVar.a;
+                int i12 = rVar.a;
                 if (webpagepreview != null) {
-                    MessagesController.getInstance(i13).putUsers(webpagepreview.users, false);
-                    MessagesController.getInstance(i13).putChats(webpagepreview.chats, false);
+                    MessagesController.getInstance(i12).putUsers(webpagepreview.users, false);
+                    MessagesController.getInstance(i12).putChats(webpagepreview.chats, false);
                     TLRPC.MessageMedia messageMedia = webpagepreview.media;
                     if (messageMedia != null) {
-                        r2 = messageMedia.webpage;
+                        r1 = messageMedia.webpage;
                     }
                 }
-                rVar.b.put(str2, r2);
+                rVar.b.put(str2, r1);
                 ArrayList arrayList = (ArrayList) rVar.c.remove(str2);
                 if (arrayList != null) {
                     int size = arrayList.size();
-                    while (i12 < size) {
-                        Object obj5 = arrayList.get(i12);
-                        i12++;
-                        ((Utilities.Callback2) obj5).run(r2, tL_error);
+                    while (i11 < size) {
+                        Object obj5 = arrayList.get(i11);
+                        i11++;
+                        ((Utilities.Callback2) obj5).run(r1, tL_error);
                     }
                     break;
                 }
@@ -119,7 +118,7 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                             zVar.dismiss();
                             sn W9 = sn.W9(-zVar.b0.id);
                             U.presentFragment(W9);
-                            U.whenFullyVisible(new uf.c(i11, W9, tL_starsGiveawayOption));
+                            U.whenFullyVisible(new u2.q0(6, W9, tL_starsGiveawayOption));
                             if (la0Var != null) {
                                 la0Var.c(true);
                                 break;
@@ -129,20 +128,20 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                 }
                 break;
             case 7:
-                yh.p2 p2Var = (yh.p2) obj4;
+                yh.o2 o2Var = (yh.o2) obj4;
                 ArrayList arrayList2 = (ArrayList) obj;
                 ArrayList arrayList3 = ((ai.y9) obj3).l;
                 int size2 = arrayList3.size();
-                int i14 = 0;
-                while (i14 < size2) {
-                    Object obj6 = arrayList3.get(i14);
-                    i14++;
+                int i13 = 0;
+                while (i13 < size2) {
+                    Object obj6 = arrayList3.get(i13);
+                    i13++;
                     TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj6;
                     if (savedStarGift.pinned_to_top) {
-                        int i15 = ro0.a;
+                        int i14 = ro0.a;
                         f61 J = f61.J(ro0.class);
                         J.G = savedStarGift;
-                        J.K(p2Var.b == savedStarGift.gift.id);
+                        J.K(o2Var.b == savedStarGift.gift.id);
                         J.u = 1;
                         arrayList2.add(J);
                     }
@@ -157,9 +156,9 @@ public final /* synthetic */ class s1 implements Utilities.Callback2 {
                 if (tL_error2 != null) {
                     FileLog.e("QrShare: setShareTheme " + tL_error2.text);
                     if (!i0Var.E) {
-                        zh.t0 t0Var = i0Var.b;
-                        t0Var.getClass();
-                        t0Var.c1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
+                        zh.u0 u0Var = i0Var.b;
+                        u0Var.getClass();
+                        u0Var.d1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
                         break;
                     }
                 }

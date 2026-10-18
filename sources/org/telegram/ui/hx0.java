@@ -9,7 +9,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hx0 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class hx0 implements org.telegram.ui.ActionBar.a2 {
                 tL_payments_clearSavedInfo.info = zArr[0];
                 privacySettingsActivity2.getUserConfig().tmpPassword = null;
                 privacySettingsActivity2.getUserConfig().saveConfig(false);
-                privacySettingsActivity2.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new ci.e6(8));
+                privacySettingsActivity2.getConnectionsManager().sendRequest(tL_payments_clearSavedInfo, new ci.d6(8));
                 boolean z10 = zArr[0];
                 if (z10 && zArr[1]) {
                     string = LocaleController.getString("PrivacyPaymentsPaymentShippingCleared", R.string.PrivacyPaymentsPaymentShippingCleared);
@@ -101,13 +101,13 @@ public final /* synthetic */ class hx0 implements org.telegram.ui.ActionBar.a2 {
                 privacySettingsActivity3.getContactsController().deleteAllContacts(new gx0(privacySettingsActivity3, 1));
                 break;
             case 4:
-                fg0 fg0Var = new fg0();
+                eg0 eg0Var = new eg0();
                 PrivacySettingsActivity privacySettingsActivity4 = this.b;
                 gx0 gx0Var = new gx0(privacySettingsActivity4, 2);
-                fg0Var.F = 3;
-                fg0Var.a = 12;
-                fg0Var.d0 = gx0Var;
-                privacySettingsActivity4.presentFragment(fg0Var);
+                eg0Var.F = 3;
+                eg0Var.a = 12;
+                eg0Var.d0 = gx0Var;
+                privacySettingsActivity4.presentFragment(eg0Var);
                 break;
         }
     }

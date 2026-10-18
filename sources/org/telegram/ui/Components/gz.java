@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class gz extends FrameLayout implements ne.d {
     public hq E;
@@ -65,17 +65,17 @@ public abstract class gz extends FrameLayout implements ne.d {
         frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(18.0f), z10 ? tzVar.w(0.06f) : tzVar.A(org.telegram.ui.ActionBar.h6.Ie)));
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(18.0f);
-        ci.o1 o1Var = zf.j0.a;
+        ci.n1 n1Var = zf.j0.a;
         frameLayout.setOutlineProvider(new zf.i0(0, dp));
         int i13 = 2;
         if (i10 == 2) {
-            addView(frameLayout, w7.z5.a(36.0f, 10.0f, 8.0f, 10.0f, 8.0f, -1, 119));
+            addView(frameLayout, w7.z5.d(-1, 36.0f, 119, 10.0f, 8.0f, 10.0f, 8.0f));
         } else {
-            addView(frameLayout, w7.z5.a(36.0f, 10.0f, 6.0f, 10.0f, 8.0f, -1, 119));
+            addView(frameLayout, w7.z5.d(-1, 36.0f, 119, 10.0f, 6.0f, 10.0f, 8.0f));
         }
         ah.v vVar = new ah.v(this, context, 13);
         this.s = vVar;
-        frameLayout.addView(vVar, w7.z5.a(40.0f, 38.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        frameLayout.addView(vVar, w7.z5.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         vn0 vn0Var = new vn0();
         this.c = vn0Var;
@@ -149,7 +149,7 @@ public abstract class gz extends FrameLayout implements ne.d {
         sqVar.setCursorSize(AndroidUtilities.dp(20.0f));
         sqVar.setCursorWidth(1.5f);
         sqVar.setTranslationY(AndroidUtilities.dp(-2.0f));
-        vVar.addView(sqVar, w7.z5.a(40.0f, 0.0f, 0.0f, 28.0f, 0.0f, -1, 51));
+        vVar.addView(sqVar, w7.z5.d(-1, 40.0f, 51, 0.0f, 0.0f, 28.0f, 0.0f));
         sqVar.addTextChangedListener(new ai.u(this, 9));
         if (tzVar.u0) {
             View view3 = new View(context);
@@ -314,7 +314,7 @@ public abstract class gz extends FrameLayout implements ne.d {
                     }
                 }
             });
-            frameLayout.addView(fzVar, w7.z5.a(36.0f, 36.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+            frameLayout.addView(fzVar, w7.z5.d(-1, 36.0f, 51, 36.0f, 0.0f, 0.0f, 0.0f));
         }
     }
 

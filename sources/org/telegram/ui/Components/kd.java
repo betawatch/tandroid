@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class kd extends ei.m {
     public boolean S0;
@@ -99,7 +99,7 @@ public abstract class kd extends ei.m {
             f10 = 0.0f;
         }
         float f12 = f10;
-        addView(imageView, w7.z5.a(44.0f, 14.0f, f11, 0.0f, f7, 44, i10));
+        addView(imageView, w7.z5.d(44, 44.0f, i10, 14.0f, f11, 0.0f, f7));
         ImageView imageView2 = new ImageView(context);
         this.V0 = imageView2;
         ei.l lVar = new ei.l(5);
@@ -108,7 +108,7 @@ public abstract class kd extends ei.m {
         imageView2.setBackground(org.telegram.ui.ActionBar.h6.g0(1090519039, 1, AndroidUtilities.dp(18.0f)));
         imageView2.setScaleType(scaleType);
         E(false, false);
-        addView(imageView2, w7.z5.a(44.0f, 0.0f, z10 ? 6.0f : f12, 10.0f, z10 ? f12 : 6.0f, 44, (z10 ? 48 : 80) | 5));
+        addView(imageView2, w7.z5.d(44, 44.0f, (z10 ? 48 : 80) | 5, 0.0f, z10 ? 6.0f : f12, 10.0f, z10 ? f12 : 6.0f));
         ei.x3 x3Var = new ei.x3(context, z10 ? 1 : 3);
         this.d1 = x3Var;
         x3Var.q(12.0f);
@@ -124,7 +124,7 @@ public abstract class kd extends ei.m {
         imageView3.setScaleType(scaleType);
         imageView3.setColorFilter(new PorterDuffColorFilter(-1140850689, PorterDuff.Mode.MULTIPLY));
         imageView3.setBackground(org.telegram.ui.ActionBar.h6.g0(1090519039, 1, AndroidUtilities.dp(16.0f)));
-        addView(imageView3, w7.z5.a(44.0f, 8.0f, 0.0f, 8.0f, 0.0f, 44, 53));
+        addView(imageView3, w7.z5.d(44, 44.0f, 53, 8.0f, 0.0f, 8.0f, 0.0f));
         imageView3.setContentDescription(LocaleController.getString(R.string.AIEditor));
         w7.b6.a(imageView3);
         this.f.getEditText().addTextChangedListener(new ai.u(this, 6));
@@ -225,7 +225,7 @@ public abstract class kd extends ei.m {
             x3Var3.p(true);
             this.a1.s(LocaleController.getString(R.string.AIEditorHint));
             this.a1.m(1.0f, ((-imageView.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
-            addView(this.a1, w7.z5.a(200.0f, 0.0f, -196.0f, 0.0f, 0.0f, -1, 48));
+            addView(this.a1, w7.z5.d(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
             ei.x3 x3Var4 = this.a1;
             x3Var4.l0 = new org.telegram.ui.gh(28, this, x3Var3);
             x3Var4.d = 4000L;
@@ -300,10 +300,10 @@ public abstract class kd extends ei.m {
             RectF rectF2 = this.f1;
             if (z11) {
                 f7 = 1.0f;
-                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.bottom + AndroidUtilities.dp(10.0f), org.telegram.messenger.kk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.bottom + AndroidUtilities.dp(42.0f));
+                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.bottom + AndroidUtilities.dp(10.0f), org.telegram.messenger.lk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.bottom + AndroidUtilities.dp(42.0f));
             } else {
                 f7 = 1.0f;
-                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.top - AndroidUtilities.dp(42.0f), org.telegram.messenger.kk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.top - AndroidUtilities.dp(10.0f));
+                rectF2.set(AndroidUtilities.dp(7.0f) + dp, rectF.top - AndroidUtilities.dp(42.0f), org.telegram.messenger.lk.b(p6Var.c(), AndroidUtilities.dp(11.0f), e, AndroidUtilities.dp(44.0f) + dp), rectF.top - AndroidUtilities.dp(10.0f));
             }
             if (f10 < f7) {
                 canvas.saveLayerAlpha(rectF2, (int) (f10 * 255.0f), 31);

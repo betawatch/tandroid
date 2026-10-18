@@ -22,7 +22,7 @@ import org.telegram.ui.r91;
 import org.telegram.ui.sn;
 import org.telegram.ui.sv0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class h1 extends c91 {
     public final /* synthetic */ int T;
@@ -284,11 +284,11 @@ public final class h1 extends c91 {
                 viewGroup5.invalidate();
                 break;
             default:
-                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) this.U;
-                m5Var.S0();
-                org.telegram.ui.Wallet.z7 z7Var = m5Var.k0;
-                if (z7Var != null && z7Var.c1) {
-                    z7Var.h0();
+                org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) this.U;
+                n5Var.S0();
+                org.telegram.ui.Wallet.t7 t7Var = n5Var.i0;
+                if (t7Var != null && t7Var.h1) {
+                    t7Var.f0();
                     break;
                 }
                 break;
@@ -297,16 +297,16 @@ public final class h1 extends c91 {
 
     @Override // org.telegram.ui.Components.c91
     public void x(int i10) {
-        org.telegram.ui.Wallet.t8 t8Var;
+        org.telegram.ui.Wallet.n8 n8Var;
         switch (this.T) {
             case 10:
-                org.telegram.ui.Wallet.m5 m5Var = (org.telegram.ui.Wallet.m5) this.U;
-                m5Var.f0 = i10;
-                if (i10 != 1 && (t8Var = m5Var.j0) != null) {
-                    t8Var.b(false);
+                org.telegram.ui.Wallet.n5 n5Var = (org.telegram.ui.Wallet.n5) this.U;
+                n5Var.d0 = i10;
+                if (i10 != 1 && (n8Var = n5Var.h0) != null) {
+                    n8Var.b(false);
                 }
                 if (i10 == 1) {
-                    m5Var.q0.post(new org.telegram.ui.Wallet.n3(m5Var, 13));
+                    n5Var.o0.post(new org.telegram.ui.Wallet.o3(n5Var, 12));
                     break;
                 }
                 break;

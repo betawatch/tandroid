@@ -29,7 +29,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gn0 implements org.telegram.ui.ActionBar.a2, FileLoader.FileResolver, org.telegram.ui.Components.e5, GenericProvider, MediaDataController.KeywordResultCallback, org.telegram.ui.Components.xl0, org.telegram.ui.Components.yl0, gv0, MessagesStorage.BooleanCallback, a11, OnSuccessListener {
     public final /* synthetic */ int a;
@@ -184,13 +184,13 @@ public final /* synthetic */ class gn0 implements org.telegram.ui.ActionBar.a2, 
             case 22:
             case 25:
             default:
-                org.telegram.ui.Wallet.n8 n8Var = (org.telegram.ui.Wallet.n8) this.b;
+                org.telegram.ui.Wallet.h8 h8Var = (org.telegram.ui.Wallet.h8) this.b;
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) this.c;
                 pf.c g10 = b2Var.g(i10, true, true);
                 g10.d();
-                org.telegram.ui.Wallet.j8 j8Var = new org.telegram.ui.Wallet.j8(n8Var, g10, 1);
+                org.telegram.ui.Wallet.d8 d8Var = new org.telegram.ui.Wallet.d8(h8Var, g10, 1);
                 org.telegram.ui.Wallet.m0.F("disableBackupWithoutUpdatingPhrase");
-                m0Var.j0(new e2.o0((Object) m0Var, (Object) new org.telegram.ui.Components.qy(26, m0Var, j8Var), true, false, 3));
+                m0Var.j0(new e2.o0((Object) m0Var, (Object) new org.telegram.ui.Components.qy(26, m0Var, d8Var), true, false, 3));
                 break;
             case 3:
                 PhotoViewer.C(((as0) this.b).b, (ArrayList) this.c);
@@ -419,13 +419,13 @@ public final /* synthetic */ class gn0 implements org.telegram.ui.ActionBar.a2, 
                     return;
                 }
             case 26:
-                org.telegram.ui.Wallet.n8 n8Var2 = (org.telegram.ui.Wallet.n8) this.b;
+                org.telegram.ui.Wallet.h8 h8Var2 = (org.telegram.ui.Wallet.h8) this.b;
                 Boolean bool = (Boolean) this.c;
-                n8Var2.getClass();
+                h8Var2.getClass();
                 b2Var.dismiss();
-                org.telegram.ui.Wallet.c8 c8Var = new org.telegram.ui.Wallet.c8();
-                c8Var.r = !bool.booleanValue();
-                n8Var2.presentFragment(c8Var);
+                org.telegram.ui.Wallet.w7 w7Var = new org.telegram.ui.Wallet.w7();
+                w7Var.r = !bool.booleanValue();
+                h8Var2.presentFragment(w7Var);
                 break;
             case 27:
                 Runnable runnable = (Runnable) this.b;

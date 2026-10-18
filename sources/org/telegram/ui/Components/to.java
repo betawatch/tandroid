@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class to extends LinearLayout {
     public static final /* synthetic */ int L = 0;
@@ -78,12 +78,12 @@ public abstract class to extends LinearLayout {
         w9 w9Var = new w9(context);
         this.h = w9Var;
         w9Var.getImageReceiver().setAspectFit(true);
-        frameLayout.addView(this.h, w7.z5.d(112.0f, 112));
+        frameLayout.addView(this.h, w7.z5.c(112.0f, 112));
         w7.b6.a(this.h);
         w9 w9Var2 = new w9(context);
         this.n = w9Var2;
         w9Var2.getImageReceiver().setAspectFit(true);
-        frameLayout.addView(this.n, w7.z5.d(112.0f, 112));
+        frameLayout.addView(this.n, w7.z5.c(112.0f, 112));
         this.n.setVisibility(8);
         this.n.setAlpha(0.0f);
         w7.b6.a(this.n);

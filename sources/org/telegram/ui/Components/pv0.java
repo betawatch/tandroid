@@ -12,7 +12,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class pv0 extends mv0 {
     public boolean E;
@@ -20,7 +20,7 @@ public class pv0 extends mv0 {
     public final boolean h;
     public final int n;
     public final ArrayList r;
-    public ci.a7 s;
+    public ci.z6 s;
     public final int v;
     public final nv0 w;
     public boolean x;
@@ -39,8 +39,8 @@ public class pv0 extends mv0 {
     public final String F(int i10) {
         MessageObject messageObject;
         TL_stories.StoryItem storyItem;
-        ci.a7 a7Var = this.s;
-        if (a7Var == null || i10 < 0 || i10 >= a7Var.i.size() || (messageObject = (MessageObject) this.s.i.get(i10)) == null || (storyItem = messageObject.storyItem) == null) {
+        ci.z6 z6Var = this.s;
+        if (z6Var == null || i10 < 0 || i10 >= z6Var.i.size() || (messageObject = (MessageObject) this.s.i.get(i10)) == null || (storyItem = messageObject.storyItem) == null) {
             return null;
         }
         return LocaleController.formatYearMont(storyItem.date, true);
@@ -52,24 +52,24 @@ public class pv0 extends mv0 {
     }
 
     public final boolean M(int i10) {
-        ci.a7 a7Var;
-        if (this.h || (a7Var = this.s) == null) {
+        ci.z6 z6Var;
+        if (this.h || (z6Var = this.s) == null) {
             return false;
         }
-        if (a7Var instanceof ci.t6) {
+        if (z6Var instanceof ci.s6) {
             sv0 sv0Var = this.F;
             TLRPC.User user = MessagesController.getInstance(sv0Var.v1.getCurrentAccount()).getUser(Long.valueOf(sv0Var.j1));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
         }
-        if (i10 < 0 || i10 >= a7Var.i.size()) {
+        if (i10 < 0 || i10 >= z6Var.i.size()) {
             return false;
         }
         MessageObject messageObject = (MessageObject) this.s.i.get(i10);
-        ci.a7 a7Var2 = this.s;
-        if (a7Var2.f > 0) {
+        ci.z6 z6Var2 = this.s;
+        if (z6Var2.f > 0) {
             return true;
         }
-        return a7Var2.m(messageObject.getId());
+        return z6Var2.m(messageObject.getId());
     }
 
     public final void N() {
@@ -77,15 +77,15 @@ public class pv0 extends mv0 {
         lu0 lu0Var2;
         lu0 lu0Var3;
         lu0 lu0Var4;
-        ci.a7 a7Var = this.s;
-        if (a7Var == null || this.h) {
+        ci.z6 z6Var = this.s;
+        if (z6Var == null || this.h) {
             return;
         }
         sv0 sv0Var = this.F;
         boolean z10 = sv0Var.l1;
         lu0[] lu0VarArr = sv0Var.k0;
         int[] iArr = sv0Var.m1;
-        if ((!z10 || (sv0Var.k1 && a7Var.g() > 1)) && this.s.g() > 0 && !sv0Var.x0()) {
+        if ((!z10 || (sv0Var.k1 && z6Var.g() > 1)) && this.s.g() > 0 && !sv0Var.x0()) {
             if (this.s.g() < 5) {
                 iArr[1] = this.s.g();
                 if (lu0VarArr != null && (lu0Var3 = lu0VarArr[0]) != null && (lu0Var4 = lu0VarArr[1]) != null && lu0Var3.h != null && lu0Var4.h != null) {
@@ -162,20 +162,20 @@ public class pv0 extends mv0 {
                 s7Var.d0 = true;
                 ArrayList arrayList = this.r;
                 if (i10 >= 0 && i10 < arrayList.size()) {
-                    ci.h7 h7Var = (ci.h7) arrayList.get(i10);
+                    ci.g7 g7Var = (ci.g7) arrayList.get(i10);
                     s7Var.f0 = false;
-                    if (h7Var.K == null) {
+                    if (g7Var.K == null) {
                         TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
-                        long j10 = h7Var.a;
+                        long j10 = g7Var.a;
                         int i11 = (int) (j10 ^ (j10 >>> 32));
                         tL_storyItem.messageId = i11;
                         tL_storyItem.id = i11;
-                        tL_storyItem.attachPath = h7Var.f;
+                        tL_storyItem.attachPath = g7Var.f;
                         ov0 ov0Var = new ov0(this.s.c, tL_storyItem);
-                        h7Var.K = ov0Var;
-                        ov0Var.uploadingStory = h7Var;
+                        g7Var.K = ov0Var;
+                        ov0Var.uploadingStory = g7Var;
                     }
-                    s7Var.k(h7Var.K, O(), false);
+                    s7Var.k(g7Var.K, O(), false);
                     s7Var.d0 = true;
                     s7Var.setReorder(false);
                     s7Var.i(false, false);
@@ -229,12 +229,12 @@ public class pv0 extends mv0 {
         int currentAccount = n2Var.getCurrentAccount();
         if (!TextUtils.isEmpty(sv0Var.getStoriesHashtag())) {
             if (sv0Var.T1 == null) {
-                sv0Var.T1 = new ci.u6(currentAccount, TextUtils.isEmpty(sv0Var.getStoriesHashtagUsername()) ? null : sv0Var.getStoriesHashtagUsername(), sv0Var.getStoriesHashtag());
+                sv0Var.T1 = new ci.t6(currentAccount, TextUtils.isEmpty(sv0Var.getStoriesHashtagUsername()) ? null : sv0Var.getStoriesHashtagUsername(), sv0Var.getStoriesHashtag());
             }
             this.s = sv0Var.T1;
         } else if (sv0Var.getStoriesArea() != null) {
             if (sv0Var.T1 == null) {
-                sv0Var.T1 = new ci.u6(currentAccount, sv0Var.getStoriesArea());
+                sv0Var.T1 = new ci.t6(currentAccount, sv0Var.getStoriesArea());
             }
             this.s = sv0Var.T1;
         } else if ((!z10 || sv0Var.x0()) && (z10 || !sv0Var.r0())) {
@@ -243,7 +243,7 @@ public class pv0 extends mv0 {
             if (i10 > 0) {
                 this.s = n2Var.getMessagesController().getStoriesController().A(sv0Var.j1, 0, i10, true);
             } else {
-                ci.i7 storiesController = n2Var.getMessagesController().getStoriesController();
+                ci.h7 storiesController = n2Var.getMessagesController().getStoriesController();
                 long j11 = sv0Var.j1;
                 if (z11) {
                     i12 = 4;
@@ -257,9 +257,9 @@ public class pv0 extends mv0 {
         } else {
             this.s = null;
         }
-        ci.a7 a7Var = this.s;
-        if (a7Var != null) {
-            this.v = a7Var.o();
+        ci.z6 z6Var = this.s;
+        if (z6Var != null) {
+            this.v = z6Var.o();
             this.w = new nv0(this, n2Var.getMessagesController().getStoriesController(), sv0Var.j1, this.s.c);
         }
         N();

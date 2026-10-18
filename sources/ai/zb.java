@@ -17,7 +17,7 @@ import org.telegram.ui.Components.sv0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class zb implements Runnable {
     public final /* synthetic */ int a;
@@ -49,19 +49,19 @@ public final /* synthetic */ class zb implements Runnable {
                 }
                 break;
             case 1:
-                ci.i7 i7Var = (ci.i7) this.d;
-                LongSparseIntArray longSparseIntArray = i7Var.f;
+                ci.h7 h7Var = (ci.h7) this.d;
+                LongSparseIntArray longSparseIntArray = h7Var.f;
                 long j10 = this.b;
                 int i10 = longSparseIntArray.get(j10, 0);
                 int i11 = this.c;
                 int max = Math.max(i10, i11);
-                i7Var.f.put(j10, max);
-                i7Var.k.i(max, j10);
-                TL_stories.PeerStories y3 = i7Var.y(j10);
+                h7Var.f.put(j10, max);
+                h7Var.k.i(max, j10);
+                TL_stories.PeerStories y3 = h7Var.y(j10);
                 if (y3 != null && i11 > y3.max_read_id) {
                     y3.max_read_id = i11;
-                    Collections.sort(i7Var.g, i7Var.J);
-                    NotificationCenter.getInstance(i7Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+                    Collections.sort(h7Var.g, h7Var.J);
+                    NotificationCenter.getInstance(h7Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                     break;
                 }
                 break;

@@ -7,7 +7,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cl extends org.telegram.ui.Components.oc0 {
     public final /* synthetic */ sn H;
@@ -63,7 +63,7 @@ public final class cl extends org.telegram.ui.Components.oc0 {
                 i10 = 0;
                 z11 = false;
             }
-            Bundle d = org.telegram.messenger.kk.d(3, "onlySelect", "dialogsType", true);
+            Bundle d = org.telegram.messenger.lk.d(3, "onlySelect", "dialogsType", true);
             d.putBoolean("quote", !z10);
             boolean z12 = (z10 || (messages = snVar.f5.replyMessage) == null || messages.messages.isEmpty() || snVar.f5.quote != null) ? false : true;
             d.putBoolean("reply_to", z12);

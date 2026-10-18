@@ -21,7 +21,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class qu extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, iw0 {
     public boolean E;
@@ -534,7 +534,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
             luVar.setHandlesColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.vf, d6Var));
             luVar.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), AndroidUtilities.dp(11.0f));
             boolean z11 = LocaleController.isRTL;
-            addView(luVar, w7.z5.a(-2.0f, z11 ? 11.0f : 0.0f, 1.0f, z11 ? 0.0f : 11.0f, 0.0f, -1, 19));
+            addView(luVar, w7.z5.d(-1, -2.0f, 19, z11 ? 11.0f : 0.0f, 1.0f, z11 ? 0.0f : 11.0f, 0.0f));
         } else if (i10 == 2 || i10 == 3) {
             luVar.setTextSize(1, 16.0f);
             luVar.setMaxLines(8);
@@ -553,7 +553,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
             luVar.setTextIsSelectable(true);
             setClipChildren(false);
             setClipToPadding(false);
-            addView(luVar, w7.z5.a(-1.0f, 40.0f, 0.0f, 24.0f, 0.0f, -1, 19));
+            addView(luVar, w7.z5.d(-1, -1.0f, 19, 40.0f, 0.0f, 24.0f, 0.0f));
         } else if (i10 == 4) {
             luVar.setTextSize(1, 18.0f);
             luVar.setMaxLines(4);
@@ -562,7 +562,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
             luVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
             luVar.setBackground(null);
             luVar.setPadding(0, AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(12.0f));
-            addView(luVar, w7.z5.a(-1.0f, 14.0f, 0.0f, 48.0f, 0.0f, -1, 19));
+            addView(luVar, w7.z5.d(-1, -1.0f, 19, 14.0f, 0.0f, 48.0f, 0.0f));
         } else {
             luVar.setTextSize(1, 18.0f);
             luVar.setMaxLines(4);
@@ -571,7 +571,7 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
             luVar.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var));
             luVar.setBackground(null);
             luVar.setPadding(0, AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(12.0f));
-            addView(luVar, w7.z5.a(-1.0f, 48.0f, 0.0f, 0.0f, 0.0f, -1, 19));
+            addView(luVar, w7.z5.d(-1, -1.0f, 19, 48.0f, 0.0f, 0.0f, 0.0f));
         }
         ig.k kVar = new ig.k(this, context);
         this.b = kVar;
@@ -582,23 +582,23 @@ public class qu extends FrameLayout implements NotificationCenter.NotificationCe
         if (i10 == 0) {
             nm0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Xd, d6Var), PorterDuff.Mode.MULTIPLY));
             nm0Var.a(R.drawable.smiles_tab_smiles, false);
-            addView(kVar, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 5.0f, 48, (LocaleController.isRTL ? 3 : 5) | 16));
+            addView(kVar, w7.z5.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 16, 0.0f, 0.0f, 0.0f, 5.0f));
         } else if (i10 == 2 || i10 == 3) {
             nm0Var.setColorFilter(new PorterDuffColorFilter(-1929379841, PorterDuff.Mode.MULTIPLY));
             nm0Var.a(R.drawable.input_smile, false);
-            addView(kVar, w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, 40, 83));
+            addView(kVar, w7.z5.d(40, 40.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         } else if (i10 == 4) {
             nm0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Xd, d6Var), PorterDuff.Mode.MULTIPLY));
             nm0Var.a(R.drawable.input_smile, false);
-            addView(kVar, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, 48, 53));
+            addView(kVar, w7.z5.d(48, 48.0f, 53, 0.0f, 0.0f, 0.0f, 0.0f));
         } else if (i10 == 5) {
             nm0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.f7, d6Var), PorterDuff.Mode.MULTIPLY));
             nm0Var.a(R.drawable.input_smile, false);
-            addView(kVar, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, 48, 83));
+            addView(kVar, w7.z5.d(48, 48.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         } else {
             nm0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Xd, d6Var), PorterDuff.Mode.MULTIPLY));
             nm0Var.a(R.drawable.input_smile, false);
-            addView(kVar, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, 48, 83));
+            addView(kVar, w7.z5.d(48, 48.0f, 83, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         kVar.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 1, -1));
         kVar.setOnClickListener(new ai.v0(this, jw0Var, d6Var, 24));

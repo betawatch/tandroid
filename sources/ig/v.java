@@ -1,7 +1,6 @@
 package ig;
 
 import ai.bb;
-import ai.o2;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +21,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -43,7 +42,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sn;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v extends v61 implements NotificationCenter.NotificationCenterDelegate {
     public static org.telegram.ui.ActionBar.b2 d;
@@ -105,7 +104,7 @@ public final class v extends v61 implements NotificationCenter.NotificationCente
         sVar.setPadding(0, 0, AndroidUtilities.dp(42.0f), 0);
         LinearLayout e = org.telegram.messenger.g0.e(activity, 1);
         TextView textView = new TextView(activity);
-        kk.o(i11, d6Var, textView, 1, 16.0f);
+        lk.o(i11, d6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.BusinessLinksRenameMessage));
         e.addView(textView, z5.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
         e.addView(sVar, z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
@@ -122,7 +121,7 @@ public final class v extends v61 implements NotificationCenter.NotificationCente
             d.setOnShowListener(new r(i12, sVar));
             d.q(250L);
         } else {
-            b2Var.O = new o2(22, view, sVar);
+            b2Var.O = new ai.n2(22, view, sVar);
             b2VarArr[0] = b2Var;
             b2Var.setOnDismissListener(new bb(sVar, 5));
             b2VarArr[0].setOnShowListener(new n(view, sVar, 0));

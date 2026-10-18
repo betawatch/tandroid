@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class pc extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ dd c;
@@ -325,7 +325,7 @@ public final class pc extends org.telegram.ui.Components.hm0 {
             qcVar.a = j5Var;
             j5Var.setTextSize(16);
             j5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var6));
-            qcVar.addView(j5Var, w7.z5.a(-2.0f, 23.0f, 0.0f, 48.0f, 0.0f, -1, 23));
+            qcVar.addView(j5Var, w7.z5.d(-1, -2.0f, 23, 23.0f, 0.0f, 48.0f, 0.0f));
             qcVar.c = new org.telegram.ui.Components.p5(AndroidUtilities.dp(24.0f), 13, qcVar, false);
             frameLayout = qcVar;
         } else if (i10 == 3) {
@@ -333,7 +333,7 @@ public final class pc extends org.telegram.ui.Components.hm0 {
             i12 = ((org.telegram.ui.ActionBar.n2) ddVar).currentAccount;
             d6Var5 = ((org.telegram.ui.ActionBar.n2) ddVar).resourceProvider;
             tc tcVar = new tc(i12, parentActivity4, d6Var5);
-            tcVar.b.setOnItemClickListener(new ci.y4(5, this, tcVar));
+            tcVar.b.setOnItemClickListener(new ci.x4(5, this, tcVar));
             frameLayout = tcVar;
         } else if (i10 == 4) {
             Activity parentActivity5 = ddVar.getParentActivity();

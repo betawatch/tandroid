@@ -1,92 +1,69 @@
 package org.telegram.ui.Wallet;
 
-import android.view.KeyEvent;
-import android.widget.EditText;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r8 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class r8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ i9 b;
 
-    public /* synthetic */ r8(Object obj, int i10) {
+    public /* synthetic */ r8(i9 i9Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = i9Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        EditTextBoldCursor editTextBoldCursor;
         switch (this.a) {
             case 0:
-                t8 t8Var = (t8) this.b;
-                if (i10 != 3) {
-                    t8Var.getClass();
-                    return false;
+                i9 i9Var = this.b;
+                if (i9Var.F && (editTextBoldCursor = i9Var.E) != null && editTextBoldCursor.isAttachedToWindow() && i9Var.E.hasWindowFocus()) {
+                    i9Var.E.requestFocus();
+                    if (AndroidUtilities.showKeyboard(i9Var.E)) {
+                        i9Var.F = false;
+                        break;
+                    }
                 }
-                AndroidUtilities.hideKeyboard(t8Var.b);
-                return true;
+                break;
             case 1:
-                o9 o9Var = (o9) this.b;
-                if (i10 == 6) {
-                    ei.d dVar = o9Var.a0;
-                    if (dVar.W) {
-                        dVar.performClick();
-                        return true;
-                    }
-                } else {
-                    o9Var.getClass();
+                i9 i9Var2 = this.b;
+                float f7 = i9Var2.Y;
+                if (f7 < 1.0f && i9Var2.X == null) {
+                    o1.k kVar = new o1.k(new o1.j(f7));
+                    i9Var2.X = kVar;
+                    o1.l lVar = new o1.l(1.0f);
+                    lVar.a(0.55f);
+                    lVar.b(65.0f);
+                    kVar.u = lVar;
+                    i9Var2.X.e(0.001f);
+                    i9Var2.X.b(new a3(i9Var2, 2));
+                    i9Var2.X.a(new h6(i9Var2, 1));
+                    i9Var2.X.h();
+                    break;
                 }
-                return false;
+                break;
+            case 2:
+                this.b.a0.setLoading(false);
+                break;
+            case 3:
+                this.b.a0.setLoading(false);
+                break;
+            case 4:
+                this.b.q0();
+                break;
+            case 5:
+                i9 i9Var3 = this.b;
+                i9Var3.presentFragment(sn.W9(i9Var3.e.id));
+                break;
             default:
-                la laVar = (la) this.b;
-                EditText editText = laVar.a;
-                boolean z10 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
-                if (i10 != 5 && !z10) {
-                    return false;
-                }
-                if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {
-                    String lowerCase = editText.getText().toString().trim().toLowerCase();
-                    if (lowerCase.isEmpty() || !laVar.b()) {
-                        String str = null;
-                        if (!lowerCase.isEmpty()) {
-                            String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
-                            int length = mnemonicWordlist.length;
-                            int i11 = 0;
-                            while (true) {
-                                if (i11 < length) {
-                                    String str2 = mnemonicWordlist[i11];
-                                    if (str2.startsWith(lowerCase)) {
-                                        str = str2;
-                                    } else {
-                                        i11++;
-                                    }
-                                }
-                            }
-                        }
-                        if (str != null) {
-                            editText.setText(str);
-                            editText.setSelection(str.length());
-                            laVar.setError(false);
-                            laVar.a();
-                            Runnable runnable = laVar.r;
-                            if (runnable != null) {
-                                editText.post(runnable);
-                            }
-                        } else {
-                            laVar.setError(true);
-                        }
-                    } else {
-                        laVar.setError(false);
-                        laVar.a();
-                        Runnable runnable2 = laVar.r;
-                        if (runnable2 != null) {
-                            editText.post(runnable2);
-                        }
-                    }
-                }
-                return true;
+                org.telegram.messenger.g0.q(R.string.WalletAddressCopiedBulletin, xc.a0(this.b), R.raw.copy, 36);
+                break;
         }
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a0 implements Runnable {
     public final /* synthetic */ int a;
@@ -67,12 +67,12 @@ public final /* synthetic */ class a0 implements Runnable {
                         imageView.setImageResource(R.drawable.menu_lightbulb);
                         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                         imageView.setScaleType(ImageView.ScaleType.CENTER);
-                        frameLayout.addView(imageView, w7.z5.a(24.0f, 12.0f, 12.0f, 12.0f, 12.0f, 24, 19));
+                        frameLayout.addView(imageView, w7.z5.d(24, 24.0f, 19, 12.0f, 12.0f, 12.0f, 12.0f));
                         TextView textView = new TextView(e0Var.getContext());
                         textView.setText(LocaleController.getString(R.string.StoryCollageMenuHint));
                         textView.setTextSize(1, 13.0f);
                         textView.setTextColor(-1);
-                        frameLayout.addView(textView, w7.z5.a(-2.0f, 47.0f, 8.0f, 24.0f, 8.0f, -1, 23));
+                        frameLayout.addView(textView, w7.z5.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
                         i80 F = i80.F(e0Var.a, e0Var.b, e0Var);
                         if (e0Var.j0.n.K) {
                             u7 u7Var = new u7(e0Var.getContext(), 0);
@@ -89,7 +89,7 @@ public final /* synthetic */ class a0 implements Runnable {
                         F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new a0(e0Var, 5), true);
                         F.o();
                         F.r(frameLayout, w7.z5.n(220, -2));
-                        F.p = new ah.j(11);
+                        F.p = new ah.j(10);
                         F.i = 1;
                         F.V = true;
                         F.u = true;

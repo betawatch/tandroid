@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class bg0 extends hm0 {
     public final Context c;
@@ -128,13 +128,13 @@ public final class bg0 extends hm0 {
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setEllipsize(TextUtils.TruncateAt.END);
-            u5Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, 80, 19));
+            u5Var.addView(textView, w7.z5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
             TextView textView2 = new TextView(context);
             u5Var.b = textView2;
-            org.telegram.messenger.kk.o(org.telegram.ui.ActionBar.h6.zf, d6Var, textView2, 1, 12.0f);
+            org.telegram.messenger.lk.o(org.telegram.ui.ActionBar.h6.zf, d6Var, textView2, 1, 12.0f);
             textView2.setGravity(5);
             textView2.setSingleLine(true);
-            u5Var.addView(textView2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, 80, 19));
+            u5Var.addView(textView2, w7.z5.d(80, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
             pf0 pf0Var = new pf0(context);
             Paint paint = new Paint();
             pf0Var.a = paint;
@@ -147,7 +147,7 @@ public final class bg0 extends hm0 {
             paint.setColor(-11711155);
             paint2.setColor(-1);
             u5Var.c = pf0Var;
-            u5Var.addView(pf0Var, w7.z5.a(40.0f, 96.0f, 0.0f, 24.0f, 0.0f, -1, 19));
+            u5Var.addView(pf0Var, w7.z5.d(-1, 40.0f, 19, 96.0f, 0.0f, 24.0f, 0.0f));
             u5Var.setSeekBarDelegate(new tv(this, 11));
             t5Var = u5Var;
         } else {

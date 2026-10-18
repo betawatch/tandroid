@@ -17,7 +17,7 @@ import org.telegram.ui.Components.bs;
 import w7.z5;
 import zf.p;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c extends FrameLayout implements ne.d, y5 {
     public ShapeDrawable a;
@@ -32,14 +32,14 @@ public final class c extends FrameLayout implements ne.d, y5 {
         this.b = d6Var;
         e8 e8Var = new e8(context, d6Var, false);
         this.c = e8Var;
-        addView(e8Var, z5.a(45.0f, 0.0f, 8.0f, 0.0f, 0.0f, 45, 49));
+        addView(e8Var, z5.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 10.0f);
         textView.setGravity(17);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setSingleLine();
-        addView(textView, z5.a(-2.0f, 6.0f, 0.0f, 6.0f, 5.0f, -1, 80));
+        addView(textView, z5.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
         d();
     }
 

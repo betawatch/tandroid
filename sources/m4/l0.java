@@ -27,7 +27,7 @@ import org.telegram.ui.oc0;
 import org.telegram.ui.pc0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClickListener {
     public final /* synthetic */ float a;
@@ -92,12 +92,12 @@ public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClick
                 pc0Var2.m0 = iMarker;
                 Context context = mc0Var.getContext();
                 FrameLayout frameLayout = new FrameLayout(context);
-                mc0Var.addView(frameLayout, z5.d(114.0f, -2));
+                mc0Var.addView(frameLayout, z5.c(114.0f, -2));
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 pc0Var2.o0 = frameLayout2;
                 frameLayout2.setBackgroundResource(R.drawable.venue_tooltip);
                 pc0Var2.o0.getBackground().setColorFilter(new PorterDuffColorFilter(pc0Var2.getThemedColor(h6.h5), PorterDuff.Mode.MULTIPLY));
-                frameLayout.addView(pc0Var2.o0, z5.d(71.0f, -2));
+                frameLayout.addView(pc0Var2.o0, z5.c(71.0f, -2));
                 pc0Var2.o0.setAlpha(0.0f);
                 pc0Var2.o0.setOnClickListener(new g51(27, mc0Var, oc0Var));
                 TextView textView = new TextView(context);
@@ -109,19 +109,19 @@ public final /* synthetic */ class l0 implements o0, IMapsProvider.OnMarkerClick
                 textView.setTextColor(pc0Var2.getThemedColor(h6.G6));
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setGravity(LocaleController.isRTL ? 5 : 3);
-                TextView j10 = org.telegram.ui.Cells.c1.j(pc0Var2.o0, textView, z5.a(-2.0f, 18.0f, 10.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48), context);
+                TextView j10 = org.telegram.ui.Cells.c1.j(pc0Var2.o0, textView, z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 10.0f, 18.0f, 0.0f), context);
                 j10.setTextSize(1, 14.0f);
                 j10.setMaxLines(1);
                 j10.setEllipsize(truncateAt);
                 j10.setSingleLine(true);
                 j10.setTextColor(pc0Var2.getThemedColor(h6.A6));
                 j10.setGravity(LocaleController.isRTL ? 5 : 3);
-                pc0Var2.o0.addView(j10, z5.a(-2.0f, 18.0f, 32.0f, 18.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+                pc0Var2.o0.addView(j10, z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 32.0f, 18.0f, 0.0f));
                 textView.setText(oc0Var.c.title);
                 j10.setText(LocaleController.getString(R.string.TapToSendLocation));
                 FrameLayout frameLayout3 = new FrameLayout(context);
                 frameLayout3.setBackground(h6.K(AndroidUtilities.dp(36.0f), t4.a(oc0Var.a)));
-                frameLayout.addView(frameLayout3, z5.a(36.0f, 0.0f, 0.0f, 0.0f, 4.0f, 36, 81));
+                frameLayout.addView(frameLayout3, z5.d(36, 36.0f, 81, 0.0f, 0.0f, 0.0f, 4.0f));
                 w9 w9Var = new w9(context);
                 w9Var.f(a1.g.s(new StringBuilder("https://ss3.4sqi.net/img/categories_v2/"), oc0Var.c.venue_type, "_64.png"), null, null);
                 frameLayout3.addView(w9Var, z5.e(30, 30, 17));

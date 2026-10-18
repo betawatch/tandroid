@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k10 extends bb {
     public boolean A0;
@@ -296,7 +296,7 @@ public final class k10 extends bb {
         g10Var.f = view;
         int i17 = org.telegram.ui.ActionBar.h6.Oh;
         view.setBackground(org.telegram.ui.ActionBar.x5.d(new float[]{8.0f}, 0, org.telegram.ui.ActionBar.x5.b(org.telegram.ui.ActionBar.h6.x0(null, i17, false))));
-        g10Var.addView(view, w7.z5.d(-1.0f, -1));
+        g10Var.addView(view, w7.z5.c(-1.0f, -1));
         g10Var.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(8.0f), org.telegram.ui.ActionBar.h6.x0(null, i17, false)));
         Paint paint = new Paint(1);
         g10Var.a = paint;
@@ -323,15 +323,15 @@ public final class k10 extends bb {
         g10Var.setWillNotDraw(false);
         this.l0 = g10Var;
         g10Var.setOnClickListener(new f0(this, 15));
-        this.containerView.addView(this.l0, w7.z5.a(48.0f, 16.0f, 10.0f, 16.0f, 10.0f, -1, 87));
+        this.containerView.addView(this.l0, w7.z5.d(-1, 48.0f, 87, 16.0f, 10.0f, 16.0f, 10.0f));
         View view2 = new View(getContext());
         this.m0 = view2;
         view2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
-        this.containerView.addView(this.m0, w7.z5.a(1.0f / AndroidUtilities.density, 6.0f, 0.0f, 6.0f, 68.0f, -1, 87));
+        this.containerView.addView(this.m0, w7.z5.d(-1, 1.0f / AndroidUtilities.density, 87, 6.0f, 0.0f, 6.0f, 68.0f));
         this.d.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.l0 != null ? 68.0f : 0.0f));
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.k0 = frameLayout;
-        this.containerView.addView(frameLayout, w7.z5.a(100.0f, 6.0f, 0.0f, 6.0f, 68.0f, -1, 87));
+        this.containerView.addView(frameLayout, w7.z5.d(-1, 100.0f, 87, 6.0f, 0.0f, 6.0f, 68.0f));
         fixNavigationBar(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false));
         V(false);
         this.e.setTitle(A());
@@ -373,7 +373,7 @@ public final class k10 extends bb {
                 g10Var2.v = ofFloat;
                 ofFloat.addUpdateListener(new f10(g10Var2, 1));
                 g10Var2.v.addListener(new org.telegram.ui.pq(g10Var2, 28));
-                org.telegram.messenger.kk.l(2.0f, g10Var2.v);
+                org.telegram.messenger.lk.l(2.0f, g10Var2.v);
                 g10Var2.v.setDuration(200L);
                 g10Var2.v.start();
             }

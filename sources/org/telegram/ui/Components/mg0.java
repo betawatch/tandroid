@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class mg0 extends FrameLayout {
     public final TextView a;
@@ -48,7 +48,7 @@ public final class mg0 extends FrameLayout {
         textView3.setBackgroundResource(R.drawable.photobadge);
         textView3.setMinWidth(AndroidUtilities.dp(23.0f));
         textView3.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-        addView(textView3, w7.z5.a(23.0f, 0.0f, 0.0f, 7.0f, 0.0f, -2, 53));
+        addView(textView3, w7.z5.d(-2, 23.0f, 53, 0.0f, 0.0f, 7.0f, 0.0f));
     }
 
     public final void a() {

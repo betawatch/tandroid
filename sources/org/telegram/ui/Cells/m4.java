@@ -26,14 +26,14 @@ import org.telegram.ui.Components.fr;
 import org.telegram.ui.Components.gr;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m4 extends FrameLayout {
     public boolean E;
     public final org.telegram.ui.Components.f6 F;
     public long G;
     public int H;
-    public sg.z0 I;
+    public sg.a1 I;
     public Drawable J;
     public final org.telegram.ui.Components.w9 a;
     public final vd b;
@@ -63,7 +63,7 @@ public final class m4 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(27.0f));
-        addView(w9Var, w7.z5.a(54.0f, 0.0f, 7.0f, 0.0f, 0.0f, 54, 49));
+        addView(w9Var, w7.z5.d(54, 54.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
         vd vdVar = new vd(context, 6);
         this.b = vdVar;
         NotificationCenter.listenEmojiLoading(vdVar);
@@ -73,10 +73,10 @@ public final class m4 extends FrameLayout {
         vdVar.setGravity(49);
         vdVar.setLines(1);
         vdVar.setEllipsize(TextUtils.TruncateAt.END);
-        addView(vdVar, w7.z5.a(-2.0f, 6.0f, 64.0f, 6.0f, 0.0f, -1, 51));
+        addView(vdVar, w7.z5.d(-1, -2.0f, 51, 6.0f, 64.0f, 6.0f, 0.0f));
         gr grVar = new gr(context, d6Var);
         this.s = grVar;
-        addView(grVar, w7.z5.a(28.0f, 0.0f, 4.0f, 0.0f, 0.0f, -1, 48));
+        addView(grVar, w7.z5.d(-1, 28.0f, 48, 0.0f, 4.0f, 0.0f, 0.0f));
         int i10 = org.telegram.ui.ActionBar.h6.W8;
         int i11 = org.telegram.ui.ActionBar.h6.U8;
         fr frVar = grVar.a;
@@ -90,7 +90,7 @@ public final class m4 extends FrameLayout {
             xpVar.setDrawUnchecked(false);
             xpVar.setDrawBackgroundAsArc(4);
             xpVar.setProgressDelegate(new ia(this, 4));
-            addView(xpVar, w7.z5.a(24.0f, 19.0f, 42.0f, 0.0f, 0.0f, 24, 49));
+            addView(xpVar, w7.z5.d(24, 24.0f, 49, 19.0f, 42.0f, 0.0f, 0.0f));
             xpVar.a(false, false);
             setWillNotDraw(false);
         }
@@ -213,7 +213,7 @@ public final class m4 extends FrameLayout {
                                 org.telegram.ui.ActionBar.h6.t0.setColor(org.telegram.ui.ActionBar.h6.x0(null, this.H, false));
                                 canvas.drawCircle(width, height, AndroidUtilities.dp(11.33f) * e, org.telegram.ui.ActionBar.h6.t0);
                                 if (this.I == null) {
-                                    this.I = new sg.z0(org.telegram.ui.ActionBar.h6.Lj, org.telegram.ui.ActionBar.h6.Mj, -1, -1, null);
+                                    this.I = new sg.a1(org.telegram.ui.ActionBar.h6.Lj, org.telegram.ui.ActionBar.h6.Mj, -1, -1, null);
                                 }
                                 this.I.d((int) (width - AndroidUtilities.dp(10.0f)), 0.0f, (int) (height - AndroidUtilities.dp(10.0f)), (int) (AndroidUtilities.dp(10.0f) + width), 0.0f, (int) (AndroidUtilities.dp(10.0f) + height));
                                 canvas.drawCircle(width, height, AndroidUtilities.dp(10.0f) * e, this.I.f);

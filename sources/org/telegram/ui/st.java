@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class st extends org.telegram.ui.Components.bb {
     public final FrameLayout X;
@@ -49,7 +49,7 @@ public final class st extends org.telegram.ui.Components.bb {
         ImageView imageView = new ImageView(activity);
         imageView.setImageResource(R.drawable.ic_close_white);
         imageView.setColorFilter(new PorterDuffColorFilter(-8090220, PorterDuff.Mode.SRC_IN));
-        frameLayout.addView(imageView, w7.z5.a(24.0f, 0.0f, 14.0f, 14.0f, 0.0f, 24, 53));
+        frameLayout.addView(imageView, w7.z5.d(24, 24.0f, 53, 0.0f, 14.0f, 14.0f, 0.0f));
         w7.b6.a(imageView);
         final int i10 = 0;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.rt
@@ -262,7 +262,7 @@ public final class st extends org.telegram.ui.Components.bb {
         hashSet.addAll(this.b0);
         TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
         createconferencecall.random_id = Utilities.random.nextInt();
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new ai.g4(this, dVar, z10, hashSet, 6));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new ai.f4(this, dVar, z10, hashSet, 6));
     }
 
     @Override // org.telegram.ui.Components.bb

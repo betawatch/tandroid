@@ -10,7 +10,7 @@ import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.nw0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v extends FrameLayout {
     public final nw0 a;
@@ -24,7 +24,7 @@ public final class v extends FrameLayout {
         view.setBackgroundColor(h6.w0(h6.h5, d6Var));
         nw0 nw0Var = new nw0(context, d6Var);
         this.a = nw0Var;
-        addView(nw0Var, z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 48));
+        addView(nw0Var, z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
         setBackground(h6.W0(getContext(), R.drawable.greydivider_top, h6.b7));
     }
 

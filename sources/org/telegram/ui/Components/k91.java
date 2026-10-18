@@ -13,7 +13,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k91 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -111,12 +111,12 @@ public final class k91 extends FrameLayout {
             textView3.setEllipsize(TextUtils.TruncateAt.END);
             linearLayout.addView(textView3, w7.z5.n(-1, -2));
         }
-        addView(linearLayout, w7.z5.a(-2.0f, 0.0f, 0.0f, z10 ? 56.0f : 0.0f, 0.0f, -1, 51));
+        addView(linearLayout, w7.z5.d(-1, -2.0f, 51, 0.0f, 0.0f, z10 ? 56.0f : 0.0f, 0.0f));
         if (z10) {
             w9 w9Var = new w9(getContext());
             w9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
             w9Var.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.h6.m1(0.08f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, d6Var))));
-            addView(w9Var, w7.z5.a(48.0f, 0.0f, 5.0f, 0.0f, 1.0f, 48, 53));
+            addView(w9Var, w7.z5.d(48, 48.0f, 53, 0.0f, 5.0f, 0.0f, 1.0f));
             TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, 40);
             w9Var.k(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(webPage.photo.sizes, AndroidUtilities.dp(36.0f), false, closestPhotoSizeWithSize, true), webPage.photo), "48_48", ImageLocation.getForObject(closestPhotoSizeWithSize, webPage.photo), "48_48_b", 0L, null, webPage, 1);
         }

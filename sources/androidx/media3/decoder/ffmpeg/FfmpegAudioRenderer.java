@@ -35,10 +35,9 @@ import k2.u;
 import k2.y;
 import k2.z;
 import org.telegram.tgnet.TLObject;
-import u2.f0;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioRenderer extends b implements v0 {
     public final qf.b I;
@@ -659,7 +658,7 @@ public final class FfmpegAudioRenderer extends b implements v0 {
     }
 
     @Override // i2.b
-    public final void u(w[] wVarArr, long j10, long j11, f0 f0Var) {
+    public final void u(w[] wVarArr, long j10, long j11, u2.g0 g0Var) {
         this.P = false;
         if (this.c0 == -9223372036854775807L) {
             L(j11);

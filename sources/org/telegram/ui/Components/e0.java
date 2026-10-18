@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class e0 extends bb implements NotificationCenter.NotificationCenterDelegate {
     public final org.telegram.ui.Cells.i3 A0;
@@ -109,7 +109,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         int i10 = org.telegram.ui.ActionBar.h6.G6;
         imageView.setColorFilter(getThemedColor(i10));
         imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.m1(0.1f, getThemedColor(i10)), 1, -1));
-        this.e.addView(imageView, w7.z5.a(54.0f, 0.0f, 0.0f, 8.0f, 0.0f, 54, 85));
+        this.e.addView(imageView, w7.z5.d(54, 54.0f, 85, 0.0f, 0.0f, 8.0f, 0.0f));
         w7.b6.b(imageView, 0.1f, 1.5f);
         imageView.setOnClickListener(new b(this, 8));
         FrameLayout frameLayout = new FrameLayout(context);
@@ -125,7 +125,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         d0Var.a(R.drawable.menu_rewrite, LocaleController.getString(R.string.AIEditorTabStyle), new e(this, 3));
         d0Var.a(R.drawable.menu_proofread, LocaleController.getString(R.string.AIEditorTabFix), new e(this, 3));
         d0Var.c(1);
-        frameLayout.addView(d0Var, w7.z5.a(-1.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 119));
+        frameLayout.addView(d0Var, w7.z5.d(-1, -1.0f, 119, 12.0f, 0.0f, 12.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.z0 = frameLayout2;
         org.telegram.ui.Cells.i3 i3Var = new org.telegram.ui.Cells.i3(context, LocaleController.getString(R.string.ArticleAIPrompt), true, false, MessagesController.getInstance(this.currentAccount).config.aicomposeTonePromptLengthMax.get(), d6Var);
@@ -135,7 +135,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         g3Var.setMaxLines(5);
         i3Var.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(20.0f), org.telegram.ui.ActionBar.h6.w0(i11, d6Var)));
         g3Var.addTextChangedListener(new k(this));
-        frameLayout2.addView(i3Var, w7.z5.d(-2.0f, -1));
+        frameLayout2.addView(i3Var, w7.z5.c(-2.0f, -1));
         frameLayout2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), 0);
         g3Var.setPadding(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(53.0f), AndroidUtilities.dp(15.0f));
         d0 d0Var2 = new d0(this.currentAccount, context, d6Var, true);
@@ -165,12 +165,12 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         dVar.setRoundRadius(24);
         this.E0 = dVar;
         linearLayout.addView(dVar, w7.z5.o(-1, 48, 1.0f, 119));
-        ei.d f7 = org.telegram.messenger.kk.f(24, context, d6Var, true);
+        ei.d f7 = org.telegram.messenger.lk.f(24, context, d6Var, true);
         this.F0 = f7;
         f7.setOnClickListener(new b(this, 9));
         f7.setOnLongClickListener(new i(this, d6Var, context, 0));
         linearLayout.addView(f7, w7.z5.t(48, 48, 5, 10, 0, 0, 0));
-        ei.d f10 = org.telegram.messenger.kk.f(24, context, d6Var, true);
+        ei.d f10 = org.telegram.messenger.lk.f(24, context, d6Var, true);
         this.D0 = f10;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.AIEditorLimitButton));
         spannableStringBuilder.append((CharSequence) " ");
@@ -185,20 +185,20 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         e.leftMargin = i13 + i14;
         e.rightMargin += i14;
         this.containerView.addView(linearLayout, e);
-        FrameLayout.LayoutParams a2 = w7.z5.a(48.0f, 12.0f, 6.0f, 12.0f, 12.0f, -1, 80);
-        int i15 = a2.leftMargin;
+        FrameLayout.LayoutParams d = w7.z5.d(-1, 48.0f, 80, 12.0f, 6.0f, 12.0f, 12.0f);
+        int i15 = d.leftMargin;
         int i16 = this.backgroundPaddingLeft;
-        a2.leftMargin = i15 + i16;
-        a2.rightMargin += i16;
-        this.containerView.addView(f10, a2);
+        d.leftMargin = i15 + i16;
+        d.rightMargin += i16;
+        this.containerView.addView(f10, d);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.G0 = frameLayout3;
-        FrameLayout.LayoutParams a10 = w7.z5.a(200.0f, 0.0f, 0.0f, 0.0f, 60.0f, -1, 80);
-        int i17 = a10.leftMargin;
+        FrameLayout.LayoutParams d10 = w7.z5.d(-1, 200.0f, 80, 0.0f, 0.0f, 0.0f, 60.0f);
+        int i17 = d10.leftMargin;
         int i18 = this.backgroundPaddingLeft;
-        a10.leftMargin = i17 + i18;
-        a10.rightMargin += i18;
-        this.containerView.addView(frameLayout3, a10);
+        d10.leftMargin = i17 + i18;
+        d10.rightMargin += i18;
+        this.containerView.addView(frameLayout3, d10);
         q0(false);
         im0 im0Var = this.d;
         int i19 = this.backgroundPaddingLeft;
@@ -251,7 +251,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         e0Var.B0.l(0.5f, 0.0f);
         ei.x3 x3Var4 = e0Var.B0;
         x3Var4.d = 8000L;
-        e0Var.containerView.addView(x3Var4, w7.z5.a(200.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+        e0Var.containerView.addView(x3Var4, w7.z5.d(-1, 200.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
         e0Var.B0.u();
         e0Var.s0();
     }
@@ -1151,7 +1151,7 @@ public final class e0 extends bb implements NotificationCenter.NotificationCente
         }
         ViewPropertyAnimator animate = i3Var.b.animate();
         this.H0 = z10;
-        org.telegram.messenger.kk.s(animate, !equals ? 1.0f : 0.5f, 320L);
+        org.telegram.messenger.lk.s(animate, !equals ? 1.0f : 0.5f, 320L);
         this.O0.N(true);
     }
 

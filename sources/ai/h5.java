@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.c91;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class h5 extends c91 {
     public final /* synthetic */ k7 T;
@@ -23,8 +23,8 @@ public final class h5 extends c91 {
     public final void E(View view, float f7) {
         int i10;
         View view2;
-        yh.l2 l2Var;
-        yh.l2 l2Var2;
+        yh.k2 k2Var;
+        yh.k2 k2Var2;
         k5 k5Var;
         k5 k5Var2;
         k5 k5Var3;
@@ -44,15 +44,15 @@ public final class h5 extends c91 {
             FrameLayout frameLayout = (FrameLayout) view;
             if (frameLayout.getChildCount() > 0) {
                 view2 = frameLayout.getChildAt(0);
-                l2Var = k7Var.c0;
-                if (l2Var != null && view2 == l2Var.Y && (k5Var3 = l2Var.e0) != null) {
+                k2Var = k7Var.c0;
+                if (k2Var != null && view2 == k2Var.Y && (k5Var3 = k2Var.e0) != null) {
                     k5Var3.invalidate();
                 }
                 if (view2 == k7Var.Y && (k5Var2 = k7Var.e0) != null) {
                     k5Var2.invalidate();
                 }
-                l2Var2 = k7Var.d0;
-                if (l2Var2 == null && view2 == l2Var2.Y && (k5Var = l2Var2.e0) != null) {
+                k2Var2 = k7Var.d0;
+                if (k2Var2 == null && view2 == k2Var2.Y && (k5Var = k2Var2.e0) != null) {
                     k5Var.invalidate();
                     return;
                 }
@@ -60,15 +60,15 @@ public final class h5 extends c91 {
             }
         }
         view2 = null;
-        l2Var = k7Var.c0;
-        if (l2Var != null) {
+        k2Var = k7Var.c0;
+        if (k2Var != null) {
             k5Var3.invalidate();
         }
         if (view2 == k7Var.Y) {
             k5Var2.invalidate();
         }
-        l2Var2 = k7Var.d0;
-        if (l2Var2 == null) {
+        k2Var2 = k7Var.d0;
+        if (k2Var2 == null) {
         }
     }
 

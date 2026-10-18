@@ -5,7 +5,7 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class oz0 implements ei.mb {
     public final /* synthetic */ ProfileActivity a;
@@ -42,13 +42,13 @@ public final class oz0 implements ei.mb {
     }
 
     @Override // ei.mb
-    public final void b(long j10, ai.r3 r3Var) {
+    public final void b(long j10, ai.t3 t3Var) {
         ProfileActivity profileActivity = this.a;
         profileActivity.f0.setHasStories(profileActivity.j4());
         if (j10 == profileActivity.a() && profileActivity.p2 && profileActivity.l2 > 0.0f) {
             profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
             profileActivity.a.post(new eb0(profileActivity, 14));
         }
-        AndroidUtilities.runOnUIThread(r3Var, 30L);
+        AndroidUtilities.runOnUIThread(t3Var, 30L);
     }
 }

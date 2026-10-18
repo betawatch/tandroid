@@ -15,7 +15,7 @@ import org.telegram.ui.Components.l11;
 import org.telegram.ui.Components.m11;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final wh.n a;
@@ -42,7 +42,7 @@ public final class t extends FrameLayout {
         int i10 = h6.i6;
         int o10 = i0.a.o(h6.w0(i10, d6Var), 76);
         frameLayout.setBackground(h6.j0(dp, dp, dp, dp, w02, o10, o10));
-        addView(frameLayout, z5.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 0));
+        addView(frameLayout, z5.d(-1, -2.0f, 0, 14.0f, 0.0f, 14.0f, 0.0f));
         final int i11 = 0;
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: wg.s
             public final /* synthetic */ t b;
@@ -71,7 +71,7 @@ public final class t extends FrameLayout {
         int dp2 = AndroidUtilities.dp(20.0f);
         int o11 = i0.a.o(h6.w0(i10, d6Var), 76);
         imageView.setBackground(h6.j0(dp2, dp2, dp2, dp2, 0, o11, o11));
-        addView(imageView, z5.a(40.0f, 15.0f, 0.0f, 17.0f, 0.0f, 40, 21));
+        addView(imageView, z5.d(40, 40.0f, 21, 15.0f, 0.0f, 17.0f, 0.0f));
         final int i12 = 1;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: wg.s
             public final /* synthetic */ t b;

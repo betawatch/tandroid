@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class eu0 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -103,7 +103,7 @@ public final class eu0 extends org.telegram.ui.Components.hm0 {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         y5Var.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(4.0f));
-        y5Var.addView(w9Var, w7.z5.d(-1.0f, -1));
+        y5Var.addView(w9Var, w7.z5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         y5Var.b = frameLayout;
         y5Var.addView(frameLayout, w7.z5.e(42, 42, 53));
@@ -124,12 +124,12 @@ public final class eu0 extends org.telegram.ui.Components.hm0 {
         textView.setTextColor(-1);
         textView.setTextSize(1, 12.0f);
         textView.setImportantForAccessibility(2);
-        n5Var.addView(textView, w7.z5.a(-2.0f, 18.0f, -0.7f, 0.0f, 0.0f, -2, 19));
+        n5Var.addView(textView, w7.z5.d(-2, -2.0f, 19, 18.0f, -0.7f, 0.0f, 0.0f));
         org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(context, 24, null);
         y5Var.c = xpVar;
         xpVar.setDrawBackgroundAsArc(11);
         xpVar.b(org.telegram.ui.ActionBar.h6.W9, org.telegram.ui.ActionBar.h6.X9, org.telegram.ui.ActionBar.h6.V9);
-        y5Var.addView(xpVar, w7.z5.a(26.0f, 55.0f, 4.0f, 0.0f, 0.0f, 26, 51));
+        y5Var.addView(xpVar, w7.z5.d(26, 26.0f, 51, 55.0f, 4.0f, 0.0f, 0.0f));
         xpVar.setVisibility(0);
         y5Var.setFocusable(true);
         frameLayout.setOnClickListener(new y50(this, 19));

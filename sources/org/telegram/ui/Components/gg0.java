@@ -23,7 +23,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ei1;
 import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class gg0 extends WebViewClient {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final class gg0 extends WebViewClient {
                     ei1Var.b.getContentView().setVisibility(0);
                     ei1Var.b.setEnabled(true);
                     animatorSet.playTogether(ObjectAnimator.ofFloat(ei1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(ei1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(ei1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
-                    animatorSet.addListener(new vf1(this, 11));
+                    animatorSet.addListener(new vf1(this, 10));
                     animatorSet.setDuration(150L);
                     animatorSet.start();
                     break;

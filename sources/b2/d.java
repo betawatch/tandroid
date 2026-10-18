@@ -18,9 +18,9 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import e9.m2;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import w7.x6;
+import w7.v6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static void a(Context context, boolean z10, TaskCompletionSource taskCompletionSource) {
@@ -73,22 +73,22 @@ public abstract class d {
                 }
                 i13++;
             }
-            if (i12 == 1 && x6.a == null) {
+            if (i12 == 1 && v6.a == null) {
                 int i14 = Build.VERSION.SDK_INT;
                 if (i14 < 37) {
                     int d10 = d(true);
                     if (i14 < 35) {
-                        x6.a = Boolean.valueOf(z10);
+                        v6.a = Boolean.valueOf(z10);
                         if (z10) {
                         }
                     } else {
-                        x6.a = Boolean.valueOf(z10);
+                        v6.a = Boolean.valueOf(z10);
                         if (z10) {
                         }
                     }
                 }
                 z10 = false;
-                x6.a = Boolean.valueOf(z10);
+                v6.a = Boolean.valueOf(z10);
                 if (z10) {
                 }
             }

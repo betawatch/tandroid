@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pg implements Runnable {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class pg implements Runnable {
                 break;
             case 1:
                 xc xcVar = (xc) obj;
-                new sg.x0(xcVar.W(), 42, xcVar.c).show();
+                new sg.y0(xcVar.W(), 42, xcVar.c).show();
                 break;
             case 2:
                 AndroidUtilities.removeFromParent((ei.x3) obj);

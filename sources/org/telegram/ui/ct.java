@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ct implements Runnable {
     public final /* synthetic */ gt a;
@@ -28,18 +28,18 @@ public final class ct implements Runnable {
         this.a = gtVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:153:0x065d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:153:0x065c, code lost:
     
         if (org.telegram.messenger.MessageObject.isStickerHasSet(r0) != false) goto L130;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:258:0x0987, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:258:0x0986, code lost:
     
         if (org.telegram.messenger.MessageObject.isStickerHasSet(r6) != false) goto L230;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0512  */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0511  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x01b2  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x0dba  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0db9  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -338,7 +338,7 @@ public final class ct implements Runnable {
                 i0.b bVar12 = gtVar.q;
                 int i33 = bVar12.d + bVar12.b;
                 int min3 = ((int) (Math.min(gtVar.z.getWidth(), gtVar.z.getHeight() - i33) / 1.8f)) / 2;
-                gtVar.z.addView(actionBarPopupWindow$ActionBarPopupWindowLayout2, w7.z5.a(-2.0f, 0.0f, (AndroidUtilities.dp(84.0f) + ((int) ((gtVar.e + Math.max(r0 + min3, ((gtVar.z.getHeight() - i33) - gtVar.I) / 2)) + min3))) / AndroidUtilities.density, 0.0f, 0.0f, -2, 49));
+                gtVar.z.addView(actionBarPopupWindow$ActionBarPopupWindowLayout2, w7.z5.d(-2, -2.0f, 49, 0.0f, (AndroidUtilities.dp(84.0f) + ((int) ((gtVar.e + Math.max(r0 + min3, ((gtVar.z.getHeight() - i33) - gtVar.I) / 2)) + min3))) / AndroidUtilities.density, 0.0f, 0.0f));
                 gtVar.L = actionBarPopupWindow$ActionBarPopupWindowLayout2;
                 actionBarPopupWindow$ActionBarPopupWindowLayout2.setTranslationY(-AndroidUtilities.dp(12.0f));
                 gtVar.L.setAlpha(0.0f);
@@ -366,8 +366,8 @@ public final class ct implements Runnable {
                     gtVar.P.setMiniBubblesOffset(-AndroidUtilities.dp(14.0f));
                     FrameLayout frameLayout2 = new FrameLayout(gtVar.z.getContext());
                     gtVar.Q = frameLayout2;
-                    frameLayout2.addView(gtVar.P, w7.z5.a(116.0f, 0.0f, 0.0f, 0.0f, 0.0f, -2, 1));
-                    gtVar.z.addView(gtVar.Q, w7.z5.a(-2.0f, 0.0f, 100.0f, 0.0f, 0.0f, -2, 1));
+                    frameLayout2.addView(gtVar.P, w7.z5.d(-2, 116.0f, 1, 0.0f, 0.0f, 0.0f, 0.0f));
+                    gtVar.z.addView(gtVar.Q, w7.z5.d(-2, -2.0f, 1, 0.0f, 100.0f, 0.0f, 0.0f));
                 }
                 gtVar.P.setSelectedEmojis(gtVar.o);
                 gtVar.P.setDelegate(new us(gtVar));
@@ -748,7 +748,7 @@ public final class ct implements Runnable {
                         if (gtVar.O == null) {
                             yf1 yf1Var = new yf1(gtVar.z.getContext(), gtVar.c0);
                             gtVar.O = yf1Var;
-                            gtVar.z.addView(yf1Var, w7.z5.d(-1.0f, -1));
+                            gtVar.z.addView(yf1Var, w7.z5.c(-1.0f, -1));
                             gtVar.O.setOnClickListener(new vs(gtVar, i34));
                             z11 = true;
                             gtVar.O.a.r.setOnClickListener(new vs(gtVar, 1 == true ? 1 : 0));

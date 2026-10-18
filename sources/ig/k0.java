@@ -1,6 +1,6 @@
 package ig;
 
-import ai.q2;
+import ai.k2;
 import ai.wa;
 import android.app.Activity;
 import android.content.Context;
@@ -34,7 +34,7 @@ import org.telegram.ui.Components.xc;
 import org.telegram.ui.LaunchActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k0 extends bb {
     public static final int g0 = -1;
@@ -110,13 +110,13 @@ public final class k0 extends bb {
         dVar.setColor(getThemedColor(h6.wj));
         dVar.setText(LocaleController.getString(R.string.TerminateSession));
         dVar.setOnClickListener(new ai.v0(this, tL_connectedBot, e2Var, 11));
-        frameLayout.addView(dVar, z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
+        frameLayout.addView(dVar, z5.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         ei.d dVar2 = new ei.d(activity, d6Var, true);
         dVar2.setRoundRadius(24);
         this.c0 = dVar2;
         dVar2.setText(LocaleController.getString(R.string.BusinessBotUpdate));
         dVar2.setOnClickListener(new ai.p(21, this, tL_connectedBot));
-        frameLayout.addView(dVar2, z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
+        frameLayout.addView(dVar2, z5.d(-1, 48.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         U(false);
         FrameLayout.LayoutParams e = z5.e(-1, -2, 80);
         int i12 = e.leftMargin;
@@ -156,7 +156,7 @@ public final class k0 extends bb {
         TL_account.updateConnectedBot updateconnectedbot = new TL_account.updateConnectedBot();
         updateconnectedbot.bot = MessagesController.getInstance(k0Var.currentAccount).getInputUser(tL_connectedBot.bot_id);
         updateconnectedbot.recipients = a0Var.b();
-        ConnectionsManager.getInstance(k0Var.currentAccount).sendRequest(updateconnectedbot, new q2(k0Var, tL_connectedBot, a0Var.c(), 10));
+        ConnectionsManager.getInstance(k0Var.currentAccount).sendRequest(updateconnectedbot, new k2(k0Var, tL_connectedBot, a0Var.c(), 10));
     }
 
     public static /* synthetic */ void S(k0 k0Var, org.telegram.ui.Components.e2 e2Var) {

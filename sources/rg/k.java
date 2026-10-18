@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.it0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -51,11 +51,11 @@ public final /* synthetic */ class k implements View.OnClickListener {
             case 2:
                 m0 m0Var3 = this.b;
                 j jVar = m0Var3.S0;
-                if ((jVar instanceof v2) && !m0Var3.T0) {
-                    v2 v2Var = (v2) jVar;
+                if ((jVar instanceof u2) && !m0Var3.T0) {
+                    u2 u2Var = (u2) jVar;
                     m0Var3.T0 = true;
-                    v2Var.q();
-                    View focusedView = v2Var.getFocusedView();
+                    u2Var.q();
+                    View focusedView = u2Var.getFocusedView();
                     focusedView.requestFocus();
                     AndroidUtilities.showKeyboard(focusedView);
                 }
@@ -71,7 +71,7 @@ public final /* synthetic */ class k implements View.OnClickListener {
             default:
                 m0 m0Var4 = this.b;
                 m0Var4.C0(2);
-                if (!(m0Var4.S0 instanceof v2)) {
+                if (!(m0Var4.S0 instanceof u2)) {
                     m0Var4.j0(true);
                     break;
                 }

@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cz extends ImageView {
     public int a;
@@ -87,7 +87,7 @@ public final class cz extends ImageView {
                 this.n = ofFloat;
                 ofFloat.addUpdateListener(new l6(this, 22));
                 this.n.addListener(new org.telegram.ui.pq(this, 25));
-                org.telegram.messenger.kk.l(5.0f, this.n);
+                org.telegram.messenger.lk.l(5.0f, this.n);
                 this.n.setDuration(350L);
                 this.n.start();
             }

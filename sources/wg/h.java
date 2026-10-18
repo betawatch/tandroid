@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.j5;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout {
     public final j5 a;
@@ -34,9 +34,9 @@ public final class h extends FrameLayout {
         addView(j5Var2);
         j5Var.l(LocaleController.formatString("BoostingDateAndTime", R.string.BoostingDateAndTime, new Object[0]), false);
         boolean z10 = LocaleController.isRTL;
-        j5Var.setLayoutParams(z5.a(-2.0f, z10 ? 0.0f : 21.0f, 0.0f, z10 ? 21.0f : 0.0f, 0.0f, -1, (z10 ? 5 : 3) | 16));
+        j5Var.setLayoutParams(z5.d(-1, -2.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 21.0f, 0.0f, z10 ? 21.0f : 0.0f, 0.0f));
         boolean z11 = LocaleController.isRTL;
-        j5Var2.setLayoutParams(z5.a(-2.0f, z11 ? 21.0f : 0.0f, 0.0f, z11 ? 0.0f : 21.0f, 0.0f, -1, (z11 ? 3 : 5) | 16));
+        j5Var2.setLayoutParams(z5.d(-1, -2.0f, (z11 ? 3 : 5) | 16, z11 ? 21.0f : 0.0f, 0.0f, z11 ? 0.0f : 21.0f, 0.0f));
         setBackgroundColor(h6.w0(h6.h5, d6Var));
     }
 

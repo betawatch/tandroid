@@ -15,7 +15,7 @@ import b5.h;
 import c0.i;
 import c0.j;
 import c5.b0;
-import ci.z7;
+import ci.y7;
 import com.google.android.gms.internal.cast.z5;
 import d9.k;
 import e9.n0;
@@ -83,15 +83,16 @@ import org.telegram.ui.Components.voip.k1;
 import org.telegram.ui.Components.voip.t;
 import org.telegram.ui.ey;
 import org.telegram.ui.te1;
-import org.telegram.ui.web.a1;
-import org.telegram.ui.web.x0;
+import org.telegram.ui.web.c0;
+import org.telegram.ui.web.y0;
 import org.telegram.ui.xx;
 import org.webrtc.GlGenericDrawer;
 import p4.r0;
+import p4.s0;
 import r9.r;
-import w7.l6;
+import w7.j6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2, xx, p5, j, e0, g1, e2.j, e1, k, ne.d, r9.d, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, k1, a5.b {
     public final /* synthetic */ int a;
@@ -216,21 +217,21 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
 
     @Override // a5.b
     public void c(WebView webView, a5.a aVar, Uri uri, boolean z10, h hVar) {
-        x0 x0Var = (x0) this.b;
-        a1 a1Var = x0Var.Q;
-        if (webView != x0Var || a1Var == null) {
+        y0 y0Var = (y0) this.b;
+        org.telegram.ui.web.b1 b1Var = y0Var.Q;
+        if (webView != y0Var || b1Var == null) {
             return;
         }
-        if (webView != a1Var.a || aVar.b != 0) {
-            a1Var.g("onBotWebMessage ignored: invalid source or payload");
+        if (webView != b1Var.a || aVar.b != 0) {
+            b1Var.g("onBotWebMessage ignored: invalid source or payload");
             return;
         }
-        String k10 = a1.k(uri == null ? null : uri.toString());
-        if (a1Var.t0 && (TextUtils.isEmpty(a1Var.F0) || !TextUtils.equals(a1Var.F0, k10) || !TextUtils.equals(a1Var.F0, a1Var.getOriginHost()))) {
-            a1Var.g("onBotWebMessage ignored: untrusted origin");
+        String k10 = org.telegram.ui.web.b1.k(uri == null ? null : uri.toString());
+        if (b1Var.t0 && (TextUtils.isEmpty(b1Var.F0) || !TextUtils.equals(b1Var.F0, k10) || !TextUtils.equals(b1Var.F0, b1Var.getOriginHost()))) {
+            b1Var.g("onBotWebMessage ignored: untrusted origin");
             return;
         }
-        z7 f7 = a1Var.f();
+        y7 f7 = b1Var.f();
         try {
             aVar.h(0);
             String str = (String) aVar.c;
@@ -238,13 +239,13 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
                 JSONObject jSONObject = new JSONObject(str);
                 String string = jSONObject.getString("eventType");
                 if (!string.isEmpty() && string.length() <= 128) {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.web.b0(a1Var, webView, f7, string, jSONObject.optString("eventData", null), 2));
+                    AndroidUtilities.runOnUIThread(new c0(b1Var, webView, f7, string, jSONObject.optString("eventData", null), 2));
                     return;
                 }
-                a1Var.g("onBotWebMessage ignored: invalid event type");
+                b1Var.g("onBotWebMessage ignored: invalid event type");
                 return;
             }
-            a1Var.g("onBotWebMessage ignored: invalid payload length");
+            b1Var.g("onBotWebMessage ignored: invalid payload length");
         } catch (JSONException e) {
             FileLog.e(e);
         }
@@ -290,7 +291,7 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
     public c f(e eVar) {
         d dVar = (d) this.b;
         URL url = (URL) eVar.b;
-        String c10 = l6.c("CctTransportBackend");
+        String c10 = j6.c("CctTransportBackend");
         if (Log.isLoggable(c10, 4)) {
             Log.i(c10, String.format("Making request to: %s", url));
         }
@@ -327,12 +328,12 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
                     }
                     int responseCode = httpURLConnection.getResponseCode();
                     Integer valueOf = Integer.valueOf(responseCode);
-                    String c11 = l6.c("CctTransportBackend");
+                    String c11 = j6.c("CctTransportBackend");
                     if (Log.isLoggable(c11, 4)) {
                         Log.i(c11, String.format("Status Code: %d", valueOf));
                     }
-                    l6.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
-                    l6.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
+                    j6.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
+                    j6.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
                     if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
                         return new c(responseCode, new URL(httpURLConnection.getHeaderField("Location")), 0L);
                     }
@@ -361,19 +362,19 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
             }
         } catch (ja.b e) {
             e = e;
-            l6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            j6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new c(400, null, 0L);
         } catch (ConnectException e7) {
             e = e7;
-            l6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            j6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new c(500, null, 0L);
         } catch (UnknownHostException e10) {
             e = e10;
-            l6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            j6.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new c(500, null, 0L);
         } catch (IOException e11) {
             e = e11;
-            l6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            j6.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new c(400, null, 0L);
         }
     }
@@ -385,7 +386,7 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
                 ((x9) this.b).run();
                 break;
             default:
-                ((org.telegram.ui.web.b0) this.b).run();
+                ((c0) this.b).run();
                 break;
         }
     }
@@ -403,7 +404,7 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
 
     @Override // r9.d
     public Object j2(z5 z5Var) {
-        return new oa.c((Context) z5Var.a(Context.class), ((l9.h) z5Var.a(l9.h.class)).d(), z5Var.y(oa.d.class), z5Var.b(ya.b.class), (Executor) z5Var.f((r) this.b));
+        return new oa.c((Context) z5Var.a(Context.class), ((l9.h) z5Var.a(l9.h.class)).d(), z5Var.y(oa.d.class), z5Var.b(ya.c.class), (Executor) z5Var.f((r) this.b));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
@@ -438,9 +439,9 @@ public final /* synthetic */ class b implements gu, o0, Utilities.Callback5, a2,
         return true;
     }
 
-    public /* synthetic */ b(p4.t0 t0Var, r0 r0Var) {
+    public /* synthetic */ b(s0 s0Var, r0 r0Var) {
         this.a = 29;
-        this.b = t0Var;
+        this.b = s0Var;
     }
 
     @Override // org.webrtc.GlGenericDrawer.TextureCallback

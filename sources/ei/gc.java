@@ -35,7 +35,7 @@ import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.ln0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class gc extends View {
     public final Paint A0;
@@ -94,7 +94,7 @@ public final class gc extends View {
     public long c1;
     public Runnable d;
     public final org.telegram.ui.Components.f6 d0;
-    public ai.r3 d1;
+    public ai.t3 d1;
     public long e;
     public final org.telegram.ui.Components.f6 e0;
     public long e1;
@@ -451,7 +451,7 @@ public final class gc extends View {
                 u7Var4.b = 0.0f;
                 u7Var4.c = 1.5f;
                 u7Var4.d(acVar.i);
-                u7Var4.h = new ai.o2(14, gcVar, acVar);
+                u7Var4.h = new ai.n2(14, gcVar, acVar);
                 i80 F4 = i80.F(viewGroup, d6Var, gcVar);
                 F4.q(u7Var4);
                 F4.V(5);
@@ -2492,17 +2492,17 @@ public final class gc extends View {
         if (zbVar != null) {
             zbVar.o(clamp, z10);
         }
-        ai.r3 r3Var = this.d1;
-        if (r3Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(r3Var);
+        ai.t3 t3Var = this.d1;
+        if (t3Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(t3Var);
             this.d1 = null;
         }
         if (!z10) {
             return true;
         }
-        ai.r3 r3Var2 = new ai.r3(this, clamp, 9);
-        this.d1 = r3Var2;
-        AndroidUtilities.runOnUIThread(r3Var2, 150L);
+        ai.t3 t3Var2 = new ai.t3(this, clamp, 9);
+        this.d1 = t3Var2;
+        AndroidUtilities.runOnUIThread(t3Var2, 150L);
         return true;
     }
 
@@ -2662,7 +2662,7 @@ public final class gc extends View {
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z10;
-        ai.r3 r3Var;
+        ai.t3 t3Var;
         boolean z11;
         VelocityTracker velocityTracker;
         zb zbVar;
@@ -2708,9 +2708,9 @@ public final class gc extends View {
                 ln0 ln0Var = this.W0;
                 ai.t0 t0Var = this.Y0;
                 if (action == 0) {
-                    ai.r3 r3Var2 = this.d1;
-                    if (r3Var2 != null) {
-                        AndroidUtilities.cancelRunOnUIThread(r3Var2);
+                    ai.t3 t3Var2 = this.d1;
+                    if (t3Var2 != null) {
+                        AndroidUtilities.cancelRunOnUIThread(t3Var2);
                         this.d1 = null;
                     }
                     ln0Var.a();
@@ -3347,9 +3347,9 @@ public final class gc extends View {
                                     z10 = false;
                                 }
                             }
-                            r3Var = this.d1;
-                            if (r3Var != null) {
-                                AndroidUtilities.cancelRunOnUIThread(r3Var);
+                            t3Var = this.d1;
+                            if (t3Var != null) {
+                                AndroidUtilities.cancelRunOnUIThread(t3Var);
                                 this.d1 = null;
                             }
                             if (this.m1 || !z10 || (zbVar = this.a) == null) {
@@ -3444,8 +3444,8 @@ public final class gc extends View {
                         }
                     }
                     z10 = true;
-                    r3Var = this.d1;
-                    if (r3Var != null) {
+                    t3Var = this.d1;
+                    if (t3Var != null) {
                     }
                     if (this.m1) {
                     }

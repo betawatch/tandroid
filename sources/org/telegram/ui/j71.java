@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class j71 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -343,7 +343,7 @@ public final class j71 extends org.telegram.ui.Components.hm0 {
                 int i13 = 21;
                 if (i12 == 1) {
                     boolean z10 = LocaleController.isRTL;
-                    t6Var.addView(linearLayout, w7.z5.a(30.0f, z10 ? 15 : 49, 11.0f, z10 ? 49 : 15, 0.0f, -1, (z10 ? 5 : 3) | 48));
+                    t6Var.addView(linearLayout, w7.z5.d(-1, 30.0f, (z10 ? 5 : 3) | 48, z10 ? 15 : 49, 11.0f, z10 ? 49 : 15, 0.0f));
                     org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
                     t6Var.n = h9Var;
                     h9Var.u(AndroidUtilities.dp(10.0f));
@@ -351,21 +351,21 @@ public final class j71 extends org.telegram.ui.Components.hm0 {
                     t6Var.h = w9Var;
                     w9Var.setRoundRadius(AndroidUtilities.dp(10.0f));
                     boolean z11 = LocaleController.isRTL;
-                    t6Var.addView(w9Var, w7.z5.a(20.0f, z11 ? 0 : 21, 13.0f, z11 ? 21 : 0, 0.0f, 20, (z11 ? 5 : 3) | 48));
+                    t6Var.addView(w9Var, w7.z5.d(20, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 0 : 21, 13.0f, z11 ? 21 : 0, 0.0f));
                 } else {
                     org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context);
                     t6Var.f = w9Var2;
                     w9Var2.setRoundRadius(AndroidUtilities.dp(10.0f));
                     boolean z12 = LocaleController.isRTL;
-                    t6Var.addView(w9Var2, w7.z5.a(42.0f, z12 ? 0 : 16, 9.0f, z12 ? 16 : 0, 0.0f, 42, (z12 ? 5 : 3) | 48));
+                    t6Var.addView(w9Var2, w7.z5.d(42, 42.0f, (z12 ? 5 : 3) | 48, z12 ? 0 : 16, 9.0f, z12 ? 16 : 0, 0.0f));
                     t6Var.n = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
                     org.telegram.ui.Components.w9 w9Var3 = new org.telegram.ui.Components.w9(context);
                     t6Var.h = w9Var3;
                     w9Var3.setRoundRadius(AndroidUtilities.dp(10.0f));
                     boolean z13 = LocaleController.isRTL;
-                    t6Var.addView(w9Var3, w7.z5.a(42.0f, z13 ? 0 : 16, 9.0f, z13 ? 16 : 0, 0.0f, 42, (z13 ? 5 : 3) | 48));
+                    t6Var.addView(w9Var3, w7.z5.d(42, 42.0f, (z13 ? 5 : 3) | 48, z13 ? 0 : 16, 9.0f, z13 ? 16 : 0, 0.0f));
                     boolean z14 = LocaleController.isRTL;
-                    t6Var.addView(linearLayout, w7.z5.a(30.0f, z14 ? 15 : 72, 6.333f, z14 ? 72 : 15, 0.0f, -1, (z14 ? 5 : 3) | 48));
+                    t6Var.addView(linearLayout, w7.z5.d(-1, 30.0f, (z14 ? 5 : 3) | 48, z14 ? 15 : 72, 6.333f, z14 ? 72 : 15, 0.0f));
                 }
                 TextView textView = new TextView(context);
                 t6Var.b = textView;
@@ -407,7 +407,7 @@ public final class j71 extends org.telegram.ui.Components.hm0 {
                 textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
                 float f7 = i13;
                 float f10 = i11;
-                t6Var.addView(textView3, w7.z5.a(-2.0f, f7, i12 == 0 ? 28.0f : 36.0f, f10, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+                t6Var.addView(textView3, w7.z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, i12 == 0 ? 28.0f : 36.0f, f10, 0.0f));
                 TextView textView4 = new TextView(context);
                 t6Var.e = textView4;
                 textView4.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.A6, false));
@@ -417,7 +417,7 @@ public final class j71 extends org.telegram.ui.Components.hm0 {
                 textView4.setSingleLine(true);
                 textView4.setEllipsize(truncateAt);
                 textView4.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-                t6Var.addView(textView4, w7.z5.a(-2.0f, f7, i12 == 0 ? 46.0f : 59.0f, f10, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+                t6Var.addView(textView4, w7.z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, f7, i12 == 0 ? 46.0f : 59.0f, f10, 0.0f));
                 frameLayout = t6Var;
             } else {
                 frameLayout = new org.telegram.ui.Cells.ba(context);

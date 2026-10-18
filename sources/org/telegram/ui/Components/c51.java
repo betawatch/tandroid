@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c51 extends bb {
     public final ImageView X;
@@ -57,7 +57,7 @@ public final class c51 extends bb {
         int i10 = org.telegram.ui.ActionBar.h6.G6;
         imageView.setColorFilter(getThemedColor(i10));
         imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.m1(0.1f, getThemedColor(i10)), 1, -1));
-        this.e.addView(imageView, w7.z5.a(54.0f, 0.0f, 0.0f, 8.0f, 0.0f, 54, 85));
+        this.e.addView(imageView, w7.z5.d(54, 54.0f, 85, 0.0f, 0.0f, 8.0f, 0.0f));
         w7.b6.b(imageView, 0.1f, 1.5f);
         imageView.setOnClickListener(new t41(this, 2));
         String C = r41.C();
@@ -76,19 +76,19 @@ public final class c51 extends bb {
         dVar.setRoundRadius(24);
         this.Z = dVar;
         dVar.setText(LocaleController.getString(R.string.OK));
-        FrameLayout.LayoutParams a2 = w7.z5.a(48.0f, 12.0f, 6.0f, 12.0f, 12.0f, -1, 119);
-        int i12 = a2.leftMargin;
+        FrameLayout.LayoutParams d = w7.z5.d(-1, 48.0f, 119, 12.0f, 6.0f, 12.0f, 12.0f);
+        int i12 = d.leftMargin;
         int i13 = this.backgroundPaddingLeft;
-        a2.leftMargin = i12 + i13;
-        a2.rightMargin += i13;
-        frameLayout.addView(dVar, a2);
+        d.leftMargin = i12 + i13;
+        d.rightMargin += i13;
+        frameLayout.addView(dVar, d);
         this.containerView.addView(frameLayout, w7.z5.e(-1, -2, 80));
         im0 im0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
         im0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(66.0f));
         this.d.setClipToPadding(false);
         this.d.p1();
-        this.d.setOnItemClickListener(new ci.y4(14, this, d6Var));
+        this.d.setOnItemClickListener(new ci.x4(14, this, d6Var));
         s4.k kVar = new s4.k();
         kVar.m = false;
         kVar.C = false;
@@ -250,7 +250,7 @@ public final class c51 extends bb {
                 if (LaunchActivity.U() == null) {
                     return;
                 }
-                new sg.x0(c51Var.getContext(), 13, d6Var).show();
+                new sg.y0(c51Var.getContext(), 13, d6Var).show();
             }
         }
     }

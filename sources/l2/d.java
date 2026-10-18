@@ -2,9 +2,9 @@ package l2;
 
 import g2.b0;
 import java.io.IOException;
-import u2.t;
+import u2.u;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class d implements y2.g {
     public final /* synthetic */ h a;
@@ -36,7 +36,7 @@ public final class d implements y2.g {
         long j12 = oVar.a;
         g2.m mVar = oVar.b;
         b0 b0Var = oVar.d;
-        aVar.t(new t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b), oVar.c, iOException, true);
+        aVar.t(new u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b), oVar.c, iOException, true);
         hVar.m.getClass();
         hVar.y(iOException);
         return y2.l.e;
@@ -49,9 +49,9 @@ public final class d implements y2.g {
         long j12 = oVar.a;
         g2.m mVar = oVar.b;
         b0 b0Var = oVar.d;
-        t tVar = new t(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
+        u uVar = new u(mVar, b0Var.c, b0Var.d, j10, j11, b0Var.b);
         hVar.m.getClass();
-        hVar.q.r(tVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        hVar.q.r(uVar, oVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
         hVar.K = ((Long) oVar.f).longValue() - j10;
         hVar.z(true);
     }

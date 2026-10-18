@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class s61 extends pg.b {
     public q61 H;
@@ -358,7 +358,7 @@ public class s61 extends pg.b {
                         View view2 = G.c;
                         if (view2 != null) {
                             AndroidUtilities.removeFromParent(view2);
-                            frameLayout.addView(G.c, (i13 == -1 || i13 == -4) ? w7.z5.d(G.z, -1) : w7.z5.d(-2.0f, -2));
+                            frameLayout.addView(G.c, (i13 == -1 || i13 == -4) ? w7.z5.c(G.z, -1) : w7.z5.c(-2.0f, -2));
                             break;
                         }
                     }
@@ -366,13 +366,13 @@ public class s61 extends pg.b {
                 case -3:
                     p61 p61Var = (p61) view;
                     p61Var.a = G.z;
-                    p61Var.b = w7.m6.a(G.y, 1);
+                    p61Var.b = w7.k6.a(G.y, 1);
                     if (p61Var.getChildCount() != (G.c == null ? 0 : 1) || p61Var.getChildAt(0) != G.c) {
                         p61Var.removeAllViews();
                         View view3 = G.c;
                         if (view3 != null) {
                             AndroidUtilities.removeFromParent(view3);
-                            p61Var.addView(G.c, w7.z5.d(-1.0f, -1));
+                            p61Var.addView(G.c, w7.z5.c(-1.0f, -1));
                             break;
                         }
                     }
@@ -1090,7 +1090,7 @@ public class s61 extends pg.b {
 
     @Override // s4.g0
     public s4.b1 x(ViewGroup viewGroup, int i10) {
-        View i4Var;
+        View h4Var;
         View l4Var;
         View view;
         View view2;
@@ -1105,11 +1105,11 @@ public class s61 extends pg.b {
             switch (i10) {
                 case -4:
                 case -1:
-                    i4Var = new ci.i4(context, 21);
+                    h4Var = new ci.h4(context, 21);
                     if (i10 == -4) {
-                        i4Var.setTag(-33024);
+                        h4Var.setTag(-33024);
                     }
-                    view2 = i4Var;
+                    view2 = h4Var;
                     break;
                 case -3:
                     p61 p61Var = new p61(context);
@@ -1117,7 +1117,7 @@ public class s61 extends pg.b {
                     view2 = p61Var;
                     break;
                 case -2:
-                    view2 = new ci.i4(context, 22);
+                    view2 = new ci.h4(context, 22);
                     break;
                 case 0:
                     if (!z10) {
@@ -1165,34 +1165,34 @@ public class s61 extends pg.b {
                     org.telegram.ui.Cells.t2 t2Var = new org.telegram.ui.Cells.t2(context);
                     TextView textView = new TextView(context);
                     t2Var.b = textView;
-                    org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+                    org.telegram.messenger.lk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
                     textView.setMaxLines(1);
                     textView.setSingleLine(true);
                     TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
                     textView.setEllipsize(truncateAt);
                     textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
                     boolean z11 = LocaleController.isRTL;
-                    t2Var.addView(textView, w7.z5.a(-1.0f, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f, -1, (z11 ? 5 : 3) | 48));
+                    t2Var.addView(textView, w7.z5.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 61.0f : 23.0f, 0.0f, z11 ? 23.0f : 61.0f, 0.0f));
                     TextView textView2 = new TextView(context);
                     t2Var.c = textView2;
-                    org.telegram.messenger.kk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false), 1, 16.0f, 1);
+                    org.telegram.messenger.lk.u(textView2, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false), 1, 16.0f, 1);
                     textView2.setMaxLines(1);
                     textView2.setSingleLine(true);
                     textView2.setEllipsize(truncateAt);
                     textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 16);
                     textView2.setVisibility(8);
-                    t2Var.addView(textView2, w7.z5.a(-1.0f, 23.0f, 0.0f, 23.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
+                    t2Var.addView(textView2, w7.z5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 23.0f, 0.0f, 23.0f, 0.0f));
                     RadioButton radioButton = new RadioButton(context);
                     t2Var.d = radioButton;
                     radioButton.setSize(AndroidUtilities.dp(20.0f));
                     radioButton.b(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.g7, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h7, false));
-                    t2Var.addView(radioButton, w7.z5.a(22.0f, 20.0f, 15.0f, 20.0f, 0.0f, 22, (LocaleController.isRTL ? 3 : 5) | 48));
+                    t2Var.addView(radioButton, w7.z5.d(22, 22.0f, (LocaleController.isRTL ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f));
                     t2Var.b();
                     view2 = t2Var;
                     break;
                 case 11:
                 case 12:
-                    org.telegram.ui.Cells.va vaVar = new org.telegram.ui.Cells.va(6, i10 != 12 ? 0 : 3, context, false);
+                    org.telegram.ui.Cells.va vaVar = new org.telegram.ui.Cells.va(context, 6, i10 != 12 ? 0 : 3, false);
                     vaVar.setSelfAsSavedMessages(true);
                     view2 = vaVar;
                     break;
@@ -1240,9 +1240,9 @@ public class s61 extends pg.b {
                     view2 = q9Var;
                     break;
                 case 28:
-                    i4Var = new r61(context);
-                    i4Var.setTag(-33024);
-                    view2 = i4Var;
+                    h4Var = new r61(context);
+                    h4Var.setTag(-33024);
+                    view2 = h4Var;
                     break;
                 case 29:
                     view2 = new ig.t(context, d6Var);

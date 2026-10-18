@@ -20,7 +20,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class q extends androidx.fragment.app.s {
     public final Handler k0 = new Handler(Looper.getMainLooper());
@@ -340,12 +340,12 @@ public class q extends androidx.fragment.app.s {
         }
         Context applicationContext = K().getApplicationContext();
         k0.b bVar = new k0.b(applicationContext, i12);
-        FingerprintManager q6 = k0.b.q(applicationContext);
-        if (q6 == null || !q6.isHardwareDetected()) {
+        FingerprintManager w9 = k0.b.w(applicationContext);
+        if (w9 == null || !w9.isHardwareDetected()) {
             i10 = 12;
         } else {
-            FingerprintManager q10 = k0.b.q(applicationContext);
-            i10 = (q10 == null || !q10.hasEnrolledFingerprints()) ? 11 : 0;
+            FingerprintManager w10 = k0.b.w(applicationContext);
+            i10 = (w10 == null || !w10.hasEnrolledFingerprints()) ? 11 : 0;
         }
         if (i10 != 0) {
             T(i10, v7.n.a(applicationContext, i10));

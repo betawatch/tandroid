@@ -1,202 +1,41 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.uj0;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class y7 {
-    public int[] A;
-    public int[] B;
-    public boolean C;
-    public boolean D;
-    public int E;
-    public Path F;
-    public Bitmap G;
-    public int H;
-    public long I;
-    public long J;
-    public boolean K;
-    public boolean L;
-    public boolean M;
-    public boolean N;
-    public boolean O;
-    public boolean P;
-    public boolean Q;
-    public boolean R;
-    public boolean S;
-    public boolean T;
-    public float U;
-    public float V;
-    public float W;
-    public float X;
-    public float Y;
-    public float Z;
-    public final String a;
-    public float a0;
-    public TL_wallet.nftItem b;
-    public float b0;
-    public final ci.g3 c;
-    public float c0;
-    public final ImageReceiver d;
-    public final /* synthetic */ z7 d0;
-    public final x7 e;
-    public final x7 f;
-    public final x7 g;
-    public final x7 h;
-    public final x7 i;
-    public final x7 j;
-    public final x7 k;
-    public final x7 l;
-    public final x7 m;
-    public final x7 n;
-    public final x7 o;
-    public final x7 p;
-    public final x7 q;
-    public final x7 r;
-    public final x7[] s;
-    public final TL_stars.starGiftAttributeBackdrop t;
-    public Bitmap u;
-    public Bitmap v;
-    public Bitmap w;
-    public Canvas x;
-    public int[] y;
-    public int[] z;
+public final /* synthetic */ class y7 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ei.d b;
+    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
 
-    public y7(z7 z7Var, TL_wallet.nftItem nftitem) {
-        org.telegram.ui.ActionBar.n2 n2Var = z7Var.a;
-        this.d0 = z7Var;
-        this.c = new ci.g3(this, z7Var, 6);
-        this.d = new ImageReceiver(z7Var.M);
-        x7 x7Var = new x7(0.0f, 900.0f, 0.86f);
-        this.e = x7Var;
-        x7 x7Var2 = new x7(0.0f, 900.0f, 0.86f);
-        this.f = x7Var2;
-        x7 x7Var3 = new x7(1.0f, 420.0f, 0.78f);
-        this.g = x7Var3;
-        x7 x7Var4 = new x7(1.0f, 700.0f, 0.9f);
-        this.h = x7Var4;
-        x7 x7Var5 = new x7(0.0f, 700.0f, 0.9f);
-        this.i = x7Var5;
-        x7 x7Var6 = new x7(0.0f, 380.0f, 0.82f);
-        this.j = x7Var6;
-        x7 x7Var7 = new x7(0.0f, 30.0f, 1.0f);
-        this.k = x7Var7;
-        x7 x7Var8 = new x7(0.0f, 520.0f, 0.62f);
-        this.l = x7Var8;
-        x7 x7Var9 = new x7(0.0f, 300.0f, 1.0f);
-        this.m = x7Var9;
-        x7 x7Var10 = new x7(0.0f, 150.0f, 0.82f);
-        this.n = x7Var10;
-        x7 x7Var11 = new x7(0.0f, 150.0f, 0.82f);
-        this.o = x7Var11;
-        x7 x7Var12 = new x7(0.0f, 240.0f, 1.0f);
-        this.p = x7Var12;
-        x7 x7Var13 = new x7(0.0f, 700.0f, 1.0f);
-        this.q = x7Var13;
-        x7 x7Var14 = new x7(1.0f, 260.0f, 1.0f);
-        this.r = x7Var14;
-        int i10 = 5;
-        this.s = new x7[]{x7Var, x7Var2, x7Var3, x7Var4, x7Var5, x7Var6, x7Var7, x7Var8, x7Var9, x7Var10, x7Var11, x7Var12, x7Var13, x7Var14};
-        this.E = -2;
-        this.V = 1.0f;
-        this.c0 = 1.0f;
-        this.b = nftitem;
-        this.a = nftitem.address;
-        ArrayList<TL_stars.StarGiftAttribute> arrayList = nftitem.gift.attributes;
-        int size = arrayList.size();
-        int i11 = 0;
-        while (i11 < size) {
-            TL_stars.StarGiftAttribute starGiftAttribute = arrayList.get(i11);
-            i11++;
-            TL_stars.StarGiftAttribute starGiftAttribute2 = starGiftAttribute;
-            if (starGiftAttribute2 instanceof TL_stars.starGiftAttributeBackdrop) {
-                this.t = (TL_stars.starGiftAttributeBackdrop) starGiftAttribute2;
-            }
-            if (starGiftAttribute2 instanceof TL_stars.starGiftAttributePattern) {
-                this.d.setImage(ImageLocation.getForDocument(((TL_stars.starGiftAttributePattern) starGiftAttribute2).document), "60_60_firstframe", null, null, nftitem.gift, 1);
-            }
-        }
-        o2 o2Var = new o2(this, i10);
-        this.c.setDelegate(o2Var);
-        this.d.setDelegate(o2Var);
-        this.c.setCurrentAccount(n2Var.getCurrentAccount());
-        this.d.setCurrentAccount(n2Var.getCurrentAccount());
-        this.c.setAllowStartLottieAnimation(false);
-        this.c.setAutoRepeat(1);
-        this.c.setImage(ImageLocation.getForDocument(nftitem.gift.getDocument()), "120_120_nolimit", null, null, nftitem.gift, 1);
-        if (z7Var.isAttachedToWindow()) {
-            this.c.onAttachedToWindow();
-            this.d.onAttachedToWindow();
-        }
+    public /* synthetic */ y7(ei.d dVar, Utilities.Callback callback, org.telegram.ui.ActionBar.f3 f3Var, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        this.a = i10;
+        this.b = dVar;
+        this.c = callback;
+        this.d = f3Var;
+        this.e = d6Var;
     }
 
-    public final Bitmap a() {
-        z7 z7Var = this.d0;
-        RectF rectF = z7Var.E;
-        ci.g3 g3Var = this.c;
-        Bitmap bitmap = g3Var.getBitmap();
-        if (bitmap == null || bitmap.isRecycled()) {
-            return this.u;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                ei.d dVar = this.b;
+                dVar.setLoading(true);
+                this.c.run(new t3(dVar, this.d, this.e, 1));
+                break;
+            default:
+                ei.d dVar2 = this.b;
+                if (!dVar2.N) {
+                    dVar2.setLoading(true);
+                    this.c.run(new t3(this.d, this.e, dVar2));
+                    break;
+                }
+                break;
         }
-        uj0 lottieAnimation = g3Var.getLottieAnimation();
-        int i10 = lottieAnimation == null ? 0 : lottieAnimation.a0;
-        Bitmap bitmap2 = this.v;
-        if (bitmap2 != null && this.G == bitmap && this.E == i10) {
-            return this.u;
-        }
-        this.G = bitmap;
-        this.E = i10;
-        if (bitmap2 == null) {
-            this.v = Bitmap.createBitmap(288, 288, Bitmap.Config.ARGB_8888);
-            this.x = new Canvas(this.v);
-        }
-        this.v.eraseColor(0);
-        rectF.set(10.0f, 10.0f, 278.0f, 278.0f);
-        this.x.drawBitmap(bitmap, (Rect) null, rectF, z7Var.y);
-        if (this.C) {
-            this.D = true;
-        } else {
-            c();
-        }
-        return this.u;
-    }
-
-    public final boolean b() {
-        int i10 = this.H;
-        return i10 == 2 || i10 == 1;
-    }
-
-    /* JADX WARN: Type inference failed for: r8v1, types: [int[], java.io.Serializable] */
-    public final void c() {
-        if (this.y == null) {
-            this.y = new int[82944];
-            this.z = new int[82944];
-            this.A = new int[82944];
-            this.B = new int[945];
-        }
-        this.v.getPixels(this.y, 0, 288, 0, 0, 288, 288);
-        this.C = true;
-        this.D = false;
-        boolean z10 = this.w == null;
-        int[] iArr = this.y;
-        int[] iArr2 = this.z;
-        int[] iArr3 = this.A;
-        ?? r82 = this.B;
-        if (w7.k6.a == null) {
-            w7.k6.a = new DispatchQueue("walletStickerOutline");
-        }
-        w7.k6.a.postRunnable(new ai.m4(this, iArr, iArr2, iArr3, (Serializable) r82, z10, 13));
     }
 }

@@ -25,7 +25,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class ng extends iu {
     public fd c;
@@ -142,7 +142,7 @@ public abstract class ng extends iu {
         }
     }
 
-    public final void o(t0.j jVar, boolean z10, int i10, int i11) {
+    public final void o(t0.i iVar, boolean z10, int i10, int i11) {
         MessageObject threadMessage;
         MessageObject threadMessage2;
         ChatActivityEnterView chatActivityEnterView = this.d;
@@ -157,21 +157,21 @@ public abstract class ng extends iu {
             snVar.Vb();
             return;
         }
-        t0.i iVar = jVar.a;
-        if (iVar.getDescription().hasMimeType("image/gif")) {
+        t0.h hVar = iVar.a;
+        if (hVar.getDescription().hasMimeType("image/gif")) {
             AccountInstance accountInstance = chatActivityEnterView.R;
-            Uri a2 = iVar.a();
+            Uri c10 = hVar.c();
             long j10 = chatActivityEnterView.Q2;
             MessageObject messageObject = chatActivityEnterView.T2;
             threadMessage2 = chatActivityEnterView.getThreadMessage();
-            SendMessagesHelper.prepareSendingDocument(accountInstance, null, null, a2, null, "image/gif", j10, messageObject, threadMessage2, null, chatActivityEnterView.V2, null, z10, 0, jVar, snVar != null ? snVar.H8() : null, false);
+            SendMessagesHelper.prepareSendingDocument(accountInstance, null, null, c10, null, "image/gif", j10, messageObject, threadMessage2, null, chatActivityEnterView.V2, null, z10, 0, iVar, snVar != null ? snVar.H8() : null, false);
         } else {
             AccountInstance accountInstance2 = chatActivityEnterView.R;
-            Uri a10 = iVar.a();
+            Uri c11 = hVar.c();
             long j11 = chatActivityEnterView.Q2;
             MessageObject messageObject2 = chatActivityEnterView.T2;
             threadMessage = chatActivityEnterView.getThreadMessage();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance2, null, a10, j11, messageObject2, threadMessage, chatActivityEnterView.V2, null, null, null, jVar, 0, null, z10, 0, snVar == null ? 0 : snVar.R3, snVar != null ? snVar.H8() : null);
+            SendMessagesHelper.prepareSendingPhoto(accountInstance2, null, c11, j11, messageObject2, threadMessage, chatActivityEnterView.V2, null, null, null, iVar, 0, null, z10, 0, snVar == null ? 0 : snVar.R3, snVar != null ? snVar.H8() : null);
         }
         og ogVar = chatActivityEnterView.Z2;
         if (ogVar != null) {

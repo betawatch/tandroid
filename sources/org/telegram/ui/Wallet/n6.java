@@ -1,27 +1,33 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class n6 implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_wallet;
 
-    public /* synthetic */ n6(Object obj, int i10) {
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class n6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ Utilities.Callback2 c;
+    public final /* synthetic */ TL_wallet.sendTransfer d;
+    public final /* synthetic */ String e;
+
+    public /* synthetic */ n6(WalletEngine2 walletEngine2, Utilities.Callback2 callback2, TL_wallet.sendTransfer sendtransfer, String str, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = walletEngine2;
+        this.c = callback2;
+        this.d = sendtransfer;
+        this.e = str;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                s6.b((s6) this.b, z10, f7);
+                this.b.lambda$prepareTonConnectTransfer$4(this.c, this.d, this.e);
                 break;
             default:
-                o9 o9Var = (o9) this.b;
-                o9Var.X = null;
-                o9Var.Y = 1.0f;
-                o9Var.A0();
+                this.b.lambda$prepareSendNFT$25(this.c, this.d, this.e);
                 break;
         }
     }

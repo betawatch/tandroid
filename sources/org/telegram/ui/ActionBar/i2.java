@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class i2 extends f3 {
     public final /* synthetic */ l2 b;
@@ -36,7 +36,7 @@ public final class i2 extends f3 {
         view.setPadding(i10, 0, i10, 0);
         this.containerView = d5VarArr[0].getView();
         setApplyBottomPadding(false);
-        setOnDismissListener(new ai.v3(6, n2Var, l2Var));
+        setOnDismissListener(new ai.x3(6, n2Var, l2Var));
     }
 
     @Override // org.telegram.ui.ActionBar.f3

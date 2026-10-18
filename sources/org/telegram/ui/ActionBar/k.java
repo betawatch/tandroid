@@ -40,7 +40,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.im0;
@@ -54,7 +54,7 @@ import org.telegram.ui.Components.wo0;
 import org.telegram.ui.Components.x00;
 import org.telegram.ui.sy0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements ne.d, y5 {
     public CharSequence A0;
@@ -64,7 +64,7 @@ public class k extends FrameLayout implements ne.d, y5 {
     public y E;
     public boolean E0;
     public d F;
-    public ci.i4 F0;
+    public ci.h4 F0;
     public String G;
     public boolean G0;
     public boolean H;
@@ -408,7 +408,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 this.r.setVisibility(0);
                 this.r.setAlpha(0.0f);
             }
-            kk.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
+            lk.s(this.r.animate(), z10 ? 0.0f : 1.0f, 220L);
         }
         j5 j5Var = j5VarArr[1];
         if (j5Var != null) {
@@ -556,9 +556,9 @@ public class k extends FrameLayout implements ne.d, y5 {
     public final void L() {
         this.G0 = true;
         if (this.F0 == null) {
-            ci.i4 i4Var = new ci.i4(getContext(), 5);
-            this.F0 = i4Var;
-            addView(i4Var);
+            ci.h4 h4Var = new ci.h4(getContext(), 5);
+            this.F0 = h4Var;
+            addView(h4Var);
         }
     }
 
@@ -713,9 +713,9 @@ public class k extends FrameLayout implements ne.d, y5 {
     public final void b() {
         if (this.n1) {
             if (this.o1) {
-                ci.i4 i4Var = this.F0;
-                if (i4Var != null) {
-                    i4Var.setAlpha(1.0f - this.s1);
+                ci.h4 h4Var = this.F0;
+                if (h4Var != null) {
+                    h4Var.setAlpha(1.0f - this.s1);
                 } else {
                     j5 j5Var = this.n[0];
                     if (j5Var != null) {
@@ -1585,7 +1585,7 @@ public class k extends FrameLayout implements ne.d, y5 {
                 } else if (AndroidUtilities.isTablet()) {
                     f7 = 74.0f;
                 }
-                makeMeasureSpec = kk.c(f7, size, TLObject.FLAG_30);
+                makeMeasureSpec = lk.c(f7, size, TLObject.FLAG_30);
                 if (!kVar.y) {
                     kVar.E.r(0.0f);
                 }

@@ -34,7 +34,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v4 {
     public final Rect A = new Rect();
@@ -216,8 +216,8 @@ public final class v4 {
         textView.setTextColor(w02);
         r4Var.setOnClickListener(new l4(this, 2));
         frameLayout.addView(r4Var, w7.z5.e(-2, -2, 19));
-        frameLayout.addView(textView, w7.z5.a(-2.0f, 56.0f, 0.0f, 0.0f, 0.0f, -1, 19));
-        frameLayout.addView(view2, w7.z5.b(-1.0f, f7 / AndroidUtilities.density, 55));
+        frameLayout.addView(textView, w7.z5.d(-1, -2.0f, 19, 56.0f, 0.0f, 0.0f, 0.0f));
+        frameLayout.addView(view2, w7.z5.a(-1.0f, f7 / AndroidUtilities.density, 55));
         r4Var.measure(0, 0);
         this.H = new Size(r4Var.getMeasuredWidth(), r4Var.getMeasuredHeight());
         this.g = new sa1(this, context, 6);

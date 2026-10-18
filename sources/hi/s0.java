@@ -1,6 +1,6 @@
 package hi;
 
-import ai.r3;
+import ai.t3;
 import ai.td;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
@@ -30,7 +30,7 @@ import org.telegram.ui.Components.oc;
 import org.telegram.ui.Components.x90;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class s0 implements ii.d {
     public final Context a;
@@ -213,7 +213,7 @@ public final class s0 implements ii.d {
         }
         oc ocVar = new oc(context, d6Var, true, true);
         ocVar.e(LocaleController.getString(R.string.UndoNoCaps));
-        ocVar.a = new r3(this, j10, i13);
+        ocVar.a = new t3(this, j10, i13);
         ocVar.b = this.i;
         pcVar.setButton(ocVar);
         this.c.b(pcVar, 5000).j();

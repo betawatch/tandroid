@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class fn extends w7.a6 {
     public MessageObject a;
@@ -43,7 +43,7 @@ public final class fn extends w7.a6 {
     @Override // w7.a6
     public final void c() {
         sn snVar = this.h;
-        snVar.I9 = snVar.getNotificationCenter().setAnimationInProgress(snVar.I9, sn.Nc);
+        snVar.I9 = snVar.getNotificationCenter().setAnimationInProgress(snVar.I9, sn.Oc);
         qk qkVar = snVar.wa;
         if (qkVar.n) {
             qkVar.d();

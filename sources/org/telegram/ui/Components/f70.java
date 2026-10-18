@@ -4,7 +4,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f70 implements p90 {
     public final /* synthetic */ g70 a;
@@ -17,13 +17,13 @@ public final class f70 implements p90 {
     public final void c() {
         l70 l70Var = this.a.c;
         org.telegram.ui.ActionBar.n2 n2Var = l70Var.U;
-        if (n2Var instanceof org.telegram.ui.kh0) {
-            org.telegram.ui.kh0 kh0Var = (org.telegram.ui.kh0) n2Var;
+        if (n2Var instanceof org.telegram.ui.jh0) {
+            org.telegram.ui.jh0 jh0Var = (org.telegram.ui.jh0) n2Var;
             TLRPC.TL_chatInviteExported tL_chatInviteExported = l70Var.b;
-            org.telegram.ui.cb0 cb0Var = new org.telegram.ui.cb0(1, kh0Var.n);
-            cb0Var.T = kh0Var.s0;
+            org.telegram.ui.cb0 cb0Var = new org.telegram.ui.cb0(1, jh0Var.n);
+            cb0Var.T = jh0Var.s0;
             cb0Var.Y(tL_chatInviteExported);
-            kh0Var.presentFragment(cb0Var);
+            jh0Var.presentFragment(cb0Var);
         } else {
             org.telegram.ui.cb0 cb0Var2 = new org.telegram.ui.cb0(1, l70Var.g0);
             cb0Var2.Y(l70Var.b);
@@ -39,8 +39,8 @@ public final class f70 implements p90 {
         int i11;
         l70 l70Var = this.a.c;
         org.telegram.ui.ActionBar.n2 n2Var = l70Var.U;
-        if (n2Var instanceof org.telegram.ui.kh0) {
-            ((org.telegram.ui.kh0) n2Var).e0(l70Var.b);
+        if (n2Var instanceof org.telegram.ui.jh0) {
+            ((org.telegram.ui.jh0) n2Var).e0(l70Var.b);
         } else {
             TLRPC.TL_messages_editExportedChatInvite tL_messages_editExportedChatInvite = new TLRPC.TL_messages_editExportedChatInvite();
             tL_messages_editExportedChatInvite.link = l70Var.b.link;
@@ -59,8 +59,8 @@ public final class f70 implements p90 {
         int i11;
         l70 l70Var = this.a.c;
         org.telegram.ui.ActionBar.n2 n2Var = l70Var.U;
-        if (n2Var instanceof org.telegram.ui.kh0) {
-            ((org.telegram.ui.kh0) n2Var).b0(l70Var.b);
+        if (n2Var instanceof org.telegram.ui.jh0) {
+            ((org.telegram.ui.jh0) n2Var).b0(l70Var.b);
         } else {
             TLRPC.TL_messages_deleteExportedChatInvite tL_messages_deleteExportedChatInvite = new TLRPC.TL_messages_deleteExportedChatInvite();
             tL_messages_deleteExportedChatInvite.link = l70Var.b.link;

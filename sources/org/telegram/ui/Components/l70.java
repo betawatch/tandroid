@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l70 extends org.telegram.ui.ActionBar.f3 {
     public int E;
@@ -164,8 +164,8 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
             Emoji.replaceEmoji(spannableStringBuilder, textView.getPaint().getFontMetricsInt(), false);
             textView.setText(spannableStringBuilder);
         }
-        this.containerView.addView(y60Var, w7.z5.a(-1.0f, 0.0f, !this.c0 ? 0.0f : 44.0f, 0.0f, 0.0f, -1, 51));
-        this.containerView.addView(textView, w7.z5.a(this.c0 ? 50.0f : 44.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        this.containerView.addView(y60Var, w7.z5.d(-1, -1.0f, 51, 0.0f, !this.c0 ? 0.0f : 44.0f, 0.0f, 0.0f));
+        this.containerView.addView(textView, w7.z5.d(-1, this.c0 ? 50.0f : 44.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         c0();
         Y();
         if (hashMap == null || hashMap.get(Long.valueOf(tL_chatInviteExported.admin_id)) == null) {
@@ -224,9 +224,9 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
         boolean z10;
         Object obj;
         int i11;
-        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.kk.i(1, context, d6Var, false);
+        org.telegram.ui.ActionBar.f3 i12 = org.telegram.messenger.lk.i(1, context, d6Var, false);
         org.telegram.ui.ActionBar.f3[] f3VarArr = new org.telegram.ui.ActionBar.f3[1];
-        ?? e = org.telegram.messenger.kk.e(context, 1);
+        ?? e = org.telegram.messenger.lk.e(context, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(4.0f));
         e.setClipChildren(false);
         e.setClipToPadding(false);
@@ -416,7 +416,7 @@ public final class l70 extends org.telegram.ui.ActionBar.f3 {
                     }
                     org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(context, 3, null);
                     b2Var.q(120L);
-                    MessagesController.getInstance(l70Var.currentAccount).getChannelParticipant(MessagesController.getInstance(l70Var.currentAccount).getChat(Long.valueOf(j10)), user, new ai.q3(l70Var, b2Var, context, j10, tL_chatInviteExported, tL_chatInviteImporter, 1));
+                    MessagesController.getInstance(l70Var.currentAccount).getChannelParticipant(MessagesController.getInstance(l70Var.currentAccount).getChat(Long.valueOf(j10)), user, new ai.s3(l70Var, b2Var, context, j10, tL_chatInviteExported, tL_chatInviteImporter, 1));
                     return;
                 }
                 return;

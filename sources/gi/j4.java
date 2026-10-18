@@ -1,7 +1,7 @@
 package gi;
 
 import android.util.SparseIntArray;
-import ci.t8;
+import ci.s8;
 import java.util.Calendar;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
@@ -14,7 +14,7 @@ import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.mk0;
 import org.telegram.ui.Components.od0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.a2, kk0, md0 {
     public final /* synthetic */ int a;
@@ -55,7 +55,7 @@ public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.a2, k
         Utilities.Callback callback = (Utilities.Callback) this.f;
         int i11 = this.a;
         if (!UserConfig.getInstance(i11).isPremium()) {
-            new sg.x0((org.telegram.ui.ActionBar.n2) new n4(null), 12, false).show();
+            new sg.y0((org.telegram.ui.ActionBar.n2) new n4(null), 12, false).show();
             return;
         }
         zArr[0] = true;
@@ -68,7 +68,7 @@ public final /* synthetic */ class j4 implements org.telegram.ui.ActionBar.a2, k
             tL_emojiStatus.until = ConnectionsManager.getInstance(i11).getCurrentTime() + i12;
         }
         updateemojistatus.emoji_status = tL_emojiStatus;
-        ConnectionsManager.getInstance(i11).sendRequest(updateemojistatus, new t8(zArr2, callback, i11, updateemojistatus, 1));
+        ConnectionsManager.getInstance(i11).sendRequest(updateemojistatus, new s8(zArr2, callback, i11, updateemojistatus, 1));
     }
 
     @Override // org.telegram.ui.Components.md0

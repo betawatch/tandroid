@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fg implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -73,18 +73,18 @@ public final /* synthetic */ class fg implements ValueAnimator.AnimatorUpdateLis
                 imageView.setAlpha(f10);
                 break;
             case 5:
-                org.telegram.ui.Wallet.l3 l3Var = (org.telegram.ui.Wallet.l3) this.c;
-                l3Var.getClass();
-                l3Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
-                l3Var.a.invalidate();
+                org.telegram.ui.Wallet.m3 m3Var = (org.telegram.ui.Wallet.m3) this.c;
+                m3Var.getClass();
+                m3Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
+                m3Var.a.invalidate();
                 break;
             default:
-                org.telegram.ui.Wallet.o8 o8Var = (org.telegram.ui.Wallet.o8) this.c;
-                o8Var.getClass();
+                org.telegram.ui.Wallet.i8 i8Var = (org.telegram.ui.Wallet.i8) this.c;
+                i8Var.getClass();
                 float floatValue4 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o8Var.c = o8Var.c();
-                o8Var.d = this.b * floatValue4;
-                o8Var.s = floatValue4 > 0.0f;
+                i8Var.c = i8Var.c();
+                i8Var.d = this.b * floatValue4;
+                i8Var.s = floatValue4 > 0.0f;
                 break;
         }
     }

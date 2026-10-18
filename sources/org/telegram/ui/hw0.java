@@ -6,16 +6,16 @@ import android.graphics.RectF;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class hw0 extends aw0 {
     public final /* synthetic */ int r = 0;
     public final /* synthetic */ org.telegram.ui.Components.hm0 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hw0(sg.k1 k1Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+    public hw0(sg.l1 l1Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context, d6Var);
-        this.s = k1Var;
+        this.s = l1Var;
     }
 
     @Override // org.telegram.ui.aw0, android.view.ViewGroup, android.view.View
@@ -59,9 +59,9 @@ public final class hw0 extends aw0 {
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 ImageView imageView2 = this.c;
                 rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
-                sg.k1 k1Var = (sg.k1) this.s;
-                k1Var.c.p0.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, k1Var.c.e0);
-                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), k1Var.c.p0.f);
+                sg.l1 l1Var = (sg.l1) this.s;
+                l1Var.c.p0.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, l1Var.c.e0);
+                canvas.drawRoundRect(rectF2, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), l1Var.c.p0.f);
                 super.dispatchDraw(canvas);
                 break;
         }

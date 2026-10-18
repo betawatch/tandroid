@@ -14,11 +14,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.b80;
-import org.telegram.ui.fg0;
-import org.telegram.ui.of0;
+import org.telegram.ui.eg0;
+import org.telegram.ui.nf0;
 import org.telegram.ui.xm0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final /* synthetic */ class c9 implements Runnable {
                 }
                 break;
             default:
-                of0 of0Var = (of0) obj8;
+                nf0 nf0Var = (nf0) obj8;
                 TLObject tLObject3 = (TLObject) obj7;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj6;
                 c5.l lVar = (c5.l) obj5;
@@ -121,26 +121,26 @@ public final /* synthetic */ class c9 implements Runnable {
                 TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = (TLRPC.TL_inputStorePaymentAuthCode) obj3;
                 String str4 = (String) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
-                fg0 fg0Var = of0Var.v;
-                ei.d dVar = of0Var.b;
+                eg0 eg0Var = nf0Var.v;
+                ei.d dVar = nf0Var.b;
                 FileLog.d("LoginBilling canPurchaseStore returned " + tLObject3 + " " + tL_error);
                 if (!(tLObject3 instanceof TLRPC.TL_boolTrue)) {
                     if (!(tLObject3 instanceof TLRPC.TL_boolFalse)) {
                         if (tL_error != null) {
-                            of0Var.e = tL_error.text;
-                            new org.telegram.ui.Components.xc(fg0Var.Z, null).f0(tL_error, false);
+                            nf0Var.e = tL_error.text;
+                            new org.telegram.ui.Components.xc(eg0Var.Z, null).f0(tL_error, false);
                             break;
                         }
                     } else {
-                        of0Var.e = "RESPONSE_FALSE";
-                        new org.telegram.ui.Components.xc(fg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "RESPONSE_FALSE"));
+                        nf0Var.e = "RESPONSE_FALSE";
+                        new org.telegram.ui.Components.xc(eg0Var.Z, null).H(R.raw.error, LocaleController.formatString(R.string.UnknownErrorCode, "RESPONSE_FALSE"));
                         break;
                     }
                 } else {
                     dVar.g(LocaleController.formatString(R.string.SMSFeePurchaseTitle, lVar.a), false, true);
                     dVar.f(i11 == 7 ? LocaleController.getString(R.string.SMSFeePurchaseText) : LocaleController.formatPluralStringComma("SMSFeePurchaseTextDays", i11), false);
                     dVar.setLoading(false);
-                    dVar.setOnClickListener(new ci.e0(of0Var, oVar, tL_inputStorePaymentAuthCode, str4, tL_payments_canPurchaseStore, 14));
+                    dVar.setOnClickListener(new ci.e0(nf0Var, oVar, tL_inputStorePaymentAuthCode, str4, tL_payments_canPurchaseStore, 14));
                     break;
                 }
                 break;

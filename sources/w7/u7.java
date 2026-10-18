@@ -1,27 +1,103 @@
 package w7;
 
-import com.google.android.gms.tasks.Task;
-import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
-import java.util.concurrent.Executor;
+import android.opengl.GLES20;
+import android.opengl.GLES30;
+import android.util.AtomicFile;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileOutputStream;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class u7 {
-    public static LanguageIdentifierImpl a() {
-        vb.a aVar = (vb.a) rb.g.c().a(vb.a.class);
-        vb.e eVar = aVar.b;
-        eVar.getClass();
-        v7.y8 y8Var = aVar.a;
-        LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, y8Var, (Executor) aVar.c.a.get());
-        qi.e eVar2 = new qi.e();
-        eVar2.c = languageIdentifierImpl.f;
-        t0.h hVar = new t0.h(6, false);
-        hVar.c = LanguageIdentifierImpl.k();
-        eVar2.d = new v7.g7(hVar);
-        a5.a aVar2 = new a5.a(eVar2, 1);
-        Task task = y8Var.e;
-        rb.m.a.execute(new com.google.android.gms.internal.cast.p(y8Var, aVar2, v7.j6.c, task.isSuccessful() ? (String) task.getResult() : n6.i.c.a(y8Var.g), 6));
-        ((vb.e) languageIdentifierImpl.d.get()).b.incrementAndGet();
-        return languageIdentifierImpl;
+    public static int a(int i10, String str) {
+        int glCreateShader = GLES20.glCreateShader(i10);
+        GLES20.glShaderSource(glCreateShader, str);
+        GLES20.glCompileShader(glCreateShader);
+        int[] iArr = new int[1];
+        GLES20.glGetShaderiv(glCreateShader, 35713, iArr, 0);
+        if (iArr[0] != 0) {
+            return glCreateShader;
+        }
+        String glGetShaderInfoLog = GLES20.glGetShaderInfoLog(glCreateShader);
+        GLES20.glDeleteShader(glCreateShader);
+        throw new IllegalStateException(glGetShaderInfoLog);
+    }
+
+    public static boolean b(int i10, AtomicFile atomicFile) {
+        DataInputStream dataInputStream;
+        if (!atomicFile.getBaseFile().isFile()) {
+            return false;
+        }
+        try {
+            dataInputStream = new DataInputStream(atomicFile.openRead());
+            try {
+            } finally {
+            }
+        } catch (Exception unused) {
+        }
+        if (dataInputStream.readInt() != 1145524273) {
+            throw new IllegalStateException("Invalid program cache");
+        }
+        int readInt = dataInputStream.readInt();
+        int readInt2 = dataInputStream.readInt();
+        if (readInt2 <= 0 || readInt2 > 16777216) {
+            throw new IllegalStateException("Invalid binary length");
+        }
+        int[] iArr = new int[1];
+        byte[] bArr = new byte[readInt2];
+        dataInputStream.readFully(bArr);
+        if (dataInputStream.read() != -1) {
+            throw new IllegalStateException("Invalid binary size");
+        }
+        ByteBuffer order = ByteBuffer.allocateDirect(readInt2).order(ByteOrder.nativeOrder());
+        order.put(bArr).position(0);
+        while (GLES20.glGetError() != 0) {
+        }
+        GLES30.glProgramBinary(i10, readInt, order, readInt2);
+        int glGetError = GLES20.glGetError();
+        GLES20.glGetProgramiv(i10, 35714, iArr, 0);
+        if (glGetError == 0 && iArr[0] != 0) {
+            dataInputStream.close();
+            return true;
+        }
+        dataInputStream.close();
+        atomicFile.delete();
+        return false;
+    }
+
+    public static void c(int i10, AtomicFile atomicFile) {
+        FileOutputStream fileOutputStream = null;
+        try {
+            int[] iArr = new int[1];
+            int[] iArr2 = new int[1];
+            GLES20.glGetProgramiv(i10, 34625, iArr, 0);
+            int i11 = iArr[0];
+            if (i11 > 0 && i11 <= 16777216) {
+                ByteBuffer order = ByteBuffer.allocateDirect(i11).order(ByteOrder.nativeOrder());
+                GLES30.glGetProgramBinary(i10, iArr[0], iArr, 0, iArr2, 0, order);
+                int i12 = iArr[0];
+                if (i12 <= 0) {
+                    return;
+                }
+                byte[] bArr = new byte[i12];
+                order.position(0);
+                order.get(bArr);
+                fileOutputStream = atomicFile.startWrite();
+                DataOutputStream dataOutputStream = new DataOutputStream(fileOutputStream);
+                dataOutputStream.writeInt(1145524273);
+                dataOutputStream.writeInt(iArr2[0]);
+                dataOutputStream.writeInt(i12);
+                dataOutputStream.write(bArr);
+                dataOutputStream.flush();
+                atomicFile.finishWrite(fileOutputStream);
+            }
+        } catch (Exception unused) {
+            if (fileOutputStream != null) {
+                atomicFile.failWrite(fileOutputStream);
+            }
+        }
     }
 }

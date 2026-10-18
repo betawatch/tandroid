@@ -39,7 +39,7 @@ import org.telegram.ui.kc0;
 import org.telegram.ui.px;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d1 implements RequestDelegateTimestamp, MessagesStorage.StringCallback, m4.g1, ImageReceiver.ImageReceiverDelegate, org.telegram.ui.Components.e5, kc0, MessagesStorage.BooleanCallback, g2.g, org.telegram.ui.ActionBar.a2, i60, s5.e {
     public final /* synthetic */ int a;
@@ -131,7 +131,7 @@ public final /* synthetic */ class d1 implements RequestDelegateTimestamp, Messa
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.l5.a(this, i10, str, drawable);
     }
 
     @Override // m4.g1
@@ -153,7 +153,7 @@ public final /* synthetic */ class d1 implements RequestDelegateTimestamp, Messa
                     oo0Var.v0.remove(g0Var);
                     oo0Var.u0.remove(g0Var);
                     oo0Var.l();
-                    MessagesStorage.getInstance(oo0Var.s0).getStorageQueue().postRunnable(new ai.r3(oo0Var, j10, 10));
+                    MessagesStorage.getInstance(oo0Var.s0).getStorageQueue().postRunnable(new ai.t3(oo0Var, j10, 10));
                     break;
                 }
                 break;
@@ -175,7 +175,7 @@ public final /* synthetic */ class d1 implements RequestDelegateTimestamp, Messa
         while (i11 < size) {
             TLRPC.User user = (TLRPC.User) arrayList.get(i11);
             MessagesController messagesController = n2Var.getMessagesController();
-            ah.j jVar = new ah.j(23);
+            ah.j jVar = new ah.j(22);
             long j10 = this.b;
             messagesController.addUserToChat(j10, user, i10, null, n2Var, false, jVar, null, new gi.i3(de1Var, tL_messages_invitedUsers, iArr, size, arrayList, j10));
             i11++;
@@ -187,7 +187,7 @@ public final /* synthetic */ class d1 implements RequestDelegateTimestamp, Messa
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.l5.b(this, imageReceiver);
     }
 
     @Override // org.telegram.tgnet.RequestDelegateTimestamp

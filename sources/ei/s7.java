@@ -37,7 +37,7 @@ import org.telegram.ui.Components.k20;
 import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class s7 extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener, ne.d {
     public String A0;
@@ -194,7 +194,7 @@ public final class s7 extends org.telegram.ui.Components.bb implements Notificat
         k20Var.r.addTextChangedListener(new q7(this));
         k20Var.r.setHint(LocaleController.getString(R.string.Search));
         frameLayout.addView(siVar, w7.z5.g());
-        frameLayout.addView(k20Var, w7.z5.a(48.0f, 0.0f, 8.0f, 0.0f, 4.0f, -1, 51));
+        frameLayout.addView(k20Var, w7.z5.d(-1, 48.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f));
         k20Var.setupBlurredBackground(this.o0.c(k20Var, fh.c.n(d6Var), false));
         frameLayout.setPadding(AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0);
         this.containerView.addView(frameLayout, w7.z5.e(-1, -2, 55));

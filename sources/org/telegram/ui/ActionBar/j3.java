@@ -34,7 +34,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
@@ -75,7 +75,7 @@ import org.telegram.ui.tc;
 import org.telegram.ui.v21;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -93,7 +93,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
         int i10;
         sn snVar;
         hk hkVar;
-        org.telegram.ui.web.f2 f2Var;
+        org.telegram.ui.web.h2 h2Var;
         String str;
         String str2;
         File file;
@@ -204,9 +204,9 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                             d3Var.y(m3Var.z, false, m3Var.A);
                             gi.t4 t4Var = m3Var.a;
                             d3Var.G = t4Var != null ? t4Var.a : UserConfig.selectedAccount;
-                            org.telegram.ui.web.x0 x0Var = m3Var.b;
-                            if (x0Var != null) {
-                                x0Var.onResume();
+                            org.telegram.ui.web.y0 y0Var2 = m3Var.b;
+                            if (y0Var2 != null) {
+                                y0Var2.onResume();
                                 v2Var.N(d3Var.G, m3Var.b, m3Var.d, m3Var.f, m3Var.e);
                                 boolean z12 = m3Var.t || m3Var.b.b;
                                 String str5 = m3Var.x;
@@ -291,7 +291,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                             } else if (l4Var.u0[0].getWebView() != null) {
                                 str4 = l4Var.u0[0].getWebView().getUrl();
                             }
-                            String u10 = org.telegram.ui.web.a1.u(str4);
+                            String u10 = org.telegram.ui.web.b1.u(str4);
                             l4Var.a0(new dr0(l4Var.L, null, u10, false, u10, false, AndroidUtilities.computePerceivedBrightness(l4Var.h0.getBackgroundColor()) < 0.721f ? new ci.b() : null));
                             break;
                         } else if (num.intValue() == 6) {
@@ -313,7 +313,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                             l2Var.a = true;
                             n2 U = LaunchActivity.U();
                             if (U != null) {
-                                U.showAsSheet(new org.telegram.ui.web.p(x3Var != null ? new org.telegram.ui.b0(l4Var, 5) : null, new org.telegram.ui.r(l4Var, 2)), l2Var);
+                                U.showAsSheet(new org.telegram.ui.web.q(x3Var != null ? new org.telegram.ui.b0(l4Var, 5) : null, new org.telegram.ui.r(l4Var, 2)), l2Var);
                                 break;
                             }
                         } else if (num.intValue() == 8) {
@@ -321,7 +321,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                             l2Var2.a = true;
                             n2 U2 = LaunchActivity.U();
                             if (U2 != null) {
-                                U2.showAsSheet(new org.telegram.ui.web.f1(x3Var != null ? new org.telegram.ui.b0(l4Var, 6) : null, new org.telegram.ui.r(l4Var, 3)), l2Var2);
+                                U2.showAsSheet(new org.telegram.ui.web.g1(x3Var != null ? new org.telegram.ui.b0(l4Var, 6) : null, new org.telegram.ui.r(l4Var, 3)), l2Var2);
                                 break;
                             }
                         } else if (num.intValue() == 9) {
@@ -375,7 +375,7 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                                 if (U3 != null) {
                                     l2 l2Var3 = new l2();
                                     l2Var3.a = true;
-                                    U3.showAsSheet(new org.telegram.ui.web.x1(new org.telegram.ui.r(l4Var, 3)), l2Var3);
+                                    U3.showAsSheet(new org.telegram.ui.web.y1(new org.telegram.ui.r(l4Var, 3)), l2Var3);
                                     break;
                                 }
                             } else {
@@ -402,14 +402,14 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                                     radioButton.setSize(AndroidUtilities.dp(20.0f));
                                     radioButton.b(h6.x0(null, h6.D5, false), h6.x0(null, h6.E5, false));
                                     boolean z13 = LocaleController.isRTL;
-                                    m0Var.addView(radioButton, w7.z5.a(22.0f, z13 ? 0 : 22, 13.0f, z13 ? 22 : 0, 0.0f, 22, (z13 ? 5 : 3) | 48));
+                                    m0Var.addView(radioButton, w7.z5.d(22, 22.0f, (z13 ? 5 : 3) | 48, z13 ? 0 : 22, 13.0f, z13 ? 22 : 0, 0.0f));
                                     TextView textView = new TextView(activity3);
-                                    kk.u(textView, h6.x0(null, h6.G6, false), 1, 16.0f, 1);
+                                    lk.u(textView, h6.x0(null, h6.G6, false), 1, 16.0f, 1);
                                     textView.setMaxLines(1);
                                     textView.setSingleLine(true);
                                     textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
                                     boolean z14 = LocaleController.isRTL;
-                                    m0Var.addView(textView, w7.z5.a(-1.0f, z14 ? 17 : 62, 0.0f, z14 ? 62 : 17, 0.0f, -1, (z14 ? 5 : 3) | 48));
+                                    m0Var.addView(textView, w7.z5.d(-1, -1.0f, (z14 ? 5 : 3) | 48, z14 ? 17 : 62, 0.0f, z14 ? 62 : 17, 0.0f));
                                     m0VarArr[i14] = m0Var;
                                     if (i14 == 0) {
                                         String string = LocaleController.getString(R.string.Default);
@@ -437,8 +437,8 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                                 break;
                             }
                         } else if (num.intValue() != 5) {
-                            if (num.intValue() == 10 && (f2Var = l4Var.u0[0].y) != null && f2Var.b() != null) {
-                                l4Var.h(f2Var.b(), null, 1);
+                            if (num.intValue() == 10 && (h2Var = l4Var.u0[0].y) != null && h2Var.b() != null) {
+                                l4Var.h(h2Var.b(), null, 1);
                                 break;
                             }
                         } else if (l4Var.u0[0].f() && l4Var.u0[0].getWebView() != null) {
@@ -466,9 +466,9 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                     if (uriParseSafe == null || !TextUtils.equals(uriParseSafe.getScheme(), "javascript")) {
                         String str9 = null;
                         if ((uRLSpanArr.length <= 0 || length != 0 || i16 <= 0) && (uriParseSafe == null || uriParseSafe.getScheme() == null)) {
-                            org.telegram.ui.web.k.b(activity4, str8);
-                            org.telegram.ui.web.x0 webView = o3Var2.getWebView();
-                            String str10 = org.telegram.ui.web.m1.a().b;
+                            org.telegram.ui.web.l.b(activity4, str8);
+                            org.telegram.ui.web.y0 webView = o3Var2.getWebView();
+                            String str10 = org.telegram.ui.web.n1.a().b;
                             if (str10 != null) {
                                 StringBuilder u11 = a1.g.u(str10);
                                 u11.append(URLEncoder.encode(str8));
@@ -524,9 +524,9 @@ public final /* synthetic */ class j3 implements Utilities.Callback {
                 break;
             case 7:
                 ke keVar = (ke) this.c;
-                sg.j0 j0Var = (sg.j0) this.b;
-                j0Var.H1((ChannelBoostsController.CanApplyBoost) obj);
-                keVar.w0.showDialog(j0Var);
+                sg.k0 k0Var = (sg.k0) this.b;
+                k0Var.H1((ChannelBoostsController.CanApplyBoost) obj);
+                keVar.w0.showDialog(k0Var);
                 break;
             case 8:
                 sn snVar2 = (sn) this.c;

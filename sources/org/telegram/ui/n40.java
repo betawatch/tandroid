@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class n40 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -74,13 +74,13 @@ public final class n40 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                fg0 fg0Var = (fg0) this.c;
+                eg0 eg0Var = (eg0) this.c;
                 if (!this.b) {
-                    fg0Var.V.setVisibility(4);
+                    eg0Var.V.setVisibility(4);
                 }
-                AnimatorSet animatorSet = fg0Var.L;
+                AnimatorSet animatorSet = eg0Var.L;
                 if (animatorSet != null && animatorSet.equals(animator)) {
-                    fg0Var.L = null;
+                    eg0Var.L = null;
                     break;
                 }
                 break;
@@ -187,17 +187,17 @@ public final class n40 extends AnimatorListenerAdapter {
                 }
                 break;
             case 13:
-                org.telegram.ui.web.t1 t1Var = (org.telegram.ui.web.t1) this.c;
-                ai.t tVar = t1Var.V;
-                if (!t1Var.T) {
+                org.telegram.ui.web.u1 u1Var = (org.telegram.ui.web.u1) this.c;
+                ai.t tVar = u1Var.V;
+                if (!u1Var.T) {
                     tVar.setVisibility(8);
                     tVar.setText("");
                 }
                 float f10 = this.b ? 1.0f : 0.0f;
-                t1Var.U = f10;
+                u1Var.U = f10;
                 tVar.setAlpha(f10);
-                t1Var.invalidate();
-                if (t1Var.T) {
+                u1Var.invalidate();
+                if (u1Var.T) {
                     tVar.requestFocus();
                     AndroidUtilities.showKeyboard(tVar);
                     break;
@@ -222,7 +222,7 @@ public final class n40 extends AnimatorListenerAdapter {
                 break;
             case 15:
                 rg.y1 y1Var = (rg.y1) this.c;
-                ((qg.o) y1Var).y.n.d();
+                ((qg.n) y1Var).y.n.d();
                 if (this.b) {
                     y1Var.w.accept(Integer.valueOf(y1Var.s));
                 }
@@ -244,12 +244,12 @@ public final class n40 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                sg.p0 p0Var = (sg.p0) this.c;
-                p0Var.M = this.b ? 1.0f : 0.0f;
-                p0Var.d.invalidate();
-                sg.o0 o0Var = p0Var.e;
-                if (o0Var != null) {
-                    o0Var.invalidate();
+                sg.q0 q0Var = (sg.q0) this.c;
+                q0Var.M = this.b ? 1.0f : 0.0f;
+                q0Var.d.invalidate();
+                sg.p0 p0Var = q0Var.e;
+                if (p0Var != null) {
+                    p0Var.invalidate();
                     break;
                 }
                 break;
@@ -261,7 +261,7 @@ public final class n40 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 2:
                 if (this.b) {
-                    ((fg0) this.c).V.setVisibility(0);
+                    ((eg0) this.c).V.setVisibility(0);
                     break;
                 }
                 break;

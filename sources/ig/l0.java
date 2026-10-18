@@ -45,13 +45,13 @@ import org.telegram.ui.Components.yb;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sn;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
-import rg.t2;
-import yh.f4;
-import yh.h4;
-import yh.y3;
-import yh.y4;
+import rg.s2;
+import yh.e4;
+import yh.g4;
+import yh.x3;
+import yh.x4;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -224,40 +224,40 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 AndroidUtilities.runOnUIThread((Runnable) obj, 80L);
                 break;
             case 9:
-                org.telegram.ui.web.x0 x0Var = ((BotWebViewContainer$WebViewProxy) this.b).b;
+                org.telegram.ui.web.y0 y0Var = ((BotWebViewContainer$WebViewProxy) this.b).b;
                 StringBuilder sb2 = new StringBuilder("window.navigator.__share__receive(");
                 sb2.append(((Boolean) obj).booleanValue() ? "" : "'abort'");
                 sb2.append(")");
-                x0Var.d(sb2.toString());
+                y0Var.d(sb2.toString());
                 break;
             case 10:
-                org.telegram.ui.web.f1 f1Var = (org.telegram.ui.web.f1) this.b;
-                f1Var.e = (ArrayList) obj;
-                u61 u61Var = f1Var.a;
+                org.telegram.ui.web.g1 g1Var = (org.telegram.ui.web.g1) this.b;
+                g1Var.e = (ArrayList) obj;
+                u61 u61Var = g1Var.a;
                 if (u61Var.G) {
                     u61Var.W2.N(true);
                     break;
                 }
                 break;
             case 11:
-                org.telegram.ui.web.x1 x1Var2 = (org.telegram.ui.web.x1) this.b;
-                x1Var2.n = ((ArrayList) obj).size();
-                u61 u61Var2 = x1Var2.a;
+                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.b;
+                y1Var.n = ((ArrayList) obj).size();
+                u61 u61Var2 = y1Var.a;
                 if (u61Var2 != null && (s61Var2 = u61Var2.W2) != null && u61Var2.G) {
                     s61Var2.N(true);
                     break;
                 }
                 break;
             case 12:
-                qg.e0 e0Var = (qg.e0) this.b;
+                qg.d0 d0Var = (qg.d0) this.b;
                 qg.h1 h1Var = (qg.h1) obj;
-                qg.e1 e1Var = e0Var.a;
+                qg.e1 e1Var = d0Var.a;
                 if (h1Var != null) {
                     float currentWeight = e1Var.getCurrentWeight();
                     h1Var.f = currentWeight;
-                    double d = e0Var.p;
+                    double d = d0Var.p;
                     if (d > 0.0d) {
-                        h1Var.f = (float) ((d / e0Var.q) * currentWeight);
+                        h1Var.f = (float) ((d / d0Var.q) * currentWeight);
                     }
                     if (h1Var.a.o() == 4) {
                         h1Var.k *= h1Var.f;
@@ -286,37 +286,37 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                 }
                 break;
             case 15:
-                t2 t2Var = (t2) this.b;
-                t2Var.n = (Bitmap) obj;
+                s2 s2Var = (s2) this.b;
+                s2Var.n = (Bitmap) obj;
                 Paint paint = new Paint(1);
-                t2Var.s = paint;
-                Bitmap bitmap = t2Var.n;
+                s2Var.s = paint;
+                Bitmap bitmap = s2Var.n;
                 Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                 BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-                t2Var.r = bitmapShader;
+                s2Var.r = bitmapShader;
                 paint.setShader(bitmapShader);
                 ColorMatrix colorMatrix = new ColorMatrix();
                 AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, h6.I.q() ? 0.08f : 0.25f);
                 AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, h6.I.q() ? -0.02f : -0.07f);
-                t2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                t2Var.v = new Matrix();
+                s2Var.s.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                s2Var.v = new Matrix();
                 break;
             case 16:
                 rh.c cVar = (rh.c) this.b;
                 rh.e eVar = (rh.e) obj;
                 cVar.h = eVar;
                 cVar.c.a(eVar, true);
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.z1(cVar, 16), 200L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a2(cVar, 16), 200L);
                 break;
             case 17:
-                ((sg.j0) this.b).F1((HashMap) obj);
+                ((sg.k0) this.b).F1((HashMap) obj);
                 break;
             case 18:
-                sg.w1 w1Var = (sg.w1) this.b;
+                sg.x1 x1Var2 = (sg.x1) this.b;
                 boolean isEnabled = LiteMode.isEnabled(131072);
-                if (w1Var.d != isEnabled) {
-                    w1Var.d = isEnabled;
-                    w1Var.invalidate();
+                if (x1Var2.d != isEnabled) {
+                    x1Var2.d = isEnabled;
+                    x1Var2.invalidate();
                     break;
                 }
                 break;
@@ -415,22 +415,22 @@ public final /* synthetic */ class l0 implements Utilities.Callback {
                     break;
                 }
             case 26:
-                ((yh.m1) this.b).a();
+                ((yh.l1) this.b).a();
                 break;
             case 27:
-                ((h4) this.b).e0(((Boolean) obj).booleanValue());
+                ((g4) this.b).e0(((Boolean) obj).booleanValue());
                 break;
             case 28:
-                f4 f4Var = (f4) this.b;
+                e4 e4Var = (e4) this.b;
                 ((Boolean) obj).getClass();
-                y3 y3Var = f4Var.d;
-                if (y3Var != null) {
-                    y3Var.run();
+                x3 x3Var = e4Var.d;
+                if (x3Var != null) {
+                    x3Var.run();
                     break;
                 }
                 break;
             default:
-                ug.i.j(((y4) this.b).getContext(), (TLRPC.TL_error) obj);
+                ug.i.j(((x4) this.b).getContext(), (TLRPC.TL_error) obj);
                 break;
         }
     }

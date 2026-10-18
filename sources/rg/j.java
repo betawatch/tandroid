@@ -16,13 +16,13 @@ import java.util.List;
 import java.util.UUID;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.yc;
 import v7.f7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final List p0 = Arrays.asList(-90, 0, 90, 180);
@@ -259,7 +259,7 @@ public abstract class j extends FrameLayout {
                 }
                 h hVar5 = this.F;
                 if (hVar5 != null) {
-                    hVar5.B(kk.x((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
+                    hVar5.B(lk.x((float) getHeight(), 2.0f, scaleX, this.G.y) < ((float) AndroidUtilities.dp(66.0f)));
                     this.F.f(a1.g.d((float) getHeight(), 2.0f, scaleX, this.G.y) > ((float) (((View) getParent()).getHeight() - AndroidUtilities.dp(114.0f))));
                 }
                 h hVar6 = this.F;
@@ -442,7 +442,7 @@ public abstract class j extends FrameLayout {
                         if (jVar != null) {
                             AndroidUtilities.cancelRunOnUIThread(jVar);
                         }
-                        org.telegram.ui.Wallet.j jVar2 = new org.telegram.ui.Wallet.j(this, intValue, 6);
+                        org.telegram.ui.Wallet.j jVar2 = new org.telegram.ui.Wallet.j(this, intValue, 7);
                         this.N = jVar2;
                         AndroidUtilities.runOnUIThread(jVar2, 250L);
                     }

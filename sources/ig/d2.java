@@ -1,6 +1,5 @@
 package ig;
 
-import ai.o2;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
@@ -24,12 +23,12 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class d2 extends n2 implements NotificationCenter.NotificationCenterDelegate {
     public a71 a;
     public LinearLayout b;
-    public o2 c;
+    public ai.n2 c;
     public boolean d;
     public String e;
     public String f;
@@ -43,9 +42,9 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
             if (!z10) {
                 String str = d2Var.f;
                 d2Var.n = str;
-                o2 o2Var = d2Var.c;
-                if (o2Var != null) {
-                    o2Var.run(str);
+                ai.n2 n2Var = d2Var.c;
+                if (n2Var != null) {
+                    n2Var.run(str);
                 }
             }
             ((v8) view).setChecked(d2Var.h);
@@ -66,9 +65,9 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
                 d2Var.h = false;
                 String str2 = tL_timezone.id;
                 d2Var.n = str2;
-                o2 o2Var2 = d2Var.c;
-                if (o2Var2 != null) {
-                    o2Var2.run(str2);
+                ai.n2 n2Var2 = d2Var.c;
+                if (n2Var2 != null) {
+                    n2Var2.run(str2);
                 }
                 if (d2Var.d) {
                     d2Var.actionBar.h(true);
@@ -151,7 +150,7 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
         this.a = a71Var;
         a71Var.p1();
         this.actionBar.setAdaptiveBackground(this.a);
-        frameLayout.addView(this.a, z5.d(-1.0f, -1));
+        frameLayout.addView(this.a, z5.c(-1.0f, -1));
         this.a.setOnScrollListener(new ah.d0(this, 15));
         LinearLayout linearLayout = new LinearLayout(context);
         this.b = linearLayout;
@@ -163,7 +162,7 @@ public final class d2 extends n2 implements NotificationCenter.NotificationCente
         this.b.addView(w9Var, z5.t(130, 130, 49, 0, 42, 0, 12));
         TextView textView = new TextView(context);
         textView.setText(LocaleController.getString(R.string.TimezoneNotFound));
-        kk.o(h6.y6, this.resourceProvider, textView, 1, 15.0f);
+        lk.o(h6.y6, this.resourceProvider, textView, 1, 15.0f);
         this.b.addView(textView, z5.t(-2, -2, 49, 0, 0, 0, 0));
         this.fragmentView = frameLayout;
         return frameLayout;

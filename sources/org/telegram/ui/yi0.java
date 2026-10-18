@@ -1,46 +1,12 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yi0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dj0 b;
-
-    public /* synthetic */ yi0(dj0 dj0Var, int i10) {
-        this.a = i10;
-        this.b = dj0Var;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                dj0 dj0Var = this.b;
-                cj0 cj0Var = dj0Var.q0;
-                HashSet hashSet = dj0Var.d0;
-                if (hashSet.size() != 0 && cj0Var != null) {
-                    ArrayList arrayList = new ArrayList();
-                    for (TLRPC.User user : dj0Var.i0.values()) {
-                        if (hashSet.contains(Long.valueOf(user.id))) {
-                            arrayList.add(Long.valueOf(user.id));
-                        }
-                    }
-                    cj0Var.a(arrayList);
-                    dj0Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                dj0 dj0Var2 = this.b;
-                dj0Var2.d0.clear();
-                dj0Var2.Y.d.b(true);
-                dj0Var2.V(true, false);
-                break;
-        }
+public final class yi0 extends yg.c {
+    @Override // yg.c
+    public final int getHeaderHeight() {
+        return getResources().getConfiguration().orientation == 2 ? AndroidUtilities.dp(48.0f) : AndroidUtilities.dp(54.0f);
     }
 }

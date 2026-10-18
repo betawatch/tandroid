@@ -33,7 +33,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ym0 extends Dialog {
     public static final /* synthetic */ int O = 0;
@@ -69,7 +69,7 @@ public final class ym0 extends Dialog {
         this.M = false;
         this.a = context;
         this.b = d6Var;
-        ah.x xVar = new ah.x(this, context, 20);
+        ah.x xVar = new ah.x(this, context, 21);
         this.s = xVar;
         xVar.setOnClickListener(new u80(this, 9));
         jw0 jw0Var = new jw0(context, null);
@@ -124,8 +124,8 @@ public final class ym0 extends Dialog {
         this.y = i80Var.A;
         FrameLayout frameLayout = new FrameLayout(this.a);
         this.x = frameLayout;
-        frameLayout.addView(this.y, w7.z5.d(-2.0f, -2));
-        this.v.addView(this.x, w7.z5.d(-2.0f, -2));
+        frameLayout.addView(this.y, w7.z5.c(-2.0f, -2));
+        this.v.addView(this.x, w7.z5.c(-2.0f, -2));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

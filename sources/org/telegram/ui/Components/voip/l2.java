@@ -14,9 +14,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ba0;
 import org.telegram.ui.Components.r90;
-import org.telegram.ui.fg0;
+import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public class l2 extends TextView {
     public final /* synthetic */ int a = 0;
@@ -61,7 +61,7 @@ public class l2 extends TextView {
         ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
         ba0Var.y = r90Var;
         ba0Var.k(4.0f);
-        int themedColor = ((fg0) this.d).getThemedColor(h6.Ld);
+        int themedColor = ((eg0) this.d).getThemedColor(h6.Ld);
         ba0Var.g(h6.m1(0.85f, themedColor), h6.m1(2.0f, themedColor), h6.m1(3.5f, themedColor), h6.m1(6.0f, themedColor));
         ba0Var.l();
     }
@@ -159,9 +159,9 @@ public class l2 extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(fg0 fg0Var, Context context) {
+    public l2(eg0 eg0Var, Context context) {
         super(context);
-        this.d = fg0Var;
+        this.d = eg0Var;
         org.telegram.ui.Cells.z g02 = h6.g0(h6.m1(0.1f, h6.x0(null, h6.I6, false)), 7, -1);
         this.b = g02;
         ba0 ba0Var = new ba0();

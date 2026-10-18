@@ -48,7 +48,7 @@ import org.telegram.ui.jc0;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class s0 extends c implements LocationController.LocationFetchCallback {
     public final int K;
@@ -757,7 +757,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
                 v4Var.c = imageView;
                 imageView.setImageResource(R.drawable.location_empty);
                 imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.W5, d6Var), PorterDuff.Mode.MULTIPLY));
-                v4Var.addView(imageView, z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 24.0f, -2, 17));
+                v4Var.addView(imageView, z5.d(-2, -2.0f, 17, 0.0f, 0.0f, 0.0f, 24.0f));
                 TextView textView = new TextView(context);
                 v4Var.b = textView;
                 textView.setTextColor(h6.w0(h6.X5, d6Var));
@@ -765,7 +765,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
                 textView.setTypeface(AndroidUtilities.bold());
                 textView.setTextSize(1, 17.0f);
                 textView.setText(LocaleController.getString(R.string.NoPlacesFound));
-                v4Var.addView(textView, z5.a(-2.0f, 0.0f, 34.0f, 0.0f, 0.0f, -2, 17));
+                v4Var.addView(textView, z5.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
                 view = v4Var;
                 view2 = view;
                 break;
@@ -810,7 +810,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 u4Var.a = frameLayout2;
                 frameLayout2.setBackground(x5.e(new float[]{8.0f}, h6.w0(h6.Oh, d6Var)));
-                u4Var.addView(frameLayout2, z5.a(48.0f, 16.0f, 10.0f, 16.0f, 0.0f, -1, 51));
+                u4Var.addView(frameLayout2, z5.d(-1, 48.0f, 51, 16.0f, 10.0f, 16.0f, 0.0f));
                 j5 j5Var = new j5(context);
                 j5Var.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
                 j5Var.setGravity(17);
@@ -820,7 +820,7 @@ public class s0 extends c implements LocationController.LocationFetchCallback {
                 j5Var.l(LocaleController.getString(R.string.Directions), false);
                 j5Var.setLeftDrawable(R.drawable.filled_directions);
                 j5Var.setTypeface(AndroidUtilities.bold());
-                frameLayout2.addView(j5Var, z5.d(-1.0f, -1));
+                frameLayout2.addView(j5Var, z5.c(-1.0f, -1));
                 frameLayout2.setOutlineProvider(zf.j0.b);
                 frameLayout2.setClipToOutline(true);
                 b6.b(frameLayout2, 0.02f, 1.2f);

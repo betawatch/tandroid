@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class xg1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -17,8 +17,8 @@ public final class xg1 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        ci.g3 g3Var;
-        ci.g3 g3Var2;
+        ci.f3 f3Var;
+        ci.f3 f3Var2;
         switch (this.a) {
             case 0:
                 jh1 jh1Var = this.b;
@@ -44,8 +44,8 @@ public final class xg1 extends AnimatorListenerAdapter {
             case 3:
                 for (org.telegram.ui.Components.w9 w9Var : this.b.V) {
                     org.telegram.ui.Components.r5 r5Var = w9Var.e;
-                    if (r5Var != null && (g3Var = r5Var.k) != null) {
-                        g3Var.setAllowStartAnimation(true);
+                    if (r5Var != null && (f3Var = r5Var.k) != null) {
+                        f3Var.setAllowStartAnimation(true);
                         w9Var.e.k.startAnimation();
                     }
                 }
@@ -55,8 +55,8 @@ public final class xg1 extends AnimatorListenerAdapter {
                 jh1Var3.A();
                 for (org.telegram.ui.Components.w9 w9Var2 : jh1Var3.V) {
                     org.telegram.ui.Components.r5 r5Var2 = w9Var2.e;
-                    if (r5Var2 != null && (g3Var2 = r5Var2.k) != null) {
-                        g3Var2.setAllowStartAnimation(false);
+                    if (r5Var2 != null && (f3Var2 = r5Var2.k) != null) {
+                        f3Var2.setAllowStartAnimation(false);
                         w9Var2.e.k.stopAnimation();
                     }
                 }

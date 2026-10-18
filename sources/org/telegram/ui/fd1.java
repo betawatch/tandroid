@@ -16,7 +16,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class fd1 extends org.telegram.ui.Components.hm0 {
     public int c;
@@ -114,7 +114,7 @@ public final class fd1 extends org.telegram.ui.Components.hm0 {
                 z6Var.setBackground(zqVar);
                 view2 = z6Var;
             } else if (i10 != 3) {
-                view2 = i10 != 5 ? new org.telegram.ui.Cells.f4(1, 0, viewGroup.getContext(), false) : new org.telegram.ui.Cells.k3(viewGroup.getContext(), AndroidUtilities.dp(12.0f));
+                view2 = i10 != 5 ? new org.telegram.ui.Cells.f4(viewGroup.getContext(), 1, 0, false) : new org.telegram.ui.Cells.k3(viewGroup.getContext(), AndroidUtilities.dp(12.0f));
             } else {
                 org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(viewGroup.getContext(), org.telegram.ui.ActionBar.h6.L6, 21, 8, false, null);
                 l4Var.setHeight(54);
@@ -133,13 +133,13 @@ public final class fd1 extends org.telegram.ui.Components.hm0 {
             textView.setTextSize(1, 20.0f);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setGravity(17);
-            naVar.addView(textView, w7.z5.a(-2.0f, 52.0f, 75.0f, 52.0f, 0.0f, -1, 51));
+            naVar.addView(textView, w7.z5.d(-1, -2.0f, 51, 52.0f, 75.0f, 52.0f, 0.0f));
             TextView textView2 = new TextView(context);
             naVar.a = textView2;
             textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.g9, false));
             textView2.setTextSize(1, 14.0f);
             textView2.setGravity(17);
-            naVar.addView(textView2, w7.z5.a(-2.0f, 36.0f, 110.0f, 36.0f, 0.0f, -1, 51));
+            naVar.addView(textView2, w7.z5.d(-1, -2.0f, 51, 36.0f, 110.0f, 36.0f, 0.0f));
             TextPaint textPaint = new TextPaint(1);
             textPaint.setColor(-1);
             textPaint.setTextSize(AndroidUtilities.dp(12.0f));
@@ -147,7 +147,7 @@ public final class fd1 extends org.telegram.ui.Components.hm0 {
             ai.w1 w1Var = new ai.w1(context, new Paint(1), textPaint);
             w1Var.setWillNotDraw(false);
             w1Var.addView(imageView, w7.z5.e(-2, -2, 1));
-            naVar.addView(w1Var, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 6.0f, -2, 49));
+            naVar.addView(w1Var, w7.z5.d(-2, -2.0f, 49, 0.0f, 12.0f, 0.0f, 6.0f));
             textView.setText(LocaleController.getString(R.string.TooManyCommunities));
             imageView.setImageResource(R.drawable.groups_limit1);
             id1 id1Var = this.r;

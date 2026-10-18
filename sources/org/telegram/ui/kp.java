@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class kp extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public long E;
@@ -98,7 +98,7 @@ public final class kp extends org.telegram.ui.ActionBar.n2 implements Notificati
         TLRPC.TL_channels_setDiscussionGroup tL_channels_setDiscussionGroup = new TLRPC.TL_channels_setDiscussionGroup();
         tL_channels_setDiscussionGroup.broadcast = MessagesController.getInputChannel(this.f);
         tL_channels_setDiscussionGroup.group = MessagesController.getInputChannel(chat);
-        AndroidUtilities.runOnUIThread(new ap(this, b2VarArr, getConnectionsManager().sendRequest(tL_channels_setDiscussionGroup, new ai.y2(this, b2VarArr, chat, n2Var, 10), 64), 1), 500L);
+        AndroidUtilities.runOnUIThread(new ap(this, b2VarArr, getConnectionsManager().sendRequest(tL_channels_setDiscussionGroup, new ai.w2(this, b2VarArr, chat, n2Var, 10), 64), 1), 500L);
     }
 
     public final void Z() {
@@ -148,7 +148,7 @@ public final class kp extends org.telegram.ui.ActionBar.n2 implements Notificati
         h9Var.u(AndroidUtilities.dp(12.0f));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(getParentActivity());
         w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        frameLayout.addView(w9Var, w7.z5.a(40.0f, 22.0f, 5.0f, 22.0f, 0.0f, 40, (LocaleController.isRTL ? 5 : 3) | 48));
+        frameLayout.addView(w9Var, w7.z5.d(40, 40.0f, (LocaleController.isRTL ? 5 : 3) | 48, 22.0f, 5.0f, 22.0f, 0.0f));
         TextView textView2 = new TextView(getParentActivity());
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.E8, false));
         textView2.setTextSize(1, 20.0f);
@@ -160,8 +160,8 @@ public final class kp extends org.telegram.ui.ActionBar.n2 implements Notificati
         textView2.setEllipsize(TextUtils.TruncateAt.END);
         textView2.setText(chat.title);
         boolean z11 = LocaleController.isRTL;
-        frameLayout.addView(textView2, w7.z5.a(-2.0f, z11 ? 21 : 76, 11.0f, z11 ? 76 : 21, 0.0f, -1, (z11 ? 5 : 3) | 48));
-        frameLayout.addView(textView, w7.z5.a(-2.0f, 24.0f, 57.0f, 24.0f, 9.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+        frameLayout.addView(textView2, w7.z5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 76, 11.0f, z11 ? 76 : 21, 0.0f));
+        frameLayout.addView(textView, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 57.0f, 24.0f, 9.0f));
         h9Var.k(this.currentAccount, chat);
         w9Var.e(chat, h9Var);
         alertDialog$Builder.k(LocaleController.getString(R.string.DiscussionLinkGroup), new e7(this, chatFull, chat, 9));
@@ -251,7 +251,7 @@ public final class kp extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.d = vzVar;
         vzVar.b();
         this.d.setText(LocaleController.getString(R.string.NoResult));
-        frameLayout2.addView(this.d, w7.z5.d(-1.0f, -1));
+        frameLayout2.addView(this.d, w7.z5.c(-1.0f, -1));
         org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
         this.b = im0Var;
         im0Var.p1();
@@ -262,7 +262,7 @@ public final class kp extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.a = hpVar;
         im0Var2.setAdapter(hpVar);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout2.addView(this.b, w7.z5.d(-1.0f, -1));
+        frameLayout2.addView(this.b, w7.z5.c(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setOnItemClickListener(new i(this, 4));
         b0();

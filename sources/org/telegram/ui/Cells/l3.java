@@ -13,7 +13,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l3 {
     public boolean a;
@@ -30,7 +30,7 @@ public final class l3 {
     public final void a(u1 u1Var) {
         TLRPC.Message message;
         String str;
-        SpannableStringBuilder e = ci.d8.e(R.string.ExpiredStory, false, new Object[0]);
+        SpannableStringBuilder e = ci.c8.e(R.string.ExpiredStory, false, new Object[0]);
         MessageObject messageObject = u1Var.getMessageObject();
         if (messageObject != null && (message = messageObject.messageOwner) != null) {
             TLRPC.MessageMedia messageMedia = message.media;

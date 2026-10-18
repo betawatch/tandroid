@@ -1,11 +1,11 @@
 package hi;
 
-import ai.o2;
+import ai.n2;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.f61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements Utilities.Callback5, Utilities.Callback5Return, MessagesStorage.StringCallback {
     public final /* synthetic */ f a;
@@ -31,6 +31,6 @@ public final /* synthetic */ class c implements Utilities.Callback5, Utilities.C
     public void run(String str) {
         f fVar = this.a;
         fVar.getMessagesController().getChat(Long.valueOf(-fVar.a));
-        fVar.showDialog(new ji.a(fVar.getParentActivity(), null, fVar.a, new o2(20, fVar, str)));
+        fVar.showDialog(new ji.a(fVar.getParentActivity(), null, fVar.a, new n2(20, fVar, str)));
     }
 }

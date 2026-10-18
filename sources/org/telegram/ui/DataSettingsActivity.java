@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -429,7 +429,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
                     radioButton.a(absolutePath3.startsWith(str3), z13);
                     p4Var.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I5, z13), 2, -1));
                     linearLayout.addView(p4Var);
-                    p4Var.setOnClickListener(new ci.z3(dataSettingsActivity, absolutePath3, contains, alertDialog$Builder4, 1));
+                    p4Var.setOnClickListener(new ci.y3(dataSettingsActivity, absolutePath3, contains, alertDialog$Builder4, 1));
                     i11 = i23 + 1;
                     size = size;
                     i16 = 2;
@@ -679,7 +679,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.n2 {
         super.onResume();
         yt ytVar = new yt(this, 1);
         AndroidUtilities.runOnUIThread(ytVar, 100L);
-        c7.j0(new ai.g2(this, ytVar, System.currentTimeMillis(), 1));
+        c7.j0(new ai.e2(this, ytVar, System.currentTimeMillis(), 1));
         if (this.b != null && this.a != null) {
             for (int i10 = 0; i10 < this.b.getChildCount(); i10++) {
                 View childAt = this.b.getChildAt(i10);

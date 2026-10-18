@@ -4,7 +4,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class je0 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
@@ -31,13 +31,13 @@ public final /* synthetic */ class je0 implements org.telegram.ui.ActionBar.a2 {
                 break;
             case 2:
                 pe0 pe0Var3 = this.b;
-                fg0 fg0Var = pe0Var3.O;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fg0Var.getParentActivity());
+                eg0 eg0Var = pe0Var3.O;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eg0Var.getParentActivity());
                 alertDialog$Builder.a.R = LocaleController.getString("TermsOfService", R.string.TermsOfService);
                 alertDialog$Builder.a.T = LocaleController.getString("TosDecline", R.string.TosDecline);
                 alertDialog$Builder.k(LocaleController.getString("SignUp", R.string.SignUp), new je0(pe0Var3, 3));
                 alertDialog$Builder.h(LocaleController.getString("Decline", R.string.Decline), new je0(pe0Var3, 4));
-                fg0Var.showDialog(alertDialog$Builder.a);
+                eg0Var.showDialog(alertDialog$Builder.a);
                 break;
             case 3:
                 pe0 pe0Var4 = this.b;

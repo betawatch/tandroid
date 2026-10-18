@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public d80 a;
@@ -123,7 +123,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
                     boolean g02 = languageSelectActivity.g0();
                     boolean z14 = !g02;
                     if (!g02 && !languageSelectActivity.getUserConfig().isPremium()) {
-                        languageSelectActivity.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) languageSelectActivity, 13, false));
+                        languageSelectActivity.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) languageSelectActivity, 13, false));
                         return;
                     } else {
                         languageSelectActivity.getMessagesController().getTranslateController().setChatTranslateEnabled(z14);
@@ -273,7 +273,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
         vzVar.setText(LocaleController.getString(R.string.NoResult));
         this.d.c();
         this.d.setShowAtCenter(true);
-        frameLayout2.addView(this.d, w7.z5.d(-1.0f, -1));
+        frameLayout2.addView(this.d, w7.z5.c(-1.0f, -1));
         org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
         this.b = im0Var;
         im0Var.p1();
@@ -287,7 +287,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.n2 impleme
         c80Var.C = false;
         c80Var.o(org.telegram.ui.Components.bs.h);
         this.b.setItemAnimator(c80Var);
-        frameLayout2.addView(this.b, w7.z5.d(-1.0f, -1));
+        frameLayout2.addView(this.b, w7.z5.c(-1.0f, -1));
         this.b.setOnItemClickListener(new i(this, 16));
         this.b.setOnItemLongClickListener(new wt(this, 13));
         this.b.setOnScrollListener(new k3(this, 17));

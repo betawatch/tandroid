@@ -20,7 +20,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -394,7 +394,7 @@ public final /* synthetic */ class i0 implements Runnable {
                 snVar3.presentFragment(ProfileActivity.m4(((TLRPC.User[]) obj)[0].id));
                 break;
             case 26:
-                ((ai.e3) obj2).run((TLRPC.User) obj);
+                ((ai.d3) obj2).run((TLRPC.User) obj);
                 break;
             case 27:
                 sn snVar4 = (sn) obj2;

@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class nu extends org.telegram.ui.ActionBar.n2 {
     public static final int[][] d = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
@@ -47,7 +47,7 @@ public final class nu extends org.telegram.ui.ActionBar.n2 {
         this.b = n10;
         n10.setBackgroundColor(getThemedColor(i10));
         m0Var.addView(this.b, w7.z5.e(-1, 48, 55));
-        m0Var.addView(this.a, w7.z5.a(-1.0f, 0.0f, 48.0f, 0.0f, 0.0f, -1, 119));
+        m0Var.addView(this.a, w7.z5.d(-1, -1.0f, 119, 0.0f, 48.0f, 0.0f, 0.0f));
         this.fragmentView = m0Var;
         return m0Var;
     }

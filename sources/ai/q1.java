@@ -11,7 +11,7 @@ import org.telegram.ui.Components.yy;
 import org.telegram.ui.Components.zy;
 import org.telegram.ui.ep0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class q1 extends g.o {
     public final /* synthetic */ int c;
@@ -92,7 +92,7 @@ public final class q1 extends g.o {
                 }
                 return 1;
             case 8:
-                f61 G2 = ((yh.g4) this.d).i0.G(i10 - 1);
+                f61 G2 = ((yh.f4) this.d).i0.G(i10 - 1);
                 if (G2 == null || (i12 = G2.u) == -1) {
                     return 3;
                 }

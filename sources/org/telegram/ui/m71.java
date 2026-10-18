@@ -18,7 +18,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m71 implements Runnable {
     public final /* synthetic */ int a;
@@ -231,7 +231,7 @@ public final /* synthetic */ class m71 implements Runnable {
             case 24:
                 org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj2;
                 org.telegram.ui.Wallet.m0.F("enable backup: ready! getting secret phrase...");
-                m0Var.y(new ai.q5(24, m0Var, (org.telegram.ui.Wallet.d8) obj), false, true);
+                m0Var.y(new ai.q5(24, m0Var, (org.telegram.ui.Wallet.x7) obj), false, true);
                 break;
             case 25:
                 boolean[] zArr = (boolean[]) obj2;
@@ -269,7 +269,7 @@ public final /* synthetic */ class m71 implements Runnable {
                 break;
             default:
                 org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj2;
-                n2Var2.presentFragment(new org.telegram.ui.Wallet.o9(n2Var2.getCurrentAccount(), ((TL_wallet.card) obj).address));
+                n2Var2.presentFragment(new org.telegram.ui.Wallet.i9(n2Var2.getCurrentAccount(), ((TL_wallet.card) obj).address));
                 break;
         }
     }

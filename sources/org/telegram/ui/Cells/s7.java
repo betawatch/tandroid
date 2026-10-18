@@ -51,7 +51,7 @@ import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class s7 extends FrameLayout {
     public static long E0;
@@ -795,7 +795,7 @@ public class s7 extends FrameLayout {
         if (z11) {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.B0, z10 ? 1.0f : 0.0f);
             this.A0 = ofFloat;
-            ofFloat.addUpdateListener(new ci.v4(this, 6));
+            ofFloat.addUpdateListener(new ci.u4(this, 6));
             this.A0.setDuration(200L);
             this.A0.addListener(new ah.p0(25, this, z10));
             this.A0.start();
@@ -930,8 +930,8 @@ public class s7 extends FrameLayout {
         if (TextUtils.isEmpty(restrictionReason)) {
             TL_stories.StoryItem storyItem4 = messageObject.storyItem;
             if (storyItem4 == null || !(storyItem4.media instanceof TLRPC.TL_messageMediaUnsupported)) {
-                ci.h7 h7Var = messageObject.uploadingStory;
-                if (h7Var == null || (str = h7Var.f) == null) {
+                ci.g7 g7Var = messageObject.uploadingStory;
+                if (g7Var == null || (str = g7Var.f) == null) {
                     TLRPC.Document document3 = messageObject.getDocument();
                     TLRPC.Photo photo3 = messageObject.getPhoto();
                     if (MessageObject.isVideoDocument(document3)) {
@@ -1030,7 +1030,7 @@ public class s7 extends FrameLayout {
             }
             storyItem = messageObject.storyItem;
             if (storyItem != null) {
-                imageReceiver4.addDecorator(new ci.fa(storyItem));
+                imageReceiver4.addDecorator(new ci.ea(storyItem));
             }
             setPrivacyType(g(messageObject));
             if (this.h) {

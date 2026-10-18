@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class f0 extends androidx.fragment.app.p {
     public final Handler A0 = new Handler(Looper.getMainLooper());
@@ -94,9 +94,9 @@ public class f0 extends androidx.fragment.app.p {
         bVar.f = charSequence;
         bVar.g = xVar;
         bVar.k = inflate;
-        g.f g10 = b0Var.g();
-        g10.setCanceledOnTouchOutside(false);
-        return g10;
+        g.f i10 = b0Var.i();
+        i10.setCanceledOnTouchOutside(false);
+        return i10;
     }
 
     public final int P(int i10) {
@@ -133,7 +133,7 @@ public class f0 extends androidx.fragment.app.p {
             if (yVar.z == null) {
                 yVar.z = new androidx.lifecycle.z();
             }
-            yVar.z.d(this, new ya.c(this, 3));
+            yVar.z.d(this, new ya.d(this, 3));
             y yVar2 = this.C0;
             if (yVar2.A == null) {
                 yVar2.A = new androidx.lifecycle.z();

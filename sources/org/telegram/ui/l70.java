@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l70 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public Drawable E;
@@ -164,7 +164,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         frameLayout.setOnClickListener(new org.telegram.ui.Components.g51(21, this, xj0Var));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.r = frameLayout2;
-        this.s.addView(frameLayout2, w7.z5.a(-2.0f, 0.0f, 78.0f, 0.0f, 0.0f, -1, 51));
+        this.s.addView(frameLayout2, w7.z5.d(-1, -2.0f, 51, 0.0f, 78.0f, 0.0f, 0.0f));
         TextureView textureView = new TextureView(context);
         this.r.addView(textureView, w7.z5.e(200, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17));
         int i10 = 0;
@@ -174,7 +174,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         gVar.setAdapter(new k70(this, i10));
         this.d.setPageMargin(0);
         this.d.setOffscreenPageLimit(1);
-        this.s.addView(this.d, w7.z5.d(-1.0f, -1));
+        this.s.addView(this.d, w7.z5.c(-1.0f, -1));
         this.d.b(new o2(this, 1));
         this.h = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, null);
         di.n nVar = new di.n(this, context);
@@ -185,7 +185,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.n.setTypeface(AndroidUtilities.bold());
         this.n.setTextSize(1, 15.0f);
         this.n.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        this.s.addView(this.n, w7.z5.a(48.0f, 16.0f, 0.0f, 16.0f, 76.0f, -1, 81));
+        this.s.addView(this.n, w7.z5.d(-1, 48.0f, 81, 16.0f, 0.0f, 16.0f, 76.0f));
         final int i11 = 0;
         this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.g70
             public final /* synthetic */ l70 b;
@@ -201,7 +201,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         l70 l70Var = this.b;
                         if (!l70Var.y) {
                             l70Var.y = true;
-                            l70Var.presentFragment(new fg0(), true);
+                            l70Var.presentFragment(new eg0(), true);
                             l70Var.M = true;
                             break;
                         }
@@ -223,12 +223,12 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
         });
         org.telegram.ui.Components.sa saVar = new org.telegram.ui.Components.sa(context, this.d, 6);
         this.e = saVar;
-        this.s.addView(saVar, w7.z5.a(5.0f, 0.0f, 350.0f, 0.0f, 0.0f, 66, 49));
+        this.s.addView(saVar, w7.z5.d(66, 5.0f, 49, 0.0f, 350.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.f = textView;
         textView.setGravity(17);
         this.f.setTextSize(1, 16.0f);
-        this.s.addView(this.f, w7.z5.a(30.0f, 0.0f, 0.0f, 0.0f, 20.0f, -2, 81));
+        this.s.addView(this.f, w7.z5.d(-2, 30.0f, 81, 0.0f, 0.0f, 0.0f, 20.0f));
         final int i12 = 1;
         this.f.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.g70
             public final /* synthetic */ l70 b;
@@ -244,7 +244,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
                         l70 l70Var = this.b;
                         if (!l70Var.y) {
                             l70Var.y = true;
-                            l70Var.presentFragment(new fg0(), true);
+                            l70Var.presentFragment(new eg0(), true);
                             l70Var.M = true;
                             break;
                         }
@@ -265,7 +265,7 @@ public final class l70 extends org.telegram.ui.ActionBar.n2 implements Notificat
             }
         });
         float f7 = 4;
-        this.s.addView(frameLayout, w7.z5.a(64.0f, 0.0f, f7, f7, 0.0f, 64, 53));
+        this.s.addView(frameLayout, w7.z5.d(64, 64.0f, 53, 0.0f, f7, f7, 0.0f));
         this.fragmentView = scrollView;
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.suggestedLangpack);
         int i13 = this.c;

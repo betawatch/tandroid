@@ -22,7 +22,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.er0;
 import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class s6 extends FrameLayout {
     public final org.telegram.ui.Components.p6 E;
@@ -41,12 +41,12 @@ public final class s6 extends FrameLayout {
     public final org.telegram.ui.Components.f6 x;
     public final org.telegram.ui.Components.f6 y;
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x015f  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x016f  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0183  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01c6  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0177  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0162  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0186  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01c9  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x017a  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x016a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -75,21 +75,21 @@ public final class s6 extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.d = imageView;
         boolean z12 = LocaleController.isRTL;
-        addView(imageView, w7.z5.a(46.0f, z12 ? 0.0f : 13.0f, 0.0f, z12 ? 13.0f : 0.0f, 0.0f, 46, (z12 ? 5 : 3) | 16));
+        addView(imageView, w7.z5.d(46, 46.0f, (z12 ? 5 : 3) | 16, z12 ? 0.0f : 13.0f, 0.0f, z12 ? 13.0f : 0.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var;
         j5Var.setTextSize(16);
         j5Var.setGravity(LocaleController.isRTL ? 5 : 3);
         j5Var.setTypeface(AndroidUtilities.bold());
         boolean z13 = LocaleController.isRTL;
-        addView(j5Var, w7.z5.a(20.0f, z13 ? 16.0f : 73.0f, 9.33f, z13 ? 73.0f : 16.0f, 0.0f, -1, (z13 ? 5 : 3) | 48));
+        addView(j5Var, w7.z5.d(-1, 20.0f, (z13 ? 5 : 3) | 48, z13 ? 16.0f : 73.0f, 9.33f, z13 ? 73.0f : 16.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(context);
         this.b = j5Var2;
         j5Var2.setTextSize(14);
         j5Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
         j5Var2.setGravity(LocaleController.isRTL ? 5 : 3);
         boolean z14 = LocaleController.isRTL;
-        addView(j5Var2, w7.z5.a(20.0f, z14 ? 16.0f : 73.0f, 33.0f, z14 ? 73.0f : 16.0f, 0.0f, -1, (z14 ? 5 : 3) | 48));
+        addView(j5Var2, w7.z5.d(-1, 20.0f, (z14 ? 5 : 3) | 48, z14 ? 16.0f : 73.0f, 33.0f, z14 ? 73.0f : 16.0f, 0.0f));
         j5Var.setTag(Integer.valueOf(z10 ? z11 ? org.telegram.ui.ActionBar.h6.q7 : org.telegram.ui.ActionBar.h6.ri : org.telegram.ui.ActionBar.h6.oi));
         j5Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(z10 ? z11 ? org.telegram.ui.ActionBar.h6.q7 : org.telegram.ui.ActionBar.h6.ri : org.telegram.ui.ActionBar.h6.oi, d6Var));
         if (!z10) {

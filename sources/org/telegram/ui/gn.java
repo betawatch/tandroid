@@ -6,7 +6,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class gn extends View {
     public final ArrayList a;
@@ -47,7 +47,7 @@ public final class gn extends View {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         sn snVar = this.c;
-        snVar.rc = true;
+        snVar.sc = true;
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         int i10 = 0;
@@ -57,7 +57,7 @@ public final class gn extends View {
             ((View) obj).setVisibility(0);
         }
         arrayList.clear();
-        snVar.rc = false;
+        snVar.sc = false;
     }
 
     @Override // android.view.View
@@ -65,7 +65,7 @@ public final class gn extends View {
         super.onDetachedFromWindow();
         a();
         sn snVar = this.c;
-        snVar.rc = true;
+        snVar.sc = true;
         ArrayList arrayList = this.a;
         int size = arrayList.size();
         int i10 = 0;
@@ -78,7 +78,7 @@ public final class gn extends View {
                 this.b.add(view);
             }
         }
-        snVar.rc = false;
+        snVar.sc = false;
     }
 
     @Override // android.view.View

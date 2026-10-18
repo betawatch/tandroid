@@ -7,15 +7,15 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.os.Looper;
 import android.view.ViewOutlineProvider;
-import ci.o1;
+import ci.n1;
 import org.telegram.ui.v3;
 import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class j0 {
-    public static final o1 a = new o1(23);
-    public static final o1 b = new o1(24);
+    public static final n1 a = new n1(23);
+    public static final n1 b = new n1(24);
     public static Path c;
     public static Outline d;
     public static Rect e;

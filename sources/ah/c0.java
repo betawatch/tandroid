@@ -13,17 +13,15 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import ci.c6;
-import ci.j5;
+import ci.b6;
+import ci.i5;
+import ci.l4;
 import ci.l7;
-import ci.m4;
-import ci.m7;
-import ci.n2;
-import ci.p1;
-import ci.r8;
-import ci.x1;
+import ci.m2;
+import ci.o1;
+import ci.q8;
+import ci.w1;
 import ei.k6;
-import ei.l4;
 import ei.s2;
 import ei.u3;
 import ei.x3;
@@ -32,7 +30,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.qz0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -116,11 +114,11 @@ public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateLis
                 ((ci.x0) this.b).invalidate();
                 break;
             case 11:
-                n2 n2Var = (n2) this.b;
+                m2 m2Var = (m2) this.b;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n2Var.c.setAlpha(floatValue4);
-                n2Var.a.setAlpha(AndroidUtilities.lerp(0.0f, 0.5f, floatValue4));
-                n2Var.invalidate();
+                m2Var.c.setAlpha(floatValue4);
+                m2Var.a.setAlpha(AndroidUtilities.lerp(0.0f, 0.5f, floatValue4));
+                m2Var.invalidate();
                 break;
             case 12:
                 ci.q0 q0Var = (ci.q0) this.b;
@@ -144,21 +142,21 @@ public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 14:
-                p1 p1Var = (p1) this.b;
-                p1Var.getClass();
-                p1Var.h.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                o1 o1Var = (o1) this.b;
+                o1Var.getClass();
+                o1Var.h.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 15:
-                x1 x1Var = (x1) this.b;
-                x1Var.getClass();
-                x1Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                x1Var.invalidate();
+                w1 w1Var = (w1) this.b;
+                w1Var.getClass();
+                w1Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w1Var.invalidate();
                 break;
             case 16:
-                m4 m4Var = (m4) this.b;
-                m4Var.getClass();
+                l4 l4Var = (l4) this.b;
+                l4Var.getClass();
                 float floatValue7 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                TextView[] textViewArr = m4Var.c;
+                TextView[] textViewArr = l4Var.c;
                 textViewArr[0].setAlpha(floatValue7);
                 float f7 = 1.0f - floatValue7;
                 textViewArr[0].setTranslationY((-AndroidUtilities.dp(4.0f)) * f7);
@@ -175,37 +173,37 @@ public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateLis
                 profileStoriesView.invalidate();
                 break;
             case 18:
-                j5 j5Var = (j5) this.b;
-                j5Var.r = ((Float) j5Var.w.getAnimatedValue()).floatValue();
-                j5Var.invalidate();
+                i5 i5Var = (i5) this.b;
+                i5Var.r = ((Float) i5Var.w.getAnimatedValue()).floatValue();
+                i5Var.invalidate();
                 break;
             case 19:
-                c6 c6Var = (c6) this.b;
-                c6Var.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c6Var.e.setTranslationY(((-c6Var.d) + c6Var.getMeasuredHeight()) - c6Var.v);
+                b6 b6Var = (b6) this.b;
+                b6Var.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                b6Var.e.setTranslationY(((-b6Var.d) + b6Var.getMeasuredHeight()) - b6Var.v);
                 break;
             case 20:
-                m7 m7Var = (m7) this.b;
+                l7 l7Var = (l7) this.b;
                 float floatValue9 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ArrayList arrayList = m7Var.a;
-                l7 l7Var = (l7) arrayList.get(m7Var.d);
-                l7Var.n = floatValue9;
-                l7Var.invalidate();
-                int i10 = m7Var.c;
+                ArrayList arrayList = l7Var.a;
+                ci.k7 k7Var2 = (ci.k7) arrayList.get(l7Var.d);
+                k7Var2.n = floatValue9;
+                k7Var2.invalidate();
+                int i10 = l7Var.c;
                 if (i10 != -1) {
-                    l7 l7Var2 = (l7) arrayList.get(i10);
-                    l7Var2.n = 1.0f - floatValue9;
-                    l7Var2.invalidate();
+                    ci.k7 k7Var3 = (ci.k7) arrayList.get(i10);
+                    k7Var3.n = 1.0f - floatValue9;
+                    k7Var3.invalidate();
                     break;
                 }
                 break;
             case 21:
-                r8 r8Var = (r8) this.b;
-                r8Var.getClass();
-                r8Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r8Var.invalidate();
-                r8Var.requestLayout();
-                r8Var.J.requestLayout();
+                q8 q8Var = (q8) this.b;
+                q8Var.getClass();
+                q8Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                q8Var.invalidate();
+                q8Var.requestLayout();
+                q8Var.J.requestLayout();
                 break;
             case 22:
                 di.v vVar = (di.v) this.b;
@@ -252,7 +250,7 @@ public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateLis
                 x3Var.invalidate();
                 break;
             case 28:
-                ((l4) this.b).invalidate();
+                ((ei.l4) this.b).invalidate();
                 break;
             default:
                 k6 k6Var = (k6) this.b;

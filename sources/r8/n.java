@@ -12,7 +12,7 @@ import com.google.android.gms.internal.vision.t2;
 import java.nio.ByteBuffer;
 import m.g3;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class n extends c1 {
     public final t2 b;
@@ -61,11 +61,11 @@ public final class n extends c1 {
                 throw new IllegalArgumentException("Internal barcode detector error; check logcat output.");
             }
         } else {
-            ByteBuffer D = g3Var.D();
-            n6.l.h(D);
+            ByteBuffer I = g3Var.I();
+            n6.l.h(I);
             if (t2Var.k()) {
                 try {
-                    x6.b bVar2 = new x6.b(D);
+                    x6.b bVar2 = new x6.b(I);
                     d3 d3Var2 = (d3) t2Var.m();
                     n6.l.h(d3Var2);
                     Parcel F02 = d3Var2.F0();

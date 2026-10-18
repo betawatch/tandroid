@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class fs0 extends s4.v {
     public ku0 d;
@@ -49,7 +49,7 @@ public final class fs0 extends s4.v {
 
     @Override // s4.v
     public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
-        ci.a7 a7Var;
+        ci.z6 z6Var;
         ArrayList arrayList;
         s4.g0 adapter = recyclerView.getAdapter();
         pv0 pv0Var = adapter instanceof pv0 ? (pv0) adapter : null;
@@ -59,8 +59,8 @@ public final class fs0 extends s4.v {
         int b10 = b1Var.b();
         int b11 = b1Var2.b();
         ArrayList arrayList2 = pv0Var.y;
-        if (!pv0Var.h && (a7Var = pv0Var.s) != null && b10 >= 0 && b10 < a7Var.i.size() && b11 >= 0 && b11 < pv0Var.s.i.size()) {
-            if ((pv0Var.s instanceof ci.t6) || pv0Var.n > 0) {
+        if (!pv0Var.h && (z6Var = pv0Var.s) != null && b10 >= 0 && b10 < z6Var.i.size() && b11 >= 0 && b11 < pv0Var.s.i.size()) {
+            if ((pv0Var.s instanceof ci.s6) || pv0Var.n > 0) {
                 arrayList = new ArrayList();
                 for (int i10 = 0; i10 < pv0Var.s.i.size(); i10++) {
                     arrayList.add(Integer.valueOf(((MessageObject) pv0Var.s.i.get(i10)).getId()));
@@ -84,7 +84,7 @@ public final class fs0 extends s4.v {
 
     @Override // s4.v
     public final void p(s4.b1 b1Var, int i10) {
-        ci.a7 a7Var;
+        ci.z6 z6Var;
         ArrayList arrayList;
         ku0 ku0Var = this.d;
         if (ku0Var != null && b1Var != null) {
@@ -105,14 +105,14 @@ public final class fs0 extends s4.v {
         if (ku0Var3 != null && (ku0Var3.getAdapter() instanceof pv0)) {
             pv0 pv0Var = (pv0) this.d.getAdapter();
             ArrayList arrayList2 = pv0Var.y;
-            if (!pv0Var.h && (a7Var = pv0Var.s) != null && pv0Var.E) {
-                if ((a7Var instanceof ci.t6) || pv0Var.n > 0) {
+            if (!pv0Var.h && (z6Var = pv0Var.s) != null && pv0Var.E) {
+                if ((z6Var instanceof ci.s6) || pv0Var.n > 0) {
                     arrayList = new ArrayList();
                     for (int i11 = 0; i11 < pv0Var.s.i.size(); i11++) {
                         arrayList.add(Integer.valueOf(((MessageObject) pv0Var.s.i.get(i11)).getId()));
                     }
                 } else {
-                    arrayList = a7Var.g;
+                    arrayList = z6Var.g;
                 }
                 boolean z10 = arrayList2.size() != arrayList.size();
                 if (!z10) {

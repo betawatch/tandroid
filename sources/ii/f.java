@@ -23,7 +23,7 @@ import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.w9;
 import s4.o0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f extends e61 {
     public static final /* synthetic */ int a = 0;
@@ -51,7 +51,7 @@ public final class f extends e61 {
         TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
         TLRPC.User user2 = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
         gVar.f.setText(DialogObject.getName(j10));
-        gVar.h.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(user2 != null ? R.string.CommunityPendingRequestSuggestedBot : ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.CommunityPendingRequestSuggestedChannel : R.string.CommunityPendingRequestSuggestedGroup, DialogObject.getShortName(user)), h6.x0(null, h6.il, false), new j(18)));
+        gVar.h.setText(AndroidUtilities.replaceSingleLink(LocaleController.formatString(user2 != null ? R.string.CommunityPendingRequestSuggestedBot : ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.CommunityPendingRequestSuggestedChannel : R.string.CommunityPendingRequestSuggestedGroup, DialogObject.getShortName(user)), h6.x0(null, h6.il, false), new j(17)));
         if (user2 != null) {
             textView2.setVisibility(8);
         } else if (chat == null || chat.participants_count <= 0) {

@@ -38,21 +38,21 @@ import org.telegram.ui.Components.q6;
 import org.telegram.ui.Components.s61;
 import org.telegram.ui.Components.yq;
 import org.telegram.ui.Components.z00;
-import org.telegram.ui.Wallet.s6;
+import org.telegram.ui.Wallet.m6;
 import org.telegram.ui.a20;
 import org.telegram.ui.sa1;
 import org.telegram.ui.x10;
 import org.telegram.ui.z10;
 import s4.g0;
-import sg.w1;
+import sg.x1;
 import ug.m1;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class g extends a20 implements NotificationCenter.NotificationCenterDelegate {
     public FrameLayout P;
-    public s6 Q;
+    public m6 Q;
     public ld R;
     public ic S;
     public final boolean T = C0();
@@ -220,10 +220,10 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         FrameLayout frameLayout = new FrameLayout(context);
         this.P = frameLayout;
         frameLayout.setClickable(true);
-        s6 s6Var = new s6(170, context, false);
-        this.Q = s6Var;
-        s6Var.setStarParticlesView(this.e);
-        this.P.addView(this.Q, z5.a(170.0f, 0.0f, 32.0f, 0.0f, 12.0f, 170, 17));
+        m6 m6Var = new m6(170, context, false);
+        this.Q = m6Var;
+        m6Var.setStarParticlesView(this.e);
+        this.P.addView(this.Q, z5.d(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 12.0f));
         m0(LocaleController.getString(R.string.GramEarningsTitle), AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GramEarningsText), new ra(context, 7)), true), this.P, null);
         this.c.setOverScrollMode(2);
         s4.k kVar = new s4.k();
@@ -233,7 +233,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         kVar.n(350L);
         this.c.setItemAnimator(kVar);
         this.c.setOnItemClickListener(new wa(this, 10));
-        this.s.addView(new z00(getParentActivity()), z5.d(-1.0f, -1));
+        this.s.addView(new z00(getParentActivity()), z5.c(-1.0f, -1));
         ga.y(this.currentAccount, true);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         this.U = linearLayout;
@@ -251,16 +251,16 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
         yqVar.setScale(0.5f, 0.5f);
         yqVar.translate(-AndroidUtilities.dp(3.0f), 0.0f);
         this.V.setSpan(yqVar, 0, 1, 33);
-        this.U.addView(this.W, z5.a(40.0f, 24.0f, 0.0f, 24.0f, 0.0f, -1, 17));
+        this.U.addView(this.W, z5.d(-1, 40.0f, 17, 24.0f, 0.0f, 24.0f, 0.0f));
         q6 q6Var2 = new q6(getParentActivity(), false, false, false);
         this.X = q6Var2;
         q6Var2.setTextSize(AndroidUtilities.dp(14.0f));
         this.X.setGravity(17);
         this.X.setText(LocaleController.getString(R.string.YourTonBalance));
         this.X.setTextColor(h6.w0(h6.z6, this.resourceProvider));
-        this.U.addView(this.X, z5.a(20.0f, 24.0f, 0.0f, 24.0f, 8.0f, -1, 17));
+        this.U.addView(this.X, z5.d(-1, 20.0f, 17, 24.0f, 0.0f, 24.0f, 8.0f));
         FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
-        x xVar = new x(this, getParentActivity(), 5);
+        x xVar = new x(this, getParentActivity(), 6);
         this.Y = xVar;
         frameLayout2.addView(xVar);
         boolean z10 = this.T;
@@ -365,7 +365,7 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
             }
         });
         this.a0.addView(this.c0, z5.p(-1, 48, 17.0f, 1, 0, 0, 0, 0));
-        this.U.addView(frameLayout2, z5.a(48.0f, 20.0f, 6.0f, 20.0f, 4.0f, -1, 17));
+        this.U.addView(frameLayout2, z5.d(-1, 48.0f, 17, 20.0f, 6.0f, 20.0f, 4.0f));
         this.Y.animate().cancel();
         this.a0.animate().cancel();
         this.a0.setAlpha(this.e0 ? 1.0f : 0.0f);
@@ -470,23 +470,23 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
     @Override // org.telegram.ui.a20, org.telegram.ui.ActionBar.n2
     public final void onPause() {
         super.onPause();
-        s6 s6Var = this.Q;
-        if (s6Var != null) {
-            s6Var.setPaused(true);
+        m6 m6Var = this.Q;
+        if (m6Var != null) {
+            m6Var.setPaused(true);
         }
     }
 
     @Override // org.telegram.ui.a20, org.telegram.ui.ActionBar.n2
     public final void onResume() {
         super.onResume();
-        s6 s6Var = this.Q;
-        if (s6Var != null) {
-            s6Var.setPaused(false);
+        m6 m6Var = this.Q;
+        if (m6Var != null) {
+            m6Var.setPaused(false);
         }
     }
 
     @Override // org.telegram.ui.a20
-    public final w1 p0() {
+    public final x1 p0() {
         return new c(getParentActivity(), 75, 1);
     }
 
@@ -509,9 +509,9 @@ public final class g extends a20 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.a20
     public final void s0(float f7) {
-        s6 s6Var = this.Q;
-        if (s6Var != null) {
-            s6Var.setHeaderTilt(f7 * 70.0f);
+        m6 m6Var = this.Q;
+        if (m6Var != null) {
+            m6Var.setHeaderTilt(f7 * 70.0f);
         }
     }
 }

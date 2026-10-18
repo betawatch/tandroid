@@ -16,7 +16,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static ng.i a;
@@ -42,7 +42,7 @@ public abstract class d0 {
             imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.O9, false), PorterDuff.Mode.SRC_IN));
             vVar.addView(imageView);
             vVar.setVisibility(8);
-            iVar2.addView(vVar, z5.d(56.0f, 56));
+            iVar2.addView(vVar, z5.c(56.0f, 56));
             LinearLayout linearLayout = new LinearLayout(launchActivity);
             iVar2.w = linearLayout;
             linearLayout.setOrientation(1);
@@ -60,7 +60,7 @@ public abstract class d0 {
             im0Var.setAdapter(new ng.g(iVar2, launchActivity));
             im0Var.setOnItemClickListener(new ai.wa(iVar2, 17));
             linearLayout.addView(im0Var, z5.l(1.0f, -1, 0));
-            iVar2.addView(linearLayout, z5.a(-1.0f, 8.0f, 8.0f, 8.0f, 8.0f, -1, 0));
+            iVar2.addView(linearLayout, z5.d(-1, -1.0f, 0, 8.0f, 8.0f, 8.0f, 8.0f));
             iVar2.d();
             iVar2.setFitsSystemWindows(true);
             iVar2.setWillNotDraw(false);
@@ -70,7 +70,7 @@ public abstract class d0 {
             iVar3.a.setVisibility(0);
             o1.k kVar = new o1.k(new o1.j(0.0f));
             kVar.u = org.telegram.ui.Cells.c1.l(1000.0f, 750.0f, 0.75f);
-            kVar.b(new ci.l8(2, iVar3));
+            kVar.b(new ci.k8(2, iVar3));
             kVar.h();
         } else {
             iVar.getClass();

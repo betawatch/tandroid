@@ -28,7 +28,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class wq extends FrameLayout {
     public static final /* synthetic */ int e0 = 0;
@@ -101,19 +101,19 @@ public class wq extends FrameLayout {
         ai.uc ucVar = new ai.uc(this, context);
         this.x = ucVar;
         ucVar.setOrientation(0);
-        addView(ucVar, w7.z5.a(54.0f, 27.0f, -6.0f, 17.0f, 0.0f, -1, 51));
+        addView(ucVar, w7.z5.d(-1, 54.0f, 51, 27.0f, -6.0f, 17.0f, 0.0f));
         ucVar.setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(context);
         this.w = frameLayout;
         frameLayout.setClipChildren(false);
-        addView(frameLayout, w7.z5.a(30.0f, 72.0f, 1.0f, 0.0f, 0.0f, 174, 49));
+        addView(frameLayout, w7.z5.d(174, 30.0f, 49, 72.0f, 1.0f, 0.0f, 0.0f));
         int i14 = 0;
         while (i14 < 4) {
             this.v[i14] = new ColorPicker$RadioButton(context);
             ColorPicker$RadioButton colorPicker$RadioButton = this.v[i14];
             colorPicker$RadioButton.d = this.S == i14;
             colorPicker$RadioButton.b(false);
-            this.w.addView(this.v[i14], w7.z5.a(30.0f, 0.0f, 0.0f, 0.0f, 0.0f, 30, 48));
+            this.w.addView(this.v[i14], w7.z5.d(30, 30.0f, 48, 0.0f, 0.0f, 0.0f, 0.0f));
             this.v[i14].setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.rq
                 public final /* synthetic */ wq b;
 
@@ -511,7 +511,7 @@ public class wq extends FrameLayout {
             }
         });
         imageView.setContentDescription(LocaleController.getString(R.string.Add));
-        addView(imageView, w7.z5.a(30.0f, 36.0f, 1.0f, 0.0f, 0.0f, 30, 49));
+        addView(imageView, w7.z5.d(30, 30.0f, 49, 36.0f, 1.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.j0 j0Var = new org.telegram.ui.ActionBar.j0(this, getContext(), 1);
         this.F = j0Var;
         j0Var.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(i17, this.d0), 1, -1));
@@ -692,7 +692,7 @@ public class wq extends FrameLayout {
             }
         });
         j0Var.setContentDescription(LocaleController.getString(R.string.ClearButton));
-        addView(j0Var, w7.z5.a(30.0f, 97.0f, 1.0f, 0.0f, 0.0f, 30, 51));
+        addView(j0Var, w7.z5.d(30, 30.0f, 51, 97.0f, 1.0f, 0.0f, 0.0f));
         TextView textView = new TextView(context);
         this.H = textView;
         textView.setTextSize(1, 15.0f);
@@ -700,7 +700,7 @@ public class wq extends FrameLayout {
         textView.setGravity(17);
         textView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i18, this.d0));
-        addView(textView, w7.z5.a(36.0f, 0.0f, 3.0f, 14.0f, 0.0f, -2, 53));
+        addView(textView, w7.z5.d(-2, 36.0f, 53, 0.0f, 3.0f, 14.0f, 0.0f));
         textView.setOnClickListener(new ah.f(11));
         if (z10) {
             org.telegram.ui.ActionBar.u0 u0Var = new org.telegram.ui.ActionBar.u0(context, (org.telegram.ui.ActionBar.y) null, 0, org.telegram.ui.ActionBar.h6.w0(i18, this.d0));
@@ -717,7 +717,7 @@ public class wq extends FrameLayout {
             u0Var.setAdditionalYOffset(AndroidUtilities.dp(72.0f));
             u0Var.setTranslationX(AndroidUtilities.dp(6.0f));
             u0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(i17, this.d0), 1, -1));
-            addView(u0Var, w7.z5.a(30.0f, 0.0f, 2.0f, 10.0f, 0.0f, 30, 53));
+            addView(u0Var, w7.z5.d(30, 30.0f, 53, 0.0f, 2.0f, 10.0f, 0.0f));
             u0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.rq
                 public final /* synthetic */ wq b;
 

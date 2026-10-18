@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class m8 extends FrameLayout implements r2 {
     public final l8 a;
@@ -42,7 +42,7 @@ public abstract class m8 extends FrameLayout implements r2 {
         textView.setTypeface(AndroidUtilities.bold());
         textView.setTextColor(-1);
         textView.setText(LocaleController.getString(R.string.StoryLive));
-        frameLayout.addView(textView, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
+        frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
         l8Var.addView(frameLayout, w7.z5.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
         final int i10 = 0;
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: ei.k8
@@ -76,7 +76,7 @@ public abstract class m8 extends FrameLayout implements r2 {
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setTextColor(-1);
         textView2.setText(LocaleController.getString(R.string.StoryPhoto));
-        frameLayout2.addView(textView2, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
+        frameLayout2.addView(textView2, w7.z5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
         l8Var.addView(frameLayout2, w7.z5.r(-2, -1, 112, 0.0f, 0.0f, 6.66f, 0.0f));
         final int i11 = 1;
         frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: ei.k8
@@ -110,7 +110,7 @@ public abstract class m8 extends FrameLayout implements r2 {
         textView3.setTypeface(AndroidUtilities.bold());
         textView3.setTextColor(-1);
         textView3.setText(LocaleController.getString(R.string.StoryVideo));
-        frameLayout3.addView(textView3, w7.z5.a(-2.0f, 16.0f, 0.0f, 16.0f, 7.0f, -2, 80));
+        frameLayout3.addView(textView3, w7.z5.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
         l8Var.addView(frameLayout3, w7.z5.t(-2, -1, 112, 0, 0, 0, 0));
         final int i12 = 2;
         frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: ei.k8

@@ -34,13 +34,13 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.h9;
-import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.tg0;
 import org.telegram.ui.Components.w9;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class h1 implements NotificationCenter.NotificationCenterDelegate, tf.a {
     public static final cw0 b0 = new cw0(new tg0(16), new tg0(17));
@@ -98,7 +98,7 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         h1 h1Var = d0;
         if (h1Var.V) {
             h1Var.V = false;
-            AndroidUtilities.runOnUIThread(new rc(20), 100L);
+            AndroidUtilities.runOnUIThread(new sc(19), 100L);
             h1Var.E.getNotificationCenter().removeObserver(h1Var, NotificationCenter.groupCallUpdated);
             h1Var.E.getNotificationCenter().removeObserver(h1Var, NotificationCenter.applyGroupCallVisibleParticipants);
             NotificationCenter.getGlobalInstance().removeObserver(h1Var, NotificationCenter.didEndCall);
@@ -165,13 +165,13 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         h1Var.e = new ah.v(h1Var, activity2);
         org.telegram.ui.f fVar = new org.telegram.ui.f(h1Var, activity2, i10);
         h1Var.d = fVar;
-        fVar.addView(h1Var.e, z5.d(-1.0f, -1));
-        h1Var.e.setOutlineProvider(new ci.o1(17));
+        fVar.addView(h1Var.e, z5.c(-1.0f, -1));
+        h1Var.e.setOutlineProvider(new ci.n1(17));
         h1Var.e.setClipToOutline(true);
         h1Var.e.setBackgroundColor(h6.x0(null, h6.gg, false));
         w9 w9Var = new w9(activity2);
         h1Var.r = w9Var;
-        h1Var.e.addView(w9Var, z5.d(-1.0f, -1));
+        h1Var.e.addView(w9Var, z5.c(-1.0f, -1));
         q2 q2Var = new q2(activity2, false, false, false, false);
         h1Var.f = q2Var;
         q2Var.setAlpha(0.0f);
@@ -180,10 +180,10 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         q2Var2.a0 = 0;
         q2Var2.d.setRotateTextureWithScreen(true);
         h1Var.f.d.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), new g1(h1Var));
-        h1Var.e.addView(h1Var.f, z5.d(-1.0f, -1));
+        h1Var.e.addView(h1Var.f, z5.c(-1.0f, -1));
         ic icVar = new ic(h1Var, activity2, 28);
         h1Var.s = icVar;
-        h1Var.e.addView(icVar, z5.d(-1.0f, -1));
+        h1Var.e.addView(icVar, z5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(activity2);
         h1Var.h = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -192,7 +192,7 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         gradientDrawable.setColors(new int[]{1140850688, 0});
         gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
         view.setBackground(gradientDrawable);
-        h1Var.h.addView(view, z5.d(-1.0f, -1));
+        h1Var.h.addView(view, z5.c(-1.0f, -1));
         int dp = AndroidUtilities.dp(8.0f);
         ImageView imageView = new ImageView(activity2);
         imageView.setImageResource(R.drawable.pip_video_close);
@@ -204,15 +204,15 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
         imageView.setOnClickListener(new ah.f(15));
         float f7 = 38;
         float f10 = 4;
-        h1Var.h.addView(imageView, z5.a(f7, 0.0f, f10, f10, 0.0f, 38, 5));
+        h1Var.h.addView(imageView, z5.d(38, f7, 5, 0.0f, f10, f10, 0.0f));
         ImageView imageView2 = new ImageView(activity2);
         imageView2.setImageResource(R.drawable.pip_video_expand);
         imageView2.setColorFilter(h6.x0(null, i11, false));
         imageView2.setBackground(h6.g0(h6.x0(null, i12, false), 1, -1));
         imageView2.setPadding(dp, dp, dp, dp);
         imageView2.setOnClickListener(new hg.r0(activity2, 14));
-        h1Var.h.addView(imageView2, z5.a(f7, 0.0f, f10, 48, 0.0f, 38, 5));
-        h1Var.e.addView(h1Var.h, z5.d(-1.0f, -1));
+        h1Var.h.addView(imageView2, z5.d(38, f7, 5, 0.0f, f10, 48, 0.0f));
+        h1Var.e.addView(h1Var.h, z5.c(-1.0f, -1));
         h1Var.b = (WindowManager) activity2.getSystemService("window");
         WindowManager.LayoutParams b10 = uf.b.b(activity2, false);
         h1Var.c = b10;

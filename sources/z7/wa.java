@@ -1,15 +1,15 @@
 package z7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class wa {
     public final Long a;
     public final hb b;
     public final Boolean c;
 
-    public /* synthetic */ wa(t0.h hVar) {
-        this.a = (Long) hVar.b;
-        this.b = (hb) hVar.c;
-        this.c = (Boolean) hVar.d;
+    public /* synthetic */ wa(u2.c cVar) {
+        this.a = (Long) cVar.b;
+        this.b = (hb) cVar.c;
+        this.c = (Boolean) cVar.d;
     }
 }

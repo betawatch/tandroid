@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import org.telegram.ui.Components.q00;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class he extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class he extends AnimatorListenerAdapter {
                 q00Var.invalidate();
                 break;
             default:
-                ((org.telegram.ui.web.t1) this.d).c(this.b, this.c, false);
+                ((org.telegram.ui.web.u1) this.d).c(this.b, this.c, false);
                 break;
         }
     }

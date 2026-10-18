@@ -8,7 +8,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.x90;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class t3 extends org.telegram.ui.Cells.l4 {
     public final x90 r;
@@ -21,6 +21,6 @@ public final class t3 extends org.telegram.ui.Cells.l4 {
         x90Var.setTextColor(h6.w0(h6.z6, d6Var));
         x90Var.setLinkTextColor(h6.w0(h6.L6, d6Var));
         x90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        addView(x90Var, z5.a(-2.0f, 10.0f, 14.0f, 10.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
+        addView(x90Var, z5.d(-2, -2.0f, (LocaleController.isRTL ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
     }
 }

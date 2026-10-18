@@ -38,8 +38,8 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.eh;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.fh;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -48,7 +48,7 @@ import org.telegram.ui.ef0;
 import org.telegram.ui.gb0;
 import org.telegram.ui.n80;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class f2 {
     public final int a;
@@ -88,8 +88,8 @@ public final class f2 {
     /* JADX WARN: Removed duplicated region for block: B:16:0x0139  */
     /* JADX WARN: Removed duplicated region for block: B:19:0x0148  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x0173  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x01d3  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x01d5  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x01f2  */
     /* JADX WARN: Removed duplicated region for block: B:42:0x013c  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x00fe  */
     /* JADX WARN: Type inference failed for: r4v3, types: [org.telegram.messenger.NotificationCenter$NotificationCenterDelegate, org.telegram.ui.Wallet.e1] */
@@ -109,7 +109,7 @@ public final class f2 {
         boolean z11 = tL_urlAuthResultRequest != null;
         final TL_wallet.tonConnectSession tonconnectsession = z11 ? null : a2Var.e;
         final TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = {null};
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = lk.e(context, 1);
         FrameLayout frameLayout = new FrameLayout(context);
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_close);
@@ -118,7 +118,7 @@ public final class f2 {
         int i12 = org.telegram.ui.ActionBar.h6.G6;
         imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i12, d6Var), PorterDuff.Mode.SRC_IN));
         w7.b6.a(imageView2);
-        frameLayout.addView(imageView2, w7.z5.a(48.0f, 4.0f, 0.0f, 0.0f, 0.0f, 48, 51));
+        frameLayout.addView(imageView2, w7.z5.d(48, 48.0f, 51, 4.0f, 0.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         w9Var.setRoundRadius(AndroidUtilities.dp(38.0f));
         if (z11) {
@@ -131,7 +131,7 @@ public final class f2 {
                 imageView = imageView2;
                 z10 = z11;
                 w9Var.n(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), "76_76", null, tonconnectsession.manifest);
-                frameLayout.addView(w9Var, w7.z5.a(76.0f, 0.0f, 32.0f, 0.0f, 0.0f, 76, 49));
+                frameLayout.addView(w9Var, w7.z5.d(76, 76.0f, 49, 0.0f, 32.0f, 0.0f, 0.0f));
                 e.addView(frameLayout, w7.z5.n(-1, -2));
                 TextView textView = new TextView(context);
                 textView.setTypeface(AndroidUtilities.bold());
@@ -165,14 +165,14 @@ public final class f2 {
                         e.addView(textView2, w7.z5.t(-2, -2, 49, 36, 16, 36, 28));
                         FrameLayout frameLayout2 = new FrameLayout(context);
                         e.addView(frameLayout2, w7.z5.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-                        x5Var = new x5(context, false);
-                        x5Var.n(w9);
-                        if (x5Var.isAttachedToWindow() && (m0Var = x5Var.d0) != null && ((i11 = x5Var.c0) != i10 || m0Var != w9)) {
+                        x5Var = new x5(context, R.drawable.wallet_card_qr, 46);
+                        x5Var.l(w9);
+                        if (x5Var.isAttachedToWindow() && (m0Var = x5Var.a0) != null && ((i11 = x5Var.W) != i10 || m0Var != w9)) {
                             NotificationCenter.getInstance(i11).removeObserver(x5Var, NotificationCenter.walletUpdate);
                         }
-                        x5Var.c0 = i10;
-                        x5Var.d0 = w9;
-                        if (x5Var.isAttachedToWindow() && x5Var.d0 != null) {
+                        x5Var.W = i10;
+                        x5Var.a0 = w9;
+                        if (x5Var.isAttachedToWindow() && x5Var.a0 != null) {
                             NotificationCenter.getInstance(i10).addObserver(x5Var, NotificationCenter.walletUpdate);
                         }
                         frameLayout2.addView(x5Var);
@@ -191,7 +191,7 @@ public final class f2 {
                         dVar.d();
                         dVar.setText(LocaleController.getString(R.string.WalletCancel));
                         linearLayout.addView(dVar, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-                        final ei.d f7 = kk.f(24, context, d6Var, true);
+                        final ei.d f7 = lk.f(24, context, d6Var, true);
                         f7.setText(LocaleController.getString(R.string.WalletConnect));
                         linearLayout.addView(f7, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
                         final k2 k2Var = new k2(context, e, d6Var);
@@ -288,13 +288,13 @@ public final class f2 {
                 e.addView(textView2, w7.z5.t(-2, -2, 49, 36, 16, 36, 28));
                 FrameLayout frameLayout22 = new FrameLayout(context);
                 e.addView(frameLayout22, w7.z5.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-                x5Var = new x5(context, false);
-                x5Var.n(w9);
+                x5Var = new x5(context, R.drawable.wallet_card_qr, 46);
+                x5Var.l(w9);
                 if (x5Var.isAttachedToWindow()) {
                     NotificationCenter.getInstance(i11).removeObserver(x5Var, NotificationCenter.walletUpdate);
                 }
-                x5Var.c0 = i10;
-                x5Var.d0 = w9;
+                x5Var.W = i10;
+                x5Var.a0 = w9;
                 if (x5Var.isAttachedToWindow()) {
                     NotificationCenter.getInstance(i10).addObserver(x5Var, NotificationCenter.walletUpdate);
                 }
@@ -314,7 +314,7 @@ public final class f2 {
                 dVar2.d();
                 dVar2.setText(LocaleController.getString(R.string.WalletCancel));
                 linearLayout2.addView(dVar2, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-                final ei.d f72 = kk.f(24, context, d6Var, true);
+                final ei.d f72 = lk.f(24, context, d6Var, true);
                 f72.setText(LocaleController.getString(R.string.WalletConnect));
                 linearLayout2.addView(f72, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
                 final k2 k2Var2 = new k2(context, e, d6Var);
@@ -407,7 +407,7 @@ public final class f2 {
         }
         imageView = imageView2;
         z10 = z11;
-        frameLayout.addView(w9Var, w7.z5.a(76.0f, 0.0f, 32.0f, 0.0f, 0.0f, 76, 49));
+        frameLayout.addView(w9Var, w7.z5.d(76, 76.0f, 49, 0.0f, 32.0f, 0.0f, 0.0f));
         e.addView(frameLayout, w7.z5.n(-1, -2));
         TextView textView4 = new TextView(context);
         textView4.setTypeface(AndroidUtilities.bold());
@@ -432,12 +432,12 @@ public final class f2 {
         e.addView(textView22, w7.z5.t(-2, -2, 49, 36, 16, 36, 28));
         FrameLayout frameLayout222 = new FrameLayout(context);
         e.addView(frameLayout222, w7.z5.k(0.0f, -12.0f, 0.0f, -12.0f, -1, -2));
-        x5Var = new x5(context, false);
-        x5Var.n(w9);
+        x5Var = new x5(context, R.drawable.wallet_card_qr, 46);
+        x5Var.l(w9);
         if (x5Var.isAttachedToWindow()) {
         }
-        x5Var.c0 = i10;
-        x5Var.d0 = w9;
+        x5Var.W = i10;
+        x5Var.a0 = w9;
         if (x5Var.isAttachedToWindow()) {
         }
         frameLayout222.addView(x5Var);
@@ -456,7 +456,7 @@ public final class f2 {
         dVar22.d();
         dVar22.setText(LocaleController.getString(R.string.WalletCancel));
         linearLayout22.addView(dVar22, w7.z5.m(1.0f, 0, 44, 0, 6, 0));
-        final ei.d f722 = kk.f(24, context, d6Var, true);
+        final ei.d f722 = lk.f(24, context, d6Var, true);
         f722.setText(LocaleController.getString(R.string.WalletConnect));
         linearLayout22.addView(f722, w7.z5.m(1.0f, 0, 44, 6, 0, 0));
         final k2 k2Var22 = new k2(context, e, d6Var);
@@ -548,7 +548,7 @@ public final class f2 {
     }
 
     public static LinearLayout D(Context context, String str, org.telegram.ui.ActionBar.d6 d6Var) {
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = lk.e(context, 1);
         e.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, d6Var)));
         org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(context, d6Var);
         l4Var.setText(str);
@@ -659,7 +659,7 @@ public final class f2 {
         linearLayout2.setOrientation(1);
         linearLayout2.setGravity((charSequence2 == null && str == null) ? 16 : 48);
         TextView textView = new TextView(context);
-        kk.k(16.0f, 1, textView);
+        lk.k(16.0f, 1, textView);
         int i11 = org.telegram.ui.ActionBar.h6.G6;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
         textView.setSingleLine(charSequence2 != null);
@@ -750,7 +750,7 @@ public final class f2 {
 
     public static TextView g(Context context, String str, org.telegram.ui.ActionBar.d6 d6Var) {
         TextView textView = new TextView(context);
-        kk.k(14.0f, 1, textView);
+        lk.k(14.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var));
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) str);
@@ -787,19 +787,19 @@ public final class f2 {
     public static void o(Context context, int i10, long j10, int i11, org.telegram.ui.ActionBar.d6 d6Var, gb0 gb0Var) {
         m0 w9 = m0.w(i10);
         f2 f2Var = w9.g;
-        eh ehVar = new eh(context, i10, w9, d6Var, gb0Var);
+        fh fhVar = new fh(context, i10, w9, d6Var, gb0Var);
         if (f2Var.h || f2Var.g != null) {
-            ehVar.run(null, "A TON Connect request is already open");
+            fhVar.run(null, "A TON Connect request is already open");
             return;
         }
         String string = MessagesController.getMainSettings(f2Var.a).getString(j(j10, i11), null);
         if (string == null) {
             f2Var.h = true;
-            f2Var.b.j0(new xb(f2Var, j10, ehVar, i11, 17));
+            f2Var.b.j0(new xb(f2Var, j10, fhVar, i11, 17));
             return;
         }
         f2Var.h = true;
-        x xVar = new x(1, f2Var, ehVar);
+        x xVar = new x(1, f2Var, fhVar);
         try {
             f2Var.C(j10, i11, new JSONObject(string), xVar);
         } catch (Exception e) {
@@ -1135,7 +1135,7 @@ public final class f2 {
                     sendtransfer.user_id = new TLRPC.TL_inputUserEmpty();
                     sendtransfer.data_normal = Base64.decode(jSONObject.getString("boc"), 2);
                     sendtransfer.random_id = jSONObject.getLong("randomId");
-                    this.f.sendRequestTyped(sendtransfer, new org.telegram.messenger.a(), new ai.t3(this, callback, b2Var, j0Var, sendtransfer, 6));
+                    this.f.sendRequestTyped(sendtransfer, new org.telegram.messenger.a(), new ai.v3(this, callback, b2Var, j0Var, sendtransfer, 6));
                     return;
                 } catch (Exception e) {
                     callback.run(h("restore transfer", e));

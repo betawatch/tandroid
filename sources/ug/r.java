@@ -1,6 +1,6 @@
 package ug;
 
-import ai.q2;
+import ai.k2;
 import ai.s9;
 import android.text.TextUtils;
 import android.util.Pair;
@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.n2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class r {
     public static HashMap a;
@@ -37,7 +37,7 @@ public abstract class r {
         tL_premium_applyBoost.peer = messagesController.getInputPeer(-j10);
         tL_premium_applyBoost.flags |= 1;
         tL_premium_applyBoost.slots.addAll(list);
-        connectionsManager.sendRequest(tL_premium_applyBoost, new q2(callback2, messagesController, callback, 21), 66);
+        connectionsManager.sendRequest(tL_premium_applyBoost, new k2(callback2, messagesController, callback, 21), 66);
     }
 
     public static ArrayList b(int i10, List list) {

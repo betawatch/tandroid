@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zu implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.xl0, xx, ContactsLoadingObserver.Callback, org.telegram.ui.Components.vv0, org.telegram.ui.Components.yl0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, pt {
     public final /* synthetic */ int a;
@@ -152,7 +152,7 @@ public final /* synthetic */ class zu implements org.telegram.ui.ActionBar.a2, o
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.l5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -260,7 +260,7 @@ public final /* synthetic */ class zu implements org.telegram.ui.ActionBar.a2, o
                 break;
             case 12:
                 Pattern pattern = LaunchActivity.C1;
-                ((LaunchActivity) obj2).t0((fg0) obj);
+                ((LaunchActivity) obj2).t0((eg0) obj);
                 break;
             case 13:
                 LaunchActivity launchActivity = (LaunchActivity) obj2;
@@ -284,7 +284,7 @@ public final /* synthetic */ class zu implements org.telegram.ui.ActionBar.a2, o
                 xd0Var.y.u1(7, true, bundle, false);
                 break;
             case 24:
-                jf0.o((jf0) obj2, (Context) obj);
+                if0.o((if0) obj2, (Context) obj);
                 break;
             case 26:
                 xm0 xm0Var = (xm0) obj2;
@@ -309,7 +309,7 @@ public final /* synthetic */ class zu implements org.telegram.ui.ActionBar.a2, o
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.l5.b(this, imageReceiver);
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
@@ -318,18 +318,18 @@ public final /* synthetic */ class zu implements org.telegram.ui.ActionBar.a2, o
             case 20:
                 od0 od0Var = (od0) this.c;
                 com.google.android.gms.internal.clearcut.v0 v0Var = (com.google.android.gms.internal.clearcut.v0) this.b;
-                fg0 fg0Var = od0Var.W;
-                if (fg0Var.getParentActivity() != null) {
-                    fg0Var.getParentActivity().startActivityForResult(v0Var.f(), 200);
+                eg0 eg0Var = od0Var.W;
+                if (eg0Var.getParentActivity() != null) {
+                    eg0Var.getParentActivity().startActivityForResult(v0Var.f(), 200);
                     break;
                 }
                 break;
             default:
                 te0 te0Var = (te0) this.c;
                 com.google.android.gms.internal.clearcut.v0 v0Var2 = (com.google.android.gms.internal.clearcut.v0) this.b;
-                fg0 fg0Var2 = te0Var.E;
-                if (fg0Var2.getParentActivity() != null && !fg0Var2.getParentActivity().isFinishing()) {
-                    fg0Var2.getParentActivity().startActivityForResult(v0Var2.f(), 200);
+                eg0 eg0Var2 = te0Var.E;
+                if (eg0Var2.getParentActivity() != null && !eg0Var2.getParentActivity().isFinishing()) {
+                    eg0Var2.getParentActivity().startActivityForResult(v0Var2.f(), 200);
                     break;
                 }
                 break;

@@ -16,16 +16,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.f6;
+import org.telegram.ui.Wallet.p9;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class x1 extends j {
     public final Bitmap A0;
@@ -44,7 +45,7 @@ public final class x1 extends j {
     public final int w0;
     public boolean x0;
     public final f6 y0;
-    public final ah.x z0;
+    public final p9 z0;
 
     public x1(Context context, PointF pointF, dw0 dw0Var, String str, int i10) {
         super(context, pointF);
@@ -61,12 +62,12 @@ public final class x1 extends j {
         setScale(1.0f);
         this.r0 = str;
         this.v0 = dw0Var;
-        ah.x xVar = new ah.x(this, context);
-        this.z0 = xVar;
-        addView(xVar, z5.d(-1.0f, -1));
+        p9 p9Var = new p9(this, context);
+        this.z0 = p9Var;
+        addView(p9Var, z5.c(-1.0f, -1));
         bs bsVar = bs.h;
-        this.u0 = new f6(xVar, 0L, 500L, bsVar);
-        this.y0 = new f6(xVar, 0L, 350L, bsVar);
+        this.u0 = new f6(p9Var, 0L, 500L, bsVar);
+        this.y0 = new f6(p9Var, 0L, 350L, bsVar);
         this.w0 = i10;
         Bitmap q6 = a8.q(new qg.g0(str, 10), 1920, 1920, 0, false);
         this.A0 = q6;
@@ -132,8 +133,8 @@ public final class x1 extends j {
         getMeasuredHeight();
         getScale();
         AndroidUtilities.dp(64.0f);
-        float z10 = kk.z(dp, 2.0f, getPositionX(), scaleX);
-        return new el0(z10, kk.z(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + z10) - z10, dp2 * scaleX);
+        float z10 = lk.z(dp, 2.0f, getPositionX(), scaleX);
+        return new el0(z10, lk.z(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + z10) - z10, dp2 * scaleX);
     }
 
     @Override // rg.j
@@ -191,9 +192,9 @@ public final class x1 extends j {
         if (!z10) {
             this.u0.f(z11, true);
         }
-        ah.x xVar = this.z0;
-        if (xVar != null) {
-            xVar.invalidate();
+        p9 p9Var = this.z0;
+        if (p9Var != null) {
+            p9Var.invalidate();
         }
     }
 
@@ -205,7 +206,7 @@ public final class x1 extends j {
         dVar.a = true;
         zzd a2 = v7.f0.a(new bc.e(dVar));
         this.B0 = true;
-        a2.g(wb.a.a(bitmap, this.w0)).addOnSuccessListener(new qg.g0(this, 11)).addOnFailureListener(new org.telegram.ui.web.m(7, this, bitmap));
+        a2.g(wb.a.a(bitmap, this.w0)).addOnSuccessListener(new qg.g0(this, 11)).addOnFailureListener(new org.telegram.ui.web.n(7, this, bitmap));
     }
 
     public final void t(boolean z10) {
@@ -214,9 +215,9 @@ public final class x1 extends j {
         if (!z10) {
             this.y0.f(z11, true);
         }
-        ah.x xVar = this.z0;
-        if (xVar != null) {
-            xVar.invalidate();
+        p9 p9Var = this.z0;
+        if (p9Var != null) {
+            p9Var.invalidate();
         }
     }
 
@@ -235,12 +236,12 @@ public final class x1 extends j {
         setScale(1.0f);
         this.q0 = tLObject;
         this.v0 = dw0Var;
-        ah.x xVar = new ah.x(this, context);
-        this.z0 = xVar;
-        addView(xVar, z5.d(-1.0f, -1));
+        p9 p9Var = new p9(this, context);
+        this.z0 = p9Var;
+        addView(p9Var, z5.c(-1.0f, -1));
         bs bsVar = bs.h;
-        this.u0 = new f6(xVar, 0L, 500L, bsVar);
-        this.y0 = new f6(xVar, 0L, 350L, bsVar);
+        this.u0 = new f6(p9Var, 0L, 500L, bsVar);
+        this.y0 = new f6(p9Var, 0L, 350L, bsVar);
         k();
     }
 }

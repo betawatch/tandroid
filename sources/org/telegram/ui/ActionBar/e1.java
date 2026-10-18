@@ -22,7 +22,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.xj0;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class e1 extends FrameLayout {
     public int E;
@@ -322,7 +322,7 @@ public class e1 extends FrameLayout {
             this.b.setVisibility(8);
             this.b.setTextSize(1, 13.0f);
             this.b.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(43.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(43.0f) : 0, 0);
-            addView(this.b, w7.z5.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+            addView(this.b, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 0.0f, 10.0f, 0.0f, 0.0f));
         }
         boolean isEmpty = TextUtils.isEmpty(charSequence);
         if ((!isEmpty) != (this.b.getVisibility() == 0)) {

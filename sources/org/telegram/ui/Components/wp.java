@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.mc1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wp extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int i0 = 0;
@@ -137,8 +137,8 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         this.c = g2Var;
         imageView.setImageDrawable(g2Var);
         imageView.setOnClickListener(new fp(this, i10));
-        frameLayout.addView(imageView, w7.z5.a(44.0f, 4.0f, -2.0f, 62.0f, 12.0f, 44, 8388659));
-        frameLayout.addView(textView, w7.z5.a(-2.0f, 44.0f, 0.0f, 62.0f, 0.0f, -1, 8388659));
+        frameLayout.addView(imageView, w7.z5.d(44, 44.0f, 8388659, 4.0f, -2.0f, 62.0f, 12.0f));
+        frameLayout.addView(textView, w7.z5.d(-1, -2.0f, 8388659, 44.0f, 0.0f, 62.0f, 0.0f));
         int i12 = org.telegram.ui.ActionBar.h6.Oh;
         int themedColor = getThemedColor(i12);
         int dp2 = AndroidUtilities.dp(28.0f);
@@ -154,7 +154,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         ppVar.setAnimation(uj0Var);
         ppVar.setScaleType(ImageView.ScaleType.CENTER);
         ppVar.setOnClickListener(new fp(this, 2));
-        frameLayout.addView(ppVar, w7.z5.a(44.0f, 0.0f, -2.0f, 7.0f, 0.0f, 44, 8388661));
+        frameLayout.addView(ppVar, w7.z5.d(44, 44.0f, 8388661, 0.0f, -2.0f, 7.0f, 0.0f));
         this.H = new qp(getContext());
         im0 im0Var = new im0(getContext(), null);
         this.w = im0Var;
@@ -177,8 +177,8 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         this.y = b10Var;
         b10Var.setViewType(14);
         b10Var.setVisibility(0);
-        frameLayout.addView(b10Var, w7.z5.a(104.0f, 0.0f, 44.0f, 0.0f, 0.0f, -1, 8388611));
-        frameLayout.addView(im0Var, w7.z5.a(104.0f, 0.0f, 44.0f, 0.0f, 0.0f, -1, 8388611));
+        frameLayout.addView(b10Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 44.0f, 0.0f, 0.0f));
+        frameLayout.addView(im0Var, w7.z5.d(-1, 104.0f, 8388611, 0.0f, 44.0f, 0.0f, 0.0f));
         View view = new View(getContext());
         this.I = view;
         int dp3 = AndroidUtilities.dp(6.0f);
@@ -186,7 +186,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         int themedColor3 = getThemedColor(org.telegram.ui.ActionBar.h6.Qh);
         view.setBackground(org.telegram.ui.ActionBar.h6.j0(dp3, dp3, dp3, dp3, themedColor2, themedColor3, themedColor3));
         view.setOnClickListener(new fp(this, i13));
-        frameLayout.addView(view, w7.z5.a(48.0f, 16.0f, 162.0f, 16.0f, 16.0f, -1, 8388611));
+        frameLayout.addView(view, w7.z5.d(-1, 48.0f, 8388611, 16.0f, 162.0f, 16.0f, 16.0f));
         TextView textView2 = new TextView(getContext());
         this.L = textView2;
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
@@ -201,7 +201,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         }
         textView2.setTextSize(1, 15.0f);
         textView2.setOnClickListener(new androidx.mediarouter.app.w(this, 8));
-        frameLayout.addView(textView2, w7.z5.a(48.0f, 16.0f, 162.0f, 16.0f, 16.0f, -1, 8388611));
+        frameLayout.addView(textView2, w7.z5.d(-1, 48.0f, 8388611, 16.0f, 162.0f, 16.0f, 16.0f));
         q6 q6Var = new q6(getContext(), true, true, true);
         this.J = q6Var;
         q6Var.getDrawable().q(true);
@@ -211,7 +211,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         q6Var.setTextColor(getThemedColor(i14));
         q6Var.setTextSize(AndroidUtilities.dp(15.0f));
         q6Var.setTypeface(AndroidUtilities.bold());
-        frameLayout.addView(q6Var, w7.z5.a(48.0f, 16.0f, 162.0f, 16.0f, 16.0f, -1, 8388611));
+        frameLayout.addView(q6Var, w7.z5.d(-1, 48.0f, 8388611, 16.0f, 162.0f, 16.0f, 16.0f));
         q6 q6Var2 = new q6(getContext(), true, true, true);
         this.K = q6Var2;
         q6Var2.getDrawable().q(true);
@@ -221,7 +221,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         q6Var2.setTextSize(AndroidUtilities.dp(12.0f));
         q6Var2.setAlpha(0.0f);
         q6Var2.setTranslationY(AndroidUtilities.dp(11.0f));
-        frameLayout.addView(q6Var2, w7.z5.a(48.0f, 16.0f, 162.0f, 16.0f, 16.0f, -1, 8388611));
+        frameLayout.addView(q6Var2, w7.z5.d(-1, 48.0f, 8388611, 16.0f, 162.0f, 16.0f, 16.0f));
         if (this.f != null) {
             TextView textView3 = new TextView(getContext());
             this.d = textView3;
@@ -232,7 +232,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
             textView3.setText(LocaleController.getString(R.string.RestToDefaultBackground));
             textView3.setTextSize(1, 15.0f);
             textView3.setOnClickListener(new ca(5, this, snVar));
-            frameLayout.addView(textView3, w7.z5.a(48.0f, 16.0f, 214.0f, 16.0f, 12.0f, -1, 8388611));
+            frameLayout.addView(textView3, w7.z5.d(-1, 48.0f, 8388611, 16.0f, 214.0f, 16.0f, 12.0f));
             TextView textView4 = new TextView(getContext());
             this.e = textView4;
             textView4.setEllipsize(truncateAt);
@@ -247,7 +247,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
             }
             textView4.setText(LocaleController.formatString("ChatThemeApplyHint", R.string.ChatThemeApplyHint, str));
             textView4.setTextSize(1, 15.0f);
-            frameLayout.addView(textView4, w7.z5.a(48.0f, 16.0f, 214.0f, 16.0f, 12.0f, -1, 8388611));
+            frameLayout.addView(textView4, w7.z5.d(-1, 48.0f, 8388611, 16.0f, 214.0f, 16.0f, 12.0f));
         }
         F();
         G(false);
@@ -258,12 +258,12 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
             return;
         }
         org.telegram.ui.sn snVar = wpVar.v;
-        sg.j0 j0Var = new sg.j0(22, wpVar.currentAccount, wpVar.getContext(), snVar, wpVar.resourcesProvider);
-        j0Var.H1(canApplyBoost);
-        j0Var.G1(wpVar.f0, true);
-        j0Var.I1(wpVar.v.a());
-        j0Var.Q0 = new ep(wpVar, 2);
-        j0Var.show();
+        sg.k0 k0Var = new sg.k0(22, wpVar.currentAccount, wpVar.getContext(), snVar, wpVar.resourcesProvider);
+        k0Var.H1(canApplyBoost);
+        k0Var.G1(wpVar.f0, true);
+        k0Var.I1(wpVar.v.a());
+        k0Var.Q0 = new ep(wpVar, 2);
+        k0Var.show();
     }
 
     public static /* synthetic */ void o(wp wpVar, org.telegram.ui.sn snVar) {
@@ -306,7 +306,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
         org.telegram.ui.sn snVar = wpVar.v;
         mc1Var.a.a = snVar.getResourceProvider();
         mc1Var.p1 = new op(wpVar);
-        l2Var.c = new rc(8);
+        l2Var.c = new sc(7);
         l2Var.d = new ep(wpVar, 5);
         l2Var.b = new ep(wpVar, 6);
         l2Var.e = true;
@@ -731,7 +731,7 @@ public final class wp extends org.telegram.ui.ActionBar.f3 implements Notificati
             this.U.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ChatThemeNightSwitchTooltip", R.string.ChatThemeNightSwitchTooltip, new Object[0])));
         }
         AndroidUtilities.runOnUIThread(new ep(this, 7), 1500L);
-        this.container.addView(this.U, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+        this.container.addView(this.U, w7.z5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x00ad  */

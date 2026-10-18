@@ -11,12 +11,12 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class v extends androidx.activity.m implements e0.a {
     public boolean L;
     public boolean M;
-    public final ya.c J = new ya.c(new u(this), 4);
+    public final ya.d J = new ya.d(new u(this), 4);
     public final androidx.lifecycle.v K = new androidx.lifecycle.v(this);
     public boolean N = true;
 
@@ -216,18 +216,18 @@ public abstract class v extends androidx.activity.m implements e0.a {
 
     @Override // android.app.Activity
     public void onResume() {
-        ya.c cVar = this.J;
-        cVar.a0();
+        ya.d dVar = this.J;
+        dVar.a0();
         super.onResume();
         this.M = true;
-        ((u) cVar.b).d.A(true);
+        ((u) dVar.b).d.A(true);
     }
 
     @Override // android.app.Activity
     public void onStart() {
-        ya.c cVar = this.J;
-        cVar.a0();
-        u uVar = (u) cVar.b;
+        ya.d dVar = this.J;
+        dVar.a0();
+        u uVar = (u) dVar.b;
         super.onStart();
         this.N = false;
         if (!this.L) {

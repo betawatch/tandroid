@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class p5 extends Drawable implements x5 {
     public ai.de E;
@@ -134,9 +134,9 @@ public class p5 extends Drawable implements x5 {
             boolean z10 = drawable3 instanceof r5;
             OvershootInterpolator overshootInterpolator = this.c;
             if (z10) {
-                ci.g3 g3Var = ((r5) drawable3).k;
-                if (g3Var != null) {
-                    g3Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+                ci.f3 f3Var = ((r5) drawable3).k;
+                if (f3Var != null) {
+                    f3Var.setRoundRadius(AndroidUtilities.dp(4.0f));
                 }
                 if (d < 1.0f) {
                     float interpolation = overshootInterpolator.getInterpolation(d);
@@ -176,13 +176,13 @@ public class p5 extends Drawable implements x5 {
 
     public final void f() {
         r5 r5Var;
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         Drawable drawable = this.f[0];
-        if (!(drawable instanceof r5) || (g3Var = (r5Var = (r5) drawable).k) == null) {
+        if (!(drawable instanceof r5) || (f3Var = (r5Var = (r5) drawable).k) == null) {
             return;
         }
-        r5Var.w(g3Var);
-        g3Var.startAnimation();
+        r5Var.w(f3Var);
+        f3Var.startAnimation();
     }
 
     public final void g(Drawable drawable, boolean z10) {

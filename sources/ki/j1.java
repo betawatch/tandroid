@@ -11,9 +11,9 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.tz;
 import org.telegram.ui.Components.yg;
-import org.telegram.ui.oi0;
+import org.telegram.ui.ni0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -215,7 +215,7 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
                         pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                     }
                 }
-                q.X(d2Var5.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.o2(27, d2Var5, pageblockmath), d2Var5.getResourceProvider());
+                q.X(d2Var5.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new ai.n2(27, d2Var5, pageblockmath), d2Var5.getResourceProvider());
                 break;
             case 9:
                 d2 d2Var6 = this.b;
@@ -225,9 +225,9 @@ public final /* synthetic */ class j1 implements View.OnClickListener {
             case 10:
                 d2 d2Var7 = this.b;
                 d2Var7.r0();
-                oi0 oi0Var = d2Var7.O0;
-                if (oi0Var != null) {
-                    oi0Var.h(true);
+                ni0 ni0Var = d2Var7.O0;
+                if (ni0Var != null) {
+                    ni0Var.h(true);
                     d2Var7.O0 = null;
                     break;
                 }

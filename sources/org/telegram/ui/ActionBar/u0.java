@@ -37,7 +37,7 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bs;
@@ -49,7 +49,7 @@ import org.telegram.ui.Components.xj0;
 import org.telegram.ui.oh;
 import org.telegram.ui.qh;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class u0 extends FrameLayout {
     public final TextView E;
@@ -107,7 +107,7 @@ public class u0 extends FrameLayout {
     public final xj0 x;
     public int y;
 
-    public u0(int i10, int i11, Context context, boolean z10) {
+    public u0(Context context, int i10, int i11, boolean z10) {
         this(context, null, i10, i11, z10, null);
     }
 
@@ -246,7 +246,7 @@ public class u0 extends FrameLayout {
             return;
         }
         findViewWithTag.setAlpha(0.0f);
-        kk.t(findViewWithTag.animate().alpha(1.0f), bs.f, 150L);
+        lk.t(findViewWithTag.animate().alpha(1.0f), bs.f, 150L);
         findViewWithTag.setVisibility(0);
     }
 
@@ -496,7 +496,7 @@ public class u0 extends FrameLayout {
                             frameLayout.setBackground(mutate);
                         }
                     }
-                    frameLayout.addView(view, w7.z5.d(-2.0f, -1));
+                    frameLayout.addView(view, w7.z5.c(-2.0f, -1));
                     m5Var.addView(frameLayout, w7.z5.n(-1, -2));
                     m5Var.addView(this.b, w7.z5.t(-2, -2, 0, 0, -10, 0, 0));
                     this.b.setTopView(frameLayout);
@@ -550,7 +550,7 @@ public class u0 extends FrameLayout {
                         }
                     }
                 });
-                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(kk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
+                actionBarPopupWindow$ActionBarPopupWindowLayout.measure(lk.c(40.0f, AndroidUtilities.displaySize.x, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.y, TLObject.FLAG_31));
                 if (frameLayout != null && frameLayout.getLayoutParams() != null && this.b.getSwipeBack() != null && (childAt = this.b.getSwipeBack().getChildAt(0)) != null && childAt.getMeasuredWidth() > 0) {
                     frameLayout.getLayoutParams().width = AndroidUtilities.dp(16.0f) + childAt.getMeasuredWidth();
                 }
@@ -740,7 +740,7 @@ public class u0 extends FrameLayout {
         layoutParams.width = -1;
         layoutParams.height = AndroidUtilities.dp(48.0f);
         e1Var.setLayoutParams(layoutParams);
-        e1Var.setOnClickListener(new ci.h2(2, this, z10));
+        e1Var.setOnClickListener(new ci.g2(2, this, z10));
         return e1Var;
     }
 
@@ -1072,13 +1072,13 @@ public class u0 extends FrameLayout {
             linearLayout.setOrientation(0);
             this.f.setVisibility(0);
             if (LocaleController.isRTL) {
-                this.F.addView(this.f, w7.z5.a(32.0f, 0.0f, 0.0f, 48.0f, 0.0f, -2, 16));
-                this.F.addView(this.e, w7.z5.a(36.0f, 0.0f, 0.0f, 48.0f, 0.0f, -1, 16));
-                this.F.addView(this.h, w7.z5.a(36.0f, 0.0f, 5.5f, 48.0f, 0.0f, -2, 21));
+                this.F.addView(this.f, w7.z5.d(-2, 32.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
+                this.F.addView(this.e, w7.z5.d(-1, 36.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
+                this.F.addView(this.h, w7.z5.d(-2, 36.0f, 21, 0.0f, 5.5f, 48.0f, 0.0f));
             } else {
-                this.F.addView(this.h, w7.z5.a(36.0f, 0.0f, 5.5f, 0.0f, 0.0f, -2, 19));
-                this.F.addView(this.e, w7.z5.a(36.0f, 6.0f, 0.0f, 48.0f, 0.0f, -1, 16));
-                this.F.addView(this.f, w7.z5.a(32.0f, 0.0f, 0.0f, 48.0f, 0.0f, -2, 16));
+                this.F.addView(this.h, w7.z5.d(-2, 36.0f, 19, 0.0f, 5.5f, 0.0f, 0.0f));
+                this.F.addView(this.e, w7.z5.d(-1, 36.0f, 16, 6.0f, 0.0f, 48.0f, 0.0f));
+                this.F.addView(this.f, w7.z5.d(-2, 32.0f, 16, 0.0f, 0.0f, 48.0f, 0.0f));
             }
             this.f.setClipChildren(false);
             j0 j0Var = new j0(this, getContext(), 0);
@@ -1667,14 +1667,14 @@ public class u0 extends FrameLayout {
             if (i11 != 0) {
                 textView.setTextColor(i11);
             }
-            addView(textView, w7.z5.d(-1.0f, -2));
+            addView(textView, w7.z5.c(-1.0f, -2));
             return;
         }
         xj0 xj0Var = new xj0(context);
         this.x = xj0Var;
         xj0Var.setScaleType(ImageView.ScaleType.CENTER);
         xj0Var.setImportantForAccessibility(2);
-        addView(xj0Var, w7.z5.d(-1.0f, -1));
+        addView(xj0Var, w7.z5.c(-1.0f, -1));
         if (i11 != 0) {
             xj0Var.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN));
         }

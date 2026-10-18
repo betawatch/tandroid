@@ -1,6 +1,6 @@
 package hi;
 
-import ci.k4;
+import ci.j4;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
@@ -24,7 +24,7 @@ import org.telegram.ui.u60;
 import org.telegram.ui.z40;
 import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k implements Runnable {
     public final /* synthetic */ int a;
@@ -176,14 +176,14 @@ public final /* synthetic */ class k implements Runnable {
                     koVar.n0(z11, true);
                     break;
                 } else {
-                    k4 k4Var = koVar.e;
+                    j4 j4Var = koVar.e;
                     ImageLocation forLocal = ImageLocation.getForLocal(fileLocation3);
                     h9 h9Var = koVar.r;
                     Object obj = koVar.D0;
                     if (obj == null) {
                         obj = koVar.x0;
                     }
-                    k4Var.h(forLocal, "50_50", h9Var, obj);
+                    j4Var.h(forLocal, "50_50", h9Var, obj);
                     koVar.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetNewPhoto", R.string.ChatSetNewPhoto), true);
                     if (koVar.R0 == null) {
                         koVar.R0 = new uj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);

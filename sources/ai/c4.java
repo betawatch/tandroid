@@ -1,137 +1,64 @@
 package ai;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.ChannelBoostsController;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ls;
-import org.telegram.ui.Components.v70;
-import org.telegram.ui.ey;
-import org.telegram.ui.go0;
-import org.telegram.ui.ko;
+import org.telegram.ui.Components.sv0;
+import org.telegram.ui.gh;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c4 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+public final /* synthetic */ class c4 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ c4(Object obj, Object obj2, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j10;
+    public /* synthetic */ c4(int i10, long j10, TLRPC.Document document) {
+        this.b = i10;
+        this.c = j10;
+        this.d = document;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        TLRPC.StickerSet stickerSet;
+        int i10 = this.a;
+        int i11 = this.b;
+        long j10 = this.c;
+        Object obj2 = this.d;
+        int i12 = 0;
+        switch (i10) {
             case 0:
-                k7.l0((k7) this.c, (String) this.d, this.b);
-                break;
-            case 1:
-                final ko koVar = (ko) this.c;
-                final boolean[] zArr = (boolean[]) this.d;
-                if (!zArr[0]) {
-                    final org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(koVar.getParentActivity(), 3, null);
-                    b2Var.q(400L);
-                    zArr[0] = true;
-                    final boolean z10 = !koVar.M.b();
-                    if (koVar.M.getCheckBox().F == null) {
-                        koVar.M.setChecked(z10);
-                    }
-                    ChannelBoostsController boostsController = koVar.getMessagesController().getBoostsController();
-                    final long j10 = this.b;
-                    boostsController.getBoostsStats(j10, new Utilities.Callback() { // from class: org.telegram.ui.fo
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
-                            ko koVar2 = ko.this;
-                            TLRPC.Chat chat = koVar2.x0;
-                            int i10 = chat.level;
-                            int i11 = tL_premium_boostsStatus.level;
-                            if (i10 != i11) {
-                                chat.level = i11;
-                                koVar2.getMessagesController().putChat(koVar2.x0, false);
-                            }
-                            koVar2.M.getCheckBox().setIcon(tL_premium_boostsStatus.level < koVar2.getMessagesController().channelAutotranslationLevelMin ? R.drawable.permission_locked : 0);
-                            boolean z11 = z10;
-                            boolean[] zArr2 = zArr;
-                            org.telegram.ui.ActionBar.b2 b2Var2 = b2Var;
-                            if (z11 && tL_premium_boostsStatus.level < koVar2.getMessagesController().channelAutotranslationLevelMin) {
-                                koVar2.M.setChecked(false);
-                                zArr2[0] = false;
-                                ChannelBoostsController boostsController2 = koVar2.getMessagesController().getBoostsController();
-                                long j11 = j10;
-                                boostsController2.userCanBoostChannel(j11, tL_premium_boostsStatus, new ai.w2(koVar2, b2Var2, tL_premium_boostsStatus, j11));
-                                return;
-                            }
-                            TLRPC.TL_channels_toggleAutotranslation tL_channels_toggleAutotranslation = new TLRPC.TL_channels_toggleAutotranslation();
-                            koVar2.getMessagesController();
-                            tL_channels_toggleAutotranslation.channel = MessagesController.getInputChannel(koVar2.x0);
-                            tL_channels_toggleAutotranslation.enabled = z11;
-                            koVar2.M.setChecked(z11);
-                            zArr2[0] = false;
-                            b2Var2.dismiss();
-                            koVar2.getConnectionsManager().sendRequest(tL_channels_toggleAutotranslation, new ei.o3(5, koVar2, z11), 64);
-                        }
-                    });
+                TLRPC.Document document = (TLRPC.Document) obj2;
+                if (((Boolean) obj).booleanValue()) {
+                    ga.y(i11, false).Q(j10);
+                    AndroidUtilities.runOnUIThread(new a3.l0(new l4(j10, i12), document, LocaleController.getString(R.string.Gift2MovedToProfile), 8));
                     break;
                 }
                 break;
-            case 2:
-                org.telegram.ui.ActionBar.b2[] b2VarArr = (org.telegram.ui.ActionBar.b2[]) this.c;
-                ls lsVar = (ls) this.d;
-                b2VarArr[0].dismiss();
-                lsVar.run(-this.b);
-                break;
-            case 3:
-                org.telegram.ui.ActionBar.b2[] b2VarArr2 = (org.telegram.ui.ActionBar.b2[]) this.c;
-                ls lsVar2 = (ls) this.d;
-                b2VarArr2[0].dismiss();
-                lsVar2.run(-this.b);
-                break;
-            case 4:
-                v70.O((v70) this.c, (Context) this.d, this.b);
-                break;
-            case 5:
-                ey eyVar = (ey) this.c;
-                boolean hasUnread = ((org.telegram.ui.Cells.r2) this.d).getHasUnread();
-                long j11 = this.b;
-                if (hasUnread) {
-                    eyVar.h4(j11);
-                } else {
-                    eyVar.getMessagesController().markDialogAsUnread(j11, null, 0L);
-                }
-                eyVar.finishPreviewFragment();
+            case 1:
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
+                AndroidUtilities.runOnUIThread(new gh(26, (org.telegram.ui.Components.qc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
                 break;
             default:
-                go0 go0Var = (go0) this.c;
-                TextView textView = (TextView) this.d;
-                go0Var.getClass();
-                long longValue = ((Long) textView.getTag()).longValue();
-                Long l4 = go0Var.H0;
-                if (l4 == null || longValue != l4.longValue()) {
-                    go0Var.f[0].setText(LocaleController.getInstance().formatCurrencyString(this.b, false, true, true, go0Var.C0.invoice.currency));
-                } else {
-                    go0Var.m0 = true;
-                    go0Var.f[0].setText("");
-                    go0Var.m0 = false;
-                    go0Var.H0 = 0L;
-                    go0Var.L0();
-                }
-                EditTextBoldCursor editTextBoldCursor = go0Var.f[0];
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                ((sv0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
                 break;
         }
+    }
+
+    public /* synthetic */ c4(int i10, org.telegram.ui.Components.qc qcVar, long j10) {
+        this.b = i10;
+        this.d = qcVar;
+        this.c = j10;
+    }
+
+    public /* synthetic */ c4(sv0 sv0Var, long j10, int i10) {
+        this.d = sv0Var;
+        this.c = j10;
+        this.b = i10;
     }
 }

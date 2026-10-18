@@ -32,7 +32,7 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.xp;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class w1 extends FrameLayout {
     public final h9 a;
@@ -60,7 +60,7 @@ public final class w1 extends FrameLayout {
         nVar.setTextColor(h6.w0(h6.z6, d6Var));
         nVar.setTextSize(1, 14.0f);
         boolean z11 = LocaleController.isRTL;
-        addView(nVar, z5.a(-2.0f, z11 ? i10 : 64.0f, 7.0f, z11 ? 64.0f : i10, 0.0f, -1, 7));
+        addView(nVar, z5.d(-1, -2.0f, 7, z11 ? i10 : 64.0f, 7.0f, z11 ? 64.0f : i10, 0.0f));
         if (z10) {
             ImageView imageView = new ImageView(context);
             this.e = imageView;

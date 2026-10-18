@@ -1,30 +1,32 @@
 package ci;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l9 implements ValueAnimator.AnimatorUpdateListener {
+public final class l9 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o9 b;
+    public final /* synthetic */ n9 b;
 
-    public /* synthetic */ l9(o9 o9Var, int i10) {
+    public /* synthetic */ l9(n9 n9Var, int i10) {
         this.a = i10;
-        this.b = o9Var;
+        this.b = n9Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                aa aaVar = this.b.I0;
-                aaVar.X = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aa.k(aaVar);
+                z9 z9Var = this.b.I0;
+                z9Var.X = 0.0f;
+                z9.k(z9Var);
                 break;
             default:
-                aa aaVar2 = this.b.I0;
-                aaVar2.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aa.k(aaVar2);
+                z9 z9Var2 = this.b.I0;
+                z9Var2.W = 0.0f;
+                z9Var2.Z = 0.0f;
+                z9.k(z9Var2);
                 break;
         }
     }

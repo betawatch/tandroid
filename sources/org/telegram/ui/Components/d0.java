@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class d0 extends FrameLayout {
     public final int a;
@@ -98,7 +98,7 @@ public final class d0 extends FrameLayout {
             w9Var.setAnimatedEmojiDrawable(new r5(9, i12, j10));
         }
         c0Var.setOnClickListener(new org.telegram.ui.ActionBar.s1(20, callback, aiComposeTone));
-        c0Var.setOnLongClickListener(new ci.m2(1, this, c0Var));
+        c0Var.setOnLongClickListener(new ci.l2(1, this, c0Var));
         b0 b0Var = this.c;
         b0Var.addView(c0Var, w7.z5.o(b0Var.getOrientation() == 0 ? 0 : -1, b0Var.getOrientation() != 1 ? -1 : 0, 1.0f, 119));
     }
@@ -114,9 +114,9 @@ public final class d0 extends FrameLayout {
             if (childAt instanceof c0) {
                 w9 w9Var = ((c0) childAt).h;
                 if (w9Var.getAnimatedEmojiDrawable() != null) {
-                    ci.g3 g3Var = w9Var.getAnimatedEmojiDrawable().k;
-                    if (g3Var != null) {
-                        g3Var.startAnimation();
+                    ci.f3 f3Var = w9Var.getAnimatedEmojiDrawable().k;
+                    if (f3Var != null) {
+                        f3Var.startAnimation();
                     }
                 } else {
                     w9Var.getImageReceiver().startAnimation();

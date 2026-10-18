@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class n51 extends org.telegram.ui.ActionBar.f3 {
     public final int b;
@@ -26,7 +26,7 @@ public class n51 extends org.telegram.ui.ActionBar.f3 {
         this.c = new GradientDrawable();
         m51 m51Var = new m51(this, context);
         this.d = m51Var;
-        m51Var.addView(b61Var, w7.z5.d(-1.0f, -1));
+        m51Var.addView(b61Var, w7.z5.c(-1.0f, -1));
         this.containerView = m51Var;
         this.e = b61Var;
         b61Var.setParentFragment(n2Var);

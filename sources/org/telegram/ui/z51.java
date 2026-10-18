@@ -50,7 +50,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class z51 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static String[] a2;
@@ -79,7 +79,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
     public b41 I1;
     public HashSet J;
     public ArrayList J0;
-    public ci.j6 J1;
+    public ci.i6 J1;
     public final HashSet K;
     public final ArrayList K0;
     public boolean K1;
@@ -1577,7 +1577,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         boolean canScrollVertically = (this.F1 ? this.i0 : this.h0).canScrollVertically(1);
         if (canScrollVertically != this.v1) {
             this.v1 = canScrollVertically;
-            org.telegram.messenger.kk.s(this.o0.animate(), canScrollVertically ? 1.0f : 0.0f, 200L);
+            org.telegram.messenger.lk.s(this.o0.animate(), canScrollVertically ? 1.0f : 0.0f, 200L);
         }
     }
 
@@ -1737,7 +1737,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                     z51Var.q1 = 1.0f - ((float) Math.pow(floatValue, 10.0d));
                     AndroidUtilities.lerp(rect, z51Var.o1, floatValue, z51Var.s1);
                     float scaleX = i51Var.getScaleX() * Math.max(1.0f, z51Var.t1.getInterpolation(w7.r.a((3.0f * floatValue) - 2.0f, 0.0f, 1.0f)));
-                    z51Var.s1.set((int) org.telegram.messenger.kk.x(z51Var.s1.width(), 2.0f, scaleX, r0.centerX()), (int) org.telegram.messenger.kk.x(z51Var.s1.height(), 2.0f, scaleX, z51Var.s1.centerY()), (int) a1.g.d(z51Var.s1.width(), 2.0f, scaleX, z51Var.s1.centerX()), (int) a1.g.d(z51Var.s1.height(), 2.0f, scaleX, z51Var.s1.centerY()));
+                    z51Var.s1.set((int) org.telegram.messenger.lk.x(z51Var.s1.width(), 2.0f, scaleX, r0.centerX()), (int) org.telegram.messenger.lk.x(z51Var.s1.height(), 2.0f, scaleX, z51Var.s1.centerY()), (int) a1.g.d(z51Var.s1.width(), 2.0f, scaleX, z51Var.s1.centerX()), (int) a1.g.d(z51Var.s1.height(), 2.0f, scaleX, z51Var.s1.centerY()));
                     z51Var.invalidate();
                     if (floatValue > 0.85f) {
                         boolean[] zArr2 = zArr;
@@ -1753,7 +1753,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                     }
                 }
             });
-            this.u1.addListener(new ci.p3(this, zArr, i01Var, 8));
+            this.u1.addListener(new ci.o3(this, zArr, i01Var, 8));
             this.u1.setInterpolator(org.telegram.ui.Components.bs.h);
             this.u1.setDuration(260L);
             this.u1.start();
@@ -2033,9 +2033,9 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
             AndroidUtilities.cancelRunOnUIThread(b41Var);
             this.I1 = null;
         }
-        ci.j6 j6Var = this.J1;
-        if (j6Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(j6Var);
+        ci.i6 i6Var = this.J1;
+        if (i6Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(i6Var);
             this.J1 = null;
         }
         boolean isEmpty = TextUtils.isEmpty(str);
@@ -2084,9 +2084,9 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 MediaDataController.getInstance(this.V).fetchNewEmojiKeywords(currentKeyboardLanguage);
             }
             a2 = currentKeyboardLanguage;
-            ci.j6 j6Var2 = new ci.j6(this, str, z10, z13, currentKeyboardLanguage, 4);
-            this.J1 = j6Var2;
-            AndroidUtilities.runOnUIThread(j6Var2, z11 ? 425L : 0L);
+            ci.i6 i6Var2 = new ci.i6(this, str, z10, z13, currentKeyboardLanguage, 4);
+            this.J1 = i6Var2;
+            AndroidUtilities.runOnUIThread(i6Var2, z11 ? 425L : 0L);
             if (q41Var != null) {
                 q41Var.f.b(2);
                 o51.a(q41Var, z10);
@@ -2176,7 +2176,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         this.E1.setDuration(320L);
         this.E1.setInterpolator(org.telegram.ui.Components.bs.h);
         this.E1.start();
-        org.telegram.messenger.kk.t(((View) w41Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new a41(this, 1)), org.telegram.ui.Components.bs.f, 160L);
+        org.telegram.messenger.lk.t(((View) w41Var.getParent()).animate().translationY((this.F1 && z11) ? -AndroidUtilities.dp(36.0f) : 0.0f).setUpdateListener(new a41(this, 1)), org.telegram.ui.Components.bs.f, 160L);
         if (this.F1 && z11) {
             m41Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(54.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
         } else {
@@ -2312,7 +2312,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
             Drawable mutate = getResources().getDrawable(R.drawable.shadowed_bubble1).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G8, d6Var), PorterDuff.Mode.MULTIPLY));
             view.setBackground(mutate);
-            addView(view, w7.z5.a(10.0f, (valueOf.intValue() / AndroidUtilities.density) + (z15 ? -12 : 4), n() ? 0 : this.d1, 0.0f, n() ? this.d1 : 0, 10, (n() ? 80 : 48) | 3));
+            addView(view, w7.z5.d(10, 10.0f, (n() ? 80 : 48) | 3, (valueOf.intValue() / AndroidUtilities.density) + (z15 ? -12 : 4), n() ? 0 : this.d1, 0.0f, n() ? this.d1 : 0));
         }
         ei.g6 g6Var = new ei.g6(this, context, d6Var, 13);
         this.b0 = g6Var;
@@ -2334,8 +2334,8 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         } else {
             i13 = 5;
         }
-        t41Var.addView(g6Var, w7.z5.d(-1.0f, -1));
-        addView(t41Var, w7.z5.a(-1.0f, 0.0f, (i24 == 0 || i24 == 12 || i24 == 9 || i24 == 2 || i24 == 7) ? this.d1 + 6 : 0.0f, 0.0f, n() ? this.d1 + 6 : 0.0f, -1, 119));
+        t41Var.addView(g6Var, w7.z5.c(-1.0f, -1));
+        addView(t41Var, w7.z5.d(-1, -1.0f, 119, 0.0f, (i24 == 0 || i24 == 12 || i24 == 9 || i24 == 2 || i24 == 7) ? this.d1 + 6 : 0.0f, 0.0f, n() ? this.d1 + 6 : 0.0f));
         if (num2 != null) {
             org.telegram.ui.Components.un unVar = new org.telegram.ui.Components.un(context, 24);
             this.n0 = unVar;
@@ -2343,7 +2343,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
             i14 = 14;
             drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G8, d6Var), PorterDuff.Mode.MULTIPLY));
             unVar.setBackground(drawable);
-            addView(unVar, w7.z5.a(9.0f, (num2.intValue() / AndroidUtilities.density) + (z15 ? -25 : 10), n() ? 0.0f : this.d1 + 5, 0.0f, n() ? this.d1 + 14 : 0.0f, 17, (n() ? 80 : 48) | 3));
+            addView(unVar, w7.z5.d(17, 9.0f, (n() ? 80 : 48) | 3, (num2.intValue() / AndroidUtilities.density) + (z15 ? -25 : 10), n() ? 0.0f : this.d1 + 5, 0.0f, n() ? this.d1 + 14 : 0.0f));
         } else {
             i14 = 14;
         }
@@ -2379,7 +2379,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                             v41Var.O = num3 != null;
                             v41Var.setPaddingLeft(i23 == 6 ? 10.0f : 5.0f);
                             if (i23 != 14 && i23 != 8 && i23 != 13) {
-                                this.a0.addView(v41Var, w7.z5.d(36.0f, -1));
+                                this.a0.addView(v41Var, w7.z5.c(36.0f, -1));
                             }
                             this.c0[i22] = v41Var;
                             i16 = i22 + 1;
@@ -2402,7 +2402,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                     v41Var.O = num3 != null;
                     v41Var.setPaddingLeft(i23 == 6 ? 10.0f : 5.0f);
                     if (i23 != 14) {
-                        this.a0.addView(v41Var, w7.z5.d(36.0f, -1));
+                        this.a0.addView(v41Var, w7.z5.c(36.0f, -1));
                     }
                     this.c0[i22] = v41Var;
                     i16 = i22 + 1;
@@ -2424,7 +2424,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                     f7 = 1.0f;
                 } else {
                     f7 = 1.0f;
-                    this.a0.addView(r41Var, w7.z5.a(1.0f / AndroidUtilities.density, 0.0f, 36.0f, 0.0f, 0.0f, -1, 48));
+                    this.a0.addView(r41Var, w7.z5.d(-1, 1.0f / AndroidUtilities.density, 48, 0.0f, 36.0f, 0.0f, 0.0f));
                 }
                 AndroidUtilities.updateViewVisibilityAnimated(r41Var, true, f7, false);
                 w41 w41Var = new w41(this, context, i17);
@@ -2453,8 +2453,8 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 this.g0 = l41Var2;
                 ah.v vVar = new ah.v(this, context);
                 this.k0 = vVar;
-                vVar.addView(w41Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
-                l41Var2.addView(vVar, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+                vVar.addView(w41Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
+                l41Var2.addView(vVar, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
                 m41Var = new m41(this, context);
                 this.i0 = m41Var;
                 if (m41Var.getItemAnimator() == null) {
@@ -2487,12 +2487,12 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 this.l0 = w9Var;
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.j0 = frameLayout;
-                frameLayout.addView(w9Var, w7.z5.a(36.0f, 0.0f, 16.0f, 0.0f, 0.0f, 36, 49));
-                frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 60.0f, 0.0f, 0.0f, -2, 49));
+                frameLayout.addView(w9Var, w7.z5.d(36, 36.0f, 49, 0.0f, 16.0f, 0.0f, 0.0f));
+                frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 49, 0.0f, 60.0f, 0.0f, 0.0f));
                 frameLayout.setVisibility(8);
                 frameLayout.setAlpha(0.0f);
                 l41 l41Var3 = l41Var;
-                l41Var3.addView(frameLayout, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 16));
+                l41Var3.addView(frameLayout, w7.z5.d(-1, -2.0f, 16, 0.0f, 0.0f, 0.0f, 0.0f));
                 m41Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(54.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
                 j51 j51Var = new j51(this);
                 this.q0 = j51Var;
@@ -2501,8 +2501,8 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 m41Var.setLayoutManager(n41Var2);
                 n41Var2.O = new k41(this, 1);
                 m41Var.setVisibility(8);
-                l41Var3.addView(m41Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
-                this.a0.addView(l41Var3, w7.z5.a(-1.0f, 0.0f, (i17 != 8 || i17 == 13 || i17 == 14) ? 0.0f : (f10 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f, -1, 48));
+                l41Var3.addView(m41Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
+                this.a0.addView(l41Var3, w7.z5.d(-1, -1.0f, 48, 0.0f, (i17 != 8 || i17 == 13 || i17 == 14) ? 0.0f : (f10 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
                 org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(w41Var, n41Var);
                 this.s0 = ll0Var;
                 ll0Var.i = new ei.k1(this, 1);
@@ -2517,7 +2517,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 this.f0 = q41Var;
                 q41Var.setTranslationY(-AndroidUtilities.dp(52.0f));
                 q41Var.setVisibility(4);
-                l41Var3.addView(q41Var, w7.z5.a(52.0f, 0.0f, -4.0f, 0.0f, 0.0f, -1, 48));
+                l41Var3.addView(q41Var, w7.z5.d(-1, 52.0f, 48, 0.0f, -4.0f, 0.0f, 0.0f));
                 r41 r41Var2 = new r41(context, num4, 0);
                 Drawable drawable2 = getResources().getDrawable(R.drawable.gradient_top);
                 int i26 = org.telegram.ui.ActionBar.h6.G8;
@@ -2526,7 +2526,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 drawable2.setColorFilter(new PorterDuffColorFilter(multiplyAlphaComponent, mode));
                 r41Var2.setBackground(drawable2);
                 r41Var2.setAlpha(0.0f);
-                this.a0.addView(r41Var2, w7.z5.a(20.0f, 0.0f, (f10 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f, -1, 55));
+                this.a0.addView(r41Var2, w7.z5.d(-1, 20.0f, 55, 0.0f, (f10 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
                 View view2 = new View(context);
                 this.o0 = view2;
                 Drawable drawable3 = getResources().getDrawable(R.drawable.gradient_bottom);
@@ -2540,7 +2540,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
                 this.t0 = view3;
                 view3.setAlpha(0.0f);
                 view3.setBackgroundColor(-16777216);
-                this.a0.addView(view3, w7.z5.d(-1.0f, -1));
+                this.a0.addView(view3, w7.z5.c(-1.0f, -1));
                 i19 = this.V;
                 if (MediaDataController.getInstance(i19) == null) {
                     MediaDataController.getInstance(i19).checkStickers(5);
@@ -2648,8 +2648,8 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         this.g0 = l41Var22;
         ah.v vVar2 = new ah.v(this, context);
         this.k0 = vVar2;
-        vVar2.addView(w41Var2, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
-        l41Var22.addView(vVar2, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        vVar2.addView(w41Var2, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
+        l41Var22.addView(vVar2, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
         m41Var = new m41(this, context);
         this.i0 = m41Var;
         if (m41Var.getItemAnimator() == null) {
@@ -2663,12 +2663,12 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         this.l0 = w9Var2;
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.j0 = frameLayout2;
-        frameLayout2.addView(w9Var2, w7.z5.a(36.0f, 0.0f, 16.0f, 0.0f, 0.0f, 36, 49));
-        frameLayout2.addView(textView2, w7.z5.a(-2.0f, 0.0f, 60.0f, 0.0f, 0.0f, -2, 49));
+        frameLayout2.addView(w9Var2, w7.z5.d(36, 36.0f, 49, 0.0f, 16.0f, 0.0f, 0.0f));
+        frameLayout2.addView(textView2, w7.z5.d(-2, -2.0f, 49, 0.0f, 60.0f, 0.0f, 0.0f));
         frameLayout2.setVisibility(8);
         frameLayout2.setAlpha(0.0f);
         l41 l41Var32 = l41Var;
-        l41Var32.addView(frameLayout2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 16));
+        l41Var32.addView(frameLayout2, w7.z5.d(-1, -2.0f, 16, 0.0f, 0.0f, 0.0f, 0.0f));
         m41Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(54.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(38.0f));
         j51 j51Var2 = new j51(this);
         this.q0 = j51Var2;
@@ -2677,8 +2677,8 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         m41Var.setLayoutManager(n41Var22);
         n41Var22.O = new k41(this, 1);
         m41Var.setVisibility(8);
-        l41Var32.addView(m41Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
-        this.a0.addView(l41Var32, w7.z5.a(-1.0f, 0.0f, (i17 != 8 || i17 == 13 || i17 == 14) ? 0.0f : (f102 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f, -1, 48));
+        l41Var32.addView(m41Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.a0.addView(l41Var32, w7.z5.d(-1, -1.0f, 48, 0.0f, (i17 != 8 || i17 == 13 || i17 == 14) ? 0.0f : (f102 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
         org.telegram.ui.Components.ll0 ll0Var2 = new org.telegram.ui.Components.ll0(w41Var2, n41Var3);
         this.s0 = ll0Var2;
         ll0Var2.i = new ei.k1(this, 1);
@@ -2693,7 +2693,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         this.f0 = q41Var2;
         q41Var2.setTranslationY(-AndroidUtilities.dp(52.0f));
         q41Var2.setVisibility(4);
-        l41Var32.addView(q41Var2, w7.z5.a(52.0f, 0.0f, -4.0f, 0.0f, 0.0f, -1, 48));
+        l41Var32.addView(q41Var2, w7.z5.d(-1, 52.0f, 48, 0.0f, -4.0f, 0.0f, 0.0f));
         r41 r41Var22 = new r41(context, num42, 0);
         Drawable drawable22 = getResources().getDrawable(R.drawable.gradient_top);
         int i262 = org.telegram.ui.ActionBar.h6.G8;
@@ -2702,7 +2702,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         drawable22.setColorFilter(new PorterDuffColorFilter(multiplyAlphaComponent2, mode2));
         r41Var22.setBackground(drawable22);
         r41Var22.setAlpha(0.0f);
-        this.a0.addView(r41Var22, w7.z5.a(20.0f, 0.0f, (f102 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f, -1, 55));
+        this.a0.addView(r41Var22, w7.z5.d(-1, 20.0f, 55, 0.0f, (f102 / AndroidUtilities.density) + 36.0f, 0.0f, 0.0f));
         View view22 = new View(context);
         this.o0 = view22;
         Drawable drawable32 = getResources().getDrawable(R.drawable.gradient_bottom);
@@ -2715,7 +2715,7 @@ public abstract class z51 extends FrameLayout implements NotificationCenter.Noti
         this.t0 = view32;
         view32.setAlpha(0.0f);
         view32.setBackgroundColor(-16777216);
-        this.a0.addView(view32, w7.z5.d(-1.0f, -1));
+        this.a0.addView(view32, w7.z5.c(-1.0f, -1));
         i19 = this.V;
         if (MediaDataController.getInstance(i19) == null) {
         }

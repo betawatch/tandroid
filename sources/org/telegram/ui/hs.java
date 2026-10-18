@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class hs extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.d50 {
     public fs E;
@@ -363,18 +363,18 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.e = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(32.0f));
-        this.V.addView(this.e, w7.z5.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
+        this.V.addView(this.e, w7.z5.d(64, 64.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 13.0f, 16.0f, 13.0f));
         Paint paint = new Paint(1);
         paint.setColor(1426063360);
         ei.g6 g6Var = new ei.g6(this, context, paint, 8);
         this.v = g6Var;
-        this.V.addView(g6Var, w7.z5.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
+        this.V.addView(g6Var, w7.z5.d(64, 64.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 13.0f, 16.0f, 13.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.s = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(30.0f));
         this.s.setProgressColor(-1);
         this.s.setNoProgress(false);
-        this.V.addView(this.s, w7.z5.a(64.0f, 16.0f, 13.0f, 16.0f, 13.0f, 64, (LocaleController.isRTL ? 5 : 3) | 48));
+        this.V.addView(this.s, w7.z5.d(64, 64.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 13.0f, 16.0f, 13.0f));
         e0(false, false);
         TextView textView = new TextView(context);
         this.f = textView;
@@ -391,7 +391,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
         FrameLayout frameLayout3 = this.V;
         TextView textView3 = this.f;
         boolean z10 = LocaleController.isRTL;
-        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout3, textView3, w7.z5.a(-2.0f, z10 ? 0.0f : 94.0f, 25.66f, z10 ? 94.0f : 0.0f, 0.0f, -2, (z10 ? 5 : 3) | 48), context);
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout3, textView3, w7.z5.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 94.0f, 25.66f, z10 ? 94.0f : 0.0f, 0.0f), context);
         this.h = j10;
         j10.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.A6, d6Var));
         this.h.setTextSize(1, 14.0f);
@@ -403,7 +403,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
         FrameLayout frameLayout4 = this.V;
         TextView textView4 = this.h;
         boolean z11 = LocaleController.isRTL;
-        frameLayout4.addView(textView4, w7.z5.a(-2.0f, z11 ? 0.0f : 94.0f, 49.66f, z11 ? 94.0f : 0.0f, 0.0f, -2, (z11 ? 5 : 3) | 48));
+        frameLayout4.addView(textView4, w7.z5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 0.0f : 94.0f, 49.66f, z11 ? 94.0f : 0.0f, 0.0f));
         org.telegram.ui.Cells.i3 i3Var = new org.telegram.ui.Cells.i3(context, LocaleController.getString(R.string.FirstName), false, false, -1, this.r);
         this.b = i3Var;
         i3Var.b.setImeOptions(5);
@@ -580,7 +580,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
                             e50Var.L = user2;
                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                             boolean z12 = (userProfilePhoto == null ? null : userProfilePhoto.photo_small) != null;
-                            ah.j jVar = new ah.j(23);
+                            ah.j jVar = new ah.j(22);
                             final int i19 = 1;
                             final org.telegram.ui.Components.uj0 uj0Var2 = uj0Var;
                             e50Var.n(z12, jVar, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.as
@@ -626,7 +626,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
                             e50Var2.L = user3;
                             TLRPC.UserProfilePhoto userProfilePhoto2 = user3.photo;
                             boolean z13 = (userProfilePhoto2 == null ? null : userProfilePhoto2.photo_small) != null;
-                            ah.j jVar2 = new ah.j(23);
+                            ah.j jVar2 = new ah.j(22);
                             final int i20 = 0;
                             final org.telegram.ui.Components.uj0 uj0Var3 = uj0Var;
                             e50Var2.n(z13, jVar2, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.as
@@ -693,7 +693,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
                             e50Var.L = user2;
                             TLRPC.UserProfilePhoto userProfilePhoto = user2.photo;
                             boolean z12 = (userProfilePhoto == null ? null : userProfilePhoto.photo_small) != null;
-                            ah.j jVar = new ah.j(23);
+                            ah.j jVar = new ah.j(22);
                             final int i19 = 1;
                             final org.telegram.ui.Components.uj0 uj0Var22 = uj0Var2;
                             e50Var.n(z12, jVar, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.as
@@ -739,7 +739,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
                             e50Var2.L = user3;
                             TLRPC.UserProfilePhoto userProfilePhoto2 = user3.photo;
                             boolean z13 = (userProfilePhoto2 == null ? null : userProfilePhoto2.photo_small) != null;
-                            ah.j jVar2 = new ah.j(23);
+                            ah.j jVar2 = new ah.j(22);
                             final int i20 = 0;
                             final org.telegram.ui.Components.uj0 uj0Var3 = uj0Var2;
                             e50Var2.n(z13, jVar2, new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.as
@@ -786,7 +786,7 @@ public final class hs extends org.telegram.ui.ActionBar.n2 implements Notificati
                 this.n = new org.telegram.ui.Components.h9(0, user);
             }
             this.U.e(user.photo, this.n);
-            this.E.addView(this.U, w7.z5.a(30.0f, 21.0f, 0.0f, 21.0f, 0.0f, 30, 16));
+            this.E.addView(this.U, w7.z5.d(30, 30.0f, 16, 21.0f, 0.0f, 21.0f, 0.0f));
             this.E.i(LocaleController.getString(R.string.ResetToOriginalPhoto), false);
             this.E.getImageView().setVisibility(0);
             this.E.setBackground(org.telegram.ui.ActionBar.h6.K0(d6Var, true));

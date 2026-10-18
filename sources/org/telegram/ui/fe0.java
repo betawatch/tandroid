@@ -23,7 +23,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class fe0 extends org.telegram.ui.Components.ow0 {
     public int E;
@@ -46,7 +46,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
     public final ce0 V;
     public float W;
     public final int a;
-    public final /* synthetic */ fg0 a0;
+    public final /* synthetic */ eg0 a0;
     public final org.telegram.ui.Components.sd0 b;
     public final ei.e2 c;
     public final org.telegram.ui.Components.voip.l2 d;
@@ -56,7 +56,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
     public final TextView n;
     public final TextView r;
     public final TextView s;
-    public final hf0 v;
+    public final gf0 v;
     public boolean w;
     public boolean x;
     public boolean y;
@@ -81,11 +81,11 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public fe0(fg0 fg0Var, Context context, int i10) {
+    public fe0(eg0 eg0Var, Context context, int i10) {
         super(context);
         boolean z10;
         org.telegram.ui.ActionBar.d6 d6Var;
-        this.a0 = fg0Var;
+        this.a0 = eg0Var;
         this.w = true;
         this.x = false;
         this.y = false;
@@ -147,7 +147,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                 textView3.setPadding(org.telegram.ui.Cells.c1.e(10.0f, R.string.Paste, textView3), 0, AndroidUtilities.dp(10.0f), 0);
                 textView3.setGravity(17);
                 int i11 = org.telegram.ui.ActionBar.h6.o6;
-                d6Var = ((org.telegram.ui.ActionBar.n2) fg0Var).resourceProvider;
+                d6Var = ((org.telegram.ui.ActionBar.n2) eg0Var).resourceProvider;
                 int w02 = org.telegram.ui.ActionBar.h6.w0(i11, d6Var);
                 textView3.setTextColor(w02);
                 int dp = AndroidUtilities.dp(6.0f);
@@ -195,22 +195,22 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                 break;
                             default:
                                 final fe0 fe0Var2 = this.b;
-                                fg0 fg0Var2 = fe0Var2.a0;
-                                hf0 hf0Var = fe0Var2.v;
+                                eg0 eg0Var2 = fe0Var2.a0;
+                                gf0 gf0Var = fe0Var2.v;
                                 if (fe0Var2.P <= 0 || fe0Var2.N == null) {
                                     Bundle bundle = fe0Var2.S;
                                     if (bundle != null && (tL_auth_sentCode = fe0Var2.T) != null) {
-                                        fg0Var2.g1(bundle, tL_auth_sentCode, true);
+                                        eg0Var2.g1(bundle, tL_auth_sentCode, true);
                                         break;
                                     } else {
                                         int i15 = fe0Var2.E;
                                         if (i15 != 4 && i15 != 2 && i15 != 11 && i15 != 15) {
                                             if (i15 == 3) {
                                                 AndroidUtilities.setWaitingForSms(false);
-                                                if (!fe0Var2.R && !fe0Var2.M && !fg0Var2.o0) {
+                                                if (!fe0Var2.R && !fe0Var2.M && !eg0Var2.o0) {
                                                     fe0Var2.M = true;
-                                                    hf0Var.invalidate();
-                                                    hf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                                    gf0Var.invalidate();
+                                                    gf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
                                                     final Bundle bundle2 = new Bundle();
                                                     bundle2.putString("phone", fe0Var2.J);
                                                     bundle2.putString("ephone", fe0Var2.I);
@@ -219,9 +219,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                                     TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
                                                     tL_auth_resendCode.phone_number = fe0Var2.G;
                                                     tL_auth_resendCode.phone_code_hash = fe0Var2.H;
-                                                    i14 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                                    i14 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                                     final int i16 = 1;
-                                                    fg0Var2.n1(ConnectionsManager.getInstance(i14).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
+                                                    eg0Var2.n1(ConnectionsManager.getInstance(i14).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                         @Override // org.telegram.tgnet.RequestDelegate
                                                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                                             switch (i16) {
@@ -239,14 +239,14 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             }
                                         } else {
                                             fe0Var2.M = true;
-                                            hf0Var.invalidate();
-                                            hf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
-                                            hf0Var.setTextSize(1, 15.0f);
+                                            gf0Var.invalidate();
+                                            gf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                            gf0Var.setTextSize(1, 15.0f);
                                             int i17 = fe0Var2.E;
                                             if (i17 == 4 || i17 == 11) {
-                                                hf0Var.setText(LocaleController.getString(R.string.Calling));
+                                                gf0Var.setText(LocaleController.getString(R.string.Calling));
                                             } else {
-                                                hf0Var.setText(LocaleController.getString(R.string.SendingSms));
+                                                gf0Var.setText(LocaleController.getString(R.string.SendingSms));
                                             }
                                             final Bundle bundle3 = new Bundle();
                                             bundle3.putString("phone", fe0Var2.J);
@@ -256,7 +256,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
                                             tL_auth_resendCode2.phone_number = fe0Var2.G;
                                             tL_auth_resendCode2.phone_code_hash = fe0Var2.H;
-                                            i13 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                            i13 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                             final int i18 = 0;
                                             ConnectionsManager.getInstance(i13).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                 @Override // org.telegram.tgnet.RequestDelegate
@@ -279,9 +279,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                         }
                     }
                 });
-                sd0Var.addView(e2Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+                sd0Var.addView(e2Var, w7.z5.d(-1, -2.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
                 sd0Var.e(e2Var);
-                sd0Var.addView(textView3, w7.z5.a(26.0f, 0.0f, 0.0f, 10.0f, 0.0f, -2, 21));
+                sd0Var.addView(textView3, w7.z5.d(-2, 26.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
                 LinearLayout linearLayout = new LinearLayout(context);
                 linearLayout.setOrientation(1);
                 linearLayout.addView(sd0Var, w7.z5.q(-1, -2, 1));
@@ -289,11 +289,11 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                 e2Var.setOnEditorActionListener(new ma(this, 6));
                 FrameLayout frameLayout = new FrameLayout(context);
                 linearLayout.addView(frameLayout, w7.z5.n(-1, -2));
-                org.telegram.ui.Components.voip.l2 l2Var = new org.telegram.ui.Components.voip.l2(fg0Var, context);
+                org.telegram.ui.Components.voip.l2 l2Var = new org.telegram.ui.Components.voip.l2(eg0Var, context);
                 this.d = l2Var;
                 int i13 = org.telegram.ui.ActionBar.h6.I6;
                 l2Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
-                l2Var.setTextColor(fg0Var.getThemedColor(i13));
+                l2Var.setTextColor(eg0Var.getThemedColor(i13));
                 l2Var.setTextSize(1, 14.0f);
                 l2Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
                 l2Var.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(16.0f));
@@ -336,22 +336,22 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                 break;
                             default:
                                 final fe0 fe0Var2 = this.b;
-                                fg0 fg0Var2 = fe0Var2.a0;
-                                hf0 hf0Var = fe0Var2.v;
+                                eg0 eg0Var2 = fe0Var2.a0;
+                                gf0 gf0Var = fe0Var2.v;
                                 if (fe0Var2.P <= 0 || fe0Var2.N == null) {
                                     Bundle bundle = fe0Var2.S;
                                     if (bundle != null && (tL_auth_sentCode = fe0Var2.T) != null) {
-                                        fg0Var2.g1(bundle, tL_auth_sentCode, true);
+                                        eg0Var2.g1(bundle, tL_auth_sentCode, true);
                                         break;
                                     } else {
                                         int i15 = fe0Var2.E;
                                         if (i15 != 4 && i15 != 2 && i15 != 11 && i15 != 15) {
                                             if (i15 == 3) {
                                                 AndroidUtilities.setWaitingForSms(false);
-                                                if (!fe0Var2.R && !fe0Var2.M && !fg0Var2.o0) {
+                                                if (!fe0Var2.R && !fe0Var2.M && !eg0Var2.o0) {
                                                     fe0Var2.M = true;
-                                                    hf0Var.invalidate();
-                                                    hf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                                    gf0Var.invalidate();
+                                                    gf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
                                                     final Bundle bundle2 = new Bundle();
                                                     bundle2.putString("phone", fe0Var2.J);
                                                     bundle2.putString("ephone", fe0Var2.I);
@@ -360,9 +360,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                                     TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
                                                     tL_auth_resendCode.phone_number = fe0Var2.G;
                                                     tL_auth_resendCode.phone_code_hash = fe0Var2.H;
-                                                    i142 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                                    i142 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                                     final int i16 = 1;
-                                                    fg0Var2.n1(ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
+                                                    eg0Var2.n1(ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                         @Override // org.telegram.tgnet.RequestDelegate
                                                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                                             switch (i16) {
@@ -380,14 +380,14 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             }
                                         } else {
                                             fe0Var2.M = true;
-                                            hf0Var.invalidate();
-                                            hf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
-                                            hf0Var.setTextSize(1, 15.0f);
+                                            gf0Var.invalidate();
+                                            gf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                            gf0Var.setTextSize(1, 15.0f);
                                             int i17 = fe0Var2.E;
                                             if (i17 == 4 || i17 == 11) {
-                                                hf0Var.setText(LocaleController.getString(R.string.Calling));
+                                                gf0Var.setText(LocaleController.getString(R.string.Calling));
                                             } else {
-                                                hf0Var.setText(LocaleController.getString(R.string.SendingSms));
+                                                gf0Var.setText(LocaleController.getString(R.string.SendingSms));
                                             }
                                             final Bundle bundle3 = new Bundle();
                                             bundle3.putString("phone", fe0Var2.J);
@@ -397,7 +397,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
                                             tL_auth_resendCode2.phone_number = fe0Var2.G;
                                             tL_auth_resendCode2.phone_code_hash = fe0Var2.H;
-                                            i132 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                            i132 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                             final int i18 = 0;
                                             ConnectionsManager.getInstance(i132).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                 @Override // org.telegram.tgnet.RequestDelegate
@@ -427,9 +427,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                 textView4.setPivotX(0.0f);
                 textView4.setPivotY(0.0f);
                 textView4.setText(LocaleController.getString(z11 ? R.string.SMSWordError : R.string.SMSPhraseError));
-                textView4.setTextColor(fg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
+                textView4.setTextColor(eg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
                 textView4.setTextSize(1, 13.0f);
-                frameLayout.addView(textView4, w7.z5.a(-2.0f, 16.0f, 8.0f, 16.0f, 8.0f, -1, 119));
+                frameLayout.addView(textView4, w7.z5.d(-1, -2.0f, 119, 16.0f, 8.0f, 16.0f, 8.0f));
                 textView4.setAlpha(0.0f);
                 textView4.setScaleX(0.8f);
                 textView4.setScaleY(0.8f);
@@ -439,18 +439,18 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                 textView5.setPivotX(0.0f);
                 textView5.setPivotY(0.0f);
                 textView5.setText(LocaleController.getString(z11 ? R.string.SMSWordPasteHint : R.string.SMSPhrasePasteHint));
-                textView5.setTextColor(fg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.y6));
+                textView5.setTextColor(eg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.y6));
                 textView5.setTextSize(1, 13.0f);
-                frameLayout.addView(textView5, w7.z5.a(-2.0f, 16.0f, 8.0f, 16.0f, 8.0f, -1, 119));
-                hf0 hf0Var = new hf0(this, context);
-                this.v = hf0Var;
-                hf0Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
-                hf0Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                hf0Var.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(16.0f));
-                hf0Var.setTextSize(1, 15.0f);
-                hf0Var.setGravity(19);
+                frameLayout.addView(textView5, w7.z5.d(-1, -2.0f, 119, 16.0f, 8.0f, 16.0f, 8.0f));
+                gf0 gf0Var = new gf0(this, context);
+                this.v = gf0Var;
+                gf0Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
+                gf0Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+                gf0Var.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(16.0f));
+                gf0Var.setTextSize(1, 15.0f);
+                gf0Var.setGravity(19);
                 final int i15 = 2;
-                hf0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.de0
+                gf0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.de0
                     public final /* synthetic */ fe0 b;
 
                     {
@@ -488,22 +488,22 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                 break;
                             default:
                                 final fe0 fe0Var2 = this.b;
-                                fg0 fg0Var2 = fe0Var2.a0;
-                                hf0 hf0Var2 = fe0Var2.v;
+                                eg0 eg0Var2 = fe0Var2.a0;
+                                gf0 gf0Var2 = fe0Var2.v;
                                 if (fe0Var2.P <= 0 || fe0Var2.N == null) {
                                     Bundle bundle = fe0Var2.S;
                                     if (bundle != null && (tL_auth_sentCode = fe0Var2.T) != null) {
-                                        fg0Var2.g1(bundle, tL_auth_sentCode, true);
+                                        eg0Var2.g1(bundle, tL_auth_sentCode, true);
                                         break;
                                     } else {
                                         int i152 = fe0Var2.E;
                                         if (i152 != 4 && i152 != 2 && i152 != 11 && i152 != 15) {
                                             if (i152 == 3) {
                                                 AndroidUtilities.setWaitingForSms(false);
-                                                if (!fe0Var2.R && !fe0Var2.M && !fg0Var2.o0) {
+                                                if (!fe0Var2.R && !fe0Var2.M && !eg0Var2.o0) {
                                                     fe0Var2.M = true;
-                                                    hf0Var2.invalidate();
-                                                    hf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                                    gf0Var2.invalidate();
+                                                    gf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
                                                     final Bundle bundle2 = new Bundle();
                                                     bundle2.putString("phone", fe0Var2.J);
                                                     bundle2.putString("ephone", fe0Var2.I);
@@ -512,9 +512,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                                     TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
                                                     tL_auth_resendCode.phone_number = fe0Var2.G;
                                                     tL_auth_resendCode.phone_code_hash = fe0Var2.H;
-                                                    i142 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                                    i142 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                                     final int i16 = 1;
-                                                    fg0Var2.n1(ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
+                                                    eg0Var2.n1(ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                         @Override // org.telegram.tgnet.RequestDelegate
                                                         public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                                             switch (i16) {
@@ -532,14 +532,14 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             }
                                         } else {
                                             fe0Var2.M = true;
-                                            hf0Var2.invalidate();
-                                            hf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
-                                            hf0Var2.setTextSize(1, 15.0f);
+                                            gf0Var2.invalidate();
+                                            gf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                            gf0Var2.setTextSize(1, 15.0f);
                                             int i17 = fe0Var2.E;
                                             if (i17 == 4 || i17 == 11) {
-                                                hf0Var2.setText(LocaleController.getString(R.string.Calling));
+                                                gf0Var2.setText(LocaleController.getString(R.string.Calling));
                                             } else {
-                                                hf0Var2.setText(LocaleController.getString(R.string.SendingSms));
+                                                gf0Var2.setText(LocaleController.getString(R.string.SendingSms));
                                             }
                                             final Bundle bundle3 = new Bundle();
                                             bundle3.putString("phone", fe0Var2.J);
@@ -549,7 +549,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
                                             tL_auth_resendCode2.phone_number = fe0Var2.G;
                                             tL_auth_resendCode2.phone_code_hash = fe0Var2.H;
-                                            i132 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                            i132 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                             final int i18 = 0;
                                             ConnectionsManager.getInstance(i132).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                 @Override // org.telegram.tgnet.RequestDelegate
@@ -573,9 +573,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                     }
                 });
                 FrameLayout frameLayout2 = new FrameLayout(context);
-                frameLayout2.addView(hf0Var, w7.z5.a(56.0f, 6.0f, 0.0f, 60.0f, 28.0f, -1, 80));
+                frameLayout2.addView(gf0Var, w7.z5.d(-1, 56.0f, 80, 6.0f, 0.0f, 60.0f, 28.0f));
                 addView(frameLayout2, w7.z5.q(-1, -1, 80));
-                m.g3.i(hf0Var);
+                m.g3.r(gf0Var);
             }
         }
         z10 = true;
@@ -621,7 +621,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
         textView32.setPadding(org.telegram.ui.Cells.c1.e(10.0f, R.string.Paste, textView32), 0, AndroidUtilities.dp(10.0f), 0);
         textView32.setGravity(17);
         int i112 = org.telegram.ui.ActionBar.h6.o6;
-        d6Var = ((org.telegram.ui.ActionBar.n2) fg0Var).resourceProvider;
+        d6Var = ((org.telegram.ui.ActionBar.n2) eg0Var).resourceProvider;
         int w022 = org.telegram.ui.ActionBar.h6.w0(i112, d6Var);
         textView32.setTextColor(w022);
         int dp2 = AndroidUtilities.dp(6.0f);
@@ -669,22 +669,22 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                         break;
                     default:
                         final fe0 fe0Var2 = this.b;
-                        fg0 fg0Var2 = fe0Var2.a0;
-                        hf0 hf0Var2 = fe0Var2.v;
+                        eg0 eg0Var2 = fe0Var2.a0;
+                        gf0 gf0Var2 = fe0Var2.v;
                         if (fe0Var2.P <= 0 || fe0Var2.N == null) {
                             Bundle bundle = fe0Var2.S;
                             if (bundle != null && (tL_auth_sentCode = fe0Var2.T) != null) {
-                                fg0Var2.g1(bundle, tL_auth_sentCode, true);
+                                eg0Var2.g1(bundle, tL_auth_sentCode, true);
                                 break;
                             } else {
                                 int i152 = fe0Var2.E;
                                 if (i152 != 4 && i152 != 2 && i152 != 11 && i152 != 15) {
                                     if (i152 == 3) {
                                         AndroidUtilities.setWaitingForSms(false);
-                                        if (!fe0Var2.R && !fe0Var2.M && !fg0Var2.o0) {
+                                        if (!fe0Var2.R && !fe0Var2.M && !eg0Var2.o0) {
                                             fe0Var2.M = true;
-                                            hf0Var2.invalidate();
-                                            hf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                            gf0Var2.invalidate();
+                                            gf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
                                             final Bundle bundle2 = new Bundle();
                                             bundle2.putString("phone", fe0Var2.J);
                                             bundle2.putString("ephone", fe0Var2.I);
@@ -693,9 +693,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
                                             tL_auth_resendCode.phone_number = fe0Var2.G;
                                             tL_auth_resendCode.phone_code_hash = fe0Var2.H;
-                                            i142 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                            i142 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                             final int i16 = 1;
-                                            fg0Var2.n1(ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
+                                            eg0Var2.n1(ConnectionsManager.getInstance(i142).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                 @Override // org.telegram.tgnet.RequestDelegate
                                                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                                     switch (i16) {
@@ -713,14 +713,14 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                     }
                                 } else {
                                     fe0Var2.M = true;
-                                    hf0Var2.invalidate();
-                                    hf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
-                                    hf0Var2.setTextSize(1, 15.0f);
+                                    gf0Var2.invalidate();
+                                    gf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                    gf0Var2.setTextSize(1, 15.0f);
                                     int i17 = fe0Var2.E;
                                     if (i17 == 4 || i17 == 11) {
-                                        hf0Var2.setText(LocaleController.getString(R.string.Calling));
+                                        gf0Var2.setText(LocaleController.getString(R.string.Calling));
                                     } else {
-                                        hf0Var2.setText(LocaleController.getString(R.string.SendingSms));
+                                        gf0Var2.setText(LocaleController.getString(R.string.SendingSms));
                                     }
                                     final Bundle bundle3 = new Bundle();
                                     bundle3.putString("phone", fe0Var2.J);
@@ -730,7 +730,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                     TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
                                     tL_auth_resendCode2.phone_number = fe0Var2.G;
                                     tL_auth_resendCode2.phone_code_hash = fe0Var2.H;
-                                    i132 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                    i132 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                     final int i18 = 0;
                                     ConnectionsManager.getInstance(i132).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                         @Override // org.telegram.tgnet.RequestDelegate
@@ -753,9 +753,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                 }
             }
         });
-        sd0Var2.addView(e2Var2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        sd0Var2.addView(e2Var2, w7.z5.d(-1, -2.0f, 119, 0.0f, 0.0f, 0.0f, 0.0f));
         sd0Var2.e(e2Var2);
-        sd0Var2.addView(textView32, w7.z5.a(26.0f, 0.0f, 0.0f, 10.0f, 0.0f, -2, 21));
+        sd0Var2.addView(textView32, w7.z5.d(-2, 26.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
         linearLayout2.addView(sd0Var2, w7.z5.q(-1, -2, 1));
@@ -763,11 +763,11 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
         e2Var2.setOnEditorActionListener(new ma(this, 6));
         FrameLayout frameLayout3 = new FrameLayout(context);
         linearLayout2.addView(frameLayout3, w7.z5.n(-1, -2));
-        org.telegram.ui.Components.voip.l2 l2Var2 = new org.telegram.ui.Components.voip.l2(fg0Var, context);
+        org.telegram.ui.Components.voip.l2 l2Var2 = new org.telegram.ui.Components.voip.l2(eg0Var, context);
         this.d = l2Var2;
         int i132 = org.telegram.ui.ActionBar.h6.I6;
         l2Var2.setLinkTextColor(org.telegram.ui.ActionBar.h6.x0(null, i132, false));
-        l2Var2.setTextColor(fg0Var.getThemedColor(i132));
+        l2Var2.setTextColor(eg0Var.getThemedColor(i132));
         l2Var2.setTextSize(1, 14.0f);
         l2Var2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         l2Var2.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(16.0f));
@@ -810,22 +810,22 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                         break;
                     default:
                         final fe0 fe0Var2 = this.b;
-                        fg0 fg0Var2 = fe0Var2.a0;
-                        hf0 hf0Var2 = fe0Var2.v;
+                        eg0 eg0Var2 = fe0Var2.a0;
+                        gf0 gf0Var2 = fe0Var2.v;
                         if (fe0Var2.P <= 0 || fe0Var2.N == null) {
                             Bundle bundle = fe0Var2.S;
                             if (bundle != null && (tL_auth_sentCode = fe0Var2.T) != null) {
-                                fg0Var2.g1(bundle, tL_auth_sentCode, true);
+                                eg0Var2.g1(bundle, tL_auth_sentCode, true);
                                 break;
                             } else {
                                 int i152 = fe0Var2.E;
                                 if (i152 != 4 && i152 != 2 && i152 != 11 && i152 != 15) {
                                     if (i152 == 3) {
                                         AndroidUtilities.setWaitingForSms(false);
-                                        if (!fe0Var2.R && !fe0Var2.M && !fg0Var2.o0) {
+                                        if (!fe0Var2.R && !fe0Var2.M && !eg0Var2.o0) {
                                             fe0Var2.M = true;
-                                            hf0Var2.invalidate();
-                                            hf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                            gf0Var2.invalidate();
+                                            gf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
                                             final Bundle bundle2 = new Bundle();
                                             bundle2.putString("phone", fe0Var2.J);
                                             bundle2.putString("ephone", fe0Var2.I);
@@ -834,9 +834,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
                                             tL_auth_resendCode.phone_number = fe0Var2.G;
                                             tL_auth_resendCode.phone_code_hash = fe0Var2.H;
-                                            i1422 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                            i1422 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                             final int i16 = 1;
-                                            fg0Var2.n1(ConnectionsManager.getInstance(i1422).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
+                                            eg0Var2.n1(ConnectionsManager.getInstance(i1422).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                 @Override // org.telegram.tgnet.RequestDelegate
                                                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                                     switch (i16) {
@@ -854,14 +854,14 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                     }
                                 } else {
                                     fe0Var2.M = true;
-                                    hf0Var2.invalidate();
-                                    hf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
-                                    hf0Var2.setTextSize(1, 15.0f);
+                                    gf0Var2.invalidate();
+                                    gf0Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                    gf0Var2.setTextSize(1, 15.0f);
                                     int i17 = fe0Var2.E;
                                     if (i17 == 4 || i17 == 11) {
-                                        hf0Var2.setText(LocaleController.getString(R.string.Calling));
+                                        gf0Var2.setText(LocaleController.getString(R.string.Calling));
                                     } else {
-                                        hf0Var2.setText(LocaleController.getString(R.string.SendingSms));
+                                        gf0Var2.setText(LocaleController.getString(R.string.SendingSms));
                                     }
                                     final Bundle bundle3 = new Bundle();
                                     bundle3.putString("phone", fe0Var2.J);
@@ -871,7 +871,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                     TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
                                     tL_auth_resendCode2.phone_number = fe0Var2.G;
                                     tL_auth_resendCode2.phone_code_hash = fe0Var2.H;
-                                    i1322 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                    i1322 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                     final int i18 = 0;
                                     ConnectionsManager.getInstance(i1322).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                         @Override // org.telegram.tgnet.RequestDelegate
@@ -901,9 +901,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
         textView42.setPivotX(0.0f);
         textView42.setPivotY(0.0f);
         textView42.setText(LocaleController.getString(z11 ? R.string.SMSWordError : R.string.SMSPhraseError));
-        textView42.setTextColor(fg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
+        textView42.setTextColor(eg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.p7));
         textView42.setTextSize(1, 13.0f);
-        frameLayout3.addView(textView42, w7.z5.a(-2.0f, 16.0f, 8.0f, 16.0f, 8.0f, -1, 119));
+        frameLayout3.addView(textView42, w7.z5.d(-1, -2.0f, 119, 16.0f, 8.0f, 16.0f, 8.0f));
         textView42.setAlpha(0.0f);
         textView42.setScaleX(0.8f);
         textView42.setScaleY(0.8f);
@@ -913,18 +913,18 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
         textView52.setPivotX(0.0f);
         textView52.setPivotY(0.0f);
         textView52.setText(LocaleController.getString(z11 ? R.string.SMSWordPasteHint : R.string.SMSPhrasePasteHint));
-        textView52.setTextColor(fg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.y6));
+        textView52.setTextColor(eg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.y6));
         textView52.setTextSize(1, 13.0f);
-        frameLayout3.addView(textView52, w7.z5.a(-2.0f, 16.0f, 8.0f, 16.0f, 8.0f, -1, 119));
-        hf0 hf0Var2 = new hf0(this, context);
-        this.v = hf0Var2;
-        hf0Var2.setLinkTextColor(org.telegram.ui.ActionBar.h6.x0(null, i132, false));
-        hf0Var2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        hf0Var2.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(16.0f));
-        hf0Var2.setTextSize(1, 15.0f);
-        hf0Var2.setGravity(19);
+        frameLayout3.addView(textView52, w7.z5.d(-1, -2.0f, 119, 16.0f, 8.0f, 16.0f, 8.0f));
+        gf0 gf0Var2 = new gf0(this, context);
+        this.v = gf0Var2;
+        gf0Var2.setLinkTextColor(org.telegram.ui.ActionBar.h6.x0(null, i132, false));
+        gf0Var2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        gf0Var2.setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(16.0f));
+        gf0Var2.setTextSize(1, 15.0f);
+        gf0Var2.setGravity(19);
         final int i152 = 2;
-        hf0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.de0
+        gf0Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.de0
             public final /* synthetic */ fe0 b;
 
             {
@@ -962,22 +962,22 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                         break;
                     default:
                         final fe0 fe0Var2 = this.b;
-                        fg0 fg0Var2 = fe0Var2.a0;
-                        hf0 hf0Var22 = fe0Var2.v;
+                        eg0 eg0Var2 = fe0Var2.a0;
+                        gf0 gf0Var22 = fe0Var2.v;
                         if (fe0Var2.P <= 0 || fe0Var2.N == null) {
                             Bundle bundle = fe0Var2.S;
                             if (bundle != null && (tL_auth_sentCode = fe0Var2.T) != null) {
-                                fg0Var2.g1(bundle, tL_auth_sentCode, true);
+                                eg0Var2.g1(bundle, tL_auth_sentCode, true);
                                 break;
                             } else {
                                 int i1522 = fe0Var2.E;
                                 if (i1522 != 4 && i1522 != 2 && i1522 != 11 && i1522 != 15) {
                                     if (i1522 == 3) {
                                         AndroidUtilities.setWaitingForSms(false);
-                                        if (!fe0Var2.R && !fe0Var2.M && !fg0Var2.o0) {
+                                        if (!fe0Var2.R && !fe0Var2.M && !eg0Var2.o0) {
                                             fe0Var2.M = true;
-                                            hf0Var22.invalidate();
-                                            hf0Var22.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                            gf0Var22.invalidate();
+                                            gf0Var22.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
                                             final Bundle bundle2 = new Bundle();
                                             bundle2.putString("phone", fe0Var2.J);
                                             bundle2.putString("ephone", fe0Var2.I);
@@ -986,9 +986,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                             TLRPC.TL_auth_resendCode tL_auth_resendCode = new TLRPC.TL_auth_resendCode();
                                             tL_auth_resendCode.phone_number = fe0Var2.G;
                                             tL_auth_resendCode.phone_code_hash = fe0Var2.H;
-                                            i1422 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                            i1422 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                             final int i16 = 1;
-                                            fg0Var2.n1(ConnectionsManager.getInstance(i1422).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
+                                            eg0Var2.n1(ConnectionsManager.getInstance(i1422).sendRequest(tL_auth_resendCode, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                                 @Override // org.telegram.tgnet.RequestDelegate
                                                 public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                                                     switch (i16) {
@@ -1006,14 +1006,14 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                     }
                                 } else {
                                     fe0Var2.M = true;
-                                    hf0Var22.invalidate();
-                                    hf0Var22.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
-                                    hf0Var22.setTextSize(1, 15.0f);
+                                    gf0Var22.invalidate();
+                                    gf0Var22.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+                                    gf0Var22.setTextSize(1, 15.0f);
                                     int i17 = fe0Var2.E;
                                     if (i17 == 4 || i17 == 11) {
-                                        hf0Var22.setText(LocaleController.getString(R.string.Calling));
+                                        gf0Var22.setText(LocaleController.getString(R.string.Calling));
                                     } else {
-                                        hf0Var22.setText(LocaleController.getString(R.string.SendingSms));
+                                        gf0Var22.setText(LocaleController.getString(R.string.SendingSms));
                                     }
                                     final Bundle bundle3 = new Bundle();
                                     bundle3.putString("phone", fe0Var2.J);
@@ -1023,7 +1023,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
                                     TLRPC.TL_auth_resendCode tL_auth_resendCode2 = new TLRPC.TL_auth_resendCode();
                                     tL_auth_resendCode2.phone_number = fe0Var2.G;
                                     tL_auth_resendCode2.phone_code_hash = fe0Var2.H;
-                                    i1322 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                    i1322 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                     final int i18 = 0;
                                     ConnectionsManager.getInstance(i1322).sendRequest(tL_auth_resendCode2, new RequestDelegate() { // from class: org.telegram.ui.zd0
                                         @Override // org.telegram.tgnet.RequestDelegate
@@ -1047,9 +1047,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
             }
         });
         FrameLayout frameLayout22 = new FrameLayout(context);
-        frameLayout22.addView(hf0Var2, w7.z5.a(56.0f, 6.0f, 0.0f, 60.0f, 28.0f, -1, 80));
+        frameLayout22.addView(gf0Var2, w7.z5.d(-1, 56.0f, 80, 6.0f, 0.0f, 60.0f, 28.0f));
         addView(frameLayout22, w7.z5.q(-1, -1, 80));
-        m.g3.i(hf0Var2);
+        m.g3.r(gf0Var2);
     }
 
     public static String t(String str) {
@@ -1068,11 +1068,11 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
 
     @Override // org.telegram.ui.Components.ow0
     public final boolean c(boolean z10) {
-        fg0 fg0Var = this.a0;
-        fg0Var.k1(true, true);
+        eg0 eg0Var = this.a0;
+        eg0Var.k1(true, true);
         int i10 = this.F;
         if (i10 != 0) {
-            fg0Var.u1(i10, true, null, true);
+            eg0Var.u1(i10, true, null, true);
             return false;
         }
         this.L = null;
@@ -1115,9 +1115,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
         tL_auth_signIn.phone_code = obj;
         tL_auth_signIn.phone_code_hash = this.H;
         tL_auth_signIn.flags |= 1;
-        fg0 fg0Var = this.a0;
-        fg0Var.n1(fg0Var.getConnectionsManager().sendRequest(tL_auth_signIn, new yd0(this, tL_auth_signIn, 0), 10), true);
-        fg0Var.v1(true, true);
+        eg0 eg0Var = this.a0;
+        eg0Var.n1(eg0Var.getConnectionsManager().sendRequest(tL_auth_signIn, new yd0(this, tL_auth_signIn, 0), 10), true);
+        eg0Var.v1(true, true);
     }
 
     @Override // org.telegram.ui.Components.ow0
@@ -1127,7 +1127,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
 
     @Override // org.telegram.ui.Components.ow0
     public final void j() {
-        AndroidUtilities.runOnUIThread(new ce0(this, 3), fg0.t0);
+        AndroidUtilities.runOnUIThread(new ce0(this, 3), eg0.t0);
     }
 
     @Override // org.telegram.ui.Components.ow0
@@ -1148,14 +1148,14 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
 
     @Override // org.telegram.ui.Components.ow0
     public final void m(Bundle bundle, boolean z10) {
-        hf0 hf0Var = this.v;
+        gf0 gf0Var = this.v;
         if (bundle == null) {
             if (this.S == null || this.T == null) {
                 return;
             }
-            hf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
+            gf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.I6, false));
             int i10 = this.E;
-            hf0Var.setText(AndroidUtilities.replaceArrows(LocaleController.getString(i10 == 17 ? R.string.ReturnEnteringPhrase : i10 == 16 ? R.string.ReturnEnteringWord : i10 == 3 ? R.string.ReturnPhoneCall : R.string.ReturnEnteringSMS), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
+            gf0Var.setText(AndroidUtilities.replaceArrows(LocaleController.getString(i10 == 17 ? R.string.ReturnEnteringPhrase : i10 == 16 ? R.string.ReturnEnteringWord : i10 == 3 ? R.string.ReturnPhoneCall : R.string.ReturnEnteringSMS), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
             return;
         }
         ei.e2 e2Var = this.c;
@@ -1190,19 +1190,19 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
         this.T = null;
         this.R = false;
         this.M = false;
-        fg0 fg0Var = this.a0;
-        fg0Var.o0 = false;
-        hf0Var.invalidate();
+        eg0 eg0Var = this.a0;
+        eg0Var.o0 = false;
+        gf0Var.invalidate();
         boolean z11 = this.a != 16;
         String str = "+" + jf.b.c().b(jf.b.d(this.J, false));
         String str2 = this.K;
         TextView textView = this.r;
         if (str2 == null) {
-            org.telegram.messenger.kk.r(!z11 ? R.string.SMSWordText : R.string.SMSPhraseText, new Object[]{str}, textView);
+            org.telegram.messenger.lk.r(!z11 ? R.string.SMSWordText : R.string.SMSPhraseText, new Object[]{str}, textView);
         } else {
-            org.telegram.messenger.kk.r(!z11 ? R.string.SMSWordBeginningText : R.string.SMSPhraseBeginningText, new Object[]{str, str2}, textView);
+            org.telegram.messenger.lk.r(!z11 ? R.string.SMSWordBeginningText : R.string.SMSPhraseBeginningText, new Object[]{str, str2}, textView);
         }
-        fg0.T0(fg0Var, e2Var);
+        eg0.T0(eg0Var, e2Var);
         e2Var.requestFocus();
         org.telegram.ui.Components.xj0 xj0Var = this.h;
         if (xj0Var.getAnimatedDrawable() != null) {
@@ -1213,17 +1213,17 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
         o(false);
         this.Q = System.currentTimeMillis();
         int i12 = org.telegram.ui.ActionBar.h6.y6;
-        hf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
+        gf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         int i13 = this.E;
         if (i13 != 2 && i13 != 4 && i13 != 3) {
-            hf0Var.setVisibility(8);
+            gf0Var.setVisibility(8);
             return;
         }
         if (this.N != null) {
             return;
         }
-        hf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
-        hf0Var.setTag(R.id.color_key_tag, Integer.valueOf(i12));
+        gf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
+        gf0Var.setTag(R.id.color_key_tag, Integer.valueOf(i12));
         Timer timer = new Timer();
         this.N = timer;
         timer.schedule(new ee0(this), 0L, 1000L);
@@ -1232,14 +1232,14 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
     @Override // org.telegram.ui.Components.ow0
     public final void n() {
         int i10 = org.telegram.ui.ActionBar.h6.G6;
-        fg0 fg0Var = this.a0;
-        this.n.setTextColor(fg0Var.getThemedColor(i10));
-        this.r.setTextColor(fg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.D6));
-        int themedColor = fg0Var.getThemedColor(i10);
+        eg0 eg0Var = this.a0;
+        this.n.setTextColor(eg0Var.getThemedColor(i10));
+        this.r.setTextColor(eg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.D6));
+        int themedColor = eg0Var.getThemedColor(i10);
         ei.e2 e2Var = this.c;
         e2Var.setTextColor(themedColor);
-        e2Var.setCursorColor(fg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.l6));
-        e2Var.setHintTextColor(fg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.H6));
+        e2Var.setCursorColor(eg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.l6));
+        e2Var.setHintTextColor(eg0Var.getThemedColor(org.telegram.ui.ActionBar.h6.H6));
         this.b.f();
     }
 
@@ -1251,7 +1251,7 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
         float f11 = (f10 * 0.1f) + 0.9f;
         ViewPropertyAnimator translationY = this.e.animate().scaleX(f11).scaleY(f11).alpha(f10).translationY((1.0f - f10) * AndroidUtilities.dp(-5.0f));
         org.telegram.ui.Components.bs bsVar = org.telegram.ui.Components.bs.h;
-        org.telegram.messenger.kk.t(translationY, bsVar, 290L);
+        org.telegram.messenger.lk.t(translationY, bsVar, 290L);
         if (this.w && !this.x) {
             f7 = 1.0f;
         }
@@ -1316,9 +1316,9 @@ public final class fe0 extends org.telegram.ui.Components.ow0 {
     }
 
     public final void r() {
-        hf0 hf0Var = this.v;
+        gf0 gf0Var = this.v;
         int i10 = org.telegram.ui.ActionBar.h6.y6;
-        hf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        gf0Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         this.v.setTag(R.id.color_key_tag, Integer.valueOf(i10));
         try {
             synchronized (this.O) {

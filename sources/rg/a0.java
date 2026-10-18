@@ -16,7 +16,7 @@ import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.b61;
 import org.telegram.ui.Components.uy;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a0 implements uy {
     public final /* synthetic */ m0 a;
@@ -62,7 +62,7 @@ public final class a0 implements uy {
 
     @Override // org.telegram.ui.Components.uy
     public final boolean k() {
-        b editText = ((v2) this.a.S0).getEditText();
+        b editText = ((u2) this.a.S0).getEditText();
         if (editText == null || editText.length() == 0) {
             return false;
         }
@@ -72,17 +72,17 @@ public final class a0 implements uy {
 
     @Override // org.telegram.ui.Components.uy
     public final void l(String str) {
-        v2 v2Var;
+        u2 u2Var;
         b editText;
         Emoji.EmojiSpan[] emojiSpanArr;
         j jVar = this.a.S0;
-        if ((jVar instanceof v2) && (editText = (v2Var = (v2) jVar).getEditText()) != null) {
+        if ((jVar instanceof u2) && (editText = (u2Var = (u2) jVar).getEditText()) != null) {
             int selectionEnd = editText.getSelectionEnd();
             if (selectionEnd < 0) {
                 selectionEnd = 0;
             }
             try {
-                CharSequence replaceEmoji = Emoji.replaceEmoji(str, v2Var.getFontMetricsInt(), false);
+                CharSequence replaceEmoji = Emoji.replaceEmoji(str, u2Var.getFontMetricsInt(), false);
                 if ((replaceEmoji instanceof Spanned) && (emojiSpanArr = (Emoji.EmojiSpan[]) ((Spanned) replaceEmoji).getSpans(0, replaceEmoji.length(), Emoji.EmojiSpan.class)) != null) {
                     for (Emoji.EmojiSpan emojiSpan : emojiSpanArr) {
                         emojiSpan.scale = 0.85f;
@@ -116,7 +116,7 @@ public final class a0 implements uy {
 
     @Override // org.telegram.ui.Components.uy
     public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
-        b editText = ((v2) this.a.S0).getEditText();
+        b editText = ((u2) this.a.S0).getEditText();
         if (editText == null) {
             return;
         }

@@ -1,13 +1,13 @@
 package hg;
 
-import ci.r7;
+import ci.q7;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Cells.n2;
 import org.telegram.ui.Cells.r2;
 import org.telegram.ui.Components.im0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k1 implements n2 {
     public final /* synthetic */ n1 a;
@@ -27,7 +27,7 @@ public final class k1 implements n2 {
         sn snVar = n1Var.f;
         if (MessagesController.getInstance(n1Var.r).getStoriesController().I(r2Var.getDialogId())) {
             snVar.getOrCreateStoryViewer().getClass();
-            snVar.getOrCreateStoryViewer().D(n1Var.c, r2Var.getDialogId(), r7.a((im0) r2Var.getParent()));
+            snVar.getOrCreateStoryViewer().D(n1Var.c, r2Var.getDialogId(), q7.a((im0) r2Var.getParent()));
         }
     }
 

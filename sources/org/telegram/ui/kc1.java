@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class kc1 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -90,7 +90,7 @@ public final class kc1 extends org.telegram.ui.Components.hm0 {
         radialProgress2.q(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
         j5Var.Q = new Paint(3);
         j5Var.S = DownloadController.getInstance(i12).generateObserverTag();
-        j5Var.setOutlineProvider(new ci.o1(7));
+        j5Var.setOutlineProvider(new ci.n1(7));
         j5Var.setClipToOutline(true);
         return new org.telegram.ui.Components.sl0(j5Var);
     }

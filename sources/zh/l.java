@@ -4,12 +4,12 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import ci.g3;
+import ci.f3;
 import com.google.android.gms.internal.play_billing.k3;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.r5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class l extends View {
     public final int a;
@@ -56,7 +56,7 @@ public final class l extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        g3 g3Var;
+        f3 f3Var;
         float f7 = isPressed() ? 1.0f : 0.0f;
         float f10 = this.h;
         if (f10 != f7) {
@@ -75,7 +75,7 @@ public final class l extends View {
         float width2 = getWidth() / 2.0f;
         float height = getHeight() / 2.0f;
         r5 r5Var = this.b;
-        if (r5Var == null || (g3Var = r5Var.k) == null || !g3Var.hasBitmapImage()) {
+        if (r5Var == null || (f3Var = r5Var.k) == null || !f3Var.hasBitmapImage()) {
             canvas.drawCircle(width2, height, 0.42f * width, this.c);
         }
         r5 r5Var2 = this.b;

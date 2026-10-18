@@ -6,7 +6,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.g9;
+import ci.f9;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
@@ -16,12 +16,12 @@ import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.f6;
 import org.telegram.ui.Components.ml0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a2 extends j {
     public dw0 q0;
-    public g9 r0;
-    public g9 s0;
+    public f9 r0;
+    public f9 s0;
     public ah.y0 t0;
     public ah.y0 u0;
     public ah.i1 v0;
@@ -48,15 +48,15 @@ public final class a2 extends j {
         canvas.save();
         float f7 = this.z0;
         canvas.scale(f7, f7, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        g9 g9Var = this.s0;
-        if (g9Var != null) {
-            g9Var.e = (int) ((1.0f - d) * 255.0f);
-            g9Var.setBounds(padding, padding, ((int) dw0Var.a) - padding, ((int) dw0Var.b) - padding);
+        f9 f9Var = this.s0;
+        if (f9Var != null) {
+            f9Var.e = (int) ((1.0f - d) * 255.0f);
+            f9Var.setBounds(padding, padding, ((int) dw0Var.a) - padding, ((int) dw0Var.b) - padding);
             this.s0.draw(canvas);
         }
-        g9 g9Var2 = this.r0;
-        g9Var2.e = (int) (d * 255.0f);
-        g9Var2.setBounds(padding, padding, ((int) dw0Var.a) - padding, ((int) dw0Var.b) - padding);
+        f9 f9Var2 = this.r0;
+        f9Var2.e = (int) (d * 255.0f);
+        f9Var2.setBounds(padding, padding, ((int) dw0Var.a) - padding, ((int) dw0Var.b) - padding);
         this.r0.draw(canvas);
         Rect rect = AndroidUtilities.rectTmp2;
         float width = (this.r0.getBounds().width() * 0.61f) / 2.0f;
@@ -149,10 +149,10 @@ public final class a2 extends j {
     public final void q(boolean z10) {
         if (z10) {
             this.s0 = this.r0;
-            g9 g9Var = new g9(this);
-            this.r0 = g9Var;
+            f9 f9Var = new f9(this);
+            this.r0 = f9Var;
             if (this.s0.a != 1) {
-                g9Var.a();
+                f9Var.a();
             }
             this.r0.b(this.y0, false);
             this.r0.c(getScaleX());

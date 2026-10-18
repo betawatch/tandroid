@@ -1,63 +1,116 @@
 package org.telegram.messenger;
 
-import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ui implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
     public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ TLObject r;
 
-    public /* synthetic */ ui(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+    public /* synthetic */ ui(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, boolean z10, boolean z11, TLRPC.Message message, ArrayList arrayList2, ArrayList arrayList3, int i10) {
+        this.e = sendMessagesHelper;
+        this.f = arrayList;
+        this.c = z10;
+        this.d = z11;
+        this.r = message;
+        this.h = arrayList2;
+        this.n = arrayList3;
+        this.b = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        int i10;
+        TLRPC.TL_username tL_username;
         switch (this.a) {
             case 0:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$60((TLObject) this.c, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e);
-                break;
-            case 1:
-                ((SendMessagesHelper) this.b).lambda$sendMessage$22((TLRPC.TL_messages_forwardMessages) this.c, (ArrayList) this.d, (nj) this.e);
-                break;
-            case 2:
-                ((SendMessagesHelper) this.b).lambda$didReceivedNotification$4((SendMessagesHelper.DelayedMessage) this.d, (File) this.c, (MessageObject) this.e);
-                break;
-            case 3:
-                ((UnconfirmedAuthController) this.b).lambda$readCache$0((ArrayList) this.c, (HashSet) this.d, (ArrayList) this.e);
+                ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$99((ArrayList) this.f, this.c, this.d, (TLRPC.Message) this.r, (ArrayList) this.h, (ArrayList) this.n, this.b);
                 break;
             default:
-                ((UserNameResolver) this.b).lambda$resolve$0((String) this.e, (TLRPC.TL_error) this.d, (TLObject) this.c);
+                org.telegram.ui.ja jaVar = (org.telegram.ui.ja) this.e;
+                String str = (String) this.f;
+                TLObject tLObject = (TLObject) this.h;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.n;
+                TLRPC.TL_username tL_username2 = (TLRPC.TL_username) this.r;
+                org.telegram.ui.ua uaVar = jaVar.a;
+                ArrayList arrayList = uaVar.w;
+                ArrayList arrayList2 = uaVar.v;
+                arrayList.remove(str);
+                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                int i11 = this.b;
+                boolean z11 = this.c;
+                if (z10) {
+                    uaVar.i0(i11, z11, false);
+                } else {
+                    boolean z12 = this.d;
+                    if (tL_error == null || !"USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error.text)) {
+                        uaVar.j0(tL_username2, z12, true);
+                    } else {
+                        tL_username2.active = z11;
+                        uaVar.i0(i11, z11, false);
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(uaVar.getParentActivity(), 0, uaVar.getResourceProvider());
+                        alertDialog$Builder.a.R = LocaleController.getString(R.string.UsernameActivateErrorTitle);
+                        alertDialog$Builder.a.T = LocaleController.getString(R.string.UsernameActivateErrorMessage);
+                        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new ai.d4(jaVar, tL_username2, z12, 4));
+                        alertDialog$Builder.o();
+                    }
+                }
+                i10 = ((org.telegram.ui.ActionBar.n2) uaVar).currentAccount;
+                TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(uaVar.g0()));
+                uaVar.getMessagesController().updateUsernameActiveness(user, tL_username2.username, tL_username2.active);
+                if (uaVar.x != 0 && arrayList2 != null) {
+                    int size = arrayList2.size();
+                    int i12 = 0;
+                    while (i12 < size) {
+                        Object obj = arrayList2.get(i12);
+                        i12++;
+                        if (((TLRPC.TL_username) obj).active) {
+                            break;
+                        }
+                    }
+                    int size2 = arrayList2.size();
+                    int i13 = 0;
+                    while (true) {
+                        if (i13 < size2) {
+                            Object obj2 = arrayList2.get(i13);
+                            i13++;
+                            tL_username = (TLRPC.TL_username) obj2;
+                            if (tL_username.editable) {
+                            }
+                        } else {
+                            tL_username = null;
+                        }
+                    }
+                    if (tL_username != null) {
+                        uaVar.j0(tL_username, true, false);
+                        uaVar.getMessagesController().updateUsernameActiveness(user, tL_username.username, tL_username.active);
+                        break;
+                    }
+                }
                 break;
         }
     }
 
-    public /* synthetic */ ui(String str, UserNameResolver userNameResolver, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 4;
-        this.b = userNameResolver;
-        this.e = str;
-        this.d = tL_error;
-        this.c = tLObject;
-    }
-
-    public /* synthetic */ ui(SendMessagesHelper sendMessagesHelper, SendMessagesHelper.DelayedMessage delayedMessage, File file, MessageObject messageObject) {
-        this.a = 2;
-        this.b = sendMessagesHelper;
-        this.d = delayedMessage;
-        this.c = file;
-        this.e = messageObject;
+    public /* synthetic */ ui(org.telegram.ui.ja jaVar, String str, TLObject tLObject, int i10, boolean z10, TLRPC.TL_error tL_error, TLRPC.TL_username tL_username, boolean z11) {
+        this.e = jaVar;
+        this.f = str;
+        this.h = tLObject;
+        this.b = i10;
+        this.c = z10;
+        this.n = tL_error;
+        this.r = tL_username;
+        this.d = z11;
     }
 }

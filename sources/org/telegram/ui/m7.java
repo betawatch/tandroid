@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m7 extends i7 {
     public final ArrayList f;
@@ -93,7 +93,7 @@ public final class m7 extends i7 {
                 xpVar2.b(-1, org.telegram.ui.ActionBar.h6.d6, org.telegram.ui.ActionBar.h6.k7);
                 b7Var.n.setDrawUnchecked(false);
                 b7Var.n.setDrawBackgroundAsArc(3);
-                b7Var.addView(b7Var.n, w7.z5.a(24.0f, 38.0f, 25.0f, 38.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 48));
+                b7Var.addView(b7Var.n, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 38.0f, 25.0f, 38.0f, 0.0f));
             }
             b7Var.n.a(contains, z10);
         }

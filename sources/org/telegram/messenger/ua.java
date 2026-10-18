@@ -1,29 +1,51 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ua implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLRPC.TL_help_peerColors c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ ua(MessagesController messagesController, TLRPC.TL_help_peerColors tL_help_peerColors, int i10) {
-        this.a = i10;
+    public /* synthetic */ ua(int i10, int i11, int i12, long j10, MessagesController messagesController, boolean z10) {
+        this.a = i12;
         this.b = messagesController;
-        this.c = tL_help_peerColors;
+        this.c = j10;
+        this.d = i10;
+        this.e = i11;
+        this.f = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
+        switch (i10) {
             case 0:
-                this.b.lambda$checkPeerColors$493(this.c);
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$240(this.c, this.d, this.e, this.f);
+                break;
+            case 1:
+                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
                 break;
             default:
-                this.b.lambda$checkPeerColors$495(this.c);
+                int i11 = ChatActivityEnterView.n5;
+                ((ChatActivityEnterView) notificationCenterDelegate).R0(this.d, this.f, this.e, false, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ ua(ChatActivityEnterView chatActivityEnterView, boolean z10, int i10, int i11, long j10) {
+        this.a = 2;
+        this.b = chatActivityEnterView;
+        this.f = z10;
+        this.d = i10;
+        this.e = i11;
+        this.c = j10;
     }
 }

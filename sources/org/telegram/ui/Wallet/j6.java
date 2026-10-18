@@ -1,37 +1,31 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ti;
-
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class j6 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ti a;
-    public final /* synthetic */ s6 b;
-    public final /* synthetic */ k6 c;
+public final /* synthetic */ class j6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m6 b;
 
-    public j6(k6 k6Var, ti tiVar, s6 s6Var) {
-        this.c = k6Var;
-        this.a = tiVar;
-        this.b = s6Var;
+    public /* synthetic */ j6(m6 m6Var, int i10) {
+        this.a = i10;
+        this.b = m6Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        this.c.a(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.c.a(true);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        if (this.a != null) {
-            AndroidUtilities.hideKeyboard(this.b);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                m6.a(this.b);
+                break;
+            default:
+                m6 m6Var = this.b;
+                Runnable runnable = m6Var.c0;
+                m6Var.c0 = null;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
     }
 }

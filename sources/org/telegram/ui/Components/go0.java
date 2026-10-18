@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class go0 implements Runnable {
     public final /* synthetic */ int a;
@@ -110,10 +110,10 @@ public final /* synthetic */ class go0 implements Runnable {
                 break;
             case 7:
                 sv0 sv0Var = (sv0) this.b;
-                ci.b7 b7Var = (ci.b7) this.c;
+                ci.a7 a7Var = (ci.a7) this.c;
                 ns0 ns0Var = sv0Var.W;
                 if (ns0Var != null) {
-                    int i13 = b7Var.a;
+                    int i13 = a7Var.a;
                     ns0Var.n.d(i13, ns0Var.s.i(i13));
                     break;
                 }

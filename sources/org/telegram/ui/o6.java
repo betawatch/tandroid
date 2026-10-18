@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class o6 extends FrameLayout {
     public final m0 a;
@@ -54,7 +54,7 @@ public class o6 extends FrameLayout {
         p6Var2.u(org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.x0(null, i10, false), org.telegram.ui.ActionBar.h6.m1(0.7f, org.telegram.ui.ActionBar.h6.x0(null, i11, false))));
         p6Var2.t("", true, true);
         m0Var.setContentDescription(TextUtils.concat(p6Var.i, "\t", p6Var2.i));
-        addView(m0Var, w7.z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 119));
+        addView(m0Var, w7.z5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
     }
 
     public final void a(long j10, boolean z10) {

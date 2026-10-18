@@ -37,7 +37,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l60 extends r60 {
     public int A0;
@@ -138,7 +138,7 @@ public final class l60 extends r60 {
         i60Var.setOpaque(true);
         i60Var.setClickable(true);
         i60Var.setCameraDistance(AndroidUtilities.dp(8000.0f));
-        i60Var.setOutlineProvider(new ci.o1(13));
+        i60Var.setOutlineProvider(new ci.n1(13));
         i60Var.setClipToOutline(true);
         this.y = i60Var;
         frameLayout.addView(i60Var, w7.z5.e(-1, -1, 119));
@@ -146,10 +146,10 @@ public final class l60 extends r60 {
         paint.setColor(Color.argb(40, 0, 0, 0));
         org.telegram.ui.gl glVar = new org.telegram.ui.gl(this, activity, paint);
         this.E = glVar;
-        glVar.setOutlineProvider(new ci.o1(12));
+        glVar.setOutlineProvider(new ci.n1(12));
         glVar.setClipToOutline(true);
         frameLayout.addView(glVar, w7.z5.e(-1, -1, 119));
-        um0Var.addView(frameLayout, w7.z5.a(-1.0f, 14.0f, 14.0f, 14.0f, 14.0f, -1, 119));
+        um0Var.addView(frameLayout, w7.z5.d(-1, -1.0f, 119, 14.0f, 14.0f, 14.0f, 14.0f));
         j60Var.addView(um0Var, w7.z5.e(-1, -1, 119));
         int i10 = AndroidUtilities.roundPlayingMessageSize;
         addView(j60Var, new FrameLayout.LayoutParams(i10, i10, 17));
@@ -158,7 +158,7 @@ public final class l60 extends r60 {
         this.F = linearLayout;
         linearLayout.setOrientation(0);
         linearLayout.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
-        addView(linearLayout, w7.z5.a(56.0f, 1.0f, 0.0f, 0.0f, 0.0f, -2, 83));
+        addView(linearLayout, w7.z5.d(-2, 56.0f, 83, 1.0f, 0.0f, 0.0f, 0.0f));
         ei.q2 q2Var = new ei.q2(activity);
         this.G = q2Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
@@ -200,13 +200,13 @@ public final class l60 extends r60 {
                                     int i14 = s0Var.W;
                                     if (i14 == 3 || i14 == 2) {
                                         s0Var.e();
-                                        si.k kVar = s0Var.l;
-                                        kVar.F = l0Var2;
-                                        Handler handler = kVar.n;
-                                        if (!kVar.V || handler == null) {
+                                        si.j jVar = s0Var.l;
+                                        jVar.F = l0Var2;
+                                        Handler handler = jVar.n;
+                                        if (!jVar.V || handler == null) {
                                             z10 = false;
                                         } else {
-                                            handler.post(new p2.b(21, kVar, l0Var2));
+                                            handler.post(new org.telegram.ui.web.g2(22, jVar, l0Var2));
                                             z10 = true;
                                         }
                                         s0Var.w = z10;
@@ -225,16 +225,16 @@ public final class l60 extends r60 {
                         si.s0 s0Var2 = l60Var2.P;
                         if (s0Var2 != null && (r0Var2 = l60Var2.R) != null && l60Var2.S != null) {
                             boolean z11 = !r0Var2.f;
-                            si.k kVar2 = s0Var2.l;
+                            si.j jVar2 = s0Var2.l;
                             si.s0.t();
                             if (s0Var2.W == 3 && !s0Var2.w && (i12 = s0Var2.X) != 1) {
                                 s0Var2.u = z11;
                                 if (i12 == 3) {
                                     s0Var2.u(z11);
-                                    kVar2.T(false);
+                                    jVar2.T(false);
                                 } else {
                                     s0Var2.u(false);
-                                    kVar2.T(z11);
+                                    jVar2.T(z11);
                                 }
                                 s0Var2.o();
                                 l60Var2.z();
@@ -284,13 +284,13 @@ public final class l60 extends r60 {
                                     int i14 = s0Var.W;
                                     if (i14 == 3 || i14 == 2) {
                                         s0Var.e();
-                                        si.k kVar = s0Var.l;
-                                        kVar.F = l0Var2;
-                                        Handler handler = kVar.n;
-                                        if (!kVar.V || handler == null) {
+                                        si.j jVar = s0Var.l;
+                                        jVar.F = l0Var2;
+                                        Handler handler = jVar.n;
+                                        if (!jVar.V || handler == null) {
                                             z10 = false;
                                         } else {
-                                            handler.post(new p2.b(21, kVar, l0Var2));
+                                            handler.post(new org.telegram.ui.web.g2(22, jVar, l0Var2));
                                             z10 = true;
                                         }
                                         s0Var.w = z10;
@@ -309,16 +309,16 @@ public final class l60 extends r60 {
                         si.s0 s0Var2 = l60Var2.P;
                         if (s0Var2 != null && (r0Var2 = l60Var2.R) != null && l60Var2.S != null) {
                             boolean z11 = !r0Var2.f;
-                            si.k kVar2 = s0Var2.l;
+                            si.j jVar2 = s0Var2.l;
                             si.s0.t();
                             if (s0Var2.W == 3 && !s0Var2.w && (i122 = s0Var2.X) != 1) {
                                 s0Var2.u = z11;
                                 if (i122 == 3) {
                                     s0Var2.u(z11);
-                                    kVar2.T(false);
+                                    jVar2.T(false);
                                 } else {
                                     s0Var2.u(false);
-                                    kVar2.T(z11);
+                                    jVar2.T(z11);
                                 }
                                 s0Var2.o();
                                 l60Var2.z();
@@ -1075,7 +1075,7 @@ public final class l60 extends r60 {
     public final void w(boolean z10, boolean z11) {
         n60 n60Var = this.a;
         if (n60Var != null) {
-            ((org.telegram.ui.re) n60Var).b.vc.a(z10, true);
+            ((org.telegram.ui.re) n60Var).b.wc.a(z10, true);
         }
         AnimatorSet animatorSet = this.W;
         if (animatorSet != null) {

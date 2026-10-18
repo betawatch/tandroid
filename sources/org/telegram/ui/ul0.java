@@ -7,7 +7,7 @@ import j$.util.Objects;
 import java.util.regex.Pattern;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ul0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -38,10 +38,10 @@ public final class ul0 implements TextWatcher {
                 xm0.I0((xm0) this.d, (EditTextBoldCursor) this.b, this.c, editable, false);
                 break;
             default:
-                qg.x xVar = (qg.x) this.d;
-                qg.y yVar = xVar.f;
-                EditTextBoldCursor editTextBoldCursor = xVar.d;
-                if (!xVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
+                qg.w wVar = (qg.w) this.d;
+                qg.x xVar = wVar.f;
+                EditTextBoldCursor editTextBoldCursor = wVar.d;
+                if (!wVar.e && this.c != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(this.c.toString(), editable.toString())) {
                     String obj = editable.toString();
                     if (obj.length() > 8) {
                         editTextBoldCursor.setText(obj.substring(2, 8).toUpperCase());
@@ -53,19 +53,19 @@ public final class ul0 implements TextWatcher {
                             if (length == 6) {
                                 i10 = ((int) Long.parseLong(obj, 16)) - 16777216;
                             } else if (length != 8) {
-                                i10 = yVar.f;
+                                i10 = xVar.f;
                             } else {
                                 parseLong = Long.parseLong(obj, 16);
                             }
-                            if (i10 == yVar.f) {
-                                yVar.n(i10, 5);
+                            if (i10 == xVar.f) {
+                                xVar.n(i10, 5);
                                 break;
                             }
                         } else {
                             parseLong = Long.parseLong("FF" + obj.charAt(0) + obj.charAt(0) + obj.charAt(1) + obj.charAt(1) + obj.charAt(2) + obj.charAt(2), 16);
                         }
                         i10 = (int) parseLong;
-                        if (i10 == yVar.f) {
+                        if (i10 == xVar.f) {
                         }
                     }
                 }
@@ -90,9 +90,9 @@ public final class ul0 implements TextWatcher {
         int i13 = this.a;
     }
 
-    public ul0(qg.x xVar) {
+    public ul0(qg.w wVar) {
         this.a = 2;
-        this.d = xVar;
+        this.d = wVar;
         this.b = Pattern.compile("^[0-9a-fA-F]*$");
     }
 

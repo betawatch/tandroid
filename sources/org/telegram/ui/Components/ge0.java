@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ge0 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -32,11 +32,11 @@ public final class ge0 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final void onGlobalLayout() {
         float f7;
         int dp;
-        ci.i4 i4Var;
+        ci.h4 h4Var;
         xj0 xj0Var;
         AnimatorSet animatorSet;
         le0 le0Var = this.d;
-        ci.i4 i4Var2 = le0Var.e;
+        ci.h4 h4Var2 = le0Var.e;
         ArrayList arrayList = le0Var.W;
         int[] iArr = le0Var.h0;
         xj0 xj0Var2 = le0Var.M;
@@ -71,10 +71,10 @@ public final class ge0 implements ViewTreeObserver.OnGlobalLayoutListener {
         xj0 xj0Var3 = xj0Var2;
         final double max = Math.max(Math.max(Math.max(sqrt, sqrt2), Math.sqrt(i19 + i21)), Math.sqrt(i21 + i15));
         arrayList.clear();
-        int childCount = i4Var2.getChildCount();
+        int childCount = h4Var2.getChildCount();
         int i22 = 0;
         while (i22 < childCount) {
-            View childAt = i4Var2.getChildAt(i22);
+            View childAt = h4Var2.getChildAt(i22);
             childAt.setScaleX(0.7f);
             childAt.setScaleY(0.7f);
             childAt.setAlpha(0.0f);
@@ -88,7 +88,7 @@ public final class ge0 implements ViewTreeObserver.OnGlobalLayoutListener {
             if (i22 != -1) {
                 animatorSet = new AnimatorSet();
                 Property property = View.SCALE_X;
-                i4Var = i4Var2;
+                h4Var = h4Var2;
                 int i24 = i20;
                 float[] fArr = new float[i24];
                 fArr[0] = 1.0f;
@@ -105,7 +105,7 @@ public final class ge0 implements ViewTreeObserver.OnGlobalLayoutListener {
                 animatorSet.setDuration(140L);
                 animatorSet.setInterpolator(new DecelerateInterpolator());
             } else {
-                i4Var = i4Var2;
+                h4Var = h4Var2;
                 xj0Var = xj0Var3;
                 animatorSet = null;
             }
@@ -119,7 +119,7 @@ public final class ge0 implements ViewTreeObserver.OnGlobalLayoutListener {
             arrayList.add(ie0Var);
             i22++;
             arrayList2 = arrayList3;
-            i4Var2 = i4Var;
+            h4Var2 = h4Var;
             xj0Var3 = xj0Var4;
             i20 = 1;
         }

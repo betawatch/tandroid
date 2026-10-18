@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class dm0 implements s4.q0 {
     public final /* synthetic */ int a = 0;
@@ -32,7 +32,7 @@ public final class dm0 implements s4.q0 {
                 break;
             default:
                 s4.y yVar = (s4.y) this.b;
-                p4.s0 s0Var = yVar.I;
+                p8.b bVar = yVar.I;
                 ((GestureDetector) yVar.N.b).onTouchEvent(motionEvent);
                 VelocityTracker velocityTracker = yVar.J;
                 if (velocityTracker != null) {
@@ -51,8 +51,8 @@ public final class dm0 implements s4.q0 {
                                 if (findPointerIndex >= 0) {
                                     yVar.s(yVar.E, findPointerIndex, motionEvent);
                                     yVar.n(b1Var);
-                                    yVar.H.removeCallbacks(s0Var);
-                                    s0Var.run();
+                                    yVar.H.removeCallbacks(bVar);
+                                    bVar.run();
                                     yVar.H.invalidate();
                                     break;
                                 }

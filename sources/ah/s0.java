@@ -11,7 +11,7 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
-import ci.g3;
+import ci.f3;
 import com.google.android.gms.internal.play_billing.k3;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
@@ -30,7 +30,7 @@ import org.telegram.ui.i51;
 import org.telegram.ui.w41;
 import org.telegram.ui.x51;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class s0 extends FrameLayout {
     public final Drawable a;
@@ -101,7 +101,7 @@ public final class s0 extends FrameLayout {
         cl0 cl0Var2;
         int i13;
         float f12;
-        g3 g3Var;
+        f3 f3Var;
         int i14;
         int i15;
         int i16;
@@ -119,9 +119,9 @@ public final class s0 extends FrameLayout {
         float f17;
         cl0 cl0Var4;
         RectF rectF7;
-        g3 g3Var2;
+        f3 f3Var2;
         int[] iArr;
-        g3 g3Var3;
+        f3 f3Var3;
         float f18;
         int i18;
         float f19;
@@ -155,7 +155,7 @@ public final class s0 extends FrameLayout {
             float lerp = AndroidUtilities.lerp(t0Var.e, AndroidUtilities.dp(i20 == 5 ? 20.0f : 8.0f), t0Var.j);
             HashMap hashMap3 = this.e;
             hashMap3.clear();
-            if (i20 == 1 || (cl0Var5.getDelegate() != null && cl0Var5.getDelegate().r())) {
+            if (i20 == 1 || (cl0Var5.getDelegate() != null && cl0Var5.getDelegate().s())) {
                 f7 = 1.0f;
                 bl0 delegate = cl0Var5.getDelegate();
                 float x10 = getX();
@@ -307,9 +307,9 @@ public final class s0 extends FrameLayout {
                             al0 al0Var = (al0) childAt;
                             zk0 zk0Var = al0Var.a;
                             zk0 zk0Var2 = al0Var.b;
-                            sg.b1 b1Var = al0Var.f;
-                            if (b1Var != null) {
-                                b1Var.setAlpha(1.0f - t0Var.j);
+                            sg.c1 c1Var = al0Var.f;
+                            if (c1Var != null) {
+                                c1Var.setAlpha(1.0f - t0Var.j);
                             }
                             i51 i51Var2 = (i51) hashMap.get(al0Var.e);
                             if (i51Var2 != null) {
@@ -462,8 +462,8 @@ public final class s0 extends FrameLayout {
                                     ImageReceiver imageReceiver = zk0Var2.getImageReceiver();
                                     al0Var.b();
                                     r5 r5Var = zk0Var2.e;
-                                    if (r5Var != null && (g3Var3 = r5Var.k) != null) {
-                                        imageReceiver = g3Var3;
+                                    if (r5Var != null && (f3Var3 = r5Var.k) != null) {
+                                        imageReceiver = f3Var3;
                                     }
                                     int[] roundRadius = imageReceiver.getRoundRadius();
                                     int i24 = 0;
@@ -497,8 +497,8 @@ public final class s0 extends FrameLayout {
                                     al0Var.b();
                                     ImageReceiver imageReceiver2 = zk0Var2.getImageReceiver();
                                     r5 r5Var2 = zk0Var2.e;
-                                    if (r5Var2 != null && (g3Var2 = r5Var2.k) != null) {
-                                        imageReceiver2 = g3Var2;
+                                    if (r5Var2 != null && (f3Var2 = r5Var2.k) != null) {
+                                        imageReceiver2 = f3Var2;
                                     }
                                     float alpha2 = imageReceiver2.getAlpha();
                                     imageReceiver2.setAlpha((1.0f - clamp) * alpha2);
@@ -573,7 +573,7 @@ public final class s0 extends FrameLayout {
                             n0Var.U0 = 1.0f;
                             x51 x51Var = n0Var.H;
                             if (x51Var != null) {
-                                cl0 cl0Var6 = (cl0) ((ya.c) x51Var).b;
+                                cl0 cl0Var6 = (cl0) ((ya.d) x51Var).b;
                                 if (i51Var3.s) {
                                     cl0Var6.l(i51Var3, i51Var3.x, true);
                                 } else {
@@ -598,7 +598,7 @@ public final class s0 extends FrameLayout {
                         imageReceiver3 = i51Var4.r;
                     }
                     r5 r5Var3 = n0Var.W0;
-                    if (r5Var3 != null && (g3Var = r5Var3.k) != null && g3Var.hasBitmapImage()) {
+                    if (r5Var3 != null && (f3Var = r5Var3.k) != null && f3Var.hasBitmapImage()) {
                         imageReceiver3 = n0Var.W0.k;
                     }
                     if (imageReceiver3 != null) {
@@ -628,7 +628,7 @@ public final class s0 extends FrameLayout {
         super.invalidate();
         t0 t0Var = this.w;
         cl0 cl0Var = t0Var.n;
-        if (t0Var.y == 1 || !(cl0Var == null || cl0Var.getDelegate() == null || !cl0Var.getDelegate().r())) {
+        if (t0Var.y == 1 || !(cl0Var == null || cl0Var.getDelegate() == null || !cl0Var.getDelegate().s())) {
             t0Var.m.f0.invalidate();
         }
     }

@@ -3,7 +3,7 @@ package c3;
 import e2.m0;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class z implements c0 {
     public final c5.b0 a;
@@ -22,11 +22,11 @@ public final class z implements c0 {
             this.a = b0Var;
             c5.b0 b0Var2 = new c5.b0(i10, 3);
             this.b = b0Var2;
-            b0Var.c(0L);
-            b0Var2.c(0L);
+            b0Var.d(0L);
+            b0Var2.d(0L);
         }
-        this.a.d(jArr);
-        this.b.d(jArr2);
+        this.a.g(jArr);
+        this.b.g(jArr2);
         this.c = j10;
     }
 
@@ -48,14 +48,14 @@ public final class z implements c0 {
             return new b0(d0Var, d0Var);
         }
         int c10 = m0.c(b0Var, j10);
-        long m10 = b0Var.m(c10);
+        long n10 = b0Var.n(c10);
         c5.b0 b0Var2 = this.a;
-        d0 d0Var2 = new d0(m10, b0Var2.m(c10));
-        if (m10 == j10 || c10 == b0Var.b - 1) {
+        d0 d0Var2 = new d0(n10, b0Var2.n(c10));
+        if (n10 == j10 || c10 == b0Var.b - 1) {
             return new b0(d0Var2, d0Var2);
         }
         int i10 = c10 + 1;
-        return new b0(d0Var2, new d0(b0Var.m(i10), b0Var2.m(i10)));
+        return new b0(d0Var2, new d0(b0Var.n(i10), b0Var2.n(i10)));
     }
 
     @Override // c3.c0

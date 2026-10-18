@@ -11,6 +11,7 @@ import c3.c0;
 import c3.j0;
 import c3.q;
 import c5.b0;
+import com.google.android.gms.internal.cast.z5;
 import g2.j;
 import g2.u;
 import g2.x;
@@ -44,12 +45,12 @@ import org.telegram.ui.Cells.u1;
 import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.gh;
 import org.telegram.ui.Components.ri;
-import org.telegram.ui.Wallet.z5;
 import org.telegram.ui.xu0;
+import si.z;
 import z3.k;
 import z3.m;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a, dg.a, ea.c, n, ri, w, r9.d, l1, n5.b, r4.d, k {
     public static d b;
@@ -92,7 +93,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         return Calendar.getInstance();
     }
 
-    public static k4.d x3(z5 z5Var, b0 b0Var) {
+    public static k4.d x3(z zVar, b0 b0Var) {
         IOException iOException = (IOException) b0Var.c;
         if (!(iOException instanceof x)) {
             return null;
@@ -101,10 +102,10 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
         if (i10 != 403 && i10 != 404 && i10 != 410 && i10 != 416 && i10 != 500 && i10 != 503) {
             return null;
         }
-        if (z5Var.c(1)) {
+        if (zVar.a(1)) {
             return new k4.d(1, 300000L);
         }
-        if (z5Var.c(2)) {
+        if (zVar.a(2)) {
             return new k4.d(2, 60000L);
         }
         return null;
@@ -609,7 +610,7 @@ public final class d implements n0, androidx.car.app.messaging.model.b, q, cg.a,
     }
 
     @Override // r9.d
-    public Object j2(com.google.android.gms.internal.cast.z5 z5Var) {
+    public Object j2(z5 z5Var) {
         switch (this.a) {
             case 15:
                 return new sb.a(0);

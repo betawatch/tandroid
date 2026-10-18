@@ -11,11 +11,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k5 extends FrameLayout {
     public final TextView a;
@@ -28,7 +28,7 @@ public final class k5 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.d = w9Var;
         w9Var.getImageReceiver().setRoundRadius(AndroidUtilities.dp(8.0f));
-        addView(w9Var, w7.z5.a(100.0f, 10.0f, 10.0f, 10.0f, 0.0f, 100, LocaleController.isRTL ? 5 : 3));
+        addView(w9Var, w7.z5.d(100, 100.0f, LocaleController.isRTL ? 5 : 3, 10.0f, 10.0f, 10.0f, 0.0f));
         TextView textView = new TextView(context);
         this.a = textView;
         int i10 = org.telegram.ui.ActionBar.h6.G6;
@@ -42,7 +42,7 @@ public final class k5 extends FrameLayout {
         textView.setEllipsize(truncateAt);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z10 = LocaleController.isRTL;
-        addView(textView, w7.z5.a(-2.0f, z10 ? 10.0f : 123.0f, 9.0f, z10 ? 123.0f : 10.0f, 0.0f, -1, (z10 ? 5 : 3) | 48));
+        addView(textView, w7.z5.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 9.0f, z10 ? 123.0f : 10.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
@@ -51,16 +51,16 @@ public final class k5 extends FrameLayout {
         textView2.setEllipsize(truncateAt);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z11 = LocaleController.isRTL;
-        addView(textView2, w7.z5.a(-2.0f, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f, -1, (z11 ? 5 : 3) | 48));
+        addView(textView2, w7.z5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.c = textView3;
-        kk.u(textView3, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 14.0f, 1);
+        lk.u(textView3, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false), 1, 14.0f, 1);
         textView3.setMaxLines(1);
         textView3.setSingleLine(true);
         textView3.setEllipsize(truncateAt);
         textView3.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
         boolean z12 = LocaleController.isRTL;
-        addView(textView3, w7.z5.a(-2.0f, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 9.0f, -1, (z12 ? 5 : 3) | 48));
+        addView(textView3, w7.z5.d(-1, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 9.0f));
     }
 
     public final void a(String str, String str2, TLRPC.WebDocument webDocument, String str3, Object obj) {
@@ -83,18 +83,18 @@ public final class k5 extends FrameLayout {
         int i11 = (int) (360 / dp);
         org.telegram.ui.Components.w9 w9Var = this.d;
         if (webDocument == null || !webDocument.mime_type.startsWith("image/")) {
-            textView.setLayoutParams(w7.z5.a(-2.0f, 17.0f, 9.0f, 17.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
-            textView2.setLayoutParams(w7.z5.a(-2.0f, 17.0f, 33.0f, 17.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
-            textView3.setLayoutParams(w7.z5.a(-2.0f, 17.0f, 90.0f, 17.0f, 9.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+            textView.setLayoutParams(w7.z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 9.0f, 17.0f, 0.0f));
+            textView2.setLayoutParams(w7.z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 33.0f, 17.0f, 0.0f));
+            textView3.setLayoutParams(w7.z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 17.0f, 90.0f, 17.0f, 9.0f));
             w9Var.setVisibility(8);
             return;
         }
         boolean z10 = LocaleController.isRTL;
-        textView.setLayoutParams(w7.z5.a(-2.0f, z10 ? 10.0f : 123.0f, 9.0f, z10 ? 123.0f : 10.0f, 0.0f, -1, (z10 ? 5 : 3) | 48));
+        textView.setLayoutParams(w7.z5.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 10.0f : 123.0f, 9.0f, z10 ? 123.0f : 10.0f, 0.0f));
         boolean z11 = LocaleController.isRTL;
-        textView2.setLayoutParams(w7.z5.a(-2.0f, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f, -1, (z11 ? 5 : 3) | 48));
+        textView2.setLayoutParams(w7.z5.d(-1, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 10.0f : 123.0f, 33.0f, z11 ? 123.0f : 10.0f, 0.0f));
         boolean z12 = LocaleController.isRTL;
-        textView3.setLayoutParams(w7.z5.a(-2.0f, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 0.0f, -1, (z12 ? 5 : 3) | 48));
+        textView3.setLayoutParams(w7.z5.d(-1, -2.0f, (z12 ? 5 : 3) | 48, z12 ? 10.0f : 123.0f, 90.0f, z12 ? 123.0f : 10.0f, 0.0f));
         w9Var.setVisibility(0);
         Locale locale = Locale.US;
         w9Var.getImageReceiver().setImage(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), a1.g.k(i10, i11, "_"), null, null, -1L, null, obj, 1);

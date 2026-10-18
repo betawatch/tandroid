@@ -26,7 +26,7 @@ import org.telegram.ui.Components.yq;
 import w7.z5;
 import zf.g0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class g extends FrameLayout implements y5 {
     public static final /* synthetic */ int F = 0;
@@ -67,7 +67,7 @@ public final class g extends FrameLayout implements y5 {
         w9 w9Var = new w9(context);
         this.c = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(52.0f) / 2);
-        addView(w9Var, z5.a(52.0f, 11.0f, 9.0f, 0.0f, 0.0f, 52, 51));
+        addView(w9Var, z5.d(52, 52.0f, 51, 11.0f, 9.0f, 0.0f, 0.0f));
         yq yqVar = new yq(R.drawable.mini_user_channels_10, 0);
         this.r = yqVar;
         yqVar.setTranslateX(AndroidUtilities.dp(2.0f));
@@ -165,7 +165,7 @@ public final class g extends FrameLayout implements y5 {
                 }
             }
         });
-        addView(w9Var2, z5.a(16.0f, 75.0f, 35.0f, 0.0f, 0.0f, 16, 51));
+        addView(w9Var2, z5.d(16, 16.0f, 51, 75.0f, 35.0f, 0.0f, 0.0f));
         TextView textView3 = new TextView(context);
         this.h = textView3;
         textView3.setTextSize(1, 13.0f);
@@ -365,7 +365,7 @@ public final class g extends FrameLayout implements y5 {
         });
         linearLayout2.addView(dVar3, z5.p(-2, 30, 0.0f, 16, 4, 0, 0, 0));
         linearLayout.addView(linearLayout2, z5.t(-1, -2, 0, 0, 10, 0, 0));
-        addView(linearLayout, z5.a(-2.0f, 75.0f, 0.0f, 0.0f, 13.0f, -1, 48));
+        addView(linearLayout, z5.d(-1, -2.0f, 48, 75.0f, 0.0f, 0.0f, 13.0f));
         d();
     }
 

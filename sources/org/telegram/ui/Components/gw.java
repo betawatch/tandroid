@@ -19,7 +19,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class gw extends ViewGroup {
     public Boolean E;
@@ -33,7 +33,7 @@ public class gw extends ViewGroup {
     public final boolean c;
     public final w9 d;
     public final uj0 e;
-    public final sg.b1 f;
+    public final sg.c1 f;
     public final boolean h;
     public final boolean n;
     public Long r;
@@ -80,8 +80,8 @@ public class gw extends ViewGroup {
     }
 
     public final void a(Boolean bool) {
-        sg.b1 b1Var = this.f;
-        if (b1Var == null) {
+        sg.c1 c1Var = this.f;
+        if (c1Var == null) {
             return;
         }
         this.E = bool;
@@ -91,25 +91,25 @@ public class gw extends ViewGroup {
         }
         e(true);
         if (bool.booleanValue()) {
-            b1Var.setImageResource(R.drawable.msg_mini_lockedemoji);
+            c1Var.setImageResource(R.drawable.msg_mini_lockedemoji);
             return;
         }
         Drawable mutate = getResources().getDrawable(R.drawable.msg_mini_addemoji).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        b1Var.setImageDrawable(mutate);
+        c1Var.setImageDrawable(mutate);
     }
 
     public final void b() {
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         r5 r5Var = this.w;
-        if (r5Var == null || (g3Var = r5Var.k) == null) {
+        if (r5Var == null || (f3Var = r5Var.k) == null) {
             return;
         }
-        if (g3Var.getLottieAnimation() != null) {
-            g3Var.getLottieAnimation().M(0);
-            g3Var.getLottieAnimation().stop();
-        } else if (g3Var.getAnimation() != null) {
-            g3Var.getAnimation().stop();
+        if (f3Var.getLottieAnimation() != null) {
+            f3Var.getLottieAnimation().M(0);
+            f3Var.getLottieAnimation().stop();
+        } else if (f3Var.getAnimation() != null) {
+            f3Var.getAnimation().stop();
         }
     }
 
@@ -199,27 +199,27 @@ public class gw extends ViewGroup {
         }
         float f7 = z10 ? 1.0f : 0.0f;
         this.F = f7;
-        sg.b1 b1Var = this.f;
-        b1Var.setScaleX(f7);
-        b1Var.setScaleY(this.F);
-        b1Var.setAlpha(this.F);
-        b1Var.setVisibility(z10 ? 0 : 8);
+        sg.c1 c1Var = this.f;
+        c1Var.setScaleX(f7);
+        c1Var.setScaleY(this.F);
+        c1Var.setAlpha(this.F);
+        c1Var.setVisibility(z10 ? 0 : 8);
     }
 
     public final void f() {
-        sg.b1 b1Var = this.f;
-        if (b1Var == null || b1Var.h || !(getDrawable() instanceof r5)) {
+        sg.c1 c1Var = this.f;
+        if (c1Var == null || c1Var.h || !(getDrawable() instanceof r5)) {
             return;
         }
         if (((r5) getDrawable()).c()) {
-            b1Var.setImageReceiver(null);
-            b1Var.setColor(this.J.Q);
+            c1Var.setImageReceiver(null);
+            c1Var.setColor(this.J.Q);
             return;
         }
-        ci.g3 g3Var = ((r5) getDrawable()).k;
-        if (g3Var != null) {
-            b1Var.setImageReceiver(g3Var);
-            b1Var.invalidate();
+        ci.f3 f3Var = ((r5) getDrawable()).k;
+        if (f3Var != null) {
+            c1Var.setImageReceiver(f3Var);
+            c1Var.invalidate();
         }
     }
 
@@ -333,11 +333,11 @@ public class gw extends ViewGroup {
             int i15 = (i13 - i11) / 2;
             w9Var.layout(i14 - (w9Var.getMeasuredWidth() / 2), i15 - (w9Var.getMeasuredHeight() / 2), (w9Var.getMeasuredWidth() / 2) + i14, (w9Var.getMeasuredHeight() / 2) + i15);
         }
-        sg.b1 b1Var = this.f;
-        if (b1Var != null) {
+        sg.c1 c1Var = this.f;
+        if (c1Var != null) {
             int i16 = i12 - i10;
             int i17 = i13 - i11;
-            b1Var.layout(i16 - b1Var.getMeasuredWidth(), i17 - b1Var.getMeasuredHeight(), i16, i17);
+            c1Var.layout(i16 - c1Var.getMeasuredWidth(), i17 - c1Var.getMeasuredHeight(), i16, i17);
         }
     }
 
@@ -348,21 +348,21 @@ public class gw extends ViewGroup {
         if (w9Var != null) {
             w9Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(24.0f), TLObject.FLAG_30));
         }
-        sg.b1 b1Var = this.f;
-        if (b1Var != null) {
-            b1Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLObject.FLAG_30));
+        sg.c1 c1Var = this.f;
+        if (c1Var != null) {
+            c1Var.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(12.0f), TLObject.FLAG_30));
         }
     }
 
     @Override // android.view.View
     public final boolean performClick() {
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         r5 r5Var = this.w;
-        if (r5Var != null && (g3Var = r5Var.k) != null) {
-            if (g3Var.getAnimation() != null) {
-                g3Var.getAnimation().y(0L, true, false);
+        if (r5Var != null && (f3Var = r5Var.k) != null) {
+            if (f3Var.getAnimation() != null) {
+                f3Var.getAnimation().y(0L, true, false);
             }
-            g3Var.startAnimation();
+            f3Var.startAnimation();
         }
         return super.performClick();
     }
@@ -472,7 +472,7 @@ public class gw extends ViewGroup {
         this.c = true;
         dwVar.setColorFilter(kwVar.getEmojiColorFilter());
         addView(dwVar);
-        int i10 = sg.b1.L;
+        int i10 = sg.c1.L;
         ew ewVar = new ew(context, 1, kwVar.v);
         this.f = ewVar;
         ewVar.setAlpha(0.0f);
@@ -491,14 +491,14 @@ public class gw extends ViewGroup {
         this.b = true;
         this.h = false;
         this.n = false;
-        ci.k4 k4Var = new ci.k4(this, context, 8);
-        this.d = k4Var;
-        k4Var.w = false;
+        ci.j4 j4Var = new ci.j4(this, context, 8);
+        this.d = j4Var;
+        j4Var.w = false;
         this.r = Long.valueOf(j10);
         this.c = true;
-        k4Var.setColorFilter(kwVar.getEmojiColorFilter());
-        addView(k4Var);
-        int i10 = sg.b1.L;
+        j4Var.setColorFilter(kwVar.getEmojiColorFilter());
+        addView(j4Var);
+        int i10 = sg.c1.L;
         fw fwVar = new fw(context, 1, kwVar.v);
         this.f = fwVar;
         fwVar.setAlpha(0.0f);

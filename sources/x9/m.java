@@ -56,7 +56,7 @@ import z9.n0;
 import z9.q0;
 import z9.t0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class m {
     public static final ca.a r = new ca.a(3);
@@ -146,7 +146,7 @@ public final class m {
                 try {
                     s3Var.c = str;
                     Map a2 = ((y9.d) ((AtomicMarkableReference) ((c2.b) s3Var.d).b).getReference()).a();
-                    List o10 = ((b0) s3Var.f).o();
+                    List p5 = ((b0) s3Var.f).p();
                     if (((String) ((AtomicMarkableReference) s3Var.h).getReference()) != null) {
                         j10 = currentTimeMillis;
                         ((y9.f) s3Var.a).i(str, (String) ((AtomicMarkableReference) s3Var.h).getReference());
@@ -156,8 +156,8 @@ public final class m {
                     if (!a2.isEmpty()) {
                         ((y9.f) s3Var.a).g(str, a2, false);
                     }
-                    if (!o10.isEmpty()) {
-                        ((y9.f) s3Var.a).h(str, o10);
+                    if (!p5.isEmpty()) {
+                        ((y9.f) s3Var.a).h(str, p5);
                     }
                 } finally {
                 }

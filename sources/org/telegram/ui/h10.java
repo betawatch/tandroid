@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h10 implements Runnable {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class h10 implements Runnable {
             default:
                 FiltersSetupActivity filtersSetupActivity3 = this.b;
                 filtersSetupActivity3.getClass();
-                filtersSetupActivity3.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) filtersSetupActivity3, 9, true));
+                filtersSetupActivity3.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) filtersSetupActivity3, 9, true));
                 break;
         }
     }

@@ -56,10 +56,10 @@ import org.telegram.ui.Components.ng;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.qp0;
 import org.telegram.ui.Components.zv0;
-import org.telegram.ui.Wallet.m5;
+import org.telegram.ui.Wallet.n5;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e2 implements Runnable {
     public final /* synthetic */ int a;
@@ -347,7 +347,7 @@ public final /* synthetic */ class e2 implements Runnable {
                 return;
             case 23:
                 org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.b;
-                m5.z0(w0Var.getContext(), w0Var.H, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.p0) this.d, w0Var.g1);
+                n5.A0(w0Var.getContext(), w0Var.H, (TL_wallet.walletTransaction) this.c, null, null, null, (org.telegram.ui.Cells.p0) this.d, w0Var.g1);
                 return;
             case 24:
                 org.telegram.ui.Cells.w0 w0Var2 = (org.telegram.ui.Cells.w0) this.b;

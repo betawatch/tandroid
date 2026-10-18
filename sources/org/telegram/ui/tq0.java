@@ -27,7 +27,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tq0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final /* synthetic */ class tq0 implements View.OnClickListener {
         int i11;
         Bitmap bitmap;
         Bitmap bitmap2;
-        ci.b3 b3Var;
+        ci.a3 a3Var;
         MessageObject messageObject;
         MessageSuggestionParams of2;
         ju0 ju0Var;
@@ -128,7 +128,7 @@ public final /* synthetic */ class tq0 implements View.OnClickListener {
                     long time = photoViewer10.q5.getTime();
                     String y12 = PhotoViewer.y1();
                     photoViewer10.q5.b.setLoading(true);
-                    Utilities.globalQueue.postRunnable(new ai.b2(photoViewer10, y12, photoEntry, time, 23));
+                    Utilities.globalQueue.postRunnable(new ai.b3(photoViewer10, y12, photoEntry, time, 23));
                     break;
                 }
                 break;
@@ -335,7 +335,7 @@ public final /* synthetic */ class tq0 implements View.OnClickListener {
                             rg.m2 m2Var2 = photoViewer15.p5;
                             ei.oc ocVar = new ei.oc(photoViewer15, z11, mediaEditState, i12);
                             m2Var2.getClass();
-                            m2Var2.setOnClickListener(new qg.n(1, m2Var2, ocVar));
+                            m2Var2.setOnClickListener(new org.telegram.ui.web.c(2, m2Var2, ocVar));
                             TextView textView = m2Var2.M;
                             textView.setText(LocaleController.getString(R.string.SegmentationTabToCrop));
                             textView.animate().cancel();
@@ -443,7 +443,7 @@ public final /* synthetic */ class tq0 implements View.OnClickListener {
                 }
                 if (!photoViewer20.U1.o()) {
                     sn snVar3 = photoViewer20.l4;
-                    if (snVar3 == null || !snVar3.c() || ((b3Var = photoViewer20.l4.J1) != null && b3Var.K1 != null)) {
+                    if (snVar3 == null || !snVar3.c() || ((a3Var = photoViewer20.l4.J1) != null && a3Var.K1 != null)) {
                         photoViewer20.w2(true, 0, 0, false, false, false);
                         break;
                     } else {

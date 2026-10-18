@@ -5,7 +5,7 @@ import android.text.style.CharacterStyle;
 import java.util.HashMap;
 import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class d extends CharacterStyle {
     public final int a;
@@ -17,7 +17,7 @@ public final class d extends CharacterStyle {
     @Override // android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
         int i10;
-        HashMap hashMap = t.b;
+        HashMap hashMap = s.b;
         int i11 = this.a & 255;
         switch (i11) {
             case 8:

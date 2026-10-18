@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f60 implements Runnable {
     public DispatchQueue B0;
@@ -735,7 +735,7 @@ public final class f60 implements Runnable {
 
     public final void i(int i10, a60 a60Var) {
         this.T.sendMessage(this.T.obtainMessage(1, i10, 0, a60Var));
-        AndroidUtilities.runOnUIThread(new rc(13));
+        AndroidUtilities.runOnUIThread(new sc(12));
     }
 
     @Override // java.lang.Runnable

@@ -7,9 +7,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class jy0 extends org.telegram.ui.Components.im0 implements ci.p7 {
+public final class jy0 extends org.telegram.ui.Components.im0 implements ci.o7 {
     public final /* synthetic */ ProfileActivity V2;
     public VelocityTracker W2;
     public final /* synthetic */ ProfileActivity X2;
@@ -31,7 +31,7 @@ public final class jy0 extends org.telegram.ui.Components.im0 implements ci.p7 {
         return !(view instanceof org.telegram.ui.Cells.j);
     }
 
-    @Override // ci.p7
+    @Override // ci.o7
     public final void a(int[] iArr) {
         org.telegram.ui.ActionBar.k kVar;
         kVar = ((org.telegram.ui.ActionBar.n2) this.V2).actionBar;

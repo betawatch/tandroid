@@ -13,7 +13,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class fp0 {
     public static Paint N;
@@ -60,7 +60,7 @@ public final class fp0 {
 
     public final void a(Path path, float f7, float f10) {
         float dpf2 = AndroidUtilities.dpf2(2.0f);
-        int A = org.telegram.messenger.kk.A(14.0f, this.h, 2);
+        int A = org.telegram.messenger.lk.A(14.0f, this.h, 2);
         float f11 = f10 * this.w;
         RectF rectF = AndroidUtilities.rectTmp;
         float f12 = dpf2 / 2.0f;
@@ -265,7 +265,7 @@ public final class fp0 {
                 rectF = AndroidUtilities.rectTmp;
                 float dpf25 = AndroidUtilities.dpf2(f10) * (1.0f - this.K) * f7;
                 float dpf26 = AndroidUtilities.dpf2(2.0f);
-                int A = org.telegram.messenger.kk.A(14.0f, this.h, 2);
+                int A = org.telegram.messenger.lk.A(14.0f, this.h, 2);
                 float f20 = dpf24 * this.w;
                 float f21 = dpf26 / 2.0f;
                 rectF.set((AndroidUtilities.dpf2(1.0f) + dpf25) - f21, ((-f20) - f21) + AndroidUtilities.dp(7.0f) + A, AndroidUtilities.dpf2(1.0f) + dpf25 + f21, f20 + f21 + AndroidUtilities.dp(7.0f) + A);

@@ -20,7 +20,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
@@ -29,7 +29,7 @@ import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class d4 extends FrameLayout implements RendererCommon.RendererEvents, NotificationCenter.NotificationCenterDelegate {
     public int a;
@@ -42,7 +42,7 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
     public Runnable n;
     public boolean r;
     public long s;
-    public ci.p4 v;
+    public ci.o4 v;
     public boolean w;
     public float x;
     public boolean y;
@@ -105,14 +105,14 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
         dVar.setOnClickListener(runnable == null ? null : new ai.z6(2, runnable));
     }
 
-    public final void d(long j10, ci.p4 p4Var) {
+    public final void d(long j10, ci.o4 o4Var) {
         ci.b1 b1Var;
         ci.h1 h1Var;
         ci.h1 h1Var2;
         TextureViewRenderer textureViewRenderer;
         int dp;
         int width;
-        if (p4Var == null) {
+        if (o4Var == null) {
             long j11 = this.s;
             if (j11 != 0 && this.r && (textureViewRenderer = this.d) != null) {
                 File file = new File(FileLoader.getDirectory(4), r4.c.g(j11, "live", ".jpg"));
@@ -160,16 +160,16 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
             }
         }
         this.s = j10;
-        this.v = p4Var;
-        if (this.r && p4Var != null && !p4Var.a) {
-            p4Var.a = true;
-            p4Var.b();
+        this.v = o4Var;
+        if (this.r && o4Var != null && !o4Var.a) {
+            o4Var.a = true;
+            o4Var.b();
         }
-        boolean z10 = (p4Var == null || (h1Var2 = (ci.h1) p4Var.b) == null || !h1Var2.n()) ? false : true;
-        if (p4Var == null || (h1Var = (ci.h1) p4Var.b) == null || !h1Var.a()) {
+        boolean z10 = (o4Var == null || (h1Var2 = (ci.h1) o4Var.b) == null || !h1Var2.n()) ? false : true;
+        if (o4Var == null || (h1Var = (ci.h1) o4Var.b) == null || !h1Var.a()) {
             b1Var = null;
         } else {
-            ci.h1 h1Var3 = (ci.h1) p4Var.b;
+            ci.h1 h1Var3 = (ci.h1) o4Var.b;
             Objects.requireNonNull(h1Var3);
             b1Var = new ci.b1(h1Var3, 12);
         }
@@ -182,8 +182,8 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
         ci.b1 b1Var;
         if (i10 == NotificationCenter.liveStoryUpdated) {
             long longValue = ((Long) objArr[0]).longValue();
-            ci.p4 p4Var = this.v;
-            if (p4Var == null || (h1Var = (ci.h1) p4Var.b) == null || h1Var.g() != longValue) {
+            ci.o4 o4Var = this.v;
+            if (o4Var == null || (h1Var = (ci.h1) o4Var.b) == null || h1Var.g() != longValue) {
                 return;
             }
             boolean n10 = ((ci.h1) this.v.b).n();
@@ -255,7 +255,7 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
     public final void e(boolean z10, boolean z11) {
         if (z10 || !z11) {
             if (z11) {
-                kk.t(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), bs.h, 320L);
+                lk.t(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), bs.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z10 ? 1.0f : 0.0f);
@@ -376,10 +376,10 @@ public final class d4 extends FrameLayout implements RendererCommon.RendererEven
     @Override // org.webrtc.RendererCommon.RendererEvents
     public final void onFirstFrameRendered() {
         if (!this.r) {
-            ci.p4 p4Var = this.v;
-            if (p4Var != null && !p4Var.a) {
-                p4Var.a = true;
-                p4Var.b();
+            ci.o4 o4Var = this.v;
+            if (o4Var != null && !o4Var.a) {
+                o4Var.a = true;
+                o4Var.b();
             }
             this.r = true;
         }

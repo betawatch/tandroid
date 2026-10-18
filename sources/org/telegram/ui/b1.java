@@ -39,9 +39,9 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0, gi.d4, kg1, r0.n, org.telegram.ui.ActionBar.a2, sg.t, org.telegram.ui.Components.ke0, org.telegram.ui.Components.xl0, org.telegram.ui.Components.mw0, ci.v9, CameraView.CameraViewDelegate, Utilities.Callback5, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.jk0, MessagesStorage.BooleanCallback, org.telegram.ui.Cells.f0 {
+public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0, gi.d4, kg1, r0.n, org.telegram.ui.ActionBar.a2, sg.t, org.telegram.ui.Components.ke0, org.telegram.ui.Components.xl0, org.telegram.ui.Components.mw0, ci.u9, CameraView.CameraViewDelegate, Utilities.Callback5, LanguageDetector.ExceptionCallback, org.telegram.ui.Components.jk0, MessagesStorage.BooleanCallback, org.telegram.ui.Cells.f0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -217,7 +217,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
                 org.telegram.ui.Components.xj0 xj0Var = new org.telegram.ui.Components.xj0(context);
                 xj0Var.setAutoRepeat(true);
                 xj0Var.f(R.raw.utyan_cache, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, null);
-                u6Var.addView(xj0Var, w7.z5.a(150.0f, 0.0f, 16.0f, 0.0f, 0.0f, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 49));
+                u6Var.addView(xj0Var, w7.z5.d(ImageReceiver.DEFAULT_CROSSFADE_DURATION, 150.0f, 49, 0.0f, 16.0f, 0.0f, 0.0f));
                 xj0Var.d();
                 org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, false, true, true);
                 u6Var.a = q6Var;
@@ -228,7 +228,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
                 q6Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
                 q6Var.setTextSize(AndroidUtilities.dp(24.0f));
                 q6Var.setTypeface(AndroidUtilities.bold());
-                u6Var.addView(q6Var, w7.z5.a(32.0f, 0.0f, 176.0f, 0.0f, 0.0f, -1, 49));
+                u6Var.addView(q6Var, w7.z5.d(-1, 32.0f, 49, 0.0f, 176.0f, 0.0f, 0.0f));
                 t6 t6Var = new t6(context);
                 Paint paint = new Paint(1);
                 t6Var.b = paint;
@@ -239,18 +239,18 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
                 paint.setColor(org.telegram.ui.ActionBar.h6.x0(null, i14, false));
                 paint2.setColor(org.telegram.ui.ActionBar.h6.m1(0.2f, org.telegram.ui.ActionBar.h6.x0(null, i14, false)));
                 u6Var.b = t6Var;
-                u6Var.addView(t6Var, w7.z5.a(5.0f, 0.0f, 226.0f, 0.0f, 0.0f, 240, 49));
+                u6Var.addView(t6Var, w7.z5.d(240, 5.0f, 49, 0.0f, 226.0f, 0.0f, 0.0f));
                 TextView textView = new TextView(context);
                 textView.setGravity(1);
                 org.telegram.messenger.g0.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, i13, false), 1, textView);
                 textView.setText(LocaleController.getString(R.string.ClearingCache));
-                u6Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 261.0f, 0.0f, 0.0f, -1, 49));
+                u6Var.addView(textView, w7.z5.d(-1, -2.0f, 49, 0.0f, 261.0f, 0.0f, 0.0f));
                 TextView textView2 = new TextView(context);
                 textView2.setGravity(1);
                 textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
                 textView2.setTextSize(1, 14.0f);
                 textView2.setText(LocaleController.getString(R.string.ClearingCacheDescription));
-                u6Var.addView(textView2, w7.z5.a(-2.0f, 0.0f, 289.0f, 0.0f, 0.0f, 240, 49));
+                u6Var.addView(textView2, w7.z5.d(240, -2.0f, 49, 0.0f, 289.0f, 0.0f, 0.0f));
                 u6Var.a(0.0f);
                 r6Var.setCustomView(u6Var);
                 boolean[] zArr = {false};
@@ -324,7 +324,7 @@ public final /* synthetic */ class b1 implements org.telegram.ui.Components.xo0,
         SharedConfig.getPreferences().edit().putInt("cache_limit", ((Integer) ((ArrayList) this.b).get(i10)).intValue()).apply();
     }
 
-    @Override // ci.v9
+    @Override // ci.u9
     public void i(Canvas canvas, RectF rectF, float f7) {
         k8 k8Var = (k8) ((g) this.b).b;
         Paint paint = k8Var.w;

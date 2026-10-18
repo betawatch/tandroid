@@ -13,9 +13,9 @@ import org.telegram.ui.Components.al;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.i5;
 import org.telegram.ui.Components.p6;
-import org.telegram.ui.Wallet.o9;
+import org.telegram.ui.Wallet.i9;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a1 extends EditTextBoldCursor {
     public final /* synthetic */ int b = 0;
@@ -60,7 +60,7 @@ public final class a1 extends EditTextBoldCursor {
                 break;
             default:
                 super.dispatchDraw(canvas);
-                int a11 = this.d.a(h6.w0(this.c <= 0 ? h6.p7 : h6.P5, ((o9) this.f).getResourceProvider()), false);
+                int a11 = this.d.a(h6.w0(this.c <= 0 ? h6.p7 : h6.P5, ((i9) this.f).getResourceProvider()), false);
                 p6 p6Var3 = this.e;
                 p6Var3.u(a11);
                 int dp2 = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
@@ -149,9 +149,9 @@ public final class a1 extends EditTextBoldCursor {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a1(o9 o9Var, Activity activity) {
+    public a1(i9 i9Var, Activity activity) {
         super(activity);
-        this.f = o9Var;
+        this.f = i9Var;
         this.c = 960;
         this.d = new i5(this);
         p6 p6Var = new p6(false, true, true);

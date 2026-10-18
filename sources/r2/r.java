@@ -34,11 +34,12 @@ import ki.t1;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.c1;
-import u2.f0;
+import org.telegram.ui.web.g2;
+import u2.g0;
 import v7.f8;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class r extends i2.b {
     public static final byte[] Y0 = {0, 0, 1, 103, 66, -64, 11, -38, 37, -112, 0, 0, 1, 104, -50, 15, 19, 32, 0, 0, 1, 101, -120, -124, 13, -50, 113, 24, -96, 0, 47, -65, 28, 49, -61, 39, 93, 120};
@@ -288,7 +289,7 @@ public abstract class r extends i2.b {
         int i12;
         u6.p(!this.K0);
         g gVar2 = this.P;
-        if (gVar2.h()) {
+        if (gVar2.i()) {
             ByteBuffer byteBuffer = gVar2.c;
             int i13 = this.v0;
             int i14 = gVar2.s;
@@ -316,7 +317,7 @@ public abstract class r extends i2.b {
             this.z0 = false;
         }
         if (this.A0) {
-            if (gVar.h()) {
+            if (gVar.i()) {
                 return true;
             }
             this.y0 = false;
@@ -455,7 +456,7 @@ public abstract class r extends i2.b {
                         }
                     }
                 }
-                if (gVar.h()) {
+                if (gVar.i()) {
                     long j13 = this.w;
                     if (W(j13, gVar.r) != W(j13, hVar.e)) {
                         break;
@@ -467,10 +468,10 @@ public abstract class r extends i2.b {
                 r12 = 0;
             }
         }
-        if (gVar.h()) {
+        if (gVar.i()) {
             gVar.f();
         }
-        return gVar.h() || this.J0 || this.A0;
+        return gVar.i() || this.J0 || this.A0;
     }
 
     public abstract i2.f H(o oVar, b2.w wVar, b2.w wVar2, boolean z10);
@@ -638,7 +639,7 @@ public abstract class r extends i2.b {
             qf.b bVar = this.c;
             bVar.z();
             try {
-                lVar.f(new p2.b(8, this, bVar));
+                lVar.g(new g2(9, this, bVar));
                 int i13 = this.T.get();
                 if (i13 == -3) {
                     if (k()) {
@@ -1564,7 +1565,7 @@ public abstract class r extends i2.b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void u(b2.w[] wVarArr, long j10, long j11, f0 f0Var) {
+    public void u(b2.w[] wVarArr, long j10, long j11, g0 g0Var) {
         if (this.P0.c == -9223372036854775807L) {
             t0(new q(-9223372036854775807L, j10, j11));
             if (this.S0) {

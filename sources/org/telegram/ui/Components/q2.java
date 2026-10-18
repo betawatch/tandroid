@@ -38,7 +38,7 @@ import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e5, org.telegram.ui.Cells.r5, ImageReceiver.ImageReceiverDelegate, cj, org.telegram.ui.ActionBar.l1, yl0, MessagesStorage.BooleanCallback, xl0, zl0 {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
                 xeVar.setEffect(0L);
                 break;
             case 7:
-                ((ng) this.b).o((t0.j) this.c, z10, i10, i11);
+                ((ng) this.b).o((t0.i) this.c, z10, i10, i11);
                 break;
             case 8:
                 ol olVar = (ol) this.b;
@@ -261,7 +261,7 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.k5.a(this, i10, str, drawable);
+        org.telegram.messenger.l5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.a2
@@ -371,7 +371,7 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
                 runnable2.run();
                 TLRPC.TL_stickers_deleteStickerSet tL_stickers_deleteStickerSet = new TLRPC.TL_stickers_deleteStickerSet();
                 tL_stickers_deleteStickerSet.stickerset = MediaDataController.getInputStickerSet(stickerSet);
-                ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_stickers_deleteStickerSet, new ci.e6(15));
+                ConnectionsManager.getInstance(UserConfig.selectedAccount).sendRequest(tL_stickers_deleteStickerSet, new ci.d6(15));
                 break;
             case 25:
                 Context context = (Context) this.b;
@@ -421,7 +421,7 @@ public final /* synthetic */ class q2 implements org.telegram.ui.ActionBar.a2, e
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.k5.b(this, imageReceiver);
+        org.telegram.messenger.l5.b(this, imageReceiver);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

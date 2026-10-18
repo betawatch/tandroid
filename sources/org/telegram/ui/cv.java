@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cv extends org.telegram.ui.ActionBar.n2 {
     public static final org.telegram.ui.Components.es0 x = new org.telegram.ui.Components.es0(2);
@@ -100,7 +100,7 @@ public final class cv extends org.telegram.ui.ActionBar.n2 {
         while (i10 < bvVarArr.length) {
             bv bvVar = new bv(this, context);
             bvVarArr[i10] = bvVar;
-            avVar.addView(bvVar, w7.z5.d(-1.0f, -1));
+            avVar.addView(bvVar, w7.z5.c(-1.0f, -1));
             if (i10 == 0) {
                 bv bvVar2 = bvVarArr[i10];
                 bvVar2.a = eyVar;
@@ -124,10 +124,10 @@ public final class cv extends org.telegram.ui.ActionBar.n2 {
             bv bvVar5 = bvVarArr[i10];
             bvVar5.c = bvVar5.a.getActionBar();
             bv bvVar6 = bvVarArr[i10];
-            bvVar6.addView(bvVar6.b, w7.z5.d(-1.0f, -1));
+            bvVar6.addView(bvVar6.b, w7.z5.c(-1.0f, -1));
             AndroidUtilities.removeFromParent(bvVarArr[i10].c);
             bv bvVar7 = bvVarArr[i10];
-            bvVar7.addView(bvVar7.c, w7.z5.d(-2.0f, -1));
+            bvVar7.addView(bvVar7.c, w7.z5.c(-2.0f, -1));
             bvVarArr[i10].c.setVisibility(8);
             int i11 = 0;
             while (i11 < 2) {
@@ -142,7 +142,7 @@ public final class cv extends org.telegram.ui.ActionBar.n2 {
             f10 = f7;
         }
         float f11 = f10;
-        avVar.addView(this.actionBar, w7.z5.d(-2.0f, -1));
+        avVar.addView(this.actionBar, w7.z5.c(-2.0f, -1));
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip2 = this.e;
         if (scrollSlidingTextTabStrip2 != null) {
             scrollSlidingTextTabStrip2.a(0, LocaleController.getString(R.string.BlockUserChatsTitle), null);

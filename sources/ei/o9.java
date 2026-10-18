@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.v30;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class o9 extends ScrollView {
     public final Paint E;
@@ -73,7 +73,7 @@ public abstract class o9 extends ScrollView {
         AndroidUtilities.setScrollViewEdgeEffectColor(this, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
         n9 n9Var = new n9(this, context);
         this.c = n9Var;
-        addView(n9Var, w7.z5.d(-2.0f, -1));
+        addView(n9Var, w7.z5.c(-2.0f, -1));
         e2 e2Var = new e2(this, context, 1);
         this.a = e2Var;
         if (Build.VERSION.SDK_INT >= 25) {

@@ -13,14 +13,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.n11;
 import org.telegram.ui.Components.st;
 import org.telegram.ui.Components.xj0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class x2 extends LinearLayout {
     public static final /* synthetic */ int w = 0;
@@ -46,7 +46,7 @@ public final class x2 extends LinearLayout {
         xj0 xj0Var = new xj0(context);
         this.f = xj0Var;
         xj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(xj0Var, w7.z5.a(100.0f, 52.0f, 4.0f, 52.0f, 0.0f, 100, 17));
+        addView(xj0Var, w7.z5.d(100, 100.0f, 17, 52.0f, 4.0f, 52.0f, 0.0f));
         xj0Var.setOnClickListener(new a(this, 3));
         TextView textView = new TextView(context);
         this.h = textView;
@@ -54,7 +54,7 @@ public final class x2 extends LinearLayout {
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
-        addView(textView, w7.z5.a(-2.0f, 52.0f, 10.0f, 52.0f, 0.0f, -1, 51));
+        addView(textView, w7.z5.d(-1, -2.0f, 51, 52.0f, 10.0f, 52.0f, 0.0f));
         n11 n11Var = new n11(context);
         this.n = n11Var;
         n11Var.setFactory(new ViewSwitcher.ViewFactory() { // from class: org.telegram.ui.Cells.u2
@@ -70,7 +70,7 @@ public final class x2 extends LinearLayout {
         });
         n11Var.setInAnimation(context, R.anim.alpha_in);
         n11Var.setOutAnimation(context, R.anim.alpha_out);
-        addView(n11Var, w7.z5.a(-2.0f, 52.0f, 7.0f, 52.0f, 0.0f, -1, 51));
+        addView(n11Var, w7.z5.d(-1, -2.0f, 51, 52.0f, 7.0f, 52.0f, 0.0f));
     }
 
     public final void a(boolean z10) {
@@ -162,7 +162,7 @@ public final class x2 extends LinearLayout {
         }
         ArrayList<TLRPC.RecentMeUrl> arrayList = MessagesController.getInstance(this.v).hintDialogs;
         if (!arrayList.isEmpty()) {
-            size2 = kk.y(50.0f, (arrayList.size() + (arrayList.size() * AndroidUtilities.dp(72.0f))) - 1, size2);
+            size2 = lk.y(50.0f, (arrayList.size() + (arrayList.size() * AndroidUtilities.dp(72.0f))) - 1, size2);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
     }

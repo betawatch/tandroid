@@ -12,7 +12,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yd0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -41,8 +41,8 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                                 fe0 fe0Var2 = fe0Var;
                                 int i12 = fe0Var2.a;
                                 ei.e2 e2Var = fe0Var2.c;
-                                fg0 fg0Var = fe0Var2.a0;
-                                fg0Var.k1(false, true);
+                                eg0 eg0Var = fe0Var2.a0;
+                                eg0Var.k1(false, true);
                                 TLRPC.TL_error tL_error2 = tL_error;
                                 TLRPC.TL_auth_signIn tL_auth_signIn2 = tL_auth_signIn;
                                 if (tL_error2 != null) {
@@ -50,19 +50,19 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                                         fe0Var2.R = false;
                                         if (i12 != 3) {
                                             if (tL_error2.text.contains("PHONE_NUMBER_INVALID")) {
-                                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
+                                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
                                             } else if (tL_error2.text.contains("PHONE_CODE_EMPTY") || tL_error2.text.contains("PHONE_CODE_INVALID")) {
                                                 fe0Var2.s(false);
                                                 e2Var.post(new ce0(fe0Var2, 0));
                                                 break;
                                             } else if (tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
                                                 fe0Var2.c(true);
-                                                fg0Var.u1(0, true, null, true);
-                                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                                                eg0Var.u1(0, true, null, true);
+                                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                                             } else if (tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
+                                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                                             } else {
-                                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error2.text);
+                                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error2.text);
                                             }
                                             e2Var.setText("");
                                             e2Var.requestFocus();
@@ -70,27 +70,27 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                                         }
                                     } else {
                                         TL_account.getPassword getpassword = new TL_account.getPassword();
-                                        i11 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+                                        i11 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
                                         ConnectionsManager.getInstance(i11).sendRequest(getpassword, new yd0(fe0Var2, tL_auth_signIn2, 1), 10);
                                         fe0Var2.r();
                                     }
                                 } else {
                                     fe0Var2.R = false;
-                                    fg0Var.v1(false, true);
+                                    eg0Var.v1(false, true);
                                     fe0Var2.r();
                                     TLObject tLObject2 = tLObject;
                                     if (tLObject2 instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
                                         TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject2).terms_of_service;
                                         if (tL_help_termsOfService != null) {
-                                            fg0Var.p0 = tL_help_termsOfService;
+                                            eg0Var.p0 = tL_help_termsOfService;
                                         }
                                         Bundle bundle = new Bundle();
                                         bundle.putString("phoneFormated", fe0Var2.G);
                                         bundle.putString("phoneHash", fe0Var2.H);
                                         bundle.putString("code", tL_auth_signIn2.phone_code);
-                                        fg0Var.u1(5, true, bundle, false);
+                                        eg0Var.u1(5, true, bundle, false);
                                     } else {
-                                        fg0Var.o1((TLRPC.TL_auth_authorization) tLObject2, false);
+                                        eg0Var.o1((TLRPC.TL_auth_authorization) tLObject2, false);
                                     }
                                 }
                                 if (i12 == 3) {
@@ -102,16 +102,16 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                             default:
                                 fe0 fe0Var3 = fe0Var;
                                 fe0Var3.R = false;
-                                fg0 fg0Var2 = fe0Var3.a0;
-                                fg0Var2.v1(false, true);
+                                eg0 eg0Var2 = fe0Var3.a0;
+                                eg0Var2.v1(false, true);
                                 TLRPC.TL_error tL_error3 = tL_error;
                                 if (tL_error3 != null) {
-                                    fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error3.text);
+                                    eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error3.text);
                                     break;
                                 } else {
                                     TL_account.Password password = (TL_account.Password) tLObject;
                                     if (!TwoStepVerificationActivity.i0(password, true)) {
-                                        org.telegram.ui.Components.f5.w0(fg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                                        org.telegram.ui.Components.f5.w0(eg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                                         break;
                                     } else {
                                         Bundle bundle2 = new Bundle();
@@ -121,7 +121,7 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                                         bundle2.putString("phoneFormated", fe0Var3.G);
                                         bundle2.putString("phoneHash", fe0Var3.H);
                                         bundle2.putString("code", tL_auth_signIn.phone_code);
-                                        fg0Var2.u1(6, true, bundle2, false);
+                                        eg0Var2.u1(6, true, bundle2, false);
                                         break;
                                     }
                                 }
@@ -142,8 +142,8 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                                 fe0 fe0Var22 = fe0Var2;
                                 int i12 = fe0Var22.a;
                                 ei.e2 e2Var = fe0Var22.c;
-                                fg0 fg0Var = fe0Var22.a0;
-                                fg0Var.k1(false, true);
+                                eg0 eg0Var = fe0Var22.a0;
+                                eg0Var.k1(false, true);
                                 TLRPC.TL_error tL_error2 = tL_error;
                                 TLRPC.TL_auth_signIn tL_auth_signIn22 = tL_auth_signIn2;
                                 if (tL_error2 != null) {
@@ -151,19 +151,19 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                                         fe0Var22.R = false;
                                         if (i12 != 3) {
                                             if (tL_error2.text.contains("PHONE_NUMBER_INVALID")) {
-                                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
+                                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("InvalidPhoneNumber", R.string.InvalidPhoneNumber));
                                             } else if (tL_error2.text.contains("PHONE_CODE_EMPTY") || tL_error2.text.contains("PHONE_CODE_INVALID")) {
                                                 fe0Var22.s(false);
                                                 e2Var.post(new ce0(fe0Var22, 0));
                                                 break;
                                             } else if (tL_error2.text.contains("PHONE_CODE_EXPIRED")) {
                                                 fe0Var22.c(true);
-                                                fg0Var.u1(0, true, null, true);
-                                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
+                                                eg0Var.u1(0, true, null, true);
+                                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("CodeExpired", R.string.CodeExpired));
                                             } else if (tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
+                                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("FloodWait", R.string.FloodWait));
                                             } else {
-                                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error2.text);
+                                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred) + "\n" + tL_error2.text);
                                             }
                                             e2Var.setText("");
                                             e2Var.requestFocus();
@@ -171,27 +171,27 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                                         }
                                     } else {
                                         TL_account.getPassword getpassword = new TL_account.getPassword();
-                                        i112 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+                                        i112 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
                                         ConnectionsManager.getInstance(i112).sendRequest(getpassword, new yd0(fe0Var22, tL_auth_signIn22, 1), 10);
                                         fe0Var22.r();
                                     }
                                 } else {
                                     fe0Var22.R = false;
-                                    fg0Var.v1(false, true);
+                                    eg0Var.v1(false, true);
                                     fe0Var22.r();
                                     TLObject tLObject2 = tLObject;
                                     if (tLObject2 instanceof TLRPC.TL_auth_authorizationSignUpRequired) {
                                         TLRPC.TL_help_termsOfService tL_help_termsOfService = ((TLRPC.TL_auth_authorizationSignUpRequired) tLObject2).terms_of_service;
                                         if (tL_help_termsOfService != null) {
-                                            fg0Var.p0 = tL_help_termsOfService;
+                                            eg0Var.p0 = tL_help_termsOfService;
                                         }
                                         Bundle bundle = new Bundle();
                                         bundle.putString("phoneFormated", fe0Var22.G);
                                         bundle.putString("phoneHash", fe0Var22.H);
                                         bundle.putString("code", tL_auth_signIn22.phone_code);
-                                        fg0Var.u1(5, true, bundle, false);
+                                        eg0Var.u1(5, true, bundle, false);
                                     } else {
-                                        fg0Var.o1((TLRPC.TL_auth_authorization) tLObject2, false);
+                                        eg0Var.o1((TLRPC.TL_auth_authorization) tLObject2, false);
                                     }
                                 }
                                 if (i12 == 3) {
@@ -203,16 +203,16 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                             default:
                                 fe0 fe0Var3 = fe0Var2;
                                 fe0Var3.R = false;
-                                fg0 fg0Var2 = fe0Var3.a0;
-                                fg0Var2.v1(false, true);
+                                eg0 eg0Var2 = fe0Var3.a0;
+                                eg0Var2.v1(false, true);
                                 TLRPC.TL_error tL_error3 = tL_error;
                                 if (tL_error3 != null) {
-                                    fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error3.text);
+                                    eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error3.text);
                                     break;
                                 } else {
                                     TL_account.Password password = (TL_account.Password) tLObject;
                                     if (!TwoStepVerificationActivity.i0(password, true)) {
-                                        org.telegram.ui.Components.f5.w0(fg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                                        org.telegram.ui.Components.f5.w0(eg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                                         break;
                                     } else {
                                         Bundle bundle2 = new Bundle();
@@ -222,7 +222,7 @@ public final /* synthetic */ class yd0 implements RequestDelegate {
                                         bundle2.putString("phoneFormated", fe0Var3.G);
                                         bundle2.putString("phoneHash", fe0Var3.H);
                                         bundle2.putString("code", tL_auth_signIn2.phone_code);
-                                        fg0Var2.u1(6, true, bundle2, false);
+                                        eg0Var2.u1(6, true, bundle2, false);
                                         break;
                                     }
                                 }

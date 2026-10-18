@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class x70 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     public final org.telegram.ui.Components.x90 T;
@@ -56,7 +56,7 @@ public final class x70 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.H8, false));
         View view = new View(context);
         view.setBackground(org.telegram.ui.ActionBar.h6.V0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.b7, null)));
-        frameLayout.addView(view, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(view, w7.z5.c(-1.0f, -1));
         frameLayout.setTag(R.id.fit_width_tag, 1);
         a(frameLayout, w7.z5.n(-1, 8));
         org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(this, context);

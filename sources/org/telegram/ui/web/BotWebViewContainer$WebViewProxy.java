@@ -5,15 +5,15 @@ import java.io.Serializable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ay0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public class BotWebViewContainer$WebViewProxy {
-    public a1 a;
-    public final x0 b;
+    public b1 a;
+    public final y0 b;
 
-    public BotWebViewContainer$WebViewProxy(x0 x0Var, a1 a1Var) {
-        this.b = x0Var;
-        this.a = a1Var;
+    public BotWebViewContainer$WebViewProxy(y0 y0Var, b1 b1Var) {
+        this.b = y0Var;
+        this.a = b1Var;
     }
 
     @JavascriptInterface
@@ -27,6 +27,6 @@ public class BotWebViewContainer$WebViewProxy {
     /* JADX WARN: Multi-variable type inference failed */
     @JavascriptInterface
     public void resolveShare(String str, byte[] bArr, String str2, String str3) {
-        AndroidUtilities.runOnUIThread(new b0((Object) this, str, (Serializable) bArr, str2, str3, 5));
+        AndroidUtilities.runOnUIThread(new c0((Object) this, str, (Serializable) bArr, str2, str3, 5));
     }
 }

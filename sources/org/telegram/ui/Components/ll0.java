@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class ll0 {
     public final /* synthetic */ int a;
@@ -222,7 +222,7 @@ public class ll0 {
         s4.g0 g0Var3 = im0Var.w;
         eVar.d(g0Var3, g0Var3);
         im0Var.u0.f = true;
-        im0Var.e.M();
+        im0Var.e.R();
         eVar.l();
         jl0 jl0Var = g0Var2 instanceof jl0 ? (jl0) g0Var2 : null;
         b0Var.i1(i10, i11, z10);
@@ -261,6 +261,6 @@ public class ll0 {
         this.f = eVar.d;
         this.h = vVar2;
         this.i = collection != null ? new ArrayList(collection) : null;
-        eVar.a.postDelayed(new org.telegram.ui.web.z1(this, 3), 15000L);
+        eVar.a.postDelayed(new org.telegram.ui.web.a2(this, 3), 15000L);
     }
 }

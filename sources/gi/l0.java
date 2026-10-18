@@ -14,7 +14,7 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.a6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class l0 extends FrameLayout {
     public final wh.n a;
@@ -56,7 +56,7 @@ public final class l0 extends FrameLayout {
         } else {
             imageView.setVisibility(8);
         }
-        addView(imageView, z5.a(12.0f, 0.0f, 8.0f, 8.0f, 0.0f, 12, 53));
+        addView(imageView, z5.d(12, 12.0f, 53, 0.0f, 8.0f, 8.0f, 0.0f));
         nVar.setText(spannableStringBuilder);
     }
 

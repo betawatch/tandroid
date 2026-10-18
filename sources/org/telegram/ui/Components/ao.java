@@ -15,7 +15,7 @@ import org.telegram.messenger.Emoji;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.ua1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ao implements TextWatcher {
     public final /* synthetic */ int a;
@@ -188,40 +188,40 @@ public final class ao implements TextWatcher {
                 }
                 break;
             case 7:
-                qg.w wVar = (qg.w) obj;
-                qg.y yVar = wVar.f;
-                if (!wVar.e && ((String) this.c) != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(((String) this.c).toString(), editable.toString())) {
+                qg.v vVar = (qg.v) obj;
+                qg.x xVar = vVar.f;
+                if (!vVar.e && ((String) this.c) != null && editable != null && !TextUtils.isEmpty(editable) && !Objects.equals(((String) this.c).toString(), editable.toString())) {
                     int b12 = w7.r.b(Integer.parseInt(editable.toString()), 0, 255);
-                    int i12 = wVar.d;
-                    int argb = i12 != 1 ? i12 != 2 ? Color.argb(Color.alpha(yVar.f), b12, Color.green(yVar.f), Color.blue(yVar.f)) : Color.argb(Color.alpha(yVar.f), Color.red(yVar.f), Color.green(yVar.f), b12) : Color.argb(Color.alpha(yVar.f), Color.red(yVar.f), b12, Color.blue(yVar.f));
-                    int i13 = qg.y.s;
-                    yVar.n(argb, 5);
+                    int i12 = vVar.d;
+                    int argb = i12 != 1 ? i12 != 2 ? Color.argb(Color.alpha(xVar.f), b12, Color.green(xVar.f), Color.blue(xVar.f)) : Color.argb(Color.alpha(xVar.f), Color.red(xVar.f), Color.green(xVar.f), b12) : Color.argb(Color.alpha(xVar.f), Color.red(xVar.f), b12, Color.blue(xVar.f));
+                    int i13 = qg.x.s;
+                    xVar.n(argb, 5);
                     break;
                 }
                 break;
             case 8:
                 ((String[]) this.c)[0] = editable.toString();
-                ((yh.f3) obj).W2.N(true);
+                ((yh.e3) obj).W2.N(true);
                 break;
             case 9:
                 ((String[]) this.c)[0] = editable.toString();
-                ((yh.d3) obj).W2.N(true);
+                ((yh.c3) obj).W2.N(true);
                 break;
             case 10:
                 ((String[]) this.c)[0] = editable.toString();
-                ((yh.e3) obj).W2.N(true);
+                ((yh.d3) obj).W2.N(true);
                 break;
             case 11:
                 ((String[]) this.c)[0] = editable.toString();
-                ((yh.b4) obj).W2.N(true);
+                ((yh.a4) obj).W2.N(true);
                 break;
             case 12:
                 ((String[]) this.c)[0] = editable.toString();
-                ((yh.c4) obj).W2.N(true);
+                ((yh.b4) obj).W2.N(true);
                 break;
             default:
                 ((String[]) this.c)[0] = editable.toString();
-                ((yh.d4) obj).W2.N(true);
+                ((yh.c4) obj).W2.N(true);
                 break;
         }
     }
@@ -250,9 +250,9 @@ public final class ao implements TextWatcher {
         this.b = obj2;
     }
 
-    public ao(qg.w wVar) {
+    public ao(qg.v vVar) {
         this.a = 7;
-        this.b = wVar;
+        this.b = vVar;
     }
 
     private final void a(Editable editable) {

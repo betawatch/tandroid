@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.webrtc.EglRenderer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z70 implements Runnable {
     public final /* synthetic */ int a;
@@ -478,13 +478,13 @@ public final /* synthetic */ class z70 implements Runnable {
                 }
                 return;
             case 15:
-                org.telegram.ui.web.k kVar = (org.telegram.ui.web.k) this.c;
+                org.telegram.ui.web.l lVar = (org.telegram.ui.web.l) this.c;
                 String str2 = (String) this.d;
                 boolean z24 = this.b;
-                org.telegram.ui.web.c cVar = kVar.w;
-                ArrayList arrayList4 = kVar.x;
+                org.telegram.ui.web.d dVar = lVar.w;
+                ArrayList arrayList4 = lVar.x;
                 arrayList4.clear();
-                org.telegram.ui.web.m1.a().getClass();
+                org.telegram.ui.web.n1.a().getClass();
                 ArrayList arrayList5 = new ArrayList();
                 try {
                     JSONArray jSONArray = new JSONArray(str2).getJSONArray(1);
@@ -514,9 +514,9 @@ public final /* synthetic */ class z70 implements Runnable {
                     }
                 }
                 arrayList4.addAll(arrayList5);
-                cVar.W2.N(true);
+                dVar.W2.N(true);
                 if (z24 != (!arrayList4.isEmpty())) {
-                    cVar.V2.h1(0, 0);
+                    dVar.V2.h1(0, 0);
                     return;
                 }
                 return;
@@ -524,17 +524,17 @@ public final /* synthetic */ class z70 implements Runnable {
                 ((EglRenderer) this.c).lambda$releaseEglSurface$5(this.b, (Runnable) this.d);
                 return;
             case 17:
-                si.u uVar = (si.u) this.c;
+                si.t tVar = (si.t) this.c;
                 boolean z25 = this.b;
                 Runnable runnable = (Runnable) this.d;
-                if (uVar.f) {
-                    uVar.F = z25;
-                    Size size2 = z25 ? uVar.c : uVar.b;
-                    uVar.a = size2;
-                    int i25 = z25 ? uVar.l : uVar.k;
-                    uVar.j = i25;
-                    uVar.m = z25 ? uVar.o : uVar.n;
-                    si.d0 d0Var = uVar.N;
+                if (tVar.f) {
+                    tVar.F = z25;
+                    Size size2 = z25 ? tVar.c : tVar.b;
+                    tVar.a = size2;
+                    int i25 = z25 ? tVar.l : tVar.k;
+                    tVar.j = i25;
+                    tVar.m = z25 ? tVar.o : tVar.n;
+                    si.d0 d0Var = tVar.N;
                     if (d0Var != null) {
                         d0Var.c = size2;
                         d0Var.d = i25;
@@ -543,42 +543,42 @@ public final /* synthetic */ class z70 implements Runnable {
                         d0Var.A = false;
                         d0Var.z = 0L;
                     }
-                    uVar.Q = -1L;
-                    uVar.u0 = runnable;
-                    uVar.i.b("GL dual input selected: input=" + (z25 ? 1 : 0));
+                    tVar.Q = -1L;
+                    tVar.u0 = runnable;
+                    tVar.i.b("GL dual input selected: input=" + (z25 ? 1 : 0));
                     return;
                 }
                 return;
             default:
                 l2.f fVar = (l2.f) this.c;
-                si.i iVar = (si.i) this.d;
+                si.h hVar = (si.h) this.d;
                 boolean z26 = this.b;
                 si.s0 s0Var = (si.s0) fVar.b;
                 int i26 = s0Var.W;
                 if (i26 == 7 || i26 == 8 || i26 == 9 || i26 == 10) {
                     return;
                 }
-                si.l0 l0Var = iVar.a;
-                si.n0 n0Var = iVar.c;
-                si.m0 m0Var = iVar.b;
+                si.l0 l0Var = hVar.a;
+                si.n0 n0Var = hVar.c;
+                si.m0 m0Var = hVar.b;
                 s0Var.q = l0Var;
                 s0Var.r = m0Var;
                 s0Var.s = n0Var;
-                s0Var.t = iVar.f;
+                s0Var.t = hVar.f;
                 if (l0Var != si.l0.a) {
-                    if (iVar.g) {
+                    if (hVar.g) {
                         i12 = 2;
                         s0Var.X = i12;
                         s0Var.n();
-                        si.o oVar = s0Var.m;
+                        si.n nVar = s0Var.m;
                         StringBuilder sb2 = new StringBuilder("camera configured: facing=");
                         sb2.append(l0Var);
                         sb2.append(", mode=");
                         sb2.append(m0Var);
                         sb2.append(", preview=");
-                        sb2.append(iVar.d);
+                        sb2.append(hVar.d);
                         sb2.append(", recording=");
-                        sb2.append(iVar.e);
+                        sb2.append(hVar.e);
                         sb2.append(", fps=");
                         sb2.append(n0Var.a);
                         sb2.append(", maxZoom=");
@@ -588,7 +588,7 @@ public final /* synthetic */ class z70 implements Runnable {
                         sb2.append(i27 == 1 ? i27 != 2 ? i27 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                         sb2.append(", switch=");
                         sb2.append(z26);
-                        oVar.b(sb2.toString());
+                        nVar.b(sb2.toString());
                         if (z26) {
                         }
                         s0Var.w = false;
@@ -607,15 +607,15 @@ public final /* synthetic */ class z70 implements Runnable {
                     i12 = 1;
                     s0Var.X = i12;
                     s0Var.n();
-                    si.o oVar2 = s0Var.m;
+                    si.n nVar2 = s0Var.m;
                     StringBuilder sb22 = new StringBuilder("camera configured: facing=");
                     sb22.append(l0Var);
                     sb22.append(", mode=");
                     sb22.append(m0Var);
                     sb22.append(", preview=");
-                    sb22.append(iVar.d);
+                    sb22.append(hVar.d);
                     sb22.append(", recording=");
-                    sb22.append(iVar.e);
+                    sb22.append(hVar.e);
                     sb22.append(", fps=");
                     sb22.append(n0Var.a);
                     sb22.append(", maxZoom=");
@@ -625,7 +625,7 @@ public final /* synthetic */ class z70 implements Runnable {
                     sb22.append(i272 == 1 ? i272 != 2 ? i272 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                     sb22.append(", switch=");
                     sb22.append(z26);
-                    oVar2.b(sb22.toString());
+                    nVar2.b(sb22.toString());
                     if (z26) {
                     }
                     s0Var.w = false;
@@ -645,15 +645,15 @@ public final /* synthetic */ class z70 implements Runnable {
                     i12 = 3;
                     s0Var.X = i12;
                     s0Var.n();
-                    si.o oVar22 = s0Var.m;
+                    si.n nVar22 = s0Var.m;
                     StringBuilder sb222 = new StringBuilder("camera configured: facing=");
                     sb222.append(l0Var);
                     sb222.append(", mode=");
                     sb222.append(m0Var);
                     sb222.append(", preview=");
-                    sb222.append(iVar.d);
+                    sb222.append(hVar.d);
                     sb222.append(", recording=");
-                    sb222.append(iVar.e);
+                    sb222.append(hVar.e);
                     sb222.append(", fps=");
                     sb222.append(n0Var.a);
                     sb222.append(", maxZoom=");
@@ -663,7 +663,7 @@ public final /* synthetic */ class z70 implements Runnable {
                     sb222.append(i2722 == 1 ? i2722 != 2 ? i2722 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                     sb222.append(", switch=");
                     sb222.append(z26);
-                    oVar22.b(sb222.toString());
+                    nVar22.b(sb222.toString());
                     if (!z26 || s0Var.w) {
                         s0Var.w = false;
                         org.telegram.ui.Components.l60 l60Var22 = (org.telegram.ui.Components.l60) s0Var.d.b;
@@ -683,15 +683,15 @@ public final /* synthetic */ class z70 implements Runnable {
                 i12 = 1;
                 s0Var.X = i12;
                 s0Var.n();
-                si.o oVar222 = s0Var.m;
+                si.n nVar222 = s0Var.m;
                 StringBuilder sb2222 = new StringBuilder("camera configured: facing=");
                 sb2222.append(l0Var);
                 sb2222.append(", mode=");
                 sb2222.append(m0Var);
                 sb2222.append(", preview=");
-                sb2222.append(iVar.d);
+                sb2222.append(hVar.d);
                 sb2222.append(", recording=");
-                sb2222.append(iVar.e);
+                sb2222.append(hVar.e);
                 sb2222.append(", fps=");
                 sb2222.append(n0Var.a);
                 sb2222.append(", maxZoom=");
@@ -701,7 +701,7 @@ public final /* synthetic */ class z70 implements Runnable {
                 sb2222.append(i27222 == 1 ? i27222 != 2 ? i27222 != 3 ? "null" : "SCREEN" : "TORCH" : "NONE");
                 sb2222.append(", switch=");
                 sb2222.append(z26);
-                oVar222.b(sb2222.toString());
+                nVar222.b(sb2222.toString());
                 if (z26) {
                 }
                 s0Var.w = false;

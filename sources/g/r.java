@@ -55,9 +55,9 @@ import org.webrtc.MediaStreamTrack;
 import r0.i0;
 import r0.l0;
 import v7.j7;
-import w7.u6;
+import w7.s6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class r extends g implements l.i, LayoutInflater.Factory2 {
     public static final a0.l q0 = new a0.l(0);
@@ -108,7 +108,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
     public OnBackInvokedCallback p0;
     public CharSequence r;
     public k1 s;
-    public ya.c v;
+    public ya.d v;
     public a6.i w;
     public k.a x;
     public ActionBarContextView y;
@@ -576,7 +576,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
         ActionMenuView actionMenuView;
         m.i iVar;
         t tVar = this.d;
-        if ((!(tVar instanceof r0.j) && !k3.s(tVar)) || (decorView = this.f.getDecorView()) == null || !u6.a(decorView, keyEvent)) {
+        if ((!(tVar instanceof r0.j) && !k3.s(tVar)) || (decorView = this.f.getDecorView()) == null || !s6.a(decorView, keyEvent)) {
             if (keyEvent.getKeyCode() == 82) {
                 m mVar = this.h;
                 Window.Callback callback = this.f.getCallback();
@@ -1255,7 +1255,7 @@ public final class r extends g implements l.i, LayoutInflater.Factory2 {
                     }
                     if (z11 && (k1Var2 = this.s) != null) {
                         if (this.v == null) {
-                            this.v = new ya.c(this, 18);
+                            this.v = new ya.d(this, 18);
                         }
                         ((ActionBarOverlayLayout) k1Var2).g(qVar.h, this.v);
                     }

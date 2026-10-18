@@ -17,7 +17,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class y8 extends org.telegram.ui.Components.jw0 {
     public final /* synthetic */ int w0;
@@ -67,10 +67,10 @@ public final class y8 extends org.telegram.ui.Components.jw0 {
                 }
             case 7:
                 z71 z71Var = (z71) this.x0;
-                if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled() && z71Var.W != null) {
+                if (Build.VERSION.SDK_INT >= 29 && SharedConfig.chatBlurEnabled() && z71Var.X != null) {
                     canvas.save();
                     canvas.translate(0.0f, -f7);
-                    z71Var.W.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
+                    z71Var.X.y(canvas, rect.left, rect.top + f7, rect.right, rect.bottom + f7);
                     canvas.restore();
                     int alpha3 = paint.getAlpha();
                     paint.setAlpha(178);
@@ -193,9 +193,9 @@ public final class y8 extends org.telegram.ui.Components.jw0 {
                 break;
             case 7:
                 z71 z71Var = (z71) this.x0;
-                gh.d dVar5 = z71Var.X;
-                gh.d dVar6 = z71Var.W;
-                bh.f fVar3 = z71Var.V;
+                gh.d dVar5 = z71Var.Y;
+                gh.d dVar6 = z71Var.X;
+                bh.f fVar3 = z71Var.W;
                 if (Build.VERSION.SDK_INT >= 31 && fVar3 != null) {
                     z71Var.i0();
                     int measuredWidth3 = getMeasuredWidth();
@@ -469,10 +469,10 @@ public final class y8 extends org.telegram.ui.Components.jw0 {
                 cb0Var.H.setVisibility(this.f > AndroidUtilities.dp(20.0f) ? 8 : 0);
                 break;
             case 5:
-                fg0 fg0Var = (fg0) this.x0;
-                ViewGroup.MarginLayoutParams marginLayoutParams6 = (ViewGroup.MarginLayoutParams) fg0Var.N.getLayoutParams();
-                int dp = fg0Var.h1() ? AndroidUtilities.dp(226.0f) : 0;
-                if (fg0Var.h1() && R() > AndroidUtilities.dp(20.0f)) {
+                eg0 eg0Var = (eg0) this.x0;
+                ViewGroup.MarginLayoutParams marginLayoutParams6 = (ViewGroup.MarginLayoutParams) eg0Var.N.getLayoutParams();
+                int dp = eg0Var.h1() ? AndroidUtilities.dp(226.0f) : 0;
+                if (eg0Var.h1() && R() > AndroidUtilities.dp(20.0f)) {
                     dp -= R();
                 }
                 org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
@@ -480,22 +480,22 @@ public final class y8 extends org.telegram.ui.Components.jw0 {
                     marginLayoutParams6.bottomMargin = AndroidUtilities.dp(14.0f) + dp;
                 } else {
                     super.onMeasure(i10, i11);
-                    marginLayoutParams6.bottomMargin = org.telegram.messenger.kk.D(10.0f, org.telegram.ui.Components.qc.w.e.getMeasuredHeight() + AndroidUtilities.dp(14.0f), dp);
+                    marginLayoutParams6.bottomMargin = org.telegram.messenger.lk.D(10.0f, org.telegram.ui.Components.qc.w.e.getMeasuredHeight() + AndroidUtilities.dp(14.0f), dp);
                 }
                 int i13 = AndroidUtilities.isTablet() ? 0 : AndroidUtilities.statusBarHeight;
-                ((ViewGroup.MarginLayoutParams) fg0Var.U.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
-                ((ViewGroup.MarginLayoutParams) fg0Var.W.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
-                ((ViewGroup.MarginLayoutParams) fg0Var.V.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
-                TextView textView = fg0Var.f0;
+                ((ViewGroup.MarginLayoutParams) eg0Var.U.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
+                ((ViewGroup.MarginLayoutParams) eg0Var.W.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
+                ((ViewGroup.MarginLayoutParams) eg0Var.V.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
+                TextView textView = eg0Var.f0;
                 if (textView != null) {
                     ((ViewGroup.MarginLayoutParams) textView.getLayoutParams()).topMargin = AndroidUtilities.dp(16.0f) + i13;
                 }
-                if (R() > AndroidUtilities.dp(20.0f) && fg0Var.c.getVisibility() != 8 && !AndroidUtilities.isAccessibilityTouchExplorationEnabled() && !fg0Var.a0) {
-                    ValueAnimator valueAnimator = fg0Var.d;
+                if (R() > AndroidUtilities.dp(20.0f) && eg0Var.c.getVisibility() != 8 && !AndroidUtilities.isAccessibilityTouchExplorationEnabled() && !eg0Var.a0) {
+                    ValueAnimator valueAnimator = eg0Var.d;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    fg0Var.c.setVisibility(8);
+                    eg0Var.c.setVisibility(8);
                 }
                 super.onMeasure(i10, i11);
                 break;
@@ -525,22 +525,22 @@ public final class y8 extends org.telegram.ui.Components.jw0 {
                 }
                 break;
             case 9:
-                yh.h4 h4Var = (yh.h4) this.x0;
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) h4Var.y.getLayoutParams();
+                yh.g4 g4Var = (yh.g4) this.x0;
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) g4Var.y.getLayoutParams();
                 int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                kVar8 = ((org.telegram.ui.ActionBar.n2) h4Var).actionBar;
+                kVar8 = ((org.telegram.ui.ActionBar.n2) g4Var).actionBar;
                 layoutParams.topMargin = currentActionBarHeight + (kVar8.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
-                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) h4Var.h.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) g4Var.h.getLayoutParams();
                 int currentActionBarHeight2 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                kVar9 = ((org.telegram.ui.ActionBar.n2) h4Var).actionBar;
+                kVar9 = ((org.telegram.ui.ActionBar.n2) g4Var).actionBar;
                 layoutParams2.topMargin = AndroidUtilities.dp(47.0f) + currentActionBarHeight2 + (kVar9.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
-                FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) h4Var.n.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) g4Var.n.getLayoutParams();
                 int currentActionBarHeight3 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                kVar10 = ((org.telegram.ui.ActionBar.n2) h4Var).actionBar;
+                kVar10 = ((org.telegram.ui.ActionBar.n2) g4Var).actionBar;
                 layoutParams3.topMargin = currentActionBarHeight3 + (kVar10.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
-                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) h4Var.w.getLayoutParams();
+                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) g4Var.w.getLayoutParams();
                 int currentActionBarHeight4 = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                kVar11 = ((org.telegram.ui.ActionBar.n2) h4Var).actionBar;
+                kVar11 = ((org.telegram.ui.ActionBar.n2) g4Var).actionBar;
                 layoutParams4.topMargin = currentActionBarHeight4 + (kVar11.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
                 super.onMeasure(i10, i11);
                 break;

@@ -15,7 +15,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yq0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class yq0 implements Utilities.Callback {
                 photoViewer2.L1.h2 = photoViewer2.K1.c();
                 photoViewer2.e0.invalidate();
                 int max = Math.max(((Integer) obj).intValue(), photoViewer2.L1.j2);
-                float dp = (!(photoViewer2.L1.S0 instanceof rg.v2) || max <= 0) ? 0.0f : ((AndroidUtilities.displaySize.y - max) - AndroidUtilities.dp(80.0f)) - photoViewer2.L1.getSelectedEntityBottom();
+                float dp = (!(photoViewer2.L1.S0 instanceof rg.u2) || max <= 0) ? 0.0f : ((AndroidUtilities.displaySize.y - max) - AndroidUtilities.dp(80.0f)) - photoViewer2.L1.getSelectedEntityBottom();
                 ValueAnimator valueAnimator = photoViewer2.s7;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();

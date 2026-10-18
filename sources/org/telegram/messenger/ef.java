@@ -1,28 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ef implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ TLRPC.TL_chatFull c;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ MessagesStorage.IntCallback d;
 
-    public /* synthetic */ ef(MessagesStorage messagesStorage, TLRPC.TL_chatFull tL_chatFull, int i10) {
+    public /* synthetic */ ef(MessagesStorage messagesStorage, long j10, MessagesStorage.IntCallback intCallback, int i10) {
         this.a = i10;
         this.b = messagesStorage;
-        this.c = tL_chatFull;
+        this.c = j10;
+        this.d = intCallback;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateChatParticipants$121(this.c);
+                this.b.lambda$getDialogMaxMessageId$255(this.c, this.d);
+                break;
+            case 1:
+                this.b.lambda$getDialogFolderId$243(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$getMessagesCount$158(this.c, this.d);
                 break;
             default:
-                this.b.lambda$updateChatInfo$139(this.c);
+                this.b.lambda$getSavedDialogMaxMessageId$53(this.c, this.d);
                 break;
         }
     }

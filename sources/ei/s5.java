@@ -6,9 +6,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class s5 extends rg.o2 {
+public final class s5 extends rg.n2 {
     public final /* synthetic */ f6 y0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class s5 extends rg.o2 {
         this.y0 = f6Var;
     }
 
-    @Override // rg.o2
+    @Override // rg.n2
     public final void q(uj0 uj0Var) {
         this.y0.getClass();
     }

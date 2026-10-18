@@ -4,7 +4,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zd implements org.telegram.ui.ActionBar.a2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ ke a;
@@ -52,10 +52,10 @@ public final /* synthetic */ class zd implements org.telegram.ui.ActionBar.a2, U
             if (keVar.A0 == null) {
                 return;
             }
-            sg.j0 j0Var = new sg.j0(30, keVar.y0, keVar.getContext(), keVar.w0, keVar.x0);
-            j0Var.I1(j10);
-            j0Var.G1(keVar.A0, true);
-            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j10, keVar.A0, new org.telegram.ui.ActionBar.j3(7, keVar, j0Var));
+            sg.k0 k0Var = new sg.k0(30, keVar.y0, keVar.getContext(), keVar.w0, keVar.x0);
+            k0Var.I1(j10);
+            k0Var.G1(keVar.A0, true);
+            MessagesController.getInstance(i10).getBoostsController().userCanBoostChannel(j10, keVar.A0, new org.telegram.ui.ActionBar.j3(7, keVar, k0Var));
         }
     }
 }

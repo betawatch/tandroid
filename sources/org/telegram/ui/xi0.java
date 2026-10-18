@@ -1,27 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class xi0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dj0 b;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ xi0(dj0 dj0Var, int i10) {
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class xi0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ cj0 b;
+
+    public /* synthetic */ xi0(cj0 cj0Var, int i10) {
         this.a = i10;
-        this.b = dj0Var;
+        this.b = cj0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.dismiss();
-                break;
-            case 1:
-                this.b.V(true, false);
+                cj0 cj0Var = this.b;
+                bj0 bj0Var = cj0Var.q0;
+                HashSet hashSet = cj0Var.d0;
+                if (hashSet.size() != 0 && bj0Var != null) {
+                    ArrayList arrayList = new ArrayList();
+                    for (TLRPC.User user : cj0Var.i0.values()) {
+                        if (hashSet.contains(Long.valueOf(user.id))) {
+                            arrayList.add(Long.valueOf(user.id));
+                        }
+                    }
+                    bj0Var.a(arrayList);
+                    cj0Var.dismiss();
+                    break;
+                }
                 break;
             default:
-                this.b.V(true, false);
+                cj0 cj0Var2 = this.b;
+                cj0Var2.d0.clear();
+                cj0Var2.Y.d.b(true);
+                cj0Var2.V(true, false);
                 break;
         }
     }

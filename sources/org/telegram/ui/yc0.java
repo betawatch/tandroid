@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yc0 implements org.telegram.ui.Components.iw0 {
     public final /* synthetic */ int a;
@@ -15,17 +15,17 @@ public final /* synthetic */ class yc0 implements org.telegram.ui.Components.iw0
 
     @Override // org.telegram.ui.Components.iw0
     public final void H(int i10, boolean z10) {
-        uf0 uf0Var;
+        tf0 tf0Var;
         zk0 zk0Var;
         switch (this.a) {
             case 0:
-                fg0 fg0Var = (fg0) this.b;
-                if (i10 > AndroidUtilities.dp(20.0f) && fg0Var.h1()) {
-                    AndroidUtilities.hideKeyboard(fg0Var.fragmentView);
+                eg0 eg0Var = (eg0) this.b;
+                if (i10 > AndroidUtilities.dp(20.0f) && eg0Var.h1()) {
+                    AndroidUtilities.hideKeyboard(eg0Var.fragmentView);
                 }
-                if (i10 <= AndroidUtilities.dp(20.0f) && (uf0Var = fg0Var.T) != null) {
-                    uf0Var.run();
-                    fg0Var.T = null;
+                if (i10 <= AndroidUtilities.dp(20.0f) && (tf0Var = eg0Var.T) != null) {
+                    tf0Var.run();
+                    eg0Var.T = null;
                     break;
                 }
                 break;

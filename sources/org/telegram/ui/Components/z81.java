@@ -11,7 +11,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class z81 extends View {
     public y81 a;
@@ -174,7 +174,7 @@ public final class z81 extends View {
                             paint.setColor(textPaint3.getColor());
                         }
                         int dp2 = AndroidUtilities.dp(6.0f) + i19 + this.a.c;
-                        int A = org.telegram.messenger.kk.A(20.0f, getMeasuredHeight(), i18);
+                        int A = org.telegram.messenger.lk.A(20.0f, getMeasuredHeight(), i18);
                         if (this.a.a != Integer.MAX_VALUE) {
                             if (b91Var.n) {
                                 int i29 = b91.s0;

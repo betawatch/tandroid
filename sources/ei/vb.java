@@ -98,7 +98,7 @@ import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class vb implements NotificationCenter.NotificationCenterDelegate {
     public static vb F2;
@@ -352,11 +352,10 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.k0 = frameLayout2;
         nbVar4.addView(frameLayout2);
         nb nbVar5 = this.r;
-        int i14 = 4;
-        ah.x xVar = new ah.x(this, activity, 4);
+        int i14 = 5;
+        ah.x xVar = new ah.x(this, activity, 5);
         this.l0 = xVar;
         nbVar5.addView(xVar);
-        int i15 = 8;
         this.l0.setVisibility(8);
         this.l0.setAlpha(0.0f);
         nb nbVar6 = this.r;
@@ -373,11 +372,11 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.h0.addView(this.A0, w7.z5.e(-1, -1, 119));
         this.A0.setOnClickListener(new v9(this, 12));
         hb hbVar2 = this.h0;
-        int i16 = this.J;
-        hbVar2.setBackgroundColor((i16 == 1 || i16 == 0) ? 0 : -14737633);
+        int i15 = this.J;
+        hbVar2.setBackgroundColor((i15 == 1 || i15 == 0) ? 0 : -14737633);
         hb hbVar3 = this.h0;
         float dp = AndroidUtilities.dp(12.0f);
-        ci.o1 o1Var = zf.j0.a;
+        ci.n1 n1Var = zf.j0.a;
         hbVar3.setOutlineProvider(new zf.i0(0, dp));
         this.h0.setClipToOutline(true);
         t9 t9Var = new t9(this, 14);
@@ -404,17 +403,18 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         lb lbVar = new lb(this, activity, ubVar4, ubVar4, this.r, bVar, this.r0);
         this.c1 = lbVar;
         lbVar.setAccount(i10);
-        int i17 = 6;
-        this.c1.setUiBlurBitmap(new ca(this, i17));
-        org.telegram.ui.Components.qc.a(this.l0, new ah.m0(this, i14));
+        int i16 = 6;
+        this.c1.setUiBlurBitmap(new ca(this, i16));
+        int i17 = 4;
+        org.telegram.ui.Components.qc.a(this.l0, new ah.m0(this, i17));
         this.c1.setOnHeightUpdate(new u9(this, 13));
-        this.c1.setOnPeriodUpdate(new u9(this, i14));
+        this.c1.setOnPeriodUpdate(new u9(this, i17));
         long j10 = this.N;
         if (j10 != 0) {
             this.c1.setDialogId(j10);
         }
-        this.c1.setOnPremiumHint(new u9(this, 5));
-        this.c1.setOnKeyboardOpen(new u9(this, i17));
+        this.c1.setOnPremiumHint(new u9(this, i14));
+        this.c1.setOnKeyboardOpen(new u9(this, i16));
         ai.ic icVar = new ai.ic(this, activity, i12);
         this.t0 = icVar;
         this.r.addView(icVar);
@@ -429,14 +429,14 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         FrameLayout frameLayout4 = new FrameLayout(activity);
         this.Y0 = frameLayout4;
         float f7 = 388;
-        frameLayout4.addView(this.Z0, w7.z5.a(f7, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
+        frameLayout4.addView(this.Z0, w7.z5.d(-1, f7, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         kc kcVar = new kc(activity);
         this.a1 = kcVar;
         kcVar.setVisibility(8);
         this.a1.a(false);
-        this.Y0.addView(this.a1, w7.z5.a(25.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 55));
-        this.l0.addView(this.Y0, w7.z5.a(413, 0.0f, 0.0f, 0.0f, 68.0f, -1, 87));
-        this.l0.addView(this.c1, w7.z5.a(-1.0f, 0.0f, 200.0f, 0.0f, 0.0f, -1, 87));
+        this.Y0.addView(this.a1, w7.z5.d(-1, 25.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
+        this.l0.addView(this.Y0, w7.z5.d(-1, 413, 87, 0.0f, 0.0f, 0.0f, 68.0f));
+        this.l0.addView(this.c1, w7.z5.d(-1, -1.0f, 87, 0.0f, 200.0f, 0.0f, 0.0f));
         this.A0.setTimelineView(this.Z0);
         this.A0.setPreviewView(this.X0);
         gc gcVar2 = new gc(activity, this.r, this.h0, bVar, this.r0);
@@ -444,7 +444,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         gcVar2.X0 = true;
         gcVar2.setVisibility(8);
         this.t1.setAlpha(0.0f);
-        this.l0.addView(this.t1, w7.z5.a(f7, 0.0f, 0.0f, 0.0f, 6.0f, -1, 87));
+        this.l0.addView(this.t1, w7.z5.d(-1, f7, 87, 0.0f, 0.0f, 0.0f, 6.0f));
         ma maVar = new ma(this, activity, bVar, this.r0);
         this.d1 = maVar;
         maVar.setVisibility(8);
@@ -467,7 +467,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.o0 = t7Var;
         t7Var.a(false, false);
         this.o0.setOnClickListener(new ai.p(16, this, activity));
-        this.i0.addView(this.o0, w7.z5.a(56.0f, 50.0f, 0.0f, 50.0f, 0.0f, -1, 51));
+        this.i0.addView(this.o0, w7.z5.d(-1, 56.0f, 51, 50.0f, 0.0f, 50.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(activity);
         this.p0 = j5Var;
         j5Var.setTextSize(20);
@@ -480,12 +480,12 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.p0.setVisibility(8);
         this.p0.setEllipsizeByGradient(true);
         this.p0.setRightPadding(AndroidUtilities.dp(144.0f));
-        this.i0.addView(this.p0, w7.z5.a(56.0f, 71.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+        this.i0.addView(this.p0, w7.z5.d(-1, 56.0f, 55, 71.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(activity);
         this.j0 = linearLayout;
         linearLayout.setOrientation(0);
         this.j0.setGravity(5);
-        this.i0.addView(this.j0, w7.z5.a(56.0f, 0.0f, 0.0f, 8.0f, 0.0f, -1, 7));
+        this.i0.addView(this.j0, w7.z5.d(-1, 56.0f, 7, 0.0f, 0.0f, 8.0f, 0.0f));
         u9 u9Var = new u9(this, 7);
         ub ubVar5 = this.n;
         u0 u0Var = new u0(activity);
@@ -510,7 +510,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         x3Var.H.r(true, false);
         this.k1 = x3Var;
         x3Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        this.i0.addView(this.k1, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
+        this.i0.addView(this.k1, w7.z5.d(-1, -1.0f, 48, 0.0f, 52.0f, 0.0f, 0.0f));
         xj0 xj0Var = new xj0(activity);
         this.g1 = xj0Var;
         xj0Var.setScaleType(scaleType);
@@ -534,7 +534,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         hc hcVar = new hc(activity);
         this.E0 = hcVar;
         hcVar.setBackground(org.telegram.ui.ActionBar.h6.g0(553648127, 1, -1));
-        this.E0.setOnClickListener(new v9(this, i14));
+        this.E0.setOnClickListener(new v9(this, 4));
         this.E0.setOnLongClickListener(new c5(this, i12));
         this.E0.setVisibility(8);
         this.E0.setAlpha(0.0f);
@@ -580,30 +580,30 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.I0 = yVar;
         yVar.a.u0(6);
         this.I0.setSelected((t) null);
-        this.I0.setOnLayoutClick(new u9(this, i15));
+        this.I0.setOnLayoutClick(new u9(this, 8));
         this.i0.addView(this.I0, w7.z5.e(-1, 56, 53));
         x3 x3Var2 = new x3(activity, 1);
         x3Var2.l(1.0f, -20.0f);
         x3Var2.d = 5000L;
         x3Var2.i(true);
         x3Var2.s(LocaleController.getString(R.string.StoryCameraDualHint));
-        x3Var2.l0 = new ah.j(14);
+        x3Var2.l0 = new ah.j(13);
         this.l1 = x3Var2;
         x3Var2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        this.i0.addView(this.l1, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
+        this.i0.addView(this.l1, w7.z5.d(-1, -1.0f, 48, 0.0f, 52.0f, 0.0f, 0.0f));
         x3 x3Var3 = new x3(activity, 2);
         x3Var3.l(0.0f, 28.0f);
         x3Var3.d = 5000L;
         x3Var3.p(true);
         this.m1 = x3Var3;
-        this.i0.addView(x3Var3, w7.z5.a(-1.0f, 0.0f, 0.0f, 52.0f, 0.0f, -1, 48));
+        this.i0.addView(x3Var3, w7.z5.d(-1, -1.0f, 48, 0.0f, 0.0f, 52.0f, 0.0f));
         x3 x3Var4 = new x3(activity, 1);
         x3Var4.l(1.0f, -20.0f);
         x3Var4.d = 5000L;
         x3Var4.s(LocaleController.getString(R.string.StoryCollageRemoveGrid));
         this.n1 = x3Var4;
         x3Var4.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        this.i0.addView(this.n1, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 48));
+        this.i0.addView(this.n1, w7.z5.d(-1, -1.0f, 48, 0.0f, 52.0f, 0.0f, 0.0f));
         lc lcVar = new lc(activity);
         Paint paint = new Paint(1);
         lcVar.a = paint;
@@ -623,7 +623,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         lcVar.a(0L, false);
         this.J0 = lcVar;
         h0(false, false);
-        this.i0.addView(this.J0, w7.z5.a(45.0f, 56.0f, 0.0f, 56.0f, 0.0f, -1, 55));
+        this.i0.addView(this.J0, w7.z5.d(-1, 45.0f, 55, 56.0f, 0.0f, 56.0f, 0.0f));
         this.s.a(this.J0);
         MediaController.loadGalleryPhotosAlbums(0);
         z6 z6Var = new z6(activity);
@@ -646,7 +646,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.P0.setScaleX(0.8f);
         this.P0.setScaleY(0.8f);
         this.P0.setVisibility(8);
-        this.k0.addView(this.P0, w7.z5.a(48.0f, 20.0f, 20.0f, 20.0f, 20.0f, -1, 87));
+        this.k0.addView(this.P0, w7.z5.d(-1, 48.0f, 87, 20.0f, 20.0f, 20.0f, 20.0f));
         this.P0.setOnClickListener(new v9(this, 8));
         x3 x3Var5 = new x3(activity, 3);
         x3Var5.p(true);
@@ -655,25 +655,26 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         x3Var5.d = 5000L;
         x3Var5.K = Layout.Alignment.ALIGN_CENTER;
         this.W0 = x3Var5;
-        this.k0.addView(x3Var5, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 100.0f, -1, 80));
+        this.k0.addView(x3Var5, w7.z5.d(-1, -1.0f, 80, 0.0f, 0.0f, 0.0f, 100.0f));
         w91 w91Var = new w91(activity);
         this.V0 = w91Var;
         w91Var.M = false;
         w91Var.setAlpha(0.0f);
-        this.k0.addView(this.V0, w7.z5.a(50.0f, 0.0f, 0.0f, 0.0f, 108.0f, -1, 81));
+        this.k0.addView(this.V0, w7.z5.d(-1, 50.0f, 81, 0.0f, 0.0f, 0.0f, 108.0f));
         this.V0.setDelegate(new ca(this, 4));
         w91 w91Var2 = this.V0;
         this.T1 = 0.0f;
         w91Var2.b(0.0f, false);
-        int i18 = 12;
-        j7 j7Var = new j7(activity, i10, new t9(this, i18));
+        j7 j7Var = new j7(activity, i10, new t9(this, 12));
         this.D0 = j7Var;
         j7Var.c = new u9(this, 9);
-        this.k0.addView(j7Var, w7.z5.a(80.0f, 0.0f, 0.0f, 0.0f, 90.0f, -1, 87));
+        this.k0.addView(j7Var, w7.z5.d(-1, 80.0f, 87, 0.0f, 0.0f, 0.0f, 90.0f));
         na naVar = new na(this, activity);
         this.Q0 = naVar;
-        naVar.setOnSwitchModeListener(new u9(this, 10));
-        this.Q0.setOnSwitchingModeListener(new u9(this, 11));
+        int i18 = 10;
+        naVar.setOnSwitchModeListener(new u9(this, i18));
+        int i19 = 11;
+        this.Q0.setOnSwitchingModeListener(new u9(this, i19));
         this.m0.addView(this.Q0, w7.z5.e(-1, 48, 55));
         this.s.a(this.Q0);
         q2 q2Var4 = new q2(activity);
@@ -683,7 +684,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.R0.setScaleType(scaleType);
         this.R0.setColorFilter(new PorterDuffColorFilter(-1, mode));
         this.R0.setBackground(org.telegram.ui.ActionBar.h6.g0(553648127, 1, -1));
-        this.m0.addView(this.R0, w7.z5.a(24.0f, 20.0f, 0.0f, 20.0f, 4.0f, 24, 19));
+        this.m0.addView(this.R0, w7.z5.d(24, 24.0f, 19, 20.0f, 0.0f, 20.0f, 4.0f));
         this.s.a(this.R0);
         this.R0.setOnClickListener(new v9(this, 9));
         q2 q2Var5 = new q2(activity);
@@ -693,19 +694,19 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.S0.setScaleType(scaleType);
         this.S0.setColorFilter(new PorterDuffColorFilter(-1, mode));
         this.S0.setBackground(org.telegram.ui.ActionBar.h6.g0(553648127, 1, -1));
-        this.m0.addView(this.S0, w7.z5.a(24.0f, 20.0f, 0.0f, 20.0f, 4.0f, 24, 21));
+        this.m0.addView(this.S0, w7.z5.d(24, 24.0f, 21, 20.0f, 0.0f, 20.0f, 4.0f));
         this.s.a(this.S0);
-        this.S0.setOnClickListener(new v9(this, 10));
+        this.S0.setOnClickListener(new v9(this, i18));
         v3 v3Var = new v3(activity);
         this.T0 = v3Var;
-        this.m0.addView(v3Var, w7.z5.a(32.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 17));
+        this.m0.addView(v3Var, w7.z5.d(-1, 32.0f, 17, 8.0f, 0.0f, 8.0f, 8.0f));
         this.s.a(this.T0);
         v3 v3Var2 = new v3(activity);
         this.U0 = v3Var2;
         v3Var2.a.t(LocaleController.getString(R.string.StoryCollageReorderHint), false, true);
         v3Var2.invalidate();
         this.U0.setAlpha(0.0f);
-        this.m0.addView(this.U0, w7.z5.a(32.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 17));
+        this.m0.addView(this.U0, w7.z5.d(-1, 32.0f, 17, 8.0f, 0.0f, 8.0f, 8.0f));
         this.s.a(this.U0);
         d dVar2 = new d(activity, bVar, true);
         dVar2.setRoundRadius(24);
@@ -713,8 +714,8 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         dVar2.setVisibility(8);
         this.u1.setAlpha(0.0f);
         this.u1.g(LocaleController.getString(R.string.StoryCoverSave), false, true);
-        this.u1.setOnClickListener(new v9(this, 11));
-        this.m0.addView(this.u1, w7.z5.a(48.0f, 10.0f, 10.0f, 10.0f, 10.0f, -1, 119));
+        this.u1.setOnClickListener(new v9(this, i19));
+        this.m0.addView(this.u1, w7.z5.d(-1, 48.0f, 119, 10.0f, 10.0f, 10.0f, 10.0f));
         k6 k6Var = new k6(activity);
         k6Var.b = new ArrayList();
         k6Var.e = true;
@@ -734,17 +735,17 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         j6 j6Var = new j6(k6Var, activity, string, true);
         k6Var.c = j6Var;
         j6Var.setContentDescription(LocaleController.getString(R.string.Send));
-        k6Var.addView(k6Var.c, w7.z5.d(-2.0f, -2));
+        k6Var.addView(k6Var.c, w7.z5.c(-2.0f, -2));
         k6Var.e();
         this.b1 = k6Var;
         k6Var.setVisibility(8);
-        this.b1.setOnClickListener(new u9(this, i18));
+        this.b1.setOnClickListener(new u9(this, 12));
         this.m0.addView(this.b1, w7.z5.e(-1, 52, 23));
         jc jcVar = new jc(activity);
         this.p1 = jcVar;
         jcVar.setAlpha(0.0f);
         this.p1.setVisibility(8);
-        this.h0.addView(this.p1, w7.z5.a(120.0f, 0.0f, 0.0f, 0.0f, 16.0f, -1, 81));
+        this.h0.addView(this.p1, w7.z5.d(-1, 120.0f, 81, 0.0f, 0.0f, 0.0f, 16.0f));
         l6 l6Var = new l6(activity, i10, bVar);
         this.o1 = l6Var;
         this.h0.addView(l6Var, w7.z5.e(-1, -1, 119));
@@ -869,7 +870,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         if (this.N0 == null) {
             v0 v0Var = new v0(this.b);
             this.N0 = v0Var;
-            this.k0.addView(v0Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 78.0f, -1, 87));
+            this.k0.addView(v0Var, w7.z5.d(-1, -2.0f, 87, 0.0f, 0.0f, 0.0f, 78.0f));
         }
         return this.N0;
     }
@@ -1371,7 +1372,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
             MediaDataController.getInstance(i13).checkStickers(0);
             MediaDataController.getInstance(i13).loadRecents(0, false, true, false);
             MediaDataController.getInstance(i13).loadRecents(2, false, true, false);
-            ci.i7 storiesController = MessagesController.getInstance(i13).getStoriesController();
+            ci.h7 storiesController = MessagesController.getInstance(i13).getStoriesController();
             if (storiesController.Q == 0) {
                 storiesController.P();
             }
@@ -1549,7 +1550,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
                 j6 j6Var = new j6(k6Var, context, string, z16);
                 k6Var.c = j6Var;
                 j6Var.setContentDescription(string);
-                k6Var.addView(k6Var.c, w7.z5.d(-2.0f, -2));
+                k6Var.addView(k6Var.c, w7.z5.c(-2.0f, -2));
                 k6Var.e();
             }
             this.t1.setVisibility(8);
@@ -1603,9 +1604,9 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
             this.b1.d(4, a8Var24 == null || ((!a8Var24.u || a8Var24.K) && !a8Var24.v()));
             this.b1.d(3, (!BuildVars.DEBUG_PRIVATE_VERSION || (a8Var5 = this.K1) == null || a8Var5.u || a8Var5.v()) ? false : true);
             if (!this.N1 && !this.c1.o()) {
-                ci.i7 storiesController = MessagesController.getInstance(i12).getStoriesController();
+                ci.h7 storiesController = MessagesController.getInstance(i12).getStoriesController();
                 int A = A();
-                ci.c7 o10 = storiesController.o();
+                ci.b7 o10 = storiesController.o();
                 if (o10 == null || !o10.a(storiesController.a, A) || ((a8Var4 = this.K1) != null && (a8Var4.g || a8Var4.J0 != j10))) {
                     z10 = true;
                     this.b1.setShareEnabled(z10);
@@ -1767,7 +1768,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         }
         l6 l6Var = this.o1;
         if (l6Var != null) {
-            ci.i7 storiesController = MessagesController.getInstance(l6Var.a).getStoriesController();
+            ci.h7 storiesController = MessagesController.getInstance(l6Var.a).getStoriesController();
             TL_stories.PeerStories peerStories = (TL_stories.PeerStories) storiesController.i.f(UserConfig.getInstance(storiesController.a).clientUserId);
             l6Var.b = storiesController.b.m() + (peerStories != null ? peerStories.stories.size() : 0) + 1;
             l6Var.c.invalidate();
@@ -1866,7 +1867,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
     }
 
     public final void Q(pb pbVar) {
-        ci.c7 o10;
+        ci.b7 o10;
         ub ubVar;
         if (this.d) {
             return;
@@ -1996,13 +1997,13 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
             i80Var.u();
             lbVar.V0 = null;
         }
-        sg.x0 x0Var = new sg.x0((org.telegram.ui.ActionBar.n2) new za(this, 1), 14, false);
-        x0Var.setOnDismissListener(new ha(this, 1));
-        x0Var.show();
+        sg.y0 y0Var = new sg.y0((org.telegram.ui.ActionBar.n2) new za(this, 1), 14, false);
+        y0Var.setOnDismissListener(new ha(this, 1));
+        y0Var.show();
     }
 
     public final void T(ob obVar, a8 a8Var) {
-        ci.c7 o10;
+        ci.b7 o10;
         ub ubVar;
         if (this.d) {
             return;
@@ -2223,7 +2224,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
     /* JADX WARN: Type inference failed for: r16v8 */
     /* JADX WARN: Type inference failed for: r16v9 */
     public final void W() {
-        ci.c7 o10;
+        ci.b7 o10;
         ?? r16;
         r9 r9Var = this.q0;
         BitmapDrawable bitmapDrawable = null;
@@ -2564,7 +2565,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        ci.c7 o10;
+        ci.b7 o10;
         a8 a8Var;
         boolean z10 = false;
         z10 = false;
@@ -2612,9 +2613,9 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
                 return;
             }
             if (!this.N1 && !this.c1.o()) {
-                ci.i7 storiesController = MessagesController.getInstance(i15).getStoriesController();
+                ci.h7 storiesController = MessagesController.getInstance(i15).getStoriesController();
                 int A = A();
-                ci.c7 o11 = storiesController.o();
+                ci.b7 o11 = storiesController.o();
                 if (o11 == null || !o11.a(storiesController.a, A) || ((a8Var = this.K1) != null && (a8Var.g || a8Var.J0 != 0))) {
                     z10 = true;
                 }
@@ -2840,11 +2841,11 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.Z1.start();
     }
 
-    public final void g0(ci.c7 c7Var, boolean z10) {
+    public final void g0(ci.b7 b7Var, boolean z10) {
         if (this.z2) {
             return;
         }
-        ab abVar = new ab(c7Var.b(), this.c, this.b, new za(this, 0), null);
+        ab abVar = new ab(b7Var.b(), this.c, this.b, new za(this, 0), null);
         abVar.X = A();
         abVar.setOnDismissListener(new w80(2, this, z10));
         this.X0.x(7, true);
@@ -3004,7 +3005,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
     }
 
     public final void j() {
-        ci.r3 r3Var;
+        ci.q3 q3Var;
         if (this.J != 1) {
             return;
         }
@@ -3025,8 +3026,8 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         float f11 = rectF3.top;
         this.h0.setTranslationY((f11 - r3.getTop()) - this.r.getY());
         qb qbVar = this.F;
-        if (qbVar != null && (r3Var = qbVar.f) != null) {
-            r3Var.setTranslationX((rectF.left - rectF2.left) * this.I);
+        if (qbVar != null && (q3Var = qbVar.f) != null) {
+            q3Var.setTranslationX((rectF.left - rectF2.left) * this.I);
             this.F.f.setTranslationY((rectF.top - rectF2.top) * this.I);
         }
         this.h0.setScaleX(rectF3.width() / this.h0.getMeasuredWidth());
@@ -4205,7 +4206,7 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         this.M0.setMaxCount(Math.min(10, t.b() - this.A0.getFilledCount()));
         this.M0.setOnBackClickListener(new la(this, 1));
         this.M0.setOnSelectListener(new ka(0, this, z10));
-        this.M0.setOnSelectMultipleListener(new ai.j2(this, 2));
+        this.M0.setOnSelectMultipleListener(new ai.h2(this, 2));
         s4.a0 a0Var = this.l2;
         if (a0Var != null) {
             a3 a3Var = this.M0.e;
@@ -4503,14 +4504,14 @@ public final class vb implements NotificationCenter.NotificationCenterDelegate {
         xaVar2.O0.h();
         xaVar2.R0.setVisibility(8);
         xaVar2.Q0.setVisibility(8);
-        xaVar2.E0.postRunnable(new ah.j(12));
+        xaVar2.E0.postRunnable(new ah.j(11));
         o5 o5Var = xaVar2.k2;
         if (o5Var != null) {
             o5Var.dismiss();
         }
-        qg.y yVar = xaVar2.T1;
-        if (yVar != null) {
-            yVar.dismiss();
+        qg.x xVar = xaVar2.T1;
+        if (xVar != null) {
+            xVar.dismiss();
         }
         this.r.removeView(this.v1);
         this.v1 = null;

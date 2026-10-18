@@ -11,8 +11,9 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import ki.t1;
 import m.g3;
+import org.telegram.ui.Cells.k7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -113,8 +114,8 @@ public final class x {
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();
-                t0 t0Var = c10.c;
-                ((Handler) t0Var.d).post((s0) t0Var.h);
+                s0 s0Var = c10.c;
+                ((Handler) s0Var.d).post((k7) s0Var.h);
             }
             if ((zVar2 != null && zVar2.d) != zVar.d) {
                 k kVar2 = c10.r;
@@ -137,8 +138,8 @@ public final class x {
                     c10.l.remove(d);
                 }
                 c10.r = null;
-                t0 t0Var2 = c10.c;
-                ((Handler) t0Var2.d).post((s0) t0Var2.h);
+                s0 s0Var2 = c10.c;
+                ((Handler) s0Var2.d).post((k7) s0Var2.h);
             }
         }
         bVar.b(769, zVar);

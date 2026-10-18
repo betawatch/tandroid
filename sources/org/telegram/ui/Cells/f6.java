@@ -7,13 +7,13 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.gd;
-import org.telegram.messenger.pf;
+import org.telegram.messenger.hd;
+import org.telegram.messenger.qf;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f6 {
     public final int a;
@@ -109,7 +109,7 @@ public final class f6 {
                 tL_channels_getMessages.id.add(Integer.valueOf(i15));
             }
         }
-        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new gd(f6Var, messagesStorage, j10, i10, arrayList));
+        ConnectionsManager.getInstance(i12).sendRequest(tL_channels_getMessages, new hd(f6Var, messagesStorage, j10, i10, arrayList));
     }
 
     public final void c() {
@@ -152,6 +152,6 @@ public final class f6 {
         int i12 = this.a;
         long clientUserId = UserConfig.getInstance(i12).getClientUserId();
         MessagesStorage messagesStorage = MessagesStorage.getInstance(i12);
-        messagesStorage.getStorageQueue().postRunnable(new pf(this, i10, messagesStorage, j10, clientUserId, i11));
+        messagesStorage.getStorageQueue().postRunnable(new qf(this, i10, messagesStorage, j10, clientUserId, i11));
     }
 }

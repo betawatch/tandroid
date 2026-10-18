@@ -45,7 +45,7 @@ import org.telegram.ui.WallpapersListActivity;
 import org.telegram.ui.ad1;
 import org.telegram.ui.xh1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w31 implements Runnable {
     public final /* synthetic */ int a;
@@ -61,7 +61,7 @@ public final /* synthetic */ class w31 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:177:0x047d  */
+    /* JADX WARN: Removed duplicated region for block: B:182:0x048f  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -179,7 +179,7 @@ public final /* synthetic */ class w31 implements Runnable {
                 fiVar.setEnabled(fiVar.a != null);
                 TLRPC.User user = fiVar.a;
                 if (user != null) {
-                    x90Var.setText(AndroidUtilities.premiumText(LocaleController.formatString(R.string.MessageAuthorSentBy, UserObject.getUserName(user)), new org.telegram.ui.mh0(fiVar, user.id, objArr == true ? 1 : 0)));
+                    x90Var.setText(AndroidUtilities.premiumText(LocaleController.formatString(R.string.MessageAuthorSentBy, UserObject.getUserName(user)), new org.telegram.ui.lh0(fiVar, user.id, objArr == true ? 1 : 0)));
                 }
                 x90Var.animate().alpha(1.0f).setDuration(220L).start();
                 b10Var.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.ho(b10Var)).start();
@@ -217,7 +217,7 @@ public final /* synthetic */ class w31 implements Runnable {
                             jSONObject2.getString(TeXSymbolParser.TYPE_ATTR);
                             String string = jSONObject2.getString("token");
                             if (go0Var.K0 == null && go0Var.M0 == null) {
-                                t0.h a2 = w7.r8.a(string);
+                                u2.c a2 = w7.r8.a(string);
                                 go0Var.w0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) a2.c, (String) a2.b);
                                 wc.a aVar = (wc.a) a2.d;
                                 go0Var.x0 = aVar.a() + " *" + aVar.b();
@@ -289,7 +289,7 @@ public final /* synthetic */ class w31 implements Runnable {
                     a02 = xc.a0(profileActivity);
                     i10 = R.string.TextCopied;
                 }
-                org.telegram.messenger.kk.p(i10, a02);
+                org.telegram.messenger.lk.p(i10, a02);
                 break;
             case 12:
                 org.telegram.ui.d01 d01Var = (org.telegram.ui.d01) obj2;
@@ -343,28 +343,37 @@ public final /* synthetic */ class w31 implements Runnable {
                 }
                 break;
             case 19:
-                org.telegram.ui.Wallet.la laVar = (org.telegram.ui.Wallet.la) obj;
-                int i16 = i12 + 1;
-                ArrayList arrayList2 = ((org.telegram.ui.Wallet.c8) obj2).v;
-                if (i16 >= arrayList2.size()) {
-                    AndroidUtilities.hideKeyboard(laVar);
-                    break;
-                } else {
-                    ((org.telegram.ui.Wallet.la) arrayList2.get(i16)).a.requestFocus();
+                org.telegram.ui.Wallet.o5 o5Var = (org.telegram.ui.Wallet.o5) obj2;
+                Bitmap[] bitmapArr = (Bitmap[]) obj;
+                if (o5Var.f0 == i12) {
+                    o5Var.f(bitmapArr);
+                    o5Var.a.run();
                     break;
                 }
+                break;
             case 20:
-                org.telegram.ui.Wallet.la laVar2 = (org.telegram.ui.Wallet.la) obj;
-                int i17 = i12 + 1;
-                ArrayList arrayList3 = ((org.telegram.ui.Wallet.da) obj2).d;
-                if (i17 >= arrayList3.size()) {
-                    AndroidUtilities.hideKeyboard(laVar2);
+                org.telegram.ui.Wallet.ga gaVar = (org.telegram.ui.Wallet.ga) obj;
+                int i16 = i12 + 1;
+                ArrayList arrayList2 = ((org.telegram.ui.Wallet.w7) obj2).v;
+                if (i16 >= arrayList2.size()) {
+                    AndroidUtilities.hideKeyboard(gaVar);
                     break;
                 } else {
-                    ((org.telegram.ui.Wallet.la) arrayList3.get(i17)).a.requestFocus();
+                    ((org.telegram.ui.Wallet.ga) arrayList2.get(i16)).a.requestFocus();
                     break;
                 }
             case 21:
+                org.telegram.ui.Wallet.ga gaVar2 = (org.telegram.ui.Wallet.ga) obj;
+                int i17 = i12 + 1;
+                ArrayList arrayList3 = ((org.telegram.ui.Wallet.y9) obj2).d;
+                if (i17 >= arrayList3.size()) {
+                    AndroidUtilities.hideKeyboard(gaVar2);
+                    break;
+                } else {
+                    ((org.telegram.ui.Wallet.ga) arrayList3.get(i17)).a.requestFocus();
+                    break;
+                }
+            case 22:
                 xh1 xh1Var = (xh1) obj2;
                 TLObject tLObject2 = (TLObject) obj;
                 HashMap hashMap2 = xh1Var.e;
@@ -450,15 +459,15 @@ public final /* synthetic */ class w31 implements Runnable {
                     break;
                 }
                 break;
-            case 22:
+            case 23:
                 qg.s0 s0Var = (qg.s0) obj2;
                 s0Var.e((qg.h1) obj, i12, s0Var.h);
                 s0Var.h = null;
                 break;
-            case 23:
-                ((r4.d) ((p4.t0) obj2).c).z(i12, obj);
-                break;
             case 24:
+                ((r4.d) ((p4.s0) obj2).c).z(i12, obj);
+                break;
+            case 25:
                 rg.m0 m0Var = (rg.m0) obj2;
                 qg.l lVar = (qg.l) obj;
                 if (m0Var.W0.getCurrentBrush() instanceof qg.l) {

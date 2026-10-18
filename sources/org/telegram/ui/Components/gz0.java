@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class gz0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public boolean E;
@@ -78,7 +78,7 @@ public class gz0 extends FrameLayout implements NotificationCenter.NotificationC
         }
         this.M = new Path();
         this.N = new Path();
-        ah.x xVar = new ah.x(this, getContext(), 24);
+        ah.x xVar = new ah.x(this, getContext(), 25);
         this.d = xVar;
         bs bsVar = bs.h;
         this.P = new f6(xVar, 120L, 350L, bsVar);
@@ -107,8 +107,8 @@ public class gz0 extends FrameLayout implements NotificationCenter.NotificationC
         j jVar = new j(this, 17);
         cz0Var2.setOnItemClickListener(jVar);
         this.e.setOnTouchListener(new ei.p1(4, this, jVar));
-        this.d.addView(this.e, w7.z5.d(52.0f, -1));
-        addView(this.d, w7.z5.b(-1.0f, 66.66f, 80));
+        this.d.addView(this.e, w7.z5.c(52.0f, -1));
+        addView(this.d, w7.z5.a(-1.0f, 66.66f, 80));
         ez0 ez0Var = this.c;
         if (ez0Var != null) {
             ez0Var.a(new ai.u(this, 14));

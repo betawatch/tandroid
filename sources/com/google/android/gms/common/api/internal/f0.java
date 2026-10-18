@@ -19,7 +19,7 @@ import java.util.concurrent.locks.Lock;
 import m.s3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class f0 implements j0 {
     public n6.h E;
@@ -272,7 +272,7 @@ public final class f0 implements j0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.j0
-    public final void q(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
+    public final void s(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
         if (i(1)) {
             g(aVar, eVar, z10);
             if (j()) {

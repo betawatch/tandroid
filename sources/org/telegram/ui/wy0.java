@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wy0 extends ProfileStoriesView {
     public final /* synthetic */ Context t0;
@@ -24,7 +24,7 @@ public final class wy0 extends ProfileStoriesView {
         TL_stories.PeerStories peerStories2;
         ProfileActivity profileActivity = this.u0;
         long a2 = profileActivity.a();
-        ci.i7 storiesController = profileActivity.getMessagesController().getStoriesController();
+        ci.h7 storiesController = profileActivity.getMessagesController().getStoriesController();
         boolean I = storiesController.I(a2);
         Context context = this.t0;
         if (I || storiesController.K(a2) || storiesController.N(a2)) {

@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TelegramQRCodeWriter;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class fj0 extends org.telegram.ui.ActionBar.f3 {
     public final Bitmap b;
@@ -32,7 +32,7 @@ public class fj0 extends org.telegram.ui.ActionBar.f3 {
         setTitle(str, true);
         ig.k kVar = new ig.k(context, 3);
         kVar.setScaleType(ImageView.ScaleType.FIT_XY);
-        kVar.setOutlineProvider(new ci.o1(15));
+        kVar.setOutlineProvider(new ci.n1(15));
         kVar.setClipToOutline(true);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
@@ -56,7 +56,7 @@ public class fj0 extends org.telegram.ui.ActionBar.f3 {
         xj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         xj0Var.setBackgroundColor(-1);
         org.telegram.ui.sl0 sl0Var = new org.telegram.ui.sl0(this, context, kVar);
-        sl0Var.addView(kVar, w7.z5.d(-1.0f, -1));
+        sl0Var.addView(kVar, w7.z5.c(-1.0f, -1));
         sl0Var.addView(xj0Var, w7.z5.e(60, 60, 17));
         linearLayout.addView(sl0Var, w7.z5.t(220, 220, 1, 30, 0, 30, 0));
         TextView textView = new TextView(context);
@@ -64,7 +64,7 @@ public class fj0 extends org.telegram.ui.ActionBar.f3 {
         textView.setTextSize(1, 14.0f);
         textView.setText(str3);
         textView.setGravity(1);
-        linearLayout.addView(textView, w7.z5.a(-2.0f, 40.0f, 8.0f, 40.0f, 8.0f, -1, 0));
+        linearLayout.addView(textView, w7.z5.d(-1, -2.0f, 0, 40.0f, 8.0f, 40.0f, 8.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);

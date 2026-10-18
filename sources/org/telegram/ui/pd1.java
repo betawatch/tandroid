@@ -18,7 +18,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class pd1 extends org.telegram.ui.ActionBar.n2 {
     public int E;
@@ -61,7 +61,7 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
         if (!z10 && longValue != 0 && !getUserConfig().isPremium()) {
             TLRPC.Document f7 = org.telegram.ui.Components.r5.f(this.currentAccount, l4.longValue());
             if (f7 != null) {
-                org.telegram.ui.Components.xc.a0(this).q(f7, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiHint)), LocaleController.getString(R.string.PremiumMore), new kd1(this, 0)).j();
+                org.telegram.ui.Components.xc.a0(this).r(f7, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiHint)), LocaleController.getString(R.string.PremiumMore), new kd1(this, 0)).j();
                 return;
             }
             return;
@@ -130,7 +130,7 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
         this.e.setSingleLine(true);
         EditTextBoldCursor editTextBoldCursor2 = this.e;
         editTextBoldCursor2.setInputType(editTextBoldCursor2.getInputType() | 16384);
-        frameLayout.addView(this.e, w7.z5.a(-1.0f, 51.0f, 4.0f, 21.0f, 4.0f, -1, 0));
+        frameLayout.addView(this.e, w7.z5.d(-1, -1.0f, 0, 51.0f, 4.0f, 21.0f, 4.0f));
         this.e.addTextChangedListener(new o0(this, 16));
         nd1 nd1Var = new nd1(context);
         final int i11 = 0;
@@ -183,7 +183,7 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
             w9VarArr[i12] = w9Var;
             nd1Var.addView(w9Var, w7.z5.e(28, 28, 17));
         }
-        frameLayout.addView(nd1Var, w7.z5.a(40.0f, 10.0f, 0.0f, 0.0f, 0.0f, 40, 16));
+        frameLayout.addView(nd1Var, w7.z5.d(40, 40.0f, 16, 10.0f, 0.0f, 0.0f, 0.0f));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(1);
         linearLayout2.addView(l4Var);
@@ -200,7 +200,7 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
             this.f = od1Var;
             od1Var.setAnimationsEnabled(this.fragmentBeginToShow);
             this.f.setClipChildren(false);
-            frameLayout2.addView(this.f, w7.z5.a(-1.0f, 12.0f, 12.0f, 12.0f, 12.0f, -1, 0));
+            frameLayout2.addView(this.f, w7.z5.d(-1, -1.0f, 0, 12.0f, 12.0f, 12.0f, 12.0f));
             org.telegram.ui.Components.zq d = og.d.d(this.E, "");
             this.x = (og.a) d.a;
             this.v = new org.telegram.ui.Components.nm0(context);
@@ -230,7 +230,7 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
             imageView.setImageResource(R.drawable.msg_filled_general);
             imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(org.telegram.ui.ActionBar.h6.Ac), PorterDuff.Mode.MULTIPLY));
             nd1Var.addView(imageView, w7.z5.e(22, 22, 17));
-            frameLayout2.addView(new View(context), w7.z5.d(8.0f, -1));
+            frameLayout2.addView(new View(context), w7.z5.c(8.0f, -1));
             FrameLayout frameLayout3 = new FrameLayout(context);
             frameLayout3.setBackground(org.telegram.ui.ActionBar.h6.e0(AndroidUtilities.dp(16.0f), getThemedColor(i13)));
             org.telegram.ui.Cells.u8 u8Var = new org.telegram.ui.Cells.u8(context);
@@ -284,12 +284,12 @@ public final class pd1 extends org.telegram.ui.ActionBar.n2 {
                 }
             });
             frameLayout3.addView(this.d, w7.z5.e(-1, 50, 119));
-            frameLayout2.addView(frameLayout3, w7.z5.a(56.0f, 9.0f, 8.0f, 9.0f, 0.0f, -1, 48));
+            frameLayout2.addView(frameLayout3, w7.z5.d(-1, 56.0f, 48, 9.0f, 8.0f, 9.0f, 0.0f));
             org.telegram.ui.Cells.d9 d9Var = new org.telegram.ui.Cells.d9(context);
             d9Var.setText(LocaleController.getString(R.string.EditTopicHideInfo));
-            frameLayout2.addView(d9Var, w7.z5.a(-2.0f, 0.0f, 58.0f, 0.0f, 0.0f, -1, 48));
+            frameLayout2.addView(d9Var, w7.z5.d(-1, -2.0f, 48, 0.0f, 58.0f, 0.0f, 0.0f));
         }
-        linearLayout.addView(frameLayout2, w7.z5.d(-1.0f, -1));
+        linearLayout.addView(frameLayout2, w7.z5.c(-1.0f, -1));
         TLRPC.TL_forumTopic tL_forumTopic3 = this.w;
         if (tL_forumTopic3 != null) {
             this.e.setText(tL_forumTopic3.title);

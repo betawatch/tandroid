@@ -31,10 +31,10 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.dw0;
 import org.telegram.ui.Components.ja;
 import org.telegram.ui.Components.pa;
+import w7.p6;
 import w7.r6;
-import w7.t6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class s0 {
     public final Bitmap A;
@@ -83,7 +83,7 @@ public final class s0 {
         this.A = bitmap;
         this.B = i10;
         this.u = ByteBuffer.allocateDirect(((int) dw0Var.a) * ((int) dw0Var.b) * 4);
-        this.x = r6.b(dw0Var.a, dw0Var.b);
+        this.x = p6.b(dw0Var.a, dw0Var.b);
         if (this.m == null) {
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
             this.m = allocateDirect;
@@ -172,7 +172,7 @@ public final class s0 {
     public final void b() {
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
-        t6.a();
+        r6.a();
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
             dw0 dw0Var = this.g;
             GLES20.glViewport(0, 0, (int) dw0Var.a, (int) dw0Var.b);
@@ -196,11 +196,11 @@ public final class s0 {
         this.J = 0.0f;
     }
 
-    public final void c(t0 t0Var, int i10, boolean z10, a0 a0Var) {
+    public final void c(t0 t0Var, int i10, boolean z10, z zVar) {
         if (this.r == null || this.i == null) {
             return;
         }
-        this.f.f(new db(this, t0Var, i10, z10, a0Var));
+        this.f.f(new db(this, t0Var, i10, z10, zVar));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:52:0x0197  */
@@ -435,7 +435,7 @@ public final class s0 {
                 GLES20.glUseProgram(f1Var2.a);
                 Matrix matrix = new Matrix();
                 matrix.preTranslate(-i10, -i11);
-                float[] c10 = r6.c(this.x, r6.a(matrix));
+                float[] c10 = p6.c(this.x, p6.a(matrix));
                 GLES20.glUniformMatrix4fv(f1Var2.d("mvpMatrix"), 1, false, FloatBuffer.wrap(c10));
                 if (z10 || !this.G) {
                     GLES20.glUniform1i(f1Var2.d("texture"), 0);
@@ -510,7 +510,7 @@ public final class s0 {
             int[] iArr = new int[1];
             GLES20.glGenFramebuffers(1, iArr, 0);
             this.o = iArr[0];
-            t6.a();
+            r6.a();
         }
         return this.o;
     }
@@ -551,7 +551,7 @@ public final class s0 {
         }
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
-        t6.a();
+        r6.a();
         RectF rectF = null;
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
             dw0 dw0Var = this.g;
@@ -909,7 +909,7 @@ public final class s0 {
                 } else {
                     GLES20.glDrawArrays(5, 0, 4);
                 }
-                t6.a();
+                r6.a();
             }
             t1 t1Var = this.z;
             if (t1Var != null) {
@@ -924,7 +924,7 @@ public final class s0 {
         GLES20.glEnableVertexAttribArray(1);
         if (obj == null) {
         }
-        t6.a();
+        r6.a();
     }
 
     public final void o(int i10, int i11, h1 h1Var, float f7) {
@@ -971,7 +971,7 @@ public final class s0 {
         GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) this.n);
         GLES20.glEnableVertexAttribArray(1);
         GLES20.glDrawArrays(5, 0, 4);
-        t6.a();
+        r6.a();
     }
 
     public final void p(a5.a aVar, boolean z10) {

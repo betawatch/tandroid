@@ -1,83 +1,56 @@
 package org.telegram.ui.Wallet;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.xc;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f8 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n8 b;
-    public final /* synthetic */ pf.c c;
-    public final /* synthetic */ m0 d;
+public final class f8 extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ f8(n8 n8Var, pf.c cVar, m0 m0Var, int i10) {
-        this.a = i10;
-        this.b = n8Var;
-        this.c = cVar;
-        this.d = m0Var;
+    static {
+        e61.setup(new f8());
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                j0 j0Var = (j0) obj;
-                String str = (String) obj2;
-                this.c.c(false);
-                n8 n8Var = this.b;
-                if (j0Var != null) {
-                    v8 v8Var = new v8();
-                    v8Var.h = true;
-                    ArrayList arrayList = v8Var.a;
-                    arrayList.clear();
-                    if (!j0Var.e()) {
-                        arrayList.addAll(j0Var.g());
-                    }
-                    v8Var.V();
-                    v8Var.f = new u3(14, n8Var, this.d);
-                    n8Var.presentFragment(v8Var);
-                    break;
-                } else {
-                    xc a02 = xc.a0(n8Var);
-                    if (str == null) {
-                        str = "NULL_ERROR";
-                    }
-                    a02.e0(str, false);
-                    break;
-                }
-            default:
-                h0 h0Var = (h0) obj;
-                String str2 = (String) obj2;
-                this.c.c(false);
-                n8 n8Var2 = this.b;
-                if (h0Var != null) {
-                    if (!n8Var2.e) {
-                        n8Var2.d.add(h0Var);
-                        v8 v8Var2 = new v8();
-                        j0 j0Var2 = h0Var.b;
-                        ArrayList arrayList2 = v8Var2.a;
-                        arrayList2.clear();
-                        if (!j0Var2.e()) {
-                            arrayList2.addAll(j0Var2.g());
-                        }
-                        v8Var2.V();
-                        v8Var2.f = new h(n8Var2, this.d, h0Var, 18);
-                        n8Var2.presentFragment(v8Var2);
-                        break;
-                    } else {
-                        h0Var.close();
-                        break;
-                    }
-                } else {
-                    xc a03 = xc.a0(n8Var2);
-                    if (str2 == null) {
-                        str2 = "NULL_ERROR";
-                    }
-                    a03.e0(str2, false);
-                    break;
-                }
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        g8 g8Var = (g8) view;
+        String charSequence = f61Var.l.toString();
+        long j10 = f61Var.B;
+        int i10 = f61Var.z;
+        boolean z11 = f61Var.q;
+        TextView textView = g8Var.c;
+        TextView textView2 = g8Var.b;
+        textView2.setText(w7.X(charSequence));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        if (j10 < 0) {
+            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Loading));
+            spannableStringBuilder.setSpan(new ca0(AndroidUtilities.dp(35.0f), textView), 0, spannableStringBuilder.length(), 33);
+        } else {
+            spannableStringBuilder.append((CharSequence) m0.r(j10, false));
         }
+        if (i10 > 0) {
+            spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatSpannable(R.string.WalletPreviousWalletLastUsed, spannableStringBuilder, LocaleController.formatShortDateTime(i10)));
+        }
+        textView.setText(spannableStringBuilder);
+        textView2.setAlpha(z11 ? 0.5f : 1.0f);
+        textView.setAlpha(z11 ? 0.5f : 1.0f);
+        g8Var.d.setAlpha(z11 ? 0.5f : 1.0f);
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new g8(context, d6Var);
     }
 }

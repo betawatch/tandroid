@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h11 implements org.telegram.ui.Components.wl0 {
     public final /* synthetic */ int a;
@@ -119,9 +119,9 @@ public final /* synthetic */ class h11 implements org.telegram.ui.Components.wl0
                 int i13 = w81Var.I;
                 if (i10 >= i13 && i10 <= w81Var.J) {
                     o91 o91Var = (o91) r91Var.v0.get(i10 - i13);
-                    wi0 wi0Var = new wi0(o91Var.b, true, r91Var.b);
-                    wi0Var.e0 = o91Var;
-                    r91Var.presentFragment(wi0Var);
+                    vi0 vi0Var = new vi0(o91Var.b, true, r91Var.b);
+                    vi0Var.e0 = o91Var;
+                    r91Var.presentFragment(vi0Var);
                     return;
                 }
                 int i14 = w81Var.U;

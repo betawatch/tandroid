@@ -10,14 +10,14 @@ import android.widget.TextView;
 import hg.r0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final d6 a;
@@ -33,12 +33,12 @@ public class c extends FrameLayout {
         this.a = d6Var;
         TextView textView = new TextView(context);
         this.c = textView;
-        kk.k(20.0f, 1, textView);
+        lk.k(20.0f, 1, textView);
         textView.setGravity(LocaleController.isRTL ? 5 : 3);
         int i10 = h6.j5;
         textView.setTextColor(h6.w0(i10, d6Var));
         boolean z10 = LocaleController.isRTL;
-        addView(textView, z5.a(-2.0f, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f, -1, 23));
+        addView(textView, z5.d(-1, -2.0f, 23, z10 ? 16.0f : 53.0f, 0.0f, z10 ? 53.0f : 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         g2 g2Var = new g2(false);
@@ -47,7 +47,7 @@ public class c extends FrameLayout {
         g2Var.a(h6.w0(i10, d6Var));
         g2Var.b(h6.w0(i10, d6Var));
         g2Var.k = 220.0f;
-        addView(imageView, z5.a(24.0f, 16.0f, 0.0f, 16.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(imageView, z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 16.0f, 0.0f));
         imageView.setOnClickListener(new r0(this, 25));
     }
 
@@ -76,7 +76,7 @@ public class c extends FrameLayout {
     public void setCloseImageVisible(boolean z10) {
         this.b.setVisibility(z10 ? 0 : 8);
         boolean z11 = LocaleController.isRTL;
-        this.c.setLayoutParams(z5.a(-2.0f, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f, -1, 23));
+        this.c.setLayoutParams(z5.d(-1, -2.0f, 23, (z11 || !z10) ? 22.0f : 53.0f, 0.0f, (z11 && z10) ? 53.0f : 22.0f, 0.0f));
     }
 
     public void setOnCloseClickListener(Runnable runnable) {

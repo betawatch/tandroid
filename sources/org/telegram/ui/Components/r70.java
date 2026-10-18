@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r70 extends hm0 {
     public ArrayList c = new ArrayList();
@@ -173,7 +173,7 @@ public final class r70 extends hm0 {
         View view;
         Context context = viewGroup.getContext();
         if (i10 == 1) {
-            view = new org.telegram.ui.Cells.f4(1, 0, context, false);
+            view = new org.telegram.ui.Cells.f4(context, 1, 0, false);
         } else if (i10 == 2) {
             view = new ai.ic(this, context, 20);
         } else if (i10 != 4) {
@@ -187,7 +187,7 @@ public final class r70 extends hm0 {
             com.google.android.gms.internal.play_billing.k3.m(14.0f, 1, textView);
             textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.ai, false));
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-            e4Var.addView(textView, w7.z5.a(-1.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+            e4Var.addView(textView, w7.z5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
             view = e4Var;
         } else {
             view = new View(context);

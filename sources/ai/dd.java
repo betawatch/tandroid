@@ -20,7 +20,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hk;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class dd extends org.telegram.ui.Components.bb implements NotificationCenter.NotificationCenterDelegate {
     public final FrameLayout X;
@@ -55,7 +55,7 @@ public final class dd extends org.telegram.ui.Components.bb implements Notificat
         x90Var.setMaxWidth(ei.x3.a(x90Var.getText(), x90Var.getPaint()));
         frameLayout.addView(x90Var, w7.z5.e(-2, -1, 17));
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
-        this.containerView.addView(new z00(getContext()), w7.z5.d(-1.0f, -1));
+        this.containerView.addView(new z00(getContext()), w7.z5.c(-1.0f, -1));
         s61 s61Var = this.Y;
         if (s61Var != null) {
             s61Var.N(false);

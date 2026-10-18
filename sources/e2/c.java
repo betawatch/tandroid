@@ -17,7 +17,7 @@ import m.g3;
 import m.m1;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -163,10 +163,10 @@ public final class c {
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        g3 K = g3.K(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) K.c;
+        g3 P = g3.P(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) P.c;
         View view2 = (View) this.b;
-        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) K.c, i10);
+        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
         try {
             if (typedArray.hasValue(0)) {
                 this.a = typedArray.getResourceId(0, -1);
@@ -181,14 +181,14 @@ public final class c {
                 }
             }
             if (typedArray.hasValue(1)) {
-                r0.a0.f(view, K.z(1));
+                r0.a0.f(view, P.E(1));
             }
             if (typedArray.hasValue(2)) {
                 r0.a0.g(view, m1.b(typedArray.getInt(2, -1), null));
             }
-            K.L();
+            P.Q();
         } catch (Throwable th2) {
-            K.L();
+            P.Q();
             throw th2;
         }
     }

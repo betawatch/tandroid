@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class k21 implements m21 {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
@@ -31,6 +31,6 @@ public final class k21 implements m21 {
     @Override // org.telegram.ui.m21
     public final void c() {
         org.telegram.ui.ActionBar.n2 n2Var = this.a;
-        n2Var.showDialog(new sg.x0(n2Var, 3, true));
+        n2Var.showDialog(new sg.y0(n2Var, 3, true));
     }
 }

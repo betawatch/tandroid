@@ -19,17 +19,16 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import t7.u;
-import u2.c1;
-import u2.f0;
+import u2.e1;
+import u2.g0;
 import v7.u6;
 import v7.v6;
-import yh.g;
 import z3.f;
 import z3.i;
 import z3.j;
 import z3.m;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class e extends i2.b implements Handler.Callback {
     public final rb.b I;
@@ -100,7 +99,7 @@ public final class e extends i2.b implements Handler.Callback {
             return Long.MAX_VALUE;
         }
         this.Q.getClass();
-        if (this.S >= this.Q.i()) {
+        if (this.S >= this.Q.h()) {
             return Long.MAX_VALUE;
         }
         return this.Q.d(this.S);
@@ -223,9 +222,9 @@ public final class e extends i2.b implements Handler.Callback {
                 aVar.getClass();
                 if (aVar.a(this.Z) == Long.MIN_VALUE) {
                     try {
-                        c1 c1Var = this.r;
-                        c1Var.getClass();
-                        c1Var.a();
+                        e1 e1Var = this.r;
+                        e1Var.getClass();
+                        e1Var.a();
                         return true;
                     } catch (IOException unused) {
                         return false;
@@ -238,10 +237,10 @@ public final class e extends i2.b implements Handler.Callback {
                 if (this.W) {
                     j jVar = this.Q;
                     long j10 = this.Z;
-                    if (jVar == null || jVar.i() <= 0 || jVar.d(jVar.i() - 1) <= j10) {
+                    if (jVar == null || jVar.h() <= 0 || jVar.d(jVar.h() - 1) <= j10) {
                         j jVar2 = this.R;
                         long j11 = this.Z;
-                        if ((jVar2 == null || jVar2.i() <= 0 || jVar2.d(jVar2.i() - 1) <= j11) && this.P != null) {
+                        if ((jVar2 == null || jVar2.h() <= 0 || jVar2.d(jVar2.h() - 1) <= j11) && this.P != null) {
                             return false;
                         }
                     }
@@ -312,7 +311,7 @@ public final class e extends i2.b implements Handler.Callback {
     }
 
     @Override // i2.b
-    public final void u(w[] wVarArr, long j10, long j11, f0 f0Var) {
+    public final void u(w[] wVarArr, long j10, long j11, g0 g0Var) {
         w wVar = wVarArr[0];
         this.Y = wVar;
         if (Objects.equals(wVar.s, "application/x-media3-cues")) {
@@ -370,7 +369,7 @@ public final class e extends i2.b implements Handler.Callback {
                         obtain.recycle();
                         ArrayList parcelableArrayList = readBundle.getParcelableArrayList("c");
                         parcelableArrayList.getClass();
-                        z3.a aVar = new z3.a(j14, readBundle.getLong("d"), e2.e.b(new g(3), parcelableArrayList));
+                        z3.a aVar = new z3.a(j14, readBundle.getLong("d"), e2.e.b(new ya.b(4), parcelableArrayList));
                         hVar.clear();
                         z11 = this.K.c(aVar, j10);
                     }
@@ -470,11 +469,11 @@ public final class e extends i2.b implements Handler.Callback {
         if (z10) {
             this.Q.getClass();
             int c10 = this.Q.c(j10);
-            if (c10 == 0 || this.Q.i() == 0) {
+            if (c10 == 0 || this.Q.h() == 0) {
                 j12 = this.Q.timeUs;
             } else if (c10 == -1) {
                 j jVar3 = this.Q;
-                j12 = jVar3.d(jVar3.i() - 1);
+                j12 = jVar3.d(jVar3.h() - 1);
             } else {
                 j12 = this.Q.d(c10 - 1);
             }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class q60 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -74,46 +74,46 @@ public final class q60 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 8:
-                fg0 fg0Var = (fg0) obj;
+                eg0 eg0Var = (eg0) obj;
                 if (i10 != 1) {
-                    if (i10 == -1 && fg0Var.onBackPressed(true)) {
-                        fg0Var.finishFragment();
+                    if (i10 == -1 && eg0Var.onBackPressed(true)) {
+                        eg0Var.finishFragment();
                         break;
                     }
                 } else {
-                    fg0Var.p1();
+                    eg0Var.p1();
                     break;
                 }
                 break;
             case 9:
                 if (i10 == -1) {
-                    ((ig0) obj).finishFragment();
+                    ((hg0) obj).finishFragment();
                     break;
                 }
                 break;
             case 10:
                 if (i10 == -1) {
-                    ((kh0) obj).finishFragment();
+                    ((jh0) obj).finishFragment();
                     break;
                 }
                 break;
             case 11:
                 if (i10 == -1) {
-                    ((lh0) obj).finishFragment();
+                    ((kh0) obj).finishFragment();
                     break;
                 }
                 break;
             case 12:
-                wi0 wi0Var = (wi0) obj;
+                vi0 vi0Var = (vi0) obj;
                 if (i10 != -1) {
                     if (i10 == 1) {
                         Bundle bundle = new Bundle();
-                        bundle.putLong("chat_id", wi0Var.b);
-                        wi0Var.presentFragment(new r91(bundle));
+                        bundle.putLong("chat_id", vi0Var.b);
+                        vi0Var.presentFragment(new r91(bundle));
                         break;
                     }
                 } else {
-                    wi0Var.finishFragment();
+                    vi0Var.finishFragment();
                     break;
                 }
                 break;
@@ -200,7 +200,7 @@ public final class q60 extends org.telegram.ui.ActionBar.j {
                         if (i10 == 2) {
                             kq0 kq0Var = lq0Var.s0;
                             if (kq0Var != null) {
-                                kq0Var.c();
+                                kq0Var.g();
                             }
                             lq0Var.finishFragment();
                             break;

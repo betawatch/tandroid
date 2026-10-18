@@ -1,9 +1,9 @@
 package ug;
 
-import ai.q2;
+import ai.k2;
 import android.content.Intent;
 import android.net.Uri;
-import ci.z2;
+import ci.y2;
 import ei.o8;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.LocaleController;
@@ -21,7 +21,7 @@ import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class b0 extends bb {
     public final TLRPC.TL_payments_checkedGiftCode X;
@@ -88,13 +88,13 @@ public final class b0 extends bb {
             cVar.d();
             cVar.b = new d(atomicBoolean, 1);
         }
-        z2 z2Var = new z2(atomicBoolean, n2Var, str, cVar, 16);
+        y2 y2Var = new y2(atomicBoolean, n2Var, str, cVar, 16);
         f fVar = new f(atomicBoolean, cVar, 1);
         ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
         MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
         TLRPC.TL_payments_checkGiftCode tL_payments_checkGiftCode = new TLRPC.TL_payments_checkGiftCode();
         tL_payments_checkGiftCode.slug = str;
-        connectionsManager.sendRequest(tL_payments_checkGiftCode, new q2(messagesController, z2Var, fVar, 24));
+        connectionsManager.sendRequest(tL_payments_checkGiftCode, new k2(messagesController, y2Var, fVar, 24));
     }
 
     @Override // org.telegram.ui.Components.bb

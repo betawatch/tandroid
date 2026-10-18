@@ -40,7 +40,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -55,9 +55,10 @@ public final /* synthetic */ class z implements Utilities.Callback {
         this.d = obj3;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:262:0x0710  */
-    /* JADX WARN: Removed duplicated region for block: B:274:0x0745  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x0743 A[SYNTHETIC] */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:263:0x0712  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x0747  */
+    /* JADX WARN: Removed duplicated region for block: B:290:0x0745 A[SYNTHETIC] */
     @Override // org.telegram.messenger.Utilities.Callback
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -94,9 +95,9 @@ public final /* synthetic */ class z implements Utilities.Callback {
                     l4Var.h0.k(false);
                     Uri uriParseSafe = Utilities.uriParseSafe(str2);
                     if ((uRLSpanArr.length <= 0 || length != 0 || i16 <= 0) && (uriParseSafe == null || uriParseSafe.getScheme() == null)) {
-                        org.telegram.ui.web.k.b(activity, str2);
-                        org.telegram.ui.web.x0 webView = o3Var.getWebView();
-                        String str3 = org.telegram.ui.web.m1.a().b;
+                        org.telegram.ui.web.l.b(activity, str2);
+                        org.telegram.ui.web.y0 webView = o3Var.getWebView();
+                        String str3 = org.telegram.ui.web.n1.a().b;
                         if (str3 != null) {
                             StringBuilder u10 = a1.g.u(str3);
                             u10.append(URLEncoder.encode(str2));
@@ -314,7 +315,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                         ybVar.b.setMaxLines(2);
                         org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(snVar3.getContext(), snVar3.getResourceProvider(), true);
                         ocVar.e(LocaleController.getString(R.string.StakeDiceToastButton));
-                        ocVar.a = new mh0(j3Var, j10, i14);
+                        ocVar.a = new lh0(j3Var, j10, i14);
                         ybVar.setButton(ocVar);
                         org.telegram.ui.Components.xc.a0(snVar3).b(ybVar, 2750).j();
                         break;
@@ -329,7 +330,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 b2Var.c(200L);
                 sn snVar4 = enVar2.a;
                 boolean z10 = snVar4.getMessagesController().config.needAgeVideoVerification.get() && !TextUtils.isEmpty(snVar4.getMessagesController().verifyAgeBotUsername);
-                boolean z11 = (contentsettings == null || !contentsettings.sensitive_can_change) && z10;
+                Object[] objArr = (contentsettings == null || !contentsettings.sensitive_can_change) && z10;
                 boolean[] zArr = new boolean[1];
                 FrameLayout frameLayout = new FrameLayout(snVar4.getParentActivity());
                 if (z10) {
@@ -339,17 +340,17 @@ public final /* synthetic */ class z implements Utilities.Callback {
                     a2Var.setBackground(org.telegram.ui.ActionBar.h6.L0(false));
                     a2Var.e(LocaleController.getString(R.string.MessageShowSensitiveContentAlways), "", zArr[0], false, false);
                     a2Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(8.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(8.0f) : AndroidUtilities.dp(16.0f), 0);
-                    frameLayout.addView(a2Var, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+                    frameLayout.addView(a2Var, w7.z5.d(-1, 48.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
                     a2Var.setOnClickListener(new o8(3, zArr));
                 }
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(snVar4.getParentActivity(), 0, snVar4.getResourceProvider());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.MessageShowSensitiveContentMediaTitle);
-                alertDialog$Builder.a.T = LocaleController.getString(z11 ? R.string.MessageShowSensitiveContentMediaTextClosed : R.string.MessageShowSensitiveContentMediaText);
+                alertDialog$Builder.a.T = LocaleController.getString(objArr != false ? R.string.MessageShowSensitiveContentMediaTextClosed : R.string.MessageShowSensitiveContentMediaText);
                 alertDialog$Builder.n(frameLayout);
                 alertDialog$Builder.a.G = 9;
-                alertDialog$Builder.h(LocaleController.getString(z11 ? R.string.MessageShowSensitiveContentMediaTextClosedButton : R.string.Cancel), null);
-                if (!z11) {
-                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.hk(enVar2, u1Var, zArr, z10, contentsettings));
+                alertDialog$Builder.h(LocaleController.getString(objArr != false ? R.string.MessageShowSensitiveContentMediaTextClosedButton : R.string.Cancel), null);
+                if (objArr == false) {
+                    alertDialog$Builder.k(LocaleController.getString(R.string.MessageShowSensitiveContentButton), new org.telegram.messenger.ik(enVar2, u1Var, zArr, z10, contentsettings));
                 }
                 snVar4.showDialog(alertDialog$Builder.a);
                 break;
@@ -376,12 +377,12 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 int[] iArr = (int[]) this.d;
                 Long l11 = (Long) obj;
                 Pattern pattern = LaunchActivity.C1;
+                launchActivity.getClass();
                 if (cVar != null) {
-                    launchActivity.getClass();
                     cVar.b();
                 }
-                if (MessagesController.getInstance(launchActivity.O).getUserOrChat(l11.longValue()) != null) {
-                    new yh.p1(launchActivity, iArr[0], l11.longValue(), null, null).show();
+                if ((l11 != null ? MessagesController.getInstance(launchActivity.O).getUserOrChat(l11.longValue()) : null) != null) {
+                    new yh.o1(launchActivity, iArr[0], l11.longValue(), null, null).show();
                     break;
                 } else {
                     org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
@@ -400,7 +401,7 @@ public final /* synthetic */ class z implements Utilities.Callback {
                 userArr[0] = user2;
                 if (user2 == null) {
                     kb0Var.c();
-                    org.telegram.messenger.kk.q(R.string.NoUsernameFound, kb0.d(), null);
+                    org.telegram.messenger.lk.q(R.string.NoUsernameFound, kb0.d(), null);
                     break;
                 } else {
                     i90Var.run();

@@ -1,32 +1,27 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class a4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+import android.view.View;
+import org.telegram.messenger.FilesMigrationService;
 
-    public /* synthetic */ a4(int i10, boolean z10) {
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class a4 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ a4(Object obj, int i10) {
         this.a = i10;
-        this.b = z10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        boolean z10 = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                FingerprintController.generateNewKey(z10);
-                break;
-            case 1:
-                FingerprintController.lambda$generateNewKey$0(z10);
-                break;
-            case 2:
-                LiteMode.lambda$onPowerSaverApplied$0(z10);
+                ((FilesMigrationService.FilesMigrationBottomSheet) this.b).lambda$new$0(view);
                 break;
             default:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewTheme, Boolean.FALSE, Boolean.valueOf(z10));
+                MessagesController.lambda$checkSensitive$448((boolean[]) this.b, view);
                 break;
         }
     }

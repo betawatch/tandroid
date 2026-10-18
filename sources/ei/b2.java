@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class b2 extends w1 {
     public final o1 b;
@@ -48,7 +48,7 @@ public final class b2 extends w1 {
         kVar.g = 160L;
         kVar.i = bs.g;
         o1Var.setItemAnimator(kVar);
-        addView(o1Var, w7.z5.d(-1.0f, -1));
+        addView(o1Var, w7.z5.c(-1.0f, -1));
         d6Var = ((org.telegram.ui.ActionBar.f3) n2Var).resourcesProvider;
         h2 h2Var = new h2(context, d6Var);
         this.f = h2Var;
@@ -57,7 +57,7 @@ public final class b2 extends w1 {
         d6Var2 = ((org.telegram.ui.ActionBar.f3) n2Var).resourcesProvider;
         y1 y1Var = new y1(this, context, d6Var2);
         this.e = y1Var;
-        addView(y1Var, w7.z5.d(36.0f, -1));
+        addView(y1Var, w7.z5.c(36.0f, -1));
     }
 
     @Override // ei.w1

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p40 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.p80 {
     public final /* synthetic */ v40 a;
@@ -63,7 +63,7 @@ public final /* synthetic */ class p40 implements org.telegram.ui.ActionBar.a2, 
         TL_phone.saveDefaultGroupCallJoinAs savedefaultgroupcalljoinas = new TL_phone.saveDefaultGroupCallJoinAs();
         savedefaultgroupcalljoinas.peer = MessagesController.getInputPeer(s50Var.Z0);
         savedefaultgroupcalljoinas.join_as = inputPeer;
-        accountInstance.getConnectionsManager().sendRequest(savedefaultgroupcalljoinas, new ci.e6(8));
+        accountInstance.getConnectionsManager().sendRequest(savedefaultgroupcalljoinas, new ci.d6(8));
         s50Var.J1();
     }
 

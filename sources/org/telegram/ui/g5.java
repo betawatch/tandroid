@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g5 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -629,12 +629,12 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                             int i40 = org.telegram.ui.ActionBar.h6.h5;
                             d6Var3 = ((org.telegram.ui.ActionBar.f3) q21Var).resourcesProvider;
                             frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i40, d6Var3));
-                            p21Var.r.addView(p21Var.s, w7.z5.a(48.0f, 12.0f, 12.0f, 12.0f, 12.0f, -1, 119));
+                            p21Var.r.addView(p21Var.s, w7.z5.d(-1, 48.0f, 119, 12.0f, 12.0f, 12.0f, 12.0f));
                             View view = new View(p21Var.getContext());
                             int i41 = org.telegram.ui.ActionBar.h6.d7;
                             d6Var4 = ((org.telegram.ui.ActionBar.f3) q21Var).resourcesProvider;
                             view.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(i41, d6Var4));
-                            p21Var.r.addView(view, w7.z5.b(-1.0f, 1.0f / AndroidUtilities.density, 48));
+                            p21Var.r.addView(view, w7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 48));
                         }
                         p21Var.s.setEnabled(p21Var.d.optional || !TextUtils.isEmpty(p21Var.n.getText()));
                         p21Var.s.setOnClickListener(new y50(p21Var, 26));
@@ -662,7 +662,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                         d6Var8 = ((org.telegram.ui.ActionBar.f3) q21Var).resourcesProvider;
                         x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i44, d6Var8));
                         x90Var.setGravity(17);
-                        frameLayout2.addView(x90Var, w7.z5.a(-2.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 17));
+                        frameLayout2.addView(x90Var, w7.z5.d(-1, -2.0f, 17, 16.0f, 16.0f, 16.0f, 16.0f));
                         org.telegram.ui.Components.f61 k13 = org.telegram.ui.Components.f61.k(frameLayout2);
                         k13.d = -3;
                         arrayList11.add(k13);
@@ -748,10 +748,10 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                 m61 m61Var = (m61) this.b;
                 ArrayList arrayList16 = (ArrayList) obj;
                 int i47 = m61Var.b0;
-                ci.a7 a7Var = m61Var.Z;
-                if (a7Var != null) {
+                ci.z6 z6Var = m61Var.Z;
+                if (z6Var != null) {
                     arrayList16.add(org.telegram.ui.Components.f61.C(AndroidUtilities.dp(16.0f)));
-                    ArrayList arrayList17 = a7Var.i;
+                    ArrayList arrayList17 = z6Var.i;
                     int size8 = arrayList17.size();
                     int i48 = i47;
                     int i49 = 0;
@@ -775,7 +775,7 @@ public final /* synthetic */ class g5 implements Utilities.Callback2 {
                             i48 = i47;
                         }
                     }
-                    if (a7Var.k() || !a7Var.r) {
+                    if (z6Var.k() || !z6Var.r) {
                         while (true) {
                             if (i16 < (i48 <= 0 ? i47 : i48)) {
                                 i16++;

@@ -23,7 +23,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class bi0 extends View {
     public int E;
@@ -37,7 +37,7 @@ public final class bi0 extends View {
     public RenderNode M;
     public final gw0[] N;
     public final f6 O;
-    public final ci.x5 P;
+    public final ci.w5 P;
     public boolean a;
     public final Object b;
     public final pi0[] c;
@@ -73,7 +73,7 @@ public final class bi0 extends View {
         this.N = new gw0[3];
         f6 f6Var = new f6(this, 0L, 350L, bs.f);
         this.O = f6Var;
-        this.P = new ci.x5(this, 3);
+        this.P = new ci.w5(this, 3);
         f6Var.d(1.0f, true);
         boolean z10 = this.a & SharedConfig.useNewBlur;
         this.a = z10;
@@ -306,10 +306,10 @@ public final class bi0 extends View {
     public final void e() {
         ki0 ki0Var = this.h;
         if (ki0Var != null) {
-            ci.x5 x5Var = this.P;
+            ci.w5 w5Var = this.P;
             ArrayList arrayList = ki0Var.k0;
             if (arrayList != null) {
-                arrayList.remove(x5Var);
+                arrayList.remove(w5Var);
             }
             this.h = null;
         }

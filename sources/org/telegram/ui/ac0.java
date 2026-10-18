@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ac0 implements Runnable {
     public final /* synthetic */ int a;
@@ -122,15 +122,15 @@ public final /* synthetic */ class ac0 implements Runnable {
                 pVar2.g(exc);
                 return;
             default:
-                yh.p1 p1Var = (yh.p1) this.c;
+                yh.o1 o1Var = (yh.o1) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
                 long j15 = this.b;
-                p1Var.getClass();
+                o1Var.getClass();
                 org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U == null) {
                     return;
                 }
-                p1Var.dismiss();
+                o1Var.dismiss();
                 if (callback != null) {
                     callback.run(Boolean.FALSE);
                 }

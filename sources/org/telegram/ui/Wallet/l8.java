@@ -1,56 +1,92 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
+import android.view.KeyEvent;
+import android.widget.EditText;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.ca0;
-import org.telegram.ui.Components.e61;
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class l8 extends e61 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class l8 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        e61.setup(new l8());
+    public /* synthetic */ l8(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.e61
-    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
-        m8 m8Var = (m8) view;
-        String charSequence = f61Var.l.toString();
-        long j10 = f61Var.B;
-        int i10 = f61Var.z;
-        boolean z11 = f61Var.q;
-        TextView textView = m8Var.c;
-        TextView textView2 = m8Var.b;
-        textView2.setText(c8.X(charSequence));
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (j10 < 0) {
-            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Loading));
-            spannableStringBuilder.setSpan(new ca0(AndroidUtilities.dp(35.0f), textView), 0, spannableStringBuilder.length(), 33);
-        } else {
-            spannableStringBuilder.append((CharSequence) m0.r(j10, false));
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
+            case 0:
+                n8 n8Var = (n8) this.b;
+                if (i10 != 3) {
+                    n8Var.getClass();
+                    return false;
+                }
+                AndroidUtilities.hideKeyboard(n8Var.b);
+                return true;
+            case 1:
+                i9 i9Var = (i9) this.b;
+                if (i10 == 6) {
+                    ei.d dVar = i9Var.a0;
+                    if (dVar.W) {
+                        dVar.performClick();
+                        return true;
+                    }
+                } else {
+                    i9Var.getClass();
+                }
+                return false;
+            default:
+                ga gaVar = (ga) this.b;
+                EditText editText = gaVar.a;
+                boolean z10 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
+                if (i10 != 5 && !z10) {
+                    return false;
+                }
+                if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {
+                    String lowerCase = editText.getText().toString().trim().toLowerCase();
+                    if (lowerCase.isEmpty() || !gaVar.b()) {
+                        String str = null;
+                        if (!lowerCase.isEmpty()) {
+                            String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
+                            int length = mnemonicWordlist.length;
+                            int i11 = 0;
+                            while (true) {
+                                if (i11 < length) {
+                                    String str2 = mnemonicWordlist[i11];
+                                    if (str2.startsWith(lowerCase)) {
+                                        str = str2;
+                                    } else {
+                                        i11++;
+                                    }
+                                }
+                            }
+                        }
+                        if (str != null) {
+                            editText.setText(str);
+                            editText.setSelection(str.length());
+                            gaVar.setError(false);
+                            gaVar.a();
+                            Runnable runnable = gaVar.r;
+                            if (runnable != null) {
+                                editText.post(runnable);
+                            }
+                        } else {
+                            gaVar.setError(true);
+                        }
+                    } else {
+                        gaVar.setError(false);
+                        gaVar.a();
+                        Runnable runnable2 = gaVar.r;
+                        if (runnable2 != null) {
+                            editText.post(runnable2);
+                        }
+                    }
+                }
+                return true;
         }
-        if (i10 > 0) {
-            spannableStringBuilder = new SpannableStringBuilder(LocaleController.formatSpannable(R.string.WalletPreviousWalletLastUsed, spannableStringBuilder, LocaleController.formatShortDateTime(i10)));
-        }
-        textView.setText(spannableStringBuilder);
-        textView2.setAlpha(z11 ? 0.5f : 1.0f);
-        textView.setAlpha(z11 ? 0.5f : 1.0f);
-        m8Var.d.setAlpha(z11 ? 0.5f : 1.0f);
-    }
-
-    @Override // org.telegram.ui.Components.e61
-    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
-        return new m8(context, d6Var);
     }
 }

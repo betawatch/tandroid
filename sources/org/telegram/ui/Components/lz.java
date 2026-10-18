@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lz implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -248,7 +248,7 @@ public final /* synthetic */ class lz implements Utilities.Callback {
                     TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
                     tL_messages_getStickers.emoticon = mzVar.a;
                     tL_messages_getStickers.hash = 0L;
-                    ozVar5.L = ConnectionsManager.getInstance(ozVar5.Q.c1).sendRequest(tL_messages_getStickers, new ai.q2(mzVar, tL_messages_getStickers, runnable5, 14));
+                    ozVar5.L = ConnectionsManager.getInstance(ozVar5.Q.c1).sendRequest(tL_messages_getStickers, new ai.k2(mzVar, tL_messages_getStickers, runnable5, 14));
                     break;
                 } else {
                     runnable5.run();

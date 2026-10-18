@@ -20,7 +20,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class rb0 extends FrameLayout {
     public final ImageView a;
@@ -49,7 +49,7 @@ public final class rb0 extends FrameLayout {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView.setColorFilter(new PorterDuffColorFilter(x02, mode));
         imageView.setVisibility(8);
-        addView(imageView, w7.z5.a(24.0f, 20.0f, 0.0f, 20.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(imageView, w7.z5.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 20.0f, 0.0f, 20.0f, 0.0f));
         ai.vd vdVar = new ai.vd(context, 28);
         this.c = vdVar;
         vdVar.setLines(1);
@@ -85,7 +85,7 @@ public final class rb0 extends FrameLayout {
             linearLayout.addView(q6Var, w7.z5.p(-2, -2, 0.0f, 16, 6, 0, 0, 0));
             linearLayout.addView(imageView2, w7.z5.p(16, 16, 0.0f, 16, 2, 0, 0, 0));
         }
-        addView(linearLayout, w7.z5.a(-2.0f, 64.0f, 0.0f, 8.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 16));
+        addView(linearLayout, w7.z5.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 64.0f, 0.0f, 8.0f, 0.0f));
         Switch r32 = new Switch(context, null);
         this.f = r32;
         r32.setVisibility(8);
@@ -94,7 +94,7 @@ public final class rb0 extends FrameLayout {
         int i13 = org.telegram.ui.ActionBar.h6.d6;
         r32.d(i11, i12, i13, i13);
         r32.setImportantForAccessibility(2);
-        addView(r32, w7.z5.a(50.0f, 19.0f, 0.0f, 19.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 16));
+        addView(r32, w7.z5.d(37, 50.0f, (LocaleController.isRTL ? 3 : 5) | 16, 19.0f, 0.0f, 19.0f, 0.0f));
         org.telegram.ui.Components.xp xpVar = new org.telegram.ui.Components.xp(context, 21, null);
         this.h = xpVar;
         xpVar.b(org.telegram.ui.ActionBar.h6.h7, org.telegram.ui.ActionBar.h6.j7, org.telegram.ui.ActionBar.h6.k7);
@@ -104,7 +104,7 @@ public final class rb0 extends FrameLayout {
         xpVar.setVisibility(8);
         xpVar.setImportantForAccessibility(2);
         boolean z10 = LocaleController.isRTL;
-        addView(xpVar, w7.z5.a(21.0f, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f, 21, (z10 ? 5 : 3) | 16));
+        addView(xpVar, w7.z5.d(21, 21.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 64.0f, 0.0f, z10 ? 64.0f : 0.0f, 0.0f));
         setFocusable(true);
     }
 
@@ -161,7 +161,7 @@ public final class rb0 extends FrameLayout {
                 imageView.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
                 linearLayout.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
                 r12.animate().alpha(z10 ? 0.5f : 1.0f).setDuration(220L).start();
-                org.telegram.messenger.kk.s(xpVar.animate(), z10 ? 0.5f : 1.0f, 220L);
+                org.telegram.messenger.lk.s(xpVar.animate(), z10 ? 0.5f : 1.0f, 220L);
             } else {
                 imageView.setAlpha(z10 ? 0.5f : 1.0f);
                 linearLayout.setAlpha(z10 ? 0.5f : 1.0f);

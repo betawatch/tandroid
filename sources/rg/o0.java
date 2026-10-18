@@ -23,14 +23,14 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d11;
 import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class o0 extends View {
     public final Paint E;
@@ -240,7 +240,7 @@ public class o0 extends View {
                         imageReceiver.setImageCoords(f24, f25, width, height);
                         imageReceiver.setAlpha(e * e10);
                         imageReceiver.draw(canvas2);
-                        f14 = kk.b(f18 * f16, this.d0, f7 - e12, f14);
+                        f14 = lk.b(f18 * f16, this.d0, f7 - e12, f14);
                     }
                     f17 = (5.0f * f18) + (7.0f * f18) + f14;
                     d11Var = this.G;

@@ -21,7 +21,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class qq0 extends org.telegram.ui.ActionBar.n2 {
     public static final org.telegram.ui.Components.es0 y = new org.telegram.ui.Components.es0(4);
@@ -147,7 +147,7 @@ public final class qq0 extends org.telegram.ui.ActionBar.n2 {
             oq0 oq0Var = new oq0(this, context);
             oq0VarArr[i14] = oq0Var;
             float f10 = f7;
-            nq0Var.addView(oq0Var, w7.z5.d(-1.0f, -1));
+            nq0Var.addView(oq0Var, w7.z5.c(-1.0f, -1));
             if (i14 == 0) {
                 oq0 oq0Var2 = oq0VarArr[i14];
                 oq0Var2.a = lq0Var;
@@ -165,19 +165,19 @@ public final class qq0 extends org.telegram.ui.ActionBar.n2 {
             oq0 oq0Var5 = oq0VarArr[i14];
             oq0Var5.c = oq0Var5.a.getActionBar();
             oq0 oq0Var6 = oq0VarArr[i14];
-            oq0Var6.addView(oq0Var6.b, w7.z5.d(-1.0f, -1));
+            oq0Var6.addView(oq0Var6.b, w7.z5.c(-1.0f, -1));
             oq0 oq0Var7 = oq0VarArr[i14];
-            oq0Var7.addView(oq0Var7.c, w7.z5.d(-2.0f, -1));
+            oq0Var7.addView(oq0Var7.c, w7.z5.c(-2.0f, -1));
             oq0VarArr[i14].c.setVisibility(8);
             oq0VarArr[i14].d.setOnScrollListener(new ki.m3(7, this, oq0VarArr[i14].d.getOnScrollListener()));
             i14++;
             f7 = f10;
         }
         float f11 = f7;
-        nq0Var.addView(this.actionBar, w7.z5.d(-2.0f, -1));
+        nq0Var.addView(this.actionBar, w7.z5.c(-2.0f, -1));
         nq0Var.addView(lq0Var.Z, w7.z5.e(-1, 48, 83));
-        nq0Var.addView(lq0Var.a0, w7.z5.a(60.0f, 0.0f, 0.0f, 12.0f, 10.0f, 60, 85));
-        nq0Var.addView(lq0Var.b0, w7.z5.a(24.0f, 0.0f, 0.0f, -2.0f, 9.0f, 42, 85));
+        nq0Var.addView(lq0Var.a0, w7.z5.d(60, 60.0f, 85, 0.0f, 0.0f, 12.0f, 10.0f));
+        nq0Var.addView(lq0Var.b0, w7.z5.d(42, 24.0f, 85, 0.0f, 0.0f, -2.0f, 9.0f));
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip3 = this.h;
         if (scrollSlidingTextTabStrip3 != null) {
             scrollSlidingTextTabStrip3.a(0, LocaleController.getString(R.string.ImagesTab2), null);

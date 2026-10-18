@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.CheckBoxSquare;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.n2 {
     public final DownloadController.Preset E;
@@ -355,7 +355,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.n2 {
             } else {
                 l4Var.setText(LocaleController.getString(R.string.AutoDownloadFilesTitle));
             }
-            linearLayout.addView(l4Var, w7.z5.d(-2.0f, -1));
+            linearLayout.addView(l4Var, w7.z5.c(-2.0f, -1));
             org.telegram.ui.Cells.c5[] c5VarArr = new org.telegram.ui.Cells.c5[1];
             org.telegram.ui.Cells.v8[] v8VarArr2 = new org.telegram.ui.Cells.v8[1];
             AnimatorSet[] animatorSetArr = new AnimatorSet[1];
@@ -374,19 +374,19 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.n2 {
                 r8Var.a = textView;
                 AnimatorSet[] animatorSetArr2 = animatorSetArr;
                 org.telegram.ui.Cells.c5[] c5VarArr2 = c5VarArr;
-                org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, z11), 1, 16.0f, 1);
+                org.telegram.messenger.lk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.j5, z11), 1, 16.0f, 1);
                 textView.setMaxLines(1);
                 textView.setSingleLine(true);
                 textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
                 textView.setEllipsize(TextUtils.TruncateAt.END);
-                r8Var.addView(textView, w7.z5.a(-1.0f, z15 ? 66.0f : 21.0f, 0.0f, z15 ? 21.0f : 66.0f, 0.0f, -1, (z15 ? 5 : 3) | 48));
+                r8Var.addView(textView, w7.z5.d(-1, -1.0f, (z15 ? 5 : 3) | 48, z15 ? 66.0f : 21.0f, 0.0f, z15 ? 21.0f : 66.0f, 0.0f));
                 CheckBoxSquare checkBoxSquare = new CheckBoxSquare(parentActivity, null, true);
                 r8Var.b = checkBoxSquare;
                 checkBoxSquare.setDuplicateParentStateEnabled(false);
                 checkBoxSquare.setFocusable(false);
                 checkBoxSquare.setFocusableInTouchMode(false);
                 checkBoxSquare.setClickable(false);
-                r8Var.addView(checkBoxSquare, w7.z5.a(18.0f, 21.0f, 0.0f, 21.0f, 0.0f, 18, (z15 ? 3 : 5) | 16));
+                r8Var.addView(checkBoxSquare, w7.z5.d(18, 18.0f, (z15 ? 3 : 5) | 16, 21.0f, 0.0f, 21.0f, 0.0f));
                 r8VarArr[i21] = r8Var;
                 if (i21 == 0) {
                     r8Var.a(LocaleController.getString(R.string.AutodownloadContacts), (currentRoamingPreset.mask[0] & i15) != 0, true);
@@ -404,7 +404,7 @@ public class DataAutoDownloadActivity extends org.telegram.ui.ActionBar.n2 {
                 ai.pb pbVar = new ai.pb(dataAutoDownloadActivity, r8Var, r8VarArr2, i22, c5VarArr2, v8VarArr2, animatorSetArr2);
                 i12 = i22;
                 r8Var2.setOnClickListener(pbVar);
-                linearLayout.addView(r8VarArr2[i21], w7.z5.d(50.0f, -1));
+                linearLayout.addView(r8VarArr2[i21], w7.z5.c(50.0f, -1));
                 i21++;
                 r8VarArr = r8VarArr2;
                 currentRoamingPreset = currentRoamingPreset;

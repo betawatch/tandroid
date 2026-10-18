@@ -41,7 +41,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class xf1 extends org.telegram.ui.ActionBar.n2 {
     public org.telegram.ui.ActionBar.j0 E;
@@ -181,7 +181,7 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
     }
 
     public static void V(xf1 xf1Var) {
-        ConnectionsManager.getInstance(xf1Var.currentAccount).sendRequest(new TL_account.resendPasswordEmail(), new ci.e6(8));
+        ConnectionsManager.getInstance(xf1Var.currentAccount).sendRequest(new TL_account.resendPasswordEmail(), new ci.d6(8));
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xf1Var.getParentActivity());
         alertDialog$Builder.a.T = LocaleController.getString(R.string.ResendCodeInfo);
         alertDialog$Builder.a.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
@@ -660,9 +660,9 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
                         }
                     } else {
                         Bundle h = a1.g.h("afterSignup", true);
-                        pg0 pg0Var = new pg0();
-                        pg0Var.l0(h);
-                        presentFragment(pg0Var, true);
+                        og0 og0Var = new og0();
+                        og0Var.l0(h);
+                        presentFragment(og0Var, true);
                         break;
                     }
                 } else {
@@ -1030,7 +1030,7 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
         this.h.setTextSize(1, 14.0f);
         this.h.setGravity(19);
         this.h.setVisibility(8);
-        m.g3.i(this.h);
+        m.g3.r(this.h);
         this.h.setPadding(AndroidUtilities.dp(32.0f), 0, AndroidUtilities.dp(32.0f), 0);
         final int i16 = 3;
         this.h.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.kf1
@@ -1454,10 +1454,10 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
                 wf1 wf1Var = new wf1(this, context);
                 this.x = wf1Var;
                 wf1Var.setVerticalScrollBarEnabled(false);
-                m0Var.addView(this.x, w7.z5.d(-1.0f, -1));
-                m0Var.addView(this.h, w7.z5.a(56.0f, 0.0f, 0.0f, 0.0f, 16.0f, -1, 80));
+                m0Var.addView(this.x, w7.z5.c(-1.0f, -1));
+                m0Var.addView(this.h, w7.z5.d(-1, 56.0f, 80, 0.0f, 0.0f, 0.0f, 16.0f));
                 m0Var.addView(this.c0, org.telegram.ui.Components.h20.b());
-                u9Var.addView(qa0Var, w7.z5.d(-1.0f, -1));
+                u9Var.addView(qa0Var, w7.z5.c(-1.0f, -1));
                 sa1 sa1Var = new sa1(this, context, i15);
                 sa1Var.setOrientation(1);
                 this.x.addView(sa1Var, w7.z5.x(-1, -1, 51));
@@ -1684,8 +1684,8 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
                 });
                 linearLayout.addView(this.E, w7.z5.t(24, 24, 16, 0, 0, 16, 0));
                 this.n.addTextChangedListener(new tf1(this, 2));
-                this.s.addView(linearLayout, w7.z5.d(-2.0f, -1));
-                sa1Var.addView(this.s, w7.z5.a(-2.0f, 24.0f, 32.0f, 24.0f, 32.0f, -1, 49));
+                this.s.addView(linearLayout, w7.z5.c(-2.0f, -1));
+                sa1Var.addView(this.s, w7.z5.d(-1, -2.0f, 49, 24.0f, 32.0f, 24.0f, 32.0f));
                 this.v = new org.telegram.ui.Components.sd0(context, null);
                 EditTextBoldCursor editTextBoldCursor3 = new EditTextBoldCursor(context);
                 this.r = editTextBoldCursor3;
@@ -1770,8 +1770,8 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
                         }
                     }
                 });
-                this.v.addView(this.r, w7.z5.d(-2.0f, -1));
-                sa1Var.addView(this.v, w7.z5.a(-2.0f, 24.0f, 16.0f, 24.0f, 0.0f, -1, 49));
+                this.v.addView(this.r, w7.z5.c(-2.0f, -1));
+                sa1Var.addView(this.v, w7.z5.d(-1, -2.0f, 49, 24.0f, 16.0f, 24.0f, 0.0f));
                 this.v.setVisibility(8);
                 org.telegram.ui.Components.fs fsVar = new org.telegram.ui.Components.fs(context);
                 this.e0 = fsVar;
@@ -1972,7 +1972,7 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
                 this.L.setScaleX(0.1f);
                 this.L.setScaleY(0.1f);
                 this.L.setProgressColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.l6, false));
-                m0Var.addView(this.L, w7.z5.a(32.0f, 0.0f, 16.0f, 16.0f, 0.0f, 32, 53));
+                m0Var.addView(this.L, w7.z5.d(32, 32.0f, 53, 0.0f, 16.0f, 16.0f, 0.0f));
                 break;
             case 6:
             case 7:
@@ -2519,9 +2519,9 @@ public class xf1 extends org.telegram.ui.ActionBar.n2 {
     public final void finishFragment() {
         if (this.G >= 0 && this.parentLayout.getFragmentStack().size() == 1) {
             Bundle h = a1.g.h("afterSignup", true);
-            pg0 pg0Var = new pg0();
-            pg0Var.l0(h);
-            presentFragment(pg0Var, true);
+            og0 og0Var = new og0();
+            og0Var.l0(h);
+            presentFragment(og0Var, true);
             return;
         }
         super.finishFragment();

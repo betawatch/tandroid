@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wt0 implements View.OnClickListener {
     public final /* synthetic */ long a;
@@ -41,12 +41,12 @@ public final class wt0 implements View.OnClickListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onClick(View view) {
-        ci.i7 storiesController;
+        ci.h7 storiesController;
         char c10;
         boolean z10;
         boolean z11;
         ?? r82;
-        ci.a7 a7Var;
+        ci.z6 z6Var;
         TLRPC.Chat chat;
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
         org.telegram.ui.ActionBar.e1 e1Var;
@@ -117,7 +117,7 @@ public final class wt0 implements View.OnClickListener {
         }
         final int i15 = 5;
         if (closestTab == 14) {
-            yh.m2 currentPage = is0Var.getCurrentPage();
+            yh.l2 currentPage = is0Var.getCurrentPage();
             ai.y9 y9Var = currentPage.e;
             if (y9Var == null) {
                 return;
@@ -150,7 +150,7 @@ public final class wt0 implements View.OnClickListener {
                             case 0:
                                 is0 is0Var2 = this.b.d.V;
                                 is0Var2.getClass();
-                                is0Var2.h(null, new yh.q1(is0Var2, 0));
+                                is0Var2.h(null, new yh.p1(is0Var2, 0));
                                 H2.u();
                                 break;
                             case 1:
@@ -190,7 +190,7 @@ public final class wt0 implements View.OnClickListener {
                                 case 0:
                                     is0 is0Var2 = this.b.d.V;
                                     is0Var2.getClass();
-                                    is0Var2.h(null, new yh.q1(is0Var2, 0));
+                                    is0Var2.h(null, new yh.p1(is0Var2, 0));
                                     H2.u();
                                     break;
                                 case 1:
@@ -238,21 +238,21 @@ public final class wt0 implements View.OnClickListener {
                 e1Var2 = null;
                 e1Var3 = null;
             }
-            org.telegram.messenger.uj ujVar = new org.telegram.messenger.uj(e1Var, y9Var, h, h10, h11, h12, canUserDoAction, e1Var2, e1Var3, 3);
+            org.telegram.messenger.vj vjVar = new org.telegram.messenger.vj(e1Var, y9Var, h, h10, h11, h12, canUserDoAction, e1Var2, e1Var3, 3);
             org.telegram.ui.ActionBar.e1 e1Var5 = e1Var;
             org.telegram.ui.ActionBar.e1 e1Var6 = e1Var2;
             org.telegram.ui.ActionBar.e1 e1Var7 = e1Var3;
-            ujVar.run();
+            vjVar.run();
             if (e1Var5 != null) {
-                e1Var5.setOnClickListener(new ca(24, y9Var, ujVar));
+                e1Var5.setOnClickListener(new ca(24, y9Var, vjVar));
             }
-            yh.q2.j(h, y9Var, ujVar, 1);
-            yh.q2.j(h10, y9Var, ujVar, 2);
-            yh.q2.j(h11, y9Var, ujVar, 4);
-            yh.q2.j(h12, y9Var, ujVar, 8);
+            yh.p2.j(h, y9Var, vjVar, 1);
+            yh.p2.j(h10, y9Var, vjVar, 2);
+            yh.p2.j(h11, y9Var, vjVar, 4);
+            yh.p2.j(h12, y9Var, vjVar, 8);
             if (canUserDoAction) {
-                yh.q2.j(e1Var6, y9Var, ujVar, 256);
-                yh.q2.j(e1Var7, y9Var, ujVar, 512);
+                yh.p2.j(e1Var6, y9Var, vjVar, 256);
+                yh.p2.j(e1Var7, y9Var, vjVar, 512);
             }
             H2.Y = true;
             H2.J = false;
@@ -763,7 +763,7 @@ public final class wt0 implements View.OnClickListener {
                                             case 0:
                                                 is0 is0Var2 = this.b.d.V;
                                                 is0Var2.getClass();
-                                                is0Var2.h(null, new yh.q1(is0Var2, 0));
+                                                is0Var2.h(null, new yh.p1(is0Var2, 0));
                                                 H5.u();
                                                 break;
                                             case 1:
@@ -810,8 +810,8 @@ public final class wt0 implements View.OnClickListener {
                                     H5.Z();
                                 }
                                 final pv0 m12 = sv0Var.m1(closestTab);
-                                if (m12 != null && (a7Var = m12.s) != null) {
-                                    e1Var8.setChecked(a7Var.n);
+                                if (m12 != null && (z6Var = m12.s) != null) {
+                                    e1Var8.setChecked(z6Var.n);
                                     e1Var9.setChecked(m12.s.o);
                                 }
                                 final int i29 = 0;
@@ -838,13 +838,13 @@ public final class wt0 implements View.OnClickListener {
                                                         break;
                                                     } else {
                                                         e1Var11.getCheckView().a(!e1Var11.getCheckView().a.q, true);
-                                                        ci.a7 a7Var2 = m12.s;
-                                                        if (a7Var2 != null) {
+                                                        ci.z6 z6Var2 = m12.s;
+                                                        if (z6Var2 != null) {
                                                             boolean z15 = e1Var11.getCheckView().a.q;
                                                             boolean z16 = e1Var10.getCheckView().a.q;
-                                                            a7Var2.n = z15;
-                                                            a7Var2.o = z16;
-                                                            a7Var2.d(true);
+                                                            z6Var2.n = z15;
+                                                            z6Var2.o = z16;
+                                                            z6Var2.d(true);
                                                             break;
                                                         }
                                                     }
@@ -863,13 +863,13 @@ public final class wt0 implements View.OnClickListener {
                                                         break;
                                                     } else {
                                                         e1Var13.getCheckView().a(!e1Var13.getCheckView().a.q, true);
-                                                        ci.a7 a7Var3 = m12.s;
-                                                        if (a7Var3 != null) {
+                                                        ci.z6 z6Var3 = m12.s;
+                                                        if (z6Var3 != null) {
                                                             boolean z18 = e1Var12.getCheckView().a.q;
                                                             boolean z19 = e1Var13.getCheckView().a.q;
-                                                            a7Var3.n = z18;
-                                                            a7Var3.o = z19;
-                                                            a7Var3.d(true);
+                                                            z6Var3.n = z18;
+                                                            z6Var3.o = z19;
+                                                            z6Var3.d(true);
                                                             break;
                                                         }
                                                     }
@@ -902,13 +902,13 @@ public final class wt0 implements View.OnClickListener {
                                                         break;
                                                     } else {
                                                         e1Var11.getCheckView().a(!e1Var11.getCheckView().a.q, true);
-                                                        ci.a7 a7Var2 = m12.s;
-                                                        if (a7Var2 != null) {
+                                                        ci.z6 z6Var2 = m12.s;
+                                                        if (z6Var2 != null) {
                                                             boolean z15 = e1Var11.getCheckView().a.q;
                                                             boolean z16 = e1Var10.getCheckView().a.q;
-                                                            a7Var2.n = z15;
-                                                            a7Var2.o = z16;
-                                                            a7Var2.d(true);
+                                                            z6Var2.n = z15;
+                                                            z6Var2.o = z16;
+                                                            z6Var2.d(true);
                                                             break;
                                                         }
                                                     }
@@ -927,13 +927,13 @@ public final class wt0 implements View.OnClickListener {
                                                         break;
                                                     } else {
                                                         e1Var13.getCheckView().a(!e1Var13.getCheckView().a.q, true);
-                                                        ci.a7 a7Var3 = m12.s;
-                                                        if (a7Var3 != null) {
+                                                        ci.z6 z6Var3 = m12.s;
+                                                        if (z6Var3 != null) {
                                                             boolean z18 = e1Var12.getCheckView().a.q;
                                                             boolean z19 = e1Var13.getCheckView().a.q;
-                                                            a7Var3.n = z18;
-                                                            a7Var3.o = z19;
-                                                            a7Var3.d(true);
+                                                            z6Var3.n = z18;
+                                                            z6Var3.o = z19;
+                                                            z6Var3.d(true);
                                                             break;
                                                         }
                                                     }

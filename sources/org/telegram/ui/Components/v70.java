@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class v70 extends j71 implements NotificationCenter.NotificationCenterDelegate {
     public final a0.h T;
@@ -118,7 +118,7 @@ public class v70 extends j71 implements NotificationCenter.NotificationCenterDel
         h20 h20Var = new h20(context, d6Var, false);
         this.t0 = h20Var;
         h20Var.setImageResource(R.drawable.floating_check);
-        h20Var.setOnClickListener(new ai.c4(this, context, j10, 4));
+        h20Var.setOnClickListener(new ai.q3(this, context, j10, 4));
         h20Var.e(false, false);
         h20Var.setContentDescription(LocaleController.getString(R.string.Next));
         this.containerView.addView(h20Var, h20.b());

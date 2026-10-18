@@ -11,7 +11,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cy extends qt {
     public int M;
@@ -67,9 +67,9 @@ public final class cy extends qt {
             r5 r5Var = czVar.b;
             if (r5Var != null) {
                 ImageReceiver.BackgroundThreadDrawHolder backgroundThreadDrawHolder = czVar.f[this.K];
-                ci.g3 g3Var = r5Var.k;
-                if (g3Var != null) {
-                    g3Var.setAlpha(r5Var.l);
+                ci.f3 f3Var = r5Var.k;
+                if (f3Var != null) {
+                    f3Var.setAlpha(r5Var.l);
                     r5Var.k.draw(canvas, backgroundThreadDrawHolder);
                 }
             }
@@ -206,9 +206,9 @@ public final class cy extends qt {
             ImageReceiver.BackgroundThreadDrawHolder[] backgroundThreadDrawHolderArr = czVar.f;
             if (span != null && (r5Var = (r5) tzVar.d2.get(czVar.d.getDocumentId())) != null && r5Var.k != null) {
                 r5Var.t(j10);
-                ci.g3 g3Var = r5Var.k;
+                ci.f3 f3Var = r5Var.k;
                 int i11 = this.K;
-                ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = g3Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
+                ImageReceiver.BackgroundThreadDrawHolder drawInBackgroundThread = f3Var.setDrawInBackgroundThread(backgroundThreadDrawHolderArr[i11], i11);
                 backgroundThreadDrawHolderArr[i11] = drawInBackgroundThread;
                 drawInBackgroundThread.time = j10;
                 drawInBackgroundThread.overrideAlpha = 1.0f;

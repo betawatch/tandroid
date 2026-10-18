@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -191,16 +191,16 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 org.telegram.ui.Components.f5.N((Context) obj2, LocaleController.getString(R.string.ResetToOriginalPhotoTitle), LocaleController.formatString(R.string.ResetToOriginalPhotoMessage, user.first_name), LocaleController.getString(R.string.Reset), new yr(hsVar, user, i12), hsVar.r).o();
                 break;
             case 11:
-                pg0 pg0Var = (pg0) obj3;
+                og0 og0Var = (og0) obj3;
                 ((org.telegram.ui.Components.i80) obj2).u();
                 int i15 = ((MessagesController.DialogFilter) obj).id;
-                if (pg0Var.c.getCurrentPosition() != 0 || (eyVar = pg0Var.J) == null) {
-                    if (pg0Var.J == null) {
-                        pg0Var.l0(null);
+                if (og0Var.c.getCurrentPosition() != 0 || (eyVar = og0Var.J) == null) {
+                    if (og0Var.J == null) {
+                        og0Var.l0(null);
                     }
-                    pg0Var.I = Integer.valueOf(i15);
-                    pg0Var.m0(0, true);
-                    pg0Var.c.D(0);
+                    og0Var.I = Integer.valueOf(i15);
+                    og0Var.m0(0, true);
+                    og0Var.c.D(0);
                     break;
                 } else {
                     eyVar.u4(i15);

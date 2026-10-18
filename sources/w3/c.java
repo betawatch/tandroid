@@ -23,11 +23,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
-import u2.y0;
+import u2.a1;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -61,7 +61,7 @@ public abstract class c {
         throw new UnsupportedOperationException("Method not decompiled: w3.c.b(e2.x, int, int, int, int, java.lang.String, boolean, b2.s, e2.j0, int):void");
     }
 
-    public static y0 c(int i10, x xVar) {
+    public static a1 c(int i10, x xVar) {
         xVar.N(i10 + 12);
         xVar.O(1);
         d(xVar);
@@ -80,7 +80,7 @@ public abstract class c {
         d(xVar);
         String e = v0.e(xVar.A());
         if ("audio/mpeg".equals(e) || "audio/vnd.dts".equals(e) || "audio/vnd.dts.hd".equals(e)) {
-            return new y0(e, null, -1L, -1L);
+            return new a1(e, null, -1L, -1L);
         }
         xVar.O(4);
         long C = xVar.C();
@@ -93,7 +93,7 @@ public abstract class c {
         if (j10 <= 0) {
             j10 = -1;
         }
-        return new y0(e, bArr, j10, C > 0 ? C : -1L);
+        return new a1(e, bArr, j10, C > 0 ? C : -1L);
     }
 
     public static int d(x xVar) {
@@ -2149,7 +2149,7 @@ public abstract class c {
         int i59 = 8;
         int i60 = 8;
         z zVar = null;
-        y0 y0Var = null;
+        a1 a1Var = null;
         qi.e eVar2 = null;
         while (true) {
             if (i48 - i46 >= i47) {
@@ -2745,13 +2745,13 @@ public abstract class c {
                                                 str8 = str3;
                                             } else if (m11 == 1702061171) {
                                                 c3.b.b(null, str4 == null);
-                                                y0 c10 = c(i61, xVar);
+                                                a1 c10 = c(i61, xVar);
                                                 String str15 = (String) c10.c;
                                                 byte[] bArr6 = (byte[]) c10.d;
                                                 if (bArr6 != null) {
                                                     list = n0.y(bArr6);
                                                 }
-                                                y0Var = c10;
+                                                a1Var = c10;
                                                 str8 = str15;
                                                 eVar2 = eVar;
                                             } else if (m11 == 1651798644) {

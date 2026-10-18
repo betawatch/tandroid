@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class d0 extends r {
     public final /* synthetic */ f0 M;
@@ -24,7 +24,7 @@ public final class d0 extends r {
         if (cVar != null) {
             cVar.G = min;
         }
-        f0Var.I = min;
+        f0Var.K = min;
         if (cVar != null) {
             cVar.U = f0Var.s - cVar.getLeft();
         }
@@ -34,14 +34,14 @@ public final class d0 extends r {
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         f0 f0Var = this.M;
-        t0 t0Var = f0Var.d;
-        if (t0Var == null || (t0Var.l1 <= 0.5f && t0Var.k1 <= 0.5f)) {
+        u0 u0Var = f0Var.d;
+        if (u0Var == null || (u0Var.l1 <= 0.5f && u0Var.k1 <= 0.5f)) {
             return super.dispatchTouchEvent(motionEvent);
         }
         if (motionEvent.getActionMasked() == 1) {
-            t0 t0Var2 = f0Var.d;
-            t0Var2.l1 = 0.0f;
-            t0Var2.invalidate();
+            u0 u0Var2 = f0Var.d;
+            u0Var2.l1 = 0.0f;
+            u0Var2.invalidate();
         }
         return true;
     }

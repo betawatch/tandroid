@@ -59,7 +59,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class tz extends FrameLayout implements ne.d, NotificationCenter.NotificationCenterDelegate, qh.a {
     public static final /* synthetic */ int O2 = 0;
@@ -109,7 +109,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
     public final lw L2;
     public final ah.v M;
     public AnimatorSet M0;
-    public final ci.t4 M1;
+    public final ci.s4 M1;
     public boolean M2;
     public final oh.b N;
     public final ai.vd N0;
@@ -397,8 +397,8 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         this.s1 = paint;
         paint.setColor(A(org.telegram.ui.ActionBar.h6.af));
         float dp2 = AndroidUtilities.dp(6.0f);
-        ci.o1 o1Var = zf.j0.a;
-        this.M1 = new ci.t4(dp2);
+        ci.n1 n1Var = zf.j0.a;
+        this.M1 = new ci.s4(dp2);
         qx qxVar2 = new qx(this, context);
         this.J = qxVar2;
         pz pzVar = new pz();
@@ -468,7 +468,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         eyVar.setAdapter(ayVar2);
         eyVar.i(new ei.q1(this, 3));
         this.S = new ty(this, context);
-        qxVar2.addView(eyVar, w7.z5.d(-1.0f, -1));
+        qxVar2.addView(eyVar, w7.z5.c(-1.0f, -1));
         ll0 ll0Var = new ll0(eyVar, rxVar);
         this.b0 = ll0Var;
         ll0Var.i = new tx(this);
@@ -577,7 +577,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         }
         ayVar.G(true);
         vxVar.p(getEmojipacks());
-        qxVar.addView(vxVar, w7.z5.d(36.0f, i11));
+        qxVar.addView(vxVar, w7.z5.c(36.0f, i11));
         View view = new View(context2);
         this.O = view;
         view.setAlpha(0.0f);
@@ -593,7 +593,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         ah.v vVar = new ah.v(context2, 6, d6Var2);
         this.K = vVar;
         vVar.setVisibility(8);
-        vVar.addView(bVar, w7.z5.a(48.0f, 10.0f, 5.0f, 10.0f, 10.0f, -1, 80));
+        vVar.addView(bVar, w7.z5.d(-1, 48.0f, 80, 10.0f, 5.0f, 10.0f, 10.0f));
         qxVar.addView(vVar, w7.z5.e(i11, -2, 80));
         if (z11) {
             fn0 fn0Var = fn0.b;
@@ -721,7 +721,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
                 };
                 this.m0 = r11;
                 uwVar.setOnItemClickListener((wl0) r11);
-                twVar.addView(uwVar, w7.z5.d(-1.0f, -1));
+                twVar.addView(uwVar, w7.z5.c(-1.0f, -1));
                 xw xwVar = new xw(this, context2);
                 this.o0 = xwVar;
                 twVar.addView(xwVar, new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight() + i12));
@@ -946,7 +946,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
                 fx fxVar = new fx(this, context2);
                 this.C0 = fxVar;
                 fxVar.addView(exVar, w7.z5.e(-1, 36, 51));
-                viewGroup.addView(fxVar, w7.z5.d(-2.0f, -1));
+                viewGroup.addView(fxVar, w7.z5.c(-2.0f, -1));
             }
             X(true);
             exVar.setDelegate(new mw(this, 4));
@@ -956,7 +956,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
             ah.v vVar2 = new ah.v(context2, 6, d6Var2);
             this.M = vVar2;
             vVar2.setVisibility(8);
-            vVar2.addView(bVar2, w7.z5.a(48.0f, 10.0f, 5.0f, 10.0f, 10.0f, -1, 80));
+            vVar2.addView(bVar2, w7.z5.d(-1, 48.0f, 80, 10.0f, 5.0f, 10.0f, 10.0f));
             ywVar.addView(vVar2, w7.z5.e(-1, -2, 80));
         } else {
             z19 = z14;
@@ -967,7 +967,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         this.h = gxVar;
         ni.e eVar3 = this.m2;
         eVar3.getClass();
-        gxVar.b(new ci.x5(eVar3, 1));
+        gxVar.b(new ci.w5(eVar3, 1));
         gxVar.setOverScrollMode(2);
         ly lyVar = new ly(this);
         this.L0 = lyVar;
@@ -988,13 +988,13 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         FrameLayout frameLayout = new FrameLayout(context2);
         this.r = frameLayout;
         if (z13) {
-            addView(frameLayout, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, (AndroidUtilities.getShadowHeight() / AndroidUtilities.density) + 40.0f, -1, 87));
+            addView(frameLayout, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, (AndroidUtilities.getShadowHeight() / AndroidUtilities.density) + 40.0f));
         } else {
-            addView(frameLayout, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 87));
+            addView(frameLayout, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         FrameLayout frameLayout2 = new FrameLayout(context2);
         this.s = frameLayout2;
-        addView(frameLayout2, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 87));
+        addView(frameLayout2, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 64.0f));
         FrameLayout frameLayout3 = new FrameLayout(context2);
         this.n = frameLayout3;
         View view2 = new View(context2);
@@ -1002,7 +1002,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         frameLayout3.addView(view2, new FrameLayout.LayoutParams(-1, AndroidUtilities.dp(40.0f), 83));
         if (z13) {
             addView(frameLayout3, w7.z5.e(-1, 48, 80));
-            frameLayout3.addView(hxVar, w7.z5.a(48.0f, 2.0f, 0.0f, 2.0f, 0.0f, 48, 85));
+            frameLayout3.addView(hxVar, w7.z5.d(48, 48.0f, 85, 2.0f, 0.0f, 2.0f, 0.0f));
             if (z11) {
                 ImageView imageView = new ImageView(context2);
                 this.y = imageView;
@@ -1012,7 +1012,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
                 imageView.setFocusable(true);
                 imageView.setContentDescription(LocaleController.getString(R.string.Settings));
                 w7.b6.a(imageView);
-                frameLayout3.addView(imageView, w7.z5.a(48.0f, 2.0f, 0.0f, 2.0f, 0.0f, 48, 85));
+                frameLayout3.addView(imageView, w7.z5.d(48, 48.0f, 85, 2.0f, 0.0f, 2.0f, 0.0f));
                 final int i29 = 2;
                 imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ow
                     public final /* synthetic */ tz b;
@@ -1092,7 +1092,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
             imageView2.setContentDescription(LocaleController.getString(R.string.Search));
             imageView2.setFocusable(true);
             imageView2.setVisibility(8);
-            frameLayout3.addView(imageView2, w7.z5.a(48.0f, 2.0f, 0.0f, 2.0f, 0.0f, 48, 83));
+            frameLayout3.addView(imageView2, w7.z5.d(48, 48.0f, 83, 2.0f, 0.0f, 2.0f, 0.0f));
             final int i30 = 3;
             imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.ow
                 public final /* synthetic */ tz b;
@@ -1153,14 +1153,14 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
                 }
             });
         } else {
-            addView(frameLayout3, w7.z5.a(48.0f, 0.0f, 0.0f, 2.0f, 0.0f, 56, (LocaleController.isRTL ? 3 : i13) | 80));
+            addView(frameLayout3, w7.z5.d(56, 48.0f, (LocaleController.isRTL ? 3 : i13) | 80, 0.0f, 0.0f, 2.0f, 0.0f));
             org.telegram.ui.Cells.z i02 = org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(56.0f), A(i21), A(i21));
             w7.b6.a(hxVar);
             hxVar.setPadding(0, 0, AndroidUtilities.dp(2.0f), 0);
             hxVar.setBackground(i02);
             hxVar.setContentDescription(LocaleController.getString(R.string.AccDescrBackspace));
             hxVar.setFocusable(true);
-            frameLayout3.addView(hxVar, w7.z5.a(48.0f, 2.0f, 0.0f, 2.0f, 0.0f, 48, 51));
+            frameLayout3.addView(hxVar, w7.z5.d(48, 48.0f, 51, 2.0f, 0.0f, 2.0f, 0.0f));
             view2.setVisibility(8);
         }
         addView(gxVar, 0, w7.z5.e(-1, -1, 51));
@@ -1172,7 +1172,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
         vdVar.setGravity(16);
         vdVar.setTextSize(1, 14.0f);
         vdVar.setVisibility(4);
-        addView(vdVar, w7.z5.a(-2.0f, 5.0f, 0.0f, 5.0f, 53.0f, -2, 81));
+        addView(vdVar, w7.z5.d(-2, -2.0f, 81, 5.0f, 0.0f, 5.0f, 53.0f));
         this.C1 = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 40.0f : 32.0f);
         Field field2 = ev.f;
         ev evVar = new ev(new dv(context2, d6Var2));
@@ -1319,7 +1319,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
             tzVar.M(false);
             xc a02 = n2Var != null ? xc.a0(n2Var) : new xc(tzVar.r, tzVar.Z1);
             if (tzVar.h2 || n2Var == null) {
-                a02.q(document2, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiHint)), LocaleController.getString(R.string.PremiumMore), new lw(tzVar, 3)).j();
+                a02.r(document2, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiHint)), LocaleController.getString(R.string.PremiumMore), new lw(tzVar, 3)).j();
             } else {
                 a02.J(R.raw.saved_messages, AndroidUtilities.replaceTags(LocaleController.getString(R.string.UnlockPremiumEmojiHint2)), LocaleController.getString(R.string.Open), new lw(tzVar, 4)).j();
             }
@@ -3249,7 +3249,7 @@ public class tz extends FrameLayout implements ne.d, NotificationCenter.Notifica
                     }
                     this.M0.setDuration(200L);
                     this.M0.setInterpolator(bs.h);
-                    this.M0.addListener(new ci.p3(this, b0Var, view2, 5));
+                    this.M0.addListener(new ci.o3(this, b0Var, view2, 5));
                     this.M0.start();
                     i11 = i15;
                     i10 = i16;

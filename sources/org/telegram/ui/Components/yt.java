@@ -28,7 +28,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yt implements Runnable {
     public final /* synthetic */ int a;
@@ -112,7 +112,7 @@ public final /* synthetic */ class yt implements Runnable {
                         switch (i15) {
                             case 0:
                                 sy syVar2 = syVar;
-                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.w3(syVar2, arrayList3, runnable, 8));
+                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.y3(syVar2, arrayList3, runnable, 8));
                                 break;
                             default:
                                 tz tzVar4 = syVar.a.F;
@@ -173,7 +173,7 @@ public final /* synthetic */ class yt implements Runnable {
                         switch (i16) {
                             case 0:
                                 sy syVar2 = syVar;
-                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.w3(syVar2, arrayList2, runnable, 8));
+                                MediaDataController.getInstance(syVar2.a.F.c1).searchStickerSets(true, str, new ai.y3(syVar2, arrayList2, runnable, 8));
                                 break;
                             default:
                                 tz tzVar4 = syVar.a.F;
@@ -223,7 +223,7 @@ public final /* synthetic */ class yt implements Runnable {
                                 break;
                         }
                     }
-                }, new qy(i15, syVar, arrayList), new ai.e3(syVar, str, arrayList, arrayList2, arrayList3, 4));
+                }, new qy(i15, syVar, arrayList), new ai.d3(syVar, str, arrayList, arrayList2, arrayList3, 4));
                 break;
             case 6:
                 ArrayList arrayList4 = (ArrayList) obj;

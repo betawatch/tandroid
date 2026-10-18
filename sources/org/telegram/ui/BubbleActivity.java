@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class BubbleActivity extends m5 implements org.telegram.ui.ActionBar.a5 {
     public static BubbleActivity a0;
@@ -133,7 +133,7 @@ public class BubbleActivity extends m5 implements org.telegram.ui.ActionBar.a5 {
         this.T = y3Var;
         setContentView(y3Var, new ViewGroup.LayoutParams(-1, -1));
         RelativeLayout relativeLayout = new RelativeLayout(this);
-        this.T.addView(relativeLayout, w7.z5.d(-1.0f, -1));
+        this.T.addView(relativeLayout, w7.z5.c(-1.0f, -1));
         relativeLayout.addView(this.S.getView(), w7.z5.w(-1, -1));
         this.T.setParentActionBarLayout(this.S);
         this.S.setDrawerLayoutContainer(this.T);
@@ -141,7 +141,7 @@ public class BubbleActivity extends m5 implements org.telegram.ui.ActionBar.a5 {
         this.S.setDelegate(this);
         org.telegram.ui.Components.le0 le0Var = new org.telegram.ui.Components.le0(this);
         this.R = le0Var;
-        this.T.addView(le0Var, w7.z5.d(-1.0f, -1));
+        this.T.addView(le0Var, w7.z5.c(-1.0f, -1));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeOtherAppActivities, this);
         this.S.X();
         y(getIntent(), false, bundle != null, false, UserConfig.selectedAccount);

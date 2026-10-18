@@ -31,7 +31,7 @@ import org.telegram.ui.Components.un0;
 import org.telegram.ui.Components.wc0;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class u implements TextWatcher {
     public final /* synthetic */ int a;
@@ -236,102 +236,102 @@ public final class u implements TextWatcher {
                 j71Var.v.setVisibility(0);
                 break;
             case 16:
-                ((org.telegram.ui.Wallet.o9) this.b).w0();
+                ((org.telegram.ui.Wallet.i9) this.b).w0();
                 break;
             case 17:
-                final org.telegram.ui.Wallet.w9 w9Var = (org.telegram.ui.Wallet.w9) this.b;
-                ArrayList arrayList = w9Var.s;
+                final org.telegram.ui.Wallet.r9 r9Var = (org.telegram.ui.Wallet.r9) this.b;
+                ArrayList arrayList = r9Var.s;
                 arrayList.clear();
                 final String trim = editable.toString().trim();
-                Runnable runnable = w9Var.J;
+                Runnable runnable = r9Var.J;
                 String str2 = null;
                 if (runnable != null) {
                     AndroidUtilities.cancelRunOnUIThread(runnable);
-                    w9Var.J = null;
+                    r9Var.J = null;
                 }
-                if (w9Var.y != 0) {
-                    w9Var.getConnectionsManager().cancelRequest(w9Var.y, true);
-                    w9Var.y = 0;
+                if (r9Var.y != 0) {
+                    r9Var.getConnectionsManager().cancelRequest(r9Var.y, true);
+                    r9Var.y = 0;
                 }
                 String str3 = WalletEngine2.isValidRecipientAddress(trim) ? trim : null;
-                w9Var.w = str3;
+                r9Var.w = str3;
                 if (str3 == null && trim != null && trim.length() <= 126) {
                     String lowerCase = trim.toLowerCase(Locale.ROOT);
                     if (lowerCase.matches("[a-z0-9_-]+(?:\\.[a-z0-9_-]+)*\\.ton")) {
                         str2 = lowerCase;
                     }
                 }
-                w9Var.x = str2;
-                final int i13 = w9Var.I + 1;
-                w9Var.I = i13;
-                w9Var.K = !TextUtils.isEmpty(trim) && w9Var.w == null;
-                w9Var.v.g(null, true, false, false, false, 0L, false, 0, i13);
-                ei.d dVar2 = w9Var.V;
+                r9Var.x = str2;
+                final int i13 = r9Var.I + 1;
+                r9Var.I = i13;
+                r9Var.K = !TextUtils.isEmpty(trim) && r9Var.w == null;
+                r9Var.v.g(null, true, false, false, false, 0L, false, 0, i13);
+                ei.d dVar2 = r9Var.V;
                 if (dVar2 != null) {
-                    dVar2.setEnabled(w9Var.w != null);
+                    dVar2.setEnabled(r9Var.w != null);
                 }
-                if (!TextUtils.isEmpty(trim) && w9Var.w == null && w9Var.x == null) {
-                    w9Var.d0(trim);
+                if (!TextUtils.isEmpty(trim) && r9Var.w == null && r9Var.x == null) {
+                    r9Var.d0(trim);
                     final int i14 = 1;
-                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Wallet.t9
+                    Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Wallet.n9
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i14) {
                                 case 0:
-                                    w9.Y(w9Var, trim, i13);
+                                    r9.Y(r9Var, trim, i13);
                                     break;
                                 default:
-                                    w9 w9Var2 = w9Var;
-                                    w9Var2.J = null;
-                                    hg.a2 a2Var = w9Var2.v;
+                                    r9 r9Var2 = r9Var;
+                                    r9Var2.J = null;
+                                    hg.a2 a2Var = r9Var2.v;
                                     int i15 = i13;
-                                    a2Var.h(trim, true, false, false, false, false, 0L, false, 0, i15, 0L, new j(w9Var2, i15, 4));
+                                    a2Var.h(trim, true, false, false, false, false, 0L, false, 0, i15, 0L, new j(r9Var2, i15, 5));
                                     break;
                             }
                         }
                     };
-                    w9Var.J = runnable2;
+                    r9Var.J = runnable2;
                     AndroidUtilities.runOnUIThread(runnable2, 300L);
                 } else {
                     arrayList.clear();
-                    w9Var.a.W2.N(true);
-                    final String str4 = w9Var.x;
+                    r9Var.a.W2.N(true);
+                    final String str4 = r9Var.x;
                     if (str4 != null) {
                         final int i15 = 0;
-                        Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.Wallet.t9
+                        Runnable runnable3 = new Runnable() { // from class: org.telegram.ui.Wallet.n9
                             @Override // java.lang.Runnable
                             public final void run() {
                                 switch (i15) {
                                     case 0:
-                                        w9.Y(w9Var, str4, i13);
+                                        r9.Y(r9Var, str4, i13);
                                         break;
                                     default:
-                                        w9 w9Var2 = w9Var;
-                                        w9Var2.J = null;
-                                        hg.a2 a2Var = w9Var2.v;
+                                        r9 r9Var2 = r9Var;
+                                        r9Var2.J = null;
+                                        hg.a2 a2Var = r9Var2.v;
                                         int i152 = i13;
-                                        a2Var.h(str4, true, false, false, false, false, 0L, false, 0, i152, 0L, new j(w9Var2, i152, 4));
+                                        a2Var.h(str4, true, false, false, false, false, 0L, false, 0, i152, 0L, new j(r9Var2, i152, 5));
                                         break;
                                 }
                             }
                         };
-                        w9Var.J = runnable3;
+                        r9Var.J = runnable3;
                         AndroidUtilities.runOnUIThread(runnable3, 300L);
                     }
                 }
-                w9Var.i0(true);
+                r9Var.i0(true);
                 break;
             case 18:
-                org.telegram.ui.Wallet.la laVar = (org.telegram.ui.Wallet.la) this.b;
-                if (laVar.v && !editable.toString().trim().toLowerCase().matches(".*\\s+.*") && laVar.b()) {
-                    laVar.setError(false);
+                org.telegram.ui.Wallet.ga gaVar = (org.telegram.ui.Wallet.ga) this.b;
+                if (gaVar.v && !editable.toString().trim().toLowerCase().matches(".*\\s+.*") && gaVar.b()) {
+                    gaVar.setError(false);
                 }
-                laVar.e();
-                laVar.d();
-                if (laVar.a.hasFocus()) {
-                    laVar.f(editable.toString().trim().toLowerCase());
+                gaVar.e();
+                gaVar.d();
+                if (gaVar.a.hasFocus()) {
+                    gaVar.f(editable.toString().trim().toLowerCase());
                 }
-                Runnable runnable4 = laVar.f;
+                Runnable runnable4 = gaVar.f;
                 if (runnable4 != null) {
                     runnable4.run();
                     break;
@@ -359,7 +359,7 @@ public final class u implements TextWatcher {
                     } else {
                         l4Var.d0(true);
                         if (l4Var.u0[0].getWebView() != null) {
-                            org.telegram.ui.web.x0 webView = l4Var.u0[0].getWebView();
+                            org.telegram.ui.web.y0 webView = l4Var.u0[0].getWebView();
                             webView.I = new org.telegram.ui.b0(l4Var, 9);
                             webView.findAllAsync(lowerCase2);
                             l4Var.h0();
@@ -375,7 +375,7 @@ public final class u implements TextWatcher {
                         l4Var.u0[0].b.f1();
                         l4Var.W(0);
                     } else if (l4Var.u0[0].getWebView() != null) {
-                        org.telegram.ui.web.x0 webView2 = l4Var.u0[0].getWebView();
+                        org.telegram.ui.web.y0 webView2 = l4Var.u0[0].getWebView();
                         webView2.I = new org.telegram.ui.b0(l4Var, 9);
                         webView2.findAllAsync("");
                         l4Var.h0();

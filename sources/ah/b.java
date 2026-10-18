@@ -12,14 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import ci.j5;
+import ci.i5;
+import ci.k7;
+import ci.l4;
 import ci.l7;
-import ci.m4;
-import ci.m7;
-import ci.p1;
-import ci.r8;
-import ci.v2;
-import ci.x4;
+import ci.o1;
+import ci.q8;
+import ci.u2;
+import ci.w4;
 import ei.c6;
 import ei.e7;
 import ei.i9;
@@ -35,7 +35,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.qz0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class b extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -108,24 +108,24 @@ public final class b extends AnimatorListenerAdapter {
                 }
                 break;
             case 8:
-                ((p1) obj).I = null;
+                ((o1) obj).I = null;
                 break;
             case 9:
-                v2 v2Var = (v2) obj;
-                v2Var.s5.invalidate();
-                v2Var.setAnimatedTop(0);
-                v2Var.s5.V2 = true;
-                View view = v2Var.G1;
+                u2 u2Var = (u2) obj;
+                u2Var.s5.invalidate();
+                u2Var.setAnimatedTop(0);
+                u2Var.s5.V2 = true;
+                View view = u2Var.G1;
                 if (view != null && view.getVisibility() == 0) {
-                    v2Var.G1.setTranslationY(((1.0f - v2Var.getTopViewEnterProgress()) * v2Var.G1.getLayoutParams().height) + v2Var.T1);
+                    u2Var.G1.setTranslationY(((1.0f - u2Var.getTopViewEnterProgress()) * u2Var.G1.getLayoutParams().height) + u2Var.T1);
                 }
-                v2Var.s5.e2 = null;
+                u2Var.s5.e2 = null;
                 break;
             case 10:
-                m4 m4Var = (m4) obj;
-                m4Var.c[1].setVisibility(8);
-                m4Var.c[0].setAlpha(1.0f);
-                m4Var.c[0].setTranslationY(0.0f);
+                l4 l4Var = (l4) obj;
+                l4Var.c[1].setVisibility(8);
+                l4Var.c[0].setAlpha(1.0f);
+                l4Var.c[0].setTranslationY(0.0f);
                 break;
             case 11:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
@@ -136,25 +136,25 @@ public final class b extends AnimatorListenerAdapter {
                 profileStoriesView.invalidate();
                 break;
             case 12:
-                ((x4) obj).M = null;
+                ((w4) obj).M = null;
                 break;
             case 13:
-                j5 j5Var = (j5) obj;
-                j5Var.w = null;
-                j5Var.r = 1.0f;
-                j5Var.invalidate();
+                i5 i5Var = (i5) obj;
+                i5Var.w = null;
+                i5Var.r = 1.0f;
+                i5Var.invalidate();
                 break;
             case 14:
             default:
                 super.onAnimationEnd(animator);
                 break;
             case 15:
-                r8 r8Var = (r8) obj;
-                r8Var.H = false;
-                r8Var.G = 0.0f;
-                r8Var.invalidate();
-                r8Var.requestLayout();
-                r8Var.J.requestLayout();
+                q8 q8Var = (q8) obj;
+                q8Var.H = false;
+                q8Var.G = 0.0f;
+                q8Var.invalidate();
+                q8Var.requestLayout();
+                q8Var.J.requestLayout();
                 break;
             case 16:
                 ei.m mVar = ((ei.g) obj).c0;
@@ -257,8 +257,8 @@ public final class b extends AnimatorListenerAdapter {
         switch (this.a) {
             case 14:
                 super.onAnimationStart(animator);
-                m7 m7Var = (m7) this.b;
-                uj0 uj0Var = ((l7) m7Var.a.get(m7Var.d)).c;
+                l7 l7Var = (l7) this.b;
+                uj0 uj0Var = ((k7) l7Var.a.get(l7Var.d)).c;
                 uj0Var.L = 2;
                 uj0Var.start();
                 break;

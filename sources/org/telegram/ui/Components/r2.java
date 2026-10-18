@@ -10,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -66,7 +66,7 @@ public final /* synthetic */ class r2 implements Runnable {
                                             if (!q0Var.q().edit().putInt("lastUsageDate", r10.b).commit()) {
                                                 throw new IOException("usage write");
                                             }
-                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.ff0(9));
+                                            AndroidUtilities.runOnUIThread(new org.telegram.ui.mj0(8));
                                         }
                                     }
                                 } catch (Exception e) {
@@ -81,7 +81,7 @@ public final /* synthetic */ class r2 implements Runnable {
                             if (j0Var != null) {
                                 j0Var.close();
                             }
-                            AndroidUtilities.runOnUIThread(new ai.b2(q0Var, j0Var2, callback, j10, 26));
+                            AndroidUtilities.runOnUIThread(new ai.b3(q0Var, j0Var2, callback, j10, 26));
                             return;
                         }
                     }
@@ -89,7 +89,7 @@ public final /* synthetic */ class r2 implements Runnable {
                     e = e10;
                     j0Var = null;
                 }
-                AndroidUtilities.runOnUIThread(new ai.b2(q0Var, j0Var2, callback, j10, 26));
+                AndroidUtilities.runOnUIThread(new ai.b3(q0Var, j0Var2, callback, j10, 26));
                 return;
         }
     }

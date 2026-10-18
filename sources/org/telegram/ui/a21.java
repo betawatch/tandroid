@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class a21 extends FrameLayout {
     public final org.telegram.ui.Components.p5 a;
@@ -25,7 +25,7 @@ public final class a21 extends FrameLayout {
         TextView f7 = org.telegram.messenger.g0.f(context, 1, 16.0f);
         f7.setTextColor(b21Var.getThemedColor(org.telegram.ui.ActionBar.h6.G6));
         f7.setText(LocaleController.getString(R.string.DoubleTapSetting));
-        addView(f7, w7.z5.a(-2.0f, 20.0f, 0.0f, 48.0f, 0.0f, -1, 23));
+        addView(f7, w7.z5.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
         this.a = new org.telegram.ui.Components.p5(AndroidUtilities.dp(24.0f), this);
     }
 

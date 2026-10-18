@@ -12,7 +12,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_toncenter;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class a1 {
     public final int a;
@@ -366,12 +366,12 @@ public final class a1 {
                     long elapsedRealtime2 = SystemClock.elapsedRealtime();
                     a1Var.d("opening websocket; attempt=" + i11);
                     try {
-                        c5.b0 b0Var = new c5.b0(12, (short) 0);
+                        c5.b0 b0Var = new c5.b0(13, (short) 0);
                         b0Var.b = 10000;
-                        tc.u i12 = b0Var.i(str);
-                        a1Var.k = i12;
+                        tc.u j11 = b0Var.j(str);
+                        a1Var.k = j11;
                         z0 z0Var = new z0(a1Var, i11, elapsedRealtime2);
-                        c2.b bVar = i12.d;
+                        c2.b bVar = j11.d;
                         synchronized (((ArrayList) bVar.c)) {
                             ((ArrayList) bVar.c).add(z0Var);
                             bVar.a = true;
@@ -384,10 +384,10 @@ public final class a1 {
                         if (bVar3 != null) {
                             ArrayList arrayList = (ArrayList) bVar3.n();
                             int size = arrayList.size();
-                            int i13 = 0;
-                            while (i13 < size) {
-                                Object obj3 = arrayList.get(i13);
-                                i13++;
+                            int i12 = 0;
+                            while (i12 < size) {
+                                Object obj3 = arrayList.get(i12);
+                                i12++;
                                 z0 z0Var2 = (z0) obj3;
                                 try {
                                     try {

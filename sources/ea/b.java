@@ -3,7 +3,7 @@ package ea;
 import a1.g;
 import a6.m;
 import ai.f;
-import ai.u3;
+import ai.w3;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 import k5.k;
-import k5.n;
 import k5.t;
 import k5.w;
 import l5.h;
@@ -31,13 +30,14 @@ import m.s3;
 import m1.j;
 import m5.e;
 import org.json.JSONObject;
+import org.telegram.ui.web.n;
 import qg.g0;
 import t7.u;
-import w7.l6;
+import w7.j6;
 import z9.b0;
 import z9.k0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class b {
     public Object a;
@@ -225,7 +225,7 @@ public final class b {
                         default:
                             s5.g gVar3 = (s5.g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new org.telegram.ui.web.m(8, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new n(8, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
@@ -272,7 +272,7 @@ public final class b {
                         default:
                             s5.g gVar3 = (s5.g) ((s5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new org.telegram.ui.web.m(8, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new n(8, gVar3, iVar2));
                     }
                 }
             });
@@ -281,7 +281,7 @@ public final class b {
             }
             int i15 = 2;
             if (a2 == null) {
-                l6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                j6.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new m5.a(3, -1L);
                 bArr = bArr2;
                 j10 = j11;
@@ -308,7 +308,7 @@ public final class b {
                     g3Var.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        g3Var.u(aVar3, byteArrayOutputStream);
+                        g3Var.z(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
                     lVar.c = new l5.m(cVar3, byteArrayOutputStream.toByteArray());
@@ -366,7 +366,7 @@ public final class b {
                                 s3Var.e = str6;
                             } else {
                                 it = it3;
-                                String c10 = l6.c("CctTransportBackend");
+                                String c10 = j6.c("CctTransportBackend");
                                 if (Log.isLoggable(c10, 5)) {
                                     Log.w(c10, "Received event of unsupported encoding " + cVar4 + ". Skipping...");
                                 }
@@ -381,7 +381,7 @@ public final class b {
                         s3Var.c = Long.valueOf(hVar3.e);
                         String str7 = (String) hVar3.f.get("tz-offset");
                         s3Var.f = Long.valueOf(str7 == null ? 0L : Long.valueOf(str7).longValue());
-                        s3Var.h = new n((k5.u) k5.u.a.get(hVar3.b("net-type")), (t) t.a.get(hVar3.b("mobile-subtype")));
+                        s3Var.h = new k5.n((k5.u) k5.u.a.get(hVar3.b("net-type")), (t) t.a.get(hVar3.b("mobile-subtype")));
                         Integer num2 = hVar3.b;
                         if (num2 != null) {
                             s3Var.b = num2;
@@ -396,7 +396,7 @@ public final class b {
                         if (!str8.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str8));
                         }
-                        arrayList4.add(new k(((Long) s3Var.a).longValue(), (Integer) s3Var.b, ((Long) s3Var.c).longValue(), (byte[]) s3Var.d, (String) s3Var.e, ((Long) s3Var.f).longValue(), (n) s3Var.h));
+                        arrayList4.add(new k(((Long) s3Var.a).longValue(), (Integer) s3Var.b, ((Long) s3Var.c).longValue(), (byte[]) s3Var.d, (String) s3Var.e, ((Long) s3Var.f).longValue(), (k5.n) s3Var.h));
                         it3 = it;
                         bArr2 = bArr3;
                         j11 = j12;
@@ -436,7 +436,7 @@ public final class b {
                         f7 = bVar2.f(eVar);
                         URL url2 = (URL) f7.c;
                         if (url2 != null) {
-                            l6.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            j6.a(url2, "CctTransportBackend", "Following redirect to: %s");
                             eVar = new androidx.biometric.e(url2, (k5.i) eVar.c, (String) eVar.d, i17);
                         } else {
                             eVar = null;
@@ -459,7 +459,7 @@ public final class b {
                                 aVar = new m5.a(4, -1L);
                             } catch (IOException e) {
                                 e = e;
-                                l6.b("CctTransportBackend", "Could not make request to the backend", e);
+                                j6.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i11 = 2;
                                 aVar2 = new m5.a(2, -1L);
                                 i12 = aVar2.a;
@@ -478,15 +478,15 @@ public final class b {
             }
             i12 = aVar2.a;
             if (i12 != i11) {
-                gVar.f(new u3(this, iterable, iVar, j10, 5));
-                ((g3) this.d).P(iVar, i10 + 1, true);
+                gVar.f(new w3(this, iterable, iVar, j10, 5));
+                ((g3) this.d).U(iVar, i10 + 1, true);
                 return;
             }
             bVar = this;
             iVar2 = iVar;
             long j13 = j10;
             int i20 = 4;
-            gVar.f(new org.telegram.ui.web.m(i20, bVar, iterable));
+            gVar.f(new n(i20, bVar, iterable));
             if (i12 == 1) {
                 j11 = Math.max(j13, aVar2.b);
                 if (bArr != null) {
@@ -504,7 +504,7 @@ public final class b {
                             hashMap2.put(str10, 1);
                         }
                     }
-                    gVar.f(new org.telegram.ui.web.m(5, bVar, hashMap2));
+                    gVar.f(new n(5, bVar, hashMap2));
                 }
                 j11 = j13;
             }

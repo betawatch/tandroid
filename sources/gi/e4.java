@@ -17,7 +17,7 @@ import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.cw0;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class e4 extends FrameLayout {
     public static final cw0 b0 = new cw0(new fh.b(11), new fh.b(12));
@@ -53,7 +53,7 @@ public abstract class e4 extends FrameLayout {
     public boolean s;
     public o1.k v;
     public boolean w;
-    public org.telegram.ui.web.x0 x;
+    public org.telegram.ui.web.y0 x;
     public Runnable y;
 
     public e4(Context context) {
@@ -79,8 +79,8 @@ public abstract class e4 extends FrameLayout {
     }
 
     public final boolean b(boolean z10) {
-        org.telegram.ui.web.x0 x0Var = this.x;
-        if (x0Var == null || !x0Var.N) {
+        org.telegram.ui.web.y0 y0Var = this.x;
+        if (y0Var == null || !y0Var.N) {
             return true;
         }
         return z10 ? this.O : this.P;
@@ -378,7 +378,7 @@ public abstract class e4 extends FrameLayout {
         super.setTranslationY(f7);
     }
 
-    public void setWebView(org.telegram.ui.web.x0 x0Var) {
-        this.x = x0Var;
+    public void setWebView(org.telegram.ui.web.y0 y0Var) {
+        this.x = y0Var;
     }
 }

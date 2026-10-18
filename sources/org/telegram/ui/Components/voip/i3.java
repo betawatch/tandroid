@@ -13,7 +13,7 @@ import org.telegram.ui.Components.n31;
 import org.telegram.ui.Components.uj0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class i3 extends FrameLayout {
     public final o1 a;
@@ -29,21 +29,21 @@ public final class i3 extends FrameLayout {
         setWillNotDraw(true);
         h3 h3Var = new h3(activity, o1Var);
         this.b = h3Var;
-        addView(h3Var, z5.b(53.5f, 53.5f, 1));
+        addView(h3Var, z5.a(53.5f, 53.5f, 1));
         TextView textView = new TextView(activity);
         this.d = textView;
         textView.setGravity(1);
         textView.setTextSize(1, 11.0f);
         textView.setTextColor(-1);
         textView.setImportantForAccessibility(2);
-        addView(textView, z5.a(-2.0f, 0.0f, 58.0f, 0.0f, 2.0f, -1, 0));
+        addView(textView, z5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
         TextView textView2 = new TextView(activity);
         this.e = textView2;
         textView2.setGravity(1);
         textView2.setTextSize(1, 11.0f);
         textView2.setTextColor(-1);
         textView2.setImportantForAccessibility(2);
-        addView(textView2, z5.a(-2.0f, 0.0f, 58.0f, 0.0f, 2.0f, -1, 0));
+        addView(textView2, z5.d(-1, -2.0f, 0, 0.0f, 58.0f, 0.0f, 2.0f));
         textView.setVisibility(8);
         textView2.setVisibility(8);
     }
@@ -69,7 +69,7 @@ public final class i3 extends FrameLayout {
         h3Var.a(i12, z10, false);
         h3Var.setAlpha(0.0f);
         h3Var.setOnBtnClickedListener(this.b.x);
-        addView(h3Var, z5.b(53.5f, 53.5f, 1));
+        addView(h3Var, z5.a(53.5f, 53.5f, 1));
         h3 h3Var2 = this.b;
         this.b = h3Var;
         h3Var.animate().alpha(1.0f).setDuration(250L).start();

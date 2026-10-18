@@ -66,7 +66,7 @@ import org.telegram.ui.ia1;
 import org.telegram.ui.sn;
 import org.telegram.ui.ut0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class d3 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.t3 {
     public static final HashSet W0 = new HashSet();
@@ -243,16 +243,16 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
         c3Var.addView(a3Var, e10);
         b3 b3Var = new b3(context, d6Var);
         this.y = b3Var;
-        c3Var.addView(b3Var, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 81));
+        c3Var.addView(b3Var, w7.z5.d(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
         v2Var.setWebViewProgressListener(new q7(this, 2));
-        u2Var.addView(v2Var, w7.z5.d(-1.0f, -1));
+        u2Var.addView(v2Var, w7.z5.c(-1.0f, -1));
         u2Var.setScrollListener(new y1(this, 7));
         u2Var.setScrollEndListener(new y1(this, 8));
         u2Var.setDelegate(new z1(this));
         u2Var.setIsKeyboardVisible(new z1(this));
         le0 le0Var = new le0(context);
         this.s0 = le0Var;
-        c3Var.addView(le0Var, w7.z5.d(-1.0f, -1));
+        c3Var.addView(le0Var, w7.z5.c(-1.0f, -1));
         setContentView(c3Var, new ViewGroup.LayoutParams(-1, -1));
         E();
         LaunchActivity launchActivity = LaunchActivity.H1;
@@ -581,7 +581,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
     }
 
     public final void G() {
-        org.telegram.ui.web.x0 webView;
+        org.telegram.ui.web.y0 webView;
         v2 v2Var = this.x;
         if (v2Var == null || (webView = v2Var.getWebView()) == null) {
             return;
@@ -650,7 +650,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
             y0Var.b();
         }
         m3Var.K = this.B0;
-        org.telegram.ui.web.x0 webView = v2Var != null ? v2Var.getWebView() : null;
+        org.telegram.ui.web.y0 webView = v2Var != null ? v2Var.getWebView() : null;
         if (webView != null) {
             v2Var.L();
             m3Var.b = webView;
@@ -746,7 +746,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
         if (this.U0 == null) {
             org.telegram.ui.f3 f3Var = new org.telegram.ui.f3(getContext());
             this.U0 = f3Var;
-            this.v.addView(f3Var, w7.z5.d(-1.0f, -1));
+            this.v.addView(f3Var, w7.z5.c(-1.0f, -1));
             this.U0.setTranslationY(-1.0f);
             this.U0.h.setOnClickListener(new h2(this, 0));
             this.U0.setBackgroundColor(this.P.getColor());
@@ -1062,7 +1062,7 @@ public final class d3 extends Dialog implements NotificationCenter.NotificationC
                 i13++;
                 i0 i0Var = (i0) obj;
                 String str = i0Var.c;
-                ah.j jVar = new ah.j(15);
+                ah.j jVar = new ah.j(14);
                 d6 d6Var = J.d;
                 if (J.e == null) {
                     arrayList = arrayList3;

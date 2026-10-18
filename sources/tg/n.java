@@ -27,9 +27,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.voip.w;
-import sg.w1;
+import sg.x1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class n extends TextureView implements TextureView.SurfaceTextureListener {
     public int E;
@@ -45,7 +45,7 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
     public int O;
     public final ArrayList P;
     public boolean Q;
-    public w1 R;
+    public x1 R;
     public final int S;
     public volatile boolean T;
     public final int[] U;
@@ -406,11 +406,7 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
         return 1.0f;
     }
 
-    public boolean k() {
-        return this.S == 4;
-    }
-
-    public final void l(long j10) {
+    public final void j(long j10) {
         j jVar = this.e0;
         AndroidUtilities.cancelRunOnUIThread(jVar);
         if (this.I || !this.M) {
@@ -419,7 +415,7 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
         AndroidUtilities.runOnUIThread(jVar, j10);
     }
 
-    public final void m(SurfaceTexture surfaceTexture, int i10, int i11) {
+    public final void k(SurfaceTexture surfaceTexture, int i10, int i11) {
         float renderScale = getRenderScale();
         this.T = renderScale < 1.0f;
         if (renderScale < 1.0f && i10 > 0 && i11 > 0) {
@@ -431,7 +427,7 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
         this.x = i11;
     }
 
-    public final void n() {
+    public final void l() {
         d();
         g gVar = this.b;
         float f7 = gVar.d;
@@ -444,14 +440,14 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
         this.c0.setDuration(600L);
         this.c0.setInterpolator(new OvershootInterpolator());
         this.c0.start();
-        w1 w1Var = this.R;
-        if (w1Var != null) {
-            w1Var.b(Math.abs(f12));
+        x1 x1Var = this.R;
+        if (x1Var != null) {
+            x1Var.b(Math.abs(f12));
         }
-        l(this.L);
+        j(this.L);
     }
 
-    public final void o(long j10) {
+    public final void m(long j10) {
         g gVar = this.b;
         if (gVar != null) {
             gVar.d = -180.0f;
@@ -459,59 +455,7 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
         }
     }
 
-    @Override // android.view.TextureView, android.view.View
-    public void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.Q = true;
-        this.H = true;
-        l(this.L);
-    }
-
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        d();
-        g gVar = this.b;
-        if (gVar != null) {
-            gVar.d = 0.0f;
-            gVar.i = 0.0f;
-            gVar.e = 0.0f;
-        }
-        this.Q = false;
-    }
-
-    public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        q();
-        this.W = false;
-        this.J = new m(this, surfaceTexture);
-        m(surfaceTexture, i10, i11);
-        this.w = 1000000000 / Math.max(1, Math.min(this.K, getMaxFrameRate()));
-        this.J.start();
-    }
-
-    public boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        this.W = false;
-        q();
-        return true;
-    }
-
-    public void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        m(surfaceTexture, i10, i11);
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            getParent().requestDisallowInterceptTouchEvent(true);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            this.a = false;
-            n();
-            getParent().requestDisallowInterceptTouchEvent(false);
-        }
-        return this.b0.onTouchEvent(motionEvent);
-    }
-
-    public void p() {
+    public void n() {
         if (this.Q && this.M) {
             int i10 = this.O;
             ArrayList arrayList = this.P;
@@ -626,7 +570,7 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
         }
     }
 
-    public final void q() {
+    public final void o() {
         m mVar = this.J;
         this.J = null;
         this.W = false;
@@ -634,6 +578,59 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
             mVar.b = true;
             mVar.interrupt();
         }
+    }
+
+    @Override // android.view.TextureView, android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.Q = true;
+        this.H = true;
+        j(this.L);
+    }
+
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        d();
+        g gVar = this.b;
+        if (gVar != null) {
+            gVar.d = 0.0f;
+            gVar.i = 0.0f;
+            gVar.e = 0.0f;
+        }
+        this.Q = false;
+    }
+
+    public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        o();
+        this.W = false;
+        this.J = new m(this, surfaceTexture);
+        k(surfaceTexture, i10, i11);
+        this.w = 1000000000 / Math.max(1, Math.min(this.K, getMaxFrameRate()));
+        this.J.start();
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        this.W = false;
+        o();
+        return true;
+    }
+
+    public void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        k(surfaceTexture, i10, i11);
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
+            this.a = false;
+            l();
+            getParent().requestDisallowInterceptTouchEvent(false);
+        }
+        return this.b0.onTouchEvent(motionEvent);
     }
 
     public void setBackgroundBitmap(Bitmap bitmap) {
@@ -648,17 +645,17 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
     public void setDialogVisible(boolean z10) {
         this.I = z10;
         if (!z10) {
-            l(this.L);
+            j(this.L);
         } else {
             AndroidUtilities.cancelRunOnUIThread(this.e0);
-            n();
+            l();
         }
     }
 
     public void setIdleAnimationEnabled(boolean z10) {
         this.M = z10;
         if (z10) {
-            l(this.L);
+            j(this.L);
         } else {
             AndroidUtilities.cancelRunOnUIThread(this.e0);
             d();
@@ -679,18 +676,14 @@ public class n extends TextureView implements TextureView.SurfaceTextureListener
         this.H = true;
     }
 
-    public void setStarParticlesView(w1 w1Var) {
-        this.R = w1Var;
+    public void setStarParticlesView(x1 x1Var) {
+        this.R = x1Var;
     }
 
-    public long h(long j10) {
-        return j10;
+    public void h() {
     }
 
     public void i() {
-    }
-
-    public void j() {
     }
 
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {

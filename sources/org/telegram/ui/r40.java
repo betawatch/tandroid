@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r40 extends org.telegram.ui.Components.u30 {
     public final /* synthetic */ v40 n;
@@ -43,13 +43,13 @@ public final class r40 extends org.telegram.ui.Components.u30 {
         }
         org.telegram.messenger.g0.m(20.0f, -1, 1, textView);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        this.containerView.addView(textView, w7.z5.a(-2.0f, 24.0f, 29.0f, 24.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+        this.containerView.addView(textView, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 29.0f, 24.0f, 0.0f));
         TextView textView2 = new TextView(getContext());
         textView2.setText(LocaleController.getString(R.string.VoipRecordVoiceChatInfo));
         textView2.setTextColor(-1);
         textView2.setTextSize(1, 14.0f);
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        this.containerView.addView(textView2, w7.z5.a(-2.0f, 24.0f, 62.0f, 24.0f, 0.0f, -2, (LocaleController.isRTL ? 5 : 3) | 48));
+        this.containerView.addView(textView2, w7.z5.d(-2, -2.0f, (LocaleController.isRTL ? 5 : 3) | 48, 24.0f, 62.0f, 24.0f, 0.0f));
         this.e = new TextView[3];
         z4.g gVar = new z4.g(context);
         this.b = gVar;
@@ -59,15 +59,15 @@ public final class r40 extends org.telegram.ui.Components.u30 {
         AndroidUtilities.setViewPagerEdgeEffectColor(gVar, 2130706432);
         gVar.setAdapter(new org.telegram.ui.Components.t30(this));
         gVar.setPageMargin(0);
-        this.containerView.addView(gVar, w7.z5.a(-1.0f, 0.0f, 100.0f, 0.0f, 130.0f, -1, 1));
+        this.containerView.addView(gVar, w7.z5.d(-1, -1.0f, 1, 0.0f, 100.0f, 0.0f, 130.0f));
         gVar.b(new org.telegram.ui.Components.q30(this));
         View view = new View(getContext());
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.LEFT_RIGHT;
         view.setBackground(new GradientDrawable(orientation, new int[]{x02, 0}));
-        this.containerView.addView(view, w7.z5.a(-1.0f, 0.0f, 100.0f, 0.0f, 130.0f, 120, 51));
+        this.containerView.addView(view, w7.z5.d(120, -1.0f, 51, 0.0f, 100.0f, 0.0f, 130.0f));
         View view2 = new View(getContext());
         view2.setBackground(new GradientDrawable(orientation, new int[]{0, x02}));
-        this.containerView.addView(view2, w7.z5.a(-1.0f, 0.0f, 100.0f, 0.0f, 130.0f, 120, 53));
+        this.containerView.addView(view2, w7.z5.d(120, -1.0f, 53, 0.0f, 100.0f, 0.0f, 130.0f));
         org.telegram.ui.Components.r30 r30Var = new org.telegram.ui.Components.r30(this, getContext());
         this.c = r30Var;
         r30Var.setMinWidth(AndroidUtilities.dp(64.0f));
@@ -83,7 +83,7 @@ public final class r40 extends org.telegram.ui.Components.u30 {
         r30Var.setForeground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, 0, o10, o10));
         r30Var.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
         r30Var.setOnClickListener(new org.telegram.ui.Components.f0(this, 22));
-        this.containerView.addView(r30Var, w7.z5.a(48.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 80));
+        this.containerView.addView(r30Var, w7.z5.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         this.containerView.addView(linearLayout, w7.z5.e(-2, 64, 80));

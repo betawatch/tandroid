@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sk0 implements Utilities.Callback {
     public final /* synthetic */ int[] a;
@@ -22,11 +22,11 @@ public final /* synthetic */ class sk0 implements Utilities.Callback {
     public final /* synthetic */ TLRPC.UrlAuthResult h;
     public final /* synthetic */ String[] i;
     public final /* synthetic */ boolean j;
-    public final /* synthetic */ org.telegram.ui.web.a1 k;
+    public final /* synthetic */ org.telegram.ui.web.b1 k;
     public final /* synthetic */ String l;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 m;
 
-    public /* synthetic */ sk0(int[] iArr, ei.d dVar, ei.d dVar2, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.ActionBar.f3 f3Var, boolean z10, String str, TLRPC.UrlAuthResult urlAuthResult, String[] strArr, boolean z11, org.telegram.ui.web.a1 a1Var, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
+    public /* synthetic */ sk0(int[] iArr, ei.d dVar, ei.d dVar2, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, org.telegram.ui.ActionBar.f3 f3Var, boolean z10, String str, TLRPC.UrlAuthResult urlAuthResult, String[] strArr, boolean z11, org.telegram.ui.web.b1 b1Var, String str2, org.telegram.ui.ActionBar.d6 d6Var) {
         this.a = iArr;
         this.b = dVar;
         this.c = dVar2;
@@ -37,7 +37,7 @@ public final /* synthetic */ class sk0 implements Utilities.Callback {
         this.h = urlAuthResult;
         this.i = strArr;
         this.j = z11;
-        this.k = a1Var;
+        this.k = b1Var;
         this.l = str2;
         this.m = d6Var;
     }
@@ -54,7 +54,7 @@ public final /* synthetic */ class sk0 implements Utilities.Callback {
         final TLRPC.UrlAuthResult urlAuthResult = this.h;
         final String[] strArr = this.i;
         final boolean z11 = this.j;
-        final org.telegram.ui.web.a1 a1Var = this.k;
+        final org.telegram.ui.web.b1 b1Var = this.k;
         final String str2 = this.l;
         final org.telegram.ui.ActionBar.d6 d6Var = this.m;
         final Integer num = (Integer) obj;
@@ -72,7 +72,7 @@ public final /* synthetic */ class sk0 implements Utilities.Callback {
                 org.telegram.ui.ActionBar.f3 f3Var2 = f3Var;
                 if (urlAuthResult2 != null) {
                     f3Var2.dismiss();
-                    wk0.b(z10, num.intValue(), tL_messages_requestUrlAuth, urlAuthResult2, str, urlAuthResult, strArr[0], z11, a1Var);
+                    wk0.b(z10, num.intValue(), tL_messages_requestUrlAuth, urlAuthResult2, str, urlAuthResult, strArr[0], z11, b1Var);
                     return;
                 }
                 if (tL_error != null) {

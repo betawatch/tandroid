@@ -15,7 +15,6 @@ import androidx.lifecycle.s0;
 import b2.o0;
 import c3.c0;
 import c3.j0;
-import c3.p;
 import c3.q;
 import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.Continuation;
@@ -45,13 +44,14 @@ import org.telegram.ui.Components.a6;
 import org.telegram.ui.Components.bp0;
 import org.telegram.ui.xu0;
 import org.xml.sax.Attributes;
+import p2.p;
+import p2.s;
 import p2.t;
-import p2.u;
 import r0.r;
 import r9.d;
 import ri.h;
 import t7.o;
-import t7.s;
+import t7.u;
 import v2.m;
 import v7.q8;
 import x3.g;
@@ -61,9 +61,9 @@ import y6.e;
 import zf.j;
 import zf.k;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, u, r, h, Continuation, u5.a, m, g, c, i {
+public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, t, r, h, Continuation, u5.a, m, g, c, i {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a(int i10) {
@@ -260,9 +260,9 @@ public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, u, r, h, Co
         return null;
     }
 
-    @Override // p2.u
+    @Override // p2.t
     public y2.n J() {
-        return new t(p2.q.n, null);
+        return new s(p.n, null);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -309,7 +309,7 @@ public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, u, r, h, Co
                 shortBuffer2.put(s10);
                 shortBuffer2.put(s11);
             } else if (i11 == 1) {
-                shortBuffer2.put(t7.u.L3(s10, s11));
+                shortBuffer2.put(u.L3(s10, s11));
             }
         }
     }
@@ -344,9 +344,9 @@ public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, u, r, h, Co
         return false;
     }
 
-    @Override // p2.u
-    public y2.n U(p2.q qVar, p2.n nVar) {
-        return new t(qVar, nVar);
+    @Override // p2.t
+    public y2.n U(p pVar, p2.m mVar) {
+        return new s(pVar, mVar);
     }
 
     @Override // org.telegram.ui.Cells.l1
@@ -488,7 +488,7 @@ public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, u, r, h, Co
             case 15:
                 return new rb.h();
             default:
-                synchronized (s.class) {
+                synchronized (t7.s.class) {
                     byte b10 = (byte) (((byte) 1) | 2);
                     if (b10 != 3) {
                         StringBuilder sb2 = new StringBuilder();
@@ -500,14 +500,14 @@ public class a implements s0, q, cg.a, dg.a, b, n, eh.a, d, bp0, l1, u, r, h, Co
                         }
                         throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
                     }
-                    s.c(new o());
+                    t7.s.c(new o());
                 }
                 return new a(0);
         }
     }
 
     @Override // x3.g
-    public long k(p pVar) {
+    public long k(c3.p pVar) {
         return -1L;
     }
 

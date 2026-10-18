@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n80 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -66,8 +66,8 @@ public final /* synthetic */ class n80 implements Utilities.Callback {
                     cVar.b();
                 }
                 org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
-                if (R instanceof pg0) {
-                    R = ((pg0) R).X();
+                if (R instanceof og0) {
+                    R = ((og0) R).X();
                 }
                 org.telegram.ui.ActionBar.n2 n2Var = R;
                 if (n2Var != null) {
@@ -75,8 +75,8 @@ public final /* synthetic */ class n80 implements Utilities.Callback {
                     if (n2Var.getLastStoryViewer() != null && n2Var.getLastStoryViewer().K0) {
                         resourceProvider = n2Var.getLastStoryViewer().y;
                     }
-                    sg.j0 j0Var = new sg.j0(19, launchActivity.O, launchActivity, n2Var, resourceProvider);
-                    j0Var.H1(canApplyBoost);
+                    sg.k0 k0Var = new sg.k0(19, launchActivity.O, launchActivity, n2Var, resourceProvider);
+                    k0Var.H1(canApplyBoost);
                     if (n2Var instanceof sn) {
                         break;
                     } else if (n2Var instanceof ey) {
@@ -87,10 +87,10 @@ public final /* synthetic */ class n80 implements Utilities.Callback {
                         r2 = false;
                         z10 = r2;
                     }
-                    j0Var.G1(tL_premium_boostsStatus, z10);
-                    j0Var.I1(l4.longValue());
-                    j0Var.g0 = u1Var;
-                    n2Var.showDialog(j0Var);
+                    k0Var.G1(tL_premium_boostsStatus, z10);
+                    k0Var.I1(l4.longValue());
+                    k0Var.g0 = u1Var;
+                    n2Var.showDialog(k0Var);
                     if (runnable != null) {
                         try {
                             runnable.run();

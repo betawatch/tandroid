@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class pa extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -27,11 +27,11 @@ public final class pa extends FrameLayout {
         this.b = textView;
         org.telegram.messenger.g0.m(16.0f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, textView);
         if (LocaleController.isRTL) {
-            addView(w9Var, w7.z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, 30, 21));
-            addView(textView, w7.z5.a(-2.0f, 12.0f, 0.0f, 56.0f, 0.0f, -1, 21));
+            addView(w9Var, w7.z5.d(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, w7.z5.d(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
         } else {
-            addView(w9Var, w7.z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, 30, 16));
-            addView(textView, w7.z5.a(-2.0f, 56.0f, 0.0f, 12.0f, 0.0f, -1, 16));
+            addView(w9Var, w7.z5.d(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
+            addView(textView, w7.z5.d(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
         }
     }
 

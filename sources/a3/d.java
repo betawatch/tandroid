@@ -42,15 +42,16 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.yw0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.t4;
+import org.telegram.ui.Wallet.t7;
 import org.telegram.ui.Wallet.u4;
-import org.telegram.ui.Wallet.z7;
+import org.telegram.ui.Wallet.v4;
 import org.telegram.ui.sn;
-import sg.x0;
+import sg.y0;
 import v7.y7;
+import v7.z7;
 import w7.e8;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -101,12 +102,12 @@ public final /* synthetic */ class d implements Runnable {
             case 5:
                 n2 n2Var = ((ah.n0) this.b).f2.r;
                 if (n2Var instanceof sn) {
-                    n2Var.showDialog(new x0(n2Var, 11, false));
+                    n2Var.showDialog(new y0(n2Var, 11, false));
                     return;
                 }
                 n2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.showDialog(new x0(n2Var, 11, false));
+                    R.showDialog(new y0(n2Var, 11, false));
                     return;
                 }
                 return;
@@ -141,22 +142,22 @@ public final /* synthetic */ class d implements Runnable {
                 AndroidUtilities.showKeyboard(((l1) this.b).c);
                 return;
             case 12:
-                t4 t4Var = (t4) ((j7) this.b);
-                z7 z7Var = t4Var.c.k0;
-                if (z7Var != null) {
-                    TL_wallet.nftItem nftitem = t4Var.b;
-                    if (z7Var.C()) {
-                        z7Var.e0(z7Var.v(nftitem));
+                u4 u4Var = (u4) ((j7) this.b);
+                t7 t7Var = u4Var.c.i0;
+                if (t7Var != null) {
+                    TL_wallet.nftItem nftitem = u4Var.b;
+                    if (t7Var.A()) {
+                        t7Var.c0(t7Var.v(nftitem));
                         return;
                     }
                     return;
                 }
                 return;
             case 13:
-                u4 u4Var = (u4) ((i7) this.b);
-                z7 z7Var2 = u4Var.b.k0;
-                if (z7Var2 != null) {
-                    z7Var2.d0(u4Var.a);
+                v4 v4Var = (v4) ((i7) this.b);
+                t7 t7Var2 = v4Var.b.i0;
+                if (t7Var2 != null) {
+                    t7Var2.b0(v4Var.a);
                     return;
                 }
                 return;
@@ -407,7 +408,7 @@ public final /* synthetic */ class d implements Runnable {
                                 try {
                                     Typeface b10 = i0.e.a.b(context, hVarArr, 0);
                                     Trace.endSection();
-                                    MappedByteBuffer e = v7.z7.e(qVar.a, d.a);
+                                    MappedByteBuffer e = z7.e(qVar.a, d.a);
                                     if (e == null || b10 == null) {
                                         throw new RuntimeException("Unable to open file.");
                                     }

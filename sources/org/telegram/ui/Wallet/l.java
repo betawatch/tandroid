@@ -7,7 +7,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.n80;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -41,17 +41,17 @@ public final /* synthetic */ class l implements Utilities.Callback {
                 ((Utilities.Callback) obj2).run(str2);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new u3(11, (z7) obj2, (TLRPC.UserFull) obj));
+                AndroidUtilities.runOnUIThread(new v3(r1, (t7) obj2, (TLRPC.UserFull) obj));
                 break;
             default:
-                c8 c8Var = (c8) obj2;
-                c8Var.getClass();
-                int i11 = ((Integer) obj).intValue() == 0 ? 12 : 24;
-                if (c8Var.a != i11) {
-                    c8Var.a = i11;
-                    c8Var.W(c8Var.getParentActivity());
-                    c8Var.Y();
-                    c8Var.h.setText(c8Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(i11)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(i11)));
+                w7 w7Var = (w7) obj2;
+                w7Var.getClass();
+                r1 = ((Integer) obj).intValue() != 0 ? 24 : 12;
+                if (w7Var.a != r1) {
+                    w7Var.a = r1;
+                    w7Var.W(w7Var.getParentActivity());
+                    w7Var.Y();
+                    w7Var.h.setText(w7Var.s != null ? LocaleController.formatSpannable(R.string.WalletImportCurrentPhraseInfo, Integer.valueOf(r1)) : LocaleController.formatSpannable(R.string.WalletImportPhraseInfo, Integer.valueOf(r1)));
                     break;
                 }
                 break;

@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ue extends FrameLayout {
     public final Paint a;
@@ -76,7 +76,6 @@ public final class ue extends FrameLayout {
         long j10;
         long j11;
         long j12;
-        float f7;
         ChatActivityEnterView chatActivityEnterView = this.d;
         ue ueVar = chatActivityEnterView.Z0;
         org.telegram.ui.sn snVar = chatActivityEnterView.P2;
@@ -86,8 +85,9 @@ public final class ue extends FrameLayout {
         final int i10 = 0;
         if (!chatActivityEnterView.l5) {
             chatActivityEnterView.W();
-            final int i11 = 3;
-            final int i12 = 1;
+            final int i11 = 2;
+            final int i12 = 3;
+            final int i13 = 1;
             if (motionEvent.getAction() == 0) {
                 if (!ChatActivityEnterView.this.s4) {
                     TLRPC.Chat chat = snVar == null ? null : snVar.e;
@@ -113,10 +113,10 @@ public final class ue extends FrameLayout {
                             Activity activity = chatActivityEnterView.O2;
                             long a2 = snVar.a();
                             k2 k2Var = new k2(10);
-                            rc rcVar = new rc(i11);
+                            sc scVar = new sc(i11);
                             Pattern pattern = f5.a;
                             org.telegram.ui.ActionBar.d6 d6Var = this.c;
-                            f5.J(activity, a2, -1L, 0, false, k2Var, rcVar, new d5(d6Var), d6Var);
+                            f5.J(activity, a2, -1L, 0, false, k2Var, scVar, new d5(d6Var), d6Var);
                         }
                         if (f5.c0(chatActivityEnterView.Q, chatActivityEnterView.Q2)) {
                             if (chatActivityEnterView.c1) {
@@ -146,7 +146,7 @@ public final class ue extends FrameLayout {
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     Long l4 = (Long) obj;
-                                    switch (i12) {
+                                    switch (i13) {
                                         case 0:
                                             this.b.d.R0(0, true, 0, false, l4.longValue());
                                             break;
@@ -236,7 +236,6 @@ public final class ue extends FrameLayout {
                 getParent().requestDisallowInterceptTouchEvent(true);
                 return true;
             }
-            final int i13 = 2;
             if (motionEvent.getAction() != 1 && motionEvent.getAction() != 3) {
                 if (motionEvent.getAction() == 2 && chatActivityEnterView.F2) {
                     float x10 = motionEvent.getX();
@@ -253,17 +252,14 @@ public final class ue extends FrameLayout {
                             recordCircle.invalidate();
                             if (chatActivityEnterView2.r4 || chatActivityEnterView2.j4 < 0.7f || chatActivityEnterView2.k4 - chatActivityEnterView2.l4 < AndroidUtilities.dp(57.0f)) {
                                 ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.N1;
-                                float f10 = x10 - recordCircle2.F;
-                                float f11 = y3 - recordCircle2.G;
-                                float f12 = (f11 * f11) + (f10 * f10);
+                                float f7 = x10 - recordCircle2.F;
+                                float f10 = y3 - recordCircle2.G;
+                                float f11 = (f10 * f10) + (f7 * f7);
                                 recordCircle2.G = y3;
                                 recordCircle2.F = x10;
                                 ChatActivityEnterView chatActivityEnterView3 = ChatActivityEnterView.this;
-                                if (chatActivityEnterView3.e4 && chatActivityEnterView3.g4 == 0.0f && f12 > recordCircle2.E) {
-                                    f7 = 1.0f;
+                                if (chatActivityEnterView3.e4 && chatActivityEnterView3.g4 == 0.0f && f11 > recordCircle2.E) {
                                     chatActivityEnterView3.f4 = System.currentTimeMillis();
-                                } else {
-                                    f7 = 1.0f;
                                 }
                                 if (chatActivityEnterView.D2 == -1.0f) {
                                     chatActivityEnterView.D2 = x10;
@@ -274,18 +270,18 @@ public final class ue extends FrameLayout {
                                     }
                                 }
                                 float x11 = ueVar.getX() + x10;
-                                float f13 = chatActivityEnterView.D2;
-                                float f14 = ((x11 - f13) / chatActivityEnterView.E2) + f7;
-                                if (f13 != -1.0f) {
-                                    float f15 = f14 > f7 ? f7 : f14 < 0.0f ? 0.0f : f14;
+                                float f12 = chatActivityEnterView.D2;
+                                float f13 = ((x11 - f12) / chatActivityEnterView.E2) + 1.0f;
+                                if (f12 != -1.0f) {
+                                    float f14 = f13 <= 1.0f ? f13 < 0.0f ? 0.0f : f13 : 1.0f;
                                     ChatActivityEnterView.SlideTextView slideTextView4 = chatActivityEnterView.k1;
                                     if (slideTextView4 != null) {
-                                        slideTextView4.r = f15;
+                                        slideTextView4.r = f14;
                                     }
-                                    chatActivityEnterView.setSlideToCancelProgress(f15);
-                                    f14 = f15;
+                                    chatActivityEnterView.setSlideToCancelProgress(f14);
+                                    f13 = f14;
                                 }
-                                if (f14 == 0.0f) {
+                                if (f13 == 0.0f) {
                                     if (chatActivityEnterView.e2 && chatActivityEnterView.c1) {
                                         CameraController.getInstance().cancelOnInitRunnable(afVar);
                                         chatActivityEnterView.Z2.a2(2, 0, chatActivityEnterView.O ? ConnectionsManager.DEFAULT_DATACENTER_ID : 0, chatActivityEnterView.S4, 0L, true);
@@ -310,7 +306,7 @@ public final class ue extends FrameLayout {
                                     sgVar.a.p(true);
                                     sgVar.a.s(LocaleController.getString(R.string.VoicePauseHint));
                                     MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", MessagesController.getGlobalMainSettings().getInt("voicepausehint", 0) + 1).apply();
-                                    sgVar.addView(sgVar.a, w7.z5.a(-1.0f, 0.0f, 0.0f, 54.0f, 58.0f, -1, 119));
+                                    sgVar.addView(sgVar.a, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
                                     ei.x3 x3Var2 = sgVar.a;
                                     x3Var2.l0 = new qg(sgVar, x3Var2, 3);
                                     x3Var2.u();
@@ -404,7 +400,7 @@ public final class ue extends FrameLayout {
                                     @Override // org.telegram.messenger.Utilities.Callback
                                     public final void run(Object obj) {
                                         Long l4 = (Long) obj;
-                                        switch (i11) {
+                                        switch (i12) {
                                             case 0:
                                                 this.b.d.R0(0, true, 0, false, l4.longValue());
                                                 break;
@@ -426,9 +422,9 @@ public final class ue extends FrameLayout {
                                 Activity activity2 = chatActivityEnterView.O2;
                                 long a10 = snVar.a();
                                 k2 k2Var2 = new k2(11);
-                                rc rcVar2 = new rc(4);
+                                sc scVar2 = new sc(i12);
                                 org.telegram.ui.ActionBar.d6 d6Var2 = this.c;
-                                f5.J(activity2, a10, -1L, 0, false, k2Var2, rcVar2, new d5(d6Var2), d6Var2);
+                                f5.J(activity2, a10, -1L, 0, false, k2Var2, scVar2, new d5(d6Var2), d6Var2);
                             }
                             chatActivityEnterView.Z2.X0(0);
                             MediaController.getInstance().stopRecording(chatActivityEnterView.c() ? 3 : 1, true, 0, chatActivityEnterView.O, 0L);
@@ -450,7 +446,7 @@ public final class ue extends FrameLayout {
                                 @Override // org.telegram.messenger.Utilities.Callback
                                 public final void run(Object obj) {
                                     Long l4 = (Long) obj;
-                                    switch (i13) {
+                                    switch (i11) {
                                         case 0:
                                             this.b.d.R0(0, true, 0, false, l4.longValue());
                                             break;
@@ -485,7 +481,7 @@ public final class ue extends FrameLayout {
 
                         @Override // java.lang.Runnable
                         public final void run() {
-                            switch (i12) {
+                            switch (i13) {
                                 case 0:
                                     ChatActivityEnterView chatActivityEnterView22 = this.b.d;
                                     chatActivityEnterView22.f0 = null;

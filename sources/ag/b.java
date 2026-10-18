@@ -4,9 +4,9 @@ import a0.f;
 import a0.h;
 import a1.g;
 import a6.l;
-import ai.r3;
+import ai.r2;
 import ai.s7;
-import ai.t2;
+import ai.t3;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -31,10 +31,10 @@ import c6.d0;
 import c6.e0;
 import c6.y;
 import c7.v;
-import ci.s4;
-import ci.t3;
+import ci.r4;
+import ci.s3;
+import ci.v9;
 import ci.w9;
-import ci.x9;
 import com.android.billingclient.api.ProxyBillingActivityV2;
 import com.google.android.gms.common.api.internal.r;
 import com.google.android.gms.common.api.j;
@@ -81,7 +81,6 @@ import ki.u3;
 import ki.u4;
 import ki.w3;
 import ki.z;
-import m.s3;
 import m.v3;
 import mg.o;
 import n7.k;
@@ -111,9 +110,9 @@ import rg.b2;
 import t7.u;
 import y2.m;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final class b implements a0, androidx.activity.result.b, r, w9, OnSuccessListener, l1, o, x71, n, gb.n, z1, x, j0, u3, m {
+public final class b implements a0, androidx.activity.result.b, r, v9, OnSuccessListener, l1, o, x71, n, gb.n, z1, x, j0, u3, m {
     public final /* synthetic */ int a;
     public final Object b;
 
@@ -643,61 +642,61 @@ public final class b implements a0, androidx.activity.result.b, r, w9, OnSuccess
         ((Bundle) this.b).putParcelable(str, bitmap);
     }
 
-    @Override // ci.w9
-    public boolean Q0(long j10, int i10, int i11, int i12, x9 x9Var) {
+    @Override // ci.v9
+    public boolean Q0(long j10, int i10, int i11, int i12, w9 w9Var) {
         ImageReceiver imageReceiver;
-        s4 s4Var;
-        s4 s4Var2;
-        x9Var.b = null;
-        x9Var.c = null;
+        r4 r4Var;
+        r4 r4Var2;
+        w9Var.b = null;
+        w9Var.c = null;
         wy0 wy0Var = (wy0) this.b;
         qz0 qz0Var = wy0Var.h;
         ArrayList arrayList = wy0Var.w;
         if (wy0Var.N < 0.2f) {
-            x9Var.b = qz0Var.getImageReceiver();
-            x9Var.c = null;
-            x9Var.a = qz0Var;
-            x9Var.h = 0.0f;
-            x9Var.i = AndroidUtilities.displaySize.y;
-            x9Var.g = (View) wy0Var.getParent();
-            x9Var.d = wy0Var.y;
-            x9Var.n = true;
+            w9Var.b = qz0Var.getImageReceiver();
+            w9Var.c = null;
+            w9Var.a = qz0Var;
+            w9Var.h = 0.0f;
+            w9Var.i = AndroidUtilities.displaySize.y;
+            w9Var.g = (View) wy0Var.getParent();
+            w9Var.d = wy0Var.y;
+            w9Var.n = true;
             return true;
         }
         int i13 = 0;
         while (true) {
             if (i13 >= arrayList.size()) {
                 imageReceiver = null;
-                s4Var = null;
-                s4Var2 = null;
+                r4Var = null;
+                r4Var2 = null;
                 break;
             }
-            s4 s4Var3 = (s4) arrayList.get(i13);
-            if (s4Var3.e < 1.0f || s4Var3.a != i11) {
+            r4 r4Var3 = (r4) arrayList.get(i13);
+            if (r4Var3.e < 1.0f || r4Var3.a != i11) {
                 i13++;
             } else {
                 int i14 = i13 - 1;
                 int i15 = i13 - 2;
-                s4 d = ProfileStoriesView.d(i14 >= 0 ? (s4) arrayList.get(i14) : null, i15 >= 0 ? (s4) arrayList.get(i15) : null, s4Var3);
-                imageReceiver = s4Var3.b;
-                s4Var2 = d;
-                s4Var = s4Var3;
+                r4 d = ProfileStoriesView.d(i14 >= 0 ? (r4) arrayList.get(i14) : null, i15 >= 0 ? (r4) arrayList.get(i15) : null, r4Var3);
+                imageReceiver = r4Var3.b;
+                r4Var2 = d;
+                r4Var = r4Var3;
             }
         }
         if (imageReceiver == null) {
             return false;
         }
-        x9Var.c = imageReceiver;
-        x9Var.b = null;
-        x9Var.a = wy0Var;
-        x9Var.h = 0.0f;
-        x9Var.i = AndroidUtilities.displaySize.y;
-        x9Var.g = (View) wy0Var.getParent();
-        if (s4Var == null || s4Var2 == null) {
-            x9Var.f = null;
+        w9Var.c = imageReceiver;
+        w9Var.b = null;
+        w9Var.a = wy0Var;
+        w9Var.h = 0.0f;
+        w9Var.i = AndroidUtilities.displaySize.y;
+        w9Var.g = (View) wy0Var.getParent();
+        if (r4Var == null || r4Var2 == null) {
+            w9Var.f = null;
             return true;
         }
-        x9Var.f = new s7(this, new RectF(s4Var.m), s4Var, new RectF(s4Var2.m), s4Var2);
+        w9Var.f = new s7(this, new RectF(r4Var.m), r4Var, new RectF(r4Var2.m), r4Var2);
         return true;
     }
 
@@ -750,12 +749,12 @@ public final class b implements a0, androidx.activity.result.b, r, w9, OnSuccess
         ((Bundle) this.b).putCharSequence(str, str2);
     }
 
-    @Override // ci.w9
-    public void X0(long j10, int i10, t3 t3Var) {
+    @Override // ci.v9
+    public void X0(long j10, int i10, s3 s3Var) {
         wy0 wy0Var = (wy0) this.b;
         int i11 = ProfileStoriesView.s0;
         wy0Var.f(true, false);
-        t3Var.run();
+        s3Var.run();
     }
 
     @Override // hg.z1
@@ -947,7 +946,7 @@ public final class b implements a0, androidx.activity.result.b, r, w9, OnSuccess
         qf.b bVar = ffmpegAudioRenderer.I;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new r3(bVar, j10, 13));
+            handler.post(new t3(bVar, j10, 13));
         }
     }
 
@@ -1026,7 +1025,7 @@ public final class b implements a0, androidx.activity.result.b, r, w9, OnSuccess
             tiVar.c2 = new oa.d(12);
             tiVar.P = true;
             tiVar.A1.setVisibility(8);
-            tiVar.w2 = new t2(d2Var, aVar, tiVar, 12);
+            tiVar.w2 = new r2(d2Var, aVar, tiVar, 12);
             tiVar.t1();
             tiVar.show();
         }
@@ -1358,7 +1357,7 @@ public final class b implements a0, androidx.activity.result.b, r, w9, OnSuccess
     public void x(c6 c6Var, String str) {
         d2 d2Var = (d2) this.b;
         if (d2Var.z0 == null) {
-            d2Var.z0 = new s3(new j5.b(this, 4), d2Var.getResourceProvider());
+            d2Var.z0 = new m.s3(new j5.b(this, 4), d2Var.getResourceProvider());
         }
         d2Var.z0.f(c6Var, str);
     }
@@ -1443,7 +1442,7 @@ public final class b implements a0, androidx.activity.result.b, r, w9, OnSuccess
     public void R(boolean z10) {
     }
 
-    @Override // ci.w9
+    @Override // ci.v9
     public /* synthetic */ void b(boolean z10) {
     }
 

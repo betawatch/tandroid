@@ -15,7 +15,7 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.SecretMediaViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class z7 extends org.telegram.ui.ActionBar.k {
     public final /* synthetic */ int u1;
@@ -219,7 +219,7 @@ public final class z7 extends org.telegram.ui.ActionBar.k {
             case 7:
                 if (getAlpha() != f7) {
                     super.setAlpha(f7);
-                    viewGroup4 = ((org.telegram.ui.ActionBar.f3) ((sg.x0) this.v1)).containerView;
+                    viewGroup4 = ((org.telegram.ui.ActionBar.f3) ((sg.y0) this.v1)).containerView;
                     viewGroup4.invalidate();
                     break;
                 }
@@ -232,15 +232,15 @@ public final class z7 extends org.telegram.ui.ActionBar.k {
         switch (this.u1) {
             case 7:
                 super.setTag(obj);
-                sg.x0 x0Var = (sg.x0) this.v1;
-                z7 z7Var = x0Var.N;
+                sg.y0 y0Var = (sg.y0) this.v1;
+                z7 z7Var = y0Var.N;
                 if (z7Var != null && z7Var.getTag() != null) {
-                    AndroidUtilities.setLightStatusBar(x0Var, i0.a.h(x0Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5)) > 0.699999988079071d);
+                    AndroidUtilities.setLightStatusBar(y0Var, i0.a.h(y0Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5)) > 0.699999988079071d);
                     break;
                 } else {
-                    org.telegram.ui.ActionBar.n2 n2Var = x0Var.b;
+                    org.telegram.ui.ActionBar.n2 n2Var = y0Var.b;
                     if (n2Var != null) {
-                        AndroidUtilities.setLightStatusBar(x0Var, n2Var.isLightStatusBar());
+                        AndroidUtilities.setLightStatusBar(y0Var, n2Var.isLightStatusBar());
                         break;
                     }
                 }

@@ -1,198 +1,65 @@
 package ci;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h6 implements RequestDelegate {
+public final /* synthetic */ class h6 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i7 b;
+    public final /* synthetic */ h7 b;
 
-    public /* synthetic */ h6(i7 i7Var, int i10) {
+    public /* synthetic */ h6(h7 h7Var, int i10) {
         this.a = i10;
-        this.b = i7Var;
+        this.b = h7Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-                if (updates != null) {
-                    i7 i7Var = this.b;
-                    MessagesController.getInstance(i7Var.a).processUpdateArray(updates.updates, updates.users, updates.chats, false, updates.date);
-                    AndroidUtilities.runOnUIThread(new n6(i7Var, 1));
-                    break;
+                z6 z6Var = (z6) obj;
+                h7 h7Var = this.b;
+                HashMap hashMap = h7Var.H;
+                int i10 = z6Var.e;
+                int i11 = z6Var.f;
+                long j10 = z6Var.d;
+                if (i10 == 0 && i11 > 0) {
+                    HashMap hashMap2 = (HashMap) hashMap.get(Long.valueOf(j10));
+                    if (hashMap2 != null) {
+                        hashMap2.remove(Integer.valueOf(i11));
+                        if (hashMap2.isEmpty()) {
+                            hashMap.remove(Long.valueOf(j10));
+                            break;
+                        }
+                    }
+                } else {
+                    HashMap hashMap3 = h7Var.G[i10];
+                    if (hashMap3 != null) {
+                        hashMap3.remove(Long.valueOf(j10));
+                        break;
+                    }
                 }
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new a3.l0(this.b, tLObject, tL_error, 22));
-                break;
-            case 2:
-                final int i10 = 1;
-                final i7 i7Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.m6
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                i7 i7Var3 = i7Var2;
-                                HashSet hashSet = i7Var3.L;
-                                int i11 = i7Var3.a;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_contacts_blocked) {
-                                    TLRPC.TL_contacts_blocked tL_contacts_blocked = (TLRPC.TL_contacts_blocked) tLObject2;
-                                    MessagesController.getInstance(i11).putUsers(tL_contacts_blocked.users, false);
-                                    MessagesController.getInstance(i11).putChats(tL_contacts_blocked.chats, false);
-                                    hashSet.clear();
-                                    ArrayList<TLRPC.TL_peerBlocked> arrayList = tL_contacts_blocked.blocked;
-                                    int size = arrayList.size();
-                                    int i12 = 0;
-                                    while (i12 < size) {
-                                        TLRPC.TL_peerBlocked tL_peerBlocked = arrayList.get(i12);
-                                        i12++;
-                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked.peer_id)));
-                                    }
-                                    i7Var3.N = Math.max(hashSet.size(), tL_contacts_blocked.count);
-                                    i7Var3.O = true;
-                                } else if (tLObject2 instanceof TLRPC.TL_contacts_blockedSlice) {
-                                    TLRPC.TL_contacts_blockedSlice tL_contacts_blockedSlice = (TLRPC.TL_contacts_blockedSlice) tLObject2;
-                                    MessagesController.getInstance(i11).putUsers(tL_contacts_blockedSlice.users, false);
-                                    MessagesController.getInstance(i11).putChats(tL_contacts_blockedSlice.chats, false);
-                                    ArrayList<TLRPC.TL_peerBlocked> arrayList2 = tL_contacts_blockedSlice.blocked;
-                                    int size2 = arrayList2.size();
-                                    int i13 = 0;
-                                    while (i13 < size2) {
-                                        TLRPC.TL_peerBlocked tL_peerBlocked2 = arrayList2.get(i13);
-                                        i13++;
-                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked2.peer_id)));
-                                    }
-                                    i7Var3.N = tL_contacts_blockedSlice.count;
-                                    i7Var3.O = hashSet.size() >= i7Var3.N;
-                                }
-                                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
-                                i7Var3.P = false;
-                                i7Var3.Q = System.currentTimeMillis();
-                                break;
-                            default:
-                                i7 i7Var4 = i7Var2;
-                                int i14 = i7Var4.a;
-                                ArrayList arrayList3 = i7Var4.T;
-                                arrayList3.clear();
-                                arrayList3.add(new TLRPC.TL_inputPeerSelf());
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.TL_messages_chats) {
-                                    ArrayList<TLRPC.Chat> arrayList4 = ((TLRPC.TL_messages_chats) tLObject3).chats;
-                                    MessagesController.getInstance(i14).putChats(arrayList4, false);
-                                    int size3 = arrayList4.size();
-                                    int i15 = 0;
-                                    while (i15 < size3) {
-                                        TLRPC.Chat chat = arrayList4.get(i15);
-                                        i15++;
-                                        arrayList3.add(MessagesController.getInputPeer(chat));
-                                    }
-                                }
-                                i7Var4.U = false;
-                                i7Var4.V = true;
-                                NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesSendAsUpdate, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 3:
-                final int i11 = 0;
-                final i7 i7Var3 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ci.m6
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                i7 i7Var32 = i7Var3;
-                                HashSet hashSet = i7Var32.L;
-                                int i112 = i7Var32.a;
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_contacts_blocked) {
-                                    TLRPC.TL_contacts_blocked tL_contacts_blocked = (TLRPC.TL_contacts_blocked) tLObject2;
-                                    MessagesController.getInstance(i112).putUsers(tL_contacts_blocked.users, false);
-                                    MessagesController.getInstance(i112).putChats(tL_contacts_blocked.chats, false);
-                                    hashSet.clear();
-                                    ArrayList<TLRPC.TL_peerBlocked> arrayList = tL_contacts_blocked.blocked;
-                                    int size = arrayList.size();
-                                    int i12 = 0;
-                                    while (i12 < size) {
-                                        TLRPC.TL_peerBlocked tL_peerBlocked = arrayList.get(i12);
-                                        i12++;
-                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked.peer_id)));
-                                    }
-                                    i7Var32.N = Math.max(hashSet.size(), tL_contacts_blocked.count);
-                                    i7Var32.O = true;
-                                } else if (tLObject2 instanceof TLRPC.TL_contacts_blockedSlice) {
-                                    TLRPC.TL_contacts_blockedSlice tL_contacts_blockedSlice = (TLRPC.TL_contacts_blockedSlice) tLObject2;
-                                    MessagesController.getInstance(i112).putUsers(tL_contacts_blockedSlice.users, false);
-                                    MessagesController.getInstance(i112).putChats(tL_contacts_blockedSlice.chats, false);
-                                    ArrayList<TLRPC.TL_peerBlocked> arrayList2 = tL_contacts_blockedSlice.blocked;
-                                    int size2 = arrayList2.size();
-                                    int i13 = 0;
-                                    while (i13 < size2) {
-                                        TLRPC.TL_peerBlocked tL_peerBlocked2 = arrayList2.get(i13);
-                                        i13++;
-                                        hashSet.add(Long.valueOf(DialogObject.getPeerDialogId(tL_peerBlocked2.peer_id)));
-                                    }
-                                    i7Var32.N = tL_contacts_blockedSlice.count;
-                                    i7Var32.O = hashSet.size() >= i7Var32.N;
-                                }
-                                NotificationCenter.getInstance(i112).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesBlocklistUpdate, new Object[0]);
-                                i7Var32.P = false;
-                                i7Var32.Q = System.currentTimeMillis();
-                                break;
-                            default:
-                                i7 i7Var4 = i7Var3;
-                                int i14 = i7Var4.a;
-                                ArrayList arrayList3 = i7Var4.T;
-                                arrayList3.clear();
-                                arrayList3.add(new TLRPC.TL_inputPeerSelf());
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 instanceof TLRPC.TL_messages_chats) {
-                                    ArrayList<TLRPC.Chat> arrayList4 = ((TLRPC.TL_messages_chats) tLObject3).chats;
-                                    MessagesController.getInstance(i14).putChats(arrayList4, false);
-                                    int size3 = arrayList4.size();
-                                    int i15 = 0;
-                                    while (i15 < size3) {
-                                        TLRPC.Chat chat = arrayList4.get(i15);
-                                        i15++;
-                                        arrayList3.add(MessagesController.getInputPeer(chat));
-                                    }
-                                }
-                                i7Var4.U = false;
-                                i7Var4.V = true;
-                                NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesSendAsUpdate, new Object[0]);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                i7 i7Var4 = this.b;
-                i7Var4.getClass();
-                AndroidUtilities.runOnUIThread(new n6(i7Var4, 0));
+                this.b.f = (LongSparseIntArray) obj;
                 break;
             default:
-                i7 i7Var5 = this.b;
-                i7Var5.getClass();
-                if (tL_error == null) {
-                    AndroidUtilities.runOnUIThread(new n6(i7Var5, 0));
+                TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) obj;
+                h7 h7Var2 = this.b;
+                h7Var2.n = false;
+                if (tL_stories_allStories == null) {
+                    h7Var2.q();
+                    h7Var2.T();
+                    break;
+                } else {
+                    h7Var2.Y(tL_stories_allStories, false, true, false);
+                    h7Var2.Q(false);
+                    h7Var2.Q(true);
                     break;
                 }
-                break;
         }
     }
 }

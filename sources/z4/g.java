@@ -23,9 +23,9 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
-import ci.h8;
-import ci.q4;
-import ci.q9;
+import ci.g8;
+import ci.p4;
+import ci.p9;
 import gb.i;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,12 +33,11 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import p4.s0;
 import r0.a0;
 import r0.i0;
 import s4.c1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
@@ -88,7 +87,7 @@ public class g extends ViewGroup {
     public int n0;
     public int o0;
     public ArrayList p0;
-    public final s0 q0;
+    public final p8.b q0;
     public Scroller r;
     public int r0;
     public boolean s;
@@ -109,7 +108,7 @@ public class g extends ViewGroup {
         this.L = 1;
         this.V = -1;
         this.h0 = true;
-        this.q0 = new s0(this, 13);
+        this.q0 = new p8.b(this, 12);
         this.r0 = 0;
         setWillNotDraw(false);
         setDescendantFocusability(262144);
@@ -496,12 +495,12 @@ public class g extends ViewGroup {
             i10++;
         }
         if (z11) {
-            s0 s0Var = this.q0;
+            p8.b bVar = this.q0;
             if (!z10) {
-                s0Var.run();
+                bVar.run();
             } else {
                 WeakHashMap weakHashMap = i0.a;
-                postOnAnimation(s0Var);
+                postOnAnimation(bVar);
             }
         }
     }
@@ -828,26 +827,26 @@ public class g extends ViewGroup {
                 View childAt2 = getChildAt(i17);
                 if (!((d) childAt2.getLayoutParams()).a) {
                     float left2 = (childAt2.getLeft() - scrollX2) / getClientWidth();
-                    q9 q9Var = (q9) this.m0.b;
-                    h8 h8Var = (h8) childAt2;
+                    p9 p9Var = (p9) this.m0.b;
+                    g8 g8Var = (g8) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
-                        h8Var.a(false);
-                        AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(h8Var, 21), 16L);
+                        g8Var.a(false);
+                        AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(g8Var, 21), 16L);
                     } else {
-                        if (!h8Var.d) {
-                            h8Var.a(true);
-                            if (q9Var.x0 != null) {
-                                q4 q4Var = h8Var.a;
-                                long j10 = h8Var.b;
-                                ArrayList arrayList2 = h8Var.c;
-                                q4Var.B1 = j10;
-                                q4Var.z1 = arrayList2;
-                                q4Var.o0(-1);
+                        if (!g8Var.d) {
+                            g8Var.a(true);
+                            if (p9Var.x0 != null) {
+                                p4 p4Var = g8Var.a;
+                                long j10 = g8Var.b;
+                                ArrayList arrayList2 = g8Var.c;
+                                p4Var.B1 = j10;
+                                p4Var.z1 = arrayList2;
+                                p4Var.o0(-1);
                             } else {
-                                h8Var.a.U0(-1, h8Var.b);
+                                g8Var.a.U0(-1, g8Var.b);
                             }
                         }
-                        h8Var.a.setOffset(left2);
+                        g8Var.a.setOffset(left2);
                         childAt2.setCameraDistance(childAt2.getWidth() * 15);
                         childAt2.setPivotX(left2 < 0.0f ? childAt2.getWidth() : 0.0f);
                         childAt2.setPivotY(childAt2.getHeight() * 0.5f);

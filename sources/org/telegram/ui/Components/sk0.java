@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class sk0 extends pg.b {
     public final /* synthetic */ cl0 d;
@@ -52,11 +52,11 @@ public final class sk0 extends pg.b {
         cl0 cl0Var = this.d;
         if (i10 == 1) {
             cl0Var.R = new FrameLayout(cl0Var.getContext());
-            sg.b1 b1Var = new sg.b1(cl0Var.getContext(), 0, null);
-            cl0Var.u0 = b1Var;
+            sg.c1 c1Var = new sg.c1(cl0Var.getContext(), 0, null);
+            cl0Var.u0 = c1Var;
             int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.F8, false);
             int i11 = org.telegram.ui.ActionBar.h6.h5;
-            b1Var.setColor(i0.a.f(0.7f, x02, org.telegram.ui.ActionBar.h6.x0(null, i11, false)));
+            c1Var.setColor(i0.a.f(0.7f, x02, org.telegram.ui.ActionBar.h6.x0(null, i11, false)));
             cl0Var.u0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i11, false), PorterDuff.Mode.MULTIPLY));
             cl0Var.u0.setScaleX(0.0f);
             cl0Var.u0.setScaleY(0.0f);
@@ -81,7 +81,7 @@ public final class sk0 extends pg.b {
                             view2.getMeasuredWidth();
                             view2.getMeasuredHeight();
                             cl0Var2.getClass();
-                            new sg.x0(cl0Var2.t0, 4, true).show();
+                            new sg.y0(cl0Var2.t0, 4, true).show();
                             break;
                         default:
                             cl0.a(this.b.d);
@@ -127,7 +127,7 @@ public final class sk0 extends pg.b {
                             view2.getMeasuredWidth();
                             view2.getMeasuredHeight();
                             cl0Var2.getClass();
-                            new sg.x0(cl0Var2.t0, 4, true).show();
+                            new sg.y0(cl0Var2.t0, 4, true).show();
                             break;
                         default:
                             cl0.a(this.b.d);

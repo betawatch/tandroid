@@ -9,7 +9,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iq implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final /* synthetic */ class iq implements Utilities.Callback2 {
                 TLRPC.TL_exportedNoPaidMessagesToken tL_exportedNoPaidMessagesToken = (TLRPC.TL_exportedNoPaidMessagesToken) obj;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
                 int i10 = i0Var.a;
-                zh.t0 t0Var = i0Var.b;
+                zh.u0 u0Var = i0Var.b;
                 if (i0Var.n == iArr[0] && !i0Var.E) {
                     i0Var.n = 0;
                     boolean z10 = this.b;
@@ -63,7 +63,7 @@ public final /* synthetic */ class iq implements Utilities.Callback2 {
                                 }
                                 i0Var.f = tL_exportedNoPaidMessagesToken;
                                 i0Var.h = SystemClock.elapsedRealtime();
-                                t0Var.setFreeLink(i0Var.c(tL_exportedNoPaidMessagesToken));
+                                u0Var.setFreeLink(i0Var.c(tL_exportedNoPaidMessagesToken));
                                 break;
                             }
                         }
@@ -74,21 +74,21 @@ public final /* synthetic */ class iq implements Utilities.Callback2 {
                         if (tL_exportedNoPaidMessagesToken2 != null) {
                             if ((tL_exportedNoPaidMessagesToken2.expires != 0) == z10) {
                                 if (str != null) {
-                                    t0Var.getClass();
-                                    t0Var.c1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
+                                    u0Var.getClass();
+                                    u0Var.d1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
                                     break;
                                 }
                             }
                         }
                         i0Var.d = 0;
                         MessagesController.getMainSettings(i10).edit().putBoolean("qrNoPaidPermanent", false).apply();
-                        if (!t0Var.v0) {
+                        if (!u0Var.v0) {
                             if (str != null) {
-                                t0Var.c1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
+                                u0Var.d1(R.drawable.msg_warning, LocaleController.getString(R.string.ErrorOccurred), null);
                                 break;
                             }
                         } else {
-                            t0Var.T0(str != null ? LocaleController.getString(R.string.ErrorOccurred) : null);
+                            u0Var.U0(str != null ? LocaleController.getString(R.string.ErrorOccurred) : null);
                             break;
                         }
                     }

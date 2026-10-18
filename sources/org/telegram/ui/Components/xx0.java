@@ -12,7 +12,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xx0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class xx0 implements View.OnClickListener {
                 oy0 oy0Var = this.b;
                 org.telegram.ui.ActionBar.n2 n2Var = oy0Var.L;
                 if (n2Var != null) {
-                    new sg.x0(n2Var, 11, false).show();
+                    new sg.y0(n2Var, 11, false).show();
                     break;
                 } else if (oy0Var.getContext() instanceof LaunchActivity) {
                     ((LaunchActivity) oy0Var.getContext()).t0(new PremiumPreviewFragment(0, null));

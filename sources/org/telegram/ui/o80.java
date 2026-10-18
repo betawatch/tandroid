@@ -6,7 +6,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o80 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final /* synthetic */ class o80 implements Utilities.Callback {
                     if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
                         if (R != null) {
                             storyItem.dialogId = l4.longValue();
-                            ci.aa createOverlayStoryViewer = R.createOverlayStoryViewer();
+                            ci.z9 createOverlayStoryViewer = R.createOverlayStoryViewer();
                             createOverlayStoryViewer.v();
                             createOverlayStoryViewer.F(launchActivity, storyItem, null);
                             break;
@@ -80,7 +80,7 @@ public final /* synthetic */ class o80 implements Utilities.Callback {
                     if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
                         if (R2 != null) {
                             storyItem.dialogId = l4.longValue();
-                            ci.aa createOverlayStoryViewer2 = R2.createOverlayStoryViewer();
+                            ci.z9 createOverlayStoryViewer2 = R2.createOverlayStoryViewer();
                             createOverlayStoryViewer2.v();
                             createOverlayStoryViewer2.F(launchActivity, storyItem, null);
                             break;

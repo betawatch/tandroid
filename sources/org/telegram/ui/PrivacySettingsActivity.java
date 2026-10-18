@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
@@ -397,7 +397,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
     public static SpannableStringBuilder u0(PrivacySettingsActivity privacySettingsActivity, String str) {
         if (privacySettingsActivity.c0 == null) {
             privacySettingsActivity.c0 = new SpannableString("★");
-            org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), sg.a1.d().f);
+            org.telegram.ui.Components.q5 q5Var = new org.telegram.ui.Components.q5(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), sg.b1.d().f);
             q5Var.setBounds(0, 0, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f));
             privacySettingsActivity.c0.setSpan(new ImageSpan(q5Var, 2), 0, privacySettingsActivity.c0.length(), 17);
         }
@@ -646,9 +646,9 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setLayoutAnimation(null);
         this.b.setItemAnimator(null);
-        frameLayout.addView(this.b, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(this.b, w7.z5.c(-1.0f, -1));
         this.b.setAdapter(this.a);
-        this.b.setOnItemClickListener(new ci.y4(21, this, context));
+        this.b.setOnItemClickListener(new ci.x4(21, this, context));
         gi.r.d(getParentActivity(), this.currentAccount, new v3(this, 19));
         return this.fragmentView;
     }
@@ -789,7 +789,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
             getUserConfig().suggestContacts = this.V;
             TLRPC.TL_contacts_toggleTopPeers tL_contacts_toggleTopPeers = new TLRPC.TL_contacts_toggleTopPeers();
             tL_contacts_toggleTopPeers.enabled = this.V;
-            getConnectionsManager().sendRequest(tL_contacts_toggleTopPeers, new ci.e6(8));
+            getConnectionsManager().sendRequest(tL_contacts_toggleTopPeers, new ci.d6(8));
             z10 = true;
         }
         TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().getGlobalPrivacySettings();
@@ -805,7 +805,7 @@ public class PrivacySettingsActivity extends org.telegram.ui.ActionBar.n2 implem
                     setglobalprivacysettings.settings = new TLRPC.TL_globalPrivacySettings();
                 }
                 setglobalprivacysettings.settings.archive_and_mute_new_noncontact_peers = this.W;
-                getConnectionsManager().sendRequest(setglobalprivacysettings, new ci.e6(8));
+                getConnectionsManager().sendRequest(setglobalprivacysettings, new ci.d6(8));
                 if (z11) {
                     return;
                 }

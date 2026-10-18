@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f11 extends org.telegram.ui.Components.u81 {
     public boolean a;
@@ -37,17 +37,17 @@ public final class f11 extends org.telegram.ui.Components.u81 {
             }
         }
         int f7 = f(b91Var.getCurrentPosition());
-        ci.w6 w6Var = ns0Var.r;
-        w6Var.getClass();
+        ci.v6 v6Var = ns0Var.r;
+        v6Var.getClass();
         HashMap hashMap = new HashMap();
-        ArrayList arrayList3 = w6Var.h;
+        ArrayList arrayList3 = v6Var.h;
         int size2 = arrayList3.size();
         int i12 = 0;
         while (i12 < size2) {
             Object obj2 = arrayList3.get(i12);
             i12++;
-            ci.b7 b7Var = (ci.b7) obj2;
-            hashMap.put(Integer.valueOf(b7Var.a), b7Var);
+            ci.a7 a7Var = (ci.a7) obj2;
+            hashMap.put(Integer.valueOf(a7Var.a), a7Var);
         }
         ArrayList arrayList4 = new ArrayList();
         int size3 = arrayList2.size();
@@ -56,9 +56,9 @@ public final class f11 extends org.telegram.ui.Components.u81 {
             i10++;
             Integer num2 = (Integer) obj3;
             num2.getClass();
-            ci.b7 b7Var2 = (ci.b7) hashMap.get(num2);
-            if (b7Var2 != null) {
-                arrayList4.add(b7Var2);
+            ci.a7 a7Var2 = (ci.a7) hashMap.get(num2);
+            if (a7Var2 != null) {
+                arrayList4.add(a7Var2);
             }
         }
         arrayList3.clear();
@@ -100,7 +100,7 @@ public final class f11 extends org.telegram.ui.Components.u81 {
         if (this.a && i10 == e() - 1) {
             return -1;
         }
-        return ((ci.b7) this.b.r.h.get(i10 - 1)).a;
+        return ((ci.a7) this.b.r.h.get(i10 - 1)).a;
     }
 
     @Override // org.telegram.ui.Components.u81
@@ -109,7 +109,7 @@ public final class f11 extends org.telegram.ui.Components.u81 {
             return LocaleController.getString(R.string.StoriesAlbumNameAllStories);
         }
         if (!this.a || i10 != e() - 1) {
-            return ((ci.b7) this.b.r.h.get(i10 - 1)).b;
+            return ((ci.a7) this.b.r.h.get(i10 - 1)).b;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
         spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.StoriesAlbumAddAlbum));

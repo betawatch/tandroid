@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ec extends FrameLayout {
     public final cc E;
@@ -103,11 +103,11 @@ public final class ec extends FrameLayout {
         int i12 = org.telegram.ui.ActionBar.h6.Pi;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.kk.m(R.string.LoadingStatsDescription, textView, 1);
+        org.telegram.messenger.lk.m(R.string.LoadingStatsDescription, textView, 1);
         this.I.addView(xj0Var, w7.z5.t(120, 120, 1, 0, 0, 0, 20));
         this.I.addView(f7, w7.z5.t(-2, -2, 1, 0, 0, 0, 10));
         this.I.addView(textView, w7.z5.q(-2, -2, 1));
-        addView(this.I, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 30.0f, 240, 17));
+        addView(this.I, w7.z5.d(240, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
         this.I.setAlpha(0.0f);
         this.I.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
         ai.ga.y(i10, false).v();

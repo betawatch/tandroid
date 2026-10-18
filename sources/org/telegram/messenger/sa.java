@@ -1,47 +1,51 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sa implements Runnable {
+public final /* synthetic */ class sa implements Comparator {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ sa(MessagesController messagesController, ArrayList arrayList, int i10) {
+    public /* synthetic */ sa(MessagesController messagesController, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$processUpdatesQueue$326;
+        int lambda$renameSavedReactionTag$487;
+        int lambda$updateSavedReactionTags$486;
+        int lambda$new$9;
+        int lambda$new$10;
+        int lambda$new$11;
+        int lambda$new$12;
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdates$382(this.c);
-                break;
+                lambda$processUpdatesQueue$326 = this.b.lambda$processUpdatesQueue$326((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
+                return lambda$processUpdatesQueue$326;
             case 1:
-                this.b.lambda$processUpdateArray$400(this.c);
-                break;
+                lambda$renameSavedReactionTag$487 = this.b.lambda$renameSavedReactionTag$487((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
+                return lambda$renameSavedReactionTag$487;
             case 2:
-                this.b.lambda$checkChatInviter$372(this.c);
-                break;
+                lambda$updateSavedReactionTags$486 = this.b.lambda$updateSavedReactionTags$486((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
+                return lambda$updateSavedReactionTags$486;
             case 3:
-                this.b.lambda$processUpdates$381(this.c);
-                break;
+                lambda$new$9 = this.b.lambda$new$9((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
+                return lambda$new$9;
             case 4:
-                this.b.lambda$processUpdateArray$401(this.c);
-                break;
+                lambda$new$10 = this.b.lambda$new$10((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
+                return lambda$new$10;
             case 5:
-                this.b.lambda$getChannelDifference$340(this.c);
-                break;
-            case 6:
-                this.b.lambda$reloadMentionsCountForChannels$221(this.c);
-                break;
+                lambda$new$11 = this.b.lambda$new$11((MessagesController.CommunityPeerDialog) obj, (MessagesController.CommunityPeerDialog) obj2);
+                return lambda$new$11;
             default:
-                this.b.lambda$checkChatInviter$371(this.c);
-                break;
+                lambda$new$12 = this.b.lambda$new$12((TLRPC.Update) obj, (TLRPC.Update) obj2);
+                return lambda$new$12;
         }
     }
 }

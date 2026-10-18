@@ -11,7 +11,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class jl implements org.telegram.ui.Components.ri {
     public final /* synthetic */ sn a;
@@ -38,7 +38,7 @@ public final class jl implements org.telegram.ui.Components.ri {
 
     @Override // org.telegram.ui.Components.ri
     public final void b0(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
-        ci.b3 b3Var;
+        ci.a3 a3Var;
         HashMap<Object, Object> hashMap;
         boolean z14;
         int i13;
@@ -51,26 +51,26 @@ public final class jl implements org.telegram.ui.Components.ri {
         String str;
         TLRPC.Message message;
         sn snVar = this.a;
-        if (snVar.getParentActivity() == null || (b3Var = snVar.J1) == null) {
+        if (snVar.getParentActivity() == null || (a3Var = snVar.J1) == null) {
             return;
         }
-        boolean z18 = b3Var.G;
-        MessageObject messageObject = b3Var.K1;
+        boolean z18 = a3Var.G;
+        MessageObject messageObject = a3Var.K1;
         snVar.p5 = messageObject;
         if (messageObject != null && (message = messageObject.messageOwner) != null) {
             message.invert_media = z12;
         }
-        if (i10 != 8 && i10 != 7 && (i10 != 4 || b3Var.j0.getSelectedPhotos().isEmpty())) {
-            ci.b3 b3Var2 = snVar.J1;
-            if (b3Var2 != null) {
-                b3Var2.dismissWithButtonClick(i10);
+        if (i10 != 8 && i10 != 7 && (i10 != 4 || a3Var.j0.getSelectedPhotos().isEmpty())) {
+            ci.a3 a3Var2 = snVar.J1;
+            if (a3Var2 != null) {
+                a3Var2.dismissWithButtonClick(i10);
             }
             snVar.Ea(i10);
             return;
         }
-        ci.b3 b3Var3 = snVar.J1;
-        if (b3Var3 != null && i10 != 8) {
-            b3Var3.dismiss(true);
+        ci.a3 a3Var3 = snVar.J1;
+        if (a3Var3 != null && i10 != 8) {
+            a3Var3.dismiss(true);
         }
         HashMap<Object, Object> selectedPhotos = snVar.J1.j0.getSelectedPhotos();
         ArrayList<Object> selectedPhotosOrder = snVar.J1.j0.getSelectedPhotosOrder();

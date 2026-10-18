@@ -1,12 +1,34 @@
 package org.telegram.messenger.voip;
 
-import android.media.MediaPlayer;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q implements MediaPlayer.OnPreparedListener {
-    @Override // android.media.MediaPlayer.OnPreparedListener
-    public final void onPrepared(MediaPlayer mediaPlayer) {
-        VoIPPreNotificationService.lambda$startRinging$0(mediaPlayer);
+public final /* synthetic */ class q implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLObject b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ Runnable e;
+
+    public /* synthetic */ q(TLObject tLObject, ArrayList arrayList, ArrayList arrayList2, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = tLObject;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = runnable;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                VoIPService.lambda$startConferenceGroupCall$48(this.b, this.c, this.d, this.e);
+                break;
+            default:
+                VoIPService.lambda$startConferenceGroupCall$40(this.b, this.c, this.d, this.e);
+                break;
+        }
     }
 }

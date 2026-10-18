@@ -19,7 +19,7 @@ import androidx.fragment.app.j0;
 import androidx.lifecycle.a0;
 import b2.a2;
 import b5.p;
-import ci.q4;
+import ci.p4;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.internal.i0;
@@ -82,7 +82,7 @@ import org.telegram.ui.Components.sq0;
 import org.telegram.ui.Components.xo0;
 import rg.b2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, OnCompleteListener, d9.k, SuccessContinuation, o, zb, f6.a, w, n, z1, je.a, xo0 {
     public static i c;
@@ -508,7 +508,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                 k10.j();
                 break;
             default:
-                q4.j0((q4) this.b);
+                p4.j0((p4) this.b);
                 break;
         }
     }
@@ -629,7 +629,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
             sVar.c = ((ec.e) sVar.b).a();
         }
         ec.b bVar2 = (ec.b) sVar.c;
-        ya.c cVar4 = new ya.c(bVar2, 25);
+        ya.d dVar = new ya.d(bVar2, 25);
         jc.e eVar2 = new jc.e(bVar2);
         int i19 = bVar2.b;
         int i20 = bVar2.a;
@@ -681,7 +681,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                             if (arrayList.size() > i25) {
                                 int size = arrayList.size();
                                 int i28 = 0;
-                                jc.c cVar5 = null;
+                                jc.c cVar4 = null;
                                 while (true) {
                                     if (i28 >= size) {
                                         i16 = i19;
@@ -691,16 +691,16 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                                     }
                                     Object obj = arrayList.get(i28);
                                     i28++;
-                                    jc.c cVar6 = (jc.c) obj;
+                                    jc.c cVar5 = (jc.c) obj;
                                     i16 = i19;
-                                    if (cVar6.d >= 2) {
-                                        if (cVar5 != null) {
+                                    if (cVar5.d >= 2) {
+                                        if (cVar4 != null) {
                                             eVar2.c = true;
                                             i17 = 2;
-                                            i18 = ((int) (Math.abs(cVar5.a - cVar6.a) - Math.abs(cVar5.b - cVar6.b))) / 2;
+                                            i18 = ((int) (Math.abs(cVar4.a - cVar5.a) - Math.abs(cVar4.b - cVar5.b))) / 2;
                                             break;
                                         }
-                                        cVar5 = cVar6;
+                                        cVar4 = cVar5;
                                     }
                                     i19 = i16;
                                 }
@@ -766,19 +766,19 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
         int i32 = 0;
         double d10 = Double.MAX_VALUE;
         for (int i33 = 2; i32 < arrayList.size() - i33; i33 = 2) {
-            jc.c cVar7 = (jc.c) arrayList.get(i32);
-            float f14 = cVar7.c;
+            jc.c cVar6 = (jc.c) arrayList.get(i32);
+            float f14 = cVar6.c;
             i32++;
             int i34 = i32;
             while (i34 < arrayList.size() - 1) {
-                jc.c cVar8 = (jc.c) arrayList.get(i34);
-                double e = jc.e.e(cVar7, cVar8);
+                jc.c cVar7 = (jc.c) arrayList.get(i34);
+                double e = jc.e.e(cVar6, cVar7);
                 i34++;
                 for (int i35 = i34; i35 < arrayList.size(); i35++) {
-                    jc.c cVar9 = (jc.c) arrayList.get(i35);
-                    if (cVar9.c <= 1.4f * f14) {
-                        double e7 = jc.e.e(cVar8, cVar9);
-                        double e10 = jc.e.e(cVar7, cVar9);
+                    jc.c cVar8 = (jc.c) arrayList.get(i35);
+                    if (cVar8.c <= 1.4f * f14) {
+                        double e7 = jc.e.e(cVar7, cVar8);
+                        double e10 = jc.e.e(cVar6, cVar8);
                         if (e < e7) {
                             if (e7 <= e10) {
                                 e10 = e7;
@@ -788,9 +788,9 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                                 e10 = e;
                                 abs = Math.abs(e7 - (d * 2.0d)) + Math.abs(e7 - (e10 * 2.0d));
                                 if (abs >= d10) {
-                                    cVarArr[0] = cVar7;
-                                    cVarArr[1] = cVar8;
-                                    cVarArr[2] = cVar9;
+                                    cVarArr[0] = cVar6;
+                                    cVarArr[1] = cVar7;
+                                    cVarArr[2] = cVar8;
                                     d10 = abs;
                                 }
                             }
@@ -843,18 +843,18 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
         float f15 = cVar.a;
         float f16 = cVar.b;
         if (k3.D(cVar2.a, f15, cVar3.b - f16, (cVar2.b - f16) * (cVar3.a - f15)) < 0.0f) {
-            jc.c cVar10 = cVar3;
+            jc.c cVar9 = cVar3;
             cVar3 = cVar2;
-            cVar2 = cVar10;
+            cVar2 = cVar9;
         }
         cVarArr[0] = cVar2;
         cVarArr[1] = cVar;
         cVarArr[2] = cVar3;
-        float F = cVar4.F(cVar, cVar3);
+        float F = dVar.F(cVar, cVar3);
         float f17 = cVar.a;
         float f18 = cVar3.b;
         float f19 = cVar3.a;
-        float F2 = cVar4.F(cVar, cVar2);
+        float F2 = dVar.F(cVar, cVar2);
         float f20 = cVar2.b;
         float f21 = cVar2.a;
         float f22 = (F2 + F) / 2.0f;
@@ -892,7 +892,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                 f7 = f17;
                 for (int i42 = 4; i42 <= 16; i42 <<= 1) {
                     try {
-                        aVar = cVar4.I(f22, i42, y3, y10);
+                        aVar = dVar.I(f22, i42, y3, y10);
                         break;
                     } catch (dc.e unused) {
                     }
@@ -966,7 +966,7 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
             }
             ec.b bVar3 = new ec.b(i40, i40);
             int i43 = i40 * 2;
-            jc.c cVar11 = cVar;
+            jc.c cVar10 = cVar;
             float[] fArr = new float[i43];
             int i44 = 0;
             while (i44 < i40) {
@@ -980,21 +980,21 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                     i46 = i47 + 2;
                 }
                 int i48 = i43 - 1;
-                jc.c cVar12 = cVar2;
+                jc.c cVar11 = cVar2;
                 int i49 = 0;
                 while (i49 < i48) {
                     float f74 = fArr[i49];
                     int i50 = i49 + 1;
                     int i51 = i49;
                     float f75 = fArr[i50];
-                    jc.c cVar13 = cVar3;
+                    jc.c cVar12 = cVar3;
                     float c13 = r4.c.c(f71, f75, f70 * f74, f72);
                     fArr[i51] = (((f59 * f75) + (f58 * f74)) + f60) / c13;
                     fArr[i50] = (((f75 * f65) + (f74 * f64)) + f66) / c13;
                     i49 = i51 + 2;
-                    cVar3 = cVar13;
+                    cVar3 = cVar12;
                 }
-                jc.c cVar14 = cVar3;
+                jc.c cVar13 = cVar3;
                 int i52 = bVar2.b;
                 float f76 = f71;
                 int i53 = 0;
@@ -1077,20 +1077,20 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
                 }
                 i44++;
                 i40 = i45;
-                cVar2 = cVar12;
+                cVar2 = cVar11;
                 f71 = f76;
-                cVar3 = cVar14;
+                cVar3 = cVar13;
             }
-            jc.c cVar15 = cVar2;
-            jc.c cVar16 = cVar3;
+            jc.c cVar14 = cVar2;
+            jc.c cVar15 = cVar3;
             if (aVar3 == null) {
                 i12 = 3;
                 i11 = 1;
-                jVarArr = new dc.j[]{cVar15, cVar11, cVar16};
+                jVarArr = new dc.j[]{cVar14, cVar10, cVar15};
             } else {
                 i11 = 1;
                 i12 = 3;
-                jVarArr = new dc.j[]{cVar15, cVar11, cVar16, aVar3};
+                jVarArr = new dc.j[]{cVar14, cVar10, cVar15, aVar3};
             }
             dc.j[] jVarArr2 = jVarArr;
             mVar.getClass();
@@ -1448,9 +1448,9 @@ public final class i implements n0, r, sq0, a0, androidx.activity.result.b, p, O
         r6Var.c();
     }
 
-    public /* synthetic */ i(ya.c cVar) {
+    public /* synthetic */ i(ya.d dVar) {
         this.a = 9;
-        this.b = (com.google.android.gms.internal.play_billing.r) cVar.b;
+        this.b = (com.google.android.gms.internal.play_billing.r) dVar.b;
     }
 
     public i(Context context, int i10) {

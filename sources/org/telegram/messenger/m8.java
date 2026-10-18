@@ -1,31 +1,37 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m8 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ Utilities.Callback e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ TLRPC.InputStickerSet h;
 
-    public /* synthetic */ m8(MediaDataController mediaDataController, boolean z10, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ m8(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, String str, Utilities.Callback callback, boolean z10, TLRPC.InputStickerSet inputStickerSet, int i10) {
+        this.a = i10;
         this.b = mediaDataController;
-        this.c = z10;
-        this.d = i10;
+        this.c = tL_messages_stickerSet;
+        this.d = str;
+        this.e = callback;
+        this.f = z10;
+        this.h = inputStickerSet;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadRecents$49(this.c, this.d);
-                break;
-            case 1:
-                this.b.lambda$processLoadedFeaturedStickers$62(this.c, this.d);
+                this.b.lambda$getStickerSet$33(this.c, this.d, this.e, this.f, this.h);
                 break;
             default:
-                this.b.lambda$loadFeaturedStickers$56(this.c, this.d);
+                this.b.lambda$getStickerSet$36(this.c, this.d, this.e, this.f, this.h);
                 break;
         }
     }

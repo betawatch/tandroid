@@ -12,10 +12,10 @@ import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.m9;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.web.a2;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class q extends FrameLayout {
     public final m9 a;
@@ -42,8 +42,8 @@ public final class q extends FrameLayout {
         if (kVar != null) {
             return kVar;
         }
-        p pVar = new p(n2Var.getCurrentAccount(), n2Var.getMessagesController().getInputPeer(j10), i10, bArr, new z1(this, 18), callback);
-        AndroidUtilities.runOnUIThread(new z1(pVar, 19), 1000L);
+        p pVar = new p(n2Var.getCurrentAccount(), n2Var.getMessagesController().getInputPeer(j10), i10, bArr, new a2(this, 18), callback);
+        AndroidUtilities.runOnUIThread(new a2(pVar, 19), 1000L);
         k kVar2 = new k(n2Var, new j(pVar, 0), i11);
         this.c = kVar2;
         kVar2.W2.r = false;

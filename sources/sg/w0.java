@@ -1,101 +1,125 @@
 package sg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.h6;
-import org.telegram.ui.Components.x90;
-import w7.z5;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.sa;
+import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class w0 extends LinearLayout {
-    public int a;
-    public final TextView b;
-    public final x90 c;
-    public LinearLayout d;
-    public final l0 e;
-    public final ViewGroup f;
-    public boolean h;
-    public final /* synthetic */ x0 n;
+public final class w0 implements z4.e {
+    public final /* synthetic */ sa a;
+    public final /* synthetic */ y0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Multi-variable type inference failed */
-    public w0(x0 x0Var, Context context, int i10) {
-        super(context);
-        this.n = x0Var;
-        setOrientation(1);
-        ViewGroup B = x0Var.B(context, i10);
-        this.f = B;
-        addView(B);
-        this.e = (l0) B;
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setGravity(1);
-        int i11 = h6.j5;
-        textView.setTextColor(x0Var.getThemedColor(i11));
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, z5.a(-2.0f, 21.0f, 20.0f, 21.0f, 0.0f, -1, 0));
-        x90 x90Var = new x90(context, null);
-        this.c = x90Var;
-        x90Var.setGravity(1);
-        x90Var.setTextSize(1, 15.0f);
-        x90Var.setTextColor(x0Var.getThemedColor(i11));
-        if (!x0Var.E) {
-            x90Var.setLines(2);
-        }
-        addView(x90Var, z5.t(-1, -2, 1, 21, 10, 21, 16));
-        setImportantForAccessibility(2);
-        setClipChildren(false);
+    public w0(y0 y0Var, sa saVar) {
+        this.b = y0Var;
+        this.a = saVar;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view != this.f) {
-            return super.drawChild(canvas, view, j10);
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
+        sa saVar = this.a;
+        saVar.b = f7;
+        saVar.c = i10;
+        saVar.invalidate();
+        y0 y0Var = this.b;
+        y0Var.G = i10;
+        y0Var.H = i11 > 0 ? i10 + 1 : i10 - 1;
+        y0Var.I = f7;
+        d();
+    }
+
+    @Override // z4.e
+    public final void b(int i10) {
+        y0 y0Var = this.b;
+        ArrayList arrayList = y0Var.d;
+        if (((qw0) arrayList.get(i10)).a == 0) {
+            y0Var.N.setTitle(LocaleController.getString(R.string.DoubledLimits));
+            y0Var.N.requestLayout();
+        } else if (((qw0) arrayList.get(i10)).a == 14) {
+            y0Var.N.setTitle(LocaleController.getString(R.string.UpgradedStories));
+            y0Var.N.requestLayout();
+        } else if (((qw0) arrayList.get(i10)).a == 40) {
+            y0Var.N.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));
+            y0Var.N.requestLayout();
+        } else if (((qw0) arrayList.get(i10)).a == 28) {
+            y0Var.N.setTitle(LocaleController.getString(R.string.TelegramBusiness));
+            y0Var.N.requestLayout();
         }
-        boolean z10 = view instanceof b;
-        if (z10) {
-            setTranslationY(0.0f);
+        d();
+    }
+
+    public final void d() {
+        int i10;
+        int i11;
+        y0 y0Var = this.b;
+        v0 v0Var = y0Var.n;
+        ArrayList arrayList = y0Var.d;
+        int i12 = 0;
+        while (true) {
+            float f7 = 0.0f;
+            if (i12 >= v0Var.getChildCount()) {
+                break;
+            }
+            x0 x0Var = (x0) v0Var.getChildAt(i12);
+            if (!y0Var.w || !(x0Var.f instanceof o0)) {
+                int i13 = x0Var.a;
+                m0 m0Var = x0Var.e;
+                if (i13 == y0Var.G) {
+                    f7 = (-x0Var.getMeasuredWidth()) * y0Var.I;
+                    m0Var.setOffset(f7);
+                } else if (i13 == y0Var.H) {
+                    f7 = ((-x0Var.getMeasuredWidth()) * y0Var.I) + x0Var.getMeasuredWidth();
+                    m0Var.setOffset(f7);
+                } else {
+                    m0Var.setOffset(x0Var.getMeasuredWidth());
+                }
+            }
+            if (x0Var.f instanceof o0) {
+                x0Var.setTranslationX(-f7);
+                x0Var.b.setTranslationX(f7);
+                x0Var.c.setTranslationX(f7);
+            }
+            i12++;
+        }
+        int i14 = y0Var.G;
+        boolean z10 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((qw0) arrayList.get(y0Var.G)).a) == 0 || i11 == 14 || i11 == 28);
+        int i15 = y0Var.H;
+        boolean z11 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((qw0) arrayList.get(y0Var.H)).a) == 0 || i10 == 14 || i10 == 28);
+        if (z10 && z11) {
+            y0Var.f = 1.0f;
+            float f10 = y0Var.I;
+            if (f10 == 0.0f) {
+                f10 = 1.0f;
+            }
+            y0Var.e = f10;
+            y0Var.h = true;
+        } else if (z10) {
+            float f11 = 1.0f - y0Var.I;
+            y0Var.e = f11;
+            y0Var.f = f11;
+            y0Var.h = true;
+        } else if (z11) {
+            float f12 = y0Var.I;
+            y0Var.e = f12;
+            y0Var.f = f12;
+            y0Var.h = false;
         } else {
-            setTranslationY(this.n.L);
+            y0Var.e = 0.0f;
+            y0Var.f = 0.0f;
+            y0Var.h = true;
         }
-        if (z10) {
-            return super.drawChild(canvas, view, j10);
+        int i16 = (int) ((1.0f - y0Var.e) * 255.0f);
+        if (i16 != y0Var.K) {
+            y0Var.K = i16;
+            y0Var.r.invalidate();
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.a2(this, 23));
         }
-        canvas.save();
-        canvas.clipRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        TextView textView = this.b;
-        textView.setVisibility(0);
-        ViewGroup viewGroup = this.f;
-        boolean z10 = viewGroup instanceof b;
-        x0 x0Var = this.n;
-        if (z10) {
-            ((b) viewGroup).setTopOffset(x0Var.L);
-        }
-        viewGroup.getLayoutParams().height = x0Var.s;
-        x90 x90Var = this.c;
-        x90Var.setVisibility(0);
-        ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = 0;
-        super.onMeasure(i10, i11);
-        if (this.h) {
-            viewGroup.getLayoutParams().height = getMeasuredHeight() - AndroidUtilities.dp(16.0f);
-            ((ViewGroup.MarginLayoutParams) viewGroup.getLayoutParams()).bottomMargin = AndroidUtilities.dp(16.0f);
-            textView.setVisibility(8);
-            x90Var.setVisibility(8);
-            super.onMeasure(i10, i11);
-        }
+    @Override // z4.e
+    public final void c(int i10) {
     }
 }

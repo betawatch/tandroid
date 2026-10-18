@@ -1,43 +1,36 @@
 package ci;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ h4 b;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ a4(h4 h4Var, int i10) {
-        this.a = i10;
-        this.b = h4Var;
+    public /* synthetic */ a4(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i10, int i11) {
+        this.a = i11;
+        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((r9) this.b.l.Q1).g(false);
-                break;
-            case 1:
-                q4 q4Var = this.b.l;
-                j4 j4Var = q4Var.Q1;
-                if (j4Var != null) {
-                    aa aaVar = ((r9) j4Var).d;
-                    aaVar.Z0 = false;
-                    aaVar.P();
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.b;
+                if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
+                    actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(this.c);
+                    break;
                 }
-                q4Var.f1(false);
-                q4Var.h3 = true;
-                q4Var.K0.D(true);
-                break;
-            case 2:
-                q4 q4Var2 = this.b.l;
-                q4Var2.U3 = true;
-                q4Var2.setActive(false);
                 break;
             default:
-                q4 q4Var3 = this.b.l;
-                q4Var3.U3 = true;
-                q4Var3.setActive(false);
+                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = this.b;
+                if (actionBarPopupWindow$ActionBarPopupWindowLayout2.getSwipeBack() != null) {
+                    actionBarPopupWindow$ActionBarPopupWindowLayout2.getSwipeBack().e(this.c);
+                    break;
+                }
                 break;
         }
     }

@@ -24,20 +24,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import ci.aa;
+import ci.m2;
+import ci.n9;
+import ci.o8;
 import ci.o9;
+import ci.p7;
 import ci.p8;
-import ci.p9;
 import ci.q;
-import ci.q7;
-import ci.q8;
-import ci.t5;
+import ci.s5;
+import ci.t9;
 import ci.u;
 import ci.u0;
-import ci.u9;
 import ci.v0;
 import ci.w0;
 import ci.x0;
+import ci.z9;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -96,9 +97,9 @@ import s4.l0;
 import wh.k;
 import zf.m;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, a2, m, ne.d, Utilities.Callback5, fo0, yl0, Utilities.Callback2Return, xl0, q7, u9, k, n, Continuation, OnCompleteListener {
+public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, a2, m, ne.d, Utilities.Callback5, fo0, yl0, Utilities.Callback2Return, xl0, p7, t9, k, n, Continuation, OnCompleteListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -109,20 +110,20 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
 
     @Override // r0.n
     public k1 B0(View view, k1 k1Var) {
-        aa aaVar = (aa) this.b;
+        z9 z9Var = (z9) this.b;
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) aaVar.v.getLayoutParams();
-        marginLayoutParams.topMargin = aaVar.c ? 0 : k1Var.d();
-        marginLayoutParams.bottomMargin = aaVar.c ? k1Var.a.f(2).d : k1Var.a();
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) z9Var.v.getLayoutParams();
+        marginLayoutParams.topMargin = z9Var.c ? 0 : k1Var.d();
+        marginLayoutParams.bottomMargin = z9Var.c ? k1Var.a.f(2).d : k1Var.a();
         marginLayoutParams.leftMargin = defaultWindowInsets.a;
         marginLayoutParams.rightMargin = defaultWindowInsets.c;
-        o9 o9Var = aaVar.s;
+        n9 n9Var = z9Var.s;
+        if (n9Var != null) {
+            n9Var.requestLayout();
+        }
+        o9 o9Var = z9Var.v;
         if (o9Var != null) {
             o9Var.requestLayout();
-        }
-        p9 p9Var = aaVar.v;
-        if (p9Var != null) {
-            p9Var.requestLayout();
         }
         return k1.b;
     }
@@ -483,18 +484,18 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                                                             }
                                                             Context context = vwVar2.getContext();
                                                             d6Var = ((org.telegram.ui.ActionBar.n2) eyVar2).resourceProvider;
-                                                            ci.g6 g6Var = new ci.g6(context, 0.0f, 1, d6Var);
-                                                            g6Var.e = new uw(vwVar2, view2, 1);
-                                                            eyVar2.showDialog(g6Var);
+                                                            ci.f6 f6Var = new ci.f6(context, 0.0f, 1, d6Var);
+                                                            f6Var.e = new uw(vwVar2, view2, 1);
+                                                            eyVar2.showDialog(f6Var);
                                                             break;
                                                         default:
                                                             vw vwVar3 = vwVar;
                                                             Context context2 = vwVar3.getContext();
                                                             ey eyVar3 = vwVar3.O0;
                                                             d6Var2 = ((org.telegram.ui.ActionBar.n2) eyVar3).resourceProvider;
-                                                            ci.g6 g6Var2 = new ci.g6(context2, 0.0f, 1, d6Var2);
-                                                            g6Var2.e = new uw(vwVar3, view, 0);
-                                                            eyVar3.showDialog(g6Var2);
+                                                            ci.f6 f6Var2 = new ci.f6(context2, 0.0f, 1, d6Var2);
+                                                            f6Var2.e = new uw(vwVar3, view, 0);
+                                                            eyVar3.showDialog(f6Var2);
                                                             break;
                                                     }
                                                 }
@@ -527,18 +528,18 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                                                             }
                                                             Context context = vwVar2.getContext();
                                                             d6Var = ((org.telegram.ui.ActionBar.n2) eyVar2).resourceProvider;
-                                                            ci.g6 g6Var = new ci.g6(context, 0.0f, 1, d6Var);
-                                                            g6Var.e = new uw(vwVar2, view2, 1);
-                                                            eyVar2.showDialog(g6Var);
+                                                            ci.f6 f6Var = new ci.f6(context, 0.0f, 1, d6Var);
+                                                            f6Var.e = new uw(vwVar2, view2, 1);
+                                                            eyVar2.showDialog(f6Var);
                                                             break;
                                                         default:
                                                             vw vwVar3 = vwVar;
                                                             Context context2 = vwVar3.getContext();
                                                             ey eyVar3 = vwVar3.O0;
                                                             d6Var2 = ((org.telegram.ui.ActionBar.n2) eyVar3).resourceProvider;
-                                                            ci.g6 g6Var2 = new ci.g6(context2, 0.0f, 1, d6Var2);
-                                                            g6Var2.e = new uw(vwVar3, view, 0);
-                                                            eyVar3.showDialog(g6Var2);
+                                                            ci.f6 f6Var2 = new ci.f6(context2, 0.0f, 1, d6Var2);
+                                                            f6Var2.e = new uw(vwVar3, view, 0);
+                                                            eyVar3.showDialog(f6Var2);
                                                             break;
                                                     }
                                                 }
@@ -874,18 +875,18 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                                                     }
                                                     Context context = vwVar2.getContext();
                                                     d6Var = ((org.telegram.ui.ActionBar.n2) eyVar2).resourceProvider;
-                                                    ci.g6 g6Var = new ci.g6(context, 0.0f, 1, d6Var);
-                                                    g6Var.e = new uw(vwVar2, view2, 1);
-                                                    eyVar2.showDialog(g6Var);
+                                                    ci.f6 f6Var = new ci.f6(context, 0.0f, 1, d6Var);
+                                                    f6Var.e = new uw(vwVar2, view2, 1);
+                                                    eyVar2.showDialog(f6Var);
                                                     break;
                                                 default:
                                                     vw vwVar3 = vwVar;
                                                     Context context2 = vwVar3.getContext();
                                                     ey eyVar3 = vwVar3.O0;
                                                     d6Var2 = ((org.telegram.ui.ActionBar.n2) eyVar3).resourceProvider;
-                                                    ci.g6 g6Var2 = new ci.g6(context2, 0.0f, 1, d6Var2);
-                                                    g6Var2.e = new uw(vwVar3, view, 0);
-                                                    eyVar3.showDialog(g6Var2);
+                                                    ci.f6 f6Var2 = new ci.f6(context2, 0.0f, 1, d6Var2);
+                                                    f6Var2.e = new uw(vwVar3, view, 0);
+                                                    eyVar3.showDialog(f6Var2);
                                                     break;
                                             }
                                         }
@@ -919,18 +920,18 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                                                     }
                                                     Context context = vwVar2.getContext();
                                                     d6Var = ((org.telegram.ui.ActionBar.n2) eyVar2).resourceProvider;
-                                                    ci.g6 g6Var = new ci.g6(context, 0.0f, 1, d6Var);
-                                                    g6Var.e = new uw(vwVar2, view2, 1);
-                                                    eyVar2.showDialog(g6Var);
+                                                    ci.f6 f6Var = new ci.f6(context, 0.0f, 1, d6Var);
+                                                    f6Var.e = new uw(vwVar2, view2, 1);
+                                                    eyVar2.showDialog(f6Var);
                                                     break;
                                                 default:
                                                     vw vwVar3 = vwVar;
                                                     Context context2 = vwVar3.getContext();
                                                     ey eyVar3 = vwVar3.O0;
                                                     d6Var2 = ((org.telegram.ui.ActionBar.n2) eyVar3).resourceProvider;
-                                                    ci.g6 g6Var2 = new ci.g6(context2, 0.0f, 1, d6Var2);
-                                                    g6Var2.e = new uw(vwVar3, view, 0);
-                                                    eyVar3.showDialog(g6Var2);
+                                                    ci.f6 f6Var2 = new ci.f6(context2, 0.0f, 1, d6Var2);
+                                                    f6Var2.e = new uw(vwVar3, view, 0);
+                                                    eyVar3.showDialog(f6Var2);
                                                     break;
                                             }
                                         }
@@ -1307,18 +1308,18 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                                             }
                                             Context context = vwVar2.getContext();
                                             d6Var = ((org.telegram.ui.ActionBar.n2) eyVar2).resourceProvider;
-                                            ci.g6 g6Var = new ci.g6(context, 0.0f, 1, d6Var);
-                                            g6Var.e = new uw(vwVar2, view2, 1);
-                                            eyVar2.showDialog(g6Var);
+                                            ci.f6 f6Var = new ci.f6(context, 0.0f, 1, d6Var);
+                                            f6Var.e = new uw(vwVar2, view2, 1);
+                                            eyVar2.showDialog(f6Var);
                                             break;
                                         default:
                                             vw vwVar3 = vwVar;
                                             Context context2 = vwVar3.getContext();
                                             ey eyVar3 = vwVar3.O0;
                                             d6Var2 = ((org.telegram.ui.ActionBar.n2) eyVar3).resourceProvider;
-                                            ci.g6 g6Var2 = new ci.g6(context2, 0.0f, 1, d6Var2);
-                                            g6Var2.e = new uw(vwVar3, view, 0);
-                                            eyVar3.showDialog(g6Var2);
+                                            ci.f6 f6Var2 = new ci.f6(context2, 0.0f, 1, d6Var2);
+                                            f6Var2.e = new uw(vwVar3, view, 0);
+                                            eyVar3.showDialog(f6Var2);
                                             break;
                                     }
                                 }
@@ -1352,18 +1353,18 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
                                             }
                                             Context context = vwVar2.getContext();
                                             d6Var = ((org.telegram.ui.ActionBar.n2) eyVar2).resourceProvider;
-                                            ci.g6 g6Var = new ci.g6(context, 0.0f, 1, d6Var);
-                                            g6Var.e = new uw(vwVar2, view2, 1);
-                                            eyVar2.showDialog(g6Var);
+                                            ci.f6 f6Var = new ci.f6(context, 0.0f, 1, d6Var);
+                                            f6Var.e = new uw(vwVar2, view2, 1);
+                                            eyVar2.showDialog(f6Var);
                                             break;
                                         default:
                                             vw vwVar3 = vwVar;
                                             Context context2 = vwVar3.getContext();
                                             ey eyVar3 = vwVar3.O0;
                                             d6Var2 = ((org.telegram.ui.ActionBar.n2) eyVar3).resourceProvider;
-                                            ci.g6 g6Var2 = new ci.g6(context2, 0.0f, 1, d6Var2);
-                                            g6Var2.e = new uw(vwVar3, view, 0);
-                                            eyVar3.showDialog(g6Var2);
+                                            ci.f6 f6Var2 = new ci.f6(context2, 0.0f, 1, d6Var2);
+                                            f6Var2.e = new uw(vwVar3, view, 0);
+                                            eyVar3.showDialog(f6Var2);
                                             break;
                                     }
                                 }
@@ -1616,11 +1617,11 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
         return bytes;
     }
 
-    @Override // ci.q7
+    @Override // ci.p7
     public void b(boolean z10) {
-        t5 t5Var = (t5) this.b;
-        if (t5Var != null) {
-            t5Var.c();
+        s5 s5Var = (s5) this.b;
+        if (s5Var != null) {
+            s5Var.c();
         }
     }
 
@@ -1672,11 +1673,11 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
         int i11;
         int i12;
         int i13;
-        ci.n2 n2Var = (ci.n2) this.b;
-        u1 u1Var = n2Var.c;
-        ArrayList arrayList = n2Var.r;
+        m2 m2Var = (m2) this.b;
+        u1 u1Var = m2Var.c;
+        ArrayList arrayList = m2Var.r;
         w0 w0Var = ((u0) view).f;
-        int i14 = n2Var.N;
+        int i14 = m2Var.N;
         int currentTime = ConnectionsManager.getInstance(i14).getCurrentTime();
         HashSet hashSet = new HashSet();
         int i15 = 0;
@@ -1692,7 +1693,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
             }
             i16++;
         }
-        ci.h1 h1Var = n2Var.P;
+        ci.h1 h1Var = m2Var.P;
         long j12 = h1Var != null ? h1Var.j() : 0L;
         int i17 = 0;
         int i18 = 0;
@@ -1701,7 +1702,7 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
             if (v0Var2.b || !v0Var2.e || v0Var2.g >= j12) {
                 if (hashSet.contains(Integer.valueOf(v0Var2.a))) {
                     j10 = j12;
-                    if (n2Var.w != w0Var.b || (i13 = n2Var.x) == 0 || v0Var2.a < i13) {
+                    if (m2Var.w != w0Var.b || (i13 = m2Var.x) == 0 || v0Var2.a < i13) {
                         i11 = v0Var2.a;
                         break;
                     }
@@ -1742,17 +1743,17 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
         if (i12 < 0) {
             return;
         }
-        n2Var.w = w0Var.b;
-        n2Var.x = i12;
-        n2Var.y = true;
+        m2Var.w = w0Var.b;
+        m2Var.x = i12;
+        m2Var.y = true;
         l0 itemAnimator = u1Var.getItemAnimator();
         u1Var.setItemAnimator(null);
-        n2Var.d.i1(i18, u1Var.getHeight() / 2, true);
-        n2Var.e.m(i18);
+        m2Var.d.i1(i18, u1Var.getHeight() / 2, true);
+        m2Var.e.m(i18);
         u1Var.setItemAnimator(itemAnimator);
     }
 
-    @Override // ci.u9
+    @Override // ci.t9
     public void e(float f7, Canvas canvas, RectF rectF, boolean z10) {
         Path path = (Path) this.b;
         if (z10) {
@@ -1791,13 +1792,13 @@ public final /* synthetic */ class c implements OnSuccessListener, i, i5.e, e5, 
 
     @Override // wh.k
     public void o(wh.g gVar, float f7, float f10) {
-        q8 q8Var = (q8) this.b;
-        if (q8Var.v.x) {
+        p8 p8Var = (p8) this.b;
+        if (p8Var.v.x) {
             return;
         }
-        gVar.q = new p8(q8Var, 2);
+        gVar.q = new o8(p8Var, 2);
         float sqrt = (float) Math.sqrt(Math.pow(r1.getHeight(), 2.0d) + Math.pow(r1.getWidth(), 2.0d));
-        ArrayList arrayList = q8Var.i;
+        ArrayList arrayList = p8Var.i;
         int size = arrayList.size();
         int i10 = 0;
         while (i10 < size) {

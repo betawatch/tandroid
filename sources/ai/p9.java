@@ -6,7 +6,6 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
@@ -20,7 +19,7 @@ import org.telegram.ui.Components.yt;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.lq;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p9 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -43,7 +42,7 @@ public final /* synthetic */ class p9 implements RequestDelegate {
         Object obj2 = this.c;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new b2((ga) obj2, tLObject, this.b, (Utilities.Callback) obj, 4));
+                AndroidUtilities.runOnUIThread(new b3((ga) obj2, (Object) tLObject, this.b, obj, 4));
                 break;
             case 1:
                 fa faVar = (fa) obj2;
@@ -329,7 +328,7 @@ public final /* synthetic */ class p9 implements RequestDelegate {
                 break;
             case 5:
                 Pattern pattern = LaunchActivity.C1;
-                AndroidUtilities.runOnUIThread(new b2(tLObject, (MessagesController) obj2, this.b, (lq) obj, 21));
+                AndroidUtilities.runOnUIThread(new b3(tLObject, (MessagesController) obj2, this.b, (lq) obj, 21));
                 break;
             default:
                 MessagesController messagesController = (MessagesController) obj2;
@@ -345,7 +344,7 @@ public final /* synthetic */ class p9 implements RequestDelegate {
                             arrayList7.add(inputPeer);
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new uf.c(1, v0Var, arrayList7));
+                    AndroidUtilities.runOnUIThread(new u2.q0(2, v0Var, arrayList7));
                     break;
                 }
                 break;

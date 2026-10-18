@@ -2,375 +2,286 @@ package sg;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import com.google.android.gms.internal.play_billing.k3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.d6;
-import org.telegram.ui.ActionBar.h6;
+import org.telegram.messenger.lk;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public class v1 {
-    public boolean B;
-    public Matrix[] C;
-    public float[][] D;
-    public int[] E;
-    public float[] F;
-    public boolean G;
-    public boolean N;
-    public d6 P;
-    public long R;
-    public long S;
-    public boolean g;
-    public boolean h;
-    public Utilities.CallbackReturn l;
-    public boolean m;
-    public final int p;
-    public boolean q;
-    public int z;
-    public final RectF a = new RectF();
-    public final RectF b = new RectF();
-    public final RectF c = new RectF();
-    public Bitmap[] d = new Bitmap[3];
-    public boolean[] e = new boolean[3];
-    public boolean[] f = new boolean[3];
-    public final Paint i = new Paint();
-    public float j = 0.0f;
-    public float k = 0.0f;
-    public final ArrayList n = new ArrayList();
-    public float o = 1.0f;
-    public int r = 14;
-    public int s = 12;
-    public int t = 10;
-    public float u = 0.85f;
-    public float v = 0.85f;
-    public float w = 0.9f;
-    public long x = 2000;
-    public int y = MediaDataController.MAX_STYLE_RUNS_COUNT;
-    public final float A = 1000.0f / AndroidUtilities.screenRefreshRate;
-    public boolean H = false;
-    public boolean I = true;
-    public boolean J = true;
-    public boolean K = false;
-    public boolean L = false;
-    public boolean M = true;
-    public int O = -1;
-    public int Q = h6.Uj;
-    public int T = 0;
+public final class v1 {
+    public long a;
+    public final int b;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public int l;
+    public int m;
+    public float n;
+    public long o;
+    public float p;
+    public float q;
+    public float r;
+    public final /* synthetic */ w1 t;
+    public float c = 1.0f;
+    public boolean s = true;
 
-    public v1(int i10) {
-        this.p = i10;
-        this.B = i10 < 50;
+    public v1(w1 w1Var) {
+        this.t = w1Var;
+        int i10 = w1Var.T;
+        w1Var.T = i10 + 1;
+        this.b = i10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0278  */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x02f5  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x031d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x02d3  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x00c1  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00f6  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0133  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x00f0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a() {
-        int i10;
-        int dp;
-        int i11 = 6;
-        int i12 = 3;
-        if (this.O == 43) {
-            if (this.d.length != 6) {
-                this.d = new Bitmap[6];
-            }
-            if (this.e.length != 6) {
-                this.e = new boolean[6];
-            }
-            if (this.f.length != 6) {
-                this.f = new boolean[6];
-            }
-            i10 = 6;
+    public final void a(Canvas canvas, long j10, float f7) {
+        float f10;
+        float f11;
+        float f12;
+        float f13;
+        float f14;
+        float f15;
+        w1 w1Var = this.t;
+        boolean z10 = w1Var.G;
+        RectF rectF = w1Var.c;
+        float f16 = w1Var.A;
+        if (z10) {
+            int[] iArr = w1Var.E;
+            int i10 = this.l;
+            int i11 = iArr[i10];
+            float[] fArr = w1Var.D[i10];
+            int i12 = i11 * 2;
+            this.h = fArr[i12];
+            this.i = fArr[i12 + 1];
+            iArr[i10] = i11 + 1;
         } else {
-            i10 = 3;
+            this.h = this.d;
+            this.i = this.e;
         }
-        int i13 = 0;
-        while (i13 < i10) {
-            float f7 = this.u;
-            if (i13 == 0) {
-                dp = AndroidUtilities.dp(this.r);
-            } else if (i13 == 1) {
-                f7 = this.v;
-                dp = AndroidUtilities.dp(this.s);
+        if (rectF.isEmpty() || !rectF.contains(this.h, this.i)) {
+            canvas.save();
+            canvas.translate(this.h, this.i);
+            float f17 = this.n;
+            if (f17 != 0.0f) {
+                f11 = 1000.0f;
+                f10 = 2.0f;
+                canvas.rotate(f17, w1Var.d[this.l].getWidth() / 2.0f, w1Var.d[this.l].getHeight() / 2.0f);
             } else {
-                f7 = this.w;
-                dp = AndroidUtilities.dp(this.t);
+                f10 = 2.0f;
+                f11 = 1000.0f;
             }
-            int i14 = this.O;
-            if (i14 == 9) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_folder : i13 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 27) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.filled_messages_paid : i13 == 1 ? R.raw.filled_crown_on : R.raw.premium_object_star2, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 11 || i14 == 4) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_smile1 : i13 == 1 ? R.raw.premium_object_smile2 : R.raw.premium_object_like, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 22) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_user : i13 == 1 ? R.raw.cache_photos : R.raw.cache_profile_photos, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == i12) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_adsbubble : i13 == 1 ? R.raw.premium_object_like : R.raw.premium_object_noads, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 7) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_video2 : i13 == 1 ? R.raw.premium_object_video : R.raw.premium_object_user, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 43) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_list : i13 == 1 ? R.raw.premium_object_math : i13 == 2 ? R.raw.premium_object_table : i13 == i12 ? R.raw.premium_object_superscript : i13 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 1001) {
-                this.d[i13] = SvgHelper.getBitmap(R.raw.premium_object_fire, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 1002) {
-                this.d[i13] = SvgHelper.getBitmap(R.raw.premium_object_star2, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 24) {
-                this.d[i13] = SvgHelper.getBitmap(i13 == 0 ? R.raw.premium_object_tag : i13 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 30));
-                this.e[i13] = true;
-            } else if (i14 == 28) {
-                if (i13 == 0) {
-                    this.d[i13] = SvgHelper.getBitmap(R.raw.filled_premium_dollar, dp, dp, i0.a.o(h6.w0(this.Q, this.P), 255));
-                    this.f[i13] = true;
-                }
-                Bitmap createBitmap = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
-                this.d[i13] = createBitmap;
-                Canvas canvas = new Canvas(createBitmap);
-                if (this.O == i11 || !(i13 == 1 || i13 == 2)) {
-                    Path path = new Path();
-                    float f10 = dp >> 1;
-                    int i15 = (int) (f7 * f10);
-                    path.moveTo(0.0f, f10);
-                    float f11 = i15;
-                    path.lineTo(f11, f11);
-                    path.lineTo(f10, 0.0f);
-                    float f12 = dp - i15;
-                    path.lineTo(f12, f11);
-                    float f13 = dp;
-                    path.lineTo(f13, f10);
-                    path.lineTo(f12, f12);
-                    path.lineTo(f10, f13);
-                    path.lineTo(f11, f12);
-                    path.lineTo(0.0f, f10);
-                    path.close();
-                    Paint paint = new Paint();
-                    if (this.q) {
-                        paint.setColor(b());
-                        if (this.M) {
-                            paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(this.r / 5.0f)));
-                        }
-                        canvas.drawPath(path, paint);
+            if (w1Var.I) {
+                long j11 = this.a - j10;
+                if (j11 < 200) {
+                    f12 = Utilities.clamp(1.0f - (j11 / 150.0f), 1.0f, 0.0f);
+                    f13 = this.q;
+                    if (f13 >= 1.0f || ai.r.b != 1.0f) {
+                        float interpolation = AndroidUtilities.overshootInterpolator.getInterpolation(f13) * ai.r.b;
+                        canvas.scale(interpolation, interpolation, 0.0f, 0.0f);
+                    }
+                    if (w1Var.f[this.l]) {
+                        float min = (Math.min(w1Var.o, 3.5f) * (f16 / f11)) + this.r;
+                        this.r = min;
+                        canvas.scale((float) Math.cos(min * 3.141592653589793d), 1.0f, 0.0f, 0.0f);
+                    }
+                    Utilities.CallbackReturn callbackReturn = w1Var.l;
+                    Paint paint = callbackReturn == null ? (Paint) callbackReturn.run(Integer.valueOf(this.b)) : w1Var.i;
+                    if (w1Var.N) {
+                        f14 = f16;
+                        f15 = 1.0f;
                     } else {
-                        if (dp >= AndroidUtilities.dp(10.0f)) {
-                            a1.d().f(dp * (-2), 0.0f, dp, dp);
-                        } else {
-                            a1.d().f(dp * (-4), 0.0f, dp, dp);
-                        }
-                        Paint e = a1.d().e();
-                        if (this.M) {
-                            e.setPathEffect(new CornerPathEffect(AndroidUtilities.dpf2(this.r / 5.0f)));
-                        }
-                        if (this.L) {
-                            e.setAlpha(255);
-                        } else if (this.K) {
-                            e.setAlpha(60);
-                        } else {
-                            e.setAlpha(120);
-                        }
-                        canvas.drawPath(path, e);
-                        e.setPathEffect(null);
-                        e.setAlpha(255);
+                        f14 = f16;
+                        long j12 = this.o;
+                        float clamp = 1.0f - Utilities.clamp((j10 - j12) / Math.max(1L, this.a - j12), 1.0f, 0.0f);
+                        f15 = k3.A((float) Math.sin((j10 * 0.011f) + this.p), 0.28f, 0.72f, k3.B(clamp, f10, 3.0f, clamp * clamp));
+                        f12 = 0.0f;
                     }
-                    if (!this.K) {
-                        Utilities.stackBlurBitmap(createBitmap, 2);
+                    float f18 = 1.0f - f12;
+                    paint.setAlpha((int) k3.C(this.m, f18, f7, f15));
+                    Bitmap bitmap = w1Var.d[this.l];
+                    if (w1Var.m) {
+                        float f19 = this.c * f18 * f7 * this.q * (w1Var.N ? 0.75f + (f15 * 0.25f) : 1.0f);
+                        canvas.scale(f19, f19);
                     }
-                } else {
-                    Drawable drawable = ApplicationLoader.applicationContext.getDrawable(R.drawable.msg_premium_liststar);
-                    drawable.setColorFilter(new PorterDuffColorFilter(h6.w0(this.Q, this.P), PorterDuff.Mode.MULTIPLY));
-                    drawable.setBounds(0, 0, dp, dp);
-                    drawable.draw(canvas);
-                }
-            } else {
-                if (i14 == 105 && i13 == 0) {
-                    this.d[i13] = SvgHelper.getBitmap(R.raw.premium_object_star2, dp, dp, b());
-                }
-                Bitmap createBitmap2 = Bitmap.createBitmap(dp, dp, Bitmap.Config.ARGB_8888);
-                this.d[i13] = createBitmap2;
-                Canvas canvas2 = new Canvas(createBitmap2);
-                if (this.O == i11) {
-                }
-                Path path2 = new Path();
-                float f102 = dp >> 1;
-                int i152 = (int) (f7 * f102);
-                path2.moveTo(0.0f, f102);
-                float f112 = i152;
-                path2.lineTo(f112, f112);
-                path2.lineTo(f102, 0.0f);
-                float f122 = dp - i152;
-                path2.lineTo(f122, f112);
-                float f132 = dp;
-                path2.lineTo(f132, f102);
-                path2.lineTo(f122, f122);
-                path2.lineTo(f102, f132);
-                path2.lineTo(f112, f122);
-                path2.lineTo(0.0f, f102);
-                path2.close();
-                Paint paint2 = new Paint();
-                if (this.q) {
-                }
-                if (!this.K) {
+                    canvas.drawBitmap(bitmap, -(bitmap.getWidth() >> 1), -(bitmap.getHeight() >> 1), paint);
+                    canvas.restore();
                 }
             }
-            i13++;
-            i11 = 6;
-            i12 = 3;
-        }
-    }
-
-    public int b() {
-        return this.O == 100 ? i0.a.o(h6.w0(this.Q, this.P), 200) : h6.w0(this.Q, this.P);
-    }
-
-    public final void c() {
-        a();
-        boolean z10 = this.G;
-        int i10 = this.p;
-        if (z10) {
-            int length = this.d.length;
-            this.C = new Matrix[length];
-            this.D = new float[length][];
-            this.E = new int[length];
-            this.F = new float[length];
-            for (int i11 = 0; i11 < length; i11++) {
-                this.C[i11] = new Matrix();
-                this.D[i11] = new float[i10 * 2];
+            f12 = 0.0f;
+            f13 = this.q;
+            if (f13 >= 1.0f) {
             }
+            float interpolation2 = AndroidUtilities.overshootInterpolator.getInterpolation(f13) * ai.r.b;
+            canvas.scale(interpolation2, interpolation2, 0.0f, 0.0f);
+            if (w1Var.f[this.l]) {
+            }
+            Utilities.CallbackReturn callbackReturn2 = w1Var.l;
+            if (callbackReturn2 == null) {
+            }
+            if (w1Var.N) {
+            }
+            float f182 = 1.0f - f12;
+            paint.setAlpha((int) k3.C(this.m, f182, f7, f15));
+            Bitmap bitmap2 = w1Var.d[this.l];
+            if (w1Var.m) {
+            }
+            canvas.drawBitmap(bitmap2, -(bitmap2.getWidth() >> 1), -(bitmap2.getHeight() >> 1), paint);
+            canvas.restore();
+        } else {
+            f14 = f16;
+            f11 = 1000.0f;
         }
-        ArrayList arrayList = this.n;
-        if (arrayList.isEmpty()) {
-            for (int i12 = 0; i12 < i10; i12++) {
-                arrayList.add(new u1(this));
+        if (w1Var.g) {
+            return;
+        }
+        float dp = (f14 / 660.0f) * AndroidUtilities.dp(4.0f);
+        float min2 = w1Var.f[this.l] ? Math.min(w1Var.o, 3.5f) * 4.0f * dp : dp * w1Var.o;
+        if (w1Var.N) {
+            long j13 = this.o;
+            float clamp2 = 1.0f - Utilities.clamp((j10 - j13) / Math.max(1L, this.a - j13), 1.0f, 0.0f);
+            min2 *= (2.2f * clamp2 * clamp2) + 0.15f;
+            this.e = lk.x(f14, f11, AndroidUtilities.dp(5.0f), this.e);
+        }
+        this.d = (this.j * min2) + this.d;
+        this.e = (this.k * min2) + this.e;
+        float f20 = this.q;
+        if (f20 != 1.0f) {
+            float f21 = (f14 / 200.0f) + f20;
+            this.q = f21;
+            if (f21 > 1.0f) {
+                this.q = 1.0f;
             }
         }
     }
 
-    public final void d(Canvas canvas) {
-        e(canvas, 1.0f);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:48:0x001a, code lost:
-    
-        if (r5 > 50) goto L4;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void e(Canvas canvas, float f7) {
+    public final void b(long j10) {
+        float f7;
+        float f10;
         int i10;
-        long currentTimeMillis = System.currentTimeMillis();
-        long j10 = currentTimeMillis - this.S;
-        long j11 = j10 >= 4 ? 50L : 4L;
-        j10 = j11;
-        boolean z10 = this.G;
-        ArrayList arrayList = this.n;
-        if (z10) {
-            RectF rectF = this.a;
-            float centerX = rectF.centerX() + 0.0f;
-            float centerY = rectF.centerY() + this.k;
-            int i11 = 0;
-            while (true) {
-                Matrix[] matrixArr = this.C;
-                if (i11 >= matrixArr.length) {
-                    break;
-                }
-                float[] fArr = this.F;
-                float f10 = ((j10 / ((i11 * 10000.0f) + 40000.0f)) * 360.0f) + fArr[i11];
-                fArr[i11] = f10;
-                matrixArr[i11].setRotate(f10, centerX, centerY);
-                this.E[i11] = 0;
-                i11++;
-            }
-            i10 = 0;
-            for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                u1 u1Var = (u1) arrayList.get(i12);
-                v1 v1Var = u1Var.t;
-                int[] iArr = v1Var.E;
-                int i13 = u1Var.l;
-                int i14 = iArr[i13];
-                float[] fArr2 = v1Var.D[i13];
-                int i15 = i14 * 2;
-                fArr2[i15] = u1Var.d;
-                fArr2[i15 + 1] = u1Var.e;
-                iArr[i13] = i14 + 1;
-            }
-            int i16 = 0;
-            while (true) {
-                Matrix[] matrixArr2 = this.C;
-                if (i16 >= matrixArr2.length) {
-                    break;
-                }
-                Matrix matrix = matrixArr2[i16];
-                float[] fArr3 = this.D[i16];
-                matrix.mapPoints(fArr3, 0, fArr3, 0, this.E[i16]);
-                this.E[i16] = 0;
-                i16++;
+        float f11;
+        float f12;
+        w1 w1Var = this.t;
+        int i11 = w1Var.O;
+        ArrayList arrayList = w1Var.n;
+        RectF rectF = w1Var.a;
+        if (i11 == 28) {
+            if (Utilities.fastRandom.nextFloat() < 0.13f) {
+                this.l = 0;
+            } else {
+                this.l = (int) Math.floor((r4 * (w1Var.d.length - 2)) + 1.0f);
             }
         } else {
-            i10 = 0;
+            this.l = Math.abs(Utilities.fastRandom.nextInt() % w1Var.d.length);
         }
-        for (int i17 = i10; i17 < arrayList.size(); i17++) {
-            u1 u1Var2 = (u1) arrayList.get(i17);
-            if (this.g) {
-                u1Var2.a(canvas, this.R, f7);
-            } else {
-                u1Var2.a(canvas, currentTimeMillis, f7);
-            }
-            if (this.I && currentTimeMillis > u1Var2.a) {
-                u1Var2.b(currentTimeMillis);
-            }
-            if (this.H) {
-                if (!this.b.contains(u1Var2.h, u1Var2.i)) {
-                    u1Var2.b(currentTimeMillis);
+        this.a = Utilities.fastRandom.nextInt(w1Var.y * (w1Var.f[this.l] ? 3 : 1)) + w1Var.x + j10;
+        this.o = j10;
+        this.p = Utilities.fastRandom.nextFloat() * 6.28f;
+        float f13 = 0.0f;
+        this.n = 0.0f;
+        if (w1Var.m) {
+            this.c = org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 0.6f, 0.4f);
+        }
+        if (w1Var.B) {
+            float abs = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
+            float abs2 = Math.abs(Utilities.fastRandom.nextInt() % rectF.height()) + rectF.top;
+            float f14 = 0.0f;
+            int i12 = 0;
+            while (i12 < 10) {
+                float abs3 = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
+                float abs4 = Math.abs(Utilities.fastRandom.nextInt() % rectF.height()) + rectF.top;
+                float f15 = 2.14748365E9f;
+                float f16 = f13;
+                for (int i13 = 0; i13 < arrayList.size(); i13++) {
+                    if (w1Var.h) {
+                        f11 = ((v1) arrayList.get(i13)).f - abs3;
+                        f12 = ((v1) arrayList.get(i13)).g;
+                    } else {
+                        f11 = ((v1) arrayList.get(i13)).d - abs3;
+                        f12 = ((v1) arrayList.get(i13)).e;
+                    }
+                    float f17 = f12 - abs4;
+                    float f18 = (f17 * f17) + (f11 * f11);
+                    if (f18 < f15) {
+                        f15 = f18;
+                    }
                 }
+                if (f15 > f14) {
+                    abs2 = abs4;
+                    f14 = f15;
+                    abs = abs3;
+                }
+                i12++;
+                f13 = f16;
+            }
+            f7 = f13;
+            this.d = abs;
+            this.e = abs2;
+        } else {
+            f7 = 0.0f;
+            if (w1Var.J) {
+                float width = rectF.width();
+                float f19 = w1Var.j;
+                float y3 = k3.y(width, f19, org.telegram.ui.Cells.c1.g(Utilities.fastRandom, MediaDataController.MAX_STYLE_RUNS_COUNT) / 1000.0f, f19);
+                float g10 = org.telegram.ui.Cells.c1.g(Utilities.fastRandom, 360);
+                if (!w1Var.f[this.l] || this.s) {
+                    f10 = 0.0f;
+                } else {
+                    y3 = Math.min(y3, AndroidUtilities.dp(10.0f));
+                    f10 = AndroidUtilities.dp(30.0f) + 0.0f;
+                }
+                double d = y3;
+                double d10 = g10;
+                this.d = rectF.centerX() + 0.0f + ((float) (Math.sin(Math.toRadians(d10)) * d));
+                this.e = rectF.centerY() + f10 + w1Var.k + ((float) (Math.cos(Math.toRadians(d10)) * d));
+            } else {
+                this.d = Math.abs(Utilities.fastRandom.nextInt() % rectF.width()) + rectF.left;
+                this.e = Math.abs(Utilities.fastRandom.nextInt() % rectF.height()) + rectF.top;
             }
         }
-        this.S = currentTimeMillis;
-    }
-
-    public final void f() {
-        long currentTimeMillis = System.currentTimeMillis();
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.n;
-            if (i10 >= arrayList.size()) {
-                return;
-            }
-            ((u1) arrayList.get(i10)).b(currentTimeMillis);
-            i10++;
+        if (w1Var.f[this.l]) {
+            this.r = Math.abs(Utilities.fastRandom.nextFloat() * 2.0f);
         }
-    }
-
-    public final void g() {
-        int w02 = h6.w0(this.Q, this.P);
-        if (this.z != w02) {
-            this.z = w02;
-            a();
+        double radians = w1Var.f[this.l] ? Math.toRadians(280.0f - (Utilities.fastRandom.nextFloat() * 200.0f)) : w1Var.h ? Utilities.fastRandom.nextDouble() * 3.141592653589793d * 2.0d : Math.atan2(this.e - (rectF.centerY() + w1Var.k), this.d - (rectF.centerX() + f7));
+        this.j = (float) Math.cos(radians);
+        this.k = (float) Math.sin(radians);
+        if (w1Var.e[this.l]) {
+            this.m = (int) (((Utilities.fastRandom.nextInt(50) + 50) / 100.0f) * 120.0f);
+        } else {
+            this.m = (int) (((Utilities.fastRandom.nextInt(50) + 50) / 100.0f) * 255.0f);
         }
+        int i14 = w1Var.O;
+        if ((i14 == 6 && ((i10 = this.l) == 1 || i10 == 2)) || i14 == 9 || i14 == 3 || i14 == 7 || i14 == 24 || i14 == 11 || i14 == 22 || i14 == 4) {
+            this.n = (int) (((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 45.0f);
+        }
+        if (w1Var.O != 101) {
+            this.q = f7;
+        }
+        if (w1Var.h) {
+            float min = (Math.min(rectF.width(), rectF.height()) * org.telegram.ui.Cells.c1.d(Utilities.fastRandom, 1.2f, 0.6f)) / 2.0f;
+            float cos = (((float) Math.cos(radians)) * min) + rectF.centerX() + 0.0f;
+            this.d = cos;
+            this.f = cos;
+            float sin = (((float) Math.sin(radians)) * min) + rectF.centerY() + w1Var.k;
+            this.e = sin;
+            this.g = sin;
+        }
+        this.s = false;
     }
 }

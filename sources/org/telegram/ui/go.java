@@ -5,7 +5,7 @@ import org.telegram.ui.Components.ay0;
 import ri.j;
 import ri.p;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class go implements Runnable {
     public final /* synthetic */ int a;
@@ -28,12 +28,12 @@ public final /* synthetic */ class go implements Runnable {
                 MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new g5((ko) this.d, 4));
                 break;
             case 1:
-                org.telegram.ui.web.x1 x1Var = (org.telegram.ui.web.x1) this.d;
+                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.d;
                 long j10 = this.b;
                 long j11 = this.c;
-                x1Var.f = j10;
-                x1Var.h = j11;
-                org.telegram.ui.Components.u61 u61Var = x1Var.a;
+                y1Var.f = j10;
+                y1Var.h = j11;
+                org.telegram.ui.Components.u61 u61Var = y1Var.a;
                 if (u61Var != null && (s61Var = u61Var.W2) != null && u61Var.G) {
                     s61Var.N(true);
                     break;

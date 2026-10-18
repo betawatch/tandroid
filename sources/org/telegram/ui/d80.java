@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class d80 extends org.telegram.ui.Components.hm0 {
     public final Context c;
@@ -132,23 +132,23 @@ public final class d80 extends org.telegram.ui.Components.hm0 {
         return 1;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x0284, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x0287, code lost:
     
         if (r2 == (r11.e.size() - 1)) goto L134;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x0286, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x0289, code lost:
     
         r2 = true;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:150:0x0288, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x028b, code lost:
     
         r2 = false;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:157:0x02ac, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x02af, code lost:
     
         if (r2 == (r11.h.size() - 1)) goto L134;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:166:0x02d7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:166:0x02da, code lost:
     
         if (r2 == (r11.f.size() - 1)) goto L134;
      */
@@ -240,13 +240,13 @@ public final class d80 extends org.telegram.ui.Components.hm0 {
                     textView2.setGravity((z14 ? 5 : 3) | 16);
                     v8Var.removeView(textView2);
                     boolean z15 = LocaleController.isRTL;
-                    v8Var.addView(textView2, w7.z5.a(-1.0f, z15 ? 70.0f : v8Var.E, 0.0f, z15 ? v8Var.E : 70.0f, 0.0f, -1, (z15 ? 5 : 3) | 48));
+                    v8Var.addView(textView2, w7.z5.d(-1, -1.0f, (z15 ? 5 : 3) | 48, z15 ? 70.0f : v8Var.E, 0.0f, z15 ? v8Var.E : 70.0f, 0.0f));
                     textView.setGravity(LocaleController.isRTL ? 5 : 3);
                     v8Var.removeView(textView);
                     boolean z16 = LocaleController.isRTL;
-                    v8Var.addView(textView, w7.z5.a(-2.0f, z16 ? 64.0f : v8Var.E, 36.0f, z16 ? v8Var.E : 64.0f, 0.0f, -2, (z16 ? 5 : 3) | 48));
+                    v8Var.addView(textView, w7.z5.d(-2, -2.0f, (z16 ? 5 : 3) | 48, z16 ? 64.0f : v8Var.E, 36.0f, z16 ? v8Var.E : 64.0f, 0.0f));
                     v8Var.removeView(view2);
-                    v8Var.addView(view2, w7.z5.a(20.0f, 22.0f, 0.0f, 22.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 16));
+                    v8Var.addView(view2, w7.z5.d(37, 20.0f, (LocaleController.isRTL ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
                 }
                 i11 = languageSelectActivity.manualTranslationPosition;
                 if (i13 != i11) {
@@ -357,14 +357,14 @@ public final class d80 extends org.telegram.ui.Components.hm0 {
             f9Var.r = 21;
             TextView textView = new TextView(context);
             f9Var.a = textView;
-            org.telegram.messenger.kk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+            org.telegram.messenger.lk.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
             textView.setMaxLines(1);
             textView.setSingleLine(true);
             textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
             textView.setEllipsize(truncateAt);
             boolean z10 = LocaleController.isRTL;
-            f9Var.addView(textView, w7.z5.a(-1.0f, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f, -1, (z10 ? 5 : 3) | 48));
+            f9Var.addView(textView, w7.z5.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f));
             TextView textView2 = new TextView(context);
             f9Var.b = textView2;
             textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false));
@@ -376,12 +376,12 @@ public final class d80 extends org.telegram.ui.Components.hm0 {
             textView2.setPadding(0, 0, 0, 0);
             textView2.setEllipsize(truncateAt);
             boolean z11 = LocaleController.isRTL;
-            f9Var.addView(textView2, w7.z5.a(-2.0f, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
+            f9Var.addView(textView2, w7.z5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f));
             RadioButton radioButton = new RadioButton(context);
             f9Var.c = radioButton;
             radioButton.setSize(AndroidUtilities.dp(20.0f));
             radioButton.b(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.g7, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h7, false));
-            f9Var.addView(radioButton, w7.z5.a(20.0f, 22.0f, 0.0f, 22.0f, 0.0f, 20, (LocaleController.isRTL ? 5 : 3) | 16));
+            f9Var.addView(radioButton, w7.z5.d(20, 20.0f, (LocaleController.isRTL ? 5 : 3) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
             f9Var.n = LocaleController.isRTL;
             f9Var.setClipChildren(false);
             view = f9Var;

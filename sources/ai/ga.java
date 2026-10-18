@@ -50,7 +50,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.WebFile;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -66,7 +66,7 @@ import org.telegram.ui.la0;
 import org.telegram.ui.pz0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class ga {
     public static volatile ga[][] S = (ga[][]) Array.newInstance((Class<?>) ga.class, 2, 4);
@@ -414,7 +414,7 @@ public final class ga {
             return;
         }
         if (!this.e) {
-            r(new b2(this, callback, starGift, j10));
+            r(new b3(this, callback, starGift, j10));
             return;
         }
         TLRPC.TL_inputInvoiceStarGiftResale tL_inputInvoiceStarGiftResale = new TLRPC.TL_inputInvoiceStarGiftResale();
@@ -467,7 +467,7 @@ public final class ga {
         b2Var.q(200L);
         TL_stars.getSavedStarGift getsavedstargift = new TL_stars.getSavedStarGift();
         getsavedstargift.stargift.add(inputSavedStarGift);
-        ConnectionsManager.getInstance(this.a).sendRequest(getsavedstargift, new y2(this, b2Var, inputSavedStarGift, callback, 2));
+        ConnectionsManager.getInstance(this.a).sendRequest(getsavedstargift, new w2(this, b2Var, inputSavedStarGift, callback, 2));
     }
 
     public final boolean N() {
@@ -589,7 +589,7 @@ public final class ga {
         if (str == null) {
             tL_payments_getStarsTransactions.offset = "";
         }
-        ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_getStarsTransactions, new n2(this, i10, 1));
+        ConnectionsManager.getInstance(this.a).sendRequest(tL_payments_getStarsTransactions, new m2(this, i10, 1));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -661,7 +661,7 @@ public final class ga {
             return;
         }
         if (!this.e) {
-            r(new l3(this, runnable, messageObject, inputInvoice, tL_payments_paymentFormStars, callback, 3));
+            r(new j3(this, runnable, messageObject, inputInvoice, tL_payments_paymentFormStars, callback, 3));
             return;
         }
         ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStars.invoice.prices;
@@ -700,12 +700,12 @@ public final class ga {
         TLRPC.WebDocument webDocument = tL_payments_paymentFormStars.photo;
         v8 v8Var3 = new v8(this, j15, zArr, callback, context2, I, z10, str, messageObject, inputInvoice, tL_payments_paymentFormStars, i16, j14);
         w8 w8Var2 = new w8(this, zArr, callback);
-        org.telegram.ui.ActionBar.f3 i18 = kk.i(1, context2, I, false);
+        org.telegram.ui.ActionBar.f3 i18 = lk.i(1, context2, I, false);
         TLRPC.User user3 = MessagesController.getInstance(i17).getUser(Long.valueOf(j14));
-        LinearLayout e = kk.e(context2, 1);
+        LinearLayout e = lk.e(context2, 1);
         e.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         FrameLayout frameLayout = new FrameLayout(context2);
-        frameLayout.addView(new kc(context2, 40, 0), w7.z5.d(-1.0f, -1));
+        frameLayout.addView(new kc(context2, 40, 0), w7.z5.c(-1.0f, -1));
         if (messageObject == null || (message2 = messageObject.messageOwner) == null || !(message2.media instanceof TLRPC.TL_messageMediaPaidMedia)) {
             f3Var = i18;
             v8Var = v8Var3;
@@ -736,11 +736,11 @@ public final class ga {
                 frameLayout3.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(20.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, I)));
                 frameLayout3.setPadding(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
                 frameLayout3.addView(textView3, w7.z5.q(-2, 16, 119));
-                frameLayout2.addView(frameLayout3, w7.z5.b(-2.0f, 18.66f, 81));
+                frameLayout2.addView(frameLayout3, w7.z5.a(-2.0f, 18.66f, 81));
                 ad adVar = new ad(context2, i17, I);
                 w7.b6.a(adVar);
                 adVar.setOnClickListener(new ab(adVar, i12));
-                viewGroup.addView(adVar, w7.z5.a(-2.0f, 0.0f, 0.0f, -8.0f, 0.0f, -2, 53));
+                viewGroup.addView(adVar, w7.z5.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
                 e.addView(viewGroup, w7.z5.q(i11, 117, 7));
                 TextView f11 = org.telegram.messenger.g0.f(context2, r22, f7);
                 f11.setTypeface(AndroidUtilities.bold());
@@ -755,7 +755,7 @@ public final class ga {
                 f11.setGravity(17);
                 e.addView(f11, w7.z5.t(-2, -2, 1, 0, webDocument == null ? -8 : 8, 0, 0));
                 if (webDocument != null) {
-                    LinearLayout e7 = kk.e(context2, i12);
+                    LinearLayout e7 = lk.e(context2, i12);
                     e7.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(28.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.a7, I)));
                     org.telegram.ui.Components.w9 w9Var2 = new org.telegram.ui.Components.w9(context2);
                     w9Var2.setRoundRadius(AndroidUtilities.dp(14.0f));
@@ -876,7 +876,7 @@ public final class ga {
                 } else {
                     dVar.g(md.R0(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsConfirmPurchaseButton", (int) j12))), i12, r22);
                 }
-                e.addView(dVar, w7.z5.d(48.0f, -1));
+                e.addView(dVar, w7.z5.c(48.0f, -1));
                 x90 x90Var = new x90(context2, I);
                 x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, I));
                 x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, I));
@@ -960,7 +960,7 @@ public final class ga {
         ad adVar2 = new ad(context2, i17, I);
         w7.b6.a(adVar2);
         adVar2.setOnClickListener(new ab(adVar2, i12));
-        viewGroup.addView(adVar2, w7.z5.a(-2.0f, 0.0f, 0.0f, -8.0f, 0.0f, -2, 53));
+        viewGroup.addView(adVar2, w7.z5.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
         e.addView(viewGroup, w7.z5.q(i11, 117, 7));
         TextView f112 = org.telegram.messenger.g0.f(context2, r22, f7);
         f112.setTypeface(AndroidUtilities.bold());
@@ -988,7 +988,7 @@ public final class ga {
         ei.d dVar2 = new ei.d(context2, I, r22);
         if (i10 <= 0) {
         }
-        e.addView(dVar2, w7.z5.d(48.0f, -1));
+        e.addView(dVar2, w7.z5.c(48.0f, -1));
         x90 x90Var2 = new x90(context2, I);
         x90Var2.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, I));
         x90Var2.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.gc, I));
@@ -1192,7 +1192,7 @@ public final class ga {
                                         return;
                                     } else {
                                         boolean[] zArr = {false};
-                                        cd cdVar = new cd(context3, d6Var2, j15, 0, str6, new l3(gaVar2, zArr, messageObject3, inputInvoice3, tL_payments_paymentFormStars3, callback3, 5), j16);
+                                        cd cdVar = new cd(context3, d6Var2, j15, 0, str6, new j3(gaVar2, zArr, messageObject3, inputInvoice3, tL_payments_paymentFormStars3, callback3, 5), j16);
                                         cdVar.setOnDismissListener(new r9(callback3, zArr));
                                         cdVar.show();
                                         return;
@@ -1626,7 +1626,7 @@ public final class ga {
             tL_payments_getPaymentForm.flags |= 1;
         }
         tL_payments_getPaymentForm.invoice = tL_inputInvoiceStars;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getPaymentForm, new q2(this, callback2, tL_inputInvoiceStars, 3));
+        ConnectionsManager.getInstance(i10).sendRequest(tL_payments_getPaymentForm, new k2(this, callback2, tL_inputInvoiceStars, 3));
     }
 
     public final void f0(List list) {
@@ -1732,7 +1732,7 @@ public final class ga {
         if (this.e) {
             h0(launchActivity, j10, str);
         } else {
-            r(new b2(this, launchActivity, j10, str, 7));
+            r(new b3(this, (Object) launchActivity, j10, (Object) str, 7));
         }
     }
 
@@ -1785,19 +1785,19 @@ public final class ga {
 
     public final void h0(LaunchActivity launchActivity, long j10, String str) {
         if (p().amount < j10 && j10 > 0) {
-            new cd(launchActivity, null, j10, 4, str, new ah.j(4), 0L).show();
+            new cd(launchActivity, null, j10, 4, str, new ah.j(3), 0L).show();
             return;
         }
         org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
         if (U == null) {
             return;
         }
-        org.telegram.ui.Components.qc J = org.telegram.ui.Components.xc.a0(U).J(R.raw.stars_topup, LocaleController.getString(R.string.StarsTopupLinkEnough), LocaleController.getString(R.string.StarsTopupLinkTopupAnyway), new ah.j(3));
+        org.telegram.ui.Components.qc J = org.telegram.ui.Components.xc.a0(U).J(R.raw.stars_topup, LocaleController.getString(R.string.StarsTopupLinkEnough), LocaleController.getString(R.string.StarsTopupLinkTopupAnyway), new ah.j(2));
         J.j = 5000;
         J.k(true);
     }
 
-    public final void i(final TL_stars.StarGift starGift, final boolean z10, final boolean z11, final long j10, final TLRPC.TL_textWithEntities tL_textWithEntities, final yh.m4 m4Var) {
+    public final void i(final TL_stars.StarGift starGift, final boolean z10, final boolean z11, final long j10, final TLRPC.TL_textWithEntities tL_textWithEntities, final yh.l4 l4Var) {
         Context context = LaunchActivity.H1;
         if (context == null) {
             context = ApplicationLoader.applicationContext;
@@ -1813,12 +1813,12 @@ public final class ga {
                 public final void run() {
                     ga gaVar = ga.this;
                     boolean z12 = gaVar.e;
-                    yh.m4 m4Var2 = m4Var;
+                    yh.l4 l4Var2 = l4Var;
                     if (z12) {
-                        gaVar.i(starGift, z10, z11, j10, tL_textWithEntities, m4Var2);
+                        gaVar.i(starGift, z10, z11, j10, tL_textWithEntities, l4Var2);
                     } else {
                         ga.e("NO_BALANCE");
-                        m4Var2.run(Boolean.FALSE, null);
+                        l4Var2.run(Boolean.FALSE, null);
                     }
                 }
             });
@@ -1847,7 +1847,7 @@ public final class ga {
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
                 final ga gaVar = ga.this;
-                final yh.m4 m4Var2 = m4Var;
+                final yh.l4 l4Var2 = l4Var;
                 final TLRPC.TL_inputInvoiceStarGift tL_inputInvoiceStarGift2 = tL_inputInvoiceStarGift;
                 final Context context3 = context2;
                 final org.telegram.ui.ActionBar.d6 d6Var = I;
@@ -1862,11 +1862,11 @@ public final class ga {
                     public final void run() {
                         TLObject tLObject2 = tLObject;
                         boolean z14 = tLObject2 instanceof TLRPC.TL_payments_paymentFormStarGift;
-                        final yh.m4 m4Var3 = m4Var2;
+                        final yh.l4 l4Var3 = l4Var2;
                         if (!z14) {
                             TLRPC.TL_error tL_error2 = tL_error;
                             ga.e(tL_error2 == null ? "NO_PAYMENT_FORM" : tL_error2.text);
-                            m4Var3.run(Boolean.FALSE, null);
+                            l4Var3.run(Boolean.FALSE, null);
                             return;
                         }
                         TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) tLObject2;
@@ -1896,7 +1896,7 @@ public final class ga {
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(final TLObject tLObject3, final TLRPC.TL_error tL_error3) {
                                 final ga gaVar3 = ga.this;
-                                final yh.m4 m4Var4 = m4Var3;
+                                final yh.l4 l4Var4 = l4Var3;
                                 final Context context5 = context4;
                                 final org.telegram.ui.ActionBar.d6 d6Var3 = d6Var2;
                                 final long j14 = j12;
@@ -1921,7 +1921,7 @@ public final class ga {
                                         ga gaVar4 = ga.this;
                                         TLObject tLObject4 = tLObject3;
                                         TLRPC.TL_error tL_error4 = tL_error3;
-                                        yh.m4 m4Var5 = m4Var4;
+                                        yh.l4 l4Var5 = l4Var4;
                                         Context context6 = context5;
                                         org.telegram.ui.ActionBar.d6 d6Var4 = d6Var3;
                                         long j16 = j14;
@@ -1939,13 +1939,13 @@ public final class ga {
                                                 c10 = 0;
                                                 if ("BALANCE_TOO_LOW".equals(tL_error4.text)) {
                                                     if (!MessagesController.getInstance(gaVar4.a).starsPurchaseAvailable()) {
-                                                        m4Var5.run(Boolean.FALSE, null);
+                                                        l4Var5.run(Boolean.FALSE, null);
                                                         ga.e0(context6, d6Var4);
                                                         return;
                                                     } else {
                                                         boolean[] zArr = {false};
-                                                        cd cdVar = new cd(context6, d6Var4, j16, 6, str4, new r8(gaVar4, zArr, starGift5, z19, z20, j17, tL_textWithEntities5, m4Var5), 0L);
-                                                        cdVar.setOnDismissListener(new v3(m4Var5, zArr, i12));
+                                                        cd cdVar = new cd(context6, d6Var4, j16, 6, str4, new r8(gaVar4, zArr, starGift5, z19, z20, j17, tL_textWithEntities5, l4Var5), 0L);
+                                                        cdVar.setOnDismissListener(new x3(l4Var5, zArr, i12));
                                                         cdVar.show();
                                                         return;
                                                     }
@@ -1954,14 +1954,14 @@ public final class ga {
                                                 c10 = 0;
                                             }
                                             if (tL_error4 != null && "STARGIFT_USAGE_LIMITED".equals(tL_error4.text)) {
-                                                m4Var5.run(Boolean.FALSE, "STARGIFT_USAGE_LIMITED");
+                                                l4Var5.run(Boolean.FALSE, "STARGIFT_USAGE_LIMITED");
                                                 return;
                                             }
                                             if (tL_error4 != null && "STARGIFT_USER_USAGE_LIMITED".equals(tL_error4.text)) {
-                                                m4Var5.run(Boolean.FALSE, "STARGIFT_USER_USAGE_LIMITED");
+                                                l4Var5.run(Boolean.FALSE, "STARGIFT_USER_USAGE_LIMITED");
                                                 return;
                                             }
-                                            m4Var5.run(Boolean.FALSE, null);
+                                            l4Var5.run(Boolean.FALSE, null);
                                             int i13 = R.raw.error;
                                             int i14 = R.string.UnknownErrorCode;
                                             Object[] objArr = new Object[1];
@@ -1976,7 +1976,7 @@ public final class ga {
                                         gaVar4.V();
                                         gaVar4.Q(j17);
                                         gaVar4.T(true);
-                                        m4Var5.run(Boolean.TRUE, null);
+                                        l4Var5.run(Boolean.TRUE, null);
                                         if (BirthdayController.getInstance(gaVar4.a).contains(j17)) {
                                             i11 = 0;
                                             MessagesController.getInstance(gaVar4.a).getMainSettings().edit().putBoolean(Calendar.getInstance().get(1) + "bdayhint_" + j17, false).apply();
@@ -2039,7 +2039,7 @@ public final class ga {
                                                 notificationCenter.lambda$postNotificationNameOnUIThread$1(i16, valueOf, bool);
                                                 NotificationCenter.getInstance(gaVar4.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChatActivity, Long.valueOf(j17), bool);
                                                 sn W9 = sn.W9(j17);
-                                                W9.whenFullyVisible(new b2(W9, starGift5, spannableStringBuilder2, j16, 6));
+                                                W9.whenFullyVisible(new b3(W9, starGift5, spannableStringBuilder2, j16, 6));
                                                 R.presentFragment(W9);
                                             }
                                         }
@@ -2102,11 +2102,11 @@ public final class ga {
                 boolean[] zArr = {false};
                 n9 n9Var = new n9(this, j10, i11, zArr, callback2, context2, I, chatInvite, str);
                 a1.f fVar = new a1.f(this, zArr, callback2);
-                org.telegram.ui.ActionBar.f3 i12 = kk.i(1, context2, I, false);
-                LinearLayout e = kk.e(context2, 1);
+                org.telegram.ui.ActionBar.f3 i12 = lk.i(1, context2, I, false);
+                LinearLayout e = lk.e(context2, 1);
                 e.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
                 FrameLayout frameLayout = new FrameLayout(context2);
-                frameLayout.addView(new kc(context2, 40, 0), w7.z5.d(-1.0f, -1));
+                frameLayout.addView(new kc(context2, 40, 0), w7.z5.c(-1.0f, -1));
                 org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context2);
                 w9Var.setRoundRadius(AndroidUtilities.dp(80.0f));
                 org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
@@ -2142,13 +2142,13 @@ public final class ga {
                 ad adVar = new ad(context2, i11, I);
                 w7.b6.a(adVar);
                 adVar.setOnClickListener(new ab(adVar, 1));
-                frameLayout.addView(adVar, w7.z5.a(-2.0f, 0.0f, 0.0f, -8.0f, 0.0f, -2, 53));
+                frameLayout.addView(adVar, w7.z5.d(-2, -2.0f, 53, 0.0f, 0.0f, -8.0f, 0.0f));
                 e.addView(frameLayout, w7.z5.q(-1, 117, 7));
                 TextView f7 = org.telegram.messenger.g0.f(context2, 1, 20.0f);
                 f7.setTypeface(AndroidUtilities.bold());
                 int i14 = org.telegram.ui.ActionBar.h6.j5;
                 f7.setTextColor(org.telegram.ui.ActionBar.h6.w0(i14, I));
-                kk.m(R.string.StarsSubscribeTitle, f7, 17);
+                lk.m(R.string.StarsSubscribeTitle, f7, 17);
                 TextView i15 = com.google.android.gms.internal.play_billing.k3.i(e, f7, w7.z5.t(-2, -2, 1, 0, 8, 0, 0), context2);
                 i15.setTextSize(1, 14.0f);
                 i15.setTextColor(org.telegram.ui.ActionBar.h6.w0(i14, I));

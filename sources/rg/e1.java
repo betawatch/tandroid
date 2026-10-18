@@ -30,7 +30,7 @@ import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.ja;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class e1 extends j {
     public boolean A0;
@@ -204,7 +204,7 @@ public abstract class e1 extends j {
         }
         n5 n5Var = new n5(r5Var, context);
         this.q0 = n5Var;
-        addView(n5Var, z5.d(-1.0f, -1));
+        addView(n5Var, z5.c(-1.0f, -1));
         x0 x0Var = new x0(r5Var, context, this.D0);
         this.r0 = x0Var;
         x0Var.setAdapter(new a1(r5Var, context, jaVar, q6Var, z10));
@@ -212,7 +212,7 @@ public abstract class e1 extends j {
         b1Var.O = new c1(r5Var);
         x0Var.setLayoutManager(b1Var);
         x0Var.i(new d1());
-        n5Var.addView(x0Var, z5.d(-1.0f, -1));
+        n5Var.addView(x0Var, z5.c(-1.0f, -1));
         if (q6Var != null && q6Var.g) {
             ig.l0 l0Var = new ig.l0(r5Var, 14);
             hg.o oVar2 = new hg.o(r5Var, 18);

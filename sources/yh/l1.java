@@ -1,28 +1,113 @@
 package yh;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.NinePatchDrawable;
-import java.util.Arrays;
-import org.telegram.messenger.AndroidUtilities;
+import ai.de;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class l1 {
-    public NinePatchDrawable b;
-    public NinePatchDrawable d;
-    public NinePatchDrawable f;
-    public final float[] g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public final Bitmap[] a = new Bitmap[1];
-    public final Bitmap[] c = new Bitmap[1];
-    public final Bitmap[] e = new Bitmap[1];
+public final class l1 extends Drawable {
+    public final int a;
+    public final RectF b;
+    public final Path c;
+    public final Paint d;
+    public final de e;
+    public boolean f;
+    public tg.p g;
+    public ig.l0 h;
+    public boolean i;
 
-    public l1() {
-        float[] fArr = new float[8];
-        this.g = fArr;
-        Arrays.fill(fArr, AndroidUtilities.dp(11.0f));
+    public l1(int i10) {
+        this(i0.a.o(i10, 128), i10);
+    }
+
+    public final void a() {
+        boolean z10 = this.e != null && this.i && LiteMode.isEnabled(131072);
+        if (this.f == z10) {
+            return;
+        }
+        this.f = z10;
+        if (z10) {
+            zf.h d = zf.h.d();
+            tg.p pVar = new tg.p(this, 18);
+            this.g = pVar;
+            d.a(15, pVar);
+        } else {
+            zf.h.d().f(this.g);
+        }
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.d;
+        Path path = this.c;
+        canvas.drawPath(path, paint);
+        de deVar = this.e;
+        if (deVar != null) {
+            if (this.f || !this.i) {
+                canvas.save();
+                canvas.clipPath(path);
+                if (this.g == null) {
+                    deVar.d();
+                }
+                deVar.a(canvas, this.a);
+                canvas.restore();
+                if (this.g == null) {
+                    invalidateSelf();
+                }
+            }
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        float min = Math.min(rect.width(), rect.height()) / 2.0f;
+        RectF rectF = this.b;
+        rectF.set(rect);
+        Path path = this.c;
+        path.rewind();
+        path.addRoundRect(rectF, min, min, Path.Direction.CW);
+        de deVar = this.e;
+        if (deVar != null) {
+            deVar.g(rectF);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.d.setColorFilter(colorFilter);
+    }
+
+    public l1(int i10, int i11) {
+        this.b = new RectF();
+        this.c = new Path();
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.a = i10;
+        paint.setColor(i11);
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.e = new de(1, 25);
+        } else {
+            this.e = null;
+        }
     }
 }

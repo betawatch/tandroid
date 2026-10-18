@@ -21,7 +21,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f71 extends org.telegram.ui.ActionBar.f3 {
     public final Drawable b;
@@ -44,7 +44,7 @@ public final class f71 extends org.telegram.ui.ActionBar.f3 {
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
         this.b = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h5, false), PorterDuff.Mode.MULTIPLY));
-        ah.x xVar = new ah.x(this, context, 25);
+        ah.x xVar = new ah.x(this, context, 26);
         xVar.setWillNotDraw(false);
         this.containerView = xVar;
         e71 e71Var = new e71(this, context);
@@ -53,13 +53,13 @@ public final class f71 extends org.telegram.ui.ActionBar.f3 {
         e71Var.setWillNotDraw(false);
         e71Var.setClipToPadding(false);
         e71Var.setVerticalScrollBarEnabled(false);
-        xVar.addView(e71Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 130.0f, -1, 51));
+        xVar.addView(e71Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 130.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.f = linearLayout;
         linearLayout.setOrientation(1);
         e71Var.addView(linearLayout, w7.z5.x(-1, -2, 51));
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.k(20.0f, 1, textView);
+        org.telegram.messenger.lk.k(20.0f, 1, textView);
         int i12 = org.telegram.ui.ActionBar.h6.j5;
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i12, false));
         textView.setSingleLine(true);
@@ -124,7 +124,7 @@ public final class f71 extends org.telegram.ui.ActionBar.f3 {
                 }
             });
         }
-        xVar.addView(dVar, w7.z5.a(48.0f, 20.0f, 0.0f, 20.0f, 60.0f, -1, 87));
+        xVar.addView(dVar, w7.z5.d(-1, 48.0f, 87, 20.0f, 0.0f, 20.0f, 60.0f));
         ei.d dVar2 = new ei.d(context, null, false);
         final int i14 = 1;
         dVar2.g(LocaleController.getString(R.string.AppUpdateRemindMeLater), false, true);
@@ -150,7 +150,7 @@ public final class f71 extends org.telegram.ui.ActionBar.f3 {
                 }
             }
         });
-        xVar.addView(dVar2, w7.z5.a(48.0f, 20.0f, 4.0f, 20.0f, 8.0f, -1, 87));
+        xVar.addView(dVar2, w7.z5.d(-1, 48.0f, 87, 20.0f, 4.0f, 20.0f, 8.0f));
     }
 
     public static void n(f71 f71Var) {

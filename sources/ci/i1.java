@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.bw0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.ActionBar.a2, Continuation, r9.d, i5.e, d9.k, GenericProvider, Utilities.Callback2Return, eh.d {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.Actio
                 g3Var.getClass();
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
-                    g3Var.u(eVar, byteArrayOutputStream);
+                    g3Var.z(eVar, byteArrayOutputStream);
                 } catch (IOException unused) {
                 }
                 return byteArrayOutputStream.toByteArray();
@@ -52,19 +52,19 @@ public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.Actio
 
     @Override // org.telegram.ui.Components.bw0
     public void b(Object obj, float f7) {
-        p1 p1Var = (p1) obj;
+        o1 o1Var = (o1) obj;
         switch (this.a) {
             case 1:
-                WindowManager.LayoutParams layoutParams = p1Var.c;
-                p1Var.N = f7;
+                WindowManager.LayoutParams layoutParams = o1Var.c;
+                o1Var.N = f7;
                 layoutParams.x = (int) f7;
-                AndroidUtilities.updateViewLayout(p1Var.b, p1Var.d, layoutParams);
+                AndroidUtilities.updateViewLayout(o1Var.b, o1Var.d, layoutParams);
                 break;
             default:
-                WindowManager.LayoutParams layoutParams2 = p1Var.c;
-                p1Var.O = f7;
+                WindowManager.LayoutParams layoutParams2 = o1Var.c;
+                o1Var.O = f7;
                 layoutParams2.y = (int) f7;
-                AndroidUtilities.updateViewLayout(p1Var.b, p1Var.d, layoutParams2);
+                AndroidUtilities.updateViewLayout(o1Var.b, o1Var.d, layoutParams2);
                 break;
         }
     }
@@ -118,12 +118,12 @@ public final /* synthetic */ class i1 implements aw0, bw0, org.telegram.ui.Actio
 
     @Override // org.telegram.ui.Components.aw0
     public float get(Object obj) {
-        p1 p1Var = (p1) obj;
+        o1 o1Var = (o1) obj;
         switch (this.a) {
             case 0:
-                return p1Var.N;
+                return o1Var.N;
             default:
-                return p1Var.O;
+                return o1Var.O;
         }
     }
 

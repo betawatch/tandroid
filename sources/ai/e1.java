@@ -19,12 +19,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ey;
-import org.telegram.ui.of0;
+import org.telegram.ui.nf0;
 import org.telegram.ui.sn;
 import org.telegram.ui.te1;
 import org.telegram.ui.xx;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e1 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -88,7 +88,7 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                 final gi.l1 l1Var = (gi.l1) this.d;
                 TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage2 = (TLRPC.TL_messages_preparedInlineMessage) this.e;
                 final s0 s0Var = (s0) this.f;
-                org.telegram.ui.web.t tVar = (org.telegram.ui.web.t) this.h;
+                org.telegram.ui.web.u uVar = (org.telegram.ui.web.u) this.h;
                 final org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                 if (U != null) {
                     l1Var.b0 = true;
@@ -110,7 +110,7 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                             TLRPC.InlineQueryPeerType inlineQueryPeerType = arrayList.get(i11);
                             i11++;
                             TLRPC.InlineQueryPeerType inlineQueryPeerType2 = inlineQueryPeerType;
-                            org.telegram.ui.web.t tVar2 = tVar;
+                            org.telegram.ui.web.u uVar2 = uVar;
                             if (inlineQueryPeerType2 instanceof TLRPC.TL_inlineQueryPeerTypePM) {
                                 z10 = true;
                                 bundle.putBoolean("allowUsers", true);
@@ -129,10 +129,10 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                                 }
                             }
                             tL_messages_preparedInlineMessage2 = tL_messages_preparedInlineMessage;
-                            tVar = tVar2;
+                            uVar = uVar2;
                         }
                     }
-                    org.telegram.ui.web.t tVar3 = tVar;
+                    org.telegram.ui.web.u uVar3 = uVar;
                     final TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage3 = tL_messages_preparedInlineMessage2;
                     gi.j1 j1Var = new gi.j1(l1Var, bundle, s0Var);
                     final int i12 = this.b;
@@ -208,16 +208,16 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                     };
                     U.presentFragment(j1Var);
                     l1Var.dismiss();
-                    tVar3.run();
+                    uVar3.run();
                     break;
                 }
                 break;
             default:
-                of0 of0Var = (of0) this.d;
+                nf0 nf0Var = (nf0) this.d;
                 String str = (String) this.e;
                 String str2 = (String) this.f;
                 String str3 = (String) this.h;
-                ei.d dVar = of0Var.b;
+                ei.d dVar = nf0Var.b;
                 if (!dVar.N) {
                     dVar.setLoading(true);
                     TLRPC.TL_inputStorePaymentAuthCode tL_inputStorePaymentAuthCode = new TLRPC.TL_inputStorePaymentAuthCode();
@@ -240,24 +240,24 @@ public final /* synthetic */ class e1 implements View.OnClickListener {
                         tL_dataJSON.data = q6.toString();
                         tL_payments_getPaymentForm.flags |= 1;
                     }
-                    of0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new org.telegram.ui.ea(of0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
+                    nf0Var.v.getConnectionsManager().sendRequest(tL_payments_getPaymentForm, new org.telegram.ui.ea(nf0Var, tL_inputInvoicePremiumAuthCode, tL_inputStorePaymentAuthCode, 23), 74);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ e1(gi.l1 l1Var, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, s0 s0Var, int i10, long j10, org.telegram.ui.web.t tVar) {
+    public /* synthetic */ e1(gi.l1 l1Var, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, s0 s0Var, int i10, long j10, org.telegram.ui.web.u uVar) {
         this.d = l1Var;
         this.e = tL_messages_preparedInlineMessage;
         this.f = s0Var;
         this.b = i10;
         this.c = j10;
-        this.h = tVar;
+        this.h = uVar;
     }
 
-    public /* synthetic */ e1(of0 of0Var, String str, long j10, String str2, String str3, int i10) {
-        this.d = of0Var;
+    public /* synthetic */ e1(nf0 nf0Var, String str, long j10, String str2, String str3, int i10) {
+        this.d = nf0Var;
         this.e = str;
         this.c = j10;
         this.f = str2;

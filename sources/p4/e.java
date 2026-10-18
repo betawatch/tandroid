@@ -27,10 +27,11 @@ import java.util.concurrent.Executor;
 import ki.t1;
 import m.g3;
 import org.telegram.ui.Cells.c1;
+import org.telegram.ui.Cells.k7;
 import org.telegram.ui.Components.ll0;
-import org.telegram.ui.web.z1;
+import org.telegram.ui.web.a2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
@@ -39,7 +40,7 @@ public final class e {
     public g3 C;
     public android.support.v4.media.session.b0 D;
     public final l2.f E;
-    public final t0 c;
+    public final s0 c;
     public v d;
     public q e;
     public com.google.android.gms.internal.cast.q f;
@@ -81,7 +82,7 @@ public final class e {
     public e(Context context) {
         boolean z10;
         com.google.android.gms.internal.vision.g3 g3Var;
-        t0 t0Var;
+        s0 s0Var;
         e2.s sVar = new e2.s();
         sVar.c = 0;
         sVar.d = 3;
@@ -99,24 +100,24 @@ public final class e {
             if (context.getPackageManager().queryBroadcastReceivers(intent, 0).size() > 0) {
                 z10 = true;
                 this.q = z10;
-                int i13 = u0.b;
-                Intent intent2 = new Intent(context, (Class<?>) u0.class);
+                int i13 = t0.b;
+                Intent intent2 = new Intent(context, (Class<?>) t0.class);
                 intent2.setPackage(context.getPackageName());
                 context.getPackageManager().queryBroadcastReceivers(intent2, 0).size();
                 this.r = (i10 >= 30 || !z10) ? null : new k(context, new t1(this, 20));
                 j0 f0Var = i10 < 24 ? new f0(context, this) : new j0(context, this);
                 this.s = f0Var;
-                this.t = new s1(new z1(this, i11));
+                this.t = new s1(new a2(this, i11));
                 a(f0Var, true);
                 g3Var = this.r;
                 if (g3Var != null) {
                     a(g3Var, true);
                 }
-                t0Var = new t0(context, this);
-                this.c = t0Var;
-                Handler handler = (Handler) t0Var.d;
-                if (t0Var.a) {
-                    t0Var.a = true;
+                s0Var = new s0(context, this);
+                this.c = s0Var;
+                Handler handler = (Handler) s0Var.d;
+                if (s0Var.a) {
+                    s0Var.a = true;
                     IntentFilter intentFilter = new IntentFilter();
                     intentFilter.addAction("android.intent.action.PACKAGE_ADDED");
                     intentFilter.addAction("android.intent.action.PACKAGE_REMOVED");
@@ -124,8 +125,8 @@ public final class e {
                     intentFilter.addAction("android.intent.action.PACKAGE_REPLACED");
                     intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
                     intentFilter.addDataScheme("package");
-                    ((Context) t0Var.b).registerReceiver((androidx.mediarouter.app.f) t0Var.g, intentFilter, null, handler);
-                    handler.post((s0) t0Var.h);
+                    ((Context) s0Var.b).registerReceiver((androidx.mediarouter.app.f) s0Var.g, intentFilter, null, handler);
+                    handler.post((k7) s0Var.h);
                     return;
                 }
                 return;
@@ -133,23 +134,23 @@ public final class e {
         }
         z10 = false;
         this.q = z10;
-        int i132 = u0.b;
-        Intent intent22 = new Intent(context, (Class<?>) u0.class);
+        int i132 = t0.b;
+        Intent intent22 = new Intent(context, (Class<?>) t0.class);
         intent22.setPackage(context.getPackageName());
         context.getPackageManager().queryBroadcastReceivers(intent22, 0).size();
         this.r = (i10 >= 30 || !z10) ? null : new k(context, new t1(this, 20));
         if (i10 < 24) {
         }
         this.s = f0Var;
-        this.t = new s1(new z1(this, i11));
+        this.t = new s1(new a2(this, i11));
         a(f0Var, true);
         g3Var = this.r;
         if (g3Var != null) {
         }
-        t0Var = new t0(context, this);
-        this.c = t0Var;
-        Handler handler2 = (Handler) t0Var.d;
-        if (t0Var.a) {
+        s0Var = new s0(context, this);
+        this.c = s0Var;
+        Handler handler2 = (Handler) s0Var.d;
+        if (s0Var.a) {
         }
     }
 
@@ -324,10 +325,10 @@ public final class e {
                 throw new IllegalStateException("future is already set");
             }
             ll0Var3.k = a2;
-            z1 z1Var = new z1(ll0Var3, i11);
+            a2 a2Var = new a2(ll0Var3, i11);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
-            a2.b.a(z1Var, new i2.f0(bVar, i11));
+            a2.b.a(a2Var, new i2.f0(bVar, i11));
         }
     }
 
@@ -432,7 +433,7 @@ public final class e {
         int i10 = 0;
         s1Var.c = false;
         s1Var.b = SystemClock.elapsedRealtime();
-        ((Handler) s1Var.d).removeCallbacks((z1) s1Var.e);
+        ((Handler) s1Var.d).removeCallbacks((a2) s1Var.e);
         ArrayList arrayList2 = this.i;
         int size = arrayList2.size();
         int i11 = 0;
@@ -447,7 +448,7 @@ public final class e {
                 if (s1Var2.c) {
                     long j13 = s1Var2.a;
                     if (j13 > j12) {
-                        ((Handler) s1Var2.d).postDelayed((z1) s1Var2.e, j13);
+                        ((Handler) s1Var2.d).postDelayed((a2) s1Var2.e, j13);
                     }
                 }
                 boolean z12 = s1Var2.c;
@@ -578,7 +579,7 @@ public final class e {
         if (vVar == null) {
             g3 g3Var = this.C;
             if (g3Var != null) {
-                g3Var.o();
+                g3Var.v();
                 return;
             }
             return;
@@ -607,7 +608,7 @@ public final class e {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
             if (vVar2 == vVar3 || vVar2 == this.w) {
-                g3Var2.o();
+                g3Var2.v();
                 return;
             }
             int i11 = sVar.c == 1 ? 2 : 0;

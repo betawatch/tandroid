@@ -27,7 +27,7 @@ import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class a2 extends s4.g0 {
     public final TLRPC.TL_inputStickerSetShortName E;
@@ -531,7 +531,7 @@ public final class a2 extends s4.g0 {
             textView.setTextSize(1, 14.0f);
             textView.setTextColor(-8553090);
             textView.setText(LocaleController.getString(z10 ? R.string.NoEmojiFound : R.string.NoStickersFound));
-            x1Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 34.0f, 0.0f, 0.0f, -2, 17));
+            x1Var.addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
             n8Var = x1Var;
         } else if (i10 == 4) {
             l2 l2Var = new l2(n2Var, b2Var.getContext());

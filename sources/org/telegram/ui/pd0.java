@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pd0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -50,29 +50,29 @@ public final /* synthetic */ class pd0 implements Runnable {
                 }
                 break;
             default:
-                fg0 fg0Var = ud0Var.E;
+                eg0 eg0Var = ud0Var.E;
                 int i12 = 1;
                 if (tL_error != null && ("SRP_ID_INVALID".equals(tL_error.text) || "NEW_SALT_INVALID".equals(tL_error.text))) {
                     TL_account.getPassword getpassword = new TL_account.getPassword();
-                    i10 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
                     ConnectionsManager.getInstance(i10).sendRequest(getpassword, new sd0(ud0Var, str2, str, i12), 8);
                     break;
                 } else {
-                    fg0Var.k1(false, true);
+                    eg0Var.k1(false, true);
                     if (!(tLObject instanceof TLRPC.auth_Authorization)) {
                         if (tL_error != null) {
                             ud0Var.w = false;
                             if (!tL_error.text.startsWith("FLOOD_WAIT")) {
-                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
+                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error.text);
                                 break;
                             } else {
                                 int intValue = Utilities.parseInt((CharSequence) tL_error.text).intValue();
-                                fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                                eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
                                 break;
                             }
                         }
                     } else {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fg0Var.getParentActivity());
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eg0Var.getParentActivity());
                         alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new zu(21, ud0Var, tLObject));
                         boolean isEmpty = TextUtils.isEmpty(str2);
                         org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
@@ -82,7 +82,7 @@ public final /* synthetic */ class pd0 implements Runnable {
                             b2Var.T = LocaleController.getString(R.string.YourPasswordChangedSuccessText);
                         }
                         b2Var.R = LocaleController.getString(R.string.TwoStepVerificationTitle);
-                        Dialog showDialog = fg0Var.showDialog(b2Var);
+                        Dialog showDialog = eg0Var.showDialog(b2Var);
                         if (showDialog != null) {
                             showDialog.setCanceledOnTouchOutside(false);
                             showDialog.setCancelable(false);

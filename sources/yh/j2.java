@@ -1,136 +1,18 @@
 package yh;
 
-import ai.y9;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.is0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.r5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class j2 extends s4.v {
-    public final /* synthetic */ is0 d;
-    public final /* synthetic */ m2 e;
-
-    public j2(m2 m2Var, is0 is0Var) {
-        this.e = m2Var;
-        this.d = is0Var;
+public final class j2 extends r5 {
+    @Override // org.telegram.ui.Components.r5, android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
     }
 
-    @Override // s4.v
-    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
-        super.a(recyclerView, b1Var);
-        b1Var.a.setPressed(false);
-    }
-
-    @Override // s4.v
-    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
-        View view = b1Var.a;
-        return r(view instanceof h1 ? ((h1) view).getSavedGift() : null) ? s4.v.l(15, 0) : s4.v.l(0, 0);
-    }
-
-    @Override // s4.v
-    public final boolean j() {
-        return this.e.n;
-    }
-
-    @Override // s4.v
-    public final boolean k() {
-        return this.e.n;
-    }
-
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
-        ai.j1 j1Var;
-        m2 m2Var = this.e;
-        h2 h2Var = m2Var.f;
-        if (m2Var.e == null || !m2Var.n) {
-            return false;
-        }
-        View view = b1Var.a;
-        if (!r(view instanceof h1 ? ((h1) view).getSavedGift() : null)) {
-            return false;
-        }
-        View view2 = b1Var2.a;
-        if (!r(view2 instanceof h1 ? ((h1) view2).getSavedGift() : null)) {
-            return false;
-        }
-        int b10 = b1Var.b();
-        int b11 = b1Var2.b();
-        boolean z10 = m2Var.d;
-        is0 is0Var = this.d;
-        if (z10) {
-            m2Var.e.l(b10, b11);
-            is0Var.e.n(m2Var.e.d);
-        } else {
-            y9 y9Var = m2Var.e;
-            if (y9Var.q == null) {
-                y9Var.q = y9Var.i();
-            }
-            y9Var.l(b10, b11);
-        }
-        h2Var.W2.p(b10, b11);
-        h2Var.W2.S();
-        if (m2Var.d) {
-            HashMap hashMap = q2.T;
-            is0Var.f(true);
-        }
-        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
-        if ((U instanceof ProfileActivity) && (j1Var = ((ProfileActivity) U).w0) != null) {
-            j1Var.a();
-        }
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.b1 b1Var, int i10) {
-        m2 m2Var = this.e;
-        if (i10 != 0) {
-            h2 h2Var = m2Var.f;
-            if (h2Var != null) {
-                h2Var.I0(false);
-            }
-            if (b1Var != null) {
-                b1Var.a.setPressed(true);
-                return;
-            }
-            return;
-        }
-        y9 y9Var = m2Var.e;
-        if (y9Var != null) {
-            ArrayList arrayList = y9Var.q;
-            if (arrayList != null) {
-                ArrayList i11 = y9Var.i();
-                if (arrayList.size() == i11.size()) {
-                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                        if (arrayList.get(i12) == i11.get(i12)) {
-                        }
-                    }
-                }
-                y9Var.m();
-                y9Var.q = null;
-                return;
-            }
-            y9Var.q = null;
-        }
-    }
-
-    public final boolean r(TL_stars.SavedStarGift savedStarGift) {
-        m2 m2Var = this.e;
-        if (!m2Var.n) {
-            return false;
-        }
-        if (m2Var.e == this.d.d) {
-            return savedStarGift != null && savedStarGift.pinned_to_top;
-        }
-        return true;
-    }
-
-    @Override // s4.v
-    public final void q(s4.b1 b1Var) {
+    @Override // org.telegram.ui.Components.r5, android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.uz0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class d6 implements n2 {
     public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
@@ -27,7 +27,7 @@ public final class d6 implements n2 {
     @Override // org.telegram.ui.Cells.n2
     public final void c() {
         org.telegram.ui.ActionBar.n2 n2Var = this.a;
-        ci.i7 storiesController = n2Var.getMessagesController().getStoriesController();
+        ci.h7 storiesController = n2Var.getMessagesController().getStoriesController();
         ArrayList arrayList = storiesController.h;
         if (arrayList.isEmpty()) {
             return;
@@ -40,7 +40,7 @@ public final class d6 implements n2 {
                 arrayList2.add(Long.valueOf(peerDialogId));
             }
         }
-        n2Var.getOrCreateStoryViewer().G(this.b, null, arrayList2, 0, null, null, new ci.r7(this.c), false);
+        n2Var.getOrCreateStoryViewer().G(this.b, null, arrayList2, 0, null, null, new ci.q7(this.c), false);
     }
 
     @Override // org.telegram.ui.Cells.n2
@@ -48,7 +48,7 @@ public final class d6 implements n2 {
         org.telegram.ui.ActionBar.n2 n2Var = this.a;
         if (n2Var.getMessagesController().getStoriesController().I(r2Var.getDialogId())) {
             n2Var.getOrCreateStoryViewer().getClass();
-            n2Var.getOrCreateStoryViewer().D(n2Var.getContext(), r2Var.getDialogId(), new ci.r7(this.c));
+            n2Var.getOrCreateStoryViewer().D(n2Var.getContext(), r2Var.getDialogId(), new ci.q7(this.c));
         }
     }
 

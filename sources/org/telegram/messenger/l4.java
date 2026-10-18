@@ -1,15 +1,19 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.GoogleMapsProvider;
+import java.util.List;
+import org.telegram.messenger.TelegramMediaSession;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l4 implements h8.f {
-    public final /* synthetic */ GoogleMapsProvider.GoogleMapView a;
-    public final /* synthetic */ q0.a b;
+public final /* synthetic */ class l4 implements TelegramMediaSession.BrowseChildrenCallback {
+    public final /* synthetic */ Runnable a;
 
-    public /* synthetic */ l4(GoogleMapsProvider.GoogleMapView googleMapView, q0.a aVar) {
-        this.a = googleMapView;
-        this.b = aVar;
+    public /* synthetic */ l4(Runnable runnable) {
+        this.a = runnable;
+    }
+
+    @Override // org.telegram.messenger.TelegramMediaSession.BrowseChildrenCallback
+    public void onResult(List list) {
+        TelegramMediaSession.lambda$ensureLoaded$2(this.a, list);
     }
 }

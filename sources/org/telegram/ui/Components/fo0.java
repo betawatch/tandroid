@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class fo0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static org.telegram.ui.ActionBar.b2 H;
@@ -77,7 +77,7 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
         this.e = l5Var;
         u1Var.setAdapter(l5Var);
         u1Var.setOverScrollMode(2);
-        addView(u1Var, w7.z5.d(-1.0f, -1));
+        addView(u1Var, w7.z5.c(-1.0f, -1));
         u1Var.setOnItemClickListener(new xn0(this, i10, n2Var, 0));
         u1Var.setOnItemLongClickListener(new org.telegram.ui.ha(this, i10, n2Var, d6Var, 3));
         yn0 yn0Var = new yn0();
@@ -131,9 +131,9 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
         zn0Var.setImeOptions(6);
         zn0Var.setBackgroundDrawable(null);
         zn0Var.setPadding(0, 0, AndroidUtilities.dp(42.0f), 0);
-        LinearLayout e = org.telegram.messenger.kk.e(context, 1);
+        LinearLayout e = org.telegram.messenger.lk.e(context, 1);
         TextView textView = new TextView(context);
-        org.telegram.messenger.kk.o(i11, d6Var, textView, 1, 16.0f);
+        org.telegram.messenger.lk.o(i11, d6Var, textView, 1, 16.0f);
         textView.setText(LocaleController.getString(R.string.SavedTagLabelTagText));
         e.addView(textView, w7.z5.k(24.0f, 5.0f, 24.0f, 12.0f, -1, -2));
         e.addView(zn0Var, w7.z5.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
@@ -422,7 +422,7 @@ public abstract class fo0 extends FrameLayout implements NotificationCenter.Noti
             this.f.addView(textView, w7.z5.q(-2, -2, 16));
             this.f.setPadding(AndroidUtilities.dp(7.0f), 0, 0, 0);
             this.f.setClipToPadding(false);
-            addView(this.f, w7.z5.a(-1.0f, 5.0f, 0.0f, 5.0f, 0.0f, -2, 19));
+            addView(this.f, w7.z5.d(-2, -1.0f, 19, 5.0f, 0.0f, 5.0f, 0.0f));
         }
         if (z10) {
             return;

@@ -25,11 +25,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ph0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout {
     public int E;
@@ -321,7 +321,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
             int i10 = 1;
             animatorSet.playTogether(ObjectAnimator.ofFloat(view, (Property<View, Float>) View.ALPHA, 0.0f, view.isEnabled() ? 1.0f : 0.5f), ObjectAnimator.ofFloat(view, (Property<View, Float>) View.TRANSLATION_Y, AndroidUtilities.dp(this.v ? 6.0f : -6.0f), 0.0f));
             animatorSet.setDuration(180L);
-            animatorSet.addListener(new ci.p3(this, animatorSet, view, i10));
+            animatorSet.addListener(new ci.o3(this, animatorSet, view, i10));
             animatorSet.setInterpolator(m1.m);
             animatorSet.start();
             if (this.x == null) {
@@ -415,7 +415,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                         View childAt = i1Var.getChildAt(i10);
                         if (childAt != null && childAt.getVisibility() == 0 && !(childAt instanceof j1)) {
                             if (((Integer) hashMap.get(childAt)) != null) {
-                                if (kk.y(32.0f, AndroidUtilities.dp(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f7) {
+                                if (lk.y(32.0f, AndroidUtilities.dp(48.0f) * r5.intValue(), measuredHeight) > measuredHeight * f7) {
                                     break;
                                 }
                             }
@@ -565,7 +565,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
             ph0Var.d = new k0.b(context, new gi.c4(ph0Var, ViewConfiguration.get(context).getScaledTouchSlop(), 2));
             paint.setColor(-16777216);
             this.J = ph0Var;
-            addView(ph0Var, w7.z5.d(-2.0f, -2));
+            addView(ph0Var, w7.z5.c(-2.0f, -2));
         }
         if ((i11 & 4) == 0) {
             try {
@@ -577,7 +577,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
                 if (ph0Var2 != null) {
                     ph0Var2.addView(scrollView, w7.z5.e(-2, -2, this.v ? 80 : 48));
                 } else {
-                    addView(scrollView, w7.z5.d(-2.0f, -2));
+                    addView(scrollView, w7.z5.c(-2.0f, -2));
                 }
             } catch (Throwable th2) {
                 FileLog.e(th2);
@@ -595,7 +595,7 @@ public class ActionBarPopupWindow$ActionBarPopupWindowLayout extends FrameLayout
         if (ph0Var3 != null) {
             ph0Var3.addView(i1Var, w7.z5.e(-2, -2, this.v ? 80 : 48));
         } else {
-            addView(i1Var, w7.z5.d(-2.0f, -2));
+            addView(i1Var, w7.z5.c(-2.0f, -2));
         }
     }
 }

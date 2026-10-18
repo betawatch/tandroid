@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.BirthdayController;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qr0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -45,9 +45,9 @@ public final /* synthetic */ class qr0 implements View.OnClickListener {
                         ug.m1.f0(2, BirthdayController.getInstance(i10).getState());
                         break;
                     } else {
-                        yh.p1 p1Var = new yh.p1(is0Var.getContext(), i10, is0Var.c, null, null);
-                        p1Var.W(BirthdayController.getInstance(i10).isToday(is0Var.c));
-                        p1Var.show();
+                        yh.o1 o1Var = new yh.o1(is0Var.getContext(), i10, is0Var.c, null, null);
+                        o1Var.W(BirthdayController.getInstance(i10).isToday(is0Var.c));
+                        o1Var.show();
                         break;
                     }
                 }

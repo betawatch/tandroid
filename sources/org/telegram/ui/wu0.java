@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class wu0 extends FrameLayout {
     public final FrameLayout a;
@@ -41,8 +41,8 @@ public final class wu0 extends FrameLayout {
         TextureView textureView = new TextureView(context);
         this.b = textureView;
         textureView.setOpaque(false);
-        o4Var.addView(textureView, w7.z5.d(-1.0f, -1));
-        addView(frameLayout, w7.z5.d(-2.0f, -2));
+        o4Var.addView(textureView, w7.z5.c(-1.0f, -1));
+        addView(frameLayout, w7.z5.c(-2.0f, -2));
         setWillNotDraw(false);
     }
 

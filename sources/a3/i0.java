@@ -2,7 +2,7 @@ package a3;
 
 import ai.ac;
 import ai.k7;
-import ai.r3;
+import ai.t3;
 import ai.ub;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -10,13 +10,13 @@ import android.graphics.Point;
 import android.graphics.RectF;
 import android.text.TextUtils;
 import android.view.View;
-import ci.aa;
-import ci.c8;
+import ci.b8;
+import ci.g7;
 import ci.h7;
-import ci.i7;
-import ci.r7;
-import ci.t7;
-import ci.w7;
+import ci.q7;
+import ci.s7;
+import ci.v7;
+import ci.z9;
 import ei.a1;
 import ei.a8;
 import ei.k9;
@@ -70,7 +70,7 @@ import org.telegram.ui.s50;
 import org.telegram.ui.sn;
 import org.telegram.ui.wt;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements Runnable {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final /* synthetic */ class i0 implements Runnable {
             case 4:
                 ci.r rVar = (ci.r) obj2;
                 ci.q qVar = (ci.q) obj;
-                i7 i7Var = rVar.s;
+                h7 h7Var = rVar.s;
                 ArrayList arrayList = rVar.x;
                 ey eyVar = rVar.e0;
                 if (eyVar != null && eyVar.getParentActivity() != null) {
@@ -157,7 +157,7 @@ public final /* synthetic */ class i0 implements Runnable {
                     while (true) {
                         if (i16 < arrayList.size()) {
                             long j11 = ((ci.o) arrayList.get(i16)).c;
-                            if (j11 == UserConfig.getInstance(rVar.f).clientUserId || !i7Var.J(j11)) {
+                            if (j11 == UserConfig.getInstance(rVar.f).clientUserId || !h7Var.J(j11)) {
                                 i16++;
                             } else {
                                 z10 = false;
@@ -167,9 +167,9 @@ public final /* synthetic */ class i0 implements Runnable {
                         }
                     }
                     if (!qVar.F || (z10 && arrayList.size() != 1)) {
-                        if (qVar.F || !i7Var.J(qVar.E)) {
+                        if (qVar.F || !h7Var.J(qVar.E)) {
                             for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                                if (i7Var.I(((ci.o) arrayList.get(i17)).c)) {
+                                if (h7Var.I(((ci.o) arrayList.get(i17)).c)) {
                                     arrayList2.add(Long.valueOf(((ci.o) arrayList.get(i17)).c));
                                 } else if (i17 <= i15) {
                                     i15--;
@@ -180,7 +180,7 @@ public final /* synthetic */ class i0 implements Runnable {
                         } else {
                             for (int i18 = 0; i18 < arrayList.size(); i18++) {
                                 long j12 = ((ci.o) arrayList.get(i18)).c;
-                                if (!qVar.F && i7Var.J(j12)) {
+                                if (!qVar.F && h7Var.J(j12)) {
                                     arrayList2.add(Long.valueOf(j12));
                                 }
                                 if (j12 == qVar.E) {
@@ -197,10 +197,10 @@ public final /* synthetic */ class i0 implements Runnable {
                         z11 = false;
                         z12 = true;
                     }
-                    aa orCreateStoryViewer = eyVar.getOrCreateStoryViewer();
-                    orCreateStoryViewer.s(new r3(rVar, j10, 2));
+                    z9 orCreateStoryViewer = eyVar.getOrCreateStoryViewer();
+                    orCreateStoryViewer.s(new t3(rVar, j10, 2));
                     Context context = rVar.getContext();
-                    r7 a2 = r7.a(rVar.h);
+                    q7 a2 = q7.a(rVar.h);
                     a2.e = new ci.f(0, rVar, z12);
                     a2.f = rVar.b == 1;
                     a2.h = z11;
@@ -211,20 +211,20 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 break;
             case 5:
-                i7 i7Var2 = (i7) obj2;
+                h7 h7Var2 = (h7) obj2;
                 TLObject tLObject = (TLObject) obj;
-                int i19 = i7Var2.a;
-                i7Var2.C.remove(Long.valueOf(j10));
+                int i19 = h7Var2.a;
+                h7Var2.C.remove(Long.valueOf(j10));
                 if (tLObject != null) {
                     TL_stories.TL_stories_peerStories tL_stories_peerStories = (TL_stories.TL_stories_peerStories) tLObject;
                     MessagesController.getInstance(i19).putUsers(tL_stories_peerStories.users, false);
                     TLRPC.User user = MessagesController.getInstance(i19).getUser(Long.valueOf(j10));
                     TL_stories.PeerStories peerStories = tL_stories_peerStories.stories;
-                    i7Var2.i.k(peerStories, DialogObject.getPeerDialogId(peerStories.peer));
-                    if (user != null && (i7Var2.M(user) || user.self)) {
-                        i7Var2.g(peerStories);
-                        w7 w7Var = i7Var2.k;
-                        w7Var.b.getStorageQueue().postRunnable(new t7(w7Var, peerStories, 0));
+                    h7Var2.i.k(peerStories, DialogObject.getPeerDialogId(peerStories.peer));
+                    if (user != null && (h7Var2.M(user) || user.self)) {
+                        h7Var2.g(peerStories);
+                        v7 v7Var = h7Var2.k;
+                        v7Var.b.getStorageQueue().postRunnable(new s7(v7Var, peerStories, 0));
                     }
                     StringBuilder t10 = a1.g.t(j10, "StoriesController processAllStoriesResponse dialogId=", " overwrite stories ");
                     t10.append(tL_stories_peerStories.stories.stories.size());
@@ -234,12 +234,12 @@ public final /* synthetic */ class i0 implements Runnable {
                 }
                 break;
             case 6:
-                h7 h7Var = (h7) obj2;
+                g7 g7Var = (g7) obj2;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
-                i7 i7Var3 = h7Var.M;
-                a1 a1Var = i7Var3.w;
-                h7Var.d = true;
-                a8 a8Var = h7Var.c;
+                h7 h7Var3 = g7Var.M;
+                a1 a1Var = h7Var3.w;
+                g7Var.d = true;
+                a8 a8Var = g7Var.c;
                 if (a8Var.w) {
                     a1Var.b(a8Var);
                 }
@@ -291,20 +291,20 @@ public final /* synthetic */ class i0 implements Runnable {
                         z13 = false;
                         arrayList3.add(0, a8Var);
                         a1Var.a(z0Var);
-                        if (h7Var.b) {
-                            i7Var3.R = z13;
-                            i7Var3.S = null;
+                        if (g7Var.b) {
+                            h7Var3.R = z13;
+                            h7Var3.S = null;
                             break;
                         }
                     }
                 }
                 z13 = false;
-                if (h7Var.b) {
+                if (g7Var.b) {
                 }
                 break;
             case 7:
                 ArrayList arrayList5 = (ArrayList) obj;
-                MessagesStorage messagesStorage = ((w7) obj2).b;
+                MessagesStorage messagesStorage = ((v7) obj2).b;
                 SQLiteDatabase database = messagesStorage.getDatabase();
                 try {
                     String join = TextUtils.join(", ", arrayList5);
@@ -316,13 +316,13 @@ public final /* synthetic */ class i0 implements Runnable {
                     return;
                 }
             case 8:
-                ((w7) obj2).l(j10, (TL_stories.StoryItem) obj);
+                ((v7) obj2).l(j10, (TL_stories.StoryItem) obj);
                 break;
             case 9:
-                c8 c8Var = (c8) obj2;
-                c8Var.getClass();
+                b8 b8Var = (b8) obj2;
+                b8Var.getClass();
                 ((View) obj).invalidate();
-                MessagesController.getInstance(c8Var.a).getStoriesController().e0(j10, false);
+                MessagesController.getInstance(b8Var.a).getStoriesController().e0(j10, false);
                 break;
             case 10:
                 k9 k9Var = (k9) obj2;

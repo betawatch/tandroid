@@ -7,7 +7,7 @@ import java.util.HashMap;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class q1 implements org.telegram.ui.Components.r91 {
     public final /* synthetic */ v1 a;
@@ -21,11 +21,11 @@ public final class q1 implements org.telegram.ui.Components.r91 {
         v1 v1Var = this.a;
         l4 l4Var = v1Var.x;
         if (z10) {
-            l4Var.R.addView(l4Var.Q, w7.z5.d(-1.0f, -1));
+            l4Var.R.addView(l4Var.Q, w7.z5.c(-1.0f, -1));
             l4Var.R.setVisibility(0);
             l4Var.R.a(f7, i10);
             l4Var.E0 = v1Var.b;
-            l4Var.P.addView(view, w7.z5.d(-1.0f, -1));
+            l4Var.P.addView(view, w7.z5.c(-1.0f, -1));
             l4Var.P.setVisibility(0);
         } else {
             l4Var.R.removeView(l4Var.Q);

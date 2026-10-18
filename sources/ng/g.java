@@ -23,7 +23,7 @@ import s4.b1;
 import s4.o0;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class g extends hm0 {
     public final /* synthetic */ int c = 0;
@@ -143,7 +143,7 @@ public final class g extends hm0 {
                     cp0Var.setReportChanges(true);
                     cp0Var.setDelegate(new l2.f(hVar, 4));
                     cp0Var.setImportantForAccessibility(2);
-                    hVar.addView(cp0Var, z5.a(38.0f, 5.0f, 29.0f, 47.0f, 0.0f, -1, 83));
+                    hVar.addView(cp0Var, z5.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
                     frameLayout = hVar;
                 }
                 frameLayout.setLayoutParams(new o0(-1, -2));

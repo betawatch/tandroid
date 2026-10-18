@@ -2,9 +2,9 @@ package f5;
 
 import com.google.android.gms.internal.play_billing.k3;
 import java.nio.ByteBuffer;
-import w7.g7;
+import w7.c7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class o extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ le.b n;
@@ -30,7 +30,7 @@ public final class o extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         this.e = e5.b.i(byteBuffer);
-        int a2 = g7.a(e5.b.i(byteBuffer));
+        int a2 = c7.a(e5.b.i(byteBuffer));
         this.h = a2;
         if (this.e == 0) {
             this.f = new long[a2];

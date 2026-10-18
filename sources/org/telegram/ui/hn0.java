@@ -44,7 +44,7 @@ import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class hn0 implements Runnable {
         int indexOf;
         int i10;
         int i11;
-        org.telegram.ui.web.a1 a1Var;
+        org.telegram.ui.web.b1 b1Var;
         int i12 = this.a;
         int i13 = 3;
         String str = "";
@@ -152,15 +152,15 @@ public final /* synthetic */ class hn0 implements Runnable {
                             String str5 = string;
                             M = str5 != null ? a02.M(str5, replaceTags, i15) : a02.Q(i15, 36, replaceTags);
                         } else {
-                            M = a02.K(i15, string, replaceTags, LocaleController.getString(R.string.ViewInChat), new ai.o4(r02, i13));
+                            M = a02.K(i15, string, replaceTags, LocaleController.getString(R.string.ViewInChat), new ai.l4(r02, i13));
                         }
                         org.telegram.ui.Components.qc qcVar = M;
                         qcVar.r = z10;
                         qcVar.j = 5000;
-                        ci.z3 z3Var = new ci.z3(go0Var, qcVar, z12, message, 4);
+                        ci.y3 y3Var = new ci.y3(go0Var, qcVar, z12, message, 4);
                         org.telegram.ui.Components.ub ubVar = qcVar.e;
                         if (ubVar != null) {
-                            ubVar.setOnClickListener(z3Var);
+                            ubVar.setOnClickListener(y3Var);
                         }
                         qcVar.k(z13);
                         break;
@@ -624,12 +624,12 @@ public final /* synthetic */ class hn0 implements Runnable {
                     break;
                 }
             case 25:
-                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) obj4;
-                ci.z7 z7Var = (ci.z7) obj3;
+                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) obj4;
+                ci.y7 y7Var = (ci.y7) obj3;
                 String str13 = (String) obj2;
                 JSONObject jSONObject = (JSONObject) obj;
-                if (!x0Var.c || ((a1Var = x0Var.Q) != null && a1Var.o(z7Var))) {
-                    x0Var.d("window.Telegram.WebView.receiveEvent('" + str13 + "', " + jSONObject + ");");
+                if (!y0Var.c || ((b1Var = y0Var.Q) != null && b1Var.o(y7Var))) {
+                    y0Var.d("window.Telegram.WebView.receiveEvent('" + str13 + "', " + jSONObject + ");");
                     break;
                 } else {
                     FileLog.d("notifyEvent " + str13 + " dropped after document change");

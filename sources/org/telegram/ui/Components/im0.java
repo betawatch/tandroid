@@ -39,7 +39,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class im0 extends RecyclerView implements ch.a {
     public static int[] O2;
@@ -233,7 +233,7 @@ public class im0 extends RecyclerView implements ch.a {
 
     public final void D0(ClippingImageView clippingImageView, FrameLayout.LayoutParams layoutParams) {
         if (this.b1 == null) {
-            this.b1 = new ah.x(this, getContext(), 19);
+            this.b1 = new ah.x(this, getContext(), 20);
         }
         this.b1.addView(clippingImageView, layoutParams);
     }
@@ -1707,7 +1707,7 @@ public class im0 extends RecyclerView implements ch.a {
         if (this.Z0 == null) {
             return super.onInterceptTouchEvent(motionEvent);
         }
-        int i10 = org.telegram.ui.sn.Hc;
+        int i10 = org.telegram.ui.sn.Ic;
         return true;
     }
 

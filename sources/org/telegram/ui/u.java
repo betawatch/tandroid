@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                     int x02 = SharedConfig.adaptableColorInBrowser ? org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Pk, false) : l4Var.u0[0].getBackgroundColor();
                     int x03 = SharedConfig.adaptableColorInBrowser ? org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false) : AndroidUtilities.computePerceivedBrightness(l4Var.u0[0].getBackgroundColor()) >= 0.721f ? -16777216 : -1;
                     int m12 = org.telegram.ui.ActionBar.h6.m1(0.65f, x03);
-                    org.telegram.ui.web.x0 webView = l4Var.u0[0].getWebView();
+                    org.telegram.ui.web.y0 webView = l4Var.u0[0].getWebView();
                     if (webView != null) {
                         WebBackForwardList copyBackForwardList = webView.copyBackForwardList();
                         int currentIndex = copyBackForwardList.getCurrentIndex();
@@ -95,7 +95,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                             int i10 = 0;
                             while (i10 < currentIndex) {
                                 WebHistoryItem itemAtIndex = copyBackForwardList.getItemAtIndex(i10);
-                                F2.c(r52, itemAtIndex.getTitle(), new hg.n(currentIndex, i10, webView, 5), r52);
+                                F2.c(r52, itemAtIndex.getTitle(), new hg.n(currentIndex, i10, webView, 6), r52);
                                 org.telegram.ui.ActionBar.e1 y3 = F2.y();
                                 if (y3 != null) {
                                     y3.setSubtext(itemAtIndex.getUrl());
@@ -181,7 +181,7 @@ public final /* synthetic */ class u implements View.OnLongClickListener {
                     F2.W(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(40.0f), l4Var.h0.getBackgroundColor()));
                     F2.P(x02);
                     if (F2.x() > 0) {
-                        l4Var.m(new org.telegram.messenger.e6(l4Var, F2, f7, 1));
+                        l4Var.m(new org.telegram.messenger.f6(l4Var, F2, f7, 1));
                         return true;
                     }
                 }

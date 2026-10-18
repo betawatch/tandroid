@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ut0 implements Runnable {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final /* synthetic */ class ut0 implements Runnable {
                 ku0 ku0Var = (ku0) this.b;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) ku0Var.a.N0.getLayoutParams();
                 ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
-                int A = org.telegram.messenger.kk.A(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A = org.telegram.messenger.lk.A(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer = ku0Var.a;
                 int i15 = A + (!photoViewer.s ? AndroidUtilities.statusBarHeight : 0);
                 if (i15 != layoutParams.topMargin) {
@@ -65,7 +65,7 @@ public final /* synthetic */ class ut0 implements Runnable {
                     photoViewer.N0.setLayoutParams(layoutParams);
                 }
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) ku0Var.a.O0.getLayoutParams();
-                int A2 = org.telegram.messenger.kk.A(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int A2 = org.telegram.messenger.lk.A(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
                 PhotoViewer photoViewer2 = ku0Var.a;
                 int i16 = A2 + (!photoViewer2.s ? AndroidUtilities.statusBarHeight : 0);
                 if (layoutParams2.topMargin != i16) {
@@ -103,7 +103,7 @@ public final /* synthetic */ class ut0 implements Runnable {
                 l4 l4Var2 = v1Var.x;
                 View view = l4Var2.O;
                 if (view != null) {
-                    l4Var2.P.addView(view, w7.z5.d(-1.0f, -1));
+                    l4Var2.P.addView(view, w7.z5.c(-1.0f, -1));
                     v1Var.x.P.setVisibility(0);
                     break;
                 }

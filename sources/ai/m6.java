@@ -7,7 +7,7 @@ import org.telegram.ui.Components.br;
 import org.telegram.ui.Components.pm0;
 import org.telegram.ui.Components.zo0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class m6 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 1:
-                ((ci.w1) this.b).f.onAttachedToWindow();
+                ((ci.v1) this.b).f.onAttachedToWindow();
                 break;
             case 2:
                 androidx.biometric.e eVar = (androidx.biometric.e) this.b;
@@ -60,7 +60,7 @@ public final class m6 implements View.OnAttachStateChangeListener {
             case 4:
                 break;
             case 5:
-                ((yh.k2) this.b).a(view);
+                ((yh.j2) this.b).a(view);
                 break;
             case 6:
                 org.telegram.ui.Components.ja jaVar = (org.telegram.ui.Components.ja) this.b;
@@ -103,21 +103,21 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 13:
-                ((yh.e1) this.b).l.a();
+                ((yh.d1) this.b).l.a();
                 break;
             case 14:
-                yh.o3 o3Var = (yh.o3) this.b;
-                yh.m3 m3Var = o3Var.N;
-                if (m3Var != null) {
-                    m3Var.a(o3Var.c);
+                yh.n3 n3Var = (yh.n3) this.b;
+                yh.l3 l3Var = n3Var.N;
+                if (l3Var != null) {
+                    l3Var.a(n3Var.c);
                     break;
                 }
                 break;
             default:
-                yh.r3 r3Var = (yh.r3) this.b;
-                yh.p3 p3Var = r3Var.N;
-                if (p3Var != null) {
-                    p3Var.a(r3Var.c);
+                yh.q3 q3Var = (yh.q3) this.b;
+                yh.o3 o3Var = q3Var.N;
+                if (o3Var != null) {
+                    o3Var.a(q3Var.c);
                     break;
                 }
                 break;
@@ -138,7 +138,7 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 1:
-                ((ci.w1) this.b).f.onDetachedFromWindow();
+                ((ci.v1) this.b).f.onDetachedFromWindow();
                 break;
             case 2:
                 androidx.biometric.e eVar = (androidx.biometric.e) this.b;
@@ -174,7 +174,7 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 view.removeOnAttachStateChangeListener(this);
                 break;
             case 5:
-                ((yh.k2) this.b).o(view);
+                ((yh.j2) this.b).o(view);
                 break;
             case 6:
                 ((org.telegram.ui.Components.ja) this.b).c.clear();
@@ -214,21 +214,21 @@ public final class m6 implements View.OnAttachStateChangeListener {
                 }
                 break;
             case 13:
-                ((yh.e1) this.b).l.b();
+                ((yh.d1) this.b).l.b();
                 break;
             case 14:
-                yh.o3 o3Var = (yh.o3) this.b;
-                yh.m3 m3Var = o3Var.N;
-                if (m3Var != null) {
-                    m3Var.o(o3Var.c);
+                yh.n3 n3Var = (yh.n3) this.b;
+                yh.l3 l3Var = n3Var.N;
+                if (l3Var != null) {
+                    l3Var.o(n3Var.c);
                     break;
                 }
                 break;
             default:
-                yh.r3 r3Var = (yh.r3) this.b;
-                yh.p3 p3Var = r3Var.N;
-                if (p3Var != null) {
-                    p3Var.o(r3Var.c);
+                yh.q3 q3Var = (yh.q3) this.b;
+                yh.o3 o3Var = q3Var.N;
+                if (o3Var != null) {
+                    o3Var.o(q3Var.c);
                     break;
                 }
                 break;

@@ -10,7 +10,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mf implements Runnable {
     public final /* synthetic */ int a;
@@ -40,10 +40,10 @@ public final /* synthetic */ class mf implements Runnable {
                 break;
             case 2:
                 snVar.D7(false);
-                sg.x0 x0Var = new sg.x0((org.telegram.ui.ActionBar.n2) snVar, 24, true);
-                x0Var.setDimBehind(false);
-                x0Var.setOnHideListener(new qe(snVar, i11));
-                x0Var.show();
+                sg.y0 y0Var = new sg.y0((org.telegram.ui.ActionBar.n2) snVar, 24, true);
+                y0Var.setDimBehind(false);
+                y0Var.setOnHideListener(new qe(snVar, i11));
+                y0Var.show();
                 break;
             case 3:
                 sn.U(snVar);
@@ -59,7 +59,7 @@ public final /* synthetic */ class mf implements Runnable {
                     snVar.getMessagesController().disableAds(true);
                     break;
                 } else {
-                    snVar.showDialog(new sg.x0((org.telegram.ui.ActionBar.n2) snVar, 3, true));
+                    snVar.showDialog(new sg.y0((org.telegram.ui.ActionBar.n2) snVar, 3, true));
                     break;
                 }
             case 6:
@@ -216,7 +216,7 @@ public final /* synthetic */ class mf implements Runnable {
                         snVar.g2.setAlpha(0.0f);
                         snVar.g2.setVisibility(4);
                         snVar.g2.setText(LocaleController.getString(R.string.ScheduledOrNoSoundHint));
-                        snVar.X0.addView(snVar.g2, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+                        snVar.X0.addView(snVar.g2, w7.z5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
                     }
                     snVar.g2.f(sendButton, true);
                     snVar.h2 = true;
@@ -240,7 +240,7 @@ public final /* synthetic */ class mf implements Runnable {
                         snVar.i2.setAlpha(0.0f);
                         snVar.i2.setVisibility(4);
                         snVar.i2.setText(LocaleController.getString(R.string.ScheduledHint));
-                        snVar.X0.addView(snVar.i2, w7.z5.a(-2.0f, 10.0f, 0.0f, 10.0f, 0.0f, -2, 51));
+                        snVar.X0.addView(snVar.i2, w7.z5.d(-2, -2.0f, 51, 10.0f, 0.0f, 10.0f, 0.0f));
                     }
                     snVar.i2.f(sendButton2, true);
                     snVar.j2 = true;

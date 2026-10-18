@@ -1,0 +1,63 @@
+package org.telegram.messenger;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class vi implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ vi(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$60((TLObject) this.c, (SendMessagesHelper.DelayedMessage) this.d, (String) this.e);
+                break;
+            case 1:
+                ((SendMessagesHelper) this.b).lambda$sendMessage$22((TLRPC.TL_messages_forwardMessages) this.c, (ArrayList) this.d, (oj) this.e);
+                break;
+            case 2:
+                ((SendMessagesHelper) this.b).lambda$didReceivedNotification$4((SendMessagesHelper.DelayedMessage) this.d, (File) this.c, (MessageObject) this.e);
+                break;
+            case 3:
+                ((UnconfirmedAuthController) this.b).lambda$readCache$0((ArrayList) this.c, (HashSet) this.d, (ArrayList) this.e);
+                break;
+            default:
+                ((UserNameResolver) this.b).lambda$resolve$0((String) this.e, (TLRPC.TL_error) this.d, (TLObject) this.c);
+                break;
+        }
+    }
+
+    public /* synthetic */ vi(String str, UserNameResolver userNameResolver, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = 4;
+        this.b = userNameResolver;
+        this.e = str;
+        this.d = tL_error;
+        this.c = tLObject;
+    }
+
+    public /* synthetic */ vi(SendMessagesHelper sendMessagesHelper, SendMessagesHelper.DelayedMessage delayedMessage, File file, MessageObject messageObject) {
+        this.a = 2;
+        this.b = sendMessagesHelper;
+        this.d = delayedMessage;
+        this.c = file;
+        this.e = messageObject;
+    }
+}

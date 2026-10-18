@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class s implements Runnable {
                             default:
                                 m0 m0Var3 = m0Var;
                                 m0Var3.getClass();
-                                ((o2) jVar).r(true);
+                                ((n2) jVar).r(true);
                                 org.telegram.ui.ActionBar.m1 m1Var2 = m0Var3.R1;
                                 if (m1Var2 != null && m1Var2.isShowing()) {
                                     m0Var3.R1.d(true);
@@ -75,7 +75,7 @@ public final /* synthetic */ class s implements Runnable {
                     }
                 });
                 linearLayout.addView(textView, z5.n(-2, 48));
-                if (jVar instanceof v2) {
+                if (jVar instanceof u2) {
                     TextView textView2 = new TextView(m0Var.getContext());
                     textView2.setTextColor(h6.w0(i10, aVar));
                     textView2.setBackground(h6.L0(false));
@@ -88,7 +88,7 @@ public final /* synthetic */ class s implements Runnable {
                     textView2.setOnClickListener(new k(m0Var, 2));
                     linearLayout.addView(textView2, z5.n(-2, 48));
                 }
-                if (jVar instanceof o2) {
+                if (jVar instanceof n2) {
                     TextView textView3 = new TextView(m0Var.getContext());
                     textView3.setTextColor(h6.w0(i10, aVar));
                     textView3.setBackgroundDrawable(h6.L0(false));
@@ -116,7 +116,7 @@ public final /* synthetic */ class s implements Runnable {
                                 default:
                                     m0 m0Var3 = m0Var;
                                     m0Var3.getClass();
-                                    ((o2) jVar).r(true);
+                                    ((n2) jVar).r(true);
                                     org.telegram.ui.ActionBar.m1 m1Var2 = m0Var3.R1;
                                     if (m1Var2 != null && m1Var2.isShowing()) {
                                         m0Var3.R1.d(true);

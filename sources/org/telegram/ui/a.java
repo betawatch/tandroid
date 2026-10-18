@@ -13,7 +13,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((org.telegram.ui.ActionBar.f3[]) obj)[0].dismiss();
                 break;
             case 2:
-                org.telegram.ui.web.x0 webView = ((o3) obj).f.getWebView();
+                org.telegram.ui.web.y0 webView = ((o3) obj).f.getWebView();
                 if (webView != null) {
                     webView.reload();
                     break;
@@ -137,9 +137,9 @@ public final /* synthetic */ class a implements View.OnClickListener {
             case 12:
                 sn snVar = ((hj) obj).b;
                 snVar.h0.n();
-                ci.b3 b3Var = snVar.J1;
-                if (b3Var != null) {
-                    b3Var.L1(null, 0);
+                ci.a3 a3Var = snVar.J1;
+                if (a3Var != null) {
+                    a3Var.L1(null, 0);
                 }
                 snVar.ca();
                 break;
@@ -163,7 +163,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 runnable.run();
                 break;
             case 17:
-                org.telegram.messenger.kk.n(3, (org.telegram.ui.ActionBar.n2) obj);
+                org.telegram.messenger.lk.n(3, (org.telegram.ui.ActionBar.n2) obj);
                 break;
             case 18:
                 final xu xuVar = (xu) obj;
@@ -280,7 +280,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                                 } else {
                                     Context context = n10Var2.d;
                                     i16 = ((org.telegram.ui.ActionBar.n2) filtersSetupActivity2).currentAccount;
-                                    filtersSetupActivity2.showDialog(new sg.j0(3, i16, context, filtersSetupActivity2, null));
+                                    filtersSetupActivity2.showDialog(new sg.k0(3, i16, context, filtersSetupActivity2, null));
                                     break;
                                 }
                             default:
@@ -323,7 +323,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                                 } else {
                                     Context context = n10Var2.d;
                                     i16 = ((org.telegram.ui.ActionBar.n2) filtersSetupActivity2).currentAccount;
-                                    filtersSetupActivity2.showDialog(new sg.j0(3, i16, context, filtersSetupActivity2, null));
+                                    filtersSetupActivity2.showDialog(new sg.k0(3, i16, context, filtersSetupActivity2, null));
                                     break;
                                 }
                             default:

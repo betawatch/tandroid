@@ -14,7 +14,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class re1 extends org.telegram.ui.Components.ia {
     public static final /* synthetic */ int f3 = 0;
@@ -219,7 +219,7 @@ public abstract class re1 extends org.telegram.ui.Components.ia {
                     if (f7 != 0.0f) {
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                         ofFloat.addUpdateListener(new e11(this, 17));
-                        ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.kk.x(this.d3, AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
+                        ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.lk.x(this.d3, AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                         ofFloat.setInterpolator(org.telegram.ui.Components.bs.h);
                         setScrollEnabled(false);
                         ofFloat.addListener(new bc0(this, 29));

@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ov extends hm0 {
     public final /* synthetic */ aw c;
@@ -262,7 +262,7 @@ public final class ov extends hm0 {
             TextView textView3 = vvVar.d;
             TextView textView4 = vvVar.c;
             aw awVar2 = vvVar.x;
-            sg.p0 p0Var = vvVar.e;
+            sg.q0 q0Var = vvVar.e;
             x90 x90Var = vvVar.a;
             vvVar.r = tL_messages_stickerSet2;
             if (tL_messages_stickerSet2 == null || tL_messages_stickerSet2.set == null) {
@@ -298,7 +298,7 @@ public final class ov extends hm0 {
                                     if (!UserConfig.getInstance(i12).isPremium()) {
                                     }
                                 }
-                                if (p0Var != null) {
+                                if (q0Var != null) {
                                 }
                                 if (textView4 != null) {
                                 }
@@ -337,10 +337,10 @@ public final class ov extends hm0 {
                     textView.setText(LocaleController.formatPluralString("Stickers", size3, new Object[0]));
                 }
             }
-            if (z10 && p0Var != null) {
+            if (z10 && q0Var != null) {
                 i12 = ((org.telegram.ui.ActionBar.f3) awVar2).currentAccount;
                 if (!UserConfig.getInstance(i12).isPremium()) {
-                    p0Var.setVisibility(0);
+                    q0Var.setVisibility(0);
                     if (textView4 != null) {
                         textView4.setVisibility(8);
                     }
@@ -351,8 +351,8 @@ public final class ov extends hm0 {
                     return;
                 }
             }
-            if (p0Var != null) {
-                p0Var.setVisibility(8);
+            if (q0Var != null) {
+                q0Var.setVisibility(8);
             }
             if (textView4 != null) {
                 textView4.setVisibility(0);

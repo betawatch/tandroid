@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static Pattern V;
@@ -63,7 +63,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
     public final FrameLayout s;
     public final TextView v;
     public final TextView w;
-    public final sg.p0 x;
+    public final sg.q0 x;
     public final s4.s y;
 
     /* JADX WARN: Illegal instructions before constructor call */
@@ -124,7 +124,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         View view = new View(context);
         this.r = view;
         view.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.V5, false));
-        this.containerView.addView(view, w7.z5.b(-1.0f, 1.0f / AndroidUtilities.density, 80));
+        this.containerView.addView(view, w7.z5.a(-1.0f, 1.0f / AndroidUtilities.density, 80));
         view.setTranslationY(-AndroidUtilities.dp(68.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         this.s = frameLayout;
@@ -138,7 +138,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);
         w7.b6.b(textView, 0.02f, 1.2f);
-        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.a(48.0f, 12.0f, 10.0f, 12.0f, 10.0f, -1, 80), context);
+        TextView j10 = org.telegram.ui.Cells.c1.j(frameLayout, textView, w7.z5.d(-1, 48.0f, 80, 12.0f, 10.0f, 12.0f, 10.0f), context);
         this.w = j10;
         j10.setVisibility(8);
         int i14 = org.telegram.ui.ActionBar.h6.q7;
@@ -147,13 +147,13 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         j10.setTypeface(AndroidUtilities.bold());
         j10.setGravity(17);
         j10.setClickable(true);
-        frameLayout.addView(j10, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 19.0f, -1, 80));
-        sg.p0 p0Var = new sg.p0(context, this.resourcesProvider, false);
-        this.x = p0Var;
-        p0Var.a(LocaleController.getString(R.string.UnlockPremiumEmoji), new f0(this, i12), false);
-        p0Var.setIcon(R.raw.unlock_icon);
-        p0Var.r.setClickable(true);
-        frameLayout.addView(p0Var, w7.z5.a(48.0f, 12.0f, 10.0f, 12.0f, 10.0f, -1, 80));
+        frameLayout.addView(j10, w7.z5.d(-1, -1.0f, 80, 0.0f, 0.0f, 0.0f, 19.0f));
+        sg.q0 q0Var = new sg.q0(context, this.resourcesProvider, false);
+        this.x = q0Var;
+        q0Var.a(LocaleController.getString(R.string.UnlockPremiumEmoji), new f0(this, i12), false);
+        q0Var.setIcon(R.raw.unlock_icon);
+        q0Var.r.setClickable(true);
+        frameLayout.addView(q0Var, w7.z5.d(-1, 48.0f, 80, 12.0f, 10.0f, 12.0f, 10.0f));
     }
 
     public static void Q(aw awVar, int i10) {
@@ -358,7 +358,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
         SpannableString spannableString = new SpannableString(MessageObject.findAnimatedEmojiEmoticon(r5.f(awVar.currentAccount, a6Var.getDocumentId())));
         spannableString.setSpan(a6Var, 0, spannableString.length(), 33);
         if (AndroidUtilities.addToClipboard(spannableString)) {
-            org.telegram.messenger.kk.p(R.string.EmojiCopied, new xc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
+            org.telegram.messenger.lk.p(R.string.EmojiCopied, new xc((FrameLayout) awVar.containerView, awVar.resourcesProvider));
         }
     }
 
@@ -387,7 +387,7 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
     public final void a0() {
         org.telegram.ui.ActionBar.n2 n2Var = this.c;
         if (n2Var != null) {
-            new sg.x0(n2Var, 11, false).show();
+            new sg.y0(n2Var, 11, false).show();
         } else if (getContext() instanceof LaunchActivity) {
             ((LaunchActivity) getContext()).t0(new PremiumPreviewFragment(0, null));
         }
@@ -483,17 +483,17 @@ public class aw extends org.telegram.ui.ActionBar.f3 implements NotificationCent
             this.O = -1;
         }
         boolean z12 = this.S;
-        sg.p0 p0Var = this.x;
+        sg.q0 q0Var = this.x;
         TextView textView = this.w;
         TextView textView2 = this.v;
         if (!z12 || this.H) {
-            p0Var.setVisibility(8);
+            q0Var.setVisibility(8);
             textView2.setVisibility(8);
             textView.setVisibility(8);
             c0(false);
             return;
         }
-        p0Var.setVisibility(4);
+        q0Var.setVisibility(4);
         if (arrayList4.size() > 0) {
             textView2.setVisibility(0);
             textView.setVisibility(8);

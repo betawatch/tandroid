@@ -10,7 +10,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -94,13 +94,13 @@ public final /* synthetic */ class z8 implements View.OnClickListener {
                             i14 = ((org.telegram.ui.ActionBar.f3) r9Var).currentAccount;
                             p9Var = new p9(i20, i14, (ArrayList) null);
                         }
-                        r9Var.h1(p9Var, new ci.e4(r9Var, 1), false);
+                        r9Var.h1(p9Var, new ci.d4(r9Var, 1), false);
                         break;
                     } else if (i19 == 2) {
                         if (r9Var.Z) {
                             r9Var.g1();
                             i13 = ((org.telegram.ui.ActionBar.f3) r9Var).currentAccount;
-                            r9Var.h1(new p9(2, i13, arrayList), new ci.e4(r9Var, 1), false);
+                            r9Var.h1(new p9(2, i13, arrayList), new ci.d4(r9Var, 1), false);
                             break;
                         } else {
                             r9Var.g1();
@@ -112,7 +112,7 @@ public final /* synthetic */ class z8 implements View.OnClickListener {
                             HashSet m14 = r9.m1(arrayList, hashMap);
                             dVar.setLoading(true);
                             i11 = ((org.telegram.ui.ActionBar.f3) r9Var).currentAccount;
-                            ci.i7 storiesController = MessagesController.getInstance(i11).getStoriesController();
+                            ci.h7 storiesController = MessagesController.getInstance(i11).getStoriesController();
                             a9 a9Var = new a9(k9Var, 1);
                             int i23 = storiesController.a;
                             TLRPC.TL_contacts_setBlocked tL_contacts_setBlocked = new TLRPC.TL_contacts_setBlocked();

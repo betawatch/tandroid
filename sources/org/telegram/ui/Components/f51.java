@@ -15,7 +15,7 @@ import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.Components.f51;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f51 implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -199,7 +199,7 @@ public final /* synthetic */ class f51 implements Runnable {
                     f3Var.show();
                     break;
                 } else {
-                    org.telegram.ui.Wallet.k2 B = org.telegram.ui.Wallet.f2.B(context, iArr[0], null, tL_urlAuthResultRequest, d6Var, new org.telegram.ui.n80(f3VarArr, zArr2, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest, f3Var, vbVar, 2), new org.telegram.ui.zg0(6, f3VarArr, zArr2));
+                    org.telegram.ui.Wallet.k2 B = org.telegram.ui.Wallet.f2.B(context, iArr[0], null, tL_urlAuthResultRequest, d6Var, new org.telegram.ui.n80(f3VarArr, zArr2, inputtonconnectoauthsessionArr, tL_urlAuthResultRequest, f3Var, vbVar, 2), new org.telegram.ui.yg0(6, f3VarArr, zArr2));
                     f3VarArr[0] = B;
                     org.telegram.ui.wk0.a = B;
                     break;
@@ -216,7 +216,7 @@ public final /* synthetic */ class f51 implements Runnable {
                 org.telegram.ui.Wallet.s1 s1Var = (org.telegram.ui.Wallet.s1) this.s;
                 f2Var.getClass();
                 try {
-                    AndroidUtilities.runOnUIThread(new ai.l3(f2Var, str6, bArr, org.telegram.ui.Wallet.f2.q(j0Var, tonconnectsession, str6, bArr, jSONArray, tL_urlAuthResultRequest2.domain, null, tonconnectchallenge, f2Var.f.getCurrentTime()), s1Var, tonconnectsession, 20));
+                    AndroidUtilities.runOnUIThread(new ai.j3(f2Var, str6, bArr, org.telegram.ui.Wallet.f2.q(j0Var, tonconnectsession, str6, bArr, jSONArray, tL_urlAuthResultRequest2.domain, null, tonconnectchallenge, f2Var.f.getCurrentTime()), s1Var, tonconnectsession, 20));
                     break;
                 } catch (Exception e) {
                     s1Var.run(null, org.telegram.ui.Wallet.f2.h("prepare OAuth connect", e));

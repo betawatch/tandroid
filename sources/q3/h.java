@@ -17,10 +17,10 @@ import java.util.Locale;
 import org.telegram.ui.hk0;
 import v7.s6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class h extends w7.m {
-    public static final hk0 b = new hk0(21);
+    public static final hk0 b = new hk0(22);
     public final g a;
 
     public h(g gVar) {

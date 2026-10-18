@@ -1,14 +1,14 @@
 package yh;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements ne.d, zf.m {
-    public final /* synthetic */ n a;
+    public final /* synthetic */ m a;
 
     @Override // zf.m
     public void i(long j10) {
-        n nVar = this.a;
-        nVar.c0(j10, nVar.w0);
+        m mVar = this.a;
+        mVar.c0(j10, mVar.w0);
     }
 
     @Override // ne.d

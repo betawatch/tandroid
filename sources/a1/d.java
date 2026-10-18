@@ -2,7 +2,7 @@ package a1;
 
 import ah.i1;
 import ai.ga;
-import ai.l3;
+import ai.j3;
 import ai.t0;
 import android.app.Activity;
 import android.content.Context;
@@ -42,7 +42,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
@@ -69,9 +69,9 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.Wallet.s1;
+import org.telegram.ui.eg0;
 import org.telegram.ui.et;
 import org.telegram.ui.ey;
-import org.telegram.ui.fg0;
 import org.telegram.ui.h71;
 import org.telegram.ui.j61;
 import org.telegram.ui.l4;
@@ -89,7 +89,7 @@ import w7.z5;
 import x2.k;
 import x2.m;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, BillingController.ProductDetailsResponseListenerLegacy, xx, a2, e5, md0, MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback, Utilities.Callback2Return, k {
     public final /* synthetic */ int a;
@@ -263,7 +263,7 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
                 oj0Var.show();
                 break;
             case 15:
-                fg0.W((fg0) obj4, (String) obj3, (String) obj2, (String) obj);
+                eg0.W((eg0) obj4, (String) obj3, (String) obj2, (String) obj);
                 break;
             case 16:
                 NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj4;
@@ -317,7 +317,7 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
                 AndroidUtilities.runOnUIThread(new t0(list, (Utilities.Callback2) this.b, (TLRPC.TL_inputStorePaymentStarsTopup) this.c, (TL_stars.TL_starsTopupOption) this.d, (Activity) this.e, 7));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new l3((ga) this.b, list, (s1) this.c, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.d, iVar, (Activity) this.e, 2));
+                AndroidUtilities.runOnUIThread(new j3((ga) this.b, list, (s1) this.c, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.d, iVar, (Activity) this.e, 2));
                 break;
         }
     }
@@ -429,7 +429,7 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
         j01 j01Var = (j01) this.e;
         Integer num = (Integer) obj;
         Float f7 = (Float) obj2;
-        LinearLayout e = kk.e(context, 1);
+        LinearLayout e = lk.e(context, 1);
         LinearLayout linearLayout = new LinearLayout(context);
         e.addView(linearLayout, z5.t(-2, -2, 1, 0, 0, 0, 0));
         ImageView imageView = new ImageView(context);

@@ -27,7 +27,7 @@ import org.webrtc.MediaStreamTrack;
 import org.webrtc.VideoSink;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class h1 implements NotificationCenter.NotificationCenterDelegate, AudioManager.OnAudioFocusChangeListener {
     public static h1 W;
@@ -172,7 +172,7 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
             DispatchQueue dispatchQueue = Utilities.globalQueue;
             NativeInstance nativeInstance = this.E;
             Objects.requireNonNull(nativeInstance);
-            dispatchQueue.postRunnable(new org.telegram.messenger.voip.r0(nativeInstance, 3));
+            dispatchQueue.postRunnable(new org.telegram.messenger.voip.q0(nativeInstance, 3));
             this.M.clear();
             this.E = null;
         }
@@ -368,8 +368,8 @@ public final class h1 implements NotificationCenter.NotificationCenterDelegate, 
 
     public final void v(float f7) {
         float clamp01 = Utilities.clamp01(f7);
-        p1 p1Var = p1.Z;
-        if (p1Var.S && p1Var.v == this) {
+        o1 o1Var = o1.Z;
+        if (o1Var.S && o1Var.v == this) {
             clamp01 = 1.0f;
         }
         FileLog.d("setVolume(" + clamp01 + ")");

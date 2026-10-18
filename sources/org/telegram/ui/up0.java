@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class up0 extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public final boolean E;
@@ -264,12 +264,12 @@ public final class up0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.s.setGravity(17);
         this.s.setVisibility(8);
         this.s.setText(LocaleController.getString(R.string.NoPhotos));
-        this.P.addView(this.s, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 51));
+        this.P.addView(this.s, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 48.0f));
         this.s.setOnTouchListener(new di.d(2));
         FrameLayout frameLayout = new FrameLayout(context);
         this.r = frameLayout;
         frameLayout.setVisibility(8);
-        this.P.addView(this.r, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 51));
+        this.P.addView(this.r, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 48.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         radialProgressView.setProgressColor(-11371101);
         this.r.addView(radialProgressView, w7.z5.e(-2, -2, 17));
@@ -277,7 +277,7 @@ public final class up0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.R = view;
         view.setBackgroundResource(R.drawable.header_shadow_reverse);
         this.R.setTranslationY(AndroidUtilities.dp(48.0f));
-        this.P.addView(this.R, w7.z5.a(3.0f, 0.0f, 0.0f, 0.0f, 48.0f, -1, 83));
+        this.P.addView(this.R, w7.z5.d(-1, 3.0f, 83, 0.0f, 0.0f, 0.0f, 48.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.L = frameLayout2;
         frameLayout2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
@@ -295,7 +295,7 @@ public final class up0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         org.telegram.ui.Components.iu editText = this.M.getEditText();
         editText.setMaxLines(1);
         editText.setSingleLine(true);
-        this.L.addView(this.M, w7.z5.a(-1.0f, 0.0f, 0.0f, 84.0f, 0.0f, -1, 51));
+        this.L.addView(this.M, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 84.0f, 0.0f));
         CharSequence charSequence = this.a;
         if (charSequence != null) {
             this.M.setText(charSequence);
@@ -309,15 +309,15 @@ public final class up0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         this.N.setScaleX(0.2f);
         this.N.setScaleY(0.2f);
         this.N.setAlpha(0.0f);
-        this.P.addView(this.N, w7.z5.a(60.0f, 0.0f, 0.0f, 12.0f, 10.0f, 60, 85));
+        this.P.addView(this.N, w7.z5.d(60, 60.0f, 85, 0.0f, 0.0f, 12.0f, 10.0f));
         this.O = new ImageView(context);
         this.O.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.i0(AndroidUtilities.dp(56.0f), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.S5, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.T5, false)));
         this.O.setImageResource(R.drawable.attach_send);
         this.O.setImportantForAccessibility(2);
         this.O.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.U5, false), PorterDuff.Mode.MULTIPLY));
         this.O.setScaleType(ImageView.ScaleType.CENTER);
-        this.O.setOutlineProvider(new ci.o1(19));
-        this.N.addView(this.O, w7.z5.a(56.0f, 2.0f, 0.0f, 0.0f, 0.0f, 56, 51));
+        this.O.setOutlineProvider(new ci.n1(19));
+        this.N.addView(this.O, w7.z5.d(56, 56.0f, 51, 2.0f, 0.0f, 0.0f, 0.0f));
         this.O.setOnClickListener(new y50(this, i12));
         int i13 = 3;
         this.O.setOnLongClickListener(new u(this, i13));
@@ -330,7 +330,7 @@ public final class up0 extends org.telegram.ui.ActionBar.n2 implements Notificat
         x10Var.setAlpha(0.0f);
         this.Q.setScaleX(0.2f);
         this.Q.setScaleY(0.2f);
-        this.P.addView(this.Q, w7.z5.a(24.0f, 0.0f, 0.0f, -2.0f, 9.0f, 42, 85));
+        this.P.addView(this.Q, w7.z5.d(42, 24.0f, 85, 0.0f, 0.0f, -2.0f, 9.0f));
         if (this.w != 0) {
             this.M.setVisibility(8);
         }

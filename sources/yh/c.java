@@ -22,7 +22,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class c extends bb {
     public static final /* synthetic */ int a0 = 0;
@@ -45,12 +45,12 @@ public final class c extends bb {
         ei.d dVar = new ei.d(context, d6Var, true);
         dVar.setOnClickListener(new hg.r0(this, 26));
         dVar.g(LocaleController.getString(R.string.OK), false, true);
-        FrameLayout.LayoutParams a2 = z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80);
-        int i10 = a2.leftMargin;
+        FrameLayout.LayoutParams d = z5.d(-1, 48.0f, 80, 16.0f, 16.0f, 16.0f, 16.0f);
+        int i10 = d.leftMargin;
         int i11 = this.backgroundPaddingLeft;
-        a2.leftMargin = i10 + i11;
-        a2.rightMargin += i11;
-        this.containerView.addView(dVar, a2);
+        d.leftMargin = i10 + i11;
+        d.rightMargin += i11;
+        this.containerView.addView(dVar, d);
         this.Z.N(false);
     }
 

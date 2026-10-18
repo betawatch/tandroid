@@ -2,16 +2,17 @@ package z2;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
+import sg.y;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class a implements Executor {
     public final /* synthetic */ Executor a;
-    public final /* synthetic */ si.a b;
+    public final /* synthetic */ y b;
 
-    public a(ExecutorService executorService, si.a aVar) {
+    public a(ExecutorService executorService, y yVar) {
         this.a = executorService;
-        this.b = aVar;
+        this.b = yVar;
     }
 
     @Override // java.util.concurrent.Executor

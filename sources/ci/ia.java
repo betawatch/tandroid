@@ -1,60 +1,96 @@
 package ci;
 
-import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.support.LongSparseLongArray;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.va;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class ia {
-    public static final ia[] f = new ia[4];
-    public final int a;
-    public final LongSparseLongArray b = new LongSparseLongArray();
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public final ha e;
+public class ia {
+    public static long g;
+    public final h7 a;
+    public final int b;
+    public final long c;
+    public int d;
+    public boolean e;
+    public final androidx.fragment.app.d f = new androidx.fragment.app.d(this, 28);
 
-    public ia(int i10) {
-        new ArrayList();
-        this.e = new ha(this);
-        this.a = i10;
+    public ia(int i10, long j10, h7 h7Var) {
+        this.b = i10;
+        this.a = h7Var;
+        this.c = j10;
     }
 
-    public final void a(org.telegram.ui.Components.ia iaVar) {
-        TLRPC.UserStatus userStatus;
-        long currentTimeMillis = System.currentTimeMillis();
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        for (int i10 = 0; i10 < iaVar.getChildCount(); i10++) {
-            View childAt = iaVar.getChildAt(i10);
-            long dialogId = childAt instanceof org.telegram.ui.Cells.r2 ? ((org.telegram.ui.Cells.r2) childAt).getDialogId() : childAt instanceof va ? ((va) childAt).getDialogId() : 0L;
-            int i11 = this.a;
-            LongSparseLongArray longSparseLongArray = this.b;
-            if (dialogId > 0) {
-                TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(dialogId));
-                if (user != null && !user.bot && !user.self && !user.contact && (userStatus = user.status) != null && !(userStatus instanceof TLRPC.TL_userStatusEmpty) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
-                    longSparseLongArray.put(dialogId, currentTimeMillis);
-                    arrayList.add(Long.valueOf(dialogId));
-                }
-            } else {
-                TLRPC.Chat chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-dialogId));
-                if (ChatObject.isChannel(chat) && !ChatObject.isMonoForum(chat) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
-                    longSparseLongArray.put(dialogId, currentTimeMillis);
-                    arrayList.add(Long.valueOf(dialogId));
-                }
-            }
-        }
-        if (arrayList.isEmpty()) {
+    public void a(ArrayList arrayList) {
+        TL_stories.PeerStories y3 = this.a.y(this.c);
+        if (y3 == null || y3.stories == null) {
             return;
         }
-        this.d.addAll(arrayList);
-        ha haVar = this.e;
-        AndroidUtilities.cancelRunOnUIThread(haVar);
-        AndroidUtilities.runOnUIThread(haVar, 300L);
+        int i10 = 0;
+        while (i10 < y3.stories.size()) {
+            i10 = com.google.android.gms.internal.play_billing.k3.f(y3.stories.get(i10).id, i10, 1, arrayList);
+        }
+    }
+
+    public final void b(boolean z10) {
+        if (this.e == z10) {
+            return;
+        }
+        if (z10) {
+            this.e = true;
+            c();
+        } else {
+            this.e = false;
+            AndroidUtilities.cancelRunOnUIThread(this.f);
+            ConnectionsManager.getInstance(this.b).cancelRequest(this.d, false);
+            this.d = 0;
+        }
+    }
+
+    public final void c() {
+        if (this.e) {
+            long currentTimeMillis = 10000 - (System.currentTimeMillis() - g);
+            if (currentTimeMillis > 0) {
+                androidx.fragment.app.d dVar = this.f;
+                AndroidUtilities.cancelRunOnUIThread(dVar);
+                AndroidUtilities.runOnUIThread(dVar, currentTimeMillis);
+                return;
+            }
+            if (this.d == 0) {
+                TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews = new TL_stories.TL_stories_getStoriesViews();
+                a(tL_stories_getStoriesViews.id);
+                if (!tL_stories_getStoriesViews.id.isEmpty()) {
+                    int i10 = this.b;
+                    tL_stories_getStoriesViews.peer = MessagesController.getInstance(i10).getInputPeer(this.c);
+                    this.d = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_getStoriesViews, new ai.g(11, this, tL_stories_getStoriesViews));
+                    return;
+                }
+            }
+            this.d = 0;
+            this.e = false;
+        }
+    }
+
+    public boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
+        if (tL_stories_storyViews != null && tL_stories_storyViews.views != null) {
+            long j10 = this.c;
+            h7 h7Var = this.a;
+            TL_stories.PeerStories y3 = h7Var.y(j10);
+            if (y3 != null && !y3.stories.isEmpty()) {
+                for (int i10 = 0; i10 < tL_stories_storyViews.views.size(); i10++) {
+                    for (int i11 = 0; i11 < y3.stories.size(); i11++) {
+                        if (y3.stories.get(i11).id == ((Integer) arrayList.get(i10)).intValue()) {
+                            y3.stories.get(i11).views = tL_stories_storyViews.views.get(i10);
+                        }
+                    }
+                }
+                v7 v7Var = h7Var.k;
+                v7Var.b.getStorageQueue().postRunnable(new s7(v7Var, y3, 1));
+                return true;
+            }
+        }
+        return false;
     }
 }

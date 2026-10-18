@@ -12,7 +12,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class pu0 extends FrameLayout {
     public final org.telegram.ui.Cells.h6 a;
@@ -23,13 +23,13 @@ public final class pu0 extends FrameLayout {
         org.telegram.ui.Cells.h6 h6Var = new org.telegram.ui.Cells.h6(context, d6Var);
         this.a = h6Var;
         h6Var.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var), 2, -1));
-        addView(h6Var, w7.z5.d(-2.0f, -1));
+        addView(h6Var, w7.z5.c(-2.0f, -1));
         View view = new View(context);
         this.b = view;
         GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
         int i11 = org.telegram.ui.ActionBar.h6.d6;
         view.setBackground(new GradientDrawable(orientation, new int[]{org.telegram.ui.ActionBar.h6.m1(0.4f, org.telegram.ui.ActionBar.h6.w0(i11, d6Var)), org.telegram.ui.ActionBar.h6.w0(i11, d6Var)}));
-        addView(view, w7.z5.d(60.0f, -1));
+        addView(view, w7.z5.c(60.0f, -1));
         ei.d dVar = new ei.d(context, d6Var, true);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         spannableStringBuilder.append((CharSequence) LocaleController.getString(z10 ? R.string.MoreSimilarBotsButton : R.string.MoreSimilarButton));
@@ -38,7 +38,7 @@ public final class pu0 extends FrameLayout {
         spannableString.setSpan(new yq(R.drawable.msg_mini_lock2, 0), 0, 1, 33);
         spannableStringBuilder.append((CharSequence) spannableString);
         dVar.g(spannableStringBuilder, false, true);
-        addView(dVar, w7.z5.a(48.0f, 14.0f, 38.0f, 14.0f, 0.0f, -1, 48));
+        addView(dVar, w7.z5.d(-1, 48.0f, 48, 14.0f, 38.0f, 14.0f, 0.0f));
         dVar.setOnClickListener(new u80(fr0Var, 16));
         x90 x90Var = new x90(context, d6Var);
         x90Var.setTextSize(1, 13.0f);
@@ -51,7 +51,7 @@ public final class pu0 extends FrameLayout {
         SpannableString spannableString2 = new SpannableString("" + MessagesController.getInstance(i10).recommendedChannelsLimitPremium);
         spannableString2.setSpan(new c61(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
         x90Var.setText(AndroidUtilities.replaceCharSequence("%s", premiumText, spannableString2));
-        addView(x90Var, w7.z5.a(-2.0f, 24.0f, 96.0f, 24.0f, 12.0f, -1, 49));
+        addView(x90Var, w7.z5.d(-1, -2.0f, 49, 24.0f, 96.0f, 24.0f, 12.0f));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

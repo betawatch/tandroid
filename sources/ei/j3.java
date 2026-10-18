@@ -14,7 +14,7 @@ import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.ql0;
 import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class j3 extends ql0 {
     public final /* synthetic */ q3 c;
@@ -170,16 +170,16 @@ public final class j3 extends ql0 {
         } else if (i10 == 1) {
             Context context = q3Var.getContext();
             boolean z10 = q3Var.L;
-            ci.i4 i4Var = new ci.i4(context, 1);
-            i4Var.setPadding(AndroidUtilities.dp(z10 ? 14.0f : 16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(10.0f));
+            ci.h4 h4Var = new ci.h4(context, 1);
+            h4Var.setPadding(AndroidUtilities.dp(z10 ? 14.0f : 16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(10.0f));
             TextView textView = new TextView(context);
             textView.setTextSize(1, 16.0f);
             textView.setTextColor(-1);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(q3Var.getTitle());
-            i4Var.addView(textView, w7.z5.a(-1.0f, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f, -1, 119));
-            q3Var.i0 = i4Var;
-            view = i4Var;
+            h4Var.addView(textView, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, z10 ? 32.0f : 0.0f, 0.0f));
+            q3Var.i0 = h4Var;
+            view = h4Var;
         } else {
             view = new m3(q3Var.getContext(), q3Var.b, q3Var.O, q3Var.M);
         }

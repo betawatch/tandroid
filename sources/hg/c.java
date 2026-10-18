@@ -1,6 +1,6 @@
 package hg;
 
-import ai.l3;
+import ai.j3;
 import android.location.Location;
 import android.text.TextUtils;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class c extends pg.b {
     public a E;
@@ -121,7 +121,7 @@ public abstract class c extends pg.b {
                             cVar = this;
                             str2 = str;
                             location3 = location;
-                            Utilities.globalQueue.postRunnable(new l3(cVar, currentLocale, str2, locale, location3, str, 9));
+                            Utilities.globalQueue.postRunnable(new j3(cVar, currentLocale, str2, locale, location3, str, 9));
                         } else {
                             locale2 = Locale.US;
                         }
@@ -130,7 +130,7 @@ public abstract class c extends pg.b {
                     cVar = this;
                     str2 = str;
                     location3 = location;
-                    Utilities.globalQueue.postRunnable(new l3(cVar, currentLocale, str2, locale, location3, str, 9));
+                    Utilities.globalQueue.postRunnable(new j3(cVar, currentLocale, str2, locale, location3, str, 9));
                 }
                 if (location3 == null) {
                     return;

@@ -24,7 +24,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class a6 extends ReplacementSpan {
     private static boolean lockPositionChanging;
@@ -489,9 +489,9 @@ public class a6 extends ReplacementSpan {
                                     r5 r5Var3 = v5Var.f;
                                     Rect rect2 = v5Var.e;
                                     float f17 = v5Var.s * f13;
-                                    ci.g3 g3Var = r5Var3.k;
-                                    if (g3Var != null) {
-                                        g3Var.setImageCoords(rect2);
+                                    ci.f3 f3Var = r5Var3.k;
+                                    if (f3Var != null) {
+                                        f3Var.setImageCoords(rect2);
                                         r5Var3.k.setAlpha(f17);
                                         r5Var3.k.draw(canvas);
                                     }
@@ -500,9 +500,9 @@ public class a6 extends ReplacementSpan {
                                     r5 r5Var4 = v5Var.f;
                                     Rect rect3 = v5Var.e;
                                     float f18 = v5Var.s * f13;
-                                    ci.g3 g3Var2 = r5Var4.k;
-                                    if (g3Var2 != null) {
-                                        g3Var2.setImageCoords(rect3);
+                                    ci.f3 f3Var2 = r5Var4.k;
+                                    if (f3Var2 != null) {
+                                        f3Var2.setImageCoords(rect3);
                                         r5Var4.k.setAlpha(f18);
                                         r5Var4.k.draw(canvas);
                                     }

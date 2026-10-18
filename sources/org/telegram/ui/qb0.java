@@ -18,7 +18,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class qb0 extends FrameLayout {
     public final org.telegram.ui.Components.y9 a;
@@ -60,14 +60,14 @@ public final class qb0 extends FrameLayout {
         x1Var.setTextSize(AndroidUtilities.dp(12.0f));
         x1Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
         linearLayout.addView(x1Var, w7.z5.t(-2, 17, 16, 6, 1, 0, 0));
-        addView(linearLayout, w7.z5.a(-2.0f, 21.0f, 17.0f, 21.0f, 0.0f, -1, 55));
+        addView(linearLayout, w7.z5.d(-1, -2.0f, 55, 21.0f, 17.0f, 21.0f, 0.0f));
         org.telegram.ui.Components.cp0 cp0Var = new org.telegram.ui.Components.cp0(context, null, true);
         this.h = cp0Var;
         cp0Var.setReportChanges(true);
         cp0Var.setDelegate(new g(this, 23));
         cp0Var.setProgress(LiteMode.getPowerSaverLevel() / 100.0f);
         cp0Var.setImportantForAccessibility(2);
-        addView(cp0Var, w7.z5.a(44.0f, 6.0f, 68.0f, 6.0f, 0.0f, -1, 48));
+        addView(cp0Var, w7.z5.d(-1, 44.0f, 48, 6.0f, 68.0f, 6.0f, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         frameLayout.setImportantForAccessibility(4);
         TextView textView2 = new TextView(context);
@@ -98,7 +98,7 @@ public final class qb0 extends FrameLayout {
         com.google.android.gms.internal.play_billing.k3.o(i11, null, false, textView3, 5);
         textView3.setText(LocaleController.getString(R.string.LiteBatteryEnabled));
         frameLayout.addView(textView3, w7.z5.e(-2, -2, 21));
-        addView(frameLayout, w7.z5.a(-2.0f, 21.0f, 52.0f, 21.0f, 0.0f, -1, 55));
+        addView(frameLayout, w7.z5.d(-1, -2.0f, 55, 21.0f, 52.0f, 21.0f, 0.0f));
         this.n = new ob0(this);
         a();
     }
@@ -125,7 +125,7 @@ public final class qb0 extends FrameLayout {
         if (z10 != this.r) {
             this.r = z10;
             x1Var2.clearAnimation();
-            org.telegram.messenger.kk.t(x1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.bs.h, 220L);
+            org.telegram.messenger.lk.t(x1Var2.animate().alpha(z10 ? 1.0f : 0.0f), org.telegram.ui.Components.bs.h, 220L);
         }
         float f10 = powerSaverLevel >= 100 ? 1.0f : 0.0f;
         if (this.s != f10) {

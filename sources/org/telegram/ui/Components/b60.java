@@ -18,7 +18,7 @@ import org.telegram.ui.ad1;
 import org.telegram.ui.rc1;
 import org.telegram.ui.yc1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b60 implements Runnable {
     public final /* synthetic */ int a;
@@ -138,9 +138,9 @@ public final /* synthetic */ class b60 implements Runnable {
                 nzVar.Z(nzVar.P, z10);
                 break;
             case 12:
-                org.telegram.ui.fg0 fg0Var = (org.telegram.ui.fg0) obj;
+                org.telegram.ui.eg0 eg0Var = (org.telegram.ui.eg0) obj;
                 if (!z10) {
-                    fg0Var.W.setVisibility(8);
+                    eg0Var.W.setVisibility(8);
                     break;
                 }
                 break;
@@ -196,31 +196,31 @@ public final /* synthetic */ class b60 implements Runnable {
                 ((View) obj).setVisibility(z10 ? 0 : 8);
                 break;
             case 18:
-                si.k kVar = (si.k) obj;
-                kVar.P = z10;
-                kVar.Q = kVar.F();
-                kVar.R = 0;
-                kVar.S = 0;
-                kVar.j.b("torch requested: enabled=" + z10 + ", available=" + kVar.F() + ", cameraId=" + kVar.o + ", facing=" + kVar.G);
-                kVar.g();
+                si.j jVar = (si.j) obj;
+                jVar.P = z10;
+                jVar.Q = jVar.F();
+                jVar.R = 0;
+                jVar.S = 0;
+                jVar.j.b("torch requested: enabled=" + z10 + ", available=" + jVar.F() + ", cameraId=" + jVar.o + ", facing=" + jVar.G);
+                jVar.g();
                 break;
             default:
-                xh.k kVar2 = (xh.k) obj;
-                ArrayList arrayList3 = kVar2.c;
-                boolean isEmpty = TextUtils.isEmpty(kVar2.t);
-                String str = kVar2.t;
-                kVar2.w = true;
-                kVar2.A = false;
+                xh.k kVar = (xh.k) obj;
+                ArrayList arrayList3 = kVar.c;
+                boolean isEmpty = TextUtils.isEmpty(kVar.t);
+                String str = kVar.t;
+                kVar.w = true;
+                kVar.A = false;
                 TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (!isEmpty || arrayList3.isEmpty()) ? null : (TLRPC.TL_chatInviteImporter) i2.d.h(1, arrayList3);
                 boolean z11 = tL_chatInviteImporter == null;
                 if (isEmpty && z11 && z10) {
-                    eVar = new xh.e(kVar2, 1);
+                    eVar = new xh.e(kVar, 1);
                 }
                 xh.e eVar2 = eVar;
                 if (isEmpty) {
                     AndroidUtilities.runOnUIThread(eVar2, 300L);
                 }
-                kVar2.v = kVar2.i.getImporters(kVar2.j, str, tL_chatInviteImporter, kVar2.d, new ai.w4(kVar2, isEmpty, eVar2, str, z11));
+                kVar.v = kVar.i.getImporters(kVar.j, str, tL_chatInviteImporter, kVar.d, new ai.w4(kVar, isEmpty, eVar2, str, z11));
                 break;
         }
     }

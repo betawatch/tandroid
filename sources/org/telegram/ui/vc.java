@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class vc extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final qo0 a;
@@ -42,7 +42,7 @@ public final class vc extends FrameLayout implements org.telegram.ui.ActionBar.y
         uc ucVar = new uc(this, context2, i10, j10, d6Var2);
         this.b = ucVar;
         boolean z10 = ddVar.d;
-        addView(ucVar, w7.z5.a(z10 ? 230.0f : 190.0f, 0.0f, 0.0f, 0.0f, z10 ? 24.0f : 0.0f, -1, 80));
+        addView(ucVar, w7.z5.d(-1, z10 ? 230.0f : 190.0f, 80, 0.0f, 0.0f, 0.0f, z10 ? 24.0f : 0.0f));
         if (ddVar instanceof b60) {
             org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(getContext());
             this.c = j5Var;
@@ -53,7 +53,7 @@ public final class vc extends FrameLayout implements org.telegram.ui.ActionBar.y
             j5Var.l(LocaleController.getString(R.string.ChangeChannelNameColor2), false);
             j5Var.setAlpha(0.0f);
             a();
-            addView(j5Var, w7.z5.a(-2.0f, 72.0f, 0.0f, 0.0f, 16.0f, -1, 80));
+            addView(j5Var, w7.z5.d(-1, -2.0f, 80, 72.0f, 0.0f, 0.0f, 16.0f));
             LinearLayout linearLayout = new LinearLayout(activity);
             this.f = linearLayout;
             linearLayout.setOrientation(0);

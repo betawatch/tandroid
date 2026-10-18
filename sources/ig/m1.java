@@ -3,7 +3,7 @@ package ig;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.TextView;
-import ci.z2;
+import ci.y2;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
@@ -22,7 +22,7 @@ import org.telegram.ui.ey;
 import org.telegram.ui.te1;
 import org.telegram.ui.xx;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.a2, xx {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.a2, x
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ m1(q1 q1Var, z2 z2Var, int i10, z1 z1Var, TextView textView, Utilities.Callback callback) {
+    public /* synthetic */ m1(q1 q1Var, y2 y2Var, int i10, z1 z1Var, TextView textView, Utilities.Callback callback) {
         this.b = q1Var;
-        this.c = z2Var;
+        this.c = y2Var;
         this.a = i10;
         this.d = z1Var;
         this.e = textView;
@@ -54,14 +54,14 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.a2, x
     @Override // org.telegram.ui.ActionBar.a2
     public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         q1 q1Var = (q1) this.b;
-        z2 z2Var = (z2) this.c;
+        y2 y2Var = (y2) this.c;
         z1 z1Var = (z1) this.d;
         TextView textView = (TextView) this.e;
         Utilities.Callback callback = (Utilities.Callback) this.f;
         String obj = q1Var.getText().toString();
         if (obj.length() <= 0 || obj.length() > 32) {
             AndroidUtilities.shakeView(q1Var);
-            z2Var.run(Boolean.FALSE);
+            y2Var.run(Boolean.FALSE);
             return;
         }
         a2 f7 = a2.f(this.a);
@@ -73,7 +73,7 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.a2, x
         } else {
             AndroidUtilities.shakeView(q1Var);
             textView.setText(LocaleController.getString(R.string.BusinessRepliesNameBusy));
-            z2Var.run(Boolean.TRUE);
+            y2Var.run(Boolean.TRUE);
         }
     }
 
@@ -116,7 +116,7 @@ public final /* synthetic */ class m1 implements org.telegram.ui.ActionBar.a2, x
                 @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
                 public final void run(boolean z12, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str3) {
                     Pattern pattern2 = LaunchActivity.C1;
-                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.i8(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i12, chat, eyVar2, user, j10, str3));
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.j8(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i12, chat, eyVar2, user, j10, str3));
                 }
             });
         }

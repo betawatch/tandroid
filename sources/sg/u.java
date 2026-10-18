@@ -3,45 +3,45 @@ package sg;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ j0 b;
+    public final /* synthetic */ k0 b;
 
-    public /* synthetic */ u(j0 j0Var, int i10) {
+    public /* synthetic */ u(k0 k0Var, int i10) {
         this.a = i10;
-        this.b = j0Var;
+        this.b = k0Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                j0 j0Var = this.b;
-                AndroidUtilities.addToClipboard(j0Var.q1());
-                j0Var.dismiss();
+                k0 k0Var = this.b;
+                AndroidUtilities.addToClipboard(k0Var.q1());
+                k0Var.dismiss();
                 break;
             case 1:
-                z zVar = this.b.E0;
-                if (!zVar.h) {
-                    zVar.r.performClick();
+                a0 a0Var = this.b.E0;
+                if (!a0Var.h) {
+                    a0Var.r.performClick();
                     break;
                 } else {
-                    zVar.e.performClick();
+                    a0Var.e.performClick();
                     break;
                 }
             case 2:
-                z zVar2 = this.b.E0;
-                if (!zVar2.h) {
-                    zVar2.r.performClick();
+                a0 a0Var2 = this.b.E0;
+                if (!a0Var2.h) {
+                    a0Var2.r.performClick();
                     break;
                 } else {
-                    zVar2.e.performClick();
+                    a0Var2.e.performClick();
                     break;
                 }
             default:
-                j0.T(this.b);
+                k0.T(this.b);
                 break;
         }
     }

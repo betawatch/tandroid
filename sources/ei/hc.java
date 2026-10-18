@@ -18,7 +18,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public class hc extends View implements r2 {
     public final Path a;
@@ -57,7 +57,7 @@ public class hc extends View implements r2 {
             return;
         }
         this.r = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-        this.r.addUpdateListener(new ci.o3(this, new AtomicBoolean(), uVar, 2));
+        this.r.addUpdateListener(new ci.n3(this, new AtomicBoolean(), uVar, 2));
         this.r.start();
     }
 

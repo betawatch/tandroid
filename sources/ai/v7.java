@@ -6,7 +6,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_wallet;
 import org.telegram.ui.wk0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v7 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -76,25 +76,25 @@ public final /* synthetic */ class v7 implements DialogInterface.OnDismissListen
                 }
                 break;
             default:
-                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.b;
-                ci.z7 z7Var = (ci.z7) this.d;
+                org.telegram.ui.web.b1 b1Var = (org.telegram.ui.web.b1) this.b;
+                ci.y7 y7Var = (ci.y7) this.d;
                 String str = (String) this.e;
-                a1Var.getClass();
+                b1Var.getClass();
                 boolean[] zArr3 = this.c;
                 if (!zArr3[0]) {
                     zArr3[0] = true;
-                    a1Var.x(z7Var, "requested_chat_failed", org.telegram.ui.web.a1.A(str, "req_id"));
+                    b1Var.x(y7Var, "requested_chat_failed", org.telegram.ui.web.b1.A(str, "req_id"));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ v7(org.telegram.ui.web.a1 a1Var, boolean[] zArr, ci.z7 z7Var, String str) {
+    public /* synthetic */ v7(org.telegram.ui.web.b1 b1Var, boolean[] zArr, ci.y7 y7Var, String str) {
         this.a = 3;
-        this.b = a1Var;
+        this.b = b1Var;
         this.c = zArr;
-        this.d = z7Var;
+        this.d = y7Var;
         this.e = str;
     }
 

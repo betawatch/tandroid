@@ -1,6 +1,5 @@
 package kh;
 
-import ai.n1;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -10,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import androidx.activity.o;
-import ci.o1;
+import ci.n1;
 import ei.x3;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
@@ -26,7 +25,7 @@ import w7.z5;
 import zf.i0;
 import zf.j0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements ne.d {
     public static final int[] H;
@@ -80,7 +79,7 @@ public class e extends FrameLayout implements ne.d {
         this.e = frameLayout;
         frameLayout.setClipToOutline(true);
         float dp = AndroidUtilities.dp(22.0f);
-        o1 o1Var = j0.a;
+        n1 n1Var = j0.a;
         frameLayout.setOutlineProvider(new i0(0, dp));
         addView(frameLayout, z5.e(-1, 44, 16));
     }
@@ -124,7 +123,7 @@ public class e extends FrameLayout implements ne.d {
                                                 snVar2.J0.p(false);
                                                 snVar2.J0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
                                                 snVar2.J0.l(1.0f, (-width) + 7.33f);
-                                                snVar2.X0.addView(snVar2.J0, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, f10 + 50.0f, -1, 87));
+                                                snVar2.X0.addView(snVar2.J0, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f10 + 50.0f));
                                                 ei.x3 x3Var3 = snVar2.J0;
                                                 x3Var3.l0 = new mg(snVar2, 3);
                                                 x3Var3.u();
@@ -149,7 +148,7 @@ public class e extends FrameLayout implements ne.d {
                                                     x3Var5.H.t(string, !LocaleController.isRTL, true);
                                                 }
                                                 snVar3.L0.l(1.0f, (-width2) + 7.33f);
-                                                snVar3.X0.addView(snVar3.L0, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, f11 + 50.0f, -1, 87));
+                                                snVar3.X0.addView(snVar3.L0, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
                                                 ei.x3 x3Var6 = snVar3.L0;
                                                 x3Var6.l0 = new mg(snVar3, 12);
                                                 x3Var6.u();
@@ -181,7 +180,7 @@ public class e extends FrameLayout implements ne.d {
                                                 snVar2.J0.p(false);
                                                 snVar2.J0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
                                                 snVar2.J0.l(1.0f, (-width) + 7.33f);
-                                                snVar2.X0.addView(snVar2.J0, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, f10 + 50.0f, -1, 87));
+                                                snVar2.X0.addView(snVar2.J0, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f10 + 50.0f));
                                                 ei.x3 x3Var3 = snVar2.J0;
                                                 x3Var3.l0 = new mg(snVar2, 3);
                                                 x3Var3.u();
@@ -206,7 +205,7 @@ public class e extends FrameLayout implements ne.d {
                                                     x3Var5.H.t(string, !LocaleController.isRTL, true);
                                                 }
                                                 snVar3.L0.l(1.0f, (-width2) + 7.33f);
-                                                snVar3.X0.addView(snVar3.L0, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, f11 + 50.0f, -1, 87));
+                                                snVar3.X0.addView(snVar3.L0, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
                                                 ei.x3 x3Var6 = snVar3.L0;
                                                 x3Var6.l0 = new mg(snVar3, 12);
                                                 x3Var6.u();
@@ -355,8 +354,8 @@ public class e extends FrameLayout implements ne.d {
                     }
                     b6.b(d, 0.13f, 2.0f);
                     d.setVisibility(8);
-                    d.setOnClickListener(new n1(this, i10, 4));
-                    addView(d, z5.d(56.0f, 56));
+                    d.setOnClickListener(new ai.n1(this, i10, 4));
+                    addView(d, z5.c(56.0f, 56));
                     o oVar2 = new o();
                     oVar2.b = d;
                     oVar2.c = bVar;

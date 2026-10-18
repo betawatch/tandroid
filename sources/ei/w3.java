@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.d11;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class w3 extends Drawable {
     public final /* synthetic */ int a;
@@ -59,11 +59,11 @@ public final class w3 extends Drawable {
                 }
                 break;
             case 3:
-                sg.z0 z0Var = (sg.z0) this.b;
+                sg.a1 a1Var = (sg.a1) this.b;
                 Rect bounds = getBounds();
-                z0Var.getClass();
-                z0Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
-                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, z0Var.f);
+                a1Var.getClass();
+                a1Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, a1Var.f);
                 break;
             case 4:
                 ImageReceiver imageReceiver = (ImageReceiver) this.b;

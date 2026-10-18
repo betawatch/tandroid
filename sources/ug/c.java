@@ -1,6 +1,6 @@
 package ug;
 
-import ai.o3;
+import ai.m3;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
@@ -11,9 +11,9 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xc;
-import w7.p7;
+import w7.n7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -49,19 +49,19 @@ public final /* synthetic */ class c implements Runnable {
                 } else {
                     string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingCheckGiftsStatistic : R.string.BoostingCheckGiftsStatisticGroup);
                 }
-                qc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, h6.Gi, 0, new o3(chat), d6Var), i11);
+                qc M = xcVar.M(string2, AndroidUtilities.replaceSingleTag(string, h6.Gi, 0, new m3(chat), d6Var), i11);
                 M.j = 5000;
                 M.j();
                 return;
             default:
                 si.s0 s0Var = (si.s0) this.c;
-                si.x xVar = (si.x) this.d;
+                si.w wVar = (si.w) this.d;
                 si.o0 o0Var = (si.o0) this.e;
                 long nanoTime = System.nanoTime();
                 try {
-                    xVar.g();
-                    File file2 = xVar.a;
-                    long e = p7.e(file2) / 1000;
+                    wVar.g();
+                    File file2 = wVar.a;
+                    long e = n7.e(file2) / 1000;
                     s0Var.m.b("active output finalized: size=" + file2.length() + ", durationMs=" + e + ", elapsedMs=" + si.s0.f(nanoTime));
                     s0Var.g();
                     long j11 = s0Var.o;
@@ -78,7 +78,7 @@ public final /* synthetic */ class c implements Runnable {
                     boolean z12 = this.b;
                     if (z12 && !z10) {
                         try {
-                            s0Var.k.execute(new si.g0(s0Var, o0Var, xVar.a, e, true));
+                            s0Var.k.execute(new si.g0(s0Var, o0Var, wVar.a, e, true));
                             return;
                         } catch (Exception e7) {
                             e = e7;
@@ -87,18 +87,18 @@ public final /* synthetic */ class c implements Runnable {
                             return;
                         }
                     }
-                    File file3 = xVar.a;
+                    File file3 = wVar.a;
                     try {
                         long min = Math.min(j12, e);
                         int i12 = z10 ? i10 : 2;
                         file = file3;
                         try {
                             s0Var.s(file, 0L, min, z12, i12);
-                            p7.c(file);
+                            n7.c(file);
                             return;
                         } catch (Throwable th2) {
                             th = th2;
-                            p7.c(file);
+                            n7.c(file);
                             throw th;
                         }
                     } catch (Throwable th3) {
@@ -111,9 +111,9 @@ public final /* synthetic */ class c implements Runnable {
         }
     }
 
-    public /* synthetic */ c(si.s0 s0Var, si.x xVar, boolean z10, si.o0 o0Var) {
+    public /* synthetic */ c(si.s0 s0Var, si.w wVar, boolean z10, si.o0 o0Var) {
         this.c = s0Var;
-        this.d = xVar;
+        this.d = wVar;
         this.b = z10;
         this.e = o0Var;
     }

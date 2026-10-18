@@ -9,9 +9,10 @@ import java.util.concurrent.Executor;
 import l5.i;
 import l5.t;
 import org.telegram.ui.Components.az0;
+import org.telegram.ui.web.g2;
 import v5.a;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class JobInfoSchedulerService extends JobService {
     public static final /* synthetic */ int a = 0;
@@ -30,7 +31,7 @@ public class JobInfoSchedulerService extends JobService {
             a2.c = Base64.decode(string2, 0);
         }
         b bVar = t.a().d;
-        ((Executor) bVar.e).execute(new az0(bVar, a2.g(), i11, new p2.b(9, this, jobParameters), 19));
+        ((Executor) bVar.e).execute(new az0(bVar, a2.g(), i11, new g2(10, this, jobParameters), 19));
         return true;
     }
 

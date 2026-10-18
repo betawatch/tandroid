@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.pd1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class q31 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, ne.d {
     public static final /* synthetic */ int f0 = 0;
@@ -101,10 +101,10 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
         setWillNotDraw(false);
         FrameLayout frameLayout = new FrameLayout(activity);
         this.r = frameLayout;
-        addView(frameLayout, w7.z5.a(36.0f, 7.0f, 7.0f, 7.0f, 7.0f, -1, 55));
+        addView(frameLayout, w7.z5.d(-1, 36.0f, 55, 7.0f, 7.0f, 7.0f, 7.0f));
         FrameLayout frameLayout2 = new FrameLayout(activity);
         this.F = frameLayout2;
-        addView(frameLayout2, w7.z5.a(-1.0f, 7.0f, 7.0f, 7.0f, 7.0f, 64, 115));
+        addView(frameLayout2, w7.z5.d(64, -1.0f, 115, 7.0f, 7.0f, 7.0f, 7.0f));
         final int i11 = 0;
         d31 d31Var = new d31(this, activity, i10, new Utilities.Callback2(this) { // from class: org.telegram.ui.Components.c31
             public final /* synthetic */ q31 b;
@@ -652,7 +652,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
         hg.i0 i0Var = new hg.i0((ViewGroup) d31Var, 5);
         d31Var.V2 = i0Var;
         d31Var.setLayoutManager(i0Var);
-        frameLayout.addView(d31Var, w7.z5.a(-1.0f, 41.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+        frameLayout.addView(d31Var, w7.z5.d(-1, -1.0f, 119, 41.0f, 0.0f, 0.0f, 0.0f));
         d31Var.j(new e31(this, 0));
         if (isBotForumWithEditableTopics) {
             p31 p31Var = new p31(activity, i10, d6Var);
@@ -695,7 +695,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                 }
             });
             viewGroup = frameLayout2;
-            viewGroup.addView(p31Var, w7.z5.a(42.0f, 0.0f, 48.0f, 0.0f, 0.0f, 64, 51));
+            viewGroup.addView(p31Var, w7.z5.d(64, 42.0f, 51, 0.0f, 48.0f, 0.0f, 0.0f));
         } else {
             viewGroup = frameLayout2;
             this.v = null;
@@ -1245,7 +1245,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
         f31Var.W2.r = false;
         f31Var.setClipToPadding(false);
         f31Var.setClipChildren(false);
-        viewGroup2.addView(f31Var, w7.z5.a(-1.0f, 0.0f, isBotForumWithEditableTopics ? 90.0f : 48.0f, 0.0f, 0.0f, -1, 119));
+        viewGroup2.addView(f31Var, w7.z5.d(-1, -1.0f, 119, 0.0f, isBotForumWithEditableTopics ? 90.0f : 48.0f, 0.0f, 0.0f));
         f31Var.j(new e31(this, 1));
         final int i16 = 0;
         ImageView i17 = i(activity, R.drawable.menu_sidebar_left, new View.OnClickListener(this) { // from class: org.telegram.ui.Components.a31
@@ -1487,7 +1487,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                 return false;
             }
             TLRPC.Chat chat3 = chat2;
-            I.c(R.drawable.msg_clear, LocaleController.getString(R.string.ClearHistory), new ai.b2(q31Var, I, peerDialogId, chat2, 17), false);
+            I.c(R.drawable.msg_clear, LocaleController.getString(R.string.ClearHistory), new ai.b3(q31Var, I, peerDialogId, chat2, 17), false);
             long j11 = chat3.id;
             if (ChatObject.isMonoForum(chat3) && ChatObject.canManageMonoForum(i12, chat3)) {
                 long j12 = chat3.linked_monoforum_id;
@@ -1506,9 +1506,9 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                 i10 = 8;
                 y3.setVisibility(8);
                 MessagesController messagesController2 = MessagesController.getInstance(i12);
-                ai.y3 y3Var = new ai.y3(q31Var, y3, I, j11, user2, chat4);
+                ai.z3 z3Var = new ai.z3(q31Var, y3, I, j11, user2, chat4);
                 i80Var2 = I;
-                messagesController2.checkIsInChat(true, chat4, user2, y3Var);
+                messagesController2.checkIsInChat(true, chat4, user2, z3Var);
             }
             i80Var = i80Var2;
             d6Var = d6Var2;
@@ -1567,7 +1567,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                 i80Var3.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic2.id));
-                                rc rcVar = new rc(18);
+                                sc scVar = new sc(17);
                                 q31 q31Var4 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(q31Var4.getContext());
                                 String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
@@ -1582,7 +1582,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                     z12 = false;
                                     b2Var.T = LocaleController.getString(R.string.DeleteSelectedTopics);
                                 }
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.q4(q31Var4, arrayList, j13, hashSet, rcVar));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.q4(q31Var4, arrayList, j13, hashSet, scVar));
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new tg0(14));
                                 b2Var.show();
                                 TextView textView = (TextView) b2Var.d(-1);
@@ -1606,13 +1606,13 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
             uo uoVar = new uo(i80Var3, currentAccount, j13, j14, snVar, resourceProvider);
             i80 J = i80Var3.J();
             J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new org.telegram.ui.ut0(i80Var3, 26), false);
-            J.c(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new org.telegram.messenger.dc(i80Var3, currentAccount, j13, j14, J, snVar, resourceProvider), false);
+            J.c(R.drawable.msg_tone_on, LocaleController.getString(R.string.SoundOn), new org.telegram.messenger.ec(i80Var3, currentAccount, j13, j14, J, snVar, resourceProvider), false);
             org.telegram.ui.ActionBar.e1 y10 = J.y();
             J.c(R.drawable.msg_mute_period, LocaleController.getString(R.string.MuteForPopup), new ai.cb(i80Var3, resourceProvider, currentAccount, uoVar, 18), false);
             d6Var = d6Var2;
             J.c(R.drawable.msg_customize, LocaleController.getString(R.string.NotificationsCustomize), new org.telegram.messenger.w2(i80Var3, j13, j14, snVar, resourceProvider, 7), false);
             J.c(0, "", new ai.ia(i80Var3, currentAccount, j13, j14, snVar, resourceProvider), false);
-            new org.telegram.messenger.n9(currentAccount, j13, j14, J.y(), y10).run();
+            new org.telegram.messenger.o9(currentAccount, j13, j14, J.y(), y10).run();
             boolean isDialogMuted = messagesController.isDialogMuted(j10, tL_forumTopic.id);
             int i17 = isDialogMuted ? R.drawable.msg_unmute : R.drawable.msg_mute;
             String string2 = LocaleController.getString(isDialogMuted ? R.string.Unmute : R.string.Mute);
@@ -1658,7 +1658,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                 i80Var32.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic2.id));
-                                rc rcVar = new rc(18);
+                                sc scVar = new sc(17);
                                 q31 q31Var4 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(q31Var4.getContext());
                                 String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
@@ -1673,7 +1673,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                     z122 = false;
                                     b2Var.T = LocaleController.getString(R.string.DeleteSelectedTopics);
                                 }
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.q4(q31Var4, arrayList, j132, hashSet, rcVar));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.q4(q31Var4, arrayList, j132, hashSet, scVar));
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new tg0(14));
                                 b2Var.show();
                                 TextView textView = (TextView) b2Var.d(-1);
@@ -1715,7 +1715,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                 i80Var32.u();
                                 HashSet hashSet = new HashSet();
                                 hashSet.add(Integer.valueOf(tL_forumTopic2.id));
-                                rc rcVar = new rc(18);
+                                sc scVar = new sc(17);
                                 q31 q31Var4 = this.b;
                                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(q31Var4.getContext());
                                 String pluralString = LocaleController.getPluralString("DeleteTopics", hashSet.size());
@@ -1730,7 +1730,7 @@ public final class q31 extends FrameLayout implements NotificationCenter.Notific
                                     z122 = false;
                                     b2Var.T = LocaleController.getString(R.string.DeleteSelectedTopics);
                                 }
-                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.q4(q31Var4, arrayList, j132, hashSet, rcVar));
+                                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new ai.q4(q31Var4, arrayList, j132, hashSet, scVar));
                                 alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new tg0(14));
                                 b2Var.show();
                                 TextView textView = (TextView) b2Var.d(-1);

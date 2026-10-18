@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cb0 extends org.telegram.ui.ActionBar.n2 {
     public org.telegram.ui.Cells.l4 E;
@@ -689,7 +689,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.n2 {
         this.M.setTypeface(AndroidUtilities.bold());
         this.M.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
         w7.b6.a(this.M);
-        this.actionBar.addView(this.M, w7.z5.a(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / AndroidUtilities.density, 0.0f, 0.0f, 12.0f, 0.0f, -2, 8388693));
+        this.actionBar.addView(this.M, w7.z5.d(-2, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() / AndroidUtilities.density, 8388693, 0.0f, 0.0f, 12.0f, 0.0f));
         xa0 xa0Var = new xa0(this, context);
         org.telegram.ui.Components.wo0 wo0Var = new org.telegram.ui.Components.wo0(context, xa0Var, this.resourceProvider, true);
         this.J = wo0Var;
@@ -773,7 +773,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.n2 {
         za0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, i14, false));
         this.f.setTag(Integer.valueOf(i14));
         this.f.f(LocaleController.getString(R.string.ApproveNewMembers2), false, false);
-        this.f.setOnClickListener(new ci.h2(7, this, z10));
+        this.f.setOnClickListener(new ci.g2(7, this, z10));
         xa0Var.addView(this.f, w7.z5.n(-1, 56));
         org.telegram.ui.Cells.d9 d9Var3 = new org.telegram.ui.Cells.d9(context, 12, this.resourceProvider);
         this.h = d9Var3;
@@ -813,14 +813,14 @@ public final class cb0 extends org.telegram.ui.ActionBar.n2 {
                 org.telegram.ui.Cells.g3 g3Var = ab0Var2.b;
                 g3Var.setImeOptions(6);
                 g3Var.setOnEditorActionListener(new m.t2(gVar, 2));
-                this.r.addView(this.s, w7.z5.a(-2.0f, 0.0f, 0.0f, 19.0f, 0.0f, -2, 21));
+                this.r.addView(this.s, w7.z5.d(-2, -2.0f, 21, 0.0f, 0.0f, 19.0f, 0.0f));
                 ab0 ab0Var3 = this.r;
                 Drawable mutate = getParentActivity().getResources().getDrawable(R.drawable.star_small_inner).mutate();
                 ab0Var3.getClass();
                 ImageView imageView = new ImageView(ab0Var3.getContext());
                 imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
                 imageView.setImageDrawable(mutate);
-                ab0Var3.addView(imageView, w7.z5.a(24.0f, 18.0f, 0.0f, 0.0f, 0.0f, 24, 19));
+                ab0Var3.addView(imageView, w7.z5.d(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
                 org.telegram.ui.Cells.g3 g3Var2 = ab0Var3.b;
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) g3Var2.getLayoutParams();
                 layoutParams.leftMargin = AndroidUtilities.dp(24.0f);
@@ -1292,7 +1292,7 @@ public final class cb0 extends org.telegram.ui.ActionBar.n2 {
             });
             xa0Var.addView(this.I);
         }
-        y8Var.addView(this.J, w7.z5.d(-1.0f, -1));
+        y8Var.addView(this.J, w7.z5.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.H = frameLayout;
         int i18 = org.telegram.ui.ActionBar.h6.a7;

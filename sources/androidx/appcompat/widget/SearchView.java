@@ -55,7 +55,7 @@ import org.telegram.tgnet.TLObject;
 import r0.i0;
 import w7.q;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class SearchView extends x1 implements k.b {
     public static final x2 w0;
@@ -100,7 +100,7 @@ public class SearchView extends x1 implements k.b {
     public final r2 u0;
     public final WeakHashMap v0;
 
-    /* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+    /* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
     public static class SearchAutoComplete extends m {
         public int e;
         public SearchView f;
@@ -904,14 +904,14 @@ public class SearchView extends x1 implements k.b {
         this.M = imageView4;
         ImageView imageView5 = (ImageView) findViewById(R.id.search_mag_icon);
         this.T = imageView5;
-        findViewById.setBackground(g3Var.A(10));
-        findViewById2.setBackground(g3Var.A(14));
-        imageView.setImageDrawable(g3Var.A(13));
-        imageView2.setImageDrawable(g3Var.A(7));
-        imageView3.setImageDrawable(g3Var.A(4));
-        imageView4.setImageDrawable(g3Var.A(16));
-        imageView5.setImageDrawable(g3Var.A(13));
-        this.U = g3Var.A(12);
+        findViewById.setBackground(g3Var.F(10));
+        findViewById2.setBackground(g3Var.F(14));
+        imageView.setImageDrawable(g3Var.F(13));
+        imageView2.setImageDrawable(g3Var.F(7));
+        imageView3.setImageDrawable(g3Var.F(4));
+        imageView4.setImageDrawable(g3Var.F(16));
+        imageView5.setImageDrawable(g3Var.F(13));
+        this.U = g3Var.F(12);
         q.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
         this.V = obtainStyledAttributes.getResourceId(15, R.layout.abc_search_dropdown_item_icons_2line);
         this.W = obtainStyledAttributes.getResourceId(5, 0);
@@ -942,7 +942,7 @@ public class SearchView extends x1 implements k.b {
             setInputType(i14);
         }
         setFocusable(obtainStyledAttributes.getBoolean(0, true));
-        g3Var.L();
+        g3Var.Q();
         Intent intent = new Intent("android.speech.action.WEB_SEARCH");
         this.a0 = intent;
         intent.addFlags(TLObject.FLAG_28);

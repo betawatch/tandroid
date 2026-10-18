@@ -21,7 +21,7 @@ import org.telegram.ui.Components.f5;
 import org.telegram.ui.Components.od0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Wallet.k2;
-import org.telegram.ui.Wallet.p4;
+import org.telegram.ui.Wallet.q4;
 import org.telegram.ui.b30;
 import org.telegram.ui.e3;
 import org.telegram.ui.ea;
@@ -30,7 +30,7 @@ import org.telegram.ui.w30;
 import org.telegram.ui.x30;
 import org.telegram.ui.z30;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ f(ei.d dVar, p4 p4Var, Utilities.Callback3 callback3, String[] strArr, boolean[] zArr, k2[] k2VarArr, d6 d6Var) {
+    public /* synthetic */ f(ei.d dVar, q4 q4Var, Utilities.Callback3 callback3, String[] strArr, boolean[] zArr, k2[] k2VarArr, d6 d6Var) {
         this.a = 2;
         this.b = dVar;
-        this.c = p4Var;
+        this.c = q4Var;
         this.d = callback3;
         this.e = strArr;
         this.h = zArr;

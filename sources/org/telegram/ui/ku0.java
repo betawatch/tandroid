@@ -14,7 +14,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ku0 extends FrameLayout {
     public final /* synthetic */ PhotoViewer a;
@@ -151,8 +151,8 @@ public final class ku0 extends FrameLayout {
         Canvas canvas2;
         PhotoViewer photoViewer = this.a;
         Paint paint = photoViewer.M0;
-        ci.i3 i3Var = photoViewer.s5;
-        if (i3Var != null && i3Var.getVisibility() == 0) {
+        ci.h3 h3Var = photoViewer.s5;
+        if (h3Var != null && h3Var.getVisibility() == 0) {
             View view = (View) photoViewer.s5.getParent();
             float min = Math.min(photoViewer.s5.getAlpha(), view != null ? view.getAlpha() : 1.0f);
             if (min > 0.0f) {

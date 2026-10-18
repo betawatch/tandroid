@@ -42,7 +42,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.zq;
 import org.telegram.ui.ks0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class m extends FrameLayout {
     public final RectF A0;
@@ -194,7 +194,7 @@ public abstract class m extends FrameLayout {
         gVar.setTranslationY(AndroidUtilities.dp(z10 ? 1.0f : -1.0f));
         gVar.getEditText().addTextChangedListener(new h(this));
         gVar.getEditText().setLinkTextColor(-1);
-        addView(gVar, w7.z5.a(-2.0f, 12.0f, 8.0f, b() + 12, 8.0f, -1, (z10 ? 48 : 80) | 7));
+        addView(gVar, w7.z5.d(-1, -2.0f, (z10 ? 48 : 80) | 7, 12.0f, 8.0f, b() + 12, 8.0f));
         j jVar3 = new j(context);
         this.r = jVar3;
         w7.b6.b(jVar3, 0.05f, 1.25f);
@@ -213,7 +213,7 @@ public abstract class m extends FrameLayout {
         jVar3.setAlpha(0.0f);
         jVar3.setVisibility(8);
         jVar3.setOnClickListener(new ah.g0(this, 18));
-        addView(jVar3, w7.z5.a(44.0f, 8.0f, 8.0f, 8.0f, 8.0f, 44, (z10 ? 48 : 80) | 5));
+        addView(jVar3, w7.z5.d(44, 44.0f, (z10 ? 48 : 80) | 5, 8.0f, 8.0f, 8.0f, 8.0f));
         org.telegram.ui.Components.q6 q6Var = new org.telegram.ui.Components.q6(context, false, true, true);
         this.v = q6Var;
         q6Var.setGravity(17);
@@ -225,7 +225,7 @@ public abstract class m extends FrameLayout {
         this.s = frameLayout3;
         frameLayout3.setTranslationX(AndroidUtilities.dp(2.0f));
         frameLayout3.addView(q6Var, w7.z5.e(52, 16, (z10 ? 48 : 80) | 5));
-        addView(frameLayout3, w7.z5.a(16.0f, 0.0f, z10 ? 50 : 0, 0.0f, z10 ? 0 : 50, 52, (z10 ? 48 : 80) | 5));
+        addView(frameLayout3, w7.z5.d(52, 16.0f, (z10 ? 48 : 80) | 5, 0.0f, z10 ? 50 : 0, 0.0f, z10 ? 0 : 50));
         paint2.setShader(linearGradient);
         paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
     }

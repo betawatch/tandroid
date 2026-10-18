@@ -21,7 +21,7 @@ import org.telegram.ui.Components.uj0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class p7 extends View {
     public ValueAnimator E;
@@ -105,7 +105,7 @@ public final class p7 extends View {
                 TLRPC.Chat chat = snVar.getMessagesController().getChat(Long.valueOf(-a2));
                 str = chat == null ? "" : chat.title;
             }
-            new cd(snVar.getParentActivity(), snVar.getResourceProvider(), E, 5, str, new b2(this, y3, messageObject, E, 3), 0L).show();
+            new cd(snVar.getParentActivity(), snVar.getResourceProvider(), E, 5, str, new b3(this, y3, messageObject, E, 3), 0L).show();
         }
     }
 

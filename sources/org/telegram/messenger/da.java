@@ -1,36 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class da implements RequestDelegate {
+public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ MessagesController b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ da(BaseController baseController, int i10, int i11) {
+    public /* synthetic */ da(MessagesController messagesController, int i10, int i11) {
         this.a = i11;
-        this.b = baseController;
+        this.b = messagesController;
         this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$migrateDialogs$215(this.c, tLObject, tL_error);
+                this.b.lambda$updateTimerProc$156(this.c);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$loadPinnedDialogs$366(this.c, tLObject, tL_error);
+                this.b.lambda$onFolderEmpty$196(this.c);
                 break;
             case 2:
-                ((MessagesController) this.b).lambda$loadGlobalNotificationsSettings$200(this.c, tLObject, tL_error);
+                this.b.lambda$ensureMessagesLoaded$465(this.c);
                 break;
             default:
-                ((ContactsController) this.b).lambda$loadPrivacySettings$65(this.c, tLObject, tL_error);
+                this.b.lambda$didAddedNewTask$80(this.c);
                 break;
         }
     }

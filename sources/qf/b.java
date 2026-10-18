@@ -97,7 +97,7 @@ import p4.z;
 import v7.i8;
 import v7.r8;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public class b implements h, OnCompleteListener, com.google.android.gms.internal.clearcut.h, ee.b, f6.a, fa.a, g2.g, n, a0, Continuation, g1, e2.d {
     public static volatile b d;
@@ -624,9 +624,9 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
             throw new ClassCastException();
         }
         gb.n nVar = null;
-        gb.n cVar = EnumSet.class.isAssignableFrom(cls) ? new ya.c(type, 20) : cls == EnumMap.class ? new a6.i(type, 22) : null;
-        if (cVar != null) {
-            return cVar;
+        gb.n dVar = EnumSet.class.isAssignableFrom(cls) ? new ya.d(type, 20) : cls == EnumMap.class ? new a6.i(type, 22) : null;
+        if (dVar != null) {
+            return dVar;
         }
         gb.d.f((ArrayList) this.c);
         if (!Modifier.isAbstract(cls.getModifiers())) {
@@ -833,10 +833,10 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
             }
         }
         if (((a) g3Var.d) != null && gVar != null) {
-            g3Var.f(gVar);
+            g3Var.o(gVar);
         }
         if (((a) g3Var.d) != null && (gVar2 = (g) g3Var.c) != null) {
-            g3Var.N(gVar2);
+            g3Var.S(gVar2);
         }
         if (gVar != null && gVar.a.size() > 0 && !gVar.a(0).a.startsWith("audio/") && (dVar = (d) g3Var.b) != null) {
             dVar.l(null, null);
@@ -882,7 +882,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
         a aVar = (a) g3Var.d;
         if (aVar == null || !TextUtils.equals(aVar.c.a(), a2)) {
-            g3Var.Q(new a(cVar, (d6.g) this.c, hVar));
+            g3Var.V(new a(cVar, (d6.g) this.c, hVar));
             l.e("Must be called from the main thread.");
             CastDevice castDevice = cVar.k;
             String str = castDevice != null ? castDevice.d : null;
@@ -930,12 +930,10 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         Log.d("CAST_SESSION", "onSessionResumed " + ((d6.c) fVar).a() + " " + z10);
     }
 
-    @Override // g6.n
-    public void j(String str, long j10, long j11, long j12) {
-        n nVar = (n) this.b;
-        if (nVar != null) {
-            nVar.j(str, j10, j11, j12);
-        }
+    @Override // d6.h
+    public void j(d6.f fVar, int i10) {
+        Log.d("CAST_SESSION", "onSessionEnded " + ((d6.c) fVar).a() + " " + i10);
+        ((g3) this.b).V(null);
     }
 
     @Override // f6.a
@@ -953,9 +951,10 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
     }
 
     @Override // d6.h
-    public void n(d6.f fVar, int i10) {
-        Log.d("CAST_SESSION", "onSessionEnded " + ((d6.c) fVar).a() + " " + i10);
-        ((g3) this.b).Q(null);
+    public void n(d6.f fVar) {
+        d6.c cVar = (d6.c) fVar;
+        Log.d("CAST_SESSION", "onSessionStarting " + cVar.a());
+        e0(cVar);
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
@@ -1025,6 +1024,19 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         }
     }
 
+    @Override // g6.n
+    public void p(String str, long j10, long j11, long j12) {
+        n nVar = (n) this.b;
+        if (nVar != null) {
+            nVar.p(str, j10, j11, j12);
+        }
+    }
+
+    @Override // ki.g1
+    public /* synthetic */ boolean q(h1 h1Var) {
+        return false;
+    }
+
     /* JADX WARN: Code restructure failed: missing block: B:20:0x0062, code lost:
     
         if (r2.b(r6, r7, r0) == r1) goto L24;
@@ -1036,7 +1048,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public Object p(ee.c cVar, md.c cVar2) {
+    public Object r(ee.c cVar, md.c cVar2) {
         ee.d dVar;
         int i10;
         b bVar;
@@ -1094,24 +1106,8 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
     }
 
     @Override // d6.h
-    public void q(d6.f fVar) {
-        d6.c cVar = (d6.c) fVar;
-        Log.d("CAST_SESSION", "onSessionStarting " + cVar.a());
-        e0(cVar);
-    }
-
-    @Override // d6.h
-    public void r(d6.f fVar, int i10) {
+    public void s(d6.f fVar, int i10) {
         Log.d("CAST_SESSION", "onSessionResumeFailed " + ((d6.c) fVar).a() + " " + i10);
-    }
-
-    @Override // g6.n
-    public void s(String str, long j10, int i10, Object obj, long j11, long j12) {
-        ((g6.m) this.c).g = null;
-        n nVar = (n) this.b;
-        if (nVar != null) {
-            nVar.s(str, j10, i10, obj, j11, j12);
-        }
     }
 
     @Override // fa.a
@@ -1131,9 +1127,13 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         return stackTraceElementArr2.length > 1024 ? ((rb.b) this.c).s0(stackTraceElementArr2) : stackTraceElementArr2;
     }
 
-    @Override // d6.h
-    public void t(d6.f fVar) {
-        Log.d("CAST_SESSION", "onSessionEnding " + ((d6.c) fVar).a());
+    @Override // g6.n
+    public void t(String str, long j10, int i10, Object obj, long j11, long j12) {
+        ((g6.m) this.c).g = null;
+        n nVar = (n) this.b;
+        if (nVar != null) {
+            nVar.t(str, j10, i10, obj, j11, j12);
+        }
     }
 
     @Override // com.google.android.gms.tasks.Continuation
@@ -1158,10 +1158,8 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
     }
 
     @Override // d6.h
-    public void u(d6.f fVar, String str) {
-        d6.c cVar = (d6.c) fVar;
-        Log.d("CAST_SESSION", "onSessionStarted " + cVar.a() + " " + str);
-        e0(cVar);
+    public void u(d6.f fVar) {
+        Log.d("CAST_SESSION", "onSessionEnding " + ((d6.c) fVar).a());
     }
 
     @Override // e2.d
@@ -1178,9 +1176,11 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         return yVar;
     }
 
-    @Override // ki.g1
-    public /* synthetic */ boolean w(h1 h1Var) {
-        return false;
+    @Override // d6.h
+    public void w(d6.f fVar, String str) {
+        d6.c cVar = (d6.c) fVar;
+        Log.d("CAST_SESSION", "onSessionStarted " + cVar.a() + " " + str);
+        e0(cVar);
     }
 
     @Override // d6.h
@@ -1252,7 +1252,8 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         boolean z10 = false;
         this.a = 0;
         d6.a c10 = d6.a.c(ApplicationLoader.applicationContext);
-        hk0 hk0Var = new hk0(22);
+        int i10 = 23;
+        hk0 hk0Var = new hk0(i10);
         c10.getClass();
         l.e("Must be called from the main thread.");
         d6.g gVar = c10.c;
@@ -1266,7 +1267,7 @@ public class b implements h, OnCompleteListener, com.google.android.gms.internal
         } catch (RemoteException e) {
             d6.g.c.a(e, "Unable to call %s on %s.", "addCastStateListener", d6.y.class.getSimpleName());
         }
-        this.b = new g3(24, z10);
+        this.b = new g3(i10, z10);
         d6.g b10 = c10.b();
         this.c = b10;
         b10.a(this);

@@ -21,14 +21,14 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class vn extends Drawable {
     public final boolean a;
     public View b;
     public int c = 255;
     public final float d;
-    public final ci.g3 e;
+    public final ci.f3 e;
     public final org.telegram.ui.Components.wc0 f;
     public final TLRPC.WallPaper g;
     public boolean h;
@@ -39,10 +39,10 @@ public final class vn extends Drawable {
         TLRPC.WallPaperSettings wallPaperSettings;
         String n10;
         TLRPC.WallPaperSettings wallPaperSettings2;
-        ci.g3 g3Var = new ci.g3(this, 3);
-        this.e = g3Var;
+        ci.f3 f3Var = new ci.f3(this, 3);
+        this.e = f3Var;
         this.j = new ArrayList();
-        g3Var.setInvalidateAll(true);
+        f3Var.setInvalidateAll(true);
         boolean z12 = wallPaper.pattern;
         this.g = wallPaper;
         this.a = z10;
@@ -82,14 +82,14 @@ public final class vn extends Drawable {
         Drawable b10 = b(wallPaper);
         String str = wallPaper.uploadingImage;
         if (str != null) {
-            g3Var.setImage(ImageLocation.getForPath(str), sb3, b10, null, wallPaper, 1);
+            f3Var.setImage(ImageLocation.getForPath(str), sb3, b10, null, wallPaper, 1);
             return;
         }
         TLRPC.Document document = wallPaper.document;
         if (document != null) {
-            g3Var.setImage(ImageLocation.getForDocument(document), sb3, b10, null, wallPaper, 1);
+            f3Var.setImage(ImageLocation.getForDocument(document), sb3, b10, null, wallPaper, 1);
         } else {
-            g3Var.setImageBitmap(b10);
+            f3Var.setImageBitmap(b10);
         }
     }
 
@@ -168,8 +168,8 @@ public final class vn extends Drawable {
         if (wc0Var != null) {
             return wc0Var;
         }
-        ci.g3 g3Var = this.e;
-        return (!z10 || g3Var.getStaticThumb() == null) ? g3Var.getThumb() != null ? g3Var.getThumb() : g3Var.getDrawable() != null ? g3Var.getDrawable() : g3Var.getStaticThumb() : g3Var.getStaticThumb();
+        ci.f3 f3Var = this.e;
+        return (!z10 || f3Var.getStaticThumb() == null) ? f3Var.getThumb() != null ? f3Var.getThumb() : f3Var.getDrawable() != null ? f3Var.getDrawable() : f3Var.getStaticThumb() : f3Var.getStaticThumb();
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -181,20 +181,20 @@ public final class vn extends Drawable {
             wc0Var.draw(canvas);
             return;
         }
-        ci.g3 g3Var = this.e;
-        boolean hasImageLoaded = g3Var.hasImageLoaded();
+        ci.f3 f3Var = this.e;
+        boolean hasImageLoaded = f3Var.hasImageLoaded();
         float f7 = this.d;
         boolean z10 = true;
-        if (hasImageLoaded && g3Var.getCurrentAlpha() == 1.0f) {
+        if (hasImageLoaded && f3Var.getCurrentAlpha() == 1.0f) {
             if (!this.h) {
                 this.h = true;
-                g3Var.setColorFilter(new PorterDuffColorFilter(i0.a.o(-16777216, (int) (f7 * 255.0f)), PorterDuff.Mode.DARKEN));
+                f3Var.setColorFilter(new PorterDuffColorFilter(i0.a.o(-16777216, (int) (f7 * 255.0f)), PorterDuff.Mode.DARKEN));
             }
             z10 = false;
         }
-        g3Var.setImageCoords(getBounds());
-        g3Var.setAlpha(this.c / 255.0f);
-        g3Var.draw(canvas);
+        f3Var.setImageCoords(getBounds());
+        f3Var.setAlpha(this.c / 255.0f);
+        f3Var.draw(canvas);
         if (!z10 || f7 == 0.0f) {
             return;
         }
@@ -207,13 +207,13 @@ public final class vn extends Drawable {
             arrayList.add(view);
         }
         int size = arrayList.size();
-        ci.g3 g3Var = this.e;
+        ci.f3 f3Var = this.e;
         if (size > 0 && !this.i) {
             this.i = true;
-            g3Var.onAttachedToWindow();
+            f3Var.onAttachedToWindow();
         } else if (arrayList.size() <= 0 && this.i) {
             this.i = false;
-            g3Var.onDetachedFromWindow();
+            f3Var.onDetachedFromWindow();
         }
         org.telegram.ui.Components.wc0 wc0Var = this.f;
         if (wc0Var != null) {
@@ -227,13 +227,13 @@ public final class vn extends Drawable {
             arrayList.remove(view);
         }
         int size = arrayList.size();
-        ci.g3 g3Var = this.e;
+        ci.f3 f3Var = this.e;
         if (size > 0 && !this.i) {
             this.i = true;
-            g3Var.onAttachedToWindow();
+            f3Var.onAttachedToWindow();
         } else if (arrayList.size() <= 0 && this.i) {
             this.i = false;
-            g3Var.onDetachedFromWindow();
+            f3Var.onDetachedFromWindow();
         }
         org.telegram.ui.Components.wc0 wc0Var = this.f;
         if (wc0Var != null) {

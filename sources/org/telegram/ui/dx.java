@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class dx implements t60 {
     public final /* synthetic */ org.telegram.ui.ActionBar.b2 a;
@@ -96,7 +96,7 @@ public final class dx implements t60 {
             }
         };
         org.telegram.ui.ActionBar.b2 b2Var = this.a;
-        Utilities.doCallbacks(callback, callback2, new ai.g2(this, b2Var, j10, 2), new Utilities.Callback(this) { // from class: org.telegram.ui.cx
+        Utilities.doCallbacks(callback, callback2, new ai.e2(this, b2Var, j10, 2), new Utilities.Callback(this) { // from class: org.telegram.ui.cx
             public final /* synthetic */ dx b;
 
             {
@@ -174,6 +174,6 @@ public final class dx implements t60 {
                         }
                 }
             }
-        }, new ai.w2(this, b2Var, j10, n2VarArr, 5));
+        }, new ai.u2(this, b2Var, j10, n2VarArr, 5));
     }
 }

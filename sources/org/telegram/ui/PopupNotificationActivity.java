@@ -48,7 +48,7 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class PopupNotificationActivity extends Activity implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int b0 = 0;
@@ -486,10 +486,10 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 i11 = 2;
                 frameLayout2.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
                 frameLayout2.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.L0(false));
-                frameLayout.addView(frameLayout2, w7.z5.d(-1.0f, -1));
+                frameLayout.addView(frameLayout2, w7.z5.c(-1.0f, -1));
                 org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(this);
                 w9Var.setTag(311);
-                frameLayout2.addView(w9Var, w7.z5.d(-1.0f, -1));
+                frameLayout2.addView(w9Var, w7.z5.c(-1.0f, -1));
                 TextView textView = new TextView(this);
                 textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
                 textView.setTextSize(1, 16.0f);
@@ -582,9 +582,9 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 FrameLayout frameLayout4 = new FrameLayout(this);
                 frameLayout4.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
                 frameLayout4.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.L0(false));
-                frameLayout3.addView(frameLayout4, w7.z5.d(-1.0f, -1));
+                frameLayout3.addView(frameLayout4, w7.z5.c(-1.0f, -1));
                 FrameLayout frameLayout5 = new FrameLayout(this);
-                frameLayout4.addView(frameLayout5, w7.z5.a(-2.0f, 20.0f, 0.0f, 20.0f, 0.0f, -1, 17));
+                frameLayout4.addView(frameLayout5, w7.z5.d(-1, -2.0f, 17, 20.0f, 0.0f, 20.0f, 0.0f));
                 org.telegram.ui.Components.lh0 lh0Var2 = new org.telegram.ui.Components.lh0(this);
                 lh0Var2.f = false;
                 lh0Var2.y = 0;
@@ -658,7 +658,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
                 FrameLayout frameLayout6 = new FrameLayout(this);
                 ScrollView scrollView = new ScrollView(this);
                 scrollView.setFillViewport(true);
-                frameLayout6.addView(scrollView, w7.z5.d(-1.0f, -1));
+                frameLayout6.addView(scrollView, w7.z5.c(-1.0f, -1));
                 LinearLayout linearLayout = new LinearLayout(this);
                 linearLayout.setOrientation(0);
                 linearLayout.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.L0(false));
@@ -1305,7 +1305,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         setContentView(y8Var);
         y8Var.setBackgroundColor(-1728053248);
         RelativeLayout relativeLayout = new RelativeLayout(this);
-        y8Var.addView(relativeLayout, w7.z5.d(-1.0f, -1));
+        y8Var.addView(relativeLayout, w7.z5.c(-1.0f, -1));
         vv0 vv0Var = new vv0(this, this);
         this.E = vv0Var;
         vv0Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
@@ -1340,7 +1340,7 @@ public class PopupNotificationActivity extends Activity implements NotificationC
         textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i11, false));
         this.h.setTextSize(1, 14.0f);
         this.h.setGravity(17);
-        g10.addView(this.h, w7.z5.d(-1.0f, 56));
+        g10.addView(this.h, w7.z5.c(-1.0f, 56));
         FrameLayout frameLayout = new FrameLayout(this);
         this.f = frameLayout;
         frameLayout.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);

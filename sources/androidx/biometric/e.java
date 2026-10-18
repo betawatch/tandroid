@@ -29,7 +29,7 @@ import androidx.lifecycle.s0;
 import androidx.lifecycle.t0;
 import b2.v0;
 import c3.j0;
-import ci.v7;
+import ci.u7;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -86,7 +86,7 @@ import org.telegram.ui.Components.p71;
 import org.telegram.ui.Components.x71;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.internal.r, x71, z3.d, j4.a0, OnCompleteListener, n5.b {
     public static e e;
@@ -260,6 +260,11 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
         return new l5.t(new rb.b(i10), new pb.a(i10), (q5.b) ((z5) this.b).get(), (ea.b) ((s3) this.c).get(), (com.google.firebase.messaging.r) ((qi.e) this.d).get());
     }
 
+    @Override // z3.d
+    public int h() {
+        return ((long[]) this.d).length;
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:56:0x00a7  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x00d8 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:74:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
@@ -269,7 +274,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public int h(int i10) {
+    public int i(int i10) {
         BiometricManager biometricManager;
         int a2;
         BiometricPrompt.CryptoObject b10;
@@ -390,11 +395,6 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
         }
     }
 
-    @Override // z3.d
-    public int i() {
-        return ((long[]) this.d).length;
-    }
-
     public int j() {
         k0.b bVar = (k0.b) this.d;
         if (bVar == null) {
@@ -402,12 +402,12 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
             return 1;
         }
         Context context = (Context) bVar.b;
-        FingerprintManager q6 = k0.b.q(context);
-        if (q6 == null || !q6.isHardwareDetected()) {
+        FingerprintManager w9 = k0.b.w(context);
+        if (w9 == null || !w9.isHardwareDetected()) {
             return 12;
         }
-        FingerprintManager q10 = k0.b.q(context);
-        return (q10 == null || !q10.hasEnrolledFingerprints()) ? 11 : 0;
+        FingerprintManager w10 = k0.b.w(context);
+        return (w10 == null || !w10.hasEnrolledFingerprints()) ? 11 : 0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x00ba  */
@@ -691,7 +691,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
     */
     public boolean r() {
         com.google.firebase.messaging.m mVar;
-        if (((ya.c) this.d).K("gcm.n.noui")) {
+        if (((ya.d) this.d).K("gcm.n.noui")) {
             return true;
         }
         FirebaseMessagingService firebaseMessagingService = (FirebaseMessagingService) this.c;
@@ -713,7 +713,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
                 }
             }
         }
-        String W = ((ya.c) this.d).W("gcm.n.image");
+        String W = ((ya.d) this.d).W("gcm.n.image");
         if (!TextUtils.isEmpty(W)) {
             try {
                 mVar = new com.google.firebase.messaging.m(new URL(W));
@@ -723,10 +723,10 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
             if (mVar != null) {
                 ExecutorService executorService = (ExecutorService) this.b;
                 TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                mVar.b = executorService.submit(new v7(9, mVar, taskCompletionSource));
+                mVar.b = executorService.submit(new u7(9, mVar, taskCompletionSource));
                 mVar.c = taskCompletionSource.getTask();
             }
-            com.google.firebase.messaging.i a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (ya.c) this.d);
+            com.google.firebase.messaging.i a2 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (ya.d) this.d);
             e0.q qVar = (e0.q) a2.a;
             if (mVar != null) {
                 try {
@@ -759,7 +759,7 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
         mVar = null;
         if (mVar != null) {
         }
-        com.google.firebase.messaging.i a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (ya.c) this.d);
+        com.google.firebase.messaging.i a22 = com.google.firebase.messaging.e.a((FirebaseMessagingService) this.c, (ya.d) this.d);
         e0.q qVar2 = (e0.q) a22.a;
         if (mVar != null) {
         }
@@ -1042,11 +1042,11 @@ public final class e implements com.google.android.gms.common.api.internal.r, x7
         kotlin.jvm.internal.i.e(store, "store");
     }
 
-    public e(FirebaseMessagingService firebaseMessagingService, ya.c cVar, ExecutorService executorService) {
+    public e(FirebaseMessagingService firebaseMessagingService, ya.d dVar, ExecutorService executorService) {
         this.a = 10;
         this.b = executorService;
         this.c = firebaseMessagingService;
-        this.d = cVar;
+        this.d = dVar;
     }
 
     public e(Context context, LocationManager locationManager) {

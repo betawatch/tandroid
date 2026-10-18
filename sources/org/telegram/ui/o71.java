@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o71 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -124,7 +124,7 @@ public final /* synthetic */ class o71 implements RequestDelegate {
                     break;
                 }
             case 7:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.u3(17, (rh1) this.b, (int[]) this.c));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Wallet.v3(18, (rh1) this.b, (int[]) this.c));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new hn0((rg.m2) this.b, tLObject, (rg.k2) this.c, tL_error, 29));
@@ -145,15 +145,15 @@ public final /* synthetic */ class o71 implements RequestDelegate {
                             arrayList.add(user);
                         }
                     }
-                    AndroidUtilities.runOnUIThread(new uf.c(3, qyVar, arrayList));
+                    AndroidUtilities.runOnUIThread(new u2.q0(4, qyVar, arrayList));
                     break;
                 }
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new yh.t1((org.telegram.ui.Components.is0) this.b, tL_error, (org.telegram.ui.ActionBar.n2) this.c, 0));
+                AndroidUtilities.runOnUIThread(new yh.s1((org.telegram.ui.Components.is0) this.b, tL_error, (org.telegram.ui.ActionBar.n2) this.c, 0));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new yh.t1((yh.t3) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 3));
+                AndroidUtilities.runOnUIThread(new yh.s1((yh.s3) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 3));
                 break;
         }
     }

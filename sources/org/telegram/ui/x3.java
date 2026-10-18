@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class x3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.ActionBar.t3 {
     public ValueAnimator E;
@@ -33,7 +33,7 @@ public final class x3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.A
     public boolean n;
     public boolean r;
     public boolean s;
-    public ci.t3 v;
+    public ci.s3 v;
     public float w;
     public float x;
     public ValueAnimator y;
@@ -401,9 +401,9 @@ public final class x3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.A
                 AndroidUtilities.removeFromParent(this.c);
             }
         }
-        ci.t3 t3Var = this.v;
-        if (t3Var != null) {
-            t3Var.run();
+        ci.s3 s3Var = this.v;
+        if (s3Var != null) {
+            s3Var.run();
             this.v = null;
         }
         l4.b1.remove(l4Var);
@@ -419,7 +419,7 @@ public final class x3 implements org.telegram.ui.ActionBar.j2, org.telegram.ui.A
 
     @Override // org.telegram.ui.ActionBar.j2
     public final void setOnDismissListener(Runnable runnable) {
-        this.v = (ci.t3) runnable;
+        this.v = (ci.s3) runnable;
     }
 
     @Override // org.telegram.ui.ActionBar.j2

@@ -22,13 +22,13 @@ import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.md0;
 import org.telegram.ui.Components.od0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.of0;
+import org.telegram.ui.nf0;
 import org.telegram.ui.wy0;
 import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s7 implements BillingController.ProductDetailsResponseListenerLegacy, ci.u9, OnFailureListener, org.telegram.ui.ActionBar.a2, md0, c5.p, MediaDataController.KeywordResultCallback {
+public final /* synthetic */ class s7 implements BillingController.ProductDetailsResponseListenerLegacy, ci.t9, OnFailureListener, org.telegram.ui.ActionBar.a2, md0, c5.p, MediaDataController.KeywordResultCallback {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -45,19 +45,19 @@ public final /* synthetic */ class s7 implements BillingController.ProductDetail
 
     @Override // c5.p
     public void b(c5.i iVar, List list) {
-        AndroidUtilities.runOnUIThread(new u7((of0) this.a, iVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (i90) this.e, 8));
+        AndroidUtilities.runOnUIThread(new u7((nf0) this.a, iVar, list, (String) this.b, (TLRPC.TL_inputStorePaymentAuthCode) this.c, (TLRPC.TL_payments_canPurchaseStore) this.d, (i90) this.e, 8));
     }
 
-    @Override // ci.u9
+    @Override // ci.t9
     public void e(float f7, Canvas canvas, RectF rectF, boolean z10) {
         ag.b bVar = (ag.b) this.a;
         RectF rectF2 = (RectF) this.b;
-        ci.s4 s4Var = (ci.s4) this.c;
+        ci.r4 r4Var = (ci.r4) this.c;
         RectF rectF3 = (RectF) this.d;
-        ci.s4 s4Var2 = (ci.s4) this.e;
-        RectF rectF4 = s4Var.m;
+        ci.r4 r4Var2 = (ci.r4) this.e;
+        RectF rectF4 = r4Var.m;
         rectF2.set(rectF4);
-        RectF rectF5 = s4Var2.m;
+        RectF rectF5 = r4Var2.m;
         rectF3.set(rectF5);
         rectF4.set(rectF);
         try {
@@ -71,7 +71,7 @@ public final /* synthetic */ class s7 implements BillingController.ProductDetail
         }
         wy0 wy0Var = (wy0) bVar.b;
         int i10 = ProfileStoriesView.s0;
-        wy0Var.a(canvas, s4Var, s4Var2);
+        wy0Var.a(canvas, r4Var, r4Var2);
         rectF4.set(rectF2);
         rectF5.set(rectF3);
     }

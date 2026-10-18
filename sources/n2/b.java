@@ -25,7 +25,7 @@ import ki.t1;
 import v7.u6;
 import w7.a0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class b implements h {
     public final List a;
@@ -148,7 +148,7 @@ public final class b implements h {
                     String str2 = m0.a;
                     o10.getClass();
                     fVar2.getClass();
-                    fVar2.obtainMessage(1, new a(u2.t.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), o10)).sendToTarget();
+                    fVar2.obtainMessage(1, new a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), o10)).sendToTarget();
                 }
             }
             if (fVar.v != -9223372036854775807L) {
@@ -474,7 +474,7 @@ public final class b implements h {
             String str = m0.a;
             k02.getClass();
             fVar.getClass();
-            fVar.obtainMessage(2, new a(u2.t.g.getAndIncrement(), z10, SystemClock.elapsedRealtime(), k02)).sendToTarget();
+            fVar.obtainMessage(2, new a(u2.u.g.getAndIncrement(), z10, SystemClock.elapsedRealtime(), k02)).sendToTarget();
         } catch (Exception | NoSuchMethodError e) {
             m(e, true);
         }

@@ -1,28 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class fb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
+    public final /* synthetic */ q0.a b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ fb(MessagesController messagesController, TL_account.TL_webBrowserSettings tL_webBrowserSettings, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-        this.c = tL_webBrowserSettings;
+    public /* synthetic */ fb(q0.a aVar, int i10, int i11) {
+        this.a = i11;
+        this.b = aVar;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadWebBrowserConfig$513(this.c);
+                MessagesController.lambda$getNextReactionMentionInternal$1(this.b, this.c);
                 break;
             default:
-                this.b.lambda$loadWebBrowserConfig$511(this.c);
+                MessagesController.lambda$getNextReactionMentionInternal$2(this.b, this.c);
                 break;
         }
     }

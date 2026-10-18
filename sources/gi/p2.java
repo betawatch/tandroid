@@ -16,7 +16,7 @@ import org.telegram.ui.Components.nt0;
 import org.telegram.ui.Components.p6;
 import org.telegram.ui.qq;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class p2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -81,9 +81,9 @@ public final class p2 extends AnimatorListenerAdapter {
                 break;
             case 7:
                 jy jyVar = (jy) this.c;
-                sg.p0 p0Var = jyVar.h;
+                sg.q0 q0Var = jyVar.h;
                 int i10 = this.b;
-                p0Var.setVisibility(i10 == 1 ? 0 : 8);
+                q0Var.setVisibility(i10 == 1 ? 0 : 8);
                 jyVar.e.setVisibility(i10 == 2 ? 0 : 8);
                 jyVar.f.setVisibility(i10 == 3 ? 0 : 8);
                 break;

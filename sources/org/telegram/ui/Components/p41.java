@@ -18,7 +18,7 @@ import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class p41 extends FrameLayout {
     public final ImageView a;
@@ -39,7 +39,7 @@ public final class p41 extends FrameLayout {
         int themedColor = r41Var.getThemedColor(org.telegram.ui.ActionBar.h6.h5);
         String str = r41Var.s;
         view.setBackgroundColor(themedColor);
-        addView(view, w7.z5.a(44.0f, 0.0f, 12.0f, 0.0f, 0.0f, -1, 55));
+        addView(view, w7.z5.d(-1, 44.0f, 55, 0.0f, 12.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.a = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -114,7 +114,7 @@ public final class p41 extends FrameLayout {
                 }
             }
         });
-        addView(imageView, w7.z5.a(54.0f, 1.0f, 1.0f, 1.0f, 1.0f, 54, 48));
+        addView(imageView, w7.z5.d(54, 54.0f, 48, 1.0f, 1.0f, 1.0f, 1.0f));
         org.telegram.ui.mk mkVar = new org.telegram.ui.mk(this, context, 2);
         this.b = mkVar;
         mkVar.setTextColor(r41Var.getThemedColor(i10));
@@ -123,7 +123,7 @@ public final class p41 extends FrameLayout {
         mkVar.setText(LocaleController.getString(R.string.AutomaticTranslation));
         mkVar.setPivotX(0.0f);
         mkVar.setPivotY(0.0f);
-        addView(mkVar, w7.z5.a(-2.0f, 22.0f, 20.0f, 22.0f, 0.0f, -1, 55));
+        addView(mkVar, w7.z5.d(-1, -2.0f, 55, 22.0f, 20.0f, 22.0f, 0.0f));
         sa1 sa1Var = new sa1(this, context, 13);
         this.c = sa1Var;
         if (LocaleController.isRTL) {
@@ -235,12 +235,12 @@ public final class p41 extends FrameLayout {
             }
             sa1Var.addView(n41Var, w7.z5.t(-2, -2, 16, this.d != null ? 3 : 0, 0, 0, 0));
         }
-        addView(sa1Var, w7.z5.a(-2.0f, 22.0f, 43.0f, 22.0f, 0.0f, -1, 55));
+        addView(sa1Var, w7.z5.d(-1, -2.0f, 55, 22.0f, 43.0f, 22.0f, 0.0f));
         View view2 = new View(context);
         this.h = view2;
         view2.setBackgroundColor(r41Var.getThemedColor(org.telegram.ui.ActionBar.h6.V5));
         view2.setAlpha(0.0f);
-        addView(view2, w7.z5.a(AndroidUtilities.getShadowHeight() / AndroidUtilities.dpf2(1.0f), 0.0f, 56.0f, 0.0f, 0.0f, -1, 55));
+        addView(view2, w7.z5.d(-1, AndroidUtilities.getShadowHeight() / AndroidUtilities.dpf2(1.0f), 55, 0.0f, 56.0f, 0.0f, 0.0f));
     }
 
     @Override // android.widget.FrameLayout, android.view.View

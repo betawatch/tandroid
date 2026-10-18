@@ -30,7 +30,7 @@ import org.telegram.ui.s50;
 import org.webrtc.RendererCommon;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class v0 extends FrameLayout implements VoIPService.StateListener {
     public boolean a;
@@ -60,7 +60,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         gVar.setAdapter(new u0(this));
         gVar.setPageMargin(0);
         gVar.setOffscreenPageLimit(1);
-        addView(gVar, z5.d(-1.0f, -1));
+        addView(gVar, z5.c(-1.0f, -1));
         gVar.b(new s0(this));
         q2 q2Var = new q2(context, false, false);
         this.h = q2Var;
@@ -72,7 +72,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         p2Var.setAlpha(0.0f);
         p2Var.setRotateTextureWithScreen(true);
         p2Var.setUseCameraRotation(true);
-        addView(q2Var, z5.d(-1.0f, -1));
+        addView(q2Var, z5.c(-1.0f, -1));
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, null);
         kVar.setBackButtonDrawable(new org.telegram.ui.ActionBar.g2(false));
         kVar.setBackgroundColor(0);
@@ -95,7 +95,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         nVar.setForeground(h6.j0(dp, dp, dp, dp, 0, o10, o10));
         nVar.setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
         nVar.setOnClickListener(new hg.r0(this, 12));
-        addView(nVar, z5.a(48.0f, 0.0f, 0.0f, 0.0f, 64.0f, -1, 80));
+        addView(nVar, z5.d(-1, 48.0f, 80, 0.0f, 0.0f, 0.0f, 64.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         this.d = linearLayout;
         addView(linearLayout, z5.e(-2, 64, 80));
@@ -144,7 +144,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         this.v = true;
         uj0Var.M(69);
         xj0Var.setOnClickListener(new g51(4, this, uj0Var));
-        addView(xj0Var, z5.a(48.0f, 24.0f, 0.0f, 0.0f, 136.0f, 48, 83));
+        addView(xj0Var, z5.d(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
     }
 
     public static void a(v0 v0Var) {
@@ -286,7 +286,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onAudioSettingsChanged() {
-        org.telegram.messenger.voip.u0.a(this);
+        org.telegram.messenger.voip.t0.a(this);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
@@ -352,22 +352,22 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onMediaStateUpdated(int i10, int i11) {
-        org.telegram.messenger.voip.u0.d(this, i10, i11);
+        org.telegram.messenger.voip.t0.d(this, i10, i11);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onScreenOnChange(boolean z10) {
-        org.telegram.messenger.voip.u0.e(this, z10);
+        org.telegram.messenger.voip.t0.e(this, z10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onSignalBarsCountChanged(int i10) {
-        org.telegram.messenger.voip.u0.f(this, i10);
+        org.telegram.messenger.voip.t0.f(this, i10);
     }
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onStateChanged(int i10) {
-        org.telegram.messenger.voip.u0.g(this, i10);
+        org.telegram.messenger.voip.t0.g(this, i10);
     }
 
     @Override // android.view.View
@@ -377,7 +377,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
 
     @Override // org.telegram.messenger.voip.VoIPService.StateListener
     public final /* synthetic */ void onVideoAvailableChange(boolean z10) {
-        org.telegram.messenger.voip.u0.h(this, z10);
+        org.telegram.messenger.voip.t0.h(this, z10);
     }
 
     public void setBottomPadding(int i10) {

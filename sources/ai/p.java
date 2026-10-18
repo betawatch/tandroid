@@ -30,7 +30,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -46,13 +46,13 @@ public final /* synthetic */ class p implements View.OnClickListener {
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         Integer num;
-        ci.j4 j4Var;
+        ci.i4 i4Var;
         int i10 = this.a;
-        int i11 = 7;
         v1 v1Var = null;
         CharSequence charSequence = null;
         v1Var = null;
-        int i12 = 0;
+        int i11 = 0;
+        int i12 = 1;
         Object obj = this.b;
         Object obj2 = this.c;
         switch (i10) {
@@ -69,7 +69,7 @@ public final /* synthetic */ class p implements View.OnClickListener {
                     int[] iArr = b1.w0;
                     if (i13 >= 6) {
                         String string = LocaleController.getString(R.string.GiftOfferDuration);
-                        r0 r0Var = new r0(b1Var, i12);
+                        r0 r0Var = new r0(b1Var, i11);
                         Pattern pattern = org.telegram.ui.Components.f5.a;
                         ig.f2 b10 = ig.f2.b(UserConfig.selectedAccount);
                         b10.g();
@@ -99,7 +99,7 @@ public final /* synthetic */ class p implements View.OnClickListener {
                             od0Var.setMaxValue(5);
                             od0Var.setValue(i14);
                             linearLayout.addView(od0Var, w7.z5.l(1.0f, 0, 432));
-                            od0Var.setFormatter(new org.telegram.ui.Components.s(strArr, i11));
+                            od0Var.setFormatter(new org.telegram.ui.Components.s(strArr, 7));
                             org.telegram.ui.Components.x4 x4Var = new org.telegram.ui.Components.x4(context, od0Var);
                             x4Var.setOrientation(1);
                             FrameLayout frameLayout = new FrameLayout(context);
@@ -108,17 +108,17 @@ public final /* synthetic */ class p implements View.OnClickListener {
                             textView.setTextColor(x02);
                             textView.setTextSize(1, 20.0f);
                             textView.setTypeface(AndroidUtilities.bold());
-                            frameLayout.addView(textView, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
+                            frameLayout.addView(textView, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                             textView.setOnTouchListener(new di.d(10));
                             x4Var.addView(frameLayout, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
                             x4Var.addView(linearLayout, w7.z5.p(-1, -2, 1.0f, 0, 0, 12, 0, 12));
                             ei.d dVar = new ei.d(context, null, true);
                             dVar.g(LocaleController.getString(R.string.Select), false, true);
-                            dVar.setOnClickListener(new org.telegram.ui.Components.l2(r3, 1));
+                            dVar.setOnClickListener(new org.telegram.ui.Components.l2(r2, i12));
                             x4Var.addView(dVar, w7.z5.t(-1, 48, 0, 16, 12, 16, 12));
                             f3Var.customView = x4Var;
                             f3Var.show();
-                            f3Var.setOnDismissListener(new v3(9, r0Var, od0Var));
+                            f3Var.setOnDismissListener(new x3(9, r0Var, od0Var));
                             f3Var.setBackgroundColor(x03);
                             f3Var.fixNavigationBar(x03);
                             org.telegram.ui.ActionBar.f3[] f3VarArr = {f3Var};
@@ -135,12 +135,12 @@ public final /* synthetic */ class p implements View.OnClickListener {
                 break;
             case 2:
                 l1 l1Var = (l1) obj2;
-                o2 o2Var = (o2) obj;
+                n2 n2Var = (n2) obj;
                 ei.d dVar2 = l1Var.f;
                 if (dVar2.W && !dVar2.N) {
                     AndroidUtilities.hideKeyboard(l1Var.c);
                     dVar2.setLoading(true);
-                    o2Var.run(l1Var.E);
+                    n2Var.run(l1Var.E);
                     break;
                 }
                 break;
@@ -232,49 +232,49 @@ public final /* synthetic */ class p implements View.OnClickListener {
                         }
                         if (u10 != null) {
                             U.getOrCreateStoryViewer().A(i18, context2, u10, null);
-                            AndroidUtilities.runOnUIThread(new ah.j(7), 200L);
+                            AndroidUtilities.runOnUIThread(new ah.j(6), 200L);
                             break;
                         }
                     }
                 }
                 break;
             case 11:
-                ci.q4 q4Var = (ci.q4) obj2;
-                ci.n8 n8Var = (ci.n8) obj;
-                ci.aa aaVar = q4Var.J0;
-                if (n8Var.b == null) {
-                    org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.xc(q4Var.c1, q4Var.B0).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
+                ci.p4 p4Var = (ci.p4) obj2;
+                ci.m8 m8Var = (ci.m8) obj;
+                ci.z9 z9Var = p4Var.J0;
+                if (m8Var.b == null) {
+                    org.telegram.ui.Components.qc Q = new org.telegram.ui.Components.xc(p4Var.c1, p4Var.B0).Q(R.raw.error, 36, LocaleController.getString(R.string.StoryHidAccount));
                     Q.a = 3;
                     Q.k(true);
                     break;
                 } else {
                     Bundle bundle = new Bundle();
-                    if (n8Var.b.longValue() >= 0) {
-                        bundle.putLong("user_id", n8Var.b.longValue());
+                    if (m8Var.b.longValue() >= 0) {
+                        bundle.putLong("user_id", m8Var.b.longValue());
                     } else {
-                        bundle.putLong("chat_id", -n8Var.b.longValue());
+                        bundle.putLong("chat_id", -m8Var.b.longValue());
                     }
-                    if (n8Var.e && (num = n8Var.d) != null) {
+                    if (m8Var.e && (num = m8Var.d) != null) {
                         bundle.putInt("message_id", num.intValue());
-                        aaVar.H(new sn(bundle));
+                        z9Var.H(new sn(bundle));
                         break;
                     } else {
-                        aaVar.H(new ProfileActivity(bundle, null));
+                        z9Var.H(new ProfileActivity(bundle, null));
                         break;
                     }
                 }
                 break;
             case 12:
-                ci.q4 q4Var2 = (ci.q4) obj2;
-                ((ci.r9) q4Var2.Q1).h(new sg.x0(q4Var2.J0.f, 14, false));
+                ci.p4 p4Var2 = (ci.p4) obj2;
+                ((ci.q9) p4Var2.Q1).h(new sg.y0(p4Var2.J0.f, 14, false));
                 ((org.telegram.ui.ActionBar.f3) obj).dismiss();
                 break;
             case 13:
-                ci.q4 q4Var3 = ((ci.h4) obj2).l;
-                aw alert = ((ci.v8) obj).getAlert();
-                if (alert != null && (j4Var = q4Var3.Q1) != null) {
-                    ((ci.r9) j4Var).h(alert);
-                    q4Var3.t1.a();
+                ci.p4 p4Var3 = ((ci.g4) obj2).l;
+                aw alert = ((ci.u8) obj).getAlert();
+                if (alert != null && (i4Var = p4Var3.Q1) != null) {
+                    ((ci.q9) i4Var).h(alert);
+                    p4Var3.t1.a();
                     break;
                 }
                 break;

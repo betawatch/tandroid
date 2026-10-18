@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.ui.Components.ti0;
 import org.telegram.ui.Components.xp;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class o4 extends FrameLayout {
     public final org.telegram.ui.Components.w9 a;
@@ -27,11 +27,11 @@ public final class o4 extends FrameLayout {
         org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
         this.a = w9Var;
         w9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        addView(w9Var, w7.z5.a(46.0f, 13.0f, 6.0f, 13.0f, 6.0f, 46, (LocaleController.isRTL ? 5 : 3) | 48));
+        addView(w9Var, w7.z5.d(46, 46.0f, (LocaleController.isRTL ? 5 : 3) | 48, 13.0f, 6.0f, 13.0f, 6.0f));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(0);
         boolean z11 = LocaleController.isRTL;
-        addView(linearLayout, w7.z5.a(-1.0f, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f, -1, 119));
+        addView(linearLayout, w7.z5.d(-1, -1.0f, 119, z11 ? 0 : 72, 0.0f, z11 ? 72 : 0, 0.0f));
         FrameLayout frameLayout = new FrameLayout(context);
         linearLayout.addView(frameLayout, w7.z5.l(1.0f, 0, 58));
         org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
@@ -40,12 +40,12 @@ public final class o4 extends FrameLayout {
         j5Var.setTypeface(AndroidUtilities.bold());
         j5Var.setTextSize(15);
         j5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        frameLayout.addView(j5Var, w7.z5.a(20.0f, 0.0f, 9.0f, 0.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        frameLayout.addView(j5Var, w7.z5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 9.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(context);
         this.c = j5Var2;
         j5Var2.setTextSize(13);
         j5Var2.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        frameLayout.addView(j5Var2, w7.z5.a(20.0f, 0.0f, 33.0f, 0.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
+        frameLayout.addView(j5Var2, w7.z5.d(-1, 20.0f, (LocaleController.isRTL ? 5 : 3) | 48, 0.0f, 33.0f, 0.0f, 0.0f));
         if (z10) {
             xp xpVar = new xp(context, 21, null);
             this.e = xpVar;
@@ -53,7 +53,7 @@ public final class o4 extends FrameLayout {
             xpVar.setDrawUnchecked(false);
             xpVar.setDrawBackgroundAsArc(3);
             boolean z12 = LocaleController.isRTL;
-            addView(xpVar, w7.z5.a(24.0f, z12 ? 0.0f : 40.0f, 32.0f, z12 ? 39.0f : 0.0f, 0.0f, 24, (z12 ? 5 : 3) | 48));
+            addView(xpVar, w7.z5.d(24, 24.0f, (z12 ? 5 : 3) | 48, z12 ? 0.0f : 40.0f, 32.0f, z12 ? 39.0f : 0.0f, 0.0f));
             return;
         }
         this.e = null;

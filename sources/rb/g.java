@@ -4,8 +4,9 @@ import android.content.Context;
 import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
+import qg.e0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
@@ -35,11 +36,11 @@ public final class g {
             ArrayList R = new mi.q(19, context, new l2.f(MlKitComponentDiscoveryService.class, 16)).R();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            r.a aVar = r9.e.A;
+            e0 e0Var = r9.e.A;
             arrayList.addAll(R);
             arrayList2.add(r9.a.c(context, Context.class, new Class[0]));
             arrayList2.add(r9.a.c(gVar2, g.class, new Class[0]));
-            r9.g gVar3 = new r9.g(executor, arrayList, arrayList2, aVar);
+            r9.g gVar3 = new r9.g(executor, arrayList, arrayList2, e0Var);
             gVar2.a = gVar3;
             gVar3.d(true);
             gVar = c;

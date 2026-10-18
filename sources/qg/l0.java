@@ -16,10 +16,10 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ff0;
 import org.telegram.ui.hk0;
+import org.telegram.ui.mj0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class l0 {
     public static final l0 e;
@@ -33,9 +33,9 @@ public final class l0 {
     public final n2.e d;
 
     static {
-        l0 l0Var = new l0("roboto", "PhotoEditorTypefaceRoboto", new n2.e(new hk0(24)));
+        l0 l0Var = new l0("roboto", "PhotoEditorTypefaceRoboto", new n2.e(new hk0(25)));
         e = l0Var;
-        f = Arrays.asList(l0Var, new l0("italic", "PhotoEditorTypefaceItalic", new n2.e(new hk0(25))), new l0("serif", "PhotoEditorTypefaceSerif", new n2.e(new hk0(26))), new l0("condensed", "PhotoEditorTypefaceCondensed", new n2.e(new hk0(27))), new l0("mono", "PhotoEditorTypefaceMono", new n2.e(new hk0(28))), new l0("mw_bold", "PhotoEditorTypefaceMerriweather", new n2.e(new hk0(29))));
+        f = Arrays.asList(l0Var, new l0("italic", "PhotoEditorTypefaceItalic", new n2.e(new hk0(26))), new l0("serif", "PhotoEditorTypefaceSerif", new n2.e(new hk0(27))), new l0("condensed", "PhotoEditorTypefaceCondensed", new n2.e(new hk0(28))), new l0("mono", "PhotoEditorTypefaceMono", new n2.e(new hk0(29))), new l0("mw_bold", "PhotoEditorTypefaceMerriweather", new n2.e(new e0(0))));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
@@ -203,7 +203,7 @@ public final class l0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.themeQueue.postRunnable(new ff0(15));
+            Utilities.themeQueue.postRunnable(new mj0(15));
         }
         return f;
     }

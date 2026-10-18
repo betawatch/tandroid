@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import org.telegram.ui.Components.uc0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class m6 extends org.telegram.ui.Components.w9 {
     public final /* synthetic */ int G;
@@ -27,7 +27,7 @@ public final class m6 extends org.telegram.ui.Components.w9 {
             super.onDraw(canvas);
         } else {
             l6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            ci.d8.h(n6Var.y, canvas, getImageReceiver(), l6Var);
+            ci.c8.h(n6Var.y, canvas, getImageReceiver(), l6Var);
         }
     }
 

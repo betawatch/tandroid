@@ -1,13 +1,13 @@
 package w7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+import android.text.InputFilter;
+
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class m6 {
-    public static boolean a(int i10, int i11) {
-        return (i10 & i11) != 0;
-    }
+    public abstract InputFilter[] a(InputFilter[] inputFilterArr);
 
-    public static int b(int i10, int i11, boolean z10) {
-        return z10 ? i10 | i11 : i10 & (~i11);
-    }
+    public abstract void b(boolean z10);
+
+    public abstract void c(boolean z10);
 }

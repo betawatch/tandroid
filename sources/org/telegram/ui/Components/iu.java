@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.w4 {
     private static final int ACCESSIBILITY_ACTION_SHARE = 268435456;
@@ -276,7 +276,7 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         }
         Context context = getContext();
         ai.p0 p0Var = new ai.p0(this, i10, selectionEnd);
-        rc rcVar = new rc(9);
+        sc scVar = new sc(8);
         org.telegram.ui.ActionBar.d6 d6Var = this.resourcesProvider;
         Pattern pattern = f5.a;
         if (context == null) {
@@ -398,7 +398,7 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         FrameLayout frameLayout = new FrameLayout(context);
         d4 d4Var = new d4(context, od0Var2, od0Var, od0Var3, od0Var4);
         d4Var.setOrientation(1);
-        frameLayout.addView(d4Var, w7.z5.d(-1.0f, -1));
+        frameLayout.addView(d4Var, w7.z5.c(-1.0f, -1));
         FrameLayout frameLayout2 = new FrameLayout(context);
         d4Var.addView(frameLayout2, w7.z5.t(-1, -2, 51, 22, 0, 0, 4));
         TextView textView = new TextView(context);
@@ -406,7 +406,7 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         textView.setTextColor(r10);
         textView.setTextSize(1, 20.0f);
         textView.setTypeface(AndroidUtilities.bold());
-        frameLayout2.addView(textView, w7.z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
+        frameLayout2.addView(textView, w7.z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
         textView.setOnTouchListener(new di.d(10));
         ei.m5 m5Var = new ei.m5(context, d11Var2, od0Var4, 4);
         m5Var.setOrientation(0);
@@ -430,7 +430,7 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         a3Var.b(frameLayout);
         org.telegram.ui.ActionBar.f3 f3Var = a3Var.a;
         f3Var.show();
-        f3Var.setOnDismissListener(new g2(1, rcVar, zArr));
+        f3Var.setOnDismissListener(new g2(1, scVar, zArr));
         f3Var.setBackgroundColor(r11);
         f3Var.fixNavigationBar(r11);
         f5.b(dVar, od0Var, od0Var2, od0Var3, od0Var4);
@@ -937,7 +937,7 @@ public class iu extends EditTextBoldCursor implements org.telegram.ui.ActionBar.
         int m13 = org.telegram.ui.ActionBar.h6.m1(0.15f, w02);
         textView.setBackground(org.telegram.ui.ActionBar.h6.j0(dp, dp, dp, dp, m12, m13, m13));
         w7.b6.b(textView, 0.1f, 1.5f);
-        frameLayout.addView(textView, w7.z5.a(26.0f, 0.0f, 0.0f, 24.0f, 3.0f, -2, 21));
+        frameLayout.addView(textView, w7.z5.d(-2, 26.0f, 21, 0.0f, 0.0f, 24.0f, 3.0f));
         textView.setVisibility(z10 ? 0 : 8);
         ei.s1 s1Var = new ei.s1(this, z10, tVar, str4, textView);
         textView.setOnClickListener(new ai.v0(this, tVar, s1Var, 23));

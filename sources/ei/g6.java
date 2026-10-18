@@ -37,11 +37,11 @@ import org.telegram.ui.xf1;
 import org.telegram.ui.z51;
 import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class g6 extends View implements ne.d {
     public final /* synthetic */ int a;
-    public final Object b;
+    public Object b;
     public final Object c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -140,8 +140,8 @@ public final class g6 extends View implements ne.d {
             case 2:
                 Paint paint3 = (Paint) this.b;
                 od odVar = (od) this.c;
-                ci.k4 k4Var = odVar.e;
-                if (k4Var != null && k4Var.getImageReceiver().hasNotThumb()) {
+                ci.j4 j4Var = odVar.e;
+                if (j4Var != null && j4Var.getImageReceiver().hasNotThumb()) {
                     paint3.setAlpha((int) (odVar.r.getAlpha() * odVar.e.getImageReceiver().getCurrentAlpha() * 85.0f));
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint3);
                     break;
@@ -307,8 +307,8 @@ public final class g6 extends View implements ne.d {
             case 5:
                 Paint paint6 = (Paint) this.b;
                 ko koVar = (ko) this.c;
-                ci.k4 k4Var2 = koVar.e;
-                if (k4Var2 != null && k4Var2.getImageReceiver().hasNotThumb()) {
+                ci.j4 j4Var2 = koVar.e;
+                if (j4Var2 != null && j4Var2.getImageReceiver().hasNotThumb()) {
                     paint6.setAlpha((int) (koVar.e.getImageReceiver().getCurrentAlpha() * 85.0f));
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint6);
                     break;
@@ -400,9 +400,9 @@ public final class g6 extends View implements ne.d {
                 Paint paint10 = (Paint) this.b;
                 pe0 pe0Var = (pe0) this.c;
                 md mdVar = pe0Var.r;
-                ci.k4 k4Var3 = pe0Var.e;
-                if (k4Var3 != null && mdVar.getVisibility() == 0) {
-                    paint10.setAlpha((int) (mdVar.getAlpha() * k4Var3.getImageReceiver().getCurrentAlpha() * 85.0f));
+                ci.j4 j4Var3 = pe0Var.e;
+                if (j4Var3 != null && mdVar.getVisibility() == 0) {
+                    paint10.setAlpha((int) (mdVar.getAlpha() * j4Var3.getImageReceiver().getCurrentAlpha() * 85.0f));
                     canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, getMeasuredWidth() / 2.0f, paint10);
                     break;
                 }
@@ -453,11 +453,23 @@ public final class g6 extends View implements ne.d {
                 ((ActionBarLayout) d5Var).q(canvas, measuredHeight2);
                 break;
             case 17:
+                super.onDraw(canvas);
+                int save = canvas.save();
+                canvas.scale(getWidth() / 336.0f, getHeight() / 205.0f);
+                org.telegram.ui.Wallet.o5 o5Var = ((org.telegram.ui.Wallet.s5) this.c).b;
+                if (o5Var != null) {
+                    o5Var.e(canvas, (float[]) this.b);
+                } else {
+                    canvas.drawColor(org.telegram.ui.Wallet.h7.a((float[]) this.b, -16216082));
+                }
+                canvas.restoreToCount(save);
+                break;
+            case 18:
                 float measuredWidth2 = getMeasuredWidth() / 2.0f;
                 float measuredHeight3 = getMeasuredHeight() / 2.0f;
                 canvas.drawCircle(measuredWidth2, measuredHeight3, getMeasuredWidth() / 2.0f, (Paint) this.b);
-                sg.a1.d().f(-AndroidUtilities.dp(10.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawCircle(measuredWidth2, measuredHeight3, (getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(2.0f), sg.a1.d().e());
+                sg.b1.d().f(-AndroidUtilities.dp(10.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                canvas.drawCircle(measuredWidth2, measuredHeight3, (getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(2.0f), sg.b1.d().e());
                 float dp2 = AndroidUtilities.dp(18.0f) / 2.0f;
                 Drawable drawable = (Drawable) this.c;
                 drawable.setBounds((int) (measuredWidth2 - dp2), (int) (measuredHeight3 - dp2), (int) (measuredWidth2 + dp2), (int) (measuredHeight3 + dp2));
@@ -642,9 +654,16 @@ public final class g6 extends View implements ne.d {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public g6(Context context, Paint paint, Drawable drawable) {
         super(context);
-        this.a = 17;
+        this.a = 18;
         this.b = paint;
         this.c = drawable;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g6(org.telegram.ui.Wallet.s5 s5Var, Context context) {
+        super(context);
+        this.a = 17;
+        this.c = s5Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

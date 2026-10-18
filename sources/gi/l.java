@@ -38,7 +38,7 @@ import org.telegram.ui.a20;
 import org.telegram.ui.x10;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class l extends a20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -152,7 +152,7 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
             String string = LocaleController.getString(R.string.AffiliateProgramDuration);
             int i10 = lVar.Y.duration_months;
             j01Var.c(string, i10 <= 0 ? LocaleController.getString(R.string.Infinity) : (i10 < 12 || i10 % 12 != 0) ? LocaleController.formatPluralString("Months", i10, new Object[0]) : LocaleController.formatPluralString("Years", i10 / 12, new Object[0]), null, null);
-            frameLayout.addView(j01Var, z5.a(-2.0f, 24.0f, 0.0f, 24.0f, 0.0f, -1, 119));
+            frameLayout.addView(j01Var, z5.d(-1, -2.0f, 119, 24.0f, 0.0f, 24.0f, 0.0f));
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, lVar.resourceProvider);
             alertDialog$Builder.a.R = LocaleController.getString(R.string.AffiliateProgramAlert);
             alertDialog$Builder.a.T = LocaleController.getString(lVar.W ? R.string.AffiliateProgramStartAlertText : R.string.AffiliateProgramUpdateAlertText);
@@ -350,7 +350,7 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
         gVar.A = h6.gk;
         gVar.b();
         this.R.setStarParticlesView(this.e);
-        this.Q.addView(this.R, z5.a(190.0f, 0.0f, 32.0f, 0.0f, 24.0f, 190, 17));
+        this.Q.addView(this.R, z5.d(190, 190.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
         m0(LocaleController.getString(R.string.BotAffiliateProgramTitle), LocaleController.getString(R.string.BotAffiliateProgramText), this.Q, null);
         LinearLayout linearLayout = new LinearLayout(context);
         this.S = linearLayout;
@@ -466,7 +466,7 @@ public final class l extends a20 implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.a20
-    public final sg.w1 p0() {
+    public final sg.x1 p0() {
         f fVar = new f(getParentActivity(), 0);
         fVar.c();
         return fVar;

@@ -1,31 +1,51 @@
 package qg;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e0 b;
-    public final /* synthetic */ t0 c;
+public final class c0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ w0 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ m c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Runnable e;
+    public final /* synthetic */ d0 f;
 
-    public /* synthetic */ c0(e0 e0Var, t0 t0Var, int i10) {
-        this.a = i10;
-        this.b = e0Var;
-        this.c = t0Var;
+    public c0(d0 d0Var, w0 w0Var, float f7, m mVar, boolean z10, Runnable runnable) {
+        this.f = d0Var;
+        this.a = w0Var;
+        this.b = f7;
+        this.c = mVar;
+        this.d = z10;
+        this.e = runnable;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new c0(this.b, this.c, 1));
-                break;
-            default:
-                e0 e0Var = this.b;
-                e0Var.getClass();
-                e0Var.i = this.c.a;
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        d1 d1Var;
+        d0 d0Var = this.f;
+        d0Var.x = null;
+        t0 t0Var = new t0(new w0[]{this.a});
+        e1 e1Var = d0Var.a;
+        int currentColor = e1Var.getCurrentColor();
+        float f7 = this.b * 1.0f;
+        t0Var.c = currentColor;
+        t0Var.d = f7;
+        m mVar = this.c;
+        t0Var.e = mVar;
+        mVar.getClass();
+        int currentColor2 = mVar instanceof d ? -1 : e1Var.getCurrentColor();
+        s0 painting = e1Var.getPainting();
+        boolean z10 = this.d;
+        painting.c(t0Var, currentColor2, z10, null);
+        if (z10 && (d1Var = e1Var.a) != null) {
+            d1Var.e();
+        }
+        Runnable runnable = this.e;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 }

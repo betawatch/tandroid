@@ -14,7 +14,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Components.wq;
 import org.telegram.ui.Components.x90;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class uc extends LinearLayout {
     public final /* synthetic */ int a;
@@ -138,13 +138,13 @@ public final class uc extends LinearLayout {
                 frameLayout.setClipChildren(false);
                 frameLayout.setClipToPadding(false);
                 fi.c cVar = new fi.c(context, 70, 0);
-                frameLayout.addView(cVar, w7.z5.d(-1.0f, -1));
-                org.telegram.ui.Wallet.s6 s6Var = new org.telegram.ui.Wallet.s6(170, context, false);
-                this.b = s6Var;
-                s6Var.setStarParticlesView(cVar);
-                frameLayout.addView(s6Var, w7.z5.a(170.0f, 0.0f, 32.0f, 0.0f, 24.0f, 170, 17));
-                s6Var.setPaused(false);
-                addView(frameLayout, w7.z5.d(180.0f, -1));
+                frameLayout.addView(cVar, w7.z5.c(-1.0f, -1));
+                org.telegram.ui.Wallet.m6 m6Var = new org.telegram.ui.Wallet.m6(170, context, false);
+                this.b = m6Var;
+                m6Var.setStarParticlesView(cVar);
+                frameLayout.addView(m6Var, w7.z5.d(170, 170.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                m6Var.setPaused(false);
+                addView(frameLayout, w7.z5.c(180.0f, -1));
                 TextView textView = new TextView(context);
                 this.c = textView;
                 com.google.android.gms.internal.play_billing.k3.m(20.0f, 1, textView);
@@ -163,12 +163,12 @@ public final class uc extends LinearLayout {
                 FrameLayout frameLayout2 = new FrameLayout(context);
                 frameLayout2.setClipChildren(false);
                 frameLayout2.setClipToPadding(false);
-                frameLayout2.addView(new kc(context, 70, 0), w7.z5.d(-1.0f, -1));
+                frameLayout2.addView(new kc(context, 70, 0), w7.z5.c(-1.0f, -1));
                 org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
                 this.b = w9Var;
                 w9Var.setRoundRadius(AndroidUtilities.dp(50.0f));
-                frameLayout2.addView(w9Var, w7.z5.a(100.0f, 0.0f, 32.0f, 0.0f, 24.0f, 100, 17));
-                addView(frameLayout2, w7.z5.d(150.0f, -1));
+                frameLayout2.addView(w9Var, w7.z5.d(100, 100.0f, 17, 0.0f, 32.0f, 0.0f, 24.0f));
+                addView(frameLayout2, w7.z5.c(150.0f, -1));
                 TextView textView3 = new TextView(context);
                 this.c = textView3;
                 com.google.android.gms.internal.play_billing.k3.m(20.0f, 1, textView3);

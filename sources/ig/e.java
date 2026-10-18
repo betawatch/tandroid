@@ -21,7 +21,7 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.sn;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public final int a;
@@ -51,7 +51,7 @@ public final class e extends FrameLayout {
         h9Var.r(user);
         w9Var.setRoundRadius(AndroidUtilities.dp(16.0f));
         w9Var.e(user, h9Var);
-        addView(w9Var, z5.a(32.0f, 10.0f, 0.0f, 10.0f, 0.0f, 32, 19));
+        addView(w9Var, z5.d(32, 32.0f, 19, 10.0f, 0.0f, 10.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(activity);
         this.d = linearLayout;
         linearLayout.setOrientation(1);
@@ -74,7 +74,7 @@ public final class e extends FrameLayout {
         q6Var2.setTextColor(h6.w0(h6.ge, d6Var));
         q6Var2.setEllipsizeByGradient(true);
         linearLayout.addView(q6Var2, z5.n(-1, 17));
-        addView(linearLayout, z5.a(-2.0f, 52.0f, 0.0f, 49.0f, 0.0f, -2, 16));
+        addView(linearLayout, z5.d(-2, -2.0f, 16, 52.0f, 0.0f, 49.0f, 0.0f));
         nq nqVar = new nq(activity);
         this.h = nqVar;
         nqVar.getDrawable().r(true, true);
@@ -93,7 +93,7 @@ public final class e extends FrameLayout {
         nqVar.setOnClickListener(new hg.r0(this, 5));
         nqVar.setOnWidthUpdatedListener(new d(this, 0));
         nqVar.setText(LocaleController.getString(this.r ? R.string.BizBotStart : R.string.BizBotStop));
-        addView(nqVar, z5.a(28.0f, 0.0f, 0.0f, 46.0f, 0.0f, 64, 21));
+        addView(nqVar, z5.d(64, 28.0f, 21, 0.0f, 0.0f, 46.0f, 0.0f));
         ImageView imageView = new ImageView(activity);
         this.n = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -101,7 +101,7 @@ public final class e extends FrameLayout {
         imageView.setBackground(h6.N(h6.w0(h6.i6, d6Var), 0, 0));
         imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.de, d6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setOnClickListener(new ai.v0(this, snVar, d6Var, 10));
-        addView(imageView, z5.a(32.0f, 8.0f, 0.0f, 6.0f, 0.0f, 32, 21));
+        addView(imageView, z5.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 
     public final void a() {

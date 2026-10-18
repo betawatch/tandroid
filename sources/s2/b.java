@@ -15,11 +15,11 @@ import i2.b0;
 import i2.d;
 import i2.h0;
 import java.util.ArrayList;
-import u2.f0;
+import u2.g0;
 import v7.u6;
 import w7.m;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class b extends i2.b implements Handler.Callback {
     public final a I;
@@ -158,7 +158,7 @@ public final class b extends i2.b implements Handler.Callback {
     }
 
     @Override // i2.b
-    public final void u(w[] wVarArr, long j10, long j11, f0 f0Var) {
+    public final void u(w[] wVarArr, long j10, long j11, g0 g0Var) {
         this.M = this.I.a(wVarArr[0]);
         t0 t0Var = this.Q;
         if (t0Var != null) {

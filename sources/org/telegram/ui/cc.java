@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cc extends pg.b {
     public int d = -1;
@@ -190,12 +190,12 @@ public final class cc extends pg.b {
                 view = new org.telegram.ui.Cells.s3(ecVar.getContext(), 8);
                 break;
             case 8:
-                ci.i4 i4Var = new ci.i4(ecVar.getContext(), 9);
+                ci.h4 h4Var = new ci.h4(ecVar.getContext(), 9);
                 TextView textView = new TextView(ecVar.getContext());
-                org.telegram.messenger.kk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(ecVar.J) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
+                org.telegram.messenger.lk.j(14.0f, ChatObject.isChannelAndNotMegaGroup(ecVar.J) ? R.string.NoBoostersHint : R.string.NoBoostersGroupHint, 1, textView);
                 com.google.android.gms.internal.play_billing.k3.o(org.telegram.ui.ActionBar.h6.y6, null, false, textView, 17);
-                i4Var.addView(textView, w7.z5.a(-2.0f, 0.0f, 16.0f, 0.0f, 0.0f, -1, 0));
-                view = i4Var;
+                h4Var.addView(textView, w7.z5.d(-1, -2.0f, 0, 0.0f, 16.0f, 0.0f, 0.0f));
+                view = h4Var;
                 break;
             case 9:
                 s5 s5Var = new s5(ecVar.getContext(), 1);
@@ -228,7 +228,7 @@ public final class cc extends pg.b {
                 scrollSlidingTextTabStrip.d();
                 ah.v vVar = new ah.v(this, r91Var.getParentActivity());
                 ecVar.f.setDelegate(new g(this, 11));
-                vVar.addView(ecVar.f, w7.z5.d(48.0f, -2));
+                vVar.addView(ecVar.f, w7.z5.c(48.0f, -2));
                 view = vVar;
                 break;
             default:

@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class lr {
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
@@ -24,17 +24,17 @@ public final class lr {
         c10.setOnClickListener(new kr(ph0Var, 0));
         c10.c(-328966, -328966);
         c10.setSelectorColor(268435455);
-        View i4Var = new ci.i4(contextThemeWrapper, 11);
-        i4Var.setMinimumWidth(AndroidUtilities.dp(196.0f));
-        i4Var.setBackgroundColor(-15198184);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(i4Var);
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) i4Var.getLayoutParams();
+        View h4Var = new ci.h4(contextThemeWrapper, 11);
+        h4Var.setMinimumWidth(AndroidUtilities.dp(196.0f));
+        h4Var.setBackgroundColor(-15198184);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(h4Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) h4Var.getLayoutParams();
         if (LocaleController.isRTL) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
         layoutParams.height = AndroidUtilities.dp(8.0f);
-        i4Var.setLayoutParams(layoutParams);
+        h4Var.setLayoutParams(layoutParams);
         LinearLayout linearLayout = new LinearLayout(contextThemeWrapper);
         this.b = linearLayout;
         linearLayout.setOrientation(1);

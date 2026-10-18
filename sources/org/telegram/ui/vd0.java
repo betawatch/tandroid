@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vd0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -49,21 +49,21 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                 }
                                 break;
                             case 1:
-                                fg0 fg0Var = xd0Var2.y;
-                                fg0Var.k1(false, true);
+                                eg0 eg0Var = xd0Var2.y;
+                                eg0Var.k1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                        fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                                        eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
                                         break;
                                     } else {
                                         int intValue = Utilities.parseInt((CharSequence) tL_error2.text).intValue();
-                                        fg0Var.l1(LocaleController.getString(R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                                        eg0Var.l1(LocaleController.getString(R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
                                         break;
                                     }
                                 } else {
                                     TLRPC.TL_auth_passwordRecovery tL_auth_passwordRecovery = (TLRPC.TL_auth_passwordRecovery) tLObject2;
-                                    if (fg0Var.getParentActivity() != null) {
-                                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fg0Var.getParentActivity());
+                                    if (eg0Var.getParentActivity() != null) {
+                                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eg0Var.getParentActivity());
                                         String str = tL_auth_passwordRecovery.email_pattern;
                                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(str);
                                         int indexOf = str.indexOf(42);
@@ -81,7 +81,7 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                         b2Var.T = formatSpannable;
                                         b2Var.R = LocaleController.getString("RestoreEmailSentTitle", R.string.RestoreEmailSentTitle);
                                         alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new zu(22, xd0Var2, tL_auth_passwordRecovery));
-                                        Dialog showDialog = fg0Var.showDialog(b2Var);
+                                        Dialog showDialog = eg0Var.showDialog(b2Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
                                             showDialog.setCancelable(false);
@@ -91,31 +91,31 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                fg0 fg0Var2 = xd0Var2.y;
+                                eg0 eg0Var2 = xd0Var2.y;
                                 xd0Var2.h = false;
                                 if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
                                     TL_account.getPassword getpassword = new TL_account.getPassword();
-                                    i11 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                    i11 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                     ConnectionsManager.getInstance(i11).sendRequest(getpassword, new vd0(xd0Var2, i13), 8);
                                     break;
                                 } else if (!(tLObject2 instanceof TLRPC.TL_auth_authorization)) {
-                                    fg0Var2.k1(false, true);
+                                    eg0Var2.k1(false, true);
                                     if (!tL_error2.text.equals("PASSWORD_HASH_INVALID")) {
                                         if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
                                             break;
                                         } else {
                                             int intValue2 = Utilities.parseInt((CharSequence) tL_error2.text).intValue();
-                                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
+                                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
                                             break;
                                         }
-                                    } else if (fg0Var2.getParentActivity() != null) {
+                                    } else if (eg0Var2.getParentActivity() != null) {
                                         xd0Var2.a.setText("");
-                                        fg0.U0(fg0Var2, xd0Var2.x, true);
+                                        eg0.U0(eg0Var2, xd0Var2.x, true);
                                         break;
                                     }
                                 } else {
-                                    fg0Var2.v1(false, true);
+                                    eg0Var2.v1(false, true);
                                     xd0Var2.postDelayed(new b80(17, xd0Var2, tLObject2), 150L);
                                     break;
                                 }
@@ -146,21 +146,21 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                 }
                                 break;
                             case 1:
-                                fg0 fg0Var = xd0Var22.y;
-                                fg0Var.k1(false, true);
+                                eg0 eg0Var = xd0Var22.y;
+                                eg0Var.k1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                        fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                                        eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
                                         break;
                                     } else {
                                         int intValue = Utilities.parseInt((CharSequence) tL_error2.text).intValue();
-                                        fg0Var.l1(LocaleController.getString(R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                                        eg0Var.l1(LocaleController.getString(R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
                                         break;
                                     }
                                 } else {
                                     TLRPC.TL_auth_passwordRecovery tL_auth_passwordRecovery = (TLRPC.TL_auth_passwordRecovery) tLObject2;
-                                    if (fg0Var.getParentActivity() != null) {
-                                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fg0Var.getParentActivity());
+                                    if (eg0Var.getParentActivity() != null) {
+                                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eg0Var.getParentActivity());
                                         String str = tL_auth_passwordRecovery.email_pattern;
                                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(str);
                                         int indexOf = str.indexOf(42);
@@ -178,7 +178,7 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                         b2Var.T = formatSpannable;
                                         b2Var.R = LocaleController.getString("RestoreEmailSentTitle", R.string.RestoreEmailSentTitle);
                                         alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new zu(22, xd0Var22, tL_auth_passwordRecovery));
-                                        Dialog showDialog = fg0Var.showDialog(b2Var);
+                                        Dialog showDialog = eg0Var.showDialog(b2Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
                                             showDialog.setCancelable(false);
@@ -188,31 +188,31 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                fg0 fg0Var2 = xd0Var22.y;
+                                eg0 eg0Var2 = xd0Var22.y;
                                 xd0Var22.h = false;
                                 if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
                                     TL_account.getPassword getpassword = new TL_account.getPassword();
-                                    i112 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                    i112 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                     ConnectionsManager.getInstance(i112).sendRequest(getpassword, new vd0(xd0Var22, i13), 8);
                                     break;
                                 } else if (!(tLObject2 instanceof TLRPC.TL_auth_authorization)) {
-                                    fg0Var2.k1(false, true);
+                                    eg0Var2.k1(false, true);
                                     if (!tL_error2.text.equals("PASSWORD_HASH_INVALID")) {
                                         if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
                                             break;
                                         } else {
                                             int intValue2 = Utilities.parseInt((CharSequence) tL_error2.text).intValue();
-                                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
+                                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
                                             break;
                                         }
-                                    } else if (fg0Var2.getParentActivity() != null) {
+                                    } else if (eg0Var2.getParentActivity() != null) {
                                         xd0Var22.a.setText("");
-                                        fg0.U0(fg0Var2, xd0Var22.x, true);
+                                        eg0.U0(eg0Var2, xd0Var22.x, true);
                                         break;
                                     }
                                 } else {
-                                    fg0Var2.v1(false, true);
+                                    eg0Var2.v1(false, true);
                                     xd0Var22.postDelayed(new b80(17, xd0Var22, tLObject2), 150L);
                                     break;
                                 }
@@ -243,21 +243,21 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                 }
                                 break;
                             case 1:
-                                fg0 fg0Var = xd0Var22.y;
-                                fg0Var.k1(false, true);
+                                eg0 eg0Var = xd0Var22.y;
+                                eg0Var.k1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                        fg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                                        eg0Var.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
                                         break;
                                     } else {
                                         int intValue = Utilities.parseInt((CharSequence) tL_error2.text).intValue();
-                                        fg0Var.l1(LocaleController.getString(R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
+                                        eg0Var.l1(LocaleController.getString(R.string.WrongCodeTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue < 60 ? LocaleController.formatPluralString("Seconds", intValue, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue / 60, new Object[0])));
                                         break;
                                     }
                                 } else {
                                     TLRPC.TL_auth_passwordRecovery tL_auth_passwordRecovery = (TLRPC.TL_auth_passwordRecovery) tLObject2;
-                                    if (fg0Var.getParentActivity() != null) {
-                                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fg0Var.getParentActivity());
+                                    if (eg0Var.getParentActivity() != null) {
+                                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(eg0Var.getParentActivity());
                                         String str = tL_auth_passwordRecovery.email_pattern;
                                         SpannableStringBuilder valueOf = SpannableStringBuilder.valueOf(str);
                                         int indexOf = str.indexOf(42);
@@ -275,7 +275,7 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                         b2Var.T = formatSpannable;
                                         b2Var.R = LocaleController.getString("RestoreEmailSentTitle", R.string.RestoreEmailSentTitle);
                                         alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new zu(22, xd0Var22, tL_auth_passwordRecovery));
-                                        Dialog showDialog = fg0Var.showDialog(b2Var);
+                                        Dialog showDialog = eg0Var.showDialog(b2Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
                                             showDialog.setCancelable(false);
@@ -285,31 +285,31 @@ public final /* synthetic */ class vd0 implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                fg0 fg0Var2 = xd0Var22.y;
+                                eg0 eg0Var2 = xd0Var22.y;
                                 xd0Var22.h = false;
                                 if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
                                     TL_account.getPassword getpassword = new TL_account.getPassword();
-                                    i112 = ((org.telegram.ui.ActionBar.n2) fg0Var2).currentAccount;
+                                    i112 = ((org.telegram.ui.ActionBar.n2) eg0Var2).currentAccount;
                                     ConnectionsManager.getInstance(i112).sendRequest(getpassword, new vd0(xd0Var22, i13), 8);
                                     break;
                                 } else if (!(tLObject2 instanceof TLRPC.TL_auth_authorization)) {
-                                    fg0Var2.k1(false, true);
+                                    eg0Var2.k1(false, true);
                                     if (!tL_error2.text.equals("PASSWORD_HASH_INVALID")) {
                                         if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
-                                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
+                                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), tL_error2.text);
                                             break;
                                         } else {
                                             int intValue2 = Utilities.parseInt((CharSequence) tL_error2.text).intValue();
-                                            fg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
+                                            eg0Var2.l1(LocaleController.getString(R.string.RestorePasswordNoEmailTitle), LocaleController.formatString("FloodWaitTime", R.string.FloodWaitTime, intValue2 < 60 ? LocaleController.formatPluralString("Seconds", intValue2, new Object[0]) : LocaleController.formatPluralString("Minutes", intValue2 / 60, new Object[0])));
                                             break;
                                         }
-                                    } else if (fg0Var2.getParentActivity() != null) {
+                                    } else if (eg0Var2.getParentActivity() != null) {
                                         xd0Var22.a.setText("");
-                                        fg0.U0(fg0Var2, xd0Var22.x, true);
+                                        eg0.U0(eg0Var2, xd0Var22.x, true);
                                         break;
                                     }
                                 } else {
-                                    fg0Var2.v1(false, true);
+                                    eg0Var2.v1(false, true);
                                     xd0Var22.postDelayed(new b80(17, xd0Var22, tLObject2), 150L);
                                     break;
                                 }

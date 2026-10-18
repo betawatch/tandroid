@@ -18,9 +18,9 @@ import org.telegram.ui.Components.ay0;
 import org.telegram.ui.Components.l60;
 import org.telegram.ui.Components.tv;
 import org.telegram.ui.Components.y01;
-import w7.p7;
+import w7.n7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class s0 {
     public boolean A;
@@ -38,7 +38,7 @@ public final class s0 {
     public int N;
     public boolean O;
     public volatile o0 P;
-    public volatile x Q;
+    public volatile w Q;
     public volatile File R;
     public i2.h0 S;
     public final e2.z V;
@@ -48,8 +48,8 @@ public final class s0 {
     public final l2.f d;
     public final p0 e;
     public final tv f;
-    public final k l;
-    public final o m;
+    public final j l;
+    public final n m;
     public final q0 n;
     public final long o;
     public l0 p;
@@ -72,7 +72,7 @@ public final class s0 {
     public float t = 1.0f;
     public long I = 1;
     public final i0 T = new i0(this, 0);
-    public final p4.s0 U = new p4.s0(this, 6);
+    public final p8.b U = new p8.b(this, 5);
 
     public s0(j0 j0Var) {
         l2.f fVar = new l2.f(this, 20);
@@ -97,8 +97,8 @@ public final class s0 {
         this.d = j0Var.j;
         this.e = j0Var.k;
         this.f = j0Var.l;
-        o oVar = new o();
-        this.m = oVar;
+        n nVar = new n();
+        this.m = nVar;
         StringBuilder sb2 = new StringBuilder("session created: device=");
         sb2.append(Build.MANUFACTURER);
         sb2.append(" ");
@@ -117,8 +117,8 @@ public final class s0 {
         sb2.append(", facing=");
         sb2.append(this.p);
         sb2.append(", maxDurationMs=60000");
-        oVar.b(sb2.toString());
-        this.l = new k(context2, textureView, q0Var, i10, m0Var, n0Var, z10, oVar, fVar);
+        nVar.b(sb2.toString());
+        this.l = new j(context2, textureView, q0Var, i10, m0Var, n0Var, z10, nVar, fVar);
     }
 
     public static long f(long j10) {
@@ -179,7 +179,7 @@ public final class s0 {
             this.I = 1 + j10;
             o0 o0Var = new o0(j10, d);
             this.P = o0Var;
-            this.Q = new x(d, this.n.a, z10, this.m, new org.telegram.ui.web.m(10, this, o0Var));
+            this.Q = new w(d, this.n.a, z10, this.m, new org.telegram.ui.web.n(10, this, o0Var));
             this.m.b("output generation started: id=" + j10 + ", includeAudio=" + z10 + ", file=" + d.getName());
             this.k.execute(new ay0(this, o0Var, d, 22));
         }
@@ -199,9 +199,9 @@ public final class s0 {
 
     public final void e() {
         this.u = false;
-        k kVar = this.l;
-        kVar.U(0.0f);
-        kVar.T(false);
+        j jVar = this.l;
+        jVar.U(0.0f);
+        jVar.T(false);
         u(false);
     }
 
@@ -301,7 +301,7 @@ public final class s0 {
         }
         this.O = true;
         o0 o0Var = this.P;
-        o oVar = this.m;
+        n nVar = this.m;
         StringBuilder v = a1.g.v("session summary: terminal=", str, ", state=");
         v.append(r4.c.w(this.W));
         v.append(", durationMs=");
@@ -320,7 +320,7 @@ public final class s0 {
         v.append(o0Var == null ? 0L : o0Var.a);
         v.append(", availableSize=");
         v.append(o0Var != null ? o0Var.c : 0L);
-        oVar.b(v.toString());
+        nVar.b(v.toString());
     }
 
     public final void n() {
@@ -438,22 +438,22 @@ public final class s0 {
 
     public final void s(File file, long j10, long j11, boolean z10, int i10) {
         long nanoTime = System.nanoTime();
-        o oVar = this.m;
+        n nVar = this.m;
         StringBuilder t10 = a1.g.t(j10, "final range remux started: range=", "..");
         t10.append(j11);
         t10.append(", includeAudio=");
         t10.append(z10);
         t10.append(", reason=");
         t10.append(r4.c.v(i10));
-        oVar.b(t10.toString());
+        nVar.b(t10.toString());
         g();
         k(this.P, i10);
         c(z10);
         g();
-        a3.z a2 = p7.a(file, this.Q, j10, j11, z10);
+        a3.z a2 = n7.a(file, this.Q, j10, j11, z10);
         this.Q.g();
-        long e = p7.e(this.Q.a) / 1000;
-        o oVar2 = this.m;
+        long e = n7.e(this.Q.a) / 1000;
+        n nVar2 = this.m;
         StringBuilder t11 = a1.g.t(e, "final range remux completed: durationMs=", ", requestedDurationMs=");
         t11.append(a2.b);
         t11.append(", actualStartMs=");
@@ -462,7 +462,7 @@ public final class s0 {
         t11.append(this.Q.a.length());
         t11.append(", elapsedMs=");
         t11.append(f(nanoTime));
-        oVar2.b(t11.toString());
+        nVar2.b(t11.toString());
         g();
         this.k.execute(new g0(this, this.P, this.Q.a, e, z10));
     }
@@ -499,10 +499,10 @@ public final class s0 {
         }
         this.x = z10;
         Handler handler = this.i;
-        p4.s0 s0Var = this.U;
-        handler.removeCallbacks(s0Var);
+        p8.b bVar = this.U;
+        handler.removeCallbacks(bVar);
         if (z10) {
-            handler.post(s0Var);
+            handler.post(bVar);
         }
         this.d.getClass();
         o();

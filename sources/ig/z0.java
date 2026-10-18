@@ -2,13 +2,13 @@ package ig;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                                         d1Var2.finishFragment();
                                         break;
                                     } else {
-                                        kk.q(R.string.UnknownError, xc.a0(d1Var2), null);
+                                        lk.q(R.string.UnknownError, xc.a0(d1Var2), null);
                                         break;
                                     }
                                 } else {
@@ -54,7 +54,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                                         break;
                                     } else {
                                         d1Var3.b.a(0.0f);
-                                        kk.q(R.string.UnknownError, xc.a0(d1Var3), null);
+                                        lk.q(R.string.UnknownError, xc.a0(d1Var3), null);
                                         break;
                                     }
                                 } else {
@@ -82,7 +82,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                                         d1Var22.finishFragment();
                                         break;
                                     } else {
-                                        kk.q(R.string.UnknownError, xc.a0(d1Var22), null);
+                                        lk.q(R.string.UnknownError, xc.a0(d1Var22), null);
                                         break;
                                     }
                                 } else {
@@ -98,7 +98,7 @@ public final /* synthetic */ class z0 implements RequestDelegate {
                                         break;
                                     } else {
                                         d1Var3.b.a(0.0f);
-                                        kk.q(R.string.UnknownError, xc.a0(d1Var3), null);
+                                        lk.q(R.string.UnknownError, xc.a0(d1Var3), null);
                                         break;
                                     }
                                 } else {

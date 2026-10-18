@@ -21,10 +21,10 @@ import org.telegram.ui.Components.r90;
 import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.voip.v0;
 import org.telegram.ui.l70;
-import sg.i0;
-import sg.v1;
+import sg.j0;
+import sg.w1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class n extends TextView {
     public final /* synthetic */ int a;
@@ -92,7 +92,7 @@ public final class n extends TextView {
             case 10:
                 Paint paint3 = (Paint) this.b;
                 int i10 = h6.z6;
-                d6Var = ((f3) ((i0) this.c).e).resourcesProvider;
+                d6Var = ((f3) ((j0) this.c).e).resourcesProvider;
                 paint3.setColor(h6.m1(0.8f, h6.w0(i10, d6Var)));
                 paint3.setStyle(Paint.Style.STROKE);
                 paint3.setStrokeWidth(1.0f);
@@ -180,10 +180,10 @@ public final class n extends TextView {
                 super.onDraw(canvas);
                 break;
             case 6:
-                if (((v1) this.b) != null) {
+                if (((w1) this.b) != null) {
                     canvas.save();
                     canvas.clipPath((Path) this.c);
-                    ((v1) this.b).d(canvas);
+                    ((w1) this.b).d(canvas);
                     canvas.restore();
                     invalidate();
                 }
@@ -232,28 +232,28 @@ public final class n extends TextView {
         switch (this.a) {
             case 6:
                 super.onLayout(z10, i10, i11, i12, i13);
-                v1 v1Var = new v1(10);
-                this.b = v1Var;
-                v1Var.O = 100;
-                v1Var.J = false;
-                v1Var.M = true;
-                v1Var.G = false;
-                v1Var.K = true;
-                v1Var.H = true;
-                v1Var.r = 1;
-                v1Var.w = 0.98f;
-                v1Var.v = 0.98f;
-                v1Var.u = 0.98f;
-                v1Var.g = false;
-                v1Var.o = 0.0f;
-                v1Var.x = 750L;
-                v1Var.y = 750;
-                v1Var.c();
+                w1 w1Var = new w1(10);
+                this.b = w1Var;
+                w1Var.O = 100;
+                w1Var.J = false;
+                w1Var.M = true;
+                w1Var.G = false;
+                w1Var.K = true;
+                w1Var.H = true;
+                w1Var.r = 1;
+                w1Var.w = 0.98f;
+                w1Var.v = 0.98f;
+                w1Var.u = 0.98f;
+                w1Var.g = false;
+                w1Var.o = 0.0f;
+                w1Var.x = 750L;
+                w1Var.y = 750;
+                w1Var.c();
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                ((v1) this.b).a.set(rectF);
-                ((v1) this.b).b.set(rectF);
-                ((v1) this.b).f();
+                ((w1) this.b).a.set(rectF);
+                ((w1) this.b).b.set(rectF);
+                ((w1) this.b).f();
                 Path path = (Path) this.c;
                 path.reset();
                 path.addRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, Path.Direction.CW);
@@ -460,10 +460,10 @@ public final class n extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(i0 i0Var, Context context) {
+    public n(j0 j0Var, Context context) {
         super(context);
         this.a = 10;
-        this.c = i0Var;
+        this.c = j0Var;
         this.b = new Paint(1);
     }
 

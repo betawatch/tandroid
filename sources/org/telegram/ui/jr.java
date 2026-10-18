@@ -32,7 +32,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class jr extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -689,10 +689,10 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
                     } else {
                         if (i10 == jrVar.A0) {
                             if (jrVar.s != null) {
-                                kh0 kh0Var = new kh0(jrVar.N, 0L, 0);
+                                jh0 jh0Var = new jh0(jrVar.N, 0L, 0);
                                 TLRPC.ChatFull chatFull6 = jrVar.s;
-                                kh0Var.g0(chatFull6, chatFull6.exported_invite);
-                                jrVar.presentFragment(kh0Var);
+                                jh0Var.g0(chatFull6, chatFull6.exported_invite);
+                                jrVar.presentFragment(jh0Var);
                                 return;
                             }
                             return;
@@ -704,10 +704,10 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
                             if (isEnabled) {
                                 if (r42.F != null) {
                                     if (ChatObject.isPublic(jrVar.r) && (i10 == jrVar.i0 || i10 == jrVar.g0)) {
-                                        org.telegram.messenger.kk.q(R.string.EditCantEditPermissionsPublic, org.telegram.ui.Components.xc.a0(jrVar), null);
+                                        org.telegram.messenger.lk.q(R.string.EditCantEditPermissionsPublic, org.telegram.ui.Components.xc.a0(jrVar), null);
                                         return;
                                     } else if (ChatObject.isDiscussionGroup(jrVar.currentAccount, jrVar.N) && (i10 == jrVar.i0 || i10 == jrVar.g0)) {
-                                        org.telegram.messenger.kk.q(R.string.EditCantEditPermissionsDiscussion, org.telegram.ui.Components.xc.a0(jrVar), null);
+                                        org.telegram.messenger.lk.q(R.string.EditCantEditPermissionsDiscussion, org.telegram.ui.Components.xc.a0(jrVar), null);
                                         return;
                                     } else {
                                         org.telegram.ui.Components.xc.a0(jrVar).t(LocaleController.getString("EditCantEditPermissions", R.string.EditCantEditPermissions), null).j();
@@ -1774,7 +1774,7 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
         int i12 = org.telegram.ui.ActionBar.h6.G8;
         int i13 = org.telegram.ui.ActionBar.h6.i6;
         b10Var3.f(i12, i13, i13);
-        frameLayout3.addView(this.C1, w7.z5.a(-1.0f, 12.0f, 30.0f, 12.0f, 0.0f, -1, 0));
+        frameLayout3.addView(this.C1, w7.z5.d(-1, -1.0f, 0, 12.0f, 30.0f, 12.0f, 0.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.D1 = radialProgressView;
         frameLayout3.addView(radialProgressView, w7.z5.e(-2, -2, 17));
@@ -1787,7 +1787,7 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.b.setVisibility(8);
         this.b.setAnimateLayoutChange(true);
         this.b.e(true, false);
-        frameLayout2.addView(this.b, w7.z5.d(-1.0f, -1));
+        frameLayout2.addView(this.b, w7.z5.c(-1.0f, -1));
         this.b.addView(frameLayout3, 0);
         ai.u1 u1Var = new ai.u1(this, context, 10);
         this.c = u1Var;
@@ -1809,7 +1809,7 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
         this.a = frVar;
         u1Var3.setAdapter(frVar);
         this.c.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        frameLayout2.addView(this.c, w7.z5.d(-1.0f, -1));
+        frameLayout2.addView(this.c, w7.z5.c(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.c);
         this.c.setOnItemClickListener(new gq(this, 3));
         this.c.setOnItemLongClickListener(new gq(this, 4));
@@ -1818,7 +1818,7 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
         }
         UndoView undoView = new UndoView(context);
         this.n = undoView;
-        frameLayout2.addView(undoView, w7.z5.a(-2.0f, 8.0f, 0.0f, 8.0f, 8.0f, -1, 83));
+        frameLayout2.addView(undoView, w7.z5.d(-1, -2.0f, 83, 8.0f, 0.0f, 8.0f, 8.0f));
         B0();
         this.c.setEmptyView(this.b);
         ai.u1 u1Var4 = this.c;
@@ -2608,7 +2608,7 @@ public final class jr extends org.telegram.ui.ActionBar.n2 implements Notificati
                 TL_stars.updatePaidMessagesPrice updatepaidmessagesprice = new TL_stars.updatePaidMessagesPrice();
                 updatepaidmessagesprice.channel = getMessagesController().getInputChannel(this.N);
                 updatepaidmessagesprice.send_paid_messages_stars = this.y1 ? this.A1 : 0L;
-                getConnectionsManager().sendRequest(updatepaidmessagesprice, new ci.e6(11));
+                getConnectionsManager().sendRequest(updatepaidmessagesprice, new ci.d6(11));
                 TLRPC.Chat chat3 = getMessagesController().getChat(Long.valueOf(this.N));
                 if (chat3 != null) {
                     if (this.y1) {

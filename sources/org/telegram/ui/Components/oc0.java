@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public abstract class oc0 extends FrameLayout {
     public final ArrayList E;
@@ -76,7 +76,7 @@ public abstract class oc0 extends FrameLayout {
         this.f.setPosition(i12);
         this.e.setSelectedTab(i12);
         addView(this.e, w7.z5.e(-1, 66, 87));
-        addView(this.f, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 66.0f, -1, 119));
+        addView(this.f, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 66.0f));
         this.e.setOnTabClick(new z2(this, 7));
         setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Components.pb0
             @Override // android.view.View.OnTouchListener

@@ -17,12 +17,12 @@ import org.telegram.ui.cv;
 import org.telegram.ui.ee;
 import org.telegram.ui.ey;
 import org.telegram.ui.hs;
-import org.telegram.ui.kh0;
+import org.telegram.ui.jh0;
 import org.telegram.ui.oq0;
 import org.telegram.ui.qq0;
 import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class m3 extends s4.r0 {
     public final /* synthetic */ int a;
@@ -214,10 +214,10 @@ public final class m3 extends s4.r0 {
                 }
                 break;
             case 6:
-                kh0 kh0Var = (kh0) this.c;
-                if (kh0Var.b0 && !kh0Var.W) {
-                    if (kh0Var.X - ((hg.a0) this.b).N0() < 10) {
-                        kh0Var.d0(true);
+                jh0 jh0Var = (jh0) this.c;
+                if (jh0Var.b0 && !jh0Var.W) {
+                    if (jh0Var.X - ((hg.a0) this.b).N0() < 10) {
+                        jh0Var.d0(true);
                         break;
                     }
                 }
@@ -245,23 +245,23 @@ public final class m3 extends s4.r0 {
                 ((xa0) this.c).D.b(recyclerView, i10, i11);
                 break;
             case 9:
-                yh.m2 m2Var = (yh.m2) this.c;
-                yh.h2 h2Var = m2Var.f;
-                if (m2Var.isAttachedToWindow()) {
-                    if (h2Var.canScrollVertically(1)) {
-                        for (int i18 = 0; i18 < h2Var.getChildCount(); i18++) {
-                            if (!(h2Var.getChildAt(i18) instanceof b10)) {
+                yh.l2 l2Var = (yh.l2) this.c;
+                yh.g2 g2Var = l2Var.f;
+                if (l2Var.isAttachedToWindow()) {
+                    if (g2Var.canScrollVertically(1)) {
+                        for (int i18 = 0; i18 < g2Var.getChildCount(); i18++) {
+                            if (!(g2Var.getChildAt(i18) instanceof b10)) {
                             }
                         }
                     }
-                    m2Var.e.a();
+                    l2Var.e.a();
                 }
                 ((is0) this.b).o();
                 break;
             default:
                 zh.q qVar = (zh.q) this.b;
                 float translationY3 = qVar.getTranslationY();
-                float f11 = ((zh.f0) this.c).b0;
+                float f11 = ((zh.f0) this.c).d0;
                 if (translationY3 != f11) {
                     qVar.setTranslationY(f11);
                     qVar.invalidate();

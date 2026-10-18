@@ -14,7 +14,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class mz extends org.telegram.ui.Components.hm0 {
     public final /* synthetic */ nz c;
@@ -212,7 +212,7 @@ public final class mz extends org.telegram.ui.Components.hm0 {
                     h10Var.setLayoutParams(new s4.o0(-1, -2));
                     h10Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
                 } else if (i10 == 4) {
-                    View f4Var = new org.telegram.ui.Cells.f4(1, 0, nzVar.getParentActivity(), false);
+                    View f4Var = new org.telegram.ui.Cells.f4(nzVar.getParentActivity(), 1, 0, false);
                     f4Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
                     view = f4Var;
                 } else if (i10 == 5) {
@@ -231,14 +231,14 @@ public final class mz extends org.telegram.ui.Components.hm0 {
         xj0Var.setScaleType(ImageView.ScaleType.CENTER);
         xj0Var.d();
         xj0Var.setImportantForAccessibility(2);
-        dzVar.addView(xj0Var, w7.z5.a(90.0f, 0.0f, 14.0f, 0.0f, 0.0f, 90, 49));
+        dzVar.addView(xj0Var, w7.z5.d(90, 90.0f, 49, 0.0f, 14.0f, 0.0f, 0.0f));
         wh.n nVar = new wh.n(parentActivity);
         dzVar.a = nVar;
         nVar.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.B6, false));
         nVar.setTextSize(1, 14.0f);
         nVar.setGravity(17);
         nVar.setLines(2);
-        dzVar.addView(nVar, w7.z5.a(-2.0f, 40.0f, 121.0f, 40.0f, 24.0f, -1, 49));
+        dzVar.addView(nVar, w7.z5.d(-1, -2.0f, 49, 40.0f, 121.0f, 40.0f, 24.0f));
         view = dzVar;
         view2 = view;
         return new org.telegram.ui.Components.sl0(view2);

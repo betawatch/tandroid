@@ -24,7 +24,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.sa1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class sa1 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -78,16 +78,16 @@ public final class sa1 extends LinearLayout {
                 canvas.restore();
                 break;
             case 21:
-                yh.o1 o1Var = (yh.o1) this.b;
-                RectF rectF = o1Var.h;
-                RectF rectF2 = o1Var.f;
-                RectF rectF3 = o1Var.e;
-                Paint paint = o1Var.n;
+                yh.n1 n1Var = (yh.n1) this.b;
+                RectF rectF = n1Var.h;
+                RectF rectF2 = n1Var.f;
+                RectF rectF3 = n1Var.e;
+                Paint paint = n1Var.n;
                 paint.setColor(org.telegram.ui.ActionBar.h6.m1(0.1f, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.c6, false)));
-                float d = o1Var.c.d(o1Var.b, false);
+                float d = n1Var.c.d(n1Var.b, false);
                 double d10 = d;
                 int floor = (int) Math.floor(d10);
-                ArrayList arrayList = o1Var.d;
+                ArrayList arrayList = n1Var.d;
                 int clamp = Utilities.clamp(floor, arrayList.size() - 1, 0);
                 int clamp2 = Utilities.clamp((int) Math.ceil(d10), arrayList.size() - 1, 0);
                 if (clamp < arrayList.size()) {
@@ -334,8 +334,8 @@ public final class sa1 extends LinearLayout {
                 }
                 return drawChild;
             case 20:
-                sg.l1 l1Var = ((sg.k1) this.b).c;
-                if (view == l1Var.r0 && l1Var.H0) {
+                sg.m1 m1Var = ((sg.l1) this.b).c;
+                if (view == m1Var.r0 && m1Var.H0) {
                     return true;
                 }
                 return super.drawChild(canvas, view, j10);
@@ -541,7 +541,7 @@ public final class sa1 extends LinearLayout {
                 break;
             case 19:
                 super.onMeasure(i10, i11);
-                setMeasuredDimension(getMeasuredWidth(), Math.round((1.0f - ((org.telegram.ui.Wallet.m5) this.b).B0) * getMeasuredHeight()));
+                setMeasuredDimension(getMeasuredWidth(), Math.round((1.0f - ((org.telegram.ui.Wallet.n5) this.b).z0) * getMeasuredHeight()));
                 break;
             default:
                 super.onMeasure(i10, i11);

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class f9 implements Runnable {
     public final /* synthetic */ rm a;
@@ -14,14 +14,14 @@ public final class f9 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        ci.g3 g3Var;
+        ci.f3 f3Var;
         rm rmVar = this.a;
         AndroidUtilities.runOnUIThread(rmVar.y, 1000L);
         TLRPC.TL_emojiList tL_emojiList = rmVar.n;
         if (tL_emojiList == null || tL_emojiList.document_id.isEmpty() || rmVar.w != 1.0f) {
             return;
         }
-        if (rmVar.x || ((g3Var = rmVar.b.k) != null && g3Var.hasImageLoaded())) {
+        if (rmVar.x || ((f3Var = rmVar.b.k) != null && f3Var.hasImageLoaded())) {
             int i10 = rmVar.v + 1;
             rmVar.v = i10;
             rmVar.s++;

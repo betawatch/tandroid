@@ -15,7 +15,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -32,7 +32,7 @@ import org.telegram.ui.q80;
 import org.telegram.ui.sn;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -45,14 +45,14 @@ public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ Object n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ b1(TLObject tLObject, int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j10, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
+    public /* synthetic */ b1(TLObject tLObject, int i10, org.telegram.ui.ActionBar.b2 b2Var, Context context, long j10, d6 d6Var, org.telegram.ui.web.u uVar, ai.s0 s0Var) {
         this.b = tLObject;
         this.c = i10;
         this.e = b2Var;
         this.f = context;
         this.d = j10;
         this.h = d6Var;
-        this.n = tVar;
+        this.n = uVar;
         this.r = s0Var;
     }
 
@@ -66,7 +66,7 @@ public final /* synthetic */ class b1 implements Runnable {
                 org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.e;
                 Context context = (Context) this.f;
                 d6 d6Var = (d6) this.h;
-                org.telegram.ui.web.t tVar = (org.telegram.ui.web.t) this.n;
+                org.telegram.ui.web.u uVar = (org.telegram.ui.web.u) this.n;
                 ai.s0 s0Var = (ai.s0) this.r;
                 TLObject tLObject = this.b;
                 if (tLObject instanceof TLRPC.TL_messages_preparedInlineMessage) {
@@ -79,7 +79,7 @@ public final /* synthetic */ class b1 implements Runnable {
                         TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
                         if (!TextUtils.isEmpty(tL_botInlineMessageMediaWebPage.url)) {
                             String str = tL_botInlineMessageMediaWebPage.url;
-                            c1 c1Var = new c1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, d6Var, tVar, s0Var);
+                            c1 c1Var = new c1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, d6Var, uVar, s0Var);
                             int[] iArr = new int[1];
                             NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr = new NotificationCenter.NotificationCenterDelegate[1];
                             TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
@@ -90,7 +90,7 @@ public final /* synthetic */ class b1 implements Runnable {
                         }
                     }
                     File[] fileArr = new File[1];
-                    d1 d1Var = new d1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, fileArr, d6Var, tVar, s0Var);
+                    d1 d1Var = new d1(b2Var, context, i11, j10, tL_messages_preparedInlineMessage, fileArr, d6Var, uVar, s0Var);
                     TLRPC.WebDocument webDocument = tL_messages_preparedInlineMessage.result.content;
                     if (webDocument != null && !TextUtils.isEmpty(webDocument.url)) {
                         TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
@@ -103,7 +103,7 @@ public final /* synthetic */ class b1 implements Runnable {
                                 d1Var.run();
                                 break;
                             } else {
-                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new ai.o2(17, fileArr, d1Var), null);
+                                HttpGetFileTask httpGetFileTask = new HttpGetFileTask(new ai.n2(17, fileArr, d1Var), null);
                                 httpGetFileTask.setDestFile(file);
                                 httpGetFileTask.setMaxSize(8388608L);
                                 httpGetFileTask.execute(str2);
@@ -202,7 +202,7 @@ public final /* synthetic */ class b1 implements Runnable {
                     a02 = xc.a0((org.telegram.ui.ActionBar.n2) i2.d.h(1, arrayList2));
                     i10 = R.string.BotCantAddToAttachMenu;
                 }
-                kk.q(i10, a02, null);
+                lk.q(i10, a02, null);
                 break;
         }
     }

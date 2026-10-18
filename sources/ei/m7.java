@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import j$.util.Objects;
 import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m7 implements ch.a {
     public final /* synthetic */ int a;
@@ -35,17 +35,17 @@ public final /* synthetic */ class m7 implements ch.a {
                 hh.d.b(im0Var, canvas, rectF, im0Var, s7Var.getContainerView(), 255);
                 break;
             default:
-                yh.q2 q2Var = (yh.q2) this.b;
-                for (View view : q2Var.h.getViewPages()) {
-                    if (view instanceof yh.m2) {
-                        yh.m2 m2Var = (yh.m2) view;
-                        if (m2Var.h == null) {
-                            yh.h2 h2Var = m2Var.f;
-                            ViewGroup viewGroup = q2Var.S;
-                            Objects.requireNonNull(h2Var);
-                            m2Var.h = new bh.l(h2Var, viewGroup, new org.telegram.ui.x8(h2Var, 0));
+                yh.p2 p2Var = (yh.p2) this.b;
+                for (View view : p2Var.h.getViewPages()) {
+                    if (view instanceof yh.l2) {
+                        yh.l2 l2Var = (yh.l2) view;
+                        if (l2Var.h == null) {
+                            yh.g2 g2Var = l2Var.f;
+                            ViewGroup viewGroup = p2Var.S;
+                            Objects.requireNonNull(g2Var);
+                            l2Var.h = new bh.l(g2Var, viewGroup, new org.telegram.ui.x8(g2Var, 0));
                         }
-                        m2Var.h.f(canvas, rectF);
+                        l2Var.h.f(canvas, rectF);
                     }
                 }
                 break;

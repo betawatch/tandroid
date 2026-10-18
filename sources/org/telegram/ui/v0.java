@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class v0 extends org.telegram.ui.Components.s6 {
     public final /* synthetic */ int b;
@@ -20,7 +20,7 @@ public final class v0 extends org.telegram.ui.Components.s6 {
                 ((ArticleViewer$WindowView) obj).setInnerTranslationX(f7);
                 break;
             case 1:
-                sn.Hc = (int) f7;
+                sn.Ic = (int) f7;
                 break;
             case 2:
                 ((org.telegram.ui.Cells.u1) obj).setTimeAlpha(f7);
@@ -71,7 +71,7 @@ public final class v0 extends org.telegram.ui.Components.s6 {
             case 0:
                 return Float.valueOf(((ArticleViewer$WindowView) obj).getInnerTranslationX());
             case 1:
-                return Float.valueOf(sn.Hc);
+                return Float.valueOf(sn.Ic);
             case 2:
                 return Float.valueOf(((org.telegram.ui.Cells.u1) obj).getTimeAlpha());
             case 3:

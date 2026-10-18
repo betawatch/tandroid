@@ -61,6 +61,7 @@ import m.c3;
 import m.m1;
 import m.n2;
 import m.s3;
+import m4.f0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.d6;
@@ -68,12 +69,12 @@ import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.ny0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.lg0;
-import u2.f0;
+import org.telegram.ui.kg0;
+import u2.g0;
 import v7.d8;
 import v7.q7;
 import v7.u6;
-import w7.q6;
+import w7.o6;
 import z9.a2;
 import z9.l0;
 import z9.m0;
@@ -92,7 +93,7 @@ import z9.x0;
 import z9.y0;
 import z9.z1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class l implements d6 {
     public Object a;
@@ -152,10 +153,10 @@ public final class l implements d6 {
     }
 
     public static a2 e(l0 l0Var, s3 s3Var) {
-        List o10 = ((c5.b0) s3Var.f).o();
+        List p5 = ((c5.b0) s3Var.f).p();
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < o10.size(); i10++) {
-            y9.l lVar = (y9.l) o10.get(i10);
+        for (int i10 = 0; i10 < p5.size(); i10++) {
+            y9.l lVar = (y9.l) p5.get(i10);
             lVar.getClass();
             qi.e eVar = new qi.e();
             y9.b bVar = (y9.b) lVar;
@@ -211,19 +212,19 @@ public final class l implements d6 {
         return new ColorStateList(new int[][]{c3.b, c3.d, c3.c, c3.f}, new int[]{c3.b(context, R.attr.colorButtonNormal), i0.a.k(c10, i10), i0.a.k(c10, i10), i10});
     }
 
-    public static f0 t(f1 f1Var, n0 n0Var, f0 f0Var, l1 l1Var) {
+    public static g0 t(f1 f1Var, n0 n0Var, g0 g0Var, l1 l1Var) {
         o1 y02 = f1Var.y0();
         int A = f1Var.A();
         Object l4 = y02.p() ? null : y02.l(A);
         int b10 = (f1Var.n() || y02.p()) ? -1 : y02.f(A, l1Var, false).b(e2.m0.S(f1Var.M0()) - l1Var.e);
         for (int i10 = 0; i10 < n0Var.size(); i10++) {
-            f0 f0Var2 = (f0) n0Var.get(i10);
-            if (z(f0Var2, l4, f1Var.n(), f1Var.m0(), f1Var.N(), b10)) {
-                return f0Var2;
+            g0 g0Var2 = (g0) n0Var.get(i10);
+            if (z(g0Var2, l4, f1Var.n(), f1Var.m0(), f1Var.N(), b10)) {
+                return g0Var2;
             }
         }
-        if (n0Var.isEmpty() && f0Var != null && z(f0Var, l4, f1Var.n(), f1Var.m0(), f1Var.N(), b10)) {
-            return f0Var;
+        if (n0Var.isEmpty() && g0Var != null && z(g0Var, l4, f1Var.n(), f1Var.m0(), f1Var.N(), b10)) {
+            return g0Var;
         }
         return null;
     }
@@ -277,20 +278,20 @@ public final class l implements d6 {
             }
             arrayList.add(new z9.d0(str, str2));
         }
-        Collections.sort(arrayList, new lg0(26));
+        Collections.sort(arrayList, new kg0(26));
         return DesugarCollections.unmodifiableList(arrayList);
     }
 
-    public static boolean z(f0 f0Var, Object obj, boolean z10, int i10, int i11, int i12) {
-        Object obj2 = f0Var.a;
-        int i13 = f0Var.b;
+    public static boolean z(g0 g0Var, Object obj, boolean z10, int i10, int i11, int i12) {
+        Object obj2 = g0Var.a;
+        int i13 = g0Var.b;
         if (!obj2.equals(obj)) {
             return false;
         }
-        if (z10 && i13 == i10 && f0Var.c == i11) {
+        if (z10 && i13 == i10 && g0Var.c == i11) {
             return true;
         }
-        return !z10 && i13 == -1 && f0Var.e == i12;
+        return !z10 && i13 == -1 && g0Var.e == i12;
     }
 
     public void A(Throwable th2, Thread thread, String str, String str2, long j10, boolean z10) {
@@ -375,7 +376,7 @@ public final class l implements d6 {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            q6.a("String array is empty and is ignored by put method.");
+            o6.a("String array is empty and is ignored by put method.");
             return;
         }
         int i10 = 0;
@@ -387,7 +388,7 @@ public final class l implements d6 {
                 sb2.append("String at ");
                 sb2.append(i11);
                 sb2.append(" is null and is ignored by put method.");
-                q6.a(sb2.toString());
+                o6.a(sb2.toString());
             } else {
                 int i12 = 20000;
                 if (str2.length() > 20000) {
@@ -395,7 +396,7 @@ public final class l implements d6 {
                     sb3.append("String at ");
                     sb3.append(i11);
                     sb3.append(" is too long, truncating string.");
-                    q6.a(sb3.toString());
+                    o6.a(sb3.toString());
                     String str3 = strArr2[i10];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -411,7 +412,7 @@ public final class l implements d6 {
         if (i10 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i10);
             if (objArr.length >= 100) {
-                q6.a("Input Array of elements is too big, cutting off.");
+                o6.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
@@ -510,7 +511,7 @@ public final class l implements d6 {
                         arrayBlockingQueue = arrayBlockingQueue2;
                     }
                 }
-                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new si.a(this, 27)));
+                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new sg.y(this, 28)));
             }
             i12 = i13;
         }
@@ -580,7 +581,7 @@ public final class l implements d6 {
             bundle.putString("appid", (String) Tasks.await(((ra.c) ((ra.d) this.f)).d()));
             bundle.putString("cliv", "fcm-23.4.0");
             fVar = (oa.f) ((qa.b) this.e).get();
-            ya.b bVar = (ya.b) ((qa.b) this.d).get();
+            ya.c cVar = (ya.c) ((qa.b) this.d).get();
             if (fVar == null) {
                 return;
             } else {
@@ -592,19 +593,19 @@ public final class l implements d6 {
             bundle.putString("appid", (String) Tasks.await(((ra.c) ((ra.d) this.f)).d()));
             bundle.putString("cliv", "fcm-23.4.0");
             fVar = (oa.f) ((qa.b) this.e).get();
-            ya.b bVar2 = (ya.b) ((qa.b) this.d).get();
+            ya.c cVar2 = (ya.c) ((qa.b) this.d).get();
             if (fVar == null) {
             }
         }
         bundle.putString("appid", (String) Tasks.await(((ra.c) ((ra.d) this.f)).d()));
         bundle.putString("cliv", "fcm-23.4.0");
         fVar = (oa.f) ((qa.b) this.e).get();
-        ya.b bVar22 = (ya.b) ((qa.b) this.d).get();
-        if (fVar == null || bVar22 == null || (a2 = ((oa.c) fVar).a()) == 1) {
+        ya.c cVar22 = (ya.c) ((qa.b) this.d).get();
+        if (fVar == null || cVar22 == null || (a2 = ((oa.c) fVar).a()) == 1) {
             return;
         }
         bundle.putString("Firebase-Client-Log-Type", Integer.toString(m1.j.c(a2)));
-        bundle.putString("Firebase-Client", bVar22.a());
+        bundle.putString("Firebase-Client", cVar22.a());
     }
 
     public void G(float f7, float f10, float f11, float f12) {
@@ -632,12 +633,12 @@ public final class l implements d6 {
             if (dVar.f() < 12000000) {
                 return dVar.g() != 0 ? aVar.a(bundle).continueWithTask(mVar, new qf.b(25, aVar, bundle)) : Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE"));
             }
-            j6.l k10 = j6.l.k(aVar.b);
-            synchronized (k10) {
-                i10 = k10.a;
-                k10.a = i10 + 1;
+            j6.l j10 = j6.l.j(aVar.b);
+            synchronized (j10) {
+                i10 = j10.a;
+                j10.a = i10 + 1;
             }
-            return k10.l(new j6.k(i10, 1, bundle, 1)).continueWith(mVar, j6.b.a);
+            return j10.k(new j6.k(i10, 1, bundle, 1)).continueWith(mVar, j6.b.a);
         } catch (InterruptedException | ExecutionException e) {
             return Tasks.forException(e);
         }
@@ -698,19 +699,19 @@ public final class l implements d6 {
     public void M(o1 o1Var) {
         a5.a aVar = new a5.a(4, 5);
         if (((n0) this.b).isEmpty()) {
-            f(aVar, (f0) this.e, o1Var);
-            if (!Objects.equals((f0) this.f, (f0) this.e)) {
-                f(aVar, (f0) this.f, o1Var);
+            f(aVar, (g0) this.e, o1Var);
+            if (!Objects.equals((g0) this.f, (g0) this.e)) {
+                f(aVar, (g0) this.f, o1Var);
             }
-            if (!Objects.equals((f0) this.d, (f0) this.e) && !Objects.equals((f0) this.d, (f0) this.f)) {
-                f(aVar, (f0) this.d, o1Var);
+            if (!Objects.equals((g0) this.d, (g0) this.e) && !Objects.equals((g0) this.d, (g0) this.f)) {
+                f(aVar, (g0) this.d, o1Var);
             }
         } else {
             for (int i10 = 0; i10 < ((n0) this.b).size(); i10++) {
-                f(aVar, (f0) ((n0) this.b).get(i10), o1Var);
+                f(aVar, (g0) ((n0) this.b).get(i10), o1Var);
             }
-            if (!((n0) this.b).contains((f0) this.d)) {
-                f(aVar, (f0) this.d, o1Var);
+            if (!((n0) this.b).contains((g0) this.d)) {
+                f(aVar, (g0) this.d, o1Var);
             }
         }
         this.c = aVar.d(true);
@@ -758,7 +759,7 @@ public final class l implements d6 {
                     rVar.m = true;
                     Context context = rVar.a;
                     Object obj = m4.x.b;
-                    int intValue = ((Integer) m4.f0.C.get()).intValue();
+                    int intValue = ((Integer) f0.C.get()).intValue();
                     int i10 = Build.VERSION.SDK_INT;
                     if (i10 < 27) {
                         intValue = Math.max(intValue, (int) TypedValue.applyDimension(1, 320.0f, context.getResources().getDisplayMetrics()));
@@ -864,17 +865,17 @@ public final class l implements d6 {
         h6.q(f7, f10, i10, i11);
     }
 
-    public void f(a5.a aVar, f0 f0Var, o1 o1Var) {
-        if (f0Var == null) {
+    public void f(a5.a aVar, g0 g0Var, o1 o1Var) {
+        if (g0Var == null) {
             return;
         }
-        if (o1Var.b(f0Var.a) != -1) {
-            aVar.x(f0Var, o1Var);
+        if (o1Var.b(g0Var.a) != -1) {
+            aVar.x(g0Var, o1Var);
             return;
         }
-        o1 o1Var2 = (o1) ((c2) this.c).get(f0Var);
+        o1 o1Var2 = (o1) ((c2) this.c).get(g0Var);
         if (o1Var2 != null) {
-            aVar.x(f0Var, o1Var2);
+            aVar.x(g0Var, o1Var2);
         }
     }
 

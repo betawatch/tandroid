@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class xe1 extends pg.b {
     public final /* synthetic */ ze1 d;
@@ -71,19 +71,19 @@ public final class xe1 extends pg.b {
             org.telegram.ui.Cells.oa oaVar = new org.telegram.ui.Cells.oa(context);
             org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
             oaVar.b = w9Var;
-            oaVar.addView(w9Var, w7.z5.a(30.0f, 20.0f, 0.0f, 0.0f, 0.0f, 30, 16));
+            oaVar.addView(w9Var, w7.z5.d(30, 30.0f, 16, 20.0f, 0.0f, 0.0f, 0.0f));
             TextView textView = new TextView(context);
             oaVar.c = textView;
             textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
             textView.setTextSize(1, 16.0f);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setMaxLines(1);
-            oaVar.addView(textView, w7.z5.a(-2.0f, 72.0f, 8.0f, 12.0f, 0.0f, -1, 0));
+            oaVar.addView(textView, w7.z5.d(-1, -2.0f, 0, 72.0f, 8.0f, 12.0f, 0.0f));
             TextView textView2 = new TextView(context);
             oaVar.d = textView2;
             textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false));
             textView2.setTextSize(1, 14.0f);
-            oaVar.addView(textView2, w7.z5.a(-2.0f, 72.0f, 32.0f, 12.0f, 0.0f, -1, 0));
+            oaVar.addView(textView2, w7.z5.d(-1, -2.0f, 0, 72.0f, 32.0f, 12.0f, 0.0f));
             oaVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
             view = oaVar;
         } else {

@@ -29,7 +29,7 @@ import org.telegram.ui.Components.i80;
 import org.telegram.ui.Components.jw0;
 import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class r extends m {
     public static final int[] Q1 = {21600, 43200, 86400, 172800};
@@ -143,7 +143,7 @@ public abstract class r extends m {
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrVideoMessage));
-        addView(imageView, w7.z5.a(44.0f, 0.0f, 0.0f, 11.0f, 6.0f, 44, 85));
+        addView(imageView, w7.z5.d(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 6.0f));
         imageView.setOnClickListener(new ah.g0(lbVar, 19));
         ImageView imageView2 = new ImageView(context);
         this.T0 = imageView2;
@@ -154,7 +154,7 @@ public abstract class r extends m {
         imageView2.setScaleType(scaleType);
         imageView2.setContentDescription(LocaleController.getString(R.string.StoryPeriodHint));
         A(86400, false);
-        addView(imageView2, w7.z5.a(44.0f, 0.0f, 0.0f, 51.0f, 6.0f, 44, 85));
+        addView(imageView2, w7.z5.d(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 6.0f));
         imageView2.setOnClickListener(new ai.v0(lbVar, frameLayout, bVar, 7));
     }
 
@@ -368,7 +368,7 @@ public abstract class r extends m {
             pVar3.r = new n(lbVar, 2);
             hb hbVar = vbVar.h0;
             vbVar.q1 = pVar3;
-            hbVar.addView(pVar3, w7.z5.d(-1.0f, -1));
+            hbVar.addView(pVar3, w7.z5.c(-1.0f, -1));
             return true;
         }
         return true;

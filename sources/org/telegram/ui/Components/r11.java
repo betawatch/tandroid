@@ -24,7 +24,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r11 extends DispatchQueue {
     public int E;
@@ -297,7 +297,7 @@ public final class r11 extends DispatchQueue {
                             ((q11) this.T.get(i24)).a();
                         }
                         this.T.clear();
-                        AndroidUtilities.runOnUIThread(new rc(17));
+                        AndroidUtilities.runOnUIThread(new sc(16));
                         j();
                         return;
                     }
@@ -549,7 +549,7 @@ public final class r11 extends DispatchQueue {
                 i10++;
             }
             arrayList.clear();
-            AndroidUtilities.runOnUIThread(new rc(16));
+            AndroidUtilities.runOnUIThread(new sc(15));
             j();
         }
     }

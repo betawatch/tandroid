@@ -37,10 +37,10 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ch1;
 import org.telegram.ui.mg;
-import org.telegram.ui.oi0;
-import rg.t2;
+import org.telegram.ui.ni0;
+import rg.s2;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -132,9 +132,9 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
             case 8:
                 ki.q qVar = (ki.q) this.b;
                 qVar.K(0, true, 0, false, 0L);
-                oi0 oi0Var = qVar.O;
-                if (oi0Var != null) {
-                    oi0Var.h(true);
+                ni0 ni0Var = qVar.O;
+                if (ni0Var != null) {
+                    ni0Var.h(true);
                     qVar.O = null;
                     break;
                 }
@@ -214,21 +214,21 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 }
                 break;
             case 15:
-                org.telegram.ui.web.k kVar = (org.telegram.ui.web.k) this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kVar.getContext());
+                org.telegram.ui.web.l lVar = (org.telegram.ui.web.l) this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lVar.getContext());
                 alertDialog$Builder.a.R = LocaleController.getString(R.string.WebRecentClearTitle);
                 alertDialog$Builder.a.T = LocaleController.getString(R.string.WebRecentClearText);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(kVar));
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(lVar));
                 i2.d.r(R.string.Cancel, alertDialog$Builder, null);
                 break;
             case 16:
-                ((qg.y) this.b).dismiss();
+                ((qg.x) this.b).dismiss();
                 break;
             case 17:
                 ((w31) this.b).run();
                 break;
             case 18:
-                ((t2) this.b).onBackPressed();
+                ((s2) this.b).onBackPressed();
                 break;
             case 19:
                 ((mg) this.b).run();
@@ -237,9 +237,9 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 ((x90) this.b).performClick();
                 break;
             case 21:
-                sg.l1 l1Var = (sg.l1) this.b;
+                sg.m1 m1Var = (sg.m1) this.b;
                 PremiumPreviewFragment.p0();
-                PremiumPreviewFragment.k0(l1Var.t0, null, "profile", null);
+                PremiumPreviewFragment.k0(m1Var.t0, null, "profile", null);
                 break;
             case 22:
                 final ug.f0 f0Var = (ug.f0) this.b;
@@ -305,10 +305,10 @@ public final /* synthetic */ class r0 implements View.OnClickListener {
                 ((yh.c) this.b).dismiss();
                 break;
             case 27:
-                ((yh.d0) this.b).dismiss();
+                ((yh.c0) this.b).dismiss();
                 break;
             case 28:
-                if (((yh.p1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
+                if (((yh.o1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
                     l2 l2Var = new l2();
                     l2Var.a = true;
                     R.showAsSheet(new md(), l2Var);

@@ -57,7 +57,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.vo;
 import org.telegram.ui.xo;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x7 implements Runnable {
     public final /* synthetic */ int a;
@@ -147,7 +147,7 @@ public final /* synthetic */ class x7 implements Runnable {
                         }
                     }
                     sQLiteCursor.dispose();
-                    AndroidUtilities.runOnUIThread(new ci.v7(23, callback, arrayList2));
+                    AndroidUtilities.runOnUIThread(new ci.u7(23, callback, arrayList2));
                     return;
                 } catch (Throwable th2) {
                     throw th2;
@@ -384,7 +384,7 @@ public final /* synthetic */ class x7 implements Runnable {
                 org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder.a;
                 b2Var2.R = string;
                 b2Var2.T = LocaleController.getString(R.string.UsernameActivateErrorMessage);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new f4(voVar, (TLRPC.TL_username) obj, z10, i12));
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new d4(voVar, (TLRPC.TL_username) obj, z10, i12));
                 alertDialog$Builder.o();
                 return;
             case 18:

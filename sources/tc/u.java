@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Wallet.z0;
-import org.telegram.ui.web.l1;
+import org.telegram.ui.web.m1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -28,7 +28,7 @@ public final class u {
     public final c2.b d;
     public final p e;
     public final p f;
-    public l1 h;
+    public m1 h;
     public y i;
     public q j;
     public a0 k;
@@ -302,7 +302,7 @@ public final class u {
         w wVar2;
         String str;
         try {
-            l1 l1Var = new l1(new BufferedInputStream(socket.getInputStream()), 1);
+            m1 m1Var = new m1(new BufferedInputStream(socket.getInputStream()), 1);
             try {
                 y yVar = new y(new BufferedOutputStream(socket.getOutputStream()));
                 byte[] bArr = new byte[16];
@@ -361,7 +361,7 @@ public final class u {
                     yVar.flush();
                     t1 t1Var = new t1(this, 29);
                     try {
-                        String b10 = k.b(l1Var);
+                        String b10 = k.b(m1Var);
                         if (b10 == null || b10.length() == 0) {
                             throw new v(6, "The status line of the opening handshake response is empty.");
                         }
@@ -371,7 +371,7 @@ public final class u {
                             StringBuilder sb3 = null;
                             while (true) {
                                 try {
-                                    String b11 = k.b(l1Var);
+                                    String b11 = k.b(m1Var);
                                     if (b11 == null || b11.length() == 0) {
                                         break;
                                     }
@@ -399,7 +399,7 @@ public final class u {
                                 }
                                 if (i11 > 0) {
                                     try {
-                                        l1Var.b(i11, new byte[i11]);
+                                        m1Var.b(i11, new byte[i11]);
                                     } catch (Throwable unused4) {
                                     }
                                 }
@@ -544,7 +544,7 @@ public final class u {
                                                         ((u) t1Var.b).l = arrayList3;
                                                     }
                                                     t1Var.Z(aVar, treeMap);
-                                                    this.h = l1Var;
+                                                    this.h = m1Var;
                                                     this.i = yVar;
                                                     return treeMap;
                                                 }

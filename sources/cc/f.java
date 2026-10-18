@@ -20,7 +20,6 @@ import n6.o;
 import rb.g;
 import rb.j;
 import rb.m;
-import t0.h;
 import w7.q8;
 import x7.da;
 import z7.bg;
@@ -38,7 +37,7 @@ import z7.kg;
 import z7.qa;
 import z7.xf;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class f extends rb.e {
     public static final k6.c[] k = {j.c};
@@ -235,11 +234,11 @@ public final class f extends rb.e {
     public final void g(hb hbVar, long j10, boolean z10, wb.a aVar, jg jgVar) {
         long elapsedRealtime = SystemClock.elapsedRealtime() - j10;
         this.f.b(new d(this, elapsedRealtime, hbVar, z10, aVar, jgVar), ib.P4);
-        h hVar = new h(18, false);
-        hVar.d = this.e.a();
-        hVar.b = hbVar;
-        hVar.c = Boolean.valueOf(z10);
-        m.a.execute(new da(this.f, new i1(hVar), elapsedRealtime));
+        u2.c cVar = new u2.c(17, false);
+        cVar.d = this.e.a();
+        cVar.b = hbVar;
+        cVar.c = Boolean.valueOf(z10);
+        m.a.execute(new da(this.f, new i1(cVar), elapsedRealtime));
         long currentTimeMillis = System.currentTimeMillis();
         long j11 = currentTimeMillis - elapsedRealtime;
         qa qaVar = this.g;

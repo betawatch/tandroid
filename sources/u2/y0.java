@@ -1,48 +1,46 @@
 package u2;
 
-import v7.u6;
+import m.g3;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
-public final class y0 implements x3.g {
-    public long a;
-    public long b;
-    public Object c;
-    public Object d;
+public final class y0 implements f0 {
+    public final g2.g a;
+    public final qg.g0 b;
+    public final g3 c;
+    public final oa.d d;
+    public final int e;
 
-    public y0(long j10, int i10) {
-        u6.p(((y2.a) this.c) == null);
-        this.a = j10;
-        this.b = j10 + i10;
+    public y0(g2.g gVar, c3.m mVar) {
+        qg.g0 g0Var = new qg.g0(mVar, 17);
+        g3 g3Var = new g3(5);
+        oa.d dVar = new oa.d(27);
+        this.a = gVar;
+        this.b = g0Var;
+        this.c = g3Var;
+        this.d = dVar;
+        this.e = 1048576;
     }
 
-    @Override // x3.g
-    public void X(long j10) {
-        long[] jArr = (long[]) ((n4.s) this.d).b;
-        this.b = jArr[e2.m0.f(jArr, j10, true)];
+    @Override // u2.f0
+    /* renamed from: e, reason: merged with bridge method [inline-methods] */
+    public final z0 a(b2.o0 o0Var) {
+        o0Var.b.getClass();
+        return new z0(o0Var, this.a, this.b, this.c.B(o0Var), this.d, this.e, null);
     }
 
-    @Override // x3.g
-    public long k(c3.p pVar) {
-        long j10 = this.b;
-        if (j10 < 0) {
-            return -1L;
-        }
-        long j11 = -(j10 + 2);
-        this.b = -1L;
-        return j11;
+    @Override // u2.f0
+    public final f0 b(boolean z10) {
+        return this;
     }
 
-    @Override // x3.g
-    public c3.c0 x() {
-        u6.p(this.a != -1);
-        return new c3.t((c3.u) this.c, this.a, 0);
+    @Override // u2.f0
+    public final f0 c(int i10) {
+        return this;
     }
 
-    public y0(String str, byte[] bArr, long j10, long j11) {
-        this.c = str;
-        this.d = bArr;
-        this.a = j10;
-        this.b = j11;
+    @Override // u2.f0
+    public final f0 d(t7.u uVar) {
+        return this;
     }
 }

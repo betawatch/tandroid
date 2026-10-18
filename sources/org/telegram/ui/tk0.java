@@ -11,12 +11,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tk0 implements Runnable {
     public final /* synthetic */ boolean E;
     public final /* synthetic */ String F;
-    public final /* synthetic */ org.telegram.ui.web.a1 G;
+    public final /* synthetic */ org.telegram.ui.web.b1 G;
     public final /* synthetic */ ei.d a;
     public final /* synthetic */ ei.d b;
     public final /* synthetic */ TLRPC.TL_urlAuthResultRequest c;
@@ -32,7 +32,7 @@ public final /* synthetic */ class tk0 implements Runnable {
     public final /* synthetic */ String x;
     public final /* synthetic */ org.telegram.ui.ActionBar.d6 y;
 
-    public /* synthetic */ tk0(ei.d dVar, ei.d dVar2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, org.telegram.ui.Cells.v8 v8Var, boolean[] zArr, boolean[] zArr2, int[] iArr, boolean[] zArr3, org.telegram.ui.ActionBar.f3 f3Var, String str, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, String str2, org.telegram.ui.web.a1 a1Var) {
+    public /* synthetic */ tk0(ei.d dVar, ei.d dVar2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, org.telegram.ui.Cells.v8 v8Var, boolean[] zArr, boolean[] zArr2, int[] iArr, boolean[] zArr3, org.telegram.ui.ActionBar.f3 f3Var, String str, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, String str2, org.telegram.ui.web.b1 b1Var) {
         this.a = dVar;
         this.b = dVar2;
         this.c = tL_urlAuthResultRequest;
@@ -49,7 +49,7 @@ public final /* synthetic */ class tk0 implements Runnable {
         this.y = d6Var;
         this.E = z10;
         this.F = str2;
-        this.G = a1Var;
+        this.G = b1Var;
     }
 
     @Override // java.lang.Runnable
@@ -103,7 +103,7 @@ public final /* synthetic */ class tk0 implements Runnable {
         final org.telegram.ui.ActionBar.d6 d6Var = this.y;
         final boolean z11 = this.E;
         final String str3 = this.F;
-        final org.telegram.ui.web.a1 a1Var = this.G;
+        final org.telegram.ui.web.b1 b1Var = this.G;
         connectionsManager.sendRequestTyped(tL_messages_acceptUrlAuth, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.qk0
             @Override // org.telegram.messenger.Utilities.Callback2
             public final void run(Object obj, Object obj2) {
@@ -118,7 +118,7 @@ public final /* synthetic */ class tk0 implements Runnable {
                 zArr[0] = true;
                 f3Var.dismiss();
                 if (tL_error == null) {
-                    wk0.b(z11, iArr[0], tL_messages_requestUrlAuth, urlAuthResult, str3, tL_urlAuthResultRequest, null, tL_messages_acceptUrlAuth2.share_phone_number, a1Var);
+                    wk0.b(z11, iArr[0], tL_messages_requestUrlAuth, urlAuthResult, str3, tL_urlAuthResultRequest, null, tL_messages_acceptUrlAuth2.share_phone_number, b1Var);
                     return;
                 }
                 if (!"URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {

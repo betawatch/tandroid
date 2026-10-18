@@ -16,7 +16,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class is0 implements Runnable {
     public final /* synthetic */ int a;
@@ -99,9 +99,9 @@ public final class is0 implements Runnable {
                                 org.telegram.ui.Components.zg0 zg0Var = org.telegram.ui.Components.zg0.p0;
                                 if (f7 > zg0Var.a0) {
                                     zg0Var.a0 = f7;
-                                    ci.i3 i3Var = zg0Var.b0;
-                                    if (i3Var != null) {
-                                        i3Var.invalidate();
+                                    ci.h3 h3Var = zg0Var.b0;
+                                    if (h3Var != null) {
+                                        h3Var.invalidate();
                                     }
                                 }
                             }
@@ -210,7 +210,7 @@ public final class is0 implements Runnable {
                             } else {
                                 Bitmap createBitmap = Bitmaps.createBitmap(photoViewer16.C2.getWidth(), photoViewer16.C2.getHeight(), Bitmap.Config.ARGB_8888);
                                 photoViewer16.C3 = createBitmap;
-                                AndroidUtilities.getBitmapFromSurface(photoViewer16.C2, createBitmap, new zg0(26, this, vVar));
+                                AndroidUtilities.getBitmapFromSurface(photoViewer16.C2, createBitmap, new yg0(26, this, vVar));
                             }
                         } else {
                             Bitmap createBitmap2 = Bitmaps.createBitmap(photoViewer16.B2.getWidth(), photoViewer16.B2.getHeight(), Bitmap.Config.ARGB_8888);

@@ -1,8 +1,7 @@
 package hi;
 
 import ai.ic;
-import ai.o2;
-import ai.r3;
+import ai.t3;
 import android.content.Context;
 import android.graphics.Paint;
 import android.os.Bundle;
@@ -12,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import ci.r7;
+import ci.q7;
 import ei.e2;
 import ei.h1;
 import ei.ka;
@@ -52,7 +51,7 @@ import org.telegram.ui.sn;
 import org.telegram.ui.te1;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class k0 extends f3 implements NotificationCenter.NotificationCenterDelegate, ne.d, n2 {
     public static final /* synthetic */ int V = 0;
@@ -319,7 +318,7 @@ public final class k0 extends f3 implements NotificationCenter.NotificationCente
     }
 
     public static void r(k0 k0Var, boolean z10, boolean z11, long j10) {
-        b2 O = f5.O(k0Var.getContext(), k0Var.resourcesProvider, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(z10 ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : z11 ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), new r3(k0Var, j10, 11));
+        b2 O = f5.O(k0Var.getContext(), k0Var.resourcesProvider, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), LocaleController.getString(z10 ? R.string.CommunityMenuRemoveBotFromCommunityConfirm : z11 ? R.string.CommunityMenuRemoveChannelFromCommunityConfirm : R.string.CommunityMenuRemoveGroupFromCommunityConfirm), LocaleController.getString(R.string.Remove), new t3(k0Var, j10, 11));
         O.show();
         TextView textView = (TextView) O.d(-1);
         if (textView != null) {
@@ -406,7 +405,7 @@ public final class k0 extends f3 implements NotificationCenter.NotificationCente
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             if (!this.N) {
-                new ji.a(getContext(), this.f, -chat.id, new o2(21, this, chat)).show();
+                new ji.a(getContext(), this.f, -chat.id, new ai.n2(21, this, chat)).show();
             } else {
                 this.O.run(chat);
                 dismiss();
@@ -478,7 +477,7 @@ public final class k0 extends f3 implements NotificationCenter.NotificationCente
         if (MessagesController.getInstance(this.currentAccount).getStoriesController().I(r2Var.getDialogId())) {
             org.telegram.ui.ActionBar.n2 n2Var = this.s;
             n2Var.getOrCreateStoryViewer().getClass();
-            n2Var.getOrCreateStoryViewer().D(n2Var.getContext(), r2Var.getDialogId(), r7.a((im0) r2Var.getParent()));
+            n2Var.getOrCreateStoryViewer().D(n2Var.getContext(), r2Var.getDialogId(), q7.a((im0) r2Var.getParent()));
         }
     }
 

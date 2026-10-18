@@ -12,7 +12,7 @@ import org.telegram.ui.Components.h9;
 import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class h0 extends FrameLayout {
     public static final /* synthetic */ int f = 0;
@@ -41,8 +41,8 @@ public final class h0 extends FrameLayout {
         textPaint.setTypeface(AndroidUtilities.bold());
         this.b = g0Var;
         g0Var.setAlpha(0.0f);
-        addView(w9Var, z5.a(-1.0f, 5.0f, 5.0f, 5.0f, 5.0f, -1, 0));
-        addView(g0Var, z5.a(26.0f, 0.0f, 0.0f, 1.0f, 3.0f, 26, 85));
+        addView(w9Var, z5.d(-1, -1.0f, 0, 5.0f, 5.0f, 5.0f, 5.0f));
+        addView(g0Var, z5.d(26, 26.0f, 85, 0.0f, 0.0f, 1.0f, 3.0f));
         paint.setColor(h6.x0(null, i10, false));
     }
 

@@ -25,12 +25,12 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.f6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class s0 extends View {
     public float E;
@@ -162,7 +162,7 @@ public class s0 extends View {
         if (z10) {
             float e = this.P.e(this.L);
             if (e > 0.0f) {
-                float b10 = kk.b(rectF2.left, 2.25f, f14, f7);
+                float b10 = lk.b(rectF2.left, 2.25f, f14, f7);
                 float f15 = f14 * 21.33f;
                 float z11 = k3.z(this.N, f15, 2.0f, f10);
                 ImageReceiver imageReceiver = this.s;
@@ -174,7 +174,7 @@ public class s0 extends View {
                 canvas.restore();
             }
             if (e < 1.0f) {
-                float b11 = kk.b(rectF2.left, 2.25f, f14, f7);
+                float b11 = lk.b(rectF2.left, 2.25f, f14, f7);
                 float f16 = f14 * 21.33f;
                 float z12 = k3.z(this.N, f16, 2.0f, f10);
                 ImageReceiver imageReceiver2 = this.r;

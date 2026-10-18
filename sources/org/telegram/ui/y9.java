@@ -50,7 +50,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class y9 extends org.telegram.ui.ActionBar.n2 {
     public o1.k E;
@@ -211,7 +211,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
         cameraView.setUseMaxPreview(true);
         this.d.setOptimizeForBarcode(true);
         this.d.setDelegate(new b1(this, 11));
-        ((ViewGroup) this.fragmentView).addView(this.d, 0, w7.z5.d(-1.0f, -1));
+        ((ViewGroup) this.fragmentView).addView(this.d, 0, w7.z5.c(-1.0f, -1));
         if (this.Y != 0 || (textView = this.h) == null) {
             return;
         }
@@ -651,7 +651,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
             int i15 = 0;
             if (nVar != null && nVar.b.k()) {
                 if (bitmap != null) {
-                    g3Var3 = new m.g3(23);
+                    g3Var3 = new m.g3(22);
                     int width = bitmap.getWidth();
                     int height = bitmap.getHeight();
                     g3Var3.d = bitmap;
@@ -661,7 +661,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
                     i13 = bitmap.getWidth();
                     i14 = bitmap.getHeight();
                 } else {
-                    g3Var3 = new m.g3(23);
+                    g3Var3 = new m.g3(22);
                     ByteBuffer wrap = ByteBuffer.wrap(null);
                     int width2 = size.getWidth();
                     int height2 = size.getHeight();
@@ -710,7 +710,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
                     if (bitmap != null) {
                         Bitmap Z = Z(bitmap);
                         bitmap.recycle();
-                        m.g3 g3Var5 = new m.g3(23);
+                        m.g3 g3Var5 = new m.g3(22);
                         int width3 = Z.getWidth();
                         int height3 = Z.getHeight();
                         g3Var5.d = Z;
@@ -747,7 +747,7 @@ public class y9 extends org.telegram.ui.ActionBar.n2 {
                         } else {
                             Bitmap b02 = b0(Z);
                             Z.recycle();
-                            m.g3 g3Var6 = new m.g3(23);
+                            m.g3 g3Var6 = new m.g3(22);
                             int width4 = b02.getWidth();
                             int height4 = b02.getHeight();
                             g3Var6.d = b02;

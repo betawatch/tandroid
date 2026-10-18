@@ -66,7 +66,7 @@ import org.telegram.ui.xf1;
 import org.telegram.ui.xm0;
 import org.telegram.ui.yo;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x9 implements Runnable {
     public final /* synthetic */ int a;
@@ -75,9 +75,9 @@ public final /* synthetic */ class x9 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ x9(ci.m3 m3Var, View view, ah.i1 i1Var, boolean z10, boolean z11) {
+    public /* synthetic */ x9(ci.l3 l3Var, View view, ah.i1 i1Var, boolean z10, boolean z11) {
         this.a = 1;
-        this.c = m3Var;
+        this.c = l3Var;
         this.d = view;
         this.e = i1Var;
         this.b = z10;
@@ -187,12 +187,12 @@ public final /* synthetic */ class x9 implements Runnable {
                 NotificationCenter.getInstance(i18).lambda$postNotificationNameOnUIThread$1(NotificationCenter.starUserGiftsLoaded, Long.valueOf(y9Var.b), y9Var);
                 return;
             case 1:
-                ci.m3 m3Var = (ci.m3) this.c;
+                ci.l3 l3Var = (ci.l3) this.c;
                 View view = (View) this.d;
                 ah.i1 i1Var = (ah.i1) this.e;
                 boolean z12 = this.b;
-                ci.q4 q4Var = m3Var.a;
-                org.telegram.ui.Components.f5.Z(q4Var.C2, 1, q4Var.B1, new ci.l3(m3Var, z12, i1Var, view));
+                ci.p4 p4Var = l3Var.a;
+                org.telegram.ui.Components.f5.Z(p4Var.C2, 1, p4Var.B1, new ci.k3(l3Var, z12, i1Var, view));
                 return;
             case 2:
                 ei.t1 t1Var = (ei.t1) this.c;
@@ -403,7 +403,7 @@ public final /* synthetic */ class x9 implements Runnable {
                         if (z10) {
                             org.telegram.ui.ActionBar.h6.T = 2000;
                             org.telegram.ui.ActionBar.h6.U = SystemClock.elapsedRealtime();
-                            AndroidUtilities.runOnUIThread(new ah.j(21), 2100L);
+                            AndroidUtilities.runOnUIThread(new ah.j(20), 2100L);
                         }
                     }
                     org.telegram.ui.ActionBar.h6.I = g6Var;

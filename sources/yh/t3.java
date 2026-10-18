@@ -1,194 +1,165 @@
 package yh;
 
-import ai.z9;
+import ai.y9;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.o71;
+import org.telegram.ui.Components.f61;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class t3 implements z9 {
-    public final int a;
-    public final long b;
-    public final Utilities.Callback c;
-    public int e;
-    public long i;
-    public String q;
-    public boolean r;
-    public boolean s;
-    public boolean t;
-    public final ArrayList d = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public final ArrayList h = new ArrayList();
-    public final HashSet j = new HashSet();
-    public final HashSet k = new HashSet();
-    public final HashSet l = new HashSet();
-    public final HashMap m = new HashMap();
-    public final HashMap n = new HashMap();
-    public final HashMap o = new HashMap();
-    public s3 p = s3.b;
-    public boolean u = false;
-    public int v = -1;
+public final /* synthetic */ class t3 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public t3(long j10, int i10, Utilities.Callback callback) {
+    public /* synthetic */ t3(Object obj, int i10) {
         this.a = i10;
-        this.b = j10;
-        this.c = callback;
+        this.b = obj;
     }
 
-    @Override // ai.z9
-    public final void a() {
-        g(false);
-    }
-
-    @Override // ai.z9
-    public final int b(int i10) {
-        return -1;
-    }
-
-    @Override // ai.z9
-    public final int c() {
-        return this.e;
-    }
-
-    @Override // ai.z9
-    public final int e() {
-        return this.d.size();
-    }
-
-    public final void f() {
-        if (this.v >= 0) {
-            ConnectionsManager.getInstance(this.a).cancelRequest(this.v, true);
-            this.v = -1;
-        }
-        this.t = false;
-    }
-
-    public final void g(boolean z10) {
-        if (this.t) {
-            return;
-        }
-        if (z10 || !this.u) {
-            this.t = true;
-            TL_stars.getResaleStarGifts getresalestargifts = new TL_stars.getResaleStarGifts();
-            getresalestargifts.gift_id = this.b;
-            String str = this.q;
-            if (str == null) {
-                str = "";
-            }
-            getresalestargifts.offset = str;
-            getresalestargifts.limit = 15;
-            getresalestargifts.for_craft = this.s;
-            getresalestargifts.stars_only = this.r;
-            s3 s3Var = this.p;
-            int i10 = 0;
-            if (s3Var == s3.d) {
-                getresalestargifts.sort_by_num = true;
-                getresalestargifts.sort_by_price = false;
-            } else if (s3Var == s3.c) {
-                getresalestargifts.sort_by_num = false;
-                getresalestargifts.sort_by_price = false;
-            } else if (s3Var == s3.b) {
-                getresalestargifts.sort_by_num = false;
-                getresalestargifts.sort_by_price = true;
-            }
-            long j10 = this.i;
-            ArrayList arrayList = this.h;
-            ArrayList arrayList2 = this.g;
-            ArrayList arrayList3 = this.f;
-            if (j10 != 0) {
-                getresalestargifts.flags = 1 | getresalestargifts.flags;
-                getresalestargifts.attributes_hash = j10;
-            } else if (arrayList3.isEmpty() && arrayList2.isEmpty() && arrayList.isEmpty()) {
-                getresalestargifts.flags = 1 | getresalestargifts.flags;
-                getresalestargifts.attributes_hash = 0L;
-            }
-            HashSet hashSet = this.j;
-            boolean isEmpty = hashSet.isEmpty();
-            HashSet hashSet2 = this.l;
-            HashSet hashSet3 = this.k;
-            if (!isEmpty || !hashSet3.isEmpty() || !hashSet2.isEmpty()) {
-                getresalestargifts.flags |= 8;
-                if (!hashSet.isEmpty()) {
-                    int size = arrayList3.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        Object obj = arrayList3.get(i11);
-                        i11++;
-                        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj;
-                        if (!hashSet.contains(Long.valueOf(stargiftattributemodel.document.id))) {
-                            TL_stars.starGiftAttributeIdModel stargiftattributeidmodel = new TL_stars.starGiftAttributeIdModel();
-                            stargiftattributeidmodel.document_id = stargiftattributemodel.document.id;
-                            getresalestargifts.attributes.add(stargiftattributeidmodel);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        int i11 = 0;
+        Object obj3 = this.b;
+        switch (i10) {
+            case 0:
+                f4.U((f4) obj3, (ArrayList) obj);
+                break;
+            case 1:
+                k4 k4Var = (k4) obj3;
+                ArrayList arrayList = (ArrayList) obj;
+                y9 y9Var = k4Var.Y;
+                if (y9Var != null) {
+                    ArrayList arrayList2 = y9Var.l;
+                    arrayList.add(f61.C(AndroidUtilities.dp(16.0f)));
+                    if (y9Var.i && arrayList2.isEmpty()) {
+                        f61 o10 = f61.o(1, 34);
+                        o10.u = 1;
+                        arrayList.add(o10);
+                        f61 o11 = f61.o(2, 34);
+                        o11.u = 1;
+                        arrayList.add(o11);
+                        f61 o12 = f61.o(3, 34);
+                        o12.u = 1;
+                        arrayList.add(o12);
+                        f61 o13 = f61.o(4, 34);
+                        o13.u = 1;
+                        arrayList.add(o13);
+                        f61 o14 = f61.o(5, 34);
+                        o14.u = 1;
+                        arrayList.add(o14);
+                        f61 o15 = f61.o(6, 34);
+                        o15.u = 1;
+                        arrayList.add(o15);
+                        f61 o16 = f61.o(7, 34);
+                        o16.u = 1;
+                        arrayList.add(o16);
+                        f61 o17 = f61.o(8, 34);
+                        o17.u = 1;
+                        arrayList.add(o17);
+                        f61 o18 = f61.o(9, 34);
+                        o18.u = 1;
+                        arrayList.add(o18);
+                    } else {
+                        int size = arrayList2.size();
+                        int i12 = 0;
+                        int i13 = 3;
+                        while (i12 < size) {
+                            Object obj4 = arrayList2.get(i12);
+                            i12++;
+                            TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj4;
+                            if (!savedStarGift.collection_id.contains(Integer.valueOf(k4Var.X))) {
+                                int i14 = f1.a;
+                                f61 J = f61.J(f1.class);
+                                J.u = 1;
+                                J.z = 0;
+                                J.G = savedStarGift;
+                                J.q = true;
+                                J.f = true;
+                                J.r = false;
+                                HashSet hashSet = k4Var.Z;
+                                int i15 = savedStarGift.msg_id;
+                                J.K(hashSet.contains(Long.valueOf(i15 == 0 ? savedStarGift.saved_id : i15)));
+                                J.u = 1;
+                                arrayList.add(J);
+                                i13--;
+                                if (i13 == 0) {
+                                    i13 = 3;
+                                }
+                            }
+                        }
+                        if (y9Var.i || !y9Var.j) {
+                            while (true) {
+                                if (i11 < (i13 <= 0 ? 3 : i13)) {
+                                    i11++;
+                                    f61 o19 = f61.o(i11, 34);
+                                    o19.u = 1;
+                                    arrayList.add(o19);
+                                }
+                            }
                         }
                     }
+                    arrayList.add(f61.C(AndroidUtilities.dp(68.0f)));
+                    break;
                 }
-                if (!hashSet3.isEmpty()) {
-                    int size2 = arrayList2.size();
-                    int i12 = 0;
-                    while (i12 < size2) {
-                        Object obj2 = arrayList2.get(i12);
-                        i12++;
-                        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = (TL_stars.starGiftAttributeBackdrop) obj2;
-                        if (!hashSet3.contains(Integer.valueOf(stargiftattributebackdrop.backdrop_id))) {
-                            TL_stars.starGiftAttributeIdBackdrop stargiftattributeidbackdrop = new TL_stars.starGiftAttributeIdBackdrop();
-                            stargiftattributeidbackdrop.backdrop_id = stargiftattributebackdrop.backdrop_id;
-                            getresalestargifts.attributes.add(stargiftattributeidbackdrop);
-                        }
+                break;
+            case 2:
+                zh.d dVar = (zh.d) obj3;
+                TLRPC.ShareThemeBackdrops shareThemeBackdrops = (TLRPC.ShareThemeBackdrops) obj;
+                ArrayList arrayList3 = dVar.e;
+                dVar.c = false;
+                if (shareThemeBackdrops instanceof TLRPC.TL_shareThemeBackdrops) {
+                    TLRPC.TL_shareThemeBackdrops tL_shareThemeBackdrops = (TLRPC.TL_shareThemeBackdrops) shareThemeBackdrops;
+                    dVar.b = tL_shareThemeBackdrops;
+                    try {
+                        SerializedData serializedData = new SerializedData(tL_shareThemeBackdrops.getObjectSize());
+                        dVar.b.serializeToStream(serializedData);
+                        MessagesController.getMainSettings(dVar.a).edit().putString("qrBackdrops", Utilities.bytesToHex(serializedData.toByteArray())).apply();
+                        serializedData.cleanup();
+                    } catch (Exception e) {
+                        FileLog.e(e);
                     }
                 }
-                if (!hashSet2.isEmpty()) {
-                    int size3 = arrayList.size();
-                    while (i10 < size3) {
-                        Object obj3 = arrayList.get(i10);
-                        i10++;
-                        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj3;
-                        if (!hashSet2.contains(Long.valueOf(stargiftattributepattern.document.id))) {
-                            TL_stars.starGiftAttributeIdPattern stargiftattributeidpattern = new TL_stars.starGiftAttributeIdPattern();
-                            stargiftattributeidpattern.document_id = stargiftattributepattern.document.id;
-                            getresalestargifts.attributes.add(stargiftattributeidpattern);
-                        }
-                    }
+                dVar.d = shareThemeBackdrops != null;
+                ArrayList arrayList4 = new ArrayList(arrayList3);
+                arrayList3.clear();
+                int size2 = arrayList4.size();
+                while (i11 < size2) {
+                    Object obj5 = arrayList4.get(i11);
+                    i11++;
+                    ((Runnable) obj5).run();
                 }
-            }
-            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new o71(12, this, getresalestargifts));
+                break;
+            default:
+                zh.i0 i0Var = (zh.i0) obj3;
+                TLRPC.ShareTheme shareTheme = (TLRPC.ShareTheme) obj;
+                if (shareTheme != null && !i0Var.E && !i0Var.x) {
+                    int i16 = i0Var.a;
+                    zh.v0[] v0VarArr = zh.v0.d;
+                    if (v0VarArr[i16] == null) {
+                        v0VarArr[i16] = new zh.v0(i16);
+                    }
+                    v0VarArr[i16].a(i0Var.c.f, shareTheme);
+                    TLRPC.ShareTheme shareTheme2 = i0Var.H;
+                    if (shareTheme2 != null) {
+                        byte[] b10 = zh.v0.b(shareTheme);
+                        byte[] b11 = zh.v0.b(shareTheme2);
+                        if (b10 != null && Arrays.equals(b10, b11)) {
+                        }
+                    } else if (shareTheme == shareTheme2) {
+                    }
+                    i0Var.a(shareTheme);
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // ai.z9
-    public final Object get(int i10) {
-        return this.d.get(i10);
-    }
-
-    public final void h() {
-        f();
-        this.q = null;
-        this.d.clear();
-        g(true);
-        Utilities.Callback callback = this.c;
-        if (callback != null) {
-            callback.run(Boolean.TRUE);
-        }
-    }
-
-    public final void i(s3 s3Var) {
-        if (this.p != s3Var) {
-            this.p = s3Var;
-            h();
-        }
-    }
-
-    @Override // ai.z9
-    public final int indexOf(Object obj) {
-        return this.d.indexOf(obj);
-    }
-
-    @Override // ai.z9
-    public final void d() {
     }
 }

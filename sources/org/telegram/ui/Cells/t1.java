@@ -16,9 +16,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.RichMessageLayout;
 import org.telegram.ui.Components.uz;
-import org.telegram.ui.gj0;
+import org.telegram.ui.fj0;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class t1 {
     public boolean A;
@@ -365,8 +365,8 @@ public final class t1 {
         }
         this.K0 = false;
         if (richMessageLayout2 != this.M0) {
-            gj0 gj0Var = u1Var.ie;
-            boolean z17 = gj0Var != null && gj0Var.h;
+            fj0 fj0Var = u1Var.ie;
+            boolean z17 = fj0Var != null && fj0Var.h;
             RichMessageLayout richMessageLayout3 = this.L0;
             if (richMessageLayout3 != null) {
                 richMessageLayout3.detach(u1Var);
@@ -898,12 +898,12 @@ public final class t1 {
         this.v0 = true;
         u1 u1Var = this.m3;
         ArrayList arrayList = u1Var.o7;
-        ci.g3 g3Var = u1Var.S0;
-        this.a = g3Var.getImageX();
-        this.b = g3Var.getImageY();
-        this.c = g3Var.getImageWidth();
-        this.d = g3Var.getImageHeight();
-        System.arraycopy(g3Var.getRoundRadius(), 0, this.t0, 0, 4);
+        ci.f3 f3Var = u1Var.S0;
+        this.a = f3Var.getImageX();
+        this.b = f3Var.getImageY();
+        this.c = f3Var.getImageWidth();
+        this.d = f3Var.getImageHeight();
+        System.arraycopy(f3Var.getRoundRadius(), 0, this.t0, 0, 4);
         org.telegram.ui.ActionBar.f5 f5Var = u1Var.t8;
         if (f5Var != null) {
             this.D0.set(f5Var.getBounds());
@@ -1026,7 +1026,7 @@ public final class t1 {
 
     public final void j() {
         u1 u1Var = this.m3;
-        ci.g3 g3Var = u1Var.S0;
+        ci.f3 f3Var = u1Var.S0;
         this.g = false;
         this.B = false;
         this.w0 = false;
@@ -1041,12 +1041,12 @@ public final class t1 {
             if (f7 != 0.0f) {
                 float f10 = this.p0;
                 if (f10 != 0.0f) {
-                    g3Var.setImageCoords(this.m0, this.n0, f7, f10);
+                    f3Var.setImageCoords(this.m0, this.n0, f7, f10);
                 }
             }
         }
         if (this.B0) {
-            g3Var.setRoundRadius(this.A0);
+            f3Var.setRoundRadius(this.A0);
         }
         this.m0 = 0.0f;
         this.n0 = 0.0f;

@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class r70 extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
     public final Paint a;
@@ -41,9 +41,9 @@ public final class r70 extends FrameLayout implements org.telegram.ui.ActionBar.
         imageView.setImageResource(R.drawable.outline_search_1_24);
         int i10 = org.telegram.ui.ActionBar.h6.G6;
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.m1(0.6f, t70Var.getThemedColor(i10)), PorterDuff.Mode.SRC_IN));
-        addView(imageView, w7.z5.a(24.0f, 11.0f, 8.0f, 11.0f, 8.0f, 24, 51));
+        addView(imageView, w7.z5.d(24, 24.0f, 51, 11.0f, 8.0f, 11.0f, 8.0f));
         v1Var.setClipChildren(true);
-        addView(v1Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 40.0f, -1, 119));
+        addView(v1Var, w7.z5.d(-1, -1.0f, 119, 0.0f, 0.0f, 0.0f, 40.0f));
         ei.e2 e2Var = new ei.e2(this, context, 7);
         this.d = e2Var;
         e2Var.setHint(LocaleController.getString(R.string.Search));
@@ -65,7 +65,7 @@ public final class r70 extends FrameLayout implements org.telegram.ui.ActionBar.
         }
         e2Var.setTextColor(t70Var.getThemedColor(i10));
         e2Var.setHintTextColor(t70Var.getThemedColor(org.telegram.ui.ActionBar.h6.H6));
-        addView(e2Var, w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+        addView(e2Var, w7.z5.d(-1, 40.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
         d();
     }
 

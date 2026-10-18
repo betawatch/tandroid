@@ -57,7 +57,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int a1 = 0;
@@ -1350,7 +1350,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         this(context, null, arrayList, str, str2, z10, str3, str4, false, z11, false, null, null);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:129:0x0825  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0824  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1523,7 +1523,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         if (this.h0 && this.o0[1] != null) {
             pq0 pq0Var = new pq0(this, context);
             this.W = pq0Var;
-            frameLayout.addView(pq0Var, w7.z5.a(36.0f, 0.0f, 11.0f, 0.0f, 0.0f, -1, 51));
+            frameLayout.addView(pq0Var, w7.z5.d(-1, 36.0f, 51, 0.0f, 11.0f, 0.0f, 0.0f));
         }
         k20 k20Var = new k20(context, this.resourcesProvider);
         this.y0 = k20Var;
@@ -1534,7 +1534,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         int i23 = 7;
         e2Var.setOnEditorActionListener(new e1(this, i23));
         k20Var.setCloseButtonOnClickListener(new yp0(this, i12));
-        frameLayout.addView(k20Var, w7.z5.a(40.0f, 11.0f, 7.0f, 11.0f, 11.0f, -1, 83));
+        frameLayout.addView(k20Var, w7.z5.d(-1, 40.0f, 83, 11.0f, 7.0f, 11.0f, 11.0f));
         org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, null);
         this.z0 = kVar;
         kVar.setOccupyStatusBar(false);
@@ -1666,7 +1666,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         fq0Var3.setVerticalScrollBarEnabled(false);
         fq0Var3.setOverScrollMode(2);
         fq0Var3.i(new ci.l(6));
-        this.containerView.addView(fq0Var3, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        this.containerView.addView(fq0Var3, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         vq0 vq0Var = new vq0(this, context);
         this.K = vq0Var;
         fq0Var3.setAdapter(vq0Var);
@@ -1873,8 +1873,8 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         fq0Var4.setHideIfEmpty(false);
         fq0Var4.W1 = true;
         fq0Var4.X1 = 0;
-        this.containerView.addView(rx0Var, w7.z5.a(-1.0f, 0.0f, 52.0f, 0.0f, 0.0f, -1, 51));
-        this.containerView.addView(fq0Var4, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        this.containerView.addView(rx0Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 52.0f, 0.0f, 0.0f));
+        this.containerView.addView(fq0Var4, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, 0.0f));
         ai.ic icVar = new ai.ic(this, context, 22);
         this.n = icVar;
         this.containerView.addView(icVar, w7.z5.e(-1, 300, 80));
@@ -1907,7 +1907,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                 f10 = 22.0f;
                 FrameLayout frameLayout3 = new FrameLayout(context);
                 this.r = frameLayout3;
-                frameLayout2.addView(frameLayout3, w7.z5.a(-1.0f, -2.0f, 0.0f, -2.0f, 0.0f, -1, 119));
+                frameLayout2.addView(frameLayout3, w7.z5.d(-1, -1.0f, 119, -2.0f, 0.0f, -2.0f, 0.0f));
                 LinearLayout linearLayout2 = new LinearLayout(context);
                 linearLayout2.setOrientation(0);
                 frameLayout3.addView(linearLayout2, w7.z5.e(-1, -1, 119));
@@ -1942,7 +1942,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                     final MessageObject messageObject3 = (MessageObject) this.N.get(0);
                     if (ChatObject.hasAdminRights(MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-messageObject3.getDialogId()))) && !messageObject3.isForwarded()) {
                         final int i30 = 0;
-                        linearLayout = org.telegram.messenger.kk.e(context, 0);
+                        linearLayout = org.telegram.messenger.lk.e(context, 0);
                         linearLayout.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.dq0
                             public final /* synthetic */ dr0 b;
 
@@ -1961,7 +1961,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                                         }
                                         if (n2Var != null) {
                                             dr0Var.dismiss();
-                                            n2Var.presentFragment(new org.telegram.ui.wi0(messageObject3));
+                                            n2Var.presentFragment(new org.telegram.ui.vi0(messageObject3));
                                             break;
                                         }
                                         break;
@@ -1973,7 +1973,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                                         }
                                         if (n2Var2 != null) {
                                             dr0Var2.dismiss();
-                                            n2Var2.presentFragment(new org.telegram.ui.wi0(messageObject3));
+                                            n2Var2.presentFragment(new org.telegram.ui.vi0(messageObject3));
                                             break;
                                         }
                                         break;
@@ -2015,7 +2015,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                 this.h = frameLayout4;
                 FrameLayout frameLayout5 = new FrameLayout(context);
                 this.r = frameLayout5;
-                frameLayout4.addView(frameLayout5, w7.z5.a(-1.0f, -2.0f, 0.0f, -2.0f, 0.0f, -1, 119));
+                frameLayout4.addView(frameLayout5, w7.z5.d(-1, -1.0f, 119, -2.0f, 0.0f, -2.0f, 0.0f));
                 TextView textView3 = new TextView(context);
                 int i32 = org.telegram.ui.ActionBar.h6.i6;
                 textView3.setBackground(org.telegram.ui.ActionBar.h6.g0(getThemedColor(i32), 2, AndroidUtilities.dp(22.0f)));
@@ -2041,7 +2041,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                         linearLayout4.setOrientation(0);
                         linearLayout4.setGravity(16);
                         linearLayout4.setBackground(org.telegram.ui.ActionBar.h6.g0(getThemedColor(this.h0 ? org.telegram.ui.ActionBar.h6.eg : i32), 2, AndroidUtilities.dp(22.0f)));
-                        frameLayout5.addView(linearLayout4, w7.z5.a(48.0f, 6.0f, 0.0f, -6.0f, 0.0f, -2, 85));
+                        frameLayout5.addView(linearLayout4, w7.z5.d(-2, 48.0f, 85, 6.0f, 0.0f, -6.0f, 0.0f));
                         final int i33 = 1;
                         linearLayout4.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.dq0
                             public final /* synthetic */ dr0 b;
@@ -2061,7 +2061,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                                         }
                                         if (n2Var != null) {
                                             dr0Var.dismiss();
-                                            n2Var.presentFragment(new org.telegram.ui.wi0(messageObject4));
+                                            n2Var.presentFragment(new org.telegram.ui.vi0(messageObject4));
                                             break;
                                         }
                                         break;
@@ -2073,7 +2073,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
                                         }
                                         if (n2Var2 != null) {
                                             dr0Var2.dismiss();
-                                            n2Var2.presentFragment(new org.telegram.ui.wi0(messageObject4));
+                                            n2Var2.presentFragment(new org.telegram.ui.vi0(messageObject4));
                                             break;
                                         }
                                         break;
@@ -2097,16 +2097,16 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
         }
         FrameLayout frameLayout6 = new FrameLayout(context);
         this.v = frameLayout6;
-        this.containerView.addView(frameLayout6, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, this.r != null ? 48.0f : 0.0f, -1, 87));
+        this.containerView.addView(frameLayout6, w7.z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, this.r != null ? 48.0f : 0.0f));
         FrameLayout frameLayout7 = new FrameLayout(context);
         this.w = frameLayout7;
-        this.containerView.addView(frameLayout7, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 55));
+        this.containerView.addView(frameLayout7, w7.z5.d(-1, -2.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
         hq0 hq0Var = new hq0(this, context, 0);
         this.c = hq0Var;
         hq0Var.setWillNotDraw(false);
         hq0Var.setAlpha(0.0f);
         hq0Var.setVisibility(4);
-        this.containerView.addView(hq0Var, w7.z5.a(-2.0f, -2.0f, 0.0f, -2.0f, 0.0f, -1, 83));
+        this.containerView.addView(hq0Var, w7.z5.d(-1, -2.0f, 83, -2.0f, 0.0f, -2.0f, 0.0f));
         hq0Var.setOnTouchListener(new di.d(22));
         AndroidUtilities.setLightNavigationBar(this.container, AndroidUtilities.computePerceivedBrightness(getThemedColor(i22)) > 0.721f);
         iq0 iq0Var = new iq0(this, context, oq0Var, this.resourcesProvider);
@@ -2179,7 +2179,7 @@ public class dr0 extends org.telegram.ui.ActionBar.f3 implements NotificationCen
             if (this.h == null) {
                 View view2 = new View(context);
                 view2.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.h6.d7));
-                frameLayout8.addView(view2, w7.z5.b(-1.0f, this.h0 ? 0.66f : 1.0f / AndroidUtilities.density, 55));
+                frameLayout8.addView(view2, w7.z5.a(-1.0f, this.h0 ? 0.66f : 1.0f / AndroidUtilities.density, 55));
             }
             this.containerView.addView(frameLayout8, w7.z5.e(-1, 58, 83));
             if (this.h == null) {

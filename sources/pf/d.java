@@ -50,10 +50,10 @@ import org.telegram.ui.b3;
 import org.telegram.ui.h0;
 import org.telegram.ui.l4;
 import org.telegram.ui.o3;
-import org.telegram.ui.web.x0;
+import org.telegram.ui.web.y0;
 import xf.f;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static e a;
@@ -448,12 +448,12 @@ public abstract class d {
                     if (l4Var != null && !l4Var.d0.isEmpty()) {
                         Object h = i2.d.h(1, m3Var.J.d0);
                         if (h instanceof b3) {
-                            x0 x0Var = ((b3) h).b;
-                            if (x0Var == null && (o3VarArr = m3Var.J.u0) != null && (o3Var = o3VarArr[0]) != null) {
-                                x0Var = o3Var.getWebView();
+                            y0 y0Var = ((b3) h).b;
+                            if (y0Var == null && (o3VarArr = m3Var.J.u0) != null && (o3Var = o3VarArr[0]) != null) {
+                                y0Var = o3Var.getWebView();
                             }
-                            if (x0Var != null) {
-                                if (TextUtils.equals(n3.p(x0Var.canGoBack() ? x0Var.getUrl() : x0Var.getOpenURL()), n3.p(str))) {
+                            if (y0Var != null) {
+                                if (TextUtils.equals(n3.p(y0Var.canGoBack() ? y0Var.getUrl() : y0Var.getOpenURL()), n3.p(str))) {
                                     P.e(m3Var);
                                     break;
                                 }
@@ -593,7 +593,7 @@ public abstract class d {
         int i11 = UserConfig.selectedAccount;
         boolean[] zArr = {false};
         boolean e7 = e(uri, false, zArr);
-        int i12 = 5;
+        int i12 = 6;
         if (str != null) {
             switch (str) {
                 case "brave-browser":

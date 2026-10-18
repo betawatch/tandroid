@@ -32,7 +32,7 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProxyListActivity;
 import org.telegram.ui.jh1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g51 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -524,12 +524,12 @@ public final /* synthetic */ class g51 implements View.OnClickListener {
             default:
                 org.telegram.ui.xd0 xd0Var = (org.telegram.ui.xd0) this.b;
                 Context context3 = (Context) this.c;
-                org.telegram.ui.fg0 fg0Var = xd0Var.y;
-                if (fg0Var.V.getTag() == null) {
+                org.telegram.ui.eg0 eg0Var = xd0Var.y;
+                if (eg0Var.V.getTag() == null) {
                     if (xd0Var.n.has_recovery) {
-                        fg0Var.n1(0, true);
+                        eg0Var.n1(0, true);
                         TLRPC.TL_auth_requestPasswordRecovery tL_auth_requestPasswordRecovery = new TLRPC.TL_auth_requestPasswordRecovery();
-                        i10 = ((org.telegram.ui.ActionBar.n2) fg0Var).currentAccount;
+                        i10 = ((org.telegram.ui.ActionBar.n2) eg0Var).currentAccount;
                         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_requestPasswordRecovery, new org.telegram.ui.vd0(xd0Var, i16), 10);
                         break;
                     } else {

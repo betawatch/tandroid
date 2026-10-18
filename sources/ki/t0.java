@@ -19,7 +19,7 @@ import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class t0 extends FrameLayout implements org.telegram.ui.ActionBar.y5, m9 {
     public final org.telegram.ui.ActionBar.d6 a;
@@ -52,7 +52,7 @@ public final class t0 extends FrameLayout implements org.telegram.ui.ActionBar.y
         h1Var.setPadding(0, AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(12.66f));
         h1Var.setListener(new q0(this));
         h1Var.setDelegate(new j5.b(this, 3));
-        addView(h1Var, w7.z5.a(-2.0f, 53.0f, 0.0f, 16.0f, 0.0f, -1, 51));
+        addView(h1Var, w7.z5.d(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
         d();
     }
 

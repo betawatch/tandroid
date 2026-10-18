@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ld1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ pd1 a;
@@ -84,7 +84,7 @@ public final class ld1 extends org.telegram.ui.ActionBar.j {
                     tL_messages_editForumTopic.flags |= 2;
                 }
                 i11 = ((org.telegram.ui.ActionBar.n2) pd1Var).currentAccount;
-                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editForumTopic, new ci.e6(8));
+                ConnectionsManager.getInstance(i11).sendRequest(tL_messages_editForumTopic, new ci.d6(8));
             }
             if (pd1Var.d != null) {
                 TLRPC.TL_forumTopic tL_forumTopic2 = pd1Var.w;
@@ -95,7 +95,7 @@ public final class ld1 extends org.telegram.ui.ActionBar.j {
                     tL_messages_editForumTopic2.hidden = !pd1Var.d.d.h;
                     tL_messages_editForumTopic2.flags |= 8;
                     i12 = ((org.telegram.ui.ActionBar.n2) pd1Var).currentAccount;
-                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_editForumTopic2, new ci.e6(8));
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_editForumTopic2, new ci.d6(8));
                 }
             }
             TLRPC.TL_forumTopic tL_forumTopic3 = pd1Var.w;

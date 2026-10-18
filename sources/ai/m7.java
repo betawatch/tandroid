@@ -34,7 +34,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.d11;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class m7 {
     public float A;
@@ -54,7 +54,7 @@ public final class m7 {
     public MessageObject O;
     public boolean P;
     public final ne.e Q;
-    public h4 R;
+    public e4 R;
     public final int a;
     public final View b;
     public final org.telegram.ui.ActionBar.d6 c;
@@ -62,7 +62,7 @@ public final class m7 {
     public final org.telegram.ui.Components.p5 e;
     public int g;
     public RadialGradient h;
-    public final yh.k1 j;
+    public final yh.j1 j;
     public TL_stars.starGiftAttributeBackdrop k;
     public TL_stars.starGiftAttributePattern l;
     public TL_stars.starGiftAttributeModel m;
@@ -74,7 +74,7 @@ public final class m7 {
     public float u;
     public float v;
     public float x;
-    public final yh.k0 y;
+    public final yh.j0 y;
     public boolean z;
     public final Paint f = new Paint(1);
     public final Matrix i = new Matrix();
@@ -83,8 +83,8 @@ public final class m7 {
     public final ArrayList w = new ArrayList();
 
     public m7(int i10, View view, org.telegram.ui.ActionBar.d6 d6Var) {
-        yh.k0 k0Var = new yh.k0();
-        this.y = k0Var;
+        yh.j0 j0Var = new yh.j0();
+        this.y = j0Var;
         this.D = new RectF();
         this.E = new Path();
         this.F = new Paint();
@@ -93,13 +93,13 @@ public final class m7 {
         this.a = i10;
         this.b = view;
         this.c = d6Var;
-        this.j = new yh.k1(view);
+        this.j = new yh.j1(view);
         this.H = new org.telegram.ui.Components.yc(view);
         this.I = new org.telegram.ui.Components.yc(view);
         this.d = new ImageReceiver(view);
         this.e = new org.telegram.ui.Components.p5(AndroidUtilities.dp(28.0f), view);
-        k0Var.r = view;
-        k0Var.d.setParentView(view);
+        j0Var.r = view;
+        j0Var.d.setParentView(view);
     }
 
     public final void a() {
@@ -172,13 +172,13 @@ public final class m7 {
         int i11 = i10;
         d11Var2.c(f10 - (d11Var2.c / 2.0f), this.s, 1.0f, i11, canvas2);
         if (this.z) {
-            yh.k0 k0Var = this.y;
-            int i12 = k0Var.t;
-            int i13 = k0Var.u;
+            yh.j0 j0Var = this.y;
+            int i12 = j0Var.t;
+            int i13 = j0Var.u;
             int i14 = (int) (f10 - (i12 / 2.0f));
             int i15 = (int) this.x;
-            k0Var.setBounds(i14, i15, i12 + i14, i13 + i15);
-            k0Var.draw(canvas2);
+            j0Var.setBounds(i14, i15, i12 + i14, i13 + i15);
+            j0Var.draw(canvas2);
         } else {
             float f12 = 9.0f;
             float dp4 = this.u + AndroidUtilities.dp(9.0f) + this.v;
@@ -221,10 +221,10 @@ public final class m7 {
             int dp7 = ((int) rectF.top) - AndroidUtilities.dp(1.33f);
             int dp8 = AndroidUtilities.dp(1.33f) + ((int) rectF.right);
             int dp9 = AndroidUtilities.dp(46.67f) + ((int) rectF.top);
-            yh.k1 k1Var = this.j;
-            k1Var.setBounds(dp6, dp7, dp8, dp9);
-            k1Var.x = i18;
-            k1Var.draw(canvas2);
+            yh.j1 j1Var = this.j;
+            j1Var.setBounds(dp6, dp7, dp8, dp9);
+            j1Var.x = i18;
+            j1Var.draw(canvas2);
         }
         canvas2.restore();
     }
@@ -277,10 +277,10 @@ public final class m7 {
             }
         } else {
             if (motionEvent.getAction() == 1 && ((z10 = ycVar.i) || ycVar2.i)) {
-                h4 h4Var = this.R;
-                if (h4Var != null) {
+                e4 e4Var = this.R;
+                if (e4Var != null) {
                     if (z10) {
-                        h4Var.run();
+                        e4Var.run();
                     }
                 } else if (this.J) {
                     org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
@@ -366,16 +366,16 @@ public final class m7 {
                 }
                 boolean z12 = tL_starGiftUnique.burned;
                 this.J = z12;
-                yh.k1 k1Var = this.j;
+                yh.j1 j1Var = this.j;
                 if (z12) {
                     int w02 = org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.q7, this.c);
-                    Paint paint = (Paint) k1Var.b;
+                    Paint paint = (Paint) j1Var.b;
                     paint.setShader(null);
                     paint.setColor(w02);
-                    k1Var.f(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
+                    j1Var.f(11, LocaleController.getString(R.string.Gift2UniqueRibbonBurned), true);
                 } else {
-                    k1Var.e(this.k, true, false);
-                    k1Var.f(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
+                    j1Var.e(this.k, true, false);
+                    j1Var.f(11, LocaleController.getString(R.string.Gift2UniqueRibbon), true);
                 }
                 if (this.p) {
                     this.L = AndroidUtilities.dp(200.0f);
@@ -471,35 +471,35 @@ public final class m7 {
         this.u = 0.0f;
         this.v = 0.0f;
         TLRPC.TL_textWithEntities tL_textWithEntities = tL_messageActionStarGiftUnique.message;
-        yh.k0 k0Var = this.y;
+        yh.j0 j0Var = this.y;
         if (tL_textWithEntities != null) {
-            TextPaint textPaint = k0Var.c;
+            TextPaint textPaint = j0Var.c;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(tL_textWithEntities.text);
             MessageObject.addEntitiesToText(spannableStringBuilder, tL_textWithEntities.entities, false, false, false, false);
             Spannable replaceAnimatedEmoji = MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(spannableStringBuilder, textPaint.getFontMetricsInt(), false), tL_textWithEntities.entities, textPaint.getFontMetricsInt());
             TLObject userOrChat = tL_messageActionStarGiftUnique.name_hidden ? null : tL_messageActionStarGiftUnique.from_id != null ? MessagesController.getInstance(i10).getUserOrChat(DialogObject.getPeerDialogId(tL_messageActionStarGiftUnique.from_id)) : MessagesController.getInstance(i10).getUserOrChat(messageObject.getFromChatId());
             this.z = true;
-            k0Var.c(userOrChat);
-            k0Var.m = replaceAnimatedEmoji;
-            k0Var.s = -1;
-            k0Var.b(((int) f12) - AndroidUtilities.dp(24.0f));
+            j0Var.c(userOrChat);
+            j0Var.m = replaceAnimatedEmoji;
+            j0Var.s = -1;
+            j0Var.b(((int) f12) - AndroidUtilities.dp(24.0f));
             if (!this.K) {
-                StaticLayout staticLayout = k0Var.n;
+                StaticLayout staticLayout = j0Var.n;
                 if ((staticLayout != null ? staticLayout.getLineCount() : 0) > 3) {
                     this.K = true;
-                    this.L = (int) ((Math.min(0.4f, ((k0Var.n != null ? r3.getLineCount() : 0) - 3) * 0.1f) + 1.0f) * this.L);
+                    this.L = (int) ((Math.min(0.4f, ((j0Var.n != null ? r3.getLineCount() : 0) - 3) * 0.1f) + 1.0f) * this.L);
                     g(messageObject, tL_messageActionStarGiftUnique, tL_starGiftUnique);
                     return;
                 }
             }
             float dp3 = j11 + AndroidUtilities.dp(4.0f);
             this.x = dp3;
-            j11 = dp3 + k0Var.u + AndroidUtilities.dp(f10);
+            j11 = dp3 + j0Var.u + AndroidUtilities.dp(f10);
         } else {
             this.z = false;
-            k0Var.c(null);
-            k0Var.m = null;
-            k0Var.s = -1;
+            j0Var.c(null);
+            j0Var.m = null;
+            j0Var.s = -1;
             if (this.m != null) {
                 if (!arrayList.isEmpty()) {
                     j11 += AndroidUtilities.dp(6.0f);
@@ -578,8 +578,8 @@ public final class m7 {
         this.w.clear();
         this.u = 0.0f;
         this.v = 0.0f;
-        yh.k0 k0Var = this.y;
-        TextPaint textPaint = k0Var.c;
+        yh.j0 j0Var = this.y;
+        TextPaint textPaint = j0Var.c;
         if (tL_textWithEntities == null || TextUtils.isEmpty(tL_textWithEntities.text)) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.GiftMessageHint));
             spannableStringBuilder.setSpan(new ForegroundColorSpan(-1593835521), 0, spannableStringBuilder.length(), 33);
@@ -591,22 +591,22 @@ public final class m7 {
         }
         TLObject userOrChat = j10 != 0 ? MessagesController.getInstance(this.a).getUserOrChat(j10) : null;
         this.z = true;
-        k0Var.c(userOrChat);
-        k0Var.m = spanned;
-        k0Var.s = -1;
-        k0Var.b(((int) f7) - AndroidUtilities.dp(24.0f));
+        j0Var.c(userOrChat);
+        j0Var.m = spanned;
+        j0Var.s = -1;
+        j0Var.b(((int) f7) - AndroidUtilities.dp(24.0f));
         if (!this.K) {
-            StaticLayout staticLayout = k0Var.n;
+            StaticLayout staticLayout = j0Var.n;
             if ((staticLayout != null ? staticLayout.getLineCount() : 0) > 3) {
                 this.K = true;
-                this.L = (int) ((Math.min(0.4f, ((k0Var.n != null ? r5.getLineCount() : 0) - 3) * 0.1f) + 1.0f) * this.L);
+                this.L = (int) ((Math.min(0.4f, ((j0Var.n != null ? r5.getLineCount() : 0) - 3) * 0.1f) + 1.0f) * this.L);
                 h(tL_starGiftUnique, j10, tL_textWithEntities, str);
                 return;
             }
         }
         float dp2 = j12 + AndroidUtilities.dp(4.0f);
         this.x = dp2;
-        float dp3 = dp2 + k0Var.u + AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(11.66f);
+        float dp3 = dp2 + j0Var.u + AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(11.66f);
         this.A = dp3;
         this.C = new d11(str, 14.0f, AndroidUtilities.bold());
         float dp4 = AndroidUtilities.dp(30.0f);

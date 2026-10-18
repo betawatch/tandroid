@@ -47,7 +47,7 @@ import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.Components.bs;
 import org.telegram.ui.Components.q10;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class w extends FrameLayout {
     public static final bs t0 = new bs(0.05d, 0.7d, 0.1d, 1.0d);
@@ -99,7 +99,7 @@ public final class w extends FrameLayout {
     public final RectF r;
     public final RectF r0;
     public final Path s;
-    public final p4.s0 s0;
+    public final p8.b s0;
     public final Path v;
     public final Paint w;
     public final Paint x;
@@ -140,7 +140,7 @@ public final class w extends FrameLayout {
         this.o0 = new Matrix();
         this.q0 = new Paint(2);
         this.r0 = new RectF();
-        this.s0 = new p4.s0(this, 17);
+        this.s0 = new p8.b(this, 16);
         this.a = bVar;
         rectF3.set(rectF);
         rectF4.set(rectF2);
@@ -199,7 +199,7 @@ public final class w extends FrameLayout {
         int i11 = 0;
         if (nVar != null && nVar.b.k()) {
             r8.n nVar2 = wVar.c0;
-            g3 g3Var = new g3(23);
+            g3 g3Var = new g3(22);
             int width2 = bitmap.getWidth();
             int height2 = bitmap.getHeight();
             g3Var.d = bitmap;
@@ -672,7 +672,7 @@ public final class w extends FrameLayout {
         if (f10 <= 0.0f) {
             return;
         }
-        int clamp01 = (int) (Utilities.clamp01(v0.b[3] / 100.0f) * 255.0f);
+        int clamp01 = (int) (Utilities.clamp01(w0.b[3] / 100.0f) * 255.0f);
         Paint paint = this.w;
         if (z10) {
             if (this.b != null && canvas.isHardwareAccelerated() && d()) {
@@ -765,7 +765,7 @@ public final class w extends FrameLayout {
         if (!rectF2.isEmpty()) {
             return;
         }
-        String[] strArr = t0.C9;
+        String[] strArr = u0.C9;
         int i15 = AndroidUtilities.statusBarHeight;
         View view = this;
         int i16 = 0;

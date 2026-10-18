@@ -25,7 +25,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class z5 extends a20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -178,7 +178,7 @@ public final class z5 extends a20 implements NotificationCenter.NotificationCent
         String string = LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannels : R.string.BoostingBoostForGroups);
         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingBoostForChannelsInfo : R.string.BoostingBoostForGroupsInfo));
         u5 u5Var = new u5(getParentActivity());
-        u5Var.addView(this.R != null ? this.c0 : new View(u5Var.getContext()), w7.z5.a(this.R != null ? -2.0f : 110.0f, 8.0f, 46.0f, 8.0f, 33.0f, -1, 0));
+        u5Var.addView(this.R != null ? this.c0 : new View(u5Var.getContext()), w7.z5.d(-1, this.R != null ? -2.0f : 110.0f, 0, 8.0f, 46.0f, 8.0f, 33.0f));
         m0(string, replaceTags, u5Var, new x5(this, getParentActivity()));
     }
 
@@ -272,12 +272,12 @@ public final class z5 extends a20 implements NotificationCenter.NotificationCent
         kVar.m = false;
         kVar.C = false;
         this.c.setItemAnimator(kVar);
-        this.c.setOnItemClickListener(new ci.y4(3, this, context));
+        this.c.setOnItemClickListener(new ci.x4(3, this, context));
         Activity parentActivity = getParentActivity();
         LinearLayout linearLayout = new LinearLayout(parentActivity);
         this.f0 = linearLayout;
         linearLayout.setOrientation(1);
-        this.f0.addView(new ci.t1(parentActivity), w7.z5.t(100, 100, 17, 0, 120, 0, 0));
+        this.f0.addView(new ci.s1(parentActivity), w7.z5.t(100, 100, 17, 0, 120, 0, 0));
         ((ViewGroup) this.fragmentView).addView(this.f0, w7.z5.e(-1, -2, 17));
         this.f0.setAlpha(0.0f);
         if (this.R == null) {

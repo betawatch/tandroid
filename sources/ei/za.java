@@ -3,7 +3,7 @@ package ei;
 import android.app.Activity;
 import android.app.Dialog;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class za extends org.telegram.ui.ActionBar.n2 {
     public final /* synthetic */ int a;
@@ -36,9 +36,9 @@ public final class za extends org.telegram.ui.ActionBar.n2 {
     public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
         switch (this.a) {
             case 0:
-                return new ci.t2(7, this.b.a);
+                return new ci.s2(7, this.b.a);
             default:
-                return new ci.t2(8, this.b.a);
+                return new ci.s2(8, this.b.a);
         }
     }
 

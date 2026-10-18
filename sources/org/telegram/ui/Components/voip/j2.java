@@ -18,7 +18,7 @@ import org.telegram.ui.Components.bs;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jh1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class j2 extends FrameLayout {
     public static final /* synthetic */ int h = 0;
@@ -34,7 +34,7 @@ public final class j2 extends FrameLayout {
         super(context);
         this.f = k2Var;
         this.a = ViewConfiguration.get(context).getScaledTouchSlop();
-        setOutlineProvider(new ci.o1(18));
+        setOutlineProvider(new ci.n1(18));
         setClipToOutline(true);
     }
 

@@ -20,11 +20,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.kk;
+import org.telegram.messenger.lk;
 import org.telegram.ui.Cells.c1;
 import org.telegram.ui.Components.q10;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class c extends View {
     public static final long f0 = System.currentTimeMillis();
@@ -290,35 +290,35 @@ public final class c extends View {
                                     canvas2.saveLayerAlpha(f32, f32, dp5, dp5, (int) (f31 * 255.0f));
                                 }
                                 uc.b bVar = cVar.a;
-                                t0 t0Var = ((f0) bVar.a).d;
+                                u0 u0Var = ((f0) bVar.a).d;
                                 int[] iArr3 = cVar.P;
-                                t0Var.getLocationOnScreen(iArr3);
+                                u0Var.getLocationOnScreen(iArr3);
                                 float f33 = 1.0f / f29;
                                 canvas2.scale(f33, f33);
                                 canvas2.translate(-dp, -dp2);
                                 float f34 = iArr2[0] - iArr3[0];
                                 float f35 = iArr2[1] - iArr3[1];
-                                t0 t0Var2 = ((f0) bVar.a).d;
-                                if (!t0Var2.j0(canvas2) && t0Var2.X2 != null) {
+                                u0 u0Var2 = ((f0) bVar.a).d;
+                                if (!u0Var2.j0(canvas2) && u0Var2.Y2 != null) {
                                     canvas2.save();
                                     canvas2.translate(-f34, -f35);
-                                    Bitmap bitmap = t0Var2.X2;
+                                    Bitmap bitmap = u0Var2.Y2;
                                     if (bitmap != null) {
-                                        t0Var2.y(canvas2, bitmap);
+                                        u0Var2.y(canvas2, bitmap);
                                     }
                                     canvas2.restore();
-                                } else if (u.f() && t0Var2.j0(canvas2)) {
+                                } else if (u.f() && u0Var2.j0(canvas2)) {
                                     canvas2.save();
                                     canvas2.translate(-f34, -f35);
-                                    Object obj = t0Var2.H1;
+                                    Object obj = u0Var2.H1;
                                     canvas2.save();
                                     canvas2.scale(9.0f, 9.0f);
                                     u.c(canvas2, obj);
                                     canvas2.restore();
                                     canvas2.restore();
                                 } else {
-                                    r0 r0Var = t0Var2.n;
-                                    canvas2.drawColor(i0.a.o(r0Var != null ? i0.a.f(0.5f, r0Var.b, r0Var.c) : -12947803, 224));
+                                    s0 s0Var = u0Var2.n;
+                                    canvas2.drawColor(i0.a.o(s0Var != null ? i0.a.f(0.5f, s0Var.b, s0Var.c) : -12947803, 224));
                                 }
                                 canvas2.translate(dp, dp2);
                                 canvas2.scale(f29, f29);
@@ -734,8 +734,8 @@ public final class c extends View {
                 float f33 = (d * f19) / f7;
                 rectF.set(width2 - f32, height - f33, f32 + width2, height + f33);
                 float height2 = rectF.height() / f7;
-                r0 r0Var = f0Var2.d.n;
-                paint.setColor(r0Var == null ? r0Var.h : 872415231);
+                s0 s0Var = f0Var2.d.n;
+                paint.setColor(s0Var == null ? s0Var.h : 872415231);
                 paint.setAlpha((int) (Color.alpha(f0Var2.d.n == null ? r2.h : 872415231) * f31));
                 canvas.drawRoundRect(rectF, height2, height2, paint);
                 paint.setColor(872415231);
@@ -751,7 +751,7 @@ public final class c extends View {
                 while (i10 < arrayList2.size()) {
                     b bVar4 = (b) arrayList2.get(i10);
                     int i19 = i10;
-                    float b12 = kk.b(i18, f27, AndroidUtilities.dp(f17), (width2 - (cVar.w / f7)) + AndroidUtilities.dp(8.0f));
+                    float b12 = lk.b(i18, f27, AndroidUtilities.dp(f17), (width2 - (cVar.w / f7)) + AndroidUtilities.dp(8.0f));
                     if (!bVar4.d) {
                         i18++;
                     }
@@ -864,8 +864,8 @@ public final class c extends View {
         float f332 = (d * f19) / f7;
         rectF.set(width22 - f322, height3 - f332, f322 + width22, height3 + f332);
         float height22 = rectF.height() / f7;
-        r0 r0Var2 = f0Var2.d.n;
-        paint.setColor(r0Var2 == null ? r0Var2.h : 872415231);
+        s0 s0Var2 = f0Var2.d.n;
+        paint.setColor(s0Var2 == null ? s0Var2.h : 872415231);
         paint.setAlpha((int) (Color.alpha(f0Var2.d.n == null ? r2.h : 872415231) * f31));
         canvas.drawRoundRect(rectF, height22, height22, paint);
         paint.setColor(872415231);
@@ -917,12 +917,12 @@ public final class c extends View {
                         b bVar = (b) arrayList.get(i10);
                         if (!bVar.d) {
                             if (Math.abs(motionEvent.getX() - bVar.b) < AndroidUtilities.dp(34.0f) / 2.0f) {
-                                t0 t0Var = ((f0) this.a.a).d;
-                                ArrayList arrayList2 = t0Var.I;
+                                u0 u0Var = ((f0) this.a.a).d;
+                                ArrayList arrayList2 = u0Var.I;
                                 if (i11 >= 0 && i11 < arrayList2.size()) {
                                     arrayList2.remove(i11);
-                                    t0Var.c();
-                                    t0Var.i0();
+                                    u0Var.c();
+                                    u0Var.i0();
                                 }
                                 invalidate();
                                 return true;

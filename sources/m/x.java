@@ -14,7 +14,7 @@ import android.view.inputmethod.InputConnection;
 import android.widget.MultiAutoCompleteTextView;
 import v7.q7;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class x extends MultiAutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -27,11 +27,11 @@ public final class x extends MultiAutoCompleteTextView implements u0.k {
         super(context, attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
         d3.a(context);
         c3.a(this, getContext());
-        g3 K = g3.K(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        if (((TypedArray) K.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(K.A(0));
+        g3 P = g3.P(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
+        if (((TypedArray) P.c).hasValue(0)) {
+            setDropDownBackgroundDrawable(P.F(0));
         }
-        K.L();
+        P.Q();
         e2.c cVar = new e2.c(this);
         this.a = cVar;
         cVar.f(attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);

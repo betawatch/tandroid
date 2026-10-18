@@ -31,7 +31,7 @@ import org.telegram.ui.Components.o5;
 import org.telegram.ui.Components.r5;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public abstract class r extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final long[] K = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
@@ -87,7 +87,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
         mVar.setVerticalScrollBarEnabled(false);
         mVar.setClipToPadding(false);
         mVar.j(new kv(d0Var, 26));
-        addView(mVar, z5.d(-1.0f, -1));
+        addView(mVar, z5.c(-1.0f, -1));
         q qVar = new q(d0Var, context);
         this.h = qVar;
         addView(qVar, z5.e(-1, 36, 48));
@@ -266,7 +266,7 @@ public abstract class r extends FrameLayout implements NotificationCenter.Notifi
                     r5.h(i12).b(j12, new o5() { // from class: zh.h
                         @Override // org.telegram.ui.Components.o5
                         public final void a(TLRPC.Document document7) {
-                            AndroidUtilities.runOnUIThread(new uf.c(20, r.this, document7));
+                            AndroidUtilities.runOnUIThread(new u2.q0(21, r.this, document7));
                         }
                     });
                 }

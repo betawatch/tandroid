@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import ci.p4;
+import ci.o4;
 import e9.x1;
 import ei.bc;
 import ig.e2;
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.u6;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class t0 implements z {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -80,14 +80,14 @@ public final class t0 implements z {
     public boolean y;
     public long z;
 
-    public t0(p4 p4Var) {
+    public t0(o4 o4Var) {
         int deviceId;
-        Context context = (Context) p4Var.b;
+        Context context = (Context) o4Var.b;
         this.a = context == null ? null : context.getApplicationContext();
         this.u = b2.f.i;
-        this.b = (androidx.biometric.e) p4Var.d;
+        this.b = (androidx.biometric.e) o4Var.d;
         this.i = 0;
-        this.r = (k0) p4Var.f;
+        this.r = (k0) o4Var.f;
         m0 m0Var = new m0();
         this.c = m0Var;
         c1 c1Var = new c1();

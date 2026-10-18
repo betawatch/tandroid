@@ -21,7 +21,7 @@ import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.jh1;
 import org.telegram.ui.ng1;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class ml0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -280,19 +280,19 @@ public final class ml0 extends AnimatorListenerAdapter {
                 a2Var.z0 = 1.0f;
                 break;
             case 21:
-                ((sg.x0) obj2).w = false;
-                ((sg.n0) obj).setOffset(0.0f);
+                ((sg.y0) obj2).w = false;
+                ((sg.o0) obj).setOffset(0.0f);
                 super.onAnimationEnd(animator);
                 break;
             case 22:
-                sg.l1 l1Var = (sg.l1) obj2;
-                l1Var.H0 = false;
-                l1Var.G0 = 1.0f;
-                l1Var.s0.invalidate();
+                sg.m1 m1Var = (sg.m1) obj2;
+                m1Var.H0 = false;
+                m1Var.G0 = 1.0f;
+                m1Var.s0.invalidate();
                 Drawable drawable = (Drawable) obj;
                 if (drawable != null) {
                     ValueAnimator ofInt = ValueAnimator.ofInt(0, 255);
-                    ofInt.addUpdateListener(new sg.h1(i11, this, drawable));
+                    ofInt.addUpdateListener(new sg.i1(i11, this, drawable));
                     ofInt.start();
                 }
                 super.onAnimationEnd(animator);

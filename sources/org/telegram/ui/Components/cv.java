@@ -35,7 +35,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class cv extends org.telegram.ui.ActionBar.f3 {
     public static cv S;
@@ -108,9 +108,9 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
         frameLayout.setBackgroundColor(-16777216);
         frameLayout.setFitsSystemWindows(true);
         frameLayout.setOnTouchListener(new di.d(17));
-        cvVar2.container.addView(frameLayout, w7.z5.d(-1.0f, -1));
+        cvVar2.container.addView(frameLayout, w7.z5.c(-1.0f, -1));
         frameLayout.setVisibility(4);
-        ah.x xVar = new ah.x(cvVar2, parentActivity, 15);
+        ah.x xVar = new ah.x(cvVar2, parentActivity, 16);
         cvVar2.w = xVar;
         xVar.setOnTouchListener(new di.d(17));
         cvVar2.setCustomView(xVar);
@@ -123,20 +123,20 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
         CookieManager.getInstance().setAcceptThirdPartyCookies(wuVar, true);
         wuVar.setWebChromeClient(new org.telegram.ui.r1(cvVar2, 1));
         wuVar.setWebViewClient(new xu(cvVar2));
-        xVar.addView(wuVar, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 84, -1, 51));
+        xVar.addView(wuVar, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 84));
         u91 u91Var = new u91(parentActivity, true, new yu(cvVar2));
         cvVar2.c = u91Var;
         u91Var.setVisibility(4);
-        xVar.addView(u91Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 74, -1, 51));
+        xVar.addView(u91Var, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 74));
         View view = new View(parentActivity);
         cvVar2.h = view;
         view.setBackgroundColor(-16777216);
         view.setVisibility(4);
-        xVar.addView(view, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 84, -1, 51));
+        xVar.addView(view, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, (z11 ? 22 : 0) + 84));
         RadialProgressView radialProgressView = new RadialProgressView(parentActivity, null);
         cvVar2.n = radialProgressView;
         radialProgressView.setVisibility(4);
-        xVar.addView(radialProgressView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, ((z11 ? 22 : 0) + 84) / 2, -2, 17));
+        xVar.addView(radialProgressView, w7.z5.d(-2, -2.0f, 17, 0.0f, 0.0f, 0.0f, ((z11 ? 22 : 0) + 84) / 2));
         if (z11) {
             TextView textView = new TextView(parentActivity);
             f7 = 18.0f;
@@ -147,7 +147,7 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
             textView.setTypeface(AndroidUtilities.bold());
             textView.setEllipsize(TextUtils.TruncateAt.END);
             textView.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-            xVar.addView(textView, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 77.0f, -1, 83));
+            xVar.addView(textView, w7.z5.d(-1, -2.0f, 83, 0.0f, 0.0f, 0.0f, 77.0f));
         } else {
             f7 = 18.0f;
         }
@@ -159,7 +159,7 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView2.setEllipsize(truncateAt);
         textView2.setPadding(AndroidUtilities.dp(f7), 0, AndroidUtilities.dp(f7), 0);
-        xVar.addView(textView2, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 57.0f, -1, 83));
+        xVar.addView(textView2, w7.z5.d(-1, -2.0f, 83, 0.0f, 0.0f, 0.0f, 57.0f));
         View view2 = new View(parentActivity);
         view2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.K5, false));
         xVar.addView(view2, new FrameLayout.LayoutParams(-1, 1, 83));
@@ -238,7 +238,7 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         imageView.setColorFilter(new PorterDuffColorFilter(x02, mode));
         imageView.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.x0(null, i14, false), 0, -1));
-        linearLayout2.addView(imageView, w7.z5.a(48.0f, 0.0f, 0.0f, 4.0f, 0.0f, 48, 51));
+        linearLayout2.addView(imageView, w7.z5.d(48, 48.0f, 51, 0.0f, 0.0f, 4.0f, 0.0f));
         final int i16 = 1;
         imageView.setOnClickListener(new View.OnClickListener(cvVar2) { // from class: org.telegram.ui.Components.tu
             public final /* synthetic */ cv b;
@@ -494,7 +494,7 @@ public final class cv extends org.telegram.ui.ActionBar.f3 {
         if (viewGroup != null) {
             viewGroup.removeView(this.b);
         }
-        this.w.addView(this.b, 0, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, (this.J ? 22 : 0) + 84, -1, 51));
+        this.w.addView(this.b, 0, w7.z5.d(-1, -1.0f, 51, 0.0f, 0.0f, 0.0f, (this.J ? 22 : 0) + 84));
         setShowWithoutAnimation(true);
         show();
         zg0.j(true);

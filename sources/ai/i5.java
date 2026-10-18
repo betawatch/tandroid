@@ -15,7 +15,7 @@ import org.telegram.ui.q21;
 import org.telegram.ui.qg1;
 import org.telegram.ui.y50;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class i5 extends u81 {
     public final /* synthetic */ int a;
@@ -39,15 +39,15 @@ public final class i5 extends u81 {
                 k7 k7Var = (k7) obj;
                 if (i11 == 0) {
                     k7.t1(k7Var, false);
-                    yh.l2 l2Var = k7Var.c0;
-                    if (l2Var != null) {
-                        n5Var = l2Var.Y;
+                    yh.k2 k2Var = k7Var.c0;
+                    if (k2Var != null) {
+                        n5Var = k2Var.Y;
                     }
                 } else if (i11 == 2) {
                     k7.t1(k7Var, true);
-                    yh.l2 l2Var2 = k7Var.d0;
-                    if (l2Var2 != null) {
-                        n5Var = l2Var2.Y;
+                    yh.k2 k2Var2 = k7Var.d0;
+                    if (k2Var2 != null) {
+                        n5Var = k2Var2.Y;
                     }
                 }
                 FrameLayout frameLayout = (FrameLayout) view;
@@ -87,7 +87,7 @@ public final class i5 extends u81 {
                 if (!n2Var.hasOwnBackground() && fragmentView.getBackground() == null) {
                     fragmentView.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
                 }
-                frameLayout2.addView(fragmentView, w7.z5.d(-1.0f, -1));
+                frameLayout2.addView(fragmentView, w7.z5.c(-1.0f, -1));
                 if (n2Var.getActionBar() != null && n2Var.getActionBar().K) {
                     AndroidUtilities.removeFromParent(n2Var.getActionBar());
                     frameLayout2.addView(n2Var.getActionBar());
@@ -108,9 +108,9 @@ public final class i5 extends u81 {
                 k7 k7Var = (k7) this.c;
                 if (i10 == 0) {
                     k7.t1(k7Var, false);
-                    yh.l2 l2Var = k7Var.c0;
-                    if (l2Var != null) {
-                        n5Var = l2Var.Y;
+                    yh.k2 k2Var = k7Var.c0;
+                    if (k2Var != null) {
+                        n5Var = k2Var.Y;
                         AndroidUtilities.removeFromParent(n5Var);
                         FrameLayout frameLayout = new FrameLayout((Context) this.b);
                         frameLayout.addView(n5Var, w7.z5.e(-1, -1, 119));
@@ -121,9 +121,9 @@ public final class i5 extends u81 {
                 if (i10 != 1) {
                     if (i10 == 2) {
                         k7.t1(k7Var, true);
-                        yh.l2 l2Var2 = k7Var.d0;
-                        if (l2Var2 != null) {
-                            n5Var = l2Var2.Y;
+                        yh.k2 k2Var2 = k7Var.d0;
+                        if (k2Var2 != null) {
+                            n5Var = k2Var2.Y;
                         }
                     }
                     return null;

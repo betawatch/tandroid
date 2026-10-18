@@ -1,28 +1,21 @@
 package yh;
 
-import org.telegram.ui.Components.f61;
-import org.telegram.ui.Components.s61;
-import org.telegram.ui.Components.wz;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
-public final class j4 extends g.o {
-    public final /* synthetic */ l4 c;
+public final class j4 extends s4.r0 {
+    public final /* synthetic */ k4 a;
 
-    public j4(l4 l4Var) {
-        this.c = l4Var;
+    public j4(k4 k4Var) {
+        this.a = k4Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        l4 l4Var = this.c;
-        wz wzVar = l4Var.a0;
-        s61 s61Var = l4Var.e0;
-        if (s61Var == null) {
-            return wzVar.J;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        k4 k4Var = this.a;
+        if (k4Var.U()) {
+            k4Var.Y.a();
         }
-        f61 G = s61Var.G(i10 - 1);
-        return (G == null || (i11 = G.u) == -1) ? wzVar.J : i11;
     }
 }

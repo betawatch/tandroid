@@ -33,7 +33,7 @@ import org.telegram.ui.Components.yc;
 import org.telegram.ui.Components.yj0;
 import org.telegram.ui.vw;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final class q extends FrameLayout {
     public long E;
@@ -46,7 +46,7 @@ public final class q extends FrameLayout {
     public float L;
     public float M;
     public boolean N;
-    public final y7 O;
+    public final x7 O;
     public float P;
     public float Q;
     public yj0 R;
@@ -61,7 +61,7 @@ public final class q extends FrameLayout {
     public final /* synthetic */ vw b0;
     public boolean c;
     public boolean d;
-    public z7 e;
+    public y7 e;
     public TLRPC.User f;
     public TLRPC.Chat h;
     public final org.telegram.ui.Components.h9 n;
@@ -83,14 +83,14 @@ public final class q extends FrameLayout {
         this.s = imageReceiver2;
         this.v = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
         this.w = true;
-        y7 y7Var = new y7(null, true);
-        this.O = y7Var;
+        x7 x7Var = new x7(null, true);
+        this.O = x7Var;
         this.P = 1.0f;
         this.Q = 1.0f;
         this.T = 1.0f;
         this.a0 = new org.telegram.ui.Components.f6(this, 0L, 350L, bs.h);
-        y7Var.o = vwVar.b == 1;
-        y7Var.D = true;
+        x7Var.o = vwVar.b == 1;
+        x7Var.D = true;
         imageReceiver.setInvalidateAll(true);
         imageReceiver.setAllowLoadingOnAttachedOnly(true);
         FrameLayout frameLayout = new FrameLayout(getContext());
@@ -100,7 +100,7 @@ public final class q extends FrameLayout {
             setClipChildren(false);
         }
         b();
-        addView(frameLayout, w7.z5.d(-2.0f, -1));
+        addView(frameLayout, w7.z5.c(-2.0f, -1));
         imageReceiver.setRoundRadius(AndroidUtilities.dp(48.0f) / 2);
         imageReceiver2.setRoundRadius(AndroidUtilities.dp(48.0f) / 2);
     }
@@ -128,7 +128,7 @@ public final class q extends FrameLayout {
         j5Var2.setTextColor(textColor);
         NotificationCenter.listenEmojiLoading(this.y);
         this.y.setMaxLines(1);
-        this.x.addView(this.y, w7.z5.a(-2.0f, 1.0f, 0.0f, 1.0f, 0.0f, -1, 0));
+        this.x.addView(this.y, w7.z5.d(-1, -2.0f, 0, 1.0f, 0.0f, 1.0f, 0.0f));
         this.r.setRoundRadius(AndroidUtilities.dp(48.0f) / 2);
         this.s.setRoundRadius(AndroidUtilities.dp(48.0f) / 2);
     }
@@ -137,10 +137,10 @@ public final class q extends FrameLayout {
         vw vwVar = this.b0;
         int i10 = vwVar.b;
         Paint paint = vwVar.G;
-        i7 i7Var = vwVar.s;
+        h7 h7Var = vwVar.s;
         Paint paint2 = vwVar.H;
         Drawable drawable = vwVar.c;
-        if (this.F && !i7Var.I(this.E) && Utilities.isNullOrEmpty(i7Var.E(this.E))) {
+        if (this.F && !h7Var.I(this.E) && Utilities.isNullOrEmpty(h7Var.E(this.E))) {
             float dp = f7 + AndroidUtilities.dp(16.0f);
             float dp2 = f10 + AndroidUtilities.dp(16.0f);
             paint.setColor(org.telegram.ui.ActionBar.h6.m1(f11, vwVar.f(org.telegram.ui.ActionBar.h6.hl)));
@@ -193,7 +193,7 @@ public final class q extends FrameLayout {
         ImageReceiver imageReceiver;
         float f10;
         Canvas canvas2;
-        y7 y7Var;
+        x7 x7Var;
         float f11;
         boolean z10;
         float f12;
@@ -214,7 +214,7 @@ public final class q extends FrameLayout {
         float dp3 = AndroidUtilities.dp(8.0f);
         vw vwVar3 = this.b0;
         int i10 = vwVar3.b;
-        i7 i7Var = vwVar3.s;
+        h7 h7Var = vwVar3.s;
         Paint paint = vwVar3.H;
         float clamp = Utilities.clamp(vwVar3.n0 / 0.5f, 1.0f, 0.0f) * dp3;
         if (this.V) {
@@ -226,15 +226,15 @@ public final class q extends FrameLayout {
         float lerp2 = AndroidUtilities.lerp(measuredWidth, 0.0f, this.J);
         float lerp3 = AndroidUtilities.lerp(AndroidUtilities.dp(5.0f), (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() - dp2) / 2.0f, this.J);
         float clamp2 = Utilities.clamp(this.J / 0.5f, 1.0f, 0.0f);
-        y7 y7Var2 = this.O;
-        y7Var2.a = true;
-        RectF rectF = y7Var2.F;
-        if (!y7Var2.p) {
-            y7Var2.e = 1.0f - vwVar3.d0;
+        x7 x7Var2 = this.O;
+        x7Var2.a = true;
+        RectF rectF = x7Var2.F;
+        if (!x7Var2.p) {
+            x7Var2.e = 1.0f - vwVar3.d0;
         }
         float f17 = lerp3 + lerp;
         rectF.set(lerp2, lerp3, lerp2 + lerp, f17);
-        y7Var2.G = AndroidUtilities.dpf2(1.33f) * this.J;
+        x7Var2.G = AndroidUtilities.dpf2(1.33f) * this.J;
         ImageReceiver imageReceiver3 = this.r;
         imageReceiver3.setAlpha(1.0f);
         imageReceiver3.setRoundRadius((int) f16);
@@ -265,11 +265,11 @@ public final class q extends FrameLayout {
         if (this.R == null) {
             this.R = vwVar3.n;
         }
-        ArrayList arrayList = (ArrayList) i7Var.c.f(this.E);
+        ArrayList arrayList = (ArrayList) h7Var.c.f(this.E);
         boolean z13 = (arrayList == null || arrayList.isEmpty()) ? false : true;
         if (z13 || (this.W && (yj0Var = this.R) != null && yj0Var.f < 0.98f)) {
             canvas2 = canvas;
-            y7Var = y7Var2;
+            x7Var = x7Var2;
             ImageReceiver imageReceiver4 = imageReceiver;
             f11 = f10;
             z10 = false;
@@ -277,10 +277,10 @@ public final class q extends FrameLayout {
             if (z13) {
                 float f23 = 0.0f;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    f23 += ((h7) arrayList.get(i11)).h;
+                    f23 += ((g7) arrayList.get(i11)).h;
                 }
-                size = (i7Var.d + f23) / (arrayList.size() + r4);
-                z11 = ((h7) i2.d.h(1, arrayList)).G;
+                size = (h7Var.d + f23) / (arrayList.size() + r4);
+                z11 = ((g7) i2.d.h(1, arrayList)).G;
                 vwVar3.m0 = z11;
             } else {
                 z11 = vwVar3.m0;
@@ -300,13 +300,13 @@ public final class q extends FrameLayout {
             }
             if (this.w) {
                 canvas2.save();
-                canvas2.scale(y7Var.b(), y7Var.b(), rectF.centerX(), rectF.centerY());
+                canvas2.scale(x7Var.b(), x7Var.b(), rectF.centerX(), rectF.centerY());
                 imageReceiver4.setImageCoords(rectF);
                 imageReceiver4.draw(canvas2);
                 canvas2.restore();
             }
             this.R.q = 0;
-            Paint o10 = z11 ? d8.o(imageReceiver4) : d8.t(imageReceiver4, true);
+            Paint o10 = z11 ? c8.o(imageReceiver4) : c8.t(imageReceiver4, true);
             o10.setAlpha(255);
             yj0 yj0Var4 = this.R;
             yj0Var4.t = o10;
@@ -321,8 +321,8 @@ public final class q extends FrameLayout {
             float e = this.a0.e(this.G);
             if (this.w) {
                 if (this.W) {
-                    y7Var2.p = true;
-                    y7Var2.e = 0.0f;
+                    x7Var2.p = true;
+                    x7Var2.e = 0.0f;
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                     ofFloat.addUpdateListener(new ah.c0(this, 9));
                     ofFloat.addListener(new ah.b(this, 6));
@@ -332,24 +332,24 @@ public final class q extends FrameLayout {
                 } else {
                     vwVar2 = vwVar3;
                 }
-                float f24 = e * y7Var2.e;
-                y7Var2.b = !this.W;
+                float f24 = e * x7Var2.e;
+                x7Var2.b = !this.W;
                 vwVar = vwVar2;
                 if (!this.c && vwVar.n0 <= 0.0f) {
                     if (AndroidUtilities.lerp(getMeasuredWidth(), AndroidUtilities.dp(16.0f), bs.g.getInterpolation(this.J)) < (AndroidUtilities.dpf2(3.5f) + f7) * 2.0f) {
                         f14 = ((float) Math.toDegrees(Math.acos((r1 / 2.0f) / r4))) * 2.0f;
-                        y7Var2.f = f14;
-                        y7Var2.l = this.c;
-                        y7Var2.m = this.d;
-                        y7Var2.u = 1.0f - f24;
+                        x7Var2.f = f14;
+                        x7Var2.l = this.c;
+                        x7Var2.m = this.d;
+                        x7Var2.u = 1.0f - f24;
                         z12 = this.F;
                         if (z12 && this.H) {
-                            y7Var2.s = this.I;
+                            x7Var2.s = this.I;
                         } else {
-                            y7Var2.s = 0L;
+                            x7Var2.s = 0L;
                         }
                         if (z12) {
-                            y7Var = y7Var2;
+                            x7Var = x7Var2;
                             f15 = f24;
                             imageReceiver2 = imageReceiver;
                             f11 = f10;
@@ -358,9 +358,9 @@ public final class q extends FrameLayout {
                             zArr = null;
                             long j10 = this.E;
                             canvas2 = canvas;
-                            d8.i(j10, canvas2, imageReceiver2, i7Var.I(j10), y7Var);
+                            c8.i(j10, canvas2, imageReceiver2, h7Var.I(j10), x7Var);
                         } else {
-                            y7Var = y7Var2;
+                            x7Var = x7Var2;
                             f15 = f24;
                             imageReceiver2 = imageReceiver;
                             f11 = f10;
@@ -368,40 +368,40 @@ public final class q extends FrameLayout {
                             f12 = f17;
                             zArr = null;
                             canvas2 = canvas;
-                            d8.i(this.E, canvas2, imageReceiver2, i7Var.H(), y7Var);
+                            c8.i(this.E, canvas2, imageReceiver2, h7Var.H(), x7Var);
                         }
                         ImageReceiver imageReceiver5 = imageReceiver2;
                         if (f15 > 0.0f) {
-                            if (d8.d == null) {
+                            if (c8.d == null) {
                                 x20 x20Var = new x20();
-                                d8.d = x20Var;
+                                c8.d = x20Var;
                                 x20Var.a = true;
                                 x20Var.b = true;
                                 int x02 = org.telegram.ui.ActionBar.h6.x0(zArr, org.telegram.ui.ActionBar.h6.xj, z10);
                                 int x03 = org.telegram.ui.ActionBar.h6.x0(zArr, org.telegram.ui.ActionBar.h6.q7, z10);
-                                d8.d.d(i0.a.f(0.25f, x02, x03), x03, z10 ? 1 : 0, z10 ? 1 : 0);
-                                d8.d.c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
-                                d8.d.c.setStyle(Paint.Style.STROKE);
-                                d8.d.c.setStrokeCap(Paint.Cap.ROUND);
+                                c8.d.d(i0.a.f(0.25f, x02, x03), x03, z10 ? 1 : 0, z10 ? 1 : 0);
+                                c8.d.c.setStrokeWidth(AndroidUtilities.dpf2(2.0f));
+                                c8.d.c.setStyle(Paint.Style.STROKE);
+                                c8.d.c.setStrokeCap(Paint.Cap.ROUND);
                             }
-                            d8.d.b(imageReceiver5.getImageX(), imageReceiver5.getImageY(), imageReceiver5.getImageX2(), imageReceiver5.getImageY2());
-                            Paint paint2 = d8.d.c;
+                            c8.d.b(imageReceiver5.getImageX(), imageReceiver5.getImageY(), imageReceiver5.getImageX2(), imageReceiver5.getImageY2());
+                            Paint paint2 = c8.d.c;
                             paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
                             paint2.setAlpha((int) (255.0f * f15));
-                            canvas2.drawCircle(f18, f19, y7Var.b() * (f7 + AndroidUtilities.dp(4.0f)), paint2);
+                            canvas2.drawCircle(f18, f19, x7Var.b() * (f7 + AndroidUtilities.dp(4.0f)), paint2);
                         }
                         e = f15;
                     }
                 }
                 f14 = 0.0f;
-                y7Var2.f = f14;
-                y7Var2.l = this.c;
-                y7Var2.m = this.d;
-                y7Var2.u = 1.0f - f24;
+                x7Var2.f = f14;
+                x7Var2.l = this.c;
+                x7Var2.m = this.d;
+                x7Var2.u = 1.0f - f24;
                 z12 = this.F;
                 if (z12) {
                 }
-                y7Var2.s = 0L;
+                x7Var2.s = 0L;
                 if (z12) {
                 }
                 ImageReceiver imageReceiver52 = imageReceiver2;
@@ -410,7 +410,7 @@ public final class q extends FrameLayout {
                 e = f15;
             } else {
                 canvas2 = canvas;
-                y7Var = y7Var2;
+                x7Var = x7Var2;
                 vwVar = vwVar3;
                 f12 = f17;
                 f11 = f10;
@@ -466,7 +466,7 @@ public final class q extends FrameLayout {
             if (this.F) {
                 this.P = 1.0f;
             } else {
-                this.P = y7Var.n == 2 ? 0.7f : 1.0f;
+                this.P = x7Var.n == 2 ? 0.7f : 1.0f;
             }
             float f28 = this.Q * this.P;
             frameLayout.setAlpha(f28);
@@ -509,9 +509,9 @@ public final class q extends FrameLayout {
         this.r.onDetachedFromWindow();
         this.s.onDetachedFromWindow();
         this.O.g();
-        z7 z7Var = this.e;
-        if (z7Var != null) {
-            z7Var.a();
+        y7 y7Var = this.e;
+        if (y7Var != null) {
+            y7Var.a();
             this.e = null;
         }
     }
@@ -561,22 +561,22 @@ public final class q extends FrameLayout {
     */
     public void setDialogId(long j10) {
         TLRPC.Chat chat;
-        h7 h7Var;
+        g7 g7Var;
         vw vwVar = this.b0;
         int i10 = vwVar.f;
-        i7 i7Var = vwVar.s;
+        h7 h7Var = vwVar.s;
         long j11 = this.E;
         int i11 = 1;
         int i12 = 0;
         boolean z10 = j11 == j10;
         if (!z10 && this.e != null) {
-            i7Var.e0(j11, false);
+            h7Var.e0(j11, false);
             this.e.a();
             this.e = null;
         }
         this.E = j10;
         this.F = j10 == UserConfig.getInstance(i10).getClientUserId();
-        this.G = i7Var.N(j10);
+        this.G = h7Var.N(j10);
         if (j10 > 0) {
             TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
             this.f = user;
@@ -601,26 +601,26 @@ public final class q extends FrameLayout {
             return;
         }
         this.y.i(null);
-        if (i7Var.N(j10)) {
+        if (h7Var.N(j10)) {
             this.y.setTextSize(10);
             this.y.l(LocaleController.getString(R.string.FailedStory), false);
             this.U = false;
             return;
         }
-        if (!Utilities.isNullOrEmpty(i7Var.E(j10))) {
+        if (!Utilities.isNullOrEmpty(h7Var.E(j10))) {
             this.y.setTextSize(10);
-            d8.a(this.y);
+            c8.a(this.y);
             this.U = true;
             return;
         }
-        HashMap hashMap = (HashMap) i7Var.e.f(j10);
+        HashMap hashMap = (HashMap) h7Var.e.f(j10);
         if (hashMap != null && !hashMap.isEmpty()) {
             Collection values = hashMap.values();
             if (!values.isEmpty()) {
-                h7Var = (h7) values.iterator().next();
-                if (h7Var == null) {
+                g7Var = (g7) values.iterator().next();
+                if (g7Var == null) {
                     this.y.setTextSize(10);
-                    d8.a(this.y);
+                    c8.a(this.y);
                     this.U = true;
                     return;
                 }
@@ -678,19 +678,19 @@ public final class q extends FrameLayout {
                 return;
             }
         }
-        h7Var = null;
-        if (h7Var == null) {
+        g7Var = null;
+        if (g7Var == null) {
         }
     }
 
     @Override // android.view.View
     public void setPressed(boolean z10) {
         super.setPressed(z10);
-        y7 y7Var = this.O;
-        if (z10 && y7Var.H == null) {
-            y7Var.H = new yc(this, 1.5f, 5.0f);
+        x7 x7Var = this.O;
+        if (z10 && x7Var.H == null) {
+            x7Var.H = new yc(this, 1.5f, 5.0f);
         }
-        yc ycVar = y7Var.H;
+        yc ycVar = x7Var.H;
         if (ycVar != null) {
             ycVar.c(z10);
         }

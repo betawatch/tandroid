@@ -6,7 +6,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -42,15 +42,15 @@ public final /* synthetic */ class x0 implements Utilities.Callback {
                 a1Var.c(arrayList3);
                 a1Var.f = false;
                 a1Var.e = true;
-                ci.i7 storiesController = MessagesController.getInstance(a1Var.a).getStoriesController();
+                ci.h7 storiesController = MessagesController.getInstance(a1Var.a).getStoriesController();
                 storiesController.getClass();
                 int size = arrayList4.size();
                 int i11 = 0;
                 while (i11 < size) {
                     Object obj2 = arrayList4.get(i11);
                     i11++;
-                    ci.h7 h7Var = new ci.h7(storiesController, (a8) obj2);
-                    storiesController.d(h7Var.J, h7Var, storiesController.b, false);
+                    ci.g7 g7Var = new ci.g7(storiesController, (a8) obj2);
+                    storiesController.d(g7Var.J, g7Var, storiesController.b, false);
                 }
                 NotificationCenter.getInstance(storiesController.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
                 break;

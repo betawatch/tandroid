@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class qt0 extends org.telegram.ui.Components.kg0 {
     public final Rect M;
@@ -62,7 +62,7 @@ public final class qt0 extends org.telegram.ui.Components.kg0 {
         this.h = icVar;
         icVar.setBackgroundColor(-16777216);
         icVar.setVisibility(4);
-        addView(icVar, w7.z5.d(-1.0f, -1));
+        addView(icVar, w7.z5.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.n = radialProgressView;
         radialProgressView.setVisibility(4);

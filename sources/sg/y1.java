@@ -1,26 +1,44 @@
 package sg;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.zq;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.o4;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
-public final class y1 extends zq {
-    public final /* synthetic */ z1 y;
+public final class y1 extends o4 {
+    public final Path h;
+    public final /* synthetic */ a2 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y1(z1 z1Var, j0.a aVar, Drawable drawable) {
-        super(aVar, drawable);
-        this.y = z1Var;
+    public y1(a2 a2Var, Context context) {
+        super(context);
+        this.n = a2Var;
+        this.h = new Path();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i10, int i11, int i12, int i13) {
-        z1 z1Var = this.y;
-        if (z1Var.d) {
-            super.setBounds(i10, (int) (i11 - z1Var.M), i12, i13);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.h);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.o4, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        Path path = this.h;
+        path.reset();
+        a2 a2Var = this.n;
+        if (a2Var.d) {
+            AndroidUtilities.rectTmp.set(0.0f, -a2Var.M, getMeasuredWidth(), getMeasuredHeight());
         } else {
-            super.setBounds(i10, i11, i12, (int) (i13 + z1Var.M));
+            AndroidUtilities.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), (int) (getMeasuredHeight() + a2Var.M));
         }
+        float dp = a2Var.M - AndroidUtilities.dp(3.0f);
+        path.addRoundRect(AndroidUtilities.rectTmp, dp, dp, Path.Direction.CW);
     }
 }

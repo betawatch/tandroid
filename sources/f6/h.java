@@ -35,7 +35,7 @@ import n4.s;
 import n6.l;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final class h {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -80,7 +80,7 @@ public final class h {
         this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
         z5 z5Var = new z5(context);
         this.h = z5Var;
-        z5Var.e = new ya.c(this, 17);
+        z5Var.e = new ya.d(this, 17);
         z5 z5Var2 = new z5(context);
         this.i = z5Var2;
         z5Var2.e = new a6.i(this, 20);

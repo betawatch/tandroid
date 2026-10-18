@@ -16,7 +16,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class iv implements org.telegram.ui.et {
     public final /* synthetic */ aw a;
@@ -71,7 +71,7 @@ public final class iv implements org.telegram.ui.et {
             aw awVar = this.a;
             viewGroup = ((org.telegram.ui.ActionBar.f3) awVar).containerView;
             d6Var = ((org.telegram.ui.ActionBar.f3) awVar).resourcesProvider;
-            org.telegram.messenger.kk.p(R.string.EmojiCopied, new xc((FrameLayout) viewGroup, d6Var));
+            org.telegram.messenger.lk.p(R.string.EmojiCopied, new xc((FrameLayout) viewGroup, d6Var));
         }
     }
 
@@ -202,7 +202,7 @@ public final class iv implements org.telegram.ui.et {
         if (document != null) {
             viewGroup = ((org.telegram.ui.ActionBar.f3) awVar).containerView;
             d6Var = ((org.telegram.ui.ActionBar.f3) awVar).resourcesProvider;
-            new xc((FrameLayout) viewGroup, d6Var).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), ytVar).j();
+            new xc((FrameLayout) viewGroup, d6Var).r(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), ytVar).j();
             return;
         }
         Context context = awVar.getContext();

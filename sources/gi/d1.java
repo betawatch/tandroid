@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.Components.r80;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d1 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -29,7 +29,7 @@ public final /* synthetic */ class d1 implements Runnable {
     public final /* synthetic */ Object r;
     public final /* synthetic */ Object s;
 
-    public /* synthetic */ d1(org.telegram.ui.ActionBar.b2 b2Var, Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, d6 d6Var, org.telegram.ui.web.t tVar, ai.s0 s0Var) {
+    public /* synthetic */ d1(org.telegram.ui.ActionBar.b2 b2Var, Context context, int i10, long j10, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File[] fileArr, d6 d6Var, org.telegram.ui.web.u uVar, ai.s0 s0Var) {
         this.b = b2Var;
         this.d = context;
         this.e = i10;
@@ -37,7 +37,7 @@ public final /* synthetic */ class d1 implements Runnable {
         this.f = tL_messages_preparedInlineMessage;
         this.h = fileArr;
         this.n = d6Var;
-        this.r = tVar;
+        this.r = uVar;
         this.s = s0Var;
     }
 
@@ -53,10 +53,10 @@ public final /* synthetic */ class d1 implements Runnable {
                 TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage = (TLRPC.TL_messages_preparedInlineMessage) this.f;
                 File[] fileArr = (File[]) this.h;
                 d6 d6Var = (d6) this.n;
-                org.telegram.ui.web.t tVar = (org.telegram.ui.web.t) this.r;
+                org.telegram.ui.web.u uVar = (org.telegram.ui.web.u) this.r;
                 ai.s0 s0Var = (ai.s0) this.s;
                 b2Var2.dismiss();
-                new l1(context, this.e, this.c, tL_messages_preparedInlineMessage, fileArr[0], null, d6Var, tVar, s0Var).show();
+                new l1(context, this.e, this.c, tL_messages_preparedInlineMessage, fileArr[0], null, d6Var, uVar, s0Var).show();
                 break;
             case 1:
                 org.telegram.ui.ActionBar.b2 b2Var3 = (org.telegram.ui.ActionBar.b2) this.b;

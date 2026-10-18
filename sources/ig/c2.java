@@ -32,8 +32,8 @@ import org.telegram.ui.fr;
 import org.telegram.ui.ic0;
 import org.telegram.ui.jp;
 import org.telegram.ui.jr;
+import org.telegram.ui.kh0;
 import org.telegram.ui.kp;
-import org.telegram.ui.lh0;
 import org.telegram.ui.ot;
 import org.telegram.ui.pc0;
 import org.telegram.ui.pe1;
@@ -44,7 +44,7 @@ import org.telegram.ui.te1;
 import org.telegram.ui.xb;
 import org.telegram.ui.z71;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class c2 extends g5 {
     public final /* synthetic */ int r;
@@ -245,7 +245,7 @@ public final class c2 extends g5 {
                 }
                 break;
             case 13:
-                xa0 xa0Var = ((lh0) this.s).a;
+                xa0 xa0Var = ((kh0) this.s).a;
                 xa0Var.y = false;
                 xa0Var.j(null);
                 break;
@@ -353,7 +353,7 @@ public final class c2 extends g5 {
                 ((pc0) this.s).r0 = true;
                 break;
             case 13:
-                ((lh0) this.s).a.y = true;
+                ((kh0) this.s).a.y = true;
                 break;
             case 14:
                 qq0 qq0Var = (qq0) this.s;
@@ -657,7 +657,7 @@ public final class c2 extends g5 {
                 }
                 break;
             case 13:
-                ((lh0) this.s).a.j(editText.getText().toString());
+                ((kh0) this.s).a.j(editText.getText().toString());
                 break;
             case 14:
                 qq0 qq0Var = (qq0) this.s;

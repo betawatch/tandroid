@@ -1,6 +1,6 @@
 package org.telegram.messenger.camera;
 
-import ai.e3;
+import ai.d3;
 import ai.i6;
 import ai.m4;
 import ai.t0;
@@ -90,7 +90,7 @@ import org.telegram.ui.Components.oz;
 import org.telegram.ui.Components.q2;
 import org.telegram.ui.Components.qp0;
 import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.rc;
+import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.x3;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.yq;
@@ -99,6 +99,7 @@ import org.telegram.ui.Components.zv0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.b1;
 import org.telegram.ui.dq;
+import org.telegram.ui.e3;
 import org.telegram.ui.ey;
 import org.telegram.ui.ir;
 import org.telegram.ui.jr;
@@ -116,7 +117,7 @@ import org.telegram.ui.ua;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a;
@@ -229,7 +230,7 @@ public final /* synthetic */ class i implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:369:0x0dd4  */
+    /* JADX WARN: Removed duplicated region for block: B:369:0x0dc9  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -258,15 +259,15 @@ public final /* synthetic */ class i implements Runnable {
         String str4;
         boolean z15;
         float f7;
-        o1.k kVar;
         final zv0 zv0Var;
         float f10;
+        o1.k kVar;
         o1.k kVar2;
-        final float f11;
+        o1.k kVar3;
         FrameLayout frameLayout;
         Runnable runnable;
         String str5 = " ";
-        int i12 = 6;
+        int i12 = 5;
         switch (this.a) {
             case 0:
                 CameraController.lambda$openRound$9((CameraSession) this.c, (Runnable) this.b, (SurfaceTexture) this.e, (Runnable) this.d);
@@ -394,7 +395,7 @@ public final /* synthetic */ class i implements Runnable {
                 sn snVar2 = (sn) this.c;
                 pf.c cVar = (pf.c) this.b;
                 TLObject tLObject2 = (TLObject) this.d;
-                e3 e3Var = (e3) this.e;
+                d3 d3Var = (d3) this.e;
                 cVar.b();
                 if (tLObject2 instanceof TLRPC.TL_contacts_resolvedPeer) {
                     TLRPC.TL_contacts_resolvedPeer tL_contacts_resolvedPeer = (TLRPC.TL_contacts_resolvedPeer) tLObject2;
@@ -403,12 +404,12 @@ public final /* synthetic */ class i implements Runnable {
                     long peerDialogId = DialogObject.getPeerDialogId(tL_contacts_resolvedPeer.peer);
                     if (peerDialogId >= 0) {
                         user = snVar2.getMessagesController().getUser(Long.valueOf(peerDialogId));
-                        e3Var.run(user);
+                        d3Var.run(user);
                         break;
                     }
                 }
                 user = null;
-                e3Var.run(user);
+                d3Var.run(user);
             case 11:
                 long[] jArr2 = (long[]) this.c;
                 boolean[] zArr3 = (boolean[]) this.b;
@@ -420,7 +421,7 @@ public final /* synthetic */ class i implements Runnable {
                 }
                 as asVar = (as) imageView.getDrawable();
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                ofFloat.addUpdateListener(new org.telegram.ui.e3(asVar, 5));
+                ofFloat.addUpdateListener(new e3(asVar, 5));
                 ofFloat.setDuration(150L);
                 ofFloat.setInterpolator(bs.f);
                 ofFloat.start();
@@ -797,13 +798,13 @@ public final /* synthetic */ class i implements Runnable {
                     }
                     chatActivityEnterView.s0 = chatActivityEnterView.getRootWindowInsets().getSystemWindowInsetLeft() + chatActivityEnterView.s0;
                     chatActivityEnterView.p0.getLocationInWindow(iArr4);
-                    final float f12 = iArr4[0];
-                    float f13 = iArr4[1];
+                    final float f11 = iArr4[0];
+                    final float f12 = iArr4[1];
                     float dp = AndroidUtilities.dp(5.0f);
                     float dp2 = iArr3[0] + chatActivityEnterView.s0 + dp + AndroidUtilities.dp(4.0f) + 0.0f;
-                    float f14 = iArr3[1] + chatActivityEnterView.t0 + dp + 0.0f;
+                    float f13 = iArr3[1] + chatActivityEnterView.t0 + dp + 0.0f;
                     zv0Var2.setTranslationX(dp2);
-                    zv0Var2.setTranslationY(f14);
+                    zv0Var2.setTranslationY(f13);
                     float scaleX = (chatActivityEnterView.p0.getLayoutParams().width * (chatActivityEnterView.l5 ? chatActivityEnterView.p0.getScaleX() : 1.0f)) / AndroidUtilities.dp(40.0f);
                     zv0Var2.setPivotX(0.0f);
                     zv0Var2.setPivotY(0.0f);
@@ -822,40 +823,43 @@ public final /* synthetic */ class i implements Runnable {
                     ef efVar = chatActivityEnterView.q0;
                     if (chatActivityEnterView.l5) {
                         zv0Var = zv0Var2;
-                        f10 = 0.5f;
                         kVar = null;
+                        f10 = 0.5f;
                     } else {
-                        kVar = new o1.k(chatActivityEnterView.p0, cVar3);
+                        o1.k kVar4 = new o1.k(chatActivityEnterView.p0, cVar3);
                         zv0Var = zv0Var2;
                         f10 = 0.5f;
-                        kVar.u = c1.l(0.5f, 750.0f, f7);
+                        kVar4.u = c1.l(0.5f, 750.0f, f7);
+                        kVar = kVar4;
                     }
                     if (chatActivityEnterView.l5) {
-                        f11 = f13;
-                        kVar2 = null;
+                        kVar2 = kVar;
+                        kVar3 = null;
                     } else {
-                        f11 = f13;
-                        kVar2 = new o1.k(chatActivityEnterView.p0, cVar2);
-                        kVar2.u = c1.l(f10, 750.0f, f7);
+                        kVar2 = kVar;
+                        o1.k kVar5 = new o1.k(chatActivityEnterView.p0, cVar2);
+                        kVar5.u = c1.l(f10, 750.0f, f7);
+                        kVar3 = kVar5;
                     }
-                    o1.k kVar3 = new o1.k(chatActivityEnterView.p0, o1.h.t);
-                    kVar3.u = c1.l(0.0f, 750.0f, f7);
+                    o1.k kVar6 = new o1.k(chatActivityEnterView.p0, o1.h.t);
+                    kVar6.u = c1.l(0.0f, 750.0f, f7);
                     final int i23 = 0;
-                    o1.f fVar = new o1.f() { // from class: org.telegram.ui.Components.vd
+                    final zv0 zv0Var3 = zv0Var;
+                    kVar6.a(new o1.f() { // from class: org.telegram.ui.Components.vd
                         @Override // o1.f
-                        public final void a(o1.h hVar2, boolean z19, float f15, float f16) {
+                        public final void a(o1.h hVar2, boolean z19, float f14, float f15) {
                             int i24 = i23;
+                            float f16 = f12;
                             float f17 = f11;
-                            float f18 = f12;
-                            zv0 zv0Var3 = zv0Var;
+                            zv0 zv0Var4 = zv0Var;
                             Dialog dialog2 = dialog;
                             ChatActivityEnterView chatActivityEnterView2 = chatActivityEnterView;
                             switch (i24) {
                                 case 0:
                                     int i25 = ChatActivityEnterView.n5;
                                     if (dialog2.isShowing()) {
-                                        zv0Var3.setTranslationX(f18);
-                                        zv0Var3.setTranslationY(f17);
+                                        zv0Var4.setTranslationX(f17);
+                                        zv0Var4.setTranslationY(f16);
                                         sp0 sp0Var = chatActivityEnterView2.p0;
                                         sp0Var.getClass();
                                         sp0Var.a(false, false, 0.0f);
@@ -871,70 +875,8 @@ public final /* synthetic */ class i implements Runnable {
                                 default:
                                     int i26 = ChatActivityEnterView.n5;
                                     if (dialog2.isShowing()) {
-                                        zv0Var3.setTranslationX(f18);
-                                        zv0Var3.setTranslationY(f17);
-                                        sp0 sp0Var2 = chatActivityEnterView2.p0;
-                                        sp0Var2.getClass();
-                                        sp0Var2.a(false, false, 0.0f);
-                                        if (!chatActivityEnterView2.l5) {
-                                            chatActivityEnterView2.p0.setScaleX(1.0f);
-                                            chatActivityEnterView2.p0.setScaleY(1.0f);
-                                        }
-                                        chatActivityEnterView2.p0.setAlpha(1.0f);
-                                        chatActivityEnterView2.p0.getViewTreeObserver().addOnPreDrawListener(new gf(chatActivityEnterView2, dialog2, 1));
-                                        break;
-                                    }
-                                    break;
-                            }
-                        }
-                    };
-                    zv0 zv0Var3 = zv0Var;
-                    float f15 = f11;
-                    kVar3.a(fVar);
-                    o1.k kVar4 = new o1.k(zv0Var3, o1.h.m);
-                    kVar4.b = w7.r.a(dp2, f12 - AndroidUtilities.dp(6.0f), dp2);
-                    kVar4.c = true;
-                    kVar4.u = c1.l(f12, 700.0f, 0.75f);
-                    kVar4.h = f12 - AndroidUtilities.dp(6.0f);
-                    o1.k kVar5 = new o1.k(zv0Var3, o1.h.n);
-                    kVar5.b = w7.r.a(f14, f14, AndroidUtilities.dp(6.0f) + f15);
-                    kVar5.c = true;
-                    kVar5.u = c1.l(f15, 700.0f, 0.75f);
-                    kVar5.g = AndroidUtilities.dp(6.0f) + f15;
-                    kVar5.b(new jf(f15, zv0Var3));
-                    final int i24 = 1;
-                    kVar5.a(new o1.f() { // from class: org.telegram.ui.Components.vd
-                        @Override // o1.f
-                        public final void a(o1.h hVar2, boolean z19, float f152, float f16) {
-                            int i242 = i24;
-                            float f17 = f11;
-                            float f18 = f12;
-                            zv0 zv0Var32 = zv0Var;
-                            Dialog dialog2 = dialog;
-                            ChatActivityEnterView chatActivityEnterView2 = chatActivityEnterView;
-                            switch (i242) {
-                                case 0:
-                                    int i25 = ChatActivityEnterView.n5;
-                                    if (dialog2.isShowing()) {
-                                        zv0Var32.setTranslationX(f18);
-                                        zv0Var32.setTranslationY(f17);
-                                        sp0 sp0Var = chatActivityEnterView2.p0;
-                                        sp0Var.getClass();
-                                        sp0Var.a(false, false, 0.0f);
-                                        if (!chatActivityEnterView2.l5) {
-                                            chatActivityEnterView2.p0.setScaleX(1.0f);
-                                            chatActivityEnterView2.p0.setScaleY(1.0f);
-                                        }
-                                        chatActivityEnterView2.p0.setAlpha(1.0f);
-                                        chatActivityEnterView2.p0.getViewTreeObserver().addOnPreDrawListener(new gf(chatActivityEnterView2, dialog2, 0));
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    int i26 = ChatActivityEnterView.n5;
-                                    if (dialog2.isShowing()) {
-                                        zv0Var32.setTranslationX(f18);
-                                        zv0Var32.setTranslationY(f17);
+                                        zv0Var4.setTranslationX(f17);
+                                        zv0Var4.setTranslationY(f16);
                                         sp0 sp0Var2 = chatActivityEnterView2.p0;
                                         sp0Var2.getClass();
                                         sp0Var2.a(false, false, 0.0f);
@@ -950,11 +892,70 @@ public final /* synthetic */ class i implements Runnable {
                             }
                         }
                     });
-                    o1.k kVar6 = new o1.k(zv0Var3, cVar3);
-                    kVar6.u = c1.l(scaleX, 1000.0f, 1.0f);
-                    o1.k kVar7 = new o1.k(zv0Var3, cVar2);
-                    kVar7.u = c1.l(scaleX, 1000.0f, 1.0f);
-                    efVar.l(kVar, kVar2, kVar3, kVar4, kVar5, kVar6, kVar7);
+                    o1.k kVar7 = new o1.k(zv0Var3, o1.h.m);
+                    kVar7.b = w7.r.a(dp2, f11 - AndroidUtilities.dp(6.0f), dp2);
+                    kVar7.c = true;
+                    kVar7.u = c1.l(f11, 700.0f, 0.75f);
+                    kVar7.h = f11 - AndroidUtilities.dp(6.0f);
+                    o1.k kVar8 = new o1.k(zv0Var3, o1.h.n);
+                    kVar8.b = w7.r.a(f13, f13, AndroidUtilities.dp(6.0f) + f12);
+                    kVar8.c = true;
+                    kVar8.u = c1.l(f12, 700.0f, 0.75f);
+                    kVar8.g = AndroidUtilities.dp(6.0f) + f12;
+                    kVar8.b(new jf(f12, zv0Var3));
+                    final int i24 = 1;
+                    kVar8.a(new o1.f() { // from class: org.telegram.ui.Components.vd
+                        @Override // o1.f
+                        public final void a(o1.h hVar2, boolean z19, float f14, float f15) {
+                            int i242 = i24;
+                            float f16 = f12;
+                            float f17 = f11;
+                            zv0 zv0Var4 = zv0Var3;
+                            Dialog dialog2 = dialog;
+                            ChatActivityEnterView chatActivityEnterView2 = chatActivityEnterView;
+                            switch (i242) {
+                                case 0:
+                                    int i25 = ChatActivityEnterView.n5;
+                                    if (dialog2.isShowing()) {
+                                        zv0Var4.setTranslationX(f17);
+                                        zv0Var4.setTranslationY(f16);
+                                        sp0 sp0Var = chatActivityEnterView2.p0;
+                                        sp0Var.getClass();
+                                        sp0Var.a(false, false, 0.0f);
+                                        if (!chatActivityEnterView2.l5) {
+                                            chatActivityEnterView2.p0.setScaleX(1.0f);
+                                            chatActivityEnterView2.p0.setScaleY(1.0f);
+                                        }
+                                        chatActivityEnterView2.p0.setAlpha(1.0f);
+                                        chatActivityEnterView2.p0.getViewTreeObserver().addOnPreDrawListener(new gf(chatActivityEnterView2, dialog2, 0));
+                                        break;
+                                    }
+                                    break;
+                                default:
+                                    int i26 = ChatActivityEnterView.n5;
+                                    if (dialog2.isShowing()) {
+                                        zv0Var4.setTranslationX(f17);
+                                        zv0Var4.setTranslationY(f16);
+                                        sp0 sp0Var2 = chatActivityEnterView2.p0;
+                                        sp0Var2.getClass();
+                                        sp0Var2.a(false, false, 0.0f);
+                                        if (!chatActivityEnterView2.l5) {
+                                            chatActivityEnterView2.p0.setScaleX(1.0f);
+                                            chatActivityEnterView2.p0.setScaleY(1.0f);
+                                        }
+                                        chatActivityEnterView2.p0.setAlpha(1.0f);
+                                        chatActivityEnterView2.p0.getViewTreeObserver().addOnPreDrawListener(new gf(chatActivityEnterView2, dialog2, 1));
+                                        break;
+                                    }
+                                    break;
+                            }
+                        }
+                    });
+                    o1.k kVar9 = new o1.k(zv0Var3, cVar3);
+                    kVar9.u = c1.l(scaleX, 1000.0f, 1.0f);
+                    o1.k kVar10 = new o1.k(zv0Var3, cVar2);
+                    kVar10.u = c1.l(scaleX, 1000.0f, 1.0f);
+                    efVar.l(kVar2, kVar3, kVar6, kVar7, kVar8, kVar9, kVar10);
                     break;
                 }
                 break;
@@ -965,7 +966,7 @@ public final /* synthetic */ class i implements Runnable {
                 d6 d6Var2 = (d6) this.e;
                 long j10 = foVar.V;
                 final q2 q2Var = new q2(12, foVar, view2);
-                rc rcVar = new rc(i12);
+                sc scVar = new sc(i12);
                 int i25 = h6.j5;
                 int r10 = d6Var2 != null ? d6Var2.r(i25) : h6.x0(null, i25, false);
                 int i26 = h6.h5;
@@ -1033,8 +1034,8 @@ public final /* synthetic */ class i implements Runnable {
                     FrameLayout frameLayout3 = new FrameLayout(context2);
                     x3 x3Var = new x3(context2, od0Var, e4Var, f4Var, 2);
                     x3Var.setOrientation(1);
-                    frameLayout3.addView(x3Var, z5.d(-1.0f, -1));
-                    frameLayout3.addView(new FrameLayout(context2), z5.a(100.0f, 0.0f, 0.0f, 0.0f, 120.0f, -1, 87));
+                    frameLayout3.addView(x3Var, z5.c(-1.0f, -1));
+                    frameLayout3.addView(new FrameLayout(context2), z5.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, 120.0f));
                     FrameLayout frameLayout4 = new FrameLayout(context2);
                     x3Var.addView(frameLayout4, z5.t(-1, -2, 51, 22, 0, 0, 4));
                     TextView textView2 = new TextView(context2);
@@ -1042,7 +1043,7 @@ public final /* synthetic */ class i implements Runnable {
                     textView2.setTextColor(r10);
                     textView2.setTextSize(1, 20.0f);
                     textView2.setTypeface(AndroidUtilities.bold());
-                    frameLayout4.addView(textView2, z5.a(-2.0f, 0.0f, 12.0f, 0.0f, 0.0f, -2, 51));
+                    frameLayout4.addView(textView2, z5.d(-2, -2.0f, 51, 0.0f, 12.0f, 0.0f, 0.0f));
                     textView2.setOnTouchListener(new di.d(10));
                     LinearLayout linearLayout = new LinearLayout(context2);
                     linearLayout.setOrientation(0);
@@ -1112,7 +1113,7 @@ public final /* synthetic */ class i implements Runnable {
                             od0 od0Var2 = od0Var;
                             e4 e4Var2 = e4Var;
                             f4 f4Var2 = f4Var;
-                            boolean f16 = f5.f(null, null, 0L, j12, 3, od0Var2, e4Var2, f4Var2);
+                            boolean f14 = f5.f(null, null, 0L, j12, 3, od0Var2, e4Var2, f4Var2);
                             f5.d(textView3, od0Var2, e4Var2, f4Var2);
                             long currentTimeMillis = System.currentTimeMillis();
                             Calendar calendar2 = calendar;
@@ -1120,7 +1121,7 @@ public final /* synthetic */ class i implements Runnable {
                             calendar2.add(6, od0Var2.getValue());
                             calendar2.set(11, e4Var2.getValue());
                             calendar2.set(12, f4Var2.getValue());
-                            if (f16) {
+                            if (f14) {
                                 calendar2.set(13, 0);
                                 calendar2.set(14, 0);
                             }
@@ -1133,7 +1134,7 @@ public final /* synthetic */ class i implements Runnable {
                     a3Var.b(frameLayout);
                     f3 f3Var = a3Var.a;
                     f3Var.show();
-                    f3Var.setOnDismissListener(new g2(0, rcVar, zArr5));
+                    f3Var.setOnDismissListener(new g2(0, scVar, zArr5));
                     f3Var.setBackgroundColor(i35);
                     f3Var.fixNavigationBar(i35);
                     break;

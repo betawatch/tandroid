@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-8dceb212ed2c2696933748198be2db68a1b0f76d4310ab1da4abb6983ea7d048 */
+/* compiled from: r8-map-id-bcc7d273da888d5c27994201329e5b838e55754b73312241608ee42846efd426 */
 /* loaded from: classes3.dex */
 public final class az extends FrameLayout {
     public final ImageView a;
@@ -30,12 +30,12 @@ public final class az extends FrameLayout {
         imageView.setImageResource(R.drawable.gif_empty);
         int i10 = org.telegram.ui.ActionBar.h6.Le;
         imageView.setColorFilter(new PorterDuffColorFilter(tzVar.A(i10), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.z5.a(-2.0f, 0.0f, 8.0f, 0.0f, 0.0f, -2, 17));
+        addView(imageView, w7.z5.d(-2, -2.0f, 17, 0.0f, 8.0f, 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         this.b = textView;
-        org.telegram.messenger.kk.j(16.0f, R.string.NoGIFsFound, 1, textView);
+        org.telegram.messenger.lk.j(16.0f, R.string.NoGIFsFound, 1, textView);
         textView.setTextColor(tzVar.A(i10));
-        addView(textView, w7.z5.a(-2.0f, 0.0f, 42.0f, 0.0f, 0.0f, -2, 17));
+        addView(textView, w7.z5.d(-2, -2.0f, 17, 0.0f, 42.0f, 0.0f, 0.0f));
         RadialProgressView radialProgressView = new RadialProgressView(context, tzVar.Z1);
         this.c = radialProgressView;
         radialProgressView.setVisibility(8);
@@ -54,6 +54,6 @@ public final class az extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.kk.A(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.lk.A(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 }
